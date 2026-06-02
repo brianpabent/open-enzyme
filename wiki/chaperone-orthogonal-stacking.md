@@ -289,7 +289,7 @@ The Open Enzyme endgame strain's predicted weighted synergy ~0.85 — close to a
 
 **This is Sweep A Proposed Experiment 1 (2026-05-05, commit 3e928d3): the first real prospective test of whether the chaperone-orthogonal framework has predictive power beyond retrofit.**
 
-The question is load-bearing for the platform: **Can the koji endgame strain be a single triple-cassette strain (uricase + lactoferrin + DAF SCR1-4) that closes CP0 (complement-priming chokepoint, per [H05](../hypotheses/H05-daf-scr14-cp0-thesis.md)) as well as the existing CP1-CP6 coverage from uricase + lactoferrin? Or does chaperone-load competition from adding DAF SCR1-4 force it onto a separate strain or onto the [engineered LBP chassis](./engineered-lbp-chassis.md) as a parallel peer track?**
+The question is load-bearing for the platform: **Can the koji endgame strain be a single triple-cassette strain (uricase + lactoferrin + DAF SCR1-4) that closes CP0 (complement-priming chokepoint, per [H05](hypotheses/H05-daf-scr14-cp0-thesis.md)) as well as the existing CP1-CP6 coverage from uricase + lactoferrin? Or does chaperone-load competition from adding DAF SCR1-4 force it onto a separate strain or onto the [engineered LBP chassis](./engineered-lbp-chassis.md) as a parallel peer track?**
 
 All predictions in this section are **Mechanistic Extrapolation** anchored to the verified source numbers in §10.1. No new unverified quantitative claims are introduced.
 
@@ -577,7 +577,7 @@ Pre-commit verification gate ([manual-literature-mining.md](./etc/manual-literat
 
 ### 10.2 Architecture Coefficient Verification Provenance (added 2026-05-06)
 
-Pre-commit verification gate ([manual-literature-mining.md](./etc/manual-literature-mining.md) §"Pre-commit verification gate") applied to all per-architecture folding kinetics claims in §3.5. Sources retrieved and verified via `mcp__plugin_pubmed_PubMed__get_article_metadata` and `mcp__paperclip__paperclip` (search + head commands; never `map` or `reduce` per memory/feedback_paperclip_map_unreliable.md) on 2026-05-06.
+Pre-commit verification gate ([manual-literature-mining.md](./etc/manual-literature-mining.md) §"Pre-commit verification gate") applied to all per-architecture folding kinetics claims in §3.5. Sources retrieved and verified via `mcp__plugin_pubmed_PubMed__get_article_metadata` and `mcp__paperclip__paperclip` (search + head commands; never `map` or `reduce`, which are unreliable) on 2026-05-06.
 
 | Source | Claim verified | Verdict | Source location | Placeholder flags |
 |---|---|---|---|---|

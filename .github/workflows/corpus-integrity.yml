@@ -1,0 +1,38 @@
+name: Corpus integrity
+
+# Server-side backstop for the pre-push hook (.githooks/pre-push). Runs the
+# same two guards on GitHub's runners, so they fire regardless of which tool
+# or clone produced the commit — including pushes from a hookless cloud
+# sandbox, the GitHub API, or `git push --no-verify`. Pair with a branch
+# protection rule on `main` requiring this check to make the guarantee hard.
+#
+#   • check-links.py   — broken relative links in the live corpus
+#   • check-privacy.py — references to private sibling repos / local paths
+#                        (one-way privacy gradient: private → public only)
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      # Both checkers are stdlib-only — no dependencies to install.
+      - name: Check relative links
+        run: python3 scripts/check-links.py --check README.md index.md CLAUDE.md wiki
+
+      - name: Check privacy gradient
+        run: python3 scripts/check-privacy.py --check README.md index.md CLAUDE.md wiki

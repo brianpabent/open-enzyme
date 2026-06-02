@@ -15,7 +15,7 @@ Two parallel outputs of one project:
 The library is the more visible artifact. 
 The discovery engine is the more transferable contribution. 
 
-**Chassis is downstream of chokepoint.** Discovery-engine outputs that hit OE chokepoints but don't fit the koji chassis are not deprioritized — they are tracked as [chassis-pending interventions](../chassis-pending-interventions.md) (e.g., kidney-tropic siRNA against URAT1, engineered LBPs for anaerobic colonization, purine-degrading bacteria via engineered EcN, mRNA-IL-1RA pulse for acute flare, intra-articular uricase + catalase, phage-mediated gut microbiome modulation). Each is a real intervention with a real chokepoint hit; the chassis question is the next step, not the filter. See [`synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md`](../synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md) for the discipline reflection that operationalized this distinction.
+**Chassis is downstream of chokepoint.** Discovery-engine outputs that hit OE chokepoints but don't fit the koji chassis are not deprioritized — they are tracked as [chassis-pending interventions](../chassis-pending-interventions.md) (e.g., kidney-tropic siRNA against URAT1, engineered LBPs for anaerobic colonization, purine-degrading bacteria via engineered EcN, mRNA-IL-1RA pulse for acute flare, intra-articular uricase + catalase, phage-mediated gut microbiome modulation). Each is a real intervention with a real chokepoint hit; the chassis question is the next step, not the filter. See [`synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md`](../../synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md) for the discipline reflection that operationalized this distinction.
 
 **By:** Brian Abent  
 **Date:** April 2026  
@@ -46,7 +46,7 @@ The project began not as a koji proposal but as a question: *what are all the ve
 
 ### 2.1 The chokepoint structure
 
-Gout pathophysiology resolves into a sequence of named chokepoints, each with characterized inputs and downstream consequences. The current map ([`nlrp3-exploit-map.md`](nlrp3-exploit-map.md)) names eleven:
+Gout pathophysiology resolves into a sequence of named chokepoints, each with characterized inputs and downstream consequences. The current map ([`nlrp3-exploit-map.md`](../nlrp3-exploit-map.md)) names eleven:
 
 | Chokepoint | Layer |
 |---|---|
@@ -68,9 +68,9 @@ Every intervention — pharmaceutical, supplement, food, microbial, behavioral �
 
 Mapping FDA-approved drugs onto the chokepoints surfaces compounds that hit a gout chokepoint but were never clinically tested for gout. Concrete examples currently in the wiki:
 
-- **Zileuton** (CP6a 5-LOX inhibitor) — FDA-approved for asthma since 1996. Documented at [`zileuton.md`](zileuton.md).
-- **Disulfiram** (CP6b GSDMD inhibitor) — FDA-approved for alcohol use disorder since 1951. Documented at [`disulfiram.md`](disulfiram.md).
-- **Avacopan** (CP0 C5aR1 antagonist) — FDA-approved for ANCA-associated vasculitis in 2021. Documented at [`complement-c5a-gout.md`](complement-c5a-gout.md).
+- **Zileuton** (CP6a 5-LOX inhibitor) — FDA-approved for asthma since 1996. Documented at [`zileuton.md`](../zileuton.md).
+- **Disulfiram** (CP6b GSDMD inhibitor) — FDA-approved for alcohol use disorder since 1951. Documented at [`disulfiram.md`](../disulfiram.md).
+- **Avacopan** (CP0 C5aR1 antagonist) — FDA-approved for ANCA-associated vasculitis in 2021. Documented at [`complement-c5a-gout.md`](../complement-c5a-gout.md).
 - **DPP-4 inhibitor class** (gliptins — sitagliptin, linagliptin, etc., FDA-approved for type 2 diabetes since 2006) — the ChEMBL cross-check on resveratrol surfaced DPP-4 as resveratrol's most-potent curated direct target ([`etc/chembl-cross-check.md`](chembl-cross-check.md)). DPP-4 is mechanistically relevant to gout via incretin/insulin-axis effects on urate handling and the metabolic-syndrome–gout comorbidity surface. Approved DPP-4 inhibitors are off-target candidates for the same axis; never trialled in gout.
 
 Each has decades (or in the avacopan case, recent regulatory) of human safety data. Each is mechanistically aligned to a gout chokepoint. None has been clinically tested in gout. **None of these candidates require Open Enzyme to build anything** — they are pure discovery-engine output and represent a zero-engineering path to impact, parallel to and independent of the strain library. The methodology surfaces them; the project's contribution is the systematic mapping that identifies them as candidates.
@@ -113,9 +113,9 @@ Every strain can be grown at home with simple equipment — rice, a basic incuba
 >
 > **Reflection trigger:** revisit this section *after* the LBP track's six in silico Phase 2 follow-ups land AND the medicinal mushroom track's Phase 7 follow-ups #3-4 land (extract SOPs + GLPP+cordycepin synergy gate). At that point, decide whether to reframe this section's leading sentence from "Open Enzyme is an open source library of engineered microbial strains [implying koji/yeast]" to "Open Enzyme is an open source research project to solve gout via every available modality, with the engineered koji/yeast strain library as its first and primary output." Naming follows substance — the reframe is conditional on whether the peer tracks accumulate enough rigorous content to justify equal billing.
 >
-> Tracking surfaces for the LBP track's Phase 2/3 work: [`engineered-lbp-chassis.md`](../engineered-lbp-chassis.md) §"Open Follow-Ups", [`open-questions.md`](../open-questions.md) §"Engineered LBP chassis", [`computational-experiments.md`](../computational-experiments.md) (comp-008), [`hypotheses/H02-engineered-lbp-thesis.md`](./hypotheses/H02-engineered-lbp-thesis.md), [`synthesis/`](../synthesis/README.md) "Strategic Reflections Queue".
+> Tracking surfaces for the LBP track's Phase 2/3 work: [`engineered-lbp-chassis.md`](../engineered-lbp-chassis.md) §"Open Follow-Ups", [`open-questions.md`](../open-questions.md) §"Engineered LBP chassis", [`computational-experiments.md`](../computational-experiments.md) (comp-008), [`hypotheses/H02-engineered-lbp-thesis.md`](../hypotheses/H02-engineered-lbp-thesis.md), [`synthesis/`](../../synthesis/README.md) "Strategic Reflections Queue".
 >
-> Tracking surfaces for the medicinal mushroom track's Phase 7 work: [`medicinal-mushroom-complement-track.md`](../medicinal-mushroom-complement-track.md) §"Six Phase 7 follow-ups queued", [`medicinal-mushroom-compound-mapping-computational.md`](../medicinal-mushroom-compound-mapping-computational.md) (comp-014), [`medicinal-mushroom-extract-sops.md`](../medicinal-mushroom-extract-sops.md), [`hypotheses/H06-medicinal-mushroom-complement-track.md`](./hypotheses/H06-medicinal-mushroom-complement-track.md), [`validation-experiments.md` §2.6](../validation-experiments.md).
+> Tracking surfaces for the medicinal mushroom track's Phase 7 work: [`medicinal-mushroom-complement-track.md`](../medicinal-mushroom-complement-track.md) §"Six Phase 7 follow-ups queued", [`medicinal-mushroom-compound-mapping-computational.md`](../medicinal-mushroom-compound-mapping-computational.md) (comp-014), [`medicinal-mushroom-extract-sops.md`](../medicinal-mushroom-extract-sops.md), [`hypotheses/H06-medicinal-mushroom-complement-track.md`](../hypotheses/H06-medicinal-mushroom-complement-track.md), [`validation-experiments.md` §2.6](../validation-experiments.md).
 
 ### The GitHub Analogy
 
@@ -195,7 +195,7 @@ The pattern: well-folded globular proteins with no disordered regions (uricase, 
 
 This is structurally the right framing for two reasons. First, **it's what the protease-stability evidence actually supports** — pretending a single shio-koji condiment carries every payload would require ignoring the comp-005, comp-006, and engineered-koji-protocol §15 results. Second, **it doesn't actually weaken the platform's "democratized home access" thesis** — multiple stable food formats from one strain are still home-fermentable (the user grows the koji once, then takes a portion fresh-as-shio-koji and dries the rest into powder). The economic and operational simplicity of single-strain fermentation is preserved; only the literal "one condiment" framing relaxes.
 
-This reframe was surfaced as a Contradiction in the 2026-05-05 synthesis sweep ([`logs/v4-synthesis-2026-05-05-487fad3.md`](../logs/v4-synthesis-2026-05-05-487fad3.md)) — exactly the kind of multi-level pattern the daemon was designed to find (composing comp-001 + comp-005 + comp-006 + engineered-koji-protocol §15 into a platform-level implication that none of the individual pages had named explicitly).
+This reframe was surfaced as a Contradiction in the 2026-05-05 synthesis sweep ([`logs/v4-synthesis-2026-05-05-487fad3.md`](../../logs/v4-synthesis-2026-05-05-487fad3.md)) — exactly the kind of multi-level pattern the daemon was designed to find (composing comp-001 + comp-005 + comp-006 + engineered-koji-protocol §15 into a platform-level implication that none of the individual pages had named explicitly).
 
 ---
 
@@ -357,7 +357,7 @@ NLRP3 inflammasome suppression stack spanning the 7-chokepoint exploit map (CP0 
 
 Full risk-tier stratification (four tiers by genotype + androgen status + dose) in [`abcg2-modulators.md`](../abcg2-modulators.md) §"The supplements-stack contradiction" and [`supplements-stack.md`](../supplements-stack.md) §"Stack-level contradictions." The counter-strategy: sulforaphane (broccoli sprouts) and fermentable fiber → butyrate actively *induce* ABCG2 through separate pathways and should be prioritized in androgen-dominant or Q141K-positive protocols. Surfaced as Contradiction #1 in the 2026-05-05 synthesis sweep.
 
-**Platform positioning — pathway modulator, not direct-inhibitor knockoff.** Open Enzyme is a **food-derived, multi-target NLRP3 pathway modulator** platform — not an attempt to produce a food-grade analog of the direct NLRP3 inhibitor class (MCC950, dapansutrile, oridonin). The distinction matters: pharma has tested direct inhibitors in gout and the class has largely stalled (MCC950 hepatotoxicity halt, dapansutrile no Phase 2b/3 post-2a). The only curated direct-human-NLRP3 IC50 values in ChEMBL are dapansutrile (1 μM), oridonin (5.18 μM), and curcumin (24.2 μM). Pharma's only post-2010 gout win at the inflammasome cascade is canakinumab at CP5a (IL-1β receptor blockade, FDA-approved Aug 2023). The Open Enzyme stack is overwhelmingly pathway modulators — hitting upstream priming (CP1a/CP1b), K⁺ efflux (CP2), active resolution (CP5b), and neutrophil amplification (CP6a) — chokepoints that pharma has not rigorously tested in gout. Multi-target pathway modulators hitting redundant nodes can plausibly produce meaningful IL-1β suppression through cumulative effect, even if no single compound matches pharma-grade potency at a single target. This is a more honest and more defensible positioning than "supplement-grade version of MCC950." (source: [nlrp3-inhibitor-screen.md](../nlrp3-inhibitor-screen.md), [nlrp3-exploit-map.md](../nlrp3-exploit-map.md), [gout-clinical-pipeline.md](../gout-clinical-pipeline.md), [chembl-cross-check.md](./etc/chembl-cross-check.md))
+**Platform positioning — pathway modulator, not direct-inhibitor knockoff.** Open Enzyme is a **food-derived, multi-target NLRP3 pathway modulator** platform — not an attempt to produce a food-grade analog of the direct NLRP3 inhibitor class (MCC950, dapansutrile, oridonin). The distinction matters: pharma has tested direct inhibitors in gout and the class has largely stalled (MCC950 hepatotoxicity halt, dapansutrile no Phase 2b/3 post-2a). The only curated direct-human-NLRP3 IC50 values in ChEMBL are dapansutrile (1 μM), oridonin (5.18 μM), and curcumin (24.2 μM). Pharma's only post-2010 gout win at the inflammasome cascade is canakinumab at CP5a (IL-1β receptor blockade, FDA-approved Aug 2023). The Open Enzyme stack is overwhelmingly pathway modulators — hitting upstream priming (CP1a/CP1b), K⁺ efflux (CP2), active resolution (CP5b), and neutrophil amplification (CP6a) — chokepoints that pharma has not rigorously tested in gout. Multi-target pathway modulators hitting redundant nodes can plausibly produce meaningful IL-1β suppression through cumulative effect, even if no single compound matches pharma-grade potency at a single target. This is a more honest and more defensible positioning than "supplement-grade version of MCC950." (source: [nlrp3-inhibitor-screen.md](../nlrp3-inhibitor-screen.md), [nlrp3-exploit-map.md](../nlrp3-exploit-map.md), [gout-clinical-pipeline.md](../gout-clinical-pipeline.md), [chembl-cross-check.md](./chembl-cross-check.md))
 
 ### Heal the Damage
 
@@ -441,25 +441,25 @@ Open Enzyme operates in an active research neighborhood. The following are progr
 
 The following research documents form the evidence base and technical foundation for the Open Enzyme project. Each was produced as a deep-dive into a specific aspect of the problem:
 
-1. **[Gout: A Deep Dive — State of the Art, Frontier Research, and Unconventional Angles](gout-deep-dive.md)**  
+1. **[Gout: A Deep Dive — State of the Art, Frontier Research, and Unconventional Angles](../gout-deep-dive.md)**  
    Comprehensive survey of gout pathophysiology, current treatments, and emerging therapeutic approaches including uricase gene therapy and gut-based strategies.
 
-2. **[The Enzyme Deficit Connection — Gout, Digestion & the Koji Frontier](enzyme-deficit-deep-dive.md)**  
+2. **[The Enzyme Deficit Connection — Gout, Digestion & the Koji Frontier](../enzyme-deficit-deep-dive.md)**  
    Mapped the link between Brian's uricase deficit and a co-occurring digestive enzyme insufficiency in a family member. Identified koji as a dual-purpose therapeutic platform and crystallized the Open Enzyme concept.
 
-3. **[Engineering S. cerevisiae for Oral Uricase Delivery — A Research Proposal](engineered-yeast-uricase-proposal.md)**  
+3. **[Engineering S. cerevisiae for Oral Uricase Delivery — A Research Proposal](../engineered-yeast-uricase-proposal.md)**  
    Detailed technical proposal for the uricase yeast strain: gene construct design, expression strategy, transformation protocol, and in vitro/in vivo validation plan.
 
-4. **[Project Koji — Engineering A. oryzae for Dual Enzyme Therapy](engineered-koji-protocol.md)**  
+4. **[Project Koji — Engineering A. oryzae for Dual Enzyme Therapy](../engineered-koji-protocol.md)**  
    Full protocol for engineering koji to produce both digestive enzymes (native) and uricase (heterologous). Covers transformation, fermentation, and dosing for a rice-based therapeutic food.
 
-5. **[NLRP3 Exploit Map — Pen-Testing the Inflammatory Cascade](nlrp3-exploit-map.md)**  
+5. **[NLRP3 Exploit Map — Pen-Testing the Inflammatory Cascade](../nlrp3-exploit-map.md)**  
    Systematic analysis of every intervention point in the NLRP3 inflammasome pathway. Identified a multi-compound suppression stack (BHB, oridonin, sulforaphane, KPV) targeting priming, assembly, and effector stages.
 
-6. **[Pen-Testing the Gut-Blood Barrier — Every Route to Systemic Uricase](blood-barrier-exploits.md)**  
+6. **[Pen-Testing the Gut-Blood Barrier — Every Route to Systemic Uricase](../blood-barrier-exploits.md)**  
    Evaluated every possible route for getting uricase from gut to bloodstream. Concluded that gut-lumen degradation (not systemic absorption) is the most viable and safest strategy.
 
-7. **[Peptides & Gout: A Research Addendum](peptide-gout-addendum.md)**  
+7. **[Peptides & Gout: A Research Addendum](../peptide-gout-addendum.md)**  
    Deep dive into BPC-157, TB-500, and KPV for gout-related tissue repair and inflammation control. Established the "heal the damage" arm of the multi-attack strategy.
 
 8. **[AI & Bio Tools Playbook](ai-bio-tools-playbook.md)**  

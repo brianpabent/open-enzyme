@@ -14,6 +14,24 @@ This log is **public** (operations/ folder is in the public repo) — same postu
 
 ---
 
+## 2026-06-02 — Reactome replied: Open Enzyme's first pathway-curation contribution is in curator review
+
+**What happened.** Brian sent Reactome a narrowly scoped contribution note proposing three literature-supported regulatory annotations for the NLRP3 inflammasome pathway: oridonin, tranilast, and beta-hydroxybutyrate / 3-hydroxybutyrate. The note deliberately excluded several things the first sloppy pass had overclaimed, because the Reactome audit showed they were already modeled: disulfiram/GSDMD, avacopan/C5AR1, anakinra/IL1R1, colchicine/tubulin, complement core machinery, IL-1 signaling, and pyroptosis.
+
+Reactome responded positively the next day. They acknowledged the curation suggestions, routed the submission to a domain curator for detailed review, indicated that contribution credit can be provided if the update proceeds, and asked for the Open Enzyme project link for possible inclusion in Reactome's Resource Guide. Brian replied with the public GitHub repository: <https://github.com/brianpabent/open-enzyme>.
+
+**Why this matters.** This is a small but real open-science feedback loop. Open Enzyme used Reactome as open infrastructure, found a few carefully bounded candidate improvements while doing its own research, and sent those improvements back to the maintainers instead of keeping them as private project context. That is the healthiest version of the project thesis: use open resources, audit them carefully, avoid fake novelty claims, and contribute back where the evidence is strong enough.
+
+The most important part is not "we found missing biology." The important part is **the narrowing discipline**. Antigravity's original draft implied a much larger Reactome gap and included overconfident claims. The audit corrected that into a three-item contribution packet with primary citations, target Reactome event IDs, and explicit caveats about representation. The contribution got better precisely because the project did not treat a no-hit search as proof of absence.
+
+**What's still open / what could kill this.** Reactome's curator may decide one or more candidates are not appropriate for Reactome's data model, may prefer summation annotations instead of regulation edges, may require different chemical entities, or may already have pending internal work on these items. BHB is especially representation-sensitive because the source paper supports an immune-regulatory effect, but not a clean direct-binding event like oridonin or tranilast. ABCG2 intestinal urate efflux remains a separate possible contribution, but it was correctly held out of this first NLRP3 submission until a primary-source packet can be built.
+
+**External-comms angle.** Good short post material after Reactome's curator review lands: "Open-source science is not just publishing your own work; it is sending improvements upstream to the databases you depend on." The honest caveat is the angle: the first AI-generated dossier was too broad, the corrected audit narrowed it, and the upstream maintainers are now looking at the evidence.
+
+**Mutual-audit invitation.** Open Enzyme is public for the same reason Reactome is useful: other people should be able to inspect the evidence, find our mistakes, and make the work better. The same verification discipline we used before contacting Reactome applies to anyone auditing us. If a Reactome curator, gout biologist, pathway curator, or downstream reader finds a wrong PMID, inflated evidence tier, over-narrow pathway mapping, or missing limitation in our corpus, we hope they tell us. That is the open-source loop we want to participate in, not just benefit from.
+
+---
+
 ## 2026-05-20 — The substrate question came in as "add a tracking column to inventory." The first-principles version was a 10× engineering lever hiding inside it.
 
 **What happened.** Walking through the 2026-05-19 synthesis queue, I hit an item proposing that the mushroom-extract inventory grow a new column distinguishing *substrate-accumulated* compounds from *biosynthesized* ones. The motivating concern was real: if a "Cordyceps militaris ethanol extract" gets some of its compound content from the brown rice substrate it was grown on rather than from the fungus itself, lot-to-lot variability and cross-batch comparability suffer. Pass 2 had framed it as a documentation-discipline finding. Pass 3 had confirmed it as documentation discipline. The verdict sitting on the queue item was, effectively, *"track this carefully, well-flagged, useful operational hygiene."*

@@ -295,6 +295,6 @@ Each of these is currently called out as "lab-measurable but not yet done" in on
 
 ## 13. Status
 
-Protocol is **drafted, not yet field-tested in this repo's household run.** The first-run Tier 3 calibration is queued; estimated cost ~$200–400 in reagents at a community-college bench, single-day session. Linked to the [Ward 1995 lab-access global landscape](./ward-1995-lab-access-global.md) work — when the §1.9 dual-cassette feasibility-test partner is identified, the Tier 3 first-run is a low-risk warm-up assay that builds the relationship without committing the partner to the engineered work.
+Protocol is **drafted, not yet field-tested in this repo's household run.** The first-run Tier 3 calibration is queued; estimated cost ~$200–400 in reagents at a community-college bench, single-day session. Linked to the [Ward 1995 lab-access global landscape](../operations/ward-1995-lab-access.md) work — when the §1.9 dual-cassette feasibility-test partner is identified, the Tier 3 first-run is a low-risk warm-up assay that builds the relationship without committing the partner to the engineered work.
 
 (Evidence level for this page: **Mechanistic Extrapolation** for the assay-tier mappings, calibration logic, and interpretive bands. **In Vitro / Methods** for the named canonical assay protocols (Bernfeld 1955, Charney & Tomarelli 1947, Winkler & Stuckmann 1979) and USP unit definitions (General Chapter <1601>). No Clinical Trial or Animal Model claims are made on this page.)

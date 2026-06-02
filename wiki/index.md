@@ -4,9 +4,15 @@ title: Open Enzyme
 
 # Open Enzyme
 
-An open source library of food-grade engineered microbial strains — each producing a therapeutic enzyme, each growable at home, each freely available to anyone.
+An open source effort to disrupt the gout / NLRP3 / urate-disposal cascade — mapping every chokepoint in the disease and finding the right intervention for each, then building the ones that can be made food-grade and grown at home.
 
 **Status:** Phase 0 — Research & Design
+
+---
+
+> **Have gout? Want to know what to do?**
+> → Start with the [Gout Action Guide](gout-action-guide.md) — organized by situation (today / this month / this year), it translates the research below into action.
+> → Prefer a patient-friendly companion site? [**gout.care**](https://gout.care) is the plain-language translation of this research, written for people living with gout rather than the PhD-research audience.
 
 ---
 
@@ -14,45 +20,33 @@ An open source library of food-grade engineered microbial strains — each produ
 
 The human body is missing an enzyme. *Urate oxidase* (uricase) was lost ~15 million years ago in the primate lineage. Every other mammal degrades uric acid to allantoin; we accumulate it. The result: gout, kidney stones, and chronic inflammation — affecting ~10 million Americans.
 
-The standard fix (allopurinol) reduces production. We're engineering a complementary approach: gut-lumen degradation via an enzyme-producing probiotic strain that never needs to be absorbed.
+The standard fix (allopurinol) reduces production. We're mapping the *entire* cascade — production, renal and gut handling, crystal formation, and the NLRP3-driven inflammation that follows — and matching each chokepoint to the cheapest intervention that hits it, whether engineered, repurposed, dietary, or behavioral.
 
 ---
 
 ## Platform Thesis
 
-One engineered *Aspergillus oryzae* koji strain expressing uricase + NLRP3 inhibitors, fermented on rice bran, positioned as an adjunct to allopurinol — not a monotherapy replacement.
+**The mission is the chokepoint map; the strain library is one output of it.** We map every vector that causes, treats, or mitigates gout, then build interventions chokepoint-by-chokepoint. Chassis is downstream of chokepoint — no single organism reaches every target.
 
-**Why koji?** *A. oryzae* is GRAS, natively secretes enzymes at high titer, survives GI transit in solid-substrate form, and already co-produces NLRP3-suppressing compounds (kojic acid, 3–5 g/L natively) as a byproduct of fermentation. The platform is **koji-first**: *A. oryzae* is the primary host, with *S. cerevisiae* retained for specific modules where yeast expression is better characterized. (source: etc/open-enzyme-vision.md, §4)
+**Highest-priority chassis: engineered koji.** One engineered *Aspergillus oryzae* strain expressing uricase plus a multi-cassette payload (carnosine, lactoferrin, DAF SCR1-4 in the endgame), fermented on rice bran, positioned as an *adjunct to allopurinol* — not a monotherapy replacement.
+
+**Why koji?** *A. oryzae* is GRAS, natively secretes enzymes at high titer, survives GI transit in solid-substrate form, harmoniously hits multiple chokepoints in one strain, and is home-fermentable — which matches the open-source, democratized-access positioning. It also co-produces NLRP3-suppressing compounds (kojic acid, 3–5 g/L natively) as a fermentation byproduct. (source: etc/open-enzyme-vision.md, §4)
 
 **Why gut-lumen?** ~1/3 of uric acid is secreted into the gut via ABCG2. Degrading it there doesn't require systemic absorption — the enzyme never needs to cross the intestinal wall. ALLN-346 (Allena Pharmaceuticals) proved this concept clinically.
 
-**Two parallel outputs:** The strain library is one synthesis from a broader **discovery engine** — a chokepoint-based methodology for mapping every vector that causes, treats, or mitigates a given disease. The discovery engine also produces a repurposing surface: FDA-approved drugs that hit relevant chokepoints but were never clinically tested for the target disease (e.g., zileuton at CP6a, disulfiram at CP6b, avacopan at CP0). (source: etc/open-enzyme-vision.md, §2)
+**Beyond koji.** Chokepoints koji can't reach — renal URAT1, kidney macrophages, intra-articular crystals, the acute flare window — are pursued through other chassis (kidney-tropic siRNA, engineered live biotherapeutics, purine-degrading bacteria, mRNA-IL-1RA pulse, intra-articular uricase, phage modulation), tracked in [Chassis-Pending Interventions](chassis-pending-interventions.md). The discovery engine also surfaces a **repurposing surface**: FDA-approved drugs that hit relevant chokepoints but were never clinically tested for gout (e.g., zileuton at CP6a, disulfiram at CP6b, avacopan at CP0). (source: etc/open-enzyme-vision.md, §1–2)
 
-**Platform positioning:** Open Enzyme is a **food-derived, multi-target NLRP3 pathway modulator** platform — not an attempt to produce a food-grade analog of the direct NLRP3 inhibitor class (MCC950, dapansutrile, oridonin). (source: etc/open-enzyme-vision.md, §10)
+**Koji-track positioning:** within the koji chassis specifically, Open Enzyme is a **food-derived, multi-target NLRP3 pathway modulator** — not an attempt to make a food-grade analog of the direct NLRP3 inhibitor class (MCC950, dapansutrile, oridonin). (source: etc/open-enzyme-vision.md, §10)
 
 ---
 
 ## First Targets
 
-| Target | Condition | Platform | Status |
-|--------|-----------|----------|--------|
-| Uricase | Gout / hyperuricemia | *S. cerevisiae* or *A. oryzae* | Design phase |
+| Target | Condition | Chassis | Status |
+|--------|-----------|---------|--------|
+| Uricase | Gout / hyperuricemia | *A. oryzae* koji (primary); *S. cerevisiae* for characterized modules | Design phase |
+| Carnosine + lactoferrin + DAF SCR1-4 | NLRP3 / complement priming, urate handling | *A. oryzae* co-expression (multi-cassette endgame) | Design phase |
 | Lipase + protease + amylase | EPI (exocrine pancreatic insufficiency) | *A. oryzae* koji | Design phase |
-| NLRP3 inhibitors | Gout flare suppression | *A. oryzae* co-production | Design phase |
-
----
-
-## New This Week (2026-05-17)
-
-This sweep propagated three clinical-surface findings from trigger files into the research wiki:
-
-**BHB active-flare contraindication** propagated to `nlrp3-exploit-map.md` — the "ketosis paradox resolved" framing (BHB suppresses NLRP3 while uricase handles UA) is correct for prophylaxis, but BHB/ketosis is NOT a rescue intervention during active flare. Transient ketotic UA rise of 5–10% can compound the flare. Suspend ketosis + intermittent fasting during active flares; resume after 1–2 weeks. (source: gout-action-guide.md)
-
-**Anakinra SC for acute gout flare** propagated to `nlrp3-exploit-map.md` CP5a section and `colchicine.md` comparison table — 100 mg/day × 3 days SC in thigh/abdomen off-label for gout. Same IL-1R1 chokepoint as canakinumab but ~100× cheaper (~$900/flare) with cleaner cumulative burden vs prednisone over decades of recurrent flares. Faster onset than prednisone, narrower mechanism, none of the bone/glucose/adrenal/mood effects. (source: gout-action-guide.md, gout-clinical-pipeline.md)
-
-**Topical CBD+THC acute-flare protocol** propagated to `nlrp3-exploit-map.md`, `supplements-stack.md`, and `GRAPH.md` — 1:1 CBD:THC (high-mg/oz) applied to affected joint + ice cycling. CB2-mediated NLRP3 suppression + TRPV1 desensitization. For recurrent-flare patients with cumulative steroid burden, may reduce prednisone need. Jurisdiction-dependent. (source: cannabinoids-terpenes.md, gout-action-guide.md)
-
-**Plasmidsaurus QC pipeline** and **consumer SNP data-quality gap** already well cross-referenced in `validation-experiments.md`, `personal-genome-protocol.md`, and `genotype-informed-supplement-workflow.md` — no propagation needed. (source: engineered-koji-protocol.md, gout-action-guide.md)
 
 ---
 
@@ -77,7 +71,7 @@ This sweep propagated three clinical-surface findings from trigger files into th
 
 ## Latest Synthesis
 
-The [Synthesis Queue](../synthesis/README.md) captures cross-document connections, proposed experiments, and open questions. Updated by the sweep daemon as new research lands. Cheapest validated experiments are prioritized first.
+Research lands continuously: a multi-pass sweep daemon propagates each new finding across every cross-referenced page and emits cross-document connections, contradictions, proposed experiments, and open questions. The live action queue (one file per finding) lives in the [synthesis queue on GitHub](https://github.com/brianpabent/open-enzyme/tree/main/synthesis). Cheapest validated experiments are prioritized first.
 
 ---
 

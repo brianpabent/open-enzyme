@@ -1,7 +1,7 @@
 ---
 title: Reactome NLRP3 Email To Send
 date: 2026-06-01
-status: ready-to-send
+status: sent
 tags: [reactome, nlrp3, contribution, email]
 ---
 
@@ -38,3 +38,7 @@ Brian Abent
 ## Optional Supporting Detail
 
 Attach or paste: [`reactome-nlrp3-supporting-detail-2026-06-01.md`](./reactome-nlrp3-supporting-detail-2026-06-01.md)
+
+## Outcome
+
+Sent 2026-06-02. Reactome acknowledged receipt, routed the proposal to a curator for detailed review, indicated that contribution credit can be provided if the curation proceeds, and asked for the Open Enzyme project link for possible inclusion in Reactome's Resource Guide. Brian replied with the public repo link: <https://github.com/brianpabent/open-enzyme>.

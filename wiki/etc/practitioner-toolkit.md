@@ -59,7 +59,7 @@ Methodology that applies to **all** research modes — wet-lab, computational, l
 - **Evidence-level discipline applies.** Every personal-protocol claim gets the standard wiki tagging (Clinical Trial / Animal Model / In Vitro / Mechanistic Extrapolation). n=1 is its own evidence level — useful for personal-protocol decisions, weak for population claims.
 - **Privacy-by-default.** Self-experiment data is private unless explicitly published. Genetic data in particular is governed by the privacy gradient in [`personal-genome-protocol.md`](../personal-genome-protocol.md).
 - **Project crossover where applicable.** Several self-experiment / DIY-bio capabilities (sequencing, fermentation, enzyme assays) double as Open Enzyme platform infrastructure. Pages flag this crossover explicitly.
-- **Pre-commit grep-verify gate** ([CLAUDE.md §4](../CLAUDE.md)) applies to load-bearing numbers in all three sub-buckets equally.
+- **Pre-commit grep-verify gate** ([CLAUDE.md §4](../../CLAUDE.md)) applies to load-bearing numbers in all three sub-buckets equally.
 
 ## Open questions
 

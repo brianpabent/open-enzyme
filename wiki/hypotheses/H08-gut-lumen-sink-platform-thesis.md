@@ -96,7 +96,7 @@ Anticipated highest-priority killshots, ranked roughly by leverage:
 
 - **Lit scan: post-ALLN-346 oral-uricase Phase 2 typical-gout efficacy.** Has any program reported a typical-gout Phase 2 readout since ALLN-346 termination? If yes, that's a strong external prior on H08. Cheapest possible upstream move.
 - **Re-analysis of ALLN-346 Study 202 publicly available cohort-level data.** No published uricase trial has stratified by ABCG2 Q141K. A retrospective genotype-stratified re-analysis of Study 202 (if obtainable via FOIA / sponsor request / published supplementary data) would be a low-cost, high-info killshot — does the WT/WT subset show the largest effect, as comp-019 predicts? If the genotype-stratified pattern matches comp-019, H08 strengthens dramatically; if it doesn't, H08's flux-model translation is wrong.
-- **n=1 self-experiment.** See [`self-experiment-protocol.md`](../self-experiment-protocol.md) and the FEUA protocol in [`memory/project_feua_at_ua_retest.md`](../../../memory/project_feua_at_ua_retest.md). Brian's own serum UA + spot urinary FEUA at baseline / mid / post a koji-engineered uricase strain delivery, decomposing renal (URAT1) vs. intestinal (ABCG2) compartments. Tier 4 in the validation-experiments hierarchy; gives directional signal without a Phase 2b cohort.
+- **n=1 self-experiment.** See [`self-experiment-protocol.md`](../self-experiment-protocol.md) and the FEUA protocol. Brian's own serum UA + spot urinary FEUA at baseline / mid / post a koji-engineered uricase strain delivery, decomposing renal (URAT1) vs. intestinal (ABCG2) compartments. Tier 4 in the validation-experiments hierarchy; gives directional signal without a Phase 2b cohort.
 - **Recombinant rasburicase oral-delivery N=1 pilot.** Lower-cost upstream test — does any oral-delivered uricase produce the predicted SUA drop in a typical-gout subject? Decouples the OE strain delivery question from the mechanism question. If the mechanism fails with an off-the-shelf enzyme, H08 dies before strain engineering matters.
 - **Phase 2b RCT, typical-gout cohort with Q141K + Q126* stratification.** The gold standard. comp-019's RCT design recommendation: typical-gout cohort, 25 mg/day, stratification not enrichment, single-dose, pre-stratify by CKD stage. Definitive killshot; highest cost.
 - **In vivo ileal/colonic urate concentration measurement post-OE-strain delivery (humanized microbiome model or human pilot).** Tests whether the strain actually delivers functional uricase to the secretion-rich segment. If luminal urate doesn't drop measurably, the platform thesis fails upstream of SUA outcomes.
@@ -149,7 +149,7 @@ To be populated. Anticipated relevant failure modes from [linter-design.md](../l
 | P2-4 | Populate full killshot menu with score-ranking per linter-design.md §4–5 | Inline upgrade | Queued |
 | P2-5 | Populate pre-committed thresholds + kill switches | Inline upgrade (requires P2-1, P2-2 results to anchor magnitudes) | Queued |
 | P2-6 | Failure-mode coverage map (lint cross-check against linter-design.md §5) | Inline upgrade | Queued |
-| P2-7 | n=1 self-experiment design integration with FEUA protocol per `memory/project_feua_at_ua_retest.md` | Cross-link to `self-experiment-protocol.md` | Queued |
+| P2-7 | n=1 self-experiment design integration with FEUA protocol | Cross-link to `self-experiment-protocol.md` | Queued |
 
 Tracked across the 6 follow-up surfaces per the walk-synthesis skill §5:
 1. This page's "Open Follow-Ups" section (above)

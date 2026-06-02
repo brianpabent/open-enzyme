@@ -235,7 +235,7 @@ Plausibly testable hypothesis for the project: **engineered-koji prophylaxis on 
 - Clinical pipeline comparator: [`gout-clinical-pipeline.md`](gout-clinical-pipeline.md)
 - Platform thesis: [`open-enzyme-vision.md`](etc/open-enzyme-vision.md), [`engineered-koji-protocol.md`](engineered-koji-protocol.md)
 - **Compounding pharmacy delivery route:** [`compounding-pharmacy-track.md`](compounding-pharmacy-track.md) — colchicine is a candidate for custom-dose compounding (pediatric/weight-based doses, liquid suspensions, fixed-dose combinations with allopurinol). (source: compounding-pharmacy-track.md)
-- Concept graph node: [`etc/GRAPH.md`](GRAPH.md) — should add edge `colchicine → CP3 (ASC speck block)` and `colchicine → CP2 (P2X7 inhibition)`
+- Concept graph node: [`etc/GRAPH.md`](etc/GRAPH.md) — should add edge `colchicine → CP3 (ASC speck block)` and `colchicine → CP2 (P2X7 inhibition)`
 
 ## 10. References
 

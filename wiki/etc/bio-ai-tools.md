@@ -842,7 +842,7 @@ The paper's Section 2.3 + Supplementary G formally decompose agent failures into
 
 Per-model dominance (guided mode, all 76 tasks): **DeepSeek V3 and GPT-5 dominated by tool gap; Gemini 2.5 Pro dominated by science gap** across all molecular subjects.
 
-This empirically grounds the GAP tag pilot wired into OE's Pass 3 prompts on 2026-05-15. Operational definitions, pilot scope, promote/abandon gates: [`scripts/SWEEP-ARCHITECTURE.md` §"Pilot — Tool-Gap vs. Science-Gap Disagreement Attribution"](../scripts/SWEEP-ARCHITECTURE.md).
+This empirically grounds the GAP tag pilot wired into OE's Pass 3 prompts on 2026-05-15. Operational definitions, pilot scope, promote/abandon gates: [`scripts/SWEEP-ARCHITECTURE.md` §"Pilot — Tool-Gap vs. Science-Gap Disagreement Attribution"](../../scripts/SWEEP-ARCHITECTURE.md).
 
 ### Task taxonomy (76 tasks, 5×2 matrix)
 
@@ -891,19 +891,19 @@ The protein-design-mcp package is **directly deployable** — OE could mount it 
 | Status | Tools | Why disabled |
 |---|---|---|
 | **Active (CPU)** | `predict_structure`, `predict_complex`, `score_stability`, `energy_minimize`, `analyze_interface`, `validate_design`, `suggest_hotspots`, `get_design_status`, `design_sequence` / `optimize_sequence` (CPU-slow but functional via ProteinMPNN) | — |
-| **GPU-required** | `design_binder`, `design_fold`, `generate_backbone` (RFdiffusion-backed) | No NVIDIA GPU on Mac. Apple Silicon MPS port spec'd in `abent-family-health/brian/open-enzyme-backlog.md` (A4 task) |
+| **GPU-required** | `design_binder`, `design_fold`, `generate_backbone` (RFdiffusion-backed) | No NVIDIA GPU on Mac. Apple Silicon MPS port backlogged (A4 task, see below) |
 | **Active (CPU) — PyRosetta** ✅ | `rosetta_score`, `rosetta_relax`, `rosetta_interface_score`, `rosetta_design` | **UNBLOCKED 2026-05-29.** UW updated its academic Rosetta/PyRosetta licensing (CoMotion notice, K. Brede); PyRosetta is now a credential-free non-commercial pip install under the Rosetta & PyRosetta Software Non-Commercial License Agreement. Installed `pyrosetta 2026.3` (cp313, macOS arm64) via `pip install pyrosetta --find-links https://west.rosettacommons.org/pyrosetta/quarterly/release`; end-to-end `rosetta_score` (ref2015) verified through `PyRosettaRunner`. **Commercial use still requires a separate paid UW license** — relevant only if OE ever commercializes (Phase 0 research qualifies as non-commercial today). |
 | **Boltz-2-required** | `predict_structure_boltz`, `predict_affinity_boltz` | Boltz-2 requires isolated torch venv (conflicts with RFdiffusion torch==2.0.1); not installed. Defer until either RFdiffusion port lands or separate venv setup |
 
 **Deployment decisions captured:**
 - **A1 (CPU-mode local install)** — done 2026-05-15. Covers DAF SCR1-4 + lactoferrin redesign without RFdiffusion. ProteinMPNN slow on CPU but functional. **Caveat surfaced by comp-034 (2026-05-16):** the `protein_design_mcp` package loads correctly but `design_sequence` / `optimize_sequence` shell out to external ProteinMPNN scripts at `$PROTEINMPNN_PATH` (default `/opt/ProteinMPNN`), which were **not present** at run time — the auto-mode classifier blocked the upstream `git clone` during comp-034's first real use. comp-034 worked around this with a transparent substitute sampler (RNG-seeded, documented in `./experiments/comp-034-lactoferrin-linker-redesign/inputs/provenance.md`) and produced a valid candidate shortlist, but **a single-command genuine-ProteinMPNN rerun is recommended before any comp-034 candidate identity gets committed to wet-lab gene-synthesis spend.** Unblock: clone `https://github.com/dauparas/ProteinMPNN` into `/opt/ProteinMPNN` (or set `$PROTEINMPNN_PATH` to a different writable path) — ~5-min dependency install when whoever next does protein design has unblocked auto-mode permissions or runs the clone manually.
 - **A2 (Modal cloud GPU)** — not pursued. Fallback option if RFdiffusion becomes load-bearing before A4 lands.
-- **A4 (Apple Silicon MPS port)** — backlogged at [`abent-family-health/brian/open-enzyme-backlog.md`](../../abent-family-health/brian/open-enzyme-backlog.md) §"Next up → In-silico." YaoYinYing's fork has a working MPS branch (~13 min/design vs. ~30–60s on NVIDIA); SE3-Transformer NVTX/DGL surgery + Mac-native build. Spec session planned for tonight or tomorrow.
+- **A4 (Apple Silicon MPS port)** — backlogged. YaoYinYing's fork has a working MPS branch (~13 min/design vs. ~30–60s on NVIDIA); SE3-Transformer NVTX/DGL surgery + Mac-native build.
 - **A5 (PyRosetta unblock)** — done 2026-05-29. The 2026-04-01 UW export-control hold on academic PyRosetta licensing was resolved by UW CoMotion's academic-license update (K. Brede notice). `pyrosetta 2026.3` (cp313, macOS arm64, 1.53 GB wheel) installed credential-free from the RosettaCommons west mirror; `import pyrosetta` + end-to-end `rosetta_score` (ref2015) through `PyRosettaRunner` both verified. The four `rosetta_*` physics-scoring tools are now the energy-scoring leg of the N-of-M concordance gate ([comp-034 lactoferrin linker](../lactoferrin-linker-redesign-computational.md), uricase ΔΔG via comp-002 follow-up, DAF SCR1-4). Commercial-license caveat noted in the tool table.
 
 **Ghcr.io Docker image pull failed during setup** with `unauthorized` error (the public image at `ghcr.io/jasonkim8652/protein-design-mcp:latest` is apparently access-gated). Local Python path used instead. If Modal cloud deployment becomes the right move (A2), the Modal proxy entry point is `protein-design-mcp-modal`.
 
-(Source: Kim & Romero 2026, bioRxiv 10.64898/2026.05.06.723381; verified against full PDF at `/private/tmp/claude-501/biodesignbench.txt`, 2026-05-15. Original "Cloudflare blocked direct fetch 2026-05-12" PRIMARY-SOURCE-PENDING flag was lifted via Brian-provided local PDF copy + pdftotext extraction; the structural failure mode was treating a single failed fetch attempt as a durable gate without trying alternative tools — see [`memory/feedback_dont_treat_single_failed_fetch_as_durable_gate.md`](../../../.claude/projects/-Users-brianabent-Documents-Claude-Projects-abent/memory/feedback_dont_treat_single_failed_fetch_as_durable_gate.md).)
+(Source: Kim & Romero 2026, bioRxiv 10.64898/2026.05.06.723381; verified against the full PDF, 2026-05-15.)
 
 ---
 

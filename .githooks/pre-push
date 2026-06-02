@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+#
+# .githooks/pre-push — block a push that would ship broken relative links.
+#
+# Motivated by the 2026-06-02 audit: the wiki/ → wiki/etc/ and
+# operations/ reorgs silently rotted ~45 cross-references (and the public
+# README's front-door links) because nothing validated link integrity. The
+# sweep daemon checks content, not links. This hook closes that gap before
+# the push leaves the machine.
+#
+# Scope: the live, published corpus + front-door files. Historical logs,
+# experiment archives, and worktrees are intentionally excluded (see
+# scripts/check-links.py SKIP_DIRS).
+#
+# On broken links: exit 1 with the offending list and the one command that
+# fixes them. Run `scripts/install-hooks.sh` once after cloning to activate.
+
+set -euo pipefail
+
+ROOT=$(git rev-parse --show-toplevel)
+cd "$ROOT"
+
+if ! command -v python3 >/dev/null 2>&1; then
+  echo "pre-push: python3 not found; skipping link check." >&2
+  exit 0
+fi
+
+SCOPE="README.md index.md CLAUDE.md wiki"
+fail=0
+
+if ! python3 scripts/check-links.py --check $SCOPE; then
+  cat >&2 <<'EOF'
+
+✗ pre-push hook (link integrity)
+
+The push was blocked because the live corpus contains broken relative
+links (listed above). These rot most often after a file move/rename.
+
+Fix, then commit, then push again:
+    python3 scripts/fix-links.py --write README.md index.md CLAUDE.md wiki
+    python3 scripts/check-links.py --check README.md index.md CLAUDE.md wiki
+    git add -A && git commit
+
+fix-links.py only rewrites links that resolve to a real in-repo file and
+never resolves a link escaping into a private sibling repo — anything it
+reports UNFIXABLE needs a human (often a genuine rename or a privacy fix).
+EOF
+  fail=1
+fi
+
+if ! python3 scripts/check-privacy.py --check $SCOPE; then
+  cat >&2 <<'EOF'
+
+✗ pre-push hook (privacy gradient)
+
+The push was blocked because the public corpus references a private
+sibling repo or a local-machine path (listed above). The umbrella privacy
+gradient is one-way: private → public, NEVER the reverse.
+
+  • escapes-repo  — a link pointing outside this repo's tree. Repoint it
+                    inside the repo, or drop the link.
+  • private-repo  — names a private sibling (abent-family*, alma*, wraith,
+                    abent-somm, heads-up, daep-site, gout-care). Remove it.
+  • local-path    — a /Users, /private/tmp, .claude/projects, or Claude
+                    memory path. Strip it from the published page.
+
+Edit the offending lines, commit, and push again.
+EOF
+  fail=1
+fi
+
+if [[ "$fail" -ne 0 ]]; then
+  echo "" >&2
+  echo "To bypass in a genuine emergency: git push --no-verify  (discouraged)." >&2
+  exit 1
+fi
+
+exit 0
