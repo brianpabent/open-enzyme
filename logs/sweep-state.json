@@ -1,42 +1,38 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "ffb10b4f627def1fb04264878a770d7e8dfedfed",
-    "timestamp": "2026-06-01T23:20:37Z",
-    "synthesis_log": "logs/v4-synthesis-2026-06-01-8a97f95.md",
-    "review_commit": "ffb10b4f627def1fb04264878a770d7e8dfedfed",
+    "commit": "0346e426324d2ba831b3721edeaa5530fe657716",
+    "timestamp": "2026-06-03T15:01:21Z",
+    "synthesis_log": "logs/v4-synthesis-2026-06-03-405b50a.md",
+    "review_commit": "0346e426324d2ba831b3721edeaa5530fe657716",
     "trigger_files": [
-      "wiki/abcg2-modulators.md",
+      "wiki/chaperone-orthogonal-stacking.md",
+      "wiki/colchicine.md",
       "wiki/complement-c5a-gout.md",
-      "wiki/digestive-enzymes.md",
-      "wiki/disulfiram.md",
-      "wiki/gout-action-guide.md",
-      "wiki/gout-pathophysiology.md",
-      "wiki/gsdmd-pore-delivery-paradox.md",
-      "wiki/gut-lumen-sink.md",
-      "wiki/lactoferrin-linker-redesign-computational.md",
-      "wiki/lactoferrin.md",
-      "wiki/medicinal-mushroom-complement-track.md",
-      "wiki/modality-chokepoint-matrix.md",
+      "wiki/engineered-koji-protocol.md",
+      "wiki/enzyme-quantification-protocol.md",
+      "wiki/etc/GRAPH.md",
+      "wiki/etc/ai-bio-tools-playbook.md",
+      "wiki/etc/autonomous-screening-methodology.md",
+      "wiki/etc/bio-ai-tools.md",
+      "wiki/etc/manual-literature-mining.md",
+      "wiki/etc/open-enzyme-vision.md",
+      "wiki/etc/open-source-platform.md",
+      "wiki/etc/practitioner-toolkit.md",
+      "wiki/ginkgo-cloud-lab-evaluation.md",
+      "wiki/gout-clinical-pipeline.md",
+      "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
+      "wiki/index.md",
+      "wiki/koji-home-fermentation.md",
+      "wiki/nlrp3-exploit-map.md",
       "wiki/nlrp3-inflammasome.md",
       "wiki/open-questions.md",
-      "wiki/supplements-stack.md",
-      "wiki/theaflavins.md",
-      "wiki/tier-2-butyrate-assay-audit-computational.md",
+      "wiki/tnfsf14-gout-target.md",
       "wiki/validation-experiments.md"
     ],
-    "run_id": "26787312709"
+    "run_id": "26892486761"
   },
   "recent_runs": [
-    {
-      "run_id": "local-1778099717",
-      "trigger": "workflow_dispatch",
-      "completed_at": "2026-05-06T20:35:17Z",
-      "outcome": "success",
-      "failed_phase": null,
-      "trigger_paths_count": 35,
-      "synthesis_log": "logs/v4-synthesis-2026-05-06-121731c.md"
-    },
     {
       "run_id": "local-rebase-fix-1778099887",
       "trigger": "workflow_dispatch",
@@ -207,6 +203,15 @@
       "failed_phase": null,
       "trigger_paths_count": 18,
       "synthesis_log": "logs/v4-synthesis-2026-06-01-8a97f95.md"
+    },
+    {
+      "run_id": "26892486761",
+      "trigger": "workflow_dispatch",
+      "completed_at": "2026-06-03T15:01:21Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 23,
+      "synthesis_log": "logs/v4-synthesis-2026-06-03-405b50a.md"
     }
   ]
 }
