@@ -124,6 +124,79 @@ Not academic collaboration targets, but worth knowing for positioning and for un
 
 ---
 
+# Broader Hyperuricemia Field Map (expanded per request)
+
+Tiers 1–3 above are **execution partners** — labs that could actually run our koji/uricase experiment. This section is the wider net Brian asked for: **anyone actively working on hyperuricemia**, organized by mechanism axis. Most of these are *not* chassis-execution partners — they are advisory / validation / networking targets, reference-enzyme and reference-strain sources, and people whose models we'd want for downstream in-vivo work. The **gut-microbiome axis (Tier 4) is the most thesis-adjacent** — those groups are doing, in different chassis, the same thing we are (engineering gut microbes to clear luminal urate).
+
+> **Sourcing + caveats.** Built from a structured PubMed scan (2021–2026) across five axes, each run as an independent search pass. Every email below was extracted **verbatim from the corresponding-author affiliation block of the cited paper** (PubMed's canonical record) — none inferred or pattern-guessed; "to-confirm" = a strong, recently-active lead whose email was *not* printed in the record (resolve via the institutional page before sending). Emails are tagged to the source paper so Lauren can verify provenance.
+> Two known gaps: (1) this scan is **PubMed-indexed only** — CNKI / WanFang / J-STAGE Chinese- and Japanese-language records were not separately mined for emails, so the non-Western coverage is the English-publishing subset (still large; the field skews heavily Chinese). (2) A few clinical-KOL DOIs were dropped where the source record's DOI couldn't be cleanly verified; those are cited by PMID, which is stable.
+
+## Tier 4: Gut Microbiome & Microbial Urate Degradation *(most thesis-adjacent)*
+
+* **Dylan Dodd (Stanford University, USA)** — `ddodd2@stanford.edu` — Liu et al. 2023 (*Cell*, PMID 37541197). The landmark paper identifying the distributed bacterial gene cluster that degrades uric acid → xanthine/SCFAs and compensates for hominid uricase loss. **The single most important Western lead on the purine-degrading-bacteria axis.**
+* **Federico E. Rey (University of Wisconsin–Madison, USA)** — `ferey@wisc.edu` — Emery, Kerby & Rey 2025 (*Annu Rev Microbiol*, PMID 40902203). Authoritative on gut-microbial purine homeostasis; second Western mechanistic anchor.
+* **Yan Zhang & Yiwen Wang (Tianjin University, China)** — `yan.zhang@tju.edu.cn`, `yiwen.wang@tju.edu.cn` — Tong et al. 2023 (*Cell Chem Biol*, PMID 37164019). Mapped the anaerobic purinolytic enzyme set and **engineered the first hydrolases into *E. coli* Nissle 1917** to clear dietary purine — directly our engineered-gut-microbe thesis.
+* **Qiang Ding, Yongzhong Wang & Liping Chen (Anhui University, China)** — `qiangd@ahu.edu.cn`, `yzwang@ahu.edu.cn`, `20169@ahu.edu.cn` — Zhou et al. 2026 (*Microb Cell Fact*, PMID 42098719). Reprogrammed *E. coli* Nissle expressing PucL/PucM (+ transporter, catalase), RBS-tuned, validated in hyperuricemic mice. The PucL/PucM urate-operon + chassis-engineering angle.
+* **Xiangkai Li (Lanzhou University, China)** — `xkli@lzu.edu.cn` — Wu et al. 2021 (*Gut Microbes*, PMID 33764849). *Limosilactobacillus fermentum* JL-3 from fermented "Jiangshui," 31% serum-urate reduction with sustained colonization. Multi-paper urate-degrading-strain lab.
+* **Yuping Sun (Xinjiang Medical University, China)** — `Sunyuping@xjmu.edu.cn` — Chen et al. 2025 (*Probiotics Antimicrob Proteins*, PMID 40316867). Human-derived urate-degrading *Lacticaseibacillus paracasei* / *L. fermentum* strains; safety + in-vivo mechanism.
+* **Huaxi Yi (Ocean University of China, Qingdao)** — `yihx@ouc.edu.cn` — Cao et al. 2023 (*Food Funct*, PMID 36928268). *L. fermentum* F40-4 screened on purine; enhances intestinal UA excretion in HUA mice. (Cite F40-4, not the lab's retracted X11 paper.)
+* **Zibin Tian (Affiliated Hospital of Qingdao University, China)** — `tianzb@qdu.edu.cn` — Han et al. 2025 (*Int J Biol Macromol*, PMID 40268003). *Lactobacillus johnsonii* → butyrate → ABCG2 intestinal urate excretion.
+
+*To-confirm (strong, no email in record):* **Wence Wang / Ling Yang** (South China Agricultural U) — *L. plantarum* SQ001 nucleoside-hydrolase mechanism, Fu et al. 2024 (*eLife*, PMID 39508089); **Zhigang Liu** (Northwest A&F U) — colonic ABCG2 urate excretion, PMID 39564988; **Xuegang Luo** (Tianjin U Sci & Tech) — *L. plantarum* from Baijiu grains, PMID 40647202.
+
+## Tier 5: Urate Transporters & Uricosuric Drug Discovery
+
+* **Chia-Hsueh Lee (St. Jude Children's Research Hospital, USA)** — `chiahsueh.lee@stjude.org` — Dai & Lee 2024 (*Cell Res*, PMID 39245778). **Cryo-EM structures of human URAT1** bound to urate, lesinurad, verinurad, dotinurad — the structural-pharmacology anchor for the whole uricosuric mechanism.
+* **Jianxin Pang (Southern Medical University, China)** — `pjx@smu.edu.cn` — Mao et al. 2025 (*Eur J Med Chem*, PMID 40101451). One of the most active URAT1/GLUT9 inhibitor + in-vivo hyperuricemia pharmacology labs; recurs across the transporter and dual-target literature.
+* **Zhiyan Xiao (Institute of Materia Medica, CAMS, Beijing)** — `xiaoz@imm.ac.cn` — Wang et al. 2025 (*Bioorg Med Chem Lett*, PMID 40669671). Sustained URAT1-inhibitor medchem program.
+* **Shaojie Wang (Shenyang Pharmaceutical University, China)** — `Sjwang_99@163.com` — Mao et al. 2025 (*Eur J Med Chem*, PMID 40101451); Sun et al. 2025 (PMID 40286449). Structure-based URAT1 and NLRP3/URAT1 dual-target design.
+* **Xin Tian (First Affiliated Hospital of Zhengzhou University, China)** — `tianx@zzu.edu.cn` — Liu et al. 2025 (*Eur J Med Chem*, PMID 40305938). TRPV1/URAT1 dual-target lead optimization (piperine analogs).
+* **Geng Zhong & Yongbo Peng (Southwest University, Chongqing)** — `gzhong@swu.edu.cn`, `pengyongbo2021@cqmu.edu.cn` — Deng et al. 2025 (*Int J Biol Macromol*, PMID 41075904). PDZK1/ABCG2/NPT1 urate-secretion modulation by a **food-grade natural product** — on the ABCG2-gut-secretion + food-grade axis that matches our framing.
+* **Tomoaki Takata (Tottori University, Japan)** — `t-takata@tottori-u.ac.jp` — 2025 (*Sci Rep*, PMID 40089552). Dotinurad clinical renal-physiology / urinary-urate handling.
+
+*To-confirm:* **Peng Zhan / Fan Yi** (Shandong U) — high-output dual URAT1/GLUT9 medchem, PMID 42090242; **Hidekatsu Yanai** (NCGM, Japan) — dotinurad selectivity mechanism, PMID 38474414; **Changgui Li** (Qingdao U) — ABCG2 / gut-microbiota urate, recurring senior author.
+
+## Tier 6: TCM & Natural-Product Urate-Lowering
+
+*(Traditional-formula + species-name query framing was load-bearing here — "Si Miao San / Simiao Wan" surfaced groups that a mechanism-only query returned zero hits for.)*
+
+* **Xiaoshan Zhao & Jieyu Chen (Southern Medical University, China)** — `zhaoxs@smu.edu.cn`, `jieyu@smu.edu.cn` — Zhou et al. 2024 (*Microbiome*, PMID 38907332). Gut-microbiota/NLRP3 axis in hyperuricemic nephropathy; quercetin urate-lowering via microbial phenylalanine metabolism. Most productive group on this axis.
+* **Daozong Xia (Zhejiang Chinese Medical University, China)** — `xdz_zjtcm@hotmail.com` — Li et al. 2024 (*Phytomedicine*, PMID 38820662). Astilbin (from *Smilax glabra* 土茯苓) suppresses NETs in gouty arthritis via P2Y6.
+* **Jun Chen (China Pharmaceutical University, China)** — `chenj2002cpu@126.com` — Shan et al. 2021 (*J Ethnopharmacol*, PMID 34419610). Ermiao/Sanmiao/Simiao Wan (二妙/三妙/四妙丸) — core classical-formula metabolomics for hyperuricemia.
+* **Xiaodong Wen (China Pharmaceutical University, China)** — `xiaodongwen@cpu.edu.cn` — Wang et al. 2024 (*Sci Rep*, PMID 39506066). Simiao Wan network-pharmacology / transcriptomics.
+* **Lingru Li & Yanfei Zheng (Beijing University of Chinese Medicine)** — `lilingru912@163.com`, `yanfei_z@163.com` — Dong et al. 2025 (*Phytomedicine*, PMID 39874797). Review: plant natural products targeting gut microbiota for hyperuricemia.
+* **Hui Li (Fudan University, China)** — `LHCA@fudan.edu.cn` — Sang et al. 2022 (*Chin Med*, PMID 36109783). Yellow-tea urate-lowering vs. Simiao San comparator; XOD + IL-1β.
+
+*To-confirm:* **Suhong Chen / Guiyuan Lv** (Zhejiang U of Tech) — Dendrobium + Simiao Wan → ABCG2/PDZK1/GLUT9, PMID 36043791; **Hongliang Zeng** (Hunan Academy of CM) — *Smilax glabra* urate transporters, PMID 40624868; **Tao Wang** (Tianjin U of TCM) — *Orthosiphon aristatus*, PMID 39654614.
+
+## Tier 7: Animal Models & Novel Mechanisms (mRNA / nanozyme / XO-inhibitor / inflammasome)
+
+* **Xuan Yuan (Qingdao University, China)** — `xyuan226@qdu.edu.cn` — Pang et al. 2024 (*BBA Mol Basis Dis*, PMID 38237409). Stable liver-specific **Uox-knockout hyperuricemia mouse** (Cre/loxP), benchmarked vs pegloticase/allopurinol. Strongest in-vivo genetic-model validation-partner candidate. *(Co-corresponding: Nicola Dalbeth — see Tier 8.)*
+* **Yuanyu Huang (Beijing Institute of Technology, China)** — `yyhuang@bit.edu.cn` — Zhang et al. 2024 (*Nat Commun*, PMID 39085241). "Atavistic" ionizable-LNP **mRNA-uricase** — single dose lowers serum urate for weeks in mice. (Co-author affiliated with Rigerna Therapeutics — translational signal.)
+* **Zean Zhao (Southern Medical University, China)** — `zhaozean666@smu.edu.cn` — Zheng et al. 2024 (*Bioorg Chem*, PMID 38669781). Digallic acid as XOD/URAT1 dual-target inhibitor with in-vivo urate-lowering + uricosuric effect.
+* **Chun-Hsu Pan (Taipei Medical University, Taiwan)** — `panch@tmu.edu.tw` — Ritika et al. 2024 (*Eur J Med Chem*, PMID 39293244). Febuxostat-based XO-inhibitor scaffolds, in-vivo anti-hyperuricemic.
+* **Zhuyuan Wang (Southeast University, China)** — `wangzy@seu.edu.cn` — Zhou et al. 2026 (*J Colloid Interface Sci*, PMID 42140178). Multi-enzyme (uricase/catalase-mimic) Janus nanomotor, in-vivo UA-lowering.
+* **Hongzhen Hu (Washington University in St. Louis, USA)** — `hongzhen.hu@wustl.edu` — Lan et al. 2021 (*Ann Rheum Dis*, PMID 34663597). Mechanosensitive TRPV4 in MSU-crystal NLRP3 activation; mouse gout models. Novel inflammasome/flare mechanism.
+
+*To-confirm:* **Tian-Rui Xu / Shu An** (Kunming U of Sci & Tech, State Key Lab Primate Biomedical Research) — **new cynomolgus-monkey hyperuricemia model**, Wang et al. 2026 (*Animal Model Exp Med*, PMID 41555772) — highest-value primate-model lead, email not in record; **Jie Han** (Yangzhou U) — prolific uricase-mimic nanozyme group, PMID 38391135.
+
+## Tier 8: Clinical / Translational / Genetics KOLs *(advisors, not wet-lab partners)*
+
+* **Nicola Dalbeth (University of Auckland, NZ) — clinical** — `n.dalbeth@auckland.ac.nz` — Pang et al. 2024 (*BBA Mol Basis Dis*, PMID 38237409) + extensive gout-trial corpus. Leading gout clinical trialist; also co-corresponding on the Uox-KO model (Tier 7).
+* **Tony R. Merriman (Univ. Otago, NZ / UAB, USA) — genetics** — `tony.merriman@otago.ac.nz` — Merriman et al. 2024 (*Nat Genet*, PMID 39501129). Top serum-urate / gout GWAS + ABCG2 genetics name.
+* **Hyon K. Choi (MGH / Harvard, USA) — epidemiology** — `HCHOI@mgh.harvard.edu` — Choi et al. 2025 (*Contemp Clin Trials*, PMID 39929260). Gout epidemiology + urate-lowering cardiometabolic outcomes.
+* **Tuhina Neogi (Boston University, USA) — epidemiology** — `tneogi@bu.edu` — Neogi et al. 2026 (*Osteoarthritis Cartilage*, PMID 42097273). Crystal-arthropathy epidemiology, allopurinol/CKD outcomes.
+* **Naomi Schlesinger (University of Utah, USA) — clinical** — `Naomi.schlesinger@hsc.utah.edu` — Schlesinger et al. 2023 (*Nat Rev Rheumatol*, PMID 37684360). **Uricase-therapeutics rationale review — directly relevant to our target.**
+* **Hang-Korng Ea (Université Paris Cité / Lariboisière, France) — clinical** — `hang-korng.ea@aphp.fr` — Ea & Richette 2025 (*Nat Rev Rheumatol*, PMID 40269318). Verified contact point for the Paris (Richette) group.
+* **Tristan Pascart (Lille Catholic University, France) — clinical** — `pascart.tristan@ghicl.net` — Pascart et al. 2026 (*Lancet Rheumatol*, PMID 41605560). Dual-energy-CT crystal imaging; high-output younger PI.
+* **Rebecca Grainger (University of Otago Wellington, NZ) — clinical** — `rebecca.grainger@otago.ac.nz` — 2025 (*Lancet Rheumatol*, PMID 40915299). Verified contact for the NZ ULT-trial group (Lisa Stamp's orbit).
+* **Anne-Kathrin Tausche (TU Dresden, Germany) — clinical** — `anne-kathrin.tausche@ukdd.de` — Kiltz et al. 2025 (*Z Rheumatol*, PMID 40689975). German gout guidelines / ULT.
+* **Mingshu Sun & Can Wang (Qingdao University, China) — genetics/clinical** — `mingshu.sun@qdu.edu.cn`, `wangcanabc@126.com` — Wang et al. 2026 (*Arthritis Res Ther*, PMID 41709338). Qingdao gout cohort; East-Asian gout GWAS + FEUA phenotyping (same institute as Xuan Yuan / Changgui Li).
+
+*To-confirm (big names, no email in record — reach via institution or the verified colleague noted):* **Robert Terkeltaub** (UCSD; co-author on Dodd's gut-urate work); **Pascal Richette** (Paris — via Ea); **Fernando Perez-Ruiz** (Bilbao); **Lisa Stamp** (Otago — via Grainger); **Alexander So** (Lausanne — verified colleague Alexandre Dumusc `alexandre.dumusc@chuv.ch`).
+
+---
+
 ## Strategic Outreach Framework
 
 Since Brian does not have a formal biochemistry PhD background, **having a PhD-level collaborator (like Lauren or a recruited advisor) initiate contact** will increase response rates. The message must be direct, academically rigorous, and transparent about our open-source, non-profit approach.
