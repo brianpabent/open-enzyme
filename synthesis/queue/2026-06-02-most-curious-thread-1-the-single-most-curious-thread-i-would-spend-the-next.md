@@ -1,0 +1,122 @@
+---
+type: most-curious-thread
+sweep_date: 2026-06-02
+sweep_sha: 405b50a
+section_index: 1
+global_index: 13
+pass3_verdict: Augment
+overlap_tag: EXTENSION
+---
+
+# The single most curious thread I would spend the next experiment slot on is the dietary-CP0 PK gap (RA #3): do dietary doses of rosmarinic acid, luteolin, Houttuynia, and Helicteres reach gut-luminal complement-suppressing concentrations?
+
+The single most curious thread I would spend the next experiment slot on is **the dietary-CP0 PK gap (RA #3)**: do dietary doses of rosmarinic acid, luteolin, Houttuynia, and Helicteres reach gut-luminal complement-suppressing concentrations? *Supporting evidence:* comp-029 (YELLOW combined-CP0 verdict) shows the dietary arm's leverage is gut-luminal-transient (Kang 2021 calculated 252–1,100 µM post-200 mg oral; Baba 2004 plasma Cmax ~20 nM = ~0% inhibition); comp-039 classifies all four as CFH-independent with High confidence; the 2026-05-19 traditional-name re-scan recovered dense TCM evidence missed by mechanism-name seeding (logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md); Houttuynia is the first dual-CP0+CP1 dietary candidate (Li 2025 PMC12254813, Yu 2026 PMC12937656). *Evidence that would refute it:* a direct segmental intestinal-content measurement (rat or human aspirate + LC-MS/MS) showing all four candidates fall below the IC50 lower bound of their assay-format spread in the gut-luminal compartment after dietary intake. *Cheapest discriminating experiment:* human single-dose PK study of rosmarinic acid from dietary source (200 mg rosemary/lemon balm extract, plasma + urine sampling over 24h, n=6–12) — $0 if using existing metabolomics panel, ~$15–25K for dedicated study. I suspect this is idiosyncratic (the multi-vendor signal on query-framing is convergent, but the PK anchor is my own synthesis of comp-029 + comp-039 + the 2026-05-19 audit). 
+
+
+
+**Sources cited:**
+- wiki/abcg2-modulators.md
+- wiki/abcg2-q141k-chaperone-screen-computational.md
+- wiki/androgen-natural-modulation.md
+- wiki/androgen-urate-axis.md
+- wiki/aspergillus-oryzae.md
+- wiki/bhb-ketones.md
+- wiki/blood-barrier-exploits.md
+- wiki/bpc-157.md
+- wiki/c1-inh-protease-stability-ecn-computational.md
+- wiki/cannabinoids-terpenes.md
+- wiki/carnosine.md
+- wiki/cassette-compatibility-computational.md
+- wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md
+- wiki/chaperone-orthogonal-stacking.md
+- wiki/colchicine.md
+- wiki/combined-cp0-systems-model-computational.md
+- wiki/complement-c5a-gout.md
+- wiki/complestatin-bgc-lbp-feasibility-computational.md
+- wiki/compounding-pharmacy-track.md
+- wiki/cordycepin-cassette-burden-computational.md
+- wiki/crispr-uricase.md
+- wiki/cross-validation.md
+- wiki/daf-cd55-protease-stability-computational.md
+- wiki/daf-cd55-scr14-cassette-ranking-computational.md
+- wiki/daf-cd55-scr14-truncated-computational.md
+- wiki/delivery-route-matrix.md
+- wiki/digestive-enzyme-optimization.md
+- wiki/digestive-enzymes.md
+- wiki/disulfiram-dose-modeling-computational.md
+- wiki/disulfiram.md
+- wiki/duckweed-aquatic-chassis.md
+- wiki/egcg.md
+- wiki/engineered-koji-protocol.md
+- wiki/engineered-lbp-chassis.md
+- wiki/engineered-yeast-uricase-proposal.md
+- wiki/enzyme-deficit-deep-dive.md
+- wiki/enzyme-quantification-protocol.md
+- wiki/food-grade-hdaci-screen-computational.md
+- wiki/fructose-connection.md
+- wiki/genotype-informed-supplement-workflow.md
+- wiki/ginkgo-cloud-lab-evaluation.md
+- wiki/gout-action-guide.md
+- wiki/gout-clinical-pipeline.md
+- wiki/gout-deep-dive.md
+- wiki/gout-genetic-variants.md
+- wiki/gout-kill-chain-delivery-routes.md
+- wiki/gout-pathophysiology.md
+- wiki/gsdmd-pore-delivery-paradox.md
+- wiki/hypotheses/H01-ward-dual-cassette.md
+- wiki/hypotheses/H02-engineered-lbp-thesis.md
+- wiki/hypotheses/H03-sirna-urat1-thesis.md
+- wiki/hypotheses/H04-tcm-rigor-intersection.md
+- wiki/hypotheses/H05-daf-scr14-cp0-thesis.md
+- wiki/hypotheses/H06-medicinal-mushroom-complement-track.md
+- wiki/hypotheses/H07-clomid-intestinal-er-antagonism.md
+- wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md
+- wiki/hypotheses/H09-community-fermentation-reliability.md
+- wiki/hypotheses/README.md
+- wiki/index.md
+- wiki/inhaled-mrna-il1ra-pulse-computational.md
+- wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md
+- wiki/intra-articular-uricase-h2o2-reaction-diffusion-computational.md
+- wiki/koji-construct-design.md
+- wiki/koji-endgame-strain.md
+- wiki/koji-home-fermentation.md
+- wiki/kpv-peptide.md
+- wiki/lactoferrin-linker-redesign-computational.md
+- wiki/lactoferrin-protease-stability-computational.md
+- wiki/lactoferrin.md
+- wiki/linter-design.md
+- wiki/mechanical-flare-triggers.md
+- wiki/medicinal-mushroom-complement-track.md
+- wiki/medicinal-mushroom-compound-mapping-computational.md
+- wiki/medicinal-mushroom-extract-sops.md
+- wiki/nlrp3-exploit-map.md
+- wiki/nlrp3-inflammasome.md
+- wiki/nlrp3-inhibitor-screen.md
+- wiki/open-questions.md
+- wiki/oridonin.md
+- wiki/personal-genome-protocol.md
+- wiki/prps-purine-biosynthesis-chokepoint.md
+- wiki/protein-engineering-strategy.md
+- wiki/purine-degrading-bacteria.md
+- wiki/quantification-ladder.md
+- wiki/repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md
+- wiki/saccharomyces-cerevisiae.md
+- wiki/sibo.md
+- wiki/sirna-urat1-modality.md
+- wiki/spm-resolution-pathway.md
+- wiki/supplement-abcg2-antagonism-computational.md
+- wiki/supplements-stack.md
+- wiki/t-axis-adjuvant-urate-mapping-computational.md
+- wiki/tcm-gout-compound-triage-computational.md
+- wiki/tcm-modern-rigor-intersection.md
+- wiki/theaflavins.md
+- wiki/tier-2-butyrate-assay-audit-computational.md
+- wiki/tnfsf14-gout-target.md
+- wiki/uricase-abcg2-genotype-stratification-computational.md
+- wiki/uricase-cassette-ranking-computational.md
+- wiki/uricase-protease-stability-computational.md
+- wiki/uricase-variant-selection.md
+- wiki/uricase.md
+- wiki/validation-experiments.md
+
+> **Pass 3 review — Augment.** `[OVERLAP: EXTENSION]` The prioritization of the dietary-CP0 PK gap as the single most curious thread is a legitimate synthesis that the corpus does not state in this form — it composes evidence from comp-029 (YELLOW, gut-luminal-transient reframe of rosmarinic acid), comp-039 (CFH-independent classification for all four candidates), the 2026-05-19 traditional-name re-scan, and Houttuynia as the first dual-CP0+CP1 candidate. The cheapest discriminating experiment suggested (human single-dose PK of rosmarinic acid from dietary source, $0 via existing metabolomics panel or $15-25K dedicated) is reasonable and consistent with the open-questions.md framing. **Sharpening addition:** the rosmarinic-acid PK scan of 2026-06-01 (at `open-questions.md` §"Riskiest assumption #3") already identified the single highest-value PK datum the project lacks — a direct segmental intestinal-content RA assay (rat, oral dose, proximal→distal luminal sampling by LC-MS/MS). This is cheaper and more directly answers the dietary-CP0 question than the human plasma/urine PK study suggested here, because comp-029 already established that the plasma route is ~1,700× below IC50. The human PK study measures the wrong compartment; the intestinal-content assay measures the right one.
