@@ -37,7 +37,7 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 | [§1.2](#12-secretion-vs-intracellular-expression) | Secretion vs. intracellular expression | In Vitro | $500–1,000 | 2–3 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [saccharomyces-cerevisiae](./saccharomyces-cerevisiae.md), [gi-survival-prediction](./gi-survival-prediction.md) |
 | [§1.3](#13-uricase-survival-in-beer-fermentation) | Uricase survival in beer fermentation | In Vitro | $200–400 | 3–4 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [saccharomyces-cerevisiae](./saccharomyces-cerevisiae.md) |
 | [§1.4](#14-uricase-stability-after-drying) | Uricase stability after drying | In Vitro | $300–800 | 1–2 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [gi-survival-prediction](./gi-survival-prediction.md) |
-| [§1.5](#15-koji-uricase-expression-and-activity) | Koji uricase expression and activity | In Vitro | $1,500–2,500 | 4–6 | Proposed | [uricase-only-koji-expression-spec](./uricase-only-koji-expression-spec.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [koji-construct-design](./koji-construct-design.md), [uricase](./uricase.md) |
+| [§1.5](#15-koji-uricase-expression-and-activity) | Koji uricase expression and activity | In Vitro | $1,500–2,500 | 4–6 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [koji-construct-design](./koji-construct-design.md), [uricase](./uricase.md) |
 | [§1.6](#16-koji-enzyme-stability-at-digestive-ph-and-temperature) | Koji enzyme stability at digestive pH/temperature | In Vitro | $300–600 | 1–2 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [gi-survival-prediction](./gi-survival-prediction.md), [digestive-enzymes](./digestive-enzymes.md) |
 | [§1.7](#17-nlrp3-inflammasome-pathway-validation-thp-1-msu-macrophage-assay) | NLRP3 pathway validation (THP-1 MSU macrophage) | In Vitro | $5,000–8,000 | 8–10 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md), [egcg](./egcg.md) |
 | [§1.8](#18-egcg-dose-escalation-on-msu-stimulated-thp-1-tnfsf14-induced-il-6-readout-cp1a) | EGCG dose-escalation CP1a readout | In Vitro | $500–800 | 3–4 | Proposed | [egcg](./egcg.md), [tnfsf14-gout-target](./tnfsf14-gout-target.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) |
@@ -194,19 +194,17 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 
 **Status**: Proposed | **Cost**: $1,500–2,500 | **Weeks**: 4–6 | **Phase**: 1
 
-**Affected wiki**: [uricase-only-koji-expression-spec](./uricase-only-koji-expression-spec.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [koji-construct-design](./koji-construct-design.md), [uricase](./uricase.md)
+**Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [koji-construct-design](./koji-construct-design.md), [uricase](./uricase.md)
 
-**What it tests:** Can *A. flavus* uricase (`uaZ` / `uox`, UniProt Q00511) express functionally in *A. oryzae* koji, and does a single uricase cassette preserve the native koji phenotype that the platform depends on (kojic acid plus amylase / protease / lipase activity)?
+**What it tests:** Can A. flavus uricase gene express functionally in A. oryzae?
 
-**Proposed in:** engineered-koji-protocol.md (§3, §5); sharpened as the uricase-first gate in [uricase-only-koji-expression-spec.md](./uricase-only-koji-expression-spec.md).
+**Proposed in:** engineered-koji-protocol.md (§3, §5)
 
-**Design outline:** This is the single-cassette gate before [§1.9](#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate-1-priority-gate). Execute live engineered-strain construction only in a reviewed lab or qualified partner workflow. Minimum arms: WT parental *A. oryzae*, at least two independent uricase-only clones, commercial purified uricase positive control, inactive/matrix negative control, and blanks. Readouts:
-
-- Uricase identity: Western / ELISA / targeted MS, plus strain or construct verification.
-- Uricase activity: urate-depletion assay with orthogonal urate/allantoin confirmation where possible.
-- Localization: extracellular fraction vs. total extract, because secretion vs. intracellular recovery changes the downstream delivery model.
-- Native phenotype: kojic acid by HPLC or LC-MS; amylase, protease, and lipase by the [enzyme quantification ladder](./enzyme-quantification-protocol.md).
-- Safety / quality: aflatoxin screen when material is food-adjacent; clear material-return statement specifying live strain vs. inactivated material vs. clarified extract vs. data-only.
+**Protocol:**
+- Clone uaZ into engineered A. oryzae with PamyB promoter + SPamyB secretion signal + uaZ CDS + TtrpC terminator
+- Grow on steamed rice (traditional koji conditions: 30°C, 48–72h)
+- Harvest koji, prepare extract, assay uricase activity
+- Compare: (a) expression level by Western blot, (b) specific uricase activity, (c) total enzyme yield per gram rice
 
 **Estimated cost:** $1,500–2,500 (gene synthesis, transformation, reagents)
 
@@ -214,7 +212,7 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 
 **Dependencies:** None
 
-**Success criteria:** green if uricase protein and activity are reproducible in at least two independent clones, activity clears the existing §1.5 floor (>20 umol/h/OD; strong if it approaches the later H01 dual-cassette floor of >=50 umol/h/OD), localization matches the intended delivery model, kojic acid remains within 30% of WT, and amylase / protease / lipase do not materially collapse vs. WT. Yellow if protein is detected but activity or localization is weak, or one native phenotype axis drops 30-50%. Red if no reproducible activity, native phenotype collapse >50%, aflatoxin signal, or engineered material identity is ambiguous. Full decision table: [uricase-only-koji-expression-spec.md](./uricase-only-koji-expression-spec.md).
+**Success criteria:** >20 μmol/h/OD activity; enzyme properly secreted into rice substrate
 
 ---
 
