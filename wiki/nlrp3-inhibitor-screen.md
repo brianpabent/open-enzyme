@@ -110,12 +110,14 @@ This screen evaluates food-derived NLRP3 inflammasome inhibitors producible by e
 - Can be formulated with lipid excipients in fermented beverage or solid dosage
 - Multiple mechanistic targets beyond NLRP3 (anti-inflammatory, anti-oxidant)
 
+**ChEMBL v37 mechanism upgrade (2026-07-01):** Ursolic acid (CHEMBL169) now has **16 curated entries at pChEMBL ≥6** (zero in v34). Top curated biochemical targets: **ROR-γ IC50 = 0.75 nM** (*J Med Chem* 2023), **SENP1 IC50 = 6.4 nM** (*Eur J Med Chem* 2022), **NF-κB p65 IC50 = 31 nM** (*Bioorg Med Chem* 2018). ROR-γ inhibition at sub-nM adds a Th17-axis mechanism (IL-17 amplification in chronic gout/tophus biology) not previously attributed to ursolic acid. NF-κB p65 IC50 elevates the NF-κB claim from functional/animal to (In Vitro) biochemical evidence — three independent labs. See [chembl-cross-check.md](./etc/chembl-cross-check.md) for full details. (In Vitro; source: chembl-cross-check.md)
+
 **Limitations:**
 - IC50 not quantified vs. MCC950 or oridonin (appears to be in μM range from structure activity)
 - No gout-specific animal evidence (extrapolation from OA models)
 - Requires two additional metabolic engineering modules (MVA optimization + triterpene synthase pathway)
 
-**Ranking Rationale:** Tier 1 due to exceptional production titer (8.59 g/L), GRAS status, and structural stability. NLRP3 mechanism confirmed but not gout-tested.
+**Ranking Rationale:** Tier 1 due to exceptional production titer (8.59 g/L), GRAS status, structural stability, and now In Vitro biochemical evidence for NF-κB and ROR-γ mechanisms (ChEMBL v37). NLRP3 mechanism confirmed but not gout-tested.
 
 ---
 
@@ -222,6 +224,8 @@ This screen evaluates food-derived NLRP3 inflammasome inhibitors producible by e
 - Extensive human safety database (wine polyphenol; dietary supplement for decades)
 - Multiple mechanisms (autophagy, SIRT1, mitochondrial homeostasis) suggest broad NLRP3 suppression
 
+**ChEMBL v37 (2026-07-01):** Resveratrol's strongest curated molecular-target activity remains **DPP-4 IC50 = 0.6 nM** (pChEMBL 9.22, *Eur J Med Chem* 2018). Cell-line antiproliferative IC50s from *J Med Chem* 2011 rank above it by pChEMBL (HeLa 0.023 nM, etc.) but target cell lines, not molecular proteins. The sub-nM DPP-4 finding places resveratrol mechanistically adjacent to the gliptin class at physiologically achievable concentrations — relevant to the gout-T2D comorbidity cluster. See [chembl-cross-check.md](./etc/chembl-cross-check.md) for full profile. (In Vitro; source: chembl-cross-check.md)
+
 **Limitations:**
 - IC50 vs. NLRP3 not quantified; estimates in μM range (>>benchmark MCC950)
 - No direct covalent binding to NLRP3 Cys279; purely functional modulation
@@ -323,6 +327,7 @@ This screen evaluates food-derived NLRP3 inflammasome inhibitors producible by e
 
 **Evidence Level:**
 - **In vitro:** Curcumin (10–50 μM) blocked MSU-induced NLRP3 inflammasome assembly and IL-1β secretion in macrophages
+- **Direct human NLRP3:** Curated human NLRP3 IC50 = **24.2 μM** (THP-1, *J Nat Prod* 2020, pChEMBL 4.62, ChEMBL v34/v37) — third compound in the stack with ChEMBL-curated direct human NLRP3 data, after dapansutrile (1.0 μM) and oridonin (5.18 μM). 24× weaker than dapansutrile, 5× weaker than oridonin in the same human cellular format. (In Vitro; source: chembl-cross-check.md)
 - **Animal (MSU gout model):** Curcumin (~100 mg/kg) reduced joint swelling, inflammatory cell infiltration, and NLRP3 inflammasome activity in mouse gout arthritis; suppressed NF-κB pathway
 - **Gout-specific:** YES — demonstrated efficacy in MSU-induced acute gout arthritis model
 
@@ -336,6 +341,8 @@ This screen evaluates food-derived NLRP3 inflammasome inhibitors producible by e
 - Safe: Clinical trials up to 8 g/day; low toxicity
 - **Critical limitation:** **Poor bioavailability** (~5% oral absorption; extensive first-pass metabolism)
 - Requires lipid formulation (piperine co-supplement, nanoparticles, liposomes) for effective oral dosing
+
+**ChEMBL v37 update (2026-07-01):** Curcumin (CHEMBL140) now has a curated **DYRK2 IC50 = 2.5 nM** (pChEMBL 8.60, *J Med Chem* 2023) — rank-2 molecular target between amyloid-β (rank 1) and lactoylglutathione lyase (rank 3). DYRK2 regulates proteasome activity via PA28γ phosphorylation, providing a biochemical link between curcumin and the proteasome-regulation mechanism (adjacent to EGCG's 20S proteasome inhibition, IC50 86 nM). Two stack compounds (curcumin + EGCG) now touch proteasome biology through complementary mechanisms. Gout-specific relevance is indirect; DYRK2 was not present in ChEMBL v34. See [chembl-cross-check.md](./etc/chembl-cross-check.md) for full details. (In Vitro; source: chembl-cross-check.md)
 
 **Advantages:**
 - **Direct gout animal evidence:** Demonstrated efficacy in MSU-induced arthritis
@@ -366,6 +373,7 @@ This screen evaluates food-derived NLRP3 inflammasome inhibitors producible by e
 - **In vitro:** β-caryophyllene suppresses NLRP3 expression and inflammasome assembly in neuroinflammation models
 - **Animal (hemiparkinsonism):** β-caryophyllene reduced neuroinflammation and protected dopaminergic neurons via NLRP3 inflammasome inhibition
 - **Animal (MSU-induced gouty arthritis in rats):** 100, 200, 400 mg/kg reduced ankle swelling, serum IL-1β/IL-6/TNF-α, and synovial NLRP3/caspase-1/ASC/TLR4/NF-κB expression. Computational docking shows NLRP3 binding (CDOCKER energy 31.92 kcal/mol). Direct gout model evidence — this entry needs re-ranking (see [cannabinoids-terpenes.md](cannabinoids-terpenes.md)). *Front Pharmacol* 2021;12:651305. PMID: 33967792.
+- **ChEMBL v37 update (2026-07-01):** CB2 agonism is now **ChEMBL-curated**: CB2 Ki = **150 nM** (pChEMBL 6.82, *Eur J Med Chem* 2018). At v34 baseline this was external-literature-only; v37 confirms the CB2 mechanism with a curated binding assay. No human NLRP3 entries (CHEMBL1741208) exist — the "direct NLRP3 binding" claim from the 2021 docking paper remains uncurated. (In Vitro; source: chembl-cross-check.md)
 - **Gout-specific:** YES (MSU crystal model, animal)
 
 **Production Feasibility:**
@@ -698,15 +706,15 @@ The two measure different things and should not be cross-compared. Cell-free / m
 
 | Rank | Compound | Direct NLRP3 IC50 (human-cell, ChEMBL) | Functional IL-1β IC50 (MSU) | Production (mg/L) | Gout-Specific | Bioavailability | Status |
 |------|----------|---|---|---|---|---|---|
-| 1 | **Ursolic Acid** | — (no curated entry) | ~μM range (estimated) | 8590 | NO (OA infer) | 6/10 | PRIMARY |
+| 1 | **Ursolic Acid** | — (no curated NLRP3 entry; ChEMBL v37: 16 entries pChEMBL≥6 — **ROR-γ 0.75 nM**, **NF-κB p65 31 nM**, **SENP1 6.4 nM**) | ~μM range (estimated) | 8590 | NO (OA infer) | 6/10 | PRIMARY |
 | 2 | **Quercetin** | — (no curated entry; most potent activity is **5-LOX 300 nM**) | ~11 μM (MSU macrophages) | 20 | YES (MSU rat) | 5/10 | PRIMARY |
 | 3 | **Carnosine** | — (no curated entry) | μM range (LPS/HUA models) | 150* | YES (HUA rat) | 10/10 | SECONDARY |
 | 3a | **Lactoferrin** | — (no direct NLRP3 IC50; CP5 downstream) | ~μg/mL range (NLRP3/caspase-1/GSDMD axis) | 3500 (P. pastoris) | NO (CP5 class) | 8/10 | TIER 1 CP5 |
 | 4 | **Taurine** | — (upstream K⁺ efflux, not direct) | μM–mM range | HIGH* | NO | 10/10 | TERTIARY |
 | 5 | **Resveratrol** | — (no curated entry) | 0.1–25 μM | 800 | NO | 4/10 | BACKUP |
 | — | **EGCG** | — (no curated entry) | 10–50 μM | 30 | YES (MSU mouse, Lee 2019) | 5/10 | SUPPLEMENT T2 |
-| — | **Curcumin** | **24.2 μM** (human THP-1, ChEMBL) | 10–50 μM | 100 | YES (MSU) | 1/10 | NOT RECOMMENDED (bioavail) |
-| — | **β-Caryophyllene** | — (docking only, no IC50) | μM range | 20 | YES (MSU rat) | 2/10 | SUPPLEMENT T2-3 |
+| — | **Curcumin** | **24.2 μM** (human THP-1, ChEMBL v34/v37). ChEMBL v37: **DYRK2 IC50 = 2.5 nM** (*J Med Chem* 2023) new rank-2 target | 10–50 μM | 100 | YES (MSU) | 1/10 | NOT RECOMMENDED (bioavail) |
+| — | **β-Caryophyllene** | — (docking only, no NLRP3 IC50). ChEMBL v37: **CB2 Ki = 150 nM** curated (was external-only at v34) | μM range | 20 | YES (MSU rat) | 2/10 | SUPPLEMENT T2-3 |
 | — | **Sulforaphane** | — (no direct; Nrf2 EC50 **580 nM**) | μM range | — (no yeast path) | YES (HUA rat, Wang 2022) | 6/10 | SUPPLEMENT T2-3 |
 | — | **Limonene** | — (no curated entry) | μM range | 20 | YES (MSU rat, Venkatesan 2025) | 2/10 | SUPPLEMENT T3 |
 | Benchmark | **Dapansutrile** | **1,000 nM** (human MDM) ¹ | — | synthetic | Phase 2a (PMID 33005902) | oral | PHARMA |
@@ -752,9 +760,11 @@ Integration into engineered **S. cerevisiae + A. oryzae** dual-organism systems 
 
 ---
 
-## Appendix: ChEMBL IC50 Cross-Check (2026-04-23)
+## Appendix: ChEMBL IC50 Cross-Check (2026-04-23 baseline; 2026-07-01 refresh)
 
-This section cross-references the IC50 values cited throughout this screen against the EMBL-EBI ChEMBL v34 curated bioactivity database (queried via the Anthropic life-sciences MCP). Purpose: separate "direct NLRP3 inhibition" claims (measurable in a binding/inhibition assay) from "NLRP3 pathway modulation" claims (inferred from downstream IL-1β readouts, NF-κB suppression, ROS scavenging, or mechanistic review).
+This section cross-references the IC50 values cited throughout this screen against the EMBL-EBI ChEMBL curated bioactivity database. Purpose: separate "direct NLRP3 inhibition" claims (measurable in a binding/inhibition assay) from "NLRP3 pathway modulation" claims (inferred from downstream IL-1β readouts, NF-κB suppression, ROS scavenging, or mechanistic review).
+
+**ChEMBL version note:** Baseline v34 (2026-04-24). v37 refresh (2026-07-01, 24.5M activities, 2.9M compounds, 18.6K targets) — significant new entries surfaced for ursolic acid (16 entries at pChEMBL≥6, zero at v34), curcumin (DYRK2 2.5 nM), β-caryophyllene (CB2 now curated), disulfiram (LOXL4 59 nM), and oridonin (3 new 2024 entries). See the canonical [chembl-cross-check.md](./etc/chembl-cross-check.md) for the full 27-compound table + expanded findings.
 
 **NLRP3 target ID:** CHEMBL1741208 (*NACHT, LRR and PYD domains-containing protein 3*, Homo sapiens, UniProt Q96P20).
 

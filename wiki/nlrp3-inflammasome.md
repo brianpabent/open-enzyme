@@ -104,7 +104,7 @@ MCC950 and tranilast have published direct NLRP3 assays in the primary literatur
 
 **Compounds with zero curated direct human NLRP3 entries in ChEMBL:** quercetin, ursolic acid, tranilast, beta-caryophyllene. Their "NLRP3 inhibitor" status rests on functional IL-1β readouts in macrophage assays or upstream pathway effects (NF-κB priming, ROS, K⁺ efflux) — not direct NLRP3 binding/inhibition measurements.
 
-**Going-forward convention:** Distinguish "direct NLRP3 inhibitor" (binding/inhibition IC50 measured against NLRP3 protein) from "NLRP3 pathway modulator" (functional IL-1β reduction, mechanism inferred). Both are clinically relevant — Open Enzyme ultimately cares about IL-1β output, not NLRP3 biochemistry per se — but the distinction sharpens how claims are written. (In Vitro; source: nlrp3-inhibitor-screen.md)
+**Going-forward convention:** Distinguish "direct NLRP3 inhibitor" (binding/inhibition IC50 measured against NLRP3 protein) from "NLRP3 pathway modulator" (functional IL-1β reduction, mechanism inferred). Both are clinically relevant — Open Enzyme ultimately cares about IL-1β output, not NLRP3 biochemistry per se — but the distinction sharpens how claims are written. **As of ChEMBL v37 (2026-07-01), three compounds in the wiki have a curated direct human NLRP3 IC50:** dapansutrile (1.0 μM), oridonin (5.18 μM), and curcumin (24.2 μM). (In Vitro; source: chembl-cross-check.md)
 
 ### NLRP3 Pipeline Has Drifted Out of Gout
 
@@ -140,7 +140,7 @@ NLRP3 activation is a shared driver of both gout and SIBO-driven intestinal infl
 - Source: complement-c5a-gout.md — Complement C5a as dominant NLRP3 priming signal (CP0); avacopan repurposing candidate
 - Source: spm-resolution-pathway.md — Active resolution via ALX/FPR2 SPMs (CP5b); RvD1 and MaR1 gout animal model evidence
 - Source: tnfsf14-gout-target.md — TNFSF14/LIGHT as second-highest gout-flare biomarker (CP1a); EGCG and DHA natural activity; CERC-002 clinical precedent
-- Source: chembl-cross-check.md — ChEMBL v34 curated cross-check of stack compounds; curcumin 24.2 μM NLRP3 IC50, berberine TDO top target, resveratrol DPP-4 top target, EGCG proteasome 86 nM
+- Source: chembl-cross-check.md — ChEMBL v34/v37 curated cross-check of stack compounds; curcumin 24.2 μM NLRP3 IC50 + new DYRK2 2.5 nM (v37), berberine TDO 30 nM top target (v34), resveratrol DPP-4 0.6 nM top target (v34), EGCG proteasome 86 nM, ursolic acid ROR-γ 0.75 nM + NF-κB 31 nM (v37 new), β-caryophyllene CB2 150 nM now ChEMBL-curated (v37), disulfiram LOXL4 59 nM (v37 new)
 - Source: theaflavins.md — Theaflavins (black-tea polyphenols): NLRP3-NEK7 disruption (CP2/CP3), direct MSU peritonitis Animal Model, URAT1/GLUT9 downregulation, TF3 TNFSF14/HVEM modulation (CP1a); Tier 2 supplement candidate added 2026-05-05
 - Source: zileuton.md — Zileuton (FDA-approved 5-LOX inhibitor, asthma): CP6a repurposing candidate; zero gout trials registered; hepatotoxicity monitoring required; n=1 protocol design
 - Source: nlrp3-inhibitor-screen.md — 2026-05-05 audit: sulforaphane upgraded to Tier 2 (Yang 2018 PMID 29340626 direct MSU gout; Greaney 2015 PMID 26269198 Nrf2-independent inflammasome inhibition); theaflavins added as Tier 2

@@ -713,6 +713,8 @@ HCP is the first dietary polysaccharide in the OE corpus with documented activit
 
 **Mechanism:** Selective CB2 receptor agonist (Ki ~155 nM; CB2-over-CB1 selectivity >100×). In MSU-induced gouty arthritis (rat, animal model), 100–400 mg/kg oral dose-dependently reduced ankle swelling, serum IL-1β/IL-6/TNF-α, and synovial NLRP3/caspase-1/ASC/TLR4/MyD88/NF-κB expression — hits CP1 (NF-κB via TLR4/MyD88) AND CP2 (NLRP3/caspase-1). Mechanistically distinct from oridonin (Cys279) or BHB (K⁺ efflux) — additive potential. (*Front Pharmacol* 2021;12:651305, PMID: 33967792.) (source: cannabinoids-terpenes.md)
 
+**ChEMBL v37 update (2026-07-01):** CB2 Ki = **150 nM** now curated in ChEMBL (pChEMBL 6.82, *Eur J Med Chem* 2018) — resolves the "external-literature-only" ambiguity from the v34 baseline. See [chembl-cross-check.md](./etc/chembl-cross-check.md). (In Vitro; source: chembl-cross-check.md)
+
 **Evidence level:** Animal Model (MSU crystal rat gouty arthritis — the only cannabinoid or terpene with direct gout-model data)
 
 **Population context:** Broad applicability. No documented sex-differential effect. CB2-selective mechanism avoids the CB1-mediated gut motility slowdown that would be a concern in EPI patients (relevant given the Open Enzyme dual-target focus). GRAS food additive; non-psychoactive.

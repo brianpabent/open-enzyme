@@ -182,6 +182,7 @@ This is the only terpene or cannabinoid with direct, published data in the gout-
 - CB2 Ki: 155 ± 4 nM (selective CB2 agonist, full agonist functionally)
 - Functional CB2 EC50: ~38 nM (cAMP assay in CHO-K1 cells) to 1.9 μM (depending on assay)
 - CB1 affinity: negligible (selectivity for CB2 over CB1 estimated at >100-fold)
+- **ChEMBL v37 update (2026-07-01):** CB2 Ki = **150 nM** now curated in ChEMBL (pChEMBL 6.82, *Eur J Med Chem* 2018). Previously this was external-literature-only at the v34 baseline. See [chembl-cross-check.md](./etc/chembl-cross-check.md). (In Vitro; source: chembl-cross-check.md)
 
 **Neutrophil effects — CB2 and NETosis correction:**
 
