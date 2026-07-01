@@ -1,47 +1,16 @@
 {
   "schema_version": 1,
   "last_successful_sweep": {
-    "commit": "0346e426324d2ba831b3721edeaa5530fe657716",
-    "timestamp": "2026-06-03T15:01:21Z",
-    "synthesis_log": "logs/v4-synthesis-2026-06-03-405b50a.md",
-    "review_commit": "0346e426324d2ba831b3721edeaa5530fe657716",
+    "commit": "023a559879544c6ca8ffda8ad5237fb009c082a2",
+    "timestamp": "2026-07-01T14:08:27Z",
+    "synthesis_log": "logs/v4-synthesis-2026-07-01-18d3696.md",
+    "review_commit": "023a559879544c6ca8ffda8ad5237fb009c082a2",
     "trigger_files": [
-      "wiki/chaperone-orthogonal-stacking.md",
-      "wiki/colchicine.md",
-      "wiki/complement-c5a-gout.md",
-      "wiki/engineered-koji-protocol.md",
-      "wiki/enzyme-quantification-protocol.md",
-      "wiki/etc/GRAPH.md",
-      "wiki/etc/ai-bio-tools-playbook.md",
-      "wiki/etc/autonomous-screening-methodology.md",
-      "wiki/etc/bio-ai-tools.md",
-      "wiki/etc/manual-literature-mining.md",
-      "wiki/etc/open-enzyme-vision.md",
-      "wiki/etc/open-source-platform.md",
-      "wiki/etc/practitioner-toolkit.md",
-      "wiki/ginkgo-cloud-lab-evaluation.md",
-      "wiki/gout-clinical-pipeline.md",
-      "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
-      "wiki/index.md",
-      "wiki/koji-home-fermentation.md",
-      "wiki/nlrp3-exploit-map.md",
-      "wiki/nlrp3-inflammasome.md",
-      "wiki/open-questions.md",
-      "wiki/tnfsf14-gout-target.md",
-      "wiki/validation-experiments.md"
+      "wiki/etc/chembl-cross-check.md"
     ],
-    "run_id": "26892486761"
+    "run_id": "28522722635"
   },
   "recent_runs": [
-    {
-      "run_id": "local-rebase-fix-1778099887",
-      "trigger": "workflow_dispatch",
-      "completed_at": "2026-05-06T20:38:07Z",
-      "outcome": "success",
-      "failed_phase": null,
-      "trigger_paths_count": 35,
-      "synthesis_log": "logs/v4-synthesis-2026-05-06-121731c.md"
-    },
     {
       "run_id": "25522855762",
       "trigger": "workflow_dispatch",
@@ -212,6 +181,15 @@
       "failed_phase": null,
       "trigger_paths_count": 23,
       "synthesis_log": "logs/v4-synthesis-2026-06-03-405b50a.md"
+    },
+    {
+      "run_id": "28522722635",
+      "trigger": "workflow_dispatch",
+      "completed_at": "2026-07-01T14:08:27Z",
+      "outcome": "success",
+      "failed_phase": null,
+      "trigger_paths_count": 1,
+      "synthesis_log": "logs/v4-synthesis-2026-07-01-18d3696.md"
     }
   ]
 }
