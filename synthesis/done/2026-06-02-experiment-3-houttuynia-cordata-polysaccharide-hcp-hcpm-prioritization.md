@@ -13,3 +13,9 @@ overlap_tag: RESTATEMENT
 3. **Houttuynia cordata polysaccharide (HCP/HCPM) prioritization screen in MSU-stimulated THP-1 macrophages (3 arms: HCPM, crude HCP, commercial capsule; 3 log-spaced doses).** Cost: $1,500–2,500. Time: 4–6 weeks. Decides: whether Houttuynia suppresses MSU-induced IL-1β, and whether sourcing (purified vs. commercial) matters. Gates comp-040 (CFH-depleted-serum MSU assay). (source: validation-experiments.md §1.30, complement-c5a-gout.md §9.7)
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: RESTATEMENT]` The Houttuynia cordata polysaccharide prioritization screen in MSU-stimulated THP-1 macrophages is accurately described — three arms (HCPM, crude HCP, commercial capsule at three log-spaced doses), cost $1,500-2,500, time 4-6 weeks. This experiment is already specified at `validation-experiments.md §1.30` (added 2026-05-21). The synthesis correctly notes that it gates comp-040 (CFH-depleted-serum MSU assay). No new information is added beyond the existing §1.30 entry.
+
+---
+
+## ✓ Actioned 2026-07-13 (batch-close)
+
+**Already propagated.** Houttuynia cordata polysaccharide (dual-CP0+CP1 dietary candidate) is in `supplements-stack.md` (with the structure-dependent + dietary-PK caveat), the THP-1 prioritization screen is `validation-experiments.md` §1.30, and the CP0 framing is `complement-c5a-gout.md` §9.7 + comp-039 (CFH-independent, High confidence). No new wiki work. Closure.

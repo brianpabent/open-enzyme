@@ -17,3 +17,9 @@ overlap_tag: EXTENSION
    - *Suggested Action:* Add Houttuynia to the supplements-stack.md catalog with the structure-dependent caveat and the §1.30 wet-lab gate. Update open-questions.md with the sequenced dietary-CP0 triplet (RA #1–3). Queue comp-040 (CFH-depleted-serum MSU assay) as immediate next experiment. Add the Houttuynia-specific cross-tab to the UKB × AoU co-primary ask (deferred to East Asian cohorts per comp-041). Tag the dietary-CP0 stack in complement-c5a-gout.md §9.7–9.9 as "gated on comp-040 + biobank cross-tab + §1.30".
 
 > **Pass 3 review — Confirmed.** `[OVERLAP: EXTENSION]` The claim that Houttuynia cordata polysaccharide is the corpus's first dual-CP0+CP1 dietary candidate is well-supported and genuinely novel as a named composition. The CP0 evidence (CH50 79-318 µg/mL, multi-target C2/C4/C5 via comp-018 Phase 2) and CP1 evidence (TLR4-MD-2 direct binding, intestinal NLRP3/caspase-1 suppression per Li 2025 PMC12254813 and Yu 2026 PMC12937656) both check out against the cited sources. No single wiki page names Houttuynia as "dual-CP0+CP1"; the synthesis correctly composes evidence from `complement-c5a-gout.md §9.7`, `nlrp3-exploit-map.md §CP1`, and the 2026-05-19 lit scan. The structure-dependent directionality caveat (Cheng 2014 PMC7112369: pro-inflammatory on naïve PBMCs, anti-inflammatory in disease context) is properly preserved.
+
+---
+
+## ✓ Actioned 2026-07-13 (batch-close)
+
+**Already propagated.** Houttuynia cordata polysaccharide (dual-CP0+CP1 dietary candidate) is in `supplements-stack.md` (with the structure-dependent + dietary-PK caveat), the THP-1 prioritization screen is `validation-experiments.md` §1.30, and the CP0 framing is `complement-c5a-gout.md` §9.7 + comp-039 (CFH-independent, High confidence). No new wiki work. Closure.
