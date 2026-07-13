@@ -6,7 +6,7 @@ This directory holds the action queue and history of the wiki sweep daemon (`scr
 
 | Directory | Purpose | Writer |
 |---|---|---|
-| [`queue/`](./queue/) | Pending items the daemon emitted; awaiting walkthrough | Daemon (Pass 3) + `chembl-refresh-prompt.md` |
+| [`queue/`](./queue/) | Pending items the daemons emitted; awaiting walkthrough | Wiki daemon (Pass 3) + comp-review daemon + `chembl-refresh-prompt.md` |
 | [`done/`](./done/) | Items walked through to closure | Walkthrough discipline (`git mv` from queue/) |
 | [`history/`](./history/) | Per-sweep narrative summaries (one file per sweep run) | Daemon (Pass 3) |
 | [`strategic-reflections/`](./strategic-reflections/) | Content-triggered platform reflections (human-curated) | Humans only |
@@ -21,11 +21,12 @@ done/<sweep-date>-<type>-<index>-<slug>.md
 history/<sweep-date>-<short-sha>.md
 ```
 
-`<type>` ∈ `connection`, `contradiction`, `experiment`, `open-question`, `priority-action`, `riskiest-assumption`, `most-curious-thread`, `chembl-discrepancy`.
+`<type>` ∈ `connection`, `contradiction`, `experiment`, `open-question`, `priority-action`, `riskiest-assumption`, `most-curious-thread`, `chembl-discrepancy`, `comp-review`.
 
 ## Daemon-write vs human-write boundary
 
-- **Daemon writes** to `queue/` (per-item findings) and `history/` (per-sweep summaries) via `scripts/synthesis-emit-files.py` after Pass 3 review.
+- **Wiki daemon writes** to `queue/` (per-item findings) and `history/` (per-sweep summaries) via `scripts/synthesis-emit-files.py` after Pass 3 review.
+- **Comp-review daemon writes** one immutable log to `logs/comp-reviews/` for every reviewed comp and a `type: comp-review` queue item only when the independent artifact review finds required action.
 - **`chembl-refresh-prompt.md`** writes to `queue/` directly with `chembl-discrepancy` type files (separate quarterly workflow; not via the daemon emit script).
 - **Humans write** to `strategic-reflections/` only. Walkthrough discipline moves files from `queue/` to `done/`.
 

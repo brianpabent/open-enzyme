@@ -53,6 +53,10 @@ on:
       # scripts/synthesize.py globs wiki/*.md, not wiki/**/*.md, so wiki/etc/
       # is naturally excluded from the synthesis input). Editing an etc/ page
       # to add a tool reference shouldn't cost ~$0.50 + ~10 min in daemon time.
+      # Changed comp artifacts under wiki/etc/experiments/ are reviewed by the
+      # separate, bounded `.github/workflows/comp-review.yml` daemon. That
+      # restores mandatory code/input/output/summary scrutiny without loading
+      # the entire experiment artifact tree into this full-corpus context.
       #
       # Note: post-2026-05-08 migration, synthesis/ is sibling to wiki/, not under it.
       # The path filter on wiki/**.md does not match synthesis/**, so the daemon

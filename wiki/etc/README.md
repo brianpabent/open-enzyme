@@ -1,6 +1,7 @@
 ---
 title: "wiki/etc/ — reference / methodology / tooling pages (synthesis-excluded)"
 date: 2026-05-15
+updated: 2026-07-13
 status: meta
 ---
 
@@ -29,10 +30,13 @@ Examples in this directory:
 | `manual-literature-mining.md` | Methodology | How-to for lit mining |
 | `autonomous-screening-methodology.md` | Methodology | How-to for autonomous screens |
 | `chembl-cross-check.md` | Quality methodology | How OE validates against ChEMBL |
+| `experiments/comp-NNN-*/` | Reproducible computational artifacts | Too large for every global sweep; each changed comp receives its own bounded independent artifact review |
 
 ## What does NOT live here
 
-If a page contains **active research findings**, **mechanistic claims**, **chokepoint analysis**, **engineering plans**, **hypothesis cards**, or **synthesis output**, it belongs in `wiki/` proper, not in `wiki/etc/`. The daemon should re-read it on every sweep so cross-document connections surface.
+If a page contains **active research findings**, **mechanistic claims**, **chokepoint analysis**, **engineering plans**, **hypothesis cards**, or **synthesis output**, it normally belongs in `wiki/` proper, not in `wiki/etc/`. The global daemon should re-read it on every sweep so cross-document connections surface.
+
+**Exception — computational experiment artifacts.** The narrative stub for each comp remains in `wiki/` proper, while its reproducible code/input/output/archive bundle lives under `wiki/etc/experiments/`. These artifacts are active evidence but are too large and too implementation-specific to inline into every global synthesis. They are covered by the independent `.github/workflows/comp-review.yml` daemon instead: every changed comp gets a bounded artifact-level review with on-demand corpus search. This exception must not be generalized to other active-research pages.
 
 When in doubt: ask "would the daemon's synthesis benefit from re-reading this every sweep?" If yes → `wiki/`. If no → `wiki/etc/`.
 
@@ -44,7 +48,7 @@ Two layers exclude `wiki/etc/` from the daemon:
 
 2. **Workflow path trigger (`.github/workflows/wiki-sweep.yml`):** the push trigger watches `wiki/**.md` with `!wiki/etc/**` negation. Editing a page in this directory does not trigger a sweep run.
 
-Together: pages here are invisible to the daemon, both as input and as triggers.
+Together: ordinary pages here are invisible to the **global wiki daemon**, both as input and as triggers. The `wiki/etc/experiments/comp-*/**` subtree is separately watched by `.github/workflows/comp-review.yml`; comp artifacts are excluded from global synthesis, not from review.
 
 ## Cross-references
 

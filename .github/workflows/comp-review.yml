@@ -1,0 +1,156 @@
+name: Independent comp artifact review
+
+# The full wiki sweep excludes wiki/etc/experiments/ to stay within model
+# context limits. This workflow restores a mandatory, artifact-level review
+# whenever a comp changes, without inlining every comp into every full sweep.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'wiki/etc/experiments/comp-*/**'
+  workflow_dispatch:
+    inputs:
+      comp:
+        description: 'comp-NNN prefix, full comp directory, or "all" for an intentional backfill'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: comp-review-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      COMP_REVIEW_MODEL: openai/gpt-5.5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Select changed comp artifacts
+        id: select
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE_SHA: ${{ github.event.before }}
+          HEAD_SHA: ${{ github.sha }}
+          MANUAL_COMP: ${{ inputs.comp }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            if [ "$MANUAL_COMP" = "all" ]; then
+              find wiki/etc/experiments -mindepth 1 -maxdepth 1 -type d -name 'comp-*' | sort > /tmp/comp-dirs.txt
+            elif [ -d "$MANUAL_COMP" ]; then
+              printf '%s\n' "$MANUAL_COMP" > /tmp/comp-dirs.txt
+            else
+              find wiki/etc/experiments -mindepth 1 -maxdepth 1 -type d -name "${MANUAL_COMP}*" | sort > /tmp/comp-dirs.txt
+            fi
+            printf '%s\n' "" > /tmp/diff-base.txt
+          else
+            DIFF_BASE="$BEFORE_SHA"
+            if [ -z "$DIFF_BASE" ] || echo "$DIFF_BASE" | grep -Eq '^0+$'; then
+              DIFF_BASE="${HEAD_SHA}^"
+            fi
+            git diff --name-only "$DIFF_BASE..$HEAD_SHA" -- 'wiki/etc/experiments/comp-*/**' \
+              | sed -E 's#^(wiki/etc/experiments/comp-[^/]+)/.*#\1#' \
+              | sort -u > /tmp/comp-dirs.txt
+            printf '%s\n' "$DIFF_BASE" > /tmp/diff-base.txt
+          fi
+
+          if [ ! -s /tmp/comp-dirs.txt ]; then
+            echo "No comp directories selected"
+            echo "count=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "Selected comp directories:"
+          cat /tmp/comp-dirs.txt
+          echo "count=$(wc -l < /tmp/comp-dirs.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
+
+      - name: Review each selected comp
+        if: steps.select.outputs.count != '0'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          HEAD_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          DIFF_BASE=$(cat /tmp/diff-base.txt)
+          : > /tmp/comp-review-failures.txt
+          while IFS= read -r COMP_DIR; do
+            [ -n "$COMP_DIR" ] || continue
+            ARGS=(
+              --comp-dir "$COMP_DIR"
+              --commit-sha "$HEAD_SHA"
+              --model "$COMP_REVIEW_MODEL"
+              --prompt-file scripts/comp-review-prompt.md
+            )
+            if [ -n "$DIFF_BASE" ]; then
+              ARGS+=(--diff-base "$DIFF_BASE")
+            fi
+            if ! python3 scripts/comp-review.py "${ARGS[@]}"; then
+              echo "$COMP_DIR" | tee -a /tmp/comp-review-failures.txt
+            fi
+          done < /tmp/comp-dirs.txt
+
+          if [ -s /tmp/comp-review-failures.txt ]; then
+            mkdir -p logs/comp-reviews
+            FAILURE_LOG="logs/comp-reviews/$(date -u +%F)-run-${GITHUB_RUN_ID}-failures.md"
+            {
+              echo "# Comp-review failures — run ${GITHUB_RUN_ID}"
+              echo
+              echo "The following selected comp artifacts did not complete review:"
+              echo
+              sed 's/^/- `/' /tmp/comp-review-failures.txt | sed 's/$/`/'
+              echo
+              echo "Successful comp reviews from this run are preserved. Re-run the failed comps via workflow_dispatch."
+            } > "$FAILURE_LOG"
+          fi
+
+      - name: Commit review logs and actionable queue items
+        if: steps.select.outputs.count != '0'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add logs/comp-reviews/ synthesis/queue/
+          if git diff --cached --quiet; then
+            echo "Comp review produced no new artifacts"
+            exit 0
+          fi
+          git commit -m "comp-review: independent artifact audit [skip-wiki-sweep]"
+
+      - name: Push review artifacts
+        if: steps.select.outputs.count != '0'
+        run: |
+          set -euo pipefail
+          if ! git log origin/main..HEAD --oneline | grep -q .; then
+            echo "No comp-review commit to push"
+            exit 0
+          fi
+          for attempt in 1 2 3; do
+            git fetch origin main
+            if git log HEAD..origin/main --oneline | grep -q .; then
+              git rebase --autostash origin/main || { git rebase --abort || true; exit 1; }
+            fi
+            if git push; then
+              exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Comp-review push failed after 3 attempts"
+          exit 1
+
+      - name: Fail run if any selected comp was not reviewed
+        if: steps.select.outputs.count != '0'
+        run: |
+          if [ -s /tmp/comp-review-failures.txt ]; then
+            echo "One or more comp reviews failed; successful reviews and the failure ledger were preserved."
+            cat /tmp/comp-review-failures.txt
+            exit 1
+          fi
