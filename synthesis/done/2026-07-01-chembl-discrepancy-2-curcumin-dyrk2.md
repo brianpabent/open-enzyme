@@ -70,3 +70,9 @@ Load-bearing number: DYRK2 IC50 = 2.5 nM, pChEMBL 8.60, *J Med Chem* 2023. Sourc
 ## Status
 
 Open — awaiting minor propagation to [nlrp3-inhibitor-screen.md](../wiki/nlrp3-inhibitor-screen.md). Low urgency; may bundle with a subsequent walkthrough.
+
+---
+
+## ✓ Actioned 2026-07-13
+
+Verified DYRK2 IC50 = 2.5 nM directly against ChEMBL (CHEMBL140, activity 25062951, *J Med Chem* 2023, pChEMBL 8.60) — confirmed. **Correction to this card's own caveat:** DYRK2 is NOT single-paper — it's replicated across 3 curated assays (IC50 = 2.5 / 5 / 10 nM; *J Med Chem* 2023 ×2 + *ACS Med Chem Lett* 2024). The propagation was already in [`nlrp3-inhibitor-screen.md`](../../wiki/nlrp3-inhibitor-screen.md) (~line 345, landed with the 2026-07-01 refresh); strengthened it with the replication evidence + a verification stamp. No tier change (gout-relevance indirect; curcumin bioavailability makes systemic 2.5 nM implausible). Closure.
