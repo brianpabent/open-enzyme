@@ -539,10 +539,10 @@ def analyze_disulfide_load(protein_seq, protein_name, known_disulfide_count, ori
         "fold_risk":                 fold_risk,
         "fold_note":                 fold_note,
         "method_note": (
-            "Cysteine count from sequence. Known disulfide bond count from UniProt annotation. "
+            "Cysteine count from mature sequence after signal-peptide removal. Lactoferrin disulfide count from Notari 2023 (PMC10465537). "
             "Folding load index = N_disulfides / 16 (Huynh 2020 adalimumab = 16 disulfides across HC+LC = 1.0). "
-            "A. oryzae NSlD-ΔP10 demonstrated capacity for the Huynh 2020 baseline — whether higher disulfide "
-            "loads saturate ER PDI/ERO1 is empirically open. Structural pLDDT is not incorporated here. "
+            "This is a bulk-count comparator, not evidence of equivalent capacity across protein architectures. "
+            "Whether lactoferrin saturates ER PDI/ERO1 is empirically open. Structural pLDDT is not incorporated here. "
             "For C. utilis uricase: 4 Cys, 0 disulfides annotated. Free cysteines in the oxidizing ER lumen "
             "pose a theoretical aggregation risk during secretion transit. "
             "Evidence level: Mechanistic Extrapolation."
@@ -659,9 +659,10 @@ def analyze_combined_burden(uricase_results, lactoferrin_results, uricase_ss, lf
         concurrent_risks.append("Lf codon optimization is heavy — unoptimized human sequence will reduce expression efficiency")
 
     # Uricase KEX2 risk: only relevant if uricase uses KEX2 fusion architecture.
-    # The proposed §1.9 design places uricase on a DIRECT-SECRETION cassette (PTEF1-amyB_SP-C_utilis_uricase-TgpdA),
-    # NOT a glucoamylase fusion. KEX2 internal sites in uricase are therefore NOT load-bearing for the
-    # proposed architecture. Flag as informational — but more relevant for C. utilis than A. flavus
+    # This candidate uses a DIRECT-SECRETION cassette (PTEF1-amyB_SP-C_utilis_uricase-TgpdA),
+    # so KEX2 internal sites are not load-bearing within this candidate. Direct secretion is not
+    # selected here; it must compete against other topologies in validation §1.33. The sites remain
+    # more relevant for C. utilis than A. flavus
     # because C. utilis has 2 KR sites (1 HIGH + 1 MODERATE) vs. A. flavus 1 KR site (1 HIGH).
     uricase_kex2_is_load_bearing = False  # uricase uses direct secretion, not KEX2 fusion
     if uricase_kex2 not in ["LOW"] and uricase_kex2_is_load_bearing:
@@ -683,9 +684,8 @@ def analyze_combined_burden(uricase_results, lactoferrin_results, uricase_ss, lf
     uricase_kex2_note = (
         f"C. utilis uricase has {uricase_results['kex2']['total_kr_sites_in_mature']} internal K-R site(s) "
         f"(overall KEX2 risk: {uricase_kex2}). "
-        "NOT load-bearing: the proposed protocol places uricase on a direct-secretion cassette "
-        "(PTEF1-amyB_SP-C_utilis_uricase-TgpdA), not a glucoamylase-KEX2 fusion. "
-        "If C. utilis uricase is later moved to a fusion architecture, both sites require attention — "
+        "NOT load-bearing within the direct-secretion candidate (PTEF1-amyB_SP-C_utilis_uricase-TgpdA). "
+        "Direct secretion is not a settled topology: if §1.33 selects a fusion architecture, both sites require attention — "
         "notably position 130 (P1'=I, HIGH) and position 138 (P1'=S, HIGH). "
         "These two sites are in close proximity (8 residues apart, GEKRITD...YYKRSGD) — "
         "if uricase is ever placed in a KEX2 fusion, a KR->KQ double mutation at both sites "
@@ -835,7 +835,7 @@ def analyze_comparison(uricase_results, lactoferrin_results):
     # Disulfide load (both zero)
     comparable_to_aflavus.append(
         "Disulfide load: both A. flavus and C. utilis uricase have 0 annotated disulfide bonds — "
-        "neither adds PDI burden. The full 17-disulfide load of the dual-cassette system comes from lactoferrin only."
+        "neither adds PDI burden. The full 16-disulfide load of the dual-cassette system comes from lactoferrin only."
     )
 
     # Routing signals
@@ -886,8 +886,9 @@ def analyze_comparison(uricase_results, lactoferrin_results):
         "Both require KRGGG linker KEX2 processing for lactoferrin. "
         "Both target dual loci (niaD + sC or equivalent).",
 
-        "Lactoferrin (human, glycosylated, high disulfide) is mechanistically similar to adalimumab heavy chain. "
-        "Huynh 2020 demonstrated A. oryzae ER can handle mammalian-origin heavily-disulfided proteins."
+        "Lactoferrin and adalimumab are both mammalian-origin, glycosylated, disulfide-rich proteins, "
+        "but their folding and assembly architectures differ. Huynh 2020 is therefore a contextual "
+        "host precedent rather than a quantitative capacity proof for lactoferrin."
     ]
 
     return {
@@ -940,8 +941,8 @@ def main():
     # Disulfide bonds from UniProt annotation
     # C. utilis uricase P78609: 0 disulfide bonds (UniProt; 4 Cys but none annotated as disulfide)
     URICASE_DISULFIDES = 0
-    # Lactoferrin P02788: 17 disulfide bonds (UniProt — 34 Cys residues, fully paired)
-    LF_DISULFIDES = 17
+    # Lactoferrin P02788: 16 disulfide bonds (Notari 2023, PMC10465537; 32 mature-chain cysteines)
+    LF_DISULFIDES = 16
 
     # Run all analyses — C. utilis uricase
     uri_codon   = analyze_codon_usage(uricase_seq, "C. utilis uricase (P78609)", "Cyberlindnera jadinii (yeast, AT-biased)", codon_table, CUTILIS_PREFERRED_CODON)
@@ -954,7 +955,7 @@ def main():
     lf_codon    = analyze_codon_usage(lf_seq, "Lactoferrin (P02788)", "Homo sapiens (mammalian)", codon_table, HUMAN_PREFERRED_CODON)
     lf_kex2     = analyze_kex2_sites(lf_seq, "Lactoferrin (P02788)", LF_SP_END, kex2_specs)
     lf_routing  = analyze_secretion_targeting(lf_seq, "Lactoferrin (P02788)", LF_SP_END)
-    lf_disulf   = analyze_disulfide_load(lf_seq, "Lactoferrin (P02788)", LF_DISULFIDES, "Homo sapiens (mammalian)")
+    lf_disulf   = analyze_disulfide_load(lf_seq[LF_SP_END:], "Lactoferrin (P02788)", LF_DISULFIDES, "Homo sapiens (mammalian)")
     lf_glycan   = predict_nxst_sites(lf_seq, "Lactoferrin (P02788)", LF_SP_END)
 
     uricase_results   = {"codon": uri_codon, "kex2": uri_kex2, "routing": uri_routing,
@@ -1005,12 +1006,12 @@ def write_summary(data, path):
 
     if overall_risk == "MODERATE":
         verdict_rationale = (
-            "The C. utilis uricase (P78609) + lactoferrin (P02788) payload pair in the Ward 1995 "
-            "glucoamylase-KEX2 / direct-secretion architecture has no blocking cassette-design issues "
+            "The C. utilis uricase (P78609) + lactoferrin (P02788) payload pair in the candidate Ward 1995 "
+            "glucoamylase-KEX2 / direct-secretion architecture has no blocking sequence-level issues "
             "but carries three manageable design requirements absent in the comp-010 (A. flavus) baseline: "
             "(1) full codon optimization required for C. utilis (AT-biased yeast origin, GC~42% vs. A. oryzae ~54%); "
             "(2) 4 free cysteines in C. utilis uricase create a theoretical ER aggregation risk during secretion; "
-            "(3) 2 internal KR sites (positions 130 and 138) vs. 1 in A. flavus — non-load-bearing in direct-secretion design "
+            "(3) 2 internal KR sites (positions 130 and 138) vs. 1 in A. flavus — non-load-bearing within the direct-secretion candidate "
             "but noted for completeness. The MODERATE verdict is design-driven, not a fundamental incompatibility. "
             "Lactoferrin findings are numerically identical to comp-010."
         )
@@ -1141,12 +1142,12 @@ def write_summary(data, path):
         lines.append("")
 
     lines += [
-        "**Design recommendation:** The proposed cassette design places *C. utilis* uricase on a DIRECT-SECRETION "
-        "cassette (PTEF1-amyB_SP-P78609-TgpdA), not a glucoamylase-KEX2 fusion. In this design, the two internal "
+        "**Candidate-specific recommendation:** The analyzed *C. utilis* arm uses a DIRECT-SECRETION "
+        "cassette (PTEF1-amyB_SP-P78609-TgpdA), not a glucoamylase-KEX2 fusion. In this candidate, the two internal "
         "KR sites (positions 130 and 138) are irrelevant — KEX2 does not encounter the payload. "
         "IMPORTANT COMP-010 DELTA: *C. utilis* has 2 internal KR sites (positions 130 and 138, both HIGH risk: P1'=I and P1'=S) vs. "
-        "*A. flavus* 1 site (128 HIGH). Both are non-load-bearing in direct-secretion, but if *C. utilis* "
-        "uricase is ever moved to a fusion architecture, KR→KQ mutations at BOTH positions 130 and 138 are required "
+        "*A. flavus* 1 site (128 HIGH). Both are non-load-bearing in direct secretion, but if §1.33 selects a fusion "
+        "architecture for *C. utilis*, KR→KQ mutations at BOTH positions 130 and 138 are required "
         "(vs. only position 128 for A. flavus). The two sites are 8 residues apart (context: GEKRITD...YYKRSGD) — "
         "a double KR→KQ mutation is a straightforward synthesis modification.",
         "",
@@ -1380,8 +1381,8 @@ def write_summary(data, path):
         "   - Layer ALLN-346 ProteinGPS mutations (US10815461B2: I180V, V190G, Y165F, E51K, Q244K, I132R, A87G) "
         "on top of P78609 to improve protease resistance in the gut lumen. These are publicly disclosed — "
         "freedom-to-operate for research use.",
-        "   - Cassette architecture: direct-secretion (PTEF1-amyB_SP-P78609-TgpdA), NOT a glucoamylase-KEX2 "
-        "fusion. This avoids the 2 internal KR site risk entirely.",
+        "   - Carry direct secretion (PTEF1-amyB_SP-P78609-TgpdA) as one §1.33 topology candidate. It avoids the two "
+        "internal KR sites within that arm, but the physiological-system result—not comp-011—selects the topology.",
         "",
         "2. **If keeping *A. flavus* uricase (comp-010-verified track):**",
         "   - comp-010 verdict stands: LOW cassette-design risk. No additional design requirements.",
@@ -1389,12 +1390,11 @@ def write_summary(data, path):
         "   - Recommended if: (a) speed-to-first-clone is the priority, (b) rasburicase-derivative "
         "IP strategy is preferred, (c) no budget for second codon-optimized gene synthesis.",
         "",
-        "3. **Recommended §1.9 approach — empirical head-to-head:**",
+        "3. **Recommended §1.33 → §1.9B approach — nested empirical head-to-head:**",
         "   - Order BOTH A. flavus (Q00511, codon-optimized) AND C. utilis (P78609, codon-optimized + ALLN-346 mutations) "
-        "as direct-secretion cassettes. Run them in parallel in the same §1.9 solid-state koji experiment. "
-        "Total cost delta: ~$200–400 for the second codon-optimized gene. "
-        "The empirical comparison resolves the A. flavus vs. C. utilis platform decision at $0 additional "
-        "fermentation cost (same experiment, two strains).",
+        "within the topology arms specified by §1.33. Only carry a variant/topology pair into §1.9B after it passes "
+        "the physiological product/peroxide/viability gate; then compare the retained variants in solid-state koji. "
+        "This nests the species comparison inside the topology decision instead of presupposing direct secretion.",
         "",
         "4. **Lactoferrin cassette architecture (unchanged from comp-010):** "
         "PamyB — glucoamylase — KRGGG — hLf (codon-optimized) — TamyB. "

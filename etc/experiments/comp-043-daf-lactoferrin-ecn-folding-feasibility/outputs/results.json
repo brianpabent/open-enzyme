@@ -1,0 +1,411 @@
+{
+  "experiment": "comp-043",
+  "question": "Does EcN periplasmic disulfide-folding (DsbA/DsbC) + colonic-protease survival scale from C1-INH (2 disulfides, comp-037) to DAF SCR1-4 (8) and lactoferrin (16)?",
+  "chassis": "Engineered E. coli Nissle 1917 (EcN) LBP, luminal-secreted format",
+  "environment": "Colonic lumen, pH 6-7, 37C, ~0.15 M NaCl; bile-acid + commensal proteases out-of-model",
+  "method_note": "NOT a genome-scale metabolic model (a GEM models flux, not folding-machinery competition). Structural + sequence folding-feasibility analysis across three orthogonal axes with a limiting-factor (Liebig) composite.",
+  "capacity_anchors": {
+    "conservative": 5.0,
+    "moderate": 8.0,
+    "optimistic": 12.0
+  },
+  "capacity_anchor_provenance": {
+    "conservative_5.0": "Certolizumab pegol Fab' \u2014 secreted periplasmic E. coli manufacture, ~5 disulfides",
+    "moderate_8.0": "Fab-class precedent + DsbC-isomerase co-expression credit",
+    "optimistic_12.0": "Engineered oxidizing strain (SHuffle trxB/gor + cytoplasmic DsbC); set BELOW full-IgG 16",
+    "HONESTY": "No published DsbA/DsbC capacity metric exists at 8-16 disulfide scale. These are precedent-derived inferences, NOT measurements. This is the single biggest assumption."
+  },
+  "payloads": {
+    "C1-INH": {
+      "uniprot": "P05155",
+      "full_name": "Plasma protease C1 inhibitor (SERPING1 / C1-INH), Homo sapiens",
+      "fold_architecture": "serpin (metastable, RCL-driven)",
+      "engineering_construct_aa": [
+        123,
+        500
+      ],
+      "engineering_construct_note": "Serpin-core, mucin-like O-glycan domain (aa 23-119) truncated per comp-037. Retains both disulfides + RCL R466-T467.",
+      "structural_stats_folded_core": {
+        "length": 378,
+        "mean_plddt": 93.0,
+        "min_plddt": 32.9,
+        "max_plddt": 98.8,
+        "pct_residues_above_80": 95.0,
+        "pct_residues_above_90": 87.0
+      },
+      "connectivity": {
+        "disulfide_count": 2,
+        "loop_lengths": [
+          305,
+          75
+        ],
+        "max_loop_length": 305,
+        "local_bonds_L_le_50": 0,
+        "mid_range_bonds_50_150": 1,
+        "long_range_bonds_gt_150": 1,
+        "topological_crossings": 0,
+        "loop_length_demand": 4.0,
+        "crossing_demand": 0.0,
+        "effective_folding_demand": 4.0
+      },
+      "axis1_disulfide_folding": {
+        "effective_folding_demand": 4.0,
+        "per_capacity_anchor": {
+          "conservative": {
+            "capacity": 5.0,
+            "demand_capacity_ratio": 0.8,
+            "folding_nonviability": 0.3
+          },
+          "moderate": {
+            "capacity": 8.0,
+            "demand_capacity_ratio": 0.5,
+            "folding_nonviability": 0.0
+          },
+          "optimistic": {
+            "capacity": 12.0,
+            "demand_capacity_ratio": 0.333,
+            "folding_nonviability": 0.0
+          }
+        },
+        "folding_nonviability_band": [
+          0.0,
+          0.3
+        ],
+        "point_estimate_moderate": 0.0,
+        "verdict": "FOLDING-PLAUSIBLE"
+      },
+      "axis2_protease_exposure": {
+        "max_risk_score": 0.1,
+        "worst_protease": "OmpT",
+        "total_exposed_sites_in_core": 0,
+        "per_protease": {
+          "trypsin": {
+            "max_risk_score": 0.06,
+            "exposed_sites": 0,
+            "sites_in_core": 36
+          },
+          "chymotrypsin": {
+            "max_risk_score": 0.06,
+            "exposed_sites": 0,
+            "sites_in_core": 94
+          },
+          "elastase": {
+            "max_risk_score": 0.05,
+            "exposed_sites": 0,
+            "sites_in_core": 178
+          },
+          "OmpT": {
+            "max_risk_score": 0.1,
+            "exposed_sites": 0,
+            "sites_in_core": 3
+          },
+          "DegP": {
+            "max_risk_score": 0.08,
+            "exposed_sites": 0,
+            "sites_in_core": 138
+          }
+        },
+        "verdict": "LOW"
+      },
+      "axis3_glyco_dependence": {
+        "n_glyc_sites_annotated": 7,
+        "ecn_can_glycosylate": false,
+        "class": "not_required",
+        "penalty": 0.0,
+        "rationale": "N-glycans drive plasma half-life (Bos 1998 PMID 9799502); the serpin suicide-inhibitor mechanism (RCL presentation -> acyl-enzyme covalent trap) is polypeptide-encoded. For a gut-luminal format, plasma half-life is irrelevant. Deglycosylated C1-INH is functionally inhibitory (Bos 1998)."
+      },
+      "composite": {
+        "axes": {
+          "disulfide_folding": 0.0,
+          "protease_exposure": 0.1,
+          "glyco_dependence": 0.0
+        },
+        "limiting_axis": "protease_exposure",
+        "weighted_composite_nonviability": 0.05,
+        "verdict": "VIABLE",
+        "driver": "disulfide-axis viable across the capacity band; protease LOW; glyco not function-limiting. CAVEAT: Axis 1 scores disulfide formation/isomerization burden, NOT native-fold attainment \u2014 serpin metastability (recombinant C1-INH is made in mammalian/milk systems, not E. coli) is an unmodeled attainment risk"
+      }
+    },
+    "DAF_SCR1-4": {
+      "uniprot": "P08174",
+      "full_name": "Complement decay-accelerating factor (CD55 / DAF), Homo sapiens, SCR1-4 truncation",
+      "fold_architecture": "CCP / SCR / sushi (4 compact ~60-aa beta-sandwich modules)",
+      "engineering_construct_aa": [
+        35,
+        285
+      ],
+      "engineering_construct_note": "SCR1-4 only per comp-012. Ser/Thr GPI-linker stalk (aa 286-353) truncated. All 8 disulfides retained.",
+      "structural_stats_folded_core": {
+        "length": 251,
+        "mean_plddt": 96.7,
+        "min_plddt": 85.6,
+        "max_plddt": 98.7,
+        "pct_residues_above_80": 100.0,
+        "pct_residues_above_90": 98.8
+      },
+      "connectivity": {
+        "disulfide_count": 8,
+        "loop_lengths": [
+          45,
+          29,
+          47,
+          29,
+          41,
+          30,
+          42,
+          30
+        ],
+        "max_loop_length": 47,
+        "local_bonds_L_le_50": 8,
+        "mid_range_bonds_50_150": 0,
+        "long_range_bonds_gt_150": 0,
+        "topological_crossings": 4,
+        "loop_length_demand": 8.0,
+        "crossing_demand": 2.0,
+        "effective_folding_demand": 10.0
+      },
+      "axis1_disulfide_folding": {
+        "effective_folding_demand": 10.0,
+        "per_capacity_anchor": {
+          "conservative": {
+            "capacity": 5.0,
+            "demand_capacity_ratio": 2.0,
+            "folding_nonviability": 1.0
+          },
+          "moderate": {
+            "capacity": 8.0,
+            "demand_capacity_ratio": 1.25,
+            "folding_nonviability": 0.75
+          },
+          "optimistic": {
+            "capacity": 12.0,
+            "demand_capacity_ratio": 0.833,
+            "folding_nonviability": 0.333
+          }
+        },
+        "folding_nonviability_band": [
+          0.333,
+          1.0
+        ],
+        "point_estimate_moderate": 0.75,
+        "verdict": "FOLDING-EDGE"
+      },
+      "axis2_protease_exposure": {
+        "max_risk_score": 0.1,
+        "worst_protease": "OmpT",
+        "total_exposed_sites_in_core": 0,
+        "per_protease": {
+          "trypsin": {
+            "max_risk_score": 0.06,
+            "exposed_sites": 0,
+            "sites_in_core": 23
+          },
+          "chymotrypsin": {
+            "max_risk_score": 0.06,
+            "exposed_sites": 0,
+            "sites_in_core": 39
+          },
+          "elastase": {
+            "max_risk_score": 0.05,
+            "exposed_sites": 0,
+            "sites_in_core": 109
+          },
+          "OmpT": {
+            "max_risk_score": 0.1,
+            "exposed_sites": 0,
+            "sites_in_core": 3
+          },
+          "DegP": {
+            "max_risk_score": 0.08,
+            "exposed_sites": 0,
+            "sites_in_core": 70
+          }
+        },
+        "verdict": "LOW"
+      },
+      "axis3_glyco_dependence": {
+        "n_glyc_sites_annotated": 1,
+        "ecn_can_glycosylate": false,
+        "class": "aids_not_required",
+        "penalty": 0.3,
+        "rationale": "Single N-glycan (N95, SCR1). Decay-accelerating activity is a protein-protein interaction (SCR2-4 bind C3b/C4b and accelerate convertase decay) \u2014 not glycan-dependent. The bulk glycan liability (O-glycans) is on the truncated stalk. Loss of N95 glycan is unlikely to abolish function but is not affirmatively demonstrated for an aglycosyl SCR1-4 fragment."
+      },
+      "composite": {
+        "axes": {
+          "disulfide_folding": 0.75,
+          "protease_exposure": 0.1,
+          "glyco_dependence": 0.3
+        },
+        "limiting_axis": "disulfide_folding",
+        "weighted_composite_nonviability": 0.545,
+        "verdict": "PROVISIONAL",
+        "driver": "folding-capacity-gated: viability flips across the (unmeasured) DsbA/DsbC capacity band"
+      }
+    },
+    "lactoferrin": {
+      "uniprot": "P02788",
+      "full_name": "Lactotransferrin (LTF / hLf), Homo sapiens",
+      "fold_architecture": "transferrin-lobe (bilobal, ~330 aa/lobe, helical inter-lobe linker)",
+      "engineering_construct_aa": [
+        20,
+        710
+      ],
+      "engineering_construct_note": "Full mature bilobal protein. No stalk-truncation rescue available: the bilobal fold + 16-disulfide architecture is intrinsic to iron-binding function; there is no dispensable disordered appendage analogous to the CD55 stalk or C1-INH mucin domain.",
+      "structural_stats_folded_core": {
+        "length": 691,
+        "mean_plddt": 96.4,
+        "min_plddt": 40.3,
+        "max_plddt": 98.9,
+        "pct_residues_above_80": 98.7,
+        "pct_residues_above_90": 96.7
+      },
+      "connectivity": {
+        "disulfide_count": 16,
+        "loop_lengths": [
+          36,
+          17,
+          83,
+          16,
+          11,
+          14,
+          32,
+          13,
+          281,
+          222,
+          75,
+          194,
+          14,
+          13,
+          14,
+          5
+        ],
+        "max_loop_length": 281,
+        "local_bonds_L_le_50": 11,
+        "mid_range_bonds_50_150": 2,
+        "long_range_bonds_gt_150": 3,
+        "topological_crossings": 4,
+        "loop_length_demand": 21.5,
+        "crossing_demand": 2.0,
+        "effective_folding_demand": 23.5
+      },
+      "axis1_disulfide_folding": {
+        "effective_folding_demand": 23.5,
+        "per_capacity_anchor": {
+          "conservative": {
+            "capacity": 5.0,
+            "demand_capacity_ratio": 4.7,
+            "folding_nonviability": 1.0
+          },
+          "moderate": {
+            "capacity": 8.0,
+            "demand_capacity_ratio": 2.938,
+            "folding_nonviability": 1.0
+          },
+          "optimistic": {
+            "capacity": 12.0,
+            "demand_capacity_ratio": 1.958,
+            "folding_nonviability": 1.0
+          }
+        },
+        "folding_nonviability_band": [
+          1.0,
+          1.0
+        ],
+        "point_estimate_moderate": 1.0,
+        "verdict": "FOLDING-LIMITED"
+      },
+      "axis2_protease_exposure": {
+        "max_risk_score": 1.0,
+        "worst_protease": "OmpT",
+        "total_exposed_sites_in_core": 5,
+        "per_protease": {
+          "trypsin": {
+            "max_risk_score": 0.6,
+            "exposed_sites": 2,
+            "sites_in_core": 88
+          },
+          "chymotrypsin": {
+            "max_risk_score": 0.06,
+            "exposed_sites": 0,
+            "sites_in_core": 124
+          },
+          "elastase": {
+            "max_risk_score": 0.5,
+            "exposed_sites": 1,
+            "sites_in_core": 320
+          },
+          "OmpT": {
+            "max_risk_score": 1.0,
+            "exposed_sites": 2,
+            "sites_in_core": 16
+          },
+          "DegP": {
+            "max_risk_score": 0.08,
+            "exposed_sites": 0,
+            "sites_in_core": 236
+          }
+        },
+        "verdict": "RED"
+      },
+      "axis3_glyco_dependence": {
+        "n_glyc_sites_annotated": 3,
+        "ecn_can_glycosylate": false,
+        "class": "aids_not_required",
+        "penalty": 0.3,
+        "rationale": "3 N-glycans (N156/N497/N642). Iron sequestration + lactoferricin antimicrobial activity are polypeptide-encoded; glycans contribute to protease resistance and thermal stability. Non-native (fungal) glycans are tolerated with native fold (Sun 1999 PMID 10089347, A. awamori hLf). CRITICAL: glycosylation is NOT the function-killer for lactoferrin in EcN \u2014 the disulfide-FOLDING axis is. In EcN the glycans are entirely absent, removing their protease-resistance contribution and COMPOUNDING (not causing) the folding problem."
+      },
+      "composite": {
+        "axes": {
+          "disulfide_folding": 1.0,
+          "protease_exposure": 1.0,
+          "glyco_dependence": 0.3
+        },
+        "limiting_axis": "disulfide_folding",
+        "weighted_composite_nonviability": 0.895,
+        "verdict": "NOT-VIABLE",
+        "driver": "folding-limited across the entire plausible DsbA/DsbC capacity band"
+      }
+    }
+  },
+  "ranking_by_folding_burden": [
+    {
+      "payload": "C1-INH",
+      "disulfides": 2,
+      "effective_folding_demand": 4.0,
+      "composite_verdict": "VIABLE"
+    },
+    {
+      "payload": "DAF_SCR1-4",
+      "disulfides": 8,
+      "effective_folding_demand": 10.0,
+      "composite_verdict": "PROVISIONAL"
+    },
+    {
+      "payload": "lactoferrin",
+      "disulfides": 16,
+      "effective_folding_demand": 23.5,
+      "composite_verdict": "NOT-VIABLE"
+    }
+  ],
+  "crossover": {
+    "highest_viable_disulfide_count": 2,
+    "provisional_disulfide_counts": [
+      8
+    ],
+    "lowest_not_viable_disulfide_count": 16,
+    "interpretation": "EcN periplasmic DsbA/DsbC folding is plausible up to ~2 disulfides (C1-INH, VIABLE); PROVISIONAL / capacity-gated at 8 disulfides (DAF SCR1-4); and NOT plausible at 16 disulfides (lactoferrin, folding-limited across the entire capacity band). The plausible-to-not-plausible crossover sits AT DAF SCR1-4 (8 disulfides) and its exact location is gated by the one unmeasured parameter \u2014 the DsbA/DsbC oxidative-folding capacity metric at 8-16 disulfide scale, which does not exist in the published literature."
+  },
+  "optimistic_assumptions": [
+    "Reference DsbA/DsbC capacity band (5/8/12) is precedent-derived, NOT a measured capacity (no published metric at 8-16 disulfide scale \u2014 chaperone-orthogonal-stacking.md \u00a78 item 6).",
+    "Axis 1 scores disulfide FORMATION/ISOMERIZATION burden, NOT native-fold ATTAINMENT. Serpin metastability (C1-INH) and transferrin molten-globule hierarchy (lactoferrin) are additional unmodeled attainment risks \u2014 disulfides are necessary, not sufficient, for a functional fold. Recombinant C1-INH is manufactured in mammalian/milk systems, not E. coli, for this reason.",
+    "The OPTIMISTIC anchor (12.0, SHuffle trxB/gor + cytoplasmic DsbC) describes CYTOPLASMIC disulfide formation. A cytoplasmically-folded protein does not route through the Sec\u2192periplasm\u2192outer-membrane luminal-secretion path this LBP format requires \u2014 so the optimistic anchor is compartment-mismatched with the secreted format. The realistic ceiling for a SECRETED payload is nearer the conservative/moderate anchors, which pushes DAF SCR1-4 toward the folding-limited end of its band (i.e., DAF's 'viable-only-at-optimistic' read leans on an anchor that may not apply).",
+    "pLDDT is used as a burial proxy for the protease axis (comp-034 showed this under-counts SASA-exposed helical/linker sites ~10x, e.g. the lactoferrin inter-lobe linker).",
+    "Per-bond loop-length weighting (1.0/1.5/2.5) + per-crossing surcharge (0.5) are transparent monotone proxies for DsbC isomerization demand, not measured k_cat values.",
+    "Secretion topology (Sec/YebF/Type I) and its effect on OmpT/DegP exposure is not modeled.",
+    "Colonic commensal-microbiome protease load and bile-acid unfolding are out-of-model.",
+    "The koji lactoferrin precedent (>2 g/L) is Aspergillus AWAMORI (Ward 1995), a sister species of A. oryzae koji \u2014 genus-level evidence, not koji proper."
+  ],
+  "card_claim_evaluated": "'EcN is superior to koji for PDI-heavy payloads like DAF SCR1-4 (8 disulfides) and lactoferrin (16 disulfides).'",
+  "card_claim_verdict": "REFUTED as stated (blanket 'PDI-heavy' claim)",
+  "bounded_thesis": "EcN's periplasmic DsbA/DsbC folding plausibly extends to LOW-to-MODERATE disulfide, COMPACT-fold, glycosylation-independent payloads (C1-INH VIABLE 2 disulfides; DAF SCR1-4 PROVISIONAL 8 disulfides, CCP/sushi fold). It does NOT plausibly scale to lactoferrin (16 disulfides, bilobal transferrin fold with C-lobe-spanning long-range bonds). Moreover koji is NOT dominated: koji (eukaryotic ER + PDI/ERO1 + glycosylation) folds DAF SCR1-4 at LOW protease risk (comp-012) and has a >2 g/L lactoferrin precedent (Ward 1995, A. awamori; Sun 1999 native fold). So EcN is a plausible ALTERNATIVE at low/moderate disulfide scale, not a superior chassis for PDI-heavy payloads \u2014 and is inferior to koji for lactoferrin specifically."
+}

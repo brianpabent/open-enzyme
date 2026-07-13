@@ -1,0 +1,28 @@
+{
+  "molecule": "KPV (Lys-Pro-Val), C-terminal tripeptide of alpha-MSH (residues 11-13)",
+  "molecular_weight_Da": {
+    "central": 342.43,
+    "comment": "Average mass. Lys 146.19 + Pro 115.13 + Val 117.15 - 2 x H2O (36.03) = 342.44 g/mol. Molecular formula C16H30N4O4. Consistent with PubChem KPV entry. Monoisotopic ~342.23.",
+    "source_class": "computed_from_sequence"
+  },
+  "net_charge_pH7p4": {
+    "central": 1.0,
+    "comment": "N-terminal alpha-amine (+1) + Lys epsilon-amine (+1) + C-terminal carboxylate (-1) = net +1 at physiological pH. KPV is a monovalent CATION. This matters: the GSDMD pore conduit is predominantly negatively charged and electrostatically FAVORS cationic and neutral cargo (Xia 2021), so KPV's +1 charge makes the pore hindrance factor >= 1 (not a barrier).",
+    "source_class": "computed_from_pKa"
+  },
+  "hydrodynamic_radius_nm": {
+    "central": 0.50,
+    "lower": 0.45,
+    "upper": 0.60,
+    "comment": "Estimated for a 342 Da tripeptide. Stokes-Einstein back-calc from D~5e-6 cm2/s gives r_h ~0.5 nm; empirical small-peptide/amino-acid hydrodynamic radii are 0.35-0.6 nm. r_solute/r_pore ~= 0.5/10 = 0.05, so steric partition (1-lambda)^2 ~= 0.90 and diffusive hindrance ~= 0.9 -> steric hindrance approximated as ~1 (justified: solute is 20-40x smaller than the pore radius).",
+    "source_class": "estimated_stokes_einstein"
+  },
+  "aqueous_diffusion_coefficient_m2_per_s": {
+    "central": 5.0e-10,
+    "lower": 4.0e-10,
+    "upper": 6.0e-10,
+    "comment": "5e-10 m2/s = 5e-6 cm2/s. Stokes-Einstein: D = kT/(6*pi*eta*r_h) with eta_water(37C)=0.69e-3 Pa.s, r_h=0.5 nm, T=310K -> D = (1.38e-23*310)/(6*pi*0.69e-3*0.5e-9) = 6.6e-10 m2/s. At 25C (0.89e-3 Pa.s) -> 4.5e-10. Central 5e-6 cm2/s is the standard order for a ~340 Da solute; range 4-6e-6 cm2/s brackets temperature and r_h uncertainty. This is a low-sensitivity parameter because access resistance (which scales as 1/D too) and pore permeability both scale linearly with D, so the equilibration time constant scales as 1/D uniformly.",
+    "source_class": "estimated_stokes_einstein"
+  },
+  "enzymatic_resistance_note": "Our wiki (kpv-peptide.md) states KPV is 'resistant to significant enzymatic degradation.' That claim is about EXTRACELLULAR/serum stability (short peptide, PepT1-transported, low plasma proteolysis). It is LOAD-BEARING here in the opposite direction from the thesis: if KPV is also poorly degraded INTRACELLULARLY, then a PepT1-expressing HEALTHY cell accumulates and retains KPV -> the healthy-cell baseline is higher -> the pore's selectivity advantage shrinks. The intracellular peptidase susceptibility of KPV is not separately characterized; treated as an assumption feeding the healthy-cell accumulation ceiling."
+}

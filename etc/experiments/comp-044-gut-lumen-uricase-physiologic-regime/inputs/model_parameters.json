@@ -1,0 +1,35 @@
+{
+  "model_purpose": "Reclassify oral uricase capacity regimes after explicitly applying substrate concentration, Km, active window, oxygen availability, substrate access, and enzyme survival. This is a bounded sensitivity analysis, not a serum-urate efficacy model.",
+  "molecular_weight_urate_g_per_mol": 168.11,
+  "uricase_specific_activity_U_per_mg": 8.3,
+  "in_vivo_ph_activity_factor_scenario_multiplier": 0.75,
+  "legacy_intestinal_urate_flux_mg_per_day": 233.0,
+  "doses_mg": [5.0, 25.0, 50.0],
+  "measured_or_regulatory_priors": {
+    "human_jejunal_urate_uM": {"central": 0.59, "low": 0.06, "high": 1.16},
+    "uricase_Km_urate_uM": {"central": 25.0, "low": 5.0, "high": 100.0},
+    "small_bowel_active_window_hours": {"central": 3.0, "low": 2.0, "high": 4.0}
+  },
+  "scenario_only_values_not_measured_human_baselines": {
+    "postprandial_or_inflamed_urate_uM": 50.0,
+    "high_distal_urate_uM": 500.0,
+    "effective_oxygen_dependent_activity_multipliers": [0.01, 0.15, 1.0],
+    "substrate_access_factors": [0.25, 0.5, 1.0],
+    "active_enzyme_survival_factors": [0.25, 0.5, 1.0]
+  },
+  "named_scenarios": [
+    {"name": "legacy_vmax_24h", "urate_uM": null, "Km_uM": 25.0, "hours": 24.0, "oxygen_factor": 1.0, "access_factor": 1.0, "survival_factor": 1.0},
+    {"name": "jejunal_baseline_no_extra_penalties", "urate_uM": 0.59, "Km_uM": 25.0, "hours": 3.0, "oxygen_factor": 1.0, "access_factor": 1.0, "survival_factor": 1.0},
+    {"name": "jejunal_baseline_microoxic_access_limited", "urate_uM": 0.59, "Km_uM": 25.0, "hours": 3.0, "oxygen_factor": 0.15, "access_factor": 0.5, "survival_factor": 0.5},
+    {"name": "postprandial_sensitivity_microoxic", "urate_uM": 50.0, "Km_uM": 25.0, "hours": 3.0, "oxygen_factor": 0.15, "access_factor": 0.5, "survival_factor": 0.5},
+    {"name": "distal_high_substrate_anoxic_sensitivity", "urate_uM": 500.0, "Km_uM": 25.0, "hours": 24.0, "oxygen_factor": 0.01, "access_factor": 0.25, "survival_factor": 0.25}
+  ],
+  "exhaustive_grid": {
+    "urate_uM": [0.06, 0.59, 1.16, 50.0, 500.0],
+    "Km_uM": [5.0, 25.0, 100.0],
+    "hours": [2.0, 3.0, 4.0, 24.0],
+    "oxygen_factor": [0.01, 0.15, 1.0],
+    "access_factor": [0.25, 0.5, 1.0],
+    "survival_factor": [0.25, 0.5, 1.0]
+  }
+}

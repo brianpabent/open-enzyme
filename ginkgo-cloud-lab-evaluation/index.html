@@ -4191,7 +4191,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--Reopened"></span>
   
 
   
@@ -4698,6 +4698,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--invalidated"></span>
+  
+
   
 
       </a>
@@ -5398,7 +5405,7 @@
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Two offers surfaced.</strong> Cell-Free Protein Expression Validation at <strong>$39/protein</strong> (≤1,800 bp, ~5–10 day turnaround) confirms a designed sequence produces folded polypeptide in cell-free lysate. A <strong>96-construct S. cerevisiae strain-engineering campaign at ≈$2,340 total (≈$24.38/sample)</strong> was also quoted.</li>
-<li><strong>Decision (2026-05-13): skip the $39 cell-free for now.</strong> The offer is real and the price is right, but it was originally scoped as a pre-gate for the <em>fungal</em> wet-lab work, and the current priority stack has that wet-lab work as downstream — Ginkgo doesn't need to happen before, during, or after current Phase 0 work. The cell-free test would surface no information the existing computational corpus (comp-019 flux model, comp-022 cassette ranking, comp-023 cordycepin burden, ViennaRNA mRNA folding + ESM2 pseudo-pLDDT proxies) doesn't already give to high confidence. Revisit when a wet-lab experiment actually needs the pre-gate to be load-bearing; until then, save the $39 and the calendar drag.</li>
+<li><strong>Decision (2026-05-13; rationale narrowed 2026-07-13): skip the $39 cell-free for now.</strong> The assay can test translation/solubility in an <em>E. coli</em>-lysate-like environment, but it cannot resolve physiological luminal substrate, oxygen, transit, topology, peroxide, or fungal-host behavior. comp-019 is no longer evidence that those questions are already answered. Revisit only if cell-free ORF translation becomes the specific next gate.</li>
 <li><strong>Don't budget against the $24/sample number.</strong> The $2,340 strain-engineering quote is almost certainly a lead-magnet teaser, not what a formal Ginkgo service request will return — historic Ginkgo strain-engineering campaigns at this scope have priced mid-five to six figures. Real strain-engineering campaigns at the OE scope are $3,000–$50,000+ per the academic-collaboration cost framing in <a href="../operations/ward-1995-lab-access.md"><code>ward-1995-lab-access.md</code></a> and <a href="../validation-experiments/"><code>validation-experiments.md</code></a> §1.9.</li>
 <li><strong>Construct fit is mixed (preserved for future revisit).</strong> Cell-free is a clean test for <strong>uricase variants</strong> (no glycosylation requirement, E. coli-lysate-compatible fold). It is a <strong>weak test for DAF/CD55 SCR1-4</strong> (SCR domains carry O-glycans; aglyco backbone tells you the ORF works but not functional folding). This analysis stands; the skip-for-now decision is about timing and incremental value, not technical fit.</li>
 <li><strong>Ginkgo Cloud Lab and the community-college / grad-student path are complementary, not competing.</strong> Cell-free answers an earlier gate ("does the sequence produce a folded protein at all?"); the CC path answers the gate Ginkgo's plate-based Cloud Lab cannot ("does it secrete from a fungal host in a real fermentation context?"). Ambr 250 / bioreactor work is, per EstiMate, a separate downstream Ginkgo service.</li>
@@ -5573,7 +5580,7 @@
 <p>The Ginkgo cell-free pre-gate is <strong>upstream</strong> of the fungal/fermentation gate. Negative cell-free result = redesign the construct before any fungal work. Positive cell-free result = construct is worth committing fungal-host effort to. Either way, $39 buys earlier information than the fungal path can provide.</p>
 <p>Ginkgo's full strain-engineering tier sits <strong>in the same niche</strong> as the CC path — but plate-based, not fermentation-based, and at unknown true cost. Worth a real quote before deciding it's the right tool.</p>
 <h3 id="recommended-next-move-revised-2026-05-13-none-deferred">Recommended next move (revised 2026-05-13: none — deferred)<a class="headerlink" href="#recommended-next-move-revised-2026-05-13-none-deferred" title="Permanent link">&para;</a></h3>
-<p><strong>No action.</strong> The $39 cell-free pre-gate was originally framed as a sequence-validation step upstream of the fungal wet-lab work. The current priority stack has that wet-lab work downstream of in-flight in-silico work; the cell-free test would not surface information the existing computational corpus (comp-019, comp-022, comp-023, ViennaRNA mRNA folding + ESM2 pseudo-pLDDT) doesn't already provide to high confidence.</p>
+<p><strong>No action.</strong> The $39 cell-free pre-gate answers a narrow translation/solubility question, not the physiological-regime failure exposed by comp-044. Use it only when ORF translation is the bottleneck; it is not a substitute for validation §1.33.</p>
 <p>Revisit when a downstream wet-lab experiment becomes load-bearing and an independent E. coli-lysate fold-check would meaningfully de-risk it. Until then, save the $39 and the calendar drag.</p>
 <p>For reference, the original (now-deferred) recommendation rationale:
 - Cheap. Single-construct, productized SKU, no campaign commitment.

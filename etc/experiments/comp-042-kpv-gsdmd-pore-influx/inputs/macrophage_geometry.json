@@ -1,0 +1,16 @@
+{
+  "cell_volume_um3": {
+    "central": 3000.0,
+    "lower": 1000.0,
+    "upper": 5000.0,
+    "comment": "Activated/differentiated macrophage volume. A sphere of 18 um diameter = 3050 um3; 15 um -> 1770 um3; 21 um -> 4850 um3. Monocyte-derived and synovial macrophages are 15-25 um diameter when spread/activated. Range 1000-5000 um3 (1e-15 to 5e-15 m3). This sets the denominator for intracellular [KPV] and the numerator of the equilibration time constant tau_eq = V/(N_pores*p_pore).",
+    "source_class": "cell_biology_standard"
+  },
+  "surface_area_um2": {
+    "central": 1000.0,
+    "lower": 700.0,
+    "upper": 4000.0,
+    "comment": "Geometric SA of an 18 um sphere ~= 1018 um2. Real macrophages have extensive membrane ruffling (2-4x geometric), so the pore-accessible area is larger, which if anything raises pore count for a given density. Not directly load-bearing (the model uses an explicit pore COUNT, not a density x area), included for completeness and for the alternative density-based cross-check.",
+    "source_class": "cell_biology_standard"
+  }
+}

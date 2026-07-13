@@ -3926,7 +3926,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--Reopened"></span>
   
 
   
@@ -4433,6 +4433,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--invalidated"></span>
+  
+
   
 
       </a>
@@ -5193,10 +5200,16 @@
 <td>Quality methodology</td>
 <td>How OE validates against ChEMBL</td>
 </tr>
+<tr>
+<td><code>experiments/comp-NNN-*/</code></td>
+<td>Reproducible computational artifacts</td>
+<td>Too large for every global sweep; each changed comp receives its own bounded independent artifact review</td>
+</tr>
 </tbody>
 </table>
 <h2 id="what-does-not-live-here">What does NOT live here<a class="headerlink" href="#what-does-not-live-here" title="Permanent link">&para;</a></h2>
-<p>If a page contains <strong>active research findings</strong>, <strong>mechanistic claims</strong>, <strong>chokepoint analysis</strong>, <strong>engineering plans</strong>, <strong>hypothesis cards</strong>, or <strong>synthesis output</strong>, it belongs in <code>wiki/</code> proper, not in <code>wiki/etc/</code>. The daemon should re-read it on every sweep so cross-document connections surface.</p>
+<p>If a page contains <strong>active research findings</strong>, <strong>mechanistic claims</strong>, <strong>chokepoint analysis</strong>, <strong>engineering plans</strong>, <strong>hypothesis cards</strong>, or <strong>synthesis output</strong>, it normally belongs in <code>wiki/</code> proper, not in <code>wiki/etc/</code>. The global daemon should re-read it on every sweep so cross-document connections surface.</p>
+<p><strong>Exception — computational experiment artifacts.</strong> The narrative stub for each comp remains in <code>wiki/</code> proper, while its reproducible code/input/output/archive bundle lives under <code>wiki/etc/experiments/</code>. These artifacts are active evidence but are too large and too implementation-specific to inline into every global synthesis. They are covered by the independent <code>.github/workflows/comp-review.yml</code> daemon instead: every changed comp gets a bounded artifact-level review with on-demand corpus search. This exception must not be generalized to other active-research pages.</p>
 <p>When in doubt: ask "would the daemon's synthesis benefit from re-reading this every sweep?" If yes → <code>wiki/</code>. If no → <code>wiki/etc/</code>.</p>
 <h2 id="how-exclusion-works-mechanics">How exclusion works (mechanics)<a class="headerlink" href="#how-exclusion-works-mechanics" title="Permanent link">&para;</a></h2>
 <p>Two layers exclude <code>wiki/etc/</code> from the daemon:</p>
@@ -5208,7 +5221,7 @@
 <p><strong>Workflow path trigger (<code>.github/workflows/wiki-sweep.yml</code>):</strong> the push trigger watches <code>wiki/**.md</code> with <code>!wiki/etc/**</code> negation. Editing a page in this directory does not trigger a sweep run.</p>
 </li>
 </ol>
-<p>Together: pages here are invisible to the daemon, both as input and as triggers.</p>
+<p>Together: ordinary pages here are invisible to the <strong>global wiki daemon</strong>, both as input and as triggers. The <code>wiki/etc/experiments/comp-*/**</code> subtree is separately watched by <code>.github/workflows/comp-review.yml</code>; comp artifacts are excluded from global synthesis, not from review.</p>
 <h2 id="cross-references">Cross-references<a class="headerlink" href="#cross-references" title="Permanent link">&para;</a></h2>
 <p>Pages in <code>wiki/etc/</code> can be referenced from <code>wiki/</code> proper using <code>./etc/&lt;page&gt;.md</code> paths. References from <code>wiki/etc/</code> back to <code>wiki/</code> use <code>../&lt;page&gt;.md</code>. The script <code>/tmp/claude/move-to-etc.py</code> (run 2026-05-15) handled the cross-reference rewriting when the directory was created.</p>
 <h2 id="adding-a-new-etc-page">Adding a new etc/ page<a class="headerlink" href="#adding-a-new-etc-page" title="Permanent link">&para;</a></h2>

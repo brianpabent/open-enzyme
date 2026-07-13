@@ -1,0 +1,13 @@
+{
+  "scope": "Biophysical transport / pharmacology model of KPV (Lys-Pro-Val) influx through GSDMD pyroptotic pores vs. the constitutive PepT1 (SLC15A1) uptake route. Parameters are diffusion coefficients, pore geometry, Michaelis-Menten transporter kinetics, macrophage geometry, and cell-assay IC50 values.",
+  "natural_product_scope": false,
+  "natural_product_scope_rationale": "This is a biophysics/pharmacology scope. Load-bearing parameters come from cryo-EM/AFM structural biology (GSDMD pore), radiolabeled-substrate transporter kinetics (PepT1), and NF-kB reporter cell assays (KPV). None of these belong to a natural-product / TCM / Kampo traditional-use literature, so the traditional-formula-name + species-name + traditional-pathology query matrix (CLAUDE.md global-multilingual discipline) does NOT apply. The multilingual default was still honored at the source level: the KPV and GSDMD primary literature is English-language international-journal work (several groups are China-based but publish in English), and no non-English source was found to carry a divergent load-bearing value.",
+  "framings": [
+    {"type": "mechanism", "queries": ["gasdermin D pore number cell", "gasdermin D pore diameter cryo-EM", "KPV PepT1 uptake kinetics", "KPV NF-kB inhibition nanomolar", "PepT1 SLC15A1 macrophage expression"], "rationale": "Western mechanism/structure literature is the correct and only substantial evidence base for pore geometry, transporter kinetics, and KPV cell-assay potency."}
+  ],
+  "deferred_framings": [
+    {"type": "traditional_formula", "rationale": "N/A — no traditional-medicine formula corresponds to a synthetic tripeptide fragment of alpha-MSH studied as a PepT1 substrate."},
+    {"type": "species", "rationale": "N/A — KPV is a defined synthetic tripeptide, not a botanical/fungal extract."},
+    {"type": "traditional_pathology", "rationale": "N/A — the model is transport physics + modern pharmacology."}
+  ]
+}

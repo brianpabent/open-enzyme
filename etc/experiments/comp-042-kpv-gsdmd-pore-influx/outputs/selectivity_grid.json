@@ -1,0 +1,98 @@
+{
+  "note": "Selectivity S = C_in,pyroptotic / C_in,healthy across the four PepT1 expression scenarios. S collapses to 1/AR_lin in the linear (SC/oral) regime and rises with C_ext/Km in the saturating (IA) regime. In EVERY route the value is set by the unknown synovial-macrophage PepT1 expression (AR_lin) -- that is the headline empirical limitation.",
+  "caveat_S_is_optimistic": "The healthy-cell curve C_in,healthy = C_in_max*C_ext/(Km+C_ext) is a HEURISTIC saturating ceiling, not a transporter steady state -- it describes RATE saturation, not the equilibrium intracellular concentration. A genuinely equilibrating transporter gives C_in,healthy -> C_ext (S -> 1); an electrogenic H+-coupled/concentrative PepT1 plus the intact-cell membrane potential (Vm ~ -50 to -70 mV; Nernst factor ~7-14x for a +1 cation) gives C_in,healthy > C_ext (S < 1, anti-selective). So the TRUE selectivity is <= the values tabulated here, especially at IA. This only strengthens the skeptical read. (In the PYROPTOTIC cell Vm collapses through the pore, which is exactly why C_in,pyroptotic is capped at C_ext with no Nernst boost.)",
+  "caveat_PD_timing": "This is a TRANSPORT model. It does not capture that KPV is an UPSTREAM inhibitor (NLRP3 assembly / NF-kB priming) while GSDMD pores open DOWNSTREAM of inflammasome firing -- so even perfectly selective pore-delivery arrives after KPV's target has largely acted and IL-1beta has been released. Pharmacodynamically the pore selects for cells where an upstream inhibitor is too late; see interpretive page.",
+  "Km_uM": 700.0,
+  "grid": {
+    "intra_articular": {
+      "C_ext_uM": 292.0,
+      "C_in_pyroptotic_uM": 292.0,
+      "by_scenario": {
+        "absent": {
+          "AR_lin": 0.0,
+          "C_in_healthy_uM": 0.0,
+          "selectivity_ratio": Infinity,
+          "meaningful_selectivity_ge_3x": true
+        },
+        "low": {
+          "AR_lin": 0.3,
+          "C_in_healthy_uM": 61.814516129032256,
+          "selectivity_ratio": 4.723809523809524,
+          "meaningful_selectivity_ge_3x": true
+        },
+        "moderate": {
+          "AR_lin": 1.0,
+          "C_in_healthy_uM": 206.0483870967742,
+          "selectivity_ratio": 1.417142857142857,
+          "meaningful_selectivity_ge_3x": false
+        },
+        "high": {
+          "AR_lin": 3.0,
+          "C_in_healthy_uM": 618.1451612903226,
+          "selectivity_ratio": 0.4723809523809524,
+          "meaningful_selectivity_ge_3x": false
+        }
+      }
+    },
+    "subcutaneous": {
+      "C_ext_uM": 0.03,
+      "C_in_pyroptotic_uM": 0.03,
+      "by_scenario": {
+        "absent": {
+          "AR_lin": 0.0,
+          "C_in_healthy_uM": 0.0,
+          "selectivity_ratio": Infinity,
+          "meaningful_selectivity_ge_3x": true
+        },
+        "low": {
+          "AR_lin": 0.3,
+          "C_in_healthy_uM": 0.00899961430224419,
+          "selectivity_ratio": 3.3334761904761905,
+          "meaningful_selectivity_ge_3x": true
+        },
+        "moderate": {
+          "AR_lin": 1.0,
+          "C_in_healthy_uM": 0.029998714340813967,
+          "selectivity_ratio": 1.000042857142857,
+          "meaningful_selectivity_ge_3x": false
+        },
+        "high": {
+          "AR_lin": 3.0,
+          "C_in_healthy_uM": 0.0899961430224419,
+          "selectivity_ratio": 0.33334761904761906,
+          "meaningful_selectivity_ge_3x": false
+        }
+      }
+    },
+    "oral": {
+      "C_ext_uM": 0.001,
+      "C_in_pyroptotic_uM": 0.001,
+      "by_scenario": {
+        "absent": {
+          "AR_lin": 0.0,
+          "C_in_healthy_uM": 0.0,
+          "selectivity_ratio": Infinity,
+          "meaningful_selectivity_ge_3x": true
+        },
+        "low": {
+          "AR_lin": 0.3,
+          "C_in_healthy_uM": 0.00029999957142918366,
+          "selectivity_ratio": 3.3333380952380955,
+          "meaningful_selectivity_ge_3x": true
+        },
+        "moderate": {
+          "AR_lin": 1.0,
+          "C_in_healthy_uM": 0.0009999985714306125,
+          "selectivity_ratio": 1.0000014285714285,
+          "meaningful_selectivity_ge_3x": false
+        },
+        "high": {
+          "AR_lin": 3.0,
+          "C_in_healthy_uM": 0.002999995714291837,
+          "selectivity_ratio": 0.3333338095238095,
+          "meaningful_selectivity_ge_3x": false
+        }
+      }
+    }
+  }
+}

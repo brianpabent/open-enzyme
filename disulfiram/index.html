@@ -4195,7 +4195,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--Reopened"></span>
   
 
   
@@ -4702,6 +4702,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--invalidated"></span>
+  
+
   
 
       </a>
@@ -5400,7 +5407,8 @@
 <p>This represents one of the most accessible, underrated, and economically efficient gout interventions available today.</p>
 <p><strong>Repurposing surface origin:</strong> Disulfiram is one of three concrete examples surfaced by the Open Enzyme discovery engine's chokepoint-to-FDA-drug mapping methodology — FDA-approved drugs that hit a gout chokepoint but were never clinically tested for gout. The other two are zileuton (CP6a 5-LOX, FDA-approved for asthma) and avacopan (CP0 C5aR1, FDA-approved for ANCA vasculitis). See <a href="../etc/open-enzyme-vision/">open-enzyme-vision.md §2.2</a> for the full repurposing surface framing. (source: etc/open-enzyme-vision.md)</p>
 <p><strong>Compounding pharmacy delivery route:</strong> Disulfiram is the highest-priority candidate on the <a href="../compounding-pharmacy-track/">compounding pharmacy track</a> — FDA-approved, off-patent, bulk API available, and the only barrier between the patient and a useful low-dose extended-release formulation is "no one has commercialized this specific formulation for gout." A compounded low-dose ER disulfiram tablet at sub-deterrent doses would allow exploring the GSDMD-inhibitor effect without the alcohol-flush mechanism dominating. (source: compounding-pharmacy-track.md)</p>
-<p><strong>Companion intervention: PDB-engineered EcN (urate-disposal upstream of NLRP3):</strong> Disulfiram closes the pyroptotic exit <em>downstream</em> of NLRP3, but does nothing to reduce the urate substrate that triggers NLRP3 in the first place. The natural companion is engineered <em>E. coli</em> Nissle expressing the purine-degrading-bacteria (PDB) gene cluster (CBT2.0 precedent, Li 2025, −63% plasma UA in mice) — drains luminal urate and produces butyrate → ABCG2 induction + NLRP3 dampening <em>before</em> MSU crystals seed an inflammasome. The two arms hit opposite ends of the urate→inflammation axis on completely separate chassis (engineered LBP vs. compounded small molecule), share no production or formulation stack, and stack additively. See <a href="../purine-degrading-bacteria/"><code>purine-degrading-bacteria.md</code></a> for the PDB mechanism and <a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §"Multi-chassis stacks" M1</a> for the dual-arm framing. <strong>Computational priors completed 2026-05-16:</strong> <a href="../disulfiram-dose-modeling-computational/">comp-027</a> (disulfiram dose window → YELLOW-leaning-GREEN, 100 mg/day sub-AUD) + <a href="../dual-chassis-ecn-pdb-uricase-computational/">comp-031</a> (dual-chassis EcN additive SUA → YELLOW provisional, ~25–30% larger than PDB-alone). (source: disulfiram-dose-modeling-computational.md, dual-chassis-ecn-pdb-uricase-computational.md)</p>
+<p><strong>Companion hypothesis: PDB-engineered EcN upstream of NLRP3.</strong> Disulfiram targets downstream GSDMD while a PDB arm could reduce luminal urate. The mechanisms are non-identical, but the earlier additive claim is retired: <a href="../dual-chassis-ecn-pdb-uricase-computational/">comp-031</a> inherited an invalid UOX regime and unsupported CBT2.0-butyrate/Q141K assumptions. Measure PDB carbon fate in validation §1.37 and disulfiram/XO-inhibitor compatibility separately before combination inference. This is research-stage and not a dosing recommendation.</p>
+<p><strong>ChEMBL v37 off-target flag (2026-07-01):</strong> Disulfiram has a newly curated <strong>LOXL4 IC50 = 59 nM</strong> (pChEMBL 7.23, <em>Bioorg Med Chem Lett</em> 2018), which was not present in v34. LOXL4 (lysyl oxidase homolog 4) is involved in collagen crosslinking, studied in fibrosis/cancer contexts. Relevance to gout or GSDMD biology is unclear — flag for tracking but do not propagate without primary-source verification. ALOX15 and tau binding hits remain phenotypic/unvalidated (null journal annotation). See <a href="../etc/chembl-cross-check/">chembl-cross-check.md</a> for full details. (In Vitro; source: chembl-cross-check.md)</p>
 <blockquote>
 <p><strong>Complementary pharma at CP6</strong>: zileuton (5-LOX inhibitor, CP6a) and disulfiram (GSDMD inhibitor, CP6b) hit different branches of the same chokepoint. See <a href="../zileuton/">wiki/zileuton.md</a> for the CP6a pharma-grade option.</p>
 </blockquote>

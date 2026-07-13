@@ -107,7 +107,7 @@ SCORES = {
         # (SecA/SecY/SecE conserved across Firmicutes) + Tat-translocon. Native
         # MAM secretion documented (Quévrain 2016).
         "secretion_pathway_availability": {"value": 0.60, "low": 0.45, "high": 0.75,
-            "rationale": "Sec-translocon annotated; native MAM secretion proves the pathway functions. But heterologous-payload secretion titers from Fp never measured. 17 disulfides in mature lactoferrin require post-translocational oxidative folding — Bacillus / Firmicutes Sec pathway produces proteins to the cell exterior where disulfide bond formation occurs (e.g. DsbA/DsbB-class systems); native F. prausnitzii disulfide machinery less characterized."},
+            "rationale": "Sec-translocon annotated; native MAM secretion proves the pathway functions. But heterologous-payload secretion titers from Fp never measured. 16 disulfides in mature lactoferrin require post-translocational oxidative folding — Bacillus / Firmicutes Sec pathway produces proteins to the cell exterior where disulfide bond formation occurs (e.g. DsbA/DsbB-class systems); native F. prausnitzii disulfide machinery less characterized."},
         # F. prausnitzii is an anaerobe; lactoferrin's iron-binding function
         # is GENUINELY USEFUL in the gut lumen (sequesters iron, deprives
         # pathogens). No O2 requirement. No physiology mismatch. Compatibility
@@ -129,12 +129,12 @@ SCORES = {
         # from protease vulnerability) → LBP framing avoids protease cocktail.
         "heterologous_expression_precedent": {"value": 0.30, "low": 0.20, "high": 0.40,
             "rationale": "Extensive precedent in non-anaerobe heterologous hosts (P. pastoris, A. niger, transgenic mammals). Zero precedent in obligate anaerobe. comp-005 evaluated koji chassis HIGH risk for stability — LBP track was framed precisely to address this."},
-        # 17 disulfide bonds in mature protein. Even with Sec-translocon
+        # 16 disulfide bonds in mature protein (Notari 2023). Even with Sec-translocon
         # secretion to the cell exterior, oxidative folding in the gut lumen
         # (anoxic) is mechanistically uncertain. Disulfide bond formation
         # requires oxidizing environment.
         "folding_complexity": {"value": 0.40, "low": 0.30, "high": 0.55,
-            "rationale": "MAJOR concern. 17 disulfides require oxidative folding. Gut lumen is anoxic — disulfide bond formation in anoxic environment requires alternative oxidant (e.g. periplasmic-equivalent space + heterologously expressed DsbA, or methodologically untested in obligate anaerobes). Disulfide-rich secreted protein expression in obligate anaerobes is essentially unprecedented."},
+            "rationale": "MAJOR concern. 16 disulfides require oxidative folding. Gut lumen is anoxic — disulfide bond formation in anoxic environment requires alternative oxidant (e.g. periplasmic-equivalent space + heterologously expressed DsbA, or methodologically untested in obligate anaerobes). Disulfide-rich secreted protein expression in obligate anaerobes is essentially unprecedented."},
     },
 
     "scr1_truncation_SCR1to4": {
@@ -168,7 +168,7 @@ SCORES = {
         # 8 disulfides in 280 aa. Same anoxic-folding concern as lactoferrin
         # but smaller magnitude.
         "folding_complexity": {"value": 0.45, "low": 0.30, "high": 0.60,
-            "rationale": "8 disulfides require oxidative folding. Smaller magnitude than lactoferrin's 17 disulfides, but same fundamental anoxic-environment-folding question. SCR/sushi/CCP-fold proteins are tolerant of disulfide isomerization (more robust than serpin-fold lactoferrin) — slight upward adjustment vs. lactoferrin."},
+            "rationale": "8 disulfides require oxidative folding. Smaller magnitude than lactoferrin's 16 disulfides, but same fundamental anoxic-environment-folding question. SCR/sushi/CCP-fold proteins are tolerant of disulfide isomerization (more robust than transferrin-fold lactoferrin) — slight upward adjustment vs. lactoferrin."},
     },
 
     "butyrate_pathway_boost_BCoAT": {

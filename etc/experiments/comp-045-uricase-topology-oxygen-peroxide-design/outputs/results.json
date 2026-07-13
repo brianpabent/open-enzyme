@@ -1,0 +1,5334 @@
+{
+  "experiment": "comp-045",
+  "verdict": "JOINT EMPIRICAL COMPARISON REQUIRED; NO TOPOLOGY ELIMINATED",
+  "n_base_factorial_conditions": 19,
+  "n_urate_concentrations": 3,
+  "n_biological_runs": 3,
+  "n_plates": 6,
+  "used_wells_per_plate": 81,
+  "graded_conditions": [
+    {
+      "condition_id": 1,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 2,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "direct_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 3,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "direct_empirical_support",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 4,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "direct_empirical_support",
+      "oxygen_status": "direct_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 5,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 6,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 7,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 8,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 9,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 10,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 11,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 12,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 13,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 14,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 15,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 16,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 17,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 18,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unresolved",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 19,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 1,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 2,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 3,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "direct_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 4,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "direct_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 5,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 6,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 7,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 8,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 9,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 10,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 11,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 12,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 13,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 14,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 15,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 16,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 17,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 18,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unresolved",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 19,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 1,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 2,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "direct_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 3,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "direct_empirical_support",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 4,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "direct_empirical_support",
+      "oxygen_status": "direct_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 5,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 6,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 7,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 8,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 9,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 10,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 11,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 12,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 13,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 14,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 15,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 16,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 17,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 18,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unresolved",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 19,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 1,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 2,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 3,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "direct_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 4,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "direct_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 5,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 6,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 7,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 8,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 9,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 10,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 11,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 12,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 13,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 14,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 15,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 16,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 17,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 18,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unresolved",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 19,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 1,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 2,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "direct_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 3,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "direct_empirical_support",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 4,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "direct_empirical_support",
+      "oxygen_status": "direct_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 5,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 6,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 7,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 8,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 9,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 10,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 11,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 12,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 13,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 14,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 15,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 16,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "indirect_empirical_support",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 17,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 18,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unresolved",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 19,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "microoxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "unresolved",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 1,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 2,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 3,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "direct_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 4,
+      "topology": "intracellular_ygfU",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "direct_empirical_support",
+      "peroxide_status": "direct_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 5,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 6,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 7,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 8,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 9,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 10,
+      "topology": "lamb_secreted",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 11,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 12,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "none",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 13,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 14,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "indirect_empirical_support",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 15,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 16,
+      "topology": "inakn_surface_display",
+      "chassis": "EcN",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "vhb",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 17,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "none",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unsupported",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 18,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "intracellular_katg_or_native_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "unresolved",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    },
+    {
+      "condition_id": 19,
+      "topology": "koji_free_secretion",
+      "chassis": "A_oryzae",
+      "peroxide_strategy": "compartment_matched_catalase",
+      "oxygen_support": "none",
+      "oxygen_context": "oxic",
+      "substrate_status": "proposed_direct_test",
+      "peroxide_status": "proposed_direct_test",
+      "oxygen_status": "controlled_context_not_proven_sufficient",
+      "interpretation": "joint_empirical_comparison_required"
+    }
+  ],
+  "plate_maps": [
+    {
+      "plate": 1,
+      "biological_run": 1,
+      "oxygen_context": "microoxic",
+      "n_used_wells": 81,
+      "wells": [
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "A1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "A2"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "A3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "A4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "A5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "A6"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "A7"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "A8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "A9"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_urate",
+          "urate_uM": 0.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "A10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "A11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "A12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "B1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "B2"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "B3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "B4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "B5"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "B6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "B7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "B8"
+        },
+        {
+          "kind": "control",
+          "control": "medium_blank",
+          "urate_uM": 0.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "B9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "B10"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "B11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "B12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "C1"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "C2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "C3"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "C4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "C5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "C6"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "C7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "C8"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "C9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "C10"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "C11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "C12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "D1"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "D2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "D3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "D4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "D5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "D6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "D7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "D8"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "D9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "D10"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "D11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "D12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "E1"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "E2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "E3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "E4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "E5"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "E6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "E7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "E8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "E9"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "E10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "E11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "E12"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "F1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "F2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "F3"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_urate",
+          "urate_uM": 0.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "F4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "F5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "F6"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "F7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "F8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "F9"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "F10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "F11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "F12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "G1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "G2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "G3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "G4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "G5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "G6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "G7"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "G8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 1,
+          "well": "G9"
+        }
+      ]
+    },
+    {
+      "plate": 2,
+      "biological_run": 1,
+      "oxygen_context": "oxic",
+      "n_used_wells": 81,
+      "wells": [
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "A1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "A2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "A3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "A4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "A5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "A6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "A7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "A8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "A9"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "A10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "A11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "A12"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "B1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "B2"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "B3"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "B4"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "B5"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "B6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "B7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "B8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "B9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "B10"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "B11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "B12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "C1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "C2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "C3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "C4"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "C5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "C6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "C7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "C8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "C9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "C10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "C11"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "C12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "D1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "D2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "D3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "D4"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "D5"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "D6"
+        },
+        {
+          "kind": "control",
+          "control": "medium_blank",
+          "urate_uM": 0.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "D7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "D8"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "D9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "D10"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_urate",
+          "urate_uM": 0.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "D11"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "D12"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "E1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "E2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "E3"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "E4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "E5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "E6"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "E7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "E8"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_urate",
+          "urate_uM": 0.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "E9"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "E10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "E11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "E12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "F1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "F2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "F3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "F4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "F5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "F6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "F7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "F8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "F9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "F10"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "F11"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "F12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "G1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "G2"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "G3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "G4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "G5"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "G6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "G7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "G8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 1,
+          "well": "G9"
+        }
+      ]
+    },
+    {
+      "plate": 3,
+      "biological_run": 2,
+      "oxygen_context": "microoxic",
+      "n_used_wells": 81,
+      "wells": [
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "A1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "A2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "A3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "A4"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "A5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "A6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "A7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "A8"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "A9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "A10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "A11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "A12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "B1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "B2"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "B3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "B4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "B5"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "B6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "B7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "B8"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "B9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "B10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "B11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "B12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "C1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "C2"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_urate",
+          "urate_uM": 0.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "C3"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "C4"
+        },
+        {
+          "kind": "control",
+          "control": "medium_blank",
+          "urate_uM": 0.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "C5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "C6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "C7"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "C8"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "C9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "C10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "C11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "C12"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_urate",
+          "urate_uM": 0.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "D1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "D2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "D3"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "D4"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "D5"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "D6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "D7"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "D8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "D9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "D10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "D11"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "D12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "E1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "E2"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "E3"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "E4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "E5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "E6"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "E7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "E8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "E9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "E10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "E11"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "E12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "F1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "F2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "F3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "F4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "F5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "F6"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "F7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "F8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "F9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "F10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "F11"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "F12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "G1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "G2"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "G3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "G4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "G5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "G6"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "G7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "G8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 2,
+          "well": "G9"
+        }
+      ]
+    },
+    {
+      "plate": 4,
+      "biological_run": 2,
+      "oxygen_context": "oxic",
+      "n_used_wells": 81,
+      "wells": [
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "A1"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "A2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "A3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "A4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "A5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "A6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "A7"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "A8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "A9"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "A10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "A11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "A12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "B1"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "B2"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "B3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "B4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "B5"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_urate",
+          "urate_uM": 0.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "B6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "B7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "B8"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_urate",
+          "urate_uM": 0.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "B9"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "B10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "B11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "B12"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "C1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "C2"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "C3"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "C4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "C5"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "C6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "C7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "C8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "C9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "C10"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "C11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "C12"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "D1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "D2"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "D3"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "D4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "D5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "D6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "D7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "D8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "D9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "D10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "D11"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "D12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "E1"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "E2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "E3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "E4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "E5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "E6"
+        },
+        {
+          "kind": "control",
+          "control": "medium_blank",
+          "urate_uM": 0.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "E7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "E8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "E9"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "E10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "E11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "E12"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "F1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "F2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "F3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "F4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "F5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "F6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "F7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "F8"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "F9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "F10"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "F11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "F12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "G1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "G2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "G3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "G4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "G5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "G6"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "G7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "G8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 2,
+          "well": "G9"
+        }
+      ]
+    },
+    {
+      "plate": 5,
+      "biological_run": 3,
+      "oxygen_context": "microoxic",
+      "n_used_wells": 81,
+      "wells": [
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "A1"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_urate",
+          "urate_uM": 0.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "A2"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "A3"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "A4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "A5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "A6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "A7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "A8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "A9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "A10"
+        },
+        {
+          "kind": "control",
+          "control": "medium_blank",
+          "urate_uM": 0.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "A11"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "A12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "B1"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "B2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "B3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "B4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "B5"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "B6"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "B7"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "B8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "B9"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "B10"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "B11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "B12"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "C1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "C2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "C3"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "C4"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "C5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "C6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "C7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "C8"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "C9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "C10"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "C11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "C12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "D1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "D2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "D3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "D4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "D5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "D6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "D7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "D8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "D9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "D10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "D11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "D12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "E1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "E2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "E3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "E4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "E5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "E6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "E7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "E8"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "E9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "E10"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "E11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "E12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "F1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "F2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "F3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "F4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "F5"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "F6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "F7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "F8"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "F9"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_urate",
+          "urate_uM": 0.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "F10"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "F11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "F12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "G1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "G2"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "G3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "G4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "G5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 0.59,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "G6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 50.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "G7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "G8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 250.0,
+          "oxygen_context": "microoxic",
+          "biological_run": 3,
+          "well": "G9"
+        }
+      ]
+    },
+    {
+      "plate": 6,
+      "biological_run": 3,
+      "oxygen_context": "oxic",
+      "n_used_wells": 81,
+      "wells": [
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "A1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "A2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "A3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "A4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "A5"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "A6"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "A7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "A8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "A9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "A10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "A11"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "A12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "B1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "B2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "B3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "B4"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "B5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "B6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 7,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "B7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "B8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "B9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "B10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "B11"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_urate",
+          "urate_uM": 0.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "B12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "C1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "C2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 5,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "C3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "C4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "C5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "C6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "C7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "C8"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "C9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "C10"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "C11"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "C12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "D1"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "D2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "D3"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "D4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "D5"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "D6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "D7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "D8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 17,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "D9"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 2,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "D10"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_koji_free_secretion",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "D11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "D12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "E1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "E2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "E3"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "E4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 14,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "E5"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "E6"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_intracellular_ygfU",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "E7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "E8"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_lamb_secreted",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "E9"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_uox",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "E10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 11,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "E11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 4,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "E12"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "F1"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 15,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "F2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 18,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "F3"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "F4"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 16,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "F5"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 3,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "F6"
+        },
+        {
+          "kind": "control",
+          "control": "pulse_1_to_1_to_1_mixture_positive_benchmark",
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "F7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 9,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "F8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "F9"
+        },
+        {
+          "kind": "control",
+          "control": "medium_blank",
+          "urate_uM": 0.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "F10"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 8,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "F11"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 12,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "F12"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 10,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "G1"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "G2"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 13,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "G3"
+        },
+        {
+          "kind": "control",
+          "control": "ecn_no_uox",
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "G4"
+        },
+        {
+          "kind": "control",
+          "control": "inactive_uox_inakn_surface_display",
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "G5"
+        },
+        {
+          "kind": "control",
+          "control": "koji_no_urate",
+          "urate_uM": 0.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "G6"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 6,
+          "urate_uM": 50.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "G7"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 1,
+          "urate_uM": 0.59,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "G8"
+        },
+        {
+          "kind": "factorial",
+          "condition_id": 19,
+          "urate_uM": 250.0,
+          "oxygen_context": "oxic",
+          "biological_run": 3,
+          "well": "G9"
+        }
+      ]
+    }
+  ],
+  "required_readouts": [
+    "urate",
+    "allantoin_or_pathway_product",
+    "hydrogen_peroxide",
+    "dissolved_oxygen",
+    "viability",
+    "uox_localization"
+  ],
+  "limitations": [
+    "Evidence states summarize topology-specific support; they are not efficacy grades.",
+    "KatG and VHb were introduced jointly in key precedents, so their independent effects require the proposed separate arms.",
+    "Compartment-matched extracellular and surface catalase constructs are proposed engineering tests, not published PULSE constructs.",
+    "VHb improves cellular oxygen utilization but cannot create oxygen; dissolved oxygen and demand must be measured in every condition.",
+    "Intracellular KatG may lower cell-associated ROS after peroxide diffusion without preventing extracellular epithelial exposure.",
+    "Each plate is one biological run within one oxygen context; cross-plate anchors support normalization but do not remove run effects.",
+    "Inactive-UOX, chassis-only, and PULSE-mixture controls are substrate-matched at every nonzero urate concentration; no-urate and blank controls are explicitly 0 \u00b5M."
+  ]
+}

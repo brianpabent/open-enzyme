@@ -3926,7 +3926,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--Reopened"></span>
   
 
   
@@ -4433,6 +4433,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--invalidated"></span>
+  
+
   
 
       </a>
@@ -5138,7 +5145,7 @@
 <hr />
 <h2 id="2-verdict">2. Verdict<a class="headerlink" href="#2-verdict" title="Permanent link">&para;</a></h2>
 <p><strong>Overall cassette-design risk: MODERATE</strong> (Mechanistic Extrapolation; in silico only)</p>
-<p>The C. utilis uricase (P78609) + lactoferrin (P02788) payload pair in the Ward 1995 glucoamylase-KEX2 / direct-secretion architecture has no blocking cassette-design issues but carries three manageable design requirements absent in the comp-010 (A. flavus) baseline: (1) full codon optimization required for C. utilis (AT-biased yeast origin, GC~42% vs. A. oryzae ~54%); (2) 4 free cysteines in C. utilis uricase create a theoretical ER aggregation risk during secretion; (3) 2 internal KR sites (positions 130 and 138) vs. 1 in A. flavus — non-load-bearing in direct-secretion design but noted for completeness. The MODERATE verdict is design-driven, not a fundamental incompatibility. Lactoferrin findings are numerically identical to comp-010.</p>
+<p>The C. utilis uricase (P78609) + lactoferrin (P02788) payload pair in the candidate Ward 1995 glucoamylase-KEX2 / direct-secretion architecture has no blocking sequence-level issues but carries three manageable design requirements absent in the comp-010 (A. flavus) baseline: (1) full codon optimization required for C. utilis (AT-biased yeast origin, GC~42% vs. A. oryzae ~54%); (2) 4 free cysteines in C. utilis uricase create a theoretical ER aggregation risk during secretion; (3) 2 internal KR sites (positions 130 and 138) vs. 1 in A. flavus — non-load-bearing within the direct-secretion candidate but noted for completeness. The MODERATE verdict is design-driven, not a fundamental incompatibility. Lactoferrin findings are numerically identical to comp-010.</p>
 <p><strong>comp-010 comparison:</strong> comp-010 (<em>A. flavus</em> Q00511 + lactoferrin) = <strong>LOW</strong>. comp-011 (<em>C. utilis</em> P78609 + lactoferrin) = <strong>MODERATE</strong>. The delta is not a fundamental incompatibility — it reflects three manageable design requirements that gene synthesis and SDS-PAGE QC resolve.</p>
 <hr />
 <h2 id="3-per-analysis-findings">3. Per-Analysis Findings<a class="headerlink" href="#3-per-analysis-findings" title="Permanent link">&para;</a></h2>
@@ -5295,7 +5302,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Design recommendation:</strong> The proposed cassette design places <em>C. utilis</em> uricase on a DIRECT-SECRETION cassette (PTEF1-amyB_SP-P78609-TgpdA), not a glucoamylase-KEX2 fusion. In this design, the two internal KR sites (positions 130 and 138) are irrelevant — KEX2 does not encounter the payload. IMPORTANT COMP-010 DELTA: <em>C. utilis</em> has 2 internal KR sites (positions 130 and 138, both HIGH risk: P1'=I and P1'=S) vs. <em>A. flavus</em> 1 site (128 HIGH). Both are non-load-bearing in direct-secretion, but if <em>C. utilis</em> uricase is ever moved to a fusion architecture, KR→KQ mutations at BOTH positions 130 and 138 are required (vs. only position 128 for A. flavus). The two sites are 8 residues apart (context: GEKRITD...YYKRSGD) — a double KR→KQ mutation is a straightforward synthesis modification.</p>
+<p><strong>Candidate-specific recommendation:</strong> The analyzed <em>C. utilis</em> arm uses a DIRECT-SECRETION cassette (PTEF1-amyB_SP-P78609-TgpdA), not a glucoamylase-KEX2 fusion. In this candidate, the two internal KR sites (positions 130 and 138) are irrelevant — KEX2 does not encounter the payload. IMPORTANT COMP-010 DELTA: <em>C. utilis</em> has 2 internal KR sites (positions 130 and 138, both HIGH risk: P1'=I and P1'=S) vs. <em>A. flavus</em> 1 site (128 HIGH). Both are non-load-bearing in direct secretion, but if §1.33 selects a fusion architecture for <em>C. utilis</em>, KR→KQ mutations at BOTH positions 130 and 138 are required (vs. only position 128 for A. flavus). The two sites are 8 residues apart (context: GEKRITD...YYKRSGD) — a double KR→KQ mutation is a straightforward synthesis modification.</p>
 <hr />
 <h3 id="33-signal-peptide-secretion-targeting-analysis">3.3 Signal Peptide / Secretion-Targeting Analysis<a class="headerlink" href="#33-signal-peptide-secretion-targeting-analysis" title="Permanent link">&para;</a></h3>
 <table>
@@ -5342,13 +5349,13 @@
 <tr>
 <td>Cysteine count</td>
 <td>4</td>
-<td>33</td>
+<td>32</td>
 <td>~32 (16 per chain × 2)</td>
 </tr>
 <tr>
 <td>Disulfide bonds</td>
 <td>0</td>
-<td>17</td>
+<td>16</td>
 <td>16 (total both chains)</td>
 </tr>
 <tr>
@@ -5360,7 +5367,7 @@
 <tr>
 <td>Folding load index (vs. Huynh = 1.0)</td>
 <td>0.000</td>
-<td>1.062</td>
+<td>1.000</td>
 <td>1.00</td>
 </tr>
 <tr>
@@ -5372,8 +5379,8 @@
 </tbody>
 </table>
 <p><strong>C. utilis uricase:</strong> No disulfide bonds annotated (UniProt) — no PDI load from disulfide formation. However, 4 free cysteine(s) present: risk of aberrant intermolecular disulfide formation in the oxidizing ER environment during secretion. Monitor for aggregation bands in non-reducing SDS-PAGE. A. oryzae ER is oxidizing (PDI/ERO1 system active); free cysteines in secreted proteins can form unintended disulfide bonds during transit. Folding is otherwise independent of the PDI oxidative pathway.</p>
-<p><strong>Lactoferrin:</strong> 17 disulfides — comparable to Huynh 2020 adalimumab baseline (16 disulfides)</p>
-<p><strong>Dual-cassette combined:</strong> 17 disulfides total (1.06× Huynh baseline). Lactoferrin carries the entire disulfide load; C. utilis uricase contributes nothing to PDI burden.</p>
+<p><strong>Lactoferrin:</strong> 16 disulfides — comparable to Huynh 2020 adalimumab baseline (16 disulfides)</p>
+<p><strong>Dual-cassette combined:</strong> 16 disulfides total (1.00× Huynh baseline). Lactoferrin carries the entire disulfide load; C. utilis uricase contributes nothing to PDI burden.</p>
 <p><strong>IMPORTANT COMP-010 DELTA:</strong> <em>C. utilis</em> uricase has 4 free cysteines (positions 39, 168, 250, 293) vs. <em>A. flavus</em> uricase which has 0 cysteines. These 4 cysteines are not annotated as disulfide-bonded (UniProt P78609 — consistent with uricase family biochemistry: the active site uses Cu-independent O2-dependent mechanism without disulfide bonds). However, during secretion through the <em>A. oryzae</em> ER lumen (which is oxidizing, with active PDI/ERO1), free thiols may form aberrant intermolecular disulfides leading to aggregation. This risk is absent in <em>A. flavus</em> (0 Cys) and is a new consideration for C. utilis. Mitigation: run non-reducing SDS-PAGE on secreted fractions to detect aggregation bands. If aggregation is observed, consider Cys→Ser mutation of solvent-exposed cysteines (use AlphaFold2 pLDDT to identify surface-exposed vs. buried positions before mutagenesis).</p>
 <hr />
 <h3 id="35-n-glycosylation-site-prediction">3.5 N-Glycosylation Site Prediction<a class="headerlink" href="#35-n-glycosylation-site-prediction" title="Permanent link">&para;</a></h3>
@@ -5461,8 +5468,8 @@
 <tr>
 <td>Disulfides</td>
 <td>0</td>
-<td>17</td>
-<td>17</td>
+<td>16</td>
+<td>16</td>
 <td>16</td>
 </tr>
 <tr>
@@ -5483,7 +5490,7 @@
 <td>Folding load index</td>
 <td>—</td>
 <td>—</td>
-<td>1.06×</td>
+<td>1.00×</td>
 <td>1.00</td>
 </tr>
 <tr>
@@ -5501,7 +5508,7 @@
 <li>C. utilis uricase codon burden is HEAVY — AT-biased codons are rare in A. oryzae (GC-biased host). Full gene synthesis with A. oryzae codon optimization is required. Without optimization, expected expression will be substantially reduced (estimated 2-5x titer penalty based on codon harmonization studies in Aspergillus; Mechanistic Extrapolation).</li>
 <li>C. utilis uricase has 4 free cysteine(s): risk of aberrant disulfide formation in the oxidizing ER lumen during secretion. Monitor for aggregation bands by non-reducing SDS-PAGE. This risk is ABSENT in A. flavus uricase (0 cysteines).</li>
 </ul>
-<p><strong>Informational (not a risk driver):</strong> C. utilis uricase has 2 internal K-R site(s) (overall KEX2 risk: HIGH). NOT load-bearing: the proposed protocol places uricase on a direct-secretion cassette (PTEF1-amyB_SP-C_utilis_uricase-TgpdA), not a glucoamylase-KEX2 fusion. If C. utilis uricase is later moved to a fusion architecture, both sites require attention — notably position 130 (P1'=I, HIGH) and position 138 (P1'=S, HIGH). These two sites are in close proximity (8 residues apart, GEKRITD...YYKRSGD) — if uricase is ever placed in a KEX2 fusion, a KR-&gt;KQ double mutation at both sites would be required.</p>
+<p><strong>Informational (not a risk driver):</strong> C. utilis uricase has 2 internal K-R site(s) (overall KEX2 risk: HIGH). NOT load-bearing within the direct-secretion candidate (PTEF1-amyB_SP-C_utilis_uricase-TgpdA). Direct secretion is not a settled topology: if §1.33 selects a fusion architecture, both sites require attention — notably position 130 (P1'=I, HIGH) and position 138 (P1'=S, HIGH). These two sites are in close proximity (8 residues apart, GEKRITD...YYKRSGD) — if uricase is ever placed in a KEX2 fusion, a KR-&gt;KQ double mutation at both sites would be required.</p>
 <p><strong>Titer gap:</strong> The H01 Lf target (500 mg/L) is 12.6× above Huynh 2020 vs. the Huynh 2020 adalimumab titer (39.7 mg/L). Ward 1995 achieved &gt;2 g/L for lactoferrin specifically — 500 mg/L is within the demonstrated range for this protein in this host family.</p>
 <hr />
 <h3 id="37-comparison-comp-011-c-utilis-vs-comp-010-a-flavus-vs-huynh-2020">3.7 Comparison: comp-011 (<em>C. utilis</em>) vs. comp-010 (<em>A. flavus</em>) vs. Huynh 2020<a class="headerlink" href="#37-comparison-comp-011-c-utilis-vs-comp-010-a-flavus-vs-huynh-2020" title="Permanent link">&para;</a></h3>
@@ -5584,7 +5591,7 @@
 </ul>
 <p><strong>Where C. utilis is COMPARABLE to A. flavus:</strong></p>
 <ul>
-<li>Disulfide load: both A. flavus and C. utilis uricase have 0 annotated disulfide bonds — neither adds PDI burden. The full 17-disulfide load of the dual-cassette system comes from lactoferrin only.</li>
+<li>Disulfide load: both A. flavus and C. utilis uricase have 0 annotated disulfide bonds — neither adds PDI burden. The full 16-disulfide load of the dual-cassette system comes from lactoferrin only.</li>
 <li>Routing signals: both have C-terminal PTS1-like motifs (A. flavus: SKL; C. utilis: TKL). Both are annotated by UniProt as microbody targeting signals. In a secretion-signal context (amyB SP), both are outcompeted by the N-terminal ER-targeting signal. Same risk level (MODERATE, verify in vivo) for both variants.</li>
 </ul>
 <h4 id="comp-011-vs-huynh-2020-adalimumab-engineering-feasibility-axis">comp-011 vs. Huynh 2020 adalimumab (engineering feasibility axis)<a class="headerlink" href="#comp-011-vs-huynh-2020-adalimumab-engineering-feasibility-axis" title="Permanent link">&para;</a></h4>
@@ -5653,7 +5660,7 @@
 <p><strong>Where OE (<em>C. utilis</em>) is COMPARABLE to Huynh:</strong></p>
 <ul>
 <li>Both OE and Huynh use the same NSlD-ΔP10 protease-deletion host. Both require KRGGG linker KEX2 processing for lactoferrin. Both target dual loci (niaD + sC or equivalent).</li>
-<li>Lactoferrin (human, glycosylated, high disulfide) is mechanistically similar to adalimumab heavy chain. Huynh 2020 demonstrated A. oryzae ER can handle mammalian-origin heavily-disulfided proteins.</li>
+<li>Lactoferrin and adalimumab are both mammalian-origin, glycosylated, disulfide-rich proteins, but their folding and assembly architectures differ. Huynh 2020 is therefore a contextual host precedent rather than a quantitative capacity proof for lactoferrin.</li>
 </ul>
 <hr />
 <h2 id="4-platform-decision-implication">4. Platform Decision Implication<a class="headerlink" href="#4-platform-decision-implication" title="Permanent link">&para;</a></h2>
@@ -5666,7 +5673,7 @@
 <li>Add non-reducing SDS-PAGE to the QC panel to detect free-Cys-driven aggregation. If aggregation bands appear, identify solvent-exposed Cys residues by AlphaFold2 pLDDT and engineer Cys→Ser mutations.</li>
 <li>Layer ALLN-346 ProteinGPS mutations (US10815461B2: I180V, V190G, Y165F, E51K, Q244K, I132R, A87G) on top of P78609 to improve protease resistance in the gut lumen. These are publicly disclosed — freedom-to-operate for research use.</li>
 <li>
-<p>Cassette architecture: direct-secretion (PTEF1-amyB_SP-P78609-TgpdA), NOT a glucoamylase-KEX2 fusion. This avoids the 2 internal KR site risk entirely.</p>
+<p>Carry direct secretion (PTEF1-amyB_SP-P78609-TgpdA) as one §1.33 topology candidate. It avoids the two internal KR sites within that arm, but the physiological-system result—not comp-011—selects the topology.</p>
 </li>
 <li>
 <p><strong>If keeping <em>A. flavus</em> uricase (comp-010-verified track):</strong></p>
@@ -5677,10 +5684,10 @@
 <p>Recommended if: (a) speed-to-first-clone is the priority, (b) rasburicase-derivative IP strategy is preferred, &copy; no budget for second codon-optimized gene synthesis.</p>
 </li>
 <li>
-<p><strong>Recommended §1.9 approach — empirical head-to-head:</strong></p>
+<p><strong>Recommended §1.33 → §1.9B approach — nested empirical head-to-head:</strong></p>
 </li>
 <li>
-<p>Order BOTH A. flavus (Q00511, codon-optimized) AND C. utilis (P78609, codon-optimized + ALLN-346 mutations) as direct-secretion cassettes. Run them in parallel in the same §1.9 solid-state koji experiment. Total cost delta: ~$200–400 for the second codon-optimized gene. The empirical comparison resolves the A. flavus vs. C. utilis platform decision at $0 additional fermentation cost (same experiment, two strains).</p>
+<p>Order BOTH A. flavus (Q00511, codon-optimized) AND C. utilis (P78609, codon-optimized + ALLN-346 mutations) within the topology arms specified by §1.33. Only carry a variant/topology pair into §1.9B after it passes the physiological product/peroxide/viability gate; then compare the retained variants in solid-state koji. This nests the species comparison inside the topology decision instead of presupposing direct secretion.</p>
 </li>
 <li>
 <p><strong>Lactoferrin cassette architecture (unchanged from comp-010):</strong> PamyB — glucoamylase — KRGGG — hLf (codon-optimized) — TamyB. Monitor for KEX2 internal site truncation by SDS-PAGE (1 moderate-risk site at position 579, P1'=K).</p>
@@ -5720,12 +5727,12 @@
 <hr />
 <h2 id="7-cross-references">7. Cross-References<a class="headerlink" href="#7-cross-references" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../../../c-utilis-uricase-cassette-compatibility-computational.md">wiki/c-utilis-uricase-cassette-compatibility-computational.md</a> — Interpretive wiki page for this experiment</li>
-<li><a href="../../../uricase-variant-selection.md">wiki/uricase-variant-selection.md</a> — Industry-revealed preference analysis; comp-011 verdict added as subsection</li>
-<li><a href="../../../cassette-compatibility-computational.md">wiki/cassette-compatibility-computational.md</a> — comp-010 page (A. flavus baseline)</li>
-<li><a href="../../../hypotheses/H01-ward-dual-cassette.md">wiki/hypotheses/H01-ward-dual-cassette.md</a> — Falsification Card; comp-011 is design support for §1.9</li>
-<li><a href="../../../koji-endgame-strain.md">wiki/koji-endgame-strain.md</a> — Protocol sketch for §1.9</li>
-<li><a href="../../../validation-experiments.md">wiki/validation-experiments.md</a> — §1.9 wet-lab experiment this analysis informs</li>
+<li><a href="../../wiki/c-utilis-uricase-cassette-compatibility-computational.md">wiki/c-utilis-uricase-cassette-compatibility-computational.md</a> — Interpretive wiki page for this experiment</li>
+<li><a href="../../wiki/uricase-variant-selection.md">wiki/uricase-variant-selection.md</a> — Industry-revealed preference analysis; comp-011 verdict added as subsection</li>
+<li><a href="../../wiki/cassette-compatibility-computational.md">wiki/cassette-compatibility-computational.md</a> — comp-010 page (A. flavus baseline)</li>
+<li><a href="../../wiki/hypotheses/H01-ward-dual-cassette.md">wiki/hypotheses/H01-ward-dual-cassette.md</a> — Falsification Card; comp-011 is design support for §1.9</li>
+<li><a href="../../wiki/koji-endgame-strain.md">wiki/koji-endgame-strain.md</a> — Protocol sketch for §1.9</li>
+<li><a href="../../wiki/validation-experiments.md">wiki/validation-experiments.md</a> — §1.9 wet-lab experiment this analysis informs</li>
 <li><a href="../comp-010-cassette-compatibility/">experiments/comp-010-cassette-compatibility/</a> — A. flavus uricase baseline (comp-010: LOW risk)</li>
 <li><a href="../comp-001-uricase-shio-koji-protease-stability/">experiments/comp-001-uricase-shio-koji-protease-stability/</a> — A. flavus uricase protease stability (LOW risk)</li>
 <li><a href="../comp-005-lactoferrin-shio-koji-protease-stability/">experiments/comp-005-lactoferrin-shio-koji-protease-stability/</a> — Lactoferrin protease stability (MODERATE mature)</li>

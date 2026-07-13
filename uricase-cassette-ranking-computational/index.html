@@ -3932,7 +3932,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--Reopened"></span>
   
 
   
@@ -4449,6 +4449,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--invalidated"></span>
+  
+
   
 
       </a>
@@ -5150,7 +5157,10 @@ Computational analyses are write-once artifacts; the daemon does not need to re-
 them on every sweep, so the long content lives next to the experiment that produced it
 at <code>etc/experiments/comp-022-clockbase-uricase-cassette-ranking/</code>.</p>
 </blockquote>
-<p>Across the <em>A. oryzae</em> uricase expression cassette design space, parameterized as <strong>6 promoters × 12 signal peptides × 10 codon variants × 60 secretion scaffolds = 43,200 combinations</strong>, which cassettes survive a multi-model concordance gate and warrant promotion to the <a href="../validation-experiments/">§1.9 dual-cassette wet-lab feasibility test</a>?</p>
+<p>Across the <em>A. oryzae</em> uricase expression cassette design space, parameterized as <strong>6 promoters × 12 signal peptides × 10 codon variants × 60 secretion scaffolds = 43,200 combinations</strong>, which cassettes survive a multi-model concordance gate?</p>
+<blockquote>
+<p><strong>Interpretation correction (2026-07-13):</strong> comp-022 ranks cassette designs inside the koji-secreted design space; it does not establish that secretion is the human-relevant UOX topology. Its strict direct-secretion winners remain candidates for <a href="../validation-experiments/#133-physiological-uox-topology--oxygen--peroxide-factorial">§1.33</a>. Promotion to §1.9B occurs only if a koji-compatible topology clears the physiological-substrate, oxygen, peroxide, localization, and viability gate.</p>
+</blockquote>
 <p><strong>Where the analysis lives:</strong>
 - Full archived analysis: <a href="../etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive/"><code>./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive.md</code></a>
 - Experiment directory (inputs, scripts, outputs): <a href="./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/"><code>./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/</code></a>

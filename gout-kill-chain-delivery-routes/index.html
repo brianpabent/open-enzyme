@@ -4262,7 +4262,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--Reopened"></span>
   
 
   
@@ -4769,6 +4769,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--invalidated"></span>
+  
+
   
 
       </a>
@@ -5591,11 +5598,11 @@
 - <strong>Gut-restricted ABCG2 enhancers — no drug exists:</strong> An oral compound acting exclusively in intestinal lumen without systemic absorption would upregulate intestinal ABCG2 while sparing hepatic/renal ABCG2. Analogous strategy to colesevelam (gut-restricted bile acid sequestrant). No such molecule exists for ABCG2. (Mechanistic Extrapolation — novel drug class)
 - <strong>Q141K trafficking rescue via HDAC inhibition:</strong> HDAC inhibitors partially rescue Q141K ABCG2 from ER retention to apical membrane (In Vitro). Oral butyrate may have dual mechanism: PPARγ induction + Q141K rescue. Not studied in gout specifically. (In Vitro)
 - <strong>Gut-lumen uricase + ABCG2-upregulating probiotic as a two-stage combination:</strong> Stage 1 — probiotic upregulates ABCG2 → more urate secreted into gut lumen. Stage 2 — uricase-expressing probiotic degrades that secreted urate → serum urate drawn down by combined flux. PULSE (E. coli Nissle expressing uricase) and the 2025 ABCG2-probiotic paper describe the two halves separately. The combination has not been tested. This is a two-stage gut-lumen clearance architecture with no clinical precedent. (Mechanistic Extrapolation — combination not tested)
-- <strong>Purine-degrading bacteria (PDB) — now covered in <a href="../purine-degrading-bacteria/">purine-degrading-bacteria.md</a>:</strong> A conserved gene cluster in gut Bacillota (Lachnospiraceae and related) converts urate to SCFAs (butyrate + acetate) via the 2,8-dioxopurine pathway. Antibiotic depletion raises incident gout 30% (Stanford n=14K cohort, HR 1.30). Engineered EcN expressing the gene cluster reduces plasma UA −63% in hyperuricemic mice (CBT2.0). SCFA outputs compound the mechanism via butyrate → ABCG2 upregulation + XO inhibition. No clinical trial exists. (Animal Model + Human Retrospective Cohort + Mechanistic Extrapolation)</p>
+- <strong>Purine-degrading bacteria (PDB) — covered in <a href="../purine-degrading-bacteria/">purine-degrading-bacteria.md</a>:</strong> Full-pathway anaerobes can reduce urate through the 2,8-dioxopurine pathway; engineered EcN CBT2.0 reduced plasma UA in hyperuricemic mice. CBT2.0's terminal carbon products were not resolved to butyrate, so SCFA/ABCG2 compounding cannot be assigned to that strain without <a href="../validation-experiments/#137-cbt20-carbon-fate-and-pdb-self-niche-test">validation experiment 1.37</a>. (Animal Model + Mechanistic Extrapolation)</p>
 <hr />
 <h3 id="uricase-uric-acid-degradation-crystal-dissolution">Uricase — Uric Acid Degradation / Crystal Dissolution<a class="headerlink" href="#uricase-uric-acid-degradation-crystal-dissolution" title="Permanent link">&para;</a></h3>
 <p><strong>Target compartments:</strong> (a) Systemic/vascular — degrading circulating urate. (b) Gut lumen — degrading secreted urate. &copy; Intra-articular — dissolving MSU crystal deposits directly in joint.</p>
-<p><strong>Computational prior:</strong> <a href="../uricase-abcg2-genotype-stratification-computational/"><code>comp-019</code> (gut-lumen uricase × ABCG2 genotype flux model)</a> predicts the SUA reduction band for the gut-lumen sink mechanism: −0.5 to −1.0 mg/dL in typical (non-CKD) gout cohorts, with WT/WT showing the LARGEST predicted ΔSUA (−0.83 mg/dL at 25 mg/day mid-dose, 90% CI −1.13 to −0.57) and Q141K homozygotes the smallest (−0.50 mg/dL). The Q141K-positive subset gains a synergy bonus from butyrate-mediated trafficking rescue — see <a href="../purine-degrading-bacteria/"><code>purine-degrading-bacteria.md</code> §"Q141K + PDB-butyrate + HDAC"</a>. The mechanism is multiplicative on residual ABCG2 capacity; the gut-lumen sink works ACROSS genotypes.</p>
+<p><strong>Computational prior reset:</strong> <a href="../gut-lumen-uricase-physiologic-regime-computational/">comp-044</a> invalidates comp-019's SUA band, genotype ordering, and flat-dose conclusion. The gut-lumen route remains biologically plausible, but dose/topology/oxygen/peroxide/access/survival/transit must be measured before serum-urate prediction. <a href="../uricase-topology-oxygen-peroxide-design-computational/">comp-045</a> defines that comparison.</p>
 <p><strong>Clinically validated routes:</strong>
 - <strong>IV systemic (pegylated):</strong> Pegloticase (Krystexxa), rasburicase. Near-zero serum urate within hours. Anti-drug antibody formation limits durability in ~40–60%; methotrexate co-dosing (SEL-212/pegadricase strategy) partially resolves immunogenicity. PRX-115 Phase 2 RELEASE trial active (Dec 2025, N=150). (Clinical Trial — IV pegloticase/rasburicase)
 - <strong>PO gut-lumen (ALLN-346):</strong> Enteric-coated engineered <em>C. utilis</em> uricase. Phase 1 completed without safety signals; Phase 2a pivotal trial terminated September 2022 (not for safety reasons). Mechanism valid — exploits ABCG2-mediated intestinal urate secretion as concentration sink. No currently active oral uricase program. (Clinical Trial Phase &frac12;a — oral gut-lumen)
@@ -5801,7 +5808,7 @@
 <h3 id="4-gut-lumen-two-stage-combination">4. Gut-lumen two-stage combination<a class="headerlink" href="#4-gut-lumen-two-stage-combination" title="Permanent link">&para;</a></h3>
 <p>Combining ABCG2-upregulating probiotic (Stage 1: more urate secreted into gut lumen) with gut-lumen uricase expression (Stage 2: degrade the secreted urate) creates a two-stage clearance platform. The 2025 ABCG2-probiotic paper and PULSE paper describe the two halves separately. In principle, combining these in a single engineered organism or a co-administered pair generates additive serum urate reduction — each stage individually reduces SUA; together they close a positive feedback loop. Not tested as a combination in any model.</p>
 <h3 id="5-purine-degrading-bacteria-pdb-now-covered-in-purine-degrading-bacteriamd">5. Purine-degrading bacteria (PDB) — now covered in <a href="../purine-degrading-bacteria/">purine-degrading-bacteria.md</a><a class="headerlink" href="#5-purine-degrading-bacteria-pdb-now-covered-in-purine-degrading-bacteriamd" title="Permanent link">&para;</a></h3>
-<p>The 2,8-dioxopurine pathway: conserved 8-gene cluster in <em>Bacillota</em> gut bacteria converts urate anaerobically to butyrate + acetate. Depleted in gout patients (70% lower gene cluster abundance in early hyperuricemia). Clindamycin (anaerobic-targeting) raises incident gout 30% vs. Bactrim (HR 1.30, Stanford n=14K cohort). Engineered EcN with the gene cluster (CBT2.0) reduced plasma UA −63% in hyperuricemic mice. SCFA compounding: butyrate → ABCG2 upregulation + XO inhibition + NLRP3 dampening — three downstream effects on top of direct urate degradation. No clinical trial. Selenium cofactor requirement creates a potential dietary lever (DOPDH is selenium-dependent; deficiency may phenocopy PDB depletion even with intact bacterial abundance).</p>
+<p>The 2,8-dioxopurine pathway is a conserved anaerobic urate-disposal route in gut Bacillota. Full-pathway <em>C. sporogenes</em> has isotope-resolved acetate/butyrate precedent; engineered EcN CBT2.0 reduced plasma UA in hyperuricemic mice but its terminal carbon products were not resolved to butyrate. Do not transfer the <em>C. sporogenes</em> product profile into EcN or add downstream ABCG2/NLRP3 effects until carbon fate is measured. No clinical trial exists.</p>
 <hr />
 <h2 id="summary-table">Summary table<a class="headerlink" href="#summary-table" title="Permanent link">&para;</a></h2>
 <table>

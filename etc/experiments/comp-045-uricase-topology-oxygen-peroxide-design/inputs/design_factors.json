@@ -1,0 +1,38 @@
+{
+  "purpose": "Turn the published PULSE topology comparison and oxygen/peroxide constraints into a randomized factorial decision design without inventing quantitative efficacy or declaring a topology winner.",
+  "topologies": [
+    {"id": "intracellular_ygfU", "chassis": "EcN", "uox_compartment": "cytoplasm", "urate_importer": true, "supports_vhb": true},
+    {"id": "lamb_secreted", "chassis": "EcN", "uox_compartment": "extracellular_bulk", "urate_importer": false, "supports_vhb": true},
+    {"id": "inakn_surface_display", "chassis": "EcN", "uox_compartment": "outer_surface", "urate_importer": false, "supports_vhb": true},
+    {"id": "koji_free_secretion", "chassis": "A_oryzae", "uox_compartment": "extracellular_bulk", "urate_importer": false, "supports_vhb": false}
+  ],
+  "peroxide_strategies": [
+    {"id": "none", "description": "No engineered peroxide-control module."},
+    {"id": "intracellular_katg_or_native_catalase", "description": "EcN KatG or native intracellular koji catalase; direct only for intracellular UOX."},
+    {"id": "compartment_matched_catalase", "description": "Proposed extracellular construct only: co-secreted/fused catalase for secreted UOX or surface-tethered/fused catalase for displayed UOX. Intracellular UOX already uses the intracellular KatG/native-catalase arm and is excluded here to avoid duplicate physical constructs."}
+  ],
+  "oxygen_support": ["none", "vhb"],
+  "oxygen_contexts": ["microoxic", "oxic"],
+  "urate_concentrations_uM": [0.59, 50.0, 250.0],
+  "urate_concentration_roles": {
+    "0.59": "direct human jejunal baseline prior",
+    "50.0": "scenario sensitivity concentration",
+    "250.0": "PULSE in-vitro benchmark concentration"
+  },
+  "biological_runs": 3,
+  "random_seed": 45013,
+  "shared_controls_per_plate": [
+    {"id": "inactive_uox_intracellular_ygfU", "urate_mode": "all_concentrations"},
+    {"id": "inactive_uox_lamb_secreted", "urate_mode": "all_concentrations"},
+    {"id": "inactive_uox_inakn_surface_display", "urate_mode": "all_concentrations"},
+    {"id": "inactive_uox_koji_free_secretion", "urate_mode": "all_concentrations"},
+    {"id": "ecn_no_uox", "urate_mode": "all_concentrations"},
+    {"id": "koji_no_uox", "urate_mode": "all_concentrations"},
+    {"id": "ecn_no_urate", "urate_mode": "zero"},
+    {"id": "koji_no_urate", "urate_mode": "zero"},
+    {"id": "pulse_1_to_1_to_1_mixture_positive_benchmark", "urate_mode": "all_concentrations"},
+    {"id": "medium_blank", "urate_mode": "zero"}
+  ],
+  "primary_readouts": ["urate", "allantoin_or_pathway_product", "hydrogen_peroxide", "dissolved_oxygen", "viability", "uox_localization"],
+  "evidence_states": ["direct_empirical_support", "indirect_empirical_support", "proposed_direct_test", "controlled_context_not_proven_sufficient", "unresolved", "unsupported"]
+}

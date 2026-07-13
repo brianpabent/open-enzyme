@@ -3932,7 +3932,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--Reopened"></span>
   
 
   
@@ -4439,6 +4439,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--invalidated"></span>
+  
+
   
 
       </a>
@@ -5212,6 +5219,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#multihop-program-2026-07-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multihop program (2026-07-13)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#priming-and-upstream-signals" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5271,6 +5289,17 @@
     <span class="md-ellipsis">
       
         Biomarker interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chronic-tophaceous-gout-the-adaptive-immune-axis-scoped-2026-07-13-no-go-for-a-dedicated-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chronic tophaceous gout — the adaptive-immune axis (scoped 2026-07-13; no-go for a dedicated track)
       
     </span>
   </a>
@@ -5525,6 +5554,17 @@
     <span class="md-ellipsis">
       
         Novel modalities (from modality-chokepoint-matrix.md)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gsdmd-pore-self-delivery-does-the-pept1-transporter-actually-show-up-on-macrophages-inside-the-joint-added-2026-07-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GSDMD pore self-delivery — does the PepT1 transporter actually show up on macrophages inside the joint? (added 2026-07-13)
       
     </span>
   </a>
@@ -5874,15 +5914,14 @@
 </ul>
 <h3 id="genotype-stratification-of-the-gut-lumen-sink-response">Genotype stratification of the gut-lumen sink response<a class="headerlink" href="#genotype-stratification-of-the-gut-lumen-sink-response" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>RESOLVED 2026-05-08 per <a href="../uricase-abcg2-genotype-stratification-computational/">comp-019</a>:</strong> The gut-lumen uricase mechanism does NOT depend on Q141K-positive disease-state vulnerability. Phase A literature mining surfaced ZERO Q141K-stratified uricase trials in any language — the Q141K × allopurinol response literature is rich (Wallace 2018, Vora 2021, Stamp 2019), the Q141K × uricase response literature is empty. Phase B flux model anchored against Miyazaki 2025 (PMID 40033341, first direct human in-vivo measurement of jejunal urate secretion stratified by ABCG2 functional class) predicts <strong>WT/WT males show the LARGEST ΔSUA (−0.83 mg/dL at 25 mg/day, 90% CI −1.13 to −0.57), Q141K homozygotes the smallest among typical-genotype patients (−0.50 mg/dL), severe ABCG2 dysfunction (Q126*+Q141K compound) the smallest of all (−0.28 mg/dL — structural ceiling but applies to a small subset).</strong> Mechanism is multiplicative on residual ABCG2 capacity. Strain-engineering implication: substrate-limited regime confirmed (capacity ratios 32–1300×) — yield target stays at 25 mg/dose; engineering binding constraint is GI-survival, not enzyme yield. Phase 2b RCT design implication: typical-gout cohort with Q141K + Q126* as stratification variables, NOT enrichment criteria. See <a href="../uricase-abcg2-genotype-stratification-computational/">comp-019 page</a> and <a href="../cross-validation/"><code>cross-validation.md</code> Claim 1</a> (rating updated 6/10 → 6.5/10).</li>
-<li><strong>Remaining open:</strong> does the flux-model-predicted ΔSUA in non-Q141K patients hold up in a Phase 2b RCT? The flux model is prospective, not validated. Specific magnitudes (−0.5 to −1.0 mg/dL band) are hypotheses pending clinical data. See <a href="../validation-experiments/"><code>validation-experiments.md</code></a> for the wet-lab dependencies.</li>
+<li><strong>REOPENED 2026-07-13:</strong> <a href="../gut-lumen-uricase-physiologic-regime-computational/">comp-044</a> invalidated comp-019's ΔSUA, genotype ordering, substrate-limited designation, and 25 mg dose recommendation. Phase A's negative finding remains useful: no Q141K-stratified uricase trial was identified. The question is now whether any genotype interaction survives physiological substrate, oxygen, access, survival, and transit constraints. See <a href="../validation-experiments/#133-physiological-uox-topology--oxygen--peroxide-factorial">validation experiment 1.33</a>.</li>
 </ul>
 <h3 id="co-engineered-substrate-supply-mechanisms">Co-engineered substrate-supply mechanisms<a class="headerlink" href="#co-engineered-substrate-supply-mechanisms" title="Permanent link">&para;</a></h3>
-<p>Strategic question across the engineering pipeline: should the chassis produce both substrate-degradation (uricase) AND substrate-supply enhancement (ABCG2 induction or relief of ABCG2 suppression) in a single product? <strong>Genotype-agnostic by design</strong> — the <a href="../abcg2-modulators/">Q141K rescue mechanism in abcg2-modulators.md §6</a> is one of the things this approach handles gracefully, but the engineering target is "boost intestinal urate secretion across populations," not "fix a specific variant." <em>(2026-04-28 — Brian)</em> <strong>Reinforced post-<a href="../uricase-abcg2-genotype-stratification-computational/">comp-019</a> 2026-05-08</strong> — the flux model confirms the gut-lumen sink works across genotypes; rescue interventions ADD to (don't replace) the sink mechanism.</p>
+<p>Strategic question across the engineering pipeline: should the chassis produce both substrate degradation (uricase) and substrate-supply enhancement (ABCG2 induction or relief of suppression)? The architecture remains plausible, but neither additivity nor genotype-independence is established. Directly measure transporter flux and UOX consumption together; do not inherit comp-019's serum-response mapping.</p>
 <p>Three candidate routes surfaced so far, each with a different chassis-level implication:</p>
 <ul>
 <li>
-<p><strong>Butyrate co-production or co-formulation with a butyrogenic strain.</strong> Colonic butyrate hits both wild-type ABCG2 (PPARγ induction; Xie 2020 PMID 32555444) AND the Q141K variant (HDAC-mediated trafficking rescue; Basseville 2012 PMID 22472121) — dual-mechanism substrate-supply enhancement. A koji co-formulated with <em>Faecalibacterium prausnitzii</em> or similar butyrate producer, or engineered to overproduce butyrate from a heterologous pathway, would deliver supply enhancement alongside uricase degradation. <strong>Mechanistic Extrapolation; engineering feasibility unassessed.</strong> See <a href="../abcg2-modulators/">abcg2-modulators.md §Engineering implications #2</a>.</p>
+<p><strong>Butyrate co-production or co-formulation with a butyrogenic strain.</strong> Butyrate can induce wild-type ABCG2 through PPARγ in relevant models. Whether it directly rescues Q141K surface trafficking and functional urate flux is unproven; Basseville 2012 supplies a rescue-pathway precedent, not a butyrate result. Co-formulation is therefore gated on validation §1.14 and strain-specific carbon fate.</p>
 </li>
 <li>
 <p><strong>Glucoraphanin co-production (Nrf2 → ABCG2 induction).</strong> Already flagged at <a href="../abcg2-modulators/">abcg2-modulators.md §Engineering implications #1</a>. Sulforaphane precursor produced in the chassis, converted to active sulforaphane by gut myrosinase from cruciferous-resident bacteria. <strong>Mechanistic Extrapolation; <em>A. oryzae</em> glucoraphanin biosynthetic pathway feasibility not yet assessed</strong> — multi-enzyme plant pathway, fungal-host expression unknown.</p>
@@ -5895,6 +5934,14 @@
 <p>See <a href="../abcg2-modulators/">abcg2-modulators.md</a>, <a href="../gut-lumen-sink/">gut-lumen-sink.md</a>, <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a>.</p>
 <hr />
 <h2 id="nlrp3-gout-biology">NLRP3 / Gout Biology<a class="headerlink" href="#nlrp3-gout-biology" title="Permanent link">&para;</a></h2>
+<h3 id="multihop-program-2026-07-13">Multihop program (2026-07-13)<a class="headerlink" href="#multihop-program-2026-07-13" title="Permanent link">&para;</a></h3>
+<p>The corpus-wide connection audit promoted eleven interface questions into a unified
+<a href="../gout-multihop-research-program/">gout multihop research program</a>: physiological UOX
+topology, staged precursor/urate sinks, the enterocyte NLRP3–PDZK1–ABCG2 paradox, luminal
+redox safety, PDB carbon fate/self-niche, T0SS UOX-OMVs, fructose–NOX–ABCG2, purinergic
+resolution, bile-acid FXR/TGR5 signaling, succinate compartment bifurcation, and PDB–XO
+inhibitor compatibility. Concrete protocols are <a href="../validation-experiments/#133-physiological-uox-topology--oxygen--peroxide-factorial">validation experiments
+1.33–1.43</a>.</p>
 <p>Questions about chokepoint biology, priming mechanisms, species-gap caveats, and biomarker interpretation.</p>
 <h3 id="priming-and-upstream-signals">Priming and upstream signals<a class="headerlink" href="#priming-and-upstream-signals" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5945,6 +5992,14 @@
 <li><strong>Is hs-CRP alone sufficient to distinguish chokepoint-specific effects in the self-experiment?</strong> No — hs-CRP is a downstream output marker; urinary LTB4 (CP6a), serum C5a (CP0), TNFSF14 (CP1a) are all needed for mechanism. See <a href="../self-experiment-protocol/">self-experiment-protocol.md</a>, <a href="../synthesis/history/_pre-2026-05-08-archive.md">synthesis archive 2026-04-24 New Connection #3</a>.</li>
 </ul>
 <hr />
+<h3 id="chronic-tophaceous-gout-the-adaptive-immune-axis-scoped-2026-07-13-no-go-for-a-dedicated-track">Chronic tophaceous gout — the adaptive-immune axis (scoped 2026-07-13; no-go for a dedicated track)<a class="headerlink" href="#chronic-tophaceous-gout-the-adaptive-immune-axis-scoped-2026-07-13-no-go-for-a-dedicated-track" title="Permanent link">&para;</a></h3>
+<p>A scoping scan (Western PubMed / ClinicalTrials.gov + Chinese ChiCTR reached via local curl; two-model cross-check) tested whether the Th17/IL-17 (RORγt) adaptive-immune axis is a driver of tophus biology worth a dedicated Open Enzyme track. <strong>Verdict: no.</strong></p>
+<ul>
+<li><strong>Th17/IL-17 is a bystander, not a driver.</strong> Single-cell + spatial transcriptomics of tophus tissue (Xu/Dalbeth/He 2025, PMID 41107120) shows intra-tophus CD4 T cells skew <em>regulatory</em>; the destructive work is done by a tophus-exclusive <strong>SPP1/MMP9 macrophage</strong> subset (innate-stromal) driving matrix remodeling + osteoclast bone erosion. <strong>Zero IL-17-blocker gout trials exist</strong> (ClinicalTrials.gov + ChiCTR both checked). Evidence tier for Th17-as-driver: ≤ Mechanistic Extrapolation.</li>
+<li><strong>What the platform's uricase sink does for tophi (bounded honesty).</strong> Tophus dissolution is a urate-<em>solubility</em> problem: sustained SUA &lt;6 mg/dL (ideally &lt;5) dissolves crystals over months (DECT −96% at 6 mo, complete ~24 mo — Pascart 2025 PMID 40139560; pegloticase −71% in ~3 mo — Araujo 2015 PMID 26509070; febuxostat −83% at 52 wk — Becker 2005 PMID 16339094). The gut-lumen sink could contribute only if it produces sustained serum lowering; no valid effect-size prior currently exists after comp-044. It also does nothing directly for the fibrous capsule + eroded-bone scaffold, which may persist after crystals clear.</li>
+<li><strong>The real (downstream) intervention nodes, if ever pursued:</strong> RANKL/osteoclast bone erosion (denosumab repurposing candidate — with a live comparator: <strong>ChiCTR2300069207</strong>, baricitinib/JAK1-2 for chronic tophaceous gouty arthritis, Phase-4 RCT, primary endpoint = gouty bone erosion, Huashan/Fudan) and the SPP1-macrophage/ECM-fibrosis program (the most distinct novel biology, but no approved SPP1/MMP9 drug — untractable). TCM adjunct signal: <strong>ChiCTR2300071056</strong> (Jianpi Shenshi Granule + febuxostat, tophus endpoint) — sits inside the urate-solubility frame.</li>
+<li><strong>Why no dedicated scope page:</strong> a peer track needs a falsifiable <em>driver</em> thesis; the adaptive-immune axis fails the driver test, and the genuinely distinct chronic-tophus biology is innate-stromal, largely downstream of the crystal burden + IL-1β the CP framework already covers, and not food-grade-engineerable. Ursolic acid's RORγt activity (<a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a>) is a curiosity here, not a priority. Scan log: <a href="../logs/chronic-tophus-adaptive-axis-scoping-scan-2026-07-13.md"><code>logs/chronic-tophus-adaptive-axis-scoping-scan-2026-07-13.md</code></a>.</li>
+</ul>
 <h2 id="compound-specific-questions">Compound-Specific Questions<a class="headerlink" href="#compound-specific-questions" title="Permanent link">&para;</a></h2>
 <p>Organized by compound. Each bullet summarizes the question; cross-links point to the page where it is elaborated.</p>
 <h3 id="egcg">EGCG<a class="headerlink" href="#egcg" title="Permanent link">&para;</a></h3>
@@ -5954,6 +6009,7 @@
 <li><strong>Hepatotoxicity mechanism.</strong> Proteasome-driven, redox-driven, mitochondrial, or immune-mediated? Literature divided; practical dose cap (600 mg/day) is conservative enough to cover all. Mechanism informs formulation choice. See <a href="../egcg/">egcg.md Open questions #3</a>.</li>
 <li><strong>Does EGCG suppress TNFSF14 at the HVEM-receptor level specifically, or only through general NF-κB blockade?</strong> Replication needed in human macrophages. See <a href="../egcg/">egcg.md Open questions #4</a>, <a href="../validation-experiments/">validation-experiments.md §1.8</a>.</li>
 <li><strong>Can DHA + EGCG achieve combined TNFSF14 suppression?</strong> Orthogonal mechanisms; both already in stack. See <a href="../egcg/">egcg.md Open questions #5</a>.</li>
+<li><strong>Does stacking theaflavins + EGCG amplify EGCG's documented hepatotoxicity ceiling?</strong> <em>(added 2026-07-13; collapses a 2026-06-01 triplicate)</em> Theaflavins and EGCG are mechanism-orthogonal and additive at the pathway level (CP1a + CP2/CP3 + URAT1; see <a href="../theaflavins/">theaflavins.md</a>), which motivates a combined stack. EGCG carries a documented hepatotoxicity ceiling (EFSA 800 mg/day); theaflavins' own liver profile at supplement doses is <strong>uncharacterized</strong> — <em>not</em> an established signal (an earlier synthesis "documented ALT/AST" claim for theaflavins was a fabrication, caught before it propagated; see <a href="../theaflavins/">theaflavins.md §Contraindications</a>). Open question: does co-dosing two concentrated tea-polyphenol extracts additively load the hepatic-stress axis, or is theaflavins hepatically neutral at supplement doses? Cheapest discriminator: n=1 with monthly ALT/AST on a theaflavin + matcha regimen. See <a href="../egcg/">egcg.md Open questions #3</a>.</li>
 </ul>
 <h3 id="quercetin">Quercetin<a class="headerlink" href="#quercetin" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5964,6 +6020,7 @@
 <ul>
 <li><strong>Does the ketogenic-diet-gout rat result translate to a human oral BHB dosing regimen?</strong> The rat study used intrinsic ketogenesis (diet); exogenous BHB dosing has different PK. See <a href="../bhb-ketones/">bhb-ketones.md</a>, <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a>.</li>
 <li><strong>Does BHB's mouse-vs-human species gap follow the dapansutrile pattern?</strong> Mouse ketogenic data may overstate BHB's required human dose. See <a href="../synthesis/history/_pre-2026-05-08-archive.md">synthesis archive 2026-04-23 Connection #2</a>.</li>
+<li><strong>How does androgen status interact with BHB's NLRP3-inhibiting effect?</strong> <em>(added 2026-07-13, July sweep)</em> BHB is a multi-target NLRP3 inhibitor (<a href="../bhb-ketones/">bhb-ketones.md</a>); androgens have directionally-ambiguous <em>direct</em> effects on NLRP3 priming (<a href="../androgen-urate-axis/">androgen-urate-axis.md</a> §"Beyond transporters"). The three-way interaction (androgen × MSU × BHB) is untested and matters for the platform's male-skewed demographic — does a high-testosterone or TRT patient need a <em>higher</em> BHB dose for the same NLRP3 suppression? <strong>Sub-question:</strong> BHB acts partly via HCAR2/GPR109A, and androgen signaling can cross-modulate GPCR expression, so whether macrophage HCAR2 is itself androgen-sensitive is a mechanistic anchor. Path to resolution: the BHB interaction arm now added to <a href="../validation-experiments/">validation-experiments.md §1.23</a> (androgen × MSU × NLRP3). See also <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a>.</li>
 </ul>
 <h3 id="lactoferrin">Lactoferrin<a class="headerlink" href="#lactoferrin" title="Permanent link">&para;</a></h3>
 <ul>
@@ -6068,19 +6125,19 @@
 <p><strong>Cross-references:</strong> <a href="../cross-validation/">cross-validation.md §Claim 5</a> (3/10 → 6/10 reframe), <a href="../etc/open-source-platform/">open-source-platform.md §"Open Questions — Reliability of Community Fermentation"</a>, <a href="../engineered-koji-protocol/">engineered-koji-protocol.md</a>, <a href="../koji-endgame-strain/">koji-endgame-strain.md</a>, <a href="../self-experiment-protocol/">self-experiment-protocol.md</a> (Brian's n=1 home-fermentation data point), <a href="../operations/ward-1995-lab-access.md"><code>operations/ward-1995-lab-access.md</code></a> (note: at <code>operations/</code>, not <code>wiki/</code>), <code>synthesis/done/2026-05-13-riskiest-assumption-1-the-single-load-bearing-belief-in-the-current-platform.md</code> (originating sweep item).</p>
 <h3 id="riskiest-assumption-1-does-the-gut-lumen-uricase-sink-produce-a-clinically-meaningful-sua-reduction-in-typical-non-ckd-gout-added-2026-05-15-the-platforms-1-load-bearing-scientific-bet-mechanism-side">Riskiest assumption #1 — does the gut-lumen uricase sink produce a clinically meaningful SUA reduction in typical (non-CKD) gout? <em>(added 2026-05-15, </em><em>the platform's #1 load-bearing scientific bet — mechanism side</em><em>)</em><a class="headerlink" href="#riskiest-assumption-1-does-the-gut-lumen-uricase-sink-produce-a-clinically-meaningful-sua-reduction-in-typical-non-ckd-gout-added-2026-05-15-the-platforms-1-load-bearing-scientific-bet-mechanism-side" title="Permanent link">&para;</a></h3>
 <p><strong>Falsification card committed:</strong> <a href="../hypotheses/H08-gut-lumen-sink-platform-thesis/">H08 — Gut-Lumen Sink Platform Thesis</a> (stub, 2026-05-15). The full killshot menu, pre-committed thresholds, and assumption stack are queued as Phase 2 on the H08 card.</p>
-<p>The platform's load-bearing belief is that the gut-lumen sink produces a clinically meaningful SUA reduction in a typical (non-CKD) gout cohort, in the −0.5 to −1.0 mg/dL band predicted by the <a href="../uricase-abcg2-genotype-stratification-computational/">comp-019</a> flux model. The biology is sound (ABCG2 secretes ~33% of daily UA elimination into the gut lumen; comp-019's flux model is internally consistent against Miyazaki 2025 measurements) but the clinical-translation link is unvalidated:</p>
+<p>The platform's load-bearing belief is that the gut-lumen sink produces a clinically meaningful SUA reduction in typical gout. No valid numerical band currently exists: <a href="../gut-lumen-uricase-physiologic-regime-computational/">comp-044</a> showed that comp-019's mapping omitted physiological substrate occupancy and residence time. The biological and clinical-translation links are both open at the quantitative level:</p>
 <ul>
 <li><strong>ALLN-346 Phase 2a Study 201</strong> showed signal in CKD patients; Study 202 (broader cohort) showed 0–5% reduction, no significance vs. placebo, and the program terminated with 19/200 enrolled.</li>
 <li><strong>Zero</strong> uricase trials (ALLN-346, PRX-115, rasburicase, pegloticase) have stratified by ABCG2 Q141K genotype — the Q141K × allopurinol response literature is rich, the Q141K × uricase response literature is empty.</li>
-<li>The comp-019 flux model is prospective and unvalidated against any human cohort.</li>
+<li>The comp-019 quantitative model is superseded; comp-044 is a regime audit, not a replacement efficacy model.</li>
 </ul>
-<p><strong>If the typical-gout effect is &lt;0.5 mg/dL</strong>, the platform collapses from "core mechanism" to "mild adjunct" — reshaping commercial framing, self-experiment framing, and the priority of peer tracks (<a href="../engineered-lbp-chassis/">LBP</a>, <a href="../sirna-urat1-modality/">siRNA/URAT1</a>, <a href="../medicinal-mushroom-complement-track/">medicinal-mushroom-complement</a>).</p>
+<p><strong>If no topology produces measurable transepithelial urate capture at physiological substrate without redox injury</strong>, the oral UOX platform is killed before a human serum-effect threshold is assigned.</p>
 <p><strong>Phase 2 follow-ups (queued on H08 card):</strong>
 - P2-1 — Lit scan for any post-ALLN-346 oral or gut-targeted uricase Phase 2 typical-gout readout (Opus subagent).
 - P2-2 — Re-analysis attempt of ALLN-346 Study 202 cohort-level genotype data accessibility (FOIA / sponsor request / supplementary data grep). Highest information-per-dollar killshot if data obtainable.
 - P2-3 through P2-6 — Populate assumption stack, killshot menu, pre-committed thresholds, failure-mode coverage map per H01 template.
 - P2-7 — Integrate n=1 self-experiment design with the FEUA protocol on <a href="../self-experiment-protocol/">self-experiment-protocol.md</a>.</p>
-<p><strong>Cross-references:</strong> <a href="../cross-validation/">cross-validation.md §Claim 1</a> (feasibility 6.5/10), <a href="../gut-lumen-sink/">gut-lumen-sink.md</a>, <a href="../uricase/">uricase.md</a>, <a href="../uricase-abcg2-genotype-stratification-computational/">uricase-abcg2-genotype-stratification-computational.md (comp-019)</a>, <code>synthesis/done/2026-05-09-riskiest-assumption-1*.md</code> (originating sweep item).</p>
+<p><strong>Cross-references:</strong> <a href="../cross-validation/">cross-validation.md §Claim 1</a> (feasibility 5.5/10), <a href="../gut-lumen-sink/">gut-lumen-sink.md</a>, <a href="../uricase/">uricase.md</a>, <a href="../gut-lumen-uricase-physiologic-regime-computational/">comp-044</a>, <code>synthesis/done/2026-05-09-riskiest-assumption-1*.md</code> (originating sweep item).</p>
 <h3 id="riskiest-assumption-3-do-dietary-doses-of-rosmarinic-acid-luteolin-houttuynia-and-helicteres-reach-gut-luminal-complement-suppressing-concentrations-added-2026-05-22-the-platforms-3-load-bearing-scientific-bet-dietary-cp0-pk-side">Riskiest assumption #3 — do dietary doses of rosmarinic acid, luteolin, Houttuynia, and Helicteres reach gut-luminal complement-suppressing concentrations? <em>(added 2026-05-22, </em><em>the platform's #3 load-bearing scientific bet — dietary-CP0 PK side</em><em>)</em><a class="headerlink" href="#riskiest-assumption-3-do-dietary-doses-of-rosmarinic-acid-luteolin-houttuynia-and-helicteres-reach-gut-luminal-complement-suppressing-concentrations-added-2026-05-22-the-platforms-3-load-bearing-scientific-bet-dietary-cp0-pk-side" title="Permanent link">&para;</a></h3>
 <p>The platform's dietary-CP0 strategy (four candidates surfaced by comp-018 / comp-020 / comp-039: rosmarinic acid, luteolin, <em>Houttuynia cordata</em> polysaccharide, <em>Helicteres angustifolia</em> benzofuran lignans) rests on the <strong>assumption</strong> that dietary doses of these candidates produce gut-luminal concentrations sufficient to meaningfully suppress complement activation at the C3 convertase / C4 / C5 nodes — AND that this gut-luminal suppression propagates to reduced systemic C5a-driven NLRP3 priming at MSU crystal surfaces. The mechanistic story is well-developed (comp-018 surfaced the candidates; comp-020 verified rosmarinic acid's covalent C3b modification mechanism; comp-039 established the CFH-independence prediction); the <strong>dietary-PK side is almost entirely unanchored</strong>. The only PK number the corpus has — Kang 2021's estimate of 252–1,100 µM gut-luminal rosmarinic acid after a 200 mg oral dose — is a calculation from oral dose + intestinal volume assumptions, NOT a direct measurement. Luteolin gut-luminal PK after a celery / parsley / chamomile meal is uncharacterized. <em>Houttuynia cordata</em> polysaccharide absorption + gut-luminal residence time after oral consumption is <strong>completely unstudied</strong>. None of the four candidates has a direct in vivo measurement of gut-luminal complement suppression after dietary intake.</p>
 <p><strong>Where this is anchored in the corpus:</strong>
@@ -6138,7 +6195,7 @@
 <p>The <a href="../quantification-ladder/"><code>quantification-ladder.md</code></a> framework specifies "calibrate once at Tier 3, track batches at Tier 2" as the operational pattern for verifying dose at home / community-biolab scale. For most compound classes on the platform — cordycepin (diazo-coupling), EGT (Ellman's reagent), GLPP (phenol-sulfuric), engineered-strain uricase (293 nm UV), enzyme assays per <a href="../enzyme-quantification-protocol/"><code>enzyme-quantification-protocol.md</code></a> — a Tier 2 home-runnable assay exists and is reasonably calibrated against a Tier 3 anchor. <strong>For microbiome-derived metabolites, no Tier 2 assay exists that is calibrated against a Tier 3 anchor at the relevant biological concentration.</strong> <a href="../tier-2-butyrate-assay-audit-computational/">comp-038</a> (2026-05-20) confirmed this for butyrate (YELLOW: no ready-to-adopt home colorimetric / breath / electrochemical assay surfaced); by extension, the same gap applies to every metabolite class produced or modified by the gut microbiota.</p>
 <p><strong>Why this is a platform-level open question, not a butyrate-specific inconvenience.</strong> Multiple Open Enzyme intervention tracks depend on microbiome-derived metabolites reaching target tissues at therapeutic concentrations, and <strong>none</strong> has a validated Tier 2 proxy for verifying that the metabolite actually arrived at its target:</p>
 <ul>
-<li><strong>Purine-degrading bacteria (PDB) → butyrate</strong> → enterocyte HDAC trafficking rescue + PPARγ ABCG2 induction (per <a href="../purine-degrading-bacteria/"><code>purine-degrading-bacteria.md</code></a> "SCFA Downstream Effects" + <a href="../abcg2-modulators/"><code>abcg2-modulators.md</code></a> §Q141K rescue)</li>
+<li><strong>Purine-degrading bacteria (PDB) → strain-specific carbon fate</strong> → possible PPARγ/ABCG2 signaling only if butyrate production and epithelial exposure are demonstrated; Q141K rescue remains a direct-test question</li>
 <li><strong>Houttuynia cordata polysaccharide</strong> → gut-microbiota modulation + gut-mucosal TLR4 (per <a href="../complement-c5a-gout/"><code>complement-c5a-gout.md</code> §9.7</a> Tier 1d dietary CP0+CP1 candidate)</li>
 <li><strong>Prebiotic fiber → colonic SCFA</strong> → ABCG2 induction (per fermentable-fiber dietary baseline in <a href="../genotype-informed-supplement-workflow/"><code>genotype-informed-supplement-workflow.md</code></a> Q141K worked example)</li>
 <li><strong>Future microbiome-metabolite tracks</strong> — secondary bile acids (FXR/TGR5), microbial indoles (AHR), TMAO, microbiome-conditioned polyphenol metabolites, <em>Alistipes</em> / hippuric acid axis</li>
@@ -6158,8 +6215,8 @@
 <h3 id="genotype-stratification-q141k-and-the-gut-lumen-sink-mechanisms-responder-population-added-2026-05-08-highest-priority-open-question-for-the-platforms-primary-demographic">Genotype stratification — Q141K and the gut-lumen-sink mechanism's responder population <em>(added 2026-05-08, </em><em>highest-priority open question for the platform's primary demographic</em><em>)</em><a class="headerlink" href="#genotype-stratification-q141k-and-the-gut-lumen-sink-mechanisms-responder-population-added-2026-05-08-highest-priority-open-question-for-the-platforms-primary-demographic" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Can the gut-lumen uricase sink produce meaningful SUA reduction in non-Q141K males, or does the mechanism rely on Q141K-positive disease-state ABCG2 vulnerability to show benefit?</strong> This is the single most important unanswered question for Open Enzyme's primary demographic positioning. If the mechanism only works in Q141K-positive readers (~25-30% of European-descent men, ~50%+ of East Asian men), the platform's addressable population shrinks dramatically — from "all gout patients" to "Q141K-positive gout patients." That's a strategic question that should change trial design, demographic targeting, and possibly commercial framing. (Source: surfaced 2026-05-08 sweep Open Question 1; comp-017 + cross-validation.md prior-art context; <a href="../synthesis/history/_pre-2026-05-08-archive.md">synthesis archive 2026-05-08 Item 8</a>.)</li>
-<li><strong>Path 1 — comp-019 (in-silico, $0, 2-4 weeks).</strong> Two-phase: (A) literature stratification mining of ALLN-346 / PRX-115 / rasburicase clinical data + GWAS by Q141K status; (B) first-principles flux model of intestinal urate flux predicting ΔSUA per genotype × dose scenario. <strong>Spawned as background Opus subagent 2026-05-08 — results pending.</strong> Cheapest answer-moving move; same shape as comp-017.</li>
-<li><strong>Path 2 — §1.27 Caco-2 transwell wet-lab gate (gated on comp-019 signal).</strong> Caco-2 monolayer with apical uricase + basolateral urate. Vary ABCG2 expression (siRNA knockdown, Q141K mutant transfection). Measure apical urate flux. Cost ~$5-10K, 6-8 weeks. Direct test of whether ABCG2 capacity is rate-limiting. Triggered if comp-019 Phase B's flux model predicts genotype-conditional benefit.</li>
+<li><strong>Path 1 — comp-019/044:</strong> comp-019 found no genotype-stratified uricase trial but its efficacy model failed the physiological-regime audit in comp-044. Quantitative responder prediction remains open.</li>
+<li><strong>Path 2 — §1.33 physiological factorial:</strong> polarized intestinal transport with topology, urate, oxygen, peroxide, survival, and Q141K/WT stratification. This replaces the comp-019-gated single transwell concept.</li>
 <li><strong>Path 3 — n=1 stratified self-experiment (parallel, low-friction).</strong> Brian + contributors with known genotype (via <a href="../personal-genome-protocol/">personal-genome-protocol</a> MinION or 23andMe import) take shio-koji or future engineered koji + monitor SUA. Stratify post-hoc by Q141K status. Weak power per individual, but if the platform builds a contributor cohort with genotype data, it's the lowest-cost path to real human evidence. Lives in <a href="../self-experiment-protocol/">self-experiment-protocol.md</a> once cohort exists.</li>
 <li><strong>Path 4 — Consumer genomics partnership / natural-experiment data (long shot).</strong> 23andMe, AncestryDNA, or other consumer-genomics platforms could potentially surface a small cohort of gout patients with self-reported uricase exposure (allopurinol-failed patients trialing rasburicase IV, plus any existing oral-uricase trial participants who released their data). Long-shot partnership move; not load-bearing unless someone offers it.</li>
 <li><strong>Cross-references:</strong> <a href="../intestinal-abcg2-sex-dimorphism-public-data-mining-computational/">comp-017 (intestinal ABCG2 sex-dimorphism)</a>, <a href="../t-abcg2-suppression-evidence-mining-computational/">comp-016 (T × intestinal ABCG2 evidence mining)</a>, <a href="../cross-validation/">cross-validation.md</a> (gut-lumen uricase mechanism currently rated 6/10), <a href="../gut-lumen-sink/">gut-lumen-sink.md</a>, <a href="../abcg2-modulators/">abcg2-modulators.md</a>, <a href="../personal-genome-protocol/">personal-genome-protocol.md</a>, <a href="../hypotheses/H07-clomid-intestinal-er-antagonism/">hypotheses/H07-clomid-intestinal-er-antagonism.md</a> (related mechanism question).</li>
@@ -6180,6 +6237,8 @@
 <li><strong>mRNA-IL-1RA pulse therapy for acute flare termination.</strong> Transient expression matches flare window. Zero programs; mechanistically defensible; competes with canakinumab on cost. (Mechanistic Extrapolation; source: modality-chokepoint-matrix.md)</li>
 <li><strong>Wearable sweat-based or microneedle continuous UA monitoring.</strong> Changes intervention-titration kinetics. UCSD/Stanford research-stage. (Mechanistic Extrapolation; source: modality-chokepoint-matrix.md)</li>
 </ul>
+<h3 id="gsdmd-pore-self-delivery-does-the-pept1-transporter-actually-show-up-on-macrophages-inside-the-joint-added-2026-07-13">GSDMD pore self-delivery — does the PepT1 transporter actually show up on macrophages inside the joint? <em>(added 2026-07-13)</em><a class="headerlink" href="#gsdmd-pore-self-delivery-does-the-pept1-transporter-actually-show-up-on-macrophages-inside-the-joint-added-2026-07-13" title="Permanent link">&para;</a></h3>
+<p>The <a href="../gsdmd-pore-delivery-paradox/">GSDMD pore self-delivery paradox</a> proposes that membrane-impermeant payloads self-concentrate in pyroptotic synovial macrophages during a flare. comp-042 (<a href="../kpv-gsdmd-pore-influx-computational/"><code>kpv-gsdmd-pore-influx-computational.md</code></a>) showed the mechanism's <em>selectivity</em> hinges on one uncharacterized datum: <strong>do synovial-joint macrophages — resting and MSU-activated — express functional PepT1 (SLC15A1)?</strong> For any PepT1-substrate payload (e.g. KPV), if the answer is yes, the payload enters healthy cells too via a concentrative electrogenic route that can make healthy cells accumulate <em>more</em> than pyroptotic ones — collapsing the pore's selectivity (and, if PepT1 is <em>absent</em>, reviving KPV as a viable selective payload). Functional PepT1 is demonstrated in immune cells generally (<a href="https://doi.org/10.1053/j.gastro.2007.10.026">Dalmasso 2008, PMID 18061177</a>) and in inflamed-tissue macrophages (<a href="https://doi.org/10.1016/j.jcmgh.2016.01.006">Viennois 2016, PMID 27458604</a>), but never quantified in synovial macrophages. Resolvable by immunostaining / qPCR / functional [³H]Gly-Sar uptake on synovial-macrophage samples. Gates the pore-delivery modality; note the <a href="../validation-experiments/">§1.32</a> selectivity probe sidesteps it by using a transporter-orphan tracer, so this datum is specifically what would decide whether a <em>PepT1-substrate</em> payload could ever be pore-selective. (Named gap; source: comp-042.)</p>
 <h3 id="engineered-lbp-chassis-peer-track-to-koji">Engineered LBP chassis (peer track to koji)<a class="headerlink" href="#engineered-lbp-chassis-peer-track-to-koji" title="Permanent link">&para;</a></h3>
 <p>The <a href="../engineered-lbp-chassis/">Engineered LBP Chassis</a> page (committed 2026-05-05 as scope-page in response to 2026-05-05 sweep Open Question #3) formalizes engineered obligate anaerobes (<em>Faecalibacterium prausnitzii</em> primary, <em>Akkermansia muciniphila</em>, <em>Bacteroides</em>) as a peer track to the koji chassis. Six discrete in silico follow-ups are queued — none requires pharma-partner involvement to start:</p>
 <ul>
@@ -6235,7 +6294,7 @@
 </ul>
 <p>Phase 3 reflection (shared with LBP track and rolled into the same Strategic Reflections Queue entry in <a href="../synthesis/README.md"><code>synthesis/</code></a>): does the discovery-engine track accumulate enough substance to formally rebrand Open Enzyme as "open-source gout-solving research project" rather than "open-source koji-engineered enzyme library"?</p>
 <h3 id="ward-1995-19-global-lab-access-landscape">Ward 1995 §1.9 — global lab-access landscape<a class="headerlink" href="#ward-1995-19-global-lab-access-landscape" title="Permanent link">&para;</a></h3>
-<p>The <a href="../operations/ward-1995-lab-access.md">Ward 1995 §1.9 Lab Access — Global Landscape</a> scope page (committed 2026-05-05) maps parallel options for executing <a href="../validation-experiments/#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate-1-priority-gate">validation-experiments.md §1.9</a> across Japan, China, and Europe. Key findings:</p>
+<p>The <a href="../operations/ward-1995-lab-access.md">Ward 1995 §1.9 Lab Access — Global Landscape</a> scope page (committed 2026-05-05; priority corrected 2026-07-13) maps parallel options for executing <a href="../validation-experiments/#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate">validation §1.9</a> across Japan, China, and Europe. Key findings:</p>
 <ul>
 <li><strong>NSlD-ΔP10 (the ten-protease-deletion chassis required for H01 Killshot #1) is not deposited in any public culture collection.</strong> The Maruyama lab at the University of Tokyo is the only verified source. (source: ward-1995-lab-access-global.md)</li>
 <li><strong>Single most actionable lead:</strong> Jun-ichi Maruyama (amarujun@mail.ecc.u-tokyo.ac.jp), University of Tokyo, origin lab for NSlD-ΔP10. Draft email included in the scope page.</li>

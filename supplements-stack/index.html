@@ -4410,7 +4410,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--Reopened"></span>
   
 
   
@@ -4917,6 +4917,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--invalidated"></span>
+  
+
   
 
       </a>
@@ -6083,6 +6090,7 @@
 <h3 id="beta-caryophyllene-black-pepper-clove-extract">Beta-Caryophyllene (Black Pepper / Clove Extract)<a class="headerlink" href="#beta-caryophyllene-black-pepper-clove-extract" title="Permanent link">&para;</a></h3>
 <p><strong>Category:</strong> Sesquiterpene / CB2 Agonist / Food Additive (GRAS)</p>
 <p><strong>Mechanism:</strong> Selective CB2 receptor agonist (Ki ~155 nM; CB2-over-CB1 selectivity &gt;100×). In MSU-induced gouty arthritis (rat, animal model), 100–400 mg/kg oral dose-dependently reduced ankle swelling, serum IL-1β/IL-6/TNF-α, and synovial NLRP3/caspase-1/ASC/TLR4/MyD88/NF-κB expression — hits CP1 (NF-κB via TLR4/MyD88) AND CP2 (NLRP3/caspase-1). Mechanistically distinct from oridonin (Cys279) or BHB (K⁺ efflux) — additive potential. (<em>Front Pharmacol</em> 2021;12:651305, PMID: 33967792.) (source: cannabinoids-terpenes.md)</p>
+<p><strong>ChEMBL v37 update (2026-07-01):</strong> CB2 Ki = <strong>150 nM</strong> now curated in ChEMBL (pChEMBL 6.82, <em>Eur J Med Chem</em> 2018) — resolves the "external-literature-only" ambiguity from the v34 baseline. See <a href="../etc/chembl-cross-check/">chembl-cross-check.md</a>. (In Vitro; source: chembl-cross-check.md)</p>
 <p><strong>Evidence level:</strong> Animal Model (MSU crystal rat gouty arthritis — the only cannabinoid or terpene with direct gout-model data)</p>
 <p><strong>Population context:</strong> Broad applicability. No documented sex-differential effect. CB2-selective mechanism avoids the CB1-mediated gut motility slowdown that would be a concern in EPI patients (relevant given the Open Enzyme dual-target focus). GRAS food additive; non-psychoactive.</p>
 <p><strong>Dosing range:</strong>
@@ -6494,10 +6502,10 @@
 <tbody>
 <tr>
 <td><strong>Curcumin</strong></td>
-<td>Functional BCRP/ABCG2 inhibitor in vitro (Ki ~5–10 μM)</td>
-<td>Established in vitro pharmacology (multiple labs)</td>
-<td>Likely negative acutely at 500–1000 mg supplement doses (gut concentrations easily reach Ki)</td>
-<td><strong>Antagonist</strong></td>
+<td>Functional BCRP/ABCG2 inhibitor in vitro (Ki ~5–10 μM); <strong>in vivo-confirmed</strong> — selective intestinal BCRP inhibitor in cynomolgus monkeys (<a href="https://doi.org/10.1124/dmd.117.078931">Karibe 2018, PMID 29358184</a>)</td>
+<td>In vitro (multiple labs) + <strong>Animal Model in vivo (primate)</strong></td>
+<td>Negative — the <strong>strongest</strong> functional-inhibition case in this table (survives despite curcumin's chemical instability; substrate was drug, not urate)</td>
+<td><strong>Antagonist (in vivo-confirmed)</strong></td>
 </tr>
 <tr>
 <td><strong>Quercetin</strong></td>
@@ -6564,6 +6572,9 @@
 </table>
 <p>Stratification matters because a blanket "avoid quercetin" message undermines compliance for the largest cohort (wild-type genotype, dietary intake) where the risk is essentially zero. The clinically meaningful signal concentrates in androgen-suppressed Q141K-positive readers at supplement-grade doses.</p>
 <p><strong>Practical inference for high-T or Q141K-positive readers:</strong> avoid high-dose curcumin and quercetin acutely when the gut sink matters most (post-meal urate spikes, fructose challenges, peri-flare). Dietary-level intake (turmeric in food, onions, tea, fermented soy at normal portions) is unlikely to be clinically problematic; supplement-grade doses are the concern.</p>
+<blockquote>
+<p><strong>Per-compound stability stratification (added 2026-07-13).</strong> A gut-luminal-metabolic-stability scan refined the flavonoid warning from a class rule to per-compound (full table + citations in <a href="../abcg2-modulators/"><code>abcg2-modulators.md</code> §"Gut-luminal metabolic stability resolves the CBD-vs-flavonoid inconsistency"</a>): <strong>curcumin</strong> is the strongest antagonist — functional intestinal-ABCG2 inhibition confirmed in a live primate (<a href="https://doi.org/10.1124/dmd.117.078931">Karibe 2018</a>); <strong>quercetin</strong> is a real inhibitor but only in the <em>proximal</em> gut right after a dose (deglycosylated + catabolized before the colon); <strong>EGCG</strong> is the weakest — unstable, ring-fissioned, and net-<em>favorable</em> in vivo, so it likely belongs with the Nrf2 inducers (sulforaphane, theaflavins), not the inhibitors. The load-bearing quantity — free luminal concentration vs. the ABCG2-for-<em>urate</em> Ki, segment-resolved — remains unmeasured for all of them.</p>
+</blockquote>
 <p><strong>Counter-balancing inducers in the catalog (Tier 1 ABCG2 inducers per <a href="../abcg2-modulators/">abcg2-modulators.md</a>):</strong>
 - <strong>Sulforaphane</strong> (Nrf2 axis) — gut-enriched
 - <strong>Fermentable-fiber-derived butyrate</strong> (PPARγ axis; not a discrete catalog entry, but fermented-foods + dietary fiber adjacent) — strongest evidence (Juraschek DASH 2021, Li 2023)

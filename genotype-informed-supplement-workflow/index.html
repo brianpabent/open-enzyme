@@ -4185,7 +4185,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--Reopened"></span>
   
 
   
@@ -4692,6 +4692,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--invalidated"></span>
+  
+
   
 
       </a>
@@ -5449,7 +5456,7 @@
 <li><strong>&copy; Accept the exposure-proxy limitation explicitly.</strong> Use the stool SCFA panel as documented, but interpret negative results with appropriate caution: a low stool butyrate could mean the supplement was under-dosed, OR that the microbiome didn't convert it, OR that the mechanism didn't work in this patient. Document the ambiguity in the experiment log so future analysis can re-examine if input-verification becomes available.</li>
 </ul>
 <p>Direct supplement quantification by HPLC-UV or electrochemical SCFA profiling is plausible (per comp-038's next-step path) but research-grade and not workflow-ready today. The workflow design IS sound; the butyrate-specific limitation is a class-level methodology gap (see "Tier 2 assay gap for microbiome-derived metabolites" below + the class-level Open Question added to <code>open-questions.md</code> 2026-05-22).
-5. <strong>Track biomarkers:</strong> Serum UA quarterly + the standard four-biomarker panel per §4. Predicted effect from <a href="../uricase-abcg2-genotype-stratification-computational/">comp-019</a>: WT/WT non-Q141K cohort sees larger ΔSUA than Q141K heterozygotes under the substrate-limited gut-lumen uricase regime; for Q141K-positive subjects, the rescue mechanism (HDAC inhibition) is the dominant lever and per-patient response can be larger if it activates. Track UA trajectory at 3-month intervals.</p>
+5. <strong>Track biomarkers:</strong> Serum UA quarterly + the standard four-biomarker panel per §4. Do not use comp-019 to predict genotype-specific UOX response; <a href="../gut-lumen-uricase-physiologic-regime-computational/">comp-044</a> retired that mapping. Q141K can still motivate a transporter-rescue experiment, but response attribution requires direct exposure and ABCG2-function evidence.</p>
 <p><strong>Compound uncertainty: butyrate × exertion trigger (added 2026-05-22 per sweep 2026-05-20 Contradiction #1).</strong> A Q141K-positive subject following this worked example who flares after an exertion event faces a four-way attribution problem at n=1. Without a Tier 2 butyrate input-verification assay AND without an exertion-challenge protocol that monitors urate kinetics, a post-exertion flare could be (a) the butyrate intervention failing (HDAC trafficking rescue insufficient to handle the exertion-driven urate load); (b) the butyrate dose being wrong (supplement underdosed, but unverifiable at step 4); &copy; the exertion trigger acting via a mechanism the butyrate intervention doesn't address (mechanical shedding rather than metabolic overload, per <a href="../mechanical-flare-triggers/"><code>mechanical-flare-triggers.md</code></a> §"Candidate mechanism #5 — metabolic overload via exertion/fatigue"); (d) regression to the mean. The four explanations are not distinguishable at n=1 without (i) a Tier 2 butyrate-potency assay (closes option b), (ii) an exertion-challenge test with <strong>serial spot urinary urate/creatinine ratios</strong> (discriminates the metabolic-overload mechanism from mechanical shedding for option c — serum UA + pain logs alone under-resolve renal-clearance kinetics per <a href="../mechanical-flare-triggers/"><code>mechanical-flare-triggers.md</code></a>), or (iii) a genotype-stratified n-of-many cohort (beyond n=1 resolution). Subjects executing this worked example should be aware of the compound uncertainty and document exertion exposure + post-exertion biomarker draws when feasible, so retrospective analysis can at least disambiguate (a) + (b) from &copy; + (d).</p>
 <p><strong>What this example does NOT claim:</strong>
 - Does NOT claim butyrate alone produces clinically meaningful ΔSUA — gated by <a href="../hypotheses/H08-gut-lumen-sink-platform-thesis/">H08 — Gut-Lumen Sink Platform Thesis</a> and the absence of a typical-gout Phase 2b RCT.
@@ -5552,7 +5559,7 @@
 <li><a href="../enzyme-quantification-protocol/"><code>enzyme-quantification-protocol.md</code></a> — enzyme-specific Tier 2 assays</li>
 <li><a href="../medicinal-mushroom-extract-sops/"><code>medicinal-mushroom-extract-sops.md</code></a> — mushroom-extract Tier 2 SOPs</li>
 <li><a href="../abcg2-modulators/"><code>abcg2-modulators.md</code></a> — Q141K rescue mechanisms (worked example anchor)</li>
-<li><a href="../uricase-abcg2-genotype-stratification-computational/"><code>uricase-abcg2-genotype-stratification-computational.md</code></a> — comp-019 genotype-stratified ΔSUA modeling</li>
+<li><a href="../uricase-abcg2-genotype-stratification-computational/"><code>uricase-abcg2-genotype-stratification-computational.md</code></a> — superseded comp-019 interpretation; quantitative predictions retired</li>
 <li><a href="../gout-action-guide/"><code>gout-action-guide.md</code></a> — user-facing entry point; "This year (advanced)" sections route here</li>
 <li><a href="../hypotheses/H08-gut-lumen-sink-platform-thesis/">H08</a>, <a href="../hypotheses/H09-community-fermentation-reliability/">H09</a> — platform-level hypotheses the workflow operationalizes</li>
 </ul>
