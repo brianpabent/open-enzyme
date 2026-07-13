@@ -75,3 +75,9 @@ The ChEMBL REST API is treated as the primary source for this cross-check docume
 ## Status
 
 Open — awaiting propagation to [nlrp3-inhibitor-screen.md](../wiki/nlrp3-inhibitor-screen.md) and [supplements-stack.md](../wiki/supplements-stack.md).
+
+---
+
+## ✓ Actioned 2026-07-13
+
+Verified all three headline numbers directly against ChEMBL (CHEMBL169): **NF-κB p65 31 nM** (*Bioorg Med Chem* 2018, direct p65–DNA-binding ELISA) + **SENP1 6.4 nM** (*Eur J Med Chem* 2022) both SOLID; **ROR-γ 0.75 nM is REAL but cherry-picked** — the most-potent of 5+ records spanning **0.75–680 nM** (human 130–680, mouse 500–1,000). The propagation already existed in [`nlrp3-inhibitor-screen.md`](../../wiki/nlrp3-inhibitor-screen.md) (~line 113, 2026-07-01) but carried BOTH the cherry-picked 0.75 nM AND a "chronic gout/tophus biology" relevance claim. **Corrected the note:** ROR-γ as a range; NF-κB direct-biochemistry upgrade flagged as the load-bearing gout value; ROR-γ/Th17 reframed **curiosity-not-priority** because the 2026-07-13 chronic-tophus scoping scan found Th17/IL-17 is a **bystander not a driver** of tophus biology (single-cell tophus data + zero IL-17 gout trials incl. ChiCTR). No `supplements-stack.md` ursolic entry exists, so that half of the proposed propagation is n/a. Tophus finding captured in [`open-questions.md` §"Chronic tophaceous gout"](../../wiki/open-questions.md) + [`gout-pathophysiology.md`](../../wiki/gout-pathophysiology.md). Closure.

@@ -210,6 +210,10 @@ IL-1β is a master cytokine—one molecule has cascading effects across the enti
 
 ---
 
+## Acute flare vs. chronic tophus — two different problems
+
+Open Enzyme's chokepoint kill chain (CP0–CP6) is built around the **acute flare**: MSU crystal → NLRP3 → IL-1β → neutrophils (innate, fast, self-limiting). The **tophus** is a distinct, *chronic* problem — an organized granuloma (crystal core + macrophages + multinucleated giant cells + fibrous capsule + an adaptive-immune corona). Dissolving a tophus is two separate problems: (1) **dissolve the crystals** — a urate-solubility problem solved by sustained SUA <6 mg/dL, where the platform's [gut-lumen uricase sink](./gut-lumen-sink.md) contributes *if* it crosses the threshold (an adjunct, not a standalone dissolver); and (2) **resolve the organized inflammation + eroded bone** — driven by an innate-stromal **SPP1/MMP9 macrophage** subset + RANKL/osteoclast activity (*not* the Th17 axis, which single-cell tophus data show is a bystander), which the platform does **not** currently address. See [`open-questions.md` §"Chronic tophaceous gout — the adaptive-immune axis"](./open-questions.md) for the scoped no-go, the dissolution kinetics, and the intervention-node map. (2026-07-13 scoping scan.)
+
 ## Current Treatment Landscape
 
 The full treatment landscape — acute-flare management (NSAIDs, corticosteroids, IL-1 inhibitors), urate-lowering therapy (allopurinol, febuxostat, probenecid, pegloticase), and the drug-by-drug tradeoffs — lives at [gout-deep-dive.md §Current Treatment Landscape](./gout-deep-dive.md#current-treatment-landscape). Only the mechanism-relevant chokepoint mapping for **colchicine** is retained here, because it maps directly onto the NLRP3 cascade above.

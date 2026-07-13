@@ -169,6 +169,15 @@ Questions about chokepoint biology, priming mechanisms, species-gap caveats, and
 
 ---
 
+### Chronic tophaceous gout — the adaptive-immune axis (scoped 2026-07-13; no-go for a dedicated track)
+
+A scoping scan (Western PubMed / ClinicalTrials.gov + Chinese ChiCTR reached via local curl; two-model cross-check) tested whether the Th17/IL-17 (RORγt) adaptive-immune axis is a driver of tophus biology worth a dedicated Open Enzyme track. **Verdict: no.**
+
+- **Th17/IL-17 is a bystander, not a driver.** Single-cell + spatial transcriptomics of tophus tissue (Xu/Dalbeth/He 2025, PMID 41107120) shows intra-tophus CD4 T cells skew *regulatory*; the destructive work is done by a tophus-exclusive **SPP1/MMP9 macrophage** subset (innate-stromal) driving matrix remodeling + osteoclast bone erosion. **Zero IL-17-blocker gout trials exist** (ClinicalTrials.gov + ChiCTR both checked). Evidence tier for Th17-as-driver: ≤ Mechanistic Extrapolation.
+- **What the platform's uricase sink does for tophi (bounded honesty).** Tophus dissolution is a urate-*solubility* problem: sustained SUA <6 mg/dL (ideally <5) dissolves crystals over months (DECT −96% at 6 mo, complete ~24 mo — Pascart 2025 PMID 40139560; pegloticase −71% in ~3 mo — Araujo 2015 PMID 26509070; febuxostat −83% at 52 wk — Becker 2005 PMID 16339094). The [gut-lumen sink](./gut-lumen-sink.md) contributes on identical kinetics *if* it crosses the threshold — but its projected −0.5 to −1.0 mg/dL (comp-019 / H08) will not cross <6 from an 8+ baseline alone, so it is an **adjunct, not a standalone tophus-dissolver**. It does **nothing** for the fibrous capsule + eroded-bone scaffold, which persist after crystals clear (dissolution can even precipitate bony collapse — "shrinking toe," Bardin 2022 PMID 35183934).
+- **The real (downstream) intervention nodes, if ever pursued:** RANKL/osteoclast bone erosion (denosumab repurposing candidate — with a live comparator: **ChiCTR2300069207**, baricitinib/JAK1-2 for chronic tophaceous gouty arthritis, Phase-4 RCT, primary endpoint = gouty bone erosion, Huashan/Fudan) and the SPP1-macrophage/ECM-fibrosis program (the most distinct novel biology, but no approved SPP1/MMP9 drug — untractable). TCM adjunct signal: **ChiCTR2300071056** (Jianpi Shenshi Granule + febuxostat, tophus endpoint) — sits inside the urate-solubility frame.
+- **Why no dedicated scope page:** a peer track needs a falsifiable *driver* thesis; the adaptive-immune axis fails the driver test, and the genuinely distinct chronic-tophus biology is innate-stromal, largely downstream of the crystal burden + IL-1β the CP framework already covers, and not food-grade-engineerable. Ursolic acid's RORγt activity ([nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md)) is a curiosity here, not a priority. Scan log: [`logs/chronic-tophus-adaptive-axis-scoping-scan-2026-07-13.md`](../logs/chronic-tophus-adaptive-axis-scoping-scan-2026-07-13.md).
+
 ## Compound-Specific Questions
 
 Organized by compound. Each bullet summarizes the question; cross-links point to the page where it is elaborated.
