@@ -87,7 +87,7 @@ The cleanest reason to pursue *F. prausnitzii* engineering for gout specifically
 
 1. **Wild-type ABCG2 (everyone):** butyrate → PPARγ activation → upregulated ABCG2 transcription → more urate efflux from blood into the gut lumen. Mechanism: well-characterized; DASH RCT shows 0.25–0.73 mg/dL UA reduction in fiber-rich diets. (Clinical Trial / Mechanistic; source: [`abcg2-modulators.md`](./abcg2-modulators.md) §Inducers.)
 
-2. **Q141K variant ABCG2 (~10% of people, Brian-relevant):** butyrate is also a class-I HDAC inhibitor → rescues the broken trafficking of the Q141K mutant protein → gets it to the cell surface where it can actually transport urate. Mechanism: Basseville 2012 PMID 22472121. (In Vitro; source: [`abcg2-modulators.md`](./abcg2-modulators.md) §Q141K rescue mechanism.)
+2. **Q141K variant ABCG2:** pharmacological/chemical-chaperone rescue is established in vitro (Basseville 2012, PMID 22472121), but direct rescue by LBP-derived butyrate is not. Butyrate remains a candidate requiring surface-trafficking and functional urate-flux testing. (Mechanistic Extrapolation; source: [ABCG2 modulators](./abcg2-modulators.md).)
 
 This is **genotype-agnostic coverage** — a rare property. Most ABCG2-relevant interventions either work for WT (PPARγ inducers) or for Q141K (HDAC inhibitors), but not both. A live colonic strain producing butyrate continuously hits both populations simultaneously.
 

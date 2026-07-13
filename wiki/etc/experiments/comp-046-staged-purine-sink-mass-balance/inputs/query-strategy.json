@@ -1,0 +1,9 @@
+{
+  "scope": "Microbial interception of dietary purine nucleosides followed by oxidative and reductive urate sinks",
+  "natural_product_scope": false,
+  "framings": [
+    {"type": "nucleoside_interception", "queries": ["Pediococcus acidilactici GR-5 DeoD purine nucleoside hyperuricemia", "intestinal purine nucleoside absorption jejunum uric acid"], "rationale": "Separate nucleoside cleavage from true purine retention or destruction."},
+    {"type": "urate_sink", "queries": ["engineered EcN urate oxidase YgfU", "anaerobic purine degradation urate Clostridium sporogenes"], "rationale": "Anchor the oxidative and reductive downstream stages."}
+  ],
+  "deferred_framings": []
+}

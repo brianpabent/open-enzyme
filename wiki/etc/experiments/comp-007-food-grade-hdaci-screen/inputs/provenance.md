@@ -112,4 +112,4 @@ Queries via `mcp__plugin_pubmed_PubMed__search_articles` and `mcp__plugin_pubmed
 
 - Isoform-specific IC50 values for sulforaphane, PEITC, AM, DADS, caffeic acid, ferulic acid against HDAC1/2/3 or HDAC6. These are Stage 1 gaps that the ranking addresses via estimates flagged with LOW/DATA_UNAVAILABLE confidence.
 - Gut-selective vs. systemic HDAC inhibition for any candidate. The oral bioavailability proxy is a surrogate, not a direct measurement of enterocyte HDAC inhibition.
-- Q141K trafficking rescue by any candidate other than butyrate (Basseville 2012). Stage 3 would provide this data.
+- Direct Q141K trafficking rescue by any food-grade candidate, including butyrate, was not established by Basseville 2012. Stage 3 would provide this data.

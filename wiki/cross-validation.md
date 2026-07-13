@@ -77,36 +77,31 @@ Engineered *E. coli* Nissle 1917 with a uric acid-responsive biosensor expressin
 
 **Verdict on Claim 1:** The underlying mechanism is real. Proof-of-concept exists in mice and weak signal in some humans. **But the threshold between "enzyme works in gut lumen" and "achieves clinically meaningful serum urate reduction in typical gout patients" is not yet crossed in humans.** This is the project's core scientific bet. It is not frivolous, but it is not a fait accompli. **Falsification card:** committed at stub-level as [H08 — Gut-Lumen Sink Platform Thesis](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) (2026-05-15) — the platform's #1 riskiest-assumption anchor, pre-committed magnitude band −0.5 to −1.0 mg/dL ΔSUA in typical gout, killshot menu queued in Phase 2.
 
-**Feasibility Rating: 6.5/10** *(updated 2026-05-08 post-[comp-019](./uricase-abcg2-genotype-stratification-computational.md) flux model — was 6/10)*
-*Rationale:* Mechanism is validated in preclinical. Clinical signal exists but is marginal and inconsistent. **comp-019 flux model resolves the genotype-dependency worry — the mechanism is genotype-robust, with WT/WT patients showing the LARGEST predicted ΔSUA (−0.83 mg/dL at 25 mg/day mid-dose, 90% CI −1.13 to −0.57) and severe-ABCG2-dysfunction patients showing the smallest (−0.28 mg/dL).** The Phase 2b RCT can run as a typical-gout cohort with Q141K + Q126* as stratification variables (NOT enrichment), simplifying trial design. The 0.5-point upgrade reflects the resolved genotype-dependency worry (mechanism not narrow); the remaining 3.5 points await Phase 2b RCT validation of the flux-model-predicted magnitudes. Requires de-risking in human proof-of-concept studies.
+**Feasibility Rating: 5.5/10** *(reopened 2026-07-13 after [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md))*
 
-#### Genotype-Robustness of Gut-Lumen Sink Confirmed by Flux Model (Resolved 2026-05-08, comp-019)
+*Rationale:* Preclinical gut-local activity and limited human oral-enzyme evidence keep the
+mechanism plausible, but comp-019's quantitative bridge to serum urate is invalid. Its
+Vmax-only dose conversion omitted physiological substrate occupancy and finite residence
+time; its ΔSUA, genotype ranking, flat dose-response, and “yield is not limiting” conclusions
+are retired. In the central diagnostic used by comp-044 (0.59 µM urate, Km 25 µM, three-hour
+active window), capacity ratios are 0.093, 0.466, and 0.932 at 5, 25, and 50 mg before oxygen,
+access, survival, or transit penalties. Those ratios diagnose the legacy error; they do not
+predict human efficacy.
 
-[ADDED 2026-05-08 per [comp-019](./uricase-abcg2-genotype-stratification-computational.md) flux model.] The genotype-dependency worry that motivated comp-019 — "does the gut-lumen sink only work in Q141K-positive patients?" — is resolved by the in-silico flux model. Prediction across the genotype × sex × dose matrix:
+#### Genotype and dose response reopened
 
-| Scenario | ΔSUA at 25 mg/day uricase (Monte Carlo median, 90% CI) |
-|---|---|
-| WT/WT, male gout | **−0.83 mg/dL (−1.13 to −0.57)** |
-| Q141K heterozygous, male gout | −0.67 mg/dL (−0.91 to −0.45) |
-| Q141K homozygous, male gout | −0.50 mg/dL (−0.68 to −0.34) |
-| WT/WT, female gout | −0.74 mg/dL (−1.00 to −0.50) |
-| Q141K heterozygous, female gout | −0.59 mg/dL (−0.80 to −0.40) |
-| Q141K homozygous, female gout | −0.42 mg/dL (−0.57 to −0.29) |
-| Severe ABCG2 dysfunction (Q126*+Q141K) | −0.28 mg/dL (−0.37 to −0.19) |
-
-**The mechanism is genotype-robust. Non-Q141K patients show the LARGEST per-patient response, not the smallest.** This is because the gut-lumen sink mechanism is multiplicative on residual ABCG2 capacity (uricase amplifies whatever ABCG2 delivers into the lumen) — patients with full ABCG2 function have the most capacity to amplify. The platform's primary demographic should remain "all gout patients," not be narrowed to Q141K-positive carriers.
-
-**Strain-engineering implication:** the flux model predicts substrate-limited regime at all dose scenarios tested (5–50 mg/day), with capacity ratios 32× to 1300× (uricase capacity vastly exceeds delivered intestinal urate flux). The yield target can stay at ~25 mg/dose; engineering effort should shift further toward GI-survival optimization, not yield optimization. This re-prioritization is consistent with the Claim 2 GI Survival rating remaining the binding constraint at 5/10.
-
-**Phase 2b RCT design implication:** run as a typical-gout RCT with Q141K + Q126* genotyping at enrollment as stratification variables (NOT enrichment criteria). Power for ΔSUA ~−0.5 to −1.0 mg/dL mean in unstratified cohort; Q141K subgroup analysis is hypothesis-generating, not primary endpoint. Pre-stratify by CKD stage (renal compensation reserve dominates, per the model's renal-compensation parameter sensitivity 0–50%). Single dose ~25 mg/day is sufficient (dose-response is flat above ~5 mg/day per the substrate-limited regime).
-
-**Notable Phase A negative finding:** across the entire published clinical-trial corpus of oral and systemic uricase therapy — ALLN-346 (Studies 201/202), PRX-115 (Phase 1, Protalix 2024 ACR), rasburicase (post-marketing), pegloticase — ZERO trials have stratified results by ABCG2 Q141K genotype. The Q141K × allopurinol response literature is rich (Wallace 2018 OR=2.43 meta-analysis, Vora 2021 oxypurinol PK/PD, Stamp 2019 sensitivity analysis); the Q141K × uricase response literature is empty. Every uricase trial since rasburicase (2001) has missed an obvious pharmacogenomic stratification axis. This is publishable in itself.
+No published uricase trial identified in comp-019 stratified outcome by ABCG2 Q141K, so
+genotype remains a valid prospective stratification variable. It is **not** computationally
+resolved. Trial design must include multiple dose/topology arms until the physiological
+regime in [validation experiment 1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial)
+is measured. [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) now precommits the
+interpretation without a numerical ΔSUA prior.
 
 #### Sex-Dimorphic Intestinal ABCG2 Modulates the Gut-Lumen Sink Asymptote (Reframed 2026-05-07)
 
 [REFRAMED 2026-05-07 per [comp-016](./t-abcg2-suppression-evidence-mining-computational.md). Confidence tier on the androgen-ABCG2 mechanism dependency reduced from Animal Model + Mechanistic Extrapolation to **WEAK / UNCONFIRMED** for the *direct-androgen-suppression* arm specifically.] The gut-lumen sink can only degrade urate that ABCG2 actually delivers into the lumen — which means transporter capacity, not enzyme dose, sets the ceiling on platform efficacy. The intestinal compartment IS sex-dimorphic in a urate-relevant way (Hoque 2020 Nat Commun PMID 32488095 — male Q140K mice show 88% intestinal ABCG2 protein loss + severe hyperuricemia; female Q140K mice protected). However, the comp-016 17-study primary-literature scan found **zero** primary studies demonstrating direct androgen-driven suppression of intestinal ABCG2 in vivo. The better-supported mechanism is **estradiol-positive on the female side via PI3K/Akt** (Yu 2021 Nutr Metab PMID 34144706, In Vitro + Animal Model), with the male asymptote running lower because male physiology *lacks* that female-positive signal — not because androgens actively suppress ABCG2 transcription at intestinal AR. MacLean 2008 (PMID 18378562) full-intestinal scan in healthy rats found NO sex difference at baseline, suggesting the asymmetry primarily emerges under disease state or genetic vulnerability (e.g., Q141K-positive gout patients per Hoque 2020). The renal arm of the androgen-urate axis is partially preserved (Hosoyamada/Takiue 2010 PMID 20589576: T → URAT1 mRNA in mouse kidney) — but this is renal, not intestinal.
 
-**Practical platform implication:** A modest dose-response shift driven by absent estradiol-positive signaling in male physiology, rather than a hard structural ceiling from active androgen-driven repression. The male-demographic asymptote argument retains its directional conclusion (sex-dimorphism in intestinal urate handling is real per the Q140K mouse data) but softens in magnitude framing. The rescue framework is **unchanged in destination**: butyrate (from fermentable fiber → colonic SCFA → PPARγ-driven ABCG2 induction) and Nrf2-axis inducers (sulforaphane, indole-3-carbinol) lift the asymptote back up — see [abcg2-modulators.md](./abcg2-modulators.md) for the full rescue stack and primary citations. The Q141K trafficking-rescue mechanism via HDAC inhibition (Basseville 2012, In Vitro) is **orthogonal to the androgen-axis question and unaffected by the comp-016 reframing** — it operates on the polymorphic-variant trafficking defect regardless of hormonal axis. Operationally: if a male patient runs the protocol and serum UA does not drop as expected, the response is still not "dose more enzyme" — it is "open the gate stack" and re-test. This shapes Phase 2b stratification (sex, fiber intake, ABCG2 genotype) — but ABCG2 genotype (Q141K) is now the better-anchored stratification axis than androgen status, given the comp-016 verdict. [VERIFICATION-PENDING — comp-016 was abstract-level + WebSearch-summary scan; full-text grep verification of the Hoque 88% magnitude, Yu PI3K/Akt mechanism, MacLean null finding is deferred to a Paperclip-MCP follow-up. Direction of the verdict is robust to this caveat.]
+**Practical platform implication (reset 2026-07-13):** Sex, Q141K, inflammatory state, and ABCG2-modulating exposures remain prospective stratification variables; no validated model assigns their UOX response magnitude. Butyrate-driven PPARγ induction of wild-type ABCG2 is a separate hypothesis from Q141K rescue. Basseville 2012 anchors pharmacological/chemical-chaperone rescue, not direct butyrate rescue. Dose and “open the gate” changes must be tested jointly rather than chosen from the retired comp-019 response surface.
 
 ---
 

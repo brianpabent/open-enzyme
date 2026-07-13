@@ -1,0 +1,9 @@
+{
+  "scope": "Engineered microbial uricase localization, oxygen support, and peroxide management",
+  "natural_product_scope": false,
+  "framings": [
+    {"type": "topology", "queries": ["PULSE smUOX intracellular LamB InakN", "EcN periplasmic uricase FtsP"], "rationale": "Recover directly tested localization architectures."},
+    {"type": "oxygen_peroxide", "queries": ["urate oxidase KatG Vhb hypoxia EcN", "uricase catalase co-localization hydrogen peroxide"], "rationale": "Recover directly tested oxygen and peroxide support modules."}
+  ],
+  "deferred_framings": []
+}

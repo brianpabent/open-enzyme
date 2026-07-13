@@ -18,7 +18,7 @@ This analysis models the transit of *Aspergillus flavus* uricase (rasburicase so
 - Enteric coating or engineered acid resistance (via disulfide bonds) could improve survival to 40–50%, substantially reducing required dose.
 - Yeast cell wall protection is modest (~10–15% additional survival); insufficient as sole strategy.
 - The active window is the duodenum and jejunum (pH 5.5–7.5, ~45–120 min transit). Colon activity is negligible.
-- **Yield-vs-survival priority update (2026-05-08 per [comp-019](./uricase-abcg2-genotype-stratification-computational.md) flux model):** The gut-lumen uricase mechanism is **substrate-limited, not enzyme-limited** — capacity ratios 32–1300× across dose scenarios. Engineering cycles should shift away from yield optimization toward GI-survival optimization. (Mechanistic Extrapolation — in silico; source: uricase-abcg2-genotype-stratification-computational.md)
+- **Yield-vs-survival reset (2026-07-13):** Neither yield nor survival can be deprioritized from comp-019. [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) shows that its capacity ratios omitted physiological substrate occupancy and finite residence time. Jointly measure delivered active enzyme, local urate, oxygen, access, and transit in [validation experiment 1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial).
 
 ---
 
@@ -239,8 +239,8 @@ The jejunum/ileum represents the **therapeutic window** for uric acid degradatio
 
 Recent direct measurement of human small intestinal lumen uric acid (2025 data):
 - **Baseline intestinal uric acid concentration:** 70–113 pg/µL (depends on ABCG2 function)
-- **In 100% functional ABCG2:** 105.3 pg/µL ≈ 0.625 mM
-- **In 50% functional ABCG2:** 70.1 pg/µL ≈ 0.417 mM
+- **In 100% functional ABCG2:** 105.3 pg/µL ≈ 0.626 µM
+- **In 50% functional ABCG2:** 70.1 pg/µL ≈ 0.417 µM
 - **Concentration increases over 5 minutes** with a dose-dependent relationship to ABCG2 function. [[6]](#ref6) **Clinical Trial** (human small intestinal aspirate data)
 
 **Implications:**

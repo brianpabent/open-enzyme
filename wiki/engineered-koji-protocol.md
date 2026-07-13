@@ -589,7 +589,7 @@ The **ABCG2 transporter** (also called BCRP, breast cancer resistance protein) i
 
 ### The PULSE Proof of Concept (Cell Reports Medicine, October 2025)
 
-The PULSE system (Probiotic-based UA Level Sensing and adjustment) was published by researchers who engineered *E. coli* Nissle 1917 to express a urate-sensing circuit (HucR repressor) coupled to secreted micro-uricase (smUOX). When gut luminal uric acid is high, the sensor activates and the bacterium secretes uricase that diffuses throughout the intestinal lumen.
+The PULSE system (Probiotic-based UA Level Sensing and adjustment) used a HucR urate-sensing circuit in *E. coli* Nissle 1917 and compared **three** smUOX topologies: intracellular smUOX with the YgfU urate importer, LamB-mediated secretion, and InaK-N surface display. KatG and Vitreoscilla hemoglobin (VHb) were added as peroxide- and oxygen-management modules; the chronic-rat study used a 1:1:1 mixture of the three topologies. PULSE therefore supports topology diversity and joint KatG+VHb engineering, not a single “secreted uricase” architecture. (Animal Model + In Vitro; Gao et al. 2025, PMID 41038159)
 
 Key findings that validate our koji approach:
 
@@ -597,7 +597,7 @@ Key findings that validate our koji approach:
 - ABCG2 mRNA expression was **upregulated 3.1-fold** in PULSE-treated animals—meaning the body responded to the gut urate sink by *actively pumping even more urate out of the blood*
 - Renal urate transporters OAT1 and OAT3 were upregulated 6.1-fold and 7.1-fold respectively, meaning kidney excretion also improved
 - Tight junction proteins (ZO-1, occludin, claudin-1) were elevated, indicating **gut barrier improvement**—relevant for Lynn's SIBO/leaky gut concerns
-- The secreted uricase diffuses throughout the intestinal lumen, overcoming diffusional barriers—no need for cellular uptake
+- Intracellular/importer, secreted, and surface-displayed configurations can all contribute; their relative performance under human jejunal urate and oxygen conditions remains unmeasured
 
 > **Why Koji Is Better Than PULSE**
 
@@ -651,17 +651,17 @@ An important distinction: rasburicase given IV causes anti-drug antibodies in ~6
 - **ALLN-346 safety data:** Phase 1 trials showed no serious adverse events, no systemic absorption, and no immune reactions from oral uricase at any dose level tested.
 - **Allergenicity assessment:** Uricase has no known cross-reactivity with common allergens. Bioinformatic analysis (comparison to FARRP allergen database) would be prudent but is unlikely to flag issues for an enzyme from a food organism.
 
-### The Hydrogen Peroxide Question — and why the chassis solves it for free
+### The Hydrogen Peroxide Question — topology determines whether the chassis helps
 
 Uricase produces H2O2 as a byproduct (1:1 stoichiometry — see §"Mechanism of Action" above). For any oxidase enzyme delivered as a therapeutic, H2O2 housekeeping is a real formulation question: H2O2 is a small, uncharged, membrane-permeant reactive species that oxidizes nearby tissue if not scavenged before it diffuses away from the site of generation.
 
-**The whole-cell oral chassis solves this for free.** *A. oryzae* expresses catalase as part of normal aerobic peroxisomal metabolism (catA, catR, and other homologs in the genome). Catalase converts 2 H2O2 → 2 H2O + O2 with kcat ~10^7 s⁻¹, near the diffusion limit — one of the most catalytically efficient enzymes in biology. The native uricase has a C-terminal PTS1 (SKL) peroxisomal targeting signal, so in the unmodified case both enzymes are co-localized in the same organelle and H2O2 is intercepted within angstroms of where it's generated. Even with PTS1 removed (per the design decision in §6 above), cytoplasmic catalase still buffers H2O2 before secretion. The patient ingests **a whole cell containing both the engineered uricase and the host catalase** — co-formulated by the cell, not by us.
+*A. oryzae* has native catalase capacity, but it does **not** automatically close this risk. H2O2 is generated where active uricase meets urate. Intracellular or peroxisomal uricase can be directly co-localized with intracellular catalase; secreted or surface-displayed uricase generates peroxide outside that compartment. Intracellular catalase may still reduce cell-associated ROS after peroxide diffuses inward, but that is indirect and must be measured. (Mechanistic Extrapolation)
 
-This is a positive argument for whole-cell oral delivery, not just a safety reassurance. **Every alternative delivery format has to re-solve the H2O2 housekeeping problem through formulation engineering** — IV uricase relies on circulating endogenous catalase in RBCs and tissue (works because circulating catalase is abundant); SC depot, intra-articular, and other tissue-local formats require explicit catalase co-formulation or uricase-catalase fusion engineering (Schiavon, Veronese et al. early-2000s precedent — see [`delivery-route-matrix.md` §"Why SC uricase doesn't work" and §"Open exploration questions" #7](./delivery-route-matrix.md)).
+PULSE provides indirect empirical support: joint KatG+VHb improved its engineered configurations, including extracellular topologies, but KatG and VHb were not fully isolated and catalase was not co-secreted. The decisive design is therefore a topology × oxygen × peroxide-management factorial, not an assumption that whole-cell delivery is intrinsically protected. See [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md) and [validation experiment 1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial).
 
-For the gut-luminal application: in the gut lumen specifically, the koji-co-delivered catalase plus significant peroxidase activity from the microbiome and epithelial cells means H2O2 production at expected uricase activity levels is rapidly scavenged. This is not a safety concern at therapeutic doses — but the deeper point is that the chassis is doing free formulation work that any other route would have to acquire.
+For a gut-luminal application, measure extracellular H2O2, epithelial redox injury, and retained UOX activity at physiologic substrate concentrations. [Validation experiment 1.36](./validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay) separately tests the possibility that removing luminal urate antioxidant capacity and generating peroxide compound one another.
 
-The principle is generic: any oxidase or peroxidase-byproduct-generating enzyme considered for OE production (D-amino acid oxidase, monoamine oxidases, etc.) inherits the same co-localized catalase housekeeping when expressed in the same chassis. The chassis is generic; the housekeeping is generic. See [`delivery-route-matrix.md`](./delivery-route-matrix.md) for the full treatment of how this advantage interacts with route choice across the platform.
+The general rule is narrower: oxidase safety follows **scavenger capacity at the reaction site**. A chassis can supply that capacity when topology co-localizes it; extracellular designs may require co-secreted, surface-tethered, or co-formulated scavengers.
 
 ## 11 Where To Do This
 

@@ -1,0 +1,20 @@
+{
+  "purpose": "Separate the dietary purine-precursor ledger from the endogenous luminal-urate ledger, then identify the conditions under which spatial UOX-to-PDB staging outperforms overlapping access to the same urate pool. No serum-urate efficacy is computed.",
+  "dietary_purine_units": 100.0,
+  "endogenous_luminal_urate_units": 100.0,
+  "full_factorial_levels": {
+    "gr5_nucleoside_intercept_fraction": [0.2, 0.5, 0.8],
+    "whole_cell_microbial_salvage_fraction": [0.0, 0.45, 0.9],
+    "nucleoside_absorption_fraction": [0.5, 0.725, 0.95],
+    "free_base_absorption_relative_to_nucleoside": [0.7, 0.95, 1.2],
+    "uox_capture_fraction": [0.05, 0.425, 0.8],
+    "pdb_capture_fraction": [0.05, 0.425, 0.8],
+    "well_mixed_shared_pool_overlap": [0.5, 0.75, 1.0],
+    "staged_residual_transfer_efficiency": [0.3, 0.65, 1.0]
+  },
+  "architecture_equations": {
+    "well_mixed": "max(uox,pdb) + (1-overlap)*min(uox,pdb)*(1-max(uox,pdb))",
+    "spatially_staged": "uox + (1-uox)*transfer*pdb"
+  },
+  "interpretation_policy": "Fractions of grid cells are design-space occupancy, not biological probabilities. Dietary and endogenous ledgers are never summed into a serum-urate effect."
+}

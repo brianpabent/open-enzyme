@@ -51,6 +51,34 @@ ADA was surfaced as a chokepoint candidate by comp-014 (medicinal mushroom compo
 
 **Status:** Chokepoint candidate — not yet formalized as a named chokepoint in the modality-chokepoint-matrix or NLRP3 exploit map. Pending Phase 3-6 comp-014 follow-ups for formal admit/reject decision. (source: medicinal-mushroom-compound-mapping-computational.md)
 
+### Purinergic resolution: ADA has a second, time-dependent role
+
+Extracellular ATP is both a danger signal and the substrate for CD39/CD73-mediated production
+of adenosine. Adenosine can promote inflammatory resolution, while ADA removes it into the
+inosine→hypoxanthine→urate pathway. ADA inhibition can therefore reduce precursor flow to
+urate **and** prolong an anti-inflammatory signal, but the beneficial window may depend on
+when it is applied relative to MSU activation. (Mechanistic Extrapolation from acute-gout
+purinergic evidence.) [Validation experiment 1.40](./validation-experiments.md#140-cd39cd73adenosine-gout-resolution-time-course)
+measures both axes through time.
+
+### Succinate bifurcation: production and inflammation share a metabolite
+
+Human gout metabolomics identifies succinate-associated signatures. Separate mechanistic
+work links hepatic succinate to AMPD2-dependent purine degradation/urate production and
+immune succinate to SUCNR1/HIF-1α inflammatory signaling. The same circulating metabolite
+may therefore increase urate production in one tissue and NLRP3/IL-1β tone in another.
+(Human Observational + Animal Model/In Vitro; composed mechanism untested.) See [validation
+experiment 1.42](./validation-experiments.md#142-succinate-compartment-dissociation-hepatic-ampd2-vs-immune-sucnr1).
+
+### Microbial bile acids bridge disposal and inflammation
+
+FXR can regulate intestinal ABCG2, while TGR5 signaling can restrain NLRP3 activation. Gut
+microbial bile-acid transformations may therefore alter urate disposal and flare biology at
+once. The joint direction is not inferable from a generic “more secondary bile acids” score;
+species, receptor bias, and tissue exposure matter. (Mechanistic Extrapolation.) See
+[validation experiment 1.41](./validation-experiments.md#141-parallel-fxrabcg2-and-tgr5nlrp3-bile-acid-screen)
+and the [multihop program](./gout-multihop-research-program.md).
+
 ### PINK1/Mitophagy — NLRP3-Priming-Adjacent Chokepoint Candidate
 
 **PINK1 (PTEN-induced kinase 1)** is a mitochondrial serine/threonine kinase that serves as the master sensor of mitochondrial damage, recruiting Parkin (PRKN) to depolarized mitochondria to initiate mitophagy — the selective autophagic clearance of damaged mitochondria. Damaged mitochondria are a primary source of the mtROS that drives NLRP3 inflammasome activation (CP2). Enhancing PINK1/Parkin-mediated mitophagy clears damaged mitochondria before they can trigger NLRP3 assembly. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
@@ -131,16 +159,16 @@ The Open Enzyme platform's three concurrently-developing tracks — **engineered
 
 #### Dietary + engineered LBP composition — distinct architecture, chassis-pending *(added 2026-05-22, per sweep 2026-05-21 Connection #1 + Proposed Experiment #2)*
 
-A fourth track architecture sits alongside the three above, distinguished by chassis rather than mechanism: **dietary herb + engineered LBP**, currently composed of *Houttuynia cordata* polysaccharide (HCP / HCPM) + purine-degrading-bacteria-derived butyrate on an engineered EcN chassis. This composition is intentionally separated from the three-track coverage map above because the chassis architecture differs — neither arm requires the koji infrastructure, the medicinal-mushroom cultivation infrastructure, or the TCM compound-triage infrastructure. Both arms are chassis-pending in the [`chassis-pending-interventions.md`](./chassis-pending-interventions.md) sense (PDB butyrate gated on the engineered EcN chassis maturing; Houttuynia gated on §1.30 wet-lab clearance + sourcing — see [`validation-experiments.md` §1.30](./validation-experiments.md) for the THP-1 prioritization screen).
+A proposed fourth architecture pairs dietary *Houttuynia cordata* polysaccharide with an engineered PDB live biotherapeutic. The earlier version specified “PDB-derived butyrate on EcN” as though CBT2.0's product were known. It is not: engineered EcN carbon fate must first pass [validation experiment 1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test).
 
-| Chokepoint coverage | Houttuynia cordata polysaccharide (dietary) | PDB-derived butyrate (engineered LBP) | Composition logic |
+| Chokepoint coverage | Houttuynia cordata polysaccharide (dietary) | Engineered PDB arm | Composition logic |
 |---|---|---|---|
 | **CP0 — complement priming** (MSU → C1/CRP → C3/C5 convertase → C5a) | Multi-target at C2 + C4 + C5 (Chen Daofeng / Fudan group; Lu 2018 PMC5925397 CH50 79–318 µg/mL) | — | Houttuynia covers CP0 entry-blockade from the gut-luminal side |
 | **CP1 — TLR4 / NF-κB priming** | TLR4-MD2 partial agonism / hormetic antagonism → NF-κB → NLRP3 suppression (Yu 2026 PMC12937656; tight-junction restoration + intestinal NLRP3/caspase-1/IL-1β/IL-18 suppression per Li 2025 PMC12254813). **First dual-CP0+CP1 dietary candidate in the corpus.** | — | Houttuynia uniquely doubles as a CP1 candidate |
-| **ABCG2 substrate supply** (gut-lumen urate sink — feeds the koji uricase via substrate) | — | PPARγ-driven ABCG2 induction on WT alleles + HDAC-inhibitor trafficking rescue on Q141K variants (per [`abcg2-modulators.md`](./abcg2-modulators.md) §6 + [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) "SCFA Downstream Effects") | PDB butyrate opens the ABCG2 gate from the colonic-crypt side |
+| **ABCG2 substrate supply** | — | Conditional: only if the selected strain produces sufficient butyrate and epithelial flux confirms an effect | Product and exposure gates are open |
 | **NLRP3 dampening** (CP2 / CP4 downstream) | NLRP3/caspase-1/IL-1β suppression in vivo via TLR4 priming dampening (Li 2025) | HDAC inhibition independently dampens NLRP3 (per [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md)) | Two independent mechanisms converging on the same downstream node |
 
-**Why this is a distinct architecture rather than a row in the three-track map above.** The composition is **additive by construction across two independent receptor classes (TLR4 vs PPARγ/HDAC) on two completely independent chassis (dietary herb consumption vs engineered EcN LBP)**. Neither arm depends on the other's production infrastructure; neither mechanism is redundant. Houttuynia blocks the priming signal at CP0+CP1 from the gut-luminal dietary side; PDB butyrate opens the ABCG2 gate and dampens NLRP3 from the colonic-crypt engineered side. Together they provide dietary + engineered two-layer coverage of the same nodes the platform currently addresses only through koji (uricase + lactoferrin) or the medicinal-mushroom + TCM × rigor stacks.
+**Current interpretation:** the production stacks are distinct, but biological additivity is not “by construction.” Houttuynia activity, PDB carbon fate, epithelial exposure, and functional urate flux must each pass before combination testing.
 
 **Combined n=1 protocol gating (per Pass 3 discipline).** A combined Houttuynia + PDB-EcN n=1 protocol is **dormant** until both arms clear their individual validation gates: Houttuynia §1.30 prioritization screen (THP-1 MSU IL-1β suppression at ≤100 µg/mL across the three-arm dose-response) AND PDB engineered EcN chassis maturation (engineered EcN production + luminal stability validated separately). The combined protocol becomes relevant when both arms clear; drafting it now would be path-dependent speculation about two products that don't exist as a composed intervention yet.
 

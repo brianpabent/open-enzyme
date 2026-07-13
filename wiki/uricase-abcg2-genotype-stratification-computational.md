@@ -48,10 +48,12 @@ sources:
   - "Allena Pharmaceuticals EULAR POS1157 (2022) ALLN-346 Phase 2a Study 201"
   - "Protalix BioTherapeutics (2024) PRX-115 Phase 1 ACR Convergence late-breaking poster"
   - "Nguyen KP et al. (2025) Clin Rheumatol 44(10):4275-4281, PMID 40858881, doi:10.1007/s10067-025-07656-w"
-status: archived-to-experiments
+status: superseded-by-comp-044
 ---
 
 # Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model (comp-019)
+
+> **Superseded 2026-07-13 by [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md).** comp-019's code did not use the luminal-urate concentration or UOX Km stored in its inputs and assumed 24 hours of saturated activity. Its quantitative ΔSUA, genotype-effect magnitudes, capacity ratios, flat-dose conclusion, and yield-priority recommendations are retired. The frozen artifact remains for provenance only; do not use it for dose or efficacy decisions.
 
 > **Frozen analysis archived to [`./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/wiki-archive.md`](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/wiki-archive.md)** (272 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.

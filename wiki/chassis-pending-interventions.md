@@ -60,7 +60,7 @@ When an entry's chassis question resolves, the entry migrates: either to a new d
 
 ### 1. Purine-degrading bacteria (PDB) restoration / engineered PDB pathway expression
 
-**Intervention.** The 2,8-dioxopurine bacterial gene cluster degrades uric acid anaerobically to butyrate + acetate, hits CP6 (urate degradation) directly, and compounds via SCFA effects on multiple downstream nodes (ABCG2 induction + Q141K trafficking rescue + NLRP3 dampening + XO inhibition). The most common gout-associated ABCG2 variant (Q141K, ~3–15% population frequency) is HDAC-rescued by butyrate — making PDB-derived butyrate a natural genotype-targeted therapy via endogenous gut bacteria producing the molecule that fixes a genetic variant.
+**Intervention.** The 2,8-dioxopurine bacterial gene cluster degrades urate anaerobically. Full-pathway anaerobes have acetate/butyrate isotope-tracing precedent, but engineered EcN CBT2.0's terminal carbon fate is unresolved. Downstream ABCG2/NLRP3 and Q141K-rescue claims are therefore conditional on [validation experiment 1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test) and direct butyrate trafficking/flux testing; Basseville 2012 did not test PDB-derived butyrate.
 
 **Chokepoint(s) hit.** CP6 (urate degradation), CP2 (NLRP3 dampening via butyrate), gut ABCG2 induction (PPARγ axis), Q141K trafficking rescue (HDAC inhibition). See [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) for the full mechanism + evidence inventory.
 
@@ -251,7 +251,7 @@ Compositions where two interventions on *different* chassis hit complementary ch
 
 ### M1. Engineered PDB EcN × compounded disulfiram — urate-disposal upstream + CP6b pyroptotic-exit blockade
 
-**Composition.** Engineered *E. coli* Nissle expressing the 2,8-dioxopurine cluster (CBT2.0 precedent, Li 2025 PMID 41070194, −63% plasma UA in mice) consumes luminal urate and produces butyrate → ABCG2 induction + NLRP3 dampening, *before* MSU crystals seed an inflammasome. Compounded oral disulfiram (250 mg/day; covalently modifies GSDMD Cys191) blocks the pyroptotic pore *after* NLRP3 fires, preventing IL-1β release and the inflammatory amplification cascade. The two arms hit the urate→inflammation axis at opposite ends — one drains the substrate, one closes the exit — and share no production stack, no formulation stack, no regulatory pathway. Disulfiram is sub-AUD dose (see [comp-027 planned analysis](./computational-experiments.md)) so co-administration with ethanol-producing live biotherapeutics is bounded by the strain's residual ethanol output, not by the pill.
+**Composition.** Engineered *E. coli* Nissle CBT2.0 has animal-model urate-lowering precedent; its butyrate output and human magnitude are unresolved. Disulfiram targets downstream GSDMD. The mechanisms remain conceptually separated, but biological additivity and any SCFA-mediated host effect are unproven; comp-031's quantitative combination result is invalidated. Product carbon fate and drug–microbe compatibility now gate this stack.
 
 **Chokepoint(s) hit.** CP6 urate-disposal (PDB arm, upstream of NLRP3) + CP6b GSDMD pyroptotic-exit (disulfiram arm, downstream of NLRP3). *Pass 3 label correction (2026-05-15): the synthesizer's original framing "both branches of CP6" is tightened — urate-disposal is upstream of CP6 even though one wiki entry loosely labels PDB as CP6.*
 

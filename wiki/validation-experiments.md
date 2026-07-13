@@ -103,7 +103,7 @@ As of 2026-04-24, all experiments are **Proposed** (Phase 0 — no wet-lab work 
 
 **Success criteria:** Identify highest-performing gene with >50 μmol/h/OD activity
 
-**Pre-gate option (deferred 2026-05-13) — Ginkgo Cloud Lab cell-free expression ($39/protein, ~5–10 day turnaround):** Before committing to the full $2,000–3,000 gene synthesis + transformation + screening pipeline, a single $39 cell-free run on the lead uricase variant from [uricase-variant-selection.md](./uricase-variant-selection.md) can confirm the ORF translates without ribosomal stalling and the polypeptide folds into a soluble state in an E. coli-lysate-like environment. Negative result = redesign the construct before any fungal work. Positive result = construct is worth committing fungal-host effort to. **Status: deferred per the 2026-05-13 priority-stack decision** — the existing computational corpus (comp-019 flux model, comp-022 cassette ranking, comp-023 cordycepin burden, ViennaRNA mRNA folding + ESM2 pseudo-pLDDT proxies) already answers the questions this test would surface to high confidence; the rationale stands and the option remains queued for when wet-lab work becomes load-bearing. See [ginkgo-cloud-lab-evaluation.md](./ginkgo-cloud-lab-evaluation.md) TL;DR for full deferred-decision context. (source: ginkgo-cloud-lab-evaluation.md; Mechanistic Extrapolation)
+**Pre-gate option (deferred 2026-05-13; rationale narrowed 2026-07-13) — Ginkgo Cloud Lab cell-free expression ($39/protein, ~5–10 day turnaround):** A cell-free run can test whether an ORF translates and remains soluble in an *E. coli*-lysate-like environment. It cannot resolve fungal-host folding or the physiological luminal regime, and comp-019 no longer supports skipping those gates. Use this only if translation/solubility becomes the immediate bottleneck; §1.33 is the relevant UOX-system gate.
 
 ---
 
@@ -579,7 +579,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
   - TNFα: 0, 5, 20 ng/mL
   - All 9 combinations (DHT × TNFα factorial)
   - **Butyrate rescue arm:** repeat the highest-suppression combination (DHT 100 nM + TNFα 20 ng/mL) ± butyrate 1 mM apical.
-  - **Butyrate dose-response arm — Q141K concentration-gap resolution (added 2026-05-16):** in both WT and Q141K-transfected Caco-2 monolayers, apply butyrate basolaterally at five concentrations (0.05, 0.2, 1, 2, 5 mM) under baseline conditions (DHT 0, TNFα 0). Brackets the published in vitro HDAC-inhibition range (Basseville 2012, PMID 22472121 — 1–5 mM range) and the lower bound of plausible enterocyte-nucleus concentrations after the mucus-layer + epithelial-surface gradient drop from luminal butyrate. **Dual readouts (non-optional per Pass 3 tightening):** (1) ABCG2 apical-membrane surface expression (membrane-fraction Western) — the trafficking-rescue readout; (2) functional urate efflux (transwell basolateral-to-apical urate flux) — the functional-restoration readout. WT-vs-Q141K comparison is the load-bearing contrast: WT butyrate response is PPARγ-mediated transcriptional induction; Q141K rescue is HDAC-mediated trafficking restoration. The dose-response shape should differ between WT (gradual induction) and Q141K (threshold-like rescue once HDAC inhibition is achieved). Outcome: minimum butyrate concentration that achieves Q141K rescue at the enterocyte nucleus — directly resolves the PDB-butyrate-Q141K concentration gap named in [`purine-degrading-bacteria.md` §"Q141K + PDB-butyrate + HDAC"](./purine-degrading-bacteria.md). Marginal cost: ~$500–1,500 (10 conditions × n=4 = 40 wells; antibody reagents shared with existing arms).
+  - **Butyrate dose-response arm — direct Q141K attribution test (corrected 2026-07-13):** in WT and Q141K-transfected polarized intestinal cells, apply butyrate across 0.05, 0.2, 1, 2, and 5 mM with vehicle and a Basseville-class positive-control rescue compound. Basseville 2012 did not test butyrate directly. Measure total and apical-surface ABCG2 plus basolateral-to-apical urate flux. This experiment asks whether butyrate reproduces the pharmacological rescue phenotype; it does not assume that it will.
   - **Lactoferrin rescue arm:** repeat the TNFα-only suppression (TNFα 20 ng/mL, DHT 0) and the worst-case combination (DHT 100 nM + TNFα 20 ng/mL) ± bovine lactoferrin 100 µg/mL basolateral (mimicking gut-lumen-side delivery from the koji endgame strain). Compare to the butyrate rescue arm — lactoferrin's mechanism (TNFα suppression upstream) is mechanistically distinct from butyrate's (PPARγ induction), so the two should not be redundant in the worst-case phenotype.
   - **Supplement ABCG2 antagonism arms (added 2026-05-05, per synthesis Proposed Experiment #1):** Using the basal (DHT 0, TNFα 0) monolayer, apply each of the three named stack supplements at supplement-relevant gut-lumen concentrations, apical side: quercetin 10 µM and 50 µM; EGCG 1 µM and 10 µM; curcumin 5 µM and 20 µM. Measure urate flux in all six conditions vs. DMSO vehicle. These concentrations reflect achievable post-oral-dose enterocyte exposure, not plasma concentrations (gut-lumen levels are 10–50× higher than plasma due to incomplete absorption). Note: the Yu 2024 EGCG in vivo data (PMID 38757391) shows net-favorable ABCG2/URAT1/GLUT9 effect in hyperuricemic mice, contradicting the in vitro inhibition story — include both 1 µM and 10 µM EGCG arms to see whether the inhibitory or the inductive effect dominates at supplement-achievable concentrations. **Q141K-variant arm:** if a Q141K-expressing Caco-2 line or patient-derived matched organoid is available, repeat the highest-effect supplement conditions (quercetin 50 µM + curcumin 20 µM) in both WT and Q141K backgrounds — this directly tests the stratification hypothesis that the contradiction is clinically significant for the highest-risk genotype but manageable for WT.
 - **Time-course:** 48 h.
@@ -899,11 +899,11 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Affected wiki**: [abcg2-modulators](./abcg2-modulators.md), [supplements-stack](./supplements-stack.md), [gut-lumen-sink](./gut-lumen-sink.md)
 
-**What it tests:** The Q141K variant of ABCG2 (~12% population allele frequency; ~25% of East Asian, ~4% of European populations) produces a misfolded protein that is retained in the endoplasmic reticulum rather than trafficked to the apical membrane. HDAC inhibition (specifically class I HDACs — HDAC1/2/3) rescues this trafficking defect by upregulating Hsp90 chaperoning via HSF1 activation (Basseville et al. 2012, PMID 22472121). Butyrate (sodium butyrate, food-grade) is the known food-grade class I HDACi that rescues Q141K ABCG2 trafficking at ~1 mM concentrations achievable in the colon via fermentable fiber. However, butyrate's efficacy depends on microbiome composition and fiber intake — there is no reliable way to deliver a specific dose from diet. This experiment screens alternative food-grade HDACi candidates for (a) class I HDAC selectivity over HDAC6, (b) gut-enriched activity (Caco-2 ≥ hepatocyte potency), (c) trafficking-rescue efficacy at concentrations achievable via food or supplement, and (d) absence of hepatotoxicity signal (the reason vorinostat/SAHA remains oncology-restricted).
+**What it tests:** Q141K ABCG2 has a folding/trafficking defect that can be rescued by pharmacological/chemical-chaperone perturbation (Basseville et al. 2012, PMID 22472121). Butyrate is a plausible food-grade HDAC-directed candidate, but direct Q141K rescue by butyrate was not shown in that paper. This experiment screens butyrate and alternatives for class selectivity, gut-enriched activity, surface-trafficking rescue, functional urate efflux, and safety, with a Basseville-class rescue compound as the positive control.
 
 **Proposed in:** `synthesis/` (architecture: synthesis/README.md) 2026-05-05 Proposed Experiment #3. Per the Pass 3 review: the design must include a tissue-selectivity assay (Caco-2 vs. hepatocyte HDAC activity as primary screen discriminator) and explicit HDAC1/2/3 isoform focus; HDAC6 inhibition is off-target for this purpose and is a pan-tissue toxicity risk. Original cost estimate ($5,000) was flagged as optimistic if the selectivity criterion is operationalized; revised to $5,000–8,000 to include paired Caco-2/hepatocyte HDAC activity assays.
 
-**Background on Q141K mechanism:** ABCG2-Q141K's ATP-binding domain folds incorrectly at the NBD2 interface → ERAD (ER-associated degradation) retention → reduced apical transporter density → impaired urate efflux. HDACi → Hsp90α/β upregulation + HSF1 nuclear translocation → ↑chaperone-assisted folding of the misfolded NBD2 → partial membrane-trafficking rescue. Cells transfected with Q141K ABCG2 show ~30–50% restoration of surface expression at butyrate 1 mM (Basseville 2012). The clinical relevance: Q141K homozygotes on clomid/TRT with low fermentable-fiber intake are the hardest-to-rescue subgroup; a direct food-grade HDACi supplement would be meaningful.
+**Background on Q141K mechanism:** ABCG2-Q141K has a folding/processing defect that reduces surface transporter. Basseville 2012 provides a positive-control pharmacological/chemical-chaperone rescue pathway, but it did not report ~30–50% restoration at 1 mM butyrate. Butyrate must be treated as an unvalidated candidate in this assay, not as its established benchmark.
 
 **Protocol:**
 
@@ -1398,6 +1398,120 @@ Each arm: parallel small-scale liquid (Arms A-C) or solid (Arm D) cultivation; h
 **Limitations:** Cell-line pyroptosis may not match primary synovial-macrophage pore kinetics; the transporter-orphan tracer is a physical proxy, not a therapeutic payload (a real payload must independently satisfy the downstream-acting criterion); synovial-macrophage PepT1 expression — the datum that gates KPV-route selectivity in vivo — is not resolved by this in vitro assay.
 
 **Cross-references:** [`gsdmd-pore-delivery-paradox.md`](./gsdmd-pore-delivery-paradox.md); [`kpv-gsdmd-pore-influx-computational.md`](./kpv-gsdmd-pore-influx-computational.md) (comp-042); [`kpv-peptide.md`](./kpv-peptide.md); [`disulfiram.md`](./disulfiram.md).
+
+### 1.33 Physiological UOX Topology × Oxygen × Peroxide Factorial
+
+**Status:** Proposed — platform decision gate | **Phase:** 1 | **Affected wiki:** [gut-lumen sink](./gut-lumen-sink.md), [engineered koji protocol](./engineered-koji-protocol.md), [delivery-route matrix](./delivery-route-matrix.md)
+
+**What it tests:** Whether intracellular+YgfU, LamB-secreted, InakN-displayed, or koji-secreted UOX retains activity and controls H2O2 across physiological-substrate and oxygen contexts.
+
+**Computational priors:** [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) invalidates the unconditional flat-dose regime but does not select a topology. [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md) produces the randomized six-plate design and exact plate maps. Primary precedents: Gao et al. 2025 ([PMID 41038159](https://pubmed.ncbi.nlm.nih.gov/41038159/)) and Zhao et al. 2022 ([PMID 35491895](https://pubmed.ncbi.nlm.nih.gov/35491895/)).
+
+**Protocol:** Three independent biological runs under separate oxic and microoxic contexts. Within each run, test 19 non-duplicative topology × peroxide-strategy × VHb combinations at 0.59 µM urate, a 50 µM sensitivity condition, and the 250 µM PULSE benchmark. Match inactive-UOX, chassis-only, and PULSE-mixture controls at all three substrate concentrations; assign no-urate and medium-blank controls explicitly to 0 µM. Measure urate, product, H2O2, dissolved oxygen, viability, and UOX localization.
+
+**Decision rule:** Promote a topology only if it shows reproducible product formation at the human-baseline prior without increased extracellular H2O2 or viability loss relative to matched inactive-UOX controls. A topology that works only at 250 µM remains benchmark-positive but physiologically unproven. No serum-urate inference is allowed from this assay.
+
+### 1.34 Isotope-Resolved Dietary Precursor → UOX → PDB Sequential Flux
+
+**Status:** Proposed — two-stage feasibility gate | **Phase:** 1 | **Affected wiki:** [purine-degrading bacteria](./purine-degrading-bacteria.md), [purine load](./purine-load-koji-vs-yeast.md), [gut-lumen sink](./gut-lumen-sink.md)
+
+**What it tests:** Whether whole-cell GR-5 retains dietary purine atoms rather than merely converting nucleosides to absorbable bases, and whether residual urate transfers from a microoxic UOX compartment into an active anoxic PDB compartment.
+
+**Computational prior:** [comp-046](./staged-purine-sink-mass-balance-computational.md) shows that these are separate conditional hypotheses. GR-5 primary evidence is a purine-nucleoside/oxonate mouse model ([Ji et al. 2025](https://www.nature.com/articles/s41538-025-00556-y)); DeoD cleavage itself is not purine-ring destruction.
+
+**Protocol:** First assay actual engineered yeast and koji biomass for adenine, guanine, hypoxanthine, xanthine, and urate using the USDA/NIH-compatible HPLC-MS approach. Then expose isotope-labeled adenosine/inosine/guanosine to control or GR-5 in simulated digestion followed by an intestinal Transwell; quantify nucleosides, free bases, microbial-biomass incorporation, and apical/basolateral isotope flux. Separately route isotope-labeled urate through a microoxic UOX reactor followed by an anoxic PDB reactor; measure residual urate, allantoin or oxidative products, yanthine/UMH/albizziin/pyruvate, and viability.
+
+**Decision rule:** Advance the upstream stage only if isotope mass balance shows lower basolateral purine transfer plus recoverable microbial or unabsorbed retention. Advance staging only if PDB removes transferred residual urate without loss of viability and without unaccounted isotope. Nucleoside disappearance alone does not pass.
+
+### 1.35 Enterocyte NLRP3–PDZK1–ABCG2 Tissue-Paradox Assay
+
+**Status:** Proposed | **Phase:** 1 | **Affected wiki:** [NLRP3 exploit map](./nlrp3-exploit-map.md), [ABCG2 modulators](./abcg2-modulators.md), [gut-lumen sink](./gut-lumen-sink.md)
+
+**What it tests:** Whether candidate NLRP3 inhibitors suppress intestinal PDZK1/ABCG2 trafficking or transepithelial urate export while reducing inflammatory signaling. The direct prior is human intestinal-cell work ([Chen et al. 2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC5803867/)); acute-gout compensation is supported by human/mouse/Caco-2 work ([PMID 37042723](https://pubmed.ncbi.nlm.nih.gov/37042723/)).
+
+**Protocol:** Polarized human ileal and colonic enteroid Transwells; basolateral urate ± the project's lead NLRP3 inhibitors, with vehicle, inactive analogue where available, and matched viability controls. Measure PDZK1, total and surface ABCG2, basolateral-to-apical urate flux, IL-1β pathway readouts, and barrier integrity. Add FXR-agonist or butyrate rescue arms only after the inhibitor effect is established.
+
+**Decision rule:** A flare-suppressive candidate that reproducibly reduces functional urate export is not a neutral gut-axis intervention; it requires tissue-selective delivery or an independently validated epithelial rescue. Surface localization without urate flux does not pass.
+
+### 1.36 Luminal Urate Antioxidant-Loss × UOX-H2O2 Safety Assay
+
+**Status:** Proposed — safety gate | **Phase:** 1 | **Affected wiki:** [uricase](./uricase.md), [validation §1.12](./validation-experiments.md#112-local-h2o2-stress-in-caco-2-from-high-gut-lumen-uricase), [engineered koji protocol](./engineered-koji-protocol.md)
+
+**What it tests:** The joint effect of removing luminal urate and generating H2O2, including the flare-treatment context of NSAID exposure. Animal/cell priors indicate luminal urate can protect against indomethacin enteropathy ([PMID 33569665](https://pubmed.ncbi.nlm.nih.gov/33569665/); [Yasutake et al. 2017](https://onlinelibrary.wiley.com/doi/10.1111/jgh.13785)); H2O2 can promote TXNIP–NLRP3 association ([PMID 20023662](https://pubmed.ncbi.nlm.nih.gov/20023662/)).
+
+**Protocol:** Human enteroid monolayers with urate alone, active UOX, inactive UOX, UOX+compartment-matched catalase, and UOX+catalase+non-urate antioxidant or butyrate, each ±indomethacin. Match urate depletion across relevant arms. Measure TEER, viability, H2O2, lipid peroxidation, TXNIP–NLRP3 association, IL-1β, and epithelial oxygen consumption.
+
+**Decision rule:** Catalase is insufficient if it lowers H2O2 but barrier injury persists when urate antioxidant capacity is removed. Any protective add-back must be demonstrated independently and cannot be inferred from antioxidant labels.
+
+### 1.37 CBT2.0 Carbon Fate and PDB Self-Niche Test
+
+**Status:** Proposed — required before comp-031 reuse | **Phase:** 1 | **Affected wiki:** [purine-degrading bacteria](./purine-degrading-bacteria.md), [dual-chassis comp-031](./dual-chassis-ecn-pdb-uricase-computational.md)
+
+**What it tests:** What engineered EcN actually produces from urate, and whether a full-pathway butyrate-producing PDB creates a colonocyte-hypoxia persistence loop. The CBT2.0 paper establishes pathway products through pyruvate but not EcN butyrate ([PMCID PMC12507026](https://pmc.ncbi.nlm.nih.gov/articles/PMC12507026/)); wild-type EcN lacks detectable butyrate without an engineered pathway ([PMCID PMC7279287](https://pmc.ncbi.nlm.nih.gov/articles/PMC7279287/)).
+
+**Protocol:** Anaerobic `[U-13C5]`-urate tracing in WT EcN, CBT2.0, full-pathway *C. sporogenes*, and a pathway-deficient control. Quantify all PDB intermediates plus pyruvate, D/L-lactate, acetate, succinate, ethanol, and butyrate. Only if an arm produces butyrate, move it into colonocyte co-culture and measure epithelial oxygen consumption, HIF stabilization, PPARγ dependence, and strain persistence. Byndloss et al. anchors the colonocyte-oxygen mechanism ([PMCID PMC5642957](https://pmc.ncbi.nlm.nih.gov/articles/PMC5642957/)).
+
+**Decision rule:** No CBT2.0-derived butyrate/ABCG2 claim survives without isotope-resolved butyrate. D-lactate elevation is a safety flag because impaired D-lactate metabolism can associate with hyperuricemia/gout ([PMID 31638601](https://pubmed.ncbi.nlm.nih.gov/31638601/)).
+
+### 1.38 T0SS UOX-OMV Gut-to-Systemic Bridge Assay
+
+**Status:** Proposed — alternate-route gate | **Phase:** 1 | **Affected wiki:** [blood-barrier exploits](./blood-barrier-exploits.md), [delivery-route matrix](./delivery-route-matrix.md)
+
+**What it tests:** Whether UOX-loaded EcN OMVs cross a human intestinal barrier model with retained activity without unacceptable barrier, endotoxin/TLR4, or peroxide effects. The route has mouse and ex-vivo human-serum precedent ([Nature Communications 2025](https://www.nature.com/articles/s41467-025-57153-6)); it is no longer a purely speculative delivery idea.
+
+**Protocol:** Human enteroid Transwells with apical T0SS UOX-OMVs, matched inactive-UOX OMVs, free UOX, T1SS comparator, and vehicle. Measure basolateral OMV markers, UOX protein/activity, ex-vivo urate degradation, TEER, paracellular leakage, H2O2, endotoxin/TLR4 signaling, and cytokines. Do not infer safe systemic exposure from transport alone.
+
+**Decision rule:** Advance only if basolateral active UOX is reproducible while barrier integrity and inflammatory readouts remain within matched inactive-OMV controls. This remains a systemic-UOX branch with immunogenicity and H2O2 liabilities.
+
+### 1.39 Fructose × KHK × NOX × ABCG2 Human-Enteroid Test
+
+**Status:** Proposed | **Phase:** 1 | **Affected wiki:** [fructose connection](./fructose-connection.md), [ABCG2 modulators](./abcg2-modulators.md)
+
+**What it tests:** Whether fructose simultaneously depletes epithelial ATP through KHK and reduces functional ABCG2-mediated urate export through NOX/ROS-dependent loss of active transporter dimerization. Priors: rat ileum ([Kaneko et al. repository full text](https://eprints.lib.hokudai.ac.jp/repo/huscap/all/68654/)) and KHK-dependent enterocyte ATP depletion ([PMID 24177030](https://pubmed.ncbi.nlm.nih.gov/24177030/)).
+
+**Protocol:** Polarized human ileal enteroids exposed to matched fructose or glucose across a pilot-tolerated concentration series, ±KHK inhibitor and ±NOX inhibitor. Measure ATP, ROS, nonreducing ABCG2 dimer/monomer state, surface ABCG2, functional urate flux, and viability.
+
+**Decision rule:** The double-hit model passes only if fructose reduces flux and the KHK and NOX arms dissociate ATP loss from ABCG2 dimer/flux loss. A high-dose toxicity-only result does not pass.
+
+### 1.40 CD39/CD73–Adenosine Gout-Resolution Time Course
+
+**Status:** Proposed | **Phase:** 1 | **Affected wiki:** [gout pathophysiology](./gout-pathophysiology.md), [NLRP3 exploit map](./nlrp3-exploit-map.md), [medicinal-mushroom track](./medicinal-mushroom-complement-track.md)
+
+**What it tests:** Whether shifting extracellular ATP toward AMP/adenosine accelerates resolution after MSU inflammasome activation, and whether ADA inhibition acts through purinergic resolution as well as precursor control. The direct acute-gout prior is Luo et al. 2024 ([PMID 38055119](https://pubmed.ncbi.nlm.nih.gov/38055119/)).
+
+**Protocol:** Human macrophage LPS+MSU time course ±ATP, apyrase/CD39 augmentation, CD39 inhibition, ADA inhibition, and A2A-receptor antagonism. Sample ATP, ADP, AMP, adenosine, inosine, IL-1β, cell death, and resolution markers before priming, during activation, and after washout.
+
+**Decision rule:** A resolution mechanism requires time-ordered ATP loss, adenosine gain, and reduced inflammatory persistence that is reversed by receptor blockade. Systemic ADA inhibition is not implied by an in-vitro pass.
+
+### 1.41 Parallel FXR–ABCG2 and TGR5–NLRP3 Bile-Acid Screen
+
+**Status:** Proposed | **Phase:** 1 | **Affected wiki:** [ABCG2 modulators](./abcg2-modulators.md), [NLRP3 exploit map](./nlrp3-exploit-map.md), [open questions](./open-questions.md)
+
+**What it tests:** Whether the same defined bile-acid or tool-ligand panel can increase intestinal ABCG2 urate flux through FXR and suppress macrophage NLRP3 through TGR5 without barrier toxicity. Priors: FXR/ABCG2 animal work ([DOI 10.1002/rai2.70039](https://onlinelibrary.wiley.com/doi/10.1002/rai2.70039)) and TGR5/PKA/NLRP3 mechanism ([Guo et al. 2016](https://www.sciencedirect.com/science/article/pii/S1074761316303521)).
+
+**Protocol:** Run the same concentration-verified panel in human ileal enteroids and MSU-stimulated human macrophages. Enteroid readouts: FXR target engagement, surface ABCG2, urate flux, TEER. Macrophage readouts: TGR5/cAMP/PKA engagement, NLRP3 phosphorylation/ubiquitination, IL-1β, viability. Include receptor-selective antagonists or knockdown to assign mechanism.
+
+**Decision rule:** Promote only ligands with receptor-dependent activity in both assays and no enteroid barrier injury. FXR-only and TGR5-only hits remain single-node tools rather than failed dual hits.
+
+### 1.42 Succinate Compartment-Dissociation: Hepatic AMPD2 vs. Immune SUCNR1
+
+**Status:** Proposed | **Phase:** 1 | **Affected wiki:** [TCM gout compound triage](./tcm-gout-compound-triage-computational.md), [gout pathophysiology](./gout-pathophysiology.md), [NLRP3 exploit map](./nlrp3-exploit-map.md)
+
+**What it tests:** Whether succinate exposure can reduce hepatic purine production through AMPD2 while amplifying macrophage inflammation through SUCNR1, making compartment and exposure—not metabolite name—the decision variable. Priors: *B. fragilis*/berberine gut–liver work ([PMCID PMC12541614](https://pmc.ncbi.nlm.nih.gov/articles/PMC12541614/)), gout fecal metabolomics ([PMCID PMC5318445](https://pmc.ncbi.nlm.nih.gov/articles/PMC5318445/)), and SUCNR1 arthritis biology ([PMID 27481132](https://pubmed.ncbi.nlm.nih.gov/27481132/)).
+
+**Protocol:** Establish a measured succinate exposure range first. In hepatocytes, quantify AMPD2 activity and AMP→IMP→inosine→hypoxanthine→xanthine→urate flux. In MSU-stimulated macrophages, quantify SUCNR1 dependence, HIF-1α, IL-1β, and viability at the same exposures. Keep fecal, portal, plasma, and joint exposure claims separate.
+
+**Decision rule:** A useful window requires AMPD2-pathway suppression at exposures below those that amplify SUCNR1 inflammatory signaling. If the windows overlap, producer- or compartment-targeted delivery becomes mandatory.
+
+### 1.43 PDB × Allopurinol/Oxypurinol/Febuxostat Interaction Assay
+
+**Status:** Proposed | **Phase:** 1 | **Affected wiki:** [purine-degrading bacteria](./purine-degrading-bacteria.md), [gout deep dive](./gout-deep-dive.md)
+
+**What it tests:** Whether standard XOR inhibitors suppress the reductive bacterial purine-degradation entry enzyme or remove the urate-derived fitness advantage needed for persistence. A selenium-containing XDH-family enzyme from *Eubacterium barkeri* was inhibited by allopurinol in vitro, but transfer to modern *C. sporogenes* PDB and physiological gut exposure is unknown ([Schräder et al. 1999](https://doi.org/10.1046/j.1432-1327.1999.00678.x)).
+
+**Protocol:** First measure or obtain defensible human intestinal/fecal exposure distributions for allopurinol, oxypurinol, and febuxostat. Then run anaerobic dose–response studies in full-pathway *C. sporogenes*, CBT2.0, and pathway-deficient controls at those observed concentrations. Measure growth, urate disappearance, every pathway intermediate/product, and enzyme activity where isolatable.
+
+**Decision rule:** Claim additivity with XOR inhibitors only if no pathway inhibition or persistence loss occurs across measured intestinal exposures. A millimolar in-vitro effect outside human exposure does not fail the combination.
 
 ---
 

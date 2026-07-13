@@ -62,7 +62,7 @@ The full assumption stack will be populated after the three Phase 2 lit scans (P
 3. Engineered butyrate overproduction does not destabilize *F. prausnitzii* viability or trigger PFOR-pathway feedback that quenches the augmentation
 4. Colonic butyrate concentration thresholds for clinically-meaningful PPARγ activation (WT) and HDAC inhibition (Q141K) are achievable from a single delivered LBP strain rather than requiring a designed consortium
 5. The 2018 FDA LBP regulatory framework supports an engineered-strain BLA filing within current scientific advisory committee precedent (vs. requiring a category-creation pathway that adds 2–4 years)
-6. Q141K trafficking rescue by butyrate documented in Basseville 2012 (in vitro on transfected lines) translates to native human gut epithelium at colonic concentrations achievable from an engineered LBP
+6. Proposed butyrate-mediated Q141K trafficking rescue—**not directly shown by Basseville 2012**—translates to native human gut epithelium at exposures achievable from the engineered LBP
 
 ---
 

@@ -167,22 +167,22 @@ Already extensively treated in [`modality-chokepoint-matrix.md`](./modality-chok
 
 The wiki has documented the H2O2 byproduct of uricase activity in three places — [`uricase.md` §"Hydrogen Peroxide Byproduct"](./uricase.md), [`engineered-koji-protocol.md` §"The Hydrogen Peroxide Question"](./engineered-koji-protocol.md), and [`aspergillus-oryzae.md` §"Hydrogen Peroxide Byproduct Management"](./aspergillus-oryzae.md) — each in a "byproduct safety reassurance" framing.
 
-That framing under-states what's actually happening. **The whole-cell oral chassis is doing free formulation work for the H2O2 housekeeping problem.** Concretely:
+That framing also over-stated what the chassis guarantees. **Whole-cell catalase is helpful only when it reaches the peroxide-generation compartment at adequate capacity.** Concretely:
 
 - Uricase catalyzes: urate + O2 + H2O → 5-hydroxyisourate + **H2O2** (1:1 stoichiometry; source: [`engineered-koji-protocol.md:86`](./engineered-koji-protocol.md))
 - *A. oryzae* expresses catalase as part of normal aerobic peroxisomal metabolism (catA, catR among others; multiple homologs in the genome). Catalase converts 2 H2O2 → 2 H2O + O2, kcat ~10^7 s⁻¹, near the diffusion limit — one of the most efficient enzymes in biology. (Mechanistic Extrapolation from established A. oryzae biology)
 - *A. flavus* uricase has a C-terminal PTS1 (SKL) peroxisomal targeting signal; native uricase is peroxisomal. If retained in the engineered construct, uricase and catalase are **co-localized in the same organelle** — H2O2 is intercepted within the peroxisome, never reaching the cytoplasm. (Mechanistic Extrapolation; the PTS1 targeting biology is established but compartmental H2O2 flux in the engineered strain has not been directly measured)
-- Even with PTS1 removed (the engineered koji-protocol asks the question — see [`engineered-koji-protocol.md`](./engineered-koji-protocol.md):101), cytoplasmic catalase still buffers H2O2 before secretion.
-- The patient ingests **a whole cell containing both the engineered uricase and the host catalase**. H2O2 housekeeping is solved before the protein leaves the chassis.
+- With PTS1 removed or with secreted/surface-displayed UOX, cytoplasmic catalase is no longer directly co-localized with the extracellular reaction. It may buffer peroxide that diffuses back into the cell, but this is indirect.
+- The patient ingests a cell containing UOX and catalase; whether that constitutes functional co-formulation depends on topology, oxygen, retention, and catalase capacity.
 
-This is a positive argument for whole-cell oral delivery, not just a safety reassurance. Any **non-whole-cell** delivery format (purified IV uricase, SC depot uricase, intra-articular uricase, free oral rasburicase ALLN-346-style) loses this co-localized catalase and has to **either**:
+This is a design opportunity for whole-cell delivery, not a closed safety case. Any format—including a living chassis—must demonstrate adequate scavenger capacity at the reaction site. Non-whole-cell formats commonly do so through host clearance or explicit co-formulation:
 
 1. Pre-clear H2O2 via the host's circulating catalase (works for IV — endogenous catalase in RBCs and tissue clears systemic H2O2; this is part of why pegloticase / SEL-212 IV is biochemically clean), OR
 2. **Co-formulate catalase explicitly** (the Schiavon / Veronese uricase-catalase fusion approach, or NP co-encapsulation of both enzymes — established literature class, not in clinical use for uricase therapy currently).
 
-**Implication for OE platform thesis:** the whole-cell oral chassis is doing more than chassis-economics work. It's solving a real biochemistry problem (H2O2 housekeeping for an oxidase enzyme) that **every alternative format has to re-solve through formulation engineering.** This is a non-obvious advantage that doesn't show up when the comparison is framed as "oral koji vs IV rasburicase" on cost alone. The catalase co-localization is *intrinsic* to the chassis and *acquired* to any other format.
+**Implication for OE platform thesis:** intracellular/peroxisomal topology may provide intrinsic co-localization, whereas extracellular topology may require co-secreted, surface-tethered, or co-formulated catalase. [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md) and [validation experiment 1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) compare those architectures explicitly.
 
-It is also a *transferable* concept: any oxidase or peroxidase-byproduct-generating enzyme considered for OE production (D-amino acid oxidase, monoamine oxidases, etc.) would inherit the same co-localized catalase housekeeping if expressed in the same chassis. The chassis is generic; the housekeeping is generic.
+The transferable principle is reaction-site scavenger capacity, not chassis identity.
 
 ### Catalase capacity principle — route-agnostic H₂O₂ safety design rule (added 2026-05-19, Cluster F3 walkthrough)
 

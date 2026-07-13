@@ -1,0 +1,141 @@
+{
+  "experiment": "comp-044",
+  "verdict": "LEGACY FLAT-DOSE REGIME NOT ROBUST",
+  "interpretation": "Regime classification changes when the model's own substrate, time, oxygen, access, and survival terms are applied. No serum-urate efficacy is inferred.",
+  "named_scenarios": [
+    {
+      "scenario": "legacy_vmax_24h",
+      "doses": {
+        "5": {
+          "capacity_ratio": 32.33772618025751,
+          "regime": "capacity_exceeds_legacy_flux"
+        },
+        "25": {
+          "capacity_ratio": 161.6886309012876,
+          "regime": "capacity_exceeds_legacy_flux"
+        },
+        "50": {
+          "capacity_ratio": 323.3772618025752,
+          "regime": "capacity_exceeds_legacy_flux"
+        }
+      }
+    },
+    {
+      "scenario": "jejunal_baseline_no_extra_penalties",
+      "doses": {
+        "5": {
+          "capacity_ratio": 0.09319684665080077,
+          "regime": "strongly_capacity_limited"
+        },
+        "25": {
+          "capacity_ratio": 0.46598423325400395,
+          "regime": "capacity_limited"
+        },
+        "50": {
+          "capacity_ratio": 0.9319684665080079,
+          "regime": "capacity_limited"
+        }
+      }
+    },
+    {
+      "scenario": "jejunal_baseline_microoxic_access_limited",
+      "doses": {
+        "5": {
+          "capacity_ratio": 0.003494881749405028,
+          "regime": "strongly_capacity_limited"
+        },
+        "25": {
+          "capacity_ratio": 0.017474408747025147,
+          "regime": "strongly_capacity_limited"
+        },
+        "50": {
+          "capacity_ratio": 0.034948817494050294,
+          "regime": "strongly_capacity_limited"
+        }
+      }
+    },
+    {
+      "scenario": "postprandial_sensitivity_microoxic",
+      "doses": {
+        "5": {
+          "capacity_ratio": 0.10105539431330472,
+          "regime": "strongly_capacity_limited"
+        },
+        "25": {
+          "capacity_ratio": 0.5052769715665237,
+          "regime": "capacity_limited"
+        },
+        "50": {
+          "capacity_ratio": 1.0105539431330475,
+          "regime": "transition"
+        }
+      }
+    },
+    {
+      "scenario": "distal_high_substrate_anoxic_sensitivity",
+      "doses": {
+        "5": {
+          "capacity_ratio": 0.019248646535867563,
+          "regime": "strongly_capacity_limited"
+        },
+        "25": {
+          "capacity_ratio": 0.09624323267933786,
+          "regime": "strongly_capacity_limited"
+        },
+        "50": {
+          "capacity_ratio": 0.19248646535867572,
+          "regime": "strongly_capacity_limited"
+        }
+      }
+    }
+  ],
+  "exhaustive_grid": {
+    "5": {
+      "n_scenarios": 1620,
+      "min_ratio": 1.009947974348438e-06,
+      "max_ratio": 32.017550673522294,
+      "regime_counts": {
+        "strongly_capacity_limited": 1289,
+        "capacity_limited": 179,
+        "transition": 107,
+        "capacity_exceeds_legacy_flux": 45
+      },
+      "fraction_below_one": 0.9061728395061729,
+      "fraction_at_or_above_one": 0.09382716049382711
+    },
+    "25": {
+      "n_scenarios": 1620,
+      "min_ratio": 5.049739871742192e-06,
+      "max_ratio": 160.0877533676115,
+      "regime_counts": {
+        "strongly_capacity_limited": 1032,
+        "capacity_limited": 226,
+        "transition": 183,
+        "capacity_exceeds_legacy_flux": 179
+      },
+      "fraction_below_one": 0.7765432098765432,
+      "fraction_at_or_above_one": 0.22345679012345676
+    },
+    "50": {
+      "n_scenarios": 1620,
+      "min_ratio": 1.0099479743484384e-05,
+      "max_ratio": 320.175506735223,
+      "regime_counts": {
+        "strongly_capacity_limited": 911,
+        "capacity_limited": 238,
+        "transition": 207,
+        "capacity_exceeds_legacy_flux": 264
+      },
+      "fraction_below_one": 0.7092592592592593,
+      "fraction_at_or_above_one": 0.29074074074074074
+    }
+  },
+  "limitations": [
+    "pH, effective oxygen-dependent activity, access, and survival factors are nonmechanistic scenario variables, not measured patient parameters.",
+    "The legacy 233 mg/day flux denominator is a population prior, not a local compartment concentration.",
+    "Fixed-concentration capacity is an upper-bound screen; substrate depletion and replenishment require a dynamic gut model.",
+    "The grid is a discrete full-factorial over selected levels. Fractions of grid cells are design-space occupancy, not probabilities or uncertainty distributions.",
+    "Only the ratio=1 boundary has a direct mass-balance meaning; the 0.25 and 4 bins are descriptive heuristics.",
+    "No renal compensation, reabsorption, microbiome metabolism, topology, or serum-urate mapping is modeled. A dynamic compartmental mass balance is required before dose decisions."
+  ]
+}

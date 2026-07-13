@@ -11,6 +11,26 @@ sources: [gout-deep-dive.md]
 
 Fructose is the hidden accelerant of gout. Unlike glucose, fructose metabolism bypasses normal regulatory checkpoints and creates a unique purine synthesis cascade that directly generates uric acid. This is one of the most clinically actionable findings in recent gout research, yet it remains under-communicated to patients.
 
+### A second loop: fructose may also close the intestinal urate gate
+
+The conventional account stops at hepatic KHK-driven ATP depletion and urate production.
+Rat ileal and intestinal-cell evidence adds a downstream loop: fructose-associated oxidative
+stress/NOX signaling can reduce intestinal ABCG2 expression or function, which would lower
+gut urate secretion while the liver is producing more urate. (Animal Model + In Vitro;
+Mechanistic Extrapolation to human gout.)
+
+That creates a two-hit hypothesis:
+
+```text
+fructose → KHK/ATP depletion → more urate
+        ↘ NOX/ROS → less intestinal ABCG2 → less urate disposal
+```
+
+The causal chain, reversibility, and human relevance are open. [Validation experiment
+1.39](./validation-experiments.md#139-fructose--khk--nox--abcg2-human-enteroid-test)
+separates KHK, NOX, ROS, and ABCG2 rather than treating fructose exposure as one black-box
+condition. This thread is part of the [multihop gout program](./gout-multihop-research-program.md).
+
 ---
 
 ## The Metabolic Mechanism

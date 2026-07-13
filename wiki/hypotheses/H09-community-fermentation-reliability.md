@@ -65,7 +65,7 @@ The claim has multiple sub-components that the full card will decompose:
 
 The platform's accessibility thesis ("grow it at home like sourdough") is what differentiates Open Enzyme from a conventional pharma drug. Without it, OE is just "another oral enzyme replacement therapy with a fermentation-based supply chain" — which is a defensible product but a much smaller proposition than "open-source therapeutic-enzyme platform that scales without central manufacturing." The platform thesis has two equally load-bearing risks:
 
-- **H08 mechanism risk:** even if the koji works perfectly, does the gut-lumen sink produce clinically meaningful SUA reduction in typical gout? (the −0.5 to −1.0 mg/dL band predicted by comp-019; no human RCT has validated)
+- **H08 mechanism risk:** even if the koji works perfectly, does the gut-lumen sink produce clinically meaningful SUA reduction under physiological substrate, oxygen, transit, access, survival, and peroxide constraints? comp-019's numerical band is retired; no human RCT has settled the question.
 - **H09 production risk (this card):** even if the mechanism works, can engineered multi-cassette koji be reliably home- and community-fermented at therapeutic doses with batch-to-batch consistency? (3/10 → 6/10 in `cross-validation.md` Claim 5; corpus offers no direct evidence for engineered strains)
 
 Both must survive. If H08 dies, the platform collapses to "mild adjunct" framing. If H09 dies, the platform collapses to "centrally-manufactured oral enzyme with a non-traditional supply chain" — defensible but no longer open-source-accessible. The platform's distinctive value depends on both H08 and H09 holding.

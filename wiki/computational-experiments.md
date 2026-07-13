@@ -22,6 +22,48 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ## Analyses
 
+### comp-046 — Staged Purine Sink Conserved Ledgers — YELLOW / TWO CONDITIONAL HYPOTHESES (2026-07-13)
+
+**Question:** When are whole-cell GR-5 dietary purine interception, microoxic UOX, and distal anaerobic PDB complementary rather than redundant or counterproductive?
+
+**Verdict:** **YELLOW — two conditional hypotheses, not one additive efficacy claim.** Whole-cell GR-5 reduces absorbed precursor only when cleavage is coupled to microbial salvage/retention or reduced free-base absorption. Spatial UOX→PDB staging outperforms overlap-adjusted same-pool access only when residual transfer is efficient enough. Dietary and endogenous ledgers are conserved separately and never summed into ΔSUA.
+
+**Key findings:** 6,561-cell deterministic full-factorial; explicit 100-unit dietary fate ledger; separate 100-unit endogenous luminal-urate architecture ledger; staging wins 4,617 grid cells and loses 1,944, with median difference only 0.010. Grid occupancy is not probability. Peer review forced removal of the first equation, which guaranteed staging would win, and required conserved flux accounting plus separate dietary/endogenous pools.
+
+**Informs:** [validation §1.34](./validation-experiments.md#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux) · [purine-degrading bacteria](./purine-degrading-bacteria.md) · [purine load](./purine-load-koji-vs-yeast.md)
+
+**Detail:** [interpretive](./staged-purine-sink-mass-balance-computational.md) · [experiment folder](./etc/experiments/comp-046-staged-purine-sink-mass-balance/) · Complete first pass
+
+---
+
+### comp-045 — Uricase Topology × Oxygen × Peroxide Design — YELLOW / NO TOPOLOGY ELIMINATED (2026-07-13)
+
+**Question:** How should intracellular+YgfU, LamB-secreted, InakN-displayed, and koji-secreted UOX be compared across urate, oxygen, catalase localization, and VHb support?
+
+**Verdict:** **YELLOW — joint empirical comparison required; no topology eliminated.** PULSE supplies three valid EcN precedents. Intracellular UOX has direct co-localization precedent; secreted/displayed forms have indirect empirical KatG+VHb support but unresolved extracellular peroxide exposure. Free secreted koji remains testable but cannot claim automatic peroxide closure from intracellular catalase.
+
+**Key findings:** 19 non-duplicative factorial conditions × three urate concentrations; three independent biological runs in separate oxic/microoxic contexts; six randomized 96-well plates with substrate-matched inactive-UOX, chassis, and PULSE-mixture controls plus explicit zero-urate controls (81 wells/plate). Peer review removed a duplicate intracellular-catalase arm and made every control's substrate assignment executable.
+
+**Informs:** [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) · [gut-lumen sink](./gut-lumen-sink.md) · [engineered koji protocol](./engineered-koji-protocol.md)
+
+**Detail:** [interpretive](./uricase-topology-oxygen-peroxide-design-computational.md) · [experiment folder](./etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/) · Complete first pass
+
+---
+
+### comp-044 — Gut-Lumen Uricase Physiological Regime Audit — RED FOR LEGACY QUANTITATIVE CLAIM / BIOLOGICAL HYPOTHESIS OPEN (2026-07-13)
+
+**Question:** Does comp-019's flat-dose, always-substrate-limited verdict survive explicit use of its own luminal urate, Km, and finite active window?
+
+**Verdict:** **RED for comp-019's quantitative ΔSUA and flat-dose conclusions; gut-sink biology remains OPEN.** The central 0.59 µM, Km 25 µM, three-hour diagnostic gives capacity ratios 0.093 / 0.466 / 0.932 at 5 / 25 / 50 mg before oxygen, access, or survival penalties, versus the legacy 32.3 / 161.7 / 323.4 Vmax calculation.
+
+**Key findings:** 1,620-cell discrete full-factorial per dose; grid occupancy is not probability; no serum-urate mapping. Independent review confirmed arithmetic and required explicit labeling of pH/oxygen/access/survival as nonmechanistic scenario multipliers and ratio-one as the only physically meaningful regime boundary.
+
+**Informs:** [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) · [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) · [comp-019 interpretation](./uricase-abcg2-genotype-stratification-computational.md)
+
+**Detail:** [interpretive](./gut-lumen-uricase-physiologic-regime-computational.md) · [experiment folder](./etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/) · Complete first pass
+
+---
+
 ### comp-043 — Does EcN periplasmic disulfide-folding scale from C1-INH (2) to DAF SCR1-4 (8) and lactoferrin (16)? — C1-INH VIABLE / DAF PROVISIONAL / lactoferrin NOT-VIABLE (2026-07-13)
 
 **Question:** [comp-037](./c1-inh-protease-stability-ecn-computational.md) showed EcN's periplasmic DsbA/DsbC machinery can plausibly fold C1-INH (2 disulfides). A synthesis card overreached: "so EcN is superior to koji for PDI-heavy payloads like DAF SCR1-4 (8) and lactoferrin (16)." Does EcN's periplasmic disulfide-folding + colonic-protease survival actually *scale* with disulfide count, and where does the crossover sit? Explicitly **not** a genome-scale metabolic model (a GEM models flux, not folding-machinery competition — the card's category error) — a [comp-006](./daf-cd55-protease-stability-computational.md)/[comp-037](./c1-inh-protease-stability-ecn-computational.md)-style structural + sequence folding-feasibility analysis.
@@ -215,7 +257,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Key findings:**
 - Three mechanistically-distinct chemistry classes pass with composite ≥ 0.85: CFTR correctors (lumacaftor top hit, 1.000; same ABC superfamily); tetramer/aggregate stabilizers (tafamidis, diflunisal — anionic aromatics matching Q141K's +1 pocket); bile-acid chemical chaperones (ursodiol, TUDCA — Hsp70 axis, F508del-CFTR rescue precedent).
-- Heuristic independently re-elevates sodium butyrate + vorinostat — the HDAC-class Q141K rescuers the wiki already names (Basseville 2012). Independent corroboration.
+- Heuristic elevates sodium butyrate + vorinostat, but only the pharmacological rescue class is directly anchored by Basseville 2012; butyrate remains an unvalidated ranked candidate, not independent corroboration.
 - Next step: real-docking re-screen (AutoDock Vina) on top 10 + targeted HEK293-Q141K trafficking assay. Do NOT pivot to novel-binder design — the repurposing surface is empirically non-empty.
 
 **Informs:** [chassis-pending-interventions §7](./chassis-pending-interventions.md) (promotes placeholder comp-NNN to comp-032) · [abcg2-modulators](./abcg2-modulators.md) §"Pharmacological-chaperone route" · [compounding-pharmacy-track](./compounding-pharmacy-track.md)
@@ -224,20 +266,15 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-031 — Dual-chassis EcN PDB + Uricase Additive SUA Prediction — YELLOW (2026-05-16)
+### comp-031 — Dual-chassis EcN PDB + Uricase Additive SUA Prediction — **INVALIDATED 2026-07-13**
 
-**Question:** Does a dual-chassis stack of engineered EcN expressing the 2,8-dioxopurine PDB cluster (CBT2.0, Li 2025 PMID 41070194) co-administered with a PULSE-style luminal uricase deliver additive SUA reduction beyond either arm alone? Does PDB-derived butyrate compound with the gut-lumen uricase sink via ABCG2 induction / Q141K trafficking rescue?
+**Original question:** Would PDB-EcN plus luminal UOX produce additive ΔSUA and a PDB-derived butyrate→ABCG2/Q141K synergy?
 
-**Verdict:** **YELLOW (provisional)** — combined > either arm but well below naive sum. Two urate-consumption arms compete for scarce luminal urate substrate (per comp-019 substrate-limited regime); PDB pathway adds INDEPENDENT mechanism via butyrate → PPARγ ABCG2 induction (WT alleles) + butyrate → HDAC Q141K trafficking rescue. **Combined ΔSUA: −1.8 to −1.9 mg/dL across genotypes** (90% CI roughly −2.2 to −1.3). Additive bump over PDB-alone: ~−0.1 to −0.2 mg/dL.
+**Current verdict:** **INVALIDATED.** The model inherited comp-019's unsupported saturation regime, transferred *C. sporogenes* butyrate yield into CBT2.0/EcN without product measurement, misattributed direct butyrate rescue to Basseville 2012, and added unmatched background butyrate to the combination arm. Its ΔSUA, competition, butyrate, Q141K-rescue, and two-strain engineering recommendations are retired.
 
-**Key findings:**
-- Engineering handoff: route PDB and uricase to **separate strains, not a dual-cassette EcN.** Substrate competition means single-chassis dual-cassette engineering gains ~nothing in additional SUA reduction relative to two co-administered strains. Avoids 8-gene PDB cluster + uricase coordinated-expression complexity.
-- Largest genotype-stratified additive bump in Q141K-hom (HDAC trafficking-rescue axis is alleles-specific).
-- Independent of comp-019 single-chassis verdict; complements rather than supersedes.
+**Replacement work:** [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) reopens the UOX regime; [comp-046](./staged-purine-sink-mass-balance-computational.md) supplies separate conserved ledgers and a conditional architecture boundary; [validation §1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test) measures actual CBT2.0 products.
 
-**Informs:** [chassis-pending-interventions](./chassis-pending-interventions.md) §"Multi-chassis stacks" M1 · [purine-degrading-bacteria](./purine-degrading-bacteria.md) · [uricase-abcg2-genotype-stratification-computational](./uricase-abcg2-genotype-stratification-computational.md) (comp-019 anchor)
-
-**Detail:** [interpretive](./dual-chassis-ecn-pdb-uricase-computational.md) · [experiments/](./etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/) · Complete v1
+**Detail:** [invalidated interpretive page](./dual-chassis-ecn-pdb-uricase-computational.md) · [frozen artifact](./etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/) · Invalidated, retained for provenance
 
 ---
 
@@ -431,20 +468,20 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-019 — Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model — Mechanism genotype-robust (2026-05-08)
+### comp-019 — Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model — SUPERSEDED (2026-07-13)
 
 **Question:** Can the gut-lumen uricase sink produce meaningful SUA reduction in non-Q141K males, or does it rely on Q141K-positive disease-state vulnerability?
 
-**Verdict:** **Mechanism does NOT depend on Q141K-positive vulnerability.** WT/WT males show LARGEST predicted ΔSUA (−0.83 mg/dL at 25 mg/day, 90% CI −1.13 to −0.57); Q141K hom smallest among typical genotypes (−0.50); severe dysfunction smallest absolute (−0.28). Genotype ordering INVERTED relative to worry framing.
+**Current verdict:** **SUPERSEDED by comp-044.** The literature-scan result—no Q141K-stratified uricase trial identified—remains useful. The model's ΔSUA, genotype ranking, capacity ratios, flat dose-response, and engineering recommendation are retired because the capacity calculation omitted physiological substrate occupancy and finite residence time.
 
 **Key findings:**
-- Across the entire published uricase clinical-trial corpus, ZERO trials have stratified by ABCG2 Q141K genotype (rich Q141K × allopurinol literature; empty Q141K × uricase). Publishable in itself.
-- Flux model predicts substrate-limited regime at all dose scenarios (capacity ratios 32–1300×). Yield target stays ~25 mg/dose; engineering effort shifts to GI-survival optimization, not yield.
-- Phase 2b RCT design: typical-gout RCT with Q141K + Q126* as **stratification**, NOT enrichment; single ~25 mg/day; pre-stratify by CKD.
+- No Q141K-stratified uricase clinical outcome was identified.
+- Physiological substrate, oxygen, access, survival, topology, and transit are now explicit gates.
+- Q141K remains a prospective stratification variable; adequate dose and responder ordering are open.
 
-**Informs:** [cross-validation Claim 1](./cross-validation.md) (rating 6/10 → 6.5/10) · [gut-lumen-sink](./gut-lumen-sink.md) · [abcg2-modulators §6](./abcg2-modulators.md) · [open-questions](./open-questions.md) Q1 · [personal-genome-protocol](./personal-genome-protocol.md) · [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md)
+**Replacement:** [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) · [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md) · [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial)
 
-**Detail:** [interpretive](./uricase-abcg2-genotype-stratification-computational.md) · [experiments/](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/) · Complete (prospective; awaits Phase 2b RCT validation)
+**Detail:** [superseded interpretation](./uricase-abcg2-genotype-stratification-computational.md) · [frozen artifact](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/)
 
 ---
 

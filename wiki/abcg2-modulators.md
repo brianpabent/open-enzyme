@@ -49,6 +49,19 @@ The landscape was characterized through PubMed scans on 2026-04-26 with primary-
 
 ## Two distinct modulation modes — keep them separate
 
+### Inflammation is not directionally uniform across tissues
+
+ABCG2 and NLRP3 should not be treated as independent “good transporter / bad
+inflammasome” targets. Direct intestinal-cell work links NLRP3 signaling, PDZK1, and ABCG2,
+while gout studies also support compensatory intestinal ABCG2 responses during systemic
+urate stress. The direction may depend on cell type, stimulus, timing, and inhibitor.
+(In Vitro + Animal Model; human therapeutic consequence unknown.)
+
+Every lead NLRP3 inhibitor intended for combination with a gut-lumen sink should therefore
+be screened for total and surface ABCG2 plus functional urate flux in polarized intestinal
+cells. See [validation experiment 1.35](./validation-experiments.md#135-enterocyte-nlrp3pdzk1abcg2-tissue-paradox-assay)
+and the [multihop gout program](./gout-multihop-research-program.md).
+
 Most ABCG2 literature conflates two mechanisms with opposite implications for the platform thesis. Read every claim with this distinction in mind:
 
 | Mode | What it does | Implication for gut sink |
@@ -60,7 +73,7 @@ Most ABCG2 literature conflates two mechanisms with opposite implications for th
 
 **Q141K trafficking rescue** is a third, distinct mode discussed in §6 — relevant only to carriers of the Q141K polymorphism but mechanistically different from both functional inhibition and transcriptional induction.
 
-> **Cross-reference [comp-019](./uricase-abcg2-genotype-stratification-computational.md) 2026-05-08:** Q141K trafficking rescue interventions (butyrate, fermentable fiber, HDIs) ADD to the gut-lumen uricase sink rather than replacing it. The flux model shows the gut-lumen sink mechanism works ACROSS genotypes — WT/WT shows the LARGEST predicted ΔSUA (−0.83 mg/dL at 25 mg/day mid-dose, 90% CI −1.13 to −0.57), Q141K homozygotes the smallest among typical-genotype patients (−0.50 mg/dL). Mechanism is multiplicative on residual ABCG2 capacity. Q141K-positive patients get a synergy bonus from rescue interventions because the rescue restores some of the residual ABCG2 capacity, which then provides more substrate for the gut-lumen sink to amplify. **Q141K + butyrate + gut-lumen uricase is therefore a triple-mechanism intervention, but it is NOT a different mechanism than the WT/WT + gut-lumen uricase pathway — it's the same mechanism with rescued ABCG2 capacity.**
+> **Quantitative correction (2026-07-13):** [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) invalidated comp-019's ΔSUA and genotype ordering. Increasing functional ABCG2 can plausibly supply more substrate to a luminal sink, but the magnitude and genotype interaction are unmeasured. The earlier “triple-mechanism” PDB-butyrate claim is also reopened because Basseville did not test PDB-derived butyrate and CBT2.0 carbon fate is unresolved; see [purine-degrading bacteria](./purine-degrading-bacteria.md) and validation experiments [1.14](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens-tnf-butyrate-rescue-lactoferrin-synergy) and [1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test).
 
 ---
 
@@ -222,7 +235,7 @@ This is mechanistically a stronger lever in Q141K carriers than wild-type carrie
 
 A pharmacogenomic-stratified RCT of fermentable fiber (or sodium butyrate enteric capsules) on serum UA, stratified by Q141K genotype, would either confirm or falsify this prediction. Cost-effective experiment for the platform's "differential responder" question.
 
-**Concentration-gap caveat (added 2026-05-16):** The HDAC-rescue mechanism is in vitro-anchored at 1–5 mM butyrate (Basseville 2012). Whether endogenous colonic butyrate flux ever reaches HDAC-inhibitory concentrations *at the enterocyte nucleus* — after the mucus-layer + epithelial-surface gradient drop from luminal butyrate — is empirically open. Full framing at [`purine-degrading-bacteria.md` §"Concentration gap"](./purine-degrading-bacteria.md). Wet-lab resolution: [`validation-experiments.md §1.14` butyrate dose-response arm](./validation-experiments.md) — Caco-2 transwell, basolateral butyrate at five concentrations bracketing 0.05–5 mM in both WT and Q141K cells, dual readouts (trafficking + urate efflux). Until the dose-response runs, treat the in vivo Q141K rescue magnitude as *mechanistically supported, quantitatively unverified*.
+**Attribution and concentration caveat (corrected 2026-07-13):** Basseville 2012 established pharmacological/chemical-chaperone rescue of Q141K ABCG2, not direct rescue by 1–5 mM butyrate. Butyrate is a proposed food-grade HDAC-directed test compound. Its ability to reproduce Q141K surface trafficking and functional urate efflux—and the epithelial exposure required—must be established directly in validation §1.14 before any in-vivo rescue claim.
 
 **Genotype-source framing — clinical, not consumer.** The trial must generate its own genotype data at enrollment via a CLIA-certified clinical PCR assay for rs2231142 (Quest, LabCorp, or equivalent single-SNP genotyping; ~$40–80 per patient at clinical-lab pricing). Consumer-grade genotype exports (23andMe, Ancestry, etc.) are explicitly excluded as the data source — not as a personal-preference call but for trial-design rigor: reproducibility, documented assay performance, sample-chain-of-custody, and CLIA-grade QA are all preconditions for a publishable pharmacogenomic stratification. The trial framing is therefore agnostic at recruitment (no presumed prior genotype knowledge); patients are screened, genotyped on-site, and assigned to arms by the trial's own assay.
 
