@@ -190,6 +190,7 @@ Organized by compound. Each bullet summarizes the question; cross-links point to
 
 - **Does the ketogenic-diet-gout rat result translate to a human oral BHB dosing regimen?** The rat study used intrinsic ketogenesis (diet); exogenous BHB dosing has different PK. See [bhb-ketones.md](./bhb-ketones.md), [nlrp3-exploit-map.md](./nlrp3-exploit-map.md).
 - **Does BHB's mouse-vs-human species gap follow the dapansutrile pattern?** Mouse ketogenic data may overstate BHB's required human dose. See [synthesis archive 2026-04-23 Connection #2](../synthesis/history/_pre-2026-05-08-archive.md).
+- **How does androgen status interact with BHB's NLRP3-inhibiting effect?** *(added 2026-07-13, July sweep)* BHB is a multi-target NLRP3 inhibitor ([bhb-ketones.md](./bhb-ketones.md)); androgens have directionally-ambiguous *direct* effects on NLRP3 priming ([androgen-urate-axis.md](./androgen-urate-axis.md) §"Beyond transporters"). The three-way interaction (androgen × MSU × BHB) is untested and matters for the platform's male-skewed demographic — does a high-testosterone or TRT patient need a *higher* BHB dose for the same NLRP3 suppression? **Sub-question:** BHB acts partly via HCAR2/GPR109A, and androgen signaling can cross-modulate GPCR expression, so whether macrophage HCAR2 is itself androgen-sensitive is a mechanistic anchor. Path to resolution: the BHB interaction arm now added to [validation-experiments.md §1.23](./validation-experiments.md) (androgen × MSU × NLRP3). See also [nlrp3-exploit-map.md](./nlrp3-exploit-map.md).
 
 ### Lactoferrin
 
