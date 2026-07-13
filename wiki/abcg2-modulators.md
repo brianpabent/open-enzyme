@@ -279,7 +279,7 @@ Documented functional ABCG2 inhibitors at supplement-relevant doses:
 
 | Compound | Inhibition tier | Source |
 |---|---|---|
-| Curcumin | Established BCRP/ABCG2 inhibitor in vitro (Ki ~5–10 μM). At 500–1000 mg supplement doses, gut-lumen concentrations easily reach this. | Pharmacology literature, multiple in vitro studies |
+| Curcumin | Established BCRP/ABCG2 inhibitor in vitro (Ki ~5–10 μM) — **and confirmed in vivo**: oral curcumin acts as a selective intestinal BCRP inhibitor in cynomolgus monkeys ([Karibe 2018, PMID 29358184](https://doi.org/10.1124/dmd.117.078931)). Despite curcumin's chemical instability, functional gut inhibition survives in a live primate — the **strongest** case in this table (caveat: substrates were sulfasalazine/rosuvastatin, **not urate**). | In vitro (multiple labs) + **Animal Model in vivo (primate)** |
 | Quercetin | Substrate/inhibitor at low μM (functional); transcriptional upregulation in chronic dosing (mixed). Net effect on gut sink: probably negative acutely. | Pharmacology + nutritional biochemistry literature |
 | EGCG | Functional BCRP inhibitor in pharmacology assays. Yu et al. 2024 (*Food Funct*, PMID 38757391) showed mouse PO-induced hyperuricemic model net-favorable effect on ABCG2/URAT1/GLUT9 expression at the tissue level — direction opposite to the in vitro inhibition story. Net clinical effect on gut sink: unresolved. | Mixed: pharmacology in vitro vs. animal model in vivo |
 | Genistein / soy isoflavones | Established BCRP substrate-inhibitor. Dietary intake from natto/miso is much smaller than supplement doses. | Pharmacology literature |
@@ -300,6 +300,21 @@ Stratification matters because a blanket "avoid quercetin" message undermines co
 **Practical inference for high-T or Q141K-positive patients:** avoid high-dose curcumin and quercetin acutely when the gut sink matters most (post-meal urate spikes, fructose challenges, etc.). Dietary-level intake of these compounds (turmeric in food, onions, tea) is unlikely to be problematic; supplement-grade doses are the concern.
 
 This also surfaces a research-level open question: how much of the "non-responder" rate in nutraceutical gout RCTs is explained by ABCG2-inhibitor co-supplementation rather than by per-compound efficacy failure?
+
+### Gut-luminal metabolic stability resolves the CBD-vs-flavonoid inconsistency (added 2026-07-13)
+
+The corpus contained an unstated contradiction: [`cannabinoids-terpenes.md`](./cannabinoids-terpenes.md) argues that CBD's poor oral bioavailability does **not** yield a high functional gut-luminal concentration, while the flavonoid ABCG2-inhibitor warning above rests on the opposite premise (poor absorption ⇒ high, functionally relevant luminal concentration). Both can be true — the discriminating variable is **gut-luminal metabolic stability × gut segment × in-vivo net direction**. A 2026-07-13 multilingual literature scan ([`logs/cbd-vs-flavonoid-gut-degradation-lit-scan-2026-07-13.md`](../logs/cbd-vs-flavonoid-gut-degradation-lit-scan-2026-07-13.md)) resolved each compound — the upshot is **stratify per compound, not one class rule**:
+
+| Compound | Gut-luminal fate | Premise (poor absorption ⇒ real gut-ABCG2 inhibition) | Bucket |
+|---|---|---|---|
+| **Curcumin** | Chemically unstable, colonic biotransformation — **but** functional inhibition demonstrated in a live primate ([Karibe 2018, PMID 29358184](https://doi.org/10.1124/dmd.117.078931)) | **HOLDS — strongest case** | Inhibitor (in vivo-confirmed) |
+| **Quercetin** | Dietary = glycosides → obligate bacterial deglycosylation + C-ring fission; genuine low-µM BCRP inhibitor in the **proximal** small intestine right after a dose, but catabolized before the colon ([Rechner 2004, PMID 14744633](https://doi.org/10.1016/j.freeradbiomed.2003.10.008); Di Pede 2020) | **PARTIAL** — holds proximally/acutely, overstated for colonic/sustained concentration | Inhibitor (proximal-gut window only) |
+| **EGCG** | Unstable at intestinal pH → gallocatechin + gallic acid; ring-fissioned by microbiota; net-**favorable** ABCG2/URAT1/GLUT9 phenotype in vivo ([Yu 2024, PMID 38757391](https://doi.org/10.1039/d3fo05606f)) | **MOST OVERSTATED** — parent doesn't persist; in vivo net-favorable | Move to **Nrf2-inducer bucket** (with theaflavins) |
+| **CBD** | Not degraded by colonic microbes as previously stated — actual fate is **lipid/fecal sequestration + gastric-acid lability + host metabolism**; and CBD is not an ABCG2 inhibitor anyway (target P2X7/NLRP3) | N/A — never an ABCG2-inhibitor story | Neither |
+
+**The class warning does not stand as written — it needs per-compound stratification.** Curcumin earns the strongest warning (in vivo primate); quercetin is a real but *proximal-gut-only* inhibitor; EGCG likely belongs with the favorable Nrf2 inducers (consistent with the theaflavins reclassification, §"The EGCG paradox is not a one-off" above). The CBD "gets degraded" logic generalizes cleanly to EGCG, partly to quercetin, and **not** to curcumin (the counterexample).
+
+**Load-bearing evidence gap:** no study measures the actual **free luminal concentration** of any of these compounds, segment-resolved along the gut after a realistic dose, against **urate** efflux via intestinal ABCG2 (Karibe used drug substrates; the EGCG in vivo data measure transporter *expression*, not acute luminal inhibition). So `[free compound]_lumen` vs `Ki(ABCG2-for-urate)` per gut segment remains unmeasured for all four — the quantity every warning above ultimately depends on. (source: CBD-vs-flavonoid gut-degradation lit scan 2026-07-13; per-compound PMIDs in the scan log.)
 
 ---
 
