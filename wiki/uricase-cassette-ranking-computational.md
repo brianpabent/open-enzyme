@@ -45,7 +45,9 @@ status: complete (v1; fold-quality model deferred to wet-lab)
 > them on every sweep, so the long content lives next to the experiment that produced it
 > at `etc/experiments/comp-022-clockbase-uricase-cassette-ranking/`.
 
-Across the *A. oryzae* uricase expression cassette design space, parameterized as **6 promoters × 12 signal peptides × 10 codon variants × 60 secretion scaffolds = 43,200 combinations**, which cassettes survive a multi-model concordance gate and warrant promotion to the [§1.9 dual-cassette wet-lab feasibility test](./validation-experiments.md)?
+Across the *A. oryzae* uricase expression cassette design space, parameterized as **6 promoters × 12 signal peptides × 10 codon variants × 60 secretion scaffolds = 43,200 combinations**, which cassettes survive a multi-model concordance gate?
+
+> **Interpretation correction (2026-07-13):** comp-022 ranks cassette designs inside the koji-secreted design space; it does not establish that secretion is the human-relevant UOX topology. Its strict direct-secretion winners remain candidates for [§1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial). Promotion to §1.9B occurs only if a koji-compatible topology clears the physiological-substrate, oxygen, peroxide, localization, and viability gate.
 
 **Where the analysis lives:**
 - Full archived analysis: [`./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive.md`](./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive.md)

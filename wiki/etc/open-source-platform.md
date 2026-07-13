@@ -171,9 +171,9 @@ The principle does NOT apply when:
 2. **Per-candidate cost is large.** When per-candidate input cost is $10K+ (custom delivery vehicles, animal models, etc.), parallel testing is no longer "bounded-cheap" and the literature pre-selection burden is justified.
 3. **Decision criteria are not measurable in the parallel run.** If the empirical experiment can't actually distinguish A from B (because the readout doesn't capture the relevant property), parallel testing produces ambiguous output and the literature-driven pre-selection is unavoidable.
 
-**Canonical instance — comp-011 (2026-05-05):**
+**Canonical instance — comp-011 (2026-05-05; sequencing correction 2026-07-13):**
 
-The *A. flavus* (Q00511) vs. *C. utilis* (P78609) uricase variant decision for the §1.9 Ward 1995 dual-cassette experiment. Industry programs (ALLN-346, SEL-212 pegadricase, SSS11) prefer *C. utilis*; academic precedent (rasburicase derivative IP, comp-001 protease stability) favors *A. flavus*. comp-011's recommendation: order both as codon-optimized direct-secretion cassettes (~$200-400 marginal gene synthesis cost, $0 marginal fermentation cost — both strains run in the same §1.9 experiment), and let the empirical Lf titer + uricase activity comparison resolve the decision. See [`c-utilis-uricase-cassette-compatibility-computational.md` §6.3](../c-utilis-uricase-cassette-compatibility-computational.md). This instance satisfies all three preconditions: shared §1.9 fermentation, $200-400 marginal input cost, genuine literature split.
+The *A. flavus* versus *C. utilis* sequence decision remains a valid bounded head-to-head example, but comp-044/045 changed where it belongs. §1.33 selects UOX topology first. If a koji-compatible topology wins, both sequences can be compared within that topology when construct and fermentation infrastructure are genuinely shared. Do not generalize the original `$0 marginal fermentation` estimate across the expanded topology factorial. The principle survives; the experimental nesting changed.
 
 **Why this principle exists in this project specifically:**
 

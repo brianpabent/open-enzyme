@@ -86,10 +86,11 @@ When surfacing platform-level patterns or candidate compounds in natural-product
 
 A specific set of questions is **documented, first-class, and wet-lab-access-blocked** — the platform is *access*-blocked on them (no wet lab / no fermentation capability at Phase 0), **not awareness-blocked.** Re-emitting them as "Open Questions" every sweep is pure token waste (Pass 2 to write, Pass 3 to review, walkthrough to walk past) and actively frustrates the reader, who knows these are the top priorities and cannot move them forward without lab access. **Do NOT surface any of the following as an Open Question** unless you have a *genuinely new sub-question* (a new sub-mechanism, a newly-unblocked resolution path, a new dependency) — and if so, lead with the new sub-question explicitly, do not restate the parent gate:
 
-- **Ward 1995 glucoamylase-KEX2 dual-cassette feasibility in *A. oryzae* solid-state koji** (H01 / `validation-experiments.md` §1.9) — the koji-endgame #1 gate.
+- **Physiological UOX topology × oxygen × peroxide** (`validation-experiments.md` §1.33; comp-044/045) — gout-program Gate 0. Do not restate the parent gate unless a genuinely new topology, regime, or resolution path appears.
+- **Ward 1995 staged lactoferrin-only → selected UOX-only → dual-cassette feasibility in *A. oryzae* solid-state koji** (H01 / `validation-experiments.md` §1.9) — conditional #1 koji-endgame architecture gate; Stage A may parallel §1.33, Stages B/C are downstream.
 - **Gut-lumen uricase sink → clinically meaningful SUA reduction in typical gout** (H08) — #1 mechanism risk.
 - **Reliable home/community fermentation at therapeutic doses** (H09) — #2 production risk.
-- **Chaperone-orthogonal α-coefficient calibration** beyond its two fold classes (`chaperone-orthogonal-stacking.md` §8 item 6; gated on §1.9 + §1.25).
+- **Chaperone-orthogonal α-coefficient calibration** beyond its two fold classes (`chaperone-orthogonal-stacking.md` §8 item 6; the current two-class calibration uses §1.9A Lf-only + §1.25 DAF, not the full §1.9C dual result).
 - **DAF SCR1-4 expression/folding/activity in koji** (`validation-experiments.md` §1.25).
 - **Houttuynia HCP/HCPM MSU-macrophage suppression + sourcing** (`validation-experiments.md` §1.30).
 

@@ -459,10 +459,10 @@ def analyze_disulfide_load(protein_seq, protein_name, known_disulfide_count, ori
         "fold_risk":                 fold_risk,
         "fold_note":                 fold_note,
         "method_note": (
-            "Cysteine count from sequence. Known disulfide bond count from UniProt annotation. "
+            "Cysteine count from mature sequence after signal-peptide removal. Lactoferrin disulfide count from Notari 2023 (PMC10465537). "
             "Folding load index = N_disulfides / 16 (Huynh 2020 adalimumab = 16 disulfides across HC+LC = 1.0). "
-            "A. oryzae NSlD-ΔP10 demonstrated capacity for the Huynh 2020 baseline — whether higher disulfide "
-            "loads saturate ER PDI/ERO1 is empirically open. Structural pLDDT is not incorporated here (no "
+            "This is a bulk-count comparator, not evidence of equivalent capacity across protein architectures. "
+            "Whether lactoferrin saturates ER PDI/ERO1 is empirically open. Structural pLDDT is not incorporated here (no "
             "domain-resolved PDI-pathway analysis). Evidence level: Mechanistic Extrapolation."
         ),
     }
@@ -568,9 +568,9 @@ def analyze_combined_burden(uricase_results, lactoferrin_results, uricase_ss, lf
     if lf_burden == "HEAVY":
         concurrent_risks.append("Lf codon optimization is heavy — unoptimized human sequence will reduce expression efficiency")
     # Uricase KEX2 risk is only relevant if uricase uses a glucoamylase-KEX2 fusion architecture.
-    # The proposed §1.9 design puts uricase on a DIRECT-SECRETION cassette (PTEF1-amyB_SP-uaZ-TgpdA),
-    # NOT a glucoamylase fusion. KEX2 internal sites in uricase are therefore NOT load-bearing for
-    # the proposed architecture. Flag as an informational note, not a risk driver.
+    # This candidate uses a DIRECT-SECRETION cassette (PTEF1-amyB_SP-uaZ-TgpdA),
+    # so KEX2 internal sites are not load-bearing within this candidate. Direct secretion is not
+    # selected here; it must compete against other topologies in validation §1.33.
     uricase_kex2_is_load_bearing = False  # uricase uses direct secretion, not KEX2 fusion
     if uricase_kex2 != "LOW" and uricase_kex2_is_load_bearing:
         concurrent_risks.append("Uricase KEX2 internal site risk — potential for aberrant cleavage if uricase uses fusion architecture")
@@ -581,9 +581,8 @@ def analyze_combined_burden(uricase_results, lactoferrin_results, uricase_ss, lf
     uricase_kex2_note = (
         f"Uricase has {uricase_results['kex2']['total_kr_sites_in_mature']} internal K-R site(s) "
         f"(overall KEX2 risk: {uricase_kex2}). "
-        "NOT load-bearing: the §1.9 protocol places uricase on a direct-secretion cassette "
-        "(PTEF1-amyB_SP-uaZ-TgpdA), not a glucoamylase-KEX2 fusion. "
-        "If uricase is later moved to a fusion architecture, this site requires attention."
+        "NOT load-bearing within the direct-secretion candidate (PTEF1-amyB_SP-uaZ-TgpdA). "
+        "Direct secretion is not a settled topology: if §1.33 selects a fusion architecture, this site requires attention."
     )
 
     # Overall dual-cassette risk verdict
@@ -693,7 +692,7 @@ def analyze_huynh_comparison(uricase_results, lactoferrin_results):
         )
     else:
         comparison["oe_is_comparable_to_huynh"].append(
-            f"Total disulfide load comparable: OE pair {oe_total_disulfides} vs. Huynh 16."
+            f"Bulk disulfide count comparable: OE pair {oe_total_disulfides} vs. Huynh 16; folding architectures differ."
         )
 
     comparison["oe_is_easier_than_huynh"].append(
@@ -721,9 +720,9 @@ def analyze_huynh_comparison(uricase_results, lactoferrin_results):
     )
 
     comparison["oe_is_comparable_to_huynh"].append(
-        "Lactoferrin (human, glycosylated, high disulfide) is mechanistically similar to "
-        "adalimumab heavy chain in folding complexity. Huynh 2020 demonstrated the A. oryzae "
-        "ER can handle mammalian-origin heavily-disulfided proteins."
+        "Lactoferrin and adalimumab are both mammalian-origin, glycosylated, disulfide-rich proteins, "
+        "but their folding and assembly architectures differ. Huynh 2020 is therefore a contextual "
+        "host precedent rather than a quantitative capacity proof for lactoferrin."
     )
 
     return comparison
@@ -750,8 +749,8 @@ def main():
     # Disulfide bonds from UniProt annotation
     # Uricase Q00511: no Cys, no disulfides (A. flavus uricase — confirmed from UniProt)
     URICASE_DISULFIDES = 0
-    # Lactoferrin P02788: 17 disulfide bonds (UniProt — 34 Cys residues, fully paired)
-    LF_DISULFIDES = 17
+    # Lactoferrin P02788: 16 disulfide bonds (Notari 2023, PMC10465537; 32 mature-chain cysteines)
+    LF_DISULFIDES = 16
 
     # Run all analyses — uricase
     uri_codon   = analyze_codon_usage(uricase_seq, "Uricase (Q00511)", "A. flavus (fungal)", codon_table, AFLAVUS_PREFERRED_CODON)
@@ -764,7 +763,7 @@ def main():
     lf_codon    = analyze_codon_usage(lf_seq, "Lactoferrin (P02788)", "Homo sapiens (mammalian)", codon_table, HUMAN_PREFERRED_CODON)
     lf_kex2     = analyze_kex2_sites(lf_seq, "Lactoferrin (P02788)", LF_SP_END, kex2_specs)
     lf_routing  = analyze_secretion_targeting(lf_seq, "Lactoferrin (P02788)", LF_SP_END)
-    lf_disulf   = analyze_disulfide_load(lf_seq, "Lactoferrin (P02788)", LF_DISULFIDES, "Homo sapiens (mammalian)")
+    lf_disulf   = analyze_disulfide_load(lf_seq[LF_SP_END:], "Lactoferrin (P02788)", LF_DISULFIDES, "Homo sapiens (mammalian)")
     lf_glycan   = predict_nxst_sites(lf_seq, "Lactoferrin (P02788)", LF_SP_END)
 
     uricase_results   = {"codon": uri_codon, "kex2": uri_kex2, "routing": uri_routing,
@@ -810,13 +809,13 @@ def write_summary(data, path):
     overall_risk = cb["overall_dual_cassette_risk"]
     if overall_risk == "LOW":
         verdict_rationale = (
-            "No blocking cassette-design issues identified for the proposed architecture: "
-            "uricase (direct-secretion cassette) has no KEX2 fusion concerns and zero disulfide load; "
+            "No blocking sequence-level issues identified for the candidate architecture: "
+            "uricase (direct-secretion candidate) has no KEX2 fusion concerns and zero disulfide load; "
             "lactoferrin's two internal K-R sites are either non-functional (P1'=D, KEX2 abolished) "
             "or moderate-risk (P1'=K, reduced efficiency) — no high-risk truncation sites. "
-            "Disulfide and codon-optimization burdens are within the Huynh 2020 adalimumab precedent. "
-            "A uricase internal K-R site exists at residue 128 but is irrelevant in the direct-secretion "
-            "design; only relevant if uricase is moved to a fusion architecture."
+            "The corrected bulk disulfide count equals the Huynh 2020 adalimumab comparator, but architecture-specific folding burden remains unmodeled. "
+            "A uricase internal K-R site exists at residue 128 but is irrelevant within the direct-secretion "
+            "candidate; §1.33 determines whether that topology survives."
         )
     elif overall_risk == "MODERATE":
         verdict_rationale = (
@@ -1119,15 +1118,16 @@ def write_summary(data, path):
     lines += [
         "---",
         "",
-        "## 4. Design Recommendations for §1.9",
+        "## 4. Design Recommendations for §1.33 → §1.9",
         "",
         "1. **Host strain:** Start from NSlD-ΔP10 (or equivalent 10-protease-deletion A. oryzae derivative). "
         "Wild-type RIB40 is insufficient for high-titer Lf — confirmed by Huynh 2020.",
         "",
-        "2. **Uricase cassette architecture:** Use direct-secretion design (PTEF1 or PamyB — amyB signal "
-        "peptide — uaZ — TgpdA). Do NOT put uricase in a glucoamylase-KEX2 fusion unless benchmarking "
-        "demands it. Direct secretion avoids KEX2 internal-site risk entirely and simplifies the "
-        "cassette. Codon optimization: optional but low-priority (A. flavus origin; see §3.1 LOW burden).",
+        "2. **Uricase cassette architecture:** Carry direct secretion (PTEF1 or PamyB — amyB signal peptide — uaZ — TgpdA) "
+        "as one §1.33 candidate, not as the selected topology. It avoids KEX2 internal-site risk within that arm. "
+        "Include the competing intracellular/fusion or retention architectures specified in §1.33; only the physiological "
+        "product/peroxide/viability result selects the §1.9B build. Codon optimization remains optional but low-priority "
+        "for the A. flavus sequence-level candidate.",
         "",
         "3. **Lactoferrin cassette architecture:** Use Ward 1995 / Huynh 2020 design exactly: "
         "PamyB — glucoamylase — KRGGG — hLf (codon-optimized) — TamyB. "
@@ -1140,9 +1140,9 @@ def write_summary(data, path):
         "uricase cassette (at sC or amyC locus). NSAR1 platform (Oikawa 2020) provides 5 marker slots; "
         "2-cassette design fits with room to spare.",
         "",
-        "5. **Submerged-culture parallel control:** Run solid-state koji and submerged DPY in parallel "
-        "in the §1.9 experiment. This isolates solid-state format risk from dual-cassette architecture "
-        "risk — the format axis is the primary unresolved variable (Sun 2024 caveat).",
+        "5. **System-to-format handoff:** Resolve topology × oxygen × peroxide in §1.33 liquid/system conditions first; "
+        "then reproduce the winner in §1.9B solid-state koji with a matched submerged control before §1.9C. "
+        "This separates physiological-system failure from solid-state format risk.",
         "",
         "6. **KEX2 capacity monitoring:** If both Lf AND uricase (if also in fusion architecture) compete "
         "for KEX2, monitor for unprocessed fusion bands by SDS-PAGE at molecular weights consistent "

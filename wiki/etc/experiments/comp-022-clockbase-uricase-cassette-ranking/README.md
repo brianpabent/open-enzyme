@@ -1,12 +1,12 @@
 # comp-022: ClockBase-style Combinatorial Ranking of A. oryzae Uricase Expression Cassettes
 
-**Question:** Across the ~43,200 *A. oryzae* uricase expression cassette design space (promoter × signal peptide × codon variant × secretion scaffold), which cassettes survive a multi-model concordance gate and warrant promotion to the §1.9 dual-cassette wet-lab feasibility test?
+**Question:** Across the ~43,200 *A. oryzae* uricase expression cassette design space (promoter × signal peptide × codon variant × secretion scaffold), which sequence-level candidates survive a multi-model concordance gate and warrant promotion into the §1.33 physiological topology screen?
 
-**Verdict:** **501 unique cassettes (collapsed across propeptide / N-glyc modifiers) pass N-of-4 ≥ 3 concordance; 195 of 43,200 candidates (0.45%) pass N-of-4 = 4 (all four models in top quintile). The headline cluster converges on PamyB + 5'-softened-codon-optimization + direct-secretion + PTS1-blocked C-terminal tag + native-glyc-ablated; exactly the architecture comp-010 (cassette compatibility) recommended.**
+**Verdict:** **501 unique cassettes (collapsed across propeptide / N-glyc modifiers) pass N-of-4 ≥ 3 concordance; 195 of 43,200 candidates (0.45%) pass N-of-4 = 4 (all four models in top quintile). The headline cluster converges on PamyB + 5'-softened-codon-optimization + direct-secretion + PTS1-blocked C-terminal tag + native-glyc-ablated. This is a candidate cluster, not a topology verdict.**
 
-The §1.9 wet-lab promotion list does NOT change in architecture (direct-secretion + PamyB + amyB-SP, already the comp-010 / comp-001 / koji-endgame-strain.md §3.4 design). Comp-022 adds three specific refinements: (1) prefer the **5'-softened codon variant** (low-GC head + max-CAI body) over pure max-CAI; (2) **block the PTS1 signal** explicitly with 3xAla or His6 C-terminal tag rather than leaving native SKL intact; (3) **ablate the N191 glycosylation sequon** (N191Q) to remove the one predicted occupancy site uricase carries. Each is a single-residue or trivial-synthesis tweak with no marginal cost vs the baseline §1.9 design.
+Comp-022 adds three sequence-level refinements to the direct-secretion candidate: (1) prefer the **5'-softened codon variant** (low-GC head + max-CAI body) over pure max-CAI; (2) **block the PTS1 signal** explicitly with 3xAla or His6 C-terminal tag rather than leaving native SKL intact; (3) **ablate the N191 glycosylation sequon** (N191Q) to remove the one predicted occupancy site uricase carries. These refinements can enter §1.33 at gene-synthesis time, but comp-022 cannot establish product formation at physiological substrate, oxygen dependence, peroxide safety, or the topology to carry into §1.9B.
 
-**Informs:** [`validation-experiments.md` §1.9](../../../validation-experiments.md); refines the uricase cassette design within the existing dual-cassette architecture; replaces literature-precedent one-at-a-time selection with composite-ranked shortlist before gene synthesis dollars commit. **Does not require redesigning §1.9**; the architecture is already optimal per this run; the three refinements are gene-synthesis-time tweaks.
+**Informs:** [`validation-experiments.md` §1.33 and §1.9B](../../../validation-experiments.md); replaces literature-precedent one-at-a-time selection with a composite-ranked candidate shortlist before gene-synthesis dollars commit. §1.33, not comp-022, selects topology; §1.9B then tests the selected implementation in solid-state koji.
 
 **Interpretive wiki page:** [`wiki/uricase-cassette-ranking-computational.md`](../../../uricase-cassette-ranking-computational.md)
 
@@ -57,7 +57,7 @@ comp-022-clockbase-uricase-cassette-ranking/
 | Architecture-adjusted chaperone load | 2 | Lower better | Σ (disulfide_count × α) per chaperone-orthogonal-stacking.md §3.5 formula |
 | Promoter × SP prior | 4 | Higher better | Literature-derived bounded multiplier per promoter and SP |
 
-Concordance gate: a candidate passes if it falls in the top quintile (top 20%) of N-of-4 models. Threshold for §1.9 promotion shortlist: **N-of-4 ≥ 3 (75% concordance)**, chosen a priori from ClockBase 30/40 precedent (no retrospective calibration possible against comp-001..comp-014 since those were not cassette-ranking experiments).
+Concordance gate: a candidate passes if it falls in the top quintile (top 20%) of N-of-4 models. Threshold for the sequence-level shortlist: **N-of-4 ≥ 3 (75% concordance)**, chosen a priori from ClockBase 30/40 precedent (no retrospective calibration possible against comp-001..comp-014 since those were not cassette-ranking experiments).
 
 ---
 
@@ -65,7 +65,7 @@ Concordance gate: a candidate passes if it falls in the top quintile (top 20%) o
 
 1. **Cascading-filter not strictly needed.** Tier 1 (CAI + mRNA-5') is per-codon-variant only (10 evaluations, not 43,200), and Tier 2 (chaperone-load) is per-scaffold-base-only (10 evaluations, not 43,200). So evaluation of all 43,200 candidates is O(1) per candidate after the per-variant and per-scaffold pre-computations. Cascading-filter language in the brief was for a model where Tier 2/3 required per-candidate compute; here it does not.
 
-2. **Tier 3 fold-quality model (ESMFold / AlphaFold pLDDT) DEFERRED.** No GPU access, no ColabFold API access from this subagent. Brief authorized this; we replace it with a sequence-preservation tie-breaker that is effectively redundant with Tier 1 (since all candidates share the same uricase AA sequence). Fold quality is deferred to the wet-lab readout via direct uricase activity assay in §1.9.
+2. **Tier 3 fold-quality model (ESMFold / AlphaFold pLDDT) DEFERRED.** No GPU access, no ColabFold API access from this subagent. Brief authorized this; we replace it with a sequence-preservation tie-breaker that is effectively redundant with Tier 1 (since all candidates share the same uricase AA sequence). Functional topology is deferred to §1.33, followed by solid-state confirmation in §1.9B.
 
 3. **N-of-M threshold = 3 of 4 (75%), not 4 of 5 (80%).** Because fold-quality is deferred, M=4 not 5. The 75% concordance fraction matches ClockBase precedent. A priori choice, no retrospective calibration.
 
@@ -83,7 +83,7 @@ See `provenance.md` for the full verification-agent pass and the explicit "items
 - N-of-4 = 4 (all four models top quintile): **195 candidates (0.45%)**.
 - N-of-4 ≥ 3 (75% concordance): **2,421 candidates (5.6%)** → **501 unique cassettes** after collapsing propeptide/nglyc modifier degeneracy.
 - Top cluster: **PamyB + SPamyB_pro + 5'-softened codon variant + direct-secretion + 3xAla or His6 C-terminal tag + N191Q glyc-ablation + no propeptide**.
-- §1.9 wet-lab promotion list: unchanged in architecture; refined in three gene-synthesis-time details (codon variant, C-term tag, glyc sequon).
+- §1.33 candidate list: direct-secretion arm refined in three gene-synthesis-time details (codon variant, C-terminal tag, glycosylation sequon); architecture remains unresolved until the physiological-system readout.
 
 ---
 

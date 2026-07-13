@@ -84,7 +84,7 @@ This section is an addition, not a retraction, of the #1 *A. flavus* ranking. Th
 
 3. **2 internal KR sites** (positions 130 and 138, both HIGH by KEX2 P1' scoring) vs. 1 in *A. flavus* (position 128 HIGH). Non-load-bearing in the direct-secretion cassette design — KEX2 does not encounter the payload. If *C. utilis* uricase is ever moved to a glucoamylase-KEX2 fusion, double KR→KQ mutation at positions 130 and 138 is required.
 
-**Platform recommendation implied by comp-010 + comp-011:** Order both *A. flavus* (Q00511, codon-optimized) and *C. utilis* (P78609, codon-optimized + ALLN-346 mutations from US10815461B2) as direct-secretion cassettes for §1.9 solid-state koji. Running them in parallel resolves the variant selection decision empirically at $0 additional fermentation cost. See [c-utilis-uricase-cassette-compatibility-computational.md](./c-utilis-uricase-cassette-compatibility-computational.md) for the full interpretive analysis. *(Mechanistic Extrapolation — in silico only; 2026-05-05)*
+**Platform recommendation, corrected 2026-07-13 after comp-044/045:** retain *A. flavus* and *C. utilis* as the two primary sequence candidates, but do not pre-commit both to direct secretion or the §1.9 dual build. First use §1.33 to select topology under physiological substrate, oxygen, and peroxide constraints. If a koji-compatible topology passes, compare both variants within that topology in §1.9B when the marginal construct/fermentation cost remains bounded. The original $0-additional-fermentation claim does not automatically transfer to the expanded topology factorial. *(Mechanistic Extrapolation — sequence rankings plus untested wet-lab topology.)*
 
 ---
 

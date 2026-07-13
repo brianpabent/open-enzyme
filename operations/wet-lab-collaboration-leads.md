@@ -1,6 +1,6 @@
 # Wet-Lab Collaboration Leads & Outreach Strategy
 
-This document maps the global academic landscape to find research partners for executing **Experiment 1.9 (Ward 1995 dual-cassette feasibility test)** and **Experiment 1.25 (DAF SCR1-4 single-cassette expression)**. These two experiments represent the project's **#1 priority gate**, deciding whether the single-strain *A. oryzae* koji endgame thesis stands or if the project must fall back to a two-strain co-fermentation model.
+This document maps the global academic landscape for **Experiment 1.9 (Ward 1995 staged lactoferrin/UOX/dual-cassette feasibility)** and **Experiment 1.25 (DAF SCR1-4 single-cassette expression)**. After comp-044/045, §1.33 is the gout program's Gate 0; §1.9 remains the conditional #1 koji-endgame architecture gate. Partner outreach remains active because the §1.9A lactoferrin-only arm can run while §1.33 selects UOX topology, and the same chassis/infrastructure later supports §1.9B/C and §1.25.
 
 ---
 
@@ -27,7 +27,7 @@ These groups are actively publishing on *A. oryzae* expression, promoter design,
   - Huynh, Maruyama, et al. 2020 (*Fungal Biol Biotechnol*, PMC7257131) — *Secretory production of functional adalimumab (antibody) using NSlD-ΔP10.*
 * **Specific Project Value:**
   - **The Single Source for NSlD-ΔP10:** This strain is not deposited in public repositories like JCM or ATCC; it resides in Maruyama's lab. Obtaining it under a Material Transfer Agreement (MTA) is the lowest-friction path to executing §1.9 and §1.25.
-  - **Proven Multimeric Folding:** The lab demonstrated that NSlD-ΔP10 can fold complex, disulfide-rich dimeric/tetrameric proteins (adalimumab) in koji. Our target, lactoferrin (17 disulfides) and DAF SCR1-4 (8 disulfides), has similar folding/chaperone burdens.
+  - **Proven Multimeric Folding:** The lab demonstrated that NSlD-ΔP10 can fold complex, disulfide-rich dimeric/tetrameric proteins (adalimumab) in koji. The calibration payloads are lactoferrin (16 disulfides; Notari 2023, PMC10465537) and DAF SCR1-4 (8 disulfides), with distinct folding architectures and burdens.
 
 ### 2. Prof. Jingwen Zhou & Prof. Guoqiang Zhang (Jiangnan University, China)
 * **Emails:** zhoujw1982@jiangnan.edu.cn, gqzhang@jiangnan.edu.cn
@@ -207,7 +207,7 @@ Since Brian does not have a formal biochemistry PhD background, **having a PhD-l
 
 ### Technical Hooks for the Email
 * **Reference Specific Precedents:** Cite Huynh et al. 2020 ( adalimumab production in NSlD-ΔP10) to establish context.
-* **Address the Chaperone Burden (comp-010/comp-030):** State that our in silico folding model predicts the dual-cassette (lactoferrin + uricase) endoplasmic reticulum folding burden is ~1.06× that of their published adalimumab work.
+* **Address the Chaperone Burden (comp-010/comp-030):** State that the corrected bulk disulfide count is equal to their published adalimumab comparator (16 vs. 16), while explicitly noting that this does not predict equivalent folding capacity because lactoferrin and IgG have different architectures.
 * **Open Source & Open Science:** Provide links to our public research repository, showing that all construct designs, hypotheses (H01, H05), and protocols are fully documented.
 
 ---
@@ -223,13 +223,14 @@ I am writing on behalf of the Open Enzyme Project (open-enzyme.org), a collabora
 
 We have closely followed your lab's pioneering work in Aspergillus oryzae engineering, particularly [mention a specific paper, e.g., the development of the ten-protease-deletion strain NSlD-ΔP10 in Yoon et al. 2011 / the expression of complex multimeric proteins in Huynh et al. 2020].
 
-We are currently preparing for a validation phase to test the feasibility of expressing a dual-cassette construct:
-1. Uricase (Aspergillus flavus uaZ codon-optimized, driven by PTEF1)
-2. Human Lactoferrin (codon-optimized, driven by PamyB with a KEX2 cleavage site)
+We are currently preparing a staged validation program:
+1. Human lactoferrin alone (codon-optimized, PamyB glucoamylase-KEX2 architecture) to establish folding, function, and solid-state titer in NSlD-ΔP10.
+2. Uricase alone, using the topology selected by a preceding physiological substrate × oxygen × peroxide screen.
+3. A dual-cassette strain only if both single-cassette stages pass.
 
-Our in silico cassette compatibility and chaperone-orthogonal modeling (comp-010) suggest that the combined ER folding load of this dual-cassette system represents approximately 1.06× the chaperone burden of the adalimumab construct successfully expressed in your Huynh 2020 paper, predicting a high likelihood of folded, active yields.
+Our corrected comp-010 comparison finds that the lactoferrin + uricase pair and the adalimumab construct in your Huynh 2020 paper each contain 16 bulk disulfides. We treat this only as a reference point—not as evidence of equivalent ER folding capacity—because lactoferrin and IgG have different folding and assembly architectures. The staged study is designed to measure lactoferrin-only folding and function before attempting the dual construct.
 
-However, the primary gating risk for this project is host proteolytic degradation. Your NSlD-ΔP10 ten-protease-knockout strain represents the ideal genetic background to validate this design. 
+For the lactoferrin and coexistence stages, host proteolytic degradation is a major gating risk. Your NSlD-ΔP10 ten-protease-knockout strain is therefore the preferred genetic background for this staged test.
 
 We would like to explore two potential pathways with your lab:
 1. A Material Transfer Agreement (MTA) to obtain the NSlD-ΔP10 strain for use in our collaborative testing.

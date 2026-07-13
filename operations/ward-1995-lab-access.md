@@ -36,13 +36,13 @@ status: scope-page
 
 # Ward 1995 §1.9 Wet-Lab Access — Global Landscape (Japan / China / Europe)
 
-**Status:** scope-page (2026-05-05). Maps the global parallel options for executing [validation-experiments.md §1.9](./validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate--1-priority-gate) — the project's #1 priority gate. Companion to the US-only scope (covered separately via the active US Role 2 / Pharma Translation contact thread; see [team.md](./team.md)). This page exists so that if the US lead doesn't move forward, or if an alternative path is cheaper / faster / better-positioned, Brian has a pre-mapped order-of-operations to fall back on.
+**Status:** scope-page (2026-05-05; priority corrected 2026-07-13). Maps global options for executing [validation §1.9](../wiki/validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate), the conditional #1 koji-endgame architecture gate. §1.33 is now the upstream gout-program Gate 0, but access work should continue: §1.9A lactoferrin-only is independently informative and can run before UOX topology selection, while the same collaborator and chassis later support §1.9B/C. Companion to the US Role 2 contact thread; see [team](../wiki/etc/team.md).
 
 ---
 
 ## Why this page exists
 
-§1.9 is the single experiment that decides whether the [koji-endgame-strain](./koji-endgame-strain.md) thesis stands as a one-strain construct or collapses to a two-strain co-fermentation fallback. It needs:
+§1.9C is the coexistence experiment that decides whether the [koji-endgame-strain](../wiki/koji-endgame-strain.md) thesis stands as a one-strain construct or collapses to a two-strain co-fermentation fallback. The work is staged: §1.9A establishes the lactoferrin cassette independently, §1.9B establishes the §1.33-selected UOX topology in solid-state koji, and §1.9C combines only two passing single-cassette legs. The program needs:
 
 - *A. oryzae* genetic-engineering capability (PEG/CaCl₂ protoplast transformation; Agrobacterium also acceptable)
 - Solid-state rice koji fermentation infrastructure (plus parallel submerged-culture controls)
@@ -193,7 +193,7 @@ This is the single highest-leverage strain-side consideration. Synthesis of the 
 
 **Acceptable substitutes (more wet-lab work, but plausible):**
 
-1. **NSAR1 5-marker auxotroph (Oikawa 2020, PMC7725655)** — the platform comp-010 already analyzed for marker-slot capacity. Doesn't have the 10-protease background but provides 5 simultaneous integration slots. Lactoferrin titer would likely fall short of Huynh 2020's 39.7 mg/L benchmark (not the right benchmark anyway — Ward 1995 at >2 g/L is) but uricase is much less protease-sensitive and should work.
+1. **NSAR1 5-marker auxotroph (Oikawa 2020, PMC7725655)** — the platform comp-010 already analyzed for marker-slot capacity. Doesn't have the 10-protease background but provides 5 simultaneous integration slots. Lactoferrin titer may fall short of the protein-specific Ward 1995 precedent; UOX may be easier on the proteolysis axis, but system feasibility, topology, and peroxide safety remain gated by §1.33 rather than assumed from sequence properties.
 2. **AUT1-lD-v10-sD strain** (Huynh 2020 Table 1) — intermediate hyper-producer mutant with double deletion of *AosedD* + *Aovps10* + tppA + pepE. Published precedent for high heterologous expression. Same Maruyama lab.
 3. ***De novo* protease-knockout in NSAR1 background** — substantial wet-lab work (~12+ months for ten knockouts), but doable using the same CRISPR-Cas9 toolkit Maruyama and DTU groups have published. This is the "plan C" if the Maruyama lab path closes entirely.
 4. **C19 from Jiangnan** — published high-expression mutant; protease profile not characterized; would need separate validation work but the multi-locus integration toolkit is published and strong.
@@ -206,7 +206,7 @@ This is the single highest-leverage strain-side consideration. Synthesis of the 
 
 1. **Maruyama lab, University of Tokyo — academic collaboration** *(highest priority, single most-actionable lead)*. The strain origin lab; the only verified source of NSlD-ΔP10; published collaborator with foreign groups; corresponding author on the exact paper Killshot #1 cited. Cost likely modest ($5–15K range for materials + MTA + Brian-side gene synthesis), timeline 3–9 months from first email. Specific person: **Jun-ichi Maruyama, amarujun@mail.ecc.u-tokyo.ac.jp.**
 
-2. **Jingwen Zhou / Guoqiang Zhang group, Jiangnan University — academic collaboration with C19 chassis** *(parallel-path option if Tokyo doesn't engage)*. Functionally adjacent (multi-locus α-amylase integration), strong fermentation infrastructure, paper already cited in [koji-endgame-strain.md](./koji-endgame-strain.md). Engagement requires accepting that the chassis becomes C19 instead of NSlD-ΔP10 — design swap, not equivalent. Specific contact: corresponding author from PMC11742560 (verify via paper; likely Guoqiang Zhang or Jingwen Zhou). Cost similar range; timeline likely 4–9 months given international-collaboration paperwork.
+2. **Jingwen Zhou / Guoqiang Zhang group, Jiangnan University — academic collaboration with C19 chassis** *(parallel-path option if Tokyo doesn't engage)*. Functionally adjacent (multi-locus α-amylase integration), strong fermentation infrastructure, paper already cited in [koji-endgame-strain.md](../wiki/koji-endgame-strain.md). Engagement requires accepting that the chassis becomes C19 instead of NSlD-ΔP10 — design swap, not equivalent. Specific contact: corresponding author from PMC11742560 (verify via paper; likely Guoqiang Zhang or Jingwen Zhou). Cost similar range; timeline likely 4–9 months given international-collaboration paperwork.
 
 3. **Mortensen group, DTU — academic collaboration on the toolkit + co-development** *(parallel-path Europe option)*. Strongest CRISPR-Cas9 / Mad7 toolkit in Europe; Novonesis-alumni density in Copenhagen; would be a natural collaboration if Open Enzyme can frame the §1.9 work as a published toolkit-validation case study. Cost 10–30K range; timeline 6–12 months. Less direct strain access than Tokyo, more methodological depth than Jiangnan.
 
@@ -221,19 +221,19 @@ The substantive context for any researcher reaching out to the Maruyama group. T
 
 **Two asks, ordered by ambition:**
 1. **Material Transfer Agreement (MTA) for NSlD-ΔP10** — minimum needed to unblock §1.9. Standard academic MTA; expect 4–8 weeks for paperwork.
-2. **Collaboration or fee-for-service on the dual-cassette transformation itself** — more ambitious. The project has cassette designs ready (per [`koji-endgame-strain.md` §3.4](./koji-endgame-strain.md) and `engineered-koji-protocol.md` §16) and seed funding allocated. The Maruyama group's existing experience with the exact strain + similar architecture (adalimumab heavy + light chains) makes this the lowest-execution-risk path.
+2. **Collaboration or fee-for-service on the staged cassette program** — more ambitious. The project has candidate cassette designs (per [`koji-endgame-strain.md` §3.4](../wiki/koji-endgame-strain.md) and [`engineered-koji-protocol.md` §16](../wiki/engineered-koji-protocol.md)); the UOX cassette must inherit the §1.33 topology verdict. The Maruyama group's experience with the exact strain and a two-chain adalimumab architecture makes this the lowest-execution-risk path for §1.9A–C.
 
 **Substantive technical points worth bringing in the first message:**
 - Reference the exact paper (Huynh 2020 PMC7257131) so context is unambiguous
-- Note the comp-010 cassette-compatibility result: 1.06× the disulfide load of the Maruyama group's adalimumab work (within demonstrated NSlD-ΔP10 ER capacity), with LOW design risk per the in silico analysis
-- Note the Killshot #1 (H01) falsification check explicitly cites their work as the architecture-validating precedent
+- Note the corrected comp-010 cassette-compatibility result: Lf + UOX has the same **bulk disulfide count** as the Maruyama group's adalimumab work (16 vs. 16), with LOW sequence-level design risk; this is a comparator, not proof of equivalent folding capacity because the protein architectures differ
+- Note the Killshot #1 (H01) falsification check explicitly cites their work as the closest architecture precedent
 - Brief on the project framing: open-source, food-grade, gout-focused, with the §1.9 spec and falsification card publicly readable
 
 **Project-context pages worth linking in the message:**
-- [`validation-experiments.md` §1.9](./validation-experiments.md) — the experiment spec
-- [`koji-endgame-strain.md`](./koji-endgame-strain.md) — the platform thesis the experiment gates
-- [`hypotheses/H01-ward-dual-cassette.md`](./hypotheses/H01-ward-dual-cassette.md) — the falsification card with assumption stack and Killshot #1 findings
-- [`cassette-compatibility-computational.md`](./cassette-compatibility-computational.md) — comp-010, the cassette-design-risk verdict
+- [`validation-experiments.md` §1.9](../wiki/validation-experiments.md) — the experiment spec
+- [`koji-endgame-strain.md`](../wiki/koji-endgame-strain.md) — the platform thesis the experiment gates
+- [`hypotheses/H01-ward-dual-cassette.md`](../wiki/hypotheses/H01-ward-dual-cassette.md) — the falsification card with assumption stack and Killshot #1 findings
+- [`cassette-compatibility-computational.md`](../wiki/cassette-compatibility-computational.md) — comp-010, the cassette-design-risk verdict
 
 ### If the US lead falls through — order-of-operations parallel pursuit
 
@@ -250,7 +250,7 @@ The substantive context for any researcher reaching out to the Maruyama group. T
 - **No PI emails verified beyond Maruyama.** The Jiangnan, DTU, and Wösten leads were verified by published affiliation only. Specific corresponding-author emails should be pulled from each paper's correspondence section before outreach.
 - **No CRO pricing verified.** Filamentous-fungus engineering CROs do not publish pricing. The cost ranges above are estimates based on academic-collaboration norms, not CRO quotes. Direct RFQs would refine.
 - **Strain availability data is inferential outside Maruyama lab.** JCM, NBRC, CGMCC, CBS-KNAW, and ATCC catalog entries for specific NSlD / NSAR1 / protease-deletion strains were not exhaustively queried in this scope. Direct catalog queries (or a single batch email per repository asking "do you hold the following accessions?") would close this.
-- **No Japanese / Chinese language search.** All searches in this scope were English-language. Some Japanese industrial-koji R&D groups and Chinese academic groups have substantially more depth in their native-language publications and websites than English summaries reflect. A bilingual collaborator (or a follow-up sweep with Japanese / Chinese language search) would surface leads this scope missed.
+- **Original source coverage was incomplete.** This 2026-05-05 scope began from English-indexed sources. A follow-up must search Japanese and Chinese sources directly, including J-STAGE, CiNii/J-GLOBAL, CNKI, WanFang, institutional pages, and local strain catalogs; language itself is not a barrier.
 - **Industrial partners (Novonesis, DSM-Firmenich, Kikkoman, etc.) are mapped but flagged as structurally incompatible with current Open Enzyme posture.** This may change once Open Enzyme has commercial-strain validation in hand and is licensing or partnering rather than requesting.
 - **The US scope (covered separately) intentionally excluded.** This page is the global parallel set, not the full landscape.
 
@@ -258,11 +258,11 @@ The substantive context for any researcher reaching out to the Maruyama group. T
 
 ## Cross-References
 
-- [`validation-experiments.md`](./validation-experiments.md) §1.9 — the experiment this page is about
-- [`team.md`](./team.md) — Brian + the three actively-recruiting collaborator roles, plus the addendum pointing here
-- [`hypotheses/H01-ward-dual-cassette.md`](./hypotheses/H01-ward-dual-cassette.md) — the falsification card; Killshot #1 surfaced NSlD-ΔP10 as the default chassis
-- [`cassette-compatibility-computational.md`](./cassette-compatibility-computational.md) — comp-010, the in silico cassette-design analysis (LOW risk verdict)
-- [`koji-endgame-strain.md`](./koji-endgame-strain.md) — the endgame strain thesis §1.9 gates
-- [`engineered-koji-protocol.md`](./engineered-koji-protocol.md) — the construct-design and assay protocol stack
-- [`aspergillus-oryzae.md`](./aspergillus-oryzae.md) — chassis-level reference page
+- [`validation-experiments.md`](../wiki/validation-experiments.md) §1.9 — the experiment this page is about
+- [`team.md`](../wiki/etc/team.md) — Brian + the three actively-recruiting collaborator roles, plus the addendum pointing here
+- [`hypotheses/H01-ward-dual-cassette.md`](../wiki/hypotheses/H01-ward-dual-cassette.md) — the falsification card; Killshot #1 surfaced NSlD-ΔP10 as the default chassis
+- [`cassette-compatibility-computational.md`](../wiki/cassette-compatibility-computational.md) — comp-010, the in silico cassette-design analysis (LOW sequence-level design risk)
+- [`koji-endgame-strain.md`](../wiki/koji-endgame-strain.md) — the endgame strain thesis §1.9 gates
+- [`engineered-koji-protocol.md`](../wiki/engineered-koji-protocol.md) — the construct-design and assay protocol stack
+- [`aspergillus-oryzae.md`](../wiki/aspergillus-oryzae.md) — chassis-level reference page
 - [`tcm-modern-rigor-intersection.md`](../wiki/tcm-modern-rigor-intersection.md) — sister operationalization of the **global-multilingual research default** (`Open Enzyme/CLAUDE.md` §"Global-multilingual research by default"). Both pages independently treat language as a non-barrier and proactively map non-English-world resources as first-class assets: this lab-access page targets Japan / China / Europe academic + industrial fungal-engineering groups; the TCM page targets Chinese / Japanese clinical literature (CNKI / WanFang / J-STAGE / ChiCTR). Same methodology, different operational domains (resource acquisition vs. literature ingestion). Future peer-track scope pages requiring specialized resources should follow the same multilingual-proactive template.

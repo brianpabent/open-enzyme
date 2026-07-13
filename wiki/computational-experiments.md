@@ -329,20 +329,20 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-022 — ClockBase Combinatorial Ranking of A. oryzae Uricase Cassettes — §1.9 architecture stands (2026-05-14)
+### comp-022 — ClockBase Combinatorial Ranking of A. oryzae Uricase Cassettes — candidate generator, topology unresolved (2026-05-14; reframed 2026-07-13)
 
-**Question:** Across the *A. oryzae* uricase cassette design space (43,200 combinations), which cassettes survive a multi-model concordance gate and warrant promotion to §1.9 wet-lab?
+**Question:** Across the *A. oryzae* uricase cassette design space (43,200 combinations), which cassettes survive a multi-model concordance gate?
 
-**Verdict:** **§1.9 architecture stands; refinements at gene-synthesis layer.** Top cluster: PamyB + amyB SP + 5'-softened codon variant + direct-secretion + PTS1-blocking C-terminal tag + N191Q glycosylation ablation. v2: 71 cassettes pass N-of-5 ≥ 4; v1 top cluster survives 4/4 = 100%.
+**Current verdict:** **Useful candidate ranking; topology not selected.** The direct-secretion top cluster and its gene-synthesis refinements survive within comp-022's search space, but comp-044/045 showed that §1.33 must determine whether secretion is physiologically credible before promotion to §1.9B.
 
 **Key findings:**
 - Three zero-cost gene-synthesis refinements: 5'-softened codon optimization; PTS1-blocking C-term tag (addresses comp-010 routing risk at design layer); N191Q glycosylation ablation.
-- Glucoamylase-KEX2 fusion is wrong for uricase (no disulfides + no glycosylation = no carrier benefit, plus 10–25× chaperone load). Confirms comp-010: uricase wants direct secretion, Lf wants fusion.
-- v1 GC-clamp proxy vs real ViennaRNA MFE Spearman ρ = 0.241 — v1 proxy noisy on mRNA axis; v2 retrofit with ESM2 pseudo-pLDDT + real MFE materially shifted ranks but architecture verdict held.
+- Within the tested koji-secreted cassette space, glucoamylase-KEX2 fusion ranks below direct secretion. This does not compare koji secretion with intracellular, displayed, or bacterial topologies in §1.33.
+- v1 GC-clamp proxy vs real ViennaRNA MFE Spearman ρ = 0.241; v2 materially shifted ranks while preserving the internal direct-secretion cluster.
 
 **Informs:** [validation-experiments §1.9](./validation-experiments.md) · [cassette-compatibility-computational](./cassette-compatibility-computational.md) · [koji-endgame-strain §3.4](./koji-endgame-strain.md) · [etc/autonomous-screening-methodology](./etc/autonomous-screening-methodology.md)
 
-**Detail:** [interpretive](./uricase-cassette-ranking-computational.md) · [experiments/](./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/) · v2 complete (v2.5 deferred until §1.9 wet-lab data lands)
+**Detail:** [interpretive](./uricase-cassette-ranking-computational.md) · [experiments/](./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/) · v2 complete (v2.5 deferred until §1.33/§1.9B wet-lab data lands)
 
 ---
 
@@ -563,7 +563,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 **Verdict:** **MODERATE** (vs *A. flavus* LOW per comp-010). Design-driven, not fundamental incompatibility.
 
 **Key findings:**
-- Platform decision: **don't pick; run BOTH variants in §1.9 as parallel direct-secretion cassettes** at ~$200–400 additional gene synthesis. Empirical comparison resolves *A. flavus* vs *C. utilis*.
+- Current platform decision: retain both variants as candidates; use §1.33 to select topology, then compare both within a winning koji-compatible topology when the marginal cost remains bounded. The original direct-secretion/$0-fermentation recommendation is superseded.
 - Three MODERATE drivers: codon burden 2.3× heavier (CAI 0.65 vs 1.51); 4 free cysteines vs 0; 2 internal KR sites vs 1. ALLN-346 mutation I132R adjacent to position 130 KR.
 - Corrects prior P15296 misattribution; canonical UniProt is **P78609**.
 
@@ -577,14 +577,14 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Question:** Does the uricase (Q00511) + lactoferrin (P02788) payload pair have cassette-design-specific issues (codon collisions, KEX2 geometry, secretion burden) that the Ward 1995 glucoamylase-KEX2 architecture won't handle?
 
-**Verdict:** **LOW** overall cassette-design risk for the asymmetric architecture (direct-secretion uricase + glucoamylase-KEX2-fusion Lf). Uricase: 0 disulfides; Lf: 17 disulfides (1.06× Huynh 2020). No blocking issues.
+**Verdict:** **LOW** overall cassette-design risk for the asymmetric architecture (direct-secretion uricase + glucoamylase-KEX2-fusion Lf). Uricase: 0 disulfides; Lf: 16 disulfides, equal by bulk count to the 16-disulfide Huynh 2020 reference (Notari 2023 count correction propagated 2026-07-13). Fold-specific burden remains empirical; no blocking sequence-level issues.
 
 **Key findings:**
-- OE payload pair within Huynh 2020 ER-capacity precedent. Ward 1995 >2 g/L Lf is the correct benchmark (not adalimumab 39.7 mg/L).
+- OE pair equals Huynh 2020 only by bulk disulfide count; protein-architecture-specific ER capacity remains unresolved. Ward 1995 is the protein-specific Lf precedent, while §1.9A is the current-host empirical gate.
 - Monitor Lf KEX2 site at mature pos 579 (moderate truncation risk) by SDS-PAGE; verify uricase secretion vs C-terminal SKL PTS1 motif.
-- Uricase pos 128 high-risk KR is irrelevant for direct-secretion (load-bearing only if moved to fusion).
+- Uricase pos 128 high-risk KR is irrelevant within the direct-secretion candidate but becomes load-bearing if §1.33 selects a fusion topology.
 
-**Informs:** [validation-experiments §1.9](./validation-experiments.md) — removes cassette architecture as pre-experiment concern
+**Informs:** [validation-experiments §1.33 and §1.9](./validation-experiments.md) — removes specific sequence-level blockers from one candidate architecture; does not select topology
 
 **Detail:** [interpretive](./cassette-compatibility-computational.md) · [experiments/](./etc/experiments/comp-010-cassette-compatibility/) · Complete
 

@@ -15,7 +15,7 @@
 - **Genome size 2.78-3.23 Mbp** — Fraccascia 2022 PMC9872689 content.lines L11 (verbatim: "The genome sizes ranged from 2.78 Mbp to 3.23 Mbp")
 - **2,795 protein-coding genes average** — Fraccascia 2022 PMC9872689 content.lines L11
 - **Uricase Q00511, 302 aa, A. flavus, cofactorless oxidoreductase requiring molecular O2** — UniProt Q00511 REST fetch 2026-05-16
-- **Lactoferrin P02788, 710 aa, signal peptide 1-19, 17 disulfides, 3 N-glycosylation sites (156, 497, 642)** — UniProt P02788 REST fetch 2026-05-16
+- **Lactoferrin P02788, 710 aa, signal peptide 1-19, 16 mature-protein disulfides, 3 N-glycosylation sites (156, 497, 642)** — sequence and glycosylation from UniProt P02788 REST fetch 2026-05-16; disulfide count corrected from Notari 2023 (PMC10465537)
 - **CR1 P17927, 2039 aa full length, 60 disulfides across 30 SCR domains (2 per domain), 22 N-glycosylation sites** — UniProt P17927 REST fetch 2026-05-16. SCR1-4 truncation derived: 280 aa, 8 disulfides
 - **Butyryl-CoA:acetate CoA-transferase C7H5K4, 448 aa, gene FAEPRAA2165_01575, F. duncaniae DSM 17677** — UniProt C7H5K4 REST fetch 2026-05-16. EC 2.8.3.-; cytoplasmic
 - **MAM delivery via L. lactis (not engineered F. prausnitzii itself)** — Quévrain 2016 Gut doi:10.1136/gutjnl-2014-307649 abstract + Breyner 2017 Front Microbiol doi:10.3389/fmicb.2017.00114 abstract (PubMed metadata verified)

@@ -63,13 +63,15 @@ sources:
 
 > **Pre-registration note.** The claim, assumption stack, and killshot menu below are frozen as of the first commit of this file (2026-04-24, git SHA TBD at commit time). Subsequent edits log in git with rationale in the commit message. See [README.md](./README.md) and [../linter-design.md](../linter-design.md) §6 for the convention.
 
+> **Current sequencing correction (2026-07-13):** H01 remains Pending and remains the decisive one-strain-versus-two-strain koji-endgame card. It is no longer the first gout-program wet-lab gate. [Validation §1.33](../validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) must select a physiologically credible, peroxide-controlled UOX topology before the UOX-only and dual portions of §1.9 are frozen. The Lf-only arm may proceed independently in parallel.
+
 ---
 
 ## Claim
 
 Ward's *A. awamori* glucoamylase-KEX2 dual-cassette architecture, validated for single-cassette human lactoferrin (hLf) expression at >2 g/L submerged (Ward 1995, PMID 9634791), can be layered with a second expression cassette for *A. flavus* uricase (*uaZ*) in *A. oryzae* solid-state rice koji fermentation without silencing either heterologous protein or disrupting native metabolite production (kojic acid, ergothioneine).
 
-This is the single gating feasibility test for the [koji endgame strain](../koji-endgame-strain.md) thesis. If it passes, Year 2–3 koji development converges on one engineered strain delivering four molecules covering five NLRP3-pathway chokepoints. If it fails, the platform falls back to the two-strain co-ferment path ([koji-endgame-strain.md §4.1](../koji-endgame-strain.md)) which preserves the coverage matrix at the cost of single-strain elegance.
+This is the decisive cassette-coexistence feasibility test for the [koji endgame strain](../koji-endgame-strain.md) thesis, conditional on an upstream §1.33 UOX topology pass. If it passes, Year 2–3 koji development can converge on one engineered strain. If it fails after both single-cassette arms pass, the platform falls back to the two-strain co-ferment path, preserving the coverage matrix at the cost of single-strain elegance.
 
 ---
 
@@ -95,11 +97,13 @@ This is the single gating feasibility test for the [koji endgame strain](../koji
 
 Ranked by `score = (kill_pr × info_weight) / (cost × time_penalty)` per `linter-design.md` §4. Sorted descending. Higher score = run first.
 
+**External prerequisite added 2026-07-13:** §1.33 is upstream of this H01-specific ranking. It selects the UOX topology; this card ranks how to test coexistence once that input exists. Lf-only work is independent and may proceed in parallel.
+
 | # | Killshot | Cost | Weeks | kill_pr | info_weight | Failure modes | Score (rel.) |
 |---|---|---|---|---|---|---|---|
 | 1 | **Literature/patent landscape deep-dive** on *A. oryzae* dual-heterologous-cassette expression + solid-state koji multi-protein precedent. Scope: PubMed + Google Scholar + Espacenet patent search; adjacent precedents (Wang 2023 *A. niger*, Li 2024 *A. oryzae* multi-copy same-protein). Cheapest possible upstream move — answers whether the assumption "no published precedent" is actually correct, or whether we've missed a directly-relevant paper. If a published dual-cassette *A. oryzae* precedent exists, it either validates the hypothesis cheaply or reveals a failure mode we missed. | $0 | 1 | 0.3 | 0.9 (root — tests assumption 2 and partially 1) | published-literature-gap, species-gap-translation | **HIGHEST — run first** |
-| 2 | **Dual-cassette transformation + fermentation + quantified readouts.** Both cassettes integrated sequentially (Cassette A lactoferrin PamyB-glucoamylase-KEX2site-hLf-TamyB with pyrG selection; Cassette B uricase PTEF1-amyB_SP-uaZ-TgpdA with niaD selection). Solid-state rice koji 48–60 h at 30°C, 35% moisture, with submerged-culture parallel control. Readouts: uricase activity (UA-disappearance assay), Lf titer (ELISA + Western), iron-binding (UV-Vis 465 nm), native metabolite panel (kojic acid HPLC, ergothioneine LC-MS), qPCR for cassette copy numbers, SDS-PAGE for truncated/unprocessed species. This is the full §3.4 protocol from [koji-endgame-strain.md](../koji-endgame-strain.md). | $5,000 | 12 | 0.5 | 1.0 (root — directly tests the claim) | expression/localization-mismatch, kinetics/concentration, assay-specificity | High |
-| 3 | **Single-cassette uricase-only control in *A. oryzae* RIB40 solid-state rice koji.** Tests whether uricase expresses in solid-state format at all, independent of the dual-cassette question. If single-cassette uricase in solid-state koji is already <50 mg/g, the dual-cassette target is off before Ward layering even starts. This is the Year 1 starting strain per [engineered-koji-protocol.md](../engineered-koji-protocol.md) and doubles as a killshot for the endgame hypothesis. | $2,000 | 8 | 0.1 | 0.4 (leaf — tests subset of assumption 2) | expression/localization-mismatch, substrate-availability | Medium |
+| 2 | **Staged Lf-only → selected UOX-only → dual-cassette transformation and fermentation.** Stage A validates Ward-architecture Lf independently. Stage B implements the §1.33-selected UOX topology alone in the same host and solid-state format. Stage C combines them only after both pass, with matched single-cassette controls and physiological-condition UOX/peroxide/viability readouts. | $5,265–8,065 full path | 8–12 after topology input | 0.5 | 1.0 (root — directly tests coexistence) | expression/localization-mismatch, kinetics/concentration, peroxide/viability, assay-specificity | High |
+| 3 | **§1.33-selected UOX-only control in *A. oryzae* solid-state rice koji.** Tests whether the winning UOX topology transfers into the intended host/matrix before cassette coexistence is attempted. Failure to reproduce physiological-condition product formation stops §1.9C but does not by itself falsify the broader gut-sink hypothesis or non-koji topologies. | TBD within §1.33/§1.9B | TBD | 0.1 | 0.4 (prerequisite — tests subset of assumption 2) | expression/localization-mismatch, substrate/oxygen/peroxide | Medium |
 | 4 | **Native metabolite panel pre/post engineering.** Parallel WT-vs-engineered kojic-acid and ergothioneine titer comparison. If either drops >50% when the two heterologous cassettes are added, the native-metabolite-preservation component of the claim is killed even if the heterologous proteins express fine. This readout overlaps with killshot 2 but is separable — it can be run on a simpler single-cassette intermediate first. | $1,000 | 2 | 0.15 | 0.5 (midstream — tests claim's "without disrupting native metabolite production" clause) | substrate-availability, expression/localization-mismatch | Medium |
 | 5 | **Iron-binding functional assay on expressed lactoferrin.** UV-Vis at 465 nm for apo-vs-holo ratio; optional CD spectroscopy for fold confirmation; pH-dependent iron release kinetics. Tests assumption 4 directly. If recombinant solid-state-produced Lf has lost iron-binding, the CP1b (Fenton ROS) mechanism from [koji-endgame-strain.md §2.2](../koji-endgame-strain.md) is compromised, though CP4 and CP6b mitophagy mechanisms may survive. Not a full kill of H01 (the cassette still expresses) but a significant narrowing of the Lf functional claim. | $500 | 2 | 0.2 | 0.3 (leaf — tests assumption 4 only) | expression/localization-mismatch, assay-specificity | Medium-low |
 
@@ -128,11 +132,11 @@ Two killshots share a failure-mode vector only if the overlap is load-bearing. K
 
 Declared before any killshot executes. These are the lines in the sand.
 
-### Alive
+### Alive — current interpretation
 
-Dual-cassette *A. oryzae* strain in solid-state rice koji (48–60 h, 30°C, 35% moisture) produces:
+Dual-cassette *A. oryzae* strain in solid-state rice koji produces:
 
-- **Uricase:** ≥50 μmol/h/OD (equivalent to ≥100 mg/L pore-fluid / ≥10 mg/g dry koji at industrial ratios — matches ALLN-346 clinical dosing floor)
+- **Uricase:** the original `≥50 μmol/h/OD`/dose-equivalence line is retired as the H01 pass criterion. Current requirement: the UOX-only strain must first pass §1.33 at the human-baseline substrate prior, then the dual strain must retain physiological-condition product formation within 30% of that matched UOX-only baseline without excess extracellular H₂O₂ or viability loss. No serum-urate or clinical-dose equivalence is inferred from this in-vitro threshold.
 - **Lactoferrin:** ≥500 mg/L pore-fluid equivalent (or ≥50 mg/g dry koji — the Phase B floor per [koji-endgame-strain.md §3.4](../koji-endgame-strain.md))
 - **Native kojic acid:** within 30% of WT titer (WT baseline 3–5 g/L per [aspergillus-oryzae.md](../aspergillus-oryzae.md); floor 2.1 g/L)
 - **Native ergothioneine:** within 30% of WT titer (WT baseline ~20 mg/g dry mycelium; floor 14 mg/g)
@@ -142,7 +146,8 @@ Dual-cassette *A. oryzae* strain in solid-state rice koji (48–60 h, 30°C, 35%
 
 Any one of the following:
 
-- Either heterologous protein undetectable (uricase <10 mg/L, or Lf <100 mg/L pore-fluid equivalent) after two rounds of cassette/host optimization
+- After both single-cassette arms pass, the dual strain loses >50% of physiological-condition UOX product formation versus the matched UOX-only strain or introduces an extracellular-H₂O₂/viability penalty that persists after two architecture-optimization rounds
+- Lactoferrin remains <100 mg/L pore-fluid equivalent after two rounds of cassette/host optimization
 - Native kojic acid or ergothioneine drops >50% from WT baseline and does not recover under iron / N supplementation
 - Lactoferrin iron-binding <20% of submerged reference (indicates fold collapse, not just titer weakness)
 
@@ -150,7 +155,7 @@ Any one of the following:
 
 Intermediate outcomes that cross neither threshold:
 
-- Uricase 10–100 mg/L, Lf 100–500 mg/L (expression works but titers are Phase C rather than Phase B)
+- Dual-strain UOX product formation is 30–50% below the matched UOX-only strain, or Lf is 100–500 mg/L (expression works but the coexistence architecture needs iteration)
 - Native metabolite drop 30–50% (recoverable with media optimization, not yet disqualifying)
 - Iron-binding 20–40% (fold is partially compromised but not lost)
 
@@ -190,7 +195,7 @@ Coverage gaps are acceptable — H01 is a feasibility-gate hypothesis, not a mec
 
 ## Status
 
-**Survived Killshot #1 (Literature/patent landscape — academic, 2026-05-05) and Killshot #1.5 (Patent landscape deep-dive — industrial IP, 2026-05-05).** Both produced **partial-validates / partial-confirms-novelty** outcomes converging on the same conclusion: **dual-cassette heterologous protein co-expression in *A. oryzae* under submerged conditions is well-precedented in both academic literature and industrial IP**, but **no patent or paper in any of the major databases (Google Patents, USPTO, EPO/Espacenet, JPO, CNIPA, Lens.org) discloses two heterologous proteins co-expressed in *A. oryzae* solid-state rice koji at therapeutic-grade titers**. The §1.9 wet-lab feasibility test retains its novelty premise on the solid-state-format axis, with the architectural and species-translation premises now well-supported by both academic and patent precedent. Assumption 1 (species translation *A. awamori* → *A. oryzae*) and Assumption 6 (KEX-2 capacity for fusion cassettes) remain upgraded to **In Vitro (multiple precedents)**. Assumption 2 (solid-state dual-protein) remains **Mechanistic Extrapolation** with adjacent flanking precedents (Wakai 2019 — three-cassette submerged in *A. oryzae*; Shinkawa 2020 — single-cassette heterologous SSF in *A. oryzae*; Senoo/Tezuka 2024 — three-to-four-enzyme self-cloning SSF in *A. oryzae*) bracketing the gap from both directions. Killshot #2 (the wet-lab dual-cassette experiment) remains the next gating move.
+**Survived Killshot #1 (academic literature, 2026-05-05) and Killshot #1.5 (industrial IP, 2026-05-05).** Both partially validate the architecture and confirm that the dual-heterologous × solid-state intersection remains open. Within H01, the wet-lab coexistence test is still decisive—but only after §1.33 selects a UOX topology and §1.9B validates that UOX-only implementation. The literature result did not answer the upstream UOX-system question.
 
 **Survival count:** 2.
 
@@ -241,7 +246,7 @@ Synthesis of literature against H01's assumption stack:
 | 3. Native proteases don't degrade Lf/uricase at lethal rates | Mechanistic Extrapolation | **In Vitro (with caveat)** | Huynh 2020 [1] shows **endogenous proteases are the dominant loss mechanism for heterologous antibody** in *A. oryzae* — a 10-protease deletion strain (NSlD-ΔP10) was required for 39.7 mg/L titer. Implication for H01: a protease-deletion host (or inducer-controlled timing) is likely needed to hit the 500 mg/L Lf threshold. The pepE/dppIV/dppV/alpA/pepA/AopepAa/AopepAd/cpI deletion set is a documented starting point. |
 | 4. Solid-state Lf retains iron-binding | In Vitro (submerged only) | **In Vitro (submerged only) — no change** | No solid-state recombinant Lf paper found. Killshot #5 (iron-binding assay) remains the way to test this. |
 | 5. Multiple selection markers co-exist without conflict | In Vitro (industrial practice) | **In Vitro (multiple precedents)** | Oikawa 2020 [4] documents the NSAR1 quadruple-auxotrophic platform plus ptrA = **5 simultaneous markers** in *A. oryzae* (niaD, sC, argB, adeA, ptrA), used routinely for ≥17-gene cluster reconstitutions. The 2-marker H01 design is well within precedent. |
-| 6. KEX-2 capacity sufficient for two fusion cassettes | Mechanistic Extrapolation | **In Vitro (direct precedent)** | Huynh 2020 [1] demonstrates simultaneous KEX-2 cleavage of **two distinct AmyB-KRGGG-payload fusions** (heavy chain + light chain) producing both correctly-cleaved proteins. KEX-2 capacity is not the bottleneck at the 39.7 mg/L scale; whether it saturates at the 500 mg/L Lf + 100 mg/L uricase H01 targets is empirically open but no published evidence suggests it would. |
+| 6. KEX-2 capacity sufficient for two fusion cassettes | Mechanistic Extrapolation | **In Vitro (direct precedent)** | Huynh 2020 [1] demonstrates simultaneous KEX-2 cleavage of two distinct AmyB-KRGGG-payload fusions. This supports capacity at the reported antibody scale. It becomes relevant to UOX only if §1.33 selects a fusion-dependent implementation; no physiological UOX conclusion follows. |
 | 7. Solid-state Lf glycosylation within submerged envelope | Animal Model (submerged only) | **Animal Model (submerged only) — no change** | No published comparative glycan analysis of *A. oryzae* solid-state vs. submerged secreted protein. Future Killshot #6 (glycan profiling) would test this. |
 
 ### What this means for §1.9 wet-lab framing
@@ -252,14 +257,14 @@ Synthesis of literature against H01's assumption stack:
 2. **Protease-deletion host is now elevated from "fallback" to "default."** Huynh 2020 [1] shows ten-protease-deletion (NSlD-ΔP10) was necessary to detect functional antibody at all; the wild-type RIB40 background may be a non-starter for the Lf side of the dual cassette. The §1.9 design should consider starting from NSlD-ΔP10 or an equivalent industrial protease-knockout chassis.
 3. **The solid-state question is the real load-bearing test.** Sun 2024 [9] explicitly notes glaB-type proteins fail to secrete in solid-state despite secreting in submerged. Whether AmyB-fused Lf and AmyB-fused uricase fall on the "secretes in both" or "secretes in submerged only" side of this divide is the actual experimental novelty.
 4. **The 5-marker NSAR1 platform** (Oikawa 2020 [4]) is the suggested host platform — it's already industrial-practice and accommodates the 2-cassette H01 design with three slots to spare for downstream additions (e.g., kojic-acid-pathway enhancement, ergothioneine pathway maintenance).
-5. **No urgency change for §1.9 priority** — it remains the #1 gate. The literature deep-dive narrowed the question but didn't answer it.
+5. **Historical conclusion from this literature pass (superseded 2026-07-13):** this pass did not change §1.9 urgency within the koji-endgame question. Comp-044/045 later inserted §1.33 as the upstream gout-program Gate 0 and split §1.9 into Lf-only, selected UOX-only, and dual stages.
 
 ### comp-010 Follow-Up: Cassette Compatibility (2026-05-05)
 
 **comp-010 is in silico design support — not a killshot and not a survived killshot.** It addresses sequence-level cassette-design questions that Killshot #1 (literature audit) could not: KEX2 internal-site geometry, codon-optimization burden, disulfide load, and secretion-targeting signals. Key findings for the H01 assumption stack:
 
-- **Assumption 6 (KEX-2 capacity):** No high-risk KEX2 internal sites in lactoferrin (2 sites: 1 abolished P1'=D, 1 moderate P1'=K). Uricase has 1 high-risk site (pos 128, P1'=N) but **only load-bearing if uricase is in a fusion architecture** — the §1.9 proposed design uses direct secretion for uricase, making this moot. Assumption 6 remains **In Vitro (direct precedent)** per Killshot #1; comp-010 adds no new evidence level.
-- **Assumption 3 (protease load, H01 only):** Disulfide load analysis confirms dual-cassette ER burden = 1.06× Huynh 2020 baseline (17 disulfides, all on Lf). Within demonstrated capacity. No change to assumption-3 evidence level.
+- **Assumption 6 (KEX-2 capacity):** No high-risk KEX2 internal sites in lactoferrin. Uricase's internal site matters only if §1.33 selects a fusion architecture; the provisional direct-secretion comparator bypasses it. Assumption 6 remains **In Vitro (direct precedent)** for the Lf architecture; comp-010 adds no new evidence level.
+- **Assumption 3 (protease load, H01 only; count corrected 2026-07-13):** bulk disulfide count for the dual pair is 16, all on Lf, equal to the 16-disulfide Huynh 2020 adalimumab reference by count (Notari 2023, PMC10465537). Fold architecture differs, so this is not proof of equivalent ER burden. No change to the assumption-3 evidence level.
 - **Uricase C-terminal SKL:** A potential PTS1 peroxisomal signal in the uricase sequence. Verify secretion in §1.9. If misrouted, append 3×Ala to mask. Pre-experiment design note, not a H01 assumption change.
 
 Full analysis: [`wiki/cassette-compatibility-computational.md`](../cassette-compatibility-computational.md) | [`wiki/etc/experiments/comp-010-cassette-compatibility/`](../etc/experiments/comp-010-cassette-compatibility/)
@@ -366,7 +371,7 @@ The Killshot #1 caveat — "~30% probability of unpublished industrial IP from N
 2. **No industrial-IP failure-mode disclosure was surfaced.** The hypothetical "Novonesis or DSM-Firmenich filed a patent disclosing systemic silencing of co-expressed cassettes in *A. oryzae*" scenario did not materialize. If such a failure mode is known industrial trade-secret knowledge, it has not been disclosed in any published patent, which weakly suggests either (a) it doesn't exist, or (b) it exists but the assignees prefer trade-secret protection over patent-claim disclosure (the standard biotech-process-IP preference). Either way, the §1.9 design is not deflected by this search.
 3. **No industrial-IP solid-state-format precedent was surfaced.** Despite searching across Japanese (Asahi Breweries, Gekkeikan, U Tokyo), Chinese (East China Univ of Sci & Tech, Jiangnan), and Western (Novozymes, DSM, Genencor) assignees, **no patent was found that demonstrates two heterologous proteins simultaneously expressed in *A. oryzae* solid-state at therapeutic-grade titers**. The Senoo 2024 publication is the closest disclosure (multi-enzyme × solid-state) but is self-cloning, not heterologous, and academic rather than IP-protected. **The H01 §1.9 architecture is genuinely first-in-class on the heterologous × solid-state × dual-cassette × therapeutic-titer axis.**
 4. **Industrial Novonesis lineage is the de facto strain platform.** The Nielsen 2025 paper publicly discloses that the Novonesis *A. oryzae* BECh1 lineage (with large chromosomal deletion removing aflatoxin + cyclopiazonic acid clusters) is the industry-standard heterologous-protein chassis. This is now the natural reference strain for §1.9 — though the published academic NSAR1 / NSlD-ΔP10 strains remain the practical starting point for an academic collaborator (Maruyama or a Role 2 / Pharma Translation collaborator) without Novonesis access.
-5. **No urgency change for §1.9 priority.** The patent landscape narrowed the residual industrial-IP risk from ~30% to <10% but did not surface either a validating direct-precedent patent (which would have de-risked §1.9) or a killing failure-mode patent (which would have forced a fallback). §1.9 remains the #1 gate.
+5. **Historical conclusion from this patent pass (superseded 2026-07-13):** the patent landscape did not change §1.9 urgency within the koji-endgame question. Comp-044/045 later moved §1.33 ahead of its UOX and dual stages for scientific, not IP, reasons.
 
 ### Most material caveat / what couldn't be verified
 

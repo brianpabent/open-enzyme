@@ -81,7 +81,7 @@
       "folding_load_description": "0.00x Huynh 2020 adalimumab baseline",
       "fold_risk": "VERY LOW",
       "fold_note": "No disulfide bonds annotated (UniProt) \u2014 no PDI load from disulfide formation. However, 4 free cysteine(s) present: risk of aberrant intermolecular disulfide formation in the oxidizing ER environment during secretion. Monitor for aggregation bands in non-reducing SDS-PAGE. A. oryzae ER is oxidizing (PDI/ERO1 system active); free cysteines in secreted proteins can form unintended disulfide bonds during transit. Folding is otherwise independent of the PDI oxidative pathway.",
-      "method_note": "Cysteine count from sequence. Known disulfide bond count from UniProt annotation. Folding load index = N_disulfides / 16 (Huynh 2020 adalimumab = 16 disulfides across HC+LC = 1.0). A. oryzae NSlD-\u0394P10 demonstrated capacity for the Huynh 2020 baseline \u2014 whether higher disulfide loads saturate ER PDI/ERO1 is empirically open. Structural pLDDT is not incorporated here. For C. utilis uricase: 4 Cys, 0 disulfides annotated. Free cysteines in the oxidizing ER lumen pose a theoretical aggregation risk during secretion transit. Evidence level: Mechanistic Extrapolation."
+      "method_note": "Cysteine count from mature sequence after signal-peptide removal. Lactoferrin disulfide count from Notari 2023 (PMC10465537). Folding load index = N_disulfides / 16 (Huynh 2020 adalimumab = 16 disulfides across HC+LC = 1.0). This is a bulk-count comparator, not evidence of equivalent capacity across protein architectures. Whether lactoferrin saturates ER PDI/ERO1 is empirically open. Structural pLDDT is not incorporated here. For C. utilis uricase: 4 Cys, 0 disulfides annotated. Free cysteines in the oxidizing ER lumen pose a theoretical aggregation risk during secretion transit. Evidence level: Mechanistic Extrapolation."
     },
     "glycosylation": {
       "protein_name": "C. utilis uricase (P78609)",
@@ -159,15 +159,15 @@
     "disulfide": {
       "protein_name": "Lactoferrin (P02788)",
       "origin": "Homo sapiens (mammalian)",
-      "total_cysteine_count": 33,
-      "known_disulfide_bonds": 17,
+      "total_cysteine_count": 32,
+      "known_disulfide_bonds": 16,
       "free_cysteine_estimate": 0,
       "huynh_2020_baseline": 16,
-      "folding_load_index": 1.062,
-      "folding_load_description": "1.06x Huynh 2020 adalimumab baseline",
+      "folding_load_index": 1.0,
+      "folding_load_description": "1.00x Huynh 2020 adalimumab baseline",
       "fold_risk": "MODERATE",
-      "fold_note": "17 disulfides \u2014 comparable to Huynh 2020 adalimumab baseline (16 disulfides)",
-      "method_note": "Cysteine count from sequence. Known disulfide bond count from UniProt annotation. Folding load index = N_disulfides / 16 (Huynh 2020 adalimumab = 16 disulfides across HC+LC = 1.0). A. oryzae NSlD-\u0394P10 demonstrated capacity for the Huynh 2020 baseline \u2014 whether higher disulfide loads saturate ER PDI/ERO1 is empirically open. Structural pLDDT is not incorporated here. For C. utilis uricase: 4 Cys, 0 disulfides annotated. Free cysteines in the oxidizing ER lumen pose a theoretical aggregation risk during secretion transit. Evidence level: Mechanistic Extrapolation."
+      "fold_note": "16 disulfides \u2014 comparable to Huynh 2020 adalimumab baseline (16 disulfides)",
+      "method_note": "Cysteine count from mature sequence after signal-peptide removal. Lactoferrin disulfide count from Notari 2023 (PMC10465537). Folding load index = N_disulfides / 16 (Huynh 2020 adalimumab = 16 disulfides across HC+LC = 1.0). This is a bulk-count comparator, not evidence of equivalent capacity across protein architectures. Whether lactoferrin saturates ER PDI/ERO1 is empirically open. Structural pLDDT is not incorporated here. For C. utilis uricase: 4 Cys, 0 disulfides annotated. Free cysteines in the oxidizing ER lumen pose a theoretical aggregation risk during secretion transit. Evidence level: Mechanistic Extrapolation."
     },
     "glycosylation": {
       "protein_name": "Lactoferrin (P02788)",
@@ -200,9 +200,9 @@
     }
   },
   "combined_burden": {
-    "dual_cassette_disulfide_load": 17,
+    "dual_cassette_disulfide_load": 16,
     "dual_cassette_nxst_sites": 4,
-    "dual_load_index_vs_huynh": 1.062,
+    "dual_load_index_vs_huynh": 1.0,
     "huynh_2020_titer_mg_L": 39.7,
     "oe_target_lf_mg_L": 500,
     "oe_target_uricase_mg_L": 100,
@@ -211,7 +211,7 @@
       "C. utilis uricase codon burden is HEAVY \u2014 AT-biased codons are rare in A. oryzae (GC-biased host). Full gene synthesis with A. oryzae codon optimization is required. Without optimization, expected expression will be substantially reduced (estimated 2-5x titer penalty based on codon harmonization studies in Aspergillus; Mechanistic Extrapolation).",
       "C. utilis uricase has 4 free cysteine(s): risk of aberrant disulfide formation in the oxidizing ER lumen during secretion. Monitor for aggregation bands by non-reducing SDS-PAGE. This risk is ABSENT in A. flavus uricase (0 cysteines)."
     ],
-    "uricase_kex2_informational": "C. utilis uricase has 2 internal K-R site(s) (overall KEX2 risk: HIGH). NOT load-bearing: the proposed protocol places uricase on a direct-secretion cassette (PTEF1-amyB_SP-C_utilis_uricase-TgpdA), not a glucoamylase-KEX2 fusion. If C. utilis uricase is later moved to a fusion architecture, both sites require attention \u2014 notably position 130 (P1'=I, HIGH) and position 138 (P1'=S, HIGH). These two sites are in close proximity (8 residues apart, GEKRITD...YYKRSGD) \u2014 if uricase is ever placed in a KEX2 fusion, a KR->KQ double mutation at both sites would be required.",
+    "uricase_kex2_informational": "C. utilis uricase has 2 internal K-R site(s) (overall KEX2 risk: HIGH). NOT load-bearing within the direct-secretion candidate (PTEF1-amyB_SP-C_utilis_uricase-TgpdA). Direct secretion is not a settled topology: if \u00a71.33 selects a fusion architecture, both sites require attention \u2014 notably position 130 (P1'=I, HIGH) and position 138 (P1'=S, HIGH). These two sites are in close proximity (8 residues apart, GEKRITD...YYKRSGD) \u2014 if uricase is ever placed in a KEX2 fusion, a KR->KQ double mutation at both sites would be required.",
     "overall_dual_cassette_risk": "MODERATE",
     "codon_burden_summary": {
       "uricase": "HEAVY",
@@ -289,7 +289,7 @@
       "Free cysteines: C. utilis has 4 Cys (0 disulfides) vs. A. flavus 0 Cys. The 4 free cysteines in C. utilis uricase are a new risk factor: aberrant disulfide bond formation in the oxidizing A. oryzae ER lumen during secretion. This is specific to C. utilis and absent in A. flavus. Risk mitigation: monitor by non-reducing SDS-PAGE; if aggregation bands appear, consider Cys\u2192Ser mutation of solvent-exposed free cysteines."
     ],
     "cutilis_comparable_to_aflavus": [
-      "Disulfide load: both A. flavus and C. utilis uricase have 0 annotated disulfide bonds \u2014 neither adds PDI burden. The full 17-disulfide load of the dual-cassette system comes from lactoferrin only.",
+      "Disulfide load: both A. flavus and C. utilis uricase have 0 annotated disulfide bonds \u2014 neither adds PDI burden. The full 16-disulfide load of the dual-cassette system comes from lactoferrin only.",
       "Routing signals: both have C-terminal PTS1-like motifs (A. flavus: SKL; C. utilis: TKL). Both are annotated by UniProt as microbody targeting signals. In a secretion-signal context (amyB SP), both are outcompeted by the N-terminal ER-targeting signal. Same risk level (MODERATE, verify in vivo) for both variants."
     ],
     "cutilis_easier_than_huynh": [
@@ -303,7 +303,7 @@
     ],
     "cutilis_comparable_to_huynh": [
       "Both OE and Huynh use the same NSlD-\u0394P10 protease-deletion host. Both require KRGGG linker KEX2 processing for lactoferrin. Both target dual loci (niaD + sC or equivalent).",
-      "Lactoferrin (human, glycosylated, high disulfide) is mechanistically similar to adalimumab heavy chain. Huynh 2020 demonstrated A. oryzae ER can handle mammalian-origin heavily-disulfided proteins."
+      "Lactoferrin and adalimumab are both mammalian-origin, glycosylated, disulfide-rich proteins, but their folding and assembly architectures differ. Huynh 2020 is therefore a contextual host precedent rather than a quantitative capacity proof for lactoferrin."
     ],
     "platform_decision_implication": "comp-010 (A. flavus): LOW cassette-design risk. comp-011 (C. utilis): MODERATE cassette-design risk. The delta is driven by (a) codon burden (HEAVY for C. utilis vs. LOW for A. flavus \u2014 codon optimization required, resolves with gene synthesis), (b) free cysteine risk (4 Cys in C. utilis vs. 0 in A. flavus \u2014 new risk factor requiring SDS-PAGE monitoring), and (c) 2 vs. 1 KEX2 internal sites (non-load-bearing in direct-secretion design). None of these differences are BLOCKING for the architecture \u2014 they are all manageable with standard gene synthesis and SDS-PAGE QC. The MODERATE vs. LOW risk difference reflects more design work required for C. utilis, not a fundamental incompatibility. If adopting C. utilis: (1) full codon optimization is mandatory (same as lactoferrin), (2) add non-reducing SDS-PAGE to the QC panel to catch free-Cys aggregation, (3) note that the ALLN-346 ProteinGPS mutations (US10815461B2) are available to layer on top of the P78609 backbone for protease-resistance improvement."
   }

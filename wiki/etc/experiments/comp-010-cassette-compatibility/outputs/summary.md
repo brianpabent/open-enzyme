@@ -16,7 +16,7 @@ Does the uricase (Q00511) + lactoferrin (P02788) payload pair have any cassette-
 
 **Overall cassette-design risk: LOW**
 
-No blocking cassette-design issues identified for the proposed architecture: uricase (direct-secretion cassette) has no KEX2 fusion concerns and zero disulfide load; lactoferrin's two internal K-R sites are either non-functional (P1'=D, KEX2 abolished) or moderate-risk (P1'=K, reduced efficiency) — no high-risk truncation sites. Disulfide and codon-optimization burdens are within the Huynh 2020 adalimumab precedent. A uricase internal K-R site exists at residue 128 but is irrelevant in the direct-secretion design; only relevant if uricase is moved to a fusion architecture.
+No blocking sequence-level issues identified for the candidate architecture: uricase (direct-secretion candidate) has no KEX2 fusion concerns and zero disulfide load; lactoferrin's two internal K-R sites are either non-functional (P1'=D, KEX2 abolished) or moderate-risk (P1'=K, reduced efficiency) — no high-risk truncation sites. The corrected bulk disulfide count equals the Huynh 2020 adalimumab comparator, but architecture-specific folding burden remains unmodeled. A uricase internal K-R site exists at residue 128 but is irrelevant within the direct-secretion candidate; §1.33 determines whether that topology survives.
 
 ---
 
@@ -96,16 +96,16 @@ No blocking cassette-design issues identified for the proposed architecture: uri
 
 | Metric | Uricase (Q00511) | Lactoferrin (P02788) | Huynh 2020 baseline |
 |---|---|---|---|
-| Cysteine count | 3 | 33 | ~32 (16 per chain × 2) |
-| Disulfide bonds | 0 | 17 | 16 (total both chains) |
-| Folding load index (vs. Huynh = 1.0) | 0.0 | 1.062 | 1.00 |
+| Cysteine count | 3 | 32 | ~32 (16 per chain × 2) |
+| Disulfide bonds | 0 | 16 | 16 (total both chains) |
+| Folding load index (vs. Huynh = 1.0) | 0.0 | 1.0 | 1.00 |
 | Fold risk | **VERY LOW** | **MODERATE** | — |
 
 **Uricase:** No disulfide bonds — no PDI load. Folding is independent of ER oxidative machinery.
 
-**Lactoferrin:** 17 disulfides — comparable to Huynh 2020 adalimumab baseline (16 disulfides)
+**Lactoferrin:** 16 disulfides — comparable to Huynh 2020 adalimumab baseline (16 disulfides)
 
-**Dual-cassette combined:** 17 disulfides total (1.06× Huynh baseline). Lactoferrin carries the entire disulfide load; uricase contributes nothing to PDI burden.
+**Dual-cassette combined:** 16 disulfides total (1.00× Huynh baseline). Lactoferrin carries the entire disulfide load; uricase contributes nothing to PDI burden.
 
 ---
 
@@ -138,14 +138,14 @@ No blocking cassette-design issues identified for the proposed architecture: uri
 
 | Axis | Uricase | Lactoferrin | Combined | Huynh 2020 baseline |
 |---|---|---|---|---|
-| Disulfides | 0 | 17 | 17 | 16 |
+| Disulfides | 0 | 16 | 16 | 16 |
 | N-glycosylation sites | 1 | 3 | 4 | 2 |
 | Codon burden | LOW | LOW | — | HEAVY (both mammalian) |
-| Folding load index | — | — | 1.06× | 1.00 |
+| Folding load index | — | — | 1.00× | 1.00 |
 
 **Overall dual-cassette secretion burden: LOW**
 
-**Informational (not a risk driver):** Uricase has 1 internal K-R site(s) (overall KEX2 risk: HIGH). NOT load-bearing: the §1.9 protocol places uricase on a direct-secretion cassette (PTEF1-amyB_SP-uaZ-TgpdA), not a glucoamylase-KEX2 fusion. If uricase is later moved to a fusion architecture, this site requires attention.
+**Informational (not a risk driver):** Uricase has 1 internal K-R site(s) (overall KEX2 risk: HIGH). NOT load-bearing within the direct-secretion candidate (PTEF1-amyB_SP-uaZ-TgpdA). Direct secretion is not a settled topology: if §1.33 selects a fusion architecture, this site requires attention.
 
 **Titer gap:** The H01 Lf target (500 mg/L) is 12.6× above Huynh 2020 vs. the Huynh 2020 adalimumab titer (39.7 mg/L). This gap is partly explained by antibody-specific constraints; Ward 1995 achieved >2 g/L for lactoferrin specifically, so 500 mg/L is within the demonstrated range for this protein in this host family (submerged, with strain improvement).
 
@@ -156,7 +156,7 @@ No blocking cassette-design issues identified for the proposed architecture: uri
 | Dimension | OE pair (uricase + lactoferrin) | Huynh 2020 (adalimumab HC + LC) |
 |---|---|---|
 | Protein origins | Fungal (uricase) + Mammalian (Lf) | Mammalian + Mammalian |
-| Total disulfides | 17 (all on Lf) | 16 (8 per chain) |
+| Total disulfides | 16 (all on Lf) | 16 (8 per chain) |
 | Glycosylation sites (N-X-S/T) | 4 | 2 (Fc N297 ×2) |
 | Host strain | NSlD-ΔP10 (recommended) | NSlD-ΔP10 (required) |
 | Architecture | AmyB-KRGGG-Lf + direct-secretion uricase | AmyB-KRGGG-HC + AmyB-KRGGG-LC |
@@ -168,28 +168,28 @@ No blocking cassette-design issues identified for the proposed architecture: uri
 
 **Where OE is HARDER than Huynh:**
 
-- Total disulfide load: OE pair has 17 disulfides (driven by Lf's 17 alone) vs. Huynh 16. Lf folds the same disulfide count from a single chain vs. adalimumab's 16 across two chains.
 - OE Lf titer target (500 mg/L) is 12.6× the Huynh 2020 adalimumab titer (39.7 mg/L). However, Ward 1995 submerged Lf achieved >2 g/L — so the Huynh adalimumab titer reflects antibody-specific constraints, not the maximum capacity of the Lf + A. oryzae system. 500 mg/L is within Ward 1995 validated Lf range with strain improvement.
 - Solid-state format: OE primary target is solid-state rice koji, not submerged. Huynh 2020 was submerged only. Solid-state adds format-translation risk (Sun 2024 — some proteins that secrete in submerged do not secrete in solid-state).
 
 **Where OE is COMPARABLE to Huynh:**
 
+- Bulk disulfide count comparable: OE pair 16 vs. Huynh 16; folding architectures differ.
 - Both OE and Huynh use the same NSlD-ΔP10 protease-deletion host. Both require KRGGG linker KEX2 processing. Both target dual loci (niaD + sC or equivalent).
-- Lactoferrin (human, glycosylated, high disulfide) is mechanistically similar to adalimumab heavy chain in folding complexity. Huynh 2020 demonstrated the A. oryzae ER can handle mammalian-origin heavily-disulfided proteins.
+- Lactoferrin and adalimumab are both mammalian-origin, glycosylated, disulfide-rich proteins, but their folding and assembly architectures differ. Huynh 2020 is therefore a contextual host precedent rather than a quantitative capacity proof for lactoferrin.
 
 ---
 
-## 4. Design Recommendations for §1.9
+## 4. Design Recommendations for §1.33 → §1.9
 
 1. **Host strain:** Start from NSlD-ΔP10 (or equivalent 10-protease-deletion A. oryzae derivative). Wild-type RIB40 is insufficient for high-titer Lf — confirmed by Huynh 2020.
 
-2. **Uricase cassette architecture:** Use direct-secretion design (PTEF1 or PamyB — amyB signal peptide — uaZ — TgpdA). Do NOT put uricase in a glucoamylase-KEX2 fusion unless benchmarking demands it. Direct secretion avoids KEX2 internal-site risk entirely and simplifies the cassette. Codon optimization: optional but low-priority (A. flavus origin; see §3.1 LOW burden).
+2. **Uricase cassette architecture:** Carry direct secretion (PTEF1 or PamyB — amyB signal peptide — uaZ — TgpdA) as one §1.33 candidate, not as the selected topology. It avoids KEX2 internal-site risk within that arm. Include the competing intracellular/fusion or retention architectures specified in §1.33; only the physiological product/peroxide/viability result selects the §1.9B build. Codon optimization remains optional but low-priority for the A. flavus sequence-level candidate.
 
 3. **Lactoferrin cassette architecture:** Use Ward 1995 / Huynh 2020 design exactly: PamyB — glucoamylase — KRGGG — hLf (codon-optimized) — TamyB. Full codon optimization for A. oryzae is required (human origin, MODERATE/HEAVY burden; see §3.1 hotspot list for regions to prioritize). Monitor for KEX2 internal site truncation by SDS-PAGE (see §3.2 — 0 high-risk, 1 moderate-risk internal K-R sites).
 
 4. **Selection markers:** pyrG for Lf cassette (at niaD locus per Huynh 2020); niaD or amdS for uricase cassette (at sC or amyC locus). NSAR1 platform (Oikawa 2020) provides 5 marker slots; 2-cassette design fits with room to spare.
 
-5. **Submerged-culture parallel control:** Run solid-state koji and submerged DPY in parallel in the §1.9 experiment. This isolates solid-state format risk from dual-cassette architecture risk — the format axis is the primary unresolved variable (Sun 2024 caveat).
+5. **System-to-format handoff:** Resolve topology × oxygen × peroxide in §1.33 liquid/system conditions first; then reproduce the winner in §1.9B solid-state koji with a matched submerged control before §1.9C. This separates physiological-system failure from solid-state format risk.
 
 6. **KEX2 capacity monitoring:** If both Lf AND uricase (if also in fusion architecture) compete for KEX2, monitor for unprocessed fusion bands by SDS-PAGE at molecular weights consistent with glucoamylase-linker-payload. If KEX2 is saturated, stagger promoter strengths: strong PamyB for Lf, weaker constitutive PTEF1 for uricase.
 
@@ -215,11 +215,11 @@ No blocking cassette-design issues identified for the proposed architecture: uri
 
 ## 6. Cross-References
 
-- [wiki/hypotheses/H01-ward-dual-cassette.md](../../../hypotheses/H01-ward-dual-cassette.md) — Falsification Card; comp-010 is design support for §1.9
-- [wiki/koji-endgame-strain.md §3.4](../../../koji-endgame-strain.md) — Protocol sketch for §1.9; design recommendations above update this
-- [wiki/validation-experiments.md §1.9](../../../validation-experiments.md) — The wet-lab experiment this analysis informs
-- [wiki/computational-experiments.md](../../../computational-experiments.md) — comp-010 tracking entry
-- [wiki/cassette-compatibility-computational.md](../../../cassette-compatibility-computational.md) — Interpretive wiki page
+- [wiki/hypotheses/H01-ward-dual-cassette.md](../../wiki/hypotheses/H01-ward-dual-cassette.md) — Falsification Card; comp-010 is design support for §1.9
+- [wiki/koji-endgame-strain.md §3.4](../../wiki/koji-endgame-strain.md) — Protocol sketch for §1.9; design recommendations above update this
+- [wiki/validation-experiments.md §1.9](../../wiki/validation-experiments.md) — The wet-lab experiment this analysis informs
+- [wiki/computational-experiments.md](../../wiki/computational-experiments.md) — comp-010 tracking entry
+- [wiki/cassette-compatibility-computational.md](../../wiki/cassette-compatibility-computational.md) — Interpretive wiki page
 - [experiments/comp-001-uricase-shio-koji-protease-stability/](../comp-001-uricase-shio-koji-protease-stability/) — Uricase protease stability (comp-001: LOW risk)
 - [experiments/comp-005-lactoferrin-shio-koji-protease-stability/](../comp-005-lactoferrin-shio-koji-protease-stability/) — Lactoferrin protease stability (comp-005: MODERATE mature)
 

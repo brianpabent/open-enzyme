@@ -318,7 +318,7 @@ The substantive value the post offers a thoughtful reader: a concrete checklist 
 
 **The reciprocal invitation, which is the headline of why this entry is in a public log at all:** Open Enzyme is published in public for exactly the same reason as Paperclip — so that other people can find OUR mistakes and make us better. The DAF disulfide-count incident is in this log not because we've solved AI hallucinations (we haven't) but because we want the failure mode and the discipline that catches it to be visible and adoptable. The verification rules we apply to other people's tools (grep every number, anchor identity to canonical metadata, cross-check every claim, line-anchored citation) apply equally to anyone auditing this corpus. We hope readers grep our numbers, find the next fabricated coefficient hiding somewhere we haven't looked, push back on our evidence-tier tags, surface the chokepoint claims we haven't documented honestly enough. **If you find a mistake in this corpus, please tell us. That's the deal we're trying to participate in.**
 
-**Reference:** [`wiki/manual-literature-mining.md`](../wiki/manual-literature-mining.md) §"Pre-commit verification gate" — canonical statement of the discipline. [`wiki/daf-cd55-scr14-truncated-computational.md`](../wiki/daf-cd55-scr14-truncated-computational.md) §1.5 — correction note documenting the specific incident. [`CLAUDE.md`](../CLAUDE.md) §"Core Rules" Rule 4 — the project-level rule that applies to every AI session in this repo. [`scripts/SWEEP-ARCHITECTURE.md`](../scripts/SWEEP-ARCHITECTURE.md) — the multi-pass cross-vendor sweep that caught the inconsistency.
+**Reference:** [`wiki/etc/manual-literature-mining.md`](../wiki/etc/manual-literature-mining.md) §"Pre-commit verification gate" — canonical statement of the discipline. [`wiki/daf-cd55-scr14-truncated-computational.md`](../wiki/daf-cd55-scr14-truncated-computational.md) §1.5 — correction note documenting the specific incident. [`CLAUDE.md`](../CLAUDE.md) §"Core Rules" Rule 4 — the project-level rule that applies to every AI session in this repo. [`scripts/SWEEP-ARCHITECTURE.md`](../scripts/SWEEP-ARCHITECTURE.md) — the multi-pass cross-vendor sweep that caught the inconsistency.
 
 ---
 
@@ -332,7 +332,7 @@ The substantive value the post offers a thoughtful reader: a concrete checklist 
 
 In other words, the convenience operator was doing model-side aggregation that filled in plausible-sounding details that weren't actually in the source documents. The `search`, `cat`, `head`, `grep`, `scan` primitives don't exhibit this — they return raw paper content, line-anchored, verifiable. The failure mode is specific to the aggregation step.
 
-The open-source response (today, 2026-05-05): codified a five-rule verification discipline as [`wiki/manual-literature-mining.md`](../wiki/manual-literature-mining.md):
+The open-source response (today, 2026-05-05): codified a five-rule verification discipline as [`wiki/etc/manual-literature-mining.md`](../wiki/etc/manual-literature-mining.md):
 
 1. Use safe primitives only (search/cat/head/grep/scan); ban `map`/`reduce` from automated workflows
 2. Anchor identity to `meta.json` (cite from canonical metadata, not inferred from paper body)
@@ -355,7 +355,7 @@ There's also a smaller meta-observation worth naming: **rigor discipline is chea
 **Three concrete engagement opportunities:**
 
 1. **Paperclip team / Stanford GXL** — happy to share the specific queries and outputs that surfaced the `map`-operator hallucinations. If the team wants to either fix the operator, restrict it to reliable use cases, or document the edge prominently, the test cases we have would be useful input. This is exactly the kind of feedback loop open research tooling is supposed to enable. If anyone reading this is connected to the GXL group, an introduction would be welcome.
-2. **Other AI-bio research projects using Paperclip** — the five-rule protocol in [`wiki/manual-literature-mining.md`](../wiki/manual-literature-mining.md) is open-source and reusable. If your project uses Paperclip for serious synthesis, the verification discipline matters; if you've run into similar or different edge cases, those findings would compose well with ours into a broader usage-protocol document.
+2. **Other AI-bio research projects using Paperclip** — the five-rule protocol in [`wiki/etc/manual-literature-mining.md`](../wiki/etc/manual-literature-mining.md) is open-source and reusable. If your project uses Paperclip for serious synthesis, the verification discipline matters; if you've run into similar or different edge cases, those findings would compose well with ours into a broader usage-protocol document.
 3. **The broader AI-for-research-rigor methodology question** — this is one specific instance of a pattern: convenience-aggregation primitives in research tools tend to over-promise relative to their underlying primitive operations. A community-level audit across the major tools would produce real infrastructure value. Worth a workshop / meta-paper / shared document if anyone wants to organize one.
 
 **External-comms angle.** Strong LinkedIn / blog-post material, **framed as the open-science feedback loop working** — not as a competitive finding. The interesting story is:
@@ -366,7 +366,7 @@ Tone: grateful (Paperclip is genuinely useful — that's why we built workflow o
 
 **And the explicit reciprocal invitation, which is the headline:** Open Enzyme is published in public for exactly the same reason. Every wiki page, every comp-NNN experiment, every falsification card, every chokepoint claim — everything is open and inspectable specifically so that other people can find OUR mistakes and make us better. The five-rule verification protocol we built for ourselves applies equally to anyone auditing what we've done. We hope people grep our numbers, cross-check our citations, push back on our evidence-tier tags, and surface the edges we haven't named yet. Mutual audit is the whole point — Stanford's tool got audited because it's open; ours is open for the same reason. **If you find a mistake in this corpus, please tell us. That's the deal we're trying to participate in.**
 
-**Reference:** [`wiki/manual-literature-mining.md`](../wiki/manual-literature-mining.md) — the formal verification protocol. Memory record: `feedback_paperclip_map_unreliable.md` (memory file, not wiki; documents the failure history).
+**Reference:** [`wiki/etc/manual-literature-mining.md`](../wiki/etc/manual-literature-mining.md) — the formal verification protocol. Memory record: `feedback_paperclip_map_unreliable.md` (memory file, not wiki; documents the failure history).
 
 ---
 
@@ -406,11 +406,13 @@ A Sonnet subagent ran comp-011 (the same seven-analysis pipeline, on *C. utilis*
 
 But the killer recommendation: **don't pick. Run BOTH variants in §1.9 as parallel direct-secretion cassettes** at ~$200–400 in additional gene synthesis cost and $0 additional fermentation cost. The empirical wet-lab comparison resolves the *A. flavus* vs. *C. utilis* platform decision in the same fermentation run.
 
+**Later correction (2026-07-13):** comp-044/045 moved topology selection ahead of this head-to-head. Retain both sequences as candidates, but compare them inside a §1.33-winning topology; the original direct-secretion and `$0 marginal fermentation` assumptions are historical, not the current execution plan.
+
 **Bonus: an accession correction.** P15296 (which the brief had cited as the *C. utilis* uricase) is a defunct/reassigned accession that now returns a Drosophila transposable element protein. Correct canonical entry is **P78609 (URIC_CYBJA)**, verified by taxon search.
 
 **Why it matters.** "Don't pick — run both" is a structurally underused move in early-stage biotech engineering. The cost of choosing wrong (months of wet-lab on the worse variant) is much higher than the cost of running both in parallel ($200 in gene synthesis). The chokepoint methodology naturally surfaces this kind of recommendation because it's not committed in advance to a particular candidate — the framework asks "which variants meet the spec?" rather than "is variant X the right one?"
 
-**Where outside expertise would help:** anyone with experience on *C. utilis* heterologous protein expression in *Aspergillus*. The bioavailability + protease-resistance reasons for the industry's revealed preference are documented; what's missing is published *C. utilis* uricase secretion data in fungal hosts. Could be a Paperclip search-and-grep task using the new [`manual-literature-mining.md`](../wiki/manual-literature-mining.md) discipline.
+**Where outside expertise would help:** anyone with experience on *C. utilis* heterologous protein expression in *Aspergillus*. The bioavailability + protease-resistance reasons for the industry's revealed preference are documented; what's missing is published *C. utilis* uricase secretion data in fungal hosts. Could be a Paperclip search-and-grep task using the new [`manual-literature-mining.md`](../wiki/etc/manual-literature-mining.md) discipline.
 
 **Reference:** [`wiki/c-utilis-uricase-cassette-compatibility-computational.md`](../wiki/c-utilis-uricase-cassette-compatibility-computational.md).
 

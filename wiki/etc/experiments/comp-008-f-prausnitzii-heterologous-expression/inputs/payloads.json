@@ -39,7 +39,7 @@
       "glycosylation_note": "N-glycans NOT required for iron-binding or bacteriostatic function. Poly-N-acetyllactosaminic carbohydrate moiety needed for TLR4 activation (immunomodulatory). For LBP-luminal iron sequestration delivery, aglycosylated may suffice.",
       "iron_binding_required": true,
       "oe_relevance": "TNFα-cycle relief payload (per engineered-lbp-chassis.md). Already characterized in comp-005 (koji protease stability) and comp-034 (linker redesign). For LBP chassis: continuous luminal release.",
-      "verification_note": "UniProt P02788 (verified via REST 2026-05-16): 710 aa total, signal peptide 1-19, mature 691 aa, 17 disulfide bonds, 3 N-glycosylation sites. Function: bacteriostasis via iron sequestration."
+      "verification_note": "UniProt P02788 sequence (REST 2026-05-16): 710 aa total, signal peptide 1-19, mature 691 aa, 3 N-glycosylation sites. Mature-protein disulfide count corrected to 16 from Notari 2023 (PMC10465537). Function: bacteriostasis via iron sequestration."
     },
     "scr1_sushi_domain_truncation": {
       "name": "Soluble CR1 (sCR1) — SCR1-4 truncation (per H05 / comp-012)",

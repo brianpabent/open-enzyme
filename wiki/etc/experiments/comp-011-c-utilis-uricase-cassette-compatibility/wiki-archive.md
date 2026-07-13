@@ -71,7 +71,7 @@ No blocking cassette-design issues identified. The *C. utilis* uricase (P78609) 
 | 1. Codon usage | **HEAVY** (full optimization required; CAI proxy 0.65) | LOW (proxy; full opt required in practice) | **Delta: A. flavus LOW (CAI proxy 1.51)** |
 | 2. KEX2 geometry | HIGH (2 sites, positions 130 and 138, both HIGH) — not load-bearing (direct-secretion) | MODERATE (1 site, position 579, P1'=K; 1 abolished at 38, P1'=D) | Delta: A. flavus 1 site (128 HIGH) |
 | 3. Routing/secretion | MODERATE (C-terminal TKL, UniProt-annotated microbody signal) | LOW (no routing issues) | Comparable (A. flavus SKL — same risk level) |
-| 4. Disulfide load | VERY LOW (0 disulfides) + **4 free Cys new risk** | MODERATE (17 disulfides, 1.06× Huynh baseline) | **Delta: A. flavus 0 Cys (no free-Cys risk)** |
+| 4. Disulfide load | VERY LOW (0 disulfides) + **4 free Cys new risk** | MODERATE (16 disulfides, 1.00× Huynh bulk-count comparator; architecture differs) | **Delta: A. flavus 0 Cys (no free-Cys risk)** |
 | 5. N-glycosylation | 1 predicted (NSS at pos 54; not UniProt-annotated) | 3 predicted, all UniProt-annotated (N137, N478, N623) | Comparable (A. flavus 1 predicted at pos 191) |
 | 6. Dual-cassette burden | **MODERATE** | — | **Delta: comp-010 LOW (A. flavus codon burden LOW)** |
 | 7. Comparison | Harder than comp-010 on codon + free-Cys axes; strategic advantage from ALLN-346 prior art | Identical to comp-010 | — |
@@ -108,7 +108,7 @@ In the proposed direct-secretion cassette design (PTEF1 or PamyB – amyB SP –
 
 The 4 free cysteines flagged in §4.2 are not just a cassette-design QC item — they have downstream implications under the [chaperone-orthogonal stacking framework](./chaperone-orthogonal-stacking.md). The framework's central claim is that two cassettes competing for the same ER chaperone subsystem (especially PDI/ERO1) show steep yield collapse, while orthogonal cassettes (loading different subsystems) preserve dual-cassette synergy.
 
-The framework's [§4 cassette scoring table](./chaperone-orthogonal-stacking.md#4-open-enzyme-candidate-cassettes--scored) currently lists uricase as "BiP-transit only — chaperone-light," scored against *A. flavus* (Q00511, 0 disulfides, 0 free Cys). That score does not transfer to *C. utilis*: 4 free thiols in the oxidizing ER lumen will engage PDI/ERO1 (the same subsystem lactoferrin's 17 disulfides load heavily), whether or not aberrant intermolecular bonds form.
+The framework's [§4 cassette scoring table](./chaperone-orthogonal-stacking.md#4-open-enzyme-candidate-cassettes--scored) currently lists uricase as "BiP-transit only — chaperone-light," scored against *A. flavus* (Q00511, 0 disulfides, 0 free Cys). That score does not transfer to *C. utilis*: 4 free thiols in the oxidizing ER lumen will engage PDI/ERO1 (the same subsystem lactoferrin's 16 disulfides load heavily), whether or not aberrant intermolecular bonds form.
 
 **Direction-only prediction:** *C. utilis* uricase + lactoferrin in a dual cassette is predicted to show *some* synergy penalty relative to *A. flavus* + lactoferrin, because the *C. utilis* variant is no longer fully PDI-orthogonal. The *A. flavus* baseline (chaperone framework §5: synergy 0.8–1.0) is the upper bound; the *C. utilis* synergy is predicted lower but **the magnitude is not computable from the framework as written.**
 
@@ -137,16 +137,16 @@ This strategic asymmetry is noted here but does not change the cassette-design r
 1. **If adopting *C. utilis* uricase (industry-preferred oral track):**
    - Order codon-optimized *C. utilis* uricase CDS from gene synthesis vendor (*A. oryzae* codon table). This is mandatory — unlike *A. flavus*, the native *C. utilis* codon preferences will suppress expression without optimization.
    - Add ALLN-346 ProteinGPS mutations (US10815461B2: I180V, V190G, Y165F, E51K, Q244K, I132R, A87G) into the codon-optimized synthesis. Order as a single variant construct.
-   - Cassette architecture: direct-secretion (PTEF1 or PamyB – amyB SP – codon-optimized C. utilis uricase – TgpdA). Do NOT use glucoamylase-KEX2 fusion for uricase — avoids the 2 internal KR site issue entirely.
+   - Carry direct secretion (PTEF1 or PamyB – amyB SP – codon-optimized C. utilis uricase – TgpdA) as one §1.33 candidate. It avoids the two internal KR sites within that arm; §1.33 determines whether this or another topology proceeds.
    - Add non-reducing SDS-PAGE to the secreted fraction QC panel to detect free-Cys aggregation.
 
 2. **If keeping *A. flavus* uricase (comp-010-verified LOW risk track):**
    - comp-010 verdict stands: LOW risk, no additional design requirements. Codon optimization optional but low-priority.
    - Recommended if speed-to-first-clone is the priority or rasburicase-derivative IP strategy is preferred.
 
-3. **Recommended approach for §1.9: empirical head-to-head:**
-   - Order both *A. flavus* (Q00511, codon-optimized) and *C. utilis* (P78609, codon-optimized + ALLN-346 mutations) as direct-secretion cassettes. The §1.9 fermentation experiment resolves the platform decision empirically at $0 additional fermentation cost (same experiment, two strains). Total gene synthesis cost delta: ~$200–400 for the second codon-optimized gene.
-   - This recommendation is the canonical instance of the platform's [Principle 6: Variant-Agnostic Empirical Head-to-Head](./open-source-platform.md#6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared) (codified 2026-05-06 from this comp-011 pattern). All three preconditions are satisfied: shared §1.9 fermentation infrastructure, bounded marginal input cost ($200-400), genuine literature split (industry prefers *C. utilis*, academic precedent favors *A. flavus*).
+3. **Recommended approach for §1.33 → §1.9B: nested empirical head-to-head:**
+   - Retain both *A. flavus* (Q00511) and *C. utilis* (P78609 + candidate ALLN-346 mutations), but compare them inside topology arms that §1.33 can evaluate. Only pass a variant/topology pair into §1.9B after physiological product/peroxide/viability success.
+   - This remains an instance of [Principle 6: Variant-Agnostic Empirical Head-to-Head](./open-source-platform.md#6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared), but the original `$0 additional fermentation` estimate is not assumed across the expanded topology factorial.
 
 4. **Lactoferrin cassette (unchanged from comp-010):** PamyB – glucoamylase – KRGGG – hLf (codon-optimized) – TamyB. Monitor internal KR site at position 579 (P1'=K, MODERATE risk) by SDS-PAGE.
 

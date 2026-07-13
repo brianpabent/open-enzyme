@@ -179,28 +179,28 @@ The brief authorized these v1 simplifications; each is documented for downstream
 
 5. **Native A. flavus codon usage approximated.** The "native_uaZ" variant is back-translated using the A. oryzae table with mid-rank-codon biasing rather than from an A. flavus codon usage table directly. This affects only the native_uaZ variant's ranking and does not affect the headline cluster (which uses the 5p_softened variant, optimized for A. oryzae from first principles).
 
-6. **Single payload only.** comp-022 ranks uricase cassettes in isolation. The §1.9 wet-lab test is a dual-cassette uricase + lactoferrin design, where pairwise chaperone-pathway competition is governed by [chaperone-orthogonal-stacking.md §3.5.3](./chaperone-orthogonal-stacking.md) (effective PDI load 0 + 24-40 = 24-40 total, within demonstrated NSlD-ΔP10 capacity). Comp-022 does not re-evaluate the pairwise interaction; it inherits the comp-010 finding that the uricase + lactoferrin pair is architecturally compatible.
+6. **Single payload only.** comp-022 ranks uricase cassettes in isolation. The §1.9 wet-lab test is a staged uricase + lactoferrin program, where pairwise chaperone-pathway competition is governed by [chaperone-orthogonal-stacking.md §3.5.3](./chaperone-orthogonal-stacking.md) (effective PDI-load estimate 0 + 24-40 = 24-40 total; host capacity remains empirical). Comp-022 does not re-evaluate the pairwise interaction and does not select a UOX topology; its sequence-level candidates enter §1.33 before any §1.9B/C build.
 
 7. **Cascading-filter framing partially redundant for this experiment.** Brief described a cascading filter where Tier 1 evaluates all 43,200, Tier 2 evaluates top 5,000, Tier 3 evaluates top 100. In practice, Tier 1 (CAI + mRNA-5') is per-codon-variant only (10 evaluations) and Tier 2 (chaperone-load) is per-scaffold-base only (10 evaluations), so the full 43,200-candidate evaluation is O(1) per candidate after the per-component pre-computations. Cascading matters when Tier 3 fold-quality (per-candidate ESMFold) is in scope; in this v1 it is not.
 
 ## 6. Impact on Experimental Priorities
 
-### 6.1 §1.9 wet-lab cassette design
+### 6.1 §1.33 candidate design → §1.9B handoff
 
-The §1.9 architecture stands. The uricase cassette in the existing §1.9 design ([`validation-experiments.md` §1.9](./validation-experiments.md)) is already `[PTEF1 - amyB signal peptide - A. flavus uaZ codon-optimized - TgpdA]`, which is in the comp-022 top cluster. Three gene-synthesis-time refinements should be incorporated when the construct is ordered:
+The direct-secretion cassette `[PTEF1 - amyB signal peptide - A. flavus uaZ codon-optimized - TgpdA]` is in the comp-022 top cluster, but comp-022 does not establish that the topology works under physiological substrate, oxygen, and peroxide constraints. Carry it as one §1.33 candidate. If it passes and is chosen for §1.9B, incorporate these three gene-synthesis-time refinements:
 
-| Refinement | Current §1.9 | comp-022 recommendation | Cost delta |
+| Refinement | Baseline candidate | comp-022 recommendation | Cost delta |
 |---|---|---|---|
 | Promoter | PTEF1 | Substitute PamyB OR keep PTEF1 as orthogonal-promoter design choice | $0 (same gene-synthesis cost; PTEF1 is justified by orthogonal-promoter rationale per koji-endgame-strain.md §3.4 even though PamyB is the single-promoter optimum) |
 | Codon variant | "codon-optimized for *A. oryzae*" (unspecified strategy) | 5'-softened (low-GC first 30 codons + max-CAI thereafter) | $0 |
 | C-terminal tag | none (native SKL) | append 3×Ala or His6 to block PTS1 | $0 (single codon trio extension) |
 | N-glycosylation sequon | native N191 NSS | N191Q ablation | $0 (single point mutation) |
 
-None of these refinements require new wet-lab infrastructure or change the §1.9 cost or timeline ($3-5K / 8-12 weeks). They are added to the gene-synthesis order at no marginal cost.
+None of these refinements requires new wet-lab infrastructure. Their synthesis cost may be negligible within a construct, but the expanded §1.33 topology matrix—not comp-022—determines the overall wet-lab cost and which construct reaches §1.9B.
 
-### 6.2 The §1.9 architecture decision: PamyB vs PTEF1 for uricase
+### 6.2 Candidate promoter decision: PamyB vs PTEF1 for uricase
 
-Comp-022 single-cassette ranking favors PamyB for both cassettes. The current §1.9 design uses PTEF1 for the uricase cassette specifically to separate transcriptional programs from the PamyB-driven lactoferrin cassette (koji-endgame-strain.md §3.4: "Distinct promoter (TEF1, constitutive) to avoid direct competition with the starch-inducible PamyB of Cassette A"). This is a dual-cassette-specific rationale that comp-022's single-payload ranking does not override.
+Comp-022 single-cassette ranking favors PamyB. The provisional dual design used PTEF1 for UOX to separate transcriptional programs from PamyB-driven lactoferrin (koji-endgame-strain.md §3.4). That dual-cassette rationale is outside comp-022, and neither choice is promoted until §1.33 establishes a viable UOX topology and §1.9B tests its solid-state implementation.
 
 **Decision rule for the §1.9 construct:** keep PTEF1 for the uricase cassette per the orthogonal-promoter rationale. If the §1.9 Lf-alone arm titer falls below the 500 mg/L threshold per [chaperone-orthogonal-stacking.md §3.5.4 calibration framework](./chaperone-orthogonal-stacking.md), revisit the dual-PamyB design via comp-022's promoter-strength ranking (PamyB-PamyB cassette pair, integrated at paralogous loci per Li 2024 PMID 39830075; brief noted as a "symmetric alternative" in koji-endgame-strain.md §3.4).
 

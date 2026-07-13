@@ -57,7 +57,7 @@ comp-011-c-utilis-uricase-cassette-compatibility/
 | 1 | Codon usage (CAI proxy + hotspot scan) | **HEAVY** (CAI proxy 0.65; AT-biased yeast vs. GC-biased host) | LOW (proxy; full codon-opt required in practice) | **Material: A. flavus LOW (CAI ~1.51)** |
 | 2 | KEX2 site geometry | HIGH (2 sites: pos 130 P1'=I, pos 138 P1'=S) — not load-bearing (direct-secretion cassette) | MODERATE (1 moderate-risk site pos 579, P1'=K; 1 abolished pos 38, P1'=D) | Delta: A. flavus 1 site (128 HIGH) |
 | 3 | Secretion-targeting signals | MODERATE (C-terminal TKL — UniProt-annotated microbody signal; weak PTS1 variant) | LOW (no routing issues) | Comparable (A. flavus SKL — same risk level) |
-| 4 | Disulfide load | VERY LOW (0 disulfides) + **4 free Cys — new aggregation risk** | MODERATE (17 disulfides, 1.06× Huynh 2020 baseline) | **Material: A. flavus 0 Cys (no free-Cys risk)** |
+| 4 | Disulfide load | VERY LOW (0 disulfides) + **4 free Cys — new aggregation risk** | MODERATE (16 disulfides, 1.00× Huynh 2020 bulk-count comparator; architecture differs) | **Material: A. flavus 0 Cys (no free-Cys risk)** |
 | 5 | N-glycosylation sites | 1 predicted (NSS at pos 54; not UniProt-annotated) | 3 predicted, all UniProt-annotated (N137, N478, N623) | Comparable |
 | 6 | Combined secretion burden | **MODERATE** | — | comp-010 LOW |
 | 7 | Comparison to comp-010 + Huynh 2020 | HARDER on codon + free-Cys axes; ALLN-346 strategic advantage | Identical to comp-010 | — |
@@ -70,9 +70,9 @@ comp-011-c-utilis-uricase-cassette-compatibility/
 |---|---|---|
 | Overall cassette-design risk | **MODERATE** | Codon burden (HEAVY) + free-Cys aggregation risk |
 | *C. utilis* uricase cassette | **MODERATE** | AT-biased codon preference; 4 free Cys |
-| Lactoferrin cassette | **MODERATE** (identical to comp-010) | 1 moderate-risk internal KR site; 17 disulfides within Huynh precedent |
+| Lactoferrin cassette | **MODERATE** (identical to comp-010) | 1 moderate-risk internal KR site; 16 disulfides equal Huynh by bulk count, not by architecture |
 | comp-010 vs. comp-011 delta | comp-010 LOW → comp-011 MODERATE | Not a fundamental incompatibility; manageable with gene synthesis + SDS-PAGE QC |
-| §1.9 cassette ordering recommendation | Head-to-head: order BOTH *A. flavus* (comp-010 verified) AND *C. utilis* (codon-opt + ALLN-346 mutations) | Empirical comparison resolves platform decision at $0 additional fermentation cost |
+| §1.33 → §1.9B ordering recommendation | Retain BOTH *A. flavus* and *C. utilis* as sequence candidates; compare within the tested topology matrix, then carry passing pairs into solid-state koji | Preserves empirical head-to-head without assuming direct secretion or zero marginal fermentation cost |
 
 ---
 

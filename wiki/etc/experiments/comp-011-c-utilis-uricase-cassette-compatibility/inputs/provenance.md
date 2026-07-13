@@ -27,7 +27,7 @@
 - **Signal peptide:** residues 1–19 (MKLVFLVLLFLGALGLCLA)
 - **Mature protein:** residues 20–710 (691 aa)
 - **N-glycosylation sites (UniProt annotation):** N137 (N-X-S: NIS), N478 (N-X-S: NVS), N623 (N-X-S: NKS)
-- **Disulfide bonds (UniProt annotation):** 17 disulfide bonds (34 cysteine residues, fully paired)
+- **Disulfide bonds:** 16 disulfides in the mature protein (Notari 2023, PMC10465537; 32 cysteines after complete reduction). The canonical FASTA contains one additional signal-peptide cysteine, so sequence-wide cysteine counting must not be used as the mature-protein disulfide count.
 - **Unchanged from comp-010:** This file is identical to the comp-010 input. Lactoferrin analysis results are numerically identical to comp-010.
 
 ## glucoamylase_carrier.fasta — A. awamori glucoamylase (Ward 1995 carrier protein)

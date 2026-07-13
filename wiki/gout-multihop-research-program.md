@@ -66,6 +66,12 @@ modules with UOX. Run 1.37 before attributing butyrate-mediated host effects to 
 remaining screens are parallel discovery branches whose positive results can change product
 architecture rather than merely add another ingredient.
 
+Within the koji track, §1.9A lactoferrin-only may run opportunistically in parallel with §1.33
+when NSlD-ΔP10 access is available. Freeze §1.9B UOX-only only after §1.33 selects a
+koji-compatible topology, and enter §1.9C dual-cassette only after both single-cassette arms
+pass. This preserves lab-access momentum without spending the full dual-cassette budget on an
+unselected UOX architecture.
+
 Negative results are useful. They can eliminate a topology, separate prevention from flare
 resolution, or show that a seemingly additive stack closes the intestinal urate gate it
 depends on.

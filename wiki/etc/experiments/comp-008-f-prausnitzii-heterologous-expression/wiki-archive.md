@@ -58,7 +58,7 @@
 | engineering_toolkit_maturity | 0.25 | 0.15 | 0.35 | Shared factor. |
 | host_toxicity_risk | 0.9 | 0.8 | 0.95 | CR1 is a host immune regulator; no bacterial target. Native serpins / complement regulators don't perturb commensal physiology. |
 | heterologous_expression_precedent | 0.25 | 0.15 | 0.35 | Zero precedent for soluble complement regulator in obligate anaerobe. comp-006/012 evaluated DAF SCR1-4 in koji (HIGH risk) — informs the parallel for LBP but doesn't establish a positive precedent. |
-| folding_complexity | 0.45 | 0.3 | 0.6 | 8 disulfides require oxidative folding. Smaller magnitude than lactoferrin's 17 disulfides, but same fundamental anoxic-environment-folding question. SCR/sushi/CCP-fold proteins are tolerant of disulfide isomerization (more robust than serpin-fold lactoferrin) — slight upward adjustment vs. lactoferrin. |
+| folding_complexity | 0.45 | 0.3 | 0.6 | 8 disulfides require oxidative folding. Smaller magnitude than lactoferrin's 16 disulfides, but same fundamental anoxic-environment-folding question. SCR/sushi/CCP-fold proteins are tolerant of disulfide isomerization (more robust than transferrin-fold lactoferrin) — slight upward adjustment vs. lactoferrin. |
 
 ### lactoferrin_HumanFullLength
 **Composite: 0.54 (YELLOW); range [0.423, 0.659]**
@@ -68,12 +68,12 @@
 |---|---|---|---|---|
 | cluster_size_tractability | 0.85 | 0.8 | 0.9 | Single 691-aa mature ORF (~2.1 kb). Larger than uricase but well within single-vector range. |
 | GC_content_codon_compatibility | 0.8 | 0.7 | 0.9 | Human ~58% GC vs Fp 56.6% — only 1.4 percentage point mismatch. Best GC match of any payload in this set. Codon optimization still recommended for mammalian-table -> Firmicutes-table; ~$3-5K DNA synthesis. |
-| secretion_pathway_availability | 0.6 | 0.45 | 0.75 | Sec-translocon annotated; native MAM secretion proves the pathway functions. But heterologous-payload secretion titers from Fp never measured. 17 disulfides in mature lactoferrin require post-translocational oxidative folding — Bacillus / Firmicutes Sec pathway produces proteins to the cell exterior where disulfide bond formation occurs (e.g. DsbA/DsbB-class systems); native F. prausnitzii disulfide machinery less characterized. |
+| secretion_pathway_availability | 0.6 | 0.45 | 0.75 | Sec-translocon annotated; native MAM secretion proves the pathway functions. But heterologous-payload secretion titers from Fp never measured. 16 disulfides in mature lactoferrin require post-translocational oxidative folding — Bacillus / Firmicutes Sec pathway produces proteins to the cell exterior where disulfide bond formation occurs (e.g. DsbA/DsbB-class systems); native F. prausnitzii disulfide machinery less characterized. |
 | host_physiology_compatibility | 0.85 | 0.75 | 0.95 | No O2 dependence. Iron-sequestration function aligns with anaerobic-lumen physiology (anaerobic pathogens compete for iron). Minor risk: lactoferrin's iron-sequestration could starve F. prausnitzii itself, since Fp also requires iron — manage via inducible promoter or strain-engineered iron uptake. |
 | engineering_toolkit_maturity | 0.25 | 0.15 | 0.35 | Shared factor. |
 | host_toxicity_risk | 0.7 | 0.6 | 0.8 | Native lactoferrin doesn't kill F. prausnitzii in vivo (Fp and lactoferrin coexist in healthy gut). Heterologous overexpression risk is iron-starvation of the host, mitigatable with inducible promoter. |
 | heterologous_expression_precedent | 0.3 | 0.2 | 0.4 | Extensive precedent in non-anaerobe heterologous hosts (P. pastoris, A. niger, transgenic mammals). Zero precedent in obligate anaerobe. comp-005 evaluated koji chassis HIGH risk for stability — LBP track was framed precisely to address this. |
-| folding_complexity | 0.4 | 0.3 | 0.55 | MAJOR concern. 17 disulfides require oxidative folding. Gut lumen is anoxic — disulfide bond formation in anoxic environment requires alternative oxidant (e.g. periplasmic-equivalent space + heterologously expressed DsbA, or methodologically untested in obligate anaerobes). Disulfide-rich secreted protein expression in obligate anaerobes is essentially unprecedented. |
+| folding_complexity | 0.4 | 0.3 | 0.55 | MAJOR concern. 16 disulfides require oxidative folding. Gut lumen is anoxic — disulfide bond formation in anoxic environment requires alternative oxidant (e.g. periplasmic-equivalent space + heterologously expressed DsbA, or methodologically untested in obligate anaerobes). Disulfide-rich secreted protein expression in obligate anaerobes is essentially unprecedented. |
 
 ### uricase_AspergillusFlavus
 **Composite: 0.393 (YELLOW); range [0.271, 0.523]**

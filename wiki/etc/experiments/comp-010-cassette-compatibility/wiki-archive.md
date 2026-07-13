@@ -108,7 +108,7 @@ The amino-acid-level proxy scores both LOW because human and *A. flavus* preferr
 | Uricase Q00511 | 1 | 1 (pos 128, P1'=N) | 0 | 0 | HIGH — but not load-bearing (direct-secretion design) |
 | Lactoferrin P02788 | 2 | 0 | 1 (pos 579, P1'=K) | 1 (pos 38, P1'=D) | **MODERATE** |
 
-**Uricase K-R site note.** Residue 128 (K128-R129-N130) is a canonical KEX2 recognition sequence with preferred P1' context. If uricase were in a glucoamylase-KEX2 fusion, this site would be cleaved — producing a 128-aa truncated fragment (N-lobe) and a 174-aa C-terminal fragment. However, the §1.9 design puts uricase on a **direct-secretion cassette** (PTEF1-amyB_SP-uaZ-TgpdA) — no glucoamylase fusion, no KEX2 processing step, no internal-site risk. This finding is actionable only if uricase is ever moved to a fusion architecture.
+**Uricase K-R site note.** Residue 128 (K128-R129-N130) is a canonical KEX2 recognition sequence with preferred P1' context. If uricase were in a glucoamylase-KEX2 fusion, this site could be cleaved — producing a 128-aa truncated fragment (N-lobe) and a 174-aa C-terminal fragment. The comp-010 direct-secretion candidate avoids that risk, but direct secretion is not the selected platform topology; §1.33 determines whether this site remains irrelevant or becomes actionable.
 
 **Lactoferrin K-R site note.** Two sites in the mature protein (post-signal-peptide):
 - Position 38 (K56-R57-D58 in full sequence): P1'=D — KEX2 cleavage **abolished** by acidic residue. Non-functional site.
@@ -218,9 +218,9 @@ All three lactoferrin glycosylation sites are correctly predicted by the N-X-S/T
 
 comp-010 does **not** reframe §1.9 as a confirmation experiment. §1.9 remains a **feasibility gate** — the primary open question is the solid-state format translation, which is a wet-lab question that no sequence-level analysis can answer. What comp-010 does:
 
-- **Removes cassette architecture as a pre-experiment concern.** No blocking sequence-level issues mean the §1.9 design (direct secretion uricase + glucoamylase-KEX2 lactoferrin in NSlD-ΔP10) can proceed as specified without redesign.
+- **Removes specific sequence-level blockers from the direct-secretion candidate, not architecture risk.** The candidate can enter §1.33 without sequence redesign; the physiological topology result determines what proceeds to §1.9B/C.
 - **Provides two actionable design notes** (KEX2 site 579 monitoring; C-terminal SKL verification) that should be built into the §1.9 readout plan before wet-lab starts.
-- **Anchors the Huynh 2020 titer comparison.** The 12.6× titer gap vs. Huynh adalimumab is not the correct benchmark for Lf — Ward 1995 >2 g/L Lf is. The Huynh baseline is relevant for confirming ER folding capacity; it is not a ceiling for Lf titer.
+- **Bounds the Huynh 2020 comparison.** The Huynh adalimumab result is a contextual host precedent, not confirmation of lactoferrin ER capacity and not a ceiling for Lf titer. Ward 1995 is the protein-specific precedent; §1.9A is the current-host empirical gate.
 
 ---
 

@@ -4,9 +4,9 @@
 
 **Verdict: LOW overall cassette-design risk (for the proposed direct-secretion/fusion asymmetric architecture)**
 
-No blocking cassette-design issues identified. Uricase (direct-secretion cassette, fungal origin, 0 disulfides) has no KEX2 fusion concerns and negligible codon-optimization burden. Lactoferrin's two internal K-R sites are either non-functional (P1'=D, cleavage abolished) or moderate-risk (P1'=K, reduced efficiency) — no high-risk truncation sites. Disulfide folding load (17 disulfides total, all from Lf) is 1.06× the Huynh 2020 adalimumab precedent — within demonstrated A. oryzae capacity. One informational finding: uricase has 1 internal KR site (residue 128, P1'=N, high-risk if in fusion); irrelevant for the proposed direct-secretion architecture.
+No blocking **sequence-level cassette-design** issues identified. Uricase (candidate direct-secretion cassette, fungal origin, 0 disulfides) has no KEX2 fusion concerns and negligible codon-optimization burden. Lactoferrin's two internal K-R sites are either non-functional (P1'=D, cleavage abolished) or moderate-risk (P1'=K, reduced efficiency) — no high-risk truncation sites. Corrected bulk disulfide count is 16 total, all from Lf: 1.00× the Huynh 2020 adalimumab comparator. This is not proof of equivalent host capacity because Lf and IgG have different folding and assembly architectures. One informational finding: uricase has 1 internal KR site (residue 128, P1'=N, high-risk if in fusion); its relevance depends on the topology selected by §1.33.
 
-**Informs:** [`validation-experiments.md` §1.9](../../../validation-experiments.md) — Ward 1995 dual-cassette feasibility test; comp-010 supports the §1.9 design and removes cassette-architecture as a pre-experiment concern
+**Informs:** [`validation-experiments.md` §1.33 and §1.9](../../../validation-experiments.md) — comp-010 remains a sequence-level candidate generator; it does not select UOX topology or remove the physiological-system gate
 
 **Interpretive wiki page:** [`wiki/cassette-compatibility-computational.md`](../../../cassette-compatibility-computational.md)
 
@@ -52,7 +52,7 @@ comp-010-cassette-compatibility/
 | 1 | Codon usage (CAI proxy + hotspot scan) | LOW burden | LOW (proxy); full codon-opt required in practice |
 | 2 | KEX2 site geometry | HIGH (1 site, residue 128) — not load-bearing (direct-secretion cassette) | MODERATE (1 site, residue 579, P1'=K; 1 abolished, residue 38, P1'=D) |
 | 3 | Secretion-targeting signals | MODERATE (C-terminal SKL resembles PTS1 — verify in vivo) | LOW (no routing issues) |
-| 4 | Disulfide load | VERY LOW (0 disulfides, 0× Huynh baseline) | MODERATE (17 disulfides, 1.06× Huynh 2020 baseline) |
+| 4 | Disulfide load | VERY LOW (0 disulfides, 0× Huynh baseline) | MODERATE (16 disulfides, 1.00× Huynh 2020 bulk-count comparator; architecture differs) |
 | 5 | N-glycosylation sites | 1 predicted (NFS at pos 191; not UniProt-annotated — unlikely occupied) | 3 predicted, all UniProt-annotated (N137, N478, N623) |
 | 6 | Combined secretion burden | **LOW** (no concurrent blocking factors) | — |
 | 7 | Huynh 2020 comparison | EASIER (fungal origin) | HARDER (solid-state format); COMPARABLE (disulfide load, host strain) |
@@ -65,7 +65,7 @@ comp-010-cassette-compatibility/
 |---|---|---|
 | Overall cassette-design risk | **LOW** | No blocking KEX2 or fold issues in proposed architecture |
 | Uricase cassette | **LOW** | Fungal origin, 0 disulfides, direct-secretion design |
-| Lactoferrin cassette | **MODERATE** on KEX2 | 1 moderate-risk internal KR site (watch by SDS-PAGE); 17 disulfides within Huynh precedent |
+| Lactoferrin cassette | **MODERATE** on KEX2 | 1 moderate-risk internal KR site (watch by SDS-PAGE); 16 disulfides equal Huynh by bulk count, not by architecture |
 | Titer gap vs. Huynh 2020 | 12.6× for Lf target | Huynh 39.7 mg/L adalimumab vs. Ward 1995 >2 g/L Lf — Ward is the correct benchmark |
 
 ---
