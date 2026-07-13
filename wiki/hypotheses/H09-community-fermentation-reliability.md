@@ -131,6 +131,8 @@ Anticipated relevant failure modes from [linter-design.md](../linter-design.md) 
 
 ## Status
 
+**Pilot parking note (2026-07-13, from the June-sweep walkthrough).** The June 2026 sweeps repeatedly surfaced a *"multi-user community-fermentation pilot that falsifies all three riskiest assumptions (H08 mechanism + H09 production + RA#3 dietary-CP0 PK) at once"* as the highest-leverage single experiment. That framing is a **risk map, not an execution plan** — the three risks are independent (per this card, [H08](./H08-gut-lumen-sink-platform-thesis.md), and [open-questions.md §RA#3](../open-questions.md)), and bundling mechanism + production + dietary-PK into one N=8–12 assay conflates three decisions (violates the "one experiment, one decision" discipline). The pilot proper is **P2-2 above** — a production-reliability test at **N=5–10, H09-scoped**, with H08/RA#3 as at-most bonus biomarkers. **Execution is gated on §1.9** (an engineered multi-cassette strain must exist first — it does not yet; see [`H01`](./H01-ward-dual-cassette.md) / [`operations/ward-1995-lab-access.md`](../../operations/ward-1995-lab-access.md)). **Sequencing:** the dietary-CP0 arm (RA#3) is the cheapest independent first killshot and needs *no* strain — run it ahead of any fermentation pilot. **Parked pending §1.9; do not re-surface as a fresh "to-do" until a viable strain exists.**
+
 **Stub.** No killshot executed. No assumption stack pre-registered. Full hypothesis card is queued as Phase 2 — see "Open Follow-Ups" below.
 
 **Survival count:** 0.
