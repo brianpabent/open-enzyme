@@ -1,0 +1,57 @@
+{
+  "_source": "UniProt DISULFID feature annotations, text-format flatfiles fetched 2026-07-13 from https://rest.uniprot.org/uniprotkb/<ACC>.txt. Every bond pair below was grep-verified against the FT DISULFID lines and each Cys position was asserted against the sequence in analyze.py (seq[pos-1] == 'C').",
+  "_disulfide_count_verification": {
+    "P05155_C1-INH": "grep -c '^FT   DISULFID' -> 2",
+    "P08174_DAF-CD55": "grep -c '^FT   DISULFID' -> 8 (all in SCR1-4 / Sushi 1-4, aa 35-285; 2 per sushi domain)",
+    "P02788_lactoferrin": "grep -c '^FT   DISULFID' -> 16 (bilobal transferrin fold; several very-long-range C-lobe bonds)"
+  },
+  "payloads": {
+    "C1-INH": {
+      "uniprot": "P05155",
+      "full_name": "Plasma protease C1 inhibitor (SERPING1 / C1-INH), Homo sapiens",
+      "fold_architecture": "serpin (metastable, RCL-driven)",
+      "seq_length": 500,
+      "signal_peptide": [1, 22],
+      "mature_chain": [23, 500],
+      "engineering_construct": [123, 500],
+      "engineering_construct_note": "Serpin-core, mucin-like O-glycan domain (aa 23-119) truncated per comp-037. Retains both disulfides + RCL R466-T467.",
+      "disulfides": [[123, 428], [130, 205]],
+      "n_glyc_sites": [25, 69, 81, 238, 253, 272, 352],
+      "n_glyc_note": "N-glycans drive plasma half-life (Bos 1998 PMID 9799502); NOT required for the serpin suicide-inhibitor mechanism, which is polypeptide-encoded. For a gut-luminal secreted format, plasma half-life is irrelevant.",
+      "folded_core_region": [123, 500],
+      "rcl_region": [452, 467]
+    },
+    "DAF_SCR1-4": {
+      "uniprot": "P08174",
+      "full_name": "Complement decay-accelerating factor (CD55 / DAF), Homo sapiens, SCR1-4 truncation",
+      "fold_architecture": "CCP / SCR / sushi (4 compact ~60-aa beta-sandwich modules)",
+      "seq_length": 381,
+      "signal_peptide": [1, 34],
+      "mature_ectodomain": [35, 353],
+      "engineering_construct": [35, 285],
+      "engineering_construct_note": "SCR1-4 only per comp-012. Ser/Thr GPI-linker stalk (aa 286-353) truncated. All 8 disulfides retained.",
+      "disulfides": [[36, 81], [65, 94], [98, 145], [129, 158], [163, 204], [190, 220], [225, 267], [253, 283]],
+      "sushi_domains": [[35, 96], [96, 160], [161, 222], [223, 285]],
+      "n_glyc_sites": [95],
+      "n_glyc_note": "Single N-glycan at N95 (SCR1). Decay-accelerating activity is a protein-protein interaction (SCR2-4 bind C3b/C4b); N95 glycan not required for function. O-glycans are on the truncated stalk.",
+      "folded_core_region": [35, 285],
+      "rcl_region": null
+    },
+    "lactoferrin": {
+      "uniprot": "P02788",
+      "full_name": "Lactotransferrin (LTF / hLf), Homo sapiens",
+      "fold_architecture": "transferrin-lobe (bilobal, ~330 aa/lobe, helical inter-lobe linker)",
+      "seq_length": 710,
+      "signal_peptide": [1, 19],
+      "mature_chain": [20, 710],
+      "engineering_construct": [20, 710],
+      "engineering_construct_note": "Full mature bilobal protein. No stalk-truncation rescue available: the bilobal fold + 16-disulfide architecture is intrinsic to iron-binding function; there is no dispensable disordered appendage analogous to the CD55 stalk or C1-INH mucin domain.",
+      "disulfides": [[28, 64], [38, 55], [134, 217], [176, 192], [189, 200], [250, 264], [367, 399], [377, 390], [424, 705], [446, 668], [478, 553], [502, 696], [512, 526], [523, 536], [594, 608], [646, 651]],
+      "lobe_boundaries": {"N_lobe": [20, 358], "inter_lobe_linker": [333, 344], "C_lobe": [345, 710]},
+      "n_glyc_sites": [156, 497, 642],
+      "n_glyc_note": "3 N-glycans. Iron-binding + lactoferricin antimicrobial function are polypeptide-encoded; glycans aid protease resistance + thermal stability. Non-native (fungal) glycans tolerated (Sun 1999 PMID 10089347, A. awamori-produced hLf, native fold). EcN produces NO glycan at all.",
+      "folded_core_region": [20, 710],
+      "rcl_region": null
+    }
+  }
+}

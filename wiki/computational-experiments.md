@@ -22,6 +22,26 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ## Analyses
 
+### comp-043 — Does EcN periplasmic disulfide-folding scale from C1-INH (2) to DAF SCR1-4 (8) and lactoferrin (16)? — C1-INH VIABLE / DAF PROVISIONAL / lactoferrin NOT-VIABLE (2026-07-13)
+
+**Question:** [comp-037](./c1-inh-protease-stability-ecn-computational.md) showed EcN's periplasmic DsbA/DsbC machinery can plausibly fold C1-INH (2 disulfides). A synthesis card overreached: "so EcN is superior to koji for PDI-heavy payloads like DAF SCR1-4 (8) and lactoferrin (16)." Does EcN's periplasmic disulfide-folding + colonic-protease survival actually *scale* with disulfide count, and where does the crossover sit? Explicitly **not** a genome-scale metabolic model (a GEM models flux, not folding-machinery competition — the card's category error) — a [comp-006](./daf-cd55-protease-stability-computational.md)/[comp-037](./c1-inh-protease-stability-ecn-computational.md)-style structural + sequence folding-feasibility analysis.
+
+**Verdict:** **Relative ranking, crossover AT DAF SCR1-4 — not a false-precision GREEN.** C1-INH (2 disulfides) **VIABLE** (disulfide axis; comp-037 kinetic caveat still governs). DAF SCR1-4 (8) **PROVISIONAL** — folding-capacity-gated. Lactoferrin (16) **NOT-VIABLE** — folding-limited across the entire plausible capacity band. **Card claim REFUTED as stated.** Bounded thesis: EcN plausibly extends to low/moderate-disulfide, compact-fold, glyco-independent payloads (C1-INH, DAF SCR1-4-provisional); it does not scale to lactoferrin; and koji is *not* dominated (folds DAF at LOW protease risk per comp-012, >2 g/L lactoferrin in *A. awamori* per Ward 1995).
+
+**Key findings:**
+- Three orthogonal axes, limiting-factor (Liebig) composite where **folding is the gate**: (1) architecture-weighted disulfide-folding demand vs. a precedent-derived DsbA/DsbC capacity band; (2) strictly-degradative colonic-protease exposure (pLDDT scan); (3) glycosylation-dependence for function.
+- Effective folding demand (loop-length + interleaved-crossing weighted): C1-INH **4.0**, DAF SCR1-4 **10.0**, lactoferrin **23.5** vs. capacity band conservative 5 / moderate 8 / optimistic 12. Folding-nonviability: C1-INH plausible across the band; DAF straddles it; lactoferrin limited even at optimistic capacity (3 C-lobe-spanning long-range bonds = transferrin hierarchical-folding signature).
+- Disulfide counts grep-verified against UniProt: C1-INH P05155 = 2, DAF P08174 = 8 (all in SCR1-4), lactoferrin P02788 = 16. Every Cys position asserted in `analyze.py`.
+- **Single biggest unresolved question:** no published DsbA/DsbC capacity metric at 8-16 disulfide scale (chaperone-orthogonal-stacking.md §8 item 6) — the capacity band is an *inference, not a measurement*, hence DAF's PROVISIONAL label. The optimistic (SHuffle) anchor is cytoplasmic disulfide formation, compartment-mismatched with the secreted luminal format, biasing the honest read conservative for DAF.
+- **Glycosylation does NOT independently kill DAF or lactoferrin function** (DAF decay-acceleration is protein-protein; lactoferrin iron-binding tolerates non-native glycans, Sun 1999) — the dominant filter is Axis 1 (folding), not glycosylation. Over-attributing the lactoferrin problem to glycosylation would be a mechanism error.
+- Peer-review-incorporated: interleaved sushi topology folded into DAF's demand; C1-INH softened to "disulfide-axis viable" (serpin metastability = unmodeled fold-attainment risk); compartment-mismatch of the SHuffle anchor flagged.
+
+**Informs:** [engineered-lbp-chassis.md](./engineered-lbp-chassis.md) (chassis assignment: lactoferrin stays on koji, DAF EcN provisional-secondary) · [chaperone-orthogonal-stacking.md](./chaperone-orthogonal-stacking.md) §8 (EcN-side capacity-metric gap, analogue of the koji α-coefficient gap) · [complement-c5a-gout.md](./complement-c5a-gout.md) (two-chassis CP0 architecture stands, chassis assignment does not invert) · [validation-experiments.md](./validation-experiments.md)
+
+**Detail:** [interpretive](./daf-lactoferrin-ecn-folding-feasibility-computational.md) · [experiments/](./etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/) · Complete first pass (next gate: DsbA/DsbC folding-capacity measurement at 8-16 disulfide scale)
+
+---
+
 ### comp-042 — KPV self-delivery through GSDMD pyroptotic pores vs. the PepT1 baseline — YELLOW (provisional) (2026-07-13)
 
 **Question:** Does the physics support KPV (Lys-Pro-Val) flooding into pyroptotic macrophages through GSDMD pores fast enough to clear its intracellular IC50 (A1 — flux sufficiency), and — the quietly weak assumption — does the pore confer real *selectivity* over the PepT1 (SLC15A1) transporter route KPV already has (A2)? Stress-tests the [GSDMD pore self-delivery paradox](./gsdmd-pore-delivery-paradox.md) "Trojan-horse" thesis for KPV specifically.

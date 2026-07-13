@@ -133,6 +133,25 @@ Which of these are tractable in *F. prausnitzii* specifically (vs. *Bacteroides*
 
 ---
 
+## EcN as a disulfide-folding chassis — how far does it scale? (comp-043, 2026-07-13)
+
+A synthesis card proposed that *E. coli* Nissle (EcN) might be a **superior** chassis to koji for disulfide-rich ("PDI-heavy") payloads — bypassing koji's ER folding-machinery competition via EcN's periplasmic DsbA/DsbC system. [comp-043](./daf-lactoferrin-ecn-folding-feasibility-computational.md) tested whether EcN periplasmic folding actually *scales* with disulfide count:
+
+| Payload | Disulfides | Fold | EcN verdict |
+|---|---|---|---|
+| C1-INH (serpin) | 2 | metastable serpin | **VIABLE** (disulfide axis; comp-037's kinetic-competition caveat still governs) |
+| DAF SCR1-4 (CCP/sushi) | 8 | compact β-sandwich modules | **PROVISIONAL** — folding-capacity-gated |
+| Lactoferrin (transferrin-lobe) | 16 | bilobal, long-range C-lobe bonds | **NOT-VIABLE** — folding-limited across the plausible capacity band |
+
+**The card is refuted as stated.** The plausible→not-plausible crossover sits at **DAF SCR1-4 (8 disulfides)**: EcN is plausible at 2, capacity-gated/provisional at 8, and cannot fold lactoferrin (16). Two findings sharpen it:
+
+- **Folding, not glycosylation, is the dominant filter.** EcN can't glycosylate, but comp-043 found loss of glycans does *not* independently abolish DAF or lactoferrin function (decay-acceleration and iron-binding/lactoferricin are polypeptide-encoded). Attributing lactoferrin's failure to the missing sugars would be a mechanism error — it's the 16-disulfide transferrin fold a periplasmic oxidase can't attain.
+- **Koji is not dominated.** Koji folds DAF SCR1-4 at LOW protease risk ([comp-012](./daf-cd55-scr14-truncated-computational.md)) and has a **>2 g/L lactoferrin precedent** (Ward 1995, *A. awamori*; native fold confirmed Sun 1999). For lactoferrin, koji is the demonstrated chassis and EcN is not an option.
+
+**Bounded thesis:** EcN is a plausible *alternative* chassis for **low-to-moderate-disulfide, compact-fold, glycosylation-independent** complement regulators (C1-INH viable, DAF SCR1-4 provisional) — **not** a superior chassis for PDI-heavy payloads, and inferior to koji for lactoferrin. This *strengthens* rather than replaces the two-chassis CP0 architecture: C1-INH on EcN, DAF SCR1-4 primarily on koji (EcN a provisional secondary route), lactoferrin on koji only.
+
+**Highest-leverage missing measurement:** a DsbA/DsbC oxidative-folding capacity assay at 8–16 disulfide scale — the EcN-side analogue of koji's α-coefficient calibration gap ([`chaperone-orthogonal-stacking.md` §8 item 8](./chaperone-orthogonal-stacking.md)). Until it exists, any EcN-DAF-SCR1-4 folding claim stays provisional.
+
 ## Regulatory path
 
 **FDA Live Biotherapeutic Products (LBP) framework:** introduced via the 2016 (updated 2018) Guidance for Industry "Early Clinical Trials with Live Biotherapeutic Products." Establishes a Biologic License Application (BLA) pathway distinct from food, supplement, or drug. Requires CMC characterization of the live product (strain identity, purity, viability, genetic stability), preclinical safety, and standard IND-enabling toxicology.
