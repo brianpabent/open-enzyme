@@ -647,3 +647,23 @@ Codex's review noted that the adjacent-literature additions from Session 8 are r
 ## Future sessions
 
 Each subsequent drafting session appends a section to this file: what was drafted, who reviewed it, what was caught, what was changed in response. The final paper's Appendix B is generated from this log.
+
+---
+
+## Post-submission Session — 2026-07-13 — The oxygen miss narrows the central claim
+
+### Catch 51 — Cross-vendor coverage did not provide independent problem formulation
+
+**Source:** Brian's methodological observation during the comp-044/045 wet-lab-priority correction, followed by direct inspection of comp-019 inputs and implementation in the current Codex whole-corpus audit.
+
+**Pre-edit state:** The submission-time paper had one boundary case for shared training-data contamination (§5.6), but its central architecture still treated cross-vendor heterogeneity as the principal granularity of independence. It did not distinguish vendor-level prior diversity from task-role, prompt, source-hierarchy, ontology, or abstraction-boundary diversity.
+
+**New evidence:** The Open Enzyme corpus had been built, extended, or reviewed with GPT-5.5; Gemini 2.5 Pro and Gemini 3.5 Flash; DeepSeek V4 Pro; and Claude Opus 4.6, 4.7, and 4.8 (author-reported operational roster; not every model independently audited the same claim). Despite that breadth, the legacy comp-019 model stored approximately 0.59 µM human luminal urate and an approximately 25 µM UOX Km without using them in the implementation, converted saturated activity to a 24-hour capacity, and omitted finite residence time, oxygen access, physical access, and peroxide burden. Oxygen-dependent stoichiometry and an oxygen-management precedent already existed elsewhere in the corpus. The facts were available but non-load-bearing.
+
+Comp-044 invalidated the legacy central feasibility conclusion on physiological substrate occupancy plus finite exposure time before oxygen penalties. Comp-045 then established topology × oxygen × peroxide as a coupled design gate. The miss therefore cannot be explained simply as lack of model knowledge.
+
+**Correction applied:** Added a clearly labeled post-submission §5.7 boundary case; added shared-problem-framing / correlated-task-roles to §7; added epistemic-role heterogeneity to §8; added §5.7 rows to Appendices A and C; and placed an explicit working-copy note after the abstract so the immutable Zenodo v1 record is not retroactively blurred. The new material does not alter the original seven-case count, empirical pilot, or submission-time audit total.
+
+**Revised claim:** cross-vendor heterogeneity remains useful against vendor-specific priors, but it is not sufficient scientific independence. Quantitative platform claims additionally require an independent constraint-closure role that re-derives reaction, operating regime, time/mass balance, compartment/access, safety coproducts, and implementation use of stored inputs.
+
+**Causal limitation:** This incident does not establish that the current frontier model is intrinsically superior to the prior model families. The later run changed model, prompt, scope, tool use, corpus state, and task role simultaneously. The verified operational difference is that it performed a whole-corpus first-principles implementation audit rather than another propagation or local-consistency review.

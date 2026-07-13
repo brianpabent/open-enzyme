@@ -14,6 +14,46 @@ This log is **public** (operations/ folder is in the public repo) — same postu
 
 ---
 
+## 2026-07-13 — We wrote a paper about multi-vendor AI preventing blind spots. Then multiple vendors shared the same blind spot.
+
+**What happened.** Open Enzyme had already been built, extended, and reviewed with frontier models from several vendors: GPT-5.5; Gemini 2.5 Pro and Gemini 3.5 Flash; DeepSeek V4 Pro; and Claude Opus 4.6, 4.7, and 4.8. This is an author-reported operational roster, not a claim that every listed model independently audited the same uricase calculation. Fable 5 was also attempted but declined the biology task, so it supplied no evidence either way.
+
+The project had even written a full methodology paper arguing that cross-vendor heterogeneity helps prevent a long-lived AI-maintained scientific corpus from accumulating one model family's blind spots. That defense worked in several documented cases. It did not catch the most consequential modeling omission in the gout program.
+
+The legacy comp-019 gut-uricase model treated enzyme abundance as the main question and converted nominal uricase activity to a 24-hour daily capacity. Its own inputs already contained the two numbers needed to challenge that frame: approximately 0.59 micromolar luminal urate and an approximately 25 micromolar uricase Km. The implementation did not use either one. It also did not model finite intestinal residence time, compartmental access, oxygen availability, or peroxide coproduct burden. Meanwhile, other corpus pages explicitly wrote the uricase reaction with molecular oxygen and described oxygen-management machinery in a relevant engineered-probiotic precedent. The facts were in the corpus. They were never promoted into load-bearing constraints in the decision model.
+
+The 2026-07-13 whole-corpus re-derivation caught two nested failures:
+
+1. **The old feasibility conclusion fails before oxygen is considered.** At the documented human luminal urate concentration relative to Km and with a finite jejunal exposure window, central projected dose ratios fall below one before applying oxygen, access, survival, or formulation penalties. This is the comp-044 correction.
+2. **Oxygen then changes the engineering question.** Uricase requires O2 and produces H2O2, so localization, oxygen access, and peroxide handling are coupled design variables, not downstream optimization details. This is the comp-045 result and the reason physiological topology × oxygen × peroxide became gout-program Gate 0 (§1.33).
+
+**Why the multiple vendors did not save us.** The models were diverse, but the tasks were correlated. They propagated pages, synthesized within the inherited ontology, reviewed local consistency, or extended an already accepted capacity/yield framing. They were not seven independent falsification attempts starting from the reaction equation, physiological substrate concentration, residence time, compartment, and source code. Repetition across vendors therefore created apparent consensus without epistemic independence.
+
+This is a different limitation from shared training-data contamination. The models did not all remember the same wrong fact. The relevant facts were mostly present and correct. They inherited the same **problem boundary** and failed to ask which known facts the implementation had left non-load-bearing. Cross-vendor diversity reduces vendor-specific prior risk; it does not automatically diversify the prompt, task role, source hierarchy, or model boundary.
+
+**Why the new pass differed.** The task was explicitly to read the entire corpus for multi-level connections and new research threads, followed by a wet-lab-priority audit. The pass inspected the computational implementation and its inputs, re-derived the physical system, and treated chemistry, physiology, compartment, and safety as simultaneous constraints. A newer frontier model may have contributed, but this single observation cannot identify model capability as the cause: model, prompt, task role, available tools, accumulated corpus state, and chance all changed together. The scientifically honest result is not “this model is smarter than Opus.” It is “this run performed a different epistemic operation.” Opus-class models could plausibly have found the same omission under a first-principles implementation-audit brief.
+
+**The discipline upgrade.** Preserve cross-vendor coverage, but add **task independence** and a mandatory constraint-closure audit for quantitative platform claims. At least one pass must ignore the inherited conclusion and re-derive the system from:
+
+- reaction substrates, cosubstrates, cofactors, and electron acceptors;
+- physiological concentration relative to Km or other operating-regime constants;
+- exposure/residence time and finite mass balance;
+- localization, transport, and physical access;
+- coproducts and safety liabilities; and
+- implementation closure: every load-bearing input is either used in code or explicitly excluded with a sensitivity bound.
+
+Repeated agreement across pages or vendors counts as one inherited claim until an independent task role re-derives it. The project now needs both kinds of heterogeneity: **vendor heterogeneity** for different learned priors and **epistemic-role heterogeneity** for different ways of attacking the same claim.
+
+**Why this matters beyond Open Enzyme.** “Use multiple frontier models” is becoming standard advice for AI-assisted research. This incident gives the advice its missing boundary condition. An ensemble can be diverse at the weights level and monocultural at the problem-framing level. If all reviewers inherit the same abstraction, they can unanimously inspect the wrong system.
+
+**External-comms angle.** The honest headline is the strong one: *We wrote a paper about using multiple AI vendors to avoid blind spots. Then GPT-, Gemini-, DeepSeek-, and Claude-family models all worked on the corpus without making oxygen load-bearing in an oxidase program.* The point is not that the paper was useless. The incident refines its claim: cross-vendor heterogeneity caught real failures, but it is one axis of independence, not a complete scientific method. The paper's working copy now preserves this as a post-submission boundary case rather than quietly rewriting the original record.
+
+Primary internal record: [comp-019 legacy-model stub](../wiki/uricase-abcg2-genotype-stratification-computational.md), [comp-044 physiological-regime correction](../wiki/gut-lumen-uricase-physiologic-regime-computational.md), [comp-045 topology × oxygen × peroxide analysis](../wiki/uricase-topology-oxygen-peroxide-design-computational.md), and [the cross-vendor heterogeneity paper](../papers/cross-vendor-heterogeneity-guard/draft.md).
+
+Notable for: AI-assisted research methodology, ensemble failure, correlated problem framing, implementation audits, scientific humility, and an unusually clean example of a project falsifying the overly broad reading of its own published thesis.
+
+---
+
 ## 2026-06-02 — Reactome replied: Open Enzyme's first pathway-curation contribution is in curator review
 
 **What happened.** Brian sent Reactome a narrowly scoped contribution note proposing three literature-supported regulatory annotations for the NLRP3 inflammasome pathway: oridonin, tranilast, and beta-hydroxybutyrate / 3-hydroxybutyrate. The note deliberately excluded several things the first sloppy pass had overclaimed, because the Reactome audit showed they were already modeled: disulfiram/GSDMD, avacopan/C5AR1, anakinra/IL1R1, colchicine/tubulin, complement core machinery, IL-1 signaling, and pyroptosis.

@@ -360,6 +360,39 @@ Full retrospective: [`operations/comp-018-vs-comp-020-retrospective.md`](../oper
 
 ---
 
+## Cross-vendor is not enough: constraint-closure audit (added 2026-07-13)
+
+**Status:** Permanent architecture principle. Complements the cross-vendor heterogeneity guard; does not replace it.
+
+### Failure observed
+
+The comp-019 gut-uricase capacity model and its downstream interpretation survived work across several frontier-model families. The relevant facts were already distributed through the corpus and even through comp-019's own inputs: human luminal urate was far below the modeled UOX Km; intestinal exposure was finite rather than 24 hours; uricase requires O2; and its reaction produces H2O2. The implementation nevertheless converted nominal saturated activity to a 24-hour daily capacity without using the stored substrate concentration or Km and without modeling residence time, oxygen, access, or coproduct burden.
+
+This was not primarily a vendor-specific knowledge gap. It was **shared problem framing**. Propagators, synthesizers, and reviewers inherited “enzyme capacity / yield” as the object under review, then checked pages for consistency inside that boundary. Multiple vendors do not constitute independent evidence when prompt, task role, source hierarchy, inherited ontology, and implementation assumptions remain correlated.
+
+Comp-044 invalidated the legacy central conclusion on substrate occupancy + finite residence time alone. Comp-045 then showed that topology, oxygen access, and peroxide handling are a coupled design gate. See `operations/notable-moments.md` (2026-07-13) for the public incident record.
+
+### Architecture consequence
+
+Preserve cross-vendor coverage, but require at least one **independent re-derivation role** for every quantitative claim that controls platform priority or wet-lab spend. That pass starts from the physical system and implementation, not from the canonical page's conclusion.
+
+Minimum constraint-closure checklist:
+
+1. **Reaction closure:** all substrates, cosubstrates, cofactors, electron acceptors, and products.
+2. **Operating-regime closure:** physiological concentration relative to Km, Kd, IC50, transport capacity, or the applicable constant.
+3. **Time and mass-balance closure:** realistic exposure/residence time, finite substrate pool, replenishment, and unit conversions.
+4. **Compartment closure:** localization, transport, diffusion, host-cell or matrix access, and where the reaction actually occurs.
+5. **Safety closure:** coproducts, local peaks, redox burden, off-target chemistry, and detoxification capacity.
+6. **Implementation closure:** every load-bearing input is used in code or explicitly excluded with a justified sensitivity bound; stored-but-unused inputs are a first-class audit finding.
+
+**Decision rule:** cross-page or cross-vendor repetition counts as one inherited claim until a differently framed pass re-derives it. “The corpus knows X” is not equivalent to “the model uses X.”
+
+### Relationship to the heterogeneity paper
+
+The submission-time Zenodo v1 of `papers/cross-vendor-heterogeneity-guard/draft.md` predates this observation. The working copy records it as post-submission §5.7. The corrected claim is narrower and stronger: vendor heterogeneity guards against some vendor-specific priors, but scientific independence also requires task-role and model-boundary heterogeneity.
+
+---
+
 ## Pilot — Tool-Gap vs. Science-Gap Disagreement Attribution (added 2026-05-15)
 
 **Status:** Pilot. Wired into Pass 3 prompts (`scripts/sweep-prompt-3-review.md` + `scripts/sweep-prompt-3-review-gpt55.md`) for the next 2–3 sweep cycles starting 2026-05-15. Evaluated against the promote/abandon gates below. Not a permanent architecture change yet.
@@ -386,7 +419,7 @@ The sweep daemon's existing 3-pass design (Pass 1 Propagate → Pass 2 Synthesiz
 
 Over time, per-model patterns emerge ("Gemini Pass 2 consistently shows science-gap failures on intracellular trafficking biology" → re-route trafficking-relevant claims to a different synthesizer). This is the kind of self-knowledge a multi-vendor sweep daemon should have but currently doesn't.
 
-The decomposition is named in the BioDesignBench preprint (bioRxiv 2026.05.06.723381) per their finding that DeepSeek V3 and GPT-5 are dominated by tool-gap and Gemini 2.5 Pro by science-gap on the 76-task benchmark. **BioDesignBench remains PRIMARY-SOURCE-PENDING** ([`wiki/bio-ai-tools.md`](../wiki/bio-ai-tools.md) §BioDesignBench — PDF fetch was Cloudflare-blocked 2026-05-12). The pilot draws on the *idea* without depending on the preprint's empirical claims; if BioDesignBench fails verification, the pilot still stands or falls on its own utility.
+The decomposition is named in the BioDesignBench preprint (bioRxiv 2026.05.06.723381) per their finding that DeepSeek V3 and GPT-5 are dominated by tool-gap and Gemini 2.5 Pro by science-gap on the 76-task benchmark. **BioDesignBench remains PRIMARY-SOURCE-PENDING** ([`wiki/etc/bio-ai-tools.md`](../wiki/etc/bio-ai-tools.md) §BioDesignBench — PDF fetch was Cloudflare-blocked 2026-05-12). The pilot draws on the *idea* without depending on the preprint's empirical claims; if BioDesignBench fails verification, the pilot still stands or falls on its own utility.
 
 ### Promote / abandon gates
 
