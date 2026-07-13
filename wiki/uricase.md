@@ -121,6 +121,8 @@ Enzyme stability after drying is critical. Conventional heat-based drying (50–
 
 Lyophilization (freeze-drying) preserves enzyme activity far better, and encapsulation in trehalose or other lyoprotectants is standard for enzyme stabilization. A lyophilized yeast powder, packaged in capsules, could retain uricase activity. (Source: engineered-yeast-uricase-proposal.md)
 
+**Purine caveat — the dried-yeast biomass is itself very high purine.** Eating the yeast cells means eating their nucleic acids, and dried yeast is one of the highest-purine foods that exists (~1,800–3,000 mg/100 g; Kaneko 2014, USDA Purine Database 2025). At a therapeutic uricase dose (~10 g dried yeast/day), this adds ~180–300 mg dietary purine/day — 45–75% of Japan's 400 mg/day gout limit, from the medicine alone. The koji chassis is mostly low-purine rice (~15–35 mg/100 g) and carries ~15–120× less purine per therapeutic dose. The carried uricase may degrade much of the co-ingested purine in situ, so the *net* effect is unknown and worth a direct assay — but this is a structural argument for the koji chassis on the sustained oral-dosing path. Full quantified comparison: [[purine-load-koji-vs-yeast]].
+
 ### Live Probiotic
 
 *S. boulardii* achieves steady-state concentrations in the human colon within 3 days of regular dosing and clears 2–5 days after discontinuation—it transits rather than colonizes. Daily dosing is therefore required to maintain gut levels. (Source: engineered-yeast-uricase-proposal.md)
