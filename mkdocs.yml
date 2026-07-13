@@ -58,6 +58,7 @@ nav:
   - Vision & Strategy:
     - Open Enzyme Vision: etc/open-enzyme-vision.md
     - Cross-Validation: cross-validation.md
+    - Gout Multihop Research Program: gout-multihop-research-program.md
     - Open Source Platform: etc/open-source-platform.md
     - Chassis-Pending Interventions: chassis-pending-interventions.md
     - Duckweed Aquatic-Sibling Chassis: duckweed-aquatic-chassis.md
@@ -189,6 +190,11 @@ nav:
     - TCM Gout Compound Triage (comp-013): tcm-gout-compound-triage-computational.md
     - Medicinal Mushroom Compound Mapping (comp-014): medicinal-mushroom-compound-mapping-computational.md
     - Tier 2 Butyrate Assay Audit (comp-038): tier-2-butyrate-assay-audit-computational.md
+    - KPV GSDMD Pore Influx (comp-042): kpv-gsdmd-pore-influx-computational.md
+    - DAF+Lactoferrin EcN Folding Feasibility (comp-043): daf-lactoferrin-ecn-folding-feasibility-computational.md
+    - Gut-Lumen Uricase Physiological Regime (comp-044): gut-lumen-uricase-physiologic-regime-computational.md
+    - Uricase Topology × Oxygen × Peroxide (comp-045): uricase-topology-oxygen-peroxide-design-computational.md
+    - Staged Purine Sink Mass Balance (comp-046): staged-purine-sink-mass-balance-computational.md
     - T-axis Adjuvant Urate Mapping (comp-015): t-axis-adjuvant-urate-mapping-computational.md
     - T × Intestinal ABCG2 Evidence Mining (comp-016): t-abcg2-suppression-evidence-mining-computational.md
     - Intestinal ABCG2 Sex-Dimorphism Mining (comp-017): intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md
