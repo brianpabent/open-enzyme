@@ -1,0 +1,34 @@
+{
+  "per_route": {
+    "intra_articular": {
+      "A1_flux_sufficiency": "GREEN",
+      "A1_ratio_over_ic50_central": 29200.0,
+      "A1_prob_clear_ic50": 1.0,
+      "A2_selectivity": "YELLOW-unquantifiable",
+      "A2_scenarios_with_meaningful_selectivity": 2,
+      "combined_route_verdict": "MARGINAL-selectivity-unproven"
+    },
+    "subcutaneous": {
+      "A1_flux_sufficiency": "YELLOW",
+      "A1_ratio_over_ic50_central": 3.0,
+      "A1_prob_clear_ic50": 0.68455,
+      "A2_selectivity": "YELLOW-unquantifiable",
+      "A2_scenarios_with_meaningful_selectivity": 2,
+      "combined_route_verdict": "MARGINAL-selectivity-unproven"
+    },
+    "oral": {
+      "A1_flux_sufficiency": "RED",
+      "A1_ratio_over_ic50_central": 0.1,
+      "A1_prob_clear_ic50": 0.04,
+      "A2_selectivity": "YELLOW-unquantifiable",
+      "A2_scenarios_with_meaningful_selectivity": 2,
+      "combined_route_verdict": "FAIL"
+    }
+  },
+  "overall": {
+    "overall": "YELLOW-provisional",
+    "any_route_A1_GREEN": true,
+    "any_route_PASSES_both_filters": false,
+    "statement": "YELLOW (provisional). The physics of KPV self-delivery is sound (A1 flux-sufficiency GREEN for intra-articular, marginal for subcutaneous): a 20 nm pore equilibrates intracellular [KPV] to the extracellular synovial concentration within seconds, so any route reaching >= the ~10 nM IC50 in synovial fluid clears the intracellular therapeutic bar. BUT the Trojan-horse SELECTIVITY thesis (A2) -- the actual reason to prefer pore delivery -- is UNQUANTIFIABLE for KPV: because KPV already enters cells via PepT1, the pore's selectivity over the PepT1 baseline is gated entirely by synovial-macrophage PepT1 expression, which is uncharacterized. No route clears BOTH the therapeutic AND a meaningful-selectivity threshold with confidence. Provisional because it rests on 3 compounding named assumptions: (i) pores/cell >= ~10, (ii) design-space SC/oral synovial PK, (iii) the PepT1 AR_lin scenario band."
+  }
+}

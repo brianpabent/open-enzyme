@@ -59,6 +59,10 @@ KPV enters intestinal epithelial cells and immune cells via the PepT1 transporte
 
 **(Source: peptide-gout-addendum.md)** — "KPV enters intestinal epithelial cells and immune cells via the PepT1 transporter — the same peptide transporter that handles dietary di- and tripeptides. This gives it direct access to the gut immune system."
 
+### GSDMD Pore Self-Delivery — Evaluated, Not Selective for KPV
+
+A proposed "Trojan-horse" route — KPV flooding *selectively* into pyroptotic macrophages through their GSDMD pores during a flare — was stress-tested computationally ([`kpv-gsdmd-pore-influx-computational.md`](./kpv-gsdmd-pore-influx-computational.md), comp-042) and found **not to give KPV a selective advantage.** The pore admits KPV easily, but KPV's own PepT1 route (above) already admits it into healthy cells too — and because KPV is an *upstream* NLRP3/NF-κB inhibitor while pores open *downstream* of inflammasome firing, pore-delivery arrives after KPV's target has acted. KPV's real delivery edge is therefore its **PepT1-mediated uptake**, not pore self-targeting. (Mechanistic Extrapolation; see [`gsdmd-pore-delivery-paradox.md`](./gsdmd-pore-delivery-paradox.md) §"Computational stress-test".)
+
 ### Connection to Uric Acid Excretion
 
 Approximately one-third of uric acid excretion happens through the gut. If KPV reduces intestinal inflammation and supports a healthier gut environment, it could improve conditions for intestinal uricolysis — the gut's contribution to uric acid elimination.

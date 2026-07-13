@@ -1,0 +1,31 @@
+{
+  "inner_diameter_nm": {
+    "central": 20.0,
+    "lower": 10.0,
+    "upper": 21.5,
+    "comment": "GSDMD pore inner diameter. Sborgi 2016 (EMBO J, PMID 27418190) AFM: ring diameters 21.2 +/- 5.6 nm (n=164). Xia 2021 (Nature, PMID 33883744) cryo-EM: 33-subunit pore, inner diameter ~215 Angstrom = 21.5 nm. Our corpus (gsdmd-pore-delivery-paradox.md line 40) states 10-20 nm as the working inner-diameter range. KPV (~1 nm) is 15-40x smaller than the pore radius, so pore is not a steric barrier regardless of which value in this range is used.",
+    "source_class": "structural_biology_cryoEM_AFM"
+  },
+  "channel_length_nm": {
+    "central": 7.0,
+    "lower": 4.0,
+    "upper": 10.0,
+    "comment": "Effective length of the transmembrane beta-barrel conduit. Lipid bilayer ~4-5 nm; the GSDMD beta-barrel spans and slightly protrudes. LOW sensitivity because for a wide short pore the access (convergence) resistance term (pi*r/2 ~= 15.7 nm at r=10 nm) dominates over the channel term L. Range 4-10 nm.",
+    "source_class": "structural_biology_estimate"
+  },
+  "conduit_electrostatics": "Xia 2021 (PMID 33883744): the GSDMD pore conduit is predominantly NEGATIVELY charged and preferentially passes positively-charged and neutral cargo over negatively-charged cargo of similar size (electrostatic filtering; demonstrated for mature vs pro-IL-1). KPV is net +1 -> electrostatically favored -> supports hindrance factor >= 1.",
+  "pores_per_pyroptotic_cell": {
+    "central": 200,
+    "lower": 10,
+    "upper": 10000,
+    "comment": "NAMED ASSUMPTION / design-space range. Neither Sborgi 2016 nor Xia 2021 reports a per-cell pore count (confirmed by full-text check: they characterize pore structure, not cellular abundance). Pyroptosis permeabilizes the whole cell (LDH release, propidium influx), which requires many pores; imaging shows heterogeneous fields of arcs/slits/rings. Central 200 is a mid estimate; the robustness sweep spans 10-10000. KEY RESULT: the equilibration verdict is robust for pores_per_cell >= ~10 (see analyze.py), so this poorly-constrained parameter does not drive the A1 flux verdict.",
+    "source_class": "named_assumption_design_space"
+  },
+  "open_lifetime_seconds": {
+    "central": 300,
+    "lower": 60,
+    "upper": 1800,
+    "comment": "Pore open lifetime = 1-30 min. Our corpus (gsdmd-pore-delivery-paradox.md Open Question #4) states 'minutes to tens of minutes' before ESCRT-mediated membrane repair or cell lysis. This comp quantitatively answers that open question by computing what fraction of extracellular [KPV] the cell reaches within the lifetime. Range 60-1800 s.",
+    "source_class": "corpus_open_question_plus_ESCRT_literature"
+  }
+}

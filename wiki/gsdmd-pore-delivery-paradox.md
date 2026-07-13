@@ -104,7 +104,7 @@ The OE stack currently addresses CP6b via:
 
 These are prevention-oriented: they work by stopping GSDMD from forming pores in the first place. The pore self-delivery mechanism is a *response*-oriented complement: useful once pores are already forming, as a circuit-breaker.
 
-For the OE platform specifically, there is a potential engineered application: if koji-derived compounds or peptides can be formulated to reach the synovial fluid and are membrane-impermeant under baseline conditions, the pore self-delivery mechanism selectively concentrates them in the most active pyroptotic cells. A compound that is otherwise too hydrophilic or charged to enter cells passively becomes self-targeted during the flare. This is speculative but mechanistically grounded. (Mechanistic Extrapolation)
+For the OE platform specifically, there is a potential engineered application: if koji-derived compounds or peptides can be formulated to reach the synovial fluid and are membrane-impermeant under baseline conditions, the pore self-delivery mechanism selectively concentrates them in the most active pyroptotic cells. A compound that is otherwise too hydrophilic or charged to enter cells passively becomes self-targeted during the flare. This is speculative but mechanistically grounded. (Mechanistic Extrapolation) **Caveat (comp-042, 2026-07-13):** "membrane-impermeant under baseline conditions" is load-bearing — a payload with its own transporter route (e.g. KPV via PepT1) gets *no* selectivity from the pore. The ideal payload is transporter-orphan and downstream-acting; see §"Computational stress-test" below.
 
 ---
 
@@ -145,6 +145,22 @@ This makes the delivery paradox a platform insight, not a gout-specific one. Gou
 
 ---
 
+## Computational stress-test (comp-042, 2026-07-13) — KPV is the wrong payload, but the mechanism survives
+
+A transport / mass-balance model ([`kpv-gsdmd-pore-influx-computational.md`](./kpv-gsdmd-pore-influx-computational.md), comp-042) put numbers on the KPV self-delivery thesis for the first time. **Verdict: YELLOW (provisional) — the physics is sound, but KPV specifically is the wrong payload to prove the concept.**
+
+**The physics works (and answers Open Question #4, below).** A ~20 nm pore equilibrates intracellular [KPV] to the extracellular (synovial) concentration in **~2 seconds** — far faster than the minutes-scale pore lifetime. So pore *lifetime* is never the binding constraint; peak intracellular concentration is simply capped at the synovial concentration. Any route reaching the ~10 nM intracellular IC50 in synovial fluid clears the therapeutic bar (intra-articular ~29,000×; subcutaneous marginal ~3×; oral fails). (Mechanistic Extrapolation, in silico.)
+
+**But the *selectivity* — the whole point of the paradox — is falsified for KPV, for two independent reasons:**
+
+1. **KPV already has a constitutive transporter route (PepT1 / SLC15A1).** KPV enters cells — including immune cells — via PepT1 independent of any pore ([Dalmasso 2008, PMID 18061177](https://doi.org/10.1053/j.gastro.2007.10.026), *Gastroenterology*; In Vitro). So the pore confers meaningful pyroptotic-vs-healthy selectivity only if synovial macrophages *lack* functional PepT1 — and if they express it, a concentrative electrogenic symporter plus an intact membrane potential can make **healthy** cells accumulate KPV *more* than pyroptotic cells (selectivity ≤ 1, i.e. anti-selective). Synovial-macrophage PepT1 expression is uncharacterized in the literature — the single datum that gates the whole selectivity question. See [`kpv-peptide.md`](./kpv-peptide.md).
+
+2. **PD timing mismatch (the deeper reason).** KPV is an *upstream* inhibitor — it blocks NLRP3 assembly and NF-κB priming. GSDMD pores open *downstream* of inflammasome firing (caspase-1 has already cleaved GSDMD; IL-1β is already being released). Pore-delivery therefore imports an upstream inhibitor into a cell where its target has *already acted*. The pore selects precisely for the cells where KPV is too late.
+
+**The reframe (why this is redirect, not dead-end).** The failure is specific to KPV's properties, not to the pore. comp-042 sharpens the design spec for a payload that *would* work: (i) **transporter-orphan** — no independent import route, so the pore is the only way in (real selectivity); (ii) **downstream-acting** — targets the pyroptotic execution/propagation step, so timing aligns; and (iii) ideally **intracellularly labile** — a payload degraded inside cells needs sustained flux, which only the open pore supplies, adding selectivity (KPV's enzymatic *resistance* is anti-selective here). **Ac-FLTD-CMK** (GSDMD-derived, acts on the pore machinery itself — see Open Question #5) fits this spec far better than KPV, and is the right molecule to prove the concept.
+
+---
+
 ## Open questions
 
 1. **Pore kinetics vs. IL-1β efflux kinetics:** Which is faster — drug influx through GSDMD pores or IL-1β efflux? This determines how much of the therapeutic race can actually be won. Not characterized in the preprint.
@@ -153,7 +169,7 @@ This makes the delivery paradox a platform insight, not a gout-specific one. Gou
 
 3. **Compound size limit in practice:** The 10–20 nm pore inner diameter is the structural upper bound. What is the practical permeability limit for globular peptides vs. linear peptides vs. small molecules through the pore under physiological conditions? Not characterized.
 
-4. **Pore lifetime:** GSDMD pores can be repaired by membrane shedding (ESCRT machinery) or persist until cell lysis. How long does the delivery window last? Minutes to tens of minutes — the timeline matters for whether a drug circulating in synovial fluid can accumulate intracellularly before the cell lyses.
+4. **Pore lifetime:** GSDMD pores can be repaired by membrane shedding (ESCRT machinery) or persist until cell lysis. How long does the delivery window last? Minutes to tens of minutes — the timeline matters for whether a drug circulating in synovial fluid can accumulate intracellularly before the cell lyses. **Answered (comp-042, 2026-07-13):** for a small solute, a ~20 nm pore equilibrates the cell interior to the extracellular concentration in ~2 s — orders of magnitude faster than even the short end of the lifetime range. Lifetime is *not* the binding constraint; peak intracellular concentration is capped at the extracellular (synovial) value. See [`kpv-gsdmd-pore-influx-computational.md`](./kpv-gsdmd-pore-influx-computational.md).
 
 5. **First gout-relevant compound to test through pores:** Ac-FLTD-CMK is the most structurally interesting candidate (GSDMD-derived, selectively targets the same protein that created the pore). A cell culture experiment in LPS+MSU-stimulated primary human macrophages comparing Ac-FLTD-CMK efficacy before and after GSDMD pore formation would directly test the paradox in the gout context. This is a $2,000–5,000 experiment if a wet-lab partner has the MSU stimulation setup.
 

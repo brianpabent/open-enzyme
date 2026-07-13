@@ -1371,6 +1371,32 @@ Each arm: parallel small-scale liquid (Arms A-C) or solid (Arm D) cultivation; h
 
 **Cross-references:** [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md) (comp-038 + 2026-06-01 full-text verification); [`quantification-ladder.md`](./quantification-ladder.md) (Tier-2 framework); [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) (Q141K butyrate workflow); [`abcg2-modulators.md`](./abcg2-modulators.md) (butyrate → ABCG2 induction); §1.14 (Caco-2 butyrate dose-response that needs this anchor); §1.28 (sister Tier-2 assay-validation experiment — cordycepin); [`open-questions.md`](./open-questions.md) §"Class-level Tier 2 assay gap for microbiome-derived metabolites".
 
+### 1.32 GSDMD-Pore Self-Delivery — Selectivity Probe (transporter-orphan tracer ± PepT1 blockade) (added 2026-07-13)
+
+**Status**: Proposed (wet-lab gated) | **Cost**: ~$2,000–5,000 | **Weeks**: 4–6 | **Phase**: 1
+
+**Affected wiki**: [`gsdmd-pore-delivery-paradox.md`](./gsdmd-pore-delivery-paradox.md) (the thesis under test); [`kpv-gsdmd-pore-influx-computational.md`](./kpv-gsdmd-pore-influx-computational.md) (comp-042 — the computational prior that reframed this experiment); [`kpv-peptide.md`](./kpv-peptide.md); [`disulfiram.md`](./disulfiram.md) (GSDMD-pore blocker for the control arm).
+
+**What it tests:** Whether a membrane-impermeant payload is **selectively** concentrated in pyroptotic (GSDMD-pore-forming) macrophages versus intact-membrane cells — the load-bearing selectivity claim of the pore self-delivery paradox.
+
+**Computational prior (comp-042, 2026-07-13):** A transport model returned **YELLOW (provisional)** — the flux physics is sound (a ~20 nm pore equilibrates the cell interior to the extracellular concentration in ~2 s; lifetime not limiting), but selectivity is the real decision variable and it is **falsified for KPV specifically**: KPV already enters cells via PepT1 ([Dalmasso 2008, PMID 18061177](https://doi.org/10.1053/j.gastro.2007.10.026)), and as an upstream inhibitor it arrives downstream of inflammasome firing. **This reframes the experiment** — a fluorescent-KPV uptake assay is PepT1-confounded and tests the wrong molecule. The clean test uses a transporter-orphan tracer.
+
+**Protocol (redesigned per comp-042):**
+- THP-1 (or primary human) macrophages, LPS + MSU-stimulated to induce GSDMD-mediated pyroptosis; ± controlled pore induction (low-dose nigericin as the pore-on lever).
+- **Primary probe — transporter-orphan, membrane-impermeant tracer** (e.g. a small charged fluorescent dextran / calcein derivative with no peptide-transporter route): quantify intracellular fluorescence in pore-forming vs. intact cells by flow cytometry / confocal. Isolates the *pore* contribution with no transporter confounder.
+- **PepT1-confounder control arm:** fluorescent-KPV ± a PepT1 inhibitor (or PepT1-knockdown), to directly demonstrate the confounder comp-042 predicts and quantify pore- vs. transporter-mediated KPV uptake.
+- **Selectivity readout:** intracellular tracer (pyroptotic) ÷ (intact) — the pyroptotic-vs-healthy ratio.
+
+**Success criterion:**
+- **GREEN (pore-selectivity real):** transporter-orphan tracer uptake significantly higher in pore-forming vs. intact cells, reversed by a GSDMD-pore blocker (e.g. disulfiram). Green-lights a payload search under the comp-042 spec (transporter-orphan + downstream-acting).
+- **RED (thesis fails at the physical step):** no differential uptake of the transporter-orphan tracer → the mechanism confers no selectivity; deprioritize the paradox.
+
+**Sequencing:** This delivery/selectivity probe is the cheap first gate. KPV-specific efficacy work is deprioritized — comp-042 shows KPV is the wrong molecule to prove the concept with (PepT1 confounder + upstream/downstream timing). Supersedes the naive fluorescent-KPV design in the [`gsdmd-pore-delivery-paradox.md`](./gsdmd-pore-delivery-paradox.md) §"Open questions" Tier-1 precursor.
+
+**Limitations:** Cell-line pyroptosis may not match primary synovial-macrophage pore kinetics; the transporter-orphan tracer is a physical proxy, not a therapeutic payload (a real payload must independently satisfy the downstream-acting criterion); synovial-macrophage PepT1 expression — the datum that gates KPV-route selectivity in vivo — is not resolved by this in vitro assay.
+
+**Cross-references:** [`gsdmd-pore-delivery-paradox.md`](./gsdmd-pore-delivery-paradox.md); [`kpv-gsdmd-pore-influx-computational.md`](./kpv-gsdmd-pore-influx-computational.md) (comp-042); [`kpv-peptide.md`](./kpv-peptide.md); [`disulfiram.md`](./disulfiram.md).
+
 ---
 
 ## Phase 2: Animal Model Validation

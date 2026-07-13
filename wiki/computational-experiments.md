@@ -22,6 +22,26 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ## Analyses
 
+### comp-042 — KPV self-delivery through GSDMD pyroptotic pores vs. the PepT1 baseline — YELLOW (provisional) (2026-07-13)
+
+**Question:** Does the physics support KPV (Lys-Pro-Val) flooding into pyroptotic macrophages through GSDMD pores fast enough to clear its intracellular IC50 (A1 — flux sufficiency), and — the quietly weak assumption — does the pore confer real *selectivity* over the PepT1 (SLC15A1) transporter route KPV already has (A2)? Stress-tests the [GSDMD pore self-delivery paradox](./gsdmd-pore-delivery-paradox.md) "Trojan-horse" thesis for KPV specifically.
+
+**Verdict:** **YELLOW (provisional).** Split three ways — (a) **KPV as a *selective* Trojan-horse payload: effectively falsified**; (b) **KPV reaching therapeutic intracellular levels via the pore: GREEN (intra-articular), marginal (SC), RED (oral)**; (c) **the *platform* thesis (pore delivery of a transporter-orphan membrane-impermeant payload): genuinely open.** A ~20 nm pore equilibrates intracellular [KPV] to the extracellular synovial concentration within **~2 s** (τ_eq ≪ the minutes-scale pore lifetime), so flux is never the constraint — but because KPV already enters cells via PepT1, the pore confers no demonstrable selectivity, gated entirely by uncharacterized synovial-macrophage PepT1 expression.
+
+**Key findings:**
+- **Answers [paradox-page](./gsdmd-pore-delivery-paradox.md) Open Question #4 (pore lifetime):** for a ~1 nm solute through a 20 nm pore, equilibration is complete in seconds; even the short end of the 1–30 min lifetime range is far longer than needed. Peak intracellular [KPV] is *capped at synovial [KPV]* (the naive moles-in/volume estimate overshoots by ~140×, confirming saturation).
+- **A1 flux:** IA clears the 10 nM IC50 (Dalmasso 2008) by ~29,000×; SC ~3× (assumption-limited); oral ~0.1× (fails). Robust for pores/cell ≥ ~10.
+- **A2 selectivity:** meaningful (≥3×) only if synovial macrophages lack functional PepT1 — but immune-cell PepT1 is *demonstrated* (Jurkat; Dalmasso 2008). At moderate/high PepT1, selectivity collapses to ~1 or below (healthy cells accumulate KPV *more* via concentrative electrogenic PepT1 + intact Vm). No route passes both a therapeutic and a selectivity threshold.
+- **Peer-review-surfaced conceptual kill:** PD timing mismatch — KPV is an *upstream* inhibitor (NLRP3 assembly / NF-κB priming); pores open *downstream* of inflammasome firing, so pore-delivery arrives after KPV's target has acted and IL-1β is released.
+- **KPV is the wrong molecule to *demonstrate* pore-selectivity** (it has a transporter and resists intracellular degradation — both anti-selective). A transporter-orphan, intracellularly-labile impermeant payload is the clean probe.
+- Method: diffusive-flux / mass-balance with two-sided access resistance; MM PepT1 baseline; 20k Monte Carlo; lifetime × pores/cell robustness sweep. No MD, no docking. Grep-verify gate passed; ≥3 compounding named assumptions → provisional.
+
+**Informs:** [gsdmd-pore-delivery-paradox.md](./gsdmd-pore-delivery-paradox.md) (Open Question #4 + KPV-payload stress-test) · [kpv-peptide.md](./kpv-peptide.md) · [validation-experiments.md §1.32](./validation-experiments.md) (reframes the fluorescent-KPV-uptake wet-lab: adds mandatory PepT1-blockade arm + transporter-orphan tracer) · [delivery-route-matrix.md](./delivery-route-matrix.md)
+
+**Detail:** [interpretive](./kpv-gsdmd-pore-influx-computational.md) · [experiments/](./etc/experiments/comp-042-kpv-gsdmd-pore-influx/) · Complete first pass (next gate: synovial-macrophage PepT1 expression measurement + transporter-orphan pore-selectivity delivery test)
+
+---
+
 ### comp-039 — CFH-dependence mechanism-dissociation of dietary upstream-CP0 candidates — CFH-INDEPENDENT (rosmarinic acid High, luteolin Medium, HCP/HCPM/CHCP High, Helicteres Medium-replication-bounded) (2026-05-21)
 
 **Question:** For each top upstream-CP0 candidate from comp-018 / comp-020 — rosmarinic acid, luteolin, *Houttuynia cordata* polysaccharide (HCP / HCPM / CHCP), *Helicteres* benzofuran lignans — does the candidate's anti-complement mechanism *require* functional CFH (and therefore lose efficacy in Y402H carriers, AMD-paradox-style), or does it work *upstream of* CFH (so Y402H carriers retain the benefit)? Generates the per-candidate prediction the UKB collaboration (Merriman/Otago, Major-Wrigley/Auckland, Choi/MGH) needs to run candidate-stratified cross-tabs rather than a generic "any-polyphenol × CFH" query.

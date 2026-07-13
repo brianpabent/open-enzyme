@@ -1,0 +1,41 @@
+{
+  "pept1_kpv_kinetics": {
+    "Km_epithelial_uM": {
+      "central": 160.0,
+      "comment": "Km ~160 uM for [3H]KPV uptake via hPepT1 in Caco2-BBE intestinal epithelial cells. Dalmasso 2008 (Gastroenterology, PMID 18061177, DOI 10.1053/j.gastro.2007.10.026), Fig 4C.",
+      "source_class": "radiolabeled_substrate_kinetics"
+    },
+    "Km_immune_uM": {
+      "central": 700.0,
+      "comment": "Km ~700 uM for [3H]KPV uptake via hPepT1 in Jurkat human T cells. Dalmasso 2008 Fig 5F. Immune-cell PepT1 has ~4x higher Km (lower affinity) than epithelial. This is the closest available immune-cell KPV/PepT1 kinetic anchor; synovial macrophages are NOT characterized.",
+      "source_class": "radiolabeled_substrate_kinetics"
+    },
+    "Km_used_uM": {
+      "central": 700.0,
+      "lower": 160.0,
+      "upper": 1000.0,
+      "comment": "Model uses the IMMUNE-cell Km (700 uM) as the central value because the relevant healthy comparator is a joint macrophage, not an enterocyte. Sensitivity spans 160-1000 uM."
+    },
+    "Vmax_note": "Dalmasso 2008 reports Km but not an absolute Vmax convertible to intracellular accumulation ceiling in a synovial macrophage. The healthy-cell accumulation is therefore parameterized by a dimensionless PepT1 expression scenario (see pept1_expression_scenarios) rather than a raw Vmax. THIS IS THE HEADLINE UNCERTAINTY."
+  },
+  "pept1_macrophage_expression": {
+    "status": "QUALITATIVELY DEMONSTRATED, QUANTITATIVELY UNCHARACTERIZED IN SYNOVIAL MACROPHAGES",
+    "evidence_for": "Dalmasso 2008 (PMID 18061177): 'KPV acts via hPepT1 expressed in immune and intestinal epithelial cells'; functional PepT1-mediated [3H]KPV uptake shown in Jurkat T cells. Viennois 2016 (PMID 27458604) and KPV-nanoparticle colitis papers (PMID 39211778, 31408067) repeatedly state KPV targets macrophages via PepT1 overexpressed on inflamed-tissue macrophages.",
+    "gap": "NO study quantifies PepT1 (SLC15A1) protein/functional expression in SYNOVIAL-JOINT macrophages, resting or MSU-activated. Whether a healthy (non-pyroptotic) synovial macrophage already admits KPV via PepT1 -- and how much -- is unknown. This single unknown gates the entire selectivity (A2) question.",
+    "source_class": "qualitative_literature_plus_named_gap"
+  },
+  "pept1_expression_scenarios": {
+    "comment": "Healthy-cell KPV accumulation modeled as a linear-regime accumulation ratio AR_lin = C_in,healthy/C_ext (dimensionless) valid when C_ext << Km, from which the saturating ceiling C_in_max_healthy = AR_lin * Km is derived. Selectivity S = C_in,pyroptotic / C_in,healthy. Four scenarios span the unknown.",
+    "absent":   {"AR_lin": 0.0,  "meaning": "synovial macrophages express no functional PepT1; healthy cells exclude KPV -> pore confers full selectivity"},
+    "low":      {"AR_lin": 0.3,  "meaning": "low PepT1; healthy cells admit modest KPV"},
+    "moderate": {"AR_lin": 1.0,  "meaning": "PepT1 equilibrates KPV (net non-concentrative) -> pore adds ~no selectivity in linear regime"},
+    "high":     {"AR_lin": 3.0,  "meaning": "concentrative proton-coupled PepT1; healthy cells accumulate ABOVE extracellular -> pore selectivity < 1 (anti-selective) in linear regime"}
+  },
+  "kpv_intracellular_ic50": {
+    "central_nM": 10.0,
+    "lower_nM": 1.0,
+    "upper_nM": 100.0,
+    "comment": "Effective anti-inflammatory concentration of KPV. Dalmasso 2008 (PMID 18061177): 'Nanomolar concentrations of KPV inhibit the activation of NF-kappaB'; the lowest experimentally effective concentration was 10 nM KPV (co-incubation with IL-1beta significantly reduced NF-kB luciferase in Caco2-BBE). This is an EXTRACELLULAR effective concentration in a PepT1-expressing cell -> it already convolves transport + intracellular potency, so it is a conservative (if anything low) proxy for the intracellular concentration needed. Range 1-100 nM covers the nanomolar band and less-sensitive cell contexts. NOTE: because this IC50 is so low, the flux-sufficiency (A1) bar is trivially cleared by any route that reaches even nanomolar synovial [KPV] -- which sharpens the fact that SELECTIVITY, not flux, is the real decision variable.",
+    "source_class": "NFkB_reporter_cell_assay"
+  }
+}
