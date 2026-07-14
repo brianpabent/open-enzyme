@@ -278,7 +278,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-027 — Disulfiram Dose Modeling for GSDMD Blockade vs DER Ceiling — YELLOW-leaning-GREEN (2026-05-16)
+### comp-027 — Disulfiram Dose Modeling for GSDMD Blockade vs DER Ceiling — hypothesis-generator (2026-05-16; downgraded from YELLOW-leaning-GREEN by comp-review 2026-07-14)
 
 **Question:** Is there a sub-AUD oral disulfiram dose window where plasma DSF engages GSDMD (CP6b pyroptotic-exit block) at a therapeutically meaningful level while plasma Me-DTC stays below the ALDH-inhibition threshold driving the disulfiram-ethanol reaction (DER)?
 
