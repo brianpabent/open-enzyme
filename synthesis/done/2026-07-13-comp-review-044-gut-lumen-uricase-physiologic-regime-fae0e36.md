@@ -154,3 +154,18 @@ The computation answers a narrower question than a physiological UOX efficacy mo
 - Tool result budget was exhausted during targeted page inspection; some omitted pages, especially `wiki/gout-action-guide.md`, could not be inspected.
 - I did not inspect the frozen comp-019 artifact directly; this review evaluates comp-044’s use of inherited comp-019 priors and corpus summaries.
 - This is Phase 0 research review only. No clinical efficacy, dosing, or medical advice is inferred.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: fix-in-place / relabel** (verdict — retire comp-019's unconditional flat-dose shortcut — stands and is already widely propagated via reset banners).
+
+- **"reverses classification" overstatement softened (audit action #3):** `analyze.py` verdict (→ regenerated `summary.md`) now says the physiological inputs **"invalidate the unconditional flat-dose / saturated-capacity classification"** rather than "reverse the regime classification," with the near-boundary nuance made explicit (50 mg central no-extra-penalty ratio ≈ 0.93, close to the ratio-one boundary — not robust, not definitively reversed).
+
+**Already consistent (no action needed):**
+- "independent review confirmed" overstatement — not present in the artifact or interpretive page.
+- `gout-action-guide.md` — already carries a correct 2026-07-13 calibration-reset note (comp-019 numbers invalidated; no 25 mg/day dose; engineered-strain entries are future research).
+- README reproduction path already `wiki/etc/experiments/...`.
+
+**Residuals (non-verdict, noted):** legacy dose/safety body text in `gut-lumen-sink.md` + `uricase.md` (top reset banners already carry the correction; body-text qualification is thorough-but-secondary — audit #4); derive scenarios from prior blocks or mark documentation-only (#1); source-anchored provenance packet for 8.3 U/mg / Km / pH factor / 233 mg/day denominator (#2).
