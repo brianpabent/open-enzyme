@@ -210,3 +210,8 @@ This is a useful exploratory pipeline, but it is not the advertised global funga
 - Several large artifacts were truncated or omitted from the bundle, including the full unified compound table, Phase 4 v2 JSON, Phase 5 deep-read files, Phase 6 output files, and Phase 7 scans. I inspected the provided scripts and summaries and partially read relevant wiki pages, but not every downstream surface.
 - Primary papers were not independently retrieved or verified; provenance judgments distinguish database/citation-string evidence from primary-source verification.
 - Network APIs, MCP subagent calls, OpenRouter/DeepSeek translation runs, PubMed searches, and ChEMBL caches were not reproduced.
+
+---
+
+## ✓ Actioned 2026-07-14
+**Disposition: downgrade** (invalid "all fungal NPs globally" claim → lead-generation snapshot). Added ⚠️ banner to `medicinal-mushroom-compound-mapping-computational.md`: partial manually-seeded intersection, weak species provenance, hard-coded safety rules. **Residuals:** status-surface reconciliation, Phase-3 toxicity-filter fix, species-provenance confidence fields (audit #1–4) — a follow-up.

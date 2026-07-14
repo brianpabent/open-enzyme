@@ -42,6 +42,8 @@ status: Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued
 
 # Medicinal Mushroom Compound × Chokepoint Mapping — Computational Analysis (comp-014)
 
+> **⚠️ Quantitative verdict downgraded (comp-review 2026-07-14).** This does NOT answer "all characterized fungal natural products, globally" — it is a **partial, manually-seeded LOTUS/NPAtlas/KNApSAcK + ChEMBL intersection** with weak species provenance, hard-coded safety rules, and heterogeneous assay semantics. Treat as a **lead-generation snapshot**, not a comprehensive or validated mapping.
+
 > **Frozen analysis archived to [`./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md`](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md)** (248 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read

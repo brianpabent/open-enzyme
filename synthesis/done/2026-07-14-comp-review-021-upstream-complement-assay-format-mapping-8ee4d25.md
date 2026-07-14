@@ -270,3 +270,8 @@ Change required / pending:
 - I did not inspect primary papers directly; provenance judgments are based on the artifact’s own quoted anchors and internal consistency.
 - The bundle omitted some long-page tails due truncation; I inspected relevant portions of `validation-experiments.md`, comp-029 inputs/code, comp-018/020 stubs, and H05 with repository reads where needed.
 - No clinical inference is made; this remains Phase 0 literature-curation/modeling review.
+
+---
+
+## ✓ Actioned 2026-07-14
+**Disposition: downgrade/caveat** (invalid-as-written → provisional). Added ⚠️ banner to `upstream-complement-assay-format-mapping-computational.md`: the comp-029 "re-run sensitivity" was not actually rerun (directionally wrong); provenance tiers overclaim primary IC50 verification; taxonomy not code-enforced. **Residuals:** taxonomy validation in analyze.py, RA-subset prose correction, remove/rerun comp-029 sensitivity, re-tier provenance rows (audit #1–4) — a follow-up.

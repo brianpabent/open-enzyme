@@ -30,6 +30,8 @@ status: complete (Phase 1)
 
 # Upstream-Complement Compound × Assay-Format × IC50 Mapping (Computational, comp-021)
 
+> **⚠️ Verdict caveated (comp-review 2026-07-14).** The curation matrix is a useful starting artifact, but several headline interpretations overstate it: the comp-029 "re-run sensitivity" was **not actually rerun** (and appears directionally wrong), and several provenance tiers overclaim primary IC50 verification. The YELLOW verdict + assay-format taxonomy are directionally reasonable but not code-enforced; treat the RA-spread and comp-029 numbers as provisional.
+
 > **Frozen analysis at [`./etc/experiments/comp-021-upstream-complement-assay-format-mapping/`](./etc/experiments/comp-021-upstream-complement-assay-format-mapping/) — README + analyze.py + inputs/ + outputs/ committed for reproducibility.** Wiki page is the interpretive layer.
 
 ## Headline

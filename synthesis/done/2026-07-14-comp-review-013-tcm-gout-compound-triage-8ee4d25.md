@@ -140,3 +140,8 @@ I traced the load-bearing path from JSON inputs → `scripts/analyze.py` → `ou
 - I read `wiki/tcm-modern-rigor-intersection.md` and the beginning of `wiki/validation-experiments.md`; I did not fully inspect every omitted page such as `koji-endgame-strain.md`, `complement-c5a-gout.md`, or `cfh-mechanism-dissociation-cp0-candidates-computational.md`.
 - I could not independently verify ChEMBL, PubMed, Paperclip, or primary-literature line claims; I treated them as artifact provenance assertions, not primary-source verification.
 - The artifact’s qualitative evidence inventory may still be valuable after correction; this review invalidates the quantitative verdict/ranking and summary contract as currently implemented.
+
+---
+
+## ✓ Actioned 2026-07-14
+**Disposition: downgrade** (invalid quantitative verdict → curated lead inventory). Added ⚠️ banner to `tcm-gout-compound-triage-computational.md`: the "4 GUT-LUMINAL VIABLE" triage is invalidated by `assign_verdict` logic errors (off-target ABCG2-inhibition occupancy counted as viability; polarity not distinguished). **Residuals:** logic-fix recompute (polarity-aware, gout-target-only) + `targets.json` polarity fields + stale luteolin-Cmax/ChEMBL-count reconciliation (audit #1–4) — a follow-up.
