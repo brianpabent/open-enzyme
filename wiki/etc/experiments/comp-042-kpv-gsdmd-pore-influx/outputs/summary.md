@@ -32,7 +32,9 @@ Selectivity S = intracellular[pyroptotic] / intracellular[healthy]. Healthy-cell
 | subcutaneous | inf | 3.33 | 1 | 0.333 |
 | oral | inf | 3.33 | 1 | 0.333 |
 
-The pore confers meaningful selectivity ONLY in the 'PepT1 absent/low' scenarios. If synovial macrophages express functional PepT1 (moderate/high), selectivity collapses to ~1 or below (healthy cells already admit -- or even concentrate -- KPV). **Which scenario is real is unknown -> A2 is RED-unquantifiable for every route.**
+The pore confers meaningful selectivity ONLY in the 'PepT1 absent/low' scenarios. If synovial macrophages express functional PepT1 (moderate/high), selectivity collapses to ~1 or below (healthy cells already admit -- or even concentrate -- KPV). **Which scenario is real is unknown -> A2 is YELLOW-unquantifiable for every route** (YELLOW, not RED: the absent/low-PepT1 scenarios numerically clear, so this is unquantifiable-marginal, not a hard fail; matches the computed per-route verdicts).
+
+**Pharmacodynamic-timing caveat (added 2026-07-14):** even where transport is sufficient, KPV is an *upstream* inflammasome inhibitor, whereas GSDMD pores form *downstream* of inflammasome firing. So a payload arriving through the pore arrives after its target step has already fired -- transport sufficiency does NOT imply therapeutic-timing sufficiency for KPV specifically. This is the second independent reason KPV is the wrong proof-of-concept payload for pore self-delivery (the first being PepT1 confounding). A downstream-acting, transporter-orphan payload is the clean probe.
 
 ## Metric 3 -- robustness sweep (pore lifetime x pores/cell)
 

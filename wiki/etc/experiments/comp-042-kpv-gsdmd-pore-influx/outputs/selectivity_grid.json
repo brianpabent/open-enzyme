@@ -11,7 +11,7 @@
         "absent": {
           "AR_lin": 0.0,
           "C_in_healthy_uM": 0.0,
-          "selectivity_ratio": Infinity,
+          "selectivity_ratio": null,
           "meaningful_selectivity_ge_3x": true
         },
         "low": {
@@ -41,7 +41,7 @@
         "absent": {
           "AR_lin": 0.0,
           "C_in_healthy_uM": 0.0,
-          "selectivity_ratio": Infinity,
+          "selectivity_ratio": null,
           "meaningful_selectivity_ge_3x": true
         },
         "low": {
@@ -71,7 +71,7 @@
         "absent": {
           "AR_lin": 0.0,
           "C_in_healthy_uM": 0.0,
-          "selectivity_ratio": Infinity,
+          "selectivity_ratio": null,
           "meaningful_selectivity_ge_3x": true
         },
         "low": {

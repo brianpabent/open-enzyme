@@ -113,3 +113,16 @@ Several surfaces are already well reconciled, but action is still required.
 ## Review limits
 
 I did not execute `analyze.py`; reproducibility was assessed by code inspection and arithmetic spot checks. I did not independently fetch PubMed/PMC primary sources; provenance claims marked “verified” remain artifact-author verification, not reviewer verification. Repository `grep_repo` failed because `rg` was unavailable, and later tool-result budget was exhausted, so corpus search was incomplete. I inspected the explicit comp pages plus selected related pages (`delivery-route-matrix.md`, `nlrp3-exploit-map.md`, partial `open-questions.md`, partial `gout-kill-chain-delivery-routes.md`), but not all hypothesis cards or every potentially affected priority table.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: fix-in-place** (verdict — A1 pore-equilibration sound, KPV falsified as a *selective* pore payload — stands and is already well-propagated).
+
+- **JSON `Infinity` invalidity (audit action #1):** added a `_json_safe()` sanitizer (non-finite floats → `null`) to all output dumps + `allow_nan=False`. All 5 committed JSON files (`central_results`, `selectivity_grid`, `monte_carlo`, `robustness_sweep`, `verdicts`) now parse under a strict JSON parser that rejects `Infinity`. (The human-readable `summary.md` still shows "inf" via `fmt()`.)
+- **A2 verdict label reconciled (audit action #2):** the computed per-route verdict and the table say **YELLOW-unquantifiable** (n_meaningful==2); the summary *prose* hardcoded "RED-unquantifiable". Fixed prose → YELLOW with the decision rule stated (YELLOW not RED because absent/low-PepT1 scenarios numerically clear → unquantifiable-marginal, not a hard fail).
+- **PD-timing caveat (audit action #3):** added to `summary.md` — KPV is an *upstream* inhibitor while GSDMD pores form *downstream* of inflammasome firing, so transport sufficiency ≠ therapeutic-timing sufficiency; this is the second independent reason (with PepT1 confounding) KPV is the wrong pore-selectivity proof payload.
+- Repro path already `wiki/etc/experiments/...` (no change).
+
+**Residuals (non-verdict, noted):** "no route passes both filters" wording precision (audit #4); mark unused sensitivity inputs + add A2 Km sensitivity (#5, #6); open-questions/hypothesis-card scan for any stale KPV-as-selective-pore-payload claim (#7 — audit found most surfaces already reconciled).

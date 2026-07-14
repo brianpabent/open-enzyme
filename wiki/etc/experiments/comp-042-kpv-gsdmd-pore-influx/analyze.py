@@ -457,12 +457,24 @@ def main():
     v = verdicts(central, mc, selg)
     overall = overall_verdict(v)
 
-    (OUTPUTS / "central_results.json").write_text(json.dumps(central, indent=2))
-    (OUTPUTS / "monte_carlo.json").write_text(json.dumps(mc, indent=2))
-    (OUTPUTS / "selectivity_grid.json").write_text(json.dumps(selg, indent=2))
-    (OUTPUTS / "robustness_sweep.json").write_text(json.dumps(robust, indent=2))
+    # Non-finite floats (inf = infinite selectivity when healthy-cell KPV conc is 0)
+    # are not valid JSON. Replace with null so all committed outputs parse under a
+    # strict JSON parser (the human-readable summary.md still shows "inf" via fmt()).
+    def _json_safe(o):
+        if isinstance(o, float):
+            return o if (o == o and o != float("inf") and o != float("-inf")) else None
+        if isinstance(o, dict):
+            return {k: _json_safe(val) for k, val in o.items()}
+        if isinstance(o, list):
+            return [_json_safe(val) for val in o]
+        return o
+
+    (OUTPUTS / "central_results.json").write_text(json.dumps(_json_safe(central), indent=2, allow_nan=False))
+    (OUTPUTS / "monte_carlo.json").write_text(json.dumps(_json_safe(mc), indent=2, allow_nan=False))
+    (OUTPUTS / "selectivity_grid.json").write_text(json.dumps(_json_safe(selg), indent=2, allow_nan=False))
+    (OUTPUTS / "robustness_sweep.json").write_text(json.dumps(_json_safe(robust), indent=2, allow_nan=False))
     (OUTPUTS / "verdicts.json").write_text(json.dumps(
-        {"per_route": v, "overall": overall}, indent=2))
+        _json_safe({"per_route": v, "overall": overall}), indent=2, allow_nan=False))
 
     write_summary(central, mc, selg, robust, v, overall)
     print("comp-042 complete. Overall:", overall["overall"])
@@ -532,7 +544,16 @@ def write_summary(central, mc, selg, robust, v, overall):
     L.append("The pore confers meaningful selectivity ONLY in the 'PepT1 absent/low' scenarios. "
              "If synovial macrophages express functional PepT1 (moderate/high), selectivity "
              "collapses to ~1 or below (healthy cells already admit -- or even concentrate -- KPV). "
-             "**Which scenario is real is unknown -> A2 is RED-unquantifiable for every route.**\n")
+             "**Which scenario is real is unknown -> A2 is YELLOW-unquantifiable for every route** "
+             "(YELLOW, not RED: the absent/low-PepT1 scenarios numerically clear, so this is "
+             "unquantifiable-marginal, not a hard fail; matches the computed per-route verdicts).\n")
+    L.append("**Pharmacodynamic-timing caveat (added 2026-07-14):** even where transport is "
+             "sufficient, KPV is an *upstream* inflammasome inhibitor, whereas GSDMD pores form "
+             "*downstream* of inflammasome firing. So a payload arriving through the pore arrives "
+             "after its target step has already fired -- transport sufficiency does NOT imply "
+             "therapeutic-timing sufficiency for KPV specifically. This is the second independent "
+             "reason KPV is the wrong proof-of-concept payload for pore self-delivery (the first "
+             "being PepT1 confounding). A downstream-acting, transporter-orphan payload is the clean probe.\n")
 
     L.append("## Metric 3 -- robustness sweep (pore lifetime x pores/cell)\n")
     L.append("| pores/cell | lifetime (s) | tau_eq (s) | equilib. frac | IA clears IC50 | SC clears IC50 |")
