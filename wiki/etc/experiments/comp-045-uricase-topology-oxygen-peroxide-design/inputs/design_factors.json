@@ -34,5 +34,5 @@
     {"id": "medium_blank", "urate_mode": "zero"}
   ],
   "primary_readouts": ["urate", "allantoin_or_pathway_product", "hydrogen_peroxide", "dissolved_oxygen", "viability", "uox_localization"],
-  "evidence_states": ["direct_empirical_support", "indirect_empirical_support", "proposed_direct_test", "controlled_context_not_proven_sufficient", "unresolved", "unsupported"]
+  "evidence_states": ["direct_empirical_support", "joint_module_precedent_isolated_unresolved", "proposed_direct_test", "controlled_context_not_proven_sufficient", "unresolved", "unsupported"]
 }

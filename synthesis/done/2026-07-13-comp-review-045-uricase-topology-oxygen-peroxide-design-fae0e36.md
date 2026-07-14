@@ -157,3 +157,14 @@ comp-045 does not model uricase kinetics, oxygen demand, peroxide diffusion, epi
 - Primary papers were not available in the artifact; I did not verify PubMed/PMCID claims against the full text.
 - `outputs/results.json` was very large and partly truncated in the bundle; I inspected the code and visible output structure rather than every well in every plate.
 - Wet-lab feasibility, biosafety, construct design, and assay performance were not independently validated.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: fix-in-place + relabel** (the design/no-topology-eliminated verdict stands; the evidence labels and downstream peroxide wording overstated).
+
+- **grade() evidence-state logic (audit action #1):** EcN secreted/displayed isolated KatG-only and VHb-only arms were labeled `indirect_empirical_support` while the precedent is only the *joint* KatG+VHb module (PULSE). Introduced an explicit **`joint_module_precedent_isolated_unresolved`** state and applied it to both arms in `analyze.py`; added it to the declared `evidence_states` list in `design_factors.json`; outputs regenerated (42 arms relabeled, 0 stale `indirect_empirical_support` remain).
+- **"chassis solves peroxide" wording (audit action #5):** qualified the over-strong safety claims — `uricase.md` ("H₂O₂ minimal/rapidly scavenged, not a safety concern" → topology-dependent: intracellular co-localization vs. secreted/surface requiring demonstrated reaction-site catalase capacity, comp-045/§1.33) and `delivery-route-matrix.md` §75 matrix shorthand ("chassis solves H2O2 in situ" → "…for intracellular topology; secreted/surface requires demonstrated reaction-site capacity").
+
+**Residuals (non-verdict, noted):** `delivery-route-matrix.md:223` + `engineered-koji-protocol.md` "solves it for free" wording; `urate_importer` use/assert (audit #2); emitted-vs-declared evidence-state assertions in code (#3); §1.33 executable wet-lab protocol closure — doses/oxygen setpoints/timepoints/LoD at 0.59 µM (#4); primary-source verification pass (#6).
