@@ -1,0 +1,352 @@
+{
+  "plan": {
+    "scope": "sulforaphane for gout / hyperuricemia / NLRP3 inflammation — post-2022 refresh",
+    "natural_product_scope": true,
+    "query_framing_protocol": "mechanism + species_original_language + traditional_formula + traditional_pathology",
+    "required_query_frames": [
+      "mechanism_native",
+      "species_original_language",
+      "traditional_formula",
+      "traditional_pathology"
+    ],
+    "created_at_utc": "2026-07-14T22:38:00+00:00",
+    "framings": [
+      {
+        "type": "western_mechanism",
+        "language": "en",
+        "queries": [
+          "sulforaphane hyperuricemia",
+          "sulforaphane gout",
+          "sulforaphane NLRP3 inflammasome",
+          "sulforaphane ABCG2 uric acid excretion",
+          "sulforaphane xanthine oxidase",
+          "broccoli sprout uric acid clinical trial",
+          "sulforaphane Nrf2 randomized controlled trial"
+        ],
+        "rationale": "Western/PubMed mechanism-name frame; retained as one frame, not the whole scan."
+      },
+      {
+        "type": "mechanism_native",
+        "language": "zh",
+        "sources": [
+          "CNKI",
+          "WanFang",
+          "CQVIP",
+          "SinoMed",
+          "ChiCTR",
+          "NSTL"
+        ],
+        "queries": [
+          "Nrf2 activation 痛风",
+          "Nrf2 activation 高尿酸血症",
+          "Nrf2 activation 痹证",
+          "Nrf2 activation 湿热痹",
+          "Nrf2 activation acute gouty arthritis",
+          "Nrf2 activation monosodium urate crystal inflammation",
+          "NLRP3 inflammasome inhibition 痛风",
+          "NLRP3 inflammasome inhibition 高尿酸血症",
+          "NLRP3 inflammasome inhibition 痹证",
+          "NLRP3 inflammasome inhibition 湿热痹",
+          "NLRP3 inflammasome inhibition acute gouty arthritis",
+          "NLRP3 inflammasome inhibition monosodium urate crystal inflammation",
+          "ABCG2 induction / gut urate secretion 痛风",
+          "ABCG2 induction / gut urate secretion 高尿酸血症",
+          "ABCG2 induction / gut urate secretion 痹证",
+          "ABCG2 induction / gut urate secretion 湿热痹",
+          "ABCG2 induction / gut urate secretion acute gouty arthritis",
+          "ABCG2 induction / gut urate secretion monosodium urate crystal inflammation",
+          "xanthine oxidase 痛风",
+          "xanthine oxidase 高尿酸血症",
+          "xanthine oxidase 痹证",
+          "xanthine oxidase 湿热痹",
+          "xanthine oxidase acute gouty arthritis",
+          "xanthine oxidase monosodium urate crystal inflammation",
+          "uric acid lowering 痛风",
+          "uric acid lowering 高尿酸血症",
+          "uric acid lowering 痹证",
+          "uric acid lowering 湿热痹",
+          "uric acid lowering acute gouty arthritis",
+          "uric acid lowering monosodium urate crystal inflammation",
+          "Keap1 痛风",
+          "Keap1 高尿酸血症",
+          "Keap1 痹证",
+          "Keap1 湿热痹",
+          "Keap1 acute gouty arthritis",
+          "Keap1 monosodium urate crystal inflammation"
+        ],
+        "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary."
+      },
+      {
+        "type": "species_original_language",
+        "language": "zh",
+        "sources": [
+          "CNKI",
+          "WanFang",
+          "CQVIP",
+          "SinoMed",
+          "ChiCTR",
+          "NSTL"
+        ],
+        "queries": [
+          "Brassica oleracea broccoli sprout Nrf2 activation",
+          "Brassica oleracea broccoli sprout NLRP3 inflammasome inhibition",
+          "Brassica oleracea broccoli sprout ABCG2 induction / gut urate secretion",
+          "Brassica oleracea broccoli sprout 痛风",
+          "Brassica oleracea broccoli sprout 高尿酸血症",
+          "Brassica oleracea broccoli sprout 痹证",
+          "glucoraphanin Nrf2 activation",
+          "glucoraphanin NLRP3 inflammasome inhibition",
+          "glucoraphanin ABCG2 induction / gut urate secretion",
+          "glucoraphanin 痛风",
+          "glucoraphanin 高尿酸血症",
+          "glucoraphanin 痹证",
+          "myrosinase Nrf2 activation",
+          "myrosinase NLRP3 inflammasome inhibition",
+          "myrosinase ABCG2 induction / gut urate secretion",
+          "myrosinase 痛风",
+          "myrosinase 高尿酸血症",
+          "myrosinase 痹证"
+        ],
+        "rationale": "Species/common-name anchoring catches traditional-name-indexed papers mechanism queries miss."
+      },
+      {
+        "type": "traditional_pathology",
+        "language": "zh",
+        "sources": [
+          "CNKI",
+          "WanFang",
+          "CQVIP",
+          "SinoMed",
+          "ChiCTR",
+          "NSTL"
+        ],
+        "queries": [
+          "痛风",
+          "高尿酸血症",
+          "痹证",
+          "湿热痹",
+          "acute gouty arthritis",
+          "monosodium urate crystal inflammation"
+        ],
+        "rationale": "Original pathology framing catches papers that do not use Western mechanism labels."
+      },
+      {
+        "type": "mechanism_native",
+        "language": "ja",
+        "sources": [
+          "J-STAGE",
+          "CiNii",
+          "J-GLOBAL",
+          "J-RCT"
+        ],
+        "queries": [
+          "Nrf2 activation 痛風",
+          "Nrf2 activation 高尿酸血症",
+          "Nrf2 activation acute gouty arthritis",
+          "Nrf2 activation monosodium urate crystal inflammation",
+          "NLRP3 inflammasome inhibition 痛風",
+          "NLRP3 inflammasome inhibition 高尿酸血症",
+          "NLRP3 inflammasome inhibition acute gouty arthritis",
+          "NLRP3 inflammasome inhibition monosodium urate crystal inflammation",
+          "ABCG2 induction / gut urate secretion 痛風",
+          "ABCG2 induction / gut urate secretion 高尿酸血症",
+          "ABCG2 induction / gut urate secretion acute gouty arthritis",
+          "ABCG2 induction / gut urate secretion monosodium urate crystal inflammation",
+          "xanthine oxidase 痛風",
+          "xanthine oxidase 高尿酸血症",
+          "xanthine oxidase acute gouty arthritis",
+          "xanthine oxidase monosodium urate crystal inflammation",
+          "uric acid lowering 痛風",
+          "uric acid lowering 高尿酸血症",
+          "uric acid lowering acute gouty arthritis",
+          "uric acid lowering monosodium urate crystal inflammation",
+          "Keap1 痛風",
+          "Keap1 高尿酸血症",
+          "Keap1 acute gouty arthritis",
+          "Keap1 monosodium urate crystal inflammation"
+        ],
+        "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary."
+      },
+      {
+        "type": "species_original_language",
+        "language": "ja",
+        "sources": [
+          "J-STAGE",
+          "CiNii",
+          "J-GLOBAL",
+          "J-RCT"
+        ],
+        "queries": [
+          "Brassica oleracea broccoli sprout Nrf2 activation",
+          "Brassica oleracea broccoli sprout NLRP3 inflammasome inhibition",
+          "Brassica oleracea broccoli sprout ABCG2 induction / gut urate secretion",
+          "Brassica oleracea broccoli sprout 痛風",
+          "Brassica oleracea broccoli sprout 高尿酸血症",
+          "Brassica oleracea broccoli sprout acute gouty arthritis",
+          "glucoraphanin Nrf2 activation",
+          "glucoraphanin NLRP3 inflammasome inhibition",
+          "glucoraphanin ABCG2 induction / gut urate secretion",
+          "glucoraphanin 痛風",
+          "glucoraphanin 高尿酸血症",
+          "glucoraphanin acute gouty arthritis",
+          "myrosinase Nrf2 activation",
+          "myrosinase NLRP3 inflammasome inhibition",
+          "myrosinase ABCG2 induction / gut urate secretion",
+          "myrosinase 痛風",
+          "myrosinase 高尿酸血症",
+          "myrosinase acute gouty arthritis"
+        ],
+        "rationale": "Species/common-name anchoring catches traditional-name-indexed papers mechanism queries miss."
+      },
+      {
+        "type": "traditional_pathology",
+        "language": "ja",
+        "sources": [
+          "J-STAGE",
+          "CiNii",
+          "J-GLOBAL",
+          "J-RCT"
+        ],
+        "queries": [
+          "痛風",
+          "高尿酸血症",
+          "acute gouty arthritis",
+          "monosodium urate crystal inflammation"
+        ],
+        "rationale": "Original pathology framing catches papers that do not use Western mechanism labels."
+      },
+      {
+        "type": "mechanism_native",
+        "language": "ko",
+        "sources": [
+          "KISS",
+          "RISS",
+          "DBpia",
+          "KoreaScience",
+          "KCI"
+        ],
+        "queries": [
+          "Nrf2 activation 통풍",
+          "Nrf2 activation 고요산혈증",
+          "Nrf2 activation acute gouty arthritis",
+          "Nrf2 activation monosodium urate crystal inflammation",
+          "NLRP3 inflammasome inhibition 통풍",
+          "NLRP3 inflammasome inhibition 고요산혈증",
+          "NLRP3 inflammasome inhibition acute gouty arthritis",
+          "NLRP3 inflammasome inhibition monosodium urate crystal inflammation",
+          "ABCG2 induction / gut urate secretion 통풍",
+          "ABCG2 induction / gut urate secretion 고요산혈증",
+          "ABCG2 induction / gut urate secretion acute gouty arthritis",
+          "ABCG2 induction / gut urate secretion monosodium urate crystal inflammation",
+          "xanthine oxidase 통풍",
+          "xanthine oxidase 고요산혈증",
+          "xanthine oxidase acute gouty arthritis",
+          "xanthine oxidase monosodium urate crystal inflammation",
+          "uric acid lowering 통풍",
+          "uric acid lowering 고요산혈증",
+          "uric acid lowering acute gouty arthritis",
+          "uric acid lowering monosodium urate crystal inflammation",
+          "Keap1 통풍",
+          "Keap1 고요산혈증",
+          "Keap1 acute gouty arthritis",
+          "Keap1 monosodium urate crystal inflammation"
+        ],
+        "rationale": "Native-language mechanism/pathology query; avoids English-only mechanism vocabulary."
+      },
+      {
+        "type": "species_original_language",
+        "language": "ko",
+        "sources": [
+          "KISS",
+          "RISS",
+          "DBpia",
+          "KoreaScience",
+          "KCI"
+        ],
+        "queries": [
+          "Brassica oleracea broccoli sprout Nrf2 activation",
+          "Brassica oleracea broccoli sprout NLRP3 inflammasome inhibition",
+          "Brassica oleracea broccoli sprout ABCG2 induction / gut urate secretion",
+          "Brassica oleracea broccoli sprout 통풍",
+          "Brassica oleracea broccoli sprout 고요산혈증",
+          "Brassica oleracea broccoli sprout acute gouty arthritis",
+          "glucoraphanin Nrf2 activation",
+          "glucoraphanin NLRP3 inflammasome inhibition",
+          "glucoraphanin ABCG2 induction / gut urate secretion",
+          "glucoraphanin 통풍",
+          "glucoraphanin 고요산혈증",
+          "glucoraphanin acute gouty arthritis",
+          "myrosinase Nrf2 activation",
+          "myrosinase NLRP3 inflammasome inhibition",
+          "myrosinase ABCG2 induction / gut urate secretion",
+          "myrosinase 통풍",
+          "myrosinase 고요산혈증",
+          "myrosinase acute gouty arthritis"
+        ],
+        "rationale": "Species/common-name anchoring catches traditional-name-indexed papers mechanism queries miss."
+      },
+      {
+        "type": "traditional_pathology",
+        "language": "ko",
+        "sources": [
+          "KISS",
+          "RISS",
+          "DBpia",
+          "KoreaScience",
+          "KCI"
+        ],
+        "queries": [
+          "통풍",
+          "고요산혈증",
+          "acute gouty arthritis",
+          "monosodium urate crystal inflammation"
+        ],
+        "rationale": "Original pathology framing catches papers that do not use Western mechanism labels."
+      }
+    ],
+    "notes": [
+      "Do not treat zero hits from English mechanism queries as evidence of absence in non-English corpora.",
+      "Fetch firewall-sensitive East Asian sources through local_curl_fetch(), not hosted model/web fetch.",
+      "Translate load-bearing non-English source text with translate_source_two_model()."
+    ],
+    "native_name_hints": {
+      "zh": [
+        "萝卜硫素",
+        "莱菔硫烷",
+        "萝卜硫苷(glucoraphanin)",
+        "西兰花芽苗/西蓝花芽",
+        "黑芥子酶(myrosinase)",
+        "高尿酸血症",
+        "痛风",
+        "尿酸"
+      ],
+      "ja": [
+        "スルフォラファン",
+        "グルコラファニン",
+        "ブロッコリースプラウト",
+        "高尿酸血症",
+        "痛風",
+        "尿酸",
+        "Nrf2"
+      ],
+      "ko": [
+        "설포라판",
+        "브로콜리 새싹",
+        "고요산혈증",
+        "통풍",
+        "요산"
+      ]
+    }
+  },
+  "frame_audit": {
+    "verdict": "needs_revision",
+    "missing": [
+      {
+        "type": "missing_framing",
+        "framing": "traditional_formula",
+        "note": "Natural-product / traditional-medicine scans need this frame unless explicitly out of scope."
+      }
+    ],
+    "required_protocol": "mechanism + species_original_language + traditional_formula + traditional_pathology"
+  }
+}

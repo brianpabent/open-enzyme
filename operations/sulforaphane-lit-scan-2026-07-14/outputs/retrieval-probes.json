@@ -1,0 +1,20 @@
+{
+  "track": "C - East Asian multilingual (zh/ja/ko)",
+  "probed_at_utc": "2026-07-14T22:45:00+00:00",
+  "method": "agentic_lit_synthesis.local_curl_fetch (local egress) + PubMed MCP",
+  "probes": [
+    {"query": "萝卜硫素 尿酸 / 高尿酸血症 / 痛风", "source": "CQVIP (www.cqvip.com/search)", "fetched": true, "note": "SSR HTML with full abstracts embedded in Nuxt payload; 204x 萝卜硫素, 58x 尿酸, 12x 高尿酸 in body. PRIMARY Chinese workhorse for this scan."},
+    {"query": "萝卜硫素 高尿酸血症 / 痛风", "source": "WanFang (s.wanfangdata.com.cn/paper, www.wanfangdata.com.cn)", "fetched": false, "note": "Returns a client-rendered SPA shell (~165KB) with zero query terms in HTML; results are XHR-loaded. Not usable via static curl."},
+    {"query": "萝卜硫素 痛风", "source": "CNKI (search.cnki.net, kns.cnki.net)", "fetched": false, "note": "curl failed / blocked (anti-bot). Unreachable from sandbox."},
+    {"query": "萝卜硫素 高尿酸血症", "source": "Baidu Xueshu (xueshu.baidu.com)", "fetched": false, "note": "Returns 百度安全验证 anti-bot challenge page (1.5KB). Blocked."},
+    {"query": "萝卜硫素", "source": "chinaxiv.org", "fetched": false, "note": "curl failed."},
+    {"query": "スルフォラファン / グルコラファニン / ブロッコリースプラウト", "source": "J-STAGE WebAPI (api.jstage.jst.go.jp/searchapi service=3)", "fetched": true, "note": "Structured Atom XML, reliable. 132 SFN / 21 glucoraphanin / 84 broccoli-sprout records. Metadata only (no abstracts). No urate/gout-specific SFN paper on title match."},
+    {"query": "スルフォラファン 尿酸 / 痛風 / NLRP3", "source": "CiNii (cir.nii.ac.jp/opensearch/articles)", "fetched": true, "note": "JSON OpenSearch, reliable. 0 results for every SFN x urate/gout combination -> no Japanese-only SFN-gout paper."},
+    {"query": "설포라판 요산 / 통풍", "source": "RISS (www.riss.kr/search)", "fetched": true, "note": "HTML reachable. 1 hit for 설포라판 요산 and it is a consumer nutrition guidebook, not research. No Korean-only SFN-gout research paper; the Korean SFN-gout science is PubMed-indexed (English abstract)."},
+    {"query": "설포라판 통풍", "source": "KoreaScience (koreascience.kr)", "fetched": false, "note": "curl failed."},
+    {"query": "sulforaphane AND (hyperuricemia OR uric acid OR gout OR urate); sulforaphane AND NLRP3", "source": "PubMed (MCP)", "fetched": true, "note": "5 hits total for urate/gout query; 3 are East-Asian-authored with English abstracts (1 Chinese/Peking, 2 Korean). Confirms English-mechanism scarcity is real but East Asian groups publish the strongest in-vivo evidence."},
+    {"query": "sulforaphane hyperuricemia", "source": "europepmc.org REST", "fetched": false, "note": "Host not in local_curl allowlist; PubMed MCP covers the same index."}
+  ],
+  "reachable": ["CQVIP", "J-STAGE WebAPI", "CiNii", "RISS (chrome only)", "PubMed MCP"],
+  "unreachable": ["CNKI", "Baidu Xueshu", "WanFang (SPA)", "chinaxiv", "KoreaScience", "europepmc (allowlist)"]
+}
