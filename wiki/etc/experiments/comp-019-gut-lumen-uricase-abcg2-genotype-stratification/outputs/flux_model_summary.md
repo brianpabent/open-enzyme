@@ -1,3 +1,5 @@
+> **⚠️ INVALIDATED / SUPERSEDED (comp-044 2026-07-13; comp-review 2026-07-14).** comp-019 ΔSUA, capacity ratios, genotype ranking, flat-dose, and yield recommendations are RETIRED — the model omitted luminal urate occupancy and finite residence/exposure time. Do NOT use any comp-019 output for dose, yield-deprioritization, genotype-ranking, or trial-arm design. Superseded by comp-044 (gut-lumen-uricase-physiologic-regime-computational.md); sink question reopened under H08 + validation §1.33/§1.36. Frozen invalidated provenance.
+
 # comp-019 — Flux Model Results Summary
 
 Predicted delta-SUA (mg/dL) at steady state by ABCG2 genotype and uricase dose.

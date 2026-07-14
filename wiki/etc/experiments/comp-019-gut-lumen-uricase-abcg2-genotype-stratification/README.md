@@ -1,3 +1,5 @@
+> **⚠️ INVALIDATED / SUPERSEDED (comp-044 2026-07-13; comp-review 2026-07-14).** comp-019 ΔSUA, capacity ratios, genotype ranking, flat-dose, and yield recommendations are RETIRED — the model omitted luminal urate occupancy and finite residence/exposure time. Do NOT use any comp-019 output for dose, yield-deprioritization, genotype-ranking, or trial-arm design. Superseded by comp-044 (gut-lumen-uricase-physiologic-regime-computational.md); sink question reopened under H08 + validation §1.33/§1.36. Frozen invalidated provenance.
+
 # comp-019 — Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model
 
 **Date:** 2026-05-08
@@ -41,7 +43,7 @@ comp-019-gut-lumen-uricase-abcg2-genotype-stratification/
 ## Reproduction
 
 ```bash
-cd experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/
+cd wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/
 python3 scripts/flux_model.py
 # results land in outputs/
 ```

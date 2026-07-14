@@ -1,3 +1,5 @@
+> **⚠️ INVALIDATED (comp-review 2026-07-14).** comp-031 is a toy composition of hard-coded prior effect sizes and inherited comp-019 failed UOX regime. Its combined ΔSUA (−1.8 to −1.9 mg/dL) and "optimal dual-mechanism" claims are RETIRED — no efficacy prior may be drawn here. The separate-strain-vs-dual-cassette reasoning (substrate competition) is preserved. Gated by comp-044/comp-046 and validation §1.34/§1.37. Frozen invalidated provenance.
+
 # comp-031 — Dual-chassis EcN PDB + uricase additive SUA prediction
 
 **Question:** does engineered EcN expressing the 2,8-dioxopurine PDB cluster (CBT2.0 precedent) co-administered with a PULSE-style luminal uricase deliver additive serum urate reduction beyond either arm alone, and does PDB-derived butyrate compound with the gut-lumen uricase sink via ABCG2 induction / Q141K trafficking rescue?

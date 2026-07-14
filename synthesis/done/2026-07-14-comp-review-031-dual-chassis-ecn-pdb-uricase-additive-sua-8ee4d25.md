@@ -153,3 +153,15 @@ Major mismatches/overstatements:
 - Tool result budget prevented full inspection of every potentially affected page, including the full `wiki/validation-experiments.md` and `wiki/uricase-abcg2-genotype-stratification-computational.md`.
 - Primary papers were not independently opened or verified; provenance status is based on artifact citations and corpus pages inspected here.
 - This is Phase 0 research review only and does not imply clinical efficacy, dosing, or medical advice.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: invalidated — banner + downstream** (numbers already retracted during the comp-046 walk).
+
+- **Invalidation banner** prepended to `README.md` + `outputs/summary.md` (audit #4).
+- **`computational-experiments.md`** row + **`chassis-pending-interventions.md`** M1 stale ΔSUA/separate-strain wording already retracted in the comp-046 walk (audit #1, #2 — done).
+- **`purine-degrading-bacteria.md`** Tier 3 "Dual-mechanism EcN: optimal combination" → "open, not optimal (invalidated comp-031); gated by comp-044/045/046 + §1.33/§1.37" (audit #3).
+
+**Residual:** replacement dynamic model if ever built (audit #5).

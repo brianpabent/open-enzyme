@@ -127,3 +127,16 @@ The current top-level corpus has mostly reconciled comp-019 by superseding it wi
 - Primary literature was not available in the artifact, so I did not independently verify the cited Miyazaki, Matsuo, Nakayama, Takada, ALLN-346, PRX-115, rasburicase, or allele-frequency values against original sources.
 - `wiki/engineered-yeast-uricase-proposal.md` was only partially inspected before the tool budget ended; it may contain additional stale “mechanism validated” or dosing language requiring the same comp-044 reset.
 - This review is Phase 0 research scrutiny only and does not convert computational outputs into clinical evidence.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: invalidated — banner + confirm downstream reset** (comp-019 was already superseded by comp-044; downstream was largely reset during the comp-044 walk).
+
+- **Supersession banners** prepended to `README.md`, `outputs/flux_model_summary.md`, `wiki-archive.md` — a reader landing in the folder now sees ΔSUA/capacity/genotype/flat-dose/yield are retired by comp-044 (audit #1).
+- **`cross-validation.md`** already reset to 5.5/10 + "comp-019 quantitative bridge invalid" (audit #2 — no change needed).
+- **`uricase.md`** peroxide wording already softened in the comp-045 walk (audit #3).
+- **Repro path** fixed (audit #7).
+
+**Residuals:** primary-source verification labeling for Miyazaki/Matsuo/etc. (audit #6); a replacement dynamic model if ever built (audit #5).

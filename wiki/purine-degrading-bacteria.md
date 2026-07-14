@@ -330,7 +330,7 @@ Strategic implication: a one-time or short-course PDB inoculation + maintained f
 
 **Tier 3 — Platform development (3–10 years):**
 - GMP-grade anaerobic PDB probiotic (*C. sporogenes* or *Lacrimispora saccharolytica*): technically feasible but oxygen-sensitive manufacturing is cost-intensive.
-- Dual-mechanism EcN (PULSE uricase + PDB pathway): optimal combination, highest complexity.
+- Dual-mechanism EcN (PULSE uricase + PDB pathway): combination topology is **open, not optimal** (the "optimal" claim came from the invalidated comp-031) — gated by comp-044/045/046 and validation §1.33/§1.37; highest complexity.
 
 ---
 

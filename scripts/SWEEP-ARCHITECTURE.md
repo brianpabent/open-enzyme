@@ -393,6 +393,15 @@ The submission-time Zenodo v1 of `papers/cross-vendor-heterogeneity-guard/draft.
 
 ### Independent comp-review daemon (implemented 2026-07-13)
 
+#### Authoring-time dual adversarial gates (added 2026-07-14)
+
+Every new or materially revised comp now passes two fresh-subagent gates before it can be finalized:
+
+1. **Pre-run gate:** after code, inputs, provenance, decision rules, planned output schema, and reproduction instructions are written—but before any result-bearing execution—a context-isolated reviewer reconstructs the system independently and returns `GO`, `REVISE`, or `BLOCK`. Any material design correction is re-reviewed before execution.
+2. **Post-run gate:** after execution and after every output, summary, interpretive page, registry entry, validation prior, hypothesis/priority change, and other proposed propagation is drafted, a different context-isolated reviewer audits the complete code-input-output-summary-wiki contract. `ACTION_REQUIRED: yes` blocks completion. Any design/code/input correction returns the comp to the pre-run gate before rerun; narrative-only fixes still require a fresh post-run pass.
+
+Both review records live under the comp's `reviews/` directory and ship with the artifact. The review briefs are `scripts/comp-pre-run-review-prompt.md` and `scripts/comp-review-prompt.md`. The push-triggered daemon described below is an additional backstop for committed changes; it does not satisfy either authoring-time gate.
+
 The missing task role was partly architectural. On 2026-05-15, nineteen long-form comp analysis pages were removed from the full Pass 2 inline corpus and replaced by short interpretive stubs as the wiki approached its model context limit (`ebbce269`). The full analyses became `wiki-archive.md` files inside the experiment artifacts, which moved under the sweep-excluded `wiki/etc/experiments/` tree on 2026-05-16 (`d7ce4b0b`). Read-on-demand artifact tools landed the same day (`8872b4fb`). That was the correct token-budget direction: as of 2026-07-13 the artifact tree contains 39 comp directories plus its shared library-support directory and is approximately 1.1 GB, dominated by two large data-bearing comps. Inlining it into every wiki sweep is neither affordable nor useful.
 
 The replacement was incomplete. Pass 2 and Pass 3 could fetch comp detail with read-only tools when a summary-level finding already made the detail look load-bearing, but no pass was required to inspect each new comp's implementation. A summary can therefore normalize the experiment's conclusion before any independent reviewer sees the code path that produced it. Comp-019 is the canonical consequence: the summary exposed a capacity result, while the stored-but-unused physiological inputs lived below the sweep's default visibility boundary.
