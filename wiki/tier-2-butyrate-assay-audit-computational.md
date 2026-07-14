@@ -18,6 +18,8 @@ sources:
 
 # Tier 2 Butyrate Assay Audit — Computational Literature Synthesis (comp-038)
 
+> **⚠️ Caveat (comp-review 2026-07-14).** The triage direction is reasonable (no ready home/colorimetric butyrate assay; HPLC-UV is the best near-term lab-tier candidate). BUT the **"full-text verification pass complete" + "validation §1.31" claims on downstream wiki pages are NOT present in the comp-038 artifact** — the committed artifact is the earlier abstract-level first pass and still treats electrochemical fecal SCFA profiling as promising. Do not cite a completed full-text verification for comp-038 until it is actually in the artifact.
+
 **Status:** Complete first pass — 2026-05-20. **Experiment folder:** [`etc/experiments/comp-038-tier-2-butyrate-assay-audit/`](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/). **Output:** [`outputs/summary.md`](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/summary.md).
 
 ## Question

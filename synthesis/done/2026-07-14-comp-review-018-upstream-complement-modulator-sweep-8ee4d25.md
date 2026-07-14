@@ -184,3 +184,7 @@ The heuristic “unused JSON leaf paths” are mostly documentation/provenance f
 - The bundle’s `validation-experiments.md` was truncated, so I could not verify all downstream wet-lab protocol propagation, especially Houttuynia/Helicteres sections.
 - I did not compare `outputs/scope-summary.md` byte-for-byte against a fresh generated output.
 - This review treats all clinical/dietary implications as Phase 0 research hypotheses only, not medical advice or clinical evidence.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: downgrade to Phase-0 hypothesis-generating.** Banner on `upstream-complement-modulator-sweep-computational.md`: script only validates a scope summary (doesn't reproduce the sweep); rosmarinic-acid 5–10 µM + dietary-scale CP0 relevance overstated. **This unblocks the held sweep item experiment-3** (Houttuynia), which should stay Phase-0 hypothesis-generating (comp-018 caveat) + carry the comp-039 dual-CP0 framing. **Residuals:** commit/track `outputs/summary.md`; reconcile phase-status/counts/tiering across README/outputs/index; re-tier the overstated IC50 claims.

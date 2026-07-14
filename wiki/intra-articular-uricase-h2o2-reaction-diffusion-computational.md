@@ -36,6 +36,8 @@ status: complete (v1; all three architectures GREEN under reference conditions; 
 
 # Intra-articular Uricase H₂O₂ Reaction-Diffusion Analysis (Computational, comp-035)
 
+> **⚠️ Verdict downgraded — GREEN is NOT decision-grade (comp-review 2026-07-14).** The reaction-diffusion mechanism (bulk-catalase scavenging dominates, not FRET <10 nm proximity) is sound as a Phase-0 model, but the corpus over-propagated it into "H₂O₂ risk closed / chassis selection can advance." Several load-bearing choices are hardcoded and the sensitivity report includes irrelevant variables. Treat H₂O₂ safety as a **testable Phase-0 prior gated by the Amplex Red wet-lab measurement + validation §1.33/§1.36**, NOT as closed. Do not promote the IA uricase route on this result alone.
+
 > **Frozen analysis lives at [`./etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/`](./etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/) — README + analyze.py + inputs/ + outputs/ all committed for reproducibility.**
 > This wiki page is the interpretive layer; the analysis script is stdlib-only Python 3 and reproduces deterministically with RNG seed 35.
 

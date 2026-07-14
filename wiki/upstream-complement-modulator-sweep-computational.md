@@ -41,6 +41,8 @@ status: complete (Phase 2)
 
 # Upstream Complement Modulator Sweep — Computational Analysis (comp-018)
 
+> **⚠️ Keep Phase-0 hypothesis-generating (comp-review 2026-07-14).** comp-018 is a useful literature-catalog artifact, but the reproducible script only validates/rewrites a scope summary — it does NOT reproduce the literature sweep, `outputs/summary.md` is referenced but not tracked, and several headline numbers (rosmarinic-acid 5–10 µM, dietary-scale CP0 relevance) are stronger than the artifact + provenance support. "Documented anticomplement activity exists upstream of C5aR1" holds as a catalog conclusion; "dietary rosemary / luteolin / Houttuynia will modulate gout-relevant CP0 in vivo" is NOT resolved here.
+
 > **Frozen analysis archived to [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md)** (336 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read

@@ -127,3 +127,7 @@ Constraint closure by assay class:
 - Primary full texts, vendor protocol PDFs, and the Abcam protocol were not directly available in the comp artifact and were not primary-source verified in this review.
 - The later 2026-06-01 full-text verification is visible in wiki pages, but its underlying artifact/provenance packet was not present in the reviewed comp-038 folder.
 - Repository grep tooling failed because `rg` was unavailable; affected-page discovery used supplied pages and direct file reads rather than full-corpus search.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat** (triage direction fine; propagation drift). Banner on `tier-2-butyrate-assay-audit-computational.md`: the "full-text verification pass complete" + "validation §1.31" claims on downstream pages are NOT in the comp-038 artifact (it's the earlier abstract-level first pass). **This unblocks the held sweep items experiment-1 + most-curious-thread-1** (Tier 2 butyrate), which cite the unsupported verification-complete claim — action them with this caveat. **Residuals:** reconcile the §1.31 / full-text-verification claims across `validation-experiments.md` + `computational-experiments.md` with the actual artifact state.

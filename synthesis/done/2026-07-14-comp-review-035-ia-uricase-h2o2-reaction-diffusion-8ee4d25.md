@@ -222,3 +222,7 @@ I traced the JSON inputs through `analyze.py` and compared them to the committed
 - I did not independently fetch or verify primary literature. Provenance statuses are therefore assessed from artifact notes, not primary-source inspection.
 - Only bounded portions of large wiki pages were inspected where needed; `validation-experiments.md` is very large and was sampled around relevant sections.
 - I did not inspect every hypothesis card or priority table; no explicit comp-035 hypothesis card was included in the bundle.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: downgrade** (GREEN not decision-grade). Banner on `intra-articular-uricase-h2o2-reaction-diffusion-computational.md`: H₂O₂ safety is a testable Phase-0 prior gated by Amplex Red + §1.33/§1.36, not closed; don't promote IA uricase on this alone. The "chassis solves H2O2" over-propagation in `delivery-route-matrix.md`/`uricase.md` was already softened in the comp-045 walk. **This unblocks the held sweep items connection-2/3 + contradiction-1** (comp-035 H₂O₂), which should be actioned with this caveat (no IA-uricase promotion). **Residuals:** hardcoded-implementation + irrelevant-sensitivity-variable cleanup in the artifact.
