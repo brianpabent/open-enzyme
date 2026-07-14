@@ -336,11 +336,12 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 **Current verdict:** **Useful candidate ranking; topology not selected.** The direct-secretion top cluster and its gene-synthesis refinements survive within comp-022's search space, but comp-044/045 showed that §1.33 must determine whether secretion is physiologically credible before promotion to §1.9B.
 
 **Key findings:**
-- Three zero-cost gene-synthesis refinements: 5'-softened codon optimization; PTS1-blocking C-term tag (addresses comp-010 routing risk at design layer); N191Q glycosylation ablation.
+- Zero-cost gene-synthesis refinements that survive v2 concordance: 5'-softened codon optimization; N191Q glycosylation ablation. PTS1-blocking C-term tag remains biologically motivated (addresses comp-010 routing risk) but is **not** a v2-strict-tier requirement — non-PTS1-blocked scaffolds also reach N-of-5 = 5 (corrected 2026-07-14; see comp-022 `wiki-archive.md` §9.3).
+- The v2 strict N-of-5 = 5 tier is a distinct 4-cassette set spanning PamyB + PglaA promoters, **not** identical to the v1 top cluster (only 1 of the 4 is a v1-top-cluster member). The v1 top cluster does survive the looser N-of-5 ≥ 4 gate (4 of 4).
 - Within the tested koji-secreted cassette space, glucoamylase-KEX2 fusion ranks below direct secretion. This does not compare koji secretion with intracellular, displayed, or bacterial topologies in §1.33.
 - v1 GC-clamp proxy vs real ViennaRNA MFE Spearman ρ = 0.241; v2 materially shifted ranks while preserving the internal direct-secretion cluster.
 
-**Informs:** [validation-experiments §1.9](./validation-experiments.md) · [cassette-compatibility-computational](./cassette-compatibility-computational.md) · [koji-endgame-strain §3.4](./koji-endgame-strain.md) · [etc/autonomous-screening-methodology](./etc/autonomous-screening-methodology.md)
+**Informs:** [validation-experiments §1.33 (topology gate) + conditional §1.9B](./validation-experiments.md) · [cassette-compatibility-computational](./cassette-compatibility-computational.md) · [koji-endgame-strain §3.4](./koji-endgame-strain.md) · [etc/autonomous-screening-methodology](./etc/autonomous-screening-methodology.md)
 
 **Detail:** [interpretive](./uricase-cassette-ranking-computational.md) · [experiments/](./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/) · v2 complete (v2.5 deferred until §1.33/§1.9B wet-lab data lands)
 

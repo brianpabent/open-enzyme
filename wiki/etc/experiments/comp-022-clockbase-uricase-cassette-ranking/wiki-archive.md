@@ -247,14 +247,24 @@ Both v1-deferred models are now retrofitted on the existing 501-cassette shortli
 |---|---|---|
 | Pass concordance | 501 cassettes (N-of-4 ≥ 3) | **71 cassettes (N-of-5 ≥ 4)** |
 | Strictest tier | 45 cassettes (N-of-4 = 4) | **4 cassettes (N-of-5 = 5)** |
-| v1 top-cluster survival in v2 strictest tier | n/a | **4 of 4 (100%)** |
+| v1 top-cluster survival into v2 shortlist (N-of-5 ≥ 4) | n/a | **4 of 4 (100%)** |
+| v1-top-cluster members in v2 strict tier (N-of-5 = 5) | n/a | **1 of 4** (strict tier is a distinct set — see §9.3) |
 | v1 shortlisted cassettes dropped by v2 gate | n/a | **430** |
 
 v2 concordance distribution across the 501 v1-shortlisted cassettes: 5/5 = 4; 4/5 = 67; 3/5 = 203; 2/5 = 227.
 
-### 9.3 v1 architecture verdict survives, and the v2 top tier IS the v1 top cluster
+### 9.3 v1 architecture verdict survives; the v1 top cluster survives the N-of-5 ≥ 4 gate, but the strict N-of-5 = 5 tier is NOT the v1 top cluster
 
-The v1 top cluster (`PamyB` + `SPamyB` or `SPamyB_pro` + `5p_softened` codon + `direct_3xAla_pts1blk` or `direct_his6_pts1ok` scaffold + `nglyc_ablated`) has 4 cassettes in v1, all 4 surviving into v2's strictest N-of-5 = 5 tier (100% survival). The v2 strictest tier IS the v1 top cluster; the retrofit did not surface new top-tier cassettes outside the v1-promoted set. The v1 verdict that the §1.9 architecture should stand, and that the three gene-synthesis-time refinements (5'-softened codon, PTS1-blocking C-terminal tag, N191Q glycosylation-sequon ablation) are real, are confirmed under v2. (Mechanistic Extrapolation: ESM2 pseudo-likelihood + ViennaRNA MFE; not yet wet-lab validated.)
+**Corrected 2026-07-14 (independent comp review):** an earlier version of this section claimed "the v2 strictest tier IS the v1 top cluster" and reported the survival figure as strict-tier survival. Both were wrong, contradicted by `v2_shortlist.csv`.
+
+All 4 v1-top-cluster cassettes (`PamyB` + `SPamyB` or `SPamyB_pro` + `5p_softened` codon + `direct_3xAla_pts1blk` or `direct_his6_pts1ok` scaffold + `nglyc_ablated`) survive into v2's **N-of-5 ≥ 4** shortlist (4 of 4, per `v2_summary.json` → `v1_top_cluster_survival` → `cassettes_in_v2_shortlist_matching_cluster`). But the strict **N-of-5 = 5** tier is a *distinct* set of 4 cassettes and is NOT the v1 top cluster:
+
+1. `PamyB` + `SPamyB_pro` + `5p_softened` + `direct_3xAla_pts1blk` — the one v1-top-cluster member
+2. `PamyB` + `SPamyB_pro` + `5p_softened` + `direct_natag_pts1ok` — **not PTS1-blocked**
+3. `PglaA` + `SPamyB_pro` + `5p_softened` + `direct_3xAla_pts1blk` — **PglaA, not PamyB**
+4. `PglaA` + `SPamyB_pro` + `5p_softened` + `direct_natag_pts1ok`
+
+So **only 1 of the 4 strict-tier rows is a v1-top-cluster member**; the other three introduce the `PglaA` promoter and/or the non-PTS1-blocked `direct_natag_pts1ok` scaffold. The v1 verdict that the §1.9 architecture should stand is still supported (the top cluster survives the ≥4 gate), and the 5'-softened-codon and N191Q refinements survive — but **PTS1-blocking is NOT confirmed as a strict-tier requirement**: non-blocked (`pts1ok`) scaffolds also reach N-of-5 = 5. PTS1-blocking remains biologically motivated (the C-terminal SKL PTS1 is a peroxisomal-mislocalization risk) but is a design choice, not a v2-rank-confirmed winner. (Mechanistic Extrapolation: ESM2 pseudo-likelihood + ViennaRNA MFE; not yet wet-lab validated.)
 
 ### 9.4 v1 GC-clamp proxy was weak; the v2 retrofit materially shifts the mRNA model
 
@@ -270,7 +280,7 @@ Scoping: v2 quintile cutoffs are computed on the 501-cassette v1 shortlist cohor
 
 ### 9.6 §1.9 wet-lab impact
 
-The §1.9 design from v1 stands. The three gene-synthesis-time refinements are confirmed. The actionable v2 change is **scope reduction**: the v1 shortlist of 501 cassettes drops to 71 under N-of-5 ≥ 4, and to 4 under N-of-5 = 5. If gene-synthesis budget allows only a few candidates, the v2 N-of-5 = 5 tier names exactly which ones (the four v1-top-cluster members). The 430-cassette difference between v1 shortlist and v2 shortlist represents cassettes that would have been promoted under v1's deferred-fold-quality methodology but are rejected once real fold-quality and real MFE signals are in the loop.
+The §1.9 design from v1 stands. The 5'-softened-codon and N191Q refinements survive (but see §9.3: PTS1-blocking is not a v2-confirmed strict requirement). The actionable v2 change is **scope reduction**: the v1 shortlist of 501 cassettes drops to 71 under N-of-5 ≥ 4, and to 4 under N-of-5 = 5. If gene-synthesis budget allows only a few candidates, the v2 N-of-5 = 5 tier names exactly which four — but note (per §9.3) these are **not** the four v1-top-cluster members: the strict tier spans `PamyB` + `PglaA` promoters and both PTS1-blocked and non-blocked scaffolds, with only one strict-tier cassette being a v1-top-cluster member. The 430-cassette difference between v1 shortlist and v2 shortlist represents cassettes that would have been promoted under v1's deferred-fold-quality methodology but are rejected once real fold-quality and real MFE signals are in the loop.
 
 ### 9.7 v2 limitations honest accounting
 
@@ -295,6 +305,6 @@ The §1.9 design from v1 stands. The three gene-synthesis-time refinements are c
 
 v2 complete. Tier 3 fold-quality retrofitted (ESM2 pseudo-likelihood fallback; see §9.7). Tier 1' mRNA model retrofitted (real ViennaRNA MFE replacing v1 GC-clamp proxy).
 
-**v2.5 deferred (2026-05-14, explicit decision).** Real ESMFold, full per-position masking, promoter-specific UTR, MPS/GPU for full-cohort retrofit are deferred until either (a) §1.9 wet-lab data arrives and retrospective validation of in silico scorers becomes possible, or (b) a fresh design problem (different target) requires the same machinery. Reasoning: the v2 output is sufficient to commit gene-synthesis dollars (4 strict winners + 71 looser shortlist); v1 architectural cluster survives v2 at 100%, so the marginal value of a stricter fold-quality model on the same cohort is bounded; wet-lab yield data will dominate any further in silico refinement. The deferral is a real-data-imminent diminishing-returns call, not an infrastructure block — Python 3.12 venv + HuggingFace `facebook/esmfold_v1` via `transformers` is the documented path forward when v2.5 is unblocked.
+**v2.5 deferred (2026-05-14, explicit decision).** Real ESMFold, full per-position masking, promoter-specific UTR, MPS/GPU for full-cohort retrofit are deferred until either (a) §1.9 wet-lab data arrives and retrospective validation of in silico scorers becomes possible, or (b) a fresh design problem (different target) requires the same machinery. Reasoning: the v2 output is sufficient to commit gene-synthesis dollars (4 strict-tier cassettes + 71 looser shortlist); the v1 architectural cluster survives the v2 **N-of-5 ≥ 4** gate at 100% (4 of 4; the strict N-of-5 = 5 tier is a distinct set — see §9.3), so the marginal value of a stricter fold-quality model on the same cohort is bounded; wet-lab yield data will dominate any further in silico refinement. The deferral is a real-data-imminent diminishing-returns call, not an infrastructure block — Python 3.12 venv + HuggingFace `facebook/esmfold_v1` via `transformers` is the documented path forward when v2.5 is unblocked.
 
 Verification-agent pass complete per CLAUDE.md Rule 4; all load-bearing numbers in §9 are grep-verified against the v2 output CSVs and JSON in [`experiments/comp-022-.../v2/outputs/`](../comp-022-clockbase-uricase-cassette-ranking/v2/outputs/) and the v2 provenance log.

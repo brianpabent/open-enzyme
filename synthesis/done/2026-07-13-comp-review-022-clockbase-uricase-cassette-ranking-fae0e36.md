@@ -154,3 +154,17 @@ Mismatches / action items:
 - Repository search tool failed because `rg` was unavailable, so affected-surface discovery relied on provided bundle files plus targeted `read_file` inspection of key wiki pages.
 - Large pages were inspected in bounded chunks; not every byte of every related wiki page was read.
 - v2 model outputs were not recomputed; arithmetic and contradictions were checked against committed CSV/JSON/Markdown artifacts.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: fix-in-place** (v1 computation stands; no rerun needed — the committed outputs are correct, only the v2 *interpretation text* was wrong).
+
+**Core correction — the false v2 strict-tier claim.** Verified against `v2/outputs/v2_shortlist.csv` (`awk -F, 'NR>1 && $17==5'`): the strict **N-of-5 = 5** tier is 4 cassettes spanning **PamyB + PglaA** promoters and **both** `direct_3xAla_pts1blk` (PTS1-blocked) and `direct_natag_pts1ok` (not blocked). **Only 1 of the 4 is a v1-top-cluster member.** The wiki claimed "the v2 strictest tier IS the v1 top cluster" and mislabeled the survival figure as strict-tier survival — both false. What's actually true (per `v2_summary.json` → `v1_top_cluster_survival`): the v1 top cluster survives the *looser* **N-of-5 ≥ 4** gate, 4 of 4. Corrected `wiki-archive.md` §9.2 table, §9.3 (heading + body), §9.6, and the v2.5 note; corrected `v2/provenance.md`. **PTS1-blocking downgraded** from "v2-confirmed refinement" to biologically-motivated design choice (non-blocked scaffolds also reach N-of-5 = 5).
+
+**Reproducibility (audit action #4).** Designated **`v2/analyze_v2.py` CANONICAL** — its column schema (`concordance_n5`, `composite_v2`, `top20_*`, `esm_pll`, `mfe`) matches the committed CSV; `v2/rerank_v2.py` uses an incompatible schema (`n_of_5`, `esm2_pseudo_pLDDT`, `composite`) and is the conflicting writer. Added a DEPRECATED header to `rerank_v2.py` and a canonical v2 reproduction section to `README.md`.
+
+**Hygiene:** README v1 repro path `experiments/` → `wiki/etc/experiments/`. `computational-experiments.md` comp-022 entry — "Informs" line `§1.9` → `§1.33 (topology gate) + conditional §1.9B`; key-findings bullets corrected (PTS1-blocking qualified; strict-tier ≠ v1-top-cluster noted).
+
+**Note (not a defect):** the `v2-env/` directory (torch + ViennaRNA venv) is present locally but git-ignored via the venv's own `.gitignore` — not committed, no repo-bloat. No action.

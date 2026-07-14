@@ -168,14 +168,22 @@ einops, etc., one-time): ~4 minutes.
 - **Source:** the rescaling is a documented presentational choice;
   underlying ranks are preserved.
 
-### v1 top cluster survival (4 of 4 → 4 of 4)
+### v1 top cluster survival (4 of 4 into N-of-5 ≥ 4; only 1 of 4 into strict N-of-5 = 5)
 
 - **Claim:** all 4 v1-top-cluster cassettes (PamyB + (SPamyB or SPamyB_pro) +
   5p_softened + (direct_3xAla_pts1blk or direct_his6_pts1ok) + nglyc_ablated)
-  pass the v2 N-of-5 ≥ 4 gate.
-- **Verification:** grep on `v2_shortlist.csv` for the 4 cassettes; each is
-  present with concordance_n5 = 5.
-- **Source:** `outputs/v2_shortlist.csv` rows 1-4 (sorted by N-of-5 then composite).
+  pass the v2 **N-of-5 ≥ 4** gate.
+- **Verification:** `v2_summary.json` → `v1_top_cluster_survival` reports
+  `cassettes_in_v2_shortlist_matching_cluster = 4` (of 4), 100% survival into the
+  N-of-5 ≥ 4 shortlist.
+- **Corrected 2026-07-14 (independent comp review):** an earlier version stated
+  each of the 4 was "present with concordance_n5 = 5" and cited "rows 1-4" of the
+  strict tier. That is wrong. The strict **N-of-5 = 5** tier is a distinct set of 4
+  cassettes spanning `PamyB` + `PglaA` promoters and both `direct_3xAla_pts1blk`
+  (PTS1-blocked) and `direct_natag_pts1ok` (not blocked). Only **one** strict-tier
+  row (`PamyB SPamyB_pro 5p_softened direct_3xAla_pts1blk`) is a v1-top-cluster
+  member; the other three v1-top-cluster cassettes sit at concordance_n5 = 4, not 5.
+- **Source:** `outputs/v2_shortlist.csv` (strict rows: `awk -F, 'NR>1 && $17==5'`).
 
 ### ViennaRNA MFE vs v1 GC-clamp proxy correlation
 

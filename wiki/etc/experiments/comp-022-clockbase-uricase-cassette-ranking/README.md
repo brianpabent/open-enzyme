@@ -16,12 +16,23 @@ Comp-022 adds three sequence-level refinements to the direct-secretion candidate
 
 ## How to reproduce
 
+**v1 (stdlib-only):**
+
 ```bash
-cd experiments/comp-022-clockbase-uricase-cassette-ranking
+cd wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking
 python3 analyze.py
 ```
 
 Stdlib-only Python 3 (no external packages). All inputs are committed in `inputs/`. Outputs land in `outputs/` and are committed as peer-reviewable artifacts.
+
+**v2 (canonical writer = `v2/analyze_v2.py`):**
+
+```bash
+cd wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2
+python3 analyze_v2.py   # regenerates outputs/v2_shortlist.csv, v2_summary.json
+```
+
+`v2/analyze_v2.py` is the **canonical** v2 script — it produced the committed `v2/outputs/`. `v2/rerank_v2.py` is a DEPRECATED earlier writer that emits the same filenames with an incompatible column schema; do not run it to regenerate the committed outputs (see its header). The upstream ESM2 pseudo-likelihood and ViennaRNA MFE scores (`v2/run_esm2_pseudo_likelihood.py`, `v2/run_viennarna_mfe.py`) require a non-stdlib environment (torch, ViennaRNA); their outputs are committed under `v2/outputs/` so `analyze_v2.py` reproduces the ranking from committed intermediate scores without re-running those models. *(Marked 2026-07-14, independent comp review.)*
 
 ---
 
