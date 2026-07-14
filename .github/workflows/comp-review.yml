@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       comp:
-        description: 'comp-NNN prefix, full comp directory, or "all" for an intentional backfill'
+        description: 'comp-NNN prefix, full comp dir, space/comma-separated list, "unreviewed" (un-audited backlog), or "all"'
         required: true
         type: string
 
@@ -47,6 +47,29 @@ jobs:
           if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
             if [ "$MANUAL_COMP" = "all" ]; then
               find wiki/etc/experiments -mindepth 1 -maxdepth 1 -type d -name 'comp-*' | sort > /tmp/comp-dirs.txt
+            elif [ "$MANUAL_COMP" = "unreviewed" ]; then
+              # Backfill mode: select every comp dir with no existing review log.
+              # A comp counts as reviewed if logs/comp-reviews/ holds a file
+              # naming its comp-NNN id (clean reviews still write a log). This
+              # audits the un-reviewed back-catalog in ONE run / ONE push rather
+              # than one dispatch per comp — the concurrency group only holds one
+              # pending run, so rapid per-comp dispatches cancel each other.
+              REVIEWED=$(ls logs/comp-reviews/ 2>/dev/null | grep -oE 'comp-[0-9]+' | sort -u)
+              : > /tmp/comp-dirs.txt
+              for D in $(find wiki/etc/experiments -mindepth 1 -maxdepth 1 -type d -name 'comp-*' | sort); do
+                NNN=$(basename "$D" | grep -oE 'comp-[0-9]+')
+                printf '%s\n' "$REVIEWED" | grep -qx "$NNN" || printf '%s\n' "$D" >> /tmp/comp-dirs.txt
+              done
+            elif printf '%s' "$MANUAL_COMP" | grep -q '[ ,]'; then
+              # Explicit list: space/comma-separated comp dirs or comp-NNN prefixes.
+              printf '%s' "$MANUAL_COMP" | tr ',' ' ' | tr -s ' ' '\n' | while IFS= read -r TOKEN; do
+                [ -n "$TOKEN" ] || continue
+                if [ -d "$TOKEN" ]; then
+                  printf '%s\n' "$TOKEN"
+                else
+                  find wiki/etc/experiments -mindepth 1 -maxdepth 1 -type d -name "${TOKEN}*"
+                fi
+              done | sort -u > /tmp/comp-dirs.txt
             elif [ -d "$MANUAL_COMP" ]; then
               printf '%s\n' "$MANUAL_COMP" > /tmp/comp-dirs.txt
             else
