@@ -1,0 +1,212 @@
+---
+type: comp-review
+sweep_date: 2026-07-14
+sweep_sha: 8ee4d25
+comp: comp-014
+reviewer_model: openai/gpt-5.5
+pass3_verdict: Independent comp audit
+overlap_tag: N/A
+---
+
+# Independent artifact review requires action: comp-014
+
+Canonical review log: [`logs/comp-reviews/2026-07-14-comp-014-8ee4d25.md`](../../logs/comp-reviews/2026-07-14-comp-014-8ee4d25.md)
+
+ACTION_REQUIRED: yes
+
+# Independent comp review — comp-014
+
+## Bottom-line verdict
+**Quantitative verdict invalid; artifact remains useful only as a lead-generation snapshot.** The committed code does not resolve the stated “all known characterized fungal natural products, globally” question. It implements a partial, manually seeded LOTUS/NPAtlas/KNApSAcK + ChEMBL intersection with weak species provenance, hard-coded safety rules, heterogeneous assay semantics, and stale/inconsistent summaries. Several high-level wiki claims and downstream Phase 6/7 surfaces rely on results that are not closed by the implementation.
+
+## Implementation and constraint closure
+
+### What the computation actually does
+
+The main executable path is `scripts/phase_3_target_mapping.py`, which:
+
+1. Loads a previously generated LOTUS table (`phase-2b-compounds-by-inchikey.json`).
+2. Pulls NPAtlas by a fixed list of 20 fungal genera.
+3. Scrapes KNApSAcK for 12 named species, then attempts PubChem InChIKey resolution under a 60-second wall-time cap.
+4. Merges records by InChIKey.
+5. Applies a **hard-coded** toxicity filter, not `inputs/toxicity-filter.json`.
+6. Resolves a hard-coded chokepoint → UniProt → ChEMBL target map.
+7. Pulls ChEMBL activities for those targets.
+8. Joins ChEMBL molecules to the fungal compound table by exact or 2D InChIKey.
+9. Emits unified Phase 2, Phase 3, and Phase 4 outputs.
+
+This is a useful exploratory pipeline, but it is not the advertised global fungal natural-product aggregation.
+
+### Major implementation-closure failures
+
+- **Question/model substitution:** The stated question is “across all known characterized fungal natural products … not just Western pharma.” The implemented breadth pass is a manually seeded list:
+  - LOTUS shell script queries 56 named genera/species, not all fungi.
+  - NPAtlas queries 20 genera.
+  - KNApSAcK queries 12 species and resolves only 20 InChIKey-bearing compounds in the output summary.
+  - NPASS, TCMSP, HIT, COCONUT, BATMAN-TCM, STITCH, SwissTargetPrediction, MIBiG/antiSMASH are not executed in this code path.
+  - Therefore “all known fungal compounds” and “global corpus” are not supported.
+
+- **Species attribution is often query-hint, not evidence.** `phase_2b_aggregate_lotus.py` explicitly falls back to `[query-hint] <query>` when the LOTUS response lacks organism metadata. Many downstream outputs treat these query hints as producer species. The truncated JSON includes obvious contamination / non-natural-product artifacts such as `diazepam` attributed to `[query-hint] Agaricus`, showing the source table cannot be interpreted as confirmed fungal biosynthesis.
+
+- **Toxicity filter input is largely not used by Phase 3.** `phase_3_target_mapping.py` defines `TOX_INCLUSION_SPECIES`, `TOX_EXCLUSION`, and `TOX_EXCLUSION_GENUS` in code. It does not load `inputs/toxicity-filter.json` for its operational lists. Thus the advertised authoritative safety lists are not the actual implementation.
+
+- **Toxicity closure fails for genus-only pathogenic attributions.** Phase 2a properly excludes fumitremorgin C from *Aspergillus fumigatus*. In the Phase 3 unified path, NPAtlas genus-level records become `[npatlas-query] Aspergillus`, and `passes_toxicity_filter()` marks them `GREY:Aspergillus` / pass. This means an *A. fumigatus*-derived ABCG2 tool compound can re-enter the toxicity-pass hit list if species provenance is stripped to genus. That is a safety-significant implementation bug.
+
+- **Target mapping is hard-coded, not driven by `inputs/chokepoint-targets.json`.** The code comment says the map is drawn from `chokepoint-targets.json`, but the executable uses a hard-coded `CHOKEPOINT_UNIPROT` dict. Changes to the input file do not propagate unless the script is edited.
+
+- **OAT4 target resolution appears wrong.** The Phase 3 output resolves OAT4 accession `Q9NS40` to ChEMBL target `CHEMBL2362996` with pref_name “Voltage-gated potassium channel,” which is biologically inconsistent with OAT4/SLC22A11. The code chooses `hits[0]` from ChEMBL target lookup without checking pref_name/gene consistency.
+
+- **Assay-type semantics and sign are not closed.**
+  - The output ranks heterogeneous `IC50`, `Ki`, `Kd`, `EC50`, `Inhibition`, `Potency`, and percent-inhibition values together as if lower numeric value always means stronger favorable effect.
+  - Negative percent inhibition values are ranked as top XO hits in `phase-3-target-mapping-summary.md`, which is nonsensical.
+  - ABCG2 “EC50 30 nM” for quercetin is an ATPase activation assay, not direct evidence of favorable urate efflux.
+  - TNFα `Kd` binding for ganoderic acid H is not automatically functional TNFα antagonism.
+  - Several “hits” are common plant flavonoids, amino acids, solvents, or drugs appearing in fungal-source tables; biosynthetic relevance is not resolved.
+
+- **Deduplication denominator is misleading.** Phase 3 reports “323 compound × chokepoint empirical hits,” but rows are activity records, not necessarily deduplicated compound-target-mechanism pairs. Multiple stereoisomers, duplicate assay records, and multiple activity rows inflate counts.
+
+- **No physiological operating-regime closure.** For candidate hits, the artifact usually lacks:
+  - achievable gut-lumen or systemic concentration;
+  - bioavailability and metabolism;
+  - concentration relative to IC50/Ki/Kd under the relevant compartment;
+  - residence/exposure time;
+  - producer abundance/yield;
+  - mass balance or realistic dose;
+  - off-target and safety margin.
+  
+  Phase 6 attempts some dose triage, but the script is hard-coded and does not ingest Phase 4/5 outputs dynamically.
+
+- **Phase 6 is not an implemented triage pipeline.** `scripts/phase_6_triage.py` claims inputs from Phase 5 verdicts, in vivo dose-response data, and production-route assessment, but it reads no input files. Candidate records, doses, verdicts, and rationales are embedded directly in the script. It is deterministic as a document generator, not a reproducible computational triage.
+
+### Constraint closure by mechanism class
+
+- **Small-molecule direct target hits:** ChEMBL assay provenance exists at the database-record level, but assay direction, biological relevance, and achievable exposure are mostly unclosed.
+- **Polysaccharides / GLPP / PSK / β-glucans:** Structure, MW, extraction fraction, bioavailability, gut vs systemic mechanism, and directionality are major unresolved variables. The wiki correctly notes some directionality problems, but the code cannot model them.
+- **Urate-axis animal-model leads:** DAE, cordycepin, GLPP, Poria/Sanghuang extracts remain mostly animal-model or abstract/full-text-limited evidence. Direct human translation and dose feasibility are not established.
+- **Complement / C5aR1:** The negative finding is useful as a repeated search result but must be scoped to the queried corpora. It is not proof that no fungal C5aR1 antagonist exists in unqueried or inaccessible databases.
+- **Safety:** Producer-organism safety cannot be inferred from genus-level query hints. Mycotoxin/pathogen exclusions require per-species provenance and compound-route separation.
+
+## Summary-fidelity audit
+
+### README / provenance / archive mismatch
+
+- `README.md` still says **“Phase 1 — Scoped, execution pending”** and “does NOT yet contain pulled compound data, target mappings, or per-compound triage verdicts.” This is false relative to the tracked inventory, which contains Phase 2–7 outputs and scripts.
+- `inputs/provenance.md` still says Phase 1 has no external database queries and that Phase 2 will append fetch dates/dump versions. It was not updated to reflect the later network/API runs.
+- `wiki-archive.md` frontmatter/status says `scoped — Phase 1 only`, while the same archive also contains later comp-018/Phase 7 back-fixes and a long plan. The archive is not a clean frozen Phase 1 document.
+
+### Live interpretive page / computational index mismatch
+
+- `wiki/medicinal-mushroom-compound-mapping-computational.md` says Phase 3 is complete, Phase 5/6 queued, but also documents Phase 5a/5b partial follow-ups. The artifact inventory contains `PHASE-5-FINDINGS.md`, Phase 5 deep-read files, `phase-6-triage.*`, and Phase 7 scans. Status needs a single reconciled state.
+- `wiki/computational-experiments.md` calls comp-014 “Phase 3 complete” and lists Phase 5/6 queued, while H06 and `medicinal-mushroom-complement-track.md` cite comp-014 Phase 6 as an actual source. This is internally inconsistent.
+- The computational index’s top-hit wording (“highest-potency,” “empirical hits,” etc.) is stronger than the implementation supports because the code does not normalize assay type, assay direction, or source provenance.
+
+### Phase 2/3/4 output mismatch
+
+- Early Phase 2/4 outputs exclude fumitremorgin C by toxicity filter due to *A. fumigatus*. Phase 3 unified outputs allow genus-level `[npatlas-query] Aspergillus` hits through the toxicity filter. This creates a direct code/output safety inconsistency.
+- Phase 3 summary top-XO rankings include negative percent inhibition values as top “potency-ranked” hits. This must not propagate.
+- “ChEMBL/PubChem empirical” language appears in `phase-3-compound-x-target.json`, but the code path shown only implements ChEMBL activity pulls; PubChem cross-validation is described in the docstring but not implemented in the visible code.
+
+### Downstream propagation
+
+- `medicinal-mushroom-complement-track.md` has already propagated Phase 6/7 implications, including GLPP, cordycepin, Sanghuang/Phellinus, ergothioneine, and cultivation-track claims. Some are well caveated, but the root comp-014 status/provenance remains inconsistent.
+- `modality-chokepoint-matrix.md` contains extensive native-mushroom rows derived from comp-014 and follow-up scans. Several entries are already more nuanced than the original comp-014 outputs, but any claim derived from Phase 3 ChEMBL ranking should be softened unless assay semantics are re-reviewed.
+- `complement-c5a-gout.md` and `nlrp3-exploit-map.md` treat comp-014 as independent confirmation of C5aR1 emptiness and NLRP3 query-framing failures. The NLRP3 correction is appropriately caveated in places; the C5aR1 negative should be scoped to the searched corpora, not “structural absence.”
+
+## Load-bearing verification table
+
+| Claim or parameter | Artifact location | Implementation use | Provenance status | Verdict |
+|---|---|---|---|---|
+| “Across all known characterized fungal natural products” | README question; live wiki page; computational index | Not implemented; fixed query lists for LOTUS/NPAtlas/KNApSAcK only | No complete fungal dump/version; several planned DBs unreachable/not run | **Invalid as stated** |
+| 9,778 unified compounds | `outputs/phase-2-unified-summary.md`; `phase_3_target_mapping.py` | Count from merged LOTUS + NPAtlas + PubChem-resolved KNApSAcK | Directly from generated table, but raw caches not committed and APIs dynamic | Reproducible only by rerun; scope partial |
+| KNApSAcK coverage | `phase-2-unified-summary.md`; code `KNAPSACK_SPECIES` + 60s PubChem cap | Only 20 InChIKey-resolved compounds enter unified table | KNApSAcK HTML scrape + incomplete PubChem resolution | **Very partial; should not be framed as real KNApSAcK coverage** |
+| Toxicity filter applied per `toxicity-filter.json` | Summary and live wiki | Code uses hard-coded lists, not JSON | Input JSON exists but not operationally loaded | **Implementation mismatch** |
+| Fumitremorgin C excluded as *A. fumigatus* | `phase-2a`, `phase-4-ranked-candidates.md` | Phase 2a/4 excludes; Phase 3 unified can pass genus-only `Aspergillus` | ChEMBL/NPAtlas source species not consistently preserved | **Safety bug / inconsistent verdict** |
+| 323 empirical hits across 12 chokepoints | `phase-3-target-mapping-summary.md`; `phase-3-compound-x-target.json` | Activity rows from ChEMBL join | ChEMBL-derived but not deduped to unique favorable mechanisms | **Overstated denominator** |
+| “Empirical = ChEMBL/PubChem assay record” | `phase-3-compound-x-target.json` meta | Code implements ChEMBL pulls; PubChem described but not visible in implemented steps | PubChem not evidenced in code/output | **Misleading** |
+| Ganoderic acid H × TNFα Kd 2.45 nM | Computational index; live wiki; Phase 3 summary | ChEMBL activity row joined to *Ganoderma* compound | Primary paper not included/verified here; assay function/sign not interpreted | Lead only; not a therapeutic conclusion |
+| Berkeleyamides A/D × CASP1 sub-µM | Computational index; Phase 3 summary | ChEMBL activity row | Later wiki suggests identity correction to *Talaromyces* needed; primary source not verified here | Lead only; species label requires correction |
+| Quercetin × ABCG2 EC50 30 nM | Computational index; Phase 3 summary | ChEMBL ATPase activation row ranked by numeric EC50 | Assay is ATPase activation, not urate efflux; plant-origin/substrate accumulation issue | **Not valid as favorable ABCG2 therapeutic claim** |
+| OAT4 mapping | `inputs/chokepoint-targets.json`; `phase-3-compound-x-target.json` | Hard-coded UniProt lookup → ChEMBL first hit | Output pref_name “Voltage-gated potassium channel” conflicts with SLC22A11 | **Target-resolution failure** |
+| Phase 6 PURSUE/DEFER/DROP verdicts | `scripts/phase_6_triage.py`; `phase-6-triage.*` inventory; H06 sources | Hard-coded records; no input ingestion | Some citation strings/PMIDs; primary sources not included; full PDFs often outstanding | **Not reproducible computational triage** |
+| GLPP 40.6% UA reduction / ADA chokepoint | `PHASE-5-FINDINGS.md`; `phase_6_triage.py`; downstream pages | Used to promote ADA and Phase 7 track | Abstract/full-text paywall caveats; comparative mechanism not closed | Plausible lead; canonical promotion needs primary-source verification |
+| Redox/disulfide REJECT | `PHASE-5-FINDINGS.md`; `chokepoint-targets.json` | Stored as rejected chokepoint and folded into NLRP3 | Based on sparse Phase 2/5 scan; marine fungi explicitly excluded | Acceptable within terrestrial-scope caveat, but not global |
+| C5aR1 zero fungal hits | Phase 2a/2c; live pages | Search-negative result | Limited to queried ChEMBL/PubMed/LOTUS/NPAtlas subset; HIT/NPASS/TCMSP/SWISS not run | Useful negative, not exhaustive proof |
+| “All 18 anchor species resolve” | `phase-2-unified-summary.md` | Reported from unified table | Query-hint/partial species matching; no NCBI taxonomy join in code | Sanity-check weakly passed, not provenance closure |
+| Reproducibility command | README says `python3 scripts/scope_validate.py`; Phase 3 page gives `phase_3_target_mapping.py` | Scope command only reproduces Phase 1 summary; Phase 3 requires network and cached outputs | Raw caches omitted; APIs dynamic; MCP/LLM runs not scripted | **Reproduction contract incomplete** |
+
+## Affected wiki pages
+
+- `wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/README.md` — **change required** — states Phase 1 only and no pulled data despite committed Phase 2–7 artifacts.
+- `wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/provenance.md` — **change required** — still says no external queries; must record actual API/source dates, reachable/unreachable DBs, cache status, and manual/LLM provenance.
+- `wiki/medicinal-mushroom-compound-mapping-computational.md` — **change required** — status must reconcile Phase 3 complete, Phase 5a/5b partial, and committed Phase 5/6/7 artifact outputs; Phase 3 ChEMBL-derived hits need assay-semantics caveats.
+- `wiki/computational-experiments.md` — **change required** — comp-014 entry should not imply the artifact cleanly answers the global corpus question; Phase 5/6 status conflicts with committed files and H06 citations.
+- `wiki/medicinal-mushroom-complement-track.md` — **change required** — downstream Phase 6/7 claims should be explicitly separated from hard-coded comp-014 triage vs later independent source-read logs; Berkeleyamide/Talaromyces correction is already present but should feed back to comp-014 summaries.
+- `wiki/hypotheses/H06-medicinal-mushroom-complement-track.md` — **change required** — cites comp-014 Phase 6 triage as source while computational index says Phase 6 queued; must state that Phase 6 triage was hand-coded/documentary unless rerun with proper inputs.
+- `wiki/modality-chokepoint-matrix.md` — **change required** — native-mushroom rows are broadly reconciled with later scans, but any Phase 3 ChEMBL “highest potency” or “empty chokepoint” language needs explicit assay/provenance caveats.
+- `wiki/complement-c5a-gout.md` — **change required** — comp-014’s C5aR1 negative should be scoped to searched corpora and not phrased as exhaustive fungal-natural-product absence.
+- `wiki/nlrp3-exploit-map.md` — **already mostly consistent, minor change required** — it already records the traditional-name re-scan correction; ensure it does not rely on the Phase 3 “empty ChEMBL” result as biological absence.
+- `wiki/abcg2-modulators.md` — **already mostly consistent, minor change required** — Poria and tea-polyphenol caveats are nuanced; avoid treating Phase 3 ABCG2 ATPase/efflux rows as favorable urate-flux evidence without validation.
+- `wiki/prps-purine-biosynthesis-chokepoint.md` — **already consistent** — correctly notes medicinal-mushroom compounds have not been screened against PRPS; no immediate correction found.
+- `wiki/validation-experiments.md` — **uncertain / likely minor change required** — only a partial read was available in the bundle; any queued mushroom/Phase 7 validation protocols that depend on comp-014 Phase 6 should inherit the provenance and dose-grounding caveats.
+
+## New connections or implications
+
+1. **The strongest method lesson is “query-framing beats database coverage.”** comp-014’s ChEMBL UniProt join marked NLRP3 empty, while later traditional-name scans found many NLRP3-axis mushroom papers. This directly generalizes the comp-018 complement lesson: mechanism-only English queries systematically miss traditional-formula/species-name literature.
+
+2. **Native-mushroom track is a quality-system problem more than a discovery problem.** The artifact’s weak species provenance and query-hint contamination strongly support H06’s framing: cultivation/extract reproducibility, identity testing, and analytical characterization are the true value-add. Without that, the mapping layer produces false producer attributions.
+
+3. **Genus-level natural-product databases are unsafe for production-route conclusions.** The fumitremorgin C case shows why “compound is fungal” and “producer organism is acceptable” must be separate fields. A useful compound from a pathogen can remain chemistry-relevant while the organism is excluded.
+
+4. **Assay-direction metadata is now a required schema field for future mapping comps.** ABCG2 ATPase activation, percent inhibition, binding Kd, and urate-flux assays cannot be ranked together. Future comp-NNN compound maps need `effect_direction`, `assay_context`, `substrate`, `cell/target species`, and `relevance_to_chokepoint` fields.
+
+5. **OAT4 surfaced as both a biology gap and a target-resolution QA test.** The input correctly flags OAT4 as a canonical-wiki gap, but the ChEMBL resolution appears wrong. This is a good sentinel for automated UniProt→ChEMBL mapping QA.
+
+## Required actions
+
+1. **Reconcile comp-014 status surfaces.**  
+   Owner surface: `README.md`, `inputs/provenance.md`, `wiki-archive.md`, live interpretive page, `computational-experiments.md`.  
+   Verification criterion: all pages agree on which phases are scope-only, partial, complete, queued, or hand-coded/documentary.
+
+2. **Fix Phase 3 toxicity-filter implementation.**  
+   Owner surface: `scripts/phase_3_target_mapping.py`.  
+   Verification criterion: code loads `inputs/toxicity-filter.json` or generated normalized lists from it; genus-only pathogen-source records do not pass as safe; *A. fumigatus* / fumitremorgin C remains chemistry-relevant but producer-excluded.
+
+3. **Add species-provenance confidence fields.**  
+   Owner surface: Phase 2/3 unified outputs and scripts.  
+   Verification criterion: every species attribution is labeled `per-record organism`, `query-hint`, `genus-only`, `PubChem/name-resolved`, or `manual`; downstream summaries exclude or separately report query-hint-only biosynthesis claims.
+
+4. **Rerun or relabel the breadth question.**  
+   Owner surface: README/live wiki/computational index and scripts.  
+   Verification criterion: either use real bulk fungal-filtered dumps for LOTUS/NPAtlas/COCONUT and completed NPASS/TCMSP/HIT/BATMAN/SwissTargetPrediction re-runs, or change the question to “partial exploratory seeded fungal-compound mapping.”
+
+5. **Repair ChEMBL target resolution QA.**  
+   Owner surface: `phase_3_target_mapping.py` and outputs.  
+   Verification criterion: UniProt accession, gene symbol, ChEMBL target name, and target type are checked; OAT4 resolves to SLC22A11 or is marked unresolved rather than “Voltage-gated potassium channel.”
+
+6. **Normalize assay semantics before ranking.**  
+   Owner surface: Phase 3/4 summary generation.  
+   Verification criterion: no percent inhibition, negative inhibition, ATPase activation EC50, binding Kd, and urate-flux IC50 are ranked in a single potency column without direction and context; Phase 3 top-hit tables are regenerated or clearly marked exploratory.
+
+7. **Regenerate Phase 6 as a real pipeline or relabel it as a hand-authored triage memo.**  
+   Owner surface: `scripts/phase_6_triage.py`, `phase-6-triage.*`, H06, medicinal-mushroom-complement-track.  
+   Verification criterion: script reads Phase 4/5 outputs and source tables, or downstream pages stop citing it as computationally derived.
+
+8. **Primary-source verification for top propagated numbers.**  
+   Owner surface: comp-014 outputs and downstream pages.  
+   Verification criterion: for ganoderic acid H/TNFα, Berkeleyamides/CASP1, GLPP/ADA, DAE/XO+URAT1, cordycepin/URAT1, and Poria/Sanghuang transporter claims, include primary-source verification notes or explicitly mark “database/abstract only.”
+
+9. **Scope C5aR1 and NLRP3 negative/empty claims.**  
+   Owner surface: `complement-c5a-gout.md`, `nlrp3-exploit-map.md`, live comp page.  
+   Verification criterion: negative claims say “no hit in searched ChEMBL/PubMed/LOTUS/NPAtlas subset” unless the missing Asian/prediction databases have actually been run.
+
+10. **Complete a reproducibility contract.**  
+   Owner surface: README and provenance.  
+   Verification criterion: list exact commands for each phase, dependencies, required network APIs, cache directories, expected output hashes/counts, and which outputs were LLM/manual rather than script-generated.
+
+## Review limits
+
+- I did not execute arbitrary experiment code.
+- `grep_repo` failed in this environment because `rg` was unavailable, so affected-page discovery relied on explicit bundle pages and direct file reads rather than full repository search.
+- Several large artifacts were truncated or omitted from the bundle, including the full unified compound table, Phase 4 v2 JSON, Phase 5 deep-read files, Phase 6 output files, and Phase 7 scans. I inspected the provided scripts and summaries and partially read relevant wiki pages, but not every downstream surface.
+- Primary papers were not independently retrieved or verified; provenance judgments distinguish database/citation-string evidence from primary-source verification.
+- Network APIs, MCP subagent calls, OpenRouter/DeepSeek translation runs, PubMed searches, and ChEMBL caches were not reproduced.
