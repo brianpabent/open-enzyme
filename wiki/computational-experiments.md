@@ -660,7 +660,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | ~~comp-027~~ | Completed 2026-05-16 — YELLOW-leaning-GREEN (sub-AUD window 75–125 mg/d). See Analyses above | — | ✓ Done |
 | ~~comp-030~~ | Completed 2026-05-15 — see Analyses above | — | ✓ Done |
 | ~~comp-029~~ | Completed 2026-05-16 — YELLOW; see Analyses above | — | ✓ Done |
-| ~~comp-031~~ | Completed 2026-05-16 — YELLOW; combined ΔSUA −1.8 to −1.9 mg/dL; separate-strain handoff. See Analyses above | — | ✓ Done |
+| ~~comp-031~~ | **Invalidated 2026-07-13** — dual-chassis EcN+PDB+uricase inherited comp-019's failed UOX regime; the combined ΔSUA numbers (−1.8 to −1.9 mg/dL) are **retracted**. The separate-strain-vs-dual-cassette *reasoning* (substrate competition) is preserved; see [dual-chassis page](./dual-chassis-ecn-pdb-uricase-computational.md), comp-046, §1.34/§1.37. | — | ✓ Done (invalidated) |
 | ~~comp-032~~ | Completed 2026-05-16 — GREEN; 10-candidate FDA-approved shortlist; lumacaftor top hit. See Analyses above | — | ✓ Done |
 | ~~comp-033~~ | Completed 2026-05-16 — RED single-dose Cmax-equivalent; reframed in comp-036 (YELLOW receptor-occupancy). See Analyses above | — | ✓ Done |
 | ~~comp-036~~ | Completed 2026-05-16 — YELLOW repeat-dose receptor-occupancy framing; salvages comp-033 RED. See Analyses above | — | ✓ Done |

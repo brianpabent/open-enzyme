@@ -142,3 +142,17 @@ I traced the provided `model_parameters.json` into `analyze.py`, `outputs/result
 - Primary literature cited in `inputs/provenance.md` was not independently opened or verified; I treated citation strings and corpus summaries as unverified provenance.
 - The bundled `validation-experiments.md` was very large; I inspected the relevant comp-046/§1.34 region and adjacent UOX/PDB sections, not every byte of the file.
 - I did not inspect every possible hypothesis/priority table page in the repository; affected-page findings are therefore not exhaustive.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: fix-in-place** (the bounded algebraic design-space result stands; several artifact/corpus claims overstated).
+
+- **Endogenous-ledger claim (audit action #1):** clarified across the interpretive page, `analyze.py` (→ regenerated summary) that **only the dietary side is a conserved 100-unit ledger**; the endogenous side is a **capture-fraction architecture comparison, NOT a conserved 100-unit ledger** (`endogenous_luminal_urate_units` is stored but unused).
+- **"full-factorial" claim (audit action #2):** `README.md` — `results.json` relabeled "machine-readable **summary** results (reproducible from the full-factorial; 6,561 per-cell rows not committed)".
+- **Stale comp-031 language (audit action #4):** `computational-experiments.md` row and `chassis-pending-interventions.md` M1 — the invalidated comp-031 ΔSUA numbers (−1.8 to −1.9 mg/dL, "~25–30% larger") **retracted** (comp-031 inherited comp-019's failed UOX regime); the separate-strain-vs-dual-cassette engineering conclusion preserved on its own substrate-competition reasoning.
+- **PDB+UOX additivity (audit action #5):** `purine-degrading-bacteria.md` "additive to uricase-based gut sink" → **"conditionally complementary"** (comp-046's near-zero median architecture difference; additivity requires measured residual transfer, not assumed).
+- Outputs regenerated (audit action #3).
+
+**Residuals (non-verdict, noted):** provenance-limits labeling — mark all scenario levels as author-chosen design levels, not extracted human fractions (audit #6).

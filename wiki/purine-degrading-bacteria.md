@@ -361,7 +361,7 @@ The gut compartment currently has two active OE tracks:
 - **ABCG2 upregulation via butyrate/PPARγ** and **hippuric acid/PPARγ** axes: enhance intestinal urate secretion. See [abcg2-modulators.md](./abcg2-modulators.md).
 
 PDB adds a third gut track with distinct products and compounding effects:
-- Direct anaerobic urate degradation (additive to uricase-based gut sink)
+- Direct anaerobic urate degradation (**conditionally complementary** to a uricase-based gut sink — comp-046 found a near-zero median architecture difference between staged and well-mixed access; additivity is *not* automatic and requires measured residual transfer/overlap/products, not assumed)
 - Butyrate production → ABCG2 upregulation + XO inhibition + NLRP3 dampening (compounding the ABCG2 track)
 
 In the [delivery routes table](./gout-kill-chain-delivery-routes.md), PDB is listed under the PO Microbiome route for the uricase axis. It should be understood as a parallel axis with independent mechanism — not just a delivery variant.

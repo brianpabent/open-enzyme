@@ -36,5 +36,5 @@ The decisive experiment is isotope-resolved: nucleosides, free bases, microbial 
 - `inputs/model_parameters.json` — discrete scenario levels and architecture definitions
 - `inputs/provenance.md` — evidence boundary
 - `inputs/query-strategy.json` — query-framing artifact
-- `outputs/results.json` — machine-readable full-factorial results
+- `outputs/results.json` — machine-readable **summary** results (aggregates + architecture boundary), reproducible from the full-factorial by rerunning `analyze.py`; the 6,561 per-cell rows are not committed
 - `outputs/summary.md` — interpretive output

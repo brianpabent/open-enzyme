@@ -147,7 +147,7 @@ def main():
         "limitations": [
             "Grid occupancy is not probability; levels are deliberately broad design cases.",
             "The GR-5 stage represents whole-cell cleavage plus salvage/retention, not DeoD causality alone.",
-            "Dietary precursor and endogenous luminal urate are separate conserved ledgers and are not summed.",
+            "Dietary precursor and endogenous luminal urate are separate accounting structures and are not summed (dietary = conserved 100-unit fate ledger; endogenous = capture-fraction architecture comparison, NOT a conserved ledger -- endogenous_luminal_urate_units is stored but unused).",
             "Architecture equations are hypotheses requiring measured kinetics, overlap, transfer loss, residence time, and PDB viability.",
             "The model omits microbial turnover and re-release, cross-feeding, renal compensation, inflammation, colonization, and serum-urate dynamics."
         ]

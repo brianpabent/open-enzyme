@@ -33,7 +33,7 @@ UOX acts on urate, not on adenine, guanine, or their nucleosides. The current ch
 
 ## Method summary
 
-comp-046 uses two independent, conserved 100-unit ledgers:
+comp-046 uses two independent structures — but **only the dietary one is a conserved 100-unit ledger** (corrected 2026-07-14 per comp-review). The dietary precursor side is a conserved 100-unit fate ledger; the endogenous side is a **capture-fraction architecture comparison, not a conserved 100-unit ledger** — its `endogenous_luminal_urate_units` input is stored but unused by the code, which computes only well-mixed-vs-staged capture fractions. The two structures are:
 
 1. **Dietary precursor ledger:** unintercepted absorbed nucleoside, unintercepted unabsorbed nucleoside, whole-cell microbial salvage/retention, liberated absorbed base, and liberated unabsorbed base. Every grid cell sums to 100.
 2. **Endogenous luminal-urate ledger:** UOX and PDB capture under an overlap-adjusted well-mixed equation or a staged equation with explicit residual-transfer efficiency.
