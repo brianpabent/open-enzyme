@@ -112,13 +112,33 @@ When the analysis code, inputs, provenance, decision rules, planned outputs, and
 
 Tell the reviewer to read and follow [`scripts/comp-pre-run-review-prompt.md`](../../../scripts/comp-pre-run-review-prompt.md). The reviewer must inspect the actual code and inputs, not a method summary. It must return `PRE_RUN_GATE: GO`, `REVISE`, or `BLOCK`.
 
-Save the review and an action-by-action resolution in `reviews/pre-run.md`. Execution is forbidden until the last gate is `GO` and every mandatory action is closed. If resolving the review materially changes the question, model, code path, inputs, parameterization, decision threshold, or sensitivity plan, send the revised artifact to a new fresh subagent and repeat the gate. A review note that merely says a weakness will be documented is not closure when the weakness can invalidate the computation.
+Before launching the reviewer, bind the review to an exact snapshot:
+
+```bash
+python3 ../../../../scripts/comp-review-manifest.py create \
+  --phase pre \
+  --comp-dir . \
+  --output reviews/pre-run.manifest.json
+```
+
+Run this from the COMP directory. Give the manifest and its printed SHA-256 to the reviewer. The pre-run manifest hashes every design file and separately records any prior-output baseline without treating old results as evidence for the revised design.
+
+Save the review, reviewer/subagent identifier, reviewed manifest SHA-256, and an action-by-action resolution in `reviews/pre-run.md`. `GO` means **no required action of any kind**; any `REVISE` or `BLOCK` result requires changes, a new manifest, and a new fresh-subagent review. Execution is forbidden until the last gate is `GO` and every mandatory action is closed. A review note that merely says a weakness will be documented is not closure when the weakness can invalidate the computation.
 
 **The "provisional" qualifier:** Use "LOW risk (provisional)" when the verdict rests on three or more compounding optimistic assumptions. Name the assumptions so a reader knows what "provisional" means. Removing "provisional" requires running the more rigorous analysis (e.g., SASA instead of pLDDT, biological assembly instead of monomer).
 
 ### Step 5 — Run the reviewed experiment
 
-After the pre-run gate passes, run the documented reproduction command from the experiment folder. Verify that it exits successfully, produces every declared output, and is deterministic on an immediate clean rerun. Record the exact command, runtime environment, and any nondeterministic seed or external-service version in the README or provenance file.
+After the pre-run gate passes, verify that the reviewed snapshot is still exact:
+
+```bash
+python3 ../../../../scripts/comp-review-manifest.py check \
+  --manifest reviews/pre-run.manifest.json \
+  --review reviews/pre-run.md \
+  --required-line 'PRE_RUN_GATE: GO'
+```
+
+Any mismatch blocks execution and requires a new manifest plus a new pre-run review. Only after the check passes, run the documented reproduction command from the experiment folder. Verify that it exits successfully, produces every declared output, and is deterministic on an immediate clean rerun. Record the exact command, runtime environment, and any nondeterministic seed or external-service version in the README or provenance file.
 
 ### Step 6 — Draft every interpretation surface
 
@@ -131,15 +151,15 @@ Draft all result-bearing surfaces before the post-run review:
 - the relevant `wiki/validation-experiments.md` computational prior;
 - every hypothesis card, priority table, safety page, index entry, queue closure, or other wiki change proposed from the result.
 
-Keep these changes uncommitted and treat them as proposals. Do not mark the comp `Complete`, promote a hypothesis, reframe a wet-lab gate, or publish a verdict before the post-run gate passes.
+Keep these changes uncommitted and treat them as proposals. Do not mark the comp `Complete`, promote a hypothesis, reframe a wet-lab gate, or publish a verdict before the post-run gate passes. Create `reviews/post-run.manifest.json` with `../../../../scripts/comp-review-manifest.py create --phase post --comp-dir . --output reviews/post-run.manifest.json`, passing **every** proposed propagation path as a repeated `--proposed-file` (paths may be absolute or relative to the current COMP directory). Build that path list from the complete COMP-scoped diff, then give the manifest and printed SHA-256 to the reviewer.
 
-Use the templates in Steps 8–10 while drafting these surfaces. After the post-run gate passes, those reviewed drafts become final; any later result-bearing change must repeat Step 7.
+Use the templates in Steps 8–10 while drafting these surfaces. After the post-run gate passes, those reviewed drafts become final. A later design/code/input/parameter/decision-rule/sensitivity change returns to Step 4 before execution; a later output, summary, provenance, or proposed-update change requires a new post-run manifest and a fresh Step 7 review.
 
 ### Step 7 — Mandatory adversarial post-run review
 
 Launch a **different fresh subagent with no conversation history**. Give it the experiment directory plus the complete list or diff of every proposed wiki update. Tell it to read and follow [`scripts/comp-review-prompt.md`](../../../scripts/comp-review-prompt.md). The reviewer must inspect the actual code, inputs, all generated outputs, summaries, and proposed wiki edits; reconstruct the system independently; trace load-bearing inputs into implementation and outputs; check provenance and evidence levels; and search for affected corpus surfaces the author missed.
 
-Save the review and an action-by-action resolution in `reviews/post-run.md`.
+Save the review, different reviewer/subagent identifier, reviewed manifest SHA-256, and an action-by-action resolution in `reviews/post-run.md`. The review must enumerate every `generated_output` and `proposed_update` manifest entry. Missing, unreadable, or truncated coverage is an automatic `ACTION_REQUIRED: yes`.
 
 - `ACTION_REQUIRED: no` is the passing post-run gate.
 - `ACTION_REQUIRED: yes` blocks completion and commit until every required action is closed and a new fresh subagent returns `ACTION_REQUIRED: no`.
@@ -202,15 +222,15 @@ Sections to include:
 In the relevant wet-lab experiment section, add a "Computational prior" subsection:
 
 ```markdown
-**Computational prior (comp-NNN, YYYY-MM-DD):** [verdict sentence]. [Key numbers sentence]. 
-[Reframing sentence: "This reframes §X.Y from a feasibility gate to a confirmation experiment." 
+**Computational prior (comp-NNN, YYYY-MM-DD):** [verdict sentence]. [Key numbers sentence].
+[Reframing sentence: "This reframes §X.Y from a feasibility gate to a confirmation experiment."
 or "This does not change the priority framing — §X.Y remains a feasibility gate."]
 Links: [wiki/slug-computational.md], [wiki/etc/experiments/comp-NNN-slug/]
 ```
 
 ### Step 11 — Commit
 
-Only commit after both adversarial gates pass. Stage: `wiki/etc/experiments/comp-NNN-<slug>/` (including `reviews/`) + `wiki/computational-experiments.md` + `wiki/<slug>-computational.md` + `wiki/validation-experiments.md` + every other reviewed propagation surface + `synthesis/queue/` (if annotating an action item).
+Only commit after both adversarial gates pass. Stage the exact reviewed set: `wiki/etc/experiments/comp-NNN-<slug>/` (including `reviews/`) + `wiki/computational-experiments.md` + `wiki/<slug>-computational.md` + `wiki/validation-experiments.md` + every other reviewed propagation surface + `synthesis/queue/` (if annotating an action item). Then, immediately before commit, run `python3 ../../../../scripts/comp-review-manifest.py check --manifest reviews/post-run.manifest.json --review reviews/post-run.md --required-line 'ACTION_REQUIRED: no'` from the COMP directory. Do not edit after this check. Any mismatch requires a new manifest and a fresh post-run review (or a return to Step 4 for design-bearing changes).
 
 Commit message format:
 ```

@@ -18,7 +18,7 @@ IGNORED_SUFFIXES = {".pyc"}
 def repo_path(raw: str) -> Path:
     path = Path(raw)
     if not path.is_absolute():
-        path = ROOT / path
+        path = Path.cwd() / path
     path = path.resolve()
     if path != ROOT and ROOT not in path.parents:
         raise SystemExit(f"Path escapes repository: {raw}")
@@ -54,7 +54,7 @@ def ignored(path: Path) -> bool:
     )
 
 
-def comp_files(comp_dir: Path, phase: str) -> tuple[list[Path], list[Path]]:
+def comp_files(comp_dir: Path) -> tuple[list[Path], list[Path]]:
     design: list[Path] = []
     outputs: list[Path] = []
     for path in sorted(comp_dir.rglob("*")):
@@ -67,8 +67,6 @@ def comp_files(comp_dir: Path, phase: str) -> tuple[list[Path], list[Path]]:
             outputs.append(path)
         else:
             design.append(path)
-    if phase == "post":
-        return design + outputs, []
     return design, outputs
 
 
@@ -89,12 +87,14 @@ def create(args: argparse.Namespace) -> None:
     if reviews_dir.resolve() not in output.parents:
         raise SystemExit("Manifest output must live under the COMP reviews/ directory")
 
-    current, prior_outputs = comp_files(comp_dir, args.phase)
+    design_files, output_files = comp_files(comp_dir)
     proposed = [repo_path(raw) for raw in args.proposed_file]
     if args.phase == "pre" and proposed:
         raise SystemExit("--proposed-file is valid only for a post-run manifest")
     if args.phase == "post" and not proposed:
         raise SystemExit("Post-run manifest requires every proposed update via --proposed-file")
+    if any(path == comp_dir or comp_dir in path.parents for path in proposed):
+        raise SystemExit("--proposed-file paths must be outside the COMP directory")
     missing = [str(path) for path in proposed if not path.is_file()]
     if missing:
         raise SystemExit(f"Proposed files do not exist: {missing}")
@@ -105,11 +105,16 @@ def create(args: argparse.Namespace) -> None:
         "schema_version": 1,
         "phase": args.phase,
         "comp_dir": relative(comp_dir),
-        "files": [entry(path, "comp") for path in current]
+        "files": [entry(path, "design") for path in design_files]
+        + (
+            [entry(path, "generated_output") for path in output_files]
+            if args.phase == "post"
+            else []
+        )
         + [entry(path, "proposed_update") for path in sorted(proposed)],
         "prior_output_baseline": [
-            entry(path, "prior_output") for path in prior_outputs
-        ],
+            entry(path, "prior_output") for path in output_files
+        ] if args.phase == "pre" else [],
     }
     document = dict(payload)
     document["manifest_sha256"] = manifest_digest(payload)
@@ -147,30 +152,67 @@ def check(args: argparse.Namespace) -> None:
     if expected_digest != actual_digest:
         errors.append("manifest payload digest does not match manifest_sha256")
 
+    if bool(args.review) != bool(args.required_line):
+        errors.append("--review and --required-line must be supplied together")
+    elif args.review:
+        review_path = repo_path(args.review)
+        if not review_path.is_file():
+            errors.append(f"review receipt is missing: {relative(review_path)}")
+        else:
+            review_text = review_path.read_text(errors="replace")
+            review_lines = [line.strip() for line in review_text.splitlines() if line.strip()]
+            first_line = review_lines[0] if review_lines else ""
+            if first_line != args.required_line:
+                errors.append(
+                    f"review receipt first non-empty line is not: {args.required_line}"
+                )
+            snapshot_line = f"REVIEWED_SNAPSHOT: {expected_digest}"
+            if len(review_lines) < 2 or review_lines[1] != snapshot_line:
+                errors.append(
+                    "review receipt second non-empty line is not the exact "
+                    f"manifest binding: {snapshot_line}"
+                )
+
     phase = document.get("phase")
     if phase not in {"pre", "post"}:
         errors.append(f"invalid phase: {phase!r}")
     comp_dir = repo_path(str(document.get("comp_dir", "")))
-    current_comp, current_prior_outputs = comp_files(comp_dir, str(phase))
+    current_design, current_outputs = comp_files(comp_dir)
 
     recorded_files = list(document.get("files", []))
-    recorded_comp = [item for item in recorded_files if item.get("kind") == "comp"]
+    recorded_design = [item for item in recorded_files if item.get("kind") == "design"]
+    recorded_outputs = [
+        item for item in recorded_files if item.get("kind") == "generated_output"
+    ]
     recorded_proposed = [
         item for item in recorded_files if item.get("kind") == "proposed_update"
     ]
-    current_comp_entries = [entry(path, "comp") for path in current_comp]
+    current_design_entries = [entry(path, "design") for path in current_design]
+    current_output_entries = [
+        entry(path, "generated_output") for path in current_outputs
+    ]
     current_proposed_entries: list[dict[str, object]] = []
     for item in recorded_proposed:
         path = repo_path(str(item.get("path", "")))
         if path.is_file():
             current_proposed_entries.append(entry(path, "proposed_update"))
-    errors.extend(compare_entries(recorded_comp, current_comp_entries, "COMP file"))
+    errors.extend(compare_entries(recorded_design, current_design_entries, "design file"))
+    if phase == "post":
+        errors.extend(
+            compare_entries(recorded_outputs, current_output_entries, "generated output")
+        )
+    elif recorded_outputs:
+        errors.append("pre-run manifest unexpectedly contains generated_output entries")
     errors.extend(
         compare_entries(recorded_proposed, current_proposed_entries, "proposed update")
     )
 
     recorded_baseline = list(document.get("prior_output_baseline", []))
-    current_baseline = [entry(path, "prior_output") for path in current_prior_outputs]
+    current_baseline = [entry(path, "prior_output") for path in current_outputs]
+    if phase == "post":
+        if recorded_baseline:
+            errors.append("post-run manifest unexpectedly contains a prior-output baseline")
+        current_baseline = []
     errors.extend(compare_entries(recorded_baseline, current_baseline, "prior output"))
 
     if errors:
@@ -193,6 +235,8 @@ def parser() -> argparse.ArgumentParser:
 
     check_parser = subparsers.add_parser("check")
     check_parser.add_argument("--manifest", required=True)
+    check_parser.add_argument("--review")
+    check_parser.add_argument("--required-line")
     check_parser.set_defaults(func=check)
     return root
 

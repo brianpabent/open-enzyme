@@ -282,7 +282,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Question:** Is there a sub-AUD oral disulfiram dose window where plasma DSF engages GSDMD (CP6b pyroptotic-exit block) at a therapeutically meaningful level while plasma Me-DTC stays below the ALDH-inhibition threshold driving the disulfiram-ethanol reaction (DER)?
 
-**Verdict:** **YELLOW-leaning-GREEN** — narrow sub-AUD window exists around **75–125 mg/day**, centered on 100 mg/day. At 100 mg/d: ~57% GSDMD blockade (DSF Cmax ~0.4 µM) at ~40% ALDH inhibition (Me-DTC ~70 nM, right at Faiman DER hypotension threshold). Below 50 mg/d, GSDMD blockade drops <40%; above 125 mg/d, ALDH inhibition crosses DER threshold. Strict-GREEN at 100 mg/d under conservative cell-free EC50 anchor; cellular-preincub anchor extends GREEN down to 50 mg/d. Gates the 503A compounding-pharmacy disulfiram pathway.
+**Verdict (downgraded to hypothesis-generator, comp-review 2026-07-14):** a **single strict-GREEN modeled point at 100 mg/day** under current (unverified) Cmax + ALDH-calibration assumptions — **NOT a validated "75–125 mg/day window"** (those bounds were broadened from the single point, and 100 mg/day sits exactly on a hard-coded decision boundary). Hypothesis to test, not a dose recommendation. At 100 mg/d: ~57% GSDMD blockade (DSF Cmax ~0.4 µM) at ~40% ALDH inhibition (Me-DTC ~70 nM, right at Faiman DER hypotension threshold). Below 50 mg/d, GSDMD blockade drops <40%; above 125 mg/d, ALDH inhibition crosses DER threshold. Strict-GREEN at 100 mg/d under conservative cell-free EC50 anchor; cellular-preincub anchor extends GREEN down to 50 mg/d. Gates the 503A compounding-pharmacy disulfiram pathway.
 
 **Key findings:**
 - Sub-AUD DSF is a **selective GSDMD inhibitor**, not a pan-NLRP3 inhibitor — the NLRP3-palmitoylation pathway (Xu 2024, 10 µM EC50) is NOT engaged at any sub-AUD dose.
@@ -657,7 +657,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | ~~comp-023 v2~~ | Deprioritized 2026-05-16 — koji-cordycepin removed from active stack ([koji-endgame-strain §3.5](./koji-endgame-strain.md)) | — | Closed |
 | ~~comp-025~~ | Deprioritized 2026-05-16 — koji-cordycepin removed; cultivation-route cordycepin inherits native ADA-inhibitor pairing | — | Closed |
 | ~~comp-026~~ | Deprioritized 2026-05-16 — multi-cassette induction interference moot for cordycepin; re-openable for future cytosolic third-cassette candidate | — | Closed |
-| ~~comp-027~~ | Completed 2026-05-16 — YELLOW-leaning-GREEN (sub-AUD window 75–125 mg/d). See Analyses above | — | ✓ Done |
+| ~~comp-027~~ | Completed 2026-05-16; **downgraded to hypothesis-generator 2026-07-14** — single strict-GREEN modeled point at 100 mg/d (not a validated 75–125 window). See Analyses above | — | ✓ Done |
 | ~~comp-030~~ | Completed 2026-05-15 — see Analyses above | — | ✓ Done |
 | ~~comp-029~~ | Completed 2026-05-16 — YELLOW; see Analyses above | — | ✓ Done |
 | ~~comp-031~~ | **Invalidated 2026-07-13** — dual-chassis EcN+PDB+uricase inherited comp-019's failed UOX regime; the combined ΔSUA numbers (−1.8 to −1.9 mg/dL) are **retracted**. The separate-strain-vs-dual-cassette *reasoning* (substrate competition) is preserved; see [dual-chassis page](./dual-chassis-ecn-pdb-uricase-computational.md), comp-046, §1.34/§1.37. | — | ✓ Done (invalidated) |

@@ -27,16 +27,23 @@ The first non-empty output line must be exactly one of:
 
 `PRE_RUN_GATE: BLOCK`
 
+The second non-empty output line must be exactly:
+
+`REVIEWED_SNAPSHOT: <pre-run.manifest.json SHA-256>`
+
 Use **GO** only when the experiment may run without a mandatory design or implementation change. Use **REVISE** when concrete corrections can make the planned run decision-useful. Use **BLOCK** when the proposed computation cannot answer the stated question without a materially different experiment, missing input, or unresolved scientific decision.
 
-`PRE_RUN_GATE: GO` requires `## Required actions before execution` to say `None.` Any mandatory action requires `REVISE` or `BLOCK`.
+`PRE_RUN_GATE: GO` means no required action of any kind: design, implementation, provenance, output contract, or reproducibility. It requires `## Required actions before execution` to say `None.` Any required action requires `REVISE` or `BLOCK`, followed by a new manifest and a new fresh-subagent review after correction.
 
 ## Required output
 
-After the gate line, use exactly these headings:
+After the two receipt lines, use exactly these headings:
 
 ```markdown
 # Adversarial pre-run review — comp-NNN
+
+## Reviewed snapshot
+[Reviewer/subagent identifier; `pre-run.manifest.json` SHA-256; design-file count; prior-output baseline count. State whether the manifest matched the files inspected.]
 
 ## Bottom-line verdict
 [Why this may run, must be revised, or is blocked.]

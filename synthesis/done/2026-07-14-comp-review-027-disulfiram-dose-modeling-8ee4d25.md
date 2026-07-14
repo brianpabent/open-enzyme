@@ -134,3 +134,14 @@ ACTION_REQUIRED: yes
 - Primary-source paper directories referenced by the artifact (`papers/PMC...`) were not available via the read tool; no primary-source verification occurred in this review.
 - The `validation-experiments.md` file was only partially inspected before tool-result budget was exhausted.
 - Bundle references to `compounding-pharmacy-track.md`, `disulfiram.md`, `gout-action-guide.md`, and `nlrp3-exploit-map.md` were inspected directly, but other possible downstream pages may still exist and need a full grep-based propagation sweep once repository search is functional.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: downgrade to hypothesis-generator** (not a rerun — the single-point model is fine, but the corpus over-broadened it into a validated dose window).
+
+- **Interpretive page (`disulfiram-dose-modeling-computational.md`):** added a ⚠️ downgrade banner + reframed the verdict — a **single strict-GREEN modeled point at 100 mg/day** under current (unverified Cmax + hard-coded-ALDH-calibration) assumptions, **NOT a validated "75–125 mg/day window"**; hypothesis to test, not a dose recommendation (audit #4). The banner states any "75–125" wording elsewhere inherits this caveat.
+- **`computational-experiments.md`** verdict + Planned-row updated to the downgraded framing.
+
+**Residuals (noted):** the "range 75–125 mg/d" phrasing still appears verbatim on 6 downstream pages (`disulfiram.md`, `compounding-pharmacy-track.md` ×2, `chassis-pending-interventions.md`, `gout-action-guide.md`, `supplements-stack.md`) — consistent-by-reference via the interpretive banner, but a mechanical sweep should update each (audit #4). Deeper artifact reconciliation (single verified Cmax anchor, hard-coded constants → inputs, rerun) is audit #1–3, a follow-up.

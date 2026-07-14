@@ -12,6 +12,8 @@ Defer reading `reviews/` and earlier review logs until after you have recorded y
 
 In daemon mode, the bundle contains a complete file inventory, a bounded selection of artifact files, every top-level wiki page that explicitly names the comp, and a heuristic list of JSON input leaf paths not named literally in executable code. In authoring-time subagent mode, inspect the experiment directory and the complete supplied diff/list of proposed wiki edits directly. In either mode, inspect **every generated output and every proposed summary/wiki update**; do not limit review to files that explicitly name the comp if the result changes an unnamed mechanism, priority, hypothesis, or safety claim. The unused-input heuristic, when supplied, is only a search lead: dynamic iteration, renamed variables, and documentation-only inputs produce false positives. Inspect before concluding that a value is unused.
 
+In authoring-time mode, bind the review to the supplied `post-run.manifest.json` SHA-256. Enumerate every `generated_output` and `proposed_update` entry in the required inventory table. A manifest mismatch or any entry that is missing, unreadable, truncated, or not actually inspected requires `ACTION_REQUIRED: yes`. In daemon mode, use the trigger commit SHA and complete tracked-file inventory as the reviewed snapshot.
+
 You have read-only repository tools. Use them whenever a load-bearing check depends on an omitted/truncated artifact or on a wiki page that does not explicitly name the comp. `read_file` supports `start_byte` + `max_bytes` for bounded chunked inspection of large text artifacts. In particular, search the corpus by mechanism, payload, chassis, constraint, and conclusion—not only by comp number—to find affected pages.
 
 ## Mandatory checks
@@ -39,14 +41,23 @@ The first non-empty output line must be exactly one of:
 
 `ACTION_REQUIRED: no`
 
+The second non-empty output line must be exactly one of:
+
+`REVIEWED_SNAPSHOT: <post-run.manifest.json SHA-256>` (authoring-time mode)
+
+`REVIEWED_SNAPSHOT: commit:<full trigger commit SHA>` (daemon mode)
+
 Use **yes** if any correction, missing propagation, code/output reconciliation, rerun, primary-source verification, unreviewed generated file, unsupported proposed wiki update, or unresolved load-bearing design decision must be actioned. Use **no** only if the complete artifact-summary-wiki contract is materially clean and all observations are optional future extensions.
 
 ## Required output
 
-After the action line, use exactly these headings:
+After the two receipt lines, use exactly these headings:
 
 ```markdown
 # Independent comp review — comp-NNN
+
+## Reviewed snapshot
+[Reviewer identifier; authoring manifest SHA-256 or daemon trigger commit; whether the snapshot matched the inspected files.]
 
 ## Bottom-line verdict
 [Clean / Clean with limitations / Action required / Quantitative verdict invalid; concise reason.]
@@ -56,6 +67,10 @@ After the action line, use exactly these headings:
 
 ## Summary-fidelity audit
 [README/output summary/interpretive page/index/validation/hypothesis agreement or mismatches.]
+
+## Generated-output and proposed-update inventory
+| Path | Manifest kind | Inspected completely? | Finding |
+|---|---|---|---|
 
 ## Load-bearing verification table
 | Claim or parameter | Artifact location | Implementation use | Provenance status | Verdict |
