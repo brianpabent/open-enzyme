@@ -349,8 +349,8 @@ def write_summary(data, path):
         "GPI anchor — it has no known enzymatic or binding function. A soluble ectodomain construct "
         "could truncate at aa 285 (end of SCR4), removing the stalk entirely. "
         "This would eliminate the dominant disordered region and likely shift the verdict toward LOW. "
-        "comp-006 does not model the truncated variant; a comp-007 analysis of the SCR1-4-only "
-        "construct (aa 35–285) would be the logical follow-up.",
+        "comp-006 does not model the truncated variant; the SCR1-4-only construct "
+        "(aa 35–285) was analyzed as the follow-up in comp-012 (not comp-007, as an earlier draft stated).",
         "- **pLDDT ≠ solvent accessibility.** Stalk pLDDT accurately predicts disorder; "
         "SCR pLDDT 85–98 predicts well-folded but SASA calculation would quantify surface exposure of "
         "buried-vs-solvent-accessible loops more precisely.",
@@ -359,6 +359,12 @@ def write_summary(data, path):
         "- **ALP and NPr pH factors conservatively set to 1.0.** ALP is outside its active range "
         "(6–12) at shio-koji pH 4.5–5.0; NPr is at the lower edge. True activity of both is lower "
         "than modelled; risk is conservatively overstated for both.",
+        "- **The ectodomain HIGH verdict is a conservative stress-test, not a survival model, and is "
+        "dependent on NPr pH factor = 1.0.** The input note itself estimates realistic NPr activity at "
+        "pH 4.5–5.0 as ~0.3–0.5. At NPr pH factor 0.5 the NPr max score is ~0.194; at 0.3, ~0.116 — "
+        "both below the HIGH threshold (0.30). Under realistic NPr activity the ectodomain verdict would "
+        "shift toward MODERATE/LOW, with the disordered stalk remaining the engineering liability. Read "
+        "HIGH as 'conservative worst-case flag on the disordered stalk,' not 'predicted significant degradation.'",
         "",
         "### Comparison with comp-001 (uricase) and comp-005 (lactoferrin)",
         "",

@@ -137,3 +137,17 @@ Mismatches / stale claims requiring action:
 - Repository `grep_repo` failed because the backend `rg` executable was unavailable, so corpus search was performed by reading the bundle and selected omitted pages with `read_file`, not by full-text grep.
 - `wiki/validation-experiments.md` is large; I relied on the provided bundle excerpts plus bounded reads rather than a full-file audit.
 - The review does not assess clinical efficacy or safety of CD55/DAF as an intervention; this is Phase 0 computational scrutiny only.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: fix-in-place + relabel** (the stalk-contingent finding holds; the numeric verdict needed honest framing).
+
+- **Disulfide hallucination** ("3/SCR, 12 total" → "2/SCR, 8 total per UniProt P08174") fixed in the disulfide cross-cutter commit `af7a34ee` (analyze.py + README + regenerated summary).
+- **Verdict relabel (audit action #3):** the ectodomain HIGH is now labeled a **conservative stress-test dependent on NPr pH factor = 1.0** — at realistic NPr activity (~0.3–0.5) the NPr max score (~0.116–0.194) falls below the HIGH threshold (0.30) and the verdict shifts toward MODERATE/LOW, leaving the disordered stalk as the actual liability. Added to `analyze.py` (→ regenerated `summary.md`), README, `computational-experiments.md`, and `modality-chokepoint-matrix.md`.
+- **pLDDT-proxy wording (audit action #4):** "SCR1-4 contribute zero exposed sites" → "zero low-pLDDT exposed-by-proxy sites (pLDDT proxy, not SASA)" in README + `computational-experiments.md` + `modality-chokepoint-matrix.md` (×2).
+- **Stale comp-007→comp-012 follow-up (audit action #2/#5):** corrected in `analyze.py`, README, and `modality-chokepoint-matrix.md` (×2 — the "comp-007 is next step / expected LOW" prose). comp-012 already ran the SCR1-4-only truncation and returned LOW.
+- **Repro path** `experiments/` → `wiki/etc/experiments/`.
+
+**Residuals (non-verdict-affecting, noted):** 15% NaCl residual-activity input stored-but-unused; primary-source verification packet (audit #6); pLDDT-proxy propagation to lower-traffic DAF/H05/complement-c5a pages (the two main index pages are done).

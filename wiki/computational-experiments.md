@@ -423,7 +423,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Question:** Would the DAF/CD55 soluble ectodomain (aa 35–353: SCR1–4 + Ser/Thr stalk) survive shio-koji protease conditions?
 
-**Verdict:** **HIGH / HIGH / HIGH** across full / mature / soluble-ectodomain scopes. Driver: Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52, disordered). SCR1–4 (aa 35–285, pLDDT 85–98) contribute **zero exposed sites**.
+**Verdict:** **HIGH / HIGH / HIGH** across full / mature / soluble-ectodomain scopes. Driver: Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52, disordered). SCR1–4 (aa 35–285, pLDDT 85–98) contribute **zero low-pLDDT exposed-by-proxy sites** (pLDDT-based proxy, not a SASA result). Note the ectodomain HIGH is a **conservative stress-test dependent on NPr pH factor = 1.0**; at realistic NPr activity (~0.3–0.5) it shifts toward MODERATE/LOW, leaving the disordered stalk as the liability (corrected 2026-07-14).
 
 **Key findings:**
 - HIGH verdict is stalk-contingent, not SCR-domain-contingent. Truncation at SCR4 surfaces as the load-bearing follow-up (became comp-012).

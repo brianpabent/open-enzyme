@@ -14,7 +14,7 @@ Three verdicts, all HIGH, but for structurally distinct reasons:
 
 **The key finding:** Unlike comp-005 (lactoferrin), where HIGH was signal-peptide-contingent and dropped to MODERATE once the signal peptide was excluded, the CD55 ectodomain verdict remains HIGH even in the most favorable engineering scope (aa 35–353). The driver is the **Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52)** — 68 residues of fully disordered polypeptide within the soluble ectodomain itself. NPr alone has 9 exposed stalk sites; ALP has 48. The SCR1–4 domains (aa 35–285, pLDDT 85–98) are well-folded and largely resistant.
 
-**Critical caveat:** This verdict is stalk-contingent, and the stalk is removable. A construct truncated at SCR4 (aa 35–285) would eliminate all 9 NPr stalk sites and 48 ALP stalk sites. A comp-007 analysis of the SCR1-4-only construct is the logical follow-up before dismissing CD55 as an engineering candidate.
+**Critical caveat:** This verdict is stalk-contingent, and the stalk is removable. A construct truncated at SCR4 (aa 35–285) would eliminate all 9 NPr stalk sites and 48 ALP stalk sites — this SCR1-4-only truncation was analyzed as the follow-up in **comp-012** (not comp-007, as an earlier draft stated). Note also that the ectodomain HIGH is a **conservative stress-test dependent on NPr pH factor = 1.0**; at realistic NPr activity (~0.3–0.5) the NPr max score falls below the HIGH threshold and the ectodomain verdict shifts toward MODERATE/LOW, leaving the disordered stalk as the actual engineering liability.
 
 **Informs:** [`wiki/modality-chokepoint-matrix.md`](../../../modality-chokepoint-matrix.md) — "Engineered soluble complement regulators" row (CP0 platform gap)
 
@@ -27,7 +27,7 @@ Three verdicts, all HIGH, but for structurally distinct reasons:
 ## How to reproduce
 
 ```bash
-cd experiments/comp-006-daf-cd55-shio-koji-protease-stability
+cd wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability
 python3 analyze.py
 ```
 
@@ -63,7 +63,7 @@ comp-006-daf-cd55-shio-koji-protease-stability/
 | NPr (neutral metalloprotease) | 39 | 9 | 9 | 0.388 |
 | acid_protease (aspergillopepsin) | 17 | 1 | 1 | 0.195 |
 
-All ectodomain exposed sites are in the Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52). The SCR1–4 domains (aa 35–285) contribute zero exposed sites. If the stalk is truncated from the engineering construct, the ectodomain verdict would shift substantially toward LOW.
+All ectodomain exposed sites are in the Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52). The SCR1–4 domains (aa 35–285) contribute zero **low-pLDDT exposed-by-proxy** sites — this is a pLDDT-based exposure proxy, not a SASA (solvent-accessible surface area) result; no SASA calculation was performed. If the stalk is truncated from the engineering construct, the ectodomain verdict would shift substantially toward LOW.
 
 ---
 
