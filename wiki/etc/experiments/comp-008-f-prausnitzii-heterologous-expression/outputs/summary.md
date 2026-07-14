@@ -53,7 +53,7 @@
 |---|---|---|---|---|
 | cluster_size_tractability | 0.95 | 0.9 | 1.0 | 280 aa truncated construct (~840 bp). Trivially clonable. |
 | GC_content_codon_compatibility | 0.8 | 0.7 | 0.9 | Same human ~58% GC vs Fp 56.6%. Codon optimization moderate. |
-| secretion_pathway_availability | 0.6 | 0.45 | 0.75 | Sec-translocon present. Same caveat as lactoferrin re: disulfide-rich secretion. 8 disulfides in SCR1-4 — less than lactoferrin's 17 but still requires oxidative folding. |
+| secretion_pathway_availability | 0.6 | 0.45 | 0.75 | Sec-translocon present. Same caveat as lactoferrin re: disulfide-rich secretion. 8 disulfides in SCR1-4 — less than lactoferrin's 16 but still requires oxidative folding. |
 | host_physiology_compatibility | 0.9 | 0.8 | 0.95 | No O2 requirement. CR1 (a host complement regulator) is mechanistically inert to bacterial physiology — F. prausnitzii has no classical-pathway complement target. |
 | engineering_toolkit_maturity | 0.25 | 0.15 | 0.35 | Shared factor. |
 | host_toxicity_risk | 0.9 | 0.8 | 0.95 | CR1 is a host immune regulator; no bacterial target. Native serpins / complement regulators don't perturb commensal physiology. |
@@ -95,7 +95,7 @@
 1. **Butyrate-pathway boost (BCoAT) is the unambiguous winner** — both base ranking AND toolkit-conditional ranking. It is a NATIVE payload (CAI=1.0, no secretion, native lifestyle, no folding burden). The only blocker is the shared engineering-toolkit gap.
 2. **Uricase scores LOW (~0.40) — and the bottleneck is the host-physiology mismatch, not the engineering toolkit.** Uricase fundamentally requires O2 as a substrate. F. prausnitzii is a strict anaerobe in an anoxic colonic lumen. Even with a perfect engineering toolkit, the chemistry can't run. This is a STRATEGIC RECLASSIFICATION moment: uricase is not a plausible F. prausnitzii payload, regardless of how much engineering investment goes in. Different chassis is required (e.g. E. coli Nissle as facultative anaerobe — micro-aerobic windows possible in proximal colon; or maintain uricase on the koji track).
 3. **Lactoferrin and sCR1 SCR1-4 score similarly (~0.50-0.55)** — both have favorable host-physiology fit, both bottleneck on the same anoxic-environment-disulfide-folding question. This is a more tractable problem than uricase's O2-substrate-requirement because it could be addressed by heterologous DsbA/DsbB co-expression or by switching to a chassis with characterized oxidative-folding capacity in the periplasmic-equivalent space. But it's still a real risk.
-4. **CR1 SCR1-4 ranks slightly above lactoferrin** due to fewer disulfide bonds (8 vs 17) and the SCR/sushi/CCP-fold's documented isomerization tolerance.
+4. **CR1 SCR1-4 ranks slightly above lactoferrin** due to fewer disulfide bonds (8 vs 16) and the SCR/sushi/CCP-fold's documented isomerization tolerance.
 5. **The engineering toolkit gap (no published F. prausnitzii transformation as of 2026-05) is the gating factor for ALL payloads except butyrate-boost-via-native-pathway.** Without the toolkit, every score above except butyrate's is academic. Strategic path: invest 1-2 yr in adapting the Lachnospiraceae conjugation toolkit (Roseburia inulinivorans + E. rectale precedent) to F. prausnitzii FIRST; the payload selection happens second.
 
 ## What this comp informs / decides

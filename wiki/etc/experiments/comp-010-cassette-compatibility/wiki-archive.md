@@ -128,8 +128,8 @@ Uricase (*A. flavus uaZ*) ends in ...SKL — a canonical PTS1 peroxisomal target
 | Protein | Cysteines | Disulfides (UniProt) | Folding load (vs. Huynh = 1.00) | Fold risk |
 |---|---|---|---|---|
 | Uricase Q00511 | 3 | **0** | 0.00× | VERY LOW |
-| Lactoferrin P02788 | 33 | **16** | 1.00× | MODERATE |
-| Combined | 36 | **16** | **1.00×** | — |
+| Lactoferrin P02788 | 32 | **16** | 1.00× | MODERATE |
+| Combined | 35 | **16** | **1.00×** | — |
 
 Uricase is a disulfide-free enzyme — all three cysteine residues in the *A. flavus* sequence are free thiols, consistent with the intracellular homotetramer biology (no ER oxidative machinery required). This means the ER PDI/ERO1 burden of the dual-cassette strain is entirely attributable to lactoferrin.
 

@@ -318,7 +318,7 @@ def write_summary(data, path):
         "α-amylase signal (Ward 1995), so this region is not present in the expressed product.",
         "",
         "**SCR1–SCR4 (aa 35–285):** pLDDT 85–98 — well-folded, comparable to uricase (comp-001). "
-        "The four sushi domains are compact, disulfide-stabilized (3 disulfides per SCR), "
+        "The four sushi domains are compact, disulfide-stabilized (2 disulfides per SCR), "
         "and represent structurally resistant regions. Recognition sites here are largely buried. "
         "Note: disulfide bonds are not modelled in this analysis — see Limitations.",
         "",
@@ -335,8 +335,8 @@ def write_summary(data, path):
         "",
         "### Limitations",
         "",
-        "- **Disulfide bonds not modelled.** Each SCR domain contains 3 conserved disulfide bonds "
-        "(6 Cys per domain). Disulfide cross-linking substantially reduces backbone flexibility and "
+        "- **Disulfide bonds not modelled.** Each SCR domain contains 2 conserved disulfide bonds "
+        "(4 Cys per domain; 8 total in SCR1-4, per UniProt P08174). Disulfide cross-linking substantially reduces backbone flexibility and "
         "proteolytic accessibility beyond what pLDDT alone captures. This analysis likely "
         "**overestimates risk in the SCR domains** relative to the disulfide-bonded native fold.",
         "- **O-glycosylation of the stalk not modelled.** The Ser/Thr-rich stalk (aa 286–353) carries "
@@ -370,7 +370,7 @@ def write_summary(data, path):
         f"| % residues pLDDT > 80 | 100% | 96.1% | {ss['pct_residues_above_80']}% |",
         "| Signal peptide | None | Present (aa 1–19) | Present (aa 1–34) |",
         "| GPI propeptide / other disordered region | None | Inter-lobe linker (partial) | GPI propeptide + stalk (both fully disordered) |",
-        "| Disulfide bonds | Uricase has no Cys | 2 per lobe (functional) | 3 per SCR domain (12 total in SCR1-4) |",
+        "| Disulfide bonds | Uricase has no Cys | 2 per lobe (functional) | 2 per SCR domain (8 total in SCR1-4) |",
         "| Full-sequence verdict | LOW | HIGH | see output |",
         "| Mature-protein verdict | LOW | MODERATE | see output |",
         f"| Soluble ectodomain verdict | N/A | N/A | **{ecto_verdict}** (max {ecto_score}) |",

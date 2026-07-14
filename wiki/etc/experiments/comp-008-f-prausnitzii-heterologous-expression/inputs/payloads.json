@@ -33,7 +33,7 @@
       "secretion_required_for_function": true,
       "signal_peptide_positions": "1-19 (cleaved; mature protein from position 20)",
       "native_pi": 8.7,
-      "disulfide_bonds": 17,
+      "disulfide_bonds": 16,
       "glycosylation_required": false,
       "n_glycosylation_sites": "3 (positions 156, 497, 642)",
       "glycosylation_note": "N-glycans NOT required for iron-binding or bacteriostatic function. Poly-N-acetyllactosaminic carbohydrate moiety needed for TLR4 activation (immunomodulatory). For LBP-luminal iron sequestration delivery, aglycosylated may suffice.",

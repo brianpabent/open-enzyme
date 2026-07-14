@@ -139,7 +139,7 @@ The soluble ectodomain verdict is the operationally relevant figure for the koji
 
 **Signal peptide (aa 1–34):** pLDDT 43–72 throughout — fully disordered. Highest-risk sites in the full-sequence analysis map here. In the engineered construct, the human signal peptide is replaced with the koji-native α-amylase signal (Ward 1995), so this region is not present in the expressed product.
 
-**SCR1–SCR4 (aa 35–285):** pLDDT 85–98 — well-folded, comparable to uricase (comp-001). The four sushi domains are compact, disulfide-stabilized (3 disulfides per SCR), and represent structurally resistant regions. Recognition sites here are largely buried. Note: disulfide bonds are not modelled in this analysis — see Limitations.
+**SCR1–SCR4 (aa 35–285):** pLDDT 85–98 — well-folded, comparable to uricase (comp-001). The four sushi domains are compact, disulfide-stabilized (2 disulfides per SCR), and represent structurally resistant regions. Recognition sites here are largely buried. Note: disulfide bonds are not modelled in this analysis — see Limitations.
 
 **Ser/Thr-rich stalk (aa 286–353):** pLDDT drops sharply from ~91 at aa 285 to <65 by aa 288, and remains fully disordered (pLDDT 30–52) through aa 353. This is the dominant structural liability within the soluble ectodomain. In vivo, this region carries extensive O-linked glycans that likely shield the backbone; A. oryzae O-glycosylation patterns differ substantially from mammalian and may not provide the same shielding.
 
@@ -147,7 +147,7 @@ The soluble ectodomain verdict is the operationally relevant figure for the koji
 
 ### Limitations
 
-- **Disulfide bonds not modelled.** Each SCR domain contains 3 conserved disulfide bonds (6 Cys per domain). Disulfide cross-linking substantially reduces backbone flexibility and proteolytic accessibility beyond what pLDDT alone captures. This analysis likely **overestimates risk in the SCR domains** relative to the disulfide-bonded native fold.
+- **Disulfide bonds not modelled.** Each SCR domain contains 2 conserved disulfide bonds (4 Cys per domain; 8 total in SCR1-4, per UniProt P08174). Disulfide cross-linking substantially reduces backbone flexibility and proteolytic accessibility beyond what pLDDT alone captures. This analysis likely **overestimates risk in the SCR domains** relative to the disulfide-bonded native fold.
 - **O-glycosylation of the stalk not modelled.** The Ser/Thr-rich stalk (aa 286–353) carries dense O-linked glycans in the native context. Glycans sterically shield the polypeptide backbone; A. oryzae O-glycosylation may differ from mammalian. If the stalk is expressed without glycans or with non-shielding glycans, backbone accessibility increases. Stalk risk is likely **underestimated by this analysis for non-glycosylated constructs** and possibly overestimated for fully glycosylated constructs.
 - **Stalk engineering option.** The stalk (aa 286–353) is a linker between SCR4 and the GPI anchor — it has no known enzymatic or binding function. A soluble ectodomain construct could truncate at aa 285 (end of SCR4), removing the stalk entirely. This would eliminate the dominant disordered region and likely shift the verdict toward LOW. comp-006 does not model the truncated variant; a comp-007 analysis of the SCR1-4-only construct (aa 35–285) would be the logical follow-up.
 - **pLDDT ≠ solvent accessibility.** Stalk pLDDT accurately predicts disorder; SCR pLDDT 85–98 predicts well-folded but SASA calculation would quantify surface exposure of buried-vs-solvent-accessible loops more precisely.
@@ -164,7 +164,7 @@ The soluble ectodomain verdict is the operationally relevant figure for the koji
 | % residues pLDDT > 80 | 100% | 96.1% | 65.9% |
 | Signal peptide | None | Present (aa 1–19) | Present (aa 1–34) |
 | GPI propeptide / other disordered region | None | Inter-lobe linker (partial) | GPI propeptide + stalk (both fully disordered) |
-| Disulfide bonds | Uricase has no Cys | 2 per lobe (functional) | 3 per SCR domain (12 total in SCR1-4) |
+| Disulfide bonds | Uricase has no Cys | 2 per lobe (functional) | 2 per SCR domain (8 total in SCR1-4) |
 | Full-sequence verdict | LOW | HIGH | see output |
 | Mature-protein verdict | LOW | MODERATE | see output |
 | Soluble ectodomain verdict | N/A | N/A | **HIGH** (max 0.388) |

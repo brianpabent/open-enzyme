@@ -71,7 +71,7 @@ All ectodomain exposed sites are in the Ser/Thr-rich stalk (aa 286–353, pLDDT 
 
 CD55 has two structurally distinct zones:
 
-1. **SCR1–4 domains (aa 35–285):** pLDDT 85–98, well-folded, disulfide-stabilized (3 disulfides / domain). These carry the complement-regulatory activity. Structurally comparable to the uricase core in comp-001 — highly resistant.
+1. **SCR1–4 domains (aa 35–285):** pLDDT 85–98, well-folded, disulfide-stabilized (2 disulfides / domain; 8 total in SCR1-4, per UniProt P08174). These carry the complement-regulatory activity. Structurally comparable to the uricase core in comp-001 — highly resistant.
 
 2. **Ser/Thr-rich stalk (aa 286–353):** pLDDT 30–52, fully disordered. In the native membrane-anchored context, this is an O-glycosylated linker between SCR4 and the GPI anchor — it has no known enzymatic or binding function. In a heterologous soluble ectodomain, the stalk is present as an unstructured polypeptide. Without native O-glycosylation (or with different *A. oryzae* O-glycans), this region is a high-accessibility protease target.
 
