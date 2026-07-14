@@ -2,7 +2,7 @@
 
 **Experiment:** comp-011  
 **Date:** 2026-05-05  
-**Script:** `experiments/comp-011-c-utilis-uricase-cassette-compatibility/analyze.py`  
+**Script:** `wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/analyze.py`  
 **Follow-on to:** comp-010 (A. flavus uricase Q00511 + lactoferrin P02788)  
 
 ---
@@ -207,7 +207,7 @@ The C. utilis uricase (P78609) + lactoferrin (P02788) payload pair in the candid
 | Dimension | OE pair (*C. utilis* uricase + lactoferrin) | Huynh 2020 (adalimumab HC + LC) |
 |---|---|---|
 | Protein origins | Yeast (uricase) + Mammalian (Lf) | Mammalian + Mammalian |
-| Total disulfides | 17 (all on Lf) | 16 (8 per chain) |
+| Total disulfides | 16 (all on Lf) | 16 (8 per chain) |
 | Free cysteines | 4 (from C. utilis uricase) | 0 |
 | Glycosylation sites (N-X-S/T) | 4 | 2 (Fc N297 ×2) |
 | Codon burden | HEAVY (uricase) + LOW (Lf) | HEAVY + HEAVY |
@@ -230,6 +230,27 @@ The C. utilis uricase (P78609) + lactoferrin (P02788) payload pair in the candid
 
 - Both OE and Huynh use the same NSlD-ΔP10 protease-deletion host. Both require KRGGG linker KEX2 processing for lactoferrin. Both target dual loci (niaD + sC or equivalent).
 - Lactoferrin and adalimumab are both mammalian-origin, glycosylated, disulfide-rich proteins, but their folding and assembly architectures differ. Huynh 2020 is therefore a contextual host precedent rather than a quantitative capacity proof for lactoferrin.
+
+---
+
+### 3.8 ALLN-346 Engineered Mutant — Second Analyzed Sequence (added 2026-07-14)
+
+comp-011 originally analyzed **wild-type P78609 only**, yet its recommendations invoke the **P78609 + ALLN-346** construct (US10815461B2: E51K, A87G, I132R, Y165F, I180V, V190G, Q244K). The 2026-07-13 independent comp review flagged this gap because **I132R lands on the P1′ residue of the position-130 KEX2 site** (`KRI`→`KRR`). This section analyzes the intended mutant directly; all 7 mutation positions were grep-verified against the committed `inputs/P78609.fasta`.
+
+| KEX2 axis | WT P78609 | P78609 + ALLN-346 |
+|---|---|---|
+| Internal K-R sites | 2 | 2 |
+| Overall KEX2 risk | HIGH | HIGH |
+
+**KEX2 site changes (WT → mutant):**
+
+| Position (mature) | WT P1′ / risk | Mutant P1′ / risk |
+|---|---|---|
+| 130 | I / HIGH | R / MODERATE |
+
+**Codon burden:** WT HEAVY → mutant HEAVY (7-of-303 residues changed). **Free cysteines:** WT 4 → mutant 4 (no Cys mutations). **Routing:** MODERATE.
+
+**Interpretation:** The ALLN-346 mutations do not change the overall dual-cassette verdict — codon burden and free-Cys risk are unchanged, and the uricase KEX2 sites are non-load-bearing under direct secretion. Their one cassette-relevant effect is **topology-conditional**: if §1.33 selects a glucoamylase-KEX2 fusion topology, the WT plan of mutating both KR sites (130 + 138) shifts because I132R already alters the position-130 site (see table above). This closes the audit gap — the recommended mutant is no longer un-analyzed relative to what comp-011 concludes.
 
 ---
 
@@ -283,15 +304,15 @@ comp-010 (A. flavus): LOW cassette-design risk. comp-011 (C. utilis): MODERATE c
 
 ## 7. Cross-References
 
-- [wiki/c-utilis-uricase-cassette-compatibility-computational.md](../../wiki/c-utilis-uricase-cassette-compatibility-computational.md) — Interpretive wiki page for this experiment
-- [wiki/uricase-variant-selection.md](../../wiki/uricase-variant-selection.md) — Industry-revealed preference analysis; comp-011 verdict added as subsection
-- [wiki/cassette-compatibility-computational.md](../../wiki/cassette-compatibility-computational.md) — comp-010 page (A. flavus baseline)
-- [wiki/hypotheses/H01-ward-dual-cassette.md](../../wiki/hypotheses/H01-ward-dual-cassette.md) — Falsification Card; comp-011 is design support for §1.9
-- [wiki/koji-endgame-strain.md](../../wiki/koji-endgame-strain.md) — Protocol sketch for §1.9
-- [wiki/validation-experiments.md](../../wiki/validation-experiments.md) — §1.9 wet-lab experiment this analysis informs
-- [experiments/comp-010-cassette-compatibility/](../comp-010-cassette-compatibility/) — A. flavus uricase baseline (comp-010: LOW risk)
-- [experiments/comp-001-uricase-shio-koji-protease-stability/](../comp-001-uricase-shio-koji-protease-stability/) — A. flavus uricase protease stability (LOW risk)
-- [experiments/comp-005-lactoferrin-shio-koji-protease-stability/](../comp-005-lactoferrin-shio-koji-protease-stability/) — Lactoferrin protease stability (MODERATE mature)
+- [wiki/c-utilis-uricase-cassette-compatibility-computational.md](../../../../c-utilis-uricase-cassette-compatibility-computational.md) — Interpretive wiki page for this experiment
+- [wiki/uricase-variant-selection.md](../../../../uricase-variant-selection.md) — Industry-revealed preference analysis; comp-011 verdict added as subsection
+- [wiki/cassette-compatibility-computational.md](../../../../cassette-compatibility-computational.md) — comp-010 page (A. flavus baseline)
+- [wiki/hypotheses/H01-ward-dual-cassette.md](../../../../hypotheses/H01-ward-dual-cassette.md) — Falsification Card; comp-011 is design support for §1.9
+- [wiki/koji-endgame-strain.md](../../../../koji-endgame-strain.md) — Protocol sketch for §1.9
+- [wiki/validation-experiments.md](../../../../validation-experiments.md) — §1.9 wet-lab experiment this analysis informs
+- [experiments/comp-010-cassette-compatibility/](../../comp-010-cassette-compatibility/) — A. flavus uricase baseline (comp-010: LOW risk)
+- [experiments/comp-001-uricase-shio-koji-protease-stability/](../../comp-001-uricase-shio-koji-protease-stability/) — A. flavus uricase protease stability (LOW risk)
+- [experiments/comp-005-lactoferrin-shio-koji-protease-stability/](../../comp-005-lactoferrin-shio-koji-protease-stability/) — Lactoferrin protease stability (MODERATE mature)
 
 ---
 

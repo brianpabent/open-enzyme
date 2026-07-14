@@ -161,3 +161,21 @@ I traced the executable pipeline from FASTA/JSON inputs through `analyze.py` int
 - I inspected the provided artifact bundle plus major referenced pages available through `read_file` before tool exhaustion: `validation-experiments.md`, `H01-ward-dual-cassette.md`, `uricase-variant-selection.md`, and `chaperone-orthogonal-stacking.md`.
 - I could not independently fetch UniProt, Notari 2023, Huynh 2020, Ward 1995, US10815461B2, Sands 2022, Kazusa, or other primary sources. Provenance judgments are therefore limited to whether the artifact names a source and whether the source content is directly present.
 - I did not inspect omitted pages after tool exhaustion (`koji-endgame-strain.md`, `engineered-koji-protocol.md`, `gut-lumen-sink.md`, and others), except where their content was included in the bundle.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: extended in place** (not downgraded) — the audit's core finding was that comp-011 *recommended* the P78609+ALLN-346 construct but only *analyzed* wild-type P78609, with the ALLN-346 mutation I132R sitting on the P1′ of the position-130 KEX2 site. Rather than soften the recommendation, ran the actual work.
+
+**Headline result (mutant now analyzed):** applying the 7 ALLN-346 mutations (all positions grep-verified against `P78609.fasta` before substitution — an assertion in `apply_mutations()` now aborts on any mis-index), **I132R softens the position-130 KEX2 site from HIGH → MODERATE** (P1′ I→R, reduced-efficiency). Position-138 stays HIGH; no new KR sites (E51K/Q244K don't create any); overall KEX2 risk stays HIGH; **overall dual-cassette verdict UNCHANGED (MODERATE)** — codon burden and free-Cys risk are mutation-invariant, and the uricase KR sites are non-load-bearing under direct secretion. The one real consequence is topology-conditional: under a glucoamylase-KEX2 fusion, the WT "mutate both 130+138" plan becomes "138 still needs KR→KQ; 130 already reduced by I132R."
+
+**Code (`analyze.py`):** added `ALLN346_MUTATIONS`, `apply_mutations()` (with WT-verification), `analyze_mutant_kex2_delta()`; `main()` runs the 5 analyses on the mutant; JSON gains `uricase_alln346_mutant` + `uricase_alln346_kex2_delta_vs_wt`; `summary.md` gains §3.8. Outputs regenerated.
+
+**Hygiene fixes (audit actions #1, #4):** stale `"138 MODERATE"` → `138 HIGH` in the material-differences string; stale `"17 (all on Lf)"` → computed `16` in the Huynh comparison table; repro path `experiments/…` → `wiki/etc/experiments/…` (`analyze.py` script ref + `README.md`); 9 broken `outputs/summary.md` cross-reference links fixed (all now resolve from `outputs/`).
+
+**Downstream (`wiki/uricase-variant-selection.md`):** §"Cassette Compatibility — comp-011 Update" point 3 now points to the mutant refinement; new "ALLN-346 mutant now analyzed" note records the I132R→position-130 finding.
+
+**Disulfide cross-cutter note:** comp-011's stale lactoferrin-"17" instance was fixed *here* (couldn't regenerate a known-wrong number under the grep-verify gate). The disulfide cross-cutter (walk Item 4) therefore covers the remaining instances only: comp-006 (DAF 3/12 in code), comp-008, comp-010 wiki-archive, and `chaperone-orthogonal-stacking.md`.
+
+**Minor residuals (non-verdict-affecting, noted for a future hygiene pass):** audit #3 (codon rare-codon JSON-`rare_codons_list`-vs-code-`rscu<0.4` semantics) and #6 (provenance primary-source labeling). Neither changes any classification.

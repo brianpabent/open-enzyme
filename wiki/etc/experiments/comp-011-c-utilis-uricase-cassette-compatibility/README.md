@@ -22,7 +22,7 @@ Three material differences from comp-010 (*A. flavus*):
 ## How to reproduce
 
 ```bash
-cd experiments/comp-011-c-utilis-uricase-cassette-compatibility
+cd wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility
 python3 analyze.py
 ```
 
