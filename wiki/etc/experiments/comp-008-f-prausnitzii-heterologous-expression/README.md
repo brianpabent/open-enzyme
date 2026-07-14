@@ -70,7 +70,7 @@ experiments/comp-008-f-prausnitzii-heterologous-expression/
 ## How to reproduce
 
 ```bash
-cd experiments/comp-008-f-prausnitzii-heterologous-expression/
+cd wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/
 python3 analyze.py
 ```
 

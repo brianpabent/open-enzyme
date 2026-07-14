@@ -126,3 +126,16 @@ Action required — the artifact is plausibly deterministic and the headline qua
 
 ## Review limits
 I did not execute `analyze.py`; reproducibility was assessed by code inspection only. Repository search via `grep_repo` failed because `rg` is unavailable, so affected-page discovery relied on bundled explicit pages and targeted `read_file` calls before the tool-result budget was exhausted. Primary sources such as UniProt records, Fraccascia 2022, Sheridan reviews, Notari 2023, and Quévrain/Breyner papers were not directly fetched or verified; the review treats artifact provenance notes as citation strings unless the cited text was included in the bundle. Some relevant pages (`koji-endgame-strain.md`, `modality-chokepoint-matrix.md`, `complement-c5a-gout.md`, H05) could not be inspected due to tool-result budget exhaustion.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: fix-in-place** (headline direction — BCoAT native-butyrate winner, uricase contraindicated for anaerobic Fp — holds).
+
+- **Lactoferrin "17" disulfide** fixed in the cross-cutter commit `af7a34ee` (payloads.json 17→16, analyze.py, wiki-archive, outputs).
+- **Tracking state (audit action #4):** `computational-experiments.md` Planned-Analyses row for comp-008 marked **✓ Done** (struck through, with completion note + interpretive-page pointer) — it was stale-Planned despite completion.
+- **BCoAT flux over-claim (audit action #8):** "continuous gut-luminal butyrate from engineered Fp **solves** bioavailability" softened to **proposed/unproven** (requires measured colonization density, butyrate titer, epithelial exposure, and the still-unvalidated direct Q141K rescue) in `engineered-lbp-chassis.md` + `analyze.py` (→ regenerated summary). Also updated the comp-007 selectivity cross-link to ≥167× (censored).
+- **Repro path** `experiments/` → `wiki/etc/experiments/`.
+
+**Residuals (non-verdict, noted):** hardcoded-expert-scores-not-derived-from-payloads.json disclosure on the interpretive page (audit #1); `open-questions.md` + `H02` comp-008-finding updates (#6); P2-4 status + "heterologous uricase" removal from the Fp plausible-payloads list (#5); BCoAT butyrate-flux validation gate in `validation-experiments.md` (#7); generated summary link paths (#3).
