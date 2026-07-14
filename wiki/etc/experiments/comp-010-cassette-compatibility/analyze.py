@@ -676,7 +676,7 @@ def analyze_huynh_comparison(uricase_results, lactoferrin_results):
 
     if oe_uri_cysteine == 0:
         comparison["oe_is_easier_than_huynh"].append(
-            "Uricase has 0 cysteine residues — no PDI load from the uricase cassette. "
+            "Uricase has 3 cysteine residues (0 annotated disulfides) — no PDI load from the uricase cassette. "
             "Adalimumab both chains are disulfide-rich. OE uricase cassette is structurally simpler."
         )
 
@@ -747,7 +747,7 @@ def main():
     LF_SP_END = 19
 
     # Disulfide bonds from UniProt annotation
-    # Uricase Q00511: no Cys, no disulfides (A. flavus uricase — confirmed from UniProt)
+    # Uricase Q00511: 3 Cys, 0 disulfides (A. flavus uricase — confirmed from UniProt)
     URICASE_DISULFIDES = 0
     # Lactoferrin P02788: 16 disulfide bonds (Notari 2023, PMC10465537; 32 mature-chain cysteines)
     LF_DISULFIDES = 16
@@ -1193,13 +1193,13 @@ def write_summary(data, path):
         "",
         "## 6. Cross-References",
         "",
-        "- [wiki/hypotheses/H01-ward-dual-cassette.md](../../wiki/hypotheses/H01-ward-dual-cassette.md) — Falsification Card; comp-010 is design support for §1.9",
-        "- [wiki/koji-endgame-strain.md §3.4](../../wiki/koji-endgame-strain.md) — Protocol sketch for §1.9; design recommendations above update this",
-        "- [wiki/validation-experiments.md §1.9](../../wiki/validation-experiments.md) — The wet-lab experiment this analysis informs",
-        "- [wiki/computational-experiments.md](../../wiki/computational-experiments.md) — comp-010 tracking entry",
-        "- [wiki/cassette-compatibility-computational.md](../../wiki/cassette-compatibility-computational.md) — Interpretive wiki page",
-        "- [experiments/comp-001-uricase-shio-koji-protease-stability/](../comp-001-uricase-shio-koji-protease-stability/) — Uricase protease stability (comp-001: LOW risk)",
-        "- [experiments/comp-005-lactoferrin-shio-koji-protease-stability/](../comp-005-lactoferrin-shio-koji-protease-stability/) — Lactoferrin protease stability (comp-005: MODERATE mature)",
+        "- [wiki/hypotheses/H01-ward-dual-cassette.md](../../../../hypotheses/H01-ward-dual-cassette.md) — Falsification Card; comp-010 is design support for §1.9",
+        "- [wiki/koji-endgame-strain.md §3.4](../../../../koji-endgame-strain.md) — Protocol sketch for §1.9; design recommendations above update this",
+        "- [wiki/validation-experiments.md §1.9](../../../../validation-experiments.md) — The wet-lab experiment this analysis informs",
+        "- [wiki/computational-experiments.md](../../../../computational-experiments.md) — comp-010 tracking entry",
+        "- [wiki/cassette-compatibility-computational.md](../../../../cassette-compatibility-computational.md) — Interpretive wiki page",
+        "- [experiments/comp-001-uricase-shio-koji-protease-stability/](../../comp-001-uricase-shio-koji-protease-stability/) — Uricase protease stability (comp-001: LOW risk)",
+        "- [experiments/comp-005-lactoferrin-shio-koji-protease-stability/](../../comp-005-lactoferrin-shio-koji-protease-stability/) — Lactoferrin protease stability (comp-005: MODERATE mature)",
         "",
         "---",
         "",

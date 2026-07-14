@@ -17,7 +17,7 @@ No blocking **sequence-level cassette-design** issues identified. Uricase (candi
 ## How to reproduce
 
 ```bash
-cd experiments/comp-010-cassette-compatibility
+cd wiki/etc/experiments/comp-010-cassette-compatibility
 python3 analyze.py
 ```
 

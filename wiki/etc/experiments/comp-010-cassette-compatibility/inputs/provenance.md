@@ -4,7 +4,7 @@
 - **Source:** UniProt REST API: https://rest.uniprot.org/uniprotkb/Q00511.fasta
 - **Fetch date:** 2026-05-05 (originally fetched for comp-001)
 - **Entry:** sp|Q00511|URIC_ASPFL Uricase, Aspergillus flavus, PE=1 SV=3
-- **Length:** 301 aa (mature protein; no signal peptide; homotetramer in native context)
+- **Length:** 302 aa (mature protein; no signal peptide; homotetramer in native context)
 - **Gene:** uaZ — primary candidate per uricase-variant-selection.md; parent of rasburicase (FDA 2001)
 - **Copy provenance:** Copied from experiments/comp-001-uricase-shio-koji-protease-stability/inputs/Q00511.fasta
 

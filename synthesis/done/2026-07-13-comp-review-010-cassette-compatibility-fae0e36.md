@@ -171,3 +171,18 @@ I traced the supplied `analyze.py`, inputs, JSON output, summary, README, proven
 - I inspected several omitted high-impact pages with `read_file`, but tool-result budget truncated `chaperone-orthogonal-stacking.md` and `lactoferrin.md`, and prevented further file inspection.
 - I did not verify primary papers externally; literature values are treated as citation/provenance claims unless directly present in the artifact.
 - No clinical or therapeutic efficacy conclusion is drawn. This remains Phase 0 in silico sequence/cassette design support.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: fix-in-place** (narrow sequence-level LOW verdict for the direct-secreted candidate stands).
+
+- **Cysteine counts (33→32 Lf, 36→35 combined)** fixed in the cross-cutter commit `af7a34ee`.
+- **Provenance Q00511 length (audit action #2):** `inputs/provenance.md` 301 aa → **302 aa** (verified against the FASTA/output).
+- **analyze.py "no Cys" errors (audit action #2):** the string "Uricase has 0 cysteine residues" → "3 cysteine residues (0 annotated disulfides)" and the comment "Q00511: no Cys" → "3 Cys, 0 disulfides" (Q00511 has 3 Cys, verified).
+- **Broken generated cross-ref links (audit action #1):** `outputs/summary.md` links fixed (from `outputs/`, wiki links → 4 levels up, sibling comps → 2) via `analyze.py`; all 7 now resolve; outputs regenerated.
+- **"demonstrated capacity" wording (audit action #3):** `wiki-archive.md` — Lf's 16 disulfides now "predicted tractable but not demonstrated (bulk-count comparison, not architecture-specific capacity proof)".
+- **Repro path** `experiments/` → `wiki/etc/experiments/`.
+
+**Residuals (non-verdict, noted):** rare-codon rule JSON-`rare_codons_list`-vs-code-`rscu<0.4` semantics (audit #5); `glucoamylase_carrier.fasta` role documentation — context-only vs analyze-the-fusion (#6).

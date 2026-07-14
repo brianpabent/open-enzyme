@@ -215,13 +215,13 @@ No blocking sequence-level issues identified for the candidate architecture: uri
 
 ## 6. Cross-References
 
-- [wiki/hypotheses/H01-ward-dual-cassette.md](../../wiki/hypotheses/H01-ward-dual-cassette.md) — Falsification Card; comp-010 is design support for §1.9
-- [wiki/koji-endgame-strain.md §3.4](../../wiki/koji-endgame-strain.md) — Protocol sketch for §1.9; design recommendations above update this
-- [wiki/validation-experiments.md §1.9](../../wiki/validation-experiments.md) — The wet-lab experiment this analysis informs
-- [wiki/computational-experiments.md](../../wiki/computational-experiments.md) — comp-010 tracking entry
-- [wiki/cassette-compatibility-computational.md](../../wiki/cassette-compatibility-computational.md) — Interpretive wiki page
-- [experiments/comp-001-uricase-shio-koji-protease-stability/](../comp-001-uricase-shio-koji-protease-stability/) — Uricase protease stability (comp-001: LOW risk)
-- [experiments/comp-005-lactoferrin-shio-koji-protease-stability/](../comp-005-lactoferrin-shio-koji-protease-stability/) — Lactoferrin protease stability (comp-005: MODERATE mature)
+- [wiki/hypotheses/H01-ward-dual-cassette.md](../../../../hypotheses/H01-ward-dual-cassette.md) — Falsification Card; comp-010 is design support for §1.9
+- [wiki/koji-endgame-strain.md §3.4](../../../../koji-endgame-strain.md) — Protocol sketch for §1.9; design recommendations above update this
+- [wiki/validation-experiments.md §1.9](../../../../validation-experiments.md) — The wet-lab experiment this analysis informs
+- [wiki/computational-experiments.md](../../../../computational-experiments.md) — comp-010 tracking entry
+- [wiki/cassette-compatibility-computational.md](../../../../cassette-compatibility-computational.md) — Interpretive wiki page
+- [experiments/comp-001-uricase-shio-koji-protease-stability/](../../comp-001-uricase-shio-koji-protease-stability/) — Uricase protease stability (comp-001: LOW risk)
+- [experiments/comp-005-lactoferrin-shio-koji-protease-stability/](../../comp-005-lactoferrin-shio-koji-protease-stability/) — Lactoferrin protease stability (comp-005: MODERATE mature)
 
 ---
 
