@@ -103,3 +103,9 @@ The computation can support only a narrow statement: **Q00511 has uniformly high
 
 ## Review limits
 I did not execute the code. Primary sources named in provenance—UniProt live record, AlphaFold PDB, MEROPS entries, and salt/pH literature curves—were not fetched or independently verified. Repository fixed-string search failed because the underlying `rg` binary was unavailable, so affected-page discovery used the provided bundle plus manual inspection of likely linked pages. Some long wiki pages were inspected only in bounded chunks. The review therefore verifies internal traceability and model fit, not primary-source truth.
+
+---
+
+## ✓ Closed as duplicate 2026-07-14
+
+comp-001 was reviewed twice in the 2026-07-14 backfill run (this item = trigger sha `aeb5c8c`; the fuller item = sha `f7ef901`). Both audits reached the same verdict (pLDDT-proxy substituted for SASA; quantitative "no exposed sites" over-strong). **Actioned via `f7ef901`** (relabel + comp-002 axis note); no separate work needed here.

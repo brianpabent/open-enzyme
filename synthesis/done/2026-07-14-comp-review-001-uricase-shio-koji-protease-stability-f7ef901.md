@@ -142,3 +142,15 @@ Corpus-level mismatches:
 - `grep_repo` failed in this environment because `rg` was unavailable, so affected-page discovery relied on explicit bundle pages plus manual inspection of likely linked pages and the shared library caveat.
 - I inspected the shared library, comp-001 files, the computational index, validation §1.10 excerpt, comp-002 interpretive archive, and several platform context pages, but not every page in the corpus.
 - No medical or clinical efficacy inference is made here; this remains Phase 0 computational artifact review.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: fix-in-place relabel** (protease-axis LOW holds *directionally* as a proxy prior; the quantitative "no exposed sites / feasibility closed" framing overstated). Same pLDDT-proxy class as comp-006.
+
+- **pLDDT-proxy relabel:** `analyze.py` interpretation now states LOW is a **pLDDT/sequence-confidence prior**, not SASA — "no exposed unstructured regions" → "no low-pLDDT (disordered) regions by the pLDDT proxy; pLDDT is model confidence, not solvent accessibility; no SASA/exposure-time/protease-concentration model run." Outputs regenerated.
+- **Softened over-strong framing:** "§1.10 is a confirmation experiment, not make-or-break" → "§1.10 is the actual test, not mere confirmation; protease-axis prior only, not decision-grade."
+- **comp-002 axis dependence** now noted: uricase shio-koji stability is **MODERATE/YELLOW on the thermal/tetramer axis** — not uniformly LOW; the outdated "a follow-up comp-002 could model…" updated to comp-002's actual result.
+
+**Residual (noted):** downstream `computational-experiments.md` comp-001 entry could echo the pLDDT-proxy + axis-dependence caveat (non-verdict).

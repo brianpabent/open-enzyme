@@ -17,7 +17,7 @@
 | % residues pLDDT > 80 (well-folded) | 100.0% |
 | % residues pLDDT > 90 (core-folded) | 97.0% |
 
-**Interpretation:** A mean pLDDT of 97.1 with a minimum of 80.5 is exceptional — essentially the entire protein is predicted to be in a well-folded conformation with no disordered loops or flexible termini. This is the primary structural argument for protease resistance: there are no exposed unstructured regions for proteases to initiate cleavage.
+**Interpretation:** A mean pLDDT of 97.1 with a minimum of 80.5 is exceptional — essentially the entire protein is predicted to be in a well-folded conformation with no disordered loops or flexible termini. This is a structural *prior* for protease resistance: there are **no low-pLDDT (disordered) regions by the pLDDT proxy** for proteases to initiate cleavage. **Caveat (2026-07-14, comp-review):** pLDDT is model *confidence*, not solvent accessibility (SASA) — a confidently-modelled surface loop can still be exposed. No SASA calculation, exposure-time, or protease-concentration model was run; this is a sequence-confidence screen, not a survival model.
 
 ---
 
@@ -119,9 +119,9 @@ The highest single-site risk score is 0.039 (from `NPr` — Neutral metalloprote
 
 ### Recommended action
 
-The structural analysis supports the hypothesis that uricase will be substantially resistant to shio-koji proteolysis. **`validation-experiments.md` §1.10 should still be run** — the experiment remains the ground truth — but this analysis shifts the prior from 'unknown' to 'probably fine', which changes the priority framing: §1.10 is a confirmation experiment, not a make-or-break feasibility gate.
+The structural analysis supports the hypothesis that uricase will be substantially resistant to shio-koji proteolysis **on the protease-site axis, as a pLDDT-proxy prior only** (not decision-grade). **`validation-experiments.md` §1.10 should still be run** — the experiment remains the ground truth and the actual test, NOT mere confirmation. Note also comp-002 subsequently found uricase shio-koji stability **MODERATE/YELLOW on the thermal/tetramer axis**, so the overall stability picture is axis-dependent, not uniformly LOW. This analysis shifts the protease-axis prior from 'unknown' to 'probably fine by sequence-confidence proxy'; it does not close feasibility.
 
-If §1.10 shows unexpected degradation, the primary suspects are: (a) the acid protease operating at pH 4.5–5.0 on any surface-accessible sites; (b) cooperative unfolding of the monomer in the salt/acid environment (the structure is stable in silico under standard conditions; shio-koji conditions may differ). A follow-up comp-002 could model thermal/pH stability explicitly.
+If §1.10 shows unexpected degradation, the primary suspects are: (a) the acid protease operating at pH 4.5–5.0 on any surface-accessible sites; (b) cooperative unfolding of the monomer in the salt/acid environment (the structure is stable in silico under standard conditions; shio-koji conditions may differ). comp-002 subsequently modelled thermal/pH stability explicitly and returned **MODERATE/YELLOW** on the thermal/tetramer axis — consistent with suspect (b).
 
 ---
 
