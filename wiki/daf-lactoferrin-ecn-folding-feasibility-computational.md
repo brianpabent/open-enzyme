@@ -85,7 +85,7 @@ Raw disulfide count is not the right burden metric. **Connectivity is.** DsbA in
 | Payload | SS count | max loop | long-range bonds (>150) | topological crossings | eff. demand (loop + crossing) | folding-nonviability @ cons/mod/opt |
 |---|---|---|---|---|---|---|
 | C1-INH | 2 | 305 | 1 | 0 | **4.0** (4.0 + 0.0) | 0.3 / 0.0 / 0.0 → **PLAUSIBLE** |
-| DAF SCR1-4 | 8 | 47 | 0 | 4 | **10.0** (8.0 + 2.0) | 1.0 / 0.5 / 0.33 → **EDGE (straddles)** |
+| DAF SCR1-4 | 8 | 47 | 0 | 4 | **10.0** (8.0 + 2.0) | 1.0 / 0.75 / 0.333 → **EDGE (straddles)** |
 | Lactoferrin | 16 | 281 | 3 | 4 | **23.5** (21.5 + 2.0) | 1.0 / 1.0 / 1.0 → **LIMITED** |
 
 Reading it:

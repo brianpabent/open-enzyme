@@ -79,7 +79,7 @@ EcN's periplasmic DsbA/DsbC folding plausibly extends to LOW-to-MODERATE disulfi
 
 ## Compounding optimistic assumptions (verdict is PROVISIONAL where these stack)
 
-- Reference DsbA/DsbC capacity band (5/8/12) is precedent-derived, NOT a measured capacity (no published metric at 8-16 disulfide scale — chaperone-orthogonal-stacking.md §8 item 6).
+- Reference DsbA/DsbC capacity band (5/8/12) is precedent-derived, NOT a measured capacity (no published metric at 8-16 disulfide scale — chaperone-orthogonal-stacking.md §8 item 8).
 - Axis 1 scores disulfide FORMATION/ISOMERIZATION burden, NOT native-fold ATTAINMENT. Serpin metastability (C1-INH) and transferrin molten-globule hierarchy (lactoferrin) are additional unmodeled attainment risks — disulfides are necessary, not sufficient, for a functional fold. Recombinant C1-INH is manufactured in mammalian/milk systems, not E. coli, for this reason.
 - The OPTIMISTIC anchor (12.0, SHuffle trxB/gor + cytoplasmic DsbC) describes CYTOPLASMIC disulfide formation. A cytoplasmically-folded protein does not route through the Sec→periplasm→outer-membrane luminal-secretion path this LBP format requires — so the optimistic anchor is compartment-mismatched with the secreted format. The realistic ceiling for a SECRETED payload is nearer the conservative/moderate anchors, which pushes DAF SCR1-4 toward the folding-limited end of its band (i.e., DAF's 'viable-only-at-optimistic' read leans on an anchor that may not apply).
 - pLDDT is used as a burial proxy for the protease axis (comp-034 showed this under-counts SASA-exposed helical/linker sites ~10x, e.g. the lactoferrin inter-lobe linker).

@@ -60,7 +60,7 @@ architecture-weighted effective-demand units) is derived from E. coli periplasmi
   deliberately BELOW full aglycosyl-IgG (16 disulfides), which is a low-yield heavily-engineered
   achievement, not a "routinely viable LBP payload" bar.
 
-**Per `chaperone-orthogonal-stacking.md` §8 item 6, no published DsbA/DsbC capacity metric exists at
+**Per `chaperone-orthogonal-stacking.md` §8 item 8, no published DsbA/DsbC capacity metric exists at
 the 8-16 disulfide scale.** The band is the single biggest optimistic assumption in this analysis
 and is sensitivity-tested across all three anchors; the DAF SCR1-4 verdict is PROVISIONAL precisely
 because its viability flips across the band.

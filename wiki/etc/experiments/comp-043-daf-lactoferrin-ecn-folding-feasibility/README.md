@@ -73,7 +73,7 @@ outputs/
 ## Key limitations
 
 - **Axis-1 capacity band is an inference, not a measurement** — no published DsbA/DsbC capacity
-  metric at 8-16 disulfide scale (`chaperone-orthogonal-stacking.md` §8 item 6). This is why DAF
+  metric at 8-16 disulfide scale (`chaperone-orthogonal-stacking.md` §8 item 8). This is why DAF
   SCR1-4 is PROVISIONAL, not GREEN.
 - **pLDDT ≠ SASA** — comp-034 showed the burial proxy under-counts exposed helical/linker sites
   ~10× (the lactoferrin inter-lobe linker specifically). Axis 2 is a secondary axis and moot for

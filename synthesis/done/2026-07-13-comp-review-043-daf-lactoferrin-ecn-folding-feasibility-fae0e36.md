@@ -120,3 +120,14 @@ Mostly consistent, with one material mismatch and several wording/propagation is
 - Primary UniProt flatfiles, AlphaFold source metadata, Ward/Sun/Bos/Liu/Fab/SHuffle primary papers, and MEROPS entries were not directly available in the artifact; I did not independently verify those primary sources.
 - `validation-experiments.md`, `complement-c5a-gout.md`, and `koji-endgame-strain.md` are very large; only the visible portions returned by the read tool were inspected.
 - The review treats comp-043 as Phase 0 mechanistic modeling only. No clinical efficacy or medical advice is inferred from the computational verdicts.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: fix-in-place** (verdict — C1-INH VIABLE / DAF PROVISIONAL / lactoferrin NOT-VIABLE — stands; a stale number and a cross-ref were wrong).
+
+- **Stale interpretive-page number (audit action #1):** `daf-lactoferrin-ecn-folding-feasibility-computational.md` Axis-1 table had DAF folding-nonviability `1.0 / 0.5 / 0.33` → corrected to **`1.0 / 0.75 / 0.333`** (verified against `outputs/results.json`: `point_estimate_moderate` = 0.75; demand 10 / moderate capacity 8 = ratio 1.25 → nonviability 0.75).
+- **Cross-ref numbering (audit action #2):** the DsbA/DsbC EcN capacity gap is **§8 item 8** of `chaperone-orthogonal-stacking.md` (verified — item 6 is the koji α-coefficient gap). Corrected the artifact's stale `§8 item 6` → `§8 item 8` in `analyze.py`, `README.md`, `inputs/provenance.md`; outputs regenerated.
+
+**Residuals (non-verdict, noted):** provenance honesty labeling for UniProt-flatfile/precedent claims (audit #3); Axis-1 sensitivity table over loop weights/crossing surcharge/thresholds (#4); protease-axis "pLDDT site-risk scan, not time-integrated survival" wording (#5); downstream "EcN provisional-secondary / DsbA-DsbC-gated" softening in H05 / complement-c5a-gout / koji-endgame (#6 — the authoritative framing already lives in chaperone §8 item 8 + the interpretive page); DsbA/DsbC wet-lab capacity-gate registration (#7).
