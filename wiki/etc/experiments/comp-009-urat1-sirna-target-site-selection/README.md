@@ -17,11 +17,13 @@
 ## How to reproduce
 
 ```bash
-cd experiments/comp-009-urat1-sirna-target-site-selection
-python3 scripts/analyze.py
+cd wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection
+# RERUN (2026-07-14) requires ViennaRNA for real RNAplfold accessibility:
+uv venv .venv --python 3.13 && uv pip install --python .venv/bin/python ViennaRNA
+.venv/bin/python scripts/analyze.py
 ```
 
-stdlib only (json, csv, math, random, pathlib). No external packages.
+**Reproduction contract (updated 2026-07-14 RERUN):** requires **ViennaRNA** (not stdlib) for real RNAplfold accessibility. Input is the **real** `inputs/NM_144585.4_mrna.fasta` (RefSeq, fetched from NCBI 2026-07-14), NOT a back-translated CDS. The original stdlib-only run scanned an artificial back-translated CDS and was invalidated by the 2026-07-14 comp-review.
 
 Outputs land in `outputs/`:
 - `target_sites.json` — full machine-readable results (pipeline metadata, shortlist, top-50 passing candidates)

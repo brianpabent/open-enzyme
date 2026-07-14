@@ -21,11 +21,13 @@ status: comp-NNN-output
 
 # URAT1 mRNA Target Site Selection for siRNA — comp-009 Computational
 
-**Status:** comp-009 output (2026-05-16). Closes [siRNA / URAT1 scope page](./sirna-urat1-modality.md) Phase 2 P2-2 and informs [H03](./hypotheses/H03-sirna-urat1-thesis.md) Assumption 1. **Reproducible artifact:** [`etc/experiments/comp-009-urat1-sirna-target-site-selection/`](./etc/experiments/comp-009-urat1-sirna-target-site-selection/).
+**Status:** comp-009 **RERUN 2026-07-14** (original 2026-05-16 output invalidated by comp-review). Informs [siRNA / URAT1 scope page](./sirna-urat1-modality.md) Phase 2 P2-2 and [H03](./hypotheses/H03-sirna-urat1-thesis.md) Assumption 1. **Reproducible artifact:** [`etc/experiments/comp-009-urat1-sirna-target-site-selection/`](./etc/experiments/comp-009-urat1-sirna-target-site-selection/).
 
-## Verdict: GREEN
+> **⚠️ RERUN — original result invalidated (2026-07-14 comp-review).** The original comp-009 back-translated the URAT1 *protein* into an artificial most-frequent-codon CDS and scanned that. Because siRNA targeting is nucleotide-specific, every original guide sequence (e.g. the old `UAUAGUAUCUGGCAAAGGUAG`) was an artifact of the arbitrary codon choice and does **not** map to the real transcript. This page now reflects the rerun on the **real** RefSeq NM_144585.4 mRNA (5'UTR + CDS + 3'UTR) with **real ViennaRNA RNAplfold** accessibility.
 
-**URAT1 mRNA has accessible siRNA target sites; the H03 mechanistic killshot does not fire.** Of 1488 21-nt windows scanned across the SLC22A12 CDS, 10 candidates survive the combined Reynolds + Ui-Tei + immunogenicity + cross-mammalian conservation pipeline with composite scores 66–81/100. Top candidate (CDS 1561, AA 521 `LPLPDTI`) carries an antisense guide `5'-UAUAGUAUCUGGCAAAGGUAG-3'` at 38% GC, Reynolds 6/8, 100% AA conservation across human/chimp/mouse/rat — same guide should work in rodent preclinical PK/PD AND a human therapeutic.
+## Verdict: GREEN on target-site *availability* only — accessibility + off-target NOT closed
+
+**On the real NM_144585.4 transcript, 8 candidate target sites survive** the Reynolds + Ui-Tei + immunogenicity + homopolymer design filters — so the H03 mechanistic killshot **does not fire on target-site availability**. The top candidate (mRNA 1029, CDS, sense `5'-CCUUGGUGAUGACCUUGAACU-3'`, 47.6% GC, Reynolds 7/8, 95% AA-conservation hint) and the full shortlist are in [`outputs/shortlist.csv`](./etc/experiments/comp-009-urat1-sirna-target-site-selection/outputs/shortlist.csv). **Two load-bearing caveats the killshot did NOT clear:** (1) real RNAplfold shows these sites are **structured / low-accessibility** (P(unpaired) ≈ 0.00–0.005 for the full 21-mer), so "sufficient secondary-structure exposure" is *not* demonstrated; (2) **no off-target clearance** — no seed-region search against the human transcriptome was performed. These are candidate target sites, not validated knockdown guides. Cross-species conservation is an amino-acid *region hint*, not a nucleotide-level ortholog-mRNA claim.
 
 ## Pipeline filter funnel
 

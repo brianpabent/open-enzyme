@@ -647,7 +647,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | comp-002 | Uricase thermal/pH stability under shio-koji conditions (MD or Rosetta ΔΔG) | [§1.10 follow-up](./validation-experiments.md) | Low (pending §1.10 result) |
 | ~~comp-003~~ | Reassigned 2026-05-05 → comp-005 (lactoferrin cleavage-site analysis) | — | ✓ Done as comp-005 |
 | ~~comp-008~~ | **Completed 2026-05-16** — *F. prausnitzii* heterologous expression feasibility. BCoAT native-butyrate boost is the leading payload; uricase contraindicated for anaerobic Fp; disulfide payloads secretion/folding-gated. See [interpretive page](./f-prausnitzii-heterologous-expression-computational.md). | [engineered-lbp-chassis](./engineered-lbp-chassis.md) Phase 2 P2-4 | ✓ Done |
-| comp-009 | URAT1 mRNA structural analysis for siRNA target site selection | [sirna-urat1-modality](./sirna-urat1-modality.md) Phase 2 P2-2 | Medium |
+| ~~comp-009~~ | **Completed; RERUN 2026-07-14** on the real NM_144585.4 mRNA (original artificial-CDS run invalidated). 8 real-transcript target sites pass design filters; accessibility low (real RNAplfold) + off-target uncleared. See [interpretive page](./urat1-sirna-target-site-selection-computational.md). | [sirna-urat1-modality](./sirna-urat1-modality.md) Phase 2 P2-2 | ✓ Done (rerun) |
 | ~~comp-011 TCM~~ | Reassigned 2026-05-05; TCM ChEMBL cross-check landed as comp-013 | — | ✓ Done as comp-013 |
 | comp-021 | Compound × upstream-complement chokepoint × matched-assay-format mapping (resolves RA 44× spread) | [upstream-complement-verification-rerun-computational](./upstream-complement-verification-rerun-computational.md) | Low (parked) |
 | ~~comp-022~~ | Completed 2026-05-14 — see Analyses above | — | ✓ Done |

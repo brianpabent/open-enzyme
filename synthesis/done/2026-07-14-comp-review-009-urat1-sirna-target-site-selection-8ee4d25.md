@@ -110,3 +110,22 @@ The artifact documentation is internally mixed: the limitations sections acknowl
 - Repository `grep_repo` failed because its underlying `rg` executable was unavailable, so corpus search was limited to the explicit bundle plus selected `read_file` inspections of omitted pages.
 - I inspected the beginning/large relevant portions of omitted pages via `read_file`, but not every byte of `validation-experiments.md` due file size.
 - No arbitrary code was run and no external network access was used.
+
+---
+
+## ✓ Actioned 2026-07-14 — RERUN (per Brian's call)
+
+**Disposition: RERUN** (not relabel — the input was fundamentally wrong). The original scanned an **artificial back-translated CDS**, so every guide sequence was a codon-choice artifact that doesn't map to the real transcript.
+
+**What was rerun:**
+- Fetched the **real** SLC22A12/URAT1 mRNA — RefSeq **NM_144585.4** (2792 nt; CDS 338–1999) from NCBI — committed as `inputs/NM_144585.4_mrna.fasta`.
+- Rewrote `scripts/analyze.py` to scan the **full real mRNA (5'UTR + CDS + 3'UTR)** and compute **real ViennaRNA RNAplfold** local accessibility (u=21, W=80, L=40) — replacing the isolated-21-mer self-folding heuristic the audit flagged.
+- Kept the (correct) Reynolds / Ui-Tei / immunogenicity / homopolymer sequence rules.
+
+**Result (valid, real-transcript):** 8 candidate target sites pass all design filters. **H03 killshot does NOT fire on target-site availability.** Two caveats the audit demanded and this rerun makes explicit: (1) real RNAplfold shows the sites are **structured / low-accessibility** (P(unpaired) ≈ 0.00–0.005) → exposure unproven; (2) **no off-target clearance** (no transcriptome seed search). Conservation is an AA region-hint, not nucleotide-level.
+
+**Downstream corrected:** `H03` Assumption 1 + killshot (availability supported, exposure/off-target open, original invalidated); interpretive page (RERUN banner + corrected verdict, invalid guide removed); `computational-experiments.md` (marked rerun-done); README (repro contract now requires ViennaRNA + real mRNA).
+
+**Independent review:** this rerun's outputs should get an independent comp-review pass — the comp-review daemon auto-fires on push (comp-009 artifact changed), which will re-audit it.
+
+**Residuals (noted):** off-target seed-region search (needs a human transcriptome DB — unavailable here); nucleotide-level ortholog-mRNA conservation (needs ortholog transcripts); seed-region (u=8) accessibility as a complement to the u=21 full-site metric; the now-unused `human_codon_usage.json` input (was for back-translation).
