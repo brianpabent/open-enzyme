@@ -43,6 +43,8 @@ status: complete (v1, 2026-05-15)
 
 # DAF/CD55 SCR1-4 Cassette Ranking, ClockBase-Style Combinatorial Composite Scoring (Computational, comp-030)
 
+> **⚠️ Verdict caveated (comp-review 2026-07-14).** Useful as a **heuristic design screen**, but the artifact overstates what its proxies resolve and has reproducibility defects + code/summary mismatches. Treat the cassette ranking as a gene-synthesis-design prior, not a validated ranking.
+
 > **Frozen analysis archived to [`./etc/experiments/comp-030-daf-cassette-ranking/wiki-archive.md`](./etc/experiments/comp-030-daf-cassette-ranking/wiki-archive.md)** (398 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read

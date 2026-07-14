@@ -157,3 +157,7 @@ Mismatches / overstatements requiring action:
 - Primary literature was not directly available in the artifact. I did not independently verify Chiu 2001, Park 2016, Trauger/Walsh 2000, C1-INH Pichia titer claims, or M55/S56 inactivity against primary full text.
 - The validation-experiments page in the bundle was truncated; conclusions about C1-INH validation propagation are based on inspected sections plus comp-037’s own stated handoff.
 - I did not inspect every top-level wiki page manually; affected pages are those found from the bundle plus directly inspected likely surfaces.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

@@ -18,6 +18,8 @@ sources:
 
 # Uricase Thermal/pH Stability in Shio-Koji — Computational Analysis (comp-002)
 
+> **⚠️ Verdict caveated (comp-review 2026-07-14).** The 64.0% reference-retention arithmetic is traceable to the committed code, but the artifact-summary contract is not clean (several load-bearing claims are hardcoded / not primary-verified). Treat the thermal/tetramer verdict as a **heuristic stability prior**, not a validated result. Specifics + residuals in the comp-review item.
+
 **Question:** Will the *A. flavus* uricase homotetramer maintain integrity and activity under shio-koji conditions (15–20% NaCl, pH 4.5–6.0, ~22°C, 7–14 days)? Sister to comp-001 (protease axis, LOW); this covers the thermal + pH + tetramer-integrity axes.
 
 **Verdict: MODERATE (YELLOW).** Predicted activity retention at reference shio-koji (17.5% NaCl, pH 5.25, 22°C, 14 days) = **64%** (band 0.2–100%). The wide band reflects sensitivity to Tm and ΔH_vH — biophysical anchors not yet measured precisely for Q00511.

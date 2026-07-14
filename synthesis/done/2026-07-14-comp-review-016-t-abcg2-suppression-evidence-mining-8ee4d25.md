@@ -209,3 +209,7 @@ This comp is not a kinetic or mass-balance model, so reaction-substrate/cofactor
 - Tool-result budget was exhausted while reading `validation-experiments.md`, so the full §1.14 protocol body and omitted pages could not be inspected.
 - Primary papers were not independently opened or line-grep-verified in this review. Provenance judgments therefore distinguish artifact-internal citation strings, WebSearch-summary extraction, and later comp-017 correction notes rather than claiming new primary-source verification.
 - No medical or clinical recommendation is made; this is Phase 0 computational/literature-method review only.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

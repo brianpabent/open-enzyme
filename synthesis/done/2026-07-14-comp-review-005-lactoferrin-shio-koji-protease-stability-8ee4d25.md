@@ -145,3 +145,7 @@ Mismatches / overstatements:
 - Repository `grep_repo` failed because `rg` was unavailable in the tool environment, so corpus search was limited to provided explicit pages plus targeted reads of major omitted pages.
 - `wiki/validation-experiments.md` was provided truncated after §1.16; later sections were not needed for comp-005 but were not fully inspected.
 - I did not inspect every cross-reference page in full; affected-surface conclusions are based on the artifact bundle plus targeted reads of `lactoferrin.md`, `koji-endgame-strain.md`, `engineered-koji-protocol.md`, and the comp-034/043 pages provided in the bundle.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

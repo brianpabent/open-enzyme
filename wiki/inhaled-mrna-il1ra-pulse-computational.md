@@ -28,6 +28,8 @@ status: published
 
 # Inhaled mRNA-IL-1Ra pulse therapy — computational analysis (comp-033)
 
+> **⚠️ Verdict caveated (comp-review 2026-07-14).** The single-dose systemic Cmax-equivalence RED verdict is directionally reproducible, but the artifact has propagation errors, stale partner/cost wording, and a wrong protein reference. Verdict holds directionally; the specifics need correction (see comp-review item).
+
 **Verdict: RED** on the systemic-anakinra-equivalent gate at currently-feasible inhaled mRNA doses (4–24 mg per administration). **The verdict does not close the modality** — three honest paths forward keep the chassis-pending entry [`chassis-pending-interventions.md` §4](./chassis-pending-interventions.md) active.
 
 ## Dose-AUC headline

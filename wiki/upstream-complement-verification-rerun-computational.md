@@ -51,6 +51,8 @@ status: published
 
 # Upstream Complement Modulator Sweep — Brief-Scrubbed Verification Re-Run (comp-020)
 
+> **⚠️ Verdict caveated (comp-review 2026-07-14).** Useful Phase-0 literature-mining, but several load-bearing quantitative claims are **NOT primary-source verified** — treat the IC50/ratio numbers as citation-tier, not verified.
+
 > **Frozen analysis archived to [`./etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md`](./etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md)** (302 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read

@@ -114,3 +114,7 @@ Mismatches / overstatements:
 
 ## Review limits
 I did not execute `analyze.py`. I inspected the supplied files and the shared `protease_stability.py` library by repository read. Primary sources such as UniProt P08174, AlphaFold DB, MEROPS, Tominaga/Ikeda/Koaze papers, and comp-006 outputs were not independently verified. Repository grep tooling failed because `rg` was unavailable, so affected-page discovery used supplied references plus targeted file reads of omitted pages where possible; additional pages may contain repeated comp-012 claims.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

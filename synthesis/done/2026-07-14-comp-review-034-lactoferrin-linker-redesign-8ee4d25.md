@@ -198,3 +198,7 @@ The artifact-summary contract is not clean.
 - The comp-005 protease specificity JSON was referenced by code but not included in the provided text bundle; I did not independently verify protease-specificity tables or primary MEROPS sources.
 - UniProt, AlphaFold DB, PDB 1B0L, Kazusa/Nakao/Machida, and literature primary sources were not fetched live; provenance strings and committed input files were inspected, not independently primary-source verified.
 - `wiki/lactoferrin.md`, `wiki/chaperone-orthogonal-stacking.md`, and `wiki/validation-experiments.md` are large; only bounded portions were inspected before the tool-result budget was exhausted.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

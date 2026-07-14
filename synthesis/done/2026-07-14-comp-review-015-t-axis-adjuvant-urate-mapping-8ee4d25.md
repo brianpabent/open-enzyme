@@ -140,3 +140,7 @@ Several summary surfaces are materially stronger or stale relative to the artifa
 - `validation-experiments.md` was only inspected in the initial large chunk/dashboard; a deeper full-file search was not possible with the broken grep tool.
 - `medicinal-mushroom-complement-track.md` and `supplements-stack.md` were not inspected; they remain likely propagation surfaces requiring manual follow-up.
 - ChEMBL/PubChem API access was not tested independently.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

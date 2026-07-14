@@ -12,6 +12,8 @@ status: archived-to-experiments
 
 # Supplement ABCG2 Antagonism — Computational Analysis (comp-004)
 
+> **⚠️ Verdict caveated (comp-review 2026-07-14).** This supports a **nominal gut-lumen IC50-occupancy HAZARD screen** for quercetin/curcumin only — it does NOT resolve the net in-vivo ABCG2 effect (Yu 2024 shows EGCG net-favorable in vivo despite in-vitro inhibition). Treat as a hazard prior, not an efficacy/safety conclusion.
+
 > **Frozen analysis archived to [`./etc/experiments/comp-004-supplement-abcg2-antagonism/wiki-archive.md`](./etc/experiments/comp-004-supplement-abcg2-antagonism/wiki-archive.md)** (121 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read

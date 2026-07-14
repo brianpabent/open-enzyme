@@ -1,5 +1,7 @@
 # comp-015 — T-axis Adjuvant Urate-Target Mapping (v2)
 
+> **⚠️ Verdict caveated (comp-review 2026-07-14).** The v2 qualitative direction (cordycepin gout-favorable; tongkat/eurycomanone-family reverses the v1 unfavorable extrapolation; H-AN-02 uniqueness partially falsified) is a **lead-generation reframe**, not a validated quantitative result. See the comp-review item for specifics.
+
 ## Question
 
 For each of four T-axis-active natural compounds (cordycepin, eurycomanone, icariin, echinacoside), what is the curated bioactivity evidence at the **five** dominant urate-handling targets (URAT1, ABCG2, OAT1, SHBG, **XO** — added v2), and which compound is the most gout-favorable T-axis adjuvant?

@@ -186,3 +186,7 @@ Action required — comp-017 is a useful qualitative literature-reframing artifa
 - Repository fixed-string grep was unavailable because the `rg` backend was missing, so affected-page discovery used bundled references plus direct reads of selected omitted pages.
 - Tool-result budget was exhausted while reading `validation-experiments.md`; review of later sections relied on the visible dashboard and earlier artifact context.
 - No clinical inference is made here; this is a Phase 0 computational/literature artifact review only.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

@@ -129,3 +129,7 @@ Constraint closure:
 - `wiki/validation-experiments.md` is very large; I inspected the provided bundle and the region containing §1.25, not every later byte.
 - Primary papers were not independently fetched; provenance status is reported as the artifact states it.
 - Numeric Monte Carlo values were not independently recomputed, but the formulas and reported outputs were checked for internal consistency and contradictions.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

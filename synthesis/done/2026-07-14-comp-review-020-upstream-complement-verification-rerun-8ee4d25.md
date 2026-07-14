@@ -132,3 +132,7 @@ Key findings:
 ## Review limits
 
 I did not execute code; there is no code to execute. I could not independently inspect Paperclip MCP line outputs or external primary papers from within the repository. Repository search tooling failed because `rg` was unavailable, so affected-page discovery relied on the provided bundle plus direct reads of key listed wiki pages before tool-result budget was exhausted. Primary-source verification for PMC/PubMed claims remains unresolved unless the source text is committed or re-read externally.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

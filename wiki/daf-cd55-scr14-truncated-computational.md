@@ -21,6 +21,8 @@ status: archived-to-experiments
 
 # DAF/CD55 SCR1-4 Truncated Construct: Shio-Koji Protease Stability (comp-012)
 
+> **⚠️ Verdict caveated (pLDDT-proxy class, comp-review 2026-07-14).** The LOW verdict (max score 0.039) rests on a **known-invalid proxy — pLDDT confidence used as accessibility**; it is a low-pLDDT-by-proxy result, not a SASA / time-integrated survival model. Same class as comp-001/006.
+
 > **Frozen analysis archived to [`./etc/experiments/comp-012-daf-cd55-scr14-truncated/wiki-archive.md`](./etc/experiments/comp-012-daf-cd55-scr14-truncated/wiki-archive.md)** (201 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read

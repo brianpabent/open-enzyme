@@ -55,6 +55,8 @@ status: complete (v1) — target deprioritized 2026-05-16
 
 # Cordycepin (cns1+cns2) Cassette Metabolic Burden: Computational Analysis (comp-023)
 
+> **⚠️ Verdict caveated (comp-review 2026-07-14).** The qualitative conclusion (Jeennor-scale cns1+cns2 unlikely to be a prohibitive **stoichiometric-FBA** burden) is plausible, but the artifact-summary contract is not clean — treat as a heuristic burden prior, not a validated flux result.
+
 > **Frozen analysis archived to [`./etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md`](./etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md)** (183 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read

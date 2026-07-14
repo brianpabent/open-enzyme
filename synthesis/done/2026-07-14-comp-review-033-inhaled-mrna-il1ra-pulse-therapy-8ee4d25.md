@@ -153,3 +153,7 @@ I traced the load-bearing calculation from `inputs/model_parameters.json` and `i
 - Primary sources cited in `inputs/provenance.md` were not directly available in the artifact; I did not independently verify FDA labels, UniProt, Yang 2003, Patton & Byron 2007, Rowe 2023, Arcturus disclosures, pricing databases, or manufacturing-cost sources.
 - I inspected the beginning and relevant exposed portions of large wiki pages, but not every byte of `validation-experiments.md` or every possible hypothesis/priority table.
 - This review stays at Phase 0 computational-evidence level and does not convert model outputs into clinical efficacy claims or medical advice.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

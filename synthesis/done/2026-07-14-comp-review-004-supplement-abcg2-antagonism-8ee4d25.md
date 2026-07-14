@@ -150,3 +150,7 @@ I traced `inputs/compounds.json`, `inputs/gut_model.json`, and `inputs/ic50_data
 - Primary sources, ChEMBL records, and PubMed papers were not directly retrieved or verified; provenance was assessed only from artifact citations and wiki text.
 - The validation-experiments bundle was truncated after §1.16, but §1.14 — the relevant section for comp-004 — was included and reviewed.
 - No clinical advice is implied; this is a Phase 0 computational artifact review.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

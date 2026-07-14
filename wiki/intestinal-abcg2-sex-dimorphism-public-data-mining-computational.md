@@ -47,6 +47,8 @@ status: archived-to-experiments
 
 # Intestinal ABCG2 Sex-Dimorphism — Public-Data Mining + 4-Paper Full-Text Re-Read (comp-017)
 
+> **⚠️ Verdict caveated (comp-review 2026-07-14).** Useful qualitative literature-reframing, but it does **NOT quantitatively resolve** the stated GTEx/HPA human intestinal sex-stratification question. Treat as a hypothesis, not a resolved dataset analysis.
+
 > **Frozen analysis archived to [`./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/wiki-archive.md`](./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/wiki-archive.md)** (183 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read

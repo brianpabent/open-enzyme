@@ -129,3 +129,7 @@ The artifact has multiple summary-fidelity problems:
 ## Review limits
 
 The code was not executed. Primary papers, UniProt, AlphaFold, and PDB records were not independently fetched; provenance claims were assessed only from committed artifact text. Repository search via `grep_repo` failed because the backend `rg` executable was unavailable, and subsequent tool-result budget was exhausted after inspecting large wiki pages. I inspected the bundled artifact, `validation-experiments.md` first chunk including §1.10, `uricase.md`, `uricase-variant-selection.md`, `engineered-koji-protocol.md`, and part of `koji-home-fermentation.md`; other affected pages may exist but could not be searched exhaustively.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

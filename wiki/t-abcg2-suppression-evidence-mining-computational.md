@@ -34,6 +34,8 @@ status: archived-to-experiments
 
 # Testosterone × Intestinal ABCG2 Suppression — Evidence Mining (comp-016)
 
+> **⚠️ Verdict caveated (comp-review 2026-07-14).** The qualitative verdict — direct testosterone/androgen suppression of intestinal ABCG2 is weak/unconfirmed — is directionally supported, but this is a **qualitative literature-reframing artifact**, not a quantitative resolution.
+
 > **Frozen analysis archived to [`./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/wiki-archive.md`](./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/wiki-archive.md)** (198 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read

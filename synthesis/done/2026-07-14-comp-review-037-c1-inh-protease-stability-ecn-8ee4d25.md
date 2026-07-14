@@ -96,3 +96,7 @@ Key closure findings:
 
 ## Review limits
 I did not execute `analyze.py`; reproducibility was assessed by code and committed-output inspection only. Primary sources cited in provenance were not fetched or independently verified; only committed FASTA/pLDDT/protease JSON and wiki text were inspected. Repository fixed-string search failed because the underlying `rg` binary was unavailable, so affected-page discovery relied on explicit bundle pages plus targeted reads of omitted pages. The full `validation-experiments.md` and all omitted corpus surfaces were not exhaustively searched.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

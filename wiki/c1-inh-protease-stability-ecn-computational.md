@@ -26,6 +26,8 @@ status: archived-to-experiments
 
 # C1-INH (SERPING1) Protease Stability + Glycosylation Feasibility in EcN LBP: Computational Analysis (comp-037)
 
+> **⚠️ Verdict caveated (pLDDT-proxy class, comp-review 2026-07-14).** The "sequence-rule + pLDDT proxy" result is overstated in the corpus as **protease survival** — it is a low-pLDDT-by-proxy prior, not a survival model. Same class as comp-001/006. (C1-INH "viable" reflects disulfide-axis + comp-037 kinetic caveats, not proven titer/fold.)
+
 > **Frozen analysis archived to [`./etc/experiments/comp-037-c1-inh-protease-stability-ecn/`](./etc/experiments/comp-037-c1-inh-protease-stability-ecn/)** (full pipeline: `analyze.py` + `inputs/` + `outputs/` + `README.md`).
 > This wiki page is the interpretive summary; the long content + reproducible code lives next to the experiment.
 

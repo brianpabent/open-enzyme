@@ -197,3 +197,7 @@ Pages requiring changes are listed below.
 ## Review limits
 
 I did not execute `analyze.py`; this review is by inspection of committed code, inputs, outputs, and wiki surfaces. The repository `grep_repo` tool failed because `rg` was unavailable, so affected-page discovery relied on the supplied explicit pages plus manual reads of relevant omitted pages (`validation-experiments.md`, `inhaled-mrna-il1ra-pulse-computational.md`, `etc/open-enzyme-vision.md`, `nlrp3-exploit-map.md`, `gout-clinical-pipeline.md`). Primary papers were not independently retrieved; provenance verification is limited to citation strings and artifact claims.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

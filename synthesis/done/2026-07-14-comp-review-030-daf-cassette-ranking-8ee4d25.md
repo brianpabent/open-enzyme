@@ -131,3 +131,7 @@ Mismatches / overstatements:
 ## Review limits
 
 I did not execute code. Repository search via `grep_repo` failed because `rg` was unavailable, so affected-surface discovery is incomplete. I inspected the provided bundle plus targeted reads of `chaperone-orthogonal-stacking.md`, `validation-experiments.md` §1.25, `engineered-koji-protocol.md`, `complement-c5a-gout.md`, and `hypotheses/H05-daf-scr14-cp0-thesis.md` where tool budget allowed. Primary sources such as UniProt, Schmidt 2010, Kudla 2009, and promoter/source papers were not directly accessed; provenance claims relying on them remain unresolved unless the artifact itself included the primary extract.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.

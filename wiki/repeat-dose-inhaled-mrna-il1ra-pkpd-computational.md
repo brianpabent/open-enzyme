@@ -24,6 +24,8 @@ status: published
 
 # Repeat-dose inhaled mRNA-IL-1Ra PK/PD — computational analysis (comp-036)
 
+> **⚠️ Verdict caveated (comp-review 2026-07-14).** The Monte-Carlo IL-1Ra→IL-1R1-occupancy screen supports only a **weak YELLOW** (repeat dosing insufficient); hypothesis-generating, not a validated PK/PD conclusion.
+
 **Verdict: YELLOW.** Repeat dosing partially salvages comp-033's RED single-dose Cmax verdict, but the high-confidence GREEN bar (median 95% of the 0-72h flare window above 80% receptor occupancy AND p25 >= 50%) is NOT reached by any of three dosing regimens. The modality is viable but at the edge — wet-lab dose-finding is needed to confirm or pivot.
 
 ## Methodology reframe (load-bearing)

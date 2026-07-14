@@ -27,6 +27,8 @@ status: complete
 
 # Complestatin-Family BGC LBP-Chassis Feasibility (comp-024)
 
+> **⚠️ Verdict caveated (comp-review 2026-07-14).** The qualitative recommendation (do NOT prioritize an in-situ colonic-LBP complestatin BGC program; route attention to C1-INH) is plausible and broadly consistent, but it is a **qualitative feasibility judgement**, not a quantitative proof.
+
 **Question.** Is the complestatin NRPS BGC tractable in an LBP chassis (*E. coli* Nissle 1917, *Bacteroides thetaiotaomicron*) as the next CP0 engineering payload after H05 DAF SCR1-4?
 
 **Verdict. RED for the LBP-track framing.** Best host (EcN) is YELLOW 0.544; *Bacteroides* RED 0.225. No host clears GREEN (≥0.60). Complestatin BGC is **not** the right next CP0 LBP payload. The **C1-INH (LBP-luminal) parallel thread scores GREEN-provisional 0.774** and is recommended as the next computational gate instead. Complestatin BGC stays in scope as an aerobic-fermentation production candidate (Streptomyces-class manufacturing), not an LBP-track payload.

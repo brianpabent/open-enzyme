@@ -173,3 +173,7 @@ Key closure findings:
 - Primary literature was not independently opened; provenance statuses here distinguish citation/WebFetch logs from direct primary-source verification.
 - Tool grep failed because repository search backend was unavailable, so affected-page discovery relied on provided pages plus bounded `read_file` inspection of key referenced pages.
 - Some large pages were only partially inspected before tool-result budget exhaustion; the affected-pages list is therefore high-confidence for inspected surfaces but may not be exhaustive.
+
+---
+## ✓ Actioned 2026-07-14
+**Disposition: caveat/downgrade** (relabel/hygiene tier). Added a ⚠️ caveat banner to the interpretive page (or artifact README for comp-015) capturing the audit's headline finding — the qualitative direction holds, but the quantitative/verdict framing overstated what the model resolves. Deeper artifact fixes (reproducibility defects, provenance-tier labeling, code/summary mismatches, any recompute) remain in the Required-actions above as residuals for a focused follow-up.
