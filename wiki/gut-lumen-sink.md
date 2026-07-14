@@ -78,6 +78,16 @@ By placing uricase in the intestinal lumen:
 
 **The genius of this approach:** The lumen-resident enzyme acts as a metabolic sink that pulls serum uric acid downward, and the body's own ABCG2 transporter is the delivery mechanism. No need to cross the epithelium. (Source: engineered-yeast-uricase-proposal.md, blood-barrier-exploits.md)
 
+### The substrate-supply chokepoint — the sink and the Q141K rescue axis are one question
+
+The sink mechanism above has an implicit dependency that is easy to miss: **its substrate supply is ABCG2's output.** Steps 1 and 5 of the Sink Principle both route urate into the lumen through the apical ABCG2 pump, so the rate at which lumen-resident uricase can pull serum urate down is bounded by the rate at which ABCG2 delivers urate to the lumen. The sink cannot degrade urate that never reaches it.
+
+This links two threads the corpus had been treating as parallel. The **Q141K** variant (rs2231142) — the single largest genetic risk factor for gout, and over-represented in the male-majority gout population — reduces ABCG2 apical trafficking and surface expression (see [`abcg2-modulators.md`](./abcg2-modulators.md) §"The Q141K rescue mechanism"). In a Q141K carrier, the pump that fuels the sink is throttled. So the gut-lumen-sink thesis and the Q141K-ABCG2-rescue thesis are not independent research tracks — **they share one load-bearing bottleneck: substrate supply to the sink.** The platform question is a single question, not two: does the engineered strain's uricase output exceed the Q141K-limited ABCG2 flux, or is the throttled transporter the rate-limiter?
+
+If the transporter is rate-limiting in the dominant demographic, then a Q141K rescue layer — butyrate and/or a pharmacological chaperone that restores ABCG2 trafficking — stops being an optional adjunct and becomes load-bearing for the koji endgame strain. Both rescue candidates are **proposed, not established**: direct butyrate rescue of Q141K trafficking has not been demonstrated (Basseville 2012 used pharmacological chaperones, not butyrate — see [`abcg2-modulators.md`](./abcg2-modulators.md) §"Attribution and concentration caveat"), and the small-molecule chaperone candidates remain hypothesis-stage pending wet-lab confirmation.
+
+**Shared wet-lab gate:** [`validation-experiments.md` §1.14](./validation-experiments.md) tests both mechanisms in one Caco-2 transwell — androgen (DHT) + TNFα suppression of ABCG2, butyrate and lactoferrin rescue, and a **Q141K-transfected parallel arm**. That single experiment gates whether the majority Q141K population benefits from the gut-lumen sink alone or requires the rescue adjunct. (Mechanistic Extrapolation, over established In Vitro ABCG2 biology.)
+
 ## Clinical Validation: Three Independent Systems
 
 ### 1. ALLN-346 (Allena Pharmaceuticals)

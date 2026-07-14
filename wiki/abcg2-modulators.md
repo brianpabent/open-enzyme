@@ -266,6 +266,14 @@ The Q141K folding-rescue thesis stands; pivot to AI-aided novel binder design (R
 
 ---
 
+## The substrate-supply chokepoint — the sink and the Q141K rescue are one question
+
+Everything on this page treats ABCG2 modulation as a lever. It is worth naming *why* that lever is load-bearing: the [gut-lumen uricase sink](./gut-lumen-sink.md) can only degrade urate that ABCG2 delivers to the lumen. **The sink's substrate supply is this pump's output.** So the Q141K rescue axis and the gut-lumen-sink thesis are not two parallel tracks — they share one bottleneck. Q141K throttles apical ABCG2 trafficking, so in a Q141K carrier the pump that fuels the sink is throttled, and the platform's core question collapses to one: does the engineered strain's uricase output exceed the Q141K-limited ABCG2 flux, or is the transporter the rate-limiter?
+
+If the transporter is rate-limiting in the dominant male/Q141K demographic, the rescue layer above (butyrate HDI + PPARγ induction; the orthogonal pharmacological-chaperone route) becomes load-bearing for the koji endgame strain rather than an optional adjunct — with the caveat that both rescue mechanisms remain proposed (butyrate's direct Q141K rescue is untested per the correction above; the chaperone candidates are hypothesis-stage). The shared wet-lab resolver is [`validation-experiments.md` §1.14](./validation-experiments.md), whose Q141K-transfected parallel arm puts substrate-supply rescue and uricase-sink substrate demand on the same monolayer. (Mechanistic Extrapolation.)
+
+---
+
 ## Tissue selectivity matters
 
 ABCG2 is expressed at multiple barrier sites with different physiological roles:
