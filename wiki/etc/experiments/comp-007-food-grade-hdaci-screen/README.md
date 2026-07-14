@@ -15,7 +15,7 @@ Butyrate is the only candidate with HIGH-confidence biochemical IC50 data and co
 ## How to reproduce
 
 ```bash
-cd experiments/comp-007-food-grade-hdaci-screen
+cd wiki/etc/experiments/comp-007-food-grade-hdaci-screen
 python3 analyze.py
 ```
 

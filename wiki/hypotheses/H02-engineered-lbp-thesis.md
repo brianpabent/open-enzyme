@@ -43,7 +43,7 @@ sources:
 An engineered *Faecalibacterium prausnitzii* strain producing therapeutic-relevant levels of colonic butyrate, delivered as an oral lyophilized lipid-encapsulated capsule, is a viable peer-track therapeutic chassis to engineered koji for gout. The primary mechanism of action is genotype-agnostic ABCG2 induction:
 
 - **Wild-type ABCG2:** butyrate → PPARγ → upregulated ABCG2 transcription → increased gut-lumen urate efflux
-- **Q141K variant ABCG2 (~10% of gout patients):** butyrate's class-I HDAC inhibitor activity rescues the broken Q141K trafficking phenotype, restoring functional surface expression
+- **Q141K variant ABCG2 (~10% of gout patients):** butyrate's class-I HDAC inhibitor activity is **proposed to** rescue the broken Q141K trafficking phenotype (restoring functional surface expression) — **unvalidated**: Basseville 2012 demonstrated pharmacological/HDACi Q141K rescue with vorinostat, *not* butyrate; direct butyrate rescue is assumption 6, gated on validation §1.14
 
 The "viable peer-track" claim has multiple sub-components that the full card will decompose:
 1. *F. prausnitzii* engineering toolkit is mature enough to produce therapeutic-grade butyrate-augmenting strains (vs. WT colonization establishing the colonic baseline)

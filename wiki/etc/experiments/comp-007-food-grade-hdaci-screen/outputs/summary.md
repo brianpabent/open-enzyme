@@ -2,8 +2,8 @@
 
 **Date:** 2026-05-05
 **Experiment:** Food-Grade HDAC Inhibitor Screen for Q141K-ABCG2 Trafficking Rescue
-**Informs:** [`validation-experiments.md` §1.22](../../../validation-experiments.md#122-gut-selective-food-grade-hdac-inhibitor-screen-for-q141k-abcg2-trafficking-rescue)
-**Interpretive wiki page:** [`wiki/food-grade-hdaci-screen-computational.md`](../../../food-grade-hdaci-screen-computational.md)
+**Informs:** [`validation-experiments.md` §1.22](../../wiki/validation-experiments.md#122-gut-selective-food-grade-hdac-inhibitor-screen-for-q141k-abcg2-trafficking-rescue)
+**Interpretive wiki page:** [`wiki/food-grade-hdaci-screen-computational.md`](../../wiki/food-grade-hdaci-screen-computational.md)
 
 ## Scoring formula
 
@@ -18,7 +18,7 @@ composite_score = potency_score × selectivity_score × gut_selectivity_score
 | **gut_selectivity_score** | 1 − oral bioavailability fraction | 0–1 |
 
 Compounds with DATA_UNAVAILABLE confidence (no usable IC50 or estimate) receive composite_score = 0.
-Compounds with unknown HDAC6 selectivity receive selectivity_score = 0.30 (penalty vs butyrate's confirmed 222× selectivity).
+Compounds with unknown HDAC6 selectivity receive selectivity_score = 0.30 (penalty vs butyrate's ≥167× HDAC6/class-I-geomean selectivity — the ranking convention; censored lower bound, HDAC6 IC50 >2 mM).
 
 ## Ranking table
 
@@ -106,7 +106,7 @@ They are not ranked but are not excluded — they require a targeted biochemical
 ## Limitations
 
 - Heterogeneous assay formats: butyrate IC50 values from biochemical recombinant assay (highest confidence); sulforaphane/AM/DADS from nuclear extract or cellular protein level (lower confidence). Direct comparison is approximate.
-- HDAC6 selectivity data absent for sulforaphane, AM, DADS, PEITC. Unknown penalty (0.30) penalizes these compounds vs butyrate (confirmed 222x selectivity). If HDAC6 IC50 were measured and found to be >1 mM for these compounds, their scores would increase substantially.
+- HDAC6 selectivity data absent for sulforaphane, AM, DADS, PEITC. Unknown penalty (0.30) penalizes these compounds vs butyrate (>=167x HDAC6/class-I-geomean selectivity — the ranking convention; ~222x vs HDAC3 alone; both are censored LOWER BOUNDS since butyrate HDAC6 IC50 is >2 mM, not an exact value). If HDAC6 IC50 were measured and found to be >1 mM for these compounds, their scores would increase substantially.
 - Gut-vs-systemic proxy (1 - oral BA) is a coarse surrogate. High oral BA (sulforaphane) reduces gut-selectivity score, but SFN reaches enterocytes before portal absorption — the gut mucosal cell may still have substantial SFN exposure. This proxy underestimates SFN's enterocyte-level activity.
 - Oral bioavailability values are estimates from literature rather than direct human PK measurements at food-achievable doses.
 - Q141K trafficking rescue (the key outcome) has not been tested for any compound except the vorinostat class-I reference compound (Basseville 2012). Butyrate's class-I selectivity and IC50 predict rescue, but direct demonstration is Stage 3.

@@ -135,3 +135,17 @@ The main top-line ranking is consistent across README, committed outputs, `wiki-
 
 ## Review limits
 I did not execute `analyze.py` or independently query ChEMBL/PubMed; source verification is limited to committed citation strings and internal consistency. The repository `grep_repo` tool failed because `rg` was unavailable, so affected-page discovery used the bundle plus targeted `read_file` inspection of key pages (`abcg2-modulators.md`, `gut-lumen-sink.md`, `validation-experiments.md`, `engineered-lbp-chassis.md`, and hypothesis cards). Primary literature claims, ChEMBL activity IDs, oral bioavailability estimates, and gut concentration estimates remain unverified against primary sources in this review.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Disposition: fix-in-place + relabel** (butyrate rank-1 stands; the selectivity reporting and the Basseville attribution needed correction).
+
+- **Stale Basseville/butyrate Q141K-rescue wording (audit action #1) — the key scientific fix:** corrected in `inputs/bioactivity_data.json`, `inputs/provenance.md`, and `wiki-archive.md`. Basseville 2012 established Q141K rescue with **pharmacological class-I HDACi (vorinostat), NOT butyrate**; direct butyrate rescue (the ~30-50% figure) is an unvalidated hypothesis pending §1.14, not an established result. (Same claim hedged in the Item-1 abcg2-modulators/gut-lumen-sink synthesis and already corrected in §1.14.)
+- **Selectivity 167×/222× + censored HDAC6 (audit action #2):** standardized on **≥167× (HDAC6 ÷ class-I geomean — the ranking convention)**, labeled 222× as HDAC3-only, and marked both as **censored lower bounds** (HDAC6 IC50 >2 mM, not exact). Removed "confirmed". Fixed `analyze.py` (×2), `provenance.md`, `wiki-archive.md`; outputs regenerated.
+- **Selectivity formula prose (audit action #3):** `wiki-archive.md` formula corrected to `ratio/(ratio+10)` = `HDAC6/(HDAC6 + 10×mean_classI)` (was omitting the ×10).
+- **Repro path** `experiments/` → `wiki/etc/experiments/`.
+- **Downstream:** `H02:46` softened (Q141K rescue "proposed / unvalidated", not fact). `engineered-lbp-chassis.md:90` already carries the correct hedge (no change needed).
+
+**Residuals (non-verdict, noted):** `used_estimate:true` bug for caffeic/ferulic (null estimate); analyze.py↔committed-summary relative-link reconciliation; Stage-2 exposure-sensitivity caveat; "dual-action" shorthand at engineered-lbp-chassis lines 68/92/195 (line 90 hedges the Q141K half).

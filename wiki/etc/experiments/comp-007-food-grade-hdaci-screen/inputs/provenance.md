@@ -45,7 +45,7 @@ Query: `get_bioactivity(molecule_chembl_id="CHEMBL14227", activity_type="IC50")`
 | HDAC8 | 15,000 | = | 5207853 | CHEMBL1680135 | (class I, not our target) | CHEMBL1671826 | ACS Med Chem Lett | 2011 |
 | HDAC4/5/7/9 | >2,000,000 | > | 5207854-57 | — | Class II — no inhibition | CHEMBL1671826 | ACS Med Chem Lett | 2011 |
 
-**Butyrate interpretation:** pChEMBL 4.80-5.05 for HDAC1/2/3; HDAC6 IC50 ratio = 2,000,000/9,000 = 222x (HDAC3 vs HDAC6) — near-perfect class I selectivity from a single matched assay panel.
+**Butyrate interpretation:** pChEMBL 4.80-5.05 for HDAC1/2/3; HDAC6 IC50 is **>2 mM (censored)**, so all selectivity ratios are **lower bounds, not exact values**. Two conventions appear in this artifact: **≥167× = HDAC6 ÷ class-I geomean(HDAC1,2,3) — this is the convention the ranking/composite score uses**; ≥222× = HDAC6 ÷ HDAC3 alone. Both indicate near-perfect class-I selectivity from a single matched assay panel; cite ≥167× for consistency with the ranking, and label 222× as HDAC3-only where used.
 
 Additional butyrate HDAC1/2 data (J Med Chem 2022): HDAC1 IC50 = 300 uM, HDAC2 IC50 = 400 uM (activity IDs 24815296, 24815304) — different assay, much weaker apparent potency. This discrepancy reflects assay-format sensitivity differences; the 2011 ACS Med Chem Lett recombinant enzyme data is preferred for ranking.
 
@@ -106,7 +106,7 @@ Queries via `mcp__plugin_pubmed_PubMed__search_articles` and `mcp__plugin_pubmed
 ## Basseville 2012 — Q141K trafficking rescue mechanism
 
 **PMID 22472121** — Basseville A et al., "Histone deacetylase inhibitors revert multidrug resistance by altering the expression of MRP genes in MCF-7/VP cells." *Cancer Research* 72(18):4719-28, 2012. DOI: [10.1158/0008-5472.CAN-11-2008](https://doi.org/10.1158/0008-5472.CAN-11-2008).
-- Foundational reference: HDACi (class I) rescue Q141K ABCG2 trafficking from aggresome to plasma membrane via altered microtubule motor protein expression. Butyrate at 1 mM rescues Q141K surface expression ~30-50%.
+- Foundational reference: HDACi (class I) rescue Q141K ABCG2 trafficking from aggresome to plasma membrane via altered microtubule motor protein expression. **Basseville 2012 established this using pharmacological class-I HDACi (vorinostat), NOT butyrate.** Direct butyrate Q141K rescue (~30-50% at 1 mM) is a proposed but unvalidated hypothesis pending validation §1.14 — it was not shown by Basseville and must not be cited as an established result.
 
 ## What this provenance does NOT confirm
 

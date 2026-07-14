@@ -56,7 +56,7 @@ Class I HDACi (HDAC1/2/3)
   → HSF1 nuclear translocation
   → Hsp90α/β transcriptional upregulation
   → chaperone-assisted refolding of misfolded Q141K NBD2
-  → partial membrane-trafficking rescue (~30–50% surface expression restoration at 1 mM butyrate)
+  → partial membrane-trafficking rescue (Basseville 2012 demonstrated this with pharmacological class-I HDACi, NOT butyrate; the ~30–50% figure at 1 mM butyrate is a proposed/unvalidated extrapolation pending validation §1.14, not an established butyrate result)
 ```
 
 This is distinct from butyrate's ABCG2-inducing effect in wild-type cells, which is PPARγ-mediated and does not require HDAC inhibition (Xie et al. 2020 — see [abcg2-modulators.md §6](./abcg2-modulators.md)).
@@ -74,7 +74,7 @@ composite_score = potency_score × selectivity_score × gut_selectivity_score
 | Factor | Definition | Notes |
 |---|---|---|
 | **potency_score** | 1 / geomean(HDAC1/2/3 IC50 nM), max-normalized to [0,1] | Higher = more potent at class I inhibition |
-| **selectivity_score** | HDAC6_IC50 / (HDAC6_IC50 + mean_classI_IC50), midpoint ratio = 10 | Sigmoid-like; confirmed 222× → 0.957; unknown HDAC6 → penalty 0.30 |
+| **selectivity_score** | ratio / (ratio + 10) where ratio = HDAC6_IC50 / mean_classI_IC50, i.e. HDAC6_IC50 / (HDAC6_IC50 + 10×mean_classI_IC50) | Sigmoid-like; butyrate ≥167× (class-I geomean; censored lower bound, HDAC6 IC50 >2 mM) → 0.943; unknown HDAC6 → penalty 0.30 |
 | **gut_selectivity_score** | 1 − oral_bioavailability_fraction | Higher = more gut-enriched; rewards low-bioavailability compounds |
 
 **Confidence tiers:** HIGH = biochemical recombinant assay (ChEMBL); LOW = nuclear extract or estimated from cellular data; DATA_UNAVAILABLE = no usable IC50. DATA_UNAVAILABLE compounds receive composite = 0.
