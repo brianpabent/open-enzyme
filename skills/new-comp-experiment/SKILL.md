@@ -28,6 +28,20 @@ Computational analyses inform wet-lab priors before committing lab resources. Th
 | A new protein target needs initial protease/stability assessment | Yes |
 | Question requires live cells, fermentation dynamics, or in vivo readouts | No — needs wet-lab |
 | Question is purely literary synthesis (writing a wiki page) | No |
+| Question is "what does the literature say" — evidence tier, mechanism support, SAR, clinical landscape, or resolving a corpus-only-pushback | No — **that's a lit scan** (see below) |
+
+## COMP vs lit-scan — is this even a comp?
+
+Before scaffolding a comp folder, confirm the work is actually a **computational experiment** and not a **literature scan**. They are different artifact types with different guards:
+
+| | comp-NNN (this skill) | lit-scan (`lit-scan` skill) |
+|---|---|---|
+| **Work** | run code → deterministic output | search → curate → synthesize literature |
+| **Output** | committed code / inputs / outputs | a cited findings artifact (`logs/<scope>-lit-scan-<date>.md`) |
+| **Risk** | model / code correctness | search-completeness, over-claim, translation nuance |
+| **Guard** | this skill's full lifecycle adversarial-code-review gate | multilingual framing + two-model translation + primary-source grep-verify |
+
+A comp needs an **executable model**: structure prediction, sequence analysis, docking, ΔΔG, kinetics, MD, a scoring pipeline — code whose outputs are reproducible from fixed inputs. If the question is "what does the field say / does this claim hold / what's the evidence tier / what is the structure-activity relationship," there is no model to run — it is a lit scan, and forcing it into COMP clothing produces a hollow "reproducible script" that can't reproduce a literature sweep (the **comp-018 failure**: its own audit found the script "only validates/rewrites a scope summary — it does NOT reproduce the literature sweep"). Route literature work to the `lit-scan` skill. comp-013/014/018/020 are legacy lit-mining-as-comp mis-filings — not the template.
 
 ## Workflow
 
