@@ -104,15 +104,6 @@
   },
   "recent_runs": [
     {
-      "run_id": "25862359338",
-      "trigger": "push",
-      "completed_at": "2026-05-14T13:44:59Z",
-      "outcome": "success",
-      "failed_phase": null,
-      "trigger_paths_count": 10,
-      "synthesis_log": "logs/v4-synthesis-2026-05-14-81e6264.md"
-    },
-    {
       "run_id": "25895348265",
       "trigger": "push",
       "completed_at": "2026-05-15T01:49:59Z",
@@ -300,6 +291,21 @@
       "sweep_id": "a68eaeb8939b91ac9d0bf42c",
       "normalized_status": "items",
       "normalized_item_count": 10
+    },
+    {
+      "run_id": "29446788631",
+      "trigger": "workflow_dispatch",
+      "completed_at": "2026-07-15T20:12:28Z",
+      "outcome": "supplemental_recovery",
+      "failed_phase": null,
+      "cursor_advanced": false,
+      "cursor_preserved": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
+      "review_commit": "933e3c419a020d83143c6d4194f59a3e35fc4fef",
+      "synthesis_log": "logs/v4-synthesis-2026-07-15-08f10ad.md",
+      "normalized_manifest": "logs/normalized-synthesis-2026-07-15-08f10ad.json",
+      "sweep_id": "1b163d7278926f4f15f93234",
+      "normalized_status": "items",
+      "normalized_item_count": 1
     }
   ]
 }
