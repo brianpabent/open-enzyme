@@ -48,6 +48,7 @@ OpenRouterClient(...).chat(model, messages, temperature=0.2, max_tokens=4096) ->
 role_model(config, role) -> model_id      # role → model routing from config
 load_root_dotenv(start); read_json(path); write_json(path, data); safe_filename(text)
 ```
+`chat()` calls OpenRouter with `urllib`. On a machine whose Python lacks a usable TLS cert store (no `certifi`, empty system store), the `urllib` handshake fails with an SSL/cert `URLError` — `chat()` catches that and automatically retries the POST through the system `curl` binary (same fallback idiom as `local_curl_fetch` / `_urlopen_json`), so no manual `curl` workaround is needed. The bearer token goes via a mode-0600 temp header file (`curl -H @file`), never on the argv; the JSON body streams over stdin. HTTP errors still surface OpenRouter's JSON body (`curl --fail-with-body`). This closed the SSL failure hit during the 2026-07-14 Houttuynia scan (first `lit-scan` dogfood).
 
 ---
 
