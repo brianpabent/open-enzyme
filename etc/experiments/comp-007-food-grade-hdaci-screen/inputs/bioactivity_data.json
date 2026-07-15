@@ -20,7 +20,7 @@
       "HDAC6_source": "ChEMBL activity_id 5207858; assay CHEMBL1680140 — human recombinant HDAC6; ACS Med Chem Lett 2011. Marked 'Outside typical range'; effectively no HDAC6 inhibition.",
       "assay_format": "biochemical_recombinant",
       "confidence": "HIGH",
-      "notes": "Butyrate shows excellent class I selectivity: HDAC6 IC50 >2 mM vs HDAC1-3 IC50 9-16 uM — selectivity ratio >125x. Canonical food-grade HDACi benchmark for Q141K rescue (Basseville 2012 PMID 22472121 used class I HDACi vorinostat as reference; butyrate at 1 mM rescues Q141K trafficking ~30-50%)."
+      "notes": "Butyrate shows excellent class I selectivity: HDAC6 IC50 >2 mM (censored) vs HDAC1-3 IC50 9-16 uM — HDAC6/class-I-geomean ratio >=167x (censored lower bound). Proposed food-grade HDACi candidate for Q141K rescue. Basseville 2012 PMID 22472121 established pharmacological/HDACi rescue of Q141K using vorinostat (a class-I HDACi tool compound), NOT butyrate; direct butyrate Q141K rescue (the ~30-50% figure) is an unvalidated hypothesis pending validation-experiments.md 1.14, not an established result."
     },
     {
       "compound": "Sulforaphane",

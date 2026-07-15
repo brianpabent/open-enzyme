@@ -5336,10 +5336,12 @@
 <p><strong>Interpretive wiki page:</strong> <a href="../../../urat1-sirna-target-site-selection-computational/"><code>wiki/urat1-sirna-target-site-selection-computational.md</code></a></p>
 <hr />
 <h2 id="how-to-reproduce">How to reproduce<a class="headerlink" href="#how-to-reproduce" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>experiments/comp-009-urat1-sirna-target-site-selection
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python3<span class="w"> </span>scripts/analyze.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># RERUN (2026-07-14) requires ViennaRNA for real RNAplfold accessibility:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>uv<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.13<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--python<span class="w"> </span>.venv/bin/python<span class="w"> </span>ViennaRNA
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>.venv/bin/python<span class="w"> </span>scripts/analyze.py
 </code></pre></div>
-<p>stdlib only (json, csv, math, random, pathlib). No external packages.</p>
+<p><strong>Reproduction contract (updated 2026-07-14 RERUN):</strong> requires <strong>ViennaRNA</strong> (not stdlib) for real RNAplfold accessibility. Input is the <strong>real</strong> <code>inputs/NM_144585.4_mrna.fasta</code> (RefSeq, fetched from NCBI 2026-07-14), NOT a back-translated CDS. The original stdlib-only run scanned an artificial back-translated CDS and was invalidated by the 2026-07-14 comp-review.</p>
 <p>Outputs land in <code>outputs/</code>:
 - <code>target_sites.json</code> — full machine-readable results (pipeline metadata, shortlist, top-50 passing candidates)
 - <code>shortlist.csv</code> — flat CSV of the 10 ranked candidates for spreadsheet use

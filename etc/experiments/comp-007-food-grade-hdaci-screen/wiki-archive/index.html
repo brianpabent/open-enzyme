@@ -5388,7 +5388,7 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  → HSF1 nuclear translocation
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  → Hsp90α/β transcriptional upregulation
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  → chaperone-assisted refolding of misfolded Q141K NBD2
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  → partial membrane-trafficking rescue (~30–50% surface expression restoration at 1 mM butyrate)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  → partial membrane-trafficking rescue (Basseville 2012 demonstrated this with pharmacological class-I HDACi, NOT butyrate; the ~30–50% figure at 1 mM butyrate is a proposed/unvalidated extrapolation pending validation §1.14, not an established butyrate result)
 </code></pre></div>
 <p>This is distinct from butyrate's ABCG2-inducing effect in wild-type cells, which is PPARγ-mediated and does not require HDAC inhibition (Xie et al. 2020 — see <a href="./abcg2-modulators.md">abcg2-modulators.md §6</a>).</p>
 <p><strong>Why HDAC6 is the off-target:</strong> HDAC6 is a cytoplasmic tubulin deacetylase (class IIb). Pan-HDAC inhibitors (vorinostat, romidepsin) hit HDAC6 → tubulin hyperacetylation → actin/microtubule dysregulation → cardiac ion-channel effects → QT prolongation, cardiomyopathy. Any food-grade HDACi candidate must spare HDAC6 to be safe for chronic oral use. Selectivity ratio (HDAC6/class-I IC50) &gt; 10× is the minimum acceptable; butyrate achieves 167× in biochemical assay.</p>
@@ -5412,8 +5412,8 @@
 </tr>
 <tr>
 <td><strong>selectivity_score</strong></td>
-<td>HDAC6_IC50 / (HDAC6_IC50 + mean_classI_IC50), midpoint ratio = 10</td>
-<td>Sigmoid-like; confirmed 222× → 0.957; unknown HDAC6 → penalty 0.30</td>
+<td>ratio / (ratio + 10) where ratio = HDAC6_IC50 / mean_classI_IC50, i.e. HDAC6_IC50 / (HDAC6_IC50 + 10×mean_classI_IC50)</td>
+<td>Sigmoid-like; butyrate ≥167× (class-I geomean; censored lower bound, HDAC6 IC50 &gt;2 mM) → 0.943; unknown HDAC6 → penalty 0.30</td>
 </tr>
 <tr>
 <td><strong>gut_selectivity_score</strong></td>

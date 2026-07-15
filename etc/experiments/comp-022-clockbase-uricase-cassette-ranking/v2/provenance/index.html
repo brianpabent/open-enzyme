@@ -5554,14 +5554,22 @@ einops, etc., one-time): ~4 minutes.</p>
 <li><strong>Source:</strong> the rescaling is a documented presentational choice;
   underlying ranks are preserved.</li>
 </ul>
-<h3 id="v1-top-cluster-survival-4-of-4-4-of-4">v1 top cluster survival (4 of 4 → 4 of 4)<a class="headerlink" href="#v1-top-cluster-survival-4-of-4-4-of-4" title="Permanent link">&para;</a></h3>
+<h3 id="v1-top-cluster-survival-4-of-4-into-n-of-5-4-only-1-of-4-into-strict-n-of-5-5">v1 top cluster survival (4 of 4 into N-of-5 ≥ 4; only 1 of 4 into strict N-of-5 = 5)<a class="headerlink" href="#v1-top-cluster-survival-4-of-4-into-n-of-5-4-only-1-of-4-into-strict-n-of-5-5" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Claim:</strong> all 4 v1-top-cluster cassettes (PamyB + (SPamyB or SPamyB_pro) +
   5p_softened + (direct_3xAla_pts1blk or direct_his6_pts1ok) + nglyc_ablated)
-  pass the v2 N-of-5 ≥ 4 gate.</li>
-<li><strong>Verification:</strong> grep on <code>v2_shortlist.csv</code> for the 4 cassettes; each is
-  present with concordance_n5 = 5.</li>
-<li><strong>Source:</strong> <code>outputs/v2_shortlist.csv</code> rows 1-4 (sorted by N-of-5 then composite).</li>
+  pass the v2 <strong>N-of-5 ≥ 4</strong> gate.</li>
+<li><strong>Verification:</strong> <code>v2_summary.json</code> → <code>v1_top_cluster_survival</code> reports
+  <code>cassettes_in_v2_shortlist_matching_cluster = 4</code> (of 4), 100% survival into the
+  N-of-5 ≥ 4 shortlist.</li>
+<li><strong>Corrected 2026-07-14 (independent comp review):</strong> an earlier version stated
+  each of the 4 was "present with concordance_n5 = 5" and cited "rows 1-4" of the
+  strict tier. That is wrong. The strict <strong>N-of-5 = 5</strong> tier is a distinct set of 4
+  cassettes spanning <code>PamyB</code> + <code>PglaA</code> promoters and both <code>direct_3xAla_pts1blk</code>
+  (PTS1-blocked) and <code>direct_natag_pts1ok</code> (not blocked). Only <strong>one</strong> strict-tier
+  row (<code>PamyB SPamyB_pro 5p_softened direct_3xAla_pts1blk</code>) is a v1-top-cluster
+  member; the other three v1-top-cluster cassettes sit at concordance_n5 = 4, not 5.</li>
+<li><strong>Source:</strong> <code>outputs/v2_shortlist.csv</code> (strict rows: <code>awk -F, 'NR&gt;1 &amp;&amp; $17==5'</code>).</li>
 </ul>
 <h3 id="viennarna-mfe-vs-v1-gc-clamp-proxy-correlation">ViennaRNA MFE vs v1 GC-clamp proxy correlation<a class="headerlink" href="#viennarna-mfe-vs-v1-gc-clamp-proxy-correlation" title="Permanent link">&para;</a></h3>
 <ul>

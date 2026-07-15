@@ -25,7 +25,7 @@ disulfide-folding axis fails, the protease and glycosylation axes are moot. This
 
 HONESTY CONSTRAINT (load-bearing)
 ---------------------------------
-Per chaperone-orthogonal-stacking.md §8 item 6: NO published DsbA/DsbC capacity metric exists at the
+Per chaperone-orthogonal-stacking.md §8 item 8: NO published DsbA/DsbC capacity metric exists at the
 8-16 disulfide scale. The reference-capacity anchor used on Axis 1 is therefore an INFERENCE from
 E. coli periplasmic-expression PRECEDENT, not a measurement. It is the single biggest optimistic
 assumption in this analysis and is sensitivity-tested across a conservative/moderate/optimistic band.
@@ -434,7 +434,7 @@ def main():
     # Count compounding optimistic assumptions feeding any "viable"-leaning verdict.
     optimistic_assumptions = [
         "Reference DsbA/DsbC capacity band (5/8/12) is precedent-derived, NOT a measured capacity "
-        "(no published metric at 8-16 disulfide scale — chaperone-orthogonal-stacking.md §8 item 6).",
+        "(no published metric at 8-16 disulfide scale — chaperone-orthogonal-stacking.md §8 item 8).",
         "Axis 1 scores disulfide FORMATION/ISOMERIZATION burden, NOT native-fold ATTAINMENT. Serpin "
         "metastability (C1-INH) and transferrin molten-globule hierarchy (lactoferrin) are additional "
         "unmodeled attainment risks — disulfides are necessary, not sufficient, for a functional fold. "

@@ -5457,7 +5457,7 @@
 <td>0.6</td>
 <td>0.45</td>
 <td>0.75</td>
-<td>Sec-translocon present. Same caveat as lactoferrin re: disulfide-rich secretion. 8 disulfides in SCR1-4 — less than lactoferrin's 17 but still requires oxidative folding.</td>
+<td>Sec-translocon present. Same caveat as lactoferrin re: disulfide-rich secretion. 8 disulfides in SCR1-4 — less than lactoferrin's 16 but still requires oxidative folding.</td>
 </tr>
 <tr>
 <td>host_physiology_compatibility</td>
@@ -5645,7 +5645,7 @@
 <li><strong>Butyrate-pathway boost (BCoAT) is the unambiguous winner</strong> — both base ranking AND toolkit-conditional ranking. It is a NATIVE payload (CAI=1.0, no secretion, native lifestyle, no folding burden). The only blocker is the shared engineering-toolkit gap.</li>
 <li><strong>Uricase scores LOW (~0.40) — and the bottleneck is the host-physiology mismatch, not the engineering toolkit.</strong> Uricase fundamentally requires O2 as a substrate. F. prausnitzii is a strict anaerobe in an anoxic colonic lumen. Even with a perfect engineering toolkit, the chemistry can't run. This is a STRATEGIC RECLASSIFICATION moment: uricase is not a plausible F. prausnitzii payload, regardless of how much engineering investment goes in. Different chassis is required (e.g. E. coli Nissle as facultative anaerobe — micro-aerobic windows possible in proximal colon; or maintain uricase on the koji track).</li>
 <li><strong>Lactoferrin and sCR1 SCR1-4 score similarly (~0.50-0.55)</strong> — both have favorable host-physiology fit, both bottleneck on the same anoxic-environment-disulfide-folding question. This is a more tractable problem than uricase's O2-substrate-requirement because it could be addressed by heterologous DsbA/DsbB co-expression or by switching to a chassis with characterized oxidative-folding capacity in the periplasmic-equivalent space. But it's still a real risk.</li>
-<li><strong>CR1 SCR1-4 ranks slightly above lactoferrin</strong> due to fewer disulfide bonds (8 vs 17) and the SCR/sushi/CCP-fold's documented isomerization tolerance.</li>
+<li><strong>CR1 SCR1-4 ranks slightly above lactoferrin</strong> due to fewer disulfide bonds (8 vs 16) and the SCR/sushi/CCP-fold's documented isomerization tolerance.</li>
 <li><strong>The engineering toolkit gap (no published F. prausnitzii transformation as of 2026-05) is the gating factor for ALL payloads except butyrate-boost-via-native-pathway.</strong> Without the toolkit, every score above except butyrate's is academic. Strategic path: invest 1-2 yr in adapting the Lachnospiraceae conjugation toolkit (Roseburia inulinivorans + E. rectale precedent) to F. prausnitzii FIRST; the payload selection happens second.</li>
 </ol>
 <h2 id="what-this-comp-informs-decides">What this comp informs / decides<a class="headerlink" href="#what-this-comp-informs-decides" title="Permanent link">&para;</a></h2>
@@ -5653,7 +5653,7 @@
 <li><strong>Engineered LBP chassis Phase 2 (P2-4)</strong> per <a href="../../wiki/engineered-lbp-chassis.md"><code>wiki/engineered-lbp-chassis.md</code></a>: F. prausnitzii is engineering-naive as of 2026-05; the LBP-chassis Phase 2 investment should prioritize toolkit development BEFORE payload selection.</li>
 <li><strong>Payload-specific guidance:</strong> if the toolkit is committed to, butyrate-pathway boost (native BCoAT overexpression) is the first wet-lab target. Uricase should be REMOVED from the F. prausnitzii payload menu (RED on host-physiology grounds). Lactoferrin and sCR1 are conditional GREEN if disulfide-folding can be addressed (engineering question + experimental measurement; not solvable purely in silico).</li>
 <li><strong>Comparative chassis matrix (P2-6 per engineered-lbp-chassis.md):</strong> confirms that uricase belongs on a facultative-anaerobe chassis (E. coli Nissle) or a transit-aerobic chassis (koji) rather than a strict-anaerobe chassis. Butyrate-boost belongs on F. prausnitzii. Lactoferrin / sCR1 can plausibly go either to F. prausnitzii or Bacteroides depending on disulfide-folding investigation.</li>
-<li><strong>comp-007 (food-grade HDAC inhibitor screen) cross-link:</strong> butyrate was the top food-grade HDAC inhibitor with 167× class-I-over-HDAC6 selectivity. Continuous gut-luminal butyrate from an engineered F. prausnitzii strain solves the bioavailability problem at the dose-frequency level — this comp says that's the FIRST plausible engineering campaign, not the second or third.</li>
+<li><strong>comp-007 (food-grade HDAC inhibitor screen) cross-link:</strong> butyrate was the top food-grade HDAC inhibitor with &gt;=167x class-I-over-HDAC6 selectivity (censored lower bound). Continuous gut-luminal butyrate from an engineered F. prausnitzii strain is PROPOSED to address the bioavailability problem at the dose-frequency level (unproven — requires measured colonization density, butyrate titer, epithelial exposure, and the still-unvalidated direct Q141K rescue) — this comp says that's the FIRST plausible engineering campaign to try, not the second or third; it does not establish that butyrate flux solves bioavailability.</li>
 </ul>
 <h2 id="toolkit-adaptation-roadmap-for-phase-2-wet-lab-handoff">Toolkit adaptation roadmap (for Phase 2 wet-lab handoff)<a class="headerlink" href="#toolkit-adaptation-roadmap-for-phase-2-wet-lab-handoff" title="Permanent link">&para;</a></h2>
 <ol>

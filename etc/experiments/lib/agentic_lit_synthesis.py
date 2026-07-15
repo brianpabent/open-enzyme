@@ -11,6 +11,7 @@ import json
 import os
 import re
 import subprocess
+import tempfile
 import time
 import urllib.error
 import urllib.parse
@@ -442,6 +443,13 @@ class OpenRouterClient:
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode("utf-8", errors="replace")
             raise RuntimeError(f"OpenRouter HTTP {exc.code}: {detail}") from exc
+        except urllib.error.URLError as exc:
+            # urllib's TLS handshake needs a usable cert store. On machines
+            # without one (no certifi, empty system store), the request fails
+            # with an SSL/cert error before it is ever sent. curl uses the OS
+            # cert store, so fall back to it -- the same curl-fallback idiom as
+            # _urlopen_json() and local_curl_fetch() elsewhere in this module.
+            raw = self._chat_via_curl(body)
 
         data = json.loads(raw)
         choice = data["choices"][0]
@@ -454,6 +462,71 @@ class OpenRouterClient:
             "text": text,
             "raw": data,
         }
+
+    def _chat_via_curl(self, body):
+        """
+        POST the chat payload with the system curl binary.
+
+        Fallback path for when urllib cannot complete the HTTPS handshake to
+        OpenRouter because the Python install lacks a usable TLS cert store
+        (no certifi, empty system store). curl uses the OS cert store, so it
+        succeeds where urllib raises an SSL/cert URLError. On such a machine
+        this becomes the ONLY working path, so it preserves OpenRouter's JSON
+        error body on HTTP errors via curl --fail-with-body.
+
+        The bearer token is written to a mode-0600 temp header file consumed
+        via `curl -H @file` so it never lands in the process argument list
+        (visible to other local processes via `ps`); the file is removed
+        immediately after the call. The JSON payload is streamed on stdin via
+        `--data-binary @-`, which also keeps it off the argument list.
+
+        `body` is the utf-8-encoded request bytes (same value urllib was given).
+        """
+        header_lines = (
+            f"Authorization: Bearer {self.api_key}\n"
+            "Content-Type: application/json\n"
+            "HTTP-Referer: https://github.com/brianpabent/open-enzyme\n"
+            f"X-Title: {self.app_title}\n"
+        )
+        # NamedTemporaryFile creates the file with mode 0600 (mkstemp default),
+        # so the token is not group/world-readable while it exists on disk.
+        header_file = tempfile.NamedTemporaryFile(
+            mode="w", suffix=".curlheaders", delete=False
+        )
+        try:
+            header_file.write(header_lines)
+            header_file.close()
+            cmd = [
+                "curl",
+                "--location",
+                "--silent",
+                "--show-error",
+                "--fail-with-body",
+                "--max-time",
+                "180",
+                "--request",
+                "POST",
+                "--header",
+                f"@{header_file.name}",
+                "--data-binary",
+                "@-",
+                OPENROUTER_CHAT_URL,
+            ]
+            completed = subprocess.run(cmd, input=body, capture_output=True, check=False)
+        finally:
+            try:
+                os.unlink(header_file.name)
+            except OSError:
+                pass
+
+        if completed.returncode != 0:
+            detail = completed.stdout.decode("utf-8", errors="replace").strip()
+            if not detail:
+                detail = completed.stderr.decode("utf-8", errors="replace").strip()
+            raise RuntimeError(
+                f"OpenRouter curl fallback failed (curl exit {completed.returncode}): {detail}"
+            )
+        return completed.stdout.decode("utf-8")
 
 
 def role_model(config, role):

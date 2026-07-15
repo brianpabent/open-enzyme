@@ -108,7 +108,7 @@ def main():
 
     lines = [
         "# comp-044 summary — gut-lumen uricase physiological regime", "",
-        "**Verdict: LEGACY FLAT-DOSE REGIME NOT ROBUST.** Applying substrate concentration, Km and a finite active window reverses the regime classification for the central jejunal diagnostic before oxygen, access, or survival penalties are added. This experiment does **not** predict ΔSUA.", "",
+        "**Verdict: LEGACY FLAT-DOSE REGIME NOT ROBUST.** Applying substrate concentration, Km and a finite active window **invalidates the unconditional flat-dose / saturated-capacity classification** for the central jejunal diagnostic before oxygen, access, or survival penalties are added. (The 50 mg central no-extra-penalty ratio is ~0.93 — close to the ratio-one boundary; this shows the unconditional classification is not robust, not that the physiological regime is definitively reversed.) This experiment does **not** predict ΔSUA or establish the true regime.", "",
         "## Named-scenario capacity ratios", "",
         "| Scenario | 5 mg | 25 mg | 50 mg |", "|---|---:|---:|---:|"
     ]

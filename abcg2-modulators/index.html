@@ -2516,6 +2516,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-substrate-supply-chokepoint-the-sink-and-the-q141k-rescue-are-one-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The substrate-supply chokepoint — the sink and the Q141K rescue are one question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tissue-selectivity-matters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5938,7 +5949,7 @@ and the <a href="../gout-multihop-research-program/">multihop gout program</a>.<
 <li>Daily-pill modality via compounding pharmacy if a hit is found among FDA-approved molecules (off-label / 503A) — see <a href="../compounding-pharmacy-track/"><code>compounding-pharmacy-track.md</code></a>.</li>
 <li>Stacks additively with the HDI rescue (different mechanism, same target outcome).</li>
 </ul>
-<p>The full chassis-pending entry is at <a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §7 "Pharmacological chaperones for ABCG2 Q141K folding rescue"</a>. The cheapest first move — AlphaFold Q141K structure + virtual screen of FDA-approved molecules — was completed as <strong><a href="../abcg2-q141k-chaperone-screen-computational/">comp-032</a> 2026-05-16: GREEN</strong>. All four CFTR-corrector positive controls ranked in the top 11% of a 134-molecule curated library; the FDA-approved drug surface is NOT empty for ABCG2 Q141K chaperone candidates. <strong>Top wet-lab-priority candidates</strong> (ranked by composite score):</p>
+<p>The full chassis-pending entry is at <a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §7 "Pharmacological chaperones for ABCG2 Q141K folding rescue"</a>. The cheapest first move — AlphaFold Q141K structure + virtual screen of FDA-approved molecules — was run as <a href="../abcg2-q141k-chaperone-screen-computational/">comp-032</a> (2026-05-16) and then <strong>superseded by <a href="../abcg2-q141k-chaperone-rescreen-computational/">comp-047</a> (2026-07-14, real AutoDock Vina docking) → INCONCLUSIVE.</strong> comp-032's GREEN was a descriptor/class-prior heuristic whose positive-control validation was tautological (comp-review 2026-07-13); when comp-047 re-ran the screen with real docking and no class prior, the CFTR-corrector positive controls <strong>failed to earn rank</strong> (0/4). <strong>The list below is comp-032's prior-ranked hypotheses — NOT validated wet-lab priorities, NOT empirically supported chaperone candidates.</strong> It is retained only as a hypothesis-generation starting point for a folding-ΔΔG or wet-lab study; do not act on it as a ranking:</p>
 <ol>
 <li><strong>Lumacaftor</strong> (Tier 2, CFTR corrector) — strongest mechanistic prior; same ABC superfamily; on-patent for CF (Vertex), navigate patent landscape for off-label 503A</li>
 <li><strong>Tafamidis</strong> (Tier 2, TTR tetramer stabilizer) — aromatic-acid stabilizer at hydrophobic interface; misfolded-state selective</li>
@@ -5946,7 +5957,11 @@ and the <a href="../gout-multihop-research-program/">multihop gout program</a>.<
 <li><strong>Diflunisal</strong> (<strong>Tier 1, lowest-friction first call</strong> — off-patent NSAID with USP/NF monograph + off-label ATTR-stabilization precedent) — anionic at pH 7.4, strongest electrostatic match for Q141K +1 pocket</li>
 <li><strong>TUDCA</strong> (Tier 2, bile acid chaperone) — CNS-penetrant; F508del-CFTR + ALS-clinical-trial precedent</li>
 </ol>
-<p>The Q141K folding-rescue thesis stands; pivot to AI-aided novel binder design (RFdiffusion) is NOT triggered. Next move: per-hit cell-based Q141K trafficking-rescue assay on the top 3-5 candidates in a Caco-2 Q141K-transfected line (sister to the §1.14 butyrate dose-response arm — same Caco-2 infrastructure, marginal cost ~$500–1,500 for the chaperone-class screen on top of the existing factorial). Compounding-pharmacy partner conversation can lead with diflunisal as the Tier-1 off-patent low-friction first call.</p>
+<p><strong>The Q141K folding-rescue <em>route</em> remains an open hypothesis, but neither comp-032 nor comp-047 supplies a validated candidate — so no compounding-pharmacy conversation is warranted yet.</strong> Rigid-receptor docking cannot discriminate chaperones here (mechanism mismatch: a chaperone works by stabilizing a folding intermediate / raising ΔTm, which docking to a static structure can't see). The real next move is a folding-ΔΔG calculation (MD / Rosetta on the Q141K mutant) or, more decisively, a wet-lab Q141K trafficking-rescue assay in a Caco-2 Q141K-transfected line (sister to the §1.14 butyrate dose-response arm — same Caco-2 infrastructure) paired with basolateral→apical urate flux and an ABCG2-inhibition counterscreen. Any compounding-pharmacy partner conversation is gated behind that wet-lab result (per <a href="../logs/comp-reviews/2026-07-13-comp-032-fae0e36.md">comp-review 2026-07-13</a>).</p>
+<hr />
+<h2 id="the-substrate-supply-chokepoint-the-sink-and-the-q141k-rescue-are-one-question">The substrate-supply chokepoint — the sink and the Q141K rescue are one question<a class="headerlink" href="#the-substrate-supply-chokepoint-the-sink-and-the-q141k-rescue-are-one-question" title="Permanent link">&para;</a></h2>
+<p>Everything on this page treats ABCG2 modulation as a lever. It is worth naming <em>why</em> that lever is load-bearing: the <a href="../gut-lumen-sink/">gut-lumen uricase sink</a> can only degrade urate that ABCG2 delivers to the lumen. <strong>The sink's substrate supply is this pump's output.</strong> So the Q141K rescue axis and the gut-lumen-sink thesis are not two parallel tracks — they share one bottleneck. Q141K throttles apical ABCG2 trafficking, so in a Q141K carrier the pump that fuels the sink is throttled, and the platform's core question collapses to one: does the engineered strain's uricase output exceed the Q141K-limited ABCG2 flux, or is the transporter the rate-limiter?</p>
+<p>If the transporter is rate-limiting in the dominant male/Q141K demographic, the rescue layer above (butyrate HDI + PPARγ induction; the orthogonal pharmacological-chaperone route) becomes load-bearing for the koji endgame strain rather than an optional adjunct — with the caveat that both rescue mechanisms remain proposed (butyrate's direct Q141K rescue is untested per the correction above; the chaperone candidates are hypothesis-stage). The shared wet-lab resolver is <a href="../validation-experiments/"><code>validation-experiments.md</code> §1.14</a>, whose Q141K-transfected parallel arm puts substrate-supply rescue and uricase-sink substrate demand on the same monolayer. (Mechanistic Extrapolation.)</p>
 <hr />
 <h2 id="tissue-selectivity-matters">Tissue selectivity matters<a class="headerlink" href="#tissue-selectivity-matters" title="Permanent link">&para;</a></h2>
 <p>ABCG2 is expressed at multiple barrier sites with different physiological roles:</p>

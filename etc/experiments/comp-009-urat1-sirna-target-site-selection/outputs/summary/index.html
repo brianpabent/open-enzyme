@@ -23,7 +23,7 @@
     
     
       
-        <title>comp-009 — URAT1 mRNA target site selection — Summary - Open Enzyme</title>
+        <title>comp-009 — URAT1 mRNA target site selection — Summary (RERUN 2026-07-14) - Open Enzyme</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#comp-009-urat1-mrna-target-site-selection-summary" class="md-skip">
+        <a href="#comp-009-urat1-mrna-target-site-selection-summary-rerun-2026-07-14" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              comp-009 — URAT1 mRNA target site selection — Summary
+              comp-009 — URAT1 mRNA target site selection — Summary (RERUN 2026-07-14)
             
           </span>
         </div>
@@ -5327,280 +5327,135 @@
   
 
 
-<h1 id="comp-009-urat1-mrna-target-site-selection-summary">comp-009 — URAT1 mRNA target site selection — Summary<a class="headerlink" href="#comp-009-urat1-mrna-target-site-selection-summary" title="Permanent link">&para;</a></h1>
-<p><strong>Date:</strong> 2026-05-16<br />
-<strong>Question:</strong> Which 21-nt target sites on SLC22A12 mRNA are viable for siRNA design?</p>
+<h1 id="comp-009-urat1-mrna-target-site-selection-summary-rerun-2026-07-14">comp-009 — URAT1 mRNA target site selection — Summary (RERUN 2026-07-14)<a class="headerlink" href="#comp-009-urat1-mrna-target-site-selection-summary-rerun-2026-07-14" title="Permanent link">&para;</a></h1>
+<p><strong>Transcript:</strong> NM_144585.4 (2792 nt; CDS 338-1999). <strong>Accessibility:</strong> real ViennaRNA RNAplfold (u=21, W=80, L=40).</p>
+<blockquote>
+<p><strong>This is a rerun.</strong> The original comp-009 scanned an artificial back-translated CDS and its guide sequences did not map to the real transcript. This run uses the real NM_144585.4 mRNA (5'UTR + CDS + 3'UTR) and real local-accessibility folding.</p>
+</blockquote>
 <h2 id="pipeline">Pipeline<a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Input: human URAT1 protein (553 aa) back-translated to representative CDS (1659 nt, GC 56.5%) via seeded weighted sampling from Kazusa human codon-usage frequencies (seed=42, reproducible across runs).</li>
-<li>Sliding 21-nt windows over CDS positions 76 to 1584: <strong>1488</strong> windows scored.</li>
-<li>Reynolds GC 30-52% filter: <strong>365</strong> survive (24%).</li>
-<li>Immunogenicity (TLR&#8542; motifs + GU-rich 9-mers) filter: <strong>292</strong> survive (kills <strong>73</strong> windows).</li>
-<li>4-nt homopolymer hard exclusion (polyA/polyT/polyG/polyC): <strong>204</strong> survive (kills <strong>88</strong> windows).</li>
-<li>Reynolds &gt;=&#8541; AND Ui-Tei AU&gt;=4/7 filter: <strong>74</strong> survive.</li>
-<li>Composite-score ranking + 60-nt positional diversity: <strong>10</strong>-candidate shortlist.</li>
+<li>Sliding 21-nt windows over the full mRNA: <strong>2711</strong> scored.</li>
+<li>Reynolds GC 30-52%: <strong>222</strong> survive.</li>
+<li>Immunogenicity (TLR&#8542; + GU-rich): <strong>120</strong> survive (kills 102).</li>
+<li>4-nt homopolymer exclusion: <strong>76</strong> survive.</li>
+<li>Reynolds ≥&#8541; AND Ui-Tei AU≥4/7: <strong>31</strong> survive.</li>
+<li>Composite ranking + 60-nt diversity: <strong>8</strong>-candidate shortlist (regions: {"5'UTR": 1, 'CDS': 6, "3'UTR": 1}).</li>
 </ul>
 <h2 id="verdict">Verdict<a class="headerlink" href="#verdict" title="Permanent link">&para;</a></h2>
-<p><strong>GREEN — target-site shortlist is viable.</strong></p>
-<p>At least 5 candidate target sites survive all filters (Reynolds GC, Ui-Tei seed asymmetry, TLR / GU-rich immunogenicity, and cross-mammalian conservation). The killshot Brian flagged in H03 — 'if URAT1 mRNA has no accessible siRNA target sites, the entire thesis collapses' — does not fire: URAT1 mRNA has multiple regions amenable to standard siRNA design rules.</p>
+<p><strong>GREEN (target-site availability only) — multiple viable real-transcript target sites.</strong></p>
+<p>8 candidate sites on the real NM_144585.4 mRNA survive Reynolds GC, Ui-Tei seed asymmetry, TLR/GU-rich immunogenicity, homopolymer exclusion, and rank on real RNAplfold accessibility. The H03 target-site-availability assumption is <strong>supported on the real transcript</strong> — but this is target-site availability ONLY, not a validated knockdown guide: <strong>no off-target clearance was performed</strong> (see Limitations), and cross-species reuse is an amino-acid-level hint, not a nucleotide-level claim.</p>
 <h2 id="top-shortlist">Top shortlist<a class="headerlink" href="#top-shortlist" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Rank</th>
-<th>CDS pos</th>
-<th>AA pos</th>
-<th>AA window</th>
-<th>Sense target (5'-&gt;3')</th>
+<th>mRNA pos</th>
+<th>Region</th>
+<th>Sense target (5'→3')</th>
 <th>GC%</th>
 <th>Reynolds</th>
-<th>Acc</th>
-<th>Cons(avg)</th>
+<th>P(unpaired)</th>
+<th>Cons hint</th>
 <th>Score</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1</td>
-<td>1561</td>
-<td>521</td>
-<td>LPLPDTI</td>
-<td><code>CTACCTTTGCCAGATACTATA</code></td>
-<td>38.1</td>
-<td>6/8</td>
-<td>0.63</td>
-<td>100.0%</td>
-<td>81.09</td>
+<td>1029</td>
+<td>CDS</td>
+<td><code>CCUUGGUGAUGACCUUGAACU</code></td>
+<td>47.6</td>
+<td>&#8542;</td>
+<td>0.0007</td>
+<td>95.2%</td>
+<td>65.54</td>
 </tr>
 <tr>
 <td>2</td>
-<td>1039</td>
-<td>347</td>
-<td>RFRTCIS</td>
-<td><code>CGTTTCAGGACATGTATTTCA</code></td>
-<td>38.1</td>
-<td>8/8</td>
-<td>0.44</td>
-<td>81.0%</td>
-<td>78.13</td>
+<td>1468</td>
+<td>CDS</td>
+<td><code>CAUCUUCCUGCUCCAAAUGUU</code></td>
+<td>42.9</td>
+<td>6/8</td>
+<td>0.0021</td>
+<td>90.5%</td>
+<td>62.53</td>
 </tr>
 <tr>
 <td>3</td>
-<td>969</td>
-<td>323</td>
-<td>AMREELS</td>
-<td><code>AATGCGCGAAGAGCTATCAAT</code></td>
-<td>42.9</td>
-<td>&#8542;</td>
-<td>0.63</td>
-<td>76.2%</td>
-<td>77.7</td>
+<td>438</td>
+<td>CDS</td>
+<td><code>AGAGCAUGCUGGAGAACUUCU</code></td>
+<td>47.6</td>
+<td>&#8541;</td>
+<td>0.0</td>
+<td>90.5%</td>
+<td>56.59</td>
 </tr>
 <tr>
 <td>4</td>
-<td>1115</td>
-<td>372</td>
-<td>QALGSNI</td>
-<td><code>AGGCATTGGGAAGCAATATCT</code></td>
-<td>42.9</td>
-<td>6/8</td>
-<td>0.37</td>
-<td>100.0%</td>
-<td>74.59</td>
+<td>865</td>
+<td>CDS</td>
+<td><code>AACCUGGAGCUACCUUCAGAU</code></td>
+<td>47.6</td>
+<td>&#8541;</td>
+<td>0.0</td>
+<td>90.5%</td>
+<td>56.59</td>
 </tr>
 <tr>
 <td>5</td>
-<td>603</td>
-<td>201</td>
-<td>LFRFLLA</td>
-<td><code>ATTTCGATTCCTCCTGGCTTT</code></td>
-<td>42.9</td>
-<td>&#8542;</td>
-<td>0.4</td>
-<td>95.2%</td>
-<td>73.38</td>
+<td>752</td>
+<td>CDS</td>
+<td><code>UGUGACUCUCAUGCUCUGAAG</code></td>
+<td>47.6</td>
+<td>&#8541;</td>
+<td>0.0011</td>
+<td>76.2%</td>
+<td>50.2</td>
 </tr>
 <tr>
 <td>6</td>
-<td>507</td>
-<td>169</td>
-<td>RFGRRLV</td>
-<td><code>GTTCGGTAGAAGACTTGTTCT</code></td>
-<td>42.9</td>
-<td>&#8542;</td>
-<td>0.29</td>
-<td>90.5%</td>
-<td>71.34</td>
+<td>1932</td>
+<td>CDS</td>
+<td><code>ACCAGGCAGUAAAGAAGGCAA</code></td>
+<td>47.6</td>
+<td>&#8541;</td>
+<td>0.0022</td>
+<td>71.4%</td>
+<td>48.79</td>
 </tr>
 <tr>
 <td>7</td>
-<td>362</td>
-<td>121</td>
-<td>VYDRSIF</td>
-<td><code>TTTACGATAGAAGCATCTTCA</code></td>
-<td>33.3</td>
-<td>8/8</td>
-<td>0.18</td>
-<td>81.0%</td>
-<td>69.49</td>
+<td>2025</td>
+<td>3'UTR</td>
+<td><code>GGUCAGAGGAAGAGACUUCUU</code></td>
+<td>47.6</td>
+<td>6/8</td>
+<td>0.0</td>
+<td>0.0%</td>
+<td>33.2</td>
 </tr>
 <tr>
 <td>8</td>
-<td>1447</td>
-<td>483</td>
-<td>GPLVRLL</td>
-<td><code>GGACCACTTGTAAGACTTCTC</code></td>
-<td>47.6</td>
-<td>&#8541;</td>
-<td>0.44</td>
-<td>100.0%</td>
-<td>68.31</td>
-</tr>
-<tr>
-<td>9</td>
-<td>212</td>
-<td>71</td>
-<td>ALLAISI</td>
-<td><code>CCCTATTAGCCATTTCCATAC</code></td>
+<td>326</td>
+<td>5'UTR</td>
+<td><code>UGAGUAGGUUCCAUGGCAUUU</code></td>
 <td>42.9</td>
-<td>&#8541;</td>
-<td>0.67</td>
-<td>76.2%</td>
-<td>66.92</td>
-</tr>
-<tr>
-<td>10</td>
-<td>1358</td>
-<td>453</td>
-<td>TIYSSEL</td>
-<td><code>CAATCTACTCTAGTGAGTTGT</code></td>
-<td>38.1</td>
-<td>&#8542;</td>
-<td>0.18</td>
-<td>90.5%</td>
-<td>66.45</td>
+<td>6/8</td>
+<td>0.0047</td>
+<td>0.0%</td>
+<td>31.18</td>
 </tr>
 </tbody>
 </table>
-<h2 id="per-candidate-detail">Per-candidate detail<a class="headerlink" href="#per-candidate-detail" title="Permanent link">&para;</a></h2>
-<h3 id="1-cds-position-1561-aa-521-window-lplpdti">1. CDS position 1561 (AA 521, window <code>LPLPDTI</code>)<a class="headerlink" href="#1-cds-position-1561-aa-521-window-lplpdti" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Sense target:</strong> <code>5'-CTACCTTTGCCAGATACTATA-3'</code></li>
-<li><strong>Antisense guide:</strong> <code>5'-UAUAGUAUCUGGCAAAGGUAG-3'</code></li>
-<li><strong>GC content:</strong> 38.1%</li>
-<li><strong>Reynolds:</strong> 6/8 (passed: R1_GC30-52, R2_no4runs, R5_AS10=U, R6_AS13!=G, R7_AS19!=GC, R8_UI_AS1=AU)</li>
-<li><strong>Ui-Tei seed AU count:</strong> 6/7</li>
-<li><strong>Local energy:</strong> -3.7 kcal/mol (accessibility 0.63)</li>
-<li><strong>Conservation:</strong> chimp 100.0%, mouse 100.0%, rat 100.0%</li>
-<li><strong>Composite score:</strong> 81.09/100</li>
-</ul>
-<h3 id="2-cds-position-1039-aa-347-window-rfrtcis">2. CDS position 1039 (AA 347, window <code>RFRTCIS</code>)<a class="headerlink" href="#2-cds-position-1039-aa-347-window-rfrtcis" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Sense target:</strong> <code>5'-CGTTTCAGGACATGTATTTCA-3'</code></li>
-<li><strong>Antisense guide:</strong> <code>5'-UGAAAUACAUGUCCUGAAACG-3'</code></li>
-<li><strong>GC content:</strong> 38.1%</li>
-<li><strong>Reynolds:</strong> 8/8 (passed: R1_GC30-52, R2_no4runs, R3_AS19=A, R4_AS3=A, R5_AS10=U, R6_AS13!=G, R7_AS19!=GC, R8_UI_AS1=AU)</li>
-<li><strong>Ui-Tei seed AU count:</strong> 6/7</li>
-<li><strong>Local energy:</strong> -5.6 kcal/mol (accessibility 0.44)</li>
-<li><strong>Conservation:</strong> chimp 100.0%, mouse 71.4%, rat 71.4%</li>
-<li><strong>Composite score:</strong> 78.13/100</li>
-</ul>
-<h3 id="3-cds-position-969-aa-323-window-amreels">3. CDS position 969 (AA 323, window <code>AMREELS</code>)<a class="headerlink" href="#3-cds-position-969-aa-323-window-amreels" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Sense target:</strong> <code>5'-AATGCGCGAAGAGCTATCAAT-3'</code></li>
-<li><strong>Antisense guide:</strong> <code>5'-AUUGAUAGCUCUUCGCGCAUU-3'</code></li>
-<li><strong>GC content:</strong> 42.9%</li>
-<li><strong>Reynolds:</strong> &#8542; (passed: R1_GC30-52, R2_no4runs, R3_AS19=A, R5_AS10=U, R6_AS13!=G, R7_AS19!=GC, R8_UI_AS1=AU)</li>
-<li><strong>Ui-Tei seed AU count:</strong> 6/7</li>
-<li><strong>Local energy:</strong> -3.7 kcal/mol (accessibility 0.63)</li>
-<li><strong>Conservation:</strong> chimp 100.0%, mouse 71.4%, rat 57.1%</li>
-<li><strong>Composite score:</strong> 77.7/100</li>
-</ul>
-<h3 id="4-cds-position-1115-aa-372-window-qalgsni">4. CDS position 1115 (AA 372, window <code>QALGSNI</code>)<a class="headerlink" href="#4-cds-position-1115-aa-372-window-qalgsni" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Sense target:</strong> <code>5'-AGGCATTGGGAAGCAATATCT-3'</code></li>
-<li><strong>Antisense guide:</strong> <code>5'-AGAUAUUGCUUCCCAAUGCCU-3'</code></li>
-<li><strong>GC content:</strong> 42.9%</li>
-<li><strong>Reynolds:</strong> 6/8 (passed: R1_GC30-52, R2_no4runs, R4_AS3=A, R5_AS10=U, R6_AS13!=G, R8_UI_AS1=AU)</li>
-<li><strong>Ui-Tei seed AU count:</strong> 6/7</li>
-<li><strong>Local energy:</strong> -6.3 kcal/mol (accessibility 0.37)</li>
-<li><strong>Conservation:</strong> chimp 100.0%, mouse 100.0%, rat 100.0%</li>
-<li><strong>Composite score:</strong> 74.59/100</li>
-</ul>
-<h3 id="5-cds-position-603-aa-201-window-lfrflla">5. CDS position 603 (AA 201, window <code>LFRFLLA</code>)<a class="headerlink" href="#5-cds-position-603-aa-201-window-lfrflla" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Sense target:</strong> <code>5'-ATTTCGATTCCTCCTGGCTTT-3'</code></li>
-<li><strong>Antisense guide:</strong> <code>5'-AAAGCCAGGAGGAAUCGAAAU-3'</code></li>
-<li><strong>GC content:</strong> 42.9%</li>
-<li><strong>Reynolds:</strong> &#8542; (passed: R1_GC30-52, R2_no4runs, R3_AS19=A, R4_AS3=A, R6_AS13!=G, R7_AS19!=GC, R8_UI_AS1=AU)</li>
-<li><strong>Ui-Tei seed AU count:</strong> 4/7</li>
-<li><strong>Local energy:</strong> -6.0 kcal/mol (accessibility 0.4)</li>
-<li><strong>Conservation:</strong> chimp 100.0%, mouse 100.0%, rat 85.7%</li>
-<li><strong>Composite score:</strong> 73.38/100</li>
-</ul>
-<h3 id="6-cds-position-507-aa-169-window-rfgrrlv">6. CDS position 507 (AA 169, window <code>RFGRRLV</code>)<a class="headerlink" href="#6-cds-position-507-aa-169-window-rfgrrlv" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Sense target:</strong> <code>5'-GTTCGGTAGAAGACTTGTTCT-3'</code></li>
-<li><strong>Antisense guide:</strong> <code>5'-AGAACAAGUCUUCUACCGAAC-3'</code></li>
-<li><strong>GC content:</strong> 42.9%</li>
-<li><strong>Reynolds:</strong> &#8542; (passed: R1_GC30-52, R2_no4runs, R3_AS19=A, R4_AS3=A, R6_AS13!=G, R7_AS19!=GC, R8_UI_AS1=AU)</li>
-<li><strong>Ui-Tei seed AU count:</strong> 5/7</li>
-<li><strong>Local energy:</strong> -7.1 kcal/mol (accessibility 0.29)</li>
-<li><strong>Conservation:</strong> chimp 100.0%, mouse 85.7%, rat 85.7%</li>
-<li><strong>Composite score:</strong> 71.34/100</li>
-</ul>
-<h3 id="7-cds-position-362-aa-121-window-vydrsif">7. CDS position 362 (AA 121, window <code>VYDRSIF</code>)<a class="headerlink" href="#7-cds-position-362-aa-121-window-vydrsif" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Sense target:</strong> <code>5'-TTTACGATAGAAGCATCTTCA-3'</code></li>
-<li><strong>Antisense guide:</strong> <code>5'-UGAAGAUGCUUCUAUCGUAAA-3'</code></li>
-<li><strong>GC content:</strong> 33.3%</li>
-<li><strong>Reynolds:</strong> 8/8 (passed: R1_GC30-52, R2_no4runs, R3_AS19=A, R4_AS3=A, R5_AS10=U, R6_AS13!=G, R7_AS19!=GC, R8_UI_AS1=AU)</li>
-<li><strong>Ui-Tei seed AU count:</strong> 5/7</li>
-<li><strong>Local energy:</strong> -8.2 kcal/mol (accessibility 0.18)</li>
-<li><strong>Conservation:</strong> chimp 100.0%, mouse 71.4%, rat 71.4%</li>
-<li><strong>Composite score:</strong> 69.49/100</li>
-</ul>
-<h3 id="8-cds-position-1447-aa-483-window-gplvrll">8. CDS position 1447 (AA 483, window <code>GPLVRLL</code>)<a class="headerlink" href="#8-cds-position-1447-aa-483-window-gplvrll" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Sense target:</strong> <code>5'-GGACCACTTGTAAGACTTCTC-3'</code></li>
-<li><strong>Antisense guide:</strong> <code>5'-GAGAAGUCUUACAAGUGGUCC-3'</code></li>
-<li><strong>GC content:</strong> 47.6%</li>
-<li><strong>Reynolds:</strong> &#8541; (passed: R1_GC30-52, R2_no4runs, R5_AS10=U, R6_AS13!=G, R7_AS19!=GC)</li>
-<li><strong>Ui-Tei seed AU count:</strong> 4/7</li>
-<li><strong>Local energy:</strong> -5.6 kcal/mol (accessibility 0.44)</li>
-<li><strong>Conservation:</strong> chimp 100.0%, mouse 100.0%, rat 100.0%</li>
-<li><strong>Composite score:</strong> 68.31/100</li>
-</ul>
-<h3 id="9-cds-position-212-aa-71-window-allaisi">9. CDS position 212 (AA 71, window <code>ALLAISI</code>)<a class="headerlink" href="#9-cds-position-212-aa-71-window-allaisi" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Sense target:</strong> <code>5'-CCCTATTAGCCATTTCCATAC-3'</code></li>
-<li><strong>Antisense guide:</strong> <code>5'-GUAUGGAAAUGGCUAAUAGGG-3'</code></li>
-<li><strong>GC content:</strong> 42.9%</li>
-<li><strong>Reynolds:</strong> &#8541; (passed: R1_GC30-52, R2_no4runs, R4_AS3=A, R5_AS10=U, R6_AS13!=G)</li>
-<li><strong>Ui-Tei seed AU count:</strong> 4/7</li>
-<li><strong>Local energy:</strong> -3.3 kcal/mol (accessibility 0.67)</li>
-<li><strong>Conservation:</strong> chimp 85.7%, mouse 71.4%, rat 71.4%</li>
-<li><strong>Composite score:</strong> 66.92/100</li>
-</ul>
-<h3 id="10-cds-position-1358-aa-453-window-tiyssel">10. CDS position 1358 (AA 453, window <code>TIYSSEL</code>)<a class="headerlink" href="#10-cds-position-1358-aa-453-window-tiyssel" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Sense target:</strong> <code>5'-CAATCTACTCTAGTGAGTTGT-3'</code></li>
-<li><strong>Antisense guide:</strong> <code>5'-ACAACUCACUAGAGUAGAUUG-3'</code></li>
-<li><strong>GC content:</strong> 38.1%</li>
-<li><strong>Reynolds:</strong> &#8542; (passed: R1_GC30-52, R2_no4runs, R4_AS3=A, R5_AS10=U, R6_AS13!=G, R7_AS19!=GC, R8_UI_AS1=AU)</li>
-<li><strong>Ui-Tei seed AU count:</strong> 4/7</li>
-<li><strong>Local energy:</strong> -8.2 kcal/mol (accessibility 0.18)</li>
-<li><strong>Conservation:</strong> chimp 100.0%, mouse 85.7%, rat 85.7%</li>
-<li><strong>Composite score:</strong> 66.45/100</li>
-</ul>
-<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<h2 id="limitations-correctly-scoped">Limitations (correctly scoped)<a class="headerlink" href="#limitations-correctly-scoped" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>CDS-only analysis.</strong> UTRs were not analysed because NCBI/Entrez was not in the allowed network host list at run time. UTR-targeting siRNAs are a major design class (especially 3' UTR, where seed-region miRNA-like activity is most-effective) and a real handoff item — at wet-lab time, re-run this analysis with the actual NM_144585.3 mRNA including UTRs.</li>
-<li><strong>Back-translation surrogate, not real mRNA.</strong> The CDS used here is the most-frequent-human-codon back-translation of UniProt Q96S37, NOT the actual NM_144585.3 nucleotide sequence. The codon bias of the analysis is therefore 'typical human CDS' rather than the natural codon distribution in SLC22A12 mRNA. Re-run with real RefSeq mRNA at wet-lab time.</li>
-<li><strong>Accessibility heuristic, not ViennaRNA.</strong> ViennaRNA RNAplfold was not installed on the analysis machine. Local-stability energy is approximated via a Tinoco-style nearest-neighbour stack-energy sum over the best inverted-repeat stem in each 21-nt window. This is directionally correct (more stable = less accessible) but should be re-validated with full ViennaRNA RNAplfold at wet-lab handoff time. Empirical siRNA benchmarks (Tafer 2008) show accessibility surrogate correlation r~0.6-0.7 with full RNAplfold — adequate for prioritisation, not for absolute knockdown prediction.</li>
-<li><strong>No BLAST against full human transcriptome.</strong> The 'no human off-target' check would normally include a BLAST search of the seed region (positions 2-8 of antisense) against the full human RefSeq transcriptome to count off-target seed matches. This requires NCBI access; not run here. Wet-lab handoff item.</li>
-<li><strong>No actual MSA for conservation.</strong> Conservation is computed by direct positional alignment of the four ortholog protein sequences. URAT1 orthologs are same-length and ~85-99% identical, so this works as approximation, but a formal Clustal/Muscle MSA would give per-position conservation with insertions/deletions handled correctly. At wet-lab handoff time, re-validate with formal MSA.</li>
-<li><strong>Conservation maps AA -&gt; nucleotide non-injectively.</strong> Two species may have identical AA but differ at the wobble position, breaking siRNA cross-species reuse. The 'cross-species reusable' claim is therefore upper-bound — at wet-lab handoff time, verify with actual ortholog mRNA sequences.</li>
+<li><strong>No off-target clearance.</strong> No seed-region (antisense pos 2-8) search against the human RefSeq transcriptome / 3'UTRome was performed (no local transcriptome BLAST DB in this environment). Guides are <strong>target-site candidates only</strong>, not off-target-cleared.</li>
+<li><strong>Conservation is an amino-acid REGION HINT</strong> from the ortholog protein set, not a nucleotide-level alignment of ortholog mRNAs. A shared amino acid can differ at the wobble position, so cross-species siRNA reuse must be re-verified on real ortholog transcripts.</li>
+<li><strong>Accessibility</strong> is RNAplfold local-window folding (Tafer 2008 correlation r≈0.6-0.7 with measured knockdown) — good for prioritisation, not absolute knockdown prediction.</li>
+<li><strong>Isoform:</strong> transcript variant 1 (NM_144585.4) only; other SLC22A12 isoforms not scanned.</li>
 </ol>
 
 

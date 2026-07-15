@@ -724,7 +724,7 @@ def analyze_combined_burden(uricase_results, lactoferrin_results, uricase_ss, lf
         "glycosylation_summary":           {"uricase_nxst": uricase_nxst, "lactoferrin_nxst": lf_nxst},
         "c_utilis_vs_aflavus_material_differences": [
             "Codon burden: HEAVY (C. utilis AT-biased, ~42% GC) vs. LOW (A. flavus GC-biased, ~54% GC, matching A. oryzae host). Full codon optimization required for C. utilis; minimal optimization for A. flavus.",
-            "KEX2 internal sites: 2 sites (positions 130 HIGH + 138 MODERATE) vs. 1 site (position 128 HIGH) in A. flavus. Both are non-load-bearing in direct-secretion design but relevant if moved to fusion.",
+            "KEX2 internal sites: 2 sites (positions 130 HIGH + 138 HIGH) vs. 1 site (position 128 HIGH) in A. flavus. Both are non-load-bearing in direct-secretion design but relevant if moved to fusion.",
             "Free cysteines: 4 Cys (0 disulfides annotated) vs. 0 Cys in A. flavus. Risk of aberrant ER disulfide bonds during secretion — absent in A. flavus.",
             "Routing signal: TKL microbody targeting signal (UniProt-annotated, residues 301-303) vs. SKL PTS1 variant in A. flavus (residues 300-302). Both are weak PTS1 variants; both are outcompeted by N-terminal secretion signal.",
             "Sequence origin: C. utilis is a yeast (Ascomycete, OX=4903) but has substantially different codon preference from A. oryzae (also Ascomycete but filamentous, higher GC). The A. flavus–A. oryzae GC alignment is a much closer match.",
@@ -917,6 +917,71 @@ def analyze_comparison(uricase_results, lactoferrin_results):
 
 
 # ---------------------------------------------------------------------------
+# ALLN-346 engineered variant (P78609 + ProteinGPS mutations, US10815461B2)
+# ---------------------------------------------------------------------------
+
+# The 7 publicly disclosed ALLN-346 / ProteinGPS directed-evolution mutations on the
+# C. utilis uricase backbone (US10815461B2). comp-011 originally analyzed WILD-TYPE
+# P78609 only, yet repeatedly RECOMMENDED the mutant construct — an artifact-contract
+# gap flagged by the 2026-07-13 independent comp review. This block adds the intended
+# mutant as a second analyzed sequence. I132R sits at the P1' residue of the
+# position-130 KR site (KRI -> KRR), so the mutant's KEX2 geometry may differ at the
+# single most cassette-design-sensitive position. All 7 positions were grep-verified
+# 1-indexed against the committed inputs/P78609.fasta (2026-07-14).
+ALLN346_MUTATIONS = [
+    ("E", 51, "K"), ("A", 87, "G"), ("I", 132, "R"), ("Y", 165, "F"),
+    ("I", 180, "V"), ("V", 190, "G"), ("Q", 244, "K"),
+]
+
+
+def apply_mutations(seq, mutations):
+    """Apply (wt, 1-indexed pos, mut) point mutations. Verify each WT residue matches
+    the sequence BEFORE substituting — a mis-indexed mutation aborts rather than
+    silently corrupting the analysis. Returns (mutant_seq, change_log)."""
+    residues = list(seq)
+    change_log = []
+    for wt, pos, mut in mutations:
+        actual = residues[pos - 1]
+        if actual != wt:
+            raise ValueError(
+                f"ALLN-346 mutation {wt}{pos}{mut}: expected WT '{wt}' at position {pos}, "
+                f"found '{actual}'. Positions must be verified against inputs/P78609.fasta."
+            )
+        residues[pos - 1] = mut
+        change_log.append({"mutation": f"{wt}{pos}{mut}", "wt": wt, "position": pos, "mut": mut})
+    return "".join(residues), change_log
+
+
+def analyze_mutant_kex2_delta(wt_kex2, mut_kex2, change_log):
+    """Compare WT vs ALLN-346-mutant KEX2 site classifications. Surfaces any site whose
+    risk changed — the load-bearing question is whether I132R alters the position-130 site."""
+    def index_sites(kex2):
+        return {s["position_in_mature"]: s for s in kex2["internal_kr_sites"]}
+    wt_sites, mut_sites = index_sites(wt_kex2), index_sites(mut_kex2)
+    changes = []
+    for pos in sorted(set(wt_sites) | set(mut_sites)):
+        w, m = wt_sites.get(pos), mut_sites.get(pos)
+        if w and m and w["site_risk"] != m["site_risk"]:
+            changes.append({"position_in_mature": pos, "wt_p1_prime": w["p1_prime"],
+                            "mut_p1_prime": m["p1_prime"], "wt_risk": w["site_risk"],
+                            "mut_risk": m["site_risk"]})
+        elif w and not m:
+            changes.append({"position_in_mature": pos, "change": "site_removed",
+                            "wt_p1_prime": w["p1_prime"], "wt_risk": w["site_risk"]})
+        elif m and not w:
+            changes.append({"position_in_mature": pos, "change": "site_created",
+                            "mut_p1_prime": m["p1_prime"], "mut_risk": m["site_risk"]})
+    return {
+        "mutations_applied": [c["mutation"] for c in change_log],
+        "wt_kr_site_count": wt_kex2["total_kr_sites_in_mature"],
+        "mutant_kr_site_count": mut_kex2["total_kr_sites_in_mature"],
+        "wt_overall_kex2_risk": wt_kex2["overall_kex2_risk"],
+        "mutant_overall_kex2_risk": mut_kex2["overall_kex2_risk"],
+        "site_risk_changes": changes,
+    }
+
+
+# ---------------------------------------------------------------------------
 # Main orchestrator
 # ---------------------------------------------------------------------------
 
@@ -963,6 +1028,22 @@ def main():
     lactoferrin_results = {"codon": lf_codon, "kex2": lf_kex2, "routing": lf_routing,
                            "disulfide": lf_disulf, "glycosylation": lf_glycan}
 
+    # ALLN-346 mutant analysis (added 2026-07-14 per comp-review audit action #2).
+    # comp-011 recommends the P78609 + ALLN-346 construct but originally analyzed only WT.
+    # Analyze the intended mutant directly; the headline question is whether I132R changes
+    # the position-130 KEX2 site classification.
+    mutant_seq, mut_change_log = apply_mutations(uricase_seq, ALLN346_MUTATIONS)
+    mut_name    = "C. utilis uricase P78609+ALLN-346"
+    mut_codon   = analyze_codon_usage(mutant_seq, mut_name, "Cyberlindnera jadinii (yeast, AT-biased)", codon_table, CUTILIS_PREFERRED_CODON)
+    mut_kex2    = analyze_kex2_sites(mutant_seq, mut_name, URICASE_SP_END, kex2_specs)
+    mut_routing = analyze_secretion_targeting(mutant_seq, mut_name, URICASE_SP_END)
+    mut_disulf  = analyze_disulfide_load(mutant_seq, mut_name, URICASE_DISULFIDES, "Cyberlindnera jadinii (yeast)")
+    mut_glycan  = predict_nxst_sites(mutant_seq, mut_name, URICASE_SP_END)
+    mutant_results = {"codon": mut_codon, "kex2": mut_kex2, "routing": mut_routing,
+                      "disulfide": mut_disulf, "glycosylation": mut_glycan,
+                      "change_log": mut_change_log}
+    mutant_kex2_delta = analyze_mutant_kex2_delta(uri_kex2, mut_kex2, mut_change_log)
+
     # Combined burden analysis (analysis 6)
     combined = analyze_combined_burden(uricase_results, lactoferrin_results, None, None)
 
@@ -983,6 +1064,9 @@ def main():
         "lactoferrin":       lactoferrin_results,
         "combined_burden":   combined,
         "comparison":        comparison,
+        "uricase_alln346_mutant":          mutant_results,
+        "uricase_alln346_kex2_delta_vs_wt": mutant_kex2_delta,
+        "mutant_analysis_added":           "2026-07-14 (comp-review audit action #2 — second analyzed sequence)",
     }
 
     with open(OUTPUTS / "cassette_analysis.json", "w") as f:
@@ -1030,7 +1114,7 @@ def write_summary(data, path):
         "",
         f"**Experiment:** comp-011  ",
         f"**Date:** {data['date']}  ",
-        f"**Script:** `experiments/comp-011-c-utilis-uricase-cassette-compatibility/analyze.py`  ",
+        f"**Script:** `wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/analyze.py`  ",
         f"**Follow-on to:** comp-010 (A. flavus uricase Q00511 + lactoferrin P02788)  ",
         "",
         "---",
@@ -1330,7 +1414,7 @@ def write_summary(data, path):
         "| Dimension | OE pair (*C. utilis* uricase + lactoferrin) | Huynh 2020 (adalimumab HC + LC) |",
         "|---|---|---|",
         "| Protein origins | Yeast (uricase) + Mammalian (Lf) | Mammalian + Mammalian |",
-        "| Total disulfides | 17 (all on Lf) | 16 (8 per chain) |",
+        f"| Total disulfides | {cb['dual_cassette_disulfide_load']} (all on Lf) | 16 (8 per chain) |",
         "| Free cysteines | 4 (from C. utilis uricase) | 0 |",
         "| Glycosylation sites (N-X-S/T) | 4 | 2 (Fc N297 ×2) |",
         "| Codon burden | HEAVY (uricase) + LOW (Lf) | HEAVY + HEAVY |",
@@ -1360,6 +1444,59 @@ def write_summary(data, path):
         for item in cmp['cutilis_comparable_to_huynh']:
             lines.append(f"- {item}")
         lines.append("")
+
+    # --- Section 3.8: ALLN-346 mutant (added 2026-07-14 per comp-review audit) ---
+    mut = data.get("uricase_alln346_mutant")
+    delta = data.get("uricase_alln346_kex2_delta_vs_wt")
+    if mut and delta:
+        lines += [
+            "---",
+            "",
+            "### 3.8 ALLN-346 Engineered Mutant — Second Analyzed Sequence (added 2026-07-14)",
+            "",
+            "comp-011 originally analyzed **wild-type P78609 only**, yet its recommendations invoke the "
+            "**P78609 + ALLN-346** construct (US10815461B2: E51K, A87G, I132R, Y165F, I180V, V190G, Q244K). "
+            "The 2026-07-13 independent comp review flagged this gap because **I132R lands on the P1′ residue "
+            "of the position-130 KEX2 site** (`KRI`→`KRR`). This section analyzes the intended mutant directly; "
+            "all 7 mutation positions were grep-verified against the committed `inputs/P78609.fasta`.",
+            "",
+            "| KEX2 axis | WT P78609 | P78609 + ALLN-346 |",
+            "|---|---|---|",
+            f"| Internal K-R sites | {delta['wt_kr_site_count']} | {delta['mutant_kr_site_count']} |",
+            f"| Overall KEX2 risk | {delta['wt_overall_kex2_risk']} | {delta['mutant_overall_kex2_risk']} |",
+            "",
+        ]
+        if delta["site_risk_changes"]:
+            lines.append("**KEX2 site changes (WT → mutant):**")
+            lines.append("")
+            lines.append("| Position (mature) | WT P1′ / risk | Mutant P1′ / risk |")
+            lines.append("|---|---|---|")
+            for c in delta["site_risk_changes"]:
+                if c.get("change") == "site_created":
+                    lines.append(f"| {c['position_in_mature']} | — (none) | {c['mut_p1_prime']} / {c['mut_risk']} (NEW) |")
+                elif c.get("change") == "site_removed":
+                    lines.append(f"| {c['position_in_mature']} | {c['wt_p1_prime']} / {c['wt_risk']} | — (removed) |")
+                else:
+                    lines.append(f"| {c['position_in_mature']} | {c['wt_p1_prime']} / {c['wt_risk']} | {c['mut_p1_prime']} / {c['mut_risk']} |")
+            lines.append("")
+        else:
+            lines.append("**No KEX2 site risk classifications changed between WT and mutant.**")
+            lines.append("")
+        lines += [
+            f"**Codon burden:** WT {data['uricase']['codon']['burden_label']} → mutant {mut['codon']['burden_label']} "
+            f"(7-of-303 residues changed). "
+            f"**Free cysteines:** WT {data['uricase']['disulfide']['free_cysteine_estimate']} → "
+            f"mutant {mut['disulfide']['free_cysteine_estimate']} (no Cys mutations). "
+            f"**Routing:** {mut['routing']['routing_risk']}.",
+            "",
+            "**Interpretation:** The ALLN-346 mutations do not change the overall dual-cassette verdict — codon "
+            "burden and free-Cys risk are unchanged, and the uricase KEX2 sites are non-load-bearing under direct "
+            "secretion. Their one cassette-relevant effect is **topology-conditional**: if §1.33 selects a "
+            "glucoamylase-KEX2 fusion topology, the WT plan of mutating both KR sites (130 + 138) shifts because "
+            "I132R already alters the position-130 site (see table above). This closes the audit gap — the "
+            "recommended mutant is no longer un-analyzed relative to what comp-011 concludes.",
+            "",
+        ]
 
     lines += [
         "---",
@@ -1446,15 +1583,15 @@ def write_summary(data, path):
         "",
         "## 7. Cross-References",
         "",
-        "- [wiki/c-utilis-uricase-cassette-compatibility-computational.md](../../wiki/c-utilis-uricase-cassette-compatibility-computational.md) — Interpretive wiki page for this experiment",
-        "- [wiki/uricase-variant-selection.md](../../wiki/uricase-variant-selection.md) — Industry-revealed preference analysis; comp-011 verdict added as subsection",
-        "- [wiki/cassette-compatibility-computational.md](../../wiki/cassette-compatibility-computational.md) — comp-010 page (A. flavus baseline)",
-        "- [wiki/hypotheses/H01-ward-dual-cassette.md](../../wiki/hypotheses/H01-ward-dual-cassette.md) — Falsification Card; comp-011 is design support for §1.9",
-        "- [wiki/koji-endgame-strain.md](../../wiki/koji-endgame-strain.md) — Protocol sketch for §1.9",
-        "- [wiki/validation-experiments.md](../../wiki/validation-experiments.md) — §1.9 wet-lab experiment this analysis informs",
-        "- [experiments/comp-010-cassette-compatibility/](../comp-010-cassette-compatibility/) — A. flavus uricase baseline (comp-010: LOW risk)",
-        "- [experiments/comp-001-uricase-shio-koji-protease-stability/](../comp-001-uricase-shio-koji-protease-stability/) — A. flavus uricase protease stability (LOW risk)",
-        "- [experiments/comp-005-lactoferrin-shio-koji-protease-stability/](../comp-005-lactoferrin-shio-koji-protease-stability/) — Lactoferrin protease stability (MODERATE mature)",
+        "- [wiki/c-utilis-uricase-cassette-compatibility-computational.md](../../../../c-utilis-uricase-cassette-compatibility-computational.md) — Interpretive wiki page for this experiment",
+        "- [wiki/uricase-variant-selection.md](../../../../uricase-variant-selection.md) — Industry-revealed preference analysis; comp-011 verdict added as subsection",
+        "- [wiki/cassette-compatibility-computational.md](../../../../cassette-compatibility-computational.md) — comp-010 page (A. flavus baseline)",
+        "- [wiki/hypotheses/H01-ward-dual-cassette.md](../../../../hypotheses/H01-ward-dual-cassette.md) — Falsification Card; comp-011 is design support for §1.9",
+        "- [wiki/koji-endgame-strain.md](../../../../koji-endgame-strain.md) — Protocol sketch for §1.9",
+        "- [wiki/validation-experiments.md](../../../../validation-experiments.md) — §1.9 wet-lab experiment this analysis informs",
+        "- [experiments/comp-010-cassette-compatibility/](../../comp-010-cassette-compatibility/) — A. flavus uricase baseline (comp-010: LOW risk)",
+        "- [experiments/comp-001-uricase-shio-koji-protease-stability/](../../comp-001-uricase-shio-koji-protease-stability/) — A. flavus uricase protease stability (LOW risk)",
+        "- [experiments/comp-005-lactoferrin-shio-koji-protease-stability/](../../comp-005-lactoferrin-shio-koji-protease-stability/) — Lactoferrin protease stability (MODERATE mature)",
         "",
         "---",
         "",

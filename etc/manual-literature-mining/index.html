@@ -5360,6 +5360,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#translation-protocol-two-model-independent-cross-check-inline-disagreement-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Translation protocol (two-model independent cross-check + inline disagreement annotations)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#when-paperclip-is-the-wrong-tool" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5719,6 +5730,31 @@
 - <a href="../../scripts/sweep-prompt-2-synthesize.md"><code>scripts/sweep-prompt-2-synthesize.md</code></a> §"Query-framing discipline" — the Pass 2 prompt-level codification of this discipline
 - <a href="../../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md"><code>logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md</code></a> — canonical retrospective with the empirical recovery rate
 - <a href="../../CLAUDE.md"><code>CLAUDE.md</code></a> §"Global-multilingual research by default" — the upstream discipline this operationalizes</p>
+<h2 id="translation-protocol-two-model-independent-cross-check-inline-disagreement-annotations">Translation protocol (two-model independent cross-check + inline disagreement annotations)<a class="headerlink" href="#translation-protocol-two-model-independent-cross-check-inline-disagreement-annotations" title="Permanent link">&para;</a></h2>
+<p><em>Canonical home for the translation discipline — pointed to from <code>CLAUDE.md</code>, <code>AGENTS.md</code>, and the <code>lit-scan</code> skill. The <code>translate_source_two_model()</code> helper in <code>experiments/lib/agentic_lit_synthesis.py</code> implements it.</em></p>
+<p>When ingesting non-English source material, <strong>translate with two independent models</strong> (different vendors, ideally different training pipelines) and produce an annotated translation that surfaces disagreements rather than collapsing them. Same multi-vendor cross-check discipline the wiki sweep daemon already uses (Pass 1 Propagate + Pass 2 Synthesize + Pass 3 Review per <code>wiki/etc/open-source-platform.md</code> §"Multi-model synthesis as guard against epistemic homogenization"). Translation has the same homogenization risk; the same heterogeneity guard applies.</p>
+<p><strong>Operational pattern:</strong></p>
+<ol>
+<li><strong>Two independent translations.</strong> Pick two models from different vendors:</li>
+<li>Model A: Claude (Anthropic) OR Gemini (Google)</li>
+<li>Model B: DeepSeek OR Qwen (both Chinese-vendor; native-language depth) OR GPT-5 (OpenAI)
+   For Chinese-source material, at least one model should be a Chinese-vendor model (DeepSeek or Qwen) — the native-language training depth catches idiomatic and classical-TCM-terminology nuances Western-trained models miss. For Japanese-source material, prefer a model with strong Japanese (Claude is competent; Gemini is reasonable; for deep Kampo terminology a Japanese-vendor option if available; otherwise two competent Western models is acceptable).
+   <strong>The Model-A cost rule:</strong> when a Claude subagent runs the scan, it IS Model A — the cross-check only pays OpenRouter for Model B. Never run both halves through OpenRouter (<code>feedback_subagent_as_model_a.md</code>).</li>
+<li><strong>Sentence-level comparison.</strong> Compare the two translations at sentence granularity (or paragraph if sentences are too short to differ meaningfully).</li>
+<li><strong>Where models AGREE → confident translation.</strong> Use that text directly.</li>
+<li><strong>Where models DISAGREE → inline annotation.</strong> Use a clear, scannable convention:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>The compound shows {Model A: &quot;significant&quot; | Model B: &quot;notable&quot;} reduction in IL-1β secretion at 10 μM.
+</code></pre></div>
+   Or for substantive disagreements (different mechanism implications, evidence tier, magnitude):
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{Model A: &quot;decreased serum urate by 1.2 mg/dL&quot;} {Model B: &quot;decreased serum uric acid by approximately 71 μmol/L&quot;}
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>[TRANSLATION NOTE: Models agree on direction and rough magnitude (1.2 mg/dL ≈ 71 μmol/L), differ on unit choice in the source. Verify against original-language paper if precision matters for downstream calculation.]
+</code></pre></div></li>
+<li><strong>For load-bearing claims, escalate.</strong> If a translation disagreement affects an evidence-tier judgment, a dose calculation, a mechanism mapping, or a chokepoint assignment — flag it explicitly with <code>[TRANSLATION-DISAGREEMENT]</code> so future readers know the underlying source has interpretive ambiguity. Do not resolve the disagreement silently by picking one translation.</li>
+<li><strong>Specific high-risk categories</strong> where disagreement should always be flagged: scientific terminology with mechanism implications ("inhibits" vs "modulates" vs "suppresses"), evidence-tier hedging ("shows" vs "suggests" vs "may"), dosing units and routes, classical TCM / Kampo / Ayurvedic terminology vs modernized equivalents, statistical-significance language, sample-size and study-design descriptions.</li>
+</ol>
+<p><strong>Why two models, why independent, why surface disagreements:</strong> translation is interpretation. A single model's interpretation has its training-distribution bias, vendor bias, and idiomatic-fluency strengths/weaknesses baked in. Two models from different vendors share less bias. The disagreements are EXACTLY where translation nuance lives — silently picking one model's choice loses information the original-language paper had. Surfacing the disagreement preserves the precision the source intended.</p>
+<p><strong>Cost note:</strong> translation runs add a small marginal cost per non-English source (typically &lt;$0.05/paper at current API pricing) — negligible relative to getting load-bearing scientific claims right. Does NOT add cost to the sweep daemon (English-corpus synthesis) — only to explicit lit-scan / source-ingestion flows.</p>
+<p><strong>Why this rule exists:</strong> added 2026-05-05 with the global-multilingual default. Brian's framing: <em>"if we bring in non-english papers, i think we need to have a protocol for translation that involves 2 completely independent models and we can have inline annotations where the models may disagree on nuance because in science nuance and precision matter."</em> The discipline matches the heterogeneity-guard logic established for the sweep daemon.</p>
 <h2 id="when-paperclip-is-the-wrong-tool">When Paperclip is the wrong tool<a class="headerlink" href="#when-paperclip-is-the-wrong-tool" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>For ChEMBL bioactivity data</strong> — use the ChEMBL MCP directly. Paperclip's index is paper-level; ChEMBL is target-and-compound-level with curated quantitative bioactivity. See <a href="../chembl-cross-check/"><code>chembl-cross-check.md</code></a> for the cross-check discipline.</li>

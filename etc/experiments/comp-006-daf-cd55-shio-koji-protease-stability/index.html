@@ -5362,13 +5362,13 @@
 </tbody>
 </table>
 <p><strong>The key finding:</strong> Unlike comp-005 (lactoferrin), where HIGH was signal-peptide-contingent and dropped to MODERATE once the signal peptide was excluded, the CD55 ectodomain verdict remains HIGH even in the most favorable engineering scope (aa 35–353). The driver is the <strong>Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52)</strong> — 68 residues of fully disordered polypeptide within the soluble ectodomain itself. NPr alone has 9 exposed stalk sites; ALP has 48. The SCR1–4 domains (aa 35–285, pLDDT 85–98) are well-folded and largely resistant.</p>
-<p><strong>Critical caveat:</strong> This verdict is stalk-contingent, and the stalk is removable. A construct truncated at SCR4 (aa 35–285) would eliminate all 9 NPr stalk sites and 48 ALP stalk sites. A comp-007 analysis of the SCR1-4-only construct is the logical follow-up before dismissing CD55 as an engineering candidate.</p>
+<p><strong>Critical caveat:</strong> This verdict is stalk-contingent, and the stalk is removable. A construct truncated at SCR4 (aa 35–285) would eliminate all 9 NPr stalk sites and 48 ALP stalk sites — this SCR1-4-only truncation was analyzed as the follow-up in <strong>comp-012</strong> (not comp-007, as an earlier draft stated). Note also that the ectodomain HIGH is a <strong>conservative stress-test dependent on NPr pH factor = 1.0</strong>; at realistic NPr activity (~0.3–0.5) the NPr max score falls below the HIGH threshold and the ectodomain verdict shifts toward MODERATE/LOW, leaving the disordered stalk as the actual engineering liability.</p>
 <p><strong>Informs:</strong> <a href="../../../modality-chokepoint-matrix/"><code>wiki/modality-chokepoint-matrix.md</code></a> — "Engineered soluble complement regulators" row (CP0 platform gap)</p>
 <p><strong>Interpretive wiki page:</strong> <a href="../../../daf-cd55-protease-stability-computational/"><code>wiki/daf-cd55-protease-stability-computational.md</code></a></p>
 <p><strong>Companion experiments:</strong> <a href="../comp-001-uricase-shio-koji-protease-stability/">comp-001 (uricase, LOW)</a>, <a href="../comp-005-lactoferrin-shio-koji-protease-stability/">comp-005 (lactoferrin, HIGH/MODERATE)</a></p>
 <hr />
 <h2 id="how-to-reproduce">How to reproduce<a class="headerlink" href="#how-to-reproduce" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>experiments/comp-006-daf-cd55-shio-koji-protease-stability
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python3<span class="w"> </span>analyze.py
 </code></pre></div>
 <p>No external packages required (stdlib only: json, pathlib). Outputs land in <code>outputs/</code>.</p>
@@ -5423,13 +5423,13 @@
 </tr>
 </tbody>
 </table>
-<p>All ectodomain exposed sites are in the Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52). The SCR1–4 domains (aa 35–285) contribute zero exposed sites. If the stalk is truncated from the engineering construct, the ectodomain verdict would shift substantially toward LOW.</p>
+<p>All ectodomain exposed sites are in the Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52). The SCR1–4 domains (aa 35–285) contribute zero <strong>low-pLDDT exposed-by-proxy</strong> sites — this is a pLDDT-based exposure proxy, not a SASA (solvent-accessible surface area) result; no SASA calculation was performed. If the stalk is truncated from the engineering construct, the ectodomain verdict would shift substantially toward LOW.</p>
 <hr />
 <h2 id="structural-interpretation">Structural interpretation<a class="headerlink" href="#structural-interpretation" title="Permanent link">&para;</a></h2>
 <p>CD55 has two structurally distinct zones:</p>
 <ol>
 <li>
-<p><strong>SCR1–4 domains (aa 35–285):</strong> pLDDT 85–98, well-folded, disulfide-stabilized (3 disulfides / domain). These carry the complement-regulatory activity. Structurally comparable to the uricase core in comp-001 — highly resistant.</p>
+<p><strong>SCR1–4 domains (aa 35–285):</strong> pLDDT 85–98, well-folded, disulfide-stabilized (2 disulfides / domain; 8 total in SCR1-4, per UniProt P08174). These carry the complement-regulatory activity. Structurally comparable to the uricase core in comp-001 — highly resistant.</p>
 </li>
 <li>
 <p><strong>Ser/Thr-rich stalk (aa 286–353):</strong> pLDDT 30–52, fully disordered. In the native membrane-anchored context, this is an O-glycosylated linker between SCR4 and the GPI anchor — it has no known enzymatic or binding function. In a heterologous soluble ectodomain, the stalk is present as an unstructured polypeptide. Without native O-glycosylation (or with different <em>A. oryzae</em> O-glycans), this region is a high-accessibility protease target.</p>

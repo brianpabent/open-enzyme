@@ -1,5 +1,19 @@
 #!/usr/bin/env python3
 """
+DEPRECATED — NOT the canonical v2 writer (marked 2026-07-14, independent comp review).
+
+`analyze_v2.py` is the CANONICAL script that produced the committed
+`outputs/v2_shortlist.csv` and `outputs/v2_summary.json` (its column schema —
+`concordance_n5`, `composite_v2`, `top20_*`, `esm_pll`, `mfe` — matches the
+committed CSV). This `rerank_v2.py` is an earlier, conflicting writer that emits
+the same filenames with a DIFFERENT schema (`n_of_5`, `esm2_pseudo_pLDDT`,
+`mfe_v2`, `composite`) and different summary fields. It is retained for history
+but MUST NOT be run to (re)generate the committed v2 outputs — doing so would
+overwrite them with an incompatible schema. Canonical reproduction:
+`cd wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2 && python3 analyze_v2.py`.
+
+---
+
 comp-022 v2 re-ranking: compose subagent's ESM2 PLL + ViennaRNA MFE
 with v1's per-cassette scores under N-of-5 concordance.
 

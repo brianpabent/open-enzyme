@@ -4240,10 +4240,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#comp-032-abcg2-q141k-pharmacological-chaperone-virtual-screen-green-2026-05-16" class="md-nav__link">
+  <a href="#comp-047-abcg2-q141k-pharmacological-chaperone-re-screen-real-docking-inconclusive-2026-07-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        comp-032 — ABCG2 Q141K Pharmacological-Chaperone Virtual Screen — GREEN (2026-05-16)
+        comp-047 — ABCG2 Q141K Pharmacological-Chaperone Re-screen (real docking) — INCONCLUSIVE (2026-07-14)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comp-032-abcg2-q141k-pharmacological-chaperone-virtual-screen-green-superseded-2026-05-16-superseded-by-comp-047-2026-07-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        comp-032 — ABCG2 Q141K Pharmacological-Chaperone Virtual Screen — ~~GREEN~~ SUPERSEDED (2026-05-16; superseded by comp-047 2026-07-14)
       
     </span>
   </a>
@@ -4262,10 +4273,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#comp-027-disulfiram-dose-modeling-for-gsdmd-blockade-vs-der-ceiling-yellow-leaning-green-2026-05-16" class="md-nav__link">
+  <a href="#comp-027-disulfiram-dose-modeling-for-gsdmd-blockade-vs-der-ceiling-hypothesis-generator-2026-05-16-downgraded-from-yellow-leaning-green-by-comp-review-2026-07-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        comp-027 — Disulfiram Dose Modeling for GSDMD Blockade vs DER Ceiling — YELLOW-leaning-GREEN (2026-05-16)
+        comp-027 — Disulfiram Dose Modeling for GSDMD Blockade vs DER Ceiling — hypothesis-generator (2026-05-16; downgraded from YELLOW-leaning-GREEN by comp-review 2026-07-14)
       
     </span>
   </a>
@@ -5926,7 +5937,7 @@
 <p><strong>Verdict:</strong> <strong>YELLOW.</strong> No ready-to-adopt simple/home colorimetric or breath-based butyrate assay surfaced. Two plausible Tier 2 candidates surfaced: HPLC-UV SCFA + lactate assay for culture-supernatant / engineered-strain work, and electrochemical fecal SCFA profiling with ANN deconvolution as an emerging stool-specific direction. Both require full-text/protocol review and paired GC-MS validation before OE adoption.</p>
 <p><strong>Key findings:</strong>
 - PubMed snapshot: 27 queries / 74 records; source snapshot committed at <code>outputs/pubmed-snapshot.json</code>.
-- HPLC-UV for bacterial culture supernatants is the best near-term Tier 2-lab candidate (PMID 23542733), but still needs full text, butyrate-specific precision/recovery extraction, OE spike recovery, and paired GC-MS.
+- HPLC-UV for bacterial culture supernatants is the best near-term Tier 2-lab candidate (De Baere 2013, PMID 23542733) — <strong>full-text-verified against the primary source 2026-07-14</strong> (0.5–50 mM, r 0.9951–0.9993, underivatized UV 210 nm, bacterial-culture-supernatant matrix). The remaining gate is OE spike/recovery + paired GC-MS (validation §1.31).
 - Electrochemical fecal SCFA profiling is the most promising stool-specific future Tier 2 direction (PMID 42041444), but remains research-platform grade.
 - Breath H2/CH4 is useful as a broad fermentation/adherence proxy, not butyrate-specific quantification.
 - Generic free-fatty-acid colorimetric kits are a false-friend class; representative protocol excludes acetic, propionic, and butyric acid.
@@ -5997,15 +6008,27 @@
 <p><strong>Informs:</strong> <a href="../chassis-pending-interventions/">chassis-pending-interventions §4</a> · <a href="../etc/open-enzyme-vision/">etc/open-enzyme-vision §10</a> · <a href="../modality-chokepoint-matrix/">modality-chokepoint-matrix</a> · <a href="../delivery-route-matrix/">delivery-route-matrix</a> · <a href="../repeat-dose-inhaled-mrna-il1ra-pkpd-computational/">repeat-dose-inhaled-mrna-il1ra-pkpd-computational</a> (comp-036 reframe)</p>
 <p><strong>Detail:</strong> <a href="../inhaled-mrna-il1ra-pulse-computational/">interpretive</a> · <a href="./etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/">experiments/</a> · Complete v1</p>
 <hr />
-<h3 id="comp-032-abcg2-q141k-pharmacological-chaperone-virtual-screen-green-2026-05-16">comp-032 — ABCG2 Q141K Pharmacological-Chaperone Virtual Screen — GREEN (2026-05-16)<a class="headerlink" href="#comp-032-abcg2-q141k-pharmacological-chaperone-virtual-screen-green-2026-05-16" title="Permanent link">&para;</a></h3>
-<p><strong>Question:</strong> Is there an FDA-approved small molecule that binds ABCG2 Q141K's nucleotide-binding domain (NBD) and could rescue trafficking, or does the FDA-approved drug surface lack chaperone-active hits — requiring novel chemistry?</p>
-<p><strong>Verdict:</strong> <strong>GREEN.</strong> Shortlist of 10 candidates passes the four-gate filter (composite ≥ 0.75, chaperone-compatible drug class, 503A-eligible-or-chaperone-class, oral bioavailable). All four CFTR-corrector positive controls (lumacaftor, tezacaftor, ivacaftor, elexacaftor) rank in the top 11% of the 134-molecule library, all above the highest-scoring decoy.</p>
+<h3 id="comp-047-abcg2-q141k-pharmacological-chaperone-re-screen-real-docking-inconclusive-2026-07-14">comp-047 — ABCG2 Q141K Pharmacological-Chaperone Re-screen (real docking) — INCONCLUSIVE (2026-07-14)<a class="headerlink" href="#comp-047-abcg2-q141k-pharmacological-chaperone-re-screen-real-docking-inconclusive-2026-07-14" title="Permanent link">&para;</a></h3>
+<p><strong>Question:</strong> Same as comp-032 — is there an FDA-approved molecule that binds a fold-stabilizing NBD site on Q141K ABCG2 (not the ATP pocket), not a known ABCG2 inhibitor, worth a wet-lab trafficking assay? Re-asked with <strong>real AutoDock Vina docking</strong> instead of comp-032's descriptor heuristic.</p>
+<p><strong>Verdict:</strong> <strong>INCONCLUSIVE (honest null).</strong> Of 134 docked molecules: 0 high-confidence candidates, 2 marginal "uncertain" (rosuvastatin, vorinostat). The decisive result is in the controls: the <strong>4 CFTR-corrector positive controls failed to earn rank</strong> (0/4 reached candidate tier, no class prior), while all 13 known ABCG2 inhibitors were correctly rejected (0 false positives). Because the positive controls don't separate from the field, the screen has no demonstrated power to find real chaperones.</p>
 <p><strong>Key findings:</strong>
-- Three mechanistically-distinct chemistry classes pass with composite ≥ 0.85: CFTR correctors (lumacaftor top hit, 1.000; same ABC superfamily); tetramer/aggregate stabilizers (tafamidis, diflunisal — anionic aromatics matching Q141K's +1 pocket); bile-acid chemical chaperones (ursodiol, TUDCA — Hsp70 axis, F508del-CFTR rescue precedent).
-- Heuristic elevates sodium butyrate + vorinostat, but only the pharmacological rescue class is directly anchored by Basseville 2012; butyrate remains an unvalidated ranked candidate, not independent corroboration.
-- Next step: real-docking re-screen (AutoDock Vina) on top 10 + targeted HEK293-Q141K trafficking assay. Do NOT pivot to novel-binder design — the repurposing surface is empirically non-empty.</p>
-<p><strong>Informs:</strong> <a href="../chassis-pending-interventions/">chassis-pending-interventions §7</a> (promotes placeholder comp-NNN to comp-032) · <a href="../abcg2-modulators/">abcg2-modulators</a> §"Pharmacological-chaperone route" · <a href="../compounding-pharmacy-track/">compounding-pharmacy-track</a></p>
-<p><strong>Detail:</strong> <a href="../abcg2-q141k-chaperone-screen-computational/">interpretive</a> · <a href="./etc/experiments/comp-032-abcg2-q141k-chaperone-screen/">experiments/</a> · Complete v1</p>
+- <strong>Empirically confirms the comp-032 audit.</strong> Removing comp-032's class prior and making the same CFTR-corrector controls earn rank from docking → they fail (ivacaftor rank 91/134; lumacaftor is the #2 fold binder but binds the ATP pocket harder, margin −1.42). comp-032's "chaperone signal" was the prior.
+- <strong>Two failure reasons:</strong> (1) the fold-vs-transport margin is confounded — the ATP/Walker-A pocket is a strong generic binder (median transport −6.09 vs fold −4.86 kcal/mol), so "prefers fold site" selects against almost everything; boxes are disjoint (32.6 Å apart), not an overlap artifact. (2) Rigid-receptor docking can't model the chaperone mechanism (folding-intermediate stabilization / ΔTm).
+- <strong>Two honest residual gaps:</strong> sensitivity analysis did not run (no sensitivity.json); Axis 2 (ChEMBL) populated for only 3/135 molecules — known-inhibitor disqualification otherwise rests on curated role-tags. Neither changes the null (which rests on Axis 1 controls failing).
+- <strong>Next step is not another docking pass</strong> — it's folding-ΔΔG modeling (MD / Rosetta) or a wet-lab Q141K trafficking + urate-flux + ABCG2-inhibition counterscreen.</p>
+<p><strong>Detail:</strong> <a href="../abcg2-q141k-chaperone-rescreen-computational/">interpretive</a> · <a href="./etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/">experiments/</a> · supersedes comp-032</p>
+<hr />
+<h3 id="comp-032-abcg2-q141k-pharmacological-chaperone-virtual-screen-green-superseded-2026-05-16-superseded-by-comp-047-2026-07-14">comp-032 — ABCG2 Q141K Pharmacological-Chaperone Virtual Screen — ~~GREEN~~ SUPERSEDED (2026-05-16; superseded by comp-047 2026-07-14)<a class="headerlink" href="#comp-032-abcg2-q141k-pharmacological-chaperone-virtual-screen-green-superseded-2026-05-16-superseded-by-comp-047-2026-07-14" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>⚠️ Verdict RETRACTED.</strong> The GREEN below is a descriptor/class-prior heuristic whose positive-control validation was tautological (comp-review 2026-07-13). <a href="../abcg2-q141k-chaperone-rescreen-computational/">comp-047</a> re-ran it with real docking → INCONCLUSIVE (positive controls failed to earn rank). Retained as frozen record; do not cite as support.</p>
+</blockquote>
+<p><strong>Question:</strong> Is there an FDA-approved small molecule that binds ABCG2 Q141K's nucleotide-binding domain (NBD) and could rescue trafficking, or does the FDA-approved drug surface lack chaperone-active hits — requiring novel chemistry?</p>
+<p><strong>Verdict (retracted):</strong> ~~<strong>GREEN.</strong> Shortlist of 10 candidates passes the four-gate filter.~~ The shortlist is a prior-weighted descriptor ranking, not binding/rescue evidence; the "all four CFTR controls above decoy max" claim is a formula artifact of the 0.15 decoy prior (0.15^(&#8533;) = 0.684), not independent validation.</p>
+<p><strong>Key findings (historical, retracted as evidence):</strong>
+- Three chemistry classes scored ≥ 0.85 (CFTR correctors, tetramer stabilizers, bile-acid chaperones) — but the ranking is driven by the hand-assigned class prior, and ABCG2 <em>inhibitors</em> also scored high (the confound comp-047's Axis 2 targets).
+- Real-docking re-screen (comp-047) is now <strong>complete → INCONCLUSIVE</strong>, not the hypothesis-confirming step comp-032 anticipated. Do NOT treat the repurposing surface as empirically supported; do NOT queue a compounding-pharmacy conversation on this route.</p>
+<p><strong>Informs (now downgraded to hypothesis-only):</strong> <a href="../chassis-pending-interventions/">chassis-pending-interventions §7</a> · <a href="../abcg2-modulators/">abcg2-modulators</a> §"Pharmacological-chaperone route" · <a href="../compounding-pharmacy-track/">compounding-pharmacy-track</a></p>
+<p><strong>Detail:</strong> <a href="../abcg2-q141k-chaperone-screen-computational/">interpretive (superseded)</a> · <a href="./etc/experiments/comp-032-abcg2-q141k-chaperone-screen/">experiments/</a> · superseded by <a href="../abcg2-q141k-chaperone-rescreen-computational/">comp-047</a></p>
 <hr />
 <h3 id="comp-031-dual-chassis-ecn-pdb-uricase-additive-sua-prediction-invalidated-2026-07-13">comp-031 — Dual-chassis EcN PDB + Uricase Additive SUA Prediction — <strong>INVALIDATED 2026-07-13</strong><a class="headerlink" href="#comp-031-dual-chassis-ecn-pdb-uricase-additive-sua-prediction-invalidated-2026-07-13" title="Permanent link">&para;</a></h3>
 <p><strong>Original question:</strong> Would PDB-EcN plus luminal UOX produce additive ΔSUA and a PDB-derived butyrate→ABCG2/Q141K synergy?</p>
@@ -6013,9 +6036,9 @@
 <p><strong>Replacement work:</strong> <a href="../gut-lumen-uricase-physiologic-regime-computational/">comp-044</a> reopens the UOX regime; <a href="../staged-purine-sink-mass-balance-computational/">comp-046</a> supplies separate conserved ledgers and a conditional architecture boundary; <a href="../validation-experiments/#137-cbt20-carbon-fate-and-pdb-self-niche-test">validation §1.37</a> measures actual CBT2.0 products.</p>
 <p><strong>Detail:</strong> <a href="../dual-chassis-ecn-pdb-uricase-computational/">invalidated interpretive page</a> · <a href="./etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/">frozen artifact</a> · Invalidated, retained for provenance</p>
 <hr />
-<h3 id="comp-027-disulfiram-dose-modeling-for-gsdmd-blockade-vs-der-ceiling-yellow-leaning-green-2026-05-16">comp-027 — Disulfiram Dose Modeling for GSDMD Blockade vs DER Ceiling — YELLOW-leaning-GREEN (2026-05-16)<a class="headerlink" href="#comp-027-disulfiram-dose-modeling-for-gsdmd-blockade-vs-der-ceiling-yellow-leaning-green-2026-05-16" title="Permanent link">&para;</a></h3>
+<h3 id="comp-027-disulfiram-dose-modeling-for-gsdmd-blockade-vs-der-ceiling-hypothesis-generator-2026-05-16-downgraded-from-yellow-leaning-green-by-comp-review-2026-07-14">comp-027 — Disulfiram Dose Modeling for GSDMD Blockade vs DER Ceiling — hypothesis-generator (2026-05-16; downgraded from YELLOW-leaning-GREEN by comp-review 2026-07-14)<a class="headerlink" href="#comp-027-disulfiram-dose-modeling-for-gsdmd-blockade-vs-der-ceiling-hypothesis-generator-2026-05-16-downgraded-from-yellow-leaning-green-by-comp-review-2026-07-14" title="Permanent link">&para;</a></h3>
 <p><strong>Question:</strong> Is there a sub-AUD oral disulfiram dose window where plasma DSF engages GSDMD (CP6b pyroptotic-exit block) at a therapeutically meaningful level while plasma Me-DTC stays below the ALDH-inhibition threshold driving the disulfiram-ethanol reaction (DER)?</p>
-<p><strong>Verdict:</strong> <strong>YELLOW-leaning-GREEN</strong> — narrow sub-AUD window exists around <strong>75–125 mg/day</strong>, centered on 100 mg/day. At 100 mg/d: ~57% GSDMD blockade (DSF Cmax ~0.4 µM) at ~40% ALDH inhibition (Me-DTC ~70 nM, right at Faiman DER hypotension threshold). Below 50 mg/d, GSDMD blockade drops &lt;40%; above 125 mg/d, ALDH inhibition crosses DER threshold. Strict-GREEN at 100 mg/d under conservative cell-free EC50 anchor; cellular-preincub anchor extends GREEN down to 50 mg/d. Gates the 503A compounding-pharmacy disulfiram pathway.</p>
+<p><strong>Verdict (downgraded to hypothesis-generator, comp-review 2026-07-14):</strong> a <strong>single strict-GREEN modeled point at 100 mg/day</strong> under current (unverified) Cmax + ALDH-calibration assumptions — <strong>NOT a validated "75–125 mg/day window"</strong> (those bounds were broadened from the single point, and 100 mg/day sits exactly on a hard-coded decision boundary). Hypothesis to test, not a dose recommendation. At 100 mg/d: ~57% GSDMD blockade (DSF Cmax ~0.4 µM) at ~40% ALDH inhibition (Me-DTC ~70 nM, right at Faiman DER hypotension threshold). Below 50 mg/d, GSDMD blockade drops &lt;40%; above 125 mg/d, ALDH inhibition crosses DER threshold. Strict-GREEN at 100 mg/d under conservative cell-free EC50 anchor; cellular-preincub anchor extends GREEN down to 50 mg/d. Gates the 503A compounding-pharmacy disulfiram pathway.</p>
 <p><strong>Key findings:</strong>
 - Sub-AUD DSF is a <strong>selective GSDMD inhibitor</strong>, not a pan-NLRP3 inhibitor — the NLRP3-palmitoylation pathway (Xu 2024, 10 µM EC50) is NOT engaged at any sub-AUD dose.
 - DER threshold is the load-bearing ceiling; alcohol-abstention requirement is a compliance question for the 503A protocol.
@@ -6047,10 +6070,11 @@
 <p><strong>Question:</strong> Across the <em>A. oryzae</em> uricase cassette design space (43,200 combinations), which cassettes survive a multi-model concordance gate?</p>
 <p><strong>Current verdict:</strong> <strong>Useful candidate ranking; topology not selected.</strong> The direct-secretion top cluster and its gene-synthesis refinements survive within comp-022's search space, but comp-044/045 showed that §1.33 must determine whether secretion is physiologically credible before promotion to §1.9B.</p>
 <p><strong>Key findings:</strong>
-- Three zero-cost gene-synthesis refinements: 5'-softened codon optimization; PTS1-blocking C-term tag (addresses comp-010 routing risk at design layer); N191Q glycosylation ablation.
+- Zero-cost gene-synthesis refinements that survive v2 concordance: 5'-softened codon optimization; N191Q glycosylation ablation. PTS1-blocking C-term tag remains biologically motivated (addresses comp-010 routing risk) but is <strong>not</strong> a v2-strict-tier requirement — non-PTS1-blocked scaffolds also reach N-of-5 = 5 (corrected 2026-07-14; see comp-022 <code>wiki-archive.md</code> §9.3).
+- The v2 strict N-of-5 = 5 tier is a distinct 4-cassette set spanning PamyB + PglaA promoters, <strong>not</strong> identical to the v1 top cluster (only 1 of the 4 is a v1-top-cluster member). The v1 top cluster does survive the looser N-of-5 ≥ 4 gate (4 of 4).
 - Within the tested koji-secreted cassette space, glucoamylase-KEX2 fusion ranks below direct secretion. This does not compare koji secretion with intracellular, displayed, or bacterial topologies in §1.33.
 - v1 GC-clamp proxy vs real ViennaRNA MFE Spearman ρ = 0.241; v2 materially shifted ranks while preserving the internal direct-secretion cluster.</p>
-<p><strong>Informs:</strong> <a href="../validation-experiments/">validation-experiments §1.9</a> · <a href="../cassette-compatibility-computational/">cassette-compatibility-computational</a> · <a href="../koji-endgame-strain/">koji-endgame-strain §3.4</a> · <a href="../etc/autonomous-screening-methodology/">etc/autonomous-screening-methodology</a></p>
+<p><strong>Informs:</strong> <a href="../validation-experiments/">validation-experiments §1.33 (topology gate) + conditional §1.9B</a> · <a href="../cassette-compatibility-computational/">cassette-compatibility-computational</a> · <a href="../koji-endgame-strain/">koji-endgame-strain §3.4</a> · <a href="../etc/autonomous-screening-methodology/">etc/autonomous-screening-methodology</a></p>
 <p><strong>Detail:</strong> <a href="../uricase-cassette-ranking-computational/">interpretive</a> · <a href="./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/">experiments/</a> · v2 complete (v2.5 deferred until §1.33/§1.9B wet-lab data lands)</p>
 <hr />
 <h3 id="comp-023-cns1cns2-cordycepin-cassette-metabolic-burden-fba-on-iwv1314-green-2026-05-14">comp-023 — cns1+cns2 Cordycepin Cassette Metabolic Burden (FBA on iWV1314) — GREEN (2026-05-14)<a class="headerlink" href="#comp-023-cns1cns2-cordycepin-cassette-metabolic-burden-fba-on-iwv1314-green-2026-05-14" title="Permanent link">&para;</a></h3>
@@ -6099,7 +6123,7 @@
 <hr />
 <h3 id="comp-006-dafcd55-shio-koji-protease-stability-full-ectodomain-high-2026-05-05">comp-006 — DAF/CD55 Shio-Koji Protease Stability (full ectodomain) — HIGH (2026-05-05)<a class="headerlink" href="#comp-006-dafcd55-shio-koji-protease-stability-full-ectodomain-high-2026-05-05" title="Permanent link">&para;</a></h3>
 <p><strong>Question:</strong> Would the DAF/CD55 soluble ectodomain (aa 35–353: SCR1–4 + Ser/Thr stalk) survive shio-koji protease conditions?</p>
-<p><strong>Verdict:</strong> <strong>HIGH / HIGH / HIGH</strong> across full / mature / soluble-ectodomain scopes. Driver: Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52, disordered). SCR1–4 (aa 35–285, pLDDT 85–98) contribute <strong>zero exposed sites</strong>.</p>
+<p><strong>Verdict:</strong> <strong>HIGH / HIGH / HIGH</strong> across full / mature / soluble-ectodomain scopes. Driver: Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52, disordered). SCR1–4 (aa 35–285, pLDDT 85–98) contribute <strong>zero low-pLDDT exposed-by-proxy sites</strong> (pLDDT-based proxy, not a SASA result). Note the ectodomain HIGH is a <strong>conservative stress-test dependent on NPr pH factor = 1.0</strong>; at realistic NPr activity (~0.3–0.5) it shifts toward MODERATE/LOW, leaving the disordered stalk as the liability (corrected 2026-07-14).</p>
 <p><strong>Key findings:</strong>
 - HIGH verdict is stalk-contingent, not SCR-domain-contingent. Truncation at SCR4 surfaces as the load-bearing follow-up (became comp-012).
 - SCR1–4 core compares favorably with uricase (comp-001) in structural stability.</p>
@@ -6251,16 +6275,16 @@
 <td>✓ Done as comp-005</td>
 </tr>
 <tr>
-<td>comp-008</td>
-<td><em>F. prausnitzii</em> heterologous expression feasibility (codon, GC, secretion, payload tractability ranking)</td>
+<td>~~comp-008~~</td>
+<td><strong>Completed 2026-05-16</strong> — <em>F. prausnitzii</em> heterologous expression feasibility. BCoAT native-butyrate boost is the leading payload; uricase contraindicated for anaerobic Fp; disulfide payloads secretion/folding-gated. See <a href="../f-prausnitzii-heterologous-expression-computational/">interpretive page</a>.</td>
 <td><a href="../engineered-lbp-chassis/">engineered-lbp-chassis</a> Phase 2 P2-4</td>
-<td>Medium</td>
+<td>✓ Done</td>
 </tr>
 <tr>
-<td>comp-009</td>
-<td>URAT1 mRNA structural analysis for siRNA target site selection</td>
+<td>~~comp-009~~</td>
+<td><strong>Completed; RERUN 2026-07-14</strong> on the real NM_144585.4 mRNA (original artificial-CDS run invalidated). 8 real-transcript target sites pass design filters; accessibility low (real RNAplfold) + off-target uncleared. See <a href="../urat1-sirna-target-site-selection-computational/">interpretive page</a>.</td>
 <td><a href="../sirna-urat1-modality/">sirna-urat1-modality</a> Phase 2 P2-2</td>
-<td>Medium</td>
+<td>✓ Done (rerun)</td>
 </tr>
 <tr>
 <td>~~comp-011 TCM~~</td>
@@ -6318,7 +6342,7 @@
 </tr>
 <tr>
 <td>~~comp-027~~</td>
-<td>Completed 2026-05-16 — YELLOW-leaning-GREEN (sub-AUD window 75–125 mg/d). See Analyses above</td>
+<td>Completed 2026-05-16; <strong>downgraded to hypothesis-generator 2026-07-14</strong> — single strict-GREEN modeled point at 100 mg/d (not a validated 75–125 window). See Analyses above</td>
 <td>—</td>
 <td>✓ Done</td>
 </tr>
@@ -6336,14 +6360,20 @@
 </tr>
 <tr>
 <td>~~comp-031~~</td>
-<td>Completed 2026-05-16 — YELLOW; combined ΔSUA −1.8 to −1.9 mg/dL; separate-strain handoff. See Analyses above</td>
+<td><strong>Invalidated 2026-07-13</strong> — dual-chassis EcN+PDB+uricase inherited comp-019's failed UOX regime; the combined ΔSUA numbers (−1.8 to −1.9 mg/dL) are <strong>retracted</strong>. The separate-strain-vs-dual-cassette <em>reasoning</em> (substrate competition) is preserved; see <a href="../dual-chassis-ecn-pdb-uricase-computational/">dual-chassis page</a>, comp-046, §1.34/§1.37.</td>
 <td>—</td>
-<td>✓ Done</td>
+<td>✓ Done (invalidated)</td>
 </tr>
 <tr>
 <td>~~comp-032~~</td>
-<td>Completed 2026-05-16 — GREEN; 10-candidate FDA-approved shortlist; lumacaftor top hit. See Analyses above</td>
+<td>Completed 2026-05-16 — ~~GREEN~~ <strong>SUPERSEDED by comp-047 2026-07-14</strong>; verdict retracted (tautological positive-control validation per comp-review 2026-07-13). See Analyses above</td>
 <td>—</td>
+<td>✓ Done (superseded)</td>
+</tr>
+<tr>
+<td>~~comp-047~~</td>
+<td><strong>Completed 2026-07-14 — INCONCLUSIVE</strong> (real Vina docking). CFTR-corrector positive controls fail to earn rank (0/4); rigid docking can't discriminate Q141K chaperones; chaperone-rescue ranking not computationally established. Supersedes comp-032. See Analyses above</td>
+<td><a href="../validation-experiments/">Q141K trafficking + urate-flux assay</a></td>
 <td>✓ Done</td>
 </tr>
 <tr>

@@ -5330,7 +5330,7 @@
 <h1 id="comp-011-cassette-compatibility-analysis-c-utilis-uricase-lactoferrin">comp-011 — Cassette Compatibility Analysis: C. utilis Uricase + Lactoferrin<a class="headerlink" href="#comp-011-cassette-compatibility-analysis-c-utilis-uricase-lactoferrin" title="Permanent link">&para;</a></h1>
 <p><strong>Experiment:</strong> comp-011<br />
 <strong>Date:</strong> 2026-05-05<br />
-<strong>Script:</strong> <code>experiments/comp-011-c-utilis-uricase-cassette-compatibility/analyze.py</code><br />
+<strong>Script:</strong> <code>wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/analyze.py</code><br />
 <strong>Follow-on to:</strong> comp-010 (A. flavus uricase Q00511 + lactoferrin P02788)  </p>
 <hr />
 <h2 id="1-question">1. Question<a class="headerlink" href="#1-question" title="Permanent link">&para;</a></h2>
@@ -5805,7 +5805,7 @@
 </tr>
 <tr>
 <td>Total disulfides</td>
-<td>17 (all on Lf)</td>
+<td>16 (all on Lf)</td>
 <td>16 (8 per chain)</td>
 </tr>
 <tr>
@@ -5856,6 +5856,49 @@
 <li>Both OE and Huynh use the same NSlD-ΔP10 protease-deletion host. Both require KRGGG linker KEX2 processing for lactoferrin. Both target dual loci (niaD + sC or equivalent).</li>
 <li>Lactoferrin and adalimumab are both mammalian-origin, glycosylated, disulfide-rich proteins, but their folding and assembly architectures differ. Huynh 2020 is therefore a contextual host precedent rather than a quantitative capacity proof for lactoferrin.</li>
 </ul>
+<hr />
+<h3 id="38-alln-346-engineered-mutant-second-analyzed-sequence-added-2026-07-14">3.8 ALLN-346 Engineered Mutant — Second Analyzed Sequence (added 2026-07-14)<a class="headerlink" href="#38-alln-346-engineered-mutant-second-analyzed-sequence-added-2026-07-14" title="Permanent link">&para;</a></h3>
+<p>comp-011 originally analyzed <strong>wild-type P78609 only</strong>, yet its recommendations invoke the <strong>P78609 + ALLN-346</strong> construct (US10815461B2: E51K, A87G, I132R, Y165F, I180V, V190G, Q244K). The 2026-07-13 independent comp review flagged this gap because <strong>I132R lands on the P1′ residue of the position-130 KEX2 site</strong> (<code>KRI</code>→<code>KRR</code>). This section analyzes the intended mutant directly; all 7 mutation positions were grep-verified against the committed <code>inputs/P78609.fasta</code>.</p>
+<table>
+<thead>
+<tr>
+<th>KEX2 axis</th>
+<th>WT P78609</th>
+<th>P78609 + ALLN-346</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internal K-R sites</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Overall KEX2 risk</td>
+<td>HIGH</td>
+<td>HIGH</td>
+</tr>
+</tbody>
+</table>
+<p><strong>KEX2 site changes (WT → mutant):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Position (mature)</th>
+<th>WT P1′ / risk</th>
+<th>Mutant P1′ / risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>130</td>
+<td>I / HIGH</td>
+<td>R / MODERATE</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Codon burden:</strong> WT HEAVY → mutant HEAVY (7-of-303 residues changed). <strong>Free cysteines:</strong> WT 4 → mutant 4 (no Cys mutations). <strong>Routing:</strong> MODERATE.</p>
+<p><strong>Interpretation:</strong> The ALLN-346 mutations do not change the overall dual-cassette verdict — codon burden and free-Cys risk are unchanged, and the uricase KEX2 sites are non-load-bearing under direct secretion. Their one cassette-relevant effect is <strong>topology-conditional</strong>: if §1.33 selects a glucoamylase-KEX2 fusion topology, the WT plan of mutating both KR sites (130 + 138) shifts because I132R already alters the position-130 site (see table above). This closes the audit gap — the recommended mutant is no longer un-analyzed relative to what comp-011 concludes.</p>
 <hr />
 <h2 id="4-platform-decision-implication">4. Platform Decision Implication<a class="headerlink" href="#4-platform-decision-implication" title="Permanent link">&para;</a></h2>
 <p>comp-010 (A. flavus): LOW cassette-design risk. comp-011 (C. utilis): MODERATE cassette-design risk. The delta is driven by (a) codon burden (HEAVY for C. utilis vs. LOW for A. flavus — codon optimization required, resolves with gene synthesis), (b) free cysteine risk (4 Cys in C. utilis vs. 0 in A. flavus — new risk factor requiring SDS-PAGE monitoring), and &copy; 2 vs. 1 KEX2 internal sites (non-load-bearing in direct-secretion design). None of these differences are BLOCKING for the architecture — they are all manageable with standard gene synthesis and SDS-PAGE QC. The MODERATE vs. LOW risk difference reflects more design work required for C. utilis, not a fundamental incompatibility. If adopting C. utilis: (1) full codon optimization is mandatory (same as lactoferrin), (2) add non-reducing SDS-PAGE to the QC panel to catch free-Cys aggregation, (3) note that the ALLN-346 ProteinGPS mutations (US10815461B2) are available to layer on top of the P78609 backbone for protease-resistance improvement.</p>
@@ -5921,15 +5964,15 @@
 <hr />
 <h2 id="7-cross-references">7. Cross-References<a class="headerlink" href="#7-cross-references" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../../wiki/c-utilis-uricase-cassette-compatibility-computational.md">wiki/c-utilis-uricase-cassette-compatibility-computational.md</a> — Interpretive wiki page for this experiment</li>
-<li><a href="../../wiki/uricase-variant-selection.md">wiki/uricase-variant-selection.md</a> — Industry-revealed preference analysis; comp-011 verdict added as subsection</li>
-<li><a href="../../wiki/cassette-compatibility-computational.md">wiki/cassette-compatibility-computational.md</a> — comp-010 page (A. flavus baseline)</li>
-<li><a href="../../wiki/hypotheses/H01-ward-dual-cassette.md">wiki/hypotheses/H01-ward-dual-cassette.md</a> — Falsification Card; comp-011 is design support for §1.9</li>
-<li><a href="../../wiki/koji-endgame-strain.md">wiki/koji-endgame-strain.md</a> — Protocol sketch for §1.9</li>
-<li><a href="../../wiki/validation-experiments.md">wiki/validation-experiments.md</a> — §1.9 wet-lab experiment this analysis informs</li>
-<li><a href="../comp-010-cassette-compatibility/">experiments/comp-010-cassette-compatibility/</a> — A. flavus uricase baseline (comp-010: LOW risk)</li>
-<li><a href="../comp-001-uricase-shio-koji-protease-stability/">experiments/comp-001-uricase-shio-koji-protease-stability/</a> — A. flavus uricase protease stability (LOW risk)</li>
-<li><a href="../comp-005-lactoferrin-shio-koji-protease-stability/">experiments/comp-005-lactoferrin-shio-koji-protease-stability/</a> — Lactoferrin protease stability (MODERATE mature)</li>
+<li><a href="../../../../../c-utilis-uricase-cassette-compatibility-computational/">wiki/c-utilis-uricase-cassette-compatibility-computational.md</a> — Interpretive wiki page for this experiment</li>
+<li><a href="../../../../../uricase-variant-selection/">wiki/uricase-variant-selection.md</a> — Industry-revealed preference analysis; comp-011 verdict added as subsection</li>
+<li><a href="../../../../../cassette-compatibility-computational/">wiki/cassette-compatibility-computational.md</a> — comp-010 page (A. flavus baseline)</li>
+<li><a href="../../../../../hypotheses/H01-ward-dual-cassette/">wiki/hypotheses/H01-ward-dual-cassette.md</a> — Falsification Card; comp-011 is design support for §1.9</li>
+<li><a href="../../../../../koji-endgame-strain/">wiki/koji-endgame-strain.md</a> — Protocol sketch for §1.9</li>
+<li><a href="../../../../../validation-experiments/">wiki/validation-experiments.md</a> — §1.9 wet-lab experiment this analysis informs</li>
+<li><a href="../../comp-010-cassette-compatibility/">experiments/comp-010-cassette-compatibility/</a> — A. flavus uricase baseline (comp-010: LOW risk)</li>
+<li><a href="../../comp-001-uricase-shio-koji-protease-stability/">experiments/comp-001-uricase-shio-koji-protease-stability/</a> — A. flavus uricase protease stability (LOW risk)</li>
+<li><a href="../../comp-005-lactoferrin-shio-koji-protease-stability/">experiments/comp-005-lactoferrin-shio-koji-protease-stability/</a> — Lactoferrin protease stability (MODERATE mature)</li>
 </ul>
 <hr />
 <p><em>Evidence level for all findings in this analysis: Mechanistic Extrapolation — in silico sequence analysis only. Wet-lab confirmation required for all design recommendations.</em></p>

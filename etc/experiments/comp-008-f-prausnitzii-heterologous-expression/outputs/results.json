@@ -90,7 +90,7 @@
       "factor_rationales": {
         "cluster_size_tractability": "280 aa truncated construct (~840 bp). Trivially clonable.",
         "GC_content_codon_compatibility": "Same human ~58% GC vs Fp 56.6%. Codon optimization moderate.",
-        "secretion_pathway_availability": "Sec-translocon present. Same caveat as lactoferrin re: disulfide-rich secretion. 8 disulfides in SCR1-4 \u2014 less than lactoferrin's 17 but still requires oxidative folding.",
+        "secretion_pathway_availability": "Sec-translocon present. Same caveat as lactoferrin re: disulfide-rich secretion. 8 disulfides in SCR1-4 \u2014 less than lactoferrin's 16 but still requires oxidative folding.",
         "host_physiology_compatibility": "No O2 requirement. CR1 (a host complement regulator) is mechanistically inert to bacterial physiology \u2014 F. prausnitzii has no classical-pathway complement target.",
         "engineering_toolkit_maturity": "Shared factor.",
         "host_toxicity_risk": "CR1 is a host immune regulator; no bacterial target. Native serpins / complement regulators don't perturb commensal physiology.",

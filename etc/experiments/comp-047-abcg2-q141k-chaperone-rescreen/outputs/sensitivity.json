@@ -1,0 +1,481 @@
+{
+  "_meta": {
+    "perturbations": [
+      "base",
+      "cx+2",
+      "cx-2",
+      "cy+2",
+      "diag+3",
+      "size18",
+      "size26",
+      "seed12345",
+      "seed99999",
+      "neutral_pH"
+    ],
+    "base_center": [
+      1.089,
+      12.029,
+      10.327
+    ],
+    "base_size": [
+      22.0,
+      22.0,
+      22.0
+    ],
+    "targets": [
+      "avacopan",
+      "rosuvastatin",
+      "ver155008",
+      "spiperone",
+      "mcc950",
+      "glycerol_phenylbutyrate",
+      "vorinostat",
+      "sorafenib",
+      "ivacaftor",
+      "tezacaftor",
+      "elexacaftor",
+      "lumacaftor",
+      "ko143",
+      "fumitremorgin_c",
+      "tariquidar",
+      "elacridar"
+    ]
+  },
+  "per_molecule": {
+    "avacopan": {
+      "base": -7.816,
+      "cx+2": -7.118,
+      "cx-2": -7.04,
+      "cy+2": -7.831,
+      "diag+3": -6.937,
+      "size18": -6.101,
+      "size26": -7.173,
+      "seed12345": -7.773,
+      "seed99999": -7.811,
+      "neutral_pH": -7.816,
+      "_stats": {
+        "mean": -7.342,
+        "std": 0.545,
+        "min": -7.831,
+        "max": -6.101,
+        "range": 1.73
+      }
+    },
+    "rosuvastatin": {
+      "base": -6.801,
+      "cx+2": -6.919,
+      "cx-2": -6.458,
+      "cy+2": -5.422,
+      "diag+3": -6.379,
+      "size18": -4.954,
+      "size26": -6.771,
+      "seed12345": -6.567,
+      "seed99999": -5.577,
+      "neutral_pH": -7.195,
+      "_stats": {
+        "mean": -6.304,
+        "std": 0.697,
+        "min": -7.195,
+        "max": -4.954,
+        "range": 2.241
+      }
+    },
+    "ver155008": {
+      "base": -6.464,
+      "cx+2": -5.438,
+      "cx-2": -5.43,
+      "cy+2": -5.379,
+      "diag+3": -5.516,
+      "size18": -5.116,
+      "size26": -6.613,
+      "seed12345": -6.434,
+      "seed99999": -5.439,
+      "neutral_pH": -6.464,
+      "_stats": {
+        "mean": -5.829,
+        "std": 0.553,
+        "min": -6.613,
+        "max": -5.116,
+        "range": 1.497
+      }
+    },
+    "spiperone": {
+      "base": -6.453,
+      "cx+2": -6.004,
+      "cx-2": -6.357,
+      "cy+2": -6.469,
+      "diag+3": -5.288,
+      "size18": -5.121,
+      "size26": -6.715,
+      "seed12345": -6.13,
+      "seed99999": -5.913,
+      "neutral_pH": -6.22,
+      "_stats": {
+        "mean": -6.067,
+        "std": 0.487,
+        "min": -6.715,
+        "max": -5.121,
+        "range": 1.594
+      }
+    },
+    "mcc950": {
+      "base": -6.383,
+      "cx+2": -6.399,
+      "cx-2": -6.395,
+      "cy+2": -6.506,
+      "diag+3": -6.106,
+      "size18": -5.572,
+      "size26": -6.356,
+      "seed12345": -6.443,
+      "seed99999": -6.412,
+      "neutral_pH": -6.383,
+      "_stats": {
+        "mean": -6.295,
+        "std": 0.26,
+        "min": -6.506,
+        "max": -5.572,
+        "range": 0.934
+      }
+    },
+    "glycerol_phenylbutyrate": {
+      "base": -6.199,
+      "cx+2": -6.479,
+      "cx-2": -6.837,
+      "cy+2": -6.701,
+      "diag+3": -6.428,
+      "size18": -6.228,
+      "size26": -6.311,
+      "seed12345": -6.724,
+      "seed99999": -6.662,
+      "neutral_pH": -6.199,
+      "_stats": {
+        "mean": -6.477,
+        "std": 0.228,
+        "min": -6.837,
+        "max": -6.199,
+        "range": 0.638
+      }
+    },
+    "vorinostat": {
+      "base": -6.194,
+      "cx+2": -5.144,
+      "cx-2": -6.084,
+      "cy+2": -5.296,
+      "diag+3": -4.408,
+      "size18": -6.445,
+      "size26": -5.588,
+      "seed12345": -5.783,
+      "seed99999": -5.316,
+      "neutral_pH": -6.194,
+      "_stats": {
+        "mean": -5.645,
+        "std": 0.589,
+        "min": -6.445,
+        "max": -4.408,
+        "range": 2.037
+      }
+    },
+    "sorafenib": {
+      "base": -6.111,
+      "cx+2": -6.126,
+      "cx-2": -6.087,
+      "cy+2": -6.074,
+      "diag+3": -5.512,
+      "size18": -4.691,
+      "size26": -6.323,
+      "seed12345": -6.102,
+      "seed99999": -6.045,
+      "neutral_pH": -6.111,
+      "_stats": {
+        "mean": -5.918,
+        "std": 0.453,
+        "min": -6.323,
+        "max": -4.691,
+        "range": 1.632
+      }
+    },
+    "ivacaftor": {
+      "base": -4.544,
+      "cx+2": -4.543,
+      "cx-2": -4.537,
+      "cy+2": -4.892,
+      "diag+3": -5.785,
+      "size18": -3.458,
+      "size26": -5.757,
+      "seed12345": -4.58,
+      "seed99999": -4.558,
+      "neutral_pH": -4.544,
+      "_stats": {
+        "mean": -4.72,
+        "std": 0.633,
+        "min": -5.785,
+        "max": -3.458,
+        "range": 2.327
+      }
+    },
+    "tezacaftor": {
+      "base": -5.906,
+      "cx+2": -5.911,
+      "cx-2": -6.015,
+      "cy+2": -5.804,
+      "diag+3": -5.92,
+      "size18": -4.28,
+      "size26": -6.345,
+      "seed12345": -5.866,
+      "seed99999": -6.012,
+      "neutral_pH": -5.906,
+      "_stats": {
+        "mean": -5.796,
+        "std": 0.525,
+        "min": -6.345,
+        "max": -4.28,
+        "range": 2.065
+      }
+    },
+    "elexacaftor": {
+      "base": -5.796,
+      "cx+2": -5.765,
+      "cx-2": -5.29,
+      "cy+2": -6.169,
+      "diag+3": -6.64,
+      "size18": -2.27,
+      "size26": -6.682,
+      "seed12345": -5.784,
+      "seed99999": -5.791,
+      "neutral_pH": -5.796,
+      "_stats": {
+        "mean": -5.598,
+        "std": 1.18,
+        "min": -6.682,
+        "max": -2.27,
+        "range": 4.412
+      }
+    },
+    "lumacaftor": {
+      "base": -7.349,
+      "cx+2": -7.18,
+      "cx-2": -7.205,
+      "cy+2": -7.298,
+      "diag+3": -7.347,
+      "size18": -6.044,
+      "size26": -7.299,
+      "seed12345": -7.355,
+      "seed99999": -7.207,
+      "neutral_pH": -7.45,
+      "_stats": {
+        "mean": -7.173,
+        "std": 0.385,
+        "min": -7.45,
+        "max": -6.044,
+        "range": 1.406
+      }
+    },
+    "ko143": {
+      "base": -4.746,
+      "cx+2": -4.557,
+      "cx-2": -4.842,
+      "cy+2": -5.164,
+      "diag+3": -4.65,
+      "size18": -3.178,
+      "size26": -5.225,
+      "seed12345": -4.513,
+      "seed99999": -5.507,
+      "neutral_pH": -4.746,
+      "_stats": {
+        "mean": -4.713,
+        "std": 0.595,
+        "min": -5.507,
+        "max": -3.178,
+        "range": 2.329
+      }
+    },
+    "fumitremorgin_c": {
+      "base": -5.062,
+      "cx+2": -4.917,
+      "cx-2": -5.113,
+      "cy+2": -6.125,
+      "diag+3": -6.19,
+      "size18": -3.149,
+      "size26": -5.085,
+      "seed12345": -5.152,
+      "seed99999": -4.906,
+      "neutral_pH": -5.062,
+      "_stats": {
+        "mean": -5.076,
+        "std": 0.782,
+        "min": -6.19,
+        "max": -3.149,
+        "range": 3.041
+      }
+    },
+    "tariquidar": {
+      "base": -6.163,
+      "cx+2": -5.943,
+      "cx-2": -4.564,
+      "cy+2": -6.053,
+      "diag+3": -5.476,
+      "size18": 3.269,
+      "size26": -5.991,
+      "seed12345": -4.53,
+      "seed99999": -6.126,
+      "neutral_pH": -5.299,
+      "_stats": {
+        "mean": -4.688,
+        "std": 2.715,
+        "min": -6.163,
+        "max": 3.269,
+        "range": 9.432
+      }
+    },
+    "elacridar": {
+      "base": -6.297,
+      "cx+2": -6.64,
+      "cx-2": -5.997,
+      "cy+2": -6.385,
+      "diag+3": -6.072,
+      "size18": -1.529,
+      "size26": -6.67,
+      "seed12345": -6.379,
+      "seed99999": -6.313,
+      "neutral_pH": -6.182,
+      "_stats": {
+        "mean": -5.846,
+        "std": 1.454,
+        "min": -6.67,
+        "max": -1.529,
+        "range": 5.141
+      }
+    }
+  },
+  "rank_stability": {
+    "base_candidate_order": [
+      "avacopan",
+      "rosuvastatin",
+      "ver155008",
+      "spiperone",
+      "mcc950",
+      "glycerol_phenylbutyrate",
+      "vorinostat",
+      "sorafenib"
+    ],
+    "per_perturbation": {
+      "cx+2": {
+        "order": [
+          "avacopan",
+          "rosuvastatin",
+          "glycerol_phenylbutyrate",
+          "mcc950",
+          "sorafenib",
+          "spiperone",
+          "ver155008",
+          "vorinostat"
+        ],
+        "positions_changed": 6
+      },
+      "cx-2": {
+        "order": [
+          "avacopan",
+          "glycerol_phenylbutyrate",
+          "rosuvastatin",
+          "mcc950",
+          "spiperone",
+          "sorafenib",
+          "vorinostat",
+          "ver155008"
+        ],
+        "positions_changed": 6
+      },
+      "cy+2": {
+        "order": [
+          "avacopan",
+          "glycerol_phenylbutyrate",
+          "mcc950",
+          "spiperone",
+          "sorafenib",
+          "rosuvastatin",
+          "ver155008",
+          "vorinostat"
+        ],
+        "positions_changed": 6
+      },
+      "diag+3": {
+        "order": [
+          "avacopan",
+          "glycerol_phenylbutyrate",
+          "rosuvastatin",
+          "mcc950",
+          "ver155008",
+          "sorafenib",
+          "spiperone",
+          "vorinostat"
+        ],
+        "positions_changed": 7
+      },
+      "size18": {
+        "order": [
+          "vorinostat",
+          "glycerol_phenylbutyrate",
+          "avacopan",
+          "mcc950",
+          "spiperone",
+          "ver155008",
+          "rosuvastatin",
+          "sorafenib"
+        ],
+        "positions_changed": 7
+      },
+      "size26": {
+        "order": [
+          "avacopan",
+          "rosuvastatin",
+          "spiperone",
+          "ver155008",
+          "mcc950",
+          "sorafenib",
+          "glycerol_phenylbutyrate",
+          "vorinostat"
+        ],
+        "positions_changed": 5
+      },
+      "seed12345": {
+        "order": [
+          "avacopan",
+          "glycerol_phenylbutyrate",
+          "rosuvastatin",
+          "mcc950",
+          "ver155008",
+          "spiperone",
+          "sorafenib",
+          "vorinostat"
+        ],
+        "positions_changed": 7
+      },
+      "seed99999": {
+        "order": [
+          "avacopan",
+          "glycerol_phenylbutyrate",
+          "mcc950",
+          "sorafenib",
+          "spiperone",
+          "rosuvastatin",
+          "ver155008",
+          "vorinostat"
+        ],
+        "positions_changed": 7
+      },
+      "neutral_pH": {
+        "order": [
+          "avacopan",
+          "rosuvastatin",
+          "ver155008",
+          "mcc950",
+          "spiperone",
+          "glycerol_phenylbutyrate",
+          "vorinostat",
+          "sorafenib"
+        ],
+        "positions_changed": 2
+      }
+    }
+  }
+}

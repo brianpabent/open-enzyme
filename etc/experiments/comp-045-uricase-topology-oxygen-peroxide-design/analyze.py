@@ -28,8 +28,10 @@ def grade(topology, peroxide, oxygen_support, oxygen_context):
         peroxide_status = "direct_empirical_support"
     elif ecn:
         # PULSE observed benefit from the joint KatG+VHb module in secreted and
-        # displayed strains, but did not isolate KatG or prove epithelial closure.
-        peroxide_status = "indirect_empirical_support"
+        # displayed strains, but did not isolate KatG or prove epithelial closure —
+        # so an isolated KatG-only arm inherits only joint-module precedent, NOT
+        # isolated empirical support (corrected 2026-07-14, comp-review audit).
+        peroxide_status = "joint_module_precedent_isolated_unresolved"
     else:
         peroxide_status = "unresolved"
 
@@ -40,7 +42,10 @@ def grade(topology, peroxide, oxygen_support, oxygen_context):
     elif intracellular:
         oxygen_status = "direct_empirical_support"
     elif ecn:
-        oxygen_status = "indirect_empirical_support"
+        # VHb was introduced only within the joint KatG+VHb module; an isolated
+        # VHb-only arm inherits joint-module precedent, NOT isolated support
+        # (corrected 2026-07-14, comp-review audit).
+        oxygen_status = "joint_module_precedent_isolated_unresolved"
     else:
         oxygen_status = "unsupported"
 

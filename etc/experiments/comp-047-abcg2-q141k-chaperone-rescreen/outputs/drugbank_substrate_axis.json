@@ -1,0 +1,170 @@
+{
+  "_meta": {
+    "axis": "Axis 2b \u2014 substrate/clinical-interaction (complements the ChEMBL inhibition axis)",
+    "source": "DrugBank transporter cross-references via UniProt Q9UNQ0 (ABCG2). Fetched rest.uniprot.org/uniprotkb/Q9UNQ0.txt, DR DrugBank lines.",
+    "date": "2026-07-14",
+    "total_abcg2_interacting_drugs_in_drugbank": 286,
+    "library_molecules_flagged": 31,
+    "why_this_axis": "ChEMBL logs INHIBITION assays and misses SUBSTRATES. DrugBank's curated transporter annotations capture substrate + clinical-interaction relationships. Cross-check confirms: rosuvastatin (an 'uncertain' docking candidate) IS ABCG2-interacting per DrugBank but returned 0 ChEMBL records -> the substrate blind spot, now closed by this axis.",
+    "complementarity": "Complete known-ABCG2 disqualifier = ChEMBL inhibitors UNION DrugBank substrates/interactions. Neither alone is complete: ChEMBL misses substrates (rosuvastatin); DrugBank (approved-drugs only) misses research-tool inhibitors (Ko143, fumitremorgin C).",
+    "gold_standard_alternatives": "UCSF-FDA TransPortal + PharmGKB give curated per-transporter substrate/inhibitor lists with primary references; use for a definitive framework build. UniProt+DrugBank is the free, immediately-scriptable first pass used here.",
+    "candidate_impact": "Of the 2 marginal 'uncertain' docking hits, rosuvastatin is flagged ABCG2-interacting (disqualified); vorinostat is NOT flagged (survives as the sole marginal hit)."
+  },
+  "flagged": {
+    "tezacaftor": {
+      "role_tag": "cftr_corrector",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "elacridar": {
+      "role_tag": "abcg2_inhibitor",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "tafamidis": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "rosuvastatin": {
+      "role_tag": "other",
+      "docking_tier": "uncertain",
+      "drugbank_abcg2_interacting": true
+    },
+    "pravastatin": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "celecoxib": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "allopurinol": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "febuxostat": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "itraconazole": {
+      "role_tag": "abcg2_inhibitor",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "imatinib": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "gefitinib": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "erlotinib": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "sorafenib": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "omeprazole": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "pantoprazole": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "apixaban": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "ezetimibe": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "etoposide": {
+      "role_tag": "abcg2_inhibitor",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "mitoxantrone": {
+      "role_tag": "abcg2_inhibitor",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "topotecan": {
+      "role_tag": "abcg2_inhibitor",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "estradiol": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "testosterone": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "progesterone": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "sulfasalazine": {
+      "role_tag": "abcg2_inhibitor",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "methotrexate": {
+      "role_tag": "abcg2_inhibitor",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "raloxifene": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "tamoxifen": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "quercetin": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "naringenin": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "venetoclax": {
+      "role_tag": "other",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    },
+    "novobiocin": {
+      "role_tag": "abcg2_inhibitor",
+      "docking_tier": "no",
+      "drugbank_abcg2_interacting": true
+    }
+  }
+}
