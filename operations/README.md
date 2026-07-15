@@ -26,7 +26,7 @@ The PII / hygiene filters that apply to the rest of the repo apply here too. Ope
 - **Reproducible computational analyses** → `wiki/etc/experiments/comp-NNN-*/`
 - **Falsification cards** → `wiki/hypotheses/`
 - **Pre-registration / claim-tracking** → `wiki/hypotheses/` (with frozen-on-commit discipline)
-- **Personal medical content (specific lab values, clinical-decision data, PHI)** → private sibling repos per the umbrella `~/Documents/Claude/Projects/abent/CLAUDE.md` privacy boundary; never in this repo. Operational notes about *cadence* or *framework* are fine in the public wiki / operations; specific values are not.
+- **Personal medical content (specific lab values, clinical-decision data, PHI)** → private sibling repos per the umbrella `~/abent/CLAUDE.md` privacy boundary; never in this repo. Operational notes about *cadence* or *framework* are fine in the public wiki / operations; specific values are not.
 - **Personal financial content** → never in this repo (umbrella privacy boundary)
 - **Family-private content** → never in this repo
 - **Sensitive credentials, API keys, secrets** → never anywhere in version control

@@ -43,7 +43,7 @@ Before announcing the first item, do all of these:
 
 1. **Pull latest.** Catches any daemon work that landed since last session.
    ```bash
-   cd "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme"
+   cd "$(git rev-parse --show-toplevel)"
    git pull --rebase
    ```
    If `.claude/` paths block the rebase with "Operation not permitted," retry with `dangerouslyDisableSandbox: true`. If conflicts, resolve via the patterns in `references/friction-and-anti-patterns.md`.
@@ -101,7 +101,7 @@ rejecting. Lead with this in the briefing; do not wait for Brian to suggest it. 
 citation faithfully relaying a primary source ("UniProt P08174 has 8 DISULFID features") IS legitimate 
 grounds to push back; one relaying non-discovery is not. Canonical case: 2026-06-01 theaflavins×ABCG2 — 
 the scan showed the synthesizer's claim was *inverted* (theaflavins up-regulate ABCG2 in vivo) and filled a 
-real wiki gap. See `memory/feedback_do_the_work_not_corpus_only.md` and `references/friction-and-anti-patterns.md` §16.
+real wiki gap. See `feedback_do_the_work_not_corpus_only.md` and `references/friction-and-anti-patterns.md` §16.
 
 **What I'd propose to do:**
 [Concrete action. Name files that would change. Estimate scope ("inline, ~10 min" / "subagent" / 
@@ -126,10 +126,10 @@ references/item-type-playbooks.md for what each item type typically needs.]
 **Chassis-pending check (added 2026-05-15).** For every item, ask one explicit question as part of the briefing: ***"Does this finding hit a chokepoint we care about? If yes — does it have a chassis?"*** Three branches:
 
 1. **Hits chokepoint + fits a current chassis (koji, compounding pharmacy, S. boulardii, etc.)** → action normally; the proposed action names the relevant chassis page.
-2. **Hits chokepoint + chassis is open** → propose adding to [`wiki/chassis-pending-interventions.md`](../../../wiki/chassis-pending-interventions.md) as the action. The intervention is real; the chassis question is the next question, not the filter that kills the first one. Do NOT deprioritize the item just because koji isn't the right chassis.
+2. **Hits chokepoint + chassis is open** → propose adding to [`wiki/chassis-pending-interventions.md`](../../wiki/chassis-pending-interventions.md) as the action. The intervention is real; the chassis question is the next question, not the filter that kills the first one. Do NOT deprioritize the item just because koji isn't the right chassis.
 3. **Doesn't hit a documented chokepoint** → action as normal (methodology improvement, tracking artifact, contradiction-resolution, etc.).
 
-This is the operational expression of [`synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md`](../../../synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md). The closure question gates the chokepoint-hit check before the chassis-fit check, preventing quiet chassis-filter narrowing at the recommendation step.
+This is the operational expression of [`synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md`](../../synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md). The closure question gates the chokepoint-hit check before the chassis-fit check, preventing quiet chassis-filter narrowing at the recommendation step.
 
 ### Step B — Wait for go-ahead
 
@@ -236,7 +236,7 @@ The pre-2026-05-08 manual prune pass is gone — those concerns are now structur
 The inbox-zero verification and the push are **themselves substantive items** — not "the natural endpoint." The user must explicitly approve "ready to push?" The push fires the wiki-sweep daemon and surfaces to GitHub. (Open Enzyme overrides the umbrella "push immediately" rule — push at batch boundaries so the daemon runs once on a coherent batch; see project CLAUDE.md.)
 
 ```bash
-cd "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme"
+cd "$(git rev-parse --show-toplevel)"
 git push
 ```
 

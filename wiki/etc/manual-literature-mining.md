@@ -218,7 +218,7 @@ When ingesting non-English source material, **translate with two independent mod
    - Model A: Claude (Anthropic) OR Gemini (Google)
    - Model B: DeepSeek OR Qwen (both Chinese-vendor; native-language depth) OR GPT-5 (OpenAI)
    For Chinese-source material, at least one model should be a Chinese-vendor model (DeepSeek or Qwen) — the native-language training depth catches idiomatic and classical-TCM-terminology nuances Western-trained models miss. For Japanese-source material, prefer a model with strong Japanese (Claude is competent; Gemini is reasonable; for deep Kampo terminology a Japanese-vendor option if available; otherwise two competent Western models is acceptable).
-   **The Model-A cost rule:** when a Claude subagent runs the scan, it IS Model A — the cross-check only pays OpenRouter for Model B. Never run both halves through OpenRouter (`memory/feedback_subagent_as_model_a.md`).
+   **The Model-A cost rule:** when a Claude subagent runs the scan, it IS Model A — the cross-check only pays OpenRouter for Model B. Never run both halves through OpenRouter (`feedback_subagent_as_model_a.md`).
 2. **Sentence-level comparison.** Compare the two translations at sentence granularity (or paragraph if sentences are too short to differ meaningfully).
 3. **Where models AGREE → confident translation.** Use that text directly.
 4. **Where models DISAGREE → inline annotation.** Use a clear, scannable convention:

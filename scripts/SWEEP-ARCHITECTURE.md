@@ -2,7 +2,7 @@
 
 Permanent reference for the wiki-sweep daemon. Captures the failure modes that motivated a redesign, why convention-as-memory was insufficient, and the five-component recovery architecture. Engineering doc — no evidence-level tags; same prose discipline as the wiki (no marketing language, state limitations explicitly).
 
-The daemon under discussion is defined in [`.github/workflows/wiki-sweep.yml`](../.github/workflows/wiki-sweep.yml) and orchestrates three OpenRouter-routed passes (Sonnet 4.6 propagate → Gemini 2.5 Pro synthesize → Opus 4.7 review). Background context: [`CLAUDE.md` § "Workflow for Updates"](../CLAUDE.md) and the umbrella [`abent/CLAUDE.md` § "Git steward pattern"](../../CLAUDE.md).
+The daemon under discussion is defined in [`.github/workflows/wiki-sweep.yml`](../.github/workflows/wiki-sweep.yml) and orchestrates three OpenRouter-routed passes (Sonnet 4.6 propagate → Gemini 2.5 Pro synthesize → Opus 4.7 review). Background context: [`CLAUDE.md` § "Workflow for Updates"](../CLAUDE.md) and the umbrella [`abent/CLAUDE.md` § "Git steward pattern"](../CLAUDE.md).
 
 ---
 
@@ -255,7 +255,7 @@ Note: `/sweep-catchup` ships before the registry deliberately, so the backlog te
 
 ## Cost / scope estimate
 
-Per the [umbrella `CLAUDE.md` § "Estimates and Scoping"](../../CLAUDE.md), framed in complexity rather than wall time.
+Per the [umbrella `CLAUDE.md` § "Estimates and Scoping"](../CLAUDE.md), framed in complexity rather than wall time.
 
 | # | Component | Complexity | Iteration risk | Context load |
 |---|---|---|---|---|
@@ -291,7 +291,7 @@ User direction describes either THE WORK (legitimate scope) or THE USER's hopes 
 - Project conventions — CLAUDE.md rules, phase positioning, audience framing
 - Time, cost, and git-flow constraints
 - Tool corrections from prior reviewer feedback ("Paperclip is wrong corpus for CNKI; do direct multilingual instead")
-- Memory cautions for known unreliable tools (e.g., Paperclip's `map` operator hallucinates per `memory/feedback_paperclip_map_unreliable.md`)
+- Memory cautions for known unreliable tools (e.g., Paperclip's `map` operator hallucinates per `feedback_paperclip_map_unreliable.md`)
 
 **Scrub (these describe the user, not the work):**
 - Contrived examples that name specific things ("if it's in rosemary I'll grow rosemary," "could be ergosterol," "maybe a flavonoid")

@@ -22,16 +22,16 @@ overlap_tag: EXTENSION
 
 ## ✓ Actioned 2026-05-22
 
-**Closure (retrospective analysis impossible; forward path captured):** Pass 3 correctly deferred to the private archive. The deferred check was performed 2026-05-22 by reading Brian's `abent-family-health/` repo directly. Three required data elements assessed:
+**Closure (retrospective analysis impossible; forward path captured):** Pass 3 correctly deferred to the private archive. The deferred check was performed 2026-05-22 against Brian's private health archive (specifics kept out of the public corpus per the privacy gradient). Three required data elements assessed:
 
-- **(a) Dated flare events with onset/resolution timestamps:** ✓ Present. 2023-02-20 documented podagra flare, 2026-05-07 ULT-mobilization flare (in taper washout window at the time of this walk), ~6–12 self-suppressed prodromes 2023–2025 (undated; standing prednisone-taper pattern documented in `abent-family-health/brian/notes/2026-04-27_gout-flare-rescue-prednisone.md` and `abent-family-health/brian/symptoms/gout-flare-log.md`).
+- **(a) Dated flare events with onset/resolution timestamps:** ✓ Present in the private health archive (documented podagra + ULT-mobilization flares and a standing prednisone-taper pattern; specific dates and flare/rescue notes kept out of the public corpus per the privacy gradient).
 - **(b) Concurrent omega-3 index measurements:** ✗ Never tested. Daily 1,250 mg fish oil supplementation documented in 2026-04-09 baseline panel stack, but no omega-3 index (RBC fatty-acid %) assay in any historical panel.
 - **(c) Serum C5a at onset/resolution:** ✗ Never tested. C5a not in any historical Quest/LabCorp panel.
 
 **Two of three required data elements absent → retrospective C5a-decline-slope analysis cannot be run on historical data.** Pass 3's defer is converted to a closed verdict: retrospective is structurally impossible from the existing record.
 
 **Forward-looking path captured:**
-- `abent-family-health/brian/notes/velez-ask-list.md` updated 2026-05-22 with three new rows under "🟡 Labs to add to next draw" — serum C5a (with pre-analytics note), omega-3 index (with home-DBS alternative), CFH Y402H genotype (with consumer-array raw-data alternative). Next draw is ~2 weeks out.
-- `abent-family-health/brian/notes/personal-monitoring-protocol.md` updated 2026-05-22 with §6.5 "Home-monitoring formats — brand specifics" — names OmegaQuant DBS kit, 23andMe rs1061170 raw-data path, BeneCheck Uni UA (already in use). Companion to the generic format taxonomy added to OE wiki `self-experiment-protocol.md` §4 the same day.
+- The relevant biomarker follow-ups (serum C5a, omega-3 index, CFH Y402H genotype) were queued in the private health archive 2026-05-22; the personal lab-draw and home-monitoring specifics stay private per the privacy gradient.
+- The generic (de-identified) home-monitoring format taxonomy landed in OE wiki `self-experiment-protocol.md` §4 on 2026-05-22 — that is the public-corpus companion; the brand-specific personal notes stay in the private archive.
 
 **First prospective C5a-decline-slope data point becomes scoreable** at the next flare following the upcoming Vélez draw, assuming the three labs land. No public-wiki action remains — this open question closes with the private-repo updates plus the OE wiki protocol-tightening done in parallel.

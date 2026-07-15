@@ -136,14 +136,14 @@ The §11 history doesn't fabricate addresses. It's honest about what changed. Th
 
 ## Files I read for this re-review
 
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/specs/2026-05-08-synthesis-filesystem-migration.md` — the revised spec under re-review.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/specs/2026-05-08-synthesis-filesystem-migration-spec-review.md` — the prior review report; verified each finding's claimed address.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/.github/workflows/wiki-sweep.yml` (focused on lines 35-45 and 300-430) — verified the path-filter and Pass-3-commit pattern; confirmed the `synthesis-merge.py` invocation site that §4.3 calls out.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/synthesis-merge.py` (lines 1-120) — confirmed the script does opaque substitution, not parsing; grounding for Finding 3 verification.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/wiki/synthesis.md` (line counts + section anchors) — confirmed Strategic Reflections / Sweep history / Where actioned items live now sections exist as the spec describes.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/chembl-refresh-prompt.md` — surfaced new issue N1 (parallel workflow that writes to `wiki/synthesis.md`, not in §4.3).
+- `<oe-repo>/operations/specs/2026-05-08-synthesis-filesystem-migration.md` — the revised spec under re-review.
+- `<oe-repo>/operations/specs/2026-05-08-synthesis-filesystem-migration-spec-review.md` — the prior review report; verified each finding's claimed address.
+- `<oe-repo>/.github/workflows/wiki-sweep.yml` (focused on lines 35-45 and 300-430) — verified the path-filter and Pass-3-commit pattern; confirmed the `synthesis-merge.py` invocation site that §4.3 calls out.
+- `<oe-repo>/scripts/synthesis-merge.py` (lines 1-120) — confirmed the script does opaque substitution, not parsing; grounding for Finding 3 verification.
+- `<oe-repo>/wiki/synthesis.md` (line counts + section anchors) — confirmed Strategic Reflections / Sweep history / Where actioned items live now sections exist as the spec describes.
+- `<oe-repo>/scripts/chembl-refresh-prompt.md` — surfaced new issue N1 (parallel workflow that writes to `wiki/synthesis.md`, not in §4.3).
 - `grep -rn "synthesis\.md\|synthesis-merge" .github/ scripts/ .claude/` — verified §4.3 enumeration completeness; surfaced chembl-refresh gap.
 - `grep -rln "synthesis\.md" wiki/` — confirmed 27 wiki pages match the spec's §4.4 count (wiki/synthesis.md itself excluded).
 - `grep -rn "synthesis\.md" README.md mkdocs.yml CLAUDE.md index.md wiki/index.md` — verified §4.5 enumeration; surfaced new issue N2 (incomplete index.md and CLAUDE.md line-level enumeration).
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/.claude/hooks/block-push-without-approval.py` and `validate-commit-msg.py` (line locations only) — confirmed §4.3's hook coverage matches the actual reference sites.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/.claude/skills/{walk-synthesis,sweep-status,sweep-catchup,new-comp-experiment}/SKILL.md` (grep only) — confirmed §4.3 skill coverage matches.
+- `<oe-repo>/.claude/hooks/block-push-without-approval.py` and `validate-commit-msg.py` (line locations only) — confirmed §4.3's hook coverage matches the actual reference sites.
+- `<oe-repo>/.claude/skills/{walk-synthesis,sweep-status,sweep-catchup,new-comp-experiment}/SKILL.md` (grep only) — confirmed §4.3 skill coverage matches.

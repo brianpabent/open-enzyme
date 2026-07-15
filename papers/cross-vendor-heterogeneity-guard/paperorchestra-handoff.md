@@ -112,7 +112,7 @@ Internal (for cross-references):
 - `wiki/daf-cd55-scr14-truncated-computational.md` §1.5, §5.1 catch correction note.
 - `operations/comp-018-vs-comp-020-retrospective.md`, §5.2 catch primary source.
 - `wiki/paperclip-deep-dive.md`, §5.3 catch primary source.
-- `abent-family/brian/blog/2026-05-08-grounding-the-ai-scientist-hype/substack.md`, author's own analysis of the AI-scientist landscape (citation [12]).
+- A private-repo blog draft (grounding-the-ai-scientist-hype), author's own analysis of the AI-scientist landscape (citation [12]).
 
 ---
 

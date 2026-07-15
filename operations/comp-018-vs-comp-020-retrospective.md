@@ -266,5 +266,5 @@ This retrospective is NOT arguing for any of the following:
 - [`wiki/synthesis.md`](../wiki/synthesis.md) Items 2 + 10 — the sweep entries that triggered both experiments
 - [`scripts/SWEEP-ARCHITECTURE.md`](../scripts/SWEEP-ARCHITECTURE.md) §"Subagent brief hygiene" — the methodological discipline codified
 - [`operations/notable-moments.md`](./notable-moments.md) 2026-05-08 brief-contamination entry — the external-comms version of this story
-- [`memory/feedback_paperclip_map_unreliable.md`](../../../.claude/projects/-Users-brianabent-Documents-Claude-Projects-abent-Open-Enzyme/memory/feedback_paperclip_map_unreliable.md) — sister methodological lesson on tool-level hallucination (Paperclip's `map` operator)
+- `feedback_paperclip_map_unreliable.md` — sister methodological lesson on tool-level hallucination (Paperclip's `map` operator)
 - [`Open Enzyme/CLAUDE.md`](../CLAUDE.md) — Core Rules § Pre-commit grep-verify gate (Rule 4), codified after the DAF SCR1-4 incident, applied here

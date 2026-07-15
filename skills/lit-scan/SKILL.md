@@ -31,7 +31,7 @@ A lit scan searches, curates, and synthesizes primary literature into a **cited 
 
 ## Workflow
 
-Use the shared library `wiki/etc/experiments/lib/agentic_lit_synthesis.py` (function cheatsheet in [`references/library-api.md`](references/library-api.md)). The Claude subagent running the scan **is Model A** in every two-model cross-check — OpenRouter only pays for Model B (`memory/feedback_subagent_as_model_a.md`).
+Use the shared library `wiki/etc/experiments/lib/agentic_lit_synthesis.py` (function cheatsheet in [`references/library-api.md`](references/library-api.md)). The Claude subagent running the scan **is Model A** in every two-model cross-check — OpenRouter only pays for Model B (`feedback_subagent_as_model_a.md`).
 
 1. **Scope one question.** Name the load-bearing claims the scan must resolve (evidence tiers, dose numbers, mechanism directions, SAR rules). One scan → one decision.
 2. **Workspace.** Create `operations/<scope>-<date>/` for intermediates (fetched sources, translations, query logs). The final artifact goes to `logs/`.
@@ -47,8 +47,8 @@ Use the shared library `wiki/etc/experiments/lib/agentic_lit_synthesis.py` (func
 - **`local_curl_fetch()` mandatory for East-Asian sources** — step 4 above.
 - **Two-model translation cross-check + inline disagreement annotations** — `manual-literature-mining.md` §"Translation protocol".
 - **Primary-source grep-verify gate** — `manual-literature-mining.md` §"Pre-commit verification gate".
-- **Corpus-only-pushback → do the work** — a Pass-3 pushback resting only on "not in our corpus" is non-discovery, not refutation; the default is a primary-lit scan (`memory/feedback_do_the_work_not_corpus_only.md`).
-- **Do the work, don't cite our own corpus** — never resolve a world-claim by pointing at corpus-absence; go to primary sources (`memory/feedback_do_the_work_not_corpus_only.md`).
+- **Corpus-only-pushback → do the work** — a Pass-3 pushback resting only on "not in our corpus" is non-discovery, not refutation; the default is a primary-lit scan (`feedback_do_the_work_not_corpus_only.md`).
+- **Do the work, don't cite our own corpus** — never resolve a world-claim by pointing at corpus-absence; go to primary sources (`feedback_do_the_work_not_corpus_only.md`).
 
 ## What this skill does NOT do
 

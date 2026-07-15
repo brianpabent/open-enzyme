@@ -242,29 +242,29 @@ Splitting it into a separate doc-pass PR creates a window where SWEEP-ARCHITECTU
 
 ## Files I read for this review
 
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/specs/2026-05-08-synthesis-filesystem-migration.md` — the spec under review.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/SWEEP-ARCHITECTURE.md` — current daemon architecture doc; grounding for what changes.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/synthesis-merge.py` — the script being replaced; key for understanding what `synthesis-emit-files.py` must replicate.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/sweep-prompt-2-synthesize.md` — Pass 2 prompt; revealed the seven-section output structure the new parser must handle.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/sweep-prompt-3-review.md` and `scripts/sweep-prompt-3-review-gpt55.md` — Pass 3 prompts; both must be updated.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/sweep-state.py` — confirmed the line-153 reference and the `cmd_pending_paths` filter; revealed the registry/history overlap (Finding 7).
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/.github/workflows/wiki-sweep.yml` — workflow file; revealed the path-filter design issue (Finding 2) and the multi-step Pass 3 commit pattern (synthesis.md + sweep-state.json) that complicates the negation logic.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/.claude/skills/walk-synthesis/SKILL.md` — skill being updated; revealed Step F's loose-ends discipline that needs explicit re-grounding (Finding 10).
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/wiki/synthesis.md` — file being deleted; verified the 3 strategic reflections + sweep history table; verified the "Where actioned items live now" content as historical anchor for cross-link rewrites.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/CLAUDE.md` — project conventions; confirmed where document-structure references need updating.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/sweep-1-propagate.py` (lines 50, 524-528, 598) — found undocumented `wiki/synthesis.md` references in READ_ONLY_GLOBS and in the propagation prompt.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/synthesize.py` (line 419-420) — found undocumented exclusion in `cited_files` parsing.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/sweep-3-review.py` (lines 21-22, 34) — docstring references.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/eval-propagation.py` (line 504) — propagation prompt reference.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/wiki-update.sh` (lines 5, 13) — usage doc references.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/.claude/hooks/validate-commit-msg.py` (line 96) — daemon-trigger detection has the special-case exclusion.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/.claude/hooks/block-push-without-approval.py` (lines 11, 118, 163) — push-block hook has multiple `synthesis.md` references.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/.claude/skills/sweep-status/SKILL.md` and `sweep-catchup/SKILL.md` and `new-comp-experiment/SKILL.md` — all reference `wiki/synthesis.md`; spec only names walk-synthesis.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/fresh-synthesis.py` — extensive `wiki/synthesis.md` references in prompt and helper text.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/mkdocs.yml` (line 60) — published docs nav.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/README.md` (lines 63, 86) — top-level README.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/wiki/index.md` (line 84) — wiki landing page.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/deepseek-v4-assessment.md` (lines 5, 162, 216) — assessment doc references.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/comp-018-vs-comp-020-retrospective.md` — referenced in the spec; sister operations doc; confirmed style and granularity expectations.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/logs/v4-synthesis-2026-05-08-e842754.md` — current Pass 2 log; verified output format the new parser must handle.
+- `<oe-repo>/operations/specs/2026-05-08-synthesis-filesystem-migration.md` — the spec under review.
+- `<oe-repo>/scripts/SWEEP-ARCHITECTURE.md` — current daemon architecture doc; grounding for what changes.
+- `<oe-repo>/scripts/synthesis-merge.py` — the script being replaced; key for understanding what `synthesis-emit-files.py` must replicate.
+- `<oe-repo>/scripts/sweep-prompt-2-synthesize.md` — Pass 2 prompt; revealed the seven-section output structure the new parser must handle.
+- `<oe-repo>/scripts/sweep-prompt-3-review.md` and `scripts/sweep-prompt-3-review-gpt55.md` — Pass 3 prompts; both must be updated.
+- `<oe-repo>/scripts/sweep-state.py` — confirmed the line-153 reference and the `cmd_pending_paths` filter; revealed the registry/history overlap (Finding 7).
+- `<oe-repo>/.github/workflows/wiki-sweep.yml` — workflow file; revealed the path-filter design issue (Finding 2) and the multi-step Pass 3 commit pattern (synthesis.md + sweep-state.json) that complicates the negation logic.
+- `<oe-repo>/.claude/skills/walk-synthesis/SKILL.md` — skill being updated; revealed Step F's loose-ends discipline that needs explicit re-grounding (Finding 10).
+- `<oe-repo>/wiki/synthesis.md` — file being deleted; verified the 3 strategic reflections + sweep history table; verified the "Where actioned items live now" content as historical anchor for cross-link rewrites.
+- `<oe-repo>/CLAUDE.md` — project conventions; confirmed where document-structure references need updating.
+- `<oe-repo>/scripts/sweep-1-propagate.py` (lines 50, 524-528, 598) — found undocumented `wiki/synthesis.md` references in READ_ONLY_GLOBS and in the propagation prompt.
+- `<oe-repo>/scripts/synthesize.py` (line 419-420) — found undocumented exclusion in `cited_files` parsing.
+- `<oe-repo>/scripts/sweep-3-review.py` (lines 21-22, 34) — docstring references.
+- `<oe-repo>/scripts/eval-propagation.py` (line 504) — propagation prompt reference.
+- `<oe-repo>/scripts/wiki-update.sh` (lines 5, 13) — usage doc references.
+- `<oe-repo>/.claude/hooks/validate-commit-msg.py` (line 96) — daemon-trigger detection has the special-case exclusion.
+- `<oe-repo>/.claude/hooks/block-push-without-approval.py` (lines 11, 118, 163) — push-block hook has multiple `synthesis.md` references.
+- `<oe-repo>/.claude/skills/sweep-status/SKILL.md` and `sweep-catchup/SKILL.md` and `new-comp-experiment/SKILL.md` — all reference `wiki/synthesis.md`; spec only names walk-synthesis.
+- `<oe-repo>/scripts/fresh-synthesis.py` — extensive `wiki/synthesis.md` references in prompt and helper text.
+- `<oe-repo>/mkdocs.yml` (line 60) — published docs nav.
+- `<oe-repo>/README.md` (lines 63, 86) — top-level README.
+- `<oe-repo>/wiki/index.md` (line 84) — wiki landing page.
+- `<oe-repo>/scripts/deepseek-v4-assessment.md` (lines 5, 162, 216) — assessment doc references.
+- `<oe-repo>/operations/comp-018-vs-comp-020-retrospective.md` — referenced in the spec; sister operations doc; confirmed style and granularity expectations.
+- `<oe-repo>/logs/v4-synthesis-2026-05-08-e842754.md` — current Pass 2 log; verified output format the new parser must handle.
 - `grep -rln "synthesis\.md" wiki/` — 27 wiki pages contain references; basis for Finding 4 cross-link policy critique.

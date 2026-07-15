@@ -132,12 +132,12 @@ Both files have exactly three `synthesis.md` references each. The spec enumerate
 
 ## Files I read for this review
 
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/specs/2026-05-08-synthesis-filesystem-migration.md` — the twice-revised spec; primary review target.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/specs/2026-05-08-synthesis-filesystem-migration-spec-rereview.md` — second-pass review report; source of N1-N6 to verify.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/operations/specs/2026-05-08-synthesis-filesystem-migration-spec-review.md` (first 50 lines) — first-pass review; context for Findings 1-18.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/scripts/chembl-refresh-prompt.md` — verified N1 resolution; confirmed 8 synthesis.md references at lines 18, 23, 26, 82, 84, 127, 141, 142; confirmed Pass 4 prepend behavior.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/index.md` — verified spec's claimed line numbers 15, 21, 176.
-- `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/CLAUDE.md` — verified spec's claimed line numbers 27, 130, 247.
+- `<oe-repo>/operations/specs/2026-05-08-synthesis-filesystem-migration.md` — the twice-revised spec; primary review target.
+- `<oe-repo>/operations/specs/2026-05-08-synthesis-filesystem-migration-spec-rereview.md` — second-pass review report; source of N1-N6 to verify.
+- `<oe-repo>/operations/specs/2026-05-08-synthesis-filesystem-migration-spec-review.md` (first 50 lines) — first-pass review; context for Findings 1-18.
+- `<oe-repo>/scripts/chembl-refresh-prompt.md` — verified N1 resolution; confirmed 8 synthesis.md references at lines 18, 23, 26, 82, 84, 127, 141, 142; confirmed Pass 4 prepend behavior.
+- `<oe-repo>/index.md` — verified spec's claimed line numbers 15, 21, 176.
+- `<oe-repo>/CLAUDE.md` — verified spec's claimed line numbers 27, 130, 247.
 - `.github/workflows/` (all four files) — verified no other workflow beyond wiki-sweep.yml and chembl-refresh.yml touches synthesis.md; confirmed chembl-refresh.yml invokes prompt via `cat` and doesn't itself contain synthesis.md references.
 - `grep -rn "synthesis\.md" .github/workflows/` — no hits outside wiki-sweep.yml.
 - `grep -rn "wiki/synthesis\.md\|synthesis-merge" scripts/ .claude/ README.md mkdocs.yml CLAUDE.md index.md` — ran the success criterion 11 grep; confirmed chembl-refresh-prompt.md is captured by it.

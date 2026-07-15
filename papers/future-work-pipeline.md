@@ -9,7 +9,7 @@ purpose: capture noteworthy findings from the heterogeneity-guard audit (and fut
 
 Living index. Items here originated in deep-dives done for the heterogeneity-guard methodology paper (`papers/cross-vendor-heterogeneity-guard/`) but are out-of-scope for that paper's argument. Each entry names the angle, where the source material lives, why it earns its own write-up, and whether it reads more naturally as a paper or a blog.
 
-When an item moves into active drafting, create a sibling directory under `papers/` (for papers) or under `abent-family/brian/blog/drafts/` (for blogs) and link both ways.
+When an item moves into active drafting, create a sibling directory under `papers/` (for papers) or under the private-repo blog-drafts directory (for blogs) and link both ways.
 
 ---
 

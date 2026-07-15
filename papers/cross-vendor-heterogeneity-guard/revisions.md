@@ -14,7 +14,7 @@ Catches from the cross-vendor review process during drafting of this manuscript.
 
 ### Catch 1, primary drafter confabulation on PaperOrchestra (caught by user push-back)
 
-During session 1 the user asked whether Google's "Paper Orchestra" should be used to draft the paper. The drafter responded with *"I don't have reliable information on a Google product called Paper Orchestra"* without checking the project's repository, which contained two files with detailed descriptions of PaperOrchestra: `Open Enzyme/posts/notes/hypothesis-generation-gap.md` and `abent-family/brian/blog/2026-05-08-grounding-the-ai-scientist-hype/substack.md`.
+During session 1 the user asked whether Google's "Paper Orchestra" should be used to draft the paper. The drafter responded with *"I don't have reliable information on a Google product called Paper Orchestra"* without checking the project's repository, which contained two files with detailed descriptions of PaperOrchestra: `Open Enzyme/posts/notes/hypothesis-generation-gap.md` and a private-repo blog draft (grounding-the-ai-scientist-hype).
 
 The user pushed back: *"did you look in the repo?"*
 
@@ -397,11 +397,11 @@ The manuscript is submission-ready pending only the Zenodo DOI minting (requires
 
 ---
 
-## Catch 29, `~/.claude/projects/.../memory/` should record an updated project-status note
+## Catch 29, the harness project-status memory note should be updated
 
 **Source:** drafter housekeeping during Catch 28 restructure.
 
-**Claim under review:** the auto-memory entry at `~/.claude/projects/.../memory/project_oe_methodology_paper.md` still references "§1, §3-§9 + Methods Appendix complete, §2 awaits PaperOrchestra", that's pre-Session 4 state.
+**Claim under review:** the harness auto-memory entry (`project_oe_methodology_paper`) still references "§1, §3-§9 + Methods Appendix complete, §2 awaits PaperOrchestra", that's pre-Session 4 state.
 
 **Correction applied:** updated in a separate housekeeping pass (not committed in this revision-log entry; tracked separately).
 

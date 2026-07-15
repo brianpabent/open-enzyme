@@ -28,7 +28,7 @@ Triggered by `synthesis/queue/2026-05-16-experiment-2-single-command-proteinmpnn
 
 ## Phase 1: ProteinMPNN install
 
-- **Install path:** `tools/ProteinMPNN/` (relative to repo root: `/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme/tools/ProteinMPNN/`). `/opt/` is not writable on this Mac (read-only `/opt` per macOS sandbox); `~/tools/` is also blocked by sandbox; the only writable location inside the configured allowlist was the repo's own `tools/` subdirectory.
+- **Install path:** `tools/ProteinMPNN/` (relative to repo root: `<oe-repo>/tools/ProteinMPNN/`). `/opt/` is not writable on this Mac (read-only `/opt` per macOS sandbox); `~/tools/` is also blocked by sandbox; the only writable location inside the configured allowlist was the repo's own `tools/` subdirectory.
 - **Install method:** downloaded `https://github.com/dauparas/ProteinMPNN/archive/refs/heads/main.tar.gz` (84 MB; full repo including all model-weight `.pt` files), extracted to `tools/ProteinMPNN/`. Git-clone failed under the sandbox because `.git/config` writes were blocked; tarball install is functionally equivalent (and reproducibility is preserved by the GitHub immutable archive URL).
 - **Dependencies:** `python3.13`, `torch 2.12.0`, `numpy 2.4.4` — all already present, no `pip install` step needed.
 - **Smoke test:** ran the official two-PDB example (`5L33`, `6MRR`) with `--num_seq_per_target 2 --sampling_temp 0.1 --seed 37`. Output: "2 sequences of length 106 generated in 0.3798 seconds" / "2 sequences of length 68 generated in 0.26 seconds". Model weights loaded correctly from `vanilla_model_weights/v_48_020.pt`.

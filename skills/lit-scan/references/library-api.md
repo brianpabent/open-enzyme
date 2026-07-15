@@ -39,7 +39,7 @@ translation_models_for_language(config, language) -> (model_a, model_b)   # diff
 translate_source_two_model(client, source_text, language, source_id, config, output_dir, target_language="English") -> annotated
 counterread_source_single_model(...) -> read   # cheaper single-model pass when a full cross-check isn't warranted
 ```
-The Claude subagent running the scan **is Model A** — `translate_source_two_model` only pays OpenRouter for Model B (`memory/feedback_subagent_as_model_a.md`). Surface disagreements as inline annotations; tag tier/dose/mechanism-changing ones `[TRANSLATION-DISAGREEMENT]`. Full protocol: `wiki/etc/manual-literature-mining.md` §"Translation protocol".
+The Claude subagent running the scan **is Model A** — `translate_source_two_model` only pays OpenRouter for Model B (`feedback_subagent_as_model_a.md`). Surface disagreements as inline annotations; tag tier/dose/mechanism-changing ones `[TRANSLATION-DISAGREEMENT]`. Full protocol: `wiki/etc/manual-literature-mining.md` §"Translation protocol".
 
 ## Model client + config
 

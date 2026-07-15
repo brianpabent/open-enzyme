@@ -33,4 +33,4 @@ Brian pushed back on the original "vendor benchmarking" thread: he shared BioDes
 
 **Brian-declined scope** (recorded for completeness): the proposed audit of OE's Pass 2 synthesizer choice (Gemini 2.5 Pro's BioDesignBench score of 8.8) was explicitly declined — Brian: "We've done our own evals, so I don't care that they had tooling issues." OE's Pass 2 use case (text-only corpus synthesis) is structurally different from BioDesignBench's tool-calling-heavy benchmark; the BioDesignBench Gemini result does not transfer.
 
-**New memory saved:** [`memory/feedback_dont_treat_single_failed_fetch_as_durable_gate.md`](../../../.claude/projects/-Users-brianabent-Documents-Claude-Projects-abent/memory/feedback_dont_treat_single_failed_fetch_as_durable_gate.md) — the durable-gate failure mode this item exposed.
+**New memory saved:** `feedback_dont_treat_single_failed_fetch_as_durable_gate.md` — the durable-gate failure mode this item exposed.

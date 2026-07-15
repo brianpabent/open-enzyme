@@ -28,6 +28,6 @@ The single load-bearing belief in the current platform thesis that is least supp
 
 **Pass 3's factual correction implemented:** the "Multi-user pilot validation" follow-up section now includes a new "Pre-pilot single-subject anchor" paragraph that distinguishes "workflow instantiated at n=1 in pieces" (already true) from "no subject has executed the FULL five-step pipeline end-to-end with documented Tier 2 batch QC + Tier 3 anchor + biomarker readout published in one place" (the actual gap). The framing is "no fully documented end-to-end published execution," not "zero n=1 instantiation" — exactly Pass 3's recommended revision.
 
-**Per `memory/feedback_no_riskiest_assumption_regurgitation.md`:** the multi-user pilot question already exists at `open-questions.md` (line 159 in the Compound-Specific Questions section). No duplicate Open Question entry created. The Riskiest Assumption framing is absorbed into the existing pilot question + the new OCTN1/EGT worked example carrying the operational anchor.
+**Per `feedback_no_riskiest_assumption_regurgitation.md`:** the multi-user pilot question already exists at `open-questions.md` (line 159 in the Compound-Specific Questions section). No duplicate Open Question entry created. The Riskiest Assumption framing is absorbed into the existing pilot question + the new OCTN1/EGT worked example carrying the operational anchor.
 
 Closure complete.
