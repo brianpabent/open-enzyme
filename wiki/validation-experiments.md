@@ -1270,7 +1270,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Protocol — three-arm fraction comparison:**
 
-- **Arm A: HCPM (19.1 kDa Fudan fraction)** — gold-standard purified preparation per Lu 2018 (PMC5925397). Sourcing: direct request to Chen Daofeng / Fudan group OR independent preparation following the Lu 2018 protocol (ethanol precipitation + DEAE-Sepharose ion-exchange + Sephadex G-100 size-exclusion).
+- **Arm A: HCPM (19.1 kDa Fudan RG-I fraction)** — the mechanistically-cleanest anti-inflammatory candidate: an acidic RG-I heteropolysaccharide, and **the only HC fraction with a direct NLRP3 / caspase-1 / IL-1β / IL-18-suppression readout** (Li 2025, PMID 40654358 / PMC12254813). Characterized in **Zhou 2022 (PMID 36252625)** — *not* Lu 2018 (PMID 29719782), which is the CHCP *crude* paper (citation corrected 2026-07-14 per the [structure-activity lit scan](../logs/houttuynia-polysaccharide-structure-activity-lit-scan-2026-07-14.md)). Sourcing: direct request to Chen Daofeng / Fudan group OR independent preparation following the Zhou 2022 protocol (ethanol precipitation + DEAE-Sepharose ion-exchange + Sephadex G-100 size-exclusion).
 - **Arm B: Crude HCP** — boiled-water extract of *Houttuynia cordata* whole-herb (the home-preparation reference, parallels mushroom β-glucan crude vs. purified comparison).
 - **Arm C: Commercial Houttuynia capsule extract** — three brands (consumer-product representative; tests product-equivalence directly).
 
@@ -1278,10 +1278,17 @@ Each arm: **three log-spaced doses (10, 100, 1000 μg/mL)** in MSU-stimulated TH
 
 **Readouts (narrow):**
 - **IL-1β supernatant ELISA** — primary endpoint. NLRP3-axis output; the signature gout-inflammation signal.
-- **IL-6 supernatant ELISA** — secondary; broader inflammatory readout. Cheap technical-fail safeguard.
+- **IL-6 supernatant ELISA** — secondary; serves triple duty at marginal cost: (a) broader inflammatory readout / technical-fail safeguard; (b) **CP1b amplifier probe** — Houttuynia's NF-κB suppression should hit TNFSF14-driven IL-6 amplification too ([`tnfsf14-gout-target.md`](./tnfsf14-gout-target.md)), tested on the same plate; (c) with the extract-alone arm (below), a **TLR4-priming detector** — a rise in extract-alone IL-6 flags signal-1 priming (see the directionality safety caution).
 - **Cell viability (CCK-8 or MTT)** — confounder check. Required to interpret null results (cytotoxicity at high doses can masquerade as "no effect").
 
 **Dropped vs. earlier draft:** C3a + sC5b-9 readouts removed. THP-1 macrophages don't reproduce serum complement biology cleanly — a positive complement signal could be "the CP0 mechanism translates" OR "local-macrophage complement leaked" OR "assay format artifact," indistinguishable. The CP0 mechanism question is answered in [comp-040](./computational-experiments.md) (CFH-depleted serum + MSU) where the full complement cascade is operative.
+
+**Directionality safety caution + priming-only control arm (added 2026-07-14, per the [Houttuynia polysaccharide structure-activity lit scan](../logs/houttuynia-polysaccharide-structure-activity-lit-scan-2026-07-14.md)).** The lit scan resolved the fraction-directionality question and surfaced a mechanism-grounded risk this screen must control for:
+- **Structure → direction.** *Homogalacturonan* (pure linear 1,4-α-GalA, ~60 kDa; the HCP-2 fraction) is a **direct TLR4/MD-2 agonist that raises IL-1β on naïve monocytes** (Cheng 2014, PMID 24528726; In Vitro). *RG-I / branched* fractions (HCPM, HC-PS1/3, HBHP-3) are anti-complement → anti-inflammatory in disease models. Same receptor (TLR4/MD-2), opposite outcomes — TLR4 engagement is necessary but not sufficient to predict direction; structure (HG vs RG-I) **and** context (naïve vs challenge) both move it.
+- **The amplification risk.** MSU supplies signal-2 (NLRP3 assembly). If a Houttuynia material supplies **signal-1** (TLR4→NF-κB→pro-IL-1β priming) — which an HG-rich or crude/capsule extract can — it could **amplify** IL-1β rather than suppress it, inverting the readout. Xu 2015's same-material bidirectionality (pro-inflammatory alone, anti-inflammatory vs LPS; PMID 26190353) is the empirical proof the sign flips.
+- **Required control — priming-only / extract-alone arm.** Run each arm **without MSU** (extract + vehicle, no MSU challenge) as a priming-detection control. A rise in IL-1β / IL-6 in the extract-alone condition flags TLR4-priming and makes the with-MSU result interpretable (suppression vs amplification). Without it, an amplifying extract is indistinguishable from a failed suppressor.
+- **Arm guidance.** Purified HCPM (Arm A) is the clean anti-inflammatory reference; commercial capsules (Arm C) are **crude whole-herb extract** with an **unstandardized HG:RG-I (TLR4-agonist) ratio** and no published COA — two products can land on opposite sides of the directionality line, which is exactly why sourcing matters.
+- **Context.** No HC polysaccharide has **ever** been tested in an MSU / urate / gout model (confirmed EN + Chinese corpora) — §1.30 would be the first, so the directionality caution is load-bearing, not hypothetical.
 
 **Decision rules:**
 - If **HCPM suppresses IL-1β ≥50% at ≤100 μg/mL AND commercial extracts fail to match** within ≥10× dose range: Houttuynia confirmed as gout-relevant in cell model with consumer-product caveat. Promote to "gout-relevant macrophage validated; human RCT pending." **Fire [comp-040](./computational-experiments.md) next** for CFH-independence mechanism confirmation.
@@ -1294,7 +1301,7 @@ Each arm: **three log-spaced doses (10, 100, 1000 μg/mL)** in MSU-stimulated TH
 - Nigericin positive control reaches ≥3× MSU IL-1β (confirms NLRP3 axis intact).
 - All three Houttuynia arms tested at full dose-response with cell viability ≥85% throughout.
 
-**Dependencies:** CRO with THP-1 macrophage NLRP3 assay capability (Cellular Technology Limited, Eurofins Discovery, several specialty rheumatology contract labs). HCPM sourcing is the operational bottleneck — direct collaboration request to Chen Daofeng / Fudan would be the cleanest path; in-house preparation following Lu 2018 protocol is the fallback. Commercial-capsule arm: three brands of "Houttuynia cordata" extract from US/EU supplement marketplaces (any with documented standardization claims).
+**Dependencies:** CRO with THP-1 macrophage NLRP3 assay capability (Cellular Technology Limited, Eurofins Discovery, several specialty rheumatology contract labs). HCPM sourcing is the operational bottleneck — direct collaboration request to Chen Daofeng / Fudan would be the cleanest path; in-house preparation following the Zhou 2022 (PMID 36252625) protocol is the fallback. Commercial-capsule arm: three brands of "Houttuynia cordata" extract from US/EU supplement marketplaces (any with documented standardization claims).
 
 **Sequential gate logic** (this assay's position in the Houttuynia validation cascade):
 
