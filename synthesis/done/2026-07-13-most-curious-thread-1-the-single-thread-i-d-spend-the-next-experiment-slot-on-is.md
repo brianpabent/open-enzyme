@@ -109,3 +109,15 @@ The single thread I'd spend the next experiment slot on is the **Tier 2 butyrate
 - wiki/validation-experiments.md
 
 > **Pass 3 review — Confirmed, prioritize.** `[OVERLAP: EXTENSION]` The Most Curious Thread pick is the same Tier 2 butyrate assay validation as Proposed Experiment #1, which is correct — the convergence is acknowledged in the thread's own text ("I suspect another sweep model would converge on this pick"). The reasoning is well-supported: the genotype-informed supplement workflow's Q141K butyrate-emphasis example and the butyrate dose-response arm in §1.14 both depend on a validated Tier 2 butyrate ruler, and without it, unverified metabolite dose is indistinguishable from mechanism-failure noise. The full-text verification pass (completed 2026-06-01 per `tier-2-butyrate-assay-audit-computational.md`) correctly narrowed the candidates to one survivor (HPLC-UV, De Baere 2013). The refutation criteria (recovery <70% or GC-MS disagreement >30% in OE-relevant medium) are appropriately specific. The $500 cost and community-biolab accessibility make this the highest-insight-per-dollar experiment in the current queue. The convergence claim is honest — this is not an idiosyncratic pick but the obvious next step from comp-038's YELLOW verdict.
+
+---
+
+## ✓ Actioned 2026-07-14 — duplicate of item 5, closed as already-actioned
+
+**This Most Curious Thread is the same Tier-2 butyrate assay validation as Proposed Experiment #1 (item 5)** — Pass 3 confirmed the convergence, and the thread's own text acknowledges it. The convergence is itself a real prioritization signal (two independent sweep sections landing on the same $500 experiment as highest-insight-per-dollar), but there is nothing new to action:
+
+- **Registered:** validation-experiments.md §1.31 "Tier 2 Butyrate Assay Validation — HPLC-UV vs. GC-MS spike/recovery" (item 5 close, commit 6b9e6b87).
+- **De Baere 2013 primary-source-verified** and re-anchored across open-questions.md / computational-experiments.md / comp-038 page (item 5 loose-end tie-up, commit db5d674f).
+- **Stale framing this item repeats is already corrected:** its claims that "electrochemical (PMID 42041444) failed the gate (vendor-locked hardware + unreleased ANN)" and "full-text verification complete via comp-038" are pre-correction. Per PubMed, PMID 42041444 (Gu et al. 2026, Biosensors 16(4):223) is GC-MS-validated (fecal cohort n=30, butyric MAE 0.029 mM) — a genuine stool-track candidate, NOT failed; and the De Baere verification is now anchored to the primary source directly, not to an absent comp-038 "full-text verification." Both corrections landed in db5d674f. No re-propagation needed.
+
+No new wiki work.
