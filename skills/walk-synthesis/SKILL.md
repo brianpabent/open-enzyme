@@ -9,9 +9,9 @@ Walk `synthesis/queue/` item-by-item, action each with Brian's go-ahead, prune t
 
 ## Background
 
-`synthesis/queue/` is the action queue produced by the wiki sweep daemon (multi-pass: propagate → synthesize → critique → DeepSeek peer-review). The daemon prepends new findings; humans (or AI in human's stead) action them and prune. This skill codifies the discipline that makes the walkthrough fast and consistent.
+`synthesis/queue/` is the action queue produced by the wiki sweep daemon (multi-pass: propagate → synthesize → critique → peer-review). The daemon prepends new findings; humans (or AI in the human's stead) action them and prune. This skill codifies the discipline that makes the walkthrough fast and consistent.
 
-**Why this skill exists.** During the 2026-05-05 walkthrough, several things had to be discovered mid-session: that Brian wants explicit item-by-item walking (not batched action), that the CTO-not-PhD framing rule must be applied to every briefing, that follow-ups need multi-surface tracking to survive, that the daemon may run in parallel during a long session and create section-number collisions on push. This skill front-loads those lessons.
+**Why this skill exists.** During the 2026-05-05 walkthrough, several things had to be discovered mid-session: that Brian wants explicit item-by-item walking (not batched action), that the CTO-not-PhD framing rule must be applied to every briefing, that follow-ups need multi-surface tracking to survive, and that the daemon may run in parallel during a long session and create section-number collisions on push. This skill front-loads those lessons.
 
 **What this skill does NOT do.** It doesn't auto-action items. It doesn't decide for Brian. It runs the *process* of walking; the *decisions* belong to him, item by item.
 
@@ -23,8 +23,17 @@ Walk `synthesis/queue/` item-by-item, action each with Brian's go-ahead, prune t
 | `/walk-synthesis` invoked | Yes |
 | `synthesis/queue/` has items pending and Brian wants to process them | Yes |
 | One specific item needs actioning (not full walkthrough) | Skip skill — action directly |
-| Brian wants only the inbox-zero cleanup pass | Skip to Section 7 |
-| You're mid-conversation and Brian says "let's keep going" on a walkthrough already in progress | Continue from current item; don't restart |
+| Brian wants only the inbox-zero cleanup pass | Skip to §"End-of-walkthrough operations" |
+| Mid-conversation and Brian says "let's keep going" on a walkthrough already in progress | Continue from current item; don't restart |
+
+## References (load as needed — progressive disclosure)
+
+The core walking loop is below. Pull these in when the situation calls for them:
+
+- **[`references/item-type-playbooks.md`](references/item-type-playbooks.md)** — what action each queue-item type (Connection / Contradiction / Experiment / Open Question / Priority Action) typically lands. Consult when deciding the proposed action.
+- **[`references/subagent-decisions.md`](references/subagent-decisions.md)** — inline-vs-subagent, Sonnet-vs-Opus, fore/background, the "auto-append a review item" rule, the full subagent briefing checklist (multilingual + translation + BioDesignBench disciplines), and the 6-surface follow-up tracking. Consult when spawning any subagent or creating follow-ups.
+- **[`references/templates.md`](references/templates.md)** — copy-paste scaffolds: actioned/closure annotations, the end-of-item summary, the peer-track scope-page skeleton, the falsification-card stub, the tiered wet-lab protocol entry.
+- **[`references/friction-and-anti-patterns.md`](references/friction-and-anti-patterns.md)** — sandbox blocks, daemon-parallel-run merge handling, file collisions, and the full anti-pattern catalog (drift triggers, end-of-item discipline, corpus-only-pushback). Consult on the final push and whenever something feels off.
 
 ---
 
@@ -37,20 +46,20 @@ Before announcing the first item, do all of these:
    cd "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme"
    git pull --rebase
    ```
-   If `.claude/` paths block the rebase with "Operation not permitted," retry with `dangerouslyDisableSandbox: true`. If conflicts, resolve via the patterns in Section 8.
+   If `.claude/` paths block the rebase with "Operation not permitted," retry with `dangerouslyDisableSandbox: true`. If conflicts, resolve via the patterns in `references/friction-and-anti-patterns.md`.
 
-2. **Inventory the queue.** Run `ls synthesis/queue/` to list every pending item. Each file is one item (Connection / Contradiction / Experiment / Open Question / Priority Action / Riskiest Assumption / Most Curious Thread / chembl-discrepancy). Filename format: `<sweep-date>-<type>-<index>-<slug>.md`. **Read each file** to surface its frontmatter (`type`, `pass3_verdict`, `overlap_with`) + headline + body + Pass 3 review. **Group by sweep date**, then by type within sweep, and **number globally** (item 1/total through item total/total) so Brian can navigate.
+2. **Inventory the queue.** Run `ls synthesis/queue/` to list every pending item. Each file is one item (Connection / Contradiction / Experiment / Open Question / Priority Action / Riskiest Assumption / Most Curious Thread / chembl-discrepancy / comp-review). Filename format: `<sweep-date>-<type>-<index>-<slug>.md`. **Read each file** to surface its frontmatter (`type`, `pass3_verdict`, `overlap_with`) + headline + body + Pass 3 review. **Group by sweep date**, then by type within sweep, and **number globally** (item 1/total through item total/total) so Brian can navigate.
 
 3. **Check `synthesis/strategic-reflections/`** for pending content-triggered reflections. Do not action these as part of the walkthrough — they fire on substance maturity, not on walkthrough cadence. Note them so Brian can see what's queued.
 
 4. **Check `synthesis/history/`** for the most recent sweep entry — it holds the per-sweep narrative and the items table that grouped this batch.
 
-5. **State the inventory back to Brian in one short message** before starting item 1. Format:
-   > "Queue at `synthesis/queue/` has X items from sweep YYYY-MM-DD: N Connections, M Contradictions, K Proposed Experiments, J Open Questions, L Priority Actions [+ riskiest-assumption / most-curious-thread / chembl-discrepancy if present]. Ready to walk them 1-by-1?"
-
 5. **Check for in-flight subagents** (from prior sessions or earlier in this conversation). If any are running, note their target files so you don't collide.
 
-6. **Wait for "go" / "yes" / "engage"** before presenting item 1.
+6. **State the inventory back to Brian in one short message** before starting item 1. Format:
+   > "Queue at `synthesis/queue/` has X items from sweep YYYY-MM-DD: N Connections, M Contradictions, K Proposed Experiments, J Open Questions, L Priority Actions [+ riskiest-assumption / most-curious-thread / chembl-discrepancy / comp-review if present]. Ready to walk them 1-by-1?"
+
+7. **Wait for "go" / "yes" / "engage"** before presenting item 1.
 
 ---
 
@@ -85,20 +94,19 @@ Walk the mechanism like a flowchart, not a research paper. Use analogies where t
 Pass-3 `Push back.` / `Rejected.` verdict, ask: *does the pushback rest only on corpus-absence?* The 
 Pass-3 reviewer has read-only corpus tools (no web/lit-scan), so when the synthesizer makes a **world-claim** 
 (e.g. "compound X inhibits transporter Y") that simply isn't in the wiki, the reviewer can only report "not 
-documented in our corpus" — and that is **not refutation.** Everything in the corpus traces to a primary 
-source; a page that says "not documented" records *our non-discovery*, not a primary finding. When a 
-pushback's entire basis is corpus-absence (or a corpus statement not itself anchored to a cited primary 
-source), the default proposed action is **DO THE WORK** — spawn a multilingual lit-scan / ChEMBL / primary-
-source subagent — *before* accepting or rejecting. Lead with this in the briefing; do not wait for Brian to 
-suggest it. Distinguish: a corpus citation faithfully relaying a primary source ("UniProt P08174 has 8 
-DISULFID features") IS legitimate grounds to push back; one relaying non-discovery is not. The lit scan is 
-cheap and often resolves the item cleanly. Canonical case: 2026-06-01 theaflavins×ABCG2 — Pass-3 pushed 
-back on corpus-absence; the scan showed the synthesizer's claim was *inverted* (theaflavins up-regulate 
-ABCG2 in vivo, platform-favorable) and filled a real wiki gap. See `memory/feedback_do_the_work_not_corpus_only.md`.
+documented in our corpus" — and that is **not refutation.** When a pushback's entire basis is corpus-absence 
+(or a corpus statement not itself anchored to a cited primary source), the default proposed action is 
+**DO THE WORK** — spawn a multilingual lit-scan / ChEMBL / primary-source subagent — *before* accepting or 
+rejecting. Lead with this in the briefing; do not wait for Brian to suggest it. Distinguish: a corpus 
+citation faithfully relaying a primary source ("UniProt P08174 has 8 DISULFID features") IS legitimate 
+grounds to push back; one relaying non-discovery is not. Canonical case: 2026-06-01 theaflavins×ABCG2 — 
+the scan showed the synthesizer's claim was *inverted* (theaflavins up-regulate ABCG2 in vivo) and filled a 
+real wiki gap. See `memory/feedback_do_the_work_not_corpus_only.md` and `references/friction-and-anti-patterns.md` §16.
 
 **What I'd propose to do:**
-[Concrete action. Name files that would change. Estimate scope ("inline, ~10 min" / "subagent, ~5 min 
-to spawn" / "no wiki work needed — already done" / "needs your decision between A and B").]
+[Concrete action. Name files that would change. Estimate scope ("inline, ~10 min" / "subagent" / 
+"no wiki work needed — already done" / "needs your decision between A and B"). See 
+references/item-type-playbooks.md for what each item type typically needs.]
 [If inherited loose ends apply, explicitly include their disposition in the proposed action.]
 
 [If decision needed:] **My recommendation:** [Option] — [one-sentence justification].
@@ -115,26 +123,24 @@ to spawn" / "no wiki work needed — already done" / "needs your decision betwee
 - Numbers in context: "0.388 (39% of theoretical max)" not bare "0.388".
 - Tables when comparing 3+ things; prose when explaining 1–2.
 
-**Chassis-pending check (added 2026-05-15).** For every item in the queue, ask one explicit question as part of the briefing: ***"Does this finding hit a chokepoint we care about? If yes — does it have a chassis?"*** Three branches:
+**Chassis-pending check (added 2026-05-15).** For every item, ask one explicit question as part of the briefing: ***"Does this finding hit a chokepoint we care about? If yes — does it have a chassis?"*** Three branches:
 
-1. **Hits chokepoint + fits a current chassis (koji, compounding pharmacy, S. boulardii, etc.)** → action normally; the proposed action will name the relevant chassis page.
+1. **Hits chokepoint + fits a current chassis (koji, compounding pharmacy, S. boulardii, etc.)** → action normally; the proposed action names the relevant chassis page.
 2. **Hits chokepoint + chassis is open** → propose adding to [`wiki/chassis-pending-interventions.md`](../../../wiki/chassis-pending-interventions.md) as the action. The intervention is real; the chassis question is the next question, not the filter that kills the first one. Do NOT deprioritize the item just because koji isn't the right chassis.
-3. **Doesn't hit a documented chokepoint** → action as normal (might be a methodology improvement, a tracking artifact, a contradiction-resolution, etc., where the chassis question doesn't apply).
+3. **Doesn't hit a documented chokepoint** → action as normal (methodology improvement, tracking artifact, contradiction-resolution, etc.).
 
-This is the operational expression of the discipline named in [`synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md`](../../../synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md). Chassis is downstream of chokepoint; the closure question gates the chokepoint-hit check before the chassis-fit check, which prevents quiet chassis-filter narrowing at the recommendation step.
+This is the operational expression of [`synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md`](../../../synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md). The closure question gates the chokepoint-hit check before the chassis-fit check, preventing quiet chassis-filter narrowing at the recommendation step.
 
 ### Step B — Wait for go-ahead
 
-Do NOT action the item until Brian says "yes" / "go" / "engage" / "do it" / "proceed" / similar. If he asks a clarifying question, answer it and re-ask. If he picks a different option than your recommendation, action his choice without resistance.
+Do NOT action the item until Brian says "yes" / "go" / "engage" / "do it" / "proceed" / similar. If he asks a clarifying question, answer it and re-ask. If he picks a different option than your recommendation, action his choice without resistance. (See `references/friction-and-anti-patterns.md` §15 — clarifying questions and expressions of interest are NOT go-ahead.)
 
 ### Step C — Action it
-
-Three execution patterns:
 
 | Action type | How |
 |---|---|
 | **Inline (you do it)** | Edit canonical wiki files directly. Most cross-link updates, small wiki-page additions, propagation. |
-| **Background subagent** | When the work is independent and you want to keep walking other items. See Section 4 for Sonnet vs. Opus decision. |
+| **Background subagent** | When the work is independent and you want to keep walking other items. See `references/subagent-decisions.md` for the model choice + the mandatory "auto-append a review item" rule. |
 | **Foreground subagent** | When the agent's result blocks the next item or you need its findings before continuing. |
 | **Already done** | If the canonical wiki state already reflects the action, the closure annotation just says so. No new wiki work. |
 
@@ -153,9 +159,7 @@ If the action was a closure note ("already done"), say so explicitly.] [Cross-li
 or experiments created.] [If follow-ups were created, list them with where they're tracked.]
 ```
 
-The `---` separator + `## ✓ Actioned <date>` H2 keeps the closure visually distinct from the original Pass 2 / Pass 3 content above.
-
-**The annotation is non-optional.** It closes the loop and documents what shipped.
+The `---` separator + `## ✓ Actioned <date>` H2 keeps the closure visually distinct from the Pass 2 / Pass 3 content above. **The annotation is non-optional** — it closes the loop and documents what shipped. Full templates in `references/templates.md`.
 
 ### Step E — `git mv` queue → done + commit
 
@@ -165,542 +169,101 @@ After the closure annotation is appended, **move the file** from `synthesis/queu
 git mv synthesis/queue/<sweep-date>-<type>-<index>-<slug>.md synthesis/done/
 ```
 
-The `git mv` preserves the file's git history. Empty `synthesis/queue/` directory = inbox-zero by construction.
-
-Commit immediately per the umbrella CLAUDE.md git steward pattern. The commit message:
+The `git mv` preserves git history. Empty `synthesis/queue/` = inbox-zero by construction. Commit immediately per the umbrella CLAUDE.md git steward pattern:
 
 ```
 sweep item N: <one-line action summary>
 
-<2-4 line body covering: what shipped, which files, any decisions made,
-any follow-ups queued. The queue→done move is part of this commit.>
+<2-4 line body: what shipped, which files, decisions made, follow-ups queued.
+The queue→done move is part of this commit.>
 
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+Co-Authored-By: Claude <model> <noreply@anthropic.com>
 ```
 
-**Do NOT use `[skip-wiki-sweep]`.** That marker is reserved for daemon-generated commits. Hand-applying it suppresses the sweep on user content (root cause of the 2026-04-27 walkthrough's blind spot — see CLAUDE.md). The commit-msg hook enforces this.
-
-**Hold the push until end of batch** (Section 7) so the daemon fires once across the whole batch, not N times.
+**Do NOT use `[skip-wiki-sweep]`** — reserved for daemon-generated commits; the commit-msg hook enforces this. **Hold the push until end of batch** (§"End-of-walkthrough operations") so the daemon fires once across the whole batch, not N times.
 
 ### Step F — Summarize what landed + loose ends + user disposition (added 2026-05-08)
 
 **An item is NOT done after Step E.** Committing the closure note is necessary but not sufficient. An item is done when (a) the action landed, (b) loose ends are dispositioned, AND (c) the user has explicitly approved moving on.
 
-**The end-of-item summary discipline:** before briefing the next item, post a short summary back to the user covering:
+Before briefing the next item, post a short summary covering:
 
-1. **What landed** — 2–4 sentences naming the files changed, commit hash(es), and any key decisions made. The user may not have followed every Edit/Bash call; this is the cumulative human-readable diff.
+1. **What landed** — 2–4 sentences naming files changed, commit hash(es), key decisions. The cumulative human-readable diff.
+2. **Loose ends** — explicitly listed, each categorized:
+   - **Acceptably deferred** — already queued elsewhere (`validation-experiments.md`, `open-questions.md`, comp-NNN follow-up, Phase 2 sub-task, Strategic Reflections Queue). Listed so nothing silently drops.
+   - **Needs disposition now** — could change the next item's framing. The user picks defer / action / ignore.
+   - **Carries over to Item X** — explicitly anchored to a specific future item, which will absorb it in its briefing.
+3. **Wait for user disposition** before briefing the next item — *conditionally* (see Auto-advance rule below).
 
-2. **Loose ends** — explicitly listed, each categorized as one of three types:
-
-   - **Acceptably deferred** — already queued elsewhere (`validation-experiments.md`, `open-questions.md`, comp-NNN follow-up, Phase 2 sub-task on a scope page, Strategic Reflections Queue). Listing for completeness so nothing silently drops.
-   - **Needs disposition now** — could change the next item's framing or downstream work. The user picks defer / action / ignore.
-   - **Carries over to Item X** — explicitly anchored to a specific future walkthrough item. The future-item briefing will absorb it. Without this anchoring, cross-item loose ends silently get forgotten.
-
-3. **Wait for user disposition** before briefing the next item — *conditionally*. See "Auto-advance decision rule" below.
+Template in `references/templates.md` §"End-of-item summary."
 
 #### Auto-advance decision rule (clarified 2026-05-15)
 
-Brian's flow (in his own words):
+Brian's flow, in his words: *walk starts → you show an item and stop → I say what to do (or we go back and forth) → sometimes we run an experiment → if it's the simple recommended thing or a discrete one-off, auto-advance; if we're having a back-and-forth or I'm asking questions, do not auto-advance → auto-advance only when something is clearly done with no loose ends → when you go to the next one you display it and stop (you don't action it).*
 
-1. Walk starts. You show me an item, and you stop.
-2. I tell you what we want to do with it, or we have some back and forth on questions.
-3. Sometimes we run an experiment, whatever.
-4. **If we're just doing the simple thing that's recommended, or if we're doing something discrete like a one-off, then auto-advance.**
-5. **If we're having a back and forth about it, if I'm asking questions, do not auto-advance.**
-6. **Auto-advance when something is clearly done, with no loose ends.**
-7. When you go to the next one, you'll display it, and you'll stop. You don't action it.
+Translation into mechanics:
 
-**Translation into the walkthrough mechanics:**
+- **The wait-for-go gate is about ACTION, not advancing.** Always wait for explicit "go" / "yes" / "do it" / "ship it" / "proceed" before editing files. Clarifying questions don't count — answer and wait. "What if we did X instead" is a re-briefing request, not go.
+- **After a clean close** (no friction, recommended-simple action, no loose ends), **auto-advance** is the default — post the summary, then immediately brief the next item in the same response. Then stop (no action on the next item).
+- **After a friction-y close** (back-and-forth, redirects, clarifying questions, loose ends needing disposition), **wait for explicit "next" / "go" / "Item N+1"** before briefing the next item. Friction signals Brian wants to think between items.
+- **The next-item briefing is itself a stop point.** Auto-advancing displays the next item and stops; it does NOT mean you action it.
 
-- **The wait-for-go gate is about ACTION, not about advancing.** Always wait for explicit "go" / "yes" / "do it" / "ship it" / "proceed" before editing files. Clarifying questions don't count as go-ahead — answer the question and wait. A "what if we did X instead" reply isn't go on either the original plan or X; it's a request for re-briefing.
+**Friction examples (do NOT auto-advance):** clarifying question mid-item; redirected recommendation; flagged process correction; loose ends tracked as "carries over" or "needs disposition now"; multiple back-and-forths to converge. **Clean-close examples (DO auto-advance):** "go"/"ship it"/"yes" on the first briefing; recommended action executed exactly as proposed; closure summary has "no loose ends."
 
-- **After a clean close (no friction, recommended-simple action, no loose ends), auto-advance** is the default — post the summary, then immediately brief the next item in the same response. Then stop (no action on the next item).
+**Why this rule exists.** The 2026-05-08 Item 10 drift compounded because a closure-note commit was treated as completion while open loose ends were still in flight; Claude moved to Item 11 unilaterally, Brian had to back up, and the loose ends became larger work. The fix is upstream of moving to Item 11 — explicit summary + loose-ends inventory before the next briefing fires. Full anti-pattern in `references/friction-and-anti-patterns.md` §14.
 
-- **After a friction-y close (back-and-forth, redirects, clarifying questions, loose ends needing disposition), wait for explicit "next" / "go" / "Item N+1"** before briefing the next item. Friction signals Brian wants to think between items.
-
-- **The next-item briefing is itself a stop point.** Auto-advancing means you display the next item and stop. It does NOT mean you action the next item.
-
-**Friction examples (do NOT auto-advance):** Brian asked a clarifying question mid-item; Brian redirected the recommendation; Brian flagged a process correction; loose ends are tracked as "carries over" or "needs disposition now"; the item required multiple back-and-forths to converge on the action.
-
-**Clean-close examples (DO auto-advance):** "go" / "ship it" / "yes" lands on the first briefing; the recommended action gets executed exactly as proposed; closure summary has "no loose ends."
-
-The old "Auto-advance is forbidden" rule (2026-05-08) was too broad — it conflated "don't action without go" (correct) with "don't display the next item without go" (over-strict). The corrected discipline keeps the action-gate strict and relaxes the display-gate based on whether the prior item closed cleanly.
-
-**Why this rule exists.** The 2026-05-08 walkthrough Item 10 drift compounded specifically because a closure-note commit was treated as completion while open loose ends (brief-contamination caveat propagation, methodological discipline doc, comp-018 page disclosure, retrospective writeup) were still in flight. Claude moved to Item 11 unilaterally, the user had to back the conversation up, and the unresolved loose ends became larger work than they would have been if disposed of at end of Item 10. The fix is upstream of moving to Item 11 — explicit summary + loose-ends inventory + user disposition before the next briefing fires.
-
-**Template** at Section 6 §"End-of-item summary" below. Anti-pattern formalized at Section 9 §14.
-
-**The carryover discipline:** when an item walk discovers a cross-item loose end (e.g., comp-019's results contradict a calibration note added in Item 8 that won't be revisited until Item 11), the loose end gets added explicitly to the **inherited loose ends** section of the NEXT item's briefing. So when the briefing for Item N+1 fires, it includes "carryover from Item N: [the calibration note now points wrong direction; needs reversal during this walk]." Cross-item state is impossible to forget when it's surfaced as part of the future item's briefing context.
+**The carryover discipline:** when an item discovers a cross-item loose end (e.g., comp-019's results contradict a calibration note added in Item 8 that won't be revisited until Item 11), add it explicitly to the **inherited loose ends** section of the NEXT relevant item's briefing. Cross-item state is impossible to forget when it's surfaced as part of the future item's briefing context.
 
 ---
 
-## Section 3 — Item-type playbooks
-
-Each synthesis section has its own playbook for what action typically lands.
-
-### Connections
-Usually: extend an existing wiki page with a new mechanistic synthesis section, update cross-references, possibly add a bullet to a related concept page. Rarely needs a new page.
-
-### Contradictions
-Usually: either (a) document the contradiction with a stratified-guidance section in the relevant page, or (b) propose a wet-lab experiment that resolves it (then add to validation-experiments.md). Often actioned earlier in the sweep — check before re-actioning.
-
-### Proposed Experiments
-Three sub-cases:
-- **Already in `validation-experiments.md`:** closure note, no new work. Most proposed experiments duplicate existing entries — check first.
-- **Needs new entry:** add a new §1.X section in `validation-experiments.md`. Use the Tiered Protocol pattern (Tier 1 → gated Tier 2 → gated Tier 3) when escalating cost matters.
-- **Needs computational prior first:** spawn a `new-comp-experiment` skill instead.
-
-### Open Questions
-Three sub-cases:
-- **Closed by prior work:** closure note pointing at the experiment that closed it (e.g., §1.21 closed CP0 natural-product question).
-- **Genuine open question, evidence thin:** queue a literature scan (Opus subagent) — see Section 4.
-- **Genuine open question, exploration vector:** create a dedicated scope page following Section 5 — see also `engineered-lbp-chassis.md` and `sirna-urat1-modality.md` as reference shapes.
-
-### Priority Actions
-Almost always either:
-- **Already done structurally** (e.g., Ward 1995 §1.9 was already #1 priority gate before the sweep re-asserted it): closure note, name the execution-bottleneck if any.
-- **Needs propagation work** (e.g., supplement stratification): verify what's already there, do the propagation if needed, closure note.
-- **Needs a new dedicated wiki page** (e.g., siRNA / URAT1): see Section 5.
-
----
-
-## Section 4 — Subagent decision tree
-
-When to spawn an agent vs. action inline, and which model.
-
-### Inline vs. subagent
-
-| Work type | Action |
-|---|---|
-| Cross-link updates across 2–6 files | Inline |
-| Annotation in `synthesis/queue/` | Inline |
-| New scope page following an established template | Inline (you've already mastered the template) |
-| Multi-query literature scan with judgment | Subagent (Opus) |
-| Computational experiment using established framework | Subagent (Sonnet, via `new-comp-experiment` skill) |
-| Plain-English summary for Brian to Q&A on | Subagent (Opus) |
-| Comparative analysis across 5+ heterogeneous data sources | Subagent (Opus) |
-
-### Sonnet vs. Opus
-
-| Pick | When |
-|---|---|
-| **Sonnet** | Work is mechanical: running an established analysis pipeline, generating a wiki page from an existing template, executing a concrete step-by-step protocol. Outcome is procedural correctness, not judgment. |
-| **Opus** | Work is interpretive: weighing evidence quality across heterogeneous studies, distinguishing strong from weak signals, deciding between A and B on borderline evidence, translating PhD content into accessible plain English without losing nuance, novel synthesis. |
-
-If unsure → Opus. Cost difference is small relative to the cost of low-quality judgment in user-facing output.
-
-### Foreground vs. background
-
-| Pick | When |
-|---|---|
-| **Foreground** | The agent's result blocks the next decision (e.g., "is this engineering thesis viable" before deciding to invest more in scoping it). |
-| **Background** | Work is genuinely independent. Example: launching three subagents in parallel during a walkthrough so you can keep walking other items while they work. |
-
-### Background subagents during a walkthrough — the "auto-append a review item" rule
-
-**Load-bearing rule, added 2026-05-06 in response to the walkthrough-drift incident.** When you launch a background subagent during a walkthrough whose output will need user review or actioning when it returns:
-
-1. **Launch the subagent normally.** Brief it per the rules above.
-2. **Immediately after launching, create a NEW TaskCreate entry** representing the future review step. Format: `"Item N+X — Review subagent results: <one-line description>"`. The task description should reference the subagent ID and the work it's doing.
-3. **Append this new task to the END of the walkthrough queue** by giving it a higher item number than the current highest. The walkthrough's total-item count goes up by 1 for each background subagent launched.
-4. **When the subagent's completion notification arrives, DO NOT process it immediately.** Update the existing review-task to mark it as "ready for review" (e.g., status comment, metadata field, or just the completion notification itself in the conversation). **Continue working on the current walkthrough item.** Do not let subagent completion become a drift trigger.
-5. **When the walkthrough naturally arrives at the review-task in normal item order**, present the subagent's findings to the user as that item's briefing, exactly like any other walkthrough item. Wait for explicit go-ahead before actioning. Annotate `synthesis/queue/` and commit per the standard step pattern.
-
-**Why this rule exists.** During the 2026-05-06 walkthrough, three background subagents (comp-013 TCM triage, chaperone framework refinement, triple-cassette synergy modeling) returned asynchronously. Each completion arrived as a notification mid-conversation, and Claude treated each as "process now" rather than "queue for the user-approved review step." The completions compounded into momentum that carried Claude past Items 16-21 + cleanup work + the inbox-zero pass + the push to origin, all without per-item user approval. Robbed the user of being present for the first end-to-end test of caching + DeepSeek Pass 1 infrastructure he had spent the day building.
-
-**The fix:** subagent completion is *information*, not authorization. The auto-appended review item is the structural anchor that converts "subagent finished" into "future walkthrough step the user will explicitly approve when it comes up." Preserves parallelism (subagents still run in the background, work still gets done concurrently) without losing per-item discipline (each subagent's output gets its own approval gate at its own walkthrough item).
-
-**Edge case:** when the subagent IS the canonical work for an existing walkthrough item (e.g., Item 11's comp-013 launch was the work for that item, not a side-quest), no new auto-appended review item is needed — the item is already on the walkthrough queue and its completion fulfills it. The rule applies when the subagent's output is *additional to* the current item's scope (e.g., a follow-up grep verification spawned mid-item, a parallel analysis launched as ammunition for a future decision). Use judgment: if the subagent's output will need its own briefing + go-ahead from the user, it gets its own auto-appended item. If it's just supporting evidence for the current item, it doesn't.
-
-**Auto mode interaction.** Claude Code's "Auto Mode" reminders ("execute autonomously, minimize interruptions, prefer action over planning") **do NOT override this skill's per-item discipline.** Auto mode is for routine work where the user has durably authorized continuous execution. Walkthroughs are explicitly per-item-checkpointed; that supersedes auto mode for the duration of the `/walk-synthesis` invocation. If auto mode and this skill conflict, this skill wins. The Section 9 anti-patterns + Section 7 end-of-walkthrough operations also win over auto mode — the inbox-zero pass + the final push are themselves substantive items that need the user's explicit go-ahead, not "the natural endpoint."
-
-### Briefing rules
-
-Subagents have NO conversation context. The prompt must be self-contained and brief them like a smart colleague who walked into the room. Include:
-
-1. **What you're trying to accomplish and why** (the platform-level goal, not just the immediate task)
-2. **What you've already learned or ruled out** (so they don't re-do the work)
-3. **Files they CAN touch** vs. **files to avoid** (if other agents are in flight, name them)
-4. **Constraints** (style, length, evidence level conventions, any "don't" rules from project CLAUDE.md)
-5. **What they should report back** (length cap, structure)
-6. **Memory cautions** if relevant (e.g., "Paperclip MCP `map` operator hallucinates — use `search` / `cat` / `grep` instead" per `memory/feedback_paperclip_map_unreliable.md`)
-7. **Global-multilingual default** for any literature-scan or research task. Per `Open Enzyme/CLAUDE.md` §"Global-multilingual research by default," explicitly include non-English sources in the briefing: ChiCTR, CNKI / WanFang (Chinese), J-STAGE / CiNii (Japanese), KISS / RISS (Korean), eLIBRARY.RU (Russian), TIB (German), SciELO (Spanish/Portuguese). Reading non-English sources is zero marginal cost; treating language as a "barrier" is path-dependent narrowing the project explicitly rejects. **MANDATE `local_curl_fetch()` (from `wiki/etc/experiments/lib/agentic_lit_synthesis.py`) for East-Asian sources — non-optional, not "if you fetch a lot."** CNKI / WanFang / ChiCTR / CQVIP / ChinaXiv / Baidu Scholar are JS-gated and bot-block hosted/browser fetch; the library's `local_curl_fetch()` reaches them via the firewall-whitelisted local `curl` binary (those hosts are in the sandbox network allowlist). A brief that merely "references the library" is insufficient — subagents fall back to hosted fetch, hit the bot-wall, and mislabel it a "tooling limit / language barrier." **Canonical miss:** the 2026-07-13 chronic-tophus scan reported "CNKI/ChiCTR bot-blocked" and drew a no-go partly on "zero IL-17 gout trials" that was ClinicalTrials.gov-only — because the brief left `local_curl_fetch()` optional. Every East-Asian-source brief must name the function and forbid the hosted-fetch fallback.
-8. **Translation cross-check protocol** when the subagent will ingest non-English source material that produces load-bearing claims (evidence-tier judgments, dosing, mechanism mappings). Per `Open Enzyme/CLAUDE.md` §"Translation protocol," instruct the subagent to translate with two independent models (one Western-vendor, one Chinese-vendor for Chinese sources) and surface disagreements as inline annotations rather than silently picking one. Particularly important for: scientific hedging language, dosing units, classical-TCM terminology, statistical significance language. The cost is small (~$0.05/paper) relative to the value of translation precision for scientific claims.
-9. **Deep multi-metric evaluation discipline** (anchored to BioDesignBench Kim & Romero 2026 — see `wiki/bio-ai-tools.md` §BioDesignBench). For any comp-NNN authoring, hypothesis ranking, or candidate-evaluation subagent: explicitly require **(a) generating multiple candidates** (not single-shot), **(b) evaluating across ≥3 orthogonal metric categories** (not single-axis), **(c) head-to-head comparison + filtering before termination** (not first-candidate-wins). BioDesignBench's central empirical finding is that frontier LLM agents pick the right tools but invoke scoring/evaluation at only 14% of expert intensity and never discard candidates across 836 observations; forcing the three disciplines above recovers DeepSeek V3 by +9.3 points and GPT-5 by +15.9 points on the 76-task benchmark. The deficit is behavioral and **specifically remediable via the brief**. The N-of-M concordance pattern from `wiki/autonomous-screening-methodology.md` §5 is the canonical instance — require it in every comp-NNN brief.
-
-### File-collision management
-
-When multiple subagents are in flight, brief each on what files OTHER agents are touching. The most common collision points:
-
-- `wiki/computational-experiments.md` (any comp-NNN agent will edit this)
-- `wiki/modality-chokepoint-matrix.md` (peer-track scope-page agents edit per-modality sections)
-- `synthesis/queue/` (any agent can add an actioned annotation)
-- `wiki/validation-experiments.md` (experiment-creating agents add §X.Y entries)
-- `wiki/etc/experiments/lib/protease_stability.py` (locked — orchestrators import only, never modify)
-
-If two agents will touch the same file, sequence them or have only one do the shared-file edits as carry-along.
-
----
-
-## Section 5 — Multi-surface follow-up tracking (the "how do we remember" answer)
-
-When an item creates a new exploration vector, peer-track scope page, or set of follow-ups that won't fire today, **bake the tracking across 6 redundant surfaces** so it survives the next sweep.
-
-| Surface | What goes there |
-|---|---|
-| 1. The new page's own "Open Follow-Ups" section | Phase 2 items as a numbered list with status (Queued / In progress / Done) |
-| 2. `wiki/open-questions.md` topical entry | A new section under the right topic heading, mirroring the Phase 2 list |
-| 3. `wiki/computational-experiments.md` Planned Analyses table | Any comp-NNN follow-ups (with "Informs" pointing to the new page) |
-| 4. `wiki/hypotheses/HNN-<thesis>.md` falsification card stub | Forces "what would kill this thesis" framing; full population queued as a Phase 2 item |
-| 5. `index.md` cheapest-experiments table | The 1–2 highest-leverage Phase 2 items (the daemon-fires-on-push surface that catches Brian's eye most often) |
-| 6. `synthesis/queue/` actioned annotation + Strategic Reflections Queue | The annotation closes the item; the Reflections Queue holds content-triggered platform reframes |
-
-**Phase taxonomy** (use these labels for clarity):
-- **Phase 1:** what we do now in this session
-- **Phase 2:** queued in silico follow-ups, no pharma-partner dependency, can be subagent-executed in future sessions
-- **Phase 3:** content-triggered reflections — fire when accumulated substance crosses a maturity threshold (not calendar-triggered)
-
-Phase 3 entries belong in the Strategic Reflections Queue subsection of `synthesis/queue/` so the daemon surfaces them on every sweep.
-
----
-
-## Section 6 — Templates
-
-### Actioned annotation (under the Claude review block)
-
-```markdown
-**✓ Actioned YYYY-MM-DD:** [What shipped — files, decisions, where canonical content lives now]. 
-[Any new pages or sections created, with cross-links]. [Phase 2 follow-ups queued, with the 6-surface 
-tracking pointers if applicable]. [Phase 3 reflection note location if relevant].
-```
-
-### Closure annotation (when nothing new needs to ship)
-
-```markdown
-**✓ Already actioned YYYY-MM-DD** (closure note): [Why no new work needed — point at where the canonical 
-content already lives, with file/line references]. No additional wiki work needed for this [Connection / 
-Contradiction / Open Question / Priority Action].
-```
-
-### End-of-item summary (Step F discipline — between every item and the next)
-
-Post this as a Brian-facing message AFTER the closure-note commit and BEFORE briefing the next item. The summary forces explicit user disposition before walking on.
-
-```markdown
-**Item N done — summary + loose ends:**
-
-**What landed:**
-- [File 1] — [one-line what changed] (commit `<hash>`)
-- [File 2] — [one-line what changed] (commit `<hash>`)
-- [Key decisions taken]
-
-**Loose ends:**
-
-*Acceptably deferred* (already queued elsewhere; listing for completeness):
-- [Loose end] → queued at [`location.md` §X]
-- [Loose end] → queued as Phase 2 follow-up in [scope page]
-
-*Needs disposition now* (could change the next item's framing or downstream work):
-- [Loose end] — options: defer / action now / ignore. My recommendation: [option] because [reason].
-
-*Carries over to Item X* (will surface in that future briefing):
-- [Loose end] → anchored to Item X for explicit disposition there
-
-**Item N closed?** [Wait for explicit user yes/next/go before briefing Item N+1.]
-```
-
-**Skip the loose-ends sub-headers if a category is empty.** A clean walk with no loose ends is just:
-
-```markdown
-**Item N done — summary:**
-- [Files changed + commits]
-- No loose ends.
-**Item N closed?** Ready for Item N+1.
-```
-
-### Peer-track scope-page skeleton (frontmatter through cross-references)
-
-```markdown
----
-title: "[Modality / Vector] — [Peer Track Description]"
-date: YYYY-MM-DD
-tags: [primary, secondary, tertiary, platform-strategy, first-principles]
-related:
-  - modality-chokepoint-matrix.md
-  - [parent-mechanism-page.md]
-  - open-questions.md
-  - open-enzyme-vision.md
-  - synthesis/queue/
-  - hypotheses/HNN-<thesis>.md
-sources:
-  - "[Key precedent 1 — citation]"
-  - "[Key precedent 2 — citation]"
-status: scope-page
----
-
-# [Modality / Vector] — [Peer Track Description]
-
-**Status:** scope-page (YYYY-MM-DD). [One-sentence mission statement].
-
-## Why this page exists
-
-[Frame the modality as a peer-track exploration vector under the broader gout-solving mission. Cite the 
-matrix entry that surfaced it. Position relative to existing tracks: koji (primary), and any sister 
-peer-tracks already scoped — e.g., LBP and siRNA / URAT1 are sister tracks under the chase-every-avenue 
-framing established 2026-05-05].
-
-## [Mechanism / What this is and why it matters]
-
-[2–3 paragraphs. Plain English. Mechanism + why it matters for gout specifically.]
-
-## Candidate [species / chemistries / approaches]
-
-### Primary candidate
-[Why this is the lead]
-
-### Secondary candidates
-[Why these are also in scope]
-
-## [Key strength — the dual-action / sequence-specificity / durability angle]
-
-[The mechanistic claim that makes this vector distinctive]
-
-## The hard part: [delivery / regulatory / cost / etc.]
-
-[The honest engineering / commercial / regulatory gating problem. Don't sugar-coat. Name the timeline 
-honestly — "5–8 years" or "10+ years" if that's the truth.]
-
-## Competitive / clinical landscape
-
-[Existing programs, partner profile, what would compete with this and what wouldn't]
-
-## Position in the Open Enzyme platform
-
-[Discovery-engine output vs. strain-library output. Reference open-enzyme-vision.md §2.2 for the 
-two-track narrative.]
-
-## Comparison with [koji and any sister peer tracks]
-
-[Table comparing dimensions: chassis, manufacturing, regulatory, distribution, capital, timeline, 
-patient population, OE output type]
-
-## Open Follow-Ups
-
-[Numbered table P2-1 through P2-6 with ID / Item / Type / Status. Phase 3 entry at the end if relevant.]
-
-## Limitations of this page
-
-[Scope-page caveats; OE expertise gaps; honest uncertainty]
-
-## Cross-References
-
-[Bulleted list of every related wiki page]
-```
-
-### Falsification card stub (for new theses created during the walkthrough)
-
-Modeled on `wiki/hypotheses/H02-engineered-lbp-thesis.md` and `H03-sirna-urat1-thesis.md`. Stub-level commit registers the hypothesis; full population is queued as Phase 2 P2-5. Stubs MUST include:
-
-- Frontmatter (id, title, committed date, status: Stub, related, sources)
-- Stub-status note (full population queued, pre-registration applies only on upgrade)
-- Provisional Claim (the thesis in 1–2 paragraphs)
-- Placeholder sections for: Assumption Stack, Killshot Menu, Pre-Committed Thresholds, Failure Modes Probed
-- Status block (Pending / Survival count 0)
-- Cross-references including sibling H-cards
-
-### Tiered wet-lab protocol entry (for `validation-experiments.md`)
-
-When a new wet-lab experiment has cost-escalating tiers gated on prior-tier results (e.g., §1.23 androgen × MSU × NLRP3):
-
-```markdown
-### 1.X [Title — Tiered Mechanistic Protocol]
-
-**Status**: Proposed | **Cost**: Tier 1: $A; full T1+T2+T3 cascade $B–C | **Weeks**: Tier 1: D–E; full cascade ~F months | **Phase**: 1
-
-**Affected wiki**: [list of related pages]
-
-**What it tests:** [1 paragraph framing the literature gap and why this matters]
-
-**Proposed in:** [synthesis/queue/ entry]
-
-**Background on the gap:** [1 paragraph]
-
-**Protocol — Tiered, gating logic:**
-
-**Tier 1 — [Lowest-cost, broadest-cohort assay] ($A; D–E weeks):**
-- [Cells / system]
-- [Pre-treatment / variables]
-- [Challenge]
-- [Readouts]
-- **Success criterion (Tier 1 → Tier 2):** [Specific quantitative threshold for advancement]
-
-**Tier 2 — [Mid-cost, more-relevant assay] (gated on Tier 1 positive):**
-- [Same structure]
-- **Success criterion (Tier 2 → Tier 3):** [...]
-
-**Tier 3 — [In vivo or gold-standard assay] (gated on Tier 2 confirmation):**
-- [Same structure]
-- **Success criterion:** [Causal demonstration or platform-implication threshold]
-
-**Tier 4 (n=1, parallel and independent) — [if applicable]:** see [`self-experiment-protocol.md` §X].
-
-**Estimated cost (full cascade):** [breakdown]
-**Estimated timeline (full cascade):** [breakdown]
-
-**Success criteria (overall):** [What each outcome means for the platform]
-
-**Limitations:** [explicit list]
-
-**Cross-references:** [related pages and sections]
-```
-
----
-
-## Section 7 — End-of-walkthrough operations
+## Section 3 — End-of-walkthrough operations
 
 After the last item is actioned and committed:
 
-### 7.1 — Inbox-zero is automatic (post-2026-05-08 migration)
+### 3.1 — Inbox-zero is automatic (post-2026-05-08 migration)
 
-**There is no manual inbox-zero pass anymore.** Each item's closure flow is `git mv synthesis/queue/<file>.md synthesis/done/` per Step E. When every queue file has been moved, the queue/ directory is empty by construction — that IS inbox zero.
-
-Verify before pushing:
+**There is no manual inbox-zero pass anymore.** Each item's closure flow is `git mv synthesis/queue/<file>.md synthesis/done/` per Step E. When every queue file has been moved, `queue/` is empty by construction — that IS inbox zero.
 
 ```bash
-ls synthesis/queue/                  # should show only .gitkeep (empty queue)
-ls synthesis/done/ | tail -10        # confirms today's items landed in done/
+ls synthesis/queue/            # should show only .gitkeep (empty queue)
+ls synthesis/done/ | tail -10  # confirms today's items landed in done/
 ```
 
-If `synthesis/queue/` has only `.gitkeep` left, you're at inbox zero. No further bookkeeping. The pre-2026-05-08 manual prune pass (delete sweep block, update "Pending", add sweep-history row, update "Where actioned items live now") is **gone** — those concerns are now structural:
+The pre-2026-05-08 manual prune pass is gone — those concerns are now structural: "Pending" = whatever's in `synthesis/queue/`; "Sweep history" = `synthesis/history/`; "Where actioned items live" = `synthesis/done/` + canonical wiki pages; "Strategic Reflections" = `synthesis/strategic-reflections/`. If a walkthrough creates a NEW canonical page or comp-NNN worth a cross-reference, surface it via the closure annotation rather than a parallel index.
 
-- "Pending" = whatever's in `synthesis/queue/` right now. Empty queue = no pending items.
-- "Sweep history" = `synthesis/history/` directory listing. Each sweep emits its own per-sweep history file via `synthesis-emit-files.py`.
-- "Where actioned items live now" = `synthesis/done/` for actioned items + canonical wiki pages for substantive content. Per-item granularity makes the manual index unnecessary.
-- "Strategic Reflections Queue" = `synthesis/strategic-reflections/` directory.
+### 3.2 — Single push at end (a substantive, approval-gated action)
 
-If a walkthrough creates a NEW canonical wiki page or NEW comp-NNN that's worth a separate cross-reference, surface it via the closure annotation in the relevant queue→done file (where the action happened) rather than maintaining a parallel index.
-
-### 7.2 — Single push at end
+The inbox-zero verification and the push are **themselves substantive items** — not "the natural endpoint." The user must explicitly approve "ready to push?" The push fires the wiki-sweep daemon and surfaces to GitHub. (Open Enzyme overrides the umbrella "push immediately" rule — push at batch boundaries so the daemon runs once on a coherent batch; see project CLAUDE.md.)
 
 ```bash
 cd "/Users/brianabent/Documents/Claude/Projects/abent/Open Enzyme"
 git push
 ```
 
-The sweep daemon fires on push to `wiki/**.md`. The walkthrough's commits typically touch wiki/ (canonical content updates) AND synthesis/ (queue→done moves). The wiki/ commits trigger the daemon; the synthesis/ moves are sibling-of-wiki and don't intersect the path filter, so daemon fires exactly once on the wiki updates. The `[skip-wiki-sweep]` marker is for daemon-emitted commits ONLY — never apply to walkthrough commits.
+The daemon fires on push to `wiki/**.md`. `synthesis/` moves are sibling-of-wiki and don't intersect the path filter, so the daemon fires once on the wiki updates. Never apply `[skip-wiki-sweep]` to walkthrough commits.
 
-### 7.3 — Anticipate the merge
+### 3.3 — Anticipate the merge
 
-The daemon may have run in parallel during a long walkthrough session (separate trigger commits earlier in the day). Push will likely be rejected with "remote contains work that you do not have locally." See Section 8 for handling.
-
----
-
-## Section 8 — Anticipated friction points
-
-### 8.1 — `.claude/` sandbox blocks
-
-Symptom: `git pull --rebase` (or any git operation touching `.claude/skills/*` or `.claude/settings.json`) fails with "Operation not permitted" / "could not detach HEAD."
-
-Fix: Retry the same git command with `dangerouslyDisableSandbox: true`. Do not attempt to chmod or delete the .claude paths.
-
-### 8.2 — Daemon parallel-run conflicts on final push
-
-Symptom: `git push` rejected; `git pull` reveals 2–4 new daemon-generated commits on `origin/main` (sweep-1-propagate, sweep-2-synthesize, sweep-3-review, sometimes sweep-4-deepseek) plus a new log file under `logs/`.
-
-**Use `git merge`, not `git pull --rebase`,** for the final integration. Reason: `--rebase` will replay each of your N commits individually, hitting the same conflict (especially section-number collisions) on every commit that touches the same file. A merge resolves the conflict ONCE.
-
-```bash
-git merge origin/main --no-edit  # may exit with conflicts
-```
-
-Common conflict patterns:
-
-- **`synthesis/queue/`:** daemon's fresh sweep block usually duplicates content you already actioned. Take ours (the inbox-zero version). Add a sweep-history row noting the daemon's sweep was substantively duplicate.
-- **`wiki/validation-experiments.md`:** section-number collision (most common). Daemon assigned §1.X to its experiment; you assigned §1.X to a different experiment. Keep yours; renumber daemon's to §1.X+N (whichever has fewer cross-references). Update all cross-refs (search: `grep -rn "§1\.X" --include="*.md"`).
-- **`index.md`:** keep both sides; update any cross-refs whose section number changed.
-
-After resolution: `git add` the resolved files, `git commit --no-edit -m "<descriptive merge message>"`, then `git push`.
-
-### 8.3 — Subagent file collisions
-
-Symptom: a background agent edits a file you also need to edit; their edits land first; your subsequent Edit tool call fails with "File has been modified since read."
-
-Fix: Re-read the file before editing. The Edit tool requires the most recent file state in context.
-
-### 8.4 — Untracked files missed by `git commit -am`
-
-Symptom: `git commit -am` succeeds but a new file you created earlier in the session is still listed as untracked.
-
-Fix: `git add <file>` explicitly for new files. The `-a` flag only stages already-tracked files. After fixing, do a follow-up commit named `add: <files>` (NOT `--amend`).
-
-### 8.5 — Brian's CTO-not-PhD reminder
-
-Symptom: Brian says some variant of "I'm not a PhD" or "what does X mean" or "I can't read papers."
-
-Fix: Re-anchor on the CTO-not-PhD framing rule (Section 2 Step A). Don't apologize at length — just rewrite the briefing in plain English and continue. The rule is in `memory/user_role.md` and should already be active.
+The daemon may have run in parallel during a long session (separate trigger commits earlier). Push will likely be rejected with "remote contains work that you do not have locally." Use `git merge` (not `--rebase`) — see `references/friction-and-anti-patterns.md` §"Daemon parallel-run conflicts."
 
 ---
 
-## Section 9 — Anti-patterns (things that went wrong in 2026-05-05 and 2026-05-06)
+## Section 4 — What this skill does NOT cover
 
-1. **Don't action multiple items without explaining each one first.** Brian's correction mid-session 2026-05-05: "but there's more that you did without me!" The single-item discipline is non-negotiable.
-
-2. **Don't dump raw papers — translate.** The lit-scan agent's output that worked best was the plain-English Q&A briefing, not the citation block.
-
-3. **Don't add `[skip-wiki-sweep]` to user-content commits.** The commit-msg hook will reject it. The marker is reserved for daemon commits only.
-
-4. **Don't use `git commit -am` when there are untracked new files.** The `-a` flag misses them. Stage explicitly.
-
-5. **Don't pick numbered section IDs (§1.X) without checking remote.** The daemon may have run in parallel and added §1.X to validation-experiments.md while you were working. If walking spans multiple hours, do a fresh `git fetch` before assigning numbers.
-
-6. **Don't `git pull --rebase` for the final integration when many commits touch the same file.** Use `git merge` so the conflict resolves once, not N times.
-
-7. **Don't lose follow-ups.** When an item creates Phase 2 / Phase 3 work, bake the tracking across the 6 redundant surfaces (Section 5). Single-surface tracking evaporates by the next sweep cycle.
-
-8. **Don't action heavyweight items without Brian's go-ahead.** Even if the action looks obvious. The "wait for go" rule supersedes any automation impulse.
-
-### Drift-trigger anti-patterns (added 2026-05-06 from the second walkthrough-drift incident)
-
-9. **Don't treat subagent completion as authorization for the next item.** When a background subagent's completion notification arrives mid-walkthrough, that is *information*, not a green-light. The auto-appended review-task pattern (Section 4 §"Background subagents during a walkthrough") is the structural fix: the subagent's output becomes a future walkthrough item that gets its own briefing + go-ahead from the user when its turn comes in normal walkthrough order. If you find yourself thinking "the subagent finished, let me action its output and continue" — STOP. Update the review-task to ready, continue with the current item, present the subagent's findings to the user when the walkthrough naturally arrives at the review-task.
-
-10. **Don't treat cleanup or propagation work as continuation.** Cross-reference back-fills, stray-pattern grep cleanups, and "while we're here" propagations are themselves substantive items requiring user approval — not "natural follow-on" to the item that surfaced them. If you discover during one item that other pages need touching, either (a) stop and brief the user on the discovered cleanup as its own item, or (b) auto-append it to the queue (per Section 4 pattern) for explicit approval at its turn. The 2026-05-06 incident drift compounded specifically through cleanup work that "felt obvious" but was never explicitly approved.
-
-11. **The inbox-zero pass and the final push are themselves substantive items.** They are not "the natural endpoint of the walkthrough." The skill's Section 7 describes what they look like; that does not mean they auto-fire when all other items are done. The user must explicitly approve "ready for inbox-zero?" and explicitly approve "ready to push?" before either happens. Both are high-stakes actions: the inbox-zero pass deletes large swaths of the file (irreversible without git surgery); the push fires the wiki-sweep daemon and surfaces to GitHub (also visible to the world). Both deserve their own per-item approval cycle.
-
-12. **Auto Mode does NOT override this skill.** Claude Code's "Auto Mode active" reminders ("execute autonomously, minimize interruptions, prefer action over planning") apply to routine work where the user has durably authorized continuous execution. Walkthroughs are explicitly per-item-checkpointed; the skill discipline supersedes auto mode for the duration of the `/walk-synthesis` invocation. If Auto Mode and this skill's per-item checkpoint requirement conflict, the skill wins. Do not resolve the conflict in favor of Auto Mode (the 2026-05-06 incident's specific failure mode — a periodic Auto Mode reminder fired between Items 15 and 16, and Claude treated it as overriding the per-item discipline).
-
-13. **The `.claude/hooks/block-push-without-approval.py` push hook is a backstop, not a license.** Once active, the hook will block daemon-triggering pushes unless the user types `CLAUDE_PUSH_AUTHORIZED=1` as an explicit grant. Do not interpret "the hook will catch me if I drift" as permission to drift — the hook prevents the worst-case outcome, but the per-item discipline is the desired behavior. The hook fires when the discipline already failed; the goal is to never reach the hook.
-
-### End-of-item discipline anti-pattern (added 2026-05-08 from the third walkthrough-drift incident)
-
-14. **Don't treat "I committed the closure note" as "the item is done."** An item is done when (a) the action landed AND (b) loose ends are dispositioned. Committing the closure note is necessary but not sufficient. Step F (Section 2) is the structural fix: end-of-item summary + loose-ends inventory. The 2026-05-08 walkthrough Item 10 drift compounded specifically because a closure-note commit was treated as completion while four open loose ends (brief-contamination caveat propagation; methodological discipline doc; comp-018 page disclosure; retrospective writeup) were still in flight. Claude moved to Item 11 unilaterally; Brian had to back the conversation up to Item 10; the unresolved loose ends turned into much larger work than they would have been if disposed of at end of Item 10. **Loose ends compound.** The fix is upstream of "should I move to Item N+1?" — explicit summary + loose-ends inventory before the question even fires. **Three categories** for each loose end (per Step F): acceptably deferred (already queued elsewhere); needs disposition now (user picks defer/action/ignore); carries over to Item X (explicitly anchored, will surface in that future briefing). Cross-item state is impossible to forget when it's surfaced as inherited loose ends in the future item's briefing. **When loose ends exist that need disposition or carry over, do NOT auto-advance** — wait for Brian's explicit "next" so the loose ends can be picked up or explicitly deferred. Clean closes (no loose ends, recommended action shipped as proposed) can auto-advance per the Auto-advance decision rule in Section 2 Step F.
-
-16. **Don't action without explicit go.** The wait-for-go discipline in Section 2 Step B is about ACTION, not advancing. Phrases like "Going to proceed unless you redirect" or "Proceeding with X" before Brian has said go are opt-out actioning — wrong even when the content is right. The clarification (2026-05-15): clarifying questions, expressions of interest ("sounds like a really good idea"), and process discussion are NOT go-ahead. Only explicit "go" / "yes" / "do it" / "ship it" / "proceed" / similar count. If Brian asks "are we drafting or implementing?", that's a clarifying question — answer it, restate the proposal scope, and re-ask. Don't read "I want to implement" as "implement now."
-
-17. **Don't accept a corpus-only pushback as refutation — do the work.** When a Pass-3 `Push back.` / `Rejected.` verdict rests *only* on "not in our corpus" / "page X doesn't say this," that is not evidence the synthesizer's world-claim is wrong; it means we haven't discovered it (the reviewer has no lit-scan tools, only corpus grep). The default response is a primary-lit scan (multilingual, per project rules), NOT closing the item by deferring to corpus-absence and NOT settling for an open-question stub when a 5-minute scan would resolve it. Lead with the scan in the briefing; don't wait to be prompted. 2026-06-01 theaflavins×ABCG2 is canonical: Grok (Pass 2) claimed theaflavins inhibit ABCG2; Pass-3 pushed back citing only theaflavins.md's absence; Claude's first instinct was an open question; Brian had to prompt the lit scan, which showed the claim was *inverted* and filled a real wiki gap. Brian was disappointed in Grok AND the reviewer AND Claude (for not pushing back on the corpus-only review and proposing the work). Discipline encoded in Step A "Corpus-only-pushback check" + `memory/feedback_do_the_work_not_corpus_only.md` + the daemon-level `Defer.`-with-lit-scan-flag rule in `scripts/sweep-prompt-3-review-gpt55.md`.
-
-15. **Don't try to edit `wiki/synthesis.md` — it doesn't exist anymore.** Post-2026-05-08 migration, the action queue lives at `synthesis/queue/` (per-item files) and history at `synthesis/history/`. Old habits / muscle memory of "open synthesis.md, append closure to the actioned item, prune at end of walkthrough" are gone. New flow: `ls synthesis/queue/` to inventory; per-item file gets a closure annotation appended (Step D); `git mv synthesis/queue/<file>.md synthesis/done/` to close (Step E); inbox-zero is automatic (Section 7.1). Strategic Reflections live at `synthesis/strategic-reflections/`. Sweep history lives at `synthesis/history/<sweep-date>-<sha>.md`. Daemon emits new items via `scripts/synthesis-emit-files.py`. If you find yourself writing to `wiki/synthesis.md` STOP — the file is deleted; the changes won't persist where you think they will. Migration spec at [`operations/specs/2026-05-08-synthesis-filesystem-migration.md`](../../../operations/specs/2026-05-08-synthesis-filesystem-migration.md).
-
----
-
-## Section 10 — What this skill does NOT cover
-
-- **Computational experiment authoring** — use the `new-comp-experiment` skill instead. This skill spawns it as a subagent when needed.
+- **Computational experiment authoring** — use the `new-comp-experiment` skill (spawned as a subagent when needed). A *literature* question is a lit scan, not a comp — see `new-comp-experiment` §"COMP vs lit-scan."
 - **Wiki sweep daemon mechanics** — see `scripts/SWEEP-ARCHITECTURE.md`. This skill consumes the daemon's output; it doesn't run the daemon.
 - **Brian's personal medical context** — privacy boundary. Personal data lives in private sibling repos, never in synthesis annotations.
-- **Decisions Brian hasn't made** — strategic platform reframes (e.g., Phase 3 platform-framing reflections) belong to Brian. This skill queues them; it doesn't execute them.
+- **Decisions Brian hasn't made** — strategic platform reframes belong to Brian. This skill queues them; it doesn't execute them.
 
 ---
 
 ## Naming and file-path conventions
 
-- **Skill location:** `.claude/skills/walk-synthesis/SKILL.md`
-- **Invoke via:** `/walk-synthesis` slash command, or natural-language "walk the synthesis" / "walk the sweep" / "walk the queue"
-- **In prose:** "the walkthrough," "this walkthrough" — not "the synthesis walking process"
-- **Date format:** ISO 8601 (YYYY-MM-DD) everywhere. The annotation date is the calendar date the work shipped, not the date of the originating sweep.
-
----
+- **Skill location:** `skills/walk-synthesis/SKILL.md` (canonical; `.claude/skills` and `.agents/skills` symlink to `../skills` for cross-harness discovery).
+- **Invoke via:** `/walk-synthesis`, or natural-language "walk the synthesis" / "walk the sweep" / "walk the queue".
+- **In prose:** "the walkthrough," "this walkthrough" — not "the synthesis walking process".
+- **Date format:** ISO 8601 (YYYY-MM-DD). The annotation date is the calendar date the work shipped, not the originating sweep.
 
 ## Provenance
 
-This skill codifies conventions discovered during the 2026-05-05 walkthrough of the 14-item DeepSeek V4-Pro / Gemini 2.5 Pro / Claude Opus 4.7 synthesis sweep on commit `734bf51` (and the substantively duplicate 2026-04-28 sweep). The session produced: comp-005 (lactoferrin), comp-006 (DAF/CD55, via Sonnet subagent), comp-007 (food-grade HDACi, via Sonnet subagent), the engineered LBP chassis scope page (sister to koji), the siRNA / URAT1 modality scope page (discovery-engine output), H02 + H03 falsification card stubs, validation-experiments §1.23 (androgen × MSU × NLRP3 four-tier protocol), self-experiment-protocol §11.1 (n=1 ex vivo PBMC MSU challenge), the androgen × NLRP3 literature scan section in `androgen-urate-axis.md`, and the inbox-zero pass on `synthesis/queue/`. The conventions in this skill are the rules that, in retrospect, would have made that session smoother.
+Codifies conventions discovered during the 2026-05-05 walkthrough of the 14-item DeepSeek V4-Pro / Gemini 2.5 Pro / Claude Opus 4.7 synthesis sweep on commit `734bf51`, plus the drift-incident lessons of 2026-05-06 and 2026-05-08. The conventions here are the rules that, in retrospect, would have made those sessions smoother.
