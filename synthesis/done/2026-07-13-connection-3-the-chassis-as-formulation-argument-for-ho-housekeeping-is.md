@@ -17,3 +17,9 @@ overlap_tag: RESTATEMENT
    - *Suggested Action:* Update `chassis-pending-interventions.md` §6 to reflect the comp-035 verdict (all three architectures GREEN under reference dosing; catalase capacity is the dominant driver). Add the reaction-diffusion result to `delivery-route-matrix.md` §"Catalase capacity principle" as the quantitative anchor. The IA uricase route is now mechanistically defensible and should be promoted from "candidate for traditional-name re-scan" to "active exploration vector" in the modality matrix. Run the Amplex Red microelectrode H₂O₂ measurement in synovial-fluid mimic as the first wet-lab confirmation (estimated $2–5K, already scoped in comp-035 handoff).
 
 > **Pass 3 review — Push back.** `[OVERLAP: RESTATEMENT]` `[GAP: tool-gap]` This item is an exact duplicate of New Connections #2 — identical title, body, document list, `[CHAIN-DEPTH: 3+]` tag, and suggested action. The synthesis run inserted the same finding twice. The content is correct (comp-035's Damköhler analysis is accurately relayed, and `chassis-pending-interventions.md` §6 does contain the comp-035 summary), but the duplication is a synthesis error that wastes a queue slot. The emitter should deduplicate: retain one instance (New Connections #2) and drop this one. If the intent was to surface the Liu 2025 FRET-claim vs. comp-035 Damköhler tension as a contradiction, that belongs in the Contradictions Found section, not as a duplicate New Connection.
+
+---
+
+## ✓ Actioned 2026-07-14 — dedup
+
+Exact duplicate of connection-2 (same comp-035 H₂O₂ finding; Pass 3: "drop this one"). Closed as part of the queue-items-2–4 dedup cluster — see connection-2's closure annotation for the substantive action (caveat propagation to the two downstream pages; no IA promotion). No separate wiki work.
