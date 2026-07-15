@@ -16,10 +16,12 @@ This directory holds the action queue and history of the wiki sweep daemon (`scr
 Per [spec §5.1](../operations/specs/2026-05-08-synthesis-filesystem-migration.md):
 
 ```
-queue/<sweep-date>-<type>-<index>-<slug>.md
-done/<sweep-date>-<type>-<index>-<slug>.md
+queue/<sweep-date>-<artifact-id>-<type>-<index>-<slug>.md
+done/<sweep-date>-<artifact-id>-<type>-<index>-<slug>.md
 history/<sweep-date>-<short-sha>.md
 ```
+
+For wiki-daemon items, `<artifact-id>` is the first eight hex characters of the normalized manifest's hash-derived `sweep_id`. It prevents same-day retries with the same type/index/headline from overwriting one another. Older items and queue entries from other producers retain their producer-specific legacy names; closure always preserves the queue filename via `git mv`.
 
 `<type>` ∈ `connection`, `contradiction`, `experiment`, `open-question`, `priority-action`, `riskiest-assumption`, `most-curious-thread`, `chembl-discrepancy`, `comp-review`.
 

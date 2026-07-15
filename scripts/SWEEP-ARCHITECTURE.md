@@ -148,6 +148,8 @@ If another sweep has already advanced the cursor, ordinary recovery fails rather
 
 The successful-sweep cursor is the corpus snapshot, not the later Pass 3 review commit. That distinction closes a concurrent-write race: if a wiki commit lands after Pass 2 takes its snapshot and Pass 3 later rebases over it, the new commit still sits after the coverage cursor and remains pending. The review commit is tracked separately as provenance. If rebase changes its SHA, the state commit rebinds that provenance without changing coverage.
 
+Queue filenames include the first eight characters of the hash-derived `sweep_id`. Production recovery exposed why date/type/index/slug was insufficient: both July 15 artifacts independently emitted the same `Most Curious Thread` headline, so the second artifact initially overwrote the first artifact's file. Artifact identity is now part of the path, and the regression suite emits both fixtures into one queue and requires eleven distinct files.
+
 ### Zero-item anomaly gate
 
 An explicit no-op over more than five trigger paths or more than 100 changed wiki lines is treated as anomalous. Automatic runs fail closed. A human may re-dispatch with `allow_large_no_op=true` only after independent/manual inspection. This gate does not assert that a large batch must yield novelty; it asserts that a large-batch zero deserves review before it becomes the authoritative cursor.

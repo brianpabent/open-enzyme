@@ -12,7 +12,9 @@ Inputs:
   3. The Pass 3 reviewer output (one <<<NEXT>>>-separated block per item)
 
 New outputs:
-  - synthesis/queue/<sweep-date>-<type>-<index>-<slug>.md, one per Pass 2 item
+  - synthesis/queue/<sweep-date>-<artifact-id>-<type>-<index>-<slug>.md,
+    one per canonical Pass 2 item. The hash-derived artifact ID prevents
+    same-day reruns with similar headlines from overwriting each other.
   - synthesis/history/<sweep-date>-<short-sha>.md, the per-sweep summary
 
 Per-item file format (per spec §5.4):
@@ -157,11 +159,16 @@ def parse_verdict(review_text: str) -> tuple[str, str | None, int | None]:
     return verdict, overlap_tag, duplicate_of_index
 
 
-def compute_filename(sweep_date: str, type_slug: str, section_index: int, headline: str) -> str:
-    """Compute the per-item filename. Used in pass 1 (filename map) and pass 2 (write)."""
+def compute_filename(
+    sweep_date: str,
+    artifact_id: str,
+    type_slug: str,
+    section_index: int,
+    headline: str,
+) -> str:
+    """Compute a filename unique to this normalized synthesis artifact."""
     base_slug = slugify(headline)
-    # <index> is the section_index, providing collision-proof disambiguation
-    return f"{sweep_date}-{type_slug}-{section_index}-{base_slug}.md"
+    return f"{sweep_date}-{artifact_id}-{type_slug}-{section_index}-{base_slug}.md"
 
 
 def emit_item_file(
@@ -181,13 +188,18 @@ def emit_item_file(
     manifest_meta: dict | None = None,
 ) -> Path:
     """Write one item file. Returns the path."""
-    filename = compute_filename(sweep_date, type_slug, section_index, headline)
+    if not manifest_meta or not manifest_meta.get("sweep_id"):
+        sys.exit("Cannot emit queue item without a hash-derived sweep_id")
+    artifact_id = manifest_meta["sweep_id"][:8]
+    filename = compute_filename(
+        sweep_date, artifact_id, type_slug, section_index, headline
+    )
     path = queue_dir / filename
 
     if filename in used_slugs:
         sys.exit(
             f"Slug collision after disambiguation: {filename!r}. "
-            f"This should be impossible by spec §5.1 design (index makes (date,type,index) unique). "
+            f"This should be impossible (artifact hash + type + index are unique). "
             f"Aborting."
         )
     used_slugs.add(filename)
@@ -480,10 +492,15 @@ def main():
     # Two-pass emission: pass 1 builds the filename map so DUPLICATE-OF-N markers can
     # resolve to actual filenames; pass 2 writes the files with resolved cross-links.
     parsed_reviews = [parse_verdict(r) for r in reviews]
+    artifact_id = manifest["sweep_id"][:8]
     section_index_to_filename: dict[tuple[str, int], str] = {}
     for item in all_items:
         section_index_to_filename[(item["type_slug"], item["section_index"])] = compute_filename(
-            sweep_date, item["type_slug"], item["section_index"], item["headline"]
+            sweep_date,
+            artifact_id,
+            item["type_slug"],
+            item["section_index"],
+            item["headline"],
         )
 
     # --- Emit per-item files -------------------------------------------------

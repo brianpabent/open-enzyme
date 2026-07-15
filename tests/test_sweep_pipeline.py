@@ -183,7 +183,7 @@ reviewer_model_requested: x-ai/grok-4.20
 
 
 class EmitterRegressionTests(unittest.TestCase):
-    def test_emitter_uses_canonical_ten_item_manifest(self):
+    def test_emitter_keeps_same_day_similar_artifacts_distinct(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             manifest_path = root / "normalized.json"
@@ -216,6 +216,40 @@ class EmitterRegressionTests(unittest.TestCase):
             history_text = (history / "2026-07-15-eeab5b5.md").read_text()
             self.assertIn("items_emitted: 10", history_text)
             self.assertIn("canonical_items_sha256:", history_text)
+
+            # The recovery rerun emitted the same Most Curious headline on the
+            # same date. Before artifact IDs entered filenames, this 11th item
+            # silently overwrote the first artifact's 10th queue file.
+            second_raw = Path("logs/v4-synthesis-2026-07-15-08f10ad.md")
+            second_manifest_path = root / "normalized-second.json"
+            first_manifest = json.loads(manifest_path.read_text())
+            second_manifest, _ = normalize.normalize_file(
+                second_raw, second_manifest_path
+            )
+            second_reviews = root / "reviews-second.txt"
+            second_reviews.write_text(
+                "> **Pass 3 review — Partial.** Second regression fixture.\n"
+            )
+            second_command = [
+                sys.executable,
+                "scripts/synthesis-emit-files.py",
+                "--synthesis-log", str(second_raw),
+                "--normalized-manifest", str(second_manifest_path),
+                "--reviews-file", str(second_reviews),
+                "--commit-sha", "08f10ad7adc83d9b373815ed42fa0663dafe1779",
+                "--trigger-files", "wiki/example.md",
+                "--queue-dir", str(queue),
+                "--history-dir", str(history),
+                "--sweep-date", "2026-07-15",
+            ]
+            subprocess.run(
+                second_command, cwd=REPO_ROOT, check=True, capture_output=True, text=True
+            )
+            queue_files = list(queue.glob("*.md"))
+            self.assertEqual(11, len(queue_files))
+            queue_text = "\n".join(path.read_text() for path in queue_files)
+            self.assertIn(first_manifest["sweep_id"], queue_text)
+            self.assertIn(second_manifest["sweep_id"], queue_text)
 
     def test_no_op_requires_explicit_normalized_declaration(self):
         with tempfile.TemporaryDirectory() as tmp:
