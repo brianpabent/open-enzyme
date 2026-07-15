@@ -132,7 +132,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Key findings:**
 - PubMed snapshot: 27 queries / 74 records; source snapshot committed at `outputs/pubmed-snapshot.json`.
-- HPLC-UV for bacterial culture supernatants is the best near-term Tier 2-lab candidate (PMID 23542733), but still needs full text, butyrate-specific precision/recovery extraction, OE spike recovery, and paired GC-MS.
+- HPLC-UV for bacterial culture supernatants is the best near-term Tier 2-lab candidate (De Baere 2013, PMID 23542733) — **full-text-verified against the primary source 2026-07-14** (0.5–50 mM, r 0.9951–0.9993, underivatized UV 210 nm, bacterial-culture-supernatant matrix). The remaining gate is OE spike/recovery + paired GC-MS (validation §1.31).
 - Electrochemical fecal SCFA profiling is the most promising stool-specific future Tier 2 direction (PMID 42041444), but remains research-platform grade.
 - Breath H2/CH4 is useful as a broad fermentation/adherence proxy, not butyrate-specific quantification.
 - Generic free-fatty-acid colorimetric kits are a false-friend class; representative protocol excludes acetic, propionic, and butyric acid.
