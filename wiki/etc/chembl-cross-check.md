@@ -43,6 +43,25 @@ Quercetin's 5-LOX finding — surfaced during the 2026-04-23 sweep of [nlrp3-inh
 
 ---
 
+## ChEMBL scope & blind spots — which tool for which question
+
+**ChEMBL answers exactly one kind of question well: "is compound X an inhibitor / binder of target Y?"** — because its schema is curated *inhibition / binding bioactivity* (IC50, Ki, Kd, EC50, pChEMBL). It is the right tool for the direct-inhibitor-vs-pathway-modulator separation this page exists to enforce. It is the **wrong** tool for several adjacent questions, and reaching for it out of familiarity is a recurring error (comp-047 used it for a *substrate* question; see below). Before a comp seeds a compound list or a disqualifier axis from ChEMBL, check the question against this table:
+
+| The question you're actually asking | Right source | Why not ChEMBL |
+|---|---|---|
+| Is X an **inhibitor / binder** of target Y? (IC50/Ki/Kd) | **ChEMBL** | — (this is its job) |
+| Is X a **substrate** of transporter/enzyme Y? | **DrugBank** transporter annotations — free via **UniProt** cross-refs (`rest.uniprot.org/uniprotkb/<acc>.txt`, the `DR DrugBank` lines); **UCSF-FDA TransPortal** + **PharmGKB** for the gold-standard curated lists with primary refs | ChEMBL logs inhibition, **not transport** — a pure substrate returns **0 records** even though it interacts with the target |
+| Canonical physiological substrates + transport kinetics of a transporter/enzyme | **UniProt** function/`CC` annotations (KM, Vmax, named substrates) | ChEMBL has assay-level activity, not the curated physiological substrate list |
+| What reaction / pathway is X or Y in? | **Reactome** (repo tool `tools/reactome/reactome_analysis.py`), KEGG | ChEMBL has no pathway/reaction model — it is *not* a substrate catalog either; treat Reactome as pathway infrastructure, not per-compound substrate/inhibitor evidence |
+| Is X a **biologic / peptide**? | Clinical + animal literature; DrugBank | ChEMBL small-molecule curation under-covers biologics (see Talactoferrin, KPV rows) |
+| Natural-product / TCM / botanical activity | ChEMBL **+** CNKI / WanFang / J-STAGE **+** the [query-framing discipline](../../.claude/skills/new-comp-experiment/SKILL.md) | ChEMBL alone systematically underrepresents non-Western natural-product literature (see Eurycomanone row) |
+
+**The union rule.** A complete "known interactor of target Y" disqualifier is **ChEMBL inhibitors ∪ DrugBank/UniProt substrates**. Neither alone is complete: ChEMBL misses substrates; DrugBank (approved-drugs only) misses research-tool compounds (e.g. Ko143, fumitremorgin C) that ChEMBL *does* have. Use both.
+
+**Worked example — the substrate blind spot (comp-047, ABCG2 Q141K, 2026-07-14).** comp-047 screened for ABCG2 pharmacological-chaperone candidates and used ChEMBL as its empirical disqualifier ("known ABCG2 ligand"). **rosuvastatin** — a surviving candidate — is *the* canonical ABCG2 **substrate** (Q141K raises its plasma AUC ~1.6–2×; the statin-pharmacogenomics case in the FDA label), yet returned **0 ChEMBL ABCG2 records** because it is transported by, not an inhibitor of, ABCG2. It was caught only by the DrugBank list (via UniProt Q9UNQ0 cross-refs: 286 ABCG2-interacting drugs, of which 31 of comp-047's 135-molecule library). ChEMBL was the wrong tool for that axis; DrugBank/UniProt was the right one. Full write-up: [`abcg2-q141k-chaperone-rescreen-computational.md`](../abcg2-q141k-chaperone-rescreen-computational.md) §"Residual gaps."
+
+---
+
 ## Master Cross-Check Table
 
 | # | Compound | ChEMBL ID | Most potent curated target + IC50/Ki | Wiki's current framing | Discrepancy? | Last refreshed |
