@@ -13,6 +13,7 @@ related:
   - nlrp3-inflammasome.md
 sources:
   - "Inflammopharmacology 2025: NLRP3 natural products review"
+  - "Phytomedicine 2021: celastrol in MSU-induced gouty arthritis (PMID 33130474)"
   - "PubMed Central: Polyphenols and NLRP3"
   - "Cell Reports Medicine, October 2025: PULSE probiotic"
   - "ACS Synthetic Biology: S. cerevisiae engineered production"
@@ -34,6 +35,7 @@ This screen evaluates food-derived NLRP3 inflammasome inhibitors producible by e
 **Benchmark compounds:**
 - **MCC950** — IC50 ~7.5 nM (crystalline NLRP3 inhibitor, not food-derived)
 - **Oridonin** — Covalent Cys279 binder (plant diterpenoid, not easily synthesized)
+- **Celastrol** — Gout-relevant NLRP3-pathway comparator: suppresses inflammasome-complex assembly through a proposed BRCC3/K63-deubiquitination mechanism in human THP-1 cells, mouse macrophages, and an MSU-induced gouty-arthritis mouse model (In Vitro + Animal Model; PMID 33130474). This is not evidence of clean direct binding to human NLRP3. Celastrol is a broadly cysteine-reactive quinone-methide triterpenoid with multi-target pharmacology plus preclinical cardiac-ion-channel and hematopoietic liabilities (PMIDs 16407206, 22545133); it is **not a food-grade production candidate or intervention recommendation**.
 - **Tranilast** — Non-selective mast cell stabilizer
 - **OLT1177 (dapansutrile)** — Phase 2a gout trial success, direct NLRP3 ATPase inhibitor
 
