@@ -1,0 +1,14 @@
+{
+  "_meta": {
+    "target": "CHEMBL5393",
+    "target_name": "Broad substrate specificity ATP-binding cassette transporter ABCG2 (BCRP)",
+    "uniprot": "Q9UNQ0",
+    "total_abcg2_bioactivities_in_chembl": 1307,
+    "method": "bio-research ChEMBL MCP (compound_search -> get_bioactivity vs CHEMBL5393). has_activity=true when >=1 documented ABCG2 bioactivity record exists; best_pchembl = max pChEMBL among records.",
+    "date": "2026-07-14",
+    "note": "Populated for controls + Axis-1 docking candidates. Molecules absent here were not individually queried; their known_inhibitor_flag (curated role_tag) still applies."
+  },
+  "ivacaftor": {"chembl_id": "CHEMBL2010601", "has_activity": false, "best_pchembl": null, "note": "0 ABCG2 records; CFTR corrector, not a known ABCG2 ligand (specificity check)"},
+  "novobiocin": {"chembl_id": "CHEMBL36506", "has_activity": true, "best_pchembl": 4.6, "note": "7 records, action_type INHIBITOR, IC50 25-85 uM (weak but documented ABCG2 inhibitor)"},
+  "elacridar": {"chembl_id": "CHEMBL396298", "has_activity": true, "best_pchembl": 6.39, "note": "IC50 410 nM, potent ABCG2 inhibitor (reference negative control)"}
+}

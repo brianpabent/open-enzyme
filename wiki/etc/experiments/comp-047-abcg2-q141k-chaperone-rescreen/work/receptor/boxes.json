@@ -1,0 +1,39 @@
+{
+  "fold_site": {
+    "center": [
+      1.089,
+      12.029,
+      10.327
+    ],
+    "size": [
+      22.0,
+      22.0,
+      22.0
+    ],
+    "anchor": "residue 141 side chain + contact shell 137-145",
+    "rationale": "candidate fold-stabilizing NBD site around Q141/K141"
+  },
+  "transport_site": {
+    "center": [
+      -21.76,
+      -11.112,
+      12.754
+    ],
+    "size": [
+      22.0,
+      22.0,
+      22.0
+    ],
+    "anchor": "Walker A P-loop residues 80-87",
+    "rationale": "nucleotide phosphate-binding site; docking here flags likely inhibitor (disqualifying)"
+  },
+  "geometry": {
+    "res141_CA": [
+      0.904,
+      13.752,
+      10.622
+    ],
+    "fold_to_transport_center_separation_A": 32.61,
+    "note": "Boxes are >30 A apart; a molecule scoring well at both is rare and the fold-vs-transport contrast is meaningful."
+  }
+}

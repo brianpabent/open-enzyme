@@ -1,0 +1,2731 @@
+{
+  "_meta": {
+    "seed": 20260714,
+    "exhaustiveness": 8,
+    "cpu": 4,
+    "fold_box": {
+      "center": [
+        1.089,
+        12.029,
+        10.327
+      ],
+      "size": [
+        22.0,
+        22.0,
+        22.0
+      ],
+      "anchor": "residue 141 side chain + contact shell 137-145",
+      "rationale": "candidate fold-stabilizing NBD site around Q141/K141"
+    },
+    "transport_box": {
+      "center": [
+        -21.76,
+        -11.112,
+        12.754
+      ],
+      "size": [
+        22.0,
+        22.0,
+        22.0
+      ],
+      "anchor": "Walker A P-loop residues 80-87",
+      "rationale": "nucleotide phosphate-binding site; docking here flags likely inhibitor (disqualifying)"
+    },
+    "n_molecules": 135,
+    "subset": 0,
+    "generated": "2026-07-14 20:22:43"
+  },
+  "results": {
+    "ivacaftor": {
+      "role_tag": "cftr_corrector",
+      "drug_class": "CFTR potentiator",
+      "cid": 16220172,
+      "fold_q141k_affinity": -4.544,
+      "fold_wt_affinity": -5.013,
+      "transport_affinity": -6.805,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -2.261,
+      "q141k_vs_wt_selectivity": -0.469,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.544, margin=-2.26)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": false,
+      "chembl_best_pchembl": null,
+      "chembl_note": "0 ABCG2 records; CFTR corrector, not a known ABCG2 ligand (specificity check)",
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "tezacaftor": {
+      "role_tag": "cftr_corrector",
+      "drug_class": "CFTR corrector",
+      "cid": 46199646,
+      "fold_q141k_affinity": -5.906,
+      "fold_wt_affinity": -5.613,
+      "transport_affinity": -7.346,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.44,
+      "q141k_vs_wt_selectivity": 0.293,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.346) without fold-selectivity (margin=-1.44)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "elexacaftor": {
+      "role_tag": "cftr_corrector",
+      "drug_class": "CFTR corrector",
+      "cid": 134587348,
+      "fold_q141k_affinity": -5.796,
+      "fold_wt_affinity": -6.215,
+      "transport_affinity": -7.745,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.949,
+      "q141k_vs_wt_selectivity": -0.419,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.745) without fold-selectivity (margin=-1.95)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "lumacaftor": {
+      "role_tag": "cftr_corrector",
+      "drug_class": "CFTR corrector",
+      "cid": 16678941,
+      "fold_q141k_affinity": -7.349,
+      "fold_wt_affinity": -7.032,
+      "transport_affinity": -8.766,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.417,
+      "q141k_vs_wt_selectivity": 0.317,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-8.766) without fold-selectivity (margin=-1.42)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "ko143": {
+      "role_tag": "abcg2_inhibitor",
+      "drug_class": "ABCG2 inhibitor (research)",
+      "cid": 10322450,
+      "fold_q141k_affinity": -4.746,
+      "fold_wt_affinity": -4.691,
+      "transport_affinity": -6.264,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.518,
+      "q141k_vs_wt_selectivity": 0.055,
+      "disqualify_reasons": [
+        "known/empirical ABCG2 inhibitor or substrate"
+      ],
+      "known_inhibitor_flag": true,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": true,
+      "wetlab_candidate": "no"
+    },
+    "fumitremorgin_c": {
+      "role_tag": "abcg2_inhibitor",
+      "drug_class": "ABCG2 inhibitor (research)",
+      "cid": 403923,
+      "fold_q141k_affinity": -5.062,
+      "fold_wt_affinity": -5.298,
+      "transport_affinity": -6.74,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.678,
+      "q141k_vs_wt_selectivity": -0.236,
+      "disqualify_reasons": [
+        "known/empirical ABCG2 inhibitor or substrate"
+      ],
+      "known_inhibitor_flag": true,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": true,
+      "wetlab_candidate": "no"
+    },
+    "tariquidar": {
+      "role_tag": "abcg2_inhibitor",
+      "drug_class": "P-gp/ABCG2 inhibitor",
+      "cid": 148201,
+      "fold_q141k_affinity": -6.163,
+      "fold_wt_affinity": -5.178,
+      "transport_affinity": -7.754,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.591,
+      "q141k_vs_wt_selectivity": 0.985,
+      "disqualify_reasons": [
+        "known/empirical ABCG2 inhibitor or substrate"
+      ],
+      "known_inhibitor_flag": true,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": true,
+      "wetlab_candidate": "no"
+    },
+    "elacridar": {
+      "role_tag": "abcg2_inhibitor",
+      "drug_class": "P-gp/ABCG2 inhibitor",
+      "cid": 119373,
+      "fold_q141k_affinity": -6.297,
+      "fold_wt_affinity": -6.477,
+      "transport_affinity": -8.234,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.937,
+      "q141k_vs_wt_selectivity": -0.18,
+      "disqualify_reasons": [
+        "known/empirical ABCG2 inhibitor or substrate"
+      ],
+      "known_inhibitor_flag": true,
+      "chembl_abcg2_empirical": true,
+      "chembl_best_pchembl": 6.39,
+      "chembl_note": "IC50 410 nM, potent ABCG2 inhibitor (reference negative control)",
+      "final_known_abcg2": true,
+      "wetlab_candidate": "no"
+    },
+    "4-phenylbutyric_acid": {
+      "role_tag": "other",
+      "drug_class": "Chemical chaperone (HDAC inhibitor)",
+      "cid": 4775,
+      "fold_q141k_affinity": -5.36,
+      "fold_wt_affinity": -4.892,
+      "transport_affinity": -4.603,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": 0.757,
+      "q141k_vs_wt_selectivity": 0.468,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.36, margin=0.76)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "sodium_butyrate": {
+      "role_tag": "other",
+      "drug_class": "HDAC inhibitor (SCFA)",
+      "cid": 5222465,
+      "fold_q141k_affinity": -3.756,
+      "fold_wt_affinity": -3.724,
+      "transport_affinity": -3.64,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": 0.116,
+      "q141k_vs_wt_selectivity": 0.032,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.756, margin=0.12)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "vorinostat": {
+      "role_tag": "other",
+      "drug_class": "HDAC inhibitor",
+      "cid": 5311,
+      "fold_q141k_affinity": -6.194,
+      "fold_wt_affinity": -5.966,
+      "transport_affinity": -5.645,
+      "chaperone_tier": "uncertain",
+      "fold_vs_transport_margin": 0.549,
+      "q141k_vs_wt_selectivity": 0.228,
+      "disqualify_reasons": [],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "uncertain"
+    },
+    "romidepsin": {
+      "role_tag": "other",
+      "drug_class": "HDAC inhibitor",
+      "cid": 5352062,
+      "fold_q141k_affinity": -1.85,
+      "fold_wt_affinity": -2.761,
+      "transport_affinity": -3.506,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.656,
+      "q141k_vs_wt_selectivity": -0.911,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-1.85, margin=-1.66)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "migalastat": {
+      "role_tag": "other",
+      "drug_class": "Iminosugar chaperone (Fabry)",
+      "cid": 176077,
+      "fold_q141k_affinity": -3.341,
+      "fold_wt_affinity": -3.397,
+      "transport_affinity": -4.6,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.259,
+      "q141k_vs_wt_selectivity": -0.056,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.341, margin=-1.26)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "miglustat": {
+      "role_tag": "other",
+      "drug_class": "Iminosugar chaperone (Gaucher)",
+      "cid": 51634,
+      "fold_q141k_affinity": -4.037,
+      "fold_wt_affinity": -4.255,
+      "transport_affinity": -5.231,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.194,
+      "q141k_vs_wt_selectivity": -0.218,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.037, margin=-1.19)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "ambroxol": {
+      "role_tag": "other",
+      "drug_class": "Pharmacological chaperone (GCase, off-label)",
+      "cid": 2132,
+      "fold_q141k_affinity": -4.904,
+      "fold_wt_affinity": -5.172,
+      "transport_affinity": -5.123,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.219,
+      "q141k_vs_wt_selectivity": -0.268,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.904, margin=-0.22)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "isofagomine": {
+      "role_tag": "other",
+      "drug_class": "Iminosugar chaperone (research)",
+      "cid": 447607,
+      "fold_q141k_affinity": -3.477,
+      "fold_wt_affinity": -3.457,
+      "transport_affinity": -4.666,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.189,
+      "q141k_vs_wt_selectivity": 0.02,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.477, margin=-1.19)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "tafamidis": {
+      "role_tag": "other",
+      "drug_class": "Transthyretin tetramer stabilizer",
+      "cid": 11001318,
+      "fold_q141k_affinity": -5.021,
+      "fold_wt_affinity": -5.088,
+      "transport_affinity": -6.189,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.168,
+      "q141k_vs_wt_selectivity": -0.067,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.021, margin=-1.17)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "diflunisal": {
+      "role_tag": "other",
+      "drug_class": "NSAID + TTR stabilizer (off-label)",
+      "cid": 3059,
+      "fold_q141k_affinity": -4.638,
+      "fold_wt_affinity": -5.191,
+      "transport_affinity": -5.822,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.184,
+      "q141k_vs_wt_selectivity": -0.553,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.638, margin=-1.18)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "trehalose": {
+      "role_tag": "other",
+      "drug_class": "Osmolyte chemical chaperone",
+      "cid": 7427,
+      "fold_q141k_affinity": -4.653,
+      "fold_wt_affinity": -4.907,
+      "transport_affinity": -6.186,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.533,
+      "q141k_vs_wt_selectivity": -0.254,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.653, margin=-1.53)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "geldanamycin_17_aag": {
+      "role_tag": "other",
+      "drug_class": "Hsp90 inhibitor (research)",
+      "cid": 6505803,
+      "fold_q141k_affinity": -3.381,
+      "fold_wt_affinity": -4.014,
+      "transport_affinity": -4.736,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.355,
+      "q141k_vs_wt_selectivity": -0.633,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.381, margin=-1.35)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "ganetespib": {
+      "role_tag": "other",
+      "drug_class": "Hsp90 inhibitor (research)",
+      "cid": 135564985,
+      "fold_q141k_affinity": -4.218,
+      "fold_wt_affinity": -4.665,
+      "transport_affinity": -6.491,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -2.273,
+      "q141k_vs_wt_selectivity": -0.447,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.218, margin=-2.27)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "ver155008": {
+      "role_tag": "other",
+      "drug_class": "Hsp70 inhibitor (research)",
+      "cid": 25195348,
+      "fold_q141k_affinity": -6.464,
+      "fold_wt_affinity": -6.428,
+      "transport_affinity": -7.599,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.135,
+      "q141k_vs_wt_selectivity": 0.036,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.599) without fold-selectivity (margin=-1.13)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "deflazacort": {
+      "role_tag": "other",
+      "drug_class": "Corticosteroid (Duchenne stabilizer effect)",
+      "cid": 189821,
+      "fold_q141k_affinity": -5.51,
+      "fold_wt_affinity": -5.566,
+      "transport_affinity": -6.927,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.417,
+      "q141k_vs_wt_selectivity": -0.056,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.51, margin=-1.42)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "betaine": {
+      "role_tag": "other",
+      "drug_class": "Osmolyte (homocystinuria)",
+      "cid": 247,
+      "fold_q141k_affinity": -3.001,
+      "fold_wt_affinity": -2.827,
+      "transport_affinity": -3.993,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.992,
+      "q141k_vs_wt_selectivity": 0.174,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.001, margin=-0.99)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "rosuvastatin": {
+      "role_tag": "other",
+      "drug_class": "Statin",
+      "cid": 446157,
+      "fold_q141k_affinity": -6.801,
+      "fold_wt_affinity": -5.849,
+      "transport_affinity": -6.265,
+      "chaperone_tier": "uncertain",
+      "fold_vs_transport_margin": 0.536,
+      "q141k_vs_wt_selectivity": 0.952,
+      "disqualify_reasons": [],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "uncertain"
+    },
+    "atorvastatin": {
+      "role_tag": "other",
+      "drug_class": "Statin",
+      "cid": 60823,
+      "fold_q141k_affinity": -4.807,
+      "fold_wt_affinity": -6.368,
+      "transport_affinity": -6.196,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.389,
+      "q141k_vs_wt_selectivity": -1.561,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.807, margin=-1.39)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "simvastatin": {
+      "role_tag": "other",
+      "drug_class": "Statin",
+      "cid": 54454,
+      "fold_q141k_affinity": -4.878,
+      "fold_wt_affinity": -5.266,
+      "transport_affinity": -6.27,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.392,
+      "q141k_vs_wt_selectivity": -0.388,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.878, margin=-1.39)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "pravastatin": {
+      "role_tag": "other",
+      "drug_class": "Statin",
+      "cid": 54687,
+      "fold_q141k_affinity": -5.34,
+      "fold_wt_affinity": -5.542,
+      "transport_affinity": -6.118,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.778,
+      "q141k_vs_wt_selectivity": -0.202,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.34, margin=-0.78)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "fluoxetine": {
+      "role_tag": "other",
+      "drug_class": "SSRI",
+      "cid": 3386,
+      "fold_q141k_affinity": -4.973,
+      "fold_wt_affinity": -5.211,
+      "transport_affinity": -5.34,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.367,
+      "q141k_vs_wt_selectivity": -0.238,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.973, margin=-0.37)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "sertraline": {
+      "role_tag": "other",
+      "drug_class": "SSRI",
+      "cid": 68617,
+      "fold_q141k_affinity": -4.771,
+      "fold_wt_affinity": -4.771,
+      "transport_affinity": -6.262,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.491,
+      "q141k_vs_wt_selectivity": 0.0,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.771, margin=-1.49)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "citalopram": {
+      "role_tag": "other",
+      "drug_class": "SSRI",
+      "cid": 2771,
+      "fold_q141k_affinity": -4.688,
+      "fold_wt_affinity": -4.293,
+      "transport_affinity": -5.769,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.081,
+      "q141k_vs_wt_selectivity": 0.395,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.688, margin=-1.08)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "escitalopram": {
+      "role_tag": "other",
+      "drug_class": "SSRI",
+      "cid": 146570,
+      "fold_q141k_affinity": -4.704,
+      "fold_wt_affinity": -4.978,
+      "transport_affinity": -5.265,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.561,
+      "q141k_vs_wt_selectivity": -0.274,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.704, margin=-0.56)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "propranolol": {
+      "role_tag": "other",
+      "drug_class": "Beta blocker",
+      "cid": 4946,
+      "fold_q141k_affinity": -5.311,
+      "fold_wt_affinity": -5.016,
+      "transport_affinity": -5.447,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.136,
+      "q141k_vs_wt_selectivity": 0.295,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.311, margin=-0.14)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "metoprolol": {
+      "role_tag": "other",
+      "drug_class": "Beta blocker",
+      "cid": 4171,
+      "fold_q141k_affinity": -4.578,
+      "fold_wt_affinity": -4.657,
+      "transport_affinity": -5.357,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.779,
+      "q141k_vs_wt_selectivity": -0.079,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.578, margin=-0.78)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "atenolol": {
+      "role_tag": "other",
+      "drug_class": "Beta blocker",
+      "cid": 2249,
+      "fold_q141k_affinity": -4.266,
+      "fold_wt_affinity": -5.016,
+      "transport_affinity": -5.474,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.208,
+      "q141k_vs_wt_selectivity": -0.75,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.266, margin=-1.21)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "carvedilol": {
+      "role_tag": "other",
+      "drug_class": "Beta blocker",
+      "cid": 2585,
+      "fold_q141k_affinity": -5.26,
+      "fold_wt_affinity": -4.992,
+      "transport_affinity": -6.539,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.279,
+      "q141k_vs_wt_selectivity": 0.268,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.26, margin=-1.28)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "amoxicillin": {
+      "role_tag": "other",
+      "drug_class": "Beta-lactam antibiotic",
+      "cid": 33613,
+      "fold_q141k_affinity": -4.627,
+      "fold_wt_affinity": -5.678,
+      "transport_affinity": -6.615,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.988,
+      "q141k_vs_wt_selectivity": -1.051,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.627, margin=-1.99)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "azithromycin": {
+      "role_tag": "other",
+      "drug_class": "Macrolide antibiotic",
+      "cid": 447043,
+      "fold_q141k_affinity": -2.787,
+      "fold_wt_affinity": -3.154,
+      "transport_affinity": -4.381,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.594,
+      "q141k_vs_wt_selectivity": -0.367,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-2.787, margin=-1.59)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "ciprofloxacin": {
+      "role_tag": "other",
+      "drug_class": "Fluoroquinolone",
+      "cid": 2764,
+      "fold_q141k_affinity": -4.845,
+      "fold_wt_affinity": -4.948,
+      "transport_affinity": -6.227,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.382,
+      "q141k_vs_wt_selectivity": -0.103,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.845, margin=-1.38)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "doxycycline": {
+      "role_tag": "other",
+      "drug_class": "Tetracycline",
+      "cid": 54671203,
+      "fold_q141k_affinity": -4.98,
+      "fold_wt_affinity": -5.645,
+      "transport_affinity": -6.756,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.776,
+      "q141k_vs_wt_selectivity": -0.665,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.98, margin=-1.78)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "metronidazole": {
+      "role_tag": "other",
+      "drug_class": "Nitroimidazole",
+      "cid": 4173,
+      "fold_q141k_affinity": -3.433,
+      "fold_wt_affinity": -3.41,
+      "transport_affinity": -4.702,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.269,
+      "q141k_vs_wt_selectivity": 0.023,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.433, margin=-1.27)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "ibuprofen": {
+      "role_tag": "other",
+      "drug_class": "NSAID",
+      "cid": 3672,
+      "fold_q141k_affinity": -4.77,
+      "fold_wt_affinity": -4.605,
+      "transport_affinity": -4.899,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.129,
+      "q141k_vs_wt_selectivity": 0.165,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.77, margin=-0.13)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "naproxen": {
+      "role_tag": "other",
+      "drug_class": "NSAID",
+      "cid": 156391,
+      "fold_q141k_affinity": -4.883,
+      "fold_wt_affinity": -4.645,
+      "transport_affinity": -5.363,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.48,
+      "q141k_vs_wt_selectivity": 0.238,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.883, margin=-0.48)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "celecoxib": {
+      "role_tag": "other",
+      "drug_class": "COX-2 NSAID",
+      "cid": 2662,
+      "fold_q141k_affinity": -5.257,
+      "fold_wt_affinity": -5.971,
+      "transport_affinity": -7.17,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.913,
+      "q141k_vs_wt_selectivity": -0.714,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.17) without fold-selectivity (margin=-1.91)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "diclofenac": {
+      "role_tag": "other",
+      "drug_class": "NSAID",
+      "cid": 3033,
+      "fold_q141k_affinity": -3.985,
+      "fold_wt_affinity": -4.225,
+      "transport_affinity": -5.5,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.515,
+      "q141k_vs_wt_selectivity": -0.24,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.985, margin=-1.52)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "amlodipine": {
+      "role_tag": "other",
+      "drug_class": "Calcium channel blocker",
+      "cid": 2162,
+      "fold_q141k_affinity": -4.0,
+      "fold_wt_affinity": -4.526,
+      "transport_affinity": -5.568,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.568,
+      "q141k_vs_wt_selectivity": -0.526,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.0, margin=-1.57)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "lisinopril": {
+      "role_tag": "other",
+      "drug_class": "ACE inhibitor",
+      "cid": 5362119,
+      "fold_q141k_affinity": -6.059,
+      "fold_wt_affinity": -5.728,
+      "transport_affinity": -6.69,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.631,
+      "q141k_vs_wt_selectivity": 0.331,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-6.059, margin=-0.63)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "losartan": {
+      "role_tag": "other",
+      "drug_class": "ARB",
+      "cid": 3961,
+      "fold_q141k_affinity": -5.672,
+      "fold_wt_affinity": -5.7,
+      "transport_affinity": -6.718,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.046,
+      "q141k_vs_wt_selectivity": -0.028,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.672, margin=-1.05)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "valsartan": {
+      "role_tag": "other",
+      "drug_class": "ARB",
+      "cid": 60846,
+      "fold_q141k_affinity": -5.526,
+      "fold_wt_affinity": -4.521,
+      "transport_affinity": -6.585,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.059,
+      "q141k_vs_wt_selectivity": 1.005,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.526, margin=-1.06)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "hydrochlorothiazide": {
+      "role_tag": "other",
+      "drug_class": "Diuretic",
+      "cid": 3639,
+      "fold_q141k_affinity": -4.669,
+      "fold_wt_affinity": -4.646,
+      "transport_affinity": -5.858,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.189,
+      "q141k_vs_wt_selectivity": 0.023,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.669, margin=-1.19)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "diphenhydramine": {
+      "role_tag": "other",
+      "drug_class": "Antihistamine H1",
+      "cid": 3100,
+      "fold_q141k_affinity": -4.074,
+      "fold_wt_affinity": -4.732,
+      "transport_affinity": -5.013,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.939,
+      "q141k_vs_wt_selectivity": -0.658,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.074, margin=-0.94)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "loratadine": {
+      "role_tag": "other",
+      "drug_class": "Antihistamine H1",
+      "cid": 3957,
+      "fold_q141k_affinity": -3.468,
+      "fold_wt_affinity": -4.115,
+      "transport_affinity": -4.695,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.227,
+      "q141k_vs_wt_selectivity": -0.647,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.468, margin=-1.23)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "cetirizine": {
+      "role_tag": "other",
+      "drug_class": "Antihistamine H1",
+      "cid": 2678,
+      "fold_q141k_affinity": -4.792,
+      "fold_wt_affinity": -5.128,
+      "transport_affinity": -5.547,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.755,
+      "q141k_vs_wt_selectivity": -0.336,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.792, margin=-0.75)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "metformin": {
+      "role_tag": "other",
+      "drug_class": "Biguanide",
+      "cid": 4091,
+      "fold_q141k_affinity": -3.812,
+      "fold_wt_affinity": -3.817,
+      "transport_affinity": -4.88,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.068,
+      "q141k_vs_wt_selectivity": -0.005,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.812, margin=-1.07)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "glipizide": {
+      "role_tag": "other",
+      "drug_class": "Sulfonylurea",
+      "cid": 3478,
+      "fold_q141k_affinity": -5.276,
+      "fold_wt_affinity": -5.992,
+      "transport_affinity": -7.282,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -2.006,
+      "q141k_vs_wt_selectivity": -0.716,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.282) without fold-selectivity (margin=-2.01)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "pioglitazone": {
+      "role_tag": "other",
+      "drug_class": "Thiazolidinedione (PPARgamma agonist)",
+      "cid": 4829,
+      "fold_q141k_affinity": -5.524,
+      "fold_wt_affinity": -5.735,
+      "transport_affinity": -6.314,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.79,
+      "q141k_vs_wt_selectivity": -0.211,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.524, margin=-0.79)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "allopurinol": {
+      "role_tag": "other",
+      "drug_class": "XO inhibitor (urate)",
+      "cid": 135401907,
+      "fold_q141k_affinity": -3.68,
+      "fold_wt_affinity": -3.629,
+      "transport_affinity": -4.881,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.201,
+      "q141k_vs_wt_selectivity": 0.051,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.68, margin=-1.20)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "febuxostat": {
+      "role_tag": "other",
+      "drug_class": "XO inhibitor (urate)",
+      "cid": 134018,
+      "fold_q141k_affinity": -4.851,
+      "fold_wt_affinity": -4.782,
+      "transport_affinity": -5.884,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.033,
+      "q141k_vs_wt_selectivity": 0.069,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.851, margin=-1.03)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "probenecid": {
+      "role_tag": "other",
+      "drug_class": "URAT1 uricosuric",
+      "cid": 4911,
+      "fold_q141k_affinity": -3.696,
+      "fold_wt_affinity": -4.026,
+      "transport_affinity": -5.278,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.582,
+      "q141k_vs_wt_selectivity": -0.33,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.696, margin=-1.58)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "benzbromarone": {
+      "role_tag": "other",
+      "drug_class": "URAT1 uricosuric",
+      "cid": 2333,
+      "fold_q141k_affinity": -4.947,
+      "fold_wt_affinity": -5.108,
+      "transport_affinity": -5.97,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.023,
+      "q141k_vs_wt_selectivity": -0.161,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.947, margin=-1.02)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "colchicine": {
+      "role_tag": "other",
+      "drug_class": "Tubulin inhibitor",
+      "cid": 6167,
+      "fold_q141k_affinity": -3.027,
+      "fold_wt_affinity": -3.474,
+      "transport_affinity": -4.682,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.655,
+      "q141k_vs_wt_selectivity": -0.447,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.027, margin=-1.66)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "rifampicin": {
+      "role_tag": "other",
+      "drug_class": "Rifamycin antibiotic / PXR inducer",
+      "cid": 135398735,
+      "fold_q141k_affinity": -4.09,
+      "fold_wt_affinity": -5.32,
+      "transport_affinity": -6.057,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.967,
+      "q141k_vs_wt_selectivity": -1.23,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.09, margin=-1.97)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "ketoconazole": {
+      "role_tag": "abcg2_inhibitor",
+      "drug_class": "Azole antifungal / ABCG2 inhibitor",
+      "cid": 47576,
+      "fold_q141k_affinity": -5.561,
+      "fold_wt_affinity": -5.32,
+      "transport_affinity": -7.146,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.585,
+      "q141k_vs_wt_selectivity": 0.241,
+      "disqualify_reasons": [
+        "known/empirical ABCG2 inhibitor or substrate"
+      ],
+      "known_inhibitor_flag": true,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": true,
+      "wetlab_candidate": "no"
+    },
+    "itraconazole": {
+      "role_tag": "abcg2_inhibitor",
+      "drug_class": "Azole antifungal / ABCG2 inhibitor",
+      "cid": 55283,
+      "fold_q141k_affinity": -5.894,
+      "fold_wt_affinity": -5.085,
+      "transport_affinity": -7.608,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.714,
+      "q141k_vs_wt_selectivity": 0.809,
+      "disqualify_reasons": [
+        "known/empirical ABCG2 inhibitor or substrate"
+      ],
+      "known_inhibitor_flag": true,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": true,
+      "wetlab_candidate": "no"
+    },
+    "cyclosporine_a": {
+      "role_tag": "abcg2_inhibitor",
+      "drug_class": "Calcineurin inh / P-gp,ABCG2 inh",
+      "cid": 5284373,
+      "fold_q141k_affinity": null,
+      "fold_wt_affinity": null,
+      "transport_affinity": null,
+      "chaperone_tier": "error",
+      "known_inhibitor_flag": true,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": true,
+      "wetlab_candidate": "no"
+    },
+    "tacrolimus": {
+      "role_tag": "other",
+      "drug_class": "Calcineurin inh / ABCG2 inh",
+      "cid": 445643,
+      "fold_q141k_affinity": -3.781,
+      "fold_wt_affinity": -4.711,
+      "transport_affinity": -4.716,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.935,
+      "q141k_vs_wt_selectivity": -0.93,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.781, margin=-0.94)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "imatinib": {
+      "role_tag": "other",
+      "drug_class": "TKI / ABCG2 substrate-inhibitor",
+      "cid": 5291,
+      "fold_q141k_affinity": -5.457,
+      "fold_wt_affinity": -5.944,
+      "transport_affinity": -7.927,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -2.47,
+      "q141k_vs_wt_selectivity": -0.487,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.927) without fold-selectivity (margin=-2.47)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "gefitinib": {
+      "role_tag": "other",
+      "drug_class": "EGFR TKI / ABCG2 substrate",
+      "cid": 123631,
+      "fold_q141k_affinity": -5.947,
+      "fold_wt_affinity": -5.959,
+      "transport_affinity": -7.18,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.233,
+      "q141k_vs_wt_selectivity": -0.012,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.18) without fold-selectivity (margin=-1.23)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "erlotinib": {
+      "role_tag": "other",
+      "drug_class": "EGFR TKI",
+      "cid": 176870,
+      "fold_q141k_affinity": -5.527,
+      "fold_wt_affinity": -5.779,
+      "transport_affinity": -6.029,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.502,
+      "q141k_vs_wt_selectivity": -0.252,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.527, margin=-0.50)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "sorafenib": {
+      "role_tag": "other",
+      "drug_class": "Multikinase TKI",
+      "cid": 216239,
+      "fold_q141k_affinity": -6.111,
+      "fold_wt_affinity": -5.882,
+      "transport_affinity": -7.143,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.032,
+      "q141k_vs_wt_selectivity": 0.229,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.143) without fold-selectivity (margin=-1.03)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "omeprazole": {
+      "role_tag": "other",
+      "drug_class": "PPI",
+      "cid": 4594,
+      "fold_q141k_affinity": -5.299,
+      "fold_wt_affinity": -5.205,
+      "transport_affinity": -6.243,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.944,
+      "q141k_vs_wt_selectivity": 0.094,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.299, margin=-0.94)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "pantoprazole": {
+      "role_tag": "other",
+      "drug_class": "PPI",
+      "cid": 4679,
+      "fold_q141k_affinity": -5.35,
+      "fold_wt_affinity": -5.994,
+      "transport_affinity": -6.382,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.032,
+      "q141k_vs_wt_selectivity": -0.644,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.35, margin=-1.03)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "ranitidine": {
+      "role_tag": "other",
+      "drug_class": "H2 blocker",
+      "cid": 3001055,
+      "fold_q141k_affinity": -4.213,
+      "fold_wt_affinity": -4.039,
+      "transport_affinity": -5.495,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.282,
+      "q141k_vs_wt_selectivity": 0.174,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.213, margin=-1.28)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "warfarin": {
+      "role_tag": "other",
+      "drug_class": "Anticoagulant",
+      "cid": 54678486,
+      "fold_q141k_affinity": -4.952,
+      "fold_wt_affinity": -5.379,
+      "transport_affinity": -6.261,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.309,
+      "q141k_vs_wt_selectivity": -0.427,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.952, margin=-1.31)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "clopidogrel": {
+      "role_tag": "other",
+      "drug_class": "Antiplatelet",
+      "cid": 60606,
+      "fold_q141k_affinity": -4.344,
+      "fold_wt_affinity": -4.5,
+      "transport_affinity": -5.626,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.282,
+      "q141k_vs_wt_selectivity": -0.156,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.344, margin=-1.28)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "apixaban": {
+      "role_tag": "other",
+      "drug_class": "Factor Xa inhibitor",
+      "cid": 10182969,
+      "fold_q141k_affinity": -5.105,
+      "fold_wt_affinity": -5.215,
+      "transport_affinity": -6.805,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.7,
+      "q141k_vs_wt_selectivity": -0.11,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.105, margin=-1.70)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "levothyroxine": {
+      "role_tag": "other",
+      "drug_class": "Thyroid hormone",
+      "cid": 5819,
+      "fold_q141k_affinity": -4.67,
+      "fold_wt_affinity": -4.642,
+      "transport_affinity": -5.147,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.477,
+      "q141k_vs_wt_selectivity": 0.028,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.67, margin=-0.48)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "prednisone": {
+      "role_tag": "other",
+      "drug_class": "Corticosteroid",
+      "cid": 5865,
+      "fold_q141k_affinity": -5.24,
+      "fold_wt_affinity": -5.24,
+      "transport_affinity": -6.789,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.549,
+      "q141k_vs_wt_selectivity": 0.0,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.24, margin=-1.55)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "acetaminophen": {
+      "role_tag": "other",
+      "drug_class": "Analgesic",
+      "cid": 1983,
+      "fold_q141k_affinity": -4.259,
+      "fold_wt_affinity": -4.432,
+      "transport_affinity": -4.613,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.354,
+      "q141k_vs_wt_selectivity": -0.173,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.259, margin=-0.35)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "aspirin": {
+      "role_tag": "other",
+      "drug_class": "NSAID/antiplatelet",
+      "cid": 2244,
+      "fold_q141k_affinity": -3.742,
+      "fold_wt_affinity": -3.964,
+      "transport_affinity": -5.048,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.306,
+      "q141k_vs_wt_selectivity": -0.222,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.742, margin=-1.31)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "ezetimibe": {
+      "role_tag": "other",
+      "drug_class": "Cholesterol absorption inh",
+      "cid": 150311,
+      "fold_q141k_affinity": -6.062,
+      "fold_wt_affinity": -6.73,
+      "transport_affinity": -6.233,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.171,
+      "q141k_vs_wt_selectivity": -0.668,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-6.062, margin=-0.17)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "fenofibrate": {
+      "role_tag": "other",
+      "drug_class": "PPARalpha agonist",
+      "cid": 3339,
+      "fold_q141k_affinity": -5.284,
+      "fold_wt_affinity": -5.238,
+      "transport_affinity": -6.114,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.83,
+      "q141k_vs_wt_selectivity": 0.046,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.284, margin=-0.83)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "gemfibrozil": {
+      "role_tag": "other",
+      "drug_class": "Fibrate",
+      "cid": 3463,
+      "fold_q141k_affinity": -5.38,
+      "fold_wt_affinity": -4.949,
+      "transport_affinity": -5.193,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": 0.187,
+      "q141k_vs_wt_selectivity": 0.431,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.38, margin=0.19)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "carbamazepine": {
+      "role_tag": "other",
+      "drug_class": "Anticonvulsant",
+      "cid": 2554,
+      "fold_q141k_affinity": -5.165,
+      "fold_wt_affinity": -5.196,
+      "transport_affinity": -6.811,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.646,
+      "q141k_vs_wt_selectivity": -0.031,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.165, margin=-1.65)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "valproic_acid": {
+      "role_tag": "other",
+      "drug_class": "Anticonvulsant / HDAC inh",
+      "cid": 3121,
+      "fold_q141k_affinity": -4.034,
+      "fold_wt_affinity": -4.049,
+      "transport_affinity": -3.973,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": 0.061,
+      "q141k_vs_wt_selectivity": -0.015,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.034, margin=0.06)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "phenytoin": {
+      "role_tag": "other",
+      "drug_class": "Anticonvulsant",
+      "cid": 1775,
+      "fold_q141k_affinity": -4.972,
+      "fold_wt_affinity": -5.614,
+      "transport_affinity": -6.088,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.116,
+      "q141k_vs_wt_selectivity": -0.642,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.972, margin=-1.12)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "gabapentin": {
+      "role_tag": "other",
+      "drug_class": "Anticonvulsant",
+      "cid": 3446,
+      "fold_q141k_affinity": -3.559,
+      "fold_wt_affinity": -3.313,
+      "transport_affinity": -5.229,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.67,
+      "q141k_vs_wt_selectivity": 0.246,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.559, margin=-1.67)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "disulfiram": {
+      "role_tag": "other",
+      "drug_class": "ALDH inhibitor (GSDMD covalent)",
+      "cid": 3117,
+      "fold_q141k_affinity": -3.284,
+      "fold_wt_affinity": -3.266,
+      "transport_affinity": -3.718,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.434,
+      "q141k_vs_wt_selectivity": 0.018,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.284, margin=-0.43)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "metformin_extended_release": {
+      "role_tag": "other",
+      "drug_class": "Biguanide ER",
+      "cid": 4091,
+      "fold_q141k_affinity": -3.812,
+      "fold_wt_affinity": -3.817,
+      "transport_affinity": -4.88,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.068,
+      "q141k_vs_wt_selectivity": -0.005,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.812, margin=-1.07)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "n_acetylcysteine": {
+      "role_tag": "other",
+      "drug_class": "Mucolytic / antioxidant chaperone",
+      "cid": 12035,
+      "fold_q141k_affinity": -3.32,
+      "fold_wt_affinity": -3.646,
+      "transport_affinity": -4.453,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.133,
+      "q141k_vs_wt_selectivity": -0.326,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.32, margin=-1.13)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "tauroursodeoxycholic_acid": {
+      "role_tag": "other",
+      "drug_class": "Bile acid chaperone (TUDCA)",
+      "cid": 9848818,
+      "fold_q141k_affinity": -5.064,
+      "fold_wt_affinity": -5.823,
+      "transport_affinity": -7.776,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -2.712,
+      "q141k_vs_wt_selectivity": -0.759,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.776) without fold-selectivity (margin=-2.71)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "ursodiol": {
+      "role_tag": "other",
+      "drug_class": "Bile acid chaperone (UDCA)",
+      "cid": 31401,
+      "fold_q141k_affinity": -4.74,
+      "fold_wt_affinity": -4.842,
+      "transport_affinity": -6.645,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.905,
+      "q141k_vs_wt_selectivity": -0.102,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.74, margin=-1.90)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "glycerol_phenylbutyrate": {
+      "role_tag": "other",
+      "drug_class": "Ammonia scavenger / chaperone",
+      "cid": 10482134,
+      "fold_q141k_affinity": -6.199,
+      "fold_wt_affinity": -6.528,
+      "transport_affinity": -5.937,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": 0.262,
+      "q141k_vs_wt_selectivity": -0.329,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-6.199, margin=0.26)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "sodium_phenylbutyrate": {
+      "role_tag": "other",
+      "drug_class": "Chaperone (Buphenyl)",
+      "cid": 5258,
+      "fold_q141k_affinity": -5.36,
+      "fold_wt_affinity": -4.892,
+      "transport_affinity": -4.603,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": 0.757,
+      "q141k_vs_wt_selectivity": 0.468,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.36, margin=0.76)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "salicylic_acid": {
+      "role_tag": "other",
+      "drug_class": "NSAID / aromatic acid chaperone",
+      "cid": 338,
+      "fold_q141k_affinity": -3.676,
+      "fold_wt_affinity": -4.147,
+      "transport_affinity": -4.876,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.2,
+      "q141k_vs_wt_selectivity": -0.471,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.676, margin=-1.20)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "lesinurad": {
+      "role_tag": "other",
+      "drug_class": "URAT1 inhibitor",
+      "cid": 53465279,
+      "fold_q141k_affinity": -4.819,
+      "fold_wt_affinity": -4.82,
+      "transport_affinity": -5.96,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.141,
+      "q141k_vs_wt_selectivity": -0.001,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.819, margin=-1.14)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "verinurad": {
+      "role_tag": "other",
+      "drug_class": "URAT1 inhibitor (investigational)",
+      "cid": 54767229,
+      "fold_q141k_affinity": -4.542,
+      "fold_wt_affinity": -4.496,
+      "transport_affinity": -5.95,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.408,
+      "q141k_vs_wt_selectivity": 0.046,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.542, margin=-1.41)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "dotinurad": {
+      "role_tag": "other",
+      "drug_class": "URAT1 inhibitor (Japan)",
+      "cid": 51349053,
+      "fold_q141k_affinity": -5.045,
+      "fold_wt_affinity": -5.212,
+      "transport_affinity": -6.536,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.491,
+      "q141k_vs_wt_selectivity": -0.167,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.045, margin=-1.49)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "etoposide": {
+      "role_tag": "abcg2_inhibitor",
+      "drug_class": "Topoisomerase II / ABCG2 substrate",
+      "cid": 36462,
+      "fold_q141k_affinity": -4.555,
+      "fold_wt_affinity": -6.03,
+      "transport_affinity": -6.642,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -2.087,
+      "q141k_vs_wt_selectivity": -1.475,
+      "disqualify_reasons": [
+        "known/empirical ABCG2 inhibitor or substrate"
+      ],
+      "known_inhibitor_flag": true,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": true,
+      "wetlab_candidate": "no"
+    },
+    "mitoxantrone": {
+      "role_tag": "abcg2_inhibitor",
+      "drug_class": "Anthracenedione / ABCG2 substrate",
+      "cid": 4212,
+      "fold_q141k_affinity": -4.285,
+      "fold_wt_affinity": -5.32,
+      "transport_affinity": -6.196,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.911,
+      "q141k_vs_wt_selectivity": -1.035,
+      "disqualify_reasons": [
+        "known/empirical ABCG2 inhibitor or substrate"
+      ],
+      "known_inhibitor_flag": true,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": true,
+      "wetlab_candidate": "no"
+    },
+    "topotecan": {
+      "role_tag": "abcg2_inhibitor",
+      "drug_class": "Topoisomerase I / ABCG2 substrate",
+      "cid": 60700,
+      "fold_q141k_affinity": -4.744,
+      "fold_wt_affinity": -5.596,
+      "transport_affinity": -6.901,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -2.157,
+      "q141k_vs_wt_selectivity": -0.852,
+      "disqualify_reasons": [
+        "known/empirical ABCG2 inhibitor or substrate"
+      ],
+      "known_inhibitor_flag": true,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": true,
+      "wetlab_candidate": "no"
+    },
+    "estradiol": {
+      "role_tag": "other",
+      "drug_class": "Estrogen / ABCG2 substrate",
+      "cid": 5757,
+      "fold_q141k_affinity": -5.636,
+      "fold_wt_affinity": -5.649,
+      "transport_affinity": -5.713,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.077,
+      "q141k_vs_wt_selectivity": -0.013,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.636, margin=-0.08)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "testosterone": {
+      "role_tag": "other",
+      "drug_class": "Androgen",
+      "cid": 6013,
+      "fold_q141k_affinity": -5.54,
+      "fold_wt_affinity": -5.239,
+      "transport_affinity": -5.615,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.075,
+      "q141k_vs_wt_selectivity": 0.301,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.54, margin=-0.08)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "progesterone": {
+      "role_tag": "other",
+      "drug_class": "Progestin",
+      "cid": 5994,
+      "fold_q141k_affinity": -5.533,
+      "fold_wt_affinity": -5.114,
+      "transport_affinity": -5.881,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.348,
+      "q141k_vs_wt_selectivity": 0.419,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.533, margin=-0.35)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "sulfasalazine": {
+      "role_tag": "abcg2_inhibitor",
+      "drug_class": "Aminosalicylate / ABCG2 substrate",
+      "cid": 5339,
+      "fold_q141k_affinity": -5.782,
+      "fold_wt_affinity": -6.495,
+      "transport_affinity": -7.345,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.563,
+      "q141k_vs_wt_selectivity": -0.713,
+      "disqualify_reasons": [
+        "known/empirical ABCG2 inhibitor or substrate"
+      ],
+      "known_inhibitor_flag": true,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": true,
+      "wetlab_candidate": "no"
+    },
+    "methotrexate": {
+      "role_tag": "abcg2_inhibitor",
+      "drug_class": "Antifolate / ABCG2 substrate",
+      "cid": 126941,
+      "fold_q141k_affinity": -5.544,
+      "fold_wt_affinity": -5.487,
+      "transport_affinity": -7.35,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.806,
+      "q141k_vs_wt_selectivity": 0.057,
+      "disqualify_reasons": [
+        "known/empirical ABCG2 inhibitor or substrate"
+      ],
+      "known_inhibitor_flag": true,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": true,
+      "wetlab_candidate": "no"
+    },
+    "trimethoprim": {
+      "role_tag": "other",
+      "drug_class": "Antibiotic",
+      "cid": 5578,
+      "fold_q141k_affinity": -4.518,
+      "fold_wt_affinity": -4.168,
+      "transport_affinity": -5.257,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.739,
+      "q141k_vs_wt_selectivity": 0.35,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.518, margin=-0.74)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "sulfamethoxazole": {
+      "role_tag": "other",
+      "drug_class": "Antibiotic",
+      "cid": 5329,
+      "fold_q141k_affinity": -5.032,
+      "fold_wt_affinity": -5.045,
+      "transport_affinity": -5.87,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.838,
+      "q141k_vs_wt_selectivity": -0.013,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.032, margin=-0.84)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "buspirone": {
+      "role_tag": "other",
+      "drug_class": "Anxiolytic",
+      "cid": 2477,
+      "fold_q141k_affinity": -5.663,
+      "fold_wt_affinity": -5.977,
+      "transport_affinity": -6.791,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.128,
+      "q141k_vs_wt_selectivity": -0.314,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.663, margin=-1.13)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "ondansetron": {
+      "role_tag": "other",
+      "drug_class": "5-HT3 antagonist antiemetic",
+      "cid": 4595,
+      "fold_q141k_affinity": -4.709,
+      "fold_wt_affinity": -4.599,
+      "transport_affinity": -6.092,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.383,
+      "q141k_vs_wt_selectivity": 0.11,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.709, margin=-1.38)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "celiprolol": {
+      "role_tag": "other",
+      "drug_class": "Cardioselective beta blocker",
+      "cid": 2663,
+      "fold_q141k_affinity": -4.075,
+      "fold_wt_affinity": -4.815,
+      "transport_affinity": -5.368,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.293,
+      "q141k_vs_wt_selectivity": -0.74,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.075, margin=-1.29)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "spiperone": {
+      "role_tag": "other",
+      "drug_class": "Antipsychotic / receptor probe",
+      "cid": 5265,
+      "fold_q141k_affinity": -6.453,
+      "fold_wt_affinity": -6.43,
+      "transport_affinity": -7.645,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.192,
+      "q141k_vs_wt_selectivity": 0.023,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.645) without fold-selectivity (margin=-1.19)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "haloperidol": {
+      "role_tag": "other",
+      "drug_class": "Antipsychotic",
+      "cid": 3559,
+      "fold_q141k_affinity": -5.074,
+      "fold_wt_affinity": -6.0,
+      "transport_affinity": -7.16,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -2.086,
+      "q141k_vs_wt_selectivity": -0.926,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.16) without fold-selectivity (margin=-2.09)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "clozapine": {
+      "role_tag": "other",
+      "drug_class": "Atypical antipsychotic / ABCG2 substrate",
+      "cid": 135398737,
+      "fold_q141k_affinity": -4.297,
+      "fold_wt_affinity": -4.666,
+      "transport_affinity": -6.416,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -2.119,
+      "q141k_vs_wt_selectivity": -0.369,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.297, margin=-2.12)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "olanzapine": {
+      "role_tag": "other",
+      "drug_class": "Atypical antipsychotic",
+      "cid": 135398745,
+      "fold_q141k_affinity": -4.164,
+      "fold_wt_affinity": -4.627,
+      "transport_affinity": -5.974,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.81,
+      "q141k_vs_wt_selectivity": -0.463,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.164, margin=-1.81)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "raloxifene": {
+      "role_tag": "other",
+      "drug_class": "SERM / ABCG2 inhibitor",
+      "cid": 5035,
+      "fold_q141k_affinity": -5.065,
+      "fold_wt_affinity": -5.653,
+      "transport_affinity": -7.557,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -2.492,
+      "q141k_vs_wt_selectivity": -0.588,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.557) without fold-selectivity (margin=-2.49)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "tamoxifen": {
+      "role_tag": "other",
+      "drug_class": "SERM",
+      "cid": 2733526,
+      "fold_q141k_affinity": -4.558,
+      "fold_wt_affinity": -4.389,
+      "transport_affinity": -5.863,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.305,
+      "q141k_vs_wt_selectivity": 0.169,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.558, margin=-1.31)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "clomiphene": {
+      "role_tag": "other",
+      "drug_class": "SERM",
+      "cid": 2800,
+      "fold_q141k_affinity": -4.435,
+      "fold_wt_affinity": -4.344,
+      "transport_affinity": -5.65,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.215,
+      "q141k_vs_wt_selectivity": 0.091,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.435, margin=-1.22)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "quercetin": {
+      "role_tag": "other",
+      "drug_class": "Flavonoid / ABCG2 inhibitor",
+      "cid": 5280343,
+      "fold_q141k_affinity": -4.736,
+      "fold_wt_affinity": -5.332,
+      "transport_affinity": -6.879,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -2.143,
+      "q141k_vs_wt_selectivity": -0.596,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.736, margin=-2.14)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "curcumin": {
+      "role_tag": "other",
+      "drug_class": "Polyphenol / ABCG2 inhibitor",
+      "cid": 969516,
+      "fold_q141k_affinity": -4.541,
+      "fold_wt_affinity": -5.121,
+      "transport_affinity": -6.475,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.934,
+      "q141k_vs_wt_selectivity": -0.58,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.541, margin=-1.93)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "resveratrol": {
+      "role_tag": "other",
+      "drug_class": "Stilbene / ABCG2 inhibitor",
+      "cid": 445154,
+      "fold_q141k_affinity": -5.138,
+      "fold_wt_affinity": -4.731,
+      "transport_affinity": -5.339,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.201,
+      "q141k_vs_wt_selectivity": 0.407,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.138, margin=-0.20)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "egcg": {
+      "role_tag": "other",
+      "drug_class": "Catechin / ABCG2 inhibitor",
+      "cid": 65064,
+      "fold_q141k_affinity": -5.534,
+      "fold_wt_affinity": -5.782,
+      "transport_affinity": -7.492,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.958,
+      "q141k_vs_wt_selectivity": -0.248,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.492) without fold-selectivity (margin=-1.96)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "naringenin": {
+      "role_tag": "other",
+      "drug_class": "Flavonoid",
+      "cid": 439246,
+      "fold_q141k_affinity": -5.198,
+      "fold_wt_affinity": -5.304,
+      "transport_affinity": -6.177,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.979,
+      "q141k_vs_wt_selectivity": -0.106,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.198, margin=-0.98)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "minocycline": {
+      "role_tag": "other",
+      "drug_class": "Tetracycline",
+      "cid": 54675783,
+      "fold_q141k_affinity": -5.374,
+      "fold_wt_affinity": -5.562,
+      "transport_affinity": -6.268,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.894,
+      "q141k_vs_wt_selectivity": -0.188,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.374, margin=-0.89)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "rifaximin": {
+      "role_tag": "other",
+      "drug_class": "Non-absorbed rifamycin",
+      "cid": 6436173,
+      "fold_q141k_affinity": -4.485,
+      "fold_wt_affinity": -4.616,
+      "transport_affinity": -7.035,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -2.55,
+      "q141k_vs_wt_selectivity": -0.131,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.035) without fold-selectivity (margin=-2.55)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "metaxalone": {
+      "role_tag": "other",
+      "drug_class": "Muscle relaxant",
+      "cid": 15459,
+      "fold_q141k_affinity": -5.162,
+      "fold_wt_affinity": -4.617,
+      "transport_affinity": -5.391,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.229,
+      "q141k_vs_wt_selectivity": 0.545,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.162, margin=-0.23)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "venetoclax": {
+      "role_tag": "other",
+      "drug_class": "BCL-2 inhibitor",
+      "cid": 49846579,
+      "fold_q141k_affinity": -4.716,
+      "fold_wt_affinity": -6.209,
+      "transport_affinity": -8.046,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -3.33,
+      "q141k_vs_wt_selectivity": -1.493,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-8.046) without fold-selectivity (margin=-3.33)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "dapansutrile": {
+      "role_tag": "other",
+      "drug_class": "NLRP3 inhibitor (investigational)",
+      "cid": 12714644,
+      "fold_q141k_affinity": -3.694,
+      "fold_wt_affinity": -3.485,
+      "transport_affinity": -4.194,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.5,
+      "q141k_vs_wt_selectivity": 0.209,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-3.694, margin=-0.50)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "mcc950": {
+      "role_tag": "other",
+      "drug_class": "NLRP3 inhibitor (research)",
+      "cid": 9910393,
+      "fold_q141k_affinity": -6.383,
+      "fold_wt_affinity": -6.173,
+      "transport_affinity": -7.321,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.938,
+      "q141k_vs_wt_selectivity": 0.21,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.321) without fold-selectivity (margin=-0.94)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "zileuton": {
+      "role_tag": "other",
+      "drug_class": "5-LOX inhibitor",
+      "cid": 60490,
+      "fold_q141k_affinity": -4.224,
+      "fold_wt_affinity": -4.12,
+      "transport_affinity": -5.654,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.43,
+      "q141k_vs_wt_selectivity": 0.104,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.224, margin=-1.43)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "avacopan": {
+      "role_tag": "other",
+      "drug_class": "C5aR1 antagonist",
+      "cid": 49841217,
+      "fold_q141k_affinity": -7.816,
+      "fold_wt_affinity": -6.607,
+      "transport_affinity": -7.54,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": 0.276,
+      "q141k_vs_wt_selectivity": 1.209,
+      "disqualify_reasons": [
+        "strong ATP-site binding (transport=-7.54) without fold-selectivity (margin=0.28)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "telaprevir": {
+      "role_tag": "other",
+      "drug_class": "Protease inhibitor (HCV)",
+      "cid": 3010818,
+      "fold_q141k_affinity": -5.413,
+      "fold_wt_affinity": -6.418,
+      "transport_affinity": -6.639,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.226,
+      "q141k_vs_wt_selectivity": -1.005,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.413, margin=-1.23)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "tideglusib": {
+      "role_tag": "other",
+      "drug_class": "GSK-3 inhibitor",
+      "cid": 11313622,
+      "fold_q141k_affinity": -5.366,
+      "fold_wt_affinity": -5.476,
+      "transport_affinity": -6.28,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.914,
+      "q141k_vs_wt_selectivity": -0.11,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-5.366, margin=-0.91)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "tolvaptan": {
+      "role_tag": "other",
+      "drug_class": "Vasopressin V2 antagonist",
+      "cid": 216237,
+      "fold_q141k_affinity": -4.189,
+      "fold_wt_affinity": -4.333,
+      "transport_affinity": -5.715,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -1.526,
+      "q141k_vs_wt_selectivity": -0.144,
+      "disqualify_reasons": [
+        "weak/indiscriminate (fold=-4.189, margin=-1.53)"
+      ],
+      "known_inhibitor_flag": false,
+      "chembl_abcg2_empirical": null,
+      "chembl_best_pchembl": null,
+      "chembl_note": null,
+      "final_known_abcg2": false,
+      "wetlab_candidate": "no"
+    },
+    "novobiocin": {
+      "role_tag": "abcg2_inhibitor",
+      "drug_class": "n/a",
+      "cid": 54675769,
+      "fold_q141k_affinity": -6.361,
+      "fold_wt_affinity": -5.46,
+      "transport_affinity": -6.611,
+      "chaperone_tier": "no",
+      "fold_vs_transport_margin": -0.25,
+      "q141k_vs_wt_selectivity": 0.901,
+      "disqualify_reasons": [
+        "known/empirical ABCG2 inhibitor or substrate"
+      ],
+      "known_inhibitor_flag": true,
+      "chembl_abcg2_empirical": true,
+      "chembl_best_pchembl": 4.6,
+      "chembl_note": "7 records, action_type INHIBITOR, IC50 25-85 uM (weak but documented ABCG2 inhibitor)",
+      "final_known_abcg2": true,
+      "wetlab_candidate": "no"
+    }
+  }
+}

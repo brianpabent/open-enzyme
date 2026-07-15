@@ -1,0 +1,9 @@
+# Regenerable intermediates (deterministic via the pipeline; not committed to keep the tree lean)
+work/docking/
+work/ligands/*.pdbqt
+work/sensitivity/
+logs/*.out
+outputs/_results_partial.json
+
+# Kept (load-bearing, small): work/receptor/*, work/ligands/smiles_resolved.json,
+# work/receptor/boxes.json, logs/run.log, all outputs/*.json + *.md, all *.py, inputs/*
