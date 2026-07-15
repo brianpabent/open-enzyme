@@ -180,6 +180,7 @@ nav:
     - Disulfiram Dose Modeling (comp-027): disulfiram-dose-modeling-computational.md
     - Dual-Chassis EcN PDB + Uricase (comp-031): dual-chassis-ecn-pdb-uricase-computational.md
     - ABCG2 Q141K Chaperone Screen (comp-032): abcg2-q141k-chaperone-screen-computational.md
+    - ABCG2 Q141K Chaperone Re-screen (comp-047): abcg2-q141k-chaperone-rescreen-computational.md
     - Inhaled mRNA-IL-1RA Pulse (comp-033): inhaled-mrna-il1ra-pulse-computational.md
     - Repeat-Dose Inhaled mRNA-IL-1RA (comp-036): repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md
     - Lactoferrin Linker Redesign (comp-034): lactoferrin-linker-redesign-computational.md
