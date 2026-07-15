@@ -62,3 +62,15 @@ Do **not** build around breath hydrogen or generic FFA kits for butyrate quantif
 - PMID 41082646 — exhaled breath condensate SCFAs do not track induced serum SCFA increases.
 - PMID 1486849 / 8049636 / 21712835 / 27276436 / 41952402 — breath H2/CH4 fermentation proxy literature.
 - Abcam ab65341 protocol v17a — generic FFA kit explicitly not designed for acetic, propionic, or butyric acid.
+
+## Full-text verification addendum (2026-07-14)
+
+The original run (2026-05-20) was title/abstract-level only (see Limitations). A follow-up full-text verification against primary sources (PubMed) was run 2026-07-14, closing the "full-text verification" gap the comp-review flagged. The Codex-run YELLOW verdict + five-trajectory synthesis above are unchanged; this addendum adds the verified full-text layer.
+
+**Rank 1 — HPLC-UV (De Baere et al. 2013, PMID 23542733, DOI 10.1016/j.jpba.2013.02.032): VERIFIED, SURVIVES.** All three load-bearing specifics confirmed from the primary source: matrix-matched calibration on bacterial culture supernatant, linear 0.5–50 mM (r 0.9951–0.9993), LOQ 0.5–1.0 mM, underivatized (direct UV at 210 nm after liquid-liquid diethyl-ether extraction + acidification to pH<2). Confirmed for the culture-supernatant track; the empirical spike/recovery + paired GC-MS on OE samples is the remaining wet-lab gate ([`validation-experiments.md` §1.31](../../../validation-experiments.md)).
+
+**Rank 2 — Electrochemical + ANN (Gu et al. 2026, PMID 42041444, DOI 10.3390/bios16040223, Biosensors 16(4):223): VERIFIED, upgraded (still stool-track).** Full text confirms and strengthens the abstract-level "promising" call: validated against GC-MS in an independent fecal cohort (n=30) with butyric-acid MAE/RMSE **0.029/0.034 mM** — mM-range, butyrate-specific. Method = disposable three-electrode planar gold chip + DPV/CV voltammetric fingerprinting + ANN signal decoupling with an esterification/dissociation dual-pretreatment; direct linear models fail in fecal matrices (matrix interference) but the ANN suppresses it. Remaining gates for OE adoption: hardware access (planar gold chip; one author is affiliated with a commercial biotech) + independent external validation beyond the source cohort. A genuine stool-specific Tier-2 candidate — **any downstream "electrochemical FAILS / do not re-surface" claim is retracted as an error.**
+
+**Rank 3 — SCFA ELISA kits: RED-provisional (unchanged).** No PubMed/GC-MS validation surfaced; butyrate-specific antibody specificity + spike-recovery required before consideration.
+
+Net: both PubMed-indexed candidates full-text-verified. Downstream wiki pages re-anchor to the primary sources directly rather than to a comp-038 §"Full-text verification" that was previously absent from this artifact.
