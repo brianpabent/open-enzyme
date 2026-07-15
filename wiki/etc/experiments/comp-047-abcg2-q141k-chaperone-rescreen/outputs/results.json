@@ -248,9 +248,9 @@
       "q141k_vs_wt_selectivity": 0.228,
       "disqualify_reasons": [],
       "known_inhibitor_flag": false,
-      "chembl_abcg2_empirical": null,
+      "chembl_abcg2_empirical": false,
       "chembl_best_pchembl": null,
-      "chembl_note": null,
+      "chembl_note": "0 ChEMBL ABCG2 inhibition records. HDAC inhibitor; scattered literature reports HDAC inhibitors as ABCG2 substrates, but no ChEMBL inhibition record and no canonical clinical ABCG2-substrate designation. Remains the sole marginal 'uncertain' docking hit (margin +0.55); not disqualified by Axis 2, but its fold-selectivity margin is within Vina noise.",
       "final_known_abcg2": false,
       "wetlab_candidate": "uncertain"
     },
@@ -526,9 +526,9 @@
       "q141k_vs_wt_selectivity": 0.952,
       "disqualify_reasons": [],
       "known_inhibitor_flag": false,
-      "chembl_abcg2_empirical": null,
+      "chembl_abcg2_empirical": false,
       "chembl_best_pchembl": null,
-      "chembl_note": null,
+      "chembl_note": "0 ChEMBL ABCG2 INHIBITION records \u2014 BUT rosuvastatin is a well-documented ABCG2/BCRP SUBSTRATE (ABCG2 Q141K raises rosuvastatin plasma AUC ~1.6-2x; the canonical ABCG2 statin-pharmacogenomics case, in the FDA label). ChEMBL's inhibition-only data structurally misses this. DISQUALIFIED as a chaperone candidate on substrate grounds (interpretive overlay): a molecule that is itself an ABCG2 substrate would compete with urate for efflux. Its docking 'uncertain' tier (margin +0.54) is retained in the raw pipeline output but overridden to non-candidate in interpretation.",
       "final_known_abcg2": false,
       "wetlab_candidate": "uncertain"
     },
@@ -2641,9 +2641,9 @@
         "strong ATP-site binding (transport=-7.54) without fold-selectivity (margin=0.28)"
       ],
       "known_inhibitor_flag": false,
-      "chembl_abcg2_empirical": null,
+      "chembl_abcg2_empirical": false,
       "chembl_best_pchembl": null,
-      "chembl_note": null,
+      "chembl_note": "0 ChEMBL ABCG2 inhibition records. C5aR1 antagonist; the #1 raw fold-site binder (fold_q141k -7.82) but margin only +0.28 \u2014 did NOT reach the 'uncertain' tier. No known ABCG2 relationship.",
       "final_known_abcg2": false,
       "wetlab_candidate": "no"
     },

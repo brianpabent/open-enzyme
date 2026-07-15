@@ -1,6 +1,6 @@
 # comp-047 — Control performance (validity check)
 
-Generated 2026-07-14. N=134 molecules with valid docking.
+Generated 2026-07-15. N=134 molecules with valid docking.
 
 Columns: fold@Q141K / fold@WT / transport (Walker A) affinities (kcal/mol, more negative = stronger); margin = transport − fold@Q141K (>0 = fold-selective); fold-rank = rank of fold@Q141K among all molecules (1 = strongest fold binder).
 

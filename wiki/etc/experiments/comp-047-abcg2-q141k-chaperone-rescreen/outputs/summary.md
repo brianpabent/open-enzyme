@@ -1,6 +1,6 @@
 # comp-047 — Summary
 
-**Generated:** 2026-07-14  
+**Generated:** 2026-07-15  
 **Method:** AutoDock Vina docking (2 sites × WT/Q141K) + empirical ChEMBL ABCG2 grounding. Supersedes comp-032's descriptor/class-prior heuristic.  
 **Vina:** seed 20260714, exhaustiveness 8, cpu 4. N=134 docked.
 
@@ -12,8 +12,8 @@ Candidates (fold-selective AND not known ABCG2): **0 yes**, **2 uncertain**.
 
 | rank | molecule | drug_class | fold@Q141K | transport | margin | Q141K−WT sel. | ChEMBL ABCG2 | tier |
 |---|---|---|---|---|---|---|---|---|
-| 1 | rosuvastatin | Statin | -6.80 | -6.26 | 0.54 | 0.95 | unq | uncertain |
-| 2 | vorinostat | HDAC inhibitor | -6.19 | -5.64 | 0.55 | 0.23 | unq | uncertain |
+| 1 | rosuvastatin | Statin | -6.80 | -6.26 | 0.54 | 0.95 | no | uncertain |
+| 2 | vorinostat | HDAC inhibitor | -6.19 | -5.64 | 0.55 | 0.23 | no | uncertain |
 
 ## Raw fold-site ranking (Axis 1a alone — box-choice-robust view)
 
