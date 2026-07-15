@@ -249,20 +249,37 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-032 — ABCG2 Q141K Pharmacological-Chaperone Virtual Screen — GREEN (2026-05-16)
+### comp-047 — ABCG2 Q141K Pharmacological-Chaperone Re-screen (real docking) — INCONCLUSIVE (2026-07-14)
+
+**Question:** Same as comp-032 — is there an FDA-approved molecule that binds a fold-stabilizing NBD site on Q141K ABCG2 (not the ATP pocket), not a known ABCG2 inhibitor, worth a wet-lab trafficking assay? Re-asked with **real AutoDock Vina docking** instead of comp-032's descriptor heuristic.
+
+**Verdict:** **INCONCLUSIVE (honest null).** Of 134 docked molecules: 0 high-confidence candidates, 2 marginal "uncertain" (rosuvastatin, vorinostat). The decisive result is in the controls: the **4 CFTR-corrector positive controls failed to earn rank** (0/4 reached candidate tier, no class prior), while all 13 known ABCG2 inhibitors were correctly rejected (0 false positives). Because the positive controls don't separate from the field, the screen has no demonstrated power to find real chaperones.
+
+**Key findings:**
+- **Empirically confirms the comp-032 audit.** Removing comp-032's class prior and making the same CFTR-corrector controls earn rank from docking → they fail (ivacaftor rank 91/134; lumacaftor is the #2 fold binder but binds the ATP pocket harder, margin −1.42). comp-032's "chaperone signal" was the prior.
+- **Two failure reasons:** (1) the fold-vs-transport margin is confounded — the ATP/Walker-A pocket is a strong generic binder (median transport −6.09 vs fold −4.86 kcal/mol), so "prefers fold site" selects against almost everything; boxes are disjoint (32.6 Å apart), not an overlap artifact. (2) Rigid-receptor docking can't model the chaperone mechanism (folding-intermediate stabilization / ΔTm).
+- **Two honest residual gaps:** sensitivity analysis did not run (no sensitivity.json); Axis 2 (ChEMBL) populated for only 3/135 molecules — known-inhibitor disqualification otherwise rests on curated role-tags. Neither changes the null (which rests on Axis 1 controls failing).
+- **Next step is not another docking pass** — it's folding-ΔΔG modeling (MD / Rosetta) or a wet-lab Q141K trafficking + urate-flux + ABCG2-inhibition counterscreen.
+
+**Detail:** [interpretive](./abcg2-q141k-chaperone-rescreen-computational.md) · [experiments/](./etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/) · supersedes comp-032
+
+---
+
+### comp-032 — ABCG2 Q141K Pharmacological-Chaperone Virtual Screen — ~~GREEN~~ SUPERSEDED (2026-05-16; superseded by comp-047 2026-07-14)
+
+> **⚠️ Verdict RETRACTED.** The GREEN below is a descriptor/class-prior heuristic whose positive-control validation was tautological (comp-review 2026-07-13). [comp-047](./abcg2-q141k-chaperone-rescreen-computational.md) re-ran it with real docking → INCONCLUSIVE (positive controls failed to earn rank). Retained as frozen record; do not cite as support.
 
 **Question:** Is there an FDA-approved small molecule that binds ABCG2 Q141K's nucleotide-binding domain (NBD) and could rescue trafficking, or does the FDA-approved drug surface lack chaperone-active hits — requiring novel chemistry?
 
-**Verdict:** **GREEN.** Shortlist of 10 candidates passes the four-gate filter (composite ≥ 0.75, chaperone-compatible drug class, 503A-eligible-or-chaperone-class, oral bioavailable). All four CFTR-corrector positive controls (lumacaftor, tezacaftor, ivacaftor, elexacaftor) rank in the top 11% of the 134-molecule library, all above the highest-scoring decoy.
+**Verdict (retracted):** ~~**GREEN.** Shortlist of 10 candidates passes the four-gate filter.~~ The shortlist is a prior-weighted descriptor ranking, not binding/rescue evidence; the "all four CFTR controls above decoy max" claim is a formula artifact of the 0.15 decoy prior (0.15^(1/5) = 0.684), not independent validation.
 
-**Key findings:**
-- Three mechanistically-distinct chemistry classes pass with composite ≥ 0.85: CFTR correctors (lumacaftor top hit, 1.000; same ABC superfamily); tetramer/aggregate stabilizers (tafamidis, diflunisal — anionic aromatics matching Q141K's +1 pocket); bile-acid chemical chaperones (ursodiol, TUDCA — Hsp70 axis, F508del-CFTR rescue precedent).
-- Heuristic elevates sodium butyrate + vorinostat, but only the pharmacological rescue class is directly anchored by Basseville 2012; butyrate remains an unvalidated ranked candidate, not independent corroboration.
-- Next step: real-docking re-screen (AutoDock Vina) on top 10 + targeted HEK293-Q141K trafficking assay. Do NOT pivot to novel-binder design — the repurposing surface is empirically non-empty.
+**Key findings (historical, retracted as evidence):**
+- Three chemistry classes scored ≥ 0.85 (CFTR correctors, tetramer stabilizers, bile-acid chaperones) — but the ranking is driven by the hand-assigned class prior, and ABCG2 *inhibitors* also scored high (the confound comp-047's Axis 2 targets).
+- Real-docking re-screen (comp-047) is now **complete → INCONCLUSIVE**, not the hypothesis-confirming step comp-032 anticipated. Do NOT treat the repurposing surface as empirically supported; do NOT queue a compounding-pharmacy conversation on this route.
 
-**Informs:** [chassis-pending-interventions §7](./chassis-pending-interventions.md) (promotes placeholder comp-NNN to comp-032) · [abcg2-modulators](./abcg2-modulators.md) §"Pharmacological-chaperone route" · [compounding-pharmacy-track](./compounding-pharmacy-track.md)
+**Informs (now downgraded to hypothesis-only):** [chassis-pending-interventions §7](./chassis-pending-interventions.md) · [abcg2-modulators](./abcg2-modulators.md) §"Pharmacological-chaperone route" · [compounding-pharmacy-track](./compounding-pharmacy-track.md)
 
-**Detail:** [interpretive](./abcg2-q141k-chaperone-screen-computational.md) · [experiments/](./etc/experiments/comp-032-abcg2-q141k-chaperone-screen/) · Complete v1
+**Detail:** [interpretive (superseded)](./abcg2-q141k-chaperone-screen-computational.md) · [experiments/](./etc/experiments/comp-032-abcg2-q141k-chaperone-screen/) · superseded by [comp-047](./abcg2-q141k-chaperone-rescreen-computational.md)
 
 ---
 
@@ -661,7 +678,8 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | ~~comp-030~~ | Completed 2026-05-15 — see Analyses above | — | ✓ Done |
 | ~~comp-029~~ | Completed 2026-05-16 — YELLOW; see Analyses above | — | ✓ Done |
 | ~~comp-031~~ | **Invalidated 2026-07-13** — dual-chassis EcN+PDB+uricase inherited comp-019's failed UOX regime; the combined ΔSUA numbers (−1.8 to −1.9 mg/dL) are **retracted**. The separate-strain-vs-dual-cassette *reasoning* (substrate competition) is preserved; see [dual-chassis page](./dual-chassis-ecn-pdb-uricase-computational.md), comp-046, §1.34/§1.37. | — | ✓ Done (invalidated) |
-| ~~comp-032~~ | Completed 2026-05-16 — GREEN; 10-candidate FDA-approved shortlist; lumacaftor top hit. See Analyses above | — | ✓ Done |
+| ~~comp-032~~ | Completed 2026-05-16 — ~~GREEN~~ **SUPERSEDED by comp-047 2026-07-14**; verdict retracted (tautological positive-control validation per comp-review 2026-07-13). See Analyses above | — | ✓ Done (superseded) |
+| ~~comp-047~~ | **Completed 2026-07-14 — INCONCLUSIVE** (real Vina docking). CFTR-corrector positive controls fail to earn rank (0/4); rigid docking can't discriminate Q141K chaperones; chaperone-rescue ranking not computationally established. Supersedes comp-032. See Analyses above | [Q141K trafficking + urate-flux assay](./validation-experiments.md) | ✓ Done |
 | ~~comp-033~~ | Completed 2026-05-16 — RED single-dose Cmax-equivalent; reframed in comp-036 (YELLOW receptor-occupancy). See Analyses above | — | ✓ Done |
 | ~~comp-036~~ | Completed 2026-05-16 — YELLOW repeat-dose receptor-occupancy framing; salvages comp-033 RED. See Analyses above | — | ✓ Done |
 | ~~comp-037~~ | Completed 2026-05-17 — MODERATE (kinetic-competition gated); glyco GREEN for serpin-core aa 123–500 in luminal topology. See Analyses above | — | ✓ Done |
