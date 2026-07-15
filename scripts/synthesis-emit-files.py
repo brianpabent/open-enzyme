@@ -6,10 +6,10 @@ Replaces synthesis-merge.py (which prepended to wiki/synthesis.md) per the
 2026-05-08 synthesis filesystem migration spec
 (operations/specs/2026-05-08-synthesis-filesystem-migration.md).
 
-Same inputs as synthesis-merge.py:
-  1. The Pass 2 synthesizer log (logs/v4-synthesis-<date>-<sha>.md)
-  2. The Pass 3 reviewer output (Claude / GPT-5.5 review blockquotes,
-     <<<NEXT>>>-separated, one per {{PEER-REVIEW}} marker in Pass 2)
+Inputs:
+  1. The raw Pass 2 log (audit evidence)
+  2. Its hash-bound normalized JSON manifest (authoritative ordered items)
+  3. The Pass 3 reviewer output (one <<<NEXT>>>-separated block per item)
 
 New outputs:
   - synthesis/queue/<sweep-date>-<type>-<index>-<slug>.md, one per Pass 2 item
@@ -21,14 +21,14 @@ Per-item file format (per spec §5.4):
     sweep_date: <YYYY-MM-DD>
     sweep_sha: <short-sha>
     section_index: <N within section>
-    global_index: <M global marker index>
+    global_index: <M global item index>
     pass3_verdict: <Confirmed|Push back|Augment|Partial|Restatement|...>
     overlap_with: <slug-of-other-item>      # only when verdict tags OVERLAP / DUPLICATE
     ---
 
     # <Item headline>
 
-    <Pass 2 item content with {{PEER-REVIEW}} marker stripped>
+    <Canonical normalized Pass 2 item content>
 
     > **Pass 3 review — <verdict>** ...
     > [Pass 3 review blockquote]
@@ -54,19 +54,18 @@ History file format (per spec §5.6):
     [table: type / index / slug / verdict / queue-path]
 
 Special signals from Pass 3 reviewer:
-  - "NO_MARKERS"            — Pass 2 had no markers (drift-guard no-op).
-                               Emits ONLY a history file noting the no-op.
-  - "MARKER_COUNT_MISMATCH" — Pass 3 detected mismatch. Script exits non-zero.
-
+  - "EXPLICIT_NO_OP"         — the normalized manifest proves Pass 2 explicitly
+                               declared no new synthesis. Emits only history.
 Failure modes (fail-fast with explicit error messages, per spec §5.4):
-  - Marker count mismatch between Pass 2 and Pass 3 reviews → exit 1
-  - Section header recognition misses a section → exit 1
+  - Raw-log or canonical-manifest hash mismatch → exit 1
+  - Canonical item count differs from Pass 3 review count → exit 1
   - Headline extraction fails for >50% of items → exit 1
   - Slug collision after <index> disambiguator (should be impossible) → exit 1
 
 Usage in CI:
     python3 scripts/synthesis-emit-files.py \\
         --synthesis-log logs/v4-synthesis-2026-05-08-e842754.md \\
+        --normalized-manifest logs/normalized-synthesis-2026-05-08-e842754.json \\
         --reviews-file /tmp/claude-reviews.txt \\
         --commit-sha <full-sha> \\
         --diff-base <last-sweep-sha> \\
@@ -77,6 +76,7 @@ Usage in CI:
 Local test (spec §7):
     python3 scripts/synthesis-emit-files.py \\
         --synthesis-log logs/v4-synthesis-2026-05-08-e842754.md \\
+        --normalized-manifest logs/normalized-synthesis-2026-05-08-e842754.json \\
         --reviews-file /tmp/synthetic-reviews.txt \\
         --commit-sha e842754 \\
         --queue-dir /tmp/test-queue \\
@@ -87,76 +87,22 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import json
 import os
 import re
 import sys
 from collections import Counter
 from pathlib import Path
 
+from synthesis_normalize import NormalizationError, verify_manifest
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 os.chdir(REPO_ROOT)
 
-MARKER = "{{PEER-REVIEW}}"
 SEPARATOR = "<<<NEXT>>>"
 
-# Section header → type slug
-SECTION_TYPE_MAP = {
-    "New Connections": "connection",
-    "Contradictions Found": "contradiction",
-    "Proposed Experiments": "experiment",  # tolerates "(ranked by ...)" suffix
-    "Open Questions": "open-question",
-    # priority-action retired from Pass 2 generation 2026-06-01 (restated
-    # already-found content). Parsing retained defensively: if a non-compliant
-    # model still emits a "## Priority Actions" header, it parses into clean
-    # files rather than corrupting the adjacent Open Questions section.
-    "Priority Actions": "priority-action",
-    # riskiest-assumption retired from Pass 2 generation 2026-06-01 (forced rank
-    # regurgitated the same already-gated risks every sweep; Grok 4.20 ignored the
-    # dedup/omit discipline). Parsing retained defensively, same as priority-action.
-    "Riskiest Assumption": "riskiest-assumption",
-    "Most Curious Thread": "most-curious-thread",
-}
-
-NUMBERED_SECTIONS = {
-    "connection",
-    "contradiction",
-    "experiment",
-    "open-question",
-    "priority-action",
-}
-
-SINGLE_PARAGRAPH_SECTIONS = {
-    "riskiest-assumption",
-    "most-curious-thread",
-}
-
-SECTION_HEADER_RE = re.compile(
-    r"^## (New Connections|Contradictions Found|Proposed Experiments(?:\s*\([^)]*\))?|Open Questions|Priority Actions|Riskiest Assumption|Most Curious Thread)\s*$",
-    re.MULTILINE,
-)
-
-# Matches numbered items in two formats observed across Pass 2 model versions:
-#   Old: "N. **Bolded title**..."         (Gemini 2.5 Pro pre-2026-05-16)
-#   New: "### N. Sentence-cased title..." (Gemini 2.5 Pro 2026-05-16+, observed
-#        under the A2 tool-use-enabled regime — format drift from the prompt)
-# The captured group is the item number in either case.
-NUMBERED_ITEM_RE = re.compile(r"^(?:###\s+)?(\d+)\.\s+(?:\*\*|[A-Z])", re.MULTILINE)
-HEADLINE_RE = re.compile(r"\*\*([^*]+(?:\*[^*]+)*)\*\*", re.DOTALL)
-# Fallback headline extractor for the H3-numbered format ("### N. Title.") —
-# captures the title text up to the first period or end of line.
-HEADLINE_H3_RE = re.compile(r"^###\s+\d+\.\s+(.+?)(?:\.\s*$|\s*$)", re.MULTILINE)
 VERDICT_RE = re.compile(r"Pass 3 review\s*[—-]\s*([A-Za-z][A-Za-z\- ,]+?)(?:\.|`|$)")
 OVERLAP_RE = re.compile(r"\[OVERLAP:\s*([A-Z]+(?:-[A-Z0-9]+)*)\]|\[DUPLICATE-OF-(\d+)\]")
-
-
-def strip_frontmatter(text: str) -> tuple[str, str]:
-    """Return (frontmatter_block, body) tuple."""
-    if not text.startswith("---\n"):
-        return "", text
-    end = text.find("\n---\n", 4)
-    if end == -1:
-        return "", text
-    return text[: end + 5], text[end + 5 :]
 
 
 def slugify(headline: str, max_len: int = 60) -> str:
@@ -182,104 +128,6 @@ def slugify(headline: str, max_len: int = 60) -> str:
     return s or "unnamed"
 
 
-def parse_pass2_sections(body: str) -> dict:
-    """Split Pass 2 body into sections by section-header regex.
-
-    Returns dict mapping type-slug → section body text.
-    """
-    sections = {}
-    matches = list(SECTION_HEADER_RE.finditer(body))
-    for i, match in enumerate(matches):
-        header_text = match.group(1).strip()
-        # Normalize "Proposed Experiments (ranked by ...)" → "Proposed Experiments"
-        header_normalized = re.sub(r"\s*\([^)]*\)\s*$", "", header_text).strip()
-        type_slug = SECTION_TYPE_MAP.get(header_normalized)
-        if not type_slug:
-            sys.exit(
-                f"Unrecognized section header: {header_text!r}. Spec expected one of "
-                f"{list(SECTION_TYPE_MAP.keys())}."
-            )
-        start = match.end()
-        end = matches[i + 1].start() if i + 1 < len(matches) else len(body)
-        sections[type_slug] = body[start:end].strip()
-    return sections
-
-
-def extract_items_from_section(section_body: str, type_slug: str) -> list[dict]:
-    """Extract items from a section body. Returns list of {index, content, marker_pos}.
-
-    For numbered sections: items begin at `^N. **` and end at the {{PEER-REVIEW}} marker
-    that closes that item.
-    For single-paragraph sections (riskiest-assumption / most-curious-thread): the entire
-    body up to the first {{PEER-REVIEW}} marker is one item.
-    """
-    items = []
-    truncation_drops = []
-    if type_slug in NUMBERED_SECTIONS:
-        # Find each numbered item start
-        item_starts = list(NUMBERED_ITEM_RE.finditer(section_body))
-        if not item_starts:
-            return items, truncation_drops  # empty section is OK
-        for i, m in enumerate(item_starts):
-            index_str = m.group(1)
-            start = m.start()
-            end = item_starts[i + 1].start() if i + 1 < len(item_starts) else len(section_body)
-            content = section_body[start:end]
-            # {{PEER-REVIEW}} markers are COSMETIC hints, not load-bearing.
-            # Items are identified purely structurally (the numbered-item regex
-            # bounds each item by the next item's start), and Pass-3 reviews map
-            # to items positionally in main(). A synthesizer that omits, dups,
-            # or misplaces a marker therefore can no longer break the sweep.
-            # (2026-05-30: Grok dropped the markers in one whole section while
-            # writing every item + all following sections correctly; the old
-            # "one marker per item or abort" tripwire hard-failed the run on a
-            # purely formatting gap. Pass 2 reads ~1M tokens and synthesizes —
-            # marker discipline shouldn't be load-bearing; Pass 3 associates
-            # its reviews with items by structure, not by Pass 2's delimiters.)
-            items.append({
-                "index": int(index_str),
-                "content": content.strip(),
-            })
-    elif type_slug in SINGLE_PARAGRAPH_SECTIONS:
-        # Whole section body is one item. The {{PEER-REVIEW}} marker, if present,
-        # is a cosmetic hint — we keep the whole body regardless (markers are
-        # non-load-bearing, same rationale as the numbered-section block above).
-        # Only a genuinely empty section (header with no prose) yields no item.
-        body = section_body.strip()
-        if body:
-            items.append({
-                "index": 1,
-                "content": body,
-            })
-    return items, truncation_drops
-
-
-def extract_headline(content: str, type_slug: str, fallback_index: int) -> str:
-    """Extract headline per spec §5.4. Handles two Pass-2 formats:
-      - Old: "N. **Bolded title**..."         (pre-2026-05-16)
-      - New: "### N. Sentence-cased title."   (Gemini 2.5 Pro 2026-05-16+ drift
-             under the A2 tool-use-enabled regime)"""
-    if type_slug in NUMBERED_SECTIONS:
-        # Old format first: `N. **headline**`
-        m = re.search(r"^\d+\.\s+\*\*(.+?)\*\*", content, re.MULTILINE | re.DOTALL)
-        if m:
-            return m.group(1).strip()
-        # New H3 format fallback: `### N. Title.`
-        m = HEADLINE_H3_RE.search(content)
-        if m:
-            return m.group(1).strip()
-    elif type_slug in SINGLE_PARAGRAPH_SECTIONS:
-        # First sentence (up to . ! ?) of section body, with bold markers stripped
-        # Strip leading whitespace + any markdown structure
-        text = content.strip()
-        # Strip any leading **bold** wrapper
-        text = re.sub(r"^\*\*", "", text)
-        # First sentence
-        m = re.match(r"([^.!?\n]+[.!?])", text)
-        if m:
-            return re.sub(r"\*\*", "", m.group(1)).strip()
-    # Fallback
-    return f"unnamed-item-{fallback_index}"
 
 
 def parse_verdict(review_text: str) -> tuple[str, str | None, int | None]:
@@ -324,12 +172,13 @@ def emit_item_file(
     section_index: int,
     global_index: int,
     headline: str,
-    body_with_marker_stripped: str,
+    canonical_body: str,
     review_blockquote: str,
     verdict: str,
     overlap_tag: str | None,
     overlap_with_filename: str | None,
     used_slugs: set,
+    manifest_meta: dict | None = None,
 ) -> Path:
     """Write one item file. Returns the path."""
     filename = compute_filename(sweep_date, type_slug, section_index, headline)
@@ -352,6 +201,12 @@ def emit_item_file(
         f"global_index: {global_index}",
         f"pass3_verdict: {verdict}",
     ]
+    if manifest_meta:
+        frontmatter_lines.extend([
+            f"sweep_id: {manifest_meta['sweep_id']}",
+            f"source_synthesis_sha256: {manifest_meta['source_sha256']}",
+            f"canonical_items_sha256: {manifest_meta['canonical_items_sha256']}",
+        ])
     if overlap_tag:
         # Reviewer's [OVERLAP: NOVEL|EXTENSION|RESTATEMENT] classification —
         # how much of this finding is already in the wiki.
@@ -368,7 +223,7 @@ def emit_item_file(
         f"\n"
         f"# {headline}\n"
         f"\n"
-        f"{body_with_marker_stripped.strip()}\n"
+        f"{canonical_body.strip()}\n"
         f"\n"
         f"{review_blockquote.strip()}\n"
     )
@@ -386,10 +241,10 @@ def emit_history_file(
     reviewer: str,
     pass2_log_path: str,
     items: list[dict],
-    truncation_drops: list[dict] | None = None,
+    normalized_manifest_path: str = "",
+    manifest_meta: dict | None = None,
 ) -> Path:
     """Write the per-sweep history file."""
-    truncation_drops = truncation_drops or []
     by_type = Counter(item["type_slug"] for item in items)
     by_type_yaml = "\n".join(f"  {t}: {n}" for t, n in sorted(by_type.items()))
 
@@ -404,38 +259,6 @@ def emit_history_file(
         )
     table_body = "\n".join(table_rows)
 
-    truncation_yaml = ""
-    truncation_section = ""
-    if truncation_drops:
-        # YAML list of {type_slug, index} dicts. Compact inline form keeps the
-        # frontmatter readable when audit trail matters.
-        drop_entries = [
-            f"  - {{type: {d['type_slug']}, index: {d['index']}}}"
-            for d in truncation_drops
-        ]
-        truncation_yaml = (
-            f"truncation_drops_count: {len(truncation_drops)}\n"
-            f"truncation_drops:\n"
-            f"{chr(10).join(drop_entries)}\n"
-        )
-        drop_lines = [
-            f"- `{d['type_slug']}` #{d['index']}" for d in truncation_drops
-        ]
-        truncation_section = (
-            f"\n"
-            f"## Truncation drops\n"
-            f"\n"
-            f"Pass 2 output appears to have been cut off mid-stream by the synthesizer "
-            f"({synthesizer}). The following trailing items were dropped because they had "
-            f"no `{{{{PEER-REVIEW}}}}` marker:\n"
-            f"\n"
-            f"{chr(10).join(drop_lines)}\n"
-            f"\n"
-            f"This is an audit signal, not an error — the well-formed items were emitted "
-            f"normally. If truncation drops persist across sweeps, investigate Pass 2's "
-            f"output token budget or split the corpus.\n"
-        )
-
     content = (
         f"---\n"
         f"sweep_date: {sweep_date}\n"
@@ -444,10 +267,13 @@ def emit_history_file(
         f"synthesizer: {synthesizer}\n"
         f"reviewer: {reviewer}\n"
         f"log: {pass2_log_path}\n"
+        f"normalized_manifest: {normalized_manifest_path}\n"
+        f"sweep_id: {(manifest_meta or {}).get('sweep_id', '')}\n"
+        f"source_synthesis_sha256: {(manifest_meta or {}).get('source_sha256', '')}\n"
+        f"canonical_items_sha256: {(manifest_meta or {}).get('canonical_items_sha256', '')}\n"
         f"items_emitted: {len(items)}\n"
         f"items_by_type:\n"
         f"{by_type_yaml}\n"
-        f"{truncation_yaml}"
         f"---\n"
         f"\n"
         f"# Sweep {sweep_date} — {sweep_sha}\n"
@@ -463,7 +289,6 @@ def emit_history_file(
         f"| Type | Index | File | Verdict | Path |\n"
         f"|---|---|---|---|---|\n"
         f"{table_body}\n"
-        f"{truncation_section}"
     )
 
     filename = f"{sweep_date}-{sweep_sha}.md"
@@ -480,8 +305,10 @@ def emit_no_op_history(
     synthesizer: str,
     reviewer: str,
     pass2_log_path: str,
+    normalized_manifest_path: str = "",
+    manifest_meta: dict | None = None,
 ) -> Path:
-    """Write a no-op history entry when Pass 2 had no markers (drift-guard)."""
+    """Write history only for an explicitly declared, normalized no-op."""
     content = (
         f"---\n"
         f"sweep_date: {sweep_date}\n"
@@ -490,15 +317,19 @@ def emit_no_op_history(
         f"synthesizer: {synthesizer}\n"
         f"reviewer: {reviewer} (no review needed)\n"
         f"log: {pass2_log_path}\n"
+        f"normalized_manifest: {normalized_manifest_path}\n"
+        f"sweep_id: {(manifest_meta or {}).get('sweep_id', '')}\n"
+        f"source_synthesis_sha256: {(manifest_meta or {}).get('source_sha256', '')}\n"
+        f"canonical_items_sha256: {(manifest_meta or {}).get('canonical_items_sha256', '')}\n"
         f"items_emitted: 0\n"
-        f"no_op_reason: drift-guard (synthesizer found nothing new worth surfacing)\n"
+        f"no_op_reason: explicit normalized no-new-synthesis declaration\n"
         f"---\n"
         f"\n"
         f"# Sweep {sweep_date} — {sweep_sha} (no new synthesis)\n"
         f"\n"
-        f"Pass 2 synthesizer ({synthesizer}) ran the drift-guard no-op — "
-        f"trigger commit substantively duplicated prior synthesis or trivially modified "
-        f"a wiki page (typo fix, link update, etc.). No items emitted to `synthesis/queue/`.\n"
+        f"Pass 2 synthesizer ({synthesizer}) explicitly declared no new synthesis. "
+        f"The normalization manifest verified zero substantive items and zero unresolved "
+        f"review markers. No items emitted to `synthesis/queue/`.\n"
         f"\n"
         f"Pass 2 log: [{pass2_log_path}](../../{pass2_log_path}).\n"
     )
@@ -508,61 +339,20 @@ def emit_no_op_history(
     return path
 
 
-def flatten_pass2_items(pass2_body: str) -> tuple[list[dict], int]:
-    """Parse the Pass-2 body into an ordered list of items (markers ignored —
-    items are identified structurally). Returns (all_items, headline_failures).
-
-    This is the single source of truth for "how many items are in this
-    synthesis" — used both by --count-items (to tell Pass 3 how many reviews to
-    produce) and by the emit path (to map reviews → items positionally).
-    """
-    sections = parse_pass2_sections(pass2_body)
-    if not sections:
-        # No recognized sections = a drift-guard NO-OP synthesis (Pass 2 found
-        # nothing new and emitted a short "No new synthesis" status instead of
-        # the standard sections). This is valid, not corrupt — return zero items.
-        # --count-items then prints 0, Pass 3 emits NO_MARKERS, and the emitter
-        # takes the no-op-history path. (Before 2026-05-30 this sys.exit'd and
-        # failed Pass 3 on every no-op sweep.)
-        return [], 0
-    all_items: list[dict] = []
-    global_index = 0
-    headline_extraction_failures = 0
-    for section_text, type_slug in [(sections.get(t), t) for t in [
-        "connection", "contradiction", "experiment",
-        "open-question", "priority-action",
-        "riskiest-assumption", "most-curious-thread",
-    ]]:
-        if section_text is None:
-            continue
-        section_items, _section_drops = extract_items_from_section(section_text, type_slug)
-        for item in section_items:
-            global_index += 1
-            headline = extract_headline(item["content"], type_slug, global_index)
-            if headline.startswith("unnamed-item-"):
-                headline_extraction_failures += 1
-            all_items.append({
-                "global_index": global_index,
-                "section_index": item["index"],
-                "type_slug": type_slug,
-                "headline": headline,
-                "content": item["content"],
-            })
-    return all_items, headline_extraction_failures
-
-
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--synthesis-log", required=True,
                         help="Path to Pass 2 synthesizer log file")
+    parser.add_argument("--normalized-manifest", required=True,
+                        help=("Canonical JSON emitted by synthesis_normalize.py. "
+                              "This, not free-form Markdown, is the downstream wire contract."))
     parser.add_argument("--count-items", action="store_true",
-                        help="Parse the Pass-2 log, print the structural item count "
-                             "(markers ignored), and exit. The workflow uses this to "
-                             "tell Pass 3 how many items to review. Only --synthesis-log "
-                             "is required in this mode.")
+                        help="Validate the manifest, print its canonical item count, "
+                             "and exit. The workflow uses this to tell Pass 3 how "
+                             "many items to review.")
     parser.add_argument("--reviews-file", default=None,
                         help="Path to Pass 3 reviewer output (text with <<<NEXT>>> separators, "
-                             "or NO_MARKERS / MARKER_COUNT_MISMATCH). Required in emit mode.")
+                             "or EXPLICIT_NO_OP). Required in emit mode.")
     parser.add_argument("--commit-sha", default="",
                         help="Sweep commit SHA (full or short). Required in emit mode.")
     parser.add_argument("--diff-base", default="",
@@ -590,19 +380,29 @@ def main():
     sweep_sha_short = args.commit_sha[:7]
     sweep_date = args.sweep_date or datetime.date.today().isoformat()
 
-    # --- Read Pass 2 log -----------------------------------------------------
+    # --- Verify canonical manifest + raw-artifact binding -------------------
     pass2_path = Path(args.synthesis_log)
     if not pass2_path.exists():
         sys.exit(f"Pass 2 synthesis log not found: {pass2_path}")
-    pass2_text = pass2_path.read_text()
-    _fm, pass2_body = strip_frontmatter(pass2_text)
+    manifest_path = Path(args.normalized_manifest)
+    try:
+        manifest = verify_manifest(manifest_path)
+    except (OSError, json.JSONDecodeError, NormalizationError) as exc:
+        sys.exit(f"Normalized synthesis manifest failed validation: {exc}")
+    if Path(manifest["source"]["synthesis_log"]) != pass2_path:
+        sys.exit(
+            "Normalized manifest source path does not match --synthesis-log: "
+            f"{manifest['source']['synthesis_log']!r} != {str(pass2_path)!r}"
+        )
+    manifest_meta = {
+        "sweep_id": manifest["sweep_id"],
+        "source_sha256": manifest["source"]["sha256"],
+        "canonical_items_sha256": manifest["canonical_items_sha256"],
+    }
 
-    # --- Count-items mode: print structural item count and exit --------------
-    # The workflow uses this to tell Pass 3 how many items to review, decoupled
-    # from however many {{PEER-REVIEW}} markers the synthesizer happened to emit.
+    # --- Count-items mode: print canonical item count and exit ----------------
     if args.count_items:
-        items_for_count, _ = flatten_pass2_items(pass2_body)
-        print(len(items_for_count))
+        print(len(manifest["items"]))
         return
 
     # Emit mode needs the Pass 3 reviews + a commit SHA.
@@ -615,10 +415,12 @@ def main():
     reviews_raw = Path(args.reviews_file).read_text().strip()
 
     # --- Special signals -----------------------------------------------------
-    if reviews_raw == "MARKER_COUNT_MISMATCH":
-        sys.exit("Pass 3 reported MARKER_COUNT_MISMATCH — Pass 2 marker count != reviews provided. Investigate.")
-
-    if reviews_raw == "NO_MARKERS":
+    if manifest["status"] == "no_new_synthesis":
+        if reviews_raw != "EXPLICIT_NO_OP":
+            sys.exit(
+                "Normalized manifest is an explicit no-op, but reviews file did not contain "
+                "the EXPLICIT_NO_OP sentinel. Aborting."
+            )
         path = emit_no_op_history(
             history_dir,
             sweep_date,
@@ -627,12 +429,20 @@ def main():
             args.synthesizer,
             args.reviewer,
             args.synthesis_log,
+            args.normalized_manifest,
+            manifest_meta,
         )
         print(f"No-op sweep recorded at {path}")
         return
 
-    # --- Parse Pass 2 sections + items (structural; markers ignored) ---------
-    all_items, headline_extraction_failures = flatten_pass2_items(pass2_body)
+    if reviews_raw == "EXPLICIT_NO_OP":
+        sys.exit("EXPLICIT_NO_OP is invalid for a manifest containing synthesis items.")
+
+    # --- Consume canonical items; raw Markdown is audit evidence only --------
+    all_items = manifest["items"]
+    headline_extraction_failures = sum(
+        1 for item in all_items if item.get("headline", "").startswith("unnamed-item-")
+    )
     if not all_items:
         sys.exit("No items parsed from Pass 2 body. Aborting.")
 
@@ -642,12 +452,9 @@ def main():
             f"(>50% threshold). Pass 2 format may have drifted. Aborting."
         )
 
-    # --- Validate Pass 3 review count against the structural ITEM count ------
-    # (2026-05-30) Markers are no longer used for counting — items are
-    # identified structurally and reviews map to them positionally. The only
-    # invariant is: Pass 3 emits exactly one <<<NEXT>>>-separated review per
-    # item, in document order. A synthesizer dropping/duplicating a marker no
-    # longer aborts the sweep; only a genuine Pass-3 review-count mismatch does.
+    # --- Validate Pass 3 review count against canonical item count ------------
+    # Pass 3 emits exactly one <<<NEXT>>>-separated review per manifest item,
+    # in canonical document order.
     # Strip any leading preamble before each review's first blockquote. Some
     # Pass 3 models (notably DeepSeek when it self-terminates before the
     # iteration cap) leak a preamble line ("Now I have enough...") before the
@@ -700,8 +507,6 @@ def main():
                         overlap_with_filename = fn
                         break
 
-        # Strip the marker from the body content
-        body_content = item["content"].replace(MARKER, "").rstrip()
         path = emit_item_file(
             queue_dir,
             sweep_date,
@@ -710,12 +515,13 @@ def main():
             item["section_index"],
             item["global_index"],
             item["headline"],
-            body_content,
+            item["content"],
             review,
             verdict,
             overlap_tag,
             overlap_with_filename,
             used_slugs,
+            manifest_meta,
         )
         emitted_records.append({
             "type_slug": item["type_slug"],
@@ -734,8 +540,8 @@ def main():
         args.reviewer,
         args.synthesis_log,
         emitted_records,
-        [],  # truncation_drops: obsolete — structural item parsing never drops items
-             # (markers are cosmetic; a truncated trailing item is still parsed, not dropped)
+        args.normalized_manifest,
+        manifest_meta,
     )
 
     print(f"Emitted {len(emitted_records)} items to {queue_dir}")

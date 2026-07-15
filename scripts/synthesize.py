@@ -25,6 +25,7 @@ Reads scripts/sweep-prompt-2-synthesize.md for the model brief.
 Usage in CI:
     python3 scripts/synthesize.py \\
         --commit-sha <full-sha> \\
+        --corpus-sha <checked-out-full-sha> \\
         --trigger-files "wiki/file1.md,wiki/file2.md"
 
 Usage locally:
@@ -587,7 +588,10 @@ def run_agentic_synthesis(api_key, model, initial_prompt, fallback_models,
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--commit-sha", required=True,
-                        help="Full commit SHA (typically $GITHUB_SHA in CI)")
+                        help="Trigger commit SHA that names the sweep batch")
+    parser.add_argument("--corpus-sha", default="",
+                        help=("Exact checked-out commit whose wiki corpus is read. "
+                              "Defaults to --commit-sha for legacy/local callers."))
     parser.add_argument("--trigger-files", default="",
                         help="Comma-separated list of trigger files for the TRIGGER block")
     parser.add_argument("--propagated-files", default="",
@@ -611,6 +615,7 @@ def main():
                           "observed output range. The cap is a ceiling, not a "
                           "floor — most sweeps finish well under it."))
     args = parser.parse_args()
+    args.corpus_sha = args.corpus_sha or args.commit_sha
 
     api_key = read_api_key()
 
@@ -639,6 +644,7 @@ def main():
         f"  date_str: {date_str}\n"
         f"  sha_short: {sha_short}\n"
         f"  diff_base: {args.diff_base or 'unknown'}\n"
+        f"  corpus_commit: {args.corpus_sha}\n"
         f"  trigger files (changed since last sweep): {args.trigger_files or '(none specified)'}\n"
         f"  propagated files (Pass 1 wrote new content here): {propagated_str}\n"
         f"  output_path: {output_path}\n"
@@ -760,6 +766,7 @@ def main():
         f"title: \"Synthesis — {date_str} (commit {sha_short})\"\n"
         f"date: {date_str}\n"
         f"commit: {args.commit_sha}\n"
+        f"corpus_commit: {args.corpus_sha}\n"
         f"diff_base: {args.diff_base or 'unknown'}\n"
         f"trigger_files: {args.trigger_files or '(none)'}\n"
         f"reviewer_model: {served_model}\n"

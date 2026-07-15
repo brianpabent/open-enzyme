@@ -2,12 +2,12 @@
 """
 sweep-3-review.py — Pass 3 reviewer driver via OpenRouter.
 
-Routes through OpenRouter (default: anthropic/claude-opus-4-7) so we are
-not bound by the Anthropic-direct 30K ITPM cap.
+Routes through OpenRouter (workflow default: deepseek/deepseek-v4-pro) so the
+reviewer remains configurable and independent of a vendor-direct quota.
 
 Execution model — agentic with bounded iterations:
 
-  1. Inline the Pass 2 synthesis log + the trigger files (the recent
+  1. Inline canonical normalized Pass 2 items + the trigger files (the recent
      changes Pass 2 synthesized from) + the cited_files (every wiki/*.md
      Pass 2 referenced in any finding). This is the "warm cache" — the
      reviewer has direct access to the most likely sources without a
@@ -37,11 +37,12 @@ mismatch, so any verbose preamble from the model would fail-fast.
 Usage in CI:
     python3 scripts/sweep-3-review.py \\
         --synthesis-log logs/v4-synthesis-<date>-<sha>.md \\
+        --normalized-manifest logs/normalized-synthesis-<date>-<sha>.json \\
         --commit-sha "$GITHUB_SHA" \\
         --diff-base "<sha>" \\
         --trigger-files "wiki/foo.md\\nwiki/bar.md" \\
         --cited-files "wiki/abcg2-modulators.md\\nwiki/lactoferrin.md" \\
-        --marker-count 12 \\
+        --item-count 12 \\
       > reviews.txt
 """
 
@@ -54,6 +55,10 @@ import subprocess
 import sys
 import tempfile
 import time
+
+from pathlib import Path
+
+from synthesis_normalize import NormalizationError, render_for_review, verify_manifest
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(REPO_ROOT)
@@ -100,7 +105,9 @@ TOOLS = [
     {"type": "function", "function": {
         "name": "read_file",
         "description": (
-            "Read a file in the repository. Path is repo-relative. Use to "
+            "Read a bounded line range from a repository file. Defaults to the first "
+            "400 lines; after grep, request the specific range you need rather than "
+            "re-reading a large file. Use to "
             "verify claims in the Pass 2 synthesis against primary content, "
             "especially when a cited file isn't in the inlined warm cache. "
             "Particularly useful for per-comp experiment detail under "
@@ -109,6 +116,10 @@ TOOLS = [
         "parameters": {"type": "object", "properties": {
             "path": {"type": "string",
                      "description": "repo-relative path, e.g. wiki/abcg2-modulators.md or wiki/etc/experiments/comp-029-combined-cp0-systems-model/wiki-archive.md"},
+            "start_line": {"type": "integer", "minimum": 1,
+                           "description": "1-based first line (default 1)"},
+            "end_line": {"type": "integer", "minimum": 1,
+                         "description": "1-based inclusive last line (default start + 399)"},
         }, "required": ["path"]}}},
     {"type": "function", "function": {
         "name": "list_directory",
@@ -198,7 +209,7 @@ def _resolve_with_fallback(rel):
             pass
 
 
-# Per-run read cache: resolved-abspath → size. Reset at the top of each
+# Per-run read cache: (resolved-abspath, start-line, end-line) → size.
 # run_agentic_review call. Pass 3 is a read-only review, so any file the
 # reviewer reads twice in one run has unchanged content — re-fetching it
 # burns an iteration AND re-ships (up to the 30K result cap) redundant
@@ -213,30 +224,42 @@ _READ_CACHE = {}
 def tool_read_file(args):
     rel = args["path"]
     try:
+        start_line = max(1, int(args.get("start_line", 1)))
+        requested_end = args.get("end_line")
+        end_line = int(requested_end) if requested_end is not None else start_line + 399
+    except (TypeError, ValueError):
+        return "ERROR: start_line/end_line must be integers"
+    if end_line < start_line:
+        return "ERROR: end_line must be greater than or equal to start_line"
+    try:
         for candidate, was_fallback in _resolve_with_fallback(rel):
             if os.path.isfile(candidate):
                 size = os.path.getsize(candidate)
-                if candidate in _READ_CACHE:
+                with open(candidate) as handle:
+                    lines = handle.read().splitlines(keepends=True)
+                if start_line > len(lines):
+                    return f"{rel} has {len(lines)} lines; start_line {start_line} is past EOF"
+                actual_end = min(end_line, len(lines))
+                cache_key = (candidate, start_line, actual_end)
+                if cache_key in _READ_CACHE:
                     print(f"  [read_file] {rel} → already read this run "
-                          f"({size} bytes); returning dedup stub", file=sys.stderr)
+                          f"(lines {start_line}-{actual_end}); returning dedup stub", file=sys.stderr)
                     return (
-                        f"ALREADY READ this run: {rel} ({size} bytes). Its "
+                        f"ALREADY READ this run: {rel} lines {start_line}-{actual_end}. Its "
                         "content was returned in an earlier tool result above "
                         "— scroll up to that result rather than re-reading. "
-                        "Re-reading is redundant (files don't change during a "
-                        "review) and wastes an iteration. If you need a "
-                        "specific section that was past the 30K truncation, "
-                        "use `grep` with a targeted pattern instead."
+                        "If you need another section, use `grep` and request its line range."
                     )
-                _READ_CACHE[candidate] = size
+                _READ_CACHE[cache_key] = size
                 if was_fallback:
-                    print(f"  [read_file] {rel} → fallback to pre-move path ({size} bytes)",
+                    print(f"  [read_file] {rel} lines {start_line}-{actual_end} "
+                          f"→ fallback to pre-move path ({size} bytes total)",
                           file=sys.stderr)
                 else:
-                    print(f"  [read_file] {rel} ({size} bytes)", file=sys.stderr)
-                # Length capping (for oversized files) happens once, downstream
-                # in run_agentic_review's shared tool-result cap.
-                return open(candidate).read()
+                    print(f"  [read_file] {rel} lines {start_line}-{actual_end} "
+                          f"of {len(lines)} ({size} bytes total)", file=sys.stderr)
+                content = "".join(lines[start_line - 1:actual_end])
+                return f"[lines {start_line}-{actual_end} of {len(lines)}]\n{content}"
     except ValueError as e:
         print(f"  [read_file] {rel} → ERROR: {e}", file=sys.stderr)
         return f"ERROR: {e}"
@@ -309,14 +332,20 @@ TOOL_HANDLERS = {
 }
 
 
-def build_evidence_context(trigger_files, cited_files, char_budget=1_400_000, max_trigger_inline=30):
+def build_evidence_context(
+    trigger_files,
+    cited_files,
+    char_budget=1_000_000,
+    max_trigger_inline=30,
+    max_file_chars=80_000,
+):
     """Inline trigger + cited files. Trigger files are the cause of the
     sweep; cited_files are everything Pass 2 referenced in its synthesis.
     Both go into the warm cache so the reviewer doesn't need a tool
     round-trip for the most likely sources.
 
-    char_budget: hard cap on total inlined characters. Default 1.4M chars
-    ≈ 350K tokens. Pass 3 is agentic — the model can run up to
+    char_budget: hard cap on total inlined characters. Default 1M chars
+    ≈ 250K tokens. Pass 3 is agentic — the model can run up to
     MAX_TOOL_ITERATIONS tool round-trips, each shipping the accumulated
     message history
     back to the model. A single round-trip with one wiki-file read +
@@ -357,6 +386,10 @@ def build_evidence_context(trigger_files, cited_files, char_budget=1_400_000, ma
     `skipped_list`: [(path, label, reason)] for files skipped — these
     appear in the final prompt as a "not inlined; tool-fetch if needed"
     section so the reviewer knows the file exists and why it wasn't pre-loaded.
+
+    max_file_chars: individual-file warm-cache cap. Oversized omnibus pages
+    (the 256KB validation-experiments.md incident) are never inlined wholesale;
+    the reviewer must grep and request a bounded line range.
     """
     seen = set()
     parts = []
@@ -395,6 +428,9 @@ def build_evidence_context(trigger_files, cited_files, char_budget=1_400_000, ma
                 content = f.read()
             entry = f"\n\n=== {p} ({label}) ===\n\n{content}"
             entry_chars = len(entry)
+            if entry_chars > max_file_chars:
+                skipped.append((p, label, f"individual-file cap ({entry_chars:,} chars > {max_file_chars:,}; grep + bounded read_file)"))
+                continue
             if used_chars + entry_chars > char_budget:
                 skipped.append((p, label, f"budget ({used_chars:,} + {entry_chars:,} chars > {char_budget:,} cap)"))
                 continue
@@ -459,9 +495,9 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
     on hard failures.
 
     Cumulative-size guard: before each API call, estimate the total prompt
-    size (sum of message contents). If approaching the model's context cap
-    (Opus = 1M tokens ≈ 4M chars), force the next call to be the final
-    one (tool_choice=none) so we don't ship an over-cap request that
+    size (sum of message contents). If approaching the configured review
+    budget, force the next call to be the final one with tools omitted so we
+    don't ship an over-cap request that
     OpenRouter will 400 on. This is the post-mortem fix for the 21:17Z
     failure where 4 tool round-trips pushed cumulative input to 1.023M
     tokens > 1M cap."""
@@ -496,8 +532,8 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
         forcing_final = iteration == max_iterations or approaching_cap
 
         # When forcing final output, append an explicit user instruction
-        # alongside tool_choice=none. tool_choice=none alone forbids tools
-        # but doesn't tell the model what to do instead — after extensive
+        # alongside physical tool removal. Removing tools forbids calls but
+        # doesn't tell the model what to do instead — after extensive
         # tool use, Opus has been observed to return content=null with
         # finish_reason='stop' (no recovery path: there's no prior final
         # content to fall back on, since tool-using rounds produce
@@ -525,7 +561,7 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
         # On a normal iteration, expose the research tools. When forcing the
         # final response, OMIT `tools` from the request entirely rather than
         # relying on `tool_choice="none"`. Observed 2026-07-15 (eeab5b5 sweep):
-        # GPT-5.5 via OpenRouter ignored `tool_choice="none"` on the forced-
+        # DeepSeek V4-Pro via OpenRouter ignored `tool_choice="none"` on the forced-
         # final iteration and returned tool_calls anyway, so the loop appended
         # them, exhausted the iteration cap, and discarded the entire completed
         # review via sys.exit(1). With no `tools` key in the body the model
@@ -716,6 +752,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--synthesis-log", required=True,
                         help="Path to the Pass 2 synthesis log")
+    parser.add_argument("--normalized-manifest", required=True,
+                        help=("Canonical, hash-bound synthesis manifest. Pass 3 reviews "
+                              "this representation rather than parsing raw Markdown."))
     parser.add_argument("--commit-sha", required=True)
     parser.add_argument("--diff-base", default="")
     parser.add_argument("--trigger-files", required=True,
@@ -725,7 +764,7 @@ def main():
                               "cited in any synthesis finding. Inlined into the "
                               "warm cache so the reviewer can verify cited "
                               "content without a tool round-trip."))
-    parser.add_argument("--marker-count", type=int, required=True)
+    parser.add_argument("--item-count", type=int, required=True)
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--prompt-file", default=DEFAULT_PROMPT)
     parser.add_argument("--max-tokens", type=int, default=32000,
@@ -733,7 +772,7 @@ def main():
                           "Output token budget (default 32K). Raised from 8K on "
                           "2026-05-16 alongside the matching Pass 2 raise — "
                           "when Pass 2 emits 30-40 items the reviewer needs "
-                          "headroom to verdict every marker without truncation."))
+                          "headroom to verdict every item without truncation."))
     parser.add_argument("--max-iterations", type=int, default=MAX_TOOL_ITERATIONS,
                         help=f"Tool-use iteration cap (default {MAX_TOOL_ITERATIONS})")
     args = parser.parse_args()
@@ -742,7 +781,20 @@ def main():
 
     if not os.path.exists(args.synthesis_log):
         sys.exit(f"Synthesis log not found: {args.synthesis_log}")
-    synthesis_text = open(args.synthesis_log).read()
+    try:
+        manifest = verify_manifest(Path(args.normalized_manifest))
+    except (OSError, json.JSONDecodeError, NormalizationError) as exc:
+        sys.exit(f"Normalized synthesis manifest failed validation: {exc}")
+    if Path(manifest["source"]["synthesis_log"]) != Path(args.synthesis_log):
+        sys.exit("Normalized manifest source path does not match --synthesis-log")
+    if manifest["status"] != "items":
+        sys.exit(f"Pass 3 reviewer requires status='items'; got {manifest['status']!r}")
+    if len(manifest["items"]) != args.item_count:
+        sys.exit(
+            f"Manifest/item-count mismatch: manifest has {len(manifest['items'])}, "
+            f"workflow supplied {args.item_count}"
+        )
+    synthesis_text = render_for_review(manifest)
 
     sweep_brief = open(args.prompt_file).read()
 
@@ -750,7 +802,7 @@ def main():
         return [p.strip() for p in s.replace(",", "\n").splitlines() if p.strip()]
 
     trigger_files = _split(args.trigger_files)
-    cited_files = _split(args.cited_files)
+    cited_files = sorted(set(_split(args.cited_files)) | set(manifest.get("cited_files", [])))
     evidence_context, included, skipped = build_evidence_context(trigger_files, cited_files)
     timestamp = datetime.datetime.utcnow().isoformat() + "Z"
     trigger_list = "\n".join(f"  - {f}" for f in trigger_files) or "  (none specified)"
@@ -769,7 +821,11 @@ def main():
         + "\n\n---\n\n"
         + f"TRIGGER: Pass 3 review at {timestamp}.\n"
         + f"  synthesis_log:    {args.synthesis_log}\n"
-        + f"  item_count:       {args.marker_count}\n"
+        + f"  normalized_manifest: {args.normalized_manifest}\n"
+        + f"  sweep_id:         {manifest['sweep_id']}\n"
+        + f"  source_sha256:    {manifest['source']['sha256']}\n"
+        + f"  canonical_sha256: {manifest['canonical_items_sha256']}\n"
+        + f"  item_count:       {args.item_count}\n"
         + f"  diff_base:        {args.diff_base or 'unknown'}\n"
         + f"  commit_sha:       {args.commit_sha}\n"
         + f"  trigger files (caused this sweep):\n{trigger_list}\n"
@@ -782,7 +838,7 @@ def main():
         + "below is the warm cache; if you need a file not in there, fetch it.\n"
         + "When done researching, return your review blockquotes — that signals\n"
         + "completion (no more tool calls).\n\n"
-        + "=== PASS 2 SYNTHESIS LOG ===\n\n"
+        + "=== CANONICAL NORMALIZED PASS 2 ITEMS ===\n\n"
         + synthesis_text
         + "\n\n=== INLINED EVIDENCE (trigger + cited files) ===\n"
         + evidence_context
@@ -795,11 +851,10 @@ def main():
     print(f"Pass 3 prompt: synthesis log + {n_trig} trigger + {n_cited} cited files inlined "
           f"(~{prompt_tok_est:,} tokens est.); tool iters cap {args.max_iterations}",
           file=sys.stderr)
-    # Opus's actual context cap is 1M tokens. Warn at 80% (800K) — well
-    # below the cumulative-loop budget (900K) so warnings fire before the
-    # agentic loop's force-finish guard would.
+    # Warn at 800K tokens — below the cumulative-loop budget so warnings fire
+    # before the agentic loop's force-finish guard would.
     if prompt_tok_est > 800_000:
-        print(f"WARNING: estimate {prompt_tok_est:,} tokens — close to Opus's 1M cap. "
+        print(f"WARNING: estimate {prompt_tok_est:,} tokens — close to the review budget. "
               f"build_evidence_context's char_budget may need to be lowered.",
               file=sys.stderr)
 

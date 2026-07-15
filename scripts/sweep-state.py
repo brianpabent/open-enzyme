@@ -7,9 +7,10 @@ scripts/SWEEP-ARCHITECTURE.md). Replaces the brittle
 `git log --grep='^sweep' -n 1` regex with an atomic file-based cursor.
 
 The registry lives at `logs/sweep-state.json` and records:
-  - last_successful_sweep: commit + timestamp + synthesis log of the most
-    recent Pass 3 that completed successfully. Updated only by the workflow's
-    Pass 3 step, only on push success.
+  - last_successful_sweep: exact corpus-coverage commit + timestamp +
+    synthesis/review provenance for the most recent Pass 3 that completed.
+    The coverage cursor is the snapshot Pass 2 actually read, not the later
+    review commit, so concurrent post-snapshot wiki edits remain pending.
   - recent_runs: bounded list (last 20) of workflow runs with outcome,
     failed phase, and trigger metadata. Used by /sweep-status and the
     watchdog cron.
@@ -19,6 +20,10 @@ Subcommands:
   update-success                  — record Pass 3 success; update
                                     last_successful_sweep + append a
                                     recent_runs entry.
+  record-recovery                 — record a supplemental exact-artifact
+                                    review without advancing the cursor.
+  rebind-review-commit            — repair review-commit provenance after a
+                                    successful git rebase; cursor is unchanged.
   record-failure                  — append a failed-run entry to
                                     recent_runs without touching
                                     last_successful_sweep.
@@ -51,6 +56,8 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+
+from synthesis_normalize import NormalizationError, verify_manifest
 
 REGISTRY_PATH = Path("logs/sweep-state.json")
 SCHEMA_VERSION = 1
@@ -100,12 +107,58 @@ def cmd_read(_args: argparse.Namespace) -> None:
 
 def cmd_update_success(args: argparse.Namespace) -> None:
     data = read_registry()
+    try:
+        manifest = verify_manifest(Path(args.normalized_manifest))
+    except (OSError, json.JSONDecodeError, NormalizationError) as exc:
+        sys.exit(f"sweep-state.py: refusing cursor advance; manifest validation failed: {exc}")
+
+    source = manifest["source"]
+    if source["synthesis_log"] != args.synthesis_log:
+        sys.exit("sweep-state.py: synthesis log does not match normalized manifest source")
+    if source["diff_base"] != args.expected_diff_base:
+        sys.exit(
+            "sweep-state.py: diff-base mismatch between workflow and manifest: "
+            f"{args.expected_diff_base!r} != {source['diff_base']!r}"
+        )
+    workflow_triggers = [p for p in args.trigger_files.split(",") if p]
+    if workflow_triggers != source["trigger_files"]:
+        sys.exit("sweep-state.py: trigger-file list does not match normalized manifest")
+    current_cursor = (data.get("last_successful_sweep") or {}).get("commit")
+    if args.expected_diff_base != "manual" and current_cursor != args.expected_diff_base:
+        sys.exit(
+            "sweep-state.py: cursor changed since this synthesis batch began; "
+            f"current={current_cursor!r}, expected={args.expected_diff_base!r}. "
+            "Refusing to bless a stale or superseded artifact."
+        )
+    coverage_commit = source["corpus_commit_sha"]
+    ancestry = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", coverage_commit, args.commit],
+        capture_output=True,
+    )
+    if ancestry.returncode != 0:
+        sys.exit(
+            "sweep-state.py: review commit does not descend from the manifest's corpus snapshot"
+        )
+
     data["last_successful_sweep"] = {
-        "commit": args.commit,
+        # The cursor is the exact corpus snapshot Pass 2 read, not the later
+        # review commit. If unrelated wiki work lands while the model is
+        # running and Pass 3 rebases over it, that work therefore remains
+        # visible to pending-paths instead of being silently blessed.
+        "commit": coverage_commit,
+        "coverage_commit": coverage_commit,
         "timestamp": _now_iso(),
         "synthesis_log": args.synthesis_log,
+        "normalized_manifest": args.normalized_manifest,
+        "sweep_id": manifest["sweep_id"],
+        "source_commit": source["commit_sha"],
+        "trigger_commit": source["trigger_commit_sha"],
+        "source_synthesis_sha256": source["sha256"],
+        "canonical_items_sha256": manifest["canonical_items_sha256"],
+        "normalized_status": manifest["status"],
+        "normalized_item_count": len(manifest["items"]),
         "review_commit": args.commit,
-        "trigger_files": args.trigger_files.split(",") if args.trigger_files else [],
+        "trigger_files": source["trigger_files"],
         "run_id": args.run_id,
     }
     data["recent_runs"].append({
@@ -114,12 +167,91 @@ def cmd_update_success(args: argparse.Namespace) -> None:
         "completed_at": _now_iso(),
         "outcome": "success",
         "failed_phase": None,
-        "trigger_paths_count": len(args.trigger_files.split(",")) if args.trigger_files else 0,
+        "trigger_paths_count": len(source["trigger_files"]),
         "synthesis_log": args.synthesis_log,
+        "normalized_manifest": args.normalized_manifest,
+        "sweep_id": manifest["sweep_id"],
+        "normalized_status": manifest["status"],
+        "normalized_item_count": len(manifest["items"]),
+        "coverage_commit": coverage_commit,
+        "review_commit": args.commit,
     })
     data["recent_runs"] = _trim_recent(data["recent_runs"])
     write_registry(data)
-    print(f"sweep-state.py: recorded success for run {args.run_id} at commit {args.commit[:8]}")
+    print(
+        f"sweep-state.py: recorded success for run {args.run_id}; "
+        f"coverage={coverage_commit[:8]} review={args.commit[:8]}"
+    )
+
+
+def _validated_recovery_manifest(args: argparse.Namespace) -> dict:
+    try:
+        manifest = verify_manifest(Path(args.normalized_manifest))
+    except (OSError, json.JSONDecodeError, NormalizationError) as exc:
+        sys.exit(f"sweep-state.py: recovery manifest validation failed: {exc}")
+    if manifest["source"]["synthesis_log"] != args.synthesis_log:
+        sys.exit("sweep-state.py: recovery synthesis log does not match manifest source")
+    return manifest
+
+
+def cmd_record_recovery(args: argparse.Namespace) -> None:
+    """Record exact-artifact review while deliberately preserving the cursor."""
+    data = read_registry()
+    manifest = _validated_recovery_manifest(args)
+    coverage_commit = manifest["source"]["corpus_commit_sha"]
+    ancestry = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", coverage_commit, args.review_commit],
+        capture_output=True,
+    )
+    if ancestry.returncode != 0:
+        sys.exit("sweep-state.py: recovery review commit does not descend from corpus snapshot")
+    cursor_before = (data.get("last_successful_sweep") or {}).get("commit")
+    data["recent_runs"].append({
+        "run_id": args.run_id,
+        "trigger": args.trigger,
+        "completed_at": _now_iso(),
+        "outcome": "supplemental_recovery",
+        "failed_phase": None,
+        "cursor_advanced": False,
+        "cursor_preserved": cursor_before,
+        "review_commit": args.review_commit,
+        "synthesis_log": args.synthesis_log,
+        "normalized_manifest": args.normalized_manifest,
+        "sweep_id": manifest["sweep_id"],
+        "normalized_status": manifest["status"],
+        "normalized_item_count": len(manifest["items"]),
+    })
+    data["recent_runs"] = _trim_recent(data["recent_runs"])
+    write_registry(data)
+    print(
+        f"sweep-state.py: recorded supplemental recovery {manifest['sweep_id']} "
+        f"without advancing cursor {str(cursor_before)[:8]}"
+    )
+
+
+def cmd_rebind_review_commit(args: argparse.Namespace) -> None:
+    """Update review provenance after rebase; never move the coverage cursor."""
+    data = read_registry()
+    last = data.get("last_successful_sweep") or {}
+    rebound = False
+    if last.get("review_commit") == args.old_commit:
+        last["review_commit"] = args.new_commit
+        rebound = True
+    for run in reversed(data.get("recent_runs", [])):
+        if run.get("review_commit") == args.old_commit:
+            run["review_commit"] = args.new_commit
+            rebound = True
+            break
+    if not rebound:
+        sys.exit(
+            "sweep-state.py: review rebind old SHA is absent from current and recent state: "
+            f"{args.old_commit!r}"
+        )
+    write_registry(data)
+    print(
+        f"sweep-state.py: rebound review provenance "
+        f"{args.old_commit[:8]} -> {args.new_commit[:8]}; cursor unchanged"
+    )
 
 
 def cmd_record_failure(args: argparse.Namespace) -> None:
@@ -274,9 +406,29 @@ def main() -> None:
     s_us = sub.add_parser("update-success", help="record Pass 3 success")
     s_us.add_argument("--commit", required=True)
     s_us.add_argument("--synthesis-log", required=True)
+    s_us.add_argument("--normalized-manifest", required=True)
+    s_us.add_argument("--expected-diff-base", required=True)
     s_us.add_argument("--trigger-files", default="")
     s_us.add_argument("--run-id", required=True)
     s_us.add_argument("--trigger", default="push", choices=["push", "workflow_dispatch", "watchdog"])
+
+    s_rr = sub.add_parser(
+        "record-recovery",
+        help="record supplemental exact-artifact recovery without advancing cursor",
+    )
+    s_rr.add_argument("--review-commit", required=True)
+    s_rr.add_argument("--synthesis-log", required=True)
+    s_rr.add_argument("--normalized-manifest", required=True)
+    s_rr.add_argument("--run-id", required=True)
+    s_rr.add_argument("--trigger", default="workflow_dispatch",
+                      choices=["push", "workflow_dispatch", "watchdog"])
+
+    s_rb = sub.add_parser(
+        "rebind-review-commit",
+        help="repair review provenance after rebase without moving coverage cursor",
+    )
+    s_rb.add_argument("--old-commit", required=True)
+    s_rb.add_argument("--new-commit", required=True)
 
     s_rf = sub.add_parser("record-failure", help="record a failed run")
     s_rf.add_argument("--run-id", required=True)
@@ -299,6 +451,8 @@ def main() -> None:
     handlers = {
         "read": cmd_read,
         "update-success": cmd_update_success,
+        "record-recovery": cmd_record_recovery,
+        "rebind-review-commit": cmd_rebind_review_commit,
         "record-failure": cmd_record_failure,
         "pending-paths": cmd_pending_paths,
         "should-sweep": cmd_should_sweep,

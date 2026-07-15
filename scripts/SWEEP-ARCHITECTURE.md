@@ -2,7 +2,7 @@
 
 Permanent reference for the wiki-sweep daemon. Captures the failure modes that motivated a redesign, why convention-as-memory was insufficient, and the five-component recovery architecture. Engineering doc — no evidence-level tags; same prose discipline as the wiki (no marketing language, state limitations explicitly).
 
-The daemon under discussion is defined in [`.github/workflows/wiki-sweep.yml`](../.github/workflows/wiki-sweep.yml) and orchestrates three OpenRouter-routed passes (Sonnet 4.6 propagate → Gemini 2.5 Pro synthesize → Opus 4.7 review). Background context: [`CLAUDE.md` § "Workflow for Updates"](../CLAUDE.md) and the umbrella [`abent/CLAUDE.md` § "Git steward pattern"](../CLAUDE.md).
+The daemon under discussion is defined in [`.github/workflows/wiki-sweep.yml`](../.github/workflows/wiki-sweep.yml) and orchestrates three OpenRouter-routed passes (DeepSeek V4-Pro propagate → Grok 4.20 synthesize → DeepSeek V4-Pro review, with configured fallbacks where documented in the drivers). Background context: [`CLAUDE.md` § "Workflow for Updates"](../CLAUDE.md) and the umbrella [`abent/CLAUDE.md` § "Git steward pattern"](../CLAUDE.md).
 
 ---
 
@@ -86,14 +86,79 @@ Pass 1 inputs:  trigger_files (from push)
 Pass 1 outputs: trigger_files + propagated_files
 
 Pass 2 inputs:  trigger_files + propagated_files
-Pass 2 outputs: synthesis_log + cited_files (parsed from manifest + regex fallback)
+Pass 2 outputs: raw synthesis_log + normalized_manifest + cited_files
 
-Pass 3 inputs:  synthesis_log + trigger_files + cited_files (all inlined as warm cache)
+Pass 3 inputs:  canonical normalized items + trigger_files + cited_files (raw log remains hash-bound audit evidence)
 Pass 3 tools:   read_file, list_files, grep (read-only, bounded iterations)
 Pass 3 outputs: review blockquotes (strict scope: only `<<<NEXT>>>`-separated blocks)
 ```
 
 This handoff design is also why Pass 1 commits-and-pushes before Pass 2 starts: the *filesystem* state has to reflect Pass 1's work for Pass 2's full-corpus read to be valid, AND Pass 2's checkout is fresh (not a runner-cache reuse).
+
+---
+
+## Tolerant normalization + strict promotion boundary (added 2026-07-15)
+
+### Incident that exposed the missing boundary
+
+Run `29428509323` produced a 46.5 KB Pass 2 artifact with ten `{{PEER-REVIEW}}` markers. Four connection items appeared under `## Phase C — Synthesize` rather than the prompt's preferred `## New Connections`, so the legacy exact-heading parser silently ignored them and counted only six items. Pass 3 then failed after DeepSeek V4-Pro returned tool calls on the forced-final iteration despite `tool_choice="none"`.
+
+The recovery dispatch (`29433436091`) reran the full-corpus synthesizer instead of resuming the preserved artifact. Its output contained one substantive `Most Curious Thread` and one review marker, but the heading was bold-only (`**Most Curious Thread**`) instead of an H2. The parser recognized no sections, inferred a drift-guard no-op, skipped Pass 3, wrote a false no-op history record, and advanced the cursor. The Pass 3 loop fix therefore was not exercised by that successful run.
+
+This was a protocol-boundary error: nondeterministic million-token model output was being treated as if exact Markdown presentation were a deterministic wire format.
+
+### New boundary
+
+The enforced sequence is now:
+
+```
+raw Pass 2 Markdown (preserved verbatim)
+    ↓ scripts/synthesis_normalize.py
+canonical JSON manifest (hash-bound, ordered items)
+    ↓ strict completeness validation
+Pass 3 review of canonical items
+    ↓ deterministic emitter
+queue/history + cursor advance
+```
+
+The normalizer is liberal about presentation and strict about information loss:
+
+- Maps documented heading variants, including `Phase C — Synthesize` and bold-only forced-rank headings, to canonical item types.
+- Uses Markdown structure and `{{PEER-REVIEW}}` markers as redundant signals. Missing cosmetic markers do not drop structurally valid items; a marker outside every normalized item is an error.
+- Records source spans, document order, raw headings, warnings, and errors in the manifest.
+- Fails closed when substantive or marked content cannot be normalized. The raw artifact and diagnostic manifest are committed before the job fails, so repair does not repay the full-corpus model call.
+- Permits zero items only when Pass 2 explicitly declares `Status: No new synthesis`. Missing or unfamiliar structure is never a no-op.
+
+`scripts/synthesis-emit-files.py` and `scripts/sweep-3-review.py` consume the canonical manifest, not raw Markdown structure. The raw log remains audit evidence and is SHA-256-bound to the manifest. The manifest also binds the trigger commit, the exact corpus snapshot Pass 2 read, diff base, trigger paths, actually served synthesizer model, ordered item payload, and a canonical-item SHA-256.
+
+### Exact-artifact recovery
+
+Manual dispatch accepts `resume_normalized_manifest`. Recovery validates the raw-artifact hash, restores the manifest's original trigger SHA/diff base/trigger paths, and skips Pass 1 and Pass 2. Pass 3 therefore reviews the artifact that actually failed rather than asking a stochastic synthesizer to produce a different answer.
+
+If a later sweep has already advanced the cursor, the artifact can be reviewed with `supplemental_recovery=true`. That mode emits the missing queue/history records and records the recovery run, but deliberately leaves the current cursor unchanged. This is the safe repair path for the July 15 false-no-op incident: recover the exact old output without rolling back or blessing over newer work.
+
+Cursor advancement additionally requires:
+
+1. the normalized manifest validates against its raw source;
+2. the workflow trigger list and diff base match the manifest;
+3. the current registry cursor still equals the manifest's diff base (unless the original run was an explicit manual-path sweep); and
+4. the review commit descends from the manifest's corpus snapshot.
+
+If another sweep has already advanced the cursor, ordinary recovery fails rather than blessing or overwriting newer state; supplemental recovery is explicit and non-cursor-moving.
+
+The successful-sweep cursor is the corpus snapshot, not the later Pass 3 review commit. That distinction closes a concurrent-write race: if a wiki commit lands after Pass 2 takes its snapshot and Pass 3 later rebases over it, the new commit still sits after the coverage cursor and remains pending. The review commit is tracked separately as provenance. If rebase changes its SHA, the state commit rebinds that provenance without changing coverage.
+
+### Zero-item anomaly gate
+
+An explicit no-op over more than five trigger paths or more than 100 changed wiki lines is treated as anomalous. Automatic runs fail closed. A human may re-dispatch with `allow_large_no_op=true` only after independent/manual inspection. This gate does not assert that a large batch must yield novelty; it asserts that a large-batch zero deserves review before it becomes the authoritative cursor.
+
+### Regression coverage
+
+`tests/test_sweep_pipeline.py` uses both incident artifacts as fixtures:
+
+- `eeab5b5` normalizes to ten items across four canonical types;
+- `08f10ad` normalizes to one substantive item, not a no-op;
+- explicit no-op, unknown marked content, missing cosmetic markers, raw/canonical tampering, served-model provenance, ten-item emission, forced-final tool removal, coverage-cursor binding, supplemental recovery, and rebase provenance repair each have executable tests.
 
 ---
 
