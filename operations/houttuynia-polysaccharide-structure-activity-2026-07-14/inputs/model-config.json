@@ -1,0 +1,24 @@
+{
+  "openrouter": {
+    "api_key_env": "OPENROUTER_API_KEY",
+    "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+    "secret_location": "repo-root .env (gitignored)"
+  },
+  "translation": {
+    "protocol": "subagent is Model A; OpenRouter pays only for Model B counterread. Chinese-vendor Model B for zh native-language depth.",
+    "pairs": {
+      "zh": {
+        "model_a": {"model": "anthropic/claude-opus-4.8-subagent-in-session", "temperature": 0.0},
+        "model_b": {"model": "deepseek/deepseek-chat", "temperature": 0.0},
+        "referee": {"model": "anthropic/claude-opus-4.8-subagent-in-session", "temperature": 0.0}
+      }
+    }
+  },
+  "provenance": {
+    "created": "2026-07-14",
+    "notes": [
+      "Model B (DeepSeek) is a Chinese-vendor model for native-language depth on TCM/polysaccharide terminology.",
+      "Model A + referee are the calling Claude subagent, in-session, no OpenRouter spend."
+    ]
+  }
+}

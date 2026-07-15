@@ -1,0 +1,11 @@
+{
+  "created_at_utc": "2026-07-15T14:50:37+00:00",
+  "language": "zh",
+  "model_b": {
+    "model": "deepseek/deepseek-chat",
+    "role": "model_b",
+    "text": "The present invention discloses a medicinal and edible homologous enzyme suitable for individuals with hyperuricemia and gout, as well as a preparation method thereof, comprising the following components: EM bacteria, lactic acid bacteria, yeast, Lactobacillus plantarum, Streptococcus thermophilus, Bifidobacterium, Lactobacillus rhamnosus, Lactobacillus acidophilus, Bacillus coagulans, Lactobacillus reuteri, honey, coral calcium, and drinking water. The medicinal and edible homologous traditional Chinese medicine raw materials include the following components: sunflower receptacle, corn silk, Houttuynia cordata, coix seed, kudzu root, dandelion, gardenia, chicory, eucommia bark, fox nut, cinnamon, lophatherum herb, poria, purslane, and lily. The invention utilizes beneficial microbial flora combined with medicinal and edible homologous traditional Chinese medicine raw materials for fermentation. The resulting extract can effectively reduce blood uric acid levels in individuals with gout, alleviate pain, enhance the immune system, restore and improve metabolic functions, and is widely applicable, non-toxic, free of side effects, and suitable for daily consumption."
+  },
+  "protocol": "single_model_counterread_subagent_is_model_a (curl transport; urllib cert store unavailable)",
+  "source_id": "cqvip_gout_ferment_hyperuricemia"
+}
