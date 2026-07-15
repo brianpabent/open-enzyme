@@ -213,7 +213,7 @@ All three clear the 10 µM safe threshold by 5–50× margin under reference con
 
 **Candidate chassis.** Small-molecule discovery campaign — AI-assisted binder design (RFdiffusion-style or related), structure-based virtual screening against ABCG2 Q141K. Compounding pharmacy track if a hit candidate has off-patent precedent in another indication (unlikely for novel chemistry, but worth checking).
 
-**Cheapest first move — COMPLETED 2026-05-16 as [comp-032](./abcg2-q141k-chaperone-screen-computational.md): GREEN.** AlphaFold Q141K structure + virtual screen of 134 FDA-approved molecules against the Q141K NBD pocket. All four CFTR-corrector positive controls ranked in the top 11% — the FDA-approved drug surface is NOT empty for ABCG2 Q141K chaperone candidates. **Top wet-lab-priority candidates** (ranked by composite score):
+**Cheapest first move — run 2026-05-16 as [comp-032](./abcg2-q141k-chaperone-screen-computational.md), then SUPERSEDED by [comp-047](./abcg2-q141k-chaperone-rescreen-computational.md) (2026-07-14, real docking) → INCONCLUSIVE.** comp-032's GREEN was a descriptor/class-prior heuristic with a tautological positive-control validation (comp-review 2026-07-13); comp-047 re-ran it with real AutoDock Vina docking and no class prior, and the CFTR-corrector positive controls **failed to earn rank** (0/4). **The list below is comp-032's prior-ranked hypotheses — not validated priorities and not empirically supported.** Retained only as a starting point for a folding-ΔΔG or wet-lab study:
 
 1. **Lumacaftor** (Tier 2, CFTR corrector) — strongest mechanistic prior; same ABC superfamily; on-patent for CF (Vertex), navigate patent landscape for off-label 503A
 2. **Tafamidis** (Tier 2, TTR tetramer stabilizer) — aromatic-acid stabilizer at hydrophobic interface; misfolded-state selective
@@ -221,9 +221,9 @@ All three clear the 10 µM safe threshold by 5–50× margin under reference con
 4. **Diflunisal** (**Tier 1, lowest-friction first call** — off-patent NSAID with USP/NF monograph + off-label ATTR-stabilization precedent) — anionic at pH 7.4, strongest electrostatic match for Q141K +1 pocket
 5. **TUDCA** (Tier 2, bile acid chaperone) — CNS-penetrant; F508del-CFTR + ALS-clinical-trial precedent
 
-**Next move:** per-hit cell-based Q141K trafficking-rescue assay on the top 3-5 candidates in a Caco-2 Q141K-transfected line. Compounding-pharmacy partner conversation can lead with diflunisal as the Tier-1 off-patent low-friction first call. (source: abcg2-modulators.md, abcg2-q141k-chaperone-screen-computational.md)
+**Next move:** neither comp-032 nor comp-047 supplies a validated candidate, so **no compounding-pharmacy conversation is warranted yet.** Rigid docking can't discriminate chaperones here (mechanism mismatch). The real next step is a folding-ΔΔG calculation (MD / Rosetta) or a wet-lab Q141K trafficking-rescue assay (Caco-2 Q141K line) paired with basolateral→apical urate flux + an ABCG2-inhibition counterscreen; any compounding-pharmacy conversation is gated behind that wet-lab result. (source: abcg2-modulators.md, abcg2-q141k-chaperone-rescreen-computational.md)
 
-**Cross-reference.** [`abcg2-modulators.md`](./abcg2-modulators.md) §"Pharmacological-chaperone route", [`abcg2-q141k-chaperone-screen-computational.md`](./abcg2-q141k-chaperone-screen-computational.md) (comp-032 full analysis).
+**Cross-reference.** [`abcg2-modulators.md`](./abcg2-modulators.md) §"Pharmacological-chaperone route", [`abcg2-q141k-chaperone-rescreen-computational.md`](./abcg2-q141k-chaperone-rescreen-computational.md) (comp-047, current) · [`abcg2-q141k-chaperone-screen-computational.md`](./abcg2-q141k-chaperone-screen-computational.md) (comp-032, superseded).
 
 ---
 

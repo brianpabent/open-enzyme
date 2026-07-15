@@ -54,7 +54,7 @@ For each intervention the subject considers:
 
 Per [`personal-genome-protocol.md`](./personal-genome-protocol.md) §"Gout-specific pharmacogenomic query list" + the unified variant index at [`gout-genetic-variants.md`](./gout-genetic-variants.md). Specific variants change compound priority:
 
-- **ABCG2 Q141K** (rs2231142) → butyrate emphasis (PPARγ-driven WT ABCG2 induction + HDAC trafficking rescue for the Q141K variant per [`abcg2-modulators.md`](./abcg2-modulators.md) §6); pharmacological-chaperone class as the orthogonal small-molecule track (chassis-pending; [comp-032](./computational-experiments.md))
+- **ABCG2 Q141K** (rs2231142) → butyrate emphasis (PPARγ-driven WT ABCG2 induction + HDAC trafficking rescue for the Q141K variant per [`abcg2-modulators.md`](./abcg2-modulators.md) §6); pharmacological-chaperone class as the orthogonal small-molecule track (chassis-pending; [comp-032](./computational-experiments.md) descriptor screen **superseded by [comp-047](./abcg2-q141k-chaperone-rescreen-computational.md) real-docking rescreen → INCONCLUSIVE — no validated chaperone candidate, hypothesis-only**)
 - **URAT1 gain-of-function variants** (uncommon; SLC22A12 not RHUC1-causing) → cordycepin > eurycomanone per [comp-015 v2](./t-axis-adjuvant-urate-mapping-computational.md)
 - **SLC22A12 W258X (RHUC1 carrier)** → urate excretion is enhanced; the platform's gut-lumen sink thesis is *less* load-bearing for these carriers
 - **NLRP3 gain-of-function variants** (CAPS spectrum; rare) → upweight CP6 (oridonin, BHB) over CP1–CP4
