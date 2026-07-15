@@ -60,7 +60,12 @@ os.chdir(REPO_ROOT)
 
 DEFAULT_MODEL = "anthropic/claude-opus-4-7"
 DEFAULT_PROMPT = "scripts/sweep-prompt-3-review.md"
-MAX_TOOL_ITERATIONS = 16  # bound research depth; final response counts as "done"
+MAX_TOOL_ITERATIONS = 24  # bound research depth; final response counts as "done"
+                          # (8 → 16 2026-05-07; 16 → 24 2026-07-15 after the
+                          # eeab5b5 sweep exhausted 16 on a large batch. The
+                          # cap alone wasn't the bug — see run_agentic_review's
+                          # forced-final tools-removal + salvage path — but the
+                          # extra headroom lets a genuinely large batch converge.)
 
 PRICING_USD_PER_MTOK = {
     "anthropic/claude-sonnet-4-6":  (3.00, 15.00),
@@ -193,17 +198,44 @@ def _resolve_with_fallback(rel):
             pass
 
 
+# Per-run read cache: resolved-abspath → size. Reset at the top of each
+# run_agentic_review call. Pass 3 is a read-only review, so any file the
+# reviewer reads twice in one run has unchanged content — re-fetching it
+# burns an iteration AND re-ships (up to the 30K result cap) redundant
+# context that every later iteration then re-pays. On a repeat read we
+# return a short stub pointing the model back at the earlier tool result
+# instead of re-inlining the file. Surfaced 2026-07-15: the eeab5b5 sweep
+# read validation-experiments.md (256KB) twice (iters 9 and 12) and
+# exhausted the iteration cap without converging.
+_READ_CACHE = {}
+
+
 def tool_read_file(args):
     rel = args["path"]
     try:
         for candidate, was_fallback in _resolve_with_fallback(rel):
             if os.path.isfile(candidate):
                 size = os.path.getsize(candidate)
+                if candidate in _READ_CACHE:
+                    print(f"  [read_file] {rel} → already read this run "
+                          f"({size} bytes); returning dedup stub", file=sys.stderr)
+                    return (
+                        f"ALREADY READ this run: {rel} ({size} bytes). Its "
+                        "content was returned in an earlier tool result above "
+                        "— scroll up to that result rather than re-reading. "
+                        "Re-reading is redundant (files don't change during a "
+                        "review) and wastes an iteration. If you need a "
+                        "specific section that was past the 30K truncation, "
+                        "use `grep` with a targeted pattern instead."
+                    )
+                _READ_CACHE[candidate] = size
                 if was_fallback:
                     print(f"  [read_file] {rel} → fallback to pre-move path ({size} bytes)",
                           file=sys.stderr)
                 else:
                     print(f"  [read_file] {rel} ({size} bytes)", file=sys.stderr)
+                # Length capping (for oversized files) happens once, downstream
+                # in run_agentic_review's shared tool-result cap.
                 return open(candidate).read()
     except ValueError as e:
         print(f"  [read_file] {rel} → ERROR: {e}", file=sys.stderr)
@@ -284,8 +316,9 @@ def build_evidence_context(trigger_files, cited_files, char_budget=1_400_000, ma
     round-trip for the most likely sources.
 
     char_budget: hard cap on total inlined characters. Default 1.4M chars
-    ≈ 350K tokens. Pass 3 is agentic — the model can run up to 16 tool
-    round-trips, each shipping the entire accumulated message history
+    ≈ 350K tokens. Pass 3 is agentic — the model can run up to
+    MAX_TOOL_ITERATIONS tool round-trips, each shipping the accumulated
+    message history
     back to the model. A single round-trip with one wiki-file read +
     intermediate reasoning consumes ~50-100K tokens.
 
@@ -308,10 +341,14 @@ def build_evidence_context(trigger_files, cited_files, char_budget=1_400_000, ma
     The cumulative-size guard in run_agentic_review (CUMULATIVE_CHAR_BUDGET
     = 900K tokens) force-finishes before Opus's 1M cap, so in practice the
     effective max iters is bounded by cumulative cost: 350K initial +
-    ~75K per round ≈ 7-10 rounds before the guard fires. The 16-iter
-    ceiling is a safety net against runaway loops, not the binding
-    constraint — cumulative budget is. Bumped 8 → 16 (2026-05-07) after
-    the abc8de9 run hit the 8-iter cap before producing final output.
+    ~75K per round ≈ 7-10 rounds before the guard fires. The
+    MAX_TOOL_ITERATIONS ceiling (24) is a safety net against runaway loops,
+    not the usual binding constraint — cumulative budget is. Bumped 8 → 16
+    (2026-05-07) after the abc8de9 run hit the 8-iter cap, then 16 → 24
+    (2026-07-15) after the eeab5b5 sweep hit 16 on a large batch. The deeper
+    fix for that failure was making the forced-final iteration tools-removed
+    (so it cannot loop on tool calls) plus a salvage call — see
+    run_agentic_review; the cap raise is just added headroom.
     Cited files are best-effort: inline until budget, then are skipped
     with a notice (the model can still tool-fetch them).
 
@@ -433,6 +470,11 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
     # is 1M tokens so we want to force-finish well before that.
     CUMULATIVE_CHAR_BUDGET = 3_600_000
 
+    # Reset the per-run read-dedup cache so a repeat read within THIS run is
+    # detected but reads from a prior run (same process, e.g. tests) don't
+    # leak in as false "already read" hits.
+    _READ_CACHE.clear()
+
     messages = [{"role": "user", "content": initial_prompt}]
     total_in = 0
     total_out = 0
@@ -477,12 +519,21 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
         body = {
             "model": model,
             "messages": request_messages,
-            "tools": TOOLS,
             "max_tokens": max_tokens,
             "temperature": 0.5,
         }
-        if forcing_final:
-            body["tool_choice"] = "none"
+        # On a normal iteration, expose the research tools. When forcing the
+        # final response, OMIT `tools` from the request entirely rather than
+        # relying on `tool_choice="none"`. Observed 2026-07-15 (eeab5b5 sweep):
+        # GPT-5.5 via OpenRouter ignored `tool_choice="none"` on the forced-
+        # final iteration and returned tool_calls anyway, so the loop appended
+        # them, exhausted the iteration cap, and discarded the entire completed
+        # review via sys.exit(1). With no `tools` key in the body the model
+        # physically cannot emit tool_calls — the forced-final response is
+        # guaranteed to be prose. (tool_choice="none" is left off because it is
+        # meaningless without a tools array and some providers 400 on it.)
+        if not forcing_final:
+            body["tools"] = TOOLS
 
         resp = call_openrouter_raw(api_key, body)
         if "choices" not in resp:
@@ -541,7 +592,11 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
                             result = f"ERROR: {type(e).__name__}: {e}"
                 # Cap each tool result to keep the loop bounded
                 if len(result) > 30_000:
-                    result = result[:30_000] + "\n... (truncated, use grep to narrow)"
+                    result = (result[:30_000]
+                              + f"\n... [TRUNCATED — {len(result):,}-char result; "
+                                "only first 30,000 shown. Do NOT re-read the "
+                                "whole file; use `grep` with a specific pattern "
+                                "to find the section you need.]")
                 messages.append({
                     "role": "tool",
                     "tool_call_id": tc.get("id", ""),
@@ -561,8 +616,45 @@ def run_agentic_review(api_key, model, initial_prompt, max_iterations, max_token
         )
         sys.exit(1)
 
-    # If we somehow exit the loop without returning, that's a bug
-    print(f"Pass 3 agentic loop exhausted {max_iterations} iterations without final content",
+    # Loop exhausted without a final prose response. This should now be
+    # unreachable — the last iteration forces `forcing_final`, which omits
+    # `tools` entirely so the model cannot return tool_calls and MUST return
+    # prose. But if we still land here (e.g. a provider returned content=null
+    # even with no tools), make ONE last tools-removed salvage call rather than
+    # discarding the whole completed research phase. The review work is the
+    # expensive part; a review that reached iteration 24 has read everything it
+    # needs — throwing it away to sys.exit(1) is the worst outcome (the eeab5b5
+    # failure mode, 2026-07-15).
+    print(f"Pass 3 agentic loop exhausted {max_iterations} iterations; "
+          "attempting a final tools-removed salvage call before failing",
+          file=sys.stderr)
+    salvage_messages = _inject_cache_breakpoints(messages, model) + [{
+        "role": "user",
+        "content": (
+            "Research phase complete — no further tools available. Output the "
+            "review blockquotes now, separated by `<<<NEXT>>>` lines (one per "
+            "item, in document order). Begin with `> **Pass 3 review —`."
+        ),
+    }]
+    salvage_body = {
+        "model": model,
+        "messages": salvage_messages,
+        "max_tokens": max_tokens,
+        "temperature": 0.5,
+    }  # note: no `tools` key — the model physically cannot call tools here
+    resp = call_openrouter_raw(api_key, salvage_body)
+    choice = (resp.get("choices") or [{}])[0]
+    msg = choice.get("message", {}) or {}
+    usage = resp.get("usage", {}) or {}
+    total_in += usage.get("prompt_tokens", 0)
+    total_out += usage.get("completion_tokens", 0)
+    total_cached += (usage.get("prompt_tokens_details") or {}).get("cached_tokens", 0)
+    content = msg.get("content")
+    if content:
+        print("  Salvage call succeeded — recovered a final review from the "
+              "exhausted loop's accumulated context.", file=sys.stderr)
+        return content, total_in, total_out, total_cached
+    print("Pass 3 salvage call also produced no content; failing.",
           file=sys.stderr)
     sys.exit(1)
 
