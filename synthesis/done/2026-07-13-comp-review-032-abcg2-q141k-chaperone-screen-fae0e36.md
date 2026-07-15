@@ -148,3 +148,23 @@ Major closure failures / substitutions:
 - Primary literature sources such as Basseville 2012, CFTR-corrector papers, DrugBank descriptor tables, and FDA/USP/503A records were not directly verified; only citation strings and artifact-entered summaries were available.
 - `validation-experiments.md` was partially inspected around the relevant §1.14 area; later sections were not fully read after tool-result budget exhaustion.
 - This review is Phase 0 research scrutiny only and does not provide medical advice or clinical evidence.
+
+---
+
+## ✓ Actioned 2026-07-14
+
+**Resolved by designing + running comp-047 (real docking) as the replacement the review demanded, then propagating the downgrade across the corpus.**
+
+The review's core finding — comp-032's "positive-control pass" is tautological (CFTR correctors scored high only because assigned the max class prior; decoy max 0.684 = 0.15^(1/5)) — was **empirically confirmed**: [comp-047](../../wiki/abcg2-q141k-chaperone-rescreen-computational.md) re-ran the screen with real AutoDock Vina docking and **no** class prior, and the CFTR-corrector positive controls **failed to earn rank (0/4)**. Verdict: **INCONCLUSIVE**. Rigid-receptor docking cannot discriminate chaperones (mechanism mismatch — chaperones stabilize a folding intermediate, which static-structure docking can't model); the chaperone-rescue candidate ranking for Q141K is not computationally established.
+
+**What shipped (held batch):**
+- comp-047 artifacts imported to `wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/` (real Vina pipeline; 14M regenerable docking poses excluded).
+- New interpretive page `wiki/abcg2-q141k-chaperone-rescreen-computational.md` (INCONCLUSIVE; two failure reasons; two honest residual gaps: sensitivity not run, Axis 2 ChEMBL thin at 3/135).
+- comp-032 interpretive page: SUPERSEDED banner + inline retraction of the GREEN verdict, the tautological "positive-control validation passed" claim, and the "empirically supported" conclusion.
+- `computational-experiments.md`: comp-047 registered (detail block + summary-table row); comp-032 downgraded to SUPERSEDED.
+- 4 downstream pages downgraded (abcg2-modulators, chassis-pending-interventions §7, genotype-informed-supplement-workflow, gout-genetic-variants): candidate lists reframed prior-ranked-hypothesis-only; "thesis stands / compounding conversation" retracted + gated behind wet-lab.
+- `validation-experiments.md` §1.22: registered the chaperone-class wet-lab validation surface (review action #5) with the comp-047 supersession framing.
+
+**Review actions dispositioned:** #1 (revise language) ✓ superseded outright; #2 (fix comp-032 code/doc mismatches + rerun) → moot, comp-032 frozen as a superseded record rather than partially fixed; #3 (sensitivity analysis) → comp-047 attempted it but `sensitivity.json` didn't complete — documented as an honest residual gap, not hidden; #4 (non-tautological positive-control validation) ✓ this is exactly what comp-047 did, and the controls failed; #5 (register wet-lab validation) ✓ §1.22 addendum; #6 (gate compounding language) ✓ all sites gated behind wet-lab; #7 (provenance) → carried by comp-047's honest Axis-2-thin disclosure.
+
+**Note:** comp-047 will itself receive an independent comp-review when this batch pushes (the daemon fires on `comp-*` changes). Its two residual gaps (sensitivity, thin Axis 2) are pre-documented so that review confirms rather than surprises. Any post-run finding that a gap invalidates the null returns comp-047 to review — but because the corpus outcome is a *downgrade* (hedged hypothesis, no validated candidate list), a wrong null would not have propagated an over-claim.
