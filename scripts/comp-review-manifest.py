@@ -21,6 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 IGNORED_NAMES = {".DS_Store"}
 IGNORED_SUFFIXES = {".pyc"}
+IGNORED_DIRS = {"__pycache__", ".claude", ".venv", "venv", "node_modules"}
 
 
 def repo_path(raw: str) -> Path:
@@ -58,14 +59,22 @@ def ignored(path: Path) -> bool:
     return (
         path.name in IGNORED_NAMES
         or path.suffix in IGNORED_SUFFIXES
-        or "__pycache__" in path.parts
+        or any(part in IGNORED_DIRS or part.endswith("-env") for part in path.parts)
     )
 
 
-def comp_files(comp_dir: Path) -> tuple[list[Path], list[Path]]:
+def comp_files(comp_dir: Path, *, tracked_only: bool = False) -> tuple[list[Path], list[Path]]:
     design: list[Path] = []
     outputs: list[Path] = []
-    for path in sorted(comp_dir.rglob("*")):
+    if tracked_only:
+        result = subprocess.run(
+            ["git", "ls-files", "--", relative(comp_dir)], cwd=ROOT,
+            text=True, capture_output=True, check=True,
+        )
+        candidates = [ROOT / raw for raw in result.stdout.splitlines()]
+    else:
+        candidates = list(comp_dir.rglob("*"))
+    for path in sorted(candidates):
         if not path.is_file() or ignored(path):
             continue
         rel = path.relative_to(comp_dir)
@@ -120,7 +129,7 @@ def create(args: argparse.Namespace) -> None:
     if reviews_dir.resolve() not in output.parents:
         raise SystemExit("Manifest output must live under the COMP reviews/ directory")
 
-    design_files, output_files = comp_files(comp_dir)
+    design_files, output_files = comp_files(comp_dir, tracked_only=args.phase == "push")
     proposed = [repo_path(raw) for raw in args.proposed_file]
     if args.phase == "push":
         proposed.extend(referencing_wiki_files(comp_id(comp_dir), comp_dir))
@@ -213,7 +222,7 @@ def check(args: argparse.Namespace) -> None:
     if phase not in {"pre", "post", "push"}:
         errors.append(f"invalid phase: {phase!r}")
     comp_dir = repo_path(str(document.get("comp_dir", "")))
-    current_design, current_outputs = comp_files(comp_dir)
+    current_design, current_outputs = comp_files(comp_dir, tracked_only=phase == "push")
 
     recorded_files = list(document.get("files", []))
     recorded_design = [item for item in recorded_files if item.get("kind") == "design"]

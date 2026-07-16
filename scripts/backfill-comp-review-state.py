@@ -58,6 +58,7 @@ def receipt_document(identifier: str, comp_rel: str, commit: str, manifest: dict
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true", help="Write manifests, receipts, and state")
+    parser.add_argument("--force", action="store_true", help="Replace existing legacy baselines")
     args = parser.parse_args()
     commit = run("git", "rev-parse", "HEAD")
     state = json.loads(STATE.read_text())
@@ -67,7 +68,8 @@ def main() -> None:
         if not comp_dir.is_dir():
             continue
         identifier = comp_id(comp_dir)
-        if identifier in state.get("comp_reviews", {}):
+        existing = state.get("comp_reviews", {}).get(identifier)
+        if existing and not (args.force and existing.get("comp_verdict") == "legacy_review_pending"):
             continue
         pending.append(identifier)
         if not args.write:

@@ -214,7 +214,7 @@
     "comp-001": {
       "comp_dir": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability",
       "artifact_manifest_sha256": "c41e4e5a729252642a1cb186c149a954d414470e56156d212d588a1a4c8ec6c9",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -260,13 +260,13 @@
         "wiki/uricase-shio-koji-thermal-stability-computational.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:38Z",
+      "timestamp": "2026-07-16T20:29:49Z",
       "cost_usd": 0.0
     },
     "comp-002": {
       "comp_dir": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability",
       "artifact_manifest_sha256": "75a266dab663987229d0706cf291eea98d3f1e4f3c86cfb0217a26141c7b02cd",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -278,13 +278,13 @@
         "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/wiki-archive.md",
         "wiki/uricase-shio-koji-thermal-stability-computational.md"
       ],
-      "timestamp": "2026-07-16T20:27:38Z",
+      "timestamp": "2026-07-16T20:29:49Z",
       "cost_usd": 0.0
     },
     "comp-004": {
       "comp_dir": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism",
       "artifact_manifest_sha256": "b4535908918a82a577d0a94aa0f6a284fc80aadf3aaaae33236a633e5963eca3",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -308,13 +308,13 @@
         "wiki/tcm-modern-rigor-intersection.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:38Z",
+      "timestamp": "2026-07-16T20:29:49Z",
       "cost_usd": 0.0
     },
     "comp-005": {
       "comp_dir": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability",
       "artifact_manifest_sha256": "e1a243c96478ba6b50f5f45dbf468e34e1a92f48070bf57a85a5b0cba9e1d1a5",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -355,13 +355,13 @@
         "wiki/lactoferrin.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:38Z",
+      "timestamp": "2026-07-16T20:29:49Z",
       "cost_usd": 0.0
     },
     "comp-006": {
       "comp_dir": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability",
       "artifact_manifest_sha256": "341380d364bada642bb597215cf40eb53b116a54ace21b0b1a9253b524447ba9",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -400,13 +400,13 @@
         "wiki/nlrp3-exploit-map.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:38Z",
+      "timestamp": "2026-07-16T20:29:49Z",
       "cost_usd": 0.0
     },
     "comp-007": {
       "comp_dir": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen",
       "artifact_manifest_sha256": "94b81c719e96e8c4a932b65a016ae7008947b097f7cd66ba8eaab54f217db724",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -441,13 +441,13 @@
         "wiki/tcm-modern-rigor-intersection.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:38Z",
+      "timestamp": "2026-07-16T20:29:49Z",
       "cost_usd": 0.0
     },
     "comp-008": {
       "comp_dir": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression",
       "artifact_manifest_sha256": "0310db05032661d6bfee32d31f44217a07fdbe825c4e01e59dc565d0b97cbec5",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -463,13 +463,13 @@
         "wiki/modality-chokepoint-matrix.md",
         "wiki/open-questions.md"
       ],
-      "timestamp": "2026-07-16T20:27:38Z",
+      "timestamp": "2026-07-16T20:29:50Z",
       "cost_usd": 0.0
     },
     "comp-009": {
       "comp_dir": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection",
       "artifact_manifest_sha256": "3b647d2cf7a64768a371da140d6ecddd38116e0a2fd82fb787e98446f7d7afff",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -483,13 +483,13 @@
         "wiki/sirna-urat1-modality.md",
         "wiki/urat1-sirna-target-site-selection-computational.md"
       ],
-      "timestamp": "2026-07-16T20:27:38Z",
+      "timestamp": "2026-07-16T20:29:50Z",
       "cost_usd": 0.0
     },
     "comp-010": {
       "comp_dir": "wiki/etc/experiments/comp-010-cassette-compatibility",
       "artifact_manifest_sha256": "d5de0ba82f8f802169c98f653a3c354a344a44abd71acc94d78919bff3c08f4e",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-010-cassette-compatibility/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -517,13 +517,13 @@
         "wiki/uricase-variant-selection.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:38Z",
+      "timestamp": "2026-07-16T20:29:50Z",
       "cost_usd": 0.0
     },
     "comp-011": {
       "comp_dir": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility",
       "artifact_manifest_sha256": "2475142cba5288a510907de34c3e1b72ad31e6e65ff048adf5d625181da5031c",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -547,13 +547,13 @@
         "wiki/tcm-modern-rigor-intersection.md",
         "wiki/uricase-variant-selection.md"
       ],
-      "timestamp": "2026-07-16T20:27:38Z",
+      "timestamp": "2026-07-16T20:29:50Z",
       "cost_usd": 0.0
     },
     "comp-012": {
       "comp_dir": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated",
       "artifact_manifest_sha256": "b658274ede3263bfa1917fc5a8088baaf7d09b57fbf03e4c5292b2a7c84e3a78",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -599,13 +599,13 @@
         "wiki/upstream-complement-verification-rerun-computational.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:39Z",
+      "timestamp": "2026-07-16T20:29:50Z",
       "cost_usd": 0.0
     },
     "comp-013": {
       "comp_dir": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage",
       "artifact_manifest_sha256": "e796d18466cafd62c72e1467d7cec2a7c466618fe004da453cee66153d4eeee5",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -640,13 +640,13 @@
         "wiki/tcm-gout-compound-triage-computational.md",
         "wiki/tcm-modern-rigor-intersection.md"
       ],
-      "timestamp": "2026-07-16T20:27:39Z",
+      "timestamp": "2026-07-16T20:29:50Z",
       "cost_usd": 0.0
     },
     "comp-014": {
       "comp_dir": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping",
-      "artifact_manifest_sha256": "2d36a422426c37219db93ecb06115a20bd2c1b14a48f09eae3ff8089aab8bd59",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "artifact_manifest_sha256": "ceeeef50086339d2b7f0440665346e0f2aad76eb359b40ea572b76328b6534bc",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -684,13 +684,13 @@
         "wiki/tcm-modern-rigor-intersection.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:39Z",
+      "timestamp": "2026-07-16T20:29:50Z",
       "cost_usd": 0.0
     },
     "comp-015": {
       "comp_dir": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping",
       "artifact_manifest_sha256": "2669a07cb570672720f9c6011f64e0a42f85505316e2683aa011d0590d24a4c2",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -705,13 +705,13 @@
         "wiki/prps-purine-biosynthesis-chokepoint.md",
         "wiki/t-axis-adjuvant-urate-mapping-computational.md"
       ],
-      "timestamp": "2026-07-16T20:27:39Z",
+      "timestamp": "2026-07-16T20:29:50Z",
       "cost_usd": 0.0
     },
     "comp-016": {
       "comp_dir": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining",
       "artifact_manifest_sha256": "84122809c398d23829ce93003d11b56893a90e638b2a9177e62cdd666e0af29b",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -735,13 +735,13 @@
         "wiki/prps-purine-biosynthesis-chokepoint.md",
         "wiki/t-abcg2-suppression-evidence-mining-computational.md"
       ],
-      "timestamp": "2026-07-16T20:27:39Z",
+      "timestamp": "2026-07-16T20:29:50Z",
       "cost_usd": 0.0
     },
     "comp-017": {
       "comp_dir": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining",
       "artifact_manifest_sha256": "dd039001e3e4de2e58489734a1c1fba52f96390fe14a8a9157bf857f0ee52af5",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -760,13 +760,13 @@
         "wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md",
         "wiki/open-questions.md"
       ],
-      "timestamp": "2026-07-16T20:27:39Z",
+      "timestamp": "2026-07-16T20:29:50Z",
       "cost_usd": 0.0
     },
     "comp-018": {
       "comp_dir": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep",
       "artifact_manifest_sha256": "da156241ce2ced7630c37e42748b9f087ebcb4b340861ba7214858d0b6a425d6",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -804,13 +804,13 @@
         "wiki/upstream-complement-verification-rerun-computational.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:39Z",
+      "timestamp": "2026-07-16T20:29:51Z",
       "cost_usd": 0.0
     },
     "comp-019": {
       "comp_dir": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification",
       "artifact_manifest_sha256": "e6384163290c8290406a58c62ce7ccc9acaaf0e658ce3b1a7f1de3be05e6bea0",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -848,13 +848,13 @@
         "wiki/uricase.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:40Z",
+      "timestamp": "2026-07-16T20:29:51Z",
       "cost_usd": 0.0
     },
     "comp-020": {
       "comp_dir": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun",
       "artifact_manifest_sha256": "7281826299c05075985b4c5ecf0414709ac03d621b695ce2500f94e2430e6e88",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -881,13 +881,13 @@
         "wiki/upstream-complement-modulator-sweep-computational.md",
         "wiki/upstream-complement-verification-rerun-computational.md"
       ],
-      "timestamp": "2026-07-16T20:27:40Z",
+      "timestamp": "2026-07-16T20:29:51Z",
       "cost_usd": 0.0
     },
     "comp-021": {
       "comp_dir": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping",
       "artifact_manifest_sha256": "f22531db5bbb3a58f9057331e9708c27568cb4b3156bbda77e470000f0e73efc",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -899,13 +899,13 @@
         "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md",
         "wiki/upstream-complement-assay-format-mapping-computational.md"
       ],
-      "timestamp": "2026-07-16T20:27:40Z",
+      "timestamp": "2026-07-16T20:29:51Z",
       "cost_usd": 0.0
     },
     "comp-022": {
       "comp_dir": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking",
-      "artifact_manifest_sha256": "65ce1f5f24e52e197d0310db5ca2b4e90893df45970a39e1491b0ed6b69924c3",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "artifact_manifest_sha256": "0cc71e7b4ac72c33a609c249ab917e1fa23693bf037c6a066b7d22fcd31a96ed",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -928,13 +928,13 @@
         "wiki/uricase-cassette-ranking-computational.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:44Z",
+      "timestamp": "2026-07-16T20:29:51Z",
       "cost_usd": 0.0
     },
     "comp-023": {
       "comp_dir": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden",
       "artifact_manifest_sha256": "e47479c86c5fed32ef197efe45dee4815c87d6b7b30a8c46c007fdd23d0888e8",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -951,13 +951,13 @@
         "wiki/medicinal-mushroom-complement-track.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:44Z",
+      "timestamp": "2026-07-16T20:29:51Z",
       "cost_usd": 0.0
     },
     "comp-024": {
       "comp_dir": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility",
       "artifact_manifest_sha256": "782e55aee3280354e693508b5ea97bb05b9ce04438b9e05dddddbe226291fa61",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -977,13 +977,13 @@
         "wiki/etc/validation-experiments-archive.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:44Z",
+      "timestamp": "2026-07-16T20:29:51Z",
       "cost_usd": 0.0
     },
     "comp-027": {
       "comp_dir": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling",
       "artifact_manifest_sha256": "a5032df88d623bc90fcdcb61fb22bece3807d90385bf5574f1bc0c87399a3fd1",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1001,13 +1001,13 @@
         "wiki/open-questions.md",
         "wiki/supplements-stack.md"
       ],
-      "timestamp": "2026-07-16T20:27:44Z",
+      "timestamp": "2026-07-16T20:29:51Z",
       "cost_usd": 0.0
     },
     "comp-029": {
       "comp_dir": "wiki/etc/experiments/comp-029-combined-cp0-systems-model",
       "artifact_manifest_sha256": "7ad94becc384241708459211ed774e7747c3ef705fba093c32db226f939cd560",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-029-combined-cp0-systems-model/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1023,13 +1023,13 @@
         "wiki/upstream-complement-assay-format-mapping-computational.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:44Z",
+      "timestamp": "2026-07-16T20:29:51Z",
       "cost_usd": 0.0
     },
     "comp-030": {
       "comp_dir": "wiki/etc/experiments/comp-030-daf-cassette-ranking",
       "artifact_manifest_sha256": "c7673209384093efeb575e52b779b214290c531a71aa34a5eb699f3e942c800e",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-030-daf-cassette-ranking/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1046,13 +1046,13 @@
         "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/wiki-archive.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:45Z",
+      "timestamp": "2026-07-16T20:29:52Z",
       "cost_usd": 0.0
     },
     "comp-031": {
       "comp_dir": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua",
       "artifact_manifest_sha256": "9d3cb2b512c7d3120786688dc514931470e35277e3a97c18fed01e3b76504018",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1068,13 +1068,13 @@
         "wiki/staged-purine-sink-mass-balance-computational.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:45Z",
+      "timestamp": "2026-07-16T20:29:52Z",
       "cost_usd": 0.0
     },
     "comp-032": {
       "comp_dir": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen",
       "artifact_manifest_sha256": "9318c3abebd892cd6c0800185492f3cd07569f0aac8388d3d9f8b58b504ada1e",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1094,13 +1094,13 @@
         "wiki/gout-genetic-variants.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:45Z",
+      "timestamp": "2026-07-16T20:29:52Z",
       "cost_usd": 0.0
     },
     "comp-033": {
       "comp_dir": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy",
       "artifact_manifest_sha256": "dc54fb6b7e2d3a3367df5993b6352ef6ded612c8330cee8080fb71a065586ff2",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1118,13 +1118,13 @@
         "wiki/inhaled-mrna-il1ra-pulse-computational.md",
         "wiki/repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md"
       ],
-      "timestamp": "2026-07-16T20:27:45Z",
+      "timestamp": "2026-07-16T20:29:52Z",
       "cost_usd": 0.0
     },
     "comp-034": {
       "comp_dir": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign",
       "artifact_manifest_sha256": "d39b740a2e9c5742d665b1f39bee4ba078a690805b6a13bbe99dc4c90d4b5457",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1141,13 +1141,13 @@
         "wiki/lactoferrin.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:45Z",
+      "timestamp": "2026-07-16T20:29:52Z",
       "cost_usd": 0.0
     },
     "comp-035": {
       "comp_dir": "wiki/etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion",
       "artifact_manifest_sha256": "65de1c3a1ddf4209ce26d5acea9257b74256bd21a36d24b9fe9ccb8cae75daed",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1166,13 +1166,13 @@
         "wiki/inhaled-mrna-il1ra-pulse-computational.md",
         "wiki/intra-articular-uricase-h2o2-reaction-diffusion-computational.md"
       ],
-      "timestamp": "2026-07-16T20:27:45Z",
+      "timestamp": "2026-07-16T20:29:52Z",
       "cost_usd": 0.0
     },
     "comp-036": {
       "comp_dir": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd",
       "artifact_manifest_sha256": "e68f7c2a889388e91df6b109a77e6d5d7e9e0d44219c0cffe63826bcb41b4609",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1186,13 +1186,13 @@
         "wiki/nlrp3-exploit-map.md",
         "wiki/repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md"
       ],
-      "timestamp": "2026-07-16T20:27:45Z",
+      "timestamp": "2026-07-16T20:29:52Z",
       "cost_usd": 0.0
     },
     "comp-037": {
       "comp_dir": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn",
       "artifact_manifest_sha256": "96d510bced5bbb10e66b90fa77fea9f64f7d0ef9244dda038a7dd1a782d85d2d",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1214,13 +1214,13 @@
         "wiki/nlrp3-exploit-map.md",
         "wiki/upstream-complement-modulator-sweep-computational.md"
       ],
-      "timestamp": "2026-07-16T20:27:45Z",
+      "timestamp": "2026-07-16T20:29:52Z",
       "cost_usd": 0.0
     },
     "comp-038": {
       "comp_dir": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit",
       "artifact_manifest_sha256": "f444b135e6fdefbed1204bb5b0926a460a422529551be0d0c0dce9948422a48c",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1235,13 +1235,13 @@
         "wiki/tier-2-butyrate-assay-audit-computational.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:45Z",
+      "timestamp": "2026-07-16T20:29:52Z",
       "cost_usd": 0.0
     },
     "comp-042": {
       "comp_dir": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx",
       "artifact_manifest_sha256": "680b29c38faa676f7b4b44f86f8d9f2dbcee151352dfc3f0be2561dae88ccad1",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1254,13 +1254,13 @@
         "wiki/open-questions.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:45Z",
+      "timestamp": "2026-07-16T20:29:53Z",
       "cost_usd": 0.0
     },
     "comp-043": {
       "comp_dir": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility",
       "artifact_manifest_sha256": "b38edbd2c56e89ca7451e2c25c3a42550675be4adffd16b2f6514b9f50c3d639",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1271,13 +1271,13 @@
         "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
         "wiki/engineered-lbp-chassis.md"
       ],
-      "timestamp": "2026-07-16T20:27:45Z",
+      "timestamp": "2026-07-16T20:29:53Z",
       "cost_usd": 0.0
     },
     "comp-044": {
       "comp_dir": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime",
       "artifact_manifest_sha256": "23edc4eb9a54c00119b94ee1ee86879540bd9545c079dd217b0f8684655354ab",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1312,13 +1312,13 @@
         "wiki/uricase.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:46Z",
+      "timestamp": "2026-07-16T20:29:53Z",
       "cost_usd": 0.0
     },
     "comp-045": {
       "comp_dir": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design",
       "artifact_manifest_sha256": "8e887bd49a3a2cb1fcdb4e76ab3eb29c9e2f83785340bbe66663706193af87a4",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1337,13 +1337,13 @@
         "wiki/uricase.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:46Z",
+      "timestamp": "2026-07-16T20:29:53Z",
       "cost_usd": 0.0
     },
     "comp-046": {
       "comp_dir": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance",
       "artifact_manifest_sha256": "9d1773992b7567fa8745994ef60ae639e41d8b8fc11c8440fc5edc4441e8cf0a",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1360,13 +1360,13 @@
         "wiki/staged-purine-sink-mass-balance-computational.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:46Z",
+      "timestamp": "2026-07-16T20:29:53Z",
       "cost_usd": 0.0
     },
     "comp-047": {
       "comp_dir": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen",
-      "artifact_manifest_sha256": "1c1dc5c472323da1878468aa5efd43632535c7e66ea1eff80d4740f70ffc939d",
-      "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+      "artifact_manifest_sha256": "895747c44da1726a5ea573069dcef8f7df44faada2e04181eca59a1ca2018066",
+      "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
       "review_receipt": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/reviews/push-review.md",
       "comp_verdict": "legacy_review_pending",
       "propagation_eligibility": "blocked",
@@ -1382,7 +1382,7 @@
         "wiki/gout-genetic-variants.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-16T20:27:46Z",
+      "timestamp": "2026-07-16T20:29:53Z",
       "cost_usd": 0.0
     }
   },

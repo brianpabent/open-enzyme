@@ -71,6 +71,11 @@ REVIEWED_SNAPSHOT: manifest:abc
         self.assertEqual(["run.py"], [path.name for path in design])
         self.assertEqual(["summary.json"], [path.name for path in outputs])
 
+    def test_push_manifest_is_limited_to_git_tracked_artifacts(self):
+        source = (ROOT / "scripts/comp-review-manifest.py").read_text()
+        self.assertIn('tracked_only=args.phase == "push"', source)
+        self.assertIn('["git", "ls-files", "--", relative(comp_dir)]', source)
+
 
 class WorkflowTriggerTests(unittest.TestCase):
     def test_full_synthesis_has_no_push_trigger(self):

@@ -58,12 +58,6 @@
       "sha256": "1f915cbbe4fc8d7d87985993325b60fd7c272489ad847efc749fdce36ab9d39c"
     },
     {
-      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/logs/run.log",
-      "kind": "design",
-      "bytes": 16451,
-      "sha256": "1caa8783dba2ffd821e34ccfcdcc92aceca4b888842c80e23a7071ae115cf99d"
-    },
-    {
       "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/prep_receptor.py",
       "kind": "design",
       "bytes": 6155,
@@ -215,5 +209,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "1c1dc5c472323da1878468aa5efd43632535c7e66ea1eff80d4740f70ffc939d"
+  "manifest_sha256": "895747c44da1726a5ea573069dcef8f7df44faada2e04181eca59a1ca2018066"
 }
