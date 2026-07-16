@@ -200,6 +200,20 @@ class DistributedSynthesisContractTests(unittest.TestCase):
         finally:
             trigger.unlink(missing_ok=True)
 
+    def test_proposed_comp_label_does_not_require_an_artifact_receipt(self):
+        state = json.loads((ROOT / "logs/sweep-state.json").read_text())
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".md", dir=ROOT / "wiki", delete=False
+        ) as handle:
+            handle.write("comp-040 is proposed and has no artifact yet.\n")
+            trigger = Path(handle.name)
+        try:
+            distributed.validate_trigger_comp_eligibility(
+                [trigger.relative_to(ROOT).as_posix()], state
+            )
+        finally:
+            trigger.unlink(missing_ok=True)
+
     def test_section_inventory_and_sharding_preserve_every_section(self):
         with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
             path = Path(tmp) / "source.md"

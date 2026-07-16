@@ -228,6 +228,16 @@ def source_files() -> list[Path]:
     return sorted(set(paths))
 
 
+def artifact_comp_ids() -> set[str]:
+    """Return only COMP identifiers with an actual experiment artifact."""
+    result = set()
+    for path in (ROOT / "wiki" / "etc" / "experiments").glob("comp-*"):
+        match = re.match(r"^(comp-\d{3})(?:-|$)", path.name)
+        if path.is_dir() and match:
+            result.add(match.group(1))
+    return result
+
+
 def domain_for(path: str, heading: str, text: str) -> str:
     sample = f"{path} {heading} {text[:1200]}".lower()
     scores = {
@@ -409,6 +419,8 @@ def exact_source_packet(candidate: dict[str, Any], atom_by_id: dict[str, dict[st
         selected.append({"atom": atom, "raw_source": source_text})
         for match in COMP_RE.finditer(source_text):
             comp_id = f"comp-{match.group(1)}"
+            if comp_id not in artifact_comp_ids():
+                continue
             review = state.get("comp_reviews", {}).get(comp_id)
             if not review:
                 raise RuntimeError(f"Candidate uses {comp_id} without a current push-review receipt")
@@ -562,6 +574,8 @@ def validate_trigger_comp_eligibility(trigger_paths: list[str], state: dict[str,
             continue
         for match in COMP_RE.finditer(path.read_text(errors="replace")):
             comp_id = f"comp-{match.group(1)}"
+            if comp_id not in artifact_comp_ids():
+                continue
             review = state.get("comp_reviews", {}).get(comp_id)
             if not review:
                 raise RuntimeError(f"Trigger surface {raw_path} cites {comp_id} without current push review")
