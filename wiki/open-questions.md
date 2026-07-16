@@ -88,7 +88,7 @@ Questions about uricase variant selection, GI survival, protease resistance, yea
 
 ### Yeast vs. koji platform choice
 
-- **Does the yeast mass-burden problem (50-170 g fresh yeast/day for a therapeutic dose) rule out yeast as a primary platform?** Koji is dose-advantaged on scaling; 10-15 g dry koji = equivalent enzyme load. See [engineered-yeast-uricase-proposal.md §5](./engineered-yeast-uricase-proposal.md), [synthesis archive Contradiction 1](../synthesis/history/_pre-2026-05-08-archive.md).
+- **At what expression and recovery levels does a yeast route become operationally competitive?** Existing mass-burden estimates are track-specific assumptions, not a reason to appoint a different chassis as the project default. See [engineered-yeast-uricase-proposal.md §5](./engineered-yeast-uricase-proposal.md).
 - **Can the Ward 1995 *A. awamori* glucoamylase-fusion + KEX-2 architecture (>2 g/L submerged) transfer to solid-state rice koji fermentation?** The submerged-culture precedent is solid (PMID 9634791). Solid-state mass transfer, redox, and proteolysis dynamics are different. This is the specific gating experiment for the lactoferrin co-expression module. See [engineered-koji-protocol.md §16](./engineered-koji-protocol.md), [spm-resolution-pathway.md §5](./spm-resolution-pathway.md).
 
 ### Protein engineering
@@ -283,9 +283,9 @@ See [nlrp3-inhibitor-screen.md §Meta-Finding](./nlrp3-inhibitor-screen.md), [sy
 
 ---
 
-## Platform / Strategic
+## Portfolio / Strategic
 
-Questions about the koji-first vs. yeast-first choice, community fermentation reliability, strain stability, regulatory positioning, and the overall platform thesis.
+Questions about track selection, shared assumptions, production reliability, strain stability, regulatory positioning, and which gout exploit should receive the next discriminating experiment.
 
 ### Layered intervention — combining a compounded repurposed-drug pill with the engineered-koji daily food *(added 2026-05-15, **dormant until both upstream products exist**)*
 
@@ -309,7 +309,7 @@ The combination is mechanistically clean (different mechanisms, different routes
 
 **Falsification card committed:** [H09 — Community Fermentation Reliability](./hypotheses/H09-community-fermentation-reliability.md) (stub, 2026-05-15). Full killshot menu, pre-committed thresholds, and assumption stack queued as Phase 2 on the H09 card.
 
-Sister risk to [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) (mechanism side). The platform thesis has two equally load-bearing risks: even if the gut-lumen mechanism works (H08), the platform's distinctive accessibility thesis ("grow it at home like sourdough") rests on this assumption (H09). If H09 dies, the platform collapses to "centrally-manufactured oral enzyme with a non-traditional supply chain" — defensible but no longer open-source-accessible.
+H09 is a production-model risk within the koji track, while [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) tests a mechanism shared by several oral luminal urate-degradation approaches. If H09 fails, community production is revised or killed; centralized koji manufacture and unrelated tracks remain available.
 
 The corpus offers strong mitigation sketches (chromosomal integration, first-batch QC, never-backslop-past-N rule) and honest framing (`cross-validation.md` Claim 5 calls "Easy as Sourdough" the most audacious and least-validated platform claim), but **zero direct empirical evidence for an engineered multi-cassette *A. oryzae* strain in the community-fermentation context.** Ward 1995 §1.9 dual-cassette feasibility test is the first wet-lab gate — but only validates lab expression, not community-fermentation reliability.
 

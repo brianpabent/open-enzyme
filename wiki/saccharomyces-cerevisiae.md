@@ -106,9 +106,9 @@ The uricase **product plan** — source-gene selection (*A. flavus* uaZ vs. *C. 
 - Dosing mathematics (uric-acid budget, yeast-mass-per-dose, koji cross-check): [proposal §5](./engineered-yeast-uricase-proposal.md#dosing)
 - Regulatory framework (food / supplement / LBP / drug pathways): [proposal §6, Q4](./engineered-yeast-uricase-proposal.md#questions)
 
-## Platform Positioning — Koji-First, Yeast Retained for Specific Modules
+## Role in the Open Enzyme Portfolio
 
-The Open Enzyme platform is **koji-first** (*A. oryzae* as primary host) for the therapeutic stack, with *S. cerevisiae* retained for specific modules where yeast expression is better characterized or more likely to succeed. This is an empirical, not ideological, distinction. (source: etc/open-enzyme-vision.md, §4)
+*S. cerevisiae* is a candidate production and validation chassis when its expression precedent, folding environment, process, or delivery format fits the payload. It is not a fallback required to wait for a koji result; host choice is an empirical decision within each track. (source: etc/open-enzyme-vision.md)
 
 **When yeast is the right choice:**
 - Tetrameric proteins where the rasburicase precedent (13% of total cellular protein in *S. cerevisiae*) is directly applicable
@@ -134,9 +134,9 @@ The Open Enzyme platform is **koji-first** (*A. oryzae* as primary host) for the
 | **Dual-purpose platform** | No (only uricase, requires optimization) | Yes (uricase + native digestive enzymes) |
 | **Expression level precedent** | 13% of total protein (rasburicase) | Comparable expected from strong promoters |
 | **Therapeutic credibility** | Very high (rasburicase precedent) | Very high (GRAS, ancient safety history) |
-| **Strategic role** | Retained for specific modules (tetrameric proteins, ursolic acid, carnosine) | **Primary platform** (koji-first) |
+| **Strategic role** | Candidate chassis with strong yeast precedent | Candidate chassis with secretion and solid-state advantages |
 
-For the [Open Enzyme platform](./etc/open-enzyme-vision.md), *A. oryzae* is the **primary host** (koji-first) because of the dual-enzyme advantage (uricase + native digestive enzymes), secretion capacity advantage (~10×), and simpler home fermentation. *S. cerevisiae* is retained for specific modules where the yeast expression path is better characterized or where koji expression fails or yields are inadequate. (source: etc/open-enzyme-vision.md, §4; engineered-yeast-uricase-proposal.md)
+For Open Enzyme, the comparison is track-specific. Koji may be attractive for secreted or solid-state configurations; yeast may be attractive where expression and manufacturing precedent are stronger. The discriminating assay, not a global chassis hierarchy, selects the host. (source: etc/open-enzyme-vision.md; engineered-yeast-uricase-proposal.md)
 
 ## Immunogenicity Considerations
 

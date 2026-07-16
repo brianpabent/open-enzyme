@@ -1,136 +1,65 @@
 # Open Enzyme
 
-A platform mission to disrupt the gout / NLRP3 / urate-disposal cascade by mapping every chokepoint and finding the right intervention for each — engineered, repurposed, dietary, or behavioral. The **highest-priority chassis** is an open source library of food-grade engineered microbial strains (engineered *A. oryzae* koji expressing uricase + lactoferrin + carnosine + DAF SCR1-4) — each producing a therapeutic enzyme, each growable at home, each freely available to anyone. Koji is the priority because it harmoniously hits multiple chokepoints in one strain, is food-grade, home-fermentable, and matches the open-source / democratized-access positioning. **Other interventions hitting chokepoints koji can't reach** — kidney-tropic siRNA, engineered LBPs, PDB via engineered EcN, mRNA-IL-1RA pulse, intra-articular formulations, phage modulation — are tracked under [chassis-pending interventions](wiki/chassis-pending-interventions.md). Addresses enzyme deficits (gout, EPI, lactose malabsorption) by combining GRAS-certified fermentation biology with rational enzyme engineering and safe immunomodulation, plus discovery-engine outputs that point beyond the engineered-strain chassis.
+**Use red-teaming techniques to identify exploitable weaknesses in gout, and use creative engineering to exploit them.**
 
-**Status:** Phase 0 — Research & Design  
-**Dashboard:** [index.md](index.md) — platform thesis, synthesis queue, cheapest-next-experiments, full concept index
+Open Enzyme is an open-source Phase 0 research project. It maps gout across urate physiology, crystal formation, innate immunity, inflammatory amplification, resolution, delivery, and translation; turns promising weaknesses into falsifiable intervention tracks; and runs the cheapest experiments that can kill or redirect them.
 
----
+Koji is one track. It will be valuable if it works. If it does not, the project will document why, preserve what the result teaches about gout, and move to a better exploit. No chassis, strain, payload, or production model is the project.
 
-## Research Library (wiki/)
+Start with:
 
-All research lives in `wiki/` — long-form primary documents and shorter synthesized concept pages side by side. The sweep daemon keeps these current as new findings land.
+- [Mission and operating principles](wiki/etc/open-enzyme-vision.md)
+- [Research dashboard](index.md)
+- [Adversarial method and track threat models](wiki/cross-validation.md)
+- [Gout exploit map](wiki/nlrp3-exploit-map.md)
+- [Validation experiments](wiki/validation-experiments.md)
+- [Active synthesis queue](synthesis/queue/)
 
-### Primary Research
+For the engineered-koji work specifically, use the [koji track](wiki/koji-track.md), [engineering protocol](wiki/engineered-koji-protocol.md), and [current threat model](wiki/cross-validation.md#koji-track-threat-model).
 
-| Document | What it covers |
-|----------|---------------|
-| [open-enzyme-vision.md](wiki/etc/open-enzyme-vision.md) | North Star: the problem, insight, and platform vision |
-| [enzyme-deficit-deep-dive.md](wiki/enzyme-deficit-deep-dive.md) | Epidemiology, pathophysiology, and clinical burden of enzyme deficits |
-| [gout-deep-dive.md](wiki/gout-deep-dive.md) | Uric acid metabolism, NLRP3 inflammasome, acute flare mechanisms, current therapies |
-| [engineered-yeast-uricase-proposal.md](wiki/engineered-yeast-uricase-proposal.md) | Engineering uricase into *S. cerevisiae*: construct design, expression, fermentation |
-| [engineered-koji-protocol.md](wiki/engineered-koji-protocol.md) | Multi-enzyme koji (*A. oryzae*): uricase + digestive enzyme co-expression, rice-based substrate |
-| [nlrp3-exploit-map.md](wiki/nlrp3-exploit-map.md) | NLRP3 inflammasome targeting: all 6 chokepoints, agents, and combinations |
-| [blood-barrier-exploits.md](wiki/blood-barrier-exploits.md) | Intestinal barrier biology, tight-junction dynamics, enzyme bioavailability |
-| [ai-bio-tools-playbook.md](wiki/etc/ai-bio-tools-playbook.md) | Computational biology: structure prediction, codon optimization, strain design pipelines |
-| [peptide-gout-addendum.md](wiki/peptide-gout-addendum.md) | Immunomodulatory peptides (KPV, BPC-157) in gout: barrier repair and synergy |
+## Research model
 
-### Engineering Deep Dives
+Each active track states:
 
-**Uricase / *S. cerevisiae* track:**
+1. the gout weakness;
+2. the exploit hypothesis;
+3. the proposed engineering;
+4. evidence by level;
+5. assumptions and safety constraints;
+6. the cheapest discriminating experiment;
+7. pass, revise, and kill criteria;
+8. what remains true if the track fails.
 
-| Document | What it covers |
-|----------|---------------|
-| [uricase-variant-selection.md](wiki/uricase-variant-selection.md) | Six variants evaluated; *A. flavus* primary, engineering roadmap |
-| [gi-survival-prediction.md](wiki/gi-survival-prediction.md) | GI transit model: 15–25% baseline survival → 40–50% with engineering |
-| [protein-engineering-strategy.md](wiki/protein-engineering-strategy.md) | SB-1 / BAL-1 / OPT-1 mutation tiers for acid stability + protease resistance |
-| [codon-optimization-expression-cassette.md](wiki/codon-optimization-expression-cassette.md) | *S. cerevisiae* expression cassette design; predicted yield 800–1,200 mg/L |
+The reusable form is [track-template.md](wiki/etc/track-template.md).
 
-**Koji / *A. oryzae* track:**
+## Evidence standard
 
-| Document | What it covers |
-|----------|---------------|
-| [koji-construct-design.md](wiki/koji-construct-design.md) | amyB promoter, uricase expression; expected 40–80 mg/g koji |
-| [digestive-enzyme-optimization.md](wiki/digestive-enzyme-optimization.md) | RIB40 strain; lipase 1,813–2,280 U/g; rice bran optimal substrate |
-| [nlrp3-inhibitor-screen.md](wiki/nlrp3-inhibitor-screen.md) | Top candidates: ursolic acid, quercetin, carnosine; kojic acid as native bonus |
-| [cross-validation.md](wiki/cross-validation.md) | Thesis stress test: risk matrix, feasibility ratings, ALLN-346 clinical bridge |
+Claims distinguish clinical trials, animal models, in-vitro evidence, computational results, and mechanistic extrapolation. Load-bearing numbers are verified against primary sources before commit. Computational experiments use hash-bound pre-run and post-run review gates plus an independent push review before their claims can propagate or enter synthesis.
 
-### Concept Pages
+This repository is research-stage and does not provide medical advice.
 
-**Core Targets:**
-[Uricase](wiki/uricase.md) · [NLRP3 Inflammasome](wiki/nlrp3-inflammasome.md) · [Digestive Enzymes](wiki/digestive-enzymes.md) · [Gout Pathophysiology](wiki/gout-pathophysiology.md)
+## Knowledge workflow
 
-**Organisms:**
-[Saccharomyces cerevisiae](wiki/saccharomyces-cerevisiae.md) · [Aspergillus oryzae](wiki/aspergillus-oryzae.md)
+- Every push publishes the current site.
+- Relevant research pushes receive bounded cross-page propagation.
+- Changed computational experiments are independently reviewed before derived claims propagate.
+- Full-corpus synthesis runs only by explicit request. It reads the complete current corpus twice, searches every domain pair, reopens raw sources and exact computational outputs, and independently reviews candidates.
+- The live tree stores current scientific state and active actions. Git is the revision history.
 
-**Delivery:**
-[Gut-Lumen Sink](wiki/gut-lumen-sink.md) · [Blood Barrier](wiki/blood-barrier.md)
-
-**Compounds:**
-[BPC-157](wiki/bpc-157.md) · [KPV Tripeptide](wiki/kpv-peptide.md) · [BHB / Ketones](wiki/bhb-ketones.md) · [Oridonin](wiki/oridonin.md) · [Disulfiram](wiki/disulfiram.md)
-
-**Synthesis:**
-[Synthesis queue](synthesis/queue/) — per-item action queue (cross-doc connections, contradictions, proposed experiments); architecture at [`synthesis/README.md`](synthesis/README.md)
-
----
-
-## Team
-
-- **Brian Abent** — Founder, Platform Architecture
-
-### Collaborator Roles (actively recruiting)
-
-The project is recruiting PhD-level collaborators in three complementary domains. See [`wiki/etc/team.md`](wiki/etc/team.md) for the full role descriptions and the questions each role would answer.
-
-- **Role 1 — Gut Microbiome & In Vivo Validation** (gnotobiotic models, microbiome dynamics)
-- **Role 2 — Pharma Translation & Regulatory Strategy** (NF-κB / intestinal signaling, FDA / IND pathway)
-- **Role 3 — Innate Immune Safety** (TLR signaling, PAMP / epitope analysis)
-
----
-
-## Quick Start
-
-### For Researchers
-1. Read [open-enzyme-vision.md](wiki/etc/open-enzyme-vision.md) (10 min)
-2. Browse [index.md](index.md) for the current platform thesis and concept map
-3. Check [`synthesis/queue/`](synthesis/queue/) for the latest cross-doc connections (one file per finding); architecture overview at [`synthesis/README.md`](synthesis/README.md)
-4. Dive into primary research docs for full citations and methodology
-
-### For Engineers & Makers
-1. Start with [engineered-yeast-uricase-proposal.md](wiki/engineered-yeast-uricase-proposal.md) or [engineered-koji-protocol.md](wiki/engineered-koji-protocol.md)
-2. See [protein-engineering-strategy.md](wiki/protein-engineering-strategy.md) for the mutation tier roadmap
-3. Review [ai-bio-tools-playbook.md](wiki/etc/ai-bio-tools-playbook.md) for strain design pipelines
-
-### For Clinical/Pharma Reviewers
-1. Read [gout-deep-dive.md](wiki/gout-deep-dive.md) and [cross-validation.md](wiki/cross-validation.md)
-2. Review [nlrp3-exploit-map.md](wiki/nlrp3-exploit-map.md) for immunomodulation strategy
-3. Check [blood-barrier-exploits.md](wiki/blood-barrier-exploits.md) for safety and bioavailability
-
----
-
-## Evidence & Rigor
-
-All claims are tagged with evidence level:
-- **Clinical Trial** — Data from human RCTs
-- **Animal Model** — Preclinical in vivo (murine, primate, etc.)
-- **In Vitro** — Cell culture, tissue, or biochemical data
-- **Mechanistic Extrapolation** — Reasonable inference from foundational biology
-
-Written for PhD scientists. We distinguish proven from speculative and do not oversell. See [CLAUDE.md](CLAUDE.md) for documentation standards.
-
----
+See [AGENTS.md](AGENTS.md) for the complete authoring and review rules.
 
 ## Contributing
 
-This is an open source research platform. The research library is the codebase.
+The research library is the codebase. Before opening an issue or pull request:
 
-**Before opening an issue or PR:**
-- Check [index.md](index.md) to see if the concept exists
-- If adding new research, create a page in `wiki/`, update relevant pages and `index.md`
-- Use standard markdown links (`[text](./path.md)`) — they render on GitHub
-- Tag all claims with evidence levels
+- check the [dashboard](index.md) and canonical concept page;
+- source the real project claim before challenging it;
+- add evidence levels and primary provenance;
+- keep detailed evidence in one canonical home and link from related pages;
+- define how the new information changes a track or decision.
 
-For AI assistants working on this project, see [CLAUDE.md](CLAUDE.md).
+## Team and license
 
----
+Open Enzyme is led by Brian Abent and is recruiting collaborators in microbiome/in-vivo validation, pharma translation/regulatory strategy, and innate-immune safety. See [team.md](wiki/etc/team.md).
 
-## License
-
-Open Enzyme is released under [MIT License](LICENSE). All research documents and wiki pages are freely available for scientific, educational, and commercial use.
-
----
-
-## Contact
-
-**Project Lead:** Brian Abent  
-**Email:** brian.abent@gmail.com
+The repository is released under the [MIT License](LICENSE).

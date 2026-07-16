@@ -7,7 +7,7 @@ status: published
 
 Biohacking Protocol — v1.0
 
-# Project Koji: Engineering a Living Pharmacy
+# Project Koji: Engineering a Food-Grade Enzyme Chassis
 
 A comprehensive protocol for engineering *Aspergillus oryzae* (koji mold) to express the uricase gene from *A. flavus*—creating a single food-safe organism that produces digestive enzymes AND gout-busting uricase. Grown on rice in your kitchen. Consumed as food. A dual-purpose therapeutic organism for Brian and Lynn.
 
@@ -23,27 +23,9 @@ Part of the [Open Enzyme](etc/open-enzyme-vision.md) project — the platform vi
 
 A single engineered koji strain that addresses two enzyme deficiencies in one household—grown on rice, consumed as food, maintained like a sourdough starter.
 
-Here's the insight that ties everything together: Brian has gout, which is fundamentally a **uricase deficit**. Humans lost the functional uricase gene ~15 million years ago (a pseudogene `UOX` sits silently on chromosome 1). Without uricase, uric acid accumulates. Crystals form. Joints scream. Lynn has digestive enzyme insufficiency—possibly SIBO-related, currently managed with BoulderBio supplements—which is a deficit of **lipase, protease, and amylase**.
+This document develops one falsifiable configuration within the [engineered-koji track](./koji-track.md): use *Aspergillus oryzae* as a production chassis for uricase and, conditionally, other gout-relevant payloads. The attraction is the combination of a food-production history, established fungal engineering methods, native enzyme secretion, and solid-state fermentation. None of those properties establishes therapeutic expression, dose, safety, or efficacy.
 
-Both conditions are enzyme deficits. Both can be addressed by a single organism.
-
-> **The Breakthrough**
-
-*Aspergillus oryzae* (koji mold) is one of the most well-characterized, genetically manipulable fungi in existence. It has GRAS (Generally Recognized As Safe) status from the FDA. It **already produces** the exact digestive enzymes Lynn needs—lipase, protease (multiple classes), and amylase in abundance. It's a domesticated organism that humans have been eating for over a thousand years in miso, soy sauce, sake, and amazake. And its close relative *A. flavus* produces a potent uricase—the very enzyme that rasburicase (a $40,000/vial IV drug) is derived from.
-
-**Insert the A. flavus uricase gene into A. oryzae. Grow it on rice. Eat it.**
-
-What you'd have is a **living pharmacy**—a single engineered organism, grown at home like traditional koji, that simultaneously:
-
-**For Lynn:** Produces lipase, acid-stable protease, and alpha-amylase as a food-grade digestive enzyme supplement, replacing BoulderBio pills
-
-**For Brian:** Produces uricase that degrades uric acid in the gut lumen, exploiting the intestinal urate secretion pathway (ABCG2) to pull uric acid from the blood and destroy it before reabsorption
-
-No pills. No IV infusions. No $40,000 drug. Rice, mold, salt, time. A fermentation practice that's been running for 1,000+ years, upgraded with one gene.
-
-> **Why This Isn't Crazy**
-
-The koji industry already relies on carefully maintained *A. oryzae* strains. Japanese sake brewers have been propagating specific strains for centuries. CRISPR-edited *A. oryzae* is routine in academic and industrial labs. The transformation protocols are published, the promoters are characterized, and the gene we need is already cloned and sequenced. This isn't theoretical—every individual component has been demonstrated. The novel contribution is combining them for direct therapeutic application.
+The load-bearing hypothesis is narrower: a selected payload can be expressed with the required identity, activity, localization, stability, and safety under an intended koji production and delivery format. Single-payload and physiological operating-regime gates come before multi-cassette designs. A failed payload–chassis pairing redirects the track; it does not decide Open Enzyme.
 
 ## 01b Natural Metabolite Bonus — Baseline Fermentation Byproducts
 
@@ -805,8 +787,8 @@ For the practical small-batch home protocol (koji-kin → koji rice → shio-koj
 
 This repositions the project into **two clear tracks**:
 
-- **Track A (Lynn, today):** Wild-type *A. oryzae* koji as a DIY digestive enzyme source. Replace pills with fermented rice. This works *now*.
-- **Track B (Brian, engineering required):** Engineered koji with the uaZ uricase gene—the dual-purpose strain described in this document. This is the stretch goal that makes koji a platform, not just a supplement replacement.
+- **Track A:** Quantify wild-type *A. oryzae* digestive-enzyme activity against the intended use and commercial comparator before making a replacement claim.
+- **Track B:** Test engineered koji expressing a selected uricase configuration through the gates defined in this document.
 
 See the full platform vision: [Open Enzyme Vision](etc/open-enzyme-vision.md).
 
@@ -816,11 +798,11 @@ There's no rule that says you pick only one. A robust approach might combine:
 
 - **Wild-type A. oryzae** koji for Lynn's digestive enzymes—available immediately, no engineering needed, traditional methods
 - **Engineered S. cerevisiae** as the [fastest path to uricase](engineered-yeast-uricase-proposal.md) for Brian (consumed as nutritional yeast or in capsules)
-- **Engineered A. oryzae** koji as the stretch-goal platform—dual-purpose (digestive enzymes + uricase), the true "living pharmacy" vision
+- **Engineered A. oryzae** as a candidate solid-state production-and-delivery configuration for uricase and compatible payloads
 
-### Pichia pastoris: The Dark Horse
+### *Komagataella phaffii* as an alternative production host
 
-*Pichia pastoris* (now *Komagataella phaffii*) is worth mentioning. It's GRAS, has the strongest known inducible promoter (AOX1, methanol-inducible), and is the workhorse of recombinant enzyme production. *A. flavus* uricase has already been cloned and expressed in *P. pastoris* with high yields. However, it's not a food fermentation organism in the traditional sense—you'd be producing purified enzyme, not a food product. Good for capsule/supplement format, less for the "living pharmacy" vision.
+*Pichia pastoris* (now *Komagataella phaffii*) is an alternative production host with established recombinant-enzyme use. It implies a manufactured enzyme or formulated product rather than a koji food format. That is a different implementation tradeoff, not a lesser fit to the mission.
 
 ## 14 Connecting the Dots
 
@@ -854,7 +836,7 @@ Zoom out: what you're building is a prototype for **personalized enzyme replacem
 - Oxalate decarboxylase for kidney stone prevention
 - Any enzyme that works in the gut lumen
 
-The koji becomes a **programmable food-grade enzyme delivery platform**. The vision isn't one strain. It's a library of strains, each engineered to address a specific enzyme deficit, grown at home, consumed as food. A living pharmacy that runs on rice.
+If the relevant expression, operating-regime, format, and safety gates pass, koji becomes one programmable production-and-delivery option within the gout portfolio. The evidence should decide which payloads and formats belong in it.
 
 > **The Big Picture**
 
@@ -1036,7 +1018,7 @@ The submerged-culture path is de-risked. **The open question is whether the Ward
 
 - **Promote to combined strain** if Phase A ≥500 mg/L AND Phase B confirms retained iron binding + antimicrobial activity + duodenal stability.
 - **Iterate on architecture** if titer 100-500 mg/L: try A. niger amyloglucosidase signal, try bovine lactoferrin (simpler glycosylation), try *A. oryzae* protease-knockout host strain.
-- **Fall back to separate production** if solid-state titer is irrecoverably low: produce lactoferrin via submerged *A. oryzae* or *P. pastoris*, co-formulate with the uricase koji as a finished product. This loses the "single-strain living pharmacy" elegance but preserves CP5b coverage in the product.
+- **Use separate production** if solid-state titer is irrecoverably low: produce lactoferrin via submerged *A. oryzae* or *K. phaffii* and evaluate co-formulation with the uricase configuration. This adds manufacturing complexity while avoiding a forced single-strain requirement.
 
 ### Cross-References
 
@@ -1158,7 +1140,7 @@ This is a **Phase 2 enhancement**, not required for baseline performance. Koji w
 
 ---
 
-**Project Koji — A Living Pharmacy Protocol**
+**Engineered Koji — Research Protocol**
 
 Brian & Lynn Abent · April 2026
 
@@ -1166,7 +1148,7 @@ Brian & Lynn Abent · April 2026
 
 ### Open Enzyme Research Library
 
-This document is part of the [Open Enzyme](etc/open-enzyme-vision.md) project — an open-source therapeutic enzyme platform.
+This document is part of [Open Enzyme](etc/open-enzyme-vision.md), an open-source red-team research program for gout.
 
 - [Open Enzyme Vision & Roadmap](etc/open-enzyme-vision.md)
 - [Gout Deep Dive Research](gout-deep-dive.md)

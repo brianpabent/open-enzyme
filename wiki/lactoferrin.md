@@ -350,7 +350,7 @@ If solid-state koji fermentation fails to hit adequate titer:
 2. **Submerged *A. awamori*** — directly replicates Ward 1995 at >2 g/L but introduces a second chassis and regulatory pathway.
 3. **Submerged *Pichia pastoris*** — Yen 2024 glucose-inducible system at 2.8 g/L (pLf) or Iglesias-Figueroa 2016 at 3.5 g/L (bLf, methanol-induced) — proven, but not koji, and requires co-formulation with the uricase koji as two separate products.
 
-The fallback hosts all solve the production problem; the koji bet is about keeping the single-strain "living pharmacy" product format, not about feasibility of lactoferrin production per se. Lactoferrin production in microbial systems is a **solved problem** — we are betting that a specific production format (solid-state koji rice) works, not betting on lactoferrin production in general.
+The alternative hosts address lactoferrin production by different routes; the koji-specific question is whether solid-state koji can support the selected payload and format. Failure of that pairing does not imply that lactoferrin cannot be produced elsewhere.
 
 ---
 

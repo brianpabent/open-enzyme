@@ -930,7 +930,7 @@ d) Enzyme activity — will it degrade UA at the required rate? (kcat/Km?)
 e) GI survival — will enough enzyme survive to the small intestine? (% surviving?)
 f) Therapeutic effect — will gut-lumen UA degradation lower serum UA? (mmol/L change?)
 g) Strain stability — will the engineered strain maintain expression over generations?
-h) Home production — can a non-scientist grow this reliably? (as easy as sourdough?)
+h) Distributed production — can the intended operators reproduce identity, activity, and safety?
 i) Taste/palatability — will people actually eat this? (flavor impact?)
 j) Safety — is regular consumption of engineered yeast safe long-term?
 

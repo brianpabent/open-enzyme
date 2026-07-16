@@ -34,7 +34,7 @@ These are **promising things that map to what we want to do**. The mechanism is 
 
 ## Why this page exists
 
-Open Enzyme is a **chokepoint-first, chassis-second** platform. The platform mission is to disrupt the gout / NLRP3 / urate-disposal cascade; engineered *A. oryzae* koji is the highest-priority chassis because it harmoniously hits multiple chokepoints in one strain (uricase + lactoferrin + carnosine + DAF SCR1-4) and matches the food-grade / open-source / home-fermentable / democratized-access positioning. Koji is one expression of the mission, not the mission itself.
+Open Enzyme is **exploit-first and implementation-second**. The mission is to identify weaknesses in gout and engineer ways to exploit them. Koji is one implementation track; an intervention that requires another chassis, a formulation, a device, or no chassis at all remains in scope.
 
 The risk this page mitigates: when a finding lands that hits a real chokepoint but doesn't fit koji, the recommendation step can quietly filter it as "off-platform." That filter is the failure mode the umbrella `CLAUDE.md` warns against ("don't ask 'does this fit the current chassis,' ask 'what open question might this tool answer?'"). This page makes the no-chassis-filter check structural rather than opportunistic.
 

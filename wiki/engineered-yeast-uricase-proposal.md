@@ -228,7 +228,7 @@ The synthesis queue entry ran the same calculation with slightly different inter
 
 **Interpretation.** Yeast intracellular expression is scientifically sound — the rasburicase precedent (Established) confirms the gene-host combination works at pharmaceutical scale. The problem is *format*, not biology. At clinical enzyme doses, the yeast mass required to act as a daily food product is implausible for anything short of a highly concentrated, lyophilized, and encapsulated preparation — which starts to look more like a pharmaceutical than a fermented food. Koji, by contrast, delivers the same enzyme mass from a portion that resembles a normal food serving.
 
-**Bottom line.** Yeast intracellular expression is scientifically sound but mass-impractical as a daily food product. Koji is dose-advantaged on scaling grounds and probably the right primary platform for oral delivery. This is consistent with the koji-first framing already adopted in [open-enzyme-vision.md](./etc/open-enzyme-vision.md) §3, and the yeast track is best understood as: (a) a rapid bench platform for construct validation, (b) a path to a concentrated powder/capsule product for the subset of patients who can't tolerate koji, or (c) the *S. boulardii* probiotic route where the dose is set by colonization, not by food mass.
+**Bottom line.** Yeast intracellular expression remains a candidate bench, concentrated-product, or probiotic route. Koji may have a mass or solid-state advantage for some oral configurations, but the host decision belongs to the payload, topology, format, and discriminating assay—not a project-wide chassis ranking. See [koji-track.md](./koji-track.md) and [open-enzyme-vision.md](./etc/open-enzyme-vision.md).
 
 ## 6. Open Scientific Questions <a id="questions"></a>
 These are framed as questions for specific experts, but each one includes a path to an answer.
@@ -420,23 +420,11 @@ Computational model of S. cerevisiae expression systems recommends:
 
 *Rationale (Mechanistic Extrapolation)*: Secretion of a 135 kDa tetramer is inefficient in yeast. Intracellular accumulation followed by natural autolysis in the fermentation broth or in the gut offers the best balance of expression yield and GI delivery.
 
-### Cross-Validation: Feasibility Rating 5.8/10, Critical De-Risking Path
+### Cross-Validation: Track-Specific Threat Model
 
-An integrated feasibility assessment across all constraints (enzyme activity, GI survival, dosing, regulatory) yields a composite rating of **5.8 / 10.0** — higher than naive estimates but highlighting significant unknowns.
+Do not reduce this proposal or Open Enzyme to a composite feasibility score. The yeast–uricase configuration has separable gates: expression and folding, activity under physiological conditions, topology and access, GI survival, coproduct safety, effect on the gut-lumen urate sink, manufacturing, and translation. Each gate should update the smallest dependent claim.
 
-**Critical constraints (lowest confidence):**
-- GI survival post-engineering: **4.0 / 10** (protease resistance unvalidated in unmodified A. flavus; depends on variant selection and delivery format)
-- Therapeutic efficacy in humans: **5.0 / 10** (rodent data supportive; human dose-response for oral uricase still uncertain per ALLN-346 Phase 2a divergence)
-
-**De-risking budget and timeline:**
-Estimated cost to achieve high-confidence proof-of-concept (Phases 0–3 with variant comparison): **~$300,000** over **12–18 months**. This includes:
-- Phases 0–2 (bench + in vitro): ~$5,000–8,000, 4–6 months
-- Phase 3 (gnotobiotic mouse validation with top 2 variants): ~$20,000–35,000, 8–12 weeks
-- Extended validation (human volunteer dosing, manufacturing scale): ~$250,000+, 6+ months
-
-*(Mechanistic Extrapolation based on comparative cost models for probiotic and enzyme-delivery studies)*
-
-**Next gate decision**: Upon completion of Phase 1 GI survival testing, the predicted improvement from the variant tiers should drive variant selection for Phase 3. If SB-1 achieves >3× baseline survival in SGF/SIF assay, proceed to single-variant Phase 3. If survival remains <2×, prioritize engineering (BAL-1) or reconsider delivery format (enteric capsule).
+The current adversarial method is [cross-validation.md](./cross-validation.md); shared gut-sink assumptions are tracked in [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md). A failed yeast configuration may redirect the payload, topology, format, or chassis without deciding unrelated gout tracks.
 
 ### Revision & Sources
 

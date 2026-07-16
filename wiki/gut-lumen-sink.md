@@ -216,7 +216,7 @@ Phase 2a dosing was orders of magnitude higher than IV rasburicase (0.15–0.2 m
 
 ## Integration with Open Enzyme Platform
 
-### Koji-First Strategy
+### Koji-track implication
 
 The [[open-enzyme-vision|Open Enzyme project]] prioritizes [[aspergillus-oryzae|koji]] as the first platform because:
 

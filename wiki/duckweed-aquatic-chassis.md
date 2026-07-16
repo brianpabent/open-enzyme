@@ -49,7 +49,7 @@ status: scope-page
 
 # Duckweed (Lemnaceae) — Aquatic-Sibling Chassis to Koji
 
-**Status:** scope-page (2026-05-29). Origin: a 2026 review wave (Tek et al., *Trends in Biotechnology*; the *Advanced Biotechnology* review) plus a widely-shared social-media compression of their prescription ("sequence all strains, pick a champion, build tooling, philanthropy + companies"). This page evaluates duckweed against the Open Enzyme thesis using a global, multilingual literature dig (Chinese / Japanese / Korean / English, 2026-05-29). It defines the chassis class and queues follow-ups; it does **not** recommend a pivot off koji for the lead target.
+**Status:** scope page. This page evaluates duckweed as a candidate chassis using a global, multilingual literature review. It defines the chassis class and its discriminating questions; it does not assume a global chassis hierarchy.
 
 ---
 
@@ -57,9 +57,9 @@ status: scope-page
 
 Open Enzyme is a **chokepoint-first, chassis-second** platform (see [`chassis-pending-interventions.md`](./chassis-pending-interventions.md)). The discipline the umbrella `CLAUDE.md` enforces is an inversion: don't ask "does duckweed fit koji?" — ask "what open question could duckweed answer that koji can't?"
 
-Run that inversion and duckweed resolves to something sharper than "another expression host." **Duckweed is the aquatic sibling of Open Enzyme's most distinctive bet.** Strip OE down and the load-bearing idea is not "make an enzyme" — yeast, CHO, and koji all make enzymes. It is *the edible organism is simultaneously the factory and the delivery vehicle; it acts in the gut/mucosa; it is cheap; it is open-source-reproducible by anyone.* Duckweed (family Lemnaceae — *Lemna*, *Spirodela*, *Wolffia*, *Landoltia*) is the **only other chassis that shares all four properties**, and it adds three koji structurally lacks: a photosynthetic feedstock (no sugar), tractable human-like glycosylation, and a documented multi-decade edible-vaccine track record.
+Run that inversion and duckweed becomes more than “another expression host.” It can be evaluated as a combined production-and-delivery chassis with a photosynthetic feedstock, plant glycosylation, and edible-vaccine precedent. Those properties are useful only if they match a specific gout payload and pass the relevant exposure and safety gates.
 
-This is a **peer-track / chassis-class scope page**, the same shape as [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md). Koji remains the highest-priority chassis for the lead target. Duckweed's advantages cash out in adjacent territory OE does not currently occupy — see [§Where duckweed beats koji](#where-duckweed-beats-koji-and-where-it-doesnt).
+This is a **peer-track / chassis-class scope page**, the same shape as [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md). Duckweed's comparative advantages and liabilities are evaluated in [§Where duckweed beats koji](#where-duckweed-beats-koji-and-where-it-doesnt).
 
 ---
 

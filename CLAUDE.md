@@ -6,12 +6,9 @@ Guidelines for any Claude or AI system working on this project. This document en
 
 ## Project Context
 
-**Open Enzyme** is an open source library of engineered, food-grade microbial strains producing therapeutic enzymes.
+**Mission:** Use red-teaming techniques to identify exploitable weaknesses in gout, and use creative engineering to exploit them.
 
-**First targets:**
-- **Uricase** — Gout (hyperuricemia, NLRP3-driven inflammation)
-- **Digestive enzymes** (lipase, protease, amylase) — Exocrine pancreatic insufficiency (EPI)
-- **Koji** (A. oryzae) — Natural multi-enzyme producer; genetic engineering for enzyme enhancement
+Open Enzyme is a portfolio of falsifiable research tracks. Koji, yeast, live biotherapeutics, transporter modulation, repurposed compounds, local delivery, and other modalities are candidate tracks—not the project. A failed track is documented, killed or revised at the scope justified by the evidence, and followed by the next best exploit.
 
 **Team:** Currently just Brian (CTO background). Three PhD-level collaborator roles are actively being recruited (Gut Microbiome / In Vivo Validation, Pharma Translation / Regulatory, Innate Immune Safety) — see [`wiki/team.md`](wiki/etc/team.md). Audience = PhD-level scientists. No overselling.
 
@@ -22,9 +19,9 @@ Guidelines for any Claude or AI system working on this project. This document en
 ## Document Structure
 
 ### wiki/ — Research Library (living)
-All research — long-form primary research docs and shorter synthesized concept pages — lives here side by side. Source of truth. The sweep daemon updates these as new findings land.
+All research — long-form primary research docs and shorter concept pages — lives here side by side. Source of truth. Push-time propagation updates affected pages; deliberate full synthesis searches the complete corpus for new cross-domain findings.
 
-- `synthesis/queue/` — Per-item daemon-emitted action queue (one file per Connection / Contradiction / Experiment / Open Question / Priority Action). **Walkthrough closes items by appending closure annotation + `git mv` to `synthesis/done/`.** Inbox-zero is automatic when queue/ is empty. See [`synthesis/README.md`](./synthesis/README.md) for the full directory architecture (queue/, done/, history/, strategic-reflections/).
+- `synthesis/queue/` — Active reviewed findings only. Close an item by applying the action and deleting the queue file in the same commit. Git is the archive. See [`synthesis/README.md`](./synthesis/README.md).
 - `wiki/[concept].md` — Individual wiki pages. Long-form research (e.g. `gout-deep-dive.md`, `engineered-koji-protocol.md`) and shorter concept pages (`uricase.md`, `nlrp3-inflammasome.md`) are both here. Organize by topic, not by length.
 
 Prefer standard markdown links (`[text](./path.md)`) over `[[wiki-links]]` in any file expected to be shared externally — GitHub only renders the standard form.
@@ -32,8 +29,8 @@ Prefer standard markdown links (`[text](./path.md)`) over `[[wiki-links]]` in an
 ### index.md (repo root) — Dashboard
 Top of file: current platform thesis, synthesis queue pointer, cheapest-next-experiments table. Bottom: concept index + primary-research doc list + AI-analysis links. This is the "what should I look at?" landing page.
 
-### logs/ — Sweep log
-`logs/sweep-log.md` — one entry per daemon-triggered sweep (date, trigger file, Pass 1 updates, Pass 2 synthesis summary). Append-only; the daemon writes it, Brian reads it.
+### logs/ — Compact automation state
+`logs/sweep-state.json` holds the current propagation cursor, synthesis cursor, current per-COMP eligibility, and unresolved failures. Successful run history belongs in GitHub Actions and Git, not an append-only live ledger.
 
 ### reference/ — Canonical (read-only)
 Published papers, external reports, vendor data, machine-generated output (under `reference/generated/`). Never modified by the daemon or by AI edits. Cite as provenance.
@@ -48,8 +45,8 @@ No inline revision-history sections in documents. Use `git log -p <file>` to see
 
 ## Core Rules
 
-### 1. Doc Sweep Rule
-When new information emerges (new research, evidence, design decision), re-evaluate **ALL wiki pages that reference the affected concepts**. The sweep daemon (`scripts/wiki-watch.sh` + `scripts/sweep-prompt.md`) does this automatically on save — see those files for the full protocol.
+### 1. Propagation and synthesis rule
+When new information emerges, re-evaluate every current page that depends on the affected concept. Bounded propagation runs on relevant pushes. Full-corpus synthesis is separate and manual: it reads the complete current corpus twice, compares all domain pairs, rehydrates candidates from raw sources, and independently reviews them. Never trigger full synthesis merely to publish or propagate a push.
 
 Example: If a new NLRP3 inhibitor is discovered, update:
 - wiki/nlrp3-exploit-map.md (primary research)
@@ -156,7 +153,7 @@ These are frequently cited or mechanistically central. Use as touchstones:
 
 ## Workflow for Updates
 
-Most of this runs automatically via the sweep daemon — when you save a file under `wiki/`, `scripts/wiki-watch.sh` triggers `scripts/sweep-prompt.md` which propagates findings, synthesizes new connections, logs, and commits. The steps below are what the daemon does, and what you'd do manually if running a sweep yourself.
+Publishing and bounded propagation run on relevant pushes. Full-corpus synthesis does not: dispatch it explicitly at a logical research batch boundary. Changed COMP artifacts receive independent push review before their derived claims become eligible for propagation or synthesis. The steps below describe the authoring responsibilities that remain regardless of automation.
 
 ### When new data emerges:
 
@@ -252,7 +249,7 @@ Treat the wiki sweep, every literature scan, every subagent research task, and e
 **Operational rules:**
 
 - **Lit scan briefings** (subagent prompts) MUST explicitly include non-English sources where relevant: ChiCTR (China Clinical Trial Registry), CNKI / WanFang (Chinese-language papers — read in original, no translation step needed), J-STAGE / CiNii / J-GLOBAL (Japanese), KISS / RISS (Korean), eLIBRARY.RU (Russian), TIB / GND (German), SciELO (Latin American Spanish/Portuguese). For each query, name the non-English sources to check.
-- **The sweep daemon's Pass 2 prompt** should explicitly note that the wiki may have inherited Western-research bias and that finding genuinely new connections often requires looking at non-English-source angles. (`scripts/sweep-prompt-2-synthesize.md` — update separately.)
+- **Distributed synthesis prompts** should explicitly note that the wiki may have inherited Western-research bias and that genuinely new connections may require non-English-source angles.
 - **Compound and mechanism investigations** should check both Western (PubMed-indexed) AND Chinese (CNKI / TCM materia medica) AND Japanese (Kampo medicine literature) sources before declaring an evidence-tier verdict. A compound with thin Western evidence but substantial Chinese clinical evidence has stronger empirical backing than the Western-only view shows.
 - **Query-framing discipline** *(added 2026-05-19, Cluster M walkthrough — promoted from comp-018 Phase 2 finding)***:** for non-Western-medicine compound discovery, **query by traditional-formula-name + species-name + traditional-pathology-framing IN ADDITION TO mechanism-name.** Mechanism-name is the wrong starting point for non-Western literature — it silently filters out traditional-name-anchored papers that the Western citation network underweights. The canonical worked example: a "C3 convertase inhibitor" query misses *Houttuynia cordata*; a "*Houttuynia cordata* anti-complementary" query catches it (comp-018 Phase 2). The lesson generalizes across mechanism classes:
   - **URAT1 inhibitors:** "URAT1 inhibitor natural product" misses Smilax glabra formulations; "Si Miao San 四妙散 hyperuricemia" catches them.
@@ -274,17 +271,17 @@ When ingesting non-English source material, **translate with two independent mod
 
 ### Push-batching discipline (Open Enzyme overrides the umbrella's "push immediately" rule)
 
-The umbrella repo's `CLAUDE.md` git steward pattern says "Push immediately after each commit, every time." **That rule is overridden in this repo.** Reason: every push to `wiki/*.md` fires the three-pass wiki sweep daemon (Pass 1 Propagate → Pass 2 Synthesize → Pass 3 Review). Each daemon run costs a few dollars and takes ~9–12 minutes; multiple parallel runs cause merge conflicts that consume far more time than the eager push saved.
+The umbrella repo's `CLAUDE.md` git steward pattern says "Push immediately after each commit, every time." **That rule is overridden in this repo.** Relevant pushes run publishing, exact COMP review when applicable, and bounded propagation. Full synthesis is manual, but coherent push batches still reduce repeated propagation, review cost, and merge contention.
 
 **Commit eagerly. Push at logical batch boundaries.**
 
 | Push when | Don't push when |
 |---|---|
-| End of a sweep walkthrough (after the inbox-zero pass) | After every individual commit during active session |
+| End of a queue walkthrough (after the inbox-zero pass) | After every individual commit during active session |
 | End of a clearly-bounded work batch (e.g., a peer-track scope page + its 6-surface tracking infrastructure) | After each subagent's output lands in isolation |
 | User explicitly says "push" or "ship it" | Just because a commit is "done" |
 | End of session | Just because the working tree is clean |
-| Before walking away from the laptop with uncommitted work pending | Just because the daemon hasn't caught up yet — let the daemon run on the FULL batch, not piecemeal |
+| Before walking away from the laptop with unpushed work pending | Just because propagation has not caught up yet |
 
 **Operational rules:**
 - Commit immediately after each substantive write (per the umbrella steward pattern — that part still applies).
@@ -293,7 +290,7 @@ The umbrella repo's `CLAUDE.md` git steward pattern says "Push immediately after
 - Surface uncommitted-but-unpushed state at end of session: "8 commits sitting locally, ready when you want to push."
 - The exception: if the work is genuinely time-critical (e.g., a hotfix to a broken page that's actively being read by collaborators), push immediately. Default is batch.
 
-**Why this matters specifically for this repo:** the daemon's value comes from running on a *coherent* batch of related changes. Running it 6 times during a single session as 6 separate sweeps produces 6 fragmented synthesis blocks (often substantively duplicate of each other and of the canonical pages). Running it once at the end produces one coherent sweep on the full batch. The latter is cheaper, faster, and produces better synthesis output.
+**Why this matters specifically for this repo:** coherent batches reduce repeated COMP review and propagation while preserving free publishing. Full synthesis accumulates changes across any number of pushes and runs only when explicitly requested.
 
 ---
 

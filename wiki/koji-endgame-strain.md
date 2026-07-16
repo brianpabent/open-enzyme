@@ -289,7 +289,7 @@ No feasibility test is meaningful without a pre-defined fallback ladder. The end
 
 **Pros.** Simpler genetic engineering (one cassette per strain matches the validated Ward 1995 single-protein experience). Cassette burden is intra-strain, not inter-strain. Either product can be optimized independently without risk of perturbing the other.
 
-**Cons.** Two production lines rather than one. Two fermentation SOPs. Two dosing calculations. The "single-strain living pharmacy" elegance is lost, but the therapeutic payload is unchanged.
+**Cons.** Two production lines rather than one, with separate fermentation procedures and dose calculations. The added operational complexity must be weighed against reduced cassette burden.
 
 **Confidence.** High — this is a conservative extension of the Ward 1995 single-protein precedent.
 
