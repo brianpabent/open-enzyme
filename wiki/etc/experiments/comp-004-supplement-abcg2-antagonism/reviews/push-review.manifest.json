@@ -54,8 +54,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md",
@@ -108,8 +108,8 @@
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 102771,
-      "sha256": "3eff2e7d1ff7c729e7771c4ba59394cea4ec3a09b6ddb7f7e197ccdf12c60f80"
+      "bytes": 101342,
+      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
     },
     {
       "path": "wiki/supplement-abcg2-antagonism-computational.md",
@@ -126,16 +126,16 @@
     {
       "path": "wiki/tcm-modern-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 34340,
-      "sha256": "c9628be570fcf0c9c1968fa20eb2f8a872bbcd3347dd93f0e251a6fffff3e42c"
+      "bytes": 34331,
+      "sha256": "106c59999019fb4cf3aeae71c08c4a07bb7ff496e209b2a09c890f68e2e6c31e"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 250368,
-      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
+      "bytes": 249208,
+      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "9df2e7892a388b15956dc25b64e2c77ebcfed1b01eecad89c0d0e0e5a97ebba0"
+  "manifest_sha256": "32c51b66e0719a575d96e0ebfae50a2336cdb3c1730000f38a6fa70629336150"
 }

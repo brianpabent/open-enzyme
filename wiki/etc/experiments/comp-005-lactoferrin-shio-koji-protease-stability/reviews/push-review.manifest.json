@@ -54,8 +54,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/daf-cd55-protease-stability-computational.md",
@@ -210,16 +210,16 @@
     {
       "path": "wiki/lactoferrin.md",
       "kind": "proposed_update",
-      "bytes": 84982,
-      "sha256": "a26d4cd69e6112b40c5fee59c3716866311672ab6dd209fe858079e836082321"
+      "bytes": 84788,
+      "sha256": "9a027021098f89d3fea467457b192ecae8c91c040a1ebcd3683befc914f95b8f"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 250368,
-      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
+      "bytes": 249208,
+      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "88e5bd3251f4e876085cb7ef4a8199995036ec85e552b270a3bbd64a71d97f6e"
+  "manifest_sha256": "4d97324e1737a28e68e0366620a559de600e38960259c58490e1b6367937760d"
 }

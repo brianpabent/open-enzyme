@@ -2,14 +2,14 @@
   "schema_version": 2,
   "comp": "comp-031",
   "comp_dir": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua",
-  "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
-  "artifact_manifest_sha256": "93c4663cb8febc7fecc8c4583cb83d3df245fec146d00c147d1612c0160cb1c6",
+  "source_commit": "8bfe20b0bd93e0dbe58076148fd285bed9691cdc",
+  "artifact_manifest_sha256": "41c69a4f3843caff0f32eda0be7abe4be8d8f975ed1a6d65a4b6a16884ab5e1c",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-16T20:55:16Z",
-  "comp_verdict": "review_completed_open_actions",
+  "timestamp": "2026-07-16T23:27:00Z",
+  "comp_verdict": "review_completed_actioned",
   "propagation_eligibility": "eligible_with_warning",
-  "synthesis_eligibility": "blocked",
-  "action_required": true,
+  "synthesis_eligibility": "eligible_with_warning",
+  "action_required": false,
   "derived_paths": [
     "wiki/chassis-pending-interventions.md",
     "wiki/computational-experiments.md",
@@ -17,37 +17,32 @@
     "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
     "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/README.md",
     "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
+    "wiki/open-questions.md",
     "wiki/purine-degrading-bacteria.md",
     "wiki/staged-purine-sink-mass-balance-computational.md",
     "wiki/validation-experiments.md"
   ],
   "actual_cost_usd": 0.0,
-  "binding_mode": "completed_review_migration",
-  "independent_review": {
+  "binding_mode": "fresh_authoring_review",
+  "authoring_review": {
     "completed": true,
-    "date": "2026-07-15",
-    "reviewed_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-    "review_log_git_path": "logs/comp-reviews/2026-07-15-comp-031-eeab5b5.md",
-    "review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+    "reviewed_snapshot": "e620c75a3a8b07ea8a6b120d131d3be0e4a8317bab344eb46a2e37e9e4d88c62",
+    "receipt": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/reviews/post-run.md",
+    "action_required": false
   },
-  "post_review_changed_manifest_paths": [
-    "wiki/chassis-pending-interventions.md",
-    "wiki/computational-experiments.md",
-    "wiki/validation-experiments.md"
-  ],
-  "note": "Carries forward the completed independent review and its remediation state. Exact current manifest binding is a migration receipt; lane eligibility was separately adjudicated without claiming a new artifact review.",
+  "note": "comp-031 is an invalidation tombstone. The live corpus may use the retraction and its experimental boundaries; no former quantitative, mechanistic, or topology result survives.",
   "lane_adjudication": {
-    "date": "2026-07-16T21:15:41Z",
-    "method": "context-isolated lane adjudication of the completed July 15 review against current artifacts",
-    "new_artifact_review_performed": false,
-    "queue_action_remains_open": true,
-    "propagation_allowed_scope": "Corrective-only: repair or retract the review-identified stale claims; do not spread positive derived claims until the open actions close.",
-    "synthesis_allowed_scope": "None until invalidated generated outputs and the stale separate-strain recommendation are corrected in place.",
+    "date": "2026-07-16T23:21:02Z",
+    "method": "exact authoring review plus committed push-manifest binding",
+    "new_artifact_review_performed": true,
+    "queue_action_remains_open": false,
+    "propagation_allowed_scope": "Propagate the invalidation, retractions, and unranked experimental options only.",
+    "synthesis_allowed_scope": "Use comp-031 only as a negative result and model-failure lesson.",
     "forbidden_inferences": [
-      "all Delta-SUA values",
-      "substrate-competition and butyrate effects",
-      "Q141K rescue",
-      "two-strain or dual-chassis engineering recommendations"
+      "any comp-031 Delta-SUA estimate",
+      "automatic UOX/PDB additivity or competition",
+      "PDB-derived butyrate or Q141K rescue",
+      "a preferred one-strain, two-strain, or staged topology"
     ]
   }
 }

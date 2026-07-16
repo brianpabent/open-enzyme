@@ -72,8 +72,8 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 44914,
-      "sha256": "3c837b979a076ea883763160ede8f7717dc343f291d6f77a9cb0c89845089388"
+      "bytes": 44557,
+      "sha256": "15d44c9ef6a7bf225ce62f3800155fd33c8fa4402b373ebfff44ae8f0a62e804"
     },
     {
       "path": "wiki/compounding-pharmacy-track.md",
@@ -84,8 +84,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/disulfiram-dose-modeling-computational.md",
@@ -114,28 +114,28 @@
     {
       "path": "wiki/gout-action-guide.md",
       "kind": "proposed_update",
-      "bytes": 38906,
-      "sha256": "312f3dcd5535948a9fef4182be16a3313b8d9884104d2da44fcbdf5def275cc0"
+      "bytes": 38712,
+      "sha256": "0ad406a01631e06f9edfd4a2776ae19b5d64cc63a01cb1b25aee19658fd504a9"
     },
     {
       "path": "wiki/gout-kill-chain-delivery-routes.md",
       "kind": "proposed_update",
-      "bytes": 52006,
-      "sha256": "6d5d22dcc5485d825b9aabfd7024df3a83b8680049b3440f265fc7fba1bccb39"
+      "bytes": 52040,
+      "sha256": "c9d7b67d23e8ada65875a7f72556e135d99bd387ab51eafa2165e64c32999286"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 102771,
-      "sha256": "3eff2e7d1ff7c729e7771c4ba59394cea4ec3a09b6ddb7f7e197ccdf12c60f80"
+      "bytes": 101342,
+      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
     },
     {
       "path": "wiki/supplements-stack.md",
       "kind": "proposed_update",
-      "bytes": 109620,
-      "sha256": "11302779afe28e726fd403543dc0e388072807796a121a2c4bb4ef666bb0d803"
+      "bytes": 109100,
+      "sha256": "4a03bd424cc3385fd4b7c7d04ea4a576b13131e94fbf407c7b152bd3c0334e2e"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "338be5501df29178f9d419778fd7df9a25a25937fa0505e598b7de6d07dc0ccd"
+  "manifest_sha256": "dce581e37448f024e47f31ede92d18e5feb62b6e8f5870a0550b19b543892921"
 }

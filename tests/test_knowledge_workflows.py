@@ -102,6 +102,7 @@ Long review-history material.
         source = (ROOT / "scripts/comp-review-manifest.py").read_text()
         self.assertIn('tracked_only=args.phase == "push"', source)
         self.assertIn('["git", "ls-files", "--", relative(comp_dir)]', source)
+        self.assertIn('and "reviews" not in rel.parts', source)
 
 
 class WorkflowTriggerTests(unittest.TestCase):
@@ -135,11 +136,11 @@ class WorkflowTriggerTests(unittest.TestCase):
         records = state["comp_reviews"]
         self.assertEqual(40, len(records))
         self.assertEqual(
-            18,
+            16,
             sum(r["comp_verdict"] == "review_completed_open_actions" for r in records.values()),
         )
         self.assertEqual(
-            22,
+            24,
             sum(r["comp_verdict"] == "review_completed_actioned" for r in records.values()),
         )
         open_records = [
@@ -151,18 +152,29 @@ class WorkflowTriggerTests(unittest.TestCase):
             {r["propagation_eligibility"] for r in open_records},
         )
         self.assertEqual(
-            1,
+            0,
             sum(r["synthesis_eligibility"] == "blocked" for r in open_records),
         )
         for record in records.values():
             receipt = json.loads(
                 (ROOT / record["comp_dir"] / "reviews" / "push-review.json").read_text()
             )
-            provenance = receipt["independent_review"]
-            self.assertTrue(provenance["completed"])
-            self.assertTrue(provenance["review_log_git_path"].startswith("logs/comp-reviews/"))
-            self.assertEqual(40, len(provenance["review_log_commit"]))
-            self.assertEqual("completed_review_migration", receipt["binding_mode"])
+            self.assertEqual(
+                record["artifact_manifest_sha256"],
+                receipt["artifact_manifest_sha256"],
+            )
+            if receipt["binding_mode"] == "completed_review_migration":
+                provenance = receipt["independent_review"]
+                self.assertTrue(provenance["completed"])
+                self.assertTrue(
+                    provenance["review_log_git_path"].startswith("logs/comp-reviews/")
+                )
+                self.assertEqual(40, len(provenance["review_log_commit"]))
+            else:
+                self.assertEqual("fresh_authoring_review", receipt["binding_mode"])
+                authoring = receipt["authoring_review"]
+                self.assertTrue(authoring["completed"])
+                self.assertFalse(authoring["action_required"])
             self.assertNotEqual("legacy_review_pending", receipt["comp_verdict"])
             if receipt["action_required"]:
                 self.assertIn("lane_adjudication", receipt)

@@ -138,8 +138,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/daf-cd55-scr14-cassette-ranking-computational.md",
@@ -168,10 +168,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 250368,
-      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
+      "bytes": 249208,
+      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "a045cccbb0cafa194d2c797684c5582cc47fc80b20abb36635ecc0c914230e5b"
+  "manifest_sha256": "ca6a2eb7d5528f1edb006888d24c1710d4b619c6f259238c2b0438ec1ec3e989"
 }

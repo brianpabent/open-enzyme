@@ -264,14 +264,14 @@
     {
       "path": "wiki/complement-c5a-gout.md",
       "kind": "proposed_update",
-      "bytes": 114602,
-      "sha256": "b5a3902aa64b44ce51b40d75be98b32f40db48e941010757f115ce3f455f6a9f"
+      "bytes": 114293,
+      "sha256": "5fc826d237102344a796817418c663a9a961cfbb497f37a5956d386acd08dc37"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -342,20 +342,20 @@
     {
       "path": "wiki/gout-genetic-variants.md",
       "kind": "proposed_update",
-      "bytes": 56542,
-      "sha256": "7dd710f8181aef6321a95935659e7bf5dad4c3f9e822e8d3e6cb141d01b17e59"
+      "bytes": 52597,
+      "sha256": "5d66e93f2f1b101e25e1ba49fc2a2f27ee9411544279e0ea58e0b2efec139f5e"
     },
     {
       "path": "wiki/gout-kill-chain-delivery-routes.md",
       "kind": "proposed_update",
-      "bytes": 52006,
-      "sha256": "6d5d22dcc5485d825b9aabfd7024df3a83b8680049b3440f265fc7fba1bccb39"
+      "bytes": 52040,
+      "sha256": "c9d7b67d23e8ada65875a7f72556e135d99bd387ab51eafa2165e64c32999286"
     },
     {
       "path": "wiki/gout-pathophysiology.md",
       "kind": "proposed_update",
-      "bytes": 40472,
-      "sha256": "24f5f06b95684f31fdf9483e8bb01050b37d27d89a22a23f2c5f9c53e15fbc47"
+      "bytes": 40441,
+      "sha256": "ef353f3a402783746bce0c7274d793ff301110912a82d6a0a653a8f22e98bbaa"
     },
     {
       "path": "wiki/hypotheses/H06-medicinal-mushroom-complement-track.md",
@@ -366,8 +366,8 @@
     {
       "path": "wiki/koji-endgame-strain.md",
       "kind": "proposed_update",
-      "bytes": 92372,
-      "sha256": "996c249ba4ccbd685a36fc5348a53ea621a26694c586b126e9161e5c1334233d"
+      "bytes": 86478,
+      "sha256": "237e56bb7be6490cf90ffbfc16586ce8f05a0c6cdf858a930a3b8c16fca69e98"
     },
     {
       "path": "wiki/medicinal-mushroom-complement-track.md",
@@ -390,8 +390,8 @@
     {
       "path": "wiki/modality-chokepoint-matrix.md",
       "kind": "proposed_update",
-      "bytes": 54590,
-      "sha256": "84bdaf4b881f9c7d5cedd0e1d42ca1681526bf05c6c1cb2e37e7a56279787603"
+      "bytes": 54389,
+      "sha256": "6bcf7fbc8fd123c1fe11b5a1f88550fcf2350533f8a254fdd3157f1825bee525"
     },
     {
       "path": "wiki/nlrp3-exploit-map.md",
@@ -402,8 +402,8 @@
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 102771,
-      "sha256": "3eff2e7d1ff7c729e7771c4ba59394cea4ec3a09b6ddb7f7e197ccdf12c60f80"
+      "bytes": 101342,
+      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
     },
     {
       "path": "wiki/prps-purine-biosynthesis-chokepoint.md",
@@ -414,16 +414,16 @@
     {
       "path": "wiki/tcm-modern-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 34340,
-      "sha256": "c9628be570fcf0c9c1968fa20eb2f8a872bbcd3347dd93f0e251a6fffff3e42c"
+      "bytes": 34331,
+      "sha256": "106c59999019fb4cf3aeae71c08c4a07bb7ff496e209b2a09c890f68e2e6c31e"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 250368,
-      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
+      "bytes": 249208,
+      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "6482e1b54623163d1de7939b72d2f107b47a44ef42ed3b8bfc18f43e368fae3c"
+  "manifest_sha256": "3e49c539b1215313b5c1ffb5b4547131e80a01810cfc8154ebd5c1080231455d"
 }

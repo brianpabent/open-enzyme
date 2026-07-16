@@ -2,16 +2,15 @@
   "schema_version": 2,
   "comp": "comp-046",
   "comp_dir": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance",
-  "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
-  "artifact_manifest_sha256": "3737d056f2ae505f7848a08729c7c46514e8e1537ea337d7e0131e7b21885928",
+  "source_commit": "8bfe20b0bd93e0dbe58076148fd285bed9691cdc",
+  "artifact_manifest_sha256": "412ab58fa94965e420c412f39fc8af23f6879810309d2e377eb2c00c9c6808da",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-16T20:55:17Z",
-  "comp_verdict": "review_completed_open_actions",
+  "timestamp": "2026-07-16T23:27:00Z",
+  "comp_verdict": "review_completed_actioned",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
-  "action_required": true,
+  "action_required": false,
   "derived_paths": [
-    "wiki/chassis-pending-interventions.md",
     "wiki/computational-experiments.md",
     "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
     "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
@@ -23,31 +22,26 @@
     "wiki/validation-experiments.md"
   ],
   "actual_cost_usd": 0.0,
-  "binding_mode": "completed_review_migration",
-  "independent_review": {
+  "binding_mode": "fresh_authoring_review",
+  "authoring_review": {
     "completed": true,
-    "date": "2026-07-15",
-    "reviewed_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-    "review_log_git_path": "logs/comp-reviews/2026-07-15-comp-046-eeab5b5.md",
-    "review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+    "reviewed_snapshot": "ae81b0ae5766f7947cc17d22a98a3a7b2face2d0c3d61c64ec861272cf4e15bd",
+    "receipt": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/reviews/post-run.md",
+    "action_required": false
   },
-  "post_review_changed_manifest_paths": [
-    "wiki/chassis-pending-interventions.md",
-    "wiki/computational-experiments.md",
-    "wiki/validation-experiments.md"
-  ],
-  "note": "Carries forward the completed independent review and its remediation state. Exact current manifest binding is a migration receipt; lane eligibility was separately adjudicated without claiming a new artifact review.",
+  "note": "The corrected artifact contains a conserved dietary fate ledger and a separate non-conserved endogenous capture comparison.",
   "lane_adjudication": {
-    "date": "2026-07-16T21:15:41Z",
-    "method": "context-isolated lane adjudication of the completed July 15 review against current artifacts",
-    "new_artifact_review_performed": false,
-    "queue_action_remains_open": true,
-    "propagation_allowed_scope": "Corrective-only: repair or retract the review-identified stale claims; do not spread positive derived claims until the open actions close.",
-    "synthesis_allowed_scope": "Use the dietary 100-unit fate ledger and the endogenous capture-fraction architecture comparison as different constructs.",
+    "date": "2026-07-16T23:21:02Z",
+    "method": "exact authoring review plus committed push-manifest binding",
+    "new_artifact_review_performed": true,
+    "queue_action_remains_open": false,
+    "propagation_allowed_scope": "Propagate the two conditional analyses with their accounting labels and limitations.",
+    "synthesis_allowed_scope": "Use the dietary fate ledger and endogenous capture comparison as separate design-space analyses.",
     "forbidden_inferences": [
-      "two conserved 100-unit ledgers",
-      "both pools are conserved",
-      "the endogenous side is a mass-balance ledger"
+      "two conserved ledgers",
+      "joint three-stage efficacy or Delta-SUA",
+      "grid occupancy as probability",
+      "a general topology winner"
     ]
   }
 }

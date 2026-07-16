@@ -60,14 +60,14 @@
     {
       "path": "wiki/abcg2-modulators.md",
       "kind": "proposed_update",
-      "bytes": 55151,
-      "sha256": "98fbe0f53b00ffbb2d3a61056e3b53536116ea7faf01a2747220e72cca160fad"
+      "bytes": 52037,
+      "sha256": "dfdcbc7124f3416da5e626be3a0369dd4e67ba0d199129a9497e58a32e982a2b"
     },
     {
       "path": "wiki/androgen-urate-axis.md",
       "kind": "proposed_update",
-      "bytes": 43185,
-      "sha256": "edd2b10ea3c574645e8aa05514c160f1b44ecdb8df401a6b876f290c6d7e0fb9"
+      "bytes": 42537,
+      "sha256": "c31c3a8414f873e1874ffb9d88f72afa3bd627b94d545dfddf38674bb27bd996"
     },
     {
       "path": "wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md",
@@ -78,14 +78,14 @@
     {
       "path": "wiki/complement-c5a-gout.md",
       "kind": "proposed_update",
-      "bytes": 114602,
-      "sha256": "b5a3902aa64b44ce51b40d75be98b32f40db48e941010757f115ce3f455f6a9f"
+      "bytes": 114293,
+      "sha256": "5fc826d237102344a796817418c663a9a961cfbb497f37a5956d386acd08dc37"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -174,8 +174,8 @@
     {
       "path": "wiki/koji-endgame-strain.md",
       "kind": "proposed_update",
-      "bytes": 92372,
-      "sha256": "996c249ba4ccbd685a36fc5348a53ea621a26694c586b126e9161e5c1334233d"
+      "bytes": 86478,
+      "sha256": "237e56bb7be6490cf90ffbfc16586ce8f05a0c6cdf858a930a3b8c16fca69e98"
     },
     {
       "path": "wiki/medicinal-mushroom-compound-mapping-computational.md",
@@ -198,10 +198,10 @@
     {
       "path": "wiki/tcm-modern-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 34340,
-      "sha256": "c9628be570fcf0c9c1968fa20eb2f8a872bbcd3347dd93f0e251a6fffff3e42c"
+      "bytes": 34331,
+      "sha256": "106c59999019fb4cf3aeae71c08c4a07bb7ff496e209b2a09c890f68e2e6c31e"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "f3841d11c05898b170a43e3ecf024a513474800842320f61de16cc9e4a5f6241"
+  "manifest_sha256": "dde1d476ecb991e4b8712a687f42462098aba80fb4c4d19f48d703659ecb01c5"
 }

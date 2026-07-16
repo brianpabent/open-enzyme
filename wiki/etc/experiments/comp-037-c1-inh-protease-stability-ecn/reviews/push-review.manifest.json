@@ -66,14 +66,14 @@
     {
       "path": "wiki/complement-c5a-gout.md",
       "kind": "proposed_update",
-      "bytes": 114602,
-      "sha256": "b5a3902aa64b44ce51b40d75be98b32f40db48e941010757f115ce3f455f6a9f"
+      "bytes": 114293,
+      "sha256": "5fc826d237102344a796817418c663a9a961cfbb497f37a5956d386acd08dc37"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
@@ -84,8 +84,8 @@
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 24909,
-      "sha256": "c863eea73cfc0ebc8a24832527d0ed0abb8a13b2f5be6344853e34675e9a8b29"
+      "bytes": 24105,
+      "sha256": "f3766bd9e8d73c691d35f8b1868d11edecbf9d4cb7dc40b71eb878a3e9c340f1"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -126,8 +126,8 @@
     {
       "path": "wiki/modality-chokepoint-matrix.md",
       "kind": "proposed_update",
-      "bytes": 54590,
-      "sha256": "84bdaf4b881f9c7d5cedd0e1d42ca1681526bf05c6c1cb2e37e7a56279787603"
+      "bytes": 54389,
+      "sha256": "6bcf7fbc8fd123c1fe11b5a1f88550fcf2350533f8a254fdd3157f1825bee525"
     },
     {
       "path": "wiki/nlrp3-exploit-map.md",
@@ -143,5 +143,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "c9a5ced46b068c5e63eff259e54ca01a10f7009c87c870d9913b15225f71f05d"
+  "manifest_sha256": "a03fe0e4271021ff9c9c757fb06ea04701388fe309c01b63b7890ce7862b5839"
 }

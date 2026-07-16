@@ -48,14 +48,14 @@
     {
       "path": "wiki/complement-c5a-gout.md",
       "kind": "proposed_update",
-      "bytes": 114602,
-      "sha256": "b5a3902aa64b44ce51b40d75be98b32f40db48e941010757f115ce3f455f6a9f"
+      "bytes": 114293,
+      "sha256": "5fc826d237102344a796817418c663a9a961cfbb497f37a5956d386acd08dc37"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
@@ -71,5 +71,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "ce34bb51666c5da649a5873284d3dcc4057485153a4cfa2e4aff53d065e2c586"
+  "manifest_sha256": "a05cf895e67675dac460334295fdd647994a00c4b7f53940981df25b78c3a505"
 }

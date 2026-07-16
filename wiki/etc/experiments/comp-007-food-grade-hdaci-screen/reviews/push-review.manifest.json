@@ -54,26 +54,26 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 44914,
-      "sha256": "3c837b979a076ea883763160ede8f7717dc343f291d6f77a9cb0c89845089388"
+      "bytes": 44557,
+      "sha256": "15d44c9ef6a7bf225ce62f3800155fd33c8fa4402b373ebfff44ae8f0a62e804"
     },
     {
       "path": "wiki/complement-c5a-gout.md",
       "kind": "proposed_update",
-      "bytes": 114602,
-      "sha256": "b5a3902aa64b44ce51b40d75be98b32f40db48e941010757f115ce3f455f6a9f"
+      "bytes": 114293,
+      "sha256": "5fc826d237102344a796817418c663a9a961cfbb497f37a5956d386acd08dc37"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 24909,
-      "sha256": "c863eea73cfc0ebc8a24832527d0ed0abb8a13b2f5be6344853e34675e9a8b29"
+      "bytes": 24105,
+      "sha256": "f3766bd9e8d73c691d35f8b1868d11edecbf9d4cb7dc40b71eb878a3e9c340f1"
     },
     {
       "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/README.md",
@@ -144,8 +144,8 @@
     {
       "path": "wiki/f-prausnitzii-heterologous-expression-computational.md",
       "kind": "proposed_update",
-      "bytes": 5738,
-      "sha256": "52635c7f92148dd81a11a2b314c4f52715fdbb12e750896090d34224c222997d"
+      "bytes": 5968,
+      "sha256": "97a834d4c37d911efb0fe3bbc5b0c3ef0dfa5d6e8a6121b3e4473a1bb20a63f0"
     },
     {
       "path": "wiki/food-grade-hdaci-screen-computational.md",
@@ -156,14 +156,14 @@
     {
       "path": "wiki/gout-action-guide.md",
       "kind": "proposed_update",
-      "bytes": 38906,
-      "sha256": "312f3dcd5535948a9fef4182be16a3313b8d9884104d2da44fcbdf5def275cc0"
+      "bytes": 38712,
+      "sha256": "0ad406a01631e06f9edfd4a2776ae19b5d64cc63a01cb1b25aee19658fd504a9"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 102771,
-      "sha256": "3eff2e7d1ff7c729e7771c4ba59394cea4ec3a09b6ddb7f7e197ccdf12c60f80"
+      "bytes": 101342,
+      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
     },
     {
       "path": "wiki/tcm-gout-compound-triage-computational.md",
@@ -174,16 +174,16 @@
     {
       "path": "wiki/tcm-modern-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 34340,
-      "sha256": "c9628be570fcf0c9c1968fa20eb2f8a872bbcd3347dd93f0e251a6fffff3e42c"
+      "bytes": 34331,
+      "sha256": "106c59999019fb4cf3aeae71c08c4a07bb7ff496e209b2a09c890f68e2e6c31e"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 250368,
-      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
+      "bytes": 249208,
+      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "7d681b1f88ebd8f78eff6dbdb44a3854b81c9559b0233855594e3e958587b916"
+  "manifest_sha256": "b2954285f3d8666da7d9d2962594d8cd518b917c81c4dbefd428e257bd0b7b4a"
 }

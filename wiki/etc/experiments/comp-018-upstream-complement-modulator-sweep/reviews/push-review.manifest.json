@@ -84,8 +84,8 @@
     {
       "path": "wiki/complement-c5a-gout.md",
       "kind": "proposed_update",
-      "bytes": 114602,
-      "sha256": "b5a3902aa64b44ce51b40d75be98b32f40db48e941010757f115ce3f455f6a9f"
+      "bytes": 114293,
+      "sha256": "5fc826d237102344a796817418c663a9a961cfbb497f37a5956d386acd08dc37"
     },
     {
       "path": "wiki/complestatin-bgc-lbp-feasibility-computational.md",
@@ -96,8 +96,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -168,8 +168,8 @@
     {
       "path": "wiki/gout-action-guide.md",
       "kind": "proposed_update",
-      "bytes": 38906,
-      "sha256": "312f3dcd5535948a9fef4182be16a3313b8d9884104d2da44fcbdf5def275cc0"
+      "bytes": 38712,
+      "sha256": "0ad406a01631e06f9edfd4a2776ae19b5d64cc63a01cb1b25aee19658fd504a9"
     },
     {
       "path": "wiki/hypotheses/H05-daf-scr14-cp0-thesis.md",
@@ -186,8 +186,8 @@
     {
       "path": "wiki/modality-chokepoint-matrix.md",
       "kind": "proposed_update",
-      "bytes": 54590,
-      "sha256": "84bdaf4b881f9c7d5cedd0e1d42ca1681526bf05c6c1cb2e37e7a56279787603"
+      "bytes": 54389,
+      "sha256": "6bcf7fbc8fd123c1fe11b5a1f88550fcf2350533f8a254fdd3157f1825bee525"
     },
     {
       "path": "wiki/nlrp3-exploit-map.md",
@@ -198,20 +198,20 @@
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 102771,
-      "sha256": "3eff2e7d1ff7c729e7771c4ba59394cea4ec3a09b6ddb7f7e197ccdf12c60f80"
+      "bytes": 101342,
+      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
     },
     {
       "path": "wiki/supplements-stack.md",
       "kind": "proposed_update",
-      "bytes": 109620,
-      "sha256": "11302779afe28e726fd403543dc0e388072807796a121a2c4bb4ef666bb0d803"
+      "bytes": 109100,
+      "sha256": "4a03bd424cc3385fd4b7c7d04ea4a576b13131e94fbf407c7b152bd3c0334e2e"
     },
     {
       "path": "wiki/tcm-modern-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 34340,
-      "sha256": "c9628be570fcf0c9c1968fa20eb2f8a872bbcd3347dd93f0e251a6fffff3e42c"
+      "bytes": 34331,
+      "sha256": "106c59999019fb4cf3aeae71c08c4a07bb7ff496e209b2a09c890f68e2e6c31e"
     },
     {
       "path": "wiki/upstream-complement-modulator-sweep-computational.md",
@@ -228,10 +228,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 250368,
-      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
+      "bytes": 249208,
+      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "49d650e8449429dc0f23fcc5c1fb0c3637de16cbb3a7575391e5cbb6adaca08b"
+  "manifest_sha256": "d98a007cfe3185c01d98662f5771892261b79cd3c274d0c576c05cd6cfeed0e9"
 }

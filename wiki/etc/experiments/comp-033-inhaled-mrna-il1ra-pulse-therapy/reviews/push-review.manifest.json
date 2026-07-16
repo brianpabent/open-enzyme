@@ -84,14 +84,14 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 44914,
-      "sha256": "3c837b979a076ea883763160ede8f7717dc343f291d6f77a9cb0c89845089388"
+      "bytes": 44557,
+      "sha256": "15d44c9ef6a7bf225ce62f3800155fd33c8fa4402b373ebfff44ae8f0a62e804"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -120,8 +120,8 @@
     {
       "path": "wiki/gout-action-guide.md",
       "kind": "proposed_update",
-      "bytes": 38906,
-      "sha256": "312f3dcd5535948a9fef4182be16a3313b8d9884104d2da44fcbdf5def275cc0"
+      "bytes": 38712,
+      "sha256": "0ad406a01631e06f9edfd4a2776ae19b5d64cc63a01cb1b25aee19658fd504a9"
     },
     {
       "path": "wiki/gout-clinical-pipeline.md",
@@ -143,5 +143,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "1f5df525c8b7c333a97de91e2f6b48f58936172984f8820e1a62a9e056c80c85"
+  "manifest_sha256": "e2ac1c3c6dbdcddc9ee517e56de25ac61943e4cbe233a6da722a251e6971d2d4"
 }

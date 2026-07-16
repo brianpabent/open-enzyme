@@ -54,26 +54,20 @@
     {
       "path": "wiki/abcg2-modulators.md",
       "kind": "proposed_update",
-      "bytes": 55151,
-      "sha256": "98fbe0f53b00ffbb2d3a61056e3b53536116ea7faf01a2747220e72cca160fad"
-    },
-    {
-      "path": "wiki/chassis-pending-interventions.md",
-      "kind": "proposed_update",
-      "bytes": 44914,
-      "sha256": "3c837b979a076ea883763160ede8f7717dc343f291d6f77a9cb0c89845089388"
+      "bytes": 52037,
+      "sha256": "dfdcbc7124f3416da5e626be3a0369dd4e67ba0d199129a9497e58a32e982a2b"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
       "kind": "proposed_update",
-      "bytes": 3635,
-      "sha256": "bec900794161500baadcab54fe722361fd51b293b27aa7f307b497eaf37e1d2b"
+      "bytes": 3707,
+      "sha256": "8b0fdf52c7a2ff37cc6317be755dce0e745219de0d2c0bef14a67bd4119d1452"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -114,20 +108,14 @@
     {
       "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
       "kind": "proposed_update",
-      "bytes": 3223,
-      "sha256": "c3429016800d821aae918f6704e0b0afa28af964e5372a83d8fb4c8fb49a985a"
+      "bytes": 2036,
+      "sha256": "5857fa02b00f6e9ab8f5e0cf2c41b6f003a519c313e3875a22174e4cc2225481"
     },
     {
       "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/provenance.md",
       "kind": "proposed_update",
-      "bytes": 6715,
-      "sha256": "f149f6b150126f2c92e25c7cb5b65eb0e3fe3e3edb12bd82e61f0c3163324d82"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md",
-      "kind": "proposed_update",
-      "bytes": 6294,
-      "sha256": "0fb4942d550a2924b77b4eff945cde78aefa2a48594045d0df58dda29a30e428"
+      "bytes": 1098,
+      "sha256": "3bb98871ea5616454f64ede06f149ebedb1cfaa268639e0153f4a453e2d15b73"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
@@ -150,8 +138,8 @@
     {
       "path": "wiki/genotype-informed-supplement-workflow.md",
       "kind": "proposed_update",
-      "bytes": 34291,
-      "sha256": "2f872063a148fe48415125dd7c95f0fa189de5d25ca27537fc409866cd21099f"
+      "bytes": 30389,
+      "sha256": "38305db97f2fc9eee8c0d9db8226bb99eeceabb247215e4d6b8566e18d0fca69"
     },
     {
       "path": "wiki/gi-survival-prediction.md",
@@ -168,32 +156,32 @@
     {
       "path": "wiki/gout-action-guide.md",
       "kind": "proposed_update",
-      "bytes": 38906,
-      "sha256": "312f3dcd5535948a9fef4182be16a3313b8d9884104d2da44fcbdf5def275cc0"
+      "bytes": 38712,
+      "sha256": "0ad406a01631e06f9edfd4a2776ae19b5d64cc63a01cb1b25aee19658fd504a9"
     },
     {
       "path": "wiki/gout-genetic-variants.md",
       "kind": "proposed_update",
-      "bytes": 56542,
-      "sha256": "7dd710f8181aef6321a95935659e7bf5dad4c3f9e822e8d3e6cb141d01b17e59"
+      "bytes": 52597,
+      "sha256": "5d66e93f2f1b101e25e1ba49fc2a2f27ee9411544279e0ea58e0b2efec139f5e"
     },
     {
       "path": "wiki/gout-kill-chain-delivery-routes.md",
       "kind": "proposed_update",
-      "bytes": 52006,
-      "sha256": "6d5d22dcc5485d825b9aabfd7024df3a83b8680049b3440f265fc7fba1bccb39"
+      "bytes": 52040,
+      "sha256": "c9d7b67d23e8ada65875a7f72556e135d99bd387ab51eafa2165e64c32999286"
     },
     {
       "path": "wiki/gout-multihop-research-program.md",
       "kind": "proposed_update",
-      "bytes": 6224,
-      "sha256": "9a842debe4ff64e910a811e5e445c8352c831f85215ad6786c5e4b42131ceb55"
+      "bytes": 6306,
+      "sha256": "cfbaeca5fd1bcae8afbfe1217d5306cf96ce2bfbbb01f31ae485a6d9b21158ac"
     },
     {
       "path": "wiki/gut-lumen-sink.md",
       "kind": "proposed_update",
-      "bytes": 22035,
-      "sha256": "5fe32daf47e70c77b95687ea6335c0d945cc29f520895a92e27f57e6703a7d24"
+      "bytes": 21445,
+      "sha256": "dba58aa5ef6cc2be046c1c21760a03dbf2a7a83220cbfcbf8f4cfff79b81b45c"
     },
     {
       "path": "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
@@ -210,14 +198,14 @@
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 102771,
-      "sha256": "3eff2e7d1ff7c729e7771c4ba59394cea4ec3a09b6ddb7f7e197ccdf12c60f80"
+      "bytes": 101342,
+      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
     },
     {
       "path": "wiki/purine-degrading-bacteria.md",
       "kind": "proposed_update",
-      "bytes": 36898,
-      "sha256": "d1bcfbb6ca3b4b5fee53476167a43d707ed693ae6ec7e32c8063dfc68db08216"
+      "bytes": 36934,
+      "sha256": "30b8a201af729e624380c3860997ad6b76f1384b47d445bf10f27619773612be"
     },
     {
       "path": "wiki/uricase-abcg2-genotype-stratification-computational.md",
@@ -234,10 +222,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 250368,
-      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
+      "bytes": 249208,
+      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "53cd64b6e906a587191ad77b4c68e99b453c9827f06d9361f1cc2d4a30a040d4"
+  "manifest_sha256": "b9bee87c0b4cdfb6690b25da6235aaa1c0cc541ce87080d12e58113777c4bb06"
 }

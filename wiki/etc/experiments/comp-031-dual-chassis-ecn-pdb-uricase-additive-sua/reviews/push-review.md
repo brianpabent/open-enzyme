@@ -1,11 +1,9 @@
-COMP_VERDICT: review_completed_open_actions
-REVIEWED_SNAPSHOT: 93c4663cb8febc7fecc8c4583cb83d3df245fec146d00c147d1612c0160cb1c6
+COMP_VERDICT: review_completed_actioned
+REVIEWED_SNAPSHOT: 41c69a4f3843caff0f32eda0be7abe4be8d8f975ed1a6d65a4b6a16884ab5e1c
 PROPAGATION_ELIGIBILITY: eligible_with_warning
-SYNTHESIS_ELIGIBILITY: blocked
-ACTION_REQUIRED: yes
+SYNTHESIS_ELIGIBILITY: eligible_with_warning
+ACTION_REQUIRED: no
 
-Independent review completed 2026-07-15 by openai/gpt-5.5 against commit `eeab5b53054b93544c428a476dad06a8f8fe2621`. Historical review: `2026-07-15-comp-031-eeab5b5.md` in Git commit `90411d413a8c639e545782ea26c0dddbb30a72e1`.
+The committed artifact is an invalidation tombstone. Its exact authoring-time review is bound at `e620c75a3a8b07ea8a6b120d131d3be0e4a8317bab344eb46a2e37e9e4d88c62`; this push receipt binds the committed snapshot.
 
-This receipt binds that completed review and its subsequent remediation to the exact current manifest. It is a migration binding, not a claim that a new review ran today.
-
-Lane adjudication 2026-07-16 (no new artifact review): propagation is corrective-only; synthesis is blocked. Allowed synthesis scope: None until invalidated generated outputs and the stale separate-strain recommendation are corrected in place. Forbidden inferences: all Delta-SUA values; substrate-competition and butyrate effects; Q141K rescue; two-strain or dual-chassis engineering recommendations.
+Allowed propagation: the invalidation, retractions, and unranked experimental options. Allowed synthesis: comp-031 as a negative result and model-failure lesson. Forbidden: any former ΔSUA, additivity, competition, PDB-derived-butyrate, Q141K-rescue, or topology inference.

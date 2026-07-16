@@ -107,7 +107,13 @@ def referencing_wiki_files(identifier: str, comp_dir: Path) -> list[Path]:
     paths: list[Path] = []
     for raw in result.stdout.splitlines():
         path = repo_path(raw)
-        if path.is_file() and path != comp_dir and comp_dir not in path.parents:
+        rel = path.relative_to(ROOT)
+        if (
+            path.is_file()
+            and "reviews" not in rel.parts
+            and path != comp_dir
+            and comp_dir not in path.parents
+        ):
             paths.append(path)
     return sorted(set(paths))
 

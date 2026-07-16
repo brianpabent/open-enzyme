@@ -1,11 +1,9 @@
-COMP_VERDICT: review_completed_open_actions
-REVIEWED_SNAPSHOT: 3737d056f2ae505f7848a08729c7c46514e8e1537ea337d7e0131e7b21885928
+COMP_VERDICT: review_completed_actioned
+REVIEWED_SNAPSHOT: 412ab58fa94965e420c412f39fc8af23f6879810309d2e377eb2c00c9c6808da
 PROPAGATION_ELIGIBILITY: eligible_with_warning
 SYNTHESIS_ELIGIBILITY: eligible_with_warning
-ACTION_REQUIRED: yes
+ACTION_REQUIRED: no
 
-Independent review completed 2026-07-15 by openai/gpt-5.5 against commit `eeab5b53054b93544c428a476dad06a8f8fe2621`. Historical review: `2026-07-15-comp-046-eeab5b5.md` in Git commit `90411d413a8c639e545782ea26c0dddbb30a72e1`.
+The corrected artifact's exact authoring-time review is bound at `ae81b0ae5766f7947cc17d22a98a3a7b2face2d0c3d61c64ec861272cf4e15bd`; this push receipt binds the committed snapshot.
 
-This receipt binds that completed review and its subsequent remediation to the exact current manifest. It is a migration binding, not a claim that a new review ran today.
-
-Lane adjudication 2026-07-16 (no new artifact review): propagation is corrective-only; synthesis is eligible_with_warning. Allowed synthesis scope: Use the dietary 100-unit fate ledger and the endogenous capture-fraction architecture comparison as different constructs. Forbidden inferences: two conserved 100-unit ledgers; both pools are conserved; the endogenous side is a mass-balance ledger.
+Allowed propagation and synthesis: the conserved dietary fate ledger and the separate non-conserved endogenous capture comparison, with their explicit limitations. Forbidden: two conserved ledgers, joint efficacy or ΔSUA, probability interpretation, or a general topology winner.

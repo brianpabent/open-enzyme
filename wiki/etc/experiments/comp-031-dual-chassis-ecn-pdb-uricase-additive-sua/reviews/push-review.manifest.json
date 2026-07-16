@@ -6,50 +6,32 @@
     {
       "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
       "kind": "design",
-      "bytes": 3223,
-      "sha256": "c3429016800d821aae918f6704e0b0afa28af964e5372a83d8fb4c8fb49a985a"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/analyze.py",
-      "kind": "design",
-      "bytes": 29624,
-      "sha256": "b644ed62bda9ed3115ad04ee4457bd5692d4ae3e6aba07d6d81f692e51f5c861"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/model_parameters.json",
-      "kind": "design",
-      "bytes": 5658,
-      "sha256": "91cfd8bdb0cfec0023cc1f31e711960419c80347ba4d61e9a7b598aa1fa1995c"
+      "bytes": 2036,
+      "sha256": "5857fa02b00f6e9ab8f5e0cf2c41b6f003a519c313e3875a22174e4cc2225481"
     },
     {
       "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/provenance.md",
       "kind": "design",
-      "bytes": 6715,
-      "sha256": "f149f6b150126f2c92e25c7cb5b65eb0e3fe3e3edb12bd82e61f0c3163324d82"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/results.json",
-      "kind": "generated_output",
-      "bytes": 10341,
-      "sha256": "c12c22fd2ba639c38b0f517854d5a0972819991959d7913c87d2512c19a387de"
+      "bytes": 1098,
+      "sha256": "3bb98871ea5616454f64ede06f149ebedb1cfaa268639e0153f4a453e2d15b73"
     },
     {
       "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md",
       "kind": "generated_output",
-      "bytes": 6294,
-      "sha256": "0fb4942d550a2924b77b4eff945cde78aefa2a48594045d0df58dda29a30e428"
+      "bytes": 930,
+      "sha256": "415ccf2ce84f77f97e0604f177576bd519a23371f6b30cb197498e7ba9e6d436"
     },
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 44914,
-      "sha256": "3c837b979a076ea883763160ede8f7717dc343f291d6f77a9cb0c89845089388"
+      "bytes": 44557,
+      "sha256": "15d44c9ef6a7bf225ce62f3800155fd33c8fa4402b373ebfff44ae8f0a62e804"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/disulfiram.md",
@@ -60,8 +42,8 @@
     {
       "path": "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
       "kind": "proposed_update",
-      "bytes": 3635,
-      "sha256": "bec900794161500baadcab54fe722361fd51b293b27aa7f307b497eaf37e1d2b"
+      "bytes": 3707,
+      "sha256": "8b0fdf52c7a2ff37cc6317be755dce0e745219de0d2c0bef14a67bd4119d1452"
     },
     {
       "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/README.md",
@@ -76,24 +58,30 @@
       "sha256": "ab4d4c782ce140875c2ee4744220fc975f71a9c49c9bad5180690f5d0e03cf56"
     },
     {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 101342,
+      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
+    },
+    {
       "path": "wiki/purine-degrading-bacteria.md",
       "kind": "proposed_update",
-      "bytes": 36898,
-      "sha256": "d1bcfbb6ca3b4b5fee53476167a43d707ed693ae6ec7e32c8063dfc68db08216"
+      "bytes": 36934,
+      "sha256": "30b8a201af729e624380c3860997ad6b76f1384b47d445bf10f27619773612be"
     },
     {
       "path": "wiki/staged-purine-sink-mass-balance-computational.md",
       "kind": "proposed_update",
-      "bytes": 5792,
-      "sha256": "488c6e60d1496cdb5bcb23c6acd24ca0bc83db9b917688f322d140a05494219b"
+      "bytes": 6102,
+      "sha256": "e8d9d7114dc373ce90d7e16a7d714cf30fa5b1db9076bba056101b98fc2533fa"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 250368,
-      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
+      "bytes": 249208,
+      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "93c4663cb8febc7fecc8c4583cb83d3df245fec146d00c147d1612c0160cb1c6"
+  "manifest_sha256": "41c69a4f3843caff0f32eda0be7abe4be8d8f975ed1a6d65a4b6a16884ab5e1c"
 }

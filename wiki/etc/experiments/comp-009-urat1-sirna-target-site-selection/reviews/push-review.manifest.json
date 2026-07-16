@@ -66,14 +66,14 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 44914,
-      "sha256": "3c837b979a076ea883763160ede8f7717dc343f291d6f77a9cb0c89845089388"
+      "bytes": 44557,
+      "sha256": "15d44c9ef6a7bf225ce62f3800155fd33c8fa4402b373ebfff44ae8f0a62e804"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/hypotheses/H03-sirna-urat1-thesis.md",
@@ -84,20 +84,20 @@
     {
       "path": "wiki/modality-chokepoint-matrix.md",
       "kind": "proposed_update",
-      "bytes": 54590,
-      "sha256": "84bdaf4b881f9c7d5cedd0e1d42ca1681526bf05c6c1cb2e37e7a56279787603"
+      "bytes": 54389,
+      "sha256": "6bcf7fbc8fd123c1fe11b5a1f88550fcf2350533f8a254fdd3157f1825bee525"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 102771,
-      "sha256": "3eff2e7d1ff7c729e7771c4ba59394cea4ec3a09b6ddb7f7e197ccdf12c60f80"
+      "bytes": 101342,
+      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
     },
     {
       "path": "wiki/sirna-urat1-modality.md",
       "kind": "proposed_update",
-      "bytes": 19494,
-      "sha256": "dcafbc9b31b4a5d8f95f2e7a1a23a8340da1497fa4ee1d81bf02285a050b0753"
+      "bytes": 19555,
+      "sha256": "e110b5b4b746ea9c0efbdbec19c62a019dca0004875c9735a58a00be9d0f0329"
     },
     {
       "path": "wiki/urat1-sirna-target-site-selection-computational.md",
@@ -107,5 +107,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "96b3ee489cc8de2bce6e4f406ef39924282ea8ad3028a94e78d94eee145e80ed"
+  "manifest_sha256": "9aae7abf8dd8e3e3053840a87b9c448ad3e89bd3583c7ff55abe1fc02ddd93bd"
 }

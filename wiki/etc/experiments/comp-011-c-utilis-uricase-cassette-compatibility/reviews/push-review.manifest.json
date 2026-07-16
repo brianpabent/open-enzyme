@@ -84,14 +84,14 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 24909,
-      "sha256": "c863eea73cfc0ebc8a24832527d0ed0abb8a13b2f5be6344853e34675e9a8b29"
+      "bytes": 24105,
+      "sha256": "f3766bd9e8d73c691d35f8b1868d11edecbf9d4cb7dc40b71eb878a3e9c340f1"
     },
     {
       "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/README.md",
@@ -132,26 +132,26 @@
     {
       "path": "wiki/koji-endgame-strain.md",
       "kind": "proposed_update",
-      "bytes": 92372,
-      "sha256": "996c249ba4ccbd685a36fc5348a53ea621a26694c586b126e9161e5c1334233d"
+      "bytes": 86478,
+      "sha256": "237e56bb7be6490cf90ffbfc16586ce8f05a0c6cdf858a930a3b8c16fca69e98"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 102771,
-      "sha256": "3eff2e7d1ff7c729e7771c4ba59394cea4ec3a09b6ddb7f7e197ccdf12c60f80"
+      "bytes": 101342,
+      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
     },
     {
       "path": "wiki/sirna-urat1-modality.md",
       "kind": "proposed_update",
-      "bytes": 19494,
-      "sha256": "dcafbc9b31b4a5d8f95f2e7a1a23a8340da1497fa4ee1d81bf02285a050b0753"
+      "bytes": 19555,
+      "sha256": "e110b5b4b746ea9c0efbdbec19c62a019dca0004875c9735a58a00be9d0f0329"
     },
     {
       "path": "wiki/tcm-modern-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 34340,
-      "sha256": "c9628be570fcf0c9c1968fa20eb2f8a872bbcd3347dd93f0e251a6fffff3e42c"
+      "bytes": 34331,
+      "sha256": "106c59999019fb4cf3aeae71c08c4a07bb7ff496e209b2a09c890f68e2e6c31e"
     },
     {
       "path": "wiki/uricase-variant-selection.md",
@@ -161,5 +161,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "bc2b6504e97ef551a390dac86ef42b60bcfc49588a4d81829b653c2a72d95959"
+  "manifest_sha256": "4afbc27078222404d00ffdffa0d895d5bb8ea2acfda082f91b85f67e0de10ca0"
 }

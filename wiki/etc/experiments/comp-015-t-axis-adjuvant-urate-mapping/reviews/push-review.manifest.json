@@ -72,32 +72,32 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/genotype-informed-supplement-workflow.md",
       "kind": "proposed_update",
-      "bytes": 34291,
-      "sha256": "2f872063a148fe48415125dd7c95f0fa189de5d25ca27537fc409866cd21099f"
+      "bytes": 30389,
+      "sha256": "38305db97f2fc9eee8c0d9db8226bb99eeceabb247215e4d6b8566e18d0fca69"
     },
     {
       "path": "wiki/gout-action-guide.md",
       "kind": "proposed_update",
-      "bytes": 38906,
-      "sha256": "312f3dcd5535948a9fef4182be16a3313b8d9884104d2da44fcbdf5def275cc0"
+      "bytes": 38712,
+      "sha256": "0ad406a01631e06f9edfd4a2776ae19b5d64cc63a01cb1b25aee19658fd504a9"
     },
     {
       "path": "wiki/hypotheses/H07-clomid-intestinal-er-antagonism.md",
       "kind": "proposed_update",
-      "bytes": 20828,
-      "sha256": "4a32d41ff127824cc6a23a4dd2b5c73de2c388ad4eec76b9b0eaac027080f774"
+      "bytes": 20655,
+      "sha256": "4b2558fa27e74775460dbf5874bfe03ac3f8c9fe8d6bb2580b9ae3fcbccd29eb"
     },
     {
       "path": "wiki/personal-genome-protocol.md",
       "kind": "proposed_update",
-      "bytes": 16475,
-      "sha256": "10d85b80274e1934b2062804c20f29f3daed2cc5f1f8e64e0a3bef8aa64f1c7e"
+      "bytes": 16313,
+      "sha256": "a580aa4e4d624ed2169a9038935b6d307028524edb97cfc3383b7ad832507b3f"
     },
     {
       "path": "wiki/prps-purine-biosynthesis-chokepoint.md",
@@ -113,5 +113,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "b3bd9b0b12c2c91834a08660896bbe17df60506b2f578877022115d0549fbc45"
+  "manifest_sha256": "63d0567e79c9db54e6ac535d1cdeb4724a107529b13fcdddf93327b238b95987"
 }

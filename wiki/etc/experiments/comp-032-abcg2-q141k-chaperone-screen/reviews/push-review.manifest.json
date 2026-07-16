@@ -66,8 +66,8 @@
     {
       "path": "wiki/abcg2-modulators.md",
       "kind": "proposed_update",
-      "bytes": 55151,
-      "sha256": "98fbe0f53b00ffbb2d3a61056e3b53536116ea7faf01a2747220e72cca160fad"
+      "bytes": 52037,
+      "sha256": "dfdcbc7124f3416da5e626be3a0369dd4e67ba0d199129a9497e58a32e982a2b"
     },
     {
       "path": "wiki/abcg2-q141k-chaperone-rescreen-computational.md",
@@ -84,14 +84,14 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 44914,
-      "sha256": "3c837b979a076ea883763160ede8f7717dc343f291d6f77a9cb0c89845089388"
+      "bytes": 44557,
+      "sha256": "15d44c9ef6a7bf225ce62f3800155fd33c8fa4402b373ebfff44ae8f0a62e804"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -124,24 +124,12 @@
       "sha256": "09ad8ac718e9cfca74471dd27409d197a7eb9ba2da1e732d38831b0a15bc4b34"
     },
     {
-      "path": "wiki/genotype-informed-supplement-workflow.md",
-      "kind": "proposed_update",
-      "bytes": 34291,
-      "sha256": "2f872063a148fe48415125dd7c95f0fa189de5d25ca27537fc409866cd21099f"
-    },
-    {
-      "path": "wiki/gout-genetic-variants.md",
-      "kind": "proposed_update",
-      "bytes": 56542,
-      "sha256": "7dd710f8181aef6321a95935659e7bf5dad4c3f9e822e8d3e6cb141d01b17e59"
-    },
-    {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 250368,
-      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
+      "bytes": 249208,
+      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "f2b8d21c579dbebae4150a68cc0a420cb4e7facdd73a302beaf9457bc2ef16ee"
+  "manifest_sha256": "2cdbb61f9d000f335899eda5d6e701b9211ff1e7ff07cfd77208877fd4b12c85"
 }

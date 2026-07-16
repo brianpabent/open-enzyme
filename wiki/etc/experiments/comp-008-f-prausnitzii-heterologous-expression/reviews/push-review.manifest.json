@@ -46,16 +46,10 @@
       "sha256": "8b4c94f89e87c538b0f61cafd074fac887ac271646ee22678e830d350f1f2465"
     },
     {
-      "path": "wiki/abcg2-modulators.md",
-      "kind": "proposed_update",
-      "bytes": 55151,
-      "sha256": "98fbe0f53b00ffbb2d3a61056e3b53536116ea7faf01a2747220e72cca160fad"
-    },
-    {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82339,
-      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
+      "bytes": 82324,
+      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
     },
     {
       "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
@@ -66,34 +60,28 @@
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 24909,
-      "sha256": "c863eea73cfc0ebc8a24832527d0ed0abb8a13b2f5be6344853e34675e9a8b29"
+      "bytes": 24105,
+      "sha256": "f3766bd9e8d73c691d35f8b1868d11edecbf9d4cb7dc40b71eb878a3e9c340f1"
     },
     {
       "path": "wiki/f-prausnitzii-heterologous-expression-computational.md",
       "kind": "proposed_update",
-      "bytes": 5738,
-      "sha256": "52635c7f92148dd81a11a2b314c4f52715fdbb12e750896090d34224c222997d"
+      "bytes": 5968,
+      "sha256": "97a834d4c37d911efb0fe3bbc5b0c3ef0dfa5d6e8a6121b3e4473a1bb20a63f0"
     },
     {
       "path": "wiki/hypotheses/H02-engineered-lbp-thesis.md",
       "kind": "proposed_update",
-      "bytes": 8297,
-      "sha256": "8fe2664ce23caa29becbd7806a6b43d0a2b3c295969b080affc9ef3bf9adbc32"
-    },
-    {
-      "path": "wiki/koji-endgame-strain.md",
-      "kind": "proposed_update",
-      "bytes": 92372,
-      "sha256": "996c249ba4ccbd685a36fc5348a53ea621a26694c586b126e9161e5c1334233d"
+      "bytes": 8186,
+      "sha256": "a670d0c6e894917ca0c3c6a8e02df1a90b3aa3c75b7468847c62ce9181d066fd"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 102771,
-      "sha256": "3eff2e7d1ff7c729e7771c4ba59394cea4ec3a09b6ddb7f7e197ccdf12c60f80"
+      "bytes": 101342,
+      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "8c8d0eaba36f431129b65b2a5cc95fec69ddf3fbf2d8b1e1551aa514e18e03a2"
+  "manifest_sha256": "9f11441b8d522584f600dd57007ec61876617fefd1c612c4161f86c65fbb43dc"
 }
