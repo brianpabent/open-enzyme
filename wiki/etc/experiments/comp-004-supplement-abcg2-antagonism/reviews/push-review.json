@@ -1,27 +1,24 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "comp": "comp-004",
   "comp_dir": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism",
-  "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
-  "artifact_manifest_sha256": "b4535908918a82a577d0a94aa0f6a284fc80aadf3aaaae33236a633e5963eca3",
-  "reviewer_model": null,
-  "timestamp": "2026-07-16T20:29:49Z",
-  "comp_verdict": "legacy_review_pending",
-  "propagation_eligibility": "blocked",
-  "synthesis_eligibility": "blocked",
+  "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
+  "artifact_manifest_sha256": "9df2e7892a388b15956dc25b64e2c77ebcfed1b01eecad89c0d0e0e5a97ebba0",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-16T20:55:13Z",
+  "comp_verdict": "review_completed_actioned",
+  "propagation_eligibility": "eligible_with_warning",
+  "synthesis_eligibility": "eligible_with_warning",
   "action_required": false,
   "derived_paths": [
     "wiki/computational-experiments.md",
     "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md",
     "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/outputs/summary.md",
-    "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/wiki-archive.md",
     "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md",
     "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/inputs/provenance.md",
     "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/outputs/summary.md",
-    "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/wiki-archive.md",
     "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
     "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
-    "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md",
     "wiki/hypotheses/H04-tcm-rigor-intersection.md",
     "wiki/open-questions.md",
     "wiki/supplement-abcg2-antagonism-computational.md",
@@ -30,5 +27,22 @@
     "wiki/validation-experiments.md"
   ],
   "actual_cost_usd": 0.0,
-  "note": "Deterministic migration baseline only; no independent push review has occurred."
+  "binding_mode": "completed_review_migration",
+  "independent_review": {
+    "completed": true,
+    "date": "2026-07-14",
+    "reviewed_snapshot": "8ee4d257b275ae42e4af64a49f1c766870726f4f",
+    "review_log_git_path": "logs/comp-reviews/2026-07-14-comp-004-8ee4d25.md",
+    "review_log_commit": "731e59b4b67ab993760bfbc5c086746f696032f4"
+  },
+  "post_review_changed_manifest_paths": [
+    "wiki/computational-experiments.md",
+    "wiki/hypotheses/H04-tcm-rigor-intersection.md",
+    "wiki/open-questions.md",
+    "wiki/supplement-abcg2-antagonism-computational.md",
+    "wiki/tcm-gout-compound-triage-computational.md",
+    "wiki/tcm-modern-rigor-intersection.md",
+    "wiki/validation-experiments.md"
+  ],
+  "note": "Carries forward a completed independent review and its remediation state. The exact current manifest binding is a migration receipt, not a new review."
 }

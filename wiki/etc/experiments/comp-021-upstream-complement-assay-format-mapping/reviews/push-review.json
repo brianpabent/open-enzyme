@@ -1,22 +1,34 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "comp": "comp-021",
   "comp_dir": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping",
-  "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
-  "artifact_manifest_sha256": "f22531db5bbb3a58f9057331e9708c27568cb4b3156bbda77e470000f0e73efc",
-  "reviewer_model": null,
-  "timestamp": "2026-07-16T20:29:51Z",
-  "comp_verdict": "legacy_review_pending",
-  "propagation_eligibility": "blocked",
-  "synthesis_eligibility": "blocked",
+  "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
+  "artifact_manifest_sha256": "ce34bb51666c5da649a5873284d3dcc4057485153a4cfa2e4aff53d065e2c586",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-16T20:55:15Z",
+  "comp_verdict": "review_completed_actioned",
+  "propagation_eligibility": "eligible_with_warning",
+  "synthesis_eligibility": "eligible_with_warning",
   "action_required": false,
   "derived_paths": [
     "wiki/complement-c5a-gout.md",
     "wiki/computational-experiments.md",
     "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
-    "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md",
     "wiki/upstream-complement-assay-format-mapping-computational.md"
   ],
   "actual_cost_usd": 0.0,
-  "note": "Deterministic migration baseline only; no independent push review has occurred."
+  "binding_mode": "completed_review_migration",
+  "independent_review": {
+    "completed": true,
+    "date": "2026-07-14",
+    "reviewed_snapshot": "8ee4d257b275ae42e4af64a49f1c766870726f4f",
+    "review_log_git_path": "logs/comp-reviews/2026-07-14-comp-021-8ee4d25.md",
+    "review_log_commit": "731e59b4b67ab993760bfbc5c086746f696032f4"
+  },
+  "post_review_changed_manifest_paths": [
+    "wiki/computational-experiments.md",
+    "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/inputs/provenance.md",
+    "wiki/upstream-complement-assay-format-mapping-computational.md"
+  ],
+  "note": "Carries forward a completed independent review and its remediation state. The exact current manifest binding is a migration receipt, not a new review."
 }

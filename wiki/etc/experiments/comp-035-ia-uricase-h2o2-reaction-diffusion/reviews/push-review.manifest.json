@@ -102,14 +102,14 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/delivery-route-matrix.md",
       "kind": "proposed_update",
-      "bytes": 39448,
-      "sha256": "6af68bb5474b22b3a4ac5b8571dd6d723382b0a3c73036545e48af70e01619e3"
+      "bytes": 39433,
+      "sha256": "bc5c2b7f1fe7fb6f11ee0798e1b9dc2d58a04b18f9524be40b9ae379aebcd3e7"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -124,12 +124,6 @@
       "sha256": "913be16094108c4d7d82a7defba88430f226e2468be90e515345328c56768e2f"
     },
     {
-      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 23494,
-      "sha256": "c10d90b9703a9c8158acd76554fa166cfe8ce05e157e9d0b9062229df6d0850c"
-    },
-    {
       "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/README.md",
       "kind": "proposed_update",
       "bytes": 15818,
@@ -140,12 +134,6 @@
       "kind": "proposed_update",
       "bytes": 5314,
       "sha256": "8f40ed5f0531ece616d386cd825ac4bcbdfa5f5d6c92ac2f4dfaabaeae3685e9"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 9982,
-      "sha256": "efff2089ba9d3d8ae2163f28be26aa8a6de26f5b537d6c17b0ebb62733c75edc"
     },
     {
       "path": "wiki/gout-kill-chain-delivery-routes.md",
@@ -167,5 +155,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "65de1c3a1ddf4209ce26d5acea9257b74256bd21a36d24b9fe9ccb8cae75daed"
+  "manifest_sha256": "810dd6c35fc4a772bc6b279ec910216f86bd198595ad3ff49c79f2c91d313f15"
 }

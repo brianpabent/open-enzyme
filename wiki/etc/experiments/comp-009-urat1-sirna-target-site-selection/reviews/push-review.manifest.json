@@ -6,8 +6,8 @@
     {
       "path": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection/README.md",
       "kind": "design",
-      "bytes": 8031,
-      "sha256": "9ac6781c6321acb1723725847757693906740f07f17c7e88a31427e89228d196"
+      "bytes": 7952,
+      "sha256": "4a54f129ea57b3ff15260eb5c5b528f535a6089b0eac62a5871436918a213b2e"
     },
     {
       "path": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection/inputs/NM_144585.4_mrna.fasta",
@@ -46,12 +46,6 @@
       "sha256": "527f42fba4838b15588dff9c53491a94719545b0199508fad0cb4995c5084112"
     },
     {
-      "path": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection/wiki-archive.md",
-      "kind": "design",
-      "bytes": 3941,
-      "sha256": "08ff6791bd75474c0e30ff4d45d127858049323a5c4182f2888d39a89e6ee990"
-    },
-    {
       "path": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection/outputs/shortlist.csv",
       "kind": "generated_output",
       "bytes": 809,
@@ -78,32 +72,32 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/hypotheses/H03-sirna-urat1-thesis.md",
       "kind": "proposed_update",
-      "bytes": 10613,
-      "sha256": "6ccd4f40305222138d2d19ed4177bf30723f8a8cbaa4bd44d1026ab9d522dc78"
+      "bytes": 10603,
+      "sha256": "a5b33201ea56571c68049c555f8d3c4605a682f074d164aab06b2ab3e70c0c92"
     },
     {
       "path": "wiki/modality-chokepoint-matrix.md",
       "kind": "proposed_update",
-      "bytes": 55047,
-      "sha256": "8f00ff489a00ca7075403e536ce1936c17bdb9eda6c9df976ae47ce215c34993"
+      "bytes": 54590,
+      "sha256": "84bdaf4b881f9c7d5cedd0e1d42ca1681526bf05c6c1cb2e37e7a56279787603"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 105531,
-      "sha256": "3152792c8967757c5ad57d78802266ed13617b48dad0029fe2699b9fbda4de72"
+      "bytes": 102771,
+      "sha256": "3eff2e7d1ff7c729e7771c4ba59394cea4ec3a09b6ddb7f7e197ccdf12c60f80"
     },
     {
       "path": "wiki/sirna-urat1-modality.md",
       "kind": "proposed_update",
-      "bytes": 21917,
-      "sha256": "8bf665ffa2ec13e2d1c945864664bf9d965f09ad87d000b0c8174c63c542a15c"
+      "bytes": 19494,
+      "sha256": "dcafbc9b31b4a5d8f95f2e7a1a23a8340da1497fa4ee1d81bf02285a050b0753"
     },
     {
       "path": "wiki/urat1-sirna-target-site-selection-computational.md",
@@ -113,5 +107,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "3b647d2cf7a64768a371da140d6ecddd38116e0a2fd82fb787e98446f7d7afff"
+  "manifest_sha256": "96b3ee489cc8de2bce6e4f406ef39924282ea8ad3028a94e78d94eee145e80ed"
 }

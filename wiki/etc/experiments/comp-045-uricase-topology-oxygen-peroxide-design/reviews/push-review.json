@@ -1,15 +1,15 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "comp": "comp-045",
   "comp_dir": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design",
-  "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
-  "artifact_manifest_sha256": "8e887bd49a3a2cb1fcdb4e76ab3eb29c9e2f83785340bbe66663706193af87a4",
-  "reviewer_model": null,
-  "timestamp": "2026-07-16T20:29:53Z",
-  "comp_verdict": "legacy_review_pending",
+  "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
+  "artifact_manifest_sha256": "6f14527340948401edef4a5fe4c14a63f72ee736d69e6a8c83f7a8b3a2ee455f",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-16T20:55:17Z",
+  "comp_verdict": "review_completed_open_actions",
   "propagation_eligibility": "blocked",
   "synthesis_eligibility": "blocked",
-  "action_required": false,
+  "action_required": true,
   "derived_paths": [
     "wiki/computational-experiments.md",
     "wiki/delivery-route-matrix.md",
@@ -25,5 +25,21 @@
     "wiki/validation-experiments.md"
   ],
   "actual_cost_usd": 0.0,
-  "note": "Deterministic migration baseline only; no independent push review has occurred."
+  "binding_mode": "completed_review_migration",
+  "independent_review": {
+    "completed": true,
+    "date": "2026-07-15",
+    "reviewed_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
+    "review_log_git_path": "logs/comp-reviews/2026-07-15-comp-045-eeab5b5.md",
+    "review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+  },
+  "post_review_changed_manifest_paths": [
+    "wiki/computational-experiments.md",
+    "wiki/delivery-route-matrix.md",
+    "wiki/engineered-koji-protocol.md",
+    "wiki/gut-lumen-sink.md",
+    "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
+    "wiki/validation-experiments.md"
+  ],
+  "note": "Carries forward a completed independent review and its remediation state. The exact current manifest binding is a migration receipt, not a new review."
 }

@@ -124,12 +124,6 @@
       "sha256": "08501a641766729d0da099355249b057ca36f44953e38120b0af93363fa44b47"
     },
     {
-      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/wiki-archive.md",
-      "kind": "design",
-      "bytes": 24490,
-      "sha256": "b5715bcb1077461a1c2bd46b2f8c5f9213adbcabb4f256aba36f1d5e504c5bf5"
-    },
-    {
       "path": "wiki/chaperone-orthogonal-stacking.md",
       "kind": "proposed_update",
       "bytes": 106834,
@@ -144,26 +138,20 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/daf-cd55-scr14-cassette-ranking-computational.md",
       "kind": "proposed_update",
-      "bytes": 3599,
-      "sha256": "440f7b7e9c99d4f2bb7cc3b3134a1c4c9d25f827fbe7b2de0f339849a693735d"
+      "bytes": 3260,
+      "sha256": "5109efbc115b47c98788b2db2ca23500f1cf2676e84b13d31e0bbdc6d8f58863"
     },
     {
       "path": "wiki/etc/GRAPH.md",
       "kind": "proposed_update",
       "bytes": 42433,
       "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 20855,
-      "sha256": "58cc5eb369afdc8a67d8240e7e69920570221548107e8721decf0250cb356244"
     },
     {
       "path": "wiki/etc/experiments/comp-029-combined-cp0-systems-model/README.md",
@@ -178,18 +166,12 @@
       "sha256": "293861ab7587082ab559967f3fe4ce813be6706f372c5491901e10f085b00347"
     },
     {
-      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 23494,
-      "sha256": "c10d90b9703a9c8158acd76554fa166cfe8ce05e157e9d0b9062229df6d0850c"
-    },
-    {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 256486,
-      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+      "bytes": 250368,
+      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "c7673209384093efeb575e52b779b214290c531a71aa34a5eb699f3e942c800e"
+  "manifest_sha256": "a045cccbb0cafa194d2c797684c5582cc47fc80b20abb36635ecc0c914230e5b"
 }

@@ -124,12 +124,6 @@
       "sha256": "8381488f4eaefb82af0dc904c077f60d04d2a8a21a281fb1fc58b5f23205ad13"
     },
     {
-      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive.md",
-      "kind": "design",
-      "bytes": 31633,
-      "sha256": "ef3891f2c3fa28ebd306c8e8bcd9e893483a47a9355c85e3181f382e4e9c6922"
-    },
-    {
       "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/outputs/codon_variant_scores.md",
       "kind": "generated_output",
       "bytes": 594,
@@ -174,8 +168,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -192,14 +186,8 @@
     {
       "path": "wiki/etc/bio-ai-tools.md",
       "kind": "proposed_update",
-      "bytes": 63999,
-      "sha256": "0265b6fed9c5ae43cbb0d63c638592f91ab690708a5fb2356ae5731ae85732ad"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 20474,
-      "sha256": "53083472ca62f09409d92d1364c28d3193f5ba01efb65be85edd56e194a3290e"
+      "bytes": 63996,
+      "sha256": "d9a021e8d7debec90a2786475027c0a08bef82d05eca3d9ebb75111709682376"
     },
     {
       "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/README.md",
@@ -214,16 +202,10 @@
       "sha256": "4a1fb738b2b48c9f08313d4af79dfc7b867071466b8022725f800f7feab9a419"
     },
     {
-      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 24490,
-      "sha256": "b5715bcb1077461a1c2bd46b2f8c5f9213adbcabb4f256aba36f1d5e504c5bf5"
-    },
-    {
       "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/README.md",
       "kind": "proposed_update",
-      "bytes": 7650,
-      "sha256": "46b906fb77c6947b18df9d892ec5d31b217b51cff1414a226e21e8e44aadf499"
+      "bytes": 7575,
+      "sha256": "11a8de68bcf25acad7b92ccc92595ab3df6b5976654eb3b77ecbf319e70f37ea"
     },
     {
       "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/inputs/provenance.md",
@@ -238,30 +220,24 @@
       "sha256": "9b46e45ab5bd981fb2cd9362a70164abb2de12b5b7c1a3c04411f79f03acd2d5"
     },
     {
-      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 23494,
-      "sha256": "c10d90b9703a9c8158acd76554fa166cfe8ce05e157e9d0b9062229df6d0850c"
-    },
-    {
       "path": "wiki/koji-endgame-strain.md",
       "kind": "proposed_update",
-      "bytes": 92535,
-      "sha256": "6c45144b6dcfc23db424d07cf527de910e8dedd085ace0a8e5af6f4a1f21e53e"
+      "bytes": 92372,
+      "sha256": "996c249ba4ccbd685a36fc5348a53ea621a26694c586b126e9161e5c1334233d"
     },
     {
       "path": "wiki/uricase-cassette-ranking-computational.md",
       "kind": "proposed_update",
-      "bytes": 3677,
-      "sha256": "495a40a8377906851974ed37fce1d0c45343863e26e945f066d97f442ee749ba"
+      "bytes": 3282,
+      "sha256": "6f2771ae354437b0b05fdfd31b27b2f44b1c1b8f2c3e754260c616aabb988fd8"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 256486,
-      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+      "bytes": 250368,
+      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "0cc71e7b4ac72c33a609c249ab917e1fa23693bf037c6a066b7d22fcd31a96ed"
+  "manifest_sha256": "c0d893014a00463e81e6d2cbfe7e310d2867e0dbaeb51ca1283998667d43a6c2"
 }

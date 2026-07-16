@@ -90,8 +90,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
@@ -102,10 +102,10 @@
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 25895,
-      "sha256": "f030ff0f71a60485e99f966ae76762e0040655d3dc993b25e4f07db004c1b7b0"
+      "bytes": 24909,
+      "sha256": "c863eea73cfc0ebc8a24832527d0ed0abb8a13b2f5be6344853e34675e9a8b29"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "b38edbd2c56e89ca7451e2c25c3a42550675be4adffd16b2f6514b9f50c3d639"
+  "manifest_sha256": "4debcc60c113a106da2f3396da367313bfd792f7d65b829e44401097bf8f3346"
 }

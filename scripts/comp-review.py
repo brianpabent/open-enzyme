@@ -559,7 +559,7 @@ def main() -> None:
     final_prompt = (
         prompt_template
         + "\n\nDAEMON REVIEW MODE\n"
-        + f"COMP: {comp_id}\nREVIEWED_SNAPSHOT: manifest:{manifest_sha}\nSOURCE_COMMIT: {commit_sha}\n"
+        + f"COMP: {comp_id}\nREVIEWED_SNAPSHOT: {manifest_sha}\nSOURCE_COMMIT: {commit_sha}\n"
         + f"AUTHORING_GATES: {json.dumps(authoring_gates)}\n"
         + f"DETERMINISTIC_BLOCKS: {json.dumps(deterministic_blocks)}\n"
         + "The shard auditors below inspected every text segment in the coverage receipt. "
@@ -573,12 +573,34 @@ def main() -> None:
     if totals["cost_usd"] > args.max_cost_usd:
         raise SystemExit("Provider-reported complete-review cost exceeded cap; no eligibility receipt written")
     fields = parse_final(final_text)
-    if fields["REVIEWED_SNAPSHOT"] != f"manifest:{manifest_sha}":
+    if fields["REVIEWED_SNAPSHOT"] != manifest_sha:
         raise SystemExit("Reviewer did not bind verdict to exact push manifest")
     if deterministic_blocks and (
         fields["PROPAGATION_ELIGIBILITY"] != "blocked" or fields["SYNTHESIS_ELIGIBILITY"] != "blocked"
     ):
         raise SystemExit("Reviewer attempted to override a deterministic eligibility block")
+
+    with tempfile.NamedTemporaryFile(
+        mode="w", suffix=".md", dir=ROOT, delete=False
+    ) as handle:
+        handle.write(final_text.rstrip() + "\n")
+        verification_path = Path(handle.name)
+    try:
+        verification = run(
+            [
+                sys.executable, "scripts/comp-review-manifest.py", "check",
+                "--manifest", str(manifest_path), "--review", str(verification_path),
+                "--required-line", f"COMP_VERDICT: {fields['COMP_VERDICT']}",
+            ],
+            check=False,
+        )
+    finally:
+        verification_path.unlink(missing_ok=True)
+    if verification.returncode:
+        raise SystemExit(
+            "Push review receipt failed exact manifest verification: "
+            + (verification.stderr or verification.stdout).strip()
+        )
 
     receipt_md, receipt_json, queue = write_receipts(
         comp_dir=comp_dir, comp_rel=comp_rel, comp_id=comp_id,

@@ -6,8 +6,8 @@
     {
       "path": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability/README.md",
       "kind": "design",
-      "bytes": 6357,
-      "sha256": "873e1b0a468734e8526f6e509ee65af921af5ced4c78e1d49c77939f5da8186f"
+      "bytes": 6239,
+      "sha256": "9a8078a15f46f7993d818e688bd8e41a63afbb84ccccb7bf23ccc6694c97aa9b"
     },
     {
       "path": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability/analyze.py",
@@ -36,20 +36,14 @@
     {
       "path": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability/inputs/provenance.md",
       "kind": "design",
-      "bytes": 9110,
-      "sha256": "2eb86c9f60c1ea7b4088b83bf8d54d7ab7eeff1c457839116e2c0c2ba475a98e"
+      "bytes": 9027,
+      "sha256": "02d5ddde79d44147db72d3699742640fc18aaa3d8ad752fc78979aa184f2561b"
     },
     {
       "path": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability/inputs/tetramer_interface_residues.json",
       "kind": "design",
       "bytes": 2836,
       "sha256": "5dc841b31dbd91f9f45df4342216507ef6aa960907e1352f0f62d165098c63e5"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability/wiki-archive.md",
-      "kind": "design",
-      "bytes": 21363,
-      "sha256": "7726b02e4e8f429ee4b1d9e9b03e654a366bdc6be9d0e8d815d06519e998de6d"
     },
     {
       "path": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability/outputs/stability_predictions.json",
@@ -66,14 +60,14 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/etc/bio-ai-tools.md",
       "kind": "proposed_update",
-      "bytes": 63999,
-      "sha256": "0265b6fed9c5ae43cbb0d63c638592f91ab690708a5fb2356ae5731ae85732ad"
+      "bytes": 63996,
+      "sha256": "d9a021e8d7debec90a2786475027c0a08bef82d05eca3d9ebb75111709682376"
     },
     {
       "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/outputs/summary.md",
@@ -82,18 +76,12 @@
       "sha256": "fff18d5cca3ec95d047b850a6d07fef17208e11718320a3294c8f139eec7d18e"
     },
     {
-      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 10598,
-      "sha256": "bb51b80335041e38fd9dda6bb0eb9a0b9ffa1a3ad0507adf5e88ca5c1f4c9290"
-    },
-    {
       "path": "wiki/uricase-shio-koji-thermal-stability-computational.md",
       "kind": "proposed_update",
-      "bytes": 4899,
-      "sha256": "9272b740cb3dacfdc73cc6df6346876abcfc48086c90375f5033c3d20dcd009c"
+      "bytes": 4423,
+      "sha256": "401cb8eb08d986e37d3389246a884d53366709ea69b149bad7a24b360a18c5c9"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "75a266dab663987229d0706cf291eea98d3f1e4f3c86cfb0217a26141c7b02cd"
+  "manifest_sha256": "3c4fa9c755cfcc27421db19877b4bbd6c9bae39cc5c837d70415f6a4c66a1760"
 }

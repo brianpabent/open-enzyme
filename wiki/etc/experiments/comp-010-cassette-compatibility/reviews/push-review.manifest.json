@@ -52,12 +52,6 @@
       "sha256": "6b4b9b57b989205b0adffd9c28861da22339c06169abafb199705b94aa341940"
     },
     {
-      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/wiki-archive.md",
-      "kind": "design",
-      "bytes": 20474,
-      "sha256": "53083472ca62f09409d92d1364c28d3193f5ba01efb65be85edd56e194a3290e"
-    },
-    {
       "path": "wiki/etc/experiments/comp-010-cassette-compatibility/outputs/cassette_analysis.json",
       "kind": "generated_output",
       "bytes": 15452,
@@ -72,14 +66,14 @@
     {
       "path": "wiki/aspergillus-oryzae.md",
       "kind": "proposed_update",
-      "bytes": 32855,
-      "sha256": "40a4e83bfb2f2897b68e39d38f8c3074a58dc6ef71d34d36b20611f914406c98"
+      "bytes": 32295,
+      "sha256": "bb05fb8755d56274f96c6561344544171c29384eed30ef74a7094929e3b6ab2f"
     },
     {
       "path": "wiki/cassette-compatibility-computational.md",
       "kind": "proposed_update",
-      "bytes": 2560,
-      "sha256": "1eb330a424cd8b8b719db47b8bf6095840518e7d5335b261584e4c2f356dc6d5"
+      "bytes": 2213,
+      "sha256": "29969850efffd8c1b9e196537f816a7bf468099cc29584c2d6b54298705c195d"
     },
     {
       "path": "wiki/chaperone-orthogonal-stacking.md",
@@ -90,8 +84,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -118,12 +112,6 @@
       "sha256": "6d1f445df427368cc9fbc56ab1911c35f2f43bd92469ba54a597c722ccee5a13"
     },
     {
-      "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 18630,
-      "sha256": "320d89d9f8106e45cd177a102d4e23388306df167532f967b941618f6fcc812d"
-    },
-    {
       "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/README.md",
       "kind": "proposed_update",
       "bytes": 8405,
@@ -142,22 +130,10 @@
       "sha256": "bd7a1516b34661af542a161aa4ec579c9d9dd1d84346463acf96c94ed2cf097b"
     },
     {
-      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 31633,
-      "sha256": "ef3891f2c3fa28ebd306c8e8bcd9e893483a47a9355c85e3181f382e4e9c6922"
-    },
-    {
       "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/inputs/provenance.md",
       "kind": "proposed_update",
       "bytes": 12165,
       "sha256": "bb8b595fad8bd0d5d900dedcd00db1188b489296be592f8dea77a9d04e6db959"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 25400,
-      "sha256": "ee59807dc6cb8b4db0d0060f0008bbbdc8295942f6a640d941e77995f12672fe"
     },
     {
       "path": "wiki/etc/manual-literature-mining.md",
@@ -174,14 +150,14 @@
     {
       "path": "wiki/koji-endgame-strain.md",
       "kind": "proposed_update",
-      "bytes": 92535,
-      "sha256": "6c45144b6dcfc23db424d07cf527de910e8dedd085ace0a8e5af6f4a1f21e53e"
+      "bytes": 92372,
+      "sha256": "996c249ba4ccbd685a36fc5348a53ea621a26694c586b126e9161e5c1334233d"
     },
     {
       "path": "wiki/lactoferrin.md",
       "kind": "proposed_update",
-      "bytes": 85150,
-      "sha256": "24f9aed2dc716f36e71b16a79d5cc20ab410d50dbf8f3186bda4d43a270f5ea7"
+      "bytes": 84982,
+      "sha256": "a26d4cd69e6112b40c5fee59c3716866311672ab6dd209fe858079e836082321"
     },
     {
       "path": "wiki/uricase-variant-selection.md",
@@ -192,10 +168,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 256486,
-      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+      "bytes": 250368,
+      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "d5de0ba82f8f802169c98f653a3c354a344a44abd71acc94d78919bff3c08f4e"
+  "manifest_sha256": "09a7e861494d765defb945435f0ca81470fcfe45d8202efd2e11d37b15017508"
 }

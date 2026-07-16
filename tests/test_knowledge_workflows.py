@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import sys
 import tempfile
 import unittest
@@ -29,10 +30,10 @@ class CompReviewContractTests(unittest.TestCase):
     def test_structured_verdict_keeps_lane_eligibility_separate(self):
         parsed = comp_review.parse_final(
             """COMP_VERDICT: clean_with_limitations
+REVIEWED_SNAPSHOT: abc
 PROPAGATION_ELIGIBILITY: eligible_with_warning
 SYNTHESIS_ELIGIBILITY: blocked
 ACTION_REQUIRED: yes
-REVIEWED_SNAPSHOT: manifest:abc
 
 # Independent comp review — comp-047
 """
@@ -117,11 +118,28 @@ class WorkflowTriggerTests(unittest.TestCase):
         self.assertIn("push-review.manifest", (ROOT / "scripts/comp-review.py").read_text())
         self.assertNotIn("logs/comp-reviews", text)
 
-    def test_legacy_backfill_is_blocked_not_a_fake_review(self):
-        text = (ROOT / "scripts/backfill-comp-review-state.py").read_text()
-        self.assertIn('"comp_verdict": "legacy_review_pending"', text)
-        self.assertGreaterEqual(text.count('"blocked"'), 2)
-        self.assertIn("no independent push review has occurred", text)
+    def test_completed_review_baseline_preserves_real_provenance(self):
+        state = json.loads((ROOT / "logs/sweep-state.json").read_text())
+        records = state["comp_reviews"]
+        self.assertEqual(40, len(records))
+        self.assertEqual(
+            18,
+            sum(r["comp_verdict"] == "review_completed_open_actions" for r in records.values()),
+        )
+        self.assertEqual(
+            22,
+            sum(r["comp_verdict"] == "review_completed_actioned" for r in records.values()),
+        )
+        for record in records.values():
+            receipt = json.loads(
+                (ROOT / record["comp_dir"] / "reviews" / "push-review.json").read_text()
+            )
+            provenance = receipt["independent_review"]
+            self.assertTrue(provenance["completed"])
+            self.assertTrue(provenance["review_log_git_path"].startswith("logs/comp-reviews/"))
+            self.assertEqual(40, len(provenance["review_log_commit"]))
+            self.assertEqual("completed_review_migration", receipt["binding_mode"])
+            self.assertNotEqual("legacy_review_pending", receipt["comp_verdict"])
 
 
 class DistributedSynthesisContractTests(unittest.TestCase):

@@ -41,10 +41,10 @@ In daemon mode, the first five non-empty lines must be exactly:
 
 ```text
 COMP_VERDICT: clean|clean_with_limitations|action_required|quantitative_verdict_invalid
+REVIEWED_SNAPSHOT: <push-review.manifest.json SHA-256>
 PROPAGATION_ELIGIBILITY: eligible|eligible_with_warning|blocked
 SYNTHESIS_ELIGIBILITY: eligible|eligible_with_warning|blocked
 ACTION_REQUIRED: yes|no
-REVIEWED_SNAPSHOT: manifest:<push-review.manifest.json SHA-256>
 ```
 
 In authoring-time mode, retain the existing two-line contract:

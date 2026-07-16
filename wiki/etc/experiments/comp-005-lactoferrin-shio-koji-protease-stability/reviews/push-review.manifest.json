@@ -40,12 +40,6 @@
       "sha256": "d82b19cb14769b4ae189a1e6ae3b626776f0e4f6c5e91e03334202122f3c7559"
     },
     {
-      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/wiki-archive.md",
-      "kind": "design",
-      "bytes": 8018,
-      "sha256": "2976e9e12e7e1946ac071690a3c4b20a0a07472b3f085a36c63f5881564c41c0"
-    },
-    {
       "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/outputs/cleavage_sites.json",
       "kind": "generated_output",
       "bytes": 7954,
@@ -60,20 +54,20 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/daf-cd55-protease-stability-computational.md",
       "kind": "proposed_update",
-      "bytes": 2393,
-      "sha256": "e3f00b520e9900501661bf43d5cca25231298e188213aa6260bc0189c4caeb61"
+      "bytes": 1986,
+      "sha256": "0c265ffeb920c5660e870c638a7ae61afac34d722315e70d12c44665015370b7"
     },
     {
       "path": "wiki/daf-cd55-scr14-truncated-computational.md",
       "kind": "proposed_update",
-      "bytes": 2751,
-      "sha256": "21a4d7d57941e109108410df3453b009f961921e1b98ba232625b97a18d350c3"
+      "bytes": 2396,
+      "sha256": "a2ed3c2b81c0feab373fa9f43f7e10acc69dadf36e511dd17ac57645043d8553"
     },
     {
       "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
@@ -90,8 +84,8 @@
     {
       "path": "wiki/etc/bio-ai-tools.md",
       "kind": "proposed_update",
-      "bytes": 63999,
-      "sha256": "0265b6fed9c5ae43cbb0d63c638592f91ab690708a5fb2356ae5731ae85732ad"
+      "bytes": 63996,
+      "sha256": "d9a021e8d7debec90a2786475027c0a08bef82d05eca3d9ebb75111709682376"
     },
     {
       "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/README.md",
@@ -112,22 +106,10 @@
       "sha256": "71e14a816387867af91113ab01d13ae652ab7e7e54fbdb41da3c1322637b441b"
     },
     {
-      "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 16066,
-      "sha256": "c062441bb69963084565f3c919f4e6dddf71b6eed227d8c23a726773b10c48fe"
-    },
-    {
       "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/outputs/summary.md",
       "kind": "proposed_update",
       "bytes": 18623,
       "sha256": "8b4c94f89e87c538b0f61cafd074fac887ac271646ee22678e830d350f1f2465"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 18372,
-      "sha256": "2a0c6401223cfaa299da078dc037325b0893344f6c0f0c80ee3ecdc83289d085"
     },
     {
       "path": "wiki/etc/experiments/comp-010-cassette-compatibility/README.md",
@@ -148,12 +130,6 @@
       "sha256": "8c882c6ce107ade0332839eaa551edc6dc726f5f63c4864fdc7c9f728875325f"
     },
     {
-      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 20474,
-      "sha256": "53083472ca62f09409d92d1364c28d3193f5ba01efb65be85edd56e194a3290e"
-    },
-    {
       "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/inputs/provenance.md",
       "kind": "proposed_update",
       "bytes": 7578,
@@ -164,12 +140,6 @@
       "kind": "proposed_update",
       "bytes": 28230,
       "sha256": "6d1f445df427368cc9fbc56ab1911c35f2f43bd92469ba54a597c722ccee5a13"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 18630,
-      "sha256": "320d89d9f8106e45cd177a102d4e23388306df167532f967b941618f6fcc812d"
     },
     {
       "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/README.md",
@@ -190,16 +160,10 @@
       "sha256": "b974a0b452674a5d428c1939446d73021dda83a89630ca6f2c29c8359a77c911"
     },
     {
-      "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 20855,
-      "sha256": "58cc5eb369afdc8a67d8240e7e69920570221548107e8721decf0250cb356244"
-    },
-    {
       "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/README.md",
       "kind": "proposed_update",
-      "bytes": 7650,
-      "sha256": "46b906fb77c6947b18df9d892ec5d31b217b51cff1414a226e21e8e44aadf499"
+      "bytes": 7575,
+      "sha256": "11a8de68bcf25acad7b92ccc92595ab3df6b5976654eb3b77ecbf319e70f37ea"
     },
     {
       "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/inputs/provenance.md",
@@ -220,12 +184,6 @@
       "sha256": "9b46e45ab5bd981fb2cd9362a70164abb2de12b5b7c1a3c04411f79f03acd2d5"
     },
     {
-      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 23494,
-      "sha256": "c10d90b9703a9c8158acd76554fa166cfe8ce05e157e9d0b9062229df6d0850c"
-    },
-    {
       "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/README.md",
       "kind": "proposed_update",
       "bytes": 10965,
@@ -240,28 +198,28 @@
     {
       "path": "wiki/lactoferrin-linker-redesign-computational.md",
       "kind": "proposed_update",
-      "bytes": 13189,
-      "sha256": "85abb178bd9a1d58d470cf78863af8bc1a32e8a7e6d2746d43b2c2de2decdf2c"
+      "bytes": 12834,
+      "sha256": "af87be147398da8d10cf44034d8d49376381e0ab1cb55dcef0db1aaeb8ebb29b"
     },
     {
       "path": "wiki/lactoferrin-protease-stability-computational.md",
       "kind": "proposed_update",
-      "bytes": 2407,
-      "sha256": "72052d0a836c3c97b9701db2c8ffe0b1287686d4d9504154bf56d041a7e1a16c"
+      "bytes": 1988,
+      "sha256": "9133b3ca456b2cc6ac19e78d5a0bc78eb2569074a4d5db337ef39d171b1c1649"
     },
     {
       "path": "wiki/lactoferrin.md",
       "kind": "proposed_update",
-      "bytes": 85150,
-      "sha256": "24f9aed2dc716f36e71b16a79d5cc20ab410d50dbf8f3186bda4d43a270f5ea7"
+      "bytes": 84982,
+      "sha256": "a26d4cd69e6112b40c5fee59c3716866311672ab6dd209fe858079e836082321"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 256486,
-      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+      "bytes": 250368,
+      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "e1a243c96478ba6b50f5f45dbf468e34e1a92f48070bf57a85a5b0cba9e1d1a5"
+  "manifest_sha256": "88e5bd3251f4e876085cb7ef4a8199995036ec85e552b270a3bbd64a71d97f6e"
 }

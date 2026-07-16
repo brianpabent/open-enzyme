@@ -1,7 +1,9 @@
-COMP_VERDICT: legacy_review_pending
+COMP_VERDICT: review_completed_open_actions
+REVIEWED_SNAPSHOT: 02184b41b6197debdc9a73af5dc58e95c9b3e849bbd3ca5c5933e17f628c609e
 PROPAGATION_ELIGIBILITY: blocked
 SYNTHESIS_ELIGIBILITY: blocked
-ACTION_REQUIRED: no
-REVIEWED_SNAPSHOT: manifest:23edc4eb9a54c00119b94ee1ee86879540bd9545c079dd217b0f8684655354ab
+ACTION_REQUIRED: yes
 
-This is a deterministic migration baseline, not an independent review. Run the current COMP push review before using this artifact for propagation or synthesis.
+Independent review completed 2026-07-15 by openai/gpt-5.5 against commit `eeab5b53054b93544c428a476dad06a8f8fe2621`. Historical review: `2026-07-15-comp-044-eeab5b5.md` in Git commit `90411d413a8c639e545782ea26c0dddbb30a72e1`.
+
+This receipt binds that completed review and its subsequent remediation to the exact current manifest. It is a migration binding, not a claim that a new review ran today.

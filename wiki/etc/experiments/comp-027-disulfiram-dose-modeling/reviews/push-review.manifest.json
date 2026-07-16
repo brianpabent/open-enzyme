@@ -78,14 +78,14 @@
     {
       "path": "wiki/compounding-pharmacy-track.md",
       "kind": "proposed_update",
-      "bytes": 34651,
-      "sha256": "0a26c6cd91a51986765488f3c6c3743e5604ea09f53ab64e6e226cb4ec66246b"
+      "bytes": 34638,
+      "sha256": "367d269a218f15fcaeffe7228927a41d85067f8931fa21c1ea3995fb318b2ded"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/disulfiram-dose-modeling-computational.md",
@@ -108,8 +108,8 @@
     {
       "path": "wiki/etc/bio-ai-tools.md",
       "kind": "proposed_update",
-      "bytes": 63999,
-      "sha256": "0265b6fed9c5ae43cbb0d63c638592f91ab690708a5fb2356ae5731ae85732ad"
+      "bytes": 63996,
+      "sha256": "d9a021e8d7debec90a2786475027c0a08bef82d05eca3d9ebb75111709682376"
     },
     {
       "path": "wiki/gout-action-guide.md",
@@ -126,16 +126,16 @@
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 105531,
-      "sha256": "3152792c8967757c5ad57d78802266ed13617b48dad0029fe2699b9fbda4de72"
+      "bytes": 102771,
+      "sha256": "3eff2e7d1ff7c729e7771c4ba59394cea4ec3a09b6ddb7f7e197ccdf12c60f80"
     },
     {
       "path": "wiki/supplements-stack.md",
       "kind": "proposed_update",
-      "bytes": 109964,
-      "sha256": "90d82d28f1e2531e58c512241fe6cce0e11abf8da8a42cd5e03fdcadde725b7c"
+      "bytes": 109620,
+      "sha256": "11302779afe28e726fd403543dc0e388072807796a121a2c4bb4ef666bb0d803"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "a5032df88d623bc90fcdcb61fb22bece3807d90385bf5574f1bc0c87399a3fd1"
+  "manifest_sha256": "338be5501df29178f9d419778fd7df9a25a25937fa0505e598b7de6d07dc0ccd"
 }

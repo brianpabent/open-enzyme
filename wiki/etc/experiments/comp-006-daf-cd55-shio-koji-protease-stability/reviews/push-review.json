@@ -1,15 +1,15 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "comp": "comp-006",
   "comp_dir": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability",
-  "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
-  "artifact_manifest_sha256": "341380d364bada642bb597215cf40eb53b116a54ace21b0b1a9253b524447ba9",
-  "reviewer_model": null,
-  "timestamp": "2026-07-16T20:29:49Z",
-  "comp_verdict": "legacy_review_pending",
+  "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
+  "artifact_manifest_sha256": "472a468061723c7b9b54b8982a8d360618a3d0387e88fb953c08cd5743ebe538",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-16T20:55:13Z",
+  "comp_verdict": "review_completed_open_actions",
   "propagation_eligibility": "blocked",
   "synthesis_eligibility": "blocked",
-  "action_required": false,
+  "action_required": true,
   "derived_paths": [
     "wiki/c1-inh-protease-stability-ecn-computational.md",
     "wiki/chassis-pending-interventions.md",
@@ -21,14 +21,11 @@
     "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
     "wiki/engineered-lbp-chassis.md",
     "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/outputs/summary.md",
-    "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/wiki-archive.md",
     "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/README.md",
     "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/inputs/provenance.md",
     "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/outputs/summary.md",
-    "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/wiki-archive.md",
     "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md",
     "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-c1-inh-engineering-literature.md",
-    "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md",
     "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/README.md",
     "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/inputs/provenance.md",
     "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/outputs/summary.md",
@@ -45,5 +42,25 @@
     "wiki/validation-experiments.md"
   ],
   "actual_cost_usd": 0.0,
-  "note": "Deterministic migration baseline only; no independent push review has occurred."
+  "binding_mode": "completed_review_migration",
+  "independent_review": {
+    "completed": true,
+    "date": "2026-07-15",
+    "reviewed_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
+    "review_log_git_path": "logs/comp-reviews/2026-07-15-comp-006-eeab5b5.md",
+    "review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+  },
+  "post_review_changed_manifest_paths": [
+    "wiki/chassis-pending-interventions.md",
+    "wiki/computational-experiments.md",
+    "wiki/daf-cd55-protease-stability-computational.md",
+    "wiki/daf-cd55-scr14-truncated-computational.md",
+    "wiki/engineered-lbp-chassis.md",
+    "wiki/etc/manual-literature-mining.md",
+    "wiki/medicinal-mushroom-complement-track.md",
+    "wiki/modality-chokepoint-matrix.md",
+    "wiki/nlrp3-exploit-map.md",
+    "wiki/validation-experiments.md"
+  ],
+  "note": "Carries forward a completed independent review and its remediation state. The exact current manifest binding is a migration receipt, not a new review."
 }

@@ -1,15 +1,15 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "comp": "comp-042",
   "comp_dir": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx",
-  "source_commit": "91edb97c84fc4997306d85761dfac03e73bdac38",
-  "artifact_manifest_sha256": "680b29c38faa676f7b4b44f86f8d9f2dbcee151352dfc3f0be2561dae88ccad1",
-  "reviewer_model": null,
-  "timestamp": "2026-07-16T20:29:53Z",
-  "comp_verdict": "legacy_review_pending",
+  "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
+  "artifact_manifest_sha256": "7925a7762e367ab954530a1424ddb20eda1dd25c4c8e991b25724d2e19445915",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-16T20:55:17Z",
+  "comp_verdict": "review_completed_open_actions",
   "propagation_eligibility": "blocked",
   "synthesis_eligibility": "blocked",
-  "action_required": false,
+  "action_required": true,
   "derived_paths": [
     "wiki/computational-experiments.md",
     "wiki/gsdmd-pore-delivery-paradox.md",
@@ -19,5 +19,18 @@
     "wiki/validation-experiments.md"
   ],
   "actual_cost_usd": 0.0,
-  "note": "Deterministic migration baseline only; no independent push review has occurred."
+  "binding_mode": "completed_review_migration",
+  "independent_review": {
+    "completed": true,
+    "date": "2026-07-15",
+    "reviewed_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
+    "review_log_git_path": "logs/comp-reviews/2026-07-15-comp-042-eeab5b5.md",
+    "review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+  },
+  "post_review_changed_manifest_paths": [
+    "wiki/computational-experiments.md",
+    "wiki/open-questions.md",
+    "wiki/validation-experiments.md"
+  ],
+  "note": "Carries forward a completed independent review and its remediation state. The exact current manifest binding is a migration receipt, not a new review."
 }

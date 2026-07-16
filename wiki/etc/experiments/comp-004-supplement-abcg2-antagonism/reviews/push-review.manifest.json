@@ -40,12 +40,6 @@
       "sha256": "81f3af2252473b408162c6398493e8f212258a658c03e39b22606a7f2f0219df"
     },
     {
-      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/wiki-archive.md",
-      "kind": "design",
-      "bytes": 10632,
-      "sha256": "231880bb15f353dd7fc64573b62b85d87991dbc3ea4d0ed08229647716254ab1"
-    },
-    {
       "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/risk_assessment.json",
       "kind": "generated_output",
       "bytes": 5782,
@@ -60,8 +54,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md",
@@ -74,12 +68,6 @@
       "kind": "proposed_update",
       "bytes": 16933,
       "sha256": "2c40532b7ca8b5c92ea00b4a2d3aa87696d7ea3da634c456ac973719eb8b78fc"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 35836,
-      "sha256": "278de105337b5c12a14fa035ba09a6b39a3da347a0ba50936035d2540ce708d6"
     },
     {
       "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md",
@@ -100,12 +88,6 @@
       "sha256": "34c8e07894ee045a67a68480b93eea01d06525ca9ebf34280e0da8d387a2ef4c"
     },
     {
-      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 31797,
-      "sha256": "c1020ff9b2c6e34c4ce5672b399d0d05ded597c5f26877f0ff3c1ac5405bdc62"
-    },
-    {
       "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
       "kind": "proposed_update",
       "bytes": 5316,
@@ -118,48 +100,42 @@
       "sha256": "e1af5d1bc51b784aa3fea2eae804c9ae5ac92d012fc0c1cdf708c719a177f433"
     },
     {
-      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 31401,
-      "sha256": "13032bc0c7ff6f5a2b48a8f1b342fee2978cfa2decaaed29136ee62e6a9de3e1"
-    },
-    {
       "path": "wiki/hypotheses/H04-tcm-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 10744,
-      "sha256": "ca97b0cb9dffb6452ecc68623a79f91ddd2d051aac9eb79423bf04aef4ee4c15"
+      "bytes": 10734,
+      "sha256": "046dd17f61fdbedf0b70aa13fe43030f4c92544d67fa34db79ff9a6556f33404"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 105531,
-      "sha256": "3152792c8967757c5ad57d78802266ed13617b48dad0029fe2699b9fbda4de72"
+      "bytes": 102771,
+      "sha256": "3eff2e7d1ff7c729e7771c4ba59394cea4ec3a09b6ddb7f7e197ccdf12c60f80"
     },
     {
       "path": "wiki/supplement-abcg2-antagonism-computational.md",
       "kind": "proposed_update",
-      "bytes": 1957,
-      "sha256": "6824259d52dada3bf755c97b838ca7d90368271baf28425311360b92f5feca16"
+      "bytes": 1590,
+      "sha256": "936e33308fa70a0e691850830701e5a8d1fc047df1567b1add9acc740216dd6f"
     },
     {
       "path": "wiki/tcm-gout-compound-triage-computational.md",
       "kind": "proposed_update",
-      "bytes": 11421,
-      "sha256": "99d1a269c1e6c1231116b4bc43ad0c61a6baee66c182605eadb6fc0cd75477b2"
+      "bytes": 11066,
+      "sha256": "1eb840e631ac1e38a16ca3b3e0d49a5a4c58dd18b7f9c922e77928b81254cd6b"
     },
     {
       "path": "wiki/tcm-modern-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 34392,
-      "sha256": "0db72969dafb468338fcc093681cc19230e59dde10f7ca6c56fd2ecfec37825a"
+      "bytes": 34340,
+      "sha256": "c9628be570fcf0c9c1968fa20eb2f8a872bbcd3347dd93f0e251a6fffff3e42c"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 256486,
-      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+      "bytes": 250368,
+      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "b4535908918a82a577d0a94aa0f6a284fc80aadf3aaaae33236a633e5963eca3"
+  "manifest_sha256": "9df2e7892a388b15956dc25b64e2c77ebcfed1b01eecad89c0d0e0e5a97ebba0"
 }

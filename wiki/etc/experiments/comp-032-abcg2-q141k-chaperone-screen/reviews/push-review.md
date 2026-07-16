@@ -1,7 +1,9 @@
-COMP_VERDICT: legacy_review_pending
-PROPAGATION_ELIGIBILITY: blocked
-SYNTHESIS_ELIGIBILITY: blocked
+COMP_VERDICT: review_completed_actioned
+REVIEWED_SNAPSHOT: f2b8d21c579dbebae4150a68cc0a420cb4e7facdd73a302beaf9457bc2ef16ee
+PROPAGATION_ELIGIBILITY: eligible_with_warning
+SYNTHESIS_ELIGIBILITY: eligible_with_warning
 ACTION_REQUIRED: no
-REVIEWED_SNAPSHOT: manifest:9318c3abebd892cd6c0800185492f3cd07569f0aac8388d3d9f8b58b504ada1e
 
-This is a deterministic migration baseline, not an independent review. Run the current COMP push review before using this artifact for propagation or synthesis.
+Independent review completed 2026-07-13 by openai/gpt-5.5 against commit `fae0e3640db3484c4c272c80a6d76bad83293b2b`. Historical review: `2026-07-13-comp-032-fae0e36.md` in Git commit `67a873d50462ddfb1e257cb6ca7b9caf3f282784`.
+
+This receipt binds that completed review and its subsequent remediation to the exact current manifest. It is a migration binding, not a claim that a new review ran today.

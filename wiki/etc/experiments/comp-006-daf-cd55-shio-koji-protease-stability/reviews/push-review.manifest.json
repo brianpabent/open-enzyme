@@ -40,12 +40,6 @@
       "sha256": "63f0183c3a810a05397cd40d6307c1552cf4e45958287278e8f4d2e3a0eae631"
     },
     {
-      "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/wiki-archive.md",
-      "kind": "design",
-      "bytes": 16066,
-      "sha256": "c062441bb69963084565f3c919f4e6dddf71b6eed227d8c23a726773b10c48fe"
-    },
-    {
       "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/outputs/cleavage_sites.json",
       "kind": "generated_output",
       "bytes": 8948,
@@ -84,20 +78,20 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/daf-cd55-protease-stability-computational.md",
       "kind": "proposed_update",
-      "bytes": 2393,
-      "sha256": "e3f00b520e9900501661bf43d5cca25231298e188213aa6260bc0189c4caeb61"
+      "bytes": 1986,
+      "sha256": "0c265ffeb920c5660e870c638a7ae61afac34d722315e70d12c44665015370b7"
     },
     {
       "path": "wiki/daf-cd55-scr14-truncated-computational.md",
       "kind": "proposed_update",
-      "bytes": 2751,
-      "sha256": "21a4d7d57941e109108410df3453b009f961921e1b98ba232625b97a18d350c3"
+      "bytes": 2396,
+      "sha256": "a2ed3c2b81c0feab373fa9f43f7e10acc69dadf36e511dd17ac57645043d8553"
     },
     {
       "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
@@ -108,20 +102,14 @@
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 25895,
-      "sha256": "f030ff0f71a60485e99f966ae76762e0040655d3dc993b25e4f07db004c1b7b0"
+      "bytes": 24909,
+      "sha256": "c863eea73cfc0ebc8a24832527d0ed0abb8a13b2f5be6344853e34675e9a8b29"
     },
     {
       "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/outputs/summary.md",
       "kind": "proposed_update",
       "bytes": 18623,
       "sha256": "8b4c94f89e87c538b0f61cafd074fac887ac271646ee22678e830d350f1f2465"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 18372,
-      "sha256": "2a0c6401223cfaa299da078dc037325b0893344f6c0f0c80ee3ecdc83289d085"
     },
     {
       "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/README.md",
@@ -142,12 +130,6 @@
       "sha256": "b974a0b452674a5d428c1939446d73021dda83a89630ca6f2c29c8359a77c911"
     },
     {
-      "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 20855,
-      "sha256": "58cc5eb369afdc8a67d8240e7e69920570221548107e8721decf0250cb356244"
-    },
-    {
       "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md",
       "kind": "proposed_update",
       "bytes": 7844,
@@ -158,12 +140,6 @@
       "kind": "proposed_update",
       "bytes": 23284,
       "sha256": "cbdc97d3c188c981ff7f898f3c83c24368400461f6a8e6f8bf963b3d49cc555d"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 37099,
-      "sha256": "7911581a376ba0387f75ca16c6b58ee2443393a902924f5617eeba7a9551ce16"
     },
     {
       "path": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/README.md",
@@ -228,28 +204,28 @@
     {
       "path": "wiki/medicinal-mushroom-complement-track.md",
       "kind": "proposed_update",
-      "bytes": 59584,
-      "sha256": "57c998684d3be574c4fe966a403bbe5d394f65e3716bf4f9a8787397eeba2a3e"
+      "bytes": 59376,
+      "sha256": "d0c4e57e54733b4265811fa32a87b59e32d6c809f36adc764cdb50726ca67cf7"
     },
     {
       "path": "wiki/modality-chokepoint-matrix.md",
       "kind": "proposed_update",
-      "bytes": 55047,
-      "sha256": "8f00ff489a00ca7075403e536ce1936c17bdb9eda6c9df976ae47ce215c34993"
+      "bytes": 54590,
+      "sha256": "84bdaf4b881f9c7d5cedd0e1d42ca1681526bf05c6c1cb2e37e7a56279787603"
     },
     {
       "path": "wiki/nlrp3-exploit-map.md",
       "kind": "proposed_update",
-      "bytes": 92649,
-      "sha256": "30614c5393b9da8f3821c1acfbcc99fb9bf54647eb50b1b7d153af9940d72f92"
+      "bytes": 92218,
+      "sha256": "0609f4e5464716f00c9151596c5addffea79eb2060e1be633e7daec8aef46efa"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 256486,
-      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+      "bytes": 250368,
+      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "341380d364bada642bb597215cf40eb53b116a54ace21b0b1a9253b524447ba9"
+  "manifest_sha256": "472a468061723c7b9b54b8982a8d360618a3d0387e88fb953c08cd5743ebe538"
 }

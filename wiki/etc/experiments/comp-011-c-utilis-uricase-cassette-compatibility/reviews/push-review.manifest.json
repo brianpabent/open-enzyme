@@ -52,12 +52,6 @@
       "sha256": "ba1b604324cdc3d598f79b67584cfe7ac6522ec1f7d3bd3f0a78da61e1ac279f"
     },
     {
-      "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/wiki-archive.md",
-      "kind": "design",
-      "bytes": 18630,
-      "sha256": "320d89d9f8106e45cd177a102d4e23388306df167532f967b941618f6fcc812d"
-    },
-    {
       "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/outputs/cassette_analysis.json",
       "kind": "generated_output",
       "bytes": 33610,
@@ -72,14 +66,14 @@
     {
       "path": "wiki/aspergillus-oryzae.md",
       "kind": "proposed_update",
-      "bytes": 32855,
-      "sha256": "40a4e83bfb2f2897b68e39d38f8c3074a58dc6ef71d34d36b20611f914406c98"
+      "bytes": 32295,
+      "sha256": "bb05fb8755d56274f96c6561344544171c29384eed30ef74a7094929e3b6ab2f"
     },
     {
       "path": "wiki/c-utilis-uricase-cassette-compatibility-computational.md",
       "kind": "proposed_update",
-      "bytes": 2822,
-      "sha256": "b5f6008959128b45f15157476f72d1b955096d62dfcf5c0a0dead7f572f6f45d"
+      "bytes": 2407,
+      "sha256": "a46bf583a88f0fc54b6a67ad3961641384d99c918dd9b6caf019c80cd3f4508d"
     },
     {
       "path": "wiki/chaperone-orthogonal-stacking.md",
@@ -90,14 +84,14 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 25895,
-      "sha256": "f030ff0f71a60485e99f966ae76762e0040655d3dc993b25e4f07db004c1b7b0"
+      "bytes": 24909,
+      "sha256": "c863eea73cfc0ebc8a24832527d0ed0abb8a13b2f5be6344853e34675e9a8b29"
     },
     {
       "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/README.md",
@@ -124,12 +118,6 @@
       "sha256": "bd7a1516b34661af542a161aa4ec579c9d9dd1d84346463acf96c94ed2cf097b"
     },
     {
-      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 31633,
-      "sha256": "ef3891f2c3fa28ebd306c8e8bcd9e893483a47a9355c85e3181f382e4e9c6922"
-    },
-    {
       "path": "wiki/etc/manual-literature-mining.md",
       "kind": "proposed_update",
       "bytes": 30317,
@@ -138,32 +126,32 @@
     {
       "path": "wiki/hypotheses/H04-tcm-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 10744,
-      "sha256": "ca97b0cb9dffb6452ecc68623a79f91ddd2d051aac9eb79423bf04aef4ee4c15"
+      "bytes": 10734,
+      "sha256": "046dd17f61fdbedf0b70aa13fe43030f4c92544d67fa34db79ff9a6556f33404"
     },
     {
       "path": "wiki/koji-endgame-strain.md",
       "kind": "proposed_update",
-      "bytes": 92535,
-      "sha256": "6c45144b6dcfc23db424d07cf527de910e8dedd085ace0a8e5af6f4a1f21e53e"
+      "bytes": 92372,
+      "sha256": "996c249ba4ccbd685a36fc5348a53ea621a26694c586b126e9161e5c1334233d"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 105531,
-      "sha256": "3152792c8967757c5ad57d78802266ed13617b48dad0029fe2699b9fbda4de72"
+      "bytes": 102771,
+      "sha256": "3eff2e7d1ff7c729e7771c4ba59394cea4ec3a09b6ddb7f7e197ccdf12c60f80"
     },
     {
       "path": "wiki/sirna-urat1-modality.md",
       "kind": "proposed_update",
-      "bytes": 21917,
-      "sha256": "8bf665ffa2ec13e2d1c945864664bf9d965f09ad87d000b0c8174c63c542a15c"
+      "bytes": 19494,
+      "sha256": "dcafbc9b31b4a5d8f95f2e7a1a23a8340da1497fa4ee1d81bf02285a050b0753"
     },
     {
       "path": "wiki/tcm-modern-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 34392,
-      "sha256": "0db72969dafb468338fcc093681cc19230e59dde10f7ca6c56fd2ecfec37825a"
+      "bytes": 34340,
+      "sha256": "c9628be570fcf0c9c1968fa20eb2f8a872bbcd3347dd93f0e251a6fffff3e42c"
     },
     {
       "path": "wiki/uricase-variant-selection.md",
@@ -173,5 +161,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "2475142cba5288a510907de34c3e1b72ad31e6e65ff048adf5d625181da5031c"
+  "manifest_sha256": "bc2b6504e97ef551a390dac86ef42b60bcfc49588a4d81829b653c2a72d95959"
 }

@@ -72,8 +72,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/etc/autonomous-screening-methodology.md",
@@ -84,8 +84,8 @@
     {
       "path": "wiki/etc/bio-ai-tools.md",
       "kind": "proposed_update",
-      "bytes": 63999,
-      "sha256": "0265b6fed9c5ae43cbb0d63c638592f91ab690708a5fb2356ae5731ae85732ad"
+      "bytes": 63996,
+      "sha256": "d9a021e8d7debec90a2786475027c0a08bef82d05eca3d9ebb75111709682376"
     },
     {
       "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/README.md",
@@ -94,36 +94,18 @@
       "sha256": "d0eb79115f149099c4e3c7e9b89cd5947d0c5b347d6606d19479f54019975f6d"
     },
     {
-      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 31633,
-      "sha256": "ef3891f2c3fa28ebd306c8e8bcd9e893483a47a9355c85e3181f382e4e9c6922"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 25400,
-      "sha256": "ee59807dc6cb8b4db0d0060f0008bbbdc8295942f6a640d941e77995f12672fe"
-    },
-    {
       "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/README.md",
       "kind": "proposed_update",
       "bytes": 10965,
       "sha256": "0dee1992a12c19804b3cfa14334293dfafe08e71627c126d7bf60af742c8b3c2"
     },
     {
-      "path": "wiki/etc/validation-experiments-archive.md",
-      "kind": "proposed_update",
-      "bytes": 41587,
-      "sha256": "ddfa6470d480894101fc26c6fbdc6fcc57b9153d9bb8941d6a54c72a190471a1"
-    },
-    {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 256486,
-      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+      "bytes": 250368,
+      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "782e55aee3280354e693508b5ea97bb05b9ce04438b9e05dddddbe226291fa61"
+  "manifest_sha256": "8583e8328b49d38be2d2dbd6d520ce794d5edd33540191648560a414f74082fb"
 }

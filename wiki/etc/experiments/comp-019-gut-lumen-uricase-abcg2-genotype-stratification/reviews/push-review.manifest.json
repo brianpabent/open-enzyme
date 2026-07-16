@@ -34,12 +34,6 @@
       "sha256": "93e03c1967f0691044a6f3050e8edc38bb116737d6ef1d8078a5cb66201e7608"
     },
     {
-      "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/wiki-archive.md",
-      "kind": "design",
-      "bytes": 28315,
-      "sha256": "ea8134737e1c5912658dc63552cd57c42b1f87ce958c761d4e7a8b5c294a6769"
-    },
-    {
       "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/flux_model_results.json",
       "kind": "generated_output",
       "bytes": 14185,
@@ -60,8 +54,8 @@
     {
       "path": "wiki/abcg2-modulators.md",
       "kind": "proposed_update",
-      "bytes": 55220,
-      "sha256": "3269f4c754d6730691b02a7845dad75115d7d8a9470b174342867fc32a91f3e3"
+      "bytes": 55151,
+      "sha256": "98fbe0f53b00ffbb2d3a61056e3b53536116ea7faf01a2747220e72cca160fad"
     },
     {
       "path": "wiki/chassis-pending-interventions.md",
@@ -72,8 +66,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
@@ -96,8 +90,8 @@
     {
       "path": "wiki/etc/bio-ai-tools.md",
       "kind": "proposed_update",
-      "bytes": 63999,
-      "sha256": "0265b6fed9c5ae43cbb0d63c638592f91ab690708a5fb2356ae5731ae85732ad"
+      "bytes": 63996,
+      "sha256": "d9a021e8d7debec90a2786475027c0a08bef82d05eca3d9ebb75111709682376"
     },
     {
       "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
@@ -156,8 +150,8 @@
     {
       "path": "wiki/genotype-informed-supplement-workflow.md",
       "kind": "proposed_update",
-      "bytes": 34299,
-      "sha256": "6b0d8ac851dfa87f9ecdfdfc46326b086f86f3adc0562a0342305e425f9a1f11"
+      "bytes": 34291,
+      "sha256": "2f872063a148fe48415125dd7c95f0fa189de5d25ca27537fc409866cd21099f"
     },
     {
       "path": "wiki/gi-survival-prediction.md",
@@ -198,8 +192,8 @@
     {
       "path": "wiki/gut-lumen-sink.md",
       "kind": "proposed_update",
-      "bytes": 21910,
-      "sha256": "baee7ef11a8b60e0af9a75ddd40d259079636b5fe1e9eebf5932093b6c53859d"
+      "bytes": 22035,
+      "sha256": "5fe32daf47e70c77b95687ea6335c0d945cc29f520895a92e27f57e6703a7d24"
     },
     {
       "path": "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
@@ -210,14 +204,14 @@
     {
       "path": "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
       "kind": "proposed_update",
-      "bytes": 6984,
-      "sha256": "eeee3186195e243f4dafd33e93d1f1a0b6728c2f67ca8990468652e779e90bf7"
+      "bytes": 6007,
+      "sha256": "74090e5a33cd5e8656d8d7c5d3610674bb87a86ca7f8458ee74b0897493941d5"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 105531,
-      "sha256": "3152792c8967757c5ad57d78802266ed13617b48dad0029fe2699b9fbda4de72"
+      "bytes": 102771,
+      "sha256": "3eff2e7d1ff7c729e7771c4ba59394cea4ec3a09b6ddb7f7e197ccdf12c60f80"
     },
     {
       "path": "wiki/purine-degrading-bacteria.md",
@@ -228,8 +222,8 @@
     {
       "path": "wiki/uricase-abcg2-genotype-stratification-computational.md",
       "kind": "proposed_update",
-      "bytes": 4332,
-      "sha256": "7e1b632e8c613e81949d7d47d146bb3f507d313939e2508784b4b86d394578e0"
+      "bytes": 3687,
+      "sha256": "adef07974589d35e96536549b820d1ec4568757be8b84b279cf59b9fc8376d1a"
     },
     {
       "path": "wiki/uricase.md",
@@ -240,10 +234,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 256486,
-      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+      "bytes": 250368,
+      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "e6384163290c8290406a58c62ce7ccc9acaaf0e658ce3b1a7f1de3be05e6bea0"
+  "manifest_sha256": "53cd64b6e906a587191ad77b4c68e99b453c9827f06d9361f1cc2d4a30a040d4"
 }

@@ -28,12 +28,6 @@
       "sha256": "bb8b595fad8bd0d5d900dedcd00db1188b489296be592f8dea77a9d04e6db959"
     },
     {
-      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md",
-      "kind": "design",
-      "bytes": 25400,
-      "sha256": "ee59807dc6cb8b4db0d0060f0008bbbdc8295942f6a640d941e77995f12672fe"
-    },
-    {
       "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/outputs/results.json",
       "kind": "generated_output",
       "bytes": 9004,
@@ -54,14 +48,14 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/cordycepin-cassette-burden-computational.md",
       "kind": "proposed_update",
-      "bytes": 7159,
-      "sha256": "f12138ccdfad696cc97cef00d63761ad4d582a5fceea144280bf677a81b5b400"
+      "bytes": 6796,
+      "sha256": "d90df2ebec6ae4d78fae3cdb153ef52b878346598778a187ff3eeac926c92ca1"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -78,34 +72,28 @@
     {
       "path": "wiki/etc/bio-ai-tools.md",
       "kind": "proposed_update",
-      "bytes": 63999,
-      "sha256": "0265b6fed9c5ae43cbb0d63c638592f91ab690708a5fb2356ae5731ae85732ad"
-    },
-    {
-      "path": "wiki/etc/validation-experiments-archive.md",
-      "kind": "proposed_update",
-      "bytes": 41587,
-      "sha256": "ddfa6470d480894101fc26c6fbdc6fcc57b9153d9bb8941d6a54c72a190471a1"
+      "bytes": 63996,
+      "sha256": "d9a021e8d7debec90a2786475027c0a08bef82d05eca3d9ebb75111709682376"
     },
     {
       "path": "wiki/koji-endgame-strain.md",
       "kind": "proposed_update",
-      "bytes": 92535,
-      "sha256": "6c45144b6dcfc23db424d07cf527de910e8dedd085ace0a8e5af6f4a1f21e53e"
+      "bytes": 92372,
+      "sha256": "996c249ba4ccbd685a36fc5348a53ea621a26694c586b126e9161e5c1334233d"
     },
     {
       "path": "wiki/medicinal-mushroom-complement-track.md",
       "kind": "proposed_update",
-      "bytes": 59584,
-      "sha256": "57c998684d3be574c4fe966a403bbe5d394f65e3716bf4f9a8787397eeba2a3e"
+      "bytes": 59376,
+      "sha256": "d0c4e57e54733b4265811fa32a87b59e32d6c809f36adc764cdb50726ca67cf7"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 256486,
-      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+      "bytes": 250368,
+      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "e47479c86c5fed32ef197efe45dee4815c87d6b7b30a8c46c007fdd23d0888e8"
+  "manifest_sha256": "680a83e2052ab4e79d20d02950cb020d40e7d583387d0aa70097d1374ca63b2e"
 }

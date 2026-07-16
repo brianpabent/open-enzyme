@@ -72,8 +72,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
@@ -84,8 +84,8 @@
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 25895,
-      "sha256": "f030ff0f71a60485e99f966ae76762e0040655d3dc993b25e4f07db004c1b7b0"
+      "bytes": 24909,
+      "sha256": "c863eea73cfc0ebc8a24832527d0ed0abb8a13b2f5be6344853e34675e9a8b29"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -126,22 +126,22 @@
     {
       "path": "wiki/modality-chokepoint-matrix.md",
       "kind": "proposed_update",
-      "bytes": 55047,
-      "sha256": "8f00ff489a00ca7075403e536ce1936c17bdb9eda6c9df976ae47ce215c34993"
+      "bytes": 54590,
+      "sha256": "84bdaf4b881f9c7d5cedd0e1d42ca1681526bf05c6c1cb2e37e7a56279787603"
     },
     {
       "path": "wiki/nlrp3-exploit-map.md",
       "kind": "proposed_update",
-      "bytes": 92649,
-      "sha256": "30614c5393b9da8f3821c1acfbcc99fb9bf54647eb50b1b7d153af9940d72f92"
+      "bytes": 92218,
+      "sha256": "0609f4e5464716f00c9151596c5addffea79eb2060e1be633e7daec8aef46efa"
     },
     {
       "path": "wiki/upstream-complement-modulator-sweep-computational.md",
       "kind": "proposed_update",
-      "bytes": 12981,
-      "sha256": "e9e4d1f9594826fca43b8088363a2c7d7fe2be6bbf8fdce4674fb7ac0a49de96"
+      "bytes": 12582,
+      "sha256": "39399dface72486830c809e2900fd7d57a0decc6617fa56350967da7878d15ee"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "96d510bced5bbb10e66b90fa77fea9f64f7d0ef9244dda038a7dd1a782d85d2d"
+  "manifest_sha256": "c9a5ced46b068c5e63eff259e54ca01a10f7009c87c870d9913b15225f71f05d"
 }

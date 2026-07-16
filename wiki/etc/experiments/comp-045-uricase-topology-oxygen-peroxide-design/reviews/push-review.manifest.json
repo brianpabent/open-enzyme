@@ -48,20 +48,20 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/delivery-route-matrix.md",
       "kind": "proposed_update",
-      "bytes": 39448,
-      "sha256": "6af68bb5474b22b3a4ac5b8571dd6d723382b0a3c73036545e48af70e01619e3"
+      "bytes": 39433,
+      "sha256": "bc5c2b7f1fe7fb6f11ee0798e1b9dc2d58a04b18f9524be40b9ae379aebcd3e7"
     },
     {
       "path": "wiki/engineered-koji-protocol.md",
       "kind": "proposed_update",
-      "bytes": 110078,
-      "sha256": "6149c705d174e7a3b3282518322d636ac6ff24ef29a35f4f65b705412134d700"
+      "bytes": 109709,
+      "sha256": "c65a8103c3729c9e7f06a9c6ed7b5b568862d500b5a0ef6b6bc5d9163ef81daf"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/outputs/summary.md",
@@ -84,8 +84,8 @@
     {
       "path": "wiki/gut-lumen-sink.md",
       "kind": "proposed_update",
-      "bytes": 21910,
-      "sha256": "baee7ef11a8b60e0af9a75ddd40d259079636b5fe1e9eebf5932093b6c53859d"
+      "bytes": 22035,
+      "sha256": "5fe32daf47e70c77b95687ea6335c0d945cc29f520895a92e27f57e6703a7d24"
     },
     {
       "path": "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
@@ -96,8 +96,8 @@
     {
       "path": "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
       "kind": "proposed_update",
-      "bytes": 6984,
-      "sha256": "eeee3186195e243f4dafd33e93d1f1a0b6728c2f67ca8990468652e779e90bf7"
+      "bytes": 6007,
+      "sha256": "74090e5a33cd5e8656d8d7c5d3610674bb87a86ca7f8458ee74b0897493941d5"
     },
     {
       "path": "wiki/uricase-topology-oxygen-peroxide-design-computational.md",
@@ -114,10 +114,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 256486,
-      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+      "bytes": 250368,
+      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "8e887bd49a3a2cb1fcdb4e76ab3eb29c9e2f83785340bbe66663706193af87a4"
+  "manifest_sha256": "6f14527340948401edef4a5fe4c14a63f72ee736d69e6a8c83f7a8b3a2ee455f"
 }

@@ -52,12 +52,6 @@
       "sha256": "09820a77ce92cafadac918ffe08fc47c997e759d5dde183c31daf740ebf1844d"
     },
     {
-      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/wiki-archive.md",
-      "kind": "design",
-      "bytes": 9982,
-      "sha256": "efff2089ba9d3d8ae2163f28be26aa8a6de26f5b537d6c17b0ebb62733c75edc"
-    },
-    {
       "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/outputs/dose_pkpd_prediction.json",
       "kind": "generated_output",
       "bytes": 39012,
@@ -84,14 +78,14 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/delivery-route-matrix.md",
       "kind": "proposed_update",
-      "bytes": 39448,
-      "sha256": "6af68bb5474b22b3a4ac5b8571dd6d723382b0a3c73036545e48af70e01619e3"
+      "bytes": 39433,
+      "sha256": "bc5c2b7f1fe7fb6f11ee0798e1b9dc2d58a04b18f9524be40b9ae379aebcd3e7"
     },
     {
       "path": "wiki/gout-action-guide.md",
@@ -108,16 +102,16 @@
     {
       "path": "wiki/nlrp3-exploit-map.md",
       "kind": "proposed_update",
-      "bytes": 92649,
-      "sha256": "30614c5393b9da8f3821c1acfbcc99fb9bf54647eb50b1b7d153af9940d72f92"
+      "bytes": 92218,
+      "sha256": "0609f4e5464716f00c9151596c5addffea79eb2060e1be633e7daec8aef46efa"
     },
     {
       "path": "wiki/repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md",
       "kind": "proposed_update",
-      "bytes": 4906,
-      "sha256": "680659c50c1b78d9bca99741324d3978213cd3fd00f7fe82c734243d5e993f2a"
+      "bytes": 4796,
+      "sha256": "2a125ce78124d76076d6b6b4b773724ca4a095bb511ee3ae1688cc031eaee0ef"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "e68f7c2a889388e91df6b109a77e6d5d7e9e0d44219c0cffe63826bcb41b4609"
+  "manifest_sha256": "8653876d2342f6586e2c5c5ba508f79ce66237952c9f053d4e0127f25a30daad"
 }

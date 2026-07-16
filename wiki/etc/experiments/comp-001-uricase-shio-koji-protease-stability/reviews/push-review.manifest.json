@@ -40,12 +40,6 @@
       "sha256": "8ec8e9707f261ecbade0f601a2c1a29515da57e6f1a7be249dceae522bf8eab6"
     },
     {
-      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/wiki-archive.md",
-      "kind": "design",
-      "bytes": 10598,
-      "sha256": "bb51b80335041e38fd9dda6bb0eb9a0b9ffa1a3ad0507adf5e88ca5c1f4c9290"
-    },
-    {
       "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/outputs/cleavage_sites.json",
       "kind": "generated_output",
       "bytes": 6811,
@@ -66,20 +60,20 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/daf-cd55-protease-stability-computational.md",
       "kind": "proposed_update",
-      "bytes": 2393,
-      "sha256": "e3f00b520e9900501661bf43d5cca25231298e188213aa6260bc0189c4caeb61"
+      "bytes": 1986,
+      "sha256": "0c265ffeb920c5660e870c638a7ae61afac34d722315e70d12c44665015370b7"
     },
     {
       "path": "wiki/daf-cd55-scr14-truncated-computational.md",
       "kind": "proposed_update",
-      "bytes": 2751,
-      "sha256": "21a4d7d57941e109108410df3453b009f961921e1b98ba232625b97a18d350c3"
+      "bytes": 2396,
+      "sha256": "a2ed3c2b81c0feab373fa9f43f7e10acc69dadf36e511dd17ac57645043d8553"
     },
     {
       "path": "wiki/etc/autonomous-screening-methodology.md",
@@ -90,26 +84,20 @@
     {
       "path": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability/README.md",
       "kind": "proposed_update",
-      "bytes": 6357,
-      "sha256": "873e1b0a468734e8526f6e509ee65af921af5ced4c78e1d49c77939f5da8186f"
+      "bytes": 6239,
+      "sha256": "9a8078a15f46f7993d818e688bd8e41a63afbb84ccccb7bf23ccc6694c97aa9b"
     },
     {
       "path": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability/inputs/provenance.md",
       "kind": "proposed_update",
-      "bytes": 9110,
-      "sha256": "2eb86c9f60c1ea7b4088b83bf8d54d7ab7eeff1c457839116e2c0c2ba475a98e"
+      "bytes": 9027,
+      "sha256": "02d5ddde79d44147db72d3699742640fc18aaa3d8ad752fc78979aa184f2561b"
     },
     {
       "path": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability/outputs/summary.md",
       "kind": "proposed_update",
       "bytes": 11716,
       "sha256": "1f2239db2af12899e85d5c4d1e36d3ab6aa9ec7154034a0658f6c44b88afc233"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 21363,
-      "sha256": "7726b02e4e8f429ee4b1d9e9b03e654a366bdc6be9d0e8d815d06519e998de6d"
     },
     {
       "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/README.md",
@@ -130,12 +118,6 @@
       "sha256": "600c826d60ccdde7adc9dfea44c2c52fe0fe165b4a35b09751e5eec327c4633e"
     },
     {
-      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 8018,
-      "sha256": "2976e9e12e7e1946ac071690a3c4b20a0a07472b3f085a36c63f5881564c41c0"
-    },
-    {
       "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/README.md",
       "kind": "proposed_update",
       "bytes": 5540,
@@ -152,12 +134,6 @@
       "kind": "proposed_update",
       "bytes": 11525,
       "sha256": "71e14a816387867af91113ab01d13ae652ab7e7e54fbdb41da3c1322637b441b"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 16066,
-      "sha256": "c062441bb69963084565f3c919f4e6dddf71b6eed227d8c23a726773b10c48fe"
     },
     {
       "path": "wiki/etc/experiments/comp-010-cassette-compatibility/README.md",
@@ -178,22 +154,10 @@
       "sha256": "8c882c6ce107ade0332839eaa551edc6dc726f5f63c4864fdc7c9f728875325f"
     },
     {
-      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 20474,
-      "sha256": "53083472ca62f09409d92d1364c28d3193f5ba01efb65be85edd56e194a3290e"
-    },
-    {
       "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/outputs/summary.md",
       "kind": "proposed_update",
       "bytes": 28230,
       "sha256": "6d1f445df427368cc9fbc56ab1911c35f2f43bd92469ba54a597c722ccee5a13"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 18630,
-      "sha256": "320d89d9f8106e45cd177a102d4e23388306df167532f967b941618f6fcc812d"
     },
     {
       "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/README.md",
@@ -214,18 +178,6 @@
       "sha256": "b974a0b452674a5d428c1939446d73021dda83a89630ca6f2c29c8359a77c911"
     },
     {
-      "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 20855,
-      "sha256": "58cc5eb369afdc8a67d8240e7e69920570221548107e8721decf0250cb356244"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 29200,
-      "sha256": "9b592e2cea5e7b9aa892bb8e66074e300d1fea00cd20432a49ed8c01877e2477"
-    },
-    {
       "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/README.md",
       "kind": "proposed_update",
       "bytes": 8405,
@@ -242,12 +194,6 @@
       "kind": "proposed_update",
       "bytes": 11562,
       "sha256": "bd7a1516b34661af542a161aa4ec579c9d9dd1d84346463acf96c94ed2cf097b"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive.md",
-      "kind": "proposed_update",
-      "bytes": 31633,
-      "sha256": "ef3891f2c3fa28ebd306c8e8bcd9e893483a47a9355c85e3181f382e4e9c6922"
     },
     {
       "path": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen/inputs/provenance.md",
@@ -270,28 +216,28 @@
     {
       "path": "wiki/lactoferrin-protease-stability-computational.md",
       "kind": "proposed_update",
-      "bytes": 2407,
-      "sha256": "72052d0a836c3c97b9701db2c8ffe0b1287686d4d9504154bf56d041a7e1a16c"
+      "bytes": 1988,
+      "sha256": "9133b3ca456b2cc6ac19e78d5a0bc78eb2569074a4d5db337ef39d171b1c1649"
     },
     {
       "path": "wiki/uricase-protease-stability-computational.md",
       "kind": "proposed_update",
-      "bytes": 2165,
-      "sha256": "6185f797985a72ffa44f957d96296f8a08a270bf12366f5185da0ec78d18d119"
+      "bytes": 1762,
+      "sha256": "88443f793d1334634bbf88be251708c5bde4d08dfff4079b0ffd5b7f70d7eda8"
     },
     {
       "path": "wiki/uricase-shio-koji-thermal-stability-computational.md",
       "kind": "proposed_update",
-      "bytes": 4899,
-      "sha256": "9272b740cb3dacfdc73cc6df6346876abcfc48086c90375f5033c3d20dcd009c"
+      "bytes": 4423,
+      "sha256": "401cb8eb08d986e37d3389246a884d53366709ea69b149bad7a24b360a18c5c9"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 256486,
-      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+      "bytes": 250368,
+      "sha256": "5c03532ddf9dc00a2d896bfe1c71098c858f45541b7077b527f803495b724199"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "c41e4e5a729252642a1cb186c149a954d414470e56156d212d588a1a4c8ec6c9"
+  "manifest_sha256": "41176e8f23fe1332f59a8d33226e1385d9737f5fb13f466df27c394c9c673a76"
 }

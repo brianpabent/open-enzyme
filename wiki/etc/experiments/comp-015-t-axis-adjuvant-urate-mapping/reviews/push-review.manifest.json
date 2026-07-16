@@ -52,12 +52,6 @@
       "sha256": "e2c32be686600d55b3060333e274d03740ad5dfc503b23735eeece5c88a90bac"
     },
     {
-      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/wiki-archive.md",
-      "kind": "design",
-      "bytes": 31797,
-      "sha256": "c1020ff9b2c6e34c4ce5672b399d0d05ded597c5f26877f0ff3c1ac5405bdc62"
-    },
-    {
       "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/outputs/results.json",
       "kind": "generated_output",
       "bytes": 26293,
@@ -72,20 +66,20 @@
     {
       "path": "wiki/androgen-natural-modulation.md",
       "kind": "proposed_update",
-      "bytes": 99380,
-      "sha256": "1fbf95db423836a0c9e0a3e79db38519172ff2cc4ae0bf1f2aadf62e021b7113"
+      "bytes": 99399,
+      "sha256": "d6197b23c753333c448f650808f172b7aff5c8feb099103de0b9217207432d6f"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82364,
-      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+      "bytes": 82339,
+      "sha256": "5f3b766bbc6bd7333699883d50ce021834456713fd7b2586dde6861a71df4450"
     },
     {
       "path": "wiki/genotype-informed-supplement-workflow.md",
       "kind": "proposed_update",
-      "bytes": 34299,
-      "sha256": "6b0d8ac851dfa87f9ecdfdfc46326b086f86f3adc0562a0342305e425f9a1f11"
+      "bytes": 34291,
+      "sha256": "2f872063a148fe48415125dd7c95f0fa189de5d25ca27537fc409866cd21099f"
     },
     {
       "path": "wiki/gout-action-guide.md",
@@ -114,10 +108,10 @@
     {
       "path": "wiki/t-axis-adjuvant-urate-mapping-computational.md",
       "kind": "proposed_update",
-      "bytes": 3448,
-      "sha256": "aee60d1096af4c2cc040baf26781518528ea570f17b25d8e4730eeeb6c571379"
+      "bytes": 3073,
+      "sha256": "eed68ebeb8e15396eb859827e0867d4bd872c9d29f03727d6a437c0c837ac638"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "2669a07cb570672720f9c6011f64e0a42f85505316e2683aa011d0590d24a4c2"
+  "manifest_sha256": "b3bd9b0b12c2c91834a08660896bbe17df60506b2f578877022115d0549fbc45"
 }
