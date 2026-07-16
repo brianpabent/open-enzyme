@@ -377,6 +377,8 @@ def main():
                         help="Directory for per-item queue files")
     parser.add_argument("--history-dir", default="synthesis/history",
                         help="Directory for per-sweep history files")
+    parser.add_argument("--no-history", action="store_true",
+                        help="Do not retain a per-run history file; Git and workflow artifacts are the history")
     parser.add_argument("--sweep-date", default=None,
                         help="ISO date (YYYY-MM-DD) of the trigger commit. "
                              "Per spec §5.1: workflow_run's event.head_commit timestamp date in UTC. "
@@ -433,18 +435,21 @@ def main():
                 "Normalized manifest is an explicit no-op, but reviews file did not contain "
                 "the EXPLICIT_NO_OP sentinel. Aborting."
             )
-        path = emit_no_op_history(
-            history_dir,
-            sweep_date,
-            sweep_sha_short,
-            args.trigger_files,
-            args.synthesizer,
-            args.reviewer,
-            args.synthesis_log,
-            args.normalized_manifest,
-            manifest_meta,
-        )
-        print(f"No-op sweep recorded at {path}")
+        if args.no_history:
+            print("Explicit no-op verified; no live history artifact retained")
+        else:
+            path = emit_no_op_history(
+                history_dir,
+                sweep_date,
+                sweep_sha_short,
+                args.trigger_files,
+                args.synthesizer,
+                args.reviewer,
+                args.synthesis_log,
+                args.normalized_manifest,
+                manifest_meta,
+            )
+            print(f"No-op sweep recorded at {path}")
         return
 
     if reviews_raw == "EXPLICIT_NO_OP":
@@ -548,21 +553,21 @@ def main():
         })
 
     # --- Emit history file ---------------------------------------------------
-    history_path = emit_history_file(
-        history_dir,
-        sweep_date,
-        sweep_sha_short,
-        args.trigger_files,
-        args.synthesizer,
-        args.reviewer,
-        args.synthesis_log,
-        emitted_records,
-        args.normalized_manifest,
-        manifest_meta,
-    )
-
     print(f"Emitted {len(emitted_records)} items to {queue_dir}")
-    print(f"History summary at {history_path}")
+    if not args.no_history:
+        history_path = emit_history_file(
+            history_dir,
+            sweep_date,
+            sweep_sha_short,
+            args.trigger_files,
+            args.synthesizer,
+            args.reviewer,
+            args.synthesis_log,
+            emitted_records,
+            args.normalized_manifest,
+            manifest_meta,
+        )
+        print(f"History summary at {history_path}")
 
 
 if __name__ == "__main__":

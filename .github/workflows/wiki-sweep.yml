@@ -1,680 +1,144 @@
 name: Full corpus synthesis (manual)
 
-# Three-pass sweep daemon (model-agnostic, vendor-heterogeneous by design):
-#
-#   Pass 1 — Propagate (small input, precision)
-#       Reads trigger files, propagates findings across affected wiki pages,
-#       commits surgical edits. scripts/sweep-prompt-1-propagate.md.
-#       Currently DeepSeek V4-Pro; model is configurable via --model.
-#
-#   Pass 2 — Synthesize (large input, full corpus)
-#       Reads ALL of wiki/, finds cross-document connections, outputs raw
-#       synthesis to logs/v4-synthesis-<date>-<sha>.md.
-#       A tolerant normalizer then creates a hash-bound canonical JSON manifest.
-#       Raw Markdown is audit evidence; the manifest is the downstream contract.
-#       scripts/sweep-prompt-2-synthesize.md.
-#       Model = $SYNTHESIZER_MODEL (workflow env, single source of truth).
-#       2026-05-29: Grok 4.20 (2M context) primary with Gemini 2.5 Pro
-#       fallback. Moved off DeepSeek V4-Pro (1M) after the corpus crossed ~1M
-#       tokens and overflowed it on every run 2026-05-22..24. Eval +
-#       rationale: operations/corpus-unblock-propagate-by-link-2026-05-29/.
-#
-#   Pass 3 — Review (small input, critique)
-#       Reads the Pass 2 synthesis log, writes interleaved review (synthesizer
-#       content + Pass 3 verdict blockquote per item) prepended to
-#       synthesis/queue/. Verdict vocabulary: Confirmed / Confirmed-prioritize /
-#       Partial / Push-back / Rejected / Augment / Defer.
-#       scripts/sweep-prompt-3-review-deepseek.md (workflow default).
-#       GPT-5.5 and Anthropic prompt variants remain for periodic cross-checks.
-#       Currently DeepSeek V4-Pro; full eval at evals/pass-3-reviewer/.
-#
-# Manual sibling: scripts/fresh-synthesis.py runs an on-demand full-corpus
-# synthesis with the model of your choice. Useful for benchmarking new
-# long-context models against the corpus and for second-opinion synthesis
-# between sweeps. Not part of the daemon.
-#
-# Each job has [skip-wiki-sweep] in its commit message + the workflow's job-
-# level `if:` checks for that marker, so internal commits don't recursively
-# retrigger the whole pipeline.
-#
-# Secrets required:
-#   OPENROUTER_API_KEY — every pass routes through OpenRouter so a single
-#   credential covers all vendors and we don't get throttled by any one
-#   vendor's per-org rate limits.
-
 on:
-  # Full-corpus synthesis is an explicit research operation. Push-time
-  # publishing, COMP review, and bounded propagation are coordinated by
-  # knowledge-update.yml; no push or watchdog may start this workflow.
   workflow_dispatch:
     inputs:
       trigger_paths:
-        description: 'Wiki file path(s) to sweep (space-separated). Blank = diff against last sweep commit.'
+        description: 'Optional space-separated attention hints; blank uses every scientific change since the synthesis cursor'
         required: false
         type: string
-      resume_normalized_manifest:
-        description: 'Resume Pass 3 from this preserved normalized-synthesis JSON. Skips Pass 1/2 and verifies the raw artifact hash.'
+      max_cost_usd:
+        description: 'Hard cap. Default production cap is $5; any increase is explicit in run history.'
         required: false
+        default: '5.00'
         type: string
-      supplemental_recovery:
-        description: 'Review a stale preserved artifact without moving the current sweep cursor. Requires resume_normalized_manifest.'
-        required: false
-        default: false
-        type: boolean
-      allow_large_no_op:
-        description: 'Allow an explicit zero-item result for a large semantic batch after independent/manual review.'
-        required: false
-        default: false
-        type: boolean
 
-# Never run two syntheses at once — they would fight over state and budget.
+permissions:
+  contents: write
+
 concurrency:
   group: full-corpus-synthesis
   cancel-in-progress: false
 
-# Single source of truth for the Pass-2 synthesizer model. Referenced by the
-# Pass-2 `--model`, the Pass-3 `--synthesizer` metadata, and both commit
-# messages so the recorded synthesizer can never drift from what actually ran.
-# (Before 2026-05-29 these were independently hard-coded as "Gemini 2.5 Pro"
-# while Pass 2 silently ran synthesize.py's DEFAULT_MODEL — a persistent
-# mislabel. See operations/corpus-unblock-propagate-by-link-2026-05-29/.)
-env:
-  SYNTHESIZER_MODEL: "x-ai/grok-4.20"
-
 jobs:
-  # ============================================================================
-  # GATE — should we sweep on this trigger?
-  # ============================================================================
-  # Replaces the original head-commit-only [skip-wiki-sweep] check.  That
-  # check silently dropped wiki content when a non-wiki-touching tooling
-  # commit with the marker landed at the tip of a push that also contained
-  # user wiki commits (failure mode discovered 2026-05-13 after the
-  # compounding-pharmacy-track merge to main).
-  #
-  # The new gate consults logs/sweep-state.json + the commit-prefix +
-  # skip-marker analysis implemented in scripts/sweep-state.py should-sweep.
-  # Decision logic:
-  #   run  — at least one commit since cursor touched wiki/*.md and is
-  #          neither a daemon-self-write (sweep-1-/sweep-2-/sweep-3-) nor
-  #          marked [skip-wiki-sweep] anywhere in its message.
-  #   skip — no such commit exists.
-  # Manual workflow_dispatch always runs (user-initiated override).
-  gate:
-    name: "Gate — should we sweep?"
+  synthesize:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
-    outputs:
-      decision: ${{ steps.check.outputs.decision }}
+    timeout-minutes: 360
+    env:
+      WORK_DIR: /tmp/open-enzyme-distributed-synthesis
     steps:
       - uses: actions/checkout@v5
         with:
-          fetch-depth: 0  # full history; should-sweep diffs against the cursor
-      - uses: actions/setup-python@v6
-        with:
-          python-version: '3.12'
-      - name: Decide whether to sweep
-        id: check
-        run: |
-          set -euo pipefail
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            echo "decision=run" >> "$GITHUB_OUTPUT"
-            echo "Trigger: workflow_dispatch (manual override); decision: run"
-            exit 0
-          fi
-          echo "--- gate rationale ---"
-          python3 scripts/sweep-state.py should-sweep 1>/dev/null
-          echo "--- gate decision ---"
-          DECISION=$(python3 scripts/sweep-state.py should-sweep 2>/dev/null)
-          echo "$DECISION"
-          echo "decision=$DECISION" >> "$GITHUB_OUTPUT"
-
-  # ============================================================================
-  # PASS 1 — Claude propagation
-  # ============================================================================
-  propagate:
-    name: "Pass 1 — Propagate"
-    needs: gate
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    permissions:
-      contents: write
-    if: needs.gate.outputs.decision == 'run'
-    outputs:
-      trigger_files:    ${{ steps.trigger.outputs.changed }}
-      propagated_files: ${{ steps.run_pass_1.outputs.propagated_files }}
-      diff_base:        ${{ steps.trigger.outputs.diff_base }}
-      sha:              ${{ steps.trigger.outputs.sha }}
-      had_changes:      ${{ steps.trigger.outputs.has_changes }}
-      resuming:         ${{ steps.trigger.outputs.resuming }}
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-        with:
+          ref: main
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
-          persist-credentials: true
 
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
-      - name: Compute trigger files
-        id: trigger
+      - name: Verify propagation and computational evidence are current
+        id: preflight
+        env:
+          EXPLICIT_PATHS: ${{ inputs.trigger_paths }}
         run: |
           set -euo pipefail
-          RESUME_MANIFEST="${{ inputs.resume_normalized_manifest }}"
-          if [[ "${{ inputs.supplemental_recovery }}" == "true" && -z "$RESUME_MANIFEST" ]]; then
-            echo "ERROR: supplemental_recovery requires resume_normalized_manifest"
+          pending_propagation=$(python3 scripts/sweep-state.py pending-propagation-paths)
+          if [[ -n "$pending_propagation" ]]; then
+            echo "Full synthesis requires propagation to be current. Pending:"
+            printf '%s\n' "$pending_propagation"
             exit 1
           fi
-          if [[ -n "$RESUME_MANIFEST" ]]; then
-            echo "Exact-artifact Pass 3 recovery requested: $RESUME_MANIFEST"
-            python3 scripts/synthesis_normalize.py validate --manifest "$RESUME_MANIFEST"
-            CHANGED=$(python3 -c 'import json,sys; d=json.load(open(sys.argv[1])); print("\n".join(d["source"]["trigger_files"]))' "$RESUME_MANIFEST")
-            DIFF_BASE=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["source"]["diff_base"])' "$RESUME_MANIFEST")
-            TRIGGER_SHA=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["source"]["commit_sha"])' "$RESUME_MANIFEST")
-            if [[ -z "$CHANGED" || -z "$DIFF_BASE" || -z "$TRIGGER_SHA" ]]; then
-              echo "ERROR: recovery manifest lacks trigger files, diff base, or trigger SHA"
-              exit 1
-            fi
-            git cat-file -e "$TRIGGER_SHA^{commit}"
-            echo "resuming=true" >> "$GITHUB_OUTPUT"
-          elif [[ "${{ github.event_name }}" == "workflow_dispatch" && -n "${{ inputs.trigger_paths }}" ]]; then
-            echo "Manual dispatch with explicit trigger paths"
-            CHANGED=$(echo "${{ inputs.trigger_paths }}" | tr ' ' '\n' | grep -v '^$' || true)
-            DIFF_BASE="manual"
-            TRIGGER_SHA="${{ github.sha }}"
-            echo "resuming=false" >> "$GITHUB_OUTPUT"
+          diff_base=$(python3 -c 'import json; d=json.load(open("logs/sweep-state.json")); print((d.get("last_successful_synthesis") or {}).get("coverage_commit", ""))')
+          if [[ -z "$diff_base" ]]; then
+            echo "Missing synthesis cursor"
+            exit 1
+          fi
+          if [[ -n "$EXPLICIT_PATHS" ]]; then
+            printf '%s' "$EXPLICIT_PATHS" | tr ', ' '\n' | grep -v '^$' | sort -u > /tmp/synthesis-triggers.txt
           else
-            # Read the canonical diff base from the sweep-state registry.
-            # This replaces the brittle `git log --grep='^sweep'` regex that
-            # used to live here — it accidentally matched human-authored
-            # walkthrough commits like "sweep items 4+12: ..." in addition
-            # to the daemon's own "sweep-1-propagate" / "sweep-3-review"
-            # commits, causing the workflow to pick a too-recent diff base
-            # and exit "No wiki changes to sweep" while real work sat
-            # un-synthesized. The registry's
-            # `last_successful_synthesis.coverage_commit`
-            # is the authoritative cursor (updated atomically in Pass 3
-            # alongside the synthesis.md prepend — see scripts/sweep-state.py
-            # cmd_update_success).
-            if [[ ! -f logs/sweep-state.json ]]; then
-              echo "ERROR: logs/sweep-state.json is missing — cannot determine diff base."
-              echo "Run \`python3 scripts/sweep-state.py init\` to backfill from git history."
-              exit 1
-            fi
-            DIFF_BASE=$(python3 -c "import json; d=json.load(open('logs/sweep-state.json')).get('last_successful_synthesis') or {}; print(d.get('coverage_commit', ''))")
-            if [[ -z "$DIFF_BASE" ]]; then
-              echo "ERROR: sweep-state.json has no last_successful_synthesis recorded."
-              echo "Run \`python3 scripts/sweep-state.py init\` to backfill."
-              exit 1
-            fi
-            echo "Last successful synthesis (from registry): $DIFF_BASE"
-            CHANGED=$(python3 scripts/sweep-state.py pending-synthesis-paths || true)
-            TRIGGER_SHA="${{ github.sha }}"
-            echo "resuming=false" >> "$GITHUB_OUTPUT"
+            python3 scripts/sweep-state.py pending-synthesis-paths > /tmp/synthesis-triggers.txt
           fi
-
-          if [[ -z "${CHANGED// /}" ]]; then
-            echo "No wiki changes to sweep"
-            echo "has_changes=false" >> "$GITHUB_OUTPUT"
-            exit 0
+          if [[ ! -s /tmp/synthesis-triggers.txt ]]; then
+            echo "No scientific changes since the synthesis cursor"
+            exit 1
           fi
+          echo "diff_base=$diff_base" >> "$GITHUB_OUTPUT"
+          echo "coverage=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-          echo "has_changes=true"            >> "$GITHUB_OUTPUT"
-          echo "diff_base=$DIFF_BASE"        >> "$GITHUB_OUTPUT"
-          echo "sha=$TRIGGER_SHA"            >> "$GITHUB_OUTPUT"
-          {
-            echo "changed<<TRIGGER_EOF"
-            echo "$CHANGED"
-            echo "TRIGGER_EOF"
-          } >> "$GITHUB_OUTPUT"
-          echo "Trigger files:"
-          echo "$CHANGED" | sed 's/^/  /'
-
-          # Recovery resumes the already-produced artifact; it must never run
-          # propagation or synthesis again.
-          if [[ -n "$RESUME_MANIFEST" ]]; then
-            echo "skip_pass_1=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          # Skip-Pass-1 check: if every trigger file was already propagated
-          # in the most recent sweep-1-propagate commit (i.e. no edits to
-          # any of them since), skip the redundant Sonnet run. Pass 2 still
-          # runs against the current state.
-          LAST_PASS_1=$(git log --format='%H' --grep='^sweep-1-propagate' -n 1 || true)
-          SKIP_PASS_1="false"
-          if [[ -n "$LAST_PASS_1" ]]; then
-            STALE=""
-            while IFS= read -r f; do
-              [[ -z "$f" ]] && continue
-              if git log --format='%H' "$LAST_PASS_1"..HEAD -- "$f" | grep -q .; then
-                STALE="$STALE $f"
-              fi
-            done <<< "$CHANGED"
-            if [[ -z "${STALE// /}" ]]; then
-              SKIP_PASS_1="true"
-              echo "All trigger files already propagated in $LAST_PASS_1 — skipping Pass 1"
-            fi
-          fi
-          echo "skip_pass_1=$SKIP_PASS_1" >> "$GITHUB_OUTPUT"
-
-      - name: Run Pass 1 propagation
-        id: run_pass_1
-        if: steps.trigger.outputs.has_changes == 'true' && steps.trigger.outputs.skip_pass_1 != 'true' && steps.trigger.outputs.resuming != 'true'
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          TRIGGER_FILES:      ${{ steps.trigger.outputs.changed }}
-          DIFF_BASE:          ${{ steps.trigger.outputs.diff_base }}
-        run: |
-          set -euo pipefail
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Pass 1 writes propagated_files to $GITHUB_OUTPUT directly
-          # (see sweep-1-propagate.py). That output is then promoted to
-          # the job's `propagated_files` output via the step `id` and the
-          # job-level `outputs:` block above.
-          python3 scripts/sweep-1-propagate.py \
-            --commit-sha "${{ steps.trigger.outputs.sha }}" \
-            --trigger-files "$TRIGGER_FILES" \
-            --diff-base "$DIFF_BASE" \
-            --model deepseek/deepseek-v4-pro \
-            --max-iterations 40
-
-      - name: Push propagation
-        if: steps.trigger.outputs.has_changes == 'true'
-        run: |
-          set -euo pipefail
-          if ! git log origin/main..HEAD --oneline | grep -q .; then
-            echo "Pass 1 produced no commit"
-            exit 0
-          fi
-          # Rebase before push to handle concurrent commits to main during
-          # the long Pass 1 run. Without this, a parallel push from Brian or
-          # another workflow run causes [rejected] and we lose Pass 1 output.
-          for attempt in 1 2 3; do
-            git fetch origin main
-            if git log HEAD..origin/main --oneline | grep -q .; then
-              echo "Rebasing onto origin/main (attempt $attempt) ..."
-              git rebase --autostash origin/main || { git rebase --abort || true; exit 1; }
-            fi
-            if git push; then
-              echo "Pass 1 push succeeded on attempt $attempt"
-              exit 0
-            fi
-            echo "Push rejected on attempt $attempt; retrying after fetch..."
-            sleep $((attempt * 5))
-          done
-          echo "Pass 1 push failed after 3 rebase-and-retry attempts"
-          exit 1
-
-  # ============================================================================
-  # PASS 2 — Synthesis (full corpus) — model = $SYNTHESIZER_MODEL (Grok 4.20)
-  # ============================================================================
-  synthesize:
-    name: "Pass 2 — Synthesize"
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    needs: propagate
-    permissions:
-      contents: write
-    if: needs.propagate.outputs.had_changes == 'true'
-    outputs:
-      synthesis_log: ${{ steps.run.outputs.synthesis_log }}
-      normalized_manifest: ${{ steps.run.outputs.normalized_manifest }}
-      synthesizer_model: ${{ steps.run.outputs.synthesizer_model }}
-      had_synthesis: ${{ steps.run.outputs.had_synthesis }}
-      cited_files:   ${{ steps.run.outputs.cited_files }}
-
-    steps:
-      - name: Checkout (post-Pass-1 state)
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
-          ref: main
-          token: ${{ secrets.GITHUB_TOKEN }}
-          persist-credentials: true
-
-      - uses: actions/setup-python@v6
-        with:
-          python-version: '3.12'
-
-      - name: Run Pass 2 synthesis
-        id: run
+      - name: Run dual-read distributed synthesis
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
           set -euo pipefail
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -rf "$WORK_DIR"
+          mkdir -p "$WORK_DIR"
+          trigger_args=()
+          while IFS= read -r path; do
+            [[ -n "$path" ]] && trigger_args+=(--trigger-path "$path")
+          done < /tmp/synthesis-triggers.txt
+          python3 scripts/distributed-synthesis.py \
+            --work-dir "$WORK_DIR" \
+            --diff-base "${{ steps.preflight.outputs.diff_base }}" \
+            --max-cost-usd "${{ inputs.max_cost_usd }}" \
+            "${trigger_args[@]}"
 
-          RESUME_MANIFEST="${{ inputs.resume_normalized_manifest }}"
-          if [[ -n "$RESUME_MANIFEST" ]]; then
-            python3 scripts/synthesis_normalize.py validate --manifest "$RESUME_MANIFEST"
-            SYNTHESIS_LOG=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["source"]["synthesis_log"])' "$RESUME_MANIFEST")
-            SOURCE_COMMIT=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["source"]["commit_sha"])' "$RESUME_MANIFEST")
-            if [[ "$SOURCE_COMMIT" != "${{ needs.propagate.outputs.sha }}" ]]; then
-              echo "ERROR: recovery manifest trigger SHA drifted between Pass 1 and Pass 2"
-              exit 1
-            fi
-            echo "synthesis_log=$SYNTHESIS_LOG"       >> "$GITHUB_OUTPUT"
-            echo "normalized_manifest=$RESUME_MANIFEST" >> "$GITHUB_OUTPUT"
-            echo "had_synthesis=true"                 >> "$GITHUB_OUTPUT"
-            python3 -c 'import json,sys; print("synthesizer_model=" + json.load(open(sys.argv[1]))["source"]["synthesizer_model"])' "$RESUME_MANIFEST" >> "$GITHUB_OUTPUT"
-            {
-              echo "cited_files<<CITED_EOF"
-              python3 -c 'import json,sys; print("\n".join(json.load(open(sys.argv[1])).get("cited_files", [])))' "$RESUME_MANIFEST"
-              echo "CITED_EOF"
-            } >> "$GITHUB_OUTPUT"
-            echo "Recovery mode: Pass 2 model call skipped; exact artifact preserved."
-            exit 0
-          fi
-
-          # Compose the trigger files string for the synthesis script
-          TRIGGER_LIST=$(echo "${{ needs.propagate.outputs.trigger_files }}" | tr '\n' ',' | sed 's/,$//')
-          # propagated_files is what Pass 1 wrote to during propagation
-          # (downstream pages that aren't in the original trigger set).
-          # Pass 2's synthesizer prompt weights attention on these.
-          PROPAGATED_LIST=$(echo "${{ needs.propagate.outputs.propagated_files }}" | tr '\n' ',' | sed 's/,$//')
-          # Bind promotion to the exact repository snapshot the full-corpus
-          # synthesizer reads. This is deliberately distinct from the trigger
-          # commit and from later Pass 2/3 commits.
-          CORPUS_SHA=$(git rev-parse HEAD)
-
-          SYNTHESIS_LOG=$(python3 scripts/synthesize.py \
-            --commit-sha "${{ needs.propagate.outputs.sha }}" \
-            --corpus-sha "$CORPUS_SHA" \
-            --trigger-files "$TRIGGER_LIST" \
-            --propagated-files "$PROPAGATED_LIST" \
-            --diff-base "${{ needs.propagate.outputs.diff_base }}" \
-            --model "$SYNTHESIZER_MODEL")
-
-          if [[ -z "$SYNTHESIS_LOG" || ! -f "$SYNTHESIS_LOG" ]]; then
-            echo "Pass 2 synthesis produced no output file"
-            echo "had_synthesis=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          NORMALIZED_MANIFEST="${SYNTHESIS_LOG/v4-synthesis-/normalized-synthesis-}"
-          NORMALIZED_MANIFEST="${NORMALIZED_MANIFEST%.md}.json"
-          set +e
+      - name: Normalize and deterministically emit reviewed active items
+        run: |
+          set -euo pipefail
           python3 scripts/synthesis_normalize.py normalize \
-            --synthesis-log "$SYNTHESIS_LOG" \
-            --output "$NORMALIZED_MANIFEST"
-          NORMALIZE_RC=$?
-          set -e
-
-          echo "synthesis_log=$SYNTHESIS_LOG" >> "$GITHUB_OUTPUT"
-          echo "normalized_manifest=$NORMALIZED_MANIFEST" >> "$GITHUB_OUTPUT"
-          echo "had_synthesis=true"           >> "$GITHUB_OUTPUT"
-          python3 -c 'import json,sys; print("synthesizer_model=" + json.load(open(sys.argv[1]))["source"]["synthesizer_model"])' "$NORMALIZED_MANIFEST" >> "$GITHUB_OUTPUT"
-
-          git add "$SYNTHESIS_LOG" "$NORMALIZED_MANIFEST"
-          git commit -m "sweep-2-synthesize: ${SYNTHESIZER_MODEL} raw + normalized synthesis → $SYNTHESIS_LOG [skip-wiki-sweep]"
-          # Rebase-and-retry push. Pass 2 is long-running ($0.65/run, 2-9
-          # minutes) so concurrent commits to main are common. Without this,
-          # Pass 2's synthesis output gets generated, committed locally, then
-          # lost to [rejected] when push fires (observed run 25051936845,
-          # 2026-04-28). The synthesis log is recoverable from the runner's
-          # local commit but only if we rebase + retry rather than exit.
-          PUSHED=false
-          for attempt in 1 2 3; do
-            git fetch origin main
-            if git log HEAD..origin/main --oneline | grep -q .; then
-              echo "Rebasing Pass 2 onto origin/main (attempt $attempt) ..."
-              git rebase --autostash origin/main || { git rebase --abort || true; exit 1; }
-            fi
-            if git push; then
-              echo "Pass 2 push succeeded on attempt $attempt"
-              PUSHED=true
-              break
-            fi
-            echo "Pass 2 push rejected on attempt $attempt; retrying after fetch..."
-            sleep $((attempt * 5))
-          done
-          if [[ "$PUSHED" != "true" ]]; then
-            echo "Pass 2 push failed after 3 rebase-and-retry attempts; surfacing artifacts"
-            mkdir -p /tmp/sweep-failed
-            cp "$SYNTHESIS_LOG" "$NORMALIZED_MANIFEST" /tmp/sweep-failed/ || true
-            exit 1
-          fi
-
-          # A normalization failure is durable but cannot progress. The raw
-          # artifact + diagnostic manifest were committed and pushed above, so
-          # recovery can repair formatting without repaying the 1M-token call.
-          if [[ "$NORMALIZE_RC" -ne 0 ]]; then
-            echo "Pass 2 normalization failed closed; raw + diagnostics preserved."
-            mkdir -p /tmp/sweep-failed
-            cp "$SYNTHESIS_LOG" "$NORMALIZED_MANIFEST" /tmp/sweep-failed/ || true
-            exit "$NORMALIZE_RC"
-          fi
-
-          python3 scripts/synthesis_normalize.py validate --manifest "$NORMALIZED_MANIFEST"
-
-      - name: Upload failed-push synthesis log (recovery artifact)
-        if: failure()
-        uses: actions/upload-artifact@v5
-        with:
-          name: failed-pass-2-synthesis
-          path: /tmp/sweep-failed/
-          if-no-files-found: ignore
-          retention-days: 30
-
-  # ============================================================================
-  # PASS 3 — Claude review (interleaved into synthesis/queue/)
-  # ============================================================================
-  review:
-    name: "Pass 3 — Review"
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    needs: [propagate, synthesize]
-    permissions:
-      contents: write
-    if: needs.synthesize.outputs.had_synthesis == 'true'
-
-    steps:
-      - name: Checkout (post-Pass-2 state)
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
-          ref: main
-          token: ${{ secrets.GITHUB_TOKEN }}
-          persist-credentials: true
-
-      - uses: actions/setup-python@v6
-        with:
-          python-version: '3.12'
-
-      - name: Count items in Pass 2 synthesis
-        id: count
-        env:
-          SYNTHESIS_LOG: ${{ needs.synthesize.outputs.synthesis_log }}
-          NORMALIZED_MANIFEST: ${{ needs.synthesize.outputs.normalized_manifest }}
-        run: |
-          set -euo pipefail
-          # The canonical manifest is the wire contract. Raw Markdown headings
-          # and markers are redundant normalization signals, never the Pass 3
-          # item-count authority.
-          python3 scripts/synthesis_normalize.py validate --manifest "$NORMALIZED_MANIFEST"
-          ITEM_COUNT=$(python3 scripts/synthesis-emit-files.py \
-            --count-items \
-            --synthesis-log "$SYNTHESIS_LOG" \
-            --normalized-manifest "$NORMALIZED_MANIFEST")
-          ITEM_COUNT=${ITEM_COUNT:-0}
-          echo "Pass 2 synthesis has $ITEM_COUNT canonical items to review"
-          if [[ "$ITEM_COUNT" -eq 0 ]]; then
-            TRIGGER_COUNT=$(python3 -c 'import json,sys; print(len(json.load(open(sys.argv[1]))["source"]["trigger_files"]))' "$NORMALIZED_MANIFEST")
-            SOURCE_COMMIT=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["source"]["commit_sha"])' "$NORMALIZED_MANIFEST")
-            DIFF_BASE=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["source"]["diff_base"])' "$NORMALIZED_MANIFEST")
-            CHANGED_LINES=0
-            if [[ "$DIFF_BASE" != "manual" ]]; then
-              CHANGED_LINES=$(git diff --numstat "$DIFF_BASE..$SOURCE_COMMIT" -- 'wiki/*.md' \
-                | awk '{if ($1 ~ /^[0-9]+$/) a+=$1; if ($2 ~ /^[0-9]+$/) d+=$2} END {print a+d+0}')
-            fi
-            if [[ "$TRIGGER_COUNT" -gt 5 || "$CHANGED_LINES" -gt 100 ]]; then
-              if [[ "${{ inputs.allow_large_no_op }}" != "true" ]]; then
-                echo "ERROR: anomalous explicit no-op for $TRIGGER_COUNT trigger files / $CHANGED_LINES changed lines."
-                echo "Require independent/manual review, then re-dispatch with allow_large_no_op=true."
-                exit 1
-              fi
-              echo "Large-batch no-op override accepted after independent/manual review."
-            fi
-          fi
-          echo "item_count=$ITEM_COUNT" >> "$GITHUB_OUTPUT"
-
-      - name: Run Pass 3 review
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          # Default reviewer is DeepSeek V4-Pro with the DeepSeek-tuned prompt
-          # (sweep-prompt-3-review-deepseek.md). Switched from GPT-5.5 2026-06-01
-          # after the eval at evals/pass-3-reviewer/2026-05-30-0317c56-comparison.md:
-          # DeepSeek is ~10-25x cheaper AND was the only model to use the
-          # route-to-verification pattern the corpus-absence rule exists to produce
-          # (passed catch-test 1 / theaflavins where GPT-5.5 rejected on corpus-absence).
-          # GPT-5.5 + Opus prompts preserved for periodic cross-checks — recommended
-          # to preserve cross-vendor heterogeneity since DeepSeek also runs Pass 1
-          # (see the comparison doc's heterogeneity note). History: GPT-5.5 replaced
-          # Opus 4.7 on 2026-05-08 (the 3-way eval), now DeepSeek replaces GPT-5.5.
-          REVIEWER_MODEL:    deepseek/deepseek-v4-pro
-          REVIEWER_PROMPT:   scripts/sweep-prompt-3-review-deepseek.md
-          SYNTHESIS_LOG:     ${{ needs.synthesize.outputs.synthesis_log }}
-          NORMALIZED_MANIFEST: ${{ needs.synthesize.outputs.normalized_manifest }}
-          TRIGGER_FILES:     ${{ needs.propagate.outputs.trigger_files }}
-          CITED_FILES:       ${{ needs.synthesize.outputs.cited_files }}
-          DIFF_BASE:         ${{ needs.propagate.outputs.diff_base }}
-          ITEM_COUNT:        ${{ steps.count.outputs.item_count }}
-          SUPPLEMENTAL_RECOVERY: ${{ inputs.supplemental_recovery }}
-        run: |
-          set -euo pipefail
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Capture the reviewer's stdout to a reviews file. The Pass 3 prompt
-          # instructs it to output ONLY review blockquotes separated by
-          # <<<NEXT>>> — the merge script parses that and substitutes into
-          # the Pass 2 synthesis.
-          # cited_files is the list of wiki/*.md files Pass 2 referenced;
-          # the Pass 3 driver inlines BOTH trigger and cited files so the
-          # reviewer can verify claims without filesystem tool access.
-          # The reviewer also has on-demand Read tool access for files
-          # neither set covers (see scripts/sweep-3-review.py).
-          REVIEWS_FILE="$(mktemp --suffix=.txt)"
-          if [ "${ITEM_COUNT:-0}" -eq 0 ]; then
-            # Zero is reachable only through an explicit, hash-validated
-            # no-new-synthesis declaration. Missing/unknown structure fails in
-            # normalization and can never reach this branch.
-            echo "Pass 2 explicitly declared no new synthesis — no review needed."
-            echo "EXPLICIT_NO_OP" > "$REVIEWS_FILE"
-          else
-            python3 scripts/sweep-3-review.py \
-              --synthesis-log "$SYNTHESIS_LOG" \
-              --normalized-manifest "$NORMALIZED_MANIFEST" \
-              --commit-sha "${{ needs.propagate.outputs.sha }}" \
-              --diff-base "$DIFF_BASE" \
-              --trigger-files "$TRIGGER_FILES" \
-              --cited-files "$CITED_FILES" \
-              --item-count "$ITEM_COUNT" \
-              --model "$REVIEWER_MODEL" \
-              --prompt-file "$REVIEWER_PROMPT" \
-              > "$REVIEWS_FILE"
-          fi
-
-          # Run the per-item emitter — Pass 2 content preserved verbatim
-          # --sweep-date: ISO date of the trigger commit in UTC per spec §5.1.
-          # `TZ=UTC` + `--date=short-local` forces the date to be rendered in UTC.
-          # Plain `%cI` or `%cd --date=short` returns committer-LOCAL date (with
-          # offset on `%cI`, which `cut -c1-10` then discards while keeping the
-          # local-date portion — same off-by-one as `--date=short`). Brian's
-          # -0400 merge at UTC 00:58 on 2026-05-09 rendered as 2026-05-08
-          # without `TZ=UTC`, which silently dated Pass 3 history one day
-          # behind Pass 2's runner-UTC log filename.
-          SWEEP_DATE=$(TZ=UTC git log -1 --format='%cd' --date=short-local "${{ needs.propagate.outputs.sha }}")
+            --synthesis-log "$WORK_DIR/distributed-synthesis.md" \
+            --output "$WORK_DIR/normalized-synthesis.json"
+          trigger_csv=$(paste -sd, /tmp/synthesis-triggers.txt)
           python3 scripts/synthesis-emit-files.py \
-            --synthesis-log "$SYNTHESIS_LOG" \
-            --normalized-manifest "$NORMALIZED_MANIFEST" \
-            --reviews-file "$REVIEWS_FILE" \
-            --commit-sha "${{ needs.propagate.outputs.sha }}" \
-            --sweep-date "$SWEEP_DATE" \
-            --diff-base "$DIFF_BASE" \
-            --trigger-files "$(echo "$TRIGGER_FILES" | tr '\n' ',' | sed 's/,$//')" \
-            --synthesizer "${{ needs.synthesize.outputs.synthesizer_model }}" \
-            --reviewer "$REVIEWER_MODEL"
+            --synthesis-log "$WORK_DIR/distributed-synthesis.md" \
+            --normalized-manifest "$WORK_DIR/normalized-synthesis.json" \
+            --reviews-file "$WORK_DIR/distributed-reviews.txt" \
+            --commit-sha "${{ steps.preflight.outputs.coverage }}" \
+            --diff-base "${{ steps.preflight.outputs.diff_base }}" \
+            --trigger-files "$trigger_csv" \
+            --synthesizer "distributed-dual-read" \
+            --reviewer "openai/gpt-5.5" \
+            --no-history
 
-          # Stage emitted files first, THEN check diff. The emitter writes NEW files
-          # to synthesis/queue/ + synthesis/history/, and `git diff` (without --cached)
-          # only sees changes to TRACKED files — newly created untracked files are
-          # invisible to that check, which silently dropped the first 19-item sweep
-          # post-migration on 2026-05-09. Stage-then-check-cached is the fix.
-          git add synthesis/queue/ synthesis/history/
-          if git diff --cached --quiet -- synthesis/queue/ synthesis/history/; then
-            echo "Pass 3 made no changes to synthesis/"
-            exit 0
-          fi
-
-          git commit -m "sweep-3-review: ${REVIEWER_MODEL} review of ${{ needs.synthesize.outputs.synthesizer_model }} synthesis → synthesis/queue/ + synthesis/history/ [skip-wiki-sweep]"
-          REVIEW_COMMIT=$(git rev-parse HEAD)
-          echo "Pass 3 review commit: $REVIEW_COMMIT"
-
-          # The canonical cursor advances to the exact corpus snapshot Pass 2
-          # read—not to this later review commit. Thus any wiki commit that
-          # lands while Pass 2/3 is running remains pending. A supplemental
-          # exact-artifact recovery records provenance but never moves cursor.
-          if [[ "$SUPPLEMENTAL_RECOVERY" == "true" ]]; then
-            python3 scripts/sweep-state.py record-recovery \
-              --review-commit "$REVIEW_COMMIT" \
-              --synthesis-log "$SYNTHESIS_LOG" \
-              --normalized-manifest "$NORMALIZED_MANIFEST" \
-              --run-id "${{ github.run_id }}" \
-              --trigger "${{ github.event_name }}"
-            STATE_COMMIT_MESSAGE="sweep-3-review: record supplemental exact-artifact recovery; cursor unchanged [skip-wiki-sweep]"
-          else
-            python3 scripts/sweep-state.py update-success \
-              --commit "$REVIEW_COMMIT" \
-              --synthesis-log "$SYNTHESIS_LOG" \
-              --normalized-manifest "$NORMALIZED_MANIFEST" \
-              --expected-diff-base "$DIFF_BASE" \
-              --trigger-files "$(echo "$TRIGGER_FILES" | tr '\n' ',' | sed 's/,$//')" \
-              --run-id "${{ github.run_id }}" \
-              --trigger "${{ github.event_name }}"
-            COVERAGE_COMMIT=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["source"]["corpus_commit_sha"])' "$NORMALIZED_MANIFEST")
-            STATE_COMMIT_MESSAGE="sweep-3-review: advance coverage cursor to $COVERAGE_COMMIT [skip-wiki-sweep]"
-          fi
-
-          git add logs/sweep-state.json
-          git commit -m "$STATE_COMMIT_MESSAGE"
-
-      - name: Push review
+      - name: Commit queue and advance only exact synthesis coverage
         run: |
           set -euo pipefail
-          if ! git log origin/main..HEAD --oneline | grep -q .; then
-            echo "Pass 3 produced no commit"
-            exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add synthesis/queue/
+          if git diff --cached --quiet; then
+            result_commit="${{ steps.preflight.outputs.coverage }}"
+          else
+            git commit -m "synthesis: emit reviewed distributed findings [skip-knowledge-update]"
+            result_commit=$(git rev-parse HEAD)
           fi
-          # Same rebase-and-retry pattern as Pass 1 / Pass 2.
-          for attempt in 1 2 3; do
-            git fetch origin main
-            if git log HEAD..origin/main --oneline | grep -q .; then
-              echo "Rebasing Pass 3 onto origin/main (attempt $attempt) ..."
-              OLD_REVIEW=$(python3 -c 'import json; d=json.load(open("logs/sweep-state.json")); runs=d.get("recent_runs", []); print(runs[-1].get("review_commit", "") if runs else "")')
-              git rebase --autostash origin/main || { git rebase --abort || true; exit 1; }
-              NEW_REVIEW=$(git rev-parse HEAD^)
-              if [[ -n "$OLD_REVIEW" && "$OLD_REVIEW" != "$NEW_REVIEW" ]]; then
-                python3 scripts/sweep-state.py rebind-review-commit \
-                  --old-commit "$OLD_REVIEW" \
-                  --new-commit "$NEW_REVIEW"
-                git add logs/sweep-state.json
-                git commit --amend --no-edit
-              fi
-            fi
-            if git push; then
-              echo "Pass 3 push succeeded on attempt $attempt"
-              exit 0
-            fi
-            echo "Pass 3 push rejected on attempt $attempt; retrying after fetch..."
-            sleep $((attempt * 5))
-          done
-          echo "Pass 3 push failed after 3 rebase-and-retry attempts"
-          exit 1
+          trigger_csv=$(paste -sd, /tmp/synthesis-triggers.txt)
+          receipt_hash=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["coverage_receipt_sha256"])' "$WORK_DIR/coverage-receipt.json")
+          corpus_hash=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["corpus_sha256"])' "$WORK_DIR/coverage-receipt.json")
+          cost=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["cost"]["actual_usd"])' "$WORK_DIR/coverage-receipt.json")
+          python3 scripts/sweep-state.py update-success \
+            --commit "$result_commit" \
+            --synthesis-log "$WORK_DIR/distributed-synthesis.md" \
+            --normalized-manifest "$WORK_DIR/normalized-synthesis.json" \
+            --expected-diff-base "${{ steps.preflight.outputs.diff_base }}" \
+            --trigger-files "$trigger_csv" --run-id "${{ github.run_id }}" \
+            --coverage-receipt-sha256 "$receipt_hash" \
+            --corpus-sha256 "$corpus_hash" --cost-usd "$cost"
+          git add logs/sweep-state.json
+          git commit -m "synthesis-state: cover ${{ steps.preflight.outputs.coverage }} [skip-knowledge-update]"
+
+      - name: Push successful synthesis batch
+        run: |
+          set -euo pipefail
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Retain exact recovery artifacts temporarily
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: distributed-synthesis-${{ github.run_id }}
+          path: /tmp/open-enzyme-distributed-synthesis
+          retention-days: 7
+          if-no-files-found: warn

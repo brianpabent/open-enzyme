@@ -275,12 +275,12 @@ def cmd_update_success(args: argparse.Namespace) -> None:
         sys.exit("sweep-state.py: result commit does not descend from corpus snapshot")
     data["last_successful_synthesis"] = {
         "coverage_commit": coverage,
-        "corpus_sha256": source.get("sha256"),
+        "corpus_sha256": getattr(args, "corpus_sha256", "") or source.get("sha256"),
         "timestamp": _now_iso(),
         "trigger_paths": source["trigger_files"],
-        "coverage_receipt_sha256": manifest["canonical_items_sha256"],
+        "coverage_receipt_sha256": getattr(args, "coverage_receipt_sha256", "") or manifest["canonical_items_sha256"],
         "queue_items_emitted": len(manifest["items"]),
-        "cost_usd": None,
+        "cost_usd": getattr(args, "cost_usd", 0.0),
         "result_commit": args.commit,
         "sweep_id": manifest["sweep_id"],
     }
@@ -393,6 +393,9 @@ def build_parser() -> argparse.ArgumentParser:
     success.add_argument("--trigger-files", default="")
     success.add_argument("--run-id", required=True)
     success.add_argument("--trigger", default="workflow_dispatch")
+    success.add_argument("--coverage-receipt-sha256", default="")
+    success.add_argument("--corpus-sha256", default="")
+    success.add_argument("--cost-usd", type=float, default=0.0)
 
     recovery = sub.add_parser("record-recovery")
     recovery.add_argument("--review-commit", required=True)

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -13,12 +14,15 @@ def load(name: str, path: Path):
     spec = importlib.util.spec_from_file_location(name, path)
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
+    sys.modules[name] = module
     spec.loader.exec_module(module)
     return module
 
 
 comp_review = load("comp_review_test", ROOT / "scripts" / "comp-review.py")
 manifest = load("comp_manifest_test", ROOT / "scripts" / "comp-review-manifest.py")
+distributed = load("distributed_synthesis_test", ROOT / "scripts" / "distributed-synthesis.py")
+normalize = load("distributed_normalize_test", ROOT / "scripts" / "synthesis_normalize.py")
 
 
 class CompReviewContractTests(unittest.TestCase):
@@ -85,6 +89,71 @@ class WorkflowTriggerTests(unittest.TestCase):
         text = (ROOT / ".github/workflows/comp-review.yml").read_text()
         self.assertIn("push-review.manifest", (ROOT / "scripts/comp-review.py").read_text())
         self.assertNotIn("logs/comp-reviews", text)
+
+
+class DistributedSynthesisContractTests(unittest.TestCase):
+    def test_domain_pair_plan_is_exhaustive(self):
+        import itertools
+
+        pairs = list(itertools.combinations(distributed.DOMAINS, 2))
+        self.assertEqual(28, len(pairs))
+        self.assertEqual(len(pairs), len(set(pairs)))
+
+    def test_section_inventory_and_sharding_preserve_every_section(self):
+        with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
+            path = Path(tmp) / "source.md"
+            path.write_text("# One\nalpha\n\n## Two\nbeta\n")
+            sections = distributed.sections(path, max_chars=8)
+            shards = distributed.pack_sections(sections, max_chars=10)
+        self.assertEqual(
+            {section["section_id"] for section in sections},
+            {section["section_id"] for shard in shards for section in shard},
+        )
+        self.assertTrue(all(section["sha256"] for section in sections))
+
+    def test_ledger_merge_preserves_dispute_and_pass_heterogeneity(self):
+        base = {
+            "atom_id": "a", "section_id": "s", "type": "constraint",
+            "statement": "Only luminal exposure was modeled.", "excerpt": "luminal exposure",
+            "domain": "delivery-chassis", "path": "wiki/x.md", "start_line": 1,
+        }
+        atoms = [dict(base, extraction_pass="A"), dict(base, extraction_pass="B", dispute="May also constrain systemic use")]
+        merged = distributed.merge_atoms(atoms)
+        self.assertEqual(1, len(merged))
+        self.assertEqual(["A", "B"], merged[0]["extraction_passes"])
+        self.assertEqual(["May also constrain systemic use"], merged[0]["disputes"])
+
+    def test_coverage_receipt_fails_closed_on_missing_second_read(self):
+        receipt = {
+            "status": "complete", "section_count": 2,
+            "pass_a_covered_sections": 2, "pass_b_covered_sections": 1,
+            "domain_pairs_expected": 28, "domain_pairs_completed": 28,
+            "candidate_count": 0, "rehydrated_candidate_ids": [],
+            "reviewed_candidate_ids": [], "promoted_candidate_ids": [],
+            "cost": {"actual_usd": 1.0, "hard_cap_usd": 5.0},
+        }
+        receipt["coverage_receipt_sha256"] = distributed.canonical_hash(receipt)
+        with self.assertRaises(RuntimeError):
+            distributed.validate_coverage_receipt(receipt)
+
+    def test_promoted_markdown_normalizes_without_narrative_history(self):
+        manifest = {"coverage_commit": "a" * 40}
+        raw, reviews = distributed.raw_markdown(
+            [{
+                "candidate_id": "c1", "type": "connection", "headline": "A grounded bridge",
+                "body": "Mechanistic extrapolation grounded in `wiki/example.md`.",
+                "status": "partial", "review": "Source support is bounded.",
+                "cheapest_next_step": "Run the discriminating assay.",
+            }],
+            manifest, "b" * 40, ["wiki/example.md"], "deepseek/deepseek-v4-pro",
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "distributed.md"
+            path.write_text(raw)
+            normalized = normalize.normalize_text(raw, path)
+        self.assertEqual("items", normalized["status"])
+        self.assertEqual(1, len(normalized["items"]))
+        self.assertIn("Pass 3 review", reviews)
 
 
 if __name__ == "__main__":
