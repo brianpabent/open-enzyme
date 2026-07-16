@@ -66,9 +66,9 @@ Dietary purines do not arrive as one interchangeable “purine load.” Adenine 
 be salvaged into nucleotides, degraded through hypoxanthine/xanthine to urate, or metabolized
 by gut microbes. A downstream luminal uricase arm acts only after urate exists; an upstream
 whole-cell purine-degrading bacterium can alter earlier branch points. [comp-046](./staged-purine-sink-mass-balance-computational.md)
-therefore keeps dietary precursor and endogenous luminal urate as separate conserved ledgers
-and treats staging as an empirical question rather than subtracting “uricase capacity” from
-total biomass purines.
+therefore uses a conserved dietary-precursor fate ledger and a separate endogenous
+luminal-urate capture-fraction comparison. It treats staging as an empirical question rather
+than subtracting “uricase capacity” from total biomass purines.
 
 ## Decisive experiment
 

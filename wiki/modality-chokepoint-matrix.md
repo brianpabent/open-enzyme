@@ -189,7 +189,7 @@ Targets across the top, modalities down the side. Columns grouped by anatomical 
   6. Modality-chokepoint-matrix native-compound row — **this entry** ✅ (Phase 7-6, 2026-05-06)
 
 ### Engineered LBPs (obligate anaerobes — Bacteroides / Faecalibacterium / Akkermansia)
-- **Strengths:** genuine colonization vs. transit. *Faecalibacterium prausnitzii* engineering is the obvious play for sustained colonic butyrate (relevant to [`abcg2-modulators.md`](./abcg2-modulators.md) ABCG2 induction + Q141K rescue). *Akkermansia muciniphila* is mucus-layer-resident — the natural barrier-repair chassis. *Bacteroides* offers the broadest metabolic engineering toolkit (Sonnenburg lab, others).
+- **Strengths:** potential colonization rather than transit. *Faecalibacterium prausnitzii* engineering could supply sustained colonic butyrate for WT-ABCG2 induction; direct Q141K rescue remains unvalidated. *Akkermansia muciniphila* is mucus-layer-resident, and *Bacteroides* offers a broader engineering toolkit.
 - **Coverage gaps relative to current OE:** **the wiki has no dedicated page on this chassis class.** Brian-side Pendulum probiotic uses Akkermansia + butyrate-producers commercially; the engineering thesis for OE hasn't been developed.
 - **Open exploration questions:** see [`open-questions.md` §"Co-engineered substrate-supply mechanisms"](./open-questions.md). Engineered Faecalibacterium for local butyrate is the highest-leverage candidate.
 - **Regulatory class:** LBP framework (FDA 2018 guidance); same general lane as PULSE-style engineered E. coli Nissle, **distinct from yeast/koji food path.** Worth a dedicated wiki page.
@@ -313,7 +313,7 @@ The cells where 🟡 marks the genuinely novel exploration space, ordered by lev
 
 1. **siRNA against URAT1 mRNA via kidney-tropic conjugate.** Sequence-specific renal-reabsorption knockdown. Cleaner than benzbromarone-class. Adjacent to inclisiran-style precedent. Zero clinical programs for gout. Mechanism: see [`androgen-urate-axis.md`](./androgen-urate-axis.md), [`gout-pathophysiology.md`](./gout-pathophysiology.md).
 
-2. **Engineered Faecalibacterium prausnitzii for local butyrate at the gut crypt.** Hits both wild-type ABCG2 (PPARγ) and Q141K (HDAC trafficking rescue) per [`abcg2-modulators.md`](./abcg2-modulators.md). Genotype-agnostic; durable colonization avoids the "eat koji daily" adherence problem. Engineering precedent: Sonnenburg lab work on Bacteroides genome editing transfers conceptually.
+2. **Engineered Faecalibacterium prausnitzii for local butyrate at the gut crypt.** Supported target: wild-type ABCG2 induction through PPARγ. Direct Q141K rescue, durable colonization, titer, and epithelial exposure remain experimental gates; genotype-agnostic coverage is not established.
 
 3. **Myeloid-tropic LNP delivering NLRP3-silencing mRNA / siRNA to vessel-wall macrophages.** Brian-pattern Lp-PLA2 persistence is the n=1 case study. Acuitas / Moderna myeloid LNPs exist for oncology; gout repurposing is novel.
 

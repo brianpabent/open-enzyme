@@ -1,6 +1,6 @@
 ---
 id: H02
-title: "Engineered *Faecalibacterium prausnitzii* delivering colonic butyrate is a viable peer-track therapeutic chassis to engineered koji for gout, with genotype-agnostic ABCG2 induction (WT + Q141K) as the primary mechanism of action"
+title: "Engineered *Faecalibacterium prausnitzii* delivering colonic butyrate is a testable peer-track chassis for WT-ABCG2 induction; Q141K rescue remains unvalidated"
 committed: 2026-05-05
 status: Stub
 survival_count: 0
@@ -40,7 +40,7 @@ sources:
 
 ## Claim (provisional, stub-level)
 
-An engineered *Faecalibacterium prausnitzii* strain producing therapeutic-relevant levels of colonic butyrate, delivered as an oral lyophilized lipid-encapsulated capsule, is a viable peer-track therapeutic chassis to engineered koji for gout. The primary mechanism of action is genotype-agnostic ABCG2 induction:
+An engineered *Faecalibacterium prausnitzii* strain producing colonic butyrate is a testable peer-track chassis. Its supported primary mechanism is PPARγ-mediated induction of wild-type ABCG2; genotype-agnostic coverage is not established:
 
 - **Wild-type ABCG2:** butyrate → PPARγ → upregulated ABCG2 transcription → increased gut-lumen urate efflux
 - **Q141K variant ABCG2 (~10% of gout patients):** butyrate's class-I HDAC inhibitor activity is **proposed to** rescue the broken Q141K trafficking phenotype (restoring functional surface expression) — **unvalidated**: Basseville 2012 demonstrated pharmacological/HDACi Q141K rescue with vorinostat, *not* butyrate; direct butyrate rescue is assumption 6, gated on validation §1.14
@@ -49,7 +49,7 @@ The "viable peer-track" claim has multiple sub-components that the full card wil
 1. *F. prausnitzii* engineering toolkit is mature enough to produce therapeutic-grade butyrate-augmenting strains (vs. WT colonization establishing the colonic baseline)
 2. Lyophilized oxygen-protected capsule formulations achieve sufficient post-ingestion viability to colonize at therapeutic densities
 3. FDA LBP regulatory path is traversable within capital constraints reasonable for a research-platform-derived therapeutic
-4. The genotype-agnostic ABCG2 mechanism translates from in vitro Caco-2 data to humanized clinical effect at achievable colonic butyrate concentrations
+4. WT-ABCG2 induction translates to functional human urate flux at achievable colonic butyrate concentrations
 
 ---
 
@@ -57,7 +57,7 @@ The "viable peer-track" claim has multiple sub-components that the full card wil
 
 The full assumption stack will be populated after the three Phase 2 lit scans (P2-1 engineering, P2-2 commercial, P2-3 regulatory) and comp-008 (P2-4 expression feasibility) land. Anticipated load-bearing assumptions, to be confirmed:
 
-1. *F. prausnitzii* genetic engineering toolkit supports therapeutic-grade payload modification (current state: research-grade tools published 2018–present; NextBiotix and others driving the engineering envelope; gap to therapeutic-grade unclear)
+1. *F. prausnitzii* genetic engineering toolkit supports therapeutic-grade payload modification (current state: no published transformation protocol established in the comp-008 review; closest precedents are neighboring Lachnospiraceae and heterologous delivery of *Fp* effectors from other hosts)
 2. Lyophilized + lipid-encapsulated oral *F. prausnitzii* preparations achieve >10⁸ CFU/dose live delivery to the colon (current best-published: ~10⁶–10⁷ CFU; gap to therapeutic threshold uncharacterized)
 3. Engineered butyrate overproduction does not destabilize *F. prausnitzii* viability or trigger PFOR-pathway feedback that quenches the augmentation
 4. Colonic butyrate concentration thresholds for clinically-meaningful PPARγ activation (WT) and HDAC inhibition (Q141K) are achievable from a single delivered LBP strain rather than requiring a designed consortium
@@ -106,8 +106,8 @@ To be populated. Anticipated relevant failure modes from [linter-design.md](../l
 
 - [engineered-lbp-chassis.md](../engineered-lbp-chassis.md) — the track this hypothesis formalizes
 - [modality-chokepoint-matrix.md](../modality-chokepoint-matrix.md) — "Engineered LBPs" row that surfaced this question
-- [abcg2-modulators.md](../abcg2-modulators.md) — butyrate dual-action mechanism (PPARγ + HDAC), Q141K rescue
-- [koji-endgame-strain.md](../koji-endgame-strain.md) — the peer-track koji chassis hypothesis (H01)
+- [abcg2-modulators.md](../abcg2-modulators.md) — supported WT-ABCG2 induction and unvalidated direct-butyrate Q141K-rescue hypothesis
+- [koji-endgame-strain.md](../koji-endgame-strain.md) — the falsifiable koji chassis hypothesis (H01)
 - [open-questions.md](../open-questions.md) §"Engineered LBP chassis" — meta-index entry
 - [linter-design.md](../linter-design.md) — schema for the Falsification Card format
 - [H01-ward-dual-cassette.md](./H01-ward-dual-cassette.md) — sibling falsification card for the koji chassis; format template

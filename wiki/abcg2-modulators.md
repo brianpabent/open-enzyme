@@ -99,7 +99,7 @@ The most authoritative review of ABCG2/BCRP transcriptional regulation across ti
 
 Xie et al. specifically tested HDAC inhibitors (vorinostat, valproate) and TNF-α / NF-κB pathway disruption. None affected BCRP protein expression. PPARγ antagonist GW9662 abolished butyrate's BCRP induction. Butyrate's effect on the gut urate sink is therefore PPARγ-mediated, not HDAC-mediated, in wild-type ABCG2 carriers.
 
-This refinement matters because it untangles the wild-type induction mechanism from the Q141K rescue mechanism (§6), which IS HDAC-mediated and operates independently. Brian-pattern Q141K-positive gout patients (estimable as ~30–50% of the population per published GWAS) would benefit from butyrate via *both* mechanisms simultaneously, on different alleles.
+This refinement separates supported wild-type induction from Q141K rescue. Pharmacologic HDAC-inhibitor rescue of Q141K is established in vitro, but direct rescue by butyrate is not; no patient group can yet be said to benefit from both butyrate mechanisms.
 
 ---
 
@@ -168,7 +168,7 @@ Ranked roughly by evidence + safety + tissue selectivity:
 - **Mechanism:** *A. indistinctus* produces hippuric acid via aromatic amino acid catabolism. Hippuric acid enhances PPARγ binding to the ABCG2 promoter AND promotes ABCG2 localization to brush border membranes via PDZK1 (a PDZ-domain scaffold that retains ABCG2 at the apical membrane).
 - **Anchoring evidence:** *A. indistinctus* gavage decreased serum urate to baseline in mouse models; *A. indistinctus* is depleted in hyperuricemia subjects. (Animal Model + Human Observational — Xu et al. 2024, Cell Host & Microbe 32(3):366-381.e9, PMID 38412863; last author: Yan Liu, Sun Yat-sen Univ.)
 - **Practical lever:** *A. indistinctus* is not commercially available as a probiotic. Dietary hippuric acid precursor routes: (1) polyphenol-rich foods (tea, berries, citrus) → gut catabolism → hippuric acid, OR (2) **direct dietary benzoic acid → hepatic glycine conjugation → hippuric acid (no bacterial mediation needed).** Cranberries are unusually high in natural benzoic acid; cranberry juice reliably elevates urinary hippuric acid (the basis of cranberry-UTI lore). A 4-week unsweetened cranberry juice n=1 (~8 oz/day) before/after panel is the cheapest test of whether the hippuric-acid → ABCG2 mechanism moves serum urate at dietary doses, **independent of needing to colonize *A. indistinctus*.** ~$20 cost. (Mechanistic Extrapolation for cranberry route; Animal Model + Human Observational for the hippuric acid mechanism itself.)
-- **OE relevance:** This is a second PPARγ → ABCG2 axis operating via a distinct gut microbiome member from the butyrate/PDB pathway — the two axes are additive. A combined prebiotic approach (fiber for PDB → butyrate + polyphenol foods for *A. indistinctus* → hippuric acid) could achieve higher ABCG2 induction than either alone. See [purine-degrading-bacteria.md](./purine-degrading-bacteria.md) for the PDB / butyrate connection.
+- **OE relevance:** This is a second candidate PPARγ → ABCG2 axis, distinct from the strain-specific PDB/carbon-fate hypothesis. Their combined effect is unknown. Test each exposure and ABCG2 response separately before testing a combination. See [purine-degrading-bacteria.md](./purine-degrading-bacteria.md).
 
 **Indole-3-carbinol / DIM (AhR)**
 - **Mechanism:** AhR activation; gut-AhR is highly active because the receptor evolved partly to sense gut microbial metabolites.
@@ -226,26 +226,26 @@ Basseville et al. 2012, *Cancer Research* ([DOI](https://doi.org/10.1158/0008-54
 
 **Implication for the gut-lumen-sink hypothesis:**
 
-Butyrate is an HDAC inhibitor at colonic concentrations achievable through fermentable fiber. For Q141K-positive gout patients, butyrate hits **two independent targets** on ABCG2:
+Butyrate is an HDAC inhibitor and can induce wild-type ABCG2 through PPARγ. For Q141K-positive patients, two distinct hypotheses must not be conflated:
 
 1. **PPARγ-mediated induction** of any wild-type allele (most Q141K carriers are heterozygous)
-2. **HDI-mediated trafficking rescue** of the Q141K variant
+2. **Proposed HDI-mediated trafficking rescue** of the Q141K variant, not yet demonstrated for butyrate
 
-This is mechanistically a stronger lever in Q141K carriers than wild-type carriers. Predicted but untested: **Q141K + fiber → larger UA reduction than wild-type + fiber.**
+The first route has supporting evidence; the second is mechanistic extrapolation from other HDAC inhibitors. Whether Q141K carriers respond more strongly to fiber is therefore an open test, not an established genotype-specific lever.
 
-A pharmacogenomic-stratified RCT of fermentable fiber (or sodium butyrate enteric capsules) on serum UA, stratified by Q141K genotype, would either confirm or falsify this prediction. Cost-effective experiment for the platform's "differential responder" question.
+A pharmacogenomic-stratified study could test the differential-response hypothesis, but serum UA alone would not identify the mechanism; exposure, surface trafficking, and functional urate flux are required.
 
 **Attribution and concentration caveat (corrected 2026-07-13):** Basseville 2012 established pharmacological/chemical-chaperone rescue of Q141K ABCG2, not direct rescue by 1–5 mM butyrate. Butyrate is a proposed food-grade HDAC-directed test compound. Its ability to reproduce Q141K surface trafficking and functional urate efflux—and the epithelial exposure required—must be established directly in validation §1.14 before any in-vivo rescue claim.
 
 **Genotype-source framing — clinical, not consumer.** The trial must generate its own genotype data at enrollment via a CLIA-certified clinical PCR assay for rs2231142 (Quest, LabCorp, or equivalent single-SNP genotyping; ~$40–80 per patient at clinical-lab pricing). Consumer-grade genotype exports (23andMe, Ancestry, etc.) are explicitly excluded as the data source — not as a personal-preference call but for trial-design rigor: reproducibility, documented assay performance, sample-chain-of-custody, and CLIA-grade QA are all preconditions for a publishable pharmacogenomic stratification. The trial framing is therefore agnostic at recruitment (no presumed prior genotype knowledge); patients are screened, genotyped on-site, and assigned to arms by the trial's own assay.
 
-**Population-frequency caveat for trial design.** Q141K allele frequency varies substantially by ancestry — published GWAS report ~30–50% in East Asian gout cohorts but only ~10–15% in European-ancestry cohorts (some series lower). The "30–50% of gout patients" figure is correct for an East-Asian-majority cohort but overstates the carrier fraction in a European-American sample. A pharmacogenomic fiber trial should pre-specify population and powering — and, given that Q141K homozygotes are predicted to show the largest effect size, including a homozygous arm (where feasible) gives the cleanest signal-to-noise even at modest n. This framing is not "fiber for everyone with gout" — it's **dual-action butyrate as a personalized intervention for Q141K-positive gout patients, with effect size scaling by allele dose**.
+**Population-frequency caveat for trial design.** Q141K allele frequency varies substantially by ancestry. A pharmacogenomic fiber trial should pre-specify population and power genotype strata, but it must test rather than assume a Q141K-specific butyrate response or allele-dose scaling.
 
-The clinical-genotyping cost is also self-justifying against the alternative non-stratified design. In a European-ancestry cohort with carrier frequency ~10–15%, a non-stratified RCT looking for the same Q141K-conditional effect size would need roughly 3× the n to power the differential response (the Q141K-positive subset's signal is diluted by the wild-type majority). At ~$40–80/patient, on-site genotyping that lets the trial run with ~120 enriched patients instead of ~360 unstratified is a clear win — and is anyway required to identify Q141K homozygotes (~5–25% of carriers depending on population) for the homozygous arm. See [`androgen-urate-axis.md`](./androgen-urate-axis.md) for the male-demographic ceiling that interacts with this stratification, and [`supplements-stack.md`](./supplements-stack.md) for ABCG2-inhibitor counter-indications that should be exclusion criteria at enrollment.
+On-site clinical genotyping is still required for a publishable stratified study. Sample size must be calculated from pilot data rather than the earlier assumed Q141K-conditional effect.
 
 ### Pharmacological-chaperone route — orthogonal small-molecule rescue (added 2026-05-16)
 
-The HDAC/butyrate rescue above is one of two distinct mechanistic strategies for Q141K. The other is a **pharmacological chaperone** — a small molecule that physically binds the misfolded Q141K protein and stabilizes its native conformation long enough for ER quality control to release it to the apical membrane. The class precedent is overwhelming: CFTR correctors (ivacaftor / tezacaftor / elexacaftor) rescue the ΔF508 CFTR variant via exactly this mechanism, and CFTR is in the same ATP-binding-cassette (ABC) transporter superfamily as ABCG2 (same fold, same general design problem). No published program has applied this chemistry to ABCG2 Q141K specifically.
+Pharmacologic HDAC-inhibitor rescue is one demonstrated in-vitro strategy for Q141K; butyrate is only a candidate within that strategy. A distinct hypothesis is a **pharmacological chaperone** that binds and stabilizes the misfolded protein. CFTR correctors provide class precedent, but no validated ABCG2 Q141K candidate exists.
 
 This route is mechanistically orthogonal to the butyrate / HDAC track: a chaperone restores native folding *directly*, without needing microbiome-mediated HDAC inhibition or PPARγ-mediated transcriptional induction of a wild-type allele. Implications:
 
@@ -270,7 +270,7 @@ The full chassis-pending entry is at [`chassis-pending-interventions.md` §7 "Ph
 
 Everything on this page treats ABCG2 modulation as a lever. It is worth naming *why* that lever is load-bearing: the [gut-lumen uricase sink](./gut-lumen-sink.md) can only degrade urate that ABCG2 delivers to the lumen. **The sink's substrate supply is this pump's output.** So the Q141K rescue axis and the gut-lumen-sink thesis are not two parallel tracks — they share one bottleneck. Q141K throttles apical ABCG2 trafficking, so in a Q141K carrier the pump that fuels the sink is throttled, and the platform's core question collapses to one: does the engineered strain's uricase output exceed the Q141K-limited ABCG2 flux, or is the transporter the rate-limiter?
 
-If the transporter is rate-limiting in the dominant male/Q141K demographic, the rescue layer above (butyrate HDI + PPARγ induction; the orthogonal pharmacological-chaperone route) becomes load-bearing for the koji endgame strain rather than an optional adjunct — with the caveat that both rescue mechanisms remain proposed (butyrate's direct Q141K rescue is untested per the correction above; the chaperone candidates are hypothesis-stage). The shared wet-lab resolver is [`validation-experiments.md` §1.14](./validation-experiments.md), whose Q141K-transfected parallel arm puts substrate-supply rescue and uricase-sink substrate demand on the same monolayer. (Mechanistic Extrapolation.)
+If transporter supply proves rate-limiting, WT induction and Q141K rescue become separate engineering questions. The shared wet-lab resolver is [`validation-experiments.md` §1.14](./validation-experiments.md); no rescue layer is load-bearing until that assay establishes functional urate flux.
 
 ---
 
@@ -311,7 +311,7 @@ Documented functional ABCG2 inhibitors at supplement-relevant doses:
 
 | User profile | ABCG2 status | Risk tier | Practical implication |
 |---|---|---|---|
-| Q141K homozygote + androgen-suppressed (TRT / SERM / AAS) + high-dose flavonoid (>500 mg quercetin OR >600 mg EGCG OR >500 mg curcumin) | Triple-hit suppressed | **Highest concern** | Gut sink may be functionally closed during dose window. Pause inhibitor flavonoids; favor inducers (sulforaphane, fermentable fiber → butyrate, §"Inducers of intestinal ABCG2" above). |
+| Q141K homozygote + androgen-suppressed (TRT / SERM / AAS) + high-dose flavonoid (>500 mg quercetin OR >600 mg EGCG OR >500 mg curcumin) | Triple-hit suppressed | **Highest research concern** | Treat transporter capacity as a prospective vulnerability and control high-dose inhibitor exposure in experiments. Do not infer that fiber or butyrate rescues Q141K; no wild-type allele remains for the supported WT-induction route. |
 | Q141K heterozygote OR androgen-dominant (high-T, no SERM) + supplement-grade flavonoid | One axis suppressed + acute pharmacological inhibition | **High concern** | Meaningful gut-sink narrowing during the dose window. Time inhibitor flavonoids away from urate spikes (post-fructose meals, peri-flare). Acceptable with UA monitoring. |
 | Wild-type ABCG2 + supplement-grade flavonoid | Pharmacological inhibition only | **Moderate concern** | Net effect dose- and chronicity-dependent. Watch UA trajectory after introduction; down-titrate if UA rises. |
 | Any genotype + dietary-level flavonoid (onions, tea, turmeric, fermented soy at normal food portions) | Sub-Ki gut concentrations | **Minimal concern** | No restriction. Food-level intake is unlikely to be clinically significant for the gut sink. |
@@ -395,11 +395,11 @@ Three potential additions to the koji configuration that would couple substrate 
 
 ### For an engineered LBP peer track (commercial-pharmaceutical chassis)
 
-The butyrate dual-action documented above (PPARγ → WT ABCG2 induction + class-I HDAC inhibition → Q141K trafficking rescue) is the cleanest **genotype-agnostic** mechanism in this entire page. Most ABCG2-relevant interventions hit either WT or Q141K, not both. Butyrate hits both simultaneously — but its bioavailability problem (rapid small-intestinal absorption before reaching the colon) makes oral butyrate dosing impractical at clinically meaningful colonic concentrations.
+The supported LBP rationale is sustained local butyrate for PPARγ-mediated wild-type ABCG2 induction. Direct Q141K trafficking rescue by butyrate is an unvalidated extension and cannot make the route genotype-agnostic. Oral and LBP delivery also require measured colonic and epithelial exposure.
 
-**An engineered colonically-resident butyrate producer solves the bioavailability problem at the dose-frequency level.** *Faecalibacterium prausnitzii*, a strict-anaerobe colonic resident already producing butyrate natively at 3–5% gut abundance, is the obvious chassis. Engineered overproduction would put butyrate where it needs to be (the colonic crypt, against the epithelium) on a continuous basis after a single quarterly capsule rather than requiring constant oral dosing.
+**An engineered colonically resident butyrate producer is a testable bioavailability hypothesis, not a solved delivery system.** *Faecalibacterium prausnitzii* is one candidate chassis because it natively produces butyrate in the colon, but the route requires a workable engineering toolkit plus measured colonization density, butyrate titer, dosing durability, and epithelial exposure. No quarterly-capsule or continuous-crypt-exposure claim is established.
 
-This is fundamentally a **commercial-pharmaceutical track**, not a koji-style home-fermentation track — obligate anaerobes require anaerobic bioreactor manufacturing, cold-chain stabilization, and the FDA Live Biotherapeutic Product (LBP) regulatory path. See [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) for the full peer-track scope, regulatory discussion, and queued Phase 2 follow-ups (lit scans on engineering toolkit, commercial landscape, FDA LBP path; comp-008 expression feasibility analysis; falsification card H02). The two tracks (koji + LBP) serve complementary patient populations: koji for the broader market and prevention, LBP for the high-severity / Q141K-genotype / refractory subset where pharmaceutical-grade durability justifies the cost-and-distribution overhead.
+This is a **commercial-pharmaceutical research track**, not a home-fermentation route: an obligate-anaerobe product would require anaerobic manufacturing, stabilization, and an LBP regulatory path. See [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md). Patient-population claims remain premature, especially for Q141K, until direct rescue and delivery are demonstrated.
 
 ### For the supplements stack catalog
 
@@ -409,7 +409,7 @@ Per-compound stack-interaction fields including ABCG2 status should be a require
 
 ## Open research questions
 
-1. **Q141K × fiber differential response.** Predicted but untested: Q141K-positive gout patients should show larger UA reduction with fermentable fiber than wild-type-positive patients, because butyrate hits both PPARγ-induction and HDI-rescue. A pharmacogenomic-stratified RCT (n ~120, baseline UA ≥7 mg/dL, stratified Q141K hetero/wild-type by on-site CLIA-grade rs2231142 PCR genotyping at enrollment — see §6 for genotype-source rationale, 12-week inulin or equivalent) would resolve this. Estimated cost: $150K, 6 months. High platform-relevance.
+1. **Q141K × fiber differential response.** Open: does fermentable fiber change functional ABCG2 urate flux differently by genotype? A stratified study must measure exposure and transporter function; it cannot assume direct butyrate rescue of Q141K.
 
 2. **Tissue-selective PPARγ agonists.** Pharmacology question: are there PPARγ agonists with gut-enrichment selectivity (sparing adipose, liver, BBB)? Selective PPARγ modulators (SPPARMs) are an active drug-development area; some have differential tissue activity. Worth a desk review.
 

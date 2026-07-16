@@ -1,41 +1,24 @@
-> **⚠️ INVALIDATED (comp-review 2026-07-14).** comp-031 is a toy composition of hard-coded prior effect sizes and inherited comp-019 failed UOX regime. Its combined ΔSUA (−1.8 to −1.9 mg/dL) and "optimal dual-mechanism" claims are RETIRED — no efficacy prior may be drawn here. The separate-strain-vs-dual-cassette reasoning (substrate competition) is preserved. Gated by comp-044/comp-046 and validation §1.34/§1.37. Frozen invalidated provenance.
+# comp-031 — Invalidated dual-chassis prior
 
-# comp-031 — Dual-chassis EcN PDB + uricase additive SUA prediction
+**Status: INVALIDATED. No result or engineering recommendation survives.**
 
-**Question (from `wiki/chassis-pending-interventions.md` §"Multi-chassis stacks" M1):** does a dual-chassis stack of engineered EcN expressing the 2,8-dioxopurine PDB cluster (CBT2.0 precedent, Li 2025 PMID 41070194) co-administered with a PULSE-style luminal uricase deliver additive serum urate reduction beyond either arm alone? And does PDB-derived butyrate compound with the gut-lumen uricase sink via ABCG2 induction / Q141K trafficking rescue?
+comp-031 attempted to predict whether PDB-EcN plus luminal uricase would produce additive serum-urate reduction and whether a PDB-derived butyrate axis would rescue ABCG2/Q141K. The model cannot answer those questions because it:
 
-**Verdict: YELLOW (provisional)** — combined dual-chassis intervention is meaningfully better than either single arm but additivity is well below the naive sum because the two urate-consumption arms compete for the same scarce luminal urate substrate. The PDB pathway adds an INDEPENDENT mechanism axis via butyrate-mediated PPARγ ABCG2 induction + HDAC-mediated Q141K trafficking rescue. Combined predicted ΔSUA: **−1.8 to −1.9 mg/dL across genotypes** (90% CI roughly −2.2 to −1.3 mg/dL).
+1. inherited comp-019's invalid uricase saturation regime;
+2. transferred a *C. sporogenes* butyrate assumption into CBT2.0/EcN without product measurement;
+3. misattributed direct butyrate rescue to Basseville 2012;
+4. used unmatched background butyrate; and
+5. treated spatially distinct oxidative and anaerobic processes as well-mixed competitors.
 
-**Engineering handoff: route PDB and uricase to SEPARATE strains, not a dual-cassette EcN.** The substrate-competition penalty means single-chassis dual-cassette engineering gains ~nothing in additional SUA reduction relative to two separate strains co-administered. Avoid the regulatory and stability complexity of an 8-gene PDB cluster + uricase coordinated expression in one chassis.
+The former YELLOW verdict, all ΔSUA values, substrate-competition result, butyrate and Q141K effects, and separate-strain recommendation are retracted. Separate strains, one strain, and temporal staging remain unranked experimental options.
 
-## Reproduce
+The obsolete executable model, parameter file, and raw outputs have been removed from the live tree. Git preserves the exact historical run. Do not rerun or patch that model. Any renewed analysis must be a new COMP using physiologic UOX kinetics, measured CBT2.0 carbon fate, matched comparators, explicit compartments and staging, and independently validated serum-urate mapping.
 
-```bash
-cd experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/
-python3 analyze.py
-```
+Current replacements:
 
-Python stdlib only. Generates `outputs/results.json` and `outputs/summary.md`. Deterministic seed (42) for Monte Carlo reproducibility.
+- [comp-044](../../../gut-lumen-uricase-physiologic-regime-computational.md) reopens the UOX regime.
+- [comp-046](../../../staged-purine-sink-mass-balance-computational.md) conserves dietary fate, treats the endogenous side as a capture-fraction comparison, and defines conditional architecture boundaries.
+- [Validation §1.34](../../../validation-experiments.md#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux) tests sequential flux.
+- [Validation §1.37](../../../validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test) measures CBT2.0 carbon fate.
 
-## File index
-
-```
-analyze.py                            # Analysis script
-inputs/
-  model_parameters.json               # All parameters with sources/tiers
-  provenance.md                       # Detailed source citations + verification tier
-outputs/
-  results.json                        # Machine-readable Monte Carlo summaries
-  summary.md                          # Human-readable: tables, headline, engineering handoff
-README.md                             # This file
-```
-
-## Related
-
-- `wiki/dual-chassis-ecn-pdb-uricase-computational.md` — interpretive wiki page
-- `wiki/computational-experiments.md` — tracking index
-- `wiki/purine-degrading-bacteria.md` — PDB pathway biology + CBT2.0 anchor
-- `wiki/gut-lumen-sink.md` — PULSE uricase chassis context
-- `wiki/abcg2-modulators.md` — Two distinct modulation modes (PPARγ vs HDAC)
-- `wiki/chassis-pending-interventions.md` §"Multi-chassis stacks" M1 — the question this experiment answers
-- `experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/` — substrate-limited regime that drives competition logic
+See the [canonical interpretive page](../../../dual-chassis-ecn-pdb-uricase-computational.md).

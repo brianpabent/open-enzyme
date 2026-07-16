@@ -37,10 +37,11 @@ signaling, and preventive urate lowering versus flare resolution.
    co-localizes only with intracellular UOX. PULSE supports three topologies plus joint
    KatG+VHb, but does not identify the human-optimal architecture. [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md)
    defines the factorial.
-3. **Dietary precursor and endogenous luminal urate are different ledgers.** A whole-cell
+3. **Dietary precursor and endogenous luminal urate require different accounting structures.** A whole-cell
    nucleoside-salvage stage and UOX/PDB urate stages cannot be added as independent ΔSUA
-   effects. [comp-046](./staged-purine-sink-mass-balance-computational.md) conserves both pools
-   and shows that staging can help or hurt across the design grid.
+   effects. [comp-046](./staged-purine-sink-mass-balance-computational.md) conserves the dietary
+   precursor ledger and separately compares endogenous capture architectures; staging can help
+   or hurt across the design grid.
 
 ## Research threads
 

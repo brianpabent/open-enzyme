@@ -172,7 +172,7 @@ A proposed fourth architecture pairs dietary *Houttuynia cordata* polysaccharide
 
 **Combined n=1 protocol gating (per Pass 3 discipline).** A combined Houttuynia + PDB-EcN n=1 protocol is **dormant** until both arms clear their individual validation gates: Houttuynia §1.30 prioritization screen (THP-1 MSU IL-1β suppression at ≤100 µg/mL across the three-arm dose-response) AND PDB engineered EcN chassis maturation (engineered EcN production + luminal stability validated separately). The combined protocol becomes relevant when both arms clear; drafting it now would be path-dependent speculation about two products that don't exist as a composed intervention yet.
 
-**Cross-references:** [`complement-c5a-gout.md` §9.7](./complement-c5a-gout.md) (Houttuynia as Tier 1d dietary CP0+CP1 candidate), [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) (PDB chassis + SCFA biology), [`abcg2-modulators.md` §6](./abcg2-modulators.md) (Q141K butyrate rescue), [`validation-experiments.md` §1.30](./validation-experiments.md) (Houttuynia THP-1 prioritization screen — wet-lab gate), [`chassis-pending-interventions.md`](./chassis-pending-interventions.md) (PDB chassis-pending entry).
+**Cross-references:** [`complement-c5a-gout.md` §9.7](./complement-c5a-gout.md) (Houttuynia as Tier 1d dietary CP0+CP1 candidate), [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) (PDB chassis + conditional SCFA biology), [`abcg2-modulators.md` §6](./abcg2-modulators.md) (supported WT induction; direct butyrate Q141K rescue unvalidated), [`validation-experiments.md` §1.30](./validation-experiments.md), [`chassis-pending-interventions.md`](./chassis-pending-interventions.md).
 
 ---
 

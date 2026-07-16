@@ -203,12 +203,12 @@ The 2,8-dioxopurine pathway terminates in pyruvate → acetate + butyrate via or
 
 **Butyrate:**
 - PPARγ agonism → ABCG2 transcriptional upregulation (Li et al. 2023, PMID 36948133; Animal Model + DASH RCT, PMID 33615722 Juraschek 2021 — 0.25–0.73 mg/dL SUA reduction with high-fiber diet; Clinical Trial)
-- HDAC inhibition → rescue of Q141K ABCG2 trafficking in intestinal cells — restores membrane localization of the most common gout-associated ABCG2 variant (In Vitro, Basseville 2012 PMID 22472121)
+- Proposed HDAC-directed Q141K rescue — Basseville 2012 demonstrated rescue with selected pharmacologic conditions, not with butyrate or PDB-derived butyrate (Mechanistic Extrapolation)
 - Hepatic xanthine oxidase inhibition → reduces urate production at source (Animal Model)
 - NF-κB suppression → NLRP3 inflammasome dampening (see [nlrp3-inflammasome.md](./nlrp3-inflammasome.md))
 - Intestinal barrier repair → reduced bacterial translocation → reduced systemic LPS → reduced NLRP3 priming
 
-**Net effect:** PDB do double duty — directly degrade luminal urate AND produce SCFAs that independently enhance urate disposal (ABCG2) and reduce urate production (XO). This is the strongest mechanistic argument for PDB superiority over Lactobacillus probiotics (no 2,8-dioxopurine pathway; only 0.5–1.0 mg/dL SUA reduction in trials).
+**Net-effect hypothesis:** PDB directly degrade luminal urate. Additional SCFA effects require organism-specific carbon-fate, epithelial-exposure, and functional assays; they cannot currently support a PDB-superiority or Q141K-rescue claim.
 
 ### Q141K rescue is not yet attributable to PDB-derived butyrate
 
@@ -366,7 +366,7 @@ PDB adds a third gut track with distinct products and compounding effects:
 
 In the [delivery routes table](./gout-kill-chain-delivery-routes.md), PDB is listed under the PO Microbiome route for the uricase axis. It should be understood as a parallel axis with independent mechanism — not just a delivery variant.
 
-The bacterial-track priority is now **staged mechanism resolution**, not a dual-cassette EcN efficacy prediction. [comp-046](./staged-purine-sink-mass-balance-computational.md) shows that sequencing can help or hurt depending on precursor salvage, urate appearance, transfer, and pathway overlap; its grid is a design-space occupancy analysis, not a probability or ΔSUA forecast.
+The bacterial-track priority is now **staged mechanism resolution**, not a dual-cassette EcN efficacy prediction. [comp-046](./staged-purine-sink-mass-balance-computational.md) provides two separate conditional results: the dietary sign depends on microbial salvage/retention and relative base absorption, while the endogenous architecture difference depends on residual transfer and shared-pool overlap. It does not test their sequence jointly; each grid is a design-space occupancy analysis, not a probability or ΔSUA forecast.
 
 ### Companion intervention: compounded disulfiram (CP6b downstream)
 

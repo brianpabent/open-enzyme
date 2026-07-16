@@ -42,7 +42,7 @@ Is there a Tier 2 butyrate quantification assay — colorimetric, enzymatic, bre
 
 ## Why This Matters
 
-The [quantification ladder](./quantification-ladder.md) needs a cheap Tier 2 surface between visual/user-facing proxies and Tier 3 GC-MS / HPLC / LC-MS anchors. For microbiome-derived metabolites, that gap is especially painful: the [genotype-informed supplement workflow](./genotype-informed-supplement-workflow.md) can recommend butyrate-emphasis interventions for ABCG2 Q141K carriers, but it cannot yet verify butyrate delivery with a validated home or community-biolab Tier 2 assay.
+The [quantification ladder](./quantification-ladder.md) needs a cheap Tier 2 surface between visual proxies and Tier 3 analytical anchors. For microbiome-derived metabolites, that gap blocks rigorous testing of the proposed Q141K × butyrate interaction; the workflow does not currently recommend butyrate as a validated Q141K rescue.
 
 comp-038 reframes that gap as two different problems:
 

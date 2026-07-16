@@ -80,7 +80,7 @@ Anticipated load-bearing assumptions:
 
 3. **The renal URAT1 arm doesn't account for the entire Clomid-UA-elevation observation.** If Brian's (or any individual gout-prone man's) Clomid-induced UA elevation is 100% renal-URAT1-mediated, the intestinal-ER hypothesis is irrelevant to the observation (still potentially true as a separate claim about intestinal biology, but not load-bearing for the SERM-use case). FEUA tracking (Tier 1, $200–500) would resolve this for an n=1 case.
 
-4. **Q141K rescue thesis is orthogonal and unaffected.** The butyrate → PPARγ → ABCG2 induction route per [`abcg2-modulators.md`](../abcg2-modulators.md) §6 doesn't depend on the ER signaling axis at all; it's a separate transcriptional pathway. The rescue logic survives regardless of whether H07 is true. (This is preserved from comp-016's propagation-softening across the platform pages.)
+4. **WT-ABCG2 induction is orthogonal and unaffected.** The butyrate → PPARγ route does not depend on ER signaling. That does not establish direct butyrate rescue of Q141K, which remains a separate unvalidated hypothesis.
 
 5. **No alternative dominant mechanism is being missed.** SHBG-elevation effects, direct hepatic effects on urate handling, gut-microbiome-mediated effects on urate metabolism — any of these could be parallel mechanisms not captured in the ER-antagonism story. The Sakamoto 2018 ADT cohort showed only −0.66 mg/dL serum UA at 6 months, which is small; the Clomid-UA-elevation in individual gout-prone men can be considerably larger. The mechanism gap suggests a multi-pathway model is more likely than any single dominant mechanism.
 

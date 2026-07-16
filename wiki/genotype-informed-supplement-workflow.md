@@ -54,7 +54,7 @@ For each intervention the subject considers:
 
 Per [`personal-genome-protocol.md`](./personal-genome-protocol.md) §"Gout-specific pharmacogenomic query list" + the unified variant index at [`gout-genetic-variants.md`](./gout-genetic-variants.md). Specific variants change compound priority:
 
-- **ABCG2 Q141K** (rs2231142) → butyrate emphasis (PPARγ-driven WT ABCG2 induction + HDAC trafficking rescue for the Q141K variant per [`abcg2-modulators.md`](./abcg2-modulators.md) §6); pharmacological-chaperone class as the orthogonal small-molecule track (chassis-pending; [comp-032](./computational-experiments.md) descriptor screen **superseded by [comp-047](./abcg2-q141k-chaperone-rescreen-computational.md) real-docking rescreen → INCONCLUSIVE — no validated chaperone candidate, hypothesis-only**)
+- **ABCG2 Q141K** (rs2231142) → prospective stratification variable, not a current butyrate recommendation. Butyrate can induce the wild-type allele through PPARγ; direct rescue of Q141K trafficking is unvalidated. The orthogonal chaperone screen is also inconclusive ([comp-047](./abcg2-q141k-chaperone-rescreen-computational.md)).
 - **URAT1 gain-of-function variants** (uncommon; SLC22A12 not RHUC1-causing) → cordycepin > eurycomanone per [comp-015 v2](./t-axis-adjuvant-urate-mapping-computational.md)
 - **SLC22A12 W258X (RHUC1 carrier)** → urate excretion is enhanced; the platform's gut-lumen sink thesis is *less* load-bearing for these carriers
 - **NLRP3 gain-of-function variants** (CAPS spectrum; rare) → upweight CP6 (oridonin, BHB) over CP1–CP4
@@ -95,14 +95,14 @@ The discipline isn't "always hit the target dose." The discipline is "always kno
 
 With dose closed as a verified variable, any biomarker movement is attributable to **dose × biology**, not **dose × batch-variation × biology**. The four-biomarker panel + serum UA quarterly is the canonical readout for gout-context interventions. Adjust the intervention based on the result.
 
-## Worked example — ABCG2 Q141K heterozygous carrier, butyrate-emphasis stack
+## Proposed experiment example — ABCG2 Q141K heterozygous carrier × butyrate
 
-A subject genotyped via a clinical-grade panel returns **ABCG2 Q141K heterozygous** (rs2231142 C/A). Per [`abcg2-modulators.md`](./abcg2-modulators.md), butyrate is the dual-mechanism lever for this genotype: PPARγ-driven ABCG2 induction acts on the wild-type allele, and HDAC-inhibitor trafficking rescue acts on the Q141K variant. The standard supplement-stack recommendation elevates butyrate via fermentable-fiber-rich diet + targeted butyrate-producing probiotics or direct butyrate-ester supplementation.
+A subject genotyped via a clinical-grade panel returns **ABCG2 Q141K heterozygous**. Butyrate can test PPARγ-driven induction of the remaining wild-type allele; whether it also rescues Q141K trafficking is an unvalidated mechanistic hypothesis. This is an experiment-design example, not a supplement recommendation.
 
 Workflow application:
 
 1. **Genotype:** Q141K heterozygous, confirmed via clinical lab (not 23andMe).
-2. **Selection:** Butyrate-emphasis stack — fermentable-fiber dietary baseline (resistant starch, inulin, RS2-type sources) + optional direct sodium butyrate supplementation.
+2. **Selection:** A research comparison of a butyrate-generating intervention against a matched control, with direct exposure and ABCG2-function readouts.
 3. **Source:** Resistant starch from a known source (e.g., Bob's Red Mill unmodified potato starch, a documented RS2 source); sodium butyrate from a documented supplement vendor with reported potency.
 4. **Tier 2 batch QC — exposure-proxy tier, NOT input-verification tier (clarified 2026-05-22 per comp-038 + sweep 2026-05-20 Connection #4 + Priority Action #4):** Indirect readout — stool SCFA panel (butyrate + acetate + propionate) at week 4 of intervention vs. baseline. **This step operates at the exposure-proxy tier, not the input-verification tier** — it answers "did butyrate eventually show up in the colon?" but it does NOT answer "did the supplement bottle contain the labeled dose?" For every other compound class in this workflow (cordycepin via diazo-coupling, EGT via Ellman's reagent, GLPP via phenol-sulfuric, engineered-strain uricase via 293 nm UV), the Tier 2 assay verifies the **input** directly. For butyrate, no such input-verification assay exists at the Tier 2 level (per [comp-038](./tier-2-butyrate-assay-audit-computational.md) YELLOW verdict, 2026-05-20). The "calibrate once at Tier 3, track batches at Tier 2" discipline (per [`quantification-ladder.md`](./quantification-ladder.md)) is partially broken at step 4 for butyrate.
 
@@ -115,7 +115,7 @@ Workflow application:
    Direct supplement quantification by HPLC-UV or electrochemical SCFA profiling is plausible (per comp-038's next-step path) but research-grade and not workflow-ready today. The workflow design IS sound; the butyrate-specific limitation is a class-level methodology gap (see "Tier 2 assay gap for microbiome-derived metabolites" below + the class-level Open Question added to `open-questions.md` 2026-05-22).
 5. **Track biomarkers:** Serum UA quarterly + the standard four-biomarker panel per §4. Do not use comp-019 to predict genotype-specific UOX response; [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) retired that mapping. Q141K can still motivate a transporter-rescue experiment, but response attribution requires direct exposure and ABCG2-function evidence.
 
-**Compound uncertainty: butyrate × exertion trigger (added 2026-05-22 per sweep 2026-05-20 Contradiction #1).** A Q141K-positive subject following this worked example who flares after an exertion event faces a four-way attribution problem at n=1. Without a Tier 2 butyrate input-verification assay AND without an exertion-challenge protocol that monitors urate kinetics, a post-exertion flare could be (a) the butyrate intervention failing (HDAC trafficking rescue insufficient to handle the exertion-driven urate load); (b) the butyrate dose being wrong (supplement underdosed, but unverifiable at step 4); (c) the exertion trigger acting via a mechanism the butyrate intervention doesn't address (mechanical shedding rather than metabolic overload, per [`mechanical-flare-triggers.md`](./mechanical-flare-triggers.md) §"Candidate mechanism #5 — metabolic overload via exertion/fatigue"); (d) regression to the mean. The four explanations are not distinguishable at n=1 without (i) a Tier 2 butyrate-potency assay (closes option b), (ii) an exertion-challenge test with **serial spot urinary urate/creatinine ratios** (discriminates the metabolic-overload mechanism from mechanical shedding for option c — serum UA + pain logs alone under-resolve renal-clearance kinetics per [`mechanical-flare-triggers.md`](./mechanical-flare-triggers.md)), or (iii) a genotype-stratified n-of-many cohort (beyond n=1 resolution). Subjects executing this worked example should be aware of the compound uncertainty and document exertion exposure + post-exertion biomarker draws when feasible, so retrospective analysis can at least disambiguate (a) + (b) from (c) + (d).
+**Compound uncertainty:** a serum-UA or flare change cannot establish Q141K trafficking rescue. Exposure, surface ABCG2, functional urate flux, exertion, and regression to the mean remain confounded at n=1.
 
 **What this example does NOT claim:**
 - Does NOT claim butyrate alone produces clinically meaningful ΔSUA—gated by [H08 — Gut-Lumen Sink Mechanism](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) and the absence of a typical-gout Phase 2b RCT.
@@ -124,7 +124,7 @@ Workflow application:
 
 ## Worked example — OCTN1/SLC22A4 variant carrier, substrate-engineered ergothioneine cultivation *(added 2026-05-22)*
 
-A second worked example demonstrating the workflow with **home cultivation as the production route** (rather than supplement purchase) AND with **no class-level Tier 2 methodology gap** (Ellman's reagent for ergothioneine is well-established; HILIC-HPLC Tier 3 anchor exists; the workflow closes the loop without the exposure-proxy caveat that gates the Q141K butyrate example). This example serves three purposes simultaneously: (a) makes the medicinal-mushroom track visible as a first-class production route in the workflow (per sweep 2026-05-20 Connection #3); (b) demonstrates substrate-level intervention as a distributed-contributor lever per [`medicinal-mushroom-extract-sops.md` SOP-7](./medicinal-mushroom-extract-sops.md) (per sweep 2026-05-20 Priority Action #1); (c) operationalizes the EGT dry-run proposed in sweep 2026-05-20 Riskiest Assumption #1 — the cheapest path to a fully-documented end-to-end execution of the workflow on a compound class where every Tier 2 piece already works.
+A second example demonstrates the workflow with **home cultivation as the production route** and a more complete assay chain than the proposed Q141K experiment. It makes the medicinal-mushroom track visible, tests a contributor-accessible production route, and provides an EGT workflow dry run. It does not establish clinical efficacy.
 
 A subject genotyped via a clinical-grade panel returns **OCTN1 / SLC22A4 variant** carrier — common variants (e.g., rs1050152, ~40–50% allele frequency in European populations) reduce OCTN1's transport capacity for ergothioneine into target tissues. The variant doesn't break the transporter outright; it shifts the dose-response curve, suggesting that *elevated* dietary EGT intake may be needed to reach equivalent tissue concentrations in variant carriers vs wild-type. Ergothioneine has anti-oxidative, anti-inflammatory, and Nrf2-pathway activity relevant to gout adjacent pathways (per [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md)).
 
@@ -138,27 +138,27 @@ Workflow application:
 4. **Tier 2 batch QC — INPUT-VERIFICATION TIER (contrast with the Q141K example):** Per SOP-6 + SOP-3 (ergothioneine row), the Tier 2 assay is **Ellman's reagent (DTNB) thiol detection with smartphone colorimetry** at 412 nm. DTNB → 412 nm yellow on free thiol; EGT's free thiol is the substrate. Reagent is pharmacy-accessible (~$25 for enough DTNB for ~50 assays). Calibrate against the Tier 3 EGT-quantified reference batch (HILIC-HPLC with stable-isotope ²H₉-EGT internal standard per SOP-3; outsourced to a community-biolab or contract lab at ~$80–150 per batch). The calibrate-once-at-Tier-3 / track-batches-at-Tier-2 discipline works cleanly here — every link in the chain has a verified input measurement. **No exposure-proxy substitution.** This is what the workflow looks like when the methodology infrastructure is complete.
 5. **Track biomarkers:** Standard four-biomarker panel per §4. Add EGT-specific biomarkers: serum ergothioneine (LC-MS/MS, send-out; ~$80–120) at baseline + 8–12 weeks; urinary 8-oxo-deoxyguanosine (oxidative-DNA-damage marker; standard send-out, ~$60) at baseline + endpoint as a downstream functional readout (EGT's anti-oxidative activity should reduce 8-oxodG if the dose is reaching mitochondria). The OCTN1-variant prediction is that a higher dietary EGT dose is required to reach the same serum EGT concentration as in wild-type carriers; the n=1 read is the dose-response shape, not absolute level.
 
-**Why this example is load-bearing for the platform's "the workflow works end-to-end" claim.** The Q141K worked example has a documented step-4 input-verification gap (butyrate-specific Tier 2 methodology class-gap). The OCTN1 / EGT worked example has **no such gap** — every step has a validated assay infrastructure, and the home-cultivation route via SOP-7's methionine substrate engineering means the production side is also contributor-accessible. Total cost: ~$500 for the first cycle (genotype + cultivation kit + methionine + DTNB reagent + one Tier 3 HPLC anchor + serum EGT baseline+endpoint). Total time: 8–12 weeks (cultivation cycle + assay turnaround + biomarker tracking). This is the cheapest path to a fully-documented end-to-end execution of the workflow — the dry-run that converts the workflow from "specified" to "field-validated at n=1 with no methodology caveats" (see "Multi-user pilot validation" follow-up below; this example is the pre-pilot single-subject anchor).
+**Why this example matters for testing the workflow end to end.** The proposed Q141K experiment has both an exposure-verification gap and an unvalidated direct-rescue mechanism. The OCTN1 / EGT example has a more complete assay chain and is therefore the cleaner workflow dry run. Its biomarker result would still be an n=1 feasibility signal, not clinical validation.
 
 **What this example does NOT claim:**
 - Does NOT claim EGT supplementation reduces gout flares at n=1 — EGT's gout-relevance is mechanistic (anti-oxidative / anti-inflammatory / Nrf2) rather than a documented anti-gout intervention.
 - Does NOT claim the OCTN1 variant × EGT dose interaction predicts an effect size at the gout-flare level — the dose-response shape is the n=1 readout, not flare-frequency outcome.
-- DOES illustrate the workflow shape with **no class-level Tier 2 methodology gap** — contrast with the Q141K butyrate worked example above.
+- DOES illustrate the workflow shape with **no class-level Tier 2 methodology gap** — contrast with the proposed Q141K experiment above.
 - DOES operationalize the cheapest end-to-end workflow dry-run (per sweep 2026-05-20 Riskiest Assumption #1).
 
 ## Pattern library — variant → pathway vulnerability → bypass intervention *(added 2026-05-22)*
 
-The two worked examples above (Q141K × butyrate and OCTN1 × EGT) plus the dietary-CP0 stratification documented in [`complement-c5a-gout.md` §9.7](./complement-c5a-gout.md) (CFH Y402H × rosmarinic acid / luteolin / Houttuynia / Helicteres) instantiate a single reusable pattern. **The pattern is the platform's strategic asset; the workflow above is its operational expression.**
+The OCTN1 × EGT worked example and the Q141K and CFH candidate hypotheses illustrate a reusable pattern, but they do not share the same evidence status. The workflow's value is making those differences and their falsification gates explicit.
 
 **Pattern statement:**
 
-> Identify a genetic variant that produces a pathway-level vulnerability → identify an intervention class that **bypasses or rescues** that specific vulnerability mechanism (rather than acting through the broken protein) → recommend the bypass intervention specifically to carriers of the variant, who should benefit more from it than wild-type carriers under the bypass logic.
+> Identify a variant-linked vulnerability → propose an intervention that might bypass or rescue it → verify exposure and mechanism → test the genotype interaction. A carrier-specific recommendation requires that evidence; mechanistic analogy alone is insufficient.
 
-**Confirmed instances (documented in the OE corpus):**
+**Instances and evidence status:**
 
 | Variant | Pathway vulnerability | Bypass intervention | Status |
 |---|---|---|---|
-| ABCG2 Q141K (rs2231142) | Misfolded transporter; reduced intestinal urate efflux | Butyrate — PPARγ-driven WT ABCG2 induction + HDAC-inhibitor trafficking rescue for the variant | Documented [`abcg2-modulators.md` §6](./abcg2-modulators.md) + worked example above |
+| ABCG2 Q141K (rs2231142) | Misfolded transporter; reduced intestinal urate efflux | PPARγ induction of remaining WT ABCG2 is supported; direct butyrate rescue of Q141K is a testable hypothesis | Proposed experiment; not a confirmed bypass |
 | OCTN1 / SLC22A4 variant (rs1050152 et al.) | Reduced EGT transport capacity → lower tissue EGT for equivalent dietary intake | Elevated dietary EGT to shift the dose-response upward | Documented worked example above (added 2026-05-22) |
 | CFH Y402H (rs1061170) | Weakened Factor H alternative-pathway complement regulation → elevated C5a generation on MSU crystals | Dietary CP0 candidates (rosmarinic acid, luteolin, Houttuynia, Helicteres) operating **upstream of Factor H** rather than through Factor H | Documented [`complement-c5a-gout.md` §9.7](./complement-c5a-gout.md) + [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](./cfh-mechanism-dissociation-cp0-candidates-computational.md). AMD-paradox counter-evidence flagged. UKB ↔ AoU biobank cross-tab is the empirical falsification gate. |
 
@@ -180,7 +180,7 @@ Two failure modes the workflow blocks:
 
 **1. Silent underdosing.** Without batch QC, a subject who "did the protocol" but happened to source a 20%-potency batch will conclude the mechanism doesn't work. With batch QC, they see the dose was 0.2× target and either re-dose against verified potency or flag the source for replacement.
 
-**2. Genotype-blind selection.** Without genotype-informed selection, a Q141K homozygote will get the same recommendation as a Q141K-negative subject, even though their response curves are different. Stratified selection puts the right compound class in front of the right genotype.
+**2. Genotype-blind experimental design.** Q141K reduces transporter function, but genotype-specific intervention response has not been established for the proposed butyrate route. Stratified experiments can measure that interaction instead of assuming it.
 
 The workflow is the **operational instantiation** of the platform's "open-source, democratized, rigorous" thesis. Open-source: every step uses methods documented in the wiki. Democratized: every step is achievable at home or via a community biolab. Rigorous: every step is verified, not assumed.
 
@@ -202,7 +202,7 @@ The workflow has been instantiated at n=1. The natural next-step gate is an N=5�
 
 ### Tier 2 assay gap for microbiome-derived metabolites
 
-The Q141K worked example above uses **stool SCFA panel** as the Tier 2 batch QC step for butyrate delivery (step 4). The SCFA panel verifies **downstream exposure** (was butyrate present in stool?) but is NOT a **direct potency measurement** of the supplement input (how much butyrate was actually delivered, at what tissue site, in what concentration?). The quantification ladder's "calibrate once at Tier 3, track batches at Tier 2" discipline (per [`quantification-ladder.md`](./quantification-ladder.md)) breaks for microbiome-derived metabolites because there's no Tier 2 home assay for butyrate (or any SCFA) that's well-calibrated against a Tier 3 GC-MS anchor at the relevant biological concentration.
+The proposed Q141K experiment above uses a **stool SCFA panel** only as a downstream exposure proxy. It does not measure input potency, epithelial concentration, surface trafficking, or urate flux. Those are separate gates; a stool result cannot by itself establish mechanism or response.
 
 **This is a known methodology gap, not a workflow failure.** It applies to any future intervention relying on microbiome-derived metabolites (SCFAs, bile acids, indoles, lactate, etc.). Three candidate Tier 2 paths worth investigating:
 

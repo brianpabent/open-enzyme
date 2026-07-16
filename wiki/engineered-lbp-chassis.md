@@ -1,5 +1,5 @@
 ---
-title: "Engineered Live Biotherapeutic Products (LBP) Chassis — Peer Track to Koji"
+title: "Engineered Live Biotherapeutic Products (LBP) Chassis — Gout Exploit Track"
 date: 2026-05-05
 tags:
   - engineered-lbps
@@ -30,9 +30,9 @@ sources:
 status: scope-page
 ---
 
-# Engineered Live Biotherapeutic Products (LBP) Chassis — Peer Track to Koji
+# Engineered Live Biotherapeutic Products (LBP) Chassis — Gout Exploit Track
 
-**Status:** scope-page (2026-05-05). This page defines the chassis class and queues the deep-dive follow-ups. The lit scans, falsification card, and comp-008 feasibility analysis are tracked under [Open Follow-Ups](#open-follow-ups) and will populate this page as they land.
+**Status:** active research track. This page defines the chassis class and tracks the remaining deep-dive follow-ups. The comp-008 feasibility analysis is complete; unresolved work remains under [Open Follow-Ups](#open-follow-ups).
 
 ---
 
@@ -40,7 +40,7 @@ status: scope-page
 
 The mission is to use red-teaming to identify exploitable weaknesses in gout and creative engineering to exploit them. The [Modality × Target Matrix](./modality-chokepoint-matrix.md) keeps that search broader than any chassis. This page develops one candidate implementation: **engineered Live Biotherapeutic Products (LBPs)**, specifically obligate anaerobes intended to function in the colon.
 
-The motivation is structural. The koji and yeast chassis are **transit organisms**: they pass through the gut over hours-to-a-day. To maintain therapeutic effect the user has to keep eating them. By contrast, *Faecalibacterium prausnitzii*, *Akkermansia muciniphila*, and selected *Bacteroides* species are **resident anaerobes** — they evolved to live in the mammalian colon and, when delivered as a live therapeutic, can persist for **weeks to months** after a single dose. That changes the dosing model from "daily condiment" to "quarterly capsule."
+The motivation is structural. Koji and yeast are usually treated here as **transit organisms**, while *Faecalibacterium prausnitzii*, *Akkermansia muciniphila*, and selected *Bacteroides* species are native colonic residents. That makes durable local delivery a hypothesis worth testing, not an established dosing advantage. Persistence after administration is strain-, host-, formulation-, and ecology-dependent; this track must measure engraftment duration before making any dose-frequency claim.
 
 This is an independent, falsifiable track. It competes with and may compose with koji, yeast, purified enzymes, small molecules, and other modalities. No result here changes the mission; it changes only the portfolio ranking.
 
@@ -65,7 +65,7 @@ This is the structural reason the LBP chassis is a "commercial pharmaceutical pr
 
 ### *Faecalibacterium prausnitzii* (primary candidate)
 
-One of the most abundant species in a healthy human colon (3–5% of total gut bacteria). Strict anaerobe. Strain A2-165 is the model laboratory strain. Native producer of **butyrate** — a short-chain fatty acid with the cleanest known dual mechanism for ABCG2 induction (see [§ butyrate dual-action below](#butyrate-as-the-highest-leverage-payload)). Reduced abundance is documented in IBD and metabolic syndrome cohorts (In Vitro / Animal Model / human observational), making *F. prausnitzii* a target of multiple commercial probiotic and LBP programs already.
+One of the most abundant species in a healthy human colon (3–5% of total gut bacteria). Strict anaerobe. Strain A2-165 is the model laboratory strain. Native butyrate production motivates the supported WT-ABCG2 induction route and the separate unvalidated Q141K-rescue test.
 
 ### *Akkermansia muciniphila* (mucus-layer specialist)
 
@@ -89,7 +89,7 @@ The cleanest reason to pursue *F. prausnitzii* engineering for gout specifically
 
 2. **Q141K variant ABCG2:** pharmacological/chemical-chaperone rescue is established in vitro (Basseville 2012, PMID 22472121), but direct rescue by LBP-derived butyrate is not. Butyrate remains a candidate requiring surface-trafficking and functional urate-flux testing. (Mechanistic Extrapolation; source: [ABCG2 modulators](./abcg2-modulators.md).)
 
-This is **genotype-agnostic coverage** — a rare property. Most ABCG2-relevant interventions either work for WT (PPARγ inducers) or for Q141K (HDAC inhibitors), but not both. A live colonic strain producing butyrate continuously hits both populations simultaneously.
+This is not yet genotype-agnostic coverage. WT-ABCG2 induction is the supported target; Q141K rescue requires direct surface-trafficking and functional urate-flux validation with LBP-achievable butyrate exposure.
 
 The ranking work in [`food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md) (comp-007, 2026-05-05) further validates butyrate's profile: it is the only food-grade HDAC inhibitor with biochemical IC50 data for all four relevant HDAC isoforms (HDAC1/2/3/6), and its 167× class-I-over-HDAC6 selectivity puts it ahead of every screened alternative. The challenge with butyrate is **continuous gut-luminal availability** — orally dosed butyrate is rapidly absorbed in the small intestine and does not reach the colon. A colonically-resident butyrate producer is *proposed to* address the bioavailability problem at the dose-frequency level — but this is unproven (comp-008): it requires demonstrated colonization density, butyrate titer, epithelial exposure, and (for Q141K rescue specifically) the still-unvalidated direct-rescue mechanism. "Solves bioavailability" is the hypothesis, not an established result.
 
@@ -101,26 +101,26 @@ The 2026-05-16 [F. prausnitzii heterologous expression feasibility analysis](./f
 
 | Payload | comp-008 composite | Verdict | Limiting factor |
 |---|---|---|---|
-| **Butyrate-pathway boost (native BCoAT)** | **0.748** | **GREEN** (only) | CAI = 1.0 (native gene), no secretion, no folding burden, native pathway alignment. **Toolkit-conditional score 0.875** if engineering toolkit gap closes |
+| **Native BCoAT overexpression candidate** | **0.748** | **GREEN** (only point estimate) | Native cytoplasmic construct with no cross-host codon mismatch; no CAI or butyrate-flux increase was computed. Declared range overlaps sCR1. **Toolkit-conditional point score 0.875** |
 | sCR1 SCR1-4 truncation | 0.565 | YELLOW | Engineering toolkit maturity + anoxic-environment disulfide folding |
 | Human lactoferrin | 0.540 | YELLOW | Same bottleneck pattern as sCR1 |
 | ***A. flavus* uricase** | **0.393** | **YELLOW-toward-RED** | **Chemistry can't run** — uricase uses O₂ as substrate; *F. prausnitzii* is an obligate anaerobe in an anoxic colonic lumen. Even with a perfect engineering toolkit, the enzyme's catalytic requirement is incompatible with the host's physiology |
 
 **Strategic implications (load-bearing for LBP-chassis track direction):**
 
-1. **Stop considering uricase for *Fp*** — route to EcN (facultative anaerobe, has O₂ in periplasm) or koji (aerobic chassis already established) instead. The 0.393 score isn't a near-miss; it's a fundamental enzyme-host chemistry mismatch.
-2. **Focus *Fp* on butyrate boost as the near-term campaign** — only GREEN payload, native gene/native pathway, lowest engineering complexity. Butyrate at the obligate-anaerobe colonic-luminal compartment is the cleanest gut-lumen-sink amplification path the platform has.
+1. **Stop considering uricase for *Fp*** — its O₂ substrate and H₂O₂ coproduct conflict with a strict-anaerobe host. EcN, koji, and other oxygen-accessible formats are separate candidates requiring their own evaluation; comp-008 does not rank them.
+2. **Test native BCoAT overexpression first if the *Fp* toolkit is pursued** — it has the highest point-estimate tractability and lowest construct complexity, but the declared range overlaps sCR1 and increased butyrate remains a wet-lab outcome, not a computational result.
 3. **Defer lactoferrin / sCR1 to after the engineering toolkit matures** — both YELLOW with the toolkit gap + anoxic disulfide folding as gating constraints. Worth revisiting when *Fp* genetic tools advance (Sheridan 2019 *Lachnospiraceae* conjugation precedent may transfer).
 
-**Structural codon advantage (partially offsets toolkit penalty):** human-payload codon profile (~58% GC) vs *Fp* (56.6% GC) = only 1.4 pp mismatch, **best of any chassis in the LBP track.** If the toolkit gap closes, *Fp*'s codon-compatibility advantage makes it the preferred chassis for complex mammalian payloads.
+**Codon compatibility remains unmeasured.** Approximate source/host GC similarity is not a CAI calculation or a cross-chassis ranking. Any complex mammalian payload requires named CDS-level codon analysis after a workable *Fp* toolkit exists.
 
-**Queued follow-up: P2-6 comparative chassis matrix.** Fp should be benchmarked for butyrate boost against *E. coli* Nissle (facultative anaerobe, mature toolkit, already used in PULSE) — the engineering-toolkit penalty of 0.25 across all *Fp* payloads may make EcN the faster path even for butyrate, despite *Fp*'s natively higher butyrate titers.
+**Queued follow-up: P2-6 comparative chassis matrix.** Fp should be benchmarked for local butyrate-production engineering against *E. coli* Nissle (facultative anaerobe, mature toolkit, already used in PULSE). The current 0.25 toolkit prior may make EcN faster to engineer, while actual BCoAT flux control, strain titer, and delivery performance remain unmeasured.
 
 ---
 
 ## Other plausible payloads (Phase 2 to scope)
 
-Beyond a butyrate-pathway boost, the LBP chassis class plausibly supports:
+Beyond the native BCoAT construct candidate, the LBP chassis class plausibly supports:
 
 - **Heterologous uricase** (replicating the koji chassis function in a colonically-resident format — possibly a more direct route than rasburicase-class IV biologics for refractory gout)
 - **Lactoferrin** (TNFα-cycle relief — the Open Enzyme endgame strain's CP1a/CP4/CP6b/CP5b coverage molecule)
@@ -129,7 +129,7 @@ Beyond a butyrate-pathway boost, the LBP chassis class plausibly supports:
 - **IL-22 secretion** (gut barrier repair — already in clinical development as engineered E. coli Nissle by Synlogic-adjacent programs)
 - **Carnosine** (URAT1 / GLUT9 modulation — see [`carnosine.md`](./carnosine.md) and [`koji-endgame-strain.md` §2.5](./koji-endgame-strain.md))
 
-Which of these are tractable in *F. prausnitzii* specifically (vs. *Bacteroides* vs. *Akkermansia*) is an open feasibility question — see [comp-008 in Open Follow-Ups](#open-follow-ups).
+Which of these are tractable in *F. prausnitzii* specifically (vs. *Bacteroides* vs. *Akkermansia*) remains partly open; [comp-008](./f-prausnitzii-heterologous-expression-computational.md) completed the initial payload triage, while organism-specific validation remains unresolved.
 
 ---
 
@@ -184,21 +184,16 @@ The known active-program landscape, to be filled in by the Phase 2 commercial li
 
 ## Comparison with the koji chassis
 
-| Dimension | Koji chassis (Open Enzyme primary) | LBP chassis (this page) |
+| Dimension | Koji chassis | LBP chassis (this page) |
 |---|---|---|
-| **Resident vs. transit** | Transit (hours to a day) | Resident (weeks to months) |
-| **Dosing** | Daily — eat the condiment | Quarterly — swallow a capsule |
-| **Manufacturing** | Home-fermentable; community-scale | Anaerobic bioreactor; commercial-scale only |
-| **Cold chain** | Not required (live spore-form koji) | Required (lyophilized, O₂-blocking capsule) |
-| **Regulatory path** | GRAS food / DSHEA supplement | FDA LBP / BLA biologic |
-| **Distribution model** | Open-source spores / starter cultures | Pharmacy / mail-order pharmaceutical |
-| **Genotype-coverage example** | WT ABCG2 (uricase + lactoferrin payload) | WT + Q141K simultaneously (butyrate dual-action) |
-| **Capital to first commercial dose** | $0–500K (community / DIY-path realistic) | $50–200M (commercial-pharma realistic only) |
-| **Time to first commercial dose** | Months (community-validated strains) | 5–8 years (BLA approval) |
-| **Open-source compatibility** | Native — strain library on GitHub | Strain genetics open; manufacturing + clinical IP closed |
-| **Home access** | Yes — defining property | No — fundamentally incompatible |
+| **Ecological hypothesis** | Usually modeled as transient delivery | Potential local persistence; must be measured by strain and host |
+| **Dose frequency** | Undetermined | Undetermined; depends on measured engraftment and expression duration |
+| **Manufacturing constraint** | Food-fermentation process development | Strict anaerobic culture, formulation, and oxygen protection |
+| **Regulatory route** | Depends on construct, claims, and use | Live-biotherapeutic development route |
+| **ABCG2 hypothesis** | Payload-dependent | Sustained local butyrate may induce WT ABCG2; direct Q141K rescue is unvalidated |
+| **Open-source scope** | Designs and validation data can be open | Designs and validation data can be open; delivery and manufacturing still require development |
 
-**The two tracks serve different patient populations and intervention philosophies.** The koji track serves the broader market (mild-to-moderate gout, dietary management, prevention, EPI applications). The LBP track serves the high-severity / Q141K / refractory-gout subset where pharmaceutical-grade durability and genotype-specific coverage is worth the cost-and-distribution overhead.
+**The two tracks test different delivery philosophies.** Koji is a food/fermentation route; the LBP route tests pharmaceutical-grade durability and local metabolite delivery. A Q141K-specific population claim is premature until direct rescue is demonstrated.
 
 The LBP track is already a first-class portfolio track. Its open question is whether the biology and delivery survive falsification, not whether the project should be reframed around it.
 
@@ -213,7 +208,7 @@ These are discrete follow-ups with no pharma-partner dependency. This page is th
 | **P2-1** | Lit scan: *F. prausnitzii* engineering state-of-the-art (genetic toolkit, heterologous payload titers achieved, gap to therapeutic-grade) | Literature review (Opus subagent) | Queued |
 | **P2-2** | Lit scan: commercial / clinical engineered-LBP landscape (Synlogic, Vedanta, NextBiotix, Seres, Pendulum, others — current programs, partnership / licensing profile) | Literature review (Opus subagent) | Queued |
 | **P2-3** | Lit scan: FDA LBP regulatory path (2018 guidance, Vowst precedent, IND-enabling package, timeline + capital requirements) | Literature review (Opus subagent) | Queued |
-| **P2-4** | comp-008: *F. prausnitzii* heterologous expression feasibility — codon usage, GC content, secretion machinery, payload tractability ranking | Computational analysis (Sonnet subagent) | Queued |
+| **P2-4** | comp-008: *F. prausnitzii* heterologous expression feasibility — codon usage, GC content, secretion machinery, payload tractability ranking | Computational analysis | [Complete](./f-prausnitzii-heterologous-expression-computational.md) |
 | **P2-5** | Falsification card H02: engineered LBP thesis — full claim, assumption stack, killshot menu, pre-committed thresholds | Hypothesis formalization | [Stub committed](./hypotheses/H02-engineered-lbp-thesis.md); full population queued |
 | **P2-6** | Comparative chassis matrix for gout indication: *F. prausnitzii* vs. *Akkermansia* vs. *Bacteroides* vs. engineered *E. coli* Nissle — payload tractability, native-niche fit, engineering complexity | Synthesis (could be added to this page or stand alone) | Queued |
 | **P3** | Portfolio decision: after the Phase 2 evidence lands, does the LBP route remain active, narrow, or close? | Track decision | Pending evidence |
@@ -233,9 +228,9 @@ These are discrete follow-ups with no pharma-partner dependency. This page is th
 
 - [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) — the source matrix; this page is the deep-dive of the "Engineered LBPs" row
 - [`koji-endgame-strain.md`](./koji-endgame-strain.md) — a competing or composable chassis configuration
-- [`abcg2-modulators.md`](./abcg2-modulators.md) — butyrate dual-action mechanism, Q141K rescue, PPARγ pathway
+- [`abcg2-modulators.md`](./abcg2-modulators.md) — WT-ABCG2 PPARγ pathway and the unvalidated direct-butyrate Q141K-rescue hypothesis
 - [`open-questions.md`](./open-questions.md) — meta-index where the Phase 2 follow-ups are also tracked
-- [`computational-experiments.md`](./computational-experiments.md) — comp-008 (Phase 2 P2-4) is queued in the Planned Analyses table
+- [`computational-experiments.md`](./computational-experiments.md) — comp-008 (Phase 2 P2-4) is recorded as complete
 - [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) — platform mission framing; the Phase 3 reflection note lives here
 - [`food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md) — comp-007; validated butyrate's HDAC isoform profile
 - [`daf-cd55-protease-stability-computational.md`](./daf-cd55-protease-stability-computational.md) — comp-006; the koji chassis HIGH-risk verdict for soluble complement regulators is one of the structural arguments for an LBP-chassis alternative

@@ -74,7 +74,7 @@ Once you have your VCF, the highest-signal queries given Open Enzyme's gout focu
 
 ### Tier 2 — Gout risk + drug response variants
 
-- **ABCG2 Q141K (rs2231142)** — Major gout risk allele; reduced renal/gut urate secretion. (Clinical Trial; Matsuo et al. 2009; Cleophas et al. 2017.) Heterozygotes ~1.5–2× gout risk; homozygotes ~3×. Predicts **reduced allopurinol response**. See [`abcg2-modulators.md`](./abcg2-modulators.md) for the full mechanism + butyrate/HDAC-inhibitor rescue strategy — Q141K homozygotes are exactly the population the Open Enzyme butyrate-coexpression thesis is designed for.
+- **ABCG2 Q141K (rs2231142)** — Major gout risk allele; reduced renal/gut urate secretion and reduced allopurinol response. Selected pharmacologic HDAC-inhibitor rescue is demonstrated in vitro, but direct butyrate rescue is not. Use Q141K as a research-stratification variable, not as a butyrate recommendation.
 - **SLC2A9 (GLUT9) variants** — Renal urate reabsorption; multiple GWAS hits. Smaller per-variant effect, cumulative across the locus.
 - **SLC22A12 (URAT1) variants** — Both loss-of-function (protective; common in some Asian populations) and gain-of-function (gout risk).
 - **PDZK1 variants** — Scaffolding for renal urate transporters; modulates URAT1 / GLUT9 surface expression.

@@ -59,7 +59,7 @@ Most readers. No genotype info, mostly diet-managed gout, want a sensible mechan
 
 ### This year (advanced)
 
-- **Run the closed-loop n=1 pharmacogenomics workflow** — genotype → variant-informed compound selection → home/community-biolab production → Tier 2 batch QC → calibrated dose → biomarker tracking. The canonical user-facing entry point is [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) — walks the five-step pipeline end-to-end with a Q141K worked example. The two prerequisite steps below feed into it.
+- **Use genotype to design falsifiable experiments, not automatic recommendations.** The canonical research entry point is [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md). Its Q141K × butyrate section is a proposed experiment; exposure, trafficking, and urate-flux gates remain open.
 - **Get genotyped via clinical-grade testing** — order ABCG2 Q141K (rs2231142), SLC2A9, URAT1 variants through a clinical-grade lab (e.g., via your rheumatologist or a direct-to-consumer clinical service that returns CLIA-grade results). Changes the stack design substantially. **Consumer panels (23andMe, AncestryDNA, etc.) are not recommended for any gout-stack-design decision** — see the canonical [Consumer SNP data-quality caveat](./gout-genetic-variants.md#consumer-snp-data-quality-caveat--canonical-statement) for the full reasoning. See [personal-genome-protocol](./personal-genome-protocol.md) for ordering paths. The unified variant index at [`gout-genetic-variants.md`](./gout-genetic-variants.md) is the canonical reference for which variants matter and what they do. **Beyond ABCG2, two additional variants have emerging genotype-informed bypass interventions:** OCTN1/SLC22A4 (reduced ergothioneine transport → elevated dietary EGT priority, see the [EGT worked example](./genotype-informed-supplement-workflow.md#worked-example--octn1slc22a4-variant-carrier-substrate-engineered-ergothioneine-cultivation-added-2026-05-22)) and CFH Y402H/rs1061170 (weakened Factor H complement regulation → dietary CP0 candidates may show amplified benefit, see the [Pattern library](./genotype-informed-supplement-workflow.md#pattern-library--variant--pathway-vulnerability--bypass-intervention-added-2026-05-22) and [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](./cfh-mechanism-dissociation-cp0-candidates-computational.md)). Both are one-shot tests (~$40-150 clinical PCR) and change stack design for carriers. (source: genotype-informed-supplement-workflow.md)
 - **Self-experiment with rigor** — log SUA monthly, track flares, A/B test compounds. See [self-experiment-protocol](./self-experiment-protocol.md).
 **Acute-flare-abort comparator table — choosing between prednisone / anakinra / canakinumab for an active flare.** Per-flare and cumulative-over-years framing for someone with recurrent gout:
@@ -118,7 +118,7 @@ All [Default path → Today](#today-start-in-the-next-24-hours) entries apply. P
 
 ## Q141K-positive path
 
-If you've genotyped and you're heterozygous or homozygous for ABCG2 Q141K (rs2231142), your gut-lumen secretion pathway is partially compromised at baseline. The stack tilts toward **ABCG2-rescue compounds** alongside standard intervention.
+If clinical-grade genotyping identifies ABCG2 Q141K, gut and renal urate secretion may be compromised. No food-grade rescue compound is currently validated; use the genotype for established clinical context and research stratification, not a supplement-stack prescription.
 
 > **Why this matters more than for the default path:** ABCG2 normally secretes ~30% of daily urate into the gut lumen. Q141K reduces that capacity. Compounds that *boost* ABCG2 expression or function become especially relevant; compounds that *antagonize* ABCG2 become especially harmful. See [abcg2-modulators](./abcg2-modulators.md) for the full ABCG2 axis discussion and [intestinal ABCG2 sex dimorphism (comp-017)](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md) for the disease-state vs. baseline framing.
 
@@ -128,7 +128,7 @@ All [Default path → Today](#today-start-in-the-next-24-hours) entries.
 
 ### This month
 
-- **Sulforaphane (broccoli sprouts)** — ~50 mg/day supplement, OR 100–150 g/day raw broccoli sprouts (must be raw/freshly chopped to preserve myrosinase). HDAC inhibitor at the food-grade level; partial Q141K rescue mechanism documented in vitro. [Catalog →](./supplements-stack.md#sulforaphane-broccoli-sprouts)
+- **No food-grade Q141K rescue compound is currently validated.** Butyrate, sulforaphane, and other candidates require direct surface-trafficking and functional urate-flux testing; do not infer rescue from HDAC activity alone.
 - **Lactoferrin** — direct relevance for Q141K because the lactoferrin → TNFα → ABCG2 derepression mechanism is especially valuable in a group with already-compromised baseline ABCG2.
 - **EGCG (standardized green tea extract)** — 400–800 mg EGCG/day OR 3–5 cups matcha/day. Wide-spectrum NLRP3 + transporter modulation. Caveat: high-dose EGCG can be a functional ABCG2 *inhibitor* — start at the low end (400 mg) and watch SUA trajectory. [Catalog →](./supplements-stack.md#egcg-green-tea-catechin--widest-spectrum-natural-compound)
 

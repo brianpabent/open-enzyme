@@ -1,7 +1,7 @@
 ---
 title: "Dual-Chassis EcN PDB + Uricase Additivity — Invalidated Computational Prior (comp-031)"
 date: 2026-05-16
-updated: 2026-07-13
+updated: 2026-07-16
 status: invalidated
 tags: [comp-031, dual-chassis, ecn, purine-degrading-bacteria, cbt20, uricase, butyrate, invalidated]
 related:
@@ -24,7 +24,7 @@ sources:
 
 **INVALIDATED 2026-07-13.** The original ΔSUA, substrate-competition, CBT2.0-derived butyrate, Q141K rescue, and dual-chassis additivity results must not guide engineering or clinical decisions.
 
-The frozen artifact remains at [comp-031](./etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/) for provenance and reproducibility of what was run—not because its result remains valid.
+The live [comp-031 artifact](./etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/) is an invalidation record. The obsolete model and outputs remain available through Git history, not in the current corpus.
 
 ## Why the prior failed
 
@@ -44,7 +44,7 @@ The frozen artifact remains at [comp-031](./etc/experiments/comp-031-dual-chassi
 ## Replacement priors and experiments
 
 - [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md): reopens the UOX dose/regime question.
-- [comp-046](./staged-purine-sink-mass-balance-computational.md): separates dietary and endogenous ledgers and provides a conditional architecture boundary without summing efficacy.
+- [comp-046](./staged-purine-sink-mass-balance-computational.md): uses a conserved dietary fate ledger and a separate non-conserved endogenous capture comparison, providing a conditional architecture boundary without summing efficacy.
 - [Validation §1.34](./validation-experiments.md#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux): isotope-resolved sequential flux.
 - [Validation §1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test): CBT2.0 carbon fate and actual butyrate measurement.
 

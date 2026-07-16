@@ -1,8 +1,8 @@
-# comp-046 summary — staged purine-sink conserved ledgers
+# comp-046 summary — dietary fate ledger + endogenous capture comparison
 
-**Verdict: TWO CONDITIONAL HYPOTHESES, NOT ONE ADDITIVE EFFICACY CLAIM.** Whole-cell GR-5 helps the dietary precursor ledger only if cleavage is coupled to enough microbial salvage/retention or reduced base absorption. Spatial UOX→PDB staging helps the endogenous luminal-urate ledger only if residual transfer is efficient enough relative to same-pool overlap. The ledgers are not summed into ΔSUA.
+**Verdict: TWO CONDITIONAL HYPOTHESES, NOT ONE ADDITIVE EFFICACY CLAIM.** Whole-cell GR-5 helps the conserved dietary fate ledger only if cleavage is coupled to enough microbial salvage/retention or reduced base absorption. Spatial UOX→PDB staging changes the separate endogenous capture fraction only under favorable residual transfer. The two structures are not summed into ΔSUA.
 
-The discrete full-factorial contains **6561 grid cells**. Occupancy is not biological probability.
+The analysis contains two independent discrete full-factorials: **81 dietary cases** and **81 endogenous architecture cases**. Occupancy is not biological probability.
 
 ## Dietary purine-precursor ledger
 
@@ -18,20 +18,20 @@ Central ledger (100 normalized dietary purine units):
 
 Across the selected grid, whole-cell GR-5 changes absorbed precursor by a median reduction of **0.181 relative to the matched untreated absorbed precursor** (5th–95th percentile -0.042–0.724). In 0.111 of grid cells it increases absorbed precursor. These are design-space occupancies, not incidence estimates.
 
-## Endogenous luminal-urate architecture ledger
+## Endogenous luminal-urate capture-fraction comparison
 
 | Architecture | Median captured fraction | 5th–95th percentile |
 |---|---:|---:|
 | Well-mixed/overlapping | 0.800 | 0.062–0.843 |
 | Spatially staged | 0.584 | 0.081–0.904 |
 
-Staging is greater in 4617/6561 grid cells, well-mixed access is greater in 1944/6561, and they are equal in 0/6561. Median staged-minus-well-mixed capture is 0.010; it is not assumed positive.
+Staging is greater in 57/81 grid cells, well-mixed access is greater in 24/81, and they are equal in 0/81. Median staged-minus-well-mixed capture is 0.010; it is not assumed positive.
 
 **Boundary:** staging wins only when `uox + (1-uox) × transfer × pdb` exceeds the overlap-adjusted well-mixed capture equation documented in the artifact.
 
 ## Experimental consequence
 
-Use isotope-resolved dietary flux to measure nucleosides, free bases, microbial biomass incorporation, and transepithelial transfer. Separately, use a sequential microoxic→anoxic urate reactor to measure UOX capture, residual transfer, PDB capture, every pathway product, and viability. Do not infer architecture additivity by summing the two ledgers.
+Use isotope-resolved dietary flux to measure nucleosides, free bases, microbial biomass incorporation, and transepithelial transfer. Separately, use a sequential microoxic→anoxic urate reactor to measure UOX capture, residual transfer, PDB capture, every pathway product, and viability. Do not infer joint three-stage complementarity or additivity by combining the two structures.
 
 ## Limitations
 

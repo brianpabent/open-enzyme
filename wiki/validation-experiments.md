@@ -847,7 +847,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 - **De-prioritize koji track for carnosine** if <100 mg/L after *panD* co-expression. Fall back to *S. cerevisiae* as the carnosine production host.
 - **Re-engineer the cassette** if base koji phenotype is impaired. Options: swap PTEF1 → PamyB (inducible, lower metabolic burden baseline), try an alternative neutral locus, or reduce cassette copy number.
 
-**Strategic context:** Carnosine is the highest-priority optional third cassette for a male/high-androgen product configuration because its URAT1/GLUT9 downregulation is mechanistically mirror-image to androgen-driven URAT1 upregulation — the dominant driver of hyperuricemia in the platform's primary demographic (male gout patients, TRT/SERM/AAS users). The uricase + lactoferrin dual-cassette does not address this renal reabsorption axis; carnosine is the natural extension. (source: koji-endgame-strain.md §2.5; androgen-urate-axis.md)
+**Strategic context:** Carnosine is a candidate third cassette for a male/high-androgen configuration because its URAT1/GLUT9 downregulation runs opposite to androgen-driven URAT1 upregulation. This is a subgroup-specific composed hypothesis, not a platform demographic or validated product priority. (source: koji-endgame-strain.md §2.5; androgen-urate-axis.md)
 
 **Cross-references:** [koji-endgame-strain.md §2.5](./koji-endgame-strain.md) (carnosine as optional third cassette, androgen-axis alignment); [engineered-koji-protocol.md §15](./engineered-koji-protocol.md) (full co-expression protocol, decision point, format constraints); [carnosine.md](./carnosine.md) (mechanism, gout-specific evidence, bioavailability); [androgen-urate-axis.md](./androgen-urate-axis.md) (URAT1 upregulation mechanism).
 
@@ -912,7 +912,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 **Protocol:**
 
 **Stage 1 — In silico candidate selection ($500):**
-- Compile known food-grade or GRAS-adjacent compounds with documented HDAC inhibition: butyrate/short-chain fatty acids (the known benchmark), sulforaphane (indirect via Nrf2/keap1, class I-relevant), allyl mercaptan (garlic-derived, reported class I HDACi), phenethyl isothiocyanate (PEITC, cruciferous), hydroxycinnamic acids (caffeic acid, ferulic acid), diallyl disulfide (DADS).
+- Compile food-grade or GRAS-adjacent compounds with documented HDAC inhibition: butyrate/short-chain fatty acids (test candidates, not established Q141K-rescue benchmarks), sulforaphane, allyl mercaptan, phenethyl isothiocyanate, hydroxycinnamic acids, and diallyl disulfide.
 - Screen each candidate against: class I HDAC (HDAC1/2/3) IC50 from ChEMBL / primary literature; HDAC6 IC50 (if known — selectivity check); Caco-2 permeability / gut-lumen-achievable concentration estimate; reported hepatotoxicity signal (LD50 or NOAEL from TOXNET / EFSA).
 - Select top 5–7 candidates by gut-enriched concentration × class I HDAC potency ratio.
 
@@ -923,18 +923,18 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Stage 3 — Q141K ABCG2 trafficking rescue in HEK293T or Caco-2 Q141K-transfected cells ($2,500–4,500):**
 - Transfect cells with ABCG2-Q141K-GFP construct (standard overexpression assay, as in Basseville 2012).
-- Treat with top 3 candidates (from Stage 2) at Caco-2-achievable concentrations ± butyrate 1 mM (positive control).
+- Treat with top candidates at Caco-2-achievable concentrations, including butyrate as a test candidate. Use a Basseville-demonstrated pharmacologic HDAC-inhibitor rescue condition as the positive control, with matched vehicle and ABCG2-inhibition counterscreens.
 - Readouts: ABCG2 surface expression (flow cytometry / confocal — ratio of membrane-localized to total GFP signal), urate efflux (transwell if Caco-2-based), ABCG2 protein abundance (Western — total vs. glycosylated mature form).
 
-**HDAC isoform note:** HDAC1/2/3 (class I, nuclear) → histone deacetylation → Hsp90/HSF1 → Q141K rescue. HDAC6 (class IIb, cytoplasmic) → tubulin deacetylation → autophagy regulation. Pan-HDAC inhibitors (vorinostat, romidepsin) hit HDAC6 → actin dysregulation, cardiac ion-channel effects → cardiotoxicity. Any candidate that shows Caco-2 vs. hepatocyte selectivity AND class I >> HDAC6 selectivity is safe to advance; pan-inhibitors are excluded regardless of efficacy.
+**HDAC isoform note:** HDAC1/2/3 and HDAC6 activity helps interpret mechanism and off-target risk. Isoform and tissue selectivity alone cannot establish Q141K rescue or safety; advancement requires the trafficking, functional-flux, cytotoxicity, and inhibition counterscreens above.
 
 **Estimated cost:** $5,000–8,000 (in silico $500 + Caco-2/HepG2 HDAC assay $2,000–3,000 + trafficking rescue $2,500–4,500). Original synthesis proposal ($5,000) was optimistic for a design that includes paired tissue-selectivity assay; $8,000 covers the paired hepatocyte arm + Q141K-transfected cell assay.
 
 **Estimated timeline:** 8–10 weeks.
 
 **Success criteria:**
-- **A food-grade HDACi candidate that outperforms butyrate on selectivity (higher Caco-2:hepatocyte ratio AND HDAC1/2/3 >> HDAC6) AND rescues Q141K surface expression ≥20%:** advances to Q141K-targeted supplement protocol, potentially as a co-expression candidate in the koji endgame strain.
-- **No candidate outperforms butyrate on selectivity:** confirms butyrate as the best available food-grade Q141K-rescue agent and locks in the fermentable-fiber adjunct recommendation for Q141K carriers.
+- **A food-grade candidate reproduces positive-control surface trafficking and functional urate flux without ABCG2 inhibition or unacceptable toxicity:** advances to independent replication and exposure validation, not directly to a supplement protocol.
+- **No food-grade candidate, including butyrate, reproduces positive-control surface trafficking plus functional urate flux:** no food-grade Q141K-rescue agent is validated; do not lock a fiber or butyrate recommendation from HDAC selectivity alone.
 - **A candidate with class I selectivity and hepatocyte-sparing profile emerges but doesn't rescue trafficking:** updates the Q141K rescue model (suggests additional misfolding mechanism beyond class I HDAC).
 
 **Stage 1 results (comp-007, 2026-05-05):** In silico screen completed. Composite scoring (potency × HDAC6 selectivity × gut-enrichment proxy) across 7 candidates ranked: **Butyrate** (0.374, HIGH confidence — confirmed 167× HDAC6 selectivity, biochemical IC50 data from ChEMBL/ACS Med Chem Lett 2011) >> **Sulforaphane** (0.090, LOW — estimated IC50, HDAC6 profile uncharacterized) > **PEITC** (0.060, LOW — estimated IC50 by analogy with SFN). Caffeic acid and ferulic acid score 0 (no isoform-specific IC50 available). **Advancing to Stage 2:** Butyrate, Sulforaphane, PEITC. Stage 2 must include HDAC6 isoform-selective substrate assay for SFN and PEITC; butyrate's HDAC6 selectivity is confirmed. Full analysis: [`etc/experiments/comp-007-food-grade-hdaci-screen/`](./etc/experiments/comp-007-food-grade-hdaci-screen/). Interpretive wiki: [`wiki/food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md). Evidence level: Mechanistic Extrapolation.
@@ -1347,9 +1347,9 @@ Each arm: parallel small-scale liquid (Arms A-C) or solid (Arm D) cultivation; h
 
 **Status**: Proposed (wet-lab gated) | **Cost**: ~$500 | **Weeks**: 2 | **Phase**: 1
 
-**Affected wiki**: [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md) (comp-038 — the audit + full-text verification this operationalizes); [`quantification-ladder.md`](./quantification-ladder.md) (the Tier-2 framework this anchors for SCFAs); [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) (Q141K butyrate-emphasis workflow that currently uses exposure proxies, not input-potency verification); [`abcg2-modulators.md`](./abcg2-modulators.md) (butyrate → PPARγ → ABCG2 induction); §1.14 (the Caco-2 butyrate dose-response arm that depends on a Tier-3 butyrate anchor); [`open-questions.md`](./open-questions.md) §"Class-level Tier 2 assay gap for microbiome-derived metabolites" (the class-level gap this is the butyrate instance of).
+**Affected wiki**: [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md) (comp-038); [`quantification-ladder.md`](./quantification-ladder.md); [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) (proposed Q141K experiment); [`abcg2-modulators.md`](./abcg2-modulators.md) (WT induction and the unvalidated direct-Q141K hypothesis); §1.14; and [`open-questions.md`](./open-questions.md).
 
-**What it tests:** Whether a low-cost, decentralizable **Tier 2** butyrate quantification method validates against the **Tier 3 GC-MS** gold standard well enough to replace it for OE's near-term need — measuring butyrate in **engineered-strain culture supernatant**. Without a validated Tier 2 ruler, butyrate-emphasis interventions cannot be cheaply verified, and unverified metabolite dose is indistinguishable from mechanism failure.
+**What it tests:** Whether a low-cost **Tier 2** method can quantify butyrate in **engineered-strain culture supernatant** against a **Tier 3 GC-MS** anchor. It validates an exposure measurement, not ABCG2 trafficking rescue or clinical effect.
 
 **Proposed in:** 2026-05-30 sweep Experiment 1 (), operationalizing comp-038's "Next Step."
 
@@ -1382,7 +1382,7 @@ Each arm: parallel small-scale liquid (Arms A-C) or solid (Arm D) cultivation; h
 3. Diethyl-ether extraction is volatile/flammable and extraction-efficiency-limited; validate recovery per medium type.
 4. **Stool/serum butyrate monitoring** (the patient-facing future) is a *separate* matrix and a separate validation — this entry covers culture supernatant only.
 
-**Cross-references:** [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md) (comp-038 + 2026-06-01 full-text verification); [`quantification-ladder.md`](./quantification-ladder.md) (Tier-2 framework); [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) (Q141K butyrate workflow); [`abcg2-modulators.md`](./abcg2-modulators.md) (butyrate → ABCG2 induction); §1.14 (Caco-2 butyrate dose-response that needs this anchor); §1.28 (sister Tier-2 assay-validation experiment — cordycepin); [`open-questions.md`](./open-questions.md) §"Class-level Tier 2 assay gap for microbiome-derived metabolites".
+**Cross-references:** [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md); [`quantification-ladder.md`](./quantification-ladder.md); [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) (proposed Q141K experiment); [`abcg2-modulators.md`](./abcg2-modulators.md); §1.14; §1.28; and [`open-questions.md`](./open-questions.md).
 
 ### 1.32 GSDMD-Pore Self-Delivery — Selectivity Probe (transporter-orphan tracer ± PepT1 blockade) (added 2026-07-13)
 
@@ -1456,7 +1456,7 @@ Each arm: parallel small-scale liquid (Arms A-C) or solid (Arm D) cultivation; h
 
 ### 1.37 CBT2.0 Carbon Fate and PDB Self-Niche Test
 
-**Status:** Proposed — required before comp-031 reuse | **Phase:** 1 | **Affected wiki:** [purine-degrading bacteria](./purine-degrading-bacteria.md), [dual-chassis comp-031](./dual-chassis-ecn-pdb-uricase-computational.md)
+**Status:** Proposed — required before any renewed UOX/PDB model | **Phase:** 1 | **Affected wiki:** [purine-degrading bacteria](./purine-degrading-bacteria.md), [invalidated comp-031](./dual-chassis-ecn-pdb-uricase-computational.md)
 
 **What it tests:** What engineered EcN actually produces from urate, and whether a full-pathway butyrate-producing PDB creates a colonocyte-hypoxia persistence loop. The CBT2.0 paper establishes pathway products through pyruvate but not EcN butyrate ([PMCID PMC12507026](https://pmc.ncbi.nlm.nih.gov/articles/PMC12507026/)); wild-type EcN lacks detectable butyrate without an engineered pathway ([PMCID PMC7279287](https://pmc.ncbi.nlm.nih.gov/articles/PMC7279287/)).
 

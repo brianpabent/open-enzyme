@@ -364,7 +364,7 @@ A. oryzae produces multiple protease classes with distinct pH optima:
 
 ### 5.4 Wild-type commercial PERT benchmark and n=1 dosing findings
 
-**The platform's primary commercial benchmark is not Creon — it's the existing wild-type *A. oryzae* OTC product class** (e.g., BoulderBio digestive enzymes at 40,000 FIP lipase per capsule, *A. oryzae*-derived). This is the product an EPI patient typically buys before progressing to prescription Creon, and it is the closest commercial analogue to what an engineered koji product would look like in finished form.
+**For the digestive-enzyme track, the nearest commercial comparator is the wild-type *A. oryzae* OTC product class, not the whole Open Enzyme platform.** Prescription products such as Creon remain a separate efficacy and regulatory benchmark.
 
 **Why the wild-type OTC benchmark matters:**
 

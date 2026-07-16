@@ -200,7 +200,7 @@ Three reasons this is not just a side interest:
 
 1. **The chokepoint methodology natively suits multi-compound formulas.** [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) already maps modalities × chokepoints. TCM formulas are exactly that: multiple compounds covering different chokepoints by design. The framework already exists.
 
-2. **Gut-luminal mechanism is a perfect fit.** Many TCM compounds have low systemic bioavailability — usually treated as a limitation. For Open Enzyme's gut-lumen sink thesis, that's a feature. A TCM compound that stays in the gut and modulates ABCG2 / NLRP3 / microbiome locally is exactly the right pharmacology for the platform's primary mechanism.
+2. **Gut-local pharmacology is one exploitable route.** Low systemic bioavailability can be useful when a compound acts locally on intestinal transport, inflammation, or microbiome biology. That is a track-specific opportunity, not the platform's primary mechanism; other TCM-derived leads may require systemic exposure or different modalities.
 
 3. **It's a discovery-engine output, not a strain-library output.** Same positioning as [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) — Open Enzyme contributes mechanistic clarity, ChEMBL cross-checks, falsification cards, and chokepoint coverage maps. Partner organizations (Chinese pharma, US supplement formulators, clinical research groups, open-source recipe contributors) take findings forward to formulation, manufacturing, and clinical trials. This preserves the clean two-track narrative — strain library AND discovery engine.
 

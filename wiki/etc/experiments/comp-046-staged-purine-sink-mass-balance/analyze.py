@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""comp-046: conserved dietary/endogenous purine ledgers (stdlib only)."""
+"""comp-046: dietary fate ledger plus endogenous capture comparison (stdlib only)."""
 
 from __future__ import annotations
 
@@ -64,10 +64,22 @@ def architecture_capture(uox, pdb, overlap, transfer):
 
 def main():
     levels = P["full_factorial_levels"]
-    keys = list(levels)
-    rows = []
-    for values in itertools.product(*(levels[k] for k in keys)):
-        x = dict(zip(keys, values))
+    dietary_keys = [
+        "gr5_nucleoside_intercept_fraction",
+        "whole_cell_microbial_salvage_fraction",
+        "nucleoside_absorption_fraction",
+        "free_base_absorption_relative_to_nucleoside",
+    ]
+    architecture_keys = [
+        "uox_capture_fraction",
+        "pdb_capture_fraction",
+        "well_mixed_shared_pool_overlap",
+        "staged_residual_transfer_efficiency",
+    ]
+
+    dietary_rows = []
+    for values in itertools.product(*(levels[k] for k in dietary_keys)):
+        x = dict(zip(dietary_keys, values))
         dietary = dietary_ledger(
             P["dietary_purine_units"],
             x["gr5_nucleoside_intercept_fraction"],
@@ -79,32 +91,39 @@ def main():
         gr5_absorbed = dietary["unintercepted_nucleoside_absorbed"] + dietary["liberated_base_absorbed"]
         precursor_reduction = (control_absorbed - gr5_absorbed) / control_absorbed
 
-        mixed, staged = architecture_capture(
-            x["uox_capture_fraction"], x["pdb_capture_fraction"],
-            x["well_mixed_shared_pool_overlap"], x["staged_residual_transfer_efficiency"]
-        )
-        rows.append({
+        dietary_rows.append({
             **x,
             "dietary_ledger": dietary,
             "control_absorbed_precursor_units": control_absorbed,
             "gr5_absorbed_precursor_units": gr5_absorbed,
             "gr5_precursor_reduction_fraction": precursor_reduction,
+        })
+
+    architecture_rows = []
+    for values in itertools.product(*(levels[k] for k in architecture_keys)):
+        x = dict(zip(architecture_keys, values))
+        mixed, staged = architecture_capture(
+            x["uox_capture_fraction"], x["pdb_capture_fraction"],
+            x["well_mixed_shared_pool_overlap"], x["staged_residual_transfer_efficiency"]
+        )
+        architecture_rows.append({
+            **x,
             "well_mixed_endogenous_urate_capture_fraction": mixed,
             "staged_endogenous_urate_capture_fraction": staged,
             "staging_minus_well_mixed_fraction": staged - mixed
         })
 
-    precursor_reductions = [r["gr5_precursor_reduction_fraction"] for r in rows]
-    mixed_capture = [r["well_mixed_endogenous_urate_capture_fraction"] for r in rows]
-    staged_capture = [r["staged_endogenous_urate_capture_fraction"] for r in rows]
-    differences = [r["staging_minus_well_mixed_fraction"] for r in rows]
+    precursor_reductions = [r["gr5_precursor_reduction_fraction"] for r in dietary_rows]
+    mixed_capture = [r["well_mixed_endogenous_urate_capture_fraction"] for r in architecture_rows]
+    staged_capture = [r["staged_endogenous_urate_capture_fraction"] for r in architecture_rows]
+    differences = [r["staging_minus_well_mixed_fraction"] for r in architecture_rows]
     architecture_counts = {
         "staging_greater": sum(d > 1e-12 for d in differences),
         "well_mixed_greater": sum(d < -1e-12 for d in differences),
         "equal": sum(abs(d) <= 1e-12 for d in differences)
     }
 
-    central = {k: levels[k][1] for k in keys}
+    central = {k: levels[k][1] for k in levels}
     central_ledger = dietary_ledger(
         P["dietary_purine_units"], central["gr5_nucleoside_intercept_fraction"],
         central["whole_cell_microbial_salvage_fraction"], central["nucleoside_absorption_fraction"],
@@ -116,25 +135,27 @@ def main():
     )
 
     sensitivity_precursor = sorted(
-        ({"parameter": k, "pearson_r": corr([r[k] for r in rows], precursor_reductions)} for k in keys),
+        ({"parameter": k, "pearson_r": corr([r[k] for r in dietary_rows], precursor_reductions)} for k in dietary_keys),
         key=lambda z: abs(z["pearson_r"]), reverse=True
     )
     sensitivity_architecture = sorted(
-        ({"parameter": k, "pearson_r": corr([r[k] for r in rows], differences)} for k in keys),
+        ({"parameter": k, "pearson_r": corr([r[k] for r in architecture_rows], differences)} for k in architecture_keys),
         key=lambda z: abs(z["pearson_r"]), reverse=True
     )
 
     results = {
         "experiment": "comp-046",
         "verdict": "TWO CONDITIONAL HYPOTHESES, NOT ONE ADDITIVE EFFICACY CLAIM",
-        "n_full_factorial_grid_cells": len(rows),
         "dietary_precursor_ledger": {
+            "n_grid_cells": len(dietary_rows),
             "gr5_precursor_reduction_fraction": summary(precursor_reductions),
-            "grid_fraction_gr5_increases_absorbed_precursor": sum(x < 0 for x in precursor_reductions) / len(rows),
+            "grid_fraction_gr5_increases_absorbed_precursor": sum(x < 0 for x in precursor_reductions) / len(dietary_rows),
             "central_conserved_ledger": central_ledger,
             "sensitivity": sensitivity_precursor
         },
-        "endogenous_luminal_urate_ledger": {
+        "endogenous_luminal_urate_architecture_comparison": {
+            "accounting_type": "capture_fraction_not_conserved",
+            "n_grid_cells": len(architecture_rows),
             "well_mixed_capture_fraction": summary(mixed_capture),
             "staged_capture_fraction": summary(staged_capture),
             "staging_minus_well_mixed_fraction": summary(differences),
@@ -156,12 +177,12 @@ def main():
     (OUT / "results.json").write_text(json.dumps(results, indent=2) + "\n")
 
     d = results["dietary_precursor_ledger"]
-    e = results["endogenous_luminal_urate_ledger"]
+    e = results["endogenous_luminal_urate_architecture_comparison"]
     total_arch = sum(e["architecture_grid_counts"].values())
     lines = [
-        "# comp-046 summary — staged purine-sink conserved ledgers", "",
-        "**Verdict: TWO CONDITIONAL HYPOTHESES, NOT ONE ADDITIVE EFFICACY CLAIM.** Whole-cell GR-5 helps the dietary precursor ledger only if cleavage is coupled to enough microbial salvage/retention or reduced base absorption. Spatial UOX→PDB staging helps the endogenous luminal-urate ledger only if residual transfer is efficient enough relative to same-pool overlap. The ledgers are not summed into ΔSUA.", "",
-        f"The discrete full-factorial contains **{results['n_full_factorial_grid_cells']} grid cells**. Occupancy is not biological probability.", "",
+        "# comp-046 summary — dietary fate ledger + endogenous capture comparison", "",
+        "**Verdict: TWO CONDITIONAL HYPOTHESES, NOT ONE ADDITIVE EFFICACY CLAIM.** Whole-cell GR-5 helps the conserved dietary fate ledger only if cleavage is coupled to enough microbial salvage/retention or reduced base absorption. Spatial UOX→PDB staging changes the separate endogenous capture fraction only under favorable residual transfer. The two structures are not summed into ΔSUA.", "",
+        f"The analysis contains two independent discrete full-factorials: **{d['n_grid_cells']} dietary cases** and **{e['n_grid_cells']} endogenous architecture cases**. Occupancy is not biological probability.", "",
         "## Dietary purine-precursor ledger", "",
         "Central ledger (100 normalized dietary purine units):", "",
         "| Fate | Units |", "|---|---:|"
@@ -169,13 +190,13 @@ def main():
     for key, value in d["central_conserved_ledger"].items():
         lines.append(f"| {key} | {value:.3f} |")
     pr = d["gr5_precursor_reduction_fraction"]
-    lines += ["", f"Across the selected grid, whole-cell GR-5 changes absorbed precursor by a median reduction of **{pr['median']:.3f} relative to the matched untreated absorbed precursor** (5th–95th percentile {pr['p05']:.3f}–{pr['p95']:.3f}). In {d['grid_fraction_gr5_increases_absorbed_precursor']:.3f} of grid cells it increases absorbed precursor. These are design-space occupancies, not incidence estimates.", "", "## Endogenous luminal-urate architecture ledger", "", "| Architecture | Median captured fraction | 5th–95th percentile |", "|---|---:|---:|"]
+    lines += ["", f"Across the selected grid, whole-cell GR-5 changes absorbed precursor by a median reduction of **{pr['median']:.3f} relative to the matched untreated absorbed precursor** (5th–95th percentile {pr['p05']:.3f}–{pr['p95']:.3f}). In {d['grid_fraction_gr5_increases_absorbed_precursor']:.3f} of grid cells it increases absorbed precursor. These are design-space occupancies, not incidence estimates.", "", "## Endogenous luminal-urate capture-fraction comparison", "", "| Architecture | Median captured fraction | 5th–95th percentile |", "|---|---:|---:|"]
     for label, key in [("Well-mixed/overlapping", "well_mixed_capture_fraction"), ("Spatially staged", "staged_capture_fraction")]:
         row = e[key]
         lines.append(f"| {label} | {row['median']:.3f} | {row['p05']:.3f}–{row['p95']:.3f} |")
     c = e["architecture_grid_counts"]
     diff = e["staging_minus_well_mixed_fraction"]
-    lines += ["", f"Staging is greater in {c['staging_greater']}/{total_arch} grid cells, well-mixed access is greater in {c['well_mixed_greater']}/{total_arch}, and they are equal in {c['equal']}/{total_arch}. Median staged-minus-well-mixed capture is {diff['median']:.3f}; it is not assumed positive.", "", "**Boundary:** staging wins only when `uox + (1-uox) × transfer × pdb` exceeds the overlap-adjusted well-mixed capture equation documented in the artifact.", "", "## Experimental consequence", "", "Use isotope-resolved dietary flux to measure nucleosides, free bases, microbial biomass incorporation, and transepithelial transfer. Separately, use a sequential microoxic→anoxic urate reactor to measure UOX capture, residual transfer, PDB capture, every pathway product, and viability. Do not infer architecture additivity by summing the two ledgers.", "", "## Limitations", ""]
+    lines += ["", f"Staging is greater in {c['staging_greater']}/{total_arch} grid cells, well-mixed access is greater in {c['well_mixed_greater']}/{total_arch}, and they are equal in {c['equal']}/{total_arch}. Median staged-minus-well-mixed capture is {diff['median']:.3f}; it is not assumed positive.", "", "**Boundary:** staging wins only when `uox + (1-uox) × transfer × pdb` exceeds the overlap-adjusted well-mixed capture equation documented in the artifact.", "", "## Experimental consequence", "", "Use isotope-resolved dietary flux to measure nucleosides, free bases, microbial biomass incorporation, and transepithelial transfer. Separately, use a sequential microoxic→anoxic urate reactor to measure UOX capture, residual transfer, PDB capture, every pathway product, and viability. Do not infer joint three-stage complementarity or additivity by combining the two structures.", "", "## Limitations", ""]
     lines += [f"- {x}" for x in results["limitations"]]
     (OUT / "summary.md").write_text("\n".join(lines) + "\n")
 

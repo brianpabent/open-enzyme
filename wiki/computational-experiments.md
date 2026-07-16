@@ -12,9 +12,9 @@ related:
 
 Tracking index for computational analyses in the Open Enzyme platform. Distinct from [`validation-experiments.md`](./validation-experiments.md) (wet-lab), these use structure prediction, sequence analysis, and simulation to generate evidence-based priors before committing wet-lab resources.
 
-**Convention:** Each analysis lives at `wiki/etc/experiments/comp-NNN-<slug>/`. The folder contains the script, inputs (with provenance), and raw outputs. This page is a tight index — detailed methodology, full key-finding lists, and Pass-3 review history live in the per-comp interpretive wiki stub (`wiki/<slug>-computational.md`) and the experiment folder.
+**Convention:** Each active or bounded analysis lives at `wiki/etc/experiments/comp-NNN-<slug>/` with the code/input/output contract required by its current verdict. A fully invalidated COMP may retain only a hash-bound invalidation record in the live tree while Git preserves the retired executable artifacts.
 
-**Peer review:** Any collaborator can clone the repo, run `python3 analyze.py` in the relevant folder, and reproduce the outputs. Disagreements should be filed as GitHub issues against the relevant `comp-NNN` folder.
+**Peer review:** Runnable COMPs declare their reproduction command and dependencies. Invalidated tombstones are not rerun; their historical artifacts are available through Git. Disagreements should be filed as GitHub issues against the relevant `comp-NNN` folder.
 
 **Relationship to wet-lab experiments:** Computational analyses inform priors; they shift confidence before a wet-lab experiment runs, and help interpret results after. They do not replace wet-lab validation.
 
@@ -22,13 +22,13 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ## Analyses
 
-### comp-046 — Staged Purine Sink Conserved Ledgers — YELLOW / TWO CONDITIONAL HYPOTHESES (2026-07-13)
+### comp-046 — Dietary Fate Ledger + Endogenous Capture-Fraction Comparison — YELLOW / TWO CONDITIONAL HYPOTHESES (2026-07-13)
 
-**Question:** When are whole-cell GR-5 dietary purine interception, microoxic UOX, and distal anaerobic PDB complementary rather than redundant or counterproductive?
+**Question:** Two independent comparisons: when does whole-cell GR-5 reduce modeled absorbed dietary precursor, and when does spatial UOX→PDB access exceed an overlap-adjusted well-mixed endogenous capture architecture?
 
-**Verdict:** **YELLOW — two conditional hypotheses, not one additive efficacy claim.** Whole-cell GR-5 reduces absorbed precursor only when cleavage is coupled to microbial salvage/retention or reduced free-base absorption. Spatial UOX→PDB staging outperforms overlap-adjusted same-pool access only when residual transfer is efficient enough. Dietary and endogenous ledgers are conserved separately and never summed into ΔSUA.
+**Verdict:** **YELLOW — two conditional hypotheses, not one additive efficacy claim.** The dietary 100-unit fate ledger is conserved. The endogenous side is an architecture-level capture-fraction comparison, not a second conserved fate ledger. Neither is summed into ΔSUA.
 
-**Key findings:** 6,561-cell deterministic full-factorial; explicit 100-unit dietary fate ledger; separate 100-unit endogenous luminal-urate architecture ledger; staging wins 4,617 grid cells and loses 1,944, with median difference only 0.010. Grid occupancy is not probability. Peer review forced removal of the first equation, which guaranteed staging would win, and required conserved flux accounting plus separate dietary/endogenous pools.
+**Key findings:** two independent 81-cell deterministic full-factorials; explicit conserved dietary fate ledger; separate non-conserved endogenous luminal-urate capture-fraction comparison. Grid occupancy is not probability, and the model does not establish a topology winner or joint three-stage efficacy.
 
 **Informs:** [validation §1.34](./validation-experiments.md#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux) · [purine-degrading bacteria](./purine-degrading-bacteria.md) · [purine load](./purine-load-koji-vs-yeast.md)
 
@@ -289,9 +289,9 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Current verdict:** **INVALIDATED.** The model inherited comp-019's unsupported saturation regime, transferred *C. sporogenes* butyrate yield into CBT2.0/EcN without product measurement, misattributed direct butyrate rescue to Basseville 2012, and added unmatched background butyrate to the combination arm. Its ΔSUA, competition, butyrate, Q141K-rescue, and two-strain engineering recommendations are retired.
 
-**Replacement work:** [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) reopens the UOX regime; [comp-046](./staged-purine-sink-mass-balance-computational.md) supplies separate conserved ledgers and a conditional architecture boundary; [validation §1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test) measures actual CBT2.0 products.
+**Replacement work:** [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) reopens the UOX regime; [comp-046](./staged-purine-sink-mass-balance-computational.md) conserves dietary fate, treats the endogenous side as a capture-fraction comparison, and supplies a conditional architecture boundary; [validation §1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test) measures actual CBT2.0 products.
 
-**Detail:** [invalidated interpretive page](./dual-chassis-ecn-pdb-uricase-computational.md) · [frozen artifact](./etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/) · Invalidated, retained for provenance
+**Detail:** [invalidated interpretive page](./dual-chassis-ecn-pdb-uricase-computational.md) · [current invalidation record](./etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/) · obsolete model preserved only in Git history
 
 ---
 
@@ -608,11 +608,11 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-007 — Food-Grade HDAC Inhibitor Screen for Q141K-ABCG2 Trafficking Rescue — Butyrate rank 1 (2026-05-05)
+### comp-007 — Food-Grade HDAC Inhibitor Candidate Screen — Butyrate ranks first on proxy score (2026-05-05)
 
-**Question:** Which food-grade HDAC inhibitor candidates best combine class I HDAC potency, HDAC6 selectivity, and gut-enriched exposure for Q141K-ABCG2 trafficking rescue?
+**Question:** Which food-grade HDAC inhibitor candidates best combine class I potency, HDAC6 selectivity, and gut-enriched exposure for direct Q141K testing?
 
-**Verdict:** **Butyrate (rank 1, 0.374) >> Sulforaphane (rank 2, 0.090) > PEITC (rank 3, 0.060).** Only Butyrate has confirmed class I selectivity (167× over HDAC6, HIGH confidence). Caffeic + ferulic acid score 0 (DATA_UNAVAILABLE).
+**Verdict:** **Butyrate (rank 1, 0.374) >> Sulforaphane (rank 2, 0.090) > PEITC (rank 3, 0.060)** on the artifact's candidate score. This ranks direct-test candidates; it does not demonstrate Q141K trafficking or urate-flux rescue.
 
 **Key findings:**
 - Butyrate is the only food-grade compound with biochemical IC50 against all four HDAC isoforms; 167× HDAC1/2/3-over-HDAC6 structurally explained (carboxylate zinc coordination).
@@ -663,7 +663,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 |---|---|---|---|
 | comp-002 | Uricase thermal/pH stability under shio-koji conditions (MD or Rosetta ΔΔG) | [§1.10 follow-up](./validation-experiments.md) | Low (pending §1.10 result) |
 | ~~comp-003~~ | Reassigned 2026-05-05 → comp-005 (lactoferrin cleavage-site analysis) | — | ✓ Done as comp-005 |
-| ~~comp-008~~ | **Completed 2026-05-16** — *F. prausnitzii* heterologous expression feasibility. BCoAT native-butyrate boost is the leading payload; uricase contraindicated for anaerobic Fp; disulfide payloads secretion/folding-gated. See [interpretive page](./f-prausnitzii-heterologous-expression-computational.md). | [engineered-lbp-chassis](./engineered-lbp-chassis.md) Phase 2 P2-4 | ✓ Done |
+| ~~comp-008~~ | **Completed 2026-05-16; review actions remain open.** Expert-prior *F. prausnitzii* construct-tractability triage. Native BCoAT overexpression has the highest point estimate, but ranges overlap and increased butyrate is untested; uricase is poorly matched to anaerobic Fp. The complement candidate is not decision-ready because the artifact conflates CR1/P17927 with the DAF/CD55 comp-012 precedent. See [interpretive page](./f-prausnitzii-heterologous-expression-computational.md) and current COMP receipt. | [engineered-lbp-chassis](./engineered-lbp-chassis.md) Phase 2 P2-4 | ⚠ Reviewed; actions open |
 | ~~comp-009~~ | **Completed; RERUN 2026-07-14** on the real NM_144585.4 mRNA (original artificial-CDS run invalidated). 8 real-transcript target sites pass design filters; accessibility low (real RNAplfold) + off-target uncleared. See [interpretive page](./urat1-sirna-target-site-selection-computational.md). | [sirna-urat1-modality](./sirna-urat1-modality.md) Phase 2 P2-2 | ✓ Done (rerun) |
 | ~~comp-011 TCM~~ | Reassigned 2026-05-05; TCM ChEMBL cross-check landed as comp-013 | — | ✓ Done as comp-013 |
 | comp-021 | Compound × upstream-complement chokepoint × matched-assay-format mapping (resolves RA 44× spread) | [upstream-complement-verification-rerun-computational](./upstream-complement-verification-rerun-computational.md) | Low (parked) |
@@ -677,7 +677,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | ~~comp-027~~ | Completed 2026-05-16; **downgraded to hypothesis-generator 2026-07-14** — single strict-GREEN modeled point at 100 mg/d (not a validated 75–125 window). See Analyses above | — | ✓ Done |
 | ~~comp-030~~ | Completed 2026-05-15 — see Analyses above | — | ✓ Done |
 | ~~comp-029~~ | Completed 2026-05-16 — YELLOW; see Analyses above | — | ✓ Done |
-| ~~comp-031~~ | **Invalidated 2026-07-13** — dual-chassis EcN+PDB+uricase inherited comp-019's failed UOX regime; the combined ΔSUA numbers (−1.8 to −1.9 mg/dL) are **retracted**. The separate-strain-vs-dual-cassette *reasoning* (substrate competition) is preserved; see [dual-chassis page](./dual-chassis-ecn-pdb-uricase-computational.md), comp-046, §1.34/§1.37. | — | ✓ Done (invalidated) |
+| ~~comp-031~~ | **Invalidated 2026-07-13** — inherited comp-019's failed UOX regime and unsupported CBT2.0-butyrate assumptions. No quantitative result or topology recommendation survives; see [dual-chassis page](./dual-chassis-ecn-pdb-uricase-computational.md), comp-044/046, and §1.34/§1.37. | — | ✓ Done (invalidated) |
 | ~~comp-032~~ | Completed 2026-05-16 — ~~GREEN~~ **SUPERSEDED by comp-047 2026-07-14**; verdict retracted (tautological positive-control validation per comp-review 2026-07-13). See Analyses above | — | ✓ Done (superseded) |
 | ~~comp-047~~ | **Completed 2026-07-14 — INCONCLUSIVE** (real Vina docking). CFTR-corrector positive controls fail to earn rank (0/4); rigid docking can't discriminate Q141K chaperones; chaperone-rescue ranking not computationally established. Supersedes comp-032. See Analyses above | [Q141K trafficking + urate-flux assay](./validation-experiments.md) | ✓ Done |
 | ~~comp-033~~ | Completed 2026-05-16 — RED single-dose Cmax-equivalent; reframed in comp-036 (YELLOW receptor-occupancy). See Analyses above | — | ✓ Done |
