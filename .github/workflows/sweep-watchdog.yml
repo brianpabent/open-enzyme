@@ -60,17 +60,17 @@ jobs:
             exit 0
           fi
 
-          # Last successful sweep timestamp
+          # Last successful explicit synthesis timestamp
           LAST_TS=$(python3 -c "
           import json, sys
           d = json.load(open('logs/sweep-state.json'))
-          last = d.get('last_successful_sweep') or {}
+          last = d.get('last_successful_synthesis') or {}
           print(last.get('timestamp', ''))
           ")
-          echo "last_successful_sweep timestamp: $LAST_TS"
+          echo "last_successful_synthesis timestamp: $LAST_TS"
 
           if [[ -z "$LAST_TS" ]]; then
-            echo "No last_successful_sweep recorded — nothing to do."
+            echo "No last_successful_synthesis recorded — nothing to do."
             echo "should_fire=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -85,7 +85,7 @@ jobs:
           echo "age_hours=$AGE_H" >> "$GITHUB_OUTPUT"
 
           # Pending paths
-          PENDING=$(python3 scripts/sweep-state.py pending-paths)
+          PENDING=$(python3 scripts/sweep-state.py pending-synthesis-paths)
           # grep -c already prints 0 on no match (and exits 1); use `|| true`
           # so we don't append a SECOND "0" line — a bare line breaks
           # $GITHUB_OUTPUT with "Invalid format '0'".

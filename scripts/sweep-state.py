@@ -1,49 +1,10 @@
 #!/usr/bin/env python3
-"""
-sweep-state.py — read/write the sweep automation state registry.
+"""Maintain the Open Enzyme knowledge-system coverage registry.
 
-Component #2 of the sweep automation architecture (see
-scripts/SWEEP-ARCHITECTURE.md). Replaces the brittle
-`git log --grep='^sweep' -n 1` regex with an atomic file-based cursor.
-
-The registry lives at `logs/sweep-state.json` and records:
-  - last_successful_sweep: exact corpus-coverage commit + timestamp +
-    synthesis/review provenance for the most recent Pass 3 that completed.
-    The coverage cursor is the snapshot Pass 2 actually read, not the later
-    review commit, so concurrent post-snapshot wiki edits remain pending.
-  - recent_runs: bounded list (last 20) of workflow runs with outcome,
-    failed phase, and trigger metadata. Used by /sweep-status and the
-    watchdog cron.
-
-Subcommands:
-  read                            — print the registry as JSON.
-  update-success                  — record Pass 3 success; update
-                                    last_successful_sweep + append a
-                                    recent_runs entry.
-  record-recovery                 — record a supplemental exact-artifact
-                                    review without advancing the cursor.
-  rebind-review-commit            — repair review-commit provenance after a
-                                    successful git rebase; cursor is unchanged.
-  record-failure                  — append a failed-run entry to
-                                    recent_runs without touching
-                                    last_successful_sweep.
-  pending-paths                   — print wiki/*.md files modified since
-                                    last_successful_sweep.commit (excluding
-                                    synthesis/queue/).
-  init                            — initialize the registry from the most
-                                    recent existing v4-synthesis-*.md log
-                                    and sweep-3-review commit. One-time
-                                    backfill.
-
-The registry is a small JSON file. The workflow has a top-level
-`concurrency` group preventing two sweeps simultaneously, so reads and
-writes don't race against each other within the daemon. Hand-runs (e.g.
-manual /sweep-catchup) and the daemon may interleave but never write
-concurrently because workflow_dispatch and push triggers share the same
-concurrency group.
-
-Schema is versioned (`schema_version: 1`); future migrations bump the
-version and add a `migrate_v1_to_v2` path here.
+Schema v2 separates cheap push-time propagation from deliberate full-corpus
+synthesis and records the current eligibility of each computational experiment.
+Git and GitHub Actions retain run history; this file retains only current state
+and unresolved failures.
 """
 
 from __future__ import annotations
@@ -52,16 +13,16 @@ import argparse
 import datetime
 import json
 import os
-import re
 import subprocess
 import sys
 from pathlib import Path
 
 from synthesis_normalize import NormalizationError, verify_manifest
 
+
 REGISTRY_PATH = Path("logs/sweep-state.json")
-SCHEMA_VERSION = 1
-MAX_RECENT_RUNS = 20
+SCHEMA_VERSION = 2
+ELIGIBILITY = {"eligible", "eligible_with_warning", "blocked"}
 
 
 def _now_iso() -> str:
@@ -71,390 +32,396 @@ def _now_iso() -> str:
 def _empty_registry() -> dict:
     return {
         "schema_version": SCHEMA_VERSION,
-        "last_successful_sweep": None,
-        "recent_runs": [],
+        "last_successful_propagation": None,
+        "last_successful_synthesis": None,
+        "comp_reviews": {},
+        "unresolved_failures": [],
+    }
+
+
+def migrate_v1_to_v2(data: dict) -> dict:
+    """Deterministically split the v1 sweep cursor into two v2 cursors."""
+    if data.get("schema_version") != 1:
+        raise ValueError("migration input is not schema v1")
+    old = data.get("last_successful_sweep") or None
+    synthesis = None
+    propagation = None
+    if old:
+        coverage = old.get("coverage_commit") or old.get("commit")
+        timestamp = old.get("timestamp")
+        synthesis = {
+            "coverage_commit": coverage,
+            "corpus_sha256": old.get("source_synthesis_sha256"),
+            "timestamp": timestamp,
+            "trigger_paths": old.get("trigger_files", []),
+            "coverage_receipt_sha256": old.get("canonical_items_sha256"),
+            "queue_items_emitted": old.get("normalized_item_count"),
+            "cost_usd": old.get("cost_usd"),
+            "result_commit": old.get("review_commit"),
+            "sweep_id": old.get("sweep_id"),
+            "_migrated_from_v1": True,
+        }
+        # The old three-pass workflow propagated the same semantic batch before
+        # synthesis, so the old coverage snapshot is the only honest initial
+        # propagation cursor. Later push runs move it independently.
+        propagation = {
+            "coverage_commit": coverage,
+            "result_commit": old.get("review_commit") or coverage,
+            "timestamp": timestamp,
+            "changed_paths": old.get("trigger_files", []),
+            "affected_paths": [],
+            "blocked_paths": [],
+            "cost_usd": None,
+            "_migrated_from_v1": True,
+        }
+    failures = []
+    for run in data.get("recent_runs", []):
+        if run.get("outcome") == "failure":
+            failures.append({
+                "id": str(run.get("run_id") or f"legacy-{len(failures) + 1}"),
+                "lane": run.get("failed_phase", "legacy-sweep"),
+                "recorded_at": run.get("completed_at"),
+                "summary": run.get("error_summary", "Migrated unresolved v1 failure"),
+            })
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "last_successful_propagation": propagation,
+        "last_successful_synthesis": synthesis,
+        "comp_reviews": {},
+        "unresolved_failures": failures,
     }
 
 
 def read_registry() -> dict:
     if not REGISTRY_PATH.exists():
         return _empty_registry()
-    with REGISTRY_PATH.open() as f:
-        data = json.load(f)
+    data = json.loads(REGISTRY_PATH.read_text())
+    if data.get("schema_version") == 1:
+        return migrate_v1_to_v2(data)
     if data.get("schema_version") != SCHEMA_VERSION:
-        sys.exit(f"sweep-state.py: unknown schema_version {data.get('schema_version')!r}; "
-                 f"expected {SCHEMA_VERSION}. Migrate manually.")
+        sys.exit(
+            f"sweep-state.py: unknown schema_version {data.get('schema_version')!r}; "
+            f"expected {SCHEMA_VERSION}"
+        )
     return data
 
 
 def write_registry(data: dict) -> None:
+    data["schema_version"] = SCHEMA_VERSION
     REGISTRY_PATH.parent.mkdir(parents=True, exist_ok=True)
     tmp_path = REGISTRY_PATH.with_suffix(".json.tmp")
-    with tmp_path.open("w") as f:
-        json.dump(data, f, indent=2, sort_keys=False)
-        f.write("\n")
+    tmp_path.write_text(json.dumps(data, indent=2, sort_keys=False) + "\n")
     os.replace(tmp_path, REGISTRY_PATH)
 
 
-def _trim_recent(runs: list, keep: int = MAX_RECENT_RUNS) -> list:
-    return runs[-keep:]
+def _cursor(data: dict, lane: str) -> str | None:
+    key = f"last_successful_{lane}"
+    return (data.get(key) or {}).get("coverage_commit")
+
+
+def _git_changed_paths(base: str, patterns: list[str]) -> list[str]:
+    command = ["git", "diff", "--name-only", base, "HEAD", "--", *patterns]
+    result = subprocess.run(command, capture_output=True, text=True, check=True)
+    return sorted({p for p in result.stdout.splitlines() if p})
+
+
+def _blocked_paths(data: dict) -> set[str]:
+    blocked: set[str] = set()
+    for review in data.get("comp_reviews", {}).values():
+        if review.get("propagation_eligibility") != "blocked":
+            continue
+        blocked.add(review.get("comp_dir", ""))
+        blocked.update(review.get("derived_paths", []))
+    return {path for path in blocked if path}
 
 
 def cmd_read(_args: argparse.Namespace) -> None:
+    print(json.dumps(read_registry(), indent=2))
+
+
+def cmd_migrate(_args: argparse.Namespace) -> None:
+    if not REGISTRY_PATH.exists():
+        sys.exit(f"sweep-state.py: {REGISTRY_PATH} does not exist")
+    raw = json.loads(REGISTRY_PATH.read_text())
+    if raw.get("schema_version") == SCHEMA_VERSION:
+        print("sweep-state.py: registry is already schema v2")
+        return
+    migrated = migrate_v1_to_v2(raw)
+    write_registry(migrated)
+    print("sweep-state.py: migrated registry from schema v1 to v2")
+
+
+def cmd_pending_propagation_paths(_args: argparse.Namespace) -> None:
     data = read_registry()
-    print(json.dumps(data, indent=2))
+    base = _cursor(data, "propagation")
+    if not base:
+        sys.exit("sweep-state.py: no propagation cursor recorded")
+    paths = _git_changed_paths(base, ["wiki/*.md", "wiki/hypotheses/*.md", "wiki/etc/experiments/comp-*/**"])
+    blocked = _blocked_paths(data)
+    for path in paths:
+        if any(path == b or path.startswith(f"{b}/") for b in blocked):
+            continue
+        print(path)
+
+
+def cmd_pending_synthesis_paths(_args: argparse.Namespace) -> None:
+    data = read_registry()
+    base = _cursor(data, "synthesis")
+    if not base:
+        sys.exit("sweep-state.py: no synthesis cursor recorded")
+    for path in _git_changed_paths(base, ["wiki/*.md", "wiki/hypotheses/*.md", "wiki/etc/experiments/comp-*/**"]):
+        print(path)
+
+
+def cmd_update_propagation(args: argparse.Namespace) -> None:
+    data = read_registry()
+    current = _cursor(data, "propagation")
+    if args.expected_cursor and current != args.expected_cursor:
+        sys.exit(f"sweep-state.py: propagation cursor changed: {current!r} != {args.expected_cursor!r}")
+    changed = [p for p in args.changed_paths.split(",") if p]
+    affected = [p for p in args.affected_paths.split(",") if p]
+    blocked = [p for p in args.blocked_paths.split(",") if p]
+    data["last_successful_propagation"] = {
+        "coverage_commit": args.coverage_commit,
+        "result_commit": args.result_commit,
+        "timestamp": _now_iso(),
+        "changed_paths": changed,
+        "affected_paths": affected,
+        "blocked_paths": blocked,
+        "cost_usd": args.cost_usd,
+    }
+    write_registry(data)
+    print(f"sweep-state.py: propagation coverage advanced to {args.coverage_commit[:8]}")
+
+
+def cmd_record_comp_review(args: argparse.Namespace) -> None:
+    if args.propagation_eligibility not in ELIGIBILITY or args.synthesis_eligibility not in ELIGIBILITY:
+        sys.exit("sweep-state.py: invalid COMP eligibility")
+    data = read_registry()
+    derived = [p for p in args.derived_paths.split(",") if p]
+    data["comp_reviews"][args.comp_id] = {
+        "comp_dir": args.comp_dir,
+        "artifact_manifest_sha256": args.artifact_manifest_sha256,
+        "source_commit": args.source_commit,
+        "review_receipt": args.review_receipt,
+        "comp_verdict": args.comp_verdict,
+        "propagation_eligibility": args.propagation_eligibility,
+        "synthesis_eligibility": args.synthesis_eligibility,
+        "derived_paths": derived,
+        "timestamp": _now_iso(),
+        "cost_usd": args.cost_usd,
+    }
+    write_registry(data)
+    print(f"sweep-state.py: recorded current review for {args.comp_id}")
+
+
+def cmd_comp_eligibility(args: argparse.Namespace) -> None:
+    data = read_registry()
+    record = data.get("comp_reviews", {}).get(args.comp_id)
+    if not record:
+        print("blocked")
+        return
+    print(record[f"{args.lane}_eligibility"])
+
+
+def cmd_record_failure(args: argparse.Namespace) -> None:
+    data = read_registry()
+    failures = [f for f in data["unresolved_failures"] if f.get("id") != args.failure_id]
+    failures.append({
+        "id": args.failure_id,
+        "lane": args.lane,
+        "recorded_at": _now_iso(),
+        "summary": args.error_summary,
+        "paths": [p for p in args.paths.split(",") if p],
+    })
+    data["unresolved_failures"] = failures
+    write_registry(data)
+
+
+def cmd_resolve_failure(args: argparse.Namespace) -> None:
+    data = read_registry()
+    before = len(data["unresolved_failures"])
+    data["unresolved_failures"] = [f for f in data["unresolved_failures"] if f.get("id") != args.failure_id]
+    if len(data["unresolved_failures"]) == before:
+        sys.exit(f"sweep-state.py: unresolved failure {args.failure_id!r} not found")
+    write_registry(data)
 
 
 def cmd_update_success(args: argparse.Namespace) -> None:
+    """Compatibility entry point: record a completed full synthesis as v2 state."""
     data = read_registry()
     try:
         manifest = verify_manifest(Path(args.normalized_manifest))
     except (OSError, json.JSONDecodeError, NormalizationError) as exc:
-        sys.exit(f"sweep-state.py: refusing cursor advance; manifest validation failed: {exc}")
-
+        sys.exit(f"sweep-state.py: refusing synthesis cursor advance: {exc}")
     source = manifest["source"]
     if source["synthesis_log"] != args.synthesis_log:
-        sys.exit("sweep-state.py: synthesis log does not match normalized manifest source")
+        sys.exit("sweep-state.py: synthesis log does not match normalized manifest")
     if source["diff_base"] != args.expected_diff_base:
-        sys.exit(
-            "sweep-state.py: diff-base mismatch between workflow and manifest: "
-            f"{args.expected_diff_base!r} != {source['diff_base']!r}"
-        )
+        sys.exit("sweep-state.py: synthesis diff base does not match manifest")
+    current = _cursor(data, "synthesis")
+    if args.expected_diff_base != "manual" and current != args.expected_diff_base:
+        sys.exit("sweep-state.py: synthesis cursor changed while run was active")
     workflow_triggers = [p for p in args.trigger_files.split(",") if p]
     if workflow_triggers != source["trigger_files"]:
-        sys.exit("sweep-state.py: trigger-file list does not match normalized manifest")
-    current_cursor = (data.get("last_successful_sweep") or {}).get("commit")
-    if args.expected_diff_base != "manual" and current_cursor != args.expected_diff_base:
-        sys.exit(
-            "sweep-state.py: cursor changed since this synthesis batch began; "
-            f"current={current_cursor!r}, expected={args.expected_diff_base!r}. "
-            "Refusing to bless a stale or superseded artifact."
-        )
-    coverage_commit = source["corpus_commit_sha"]
-    ancestry = subprocess.run(
-        ["git", "merge-base", "--is-ancestor", coverage_commit, args.commit],
-        capture_output=True,
-    )
+        sys.exit("sweep-state.py: trigger paths do not match normalized manifest")
+    coverage = source["corpus_commit_sha"]
+    ancestry = subprocess.run(["git", "merge-base", "--is-ancestor", coverage, args.commit])
     if ancestry.returncode != 0:
-        sys.exit(
-            "sweep-state.py: review commit does not descend from the manifest's corpus snapshot"
-        )
-
-    data["last_successful_sweep"] = {
-        # The cursor is the exact corpus snapshot Pass 2 read, not the later
-        # review commit. If unrelated wiki work lands while the model is
-        # running and Pass 3 rebases over it, that work therefore remains
-        # visible to pending-paths instead of being silently blessed.
-        "commit": coverage_commit,
-        "coverage_commit": coverage_commit,
+        sys.exit("sweep-state.py: result commit does not descend from corpus snapshot")
+    data["last_successful_synthesis"] = {
+        "coverage_commit": coverage,
+        "corpus_sha256": source.get("sha256"),
         "timestamp": _now_iso(),
-        "synthesis_log": args.synthesis_log,
-        "normalized_manifest": args.normalized_manifest,
+        "trigger_paths": source["trigger_files"],
+        "coverage_receipt_sha256": manifest["canonical_items_sha256"],
+        "queue_items_emitted": len(manifest["items"]),
+        "cost_usd": None,
+        "result_commit": args.commit,
         "sweep_id": manifest["sweep_id"],
-        "source_commit": source["commit_sha"],
-        "trigger_commit": source["trigger_commit_sha"],
-        "source_synthesis_sha256": source["sha256"],
-        "canonical_items_sha256": manifest["canonical_items_sha256"],
-        "normalized_status": manifest["status"],
-        "normalized_item_count": len(manifest["items"]),
-        "review_commit": args.commit,
-        "trigger_files": source["trigger_files"],
-        "run_id": args.run_id,
     }
-    data["recent_runs"].append({
-        "run_id": args.run_id,
-        "trigger": args.trigger,
-        "completed_at": _now_iso(),
-        "outcome": "success",
-        "failed_phase": None,
-        "trigger_paths_count": len(source["trigger_files"]),
-        "synthesis_log": args.synthesis_log,
-        "normalized_manifest": args.normalized_manifest,
-        "sweep_id": manifest["sweep_id"],
-        "normalized_status": manifest["status"],
-        "normalized_item_count": len(manifest["items"]),
-        "coverage_commit": coverage_commit,
-        "review_commit": args.commit,
-    })
-    data["recent_runs"] = _trim_recent(data["recent_runs"])
     write_registry(data)
-    print(
-        f"sweep-state.py: recorded success for run {args.run_id}; "
-        f"coverage={coverage_commit[:8]} review={args.commit[:8]}"
-    )
+    print(f"sweep-state.py: synthesis coverage advanced to {coverage[:8]}")
 
 
-def _validated_recovery_manifest(args: argparse.Namespace) -> dict:
+def cmd_rebind_review_commit(args: argparse.Namespace) -> None:
+    data = read_registry()
+    current = data.get("last_successful_synthesis") or {}
+    if current.get("result_commit") != args.old_commit:
+        sys.exit("sweep-state.py: old synthesis result commit is not current")
+    current["result_commit"] = args.new_commit
+    write_registry(data)
+
+
+def cmd_record_recovery(args: argparse.Namespace) -> None:
+    # A recovery validates the preserved artifact but deliberately does not
+    # claim new corpus coverage. GitHub Actions retains its run history.
     try:
         manifest = verify_manifest(Path(args.normalized_manifest))
     except (OSError, json.JSONDecodeError, NormalizationError) as exc:
         sys.exit(f"sweep-state.py: recovery manifest validation failed: {exc}")
     if manifest["source"]["synthesis_log"] != args.synthesis_log:
-        sys.exit("sweep-state.py: recovery synthesis log does not match manifest source")
-    return manifest
-
-
-def cmd_record_recovery(args: argparse.Namespace) -> None:
-    """Record exact-artifact review while deliberately preserving the cursor."""
-    data = read_registry()
-    manifest = _validated_recovery_manifest(args)
-    coverage_commit = manifest["source"]["corpus_commit_sha"]
-    ancestry = subprocess.run(
-        ["git", "merge-base", "--is-ancestor", coverage_commit, args.review_commit],
-        capture_output=True,
-    )
-    if ancestry.returncode != 0:
-        sys.exit("sweep-state.py: recovery review commit does not descend from corpus snapshot")
-    cursor_before = (data.get("last_successful_sweep") or {}).get("commit")
-    data["recent_runs"].append({
-        "run_id": args.run_id,
-        "trigger": args.trigger,
-        "completed_at": _now_iso(),
-        "outcome": "supplemental_recovery",
-        "failed_phase": None,
-        "cursor_advanced": False,
-        "cursor_preserved": cursor_before,
-        "review_commit": args.review_commit,
-        "synthesis_log": args.synthesis_log,
-        "normalized_manifest": args.normalized_manifest,
-        "sweep_id": manifest["sweep_id"],
-        "normalized_status": manifest["status"],
-        "normalized_item_count": len(manifest["items"]),
-    })
-    data["recent_runs"] = _trim_recent(data["recent_runs"])
-    write_registry(data)
-    print(
-        f"sweep-state.py: recorded supplemental recovery {manifest['sweep_id']} "
-        f"without advancing cursor {str(cursor_before)[:8]}"
-    )
-
-
-def cmd_rebind_review_commit(args: argparse.Namespace) -> None:
-    """Update review provenance after rebase; never move the coverage cursor."""
-    data = read_registry()
-    last = data.get("last_successful_sweep") or {}
-    rebound = False
-    if last.get("review_commit") == args.old_commit:
-        last["review_commit"] = args.new_commit
-        rebound = True
-    for run in reversed(data.get("recent_runs", [])):
-        if run.get("review_commit") == args.old_commit:
-            run["review_commit"] = args.new_commit
-            rebound = True
-            break
-    if not rebound:
-        sys.exit(
-            "sweep-state.py: review rebind old SHA is absent from current and recent state: "
-            f"{args.old_commit!r}"
-        )
-    write_registry(data)
-    print(
-        f"sweep-state.py: rebound review provenance "
-        f"{args.old_commit[:8]} -> {args.new_commit[:8]}; cursor unchanged"
-    )
-
-
-def cmd_record_failure(args: argparse.Namespace) -> None:
-    data = read_registry()
-    data["recent_runs"].append({
-        "run_id": args.run_id,
-        "trigger": args.trigger,
-        "completed_at": _now_iso(),
-        "outcome": "failure",
-        "failed_phase": args.failed_phase,
-        "error_summary": args.error_summary,
-        "trigger_paths_count": args.trigger_paths_count,
-    })
-    data["recent_runs"] = _trim_recent(data["recent_runs"])
-    write_registry(data)
-    print(f"sweep-state.py: recorded failure for run {args.run_id} (phase {args.failed_phase})")
-
-
-def cmd_pending_paths(_args: argparse.Namespace) -> None:
-    data = read_registry()
-    last = data.get("last_successful_sweep") or {}
-    base = last.get("commit")
-    if not base:
-        sys.exit("sweep-state.py: no last_successful_sweep recorded; run `init` first.")
-    r = subprocess.run(
-        ["git", "diff", "--name-only", base, "HEAD", "--", "wiki/*.md"],
-        capture_output=True, text=True, check=True,
-    )
-    paths = [
-        p for p in r.stdout.strip().splitlines()
-        if p
-    ]
-    for p in sorted(set(paths)):
-        print(p)
+        sys.exit("sweep-state.py: recovery source mismatch")
+    print(f"sweep-state.py: validated supplemental recovery {manifest['sweep_id']}; cursor unchanged")
 
 
 def cmd_should_sweep(_args: argparse.Namespace) -> None:
-    """Decide whether the workflow should run a sweep on the current HEAD.
-
-    Prints `run` or `skip` (and a one-line rationale to stderr) based on:
-      - last_successful_sweep cursor in the registry
-      - commits between cursor and HEAD that touched wiki/*.md
-      - exclusion of daemon-self-writes (subject starts with sweep-1-/sweep-2-/sweep-3-)
-      - exclusion of commits whose full message contains [skip-wiki-sweep]
-
-    A sweep runs iff at least one wiki-touching commit since cursor is neither
-    a daemon-self-write nor explicitly skip-marked. This replaces the original
-    head-commit-only [skip-wiki-sweep] check that silently dropped wiki content
-    when a non-wiki-touching tooling commit with the marker landed on top of a
-    push that also contained user wiki commits.
-    """
+    # Retained for old callers. It now answers whether synthesis has pending
+    # semantic paths; it never authorizes an automatic run.
     data = read_registry()
-    last = data.get("last_successful_sweep") or {}
-    base = last.get("commit")
+    base = _cursor(data, "synthesis")
     if not base:
         print("run")
-        print("sweep-state.py should-sweep: no cursor recorded; defaulting to run", file=sys.stderr)
         return
-
-    # Subject + full body for each wiki-touching commit since cursor.  Use
-    # NUL-separated records so commit messages with newlines parse cleanly.
-    sep = "\x1e"  # ASCII record separator, unlikely in commit messages
-    r = subprocess.run(
-        ["git", "log", f"--format=%H%x00%s%x00%B{sep}", f"{base}..HEAD", "--", "wiki/*.md"],
-        capture_output=True, text=True, check=True,
-    )
-    records = [rec for rec in r.stdout.split(sep) if rec.strip()]
-    if not records:
-        print("skip")
-        print("sweep-state.py should-sweep: no wiki/*.md commits since cursor", file=sys.stderr)
-        return
-
-    DAEMON_PREFIXES = ("sweep-1-", "sweep-2-", "sweep-3-")
-    SKIP_MARKER = "[skip-wiki-sweep]"
-    sweepable = []
-    for rec in records:
-        parts = rec.lstrip("\n").split("\x00", 2)
-        if len(parts) < 3:
-            continue
-        sha, subject, body = parts
-        if subject.startswith(DAEMON_PREFIXES):
-            continue
-        if SKIP_MARKER in subject or SKIP_MARKER in body:
-            continue
-        sweepable.append((sha[:8], subject))
-
-    if sweepable:
-        print("run")
-        print(f"sweep-state.py should-sweep: {len(sweepable)} sweepable wiki commit(s) since cursor:",
-              file=sys.stderr)
-        for sha, subject in sweepable:
-            print(f"  {sha} {subject}", file=sys.stderr)
-    else:
-        print("skip")
-        print(f"sweep-state.py should-sweep: {len(records)} wiki commit(s) since cursor; "
-              "all are daemon-self-writes or marked [skip-wiki-sweep]", file=sys.stderr)
+    print("run" if _git_changed_paths(base, ["wiki/*.md", "wiki/hypotheses/*.md"]) else "skip")
 
 
 def cmd_init(args: argparse.Namespace) -> None:
-    """One-time backfill from existing logs/v4-synthesis-*.md + last sweep-3-review commit."""
     if REGISTRY_PATH.exists() and not args.force:
-        sys.exit(f"sweep-state.py: {REGISTRY_PATH} already exists; pass --force to overwrite.")
-
-    # Find most recent v4-synthesis-*.md log
-    logs_dir = Path("logs")
-    synthesis_logs = sorted(
-        [p for p in logs_dir.glob("v4-synthesis-*.md")],
-        key=lambda p: p.stat().st_mtime,
-        reverse=True,
-    )
-    if not synthesis_logs:
-        sys.exit("sweep-state.py: no logs/v4-synthesis-*.md files; cannot backfill.")
-    latest_log = synthesis_logs[0]
-
-    # Find most recent sweep-3-review commit on main
-    r = subprocess.run(
-        ["git", "log", "--grep=^sweep-3-review:", "-n", "1",
-         "--format=%H %cI", "main"],
-        capture_output=True, text=True, check=True,
-    )
-    line = r.stdout.strip()
-    if not line:
-        sys.exit("sweep-state.py: no sweep-3-review: commit found on main; cannot backfill.")
-    parts = line.split(" ", 1)
-    if len(parts) != 2:
-        sys.exit(f"sweep-state.py: malformed git log output: {line!r}")
-    commit, timestamp = parts
-
+        sys.exit(f"sweep-state.py: {REGISTRY_PATH} exists; use migrate or --force")
+    head = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True, check=True).stdout.strip()
+    now = _now_iso()
     data = _empty_registry()
-    data["last_successful_sweep"] = {
-        "commit": commit,
-        "timestamp": timestamp,
-        "synthesis_log": str(latest_log),
-        "review_commit": commit,
-        "trigger_files": [],
-        "run_id": None,
-        "_backfilled": True,
-        "_backfilled_at": _now_iso(),
+    data["last_successful_propagation"] = {
+        "coverage_commit": head, "result_commit": head, "timestamp": now,
+        "changed_paths": [], "affected_paths": [], "blocked_paths": [], "cost_usd": 0.0,
+    }
+    data["last_successful_synthesis"] = {
+        "coverage_commit": head, "corpus_sha256": None, "timestamp": now,
+        "trigger_paths": [], "coverage_receipt_sha256": None,
+        "queue_items_emitted": 0, "cost_usd": 0.0, "result_commit": head,
     }
     write_registry(data)
-    print(f"sweep-state.py: initialized {REGISTRY_PATH}")
-    print(f"  last_successful_sweep.commit = {commit[:8]} ({timestamp})")
-    print(f"  synthesis_log = {latest_log}")
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__.split("\n", 1)[0])
+    sub = parser.add_subparsers(dest="cmd", required=True)
+    sub.add_parser("read")
+    sub.add_parser("migrate")
+    sub.add_parser("pending-propagation-paths")
+    sub.add_parser("pending-synthesis-paths")
+    sub.add_parser("pending-paths", help="compatibility alias for pending synthesis paths")
+    sub.add_parser("should-sweep")
+
+    prop = sub.add_parser("update-propagation")
+    prop.add_argument("--coverage-commit", required=True)
+    prop.add_argument("--result-commit", required=True)
+    prop.add_argument("--expected-cursor", default="")
+    prop.add_argument("--changed-paths", default="")
+    prop.add_argument("--affected-paths", default="")
+    prop.add_argument("--blocked-paths", default="")
+    prop.add_argument("--cost-usd", type=float, default=0.0)
+
+    comp = sub.add_parser("record-comp-review")
+    comp.add_argument("--comp-id", required=True)
+    comp.add_argument("--comp-dir", required=True)
+    comp.add_argument("--artifact-manifest-sha256", required=True)
+    comp.add_argument("--source-commit", required=True)
+    comp.add_argument("--review-receipt", required=True)
+    comp.add_argument("--comp-verdict", required=True)
+    comp.add_argument("--propagation-eligibility", required=True)
+    comp.add_argument("--synthesis-eligibility", required=True)
+    comp.add_argument("--derived-paths", default="")
+    comp.add_argument("--cost-usd", type=float, default=0.0)
+
+    elig = sub.add_parser("comp-eligibility")
+    elig.add_argument("--comp-id", required=True)
+    elig.add_argument("--lane", choices=["propagation", "synthesis"], required=True)
+
+    failure = sub.add_parser("record-failure")
+    failure.add_argument("--failure-id", "--run-id", dest="failure_id", required=True)
+    failure.add_argument("--lane", "--failed-phase", dest="lane", required=True)
+    failure.add_argument("--error-summary", default="")
+    failure.add_argument("--paths", default="")
+    # Ignored compatibility options from schema v1 workflows.
+    failure.add_argument("--trigger", default="")
+    failure.add_argument("--trigger-paths-count", type=int, default=0)
+
+    resolve = sub.add_parser("resolve-failure")
+    resolve.add_argument("--failure-id", required=True)
+
+    success = sub.add_parser("update-success")
+    success.add_argument("--commit", required=True)
+    success.add_argument("--synthesis-log", required=True)
+    success.add_argument("--normalized-manifest", required=True)
+    success.add_argument("--expected-diff-base", required=True)
+    success.add_argument("--trigger-files", default="")
+    success.add_argument("--run-id", required=True)
+    success.add_argument("--trigger", default="workflow_dispatch")
+
+    recovery = sub.add_parser("record-recovery")
+    recovery.add_argument("--review-commit", required=True)
+    recovery.add_argument("--synthesis-log", required=True)
+    recovery.add_argument("--normalized-manifest", required=True)
+    recovery.add_argument("--run-id", required=True)
+    recovery.add_argument("--trigger", default="workflow_dispatch")
+
+    rebind = sub.add_parser("rebind-review-commit")
+    rebind.add_argument("--old-commit", required=True)
+    rebind.add_argument("--new-commit", required=True)
+
+    init = sub.add_parser("init")
+    init.add_argument("--force", action="store_true")
+    return parser
 
 
 def main() -> None:
-    p = argparse.ArgumentParser(description=__doc__.split("\n", 1)[0])
-    sub = p.add_subparsers(dest="cmd", required=True)
-
-    sub.add_parser("read", help="print the registry as JSON")
-
-    s_us = sub.add_parser("update-success", help="record Pass 3 success")
-    s_us.add_argument("--commit", required=True)
-    s_us.add_argument("--synthesis-log", required=True)
-    s_us.add_argument("--normalized-manifest", required=True)
-    s_us.add_argument("--expected-diff-base", required=True)
-    s_us.add_argument("--trigger-files", default="")
-    s_us.add_argument("--run-id", required=True)
-    s_us.add_argument("--trigger", default="push", choices=["push", "workflow_dispatch", "watchdog"])
-
-    s_rr = sub.add_parser(
-        "record-recovery",
-        help="record supplemental exact-artifact recovery without advancing cursor",
-    )
-    s_rr.add_argument("--review-commit", required=True)
-    s_rr.add_argument("--synthesis-log", required=True)
-    s_rr.add_argument("--normalized-manifest", required=True)
-    s_rr.add_argument("--run-id", required=True)
-    s_rr.add_argument("--trigger", default="workflow_dispatch",
-                      choices=["push", "workflow_dispatch", "watchdog"])
-
-    s_rb = sub.add_parser(
-        "rebind-review-commit",
-        help="repair review provenance after rebase without moving coverage cursor",
-    )
-    s_rb.add_argument("--old-commit", required=True)
-    s_rb.add_argument("--new-commit", required=True)
-
-    s_rf = sub.add_parser("record-failure", help="record a failed run")
-    s_rf.add_argument("--run-id", required=True)
-    s_rf.add_argument("--failed-phase", required=True,
-                      choices=["pass-1-propagate", "pass-1-push", "pass-2-synthesize",
-                               "pass-2-push", "pass-3-review", "pass-3-push", "trigger-detection"])
-    s_rf.add_argument("--error-summary", default="")
-    s_rf.add_argument("--trigger", default="push", choices=["push", "workflow_dispatch", "watchdog"])
-    s_rf.add_argument("--trigger-paths-count", type=int, default=0)
-
-    sub.add_parser("pending-paths", help="print wiki/*.md files since last successful sweep")
-
-    sub.add_parser("should-sweep", help="print 'run' or 'skip' based on registry + commit-prefix + skip-marker analysis")
-
-    s_init = sub.add_parser("init", help="backfill the registry from existing logs + git history")
-    s_init.add_argument("--force", action="store_true")
-
-    args = p.parse_args()
-
+    args = build_parser().parse_args()
     handlers = {
         "read": cmd_read,
+        "migrate": cmd_migrate,
+        "pending-propagation-paths": cmd_pending_propagation_paths,
+        "pending-synthesis-paths": cmd_pending_synthesis_paths,
+        "pending-paths": cmd_pending_synthesis_paths,
+        "update-propagation": cmd_update_propagation,
+        "record-comp-review": cmd_record_comp_review,
+        "comp-eligibility": cmd_comp_eligibility,
+        "record-failure": cmd_record_failure,
+        "resolve-failure": cmd_resolve_failure,
         "update-success": cmd_update_success,
         "record-recovery": cmd_record_recovery,
         "rebind-review-commit": cmd_rebind_review_commit,
-        "record-failure": cmd_record_failure,
-        "pending-paths": cmd_pending_paths,
         "should-sweep": cmd_should_sweep,
         "init": cmd_init,
     }

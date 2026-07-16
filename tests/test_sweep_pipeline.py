@@ -354,9 +354,13 @@ trigger_files: wiki/example.md
             manifest, manifest_path = normalize.normalize_file(raw, root / "normalized.json")
             registry_path = root / "sweep-state.json"
             registry_path.write_text(json.dumps({
-                "schema_version": 1,
-                "last_successful_sweep": {"commit": manifest["source"]["diff_base"]},
-                "recent_runs": [],
+                "schema_version": 2,
+                "last_successful_propagation": None,
+                "last_successful_synthesis": {
+                    "coverage_commit": manifest["source"]["diff_base"]
+                },
+                "comp_reviews": {},
+                "unresolved_failures": [],
             }))
             args = argparse.Namespace(
                 commit="cccccccccccccccccccccccccccccccccccccccc",
@@ -373,18 +377,18 @@ trigger_files: wiki/example.md
             ):
                 state.cmd_update_success(args)
                 saved = json.loads(registry_path.read_text())
-                self.assertEqual(manifest["sweep_id"], saved["last_successful_sweep"]["sweep_id"])
+                self.assertEqual(manifest["sweep_id"], saved["last_successful_synthesis"]["sweep_id"])
                 self.assertEqual(
                     manifest["canonical_items_sha256"],
-                    saved["last_successful_sweep"]["canonical_items_sha256"],
+                    saved["last_successful_synthesis"]["coverage_receipt_sha256"],
                 )
                 self.assertEqual(
                     manifest["source"]["corpus_commit_sha"],
-                    saved["last_successful_sweep"]["commit"],
+                    saved["last_successful_synthesis"]["coverage_commit"],
                 )
-                self.assertEqual(args.commit, saved["last_successful_sweep"]["review_commit"])
+                self.assertEqual(args.commit, saved["last_successful_synthesis"]["result_commit"])
 
-                saved["last_successful_sweep"]["commit"] = "dddddddddddddddddddddddddddddddddddddddd"
+                saved["last_successful_synthesis"]["coverage_commit"] = "dddddddddddddddddddddddddddddddddddddddd"
                 registry_path.write_text(json.dumps(saved))
                 with self.assertRaises(SystemExit):
                     state.cmd_update_success(args)
@@ -407,9 +411,14 @@ trigger_files: wiki/example.md
             registry_path = root / "sweep-state.json"
             cursor = "dddddddddddddddddddddddddddddddddddddddd"
             registry_path.write_text(json.dumps({
-                "schema_version": 1,
-                "last_successful_sweep": {"commit": cursor, "review_commit": cursor},
-                "recent_runs": [],
+                "schema_version": 2,
+                "last_successful_propagation": None,
+                "last_successful_synthesis": {
+                    "coverage_commit": cursor,
+                    "result_commit": cursor,
+                },
+                "comp_reviews": {},
+                "unresolved_failures": [],
             }))
             recovery = argparse.Namespace(
                 review_commit="eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
@@ -424,17 +433,60 @@ trigger_files: wiki/example.md
             ):
                 state.cmd_record_recovery(recovery)
                 saved = json.loads(registry_path.read_text())
-                self.assertEqual(cursor, saved["last_successful_sweep"]["commit"])
-                self.assertEqual("supplemental_recovery", saved["recent_runs"][-1]["outcome"])
+                self.assertEqual(cursor, saved["last_successful_synthesis"]["coverage_commit"])
 
                 rebind = argparse.Namespace(
-                    old_commit=recovery.review_commit,
+                    old_commit=cursor,
                     new_commit="ffffffffffffffffffffffffffffffffffffffff",
                 )
                 state.cmd_rebind_review_commit(rebind)
                 rebound = json.loads(registry_path.read_text())
-                self.assertEqual(cursor, rebound["last_successful_sweep"]["commit"])
-                self.assertEqual(rebind.new_commit, rebound["recent_runs"][-1]["review_commit"])
+                self.assertEqual(cursor, rebound["last_successful_synthesis"]["coverage_commit"])
+                self.assertEqual(rebind.new_commit, rebound["last_successful_synthesis"]["result_commit"])
+
+    def test_v1_migration_splits_cursors_without_carrying_success_history(self):
+        legacy = {
+            "schema_version": 1,
+            "last_successful_sweep": {
+                "commit": "a" * 40,
+                "review_commit": "b" * 40,
+                "timestamp": "2026-07-15T00:00:00Z",
+                "trigger_files": ["wiki/example.md"],
+                "normalized_item_count": 3,
+            },
+            "recent_runs": [
+                {"run_id": "ok", "outcome": "success"},
+                {"run_id": "bad", "outcome": "failure", "failed_phase": "pass-2-synthesize"},
+            ],
+        }
+        migrated = state.migrate_v1_to_v2(legacy)
+        self.assertEqual(2, migrated["schema_version"])
+        self.assertEqual("a" * 40, migrated["last_successful_propagation"]["coverage_commit"])
+        self.assertEqual("a" * 40, migrated["last_successful_synthesis"]["coverage_commit"])
+        self.assertEqual(["bad"], [f["id"] for f in migrated["unresolved_failures"]])
+        self.assertNotIn("recent_runs", migrated)
+
+    def test_comp_review_records_separate_lane_eligibility(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            registry_path = Path(tmp) / "sweep-state.json"
+            registry_path.write_text(json.dumps(state._empty_registry()))
+            args = argparse.Namespace(
+                comp_id="comp-047",
+                comp_dir="wiki/etc/experiments/comp-047-example",
+                artifact_manifest_sha256="1" * 64,
+                source_commit="a" * 40,
+                review_receipt="wiki/etc/experiments/comp-047-example/reviews/push-review.md",
+                comp_verdict="clean_with_limitations",
+                propagation_eligibility="eligible_with_warning",
+                synthesis_eligibility="blocked",
+                derived_paths="wiki/example.md",
+                cost_usd=0.12,
+            )
+            with mock.patch.object(state, "REGISTRY_PATH", registry_path):
+                state.cmd_record_comp_review(args)
+            saved = json.loads(registry_path.read_text())["comp_reviews"]["comp-047"]
+            self.assertEqual("eligible_with_warning", saved["propagation_eligibility"])
+            self.assertEqual("blocked", saved["synthesis_eligibility"])
 
 
 if __name__ == "__main__":

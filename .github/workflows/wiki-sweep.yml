@@ -194,7 +194,8 @@ jobs:
             # to the daemon's own "sweep-1-propagate" / "sweep-3-review"
             # commits, causing the workflow to pick a too-recent diff base
             # and exit "No wiki changes to sweep" while real work sat
-            # un-synthesized. The registry's `last_successful_sweep.commit`
+            # un-synthesized. The registry's
+            # `last_successful_synthesis.coverage_commit`
             # is the authoritative cursor (updated atomically in Pass 3
             # alongside the synthesis.md prepend — see scripts/sweep-state.py
             # cmd_update_success).
@@ -203,14 +204,14 @@ jobs:
               echo "Run \`python3 scripts/sweep-state.py init\` to backfill from git history."
               exit 1
             fi
-            DIFF_BASE=$(python3 -c "import json; d=json.load(open('logs/sweep-state.json')).get('last_successful_sweep') or {}; print(d.get('commit', ''))")
+            DIFF_BASE=$(python3 -c "import json; d=json.load(open('logs/sweep-state.json')).get('last_successful_synthesis') or {}; print(d.get('coverage_commit', ''))")
             if [[ -z "$DIFF_BASE" ]]; then
-              echo "ERROR: sweep-state.json has no last_successful_sweep recorded."
+              echo "ERROR: sweep-state.json has no last_successful_synthesis recorded."
               echo "Run \`python3 scripts/sweep-state.py init\` to backfill."
               exit 1
             fi
-            echo "Last successful sweep (from registry): $DIFF_BASE"
-            CHANGED=$(python3 scripts/sweep-state.py pending-paths || true)
+            echo "Last successful synthesis (from registry): $DIFF_BASE"
+            CHANGED=$(python3 scripts/sweep-state.py pending-synthesis-paths || true)
             TRIGGER_SHA="${{ github.sha }}"
             echo "resuming=false" >> "$GITHUB_OUTPUT"
           fi
