@@ -156,7 +156,12 @@ def cmd_pending_propagation_paths(_args: argparse.Namespace) -> None:
     base = _cursor(data, "propagation")
     if not base:
         sys.exit("sweep-state.py: no propagation cursor recorded")
-    paths = set(_git_changed_paths(base, ["wiki/*.md", "wiki/hypotheses/*.md", "wiki/etc/experiments/comp-*/**"]))
+    paths = {
+        path for path in _git_changed_paths(
+            base, ["wiki/*.md", "wiki/hypotheses/*.md", "wiki/etc/experiments/comp-*/**"]
+        )
+        if "/reviews/" not in path
+    }
     # A cursor may move past a blocked mixed push so unrelated work can finish.
     # Keep the blocked subset explicitly pending until a later clean receipt
     # releases it.
@@ -174,6 +179,8 @@ def cmd_pending_synthesis_paths(_args: argparse.Namespace) -> None:
     if not base:
         sys.exit("sweep-state.py: no synthesis cursor recorded")
     for path in _git_changed_paths(base, ["wiki/*.md", "wiki/hypotheses/*.md", "wiki/etc/experiments/comp-*/**"]):
+        if "/reviews/" in path:
+            continue
         print(path)
 
 

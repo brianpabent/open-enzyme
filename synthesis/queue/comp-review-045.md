@@ -3,11 +3,15 @@ type: comp-review
 comp: comp-045
 reviewed_snapshot: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
 action_required: true
+propagation_eligibility: eligible_with_warning
+synthesis_eligibility: eligible_with_warning
 ---
 
 # Current COMP actions: comp-045
 
-**Why blocked:** Action required. The artifact is materially useful as a randomized decision-design generator, but the artifact-summary-wiki contract is not clean:
+**Current lane status:** propagation = `eligible_with_warning` (corrective-only); synthesis = `eligible_with_warning`. The actions below remain open.
+
+**Why action remains open:** Action required. The artifact is materially useful as a randomized decision-design generator, but the artifact-summary-wiki contract is not clean:
 
 ## Required actions
 
@@ -17,4 +21,4 @@ action_required: true
 4. Resolve the intracellular isolated-module evidence-state ambiguity in `analyze.py`: either cite and document direct isolated empirical support for intracellular KatG-only and VHb-only arms, or downgrade those isolated intracellular module statuses to joint-module/isolated-unresolved while preserving direct support for the combined intracellular architecture. Verification criterion: `results.json`, `summary.md`, and provenance consistently distinguish combined-module precedent from isolated-module support.
 5. Regenerate outputs after any `analyze.py` or input vocabulary change and re-check `outputs/results.json` plus `outputs/summary.md`.
 
-The full review is available through Git history. A new exact-artifact review must pass before propagation or synthesis eligibility is restored.
+The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.

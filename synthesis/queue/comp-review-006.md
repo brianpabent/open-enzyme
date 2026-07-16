@@ -3,11 +3,15 @@ type: comp-review
 comp: comp-006
 reviewed_snapshot: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
 action_required: true
+propagation_eligibility: eligible_with_warning
+synthesis_eligibility: eligible_with_warning
 ---
 
 # Current COMP actions: comp-006
 
-**Why blocked:** Action required. The computational artifact is plausibly deterministic and internally reproducible as a sequence-rule + pLDDT-proxy risk scan, but the updated interpretation still contains material fidelity problems:
+**Current lane status:** propagation = `eligible_with_warning` (corrective-only); synthesis = `eligible_with_warning`. The actions below remain open.
+
+**Why action remains open:** Action required. The computational artifact is plausibly deterministic and internally reproducible as a sequence-rule + pLDDT-proxy risk scan, but the updated interpretation still contains material fidelity problems:
 
 ## Required actions
 
@@ -17,4 +21,4 @@ action_required: true
 5. Fix stale repo paths in the generated summary if the current repo convention is `wiki/etc/experiments/...`. Verification criterion: `outputs/summary.md` script/library paths match the actual reproduction path or explicitly explain the alias.
 6. Document primary-source verification status for the disulfide correction if it remains load-bearing. Verification criterion: include directly verified UniProt feature lines in provenance or state that UniProt was cited but not bundled.
 
-The full review is available through Git history. A new exact-artifact review must pass before propagation or synthesis eligibility is restored.
+The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.

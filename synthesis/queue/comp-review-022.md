@@ -3,11 +3,15 @@ type: comp-review
 comp: comp-022
 reviewed_snapshot: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
 action_required: true
+propagation_eligibility: eligible_with_warning
+synthesis_eligibility: eligible_with_warning
 ---
 
 # Current COMP actions: comp-022
 
-**Why blocked:** Action required.
+**Current lane status:** propagation = `eligible_with_warning` (corrective-only); synthesis = `eligible_with_warning`. The actions below remain open.
+
+**Why action remains open:** Action required.
 
 ## Required actions
 
@@ -19,4 +23,4 @@ action_required: true
 6. Optionally rename or annotate `v2/outputs/esmfold_pLDDT.csv` and related prose to avoid implying true ESMFold pLDDT. Verification criterion: summaries consistently say “single-pass ESM2 log-probability proxy, rescaled for display.”
 7. Complete an exhaustive line-by-line audit of `full_ranking_top1000.csv` and `unique_cassette_shortlist.csv` if the review contract requires every generated row to be independently inspected; this review could not complete that due tool-result budget limits.
 
-The full review is available through Git history. A new exact-artifact review must pass before propagation or synthesis eligibility is restored.
+The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.

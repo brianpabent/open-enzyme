@@ -468,7 +468,7 @@ def exact_source_packet(candidate: dict[str, Any], atom_by_id: dict[str, dict[st
 
 def review_prompt(packet: dict[str, Any]) -> str:
     return f"""Mission: {MISSION}
-You are the independent adversarial reviewer. Judge this candidate only from the rehydrated raw sources, exact computational support, and contrary evidence below. Verify evidence tiers; reject invented project claims and restatements; test compartment, dose, timing, topology, host, assay, population, and safety constraints. A negative result kills only the supported scope. If genuinely novel and actionable, give the cheapest discriminating next step.
+You are the independent adversarial reviewer. Judge this candidate only from the rehydrated raw sources, exact computational support, and contrary evidence below. Verify evidence tiers; reject invented project claims and restatements; test compartment, dose, timing, topology, host, assay, population, and safety constraints. A negative result kills only the supported scope. `eligible_with_warning` is not clean: every COMP receipt's `lane_adjudication.synthesis_allowed_scope` and `forbidden_inferences` is binding. Reject any candidate that exceeds that scope, and carry the limitations into the promoted text. If genuinely novel and actionable, give the cheapest discriminating next step.
 Return JSON {{"status": "supported|partial|contradicted|restatement|speculative-but-testable|rejected", "promote": true|false, "type": "connection|contradiction|experiment|open-question|priority-action|riskiest-assumption|most-curious-thread", "headline": "...", "body": "grounded Markdown with source paths and evidence levels", "review": "concise adversarial verdict", "cheapest_next_step": "... or none", "comp_limitations_carried": ["..."]}}.
 PACKET={json.dumps(packet, ensure_ascii=False)}
 """
@@ -555,7 +555,7 @@ def validate_coverage_receipt(receipt: dict[str, Any]) -> None:
 
 
 def validate_trigger_comp_eligibility(trigger_paths: list[str], state: dict[str, Any]) -> None:
-    """Fail before model spend when changed surfaces cite unavailable computation."""
+    """Verify receipts up front; block only candidates, never the whole corpus."""
     for raw_path in trigger_paths:
         path = ROOT / raw_path
         if not path.is_file():
@@ -565,8 +565,6 @@ def validate_trigger_comp_eligibility(trigger_paths: list[str], state: dict[str,
             review = state.get("comp_reviews", {}).get(comp_id)
             if not review:
                 raise RuntimeError(f"Trigger surface {raw_path} cites {comp_id} without current push review")
-            if review.get("synthesis_eligibility") == "blocked":
-                raise RuntimeError(f"Trigger surface {raw_path} cites synthesis-blocked {comp_id}")
             manifest_path = ROOT / review["comp_dir"] / "reviews" / "push-review.manifest.json"
             if not manifest_path.exists():
                 raise RuntimeError(f"Push-review manifest missing for {comp_id}")

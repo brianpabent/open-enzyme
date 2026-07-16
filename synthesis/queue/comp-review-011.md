@@ -3,11 +3,15 @@ type: comp-review
 comp: comp-011
 reviewed_snapshot: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
 action_required: true
+propagation_eligibility: eligible_with_warning
+synthesis_eligibility: eligible_with_warning
 ---
 
 # Current COMP actions: comp-011
 
-**Why blocked:** **Action required.** The new ALLN-346 mutant implementation is directionally plausible and the key I132R result is internally consistent, but the artifact-summary-wiki contract is not clean:
+**Current lane status:** propagation = `eligible_with_warning` (corrective-only); synthesis = `eligible_with_warning`. The actions below remain open.
+
+**Why action remains open:** **Action required.** The new ALLN-346 mutant implementation is directionally plausible and the key I132R result is internally consistent, but the artifact-summary-wiki contract is not clean:
 
 ## Required actions
 
@@ -31,4 +35,4 @@ action_required: true
 7. **Preserve the primary-source verification boundary.**  
    Verification criterion: summaries continue to say that US10815461B2 discloses the mutation set but exact ALLN-346 parent sequence is not available; avoid wording that implies the exact clinical ALLN-346 full sequence was primary-verified.
 
-The full review is available through Git history. A new exact-artifact review must pass before propagation or synthesis eligibility is restored.
+The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.

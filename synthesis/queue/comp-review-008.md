@@ -3,9 +3,13 @@ type: comp-review
 comp: comp-008
 reviewed_snapshot: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
 action_required: true
+propagation_eligibility: eligible_with_warning
+synthesis_eligibility: eligible_with_warning
 ---
 
 # Current COMP actions: comp-008
+
+**Current lane status:** propagation = `eligible_with_warning` (corrective-only); synthesis = `eligible_with_warning`. The actions below remain open.
 
 ## Required actions
 
@@ -15,4 +19,4 @@ action_required: true
 5. Document in README or provenance that `payloads.json` is a provenance/manual-scoring support file and is not executable input to the scoring model; alternatively refactor `analyze.py` to derive displayed load-bearing metadata from the JSON.
 6. Fix minor reproducibility/link hygiene: README file tree path and generated `outputs/summary.md` relative wiki links.
 
-The full review is available through Git history. A new exact-artifact review must pass before propagation or synthesis eligibility is restored.
+The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.

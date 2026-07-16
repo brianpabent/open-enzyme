@@ -7,8 +7,8 @@
   "reviewer_model": "openai/gpt-5.5",
   "timestamp": "2026-07-16T20:55:17Z",
   "comp_verdict": "review_completed_open_actions",
-  "propagation_eligibility": "blocked",
-  "synthesis_eligibility": "blocked",
+  "propagation_eligibility": "eligible_with_warning",
+  "synthesis_eligibility": "eligible_with_warning",
   "action_required": true,
   "derived_paths": [
     "wiki/chaperone-orthogonal-stacking.md",
@@ -30,5 +30,17 @@
     "wiki/computational-experiments.md",
     "wiki/engineered-lbp-chassis.md"
   ],
-  "note": "Carries forward a completed independent review and its remediation state. The exact current manifest binding is a migration receipt, not a new review."
+  "note": "Carries forward the completed independent review and its remediation state. Exact current manifest binding is a migration receipt; lane eligibility was separately adjudicated without claiming a new artifact review.",
+  "lane_adjudication": {
+    "date": "2026-07-16T21:15:41Z",
+    "method": "context-isolated lane adjudication of the completed July 15 review against current artifacts",
+    "new_artifact_review_performed": false,
+    "queue_action_remains_open": true,
+    "propagation_allowed_scope": "Corrective-only: repair or retract the review-identified stale claims; do not spread positive derived claims until the open actions close.",
+    "synthesis_allowed_scope": "Use only the proxy folding-feasibility ranking with DAF-on-EcN explicitly provisional and DsbA/DsbC-capacity-gated.",
+    "forbidden_inferences": [
+      "EcN is superior to or dominates koji",
+      "actual folding rate, titer, functional activity, or efficacy"
+    ]
+  }
 }

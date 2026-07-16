@@ -3,11 +3,15 @@ type: comp-review
 comp: comp-043
 reviewed_snapshot: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
 action_required: true
+propagation_eligibility: eligible_with_warning
+synthesis_eligibility: eligible_with_warning
 ---
 
 # Current COMP actions: comp-043
 
-**Why blocked:** **Action required.** The computational artifact is internally coherent for a Phase 0 mechanistic-prior analysis, and the code/output contract is plausible by inspection. However, propagation is not clean: `wiki/computational-experiments.md` still cites `chaperone-orthogonal-stacking.md §8 item 6` for the DsbA/DsbC capacity gap, while the experiment, interpretive page, provenance, and output summary now cite **§8 item 8**. Several downstream wet-lab/hypothesis surfaces still describe EcN/LBP as a DAF fallback without carrying comp-043’s new “EcN DAF is only provisional/capacity-gated” caveat.
+**Current lane status:** propagation = `eligible_with_warning` (corrective-only); synthesis = `eligible_with_warning`. The actions below remain open.
+
+**Why action remains open:** **Action required.** The computational artifact is internally coherent for a Phase 0 mechanistic-prior analysis, and the code/output contract is plausible by inspection. However, propagation is not clean: `wiki/computational-experiments.md` still cites `chaperone-orthogonal-stacking.md §8 item 6` for the DsbA/DsbC capacity gap, while the experiment, interpretive page, provenance, and output summary now cite **§8 item 8**. Several downstream wet-lab/hypothesis surfaces still describe EcN/LBP as a DAF fallback without carrying comp-043’s new “EcN DAF is only provisional/capacity-gated” caveat.
 
 ## Required actions
 
@@ -17,4 +21,4 @@ action_required: true
 4. Review `wiki/complement-c5a-gout.md` for older DAF-to-LBP fallback language and add the same comp-043 caveat where needed. Verification criterion: CP0 architecture text says the two-chassis architecture stands, but EcN does not dominate koji and DAF-on-EcN is capacity-gated.
 5. If primary-source verification is intended to be auditable from the artifact, commit or quote the relevant UniProt `FT DISULFID` and `FT CARBOHYD` lines used for the disulfide/glycan counts, or soften provenance wording from “verified” to “reported verified by author.” Verification criterion: an independent reviewer can reproduce the primary annotation check from committed text without external fetch.
 
-The full review is available through Git history. A new exact-artifact review must pass before propagation or synthesis eligibility is restored.
+The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.

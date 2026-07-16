@@ -45,6 +45,9 @@ REVIEWED_SNAPSHOT: <push-review.manifest.json SHA-256>
 PROPAGATION_ELIGIBILITY: eligible|eligible_with_warning|blocked
 SYNTHESIS_ELIGIBILITY: eligible|eligible_with_warning|blocked
 ACTION_REQUIRED: yes|no
+PROPAGATION_ALLOWED_SCOPE: concise scope; say none when blocked
+SYNTHESIS_ALLOWED_SCOPE: concise scope; say none when blocked
+FORBIDDEN_INFERENCES: semicolon-separated list; say none only for a clean unrestricted result
 ```
 
 In authoring-time mode, retain the existing two-line contract:
@@ -55,6 +58,8 @@ REVIEWED_SNAPSHOT: <post-run.manifest.json SHA-256>
 ```
 
 For each eligibility field use `eligible`, `eligible_with_warning`, or `blocked`. A documentation limitation may be eligible with warning. An uninspected file, manifest mismatch, incomplete modern authoring gate, material summary drift, invalid model, unsupported quantitative verdict, or missing representation of a binary result is blocked. Missing review is not clean review. Synthesis may be blocked even when a narrow propagation correction is eligible.
+
+`ACTION_REQUIRED: yes` does not itself imply either lane is blocked. Use `eligible_with_warning` when a bounded scientific result remains usable if the receipt states its allowed scope and forbidden inferences. For propagation, use `eligible_with_warning` for corrective-only propagation and say explicitly that derived claims must not spread. Reserve `blocked` for a lane with no safe automated operation.
 
 Use **yes** if any correction, missing propagation, code/output reconciliation, rerun, primary-source verification, unreviewed generated file, unsupported proposed wiki update, or unresolved load-bearing design decision must be actioned. Use **no** only if the complete artifact-summary-wiki contract is materially clean and all observations are optional future extensions.
 

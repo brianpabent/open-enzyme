@@ -382,7 +382,8 @@ def parse_final(text: str) -> dict[str, str]:
             fields[key.strip()] = value.strip()
     required = {
         "COMP_VERDICT", "PROPAGATION_ELIGIBILITY", "SYNTHESIS_ELIGIBILITY",
-        "ACTION_REQUIRED", "REVIEWED_SNAPSHOT",
+        "ACTION_REQUIRED", "REVIEWED_SNAPSHOT", "PROPAGATION_ALLOWED_SCOPE",
+        "SYNTHESIS_ALLOWED_SCOPE", "FORBIDDEN_INFERENCES",
     }
     missing = required - fields.keys()
     if missing:
@@ -408,12 +409,12 @@ def queue_action_excerpt(final_text: str) -> str:
     verdict = sections.get("bottom-line verdict", "")
     actions = sections.get("required actions", "")
     if not actions:
-        return "The review blocked eligibility. Read the current receipt and resolve its blocking findings."
+        return "The review left an action open. Read the current receipt and resolve the finding."
 
     context = re.split(r"\n\s*\n", verdict, maxsplit=1)[0].strip() if verdict else ""
     parts = []
     if context:
-        parts.append(f"**Why blocked:** {context}")
+        parts.append(f"**Why action remains open:** {context}")
     parts.append("## Required actions\n\n" + actions)
     return "\n\n".join(parts)
 
@@ -459,6 +460,18 @@ def write_receipts(
         "output_tokens": int(usage["output_tokens"]),
         "tool_calls": int(usage["tool_calls"]),
         "review_sha256": sha256_bytes(final_text.encode()),
+        "lane_adjudication": {
+            "date": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+            "method": "exact push review",
+            "new_artifact_review_performed": True,
+            "queue_action_remains_open": fields["ACTION_REQUIRED"] == "yes",
+            "propagation_allowed_scope": fields["PROPAGATION_ALLOWED_SCOPE"],
+            "synthesis_allowed_scope": fields["SYNTHESIS_ALLOWED_SCOPE"],
+            "forbidden_inferences": [
+                item.strip() for item in fields["FORBIDDEN_INFERENCES"].split(";")
+                if item.strip() and item.strip().lower() != "none"
+            ],
+        },
     }
     receipt_json.write_text(json.dumps(document, indent=2) + "\n")
     receipt_md.write_text(final_text.rstrip() + "\n")

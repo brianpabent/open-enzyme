@@ -3,11 +3,15 @@ type: comp-review
 comp: comp-042
 reviewed_snapshot: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
 action_required: true
+propagation_eligibility: eligible_with_warning
+synthesis_eligibility: eligible_with_warning
 ---
 
 # Current COMP actions: comp-042
 
-**Why blocked:** **Action required.** The central transport arithmetic is internally consistent and the JSON strictness fix is reasonable, but the artifact still needs reconciliation on three material surfaces: README omission of the new pharmacodynamic-timing caveat, incomplete/central-only A2 selectivity sensitivity over route concentration/Km despite those ranges being declared, and independent verification of the full §1.32 validation-protocol propagation because the supplied validation page was truncated before that section.
+**Current lane status:** propagation = `eligible_with_warning` (corrective-only); synthesis = `eligible_with_warning`. The actions below remain open.
+
+**Why action remains open:** **Action required.** The central transport arithmetic is internally consistent and the JSON strictness fix is reasonable, but the artifact still needs reconciliation on three material surfaces: README omission of the new pharmacodynamic-timing caveat, incomplete/central-only A2 selectivity sensitivity over route concentration/Km despite those ranges being declared, and independent verification of the full §1.32 validation-protocol propagation because the supplied validation page was truncated before that section.
 
 ## Required actions
 
@@ -16,4 +20,4 @@ action_required: true
 3. **Document JSON `null` semantics.** Add a machine-readable note in relevant JSON outputs or README that `selectivity_ratio: null` in absent-PepT1 rows encodes mathematical infinity after strict-JSON conversion, not missing data. Verification criterion: strict JSON remains valid and downstream readers can distinguish infinite selectivity from unknown selectivity.
 4. **Verify `validation-experiments.md` §1.32.** Confirm the full section reflects the comp-042 reframe: primary transporter-orphan membrane-impermeant tracer, KPV only as PepT1-confounded comparator, PepT1 inhibition/knockdown arm, and no claim that KPV efficacy via pores is established. Verification criterion: independent reviewer can inspect the full §1.32 text and mark it consistent.
 
-The full review is available through Git history. A new exact-artifact review must pass before propagation or synthesis eligibility is restored.
+The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.

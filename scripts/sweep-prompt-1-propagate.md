@@ -23,6 +23,6 @@ Read `CLAUDE.md`, then the exact trigger paths appended to this prompt. This is 
 - perform cross-corpus novelty search or create synthesis findings;
 - edit `reference/`, HTML, workflow/code/instruction files, or `synthesis/queue/`.
 
-If a changed COMP lacks clean propagation eligibility, do not propagate its derived claims. The coordinator handles cursor state and commits. Make no commit yourself.
+Before propagating a COMP-backed trigger, read its record in `logs/sweep-state.json` and its current `reviews/push-review.json` receipt. `eligible_with_warning` is not clean: obey the receipt's `lane_adjudication.propagation_allowed_scope` and `forbidden_inferences`. When that scope says corrective-only, repair or retract stale claims but do not spread any derived claim. A `blocked` COMP is excluded by the coordinator. The coordinator handles cursor state and commits. Make no commit yourself.
 
 Exit cleanly when every direct dependent was considered, including a legitimate no-op.

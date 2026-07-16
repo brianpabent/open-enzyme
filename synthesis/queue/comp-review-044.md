@@ -3,11 +3,15 @@ type: comp-review
 comp: comp-044
 reviewed_snapshot: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
 action_required: true
+propagation_eligibility: eligible_with_warning
+synthesis_eligibility: eligible_with_warning
 ---
 
 # Current COMP actions: comp-044
 
-**Why blocked:** Action required. The comp-044 arithmetic and deterministic output are materially reproducible by inspection, and the trigger edit correctly softens the summary from “regime reversed” to “unconditional saturated/flat-dose classification not robust.” However, corpus propagation is not fully clean: `gut-lumen-sink.md` still contains broad dose-feasibility / “low local uricase suffices” language that is stronger than comp-044 supports, even though the page has a top-level reset notice. Several omitted uricase/koji/yeast pages also need targeted audit for stale 20–50 mg/day, yield-solved, or flat-dose claims.
+**Current lane status:** propagation = `eligible_with_warning` (corrective-only); synthesis = `eligible_with_warning`. The actions below remain open.
+
+**Why action remains open:** Action required. The comp-044 arithmetic and deterministic output are materially reproducible by inspection, and the trigger edit correctly softens the summary from “regime reversed” to “unconditional saturated/flat-dose classification not robust.” However, corpus propagation is not fully clean: `gut-lumen-sink.md` still contains broad dose-feasibility / “low local uricase suffices” language that is stronger than comp-044 supports, even though the page has a top-level reset notice. Several omitted uricase/koji/yeast pages also need targeted audit for stale 20–50 mg/day, yield-solved, or flat-dose claims.
 
 ## Required actions
 
@@ -17,4 +21,4 @@ action_required: true
 4. Harden `inputs/model_parameters.json` or `analyze.py` against duplicate-prior drift. Verification criterion: either the code derives named scenarios/grid from `measured_or_regulatory_priors` / `scenario_only_values_not_measured_human_baselines`, or it asserts that duplicated values match.
 5. If comp-044 is later used for quantitative planning, verify primary sources for the 8.3 U/mg specific activity, Km range, active-window prior, and 233 mg/day intestinal flux denominator. Verification criterion: claim-level provenance cites directly inspected primary sources or clearly remains inherited/unverified.
 
-The full review is available through Git history. A new exact-artifact review must pass before propagation or synthesis eligibility is restored.
+The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.

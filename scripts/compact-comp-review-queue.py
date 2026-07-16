@@ -40,7 +40,7 @@ def compact(path: Path, extractor) -> bool:
         "---\n\n"
         f"# Current COMP actions: {comp}\n\n"
         f"{excerpt.rstrip()}\n\n"
-        "The full review is available through Git history. A new exact-artifact review must pass before propagation or synthesis eligibility is restored.\n"
+        "The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.\n"
     )
     if replacement == text:
         return False

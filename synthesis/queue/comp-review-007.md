@@ -3,11 +3,15 @@ type: comp-review
 comp: comp-007
 reviewed_snapshot: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
 action_required: true
+propagation_eligibility: eligible_with_warning
+synthesis_eligibility: eligible_with_warning
 ---
 
 # Current COMP actions: comp-007
 
-**Why blocked:** Action required. The revised Basseville/butyrate attribution and censored HDAC6-selectivity wording are materially improved, but the artifact-summary-wiki contract is not clean: generated `outputs/summary.md` contains broken relative links; README/summary formula text misstates the implemented selectivity denominator; and the ranking model omits a load-bearing exposure-vs-IC50/operating-regime axis despite storing gut concentration estimates. The top butyrate conclusion is plausible, but the composite scores and “top 3 advance” decision are not fully supported as a physiological prioritization.
+**Current lane status:** propagation = `eligible_with_warning` (corrective-only); synthesis = `eligible_with_warning`. The actions below remain open.
+
+**Why action remains open:** Action required. The revised Basseville/butyrate attribution and censored HDAC6-selectivity wording are materially improved, but the artifact-summary-wiki contract is not clean: generated `outputs/summary.md` contains broken relative links; README/summary formula text misstates the implemented selectivity denominator; and the ranking model omits a load-bearing exposure-vs-IC50/operating-regime axis despite storing gut concentration estimates. The top butyrate conclusion is plausible, but the composite scores and “top 3 advance” decision are not fully supported as a physiological prioritization.
 
 ## Required actions
 
@@ -19,4 +23,4 @@ action_required: true
 6. Replace or source the strong HDAC6-safety framing. If no primary support is added, soften to “HDAC6 is one off-target concern; broader class-I/systemic HDAC safety is unmodeled.”
 7. Propagate any revised ranking or caveat to `wiki/computational-experiments.md`, `wiki/validation-experiments.md` §1.22, and the current interpretive page.
 
-The full review is available through Git history. A new exact-artifact review must pass before propagation or synthesis eligibility is restored.
+The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.

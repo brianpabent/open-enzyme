@@ -217,8 +217,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/c1-inh-protease-stability-ecn-computational.md",
         "wiki/computational-experiments.md",
@@ -256,7 +256,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-002": {
       "comp_dir": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability",
@@ -358,8 +359,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/c1-inh-protease-stability-ecn-computational.md",
         "wiki/chassis-pending-interventions.md",
@@ -395,7 +396,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-007": {
       "comp_dir": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen",
@@ -403,8 +405,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/chassis-pending-interventions.md",
         "wiki/complement-c5a-gout.md",
@@ -433,7 +435,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-008": {
       "comp_dir": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression",
@@ -441,8 +444,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/abcg2-modulators.md",
         "wiki/computational-experiments.md",
@@ -457,7 +460,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-009": {
       "comp_dir": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection",
@@ -465,8 +469,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/chassis-pending-interventions.md",
         "wiki/computational-experiments.md",
@@ -480,7 +484,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-010": {
       "comp_dir": "wiki/etc/experiments/comp-010-cassette-compatibility",
@@ -488,8 +493,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-010-cassette-compatibility/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/aspergillus-oryzae.md",
         "wiki/cassette-compatibility-computational.md",
@@ -514,7 +519,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-011": {
       "comp_dir": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility",
@@ -522,8 +528,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/aspergillus-oryzae.md",
         "wiki/c-utilis-uricase-cassette-compatibility-computational.md",
@@ -546,7 +552,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-012": {
       "comp_dir": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated",
@@ -688,8 +695,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/androgen-natural-modulation.md",
         "wiki/computational-experiments.md",
@@ -704,7 +711,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-016": {
       "comp_dir": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining",
@@ -813,8 +821,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/abcg2-modulators.md",
         "wiki/chassis-pending-interventions.md",
@@ -852,7 +860,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-020": {
       "comp_dir": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun",
@@ -915,8 +924,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/chaperone-orthogonal-stacking.md",
         "wiki/computational-experiments.md",
@@ -936,7 +945,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-023": {
       "comp_dir": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden",
@@ -1071,7 +1081,7 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
       "synthesis_eligibility": "blocked",
       "derived_paths": [
         "wiki/chassis-pending-interventions.md",
@@ -1088,7 +1098,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-032": {
       "comp_dir": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen",
@@ -1257,8 +1268,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/computational-experiments.md",
         "wiki/etc/GRAPH.md",
@@ -1272,7 +1283,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-042": {
       "comp_dir": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx",
@@ -1280,8 +1292,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/computational-experiments.md",
         "wiki/gsdmd-pore-delivery-paradox.md",
@@ -1294,7 +1306,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-043": {
       "comp_dir": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility",
@@ -1302,8 +1315,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/chaperone-orthogonal-stacking.md",
         "wiki/computational-experiments.md",
@@ -1314,7 +1327,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-044": {
       "comp_dir": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime",
@@ -1322,8 +1336,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/abcg2-modulators.md",
         "wiki/computational-experiments.md",
@@ -1357,7 +1371,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-045": {
       "comp_dir": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design",
@@ -1365,8 +1380,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/computational-experiments.md",
         "wiki/delivery-route-matrix.md",
@@ -1385,7 +1400,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-046": {
       "comp_dir": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance",
@@ -1393,8 +1409,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/chassis-pending-interventions.md",
         "wiki/computational-experiments.md",
@@ -1411,7 +1427,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     },
     "comp-047": {
       "comp_dir": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen",
@@ -1419,8 +1436,8 @@
       "source_commit": "97ca88eee7e0023c51c5ed244d69946b96abceb1",
       "review_receipt": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/reviews/push-review.md",
       "comp_verdict": "review_completed_open_actions",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/abcg2-modulators.md",
         "wiki/abcg2-q141k-chaperone-rescreen-computational.md",
@@ -1436,7 +1453,8 @@
       "cost_usd": 0.0,
       "binding_mode": "completed_review_migration",
       "independent_review_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+      "independent_review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1",
+      "lane_adjudicated_at": "2026-07-16T21:15:41Z"
     }
   },
   "unresolved_failures": []

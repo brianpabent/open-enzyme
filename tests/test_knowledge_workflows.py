@@ -34,6 +34,9 @@ REVIEWED_SNAPSHOT: abc
 PROPAGATION_ELIGIBILITY: eligible_with_warning
 SYNTHESIS_ELIGIBILITY: blocked
 ACTION_REQUIRED: yes
+PROPAGATION_ALLOWED_SCOPE: Correct stale claims only.
+SYNTHESIS_ALLOWED_SCOPE: Use the bounded negative result.
+FORBIDDEN_INFERENCES: efficacy; clinical readiness
 
 # Independent comp review — comp-047
 """
@@ -58,6 +61,7 @@ More review detail that belongs in the receipt.
 Long review-history material.
 """
         excerpt = comp_review.queue_action_excerpt(review)
+        self.assertIn("Why action remains open", excerpt)
         self.assertIn("The artifact has one blocking mismatch.", excerpt)
         self.assertIn("1. Fix the mismatch.", excerpt)
         self.assertNotIn("More review detail", excerpt)
@@ -113,6 +117,14 @@ class WorkflowTriggerTests(unittest.TestCase):
         self.assertIn("needs: [gate, comp-review]", propagate)
         self.assertIn("uses: ./.github/workflows/wiki-propagate.yml", propagate)
 
+    def test_warning_lanes_carry_binding_scope(self):
+        propagation = (ROOT / "scripts/sweep-prompt-1-propagate.md").read_text()
+        synthesis = (ROOT / "scripts/distributed-synthesis.py").read_text()
+        self.assertIn("propagation_allowed_scope", propagation)
+        self.assertIn("forbidden_inferences", propagation)
+        self.assertIn("synthesis_allowed_scope", synthesis)
+        self.assertIn("forbidden_inferences", synthesis)
+
     def test_comp_workflow_replaces_receipts_not_immutable_logs(self):
         text = (ROOT / ".github/workflows/comp-review.yml").read_text()
         self.assertIn("push-review.manifest", (ROOT / "scripts/comp-review.py").read_text())
@@ -130,6 +142,18 @@ class WorkflowTriggerTests(unittest.TestCase):
             22,
             sum(r["comp_verdict"] == "review_completed_actioned" for r in records.values()),
         )
+        open_records = [
+            r for r in records.values()
+            if r["comp_verdict"] == "review_completed_open_actions"
+        ]
+        self.assertEqual(
+            {"eligible_with_warning"},
+            {r["propagation_eligibility"] for r in open_records},
+        )
+        self.assertEqual(
+            1,
+            sum(r["synthesis_eligibility"] == "blocked" for r in open_records),
+        )
         for record in records.values():
             receipt = json.loads(
                 (ROOT / record["comp_dir"] / "reviews" / "push-review.json").read_text()
@@ -140,6 +164,8 @@ class WorkflowTriggerTests(unittest.TestCase):
             self.assertEqual(40, len(provenance["review_log_commit"]))
             self.assertEqual("completed_review_migration", receipt["binding_mode"])
             self.assertNotEqual("legacy_review_pending", receipt["comp_verdict"])
+            if receipt["action_required"]:
+                self.assertIn("lane_adjudication", receipt)
 
 
 class DistributedSynthesisContractTests(unittest.TestCase):
@@ -159,6 +185,20 @@ class DistributedSynthesisContractTests(unittest.TestCase):
         kept, removed = distributed.deduplicate_promoted(items)
         self.assertEqual(["a", "c"], [item["candidate_id"] for item in kept])
         self.assertEqual(["b"], removed)
+
+    def test_blocked_comp_does_not_stop_unrelated_full_corpus_synthesis(self):
+        state = json.loads((ROOT / "logs/sweep-state.json").read_text())
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".md", dir=ROOT / "wiki", delete=False
+        ) as handle:
+            handle.write("comp-031 is invalidated.\n")
+            trigger = Path(handle.name)
+        try:
+            distributed.validate_trigger_comp_eligibility(
+                [trigger.relative_to(ROOT).as_posix()], state
+            )
+        finally:
+            trigger.unlink(missing_ok=True)
 
     def test_section_inventory_and_sharding_preserve_every_section(self):
         with tempfile.TemporaryDirectory(dir=ROOT) as tmp:

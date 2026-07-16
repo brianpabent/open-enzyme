@@ -3,11 +3,15 @@ type: comp-review
 comp: comp-031
 reviewed_snapshot: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
 action_required: true
+propagation_eligibility: eligible_with_warning
+synthesis_eligibility: blocked
 ---
 
 # Current COMP actions: comp-031
 
-**Why blocked:** Action required. The invalidation direction is correct, and the main corpus pages are mostly reconciled, but the artifact contract is not clean:
+**Current lane status:** propagation = `eligible_with_warning` (corrective-only); synthesis = `blocked`. The actions below remain open.
+
+**Why action remains open:** Action required. The invalidation direction is correct, and the main corpus pages are mostly reconciled, but the artifact contract is not clean:
 
 ## Required actions
 
@@ -16,4 +20,4 @@ action_required: true
 3. Clarify the comp artifact README/summary status. The current banner is good but should be paired with a short note before the stale YELLOW text that all following original findings are historical invalidated output, not current interpretation. Verification criterion: a reader cannot reasonably cite the old ΔSUA or engineering handoff without passing an invalidation warning.
 4. If comp-031 is ever reused, rerun from a new model rather than patching the old one. Required model gates: explicit substrate/Km/residence-time UOX calculation, isotope-resolved CBT2.0 carbon fate, matched background butyrate comparators, compartment/staging terms, oxygen/H₂O₂/safety coproducts, and no serum ΔSUA mapping without a validated compartmental flux model.
 
-The full review is available through Git history. A new exact-artifact review must pass before propagation or synthesis eligibility is restored.
+The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.

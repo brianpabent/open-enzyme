@@ -3,11 +3,15 @@ type: comp-review
 comp: comp-015
 reviewed_snapshot: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
 action_required: true
+propagation_eligibility: eligible_with_warning
+synthesis_eligibility: eligible_with_warning
 ---
 
 # Current COMP actions: comp-015
 
-**Why blocked:** **Action required.** The broad qualitative reframe is plausible but not materially clean: the artifact conflates *eurycomanone*, *eurycomanol*, and whole *Eurycoma longifolia*/Physta extract; the code/output reproducibility contract appears broken for at least one generated link; several summary/wiki surfaces overstate or inconsistently count evidence cells; the interpretive stub still states a four-target question despite v2 being five-target; and at least one affected hypothesis page still repeats the corrected-away “eurycomanone via XO” mechanism.
+**Current lane status:** propagation = `eligible_with_warning` (corrective-only); synthesis = `eligible_with_warning`. The actions below remain open.
+
+**Why action remains open:** **Action required.** The broad qualitative reframe is plausible but not materially clean: the artifact conflates *eurycomanone*, *eurycomanol*, and whole *Eurycoma longifolia*/Physta extract; the code/output reproducibility contract appears broken for at least one generated link; several summary/wiki surfaces overstate or inconsistently count evidence cells; the interpretive stub still states a four-target question despite v2 being five-target; and at least one affected hypothesis page still repeats the corrected-away “eurycomanone via XO” mechanism.
 
 ## Required actions
 
@@ -20,4 +24,4 @@ action_required: true
 8. **Soften genotype-specific claims.** In `personal-genome-protocol.md`, rewrite Q141K preference language as a hypothesis requiring genotype-stratified testing, not a direct rescue claim.
 9. **Confirm validation propagation.** Ensure the cordyceps vs tongkat/Physta head-to-head trial is either registered in `validation-experiments.md` with lead-generation wording and endpoints, or explicitly deferred.
 
-The full review is available through Git history. A new exact-artifact review must pass before propagation or synthesis eligibility is restored.
+The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.

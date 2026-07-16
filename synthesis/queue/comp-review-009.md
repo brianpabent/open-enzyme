@@ -3,11 +3,15 @@ type: comp-review
 comp: comp-009
 reviewed_snapshot: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
 action_required: true
+propagation_eligibility: eligible_with_warning
+synthesis_eligibility: eligible_with_warning
 ---
 
 # Current COMP actions: comp-009
 
-**Why blocked:** Action required. The rerun computation appears to have corrected the original fatal substitution from artificial back-translated CDS to real NM_144585.4 mRNA, but the artifact and corpus still contain stale original-run claims, old guide sequences, old funnel counts, and over-strong “viable/accessible” wording. The computation supports only “filter-passing real-transcript candidate sites exist”; it does **not** establish accessible, off-target-cleared, cross-species-reusable, or wet-lab-ready siRNA guides.
+**Current lane status:** propagation = `eligible_with_warning` (corrective-only); synthesis = `eligible_with_warning`. The actions below remain open.
+
+**Why action remains open:** Action required. The rerun computation appears to have corrected the original fatal substitution from artificial back-translated CDS to real NM_144585.4 mRNA, but the artifact and corpus still contain stale original-run claims, old guide sequences, old funnel counts, and over-strong “viable/accessible” wording. The computation supports only “filter-passing real-transcript candidate sites exist”; it does **not** establish accessible, off-target-cleared, cross-species-reusable, or wet-lab-ready siRNA guides.
 
 ## Required actions
 
@@ -20,4 +24,4 @@ action_required: true
 7. Fix region annotation for boundary-spanning windows, especially mRNA position 326, or explicitly exclude/report UTR/CDS-overlap targets.
 8. Before any wet-lab handoff, run transcriptome seed/off-target clearance against relevant human transcript/3'UTR databases and, if cross-species reuse matters, repeat against real ortholog mRNAs.
 
-The full review is available through Git history. A new exact-artifact review must pass before propagation or synthesis eligibility is restored.
+The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.

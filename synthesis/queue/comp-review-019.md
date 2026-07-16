@@ -3,11 +3,15 @@ type: comp-review
 comp: comp-019
 reviewed_snapshot: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
 action_required: true
+propagation_eligibility: eligible_with_warning
+synthesis_eligibility: eligible_with_warning
 ---
 
 # Current COMP actions: comp-019
 
-**Why blocked:** Action required. The current corpus-level interpretation correctly supersedes comp-019 with comp-044 and retires the ΔSUA, genotype-ranking, flat-dose, and yield-deprioritization conclusions. However, the invalidation propagation is incomplete inside the actual artifact: `outputs/phase_a_table.md` still contains an active “model predicts the mechanism works MORE in non-Q141K patients” statement with no invalidation banner, and `outputs/flux_model_results.json` remains a machine-readable invalid result file with no invalidation metadata. The model’s quantitative verdict is invalid.
+**Current lane status:** propagation = `eligible_with_warning` (corrective-only); synthesis = `eligible_with_warning`. The actions below remain open.
+
+**Why action remains open:** Action required. The current corpus-level interpretation correctly supersedes comp-019 with comp-044 and retires the ΔSUA, genotype-ranking, flat-dose, and yield-deprioritization conclusions. However, the invalidation propagation is incomplete inside the actual artifact: `outputs/phase_a_table.md` still contains an active “model predicts the mechanism works MORE in non-Q141K patients” statement with no invalidation banner, and `outputs/flux_model_results.json` remains a machine-readable invalid result file with no invalidation metadata. The model’s quantitative verdict is invalid.
 
 ## Required actions
 
@@ -16,4 +20,4 @@ action_required: true
 3. Update `README.md` status/verdict lines, or add an immediately adjacent note after them, so they do not appear to be the current verdict beneath the banner. Verification criterion: a skim reader sees `Status: Invalidated/Superseded` before encountering the historical retired verdict.
 4. Optional but recommended: state explicitly in the artifact README that `phase_a_table.md` preserves a valid literature-gap table but its Phase B extrapolation is retired. Verification criterion: Phase A surviving result and Phase B invalid result are separable.
 
-The full review is available through Git history. A new exact-artifact review must pass before propagation or synthesis eligibility is restored.
+The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.
