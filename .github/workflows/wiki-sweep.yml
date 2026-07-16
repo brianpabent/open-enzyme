@@ -1,4 +1,4 @@
-name: Wiki Sweep (Hybrid)
+name: Full corpus synthesis (manual)
 
 # Three-pass sweep daemon (model-agnostic, vendor-heterogeneous by design):
 #
@@ -43,35 +43,9 @@ name: Wiki Sweep (Hybrid)
 #   vendor's per-org rate limits.
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'wiki/**.md'
-      - '!wiki/etc/**'
-      # The 'wiki/etc/**' negation (added 2026-05-15) exempts reference /
-      # methodology / tooling pages that live in wiki/etc/ — they belong in
-      # the wiki for human browsing but should NOT drive synthesis sweeps
-      # because the daemon won't read them anyway (build_corpus() in
-      # scripts/synthesize.py globs wiki/*.md, not wiki/**/*.md, so wiki/etc/
-      # is naturally excluded from the synthesis input). Editing an etc/ page
-      # to add a tool reference shouldn't cost ~$0.50 + ~10 min in daemon time.
-      # Changed comp artifacts under wiki/etc/experiments/ are reviewed by the
-      # separate, bounded `.github/workflows/comp-review.yml` daemon. That
-      # restores mandatory code/input/output/summary scrutiny without loading
-      # the entire experiment artifact tree into this full-corpus context.
-      #
-      # Note: post-2026-05-08 migration, synthesis/ is sibling to wiki/, not under it.
-      # The path filter on wiki/**.md does not match synthesis/**, so the daemon
-      # naturally doesn't trigger on its own writes to synthesis/queue/ or
-      # synthesis/history/.
-      #
-      # The recursion guard against the daemon's own wiki/*.md writes is the
-      # `gate` job below (commit-prefix + skip-marker analysis via
-      # scripts/sweep-state.py should-sweep), not a head-commit message check.
-      # The original head-commit [skip-wiki-sweep] guard was too narrow: it
-      # silently dropped user wiki content when a non-wiki tooling commit with
-      # the marker landed at the tip of a mixed push (failure surfaced
-      # 2026-05-13 after the compounding-pharmacy-track merge to main).
+  # Full-corpus synthesis is an explicit research operation. Push-time
+  # publishing, COMP review, and bounded propagation are coordinated by
+  # knowledge-update.yml; no push or watchdog may start this workflow.
   workflow_dispatch:
     inputs:
       trigger_paths:
@@ -93,9 +67,9 @@ on:
         default: false
         type: boolean
 
-# Never run two sweeps at once — they'd fight over git state.
+# Never run two syntheses at once — they would fight over state and budget.
 concurrency:
-  group: wiki-sweep
+  group: full-corpus-synthesis
   cancel-in-progress: false
 
 # Single source of truth for the Pass-2 synthesizer model. Referenced by the

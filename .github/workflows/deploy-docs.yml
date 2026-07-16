@@ -9,6 +9,12 @@ on:
 permissions:
   contents: write
 
+# A propagation follow-up push may arrive while the original push is still
+# building. Only the newest main snapshot should be published.
+concurrency:
+  group: deploy-docs-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest

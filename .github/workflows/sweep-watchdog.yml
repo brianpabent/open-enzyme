@@ -1,14 +1,7 @@
 name: Sweep Watchdog
 
-# Component #5 of the sweep automation architecture (see
-# scripts/SWEEP-ARCHITECTURE.md §5). Daily safety net: if the registry's
-# last_successful_sweep is more than 24h behind HEAD AND there are
-# pending wiki paths, fire wiki-sweep.yml against the pending list. If
-# the last 3 runs all failed, post a GitHub issue rather than re-firing
-# (escalate, don't loop).
-#
-# Bounded cost: at most one workflow_dispatch per day. Standalone
-# concurrency group so it doesn't fight with the main sweep workflow.
+# Notification-only safety net. It reports stale synthesis coverage but never
+# starts a full-corpus run. Full synthesis is always an explicit human action.
 #
 # Secrets required:
 #   GITHUB_TOKEN (provided automatically) — to fire workflow_dispatch
@@ -37,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      actions: write       # to fire wiki-sweep workflow_dispatch
+      actions: read        # to inspect recent synthesis runs
       contents: read       # to read sweep-state.json
       issues: write        # to post failure-escalation issues
 
@@ -151,16 +144,20 @@ jobs:
             echo "engage_brake=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Fire wiki-sweep workflow_dispatch
+      - name: Report stale synthesis backlog
         if: steps.state.outputs.should_fire == 'true' && steps.brake.outputs.engage_brake != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          PATHS="${{ steps.state.outputs.trigger_paths }}"
-          echo "Firing wiki-sweep against ${{ steps.state.outputs.pending_count }} paths (sweep age ${{ steps.state.outputs.age_hours }}h)..."
-          gh workflow run wiki-sweep.yml -f trigger_paths="$PATHS"
-          echo "✓ Watchdog fired wiki-sweep.yml"
+          TITLE="Synthesis backlog awaiting explicit dispatch"
+          BODY="The full-corpus synthesis cursor is ${{ steps.state.outputs.age_hours }}h old with ${{ steps.state.outputs.pending_count }} pending paths. This watchdog is notification-only. Run the Full corpus synthesis workflow manually when the batch is ready."
+          EXISTING=$(gh issue list --state open --search "$TITLE" --json number --jq '.[0].number' || echo "")
+          if [[ -n "$EXISTING" ]]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --body "$BODY" --label "sweep-automation"
+          fi
 
       - name: Escalate via GitHub issue (3-failure brake)
         if: steps.brake.outputs.engage_brake == 'true'
