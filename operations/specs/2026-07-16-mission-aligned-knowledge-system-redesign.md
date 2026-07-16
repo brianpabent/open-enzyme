@@ -9,8 +9,12 @@ related:
   - ../corpus-unblock-propagate-by-link-2026-05-29/spec.md
   - 2026-05-08-synthesis-filesystem-migration.md
   - ../../.github/workflows/wiki-sweep.yml
+  - ../../.github/workflows/comp-review.yml
   - ../../scripts/sweep-state.py
   - ../../scripts/synthesize.py
+  - ../../scripts/comp-review.py
+  - ../../scripts/comp-review-manifest.py
+  - ../../skills/new-comp-experiment/SKILL.md
   - ../../wiki/etc/open-enzyme-vision.md
   - ../../wiki/cross-validation.md
 ---
@@ -26,10 +30,11 @@ Open Enzyme's knowledge system will be rebuilt around one stable mission:
 The operating model becomes:
 
 1. **Push freely.** Every push publishes the website and, when current research changes, runs bounded propagation.
-2. **Synthesize deliberately.** Full-corpus synthesis runs only by explicit request at a logical batch boundary. No push or watchdog may silently spend the full-synthesis budget.
-3. **Read the current corpus in full.** Synthesis may distribute the work across bounded contexts, but it may not substitute summaries or short versions for the source corpus.
-4. **Preserve detail, remove repetition.** Unique scientific detail, negative results, constraints, and uncertainty stay. Duplicate prose, superseded conclusions, narrative scaffolding, and historical snapshots leave the live tree; Git is the history.
-5. **Make creativity auditable.** Candidate connections must be traceable to exact source passages, re-opened against those passages, and independently challenged before they become queue items or wiki changes.
+2. **Review COMPs on push.** The existing authoring-time pre-run and post-run gates remain mandatory. The push review is a third independent backstop that produces an exact-artifact eligibility receipt before COMP-derived claims can propagate or enter synthesis.
+3. **Synthesize deliberately.** Full-corpus synthesis runs only by explicit request at a logical batch boundary. No push or watchdog may silently spend the full-synthesis budget.
+4. **Read the current corpus in full.** Synthesis may distribute the work across bounded contexts, but it may not substitute summaries or short versions for the source corpus.
+5. **Preserve detail, remove repetition.** Unique scientific detail, negative results, constraints, and uncertainty stay. Duplicate prose, superseded conclusions, narrative scaffolding, and historical snapshots leave the live tree; Git is the history.
+6. **Make creativity auditable.** Candidate connections must be traceable to exact source passages, re-opened against those passages, and independently challenged before they become queue items or wiki changes.
 
 This is a coordinated mission, content, workflow, and synthesis redesign. Implementing only the workflow split would leave the public corpus misframed. Rewriting the pages without changing the authoring and synthesis machinery would allow the same drift to recur.
 
@@ -55,6 +60,7 @@ Git already records prior states, but the repository also keeps parallel history
 | `synthesis/done/` | 299 | 467,582 |
 | `synthesis/history/` | 21 | 44,177 |
 | committed raw/normalized synthesis logs | 52 | 278,145 |
+| immutable `logs/comp-reviews/` reviews | 59 | 284,422 |
 | wiki files named as archives/history | 37 | 152,952 |
 
 Not all of this enters the current Pass 2 prompt, but it increases navigation cost, creates stale surfaces that can be cited later, and encourages the project to preserve generated prose rather than maintain one current state.
@@ -75,12 +81,15 @@ The single-call path is inexpensive but gives no reliable proof that details thr
 
 Today a qualifying wiki push starts the three-pass sweep. The daily watchdog can also dispatch a full sweep. Publishing already runs independently on every main push, but propagation is embedded inside the full-sweep workflow and shares the synthesis cursor.
 
+The push-triggered COMP review is separate again: it audits changed `wiki/etc/experiments/comp-*` artifacts, writes an immutable log for every run, and emits a queue item when action is required. Its verdict does not currently gate propagation or full-corpus synthesis, and its binary `ACTION_REQUIRED` result does not distinguish a usable result with a documentation gap from a computationally invalid artifact. This creates a race in which a COMP-derived wiki claim can propagate or be synthesized before the independent push audit finishes.
+
 The desired cadences are different:
 
 - publishing should happen on every push;
+- COMP review should happen on every relevant push and finish before COMP-derived propagation;
 - propagation should happen after every relevant research push;
 - full-corpus synthesis should happen at deliberate batch boundaries;
-- adversarial review should happen only on synthesis candidates;
+- synthesis-candidate review should happen only after deliberate full synthesis;
 - status monitoring should report pending work, never authorize model spend.
 
 ## 2. Goals
@@ -89,12 +98,13 @@ The desired cadences are different:
 2. Correct the public cross-validation page and every propagated instance of the invented sourdough claim.
 3. Separate publishing, propagation, and full synthesis into independently triggered workflows.
 4. Give propagation and synthesis separate, exact coverage cursors.
-5. Run bounded propagation on each relevant push without rereading the entire unsynthesized backlog.
-6. Run full synthesis only by explicit dispatch, against the full current corpus.
-7. Improve long-context recall through distributed full-text reading, structured atomic extraction, exhaustive cross-domain comparison, source rehydration, and independent review.
-8. Keep default full-synthesis spend near $4 and refuse to exceed $5 without an explicit override.
-9. Build token efficiency into authoring: one canonical home per claim, link rather than copy, current-state-only prose, and no archive-for-posterity surfaces in `HEAD`.
-10. Preserve exact scientific provenance and evidence-level discipline while removing redundancy.
+5. Make the push-triggered COMP audit a first-class evidence gate with exact artifact binding, structured propagation/synthesis eligibility, bounded cost, and current-state receipts.
+6. Run bounded propagation on each relevant push without rereading the entire unsynthesized backlog or propagating blocked COMP findings.
+7. Run full synthesis only by explicit dispatch, against the full current corpus and only after relevant COMP artifacts are review-eligible.
+8. Improve long-context recall through distributed full-text reading, structured atomic extraction, exhaustive cross-domain comparison, source rehydration, and independent review.
+9. Keep default full-synthesis spend near $4 and refuse to exceed $5 without an explicit override.
+10. Build token efficiency into authoring: one canonical home per claim, link rather than copy, current-state-only prose, and no archive-for-posterity surfaces in `HEAD`.
+11. Preserve exact scientific provenance and evidence-level discipline while removing redundancy.
 
 ## 3. Non-goals
 
@@ -105,6 +115,7 @@ The desired cadences are different:
 - Do not delete canonical primary sources under `reference/` or reproducible comp-NNN inputs and outputs.
 - Do not change the GitHub Pages host or the evidence-level taxonomy.
 - Do not automatically turn synthesis candidates into scientific claims. They remain proposals until verified and actioned.
+- Do not let the push daemon replace either mandatory authoring-time COMP gate. By push time, the experiment has already run and its interpretation has already been committed.
 
 ## 4. System invariants
 
@@ -146,7 +157,19 @@ For a full synthesis, every file in the declared scientific corpus must be read 
 
 The corpus manifest must be deterministic, committed in code, and printed before spend. The default scientific corpus remains all current `wiki/*.md` and `wiki/hypotheses/*.md`. Exclusions must be explicit and justified by content class, never by size alone. Operational files, generated history, queue items, and raw logs are context, not scientific corpus.
 
-### 4.5 Git is the archive
+### 4.5 Computational evidence must be review-eligible
+
+A computational prior may propagate or participate in synthesis only when the exact current artifact has:
+
+1. a valid authoring-time pre-run `GO` receipt for the executed design;
+2. a valid authoring-time post-run `ACTION_REQUIRED: no` receipt covering every generated output and proposed wiki update; and
+3. a completed independent push review bound to the committed artifact snapshot.
+
+The push review classifies propagation and synthesis eligibility separately. A documentation limitation may be eligible with warning; an uninspected file, manifest mismatch, material summary drift, invalid model, or invalid quantitative verdict is blocked. Missing review is not equivalent to clean review.
+
+Legacy COMPs created before the dual authoring gates require an explicit legacy status and push-review baseline. They may not silently masquerade as fully gated artifacts.
+
+### 4.6 Git is the archive
 
 `HEAD` contains the current knowledge system and active work, not historical copies of it. Superseded prose is deleted. Closed queue items are deleted after action. Generated run histories and successful raw synthesis logs do not remain in the live tree. Recovery artifacts may exist temporarily while a run is unresolved.
 
@@ -154,13 +177,19 @@ The corpus manifest must be deterministic, committed in code, and printed before
 
 ```mermaid
 flowchart LR
-    P[Push to main] --> I[Mechanical integrity checks]
-    P --> W[Website publish]
-    P --> G[Bounded propagation]
+    P[Push to main] --> C[Classify changed surfaces]
+    C --> I[Mechanical integrity checks]
+    C --> W[Website publish]
+    C --> CR[COMP review when applicable]
+    C --> G[Bounded non-COMP propagation]
+    CR --> E{COMP evidence eligible?}
+    E -->|Yes| CG[Release COMP-derived changes to propagation]
+    E -->|No| B[Block COMP-derived propagation and emit active action]
     G --> PC[Propagation commit and cursor]
+    CG --> PC
     PC --> W
 
-    M[Explicit synthesis dispatch] --> Q{Propagation current?}
+    M[Explicit synthesis dispatch] --> Q{Propagation current and COMPs eligible?}
     Q -->|No| X[Fail before model spend]
     Q -->|Yes| S[Distributed full-corpus synthesis]
     S --> R[Independent candidate review]
@@ -182,12 +211,13 @@ Create a dedicated propagation workflow triggered by changes to current research
 
 1. Compute changed research files since the **propagation cursor**, not the synthesis cursor.
 2. Build an affected-page list mechanically from links, frontmatter relationships, exact concept/entity search, and canonical ownership metadata.
-3. Give the model only the changed files, affected pages, the compact mission/authoring contract, and precise edit tools.
-4. Propagate by link plus the minimal local delta. Full copied exposition remains exceptional.
-5. Stage edits atomically; partial propagation never lands.
-6. Advance the propagation cursor even when no content edit was needed.
-7. Push a propagation commit that cannot recursively propagate itself.
-8. Record actual provider-returned cost and stop before the configured cap.
+3. Partition the trigger set into ordinary research changes and COMP-derived changes. COMP-derived changes remain unavailable until the exact COMP review says propagation is eligible.
+4. Give the model only the eligible changed files, affected pages, the compact mission/authoring contract, and precise edit tools.
+5. Propagate by link plus the minimal local delta. Full copied exposition remains exceptional.
+6. Stage edits atomically; partial propagation never lands.
+7. Advance the propagation cursor even when no content edit was needed. Blocked COMP-derived paths remain pending rather than being blessed by that cursor.
+8. Push a propagation commit that cannot recursively propagate itself.
+9. Record actual provider-returned cost and stop before the configured cap.
 
 Default limits:
 
@@ -197,7 +227,34 @@ Default limits:
 - affected-file and input-token ceilings set before the first model call;
 - overflow behavior: publish the user's push, leave propagation pending, and report exactly what exceeded the bound. Do not silently truncate the affected set.
 
-### 5.3 Lane C — deliberate full synthesis
+### 5.3 Lane C — independent COMP review on push
+
+The current dual authoring-time gates remain the primary COMP controls:
+
+- pre-run review attacks the question, design, code, inputs, provenance, decision rules, and planned outputs before result-bearing execution;
+- post-run review attacks the complete code/input/output contract and every proposed interpretation surface before commit;
+- the push-triggered review independently audits the committed snapshot as a backstop.
+
+The push coordinator invokes COMP review before COMP-derived propagation. For each changed COMP it must:
+
+1. Verify the current `reviews/pre-run.manifest.json` and `reviews/pre-run.md` binding when the COMP is subject to the modern gate.
+2. Verify the current `reviews/post-run.manifest.json` and `reviews/post-run.md` binding, including every proposed wiki update.
+3. Build a daemon-review manifest over the exact committed COMP design, inputs, outputs, and current referencing wiki surfaces.
+4. Cover every manifest entry. Large text/structured artifacts are sharded; binary or domain-specific outputs use an explicit deterministic parser/validator plus reviewer-visible diagnostics. Each entry records its coverage method. Unsupported or uninspected entries block; bundle size may not silently convert complete review into sampled review.
+5. Search for affected corpus surfaces and compare summaries, hypothesis state, priority tables, validation plans, and safety language against the outputs.
+6. Emit a machine-readable verdict with at least:
+   - `comp_verdict`: `clean`, `clean_with_limitations`, `action_required`, or `invalid`;
+   - `propagation_eligibility`: `eligible`, `eligible_with_warning`, or `blocked`;
+   - `synthesis_eligibility`: `eligible`, `eligible_with_warning`, or `blocked`;
+   - exact reviewed manifest hash, source commit, coverage counts, warnings, required actions, and actual cost.
+7. Write one current push-review receipt for the COMP, replacing the prior receipt rather than accumulating immutable logs. Receipt-only commits are excluded from the artifact manifest and must not retrigger COMP review.
+8. Emit a self-contained active queue item when action is required. A clean re-review does not silently delete that item; the corrective action commit closes it by deleting the queue file.
+
+Deterministic failures—missing files, manifest mismatch, uninspected entries, truncated output, or incomplete coverage—always produce `blocked`. A model may not waive them.
+
+When one push contains unrelated research and a blocked COMP, unrelated changes may still propagate. The COMP and every wiki page listed as one of its proposed/derived updates remain pending until the COMP is eligible. Closing a COMP-review action requires an exact re-review, normally by manual dispatch after the fixes land.
+
+### 5.4 Lane D — deliberate full synthesis
 
 The full synthesis workflow is `workflow_dispatch` only. Remove its `push` trigger. A dispatch with no explicit paths uses every scientific change since the synthesis cursor as the semantic trigger set, while still reading the complete current corpus.
 
@@ -205,25 +262,28 @@ Before model spend, it must verify:
 
 - `HEAD` includes the latest successful propagation cursor;
 - no propagation job is running or pending for the corpus snapshot;
+- every current computational prior referenced by changed corpus surfaces has a non-blocking push-review receipt bound to its exact artifact;
+- no changed COMP has a missing or stale pre-run/post-run authoring receipt when those gates apply;
 - the corpus manifest and hash are stable;
 - the projected cost by stage is below the hard cap;
 - every selected provider can accept its assigned shard and output allowance;
 - no unresolved prior synthesis artifact requires exact-artifact recovery.
 
-### 5.4 Lane D — monitoring without spending
+### 5.5 Lane E — monitoring without spending
 
 Replace the watchdog's automatic sweep dispatch with a notification-only status check. It reports:
 
 - time and commits since last successful propagation;
 - time and commits since last successful synthesis;
 - pending propagation and synthesis paths;
+- pending, blocked, and warning-state COMP reviews;
 - current corpus size;
 - projected next synthesis cost;
 - unresolved failures or recovery artifacts.
 
 The watchdog may open or update an issue after a configured age/size threshold. It must never launch full synthesis.
 
-## 6. State model: two independent cursors
+## 6. State model: two cursors plus per-COMP eligibility
 
 Extend `logs/sweep-state.json` to schema version 2 rather than creating a second competing registry.
 
@@ -249,6 +309,19 @@ Illustrative shape:
     "queue_items_emitted": 0,
     "cost_usd": 0.0
   },
+  "comp_reviews": {
+    "comp-047": {
+      "comp_dir": "wiki/etc/experiments/comp-047-<slug>",
+      "artifact_manifest_sha256": "<hash>",
+      "source_commit": "<sha>",
+      "review_receipt": "wiki/etc/experiments/comp-047-<slug>/reviews/push-review.md",
+      "comp_verdict": "clean_with_limitations",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
+      "timestamp": "<iso8601>",
+      "cost_usd": 0.0
+    }
+  },
   "unresolved_failures": []
 }
 ```
@@ -259,6 +332,9 @@ Rules:
 - The synthesis cursor advances only after source coverage, candidate review, deterministic emission, and state commit all succeed.
 - Both cursors bind to the exact snapshot actually read, not a later rebased review commit.
 - A later propagation never advances or implies synthesis coverage.
+- `comp_reviews` contains one current record per COMP, keyed by stable `comp-NNN` ID. A material artifact change invalidates the prior record until exact re-review.
+- A propagation cursor never blesses blocked COMP-derived paths; those paths remain pending independently.
+- A synthesis cursor cannot advance across a computational prior whose current eligibility is `blocked`.
 - State retains only current cursors and unresolved failures. Long run histories live in GitHub Actions and Git history, not a growing JSON ledger.
 - Migration from schema v1 must be deterministic and tested against the current registry.
 
@@ -272,7 +348,8 @@ The design goal is grounded creativity: preserve source detail while giving mode
 2. Fail on duplicate path IDs, missing files, or unclassified corpus exclusions.
 3. Partition by coherent domains with a maximum raw-token size per shard. Partitioning must not split a paragraph or table row; section boundaries are preferred.
 4. Calculate projected input/output and dollar cost for every stage using current provider pricing.
-5. Print the plan and stop without spend if the default hard cap would be exceeded.
+5. Resolve every computational-prior citation in the corpus to its current COMP artifact and push-review receipt. Attach eligible-with-warning limitations to the source record; fail before spend on blocked, missing, or stale receipts.
+6. Print the plan and stop without spend if the default hard cap would be exceeded.
 
 ### Stage 1 — full-text atomic extraction, pass A
 
@@ -335,10 +412,11 @@ For each candidate above the minimum novelty/relevance threshold:
 
 1. Reopen every cited source section from the raw corpus.
 2. Reconstruct the candidate using the original wording, numbers, qualifiers, and evidence levels.
-3. Search the current corpus for contrary evidence and prior art.
-4. Test compartment, dose, timing, topology, host, assay, population, and regulatory constraints.
-5. Classify the candidate as supported, partial, contradicted, restatement, speculative-but-testable, or rejected.
-6. Attach the cheapest discriminating next step when the candidate is genuinely new and actionable.
+3. When a source is a computational prior, reopen the exact generated output and current COMP review receipt—not only the interpretive wiki page. Carry every `eligible_with_warning` limitation into the candidate packet.
+4. Search the current corpus for contrary evidence and prior art.
+5. Test compartment, dose, timing, topology, host, assay, population, and regulatory constraints.
+6. Classify the candidate as supported, partial, contradicted, restatement, speculative-but-testable, or rejected.
+7. Attach the cheapest discriminating next step when the candidate is genuinely new and actionable.
 
 No candidate may reach review solely from ledger text.
 
@@ -363,6 +441,7 @@ The run is successful only if its machine-readable receipt proves:
 - every corpus file and section was presented to residue pass B;
 - every domain pair was compared;
 - every promoted candidate was rehydrated from raw source spans;
+- every computational prior used by a promoted candidate was bound to an eligible current COMP receipt and exact output;
 - every promoted candidate received independent review;
 - per-stage model, input, output, cache, latency, and actual cost;
 - corpus hash and exact coverage commit.
@@ -398,6 +477,18 @@ If the provider omits authoritative cost:
 - Downstream failure resumes from the exact retained artifact; it does not rerun stochastic extraction or synthesis.
 - Each stage writes a hash-bound recovery artifact before the next stage begins.
 
+### 8.4 COMP-review budget
+
+Push-triggered COMP review has a separate budget from full synthesis. It must expose:
+
+- preflight projected cost per COMP and for the whole push;
+- configurable per-COMP and aggregate-per-push hard caps;
+- actual provider-returned cost, cached/uncached tokens, and tool-read volume;
+- fail-before-spend behavior when a complete review cannot fit the configured cap;
+- an explicit manual override for unusually large COMPs.
+
+The current driver records tokens but not dollars, so the implementation must first price a representative set of existing clean and action-required runs. Set the initial caps from observed complete-review cost rather than guessing. A budget overflow leaves the COMP review pending and therefore blocks COMP-derived propagation and synthesis; it never downgrades to partial review.
+
 ## 9. Authoring and live-corpus policy
 
 ### 9.1 One claim, one canonical home
@@ -416,6 +507,8 @@ Remove rather than preserve:
 - raw successful synthesis logs in the live tree.
 
 Historical scientific data are not "history" in this sense. A negative result, earlier experimental condition, or superseded model remains if it is evidence needed to understand the current conclusion.
+
+For COMP artifacts, keep only the current executable design, current generated outputs, and the current pre-run, post-run, and push-review receipts/manifests. When a COMP is materially revised, retrieve old outputs from Git for comparison rather than retaining a second historical output set in `HEAD`.
 
 ### 9.3 Information-density standard
 
@@ -519,6 +612,7 @@ After migration, the live tree keeps:
 
 - current scientific pages;
 - reproducible primary/reference artifacts;
+- each COMP's current design, outputs, and current hash-bound pre-run, post-run, and push-review receipts;
 - active `synthesis/queue/` items;
 - current mission/strategy documents;
 - the compact state registry;
@@ -530,6 +624,8 @@ The live tree does not keep:
 - `synthesis/history/` per-run narratives;
 - successful raw `logs/v4-synthesis-*` artifacts;
 - normalized manifests from completed runs;
+- immutable `logs/comp-reviews/` run histories after current per-COMP receipts have been established;
+- prior COMP outputs or review revisions retained only for comparison with the current version;
 - stale strategic reflections that have already been incorporated;
 - duplicate wiki archive pages kept solely for posterity.
 
@@ -537,13 +633,15 @@ Queue closure becomes: apply the action, cite the queue item in the commit messa
 
 During synthesis, exact intermediate artifacts are uploaded with bounded retention. If a downstream stage fails, recovery resumes from those hash-bound artifacts. After success, only active queue items, state hashes, counts, and actual cost land in `HEAD`.
 
-Existing `done/`, `history/`, and successful synthesis-log files are removed from `HEAD` in a dedicated mechanical cleanup commit after inbound links are corrected. No content is copied into a new archive first.
+Existing `done/`, `history/`, successful synthesis-log files, and immutable COMP-review logs are removed from `HEAD` in a dedicated mechanical cleanup commit after inbound links and active queue items are corrected. No content is copied into a new archive first. For each COMP, retain one current review receipt bound to the current artifact; Git preserves earlier receipts.
 
 ## 12. Implementation surface
 
 ### 12.1 Workflows
 
-- **New:** `.github/workflows/wiki-propagate.yml` — push-triggered bounded propagation and propagation-cursor advancement.
+- **New:** `.github/workflows/knowledge-update.yml` — the push coordinator. Classifies changed surfaces, invokes COMP review when applicable, releases eligible changes to propagation, and leaves blocked COMP-derived paths pending.
+- **New/reusable:** `.github/workflows/wiki-propagate.yml` — bounded propagation and propagation-cursor advancement, called by the push coordinator and available for manual recovery.
+- **Refactor/reusable:** `.github/workflows/comp-review.yml` — preserve push-time behavior through the coordinator; add `workflow_call`, exact eligibility outputs, current-receipt writes, and manual re-review. Remove its independent push trigger once the coordinator is live so a COMP is not reviewed twice.
 - **Refactor:** `.github/workflows/wiki-sweep.yml` — manual-only distributed synthesis and review; remove push trigger and Pass 1 job.
 - **Refactor:** `.github/workflows/deploy-docs.yml` — preserve every-push behavior; add newest-commit-wins concurrency.
 - **Refactor:** `.github/workflows/sweep-watchdog.yml` — notification/status only; remove `gh workflow run wiki-sweep.yml` authority.
@@ -554,6 +652,8 @@ Existing `done/`, `history/`, and successful synthesis-log files are removed fro
 - `scripts/sweep-state.py` — schema v2, two cursors, pending propagation paths, pending synthesis paths, migration command, unresolved-failure lifecycle.
 - `logs/sweep-state.json` — migrate current state without losing the current synthesis coverage commit.
 - `scripts/sweep-1-propagate.py` — bounded inputs, cost cap, provider-reported cost, atomic edits, independent cursor.
+- `scripts/comp-review-manifest.py` — add the exact daemon-review snapshot/verification mode while preserving authoring-time pre/post modes.
+- `scripts/comp-review.py` — complete manifest coverage, sharding for oversized artifacts, structured eligibility, current receipt, cost caps, and no permanent per-run log.
 - `scripts/synthesize.py` — become the staged synthesis orchestrator or be replaced by a small orchestrator plus stage modules.
 - `scripts/synthesis_normalize.py`, `scripts/sweep-3-review.py`, and `scripts/synthesis-emit-files.py` — consume rehydrated candidate packets and emit only reviewed active items.
 
@@ -569,10 +669,12 @@ Recommended logical modules, whether separate files or not:
 ### 12.3 Prompts and agent instructions
 
 - `scripts/sweep-prompt-1-propagate.md` — compact mission contract, current-state-only authoring, real-claim provenance, strict link-not-copy rules.
+- `scripts/comp-pre-run-review-prompt.md` and `scripts/comp-review-prompt.md` — preserve the two authoring gates; add the structured daemon eligibility contract without weakening `PRE_RUN_GATE: GO` or authoring-time `ACTION_REQUIRED: no`.
 - `scripts/sweep-prompt-2-synthesize.md` — replace monolithic long-context instructions with stage-specific prompts.
 - Pass 3 prompts — review rehydrated candidates and explicitly reject invented project claims.
 - `AGENTS.md` and `CLAUDE.md` — correct project context and workflow rules.
-- sweep status/catch-up/walkthrough skills — understand two cursors, manual synthesis, active-queue deletion, and no history/done archive.
+- `skills/new-comp-experiment/SKILL.md` — current-output-only lifecycle, exact push-review handoff, and unchanged mandatory fresh pre/post reviewer gates.
+- sweep status/catch-up/walkthrough skills — understand two cursors, per-COMP eligibility, manual synthesis, active-queue deletion, and no history/done archive.
 
 ### 12.4 Content and navigation
 
@@ -588,6 +690,12 @@ Recommended logical modules, whether separate files or not:
 Extend `tests/test_sweep_pipeline.py` and add focused tests where separation is clearer. Required fixtures include:
 
 - multiple human pushes before propagation finishes;
+- a push containing a COMP artifact plus its proposed wiki surfaces, proving COMP review precedes their propagation;
+- a push-review receipt commit that does not recursively launch another COMP review;
+- valid and invalid authoring-time COMP manifest bindings;
+- an oversized COMP that shards to complete coverage rather than truncating;
+- `eligible_with_warning` and `blocked` COMP verdicts;
+- unrelated wiki changes propagating while a COMP-derived subset remains blocked;
 - a propagation commit that touches wiki files but does not recurse;
 - propagation no-op with cursor advancement;
 - manual synthesis attempted while propagation is pending;
@@ -597,6 +705,8 @@ Extend `tests/test_sweep_pipeline.py` and add focused tests where separation is 
 - missing extractor coverage for one section;
 - missing domain-pair comparison;
 - candidate without raw-source rehydration;
+- synthesis attempted with a stale, missing, or blocked COMP receipt;
+- a computational candidate whose exact output and COMP limitations are absent from its rehydrated packet;
 - invented project claim without a source anchor;
 - duplicate paragraph and historical-heading hygiene failures;
 - schema-v1 to schema-v2 state migration.
@@ -610,13 +720,16 @@ Extend `tests/test_sweep_pipeline.py` and add focused tests where separation is 
 3. Confirm website publishing still runs on pushes.
 4. Ship this phase before large content edits so migration pushes cannot trigger repeated full sweeps.
 
-### Phase 2 — split state and propagation
+### Phase 2 — integrate COMP review, state, and propagation
 
-1. Migrate state to two cursors.
-2. Extract propagation into its own workflow.
-3. Add bounded impact discovery, actual-cost reporting, and caps.
-4. Test rapid pushes, no-op propagation, recursion prevention, and failure recovery.
-5. During the one-time mission rewrite, allow an explicit propagation-skip marker and run one cumulative propagation at the end; ordinary post-migration pushes propagate by default.
+1. Migrate state to two cursors plus the per-COMP eligibility map.
+2. Convert COMP review to a reusable, exact-artifact workflow with structured eligibility and current receipts.
+3. Backfill one current eligibility record per existing COMP. Reconcile unresolved action-required reviews; label legacy-gate status explicitly.
+4. Add the push coordinator and extract propagation into its reusable workflow.
+5. Gate COMP-derived propagation on review eligibility while allowing unrelated eligible changes to proceed.
+6. Add bounded impact discovery, actual-cost reporting, and caps for propagation and COMP review.
+7. Test rapid pushes, no-op propagation, review/propagation ordering, recursion prevention, and failure recovery.
+8. During the one-time mission rewrite, allow an explicit propagation-skip marker and run one cumulative propagation at the end; ordinary post-migration pushes propagate by default.
 
 ### Phase 3 — repair mission and public content
 
@@ -631,7 +744,7 @@ Extend `tests/test_sweep_pipeline.py` and add focused tests where separation is 
 1. Implement deterministic corpus inventory and partitioning.
 2. Implement dual full-text extraction and atomic merge.
 3. Implement exhaustive domain-pair bridge search.
-4. Implement source rehydration, constraint closure, adversarial review, and receipt validation.
+4. Implement source rehydration—including exact COMP outputs and current review limitations—constraint closure, adversarial review, and receipt validation.
 5. Run it against the same corpus snapshot as the current synthesizer without advancing the production cursor.
 
 Promotion criteria for the shadow run:
@@ -639,6 +752,7 @@ Promotion criteria for the shadow run:
 - 100% file/section extraction coverage in both passes;
 - 100% configured domain-pair coverage;
 - zero emitted candidates without raw-source support;
+- zero computational candidates without eligible exact-artifact COMP support;
 - zero invented project claims;
 - no worse factual error rate than the current reviewed pipeline;
 - fewer restatements of existing queue/wiki content;
@@ -654,8 +768,8 @@ Promotion criteria for the shadow run:
 
 ### Phase 6 — remove live-history surfaces
 
-1. Fix inbound references to `synthesis/done/`, `synthesis/history/`, and raw logs.
-2. Delete closed/history/generated-success artifacts from `HEAD`.
+1. Fix inbound references to `synthesis/done/`, `synthesis/history/`, raw synthesis logs, and immutable COMP-review logs.
+2. Delete closed/history/generated-success artifacts and superseded COMP review/output versions from `HEAD`.
 3. Change walkthrough closure from `git mv` to action-plus-delete.
 4. Audit wiki archive pages and delete those whose only purpose is preserving old prose.
 5. Confirm Git can recover representative deleted items and prior page versions.
@@ -675,6 +789,10 @@ Promotion criteria for the shadow run:
 ### Workflow behavior
 
 - [ ] A qualifying wiki push triggers integrity checks, publishing, and propagation—but no full synthesis.
+- [ ] A changed COMP receives exact-artifact push review before any COMP-derived wiki surface propagates.
+- [ ] The push review verifies, but never substitutes for, the mandatory authoring-time pre-run and post-run gates.
+- [ ] Blocked COMP-derived paths remain pending while unrelated eligible wiki changes can propagate.
+- [ ] A clean COMP re-review updates the current receipt and state without creating an immutable log history.
 - [ ] A propagation-generated wiki commit does not create a propagation loop.
 - [ ] Publishing converges on the post-propagation commit.
 - [ ] Propagation uses its own cursor and never replays the full unsynthesized backlog.
@@ -688,6 +806,8 @@ Promotion criteria for the shadow run:
 - [ ] Every declared corpus file and section is read in full by both extraction passes.
 - [ ] Every configured domain pair is processed.
 - [ ] Every emitted item is traceable to raw source spans and independent review.
+- [ ] Every computational prior used in synthesis resolves to an eligible exact artifact, output, and current COMP receipt.
+- [ ] `eligible_with_warning` COMP limitations remain visible in extraction, bridge, rehydration, and final review.
 - [ ] Trigger files influence attention but do not limit corpus coverage.
 - [ ] No summary-only or retrieval-only fallback can silently satisfy the full-synthesis success condition.
 - [ ] Missing coverage, malformed model output, or downstream failure cannot advance the cursor.
@@ -696,6 +816,7 @@ Promotion criteria for the shadow run:
 
 - [ ] Default full synthesis projects and completes at <= $5.
 - [ ] Propagation enforces its $0.50 hard cap.
+- [ ] COMP review enforces measured per-COMP and aggregate push caps without allowing partial review.
 - [ ] Actual costs come from provider usage data when available and are reported by stage.
 - [ ] A downstream retry resumes from the exact prior artifact without repaying completed full-text stages.
 - [ ] Cost-cap and context-cap failures occur before the relevant API call.
@@ -704,6 +825,8 @@ Promotion criteria for the shadow run:
 
 - [ ] `HEAD` has no permanent synthesis `done/` or per-run `history/` archive.
 - [ ] Successful raw synthesis logs and normalized manifests do not remain in the live tree.
+- [ ] Immutable `logs/comp-reviews/` histories have been replaced by one current hash-bound receipt per COMP.
+- [ ] A materially revised COMP keeps only current outputs/reviews in `HEAD`; prior versions remain recoverable through Git.
 - [ ] Closed queue items are deleted in their action commits.
 - [ ] Exact duplicate prose above the configured threshold is blocked unless allow-listed.
 - [ ] No inline revision-history sections remain on current research pages unless chronology is scientifically necessary.
@@ -718,6 +841,10 @@ Promotion criteria for the shadow run:
 | Pairwise comparison becomes combinatorially expensive | Stable domain count, atomic ledger reuse, hard preflight budget; never raw-text all-pairs |
 | Propagation misses a semantically affected page | Deterministic link/entity impact map plus later full-corpus synthesis; overflow is reported, not truncated |
 | Propagation replays weeks of unsynthesized work | Independent propagation cursor |
+| COMP review and propagation race on the same push | One push coordinator; COMP-derived surfaces release only after exact review |
+| Binary `ACTION_REQUIRED` either blocks too much or permits unsafe synthesis | Separate artifact verdict, propagation eligibility, and synthesis eligibility; deterministic failures always block |
+| Large COMP bundle silently omits files | Manifest-complete sharding and coverage receipt; budget overflow blocks rather than samples |
+| Push review is mistaken for the authoring gates | Deterministic verification of pre/post receipts; instructions explicitly preserve three distinct reviews |
 | Manual synthesis is forgotten | Notification-only watchdog reports age, backlog, and projected cost without spending |
 | A public page briefly publishes before propagation lands | Newest-commit-wins deployment concurrency; propagation follow-up push republishes |
 | Model output invents another project claim | Claim-source invariant in authoring, synthesis, review, and CI regression checks |
@@ -734,11 +861,13 @@ Before implementation begins, a reviewer should challenge:
 3. Whether the domain partition creates blind spots or forces misleading pair boundaries.
 4. Whether $5 is a realistic hard cap using a production-sized shadow run.
 5. Whether propagation can land atomically under concurrent pushes.
-6. Whether exact-artifact recovery remains possible without permanent raw logs in `HEAD`.
-7. Whether any historical-looking page actually contains current negative evidence that must remain.
-8. Whether the mission rewrite accidentally deprioritizes koji rather than correctly placing it as one active track.
-9. Whether the cross-validation replacement preserves valid scientific criticism while removing the fabricated premise.
-10. Whether the acceptance tests make it impossible for partial coverage to masquerade as success.
+6. Whether the COMP eligibility taxonomy blocks invalid evidence without making non-load-bearing documentation gaps halt all research.
+7. Whether every COMP-derived wiki surface can be mapped deterministically enough to gate propagation.
+8. Whether exact-artifact recovery remains possible without permanent raw logs in `HEAD`.
+9. Whether any historical-looking page actually contains current negative evidence that must remain.
+10. Whether the mission rewrite accidentally deprioritizes koji rather than correctly placing it as one active track.
+11. Whether the cross-validation replacement preserves valid scientific criticism while removing the fabricated premise.
+12. Whether the acceptance tests make it impossible for partial coverage to masquerade as success.
 
 ## 17. Definition of done
 
@@ -746,7 +875,8 @@ This redesign is done only when all of the following are true together:
 
 - the public site states the correct mission;
 - the sourdough fiction and its propagated consequences are gone;
-- ordinary pushes publish and propagate without launching synthesis;
+- ordinary pushes publish, review changed COMPs, and propagate eligible knowledge without launching synthesis;
+- invalid or incompletely reviewed computational evidence cannot propagate or enter synthesis;
 - full synthesis is deliberate, full-corpus, distributed, source-grounded, independently reviewed, and cost-capped;
 - propagation and synthesis maintain independent coverage cursors;
 - the live corpus contains current unique knowledge and active work, while Git carries history;
