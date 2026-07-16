@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "comp": "comp-046",
+  "comp_dir": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance",
+  "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+  "artifact_manifest_sha256": "9d1773992b7567fa8745994ef60ae639e41d8b8fc11c8440fc5edc4441e8cf0a",
+  "reviewer_model": null,
+  "timestamp": "2026-07-16T20:27:46Z",
+  "comp_verdict": "legacy_review_pending",
+  "propagation_eligibility": "blocked",
+  "synthesis_eligibility": "blocked",
+  "action_required": false,
+  "derived_paths": [
+    "wiki/chassis-pending-interventions.md",
+    "wiki/computational-experiments.md",
+    "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
+    "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
+    "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md",
+    "wiki/gout-multihop-research-program.md",
+    "wiki/purine-degrading-bacteria.md",
+    "wiki/purine-load-koji-vs-yeast.md",
+    "wiki/staged-purine-sink-mass-balance-computational.md",
+    "wiki/validation-experiments.md"
+  ],
+  "actual_cost_usd": 0.0,
+  "note": "Deterministic migration baseline only; no independent push review has occurred."
+}

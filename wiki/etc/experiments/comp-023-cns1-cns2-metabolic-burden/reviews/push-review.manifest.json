@@ -1,0 +1,111 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/README.md",
+      "kind": "design",
+      "bytes": 4032,
+      "sha256": "30ed8f114c16e5df5cdb619a389689698c29a6896172fe2355ddf69aa0837470"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/analyze.py",
+      "kind": "design",
+      "bytes": 41600,
+      "sha256": "d40b2f8f8032d151eec5dfc6aa68ae1a3ffd626058fa560822ff2b1ee1cf7659"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/inputs/iWV1314.xml",
+      "kind": "design",
+      "bytes": 3021094,
+      "sha256": "9a7d5077e7db9ec693bda7fe0b89c6a0e296c409611ac5ea6a6e2edbf4e16e6e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 12165,
+      "sha256": "bb8b595fad8bd0d5d900dedcd00db1188b489296be592f8dea77a9d04e6db959"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md",
+      "kind": "design",
+      "bytes": 25400,
+      "sha256": "ee59807dc6cb8b4db0d0060f0008bbbdc8295942f6a640d941e77995f12672fe"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 9004,
+      "sha256": "afd84389c7a39ddc9fa5e6749a6d14781d9b3a33350db56842fa362678e31229"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 4322,
+      "sha256": "86b5768e16fa21812537b30da3aff1ea20549aef6f1c5b0d49b4aac72121a22c"
+    },
+    {
+      "path": "wiki/chaperone-orthogonal-stacking.md",
+      "kind": "proposed_update",
+      "bytes": 106834,
+      "sha256": "42d7d282cdce67ee6a446fcb306b9e955e89fc53c70a206d5389d9b7130448ed"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82364,
+      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+    },
+    {
+      "path": "wiki/cordycepin-cassette-burden-computational.md",
+      "kind": "proposed_update",
+      "bytes": 7159,
+      "sha256": "f12138ccdfad696cc97cef00d63761ad4d582a5fceea144280bf677a81b5b400"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 42433,
+      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+    },
+    {
+      "path": "wiki/etc/autonomous-screening-methodology.md",
+      "kind": "proposed_update",
+      "bytes": 25106,
+      "sha256": "22f922f454cf6b90d526e0902e48f7cc24c345a8076d68246eef1d86080c5fbf"
+    },
+    {
+      "path": "wiki/etc/bio-ai-tools.md",
+      "kind": "proposed_update",
+      "bytes": 63999,
+      "sha256": "0265b6fed9c5ae43cbb0d63c638592f91ab690708a5fb2356ae5731ae85732ad"
+    },
+    {
+      "path": "wiki/etc/validation-experiments-archive.md",
+      "kind": "proposed_update",
+      "bytes": 41587,
+      "sha256": "ddfa6470d480894101fc26c6fbdc6fcc57b9153d9bb8941d6a54c72a190471a1"
+    },
+    {
+      "path": "wiki/koji-endgame-strain.md",
+      "kind": "proposed_update",
+      "bytes": 92535,
+      "sha256": "6c45144b6dcfc23db424d07cf527de910e8dedd085ace0a8e5af6f4a1f21e53e"
+    },
+    {
+      "path": "wiki/medicinal-mushroom-complement-track.md",
+      "kind": "proposed_update",
+      "bytes": 59584,
+      "sha256": "57c998684d3be574c4fe966a403bbe5d394f65e3716bf4f9a8787397eeba2a3e"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 256486,
+      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "e47479c86c5fed32ef197efe45dee4815c87d6b7b30a8c46c007fdd23d0888e8"
+}

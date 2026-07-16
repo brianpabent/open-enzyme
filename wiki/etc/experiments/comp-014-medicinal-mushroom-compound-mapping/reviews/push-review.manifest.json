@@ -1,0 +1,1173 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/.gitignore",
+      "kind": "design",
+      "bytes": 350,
+      "sha256": "a9516b89f4310329289c0a1fe17ddd9059dd7368ff0659aa84fb7ef2011ddd02"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/README.md",
+      "kind": "design",
+      "bytes": 7817,
+      "sha256": "e9542257ca396dea9a7fc6488f7b12a139753e91916890804d1c6b01f6216211"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/chokepoint-targets.json",
+      "kind": "design",
+      "bytes": 14843,
+      "sha256": "61be6c3f9c9f56ff1784fd006fa568a8e994d5e97f0bca3e78c88f4914a7b9e6"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/data-sources.json",
+      "kind": "design",
+      "bytes": 14846,
+      "sha256": "f335bfee4ab0ee2a18188ef32a950df56e05b6b2ca79db94ae5dd106c46ad454"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/phase-5-anchor-species.json",
+      "kind": "design",
+      "bytes": 12626,
+      "sha256": "1c977bcd24b31a5c4a9c3a37d35e6691bd78218078c56f6dfcb2a901b95b4245"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 4067,
+      "sha256": "21bae59e66ffcebaf3ab2bfce5217c4400ad7860ec74be329716b45ad41bf35d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/toxicity-filter.json",
+      "kind": "design",
+      "bytes": 9452,
+      "sha256": "e6fa2c3e54ea56b3ea599a30d7fede2558329e9a8657bc5fceabae64af2fed6e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/scripts/phase_2b_aggregate_lotus.py",
+      "kind": "design",
+      "bytes": 6521,
+      "sha256": "baf28aeefbea468373e6c45b08b85a200d3e40c6cf4b36f0aa14ba7a1c57c21f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/scripts/phase_2b_lotus_pull.sh",
+      "kind": "design",
+      "bytes": 2914,
+      "sha256": "46ece204f6a1661959411e65919bb2355a71aa22db717389a77313a296949268"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/scripts/phase_3_target_mapping.py",
+      "kind": "design",
+      "bytes": 47448,
+      "sha256": "cb73afb5a59f476ea8e0f0800100f9b82471e9694025c00c6edd8d6d7b671258"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/scripts/phase_6_triage.py",
+      "kind": "design",
+      "bytes": 23621,
+      "sha256": "ca20d3f0786863ef767be7fc13ae26158ba23b6787e66bad10646b75f3c1f438"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/scripts/scope_validate.py",
+      "kind": "design",
+      "bytes": 7682,
+      "sha256": "ee9b19138a57edd86ccee3d8514a376e3a69717cb1d848910c57c2be2e959f58"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md",
+      "kind": "design",
+      "bytes": 29200,
+      "sha256": "9b592e2cea5e7b9aa892bb8e66074e300d1fea00cd20432a49ed8c01877e2477"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS.md",
+      "kind": "generated_output",
+      "bytes": 7494,
+      "sha256": "095f7e8a1de164e838c1fc955b94900c7f35f1cd2ad47f3cf26b8964703f69d2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-5-FINDINGS.md",
+      "kind": "generated_output",
+      "bytes": 17556,
+      "sha256": "b8a261c2b41bcef0d75faac9a465babecf10deaefdfab72bd493629cbf6b5ac3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_molecule_inchikey_cache.json",
+      "kind": "generated_output",
+      "bytes": 1331559,
+      "sha256": "89096edb296c6fb7c403f43f91d155b72e1553a1528a79d24922c729470a9372"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/ABCG2.json",
+      "kind": "generated_output",
+      "bytes": 281215,
+      "sha256": "d59c19ed7416d42b9e897a5f5af309fef5ca3f5bff1f77ea71378889627daf40"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/ABCG2_full.json",
+      "kind": "generated_output",
+      "bytes": 5847958,
+      "sha256": "92093b22ab458596dadb943bc04f75fb0aa0c0a6e513e4ca801b5ace31a0a98d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/ADA_full.json",
+      "kind": "generated_output",
+      "bytes": 556217,
+      "sha256": "d5afb50c4b579b968366efe00657ca1bdcb667d1f2bbbba59a289c4f9aa23f95"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/ASC_full.json",
+      "kind": "generated_output",
+      "bytes": 2018,
+      "sha256": "72e92b99f1de280169aa0dcc00a34c7cf94624c13d840af5e6b5ac28a3fdbc6c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/C5aR1.json",
+      "kind": "generated_output",
+      "bytes": 290923,
+      "sha256": "83f891307f003b0c24e99dc72c32048c27526b406b5c7295e171361719c3b4d7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/C5aR1_full.json",
+      "kind": "generated_output",
+      "bytes": 3360077,
+      "sha256": "f50fd3a4342de81a99eb1871e8b6b13815154d640793389208b6150729cfb8af"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/CASP1_full.json",
+      "kind": "generated_output",
+      "bytes": 7140798,
+      "sha256": "90d9c16118ef3ef110d260d6d06a4163761836b49ed3f07aa74e2b4cc274c266"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/GLUT9_full.json",
+      "kind": "generated_output",
+      "bytes": 42517,
+      "sha256": "ecde8cd82e57069117f29465c9584c500d842044323138c996dae341f3836964"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/HDAC6_full.json",
+      "kind": "generated_output",
+      "bytes": 8180644,
+      "sha256": "d48786625af004611cc07d330ff1050a2032c00df92cabad232dd6edf4b01842"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/IL1B_full.json",
+      "kind": "generated_output",
+      "bytes": 1390417,
+      "sha256": "305223c763511f4e81535edda8677f12c8edf4209fe31ed7c80a90b1ff46829d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/KEAP1_full.json",
+      "kind": "generated_output",
+      "bytes": 1676415,
+      "sha256": "3611dee7a59aa83e04a56b556b057324b6c64438163aa1ffe4bb1d702e16122f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/Lp_PLA2_full.json",
+      "kind": "generated_output",
+      "bytes": 1929322,
+      "sha256": "c89fa704493e0668fce41c3a0c6d62fee452be680a86536e61e532157c6bc165"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/NLRP3.json",
+      "kind": "generated_output",
+      "bytes": 296133,
+      "sha256": "0269709a248672e4b99c07a0fd4ef905538937f5161bc5c70596d5b2fbb4f979"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/NLRP3_full.json",
+      "kind": "generated_output",
+      "bytes": 3972439,
+      "sha256": "ab15d420e13463db96d97b2cb10460c5b8a711268de80fc03083cfa58bf4e0e6"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/NRF2_full.json",
+      "kind": "generated_output",
+      "bytes": 7559162,
+      "sha256": "ac72e962e67e29f7f1d1105ce9f8543f6d61c048ab9ed442263a6a8a628a3fbe"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/OAT1_full.json",
+      "kind": "generated_output",
+      "bytes": 213630,
+      "sha256": "dbe4ef5a40d5cd39f6372c54b57e494e1b6d11b966a2b2792c814a7febc4347e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/OAT3_full.json",
+      "kind": "generated_output",
+      "bytes": 201517,
+      "sha256": "3f208e1f28a229c14f35d31a4d6a38ae5a050ad8869cdc7301f7ed9439b58f0b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/OAT4_full.json",
+      "kind": "generated_output",
+      "bytes": 48910,
+      "sha256": "cbcc13fce94a1da8dbb1b4496853c0059b72aac349cba17bd1a7f139ce7f894b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/PDIA3_full.json",
+      "kind": "generated_output",
+      "bytes": 38539,
+      "sha256": "7678e78b0710163e63ebc987d0dde2c68ab64a78cd2c58e8e43e1b4b4f1c70e3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/PDI_full.json",
+      "kind": "generated_output",
+      "bytes": 647458,
+      "sha256": "8199c9cc11067f56e9d4de0b53c7e842490057810d1538d66cc3dc3746d5a953"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/PINK1_full.json",
+      "kind": "generated_output",
+      "bytes": 5270,
+      "sha256": "1398cadad6f70db69a81eb232ec79b9ab00f568636fa60a1394a28283b87c056"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/PPARG_full.json",
+      "kind": "generated_output",
+      "bytes": 7451720,
+      "sha256": "a7a66e1f27834ba00b054f3a66fc3f47f393e87f273584345150c80a1aa034a1"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/TNFA_full.json",
+      "kind": "generated_output",
+      "bytes": 9314870,
+      "sha256": "c119bebf4a34d8c69e309c132157da28c5d7c5a57560c1c9c972de5a9f37a009"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/TXN_full.json",
+      "kind": "generated_output",
+      "bytes": 58750,
+      "sha256": "cf3270d95cbb84fa837f54325113c3536a6880d4058a1c1119a8a65467c33b64"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/URAT1.json",
+      "kind": "generated_output",
+      "bytes": 330018,
+      "sha256": "7703d4ab8231d6436fe5c6c0418cde372a5cdc150685854f36e19b24922b13ea"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/URAT1_full.json",
+      "kind": "generated_output",
+      "bytes": 3671106,
+      "sha256": "b6b1b372de19baf9d88370baa690cf725d27a20fac4d064b5762b5a394b0c369"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/XO.json",
+      "kind": "generated_output",
+      "bytes": 280534,
+      "sha256": "b48a25e3129ee5eaea8d13b4b8aec874551c2af5df39d88a739ad60d008a50d8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/XO_full.json",
+      "kind": "generated_output",
+      "bytes": 2321136,
+      "sha256": "5e6be18fa628799bf3419f196115daa9ed0934568bc612b06c51a4ef19475747"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chokepoint_chembl_targets.json",
+      "kind": "generated_output",
+      "bytes": 3246,
+      "sha256": "84c6c9fb037dcdc60073346240dfc295a06a20e16efa0c399dec0a8d69e581d1"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_inchikey_cache.json",
+      "kind": "generated_output",
+      "bytes": 982,
+      "sha256": "4f4a3b8b08b849ed9985ed34fa69d9def8138343b851b7e0d527a25b2e0f2a27"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_raw/Antrodia_camphorata.html",
+      "kind": "generated_output",
+      "bytes": 6672,
+      "sha256": "b2849039620c2a464442750311f01b5f43319fba55f74c41e39785ac165f0a8c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_raw/Cordyceps_militaris.html",
+      "kind": "generated_output",
+      "bytes": 2595,
+      "sha256": "3fafa81d7acb70915c3024952bb7c3ed26952d6440f22fe8c1576aa48506f46b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_raw/Cordyceps_sinensis.html",
+      "kind": "generated_output",
+      "bytes": 4022,
+      "sha256": "869397d27058e3675178e85dc62fbd39686662c7ae7cc247a5a10692e6df9e95"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_raw/Ganoderma_applanatum.html",
+      "kind": "generated_output",
+      "bytes": 7753,
+      "sha256": "721bba7b991c9441a22e953f6446c63ebc41d739d60c4da83e57eb31d68733b3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_raw/Ganoderma_lucidum.html",
+      "kind": "generated_output",
+      "bytes": 99354,
+      "sha256": "606574cf4dae712d5a124da3b3cef963f38c3ca06f3a152f400036a55a66babc"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_raw/Grifola_frondosa.html",
+      "kind": "generated_output",
+      "bytes": 2572,
+      "sha256": "0021233b1b0eafcd1b394f7aa4b50ac750bddcc37209b01a579f29156cb2a822"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_raw/Hericium_erinaceus.html",
+      "kind": "generated_output",
+      "bytes": 2640,
+      "sha256": "da3aa7b8101aa393f4af26624c6935e475c48d85b5f9ef00697a6036f15316a5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_raw/Inonotus_obliquus.html",
+      "kind": "generated_output",
+      "bytes": 3524,
+      "sha256": "d4aeb95b3ce28db49649a76b16b3dc7490c7612ce077bc9299a14e533132cd2e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_raw/Lentinula_edodes.html",
+      "kind": "generated_output",
+      "bytes": 2300,
+      "sha256": "7285b92df62eda8b0751e9d78804a32cc53751cf5b3c43596995c2ad3a58dc08"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_raw/Pleurotus_ostreatus.html",
+      "kind": "generated_output",
+      "bytes": 2657,
+      "sha256": "3df36f2fb4062cb71c32ffaca81783166f89d4487334e5ca6175a2d52fa15661"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_raw/Trametes_versicolor.html",
+      "kind": "generated_output",
+      "bytes": 1745,
+      "sha256": "96dbf4c9605cf385c2f544c6affbea375641fdd8eea435e5d9d37a870b6bc681"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_raw/Wolfiporia_cocos.html",
+      "kind": "generated_output",
+      "bytes": 1739,
+      "sha256": "71754b85fcb9bd25af98ff58a34d76c0d1b59c94621833454c7da8ee1cdb57c3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Agaricus.json",
+      "kind": "generated_output",
+      "bytes": 17143800,
+      "sha256": "12198c9651394a3bd25eca7fa738f181585e0c6a96e8fcc7ba13aa1c602612ff"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Antrodia.json",
+      "kind": "generated_output",
+      "bytes": 11612480,
+      "sha256": "96bf09c9dab6159d00363e9405e86aae2b797f9d7af9701ad325d6b2d704381a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Aspergillus_niger.json",
+      "kind": "generated_output",
+      "bytes": 4677607,
+      "sha256": "ddc5895f0fff4c076c97eff78d4996a9da457d71029a2c2a08c9dfa4e6405cea"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Aspergillus_oryzae.json",
+      "kind": "generated_output",
+      "bytes": 1312724,
+      "sha256": "fa04f205bc8e53ed97565082b84ae3386c214ac24803d58fbb4f6116fb8790b8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Aspergillus_sojae.json",
+      "kind": "generated_output",
+      "bytes": 112148,
+      "sha256": "a9e166b9e3a3cf25d054c7de4a52ce578e2786ee5b3a2c5f27b823ff1309a64d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Aspergillus_terreus.json",
+      "kind": "generated_output",
+      "bytes": 6695947,
+      "sha256": "a2ef8d38d2b1f62679bfa10c860975c565ab14fe23c7b3e5f067f1d1ac978a79"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Auricularia.json",
+      "kind": "generated_output",
+      "bytes": 4068327,
+      "sha256": "f87ecb3a5cc348f8030fe86fc98bec925afd3cc175349d21ea2cd6a3edb945b8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Boletus.json",
+      "kind": "generated_output",
+      "bytes": 1356980,
+      "sha256": "7a15fa3909bf92d69d4bf30ce8bb0befcf278c927c3138ab1a49003bc308bdc7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Coprinopsis.json",
+      "kind": "generated_output",
+      "bytes": 1202933,
+      "sha256": "19fdc23bde4fd2884cf12e8f4a5c9bb92447cb046af11dd1784b18d76ad39e1b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Coprinus.json",
+      "kind": "generated_output",
+      "bytes": 1172993,
+      "sha256": "c0bee501a4e35483b730e59a3825048c924a85fbc8360b091e56eb07f4b0e801"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Cordyceps.json",
+      "kind": "generated_output",
+      "bytes": 8236163,
+      "sha256": "5a5fd6d67f0a7bff80f5848c3d516d783b393a23ab500e806d12fc8f388240f6"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Cordyceps_cicadae.json",
+      "kind": "generated_output",
+      "bytes": 401114,
+      "sha256": "f2b12aca808158befed09cea1d931c76eebd2f02c4a9a98b0b51c1ba1be5b8ff"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Cordyceps_militaris.json",
+      "kind": "generated_output",
+      "bytes": 177701,
+      "sha256": "34029ca1bc823aca47502d00eeab55dc4f1d8e6f1cb2ec7cc9528b74e2887c5b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Cordyceps_sinensis.json",
+      "kind": "generated_output",
+      "bytes": 24674205,
+      "sha256": "f1f2926aed45ab2ffea0b07434b43fa5f6ef7879f8fb8b127ad28d012cf29ea0"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Cyathus.json",
+      "kind": "generated_output",
+      "bytes": 1849941,
+      "sha256": "ba81818464508724e8981b8deedbb5d301eece84353ce29e1a2d0ac4fb8faee9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Flammulina.json",
+      "kind": "generated_output",
+      "bytes": 5561525,
+      "sha256": "e765f8bc439c0fe4e5662199fb212febb31abc420595d10c83a097b734116e66"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Fomitopsis.json",
+      "kind": "generated_output",
+      "bytes": 3871492,
+      "sha256": "e81d2691e2c425d45a79af94d5127aaa2a3581fc9f1f8a563157b1a28a3c019b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Ganoderma.json",
+      "kind": "generated_output",
+      "bytes": 45326125,
+      "sha256": "b5c3c54e8f17e9c6e326f725c775585bc8c0ee4da49f4c38bd9622496a7d43d3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Ganoderma_applanatum.json",
+      "kind": "generated_output",
+      "bytes": 17238824,
+      "sha256": "91c68347c2d69b090788647b8b90cf9e32c5228e7cbaaa955d26b4646622ecdb"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Ganoderma_lucidum.json",
+      "kind": "generated_output",
+      "bytes": 28383711,
+      "sha256": "b126f77c1b9605ec25b698e00beade15af2b87d8adf6ed17a465c8e0be307fc2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Ganoderma_sinense.json",
+      "kind": "generated_output",
+      "bytes": 2127619,
+      "sha256": "023c28840340280de649e826798981162e5a51814c894fd6a9200efc6e215b83"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Geastrum.json",
+      "kind": "generated_output",
+      "bytes": 256147,
+      "sha256": "285da8fd8cac481f843169158ce72b0fc971131df3e49d35c017217df3c5764e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Grifola.json",
+      "kind": "generated_output",
+      "bytes": 2302633,
+      "sha256": "8788c47c6cd97d1dca602d9ffb7534482e4c9e1eea3ab72f6c089c143489a23a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Hericium.json",
+      "kind": "generated_output",
+      "bytes": 3324160,
+      "sha256": "d2d8152766ef5227eef1c71f0cd4df396901ac7c7391f91f08c26d2fe3bef181"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Hericium_erinaceus.json",
+      "kind": "generated_output",
+      "bytes": 3026882,
+      "sha256": "cb0ccd4cca227b8364744e2b15c7fc11a847764d3c5916f89e935ef224c64877"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Hypholoma.json",
+      "kind": "generated_output",
+      "bytes": 6085528,
+      "sha256": "109aabf17ed064233ebe82b86aa8e4650cb164d9a21113cf071378da4e0f4b79"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Hypsizygus.json",
+      "kind": "generated_output",
+      "bytes": 597851,
+      "sha256": "5edf46ad54c3cc579d12df4555aa0ca23bbb181288028075f4bd400cdf7f795b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Inonotus.json",
+      "kind": "generated_output",
+      "bytes": 7474166,
+      "sha256": "1e7c22fe7bfc14407a62439505bd4b59ec4d0961bcfd1ba7d4ac8a184c914dc8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Inonotus_obliquus.json",
+      "kind": "generated_output",
+      "bytes": 6773843,
+      "sha256": "bd6f22118b9d2524011d1fafef6f857b52f4fc83ae609604ed87e3351afba495"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Lactarius.json",
+      "kind": "generated_output",
+      "bytes": 10438613,
+      "sha256": "f88114075723a8a98e7fe39615057f61580f3bfa1b15beea0e0798c8e935223d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Lentinula.json",
+      "kind": "generated_output",
+      "bytes": 2256250,
+      "sha256": "8ead2240c89f9f9b4fa1ce1bea24f88255ee5824b138078e7e6524d9220aa2b8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Ophiocordyceps.json",
+      "kind": "generated_output",
+      "bytes": 25268858,
+      "sha256": "c3973397f00b6c89a00b49de5ea64a05138ad1fe3f376fe98a0a3ab113155002"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Penicillium_camemberti.json",
+      "kind": "generated_output",
+      "bytes": 256630,
+      "sha256": "47021e5211b3c5f7c2e1387e57248eab8d1fe6ff277c917c3c64a24eecd7e000"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Penicillium_chrysogenum.json",
+      "kind": "generated_output",
+      "bytes": 4226813,
+      "sha256": "a2e091e3ffc7118a92d7d5dbb2f595b607785a107f5636438a57e0a3abde81ff"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Penicillium_roqueforti.json",
+      "kind": "generated_output",
+      "bytes": 1084429,
+      "sha256": "9008af4d98e512581f3c16eadd05199a265025ef4049899c2a364ddf169058b3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Phallus.json",
+      "kind": "generated_output",
+      "bytes": 8632495,
+      "sha256": "156b149a9c1c646774ce9d3e5dac67e17c6ac21894cc1a844640bcb39b067d12"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Phellinus.json",
+      "kind": "generated_output",
+      "bytes": 14971571,
+      "sha256": "8b42b1ebcb49ea81933e20b3e6ad7c22e9aca8d08b3c300c581ee34985fb316b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Piptoporus.json",
+      "kind": "generated_output",
+      "bytes": 399767,
+      "sha256": "5d59ee651864de17fc9eca64a8c9ddc86c56f4f5d172e3a5f0a4e836b7d4c323"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Pleurotus.json",
+      "kind": "generated_output",
+      "bytes": 9612170,
+      "sha256": "d911b6057ab9b0e2138868655afcfc0e4cc69c54bf977f6c86b7ed802d72a655"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Pleurotus_eryngii.json",
+      "kind": "generated_output",
+      "bytes": 922063,
+      "sha256": "38a89129d491e1dd5beae2a1773ddd034040249df048e6df752bdf18490d31ae"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Pleurotus_ostreatus.json",
+      "kind": "generated_output",
+      "bytes": 7989570,
+      "sha256": "e36c7b5551228c61de39426901acf52c49799c7be9a65bf18ac642cb07ded701"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Polyporellus.json",
+      "kind": "generated_output",
+      "bytes": 82,
+      "sha256": "806f4b5fbe5a822f291f3c5e03d25567b2f5b56ed9526f788d62febe5ab85315"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Polyporus.json",
+      "kind": "generated_output",
+      "bytes": 6412680,
+      "sha256": "d0e60e319bee6554ca0b18c98656607bdd4d4d5aed7eff92db1b95b44ed60f57"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Russula.json",
+      "kind": "generated_output",
+      "bytes": 4943348,
+      "sha256": "0145584d3de14f18be38036a0159e45a02f8bd9548dfc249b2f03a910685c998"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Saccharomyces_cerevisiae.json",
+      "kind": "generated_output",
+      "bytes": 15805311,
+      "sha256": "f05259d67ca5feb52ccb451e38e2c38f8948e7a22f30c3448b2fe769cda9f655"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Schizophyllum_commune.json",
+      "kind": "generated_output",
+      "bytes": 123872,
+      "sha256": "ab173a9a6051d9b0c810a98c1ad29773d8b882d7e94b17c10a1a6ec9128a4879"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Sparassis.json",
+      "kind": "generated_output",
+      "bytes": 185829,
+      "sha256": "c5f86e06a8eb966959ec0636a1a3bb34721570c24233e2d3206406a856cd4b78"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Suillus.json",
+      "kind": "generated_output",
+      "bytes": 1269541,
+      "sha256": "a352b77ea20371eba2d73b5b9600c79403e6279fe79aa6424b0c42be678091a2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Termitomyces.json",
+      "kind": "generated_output",
+      "bytes": 271689,
+      "sha256": "f5f1402303da1ad471312fa73ee209f79ff633876d419e77fe1fdcda13f07f30"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Trametes.json",
+      "kind": "generated_output",
+      "bytes": 2709646,
+      "sha256": "37f73c40d87483bea9a0ade5c4d1597b965a42155cc2b327d6ef12e839c5465c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Trametes_versicolor.json",
+      "kind": "generated_output",
+      "bytes": 1742641,
+      "sha256": "ff1e04581e6bbd97e1f6a25d815cd85b9d2b8fd39174dfde493fa6b03a6661e5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Tremella.json",
+      "kind": "generated_output",
+      "bytes": 243353,
+      "sha256": "8d4ced7d3f36581076079099daab7e1ba434be2aeb7624b6e73eaaec554edd7a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Ustilago.json",
+      "kind": "generated_output",
+      "bytes": 321887,
+      "sha256": "122c3a2368d113c295adba712682ab296be192f9852438930b90a1e8a8e4b452"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Volvariella.json",
+      "kind": "generated_output",
+      "bytes": 5224834,
+      "sha256": "999d376d83132b74222526a7c9b0b21424a6bef8ef776e4596ac5f96dae824fd"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Wolfiporia.json",
+      "kind": "generated_output",
+      "bytes": 4953326,
+      "sha256": "ac0d272c02793daaa3ef65140c9e75641abc4d6b76d19c7fe41b2f770f0aff10"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/Yarrowia_lipolytica.json",
+      "kind": "generated_output",
+      "bytes": 4369653,
+      "sha256": "34b672cd0d033d363cc5eab04fb0586c03fc102f91a9108ce63fcba99f9666fc"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Antrodia.json",
+      "kind": "generated_output",
+      "bytes": 34393,
+      "sha256": "931adaa3876b41b58ac4eef1b10710a4e6a3c5a61d66b101dd31de713936dfb4"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Aspergillus.json",
+      "kind": "generated_output",
+      "bytes": 560658,
+      "sha256": "2edbc5604f9f06ee5ff65939f1e787c4e384bac08db552f84afffd558dd9bd39"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Auricularia.json",
+      "kind": "generated_output",
+      "bytes": 347,
+      "sha256": "964b0d6034ccd4daca8a81bf3b1f45203259b156631079239f5ea727f7e6ec6e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Cordyceps.json",
+      "kind": "generated_output",
+      "bytes": 35349,
+      "sha256": "bd5784a4405eb82664a24cd10809157fe85616f64348dfd6e566183fbb42e167"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Fomitopsis.json",
+      "kind": "generated_output",
+      "bytes": 32575,
+      "sha256": "376c21b675ea84c55fbb0ad6ce84af34ea70af10cfa20c5b0af8f5f8e01c028f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Ganoderma.json",
+      "kind": "generated_output",
+      "bytes": 314437,
+      "sha256": "0908e56b34b879b58d60986600bcc15015dc2068b4f664d71ee6a2149aeb7226"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Grifola.json",
+      "kind": "generated_output",
+      "bytes": 3952,
+      "sha256": "8c7387400e7f4b67f1cfc36dcba4c144a92185ef446f7fa092d3b139a1232762"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Hericium.json",
+      "kind": "generated_output",
+      "bytes": 39721,
+      "sha256": "148af884eb8273d65ad1dba82cba9337c975a7f53f5a8e66757cc9d136a52962"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Inonotus.json",
+      "kind": "generated_output",
+      "bytes": 36830,
+      "sha256": "60a16d7057c6c8b76071048663a6859dbd5826e15f206c855c79b03c841d8f16"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Lentinula.json",
+      "kind": "generated_output",
+      "bytes": 1397,
+      "sha256": "11f2cbc4614af6b06b4ce928f99c3b74be1e39d1689f958dda2dbe12ac9e7705"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Ophiocordyceps.json",
+      "kind": "generated_output",
+      "bytes": 8062,
+      "sha256": "cbdb82e30ca422829f05dfcf01621097fb935006294182094eb1782e1f27f56d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Penicillium.json",
+      "kind": "generated_output",
+      "bytes": 558199,
+      "sha256": "c45187a65dfb8886719d6383172fc260854bd7cd4e8d1059bece87293b4b8044"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Phellinus.json",
+      "kind": "generated_output",
+      "bytes": 40451,
+      "sha256": "0dc726ee1b2a39324b94004d932bec879f9a84f591c6410ad5352d71c6988a83"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Pleurotus.json",
+      "kind": "generated_output",
+      "bytes": 13617,
+      "sha256": "261435315f03677869b6e0fdf56efd33a0c315b2be0be2ce78031efa9b071361"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Polyporus.json",
+      "kind": "generated_output",
+      "bytes": 10668,
+      "sha256": "b14dd2f7de2a100a2e54ccf284da8da3e2e5258f9cc7e2425576b43d23daacd5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Saccharomyces.json",
+      "kind": "generated_output",
+      "bytes": 5942,
+      "sha256": "6e603560bbd75bc1a1c14f662308079afe98e07668586e8536d255292ef252a3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Schizophyllum.json",
+      "kind": "generated_output",
+      "bytes": 4658,
+      "sha256": "8b2c5ee929063778b19ec58a0a4bd794b6182e170fbd70b82d2402376fa97fc5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Trametes.json",
+      "kind": "generated_output",
+      "bytes": 5590,
+      "sha256": "e73c8cd700a3824fddfffae6703750d3225d041570abc1957b90a18b73889f7f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Tremella.json",
+      "kind": "generated_output",
+      "bytes": 683,
+      "sha256": "bedaf6f4603d0b995bb705d58cc8fb6e53045c1d1ee85f14a2808f689da2b735"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/Wolfiporia.json",
+      "kind": "generated_output",
+      "bytes": 6429,
+      "sha256": "ec013863ae00251c0cfcab05273172d4a3a836be3644d30eb29c6c5c875fa47b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+      "kind": "generated_output",
+      "bytes": 7080214,
+      "sha256": "81d66817d791641547355367ebc05577cad541bd9ce906446c6856654e490584"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-summary.md",
+      "kind": "generated_output",
+      "bytes": 2830,
+      "sha256": "e20178d8618fc5024aa9d240c643ef3bd86e3b6b555d363e820c04f8fe802a68"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2a-chembl-fungal-source.json",
+      "kind": "generated_output",
+      "bytes": 18951,
+      "sha256": "2bc7a8913d512cd30f1e2168f73f3c0169df8bd863ffce53e2ef47539cfd357f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2a-chembl-fungal-source.md",
+      "kind": "generated_output",
+      "bytes": 6398,
+      "sha256": "94dc7518f9781a16632a095c4f248ac26d924bfdce9aca3ae27cfc0c0da0affa"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+      "kind": "generated_output",
+      "bytes": 3996154,
+      "sha256": "a3badbdfc58968e89208e9c4263e89fe637517bf5a05c782362910591bf8e5eb"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-lotus-fungal-compounds.json",
+      "kind": "generated_output",
+      "bytes": 223729,
+      "sha256": "c7348d725e0a9c6c7c6d09a549e1a195715c1c397ba395b36a688ee69731ae6a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-lotus-fungal-compounds.md",
+      "kind": "generated_output",
+      "bytes": 2695,
+      "sha256": "fa05e9823e2f49d128adf797e31667e43e696d6961cc1a771dfefae5484f4cbf"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2c-pubmed-fungal-chokepoint.json",
+      "kind": "generated_output",
+      "bytes": 31939,
+      "sha256": "5859f79639439e4ed5e05444283939be4b667edf2aef3c12467fab6f4266594d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2c-pubmed-fungal-chokepoint.md",
+      "kind": "generated_output",
+      "bytes": 7600,
+      "sha256": "d786827766879bcf998252eda2471b9a49a4029ea0ec75665bf8bb3658dc21ec"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-compound-x-target.json",
+      "kind": "generated_output",
+      "bytes": 289541,
+      "sha256": "1e1ca34bd9e0c47afc5a141bc2b083c06ea6676e97a6e54a83c9c4dc26e16bb6"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-fungal-chokepoint-hits.json",
+      "kind": "generated_output",
+      "bytes": 9173,
+      "sha256": "40124ab16c4c44c15564f3574c075f4cb30d134a011f0e1c1edea23d4e49aa09"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-fungal-chokepoint-hits.md",
+      "kind": "generated_output",
+      "bytes": 2948,
+      "sha256": "4b8f0825da369ad130a7441a3a5ee431b9b88898ad1413f57c193c74f3ba8e06"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-target-mapping-summary.md",
+      "kind": "generated_output",
+      "bytes": 9775,
+      "sha256": "f31af45b65f13dfb08738c927803cbe379bfb3467f21cf23a45eccc83cfff05a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-4-chokepoint-intersection-v2.json",
+      "kind": "generated_output",
+      "bytes": 336990,
+      "sha256": "79875d158cd09fdc15a66121bf49a03a7e1a5277870f24d459acea8da6790844"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-4-ranked-candidates.json",
+      "kind": "generated_output",
+      "bytes": 39819,
+      "sha256": "ef037d45ffe9e80d41e7e055066b5c1957efa9b239ba8ac0723a2607708f9831"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-4-ranked-candidates.md",
+      "kind": "generated_output",
+      "bytes": 10675,
+      "sha256": "d3271dd10f0c48e3da9a14a4f0c9e3b65cc05bf24edb5dcd755d27ca73476c95"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-5-deepread-PMID26457607.md",
+      "kind": "generated_output",
+      "bytes": 16258,
+      "sha256": "eff6b9a5af2bce86121be41365b0cb15ac2a070a34b5d6ebb63d39768a7d1dcf"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-5-deepread-PMID35750011.md",
+      "kind": "generated_output",
+      "bytes": 26835,
+      "sha256": "e10d0d8ddefe8ec8e018296768e2b6ddf101d3881a33ef54f22e815277907907"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-5-deepread-PMID36385640.md",
+      "kind": "generated_output",
+      "bytes": 15229,
+      "sha256": "b9a57b94a50d1f8ac17ddd72463b83161011126a0272f5cc0e166e2adee71115"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-5-deepread-PMID36801789.md",
+      "kind": "generated_output",
+      "bytes": 15041,
+      "sha256": "f4e5d7cba0e77eb27448fdca5081415f75f2b08df148ccc81ba40ce5e9c0e694"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-5-deepread-PMID41905012.md",
+      "kind": "generated_output",
+      "bytes": 16887,
+      "sha256": "8e883056aad0d0a2246131936b4df6ec3e07913542c5f34acc8c13c09ba0b12b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-5-deepseek-cross-check.md",
+      "kind": "generated_output",
+      "bytes": 12713,
+      "sha256": "aef1a19e85d9bfc725ca1b012f1554e3e284e8ad50b6e4a9da47a7b1761e3594"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-6-triage.json",
+      "kind": "generated_output",
+      "bytes": 17633,
+      "sha256": "4ac932e69f780ae2775cd1fb3bb6de56a5ee20ad00d73053c85572fb8291b0e2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-6-triage.md",
+      "kind": "generated_output",
+      "bytes": 12447,
+      "sha256": "dae9be55ef706f50e891b20a6b75df7869b770581b82f2347b42515c799a7181"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7-cultivation-yield-meta-analysis.md",
+      "kind": "generated_output",
+      "bytes": 48350,
+      "sha256": "96ca80cc1270de5f2252a8a86ced6117e05ae2627f27e2ff5546756ec8a14efb"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7a-ganoderma-strain-scan.md",
+      "kind": "generated_output",
+      "bytes": 36266,
+      "sha256": "84b340022dc4cb91893053b191e2b435795e6bd18cdb5c05fd66c246d5999706"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7b-cordyceps-strain-scan.md",
+      "kind": "generated_output",
+      "bytes": 29357,
+      "sha256": "8b2321ebdfde6c34fe479216aa047a3c602a231551b94d650f3534f31d989659"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7c-pleurotus-strain-scan.md",
+      "kind": "generated_output",
+      "bytes": 26478,
+      "sha256": "e9ad647699c037cc23bf82a604210c2f110690f74299b8efc975fddbfb3a0e39"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md",
+      "kind": "generated_output",
+      "bytes": 7844,
+      "sha256": "e6548837d343162f982781296377a7aaffa4a007eb900e12232a3be709defd48"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 114602,
+      "sha256": "b5a3902aa64b44ce51b40d75be98b32f40db48e941010757f115ce3f455f6a9f"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82364,
+      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 42433,
+      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+    },
+    {
+      "path": "wiki/etc/autonomous-screening-methodology.md",
+      "kind": "proposed_update",
+      "bytes": 25106,
+      "sha256": "22f922f454cf6b90d526e0902e48f7cc24c345a8076d68246eef1d86080c5fbf"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/README.md",
+      "kind": "proposed_update",
+      "bytes": 5741,
+      "sha256": "e06b9dda77d4b8613f1e58ddbf13b5e6fbc68ee15bddfbdc978ecffb1b0e351f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 11469,
+      "sha256": "6478fc9c3aca251600eadde1d31e745004aaf287dd43bf8b2cbc830a19c8aa05"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 31797,
+      "sha256": "c1020ff9b2c6e34c4ce5672b399d0d05ded597c5f26877f0ff3c1ac5405bdc62"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 6376,
+      "sha256": "2322dfe3c212b27949bd896b7b0379524f03275083545bf7efc2ebe292fa2c2e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 15441,
+      "sha256": "3eaeffa0cd451910726bd71a4f56fa329404498c528ae28182a0180c9ac2d7d5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/README.md",
+      "kind": "proposed_update",
+      "bytes": 9077,
+      "sha256": "172714505043925f4d2527267f9cf1f9146b3e4b28d5a25a3559d19792bf8d38"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 37099,
+      "sha256": "7911581a376ba0387f75ca16c6b58ee2443393a902924f5617eeba7a9551ce16"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 5316,
+      "sha256": "49d572cdec31ee45314ae074baec8fb0fa3b7f64db5ff6bcec78b1ef74fa82f9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
+      "kind": "proposed_update",
+      "bytes": 30992,
+      "sha256": "e1af5d1bc51b784aa3fea2eae804c9ae5ac92d012fc0c1cdf708c719a177f433"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 31401,
+      "sha256": "13032bc0c7ff6f5a2b48a8f1b342fee2978cfa2decaaed29136ee62e6a9de3e1"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/README.md",
+      "kind": "proposed_update",
+      "bytes": 8405,
+      "sha256": "de8d071ade874717aae0e3745d62fc34ff9e11d03af66c0057a189a9a5cfd937"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 31633,
+      "sha256": "ef3891f2c3fa28ebd306c8e8bcd9e893483a47a9355c85e3181f382e4e9c6922"
+    },
+    {
+      "path": "wiki/etc/manual-literature-mining.md",
+      "kind": "proposed_update",
+      "bytes": 30317,
+      "sha256": "fb29bc39cbb836f632f4f309553c967a8bb832f0366ee6808a24405c7709222c"
+    },
+    {
+      "path": "wiki/gout-genetic-variants.md",
+      "kind": "proposed_update",
+      "bytes": 56542,
+      "sha256": "7dd710f8181aef6321a95935659e7bf5dad4c3f9e822e8d3e6cb141d01b17e59"
+    },
+    {
+      "path": "wiki/gout-kill-chain-delivery-routes.md",
+      "kind": "proposed_update",
+      "bytes": 52006,
+      "sha256": "6d5d22dcc5485d825b9aabfd7024df3a83b8680049b3440f265fc7fba1bccb39"
+    },
+    {
+      "path": "wiki/gout-pathophysiology.md",
+      "kind": "proposed_update",
+      "bytes": 40472,
+      "sha256": "24f5f06b95684f31fdf9483e8bb01050b37d27d89a22a23f2c5f9c53e15fbc47"
+    },
+    {
+      "path": "wiki/hypotheses/H06-medicinal-mushroom-complement-track.md",
+      "kind": "proposed_update",
+      "bytes": 10402,
+      "sha256": "271aee35eb3aff5ce594ea5d941062a61f65037481a3a1aeaf340bf9c5d3d60a"
+    },
+    {
+      "path": "wiki/koji-endgame-strain.md",
+      "kind": "proposed_update",
+      "bytes": 92535,
+      "sha256": "6c45144b6dcfc23db424d07cf527de910e8dedd085ace0a8e5af6f4a1f21e53e"
+    },
+    {
+      "path": "wiki/medicinal-mushroom-complement-track.md",
+      "kind": "proposed_update",
+      "bytes": 59584,
+      "sha256": "57c998684d3be574c4fe966a403bbe5d394f65e3716bf4f9a8787397eeba2a3e"
+    },
+    {
+      "path": "wiki/medicinal-mushroom-compound-mapping-computational.md",
+      "kind": "proposed_update",
+      "bytes": 17492,
+      "sha256": "29e7dad807d537a2e6d55c6ecf42fc79803828a3b7434cb11d2399ed2b4f3e36"
+    },
+    {
+      "path": "wiki/medicinal-mushroom-extract-sops.md",
+      "kind": "proposed_update",
+      "bytes": 28100,
+      "sha256": "75294273f23b307356bdb0e4ad15154a7b99ae935c9d0d75175ae554bc774b04"
+    },
+    {
+      "path": "wiki/modality-chokepoint-matrix.md",
+      "kind": "proposed_update",
+      "bytes": 55047,
+      "sha256": "8f00ff489a00ca7075403e536ce1936c17bdb9eda6c9df976ae47ce215c34993"
+    },
+    {
+      "path": "wiki/nlrp3-exploit-map.md",
+      "kind": "proposed_update",
+      "bytes": 92649,
+      "sha256": "30614c5393b9da8f3821c1acfbcc99fb9bf54647eb50b1b7d153af9940d72f92"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 105531,
+      "sha256": "3152792c8967757c5ad57d78802266ed13617b48dad0029fe2699b9fbda4de72"
+    },
+    {
+      "path": "wiki/prps-purine-biosynthesis-chokepoint.md",
+      "kind": "proposed_update",
+      "bytes": 15373,
+      "sha256": "37afabfaf286d238f98d13f2cc30cd98dd0851349c89b6931d5fd60810f49047"
+    },
+    {
+      "path": "wiki/tcm-modern-rigor-intersection.md",
+      "kind": "proposed_update",
+      "bytes": 34392,
+      "sha256": "0db72969dafb468338fcc093681cc19230e59dde10f7ca6c56fd2ecfec37825a"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 256486,
+      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "2d36a422426c37219db93ecb06115a20bd2c1b14a48f09eae3ff8089aab8bd59"
+}

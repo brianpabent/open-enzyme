@@ -1,0 +1,147 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/README.md",
+      "kind": "design",
+      "bytes": 10965,
+      "sha256": "0dee1992a12c19804b3cfa14334293dfafe08e71627c126d7bf60af742c8b3c2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/analyze.py",
+      "kind": "design",
+      "bytes": 36247,
+      "sha256": "4793ecc8436bac6a2896e28806e239287c2fcb9187725088e097972bf04820df"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/inputs/P05155.fasta",
+      "kind": "design",
+      "bytes": 605,
+      "sha256": "c50b8b8911858eed876d98f180a0f2acad5e7e6033a38e7ac2feb13cfcd50811"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/inputs/alphafold_P05155_plddt.json",
+      "kind": "design",
+      "bytes": 7348,
+      "sha256": "39610711b785f64fac4572c17d156c3011ff5dba5282a91b0ed93cbebdd462af"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/inputs/protease_specificities.json",
+      "kind": "design",
+      "bytes": 9064,
+      "sha256": "92c594e430b441ceeb53a0afbe7414a1a0d13d921717b3b86d07382c99639ac9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 7672,
+      "sha256": "8b837cab64b4bc4c4f6374d5e3c980410e62814e516cf9651b4bd7cafcd73bdc"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/outputs/cleavage_sites.json",
+      "kind": "generated_output",
+      "bytes": 16554,
+      "sha256": "eb79a02ff2e46acea8921bae7d90a3f336dd5429b60eac4fa2ad0ab782c69697"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 19650,
+      "sha256": "a34db25eedbaaa5b531c36db9271bdc411eabe4e72ca8fbab38579e590d19d38"
+    },
+    {
+      "path": "wiki/c1-inh-protease-stability-ecn-computational.md",
+      "kind": "proposed_update",
+      "bytes": 16216,
+      "sha256": "7547f64e46d9efe86cc82c08706be56f1dd477b682a85e8307936dc0a56ec1f8"
+    },
+    {
+      "path": "wiki/chaperone-orthogonal-stacking.md",
+      "kind": "proposed_update",
+      "bytes": 106834,
+      "sha256": "42d7d282cdce67ee6a446fcb306b9e955e89fc53c70a206d5389d9b7130448ed"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 114602,
+      "sha256": "b5a3902aa64b44ce51b40d75be98b32f40db48e941010757f115ce3f455f6a9f"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82364,
+      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+    },
+    {
+      "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
+      "kind": "proposed_update",
+      "bytes": 17427,
+      "sha256": "791b36462f9dd5953e76d951c0291d209985ead2410f1988ceb62d4ddf227461"
+    },
+    {
+      "path": "wiki/engineered-lbp-chassis.md",
+      "kind": "proposed_update",
+      "bytes": 25895,
+      "sha256": "f030ff0f71a60485e99f966ae76762e0040655d3dc993b25e4f07db004c1b7b0"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 42433,
+      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-c1-inh-engineering-literature.md",
+      "kind": "proposed_update",
+      "bytes": 23284,
+      "sha256": "cbdc97d3c188c981ff7f898f3c83c24368400461f6a8e6f8bf963b3d49cc555d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-summary.md",
+      "kind": "proposed_update",
+      "bytes": 16265,
+      "sha256": "7431ea275e91f76bdb5a38dc153181ee72da57f3db35a287197041aaae9d02d9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/README.md",
+      "kind": "proposed_update",
+      "bytes": 4907,
+      "sha256": "cc78464096af73044281c4b706ad84bd3dac8b4bc2b6e416c39ce5b5e70e8f4a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 4438,
+      "sha256": "e368f2814121ab8adcd8a78690d44cb63d9896bd5c20968467810e2b0f92ac18"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 9701,
+      "sha256": "e456fa12f5aeb1901a4c50934afec59a182d7941279acb4e6115b2e3c54efa9d"
+    },
+    {
+      "path": "wiki/modality-chokepoint-matrix.md",
+      "kind": "proposed_update",
+      "bytes": 55047,
+      "sha256": "8f00ff489a00ca7075403e536ce1936c17bdb9eda6c9df976ae47ce215c34993"
+    },
+    {
+      "path": "wiki/nlrp3-exploit-map.md",
+      "kind": "proposed_update",
+      "bytes": 92649,
+      "sha256": "30614c5393b9da8f3821c1acfbcc99fb9bf54647eb50b1b7d153af9940d72f92"
+    },
+    {
+      "path": "wiki/upstream-complement-modulator-sweep-computational.md",
+      "kind": "proposed_update",
+      "bytes": 12981,
+      "sha256": "e9e4d1f9594826fca43b8088363a2c7d7fe2be6bbf8fdce4674fb7ac0a49de96"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "96d510bced5bbb10e66b90fa77fea9f64f7d0ef9244dda038a7dd1a782d85d2d"
+}

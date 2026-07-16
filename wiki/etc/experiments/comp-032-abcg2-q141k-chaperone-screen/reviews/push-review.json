@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "comp": "comp-032",
+  "comp_dir": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen",
+  "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+  "artifact_manifest_sha256": "9318c3abebd892cd6c0800185492f3cd07569f0aac8388d3d9f8b58b504ada1e",
+  "reviewer_model": null,
+  "timestamp": "2026-07-16T20:27:45Z",
+  "comp_verdict": "legacy_review_pending",
+  "propagation_eligibility": "blocked",
+  "synthesis_eligibility": "blocked",
+  "action_required": false,
+  "derived_paths": [
+    "wiki/abcg2-modulators.md",
+    "wiki/abcg2-q141k-chaperone-rescreen-computational.md",
+    "wiki/abcg2-q141k-chaperone-screen-computational.md",
+    "wiki/chassis-pending-interventions.md",
+    "wiki/computational-experiments.md",
+    "wiki/etc/GRAPH.md",
+    "wiki/etc/ai-bio-tools-playbook.md",
+    "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/README.md",
+    "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/inputs/provenance.md",
+    "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/summary.md",
+    "wiki/genotype-informed-supplement-workflow.md",
+    "wiki/gout-genetic-variants.md",
+    "wiki/validation-experiments.md"
+  ],
+  "actual_cost_usd": 0.0,
+  "note": "Deterministic migration baseline only; no independent push review has occurred."
+}

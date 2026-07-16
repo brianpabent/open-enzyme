@@ -1,0 +1,123 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/README.md",
+      "kind": "design",
+      "bytes": 15818,
+      "sha256": "3a2e07779f2d1a3843fee101be3a9985ddde221cc2159785dce692f981f29e33"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/analyze.py",
+      "kind": "design",
+      "bytes": 42730,
+      "sha256": "6bdffe325411ae58cabce46d5934873abf774ff37a2e176ce9f52ed3c02d09ed"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/inputs/clinical_comparators.json",
+      "kind": "design",
+      "bytes": 9233,
+      "sha256": "4043d4fbedd61d49074afa914b7f9b57d9214b656efdc024362c8d51ee2c11e4"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/inputs/dosing_regimens.json",
+      "kind": "design",
+      "bytes": 3228,
+      "sha256": "f6631bf468425d64ca7125df4370bdd7bda7349edc60bb8efe3d64a5ad45868b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/inputs/il1ra_receptor_binding.json",
+      "kind": "design",
+      "bytes": 7856,
+      "sha256": "5c222c51e0de8756781b602b46a111344bf44e1db6fc970f35254416ba683745"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/inputs/model_parameters.json",
+      "kind": "design",
+      "bytes": 3278,
+      "sha256": "aba1b4c4deec37366d5fca9475b60baafe8929db8510388f21c2430c0dd5b277"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 9735,
+      "sha256": "261694133c301ab57b64e2938a955b88c58bb5e534a12e73a967051f2c69c92b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/inputs/single_dose_pk_inherited.json",
+      "kind": "design",
+      "bytes": 4007,
+      "sha256": "09820a77ce92cafadac918ffe08fc47c997e759d5dde183c31daf740ebf1844d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/wiki-archive.md",
+      "kind": "design",
+      "bytes": 9982,
+      "sha256": "efff2089ba9d3d8ae2163f28be26aa8a6de26f5b537d6c17b0ebb62733c75edc"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/outputs/dose_pkpd_prediction.json",
+      "kind": "generated_output",
+      "bytes": 39012,
+      "sha256": "f40bb057b1b343451505f73683a458b1a1d12be41a6a9b8bb00e1352b565e714"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 5314,
+      "sha256": "8f40ed5f0531ece616d386cd825ac4bcbdfa5f5d6c92ac2f4dfaabaeae3685e9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/outputs/trajectory_data.json",
+      "kind": "generated_output",
+      "bytes": 47820,
+      "sha256": "3ad589bcad4387e53c38523dab35daac575e19c91946a2a4a1b7a607721ea9e2"
+    },
+    {
+      "path": "wiki/chassis-pending-interventions.md",
+      "kind": "proposed_update",
+      "bytes": 44914,
+      "sha256": "3c837b979a076ea883763160ede8f7717dc343f291d6f77a9cb0c89845089388"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82364,
+      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+    },
+    {
+      "path": "wiki/delivery-route-matrix.md",
+      "kind": "proposed_update",
+      "bytes": 39448,
+      "sha256": "6af68bb5474b22b3a4ac5b8571dd6d723382b0a3c73036545e48af70e01619e3"
+    },
+    {
+      "path": "wiki/gout-action-guide.md",
+      "kind": "proposed_update",
+      "bytes": 38906,
+      "sha256": "312f3dcd5535948a9fef4182be16a3313b8d9884104d2da44fcbdf5def275cc0"
+    },
+    {
+      "path": "wiki/gout-clinical-pipeline.md",
+      "kind": "proposed_update",
+      "bytes": 28356,
+      "sha256": "3e8a164bbeeef6cbb52a164d96d7647487c8368e367c83b82a3821312430b4da"
+    },
+    {
+      "path": "wiki/nlrp3-exploit-map.md",
+      "kind": "proposed_update",
+      "bytes": 92649,
+      "sha256": "30614c5393b9da8f3821c1acfbcc99fb9bf54647eb50b1b7d153af9940d72f92"
+    },
+    {
+      "path": "wiki/repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md",
+      "kind": "proposed_update",
+      "bytes": 4906,
+      "sha256": "680659c50c1b78d9bca99741324d3978213cd3fd00f7fe82c734243d5e993f2a"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "e68f7c2a889388e91df6b109a77e6d5d7e9e0d44219c0cffe63826bcb41b4609"
+}

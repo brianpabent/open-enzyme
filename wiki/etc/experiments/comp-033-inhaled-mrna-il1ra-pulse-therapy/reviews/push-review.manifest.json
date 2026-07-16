@@ -1,0 +1,153 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/README.md",
+      "kind": "design",
+      "bytes": 15621,
+      "sha256": "913be16094108c4d7d82a7defba88430f226e2468be90e515345328c56768e2f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/analyze.py",
+      "kind": "design",
+      "bytes": 21504,
+      "sha256": "ee61612dda763d2a900d9e32b71ab8e798c10ba5dcf14e11d75c3296e227c664"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/inputs/anakinra_benchmark_pk.json",
+      "kind": "design",
+      "bytes": 2431,
+      "sha256": "6f438e8e1466fbf087a76a9bb1ed19bae3f29d005e15cd68bc2b0f478d1b4fc8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/inputs/construct_design_priors.json",
+      "kind": "design",
+      "bytes": 4994,
+      "sha256": "d5340ce80f164822d3ff32f65e7527db3c696983346b821e9cce8eb507471441"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/inputs/il1ra_target_properties.json",
+      "kind": "design",
+      "bytes": 3997,
+      "sha256": "0bf3159b405813e529a15a7c55c45556686b3fcef4fd0f8023119f658ca53446"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/inputs/inhaled_mrna_precedents.json",
+      "kind": "design",
+      "bytes": 6207,
+      "sha256": "c3c2458cd8366fa541e0f1d67ed3f0c11cada2fc6613112fad16703c8fffafda"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/inputs/model_parameters.json",
+      "kind": "design",
+      "bytes": 4520,
+      "sha256": "7af7f4361e6e3b240270adffe12c59c91987457240da9199094af70f570c1beb"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/inputs/mrna_lnp_economics.json",
+      "kind": "design",
+      "bytes": 2735,
+      "sha256": "03574c7675b59ecd7dee62118251e9d83c1fd696dc53b33719ef0a6a4b2d9c42"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/inputs/partner_landscape.json",
+      "kind": "design",
+      "bytes": 7011,
+      "sha256": "a4d2dd5a2150c09b784f0373c72d082f442981ba10bea93d3e2112bfd4420134"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 7425,
+      "sha256": "4a92675d584899a21a3d06373bf976147d4e8e82331a1411f49a874264cfb12b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/outputs/dose_auc_prediction.json",
+      "kind": "generated_output",
+      "bytes": 3543,
+      "sha256": "279bc11afb571e27812ccf6c2964207df81c94dc440f0e0d7d2011b25a167f01"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/outputs/economic_comparison.json",
+      "kind": "generated_output",
+      "bytes": 1325,
+      "sha256": "e45564a8fd4934fa2135f3af5ce88b305d77a14b40f553e992ed08f2cb5316d3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 3391,
+      "sha256": "f5b5903682e23ceadef3bc2b8a5a01f0fa3a5f4b710fed1b9485a6da2449e1cc"
+    },
+    {
+      "path": "wiki/chassis-pending-interventions.md",
+      "kind": "proposed_update",
+      "bytes": 44914,
+      "sha256": "3c837b979a076ea883763160ede8f7717dc343f291d6f77a9cb0c89845089388"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82364,
+      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 42433,
+      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/README.md",
+      "kind": "proposed_update",
+      "bytes": 15818,
+      "sha256": "3a2e07779f2d1a3843fee101be3a9985ddde221cc2159785dce692f981f29e33"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 9735,
+      "sha256": "261694133c301ab57b64e2938a955b88c58bb5e534a12e73a967051f2c69c92b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 5314,
+      "sha256": "8f40ed5f0531ece616d386cd825ac4bcbdfa5f5d6c92ac2f4dfaabaeae3685e9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 9982,
+      "sha256": "efff2089ba9d3d8ae2163f28be26aa8a6de26f5b537d6c17b0ebb62733c75edc"
+    },
+    {
+      "path": "wiki/gout-action-guide.md",
+      "kind": "proposed_update",
+      "bytes": 38906,
+      "sha256": "312f3dcd5535948a9fef4182be16a3313b8d9884104d2da44fcbdf5def275cc0"
+    },
+    {
+      "path": "wiki/gout-clinical-pipeline.md",
+      "kind": "proposed_update",
+      "bytes": 28356,
+      "sha256": "3e8a164bbeeef6cbb52a164d96d7647487c8368e367c83b82a3821312430b4da"
+    },
+    {
+      "path": "wiki/inhaled-mrna-il1ra-pulse-computational.md",
+      "kind": "proposed_update",
+      "bytes": 5761,
+      "sha256": "bf484fadf866eecec599eaecf56b6b4ac2114b8acf7ea9ada85e548e8fc9e66b"
+    },
+    {
+      "path": "wiki/repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md",
+      "kind": "proposed_update",
+      "bytes": 4906,
+      "sha256": "680659c50c1b78d9bca99741324d3978213cd3fd00f7fe82c734243d5e993f2a"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "dc54fb6b7e2d3a3367df5993b6352ef6ded612c8330cee8080fb71a065586ff2"
+}

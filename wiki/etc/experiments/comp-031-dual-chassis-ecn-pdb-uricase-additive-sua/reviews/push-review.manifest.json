@@ -1,0 +1,99 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
+      "kind": "design",
+      "bytes": 3223,
+      "sha256": "c3429016800d821aae918f6704e0b0afa28af964e5372a83d8fb4c8fb49a985a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/analyze.py",
+      "kind": "design",
+      "bytes": 29624,
+      "sha256": "b644ed62bda9ed3115ad04ee4457bd5692d4ae3e6aba07d6d81f692e51f5c861"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/model_parameters.json",
+      "kind": "design",
+      "bytes": 5658,
+      "sha256": "91cfd8bdb0cfec0023cc1f31e711960419c80347ba4d61e9a7b598aa1fa1995c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 6715,
+      "sha256": "f149f6b150126f2c92e25c7cb5b65eb0e3fe3e3edb12bd82e61f0c3163324d82"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 10341,
+      "sha256": "c12c22fd2ba639c38b0f517854d5a0972819991959d7913c87d2512c19a387de"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 6294,
+      "sha256": "0fb4942d550a2924b77b4eff945cde78aefa2a48594045d0df58dda29a30e428"
+    },
+    {
+      "path": "wiki/chassis-pending-interventions.md",
+      "kind": "proposed_update",
+      "bytes": 44914,
+      "sha256": "3c837b979a076ea883763160ede8f7717dc343f291d6f77a9cb0c89845089388"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82364,
+      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+    },
+    {
+      "path": "wiki/disulfiram.md",
+      "kind": "proposed_update",
+      "bytes": 17254,
+      "sha256": "478ca9ce0828aee4b3d31a2e5fea74d66ff4a5c16ad1aa76ebc4491336085d14"
+    },
+    {
+      "path": "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3635,
+      "sha256": "bec900794161500baadcab54fe722361fd51b293b27aa7f307b497eaf37e1d2b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/README.md",
+      "kind": "proposed_update",
+      "bytes": 8171,
+      "sha256": "d0eb79115f149099c4e3c7e9b89cd5947d0c5b347d6606d19479f54019975f6d"
+    },
+    {
+      "path": "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
+      "kind": "proposed_update",
+      "bytes": 4921,
+      "sha256": "ab4d4c782ce140875c2ee4744220fc975f71a9c49c9bad5180690f5d0e03cf56"
+    },
+    {
+      "path": "wiki/purine-degrading-bacteria.md",
+      "kind": "proposed_update",
+      "bytes": 36898,
+      "sha256": "d1bcfbb6ca3b4b5fee53476167a43d707ed693ae6ec7e32c8063dfc68db08216"
+    },
+    {
+      "path": "wiki/staged-purine-sink-mass-balance-computational.md",
+      "kind": "proposed_update",
+      "bytes": 5792,
+      "sha256": "488c6e60d1496cdb5bcb23c6acd24ca0bc83db9b917688f322d140a05494219b"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 256486,
+      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "9d3cb2b512c7d3120786688dc514931470e35277e3a97c18fed01e3b76504018"
+}

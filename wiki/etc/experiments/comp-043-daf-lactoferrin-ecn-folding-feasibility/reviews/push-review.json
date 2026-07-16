@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "comp": "comp-043",
+  "comp_dir": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility",
+  "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+  "artifact_manifest_sha256": "b38edbd2c56e89ca7451e2c25c3a42550675be4adffd16b2f6514b9f50c3d639",
+  "reviewer_model": null,
+  "timestamp": "2026-07-16T20:27:45Z",
+  "comp_verdict": "legacy_review_pending",
+  "propagation_eligibility": "blocked",
+  "synthesis_eligibility": "blocked",
+  "action_required": false,
+  "derived_paths": [
+    "wiki/chaperone-orthogonal-stacking.md",
+    "wiki/computational-experiments.md",
+    "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
+    "wiki/engineered-lbp-chassis.md"
+  ],
+  "actual_cost_usd": 0.0,
+  "note": "Deterministic migration baseline only; no independent push review has occurred."
+}

@@ -1,0 +1,219 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/.gitignore",
+      "kind": "design",
+      "bytes": 363,
+      "sha256": "231753f38c511254bba35c0e122faae6749285fcbc51421386a96d192ac4e178"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/README.md",
+      "kind": "design",
+      "bytes": 8750,
+      "sha256": "b59b81c8cfc936cf3b3ad6d691fdba05d5b75583d0f71d294278342531c41615"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/analyze.py",
+      "kind": "design",
+      "bytes": 11186,
+      "sha256": "1a4134520d4f8800c0706af5a18a32d8367571bc405686449131331734f11a97"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/build_results.py",
+      "kind": "design",
+      "bytes": 11610,
+      "sha256": "ac5b9ea08b2c093420126b15e08d5e10b0cb0b89050983087a28a5f9314d8be9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/inputs/Q9UNQ0.fasta",
+      "kind": "design",
+      "bytes": 799,
+      "sha256": "7fee2c811c4c660c006119b50f62f67b7de37cb57ac97903d6e504816c077cf3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/inputs/alphafold_Q9UNQ0_confidence_v6.json",
+      "kind": "design",
+      "bytes": 9053,
+      "sha256": "e1e60f1210bf8d05dc52eb8aa34b8caa5c8f050d478608ef3f048adbbbdb9e43"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/inputs/alphafold_Q9UNQ0_model_v6.pdb",
+      "kind": "design",
+      "bytes": 420227,
+      "sha256": "37c7ef98db99317949e39964dcbc797bd903b9bf6cabc7a4153e65dd9bedde74"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/inputs/fda_approved_drug_library.json",
+      "kind": "design",
+      "bytes": 46851,
+      "sha256": "220af432d6253674ba91c073fcfe5e44bffebee0578f2b12232dff6e9184ddc3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 4662,
+      "sha256": "1f915cbbe4fc8d7d87985993325b60fd7c272489ad847efc749fdce36ab9d39c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/logs/run.log",
+      "kind": "design",
+      "bytes": 16451,
+      "sha256": "1caa8783dba2ffd821e34ccfcdcc92aceca4b888842c80e23a7071ae115cf99d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/prep_receptor.py",
+      "kind": "design",
+      "bytes": 6155,
+      "sha256": "306d6424ab4438fed51d77eb4c0668cba6aca621509cc47aaf9034e804cd6c66"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/repair.py",
+      "kind": "design",
+      "bytes": 2056,
+      "sha256": "328b6dd6b985c8fe428f487ef02dd723a320190ad6a0d3bd686ceff6b63f8712"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/resolve_smiles.py",
+      "kind": "design",
+      "bytes": 4305,
+      "sha256": "b0babba05a6cf9f9059dd726a8c8f4bc070f95ab0d5cd0b32eb61a7f894d589a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/sensitivity.py",
+      "kind": "design",
+      "bytes": 7756,
+      "sha256": "005325884a6b9a614d6579fd26d1770067e1afd225ae751d6e7f636163017700"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/work/ligands/smiles_resolved.json",
+      "kind": "design",
+      "bytes": 28804,
+      "sha256": "a3b994a45313b9f65bd9d26c507fa59a3cdbce33095840d80e371a6db1ff70a4"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/work/receptor/abcg2_q141k.pdbqt",
+      "kind": "design",
+      "bytes": 495481,
+      "sha256": "85addabbb1366fbc075ff7271cdcc0020fb80f500852f1dacce77160abf675f7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/work/receptor/abcg2_q141k_clean.pdb",
+      "kind": "design",
+      "bytes": 412136,
+      "sha256": "990357ff094bd62df696d0e28d0cd339b78729a9ed041b6710fdc8544cddda2a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/work/receptor/abcg2_wt.pdbqt",
+      "kind": "design",
+      "bytes": 495478,
+      "sha256": "4bb42d9a60111e126891ef533e69021d3281aed1e206226ac5c8ed6da519f038"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/work/receptor/abcg2_wt_clean.pdb",
+      "kind": "design",
+      "bytes": 412136,
+      "sha256": "096b8a625b0c65be12fe63ce1673ccb253c90723a1e15fb9fb10b8fc3b121550"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/work/receptor/boxes.json",
+      "kind": "design",
+      "bytes": 847,
+      "sha256": "7f57f9dc6c36d2d4b77c19dbbd08712b1f48ca17e7b27fabf85f7141f91e8d5f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/chembl_axis2.json",
+      "kind": "generated_output",
+      "bytes": 3545,
+      "sha256": "4288b5e8119166d3feece40d989247850ab110c9eb12d0e08facc201ae7fe40b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/controls.md",
+      "kind": "generated_output",
+      "bytes": 2177,
+      "sha256": "7386cd18f909e115b8362ec7575f2e8aa9a6c057cbc78388aac601a9463725f2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/drugbank_substrate_axis.json",
+      "kind": "generated_output",
+      "bytes": 5413,
+      "sha256": "554fd99360cfaa168db1b0d2cba11f25179a82c84cf31ca6968583381f66429d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 88453,
+      "sha256": "639d7f5e280651619695afcd2bb335c7f6da05b7050bd679dcfe02480b707d6b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/sensitivity.json",
+      "kind": "generated_output",
+      "bytes": 10077,
+      "sha256": "95b7ea59e49a0399e4161debbb8c24f345297ceb003c8fb6be98e5e9214a41ba"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 3748,
+      "sha256": "09ad8ac718e9cfca74471dd27409d197a7eb9ba2da1e732d38831b0a15bc4b34"
+    },
+    {
+      "path": "wiki/abcg2-modulators.md",
+      "kind": "proposed_update",
+      "bytes": 55220,
+      "sha256": "3269f4c754d6730691b02a7845dad75115d7d8a9470b174342867fc32a91f3e3"
+    },
+    {
+      "path": "wiki/abcg2-q141k-chaperone-rescreen-computational.md",
+      "kind": "proposed_update",
+      "bytes": 13288,
+      "sha256": "dd5dbbfef8418385c5dacde8447ac84de6285aa9e30367e3868bbb96105403b4"
+    },
+    {
+      "path": "wiki/abcg2-q141k-chaperone-screen-computational.md",
+      "kind": "proposed_update",
+      "bytes": 9418,
+      "sha256": "1e3ebaf8f620312cd1e03d65e714ea6cd5dbee83d0777839936c305adf304652"
+    },
+    {
+      "path": "wiki/chassis-pending-interventions.md",
+      "kind": "proposed_update",
+      "bytes": 44914,
+      "sha256": "3c837b979a076ea883763160ede8f7717dc343f291d6f77a9cb0c89845089388"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82364,
+      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+    },
+    {
+      "path": "wiki/etc/chembl-cross-check.md",
+      "kind": "proposed_update",
+      "bytes": 41942,
+      "sha256": "81d5f2bb4618ae4a70cc912d0af437d62dea16faea6967d84ae2ef2ece771292"
+    },
+    {
+      "path": "wiki/genotype-informed-supplement-workflow.md",
+      "kind": "proposed_update",
+      "bytes": 34299,
+      "sha256": "6b0d8ac851dfa87f9ecdfdfc46326b086f86f3adc0562a0342305e425f9a1f11"
+    },
+    {
+      "path": "wiki/gout-genetic-variants.md",
+      "kind": "proposed_update",
+      "bytes": 56542,
+      "sha256": "7dd710f8181aef6321a95935659e7bf5dad4c3f9e822e8d3e6cb141d01b17e59"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 256486,
+      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "1c1dc5c472323da1878468aa5efd43632535c7e66ea1eff80d4740f70ffc939d"
+}

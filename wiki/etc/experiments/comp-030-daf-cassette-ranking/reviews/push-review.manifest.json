@@ -1,0 +1,195 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-030-daf-cassette-ranking",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/README.md",
+      "kind": "design",
+      "bytes": 4651,
+      "sha256": "8b74badaf215170032aa1911680fd6a44bde6419a5636abfd018959411570807"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/code/analyze.py",
+      "kind": "design",
+      "bytes": 32477,
+      "sha256": "64eeffb7bec19de3ae31b301d5f39e24b3c3e40e200562d6189423379718fcae"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/code/rerank_final.py",
+      "kind": "design",
+      "bytes": 15339,
+      "sha256": "a032327b61ae59e667b66d5a0b19c679310a658df11f613a8cc39e277f424e67"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/code/run_esm2.py",
+      "kind": "design",
+      "bytes": 12534,
+      "sha256": "90f8fead943c710ac93c7b3a957ef0c6b26b4cba2a48f1f28fb34c4e98d1f684"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/figures/plddt_histogram.tsv",
+      "kind": "design",
+      "bytes": 136,
+      "sha256": "e64bffb2bdf95a1b5ce4765c470400325b6f1ad3ccb7fec15f9258a67a98f745"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/inputs/P08174_scr14.fasta",
+      "kind": "design",
+      "bytes": 380,
+      "sha256": "cf9f5cd1bf95c23a0798a4ec30f284bfeea3e0fd78c7d7ba8eeffaec3d3e9c51"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/inputs/a_oryzae_codon_usage.json",
+      "kind": "design",
+      "bytes": 5321,
+      "sha256": "61b8e7293388d5d605f19e36fce9d94d19a526baf35f3c9205bf17d0b717a24e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/inputs/protein_candidates.fasta",
+      "kind": "design",
+      "bytes": 259298,
+      "sha256": "d16ae13723905e094c1284c97ed4a2ad15ce4b3ed6a5c9c9de05cf996cc6de45"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/inputs/protein_candidates_keymap.csv",
+      "kind": "design",
+      "bytes": 93758,
+      "sha256": "6382a9fc469d994ff9434cc8737c829cc38fcb4e56e8bb49c6ea71565e8cf5d9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/provenance.md",
+      "kind": "design",
+      "bytes": 7073,
+      "sha256": "4a1fb738b2b48c9f08313d4af79dfc7b867071466b8022725f800f7feab9a419"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/results/all_candidates_scores.csv",
+      "kind": "design",
+      "bytes": 4819851,
+      "sha256": "78ebf8dcf33fe98778862e94b39466f5d6175f19855a29c1d6e810dad0b6554b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/results/alpha_coefficient_check.json",
+      "kind": "design",
+      "bytes": 1209,
+      "sha256": "126d545831b26ba7cb796cf421c4a6821116b8b04bf9d87de43532ac313f06a1"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/results/esm2_pseudo_pLDDT.csv",
+      "kind": "design",
+      "bytes": 103864,
+      "sha256": "f82ea0ef83e5a716c3165b61bd1f919cc28cc57591e549b86dc0051c8bcad2dc"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/results/final_summary.json",
+      "kind": "design",
+      "bytes": 6380,
+      "sha256": "b2437f64163ca49dff88752bd34146cbca045d34fd6c979033c7d2e07ac29a61"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/results/plddt_distribution.csv",
+      "kind": "design",
+      "bytes": 229,
+      "sha256": "700cc0c941e2a66fbefd01d57c34afd458a4851a4b794bef4e4bf52ec6f1348f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/results/pre_esm2_top50.csv",
+      "kind": "design",
+      "bytes": 5902,
+      "sha256": "464fa6a798882b94589d3cb6ef70cad8fac86c7c94c249c84457339d492438e1"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/results/shortlist_n5eq5.csv",
+      "kind": "design",
+      "bytes": 5056,
+      "sha256": "9009f93546e14a2517a612892b6f069a32041f4b4895497de9502e1a72d1caa0"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/results/shortlist_n5ge4.csv",
+      "kind": "design",
+      "bytes": 78212,
+      "sha256": "a1c2a410479bb8b873f7750f4fbee1cdcdf8db0556af0efea82e8621b5e55856"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/results/summary_pre_esm2.json",
+      "kind": "design",
+      "bytes": 890,
+      "sha256": "fc0c90f3acd536e58017d00d9ecabeeb3f765874edbd3bf0db609fc11ef8f750"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/results/top25.md",
+      "kind": "design",
+      "bytes": 3788,
+      "sha256": "08501a641766729d0da099355249b057ca36f44953e38120b0af93363fa44b47"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/wiki-archive.md",
+      "kind": "design",
+      "bytes": 24490,
+      "sha256": "b5715bcb1077461a1c2bd46b2f8c5f9213adbcabb4f256aba36f1d5e504c5bf5"
+    },
+    {
+      "path": "wiki/chaperone-orthogonal-stacking.md",
+      "kind": "proposed_update",
+      "bytes": 106834,
+      "sha256": "42d7d282cdce67ee6a446fcb306b9e955e89fc53c70a206d5389d9b7130448ed"
+    },
+    {
+      "path": "wiki/combined-cp0-systems-model-computational.md",
+      "kind": "proposed_update",
+      "bytes": 12330,
+      "sha256": "d96687999c54e2798a651cf2da32fa8554f99c9e5f632a4a596f1bf027f808ad"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82364,
+      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+    },
+    {
+      "path": "wiki/daf-cd55-scr14-cassette-ranking-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3599,
+      "sha256": "440f7b7e9c99d4f2bb7cc3b3134a1c4c9d25f827fbe7b2de0f339849a693735d"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 42433,
+      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 20855,
+      "sha256": "58cc5eb369afdc8a67d8240e7e69920570221548107e8721decf0250cb356244"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-029-combined-cp0-systems-model/README.md",
+      "kind": "proposed_update",
+      "bytes": 9943,
+      "sha256": "178fb801fbf92a3163e23ea778c1c1138d953157da89c72f32aa741956e54e2c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-029-combined-cp0-systems-model/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 9205,
+      "sha256": "293861ab7587082ab559967f3fe4ce813be6706f372c5491901e10f085b00347"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 23494,
+      "sha256": "c10d90b9703a9c8158acd76554fa166cfe8ce05e157e9d0b9062229df6d0850c"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 256486,
+      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "c7673209384093efeb575e52b779b214290c531a71aa34a5eb699f3e942c800e"
+}

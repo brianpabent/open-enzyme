@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "comp": "comp-024",
+  "comp_dir": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility",
+  "source_commit": "c110d368266321e36797acf81f5fe43f2ea58015",
+  "artifact_manifest_sha256": "782e55aee3280354e693508b5ea97bb05b9ce04438b9e05dddddbe226291fa61",
+  "reviewer_model": null,
+  "timestamp": "2026-07-16T20:27:44Z",
+  "comp_verdict": "legacy_review_pending",
+  "propagation_eligibility": "blocked",
+  "synthesis_eligibility": "blocked",
+  "action_required": false,
+  "derived_paths": [
+    "wiki/c1-inh-protease-stability-ecn-computational.md",
+    "wiki/chassis-pending-interventions.md",
+    "wiki/complement-c5a-gout.md",
+    "wiki/complestatin-bgc-lbp-feasibility-computational.md",
+    "wiki/computational-experiments.md",
+    "wiki/etc/autonomous-screening-methodology.md",
+    "wiki/etc/bio-ai-tools.md",
+    "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/README.md",
+    "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive.md",
+    "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md",
+    "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/README.md",
+    "wiki/etc/validation-experiments-archive.md",
+    "wiki/validation-experiments.md"
+  ],
+  "actual_cost_usd": 0.0,
+  "note": "Deterministic migration baseline only; no independent push review has occurred."
+}

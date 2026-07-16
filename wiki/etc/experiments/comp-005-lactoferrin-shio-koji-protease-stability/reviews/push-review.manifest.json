@@ -1,0 +1,267 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/README.md",
+      "kind": "design",
+      "bytes": 3476,
+      "sha256": "6aaa27617d8cbbe7ca9d5269b72099ca2de66727cd7489058d7a839892c536af"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/analyze.py",
+      "kind": "design",
+      "bytes": 14375,
+      "sha256": "109b651bfa83e5f96eed09ef16f3fbbbefa6f3f5671dce6fbeba05da7306ad5d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/inputs/P02788.fasta",
+      "kind": "design",
+      "bytes": 802,
+      "sha256": "c78b74212c8370fced3b2040577c9ce854be045e76e74ccb0048bd17464dc94b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/inputs/alphafold_P02788_plddt.json",
+      "kind": "design",
+      "bytes": 9755,
+      "sha256": "5cc1d11ac8bf366c1d83d292ce5f6c580d19675b2e5254d5a5639cf7204a4c88"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/inputs/protease_specificities.json",
+      "kind": "design",
+      "bytes": 4008,
+      "sha256": "618abc2f69b34b45cbe0e256693d696e05547994b07ef41c3024889cb658b0e0"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 1482,
+      "sha256": "d82b19cb14769b4ae189a1e6ae3b626776f0e4f6c5e91e03334202122f3c7559"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/wiki-archive.md",
+      "kind": "design",
+      "bytes": 8018,
+      "sha256": "2976e9e12e7e1946ac071690a3c4b20a0a07472b3f085a36c63f5881564c41c0"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/outputs/cleavage_sites.json",
+      "kind": "generated_output",
+      "bytes": 7954,
+      "sha256": "a3947900d5d1dbcf6fae45d57dcdf750629810e3ea24b8a2c9053a095d18cdd5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 8558,
+      "sha256": "600c826d60ccdde7adc9dfea44c2c52fe0fe165b4a35b09751e5eec327c4633e"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82364,
+      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+    },
+    {
+      "path": "wiki/daf-cd55-protease-stability-computational.md",
+      "kind": "proposed_update",
+      "bytes": 2393,
+      "sha256": "e3f00b520e9900501661bf43d5cca25231298e188213aa6260bc0189c4caeb61"
+    },
+    {
+      "path": "wiki/daf-cd55-scr14-truncated-computational.md",
+      "kind": "proposed_update",
+      "bytes": 2751,
+      "sha256": "21a4d7d57941e109108410df3453b009f961921e1b98ba232625b97a18d350c3"
+    },
+    {
+      "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
+      "kind": "proposed_update",
+      "bytes": 17427,
+      "sha256": "791b36462f9dd5953e76d951c0291d209985ead2410f1988ceb62d4ddf227461"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 42433,
+      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+    },
+    {
+      "path": "wiki/etc/bio-ai-tools.md",
+      "kind": "proposed_update",
+      "bytes": 63999,
+      "sha256": "0265b6fed9c5ae43cbb0d63c638592f91ab690708a5fb2356ae5731ae85732ad"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/README.md",
+      "kind": "proposed_update",
+      "bytes": 5540,
+      "sha256": "a60b0f1ce8e92a60c95b171efa206125a2a77e9d9ed21a33151e67fb424b07fa"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 2683,
+      "sha256": "63f0183c3a810a05397cd40d6307c1552cf4e45958287278e8f4d2e3a0eae631"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 11525,
+      "sha256": "71e14a816387867af91113ab01d13ae652ab7e7e54fbdb41da3c1322637b441b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 16066,
+      "sha256": "c062441bb69963084565f3c919f4e6dddf71b6eed227d8c23a726773b10c48fe"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 18623,
+      "sha256": "8b4c94f89e87c538b0f61cafd074fac887ac271646ee22678e830d350f1f2465"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 18372,
+      "sha256": "2a0c6401223cfaa299da078dc037325b0893344f6c0f0c80ee3ecdc83289d085"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/README.md",
+      "kind": "proposed_update",
+      "bytes": 5196,
+      "sha256": "590248fc0a18aa266161f27756653a6a9f43468c244759961d197fab0d4832db"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 4793,
+      "sha256": "6b4b9b57b989205b0adffd9c28861da22339c06169abafb199705b94aa341940"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 15579,
+      "sha256": "8c882c6ce107ade0332839eaa551edc6dc726f5f63c4864fdc7c9f728875325f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 20474,
+      "sha256": "53083472ca62f09409d92d1364c28d3193f5ba01efb65be85edd56e194a3290e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 7578,
+      "sha256": "ba1b604324cdc3d598f79b67584cfe7ac6522ec1f7d3bd3f0a78da61e1ac279f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 28230,
+      "sha256": "6d1f445df427368cc9fbc56ab1911c35f2f43bd92469ba54a597c722ccee5a13"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 18630,
+      "sha256": "320d89d9f8106e45cd177a102d4e23388306df167532f967b941618f6fcc812d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/README.md",
+      "kind": "proposed_update",
+      "bytes": 4556,
+      "sha256": "0b6ffc30455dd8d4cb13f772457ae8af722b012be92b6f5a48d0d8390a1d4f91"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 2605,
+      "sha256": "f09c27d41df42d3f4b436f19f7b763bbb636f39a2a09b93f691376737d1deab7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 8043,
+      "sha256": "b974a0b452674a5d428c1939446d73021dda83a89630ca6f2c29c8359a77c911"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 20855,
+      "sha256": "58cc5eb369afdc8a67d8240e7e69920570221548107e8721decf0250cb356244"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/README.md",
+      "kind": "proposed_update",
+      "bytes": 7650,
+      "sha256": "46b906fb77c6947b18df9d892ec5d31b217b51cff1414a226e21e8e44aadf499"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 6464,
+      "sha256": "3855b9a7dd5e914e45c6d8076579d4fc908f8a1971be046ee7c922d936f31366"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/README.md",
+      "kind": "proposed_update",
+      "bytes": 9173,
+      "sha256": "16099d1556bb84048286663be7160a7e42a6ab22bd42387be0bf2de2c1610b06"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 3463,
+      "sha256": "9b46e45ab5bd981fb2cd9362a70164abb2de12b5b7c1a3c04411f79f03acd2d5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 23494,
+      "sha256": "c10d90b9703a9c8158acd76554fa166cfe8ce05e157e9d0b9062229df6d0850c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/README.md",
+      "kind": "proposed_update",
+      "bytes": 10965,
+      "sha256": "0dee1992a12c19804b3cfa14334293dfafe08e71627c126d7bf60af742c8b3c2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 4438,
+      "sha256": "e368f2814121ab8adcd8a78690d44cb63d9896bd5c20968467810e2b0f92ac18"
+    },
+    {
+      "path": "wiki/lactoferrin-linker-redesign-computational.md",
+      "kind": "proposed_update",
+      "bytes": 13189,
+      "sha256": "85abb178bd9a1d58d470cf78863af8bc1a32e8a7e6d2746d43b2c2de2decdf2c"
+    },
+    {
+      "path": "wiki/lactoferrin-protease-stability-computational.md",
+      "kind": "proposed_update",
+      "bytes": 2407,
+      "sha256": "72052d0a836c3c97b9701db2c8ffe0b1287686d4d9504154bf56d041a7e1a16c"
+    },
+    {
+      "path": "wiki/lactoferrin.md",
+      "kind": "proposed_update",
+      "bytes": 85150,
+      "sha256": "24f9aed2dc716f36e71b16a79d5cc20ab410d50dbf8f3186bda4d43a270f5ea7"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 256486,
+      "sha256": "d7e034c7d1a78f716e4ec3f307bafe4e3e7ad90ff4c754004c6d5c0d912c333e"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "e1a243c96478ba6b50f5f45dbf468e34e1a92f48070bf57a85a5b0cba9e1d1a5"
+}

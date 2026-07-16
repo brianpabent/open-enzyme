@@ -1,0 +1,123 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/README.md",
+      "kind": "design",
+      "bytes": 5741,
+      "sha256": "e06b9dda77d4b8613f1e58ddbf13b5e6fbc68ee15bddfbdc978ecffb1b0e351f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/analyze.py",
+      "kind": "design",
+      "bytes": 38833,
+      "sha256": "61ded82faaae6aecaa6e03cdbe15bd313b0611dac019f5c9ac293f245a342778"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/inputs/chembl_bioactivity.json",
+      "kind": "design",
+      "bytes": 16504,
+      "sha256": "f1f6d4007f9baf09b9cef73a4acb88b8c2d22055ff650442b4c47f96bcf43e7a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/inputs/compounds.json",
+      "kind": "design",
+      "bytes": 11047,
+      "sha256": "3983d04281cea92bcd76fef212f9568bd0ac3ff471db6800d670c39d03925217"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/inputs/concentration_estimates.json",
+      "kind": "design",
+      "bytes": 7095,
+      "sha256": "ed9e5ff977f8ce09fb64e3668ebcd98d8062169b0684a289766a53ffced66195"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/inputs/literature_claims.json",
+      "kind": "design",
+      "bytes": 26101,
+      "sha256": "aec7407b95a53aea5ac7851196554644457c7aa1efe15c5569deb9165c4b6960"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 11469,
+      "sha256": "6478fc9c3aca251600eadde1d31e745004aaf287dd43bf8b2cbc830a19c8aa05"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/inputs/targets.json",
+      "kind": "design",
+      "bytes": 7951,
+      "sha256": "e2c32be686600d55b3060333e274d03740ad5dfc503b23735eeece5c88a90bac"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/wiki-archive.md",
+      "kind": "design",
+      "bytes": 31797,
+      "sha256": "c1020ff9b2c6e34c4ce5672b399d0d05ded597c5f26877f0ff3c1ac5405bdc62"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 26293,
+      "sha256": "7e3502093c5ed0e030f94b2602e5605436f2fe436078804d4e8520f8347e5b7e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 19676,
+      "sha256": "34c8e07894ee045a67a68480b93eea01d06525ca9ebf34280e0da8d387a2ef4c"
+    },
+    {
+      "path": "wiki/androgen-natural-modulation.md",
+      "kind": "proposed_update",
+      "bytes": 99380,
+      "sha256": "1fbf95db423836a0c9e0a3e79db38519172ff2cc4ae0bf1f2aadf62e021b7113"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82364,
+      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+    },
+    {
+      "path": "wiki/genotype-informed-supplement-workflow.md",
+      "kind": "proposed_update",
+      "bytes": 34299,
+      "sha256": "6b0d8ac851dfa87f9ecdfdfc46326b086f86f3adc0562a0342305e425f9a1f11"
+    },
+    {
+      "path": "wiki/gout-action-guide.md",
+      "kind": "proposed_update",
+      "bytes": 38906,
+      "sha256": "312f3dcd5535948a9fef4182be16a3313b8d9884104d2da44fcbdf5def275cc0"
+    },
+    {
+      "path": "wiki/hypotheses/H07-clomid-intestinal-er-antagonism.md",
+      "kind": "proposed_update",
+      "bytes": 20828,
+      "sha256": "4a32d41ff127824cc6a23a4dd2b5c73de2c388ad4eec76b9b0eaac027080f774"
+    },
+    {
+      "path": "wiki/personal-genome-protocol.md",
+      "kind": "proposed_update",
+      "bytes": 16475,
+      "sha256": "10d85b80274e1934b2062804c20f29f3daed2cc5f1f8e64e0a3bef8aa64f1c7e"
+    },
+    {
+      "path": "wiki/prps-purine-biosynthesis-chokepoint.md",
+      "kind": "proposed_update",
+      "bytes": 15373,
+      "sha256": "37afabfaf286d238f98d13f2cc30cd98dd0851349c89b6931d5fd60810f49047"
+    },
+    {
+      "path": "wiki/t-axis-adjuvant-urate-mapping-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3448,
+      "sha256": "aee60d1096af4c2cc040baf26781518528ea570f17b25d8e4730eeeb6c571379"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "2669a07cb570672720f9c6011f64e0a42f85505316e2683aa011d0590d24a4c2"
+}

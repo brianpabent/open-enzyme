@@ -1,0 +1,81 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/README.md",
+      "kind": "design",
+      "bytes": 7238,
+      "sha256": "09fc1360fc93b92ad35b0f605b7fade2edb50b8d222aa547087699161418b1f2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/analyze.py",
+      "kind": "design",
+      "bytes": 13252,
+      "sha256": "aaec7e7e98e26413121fa9be4a729749981a7577cad091dd54487a2a0d20afa2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/inputs/assay-formats.json",
+      "kind": "design",
+      "bytes": 12335,
+      "sha256": "f76a4d8340fb99920bed9772661962d89b9838d84a90ba83b44f8327249a9753"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/inputs/compound-list.json",
+      "kind": "design",
+      "bytes": 8331,
+      "sha256": "6cc100378fa550a9dde5ea3cc543207e962e0875ae0b1d2f0e22e3910944f7be"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 10248,
+      "sha256": "34102d53084745a17e912c996c0bafbadf90fde2cf9bdd0671c69ef6454c7797"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/outputs/matrix.json",
+      "kind": "generated_output",
+      "bytes": 29758,
+      "sha256": "5a95104cdadbe99d3dd97ef81a2cfb209c636b714a9c042b6342a593be97932e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 9745,
+      "sha256": "8fd5b8906d046fae3323f920828cb1ae234eeeba4e850f206bbc5137d5a83e6c"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 114602,
+      "sha256": "b5a3902aa64b44ce51b40d75be98b32f40db48e941010757f115ce3f455f6a9f"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82364,
+      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
+      "kind": "proposed_update",
+      "bytes": 30992,
+      "sha256": "e1af5d1bc51b784aa3fea2eae804c9ae5ac92d012fc0c1cdf708c719a177f433"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 31401,
+      "sha256": "13032bc0c7ff6f5a2b48a8f1b342fee2978cfa2decaaed29136ee62e6a9de3e1"
+    },
+    {
+      "path": "wiki/upstream-complement-assay-format-mapping-computational.md",
+      "kind": "proposed_update",
+      "bytes": 6150,
+      "sha256": "f2721eb20e2a7efcb2d9d226ec9b4a2d9ebb37959824226f082befa9f7030b6c"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "f22531db5bbb3a58f9057331e9708c27568cb4b3156bbda77e470000f0e73efc"
+}

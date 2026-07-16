@@ -1,0 +1,237 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md",
+      "kind": "design",
+      "bytes": 7178,
+      "sha256": "2e9dfaebb068123b223fa5774856c6e42aba7a805cccb3e423a84eadd9b642fd"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/inputs/bioactivity_data.json",
+      "kind": "design",
+      "bytes": 15526,
+      "sha256": "4632d6e54126b3a889d40900f200c96349528b73f972c4cd6054a50e438cd896"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/inputs/compounds.json",
+      "kind": "design",
+      "bytes": 12934,
+      "sha256": "1ed34479ade3d3eaa63c346eea228b4a4168b13855ae4fe5918f0a0a623ac39c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/inputs/gut_model.json",
+      "kind": "design",
+      "bytes": 1002,
+      "sha256": "01935ff121e951a6a3bcfd08954f536d1d6ae831cae4b682ec969a957fe96226"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/inputs/targets.json",
+      "kind": "design",
+      "bytes": 3047,
+      "sha256": "e4080da18602a7f329b3daaeab888a7466b4bd18b95efe0ef7c3c6cf78949dfa"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/scripts/analyze.py",
+      "kind": "design",
+      "bytes": 27930,
+      "sha256": "adfa83f6d09a431c6eb4210da08b8f5adada526b3c542d6964fb9eb9ea24404b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/wiki-archive.md",
+      "kind": "design",
+      "bytes": 35836,
+      "sha256": "278de105337b5c12a14fa035ba09a6b39a3da347a0ba50936035d2540ce708d6"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/outputs/per_compound_table.csv",
+      "kind": "generated_output",
+      "bytes": 3209,
+      "sha256": "922105dc01b22943bcd9775c7069a6c2739784350e7f951b9e681bb7567b5a1b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 16933,
+      "sha256": "2c40532b7ca8b5c92ea00b4a2d3aa87696d7ea3da634c456ac973719eb8b78fc"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/outputs/triage.json",
+      "kind": "generated_output",
+      "bytes": 21743,
+      "sha256": "205ad8cd6d0f69085faae2984a8398bf0e17e72e298ed89699ade7a0b2fd52fa"
+    },
+    {
+      "path": "wiki/abcg2-modulators.md",
+      "kind": "proposed_update",
+      "bytes": 55220,
+      "sha256": "3269f4c754d6730691b02a7845dad75115d7d8a9470b174342867fc32a91f3e3"
+    },
+    {
+      "path": "wiki/androgen-urate-axis.md",
+      "kind": "proposed_update",
+      "bytes": 43174,
+      "sha256": "2966435ce40b4af1beee3df6118d43974c58005138a426874661a55e0a2cc5e7"
+    },
+    {
+      "path": "wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md",
+      "kind": "proposed_update",
+      "bytes": 33550,
+      "sha256": "ee6d9ef1c45be1d99d79146dd613db2d331cbb8a3cf671620b24309449348d09"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 114602,
+      "sha256": "b5a3902aa64b44ce51b40d75be98b32f40db48e941010757f115ce3f455f6a9f"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82364,
+      "sha256": "15d1508ce530070486f4a9d37876fa633a07121c70b12977ffea353959b42ffa"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 42433,
+      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/README.md",
+      "kind": "proposed_update",
+      "bytes": 7817,
+      "sha256": "e9542257ca396dea9a7fc6488f7b12a139753e91916890804d1c6b01f6216211"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 4067,
+      "sha256": "21bae59e66ffcebaf3ab2bfce5217c4400ad7860ec74be329716b45ad41bf35d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-6-triage.md",
+      "kind": "proposed_update",
+      "bytes": 12447,
+      "sha256": "dae9be55ef706f50e891b20a6b75df7869b770581b82f2347b42515c799a7181"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md",
+      "kind": "proposed_update",
+      "bytes": 7844,
+      "sha256": "e6548837d343162f982781296377a7aaffa4a007eb900e12232a3be709defd48"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 29200,
+      "sha256": "9b592e2cea5e7b9aa892bb8e66074e300d1fea00cd20432a49ed8c01877e2477"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/README.md",
+      "kind": "proposed_update",
+      "bytes": 5741,
+      "sha256": "e06b9dda77d4b8613f1e58ddbf13b5e6fbc68ee15bddfbdc978ecffb1b0e351f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 11469,
+      "sha256": "6478fc9c3aca251600eadde1d31e745004aaf287dd43bf8b2cbc830a19c8aa05"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 19676,
+      "sha256": "34c8e07894ee045a67a68480b93eea01d06525ca9ebf34280e0da8d387a2ef4c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 31797,
+      "sha256": "c1020ff9b2c6e34c4ce5672b399d0d05ded597c5f26877f0ff3c1ac5405bdc62"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/README.md",
+      "kind": "proposed_update",
+      "bytes": 9077,
+      "sha256": "172714505043925f4d2527267f9cf1f9146b3e4b28d5a25a3559d19792bf8d38"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-multilingual-findings.md",
+      "kind": "proposed_update",
+      "bytes": 29387,
+      "sha256": "256c4483c27125836e863d8c24636fdc5a72df785e8f6db9c3fec093049da776"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 37099,
+      "sha256": "7911581a376ba0387f75ca16c6b58ee2443393a902924f5617eeba7a9551ce16"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 5316,
+      "sha256": "49d572cdec31ee45314ae074baec8fb0fa3b7f64db5ff6bcec78b1ef74fa82f9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
+      "kind": "proposed_update",
+      "bytes": 30992,
+      "sha256": "e1af5d1bc51b784aa3fea2eae804c9ae5ac92d012fc0c1cdf708c719a177f433"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md",
+      "kind": "proposed_update",
+      "bytes": 31401,
+      "sha256": "13032bc0c7ff6f5a2b48a8f1b342fee2978cfa2decaaed29136ee62e6a9de3e1"
+    },
+    {
+      "path": "wiki/etc/manual-literature-mining.md",
+      "kind": "proposed_update",
+      "bytes": 30317,
+      "sha256": "fb29bc39cbb836f632f4f309553c967a8bb832f0366ee6808a24405c7709222c"
+    },
+    {
+      "path": "wiki/hypotheses/H04-tcm-rigor-intersection.md",
+      "kind": "proposed_update",
+      "bytes": 10744,
+      "sha256": "ca97b0cb9dffb6452ecc68623a79f91ddd2d051aac9eb79423bf04aef4ee4c15"
+    },
+    {
+      "path": "wiki/koji-endgame-strain.md",
+      "kind": "proposed_update",
+      "bytes": 92535,
+      "sha256": "6c45144b6dcfc23db424d07cf527de910e8dedd085ace0a8e5af6f4a1f21e53e"
+    },
+    {
+      "path": "wiki/medicinal-mushroom-compound-mapping-computational.md",
+      "kind": "proposed_update",
+      "bytes": 17492,
+      "sha256": "29e7dad807d537a2e6d55c6ecf42fc79803828a3b7434cb11d2399ed2b4f3e36"
+    },
+    {
+      "path": "wiki/prps-purine-biosynthesis-chokepoint.md",
+      "kind": "proposed_update",
+      "bytes": 15373,
+      "sha256": "37afabfaf286d238f98d13f2cc30cd98dd0851349c89b6931d5fd60810f49047"
+    },
+    {
+      "path": "wiki/tcm-gout-compound-triage-computational.md",
+      "kind": "proposed_update",
+      "bytes": 11421,
+      "sha256": "99d1a269c1e6c1231116b4bc43ad0c61a6baee66c182605eadb6fc0cd75477b2"
+    },
+    {
+      "path": "wiki/tcm-modern-rigor-intersection.md",
+      "kind": "proposed_update",
+      "bytes": 34392,
+      "sha256": "0db72969dafb468338fcc093681cc19230e59dde10f7ca6c56fd2ecfec37825a"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "e796d18466cafd62c72e1467d7cec2a7c466618fe004da453cee66153d4eeee5"
+}
