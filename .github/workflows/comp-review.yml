@@ -116,6 +116,7 @@ jobs:
             cost=$(python3 -c 'import json,sys; print(json.loads(sys.argv[1])["projected_cost_usd"])' "$metadata")
             total=$(python3 -c 'import sys; print(float(sys.argv[1])+float(sys.argv[2]))' "$total" "$cost")
           done < /tmp/comp-dirs.txt
+          # shellcheck disable=SC2016
           python3 -c 'import sys; total=float(sys.argv[1]); cap=float(sys.argv[2]); print(f"Projected aggregate: ${total:.4f} / ${cap:.4f}"); raise SystemExit(total > cap)' "$total" "$AGGREGATE_CAP"
 
       - name: Review every selected artifact and update current eligibility

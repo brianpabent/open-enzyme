@@ -126,7 +126,7 @@ Rule #5 above sets the bar; this subsection fills the operational gap by adaptin
 
 **Reproducibility target:** consistent dose-response shape across operators and source-batches; absolute potency may vary 2× operator-to-operator on cell-based downstream assays (typical for biological readouts), but the consistency check at the extract-characterization layer prevents that variance from compounding with extract-batch variance.
 
-**Cross-references:** [`medicinal-mushroom-extract-sops.md` SOP-6](./medicinal-mushroom-extract-sops.md) (parent framework); [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md) (original koji-track framework); [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) (comp-013 priority compounds + verdicts); [synthesis archive 2026-05-07 77d0f6e Connection 2 / Item 21 walkthrough](../synthesis/history/_pre-2026-05-08-archive.md).
+**Cross-references:** [`medicinal-mushroom-extract-sops.md` SOP-6](./medicinal-mushroom-extract-sops.md) (parent framework); [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md) (original koji-track framework); [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) (comp-013 priority compounds + verdicts);.
 
 ### 6. Falsification card per major claim
 

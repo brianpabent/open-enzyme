@@ -1,7 +1,7 @@
 # comp-047 — ABCG2 Q141K pharmacological-chaperone re-screen
 
 **Status:** Phase 0 — Research & Design. Computational triage only. **Held for human review before any corpus integration.**
-**Supersedes:** comp-032 (frozen as a flawed record; see `logs/comp-reviews/2026-07-13-comp-032-fae0e36.md`).
+**Supersedes:** comp-032 (frozen as a flawed record; see the 2026-07-13 independent push review).
 **Date:** 2026-07-14.
 
 ## Single decision this experiment answers

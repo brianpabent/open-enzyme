@@ -30,7 +30,7 @@ sources: [validation-experiments.md]
 
 **What it tests:** Does whole-fermentate *C. militaris* extract (providing native pentostatin) protect engineered-koji-produced cordycepin from ADA-mediated deamination when the two are co-formulated? If yes, the cross-chassis pairing (engineered koji handles bulk cordycepin production at scale; cultivated *C. militaris* extract provides ADA-protecting pentostatin from native co-evolved chemistry) becomes a minimal-complexity delivery strategy that avoids the additional cassette OR ADA-knockout work that comp-024 / comp-025 would otherwise gate. If no, the co-formulation strategy fails and the platform routes through full-BGC engineering OR ADA knockout OR purified pentostatin co-supplementation.
 
-**Proposed in:** 2026-05-14 sweep Connection 4 (synthesis/done/2026-05-14-connection-4-cordycepins-ada-vulnerability-creates-a-two-organism.md).
+**Proposed in:** 2026-05-14 sweep Connection 4.
 
 **Background on the gap:** comp-023 confirmed engineered cns1+cns2 cordycepin production in koji is metabolically feasible (GREEN at Jeennor 2023 564 mg/L/d). But cordycepin is rapidly deaminated by adenosine deaminase (ADA) to its inactive 3'-deoxyinosine form. Native *C. militaris* solves this by co-producing pentostatin (a clinical-grade ADA inhibitor) from the same BGC as cordycepin (Xia 2017, PMID 29056419). The minimal-complexity workaround for engineered koji: don't engineer pentostatin; pair the koji fermentate with a small co-formulated dose of cultivated *C. militaris* extract. This experiment tests whether the pairing actually delivers ADA protection or whether the formulation context (mixing solid-state koji + dried *Cordyceps* extract) compromises pentostatin's activity.
 

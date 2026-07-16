@@ -39,7 +39,7 @@ This screen evaluates food-derived NLRP3 inflammasome inhibitors producible by e
 - **Tranilast** — Non-selective mast cell stabilizer
 - **OLT1177 (dapansutrile)** — Phase 2a gout trial success, direct NLRP3 ATPase inhibitor
 
-> **Species-gap caveat (methodological standard, 2026-04-23)**: Rodent cellular IC50 values for NLRP3 inhibitors routinely diverge from human cellular IC50 by up to 3 orders of magnitude. Example: dapansutrile IC50 = 1 nM in mouse J774A.1 cells vs. 1,000 nM (1 μM) in human MDM cells under LPS+nigericin stimulation (ChEMBL v34). Every rodent-derived IC50 in this document should be read with that translation uncertainty in mind. When evaluating new compounds, prefer human-cell (THP-1, PBMC, human MDM) data over rodent cellular assays. (source: chembl-cross-check.md)
+> **Species-gap caveat:** Prefer human-cell potency when available and apply the cross-species standard in [`chembl-cross-check.md`](./etc/chembl-cross-check.md) before translating rodent results.
 
 ---
 

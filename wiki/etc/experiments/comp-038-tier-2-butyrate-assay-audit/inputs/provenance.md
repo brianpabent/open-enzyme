@@ -96,6 +96,6 @@ A re-run on the same date with the same inputs SHOULD produce equivalent results
 ## Cross-references
 
 - Methodology framework: [`operations/agentic-science-adoption.md`](../../../../../operations/agentic-science-adoption.md)
-- Strategic context: [`synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md`](../../../../../synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md)
+- Strategic context: [`operations/agentic-science-adoption.md`](../../../../../operations/agentic-science-adoption.md)
 - Triggering queue items: [open-question-2](../../../../../synthesis/queue/2026-05-20-open-question-2-is-there-a-tier2-butyrate-assay-colorimetric-enzymatic-or.md), [connection-5](../../../../../synthesis/queue/2026-05-20-connection-5-the-tier2-butyrate-assay-gap-identified-in-the.md)
 - Wet-lab validation anchor: [`wiki/validation-experiments.md`](../../../../validation-experiments.md) §1.14 butyrate dose-response arm (would provide Tier 3 GC-MS reference for any Tier 2 candidate comp-038 surfaces)

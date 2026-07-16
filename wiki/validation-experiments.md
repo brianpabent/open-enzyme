@@ -1223,7 +1223,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **What it tests:** Whether the diazo-coupling colorimetric assay proposed in [`medicinal-mushroom-extract-sops.md` SOP-6](./medicinal-mushroom-extract-sops.md) — currently marked **Speculative** with the explicit "do not commit until primary-literature confirmation" caveat — is viable for Tier 2 home / community-biolab cordycepin quantification, or whether UV 260 nm absorbance must be used as the fallback. This is the gating wet-lab gate for cordycepin home quantification; load-bearing for [`self-experiment-protocol.md` §12](./self-experiment-protocol.md) (genotype-informed supplement quantification workflow surfaced 2026-05-15 Item 17) and for the broader [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Phase 7 follow-ups" #3 + #7 (extract characterization SOPs + dose-grounding pass).
 
-**Proposed in:** 2026-05-14 sweep Experiment 2 (`synthesis/done/2026-05-14-experiment-2-tier-2-colorimetric-cordycepin-assay-validation-diazo.md`).
+**Proposed in:** 2026-05-14 sweep Experiment 2 ().
 
 **Background on the gap:** SOP-6 proposes a Bratton-Marshall-style diazo-coupling colorimetric assay for cordycepin (3'-deoxyadenosine — a nucleoside analog with a primary aromatic amine accessible under hydrolysis conditions). The mechanism is plausible by analogy to nitrite-based colorimetric detection of aromatic amines (sulfanilamide, dapsone, etc.), but **no primary-literature precedent for cordycepin-specific diazo-coupling has been verified.** Until validated, the SOP carries the speculative caveat. UV 260 nm absorbance is the conservative fallback — cordycepin absorbs at λmax ~260 nm with ε ~14,500 M⁻¹·cm⁻¹, comparable to adenosine — but requires no derivatization and gives lower specificity (any 260-nm-absorbing contaminant interferes).
 
@@ -1266,7 +1266,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Why this matters:** Houttuynia is the corpus's first dual-CP0+CP1 dietary candidate. comp-039 classified HCP/HCPM/CHCP as CFH-independent on mechanism-site grounds, but cell-model translation is a separate question. Cheng 2014 (PMC7112369) documents structure-dependent directionality — purified 60 kDa HCP-2 is pro-inflammatory on naïve PBMCs while the anti-inflammatory phenotype appears in disease-context inflammation — so a generic "Houttuynia extract" capsule cannot be assumed equivalent to the Chen-group HCPM preparation without direct comparison.
 
-**Proposed in:** [synthesis/done/2026-05-20-experiment-2-msustimulated-thp1-macrophage-assay-of-houttuynia-cordata.md](../synthesis/done/2026-05-20-experiment-2-msustimulated-thp1-macrophage-assay-of-houttuynia-cordata.md).
+**Proposed in:**.
 
 **Protocol — three-arm fraction comparison:**
 
@@ -1361,7 +1361,7 @@ Each arm: parallel small-scale liquid (Arms A-C) or solid (Arm D) cultivation; h
 
 **What it tests:** Whether a low-cost, decentralizable **Tier 2** butyrate quantification method validates against the **Tier 3 GC-MS** gold standard well enough to replace it for OE's near-term need — measuring butyrate in **engineered-strain culture supernatant**. Without a validated Tier 2 ruler, butyrate-emphasis interventions cannot be cheaply verified, and unverified metabolite dose is indistinguishable from mechanism failure.
 
-**Proposed in:** 2026-05-30 sweep Experiment 1 (`synthesis/done/2026-05-30-experiment-1-tier-2-butyrate-assay-validation-comp-038-next-step.md`), operationalizing comp-038's "Next Step."
+**Proposed in:** 2026-05-30 sweep Experiment 1 (), operationalizing comp-038's "Next Step."
 
 **Candidate selection — resolved at the full-text gate (2026-06-01 verification pass; see comp-038):** comp-038's abstract-level audit surfaced three Tier-2 candidates; a full-text verification pass narrowed to **one**:
 

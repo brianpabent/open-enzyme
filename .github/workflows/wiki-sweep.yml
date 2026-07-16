@@ -99,7 +99,6 @@ jobs:
             --trigger-files "$trigger_csv" \
             --synthesizer "distributed-dual-read" \
             --reviewer "openai/gpt-5.5" \
-            --no-history
 
       - name: Commit queue and advance only exact synthesis coverage
         run: |

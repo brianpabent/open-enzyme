@@ -88,4 +88,4 @@ The OpenRouter path expects `OPENROUTER_API_KEY` in the repo-root `.env` (gitign
 
 ## Provenance
 
-Scaffolded 2026-05-20 as the first instance of the proposed comp-NNN agentic-literature-synthesis sub-type. See [`operations/agentic-science-adoption.md`](../../../../operations/agentic-science-adoption.md) for the methodology framework this experiment instantiates, and [`synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md`](../../../../synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md) for the strategic context (Tier 2 butyrate assay discovery is the cleanest possible test of the methodology against OE's actual stuck list).
+Scaffolded 2026-05-20 as an early agentic-literature-synthesis experiment. See [`operations/agentic-science-adoption.md`](../../../../operations/agentic-science-adoption.md) for the methodology context. Under the current artifact model, literature-only questions route to `lit-scan`; this directory remains reproducible evidence for the completed legacy experiment.

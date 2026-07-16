@@ -15,7 +15,7 @@ This catalog is not a replacement for medical care. Work with a physician on any
 
 > **TCM lineage note:** Several compounds in this catalog have explicit TCM materia medica lineage — oridonin (*Rabdosia rubescens* / Dong Ling Cao 冬凌草), EGCG (green tea / Lu Cha 绿茶), theaflavins (black tea / Hong Cha 红茶), berberine (*Coptis chinensis* / Huang Lian 黄连), resveratrol (*Polygonum cuspidatum* / Hu Zhang 虎杖), curcumin (turmeric / Jiang Huang 姜黄). The methodology for applying modern scientific rigor to these compounds — including chokepoint mapping, ChEMBL cross-check, bioavailability-honest framing, and formula decomposition — is formalized in [`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md). (source: tcm-modern-rigor-intersection.md)
 
-> **Species-gap caveat (methodological standard, 2026-04-23)**: Rodent cellular IC50 values for NLRP3 inhibitors routinely diverge from human cellular IC50 by up to 3 orders of magnitude. Example: dapansutrile IC50 = 1 nM in mouse J774A.1 cells vs. 1,000 nM (1 μM) in human MDM cells under LPS+nigericin stimulation (ChEMBL v34). Every rodent-derived IC50 in this document should be read with that translation uncertainty in mind. When evaluating new compounds, prefer human-cell (THP-1, PBMC, human MDM) data over rodent cellular assays. (source: chembl-cross-check.md)
+> **Species-gap caveat:** Prefer human-cell potency when available and apply the cross-species standard in [`chembl-cross-check.md`](./etc/chembl-cross-check.md) before translating rodent results.
 
 > **Per-entry template (standardized 2026-04-25):** Each compound entry below uses a fixed template — Mechanism, Evidence level, Population context, Dosing range, Contraindications, Drug interactions, Dose-dependent risk profile, Stack interactions (within this catalog), Cost. The Stack-interactions field is the cross-link to [abcg2-modulators.md](./abcg2-modulators.md), [androgen-urate-axis.md](./androgen-urate-axis.md), and the Stack-level interactions section near the bottom of this page. Several compounds in this catalog are functional ABCG2 inhibitors at typical supplement doses and may pharmacologically antagonize the [gut-lumen-sink](./gut-lumen-sink.md) thesis in androgen-dominant or Q141K-positive readers — see the "Stack-level contradictions" subsection.
 
@@ -29,7 +29,7 @@ This catalog is not a replacement for medical care. Work with a physician on any
 
 **Use the action guide when** you don't yet know which compound is right for your situation, or when you're new to the project and want a 5-minute orientation rather than a 1,100-line catalog read.
 
-The two surfaces are linked — every action-guide compound entry points back here for compound depth, and major catalog updates (new compound additions, dose revisions, contraindication updates) need to propagate to the action guide. The propagation is currently manual; see [synthesis/strategic-reflections/](../synthesis/strategic-reflections/) for the planned `fresh-stack.py` discipline that will eventually formalize it.
+The two surfaces are linked: every action-guide compound entry points back here for compound depth, and major catalog changes must propagate to the action guide through the push-time knowledge update.
 
 ---
 
@@ -61,10 +61,7 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 - **Insulin / insulin secretagogues:** dietary ketosis lowers glucose requirements; dose adjustment needed to avoid hypoglycemia.
 - **Acetazolamide / topiramate / zonisamide:** carbonic anhydrase inhibitors compound metabolic acidosis risk on ketogenic regimens.
 
-**Dose-dependent risk profile:**
-- 5–20g/day exogenous BHB: well-tolerated; GI upset is the main side effect (most common with ketone salts; mineral load matters).
-- >30g/day or aggressive nutritional ketosis: transient serum UA rise of 5–10% (ketone bodies and urate compete for renal MCT/URAT1 reabsorption). This is the gout-relevant dose ceiling. Sustained nutritional ketosis can also produce mild hyperuricemia for the same reason.
-- MCT >2 tbsp at one sitting: GI distress is the practical limiter.
+**Dose-dependent risk:** Use the canonical dose and urate-risk discussion in [`bhb-ketones.md`](./bhb-ketones.md); it is not repeated here.
 
 **Stack interactions (within this catalog):**
 - **Antagonism with intermittent fasting during active flares:** both ketogenic states transiently raise serum UA via competition for renal urate excretion; layering fasting on top of exogenous ketones during a flare amplifies the spike.
@@ -806,14 +803,7 @@ Compounds and approaches that are viable near-term but require medical discussio
 
 **Contraindications:** **Any alcohol use** (acute disulfiram-ethanol reaction: flushing, tachycardia, hypotension, severe nausea — can be fatal at high alcohol doses). Active hepatic disease (LFTs >3× upper limit of normal). Severe coronary artery disease (cardiovascular collapse risk on ethanol exposure). Severe psychosis (case reports of psychotic exacerbation). Pregnancy. Concurrent metronidazole or other disulfiram-like agents.
 
-**Drug interactions:**
-- **Metronidazole, tinidazole, cefoperazone, griseofulvin, certain MAOIs, isoniazid:** disulfiram-like reactions amplified.
-- **Warfarin:** disulfiram inhibits warfarin metabolism → increased anticoagulation; INR monitoring required.
-- **Phenytoin:** disulfiram inhibits phenytoin metabolism → toxicity risk.
-- **Theophylline, caffeine (high-dose):** disulfiram inhibits clearance; toxicity risk.
-- **Benzodiazepines metabolized by CYP3A4 (alprazolam, midazolam):** disulfiram inhibits clearance; sedation risk.
-- **Acetaminophen at high doses:** competing hepatic stress (additive hepatotoxicity).
-- **Many ethanol-containing medications (some elixirs, sublingual sprays, IV preparations):** trigger reaction.
+**Drug interactions:** Use the canonical interaction list in [`disulfiram.md`](./disulfiram.md); it is not repeated here.
 
 **Dose-dependent risk profile:**
 - 250 mg/day (standard): well-tolerated in alcohol-abstinent patients. Hepatotoxicity (idiosyncratic) is the main rare serious side effect; baseline + periodic LFTs recommended.

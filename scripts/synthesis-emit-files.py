@@ -1,88 +1,9 @@
 #!/usr/bin/env python3
-"""
-synthesis-emit-files.py — emit per-item files from Pass 2 + Pass 3 daemon outputs.
+"""Emit reviewed full-synthesis findings into the active action queue.
 
-Replaces synthesis-merge.py (which prepended to wiki/synthesis.md) per the
-2026-05-08 synthesis filesystem migration spec
-(operations/specs/2026-05-08-synthesis-filesystem-migration.md).
-
-Inputs:
-  1. The raw Pass 2 log (audit evidence)
-  2. Its hash-bound normalized JSON manifest (authoritative ordered items)
-  3. The Pass 3 reviewer output (one <<<NEXT>>>-separated block per item)
-
-New outputs:
-  - synthesis/queue/<sweep-date>-<artifact-id>-<type>-<index>-<slug>.md,
-    one per canonical Pass 2 item. The hash-derived artifact ID prevents
-    same-day reruns with similar headlines from overwriting each other.
-  - synthesis/history/<sweep-date>-<short-sha>.md, the per-sweep summary
-
-Per-item file format (per spec §5.4):
-    ---
-    type: <connection|contradiction|experiment|open-question|priority-action|riskiest-assumption|most-curious-thread>
-    sweep_date: <YYYY-MM-DD>
-    sweep_sha: <short-sha>
-    section_index: <N within section>
-    global_index: <M global item index>
-    pass3_verdict: <Confirmed|Push back|Augment|Partial|Restatement|...>
-    overlap_with: <slug-of-other-item>      # only when verdict tags OVERLAP / DUPLICATE
-    ---
-
-    # <Item headline>
-
-    <Canonical normalized Pass 2 item content>
-
-    > **Pass 3 review — <verdict>** ...
-    > [Pass 3 review blockquote]
-
-History file format (per spec §5.6):
-    ---
-    sweep_date: <YYYY-MM-DD>
-    sweep_sha: <short-sha>
-    trigger_files: [list]
-    synthesizer: <model>
-    reviewer: <model>
-    log: <path-to-pass2-log>
-    items_emitted: <N>
-    items_by_type: { connection: n, ... }
-    ---
-
-    # Sweep <date> — <short-sha>
-
-    [narrative paragraph]
-
-    ## Items emitted
-
-    [table: type / index / slug / verdict / queue-path]
-
-Special signals from Pass 3 reviewer:
-  - "EXPLICIT_NO_OP"         — the normalized manifest proves Pass 2 explicitly
-                               declared no new synthesis. Emits only history.
-Failure modes (fail-fast with explicit error messages, per spec §5.4):
-  - Raw-log or canonical-manifest hash mismatch → exit 1
-  - Canonical item count differs from Pass 3 review count → exit 1
-  - Headline extraction fails for >50% of items → exit 1
-  - Slug collision after <index> disambiguator (should be impossible) → exit 1
-
-Usage in CI:
-    python3 scripts/synthesis-emit-files.py \\
-        --synthesis-log logs/v4-synthesis-2026-05-08-e842754.md \\
-        --normalized-manifest logs/normalized-synthesis-2026-05-08-e842754.json \\
-        --reviews-file /tmp/claude-reviews.txt \\
-        --commit-sha <full-sha> \\
-        --diff-base <last-sweep-sha> \\
-        --trigger-files "wiki/file1.md,wiki/file2.md" \\
-        --synthesizer "google/gemini-2.5-pro" \\
-        --reviewer "openai/gpt-5.5"
-
-Local test (spec §7):
-    python3 scripts/synthesis-emit-files.py \\
-        --synthesis-log logs/v4-synthesis-2026-05-08-e842754.md \\
-        --normalized-manifest logs/normalized-synthesis-2026-05-08-e842754.json \\
-        --reviews-file /tmp/synthetic-reviews.txt \\
-        --commit-sha e842754 \\
-        --queue-dir /tmp/test-queue \\
-        --history-dir /tmp/test-history
+Raw synthesis and review inputs are short-retention recovery artifacts. Git and
+the compact coverage receipt are the run history; successful narratives are not
+copied into the live tree.
 """
 
 from __future__ import annotations
@@ -93,7 +14,6 @@ import json
 import os
 import re
 import sys
-from collections import Counter
 from pathlib import Path
 
 from synthesis_normalize import NormalizationError, verify_manifest
@@ -244,112 +164,6 @@ def emit_item_file(
     return path
 
 
-def emit_history_file(
-    history_dir: Path,
-    sweep_date: str,
-    sweep_sha: str,
-    trigger_files: str,
-    synthesizer: str,
-    reviewer: str,
-    pass2_log_path: str,
-    items: list[dict],
-    normalized_manifest_path: str = "",
-    manifest_meta: dict | None = None,
-) -> Path:
-    """Write the per-sweep history file."""
-    by_type = Counter(item["type_slug"] for item in items)
-    by_type_yaml = "\n".join(f"  {t}: {n}" for t, n in sorted(by_type.items()))
-
-    trigger_yaml = trigger_files.replace(",", ", ")
-
-    table_rows = []
-    for item in items:
-        table_rows.append(
-            f"| {item['type_slug']} | {item['section_index']} | "
-            f"`{item['filename']}` | {item['verdict']} | "
-            f"`synthesis/queue/{item['filename']}` |"
-        )
-    table_body = "\n".join(table_rows)
-
-    content = (
-        f"---\n"
-        f"sweep_date: {sweep_date}\n"
-        f"sweep_sha: {sweep_sha}\n"
-        f"trigger_files: \"{trigger_yaml}\"\n"
-        f"synthesizer: {synthesizer}\n"
-        f"reviewer: {reviewer}\n"
-        f"log: {pass2_log_path}\n"
-        f"normalized_manifest: {normalized_manifest_path}\n"
-        f"sweep_id: {(manifest_meta or {}).get('sweep_id', '')}\n"
-        f"source_synthesis_sha256: {(manifest_meta or {}).get('source_sha256', '')}\n"
-        f"canonical_items_sha256: {(manifest_meta or {}).get('canonical_items_sha256', '')}\n"
-        f"items_emitted: {len(items)}\n"
-        f"items_by_type:\n"
-        f"{by_type_yaml}\n"
-        f"---\n"
-        f"\n"
-        f"# Sweep {sweep_date} — {sweep_sha}\n"
-        f"\n"
-        f"Pass 2 synthesizer ({synthesizer}) emitted {len(items)} items across "
-        f"{len(by_type)} section types; Pass 3 reviewer ({reviewer}) reviewed each. "
-        f"Items written to `synthesis/queue/`. Trigger files: {trigger_yaml}.\n"
-        f"\n"
-        f"Pass 2 log: [{pass2_log_path}](../../{pass2_log_path}).\n"
-        f"\n"
-        f"## Items emitted\n"
-        f"\n"
-        f"| Type | Index | File | Verdict | Path |\n"
-        f"|---|---|---|---|---|\n"
-        f"{table_body}\n"
-    )
-
-    filename = f"{sweep_date}-{sweep_sha}.md"
-    path = history_dir / filename
-    path.write_text(content)
-    return path
-
-
-def emit_no_op_history(
-    history_dir: Path,
-    sweep_date: str,
-    sweep_sha: str,
-    trigger_files: str,
-    synthesizer: str,
-    reviewer: str,
-    pass2_log_path: str,
-    normalized_manifest_path: str = "",
-    manifest_meta: dict | None = None,
-) -> Path:
-    """Write history only for an explicitly declared, normalized no-op."""
-    content = (
-        f"---\n"
-        f"sweep_date: {sweep_date}\n"
-        f"sweep_sha: {sweep_sha}\n"
-        f"trigger_files: \"{trigger_files}\"\n"
-        f"synthesizer: {synthesizer}\n"
-        f"reviewer: {reviewer} (no review needed)\n"
-        f"log: {pass2_log_path}\n"
-        f"normalized_manifest: {normalized_manifest_path}\n"
-        f"sweep_id: {(manifest_meta or {}).get('sweep_id', '')}\n"
-        f"source_synthesis_sha256: {(manifest_meta or {}).get('source_sha256', '')}\n"
-        f"canonical_items_sha256: {(manifest_meta or {}).get('canonical_items_sha256', '')}\n"
-        f"items_emitted: 0\n"
-        f"no_op_reason: explicit normalized no-new-synthesis declaration\n"
-        f"---\n"
-        f"\n"
-        f"# Sweep {sweep_date} — {sweep_sha} (no new synthesis)\n"
-        f"\n"
-        f"Pass 2 synthesizer ({synthesizer}) explicitly declared no new synthesis. "
-        f"The normalization manifest verified zero substantive items and zero unresolved "
-        f"review markers. No items emitted to `synthesis/queue/`.\n"
-        f"\n"
-        f"Pass 2 log: [{pass2_log_path}](../../{pass2_log_path}).\n"
-    )
-    filename = f"{sweep_date}-{sweep_sha}.md"
-    path = history_dir / filename
-    path.write_text(content)
-    return path
-
 
 def main():
     parser = argparse.ArgumentParser()
@@ -375,10 +189,6 @@ def main():
     parser.add_argument("--reviewer", default="openai/gpt-5.5")
     parser.add_argument("--queue-dir", default="synthesis/queue",
                         help="Directory for per-item queue files")
-    parser.add_argument("--history-dir", default="synthesis/history",
-                        help="Directory for per-sweep history files")
-    parser.add_argument("--no-history", action="store_true",
-                        help="Do not retain a per-run history file; Git and workflow artifacts are the history")
     parser.add_argument("--sweep-date", default=None,
                         help="ISO date (YYYY-MM-DD) of the trigger commit. "
                              "Per spec §5.1: workflow_run's event.head_commit timestamp date in UTC. "
@@ -387,9 +197,7 @@ def main():
     args = parser.parse_args()
 
     queue_dir = Path(args.queue_dir)
-    history_dir = Path(args.history_dir)
     queue_dir.mkdir(parents=True, exist_ok=True)
-    history_dir.mkdir(parents=True, exist_ok=True)
 
     sweep_sha_short = args.commit_sha[:7]
     sweep_date = args.sweep_date or datetime.date.today().isoformat()
@@ -435,21 +243,7 @@ def main():
                 "Normalized manifest is an explicit no-op, but reviews file did not contain "
                 "the EXPLICIT_NO_OP sentinel. Aborting."
             )
-        if args.no_history:
-            print("Explicit no-op verified; no live history artifact retained")
-        else:
-            path = emit_no_op_history(
-                history_dir,
-                sweep_date,
-                sweep_sha_short,
-                args.trigger_files,
-                args.synthesizer,
-                args.reviewer,
-                args.synthesis_log,
-                args.normalized_manifest,
-                manifest_meta,
-            )
-            print(f"No-op sweep recorded at {path}")
+        print("Explicit no-op verified; no live artifact retained")
         return
 
     if reviews_raw == "EXPLICIT_NO_OP":
@@ -490,7 +284,7 @@ def main():
         sys.exit(
             f"Review/item count mismatch — Pass 2 has {len(all_items)} items, "
             f"Pass 3 provided {len(reviews)} reviews. Pass 3 must emit one review "
-            f"per item, in document order (see sweep-prompt-3-review*.md)."
+            f"per item, in document order."
         )
 
     # --- Parse Pass 3 verdicts + build (type_slug, section_index) → filename map ---
@@ -552,22 +346,7 @@ def main():
             "verdict": verdict,
         })
 
-    # --- Emit history file ---------------------------------------------------
     print(f"Emitted {len(emitted_records)} items to {queue_dir}")
-    if not args.no_history:
-        history_path = emit_history_file(
-            history_dir,
-            sweep_date,
-            sweep_sha_short,
-            args.trigger_files,
-            args.synthesizer,
-            args.reviewer,
-            args.synthesis_log,
-            emitted_records,
-            args.normalized_manifest,
-            manifest_meta,
-        )
-        print(f"History summary at {history_path}")
 
 
 if __name__ == "__main__":

@@ -36,3 +36,6 @@ jobs:
 
       - name: Check privacy gradient
         run: python3 scripts/check-privacy.py --check README.md index.md CLAUDE.md wiki
+
+      - name: Check mission, current-state, and token hygiene
+        run: python3 scripts/check-corpus-hygiene.py --base "${{ github.event.pull_request.base.sha || github.event.before || 'HEAD^' }}" README.md index.md CLAUDE.md wiki

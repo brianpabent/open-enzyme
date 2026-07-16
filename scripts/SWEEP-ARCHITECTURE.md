@@ -1,682 +1,110 @@
-# Sweep Automation Architecture
+# Open Enzyme knowledge architecture
 
-Permanent reference for the wiki-sweep daemon. Captures the failure modes that motivated a redesign, why convention-as-memory was insufficient, and the five-component recovery architecture. Engineering doc — no evidence-level tags; same prose discipline as the wiki (no marketing language, state limitations explicitly).
+The system separates cheap, routine correctness from expensive, explicit discovery.
 
-The daemon under discussion is defined in [`.github/workflows/wiki-sweep.yml`](../.github/workflows/wiki-sweep.yml) and orchestrates three OpenRouter-routed passes (DeepSeek V4-Pro propagate → Grok 4.20 synthesize → DeepSeek V4-Pro review, with configured fallbacks where documented in the drivers). Background context: [`CLAUDE.md` § "Workflow for Updates"](../CLAUDE.md) and the umbrella [`abent/CLAUDE.md` § "Git steward pattern"](../CLAUDE.md).
+## Mission invariant
 
----
+Use red-teaming techniques to identify exploitable weaknesses in gout, and use creative engineering to exploit them.
 
-## Failure modes observed (2026-04-28)
+Every intervention is a falsifiable track. Koji is one track, not the project. A failed track should improve the exploit map and then stop consuming project identity.
 
-Two concrete failures, both within the same 24-hour window, root-caused below.
+## Event flow
 
-### Run [`25051936845`](https://github.com/brianpabent/open-enzyme/actions/runs/25051936845) — race on push
+```text
+push to main
+  ├─ publish current website (always)
+  └─ knowledge-update coordinator
+       ├─ identify changed COMP artifacts
+       ├─ exact-snapshot COMP push review
+       └─ bounded cross-page propagation if eligible
 
-Triggered by commit `5e106e9` (modality × target matrix, 2026-04-28).
-
-- Pass 1 (propagate, Sonnet 4.6) completed and committed `ee28c63`.
-- Pass 2 (synthesize, Gemini 2.5 Pro) ran fully — generated `logs/v4-synthesis-2026-04-28-5e106e9.md` (62 lines, $0.7288 via OpenRouter), committed locally on the runner.
-- `git push` failed: `! [rejected] main -> main (fetch first)`. A concurrent commit had landed on `main` between Pass 1's push and Pass 2's push.
-- Pass 3 never ran. The runner tore down with the synthesis commit only in the ephemeral local clone; the artifact and its commit are unrecoverable.
-
-**Root cause:** no `git pull --rebase origin main` before push in any pass after Pass 1. Concurrent activity on `main` (which is normal during a push-driven sweep — Pass 1 itself pushes) is sufficient to lose the entire downstream pipeline.
-
-### Run [`25049501442`](https://github.com/brianpabent/open-enzyme/actions/runs/25049501442) — transient API outage
-
-Triggered by commit `3beb17f` (open-questions co-engineered substrate-supply, 2026-04-28).
-
-- Pass 1 OpenRouter call returned HTTP 503: `OpenRouter call failed (exit 22): curl: (22) The requested URL returned error: 503`.
-- The shell wrapper exited non-zero on the first failed `curl`. No retry.
-
-**Root cause:** no retry-with-backoff in the OpenRouter caller. A single transient upstream blip (OpenRouter is itself a routing layer over multiple vendor APIs; 503s are routine and usually clear within seconds) terminates the full sweep.
-
-### Operational signal
-
-Both failures left no signal beyond the GitHub Actions run status itself. Brian had to ask "what came back from the last sweeps?" to discover them. Both consumed real budget at Pass 1 (and Pass 2 in the first case) without producing the artifact those passes were paid to produce. Neither retried automatically. Neither created an issue, posted a comment, or wrote a ledger entry — the only trace of run `25051936845`'s lost synthesis was the cost line in the OpenRouter dashboard.
-
----
-
-## Why memory rules don't work for this class of problem
-
-Two operator-side failures from the same week are structurally identical to the workflow failures: a string-matching convention where the cost of a typo is "the next 30 file changes get silently lost."
-
-1. **Over-marking with `[skip-wiki-sweep]`.** The marker convention says "use this on commits the daemon itself produces, to prevent recursion." During the 2026-04-27 walkthrough I added the marker to ~10 hand-authored commits with substantive wiki content (`6fa817b`, `a82296b`, `b110920`, others). Each suppressed the entire workflow. The intent ("don't recursively trigger the daemon") was right; the application ("on every commit because every commit feels internal") was wrong. The convention has no symmetric reminder mechanism — once the operator has internalized it, the only feedback that the application is wrong is "the sweep didn't run, and I won't notice until I look."
-
-2. **`sweep-1-propagate:` prefix on a hand-edit.** Commit `a8f15c3` was a script edit (the dedup-aware-propagation prompt fix), but its message started `sweep-1-propagate: dedup-aware…` because the change was about that pass. The workflow's diff-base computation `git log --grep='^sweep' -n 1` then anchored the next sweep window on this hand-edit, hiding all earlier work from any future sweep. The prefix was descriptively accurate and structurally lethal.
-
-Both errors are easy to make and the cost is delayed. The fix is not "remember harder" — it's hooks-as-enforcement and a registry-as-source-of-truth so the convention is *checked*, not *assumed*. This is the explicit precedent from the Alma project (Brian's note 2026-04-28): conventions that are checked don't drift; conventions that depend on memory always do, eventually.
-
----
-
-## Inter-pass artifact handoff (added 2026-04-28)
-
-A second class of failure surfaced after the initial five-component build: not workflow-runtime errors, but *information-loss between passes*. Two specific symptoms:
-
-1. **Pass 2 missed connections that lived in propagated files.** Pass 1 propagates findings into downstream wiki pages (e.g. it added source attributions to `bpc-157.md`, `kpv-peptide.md`, `disulfiram.md` during the 2026-04-27 cycle). Pass 2 received only the *original* trigger file list. Even though Pass 2 reads the full corpus, its synthesizer's *attention* was biased toward triggers — connections that emerged because of Pass 1's propagation were under-weighted.
-
-2. **Pass 3 said "I can't confirm because I don't have the trigger file."** Pre-2026-04-28, Pass 3 was a *one-shot non-agentic call*: a single OpenRouter request with the synthesis log + inlined trigger files, no tool access. When Pass 2 cited a non-trigger file (which it does constantly — `lactoferrin.md`, `abcg2-modulators.md`, etc.), Pass 3 had no way to verify. The reviewer correctly admitted it; that's not a bug in the model, it's a design gap.
-
-Three coordinated fixes — all under the same principle: **every pass must declare what it produced for the next pass to consume**.
-
-### `propagated_files` (Pass 1 → Pass 2)
-
-Pass 1's Python driver now diffs its own commit and writes the list of *propagated files* (wiki pages it modified, excluding the original trigger set and `synthesis/queue/`) to `$GITHUB_OUTPUT`. The workflow promotes that to the `propagate` job's outputs, and Pass 2 receives both `trigger_files` (cause) and `propagated_files` (where new content now lives) as separate inputs.
-
-The Pass 2 prompt's TRIGGER block names both lists explicitly with semantic labels and instructs the synthesizer: *"new cross-document connections are most likely to emerge from the union of the two sets — weight your attention there."*
-
-### `cited_files` manifest (Pass 2 → Pass 3)
-
-Pass 2's prompt now requires the synthesizer to emit a `Sources cited:` manifest at the bottom of its synthesis log, listing every `wiki/*.md` it referenced in any finding. Pass 2's Python driver parses that manifest (with a regex fallback that scans the entire synthesis for `wiki/<name>.md` patterns) and writes `cited_files` to `$GITHUB_OUTPUT`. The workflow promotes that to the `synthesize` job's outputs.
-
-### Pass 3 agentic upgrade (warm cache + read-only tools)
-
-Pass 3's driver was rewritten as a bounded agentic loop:
-
-1. **Warm cache** — at startup, inline both `trigger_files` and `cited_files` into the reviewer's initial prompt with `=== <path> (trigger|cited) ===` separators. This covers the most likely sources without any tool round-trip.
-2. **Read-only tools** — `read_file`, `list_files`, `grep`. The reviewer can investigate any file the cache missed. No edit, no write — Pass 3 is critique, not propagation.
-3. **Iteration cap** — `MAX_TOOL_ITERATIONS=8`. On the last iteration the driver sets `tool_choice: "none"` to force final output. A model that returns content with no tool calls signals completion.
-4. **Strict output scope preserved** — the merge script (`scripts/synthesis-emit-files.py`) still counts `<<<NEXT>>>` separators and bails on mismatch, so any preamble or commentary outside the blockquotes fails fast.
-
-The cost trade-off: Pass 3 may now run multiple OpenRouter calls instead of one. In practice it tends to call 0–2 tools (most reviews don't need fetches beyond the warm cache), so the typical cost increase is small. The previous failure mode — review verdicts that admitted lack of access — was strictly worse than the bounded extra cost of letting the reviewer fetch on demand.
-
-### Sequencing summary
-
-```
-Pass 1 inputs:  trigger_files (from push)
-Pass 1 outputs: trigger_files + propagated_files
-
-Pass 2 inputs:  trigger_files + propagated_files
-Pass 2 outputs: raw synthesis_log + normalized_manifest + cited_files
-
-Pass 3 inputs:  canonical normalized items + trigger_files + cited_files (raw log remains hash-bound audit evidence)
-Pass 3 tools:   read_file, list_files, grep (read-only, bounded iterations)
-Pass 3 outputs: review blockquotes (strict scope: only `<<<NEXT>>>`-separated blocks)
+explicit manual request
+  └─ full-corpus distributed synthesis
+       ├─ require propagation backlog = 0
+       ├─ require exact eligible COMP receipts
+       ├─ read every corpus section twice
+       ├─ compare every domain pair
+       ├─ reopen cited raw sections and exact COMP outputs
+       ├─ independent adversarial review
+       └─ emit unresolved queue items only
 ```
 
-This handoff design is also why Pass 1 commits-and-pushes before Pass 2 starts: the *filesystem* state has to reflect Pass 1's work for Pass 2's full-corpus read to be valid, AND Pass 2's checkout is fresh (not a runner-cache reuse).
+## State
 
----
+`logs/sweep-state.json` is compact operational state, not a narrative log.
 
-## Tolerant normalization + strict promotion boundary (added 2026-07-15)
+- `last_successful_propagation`: the latest fully considered push batch;
+- `last_successful_synthesis`: the latest completely covered corpus snapshot, including coverage digest and cost;
+- `comp_reviews`: current exact-snapshot review eligibility by COMP;
+- `unresolved_failures`: active failures only.
 
-### Incident that exposed the missing boundary
+The two cursors are intentionally independent. A push may be fully published and propagated while remaining unsynthesized until Brian explicitly requests a sweep.
 
-Run `29428509323` produced a 46.5 KB Pass 2 artifact with ten `{{PEER-REVIEW}}` markers. Four connection items appeared under `## Phase C — Synthesize` rather than the prompt's preferred `## New Connections`, so the legacy exact-heading parser silently ignored them and counted only six items. Pass 3 then failed after DeepSeek V4-Pro returned tool calls on the forced-final iteration despite `tool_choice="none"`.
+## Push-time propagation
 
-The recovery dispatch (`29433436091`) reran the full-corpus synthesizer instead of resuming the preserved artifact. Its output contained one substantive `Most Curious Thread` and one review marker, but the heading was bold-only (`**Most Curious Thread**`) instead of an H2. The parser recognized no sections, inferred a drift-guard no-op, skipped Pass 3, wrote a false no-op history record, and advanced the cursor. The Pass 3 loop fix therefore was not exercised by that successful run.
+`knowledge-update.yml` calls `comp-review.yml`, then `wiki-propagate.yml`.
 
-This was a protocol-boundary error: nondeterministic million-token model output was being treated as if exact Markdown presentation were a deterministic wire format.
+Propagation:
 
-### New boundary
+- receives an explicit eligible path set;
+- links to canonical evidence instead of copying exposition;
+- updates direct dependents, hypotheses, dashboard/nav, and public surfaces as needed;
+- refuses partial work beyond its path or cost cap;
+- can advance on a verified no-op;
+- never performs novelty synthesis.
 
-The enforced sequence is now:
+A changed COMP blocks its derived claims until the current artifact has an exact push review. The structured review independently states propagation and synthesis eligibility.
 
-```
-raw Pass 2 Markdown (preserved verbatim)
-    ↓ scripts/synthesis_normalize.py
-canonical JSON manifest (hash-bound, ordered items)
-    ↓ strict completeness validation
-Pass 3 review of canonical items
-    ↓ deterministic emitter
-queue/history + cursor advance
-```
+## Three COMP reviews
 
-The normalizer is liberal about presentation and strict about information loss:
+1. Authoring pre-run review binds code, inputs, provenance, rules, and planned outputs before result-bearing execution.
+2. Authoring post-run review binds code/input/output plus every proposed interpretation before completion or commit.
+3. Push review independently inspects the exact changed COMP and every referencing wiki/hypothesis surface before propagation or later synthesis.
 
-- Maps documented heading variants, including `Phase C — Synthesize` and bold-only forced-rank headings, to canonical item types.
-- Uses Markdown structure and `{{PEER-REVIEW}}` markers as redundant signals. Missing cosmetic markers do not drop structurally valid items; a marker outside every normalized item is an error.
-- Records source spans, document order, raw headings, warnings, and errors in the manifest.
-- Fails closed when substantive or marked content cannot be normalized. The raw artifact and diagnostic manifest are committed before the job fails, so repair does not repay the full-corpus model call.
-- Permits zero items only when Pass 2 explicitly declares `Status: No new synthesis`. Missing or unfamiliar structure is never a no-op.
+The reviews answer different questions and cannot substitute for one another. Current push receipts live under each COMP's `reviews/` directory and replace prior receipts. A stable `synthesis/queue/comp-review-NNN.md` exists only while action is required.
 
-`scripts/synthesis-emit-files.py` and `scripts/sweep-3-review.py` consume the canonical manifest, not raw Markdown structure. The raw log remains audit evidence and is SHA-256-bound to the manifest. The manifest also binds the trigger commit, the exact corpus snapshot Pass 2 read, diff base, trigger paths, actually served synthesizer model, ordered item payload, and a canonical-item SHA-256.
+## Explicit full synthesis
 
-### Exact-artifact recovery
+`wiki-sweep.yml` runs `distributed-synthesis.py`. It preserves grounded creativity without loading one model with an ever-growing prompt:
 
-Manual dispatch accepts `resume_normalized_manifest`. Recovery validates the raw-artifact hash, restores the manifest's original trigger SHA/diff base/trigger paths, and skips Pass 1 and Pass 2. Pass 3 therefore reviews the artifact that actually failed rather than asking a stochastic synthesizer to produce a different answer.
+1. deterministically split the full current corpus into section-addressable shards;
+2. perform complete atomic extraction across all shards;
+3. perform a second independent complete read focused on residue and missed details;
+4. merge atoms without erasing disagreements;
+5. examine every unordered domain pair;
+6. rehydrate each candidate from exact source spans;
+7. for COMP-backed candidates, reopen the exact generated outputs covered by a current receipt;
+8. obtain an independent review;
+9. emit only reviewed unresolved actions.
 
-If a later sweep has already advanced the cursor, the artifact can be reviewed with `supplemental_recovery=true`. That mode emits the missing queue/history records and records the recovery run, but deliberately leaves the current cursor unchanged. This is the safe repair path for the July 15 false-no-op incident: recover the exact old output without rolling back or blessing over newer work.
+The run fails closed unless every section has both reads, every domain pair is examined, and every candidate is rehydrated and reviewed. Cost is tracked from provider usage where available and conservatively estimated otherwise; the workflow enforces an explicit cap.
 
-Cursor advancement additionally requires:
+Raw model output and review files are recovery artifacts with short CI retention. The repository keeps only active queue items and the compact coverage/cost receipt. Git preserves prior runs.
 
-1. the normalized manifest validates against its raw source;
-2. the workflow trigger list and diff base match the manifest;
-3. the current registry cursor still equals the manifest's diff base (unless the original run was an explicit manual-path sweep); and
-4. the review commit descends from the manifest's corpus snapshot.
+## Current-state content rules
 
-If another sweep has already advanced the cursor, ordinary recovery fails rather than blessing or overwriting newer state; supplemental recovery is explicit and non-cursor-moving.
+- `wiki/`: current scientific understanding and active track state;
+- `synthesis/queue/`: unresolved actions only;
+- COMP directories: exact reproducible artifacts plus current reviews;
+- `reference/`: immutable external source material;
+- Git: all revision and completed-action history.
 
-The successful-sweep cursor is the corpus snapshot, not the later Pass 3 review commit. That distinction closes a concurrent-write race: if a wiki commit lands after Pass 2 takes its snapshot and Pass 3 later rebases over it, the new commit still sits after the coverage cursor and remains pending. The review commit is tracked separately as provenance. If rebase changes its SHA, the state commit rebinds that provenance without changing coverage.
+Do not create completed-item directories, immutable review logs, per-run synthesis narratives, inline changelogs, or “for posterity” copies.
 
-Queue filenames include the first eight characters of the hash-derived `sweep_id`. Production recovery exposed why date/type/index/slug was insufficient: both July 15 artifacts independently emitted the same `Most Curious Thread` headline, so the second artifact initially overwrote the first artifact's file. Artifact identity is now part of the path, and the regression suite emits both fixtures into one queue and requires eleven distinct files.
+## Failure behavior
 
-### Zero-item anomaly gate
+- Publication is independent and should still run when knowledge automation fails.
+- COMP review failure blocks only affected derived claims.
+- Propagation failure leaves its cursor unchanged and records an active failure.
+- Full-synthesis failure leaves its cursor unchanged and uploads recovery artifacts.
+- The watchdog notifies; it never authorizes or automatically dispatches a full synthesis.
 
-An explicit no-op over more than five trigger paths or more than 100 changed wiki lines is treated as anomalous. Automatic runs fail closed. A human may re-dispatch with `allow_large_no_op=true` only after independent/manual inspection. This gate does not assert that a large batch must yield novelty; it asserts that a large-batch zero deserves review before it becomes the authoritative cursor.
-
-### Regression coverage
-
-`tests/test_sweep_pipeline.py` uses both incident artifacts as fixtures:
-
-- `eeab5b5` normalizes to ten items across four canonical types;
-- `08f10ad` normalizes to one substantive item, not a no-op;
-- explicit no-op, unknown marked content, missing cosmetic markers, raw/canonical tampering, served-model provenance, ten-item emission, forced-final tool removal, coverage-cursor binding, supplemental recovery, and rebase provenance repair each have executable tests.
-
----
-
-## Architecture (5 components)
-
-### 1. Workflow hardening
-
-**Scope:** `.github/workflows/wiki-sweep.yml`, `scripts/sweep-1-propagate.py`, `scripts/synthesize.py`.
-
-Three concrete changes, all addressing the two observed failure modes without introducing new infrastructure:
-
-- **Rebase before push.** Every pass that pushes runs `git pull --rebase origin main` immediately before `git push`. On rebase conflict (rare; Pass artifacts are write-only into `logs/` and `wiki/` updates are the daemon's exclusive lane), abort the pass and fall to the failure ledger.
-- **Retry with backoff on OpenRouter calls.** Wrap the `curl` invocation in a 3-attempt retry: 5s, 15s, 45s backoff. Treat HTTP 5xx and curl exit codes 6/7/22/28 as retryable; treat HTTP 4xx as fatal (those indicate prompt or auth bugs, not transient outages). Log each retry to the run output.
-- **Push-failure ledger.** On any non-recoverable failure, write `logs/failed-sweep-<sha>.md` capturing pass number, model, prompt path, error message, and cost-so-far. Upload as a workflow artifact via `actions/upload-artifact@v4` so the artifact survives runner teardown even when the commit doesn't. The ledger is also the input to component #5 (cron watchdog).
-
-This is the immediate code-level fix. Eliminates the two observed failure modes without touching the rest of the pipeline.
-
-**Complexity:** Low. ~3 file edits.
-
-### 2. State registry
-
-**Scope:** new file `logs/sweep-state.json` (or `.sweep/cursor.json` if we want it out of the artifact stream). Atomic-write at Pass 3 success.
-
-Replaces the brittle `git log --grep='^sweep' -n 1` regex as the source of truth for "what has been swept and what hasn't." The registry is canonical; commit-message patterns become a debugging aid only.
-
-```json
-{
-  "schema_version": 1,
-  "last_full_sweep_commit": "ee28c63a4f...",
-  "last_full_sweep_timestamp": "2026-04-28T14:32:11Z",
-  "last_full_sweep_run_id": "25051936845",
-  "pending_paths": [
-    "wiki/uricase.md",
-    "wiki/engineered-koji-protocol.md",
-    "wiki/nlrp3-exploit-map.md"
-  ],
-  "recent_failures": [
-    {
-      "run_id": "25049501442",
-      "commit": "3beb17f",
-      "pass": 1,
-      "error": "OpenRouter 503",
-      "timestamp": "2026-04-28T09:14:02Z"
-    }
-  ]
-}
-```
-
-`pending_paths` is computed at Pass 1 entry as the diff between `last_full_sweep_commit` and `HEAD` filtered to `wiki/*.md`. It's persisted so that a Pass-1 failure doesn't lose the work-list — Pass 1 retries (manual via `/sweep-catchup` or automatic via component #5) read the same list.
-
-**Migration:** one-shot script that reads the existing `logs/v4-synthesis-*.md` filenames (which embed the trigger commit) to seed `last_full_sweep_commit` to the most recent successful synthesis.
-
-**Complexity:** Low-Medium. New file format, Pass 3 writer, one-shot migration.
-
-### 3. Hooks for enforcement
-
-Two layers, both checking the same invariants:
-
-- `[skip-wiki-sweep]` is permitted **only** on commits that also carry a `^sweep-[123]-` subject prefix (i.e., daemon-authored).
-- `^sweep-[123]-` subject prefix is permitted **only** when the commit author is `github-actions[bot]`.
-
-#### 3a. Filesystem `pre-commit` hook
-
-`.git/hooks/pre-commit` (installed via `scripts/install-hooks.sh` so it's reproducible across clones):
+## Primary commands
 
 ```bash
-#!/usr/bin/env bash
-set -euo pipefail
-
-msg_file=".git/COMMIT_EDITMSG"
-[[ -f "$msg_file" ]] || exit 0
-subject=$(head -n1 "$msg_file")
-author_email=$(git config user.email)
-touches_wiki=$(git diff --cached --name-only | grep -E '^wiki/.*\.md$' || true)
-
-if grep -q '\[skip-wiki-sweep\]' <<<"$subject"; then
-  if ! [[ "$subject" =~ ^sweep-[123]- ]]; then
-    echo "ERROR: [skip-wiki-sweep] is reserved for daemon commits." >&2
-    echo "       Subject must start with 'sweep-{1,2,3}-' to use it." >&2
-    exit 1
-  fi
-fi
-
-if [[ "$subject" =~ ^sweep-[123]- ]]; then
-  if [[ "$author_email" != *"github-actions[bot]"* ]]; then
-    echo "ERROR: 'sweep-N-' prefix is reserved for the daemon." >&2
-    echo "       Use a different verb (e.g., 'fix sweep-1 prompt: ...')." >&2
-    exit 1
-  fi
-fi
+python3 scripts/sweep-state.py read
+python3 scripts/sweep-state.py pending-propagation-paths
+python3 scripts/sweep-state.py pending-synthesis-paths
+python3 scripts/comp-review.py --help
+python3 scripts/distributed-synthesis.py --help
 ```
-
-#### 3b. Claude Code `PostToolUse` hook on `Bash`
-
-Catches violations *inside* the Claude Code session, before the bad commit hits the local repo (and before the filesystem hook would refuse it — same check, earlier surface, with a Claude-readable error so the agent can self-correct).
-
-Wired via `.claude/settings.json`:
-
-```json
-{
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Bash",
-        "command": "scripts/hooks/check-sweep-commit.sh",
-        "match_command_regex": "^git commit"
-      }
-    ]
-  }
-}
-```
-
-The script reads the just-attempted commit message and applies the same regex. On violation it returns a non-zero exit, which Claude Code surfaces back to the agent as a tool error.
-
-**Complexity:** Low. ~30 lines bash + one settings.json entry.
-
-### 4. Skills (user-invocable ops)
-
-Three slash commands at `.claude/skills/*.md`. All read the registry from component #2.
-
-- **`/sweep-status`** — reads `logs/sweep-state.json`, reports cursor age (HEAD distance from `last_full_sweep_commit`), `pending_paths` count, the last 3 entries of `recent_failures`, and a recommended action ("registry current; nothing to do" / "29 paths pending, run `/sweep-catchup`" / "3 consecutive failures — investigate before retry").
-
-- **`/sweep-catchup`** — fires `gh workflow run wiki-sweep.yml -f trigger_paths="<paths>"` with paths sourced from the registry's `pending_paths` (or an explicit override list as argument). Bypasses the diff-base regex entirely. **Ships before component #2** so the existing 29-file backlog can be tested against the hardened workflow; refactored to read the registry once #2 lands.
-
-- **`/sweep-validate`** — end-of-session sanity check. Compares registry state against actual git state (does `last_full_sweep_commit` exist? Is it ancestor of `HEAD`? Do `pending_paths` exist on disk?). Designed to be wired as a Claude Code `Stop` hook so it runs automatically at conversation end without operator action.
-
-**Complexity:** Low each. ~50 lines of skill markdown.
-
-### 5. Catch-up cron (safety net)
-
-**Scope:** new file `.github/workflows/sweep-watchdog.yml`. Runs daily on a cron trigger (`0 13 * * *` — 9am ET, after Brian's typical morning review).
-
-Logic:
-
-1. Read `logs/sweep-state.json`.
-2. If `last_full_sweep_commit` is >24h behind `HEAD` AND `pending_paths` is non-empty, fire `workflow_dispatch` against `wiki-sweep.yml` with the pending paths as input.
-3. If `recent_failures` shows ≥3 consecutive failures with no intervening success, **do not retry**. Open a GitHub issue with the failure ledger contents and stop.
-
-The 3-failure brake is the load-bearing protection against runaway cost. Bounded cost: 1 watchdog run per day, plus at most 1 sweep run it can trigger.
-
-**Complexity:** Low. ~50-line YAML + small bash watchdog.
-
----
-
-## Priority sequencing
-
-Order Brian agreed to on 2026-04-28:
-
-1. **Workflow hardening (#1)** — first. Eliminates the two observed failure modes immediately.
-2. **`/sweep-catchup` skill (minimal version)** — second, in parallel with this doc. Needed to test #1 against the current 29-file backlog before any further work.
-3. **State registry (#2)** — third. Refactor `/sweep-catchup` to read from the registry once it exists.
-4. **Hooks (#3)** — fourth. Filesystem `pre-commit` and Claude Code `PostToolUse`.
-5. **Remaining skills (#4)** — fifth. `/sweep-status`, `/sweep-validate`.
-6. **Catch-up cron (#5)** — last. Final safety net, only meaningful once #2 exists.
-
-Note: `/sweep-catchup` ships before the registry deliberately, so the backlog test of #1 can happen as early as possible. After the registry lands, refactor the skill to read from it instead of taking explicit path arguments.
-
----
-
-## Cost / scope estimate
-
-Per the [umbrella `CLAUDE.md` § "Estimates and Scoping"](../CLAUDE.md), framed in complexity rather than wall time.
-
-| # | Component | Complexity | Iteration risk | Context load |
-|---|---|---|---|---|
-| 1 | Workflow hardening | Low | Low — testable against current backlog | Small — 3 files |
-| 2 | State registry | Low-Medium | Medium — schema choices propagate | Medium — touches every pass |
-| 3 | Hooks (filesystem + Claude) | Low | Low — pure validation logic | Small — isolated |
-| 4 | Skills (3 commands) | Low each | Low — read-only against registry | Small each |
-| 5 | Cron watchdog | Low | Medium — autonomous trigger; brake is load-bearing | Small — single workflow |
-
-Total scope: **medium project**. The system goes from "memory + ad-hoc commit-message conventions" to "self-healing pipeline with a typed state file, enforced invariants, and operator visibility into pending and failed work."
-
----
-
-## Subagent brief hygiene: scope propagates, predictions don't (added 2026-05-08)
-
-This section is broader than the daemon — it applies to **all subagent-briefing flows**, including comp-NNN computational experiments, lit-scan tasks, and any independent investigation a Claude session spawns into a subagent. The discipline below was empirically grounded by the comp-018 vs comp-020 retrospective ([`operations/comp-018-vs-comp-020-retrospective.md`](../operations/comp-018-vs-comp-020-retrospective.md), 2026-05-08).
-
-### Why this matters
-
-When a human briefs an AI subagent, the briefer's idle phrasing is *part of the experimental setup* — not just project-management overhead. Phrasings that feel like motivational context to the human ("if it's rosemary, I'll grow rosemary") read as scope guidance to the subagent ("the user expects rosemary; satisfy this expectation; promote rosemary-relevant findings"). The subagent does what its brief said; the brief silently constrained the answer. This is structurally similar to a leading question in survey methodology — it shapes the answer even when there are right answers available.
-
-This is a class of confounder that doesn't exist in human-only research: **prompt contamination**.
-
-### The dividing line
-
-User direction describes either THE WORK (legitimate scope) or THE USER's hopes about the work (contamination). The fix is to keep the first and scrub the second.
-
-**Propagate (these describe the work):**
-- Scope decisions — target list, compound classes in/out, time horizon, geographic scope, what to broaden vs. narrow
-- Methodological constraints — tools to use, evidence-level discipline, grep-verify requirements, multi-vendor cross-check
-- What's already known or ruled out — so the subagent doesn't redo work
-- Output format and reporting expectations — length cap, structure, top-of-file plain-English summary
-- Project conventions — CLAUDE.md rules, phase positioning, audience framing
-- Time, cost, and git-flow constraints
-- Tool corrections from prior reviewer feedback ("Paperclip is wrong corpus for CNKI; do direct multilingual instead")
-- Memory cautions for known unreliable tools (e.g., Paperclip's `map` operator hallucinates per `feedback_paperclip_map_unreliable.md`)
-
-**Scrub (these describe the user, not the work):**
-- Contrived examples that name specific things ("if it's in rosemary I'll grow rosemary," "could be ergosterol," "maybe a flavonoid")
-- Aspirational framings ("I really want this to work," "wouldn't it be amazing if Y")
-- Speculative compound names the user thinks might be relevant
-- Personal anecdotes that aren't directly load-bearing for the investigation
-- Narrative-cohesion phrasings that aren't substantive constraints
-
-### The sharper test
-
-Would a competent independent researcher with no access to the user's specific phrasing do the same investigation and reach the same conclusions?
-
-- **If yes**, the phrasing is scope/method — keep it.
-- **If no** — if the user's phrasing materially constrains where the researcher would look or what they'd headline-promote — it's contamination, scrub it.
-
-### The rhetorical-callback tell
-
-If the subagent's report-back uses your phrasing back at you ("your X framing landed empirically," "as you suspected"), that's a signal your phrasing influenced not just the search but the framing of the result. Watch for it. It's the smoking gun for narrative-cohesion bias even when the underlying findings are real.
-
-### Guardrail against over-correction
-
-Stripping user direction so aggressively that the subagent loses scope context is its own bias.
-
-- **Don't strip scope direction.** If the user says "broaden beyond fungal," that's load-bearing — removing it produces a narrow fungal-only sweep.
-- **Don't strip "what's known/ruled out" context.** That prevents redundant work.
-- **Don't strip methodological discipline.** Tool corrections, evidence-level rules, and multi-vendor expectations all stay.
-- **DO strip examples, hopes, predictions, speculative compound names.** Those are the contamination class.
-
-The check: would removing the phrase from the brief make the subagent's task less defined? If yes, keep it. If removing it leaves the same well-scoped investigation, scrub it.
-
-### Verification re-run as a discipline
-
-When a subagent brief contains user-named compounds, contrived examples, or motivational framing that could plausibly bias narrative-cohesion, the cheapest corrective is an independent re-run with a scrubbed brief. Cost: ~$5 in Opus subagent compute, 30-60 minutes wall-clock, ~25 minutes human attention. Cheap enough to default to whenever the brief contains contamination-class content.
-
-The re-run brief should:
-- Strip all compound names, contrived examples, and user phrasing
-- Retain identical scope, methodology, and "what's known/ruled out" context
-- Add explicit anti-bias instructions: "no compound prioritization in the headline; surface ALL compounds within ~20% of the lead metric; depth-first at each compound class; no rhetorical callbacks to user phrasing"
-- Be framed as an "independent verification re-run" — the verification subagent should NOT be told what the predecessor found
-
-The comparison happens AFTER both reports land. If they converge, confidence in the original goes up. If they diverge, you've surfaced a confounder.
-
-### Catch from instinct, codify in discipline
-
-The discipline above doesn't preempt first-time issues. It's the safety net for the SECOND instance of a class of problem. The FIRST instance gets caught by:
-
-1. Human pattern-recognition / suspicion (the user notices something feels off)
-2. Verification (independent test of the suspicion)
-3. Codification (the discipline gets written down for next time)
-
-For citizen scientists doing AI-assisted research without the OE project's multi-pass safety net: cultivate the instinct first. Watch for results that feel too narratively coherent with how you framed the question. That feeling is data.
-
-### Origin: comp-018 brief contamination 2026-05-08
-
-The comp-018 (Upstream Complement Modulator Sweep) subagent brief inadvertently included Brian's contrived "if it's in rosemary I'll grow rosemary" example as motivation. The subagent's headline finding (rosmarinic acid as TIER-1 dietary C3-convertase inhibitor) is real — Englberger 1988 PMID 3198307 is a foundational 38-year paper, and rosmarinic acid is named after rosemary because it was first isolated from rosemary in 1958 — but the *headline-promotion* of rosmarinic acid singularly (vs. luteolin, tiliroside, *Helicteres* benzofuran lignans, marine sulfated polysaccharides, ganoderic acid Sz) was contaminated by narrative-cohesion with the user phrasing. The subagent's report-back literally said "Brian's literal 'if it's in rosemary I'll grow rosemary' framing landed empirically" — the rhetorical-callback tell.
-
-Brian's instinct caught it: *"This has got to be a hallucination — I just said rosemary because it was the first herb that popped into my head."* The verification re-run (comp-020, brief-scrubbed) found:
-- Three tied tier-1 candidates instead of one (rosmarinic acid, *Helicteres* benzofuran lignans, luteolin)
-- comp-018 missed *Helicteres* benzofuran lignans at the headline tier (4-20× more potent than RMA on matched assay)
-- comp-018 underweighted marine sulfated polysaccharides
-- The rosmarinic acid IC50 spread is 44× across assays (comp-018 noted 20-30×); the load-bearing mechanism is upstream covalent C3b modification, NOT direct C5 convertase inhibition
-
-Underlying findings NOT contaminated. Headline-promotion WAS contaminated. Coverage breadth PARTIALLY contaminated. Brian's suspicion was empirically correct.
-
-Full retrospective: [`operations/comp-018-vs-comp-020-retrospective.md`](../operations/comp-018-vs-comp-020-retrospective.md). External-comms entry: [`operations/notable-moments.md`](../operations/notable-moments.md) 2026-05-08 brief-contamination entry.
-
----
-
-## Cross-vendor is not enough: constraint-closure audit (added 2026-07-13)
-
-**Status:** Permanent architecture principle. Complements the cross-vendor heterogeneity guard; does not replace it.
-
-### Failure observed
-
-The comp-019 gut-uricase capacity model and its downstream interpretation survived work across several frontier-model families. The relevant facts were already distributed through the corpus and even through comp-019's own inputs: human luminal urate was far below the modeled UOX Km; intestinal exposure was finite rather than 24 hours; uricase requires O2; and its reaction produces H2O2. The implementation nevertheless converted nominal saturated activity to a 24-hour daily capacity without using the stored substrate concentration or Km and without modeling residence time, oxygen, access, or coproduct burden.
-
-This was not primarily a vendor-specific knowledge gap. It was **shared problem framing**. Propagators, synthesizers, and reviewers inherited “enzyme capacity / yield” as the object under review, then checked pages for consistency inside that boundary. Multiple vendors do not constitute independent evidence when prompt, task role, source hierarchy, inherited ontology, and implementation assumptions remain correlated.
-
-Comp-044 invalidated the legacy central conclusion on substrate occupancy + finite residence time alone. Comp-045 then showed that topology, oxygen access, and peroxide handling are a coupled design gate. See `operations/notable-moments.md` (2026-07-13) for the public incident record.
-
-### Architecture consequence
-
-Preserve cross-vendor coverage, but require at least one **independent re-derivation role** for every quantitative claim that controls platform priority or wet-lab spend. That pass starts from the physical system and implementation, not from the canonical page's conclusion.
-
-Minimum constraint-closure checklist:
-
-1. **Reaction closure:** all substrates, cosubstrates, cofactors, electron acceptors, and products.
-2. **Operating-regime closure:** physiological concentration relative to Km, Kd, IC50, transport capacity, or the applicable constant.
-3. **Time and mass-balance closure:** realistic exposure/residence time, finite substrate pool, replenishment, and unit conversions.
-4. **Compartment closure:** localization, transport, diffusion, host-cell or matrix access, and where the reaction actually occurs.
-5. **Safety closure:** coproducts, local peaks, redox burden, off-target chemistry, and detoxification capacity.
-6. **Implementation closure:** every load-bearing input is used in code or explicitly excluded with a justified sensitivity bound; stored-but-unused inputs are a first-class audit finding.
-
-**Decision rule:** cross-page or cross-vendor repetition counts as one inherited claim until a differently framed pass re-derives it. “The corpus knows X” is not equivalent to “the model uses X.”
-
-### Relationship to the heterogeneity paper
-
-The submission-time Zenodo v1 of `papers/cross-vendor-heterogeneity-guard/draft.md` predates this observation. The working copy records it as post-submission §5.7. The corrected claim is narrower and stronger: vendor heterogeneity guards against some vendor-specific priors, but scientific independence also requires task-role and model-boundary heterogeneity.
-
-### Independent comp-review daemon (implemented 2026-07-13)
-
-#### Authoring-time dual adversarial gates (added 2026-07-14)
-
-Every new or materially revised comp now passes two fresh-subagent gates before it can be finalized:
-
-1. **Pre-run gate:** after code, inputs, provenance, decision rules, planned output schema, and reproduction instructions are written—but before any result-bearing execution—a context-isolated reviewer reconstructs the system independently and returns `GO`, `REVISE`, or `BLOCK`. Any material design correction is re-reviewed before execution.
-2. **Post-run gate:** after execution and after every output, summary, interpretive page, registry entry, validation prior, hypothesis/priority change, and other proposed propagation is drafted, a different context-isolated reviewer audits the complete code-input-output-summary-wiki contract. `ACTION_REQUIRED: yes` blocks completion. Any design/code/input correction returns the comp to the pre-run gate before rerun; narrative-only fixes still require a fresh post-run pass.
-
-Both review records and their SHA-256 manifests live under the comp's `reviews/` directory and ship with the artifact. `scripts/comp-review-manifest.py` binds the pre-run review to exact design files (with old outputs recorded separately as a baseline) and the post-run review to every code/input/output file plus an explicit inventory of all proposed propagation paths. The manifest is checked immediately before execution and commit; drift requires a fresh review. The review briefs are `scripts/comp-pre-run-review-prompt.md` and `scripts/comp-review-prompt.md`. The push-triggered daemon described below is an additional backstop for committed changes; it does not satisfy either authoring-time gate.
-
-The missing task role was partly architectural. On 2026-05-15, nineteen long-form comp analysis pages were removed from the full Pass 2 inline corpus and replaced by short interpretive stubs as the wiki approached its model context limit (`ebbce269`). The full analyses became `wiki-archive.md` files inside the experiment artifacts, which moved under the sweep-excluded `wiki/etc/experiments/` tree on 2026-05-16 (`d7ce4b0b`). Read-on-demand artifact tools landed the same day (`8872b4fb`). That was the correct token-budget direction: as of 2026-07-13 the artifact tree contains 39 comp directories plus its shared library-support directory and is approximately 1.1 GB, dominated by two large data-bearing comps. Inlining it into every wiki sweep is neither affordable nor useful.
-
-The replacement was incomplete. Pass 2 and Pass 3 could fetch comp detail with read-only tools when a summary-level finding already made the detail look load-bearing, but no pass was required to inspect each new comp's implementation. A summary can therefore normalize the experiment's conclusion before any independent reviewer sees the code path that produced it. Comp-019 is the canonical consequence: the summary exposed a capacity result, while the stored-but-unused physiological inputs lived below the sweep's default visibility boundary.
-
-`.github/workflows/comp-review.yml` now supplies the missing review surface. On every push changing `wiki/etc/experiments/comp-*/**`, it runs `scripts/comp-review.py` once per changed comp, independently of the full wiki sweep. Each run:
-
-1. inventories the complete tracked artifact;
-2. builds a bounded evidence bundle from priority code, inputs, outputs, README, and archive files;
-3. inlines the top-level wiki pages and hypothesis cards that explicitly reference the comp;
-4. surfaces a heuristic list of JSON input paths not named literally in executable code (search lead only, never an automatic unused-input verdict);
-5. gives the reviewer read-only `read_file`, `list_directory`, and fixed-string repository search tools for omitted detail and mechanism-level affected-page discovery;
-6. requires question/model fit, implementation closure, constraint closure, summary fidelity, provenance, reproducibility-contract, affected-page, and new-connection checks;
-7. writes an immutable log under `logs/comp-reviews/`; and
-8. emits a `type: comp-review` item to `synthesis/queue/` only when a correction, propagation, rerun, or verification action is required.
-
-Clean reviews do not create walkthrough noise. Actionable reviews enter the same human closure flow as wiki-sweep findings. The daemon does not execute arbitrary comp code and therefore does not claim independent numerical reproduction; it audits the reproduction contract and can require a rerun or independent reproduction as an action. `workflow_dispatch` accepts a single `comp-NNN` or an explicit `all` for controlled historical backfill.
-
-This is the token-safe resolution: **summary in the global sweep; full artifact in a per-comp audit; on-demand corpus search in both directions.** Neither surface substitutes for the other.
-
----
-
-## Pilot — Tool-Gap vs. Science-Gap Disagreement Attribution (added 2026-05-15)
-
-**Status:** Pilot. Wired into Pass 3 prompts (`scripts/sweep-prompt-3-review.md` + `scripts/sweep-prompt-3-review-gpt55.md`) for the next 2–3 sweep cycles starting 2026-05-15. Evaluated against the promote/abandon gates below. Not a permanent architecture change yet.
-
-### What changed
-
-When the Pass 3 reviewer emits a disagreement verdict (`Partial` / `Push back` / `Rejected`), the reviewer also emits a `[GAP: <tag>]` annotation immediately after the existing `[OVERLAP: <tag>]` annotation. Confirmed / Confirmed-prioritize / Augment / Defer verdicts get no GAP tag.
-
-Available tags:
-
-- **`tool-gap`** — Pass 2 identified the right topic / mechanism / connection but executed wrong: wrong magnitude, wrong citation, conflated entities, wrong assay format / dose / unit, wrong polarity, misread an evidence-tier tag. The synthesizer understood the biology; the failure is in plumbing.
-- **`science-gap`** — Pass 2 surfaced a connection that doesn't hold biologically. Misunderstood mechanism, applied a pattern from one system where it doesn't transfer, claimed a chokepoint relevance the biology doesn't support. The plumbing was OK; the biology understanding is wrong.
-- **`both`** — Both failure modes contribute; reviewer specifies which dominates.
-- **`unclear`** — Reviewer can tell the synthesizer is wrong but can't cleanly attribute the failure.
-
-### Why
-
-The sweep daemon's existing 3-pass design (Pass 1 Propagate → Pass 2 Synthesize → Pass 3 Critique, with a Pass 4 DeepSeek peer-reviewer planned) is a guard against epistemic homogenization across vendors. But when reviewers disagree with synthesizers, the existing verdict tags (Confirmed / Partial / Push back / Rejected) are **adjudicatory** — they tell the human *that* there's a problem, not *where to look*. Adding a tool-gap vs. science-gap axis converts the disagreement into a **diagnostic**:
-
-- "Push back, tool-gap" → reviewer trusts Pass 2's biology understanding; the citation / number / mechanism-label needs fixing
-- "Push back, science-gap" → reviewer disagrees with Pass 2's biology read entirely; the connection itself may not hold
-- "Push back, both" → fix the plumbing AND re-examine whether the connection is real
-- "Push back, unclear" → the disagreement is interpretive; surface for human adjudication
-
-Over time, per-model patterns emerge ("Gemini Pass 2 consistently shows science-gap failures on intracellular trafficking biology" → re-route trafficking-relevant claims to a different synthesizer). This is the kind of self-knowledge a multi-vendor sweep daemon should have but currently doesn't.
-
-The decomposition is named in the BioDesignBench preprint (bioRxiv 2026.05.06.723381) per their finding that DeepSeek V3 and GPT-5 are dominated by tool-gap and Gemini 2.5 Pro by science-gap on the 76-task benchmark. **BioDesignBench remains PRIMARY-SOURCE-PENDING** ([`wiki/etc/bio-ai-tools.md`](../wiki/etc/bio-ai-tools.md) §BioDesignBench — PDF fetch was Cloudflare-blocked 2026-05-12). The pilot draws on the *idea* without depending on the preprint's empirical claims; if BioDesignBench fails verification, the pilot still stands or falls on its own utility.
-
-### Promote / abandon gates
-
-Evaluated after ~3 sweep cycles past 2026-05-15:
-
-**Promote to permanent if all three hold:**
-
-1. **Signal density.** At least 30% of disagreement verdicts (Partial / Push back / Rejected) get a clean tool-gap or science-gap attribution (not "unclear" or "both"). Fewer than 30% clean attribution means the diagnostic isn't discriminating enough to be useful.
-2. **Per-model patterns.** At least one model (Pass 2 synthesizer, Pass 3 reviewer, or Pass 4 DeepSeek when implemented) shows a >2× skew toward one gap type. Without a per-model pattern, the tag is just labeling individual disagreements without surfacing routable signal.
-3. **Walkthrough utility.** The walkthrough operator (Brian, or Claude on Brian's behalf) reports at least one item where the GAP tag changed the closure action — e.g., a tool-gap verdict led to a citation-fix annotation rather than a wiki rewrite, or a science-gap verdict triggered a deeper grep of the underlying biology page rather than a quick patch.
-
-**Abandon if any of the following:**
-
-- **Cargo-cult tagging.** Reviewers emit "tool-gap" or "science-gap" without substantive attribution in the reasoning, defaulting to one tag (e.g., "tool-gap" applied to everything because it sounds less harsh). The tag becomes noise.
-- **Mode collapse.** >80% of disagreements tag as "unclear" or "both." The dichotomy isn't carving reality at its joints in this domain; abandon and try a different decomposition.
-- **Operational burden.** Prompts get unwieldy; reviewers spend more tokens debating gap attribution than verifying claims. The diagnostic costs more than it produces.
-
-### Implementation surface
-
-- `scripts/sweep-prompt-3-review.md` — Opus variant; added Gap tag vocabulary section + format update + strong-push-back example update
-- `scripts/sweep-prompt-3-review-gpt55.md` — GPT-5.5 variant; added Decision rule — GAP tag section + format update + example
-- No Pass 4 prompt file exists yet (DeepSeek pass implementation pending). When it lands, mirror the GAP tag instruction into the Pass 4 prompt.
-- `wiki/bio-ai-tools.md` §BioDesignBench — points at this pilot section so the methodology-upgrade-candidate mention has a concrete operational home.
-
-### Origin
-
-Surfaced as 2026-05-13 sweep Connection 2 in `synthesis/done/2026-05-13-connection-2-the-biodesignbench-tool-gap-vs-science-gap-decomposition.md`. Pass 3 verdict was "Partial" with the suggestion to pilot rather than commit; this section is the pilot.
-
----
-
-## "Recommend creating what already exists" bias in Pass 2 + Pass 3 (added 2026-05-16)
-
-**Status:** Architectural-bias observation. Not a bug per se — a pattern in synthesizer / reviewer recommendation generation that the walkthrough operator should de-prefer when it surfaces.
-
-### The pattern
-
-Pass 2 and Pass 3 both have a tendency to **recommend creating something that already exists** — a documented rule the daemon already implements dynamically, a wet-lab experiment section already in validation-experiments.md, a comp-NNN already queued in computational-experiments.md, a cross-link the page already has. The recommendation reads as substantive ("add a rubric for X," "queue §2.7 to validation-experiments.md," "add a comp-NNN that does Y") but verifies as either documentation-for-documentation (daemon already does it) or staleness (artifact already added in an earlier sweep cycle / earlier walkthrough). Both shapes share a common root: the synthesizer / reviewer doesn't fully audit the current corpus state before recommending an addition.
-
-Two flavors of the same bias:
-
-- **Static-rubric flavor.** Pass 2 / Pass 3 recommends documenting a decision framework / rubric / triage rule for a process the sweep daemon's Pass 2 already implements dynamically against the live corpus. Adding a static doc would be a snapshot of heuristics that drifts from the live evaluator faster than the evaluator updates.
-- **Stale-recommendation flavor.** Pass 2 recommends "add §X.Y to validation-experiments.md" or "queue comp-NNN" when §X.Y or the comp-NNN was already added in an earlier sweep cycle (typically 1–3 cycles ago). The recommendation is correct in spirit but the action is already done; the proposed addition would duplicate or shadow the existing entry.
-
-### Canonical cases — 2026-05-16 walkthrough Items 6 and 18
-
-**Item 6 (static-rubric flavor).** Sweep `ebbce26` Contradiction 1 (chassis-pending list dilution risk) framed the issue as a "strategic design gap" requiring a "chassis triage rubric" — Pass 3 confirmed and tightened the framing to "chokepoint-first triage rule keyed to chokepoint leverage, evidence tier, cheapest first move, and chassis maturity."
-
-The walkthrough operator pushed back: the daemon's Pass 2 already re-evaluates every chassis-pending entry against the current corpus state on every sweep, and the walkthrough operator's per-item decision IS the promote / park / falsify call. The same walkthrough (Items 1–5) produced concrete evidence of this mechanism working: PDB×disulfiram CP6 stack named (Item 1), CFTR-corrector Q141K chaperone promoted to comp-032 (Item 2), inhaled mRNA-IL-1RA temporal-complement framing landed in open-enzyme-vision.md + comp-033 (Item 4). None of these required a documented rubric to action.
-
-A static rubric there would have been documentation that re-derives what Pass 2 already does, a snapshot of heuristics that drifts from the live daemon's evaluation faster than the evaluator updates. Closure for Item 6 was a single-paragraph annotation in `chassis-pending-interventions.md` "How decisions actually get made — there's no static rubric, by design" — naming the dynamic mechanism explicitly so the page is self-documenting, but adding no rubric.
-
-**Item 18 (stale-recommendation flavor).** Sweep `8653de9` Priority Action 1 recommended "Add `validation-experiments.md` §2.7 (Koji × *Cordyceps* co-formulation stability test) and §1.26 sixth-arm extension (engineered-koji cordycepin + GLPP) to the experiment queue." Pass 3 correctly flagged the staleness with `[GAP: tool-gap]`: both §2.7 and the §1.26 sixth-arm had been added in the 2026-05-14 / 2026-05-15 sweep cycle, 1–2 cycles before the Priority Action surfaced them as "to add." The recommendation's spirit was right (these are real experiments worth running, if the strategic call had been to pursue them); the recommendation's *action* — "add" — was wrong, because the action was already done. The walkthrough operator's outcome was opposite to the synthesizer's recommendation (strategic deprioritization of koji-cordycepin engineering meant marking both sections **Deprioritized** in-place), but the same false-positive add-recommendation pattern would have caused queue-duplication friction even under "execute as proposed" framing.
-
-The two cases share a root: **Pass 2 didn't verify against the live corpus before recommending creation.** In Item 6, the live mechanism (daemon Pass 2 dynamic re-evaluation) already implemented what the recommended documented rubric would describe; in Item 18, the live file (validation-experiments.md) already contained the recommended sections.
-
-### Operational guidance for future walkthroughs
-
-When a Pass 2 / Pass 3 recommendation reads as "add X" — a documented rule, a wiki section, a wet-lab experiment, a comp-NNN, a cross-link — the walkthrough operator should run a two-step audit before accepting the recommendation:
-
-1. **Does X already exist?** Grep the corpus for X's likely name / slug / section number. If yes, the recommendation is stale (the synthesizer didn't audit current state); close with "X already exists at <path>; recommendation reframed to <execute / deprioritize / consolidate>." This catches the stale-recommendation flavor.
-2. **Is X already implemented dynamically by the daemon itself?** If the recommendation is to *document* a decision process the daemon's Pass 2 / Pass 3 prompts already run, the static doc is a snapshot of heuristics that drifts from the live evaluator. Close with a single-paragraph "X is implemented as <daemon mechanism>, no static doc needed" annotation; skip the documented rule. This catches the static-rubric flavor.
-
-When neither (1) nor (2) holds, the recommendation may be substantive — proceed to evaluate on its own merits.
-
-When (1) or (2) holds, **don't capture the observation as "telemetry for future consideration" without an action.** Either (a) the bias warrants a real edit to this section (action it now), or (b) it doesn't warrant capture at all. The middle ground of "log it as a deferred observation" is make-work that bloats annotations without producing downstream decisions.
-
-The most common case is (1) or (2). Default to "close with a verification-against-current-state annotation; skip the addition."
-
-### Implication for the tool-gap vs. science-gap pilot
-
-This bias is orthogonal to the tool-gap / science-gap decomposition (above) but interacts with it: a Pass 3 review that says "tool-gap, add a rubric" is doubly suspect — tool-gap because the synthesizer's framing was off, AND rubric-bias because the proposed fix is documentation-for-documentation. Future Pass 3 prompt iterations could add a check: "before recommending a documented rubric / framework, verify the recommendation isn't just re-describing existing daemon behavior."
-
-### Origin
-
-2026-05-16 walkthrough Item 6. Closure annotation at `synthesis/done/2026-05-15-contradiction-1-the-chassis-pending-intervention-list-risks-diluting-the.md`.
-
----
-
-## Pass 3 trigger-file awareness gap (added 2026-05-16)
-
-**Status:** Architecture gap named. Prompt-engineering fix queued as an "Open improvements" follow-up below; not yet implemented.
-
-### The failure mode
-
-Pass 3's review discipline relies on grep-based verification: when Pass 2 cites a section or claim ("`bio-ai-tools.md §BioDesignBench` closes this tool gap"), Pass 3 greps the corpus for the citation and either confirms or pushes back based on what the grep returns. **This breaks when the trigger commit itself contains the load-bearing content.**
-
-Concretely: Pass 3 today doesn't know which file(s) triggered the sweep. It sees the Pass 2 output and the corpus state, but it doesn't receive the *trigger-commit diff* as context. So when Pass 2 cites brand-new content that was added in the same commit that fired the daemon, Pass 3's grep operates as if the corpus state is stable and treats the new content as either invisible (false-negative grep) or just-another-page-that-might-have-been-there-yesterday. The reviewer can't distinguish *"Pass 2 hallucinated a section that doesn't exist"* from *"Pass 2 saw a brand-new section that was just added, which I also have access to but my grep missed."*
-
-### Canonical case — 2026-05-16 walkthrough Item 5
-
-The sweep on commit `ebbce26` was triggered by changes to `wiki/etc/bio-ai-tools.md` that added the §BioDesignBench section (~75 lines, including the protein-design-mcp install record and the explicit "RFdiffusion + ProteinMPNN NOT currently in OE stack — gap to investigate for DAF SCR1-4 + lactoferrin redesign work" framing). Pass 2 correctly synthesized a connection between this new content and `lactoferrin.md §12 #13` (which was added in the same commit and explicitly named the same tool gap).
-
-Pass 3's review:
-
-> "The central page-reading claim is wrong: ... a direct grep of `wiki/etc/*.md` also returned no matches for 'BioDesignBench' or 'protein-design-mcp,' contradicting the claim that `bio-ai-tools.md §BioDesignBench` closes this tool gap via that package."
-
-The grep claim is empirically wrong against the trigger-commit state — both terms are in the file at lines 752 and 810+. The Pass 3 reviewer either (a) actually ran the grep but got a false-negative because of path semantics or timing, or (b) didn't actually run the grep and reported a hallucinated empty result, or (c) ran the grep before the trigger-commit changes had landed in its view of the corpus. All three failure modes share a common root: **the reviewer lacks structural awareness of which content is new in this sweep cycle.**
-
-Had Pass 3 received trigger-commit context — *"this sweep was triggered by changes to `wiki/etc/bio-ai-tools.md` (+75 lines, new §BioDesignBench section) and `wiki/lactoferrin.md` (+1 line in §12, #13 added)"* — the review would have read very differently:
-
-> "Verdict: **Confirmed, prioritize.** This connection is grounded in newly-added content in `wiki/etc/bio-ai-tools.md`'s §BioDesignBench (added in the trigger commit itself). Pass 2's claim that RFdiffusion + ProteinMPNN were 'absent from OE's stack' is accurate as of immediately before the trigger commit; the same commit added the gap-identification text AND the A1 (CPU-mode) install record. State changed within the trigger commit. Action: reconcile `lactoferrin.md §12 #13` (still describes the pre-install state) against `bio-ai-tools.md` A1's post-install state."
-
-That's the **opposite verdict** from what Pass 3 actually produced. The pushback was a false-negative caused by trigger-blindness, not a real biology / plumbing disagreement.
-
-### Implication for the tool-gap vs. science-gap pilot
-
-This failure mode interacts with the tool-gap / science-gap pilot above: a trigger-blind Pass 3 will systematically over-emit `Push back / tool-gap` for legitimate cross-references between newly-added content. The pilot's signal-density metric (≥30% clean attribution) is contaminated by these false-negatives. The trigger-awareness fix is a prerequisite for clean evaluation of the tool-gap pilot — without it, the pilot's promote/abandon gates are testing the wrong thing.
-
-### Proposed fix
-
-The orchestrator script (`scripts/sweep-3-review.py` or its caller) should compute the trigger-commit diff and pass it to the Pass 3 prompt as explicit context:
-
-```
-TRIGGER CONTEXT:
-The following files were modified in the commit(s) that triggered this sweep cycle:
-
-- wiki/etc/bio-ai-tools.md: +75 lines (new §BioDesignBench section, A1 install record, ...)
-- wiki/lactoferrin.md: +1 line in §12 (#13 added)
-
-Pass 2 connections referencing content in newly-added sections of these files are
-legitimate cross-references, NOT hallucinations. When verifying such claims, you have
-two valid actions:
-
-  (a) Grep the post-trigger corpus state — the new content is there; if your grep
-      doesn't find it, your grep is wrong, not the corpus.
-  (b) Treat the Pass 2 claim as confirmed against the trigger diff itself.
-
-Do NOT mark a Pass 2 connection as "Push back / page-reading claim is wrong" solely
-on the basis of a grep result that contradicts the trigger diff. If your grep
-disagrees with the trigger diff, the trigger diff wins.
-```
-
-Implementation surface:
-1. `scripts/sweep-3-review.py` — compute `git diff <triggering-commit>~..<triggering-commit> -- wiki/*.md` and inject summary into the Pass 3 prompt's context. Same for the GPT-5.5 variant.
-2. `scripts/sweep-prompt-3-review.md` + `scripts/sweep-prompt-3-review-gpt55.md` — add a "Trigger context" section near the top of the prompt with the instructions above.
-3. Pass 4 (DeepSeek) prompt when implemented — mirror the same trigger-awareness pattern.
-
-This is **not a structural redesign of Pass 3**; it's a prompt-engineering fix that gives Pass 3 the context it's currently missing. The cost is small (~500 tokens of context per sweep) and the benefit is eliminating an entire class of false-negative reviews.
-
-### Why this matters beyond one item
-
-The sweep daemon's value proposition is that it catches inconsistencies that humans miss. When the daemon itself emits false-negative review verdicts on legitimate connections, the walkthrough operator has to manually adjudicate, which:
-
-1. Reverses the daemon's value (the human is doing the verification the daemon was supposed to do)
-2. Erodes trust in Pass 3 verdicts (operators learn to treat Push-back as "maybe Pass 3 is wrong")
-3. Creates a systematic blind spot specifically for **brand-new content** — exactly the content most likely to contain load-bearing platform updates worth catching
-
-The fix is cheap; the cost of not fixing it scales with how often the daemon emits Push-back verdicts on trigger-content connections (which is unbounded — every sweep is a candidate).
-
-### Open improvements queue
-
-Items in this section are concrete prompt/orchestrator changes that have been named but not yet implemented. Track here so they're visible when anyone next touches sweep architecture.
-
-- **[2026-05-16] Pass 3 trigger-file awareness** — implement the orchestrator change + prompt update described above. Estimated effort: ~1 hour of script work + prompt iteration; can be done as a follow-up walkthrough item when scheduled. The 2026-05-16 walkthrough Item 5 case is the canonical empirical example for the implementation PR description.
-
----
-
-## Cross-references
-
-- The Alma project's hooks-and-skills pattern is the explicit precedent (Brian, 2026-04-28). Same structural insight: conventions that are checked don't drift; conventions that depend on memory always do, eventually.
-- Global `CLAUDE.md` "Curiosity and First-Principles Framing" — invert the usual filter, ask "what open question might this tool answer?" rather than "does this fit the chassis?" Applied here: the chassis is "the sweep daemon"; the open question is "how do we make it self-healing under realistic operating conditions (concurrent pushes, transient API failures, operator typos)?"
-- The two race-condition / API-503 failures ([run `25051936845`](https://github.com/brianpabent/open-enzyme/actions/runs/25051936845), [run `25049501442`](https://github.com/brianpabent/open-enzyme/actions/runs/25049501442)) are the load-bearing evidence that motivated this architecture. Anything in this doc that doesn't trace back to a real observed failure should be regarded with skepticism.
-- The daemon protocol itself: [`.github/workflows/wiki-sweep.yml`](../.github/workflows/wiki-sweep.yml), [`scripts/sweep-1-propagate.py`](./sweep-1-propagate.py), [`scripts/synthesize.py`](./synthesize.py), [`scripts/sweep-3-review.py`](./sweep-3-review.py).

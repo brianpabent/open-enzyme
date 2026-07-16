@@ -1,49 +1,23 @@
-# Synthesis — action queue and history
+# Synthesis queue
 
-This directory holds the action queue and history of the wiki sweep daemon (`scripts/sweep-1-propagate.py`, `scripts/synthesize.py`, `scripts/sweep-3-review.py`, plus `scripts/synthesis-emit-files.py` which writes per-item files here). It is **project-management content, not science.** Research findings live in [`wiki/`](../wiki/).
+`synthesis/queue/` contains unresolved actions from explicit full-corpus synthesis, COMP push reviews, and other current detectors. It is project-management state, not scientific evidence.
 
-## Subdirectory map
+## Current-state rule
 
-| Directory | Purpose | Writer |
-|---|---|---|
-| [`queue/`](./queue/) | Pending items the daemons emitted; awaiting walkthrough | Wiki daemon (Pass 3) + comp-review daemon + `chembl-refresh-prompt.md` |
-| [`done/`](./done/) | Items walked through to closure | Walkthrough discipline (`git mv` from queue/) |
-| [`history/`](./history/) | Per-sweep narrative summaries (one file per sweep run) | Daemon (Pass 3) |
-| [`strategic-reflections/`](./strategic-reflections/) | Content-triggered platform reflections (human-curated) | Humans only |
+- One file per unresolved item.
+- Action the item in its canonical wiki, experiment, or operations file.
+- Delete the queue file when the action is resolved or deliberately rejected.
+- An empty queue is inbox zero.
+- Do not move completed items into another live directory. Git records the finding, decision, and deletion.
+- Do not store successful run narratives here. A full-synthesis run retains only its coverage/cost receipt in `logs/sweep-state.json`; raw recovery artifacts expire from CI.
 
-## File-naming convention
+COMP review findings use a stable filename, `comp-review-NNN.md`. A later exact-snapshot review replaces that file or deletes it when clean, so there is never an accumulating review archive in the live tree.
 
-Per [spec §5.1](../operations/specs/2026-05-08-synthesis-filesystem-migration.md):
+## Producers
 
-```
-queue/<sweep-date>-<artifact-id>-<type>-<index>-<slug>.md
-done/<sweep-date>-<artifact-id>-<type>-<index>-<slug>.md
-history/<sweep-date>-<short-sha>.md
-```
+- `scripts/distributed-synthesis.py` produces candidate findings only during an explicit full synthesis.
+- `scripts/synthesis-emit-files.py --no-history` emits reviewed findings into the queue.
+- `scripts/comp-review.py` maintains the stable COMP action item.
+- Quarterly or manual detectors may add another unresolved item, but must follow the same delete-on-resolution rule.
 
-For wiki-daemon items, `<artifact-id>` is the first eight hex characters of the normalized manifest's hash-derived `sweep_id`. It prevents same-day retries with the same type/index/headline from overwriting one another. Older items and queue entries from other producers retain their producer-specific legacy names; closure always preserves the queue filename via `git mv`.
-
-`<type>` ∈ `connection`, `contradiction`, `experiment`, `open-question`, `priority-action`, `riskiest-assumption`, `most-curious-thread`, `chembl-discrepancy`, `comp-review`.
-
-## Daemon-write vs human-write boundary
-
-- **Wiki daemon writes** to `queue/` (per-item findings) and `history/` (per-sweep summaries) via `scripts/synthesis-emit-files.py` after Pass 3 review.
-- **Comp-review daemon writes** one immutable log to `logs/comp-reviews/` for every reviewed comp and a `type: comp-review` queue item only when the independent artifact review finds required action.
-- **`chembl-refresh-prompt.md`** writes to `queue/` directly with `chembl-discrepancy` type files (separate quarterly workflow; not via the daemon emit script).
-- **Humans write** to `strategic-reflections/` only. Walkthrough discipline moves files from `queue/` to `done/`.
-
-## Closure flow
-
-The walk-synthesis skill (`.claude/skills/walk-synthesis/SKILL.md`) walks each item in `queue/`, appends a `## ✓ Actioned <date>` block to the file, and `git mv`s it to `done/`. Empty `queue/` directory = inbox zero.
-
-## Strategic Reflections semantics
-
-Content-triggered platform reflections live in `strategic-reflections/`. They fire on substance maturity, not on walkthrough cadence. Walk-synthesis lists them but does not action them. See [`strategic-reflections/README.md`](./strategic-reflections/README.md).
-
-## Historical pointer
-
-Pre-2026-05-08 sweep history (the era when synthesis was a single growing `wiki/synthesis.md` file) is archived at [`history/_pre-2026-05-08-archive.md`](./history/_pre-2026-05-08-archive.md).
-
-## Spec link
-
-Full migration architecture, design decisions, and review history at [`operations/specs/2026-05-08-synthesis-filesystem-migration.md`](../operations/specs/2026-05-08-synthesis-filesystem-migration.md).
+Scientific claims belong in `wiki/`; reproducible computational artifacts belong in their `comp-NNN` directories; Git is the revision history.

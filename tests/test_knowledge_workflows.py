@@ -90,6 +90,12 @@ class WorkflowTriggerTests(unittest.TestCase):
         self.assertIn("push-review.manifest", (ROOT / "scripts/comp-review.py").read_text())
         self.assertNotIn("logs/comp-reviews", text)
 
+    def test_legacy_backfill_is_blocked_not_a_fake_review(self):
+        text = (ROOT / "scripts/backfill-comp-review-state.py").read_text()
+        self.assertIn('"comp_verdict": "legacy_review_pending"', text)
+        self.assertGreaterEqual(text.count('"blocked"'), 2)
+        self.assertIn("no independent push review has occurred", text)
+
 
 class DistributedSynthesisContractTests(unittest.TestCase):
     def test_domain_pair_plan_is_exhaustive(self):

@@ -138,12 +138,12 @@ Targets across the top, modalities down the side. Columns grouped by anatomical 
 
 | Modality | Real-time UA monitoring | Chokepoint biomarker readout | Microbiome state monitoring |
 |---|:-:|:-:|:-:|
-| Lab panel (Quest / clinical) | ✅ (intermittent) | 🔬 ([self-experiment-protocol](./self-experiment-protocol.md) — pending CP-biomarker map per [synthesis archive #4](../synthesis/history/_pre-2026-05-08-archive.md)) | ⚪ |
+| Lab panel (Quest / clinical) | ✅ (intermittent) | 🔬 ([self-experiment-protocol](./self-experiment-protocol.md) — pending CP-biomarker map per) | ⚪ |
 | Wearable sensors | 🟡 (sweat UA — UCSD / Stanford research; ~5 yr from clinical) | ⚪ | ⚪ |
 | Microneedle patches | 🟡 (continuous interstitial UA — research-stage CGM-equivalent) | ⚪ | ⚪ |
 | Implantable monitors | 🟡 (overkill for gout-only; unit economics flip if multi-marker) | 🟡 (multi-analyte) | ⚪ |
 | Stool 16S / shotgun sequencing | ⚪ | ⚪ | 🔬 (Onegevity, Viome — getting cheaper) |
-| At-home immune-cell profiling | ⚪ | 🟡 (citH3 / cfDNA / aggNET ratio per [synthesis archive #7](../synthesis/history/_pre-2026-05-08-archive.md)) | ⚪ |
+| At-home immune-cell profiling | ⚪ | 🟡 (citH3 / cfDNA / aggNET ratio per) | ⚪ |
 | **Native-compound medicinal mushroom complement** | ⚪ | ⚪ | ⚪ |
 
 ---

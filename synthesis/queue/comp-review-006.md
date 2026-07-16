@@ -1,0 +1,219 @@
+---
+type: comp-review
+sweep_date: 2026-07-15
+sweep_sha: eeab5b5
+comp: comp-006
+reviewer_model: openai/gpt-5.5
+pass3_verdict: Independent comp audit
+overlap_tag: N/A
+---
+
+# Independent artifact review requires action: comp-006
+
+
+ACTION_REQUIRED: yes
+
+REVIEWED_SNAPSHOT: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
+
+# Independent comp review — comp-006
+
+## Reviewed snapshot
+Independent API reviewer; daemon snapshot `commit:eeab5b53054b93544c428a476dad06a8f8fe2621`. I inspected the supplied complete artifact bundle for `wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability`, including code, inputs, generated outputs, README, and `wiki-archive.md`. I also inspected the shared library `wiki/etc/experiments/lib/protease_stability.py` and sampled relevant affected wiki surfaces supplied or available by tool (`computational-experiments.md`, `validation-experiments.md` excerpt, H05, live comp-006/comp-012 stubs, `modality-chokepoint-matrix.md`, `complement-c5a-gout.md`, `chaperone-orthogonal-stacking.md`, comp-037/043/024 pages).
+
+Repository fixed-string search via `grep_repo` failed because the backend `rg` binary is unavailable, so affected-page discovery relied on supplied explicit pages plus targeted `read_file` calls.
+
+## Bottom-line verdict
+Action required. The computational artifact is plausibly deterministic and internally reproducible as a sequence-rule + pLDDT-proxy risk scan, but the updated interpretation still contains material fidelity problems:
+
+1. The new “realistic NPr pH factor” caveat incorrectly implies the ectodomain verdict may shift to `MODERATE/LOW`; under the artifact’s own unchanged acid-protease score, reducing NPr to 0.3–0.5 leaves acid protease at ~0.195, i.e. **MODERATE**, not LOW, unless acid protease or thresholds are also changed.
+2. The long archived wiki analysis (`wiki-archive.md`), which the live interpretive page points to as the full analysis, remains stale: it still says comp-007 is the logical follow-up, lacks the new NPr stress-test caveat, and includes older stronger “buried/exposed” language.
+3. Several cross-page statements still over-read pLDDT confidence as actual burial/protease survival rather than a low-pLDDT exposure proxy / stress-test.
+
+The numerical JSON output itself matches the implemented model, but the artifact-summary-wiki contract is not clean.
+
+## Implementation and constraint closure
+I traced the load-bearing flow:
+
+- `analyze.py` loads:
+  - `inputs/P08174.fasta`
+  - `inputs/alphafold_P08174_plddt.json`
+  - `inputs/protease_specificities.json`
+- It imports the shared algorithm from `wiki/etc/experiments/lib/protease_stability.py`.
+- The shared library:
+  - scans P1/P1′ sequence-rule matches;
+  - calculates mean pLDDT in a ±3 residue window;
+  - classifies pLDDT ≥80 as `buried`, 65–80 as `partially_exposed`, <65 as `exposed`;
+  - assigns accessibility weights 0.1 / 0.4 / 1.0;
+  - linearly interpolates salt residual activity between 10% and 20% NaCl;
+  - multiplies `accessibility_weight × salt_residual_activity × ph_activity_factor`;
+  - sorts sites by `risk_score`.
+
+The comp-specific script then adds CD55 scopes:
+
+- full sequence aa 1–381;
+- mature protein aa 35–381;
+- soluble ectodomain aa 35–353;
+- stalk aa 286–353.
+
+Implementation closure observations:
+
+- The generated `outputs/cleavage_sites.json` is consistent with the code and input values by inspection.
+- Salt interpolation is used:
+  - ALP at 17.5% NaCl: 0.45 → 0.10 linearly gives 0.1875 → 0.188.
+  - NPr: 0.65 → 0.30 gives 0.3875 → 0.388.
+  - acid protease uses 0.65 at 17.5%? The artifact reports 0.65; this matches interpolation from 0.80/0.60 at 10/20%.
+- pH factors are not derived from `active_pH_range` or `optimal_pH`; they are stored manual constants (`ph_activity_at_shio_koji`). This is acceptable only if clearly described as a hand-set scenario, not a calculated pH-response model.
+- The heuristic “unused JSON leaves” are mostly false positives or documentation-only:
+  - `P1_preferred`, `P1_prime_preferred`, salt-inhibition leaves, and protease objects are used dynamically.
+  - `optimal_pH`, `active_pH_range`, notes, pH range, duration, and temperature are not used in the scoring algorithm except as documentation/output context.
+  - `NaCl_pct_range` is not used; only midpoint `NaCl_pct = 17.5` is modeled.
+- The new NPr sensitivity discussion in `write_summary()` is text-only. No alternative scenario output fields are generated, and the code does not recompute overall verdicts under NPr pH = 0.5 or 0.3.
+- Critically, even by hand calculation, reducing NPr does **not** justify “MODERATE/LOW” for the ectodomain under the artifact’s own numbers:
+  - NPr at 0.5: `0.388 × 0.5 = 0.194`.
+  - NPr at 0.3: `0.388 × 0.3 = 0.116`.
+  - But acid protease remains `0.195`, which is above the LOW threshold (`0.15`) and below the HIGH threshold (`0.30`), so the model’s worst ectodomain risk remains **MODERATE** unless acid protease assumptions are also changed.
+  - ALP remains `0.188` if its conservative pH factor is unchanged, also MODERATE.
+- The library itself now carries a strong caveat that pLDDT is a poor solvent-accessibility proxy and affects comp-001/005/006/012/037. The comp-006 summaries partially acknowledge this, but not all wiki surfaces do.
+
+Constraint closure:
+
+- Reaction/substrate closure is only partial. The model treats proteolysis as sequence-rule cleavage risk, not finite degradation kinetics. It does not model protease concentration, enzyme turnover, substrate protein concentration, time-integrated exposure, or fragment stability.
+- Cofactor closure is partial. NPr is noted as zinc-requiring in input notes, but zinc availability is not modeled.
+- pH/salt closure is simplified to fixed scalar multipliers. The pH-response curves are not derived from primary data in code.
+- Time/residence closure is absent despite 7–14 days appearing in conditions.
+- Localization/physical access is simplified to pLDDT confidence, not SASA, molecular dynamics, glycan shielding, or measured protease accessibility.
+- Glycosylation is not modeled. This is load-bearing for the CD55 Ser/Thr stalk because native O-glycans may shield it, while heterologous *A. oryzae* glycans may differ.
+- Disulfides are not modeled. The correction from 3 to 2 disulfides per SCR is propagated in current README/summary/code text, but provenance is citation-level, not directly primary-source verified within this review.
+- Safety/off-target closure is outside the computation. The artifact should remain Phase 0 mechanistic extrapolation only.
+
+## Summary-fidelity audit
+README:
+
+- Correctly states the computed headline: full/mature/ectodomain all HIGH, max 0.388, worst protease NPr.
+- Correctly identifies the stalk aa 286–353 as the pLDDT-disordered driver within the aa 35–353 ectodomain.
+- Correctly updates the follow-up from comp-007 to comp-012.
+- Correctly softens “exposed” to “low-pLDDT exposed-by-proxy” in the key results.
+- Corrects SCR disulfide count to 2/domain, 8 total.
+- **Mismatch/action:** the “realistic NPr activity” caveat says the ectodomain shifts toward `MODERATE/LOW`. Under the artifact’s unchanged acid-protease and ALP scores it shifts to **MODERATE**, not LOW.
+
+`outputs/summary.md`:
+
+- Numerically matches `cleavage_sites.json` for the primary scenario.
+- Includes the disulfide correction and comp-012 follow-up correction.
+- **Mismatch/action:** same `MODERATE/LOW` issue.
+- **Minor mismatch/action:** script/library paths in the generated summary still say `experiments/...` rather than the actual `wiki/etc/experiments/...` path used by the README reproduction command and tracked inventory.
+
+`outputs/cleavage_sites.json`:
+
+- Internally consistent with implemented model.
+- Does not include the new NPr sensitivity scenarios, so the caveat in the summary is not backed by a generated scenario table.
+- Uses `pH_range: [4.5, 5.2]`; several interpretive surfaces still say pH 4.5–5.0. This is not necessarily invalid, but the artifact and wiki should avoid mixing ranges without explanation.
+
+`wiki-archive.md`:
+
+- **Change required.** This is the full archived analysis linked by the live interpretive page, but it remains stale:
+  - says “A comp-007 analysis … is the logical next step”;
+  - later says “Before any wet-lab CD55 expression work: run comp-007”;
+  - does not incorporate the new NPr pH-factor stress-test caveat;
+  - still has stronger “buried/exposed” language without the newer “pLDDT proxy, not SASA” discipline in some places;
+  - contains a confusing line: “ectodomain exposed-site count drops to zero for NPr (0 → 0)” where the relevant full-ectodomain NPr exposed count is 9 before truncation.
+- Because the live comp-006 page points readers to this archive as the full analysis, it cannot be treated as harmless frozen history unless explicitly marked as superseded/stale with corrected notes.
+
+`wiki/computational-experiments.md`:
+
+- The comp-006 entry is mostly reconciled with the latest caveats: it says pLDDT-based proxy, not SASA; comp-012 follow-up; NPr pH factor dependence.
+- **Change required:** it repeats “MODERATE/LOW”; should be changed to “MODERATE under the current acid-protease/ALP assumptions” or “no longer HIGH; exact class requires a rerun including all pH factors.”
+
+`wiki/daf-cd55-protease-stability-computational.md`:
+
+- Live page is a short stub and points to `wiki-archive.md`.
+- Since the archive is stale, the stub indirectly exposes stale content. Either the archive must be corrected or the stub must warn that the archive is historical and point to corrected README/output summary.
+
+`wiki/daf-cd55-scr14-truncated-computational.md`:
+
+- Already contains an explicit pLDDT-proxy caveat for comp-012. This is good and should be mirrored for comp-006.
+
+`wiki/complement-c5a-gout.md`:
+
+- The CP0 status update still says comp-012 “verified in silico” SCR1-4 with “all internal recognition sites buried.”
+- **Change required:** this should be softened to pLDDT-proxy/SASA-unverified language, consistent with the shared library caveat and comp-012 stub.
+
+`wiki/modality-chokepoint-matrix.md`:
+
+- Already includes much of the corrected framing: comp-006 HIGH is stalk-contingent; SCR1–4 have zero low-pLDDT exposed-by-proxy sites; pLDDT proxy not SASA; comp-012 follow-up; NPr pH factor = 1.0.
+- No major comp-006-specific action beyond checking the same `MODERATE/LOW` wording if present in future edits.
+
+`wiki/validation-experiments.md` and H05:
+
+- §1.25 and H05 correctly frame the wet-lab unknowns: expression/folding, disulfide correctness, CCP-regulatory function, mucosal access geometry.
+- **Softening recommended/action where language says computational feasibility/protease stability is “verified” without the pLDDT-proxy qualifier.** These pages should not imply a SASA or degradation-survival model.
+
+## Generated-output and proposed-update inventory
+| Path | Manifest kind | Inspected completely? | Finding |
+|---|---|---:|---|
+| `wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/README.md` | proposed update / summary surface | Yes | Disulfide and comp-012 corrections are good. New NPr caveat overstates possible shift as `MODERATE/LOW`; artifact supports MODERATE under unchanged acid-protease/ALP assumptions. |
+| `wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/analyze.py` | proposed update / executable | Yes | Deterministic stdlib script. Disulfide text corrected. Text-only NPr sensitivity added without generated scenario fields; summary text should compute overall verdict correctly. |
+| `wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/inputs/P08174.fasta` | input | Yes | 381 aa canonical FASTA included; provenance claims UniProt P08174 SV=4. Primary source not independently fetched. |
+| `wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/inputs/alphafold_P08174_plddt.json` | input | Yes | 381 per-residue scores present; supports low pLDDT in signal/stalk/GPI regions and high pLDDT in SCR1–4. Primary AlphaFold JSON not independently fetched. |
+| `wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/inputs/protease_specificities.json` | input | Yes | P1/P1′ rules, salt inhibition, and pH factors present. `active_pH_range`/`optimal_pH` are documentation only; only fixed `ph_activity_at_shio_koji` is used. |
+| `wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/inputs/provenance.md` | input provenance | Yes | Provides source strings and URLs. I did not independently verify UniProt/AlphaFold/MEROPS/primary papers. |
+| `wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/outputs/cleavage_sites.json` | generated output | Yes | Matches implemented model. Does not include pH-sensitivity scenario outputs; primary scenario is conservative fixed NPr pH factor 1.0. |
+| `wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/outputs/summary.md` | generated output / proposed summary update | Yes | Numerically matches primary JSON. Contains unsupported `MODERATE/LOW` wording; script/library paths stale relative to actual repo path. |
+| `wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/wiki-archive.md` | archived wiki output / full analysis surface | Yes | Stale and action-bearing: still names comp-007, lacks new pH caveat, and has older pLDDT/burial wording. Live comp-006 page points to this archive. |
+
+## Load-bearing verification table
+| Claim or parameter | Artifact location | Implementation use | Provenance status | Verdict |
+|---|---|---|---|---|
+| CD55 sequence length 381 aa | `P08174.fasta`, `provenance.md`, JSON output | Sequence scanned for P1/P1′ sites | UniProt REST URL cited; not independently fetched | Plausible by artifact |
+| Signal peptide aa 1–34 | `analyze.py` constants; `provenance.md` | Defines full vs mature scope | UniProt cited; not independently verified | Plausible; load-bearing for scope |
+| Soluble ectodomain aa 35–353 | `analyze.py`; README; outputs | Defines engineering-relevant scope | UniProt cited; not independently verified | Plausible; load-bearing |
+| Stalk aa 286–353 | `analyze.py`; README; outputs | Defines stalk site counts | Based on pLDDT drop and provenance text | Plausible but boundary is interpretive |
+| SCR1–4 aa 35–285 | `analyze.py`; README; H05 | Used for region annotation and truncation rationale | UniProt domain boundaries cited; not independently fetched | Plausible |
+| pLDDT values: SCR high, stalk low | `alphafold_P08174_plddt.json`; outputs | Drives accessibility class and all verdicts | AlphaFold URL cited; not independently fetched | Internally verified from input |
+| pLDDT ≥80 = buried, 65–80 partial, <65 exposed | shared `protease_stability.py` | Central scoring proxy | Methodological assumption, not primary biology | Valid as proxy only; not SASA/survival |
+| Accessibility weights 0.1/0.4/1.0 | shared library | Central risk multiplier | Heuristic; no primary source in artifact | Methodological assumption |
+| ALP P1 rules and pH factor 1.0 | `protease_specificities.json` | Site matching and risk | MEROPS/literature strings only | Usable as conservative scenario, not verified |
+| NPr P1′ hydrophobic rules and pH factor 1.0 | `protease_specificities.json` | Worst-protease score 0.388 | MEROPS/literature strings only; pH note says realistic 0.3–0.5 | Conservative scenario; sensitivity text must handle other proteases |
+| Acid protease pH factor 0.30 | `protease_specificities.json` | Gives ectodomain max 0.195 | Koaze 1964 cited; not independently verified | Load-bearing; keeps realistic-NPr scenario MODERATE |
+| Salt residual at 17.5% NaCl | shared library + input salt table | Multiplies risk | Secondary source strings only | Implementation correct for linear interpolation |
+| Full/mature/ectodomain HIGH max 0.388 | `cleavage_sites.json`, `summary.md`, README | Headline output | Computed from model | Internally supported for conservative fixed pH factors |
+| “Realistic NPr pH 0.3–0.5 shifts ectodomain toward MODERATE/LOW” | README and generated summary | Interpretive caveat only | Hand calculation, not generated scenario | **Incorrect/unsupported; current model supports MODERATE, not LOW** |
+| 2 disulfides per SCR, 8 total | README, summary, `wiki-archive.md`, H05 | Interpretive folding burden | UniProt cited; not independently fetched | Correction direction likely right; primary verification not performed here |
+| “All ectodomain exposed sites are in stalk” | README, summary, JSON counts | Based on pLDDT classifications and region filter | Internally supported for low-pLDDT proxy | Must say proxy, not SASA |
+| “SCR domains are protease-stable/largely resistant” | README/wiki pages | Interpretive conclusion | Inferred from high pLDDT and disulfides | Direction plausible, but overstrong if stated as survival without SASA/wet lab |
+| comp-012 is the follow-up, not comp-007 | README, summary, computational index | Cross-reference/provenance | Corpus pages show comp-012 exists | Correct, but stale in `wiki-archive.md` |
+
+## Affected wiki pages
+- `wiki/computational-experiments.md` — change required — comp-006 entry mostly reconciled, but `MODERATE/LOW` should be corrected to “no longer HIGH; MODERATE under current acid-protease/ALP assumptions unless a full pH-factor rerun changes all proteases.”
+- `wiki/daf-cd55-protease-stability-computational.md` — change required indirectly — live stub points to stale `wiki-archive.md`; either update archive or clearly mark it historical/stale with corrected current summary.
+- `wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/wiki-archive.md` — change required — still says comp-007, lacks the new NPr caveat, and overstates pLDDT-derived burial in places.
+- `wiki/complement-c5a-gout.md` — change required — CP0 status update says SCR1–4 sites are “buried” and comp-012 “verified” stability; should be softened to pLDDT-proxy / no-SASA / no-survival-model language.
+- `wiki/hypotheses/H05-daf-scr14-cp0-thesis.md` — change required or at least caveat required — claims computational feasibility/protease stability is in-silico validated; should explicitly inherit the pLDDT-proxy/no-SASA limitation for comp-006/012.
+- `wiki/daf-cd55-scr14-truncated-computational.md` — already consistent on the pLDDT-proxy caveat — no comp-006 action beyond ensuring incoming links do not overstate it.
+- `wiki/modality-chokepoint-matrix.md` — already mostly consistent — uses low-pLDDT exposed-by-proxy and notes NPr pH factor dependence; check that any future edit avoids `MODERATE/LOW`.
+- `wiki/validation-experiments.md` §1.25 — mostly consistent — wet-lab gate appropriately covers expression/folding/function; should avoid using comp-012 as actual protease-survival proof rather than a computational prior.
+- `wiki/chaperone-orthogonal-stacking.md` — already incorporates DAF 8-disulfide correction and treats DAF folding as a framework assumption; no direct comp-006 correction found in inspected excerpt.
+- `wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md` — already caveats pLDDT proxy and treats DAF/EcN folding as provisional; no comp-006-specific correction found.
+- `wiki/c1-inh-protease-stability-ecn-computational.md` — already has an explicit pLDDT-proxy class caveat for comp-037 and references comp-006/012 as sister analyses; no direct comp-006 correction besides maintaining consistent language.
+- `wiki/complestatin-bgc-lbp-feasibility-computational.md` — no direct comp-006 summary mismatch found; references H05/DAF only at strategic level.
+
+## New connections or implications
+- The new NPr pH-factor caveat surfaces a useful conclusion, but it should be reframed: **the conservative HIGH label is NPr-driven; the realistic-pH scenario does not make the full ectodomain LOW under the current model because acid protease/ALP still sit around 0.19.** The correct cross-corpus implication is “full ectodomain is not robustly HIGH; it is at least MODERATE by this proxy unless all protease pH factors are rerun.”
+- The shared library’s pLDDT caveat means comp-006 and comp-012 should be treated as members of the same “low-pLDDT exposure proxy” evidence class as comp-001/005/037. The corpus is partially updated for comp-012, but comp-006’s archive and CP0 pages still lag.
+- The stalk engineering lesson remains grounded: regardless of exact HIGH vs MODERATE classification, the stalk dominates low-pLDDT accessible-by-proxy sites. This supports comp-012 as the right follow-up but does not prove fermentation survival or complement-regulatory function.
+- If the artifact’s corrected interpretation is propagated, §1.25 remains the decisive gate: expression, disulfide folding, CCP activity, and mucosal-access geometry are not resolved by comp-006.
+
+## Required actions
+1. Correct the NPr sensitivity interpretation in `README.md`, `outputs/summary.md`, and any generated-summary template in `analyze.py`: under NPr pH factor 0.3–0.5, the ectodomain no longer reaches HIGH from NPr, but the artifact’s acid-protease score (~0.195) and ALP score (~0.188 if unchanged) keep the overall model in **MODERATE**, not LOW. Verification criterion: regenerated summary and README no longer say `MODERATE/LOW` unless a new full scenario table changes all protease pH factors.
+2. Update or explicitly supersede `wiki-archive.md`. Verification criterion: no remaining “comp-007 follow-up” language; comp-012 is named; pLDDT proxy/no-SASA caveat and corrected NPr caveat are present; stale exposed-site/truncation wording is fixed.
+3. Add executable or tabulated sensitivity output if realistic pH factors are treated as load-bearing. Verification criterion: `cleavage_sites.json` or a companion output includes at least the primary conservative scenario plus NPr pH 0.5 and 0.3 scenarios, with overall worst protease and verdict recalculated across all proteases.
+4. Propagate pLDDT-proxy caveats to affected CP0/H05 surfaces that still say “buried,” “verified protease stability,” or “in silico validated” without qualification. Verification criterion: `complement-c5a-gout.md` CP0 status and H05 explicitly say pLDDT-confidence proxy, no SASA, no degradation/survival model.
+5. Fix stale repo paths in the generated summary if the current repo convention is `wiki/etc/experiments/...`. Verification criterion: `outputs/summary.md` script/library paths match the actual reproduction path or explicitly explain the alias.
+6. Document primary-source verification status for the disulfide correction if it remains load-bearing. Verification criterion: either include directly verified UniProt feature lines in provenance/archive or state that UniProt was cited but not bundled.
+
+## Review limits
+- I did not execute `python3 analyze.py`; reproducibility was assessed by static inspection only.
+- I did not independently fetch UniProt, AlphaFold, MEROPS, or primary literature; provenance was assessed from bundled citations/URLs and internal consistency.
+- Repository grep failed because the tool backend lacks `rg`; affected-page search was therefore incomplete and based on supplied pages plus targeted `read_file` inspection.
+- The supplied `validation-experiments.md` page was truncated by the bundle, but the relevant §1.25/H05 excerpt was present.
+- Tool result budget was exhausted while reading additional omitted pages, so some corpus surfaces may remain undiscovered.

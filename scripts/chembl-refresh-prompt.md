@@ -113,7 +113,7 @@ flagged explicitly.]
 walkthrough.]
 ```
 
-Files in `synthesis/queue/` are picked up by the next walk-synthesis discipline (`.claude/skills/walk-synthesis/SKILL.md`) — either actioned (closure note appended + `git mv` to `synthesis/done/`) or addressed via wiki-page edits.
+Files in `synthesis/queue/` are picked up by the next walk-synthesis discipline (`skills/walk-synthesis/SKILL.md`). The approved action lands in its canonical page, then the resolved queue file is deleted in the same commit.
 
 **Skip Pass 4 entirely** if no meaningful discrepancies surfaced — e.g., only refresh dates changed, or deltas are below the >2× threshold. Record "no new findings" in the Pass 5 log instead. Low-signal queue entries pollute the walkthrough.
 

@@ -202,7 +202,7 @@ The 2026-05-19 traditional-name re-scan ([`logs/lit-scan-query-framing-retrospec
 **Pre-commit gate interaction:** query-framing failures and the pre-commit grep-verify gate (§"Pre-commit verification gate" above) target different error modes. The pre-commit gate catches *fabricated or wrong numbers inside a single paper's claims*. Query-framing catches *whole subfields of evidence the search never surfaced*. A well-verified claim from a query-framing-incomplete scan can still mislead — the absence in the scan output isn't an absence in the literature. Apply both disciplines independently.
 
 **Cross-references:**
-- [`scripts/sweep-prompt-2-synthesize.md`](../../scripts/sweep-prompt-2-synthesize.md) §"Query-framing discipline" — the Pass 2 prompt-level codification of this discipline
+- [`scripts/SWEEP-ARCHITECTURE.md`](../../scripts/SWEEP-ARCHITECTURE.md) — the current full-synthesis and source-rehydration architecture
 - [`logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md`](../../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md) — canonical retrospective with the empirical recovery rate
 - [`CLAUDE.md`](../../CLAUDE.md) §"Global-multilingual research by default" — the upstream discipline this operationalizes
 

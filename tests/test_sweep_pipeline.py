@@ -29,10 +29,25 @@ def load_hyphenated_module(name: str, path: Path):
 state = load_hyphenated_module("sweep_state_test", SCRIPTS / "sweep-state.py")
 
 
+def synthesis_fixture() -> str:
+    sections = [
+        ("New Connections", 4),
+        ("Contradictions", 2),
+        ("Proposed Experiments", 3),
+        ("Most Curious Thread", 1),
+    ]
+    body = ["---", f"commit: {'a' * 40}", f"diff_base: {'b' * 40}", "trigger_files: wiki/example.md", "---"]
+    for heading, count in sections:
+        body.append(f"## {heading}")
+        for index in range(1, count + 1):
+            body.extend([f"{index}. **{heading} fixture {index}.** Evidence-bearing body.", "{{PEER-REVIEW}}"])
+    return "\n".join(body) + "\n"
+
+
 class SynthesisNormalizationIncidentTests(unittest.TestCase):
     def test_failed_run_recovers_every_marked_item(self):
-        path = Path("logs/v4-synthesis-2026-07-15-eeab5b5.md")
-        manifest = normalize.normalize_text(path.read_text(), path)
+        path = Path("tests/fixtures/synthesis-ten-items.md")
+        manifest = normalize.normalize_text(synthesis_fixture(), path)
 
         self.assertEqual("items", manifest["status"])
         self.assertEqual(10, len(manifest["items"]))
@@ -47,13 +62,22 @@ class SynthesisNormalizationIncidentTests(unittest.TestCase):
         )
 
     def test_false_no_op_is_one_substantive_item(self):
-        path = Path("logs/v4-synthesis-2026-07-15-08f10ad.md")
-        manifest = normalize.normalize_text(path.read_text(), path)
+        path = Path("tests/fixtures/synthesis-one-item.md")
+        text = f"""---
+commit: {'a' * 40}
+diff_base: {'b' * 40}
+trigger_files: wiki/example.md
+---
+## Most Curious Thread
+**Most Curious Thread 1: A real finding.** Evidence-bearing body.
+{{{{PEER-REVIEW}}}}
+"""
+        manifest = normalize.normalize_text(text, path)
 
         self.assertEqual("items", manifest["status"])
         self.assertEqual(1, len(manifest["items"]))
         self.assertEqual("most-curious-thread", manifest["items"][0]["type_slug"])
-        self.assertEqual("bold", manifest["normalization"]["recognized_headings"][0]["style"])
+        self.assertEqual("atx", manifest["normalization"]["recognized_headings"][0]["style"])
 
     def test_explicit_no_op_is_the_only_zero_item_success(self):
         text = """---
@@ -187,7 +211,8 @@ class EmitterRegressionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             manifest_path = root / "normalized.json"
-            raw = Path("logs/v4-synthesis-2026-07-15-eeab5b5.md")
+            raw = root / "synthesis-ten-items.md"
+            raw.write_text(synthesis_fixture())
             normalize.normalize_file(raw, manifest_path)
             reviews = root / "reviews.txt"
             reviews.write_text("\n<<<NEXT>>>\n".join(
@@ -208,19 +233,25 @@ class EmitterRegressionTests(unittest.TestCase):
                 "--synthesizer", "x-ai/grok-4.20",
                 "--reviewer", "deepseek/deepseek-v4-pro",
                 "--queue-dir", str(queue),
-                "--history-dir", str(history),
                 "--sweep-date", "2026-07-15",
             ]
             subprocess.run(command, cwd=REPO_ROOT, check=True, capture_output=True, text=True)
             self.assertEqual(10, len(list(queue.glob("*.md"))))
-            history_text = (history / "2026-07-15-eeab5b5.md").read_text()
-            self.assertIn("items_emitted: 10", history_text)
-            self.assertIn("canonical_items_sha256:", history_text)
+            self.assertFalse(history.exists())
 
             # The recovery rerun emitted the same Most Curious headline on the
             # same date. Before artifact IDs entered filenames, this 11th item
             # silently overwrote the first artifact's 10th queue file.
-            second_raw = Path("logs/v4-synthesis-2026-07-15-08f10ad.md")
+            second_raw = root / "synthesis-one-item.md"
+            second_raw.write_text(f"""---
+commit: {'c' * 40}
+diff_base: {'b' * 40}
+trigger_files: wiki/example.md
+---
+## Most Curious Thread
+**Most Curious Thread 1: A real finding.** Second evidence-bearing body.
+{{{{PEER-REVIEW}}}}
+""")
             second_manifest_path = root / "normalized-second.json"
             first_manifest = json.loads(manifest_path.read_text())
             second_manifest, _ = normalize.normalize_file(
@@ -239,7 +270,6 @@ class EmitterRegressionTests(unittest.TestCase):
                 "--commit-sha", "08f10ad7adc83d9b373815ed42fa0663dafe1779",
                 "--trigger-files", "wiki/example.md",
                 "--queue-dir", str(queue),
-                "--history-dir", str(history),
                 "--sweep-date", "2026-07-15",
             ]
             subprocess.run(
@@ -265,7 +295,6 @@ trigger_files: wiki/example.md
             _manifest, manifest_path = normalize.normalize_file(raw, root / "normalized.json")
             reviews = root / "reviews.txt"
             reviews.write_text("EXPLICIT_NO_OP\n")
-            history = root / "history"
             command = [
                 sys.executable,
                 "scripts/synthesis-emit-files.py",
@@ -274,67 +303,11 @@ trigger_files: wiki/example.md
                 "--reviews-file", str(reviews),
                 "--commit-sha", "a" * 40,
                 "--trigger-files", "wiki/example.md",
-                "--history-dir", str(history),
                 "--queue-dir", str(root / "queue"),
                 "--sweep-date", "2026-07-15",
             ]
             subprocess.run(command, cwd=REPO_ROOT, check=True, capture_output=True, text=True)
-            history_text = (history / "2026-07-15-aaaaaaa.md").read_text()
-            self.assertIn("items_emitted: 0", history_text)
-            self.assertIn("explicit normalized no-new-synthesis", history_text)
-
-
-class ForcedFinalTests(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.review = load_hyphenated_module("sweep_3_review_test", SCRIPTS / "sweep-3-review.py")
-
-    def test_forced_final_request_physically_omits_tools(self):
-        bodies = []
-
-        def fake_call(_api_key, body):
-            bodies.append(body)
-            return {
-                "choices": [{
-                    "message": {"content": "> **Pass 3 review — Confirmed.** Done."},
-                    "finish_reason": "stop",
-                }],
-                "usage": {},
-            }
-
-        with mock.patch.object(self.review, "call_openrouter_raw", side_effect=fake_call):
-            content, *_ = self.review.run_agentic_review(
-                "key", "deepseek/deepseek-v4-pro", "prompt", max_iterations=0, max_tokens=100
-            )
-
-        self.assertIn("Confirmed", content)
-        self.assertEqual(1, len(bodies))
-        self.assertNotIn("tools", bodies[0])
-        self.assertNotIn("tool_choice", bodies[0])
-
-    def test_large_file_reads_are_range_bounded_and_exact_slice_deduped(self):
-        self.review._READ_CACHE.clear()
-        first = self.review.tool_read_file({
-            "path": "wiki/validation-experiments.md",
-            "start_line": 1259,
-            "end_line": 1265,
-        })
-        self.assertIn("[lines 1259-1265", first)
-        self.assertIn("Houttuynia", first)
-
-        repeated = self.review.tool_read_file({
-            "path": "wiki/validation-experiments.md",
-            "start_line": 1259,
-            "end_line": 1265,
-        })
-        self.assertIn("ALREADY READ", repeated)
-
-        another_range = self.review.tool_read_file({
-            "path": "wiki/validation-experiments.md",
-            "start_line": 1356,
-            "end_line": 1362,
-        })
-        self.assertIn("[lines 1356-1362", another_range)
+            self.assertFalse((root / "history").exists())
 
 
 class SweepStateBindingTests(unittest.TestCase):

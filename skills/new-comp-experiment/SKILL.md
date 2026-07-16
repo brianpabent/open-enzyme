@@ -1,307 +1,85 @@
 ---
 name: new-comp-experiment
-description: Create or revise a reproducible computational experiment (comp-NNN) in the Open Enzyme framework. Use when a wet-lab question can be informed by structure prediction, sequence analysis, or simulation before committing wet-lab resources, or when updating the COMP lifecycle itself. Covers folder setup, analysis scaffolding, mandatory fresh-subagent adversarial review before execution, mandatory fresh-subagent review after execution of outputs and every proposed summary/wiki update, tracking pages, and commit discipline. Invoke when Brian asks "could we model this computationally?", "is there a computational prior we can run first?", or asks to change the COMP process.
+description: Create or materially revise a reproducible Open Enzyme computational experiment with exact-snapshot pre-run, post-run, and push review gates.
 ---
 
-# /new-comp-experiment
+# New COMP experiment
 
-Create a new comp-NNN computational experiment following the Open Enzyme framework established in comp-001.
+A COMP is executable analysis, not a literature scan. Use `lit-scan` when the question is “what does the field say?”
 
-## Background
+## Artifact contract
 
-Computational analyses inform wet-lab priors before committing lab resources. They live at `wiki/etc/experiments/comp-NNN-<slug>/` at the repo root, with a companion interpretive page at `wiki/<slug>-computational.md` and an entry in `wiki/computational-experiments.md`. The experiment folder is the peer-reviewable artifact — any collaborator can clone and run `python3 analyze.py` to reproduce the outputs.
+Create `wiki/etc/experiments/comp-NNN-<slug>/`:
 
-**Key design decisions (established in comp-001, 2026-05-05):**
-- Scripts + inputs + outputs all committed together (outputs are version-controlled artifacts, not gitignored)
-- Computational tracking index (`wiki/computational-experiments.md`) is separate from wet-lab tracking (`wiki/validation-experiments.md`)
-- Each experiment gets both a tracking index entry AND a dedicated interpretive wiki page
-- The interpretive page explains what results mean; the tracking index is the registry
-- Computational analyses reframe wet-lab experiments from "feasibility gates" to "confirmation experiments" — they shift priors, don't replace wet-lab validation
-- Two fresh-subagent adversarial review gates are mandatory: one after the experiment is written but before it runs, and one after the run covering all outputs, summaries, and proposed wiki updates
+```text
+analyze.py
+inputs/                 fixed inputs and provenance.md
+outputs/                deterministic machine and human outputs
+reviews/
+  pre-run.manifest.json
+  pre-run.md
+  post-run.manifest.json
+  post-run.md
+README.md
+```
 
-## When to use
+Also maintain the interpretive `wiki/<slug>-computational.md`, `wiki/computational-experiments.md`, and every affected hypothesis, validation, safety, or priority surface.
 
-| Situation | Use? |
-|---|---|
-| Brian asks "could we model this computationally?" | Yes |
-| A wet-lab experiment has an open structural/sequence question | Yes |
-| A new protein target needs initial protease/stability assessment | Yes |
-| Question requires live cells, fermentation dynamics, or in vivo readouts | No — needs wet-lab |
-| Question is purely literary synthesis (writing a wiki page) | No |
-| Question is "what does the literature say" — evidence tier, mechanism support, SAR, clinical landscape, or resolving a corpus-only-pushback | No — **that's a lit scan** (see below) |
+## Method rules
 
-## COMP vs lit-scan — is this even a comp?
+- State the biological question, decision, model, assumptions, parameters, decision rules, sensitivity plan, planned outputs, and kill criteria before execution.
+- Use the database that answers the question. Inhibition, transport/substrate status, pathway membership, sequence, and structure are different data problems. Follow `wiki/etc/chembl-cross-check.md` and `wiki/etc/ai-bio-tools-playbook.md`; document any new source in both provenance and the relevant tooling page.
+- Fix inputs; record URL/accession/version/date and transformations.
+- Prefer deterministic, reproducible code. Commit code, inputs, and outputs together.
+- Treat computational results as priors, not substitutes for wet-lab validation.
+- Grep-verify every load-bearing number against its primary source before writing it into a result-bearing page.
+- For natural-product discovery, use mechanism, species/original-language, traditional-formula, and traditional-pathology query frames. That work is normally a lit scan unless an executable model follows.
 
-Before scaffolding a comp folder, confirm the work is actually a **computational experiment** and not a **literature scan**. They are different artifact types with different guards:
+## Gate 1: pre-run
 
-| | comp-NNN (this skill) | lit-scan (`lit-scan` skill) |
-|---|---|---|
-| **Work** | run code → deterministic output | search → curate → synthesize literature |
-| **Output** | committed code / inputs / outputs | a cited findings artifact (`logs/<scope>-lit-scan-<date>.md`) |
-| **Risk** | model / code correctness | search-completeness, over-claim, translation nuance |
-| **Guard** | this skill's full lifecycle adversarial-code-review gate | multilingual framing + two-model translation + primary-source grep-verify |
+Write code, inputs, provenance, decision rules, sensitivity plan, planned outputs, and reproduction instructions. Do not execute result-bearing logic.
 
-A comp needs an **executable model**: structure prediction, sequence analysis, docking, ΔΔG, kinetics, MD, a scoring pipeline — code whose outputs are reproducible from fixed inputs. If the question is "what does the field say / does this claim hold / what's the evidence tier / what is the structure-activity relationship," there is no model to run — it is a lit scan, and forcing it into COMP clothing produces a hollow "reproducible script" that can't reproduce a literature sweep (the **comp-018 failure**: its own audit found the script "only validates/rewrites a scope summary — it does NOT reproduce the literature sweep"). Route literature work to the `lit-scan` skill. comp-013/014/018/020 are legacy lit-mining-as-comp mis-filings — not the template.
-
-## Workflow
-
-### Step 1 — Get the next comp-NNN number
+From the COMP directory:
 
 ```bash
-grep -o 'comp-[0-9]*' wiki/computational-experiments.md | sort | tail -1
-# Increment by 1
+python3 ../../../../scripts/comp-review-manifest.py create --phase pre --comp-dir . --output reviews/pre-run.manifest.json
 ```
 
-### Step 2 — Create the experiment folder
+Give a fresh context-isolated reviewer the raw artifact, question, and decision—never predicted results or a preferred verdict—and require `scripts/comp-pre-run-review-prompt.md`.
 
-```
-wiki/etc/experiments/comp-NNN-<slug>/
-  analyze.py           # analysis script (stdlib only — no pip install)
-  inputs/
-    <protein>.fasta    # sequence input
-    <data>.json        # structural/parameter data
-    provenance.md      # sources, fetch dates, versions for every input
-  outputs/             # generated by analyze.py — commit these
-    results.json       # machine-readable (or equivalent)
-    summary.md         # human-readable; the artifact cited in the wiki
-  reviews/
-    pre-run.md         # adversarial design/implementation gate + resolutions
-    post-run.md        # output/summary/wiki-update gate + resolutions
-  README.md            # how to reproduce, file index, wiki links
-```
+Save reviewer identity, exact manifest SHA-256, verdict, findings, and resolutions in `reviews/pre-run.md`. Only `PRE_RUN_GATE: GO` with no required action passes. Any design change requires a new manifest and fresh review.
 
-Key constraints on `analyze.py`:
-- Python stdlib only (json, pathlib, os) — no packages to install
-- `python3 analyze.py` from the experiment folder reproduces outputs deterministically
-- Every input has documented provenance (source URL, fetch date, version)
-
-### Step 3 — Write the analysis
-
-The analysis should composite multiple protective/risk factors rather than a single variable. For protease stability analyses: structural accessibility + protease specificity + condition corrections (salt, pH, temperature).
-
-**Data-source selection — do this BEFORE writing analysis code (added 2026-07-14).** Every comp draws on external data (bioactivity, substrate/transporter status, structure, pathway, kinetics, sequence, clinical). Picking the wrong database for the question is a recurring, silent error — comp-047 used ChEMBL as its "known ABCG2 ligand" disqualifier and missed rosuvastatin, a canonical ABCG2 *substrate*, because ChEMBL logs inhibition, not transport. Do not reach for the familiar tool; route each question to the right source:
-
-1. **Name each external question the analysis asks** (e.g. "is this molecule a known ABCG2 ligand?", "what is this protein's fold?", "what pathway is this enzyme in?").
-2. **Route each to the right source using the canonical tooling docs — consult them, don't guess:**
-   - [`wiki/etc/chembl-cross-check.md` §"ChEMBL scope & blind spots — which tool for which question"](../../wiki/etc/chembl-cross-check.md) — the inhibitor-vs-substrate-vs-pathway routing table + the union rule (**ChEMBL inhibitors ∪ DrugBank/UniProt substrates**; neither alone is complete). **Inhibition question → ChEMBL. Substrate/transporter question → DrugBank via UniProt cross-refs / UCSF-FDA TransPortal / PharmGKB, NOT ChEMBL. Pathway question → Reactome (`tools/reactome/`), NOT ChEMBL.**
-   - [`wiki/etc/ai-bio-tools-playbook.md`](../../wiki/etc/ai-bio-tools-playbook.md) and [`wiki/etc/bio-ai-tools.md`](../../wiki/etc/bio-ai-tools.md) — the structure/design/variant-scoring tool landscape (AlphaFold, ESM, RFdiffusion, docking, etc.).
-   - Repo-local integrations first: `tools/reactome/`, the ChEMBL/PubMed/ClinicalTrials/OpenTargets MCPs, `wiki/etc/experiments/lib/` shared library.
-   - **For the recurring "known interactors of target Y" disqualifier (inhibitor ∪ substrate) — do NOT re-do it by hand.** Call [`wiki/etc/experiments/lib/target_interactors.py`](../../wiki/etc/experiments/lib/target_interactors.py): given a UniProt accession + a compound list it returns the union (DrugBank/UniProt substrate axis via curl, in-sandbox; ChEMBL inhibitor axis via REST — run with `dangerouslyDisableSandbox` or merge from the ChEMBL MCP). It encodes the union rule so the substrate half is never silently dropped (the comp-047 failure). Example: `python wiki/etc/experiments/lib/target_interactors.py --uniprot Q9UNQ0 --library work/ligands/smiles_resolved.json --chembl-target CHEMBL5393 --out outputs/known_interactors.json`.
-3. **If the tooling docs + available repo/MCP tools do NOT cover the source you need — search the web for the right tool, then document it.** This is the loop-closing step: do not silently substitute a tool you have for one you don't. Use **WebSearch / WebFetch** to find the appropriate database, API, or method for the question. If you find one:
-   - **Use it** for the comp (record the access method — URL, endpoint, query — in the experiment's `inputs/provenance.md` or `README.md` so the run is reproducible).
-   - **Document it back into the tooling docs** in the same batch: add it to `chembl-cross-check.md`'s routing table (for a bioactivity/substrate/pathway source) or `ai-bio-tools-playbook.md` (for a structure/design/analysis tool), with a one-line "what question it answers + how to access it." A new tool discovered during a comp MUST land in a tooling doc, not only in the comp's own page — otherwise the next experiment re-discovers the same gap (this is exactly the failure that let comp-047's substrate blind spot recur; the fix is to close the design→docs loop every time).
-   - If the web search finds nothing adequate, state that explicitly in the comp's limitations and flag the gap.
-
-**Query-framing discipline for natural-product / TCM / Kampo-adjacent scans (added 2026-05-19).** If the experiment seeds compound lists from PubMed / ChEMBL / Reaxys / SciFinder against natural-product / botanical / fungal subfields, the seed query MUST include *multiple* framings, not just Western mechanism-name. Mechanism-name-only seeding has now empirically missed entire classes of evidence in comp-013 (TCM gout), comp-014 (medicinal mushrooms × NLRP3), and comp-018 (complement modulators) — see [`logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md`](../../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md) for the canonical retrospective.
-
-**Minimum seed-query matrix for natural-product scans:**
-
-| Frame | Example query terms |
-|---|---|
-| Western mechanism-name | `<target>` + `<compound-class>` (e.g., "ABCG2 flavonoid") |
-| Species-name + original-language name | scientific binomial + Chinese / Japanese / Korean characters (e.g., `Phellinus igniarius` AND `桑黄`) |
-| Traditional formula composition | classical formula name + cardinal-herb composition (e.g., `Si Miao San`, `Bai Hu Jia Gui Zhi Tang`) |
-| Traditional pathology term | original-language pathology framing (e.g., `痛风`, `痹证`, `湿热痹`) |
-
-**Operational artifact:** save the actual queries used to `inputs/query-strategy.json` (or `inputs/queries.json`) inside the experiment folder. Format:
-
-```json
-{
-  "scope": "<one-line description of the compound-class + target scope>",
-  "framings": [
-    {"type": "mechanism", "queries": ["..."], "rationale": "..."},
-    {"type": "species", "queries": ["..."], "rationale": "..."},
-    {"type": "traditional_formula", "queries": ["..."], "rationale": "..."},
-    {"type": "traditional_pathology", "queries": ["..."], "rationale": "..."}
-  ],
-  "deferred_framings": [{"type": "...", "rationale": "why this framing was not run this pass"}]
-}
-```
-
-This artifact lets a future re-scan (Phase 5b-style continuation) detect query-framing gaps mechanically rather than rediscovering them through a closure-annotation audit. **If your scope is purely Western pharma / biologic / synthetic-chemistry**, document that explicitly in `query-strategy.json` with `"natural_product_scope": false` so the discipline doesn't apply spuriously.
-
-**Risk score pattern for protease/stability analyses:**
-```python
-risk_score = accessibility_score * effective_condition_factor
-# where effective_condition_factor = salt_residual * ph_factor * temperature_factor (etc.)
-```
-
-**pLDDT thresholds (for AlphaFold-based analyses):**
-- pLDDT ≥ 80 → well-folded / likely buried
-- pLDDT 65–80 → partially exposed
-- pLDDT < 65 → disordered / exposed
-
-Do **not** run `analyze.py`, import it, or generate result-bearing outputs yet. Syntax-only checks are allowed if they cannot execute experiment logic. For a material revision of an existing comp, preserve the prior outputs as historical artifacts but do not regenerate them with the revised code before the gate. The first result-bearing execution of the new or revised analysis happens only after the pre-run gate passes.
-
-### Step 4 — Mandatory adversarial pre-run review
-
-When the analysis code, inputs, provenance, decision rules, planned outputs, and reproduction instructions are written, launch a **fresh subagent with no conversation history**. Give it the raw artifact paths, the biological question, and the decision the comp is meant to inform. Do not give it predicted results, a preferred verdict, narrative examples, or the author's rationale for contentious choices.
-
-Tell the reviewer to read and follow [`scripts/comp-pre-run-review-prompt.md`](../../scripts/comp-pre-run-review-prompt.md). The reviewer must inspect the actual code and inputs, not a method summary. It must return `PRE_RUN_GATE: GO`, `REVISE`, or `BLOCK`.
-
-Before launching the reviewer, bind the review to an exact snapshot:
+Immediately before execution:
 
 ```bash
-python3 ../../../../scripts/comp-review-manifest.py create \
-  --phase pre \
-  --comp-dir . \
-  --output reviews/pre-run.manifest.json
+python3 ../../../../scripts/comp-review-manifest.py check --manifest reviews/pre-run.manifest.json --review reviews/pre-run.md --required-line 'PRE_RUN_GATE: GO'
 ```
 
-Run this from the COMP directory. Give the manifest and its printed SHA-256 to the reviewer. The pre-run manifest hashes every design file and separately records any prior-output baseline without treating old results as evidence for the revised design.
+Then run the documented command twice and verify deterministic outputs.
 
-Save the review, reviewer/subagent identifier, reviewed manifest SHA-256, and an action-by-action resolution in `reviews/pre-run.md`. `GO` means **no required action of any kind**; any `REVISE` or `BLOCK` result requires changes, a new manifest, and a new fresh-subagent review. Execution is forbidden until the last gate is `GO` and every mandatory action is closed. A review note that merely says a weakness will be documented is not closure when the weakness can invalidate the computation.
+## Gate 2: post-run
 
-**The "provisional" qualifier:** Use "LOW risk (provisional)" when the verdict rests on three or more compounding optimistic assumptions. Name the assumptions so a reader knows what "provisional" means. Removing "provisional" requires running the more rigorous analysis (e.g., SASA instead of pLDDT, biological assembly instead of monomer).
-
-### Step 5 — Run the reviewed experiment
-
-After the pre-run gate passes, verify that the reviewed snapshot is still exact:
+Draft every generated output and every proposed interpretation/propagation surface. Create the post manifest, repeating `--proposed-file` for every changed external surface:
 
 ```bash
-python3 ../../../../scripts/comp-review-manifest.py check \
-  --manifest reviews/pre-run.manifest.json \
-  --review reviews/pre-run.md \
-  --required-line 'PRE_RUN_GATE: GO'
+python3 ../../../../scripts/comp-review-manifest.py create --phase post --comp-dir . --output reviews/post-run.manifest.json --proposed-file <path>
 ```
 
-Any mismatch blocks execution and requires a new manifest plus a new pre-run review. Only after the check passes, run the documented reproduction command from the experiment folder. Verify that it exits successfully, produces every declared output, and is deterministic on an immediate clean rerun. Record the exact command, runtime environment, and any nondeterministic seed or external-service version in the README or provenance file.
+Use a different fresh context-isolated reviewer and `scripts/comp-review-prompt.md`. It must inspect all code, inputs, outputs, summaries, and proposed updates. Only `ACTION_REQUIRED: no` passes.
 
-### Step 6 — Draft every interpretation surface
+If a finding changes code, inputs, parameters, decision rules, model, or sensitivity plan, return to Gate 1 before rerunning. Narrative-only changes still require a new post manifest and review. Verify the exact post snapshot before commit.
 
-Draft all result-bearing surfaces before the post-run review:
+## Gate 3: push review
 
-- every generated file under `outputs/`, including machine-readable results and human-readable summaries;
-- the README verdict and limitations;
-- the dedicated interpretive wiki page;
-- the `wiki/computational-experiments.md` entry;
-- the relevant `wiki/validation-experiments.md` computational prior;
-- every hypothesis card, priority table, safety page, index entry, queue closure, or other wiki change proposed from the result.
+The push coordinator independently reviews the exact changed COMP plus every referencing wiki/hypothesis page. It writes only current files under `reviews/push-review.*` and a stable `synthesis/queue/comp-review-NNN.md` when action is required.
 
-Keep these changes uncommitted and treat them as proposals. Do not mark the comp `Complete`, promote a hypothesis, reframe a wet-lab gate, or publish a verdict before the post-run gate passes. Create `reviews/post-run.manifest.json` with `../../../../scripts/comp-review-manifest.py create --phase post --comp-dir . --output reviews/post-run.manifest.json`, passing **every** proposed propagation path as a repeated `--proposed-file` (paths may be absolute or relative to the current COMP directory). Build that path list from the complete COMP-scoped diff, then give the manifest and printed SHA-256 to the reviewer.
+The push review is a backstop, not a substitute for Gates 1 or 2. Its structured result independently controls:
 
-Use the templates in Steps 8–10 while drafting these surfaces. After the post-run gate passes, those reviewed drafts become final. A later design/code/input/parameter/decision-rule/sensitivity change returns to Step 4 before execution; a later output, summary, provenance, or proposed-update change requires a new post-run manifest and a fresh Step 7 review.
+- `PROPAGATION_ELIGIBILITY`
+- `SYNTHESIS_ELIGIBILITY`
 
-### Step 7 — Mandatory adversarial post-run review
+Any later COMP artifact change invalidates that exact-snapshot receipt until a new push review succeeds.
 
-Launch a **different fresh subagent with no conversation history**. Give it the experiment directory plus the complete list or diff of every proposed wiki update. Tell it to read and follow [`scripts/comp-review-prompt.md`](../../scripts/comp-review-prompt.md). The reviewer must inspect the actual code, inputs, all generated outputs, summaries, and proposed wiki edits; reconstruct the system independently; trace load-bearing inputs into implementation and outputs; check provenance and evidence levels; and search for affected corpus surfaces the author missed.
+## Completion
 
-Save the review, different reviewer/subagent identifier, reviewed manifest SHA-256, and an action-by-action resolution in `reviews/post-run.md`. The review must enumerate every `generated_output` and `proposed_update` manifest entry. Missing, unreadable, or truncated coverage is an automatic `ACTION_REQUIRED: yes`.
-
-- `ACTION_REQUIRED: no` is the passing post-run gate.
-- `ACTION_REQUIRED: yes` blocks completion and commit until every required action is closed and a new fresh subagent returns `ACTION_REQUIRED: no`.
-- If the review requires any model, code, input, parameter, decision-rule, or sensitivity change, return to Step 4: adversarially review the revised design **before** executing it, then rerun and repeat the post-run review.
-- If only narrative/provenance surfaces change, update every derived summary and proposed wiki surface, then repeat the post-run review without rerunning only when the numerical artifact is provably unchanged.
-
-The push-triggered independent comp-review daemon is a third backstop. It does not satisfy either authoring-time gate.
-
-### Step 8 — Finalize the reviewed wiki/computational-experiments.md entry
-
-Add a row to the "Analyses" table:
-
-```markdown
-### comp-NNN — [Title]
-
-| Field | Value |
-|---|---|
-| **Question** | [one-sentence question] |
-| **Method** | [key methodological steps] |
-| **Verdict** | **[RISK LEVEL]** — [one-sentence finding] |
-| **Key finding** | [what drives the verdict] |
-| **Informs** | [link to validation-experiments.md section] |
-| **Experiment folder** | [link to wiki/etc/experiments/comp-NNN-<slug>/] |
-| **Interpretive wiki page** | [link to wiki/<slug>-computational.md] |
-| **Date** | YYYY-MM-DD |
-| **Status** | Complete |
-```
-
-### Step 9 — Finalize the reviewed interpretive wiki page
-
-Create `wiki/<slug>-computational.md` with YAML frontmatter:
-
-```yaml
----
-title: "[Protein/Question] — Computational Analysis (comp-NNN)"
-date: YYYY-MM-DD
-tags: [relevant, tags]
-related:
-  - computational-experiments.md
-  - validation-experiments.md
-  - [other related pages]
-sources:
-  - "[Source 1 — citation]"
----
-```
-
-Sections to include:
-1. **Question** — one sentence
-2. **Verdict** — bold, with provisional qualifier if applicable; one-sentence rationale
-3. **Why this matters** — what platform-level question does this answer?
-4. **Method summary** — what was evaluated and why (not a code dump; qualitative)
-5. **Key results** — tables; per-condition breakdown; key numbers
-6. **Two independent protective mechanisms** (or equivalent structure if not a protease analysis) — separate the factors clearly
-7. **Limitations** — explicit and complete; incorporate everything from both adversarial reviews
-8. **Impact on experimental priorities** — explicitly state: feasibility gate → confirmation experiment, or vice versa
-9. **Cross-references** — wet-lab experiment, tracking index, platform context pages
-
-### Step 10 — Finalize the reviewed validation-experiments.md update
-
-In the relevant wet-lab experiment section, add a "Computational prior" subsection:
-
-```markdown
-**Computational prior (comp-NNN, YYYY-MM-DD):** [verdict sentence]. [Key numbers sentence].
-[Reframing sentence: "This reframes §X.Y from a feasibility gate to a confirmation experiment."
-or "This does not change the priority framing — §X.Y remains a feasibility gate."]
-Links: [wiki/slug-computational.md], [wiki/etc/experiments/comp-NNN-slug/]
-```
-
-### Step 11 — Commit
-
-Only commit after both adversarial gates pass. Stage the exact reviewed set: `wiki/etc/experiments/comp-NNN-<slug>/` (including `reviews/`) + `wiki/computational-experiments.md` + `wiki/<slug>-computational.md` + `wiki/validation-experiments.md` + every other reviewed propagation surface + `synthesis/queue/` (if annotating an action item). Then, immediately before commit, run `python3 ../../../../scripts/comp-review-manifest.py check --manifest reviews/post-run.manifest.json --review reviews/post-run.md --required-line 'ACTION_REQUIRED: no'` from the COMP directory. Do not edit after this check. Any mismatch requires a new manifest and a fresh post-run review (or a return to Step 4 for design-bearing changes).
-
-Commit message format:
-```
-wiki: comp-NNN <slug> — [one-line finding]
-
-- reproducible experiment at wiki/etc/experiments/comp-NNN-<slug>/
-- [method in 1-2 lines]
-- [verdict + key numbers]
-- adversarial pre-run and post-run reviews passed; records in reviews/
-- new wiki/computational-experiments.md entry + wiki/<slug>-computational.md
-- [any validation-experiments.md updates]
-
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
-```
-
-Do NOT use `[skip-wiki-sweep]` — these commits should trigger the sweep daemon to propagate findings.
-
----
-
-## Design decisions log
-
-These decisions were made during comp-001 (2026-05-05). Do not revisit without reason.
-
-1. **`wiki/etc/experiments/` as the canonical home** (originally `experiments/` at repo root; relocated 2026-05-16 to render as a subfolder of the wiki tree on GitHub while remaining sweep-excluded) — keeps peer-reviewable artifacts separate from narrative. Contributors can find and run scripts via the wiki rendering, and the sweep daemon's Pass 2 corpus excludes the heavy artifact folder by default.
-
-2. **Outputs committed, not gitignored** — outputs are the peer-reviewable artifact. Changed outputs = discovered disagreement → raise as GitHub issue against `comp-NNN` folder.
-
-3. **Separate `computational-experiments.md` from `validation-experiments.md`** — computational analyses inform priors; wet-lab experiments test them. The tracking index distinction keeps these epistemically separate. Don't conflate.
-
-4. **Each experiment gets both tracking entry AND interpretive page** — tracking index = registry (quick-lookup); interpretive page = narrative (why it matters, limitations, impact). Both are needed; neither replaces the other.
-
-5. **Two adversarial subagent gates, not one retrospective review** — the pre-run reviewer attacks the question/model fit, implementation, parameters, decision rules, and missing constraints before results can anchor the author. A different post-run reviewer attacks the code-input-output contract plus every summary and proposed wiki propagation. Both reviewers receive raw artifacts with no conversation history or preferred conclusion.
-
-6. **"LOW (provisional)" vs. "LOW"** — If three or more optimistic assumptions compound toward safety, label the verdict provisional and name the assumptions. comp-001's three: (a) pLDDT = buried proxy (not SASA), (b) point-estimate salt inhibition values, (c) monomer structure not tetramer. Removing "provisional" requires the more rigorous analysis.
-
-7. **Temperature factor should be included in future protease analyses** — All A. oryzae proteases have optima 37–50°C. Fermentation at 22°C suppresses activity ~2–5× vs. in vitro reference conditions. comp-001 omitted this (conservative omission — real-world risk is lower); future analyses should include it explicitly.
-
-8. **The push-triggered comp-review daemon is a backstop, not an authoring gate** — it audits committed artifacts that changed on `main`. It cannot replace the pre-run review because the experiment has already executed, and it cannot replace the local post-run review because proposed wiki interpretations may already have been committed.
-
----
-
-## Naming convention
-
-- **Folder:** `wiki/etc/experiments/comp-NNN-<slug>/` — NNN is zero-padded 3 digits; slug is hyphenated lowercase describing the protein and question (e.g., `comp-001-uricase-shio-koji-protease-stability`)
-- **Wiki page:** `wiki/<slug-without-comp-NNN-prefix>-computational.md` (e.g., `wiki/uricase-protease-stability-computational.md`)
-- **In prose:** "comp-001", "comp-002" — never "computational experiment #1"
-- **Sequence IDs:** Use UniProt accession in filenames (e.g., `Q00511.fasta`)
+A COMP is complete only when reproduction succeeds, both authoring gates pass on exact manifests, all interpretation surfaces match the outputs, evidence/limitations are explicit, and the push review does not block derived claims. Current receipts replace prior receipts; Git is the review history.

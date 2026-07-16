@@ -1,0 +1,133 @@
+---
+type: comp-review
+sweep_date: 2026-07-15
+sweep_sha: eeab5b5
+comp: comp-031
+reviewer_model: openai/gpt-5.5
+pass3_verdict: Independent comp audit
+overlap_tag: N/A
+---
+
+# Independent artifact review requires action: comp-031
+
+
+ACTION_REQUIRED: yes
+
+REVIEWED_SNAPSHOT: commit:eeab5b53054b93544c428a476dad06a8f8fe2621
+
+# Independent comp review — comp-031
+
+## Reviewed snapshot
+Reviewer: independent API reviewer. Snapshot reviewed as daemon-mode commit `eeab5b53054b93544c428a476dad06a8f8fe2621`. The bundle included the complete tracked file inventory for the comp directory and the trigger diff. I inspected all six comp files supplied in full, including both generated outputs (`outputs/results.json`, `outputs/summary.md`) and both changed files (`README.md`, `outputs/summary.md`). I also inspected the explicitly supplied wiki pages and used repository reads for omitted affected pages (`chassis-pending-interventions.md`, `purine-degrading-bacteria.md`, `gut-lumen-sink.md`, `abcg2-modulators.md`, relevant `validation-experiments.md` sections, H08). Fixed-string repository grep was unavailable because the tool backend lacked `rg`; affected-surface review therefore used the supplied explicit pages plus targeted reads of omitted pages.
+
+## Bottom-line verdict
+Action required. The invalidation direction is correct, and the main corpus pages are mostly reconciled, but the artifact contract is not clean:
+
+1. `outputs/summary.md` is now manually bannered but `analyze.py` would regenerate it without the invalidation banner, so the committed generated output is no longer reproducible by the stated command.
+2. The frozen `README.md` and `outputs/summary.md` still contain strong YELLOW / ΔSUA / engineering-handoff claims below the invalidation banner; this can be acceptable only if explicitly treated as frozen invalidated provenance, but it must not be described as a reproducible current summary.
+3. `wiki/chassis-pending-interventions.md` still says comp-031’s “separate-strain-vs-dual-cassette engineering conclusion still stands” and “route PDB and uricase to SEPARATE strains.” That is stronger than the invalidated interpretive page and computational index, which retire the two-strain recommendation and leave separate strains as an experimental option.
+4. The original quantitative verdict is invalid by inspection: the code composes hard-coded priors rather than modeling the stated biochemical/physiological system.
+
+## Implementation and constraint closure
+The computation does not resolve the stated question. It answers a substituted question: “What happens if hard-coded comp-019 uricase ΔSUA priors and an attenuated CBT2.0 mouse effect are algebraically combined with arbitrary substrate-competition and butyrate-rescue terms?” It does not mechanistically compute luminal urate degradation, finite residence time, Michaelis–Menten operation under measured substrate, oxygen access, localization, or serum-pool dynamics.
+
+Key implementation findings:
+
+- **Uricase arm is hard-coded comp-019 inheritance.** `uricase_arm_dSUA()` uses `wt_dSUA_anchor = -0.83` and scales by baseline SUA, genotype relative function, and a soft dose term. The stored uricase `Km`, `kcat`, specific activity, effective activity, luminal urate, daily flux, and finite exposure window do not determine the result.
+- **PDB arm is an attenuated mouse-effect prior, not a flux model.** `pdb_arm_dSUA()` uses CBT2.0 fractional mouse reduction `0.63`, a sampled mouse-to-human attenuation, a hard-coded renal compensation factor, a density factor, and a genotype supply factor. It does not use DOPDH `kcat`, `Km`, measured luminal urate concentration, residence time, product fate, or actual EcN carbon products.
+- **Many load-bearing JSON inputs are stored but unused or only documentation-tier.** The heuristic list is materially correct for the main physics: `luminal_urate_concentration_uM`, `uricase_kinetic_priors.Km_uricase_uM`, uricase activities, DOPDH kinetic priors, daily mass balance, butyrate background, and Basseville threshold fields are not traced into the calculations as JSON-derived values. Some are reintroduced as hard-coded constants (`0.8 mM`, `1.0 mM`, `n=2`, `233 mg/day`, `0.33`, `0.30`) rather than used from `model_parameters.json`.
+- **`colonic_urate_uM` is sampled but unused.** Monte Carlo samples 50–500 µM colonic urate, and the summary calls it a sensitivity driver, but the value is not used by `predict_dual_chassis_dSUA()`. Therefore the claim that colonic urate is a “minor effect because both arms saturate downstream” is not derived from the computation.
+- **Substrate competition is not physically closed.** `substrate_competition_factor()` is described as Michaelis–Menten-style but does not use substrate, `Km`, enzyme amount, compartment volume, replenishment, or residence time. It returns `1/sqrt(total_capacity)` for capacity ratio >1, then that value is used as an arbitrary residual-capture fraction applied to the minor arm. This is not a mass-balanced substrate-partition model.
+- **Butyrate rescue is not matched across comparators.** The model adds a hard-coded `background_crypt_butyrate_mM = 0.8` to the combination arm and computes Q141K rescue from total crypt butyrate. Most modeled rescue can come from background rather than PDB-derived butyrate, but the comparator arms are not given the same background rescue.
+- **Butyrate product attribution is unsupported for CBT2.0 EcN.** The code transfers a *C. sporogenes* / full anaerobic pathway butyrate-yield concept to engineered EcN without isotope-resolved carbon-fate data.
+- **Basseville attribution is overextended.** The code treats butyrate at EC50 1 mM as a Q141K rescue input; the reconciled wiki correctly notes Basseville 2012 did not establish PDB-derived butyrate rescue in this system.
+- **Compartment closure fails.** Oxidative UOX and anaerobic PDB are treated as co-located well-mixed consumers. Later corpus pages correctly note likely longitudinal/radial niche separation and require staged residual-transfer measurement.
+- **Safety and coproduct closure are absent.** No H₂O₂, oxygen, epithelial exposure, D-lactate, acetate/succinate/ethanol, redox burden, viability, or barrier-injury outputs are modeled.
+- **Sensitivity ranges miss dominant uncertainties.** The MC varies density, mouse-to-human attenuation, butyrate yield, crypt attenuation, and unused colonic urate. It does not vary the invalid comp-019 regime, actual UOX substrate occupancy, active window, oxygen, localization, survival, CBT2.0 carbon fate, or comparator-matched background butyrate.
+
+The current invalidation banner correctly identifies the core failure: comp-031 is a toy composition of hard-coded prior effect sizes plus the inherited comp-019 failed UOX regime. The quantitative verdict is invalid.
+
+## Summary-fidelity audit
+Artifact-level fidelity:
+
+- `outputs/results.json` matches the original code logic and reports the hard-coded/MC outputs. The numbers are internally consistent with the script, but they are not biologically valid evidence.
+- `outputs/summary.md` matches `results.json` numerically for the original run, but now has a manually added invalidation banner that `analyze.py` will not regenerate. This breaks the generated-output reproducibility contract unless the artifact is explicitly documented as frozen and not reproducible byte-for-byte.
+- `README.md` now has the same invalidation banner but still states “Verdict: YELLOW,” combined predicted ΔSUA `−1.8 to −1.9 mg/dL`, and a strong “ROUTE PDB AND URICASE TO SEPARATE STRAINS” recommendation below the banner. The banner mitigates but does not fully eliminate ambiguity.
+
+Wiki/corpus fidelity:
+
+- `wiki/computational-experiments.md` is materially reconciled: it marks comp-031 invalidated, retires ΔSUA, competition, butyrate, Q141K-rescue, and two-strain engineering recommendations, and points to comp-044/046 and validation §1.37.
+- `wiki/dual-chassis-ecn-pdb-uricase-computational.md` is materially reconciled: it explicitly invalidates ΔSUA, substrate competition, CBT2.0-derived butyrate, Q141K rescue, and additivity, and says separate strains remain an experimental option, not a computationally validated recommendation.
+- `wiki/validation-experiments.md` is reconciled in the relevant sections:
+  - §1.33 reopens physiological UOX topology/oxygen/peroxide.
+  - §1.34 separates dietary precursor and sequential UOX→PDB flux.
+  - §1.37 directly gates CBT2.0 carbon fate and butyrate claims.
+- `wiki/purine-degrading-bacteria.md` is mostly reconciled: it explicitly says CBT2.0 carbon fate is unresolved, PDB→butyrate→Q141K rescue is mechanistic extrapolation, and comp-031 is invalidated.
+- `wiki/gut-lumen-sink.md` and `wiki/abcg2-modulators.md` are reconciled on comp-019/044 and Basseville/butyrate attribution.
+- `wiki/chassis-pending-interventions.md` has a remaining mismatch in M1: it says comp-031’s “separate-strain-vs-dual-cassette engineering conclusion still stands” and instructs routing PDB and uricase to separate strains based on comp-031 substrate-competition reasoning. This conflicts with the computational index and interpretive page retiring two-strain recommendations and leaving separate strains as an experimental option.
+
+## Generated-output and proposed-update inventory
+| Path | Manifest kind | Inspected completely? | Finding |
+|---|---|---:|---|
+| `wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md` | Tracked artifact / proposed update in trigger diff | Yes | Invalidation banner added, but stale YELLOW verdict, ΔSUA range, and strong separate-strain handoff remain below it as frozen provenance. Needs clearer reproducibility/frozen-status handling. |
+| `wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/analyze.py` | Tracked executable | Yes | Implements hard-coded effect-size composition; does not use key kinetic/substrate inputs; would regenerate `outputs/summary.md` without invalidation banner. |
+| `wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/model_parameters.json` | Tracked input | Yes | Contains many load-bearing parameters not actually used in the quantitative model; provenance tiers are mostly corpus-tier or extrapolation. |
+| `wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/provenance.md` | Tracked input provenance | Yes | Honest about several corpus-tier/extrapolated values, but stronger than warranted in places; “all parameters literature-anchored” does not mean implementation-used or primary-verified. |
+| `wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/results.json` | Generated output | Yes | Internally consistent with original code; quantitative results invalid as biological prior. |
+| `wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md` | Generated output / proposed update in trigger diff | Yes | Invalidation banner added manually; stale generated YELLOW/ΔSUA/recommendation text remains; not reproducible by current `analyze.py`. |
+| `wiki/computational-experiments.md` | Proposed/committed corpus surface in bundle | Yes for comp-031 and relevant adjacent entries supplied | Correctly invalidates comp-031 and retires quantitative/two-strain recommendations. |
+| `wiki/validation-experiments.md` | Proposed/committed corpus surface in bundle plus targeted read | Partial page, relevant §§1.33–1.37 inspected | Relevant gates are consistent with invalidation. |
+| `wiki/dual-chassis-ecn-pdb-uricase-computational.md` | Proposed/committed interpretive page in bundle | Yes | Correctly invalidates and reframes separate strains as experimental option, not validated recommendation. |
+| `wiki/chassis-pending-interventions.md` | Affected omitted page inspected by tool | Yes for relevant PDB and M1 sections | Change required: M1 retains stronger comp-031-based separate-strain conclusion than current invalidation supports. |
+| `wiki/purine-degrading-bacteria.md` | Affected omitted page inspected by tool | Yes for relevant sections | Already materially consistent; preserves PDB potential while gating carbon fate and additivity. |
+| `wiki/gut-lumen-sink.md` | Affected omitted page inspected by tool | Yes for relevant sections | Already materially consistent; comp-019 quantitative reset and butyrate caveat present. |
+| `wiki/abcg2-modulators.md` | Affected omitted page inspected by tool | Yes for relevant sections | Already materially consistent; distinguishes PPARγ induction from unproven butyrate/Q141K rescue. |
+| `wiki/disulfiram.md` | Explicit page in bundle | Yes for relevant comp-031 mention | Already consistent: frames PDB combination as research-stage and rejects comp-031 additive inference. |
+| `wiki/gut-lumen-uricase-physiologic-regime-computational.md` | Explicit page in bundle | Yes | Consistent replacement prior for UOX regime. |
+| `wiki/staged-purine-sink-mass-balance-computational.md` | Explicit page in bundle | Yes | Consistent replacement prior for conditional staging and separate ledgers. |
+
+## Load-bearing verification table
+| Claim or parameter | Artifact location | Implementation use | Provenance status | Verdict |
+|---|---|---|---|---|
+| Combined dual-chassis ΔSUA `−1.8 to −1.9 mg/dL` | `README.md`, `outputs/summary.md`, `results.json` | Produced by hard-coded composition of UOX prior + PDB prior + arbitrary residual/rescue terms | Not primary-validated; depends on invalid comp-019 and extrapolated CBT2.0 translation | Retired / invalid |
+| Uricase alone WT ΔSUA `−0.83 mg/dL` | `analyze.py::uricase_arm_dSUA`, provenance comp-019 | Direct hard-coded anchor | Inherited from comp-019; superseded by comp-044 | Invalid as quantitative prior |
+| comp-019 substrate-limited / flat-dose regime | `README.md`, `analyze.py`, `inputs/provenance.md` | Determines UOX effect and competition premise | Later comp-044 invalidated because substrate, Km, and finite window were omitted | Invalid |
+| Luminal urate 50–500 µM / 0.59 µM floor | `model_parameters.json`; MC scenario `colonic_urate_uM` | Sampled but unused | Miyazaki floor corpus/direct per provenance; fed range brief/sensitivity | Implementation failure |
+| Uricase `Km`, specific activity, effective activity, `kcat` | `model_parameters.json` | Not used in UOX ΔSUA or competition | Corpus-tier/inherited from comp-019; not reverified here | Stored but unused; cannot support result |
+| DOPDH `kcat`, estimated `Km` | `model_parameters.json` | Not used in PDB ΔSUA or capacity except narrative | `kcat` corpus-tier; `Km` explicit extrapolation | Stored but unused; cannot support result |
+| CBT2.0 mouse UA `463 → 172 µM`, fractional reduction `0.63` | `model_parameters.json`, provenance, `pdb_arm_dSUA()` | Direct empirical magnitude anchor | Corpus-tier; provenance says not full-text grep-verified against original PDF | Used, but translation unsupported for human ΔSUA |
+| Mouse-to-human attenuation `0.3–0.7`, central `0.5` | MC scenario | Directly drives PDB magnitude | Mechanistic/extrapolated, not primary-validated | Dominant unverified prior |
+| Genotype relative functions WT/het/hom `1.0/0.75/0.5` | `GENOTYPE_SCENARIOS`, `model_parameters.json` | Scales UOX and PDB supply | Inherited/corpus-tier | Used, but genotype response ranking not validated |
+| PDB butyrate yield `0.3–0.7 mol/mol` | MC scenario; `butyrate_concentration_at_crypt()` | Drives crypt butyrate | Extrapolated from full-pathway organisms, not CBT2.0 EcN | Unsupported for CBT2.0; gated by validation §1.37 |
+| Background crypt butyrate `0.8 mM` | Hard-coded in `predict_dual_chassis_dSUA()` | Added to combination-arm rescue calculation | Input has background ranges, but code hard-codes central | Unmatched comparator; invalid rescue contribution |
+| Basseville EC50 `1 mM`, Hill `2` | Hard-coded in rescue call | Drives Q141K rescue fraction | Basseville is corpus-tier for HDAC rescue precedent, but not direct butyrate/PDB rescue | Overattributed; validation §1.14 required |
+| Competition factor `1/sqrt(total capacity)` | `substrate_competition_factor()` | Used as residual capture fraction for minor arm | Modeling choice, not literature-derived | Arbitrary; not physical MM closure |
+| Capacity ratios UOX `50x`, PDB `30x` central | `analyze.py`, `outputs/summary.md` | Drives competition factor | Inherited/assumed; comp-044 invalidates UOX capacity framing | Invalid as regime evidence |
+| Separate-strain-vs-dual-cassette recommendation | `README.md`, `outputs/summary.md`, residual in `chassis-pending-interventions.md` | Narrative conclusion | Substrate competition reasoning partly preserved in banner, but quantitative/engineering recommendation retired elsewhere | Needs corpus reconciliation; should be experimental option only |
+
+## Affected wiki pages
+- `wiki/computational-experiments.md` — already consistent — marks comp-031 invalidated, retires ΔSUA, competition, butyrate, Q141K-rescue, and two-strain engineering recommendations; points to comp-044/046 and validation §1.37.
+- `wiki/dual-chassis-ecn-pdb-uricase-computational.md` — already consistent — invalidates quantitative and additivity claims and says separate strains remain an experimental option, not a computationally validated recommendation.
+- `wiki/validation-experiments.md` — already consistent — §§1.33, 1.34, and 1.37 provide the correct empirical gates for UOX physiology, staged flux, and CBT2.0 carbon fate.
+- `wiki/purine-degrading-bacteria.md` — already consistent — no longer treats CBT2.0-derived butyrate/Q141K rescue as established; gates carbon fate and staging.
+- `wiki/gut-lumen-sink.md` — already consistent — resets comp-019 quantitative claims and requires physiological validation.
+- `wiki/abcg2-modulators.md` — already consistent — distinguishes wild-type ABCG2 PPARγ induction from unproven direct butyrate/Q141K rescue.
+- `wiki/disulfiram.md` — already consistent — frames PDB + disulfiram as research-stage and explicitly rejects comp-031 combination inference.
+- `wiki/chassis-pending-interventions.md` — change required — M1 still says the comp-031 separate-strain-vs-dual-cassette engineering conclusion “still stands” and instructs routing PDB and uricase to separate strains based on substrate-competition reasoning. This should be softened to match the interpretive page: separate strains are an experimental option; no comp-031-based engineering recommendation survives.
+- `wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md` — change required or explicit frozen-record convention required — banner invalidates, but stale YELLOW and engineering recommendation remain below.
+- `wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md` — change required or explicit frozen-record convention required — manual banner breaks generated-output reproducibility; stale generated claims remain below.
+
+## New connections or implications
+- The artifact failure is not just “bad additivity math”; it exposes a general rule for future gut-sink models: **do not use nominal enzyme capacity or prior ΔSUA as a surrogate for realized physiological flux.** Substrate concentration relative to `Km`, finite active window, oxygen, access, localization, and replenishment must be first-class model variables.
+- PDB and UOX complementarity should now be treated as a **spatial residual-flux question**, not a same-pool additivity question. comp-046 and validation §1.34 are the correct successors because they can allow staging to help or hurt.
+- CBT2.0’s therapeutic promise should be decomposed into separate gates: urate disappearance, full carbon fate, epithelial signaling exposure, and safety coproducts. A mouse SUA reduction anchor alone is not enough to infer human ΔSUA or butyrate-mediated host effects.
+- Background butyrate is a comparator-design issue. Any future PDB→butyrate host-signaling model must include matched background butyrate in all arms or explicitly model incremental exposure over baseline.
+
+## Required actions
+1. Reconcile `wiki/chassis-pending-interventions.md` M1: replace “separate-strain-vs-dual-cassette engineering conclusion still stands” / “route PDB and uricase to SEPARATE strains” with language matching the interpretive page: separate strains remain an experimental option; comp-031 does not validate a two-strain recommendation; topology/staging are gated by comp-044/045/046 and validation §§1.33/1.34/1.37. Verification criterion: no remaining M1 sentence presents comp-031 substrate-competition reasoning as an active engineering recommendation.
+2. Fix the generated-output reproducibility contract for `outputs/summary.md`. Either update `analyze.py` to emit the invalidation banner and clearly mark the rest as historical/frozen, or move invalidation text out of generated outputs and document that the output is historical and not to be regenerated. Verification criterion: running the stated command either reproduces the committed `summary.md` or the README explicitly says the committed invalidated summary is a manually frozen provenance file not reproducible byte-for-byte.
+3. Clarify the comp artifact README/summary status. The current banner is good but should be paired with a short note before the stale YELLOW text that all following original findings are historical invalidated output, not current interpretation. Verification criterion: a reader cannot reasonably cite the old ΔSUA or engineering handoff without passing an invalidation warning.
+4. If comp-031 is ever reused, rerun from a new model rather than patching the old one. Required model gates: explicit substrate/Km/residence-time UOX calculation, isotope-resolved CBT2.0 carbon fate, matched background butyrate comparators, compartment/staging terms, oxygen/H₂O₂/safety coproducts, and no serum ΔSUA mapping without a validated compartmental flux model.
+
+## Review limits
+I did not execute code; daemon-mode review is by inspection only. I did not verify primary papers directly; provenance status is based on artifact/corpus claims and supplied pages. Fixed-string grep across the repository failed because the backend `rg` executable was missing, so affected-page discovery relied on the supplied explicit pages plus targeted repository reads of key omitted mechanism pages. The full `validation-experiments.md` page was too large to inspect completely, but the relevant §§1.33–1.37 and surrounding gates were inspected. Prior `reviews/` logs were not read; the current corpus pages already contain review-incorporated invalidation outcomes, and this review independently reconstructed the implementation failures from code and outputs.

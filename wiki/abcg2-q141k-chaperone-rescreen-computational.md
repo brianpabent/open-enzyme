@@ -23,7 +23,7 @@ sources:
   - "AlphaFold AF-Q9UNQ0-F1-model_v6 (EMBL-EBI): WT ABCG2 monomer; comp-032's receptor, reused"
   - "AutoDock Vina 1.2.5 (Eberhardt et al. 2021, J Chem Inf Model) — docking engine"
   - "ChEMBL target CHEMBL5393 (ABCG2/BCRP), 1307 human bioactivity records — Axis 2 empirical grounding (partial; see limitations)"
-  - "comp-032 independent audit 2026-07-13 (logs/comp-reviews/2026-07-13-comp-032-fae0e36.md) — the review this experiment answers"
+  - "comp-032 independent push review, 2026-07-13 — the review this experiment answers"
 ---
 
 # ABCG2 Q141K Pharmacological-Chaperone Re-screen — real docking (comp-047)
@@ -34,7 +34,7 @@ sources:
 
 > **The screen does not identify a credible pharmacological-chaperone candidate, and — more importantly — it cannot, as designed, discriminate one.** Of 134 docked molecules: **0 high-confidence candidates, 2 marginal "uncertain"** (rosuvastatin, vorinostat — reduced to **1** after the Axis 2 expansion disqualified rosuvastatin as a known ABCG2 substrate; see Residual gaps), 132 "no." The decisive result is in the controls: **the four CFTR-corrector positive controls failed to earn rank** (0 of 4 reached candidate tier), while all known ABCG2 inhibitors were correctly rejected (0 false positives). Because the positive controls — the closest thing to ground-truth pharmacological chaperones in the set — do not separate from the field, the screen has no demonstrated power to find real chaperones. **The chaperone-rescue candidate ranking for ABCG2 Q141K is not computationally established** (In Silico; comp-047).
 
-**This empirically confirms the comp-032 audit.** The [2026-07-13 independent review](../logs/comp-reviews/2026-07-13-comp-032-fae0e36.md) argued comp-032's "positive-control pass" was **tautological** — CFTR correctors scored high only because they were *assigned* the maximum drug-class prior (1.00), not because the heuristic detected chaperone-like binding. comp-047 removes every prior and forces the same positive controls to earn their rank from docking alone. **They don't.** That is the review's suspicion, confirmed by construction: when the class prior is gone, the chaperone signal comp-032 reported disappears.
+**This empirically confirms the comp-032 audit.** The 2026-07-13 independent review argued comp-032's "positive-control pass" was **tautological** — CFTR correctors scored high only because they were *assigned* the maximum drug-class prior (1.00), not because the heuristic detected chaperone-like binding. comp-047 removes every prior and forces the same positive controls to earn their rank from docking alone. **They don't.** That is the review's suspicion, confirmed by construction: when the class prior is gone, the chaperone signal comp-032 reported disappears.
 
 ## Control performance — the validity check comp-032 lacked
 

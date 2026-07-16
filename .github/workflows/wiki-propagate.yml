@@ -70,10 +70,10 @@ jobs:
             exit 1
           fi
           coverage=$(git rev-parse HEAD)
-          echo "cursor=$cursor" >> "$GITHUB_OUTPUT"
-          echo "coverage=$coverage" >> "$GITHUB_OUTPUT"
-          echo "count=$count" >> "$GITHUB_OUTPUT"
           {
+            echo "cursor=$cursor"
+            echo "coverage=$coverage"
+            echo "count=$count"
             echo 'paths<<EOF'
             cat /tmp/propagation-paths.txt
             echo EOF

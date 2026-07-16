@@ -178,9 +178,8 @@ jobs:
           Suggested investigation:
           1. `gh run list --workflow=wiki-sweep.yml --limit 5`
           2. `gh run view <last-failed-run-id> --log-failed`
-          3. Check OpenRouter API status (most failures are transient 5xx).
-          4. Check for recent changes to scripts/synthesize.py /
-             scripts/sweep-1-propagate.py / scripts/sweep-3-review.py.
+          3. Check model-provider status and the workflow cost/coverage receipt.
+          4. Check recent changes to scripts/distributed-synthesis.py.
 
           The watchdog will continue to skip-and-escalate daily until either
           (a) a successful wiki-sweep run (any cause) breaks the failure streak,

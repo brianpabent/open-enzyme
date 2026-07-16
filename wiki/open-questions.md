@@ -67,7 +67,7 @@ Questions about uricase variant selection, GI survival, protease resistance, yea
 
 ### Variant selection and properties
 
-- **Is *Candida utilis* uricase substantially more amenable to oral delivery than *A. flavus* uricase?** Three programs (Allena/ALLN-346 and two others per industry-revealed preference) picked *C. utilis* over *A. flavus*. Driver could be: (a) higher specific activity, (b) better protease resistance, (c) fewer anti-drug-antibody concerns, (d) IP/freedom-to-operate. See [uricase-variant-selection.md](./uricase-variant-selection.md), [synthesis archive 2026-04-23 gout-clinical-pipeline](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Is *Candida utilis* uricase substantially more amenable to oral delivery than *A. flavus* uricase?** Three programs (Allena/ALLN-346 and two others per industry-revealed preference) picked *C. utilis* over *A. flavus*. Driver could be: (a) higher specific activity, (b) better protease resistance, (c) fewer anti-drug-antibody concerns, (d) IP/freedom-to-operate. See [uricase-variant-selection.md](./uricase-variant-selection.md).
 - **No human trial data exists for *A. flavus* uricase delivered orally.** ALLN-346 (*C. utilis*) showed no systemic immune response, but fungal-vs-bacterial immunogenicity differences in the gut lumen are uncharacterized. See [uricase-variant-selection.md §7](./uricase-variant-selection.md).
 - **Vibrio vulnificus uricase expression in *S. cerevisiae*: codon optimization and titer remain unknown.** Likely feasible from sequence analysis; no peer-reviewed titer in eukaryotic hosts. See [uricase-variant-selection.md](./uricase-variant-selection.md).
 - **Rasburicase's anti-drug-antibody profile in ~60% of patients on IV delivery: does oral mucosal delivery invert this via oral tolerance?** Open — oral tolerance literature suggests yes, but uricase-specific data is absent. See [engineered-yeast-uricase-proposal.md §6 Q5](./engineered-yeast-uricase-proposal.md).
@@ -75,8 +75,8 @@ Questions about uricase variant selection, GI survival, protease resistance, yea
 ### GI survival and stability
 
 - **Refolding kinetics of acid-unfolded uricase are unknown.** The enzyme's tetramer dissociates at low pH; whether it refolds after duodenal pH normalization determines real-world efficacy beyond simple in vitro survival measurements. See [gi-survival-prediction.md §§refolding](./gi-survival-prediction.md).
-- **Does rice bran substrate improve or degrade uricase GI survival?** Rice bran contains phytic acid, phenolics, and fiber — could stabilize the tetramer (polyphenol-tetramer binding) or destabilize it (altered transit time). See [engineered-koji-protocol.md](./engineered-koji-protocol.md), [synthesis archive Connection 7](../synthesis/history/_pre-2026-05-08-archive.md).
-- **Secretion vs. intracellular expression in yeast — which gives better effective dose?** Intracellular accumulation gives cell-wall acid protection (~10-15% survival advantage) but limits total enzyme output. Secreted is efficient but acid-vulnerable. See [engineered-yeast-uricase-proposal.md](./engineered-yeast-uricase-proposal.md), [synthesis archive Contradiction 2](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Does rice bran substrate improve or degrade uricase GI survival?** Rice bran contains phytic acid, phenolics, and fiber — could stabilize the tetramer (polyphenol-tetramer binding) or destabilize it (altered transit time). See [engineered-koji-protocol.md](./engineered-koji-protocol.md).
+- **Secretion vs. intracellular expression in yeast — which gives better effective dose?** Intracellular accumulation gives cell-wall acid protection (~10-15% survival advantage) but limits total enzyme output. Secreted is efficient but acid-vulnerable. See [engineered-yeast-uricase-proposal.md](./engineered-yeast-uricase-proposal.md).
 
 ### Wild-type koji baseline and EPI applications
 
@@ -93,8 +93,8 @@ Questions about uricase variant selection, GI survival, protease resistance, yea
 
 ### Protein engineering
 
-- **Do the OPT-1 disulfide-engineered mutations (A6C + R290C + S119C + C220C + K234E + K236E) fold correctly in *A. oryzae*'s redox environment?** Mutations designed for *S. cerevisiae* expression; *A. oryzae* cytoplasmic redox is different. See [synthesis archive Proposed Experiment 1](../synthesis/history/_pre-2026-05-08-archive.md), [protein-engineering-strategy.md](./protein-engineering-strategy.md).
-- **What is the minimal viable protease-resistant mutation set** that preserves activity while surviving 30-60 min duodenal transit? ALLN-346 achieved ~20× protease resistance; mechanism is covered by a now-expired patent. Literature audit needed. See [synthesis archive 2026-04-23 gout-clinical-pipeline experiments](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Do the OPT-1 disulfide-engineered mutations (A6C + R290C + S119C + C220C + K234E + K236E) fold correctly in *A. oryzae*'s redox environment?** Mutations designed for *S. cerevisiae* expression; *A. oryzae* cytoplasmic redox is different. See, [protein-engineering-strategy.md](./protein-engineering-strategy.md).
+- **What is the minimal viable protease-resistant mutation set** that preserves activity while surviving 30-60 min duodenal transit? ALLN-346 achieved ~20× protease resistance; mechanism is covered by a now-expired patent. Literature audit needed. See.
 
 ### Genotype stratification of the gut-lumen sink response
 
@@ -157,7 +157,7 @@ Questions about chokepoint biology, priming mechanisms, species-gap caveats, and
 
 [comp-018 — Upstream Complement Modulator Sweep](./upstream-complement-modulator-sweep-computational.md) (committed 2026-05-08, on feature branch pending PR) confirmed direct natural-product C5aR1 antagonist class triply-empty (comp-014 + §1.21 + comp-018), but found a substantial dietary / fungal / FDA-approved-drug literature one node upstream at C3 convertase (rosmarinic acid TIER-1 dietary, luteolin triple-mechanism, etc.). Two open follow-ups surfaced:
 
-- **Are there compounds that *upregulate the host-side complement regulators* (Factor H, DAF/CD55, CD59, clusterin, CR1) — proteins that protect host cells from complement attack — and would such compounds provide a fundamentally different mechanism for CP0 closure?** comp-018 Phase 1's brief explicitly included regulator-expression upregulation in the target list, but the results came back direct-inhibitor-dominant; the expression-modulation thread is largely *unanswered* and worth a focused Phase 2 sub-task. The question is mechanistically distinct: direct inhibition reduces convertase activity acutely, while regulator upregulation is a chronic, transcriptionally-mediated mode of action that may behave differently in a gut-mucosa context (sustained dietary exposure → durable Factor H upregulation → chronic CP0 dampening). Anchor any Phase 2 answer to expression datasets (GTEx, HPA, GEO microarray) plus complement-functional assays — gene upregulation alone wouldn't prove C3/C5 convertase suppression in vivo. (Source: 2026-05-08 sweep Open Question 2 + Pass 3 augmentation; queued as comp-018 Phase 2 sub-task; [synthesis archive 2026-05-08 Item 9](../synthesis/history/_pre-2026-05-08-archive.md).)
+- **Are there compounds that *upregulate the host-side complement regulators* (Factor H, DAF/CD55, CD59, clusterin, CR1) — proteins that protect host cells from complement attack — and would such compounds provide a fundamentally different mechanism for CP0 closure?** comp-018 Phase 1's brief explicitly included regulator-expression upregulation in the target list, but the results came back direct-inhibitor-dominant; the expression-modulation thread is largely *unanswered* and worth a focused Phase 2 sub-task. The question is mechanistically distinct: direct inhibition reduces convertase activity acutely, while regulator upregulation is a chronic, transcriptionally-mediated mode of action that may behave differently in a gut-mucosa context (sustained dietary exposure → durable Factor H upregulation → chronic CP0 dampening). Anchor any Phase 2 answer to expression datasets (GTEx, HPA, GEO microarray) plus complement-functional assays — gene upregulation alone wouldn't prove C3/C5 convertase suppression in vivo. (Source: 2026-05-08 sweep Open Question 2 + Pass 3 augmentation; queued as comp-018 Phase 2 sub-task;.)
   - **Anchor compound classes worth checking:** plant-derived Nrf2 activators (sulforaphane, curcumin, EGCG — already in supplements-stack), butyrate (HDAC inhibitor, plausible Factor H induction), retinoids, dietary polyphenols generally. Cross-applies to the [food-grade HDACi screen (comp-007)](./food-grade-hdaci-screen-computational.md) — HDAC inhibitors that surfaced for ABCG2 derepression may also induce complement-regulator expression.
   - **Cross-references:** [complement-c5a-gout.md](./complement-c5a-gout.md) (Factor H, DAF/CD55, CD59, clusterin biology), [comp-018](./upstream-complement-modulator-sweep-computational.md) (the parent breadth scan), [hypotheses/H05-daf-scr14-cp0-thesis.md](./hypotheses/H05-daf-scr14-cp0-thesis.md) (engineering-side DAF thread — engineered koji that *secretes* the DAF protein is a distinct mechanism from compounds that *upregulate endogenous DAF expression*).
 
@@ -169,12 +169,12 @@ Questions about chokepoint biology, priming mechanisms, species-gap caveats, and
 
 ### Species-gap and translation
 
-- **Does the 1,000× dapansutrile mouse-vs-human cellular IC50 gap apply to every mouse-derived NLRP3 potency claim in the wiki?** Oridonin, BHB, ursolic acid, β-caryophyllene, carnosine — all have murine efficacy as primary evidence. Translation risk is now the dominant uncertainty. See [nlrp3-inhibitor-screen.md ChEMBL appendix](./nlrp3-inhibitor-screen.md), [synthesis archive 2026-04-23 nlrp3-inhibitor-screen](../synthesis/history/_pre-2026-05-08-archive.md).
-- **For "pathway modulator" class (quercetin, ursolic acid, BHB, KPV, carnosine, taurine), what's the correct primary-evidence yardstick?** ChEMBL IC50 doesn't exist by definition for these compounds. Is it functional IL-1β suppression in MSU-stimulated human macrophages? See [synthesis archive 2026-04-23 Open Questions](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Does the 1,000× dapansutrile mouse-vs-human cellular IC50 gap apply to every mouse-derived NLRP3 potency claim in the wiki?** Oridonin, BHB, ursolic acid, β-caryophyllene, carnosine — all have murine efficacy as primary evidence. Translation risk is now the dominant uncertainty. See [nlrp3-inhibitor-screen.md ChEMBL appendix](./nlrp3-inhibitor-screen.md).
+- **For "pathway modulator" class (quercetin, ursolic acid, BHB, KPV, carnosine, taurine), what's the correct primary-evidence yardstick?** ChEMBL IC50 doesn't exist by definition for these compounds. Is it functional IL-1β suppression in MSU-stimulated human macrophages? See.
 
 ### Biomarker interpretation
 
-- **Is hs-CRP alone sufficient to distinguish chokepoint-specific effects in the self-experiment?** No — hs-CRP is a downstream output marker; urinary LTB4 (CP6a), serum C5a (CP0), TNFSF14 (CP1a) are all needed for mechanism. See [self-experiment-protocol.md](./self-experiment-protocol.md), [synthesis archive 2026-04-24 New Connection #3](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Is hs-CRP alone sufficient to distinguish chokepoint-specific effects in the self-experiment?** No — hs-CRP is a downstream output marker; urinary LTB4 (CP6a), serum C5a (CP0), TNFSF14 (CP1a) are all needed for mechanism. See [self-experiment-protocol.md](./self-experiment-protocol.md).
 
 ---
 
@@ -202,13 +202,13 @@ Organized by compound. Each bullet summarizes the question; cross-links point to
 
 ### Quercetin
 
-- **Does quercetin's 300 nM ChEMBL 5-LOX IC50 translate to cellular neutrophil-chemotaxis block in a gout-relevant assay?** This is what the zileuton head-to-head would resolve. See [synthesis archive 2026-04-23 Proposed Experiment #4](../synthesis/history/_pre-2026-05-08-archive.md), [validation-experiments-archive.md §3.9](./etc/validation-experiments-archive.md).
-- **Is quercetin + Boswellia (AKBA) redundant at 5-LOX, or complementary at IKKβ + 5-LOX?** Depends on AKBA's 5-LOX IC50 and whether the two compounds bind at the same site. ChEMBL query pending. See [synthesis archive 2026-04-23 Connection 5](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Does quercetin's 300 nM ChEMBL 5-LOX IC50 translate to cellular neutrophil-chemotaxis block in a gout-relevant assay?** This is what the zileuton head-to-head would resolve. See, [validation-experiments-archive.md §3.9](./etc/validation-experiments-archive.md).
+- **Is quercetin + Boswellia (AKBA) redundant at 5-LOX, or complementary at IKKβ + 5-LOX?** Depends on AKBA's 5-LOX IC50 and whether the two compounds bind at the same site. ChEMBL query pending. See.
 
 ### BHB / Ketones
 
 - **Does the ketogenic-diet-gout rat result translate to a human oral BHB dosing regimen?** The rat study used intrinsic ketogenesis (diet); exogenous BHB dosing has different PK. See [bhb-ketones.md](./bhb-ketones.md), [nlrp3-exploit-map.md](./nlrp3-exploit-map.md).
-- **Does BHB's mouse-vs-human species gap follow the dapansutrile pattern?** Mouse ketogenic data may overstate BHB's required human dose. See [synthesis archive 2026-04-23 Connection #2](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Does BHB's mouse-vs-human species gap follow the dapansutrile pattern?** Mouse ketogenic data may overstate BHB's required human dose. See.
 - **How does androgen status interact with BHB's NLRP3-inhibiting effect?** *(added 2026-07-13, July sweep)* BHB is a multi-target NLRP3 inhibitor ([bhb-ketones.md](./bhb-ketones.md)); androgens have directionally-ambiguous *direct* effects on NLRP3 priming ([androgen-urate-axis.md](./androgen-urate-axis.md) §"Beyond transporters"). The three-way interaction (androgen × MSU × BHB) is untested and matters for the platform's male-skewed demographic — does a high-testosterone or TRT patient need a *higher* BHB dose for the same NLRP3 suppression? **Sub-question:** BHB acts partly via HCAR2/GPR109A, and androgen signaling can cross-modulate GPCR expression, so whether macrophage HCAR2 is itself androgen-sensitive is a mechanistic anchor. Path to resolution: the BHB interaction arm now added to [validation-experiments.md §1.23](./validation-experiments.md) (androgen × MSU × NLRP3). See also [nlrp3-exploit-map.md](./nlrp3-exploit-map.md).
 
 ### Lactoferrin
@@ -229,7 +229,7 @@ Organized by compound. Each bullet summarizes the question; cross-links point to
 
 ### Zileuton
 
-- **Does zileuton (5-LOX inhibitor) abort or shorten gout flares in any case series or retrospective data?** Asthma patients who also have gout = natural population to query. *(2026-04-24 Pass 2 — new addition.)* See [synthesis archive 2026-04-24 Open Questions](../synthesis/history/_pre-2026-05-08-archive.md), [validation-experiments-archive.md §3.9](./etc/validation-experiments-archive.md).
+- **Does zileuton (5-LOX inhibitor) abort or shorten gout flares in any case series or retrospective data?** Asthma patients who also have gout = natural population to query. *(2026-04-24 Pass 2 — new addition.)* See, [validation-experiments-archive.md §3.9](./etc/validation-experiments-archive.md).
 - **What's the theory of action beyond 5-LOX?** Any secondary effects (redox, cytokine-modulation, neutrophil-direct) that could be advantageous or detrimental in gout context? Dossier in progress.
 
 ### Tier-4 inhibitor screen — missed gout-model data *(largely closed 2026-04-23 + 2026-05-05; one residual gap)*
@@ -244,23 +244,23 @@ Organized by compound. Each bullet summarizes the question; cross-links point to
   - **Omega-3 metabolites (RvD1, MaR1, etc.):** already cited in [`spm-resolution-pathway.md`](./spm-resolution-pathway.md); no new data.
 - **Residual gap:** **Curcumin variants** (tetrahydrocurcumin, BCM-95 formulation, curcumin analogs) returned 11 PubMed hits on the 2026-05-05 audit; none surfaced as direct MSU/gout animal-model evidence beyond what's already in the curcumin coverage. A targeted full-text-grep audit specifically for curcumin **derivative** activity in MSU-gout would close this last sub-question. Likely low-yield.
 
-See [nlrp3-inhibitor-screen.md §Meta-Finding](./nlrp3-inhibitor-screen.md), [synthesis archive 2026-04-23 cannabinoids-terpenes Connection #2](../synthesis/history/_pre-2026-05-08-archive.md), [theaflavins.md](./theaflavins.md).
-- **Would THCV's 20× higher CB2 affinity (Ki 7.5 nM vs. BCP 155 nM) translate to better MSU gout efficacy if dose-bridged?** Untested. THCV has cannabis-derived regulatory friction so this is academic unless BCP underperforms in a planned MSU macrophage assay. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md), [synthesis archive 2026-04-23 cannabinoids-terpenes Open Questions](../synthesis/history/_pre-2026-05-08-archive.md).
-- **Is there an engineered microbial route to β-caryophyllene that scales past 10–50 mg/L?** Current titers are two orders of magnitude below the likely therapeutic dose (rat 100–400 mg/kg ≈ 1.1–4.5 g/day BSA-scaled). Titer improvement is required before "engineered koji produces BCP" enters the platform thesis. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md), [synthesis archive 2026-04-23 cannabinoids-terpenes Open Questions](../synthesis/history/_pre-2026-05-08-archive.md).
+See [nlrp3-inhibitor-screen.md §Meta-Finding](./nlrp3-inhibitor-screen.md), [theaflavins.md](./theaflavins.md).
+- **Would THCV's 20× higher CB2 affinity (Ki 7.5 nM vs. BCP 155 nM) translate to better MSU gout efficacy if dose-bridged?** Untested. THCV has cannabis-derived regulatory friction so this is academic unless BCP underperforms in a planned MSU macrophage assay. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
+- **Is there an engineered microbial route to β-caryophyllene that scales past 10–50 mg/L?** Current titers are two orders of magnitude below the likely therapeutic dose (rat 100–400 mg/kg ≈ 1.1–4.5 g/day BSA-scaled). Titer improvement is required before "engineered koji produces BCP" enters the platform thesis. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
 
 ### Beta-caryophyllene
 
-- **Does oral BCP at 50-200 mg/day (supplement range) reproduce the 100-400 mg/kg rat MSU effect?** PK scaling suggests possible 20-50× dose gap. Resolvable with desk work before wet-lab. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md), [synthesis archive 2026-04-23 cannabinoids Open Questions](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Does oral BCP at 50-200 mg/day (supplement range) reproduce the 100-400 mg/kg rat MSU effect?** PK scaling suggests possible 20-50× dose gap. Resolvable with desk work before wet-lab. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
 - **Would THCV's 20× higher CB2 affinity (Ki 7.5 nM) translate to better MSU gout efficacy?** Untested; regulatory friction makes it academic unless BCP underperforms. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
 - **Engineered microbial route to β-caryophyllene past 10-50 mg/L titer?** Two orders of magnitude below therapeutic dose. Titer improvement would unlock the "koji produces BCP" pathway. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
 
 ### Oridonin
 
-- **Does oridonin's cellular-vs-kinetic IC50 split (5.18 μM human THP-1 per ChEMBL) matter for gout-specific efficacy?** No gout-specific studies exist for oridonin. Covalent Cys279 binding may be mechanistically preserved across species. See [oridonin.md](./oridonin.md), [synthesis archive 2026-04-23 Connection 3](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Does oridonin's cellular-vs-kinetic IC50 split (5.18 μM human THP-1 per ChEMBL) matter for gout-specific efficacy?** No gout-specific studies exist for oridonin. Covalent Cys279 binding may be mechanistically preserved across species. See [oridonin.md](./oridonin.md).
 
 ### Other compounds (aggregated)
 
-- **ChEMBL cross-check sweep on remaining stack compounds** (BHB, KPV, ursolic acid, taurine, sulforaphane, berberine, resveratrol, curcumin, ergothioneine, ferulic acid, kojic acid): 2-5 more mechanistic reframings are expected when primary curated bioactivities are compared to the current wiki mechanism claims. See [synthesis archive 2026-04-23 Connection 4](../synthesis/history/_pre-2026-05-08-archive.md).
+- **ChEMBL cross-check sweep on remaining stack compounds** (BHB, KPV, ursolic acid, taurine, sulforaphane, berberine, resveratrol, curcumin, ergothioneine, ferulic acid, kojic acid): 2-5 more mechanistic reframings are expected when primary curated bioactivities are compared to the current wiki mechanism claims. See.
 
 ### Chaperone framework α-coefficient generalization — two-fold-class calibration vs. arbitrary novel-fold secreted disulfide-rich payloads *(added 2026-05-15)*
 
@@ -303,7 +303,7 @@ The combination is mechanistically clean (different mechanisms, different routes
 
 **Fires when:** (a) the compounding-pharmacy track's first prescription pathway opens for a discovery-engine candidate (disulfiram is the lead — see [`comp-027` brief](./computational-experiments.md) on disulfiram dose modeling) AND (b) the engineered-koji strain becomes available (Phase 0 currently — neither the §1.9 dual-cassette koji nor a community-college-lab proxy exists yet). Until both upstream gates clear, the co-administration protocol is **dormant** — drafting it now would be path-dependent speculation about two products that don't exist.
 
-**Cross-references:** [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) §"Combined / hybrid candidates" (originating mention), [`koji-endgame-strain.md`](./koji-endgame-strain.md), [`comp-027`](./computational-experiments.md) (disulfiram dose modeling), `synthesis/done/2026-05-13-open-question-1-can-the-compounding-pharmacy-tracks-repurposed-drug.md` (originating sweep item).
+**Cross-references:** [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) §"Combined / hybrid candidates" (originating mention), [`koji-endgame-strain.md`](./koji-endgame-strain.md), [`comp-027`](./computational-experiments.md) (disulfiram dose modeling) (originating sweep item).
 
 ### Riskiest assumption #2 — can engineered koji be reliably home- and community-fermented at therapeutic doses? *(added 2026-05-15, **the platform's #2 load-bearing scientific bet — production/delivery side**)*
 
@@ -324,7 +324,7 @@ The corpus offers strong mitigation sketches (chromosomal integration, first-bat
 - P2-6 Smartphone-camera colorimetric uric-acid assay validation
 - P2-11 Regulatory framework scoping pass (engineered-spore distribution path) — user-action-required (external consultant engagement)
 
-**Cross-references:** [cross-validation.md §Claim 5](./cross-validation.md) (3/10 → 6/10 reframe), [open-source-platform.md §"Open Questions — Reliability of Community Fermentation"](./etc/open-source-platform.md), [engineered-koji-protocol.md](./engineered-koji-protocol.md), [koji-endgame-strain.md](./koji-endgame-strain.md), [self-experiment-protocol.md](./self-experiment-protocol.md) (Brian's n=1 home-fermentation data point), [`operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md) (note: at `operations/`, not `wiki/`), `synthesis/done/2026-05-13-riskiest-assumption-1-the-single-load-bearing-belief-in-the-current-platform.md` (originating sweep item).
+**Cross-references:** [cross-validation.md §Claim 5](./cross-validation.md) (3/10 → 6/10 reframe), [open-source-platform.md §"Open Questions — Reliability of Community Fermentation"](./etc/open-source-platform.md), [engineered-koji-protocol.md](./engineered-koji-protocol.md), [koji-endgame-strain.md](./koji-endgame-strain.md), [self-experiment-protocol.md](./self-experiment-protocol.md) (Brian's n=1 home-fermentation data point), [`operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md) (note: at `operations/`, not `wiki/`) (originating sweep item).
 
 ### Riskiest assumption #1 — does the gut-lumen uricase sink produce a clinically meaningful SUA reduction in typical (non-CKD) gout? *(added 2026-05-15, **the platform's #1 load-bearing scientific bet — mechanism side**)*
 
@@ -344,7 +344,7 @@ The platform's load-bearing belief is that the gut-lumen sink produces a clinica
 - P2-3 through P2-6 — Populate assumption stack, killshot menu, pre-committed thresholds, failure-mode coverage map per H01 template.
 - P2-7 — Integrate n=1 self-experiment design with the FEUA protocol on [self-experiment-protocol.md](./self-experiment-protocol.md).
 
-**Cross-references:** [cross-validation.md §Claim 1](./cross-validation.md) (feasibility 5.5/10), [gut-lumen-sink.md](./gut-lumen-sink.md), [uricase.md](./uricase.md), [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md), `synthesis/done/2026-05-09-riskiest-assumption-1*.md` (originating sweep item).
+**Cross-references:** [cross-validation.md §Claim 1](./cross-validation.md) (feasibility 5.5/10), [gut-lumen-sink.md](./gut-lumen-sink.md), [uricase.md](./uricase.md), [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) (originating sweep item).
 
 ### Riskiest assumption #3 — do dietary doses of rosmarinic acid, luteolin, Houttuynia, and Helicteres reach gut-luminal complement-suppressing concentrations? *(added 2026-05-22, **the platform's #3 load-bearing scientific bet — dietary-CP0 PK side**)*
 
@@ -386,7 +386,7 @@ The three are not redundant. #1 gates the upstream uricase mechanism (mechanism)
 
 **Fires when:** any of the dietary candidates is being elevated to a wet-lab or clinical-decision context. Currently fires immediately because Houttuynia is at §1.30 wet-lab prioritization screen status (per [`validation-experiments.md` §1.30](./validation-experiments.md)) — the THP-1 macrophage assay's IL-1β readout is *necessary but not sufficient* to validate the dietary-CP0 thesis; it doesn't measure whether *dietary intake* of Houttuynia produces equivalent gut-luminal concentrations. The Houttuynia §1.30 screen partially derisks Houttuynia's mechanism; the dietary-PK question remains open even if §1.30 returns positive.
 
-**Cross-references:** [`combined-cp0-systems-model-computational.md`](./combined-cp0-systems-model-computational.md) (comp-029 YELLOW — gut-luminal-transient framing), [`cfh-mechanism-dissociation-cp0-candidates-computational.md` §6](./cfh-mechanism-dissociation-cp0-candidates-computational.md) (bioavailability as named limitation across all four candidates), [`complement-c5a-gout.md` §9.7](./complement-c5a-gout.md) (rosmarinic-acid 44× IC50 spread + PK uncertainty), [`complement-c5a-gout.md` §9.9](./complement-c5a-gout.md) (dormant composition gated on this PK question), [`upstream-complement-verification-rerun-computational.md`](./upstream-complement-verification-rerun-computational.md) (comp-020 IC50 verification), `synthesis/done/2026-05-21-riskiest-assumption-1-the-single-load-bearing-belief-in-the-current-platform.md` (sweep origin).
+**Cross-references:** [`combined-cp0-systems-model-computational.md`](./combined-cp0-systems-model-computational.md) (comp-029 YELLOW — gut-luminal-transient framing), [`cfh-mechanism-dissociation-cp0-candidates-computational.md` §6](./cfh-mechanism-dissociation-cp0-candidates-computational.md) (bioavailability as named limitation across all four candidates), [`complement-c5a-gout.md` §9.7](./complement-c5a-gout.md) (rosmarinic-acid 44× IC50 spread + PK uncertainty), [`complement-c5a-gout.md` §9.9](./complement-c5a-gout.md) (dormant composition gated on this PK question), [`upstream-complement-verification-rerun-computational.md`](./upstream-complement-verification-rerun-computational.md) (comp-020 IC50 verification) (sweep origin).
 
 ### Class-level Tier 2 assay gap for microbiome-derived metabolites *(added 2026-05-22, **silently gates every gut-microbiome-mediated intervention class on the platform**)*
 
@@ -414,11 +414,11 @@ For each of these, the active metabolite's concentration at the target tissue is
 
 **Fires when:** any of the dependent intervention tracks (PDB, Houttuynia gut-microbiota arm, prebiotic-fiber-specific stack) reaches a clinical-decision point where dose verification matters more than directional signal. Until then, the gap is documented and not actionable beyond P2-1's protocol-verification scan.
 
-**Cross-references:** [`quantification-ladder.md`](./quantification-ladder.md) (the framework whose discipline this gap breaks), [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md) (comp-038 — the butyrate-specific audit), [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) §"Tier 2 assay gap for microbiome-derived metabolites" (existing closing-note paragraph) + the Q141K worked example step 4 update 2026-05-22, [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md), [`abcg2-modulators.md`](./abcg2-modulators.md), [`complement-c5a-gout.md` §9.7](./complement-c5a-gout.md) (Houttuynia dual CP0+CP1 candidate), `synthesis/done/2026-05-21-connection-3-the-quantification-ladder-s-tier-2-gap-for-microbiome.md` (sweep origin).
+**Cross-references:** [`quantification-ladder.md`](./quantification-ladder.md) (the framework whose discipline this gap breaks), [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md) (comp-038 — the butyrate-specific audit), [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) §"Tier 2 assay gap for microbiome-derived metabolites" (existing closing-note paragraph) + the Q141K worked example step 4 update 2026-05-22, [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md), [`abcg2-modulators.md`](./abcg2-modulators.md), [`complement-c5a-gout.md` §9.7](./complement-c5a-gout.md) (Houttuynia dual CP0+CP1 candidate) (sweep origin).
 
 ### Genotype stratification — Q141K and the gut-lumen-sink mechanism's responder population *(added 2026-05-08, **highest-priority open question for the platform's primary demographic**)*
 
-- **Can the gut-lumen uricase sink produce meaningful SUA reduction in non-Q141K males, or does the mechanism rely on Q141K-positive disease-state ABCG2 vulnerability to show benefit?** This is the single most important unanswered question for Open Enzyme's primary demographic positioning. If the mechanism only works in Q141K-positive readers (~25-30% of European-descent men, ~50%+ of East Asian men), the platform's addressable population shrinks dramatically — from "all gout patients" to "Q141K-positive gout patients." That's a strategic question that should change trial design, demographic targeting, and possibly commercial framing. (Source: surfaced 2026-05-08 sweep Open Question 1; comp-017 + cross-validation.md prior-art context; [synthesis archive 2026-05-08 Item 8](../synthesis/history/_pre-2026-05-08-archive.md).)
+- **Can the gut-lumen uricase sink produce meaningful SUA reduction in non-Q141K males, or does the mechanism rely on Q141K-positive disease-state ABCG2 vulnerability to show benefit?** This is the single most important unanswered question for Open Enzyme's primary demographic positioning. If the mechanism only works in Q141K-positive readers (~25-30% of European-descent men, ~50%+ of East Asian men), the platform's addressable population shrinks dramatically — from "all gout patients" to "Q141K-positive gout patients." That's a strategic question that should change trial design, demographic targeting, and possibly commercial framing. (Source: surfaced 2026-05-08 sweep Open Question 1; comp-017 + cross-validation.md prior-art context;.)
   - **Path 1 — comp-019/044:** comp-019 found no genotype-stratified uricase trial but its efficacy model failed the physiological-regime audit in comp-044. Quantitative responder prediction remains open.
   - **Path 2 — §1.33 physiological factorial:** polarized intestinal transport with topology, urate, oxygen, peroxide, survival, and Q141K/WT stratification. This replaces the comp-019-gated single transwell concept.
   - **Path 3 — n=1 stratified self-experiment (parallel, low-friction).** Brian + contributors with known genotype (via [personal-genome-protocol](./personal-genome-protocol.md) MinION or 23andMe import) take shio-koji or future engineered koji + monitor SUA. Stratify post-hoc by Q141K status. Weak power per individual, but if the platform builds a contributor cohort with genotype data, it's the lowest-cost path to real human evidence. Lives in [self-experiment-protocol.md](./self-experiment-protocol.md) once cohort exists.
@@ -427,9 +427,9 @@ For each of these, the active metabolite's concentration at the target tissue is
 
 ### Platform selection and thesis
 
-- **Is Open Enzyme's wiki-wide IC50 provenance practice rigorous enough?** Many IC50 values come from review papers, not primary ChEMBL-indexed assays. A written standard would prevent legacy-citation drift. See [synthesis archive 2026-04-23 Open Questions](../synthesis/history/_pre-2026-05-08-archive.md).
-- **Does MCC950 / CRID3 / CP-456773 absence from ChEMBL name search reflect a curation gap or a synonym issue?** Worth a direct structure-based query. See [synthesis archive 2026-04-23 Open Questions](../synthesis/history/_pre-2026-05-08-archive.md).
-- **Is there a "ChEMBL blind spot" for natural products?** ChEMBL's curation bias favors medicinal chemistry literature; natural products with strong functional but weak binding data (BCP, BHB, many terpenes) may be systematically underrepresented. See [synthesis archive 2026-04-23 Open Questions](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Is Open Enzyme's wiki-wide IC50 provenance practice rigorous enough?** Many IC50 values come from review papers, not primary ChEMBL-indexed assays. A written standard would prevent legacy-citation drift. See.
+- **Does MCC950 / CRID3 / CP-456773 absence from ChEMBL name search reflect a curation gap or a synonym issue?** Worth a direct structure-based query. See.
+- **Is there a "ChEMBL blind spot" for natural products?** ChEMBL's curation bias favors medicinal chemistry literature; natural products with strong functional but weak binding data (BCP, BHB, many terpenes) may be systematically underrepresented. See.
 
 ### Novel modalities (from modality-chokepoint-matrix.md)
 
@@ -531,23 +531,23 @@ This is an **active-search resource**, not a static reference; expect updates as
 ### Community fermentation and strain stability
 
 - **Does engineered koji drift across generations of home propagation?** Food-grade strains carry no antibiotic selection marker (correct for GRAS compliance), which removes the pressure that keeps the construct in the population. Chromosomal integration + redundant copies mitigate but don't eliminate. See [open-source-platform.md §Open Questions](./etc/open-source-platform.md).
-- **Do 100 home fermenters of the same koji strain get consistent enzyme titers and NLRP3 activity?** Home conditions ≠ lab conditions. Protocol robustness is the gating question for the decentralized vision. See [open-source-platform.md §Open Questions](./etc/open-source-platform.md), [synthesis archive Open Question 3](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Do 100 home fermenters of the same koji strain get consistent enzyme titers and NLRP3 activity?** Home conditions ≠ lab conditions. Protocol robustness is the gating question for the decentralized vision. See [open-source-platform.md §Open Questions](./etc/open-source-platform.md).
 - **Is distribution of engineered spores "drug manufacturing" (requires IND) or "research strain" (flexible)?** Regulatory question with large downstream implications. See [open-source-platform.md §Open Questions](./etc/open-source-platform.md).
 
 ### Regulatory
 
 - **Is an engineered-yeast food product a food (GRAS self-determination), a dietary supplement (DSHEA), or a Biologic License Application?** FDA's evolving live-biotherapeutic-products (LBP) framework may apply. See [engineered-yeast-uricase-proposal.md §6 Q4](./engineered-yeast-uricase-proposal.md).
-- **Does the canakinumab approval (Aug 2023) create demand for a cheaper IL-1β blocker reachable via food-grade engineering?** Canakinumab at $300K/year is the price ceiling; anything food-grade clears cost bar. Question is whether food-grade compounds can produce clinically meaningful IL-1β suppression. See [synthesis archive 2026-04-23 gout-clinical-pipeline Open Questions](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Does the canakinumab approval (Aug 2023) create demand for a cheaper IL-1β blocker reachable via food-grade engineering?** Canakinumab at $300K/year is the price ceiling; anything food-grade clears cost bar. Question is whether food-grade compounds can produce clinically meaningful IL-1β suppression. See.
 
 ### Microbiota and safety at scale
 
-- **Does daily high-enzyme + NLRP3-inhibitor load select for specific commensals or cause dysbiosis?** Repeated-dose koji is effectively a selection-pressure experiment on gut flora. See [cross-validation.md](./cross-validation.md), [synthesis archive Connection 8](../synthesis/history/_pre-2026-05-08-archive.md), [synthesis archive Open Question 1](../synthesis/history/_pre-2026-05-08-archive.md).
-- **Do any commensals express uricase natively?** If yes, does engineered uricase suppress or enhance them? See [synthesis archive Connection 8](../synthesis/history/_pre-2026-05-08-archive.md).
-- **For Brian's n=1 self-experiment specifically — what microbiome red flags would matter?** Scope clarification (2026-04-27): the platform is not chasing regulatory approval; the question is what to monitor in Brian's self-experiment to detect dysbiosis early enough to course-correct. Candidate panel: stool 16S at baseline + week 4/8/12, watch for alpha-diversity drop >20%, *C. difficile* / *Enterococcus* expansion, fecal calprotectin elevation, persistent stool-form change. A full safety cohort (n=8) is out of scope for a self-experiment; the n=1 monitoring panel is the right resolution. Tracked separately in [`self-experiment-protocol.md`](./self-experiment-protocol.md). See [synthesis archive Connection 8](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Does daily high-enzyme + NLRP3-inhibitor load select for specific commensals or cause dysbiosis?** Repeated-dose koji is effectively a selection-pressure experiment on gut flora. See [cross-validation.md](./cross-validation.md).
+- **Do any commensals express uricase natively?** If yes, does engineered uricase suppress or enhance them? See.
+- **For Brian's n=1 self-experiment specifically — what microbiome red flags would matter?** Scope clarification (2026-04-27): the platform is not chasing regulatory approval; the question is what to monitor in Brian's self-experiment to detect dysbiosis early enough to course-correct. Candidate panel: stool 16S at baseline + week 4/8/12, watch for alpha-diversity drop >20%, *C. difficile* / *Enterococcus* expansion, fecal calprotectin elevation, persistent stool-form change. A full safety cohort (n=8) is out of scope for a self-experiment; the n=1 monitoring panel is the right resolution. Tracked separately in [`self-experiment-protocol.md`](./self-experiment-protocol.md). See.
 
 ### Combination therapy
 
-- **Could engineered koji become standard adjunct to allopurinol?** ALLN-346 trial demonstrated enzyme-adjunct efficacy on stable allopurinol. Complementary mechanisms (XO upstream, luminal-degradation downstream). See [synthesis archive Open Question 2](../synthesis/history/_pre-2026-05-08-archive.md).
+- **Could engineered koji become standard adjunct to allopurinol?** ALLN-346 trial demonstrated enzyme-adjunct efficacy on stable allopurinol. Complementary mechanisms (XO upstream, luminal-degradation downstream). See.
 
 ---
 

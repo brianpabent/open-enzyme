@@ -20,7 +20,7 @@ related:
   - gsdmd-pore-delivery-paradox.md
   - compounding-pharmacy-track.md
 sources:
-  - "2026-05-15 strategic reflection: chassis-is-downstream-of-chokepoint (synthesis/strategic-reflections/)"
+  - "Open Enzyme mission and track-portfolio operating principles"
   - "Umbrella CLAUDE.md §Curiosity and First-Principles Framing"
   - "Origin: 2026-05-15 PDB / GSDMD / kill-chain delivery research surfaced a finding that doesn't fit koji and was almost filtered as 'off-platform' — reframed as chassis-pending"
 status: published
@@ -38,7 +38,7 @@ Open Enzyme is **exploit-first and implementation-second**. The mission is to id
 
 The risk this page mitigates: when a finding lands that hits a real chokepoint but doesn't fit koji, the recommendation step can quietly filter it as "off-platform." That filter is the failure mode the umbrella `CLAUDE.md` warns against ("don't ask 'does this fit the current chassis,' ask 'what open question might this tool answer?'"). This page makes the no-chassis-filter check structural rather than opportunistic.
 
-**The honest status of an entry here:** the intervention is real, the mechanism is validated, multiple candidate chassis exist or are conceivable, **we don't know which is right yet**. Chassis selection is the next question, not the filter that kills the first one. See [`synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md`](../synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md) for the discipline-level reflection that produced this page.
+**The honest status of an entry here:** the intervention is real, the mechanism is validated, multiple candidate chassis exist or are conceivable, **we don't know which is right yet**. Chassis selection is the next question, not the filter that kills the first one.
 
 ## How to read this page
 
@@ -215,11 +215,7 @@ All three clear the 10 µM safe threshold by 5–50× margin under reference con
 
 **Cheapest first move — run 2026-05-16 as [comp-032](./abcg2-q141k-chaperone-screen-computational.md), then SUPERSEDED by [comp-047](./abcg2-q141k-chaperone-rescreen-computational.md) (2026-07-14, real docking) → INCONCLUSIVE.** comp-032's GREEN was a descriptor/class-prior heuristic with a tautological positive-control validation (comp-review 2026-07-13); comp-047 re-ran it with real AutoDock Vina docking and no class prior, and the CFTR-corrector positive controls **failed to earn rank** (0/4). **The list below is comp-032's prior-ranked hypotheses — not validated priorities and not empirically supported.** Retained only as a starting point for a folding-ΔΔG or wet-lab study:
 
-1. **Lumacaftor** (Tier 2, CFTR corrector) — strongest mechanistic prior; same ABC superfamily; on-patent for CF (Vertex), navigate patent landscape for off-label 503A
-2. **Tafamidis** (Tier 2, TTR tetramer stabilizer) — aromatic-acid stabilizer at hydrophobic interface; misfolded-state selective
-3. **Ursodiol / UDCA** (**Tier 1**, bile acid chaperone) — broad ER-stress chaperone via ATF6/Hsp70; F508del-CFTR rescue precedent; off-patent USP/NF monograph
-4. **Diflunisal** (**Tier 1, lowest-friction first call** — off-patent NSAID with USP/NF monograph + off-label ATTR-stabilization precedent) — anionic at pH 7.4, strongest electrostatic match for Q141K +1 pocket
-5. **TUDCA** (Tier 2, bile acid chaperone) — CNS-penetrant; F508del-CFTR + ALS-clinical-trial precedent
+The superseded comp-032 hypothesis list and comp-047 correction live in [`abcg2-modulators.md`](./abcg2-modulators.md); this index does not duplicate them.
 
 **Next move:** neither comp-032 nor comp-047 supplies a validated candidate, so **no compounding-pharmacy conversation is warranted yet.** Rigid docking can't discriminate chaperones here (mechanism mismatch). The real next step is a folding-ΔΔG calculation (MD / Rosetta) or a wet-lab Q141K trafficking-rescue assay (Caco-2 Q141K line) paired with basolateral→apical urate flux + an ABCG2-inhibition counterscreen; any compounding-pharmacy conversation is gated behind that wet-lab result. (source: abcg2-modulators.md, abcg2-q141k-chaperone-rescreen-computational.md)
 
@@ -257,7 +253,7 @@ Compositions where two interventions on *different* chassis hit complementary ch
 
 **Chassis (both selected, neither pending).** PDB arm → engineered EcN LBP (entry 1 above, chassis option A). Disulfiram arm → compounding pharmacy track ([`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md)). Multi-chassis stack, not a chassis-pending question.
 
-**Why this entry exists here.** The composition was almost not surfaced because neither arm is novel individually — both are documented in their respective canonical pages. The *stack* is what's new, and absent an explicit "compositions" index, multi-chassis stacks risk being lost in the gap between single-modality pages. Per [`synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md`](../synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md), stacks composed across chassis deserve the same chokepoint-first treatment as single interventions.
+**Why this entry exists here.** Neither arm is novel individually; the *stack* is. Multi-chassis compositions deserve the same chokepoint-first treatment as single interventions.
 
 **Cheapest first move.** Two parallel comp-NNNs, both completed 2026-05-16:
 - **[comp-027](./disulfiram-dose-modeling-computational.md)** — downgraded to hypothesis-generator (comp-review 2026-07-14): a **single strict-GREEN modeled point at 100 mg/day** (the 75–125 mg/d range was broadened from that single point, not validated, and it sits exactly on a hard-coded decision boundary — a dose-finding hypothesis to test, not a dose recommendation), where parent DSF Cmax engages GSDMD pore-formation blockade at therapeutic levels (1.3× cell-free IC50) while Me-DTC stays at or below DER hypotension threshold. Compounding-pharmacy handoff: IR capsule for 14-day titration → ER lipid-matrix 100 mg QD chronic. Gout co-administration clean (allopurinol synergistic).
@@ -292,15 +288,13 @@ If an entry is **falsified** (chokepoint-fit turns out to be wrong, or mechanism
 
 ### How decisions actually get made — there's no static rubric, by design
 
-There is intentionally **no static "promote / park / falsify" rubric** on this page (or anywhere else). The decision mechanism is the wiki sweep daemon's Pass 2 (synthesizer), which re-evaluates every entry against the current corpus state on every sweep cycle. When new information lands that would shift an entry's status — a new comp-NNN output, a new wet-lab result, a new published clinical-trial readout, a new chokepoint analysis — the next sweep surfaces it as a Connection / Contradiction / Experiment / Open Question / Priority Action. The walkthrough operator then makes the actual promote / park / falsify call per-item, with each call grounded in the corpus state at that moment.
+There is intentionally **no static "promote / park / falsify" score** here. A decision should use the track's current evidence, assumptions, safety constraints, cheapest discriminating experiment, and explicit pass/revise/kill criteria. New computational, wet-lab, or clinical evidence can change that decision without redefining the mission.
 
-A static rubric here would be a snapshot of heuristics that drifts from the live evaluator. Items 1–5 of the 2026-05-15 sweep walkthrough are concrete evidence the mechanism works as designed: the daemon surfaced promotion-worthy recommendations (PDB×disulfiram CP6 stack, CFTR-corrector Q141K chaperone, inhaled mRNA-IL-1RA temporal complement) from chassis-pending entries; the walkthrough operator decided per-item; the actions shipped without anyone ever consulting a documented rubric. The dynamic process IS the rubric implementation.
-
-This is why "park" and "falsify" don't appear as named statuses in the entries above — the page records *interventions and their current chassis-question state*, not *decisions about resource allocation*. Decisions live in walkthrough closure annotations (`synthesis/done/`) and in the canonical wiki pages that come out of promotions. The chassis-pending page is the index of the open chokepoint-fit-without-chassis state, not the decision log.
+This is why "park" and "falsify" don't appear as named statuses in the entries above — the page records *interventions and their current chassis-question state*, not *decisions about resource allocation*. Decisions live in walkthrough closure annotations and in the canonical wiki pages that come out of promotions. The chassis-pending page is the index of the open chokepoint-fit-without-chassis state, not the decision log.
 
 ## Maintenance
 
-- Updated on any walk-synthesis closure where a finding hits a chokepoint but lacks a chassis (see closure question in `.claude/skills/walk-synthesis/SKILL.md`).
-- Updated when the sweep daemon's Pass 2/3 review surfaces a chassis-expanding finding (see anti-chassis-filter language in `scripts/sweep-prompt-2-synthesize.md` and `scripts/sweep-prompt-3-review.md`).
-- The strategic reflection in [`synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md`](../synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md) is the discipline anchor. The page itself is the operational manifestation of that discipline.
+- Updated whenever a finding hits a gout chokepoint but the appropriate delivery or production implementation remains open.
+- Updated when propagation or explicit synthesis surfaces a credible chassis-expanding finding.
+- The [mission and operating principles](./etc/open-enzyme-vision.md) are the discipline anchor.
 - The page is **not** a deprioritization queue. Entries here are real interventions waiting on a real next step — not "won't-fix" or "off-platform." Treat as active research, just on a different chassis track from the koji-engineering track.
