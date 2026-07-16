@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
-"""Create and verify hash-bound snapshots for COMP review gates."""
+"""Create and verify hash-bound snapshots for COMP review gates.
+
+``pre`` and ``post`` are the mandatory authoring-time gates. ``push`` binds
+the independent daemon review to the exact committed artifact plus every
+current wiki surface that explicitly references it. Review files are excluded
+from all three manifests so replacing a receipt cannot invalidate itself.
+"""
 
 from __future__ import annotations
 
 import argparse
 import hashlib
 import json
+import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -70,6 +78,31 @@ def comp_files(comp_dir: Path) -> tuple[list[Path], list[Path]]:
     return design, outputs
 
 
+def comp_id(comp_dir: Path) -> str:
+    match = re.match(r"^(comp-\d{3})(?:-|$)", comp_dir.name)
+    if not match:
+        raise SystemExit(f"Not a COMP directory: {comp_dir}")
+    return match.group(1)
+
+
+def referencing_wiki_files(identifier: str, comp_dir: Path) -> list[Path]:
+    result = subprocess.run(
+        [
+            "git", "grep", "-l", "-F", identifier, "--",
+            "wiki/*.md", "wiki/hypotheses/*.md",
+        ],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+    )
+    paths: list[Path] = []
+    for raw in result.stdout.splitlines():
+        path = repo_path(raw)
+        if path.is_file() and path != comp_dir and comp_dir not in path.parents:
+            paths.append(path)
+    return sorted(set(paths))
+
+
 def manifest_digest(payload: dict[str, object]) -> str:
     canonical = json.dumps(
         payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False
@@ -89,8 +122,11 @@ def create(args: argparse.Namespace) -> None:
 
     design_files, output_files = comp_files(comp_dir)
     proposed = [repo_path(raw) for raw in args.proposed_file]
+    if args.phase == "push":
+        proposed.extend(referencing_wiki_files(comp_id(comp_dir), comp_dir))
+        proposed = sorted(set(proposed))
     if args.phase == "pre" and proposed:
-        raise SystemExit("--proposed-file is valid only for a post-run manifest")
+        raise SystemExit("--proposed-file is valid only for post-run or push manifests")
     if args.phase == "post" and not proposed:
         raise SystemExit("Post-run manifest requires every proposed update via --proposed-file")
     if any(path == comp_dir or comp_dir in path.parents for path in proposed):
@@ -102,13 +138,13 @@ def create(args: argparse.Namespace) -> None:
         raise SystemExit("Duplicate --proposed-file paths are not allowed")
 
     payload: dict[str, object] = {
-        "schema_version": 1,
+        "schema_version": 2 if args.phase == "push" else 1,
         "phase": args.phase,
         "comp_dir": relative(comp_dir),
         "files": [entry(path, "design") for path in design_files]
         + (
             [entry(path, "generated_output") for path in output_files]
-            if args.phase == "post"
+            if args.phase in {"post", "push"}
             else []
         )
         + [entry(path, "proposed_update") for path in sorted(proposed)],
@@ -174,7 +210,7 @@ def check(args: argparse.Namespace) -> None:
                 )
 
     phase = document.get("phase")
-    if phase not in {"pre", "post"}:
+    if phase not in {"pre", "post", "push"}:
         errors.append(f"invalid phase: {phase!r}")
     comp_dir = repo_path(str(document.get("comp_dir", "")))
     current_design, current_outputs = comp_files(comp_dir)
@@ -197,7 +233,7 @@ def check(args: argparse.Namespace) -> None:
         if path.is_file():
             current_proposed_entries.append(entry(path, "proposed_update"))
     errors.extend(compare_entries(recorded_design, current_design_entries, "design file"))
-    if phase == "post":
+    if phase in {"post", "push"}:
         errors.extend(
             compare_entries(recorded_outputs, current_output_entries, "generated output")
         )
@@ -209,7 +245,7 @@ def check(args: argparse.Namespace) -> None:
 
     recorded_baseline = list(document.get("prior_output_baseline", []))
     current_baseline = [entry(path, "prior_output") for path in current_outputs]
-    if phase == "post":
+    if phase in {"post", "push"}:
         if recorded_baseline:
             errors.append("post-run manifest unexpectedly contains a prior-output baseline")
         current_baseline = []
@@ -227,7 +263,7 @@ def parser() -> argparse.ArgumentParser:
     subparsers = root.add_subparsers(dest="command", required=True)
 
     create_parser = subparsers.add_parser("create")
-    create_parser.add_argument("--phase", choices=("pre", "post"), required=True)
+    create_parser.add_argument("--phase", choices=("pre", "post", "push"), required=True)
     create_parser.add_argument("--comp-dir", required=True)
     create_parser.add_argument("--output", required=True)
     create_parser.add_argument("--proposed-file", action="append", default=[])

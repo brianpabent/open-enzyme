@@ -1,0 +1,51 @@
+name: Push knowledge update
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'wiki/*.md'
+      - 'wiki/hypotheses/*.md'
+      - 'wiki/etc/experiments/comp-*/**'
+
+permissions:
+  contents: write
+
+# Preserve every human push. Runs serialize rather than cancel so one batch
+# cannot silently bless another batch it did not inspect.
+concurrency:
+  group: knowledge-update-main
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
+      - id: check
+        run: |
+          message=$(git log -1 --format=%B)
+          if grep -q '\[skip-knowledge-update\]' <<< "$message"; then
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          fi
+
+  comp-review:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
+    uses: ./.github/workflows/comp-review.yml
+    with:
+      before_sha: ${{ github.event.before }}
+      head_sha: ${{ github.sha }}
+    secrets: inherit
+
+  propagate:
+    needs: [gate, comp-review]
+    if: always() && needs.gate.outputs.run == 'true' && (needs.comp-review.result == 'success' || needs.comp-review.result == 'skipped')
+    uses: ./.github/workflows/wiki-propagate.yml
+    secrets: inherit

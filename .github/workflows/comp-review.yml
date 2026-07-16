@@ -1,19 +1,38 @@
-name: Independent comp artifact review
-
-# The full wiki sweep excludes wiki/etc/experiments/ to stay within model
-# context limits. This workflow restores a mandatory, artifact-level review
-# whenever a comp changes, without inlining every comp into every full sweep.
+name: Exact COMP artifact review
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'wiki/etc/experiments/comp-*/**'
+  workflow_call:
+    inputs:
+      before_sha:
+        required: true
+        type: string
+      head_sha:
+        required: true
+        type: string
+      comp:
+        required: false
+        type: string
+        default: ''
+    outputs:
+      reviewed_count:
+        value: ${{ jobs.review.outputs.reviewed_count }}
+      has_blocked:
+        value: ${{ jobs.review.outputs.has_blocked }}
   workflow_dispatch:
     inputs:
       comp:
-        description: 'comp-NNN prefix, full comp dir, space/comma-separated list, "unreviewed" (un-audited backlog), or "all"'
+        description: 'comp-NNN prefix, full COMP directory, comma-separated list, or all'
         required: true
+        type: string
+      max_cost_per_comp_usd:
+        description: 'Explicit per-COMP hard cap'
+        required: false
+        default: '2.50'
+        type: string
+      max_cost_per_push_usd:
+        description: 'Explicit aggregate hard cap'
+        required: false
+        default: '5.00'
         type: string
 
 permissions:
@@ -27,153 +46,156 @@ jobs:
   review:
     runs-on: ubuntu-latest
     timeout-minutes: 360
+    outputs:
+      reviewed_count: ${{ steps.result.outputs.reviewed_count }}
+      has_blocked: ${{ steps.result.outputs.has_blocked }}
     env:
       COMP_REVIEW_MODEL: openai/gpt-5.5
+      PER_COMP_CAP: ${{ inputs.max_cost_per_comp_usd || '2.50' }}
+      AGGREGATE_CAP: ${{ inputs.max_cost_per_push_usd || '5.00' }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Select changed comp artifacts
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Select exact artifact changes
         id: select
         env:
-          EVENT_NAME: ${{ github.event_name }}
-          BEFORE_SHA: ${{ github.event.before }}
-          HEAD_SHA: ${{ github.sha }}
+          BEFORE_SHA: ${{ inputs.before_sha }}
+          HEAD_SHA: ${{ inputs.head_sha || github.sha }}
           MANUAL_COMP: ${{ inputs.comp }}
         run: |
           set -euo pipefail
-          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
-            if [ "$MANUAL_COMP" = "all" ]; then
+          : > /tmp/comp-dirs.txt
+          if [[ -n "$MANUAL_COMP" ]]; then
+            if [[ "$MANUAL_COMP" == "all" ]]; then
               find wiki/etc/experiments -mindepth 1 -maxdepth 1 -type d -name 'comp-*' | sort > /tmp/comp-dirs.txt
-            elif [ "$MANUAL_COMP" = "unreviewed" ]; then
-              # Backfill mode: select every comp dir with no existing review log.
-              # A comp counts as reviewed if logs/comp-reviews/ holds a file
-              # naming its comp-NNN id (clean reviews still write a log). This
-              # audits the un-reviewed back-catalog in ONE run / ONE push rather
-              # than one dispatch per comp — the concurrency group only holds one
-              # pending run, so rapid per-comp dispatches cancel each other.
-              REVIEWED=$(ls logs/comp-reviews/ 2>/dev/null | grep -oE 'comp-[0-9]+' | sort -u)
-              : > /tmp/comp-dirs.txt
-              for D in $(find wiki/etc/experiments -mindepth 1 -maxdepth 1 -type d -name 'comp-*' | sort); do
-                NNN=$(basename "$D" | grep -oE 'comp-[0-9]+')
-                printf '%s\n' "$REVIEWED" | grep -qx "$NNN" || printf '%s\n' "$D" >> /tmp/comp-dirs.txt
-              done
-            elif printf '%s' "$MANUAL_COMP" | grep -q '[ ,]'; then
-              # Explicit list: space/comma-separated comp dirs or comp-NNN prefixes.
-              printf '%s' "$MANUAL_COMP" | tr ',' ' ' | tr -s ' ' '\n' | while IFS= read -r TOKEN; do
-                [ -n "$TOKEN" ] || continue
-                if [ -d "$TOKEN" ]; then
-                  printf '%s\n' "$TOKEN"
+            else
+              printf '%s' "$MANUAL_COMP" | tr ',' '\n' | while IFS= read -r token; do
+                token=$(printf '%s' "$token" | xargs)
+                [[ -n "$token" ]] || continue
+                if [[ -d "$token" ]]; then
+                  printf '%s\n' "$token"
                 else
-                  find wiki/etc/experiments -mindepth 1 -maxdepth 1 -type d -name "${TOKEN}*"
+                  find wiki/etc/experiments -mindepth 1 -maxdepth 1 -type d -name "${token}*"
                 fi
               done | sort -u > /tmp/comp-dirs.txt
-            elif [ -d "$MANUAL_COMP" ]; then
-              printf '%s\n' "$MANUAL_COMP" > /tmp/comp-dirs.txt
-            else
-              find wiki/etc/experiments -mindepth 1 -maxdepth 1 -type d -name "${MANUAL_COMP}*" | sort > /tmp/comp-dirs.txt
             fi
-            printf '%s\n' "" > /tmp/diff-base.txt
           else
-            DIFF_BASE="$BEFORE_SHA"
-            if [ -z "$DIFF_BASE" ] || echo "$DIFF_BASE" | grep -Eq '^0+$'; then
-              DIFF_BASE="${HEAD_SHA}^"
+            base="$BEFORE_SHA"
+            if [[ -z "$base" || "$base" =~ ^0+$ ]]; then
+              base="${HEAD_SHA}^"
             fi
-            git diff --name-only "$DIFF_BASE..$HEAD_SHA" -- 'wiki/etc/experiments/comp-*/**' \
+            git diff --name-only "$base..$HEAD_SHA" -- 'wiki/etc/experiments/comp-*/**' \
+              | grep -vE '/reviews/(push-review(\.manifest)?\.(md|json)|push-review\.json)$' \
               | sed -E 's#^(wiki/etc/experiments/comp-[^/]+)/.*#\1#' \
-              | sort -u > /tmp/comp-dirs.txt
-            printf '%s\n' "$DIFF_BASE" > /tmp/diff-base.txt
+              | sort -u > /tmp/comp-dirs.txt || true
           fi
-
-          if [ ! -s /tmp/comp-dirs.txt ]; then
-            echo "No comp directories selected"
-            echo "count=0" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          echo "Selected comp directories:"
+          count=$(grep -c . /tmp/comp-dirs.txt || true)
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          echo "Selected $count changed COMP artifacts"
           cat /tmp/comp-dirs.txt
-          echo "count=$(wc -l < /tmp/comp-dirs.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
 
-      - name: Review each selected comp
+      - name: Complete-review cost preflight
+        if: steps.select.outputs.count != '0'
+        run: |
+          set -euo pipefail
+          total=0
+          : > /tmp/comp-preflight.jsonl
+          while IFS= read -r comp_dir; do
+            [[ -n "$comp_dir" ]] || continue
+            metadata=$(python3 scripts/comp-review.py \
+              --comp-dir "$comp_dir" --commit-sha "${{ inputs.head_sha || github.sha }}" \
+              --prepare-only --max-cost-usd "$PER_COMP_CAP")
+            printf '%s\n' "$metadata" >> /tmp/comp-preflight.jsonl
+            cost=$(python3 -c 'import json,sys; print(json.loads(sys.argv[1])["projected_cost_usd"])' "$metadata")
+            total=$(python3 -c 'import sys; print(float(sys.argv[1])+float(sys.argv[2]))' "$total" "$cost")
+          done < /tmp/comp-dirs.txt
+          python3 -c 'import sys; total=float(sys.argv[1]); cap=float(sys.argv[2]); print(f"Projected aggregate: ${total:.4f} / ${cap:.4f}"); raise SystemExit(total > cap)' "$total" "$AGGREGATE_CAP"
+
+      - name: Review every selected artifact and update current eligibility
         if: steps.select.outputs.count != '0'
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          HEAD_SHA: ${{ github.sha }}
+          HEAD_SHA: ${{ inputs.head_sha || github.sha }}
         run: |
           set -euo pipefail
-          DIFF_BASE=$(cat /tmp/diff-base.txt)
-          : > /tmp/comp-review-failures.txt
-          while IFS= read -r COMP_DIR; do
-            [ -n "$COMP_DIR" ] || continue
-            ARGS=(
-              --comp-dir "$COMP_DIR"
-              --commit-sha "$HEAD_SHA"
-              --model "$COMP_REVIEW_MODEL"
-              --prompt-file scripts/comp-review-prompt.md
-            )
-            if [ -n "$DIFF_BASE" ]; then
-              ARGS+=(--diff-base "$DIFF_BASE")
-            fi
-            if ! python3 scripts/comp-review.py "${ARGS[@]}"; then
-              echo "$COMP_DIR" | tee -a /tmp/comp-review-failures.txt
-            fi
+          : > /tmp/comp-review-results.txt
+          actual_total=0
+          while IFS= read -r comp_dir; do
+            [[ -n "$comp_dir" ]] || continue
+            result=$(python3 scripts/comp-review.py \
+              --comp-dir "$comp_dir" --commit-sha "$HEAD_SHA" \
+              --model "$COMP_REVIEW_MODEL" --max-cost-usd "$PER_COMP_CAP")
+            printf '%s\n' "$result" | tee -a /tmp/comp-review-results.txt
+            json_path=$(printf '%s\n' "$result" | sed -n 's/^REVIEW_JSON=//p')
+            receipt_path=$(printf '%s\n' "$result" | sed -n 's/^REVIEW_RECEIPT=//p')
+            python3 - "$json_path" "$receipt_path" <<'PY'
+          import json, subprocess, sys
+          receipt = json.load(open(sys.argv[1]))
+          manifest = json.load(open(receipt_path := receipt["comp_dir"] + "/reviews/push-review.manifest.json"))
+          derived = sorted(item["path"] for item in manifest["files"] if item["kind"] == "proposed_update")
+          subprocess.run([
+              sys.executable, "scripts/sweep-state.py", "record-comp-review",
+              "--comp-id", receipt["comp"],
+              "--comp-dir", receipt["comp_dir"],
+              "--artifact-manifest-sha256", receipt["artifact_manifest_sha256"],
+              "--source-commit", receipt["source_commit"],
+              "--review-receipt", sys.argv[2],
+              "--comp-verdict", receipt["comp_verdict"],
+              "--propagation-eligibility", receipt["propagation_eligibility"],
+              "--synthesis-eligibility", receipt["synthesis_eligibility"],
+              "--derived-paths", ",".join(derived),
+              "--cost-usd", str(receipt["actual_cost_usd"]),
+          ], check=True)
+          PY
+            cost=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["actual_cost_usd"])' "$json_path")
+            actual_total=$(python3 -c 'import sys; print(float(sys.argv[1])+float(sys.argv[2]))' "$actual_total" "$cost")
+            python3 -c 'import sys; raise SystemExit(float(sys.argv[1]) > float(sys.argv[2]))' "$actual_total" "$AGGREGATE_CAP"
           done < /tmp/comp-dirs.txt
 
-          if [ -s /tmp/comp-review-failures.txt ]; then
-            mkdir -p logs/comp-reviews
-            FAILURE_LOG="logs/comp-reviews/$(date -u +%F)-run-${GITHUB_RUN_ID}-failures.md"
-            {
-              echo "# Comp-review failures — run ${GITHUB_RUN_ID}"
-              echo
-              echo "The following selected comp artifacts did not complete review:"
-              echo
-              sed 's/^/- `/' /tmp/comp-review-failures.txt | sed 's/$/`/'
-              echo
-              echo "Successful comp reviews from this run are preserved. Re-run the failed comps via workflow_dispatch."
-            } > "$FAILURE_LOG"
-          fi
-
-      - name: Commit review logs and actionable queue items
+      - name: Commit current receipts and state
         if: steps.select.outputs.count != '0'
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add logs/comp-reviews/ synthesis/queue/
+          while IFS= read -r comp_dir; do
+            [[ -n "$comp_dir" ]] || continue
+            git add -A "$comp_dir/reviews"
+            queue_path="synthesis/queue/comp-review-$(basename "$comp_dir" | sed -E 's/^comp-([0-9]{3}).*/\1/').md"
+            if [[ -e "$queue_path" ]] || git ls-files --error-unmatch "$queue_path" >/dev/null 2>&1; then
+              git add -A "$queue_path"
+            fi
+          done < /tmp/comp-dirs.txt
+          git add logs/sweep-state.json
           if git diff --cached --quiet; then
-            echo "Comp review produced no new artifacts"
-            exit 0
+            echo "No receipt changes"
+          else
+            git commit -m "comp-review: replace current exact-artifact receipts [skip-knowledge-update]"
           fi
-          git commit -m "comp-review: independent artifact audit [skip-wiki-sweep]"
 
-      - name: Push review artifacts
+      - name: Push current receipts
         if: steps.select.outputs.count != '0'
         run: |
           set -euo pipefail
-          if ! git log origin/main..HEAD --oneline | grep -q .; then
-            echo "No comp-review commit to push"
-            exit 0
+          if git log origin/main..HEAD --oneline | grep -q .; then
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
-          for attempt in 1 2 3; do
-            git fetch origin main
-            if git log HEAD..origin/main --oneline | grep -q .; then
-              git rebase --autostash origin/main || { git rebase --abort || true; exit 1; }
-            fi
-            if git push; then
-              exit 0
-            fi
-            sleep $((attempt * 5))
-          done
-          echo "Comp-review push failed after 3 attempts"
-          exit 1
 
-      - name: Fail run if any selected comp was not reviewed
-        if: steps.select.outputs.count != '0'
+      - name: Publish reusable result
+        id: result
         run: |
-          if [ -s /tmp/comp-review-failures.txt ]; then
-            echo "One or more comp reviews failed; successful reviews and the failure ledger were preserved."
-            cat /tmp/comp-review-failures.txt
-            exit 1
+          count="${{ steps.select.outputs.count }}"
+          blocked=false
+          if [[ "$count" != "0" ]] && grep -Eq '^(PROPAGATION_ELIGIBILITY|SYNTHESIS_ELIGIBILITY)=blocked$' /tmp/comp-review-results.txt; then
+            blocked=true
           fi
+          echo "reviewed_count=$count" >> "$GITHUB_OUTPUT"
+          echo "has_blocked=$blocked" >> "$GITHUB_OUTPUT"

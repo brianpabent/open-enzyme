@@ -1,0 +1,129 @@
+name: Bounded wiki propagation
+
+on:
+  workflow_call:
+    inputs:
+      trigger_paths:
+        required: false
+        type: string
+        default: ''
+  workflow_dispatch:
+    inputs:
+      trigger_paths:
+        description: 'Optional newline/space-separated current research paths; blank uses propagation cursor'
+        required: false
+        type: string
+      max_cost_usd:
+        description: 'Hard propagation cap'
+        required: false
+        default: '0.50'
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wiki-propagate-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  propagate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      MAX_COST_USD: ${{ inputs.max_cost_usd || '0.50' }}
+      PROPAGATION_MODEL: deepseek/deepseek-v4-pro
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Select eligible bounded trigger set
+        id: select
+        env:
+          EXPLICIT_PATHS: ${{ inputs.trigger_paths }}
+        run: |
+          set -euo pipefail
+          cursor=$(python3 -c 'import json; d=json.load(open("logs/sweep-state.json")); print((d.get("last_successful_propagation") or {}).get("coverage_commit", ""))')
+          if [[ -z "$cursor" ]]; then
+            echo "Missing propagation cursor"
+            exit 1
+          fi
+          if [[ -n "$EXPLICIT_PATHS" ]]; then
+            printf '%s' "$EXPLICIT_PATHS" | tr ', ' '\n' | grep -v '^$' | sort -u > /tmp/propagation-paths.txt
+          else
+            python3 scripts/sweep-state.py pending-propagation-paths > /tmp/propagation-paths.txt
+          fi
+          count=$(grep -c . /tmp/propagation-paths.txt || true)
+          if (( count > 25 )); then
+            python3 scripts/sweep-state.py record-failure \
+              --failure-id "propagation-${{ github.run_id }}" --lane propagation-preflight \
+              --error-summary "Eligible trigger set exceeded 25-path bound" \
+              --paths "$(paste -sd, /tmp/propagation-paths.txt)"
+            echo "Propagation overflow: $count eligible paths; refusing silent truncation"
+            exit 1
+          fi
+          coverage=$(git rev-parse HEAD)
+          echo "cursor=$cursor" >> "$GITHUB_OUTPUT"
+          echo "coverage=$coverage" >> "$GITHUB_OUTPUT"
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          {
+            echo 'paths<<EOF'
+            cat /tmp/propagation-paths.txt
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Propagate current findings
+        id: run
+        if: steps.select.outputs.count != '0'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          set -euo pipefail
+          python3 scripts/sweep-1-propagate.py \
+            --commit-sha "${{ steps.select.outputs.coverage }}" \
+            --diff-base "${{ steps.select.outputs.cursor }}" \
+            --trigger-files "${{ steps.select.outputs.paths }}" \
+            --model "$PROPAGATION_MODEL" \
+            --max-iterations 12 --max-cost-usd "$MAX_COST_USD"
+
+      - name: Advance propagation coverage, including no-op batches
+        run: |
+          set -euo pipefail
+          result_commit=$(git rev-parse HEAD)
+          affected="${{ steps.run.outputs.propagated_files }}"
+          affected_csv=$(printf '%s' "$affected" | tr '\n' ',' | sed 's/,$//')
+          blocked=$(python3 -c '
+          import json
+          d=json.load(open("logs/sweep-state.json"))
+          paths=set()
+          for record in d.get("comp_reviews", {}).values():
+              if record.get("propagation_eligibility") == "blocked":
+                  paths.add(record.get("comp_dir", ""))
+                  paths.update(record.get("derived_paths", []))
+          print(",".join(sorted(p for p in paths if p)))
+          ')
+          python3 scripts/sweep-state.py update-propagation \
+            --coverage-commit "${{ steps.select.outputs.coverage }}" \
+            --result-commit "$result_commit" \
+            --expected-cursor "${{ steps.select.outputs.cursor }}" \
+            --changed-paths "$(paste -sd, /tmp/propagation-paths.txt)" \
+            --affected-paths "$affected_csv" --blocked-paths "$blocked" \
+            --cost-usd "${{ steps.run.outputs.cost_usd || '0' }}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add logs/sweep-state.json
+          git commit -m "propagation-state: cover ${{ steps.select.outputs.coverage }} [skip-knowledge-update]"
+
+      - name: Push propagation and state atomically
+        run: |
+          set -euo pipefail
+          git pull --rebase origin main
+          git push origin HEAD:main

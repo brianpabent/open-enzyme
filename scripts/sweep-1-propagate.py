@@ -356,12 +356,14 @@ def call_openrouter(api_key, model, messages, max_tokens=4000, max_retries=4):
         os.unlink(body_path)
 
 
-def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=40):
+def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=12, max_cost_usd=0.50):
     messages = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt},
     ]
     total_in = total_out = total_cached = 0
+    total_cost = 0.0
+    cost_is_estimated = False
     iteration = 0
     done_summary = None
     last_text = None
@@ -380,6 +382,20 @@ def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=
         total_in += in_tok
         total_out += out_tok
         total_cached += cached_tok
+        provider_cost = usage.get("cost")
+        if provider_cost is not None:
+            total_cost += float(provider_cost)
+        else:
+            in_per, out_per = PRICING_USD_PER_MTOK.get(model, (None, None))
+            if in_per is None:
+                raise SystemExit("Provider omitted usage.cost and no conservative route estimate is configured")
+            total_cost += (in_tok * in_per + out_tok * out_per) / 1_000_000
+            cost_is_estimated = True
+        if total_cost > max_cost_usd:
+            raise SystemExit(
+                f"Propagation cost ${total_cost:.4f} exceeded hard cap ${max_cost_usd:.4f}; "
+                "refusing to commit partial propagation"
+            )
 
         assistant_turn = {"role": "assistant", "content": msg.get("content")}
         if msg.get("tool_calls"):
@@ -428,6 +444,8 @@ def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=
         "completed": done_summary is not None,
         "last_text": last_text,
         "hit_iter_cap": iteration >= max_iterations and done_summary is None,
+        "cost_usd": total_cost,
+        "cost_is_estimated": cost_is_estimated,
     }
 
 
@@ -475,7 +493,10 @@ def stage_and_commit(trigger_files, diff_base, model, summary, dry_run):
     if len(trigger_files) > 3:
         basenames += f", +{len(trigger_files) - 3} more"
     n = len(changed)
-    title = f"sweep-1-propagate: {basenames} → {n} files updated [skip-wiki-sweep]"
+    title = (
+        f"propagate: {basenames} → {n} files updated "
+        "[skip-wiki-sweep] [skip-knowledge-update]"
+    )
 
     body_lines = [
         title, "",
@@ -503,7 +524,8 @@ def main():
     parser.add_argument("--model", default=DEFAULT_MODEL,
                         help=f"OpenRouter model slug (default: {DEFAULT_MODEL})")
     parser.add_argument("--prompt-file", default=DEFAULT_PROMPT)
-    parser.add_argument("--max-iterations", type=int, default=40)
+    parser.add_argument("--max-iterations", type=int, default=12)
+    parser.add_argument("--max-cost-usd", type=float, default=0.50)
     parser.add_argument("--dry-run", action="store_true",
                         help="Run the agentic loop and report changes, but skip git commit")
     args = parser.parse_args()
@@ -553,6 +575,7 @@ def main():
     loop = run_agentic_loop(
         api_key, args.model, system_prompt, user_prompt,
         max_iterations=args.max_iterations,
+        max_cost_usd=args.max_cost_usd,
     )
 
     in_per, out_per = PRICING_USD_PER_MTOK.get(args.model, (None, None))
@@ -568,7 +591,7 @@ def main():
             ) / 1_000_000
         else:
             cost = (loop["input_tokens"] * in_per + loop["output_tokens"] * out_per) / 1_000_000
-        cost_str = f"${cost:.4f}"
+        cost_str = f"${loop['cost_usd']:.4f}" + (" estimated" if loop["cost_is_estimated"] else "")
     else:
         cost_str = "(unknown)"
 
@@ -616,6 +639,8 @@ def main():
             f.write("propagated_files<<PROPAGATED_EOF\n")
             f.write("\n".join(propagated_files))
             f.write("\nPROPAGATED_EOF\n")
+            f.write(f"cost_usd={loop['cost_usd']:.6f}\n")
+            f.write(f"cost_is_estimated={'true' if loop['cost_is_estimated'] else 'false'}\n")
 
 
 if __name__ == "__main__":

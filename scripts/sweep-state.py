@@ -156,9 +156,13 @@ def cmd_pending_propagation_paths(_args: argparse.Namespace) -> None:
     base = _cursor(data, "propagation")
     if not base:
         sys.exit("sweep-state.py: no propagation cursor recorded")
-    paths = _git_changed_paths(base, ["wiki/*.md", "wiki/hypotheses/*.md", "wiki/etc/experiments/comp-*/**"])
+    paths = set(_git_changed_paths(base, ["wiki/*.md", "wiki/hypotheses/*.md", "wiki/etc/experiments/comp-*/**"]))
+    # A cursor may move past a blocked mixed push so unrelated work can finish.
+    # Keep the blocked subset explicitly pending until a later clean receipt
+    # releases it.
+    paths.update((data.get("last_successful_propagation") or {}).get("blocked_paths", []))
     blocked = _blocked_paths(data)
-    for path in paths:
+    for path in sorted(paths):
         if any(path == b or path.startswith(f"{b}/") for b in blocked):
             continue
         print(path)
