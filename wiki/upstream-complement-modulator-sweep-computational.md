@@ -43,7 +43,6 @@ status: complete (Phase 2)
 
 > **⚠️ Keep Phase-0 hypothesis-generating (comp-review 2026-07-14).** comp-018 is a useful literature-catalog artifact, but the reproducible script only validates/rewrites a scope summary — it does NOT reproduce the literature sweep, `outputs/summary.md` is referenced but not tracked, and several headline numbers (rosmarinic-acid 5–10 µM, dietary-scale CP0 relevance) are stronger than the artifact + provenance support. "Documented anticomplement activity exists upstream of C5aR1" holds as a catalog conclusion; "dietary rosemary / luteolin / Houttuynia will modulate gout-relevant CP0 in vivo" is NOT resolved here.
 
-> **Frozen analysis archived to [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md)** (336 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
@@ -52,7 +51,6 @@ status: complete (Phase 2)
 > **⚠️ Read this before propagating any finding from this page.** > > The brief that produced this experiment was contaminated by a contrived user-framing example ("if it's in rosemary I'll grow rosemary"), which biased the headline-promotion of rosmarinic acid as the singular Tier-1 candidate. **An independent brief-scrubbed verification re-run (comp-020)** ran 2026-05-08 and produced a meaningfully different ranking: three tied tier-1 candidates instead of one, with ***Helicteres* benzofuran lignans** (CH50 9/40 µM, single-paper anchor PMC6273495) as the highest-potency single hit in the corpus — beating rosmarinic acid by 4-20× on a matched assay. comp-020 also […]
 
 **Where the analysis lives:**
-- Full archived analysis: [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/)
 - **Phase 2 multilingual + Helicteres replication + C1-INH engineering literature:** [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

@@ -40,7 +40,7 @@ sources:
 
 ## Claim (provisional, stub-level)
 
-Open Enzyme can produce reproducible, bioactivity-validated medicinal-mushroom-complement extracts at quality sufficient to make the medicinal-mushroom track a viable **peer** to the koji-engineering track for the Open Enzyme platform thesis. The thesis composes three sub-claims, each independently falsifiable:
+Open Enzyme can produce reproducible, bioactivity-validated medicinal-mushroom-complement extracts at quality sufficient to keep the medicinal-mushroom track active in the portfolio. The hypothesis composes three sub-claims, each independently falsifiable:
 
 1. **Cultivation reproducibility.** For each top Phase 7 candidate species (*G. lucidum* / GLPP, *C. militaris* / cordycepin, *P. ostreatus* / ergothioneine), an Open Enzyme-published cultivation SOP (strain selection + substrate + conditions + cycle time) produces compound yields that vary <50% batch-to-batch when followed by independent contributors. (Industry-wide consumer-supplement variability is currently >100× — Open Enzyme's reproducibility floor needs to be meaningfully better than the unregulated baseline to add value.)
 
@@ -109,7 +109,7 @@ To be populated when full-card. Conceptually similar to other peer-track stubs.
 See related list in frontmatter. Particularly:
 
 - [`medicinal-mushroom-complement-track.md`](../medicinal-mushroom-complement-track.md) — the scope page this card is the falsification mirror of
-- [`H02-engineered-lbp-thesis.md`](./H02-engineered-lbp-thesis.md), [`H03-sirna-urat1-thesis.md`](./H03-sirna-urat1-thesis.md), [`H05-daf-scr14-cp0-thesis.md`](./H05-daf-scr14-cp0-thesis.md) — sister peer-track hypothesis cards under the broader "explore every avenue" platform thesis
+- [`H02-engineered-lbp-thesis.md`](./H02-engineered-lbp-thesis.md), [`H03-sirna-urat1-thesis.md`](./H03-sirna-urat1-thesis.md), [`H05-daf-scr14-cp0-thesis.md`](./H05-daf-scr14-cp0-thesis.md) — other independently falsifiable track cards
 - [`medicinal-mushroom-compound-mapping-computational.md`](../medicinal-mushroom-compound-mapping-computational.md) — comp-014, the computational analysis whose Phase 6 triage spawned this Phase 7 track + hypothesis card
 
 ---

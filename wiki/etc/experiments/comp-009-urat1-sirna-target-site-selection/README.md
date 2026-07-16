@@ -48,7 +48,6 @@ comp-009-urat1-sirna-target-site-selection/
     shortlist.csv
     summary.md
   README.md                      ← this file
-  wiki-archive.md                ← snapshot of the wiki page at first commit
 ```
 
 ---

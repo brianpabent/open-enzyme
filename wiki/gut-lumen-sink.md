@@ -214,16 +214,18 @@ Phase 2a dosing was orders of magnitude higher than IV rasburicase (0.15–0.2 m
 
 **Clinical optimization pending:** The exact dose required for optimal response remains an open question, but the range suggests feasible supplement dosing. (Source: engineered-yeast-uricase-proposal.md)
 
-## Integration with Open Enzyme Platform
+## Integration with Open Enzyme
 
 ### Koji-track implication
 
-The [[open-enzyme-vision|Open Enzyme project]] prioritizes [[aspergillus-oryzae|koji]] as the first platform because:
+The koji track tests whether [[aspergillus-oryzae|*A. oryzae*]] is a useful host for a gut-lumen uricase sink because:
 
-1. **Dual-enzyme benefit:** Wild-type koji produces digestive enzymes (addressing Lynn's enzyme insufficiency); engineered koji adds uricase (addressing Brian's gout)
-2. **Simple home fermentation:** Rice, spores, 36–48 hours at ambient humidity and moderate temperature
-3. **Ancient safety:** Millennia of safe consumption; GRAS status
-4. **Gut-lumen strategy:** Perfect fit for uricase; enzyme works where it's naturally produced during fermentation
+1. **Native secretion:** Wild-type koji already produces several digestive enzymes.
+2. **Food-format option:** Solid-state rice fermentation could provide an oral delivery matrix.
+3. **Food-use precedent:** The species has a long history in food production, although the engineered strain requires its own safety case.
+4. **Local mechanism:** The intended uricase action is luminal rather than systemic.
+
+These are reasons to run the track, not evidence that it will work. Yeast, purified enzymes, and engineered LBPs remain competing implementations of the same or adjacent mechanisms.
 
 ### Yeast as Rapid Proof-of-Concept
 

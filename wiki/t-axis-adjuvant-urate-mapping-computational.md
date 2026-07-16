@@ -44,7 +44,6 @@ status: complete (v2 — XO added as 5th target; eurycomanone verdict reversed)
 
 # T-axis Adjuvant Urate-Target Mapping — Computational Analysis (comp-015 v2)
 
-> **Frozen analysis archived to [`./etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/wiki-archive.md`](./etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/wiki-archive.md)** (216 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
@@ -53,6 +52,5 @@ status: complete (v2 — XO added as 5th target; eurycomanone verdict reversed)
 For each of four T-axis-active natural compounds — cordycepin (*Cordyceps militaris*), eurycomanone (*Eurycoma longifolia* / tongkat ali), icariin (*Epimedium* spp.), and echinacoside (*Cistanche deserticola*/*tubulosa*) — what is the curated bioactivity evidence at the four dominant urate-handling + T-axis targets (URAT1, ABCG2, OAT1, SHBG), and which is the most gout-favorable T-axis adjuvant?
 
 **Where the analysis lives:**
-- Full archived analysis: [`./etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/wiki-archive.md`](./etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/`](./etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

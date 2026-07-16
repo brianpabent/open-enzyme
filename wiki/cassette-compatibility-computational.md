@@ -34,7 +34,6 @@ status: complete
 
 # Cassette Compatibility — Dual-Cassette Koji Endgame Strain (Computational, comp-010)
 
-> **Frozen analysis archived to [`./etc/experiments/comp-010-cassette-compatibility/wiki-archive.md`](./etc/experiments/comp-010-cassette-compatibility/wiki-archive.md)** (241 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
@@ -43,6 +42,5 @@ status: complete
 Does the uricase (Q00511) + lactoferrin (P02788) payload pair have any cassette-design-specific issues — codon collisions, KEX2 site geometry problems, or secretion-pathway burden — that the Ward 1995 glucoamylase-KEX2 fusion architecture will not handle out of the box in *A. oryzae*?
 
 **Where the analysis lives:**
-- Full archived analysis: [`./etc/experiments/comp-010-cassette-compatibility/wiki-archive.md`](./etc/experiments/comp-010-cassette-compatibility/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-010-cassette-compatibility/`](./etc/experiments/comp-010-cassette-compatibility/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

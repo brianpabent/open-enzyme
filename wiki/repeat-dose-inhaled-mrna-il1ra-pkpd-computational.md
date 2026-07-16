@@ -54,7 +54,6 @@ Top 3 drivers of mean window occupancy: **Kd_nM (ρ = -0.69)**, translation_eff_
 
 Repeat-dose inhaled mRNA-IL-1Ra is NOT a like-for-like anakinra replacement at the receptor-occupancy level. It IS a meaningfully-better-than-nothing option that could displace prednisone for gout patients tolerating sub-anakinra occupancy in exchange for no SC injections, no glucocorticoid burden (acute glucose/BP/mood/sleep; chronic bone/cataract/adrenal), and substantial cost edge vs canakinumab. Decision reframes from "match anakinra?" (no) to "partial-suppression × side-effect-advantage worth it vs prednisone?" (plausibly yes — needs wet-lab data).
 
-## Frozen analysis archived to ./etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/wiki-archive.md
 
 ## Cross-references
 

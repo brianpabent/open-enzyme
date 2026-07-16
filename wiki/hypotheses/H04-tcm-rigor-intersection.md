@@ -105,7 +105,7 @@ To be populated. Anticipated relevant failure modes from [linter-design.md](../l
 
 ## Cross-References
 
-- [tcm-modern-rigor-intersection.md](../tcm-modern-rigor-intersection.md) — the platform thesis this hypothesis formalizes
+- [tcm-modern-rigor-intersection.md](../tcm-modern-rigor-intersection.md) — the track this hypothesis formalizes
 - [modality-chokepoint-matrix.md](../modality-chokepoint-matrix.md) — the chokepoint framework the lens applies across
 - [chembl-cross-check.md](../etc/chembl-cross-check.md) — the cross-check discipline (rule #2)
 - [supplement-abcg2-antagonism-computational.md](../supplement-abcg2-antagonism-computational.md) (comp-004) — partial validation of the gut-luminal IC50 occupancy framework on TCM-lineage compounds

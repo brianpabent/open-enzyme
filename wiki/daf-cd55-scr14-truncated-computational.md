@@ -23,7 +23,6 @@ status: archived-to-experiments
 
 > **⚠️ Verdict caveated (pLDDT-proxy class, comp-review 2026-07-14).** The LOW verdict (max score 0.039) rests on a **known-invalid proxy — pLDDT confidence used as accessibility**; it is a low-pLDDT-by-proxy result, not a SASA / time-integrated survival model. Same class as comp-001/006.
 
-> **Frozen analysis archived to [`./etc/experiments/comp-012-daf-cd55-scr14-truncated/wiki-archive.md`](./etc/experiments/comp-012-daf-cd55-scr14-truncated/wiki-archive.md)** (201 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
@@ -32,6 +31,5 @@ status: archived-to-experiments
 **Status:** Complete — 2026-05-05 **Experiment folder:** [`etc/experiments/comp-012-daf-cd55-scr14-truncated/`](./etc/experiments/comp-012-daf-cd55-scr14-truncated/) **Evidence level:** Mechanistic Extrapolation — AlphaFold pLDDT-based structural inference; no wet-lab confirmation. **Predecessor:** [comp-006 — full ectodomain (aa 35–353): HIGH](./daf-cd55-protease-stability-computational.md) **Companion analyses:** [comp-001 (uricase, LOW)](./uricase-protease-stability-computational.md), [comp-005 (lactoferrin, HIGH/MODERATE)](./lactoferrin-protease-stability-computational.md)
 
 **Where the analysis lives:**
-- Full archived analysis: [`./etc/experiments/comp-012-daf-cd55-scr14-truncated/wiki-archive.md`](./etc/experiments/comp-012-daf-cd55-scr14-truncated/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-012-daf-cd55-scr14-truncated/`](./etc/experiments/comp-012-daf-cd55-scr14-truncated/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

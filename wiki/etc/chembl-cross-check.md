@@ -216,7 +216,7 @@ MCC950 (CRID3/CP-456773) is not retrievable by common synonyms in ChEMBL name se
 
 ---
 
-## Implications for the Platform Thesis
+## Implications for the affected tracks
 
 1. **Ursolic acid: new biochemical target profile warrants mechanism update.** ROR-γ at 0.75 nM and NF-κB at 31 nM are direct-binding biochemical evidence for mechanisms the wiki claimed only on functional/animal grounds. ROR-γ adds a Th17-axis coverage not previously attributed to ursolic acid. See synthesis/queue item 2026-07-01-chembl-discrepancy-1.
 

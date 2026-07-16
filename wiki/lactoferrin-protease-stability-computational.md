@@ -21,7 +21,6 @@ status: archived-to-experiments
 
 > **⚠️ Verdict caveated (pLDDT-proxy class, comp-review 2026-07-14).** The protease-vulnerability score is a **heuristic pLDDT/P1-P1′ proxy, NOT a degradation/survival model**; "exposed sites" are low-pLDDT-by-proxy, not SASA. Same class as comp-001/006 — a prioritisation prior, not decision-grade.
 
-> **Frozen analysis archived to [`./etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/wiki-archive.md`](./etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/wiki-archive.md)** (131 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
@@ -30,6 +29,5 @@ status: archived-to-experiments
 **Status:** Complete — 2026-05-05 **Experiment folder:** [`etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/`](./etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/) **Companion analysis:** [comp-001 (uricase)](./uricase-protease-stability-computational.md)
 
 **Where the analysis lives:**
-- Full archived analysis: [`./etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/wiki-archive.md`](./etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/`](./etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

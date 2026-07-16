@@ -40,6 +40,28 @@ REVIEWED_SNAPSHOT: manifest:abc
         self.assertEqual("eligible_with_warning", parsed["PROPAGATION_ELIGIBILITY"])
         self.assertEqual("blocked", parsed["SYNTHESIS_ELIGIBILITY"])
 
+    def test_queue_excerpt_keeps_actions_not_full_review(self):
+        review = """## Bottom-line verdict
+
+The artifact has one blocking mismatch.
+
+More review detail that belongs in the receipt.
+
+## Required actions
+
+1. Fix the mismatch.
+2. Re-run the exact manifest.
+
+## Review limits
+
+Long review-history material.
+"""
+        excerpt = comp_review.queue_action_excerpt(review)
+        self.assertIn("The artifact has one blocking mismatch.", excerpt)
+        self.assertIn("1. Fix the mismatch.", excerpt)
+        self.assertNotIn("More review detail", excerpt)
+        self.assertNotIn("Long review-history material", excerpt)
+
     def test_oversized_text_is_sharded_without_dropping_a_span(self):
         with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
             path = Path(tmp) / "large.json"
@@ -109,6 +131,16 @@ class DistributedSynthesisContractTests(unittest.TestCase):
         pairs = list(itertools.combinations(distributed.DOMAINS, 2))
         self.assertEqual(28, len(pairs))
         self.assertEqual(len(pairs), len(set(pairs)))
+
+    def test_same_run_duplicate_headlines_are_suppressed(self):
+        items = [
+            {"candidate_id": "a", "type": "connection", "headline": "Substrate engineering: shared lever"},
+            {"candidate_id": "b", "type": "connection", "headline": "Substrate engineering — shared lever"},
+            {"candidate_id": "c", "type": "experiment", "headline": "Substrate engineering — shared lever"},
+        ]
+        kept, removed = distributed.deduplicate_promoted(items)
+        self.assertEqual(["a", "c"], [item["candidate_id"] for item in kept])
+        self.assertEqual(["b"], removed)
 
     def test_section_inventory_and_sharding_preserve_every_section(self):
         with tempfile.TemporaryDirectory(dir=ROOT) as tmp:

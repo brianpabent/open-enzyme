@@ -189,7 +189,7 @@ A critical constraint from [engineered-koji-protocol.md §15](./engineered-koji-
 
 ## Project relevance
 
-This protocol is the **wild-type baseline** that the engineered-koji platform (see [engineered-koji-protocol.md](./engineered-koji-protocol.md), [koji-construct-design.md](./koji-construct-design.md), [koji-endgame-strain.md](./koji-endgame-strain.md)) must outperform to justify itself for EPI applications.
+This protocol is the **wild-type baseline** that the engineered-koji track (see [engineered-koji-protocol.md](./engineered-koji-protocol.md), [koji-construct-design.md](./koji-construct-design.md), [koji-endgame-strain.md](./koji-endgame-strain.md)) must outperform to justify itself for EPI applications.
 
 Key questions that home wild-type fermentation can illuminate:
 

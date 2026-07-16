@@ -27,7 +27,7 @@ All research — long-form primary research docs and shorter concept pages — l
 Prefer standard markdown links (`[text](./path.md)`) over `[[wiki-links]]` in any file expected to be shared externally — GitHub only renders the standard form.
 
 ### index.md (repo root) — Dashboard
-Top of file: current platform thesis, synthesis queue pointer, cheapest-next-experiments table. Bottom: concept index + primary-research doc list + AI-analysis links. This is the "what should I look at?" landing page.
+Top of file: current mission and portfolio state, synthesis queue pointer, cheapest-next-experiments table. Bottom: concept index + primary-research doc list + AI-analysis links. This is the "what should I look at?" landing page.
 
 ### logs/ — Compact automation state
 `logs/sweep-state.json` holds the current propagation cursor, synthesis cursor, current per-COMP eligibility, and unresolved failures. Successful run history belongs in GitHub Actions and Git, not an append-only live ledger.
@@ -51,7 +51,7 @@ When new information emerges, re-evaluate every current page that depends on the
 Example: If a new NLRP3 inhibitor is discovered, update:
 - wiki/nlrp3-exploit-map.md (primary research)
 - wiki/nlrp3-inflammasome.md (concept page)
-- index.md (if adding new concept page, or if it shifts the platform thesis)
+- index.md (if adding a new concept page, or if it shifts the mission or portfolio)
 
 ### 2. Adding New Research
 
@@ -125,7 +125,7 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 - Link to `index.md` for the dashboard, `synthesis/queue/` for the action queue (or `synthesis/README.md` for the architecture overview).
 
 **In index.md:**
-- Keep the dashboard (platform thesis, synthesis queue, cheapest experiments) at the top.
+- Keep the dashboard (mission, portfolio state, synthesis queue, cheapest experiments) at the top.
 - Keep the concept/research index below, with one-line descriptions.
 
 ### 7. The HTML Files Are Published Versions
@@ -164,7 +164,7 @@ Publishing and bounded propagation run on relevant pushes. Full-corpus synthesis
    - Add new content or revise existing claims inline with evidence level and inline provenance (`(source: <filename>)`)
    - Update YAML frontmatter if adding cross-references
 
-3. **Update `index.md`** if a new page was created or the platform thesis shifted.
+3. **Update `index.md`** if a new page was created or the mission or portfolio changed.
 
 4. **Verify consistency:**
    - Check cross-references resolve

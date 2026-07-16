@@ -235,7 +235,7 @@ The smaller galloyl glucoses (tri-, di-, mono-) at higher IC50s (138-362 µM) ar
 
 - Phase 1 wiki anchor: [`upstream-complement-modulator-sweep-computational.md`](../../../upstream-complement-modulator-sweep-computational.md)
 - comp-020 verification re-run: [`upstream-complement-verification-rerun-computational.md`](../../../upstream-complement-verification-rerun-computational.md)
-- Phase 1 archived analysis: [`../wiki-archive.md`](../wiki-archive.md)
+- Phase 1 reproducible artifact and current outputs: [`..`](..)
 - comp-018 vs comp-020 retrospective: [`../../../../operations/comp-018-vs-comp-020-retrospective.md`](../../../../operations/comp-018-vs-comp-020-retrospective.md)
 - Brief hygiene discipline: [`../../../../scripts/SWEEP-ARCHITECTURE.md`](../../../../scripts/SWEEP-ARCHITECTURE.md)
 - Helicteres replication track: [`./phase-2-helicteres-replication.json`](./phase-2-helicteres-replication.json)

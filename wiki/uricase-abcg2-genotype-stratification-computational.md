@@ -55,15 +55,13 @@ status: superseded-by-comp-044
 
 > **Superseded 2026-07-13 by [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md).** comp-019's code did not use the luminal-urate concentration or UOX Km stored in its inputs and assumed 24 hours of saturated activity. Its quantitative ΔSUA, genotype-effect magnitudes, capacity ratios, flat-dose conclusion, and yield-priority recommendations are retired. The frozen artifact remains for provenance only; do not use it for dose or efficacy decisions.
 
-> **Frozen analysis archived to [`./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/wiki-archive.md`](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/wiki-archive.md)** (272 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
 > at `etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/`.
 
-There was a worry that the engineered-koji platform's whole therapeutic mechanism might only work in patients who carry a specific genetic variant — Q141K in the ABCG2 transporter — which is the #1 genetic risk factor for gout. About 25% of European-ancestry gout patients carry this variant; up to 50% of East-Asian-ancestry patients do. **If** the platform mechanism only worked in this subset, the addressable demographic would shrink dramatically and the trial design would have to change.
+This analysis asked whether an ABCG2-dependent gut-lumen uricase mechanism might work only in patients who carry Q141K. If so, the eligible population and trial stratification for that mechanism would change. The conclusion applies to the affected oral-uricase tracks, not to Open Enzyme as a whole.
 
 **Where the analysis lives:**
-- Full archived analysis: [`./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/wiki-archive.md`](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/`](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

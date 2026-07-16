@@ -44,7 +44,6 @@ status: Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued
 
 > **⚠️ Quantitative verdict downgraded (comp-review 2026-07-14).** This does NOT answer "all characterized fungal natural products, globally" — it is a **partial, manually-seeded LOTUS/NPAtlas/KNApSAcK + ChEMBL intersection** with weak species provenance, hard-coded safety rules, and heterogeneous assay semantics. Treat as a **lead-generation snapshot**, not a comprehensive or validated mapping.
 
-> **Frozen analysis archived to [`./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md`](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md)** (248 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
@@ -145,6 +144,5 @@ The Phase 5 multilingual deep-dive was queued but never executed as a full choke
 - Phase 3 compound × target table: [`phase-3-compound-x-target.json`](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-compound-x-target.json) + [summary](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-target-mapping-summary.md)
 - Phase 4 v2 intersection (re-run on unified table): [`phase-4-chokepoint-intersection-v2.json`](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-4-chokepoint-intersection-v2.json)
 - Earlier Phase 2 findings (LOTUS-only, 2026-05-06): [`PHASE-2-FINDINGS.md`](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS.md)
-- Full archived analysis: [`wiki-archive.md`](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/`](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

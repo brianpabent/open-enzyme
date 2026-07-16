@@ -36,7 +36,6 @@ status: archived-to-experiments
 
 > **⚠️ Verdict caveated (comp-review 2026-07-14).** The qualitative verdict — direct testosterone/androgen suppression of intestinal ABCG2 is weak/unconfirmed — is directionally supported, but this is a **qualitative literature-reframing artifact**, not a quantitative resolution.
 
-> **Frozen analysis archived to [`./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/wiki-archive.md`](./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/wiki-archive.md)** (198 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
@@ -45,6 +44,5 @@ status: archived-to-experiments
 Does primary literature support the load-bearing claim in [`androgen-urate-axis.md`](./androgen-urate-axis.md) §"Why this matters for the platform" that *androgens directly suppress intestinal ABCG2 expression* at magnitudes consistent with a *structural ceiling on the gut-lumen-sink platform efficacy in male/androgen-dominant patients*?
 
 **Where the analysis lives:**
-- Full archived analysis: [`./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/wiki-archive.md`](./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/`](./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

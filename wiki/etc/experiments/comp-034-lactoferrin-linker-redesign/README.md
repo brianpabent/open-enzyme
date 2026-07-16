@@ -87,7 +87,6 @@ comp-034-lactoferrin-linker-redesign/
     shortlist.json                     ← GREEN + STRICT tier candidates
     summary.md                         ← human-readable summary
   README.md                            ← this file
-  wiki-archive.md                      ← long-form interpretive analysis
 ```
 
 ## Methodology audit (BioDesignBench discipline)

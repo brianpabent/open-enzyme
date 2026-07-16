@@ -38,11 +38,11 @@ status: scope-page
 
 ## Why this page exists
 
-The Open Enzyme platform was named for its first chassis (engineered enzymes expressed in koji and yeast). But the broader mission — *"solve gout via every available modality, fully open-source"* — is bigger than any single chassis. The [Modality × Target Matrix](./modality-chokepoint-matrix.md) was built to make that distinction visible. This page is the first attempt to develop one of the matrix's highest-leverage rows into a peer track to the koji chassis: **engineered Live Biotherapeutic Products (LBPs)**, specifically engineered obligate anaerobes that durably colonize the colon.
+The mission is to use red-teaming to identify exploitable weaknesses in gout and creative engineering to exploit them. The [Modality × Target Matrix](./modality-chokepoint-matrix.md) keeps that search broader than any chassis. This page develops one candidate implementation: **engineered Live Biotherapeutic Products (LBPs)**, specifically obligate anaerobes intended to function in the colon.
 
 The motivation is structural. The koji and yeast chassis are **transit organisms**: they pass through the gut over hours-to-a-day. To maintain therapeutic effect the user has to keep eating them. By contrast, *Faecalibacterium prausnitzii*, *Akkermansia muciniphila*, and selected *Bacteroides* species are **resident anaerobes** — they evolved to live in the mammalian colon and, when delivered as a live therapeutic, can persist for **weeks to months** after a single dose. That changes the dosing model from "daily condiment" to "quarterly capsule."
 
-This is a peer track, not a pivot. The koji chassis remains the clearest expression of the "democratized home access" thesis. The LBP chassis is the clearest expression of the "durable colonization, broad genotype coverage" thesis. Both serve the same mission, on different regulatory and distribution tracks.
+This is an independent, falsifiable track. It competes with and may compose with koji, yeast, purified enzymes, small molecules, and other modalities. No result here changes the mission; it changes only the portfolio ranking.
 
 ---
 
@@ -50,7 +50,7 @@ This is a peer track, not a pivot. The koji chassis remains the clearest express
 
 An **obligate anaerobe** is an organism that dies on contact with oxygen. *F. prausnitzii*, *Akkermansia muciniphila*, and most *Bacteroides* species evolved to live in the deep colon, where O₂ partial pressure is effectively zero. They cannot survive the small intestine (too aerobic), cannot grow under normal lab atmosphere, and cannot be home-fermented under any realistic kitchen conditions.
 
-**This is the load-bearing limitation.** The Open Enzyme home-fermentation thesis (grow koji at home, make shio-koji or amazake condiment) does **not** transfer to obligate anaerobes. They require:
+**This is the load-bearing limitation.** The community-fermentation option being tested in the koji track does **not** transfer to obligate anaerobes. They require:
 
 - **Anaerobic bioreactor manufacturing** (commercial-scale, oxygen-excluded)
 - **Cold-chain stabilization** (lyophilized, oxygen-blocking capsule, often with cryoprotectant)
@@ -200,13 +200,13 @@ The known active-program landscape, to be filled in by the Phase 2 commercial li
 
 **The two tracks serve different patient populations and intervention philosophies.** The koji track serves the broader market (mild-to-moderate gout, dietary management, prevention, EPI applications). The LBP track serves the high-severity / Q141K / refractory-gout subset where pharmaceutical-grade durability and genotype-specific coverage is worth the cost-and-distribution overhead.
 
-A future strategic question (Phase 3): does the LBP track justify expanding Open Enzyme's project framing from "engineered enzymes in koji" to "solve gout, every avenue, fully open"? Tracked in [Open Follow-Ups](#open-follow-ups) and queued in [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md).
+The LBP track is already a first-class portfolio track. Its open question is whether the biology and delivery survive falsification, not whether the project should be reframed around it.
 
 ---
 
 ## Open Follow-Ups
 
-These are the queued deep-dive items that will populate this page over the coming sweeps. Each is a discrete, scoped piece of in silico work with no pharma-partner dependency. Tracked in multiple redundant surfaces (this page, [`open-questions.md`](./open-questions.md), [`computational-experiments.md`](./computational-experiments.md), [`index.md`](../index.md), [`hypotheses/H02-engineered-lbp-thesis.md`](./hypotheses/H02-engineered-lbp-thesis.md), and [`synthesis/`](../synthesis/README.md)) so the daemon surfaces them on each sweep cycle.
+These are discrete follow-ups with no pharma-partner dependency. This page is the canonical track list; synthesis should link here rather than copying it elsewhere.
 
 | ID | Item | Type | Status |
 |---|---|---|---|
@@ -216,7 +216,7 @@ These are the queued deep-dive items that will populate this page over the comin
 | **P2-4** | comp-008: *F. prausnitzii* heterologous expression feasibility — codon usage, GC content, secretion machinery, payload tractability ranking | Computational analysis (Sonnet subagent) | Queued |
 | **P2-5** | Falsification card H02: engineered LBP thesis — full claim, assumption stack, killshot menu, pre-committed thresholds | Hypothesis formalization | [Stub committed](./hypotheses/H02-engineered-lbp-thesis.md); full population queued |
 | **P2-6** | Comparative chassis matrix for gout indication: *F. prausnitzii* vs. *Akkermansia* vs. *Bacteroides* vs. engineered *E. coli* Nissle — payload tractability, native-niche fit, engineering complexity | Synthesis (could be added to this page or stand alone) | Queued |
-| **P3** | Platform-framing reflection: does the LBP track justify expanding Open Enzyme's framing from "engineered enzymes in koji" to "solve gout, every avenue, fully open"? Trigger: after Phase 2 items have accumulated enough substance to assess track maturity. | Strategic reflection | Queued, content-triggered |
+| **P3** | Portfolio decision: after the Phase 2 evidence lands, does the LBP route remain active, narrow, or close? | Track decision | Pending evidence |
 
 ---
 
@@ -232,7 +232,7 @@ These are the queued deep-dive items that will populate this page over the comin
 ## Cross-References
 
 - [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) — the source matrix; this page is the deep-dive of the "Engineered LBPs" row
-- [`koji-endgame-strain.md`](./koji-endgame-strain.md) — the koji-chassis peer track; both serve the broader mission
+- [`koji-endgame-strain.md`](./koji-endgame-strain.md) — a competing or composable chassis configuration
 - [`abcg2-modulators.md`](./abcg2-modulators.md) — butyrate dual-action mechanism, Q141K rescue, PPARγ pathway
 - [`open-questions.md`](./open-questions.md) — meta-index where the Phase 2 follow-ups are also tracked
 - [`computational-experiments.md`](./computational-experiments.md) — comp-008 (Phase 2 P2-4) is queued in the Planned Analyses table

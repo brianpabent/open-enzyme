@@ -64,7 +64,7 @@ These tools are freely available and cover the core computational biology workfl
 
 **When to apply this workflow:**
 
-- Adding a new secreted protein payload to the koji platform (uricase variants, lactoferrin, DAF SCR1-4, C1-INH if routed to secreted format, future fusion proteins, future therapeutic peptides ≥3 kDa with structured architecture).
+- Adding a new secreted protein payload to the koji track (uricase variants, lactoferrin, DAF SCR1-4, C1-INH if routed to secreted format, future fusion proteins, future therapeutic peptides ≥3 kDa with structured architecture).
 - When a shio-koji protease-stability analysis (comp-005-style) flags a structured-mandatory linker as a MODERATE/HIGH risk vulnerability.
 - Skip when the vulnerability is a removable spacer (truncate is the answer; see comp-012 / DAF for the worked example).
 

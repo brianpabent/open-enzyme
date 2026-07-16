@@ -20,7 +20,6 @@ status: archived-to-experiments
 
 # DAF/CD55 Shio-Koji Protease Stability: Computational Analysis (comp-006)
 
-> **Frozen analysis archived to [`./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/wiki-archive.md`](./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/wiki-archive.md)** (175 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
@@ -29,6 +28,5 @@ status: archived-to-experiments
 **Status:** Complete — 2026-05-05 **Experiment folder:** [`etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/`](./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/) **Evidence level:** Mechanistic Extrapolation — AlphaFold pLDDT-based structural inference; no wet-lab confirmation. **Companion analyses:** [comp-001 (uricase, LOW)](./uricase-protease-stability-computational.md), [comp-005 (lactoferrin, HIGH/MODERATE)](./lactoferrin-protease-stability-computational.md)
 
 **Where the analysis lives:**
-- Full archived analysis: [`./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/wiki-archive.md`](./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/`](./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

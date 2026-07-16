@@ -665,7 +665,7 @@ A dedicated engineered SPM-producing strain is a **distinct project** from the u
 
 ### 11.5 Assessment — honest accounting
 
-The engineered-koji platform covers CP5b **indirectly** (via lactoferrin if that co-expression clears feasibility, via downstream resolution signaling) but **not directly** (no native or near-native SPM production in GRAS yeast/koji). The practical CP5b stack for the Open Enzyme platform is:
+The engineered-koji configuration covers CP5b **indirectly** (via lactoferrin if co-expression clears feasibility, through downstream resolution signaling) but **not directly** (no native or near-native SPM production in the yeast/koji hosts evaluated). Candidate CP5b coverage is:
 
 1. **Substrate-loaded omega-3** (DHA-emphasis, 2-3 g DHA + 1-2 g EPA/day) — commercial, unengineered
 2. **Engineered koji uricase + lactoferrin** (if co-expression feasibility clears) — platform-native, indirect CP5b via lactoferrin
@@ -723,7 +723,7 @@ The omega-3 index (% EPA + DHA in erythrocyte membranes) is a more stable measur
 9. **DHA-vs-EPA dosing in gout.** The preclinical evidence favors DHA for gout (RvD1, MaR1 both DHA-derived). A head-to-head DHA-dominant vs. EPA-dominant vs. balanced fish-oil trial in recurrent-flare gout would clarify the optimal formulation. Marginal cost; high informational value.
 10. **Resolution index (T50) measurement in human gout.** Can the animal-model Ψmax/T50 framework be adapted to clinical gout monitoring? Serial ultrasound joint imaging + synovial fluid sampling across a flare is invasive but feasible in a dedicated research setting. Would provide the first human resolution-kinetic measurement in a crystalopathy.
 11. **Lactoferrin + SPM combination.** If engineered koji lactoferrin clears feasibility (see [lactoferrin.md](./lactoferrin.md)), the combination of koji lactoferrin + DHA-emphasis omega-3 would cover CP5b via two independent mechanisms (lactoferrin M2 macrophage polarization + SPM direct receptor agonism). A preclinical MSU-model combination study would test for additivity.
-12. **Engineered SPM biosynthesis in yeast — feasibility scoping.** Which yeast chassis (Y. lipolytica for substrate, S. cerevisiae for enzyme library, A. oryzae for GRAS/koji platform) is the best fit for direct SPM production? A design-phase literature review and retrosynthetic analysis would frame the long-term research arm.
+12. **Engineered SPM biosynthesis in yeast — feasibility scoping.** Which chassis (*Y. lipolytica* for substrate, *S. cerevisiae* for enzyme library, or *A. oryzae* for a food-format track) is the best fit for direct SPM production? A design-phase literature review and retrosynthetic analysis would frame the long-term research arm.
 
 ---
 

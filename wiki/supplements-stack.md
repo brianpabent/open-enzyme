@@ -214,7 +214,7 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 
 **Stack interactions (within this catalog):**
 - **Stack synergy (Nrf2 activator cluster):** sulforaphane + quercetin + oridonin all activate Nrf2 — cumulative effect at the Nrf2 axis but diminishing-returns regime; combining all three is redundant rather than additive at the maximal-effect ceiling.
-- **ABCG2 axis:** Nrf2 activation **transcriptionally induces ABCG2** in enterocytes (gut-selective at moderate; also induces hepatic and BBB Nrf2-driven targets at high systemic exposure). Per [abcg2-modulators.md](./abcg2-modulators.md), sulforaphane is a Tier 1 inducer of the gut urate sink — **synergistic with the platform thesis** rather than antagonistic. Distinct from curcumin/quercetin/EGCG/genistein which are functional inhibitors of the same transporter.
+- **ABCG2 axis:** Nrf2 activation **transcriptionally induces ABCG2** in enterocytes (gut-selective at moderate; also induces hepatic and BBB Nrf2-driven targets at high systemic exposure). Per [abcg2-modulators.md](./abcg2-modulators.md), sulforaphane is a Tier 1 inducer of the gut urate sink—**synergistic with that mechanism** rather than antagonistic. Distinct from curcumin/quercetin/EGCG/genistein, which are functional inhibitors of the same transporter.
 - **Synergy with NAC:** both push the glutathione/Nrf2 axis (CP2).
 
 **Cost:** $5–10/week (raw sprouts) or $20–30/month (supplement)
@@ -281,7 +281,7 @@ HCP is the first dietary polysaccharide in the OE corpus with documented activit
 
 **Cross-references:** [complement-c5a-gout.md §9.7](./complement-c5a-gout.md) (CP0 mechanism + CP1 extension), [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) §CP1 (Houttuynia entry), [upstream-complement-modulator-sweep-computational.md](./upstream-complement-modulator-sweep-computational.md) (comp-018 Phase 2 Tier 1d), [`logs/houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md`](../logs/houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md).
 
-**⚠️ Dietary-PK caveat (source: open-questions.md §"Riskiest assumption #3", 2026-05-22):** Like all dietary CP0 candidates in the corpus, Houttuynia polysaccharide gut-luminal absorption + residence time after oral consumption is **completely unstudied**. The THP-1 prioritization screen at [validation-experiments.md §1.30](./validation-experiments.md) tests whether the compound suppresses MSU-induced IL-1β in a gout-relevant cell model, but does NOT measure whether dietary intake of Houttuynia produces equivalent gut-luminal concentrations at the complement-activation site. This is the platform's #3 load-bearing scientific bet — the dietary-CP0 strategy's PK side is almost entirely unanchored. See [`open-questions.md` §"Riskiest assumption #3"](./open-questions.md) for the full dosing chain uncertainty and Phase 2 follow-ups. (Mechanistic Extrapolation; source: open-questions.md)
+**⚠️ Dietary-PK caveat:** Like all dietary CP0 candidates in the corpus, Houttuynia polysaccharide gut-luminal absorption and residence time after oral consumption are **completely unstudied**. The THP-1 prioritization screen at [validation-experiments.md §1.30](./validation-experiments.md) tests whether the compound suppresses MSU-induced IL-1β in a gout-relevant cell model, but does not measure whether dietary intake produces equivalent concentrations at the complement-activation site. The dietary-CP0 track's PK side is almost entirely unanchored. See [`open-questions.md` §"Dietary-CP0 track risk"](./open-questions.md). (Mechanistic Extrapolation)
 
 **CFH Y402H stratification (source: cfh-mechanism-dissociation-cp0-candidates-computational.md, 2026-05-21):** HCP/HCPM/CHCP is classified CFH-independent with High confidence by comp-039 — its C3 + C4 cleavage targets are mechanistically incompatible with CFH-dependence (CFH is alternative-pathway-specific and does not regulate C4). Predicted interaction: Y402H carriers may benefit MORE from Houttuynia because the variant amplifies baseline complement dysregulation and the bypass mechanism operates upstream of where the variant matters. This is the dual-chokepoint framing (CP0 + CP1) that compounds the genotype-baseline-severity amplification. Empirically untested — the UK Biobank cross-tab (rosmarinic acid lead query) is the primary falsification gate; the Houttuynia-specific cross-tab is deferred to East Asian cohorts (KoGES / CKB / Singapore Chinese Health Study per [comp-041](./computational-experiments.md)). (Mechanistic Extrapolation; source: cfh-mechanism-dissociation-cp0-candidates-computational.md §3.3)
 
@@ -954,7 +954,7 @@ These become available as Open Enzyme [[engineered-yeast-uricase]] and [[enginee
 **Dose-dependent risk profile:** TBD from validation experiments.
 
 **Stack interactions (within this catalog):**
-- **Antagonism by ABCG2 inhibitors in stack:** curcumin, quercetin, EGCG, genistein at supplement-relevant doses functionally inhibit ABCG2 — the transporter the engineered uricase depends on for its mechanism. **The platform thesis is pharmacologically antagonized by these compounds in androgen-dominant or Q141K-positive readers.** See Stack-level contradictions section.
+- **Antagonism by ABCG2 inhibitors in stack:** curcumin, quercetin, EGCG, and genistein at supplement-relevant doses functionally inhibit ABCG2—the transporter the gut-lumen uricase mechanism depends on. **These compounds may pharmacologically antagonize that mechanism in androgen-dominant or Q141K-positive readers.** See Stack-level contradictions section.
 - **Synergy with butyrate / fermentable fiber, sulforaphane, indole-3-carbinol:** all induce ABCG2 (Tier 1 inducers per [abcg2-modulators.md](./abcg2-modulators.md)) — open the gate on which the platform depends. Strong recommended pairing.
 - **Synergy with carnosine:** carnosine modulates URAT1/GLUT9 (renal); engineered uricase modulates gut UA pool — orthogonal additive.
 
@@ -993,7 +993,7 @@ These become available as Open Enzyme [[engineered-yeast-uricase]] and [[enginee
 
 **Stack interactions (within this catalog):**
 - **Same ABCG2 antagonism / synergy pattern as engineered yeast.** See Stack-level contradictions.
-- **Resistant-starch substrate (rice) provides incidental fermentable fiber → colonic butyrate → PPARγ-mediated ABCG2 induction.** Substrate selection for the engineered koji platform may be tunable for incremental SCFA yield. (Mechanistic Extrapolation; see [abcg2-modulators.md](./abcg2-modulators.md) §"Engineering implications.")
+- **Resistant-starch substrate (rice) provides incidental fermentable fiber → colonic butyrate → PPARγ-mediated ABCG2 induction.** Substrate selection within the engineered-koji track may be tunable for incremental SCFA yield. (Mechanistic Extrapolation; see [abcg2-modulators.md](./abcg2-modulators.md) §"Engineering implications.")
 
 **Timeline to availability:** Phase 1 koji optimization (weeks 4–10), Phase 2 EPI model (weeks 12–18), Phase 3 human trial (weeks 20–32+). Earliest: Q2 2026 for validation, Q3–Q4 2026 for deployment.
 
@@ -1074,9 +1074,9 @@ These become available as Open Enzyme [[engineered-yeast-uricase]] and [[enginee
 
 The per-compound entries above flag interactions one compound at a time. This section consolidates the patterns that emerge when multiple compounds are stacked — particularly the cases where the catalog as a whole pulls in opposing directions on a shared mechanism.
 
-### 1. Stack-level contradictions: ABCG2-axis antagonism of the platform thesis
+### 1. Stack-level contradictions: ABCG2-axis antagonism of the gut-lumen sink
 
-The engineered-uricase platform's [gut-lumen-sink](./gut-lumen-sink.md) mechanism depends on intestinal ABCG2 to actively secrete urate from blood into gut lumen, where the engineered uricase degrades it. **Several compounds in this catalog at typical supplement doses are functional inhibitors of ABCG2** — they pharmacologically antagonize the platform thesis, particularly in male / androgen-dominant / Q141K-positive readers (the dominant gout demographic).
+The engineered-uricase [gut-lumen-sink](./gut-lumen-sink.md) mechanism depends on intestinal ABCG2 to secrete urate from blood into the gut lumen, where uricase degrades it. **Several compounds in this catalog at typical supplement doses are functional inhibitors of ABCG2**—they may antagonize that mechanism, particularly in male, androgen-dominant, or Q141K-positive readers.
 
 Detailed mechanism, primary citations, and tissue-selectivity discussion in [`abcg2-modulators.md`](./abcg2-modulators.md). Summary table:
 

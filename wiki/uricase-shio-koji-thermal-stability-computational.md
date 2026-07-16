@@ -39,5 +39,3 @@ sources:
 - **Sister analysis (protease):** [`uricase-protease-stability-computational.md`](./uricase-protease-stability-computational.md) (comp-001, LOW). Combined picture: proteases are not the load-bearing failure mode; **thermal cooperative unfolding is.**
 - **Tracking index:** [`computational-experiments.md`](./computational-experiments.md)
 - **Platform context:** [`uricase.md`](./uricase.md), [`uricase-variant-selection.md`](./uricase-variant-selection.md), [`engineered-koji-protocol.md`](./engineered-koji-protocol.md)
-
-> **Frozen long-form analysis** — method details, limitations (10+ items), failure-mode ranking, multilingual literature audit, comparison to comp-001: [`./etc/experiments/comp-002-uricase-shio-koji-thermal-stability/wiki-archive.md`](./etc/experiments/comp-002-uricase-shio-koji-thermal-stability/wiki-archive.md). Reproducible artifact: [`./etc/experiments/comp-002-uricase-shio-koji-thermal-stability/`](./etc/experiments/comp-002-uricase-shio-koji-thermal-stability/).

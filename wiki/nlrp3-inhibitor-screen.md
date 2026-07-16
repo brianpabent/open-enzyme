@@ -179,7 +179,7 @@ This screen evaluates food-derived NLRP3 inflammasome inhibitors producible by e
 **Production Feasibility:**
 - ***Pichia pastoris* (KM71-H, AOX1 promoter):** **3.5 g/L bovine rbLf** (Iglesias-Figueroa 2016, *Int J Mol Sci*, PMID 27294912) — highest demonstrated titer
 - **Porcine rpLF:** 2.8 g/L (Yen 2024, PMID 38339093)
-- ***A. oryzae* (koji):** Not yet attempted — potential future module for the Open Enzyme koji platform, would fit the GRAS food-organism vision
+- ***A. oryzae* (koji):** Not yet attempted—potential future module within the koji track, conditional on its own feasibility and exposure gates
 - **Native source:** Bovine colostrum (commercial lactoferrin capsules available at ~100–300 mg/day)
 
 **Food Safety:**

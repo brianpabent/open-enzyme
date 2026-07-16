@@ -22,9 +22,7 @@ sources:
   - "comp-045 — topology × oxygen × peroxide design, 2026-07-13"
 ---
 
-# H08 — Gut-Lumen Sink Platform Thesis
-
-> **2026-07-13 correction:** the original H08 magnitude claim—−0.5 to −1.0 mg/dL at 25 mg/day, based on comp-019—is retracted as a quantitative prior. comp-019 stored luminal urate and UOX Km inputs but did not use them; it also granted 24 hours of saturated activity. [comp-044](../gut-lumen-uricase-physiologic-regime-computational.md) shows that the flat-dose regime is not robust. The biological hypothesis remains open.
+# H08 — Gut-Lumen Sink Mechanism
 
 ## Claim
 
@@ -38,19 +36,6 @@ This is deliberately not a numeric ΔSUA claim. A defensible magnitude requires 
 2. **Animal models:** PULSE lowered urate in hyperuricemic mice/rats using a 1:1:1 mixture of intracellular, secreted, and displayed smUOX topologies with KatG+VHb support (Gao 2025). Zhao 2022 independently demonstrated an EcN PucLM+YgfU+KatG+VHb architecture under restricted oxygen. **Evidence level: Animal Model + In Vitro.**
 3. **Computational audit:** comp-044 finds that the original regime classification changes when substrate occupancy and a finite active window are applied. It does not predict efficacy.
 4. **Topology uncertainty:** comp-045 finds that no topology can yet be eliminated; the decisive comparison must measure urate, product, oxygen, peroxide, viability, and localization together.
-
-## Retracted quantitative prior
-
-The following historical comp-019 outputs are no longer active evidence:
-
-- predicted genotype-specific ΔSUA values;
-- the −0.5 to −1.0 mg/dL effect band;
-- capacity ratios 32–1,300× as evidence of physiological saturation;
-- “flat above 5 mg/day”;
-- “yield optimization no longer matters”;
-- a single 25 mg/day dose as the preferred validation design.
-
-They remain visible in the frozen comp-019 artifact for revision history, but downstream decisions must cite comp-044 instead.
 
 ## Updated assumption stack
 
@@ -75,9 +60,9 @@ They remain visible in the frozen comp-019 artifact for revision history, but do
 ## Pre-committed interpretation
 
 - **Mechanism strengthened:** reproducible UOX product formation at the human-baseline substrate prior under physiological oxygen, with controlled peroxide and viable epithelium, followed by increased net transepithelial elimination in a dynamic model or human-relevant system.
-- **Mechanism narrowed:** activity appears only at the 250 µM benchmark or only under oxic conditions; the platform becomes meal/inflammation- or niche-dependent rather than a continuous baseline sink.
+- **Mechanism narrowed:** activity appears only at the 250 µM benchmark or only under oxic conditions; the approach becomes meal/inflammation- or niche-dependent rather than a continuous baseline sink.
 - **Current topology killed:** no measurable product at physiological substrate/oxygen despite confirmed expression and localization, or unacceptable peroxide/barrier injury relative to inactive-UOX controls.
-- **Platform thesis killed:** a controlled human study with verified local UOX activity and adequate exposure shows no meaningful change in whole-body urate handling.
+- **Mechanism killed:** a controlled human study with verified local UOX activity and adequate exposure shows no meaningful change in whole-body urate handling.
 
 No mg/dL boundary is pre-committed until the dynamic local model is rebuilt from measured inputs.
 

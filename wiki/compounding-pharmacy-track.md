@@ -57,9 +57,9 @@ The MINX example sharpens the framing: 5 mg once-daily extended-release oral min
 
 The OE equivalent: for the subset of compounds where the active is FDA-approved and the only barrier between the patient and a useful dose is "no one has commercialized this specific formulation," compounding is the delivery mechanism. The discovery engine's repurposing surface is the input. Compounding is the output side that turns identification into access.
 
-This page formalizes the **compounding pharmacy track** as a peer track to the engineered-koji, engineered-LBP, siRNA, medicinal-mushroom-complement, and TCM tracks under the broader Open Enzyme platform thesis. Same posture: an exploration vector, not a commitment to abandon any other track.
+This page formalizes the **compounding pharmacy track** as one independently falsifiable route alongside engineered koji, engineered LBPs, siRNA, medicinal mushrooms, and TCM-derived candidates. Its role is to exploit tractable formulation and access weaknesses; it does not define the project.
 
-## Platform thesis expansion
+## Track scope
 
 | Track | Chassis / mechanism | Engineering effort | Therapeutic class | Consumption UX | Regulatory path |
 |---|---|---|---|---|---|

@@ -70,17 +70,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 | [§2.3](#23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model) | Engineered koji EPI model | Animal | $6,000–10,000 | 8–10 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [enzyme-deficit-deep-dive](./enzyme-deficit-deep-dive.md) |
 | [§2.4](#24-nlrp3-inflammasome-inhibition-in-msu-crystal-arthritis-model) | NLRP3 inhibition in MSU arthritis model | Animal | $10,000–15,000 | 10–12 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [gout-deep-dive](./gout-deep-dive.md), [supplements-stack](./supplements-stack.md) |
 | [§2.5](#25-pulse-probiotic-validation-in-hyperuricemic-mice) | PULSE probiotic validation (hyperuricemic mice) | Animal | $5,000–8,000 | 8 | Proposed | [gout-deep-dive](./gout-deep-dive.md), [gout-clinical-pipeline](./gout-clinical-pipeline.md), [gut-lumen-sink](./gut-lumen-sink.md) |
-| [§3.1](./etc/validation-experiments-archive.md#31-brian-engineered-yeast-uricase-serum-uric-acid-flare-tracking) | Brian: engineered yeast uricase tracking | Human | $200–400 | 20 | Proposed | [engineered-yeast-uricase-proposal](./engineered-yeast-uricase-proposal.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./etc/open-enzyme-vision.md) |
-| [§3.2](./etc/validation-experiments-archive.md#32-brian-nlrp3-inflammasome-suppression-stack-biomarker-panel) | Brian: NLRP3 suppression stack biomarker panel | Human | $700–1,400 | 20 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [supplements-stack](./supplements-stack.md), [self-experiment-protocol](./self-experiment-protocol.md), [open-enzyme-vision](./etc/open-enzyme-vision.md) |
 | [§3.3](#33-lynn-wild-type-koji-digestive-enzyme-supplementation) | Lynn: wild-type koji digestive enzyme trial | Human | $600–1,000 | 12 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [sibo](./sibo.md), [open-enzyme-vision](./etc/open-enzyme-vision.md), [koji-home-fermentation](./koji-home-fermentation.md) |
-| [§3.4](./etc/validation-experiments-archive.md#34-joint-trial-engineered-koji-both-users) | Joint trial: engineered koji (both users) | Human | $300–500 | 14 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [open-enzyme-vision](./etc/open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md) |
-| [§3.5](./etc/validation-experiments-archive.md#35-biomarker-tracking-long-term-flare-prevention-brian-6-month-extension) | Long-term flare prevention (Brian, 6-mo extension) | Human | $400–600 | 26 | Proposed | [open-enzyme-vision](./etc/open-enzyme-vision.md), [self-experiment-protocol](./self-experiment-protocol.md), [gout-deep-dive](./gout-deep-dive.md) |
-| [§3.6](./etc/validation-experiments-archive.md#36-brian-urinary-ltb4-assay-validating-quercetins-5-lox-cp6a-mechanism-in-vivo) | Brian: urinary LTB4 (quercetin CP6a in vivo) | Human | $150–300 | 12 | Proposed | [self-experiment-protocol](./self-experiment-protocol.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [synthesis/](../synthesis/README.md) |
-| [§3.7](./etc/validation-experiments-archive.md#37-brian-serum-c5a-baseline-week-12-validating-cp0-complement-priming-status) | Brian: serum C5a baseline + week 12 (CP0) | Human | $300–400 | 12 | Proposed | [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [self-experiment-protocol](./self-experiment-protocol.md) |
-| [§3.8](./etc/validation-experiments-archive.md#38-brian-dha-vs-epa-split-omega-3-crossover-resolving-the-gout-specific-spm-precursor-question) | Brian: DHA vs. EPA omega-3 crossover | Human | $550–700 | 9 | Proposed | [spm-resolution-pathway](./spm-resolution-pathway.md), [supplements-stack](./supplements-stack.md), [tnfsf14-gout-target](./tnfsf14-gout-target.md), [self-experiment-protocol](./self-experiment-protocol.md) |
-| [§3.9](./etc/validation-experiments-archive.md#39-brian-zileuton-off-label-trial-pharma-grade-cp6a-inhibition-in-flare-prevention-protocol) | Brian: zileuton off-label CP6a trial | Human | ~$500 | 16 | Proposed | [zileuton](./zileuton.md), [gout-clinical-pipeline](./gout-clinical-pipeline.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [self-experiment-protocol](./self-experiment-protocol.md) |
-| [§3.10](./etc/validation-experiments-archive.md#310-brian-fructose-challenge-test-as-acute-n1-uricase-efficacy-readout) | Brian: fructose challenge test (acute n=1 uricase readout) | Human | ~$50 | 0.1 + 4 wk gap | Proposed | [fructose-connection](./fructose-connection.md), [self-experiment-protocol](./self-experiment-protocol.md), [synthesis/](../synthesis/README.md) |
-| [§3.11](./etc/validation-experiments-archive.md#311-brian-exertion-challenge-test-mechanical-vs-metabolic-trigger-discrimination-n1) | Brian: exertion challenge test (mechanical vs. metabolic trigger discrimination, n=1) | Human | ~$50–80 | 0.25 per run; n=several over months | Proposed | [mechanical-flare-triggers](./mechanical-flare-triggers.md), [self-experiment-protocol](./self-experiment-protocol.md), [synthesis/](../synthesis/README.md) |
 
 ---
 
@@ -469,7 +459,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Affected wiki**: [abcg2-modulators](./abcg2-modulators.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [gut-lumen-sink](./gut-lumen-sink.md)
 
-**What it tests:** Does ergothioneine — natively produced by *A. oryzae* at ~20 mg/g dry mass — induce ABCG2 expression in human enterocyte-lineage cells at concentrations achievable from koji-derived dietary intake? **Tag: Mechanistic Extrapolation testing a two-step inference (ergothioneine → Nrf2 stabilization → ABCG2 induction).** Ergothioneine's "Nrf2 inducer" classification is weaker than canonical activators (sulforaphane, CDDO-Me) — it is more accurately a ROS scavenger that may indirectly stabilize Nrf2. This experiment disambiguates whether the engineered-koji platform has a "free" ABCG2-induction synergy via its native metabolite chorus, or whether the connection is too distant to matter at koji-achievable luminal doses. **Verify substrate claim before running:** confirm `aspergillus-oryzae.md` ergothioneine titer (~20 mg/g dry mass) against primary literature; the L223 sweep flagged that pass-2 cited this without a verified primary source.
+**What it tests:** Does ergothioneine—reported as natively produced by *A. oryzae*—induce ABCG2 expression in human enterocyte-lineage cells at concentrations achievable from koji-derived dietary intake? **Tag: Mechanistic Extrapolation testing a two-step inference (ergothioneine → Nrf2 stabilization → ABCG2 induction).** Ergothioneine's "Nrf2 inducer" classification is weaker than canonical activators (sulforaphane, CDDO-Me); it is more accurately a ROS scavenger that may indirectly stabilize Nrf2. This experiment tests whether the koji track gets incidental ABCG2-induction synergy from a native metabolite or whether the connection is too distant to matter. **Verify before running:** the achievable koji titer remains unverified against primary literature.
 
 **Proposed in:** `synthesis/` (architecture: synthesis/README.md) 2026-04-27 sweeps (Connection #1, multiple sweep blocks: ergothioneine→Nrf2→ABCG2 chain).
 
@@ -496,7 +486,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Success criteria:**
 - **Confirms synergy claim:** ABCG2 mRNA and protein induction at koji-achievable ergothioneine concentrations (10–100 μM apical), with functional efflux upregulation. Promotes the "free synergy" claim from speculative to supported in [`engineered-koji-protocol.md`](./engineered-koji-protocol.md) and [`aspergillus-oryzae.md`](./aspergillus-oryzae.md).
-- **Falsifies / scopes down:** No detectable ABCG2 induction at koji-achievable doses. Removes the synergy claim from the platform thesis; positive sulforaphane control remains the canonical ABCG2 inducer route.
+- **Falsifies / scopes down:** No detectable ABCG2 induction at koji-achievable doses. Removes this synergy from the koji-track configuration; positive sulforaphane control remains the canonical ABCG2 inducer route.
 
 **Cross-references:** [synthesis/](../synthesis/README.md) 2026-04-27 Connection #1 (multiple sweep blocks); [abcg2-modulators.md](./abcg2-modulators.md) §2 (Nrf2 transcriptional axis); [aspergillus-oryzae.md](./aspergillus-oryzae.md) (native ergothioneine claim — verify before spending).
 
@@ -662,7 +652,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Affected wiki**: [engineered-koji-protocol](./engineered-koji-protocol.md), [uricase-variant-selection](./uricase-variant-selection.md), [protein-engineering-strategy](./protein-engineering-strategy.md), [gi-survival-prediction](./gi-survival-prediction.md)
 
-**What it tests:** Does the OPT-1 engineered uricase variant (A6C + R290C + S119C + C220C + K234E + K236E — disulfide-bond-stabilized) achieve higher GI survival when expressed in *A. oryzae* koji compared to wild-type *A. flavus* uricase in the same construct? OPT-1 was designed in [`uricase-variant-selection.md`](./uricase-variant-selection.md) and validated in *S. cerevisiae* context; the *A. oryzae* redox environment differs and disulfide formation may not transfer cleanly. If OPT-1 koji achieves ~55–70% GI survival vs. ~25–35% for WT, koji becomes the preferred platform and obviates parallel yeast fermentation for stability gains.
+**What it tests:** Does the OPT-1 engineered uricase variant (A6C + R290C + S119C + C220C + K234E + K236E—disulfide-bond-stabilized) achieve higher GI survival when expressed in *A. oryzae* koji compared with wild-type *A. flavus* uricase in the same construct? OPT-1 was designed in [`uricase-variant-selection.md`](./uricase-variant-selection.md) and validated in a *S. cerevisiae* context; the *A. oryzae* redox environment differs and disulfide formation may not transfer cleanly. A positive result would select OPT-1 for the koji implementation, not select a host for unrelated tracks.
 
 **Proposed in:** `synthesis/` (architecture: synthesis/README.md) Pass 2 Proposed Experiment #1 (Disulfide-engineered uricase in koji). L948.
 
@@ -686,7 +676,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 **Dependencies:** Engineered koji strain transformation capacity; *A. oryzae* construction tooling. Could fold into the §1.9 Ward 1995 dual-cassette program if shared infrastructure is available.
 
 **Success criteria:**
-- **OPT-1 koji ≥55% GI survival** AND ≥80% titer vs. WT: koji becomes preferred platform; eliminates need for parallel yeast OPT-1 production. Locks in OPT-1 as the default uricase variant for engineered koji.
+- **OPT-1 koji ≥55% GI survival** AND ≥80% titer vs. WT: select OPT-1 as the default uricase variant for the koji configuration; revisit whether a parallel yeast OPT-1 comparator still adds information.
 - **Disulfide formation fails (non-reducing gel shows monomer at expected MW):** *A. oryzae* redox environment incompatible with OPT-1's six engineered cysteines. Either revert to WT or design a pH-stability-only variant.
 - **Activity preserved but GI survival not improved:** suggests survival is gated by gastric pH not protease, and disulfides don't help enough — pivot to enteric-coated formulation rather than further protein engineering.
 
@@ -700,7 +690,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Affected wiki**: [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md), [carnosine](./carnosine.md), [engineered-koji-protocol](./engineered-koji-protocol.md)
 
-**What it tests:** Does combining the three Tier-1 NLRP3 modulators (quercetin, ursolic acid, carnosine) produce greater than additive IL-1β suppression in MSU-stimulated human macrophages? If super-additive, the engineered-koji platform should target all three (uricase + carnosine + secondary metabolite cassette for ursolic acid/quercetin precursors). If only one or two compounds carry the signal, simplifies the construct design.
+**What it tests:** Does combining the three Tier-1 NLRP3 modulators (quercetin, ursolic acid, carnosine) produce greater than additive IL-1β suppression in MSU-stimulated human macrophages? If super-additive, the koji track can evaluate a multi-payload configuration. If only one or two compounds carry the signal, the result simplifies—or eliminates—the construct design.
 
 **Proposed in:** `synthesis/` (architecture: synthesis/README.md) Pass 2 Proposed Experiment #2 (synergy testing — three Tier-1 NLRP3 inhibitors). L974.
 
@@ -869,7 +859,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Affected wiki**: [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) (CP0), [open-enzyme-vision](./etc/open-enzyme-vision.md) (CP0 gap statement).
 
-**What it tests:** The Open Enzyme platform has a structural gap at **CP0** — the complement-priming chokepoint where MSU crystals → classical-pathway activation → C5a → C5aR1 binding on neutrophils/macrophages → non-transcriptional NLRP3 priming. CP0 is the upstream-most chokepoint in the gout cascade, and the engineered koji / yeast / supplements stack has zero coverage at this step (see [`complement-c5a-gout.md`](./complement-c5a-gout.md) §9 for the full gap analysis and [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) "CP0 gap — honest acknowledgment"). Avacopan (Tavneos, FDA-approved 2021 for ANCA vasculitis, oral C5aR1 allosteric antagonist) is the pharma adjunct here — and it is a synthetic small molecule, not a natural-product analog. This experiment runs a fast, free computational scan to either (a) surface a natural-product C5aR1 antagonist worth wet-lab triage — opening a fermentable lead at CP0 — or (b) definitively close the door on natural-product CP0 coverage and lock in "CP0 requires a pharma adjunct" as the platform thesis. The hit-rate prior was low: known C5aR1 antagonists are dominated by synthetic constrained peptides (PMX-53 series, JPE-1375) and synthetic small-molecule allosterics (avacopan, NDT-9513727, JNJ-27141491); the binding pocket is not a typical plant-secondary-metabolite scaffold target. Negative result was the expected and operationally useful outcome.
+**What it tests:** The then-current engineered-koji / yeast / supplement composition had a gap at **CP0**—the complement-priming chokepoint where MSU crystals → classical-pathway activation → C5a → C5aR1 binding → non-transcriptional NLRP3 priming. Avacopan is a synthetic small-molecule option. This experiment scans for a natural-product C5aR1 antagonist worth wet-lab triage or closes that candidate class pending new evidence. The hit-rate prior was low because known antagonists are dominated by synthetic constrained peptides and small molecules. A negative result is operationally useful: it narrows this exploit route without defining what the rest of the project must do.
 
 **Proposed in:** `synthesis/` (architecture: synthesis/README.md) 2026-04-24 sweep (25-file v1.2 batch), Connection #2 + Proposed Experiment #3. Run on 2026-04-27.
 
@@ -899,7 +889,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Conclusion — CP0 fermentable coverage is closed for natural products.** The scan returned zero wet-lab-validated natural-product C5aR1 antagonists. The two computational-only plant hits (acteoside, toxicarioside) have not been functionally validated in the decade since publication despite the original authors' stated plans, and toxicarioside is non-pursuable on safety grounds anyway. Resveratrol's hC5a binding is mechanistically distinct (neutraligand, not antagonist) and biophysically weak. Avacopan remains the pharma adjunct at CP0; the engineered koji / yeast / supplements stack does not have, and structurally is unlikely to acquire, fermentable CP0 coverage. This is a useful negative result — it converts the existing CP0 gap statement from "we don't have natural-product coverage at CP0" to "we ran the scan; here is exactly what we found and exactly why avacopan is the answer," removing this question from the platform's open backlog.
 
-**Re-open conditions:** (a) a new ChEMBL release (v35+) curates a sub-μM natural-product C5aR1 antagonist with primary-literature wet-lab confirmation; (b) a primary-literature paper reports a fermentable C5aR1 antagonist with functional cell-based or in vivo evidence; (c) avacopan loses regulatory or supply availability, raising the value of even weak fermentable backups; (d) the Shaikh & Siu 2016 group (or an independent group) publishes the long-promised in vitro validation of acteoside on C5aR1-expressing cells. Until one of these triggers, the CP0 question stays closed and the platform thesis stays "Open Enzyme covers crystal elimination upstream of CP0 + downstream chokepoints CP1–CP6; avacopan covers CP0 itself."
+**Re-open conditions:** (a) a new ChEMBL release (v35+) curates a sub-μM natural-product C5aR1 antagonist with primary-literature wet-lab confirmation; (b) a primary-literature paper reports a fermentable C5aR1 antagonist with functional cell-based or in vivo evidence; (c) avacopan loses regulatory or supply availability, raising the value of weaker fermentable backups; or (d) acteoside receives functional validation in C5aR1-expressing cells. Until then, this natural-product CP0 route stays closed.
 
 **Cross-references:** [complement-c5a-gout.md](./complement-c5a-gout.md) §9 (CP0 platform gap) + §10 (natural-product modulator literature); [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) (CP0 chokepoint); [open-enzyme-vision.md](./etc/open-enzyme-vision.md) ("CP0 gap — honest acknowledgment"); [synthesis/](../synthesis/README.md) 2026-04-24 Connection #2 + Proposed Experiment #3. Source: ChEMBL CHEMBL2373 (April 2026); Open Targets ENSG00000197405; Shaikh F, Siu SWI. *Med Chem Res* 25:1564–1573 (2016, PMID 27499603); Mishra et al. *J Biomol Struct Dyn* 2020 (PMID 32131707).
 
@@ -1128,7 +1118,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 **Success criteria:**
 - **Promote two-organism stack to mouse PK study** if Arm 5 shows ≥2× cordycepin half-life extension over Arm 4 (whole-fermentate alone) AND the half-life extension correlates with ADA activity reduction in the secondary readout. This would justify a follow-on PO HUA mouse study testing the combination at therapeutic dose.
 - **Drop GLPP from the cordycepin-targeting protocol** if Arm 5 ≈ Arm 4 (no meaningful improvement over native pentostatin) — implies GLPP's ADA inhibition is redundant with pentostatin in whole-fermentate context, and the simpler whole-fermentate-alone preparation is the right consumer product.
-- **Reframe the platform thesis** if Arm 4 ≈ Arm 1 (whole-fermentate's native pentostatin is too dilute to matter at gut-relevant concentrations) — implies cordycepin needs supplemental purified pentostatin or GLPP regardless of preparation, and the "single-organism whole-fermentate" framing in [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) needs revision.
+- **Reframe the medicinal-mushroom track** if Arm 4 ≈ Arm 1 (whole-fermentate's native pentostatin is too dilute to matter at gut-relevant concentrations)—cordycepin would need supplemental purified pentostatin or GLPP regardless of preparation, and the "single-organism whole-fermentate" hypothesis would be narrowed.
 
 **Limitations:**
 - In vitro ADA assay does not capture gut-microbiome metabolism of cordycepin (which may matter for in vivo half-life). The half-life extension demonstrated here is necessary but not sufficient for clinical effect.
@@ -1789,13 +1779,13 @@ Each arm: parallel small-scale liquid (Arms A-C) or solid (Arm D) cultivation; h
 
 ### 2.7 Koji × *Cordyceps* Co-Formulation Stability Test — ADA-Challenge Assay — **Deprioritized 2026-05-16, archived 2026-05-29**
 
-> **Deprioritized 2026-05-16 ('do not execute'); moved to archive 2026-05-29.** Full deprioritized protocol retained verbatim in [validation-experiments-archive.md §2.7](./etc/validation-experiments-archive.md#27-koji--cordyceps-co-formulation-stability-test--ada-challenge-assay-added-2026-05-15-deprioritized-2026-05-16) (corpus-excluded). Re-open only if the koji-cordycepin engineering thesis is re-prioritized.
+This experiment is not active. Reconstruct it from Git only if the koji-cordycepin hypothesis becomes decision-relevant again.
 
 ---
 
 ## Phase 3: Human Self-Experimentation and Biomarker Tracking
 
-> **Phase 3 archive note (2026-05-29):** the Proposed (designed-but-not-active) self-experiments §3.1, §3.2, and §3.4–§3.11 were moved to [validation-experiments-archive.md](./etc/validation-experiments-archive.md) (corpus-excluded). Only the active in-flight experiment **§3.3 (Lynn: wild-type koji digestive enzyme supplementation, In Progress)** remains here. See the archive for the full designed protocols.
+Only active experiments belong in this section. Designed-but-inactive protocols are recoverable from Git if their triggering evidence arrives.
 
 ### 3.3 Lynn: Wild-Type Koji Digestive Enzyme Supplementation
 
@@ -1845,7 +1835,7 @@ A structured self-experiment on BoulderBio (wild-type *A. oryzae* OTC, 40,000 FI
 
 ---
 
-> **Closed / deprioritized / not-yet-active validation experiments live in [validation-experiments-archive.md](./etc/validation-experiments-archive.md) (corpus-excluded).** Moved 2026-05-29: §2.7 (deprioritized) and Phase 3 §3.1, §3.2, §3.4–§3.11 (Proposed self-experiments, designed but not started). The one active Phase 3 experiment — §3.3 (Lynn, In Progress) — remains below.
+Closed, deprioritized, and not-yet-active protocols are not retained in the live tree; Git preserves them. The active Phase 3 experiment remains below.
 
 
 ## Cross-Experiment Dependencies and Sequencing

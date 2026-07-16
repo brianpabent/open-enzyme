@@ -27,7 +27,6 @@ status: complete
 
 # F. prausnitzii Heterologous Expression Feasibility (comp-008)
 
-> **Frozen analysis archived at [`etc/experiments/comp-008-f-prausnitzii-heterologous-expression/wiki-archive.md`](./etc/experiments/comp-008-f-prausnitzii-heterologous-expression/wiki-archive.md). Reproducible artifact: `python3 etc/experiments/comp-008-f-prausnitzii-heterologous-expression/analyze.py`.**
 
 ## Headline ranking
 

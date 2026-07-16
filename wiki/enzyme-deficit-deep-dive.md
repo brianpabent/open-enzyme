@@ -485,7 +485,7 @@ Here's where the research meets the kitchen table. What can Brian and Lynn actua
 
 #### Now — Together
 
-**Start a koji project.** Seriously. Growing koji at home is surprisingly accessible (all you need is rice, koji starter spores, and a warm humid environment — a cooler with a heating pad works). Make shio koji for cooking (enzyme-rich marinade + digestive aid for Lynn), and amazake as a sweet drink (amylase boost). It connects you both to the biology in a tangible, delicious way. Plus, you'll be doing exactly what the supplement industry does — just at kitchen scale.
+**Scope note:** Home koji fermentation can provide a wild-type comparator for digestive-enzyme measurements. That is adjacent household research, not evidence for an engineered gout intervention and not the Open Enzyme mission.
 
 **Track and share data.** Brian's uric acid levels (routine blood tests) and Lynn's digestive symptoms could both benefit from systematic tracking. Fermented food intake, supplement timing, dietary changes — correlating these with symptoms helps identify what moves the needle. Even a simple shared spreadsheet beats guessing.
 

@@ -41,7 +41,7 @@ status: scope-page
 
 [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) ranks kidney-tropic siRNA against URAT1 as the **#1 open exploration vector** — "the cleanest 'elegant solution' in the entire matrix." The 2026-05-05 sweep Open Question / Priority Action #3 formalizes this as a dedicated page.
 
-The mission framing (per Brian's 2026-05-05 reframe): *Open Enzyme is a research project to solve gout via every available modality, fully open. The koji chassis is its first and primary chassis expression — but it is not the entire mission.* This page is the second peer-track exploration vector developed under that reframe, alongside [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) (which formalized engineered Live Biotherapeutic Products as a peer track for the gut-resident butyrate / colonization vector).
+The mission is to use red-teaming to identify exploitable weaknesses in gout and creative engineering to exploit them. Kidney-tropic siRNA is one independently falsifiable route, alongside [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md), koji, small molecules, and other modalities.
 
 **This vector is fundamentally non-fermentable.** Kidney-tropic siRNA biologics require synthetic oligonucleotide chemistry, conjugate or LNP formulation, IV / subcutaneous delivery, and the FDA biologic regulatory pathway. There is no microbial chassis that produces a kidney-tropic siRNA conjugate. This vector therefore lives in the **discovery-engine output** half of Open Enzyme's two-output architecture (per [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §2.2 "The repurposing surface" — non-microbial mechanism candidates the platform identifies but does not itself manufacture). Parallel to how zileuton, disulfiram, and avacopan appear in the OE corpus as repurposing candidates (small-molecule pharma drugs the platform recommends but does not engineer), siRNA against URAT1 is positioned as a *discovery-engine output* the platform scopes, characterizes, and publishes — for partner companies, academic groups, or future spinouts to actually develop.
 
@@ -51,7 +51,7 @@ The mission framing (per Brian's 2026-05-05 reframe): *Open Enzyme is a research
 
 **URAT1** (SLC22A12; chromosome 11) is a urate / organic anion exchanger expressed on the apical membrane of the renal proximal tubule. Its job: reabsorb uric acid from the tubular lumen back into the blood. Per [`gout-pathophysiology.md`](./gout-pathophysiology.md):
 
-- **~70% of daily uric acid elimination is renal** (the rest is gut, primarily via ABCG2 — the chassis the koji platform engineers around)
+- **~70% of daily uric acid elimination is renal** (the rest is gut, primarily via ABCG2—the transport mechanism used by several oral-uricase tracks)
 - **URAT1 reabsorbs ~90% of filtered urate** — the dominant renal-side urate-handling lever
 - **Under-excreter gout** (the majority phenotype, ~80% of gout patients) is largely a URAT1-overactivity / ABCG2-underactivity phenotype
 - **Brian's hyperuricemia** is in this under-excreter category, which is why URAT1 is named in `androgen-urate-axis.md` as one of the two transporters androgens modulate (URAT1 ↑ on T; ABCG2 ↓ on T)
@@ -105,20 +105,13 @@ Per [`gout-pathophysiology.md`](./gout-pathophysiology.md):
 
 **siRNA's competitive position:** *not* a near-term replacement for the small-molecule class (pozdeutinurad will likely launch in 2026–2027 with strong efficacy and a clean safety profile relative to benzbromarone). siRNA's distinctive value is the *durability + sequence-specificity + hormone-independence* combination at a 5–10 year horizon — the patient profile where: (a) daily-pill adherence is the bottleneck (quarterly injection wins); (b) any small-molecule off-target profile is unacceptable (refractory + hepatic-impaired patients); (c) hormone-axis modulation makes pill-class efficacy unreliable (clomid / TRT users where URAT1 is upregulated and the inhibitor IC50 needs to be re-met against elevated transporter density).
 
-This is the same logic as engineered LBPs (peer-track to koji) — both modalities serve a *different patient population* than the platform's primary chassis, on a *different timeline and regulatory path*, complementing rather than competing.
+Like engineered LBPs, this modality has a distinct population, timeline, and regulatory path. It should be compared with competing interventions on evidence and constraints, not assigned a secondary status by chassis.
 
 ---
 
-## Position in the Open Enzyme platform — discovery-engine output
+## Position in Open Enzyme — discovery output
 
-Per [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §2.2 ("The repurposing surface"), Open Enzyme operates on a two-output architecture:
-
-1. **The discovery engine** — chokepoint-based methodology for mapping every vector that causes, treats, or mitigates a target disease. Outputs include the cascade maps, the chokepoint inventory, and the *repurposing surface* (FDA-approved drugs that hit relevant chokepoints but were never clinically tested for the target disease, e.g., zileuton for 5-LOX, disulfiram for NLRP3, avacopan for C5aR1).
-2. **The open-source strain library** — engineered koji / yeast strains the platform itself manufactures and distributes. The koji endgame strain ([`koji-endgame-strain.md`](./koji-endgame-strain.md)) is the canonical example.
-
-**siRNA against URAT1 is firmly a discovery-engine output, not a strain-library output.** The platform identifies the mechanism, scopes the modality, characterizes the design space, and publishes — but does not itself manufacture siRNA biologics. Partners (academic groups working on kidney-tropic delivery; existing siRNA pharma like Alnylam, Arrowhead Pharmaceuticals, Dicerna / Novo Nordisk; or future Open Enzyme spinouts) take the scoped concept forward. Same positioning as the repurposing-surface candidates (zileuton, disulfiram, avacopan): the platform's contribution is mechanistic clarity and the published rationale, not the IND.
-
-This positioning matters because it preserves the clean two-track narrative: Open Enzyme as platform builds (a) a strain library you can grow at home, and (b) a discovery engine that surfaces non-fermentable mechanisms for partners to take to clinic. siRNA against URAT1 is the cleanest example of (b) the matrix has surfaced so far.
+**siRNA against URAT1 is a discovery output, not a strain output.** Open Enzyme can map the mechanism, characterize the design space, define falsification gates, and publish the result. Manufacturing and clinical development would require specialized partners. That constraint affects execution ownership, not scientific priority.
 
 ---
 
@@ -133,16 +126,16 @@ This positioning matters because it preserves the clean two-track narrative: Ope
 | **Capital to first commercial dose** | $0–500K | $50–200M | $200–500M+ (long-horizon delivery R&D) |
 | **Time to first commercial dose** | Months | 5–8 years | 10+ years (kidney-tropic delivery is the gating R&D) |
 | **Patient population** | Broad gout market, mild-to-moderate | Q141K / refractory / high-severity | Adherence-limited, refractory, hepatic-impaired, hormone-modulated |
-| **OE platform role** | Primary chassis | Peer-track scope page + Phase 2 follow-ups | Discovery-engine output; partner / spinout territory |
+| **OE role** | Candidate food-format track | Candidate LBP track | Discovery output; partner / spinout territory |
 | **Open-source compatibility** | Native — strain library on GitHub | Strain genetics open; manufacturing closed | Mechanism + target + delivery rationale open; clinical IP closed |
 
-The three tracks together represent the chase-every-avenue framing: koji for the broad democratized market, LBPs for the durable-colonization subset, siRNA for the long-horizon "mechanistically cleanest" frontier.
+The three tracks sample different design constraints. Their rankings should change as evidence arrives.
 
 ---
 
 ## Open Follow-Ups
 
-Six in silico Phase 2 follow-ups, no pharma-partner dependency to start. Tracked in multiple redundant surfaces (this page, [`open-questions.md`](./open-questions.md), [`computational-experiments.md`](./computational-experiments.md), [`index.md`](../index.md), [`hypotheses/H03-sirna-urat1-thesis.md`](./hypotheses/H03-sirna-urat1-thesis.md), and [`synthesis/`](../synthesis/README.md) Strategic Reflections Queue).
+Six in-silico follow-ups require no pharma partner to start. This page is the canonical track list; other surfaces should link here rather than duplicate it.
 
 | ID | Item | Type | Status |
 |---|---|---|---|
@@ -152,7 +145,7 @@ Six in silico Phase 2 follow-ups, no pharma-partner dependency to start. Tracked
 | **P2-4** | Comparative analysis: siRNA vs. small-molecule URAT1 inhibitors (pozdeutinurad / AR882 efficacy, safety, cost, durability, hormone-axis-interaction). Honest assessment of the competitive 5–10 year horizon | Synthesis (Opus subagent or inline) | Queued |
 | **P2-5** | Falsification card H03: siRNA / URAT1 thesis — full claim, assumption stack, killshot menu, pre-committed thresholds | Hypothesis formalization | [Stub committed](./hypotheses/H03-sirna-urat1-thesis.md); full population queued |
 | **P2-6** | Lit scan: FDA siRNA regulatory path (inclisiran / patisiran precedent, IND-enabling package, ballpark timeline + capital for a kidney-tropic siRNA BLA) | Literature review (Opus subagent) | Queued |
-| **P3** | Platform-framing reflection (shared with LBP track) — does the discovery-engine track (siRNA / URAT1, kidney-tropic conjugates, Q141K pharmacological chaperones, mRNA-IL-1RA pulse therapy) accumulate enough substance to formally rebrand Open Enzyme as "open-source gout-solving research project" rather than "open-source koji-engineered enzyme library"? | Strategic reflection | Queued, content-triggered; rolled into the existing Strategic Reflections Queue entry in `synthesis/` (architecture: synthesis/README.md) |
+| **P3** | Portfolio review — does the siRNA / URAT1 route survive its delivery, specificity, safety, and translation gates strongly enough to remain active? | Track decision | Pending evidence |
 
 ---
 

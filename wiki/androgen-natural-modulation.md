@@ -429,7 +429,7 @@ Per [tcm-modern-rigor-intersection.md](./tcm-modern-rigor-intersection.md) disci
 
 **Gout-specific UA risk:** **Cordycepin is uniquely interesting** — it has demonstrated URAT1 modulation in animal models (337 → 203 µmol/L SUA per [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md)). This is the rare T-axis adjuvant that is **net UA-LOWERING** in animal data. The T-elevation effect from cordyceps is modest, but the URAT1 modulation works in the opposite direction to the URAT1 upregulation that high T usually produces. Net effect is unknown but **most favorable of the T-elevation candidates for the gout-comorbid case.**
 
-**Verdict:** **The most gout-favorable T-axis adjuvant in this scan.** Whole-fermentate *C. militaris* on brown rice (4–8 week home cycle, see [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md)) is the cleanest delivery. Cross-references the Open Enzyme platform thesis directly.
+**Verdict:** **The most gout-favorable T-axis adjuvant in this scan.** Whole-fermentate *C. militaris* on brown rice (4–8 week home cycle, see [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md)) is the cleanest delivery evaluated here. This candidate belongs to the medicinal-mushroom track.
 
 ### 5.4 *Cynomorium songaricum* (Suo Yang 锁阳)
 
@@ -545,7 +545,7 @@ This section addresses the specific mechanism that triggered the canonical motiv
 
 **Gout-specific:** Net UA-neutral; mildly favorable on inflammation arm. **No ABCG2 antagonism concern.** Stacks cleanly with the gut-lumen-sink thesis.
 
-**Verdict:** **The cleanest natural-product flare-prophylaxis adjuvant for the gout-comorbid case.** Modest individual effect, no antagonism with the platform thesis, well-tolerated, cheap.
+**Verdict:** **A plausible natural-product flare-prophylaxis adjuvant for the gout-comorbid case.** Modest individual effect and no identified antagonism with the current gut-lumen-sink mechanism.
 
 ### 7.4 KPV peptide
 
@@ -571,7 +571,7 @@ See [oridonin.md](./oridonin.md) for the full entry.
 
 **Nothing matches colchicine's RCT evidence base for flare prophylaxis during UA-drop windows.** This is not a controversial claim — it's the direct read of the AGREE trial and the ACR 2020 guideline. The natural-product layer:
 
-- **Omega-3 EPA/DHA**: real but smaller effect; clean stacking with the platform thesis. Reasonable adjuvant.
+- **Omega-3 EPA/DHA**: real but smaller effect; no identified conflict with the current gout tracks. Reasonable adjuvant.
 - **Curcumin**: real anti-inflammatory effect but ABCG2-antagonism counterindication for the gut-lumen-sink-aligned patient.
 - **KPV peptide / oridonin**: research-stage; not appropriate for casual use.
 
@@ -619,7 +619,7 @@ If the self-experimenter's preference is to keep full Clomid and aggressively ma
 
 **Flare prophylaxis:** as in §8.1.
 
-**This is the platform-thesis-aligned reframe** — the self-experimenter keeps the T benefit and uses the Open Enzyme platform thesis to manage the consequence.
+**Track-level reframe:** the self-experimenter keeps the intended testosterone benefit while separately testing ways to reduce the gout consequence.
 
 ### 8.3 Reframe #3 — Cycle on/off
 
@@ -686,7 +686,7 @@ These are the explicit research gaps surfaced by this scan; format-compatible wi
 
 **H-AN-05: The TCM yang tonic UA-tracking gap.** *No Chinese-language CNKI study of cistanche / epimedium / cordyceps has UA as a tracked endpoint despite all three being widely used in male hypogonadism contexts.* Falsifiable via primary CNKI search and (if absent) a small prospective study tracking UA in men supplementing these. **This is also a wiki coverage gap** — the [tcm-modern-rigor-intersection.md](./tcm-modern-rigor-intersection.md) discipline could be applied to map T-elevation TCM herbs against UA risk specifically.
 
-**H-AN-06: Curcumin's ABCG2 antagonism in supplementing gout patients in vivo.** *Curcumin in vitro is an ABCG2 inhibitor; the in vivo magnitude at supplement doses with bioavailability-enhanced formulations is unclear.* Cross-references [supplement-abcg2-antagonism-computational.md](./supplement-abcg2-antagonism-computational.md). Falsifiable via direct ABCG2-activity assay in patient stool / serum on/off curcumin supplementation. **Major decision-relevance for the Open Enzyme platform thesis.**
+**H-AN-06: Curcumin's ABCG2 antagonism in supplementing gout patients in vivo.** *Curcumin in vitro is an ABCG2 inhibitor; the in-vivo magnitude at supplement doses with bioavailability-enhanced formulations is unclear.* Cross-references [supplement-abcg2-antagonism-computational.md](./supplement-abcg2-antagonism-computational.md). Falsifiable via direct ABCG2-activity assay in patient stool / serum on/off curcumin supplementation. **Decision-relevant to any ABCG2-dependent gut-lumen-sink track.**
 
 **H-AN-07: Pre-flare biomarker monitoring during UA-drop windows.** *The 2026-05-07 SERM-step-down case (logged in [`self-experiment-protocol.md`](./self-experiment-protocol.md)) is canonical: a self-experiment ULT-equivalent step-down produced a predictable mobilization flare. What hs-CRP / IL-1β trajectory could have flagged the impending flare 24–48h before crystals mobilized clinically?* Falsifiable in a prospective small-n self-experiment with daily hs-CRP. Adjacent to [self-experiment-protocol.md](./self-experiment-protocol.md).
 

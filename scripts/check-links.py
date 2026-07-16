@@ -41,10 +41,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #   • .claude        — git worktrees + skills (working copies, not corpus)
 #   • venvs          — vendored Python envs under wiki/etc/experiments/<comp>/
 #                      (torch et al. ship .md files)
-#   • experiments    — archived per-experiment snapshots (wiki-archive.md,
-#                      outputs/) that are NOT in the published nav; their
-#                      links were valid at their original wiki/ location and
-#                      are historical, not live.
+#   • experiments    — reproducible computational artifacts that are not part
+#                      of the reader-facing published navigation.
 SKIP_DIRS = {
     ".git", ".claude", "site", "node_modules", "__pycache__", ".obsidian",
     "venv", ".venv", "env", "v2-env", "site-packages", ".pytest_cache",

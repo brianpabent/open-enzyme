@@ -505,6 +505,22 @@ def raw_markdown(promoted: list[dict[str, Any]], manifest: dict[str, Any], diff_
     return "".join(chunks), "\n<<<NEXT>>>\n".join(reviews) + "\n"
 
 
+def deduplicate_promoted(items: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
+    """Suppress same-run duplicate headlines before they enter the active queue."""
+    kept: list[dict[str, Any]] = []
+    removed: list[str] = []
+    seen: set[tuple[str, str]] = set()
+    for item in items:
+        headline = re.sub(r"[^a-z0-9]+", " ", item["headline"].lower()).strip()
+        key = (item["type"], headline)
+        if key in seen:
+            removed.append(item["candidate_id"])
+            continue
+        seen.add(key)
+        kept.append(item)
+    return kept, removed
+
+
 def write_json(path: Path, value: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n")
@@ -650,6 +666,7 @@ def run_pipeline(args: argparse.Namespace) -> dict[str, Any]:
                 raise RuntimeError("Promoted verdict lacks type, headline, or grounded body")
             promoted.append(verdict)
 
+    promoted, deduplicated_ids = deduplicate_promoted(promoted)
     raw, reviews = raw_markdown(promoted, corpus, args.diff_base, args.trigger_path, args.bridge_model)
     raw_path = work / "distributed-synthesis.md"
     reviews_path = work / "distributed-reviews.txt"
@@ -670,6 +687,7 @@ def run_pipeline(args: argparse.Namespace) -> dict[str, Any]:
         "rehydrated_candidate_ids": rehydrated_ids,
         "reviewed_candidate_ids": reviewed_ids,
         "promoted_candidate_ids": [item["candidate_id"] for item in promoted],
+        "deduplicated_candidate_ids": deduplicated_ids,
         "raw_synthesis_sha256": sha256(raw.encode()),
         "reviews_sha256": sha256(reviews.encode()),
         "cost": {"actual_usd": ledger.actual, "hard_cap_usd": ledger.cap, "calls": ledger.calls},

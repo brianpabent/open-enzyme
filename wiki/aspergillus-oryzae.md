@@ -25,7 +25,7 @@ sources:
 
 ## Overview
 
-*Aspergillus oryzae* (koji mold) is a filamentous fungus with GRAS (Generally Recognized As Safe) status from the FDA and a 1,000+ year history of safe use in East Asian food production. It is one of the most genetically tractable fungi in existence and naturally produces a complex cocktail of digestive enzymes—lipase, multiple proteases, and amylase—at therapeutically relevant concentrations. For the [[open-enzyme-vision|Open Enzyme project]], koji serves as a dual-purpose platform: it produces the digestive enzymes needed for [[enzyme-deficit-deep-dive|enzyme insufficiency]] without any genetic engineering, and it can be engineered to additionally express [[uricase|uricase]] for gout management. (Source: engineered-koji-protocol.md, etc/open-enzyme-vision.md)
+*Aspergillus oryzae* (koji mold) is a filamentous fungus with a long history in East Asian food production and mature genetic tooling. It naturally produces lipase, proteases, and amylase. Open Enzyme tests it as one possible food-format chassis for gout payloads, including [[uricase|uricase]]. Native digestive-enzyme production is adjacent work, not the gout mission. (Source: engineered-koji-protocol.md, etc/open-enzyme-vision.md)
 
 ## GRAS Status and Food Safety History
 
@@ -274,35 +274,29 @@ For EPI / digestive-enzyme home use, yellow koji (*A. oryzae*) is the default �
 
 **Chaperone-orthogonal cassette stacking framework (2026-05-05):** A predictive design framework for multi-cassette *A. oryzae* yield was formalized in [chaperone-orthogonal-stacking.md](./chaperone-orthogonal-stacking.md). The key insight: multi-cassette yield is dominated by competition for ER folding subsystems (BiP/Kar2, PDI/ERO1, calnexin/calreticulin), not by genome real estate or transcription capacity. Cassettes partitioned across non-overlapping chaperone classes stack with near-additive yield; cassettes competing for the same subsystem show steep yield collapse. The OE endgame strain is implicitly chaperone-orthogonal: uricase (BiP-transit only, 0 disulfides), lactoferrin (PDI-heavy, 16 disulfides per Notari 2023 PMC10465537; architecture-adjusted effective PDI load 24–40 per [chaperone-orthogonal-stacking.md §3.5](./chaperone-orthogonal-stacking.md)), carnosine (cytosolic, bypasses secretion entirely), native digestives (light, well-adapted). Predicted weighted synergy ≥0.85 for the four-molecule endgame strain — approximately Huynh 2020 adalimumab equivalent burden. Key caveat: constitutive HacA<sup>i</sup> (UPR activation) is **not** a default lever in koji — Zhou 2016 found it suppresses native amylase output via RESS feedback, which would undermine the digestive-enzyme leg. The highest-leverage capacity-expansion lever is cross-class chaperone helper combinations (Pichia precedent: YDJ1+PDI 8.7×, YDJ1+Sec63 7.6×, Kar2+PDI 6.5× absolute uplift over baseline; Zhang 2006 *Biotechnol Prog* 22(4):1090-5, [DOI 10.1021/bp060019r](https://doi.org/10.1021/bp060019r), abstract verified 2026-05-06 — see [chaperone-orthogonal-stacking.md §10.1 Verification provenance](./chaperone-orthogonal-stacking.md#101-verification-provenance) for the intra-paper combination/single advantage caveat). Multilingual lit scan (J-STAGE, CiNii, CNKI) confirmed no published predictive chaperone-orthogonality framework exists for koji. (Mechanistic Extrapolation; source: chaperone-orthogonal-stacking.md)
 
-[[aspergillus-oryzae|Koji]] is the first platform target in the [[open-enzyme-vision|Open Enzyme]] project because:
+## Why this chassis remains worth testing
 
-1. **No genetic engineering needed for digestive enzymes** — wild-type koji already produces therapeutic-grade lipase, protease, and amylase
-2. **One food organism addresses two household enzyme deficiencies** — Brian's uricase deficit + Lynn's digestive enzyme insufficiency
-3. **GRAS status and ancient safety history** — centuries of consumption, FDA approval
-4. **Simple home fermentation** — rice, spores, warmth, humidity, 36–48 hours
-5. **Genetic tools mature** — CRISPR, transformation protocols, characterized promoters, well-understood
-
-Engineered koji represents the ideal convergence of biological feasibility, food safety, and therapeutic need. (Source: etc/open-enzyme-vision.md, enzyme-deficit-deep-dive.md)
+Koji is one candidate chassis in the [[open-enzyme-vision|Open Enzyme]] portfolio. It combines a long food-use history, mature genetic tools, solid-state fermentation, and native secretion of digestive enzymes. Those properties make it a plausible host for specific oral enzyme configurations; they do not make it the project thesis. Its value is conditional on measured expression, activity, GI survival, safety, and reproducibility. Failure at those gates should be documented and should redirect work to another host or modality.
 
 ## Comparison to Saccharomyces cerevisiae
 
-Both [[saccharomyces-cerevisiae|S. cerevisiae]] and *A. oryzae* can express uricase, but they serve different strategic roles:
+Both [[saccharomyces-cerevisiae|S. cerevisiae]] and *A. oryzae* can express uricase. The comparison is payload- and delivery-specific:
 
 | Feature | A. oryzae (Koji) | S. cerevisiae (Yeast) |
 |---|---|---|
-| Native enzymes | Lipase, protease, amylase (exactly what Lynn needs) | None relevant to enzyme therapy |
+| Native enzymes | Lipase, protease, amylase | None relevant to the current enzyme configuration |
 | GRAS status | Yes (1000+ years food use) | Yes |
 | Genetic engineering | Mature, CRISPR-ready, industrial standard | Undergraduate coursework-level |
 | Food format | Shio koji, amazake, fermented paste | Non-alcoholic beverage, capsule |
 | Fermentation | 36–48h on rice, ambient conditions | Liquid fermentation, 3–7 days |
 | Enzyme stability (drying) | Good (when lyophilized) | Moderate |
-| Dual-purpose | Yes (uricase + native digestive enzymes) | No (only uricase, requires codon opt.) |
+| Multi-enzyme option | Native digestive enzymes plus an engineered payload | Engineered payloads require explicit cassette design |
 
-For the [[open-enzyme-vision|Open Enzyme platform]], koji is strategically preferred as the first platform because of the dual-enzyme advantage and simpler fermentation. S. cerevisiae remains valuable as an alternative delivery system or for high-volume commercial scale-up. (Source: engineered-koji-protocol.md, engineered-yeast-uricase-proposal.md)
+Koji is favored only where its native secretion and food format improve a defined configuration. *S. cerevisiae* remains a competing host with a faster and more mature engineering workflow. The relevant experiment chooses between them; project identity does not. (Source: engineered-koji-protocol.md, engineered-yeast-uricase-proposal.md)
 
 ## Future: Multi-Compound Koji
 
-The [[nlrp3-exploit-map|NLRP3 inflammasome pathway]] suggests an extended vision for engineered koji:
+The [[nlrp3-exploit-map|NLRP3 inflammasome pathway]] suggests optional payloads to test if the base chassis clears its gates:
 
 With modern CRISPR tools and *A. oryzae*'s robust synthetic biology toolkit, future iterations of koji could be engineered to simultaneously produce:
 
@@ -311,7 +305,7 @@ With modern CRISPR tools and *A. oryzae*'s robust synthetic biology toolkit, fut
 3. **Enhanced spermidine biosynthesis** — autophagy activation
 4. **Nrf2-activating compounds** — antioxidant defense
 
-A single fermented food attacking gout from both the uric acid and inflammatory angles. This is the superorganism vision—engineering food as a multi-targeted therapeutic platform. (Source: nlrp3-exploit-map.md)
+This is a high-complexity, falsifiable configuration—not an assumed endpoint. Each added payload must beat the simpler alternative of separate manufacture or a different modality. (Source: nlrp3-exploit-map.md)
 
 ## AI Analysis Findings (April 2026)
 
@@ -348,6 +342,6 @@ See [[ai-analysis/06-koji-construct-design|06 — Koji Construct Design]] and [[
 
 - Source: engineered-koji-protocol.md — Complete protocol for A. oryzae transformation, fermentation, and dosing
 - Source: enzyme-deficit-deep-dive.md — Enzyme insufficiency and koji's native therapeutic potential
-- Source: etc/open-enzyme-vision.md — Platform vision and koji as first target
+- Source: etc/open-enzyme-vision.md — Mission and portfolio relationship to the koji track
 - Source: nlrp3-exploit-map.md — Future multi-compound koji engineering
 - Source: blood-barrier-exploits.md — Gut-lumen enzyme delivery route validation

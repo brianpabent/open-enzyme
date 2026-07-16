@@ -37,9 +37,9 @@ But comp-014 (medicinal mushroom × chokepoint mapping) surfaced a different cat
 
 Brian's 2026-05-06 inversion was the right one: not "find a better engineering chassis than koji" (basidiomycete genetics is 5-10× harder than ascomycete; engineering Pleurotus / Lentinula / Hericium / Ganoderma for protein secretion is a multi-year toolkit-building project before first construct expresses) but **"are there other home-cultivable fungi whose native compound profile complements what koji produces?"** Yes.
 
-This page formalizes the **medicinal mushroom complement track** as a peer track to the koji engineering track under the broader Open Enzyme platform thesis. Same pattern as [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) (engineered LBPs as obligate-anaerobe chassis sibling to koji) and [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) (kidney-tropic siRNA as discovery-engine output sibling to fermentable enzymes). All three peer tracks expand Open Enzyme from "engineered enzymes in koji" to "solve gout, every avenue, fully open."
+This page formalizes the **medicinal mushroom complement track** as one independently falsifiable route alongside koji engineering, [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md), and [`sirna-urat1-modality.md`](./sirna-urat1-modality.md). The project already spans these modalities; this track stands or falls on its own evidence and experiments.
 
-## Platform thesis expansion
+## Track scope
 
 | Track | Chassis | Engineering effort | Therapeutic class | Consumption UX |
 |---|---|---|---|---|

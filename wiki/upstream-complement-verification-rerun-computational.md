@@ -53,7 +53,6 @@ status: published
 
 > **⚠️ Verdict caveated (comp-review 2026-07-14).** Useful Phase-0 literature-mining, but several load-bearing quantitative claims are **NOT primary-source verified** — treat the IC50/ratio numbers as citation-tier, not verified.
 
-> **Frozen analysis archived to [`./etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md`](./etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md)** (302 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
@@ -62,7 +61,6 @@ status: published
 **Plain-English summary first.** Open Enzyme is mapping every avenue to address gout. One of the seven bottlenecks the platform tracks is "complement priming" — when monosodium urate crystals appear in a joint, they activate the complement immune cascade, which generates C5a, which primes the NLRP3 inflammasome, which drives the gout flare's signature inflammation. That priming step is named CP0 in the platform. So far the platform's main intervention at CP0 is a protein-engineering thread (an engineered shortened version of the human DAF/CD55 receptor expressed in koji — see [comp-012](./daf-cd55-scr14-truncated-computational.md) and […]
 
 **Where the analysis lives:**
-- Full archived analysis: [`./etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md`](./etc/experiments/comp-020-upstream-complement-verification-rerun/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-020-upstream-complement-verification-rerun/`](./etc/experiments/comp-020-upstream-complement-verification-rerun/)
 - **Helicteres benzofuran lignan replication track (comp-018 Phase 2, 2026-05-17):** [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json) — replication INCONCLUSIVE / ANCHOR-STILL-SINGLE; independent wet-lab replication recommended
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

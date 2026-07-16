@@ -57,7 +57,6 @@ status: complete (v1) — target deprioritized 2026-05-16
 
 > **⚠️ Verdict caveated (comp-review 2026-07-14).** The qualitative conclusion (Jeennor-scale cns1+cns2 unlikely to be a prohibitive **stoichiometric-FBA** burden) is plausible, but the artifact-summary contract is not clean — treat as a heuristic burden prior, not a validated flux result.
 
-> **Frozen analysis archived to [`./etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md`](./etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md)** (183 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
@@ -66,6 +65,5 @@ status: complete (v1) — target deprioritized 2026-05-16
 Does adding the bacterial **cns1+cns2 cordycepin biosynthesis pathway** (Jeennor 2023, [PMID 38071331](https://pubmed.ncbi.nlm.nih.gov/38071331/), 564 mg/L/day in *A. oryzae*) on top of the dual uricase + lactoferrin cassette in the [koji-endgame-strain](./koji-endgame-strain.md) §1 design impose a prohibitive metabolic burden, defined by:
 
 **Where the analysis lives:**
-- Full archived analysis: [`./etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md`](./etc/experiments/comp-023-cns1-cns2-metabolic-burden/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-023-cns1-cns2-metabolic-burden/`](./etc/experiments/comp-023-cns1-cns2-metabolic-burden/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

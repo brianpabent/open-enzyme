@@ -71,7 +71,7 @@ The ABSTRACT-TIER and WEBSEARCH-SNIPPET rows are explicitly flagged in matrix.js
 
 ## Multilingual coverage
 
-This run did not execute new CNKI / WanFang / J-STAGE direct queries; comp-020's partial-execution disclosure (§4.3 of comp-020 wiki-archive) applies. The Wu 2015 + Zhang & Chen 2008 + Yin 2016 papers — Daofeng Chen Fudan group, English-language journals — are the canonical TCM-anti-complement primary literature in this scope. CNKI substantive Bupleurum literature follow-up remains queued per comp-020 §5.4.
+This run did not execute new CNKI / WanFang / J-STAGE direct queries; comp-020's partial-execution disclosure applies. The Wu 2015 + Zhang & Chen 2008 + Yin 2016 papers—Daofeng Chen's Fudan group, English-language journals—are the canonical TCM anti-complement primary literature in this scope. A substantive CNKI *Bupleurum* follow-up remains open.
 
 ## Translation-disagreement summary
 

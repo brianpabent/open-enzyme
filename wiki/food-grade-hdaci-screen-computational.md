@@ -21,7 +21,6 @@ status: archived-to-experiments
 
 # Food-Grade HDAC Inhibitor Screen for Q141K-ABCG2 Trafficking Rescue: Computational Analysis (comp-007)
 
-> **Frozen analysis archived to [`./etc/experiments/comp-007-food-grade-hdaci-screen/wiki-archive.md`](./etc/experiments/comp-007-food-grade-hdaci-screen/wiki-archive.md)** (201 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
@@ -30,6 +29,5 @@ status: archived-to-experiments
 **Status:** Complete — 2026-05-05 **Experiment folder:** [`etc/experiments/comp-007-food-grade-hdaci-screen/`](./etc/experiments/comp-007-food-grade-hdaci-screen/) **Informs:** [`validation-experiments.md` §1.22](./validation-experiments.md#122-gut-selective-food-grade-hdac-inhibitor-screen-for-q141k-abcg2-trafficking-rescue)
 
 **Where the analysis lives:**
-- Full archived analysis: [`./etc/experiments/comp-007-food-grade-hdaci-screen/wiki-archive.md`](./etc/experiments/comp-007-food-grade-hdaci-screen/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-007-food-grade-hdaci-screen/`](./etc/experiments/comp-007-food-grade-hdaci-screen/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

@@ -39,7 +39,6 @@ status: complete (v1; fold-quality model deferred to wet-lab)
 
 # Uricase Cassette Ranking, ClockBase-Style Combinatorial Composite Scoring (Computational, comp-022)
 
-> **Frozen analysis archived to [`./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive.md`](./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive.md)** (301 lines).
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
@@ -50,6 +49,5 @@ Across the *A. oryzae* uricase expression cassette design space, parameterized a
 > **Interpretation correction (2026-07-13):** comp-022 ranks cassette designs inside the koji-secreted design space; it does not establish that secretion is the human-relevant UOX topology. Its strict direct-secretion winners remain candidates for [§1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial). Promotion to §1.9B occurs only if a koji-compatible topology clears the physiological-substrate, oxygen, peroxide, localization, and viability gate.
 
 **Where the analysis lives:**
-- Full archived analysis: [`./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive.md`](./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/`](./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)

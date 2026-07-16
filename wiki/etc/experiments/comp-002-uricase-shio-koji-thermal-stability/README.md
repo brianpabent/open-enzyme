@@ -36,7 +36,6 @@ outputs/
   summary.md                            Human-readable findings — this is the artifact cited in the wiki
 analyze.py                              Analysis script (stdlib only; Lumry-Eyring two-state thermal model + Henderson-Hasselbalch pH + Hofmeister salt + pLDDT interface integrity)
 README.md                               This file
-wiki-archive.md                         Long-form narrative (≤archived from sweep daemon synthesis)
 ```
 
 ## Method summary
@@ -53,7 +52,7 @@ Composite biophysical scoring framework with four orthogonal axes:
 
 Composite: `retention = thermal × (a + b × ph_intact × iface_intact) × salt`, with a = 0.30 (monomer-level floor) and b = 0.70 (tetramer-mediated stabilization). Uncertainty band: worst-case / best-case bracket perturbing Tm ±2°C, ΔH_vH ±100 kJ/mol, pKa ±0.5, salt-factor ±0.05.
 
-## Limitations (high-level — full list in `outputs/summary.md` and `wiki-archive.md`)
+## Limitations (high-level — full list in `outputs/summary.md`)
 
 - Stdlib only — no MD simulation, no Rosetta ΔΔG, no PDB-coordinate extraction. Interface footprint is from published analyses, not extracted in this run. MD remains the rigorous next step.
 - Tm = 27°C from a single primary source (Imani & Shahmohamadnejad 2017). A second independent DSF measurement on Q00511 would harden the load-bearing anchor.
@@ -63,7 +62,7 @@ Composite: `retention = thermal × (a + b × ph_intact × iface_intact) × salt`
 ## Wiki links
 
 - Interpretive page: [`wiki/uricase-shio-koji-thermal-stability-computational.md`](../../../uricase-shio-koji-thermal-stability-computational.md)
-- Frozen long-form analysis: [`wiki-archive.md`](./wiki-archive.md)
+- Current generated summary: [`outputs/summary.md`](./outputs/summary.md)
 - Tracking index: [`wiki/computational-experiments.md`](../../../computational-experiments.md)
 - Wet-lab experiment this informs: [`wiki/validation-experiments.md` §1.10](../../../validation-experiments.md) and §1.16
 - Sister analysis (protease axis): [`experiments/comp-001-uricase-shio-koji-protease-stability/`](../comp-001-uricase-shio-koji-protease-stability/) and [`wiki/uricase-protease-stability-computational.md`](../../../uricase-protease-stability-computational.md)

@@ -41,7 +41,7 @@ sources:
 
 Gut ABCG2 is the apical-membrane efflux transporter that moves urate from blood into the intestinal lumen, accounting for ~30% of daily urate elimination. The engineered-uricase platform's "gut-lumen sink" thesis (see [`gut-lumen-sink.md`](./gut-lumen-sink.md)) requires the substrate (luminal urate) to be there before the enzyme can act. ABCG2 is the gate that controls substrate supply.
 
-This page maps the pharmacological levers on ABCG2 in the gut: what suppresses it (closing the gate), what induces it (opening the gate), what specifically rescues the most common gout-causing ABCG2 variant (Q141K), and where the existing supplement stack accidentally fights the platform thesis.
+This page maps the pharmacological levers on ABCG2 in the gut: what suppresses it (closing the gate), what induces it (opening the gate), what specifically rescues the common gout-associated ABCG2 variant Q141K, and where the existing supplement stack accidentally fights the gut-lumen-sink mechanism.
 
 The landscape was characterized through PubMed scans on 2026-04-26 with primary-source verification. Evidence tiers are tagged inline.
 
@@ -62,7 +62,7 @@ be screened for total and surface ABCG2 plus functional urate flux in polarized 
 cells. See [validation experiment 1.35](./validation-experiments.md#135-enterocyte-nlrp3pdzk1abcg2-tissue-paradox-assay)
 and the [multihop gout program](./gout-multihop-research-program.md).
 
-Most ABCG2 literature conflates two mechanisms with opposite implications for the platform thesis. Read every claim with this distinction in mind:
+Most ABCG2 literature conflates two mechanisms with opposite implications for the gut-lumen-sink hypothesis. Read every claim with this distinction in mind:
 
 | Mode | What it does | Implication for gut sink |
 |---|---|---|
@@ -224,7 +224,7 @@ Basseville et al. 2012, *Cancer Research* ([DOI](https://doi.org/10.1158/0008-54
 - Mechanism is via altered microtubule motor protein expression (kinesins/dyneins involved in protein trafficking), not direct chromatin opening at the ABCG2 locus
 - **In Vitro.** No human RCT in Q141K-positive gout patients yet.
 
-**Implication for the platform thesis:**
+**Implication for the gut-lumen-sink hypothesis:**
 
 Butyrate is an HDAC inhibitor at colonic concentrations achievable through fermentable fiber. For Q141K-positive gout patients, butyrate hits **two independent targets** on ABCG2:
 
@@ -294,7 +294,7 @@ A patient on chronic CNS-active medication (e.g., SSRIs, antipsychotics, anti-ep
 
 ## The supplements-stack contradiction
 
-Several compounds in [`supplements-stack.md`](./supplements-stack.md) are functional ABCG2 inhibitors at typical supplement doses, even though they were added for anti-NLRP3 or anti-inflammatory reasons. **For male gout patients on TRT or supraphysiological clomid (the highest-leverage demographic), the stack may be working pharmacologically against the platform thesis.**
+Several compounds in [`supplements-stack.md`](./supplements-stack.md) are functional ABCG2 inhibitors at typical supplement doses, even though they were added for anti-NLRP3 or anti-inflammatory reasons. **In androgen-dominant contexts, the stack may work pharmacologically against the gut-lumen-sink mechanism.**
 
 Documented functional ABCG2 inhibitors at supplement-relevant doses:
 
@@ -377,7 +377,7 @@ Khosroshahi et al. 2019, *Nutrition & Metabolism* ([DOI](https://doi.org/10.1186
 
 **Clinical Trial — Meta-Analysis.** Across the broader CKD literature, fiber lowers other uremic toxins and inflammation but the UA signal does not survive aggregation.
 
-**Reconciliation:** in advanced CKD, reduced renal clearance dominates the UA balance. Even if gut ABCG2 is upregulated, the systemic UA pool is dominated by impaired filtration. The Juraschek/DASH effect was in non-CKD adults — the gut-sink lever has room to matter when renal function is intact. The platform thesis applies to non-CKD gout patients first; CKD is a confounding context.
+**Reconciliation:** in advanced CKD, reduced renal clearance dominates the UA balance. Even if gut ABCG2 is upregulated, the systemic UA pool is dominated by impaired filtration. The Juraschek/DASH effect was in non-CKD adults—the gut-sink lever has more room to matter when renal function is intact. CKD is a confounding context for this mechanism.
 
 ---
 
@@ -385,7 +385,7 @@ Khosroshahi et al. 2019, *Nutrition & Metabolism* ([DOI](https://doi.org/10.1186
 
 ### For the engineered koji (uricase + lactoferrin endgame strain)
 
-Three potential additions to the koji platform that would couple substrate-supply (ABCG2 induction) with substrate-degradation (uricase):
+Three potential additions to the koji configuration that would couple substrate supply (ABCG2 induction) with substrate degradation (uricase):
 
 1. **Glucoraphanin co-production.** *A. oryzae* can be cultured on cruciferous substrates (or engineered to produce glucoraphanin from glucose precursors). Glucoraphanin is the sulforaphane precursor; gut myrosinase from cruciferous-resident bacteria converts it to active sulforaphane. Co-delivery of uricase + glucoraphanin would pair "degrade urate in lumen" with "induce more urate transport into lumen" in a single product. **Speculative — synthetic biology feasibility not yet assessed for this specific coupling.**
 

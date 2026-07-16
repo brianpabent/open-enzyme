@@ -218,7 +218,7 @@ Three reasons this is not just a side interest:
 | **Time to first commercial dose** | Months | 5–8 years | 10+ years | Months for supplement; 3–7 years for FDA-cleared botanical drug |
 | **Empirical prior** | Modern engineering literature | Modern engineering + LBP clinical | Inclisiran / patisiran precedent | **2,000+ years of TCM observational data** (the distinctive feature) |
 | **Patient population** | Broad gout market | Q141K / refractory | Adherence-limited / hepatic-impaired / hormone-modulated | Self-experimenter, supplement-aware, TCM-aware (often overlapping with Brian's profile) |
-| **OE platform role** | Primary chassis | Peer-track scope page + Phase 2 follow-ups | Discovery-engine output; partner / spinout | Discovery-engine output; methodology lens applied across compound corpus |
+| **OE role** | Candidate chassis track | Candidate LBP track | Discovery output; partner / spinout | Discovery method applied across the compound corpus |
 
 The four tracks together represent the chase-every-avenue framing: koji for the broad democratized market, LBPs for the durable-colonization / refractory subset, siRNA for the long-horizon mechanistically-cleanest frontier, **TCM × rigor for the empirical-prior re-mining vector**.
 

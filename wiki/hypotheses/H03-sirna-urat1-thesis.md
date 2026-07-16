@@ -105,7 +105,7 @@ To be populated. Anticipated relevant failure modes from [linter-design.md](../l
 
 ## Cross-References
 
-- [sirna-urat1-modality.md](../sirna-urat1-modality.md) — the platform thesis this hypothesis formalizes
+- [sirna-urat1-modality.md](../sirna-urat1-modality.md) — the track this hypothesis formalizes
 - [modality-chokepoint-matrix.md](../modality-chokepoint-matrix.md) — siRNA / ASOs row that surfaced this question (#1 open exploration vector)
 - [gout-pathophysiology.md](../gout-pathophysiology.md) §"URAT1 (SLC22A12) — THE REABSORPTION VILLAIN" — URAT1 mechanism background
 - [androgen-urate-axis.md](../androgen-urate-axis.md) — testosterone effects on URAT1 (the hormone-axis interaction siRNA bypasses)

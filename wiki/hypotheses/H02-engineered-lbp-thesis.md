@@ -104,7 +104,7 @@ To be populated. Anticipated relevant failure modes from [linter-design.md](../l
 
 ## Cross-References
 
-- [engineered-lbp-chassis.md](../engineered-lbp-chassis.md) — the platform thesis this hypothesis formalizes
+- [engineered-lbp-chassis.md](../engineered-lbp-chassis.md) — the track this hypothesis formalizes
 - [modality-chokepoint-matrix.md](../modality-chokepoint-matrix.md) — "Engineered LBPs" row that surfaced this question
 - [abcg2-modulators.md](../abcg2-modulators.md) — butyrate dual-action mechanism (PPARγ + HDAC), Q141K rescue
 - [koji-endgame-strain.md](../koji-endgame-strain.md) — the peer-track koji chassis hypothesis (H01)

@@ -196,7 +196,7 @@ Optimized for S. cerevisiae with ramp structure consideration:
 | S. cerevisiae | 50% → 40% | 0.85–0.92 | ~150–200 (20–25%) | High |
 | A. oryzae | 50% → 50% | 0.80–0.88 | ~30–50 (5–10%) | Low |
 
-**Practical insight:** If uricase is expressed from Koji (A. oryzae) rather than engineered S. cerevisiae, optimization is simpler and the resulting expression level may be higher due to evolutionary proximity to the native fungus. This favors the **koji platform** for multi-enzyme (uricase + lipase + protease + amylase) fermentation.
+**Track-local hypothesis:** If uricase is expressed from koji (*A. oryzae*) rather than engineered *S. cerevisiae*, optimization may be simpler and expression may be higher because of evolutionary proximity to the native fungus. That prediction favors testing koji for this multi-enzyme configuration; it does not select koji for the project as a whole.
 
 ---
 

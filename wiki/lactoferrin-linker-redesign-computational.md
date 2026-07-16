@@ -36,7 +36,6 @@ status: complete (pilot v1, 2026-05-16)
 
 > **⚠️ Root verdict STALE — superseded by its own extensions (comp-review 2026-07-14).** The original 2026-05-16 substitute-sampler result is **materially superseded by comp-034 later ProteinMPNN + Rosetta/PyRosetta extensions**. Cite the later-extension results, NOT the original substitute-sampler verdict.
 
-> **Frozen analysis archived to [`./etc/experiments/comp-034-lactoferrin-linker-redesign/wiki-archive.md`](./etc/experiments/comp-034-lactoferrin-linker-redesign/wiki-archive.md).**
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read
 > them on every sweep, so the long content lives next to the experiment that produced it
@@ -67,7 +66,6 @@ substitution is documented in detail in the archive page; regenerating the candi
 with genuine ProteinMPNN when the repo is installed is a single-command rerun.
 
 **Where the analysis lives:**
-- Full archived analysis: [`./etc/experiments/comp-034-lactoferrin-linker-redesign/wiki-archive.md`](./etc/experiments/comp-034-lactoferrin-linker-redesign/wiki-archive.md)
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-034-lactoferrin-linker-redesign/`](./etc/experiments/comp-034-lactoferrin-linker-redesign/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)
 

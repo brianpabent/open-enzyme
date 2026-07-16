@@ -1,5 +1,5 @@
 ---
-title: "Project Koji — Engineering A. oryzae for Dual Enzyme Therapy"
+title: "Koji Track — Engineering A. oryzae as a Candidate Gout Chassis"
 date: 2026-04-21
 tags: [koji, enzyme-engineering, aspergillus-oryzae, therapy, enzyme-expression]
 status: published
@@ -7,7 +7,7 @@ status: published
 
 Biohacking Protocol — v1.0
 
-# Project Koji: Engineering a Food-Grade Enzyme Chassis
+# Koji Track: Engineering a Candidate Food-Format Chassis
 
 A comprehensive protocol for engineering *Aspergillus oryzae* (koji mold) to express the uricase gene from *A. flavus*—creating a single food-safe organism that produces digestive enzymes AND gout-busting uricase. Grown on rice in your kitchen. Consumed as food. A dual-purpose therapeutic organism for Brian and Lynn.
 
@@ -47,7 +47,7 @@ Before any genetic engineering, every batch of standard *A. oryzae* koji automat
 
 (source: nlrp3-inhibitor-screen.md, aspergillus-oryzae.md)
 
-**Wild-type baseline practice:** Before engineering, the wild-type fermentation craft itself is a useful project anchor — it produces foods (shio-koji, amazake, miso) with measurable digestive enzyme activity and is the home-scale reference the engineered strain must outperform. See [Koji Home Fermentation](koji-home-fermentation.md) for the small-batch protocol (koji-kin → koji rice → finished foods) and the EPI-relevance discussion.
+**Wild-type baseline practice:** Wild-type fermentation provides a home-scale comparator the engineered strain must outperform. See [Koji Home Fermentation](koji-home-fermentation.md) for the small-batch protocol and adjacent EPI discussion.
 
 ## 02 The Gene
 
@@ -695,9 +695,7 @@ If you want someone else to do the benchwork: companies like **Genscript**, **Cr
 | Home uric acid monitoring (UASure meter + strips) | $50–$100 |
 | TOTAL | $1,230–$2,225 |
 
-> **Perspective**
-
-A single dose of rasburicase costs $5,000–$40,000. A year of allopurinol with monitoring costs ~$500–$1,500. This entire engineering project, from gene synthesis through validated therapeutic koji, costs **less than a single IV infusion of the same enzyme**. And once you have the strain, it propagates itself forever. The marginal cost is rice and salt.
+These figures cover an early research build only. They exclude validation, quality systems, biosafety, regulatory work, clinical development, and distribution; they therefore cannot support a therapeutic-cost comparison.
 
 ## 12 The Roadmap
 
@@ -846,7 +844,7 @@ This project sits at the intersection of synthetic biology, fermentation science
 
 ## 15 Carnosine Co-Expression Module
 
-A proposal to co-engineer carnosine (β-alanyl-L-histidine) biosynthesis into the Open Enzyme koji platform as a secondary cassette alongside uricase. This promotes koji from a single-enzyme delivery vehicle into a genuine multi-target therapeutic food.
+A proposal to test carnosine (β-alanyl-L-histidine) biosynthesis as a secondary cassette alongside uricase in the koji track. This is an optional multi-payload configuration, gated on the simpler uricase construct and on evidence that co-expression beats separate delivery.
 
 ### Rationale
 
@@ -948,7 +946,7 @@ For the multi-format endgame strain ([koji-endgame-strain.md](./koji-endgame-str
 
 > **See also**: [wiki/koji-endgame-strain.md](./koji-endgame-strain.md) — formalizes the coverage matrix (5 chokepoints × 4 molecules: engineered uricase + engineered lactoferrin + native kojic acid + native ergothioneine) and the Ward 1995 dual-cassette feasibility gate that this module ladders up to. The protocol below is the starting single-cassette lactoferrin step; the endgame page is the integration target for the full dual-cassette strain.
 
-A proposal to co-engineer recombinant human (or bovine) lactoferrin into the Open Enzyme koji platform as a secondary cassette. Lactoferrin adds **CP5b (active resolution via ALX/FPR2)** coverage to a platform that is currently dominated by CP1-CP5a suppression mechanisms. This is the only stack-adjacent candidate that adds a resolution leg rather than another inflammation-suppression leg.
+A proposal to test recombinant human (or bovine) lactoferrin as a secondary cassette in the koji track. Lactoferrin would add **CP5b (active resolution via ALX/FPR2)** coverage to this configuration, which otherwise emphasizes CP1–CP5a suppression. It is the only adjacent candidate here that adds a resolution leg rather than another inflammation-suppression leg.
 
 ### Rationale — Why This Is Year 2-3, Not Year 5+
 
@@ -1024,7 +1022,7 @@ The submerged-culture path is de-risked. **The open question is whether the Ward
 
 - [spm-resolution-pathway.md](./spm-resolution-pathway.md) — CP5b resolution biology, lactoferrin as indirect ALX/FPR2 modulator, full literature upgrade note (Section 5).
 - [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) — CP5b chokepoint position; lactoferrin as first food-grade candidate.
-- [open-enzyme-vision.md](./etc/open-enzyme-vision.md) — platform thesis; lactoferrin added the resolution leg the platform was missing.
+- [open-enzyme-vision.md](./etc/open-enzyme-vision.md) — mission and portfolio; lactoferrin is a conditional koji-track payload.
 - [validation-experiments.md](./validation-experiments.md) — Phase A feasibility experiment entry.
 
 (sources: Ward 1992 PMID 1368268, Ward 1995 PMID 9634791, Sun 1999 PMID 10089347, spm-resolution-pathway.md, synthesis archive 2026-04-24 Pass 2 Connection 4)

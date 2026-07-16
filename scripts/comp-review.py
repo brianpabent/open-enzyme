@@ -396,6 +396,28 @@ def parse_final(text: str) -> dict[str, str]:
     return fields
 
 
+def queue_action_excerpt(final_text: str) -> str:
+    """Keep the active queue actionable; Git and the receipt hold review detail."""
+    sections: dict[str, str] = {}
+    matches = list(re.finditer(r"^##\s+(.+?)\s*$", final_text, re.M))
+    for index, match in enumerate(matches):
+        heading = match.group(1).strip().lower()
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(final_text)
+        sections[heading] = final_text[match.end():end].strip()
+
+    verdict = sections.get("bottom-line verdict", "")
+    actions = sections.get("required actions", "")
+    if not actions:
+        return "The review blocked eligibility. Read the current receipt and resolve its blocking findings."
+
+    context = re.split(r"\n\s*\n", verdict, maxsplit=1)[0].strip() if verdict else ""
+    parts = []
+    if context:
+        parts.append(f"**Why blocked:** {context}")
+    parts.append("## Required actions\n\n" + actions)
+    return "\n\n".join(parts)
+
+
 def write_receipts(
     *, comp_dir: Path, comp_rel: str, comp_id: str, commit_sha: str,
     manifest_sha: str, model: str, final_text: str, fields: dict[str, str],
@@ -459,7 +481,7 @@ def write_receipts(
             "---\n\n"
             f"# Current independent artifact review: {comp_id}\n\n"
             f"Current receipt: [`{receipt_md.relative_to(ROOT)}`](../../{receipt_md.relative_to(ROOT).as_posix()})\n\n"
-            + final_text.rstrip() + "\n"
+            + queue_action_excerpt(final_text).rstrip() + "\n"
         )
     elif stable_queue_path.exists():
         stable_queue_path.unlink()

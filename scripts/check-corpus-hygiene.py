@@ -29,7 +29,9 @@ FORBIDDEN_MISSION_PATTERNS = {
     "Koji as primary platform": re.compile(r"primary (?:host|platform|chassis).{0,60}koji|koji.{0,60}primary (?:host|platform|chassis)", re.I),
 }
 RETIRED_REF = re.compile(
-    r"synthesis/(?:done|history|strategic-reflections)/|logs/(?:comp-reviews|v4-synthesis-|normalized-synthesis-)"
+    r"synthesis/(?:done|history|strategic-reflections)/|"
+    r"logs/(?:comp-reviews|v4-synthesis-|normalized-synthesis-)|"
+    r"wiki-archive\.md|validation-experiments-archive\.md"
 )
 REVISION_HEADING = re.compile(r"^#{1,6}\s+(?:document\s+|revision\s+|update\s+)?(?:change\s*log|changelog|revision history)\s*$", re.I | re.M)
 ADVERSARIAL_HEADING = re.compile(r"^#{1,6}\s+.*(?:myth|strawman|objection|as easy as).*$", re.I | re.M)
@@ -78,6 +80,8 @@ def check_content(files: list[Path]) -> tuple[list[str], list[str]]:
     for path in files:
         name = rel(path)
         text = path.read_text(errors="replace")
+        if path.name == "wiki-archive.md" or path.stem.endswith("-archive"):
+            errors.append(f"{name}: Git is history; remove live archive file")
         if name in MISSION_SURFACES:
             for label, pattern in FORBIDDEN_MISSION_PATTERNS.items():
                 for match in pattern.finditer(text):

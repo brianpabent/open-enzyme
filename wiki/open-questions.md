@@ -86,7 +86,7 @@ Questions about uricase variant selection, GI survival, protease resistance, yea
 - **Is lipase the limiting digestive-enzyme axis for fat malabsorption EPI when using wild-type *A. oryzae* shio-koji?** Lipase activity of *A. oryzae* shio-koji is low compared to *A. niger* or engineered strains. Quantitative comparison needed. Methodology in [enzyme-quantification-protocol.md §3.1](./enzyme-quantification-protocol.md) (p-NPP lipase assay vs. Creon-cap-equivalent reference standard). See also [koji-home-fermentation.md](./koji-home-fermentation.md), [aspergillus-oryzae.md](./aspergillus-oryzae.md). (source: koji-home-fermentation.md, enzyme-quantification-protocol.md)
 - **Are there any human studies of koji-fermented diets in EPI specifically?** None identified. Would be high-value evidence. See [koji-home-fermentation.md](./koji-home-fermentation.md). (source: koji-home-fermentation.md)
 
-### Yeast vs. koji platform choice
+### Yeast vs. koji host choice within enzyme-production tracks
 
 - **At what expression and recovery levels does a yeast route become operationally competitive?** Existing mass-burden estimates are track-specific assumptions, not a reason to appoint a different chassis as the project default. See [engineered-yeast-uricase-proposal.md §5](./engineered-yeast-uricase-proposal.md).
 - **Can the Ward 1995 *A. awamori* glucoamylase-fusion + KEX-2 architecture (>2 g/L submerged) transfer to solid-state rice koji fermentation?** The submerged-culture precedent is solid (PMID 9634791). Solid-state mass transfer, redox, and proteolysis dynamics are different. This is the specific gating experiment for the lactoferrin co-expression module. See [engineered-koji-protocol.md §16](./engineered-koji-protocol.md), [spm-resolution-pathway.md §5](./spm-resolution-pathway.md).
@@ -202,7 +202,7 @@ Organized by compound. Each bullet summarizes the question; cross-links point to
 
 ### Quercetin
 
-- **Does quercetin's 300 nM ChEMBL 5-LOX IC50 translate to cellular neutrophil-chemotaxis block in a gout-relevant assay?** This is what the zileuton head-to-head would resolve. See, [validation-experiments-archive.md §3.9](./etc/validation-experiments-archive.md).
+- **Does quercetin's 300 nM ChEMBL 5-LOX IC50 translate to cellular neutrophil-chemotaxis block in a gout-relevant assay?** A zileuton head-to-head could resolve this if the question becomes decision-relevant.
 - **Is quercetin + Boswellia (AKBA) redundant at 5-LOX, or complementary at IKKβ + 5-LOX?** Depends on AKBA's 5-LOX IC50 and whether the two compounds bind at the same site. ChEMBL query pending. See.
 
 ### BHB / Ketones
@@ -229,7 +229,7 @@ Organized by compound. Each bullet summarizes the question; cross-links point to
 
 ### Zileuton
 
-- **Does zileuton (5-LOX inhibitor) abort or shorten gout flares in any case series or retrospective data?** Asthma patients who also have gout = natural population to query. *(2026-04-24 Pass 2 — new addition.)* See, [validation-experiments-archive.md §3.9](./etc/validation-experiments-archive.md).
+- **Does zileuton (5-LOX inhibitor) abort or shorten gout flares in any case series or retrospective data?** Asthma patients who also have gout are a natural population to query.
 - **What's the theory of action beyond 5-LOX?** Any secondary effects (redox, cytokine-modulation, neutrophil-direct) that could be advantageous or detrimental in gout context? Dossier in progress.
 
 ### Tier-4 inhibitor screen — missed gout-model data *(largely closed 2026-04-23 + 2026-05-05; one residual gap)*
@@ -246,7 +246,7 @@ Organized by compound. Each bullet summarizes the question; cross-links point to
 
 See [nlrp3-inhibitor-screen.md §Meta-Finding](./nlrp3-inhibitor-screen.md), [theaflavins.md](./theaflavins.md).
 - **Would THCV's 20× higher CB2 affinity (Ki 7.5 nM vs. BCP 155 nM) translate to better MSU gout efficacy if dose-bridged?** Untested. THCV has cannabis-derived regulatory friction so this is academic unless BCP underperforms in a planned MSU macrophage assay. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
-- **Is there an engineered microbial route to β-caryophyllene that scales past 10–50 mg/L?** Current titers are two orders of magnitude below the likely therapeutic dose (rat 100–400 mg/kg ≈ 1.1–4.5 g/day BSA-scaled). Titer improvement is required before "engineered koji produces BCP" enters the platform thesis. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
+- **Is there an engineered microbial route to β-caryophyllene that scales past 10–50 mg/L?** Current titers are two orders of magnitude below the likely therapeutic dose (rat 100–400 mg/kg ≈ 1.1–4.5 g/day BSA-scaled). Titer improvement is required before "engineered koji produces BCP" enters the koji-track design. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
 
 ### Beta-caryophyllene
 
@@ -305,13 +305,13 @@ The combination is mechanistically clean (different mechanisms, different routes
 
 **Cross-references:** [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) §"Combined / hybrid candidates" (originating mention), [`koji-endgame-strain.md`](./koji-endgame-strain.md), [`comp-027`](./computational-experiments.md) (disulfiram dose modeling) (originating sweep item).
 
-### Riskiest assumption #2 — can engineered koji be reliably home- and community-fermented at therapeutic doses? *(added 2026-05-15, **the platform's #2 load-bearing scientific bet — production/delivery side**)*
+### Koji-track risk — can engineered koji be reliably home- and community-fermented at therapeutic doses?
 
 **Falsification card committed:** [H09 — Community Fermentation Reliability](./hypotheses/H09-community-fermentation-reliability.md) (stub, 2026-05-15). Full killshot menu, pre-committed thresholds, and assumption stack queued as Phase 2 on the H09 card.
 
 H09 is a production-model risk within the koji track, while [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) tests a mechanism shared by several oral luminal urate-degradation approaches. If H09 fails, community production is revised or killed; centralized koji manufacture and unrelated tracks remain available.
 
-The corpus offers strong mitigation sketches (chromosomal integration, first-batch QC, never-backslop-past-N rule) and honest framing (`cross-validation.md` Claim 5 calls "Easy as Sourdough" the most audacious and least-validated platform claim), but **zero direct empirical evidence for an engineered multi-cassette *A. oryzae* strain in the community-fermentation context.** Ward 1995 §1.9 dual-cassette feasibility test is the first wet-lab gate — but only validates lab expression, not community-fermentation reliability.
+The corpus offers mitigation sketches (chromosomal integration, first-batch QC, never-backslop-past-N rule), but **zero direct empirical evidence for an engineered multi-cassette *A. oryzae* strain in the community-fermentation context.** Community production is therefore a proposal to test, not a claim Brian has made. Ward 1995 §1.9 is the first wet-lab gate, and it validates only lab expression—not community-fermentation reliability.
 
 **Provisional alive/killed thresholds:** CV < 30% cross-user enzyme activity, strain retention ≥ 95% at generation 5, contamination < 5% per batch under hygiene protocol. Killed if a properly-powered multi-user pilot materially misses any of these.
 
@@ -324,19 +324,19 @@ The corpus offers strong mitigation sketches (chromosomal integration, first-bat
 - P2-6 Smartphone-camera colorimetric uric-acid assay validation
 - P2-11 Regulatory framework scoping pass (engineered-spore distribution path) — user-action-required (external consultant engagement)
 
-**Cross-references:** [cross-validation.md §Claim 5](./cross-validation.md) (3/10 → 6/10 reframe), [open-source-platform.md §"Open Questions — Reliability of Community Fermentation"](./etc/open-source-platform.md), [engineered-koji-protocol.md](./engineered-koji-protocol.md), [koji-endgame-strain.md](./koji-endgame-strain.md), [self-experiment-protocol.md](./self-experiment-protocol.md) (Brian's n=1 home-fermentation data point), [`operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md) (note: at `operations/`, not `wiki/`) (originating sweep item).
+**Cross-references:** [cross-validation.md](./cross-validation.md), [open-source-platform.md §"Open Questions — Reliability of Community Fermentation"](./etc/open-source-platform.md), [engineered-koji-protocol.md](./engineered-koji-protocol.md), [koji-endgame-strain.md](./koji-endgame-strain.md), [self-experiment-protocol.md](./self-experiment-protocol.md), [`operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md).
 
-### Riskiest assumption #1 — does the gut-lumen uricase sink produce a clinically meaningful SUA reduction in typical (non-CKD) gout? *(added 2026-05-15, **the platform's #1 load-bearing scientific bet — mechanism side**)*
+### Shared mechanism risk — does the gut-lumen uricase sink produce a clinically meaningful SUA reduction in typical (non-CKD) gout?
 
-**Falsification card committed:** [H08 — Gut-Lumen Sink Platform Thesis](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) (stub, 2026-05-15). The full killshot menu, pre-committed thresholds, and assumption stack are queued as Phase 2 on the H08 card.
+**Falsification card:** [H08 — Gut-Lumen Sink Mechanism](./hypotheses/H08-gut-lumen-sink-platform-thesis.md).
 
-The platform's load-bearing belief is that the gut-lumen sink produces a clinically meaningful SUA reduction in typical gout. No valid numerical band currently exists: [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) showed that comp-019's mapping omitted physiological substrate occupancy and residence time. The biological and clinical-translation links are both open at the quantitative level:
+Several oral enzyme tracks depend on the gut-lumen sink producing a clinically meaningful SUA reduction in typical gout. The project as a whole does not. No valid numerical band currently exists: [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) showed that comp-019's mapping omitted physiological substrate occupancy and residence time. The biological and clinical-translation links are both open at the quantitative level:
 
 - **ALLN-346 Phase 2a Study 201** showed signal in CKD patients; Study 202 (broader cohort) showed 0–5% reduction, no significance vs. placebo, and the program terminated with 19/200 enrolled.
 - **Zero** uricase trials (ALLN-346, PRX-115, rasburicase, pegloticase) have stratified by ABCG2 Q141K genotype — the Q141K × allopurinol response literature is rich, the Q141K × uricase response literature is empty.
 - The comp-019 quantitative model is superseded; comp-044 is a regime audit, not a replacement efficacy model.
 
-**If no topology produces measurable transepithelial urate capture at physiological substrate without redox injury**, the oral UOX platform is killed before a human serum-effect threshold is assigned.
+**If no topology produces measurable transepithelial urate capture at physiological substrate without redox injury**, the oral UOX mechanism track is killed before a human serum-effect threshold is assigned.
 
 **Phase 2 follow-ups (queued on H08 card):**
 - P2-1 — Lit scan for any post-ALLN-346 oral or gut-targeted uricase Phase 2 typical-gout readout (Opus subagent).
@@ -346,9 +346,9 @@ The platform's load-bearing belief is that the gut-lumen sink produces a clinica
 
 **Cross-references:** [cross-validation.md §Claim 1](./cross-validation.md) (feasibility 5.5/10), [gut-lumen-sink.md](./gut-lumen-sink.md), [uricase.md](./uricase.md), [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) (originating sweep item).
 
-### Riskiest assumption #3 — do dietary doses of rosmarinic acid, luteolin, Houttuynia, and Helicteres reach gut-luminal complement-suppressing concentrations? *(added 2026-05-22, **the platform's #3 load-bearing scientific bet — dietary-CP0 PK side**)*
+### Dietary-CP0 track risk — do dietary doses of rosmarinic acid, luteolin, Houttuynia, and Helicteres reach gut-luminal complement-suppressing concentrations?
 
-The platform's dietary-CP0 strategy (four candidates surfaced by comp-018 / comp-020 / comp-039: rosmarinic acid, luteolin, *Houttuynia cordata* polysaccharide, *Helicteres angustifolia* benzofuran lignans) rests on the **assumption** that dietary doses of these candidates produce gut-luminal concentrations sufficient to meaningfully suppress complement activation at the C3 convertase / C4 / C5 nodes — AND that this gut-luminal suppression propagates to reduced systemic C5a-driven NLRP3 priming at MSU crystal surfaces. The mechanistic story is well-developed (comp-018 surfaced the candidates; comp-020 verified rosmarinic acid's covalent C3b modification mechanism; comp-039 established the CFH-independence prediction); the **dietary-PK side is almost entirely unanchored**. The only PK number the corpus has — Kang 2021's estimate of 252–1,100 µM gut-luminal rosmarinic acid after a 200 mg oral dose — is a calculation from oral dose + intestinal volume assumptions, NOT a direct measurement. Luteolin gut-luminal PK after a celery / parsley / chamomile meal is uncharacterized. *Houttuynia cordata* polysaccharide absorption + gut-luminal residence time after oral consumption is **completely unstudied**. None of the four candidates has a direct in vivo measurement of gut-luminal complement suppression after dietary intake.
+The dietary-CP0 strategy (four candidates surfaced by comp-018 / comp-020 / comp-039: rosmarinic acid, luteolin, *Houttuynia cordata* polysaccharide, *Helicteres angustifolia* benzofuran lignans) rests on the **assumption** that dietary doses produce gut-luminal concentrations sufficient to suppress complement activation at the C3 convertase / C4 / C5 nodes—and that this local suppression reduces systemic C5a-driven NLRP3 priming at MSU crystal surfaces. The **dietary-PK side is almost entirely unanchored**. The only corpus estimate—252–1,100 µM luminal rosmarinic acid after a 200 mg dose—is calculated from dose and assumed intestinal volume, not measured. Luteolin luminal PK after food intake is uncharacterized; *Houttuynia* polysaccharide residence is unstudied. None has a direct in-vivo measurement of luminal complement suppression after dietary intake.
 
 **Where this is anchored in the corpus:**
 - [comp-029 (combined-cp0-systems-model)](./combined-cp0-systems-model-computational.md) returned YELLOW with the substantive reframe that rosmarinic acid's CP0 effect is **gut-luminal-transient, not systemic** — at free plasma Cmax (~20 nM, Baba 2004), the systemic regime returned ~0% inhibition (RA is ~1,700× below the central IC50). RA's CP0 leverage comes from the gut-luminal post-meal window, not from systemic exposure. This **sharpens** the riskiest-assumption claim: it's not "do these compounds work systemically" (settled — they don't, at dietary doses), it's "does the gut-luminal transient window deliver enough exposure at the relevant complement compartment to be mechanistically meaningful."
@@ -374,7 +374,7 @@ The platform's dietary-CP0 strategy (four candidates surfaced by comp-018 / comp
 - **P2-3 — Gate further dietary CP0 candidate expansion on at least one PK anchor.** Until at least one of the four candidates has a measured gut-luminal concentration or a gut-effluent complement-activity reduction, do NOT add a fifth dietary CP0 candidate to the stack. The discipline: when comp-018-style discovery surfaces another candidate (e.g., the next sweep's Phase 2 East Asian compound triage), document it as "candidate identified" rather than "candidate added to dietary CP0 stack" until the PK gate closes for at least one existing candidate.
 - **P2-4 — Re-anchor §9.9 dormant composition gate.** The dormant C1-INH + rosmarinic acid composition at [`complement-c5a-gout.md` §9.9](./complement-c5a-gout.md) is already gated on rosmarinic acid PK as one of two reactivation conditions. The promotion of this assumption to RA #3 strengthens that gate — the dormant composition reactivates if RA #3 closes positively (RA PK anchor measured) OR if C1-INH RCL kinetic-competition assay returns positive. RA #3 closure is now the cheaper of the two reactivation paths.
 
-**Why this rises to the platform's #3 riskiest assumption alongside #1 (gut-lumen sink mechanism) and #2 (community fermentation reliability):**
+**Portfolio relationship:**
 
 | RA | Subject | Load-bearing for |
 |---|---|---|
@@ -382,7 +382,7 @@ The platform's dietary-CP0 strategy (four candidates surfaced by comp-018 / comp
 | #2 | Engineered koji can be home / community-fermented at therapeutic doses | Koji track distinctive accessibility thesis |
 | #3 (new) | Dietary doses of RA / luteolin / Houttuynia / Helicteres reach gut-luminal complement-suppressing concentrations | Dietary-CP0 stack across four candidates; gates the multi-track architecture's dietary arm; informs whether the dietary + engineered LBP composition (per `gout-pathophysiology.md` 2026-05-22 addition) is real or aspirational on the dietary side |
 
-The three are not redundant. #1 gates the upstream uricase mechanism (mechanism); #2 gates the production / delivery infrastructure (distribution); #3 gates the dietary side of the multi-track architecture (modality). Each can be killed independently; killing any one materially reshapes the platform.
+The three are not redundant. #1 gates the upstream uricase mechanism; #2 gates one production and delivery model; #3 gates the dietary arm. Each can be killed independently. A negative result removes or narrows the affected track without changing the project mission.
 
 **Fires when:** any of the dietary candidates is being elevated to a wet-lab or clinical-decision context. Currently fires immediately because Houttuynia is at §1.30 wet-lab prioritization screen status (per [`validation-experiments.md` §1.30](./validation-experiments.md)) — the THP-1 macrophage assay's IL-1β readout is *necessary but not sufficient* to validate the dietary-CP0 thesis; it doesn't measure whether *dietary intake* of Houttuynia produces equivalent gut-luminal concentrations. The Houttuynia §1.30 screen partially derisks Houttuynia's mechanism; the dietary-PK question remains open even if §1.30 returns positive.
 
@@ -457,7 +457,7 @@ The [Engineered LBP Chassis](./engineered-lbp-chassis.md) page (committed 2026-0
 - **P2-5 — Falsification card H02.** Stub committed at [`hypotheses/H02-engineered-lbp-thesis.md`](./hypotheses/H02-engineered-lbp-thesis.md); full population queued.
 - **P2-6 — Comparative chassis matrix for gout indication.** *F. prausnitzii* vs. *Akkermansia* vs. *Bacteroides* vs. engineered *E. coli* Nissle — payload tractability, niche fit, engineering complexity.
 
-Phase 3 (content-triggered, not calendar-triggered): platform-framing reflection — does the LBP track justify expanding Open Enzyme's framing from "engineered enzymes in koji" to "solve gout, every avenue, fully open"? Reflection note queued in [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md).
+When the Phase 2 evidence lands, make a track decision: keep, narrow, or close the LBP route. The project mission is already modality-agnostic.
 
 ### Purine-Degrading Bacteria (PDB) — gut as independent urate disposal organ *(added 2026-05-15)*
 
@@ -502,7 +502,7 @@ The [Medicinal Mushroom Complement Track scope page](./medicinal-mushroom-comple
 
 **CTO-actionable TODOs** are tracked operationally — see [`operations/todos.md`](../operations/todos.md) §"Phase 7 medicinal-mushroom-complement track" (TODO surface; this index points to it for completeness per the umbrella aggregation pattern).
 
-Phase 3 reflection (content-triggered, not calendar-triggered): does the medicinal-mushroom-complement track justify expanding Open Enzyme's framing from "engineered enzymes in koji" to include native-compound producers as first-class platform contribution? Likely yes given the regulatory simplicity + home-fermentability + multi-compound-per-species advantages, but defer formal reflection until SOP-3 (EGT) lands as proof-of-concept.
+The medicinal-mushroom-complement track is already a first-class portfolio track. Its evidence and experiment results—not a future branding decision—determine whether it remains active.
 
 ### siRNA against URAT1 — discovery-engine output (peer-track exploration vector to LBP)
 
@@ -515,7 +515,7 @@ The [siRNA / URAT1 modality](./sirna-urat1-modality.md) page (committed 2026-05-
 - **P2-5 — Falsification card H03.** Stub committed at [`hypotheses/H03-sirna-urat1-thesis.md`](./hypotheses/H03-sirna-urat1-thesis.md); full population queued.
 - **P2-6 — Lit scan: FDA siRNA regulatory path.** Inclisiran / patisiran precedent, IND-enabling package, ballpark timeline + capital for a kidney-tropic siRNA BLA. (Queued, Opus subagent.)
 
-Phase 3 reflection (shared with LBP track and rolled into the same Strategic Reflections Queue entry in [`synthesis/`](../synthesis/README.md)): does the discovery-engine track accumulate enough substance to formally rebrand Open Enzyme as "open-source gout-solving research project" rather than "open-source koji-engineered enzyme library"?
+The siRNA track is already evaluated as a first-class gout exploit track. It does not need to justify a future rebrand; it needs to survive its own falsification gates.
 
 ### Ward 1995 §1.9 — global lab-access landscape
 
@@ -557,12 +557,12 @@ Questions about biomarker interpretation, red-flag thresholds, and microbiome im
 
 ### Biomarker design
 
-- **Does the self-experiment protocol need CP0 and CP5b biomarkers to be mechanistically interpretable?** hs-CRP alone can't distinguish quercetin (CP6a) effects from BHB (CP2) effects. *(2026-04-24 Pass 2 — new addition.)* See [self-experiment-protocol.md](./self-experiment-protocol.md), [validation-experiments-archive.md §3.6, 3.7](./etc/validation-experiments-archive.md).
-- **What's the optimal EPA:DHA ratio for gout-specific SPM production (RvD1/MaR1 vs. RvE1)?** Does it differ from the cardiovascular-optimized ratio? *(2026-04-24 Pass 2 — new addition.)* See [spm-resolution-pathway.md](./spm-resolution-pathway.md), [validation-experiments-archive.md §3.8](./etc/validation-experiments-archive.md).
+- **Does the self-experiment protocol need CP0 and CP5b biomarkers to be mechanistically interpretable?** hs-CRP alone cannot distinguish quercetin (CP6a) effects from BHB (CP2) effects. See [self-experiment-protocol.md](./self-experiment-protocol.md).
+- **What's the optimal EPA:DHA ratio for gout-specific SPM production (RvD1/MaR1 vs. RvE1)?** Does it differ from the cardiovascular-optimized ratio? See [spm-resolution-pathway.md](./spm-resolution-pathway.md).
 
 ### Red-flag thresholds
 
-- **What LFT elevation threshold triggers zileuton discontinuation?** Zyflo label guidance exists (AST/ALT >3× ULN); Brian-specific thresholds for the off-label protocol should match. See [validation-experiments-archive.md §3.9](./etc/validation-experiments-archive.md).
+- **What LFT elevation threshold triggers zileuton discontinuation?** Any future protocol must use current prescribing guidance and clinician oversight.
 - **What biomarkers signal microbiome disruption vs. acceptable variation?** Alpha diversity drop threshold, specific pathobiont expansion (e.g., *Clostridium difficile*, *Enterococcus*), inflammatory markers (fecal calprotectin). See [cross-validation.md](./cross-validation.md).
 - **Is BCP dose-scaling from 100-400 mg/kg rat MSU to 50-200 mg/day supplement safe to extrapolate upward?** If supplement is 20-50× under-dosed, bumping the dose has unknown off-target profile in humans. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
 
@@ -578,13 +578,13 @@ These are the five open questions Brian annotated during the 2026-04-24 synthesi
 
 1. **Is complement activation (C5a) necessary or sufficient for MSU-triggered NLRP3 priming in clinical gout flares, or is TLR4/LPS still dominant in real patients?** The Cumpelik/Khameneh evidence is animal model + in vitro; human C5a-priming dominance remains to be confirmed in vivo. — see [complement-c5a-gout.md](./complement-c5a-gout.md), [NLRP3 / Gout Biology §Priming](#priming-and-upstream-signals) above.
 
-2. **What is the optimal EPA:DHA ratio for gout-specific SPM production (RvD1/MaR1 vs. RvE1), and does this differ from the cardiovascular-optimized ratio?** The 2026-04-24 pass found direct MSU gout animal-model evidence is entirely DHA-derived, contradicting the cardiovascular-biased EPA-dominant recommendation currently in `supplements-stack.md`. — see [spm-resolution-pathway.md](./spm-resolution-pathway.md), [validation-experiments-archive.md §3.8](./etc/validation-experiments-archive.md), [Safety / Self-Experiment §Biomarker design](#biomarker-design) above.
+2. **What is the optimal EPA:DHA ratio for gout-specific SPM production (RvD1/MaR1 vs. RvE1), and does this differ from the cardiovascular-optimized ratio?** See [spm-resolution-pathway.md](./spm-resolution-pathway.md) and [Safety / Self-Experiment §Biomarker design](#biomarker-design).
 
 3. **Can lactoferrin be expressed in *A. oryzae* at therapeutically relevant titers in solid-state rice fermentation?** *P. pastoris* 3.5 g/L submerged and *A. awamori* >2 g/L submerged (Ward 1995, PMID 9634791) are both demonstrated; solid-state koji is the missing data point. *(2026-04-24 literature check upgraded this from "speculative Year 5+" to "near-term Year 2-3 with a defined feasibility experiment.")* — see [engineered-koji-protocol.md §16](./engineered-koji-protocol.md), [spm-resolution-pathway.md §5](./spm-resolution-pathway.md), [Compound-specific §Lactoferrin](#lactoferrin) above.
 
 4. **Is TNFSF14/LIGHT elevation a universal feature of gout flares or a patient subtype? Would a TNFSF14 biomarker identify responders to EGCG or CERC-002 better than generic hs-CRP?** — see [tnfsf14-gout-target.md](./tnfsf14-gout-target.md), [NLRP3 / Gout Biology §Priming](#priming-and-upstream-signals) above.
 
-5. **Does zileuton (5-LOX inhibitor) abort or shorten gout flares in any case series or retrospective data?** Asthma patients who also have gout are the natural population to query for retrospective signal. — see [validation-experiments-archive.md §3.9](./etc/validation-experiments-archive.md), [Compound-specific §Zileuton](#zileuton) above.
+5. **Does zileuton (5-LOX inhibitor) abort or shorten gout flares in any case series or retrospective data?** Asthma patients who also have gout are a natural population to query. See [Compound-specific §Zileuton](#zileuton).
 
 ---
 

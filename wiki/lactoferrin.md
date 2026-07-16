@@ -456,7 +456,7 @@ Adding lactoferrin to the platform adds direct or indirect coverage at **CP1a (L
 
 **The CP6b add is the most mechanistically direct** — Shan 2026's data is a strong signal that Lf suppresses pyroptosis via the mitophagy axis, and CP6b was previously pharma-only in the Open Enzyme stack.
 
-### 10.2 The Four-Target Koji Platform Vision
+### 10.2 A four-target koji configuration
 
 Target product profile, assuming all four cassettes succeed (§5 experiment plan in [engineered-koji-protocol.md](./engineered-koji-protocol.md)):
 
@@ -493,7 +493,7 @@ The CP5b chokepoint has five candidate classes. Here is how lactoferrin stacks a
 | **BMS-986235 (ALX/FPR2 agonist)** | Direct small-molecule ALX/FPR2 agonism | No (pharma compound) | Oral | Phase 2 heart failure data (not gout) | None |
 | **Lactoferrin** | Indirect resolution (macrophage polarization, mitophagy, ROS reduction); CP6b direct via GSDMD suppression | **Yes — Aspergillus 2 g/L published (submerged)** | 10-30% intact absorption | GRAS (bLf) + Phase 3 safety data (talactoferrin) | **None published; inferred from adjacent models** |
 
-**Summary:** Lactoferrin has the weakest direct-MSU-gout evidence, but uniquely the best fermentable-production path. The other candidates split across "better mechanism specificity, no engineering path" (direct SPMs, BMS-986235) or "worse mechanism, accessible supply chain" (EPA/DHA, aspirin). Lactoferrin is the Pareto-optimal point on the "moderate mechanism breadth + accessible engineered production + GRAS-host compatible" axis for Open Enzyme's platform thesis.
+**Summary:** Lactoferrin has the weakest direct-MSU-gout evidence in this comparison but the most developed fermentable-production path. That makes it a candidate payload for the koji track, not a project-level commitment. Its continuation depends on direct gout relevance, expression, and activity gates.
 
 ---
 

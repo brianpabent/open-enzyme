@@ -69,4 +69,4 @@ Per CLAUDE.md and the comp-001 design pattern, `analyze.py` uses Python stdlib o
 - **NOT** a Rosetta ΔΔG calculation (no force-field-based interface energetics)
 - **IS** a composite biophysical scoring framework combining: (i) AlphaFold pLDDT-derived interface integrity, (ii) Arrhenius extrapolation of measured 40°C half-life to ferment conditions, (iii) Henderson-Hasselbalch-derived pH-dependent ion-pair stability at known interface, (iv) Hofmeister/preferential-hydration model for salt effects, (v) per-condition retention-fraction prediction over the 7-14 day ferment window with explicit uncertainty bounds
 
-The brief acknowledges the MD/Rosetta path as the rigorous next step; that path is named in `wiki-archive.md` Limitations as the load-bearing follow-up if §1.10 wet-lab data deviates from this analysis's predictions.
+The brief acknowledges the MD/Rosetta path as the rigorous next step if §1.10 wet-lab data deviates from this analysis's predictions.
