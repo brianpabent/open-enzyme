@@ -1,15 +1,13 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "917d49dadf04b084918b7850b46a02118591b9b1",
-    "result_commit": "917d49dadf04b084918b7850b46a02118591b9b1",
-    "timestamp": "2026-07-17T14:14:49Z",
+    "coverage_commit": "5294c61db1d7ee00eb6e2c4caddc568830e9e7f7",
+    "result_commit": "5294c61db1d7ee00eb6e2c4caddc568830e9e7f7",
+    "timestamp": "2026-07-17T14:18:16Z",
     "changed_paths": [],
     "affected_paths": [],
     "blocked_paths": [],
-    "cost_usd": 0.0,
-    "mode": "manual_current_state_baseline",
-    "note": "The mission/corpus redesign, COMP remediation, and focused-page audit directly reconciled current pages through 917d49da; this advances propagation only. Full-corpus synthesis coverage remains unchanged."
+    "cost_usd": 0.0
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
