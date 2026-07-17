@@ -1,13 +1,36 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "5294c61db1d7ee00eb6e2c4caddc568830e9e7f7",
-    "result_commit": "5294c61db1d7ee00eb6e2c4caddc568830e9e7f7",
-    "timestamp": "2026-07-17T14:18:16Z",
-    "changed_paths": [],
+    "coverage_commit": "16394f3b6e6b6bb504f8031366c95c01a8ea5a48",
+    "result_commit": "16394f3b6e6b6bb504f8031366c95c01a8ea5a48",
+    "timestamp": "2026-07-17T19:02:39Z",
+    "changed_paths": [
+      "wiki/abcg2-modulators.md",
+      "wiki/androgen-natural-modulation.md",
+      "wiki/androgen-urate-axis.md",
+      "wiki/computational-experiments.md",
+      "wiki/engineered-koji-protocol.md",
+      "wiki/etc/bio-ai-tools.md",
+      "wiki/etc/manual-literature-mining.md",
+      "wiki/gout-action-guide.md",
+      "wiki/gout-pathophysiology.md",
+      "wiki/hypotheses/H03-sirna-urat1-thesis.md",
+      "wiki/hypotheses/H07-clomid-intestinal-er-antagonism.md",
+      "wiki/hypotheses/H10-clomiphene-dose-urate-coupling.md",
+      "wiki/hypotheses/README.md",
+      "wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md",
+      "wiki/lactoferrin.md",
+      "wiki/modality-chokepoint-matrix.md",
+      "wiki/open-questions.md",
+      "wiki/personal-genome-protocol.md",
+      "wiki/purine-degrading-bacteria.md",
+      "wiki/supplements-stack.md",
+      "wiki/tier-2-butyrate-assay-audit-computational.md",
+      "wiki/validation-experiments.md"
+    ],
     "affected_paths": [],
     "blocked_paths": [],
-    "cost_usd": 0.0
+    "cost_usd": 0.488192
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
