@@ -31,6 +31,8 @@ sources:
   - "PMID 25637002 — dual-energy CT evidence of silent monosodium urate deposition in asymptomatic hyperuricemia; supports an unmasking alternative."
   - "DailyMed setid 2ca373c1-4dba-4126-8616-5c533d606fe5 — official US Clomid label; weak negative evidence for this chronic off-label male-use question."
   - "openFDA drug-event snapshot, 2026-07-16 — three gout co-reports with clomiphene coded as concomitant rather than primary suspect and no usable onset chronology."
+  - "PMID 23345599 — case-crossover association between systemic low-dose aspirin and recurrent gout attacks; not evidence about limited-area topical salicylic acid."
+  - "PMIDs 1094962 and 1424799 — human dermal-absorption and severe-intoxication observations showing that topical salicylate exposure depends on concentration, surface area, skin condition, and occlusion; neither study measured urate or gout."
 ---
 
 # H10 — Clomiphene dose–urate coupling
@@ -62,15 +64,17 @@ The following observations are disclosed from the project lead's longitudinal re
 
 - **Androgen–urate prior — supported.** Yahyaoui et al. prospectively followed 69 people before and after cross-sex hormone therapy. In the 47-person transmasculine group, mean serum urate rose from 3.91 mg/dL at baseline to 5.07 at one year and remained 5.02 at two years; in the 25-person FEUA subgroup, mean fractional excretion fell from 8.78% to 6.93% at two years (P = 0.004; PMID 18349066, Table 1). Kurahashi et al. independently observed serum-urate elevation after three months of testosterone therapy in 160 transmasculine participants, with a tendency toward dose dependence (DOI 10.1507/endocrj.EJ13-0203). Androgen deprivation produced a reverse-direction urate signal in men with prostate cancer (PMID 30557349). **Human prospective/observational intervention evidence — non-randomized, not Clinical Trial tier.** Mouse renal-transporter data add **Animal Model** support (PMID 20589576). This is a substantive prior for hormone-sensitive urate biology and renal handling, not a universal testosterone rule.
 - **Clomiphene-specific effect — unmeasured.** No study located prospectively measured serum urate, urate handling, incident gout, or dose response after clomiphene initiation or dose reduction. Male safety publications did not track those endpoints (PMIDs 32233208, 34933414, 31216250, 22458540). The US label and three non-primary-suspect openFDA gout co-reports do not resolve chronic male risk. H10 therefore remains **Mechanistic Extrapolation plus a disclosed n=1 signal**; the testosterone direction cannot be imported as a clomiphene result.
+- **Recorded topical salicylic-acid exposure — weak alternative.** The acute visit record documents treatment of two plantar warts with topical salicylic acid before the first documented flare. Systemic low-dose aspirin was associated with recurrent attacks in people with established gout (PMID 23345599), so salicylate exposure is not biologically irrelevant. An exact PubMed search found no study connecting topical salicylic acid with urate or gout. In four patients with active psoriasis, repeated large-area occlusive treatment absorbed more than 60% of the applied acid while serum salicylate remained at or below 5 mg/100 mL (PMID 1094962); a severe intoxication case used 40% ointment over approximately 41% of body surface area (PMID 1424799). These observations establish exposure dependence, not zero absorption at small areas. The recorded two-wart exposure is therefore a weak, unquantified **Mechanistic Extrapolation**, not an evidence-backed alternative cause.
 - **Intestinal ER/ABCG2 mechanism — unsupported.** No direct human-enterocyte, intestinal-flux, or exposure-relevant stereoisomer study establishes this chain. [H07](./H07-clomid-intestinal-er-antagonism.md) remains retracted. Renal handling, urate production, intestinal transport, and mixed mechanisms remain open until a clomiphene-specific effect is measured.
 
 ## Competing explanations
 
 1. Pre-existing hyperuricemia or silent crystal burden may have produced the documented flare independently of clomiphene. Dual-energy CT has documented silent monosodium urate deposition in asymptomatic hyperuricemia (PMID 25637002), supporting an unmasking alternative.
-2. Diet, alcohol, hydration, weight, renal function, illness, and concurrent interventions can move urate or flare risk over the same intervals.
-3. Clomiphene changes testosterone, estradiol, SHBG, and receptor signaling together; any net urate effect may be nonlinear or person-specific.
-4. The pre/post urate values use different measurement systems and do not establish an effect size.
-5. A post-reduction flare is not a directional biomarker, and the visible joint change is neither imaging-confirmed nor specific to urate deposition.
+2. The documented limited-area topical salicylic-acid exposure remains an unmeasured alternative. Available evidence does not justify transferring systemic aspirin risk or extensive-dermatologic-exposure data directly to two treated warts, and no contemporaneous serum salicylate or urate measurement exists.
+3. Diet, alcohol, hydration, weight, renal function, illness, and concurrent interventions can move urate or flare risk over the same intervals.
+4. Clomiphene changes testosterone, estradiol, SHBG, and receptor signaling together; any net urate effect may be nonlinear or person-specific.
+5. The pre/post urate values use different measurement systems and do not establish an effect size.
+6. A post-reduction flare is not a directional biomarker, and the visible joint change is neither imaging-confirmed nor specific to urate deposition.
 
 ## Discriminating tests
 

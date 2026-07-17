@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "scan_id": "drug-induced-gout-medication-differential-2026-07-16",
+  "question": "Do recorded medication exposures provide a credible alternative explanation for the first documented gout flare, especially limited-area topical salicylic acid, and how strongly can the literature bound that differential?",
+  "started_at": "2026-07-17T01:13:27Z",
+  "completed_at": "2026-07-17T16:40:36Z",
+  "canonical_updates": [
+    "wiki/hypotheses/H10-clomiphene-dose-urate-coupling.md"
+  ],
+  "query_attempts": [
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "drug-event overview",
+      "query": "\"drug-induced\" AND (hyperuricemia OR gout)",
+      "status": "partial",
+      "result_count": 20,
+      "error": "Retrieval was capped at 20 records; this is the retrieved count, not the total match count."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "medication overview",
+      "query": "medications AND (hyperuricemia OR gout) AND urate",
+      "status": "partial",
+      "result_count": 20,
+      "error": "Retrieval was capped at 20 records; this is the retrieved count, not the total match count."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "established classes",
+      "query": "diuretics aspirin niacin pyrazinamide ethambutol AND gout",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "androgen alternative",
+      "query": "testosterone AND (hyperuricemia OR gout OR \"uric acid\")",
+      "status": "partial",
+      "result_count": 20,
+      "error": "Retrieval was capped at 20 records; this is the retrieved count, not the total match count."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "topical salicylate drug-event",
+      "query": "\"topical salicylic acid\" AND (gout OR hyperuricemia OR urate)",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "systemic salicylate mechanism",
+      "query": "(salicylate OR aspirin) AND \"renal urate excretion\"",
+      "status": "success",
+      "result_count": 6,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "NSAID alternative",
+      "query": "(ibuprofen OR diclofenac OR NSAID) AND (\"uric acid\" OR hyperuricemia OR gout)",
+      "status": "partial",
+      "result_count": 20,
+      "error": "Retrieval was capped at 20 records and was dominated by gout-treatment term overlap."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "corticosteroid alternative",
+      "query": "(prednisone OR corticosteroid) AND (\"uric acid\" OR hyperuricemia OR gout)",
+      "status": "partial",
+      "result_count": 20,
+      "error": "Retrieval was capped at 20 records and was dominated by gout-treatment term overlap."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "analgesic alternative",
+      "query": "(hydrocodone OR acetaminophen) AND (\"uric acid\" OR hyperuricemia OR gout)",
+      "status": "partial",
+      "result_count": 20,
+      "error": "Retrieval was capped at 20 records; this broad query cannot support an absence claim."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "other recorded medications",
+      "query": "(zolpidem OR cetirizine OR azithromycin) AND (\"uric acid\" OR hyperuricemia OR gout)",
+      "status": "success",
+      "result_count": 13,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "topical salicylate drug-event follow-up",
+      "query": "\"topical salicylic acid\" AND (gout OR hyperuricemia OR urate)",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "topical salicylate absorption follow-up",
+      "query": "\"salicylic acid\" AND (percutaneous absorption OR dermal absorption) AND psoriasis",
+      "status": "success",
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "topical salicylate toxicity follow-up",
+      "query": "\"topical salicylic acid\" AND (toxicity OR salicylism)",
+      "status": "success",
+      "result_count": 4,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "candidate-specific follow-up",
+      "query": "hydrocodone AND (gout OR hyperuricemia OR \"uric acid\")",
+      "status": "success",
+      "result_count": 4,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "candidate-specific follow-up",
+      "query": "acetaminophen AND (gout OR hyperuricemia OR \"uric acid\")",
+      "status": "partial",
+      "result_count": 100,
+      "error": "Retrieval reached the 100-record cap and was not used for a negative causal claim."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "candidate-specific follow-up",
+      "query": "zolpidem AND (gout OR hyperuricemia OR \"uric acid\")",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "candidate-specific follow-up",
+      "query": "cetirizine AND (gout OR hyperuricemia OR \"uric acid\")",
+      "status": "success",
+      "result_count": 4,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "candidate-specific follow-up",
+      "query": "azithromycin AND (gout OR hyperuricemia OR \"uric acid\")",
+      "status": "success",
+      "result_count": 9,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "candidate-specific follow-up",
+      "query": "ibuprofen AND (gout OR hyperuricemia OR \"uric acid\")",
+      "status": "success",
+      "result_count": 83,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "candidate-specific follow-up",
+      "query": "diclofenac AND (gout OR hyperuricemia OR \"uric acid\")",
+      "status": "partial",
+      "result_count": 100,
+      "error": "Retrieval reached the 100-record cap and was dominated by gout-treatment term overlap."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "candidate-specific follow-up",
+      "query": "prednisone AND (gout OR hyperuricemia OR \"uric acid\")",
+      "status": "partial",
+      "result_count": 100,
+      "error": "Retrieval reached the 100-record cap and was dominated by gout-treatment term overlap."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "candidate-specific follow-up",
+      "query": "corticosteroids AND (gout OR hyperuricemia OR \"uric acid\")",
+      "status": "partial",
+      "result_count": 100,
+      "error": "Retrieval reached the 100-record cap and was dominated by gout-treatment term overlap."
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "drug-event overview",
+      "query": "药物性高尿酸血症 痛风 利尿剂 阿司匹林 烟酸",
+      "status": "partial",
+      "result_count": null,
+      "error": "Server-rendered results were retrieved, but the tokenized response did not expose a reliable exact result count and the set was broad."
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "topical salicylate drug-event",
+      "query": "外用水杨酸 尿酸 痛风",
+      "status": "partial",
+      "result_count": null,
+      "error": "Server-rendered results were retrieved, but the search returned a broad relevance set without a load-bearing topical-salicylate/gout source."
+    },
+    {
+      "source": "WanFang",
+      "language": "zh",
+      "frame": "drug-event overview",
+      "query": "药物性高尿酸血症 痛风",
+      "status": "partial",
+      "result_count": null,
+      "error": "HTTP 200 returned a JavaScript application shell without a static result set."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "drug-event overview",
+      "query": "薬剤性高尿酸血症 痛風",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "topical salicylate drug-event",
+      "query": "サリチル酸 外用 尿酸 痛風",
+      "status": "success",
+      "result_count": 26,
+      "error": null
+    },
+    {
+      "source": "KCI",
+      "language": "ko",
+      "frame": "drug-event overview",
+      "query": "약물 유발 고요산혈증 통풍",
+      "status": "failed",
+      "result_count": null,
+      "error": "The fetched response redirected users to the KCI homepage and contained no result set."
+    }
+  ],
+  "source_ids_considered": [
+    "PMID:27498351",
+    "PMID:35787862",
+    "PMID:23345599",
+    "PMID:1094962",
+    "PMID:1424799",
+    "PMID:24472429",
+    "PMID:40596361",
+    "DOI:10.6032/gnam.37.1"
+  ],
+  "translation_checks": [],
+  "load_bearing_verifications": [
+    {
+      "claim": "The acute visit record documents topical salicylic-acid treatment of two plantar warts before the first documented flare.",
+      "primary_source": "Disclosed project-lead acute visit record dated 2023-02-20; underlying health record remains private",
+      "status": "verified"
+    },
+    {
+      "claim": "The exact PubMed topical-salicylic-acid plus urate/gout query returned no records.",
+      "primary_source": "PubMed query executed 2026-07-17",
+      "status": "verified"
+    },
+    {
+      "claim": "Systemic low-dose aspirin was associated with recurrent gout attacks in a case-crossover cohort of people with established gout.",
+      "primary_source": "PMID:23345599; DOI:10.1136/annrheumdis-2012-202589",
+      "status": "verified"
+    },
+    {
+      "claim": "In four psoriasis patients receiving repeated large-area occlusive salicylic-acid treatment, more than 60% of applied acid was absorbed while serum salicylate did not exceed 5 mg/100 mL.",
+      "primary_source": "PMID:1094962",
+      "status": "verified"
+    },
+    {
+      "claim": "A severe topical salicylate intoxication case used 40% salicylic-acid ointment over approximately 41% of body surface area.",
+      "primary_source": "PMID:1424799",
+      "status": "verified"
+    }
+  ],
+  "limitations": [
+    "This was a bounded medication differential, not a systematic review; several broad PubMed searches reached retrieval caps or were dominated by treatment-related term overlap.",
+    "A zero-result or incidental-overlap query does not exclude a rare idiosyncratic drug event.",
+    "Only six regional searches from the wider native-language plan were executed; CQVIP was broad, WanFang returned an application shell, and KCI did not return results.",
+    "No non-English source supplied a load-bearing claim, so the two-model translation protocol was not triggered.",
+    "The topical salicylate studies involved extensive diseased skin or toxic exposure and cannot quantify systemic exposure from two treated warts.",
+    "Chronology was established for the topical salicylic-acid exposure; the scan did not establish that every other queried medication preceded the flare."
+  ],
+  "errors": [
+    "WanFang returned a JavaScript shell without a parseable result set.",
+    "KCI returned a redirect/alert response rather than search results."
+  ],
+  "workspace": {
+    "path": "operations/drug-induced-gout-medication-differential-2026-07-16",
+    "cleaned": true
+  }
+}
