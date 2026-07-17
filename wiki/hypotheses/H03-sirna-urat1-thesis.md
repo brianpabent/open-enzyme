@@ -47,7 +47,7 @@ A kidney-tropic siRNA conjugate targeting URAT1 (SLC22A12) mRNA is a viable long
 
 1. **Sequence-specificity** eliminates the off-target metabolite class — categorically different safety profile than benzbromarone-class chemistry, where reactive metabolites caused fulminant hepatotoxicity and market withdrawal
 2. **Durability** — single-dose effect persisting weeks to months (per inclisiran's ~6-month PCSK9 silencing precedent), shifting from daily-pill compliance to quarterly subcutaneous injection
-3. **Hormone-independence** — siRNA knockdown is not subject to androgen-axis modulation of URAT1 expression, working as effectively in clomid / TRT / endogenous-T-elevated patients (where URAT1 is upregulated) as in baseline patients
+3. **Target-level hormone independence** — an siRNA can target SLC22A12 mRNA without requiring hormone-driven URAT1 upregulation. Whether hormone state changes baseline transcript abundance, knockdown magnitude, or clinical response remains empirical; delivery and renal-cell exposure are the dominant unresolved gates.
 
 The thesis is **gated on the maturation of kidney-tropic conjugate delivery chemistry** — none of the four current research-class approaches (megalin-binding peptide conjugates, CDP nanoparticles, kidney-cortex-selective LNPs, aptamer-siRNA chimeras) has reached first-in-human for any indication. The "viable" claim is therefore conditional: viable *if* kidney-tropic delivery chemistry converges within 3–5 years; deferred indefinitely *if* it does not.
 

@@ -74,7 +74,7 @@ This does **not** unlock a home butyrate assay today. It does tighten the next e
 - For stool work, do a full-text and protocol review of the electrochemical fecal SCFA platform before spending on hardware or adaptation.
 - Do not spend on breath hydrogen/methane or generic FFA colorimetric kits for butyrate quantification.
 
-For [`validation-experiments.md` §1.14](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens-tnf-butyrate-rescue-lactoferrin-synergy), this means the butyrate dose-response arm still needs a Tier 3 analytical anchor if concentration verification becomes load-bearing. HPLC-UV may become a cheaper intermediate check for culture-supernatant development, but not for the cellular dose-response arm without matrix validation.
+For [`validation-experiments.md` §1.14](./validation-experiments.md#114-abcg2-response-to-dht-and-tnf-with-butyrate-and-lactoferrin-rescue), this means the butyrate dose-response arm still needs a Tier 3 analytical anchor if concentration verification becomes load-bearing. HPLC-UV may become a cheaper intermediate check for culture-supernatant development, but not for the cellular dose-response arm without matrix validation.
 
 ## Limitations
 
@@ -106,6 +106,6 @@ The full-text pass above was run (multilingual; English + Chinese analytical-che
 
 - [comp-038 experiment folder](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/)
 - [computational-experiments.md](./computational-experiments.md)
-- [validation-experiments.md §1.14](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens-tnf-butyrate-rescue-lactoferrin-synergy)
+- [validation-experiments.md §1.14](./validation-experiments.md#114-abcg2-response-to-dht-and-tnf-with-butyrate-and-lactoferrin-rescue)
 - [quantification-ladder.md](./quantification-ladder.md)
 - [genotype-informed-supplement-workflow.md](./genotype-informed-supplement-workflow.md)

@@ -11,7 +11,7 @@ synthesis_eligibility: eligible_with_warning
 
 **Current lane status:** propagation = `eligible_with_warning` (corrective-only); synthesis = `eligible_with_warning`. The actions below remain open.
 
-**Why action remains open:** **Action required.** The broad qualitative reframe is plausible but not materially clean: the artifact conflates *eurycomanone*, *eurycomanol*, and whole *Eurycoma longifolia*/Physta extract; the code/output reproducibility contract appears broken for at least one generated link; several summary/wiki surfaces overstate or inconsistently count evidence cells; the interpretive stub still states a four-target question despite v2 being five-target; and at least one affected hypothesis page still repeats the corrected-away “eurycomanone via XO” mechanism.
+**Why action remains open:** **Action required.** The broad qualitative reframe is plausible but not materially clean: the artifact conflates *eurycomanone*, *eurycomanol*, and whole *Eurycoma longifolia*/Physta extract; the code/output reproducibility contract appears broken for at least one generated link; several summary/wiki surfaces overstate or inconsistently count evidence cells; and the interpretive stub still states a four-target question despite v2 being five-target.
 
 ## Required actions
 
@@ -19,9 +19,7 @@ synthesis_eligibility: eligible_with_warning
 2. **Correct stale target-count text.** Update README file description and `wiki/t-axis-adjuvant-urate-mapping-computational.md` question text from four-target to five-target v2 wording including XO.
 4. **Fix code labeling for uncertain/negative evidence.** Do not mark `"UNKNOWN — POSSIBLY INDUCER"` as a favorable checkmark; preserve “Negative Screen” as an evidence class rather than converting it to `No-Data`.
 5. **Resolve the eurycomanone/extract/eurycomanol substitution.** Rename the verdict surface or add explicit fields distinguishing pure eurycomanone, eurycomanol, quassinoid mixture, *Eurycoma longifolia* extract, and Physta. State which entity each PMID actually tested.
-6. **Propagate the XO correction.** Remove stale “eurycomanone via XO” wording from `hypotheses/H07-clomid-intestinal-er-antagonism.md` and any other pages found by a full repo search once tooling is available.
 7. **Caveat or primary-verify the Physta SUA RCT.** Either obtain and cite the primary publication for the n=105 SUA −7–11% values or mark those values as secondary/product-summary-derived wherever they are promoted, especially in `gout-action-guide.md`.
-8. **Soften genotype-specific claims.** In `personal-genome-protocol.md`, rewrite Q141K preference language as a hypothesis requiring genotype-stratified testing, not a direct rescue claim.
 9. **Confirm validation propagation.** Ensure the cordyceps vs tongkat/Physta head-to-head trial is either registered in `validation-experiments.md` with lead-generation wording and endpoints, or explicitly deferred.
 
 The full review is available through Git history. This action remains open; lane eligibility and allowed scope are recorded in the current COMP receipt.

@@ -138,7 +138,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 - Generic free-fatty-acid colorimetric kits are a false-friend class; representative protocol excludes acetic, propionic, and butyric acid.
 - Completed with Codex/GPT-5.5 in-session synthesis from a committed source packet; no OpenRouter model calls were made.
 
-**Informs:** [quantification-ladder](./quantification-ladder.md) · [genotype-informed-supplement-workflow](./genotype-informed-supplement-workflow.md) · [validation-experiments §1.14](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens-tnf-butyrate-rescue-lactoferrin-synergy) · [purine-degrading-bacteria](./purine-degrading-bacteria.md)
+**Informs:** [quantification-ladder](./quantification-ladder.md) · [genotype-informed-supplement-workflow](./genotype-informed-supplement-workflow.md) · [validation-experiments §1.14](./validation-experiments.md#114-abcg2-response-to-dht-and-tnf-with-butyrate-and-lactoferrin-rescue) · [purine-degrading-bacteria](./purine-degrading-bacteria.md)
 
 **Detail:** [interpretive](./tier-2-butyrate-assay-audit-computational.md) · [experiments/](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/) · Complete first pass (next gate: full-text/protocol verification + small paired Tier 2 vs GC-MS validation)
 
@@ -477,7 +477,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Key findings:**
 - Intestinal compartment IS sex-dimorphic, but driver is **estradiol POSITIVE on female side**, not **androgen NEGATIVE on male side**.
-- Platform-thesis "structural ceiling from androgen-driven ABCG2 suppression" should soften to "modest dose-response shift driven by absent estradiol-positive signaling in male physiology."
+- The platform thesis should not assume an androgen-driven ABCG2 ceiling or absent estradiol-positive signaling in healthy male physiology; hormone effects are context-dependent and require direct transport measurement.
 - Sakamoto 2018 ADT cohort (−0.66 mg/dL at 6 months, n=489) consistent with URAT1-only renal mechanism; no direct AR-ARE on ABCG2 promoter identified.
 
 **Informs:** [androgen-urate-axis](./androgen-urate-axis.md) · [abcg2-modulators](./abcg2-modulators.md) · [gut-lumen-sink](./gut-lumen-sink.md) · [koji-endgame-strain](./koji-endgame-strain.md) · [cross-validation](./cross-validation.md)
@@ -505,17 +505,17 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ### comp-017 — Intestinal ABCG2 Sex-Dimorphism Public-Data Mining + 4-Paper Full-Text Re-Read — NULL OR NEAR-NULL at healthy baseline (2026-05-07)
 
-**Question:** Tier-0 killshot for H07 sub-claims 1 and 3, closing comp-016's full-text-verification follow-up. Part A: GTEx + HPA sex-stratified intestinal ABCG2. Part B: full-text re-read of Yu 2021 / Klyushova 2023 / MacLean 2008 / Hoque 2020.
+**Question:** What do GTEx/HPA and four primary papers show about sex-stratified intestinal ABCG2? This was originally framed against H07 sub-claims 1 and 3; [H07](./hypotheses/H07-clomid-intestinal-er-antagonism.md) is now retracted, while the transporter result remains relevant.
 
 **Verdict:** **NULL OR NEAR-NULL SEX-DIMORPHISM at healthy baseline (provisional).** Sex-dimorphism emerges only under **disease-state genetic stress** (Q140K LOF, Hoque) or **strong pharmacological perturbation** (100 µM E2, Yu; 1–100 µM sex hormones, Klyushova). Healthy-baseline literature converges on null.
 
 **Key findings:**
 - Hoque 2020 correction: Western-jejunum 78% : Western-kidney 44% (~1.8×), NOT comp-016's 88%:44%. Female FEUA unchanged (p=0.6263) — strong null on female protection.
 - Yu 2021: Caco-2 active at 100 µM EB (5–6 orders above physiological serum E2); mechanism real at strong-pharmacological tier; physiological magnitude unestablished.
-- Klyushova 2023: T/E2/P at 1/10/100 µM all INCREASE ABCG2 via PXR/FXR (NOT AR) — **H07 sub-claim 3 ("NOT AR-mediated") strongly supported.**
+- Klyushova 2023: T/E2/P at 1/10/100 µM all increased ABCG2 via PXR/FXR rather than AR; this argues against direct AR-mediated intestinal ABCG2 repression at those supraphysiological exposures.
 - Hosoyamada 2010 showed: T affects renal URAT1 mRNA only (protein unchanged); actual androgen-responsive renal urate transporter is **Smct1**, GLUT9 attenuated.
 
-**Informs:** [hypotheses/H07](./hypotheses/H07-clomid-intestinal-er-antagonism.md) · [t-abcg2-suppression-evidence-mining-computational](./t-abcg2-suppression-evidence-mining-computational.md) · [androgen-urate-axis](./androgen-urate-axis.md) · [abcg2-modulators §1](./abcg2-modulators.md) · [gut-lumen-sink](./gut-lumen-sink.md)
+**Informs:** [retracted H07](./hypotheses/H07-clomid-intestinal-er-antagonism.md) · [t-abcg2-suppression-evidence-mining-computational](./t-abcg2-suppression-evidence-mining-computational.md) · [androgen-urate-axis](./androgen-urate-axis.md) · [abcg2-modulators §1](./abcg2-modulators.md) · [gut-lumen-sink](./gut-lumen-sink.md)
 
 **Detail:** [interpretive](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md) · [experiments/](./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/) · Complete (provisional; sandbox-blocked GTEx/HPA direct; Paperclip line-anchored re-run recommended)
 

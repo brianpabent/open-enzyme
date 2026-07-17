@@ -902,7 +902,7 @@ A proposal to test recombinant human (or bovine) lactoferrin as a secondary cass
 
 ### Rationale and Evidence Boundary
 
-Lactoferrin may also increase luminal urate supply to uricase by relieving TNFα-mediated suppression of intestinal ABCG2. The composed chain — koji-derived Lf → ↓ TNFα → ↑ ABCG2 transport → ↑ luminal urate → ↑ effective uricase activity — is **Speculative**, assembled from Animal Model and In Vitro links rather than a direct combination study. See [`lactoferrin.md §4.7`](./lactoferrin.md), [`abcg2-modulators.md §2`](./abcg2-modulators.md), and [`validation-experiments.md §1.14`](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens-tnf-butyrate-rescue-lactoferrin-synergy). (source: lactoferrin.md, koji-endgame-strain.md)
+Lactoferrin may also increase luminal urate supply to uricase by relieving TNFα-mediated suppression of intestinal ABCG2. The composed chain — koji-derived Lf → ↓ TNFα → ↑ ABCG2 transport → ↑ luminal urate → ↑ effective uricase activity — is **Speculative**, assembled from Animal Model and In Vitro links rather than a direct combination study. See [`lactoferrin.md §4.7`](./lactoferrin.md), [`abcg2-modulators.md §2`](./abcg2-modulators.md), and [`validation-experiments.md §1.14`](./validation-experiments.md#114-abcg2-response-to-dht-and-tnf-with-butyrate-and-lactoferrin-rescue). (source: lactoferrin.md, koji-endgame-strain.md)
 
 Recombinant human lactoferrin has been expressed in *Aspergillus* in peer-reviewed studies:
 

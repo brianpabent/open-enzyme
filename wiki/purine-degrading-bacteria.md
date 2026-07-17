@@ -219,7 +219,7 @@ Two separate questions remain:
 1. Does the chosen PDB chassis actually produce butyrate from urate? Full-pathway *C. sporogenes* has isotope-tracing precedent, but CBT2.0 carbon fate was not resolved to butyrate in the cited efficacy study.
 2. If butyrate is produced, does it reach sufficient epithelial exposure to increase surface Q141K ABCG2 and functional basolateral-to-apical urate flux without barrier injury?
 
-The first is addressed by [validation experiment 1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test); the second remains in [validation experiment 1.14](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens-tnf-butyrate-rescue-lactoferrin-synergy). Until both pass, PDB→butyrate→Q141K rescue is **Mechanistic Extrapolation**, not an intervention claim.
+The first is addressed by [validation experiment 1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test); the second remains in [validation experiment 1.14](./validation-experiments.md#114-abcg2-response-to-dht-and-tnf-with-butyrate-and-lactoferrin-rescue). Until both pass, PDB→butyrate→Q141K rescue is **Mechanistic Extrapolation**, not an intervention claim.
 
 ---
 

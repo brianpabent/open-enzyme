@@ -91,18 +91,18 @@ Once you have your VCF, the highest-signal queries given Open Enzyme's gout focu
 
 ## Genotype-stratified T-axis adjuvant selection (speculative)
 
-The [T-axis adjuvant urate mapping](./t-axis-adjuvant-urate-mapping-computational.md) (comp-015 v2) identifies cordycepin (*Cordyceps militaris*) and eurycomanone (*Eurycoma longifolia* / tongkat ali) as the two gout-favorable T-axis adjuvants, acting via different mechanisms. Cordycepin is URAT1-dominant. Eurycomanone is multi-target: URAT1 down, GLUT9 down, ABCG2 up, plus PRPS (purine-synthesis) suppression. The mechanism asymmetry predicts that genotype should inform adjuvant choice for the gout-comorbid hypogonadal subgroup.
+The [T-axis adjuvant urate mapping](./t-axis-adjuvant-urate-mapping-computational.md) (comp-015 v2) generated cordycepin and *Eurycoma longifolia*-derived candidates from mixed compound, extract, Animal Model, and In Vitro evidence. It did not establish a genotype-specific treatment response. ABCG2 expression induction also cannot be assumed to rescue Q141K folding, surface trafficking, or urate flux.
 
-| Genotype context | Dominant bottleneck | Adjuvant prediction (speculative) |
+| Genotype context | Research question | Required evidence |
 |---|---|---|
-| ABCG2 Q141K homozygote, androgen-elevated (TRT or clomid) | Compromised ABCG2 gut/renal secretion plus URAT1 reabsorption rising with T | Eurycomanone's ABCG2-up arm directly addresses Q141K; URAT1-down and PRPS suppression add. Predicted preference over cordycepin. |
-| ABCG2 wild-type, URAT1 gain-of-function | Reabsorption-side dominance, secretion intact | Cordycepin's URAT1-only mechanism is sufficient; eurycomanone's ABCG2-up offers no marginal benefit. |
-| ABCG2 Q141K heterozygote | Partial Q141K, partial ABCG2 function | Either compound plausible; eurycomanone retains a mechanism-coverage advantage. |
-| SLC2A9 reduced-function variants | GLUT9 already attenuated | Eurycomanone's GLUT9-down arm adds little; cordycepin matches on the URAT1 axis alone. |
+| ABCG2 Q141K homozygote | Is impaired surface trafficking or residual transport the limiting step? | Matched WT/Q141K surface-expression and urate-flux assays; transcriptional induction alone is insufficient. |
+| ABCG2 wild-type with a validated SLC22A12 functional variant | Does a verified candidate alter URAT1-dependent flux in that variant background? | Variant-specific renal-cell transport assay plus exposure verification. |
+| ABCG2 Q141K heterozygote | Does the wild-type allele provide inducible functional reserve? | Allele-aware expression, trafficking, and urate-flux measurements. |
+| SLC2A9 functional variant | Does the variant change the response to a verified GLUT9-active candidate? | Variant-specific functional transport data; target mention or docking is insufficient. |
 
-**This is hypothesis-generation, not a clinical selection rule.** The eurycomanone evidence (PMID 31920654 transporter modulation, PMID 34785103 PRPS suppression, 2021 Physta n=105 RCT with SUA reduction 7–11%) is animal-model + in-vitro + small-RCT-tier. None of those studies stratified by ABCG2 Q141K or URAT1 variants. The framing is mechanistic: a Q141K-positive androgen-elevated user has a reason to expect more benefit from eurycomanone than from cordycepin, and the [planned head-to-head wet-lab gate](./t-axis-adjuvant-urate-mapping-computational.md#impact-on-experimental-priorities-v2) (cordyceps vs. tongkat ali vs. combination vs. placebo, n=12+) could be stratified by genotype to test the prediction directly.
+**This is experiment stratification, not a clinical selection rule.** None of the cited studies stratified response by ABCG2, SLC22A12, or SLC2A9 genotype, and comp-015 still has open entity-resolution and evidence-labeling actions. A genotype effect becomes actionable only after direct exposure, trafficking, and functional urate-flux evidence.
 
-**Future comp candidate:** stratify the comp-015 v2 candidate panel (cordycepin, eurycomanone, icariin, echinacoside) by ABCG2 Q141K, SLC22A12 (URAT1), and SLC2A9 (GLUT9) genotype, scoring predicted benefit per genotype × compound cell. In silico only; sits on top of the existing 5-target matrix. Outcome: a genotype-aware selection table feeding [`gout-action-guide.md`](./gout-action-guide.md)'s androgen-elevated path.
+**Future COMP candidate:** use ABCG2 Q141K, SLC22A12, and SLC2A9 variants to prioritize direct functional assays for the comp-015 candidate panel. An in-silico matrix may rank experiments, but it must not output a genotype-aware compound selection rule without variant-specific functional data.
 
 ## Interpretation discipline
 

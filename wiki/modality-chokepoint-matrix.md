@@ -261,7 +261,7 @@ Targets across the top, modalities down the side. Columns grouped by anatomical 
 ### Wearable / implantable monitoring
 - **Best-fit cells:** real-time UA monitoring; multi-analyte chokepoint biomarker readout.
 - **Status:** sweat-based UA sensors are research-active (UCSD, Stanford); microneedle continuous monitoring is research-stage. Implantable multi-analyte is overkill for gout-only but flips when bundled with cardiometabolic indications.
-- **Why this matters for OE:** any therapeutic intervention that's titrated against UA (carnosine dose, fiber load, clomid titration for the androgen-driven case) benefits from continuous data over discrete quarterly panels. The synthesis-queue chokepoint-biomarker map ([`synthesis/`](../synthesis/README.md) #4) is partly bottlenecked by infrequent sampling.
+- **Why this matters for OE:** interventions whose research endpoint is serum urate benefit from denser time-series data than quarterly panels. This includes observing clinician-directed clomiphene exposure changes under [H10](./hypotheses/H10-clomiphene-dose-urate-coupling.md), where the urate direction remains unestablished. The synthesis-queue chokepoint-biomarker map ([`synthesis/`](../synthesis/README.md) #4) is partly bottlenecked by infrequent sampling.
 
 ---
 

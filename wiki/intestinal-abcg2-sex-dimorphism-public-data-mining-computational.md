@@ -54,7 +54,7 @@ status: archived-to-experiments
 > them on every sweep, so the long content lives next to the experiment that produced it
 > at `etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/`.
 
-Two-part Tier-0 killshot for [`H07-clomid-intestinal-er-antagonism`](./hypotheses/H07-clomid-intestinal-er-antagonism.md) sub-claims 1 and 3, also closing the full-text-verification follow-up flagged in [comp-016 §Pre-commit verification gate disclosure](./t-abcg2-suppression-evidence-mining-computational.md#pre-commit-verification-gate-disclosure):
+Two-part Tier-0 analysis of healthy-human intestinal ABCG2 sex differences plus a four-paper full-text re-read, also closing the verification follow-up flagged in [comp-016 §Pre-commit verification gate disclosure](./t-abcg2-suppression-evidence-mining-computational.md#pre-commit-verification-gate-disclosure). It was originally framed as a killshot for [H07](./hypotheses/H07-clomid-intestinal-er-antagonism.md); H07 is now retracted because the upstream clomiphene effect and proposed intestinal mechanism were not established. The ABCG2 result remains independently relevant.
 
 **Where the analysis lives:**
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/`](./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/)

@@ -1,0 +1,339 @@
+{
+  "schema_version": 1,
+  "scan_id": "clomiphene-gout-onset-2026-07-16",
+  "question": "Does published evidence show that starting clomiphene citrate can induce a first gout flare, and what evidence supports a clomiphene dose-serum urate relationship?",
+  "started_at": "2026-07-16T20:45:14Z",
+  "completed_at": "2026-07-16T21:17:29Z",
+  "canonical_updates": [
+    "wiki/abcg2-modulators.md",
+    "wiki/androgen-natural-modulation.md",
+    "wiki/androgen-urate-axis.md",
+    "wiki/computational-experiments.md",
+    "wiki/engineered-koji-protocol.md",
+    "wiki/etc/manual-literature-mining.md",
+    "wiki/gout-action-guide.md",
+    "wiki/gout-pathophysiology.md",
+    "wiki/hypotheses/H03-sirna-urat1-thesis.md",
+    "wiki/hypotheses/H07-clomid-intestinal-er-antagonism.md",
+    "wiki/hypotheses/H10-clomiphene-dose-urate-coupling.md",
+    "wiki/hypotheses/README.md",
+    "wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md",
+    "wiki/lactoferrin.md",
+    "wiki/modality-chokepoint-matrix.md",
+    "wiki/open-questions.md",
+    "wiki/personal-genome-protocol.md",
+    "wiki/purine-degrading-bacteria.md",
+    "wiki/supplements-stack.md",
+    "wiki/tier-2-butyrate-assay-audit-computational.md",
+    "wiki/validation-experiments.md"
+  ],
+  "query_attempts": [
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "direct drug-event",
+      "query": "clomiphene AND (gout OR hyperuricemia OR \"uric acid\" OR urate)",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "direct drug-event synonym",
+      "query": "clomifene AND (gout OR hyperuricemia OR \"uric acid\" OR urate)",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "brand drug-event",
+      "query": "Clomid AND (gout OR hyperuricemia OR \"uric acid\" OR urate)",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "stereoisomer drug-event",
+      "query": "enclomiphene AND (gout OR hyperuricemia OR \"uric acid\" OR urate)",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "stereoisomer drug-event",
+      "query": "zuclomiphene AND (gout OR hyperuricemia OR \"uric acid\" OR urate)",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "male safety",
+      "query": "clomiphene AND men AND adverse events",
+      "status": "success",
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "male safety",
+      "query": "clomiphene AND male hypogonadism AND safety",
+      "status": "success",
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "drug-hormone-urate",
+      "query": "clomiphene AND testosterone AND \"uric acid\"",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "renal mechanism",
+      "query": "clomiphene AND renal AND (urate OR \"uric acid\")",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "class drug-event",
+      "query": "\"selective estrogen receptor modulator\" AND (gout OR hyperuricemia)",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "adjacent androgen evidence",
+      "query": "testosterone therapy AND (\"uric acid\" OR hyperuricemia OR gout)",
+      "status": "success",
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "reverse-direction androgen evidence",
+      "query": "androgen deprivation AND (\"uric acid\" OR hyperuricemia)",
+      "status": "success",
+      "result_count": 6,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "hormone-transition evidence",
+      "query": "gender-affirming testosterone AND (\"uric acid\" OR hyperuricemia)",
+      "status": "success",
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "renal transporter mechanism",
+      "query": "testosterone AND URAT1",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "intestinal transporter mechanism",
+      "query": "estradiol AND intestinal ABCG2 AND urate",
+      "status": "success",
+      "result_count": 2,
+      "error": null
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "native drug-event",
+      "query": "枸橼酸氯米芬 痛风 高尿酸血症 尿酸",
+      "status": "partial",
+      "result_count": null,
+      "error": "Result page fetched through the required local-curl path, but a reliable result count and relevance set could not be machine-parsed; visible matches were false positives from separate-term matching."
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "native male drug-urate",
+      "query": "克罗米芬 尿酸 男性",
+      "status": "partial",
+      "result_count": null,
+      "error": "Result page fetched through the required local-curl path, but a reliable result count and relevance set could not be machine-parsed; no load-bearing source was identified."
+    },
+    {
+      "source": "WanFang",
+      "language": "zh",
+      "frame": "native drug-event",
+      "query": "枸橼酸氯米芬 痛风 高尿酸血症",
+      "status": "partial",
+      "result_count": null,
+      "error": "The local-curl fetch reached the result surface, but the JavaScript-rendered response did not expose a reliable static result count or relevance set."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "native drug-event",
+      "query": "クロミフェン 痛風 高尿酸血症",
+      "status": "partial",
+      "result_count": null,
+      "error": "Result page fetched through the required local-curl path, but result count and relevance could not be reliably machine-parsed; no load-bearing source was identified."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "native drug-urate",
+      "query": "クロミフェン 尿酸",
+      "status": "partial",
+      "result_count": null,
+      "error": "Result page fetched through the required local-curl path, but result count and relevance could not be reliably machine-parsed; no load-bearing source was identified."
+    },
+    {
+      "source": "KCI",
+      "language": "ko",
+      "frame": "native drug-event",
+      "query": "클로미펜 통풍 고요산혈증",
+      "status": "partial",
+      "result_count": null,
+      "error": "Result page fetched through the required local-curl path, but result count and relevance could not be reliably machine-parsed; no load-bearing source was identified."
+    },
+    {
+      "source": "DailyMed",
+      "language": "en",
+      "frame": "official product label",
+      "query": "setid 2ca373c1-4dba-4126-8616-5c533d606fe5; inspect gout, hyperuricemia, uric acid",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "openFDA drug-event API",
+      "language": "en",
+      "frame": "pharmacovigilance co-report",
+      "query": "(patient.drug.medicinalproduct:\"CLOMID\" OR patient.drug.medicinalproduct:\"CLOMIPHENE\") AND patient.reaction.reactionmeddrapt:\"GOUT\"",
+      "status": "success",
+      "result_count": 3,
+      "error": null
+    },
+    {
+      "source": "openFDA drug-event API",
+      "language": "en",
+      "frame": "pharmacovigilance co-report",
+      "query": "(patient.drug.medicinalproduct:\"CLOMID\" OR patient.drug.medicinalproduct:\"CLOMIPHENE\") AND patient.reaction.reactionmeddrapt:\"HYPERURICAEMIA\"",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "openFDA drug-event API",
+      "language": "en",
+      "frame": "pharmacovigilance co-report",
+      "query": "(patient.drug.medicinalproduct:\"CLOMID\" OR patient.drug.medicinalproduct:\"CLOMIPHENE\") AND patient.reaction.reactionmeddrapt:\"BLOOD URIC ACID INCREASED\"",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "openFDA drug-event API",
+      "language": "en",
+      "frame": "pharmacovigilance co-report",
+      "query": "(patient.drug.medicinalproduct:\"CLOMID\" OR patient.drug.medicinalproduct:\"CLOMIPHENE\") AND patient.reaction.reactionmeddrapt:\"GOUTY ARTHRITIS\"",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "openFDA drug-event API",
+      "language": "en",
+      "frame": "pharmacovigilance co-report",
+      "query": "(patient.drug.medicinalproduct:\"CLOMID\" OR patient.drug.medicinalproduct:\"CLOMIPHENE\") AND patient.reaction.reactionmeddrapt:\"GOUTY TOPHUS\"",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    }
+  ],
+  "source_ids_considered": [
+    "PMID:3918542",
+    "PMID:32233208",
+    "PMID:34933414",
+    "PMID:31216250",
+    "PMID:22458540",
+    "PMID:39434750",
+    "PMID:20589576",
+    "PMID:30557349",
+    "PMID:25637002",
+    "DOI:10.1507/endocrj.EJ13-0203",
+    "DailyMed:setid:2ca373c1-4dba-4126-8616-5c533d606fe5",
+    "openFDA:drug-event:gout-clomiphene:2026-07-16"
+  ],
+  "translation_checks": [],
+  "load_bearing_verifications": [
+    {
+      "claim": "The sole direct PubMed clomiphene-plus-gout hit studied participants with pre-existing gout and did not test incident gout or clomiphene-induced hyperuricemia.",
+      "primary_source": "PMID:3918542",
+      "status": "verified"
+    },
+    {
+      "claim": "Testosterone exposure increased serum urate in the adjacent 160-person human cohort used for mechanistic plausibility.",
+      "primary_source": "DOI:10.1507/endocrj.EJ13-0203",
+      "status": "verified"
+    },
+    {
+      "claim": "The official US Clomid label does not contain gout, hyperuricemia, or increased uric acid as a recognized event.",
+      "primary_source": "DailyMed:setid:2ca373c1-4dba-4126-8616-5c533d606fe5",
+      "status": "verified"
+    },
+    {
+      "claim": "Accessible male clomiphene safety publications did not report serum urate or incident gout as tracked endpoints.",
+      "primary_source": "PMIDs 32233208, 34933414, 31216250, and 22458540",
+      "status": "verified"
+    },
+    {
+      "claim": "All three clomiphene-gout openFDA co-reports coded clomiphene as concomitant and lacked usable exposure-to-onset chronology.",
+      "primary_source": "openFDA drug-event snapshot retrieved 2026-07-16",
+      "status": "verified"
+    },
+    {
+      "claim": "Dual-energy CT has documented silent monosodium urate deposition in asymptomatic hyperuricemia.",
+      "primary_source": "PMID:25637002",
+      "status": "verified"
+    },
+    {
+      "claim": "The disclosed n=1 chronology and laboratory values reproduce the source record while distinguishing first documented podagra, mixed urate measurement systems, and an unconfirmed joint prominence.",
+      "primary_source": "Disclosed project-lead longitudinal source record; underlying files private",
+      "status": "verified"
+    }
+  ],
+  "limitations": [
+    "No prospective clomiphene study located measured serum urate, incident gout, or renal/intestinal urate handling.",
+    "Regional result pages were reached but not all yielded machine-parseable counts or complete relevance sets.",
+    "No non-English source supplied a load-bearing claim, so the two-model translation protocol was not triggered.",
+    "Spontaneous adverse-event co-reports cannot establish causality or incidence.",
+    "The hypothesis-generating longitudinal record lacks pre-initiation urate, paired same-assay dechallenge measurements, imaging confirmation, and confounder control."
+  ],
+  "errors": [],
+  "workspace": {
+    "path": "operations/clomiphene-gout-onset-2026-07-16",
+    "cleaned": true
+  }
+}

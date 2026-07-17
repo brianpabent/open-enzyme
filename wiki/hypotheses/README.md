@@ -55,9 +55,10 @@ Committing to a hypothesis is a commitment to *attempt to falsify it*, not a com
 | H04 | Modern scientific rigor (chokepoint-mapping + ChEMBL cross-check + bioavailability honesty + falsification card discipline) applied to TCM materia medica produces actionable, gout-relevant findings beyond what reductionist single-compound analysis or holistic "alternative medicine" framings produce in isolation | Stub | 0 | 2026-05-05 | [H04-tcm-rigor-intersection.md](./H04-tcm-rigor-intersection.md) |
 | H05 | An *A. oryzae*-engineered soluble DAF/CD55 SCR1-4 construct is a candidate fermentable CP0 modulator | Stub | 0 | 2026-05-05 | [H05-daf-scr14-cp0-thesis.md](./H05-daf-scr14-cp0-thesis.md) |
 | H06 | Open Enzyme can produce reproducible, bioactivity-validated medicinal-mushroom-complement extracts (GLPP, cordycepin, ergothioneine) at quality sufficient to replicate published in vivo effect sizes within 2× — making the medicinal-mushroom-complement track a viable peer to the koji-engineering track | Stub | 0 | 2026-05-06 | [H06-medicinal-mushroom-complement-track.md](./H06-medicinal-mushroom-complement-track.md) |
-| H07 | Clomid's serum-UA-elevating effect in gout-prone men is mediated primarily by intestinal estrogen-receptor antagonism (blocking the female-positive PI3K/Akt → ABCG2 induction signal), not by direct androgen-receptor effects on intestinal ABCG2 | Stub | 0 | 2026-05-07 | [H07-clomid-intestinal-er-antagonism.md](./H07-clomid-intestinal-er-antagonism.md) |
+| H07 | Clomiphene-associated urate elevation is mediated primarily by intestinal estrogen-receptor antagonism | Retracted | 0 | 2026-05-07 | [H07-clomid-intestinal-er-antagonism.md](./H07-clomid-intestinal-er-antagonism.md) |
 | H08 | Can a gut-lumen uricase sink produce clinically meaningful serum-urate reduction under physiological substrate, oxygen, transit, access, survival, and peroxide constraints? **Reopened; no valid ΔSUA prior.** | Reopened | 1 | 2026-07-13 | [H08-gut-lumen-sink-platform-thesis.md](./H08-gut-lumen-sink-platform-thesis.md) |
 | H09 | Home- and community-fermented engineered koji can reliably deliver therapeutic doses of multi-cassette protein with batch-to-batch consistency sufficient for a chronic disease intervention, under the Community-BioLab + Home-Fermentation hybrid model — a **koji-track production/delivery risk**, not a project-level assumption | Stub | 0 | 2026-05-15 | [H09-community-fermentation-reliability.md](./H09-community-fermentation-reliability.md) |
+| H10 | Clomiphene exposure and serum urate are positively coupled in a susceptible high-androgen phenotype | Pending | 0 | 2026-07-17 | [H10-clomiphene-dose-urate-coupling.md](./H10-clomiphene-dose-urate-coupling.md) |
 
 *(Add new rows as hypotheses are committed. Sort by ID.)*
 
@@ -70,7 +71,7 @@ Committing to a hypothesis is a commitment to *attempt to falsify it*, not a com
 3. **Test.** Execute killshots in the order the menu dictates — cheapest, highest-info first. Record results inline in the `Log` table. Each executed killshot updates `status` and `survival_count`.
 4. **Log outcome.** For each killshot: date, killshot identifier, outcome (killed / survived / ambiguous), notes, and any deviations from the pre-committed protocol. Survival-count and survival-score are updated per `linter-design.md` §6.
 5. **Update status.** `Pending` → `Alive` on first survived killshot. `Pending` or `Alive` → `Killed` on first threshold-crossing kill. Status can move Alive → Killed if a later killshot crosses a threshold; it can move Killed → Alive only via Retraction (§ below).
-6. **Retract if needed.** If a killshot result is later invalidated (bad control, assay artifact, substrate batch problem), document the retraction in the file's Retraction History section and recompute status based on remaining valid killshots. Status: `Retracted` while the recount is pending; resolves to `Alive` / `Killed` / `Pending` on re-evaluation.
+6. **Retract if needed.** If a founding premise or provenance claim proves invalid, withdraw the card and state why. If a counted killshot is later invalidated (bad control, assay artifact, substrate batch problem), document the retraction and recompute status from the remaining valid tests. A materially different replacement claim receives a new hypothesis ID.
 
 The lifecycle is sequential per hypothesis but not per directory. Multiple hypotheses can be at different lifecycle stages simultaneously.
 
@@ -81,7 +82,7 @@ The lifecycle is sequential per hypothesis but not per directory. Multiple hypot
 - **Pending.** Committed, no killshot yet executed. The default initial state.
 - **Alive.** At least one killshot has been run; the claim has not been falsified per its pre-committed thresholds. Survival count > 0.
 - **Killed.** At least one killshot has crossed its Killed threshold. The claim is falsified. Documented in the Log with the killshot result.
-- **Retracted.** A previously-counted killshot result has been invalidated. Status is being recomputed; intermediate holding state.
+- **Retracted.** The card was withdrawn because a founding premise or provenance claim failed, or a previously counted result was invalidated. The file states whether a recount is pending or a replacement hypothesis supersedes the claim.
 
 A hypothesis with status **Killed** is not deleted. The file stays; the killed claim is part of the wiki's epistemic history. A Killed hypothesis can motivate a new committed hypothesis (a revised claim at a new file, H0M-*), but the Killed file itself is preserved.
 

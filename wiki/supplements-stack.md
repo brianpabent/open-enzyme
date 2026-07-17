@@ -462,7 +462,7 @@ HCP is the first dietary polysaccharide in the OE corpus with documented activit
 
 **Evidence level (Tier 2 supplement use):** Direct MSU mouse gout evidence — Lee 2019 *Molecules* (PMID 31174271): EGCG blocked MSU-induced caspase-1(p10) and IL-1β in primary mouse macrophages; oral EGCG alleviated MSU-injected mouse foot inflammation via NLRP3 suppression; mechanism = mtDNA synthesis block + ROS reduction. Plus hyperuricemic mouse serum-UA lowering (Yu 2024, *Food Funct*, PMID 38757391). The prior "no gout evidence" framing missed these. (Animal Model; source: nlrp3-inhibitor-screen.md)
 
-**Population context:** Broad applicability for NLRP3 mechanism, but **functional ABCG2 inhibitor** at supplement doses — relevant for the engineered-uricase platform. Yu 2024 mouse data shows favorable in vivo phenotype on urate axis in hyperuricemic mice despite EGCG's known in vitro BCRP inhibition; net clinical effect on the gut sink in androgen-dominant patients is unresolved (see Stack-level contradictions section). Hepatotoxicity risk is **dose-dependent and sex-irrelevant** but amplified by alcohol, fasting, pre-existing liver disease, and male androgen-axis liver-stress patterns. Avoid in pregnancy at supplement (>500 mg/day) doses; food-level intake (matcha, green tea) is acceptable.
+**Research context:** EGCG has opposing ABCG2 signals: inhibition in pharmacology assays and a favorable transporter-expression phenotype in a mouse hyperuricemia model. Direct intestinal urate flux, free luminal exposure, and any hormone-state interaction remain unresolved. Hepatotoxicity is a separate exposure and safety constraint; this page does not define a clinical dose or population rule.
 
 **Dosing range:** 400–800 mg EGCG/day (standardized green tea extract) OR 3–5 cups matcha/day
 
@@ -487,7 +487,7 @@ HCP is the first dietary polysaccharide in the OE corpus with documented activit
 > **Hepatotoxicity dose ceiling:** The 86 nM 20S proteasome IC50 is a safety flag at high-dose intense use. Stay at or below 800 mg EGCG/day; avoid combining high-dose EGCG with alcohol or other hepatotoxic agents; consider periodic ALT/AST monitoring at sustained high doses.
 
 **Stack interactions (within this catalog):**
-- **Stack contradiction (ABCG2 axis):** EGCG is a functional ABCG2 inhibitor (Tier 2 contradiction; see Stack-level contradictions table at bottom and [abcg2-modulators.md](./abcg2-modulators.md)). Yu 2024 (PMID 38757391) shows net-favorable effect on ABCG2/URAT1/GLUT9 in vivo in hyperuricemic mice — direction opposite to in vitro inhibition — so net effect on the gut sink in androgen-dominant patients is **unresolved**. Avoid layering EGCG with curcumin, quercetin, genistein in high-T or Q141K-positive patients until the in vivo question is resolved.
+- **Stack contradiction (ABCG2 axis):** EGCG inhibits ABCG2 in pharmacology assays, while Yu 2024 (PMID 38757391) shows a favorable transporter-expression phenotype in a mouse hyperuricemia model. A direct urate-flux factorial should test EGCG alone and with curcumin, quercetin, or genistein across WT/Q141K backgrounds; hormone state is an unvalidated covariate, not a suppression class.
 - **Synergy with quercetin, sulforaphane (NF-κB / Nrf2 axis):** mechanistically compatible at the NLRP3 priming level.
 - **Hepatotoxic stacking concern:** EGCG + high-dose curcumin + acetaminophen / alcohol creates a multiplicative liver-stress profile. Stagger or substitute.
 
@@ -622,7 +622,7 @@ HCP is the first dietary polysaccharide in the OE corpus with documented activit
 
 **Evidence level:** Clinical Trial (T elevation meta-analysis + UA-lowering RCT) + Animal Model (urate transporter modulation) + In Vitro (PRPS suppression)
 
-**Population context:** **Best-evidenced herbal T-axis adjuvant for the gout-comorbid case.** The dual T-up + UA-down phenotype is rare — most T-elevation interventions raise UA via URAT1. Particularly relevant for men with mild hypogonadism + gout who want T-axis support without worsening hyperuricemia. Effect on T is modest (10–30% free-T elevation in mildly suboptimal men, near-zero in already-eugonadal men per Leisegang 2022). Not a replacement for clomiphene at full pharmacological dose in true secondary hypogonadism. (source: androgen-natural-modulation.md)
+**Population context:** **Herbal T-axis candidate with separately testable urate effects.** Testosterone elevation cannot be assumed to raise urate through URAT1; human direction is context-dependent, and renal transporter mRNA does not establish protein-level or clinical effect. Any androgen and urate changes should be measured independently. Effect on T is modest (10–30% free-T elevation in mildly suboptimal men, near-zero in already-eugonadal men per Leisegang 2022). Not a replacement for clomiphene at full pharmacological dose in true secondary hypogonadism. (source: androgen-natural-modulation.md)
 
 **Dosing range:**
 - **Physta** (Biotropics Malaysia, hot-water extract): 200 mg/day — the most-RCT-validated extract; standardized to 0.8–1.5% eurycomanone
@@ -634,7 +634,7 @@ HCP is the first dietary polysaccharide in the OE corpus with documented activit
 **Drug interactions:**
 - **CYP3A4 substrates:** mild in vitro inhibition by quassinoids; clinical significance small at standard doses.
 - **Warfarin / antiplatelets:** no documented interaction.
-- **SERMs (clomiphene, tamoxifen):** additive T-elevation — monitor free-T and UA if combining.
+- **SERMs (clomiphene, tamoxifen):** additive hormone effects are plausible; urate direction is not established and requires measurement in any research design.
 
 **Dose-dependent risk profile:**
 - 200 mg/day standardized Physta or LJ100: well-tolerated; the RCT-validated dose.
@@ -663,13 +663,13 @@ HCP is the first dietary polysaccharide in the OE corpus with documented activit
 - **TERTIARY — Xanthine oxidase inhibition** — direct uric acid production reduction (metabolic / upstream of MSU crystal formation)
 - Mast cell stabilization
 
-> ⚠️ **ABCG2 functional inhibitor warning (source: abcg2-modulators.md):** Quercetin is a competitive substrate/inhibitor of ABCG2 at low μM gut-lumen concentrations — the same range achieved at supplement doses (500–1,000 mg/day). This means quercetin may acutely suppress intestinal urate secretion, pharmacologically antagonizing the gut-lumen-sink thesis. The net effect is dose-dependent and context-dependent: chronic low-dose dietary quercetin may show transcriptional upregulation of ABCG2 in some animal studies, but supplement-grade acute dosing is the concern. **For male gout patients on TRT, SERMs, or with Q141K polymorphism — where ABCG2 is already suppressed — high-dose quercetin supplementation may compound the deficit.** (In Vitro; source: abcg2-modulators.md)
+> ⚠️ **ABCG2 functional-inhibition hypothesis (source: abcg2-modulators.md):** Quercetin inhibits ABCG2 in pharmacology assays, but free segment-specific gut exposure and the effect on urate flux are unmeasured. Q141K is a relevant experimental stratum. TRT/SERM status should be recorded as a hormone covariate, not treated as established intestinal ABCG2 suppression. (**In Vitro + Mechanistic Extrapolation**.)
 
 **Evidence level:** In Vitro 300 nM 5-LOX IC50 per ChEMBL; Established (NF-κB + xanthine oxidase)
 
 **Labeling note:** Quercetin has **zero curated direct human NLRP3 bioactivities in ChEMBL** — it is more accurately an "NLRP3 pathway modulator" (NF-κB priming block) than a direct NLRP3 binder. The gout-relevant case rests on three orthogonal mechanisms: NF-κB priming block, xanthine oxidase inhibition, and 5-LOX/LTB4 block. (source: nlrp3-inhibitor-screen.md)
 
-**Population context:** Broad applicability for NLRP3/XO mechanism, but **functional ABCG2 inhibitor** at typical supplement doses (Stack-level contradiction; see bottom section and [abcg2-modulators.md](./abcg2-modulators.md)). Particularly relevant for male gout patients on TRT/SERMs/AAS or Q141K-positive patients where the gut-lumen-sink is already androgen-suppressed — high-dose quercetin may further close the leaky-gate. Pregnancy: limited supplement-dose data; dietary intake from onions, apples, capers is fine.
+**Research context:** Quercetin combines several candidate anti-inflammatory/XO mechanisms with an ABCG2-inhibition signal from non-urate pharmacology. Direct intestinal urate-flux experiments should stratify Q141K and measure exposure; hormone state is a covariate with unknown intestinal direction.
 
 **Dosing range:** 500–1,000 mg/day
 
@@ -915,7 +915,7 @@ These candidates remain contingent on mechanism, physiological flux, exposure, s
 
 **Mechanism:** Expresses uricase in gut lumen; degrades uric acid in place, creating a concentration sink that pulls systemic uric acid into intestine for degradation (Source: [[engineering-yeast-uricase-proposal]], [[open-enzyme-vision]])
 
-**Population context:** Designed for under-excreter gout patients (~90% of gout population). **Particularly relevant for patients with androgen-suppressed ABCG2** (TRT, SERM, AAS users) and Q141K-positive carriers — the populations where the gut-lumen-sink works hardest. Pre-clinical only; population stratification will be empirically refined in Phase 2 animal and Phase 3 human work.
+**Research context:** The proposed gut-lumen uricase configuration targets intestinal urate disposal. Adequate dose, physiological flux, and genotype response remain unestablished; Q141K and hormone state are prospective study strata, not validated responder classes.
 
 **Dosing range:** TBD from Phase 2 animal studies; likely 10–20g dried yeast powder daily or equivalent live cells
 
@@ -1035,25 +1035,24 @@ Detailed mechanism, primary citations, and tissue-selectivity discussion in [`ab
 |---|---|---|---|---|
 | **Curcumin** | Functional BCRP/ABCG2 inhibitor in vitro (Ki ~5–10 μM); **in vivo-confirmed** — selective intestinal BCRP inhibitor in cynomolgus monkeys ([Karibe 2018, PMID 29358184](https://doi.org/10.1124/dmd.117.078931)) | In vitro (multiple labs) + **Animal Model in vivo (primate)** | Negative — the **strongest** functional-inhibition case in this table (survives despite curcumin's chemical instability; substrate was drug, not urate) | **Antagonist (in vivo-confirmed)** |
 | **Quercetin** | Substrate/inhibitor at low μM (functional inhibition); transcriptional ABCG2 upregulation reported in chronic-dosing animal studies (mixed) | In vitro + Animal Model (mixed direction by chronicity) | Probably negative acutely; chronic effect unresolved | **Antagonist (acute)** |
-| **EGCG** | Functional BCRP inhibitor in pharmacology assays. Yu 2024 (PMID 38757391) showed mouse PO-induced hyperuricemic model net-favorable effect on ABCG2/URAT1/GLUT9 expression in vivo — direction opposite to in vitro inhibition | Pharmacology in vitro vs. Animal Model in vivo (contradicts) | **Unresolved** — net clinical effect on gut sink in androgen-dominant patients pending direct measurement | **Antagonist (in vitro), Synergist (some animal in vivo)** |
-| **Genistein / soy isoflavones** | Established BCRP substrate-inhibitor | Pharmacology literature | Dietary intake from natto/miso/tempeh: clinically negligible. Supplement-grade isoflavone capsules: meaningful inhibition at 50–100 mg/day | **Antagonist (supplement-grade only; food-level fine)** |
+| **EGCG** | Functional BCRP inhibitor in pharmacology assays. Yu 2024 (PMID 38757391) showed a favorable transporter-expression phenotype in a mouse hyperuricemia model — direction opposite to in vitro inhibition | Pharmacology In Vitro vs. Animal Model in vivo | Direct intestinal urate-flux effect unresolved; hormone state is an unvalidated covariate | **Mixed direction** |
+| **Genistein / soy isoflavones** | BCRP substrate/inhibitor in pharmacology assays | In Vitro pharmacology | Food- and supplement-level free intestinal exposure versus an urate-flux effect is unmeasured | **Mechanistic Extrapolation** |
 
 > **Note:** Curcumin is not currently a separate entry in this catalog — it's flagged here because it is the prototypical functional ABCG2 inhibitor in this class, and is frequently stacked alongside the catalog compounds in real gout-supplement use. If curcumin is added in the future, it carries the same stack-contradiction flag as quercetin.
 
 **Risk-tier stratification:**
 
-| User profile | ABCG2 status | Risk tier | Practical implication |
+| Research stratum | ABCG2 status | Evidence state | Experimental implication |
 |---|---|---|---|
-| Q141K homozygote + androgen-suppressed (TRT / SERM / AAS) + high-dose flavonoid (>500 mg quercetin OR >600 mg EGCG OR >500 mg curcumin) | Triple-hit suppressed | **Highest concern** | Gut sink may be functionally narrowed during the dose window. Avoid inferring that WT-ABCG2 inducers rescue a homozygous Q141K trafficking defect. |
-| Q141K heterozygote OR androgen-dominant (high-T, no SERM) + supplement-grade flavonoid | One axis suppressed + acute pharmacological inhibition | **High concern** | Meaningful gut-sink narrowing during the dose window. Time inhibitor flavonoids away from urate spikes (post-fructose meals, peri-flare). Acceptable with UA monitoring. |
-| Wild-type ABCG2 + supplement-grade flavonoid | Pharmacological inhibition only | **Moderate concern** | Net effect is dose- and chronicity-dependent. Watch UA trajectory after introduction; discontinue or down-titrate if UA rises. |
-| Any genotype + dietary-level flavonoid (onions, tea, turmeric, fermented soy at normal food portions) | Sub-Ki gut concentrations | **Minimal concern** | No restriction. Food-level intake is unlikely to be clinically significant for the gut sink. |
+| Q141K homozygote + high-dose flavonoid exposure | Genetic loss-of-function plus candidate pharmacological inhibition | **Highest research concern** | Measure surface transporter and urate flux; do not infer WT induction rescues a homozygous trafficking defect. |
+| Q141K heterozygote + supplement-grade flavonoid | Partial genetic function plus candidate inhibition | **High research concern** | Measure segment-specific exposure, acute function, and chronic expression separately. |
+| Hormone-elevated state, any genotype | Intestinal hormone effect unresolved | **Unresolved covariate** | Record hormone state without classifying ABCG2 as suppressed. |
+| Wild-type ABCG2 + supplement-grade flavonoid | Pharmacological inhibition signal from non-urate substrates | **Mechanistic Extrapolation** | Test dose and chronicity against direct urate flux. |
+| Any genotype + dietary-level flavonoid | Expected lower exposure | **Unquantified** | Include a measured food-level comparator; do not convert expected lower exposure into a clinical safety rule. |
 
-Stratification matters because a blanket "avoid quercetin" message undermines compliance for the largest cohort (wild-type genotype, dietary intake) where the risk is essentially zero. The clinically meaningful signal concentrates in androgen-suppressed Q141K-positive readers at supplement-grade doses.
+These strata define experiments, not personalized timing, discontinuation, or dose rules. The clinically relevant free luminal exposure and ABCG2-mediated urate-flux effect remain unmeasured.
 
-**Practical inference for high-T or Q141K-positive readers:** avoid high-dose curcumin and quercetin acutely when the gut sink matters most (post-meal urate spikes, fructose challenges, peri-flare). Dietary-level intake (turmeric in food, onions, tea, fermented soy at normal portions) is unlikely to be clinically problematic; supplement-grade doses are the concern.
-
-> **Per-compound stability stratification.** Gut-luminal metabolic stability makes the warning compound-specific (full table + citations in [`abcg2-modulators.md` §"Gut-luminal metabolic stability resolves the CBD-vs-flavonoid inconsistency"](./abcg2-modulators.md)): **curcumin** is the strongest antagonist — functional intestinal-ABCG2 inhibition confirmed in a live primate ([Karibe 2018](https://doi.org/10.1124/dmd.117.078931)); **quercetin** is a real inhibitor but only in the *proximal* gut right after a dose (deglycosylated + catabolized before the colon); **EGCG** is the weakest — unstable, ring-fissioned, and net-*favorable* in vivo, so it likely belongs with the Nrf2 inducers (sulforaphane, theaflavins), not the inhibitors. The load-bearing quantity — free luminal concentration vs. the ABCG2-for-*urate* Ki, segment-resolved — remains unmeasured for all of them.
+> **Per-compound stability boundary.** Curcumin has the strongest in-vivo intestinal BCRP-inhibition evidence here, but the primate substrates were drugs rather than urate. Quercetin has in-vitro inhibition evidence with uncertain segment-specific free exposure, while EGCG has opposing in-vitro and animal-expression signals. None supports a clinical timing rule. The load-bearing quantity—free segment-resolved luminal concentration versus ABCG2-mediated urate flux—remains unmeasured.
 
 **Counter-balancing inducers in the catalog (Tier 1 ABCG2 inducers per [abcg2-modulators.md](./abcg2-modulators.md)):**
 - **Sulforaphane** (Nrf2 axis) — gut-enriched

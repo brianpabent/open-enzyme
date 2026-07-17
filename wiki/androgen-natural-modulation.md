@@ -53,9 +53,9 @@ status: draft
 
 ## Gout weakness and decision frame
 
-Androgen elevation correlates with higher serum urate in gout-prone men. The supported mechanistic arm is renal URAT1: orchiectomy reduces renal URAT1 in mice and testosterone replacement restores it (Animal Model; Hosoyamada/Takiue 2010, PMID 20589576). Direct androgen suppression of intestinal ABCG2 is not supported by the available in-vivo evidence. Human cohorts nevertheless show the directional association between androgen state and urate. See [androgen-urate-axis.md](./androgen-urate-axis.md).
+Androgen manipulation can move serum urate in some human settings, but the direction is context-dependent. In mice, testosterone changed renal *Urat1* mRNA without a matching protein change and also affected SMCT1 and GLUT9 (Animal Model; Hosoyamada/Takiue 2010, PMID 20589576). Direct androgen suppression of intestinal ABCG2 is not supported by the available in-vivo evidence. See [androgen-urate-axis.md](./androgen-urate-axis.md).
 
-The exploit is therefore not simply to find a "natural Clomid." It is to identify a lever that preserves the desired androgen outcome while producing less urate liability, or that carries an independent urate-lowering mechanism. Natural products do not approach clomiphene's evidence or effect size in true secondary hypogonadism. The strongest candidates here are testable because their androgen, urate, formulation, and safety claims can be separated.
+The exploit is therefore not simply to find a "natural Clomid." It is to identify which androgen outcomes and urate effects can be measured independently, then test candidate levers without assuming that clomiphene or its alternatives have a known urate direction. Natural products do not approach clomiphene's evidence or effect size in true secondary hypogonadism. The strongest candidates here are testable because their androgen, urate, formulation, and safety claims can be separated.
 
 ### Mechanism map — what each lever actually targets
 
@@ -80,7 +80,7 @@ Hypothalamus ─── GnRH ─── Pituitary ─── LH/FSH ─── Leydi
    [Aromatase: zinc (cofactor for AR sensitivity, also mild aromatase inhibition at high dose)]
 ```
 
-The takeaway: most "natural T boosters" target SHBG, aromatase balance, or steroidogenic cofactor support — NOT the hypothalamic feedback that Clomid blocks. They work in different parts of the cascade. This is why combining a small Clomid dose with adjuvants is mechanistically additive rather than redundant.
+The takeaway: these candidates act at different points from clomiphene's hypothalamic feedback mechanism. That creates possible interactions, not a default combination strategy; combined hormone and urate effects require direct measurement.
 
 ---
 
@@ -207,7 +207,7 @@ These are deficiency-correction interventions. In repleted men, the marginal eff
 
 **Cost:** ~$5–10/month.
 
-**Gout-specific UA risk:** if Naghii's effect is real, the free-T rise will carry the same URAT1/ABCG2 UA-elevation signature. Magnitude likely small (~0.1–0.3 mg/dL) but not zero. [Marker held as mechanistic-extrapolation-tier — confirmed 2026-05-07 that Naghii 2011 does not report UA as a tracked endpoint; the magnitude estimate is mechanistic extrapolation from the ~28% free-T rise. No primary boron-and-UA RCT exists. This is a structural research gap, not a verifiable claim.]
+**Gout-specific UA risk:** no direct boron-and-urate study is available. A free-testosterone change does not establish the direction or magnitude of a urate change, and the Naghii study did not track urate. (**Mechanistic Extrapolation**.)
 
 **Evidence verdict:** **Mechanistic Extrapolation supported by one small RCT.** Reasonable cheap adjuvant; do not expect a Clomid-replacement effect.
 
@@ -321,13 +321,13 @@ That said: **cruciferous vegetables (broccoli, cabbage, Brussels sprouts, kale, 
 
 ### 4.7 Gout-specific UA risk
 
-- **Lower direct UA risk than the herbal T-boosters** because the T-elevation magnitude is smaller.
+- **Urate direction unknown.** A smaller or inconsistent testosterone effect does not establish a lower gout risk.
 - **However**: DIM modulates Phase II hepatic conjugation enzymes generally; theoretical interaction with allopurinol/febuxostat clearance not characterized. The mechanism-tier concern is now slightly better-defined: DIM is a PXR activator and induces CYP1A2 and CYP3A4 ([Sun et al. 2015 *Drug Metab Pharmacokinet*, PMC4568078](https://pmc.ncbi.nlm.nih.gov/articles/PMC4568078/); Hwang et al. 2016 PMC4759426 cites DIM induction of CYP1A2 in human liver slices). Allopurinol is metabolized to oxypurinol primarily by xanthine oxidase and aldehyde oxidase, not the major CYPs DIM affects. So the most-likely DIM-allopurinol interaction is **upstream theophylline-style CYP1A2 substrate competition** rather than direct XO-pathway interference.
 - DIM does **not** appear in the [supplement-abcg2-antagonism-computational](./supplement-abcg2-antagonism-computational.md) list of pharmacological ABCG2 inhibitors — it's not antagonizing the gut-lumen-sink. This is favorable.
 
 ### 4.8 Translation assessment
 
-**Modest adjuvant, low gout risk, particularly relevant if E2 is running high.** Useful complement to a Clomid-step-down strategy because Clomid raises E2 (via direct ER-α agonism at peripheral tissues). DIM at 100–200 mg/d is a reasonable cheap addition to the "lower-dose Clomid + adjuvants" reframe (#1).
+**Modest androgen-axis candidate with no established clomiphene–urate benefit.** Clomiphene can raise estradiol, but changing estrogen metabolism cannot be assumed to improve urate handling or gout outcomes. Any combined effect requires direct hormone and urate measurement rather than a default "step-down plus adjuvant" strategy.
 
 ---
 
@@ -360,7 +360,7 @@ Traditional use motivates candidates but does not replace modern evidence levels
 
 **Cost:** Moderate. Quality cistanche extract from Chinese suppliers ~$30–60/month. Wild *Cistanche deserticola* is increasingly conservation-restricted; cultivated *C. tubulosa* is more accessible.
 
-**Gout-specific UA risk:** Same URAT1/ABCG2 caveat as other T-elevators. No direct UA studies.
+**Gout-specific UA risk:** no direct urate studies; do not infer direction from the proposed testosterone effect.
 
 **Translation assessment:** In Vitro and Animal Model evidence support steroidogenic activity. The cited Chinese clinical corpus remains insufficiently verified for a human testosterone claim.
 
@@ -453,13 +453,13 @@ Traditional Chinese formulas rarely use these herbs in isolation. **Wu Zi Yan Zo
 
 Clomiphene citrate ("Clomid") is a 50:50 racemic mixture of two enantiomers:
 
-- **Enclomiphene** (E-isomer): pure ER-α antagonist at the hypothalamus. Short half-life (~10 hours). Drives the LH/FSH stimulation that produces endogenous T elevation.
-- **Zuclomiphene** (Z-isomer): mixed ER-α agonist/antagonist. Long half-life (~5–7 days, accumulates with chronic dosing). Produces the **peripheral estrogenic activity** that:
+- **Enclomiphene** (E-isomer): the more anti-estrogenic isomer at the hypothalamic feedback axis and the principal driver of LH/FSH stimulation.
+- **Zuclomiphene** (Z-isomer): a slower-clearing mixed ER agonist/antagonist that can accumulate with chronic dosing and contribute peripheral estrogenic activity that:
   - Raises SHBG (offsetting some Free T gain)
   - Causes mood / vision side effects in some men
   - Maintains some "estrogen-like" physiological tone
 
-**Clinical implication:** racemic clomiphene's chronic-dosing pharmacology is dominated by zuclomiphene accumulation. Pure enclomiphene gives the LH-stimulation benefit without the long-half-life E-axis interference.
+**Clinical implication:** racemic clomiphene exposure can be influenced by zuclomiphene accumulation. Enclomiphene and racemic clomiphene produce different hormone profiles, but that difference does not establish a urate or gout advantage.
 
 ### 6.2 Source and regulatory status
 
@@ -476,9 +476,9 @@ Clomiphene citrate ("Clomid") is a 50:50 racemic mixture of two enantiomers:
 
 ### 6.4 Gout-specific UA risk
 
-- Same URAT1/ABCG2 mechanism as racemic clomiphene. The androgen is the driver; both formulations elevate androgen.
-- **Open question whether enclomiphene's smaller E2 elevation produces a different net UA effect** — estrogen is urate-lowering, so retaining more E2 elevation might offset some of the androgen-driven UA rise. Conversely, less E2 might mean a slightly larger net UA rise per unit T elevation. This is the unresolved question Shin KH 2024 may address.
-- **No published study has directly compared UA changes on clomiphene vs enclomiphene at matched T elevation.** Real research gap.
+- No direct evidence establishes a net urate effect or a shared URAT1/ABCG2 mechanism for clomiphene and enclomiphene.
+- Their different testosterone and estradiol profiles could produce different urate effects, but the direction cannot be inferred from hormone direction alone.
+- **No published study has directly compared urate changes on clomiphene versus enclomiphene at matched hormone change.**
 
 ### 6.5 Translation assessment
 
@@ -498,9 +498,9 @@ Enclomiphene raises testosterone while preserving gonadotropins and may produce 
 
 ## Falsification tests
 
-**H-AN-01: The enclomiphene–urate differential.** No published study has directly compared serum urate changes on clomiphene versus enclomiphene at matched testosterone elevation. A controlled comparison should measure testosterone, estradiol, renal urate handling, and serum urate together. (Cross-references [androgen-urate-axis.md](./androgen-urate-axis.md) and [`hypotheses/H07-clomid-intestinal-er-antagonism.md`](./hypotheses/H07-clomid-intestinal-er-antagonism.md).)
+**H-AN-01: The enclomiphene–urate differential.** No published study has directly compared serum urate changes on clomiphene versus enclomiphene at matched hormone change. A controlled comparison should measure testosterone, estradiol, renal urate handling, and serum urate together. (Cross-references [androgen-urate-axis.md](./androgen-urate-axis.md) and [H10](./hypotheses/H10-clomiphene-dose-urate-coupling.md).)
 
-**H-AN-08: The clomiphene–urate mechanism.** Direct androgen suppression of intestinal ABCG2 remains unsupported; renal URAT1 and estradiol-dependent effects are competing explanations. H07 defines experiments that can separate those arms. See [`hypotheses/H07-clomid-intestinal-er-antagonism.md`](./hypotheses/H07-clomid-intestinal-er-antagonism.md), comp-016, and comp-017.
+**H-AN-08: The clomiphene–urate relationship.** Direct clomiphene evidence is absent. [H10](./hypotheses/H10-clomiphene-dose-urate-coupling.md) tests exposure–urate coupling before assigning renal, intestinal, androgen-receptor, or estrogen-receptor mechanisms. The intestinal mechanism proposed by [H07](./hypotheses/H07-clomid-intestinal-er-antagonism.md) is retracted.
 
 **H-AN-02: Cordyceps as a dual-axis candidate.** Cordycepin has modest testosterone evidence and animal URAT1 data. Compare cordyceps and tongkat ali at matched testosterone change with serum urate and transporter endpoints. Cross-references [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md).
 

@@ -22,7 +22,7 @@ For a patient-facing overview, see [gout.care](https://gout.care). For mechanism
 | Context | Dominant question | Research route |
 |---|---|---|
 | No genotype information; diet-associated or under-excretor phenotype unknown | Which upstream production and disposal mechanisms dominate? | [Purine biosynthesis](./prps-purine-biosynthesis-chokepoint.md), [fructose](./fructose-connection.md), [urate transport](./gout-pathophysiology.md#step-2-renal-handling--the-excretion-bottleneck) |
-| Androgen-elevated state | Does altered estradiol-pathway signaling or renal transporter regulation change urate handling? | [Androgen–urate axis](./androgen-urate-axis.md), [H07](./hypotheses/H07-clomid-intestinal-er-antagonism.md) |
+| Androgen-elevated state | Does the hormone state change urate handling, and is clomiphene exposure coupled to urate in a susceptible phenotype? | [Androgen–urate axis](./androgen-urate-axis.md), [H10](./hypotheses/H10-clomiphene-dose-urate-coupling.md) |
 | ABCG2 Q141K carrier | Does impaired ABCG2 trafficking identify a different response class? | [ABCG2 modulators](./abcg2-modulators.md), [genotype-informed workflow](./genotype-informed-supplement-workflow.md) |
 | Active flare | Which inflammatory chokepoint is causal and tractable without confusing acute control with long-term urate disposal? | [NLRP3 exploit map](./nlrp3-exploit-map.md), [gout pathophysiology](./gout-pathophysiology.md#step-4-the-inflammatory-cascade--nlrp3-and-the-flare) |
 | Receiving urate-lowering therapy | Can an adjunct improve a distinct mechanism without obscuring the established-care baseline? | [Compound evidence catalog](./supplements-stack.md), [ABCG2 modulators](./abcg2-modulators.md) |
@@ -43,11 +43,12 @@ Research gates:
 
 ## Androgen-elevated context
 
-Comp-016, comp-017, and [H07](./hypotheses/H07-clomid-intestinal-er-antagonism.md) reframe the older claim that androgens directly suppress ABCG2. The current hypothesis is estradiol-pathway antagonism: Clomid may block an estradiol → PI3K/Akt → ABCG2 induction signal that males largely lack at baseline. This makes aromatase inhibition, direct urate-axis modulation, and transporter effects distinct research variables rather than reasons to prescribe or avoid a supplement.
+Human androgen-manipulation studies show that urate can move with hormone state, but the direction is context-dependent. No direct clomiphene study located measured serum urate, incident gout, or renal/intestinal urate handling. [H10](./hypotheses/H10-clomiphene-dose-urate-coupling.md) tests the exposure–urate relationship from a disclosed n=1 signal without presuming that intestinal ER antagonism, renal transport, or androgen signaling is dominant. The earlier intestinal mechanism card, [H07](./hypotheses/H07-clomid-intestinal-er-antagonism.md), is retracted.
 
 Research gates:
 
-- Test whether the proposed estradiol-pathway mechanism changes intestinal ABCG2 in the relevant tissue and exposure range.
+- Establish a reproducible clomiphene–urate relationship before assigning a mechanism.
+- Test any proposed estradiol-pathway mechanism directly in the relevant tissue and exposure range.
 - Measure urate handling independently of testosterone-related outcomes.
 - Treat carnosine, cordycepin, eurycomanone, butyrate, and related candidates as mechanism probes until human gout evidence establishes direction and magnitude.
 

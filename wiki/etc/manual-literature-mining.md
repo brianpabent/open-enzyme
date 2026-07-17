@@ -159,16 +159,6 @@ Sister discipline to the pre-commit verification gate: **before declaring an exp
 4. **Crowdsourced cohorts produce real n>>1 evidence at $0 marginal cost.** The men's-health, gout, and microbiome communities on Twitter / Reddit / Hone routinely share lab panels publicly. Treating that as a usable data source (with appropriate methodological caveats) is the open-source-platform thesis applied to evidence gathering.
 5. **The "killshot" framing should be: cheapest experiment that resolves the question, not biggest experiment that proves the answer beyond doubt.** Falsification-card discipline (per [`linter-design.md`](../linter-design.md)) is about *attempting* to falsify, not about overwhelming the question with budget. A $300 experiment that crosses a pre-committed threshold kills (or saves) a hypothesis as decisively as a $30K one.
 
-**Worked example — H07 Clomid intestinal-ER-antagonism thesis** ([`hypotheses/H07-clomid-intestinal-er-antagonism.md`](../hypotheses/H07-clomid-intestinal-er-antagonism.md)):
-
-- **Tier 0:** GTEx + HPA sex-stratified intestinal ABCG2 mining ($0); full-text re-read of the 4 anchor papers Klyushova 2023, MacLean 2008, Hoque 2020, Yu 2021 ($0). Estimated to resolve sub-claim 1 (does the PI3K/Akt → ABCG2 mechanism replicate in vivo?) and partially sub-claim 3 (is the renal arm enough?).
-- **Tier 1:** n=1 FEUA tracking on Clomid dose changes (~$300). Resolves sub-claim 3 for one individual definitively.
-- **Tier 2:** Crowdsourced clomiphene-vs-enclomiphene-vs-TRT cohort labs sharing ($0 in materials, weeks of community work). Resolves sub-claim 4 (the enclomiphene UA-direction question).
-- **Tier 3:** Caco-2 + SERM treatment ($2–5K). Resolves sub-claim 2 (intestinal ER tissue-specificity under clomiphene).
-- **Tier 4:** Mouse castration + T/E2 replacement + intestinal ABCG2 measurement ($5–15K via academic collaborator). Reserved as last resort.
-
-The Tier 0 + Tier 1 combination probably closes the H07 thesis at >80% confidence for ~$300 + a week of analysis. Tier 4 is the institutional default; for OE it's the last resort, not the first move.
-
 **This discipline composes with the pre-commit verification gate.** Both are "walk the checklist before shipping." The verification gate catches numerical hallucinations; the killshot tiering catches budget over-specification. Different failure modes; same shape of fix (named protocol, applied at the right moment in the workflow).
 
 For falsification-card stub authoring (per [`hypotheses/README.md`](../hypotheses/README.md)), the killshot menu in the stub should be tier-explicit: each killshot listed with its cost tier, so the stub-to-full-card promotion can pick the right starting tier rather than defaulting to institutional.
