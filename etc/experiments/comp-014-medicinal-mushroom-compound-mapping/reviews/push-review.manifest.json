@@ -270,8 +270,8 @@
     {
       "path": "wiki/etc/GRAPH.md",
       "kind": "proposed_update",
-      "bytes": 42433,
-      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+      "bytes": 42361,
+      "sha256": "c254f065b74cc3fbe75baa729c4671a98a4abd2c4795964f6260faea710f591f"
     },
     {
       "path": "wiki/etc/autonomous-screening-methodology.md",
@@ -366,8 +366,8 @@
     {
       "path": "wiki/medicinal-mushroom-complement-track.md",
       "kind": "proposed_update",
-      "bytes": 51414,
-      "sha256": "4572f8f25b90fc8cc141e26f5dc02a13663d6b110920a5df2c23408baf592abd"
+      "bytes": 11266,
+      "sha256": "065411918fe8c622b2db0f6c8ebd019997c6e761859cc59ad72d069d8c24cbeb"
     },
     {
       "path": "wiki/medicinal-mushroom-compound-mapping-computational.md",
@@ -419,5 +419,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "1eff22e40f813b0716fc0597e675dd682b1e11b5e43b3e2fb93e2dbdad5b7a3f"
+  "manifest_sha256": "9bce7c6bef4ce497574b81680c2eff9f464e869c0941241c1a5a0f30414e1e0c"
 }

@@ -94,16 +94,10 @@
       "sha256": "791b36462f9dd5953e76d951c0291d209985ead2410f1988ceb62d4ddf227461"
     },
     {
-      "path": "wiki/engineered-lbp-chassis.md",
-      "kind": "proposed_update",
-      "bytes": 20084,
-      "sha256": "770f3a6a5b8c9dd5b7f47b092d97963f9f1091bddb1d32300af62ad042e99481"
-    },
-    {
       "path": "wiki/etc/GRAPH.md",
       "kind": "proposed_update",
-      "bytes": 42433,
-      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+      "bytes": 42361,
+      "sha256": "c254f065b74cc3fbe75baa729c4671a98a4abd2c4795964f6260faea710f591f"
     },
     {
       "path": "wiki/etc/bio-ai-tools.md",
@@ -214,12 +208,6 @@
       "sha256": "c5a3183ee6d085198b12b975fcb93ccea5cafd28dfffa0b6fcfc604768727da6"
     },
     {
-      "path": "wiki/medicinal-mushroom-complement-track.md",
-      "kind": "proposed_update",
-      "bytes": 51414,
-      "sha256": "4572f8f25b90fc8cc141e26f5dc02a13663d6b110920a5df2c23408baf592abd"
-    },
-    {
       "path": "wiki/modality-chokepoint-matrix.md",
       "kind": "proposed_update",
       "bytes": 51347,
@@ -245,5 +233,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "55c07ab7f1b0cb33a20c4005c3ade4269e2fa9d32b0e8e4a2ba3b4ebe025369d"
+  "manifest_sha256": "9e2672ad42b2ad00b2aa8227737857778f78a4b80d2dc6d06768cc9f13be8e82"
 }

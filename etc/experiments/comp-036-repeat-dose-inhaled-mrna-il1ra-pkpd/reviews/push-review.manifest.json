@@ -72,8 +72,8 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 37221,
-      "sha256": "a14617bdc4b75b69b543878ce0cbf8b202098e82756593c5a66ec437a61121b9"
+      "bytes": 37034,
+      "sha256": "301326e10498ec11de1167fc67cf767b73c03ac2c795d1b4cabf467256123865"
     },
     {
       "path": "wiki/computational-experiments.md",
@@ -107,5 +107,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "62d46d80a747ba4ea27ac75b16bd2e935f20876f70ff4a30078086879e0824ad"
+  "manifest_sha256": "0d3a9e0f096caeb03f5fe77fc280c8343ad2754a3615f546dd62b999e1a6cc69"
 }

@@ -130,12 +130,6 @@
       "sha256": "d14f205ec6cd1927ee2906beb4e4254522f51288201618fbc7722799d7bb0d23"
     },
     {
-      "path": "wiki/sirna-urat1-modality.md",
-      "kind": "proposed_update",
-      "bytes": 18726,
-      "sha256": "02b16ee49bbd6ffa36bafff9459ed4a1c8ec680bee3cf57dfcb0dd7f25f79281"
-    },
-    {
       "path": "wiki/uricase-variant-selection.md",
       "kind": "proposed_update",
       "bytes": 48056,
@@ -143,5 +137,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "0e96edb1e7c1f243087ea537695bb5fd854d705fa8651e69fe3aedb2443627a4"
+  "manifest_sha256": "4c1386fa7514e20aa641fe88abc7ddceafbf5a8362ab14f107f921b8c84dfba3"
 }

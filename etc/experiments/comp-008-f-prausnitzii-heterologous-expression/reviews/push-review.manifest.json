@@ -60,8 +60,8 @@
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 20084,
-      "sha256": "770f3a6a5b8c9dd5b7f47b092d97963f9f1091bddb1d32300af62ad042e99481"
+      "bytes": 16993,
+      "sha256": "f81372ed48d0a466ec18858cfcfffa1757cf8bc0895022d31fcbfcc42af477e9"
     },
     {
       "path": "wiki/f-prausnitzii-heterologous-expression-computational.md",
@@ -83,5 +83,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "1d7aea3007baa0dd92f9acaad26e999f174801544177da84eee152545f2cbd19"
+  "manifest_sha256": "ed86cd525b539f6a7d664651a80520d9cdacdb2d5f767576964b07e6263ae839"
 }
