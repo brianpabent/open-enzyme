@@ -2,10 +2,10 @@
   "schema_version": 2,
   "comp": "comp-032",
   "comp_dir": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen",
-  "source_commit": "8bfe20b0bd93e0dbe58076148fd285bed9691cdc",
-  "artifact_manifest_sha256": "2cdbb61f9d000f335899eda5d6e701b9211ff1e7ff07cfd77208877fd4b12c85",
+  "source_commit": "0a6a0c6b2b6bdff78fa564eb5e0f8f96447299f4",
+  "artifact_manifest_sha256": "f10f422cf01dea44cb6463c8458e56f910789fa7a56741334bc646465b381f92",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-16T23:27:00Z",
+  "timestamp": "2026-07-17T00:38:12Z",
   "comp_verdict": "review_completed_actioned",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
@@ -42,8 +42,6 @@
     "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/README.md",
     "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/inputs/provenance.md",
     "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/summary.md",
-    "wiki/genotype-informed-supplement-workflow.md",
-    "wiki/gout-genetic-variants.md",
     "wiki/validation-experiments.md"
   ],
   "note": "Carries forward a completed independent review and its remediation state. The exact current manifest binding is a migration receipt, not a new review."

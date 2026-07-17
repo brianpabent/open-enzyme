@@ -96,20 +96,20 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 44557,
-      "sha256": "15d44c9ef6a7bf225ce62f3800155fd33c8fa4402b373ebfff44ae8f0a62e804"
+      "bytes": 37221,
+      "sha256": "a14617bdc4b75b69b543878ce0cbf8b202098e82756593c5a66ec437a61121b9"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/delivery-route-matrix.md",
       "kind": "proposed_update",
-      "bytes": 39433,
-      "sha256": "bc5c2b7f1fe7fb6f11ee0798e1b9dc2d58a04b18f9524be40b9ae379aebcd3e7"
+      "bytes": 37753,
+      "sha256": "8709717f92c64cd194458d7b0a9b184afe9a48016f5029cc701b31469b68f2a2"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -138,8 +138,8 @@
     {
       "path": "wiki/gout-kill-chain-delivery-routes.md",
       "kind": "proposed_update",
-      "bytes": 52040,
-      "sha256": "c9d7b67d23e8ada65875a7f72556e135d99bd387ab51eafa2165e64c32999286"
+      "bytes": 52167,
+      "sha256": "016a847c1247591eac450fa178c34eb2946c13f0be6bac78ad60ca2efc2fd0f8"
     },
     {
       "path": "wiki/inhaled-mrna-il1ra-pulse-computational.md",
@@ -150,10 +150,10 @@
     {
       "path": "wiki/intra-articular-uricase-h2o2-reaction-diffusion-computational.md",
       "kind": "proposed_update",
-      "bytes": 20844,
-      "sha256": "ef93ccd67a9d44e298e6ab50f427bd28585d6e917ebb2364485f87e951868a92"
+      "bytes": 20679,
+      "sha256": "541d63f92b09d14eda9ba254532f7747f311247c3d033aa4949a2f3205d1925c"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "ad2f2c22aee7b9e997956295f9a8a0086db157de46409bf306ef2afde0e47a22"
+  "manifest_sha256": "a61f2543e16cff43ad34894eec0aa16b33a25fc7059145853361d17a133161b9"
 }

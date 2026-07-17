@@ -48,8 +48,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
@@ -96,10 +96,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 249208,
-      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "412ab58fa94965e420c412f39fc8af23f6879810309d2e377eb2c00c9c6808da"
+  "manifest_sha256": "72b964f2c76a8e00230bf66ba60351a2b9c85fcff2311a4662d74062ea736ff8"
 }

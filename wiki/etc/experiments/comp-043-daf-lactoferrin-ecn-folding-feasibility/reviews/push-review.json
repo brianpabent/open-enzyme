@@ -2,16 +2,15 @@
   "schema_version": 2,
   "comp": "comp-043",
   "comp_dir": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility",
-  "source_commit": "8bfe20b0bd93e0dbe58076148fd285bed9691cdc",
-  "artifact_manifest_sha256": "25cb626c80aee3a94e61422e6ac3a90e1116567062a0ba30ff89bf2f8681b778",
+  "source_commit": "0a6a0c6b2b6bdff78fa564eb5e0f8f96447299f4",
+  "artifact_manifest_sha256": "90cbed59d78565cfb49174ae3e16862684526702684ab475413a0cb3c841376d",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-16T23:27:00Z",
+  "timestamp": "2026-07-17T00:38:12Z",
   "comp_verdict": "review_completed_open_actions",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
   "action_required": true,
   "derived_paths": [
-    "wiki/chaperone-orthogonal-stacking.md",
     "wiki/computational-experiments.md",
     "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
     "wiki/engineered-lbp-chassis.md"
@@ -26,7 +25,6 @@
     "review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
   },
   "post_review_changed_manifest_paths": [
-    "wiki/chaperone-orthogonal-stacking.md",
     "wiki/computational-experiments.md",
     "wiki/engineered-lbp-chassis.md"
   ],

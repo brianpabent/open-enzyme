@@ -54,26 +54,26 @@
     {
       "path": "wiki/abcg2-modulators.md",
       "kind": "proposed_update",
-      "bytes": 52037,
-      "sha256": "dfdcbc7124f3416da5e626be3a0369dd4e67ba0d199129a9497e58a32e982a2b"
+      "bytes": 47568,
+      "sha256": "18dbbea2ab83f4ddc91c6afcd0e8ceba0cf784e7c0c0a5e422d7fc20258dbeba"
     },
     {
       "path": "wiki/androgen-natural-modulation.md",
       "kind": "proposed_update",
-      "bytes": 99399,
-      "sha256": "d6197b23c753333c448f650808f172b7aff5c8feb099103de0b9217207432d6f"
+      "bytes": 52751,
+      "sha256": "c5db1f8c7b6cd1eba857bb4a6f14912a1ac7329efab652c547f6f5113905a377"
     },
     {
       "path": "wiki/androgen-urate-axis.md",
       "kind": "proposed_update",
-      "bytes": 42537,
-      "sha256": "c31c3a8414f873e1874ffb9d88f72afa3bd627b94d545dfddf38674bb27bd996"
+      "bytes": 35384,
+      "sha256": "b2fc1bbf767e6ff16939bc68222218c71816fcf2ac4b57f8ec74259c1d39ffa3"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
@@ -84,20 +84,14 @@
     {
       "path": "wiki/gout-action-guide.md",
       "kind": "proposed_update",
-      "bytes": 38712,
-      "sha256": "0ad406a01631e06f9edfd4a2776ae19b5d64cc63a01cb1b25aee19658fd504a9"
+      "bytes": 9202,
+      "sha256": "0de97e829170f9be33b680662cafadc34cdf5700a9cc1f09ff592ec915378791"
     },
     {
       "path": "wiki/gout-genetic-variants.md",
       "kind": "proposed_update",
-      "bytes": 52597,
-      "sha256": "5d66e93f2f1b101e25e1ba49fc2a2f27ee9411544279e0ea58e0b2efec139f5e"
-    },
-    {
-      "path": "wiki/hypotheses/H07-clomid-intestinal-er-antagonism.md",
-      "kind": "proposed_update",
-      "bytes": 20655,
-      "sha256": "4b2558fa27e74775460dbf5874bfe03ac3f8c9fe8d6bb2580b9ae3fcbccd29eb"
+      "bytes": 50255,
+      "sha256": "89383be197c3a83aac2d12806144edcc475d9ffe5f12b0a3a08a16c1392baf65"
     },
     {
       "path": "wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md",
@@ -108,10 +102,10 @@
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 101342,
-      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
+      "bytes": 94611,
+      "sha256": "d14f205ec6cd1927ee2906beb4e4254522f51288201618fbc7722799d7bb0d23"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "c5d6ec72e92ec0356ef7ddfda925e76a8bf92eaab297ae10c7af42ea404cb42b"
+  "manifest_sha256": "afb0e663627687564dff15ab65e9156a5a039be6113cb6a69cf005ed64f861bb"
 }

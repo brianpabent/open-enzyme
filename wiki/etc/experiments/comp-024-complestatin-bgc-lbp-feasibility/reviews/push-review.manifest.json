@@ -52,16 +52,10 @@
       "sha256": "7547f64e46d9efe86cc82c08706be56f1dd477b682a85e8307936dc0a56ec1f8"
     },
     {
-      "path": "wiki/chassis-pending-interventions.md",
-      "kind": "proposed_update",
-      "bytes": 44557,
-      "sha256": "15d44c9ef6a7bf225ce62f3800155fd33c8fa4402b373ebfff44ae8f0a62e804"
-    },
-    {
       "path": "wiki/complement-c5a-gout.md",
       "kind": "proposed_update",
-      "bytes": 114293,
-      "sha256": "5fc826d237102344a796817418c663a9a961cfbb497f37a5956d386acd08dc37"
+      "bytes": 103744,
+      "sha256": "84c515706dfc5ccb9b2071bb47c53f83e44834b1032edf64fd85fca8909248ff"
     },
     {
       "path": "wiki/complestatin-bgc-lbp-feasibility-computational.md",
@@ -72,8 +66,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/etc/autonomous-screening-methodology.md",
@@ -102,10 +96,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 249208,
-      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "89e668c2146a751f4a0c6729a198cf74de70d844b115f583afc84525e30060be"
+  "manifest_sha256": "16ef486343eb5e51728aa5ec783c2f52ab1f671cd9ba94faac1e4862a58ec173"
 }

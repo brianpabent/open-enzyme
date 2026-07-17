@@ -54,8 +54,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md",
@@ -102,14 +102,14 @@
     {
       "path": "wiki/hypotheses/H04-tcm-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 10734,
-      "sha256": "046dd17f61fdbedf0b70aa13fe43030f4c92544d67fa34db79ff9a6556f33404"
+      "bytes": 9364,
+      "sha256": "160fd51ff7a3e449a7c72922630eeaf09747030a0b24986a9b02b4d44cedc388"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 101342,
-      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
+      "bytes": 94611,
+      "sha256": "d14f205ec6cd1927ee2906beb4e4254522f51288201618fbc7722799d7bb0d23"
     },
     {
       "path": "wiki/supplement-abcg2-antagonism-computational.md",
@@ -126,16 +126,16 @@
     {
       "path": "wiki/tcm-modern-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 34331,
-      "sha256": "106c59999019fb4cf3aeae71c08c4a07bb7ff496e209b2a09c890f68e2e6c31e"
+      "bytes": 30057,
+      "sha256": "8ba1a1fafe2a64e18ffb1f34a90b7dbb0fd236d8f808a986975a2b0b1fd0fd23"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 249208,
-      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "32c51b66e0719a575d96e0ebfae50a2336cdb3c1730000f38a6fa70629336150"
+  "manifest_sha256": "8996b270346aa708818592b1bd687fc5503e7609346292e1b6432b646e0f8a3a"
 }

@@ -58,22 +58,16 @@
       "sha256": "7547f64e46d9efe86cc82c08706be56f1dd477b682a85e8307936dc0a56ec1f8"
     },
     {
-      "path": "wiki/chaperone-orthogonal-stacking.md",
-      "kind": "proposed_update",
-      "bytes": 106834,
-      "sha256": "42d7d282cdce67ee6a446fcb306b9e955e89fc53c70a206d5389d9b7130448ed"
-    },
-    {
       "path": "wiki/complement-c5a-gout.md",
       "kind": "proposed_update",
-      "bytes": 114293,
-      "sha256": "5fc826d237102344a796817418c663a9a961cfbb497f37a5956d386acd08dc37"
+      "bytes": 103744,
+      "sha256": "84c515706dfc5ccb9b2071bb47c53f83e44834b1032edf64fd85fca8909248ff"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
@@ -84,8 +78,8 @@
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 24105,
-      "sha256": "f3766bd9e8d73c691d35f8b1868d11edecbf9d4cb7dc40b71eb878a3e9c340f1"
+      "bytes": 20084,
+      "sha256": "770f3a6a5b8c9dd5b7f47b092d97963f9f1091bddb1d32300af62ad042e99481"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -126,14 +120,14 @@
     {
       "path": "wiki/modality-chokepoint-matrix.md",
       "kind": "proposed_update",
-      "bytes": 54389,
-      "sha256": "6bcf7fbc8fd123c1fe11b5a1f88550fcf2350533f8a254fdd3157f1825bee525"
+      "bytes": 51347,
+      "sha256": "b2e228fe4e18156fd718976bd42ed2b1e5e029cc13eec7f1d4adfe10361cf18e"
     },
     {
       "path": "wiki/nlrp3-exploit-map.md",
       "kind": "proposed_update",
-      "bytes": 92218,
-      "sha256": "0609f4e5464716f00c9151596c5addffea79eb2060e1be633e7daec8aef46efa"
+      "bytes": 81255,
+      "sha256": "7c642b8308458111398fac152af7155db9f9c16f9cafa5c9674dda0069e3aeaf"
     },
     {
       "path": "wiki/upstream-complement-modulator-sweep-computational.md",
@@ -143,5 +137,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "a03fe0e4271021ff9c9c757fb06ea04701388fe309c01b63b7890ce7862b5839"
+  "manifest_sha256": "4e32445723a2a7290ee55fe92b419fdd973608c820d487f19a248398ee81113b"
 }

@@ -738,8 +738,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
@@ -780,22 +780,16 @@
     {
       "path": "wiki/lactoferrin-linker-redesign-computational.md",
       "kind": "proposed_update",
-      "bytes": 12834,
-      "sha256": "af87be147398da8d10cf44034d8d49376381e0ab1cb55dcef0db1aaeb8ebb29b"
-    },
-    {
-      "path": "wiki/lactoferrin.md",
-      "kind": "proposed_update",
-      "bytes": 84788,
-      "sha256": "9a027021098f89d3fea467457b192ecae8c91c040a1ebcd3683befc914f95b8f"
+      "bytes": 6957,
+      "sha256": "d005adf396ab2a5bb8ee54d8f6e8eeaafd356d238ed882ccf9d01d5633bbd681"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 249208,
-      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "522f6e088e2ab178c01bde37b10d243d79025d6e2f1eedfb062e6be8bfe2242d"
+  "manifest_sha256": "97fb6cc8f9d02e05f651e66c174a0b3591a5a93847c32fc214697a5e667833cd"
 }

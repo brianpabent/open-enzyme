@@ -2,10 +2,10 @@
   "schema_version": 2,
   "comp": "comp-046",
   "comp_dir": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance",
-  "source_commit": "8bfe20b0bd93e0dbe58076148fd285bed9691cdc",
-  "artifact_manifest_sha256": "412ab58fa94965e420c412f39fc8af23f6879810309d2e377eb2c00c9c6808da",
+  "source_commit": "0a6a0c6b2b6bdff78fa564eb5e0f8f96447299f4",
+  "artifact_manifest_sha256": "72b964f2c76a8e00230bf66ba60351a2b9c85fcff2311a4662d74062ea736ff8",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-16T23:27:00Z",
+  "timestamp": "2026-07-17T00:38:12Z",
   "comp_verdict": "review_completed_actioned",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
@@ -43,5 +43,9 @@
       "grid occupancy as probability",
       "a general topology winner"
     ]
-  }
+  },
+  "post_review_changed_manifest_paths": [
+    "wiki/computational-experiments.md",
+    "wiki/validation-experiments.md"
+  ]
 }

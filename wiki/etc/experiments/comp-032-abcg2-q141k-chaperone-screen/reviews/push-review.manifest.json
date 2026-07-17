@@ -66,8 +66,8 @@
     {
       "path": "wiki/abcg2-modulators.md",
       "kind": "proposed_update",
-      "bytes": 52037,
-      "sha256": "dfdcbc7124f3416da5e626be3a0369dd4e67ba0d199129a9497e58a32e982a2b"
+      "bytes": 47568,
+      "sha256": "18dbbea2ab83f4ddc91c6afcd0e8ceba0cf784e7c0c0a5e422d7fc20258dbeba"
     },
     {
       "path": "wiki/abcg2-q141k-chaperone-rescreen-computational.md",
@@ -84,14 +84,14 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 44557,
-      "sha256": "15d44c9ef6a7bf225ce62f3800155fd33c8fa4402b373ebfff44ae8f0a62e804"
+      "bytes": 37221,
+      "sha256": "a14617bdc4b75b69b543878ce0cbf8b202098e82756593c5a66ec437a61121b9"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -102,8 +102,8 @@
     {
       "path": "wiki/etc/ai-bio-tools-playbook.md",
       "kind": "proposed_update",
-      "bytes": 84416,
-      "sha256": "6e8edd7e38d689b1da1ab9c643ee2204d133015cf88ae7d7b6d72ae35991ed03"
+      "bytes": 84427,
+      "sha256": "0d09681dbabf761d111f7cf005a0d65383390632bc80f0612dc9ffc4ecbd93cb"
     },
     {
       "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/README.md",
@@ -126,10 +126,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 249208,
-      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "2cdbb61f9d000f335899eda5d6e701b9211ff1e7ff07cfd77208877fd4b12c85"
+  "manifest_sha256": "f10f422cf01dea44cb6463c8458e56f910789fa7a56741334bc646465b381f92"
 }

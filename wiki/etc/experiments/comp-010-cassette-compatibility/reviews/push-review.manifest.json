@@ -66,26 +66,26 @@
     {
       "path": "wiki/aspergillus-oryzae.md",
       "kind": "proposed_update",
-      "bytes": 32295,
-      "sha256": "bb05fb8755d56274f96c6561344544171c29384eed30ef74a7094929e3b6ab2f"
+      "bytes": 32246,
+      "sha256": "255ec54730903032557015ac5da7a5981b60f9adf874a1e35c1b5393f6f706ef"
     },
     {
       "path": "wiki/cassette-compatibility-computational.md",
       "kind": "proposed_update",
-      "bytes": 2213,
-      "sha256": "29969850efffd8c1b9e196537f816a7bf468099cc29584c2d6b54298705c195d"
+      "bytes": 2239,
+      "sha256": "0fbc1353e6f455617f5690b90b34cb16691fe050b5726c7982cc1295c10aeace"
     },
     {
       "path": "wiki/chaperone-orthogonal-stacking.md",
       "kind": "proposed_update",
-      "bytes": 106834,
-      "sha256": "42d7d282cdce67ee6a446fcb306b9e955e89fc53c70a206d5389d9b7130448ed"
+      "bytes": 96959,
+      "sha256": "ce64482c142f0578e5b518fb3fa4cb6ce53fb688927d8777455b2999b6f82d6f"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -144,20 +144,20 @@
     {
       "path": "wiki/hypotheses/H01-ward-dual-cassette.md",
       "kind": "proposed_update",
-      "bytes": 68458,
-      "sha256": "c86f3fff318b223a23a1e6b4b425d256e1139a566f90d3db14d3962f938fe807"
+      "bytes": 67670,
+      "sha256": "3e311d05bd99bf6df7d39edf4c57d26b18903ccfec7b21fd1c4cc68175af6de6"
     },
     {
       "path": "wiki/koji-endgame-strain.md",
       "kind": "proposed_update",
-      "bytes": 86478,
-      "sha256": "237e56bb7be6490cf90ffbfc16586ce8f05a0c6cdf858a930a3b8c16fca69e98"
+      "bytes": 70835,
+      "sha256": "d04cf72152a144b6251db16e090e61dfff645266bb3e3701a525765d65d1a321"
     },
     {
       "path": "wiki/lactoferrin.md",
       "kind": "proposed_update",
-      "bytes": 84788,
-      "sha256": "9a027021098f89d3fea467457b192ecae8c91c040a1ebcd3683befc914f95b8f"
+      "bytes": 74908,
+      "sha256": "8a6f79ddedfacf8e50569d52e3dd4fa6a34ca2b0ef682506bcbfb60f2500c8f6"
     },
     {
       "path": "wiki/uricase-variant-selection.md",
@@ -168,10 +168,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 249208,
-      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "e48ca0cc7d3523c8671bdc29c7ad68ddfab313193685a42e6a7e1c55b8407ab1"
+  "manifest_sha256": "53f5bd4c1693764c4e4d2b09c499358ed5339d35a9b24900a4fe52fb51b89eb3"
 }

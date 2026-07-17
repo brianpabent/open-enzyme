@@ -2,16 +2,15 @@
   "schema_version": 2,
   "comp": "comp-030",
   "comp_dir": "wiki/etc/experiments/comp-030-daf-cassette-ranking",
-  "source_commit": "8bfe20b0bd93e0dbe58076148fd285bed9691cdc",
-  "artifact_manifest_sha256": "ca6a2eb7d5528f1edb006888d24c1710d4b619c6f259238c2b0438ec1ec3e989",
+  "source_commit": "0a6a0c6b2b6bdff78fa564eb5e0f8f96447299f4",
+  "artifact_manifest_sha256": "e5d00f99f937147ca430b42b22605382e2cf42a3e74d75c7748a2c70ad562f39",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-16T23:27:00Z",
+  "timestamp": "2026-07-17T00:38:12Z",
   "comp_verdict": "review_completed_actioned",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
   "action_required": false,
   "derived_paths": [
-    "wiki/chaperone-orthogonal-stacking.md",
     "wiki/combined-cp0-systems-model-computational.md",
     "wiki/computational-experiments.md",
     "wiki/daf-cd55-scr14-cassette-ranking-computational.md",
@@ -30,7 +29,6 @@
     "review_log_commit": "731e59b4b67ab993760bfbc5c086746f696032f4"
   },
   "post_review_changed_manifest_paths": [
-    "wiki/chaperone-orthogonal-stacking.md",
     "wiki/combined-cp0-systems-model-computational.md",
     "wiki/computational-experiments.md",
     "wiki/daf-cd55-scr14-cassette-ranking-computational.md",

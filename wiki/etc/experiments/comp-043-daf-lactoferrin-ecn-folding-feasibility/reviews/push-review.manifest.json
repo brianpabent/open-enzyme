@@ -82,16 +82,10 @@
       "sha256": "e456fa12f5aeb1901a4c50934afec59a182d7941279acb4e6115b2e3c54efa9d"
     },
     {
-      "path": "wiki/chaperone-orthogonal-stacking.md",
-      "kind": "proposed_update",
-      "bytes": 106834,
-      "sha256": "42d7d282cdce67ee6a446fcb306b9e955e89fc53c70a206d5389d9b7130448ed"
-    },
-    {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
@@ -102,10 +96,10 @@
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 24105,
-      "sha256": "f3766bd9e8d73c691d35f8b1868d11edecbf9d4cb7dc40b71eb878a3e9c340f1"
+      "bytes": 20084,
+      "sha256": "770f3a6a5b8c9dd5b7f47b092d97963f9f1091bddb1d32300af62ad042e99481"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "25cb626c80aee3a94e61422e6ac3a90e1116567062a0ba30ff89bf2f8681b778"
+  "manifest_sha256": "90cbed59d78565cfb49174ae3e16862684526702684ab475413a0cb3c841376d"
 }

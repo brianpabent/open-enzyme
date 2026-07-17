@@ -60,32 +60,26 @@
     {
       "path": "wiki/abcg2-modulators.md",
       "kind": "proposed_update",
-      "bytes": 52037,
-      "sha256": "dfdcbc7124f3416da5e626be3a0369dd4e67ba0d199129a9497e58a32e982a2b"
+      "bytes": 47568,
+      "sha256": "18dbbea2ab83f4ddc91c6afcd0e8ceba0cf784e7c0c0a5e422d7fc20258dbeba"
     },
     {
       "path": "wiki/androgen-urate-axis.md",
       "kind": "proposed_update",
-      "bytes": 42537,
-      "sha256": "c31c3a8414f873e1874ffb9d88f72afa3bd627b94d545dfddf38674bb27bd996"
+      "bytes": 35384,
+      "sha256": "b2fc1bbf767e6ff16939bc68222218c71816fcf2ac4b57f8ec74259c1d39ffa3"
     },
     {
       "path": "wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md",
       "kind": "proposed_update",
-      "bytes": 33550,
-      "sha256": "ee6d9ef1c45be1d99d79146dd613db2d331cbb8a3cf671620b24309449348d09"
-    },
-    {
-      "path": "wiki/complement-c5a-gout.md",
-      "kind": "proposed_update",
-      "bytes": 114293,
-      "sha256": "5fc826d237102344a796817418c663a9a961cfbb497f37a5956d386acd08dc37"
+      "bytes": 32218,
+      "sha256": "99e518a4358e48a2c6e805f925f89f5c67193c313d41dd7597c4ac0dd7c425e0"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -168,14 +162,8 @@
     {
       "path": "wiki/hypotheses/H04-tcm-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 10734,
-      "sha256": "046dd17f61fdbedf0b70aa13fe43030f4c92544d67fa34db79ff9a6556f33404"
-    },
-    {
-      "path": "wiki/koji-endgame-strain.md",
-      "kind": "proposed_update",
-      "bytes": 86478,
-      "sha256": "237e56bb7be6490cf90ffbfc16586ce8f05a0c6cdf858a930a3b8c16fca69e98"
+      "bytes": 9364,
+      "sha256": "160fd51ff7a3e449a7c72922630eeaf09747030a0b24986a9b02b4d44cedc388"
     },
     {
       "path": "wiki/medicinal-mushroom-compound-mapping-computational.md",
@@ -198,10 +186,10 @@
     {
       "path": "wiki/tcm-modern-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 34331,
-      "sha256": "106c59999019fb4cf3aeae71c08c4a07bb7ff496e209b2a09c890f68e2e6c31e"
+      "bytes": 30057,
+      "sha256": "8ba1a1fafe2a64e18ffb1f34a90b7dbb0fd236d8f808a986975a2b0b1fd0fd23"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "dde1d476ecb991e4b8712a687f42462098aba80fb4c4d19f48d703659ecb01c5"
+  "manifest_sha256": "9e87664b7671a20917441089bd94cf5cd60e4c31c055dd710e51fa32dffe908e"
 }

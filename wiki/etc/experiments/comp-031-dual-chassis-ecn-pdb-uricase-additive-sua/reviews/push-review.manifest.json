@@ -24,20 +24,14 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 44557,
-      "sha256": "15d44c9ef6a7bf225ce62f3800155fd33c8fa4402b373ebfff44ae8f0a62e804"
+      "bytes": 37221,
+      "sha256": "a14617bdc4b75b69b543878ce0cbf8b202098e82756593c5a66ec437a61121b9"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
-    },
-    {
-      "path": "wiki/disulfiram.md",
-      "kind": "proposed_update",
-      "bytes": 17254,
-      "sha256": "478ca9ce0828aee4b3d31a2e5fea74d66ff4a5c16ad1aa76ebc4491336085d14"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
@@ -60,8 +54,8 @@
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 101342,
-      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
+      "bytes": 94611,
+      "sha256": "d14f205ec6cd1927ee2906beb4e4254522f51288201618fbc7722799d7bb0d23"
     },
     {
       "path": "wiki/purine-degrading-bacteria.md",
@@ -78,10 +72,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 249208,
-      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "41c69a4f3843caff0f32eda0be7abe4be8d8f975ed1a6d65a4b6a16884ab5e1c"
+  "manifest_sha256": "366258fc42174d5a04bf876ae06ee423bcd43531429bf00b16356959fbd78364"
 }

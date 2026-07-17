@@ -42,20 +42,20 @@
     {
       "path": "wiki/chaperone-orthogonal-stacking.md",
       "kind": "proposed_update",
-      "bytes": 106834,
-      "sha256": "42d7d282cdce67ee6a446fcb306b9e955e89fc53c70a206d5389d9b7130448ed"
+      "bytes": 96959,
+      "sha256": "ce64482c142f0578e5b518fb3fa4cb6ce53fb688927d8777455b2999b6f82d6f"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/cordycepin-cassette-burden-computational.md",
       "kind": "proposed_update",
-      "bytes": 6796,
-      "sha256": "d90df2ebec6ae4d78fae3cdb153ef52b878346598778a187ff3eeac926c92ca1"
+      "bytes": 6795,
+      "sha256": "9ba381ac72de07b45ff4206b0604c75a1ec99546139929b2252a428e6476d7d9"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -78,22 +78,16 @@
     {
       "path": "wiki/koji-endgame-strain.md",
       "kind": "proposed_update",
-      "bytes": 86478,
-      "sha256": "237e56bb7be6490cf90ffbfc16586ce8f05a0c6cdf858a930a3b8c16fca69e98"
-    },
-    {
-      "path": "wiki/medicinal-mushroom-complement-track.md",
-      "kind": "proposed_update",
-      "bytes": 59376,
-      "sha256": "d0c4e57e54733b4265811fa32a87b59e32d6c809f36adc764cdb50726ca67cf7"
+      "bytes": 70835,
+      "sha256": "d04cf72152a144b6251db16e090e61dfff645266bb3e3701a525765d65d1a321"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 249208,
-      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "593ebd64eb88c3ff904a06dadd9825ab4e3aa575c7dc72b51842188efe5b18e8"
+  "manifest_sha256": "e7ffc3e962c74c22545794fb09a971964ca6d4b2a43b19d718895001378db891"
 }

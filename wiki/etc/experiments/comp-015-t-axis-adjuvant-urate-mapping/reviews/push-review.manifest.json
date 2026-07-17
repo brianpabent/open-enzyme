@@ -64,40 +64,28 @@
       "sha256": "34c8e07894ee045a67a68480b93eea01d06525ca9ebf34280e0da8d387a2ef4c"
     },
     {
-      "path": "wiki/androgen-natural-modulation.md",
-      "kind": "proposed_update",
-      "bytes": 99399,
-      "sha256": "d6197b23c753333c448f650808f172b7aff5c8feb099103de0b9217207432d6f"
-    },
-    {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/genotype-informed-supplement-workflow.md",
       "kind": "proposed_update",
-      "bytes": 30389,
-      "sha256": "38305db97f2fc9eee8c0d9db8226bb99eeceabb247215e4d6b8566e18d0fca69"
-    },
-    {
-      "path": "wiki/gout-action-guide.md",
-      "kind": "proposed_update",
-      "bytes": 38712,
-      "sha256": "0ad406a01631e06f9edfd4a2776ae19b5d64cc63a01cb1b25aee19658fd504a9"
+      "bytes": 27998,
+      "sha256": "3819c8f43ae1a8c767d40545416f4f198723455e9231afab17cc488c2b9dc28f"
     },
     {
       "path": "wiki/hypotheses/H07-clomid-intestinal-er-antagonism.md",
       "kind": "proposed_update",
-      "bytes": 20655,
-      "sha256": "4b2558fa27e74775460dbf5874bfe03ac3f8c9fe8d6bb2580b9ae3fcbccd29eb"
+      "bytes": 15510,
+      "sha256": "e2070089efd665fbb171005c9e3bb84d3c7df721f320494764b9515e8e59dc43"
     },
     {
       "path": "wiki/personal-genome-protocol.md",
       "kind": "proposed_update",
-      "bytes": 16313,
-      "sha256": "a580aa4e4d624ed2169a9038935b6d307028524edb97cfc3383b7ad832507b3f"
+      "bytes": 15969,
+      "sha256": "17ff8759350354a73b8069f08931e2e336dedd5876ca6171f2baa9a8ac037c09"
     },
     {
       "path": "wiki/prps-purine-biosynthesis-chokepoint.md",
@@ -113,5 +101,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "63d0567e79c9db54e6ac535d1cdeb4724a107529b13fcdddf93327b238b95987"
+  "manifest_sha256": "007fe1195dc10e0024b637a6efc5aeb192909b027e3a2da21588c0bac693391f"
 }

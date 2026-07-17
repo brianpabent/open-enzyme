@@ -2,10 +2,10 @@
   "schema_version": 2,
   "comp": "comp-005",
   "comp_dir": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability",
-  "source_commit": "8bfe20b0bd93e0dbe58076148fd285bed9691cdc",
-  "artifact_manifest_sha256": "4d97324e1737a28e68e0366620a559de600e38960259c58490e1b6367937760d",
+  "source_commit": "0a6a0c6b2b6bdff78fa564eb5e0f8f96447299f4",
+  "artifact_manifest_sha256": "3f4259d9ca35e98df9ccc9945764a12a5d20ecef304ec3b97f69b863663b430a",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-16T23:27:00Z",
+  "timestamp": "2026-07-17T00:38:12Z",
   "comp_verdict": "review_completed_actioned",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
@@ -37,7 +37,6 @@
     "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/inputs/provenance.md",
     "wiki/lactoferrin-linker-redesign-computational.md",
     "wiki/lactoferrin-protease-stability-computational.md",
-    "wiki/lactoferrin.md",
     "wiki/validation-experiments.md"
   ],
   "actual_cost_usd": 0.0,
@@ -66,7 +65,6 @@
     "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/inputs/provenance.md",
     "wiki/lactoferrin-linker-redesign-computational.md",
     "wiki/lactoferrin-protease-stability-computational.md",
-    "wiki/lactoferrin.md",
     "wiki/validation-experiments.md"
   ],
   "note": "Carries forward a completed independent review and its remediation state. The exact current manifest binding is a migration receipt, not a new review."

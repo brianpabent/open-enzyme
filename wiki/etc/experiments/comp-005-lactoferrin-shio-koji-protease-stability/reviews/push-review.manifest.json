@@ -54,8 +54,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/daf-cd55-protease-stability-computational.md",
@@ -198,8 +198,8 @@
     {
       "path": "wiki/lactoferrin-linker-redesign-computational.md",
       "kind": "proposed_update",
-      "bytes": 12834,
-      "sha256": "af87be147398da8d10cf44034d8d49376381e0ab1cb55dcef0db1aaeb8ebb29b"
+      "bytes": 6957,
+      "sha256": "d005adf396ab2a5bb8ee54d8f6e8eeaafd356d238ed882ccf9d01d5633bbd681"
     },
     {
       "path": "wiki/lactoferrin-protease-stability-computational.md",
@@ -208,18 +208,12 @@
       "sha256": "9133b3ca456b2cc6ac19e78d5a0bc78eb2569074a4d5db337ef39d171b1c1649"
     },
     {
-      "path": "wiki/lactoferrin.md",
-      "kind": "proposed_update",
-      "bytes": 84788,
-      "sha256": "9a027021098f89d3fea467457b192ecae8c91c040a1ebcd3683befc914f95b8f"
-    },
-    {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 249208,
-      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "4d97324e1737a28e68e0366620a559de600e38960259c58490e1b6367937760d"
+  "manifest_sha256": "3f4259d9ca35e98df9ccc9945764a12a5d20ecef304ec3b97f69b863663b430a"
 }

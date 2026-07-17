@@ -72,32 +72,26 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 44557,
-      "sha256": "15d44c9ef6a7bf225ce62f3800155fd33c8fa4402b373ebfff44ae8f0a62e804"
+      "bytes": 37221,
+      "sha256": "a14617bdc4b75b69b543878ce0cbf8b202098e82756593c5a66ec437a61121b9"
     },
     {
       "path": "wiki/compounding-pharmacy-track.md",
       "kind": "proposed_update",
-      "bytes": 34638,
-      "sha256": "367d269a218f15fcaeffe7228927a41d85067f8931fa21c1ea3995fb318b2ded"
+      "bytes": 32516,
+      "sha256": "f7a9de93c7233a75771978c18f7a94b81b3e12aaeb755e57a1783b0d1afea23d"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/disulfiram-dose-modeling-computational.md",
       "kind": "proposed_update",
       "bytes": 6714,
       "sha256": "6a93a3f375ecb5c5f5114c0f73effa679535c721d7cdd9c3c6b2f41b13d3afc4"
-    },
-    {
-      "path": "wiki/disulfiram.md",
-      "kind": "proposed_update",
-      "bytes": 17254,
-      "sha256": "478ca9ce0828aee4b3d31a2e5fea74d66ff4a5c16ad1aa76ebc4491336085d14"
     },
     {
       "path": "wiki/etc/autonomous-screening-methodology.md",
@@ -112,30 +106,24 @@
       "sha256": "d9a021e8d7debec90a2786475027c0a08bef82d05eca3d9ebb75111709682376"
     },
     {
-      "path": "wiki/gout-action-guide.md",
-      "kind": "proposed_update",
-      "bytes": 38712,
-      "sha256": "0ad406a01631e06f9edfd4a2776ae19b5d64cc63a01cb1b25aee19658fd504a9"
-    },
-    {
       "path": "wiki/gout-kill-chain-delivery-routes.md",
       "kind": "proposed_update",
-      "bytes": 52040,
-      "sha256": "c9d7b67d23e8ada65875a7f72556e135d99bd387ab51eafa2165e64c32999286"
+      "bytes": 52167,
+      "sha256": "016a847c1247591eac450fa178c34eb2946c13f0be6bac78ad60ca2efc2fd0f8"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 101342,
-      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
+      "bytes": 94611,
+      "sha256": "d14f205ec6cd1927ee2906beb4e4254522f51288201618fbc7722799d7bb0d23"
     },
     {
       "path": "wiki/supplements-stack.md",
       "kind": "proposed_update",
-      "bytes": 109100,
-      "sha256": "4a03bd424cc3385fd4b7c7d04ea4a576b13131e94fbf407c7b152bd3c0334e2e"
+      "bytes": 103306,
+      "sha256": "4c2540a17fbec191a9fed0a7f9399ff60ad6706e201bedd5996e30d08a47e85a"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "dce581e37448f024e47f31ede92d18e5feb62b6e8f5870a0550b19b543892921"
+  "manifest_sha256": "153b343820c4455bac2da87bc7577378205e53012820bbe61a4187e14fc839b4"
 }

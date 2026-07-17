@@ -162,14 +162,14 @@
     {
       "path": "wiki/chaperone-orthogonal-stacking.md",
       "kind": "proposed_update",
-      "bytes": 106834,
-      "sha256": "42d7d282cdce67ee6a446fcb306b9e955e89fc53c70a206d5389d9b7130448ed"
+      "bytes": 96959,
+      "sha256": "ce64482c142f0578e5b518fb3fa4cb6ce53fb688927d8777455b2999b6f82d6f"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/etc/GRAPH.md",
@@ -222,8 +222,8 @@
     {
       "path": "wiki/koji-endgame-strain.md",
       "kind": "proposed_update",
-      "bytes": 86478,
-      "sha256": "237e56bb7be6490cf90ffbfc16586ce8f05a0c6cdf858a930a3b8c16fca69e98"
+      "bytes": 70835,
+      "sha256": "d04cf72152a144b6251db16e090e61dfff645266bb3e3701a525765d65d1a321"
     },
     {
       "path": "wiki/uricase-cassette-ranking-computational.md",
@@ -234,10 +234,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 249208,
-      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "7a22e69e446e9e4124314af74a7ab73a42ad697fa726bf8fff6a535ec36f758c"
+  "manifest_sha256": "131864e4104d9c4833a4fc23f0158d71fa84c424887f6da1b19253ed1d3caa37"
 }

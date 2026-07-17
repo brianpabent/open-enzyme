@@ -2,10 +2,10 @@
   "schema_version": 2,
   "comp": "comp-033",
   "comp_dir": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy",
-  "source_commit": "8bfe20b0bd93e0dbe58076148fd285bed9691cdc",
-  "artifact_manifest_sha256": "e2ac1c3c6dbdcddc9ee517e56de25ac61943e4cbe233a6da722a251e6971d2d4",
+  "source_commit": "0a6a0c6b2b6bdff78fa564eb5e0f8f96447299f4",
+  "artifact_manifest_sha256": "e556001841b6ac5ace01f945ec9fb1ee271067db1a37b24e73e1d88c8aecf7be",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-16T23:27:00Z",
+  "timestamp": "2026-07-17T00:38:12Z",
   "comp_verdict": "review_completed_actioned",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
@@ -17,7 +17,6 @@
     "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/README.md",
     "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/inputs/provenance.md",
     "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/outputs/summary.md",
-    "wiki/gout-action-guide.md",
     "wiki/gout-clinical-pipeline.md",
     "wiki/inhaled-mrna-il1ra-pulse-computational.md",
     "wiki/repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md"
@@ -34,7 +33,7 @@
   "post_review_changed_manifest_paths": [
     "wiki/chassis-pending-interventions.md",
     "wiki/computational-experiments.md",
-    "wiki/gout-action-guide.md",
+    "wiki/gout-clinical-pipeline.md",
     "wiki/inhaled-mrna-il1ra-pulse-computational.md",
     "wiki/repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md"
   ],

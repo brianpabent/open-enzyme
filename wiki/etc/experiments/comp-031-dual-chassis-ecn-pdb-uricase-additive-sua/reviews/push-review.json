@@ -2,10 +2,10 @@
   "schema_version": 2,
   "comp": "comp-031",
   "comp_dir": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua",
-  "source_commit": "8bfe20b0bd93e0dbe58076148fd285bed9691cdc",
-  "artifact_manifest_sha256": "41c69a4f3843caff0f32eda0be7abe4be8d8f975ed1a6d65a4b6a16884ab5e1c",
+  "source_commit": "0a6a0c6b2b6bdff78fa564eb5e0f8f96447299f4",
+  "artifact_manifest_sha256": "366258fc42174d5a04bf876ae06ee423bcd43531429bf00b16356959fbd78364",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-16T23:27:00Z",
+  "timestamp": "2026-07-17T00:38:12Z",
   "comp_verdict": "review_completed_actioned",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
@@ -13,7 +13,6 @@
   "derived_paths": [
     "wiki/chassis-pending-interventions.md",
     "wiki/computational-experiments.md",
-    "wiki/disulfiram.md",
     "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
     "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/README.md",
     "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
@@ -44,5 +43,11 @@
       "PDB-derived butyrate or Q141K rescue",
       "a preferred one-strain, two-strain, or staged topology"
     ]
-  }
+  },
+  "post_review_changed_manifest_paths": [
+    "wiki/chassis-pending-interventions.md",
+    "wiki/computational-experiments.md",
+    "wiki/open-questions.md",
+    "wiki/validation-experiments.md"
+  ]
 }

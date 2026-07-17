@@ -60,8 +60,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/etc/bio-ai-tools.md",
@@ -83,5 +83,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "baba96afe40b71d791e070ae950a4da983e4695cf91ca4d4ec3632abe58fa24f"
+  "manifest_sha256": "a784dd8972f7c2aa6731bafdd4f98ceddc51f5ca656fdf356962a3ba61a3c867"
 }

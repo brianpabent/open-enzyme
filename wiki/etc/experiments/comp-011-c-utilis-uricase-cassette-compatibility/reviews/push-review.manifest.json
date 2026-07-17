@@ -66,32 +66,26 @@
     {
       "path": "wiki/aspergillus-oryzae.md",
       "kind": "proposed_update",
-      "bytes": 32295,
-      "sha256": "bb05fb8755d56274f96c6561344544171c29384eed30ef74a7094929e3b6ab2f"
+      "bytes": 32246,
+      "sha256": "255ec54730903032557015ac5da7a5981b60f9adf874a1e35c1b5393f6f706ef"
     },
     {
       "path": "wiki/c-utilis-uricase-cassette-compatibility-computational.md",
       "kind": "proposed_update",
-      "bytes": 2407,
-      "sha256": "a46bf583a88f0fc54b6a67ad3961641384d99c918dd9b6caf019c80cd3f4508d"
+      "bytes": 2433,
+      "sha256": "81c66ff8cc8d825f7a175d9a355a5a789d86feb88cc381f0eaa16a9c33d092c2"
     },
     {
       "path": "wiki/chaperone-orthogonal-stacking.md",
       "kind": "proposed_update",
-      "bytes": 106834,
-      "sha256": "42d7d282cdce67ee6a446fcb306b9e955e89fc53c70a206d5389d9b7130448ed"
+      "bytes": 96959,
+      "sha256": "ce64482c142f0578e5b518fb3fa4cb6ce53fb688927d8777455b2999b6f82d6f"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
-    },
-    {
-      "path": "wiki/engineered-lbp-chassis.md",
-      "kind": "proposed_update",
-      "bytes": 24105,
-      "sha256": "f3766bd9e8d73c691d35f8b1868d11edecbf9d4cb7dc40b71eb878a3e9c340f1"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/README.md",
@@ -126,32 +120,20 @@
     {
       "path": "wiki/hypotheses/H04-tcm-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 10734,
-      "sha256": "046dd17f61fdbedf0b70aa13fe43030f4c92544d67fa34db79ff9a6556f33404"
-    },
-    {
-      "path": "wiki/koji-endgame-strain.md",
-      "kind": "proposed_update",
-      "bytes": 86478,
-      "sha256": "237e56bb7be6490cf90ffbfc16586ce8f05a0c6cdf858a930a3b8c16fca69e98"
+      "bytes": 9364,
+      "sha256": "160fd51ff7a3e449a7c72922630eeaf09747030a0b24986a9b02b4d44cedc388"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 101342,
-      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
+      "bytes": 94611,
+      "sha256": "d14f205ec6cd1927ee2906beb4e4254522f51288201618fbc7722799d7bb0d23"
     },
     {
       "path": "wiki/sirna-urat1-modality.md",
       "kind": "proposed_update",
-      "bytes": 19555,
-      "sha256": "e110b5b4b746ea9c0efbdbec19c62a019dca0004875c9735a58a00be9d0f0329"
-    },
-    {
-      "path": "wiki/tcm-modern-rigor-intersection.md",
-      "kind": "proposed_update",
-      "bytes": 34331,
-      "sha256": "106c59999019fb4cf3aeae71c08c4a07bb7ff496e209b2a09c890f68e2e6c31e"
+      "bytes": 18726,
+      "sha256": "02b16ee49bbd6ffa36bafff9459ed4a1c8ec680bee3cf57dfcb0dd7f25f79281"
     },
     {
       "path": "wiki/uricase-variant-selection.md",
@@ -161,5 +143,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "4afbc27078222404d00ffdffa0d895d5bb8ea2acfda082f91b85f67e0de10ca0"
+  "manifest_sha256": "0e96edb1e7c1f243087ea537695bb5fd854d705fa8651e69fe3aedb2443627a4"
 }

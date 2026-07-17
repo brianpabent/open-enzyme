@@ -48,8 +48,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
@@ -60,8 +60,8 @@
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 24105,
-      "sha256": "f3766bd9e8d73c691d35f8b1868d11edecbf9d4cb7dc40b71eb878a3e9c340f1"
+      "bytes": 20084,
+      "sha256": "770f3a6a5b8c9dd5b7f47b092d97963f9f1091bddb1d32300af62ad042e99481"
     },
     {
       "path": "wiki/f-prausnitzii-heterologous-expression-computational.md",
@@ -72,16 +72,16 @@
     {
       "path": "wiki/hypotheses/H02-engineered-lbp-thesis.md",
       "kind": "proposed_update",
-      "bytes": 8186,
-      "sha256": "a670d0c6e894917ca0c3c6a8e02df1a90b3aa3c75b7468847c62ce9181d066fd"
+      "bytes": 7844,
+      "sha256": "1e27f3bb9a8749931f7172e4a56f5da9ca36aeb55fc13ace31609b30552abeca"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 101342,
-      "sha256": "45f2d0ecf2018d334f075bc213614dc9f8f23e326209659426bbe0a80453f1d0"
+      "bytes": 94611,
+      "sha256": "d14f205ec6cd1927ee2906beb4e4254522f51288201618fbc7722799d7bb0d23"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "9f11441b8d522584f600dd57007ec61876617fefd1c612c4161f86c65fbb43dc"
+  "manifest_sha256": "1d7aea3007baa0dd92f9acaad26e999f174801544177da84eee152545f2cbd19"
 }

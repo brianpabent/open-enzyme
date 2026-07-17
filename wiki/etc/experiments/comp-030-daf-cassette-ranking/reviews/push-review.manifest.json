@@ -124,12 +124,6 @@
       "sha256": "08501a641766729d0da099355249b057ca36f44953e38120b0af93363fa44b47"
     },
     {
-      "path": "wiki/chaperone-orthogonal-stacking.md",
-      "kind": "proposed_update",
-      "bytes": 106834,
-      "sha256": "42d7d282cdce67ee6a446fcb306b9e955e89fc53c70a206d5389d9b7130448ed"
-    },
-    {
       "path": "wiki/combined-cp0-systems-model-computational.md",
       "kind": "proposed_update",
       "bytes": 12330,
@@ -138,8 +132,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 82324,
-      "sha256": "67057e55a33a4c3f4863abe5ef6abdd1af531993ac9849f668cf97350b5350ea"
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
     },
     {
       "path": "wiki/daf-cd55-scr14-cassette-ranking-computational.md",
@@ -168,10 +162,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 249208,
-      "sha256": "8bfddce628f24ab81b04719f3f1627da84e0b92298947e1e0039f81e8fa3dda0"
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "ca6a2eb7d5528f1edb006888d24c1710d4b619c6f259238c2b0438ec1ec3e989"
+  "manifest_sha256": "e5d00f99f937147ca430b42b22605382e2cf42a3e74d75c7748a2c70ad562f39"
 }
