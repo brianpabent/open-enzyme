@@ -60,8 +60,8 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 37221,
-      "sha256": "a14617bdc4b75b69b543878ce0cbf8b202098e82756593c5a66ec437a61121b9"
+      "bytes": 37034,
+      "sha256": "301326e10498ec11de1167fc67cf767b73c03ac2c795d1b4cabf467256123865"
     },
     {
       "path": "wiki/complement-c5a-gout.md",
@@ -98,12 +98,6 @@
       "kind": "proposed_update",
       "bytes": 17427,
       "sha256": "791b36462f9dd5953e76d951c0291d209985ead2410f1988ceb62d4ddf227461"
-    },
-    {
-      "path": "wiki/engineered-lbp-chassis.md",
-      "kind": "proposed_update",
-      "bytes": 20084,
-      "sha256": "770f3a6a5b8c9dd5b7f47b092d97963f9f1091bddb1d32300af62ad042e99481"
     },
     {
       "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/outputs/summary.md",
@@ -202,12 +196,6 @@
       "sha256": "c5a3183ee6d085198b12b975fcb93ccea5cafd28dfffa0b6fcfc604768727da6"
     },
     {
-      "path": "wiki/medicinal-mushroom-complement-track.md",
-      "kind": "proposed_update",
-      "bytes": 51414,
-      "sha256": "4572f8f25b90fc8cc141e26f5dc02a13663d6b110920a5df2c23408baf592abd"
-    },
-    {
       "path": "wiki/modality-chokepoint-matrix.md",
       "kind": "proposed_update",
       "bytes": 51347,
@@ -221,5 +209,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "db616f0af1b8609170321d07f05d9fbb413cad1be71d32368e29e22f1c76c722"
+  "manifest_sha256": "785739791c5976ee1f7901ae198782fa1c01a971fb3d9e17c856becbc8765541"
 }

@@ -66,8 +66,8 @@
     {
       "path": "wiki/etc/GRAPH.md",
       "kind": "proposed_update",
-      "bytes": 42433,
-      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+      "bytes": 42361,
+      "sha256": "c254f065b74cc3fbe75baa729c4671a98a4abd2c4795964f6260faea710f591f"
     },
     {
       "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-c1-inh-engineering-literature.md",
@@ -149,5 +149,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "4760e62b5ad308feb9aee117116dd6d0f0848a31b3b293084fc729ff3bd81dc3"
+  "manifest_sha256": "d7d1c37b7beeadeba804e37261d838f2c1849c9c70875ce7211311e49007b759"
 }

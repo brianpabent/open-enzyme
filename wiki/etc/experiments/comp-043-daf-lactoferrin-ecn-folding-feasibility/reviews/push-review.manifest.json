@@ -96,10 +96,10 @@
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 20084,
-      "sha256": "770f3a6a5b8c9dd5b7f47b092d97963f9f1091bddb1d32300af62ad042e99481"
+      "bytes": 16993,
+      "sha256": "f81372ed48d0a466ec18858cfcfffa1757cf8bc0895022d31fcbfcc42af477e9"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "90cbed59d78565cfb49174ae3e16862684526702684ab475413a0cb3c841376d"
+  "manifest_sha256": "51fb88861aaeb011466de649e4ce14f11444bc0b29d38b7e646878be40b4b3c0"
 }

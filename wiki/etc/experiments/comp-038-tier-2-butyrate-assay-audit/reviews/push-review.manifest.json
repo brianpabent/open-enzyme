@@ -72,8 +72,8 @@
     {
       "path": "wiki/etc/GRAPH.md",
       "kind": "proposed_update",
-      "bytes": 42433,
-      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+      "bytes": 42361,
+      "sha256": "c254f065b74cc3fbe75baa729c4671a98a4abd2c4795964f6260faea710f591f"
     },
     {
       "path": "wiki/genotype-informed-supplement-workflow.md",
@@ -107,5 +107,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "2a8505fa0aa84a8a1eaf0fa7cb68b7c505e66b526c8c11102dcb36b05f4b1fc3"
+  "manifest_sha256": "6321c663bdefaeb860af3769ab0252f66daa28ba0dd68c01e06061faeddf04ef"
 }

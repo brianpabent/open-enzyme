@@ -78,14 +78,14 @@
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 20084,
-      "sha256": "770f3a6a5b8c9dd5b7f47b092d97963f9f1091bddb1d32300af62ad042e99481"
+      "bytes": 16993,
+      "sha256": "f81372ed48d0a466ec18858cfcfffa1757cf8bc0895022d31fcbfcc42af477e9"
     },
     {
       "path": "wiki/etc/GRAPH.md",
       "kind": "proposed_update",
-      "bytes": 42433,
-      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+      "bytes": 42361,
+      "sha256": "c254f065b74cc3fbe75baa729c4671a98a4abd2c4795964f6260faea710f591f"
     },
     {
       "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-c1-inh-engineering-literature.md",
@@ -137,5 +137,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "4e32445723a2a7290ee55fe92b419fdd973608c820d487f19a248398ee81113b"
+  "manifest_sha256": "c0e9e21340fc913ceacff0bbcc56e28a2556793d3e5954fd332873dd2a1f8b93"
 }
