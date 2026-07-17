@@ -279,6 +279,7 @@
     "PMID:31216250",
     "PMID:22458540",
     "PMID:39434750",
+    "PMID:18349066",
     "PMID:20589576",
     "PMID:30557349",
     "PMID:25637002",
@@ -296,6 +297,11 @@
     {
       "claim": "Testosterone exposure increased serum urate in the adjacent 160-person human cohort used for mechanistic plausibility.",
       "primary_source": "DOI:10.1507/endocrj.EJ13-0203",
+      "status": "verified"
+    },
+    {
+      "claim": "In the prospective 69-person cross-sex hormone cohort, mean serum urate in the 47-person transmasculine group rose from 3.91 mg/dL at baseline to 5.07 at one year and remained 5.02 at two years; mean fractional excretion of urate in a 25-person subgroup fell from 8.78% to 6.93% at two years (P = 0.004).",
+      "primary_source": "PMID:18349066; DOI:10.1210/jc.2007-2467",
       "status": "verified"
     },
     {

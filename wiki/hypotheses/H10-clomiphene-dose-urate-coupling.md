@@ -22,6 +22,7 @@ related:
   - ./README.md
 sources:
   - "Disclosed project-lead longitudinal record — exposure, hormone panels, first documented podagra, dose reduction, urate observations, and joint-prominence observation. Underlying health records remain private."
+  - "Yahyaoui R et al. 2008, PMID 18349066, DOI 10.1210/jc.2007-2467 — prospective cross-sex hormone cohort; mean serum urate rose in the 47-person transmasculine group, and fractional excretion of urate fell after two years in a 25-person subgroup. Adjacent sex-steroid evidence, not clomiphene evidence."
   - "Kurahashi H et al. 2013, DOI 10.1507/endocrj.EJ13-0203 — testosterone exposure increased serum urate in 160 trans men; adjacent androgen evidence."
   - "Sakamoto K et al. 2018, PMID 30557349 — androgen-deprivation therapy reduced serum urate in men with prostate cancer; adjacent reverse-direction evidence."
   - "Hosoyamada M, Takiue Y. 2010, PMID 20589576 — androgen-dependent renal urate-transporter changes in mice; Animal Model evidence."
@@ -50,7 +51,7 @@ The following observations are disclosed from the project lead's longitudinal re
 |---|---|---|
 | Clomiphene exposure began | 25 mg daily on 2022-12-12 | No pre-exposure serum urate measurement was recorded. |
 | Hormone state after initiation | Total testosterone 1,226 ng/dL and estradiol 60 pg/mL on 2023-01-31 | Confirms a laboratory-high hormone response; it does not establish a urate response. |
-| Podagra timing | Symptoms began 2023-02-16, about 9.5 weeks after initiation; the first documented gout visit was 2023-02-20 | The acute record also mentions earlier mild, self-resolving foot events, so this is the first documented episode, not securely the first-ever symptom. |
+| Podagra timing | Symptoms began 2023-02-16, about 9.5 weeks after initiation; the first documented gout visit was 2023-02-20 | The clinician recorded vague prior mild episodes of “the same thing,” but the project lead does not recall them and no corroborating earlier record was found. Treat this as the first documented episode; whether it was the first-ever symptom is unresolved. |
 | Pre-reduction state | Venous urate 8.0 mg/dL, total testosterone 1,210 ng/dL, free testosterone 23.8 ng/dL, and estradiol 54.8 pg/mL on 2026-04-09 | One cross-sectional panel cannot assign causality. |
 | Exposure reduction | Approximately 50% lower weekly clomiphene exposure beginning 2026-04-25 | This was an uncontrolled personal dose change, not a blinded experiment. |
 | Flare after reduction | One left first-MTP flare began 12 days later | A flare during a changing urate pool is compatible with several directions and does not prove that serum urate fell. |
@@ -59,10 +60,9 @@ The following observations are disclosed from the project lead's longitudinal re
 
 ## Published evidence boundary
 
-- **Direct clomiphene evidence:** No study located prospectively measured incident gout, serum urate, or urate handling after clomiphene initiation or dose reduction. The current US label does not list gout or hyperuricemia, but its short-course female indication makes this weak negative evidence for chronic male use.
-- **Surveillance boundary:** Accessible male safety cohorts and reviews did not report urate or gout as tracked endpoints (PMIDs 32233208, 34933414, 31216250, 22458540). An openFDA snapshot contained three gout co-reports, but clomiphene was concomitant rather than the primary suspect in all three and none supplied a usable exposure-to-onset chronology. This does not establish incidence or causality.
-- **Adjacent human evidence:** Testosterone administration increased serum urate in a 160-person observational intervention cohort (DOI 10.1507/endocrj.EJ13-0203), while androgen deprivation produced a reverse-direction urate signal (PMID 30557349). This supports hormone-sensitive urate handling, not a universal testosterone rule or a clomiphene-specific effect.
-- **Mechanistic evidence:** Mouse data show androgen-dependent changes in renal urate transport, but URAT1 mRNA and protein did not move together (PMID 20589576). A renal mechanism is plausible but cannot be treated as established in clomiphene-treated humans.
+- **Androgen–urate prior — supported.** Yahyaoui et al. prospectively followed 69 people before and after cross-sex hormone therapy. In the 47-person transmasculine group, mean serum urate rose from 3.91 mg/dL at baseline to 5.07 at one year and remained 5.02 at two years; in the 25-person FEUA subgroup, mean fractional excretion fell from 8.78% to 6.93% at two years (P = 0.004; PMID 18349066, Table 1). Kurahashi et al. independently observed serum-urate elevation after three months of testosterone therapy in 160 transmasculine participants, with a tendency toward dose dependence (DOI 10.1507/endocrj.EJ13-0203). Androgen deprivation produced a reverse-direction urate signal in men with prostate cancer (PMID 30557349). **Human prospective/observational intervention evidence — non-randomized, not Clinical Trial tier.** Mouse renal-transporter data add **Animal Model** support (PMID 20589576). This is a substantive prior for hormone-sensitive urate biology and renal handling, not a universal testosterone rule.
+- **Clomiphene-specific effect — unmeasured.** No study located prospectively measured serum urate, urate handling, incident gout, or dose response after clomiphene initiation or dose reduction. Male safety publications did not track those endpoints (PMIDs 32233208, 34933414, 31216250, 22458540). The US label and three non-primary-suspect openFDA gout co-reports do not resolve chronic male risk. H10 therefore remains **Mechanistic Extrapolation plus a disclosed n=1 signal**; the testosterone direction cannot be imported as a clomiphene result.
+- **Intestinal ER/ABCG2 mechanism — unsupported.** No direct human-enterocyte, intestinal-flux, or exposure-relevant stereoisomer study establishes this chain. [H07](./H07-clomid-intestinal-er-antagonism.md) remains retracted. Renal handling, urate production, intestinal transport, and mixed mechanisms remain open until a clomiphene-specific effect is measured.
 
 ## Competing explanations
 
