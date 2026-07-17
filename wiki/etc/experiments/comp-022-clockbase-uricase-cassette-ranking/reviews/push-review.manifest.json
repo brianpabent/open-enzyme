@@ -174,8 +174,8 @@
     {
       "path": "wiki/etc/GRAPH.md",
       "kind": "proposed_update",
-      "bytes": 42433,
-      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+      "bytes": 42361,
+      "sha256": "c254f065b74cc3fbe75baa729c4671a98a4abd2c4795964f6260faea710f591f"
     },
     {
       "path": "wiki/etc/autonomous-screening-methodology.md",
@@ -239,5 +239,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "131864e4104d9c4833a4fc23f0158d71fa84c424887f6da1b19253ed1d3caa37"
+  "manifest_sha256": "cfe7129ec96d8a51476e180546e5097084546fc7621ad93a06d644eeaed82403"
 }

@@ -96,8 +96,8 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 37221,
-      "sha256": "a14617bdc4b75b69b543878ce0cbf8b202098e82756593c5a66ec437a61121b9"
+      "bytes": 37034,
+      "sha256": "301326e10498ec11de1167fc67cf767b73c03ac2c795d1b4cabf467256123865"
     },
     {
       "path": "wiki/computational-experiments.md",
@@ -114,8 +114,8 @@
     {
       "path": "wiki/etc/GRAPH.md",
       "kind": "proposed_update",
-      "bytes": 42433,
-      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+      "bytes": 42361,
+      "sha256": "c254f065b74cc3fbe75baa729c4671a98a4abd2c4795964f6260faea710f591f"
     },
     {
       "path": "wiki/etc/experiments/comp-033-inhaled-mrna-il1ra-pulse-therapy/README.md",
@@ -155,5 +155,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "a61f2543e16cff43ad34894eec0aa16b33a25fc7059145853361d17a133161b9"
+  "manifest_sha256": "171ab3ebec6c21ad383f34acc858a932631f39efab907fb4b6dc5b1d4e0aaa6a"
 }

@@ -54,8 +54,8 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 37221,
-      "sha256": "a14617bdc4b75b69b543878ce0cbf8b202098e82756593c5a66ec437a61121b9"
+      "bytes": 37034,
+      "sha256": "301326e10498ec11de1167fc67cf767b73c03ac2c795d1b4cabf467256123865"
     },
     {
       "path": "wiki/complement-c5a-gout.md",
@@ -72,8 +72,8 @@
     {
       "path": "wiki/engineered-lbp-chassis.md",
       "kind": "proposed_update",
-      "bytes": 20084,
-      "sha256": "770f3a6a5b8c9dd5b7f47b092d97963f9f1091bddb1d32300af62ad042e99481"
+      "bytes": 16993,
+      "sha256": "f81372ed48d0a466ec18858cfcfffa1757cf8bc0895022d31fcbfcc42af477e9"
     },
     {
       "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/README.md",
@@ -173,5 +173,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "1f9098a8d8f2521704b4fe8e93b21ab375ea5e5b3496ea1d0b54388af78635a5"
+  "manifest_sha256": "385dfca1693792c121a856b4538caeb28cff4b710695dfba53b6f9e0ed0318fb"
 }
