@@ -219,9 +219,9 @@ The superseded comp-032 hypothesis list and comp-047 correction live in [`abcg2-
 
 ---
 
-### 8. Duckweed (Lemnaceae) — aquatic-sibling chassis class
+### 8. Duckweed (Lemnaceae) — edible biomanufacturing chassis
 
-**Intervention.** Duckweed (*Lemna* / *Spirodela* / *Wolffia*) as an edible, photosynthetic biomanufacturing chassis where the organism is simultaneously the factory and the oral delivery vehicle — the aquatic structural sibling of the koji thesis. Distinctive adds koji lacks: a photosynthetic feedstock (light + CO₂ + waste N/P, no sugar), tractable human-like N-glycosylation (Cox 2006 *Lemna* mAb, up to 50× ADCC vs CHO), and a documented multi-decade edible-vaccine track record. Notable adjacency: the lead bioreactor species *Spirodela polyrhiza* is botanically the TCM herb 浮萍/紫萍 and natively produces luteolin (XO inhibitor, IC₅₀ 4.79 µM) — a possible built-in hypouricemic background (extrapolation; no whole-duckweed urate study exists).
+**Intervention.** Duckweed (*Lemna* / *Spirodela* / *Wolffia*) as an edible, photosynthetic biomanufacturing chassis where the organism is simultaneously the factory and oral delivery vehicle. Relevant properties include photosynthetic feedstock, tractable human-type N-glycosylation (Cox 2006 *Lemna* mAb, up to 50× ADCC vs CHO), and oral-vaccine delivery in animals. *Spirodela polyrhiza* also produces luteolin (XO inhibitor, IC₅₀ 4.79 µM), but no whole-duckweed urate study establishes a hypouricemic effect.
 
 **Chokepoint(s) hit.** Depends on payload. Strongest *proven* fit is the oral/mucosal delivery axis (factory = delivery vehicle, demonstrated in vivo: 100% protection chicken IBV edible vaccine, *Plant Biotechnol J* 2025; 63.3% RPS fish *LamB*, *Front Immunol* 2020). Option value at CP6 (a duckweed-expressed uricase — never attempted; urate oxidase is natively peroxisomal in plants, so plausible) and any future systemic/injectable enzyme needing human glycans.
 
@@ -233,7 +233,7 @@ The superseded comp-032 hypothesis list and comp-047 correction live in [`abcg2-
 
 **Cheapest first move.** DW-1/DW-2 lit-scan + in-silico expression-feasibility prior for uricase in *S. polyrhiza* ($0, ~1–2 wks) before any wet-lab. Full follow-up table in [`duckweed-aquatic-chassis.md`](./duckweed-aquatic-chassis.md) §Open follow-ups.
 
-**Cross-reference.** [`duckweed-aquatic-chassis.md`](./duckweed-aquatic-chassis.md) is the canonical scope page. Sibling peer-track: [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md).
+**Cross-reference.** [`duckweed-aquatic-chassis.md`](./duckweed-aquatic-chassis.md) provides the duckweed evidence and falsification gates; [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) compares intervention routes by gout weakness.
 
 ---
 

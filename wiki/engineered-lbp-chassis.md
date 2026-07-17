@@ -15,7 +15,6 @@ tags:
   - first-principles
 related:
   - modality-chokepoint-matrix.md
-  - koji-endgame-strain.md
   - abcg2-modulators.md
   - open-questions.md
   - etc/open-enzyme-vision.md
@@ -38,11 +37,11 @@ status: scope-page
 
 ## Track scope
 
-This page evaluates **engineered Live Biotherapeutic Products (LBPs)**, specifically obligate anaerobes intended to function in the colon, as one candidate delivery track for gout-relevant payloads.
+Engineered Live Biotherapeutic Products could exploit the colon as a persistent local production compartment for urate degradation, butyrate delivery, barrier repair, or selected anti-inflammatory payloads. Evidence is strongest for the general LBP regulatory class and engineered-organism precedents; organism-specific engraftment, payload expression, and gout efficacy remain unproven.
 
-The motivation is structural. Koji and yeast are usually treated here as **transit organisms**, while *Faecalibacterium prausnitzii*, *Akkermansia muciniphila*, and selected *Bacteroides* species are native colonic residents. That makes durable local delivery a hypothesis worth testing, not an established dosing advantage. Persistence after administration is strain-, host-, formulation-, and ecology-dependent; this track must measure engraftment duration before making any dose-frequency claim.
+*Faecalibacterium prausnitzii*, *Akkermansia muciniphila*, and selected *Bacteroides* species are native colonic residents. That makes durable local delivery a hypothesis worth testing, not an established dosing advantage. Persistence after administration is strain-, host-, formulation-, and ecology-dependent; engraftment duration must be measured before making any dose-frequency claim.
 
-This is an independent, falsifiable track that may compete or compose with koji, yeast, purified enzymes, small molecules, and other modalities.
+The track advances only if a selected organism can be engineered, manufactured, delivered, and shown to maintain relevant local activity without destabilizing the host ecosystem.
 
 ---
 
@@ -50,11 +49,11 @@ This is an independent, falsifiable track that may compete or compose with koji,
 
 An **obligate anaerobe** is an organism that dies on contact with oxygen. *F. prausnitzii*, *Akkermansia muciniphila*, and most *Bacteroides* species evolved to live in the deep colon, where O₂ partial pressure is effectively zero. They cannot survive the small intestine (too aerobic), cannot grow under normal lab atmosphere, and cannot be home-fermented under any realistic kitchen conditions.
 
-**This is the load-bearing limitation.** The community-fermentation option being tested in the koji track does **not** transfer to obligate anaerobes. They require:
+**This is the load-bearing limitation.** These organisms require:
 
 - **Anaerobic bioreactor manufacturing** (commercial-scale, oxygen-excluded)
 - **Cold-chain stabilization** (lyophilized, oxygen-blocking capsule, often with cryoprotectant)
-- **FDA Live Biotherapeutic Product (LBP) regulatory pathway** — distinct from the GRAS food path the koji chassis uses
+- **FDA Live Biotherapeutic Product (LBP) regulatory pathway**
 - **Commercial pharmaceutical distribution** — pharmacy / mail order, not "buy spores online and grow them"
 
 This is the structural reason the LBP chassis is a "commercial pharmaceutical product" track, not a "grow at home" track.
@@ -108,7 +107,7 @@ The 2026-05-16 [*F. prausnitzii* heterologous-expression feasibility analysis](.
 
 **Track implications:**
 
-1. **Stop considering uricase for *Fp*** — its O₂ substrate and H₂O₂ coproduct conflict with a strict-anaerobe host. EcN, koji, and other oxygen-accessible formats are separate candidates requiring their own evaluation; comp-008 does not rank them.
+1. **Stop considering uricase for *Fp*** — its O₂ substrate and H₂O₂ coproduct conflict with a strict-anaerobe host. Comp-008 does not rank other organisms or delivery routes.
 2. **Test native BCoAT overexpression first if the *Fp* toolkit is pursued** — it has the highest point-estimate tractability and lowest construct complexity, but the declared range overlaps sCR1 and increased butyrate remains a wet-lab outcome, not a computational result.
 3. **Defer lactoferrin / sCR1 to after the engineering toolkit matures** — both YELLOW with the toolkit gap + anoxic disulfide folding as gating constraints. Worth revisiting when *Fp* genetic tools advance (Sheridan 2019 *Lachnospiraceae* conjugation precedent may transfer).
 
@@ -118,24 +117,24 @@ The 2026-05-16 [*F. prausnitzii* heterologous-expression feasibility analysis](.
 
 ---
 
-## Other plausible payloads (Phase 2 to scope)
+## Other plausible payloads
 
 Beyond the native BCoAT construct candidate, the LBP chassis class plausibly supports:
 
-- **Heterologous uricase** (replicating the koji chassis function in a colonically-resident format — possibly a more direct route than rasburicase-class IV biologics for refractory gout)
-- **Lactoferrin** (TNFα-cycle relief and the CP1a/CP4/CP6b/CP5b hypothesis evaluated in the named koji configuration)
-- **Soluble complement regulators (sCR1, Factor H, DAF/CD55)** — candidate CP0 payloads; see [comp-006](./daf-cd55-protease-stability-computational.md) for the koji-feasibility analysis (HIGH risk, stalk-driven; an LBP chassis avoids the koji protease environment entirely)
-- **C1-INH (SERPING1) — CP0 classical/lectin entry blocker.** [comp-037](./c1-inh-protease-stability-ecn-computational.md) (2026-05-17) returned **MODERATE (kinetic-competition gated)** for C1-INH expressed as a secreted LBP-luminal payload in EcN. Serpin-core construct (aa 123–500, mucin-truncated): strictly-degradative protease risk LOW (0.1), glycosylation feasibility GREEN for luminal topology, remaining risk is RCL kinetic competition (k_C1s_engagement vs k_DegP_RCL_cleavage). Substantiates the two-chassis CP0 architecture (C1-INH on EcN-LBP + DAF SCR1-4 on koji). (Mechanistic Extrapolation; source: c1-inh-protease-stability-ecn-computational.md)
+- **Heterologous uricase** for colonic urate degradation; expression, activity, substrate access, and ecological effects are unmeasured in these organisms.
+- **Lactoferrin** for the TNFα-cycle and related hypotheses; comp-043 indicates EcN folding is not viable for this payload.
+- **Soluble complement regulators (sCR1, Factor H, DAF/CD55)** as candidate CP0 payloads, gated by folding capacity, proteolysis, and local access.
+- **C1-INH (SERPING1) — CP0 classical/lectin entry blocker.** [comp-037](./c1-inh-protease-stability-ecn-computational.md) returned **MODERATE (kinetic-competition gated)** for a secreted EcN luminal payload. The serpin-core construct had LOW strictly degradative risk and GREEN glycosylation feasibility for the modeled topology; RCL target-engagement versus DegP cleavage remains unresolved. *(Mechanistic Extrapolation.)*
 - **IL-22 secretion** (gut barrier repair — already in clinical development as engineered E. coli Nissle by Synlogic-adjacent programs)
-- **Carnosine** (URAT1 / GLUT9 modulation — see [`carnosine.md`](./carnosine.md) and [`koji-endgame-strain.md` §2.5](./koji-endgame-strain.md))
+- **Carnosine** (URAT1 / GLUT9 modulation — see [`carnosine.md`](./carnosine.md))
 
 Which of these are tractable in *F. prausnitzii* specifically (vs. *Bacteroides* vs. *Akkermansia*) remains partly open; [comp-008](./f-prausnitzii-heterologous-expression-computational.md) completed the initial payload triage, while organism-specific validation remains unresolved.
 
 ---
 
-## EcN as a disulfide-folding chassis — how far does it scale? (comp-043, 2026-07-13)
+## EcN disulfide-folding limits
 
-A synthesis card proposed that *E. coli* Nissle (EcN) might be a **superior** chassis to koji for disulfide-rich ("PDI-heavy") payloads — bypassing koji's ER folding-machinery competition via EcN's periplasmic DsbA/DsbC system. [comp-043](./daf-lactoferrin-ecn-folding-feasibility-computational.md) tested whether EcN periplasmic folding actually *scales* with disulfide count:
+[Comp-043](./daf-lactoferrin-ecn-folding-feasibility-computational.md) tested whether EcN periplasmic DsbA/DsbC folding plausibly scales across three disulfide-rich payloads:
 
 | Payload | Disulfides | Fold | EcN verdict |
 |---|---|---|---|
@@ -143,14 +142,14 @@ A synthesis card proposed that *E. coli* Nissle (EcN) might be a **superior** ch
 | DAF SCR1-4 (CCP/sushi) | 8 | compact β-sandwich modules | **PROVISIONAL** — folding-capacity-gated |
 | Lactoferrin (transferrin-lobe) | 16 | bilobal, long-range C-lobe bonds | **NOT-VIABLE** — folding-limited across the plausible capacity band |
 
-**The card is refuted as stated.** The plausible→not-plausible crossover sits at **DAF SCR1-4 (8 disulfides)**: EcN is plausible at 2, capacity-gated/provisional at 8, and cannot fold lactoferrin (16). Two findings sharpen it:
+The modeled plausible-to-not-plausible crossover sits at **DAF SCR1-4 (8 disulfides)**: EcN is plausible at 2, capacity-gated/provisional at 8, and not viable for lactoferrin at 16. Two findings sharpen it:
 
 - **Folding, not glycosylation, is the dominant filter.** EcN can't glycosylate, but comp-043 found loss of glycans does *not* independently abolish DAF or lactoferrin function (decay-acceleration and iron-binding/lactoferricin are polypeptide-encoded). Attributing lactoferrin's failure to the missing sugars would be a mechanism error — it's the 16-disulfide transferrin fold a periplasmic oxidase can't attain.
-- **Koji is not dominated.** Koji folds DAF SCR1-4 at LOW protease risk ([comp-012](./daf-cd55-scr14-truncated-computational.md)) and has a **>2 g/L lactoferrin precedent** (Ward 1995, *A. awamori*; native fold confirmed Sun 1999). For lactoferrin, koji is the demonstrated chassis and EcN is not an option.
+- **The result is payload-specific.** C1-INH remains viable on the modeled disulfide axis, DAF SCR1-4 remains provisional, and lactoferrin is not a viable EcN payload under the modeled capacity range.
 
-**Bounded thesis:** EcN is a plausible *alternative* chassis for **low-to-moderate-disulfide, compact-fold, glycosylation-independent** complement regulators (C1-INH viable, DAF SCR1-4 provisional) — **not** a superior chassis for PDI-heavy payloads, and inferior to koji for lactoferrin. This *strengthens* rather than replaces the two-chassis CP0 architecture: C1-INH on EcN, DAF SCR1-4 primarily on koji (EcN a provisional secondary route), lactoferrin on koji only.
+**Bounded thesis:** EcN is plausible for selected low-to-moderate-disulfide, compact-fold, glycosylation-independent complement regulators. That inference does not generalize to PDI-heavy payloads.
 
-**Highest-leverage missing measurement:** a DsbA/DsbC oxidative-folding capacity assay at 8–16 disulfide scale — the EcN-side analogue of koji's α-coefficient calibration gap ([`chaperone-orthogonal-stacking.md` §8 item 8](./chaperone-orthogonal-stacking.md)). Until it exists, any EcN-DAF-SCR1-4 folding claim stays provisional.
+**Highest-leverage missing measurement:** a DsbA/DsbC oxidative-folding capacity assay at 8–16 disulfide scale. Until it exists, any EcN–DAF SCR1-4 folding claim stays provisional.
 
 ## Regulatory path
 
@@ -180,23 +179,6 @@ The current preliminary program landscape:
 
 ---
 
-## Comparison with the koji chassis
-
-| Dimension | Koji chassis | LBP chassis (this page) |
-|---|---|---|
-| **Ecological hypothesis** | Usually modeled as transient delivery | Potential local persistence; must be measured by strain and host |
-| **Dose frequency** | Undetermined | Undetermined; depends on measured engraftment and expression duration |
-| **Manufacturing constraint** | Food-fermentation process development | Strict anaerobic culture, formulation, and oxygen protection |
-| **Regulatory route** | Depends on construct, claims, and use | Live-biotherapeutic development route |
-| **ABCG2 hypothesis** | Payload-dependent | Sustained local butyrate may induce WT ABCG2; direct Q141K rescue is unvalidated |
-| **Open-source scope** | Designs and validation data can be open | Designs and validation data can be open; delivery and manufacturing still require development |
-
-**The two tracks test different delivery philosophies.** Koji is a food/fermentation route; the LBP route tests pharmaceutical-grade durability and local metabolite delivery. A Q141K-specific population claim is premature until direct rescue is demonstrated.
-
-The relevant question is whether LBP biology and delivery survive falsification, not whether this chassis should define the broader research program.
-
----
-
 ## Open technical questions
 
 - How mature is the *F. prausnitzii* genetic toolkit, and what heterologous titers have been demonstrated?
@@ -219,10 +201,8 @@ The relevant question is whether LBP biology and delivery survive falsification,
 ## Cross-References
 
 - [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) — cross-modality comparison
-- [`koji-endgame-strain.md`](./koji-endgame-strain.md) — a competing or composable chassis configuration
 - [`abcg2-modulators.md`](./abcg2-modulators.md) — WT-ABCG2 PPARγ pathway and the unvalidated direct-butyrate Q141K-rescue hypothesis
 - [`open-questions.md`](./open-questions.md) — related unresolved questions
 - [`computational-experiments.md`](./computational-experiments.md) — comp-008 tracking
 - [`food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md) — comp-007; validated butyrate's HDAC isoform profile
-- [`daf-cd55-protease-stability-computational.md`](./daf-cd55-protease-stability-computational.md) — comp-006; the koji chassis HIGH-risk verdict for soluble complement regulators is one of the structural arguments for an LBP-chassis alternative
 - [`hypotheses/H02-engineered-lbp-thesis.md`](./hypotheses/H02-engineered-lbp-thesis.md) — falsification card

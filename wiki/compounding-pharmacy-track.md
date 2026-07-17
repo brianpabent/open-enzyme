@@ -16,7 +16,6 @@ related:
   - etc/open-enzyme-vision.md
   - etc/open-source-platform.md
   - modality-chokepoint-matrix.md
-  - engineered-koji-protocol.md
   - engineered-lbp-chassis.md
   - sirna-urat1-modality.md
   - medicinal-mushroom-complement-track.md
@@ -28,7 +27,6 @@ related:
   - purine-degrading-bacteria.md
   - chassis-pending-interventions.md
 sources:
-  - "Brian framing 2026-05-11 (from MINX/Veradermics screenshots): 'had not considered the compounding pharmacy angle. we should! we have identified lots of compounds and it might be easier to just make a pill than grow mold lol'"
   - "MINX precedent: 5 mg once-daily extended-release oral minoxidil developed via ChatGPT-aided formulation review + lipid-matrix design + 503A compounding pharmacy + dissolution testing; built in days, not the multi-year Veradermics trial track"
   - "FDA 503A (patient-specific) and 503B (outsourcing facility) compounding statutes — Drug Quality and Security Act of 2013"
 status: scoped (Phase 1)
@@ -36,16 +34,16 @@ status: scoped (Phase 1)
 
 # Compounding Pharmacy Track — Delivery Route for the Repurposing Surface
 
-## Strategic role
+## Gout exploit hypothesis
 
-Open Enzyme's two parallel outputs (per [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §1–2) are (1) a **discovery engine** for chokepoint-to-intervention mapping, and (2) an **open-source strain library** as one synthesis of that engine. The discovery engine produces, among other things, a **repurposing surface** — FDA-approved drugs that hit gout-relevant chokepoints but were never clinically tested for gout. Examples include [disulfiram](./disulfiram.md) at CP6b GSDMD, zileuton at CP6a 5-LOX, and avacopan at CP0 C5aR1.
+Some approved drugs hit gout-relevant chokepoints but lack a suitable commercial formulation or gout indication. Compounding could provide a testable, patient-specific formulation only when the active ingredient, prescriber, pharmacy, and proposed use fit the applicable legal and safety requirements. Examples under investigation include [disulfiram](./disulfiram.md) at CP6b GSDMD and zileuton at CP6a 5-LOX; neither has established clinical efficacy in gout.
 
 The compounding-pharmacy track asks whether an identified drug–chokepoint match can become a testable formulation under the applicable compounding rules. It covers the gap between mechanism identification and formulation access; it does not establish clinical efficacy or authorize treatment.
 
-**The cleavage rule:** Open Enzyme's compound catalog splits cleanly along a delivery-route axis:
+## Scope and kill criteria
 
-- **Proteins / enzymes / biologics** → fermentation chassis (engineered koji, yeast, LBPs). Uricase, lactoferrin, DAF/CD55, digestive enzymes (lipase/protease/amylase), engineered probiotics. Compounding pharmacies cannot make these.
-- **Small molecules** → potentially compoundable, with sub-cleavage by 503A-eligibility category (see "How Section 503A actually works" below for the three-tier hierarchy):
+The track covers small molecules whose formulation, dose form, or availability is the unresolved problem. Eligibility is assessed through the 503A hierarchy described below:
+
   - Off-patent FDA-approved drugs with USP/NF monographs → **first-class compounding-pharmacy targets** (Tier 1 eligible, the easiest path; allopurinol, colchicine, probenecid sit here)
   - Off-patent FDA-approved drugs without USP/NF monograph but with an active FDA approval → **first-class compounding-pharmacy targets** via Tier 2 (component of FDA-approved drug); the MINX category sits here, as do disulfiram and zileuton
   - FDA-approved drugs that have been commercially withdrawn → **regulatory edge case** — Tier 2 status may or may not survive market withdrawal; needs per-compound verification (lesinurad is the canonical example)
@@ -53,24 +51,11 @@ The compounding-pharmacy track asks whether an identified drug–chokepoint matc
   - Research compounds with no FDA approval (MCC950, dapansutrile in some markets) → **not 503A-compoundable** unless they appear on the formal Tier 3 list, which they don't
   - Peptides (KPV, BPC-157) → compoundable but more constrained; KPV / BPC-157 / TB-500 / MOTs-C are under formal Tier-3 consideration at FDA's Pharmacy Compounding Advisory Committee (July 2026 meeting)
 
-The MINX example sharpens the framing: 5 mg once-daily extended-release oral minoxidil was developed in days using literature + patent landscape review (ChatGPT-aided), a lipid-matrix release-control design, a 503A compounding pharmacy, and dissolution testing — not a multi-year FDA trial with patents and premium pricing. **The active ingredient was already familiar.** The work was formulation engineering, not drug discovery.
+The MINX example demonstrates the workflow shape: literature and patent review, formulation design, a 503A pharmacy, and dissolution testing applied to an already approved active ingredient. It is a process precedent, not evidence for any gout candidate.
 
-The OE equivalent: for the subset of compounds where the active is FDA-approved and the only barrier between the patient and a useful dose is "no one has commercialized this specific formulation," compounding is the delivery mechanism. The discovery engine's repurposing surface is the input. Compounding is the output side that turns identification into access.
+Kill or redirect a candidate when the bulk substance is ineligible or unavailable, the proposed formulation adds no measurable value, relevant exposure cannot be achieved safely, or the mechanism lacks gout-relevant evidence. Compounding changes formulation and access; it does not validate the target, dose, efficacy, or safety.
 
-This page formalizes the **compounding pharmacy track** as one independently falsifiable route alongside engineered koji, engineered LBPs, siRNA, medicinal mushrooms, and TCM-derived candidates. Its role is to exploit tractable formulation and access weaknesses; it does not define the project.
-
-## Track scope
-
-| Track | Chassis / mechanism | Engineering effort | Therapeutic class | Consumption UX | Regulatory path |
-|---|---|---|---|---|---|
-| **Engineered koji** ([protocol](./engineered-koji-protocol.md)) | *A. oryzae* recombinant cassette | Heavy — secretion engineering | Therapeutic enzymes (uricase, lactoferrin, DAF SCR1-4) | Shio-koji / amazake / miso (daily food) | GRAS-pathway; food, not drug |
-| **Engineered LBPs** ([chassis](./engineered-lbp-chassis.md)) | *F. prausnitzii* / *Akkermansia* / Bacteroides | Heavy — anaerobe engineering | Live biotherapeutic (butyrate, IL-22, anti-complement) | Refrigerated capsule | FDA LBP path (commercial pharma) |
-| **siRNA / kidney-tropic discovery** ([modality](./sirna-urat1-modality.md)) | Synthetic ASO/siRNA + conjugate | Heavy — sequence design, delivery chemistry | Sequence-specific knockdown (URAT1) | Subcutaneous injection | FDA NDA (commercial pharma) |
-| **Medicinal mushroom complement** ([track](./medicinal-mushroom-complement-track.md)) | *G. lucidum*, *C. militaris*, *Pleurotus*, etc. | Light — strain selection + cultivation | Native-compound supplements (GLPP, cordycepin, ergothioneine) | Dried fruiting body / tincture / powder | GRAS food / supplement-grade |
-| **TCM × modern rigor** ([intersection](./tcm-modern-rigor-intersection.md)) | Standardized multi-herb formulas | Light–medium — extract characterization | Standardized formula extracts (Si Miao San family, Smilax glabra) | Standardized extract capsule | Supplement-grade (US) / TCM-licensed (Asia) |
-| ***Compounding pharmacy (THIS page)*** | 503A pharmacy (patient-specific) or 503B outsourcing facility (bulk) | **Minimal — formulation engineering only (release matrix, dose, dissolution profile). NO genetic engineering, NO drug discovery.** | Repurposed FDA-approved drugs at off-label dose / combination / release profile | Custom-formulated tablet, capsule, or troche dispensed against prescription | 503A (per-patient Rx) or 503B (registered outsourcing); off-label prescribing is physician's discretion |
-
-The compounding pharmacy track is the **lowest engineering effort of any peer track and the fastest path from identification to patient access**, but it is also the most narrowly scoped — it only works for compounds where someone has already done the FDA-approval work (and the drug subsequently went off-patent or is being repurposed off-label).
+Proteins, enzymes, live organisms, novel chemical entities, and products with no lawful bulk-substance basis are outside this route. The [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) owns comparisons with other intervention routes.
 
 ## How Section 503A works
 
@@ -88,7 +73,7 @@ The compounding pharmacy track is the **lowest engineering effort of any peer tr
 
 For the candidates assessed here, formal 503A-list status is usually not the gating question; commercial bulk-API supply and off-label prescribing infrastructure are.
 
-## What goes on this track vs. the koji / fermentation track
+## Candidate repurposing formulations
 
 ### Discovery-engine repurposing candidates (compounding-pharmacy track, properly so called)
 
@@ -100,18 +85,14 @@ For each entry: chokepoint mapping, 503A-eligibility tier, evidence level for th
 - 503A eligibility: Tier 2 (component of FDA-approved drug). FDA-approved 1951 for alcohol-use disorder; off-patent; bulk API widely available from compounding-pharmacy suppliers.
 - Gout-relevant evidence: **In vitro** — Hu et al. 2020 (*Nat Immunol*) — disulfiram directly inhibits gasdermin D pore formation, blocking IL-1β release downstream of NLRP3. No human gout trials.
 - **Dose modeling — [comp-027](./disulfiram-dose-modeling-computational.md) (2026-05-16) → downgraded to hypothesis-generator (comp-review 2026-07-14).** A **single strict-GREEN modeled point at 100 mg/day** (the 75–125 mg/d range was broadened from that single point, not independently derived; it sits exactly on a hard-coded decision boundary — a dose-finding hypothesis to test, not a validated window), where parent DSF Cmax (0.40 µM, 1.3× cell-free GSDMD IC50 of 0.30 µM per Hu 2020) engages pore-formation blockade while plasma Me-DTC peak (~70 nM) stays at or below the Faiman-1989 DER hypotension threshold (~70 nM at 40% ALDH inhibition). NLRP3-palmitoylation EC50 (Xu 2024, 10 µM) requires AUD-dose+ plasma — **sub-AUD is selectively GSDMD-engaging, not pan-NLRP3-engaging**. Sensitivity dominated by GSDMD EC50 anchor choice + parent DSF Cmax PK at 100 mg (single empirical HPLC measurement in N=3–5 volunteers would collapse this uncertainty).
-- Compounding play: **two-phase protocol per comp-027 handoff.**
-  - *Phase 1 — Dose-titration starter:* IR capsule, strengths 50/75/100/125 mg. Titration 50 → 100 mg/d over 14 days with weekly clinical check for incidental ethanol exposure.
-  - *Phase 2 — Chronic maintenance:* ER lipid-matrix tablet (glyceryl behenate + HPMC K100M), 100 mg QD. Cmax compression keeps ALDH inhibition below DER threshold while sustaining GSDMD covalent engagement.
-  - *Companion:* allopurinol 100–300 mg/d standard-of-care (Asiri 2025 rat MSU model showed allopurinol-disulfiram synergy).
-  - *Analytical:* USP <711> dissolution + USP <905> content uniformity required for ER formulation; outsource if pharmacy lacks in-house capability.
-- Drug-interaction landscape (sub-AUD): absolute contraindications stay (metronidazole, MAOIs — DER stacking). CYP-mediated PK interactions (warfarin, phenytoin, theophylline, alprazolam) become manageable with monitoring vs. avoidance at AUD dose. Incidental ethanol (kombucha, koji-fermented foods) tolerance improved but per-batch caution still warranted. **Gout co-administration is clean** (allopurinol synergistic; colchicine + low-dose corticosteroids stack without major DI).
+- Formulation status: **no dose, titration, release profile, combination, or patient-use protocol is validated.** Comp-027 supplies a hypothesis-generating boundary point, not a formulation specification. Empirical exposure, interaction, and safety work must precede any formulation claim.
+- Safety constraint: disulfiram has clinically important alcohol and drug interactions. No gout combination should be described as clean without direct evidence and current-label review.
 - Evidence level for the application: **Mechanistic extrapolation + in vitro + in silico dose modeling.** Per-patient HPLC-anchored dose-finding is the wet-lab gate before broader patient use.
 
 **2. Zileuton — CP6a 5-LOX inhibitor.**
 - 503A eligibility: Tier 2 (component of FDA-approved drug Zyflo, 1996, asthma); off-patent. Bulk API availability is a supplier-side question, not a regulatory listing question — current Zyflo distribution is small enough that compounding-pharmacy supplier networks may not stock the API even though 503A eligibility is structurally clean.
 - Gout-relevant evidence: **Mechanistic extrapolation + in vitro** — 5-LOX produces LTB4, a neutrophil chemoattractant active in gout flares. Zileuton blocks 5-LOX. No gout clinical trials.
-- Compounding play: if a compounding supplier carries the bulk API, **low-dose ER zileuton for flare prophylaxis** is a clean repurposing experiment. Risk: zileuton has known hepatotoxicity signal in asthma cohorts; compounded use needs liver monitoring.
+- Formulation status: no gout dose or release profile is validated. Bulk-API availability, hepatic safety, exposure, and a gout-relevant efficacy assay gate further formulation work.
 - Evidence level: **Mechanistic extrapolation.**
 
 **3. Pentostatin (Nipent) — ADA inhibitor; whole-fermentate Cordyceps stabilization.**
@@ -157,18 +138,6 @@ These drugs are already first-line gout therapy. The compounding play is **custo
 - Compounded **BHB ester at therapeutic doses** in stable formulations (commercial BHB esters are typically diester salts; compounded monoester formulations have better PK).
 - Evidence level: **Mechanistic extrapolation** from upstream NLRP3 / xanthine oxidase data.
 
-### Production routes outside the compounding track
-
-- **Recombinant uricase** ([engineered-yeast-uricase-proposal.md](./engineered-yeast-uricase-proposal.md), [engineered-koji-protocol.md](./engineered-koji-protocol.md)) — biologic; can be made by 503B outsourcing facility theoretically but the only currently approved uricase is rasburicase (IV, hospital-only); oral compounded uricase is not a 503A pathway because the protein degrades in stomach.
-- **Lactoferrin** ([lactoferrin.md](./lactoferrin.md)) — biologic; available as supplement-grade but engineered variants are koji-route.
-- **DAF SCR1-4** ([daf-cd55-scr14-truncated-computational.md](./daf-cd55-scr14-truncated-computational.md)) — engineered protein.
-- **Digestive enzymes (lipase / protease / amylase)** — Creon / Zenpep are FDA-approved pancrelipase preparations; a compounding analog exists (compounded pancreatic enzymes), while engineered koji is a separate fermentation-route candidate. Neither route defines the project.
-- **Native koji products (kojic acid, ergothioneine, KPV peptide)** — fermentation and compounding are alternative delivery routes. Compounded KPV and koji-derived KPV should be evaluated within their respective tracks rather than treating koji fit as the deciding gate.
-
-### Combined / hybrid candidates
-
-- **Compounded repurposing pill + engineered-koji daily food** as a layered intervention: e.g., compounded low-dose disulfiram ER for CP6b GSDMD blockade + daily shio-koji delivering uricase for CP0 substrate degradation. The two routes target non-overlapping chokepoints and consumption modes (Rx pill + daily food), so combination is mechanistically clean.
-
 ## 503A vs. 503B — regulatory mechanics (brief)
 
 The Drug Quality and Security Act of 2013 created two distinct compounding pharmacy regulatory categories. Open Enzyme work in this space needs to be honest about which lane applies.
@@ -183,7 +152,7 @@ The Drug Quality and Security Act of 2013 created two distinct compounding pharm
 | Distribution | Single patient at a time, in response to Rx | Can ship to hospitals/clinics in bulk |
 | Best for | Custom doses, low-volume, individualized formulations | Repeated production of a stable repurposing formulation across many patients |
 
-For OE: most identification → access work runs through 503A initially (individual patients getting compounded scripts for off-label gout indications). If a specific formulation gets traction and accumulates evidence, the path could later shift to a 503B outsourcing facility for higher-volume distribution, or further to a sponsored 505(b)(2) NDA if the formulation is novel enough to warrant FDA approval (the Veradermics path).
+Candidate development may begin with a patient-specific 503A route only when the legal, prescribing, and safety requirements are satisfied. Repeated higher-volume production would require a different route, such as a qualified 503B facility or a sponsored development program.
 
 **The MINX precedent uses the 503A route** — patient-specific Rx, compounded against the formulation instructions, dissolution-tested as quality control. That's the template.
 
@@ -201,59 +170,51 @@ Levers a compounding pharmacist can pull (drawing on the MINX-style protocol):
 - **Sublingual / buccal troches** — bypass first-pass for drugs with high hepatic metabolism.
 - **Topical / transdermal** — relevant for systemic delivery of drugs with poor oral bioavailability.
 
-The AI-aided literature + patent landscape review (the MINX innovation) collapses formulation design from a months-long pharma-industry workflow to a days-long workflow accessible to a small team. **This is the part of the track that scales with current AI tooling.**
+AI-assisted literature and patent review can accelerate formulation reconnaissance. It does not replace pharmacist design, current regulatory review, compatibility work, or analytical validation.
 
 The verification step (dissolution testing per USP <711>, content uniformity per USP <905>) is non-negotiable and runs at the compounding pharmacy or a contract analytical lab. **Without dissolution data, you don't know what you made.**
 
 ## Discovery-engine integration
 
-The compounding pharmacy track is the natural delivery mechanism for OE's **repurposing surface** output. The discovery engine identifies FDA-approved drugs hitting gout-relevant chokepoints (see [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §2.2 for the canonical framing). The current repurposing surface contains:
+The repurposing surface includes approved drugs with plausible gout-relevant mechanisms but no established gout indication. Current examples include:
 
 - **Disulfiram** (CP6b GSDMD) — approved for AUD; [`disulfiram.md`](./disulfiram.md)
 - **Zileuton** (CP6a 5-LOX) — approved for asthma
 - **Avacopan** (CP0 C5aR1) — approved for ANCA vasculitis; still on-patent so compounding doesn't apply
 
-Each on-patent + off-label combination needs a per-compound assessment for:
+Each candidate needs a per-compound assessment of:
 1. Bulk API availability on FDA 503A/503B lists.
-2. Off-label dose estimation from preclinical / mechanistic data.
+2. Whether preclinical or mechanistic evidence justifies an exposure-finding study.
 3. Formulation requirements (release profile, bioavailability targets).
 4. Physician partner willing to prescribe off-label.
-5. Patient population fit.
-
-The discovery engine outputs items 1–3 readily (it's already mining mechanism); items 4–5 require collaborator development outside OE's current team.
+5. A defined population, safety boundary, and evidence-development plan.
 
 ## Unresolved requirements
 
 1. **Bulk-substance basis.** The candidates assessed here fall under Tier 1 (USP monograph: allopurinol, colchicine, probenecid) or Tier 2 (component of an FDA-approved drug: disulfiram, zileuton, pentostatin). Verify this basis again against current FDA materials before acting.
-2. **Pharmacy partner identification.** What 503A compounding pharmacies have track record with gout / inflammation / off-label dose work? Empower Pharmacy, Olympia Pharmacy, others — needs primary-source verification. **Status:** user-action-required (real-world outreach, not Claude-actionable). Stays on this scope page; not in the synthesis queue. **Fires when:** Brian decides to pursue a 503A prescription pathway for any candidate. Until then, dormant.
-
-2a. **Bulk API supplier verification (zileuton, pentostatin, lesinurad).** Per-compound check with compounding-pharmacy supply networks (Spectrum Chemical, PCCA, Letco, FAGRON) for current bulk-API availability + cost + CoA. **Status:** user-action-required (supplier phone/email outreach, not Claude-actionable). **Fires when:** Brian decides to pursue a 503A prescription pathway for any of these three compounds. Until then, dormant — Tier 2 eligibility is confirmed for all three (see candidate list above), so the question is purely supply-chain.
-3. **Physician partner pathway.** Off-label prescribing is the physician's discretion but needs a real prescriber. Rheumatology / functional medicine cross-section. The team-building work overlaps with [`etc/team.md`](./etc/team.md) — possibly a fourth collaborator role. **Status:** user-action-required (overlaps team.md).
-4. **Dissolution / characterization protocol library.** What standard USP / in-house assays should OE publish as a quality framework for compounded gout formulations? Mirrors [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) for the supplement track.
-5. **Insurance / cost reality.** Compounded prescriptions are often not insurance-covered; patient out-of-pocket is the typical reality. What's the cost-per-month for a representative compounded gout repurposing pill, and how does it compare to (a) name-brand alternatives and (b) the engineered-koji daily-food UX?
-6. **Disulfiram dose finding.** [comp-027](./disulfiram-dose-modeling-computational.md) is a hypothesis generator with one strict-GREEN modeled point at 100 mg/day, not a validated 75–125 mg/day window. Empirical exposure and safety data are required before interpreting a formulation or dose range.
-7. **Discovery engine output → 503A list intersection.** Build a recurring mechanism in the sweep daemon to flag whenever a new discovery-engine output (e.g., a newly identified repurposing surface compound) has bulk API on the 503A list — making the compounding-track-relevance call automatic rather than ad hoc.
+2. **Pharmacy capability.** Identify a licensed pharmacy with relevant formulation and analytical capability only after a candidate passes the evidence and legal gates.
+3. **Bulk API supply.** Verify current availability, certificate of analysis, cost, and supplier registration for each candidate.
+4. **Clinical governance.** A qualified prescriber and an explicit evidence-development and monitoring plan are prerequisites, not implementation details.
+5. **Dissolution / characterization protocol.** Define release, content-uniformity, stability, and impurity requirements before interpreting a formulation.
+6. **Cost and added value.** Determine whether the proposed formulation solves a real access, exposure, or adherence problem that an approved commercial product does not.
+7. **Disulfiram dose finding.** [Comp-027](./disulfiram-dose-modeling-computational.md) is a hypothesis generator with one boundary-dependent modeled point, not a validated dose window. Empirical exposure and safety data are required before formulation work.
 
 ## What this track is NOT
 
 To prevent the "everything is now a compounding pharmacy problem" failure mode, here is what this track explicitly does not cover:
 
 - **Novel chemical entities.** Compounding cannot create molecules that are not already on the FDA bulk drug substances list. New molecules require FDA NDA (the Veradermics path), not compounding.
-- **Biologics / proteins / enzymes.** Uricase, lactoferrin, DAF, etc. — fermentation chassis remains the route.
+- **Biologics / proteins / enzymes.** Uricase, lactoferrin, DAF, and similar payloads fall outside this small-molecule compounding route.
 - **Most supplements.** If it's already supplement-grade and OTC, compounding adds cost without value. The exception is documented bioavailability deficits where compounded liposomal / nanoemulsion formulations meaningfully outperform OTC.
 - **Replacement for clinical trials.** Off-label compounded prescriptions are not a substitute for the evidence-development work clinical trials produce. They are an *access* path, not an *evidence* path. The evidence still needs to be developed — possibly via real-world data, possibly via investigator-initiated trials downstream.
 - **DEA-scheduled substances** unless the prescribing physician has the relevant DEA registration and the pharmacy is licensed to handle scheduled drugs.
 
-The honest summary: compounding pharmacy expands OE's *delivery menu* without expanding OE's *evidence base*. The discovery engine still has to do the science; compounding just makes the science prescribable for the subset of compounds where the API already has FDA approval.
+Compounding can change formulation or access for a narrow eligible subset. It does not expand the evidence base or turn a mechanistic hypothesis into a treatment.
 
 ## Related
 
-- [Open Enzyme vision](./etc/open-enzyme-vision.md) — §2.2 repurposing surface framing
-- [`open-source-platform.md` §External Service Acceleration](./etc/open-source-platform.md) — names the productized-external-services pattern this page instantiates on the small-molecule / repurposing-surface side
-- [Ginkgo Cloud Lab evaluation](./ginkgo-cloud-lab-evaluation.md) — the complementary external-service track on the strain-library / protein-validation side. Ginkgo answers "does the protein fold?"; compounding answers "can the small-molecule reach a patient?". Different sides of the platform, same pattern.
-- [Modality × Target Matrix](./modality-chokepoint-matrix.md) — small-molecule rows are the candidate cells for this track
-- [Disulfiram](./disulfiram.md) — canonical repurposing surface compound; the highest-priority compounding candidate currently in OE
+- [Open Enzyme vision](./etc/open-enzyme-vision.md) — repurposing-surface framing
+- [Modality × Target Matrix](./modality-chokepoint-matrix.md) — portfolio-level route comparison
+- [Disulfiram](./disulfiram.md) — GSDMD mechanism and evidence limits
 - [Colchicine](./colchicine.md) — clinical-grade CP6 prophylaxis with custom-dose / combination compounding plays
 - [Gout clinical pipeline](./gout-clinical-pipeline.md) — on-patent commercial pipeline that defines the gaps compounding can fill
-- [Medicinal mushroom complement track](./medicinal-mushroom-complement-track.md) — peer track for native-compound delivery
-- [Engineered koji protocol](./engineered-koji-protocol.md) — peer track for enzyme delivery

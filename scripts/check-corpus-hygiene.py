@@ -43,8 +43,9 @@ READER_RESIDUE_PATTERNS = {
         r"this (?:dossier|page) is the canonical|"
         r"why this page exists|"
         r"\bcanonical (?:page|home|protocol|dossier)\b|"
+        r"^#{1,6}\s+(?:position in open enzyme|limitations of this page)\b[^\n]*$|"
         r"\b(?:the|this) wiki (?:currently|previously|originally|used|referenced|explains|attributes|cites|missed|found)\b",
-        re.I,
+        re.I | re.M,
     ),
     "invented sourdough premise": re.compile(r"\bsourdough\b", re.I),
     "editorial timestamp": re.compile(
@@ -62,6 +63,16 @@ READER_RESIDUE_PATTERNS = {
         r"practical (?:safety )?protocol for the Open Enzyme stack|"
         r"for Brian as of 20\d{2}",
         re.I,
+    ),
+    "track framed as another track's foil": re.compile(
+        r"aquatic[- ]sibling chassis(?: class)?(?: to koji)?|"
+        r"where [^\n#]{1,80} beats koji|"
+        r"why koji still wins|"
+        r"^#{1,6}\s+what goes on this track (?:vs\.?|versus) the [^\n]+track\s*$|"
+        r"^#{1,6}\s+comparison with the [^\n]+chassis\s*$|"
+        r"^#{1,6}\s+comparison with sister (?:exploration )?(?:vectors|tracks)\s*$|"
+        r"^#{1,6}\s+regulatory clarity \(compared to the [^)]+track\)\s*$",
+        re.I | re.M,
     ),
 }
 

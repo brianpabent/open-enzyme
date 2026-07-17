@@ -87,6 +87,7 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 5. Keep editorial history in Git. Creation dates, sweep provenance, “added/promoted/reframed” narration, and statements about when the wiki noticed something do not belong in reader-facing prose.
 6. Do not describe a page as canonical, explain why the page exists, or narrate how content is distributed across the corpus. State the current knowledge and link to the supporting evidence home.
 7. Research pages describe evidence and experiments, not personalized dosing or treatment instructions. Established clinical practice may be summarized only with its evidence and scope made explicit.
+8. A focused intervention or chassis page must stand on its own evidence, sourcing, delivery, and falsification gates. Cross-track rankings belong in portfolio comparison surfaces such as `modality-chokepoint-matrix.md` and `chassis-pending-interventions.md`; do not use another track as the page's narrative foil.
 
 **Example (good):**
 > Oridonin blocks NLRP3 inflammasome assembly by preventing ASC oligomerization (in vitro, J. Immunol. 2020). In a murine lipopolysaccharide + MSU model, oridonin reduced IL-1β by 60% relative to vehicle (p < 0.01, n=8). Human efficacy unknown.

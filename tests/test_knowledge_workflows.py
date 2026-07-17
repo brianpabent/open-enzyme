@@ -123,8 +123,32 @@ Long review-history material.
             patterns["wiki-discovery narration"],
         )
         self.assertRegex(
+            "## Limitations of this page",
+            patterns["wiki-discovery narration"],
+        )
+        self.assertRegex(
             "(added 2026-05-08)",
             patterns["editorial timestamp"],
+        )
+        self.assertRegex(
+            "Where duckweed beats koji",
+            patterns["track framed as another track's foil"],
+        )
+        self.assertRegex(
+            "Duckweed aquatic-sibling chassis to koji",
+            patterns["track framed as another track's foil"],
+        )
+        self.assertRegex(
+            "## What goes on this track vs. the koji track",
+            patterns["track framed as another track's foil"],
+        )
+        self.assertRegex(
+            "## Comparison with the koji chassis",
+            patterns["track framed as another track's foil"],
+        )
+        self.assertRegex(
+            "## Comparison with sister exploration vectors",
+            patterns["track framed as another track's foil"],
         )
 
     def test_synthesis_ignores_editorial_history_and_chassis_defaulting(self):

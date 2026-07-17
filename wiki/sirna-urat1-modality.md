@@ -1,5 +1,5 @@
 ---
-title: "siRNA Against URAT1 — Discovery-Engine Output, Kidney-Tropic Modality"
+title: "siRNA Against URAT1 — Kidney-Tropic Knockdown Hypothesis"
 date: 2026-05-05
 tags:
   - sirna
@@ -31,19 +31,13 @@ sources:
 status: scope-page
 ---
 
-# siRNA Against URAT1 — Discovery-Engine Output, Kidney-Tropic Modality
+# siRNA Against URAT1 — Kidney-Tropic Knockdown Hypothesis
 
-**Status:** scope page. Kidney-tropic siRNA against URAT1 is an open exploration vector from [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md). Lit scans, comp-009 target-site selection, falsification card H03, and comparison with small-molecule URAT1 inhibitors are tracked in [Open Follow-Ups](#open-follow-ups).
+URAT1 is a high-leverage renal urate-reabsorption node. A kidney-tropic siRNA could exploit it through durable, sequence-specific knockdown, but no approved delivery system selectively reaches renal proximal-tubule cells and no URAT1 siRNA has established efficacy in gout.
 
----
+## Gout exploit hypothesis
 
-## Research question
-
-Can kidney-tropic delivery make sequence-specific URAT1 knockdown a safer or more durable way to reduce renal urate reabsorption than existing small molecules? The hypothesis is independently falsifiable through delivery, knockdown, selectivity, durability, and safety gates.
-
-The mission is to use red-teaming to identify exploitable weaknesses in gout and creative engineering to exploit them. Kidney-tropic siRNA is one independently falsifiable route, alongside [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md), koji, small molecules, and other modalities.
-
-Kidney-tropic siRNA requires synthetic oligonucleotide chemistry plus conjugate or LNP formulation for IV or subcutaneous delivery. It is therefore a **discovery-engine output**, not a microbial-production program: Open Enzyme can scope the target, sequence, delivery requirements, and falsification criteria while downstream development would require an appropriate oligonucleotide and delivery platform.
+The hypothesis advances only if a delivery construct reaches proximal-tubule cells, reduces apical URAT1 without unacceptable renal or immune toxicity, preserves enough urate reabsorption to avoid renal hypouricemia, and improves urate handling relative to current pharmacology. Failure at delivery, selectivity, exposure, or safety kills the modality without changing the underlying validity of URAT1 as a gout target.
 
 ---
 
@@ -54,7 +48,6 @@ Kidney-tropic siRNA requires synthetic oligonucleotide chemistry plus conjugate 
 - **~70% of daily uric acid elimination is renal** (the rest is gut, primarily via ABCG2—the transport mechanism used by several oral-uricase tracks)
 - **URAT1 reabsorbs ~90% of filtered urate** — the dominant renal-side urate-handling lever
 - **Under-excreter gout** (the majority phenotype, ~80% of gout patients) is largely a URAT1-overactivity / ABCG2-underactivity phenotype
-- **Brian's hyperuricemia** is in this under-excreter category, which is why URAT1 is named in `androgen-urate-axis.md` as one of the two transporters androgens modulate (URAT1 ↑ on T; ABCG2 ↓ on T)
 
 **Why sequence-specific knockdown is mechanistically cleaner than small-molecule inhibition:**
 
@@ -103,71 +96,39 @@ Per [`gout-pathophysiology.md`](./gout-pathophysiology.md):
 | HNW005 | Dual NLRP3 + URAT1 inhibitor | Preclinical | Single molecule, both targets |
 | Benzbromarone | URAT1 inhibitor (historical) | Withdrawn in many markets | Fulminant hepatotoxicity; the cautionary tale that motivates the siRNA approach |
 
-**siRNA's competitive position:** *not* a near-term replacement for the small-molecule class (pozdeutinurad will likely launch in 2026–2027 with strong efficacy and a clean safety profile relative to benzbromarone). siRNA's distinctive value is the *durability + sequence-specificity + hormone-independence* combination at a 5–10 year horizon — the patient profile where: (a) daily-pill adherence is the bottleneck (quarterly injection wins); (b) any small-molecule off-target profile is unacceptable (refractory + hepatic-impaired patients); (c) hormone-axis modulation makes pill-class efficacy unreliable (clomid / TRT users where URAT1 is upregulated and the inhibitor IC50 needs to be re-met against elevated transporter density).
-
-Like engineered LBPs, this modality has a distinct population, timeline, and regulatory path. It should be compared with competing interventions on evidence and constraints, not assigned a secondary status by chassis.
+Small-molecule URAT1 inhibitors provide the relevant efficacy, safety, convenience, and cost comparator. siRNA could offer longer target suppression and avoid small-molecule reactive metabolites, but it introduces delivery, innate-immune activation, sequence off-target, reversibility, and renal-hypouricemia risks. Those tradeoffs require empirical comparison rather than a platform-level preference.
 
 ---
 
-## Position in Open Enzyme — discovery output
-
-**siRNA against URAT1 is a discovery output, not a strain output.** Open Enzyme can map the mechanism, characterize the design space, define falsification gates, and publish the result. Manufacturing and clinical development would require specialized partners. That constraint affects execution ownership, not scientific priority.
-
----
-
-## Comparison with sister exploration vectors
-
-| Dimension | Koji chassis | LBP chassis | siRNA / URAT1 (this page) |
-|---|---|---|---|
-| **OE output type** | Strain library | Strain library (commercial-pharma sub-track) | Discovery-engine output |
-| **Manufacturing** | Home-fermentable + community-scale | Anaerobic bioreactor; commercial-scale only | Synthetic oligonucleotide chemistry; commercial-pharma only |
-| **Regulatory path** | GRAS food / DSHEA supplement | FDA Live Biotherapeutic Product (BLA) | FDA biologic (BLA — siRNA-class precedent: inclisiran, patisiran) |
-| **Distribution** | Open-source spores; community | Pharmacy / mail-order pharmaceutical | Subcutaneous injection in clinical setting |
-| **Capital to first commercial dose** | $0–500K | $50–200M | $200–500M+ (long-horizon delivery R&D) |
-| **Time to first commercial dose** | Months | 5–8 years | 10+ years (kidney-tropic delivery is the gating R&D) |
-| **Patient population** | Broad gout market, mild-to-moderate | Q141K / refractory / high-severity | Adherence-limited, refractory, hepatic-impaired, hormone-modulated |
-| **OE role** | Candidate food-format track | Candidate LBP track | Discovery output; partner / spinout territory |
-| **Open-source compatibility** | Native — strain library on GitHub | Strain genetics open; manufacturing closed | Mechanism + target + delivery rationale open; clinical IP closed |
-
-The three tracks sample different design constraints. Their rankings should change as evidence arrives.
-
----
-
-## Open Follow-Ups
-
-Six in-silico follow-ups require no pharma partner to start. Other surfaces should link to this list rather than duplicate it.
+## Falsification program
 
 | ID | Item | Type | Status |
 |---|---|---|---|
-| **P2-1** | Lit scan: kidney-tropic conjugate chemistry state-of-the-art (megalin-binding peptides, CDP nanoparticles, kidney-cortex-selective LNPs, aptamer-siRNA chimeras — design space, current best titers / pharmacokinetics, IP landscape) | Literature review (Opus subagent) | Queued |
-| **P2-2** | comp-009: URAT1 mRNA structural analysis for siRNA target site selection. Inputs: SLC22A12 transcript variants, secondary-structure prediction (RNAfold), accessibility scoring, conservation across mammalian orthologs for cross-species pharmacology readiness | Computational analysis (Sonnet subagent) | Queued |
-| **P2-3** | Lit scan: commercial / clinical landscape for kidney-tropic siRNA programs (Alnylam, Arrowhead, Dicerna / Novo Nordisk, Sirnaomics, Calando-successors; non-gout indications and what transfers; partnership / licensing profile) | Literature review (Opus subagent) | Queued |
-| **P2-4** | Comparative analysis: siRNA vs. small-molecule URAT1 inhibitors (pozdeutinurad / AR882 efficacy, safety, cost, durability, hormone-axis-interaction). Honest assessment of the competitive 5–10 year horizon | Synthesis (Opus subagent or inline) | Queued |
+| **P2-1** | Lit scan: kidney-tropic conjugate chemistry state-of-the-art (megalin-binding peptides, CDP nanoparticles, kidney-cortex-selective LNPs, aptamer-siRNA chimeras — design space, current best titers / pharmacokinetics, IP landscape) | Literature review | Queued |
+| **P2-2** | comp-009: URAT1 mRNA structural analysis for siRNA target site selection. Inputs: SLC22A12 transcript variants, secondary-structure prediction (RNAfold), accessibility scoring, conservation across mammalian orthologs for cross-species pharmacology readiness | Computational analysis | Queued |
+| **P2-3** | Lit scan: commercial / clinical landscape for kidney-tropic siRNA programs; identify which non-gout delivery evidence transfers | Literature review | Queued |
+| **P2-4** | Compare the best surviving siRNA design with current URAT1 inhibitors on efficacy, safety, cost, durability, and reversibility | Synthesis | Queued |
 | **P2-5** | Falsification card H03: siRNA / URAT1 thesis — full claim, assumption stack, killshot menu, pre-committed thresholds | Hypothesis formalization | [Stub committed](./hypotheses/H03-sirna-urat1-thesis.md); full population queued |
-| **P2-6** | Lit scan: FDA siRNA regulatory path (inclisiran / patisiran precedent, IND-enabling package, ballpark timeline + capital for a kidney-tropic siRNA BLA) | Literature review (Opus subagent) | Queued |
+| **P2-6** | Lit scan: FDA siRNA regulatory path, using approved siRNA precedents and kidney-specific delivery requirements | Literature review | Queued |
 | **P3** | Portfolio review — does the siRNA / URAT1 route survive its delivery, specificity, safety, and translation gates strongly enough to remain active? | Track decision | Pending evidence |
 
 ---
 
-## Limitations of this page
+## Limitations and unknowns
 
-- **Scope-page, not a deep-dive.** The technical depth on conjugate chemistry, target-site selection, and competitive landscape comes from the Phase 2 follow-ups. Until those land, this page is the framing skeleton.
-- **No wet-lab work proposed by Open Enzyme directly.** siRNA wet-lab requires oligonucleotide synthesis facilities, kidney-tropic delivery chemistry capability, and a renal-focused biology lab — none of which the platform has or plans to acquire. This vector advances via partnerships, not in-house wet-lab.
-- **The competitive timing is honest.** Pozdeutinurad's 2026 NDA will define the small-molecule URAT1 inhibitor floor for the next 5–10 years. siRNA's distinctive value is durability + sequence-specificity + hormone-independence, not raw potency or earlier-to-market.
-- **Kidney-tropic delivery may not converge.** All four current research-class delivery approaches (megalin-binding, CDP, LNP, aptamer) are pre-clinical. If none reach first-in-human within 3–5 years, the "kidney-tropic siRNA for gout" vector may be deferred indefinitely. The platform should track delivery-chemistry literature (Phase 2 P2-1) actively to know when to escalate or shelve.
-- **OE expertise gap.** Open Enzyme's center-of-mass is fungal / yeast genetic engineering. Kidney pharmacology, oligonucleotide chemistry, and regulatory siRNA strategy are all outside the in-house competence. Pursuing this vector meaningfully would require either (a) partnering with an Alnylam-style company, (b) recruiting collaborators from the kidney-tropic delivery research community, or (c) treating this as a pure discovery-engine output where Open Enzyme publishes scope and rationale and steps back.
+- No kidney-tropic siRNA has clinical proof of selective proximal-tubule delivery.
+- No URAT1 siRNA has gout efficacy, durability, renal-safety, or reversibility data.
+- Partial knockdown is likely safer than a knockout-equivalent state, but the therapeutic knockdown window is unmeasured.
+- Oligonucleotide synthesis, kidney-targeted formulation, renal biology, and regulatory development require specialized external capability.
+- The route should be deferred if delivery programs cannot demonstrate selective human kidney exposure or if current small-molecule inhibitors dominate its proposed benefit.
 
 ---
 
 ## Cross-References
 
-- [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) — the matrix entry that surfaced this vector as #1 open exploration question
+- [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) — portfolio-level comparison by gout weakness
 - [`gout-pathophysiology.md`](./gout-pathophysiology.md) §"URAT1 (SLC22A12) — THE REABSORPTION VILLAIN" — URAT1 mechanism background; ~90% urate reabsorption stat
 - [`androgen-urate-axis.md`](./androgen-urate-axis.md) — testosterone effects on URAT1 (the hormone-axis interaction siRNA bypasses)
-- [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) — sister peer-track exploration vector (commercial-pharma, durable-colonization angle); same chase-every-avenue framing under the broader gout-solving mission
-- [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §2.2 (repurposing surface / discovery-engine outputs); §4 (Phase 3 platform-framing reflection note)
-- [`open-questions.md`](./open-questions.md) §"Engineered LBP chassis" parallel; siRNA / URAT1 entry to be added in same section pattern
+- [`open-questions.md`](./open-questions.md) — related unresolved questions
 - [`computational-experiments.md`](./computational-experiments.md) Planned Analyses — comp-009 entry
 - [`hypotheses/H03-sirna-urat1-thesis.md`](./hypotheses/H03-sirna-urat1-thesis.md) — falsification card stub
-- [`synthesis/`](../synthesis/README.md) 2026-05-05 Priority Action #3 — the originating action; Strategic Reflections Queue entry
-- [`open-source-platform.md` §"6. Variant-Agnostic Empirical Head-to-Head"](./etc/open-source-platform.md#6-variant-agnostic-empirical-head-to-head-when-marginal-cost-is-bounded-and-infrastructure-is-shared) — the principle that governs comp-011's parallel-uricase-variant approach; **explicitly does NOT apply to siRNA conjugate-chemistry decisions** (GalNAc-analog vs. peptide vs. kidney-tropic LNP) because per-candidate cost is in the $10K+ range — synthetic oligonucleotide chemistry, conjugate formulation, and animal biodistribution work each cost orders of magnitude more than the comp-011 gene-synthesis case. Literature pre-selection burden is justified here; parallel testing is reserved for candidates the literature genuinely cannot rank.

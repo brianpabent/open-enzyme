@@ -194,7 +194,7 @@ graph TB
         DE31["comp-033/036 Inhaled mRNA-IL-1RA — RED single-dose / YELLOW repeat-dose"]
         DE32["comp-037 C1-INH Protease Stability + Glycosylation in EcN — MODERATE (kinetic-competition gated)"]
         DE33["comp-039 CFH-Dependence Mechanism-Dissociation of Dietary CP0 Candidates — CFH-INDEPENDENT (all 4)"]
-        DE34["Duckweed Aquatic-Sibling Chassis — edible factory+delivery vehicle; glyco-engineerable; oral-vaccine proven in vivo; koji wins lead target"]
+        DE34["Duckweed Edible Biomanufacturing Chassis — oral factory+delivery hypothesis; glyco-engineerable; uricase untested"]
     end
 
     subgraph PlatformArch["PLATFORM ARCHITECTURE (NEW)"]
@@ -204,7 +204,7 @@ graph TB
         PA4["Protease-Vulnerability-to-Redesign Workflow — 4-step pattern (lactoferrin, DAF)"]
     end
 
-    subgraph MushroomTrack["MEDICINAL MUSHROOM COMPLEMENT TRACK (Phase 7 — NEW)"]
+    subgraph MushroomTrack["MEDICINAL MUSHROOM NATIVE-COMPOUND SOURCES"]
         MT1["Ganoderma lucidum / lingzhi — GLPP polysaccharide-peptide"]
         MT2["Cordyceps militaris — cordycepin + native pentostatin ADA-inhibitor pairing"]
         MT3["Pleurotus citrinopileatus — ergothioneine (7.0 mg/g DW, highest fungal producer)"]
@@ -602,7 +602,7 @@ graph TB
     %% comp-014 medicinal mushroom compound mapping (source: medicinal-mushroom-compound-mapping-computational.md)
     DE14 -->|"Phase 2 ChEMBL+LOTUS+PubMed complete; 6,798 compounds, 55 species"| DE1
     DE14 -->|"C5aR1 platform gap confirmed empirically — zero direct fungal antagonists"| O2
-    DE14 -->|"spawned Phase 7 medicinal mushroom complement track"| MT1
+    DE14 -->|"maps candidate native-compound sources"| MT1
     DE14 -->|"surfaced ADA + PINK1/mitophagy chokepoint candidates"| DE1
     DE15 -->|"purine catabolism upstream of XO; GLPP + cordycepin/pentostatin coverage"| B1
     DE16 -->|"mitochondrial quality control upstream of NLRP3 mtROS (CP2)"| C2
@@ -676,7 +676,7 @@ graph TB
     DE25 -->|"operationalizes chokepoint-first chassis-second discipline"| DE2
     DE25 -->|"PDB / siRNA-URAT1 / engineered-LBP / mRNA-IL-1RA / IA-uricase entries"| DE7
     DE25 -->|"duckweed logged as chassis-class entry (peer-track scope page)"| DE34
-    DE34 -->|"aquatic sibling of factory=delivery-vehicle thesis; adjacency not pivot"| F11
+    DE34 -->|"candidate edible vehicle for gut-luminal uricase"| F11
 
     %% Medicinal mushroom complement track (source: medicinal-mushroom-complement-track.md)
     MT1 -->|"ADA + GLUT9 + OAT1 — 40.6% UA reduction HUA mice"| B1
