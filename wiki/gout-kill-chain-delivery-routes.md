@@ -208,7 +208,7 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 - **Avacopan gout repurposing — lowest-friction pharma-grade CP0 access:** Oral, generic pathway approaching, established safety profile, 64–129-hour half-life (near-once-daily dosing). An investigator-initiated flare trial with avacopan requires no formulation work. This is the single most accessible pharma-grade CP0 intervention. (Clinical Trial for ANCA; gap = no gout trial)
 - **DAF/CD55 SCR1-4 gut-lumen delivery via engineered koji:** The OE stack's H05 hypothesis — truncated DAF/CD55 secreted by koji into gut lumen to intercept mucosal complement activation upstream of systemic C5a. Three wet-lab unknowns remain. If validated, the first food-grade CP0 intervention with no pharma analogue. (Mechanistic Extrapolation; see `wiki/hypotheses/H05-daf-scr14-cp0-thesis.md`)
 
-> **Platform gap:** The OE wiki notes zero confirmed fermentable C5aR1 antagonists in ChEMBL or PubMed (as of comp-014 screen, 6,798 compounds). Avacopan repurposing is the near-term bridge; DAF/CD55 koji is the long-horizon food-grade path.
+> **Fermentation-track gap:** The comp-014 screen found zero confirmed fermentable C5aR1 antagonists in ChEMBL or PubMed among 6,798 compounds. That result constrains the fermentation search space; it does not define an Open Enzyme portfolio gap. Avacopan repurposing is the near-term pharma candidate, while DAF/CD55 koji remains a long-horizon food-grade hypothesis.
 
 ---
 

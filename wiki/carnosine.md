@@ -16,7 +16,7 @@ sources:
 
 # Carnosine
 
-β-alanyl-L-histidine. A naturally occurring dipeptide with the distinction — among compounds in the April 2026 NLRP3 inhibitor screen — of being the only candidate with published dual-phenotype gout-relevant rat evidence: both serum uric acid reduction and NLRP3 inflammasome suppression in the same animal model (source: nlrp3-inhibitor-screen.md).
+β-alanyl-L-histidine is a naturally occurring dipeptide. Its gout-relevant hypothesis is dual-purpose: reduce renal urate reabsorption while suppressing NLRP3-driven inflammation. Both effects have appeared in the same hyperuricemia rat model; human gout evidence is absent (Animal Model; source: nlrp3-inhibitor-screen.md).
 
 ## What it is
 
@@ -43,42 +43,25 @@ Carnosine's relevance to gout spans two distinct axes — urate handling and inf
 - **Human gout RCT data: absent.** No published randomized controlled trial in gout or hyperuricemia patients to date. Whether the rat-model dose-response translates to human serum urate lowering is an open question. (Open question.)
 - **Human supplement data (adjacent indications).** Carnosine/β-alanine supplementation RCTs exist for exercise performance, aging, and diabetes complications — broadly safe at 500–2000 mg/day oral, but not designed to answer the gout question.
 
-## Bioavailability
+## Sources, delivery, and bioavailability
 
 - **Oral absorption: good.** Intact carnosine is absorbed by PepT1 in the small intestine. This is a meaningful advantage over quercetin (poorly absorbed, extensive phase-II metabolism) and ursolic acid (poor aqueous solubility, low oral bioavailability) — both are ranked alongside carnosine in the NLRP3 inhibitor screen but are bioavailability-limited.
 - **Serum carnosinase (CN1) is the main loss pathway.** CN1 cleaves carnosine to β-alanine + histidine in serum within minutes to hours. The freed amino acids retain partial activity (β-alanine feeds muscle carnosine resynthesis; histidine is a metal chelator and ROS scavenger), so degradation is not a total loss, but the parent dipeptide's direct NLRP3 activity is short-lived in circulation.
 - **Zinc-carnosine (polaprezinc) as an alternative.** The zinc-carnosine complex is stable in the GI tract and provides local carnosine activity at the gut mucosa with slower systemic release. Approved in Japan for gastric ulcer. Useful alternative formulation when the target site is the gut itself (e.g., gut-barrier healing, local anti-inflammatory effect) rather than systemic. (Clinical Trial for GI indication.)
-- **Engineered-food delivery (koji) bypasses first-pass degradation for the gut-resident fraction.** If carnosine is delivered inside koji biomass that reaches the lower GI tract, local effects (gut-barrier NLRP3 suppression, renal-axis feedback via systemic absorption) are both achievable with a single product.
-
-## Strategic position in the koji endgame strain
-
-Carnosine is the highest-priority optional *cytosolic* third cassette for a male/high-androgen koji product configuration, because its URAT1/GLUT9 renal downregulation is mechanistically mirror-image to androgen-driven URAT1 upregulation (the under-excretor driver in ~90% of gout patients). This places it at the renal-reabsorption arm — complementary and non-overlapping with ABCG2 intestinal-secretion modulation and gut-lumen uricase degradation (three additive levers in series). Because carnosine (β-alanyl-L-histidine) is a dipeptidase substrate, the strain **cannot** be delivered as shio-koji (7–14 days of active native protease); default format is dried/heat-inactivated koji powder. The full strategic case (androgen-axis alignment, cassette routing, chaperone-load rationale) is owned by [koji-endgame-strain.md §2.5](./koji-endgame-strain.md); the co-expression protocol and format-ranking table by [engineered-koji-protocol.md §15](./engineered-koji-protocol.md). See also [androgen-urate-axis.md](./androgen-urate-axis.md) and [abcg2-modulators.md](./abcg2-modulators.md). (Animal Model for URAT1/GLUT9 downregulation; Mechanistic Extrapolation for the androgen-axis precision argument; source: koji-endgame-strain.md §2.5, engineered-koji-protocol.md §15)
-
-## Engineered production
-
-- **Yeast baseline: ~150 mg/L (unsourced estimate — flagged).** The NLRP3 inhibitor screen (source: nlrp3-inhibitor-screen.md) lists carnosine engineered-production feasibility at an estimated 100–500 mg/L in *S. cerevisiae*, "based on analogous dipeptide engineering" — **no primary source cited, and no peer-reviewed yeast carnosine titer has been located to confirm the ~150 mg/L working number**. Treat as provisional until a published titer is cross-checked.
-- **Pathway, β-alanine bottleneck, and koji co-expression.** The heterologous module (*Lactobacillus* carnosine synthase CarnS + bacterial aspartate decarboxylase *panD* to supply the rate-limiting β-alanine), the 500–1000 mg/L koji target, and the multi-enzyme-chassis fit are owned by [engineered-koji-protocol.md §15](./engineered-koji-protocol.md). (Mechanistic extrapolation — no published carnosine-in-koji data exists.)
-
-## Dose
-
-- **L-carnosine (oral supplement):** 500–1000 mg/day typical; clinical trials use up to 2 g/day. Safe profile at these doses.
-- **Zinc-carnosine (polaprezinc):** 75 mg BID (150 mg/day total) for GI-focused use. Approved in Japan for gastric ulcer.
-- **Dietary equivalent:** ~50–150 mg/day from a typical omnivorous diet, mostly from red meat and poultry — well below supplement dose range.
-- **Engineered-koji dose math.** 10–15 g dry koji/day at 100 mg carnosine/g dry mass = 1–1.5 g carnosine daily, approaching the upper end of the supplement dose range. Contingent on achieving the 500–1000 mg/L koji fermentation titer (open — see engineered-koji-protocol.md § 15).
+- **Dietary and commercial sources:** Red meat, poultry, and fish supply carnosine; oral L-carnosine and zinc-carnosine formulations are commercially available.
+- **Target-site choice matters:** Oral L-carnosine exposes the small intestine before serum CN1 rapidly cleaves circulating parent compound. Zinc-carnosine is stable in the GI tract and provides slower local release, making it relevant when the target is gut mucosa rather than systemic NLRP3.
+- **Exposure constraint:** whether intact parent carnosine reaches systemic concentrations sufficient for direct NLRP3 suppression is unresolved. Carnosinase-resistant analogs and inhibitors are adjacent formulation ideas, not gout-validated solutions.
 
 ## Open questions
 
 - **Human gout RCT evidence is absent.** The hyperuricemia rat model dual-phenotype data is promising but not human-validated. Whether dose-response translates to human serum uric acid lowering or to MSU-flare reduction is unknown.
-- **Engineered yeast titer needs primary-source confirmation.** The ~150 mg/L baseline is carried from internal analysis (source: nlrp3-inhibitor-screen.md) without a cited peer-reviewed titer. Verify before anchoring dose math on it.
-- **Koji co-expression feasibility.** No published carnosine-in-koji data. The 500–1000 mg/L target in the engineered-koji-protocol is mechanistic extrapolation from koji's general secretion capacity and needs the validation experiment (engineered-koji-protocol.md § 15) to confirm.
 - **Carnosinase half-life limits.** Serum CN1 cleaves carnosine rapidly; whether this caps peak systemic exposure below the effective NLRP3-suppression concentration in humans is unresolved. Carnosinase inhibitors and carnosinase-resistant analogs (e.g., D-carnosine, N-acetyl-carnosine) are explored in adjacent indications but not yet in gout.
+- **Falsification test.** Compare intact carnosine exposure, serum urate, renal URAT1/GLUT9, and NLRP3 readouts in a hyperuricemia model. If target engagement disappears at achievable parent-compound exposure, the systemic hypothesis fails even if local gut effects remain plausible.
 - **Combination vs. uricase.** Carnosine's URAT1/GLUT9 renal effect is mechanistically complementary to uricase (luminal urate degradation). Whether co-delivery is additive, synergistic, or flat is an open question — proposed experiment: carnosine + uricase co-dosing in hyperuricemia rat model, compared to uricase alone (source: nlrp3-inhibitor-screen.md).
 
 ## Cross-references
 
-- [engineered-koji-protocol.md § 15 Carnosine Co-Expression Module](./engineered-koji-protocol.md) — co-engineering proposal, validation experiment, decision point, format constraint table.
-- [koji-endgame-strain.md §2.5](./koji-endgame-strain.md) — carnosine as optional third cassette; androgen-axis precision-countermeasure framing; strategic position relative to the dual-cassette uricase + lactoferrin primary payload.
-- [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) — April 2026 screen ranking carnosine Tier 2 secondary-synergy candidate; rationale and evidence summary.
+- [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) — comparative rationale and evidence summary.
 - [androgen-urate-axis.md](./androgen-urate-axis.md) — URAT1 upregulation mechanism driven by testosterone; carnosine as the mechanistically mirror-image countermeasure.
 - [supplements-stack.md](./supplements-stack.md) — carnosine as a standalone supplement entry (separate doc track).
 - [gout-deep-dive.md](./gout-deep-dive.md) — overall gout mechanism context (hyperuricemia, NLRP3, MSU flare).

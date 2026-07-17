@@ -13,7 +13,7 @@ Cross-validation is the red-team layer for Open Enzyme. It asks whether a track 
 
 It does **not** assign one feasibility score to the project. Open Enzyme is a portfolio of falsifiable tracks, not a single product chain. A local failure updates that track unless the experiment directly tests a shared mission-level assumption.
 
-The canonical mission and failure semantics are defined in [Mission and Operating Principles](./etc/open-enzyme-vision.md).
+Mission and failure semantics are defined in [Mission and Operating Principles](./etc/open-enzyme-vision.md).
 
 ## Real-claim rule
 
@@ -24,7 +24,7 @@ Before challenging a project claim:
 3. identify whether it is evidence, a computational result, a design choice, or an aspiration;
 4. test that claim, not a stronger version invented for the critique.
 
-The project has not made a sourdough-equivalence claim about therapeutic production. Earlier versions of this page created that claim and then rebutted it. That section and the resulting numerical platform score were invalid analyses of a claim the project did not make.
+If no current source supports the premise, do not build a threat model around it.
 
 ## Threat-model template
 
@@ -45,7 +45,7 @@ The reusable authoring form is [track-template.md](./etc/track-template.md).
 
 ## Current threat-model index
 
-| Track | Canonical threat model | Shared dependency or local risk |
+| Track | Threat model | Shared dependency or local risk |
 |---|---|---|
 | Gut-lumen urate sink | [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md), [gut-lumen sink](./gut-lumen-sink.md) | Shared by oral luminal urate-degradation approaches; topology and operating regime remain decisive |
 | Engineered koji | [Koji track](./koji-track.md) | Payload–chassis fit, secretion/activity, format, safety, and production are track-local |

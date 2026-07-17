@@ -1,6 +1,6 @@
 ---
 id: H05
-title: "An *A. oryzae*-engineered soluble DAF/CD55 SCR1-4 truncated construct (aa 35-285) is a viable fermentable CP0 modulator that closes the platform's documented complement-priming gap"
+title: "An *A. oryzae*-engineered soluble DAF/CD55 SCR1-4 construct is a candidate fermentable CP0 modulator"
 committed: 2026-05-05
 status: Stub
 survival_count: 0
@@ -28,23 +28,22 @@ sources:
   - "comp-006 (full DAF ectodomain protease stability) — `daf-cd55-protease-stability-computational.md`"
   - "comp-012 (SCR1-4 truncated DAF protease stability — verdict LOW, 2026-05-05) — `daf-cd55-scr14-truncated-computational.md`"
   - "DAF/CD55 UniProt P08174"
-  - "Sweep daemon Pass 2 (commit 487fad3, 2026-05-05) Connection #2 — surfaced the truncation hypothesis as wet-lab proposal"
   - "complement-c5a-gout.md — CP0 mechanism + therapeutic landscape"
 ---
 
 # H05 — DAF SCR1-4 CP0-Closure Thesis (Stub)
 
-> **Stub status.** Committed 2026-05-05 to register the hypothesis in the falsification-card directory and force the "what would kill this thesis" framing onto the just-closed (computationally) CP0 gap. Full population (assumption stack, killshot menu, pre-committed thresholds, kill switches, failure-mode coverage map) queued as a Phase 2 item — see [`complement-c5a-gout.md` § CP0 status update](../complement-c5a-gout.md) and [`daf-cd55-scr14-truncated-computational.md`](../daf-cd55-scr14-truncated-computational.md).
+> **Evidence status:** stub. Assumptions, pre-committed thresholds, kill switches, and failure-mode coverage remain incomplete; see [`complement-c5a-gout.md`](../complement-c5a-gout.md) and [`daf-cd55-scr14-truncated-computational.md`](../daf-cd55-scr14-truncated-computational.md).
 >
 > Pre-registration discipline (per H01) does not apply until this stub is upgraded to a full card.
 
-> **Coordination with comp-018 (2026-05-08):** The [upstream complement modulator sweep](../upstream-complement-modulator-sweep-computational.md) operates at the same chokepoint (CP0) but a different angle (compound-class breadth at upstream nodes vs. engineered-DAF at C3 convertase decay-acceleration). H05's thesis is NOT undermined by comp-018; the two threads are mechanistically complementary. Specifically: dietary rosmarinic acid (TIER-1 C3 convertase inhibitor, IC50 5-10 µM) and engineered DAF SCR1-4 act at different geometric scales — RMA in fluid phase + gut lumen, DAF on the MSU surface. comp-018 also surfaces **C1-INH** as a near-twin engineering thesis (different soluble human complement regulator, different node, FDA-approved precedent), which becomes H05's sister-hypothesis card if C1-INH protease stability passes a future comp-NNN computational gate.
+> **Relationship to comp-018:** the [upstream complement modulator scan](../upstream-complement-modulator-sweep-computational.md) examines compound-class breadth, whereas H05 examines engineered DAF at C3-convertase decay acceleration. Rosmarinic acid and DAF would operate at different geometric scales. C1-INH remains a separate candidate pending a protease-stability gate.
 
 ---
 
 ## Claim (provisional, stub-level)
 
-A soluble DAF/CD55 SCR1-4 truncated construct (UniProt P08174, residues 35–285) heterologously expressed in *A. oryzae* via the standard Ward 1995 / Huynh 2020 secretory cassette architecture, delivered in shio-koji or dried-koji format, is a viable fermentable CP0 (complement priming) modulator that closes the Open Enzyme platform's documented complement-coverage gap.
+A soluble DAF/CD55 SCR1-4 construct (UniProt P08174, residues 35–285) heterologously expressed in *A. oryzae* and delivered in a compatible koji format may provide fermentable CP0 complement modulation. Expression, retained activity, luminal access, protease stability, and gout relevance are unvalidated.
 
 The thesis composes three sub-claims, each independently falsifiable:
 
@@ -64,7 +63,7 @@ Anticipated load-bearing assumptions:
 
 1. **Disulfide folding fidelity.** *A. oryzae* ER PDI capacity is sufficient to fold 8 intrachain disulfides on a single ~28 kDa secreted protein. The OE uricase + lactoferrin pair has 16 bulk disulfides, all on lactoferrin (Notari 2023, PMC10465537), equal by count to the 16-disulfide Huynh 2020 adalimumab reference but not necessarily equal in folding burden. Adding DAF SCR1-4's 8 disulfides (UniProt P08174; corrected from an earlier estimate of 12) produces 24 total — about 17% below the earlier 29-disulfide estimate. Architecture-adjusted PDI load, not bulk count, remains the operative uncertainty.
 
-   **Triple-cassette synergy prediction (revised 2026-05-06 — per-domain architecture refinement):** The [chaperone-orthogonal stacking framework §5.5](../chaperone-orthogonal-stacking.md#55-triple-cassette-prospective-prediction--uricase--lactoferrin--daf-scr1-4) makes a prospective falsifiable prediction for the triple-cassette (uricase + Lf + DAF SCR1-4) scenario. The initial bulk-count prediction (0.45–0.70, central 0.55–0.65) has been revised downward by the §3.5 per-architecture PDI residence time refinement. **Revised prediction: 0.35–0.65 (central expectation 0.45–0.55)**, with Lf's transferrin-lobe slow-folding architecture as the dominant bottleneck (not raw disulfide count). Key insight from the architecture refinement:
+   **Triple-cassette synergy prediction:** The [chaperone-orthogonal stacking framework §5.5](../chaperone-orthogonal-stacking.md#55-triple-cassette-prospective-prediction--uricase--lactoferrin--daf-scr1-4) predicts **0.35–0.65 synergy (central expectation 0.45–0.55)** for uricase + Lf + DAF SCR1-4, with Lf's transferrin-lobe folding architecture as the dominant bottleneck. This is prospective and unvalidated.
 
    - Lf's effective PDI load = 16 disulfides × α(1.5–2.5) = 24–40 (architecture-adjusted), substantially above its bulk count of 16 implies
    - DAF SCR1-4's effective PDI load = 8 disulfides × α(0.3–0.6) = 2.4–4.8, substantially *below* its bulk count implies (compact CCP modules fold quickly)
@@ -73,9 +72,9 @@ Anticipated load-bearing assumptions:
 
    The three decision gates (framework-convention, not empirically derived):
 
-   - **Synergy >0.85** (very low probability, lower than bulk model): pursue triple-cassette endgame strain as the single-strain CP0+CP1-CP6 solution. Requires both the Huynh ceiling to be strongly antibody-architecture-specific AND Lf's in vivo ER-assisted folding to be substantially faster than its in vitro transferrin-lobe kinetics imply (i.e., α ≈ 1.0 in a functional secretory pathway).
+   - **Synergy >0.85** (very low probability): consider the triple-cassette strain only after payload-specific activity and safety gates pass.
    - **Synergy 0.6–0.85** (low–medium probability): pursue triple-cassette with PDI co-expression helper augmentation (4-cassette design). Achievable only if Lf's α is at the favorable end (1.5) AND §1.9 Lf-alone arm confirms >500 mg/L (resolving the Huynh ambiguity favorably). Single PDI overexpression captures ~1.05–1.15× rescue (intra-paper Zhang 2006 PMID 16889384); combination helpers add 1.2–1.5× over singles.
-   - **Synergy <0.6** (high probability, higher than bulk model): DAF cassette goes on a separate strain (two-strain co-fermentation) or onto the [engineered LBP chassis](../engineered-lbp-chassis.md) as a parallel peer track. **H05 stays alive in this case — only the chassis-route changes.** The architecture refinement shifts the central expectation firmly into this gate. The endgame strain remains uricase + Lf (CP1-CP6 coverage); CP0 direct-antagonism coverage becomes a separate-strain or peer-track output.
+   - **Synergy <0.6**: route DAF to a separate strain or the [engineered LBP chassis](../engineered-lbp-chassis.md); this changes the chassis route rather than deciding H05's mechanism.
 
    The falsifiable test: measure Lf titer in the triple-cassette strain vs. the dual-cassette (uricase + Lf) baseline in the same §1.9 wet-lab experiment. If Lf titer in the triple is >85% of the dual-cassette baseline, the triple stacks cleanly. If <60%, separate-strain routing is recommended. The §1.9 Lf-alone arm must run first to resolve the [capacity-vs-titer benchmark ambiguity](../chaperone-orthogonal-stacking.md#8-what-this-framework-does-not-predict) (§8 item 7) before interpreting any dual or triple result — if Lf alone reaches >500 mg/L in NSlD-ΔP10 solid-state, the upper bound of the triple prediction shifts more favorably. See [chaperone-orthogonal-stacking.md §5.5](../chaperone-orthogonal-stacking.md#55-triple-cassette-prospective-prediction--uricase--lactoferrin--daf-scr1-4) for the full bounded analysis.
 2. **CCP-regulatory function survives truncation.** Native DAF/CD55's decay-accelerating function uses all four SCR domains plus the membrane GPI anchor for proper geometry; truncating to soluble SCR1-4 changes the geometry. Some published soluble DAF constructs retain function; whether the specific aa 35–285 boundary preserves activity is not pre-validated.
@@ -119,7 +118,7 @@ Anticipated structure:
 
 - [`daf-cd55-protease-stability-computational.md`](../daf-cd55-protease-stability-computational.md) — comp-006, the analysis that surfaced the stalk problem
 - [`daf-cd55-scr14-truncated-computational.md`](../daf-cd55-scr14-truncated-computational.md) — comp-012, the in silico validation of the truncated construct
-- [`complement-c5a-gout.md`](../complement-c5a-gout.md) — CP0 mechanism + therapeutic landscape (note the 2026-05-05 status update reframing the platform gap)
+- [`complement-c5a-gout.md`](../complement-c5a-gout.md) — CP0 mechanism and therapeutic landscape
 - [`engineered-lbp-chassis.md`](../engineered-lbp-chassis.md) — alternative chassis for soluble complement regulators (LBP track)
 - [`modality-chokepoint-matrix.md`](../modality-chokepoint-matrix.md) — the matrix's "Engineered soluble complement regulators" row (now reflecting comp-012 verdict)
 - [`koji-endgame-strain.md`](../koji-endgame-strain.md) — could add CP0 as a candidate row alongside the four current chokepoints if H05 progresses through wet-lab

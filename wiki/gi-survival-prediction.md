@@ -560,7 +560,7 @@ Direct human studies of pancreatic enzyme survival during GI transit:
 
 **This is consistent with ALLN-346 Phase 2a data** (Study 201: significant reduction by days 5–7).
 
-### Next Steps for Open Enzyme
+### Empirical validation priorities
 
 1. **Protein engineering (Weeks 1–8):**
    - Synthesize *A. flavus* uaZ gene with Ala6-Cys290 and Ser119-Cys220 mutations.

@@ -27,17 +27,17 @@ sources:
 status: scoped (Phase 1)
 ---
 
-# Medicinal Mushroom Complement Track — Phase 7 Platform Expansion
+# Medicinal Mushroom Complement Track
 
-## Why this page exists
+## Strategic role
 
-Open Enzyme's koji thesis is "engineered *A. oryzae* secretes therapeutic enzymes via home-fermentable food." The koji chassis is uniquely positioned for that role — decades of ascomycete secretion-biology toolkit (KEX2 protease handling, glucoamylase fusion machinery, CRISPR works, signal-peptide engineering precedent). It is the right engineering chassis.
+Engineered *A. oryzae* is one candidate route for secreting therapeutic enzymes in a food format. Its ascomycete secretion toolkit includes KEX2 protease handling, glucoamylase fusion machinery, CRISPR, and signal-peptide engineering precedent.
 
 But comp-014 (medicinal mushroom × chokepoint mapping) surfaced a different category of leverage: **medicinal mushrooms are native producers of compounds that don't lend themselves to koji engineering** — polysaccharide-peptide hybrids (GLPP), nucleoside analogs (cordycepin), thiol antioxidants (ergothioneine), terpenoid-class secondary metabolites. These don't fit the "express recombinant protein in koji" paradigm; they fit a "cultivate the producer organism, extract the compound" paradigm.
 
-Brian's 2026-05-06 inversion was the right one: not "find a better engineering chassis than koji" (basidiomycete genetics is 5-10× harder than ascomycete; engineering Pleurotus / Lentinula / Hericium / Ganoderma for protein secretion is a multi-year toolkit-building project before first construct expresses) but **"are there other home-cultivable fungi whose native compound profile complements what koji produces?"** Yes.
+The operative question is not whether medicinal mushrooms are better engineering chassis than koji. It is whether home-cultivable fungi natively produce useful compounds that address gout chokepoints and can be sourced, delivered, and tested without first building a protein-secretion platform.
 
-This page formalizes the **medicinal mushroom complement track** as one independently falsifiable route alongside koji engineering, [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md), and [`sirna-urat1-modality.md`](./sirna-urat1-modality.md). The project already spans these modalities; this track stands or falls on its own evidence and experiments.
+The **medicinal mushroom complement track** is one independently falsifiable route alongside koji engineering, [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md), and [`sirna-urat1-modality.md`](./sirna-urat1-modality.md). It stands or falls on its own evidence and experiments.
 
 ## Track scope
 
@@ -55,7 +55,7 @@ The fourth track is **the lightest engineering effort and the most accessible UX
 **Routed to the medicinal-mushroom-complement track (per comp-014 Phase 6):**
 
 - **GLPP polysaccharide-peptide** (*Ganoderma lucidum*) — ADA + GLUT9 + OAT1 chokepoints, 40.6% UA reduction in HUA mice. Not a koji-engineering target; biosynthesis is mycelium-specific. Native cultivation is the route. **MW resolution (grep-verify gate, 2026-05-06):** The apparent 520 vs. 37 kDa "discrepancy" is a fractionation-stage difference, not an inconsistency. **520 kDa is the bulk crude polysaccharide-peptide preparation** from the Juncao National Engineering Research Center — sister paper [PMC11351902](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11351902/) (Zhang 2024) §2.1 explicitly states "the average molecular weight of GLPP was approximately 520 kDa" for the same Juncao prep. **31–42 kDa are the post-DEAE-fractionation sub-fractions** — independently verified at 37,121 Da (GL-PP) and 31,130 Da (GL-PP2) per [PMID 37852403](https://doi.org/10.1016/j.ijbiomac.2023.127336) and 42,635 Da per [PMID 29541200](https://doi.org/10.3892/ol.2018.7823). The Lin 2022 HUA paper itself (PMID 36385640, paywalled body) does not specify which sub-fraction it used; bulk-prep most likely based on sister-paper consistency. SOP-1 SEC-MALS at Tier 3 remains non-negotiable to determine which fraction the HUA mechanism load-bears on.
-- **Cordycepin / whole *Cordyceps militaris* extract** — URAT1 chokepoint, animal model SUA 337→203 µmol/L for purified cordycepin. **Phase 5b CNKI remediation upgrade (2026-05-20):** Xiong 2024 *Biotechnology Bulletin* tested whole *C. militaris* water extract in potassium-oxonate + yeast-paste hyperuricemia rats; the best visible dose, 0.5 g/(kg*d), reduced serum urate from 281.62 to 93.27 µmol/L and reported URAT1/GLUT9 down, OAT1/ABCG2 up, hepatic XOD inhibition, renal oxidative-stress / inflammatory-marker reduction, and microbiome-diversity effects. The publisher page reports the extract contains 35.86% polysaccharides, 27.05% protein, 0.21% phenolics, and 0.83% cordycepin. This is **Animal Model** evidence for the whole-extract cultivation route, not purified-cordycepin-alone or human efficacy evidence. **Canonical platform route: cultivation, not koji engineering** (revised 2026-05-16). *C. militaris* liquid fermentation is mature; top strain GYS60 (plasma-mutagenesis derivative) hits 7,883 mg/L static liquid (PMID 33463932). Commercial whole-fermentate *C. militaris* extracts deliver cordycepin with native pentostatin co-protection at the co-evolved ratio at $20–60/month nutraceutical pricing. The food-grade *A. oryzae* koji-engineering route (Jeennor 2023, PMID 38071331, 564 mg/L/d on glucose) was **evaluated and deprioritized** during the 2026-05-15 sweep walkthrough (Item 7) — comp-023 confirmed metabolic-burden feasibility, but koji-engineered cordycepin delivers no novel chokepoint coverage beyond the cultivation route, has an unresolved dose-vs-achievable-titer gap in realistic multi-cassette home-fermentation conditions, and the "endgame strain = full coverage + simple" principle does not justify the engineering complexity for a payload available at the supplement shelf. See [`koji-endgame-strain.md` §3.5 "Cordycepin third-cassette slot — evaluated and deprioritized"](./koji-endgame-strain.md) and [`operations/global-lit-scan-p0-remediation-2026-05-20`](../operations/global-lit-scan-p0-remediation-2026-05-20/outputs/p0-1-cordyceps-biotech-source-read-2026-05-20.md) for the source-read record.
+- **Cordycepin / whole *Cordyceps militaris* extract** — URAT1 chokepoint. Purified cordycepin reduced serum urate from 337 to 203 µmol/L in an animal model. Xiong 2024 *Biotechnology Bulletin* tested whole *C. militaris* water extract in potassium-oxonate + yeast-paste hyperuricemia rats; 0.5 g/(kg·d) reduced serum urate from 281.62 to 93.27 µmol/L and was associated with URAT1/GLUT9 downregulation, OAT1/ABCG2 upregulation, hepatic XOD inhibition, renal oxidative-stress and inflammatory-marker changes, and microbiome-diversity effects. The publisher page reports 35.86% polysaccharides, 27.05% protein, 0.21% phenolics, and 0.83% cordycepin. This is **Animal Model** evidence for the whole extract, not human efficacy or proof that cordycepin alone caused the result. Cultivation is the preferred production route: strain GYS60 reached 7,883 mg/L in static liquid culture (PMID 33463932), whereas engineering *A. oryzae* adds complexity without new chokepoint coverage and retains a dose-to-titer gap. See [`koji-endgame-strain.md` §3.5](./koji-endgame-strain.md).
 
 - ***Sanghuangporus vaninii* extract** — **Phase 5b P0-1 remediation upgrade (2026-05-20):** open-access Animal Model sources now support *S. vaninii* as more than a CNKI abstract lead. Hua 2023 *Biomedicine & Pharmacotherapy* tested 70% ethanol *S. vaninii* extract (SHEE) in potassium-oxonate + adenine hyperuricemic renal-injury ICR mice at 125/250/500 mg/kg and reported lower blood UA/Cr/BUN/XOD, lower liver ALT/AST, URAT1/GLUT9 down, OAT1/OAT3/ABCG2 up, reduced apoptosis/caspase-3 activity, and LD50 >5,000 mg/kg (Animal Model plus HK-2 cell model; DOI [`10.1016/j.biopha.2023.114970`](https://doi.org/10.1016/j.biopha.2023.114970)). Sun 2022 *Nutrients* tested 1.5 g/kg *S. vaninii* in yeast-extract + potassium-oxonate HUA mice and MSU-induced acute gouty arthritis rats, reporting reduced serum UA / serum-liver XOD and reduced ankle swelling / inflammatory markers (Animal Model; DOI [`10.3390/nu14204421`](https://doi.org/10.3390/nu14204421)). This is not human evidence and does not establish direct transporter binding. The 2025 CNKI `Journal of Jilin Agricultural University` *S. vaninii* UPLC-Q-TOF-MS record remains quarantined for full-text retrieval because its English/MT allopurinol-comparator phrase is ambiguous; use the open-access 2022/2023 papers as the current promotion-grade anchors. Source-read record: [`operations/global-lit-scan-p0-remediation-2026-05-20`](../operations/global-lit-scan-p0-remediation-2026-05-20/outputs/p0-1-sanghuang-source-read-2026-05-20.md).
 
@@ -82,11 +82,9 @@ The fourth track is **the lightest engineering effort and the most accessible UX
 - **Whole-fermentate Cordyceps (cordycepin + native pentostatin)** — Phase 7-1b discovered that *C. militaris* natively co-produces pentostatin from the same BGC as cordycepin. Whole-fermentate preparations have the ADA-inhibitor safeguard built in. **This is the cleanest single-organism medicinal-mushroom-complement product** — fermented C. militaris on brown rice (4-8 week home cycle) delivers cordycepin + pentostatin in their natural ratio, no synergy assembly required.
 - **GLPP + (purified) cordycepin** — only relevant if purified cordycepin is the delivery format. With whole-fermentate Cordyceps, the ADA-inhibitor pairing is already intrinsic. Wet-lab gate (4-arm comparison) now answers: which delivery format wins on dose efficiency + reproducibility.
 - **Whole-fermentate Cordyceps + GLPP (two-organism stack)** — the cultivation-only, zero-engineering combination: fermented *C. militaris* (delivering cordycepin + native pentostatin) + *G. lucidum*-derived GLPP supplement. Targets ADA from two independent biochemical entry points — pentostatin (small-molecule competitive inhibitor) + GLPP (polysaccharide-peptide binding) — while cordycepin is the substrate whose half-life is being protected. This is the **fermentable / enzymatically-naive intervention** at the ADA chokepoint: requires only cultivating two GRAS fungi, no genetic engineering. Distinct from the whole-fermentate-Cordyceps-alone bullet above because GLPP adds a *second*, mechanistically orthogonal ADA-blockade path rather than substituting for the native pentostatin. Wet-lab gate: 4-arm ADA half-life assay (per Proposed Experiment in 2026-05-08 sweep) extended with a fifth arm — whole-fermentate *Cordyceps* + GLPP — to test whether the two-organism combination outperforms either single-organism preparation.
-- ~~**Engineered koji cordycepin (cns1+cns2) + GLPP supplement**~~ — *Deprioritized 2026-05-16*. The koji-engineered cordycepin route was removed from active cassette stack; this combination is moot. The cultivation-track equivalent (whole-fermentate *Cordyceps* + GLPP) above remains the canonical platform path.
-- ~~**Engineered koji cordycepin (cns1+cns2) + whole-fermentate *C. militaris* (native pentostatin)**~~ *— added 2026-05-15, deprioritized 2026-05-16.* This cross-chassis "patch" was an attempt to install pentostatin protection for the koji-engineered cordycepin route. With koji-cordycepin engineering deprioritized (no novel chokepoint coverage + open dose-vs-titer gap + commercially available alternative), the cross-chassis patch is moot. The cultivation route already delivers cordycepin + pentostatin together at the natural ratio. See [`koji-endgame-strain.md` §3.5](./koji-endgame-strain.md).
 - **Engineered koji uricase + GLPP supplement** — koji handles bulk urate degradation in gut lumen; GLPP modulates ADA upstream + GLUT9/OAT1 transporters for renal-side support. Cleanest cross-track synergy (engineering + cultivation).
 
-## Substrate engineering as the most-accessible cultivation lever (added 2026-05-19)
+## Substrate engineering as an accessible cultivation lever
 
 Substrate composition is not just a documentation concern — it is a deliberate engineering variable with documented effect sizes from 1.2× (yield aggregate) up to 100× (specific compound profile shifts within a class) and 22× (combined precursor + induction). This finding emerged from the 2026-05-19 substrate-engineering lit scan ([`logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md`](../logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md)). The synthesis daemon's prior framing ("substrate accumulation creates a QC documentation discipline") under-claimed the empirical literature by ~10×.
 
@@ -104,9 +102,9 @@ Substrate composition is not just a documentation concern — it is a deliberate
 
 **Operational implication for distributed contributors:** substrate engineering is **the lightest-effort, highest-leverage modality** — every load-bearing reagent (methionine, alanine, oleic acid, microcrystalline cellulose, D-galactose, corn steep liquor, casein hydrolysate, nucleosides) is GRAS food-grade and available at consumer pharmacy / grocery retail for $20–50/kg. This compounds with strain selection rather than competing with it. The discipline is target-compound-anchored: a substrate protocol without paired Tier-2/Tier-3 characterization (per [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) SOP-6 and the new SOP-7 protocol matrix) is non-falsifiable.
 
-**Platform-principle elevation (2026-05-19):** this finding promoted from "queued open question" to named **Platform Principle 9** in [`etc/open-source-platform.md`](./etc/open-source-platform.md). Strain engineering needs academic infrastructure; substrate engineering can be executed from a kitchen. It is the cleanest fit yet between the platform's distributed-accessibility thesis and a primary engineering mechanism.
+Strain engineering needs specialized infrastructure; substrate engineering can often be executed with accessible cultivation equipment. This distinction is summarized as Platform Principle 9 in [`etc/open-source-platform.md`](./etc/open-source-platform.md).
 
-**Falsifiable wet-lab priority surfaced by the lit scan:** cordycepin × pentostatin ratio under varied substrate conditions (alanine vs CSLH vs insect substrate vs oleic combinations) — directly extensible from SOP-2 HPLC. Queued as [§1.29 in `validation-experiments.md`](./validation-experiments.md) (added 2026-05-19). Resolves the whole-fermentate-vs-purified clinical positioning gap that has been open in the wiki.
+**Falsifiable wet-lab priority:** measure the cordycepin:pentostatin ratio under varied substrate conditions (alanine, CSLH, insect substrate, and oleic combinations) using the SOP-2 HPLC framework. The experiment is specified in [validation-experiments.md §1.29](./validation-experiments.md).
 
 ---
 
@@ -122,7 +120,7 @@ Subset of the comp-014 Phase 5 anchor list, prioritized by:
 
 | Species | Common name | Top compounds | Cultivation UX | Regulatory |
 |---|---|---|---|---|
-| *Ganoderma lucidum* | reishi / lingzhi | GLPP, ganoderic acids (400+), ergosterol; **S-GLSP** (sporoderm-removed spore powder, distinct NLRP3-axis effect); **GLP4** (pentapeptide, direct TBK1-binding, distinct from triterpenoid + polysaccharide fractions) — refinements added 2026-05-19 traditional-name rescan | Solid-state on hardwood; commercial mycelium kits widely available; 6-12 months for fruiting body | GRAS supplement |
+| *Ganoderma lucidum* | reishi / lingzhi | GLPP, ganoderic acids (400+), ergosterol; **S-GLSP** (sporoderm-removed spore powder, distinct NLRP3-axis effect); **GLP4** (pentapeptide, direct TBK1-binding, distinct from triterpenoid + polysaccharide fractions) | Solid-state on hardwood; commercial mycelium kits widely available; 6-12 months for fruiting body | GRAS supplement |
 | *Cordyceps militaris* | cultivated cordyceps | cordycepin, polysaccharides, ergosterol peroxide; **whole water extract Animal Model HUA signal** (Xiong 2024: serum UA 281.62→93.27 µmol/L at 0.5 g/(kg*d), URAT1/GLUT9 down, OAT1/ABCG2 up, hepatic XOD down); **head-to-head NLRP3 dominance per Wang 2023** (NLRP3-axis primary mechanism for anti-MSU effect, not URAT1 alone — surfaced by 2026-05-19 traditional-name rescan) | Liquid fermentation OR solid-state on brown rice; 4-8 weeks home cycle; commercial kits available | GRAS supplement |
 | *Phellinus igniarius* | sang huang / 桑黄 | total polyphenols (XO + NLRP3 axis); SH-P-1-1 polysaccharide (gut microbiome); PPI polysaccharide (bile acid + hepatic XO); TFPI flavonoids (Animal Model HUA / uric-acid-nephropathy: serum UA 105.0→82.3 micromol/L at 450 mg/kg, Cr 44.30→33.37 micromol/L, liver XOD 48.91→44.09 U/g prot; HK-2 MSU renal-cell TLR4/NLRP3 down, ABCG2 up) — **strongest single-species fit for gout-indication coverage across independent papers; 2026-05-19 traditional-name rescan plus 2026-05-20 P0-1 source read** | Solid-state on hardwood (preferred birch / poplar); commercial mycelium kits available; 6-12 months for fruiting body; **cultivated extract matches wild extract** per Zhou 2022 — directly addresses wild-supply bottleneck | Supplement |
 | *Sanghuangporus vaninii* | yellow-brown sanghuang (modern split from *P. baumii*) | PSH acidic polysaccharide (MW 5.25 × 10⁴ Da); SHEE ethanol extract (Animal Model HUA renal-injury: URAT1/GLUT9 down, OAT1/OAT3/ABCG2 up; LD50 >5,000 mg/kg); whole extract MSU + HUA active | Liquid submerged fermentation optimized (Huang 2024); commercial extract available; extract identity/batch reproducibility still SOP-gated | Supplement |
@@ -141,7 +139,7 @@ Subset of the comp-014 Phase 5 anchor list, prioritized by:
 
 The medicinal-mushroom-complement track is **species-additive to comp-014's anchor list, not separate** — the same well-studied species, evaluated through a different lens (cultivation feasibility + native-compound consumption rather than engineering-chassis suitability).
 
-### Ascomycete secondary metabolites — Talaromyces, not Penicillium (identity-corrected 2026-05-19) — chassis-pending discovery note
+### Ascomycete secondary metabolites — *Talaromyces*, not *Penicillium*
 
 The track's candidate species above are all basidiomycetes. comp-014 Phase 3 surfaced direct caspase-1 (CASP1) inhibitors at sub-μM potency from "Penicillium" — a chokepoint coverage the basidiomycete corpus lacks. The 2026-05-19 lit scan ([`logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md`](../logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md)) **materially revised the framing**:
 
@@ -160,7 +158,7 @@ The track's candidate species above are all basidiomycetes. comp-014 Phase 3 sur
 3. **If antiSMASH returns plausible homologs in cheese strains** → wet-lab assay becomes platform-relevant. Defensible budget with mycotoxin pre-screen (LC-MS) + CASP1 enzymatic assay + orthogonal cytotoxicity is **$5–15K** (not the originally-scoped $500–1,000 — that figure assumed direct testing without disambiguation infrastructure).
 4. **If antiSMASH returns nothing in cheese strains but *T. amestolkiae* has a clean BGC** → the platform-relevant question shifts entirely to **engineering the Berkeleyamide BGC into the koji chassis** (A. oryzae heterologous host, which already supports andrastin-type meroterpenoid assembly per Matsuda et al. 2013 cited in [PMC5418334](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5418334/)). This is a much cleaner play than coaxing cheese strains to express foreign chemistry.
 
-**Status: chassis-pending discovery note with computational gates.** No wet-lab commitment until antiSMASH signal materializes. The identity correction is the main load-bearing update: any future BGC-mining work must target *Talaromyces amestolkiae*, not cheese-ripening *Penicillium*. comp-014 Phase 3's "Penicillium" attribution should also be corrected to "Talaromyces amestolkiae" in any future re-render of that page.
+No wet-lab work is justified unless antiSMASH identifies a plausible cluster. Any BGC-mining work must target *Talaromyces amestolkiae*, not cheese-ripening *Penicillium*.
 
 See [`logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md`](../logs/food-grade-penicillium-casp1-lit-scan-2026-05-19.md) for the full lit scan.
 
@@ -174,7 +172,7 @@ Three home-feasibility levels:
 
 Open Enzyme's value-add at the cultivation-method layer is **standardization + characterization protocols**, not novel cultivation. Consumer-grade reishi grow kits are ubiquitous; what's missing is the protocol that says "this batch contains X mg/g GLPP, Y% triterpene content, Z µg/g ergosterol — verified by standardized extraction + analysis." That's the Open Enzyme contribution to this track.
 
-### Production route — sequential cultivation-first default (added 2026-05-06)
+### Production route — cultivation-first default
 
 For compounds that have both a cultivation route and a koji-engineering route — cordycepin being the canonical case — the platform default is **sequential cultivation-first**. The koji-engineering route is held as documented contingency, not parallel commit.
 
@@ -218,7 +216,7 @@ Consumer-grade mushroom supplements have known quality issues:
 
 **Open Enzyme's contribution to this track:** publish reproducible cultivation + extraction + characterization protocols. Strain selection criteria. HPLC/MS validation methods. Make a comp-014-style triage repeatable for any open-source contributor. The chemistry IS in the public domain — what's missing is the rigor.
 
-### Consumer-product caveat — structure-dependent β-glucan NLRP3 directionality (added 2026-05-08)
+### Consumer-product caveat — structure-dependent β-glucan NLRP3 directionality
 
 **Mushroom β-glucans are not a monolithic anti-inflammatory class.** Their effect on the NLRP3 inflammasome is *structure-dependent* — different polysaccharide fractions from the same species can activate or inhibit NLRP3 depending on extraction method, branching pattern, and molecular weight.
 
@@ -229,17 +227,13 @@ Per comp-014 Phase 5 ([medicinal-mushroom-compound-mapping-computational.md](./m
 
 **Why this matters for consumer products:** a generic "reishi extract 1000mg" capsule is opaque about which polysaccharide fraction it contains. EPS-dominant preparations and spore-powder/GLPP-dominant preparations are functionally different products at the NLRP3 axis, and a gout patient can inadvertently *worsen* inflammation by picking the wrong fraction. The dual-decoction extraction protocol in [SOP-1](./medicinal-mushroom-extract-sops.md) is specifically designed to enrich for the GLPP fraction, not whole-extract β-glucan; this is part of why "compound content uncharacterized" (#2 above) is load-bearing rather than cosmetic.
 
-**Propagation discipline:** if reishi / GLPP enters [`supplements-stack.md`](./supplements-stack.md) or [`gout-action-guide.md`](./gout-action-guide.md), this caveat must travel with it. Neither catalog currently mentions reishi specifically.
+**Species-specific directionality** ([traditional-name NLRP3 evidence scan](../logs/mushroom-traditional-name-nlrp3-rescan-2026-05-19.md)):
 
-**Two species-level corrections from 2026-05-19 traditional-name rescan ([`logs/mushroom-traditional-name-nlrp3-rescan-2026-05-19.md`](../logs/mushroom-traditional-name-nlrp3-rescan-2026-05-19.md)):**
-
-1. **Lentinan (*L. edodes*) — AIM2 not NLRP3.** Earlier comp-014 framing implicitly grouped lentinan in the "mushroom β-glucan NLRP3 modulator" bucket. The 2026-05-19 species-anchored re-read found explicit MSU-arthritis testing of lentinan that came back **negative on the NLRP3 axis** — shiitake's primary anti-inflammatory contribution travels via the AIM2 inflammasome and cardiovascular eritadenine, not via NLRP3 at MSU-relevant tiers. Lentinan stays on the AIM2 axis for any inflammation framing; it is **not** a candidate for NLRP3-chokepoint coverage. Falsifying finding — preserve directional accuracy.
+1. **Lentinan (*L. edodes*) — AIM2 not NLRP3.** Explicit MSU-arthritis testing was **negative on the NLRP3 axis**. Shiitake's primary anti-inflammatory contribution travels via the AIM2 inflammasome and cardiovascular eritadenine, not via NLRP3 at MSU-relevant tiers. Lentinan is **not** a candidate for NLRP3-chokepoint coverage.
 
 2. **PSK (*T. versicolor*) activates NLRP3 — wrong direction for gout.** PSK is an approved drug in Japan (cancer adjuvant) where NLRP3 *activation* is therapeutically desired. For a gout indication, this is the opposite direction. Consumer "turkey tail" extract products vary widely in PSK content; standardized PSK is contraindicated for gout. Add to the structure-dependent β-glucan directionality discussion above — like *G. lucidum* EPS, PSK is a "wrong-direction" mushroom polysaccharide for the gout / NLRP3 axis.
 
-## Seven Phase 7 follow-ups queued
-
-Same pattern as `engineered-lbp-chassis.md` and `sirna-urat1-modality.md`:
+## Unresolved research questions
 
 1. **Strain selection lit scan** — for each top species (G. lucidum, C. militaris, Pleurotus, Lentinula, Hericium, Trametes, Inonotus), identify which commercial / academic strains have characterized compound yields. CNKI + J-STAGE + Korean sources critical here (the multilingual ingestion the comp-014 anchor list was originally drafted for, now applied to cultivation rather than chokepoint mapping). Output: per-species strain table with cultivation precedent + compound yield evidence.
 
@@ -247,7 +241,7 @@ Same pattern as `engineered-lbp-chassis.md` and `sirna-urat1-modality.md`:
 
 3. **Extract characterization protocol standardization** — write the open-source SOPs for: (a) reishi dual-decoction extraction yielding GLPP-enriched fraction, (b) cordyceps water extraction yielding cordycepin + polysaccharide fraction, (c) HPLC quantification methods + reference standards. The goal is reproducibility — an Open Enzyme contributor anywhere should be able to follow the SOP and produce a comparable extract.
 
-   **Sub-bullet (added 2026-05-08):** the SOP-6 framework in [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) is the canonical standardization scaffold — kitchen → smartphone → bench → outsourced tiers, calibrate-once at Tier-3 / track-batches at Tier-2 discipline, per-compound method specs. **Next operational step: a first-execution demonstration batch** — commercial *C. militaris* grow kit (~$50-150) cultivated through Tier 1 yield + Tier 2 EGT colorimetry done at home (Ellman's reagent, well-established), with one outsourced Tier 3 HPLC reference run for cordycepin (~$200-400 CRO). Scope: cordycepin + EGT only; GLPP deferred until Tier 3 SEC-MALS access (load-bearing assay per Pass 3 caveat) is sourced. Cordycepin Tier 2 diazo-coupling stays speculative and is covered by follow-up #7's primary-literature verification pass before being committed to the SOP. Outcome: de-stubbed SOP-2 / SOP-3 with first-batch numbers; reproducibility benchmark for any open-source contributor's later batches. Currently unscheduled — needs a free Brian-weekend or a contributor with a grow setup.
+   Use the SOP-6 framework in [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md): kitchen → smartphone → bench → outsourced tiers, with one Tier 3 calibration and Tier 2 batch tracking. **Next operational step:** cultivate a commercial *C. militaris* grow kit (~$50-150), measure Tier 1 yield and Tier 2 EGT colorimetry, and obtain one outsourced Tier 3 HPLC reference for cordycepin (~$200-400 CRO). Scope: cordycepin + EGT only; GLPP waits for Tier 3 SEC-MALS access. The Tier 2 cordycepin diazo method remains speculative pending primary-literature and bench validation.
 
 4. **GLPP + cordycepin synergy wet-lab gate** — comp-014 Phase 6 flagged this as the cleanest synergy pair in the breadth pass. Study design: PO HUA mouse model, 4 arms (control / GLPP alone / cordycepin alone / combination), measure SUA + cordycepin PK + ADA activity. Critical question: does ADA inhibition co-treatment extend cordycepin half-life enough to lower the daily dose meaningfully? This is a focused, falsifiable experiment.
 
@@ -255,11 +249,7 @@ Same pattern as `engineered-lbp-chassis.md` and `sirna-urat1-modality.md`:
 
 6. **Comparative chassis/platform matrix for gout** — extend `modality-chokepoint-matrix.md` with a new row "Native-compound mushroom complement" populated with the Phase 7 candidates × chokepoint mapping. Forces explicit comparison: koji-uricase vs reishi-GLPP at the gut-lumen / urate-axis cells. Doesn't pre-determine which wins; makes the comparison tractable for case-by-case decisions.
 
-7. **Therapeutic dose grounding pass** (added 2026-05-06) — **✓ RESOLVED 2026-06-01; see [§Therapeutic dose grounding & product-gap verdicts](#therapeutic-dose-grounding--product-gap-verdicts-phase-7-follow-up-7-resolved-2026-06-01) below.** For each load-bearing compound in the track (cordycepin, GLPP, ergothioneine, eritadenine, erinacines, PSK, inotodiol, astilbin), grep-verify the human therapeutic dose range from primary clinical / supplement-trial literature under [CLAUDE.md Rule 4 pre-commit grep-verify gate](../CLAUDE.md). The mushroom track scope page currently discusses production yields (mg/L, mg/g DW) without a dose-context anchor — without that anchor, "GYS60 hits 7,883 mg/L" is meaningless to a supplement-stack decision. Output: per-compound dose-grounding table (typical supplement range / clinical-trial range / mechanism-derived effective range / load-bearing-confidence tier). This should land before any wet-lab-gated Phase 2 follow-up depends on compound dose assumptions. Cross-applies to the [TCM compound triage](./tcm-gout-compound-triage-computational.md) compounds — same gap.
-
-   **Sub-bullet (added 2026-05-06):** while doing the per-compound primary-source dive for dose grounding, also note any **validated colorimetric-assay precedents at smartphone-tier (~Tier 2) sensitivity**. Specifically — Pass 2 proposed diazo-coupling for cordycepin (per [`medicinal-mushroom-extract-sops.md` SOP-6](./medicinal-mushroom-extract-sops.md)) but cordycepin lacks the phenolic/amine motifs typical for diazo chemistry, so the proposal needs primary-literature verification before committing to SOP. Ellman's reagent for EGT is well-established and needs no additional literature check. GLPP Tier 2 phenol-sulfuric is total-polysaccharide (not GLPP-specific) — already known; SEC-MALS at Tier 3 is the load-bearing assay. Closing this sub-bullet alongside #7 keeps the literature-search budget bounded — one primary-source pass per compound covers both dose and assay-precedent questions.
-
-## Therapeutic dose grounding & product-gap verdicts (Phase 7 follow-up #7 — resolved 2026-06-01)
+## Therapeutic dose grounding and product-gap verdicts
 
 Multilingual dose-grounding scan (English + Chinese/Japanese traditional-name framing: 虫草素, 灵芝, 麦角硫因, 香菇, 猴头菇, 云芝/クレスチン, 桦褐孔菌, 落新妇苷/土茯苓), two-model translation cross-check on dose numbers. For each compound: the dose at which the *gout-relevant* mechanism is engaged, evidence tier, and whether a real product can deliver it. **HED = human-equivalent dose** via FDA allometric conversion (animal mg/kg ÷ km factor: mouse 12.3, rat 6.2; 60 kg adult).
 
@@ -274,7 +264,7 @@ Multilingual dose-grounding scan (English + Chinese/Japanese traditional-name fr
 | **PSK / Krestin** (*T. versicolor* 云芝) | TLR2 agonist (immune ↑) | 3 g/day | **Clinical (oncology)** | Dose achievable, **but mechanism is wrong-direction** — TLR2 agonism plausibly *primes* NLRP3 (a gout **liability**). Reinforces the existing flag at §"PSK activates NLRP3." |
 | **Inotodiol** (*I. obliquus* 桦褐孔菌) | mast-cell/Th2 (not urate) | ~98 mg/day HED (mouse 20 mg/kg) | Animal | Likely undershoot (trace, unstandardized in chaga); **gout chokepoint not established** (allergy/mast-cell). |
 
-### Ranking + re-prioritization (the science, documented)
+### Current ranking
 
 **Dose-achievable from real products, mechanism real:**
 - **Ergothioneine** — cleanest dose story (human-dosed 5–25 mg/day, trivially met). But its gout mechanism is *indirect* (antioxidant/anti-NLRP3), so it is a supporting layer, not a urate-lowering candidate.
@@ -320,18 +310,3 @@ This is a real platform advantage, not just a cultivation-feasibility advantage.
 - [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md), [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) — sister peer-track scope pages
 - [`medicinal-mushroom-compound-mapping-computational.md`](./medicinal-mushroom-compound-mapping-computational.md) — comp-014 (the parent computational analysis that generated the Phase 7 candidate list)
 - [`engineered-koji-protocol.md`](./engineered-koji-protocol.md), [`koji-home-fermentation.md`](./koji-home-fermentation.md) — koji track this complements
-
-## Maintenance
-
-- **When a new candidate species lands** (via comp-NNN extension, new wiki research, or a new compound-pharmacology paper): add to candidate species table; mark its top compounds + cultivation UX + regulatory status; consider for Phase 7 cultivation comp-NNN.
-- **When a Phase 7 follow-up resolves**: promote from "queued" to canonical wiki content (e.g., the strain-selection lit scan output becomes a dedicated page per top species).
-- **When the koji track adds a new compound**: re-evaluate whether the medicinal-mushroom track has a complementary compound at the same chokepoint (synergy pair candidate).
-- **The track is a peer to koji, not a replacement.** Phase 7 deliverables expand the platform without competing with the koji-engineering thesis.
-
----
-
-**Status:** Phase 1 (scope) committed 2026-05-06. Phases 2-6 are the queued follow-ups above. Brian's call on which phase to fire first.
-
-**CTO-actionable items (no scientific expertise required):** tracked operationally in [`operations/todos.md`](../operations/todos.md) §"Phase 7 medicinal-mushroom-complement track" — order golden oyster grow kit, email Lin Zhanxi 林占熺 lab for Juncao GLPP SOP, open GitHub Issue for Phase 5b multilingual deep-dive contributions, frame comp-014 as recruiting material for the open collaborator roles.
-
-<!-- TODO detail moved to operations/todos.md per folder discipline (wiki = research content; operations = transactional TODOs). Brian's correction 2026-05-06. Original content preserved in git history at commit 2278725. -->

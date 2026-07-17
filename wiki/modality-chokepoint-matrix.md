@@ -1,5 +1,5 @@
 ---
-title: "Modality × Target Matrix — Exploration Surface"
+title: "Gout Weakness × Intervention Route Matrix"
 date: 2026-04-28
 tags:
   - modalities
@@ -30,17 +30,15 @@ sources:
 status: published
 ---
 
-# Modality × Target Matrix — Exploration Surface
+# Gout Weakness × Intervention Route Matrix
 
-## Why this page exists
+## Scope
 
-Open Enzyme is a living research output of an exploration mission, not a fixed koji-platform roadmap. The wiki has historically organized around mechanism (NLRP3 chokepoints CP0-CP6) and around chassis (engineered yeast / koji), and that mostly works — but it has a blind spot: **it doesn't make the orthogonal "what tools haven't we considered" search visible.** When a new modality lands in the broader scientific toolset (mRNA, base editing, engineered exosomes, kidney-tropic siRNA, etc.), there's no canonical place to ask "where in the gout / NLRP3 / urate-axis map could this open a door?"
+This matrix starts with exploitable weaknesses in urate production, disposal, crystallization, and inflammation, then asks which intervention routes can reach each weakness. It is an exploration surface, not a production roadmap.
 
-This page is that place. **Rows are modalities** (small molecules, peptides, engineered organisms, RNA platforms, phages, etc.). **Columns are targets** — anatomical/cellular sites and pathway nodes where intervention is mechanistically relevant. Each cell answers one question: what's currently in OE here, what could plausibly go here from outside, and which cells are the genuine empty-space exploration vectors.
+**Rows are intervention routes** and **columns are anatomical or pathway targets**. A cell records evidence, access, and the next falsification question. Route feasibility is downstream of target relevance and does not determine priority by itself.
 
-The matrix is **not** an attempt to commit OE to any particular new direction. It's a navigable map of the exploration surface — kept alive so the next sweep, the next paper, the next conversation can ask "which cell does this update?" rather than "does this fit the current chassis?"
-
-The framing question per cell, per Brian (2026-04-28): **"What open questions might this modality answer at this target?"** — not "is this modality useful here?" The inversion is load-bearing.
+The framing question for each cell is: **what gout-relevant hypothesis can this route test, at what evidence level, and what result would falsify it?**
 
 ## How to read this page
 
@@ -48,14 +46,14 @@ The matrix below uses a 5-symbol legend:
 
 | Symbol | Meaning |
 |:-:|---|
-| ✅ | OE has live coverage at this cell — see linked wiki page |
-| 🧪 | OE has an in silico-validated, wet-lab-gated engineering candidate — comp-NNN computational prior LOW or LOW-MODERATE; specific construct designed; wet-lab expression / activity confirmation pending |
-| 🔬 | OE has partial / mechanism-relevant coverage; specific intervention not yet engineered |
-| 🟡 | Open exploration vector — modality could plausibly answer a stuck question at this target; not currently in OE |
+| ✅ | Direct evidence or a defined experiment exists at this cell — see linked page |
+| 🧪 | A computationally bounded candidate has an explicit wet-lab gate; not biologically validated |
+| 🔬 | Mechanism-relevant evidence exists, but exposure or intervention validation is incomplete |
+| 🟡 | Testable exploration vector; target or delivery fit remains open |
 | ⚪ | Mechanistically possible but no realistic path / overkill / addressed by another modality |
 | — | Not applicable / mechanism doesn't intersect target |
 
-Cells marked 🟡 are where the most interesting nuggets live. Each one is a candidate "what gout-relevant problem could THIS open?" question. The "Open exploration questions" section below pulls the highest-leverage 🟡 cells into a queue.
+The symbols describe evidence state, not priority. Rank questions separately by gout relevance, evidence gap, safety, and falsifiability.
 
 ---
 
@@ -309,7 +307,7 @@ No OE coverage. Wearable / microneedle / implantable are open vectors. For self-
 
 ## Open exploration questions surfaced by the matrix
 
-The cells where 🟡 marks the genuinely novel exploration space, ordered by leverage:
+The numbered list is an inventory, not a production or funding rank:
 
 1. **siRNA against URAT1 mRNA via kidney-tropic conjugate.** Sequence-specific renal-reabsorption knockdown. Cleaner than benzbromarone-class. Adjacent to inclisiran-style precedent. Zero clinical programs for gout. Mechanism: see [`androgen-urate-axis.md`](./androgen-urate-axis.md), [`gout-pathophysiology.md`](./gout-pathophysiology.md).
 
@@ -319,7 +317,7 @@ The cells where 🟡 marks the genuinely novel exploration space, ordered by lev
 
 4. **Pharmacological chaperone for ABCG2 Q141K folding rescue.** CFTR-corrector class precedent (~$10B annual market for ΔF508 correction). Same ATP-binding cassette superfamily. Academic mechanism literature exists; no clinical programs. Could be a small-molecule discovery campaign with AI-era binder design.
 
-4b. **Gut-luminal soluble complement regulator (sCR1 / Factor H / DAF/CD55 ectodomain) expressed in GRAS host for CP0 mucosal coverage.** Closes the only "honest platform gap" in the OE corpus — `complement-c5a-gout.md` flags CP0 as having no fermentable coverage; `validation-experiments.md` §1.21 confirmed zero natural-product C5aR1 antagonists exist. All four candidate proteins are human-endogenous, UniProt-fetchable, AlphaFold-modelled. **DAF/CD55 ectodomain (~70 kDa, 4 SCR domains) is the most tractable engineering target** (vs. sCR1 at 190 kDa / 30 SCR domains). Zero programs anywhere — all clinical complement regulators target systemic IV delivery. Mucosal-luminal expression is unexplored. **comp-006 (2026-05-05):** protease-stability analysis of the CD55 soluble ectodomain (aa 35–353) under shio-koji conditions returned HIGH (max risk 0.388, NPr worst protease). The verdict is **stalk-contingent** — the SCR1–4 domains are well-folded (zero low-pLDDT exposed-by-proxy sites; pLDDT proxy, not SASA); the Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52) drives all exposed-site risk. The SCR1-4-only truncation (aa 35–285) was analyzed in **comp-012**, which returned **LOW** (confirming the stalk-driven verdict). (The ectodomain HIGH is also a conservative stress-test dependent on NPr pH factor = 1.0.) See [`wiki/daf-cd55-protease-stability-computational.md`](./daf-cd55-protease-stability-computational.md).
+4b. **Soluble complement regulator (sCR1 / Factor H / DAF/CD55 ectodomain) for CP0 coverage.** The biological question is whether local complement regulation suppresses MSU-driven C5a without unacceptable off-target complement effects. Expression host and route remain downstream choices. The CD55 ectodomain and SCR1–4 computational analyses define protease-stability priors, not biological validation. See [`daf-cd55-protease-stability-computational.md`](./daf-cd55-protease-stability-computational.md) and [`complement-c5a-gout.md`](./complement-c5a-gout.md).
 
 5. **mRNA-IL-1RA pulse therapy for acute flare termination.** Transient expression matches flare window. Zero programs; mechanistically defensible; competes with canakinumab on cost (mRNA manufacturing scales; $300K/yr biologic doesn't).
 
@@ -329,7 +327,7 @@ The cells where 🟡 marks the genuinely novel exploration space, ordered by lev
 
 8. **Wearable sweat-based or microneedle continuous UA monitoring.** Changes intervention-titration kinetics. UCSD / Stanford research-stage.
 
-9. **Glucoraphanin co-production in engineered koji.** Already flagged in [`abcg2-modulators.md`](./abcg2-modulators.md) Engineering Implications #1 and the just-added [`open-questions.md` §"Co-engineered substrate-supply mechanisms"](./open-questions.md). Same product, two mechanisms (substrate degradation + substrate supply).
+9. **Glucoraphanin substrate supply for intestinal ABCG2 induction.** Test substrate availability, conversion, tissue selectivity, and urate flux before choosing dietary, microbial, or engineered delivery.
 
 10. **Engineered exosomes carrying NLRP3 inhibitors targeted to CD163+ macrophages.** Specifically for vessel-wall and synovial sites. Research-stage chassis; longer horizon than #1-3 above.
 
@@ -343,22 +341,15 @@ The cells where 🟡 marks the genuinely novel exploration space, ordered by lev
 - [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) — delivery route for small-molecule repurposing surface
 - [`ginkgo-cloud-lab-evaluation.md`](./ginkgo-cloud-lab-evaluation.md) — wet-lab partner evaluation for cell-free pre-gating
 - [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) — gut PDB as independent urate disposal organ (chassis-pending entry #1)
-- [`synthesis/`](../synthesis/README.md) — action queue; expect new connections to surface here when the sweep daemon reads this page
+- [`synthesis/`](../synthesis/README.md) — reviewed cross-page findings
 - [`nlrp3-exploit-map.md`](./nlrp3-exploit-map.md) — the chokepoint map this matrix sits orthogonal to
 - [`abcg2-modulators.md`](./abcg2-modulators.md), [`androgen-urate-axis.md`](./androgen-urate-axis.md), [`gut-lumen-sink.md`](./gut-lumen-sink.md) — the transporter-biology trio that grounds the renal and gut columns
 - [`open-source-platform.md`](./etc/open-source-platform.md) — platform-strategy positioning; this matrix supports its "we explore all angles" claim
 - [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) — top-level mission statement that the matrix operationalizes
 
-## Maintenance
+## Additional chokepoint candidates
 
-- **When a new modality lands in the broader scientific toolset:** add it as a row; ask the framing question per cell ("what gout-relevant problem could this open?"); flag the cells where it's genuinely novel.
-- **When a new chokepoint, transporter, or biomarker surfaces:** add it as a column; re-evaluate which rows light up.
-- **When OE makes a new build commitment:** mark the cell ✅ and link to the canonical wiki page; the matrix becomes the index.
-- **The matrix is a meta-tool for exploration, not a roadmap.** Don't pretend a 🟡 cell is committed work; don't pretend a ⚪ cell is forever closed.
-
-### Chokepoint candidates surfaced by comp-014 (2026-05-06) — pending formal admit/reject
-
-Two new chokepoint candidates were surfaced by [comp-014](./medicinal-mushroom-compound-mapping-computational.md) Phase 2 (breadth aggregation of 6,798 fungal compounds across ChEMBL + LOTUS + PubMed). Neither has been formally admitted to the matrix as a column; both are pending Phase 3-6 follow-ups.
+Two candidates from [comp-014](./medicinal-mushroom-compound-mapping-computational.md) remain mechanistic extrapolations pending direct gout-relevant validation.
 
 - **ADA (adenosine deaminase)** — purine catabolism enzyme upstream of XO. Fungal-compound coverage via GLPP (*G. lucidum*) and cordycepin + native pentostatin (*C. militaris*). ADA modulation changes purine nucleoside flux entering the XO → urate pipeline. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
 - **PINK1/mitophagy** — mitochondrial quality-control pathway. PINK1 senses mitochondrial damage and recruits Parkin to initiate mitophagy, clearing damaged mitochondria before they generate the mtROS that triggers NLRP3 (CP2). NLRP3-priming-adjacent — operates upstream of CP2 rather than at NLRP3 assembly directly. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)

@@ -25,7 +25,7 @@ A protocol-and-methods companion to the koji wiki. Specifies **how to measure** 
 
 **This page does not relock literature U/g values for wild-type *A. oryzae* enzymes** — those live in [digestive-enzyme-optimization.md](./digestive-enzyme-optimization.md). It does not relock the GI-survival 2-arm experimental design — that lives in [validation-experiments.md §1.18](./validation-experiments.md). It is the **methods layer** that operationalizes the open question called out in [koji-home-fermentation.md §"Open questions"](./koji-home-fermentation.md): *quantitative comparison of shio-koji enzyme activity (units/g) vs. commercial PERT (Creon, Zenpep) units per pill — lab-measurable but not yet done.*
 
-> **Framework reference.** This page is the **canonical first instantiation** of the four-tier quantification ladder (kitchen → smartphone → bench → outsourced). The abstract framework definition, operational pattern ("calibrate once at Tier 3, track batches cheap at Tier 1 / Tier 2"), and discipline notes live at [`quantification-ladder.md`](./quantification-ladder.md). This page covers the koji-enzyme-specific instantiation (lipase / amylase / protease assays + calibration anchors); the sister instantiation for medicinal mushroom extract characterization lives at [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) §SOP-6.
+The [four-tier quantification ladder](./quantification-ladder.md) defines the shared kitchen → smartphone → bench → outsourced framework. This page specifies the koji-enzyme assays and calibration anchors; [medicinal-mushroom-extract-sops.md](./medicinal-mushroom-extract-sops.md) applies the same framework to mushroom extracts.
 
 ---
 
@@ -293,8 +293,8 @@ Each of these is currently called out as "lab-measurable but not yet done" in on
 
 ---
 
-## 13. Status
+## 13. Validation state
 
-Protocol is **drafted, not yet field-tested in this repo's household run.** The first-run Tier 3 calibration is queued; estimated cost ~$200–400 in reagents at a community-college bench, single-day session. Linked to the [Ward 1995 lab-access global landscape](../operations/ward-1995-lab-access.md) work — when the §1.9 dual-cassette feasibility-test partner is identified, the Tier 3 first-run is a low-risk warm-up assay that builds the relationship without committing the partner to the engineered work.
+The tier mappings and calibration logic are drafted but have not been field-tested in this project. A first-run Tier 3 calibration is therefore required before Tier 1 or Tier 2 readings are used quantitatively.
 
-(Evidence level for this page: **Mechanistic Extrapolation** for the assay-tier mappings, calibration logic, and interpretive bands. **In Vitro / Methods** for the named canonical assay protocols (Bernfeld 1955, Charney & Tomarelli 1947, Winkler & Stuckmann 1979) and USP unit definitions (General Chapter <1601>). No Clinical Trial or Animal Model claims are made on this page.)
+(Evidence level for this page: **Mechanistic Extrapolation** for the assay-tier mappings, calibration logic, and interpretive bands. **In Vitro / Methods** for the named assay protocols (Bernfeld 1955, Charney & Tomarelli 1947, Winkler & Stuckmann 1979) and USP unit definitions (General Chapter <1601>). No Clinical Trial or Animal Model claims are made on this page.)

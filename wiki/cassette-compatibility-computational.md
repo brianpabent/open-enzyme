@@ -1,5 +1,5 @@
 ---
-title: "Cassette Compatibility — Dual-Cassette Koji Endgame Strain (Computational, comp-010)"
+title: "Cassette Compatibility — Dual-Cassette Koji Multi-Payload Configuration (Computational, comp-010)"
 date: 2026-05-05
 tags:
   - computational
@@ -32,7 +32,7 @@ sources:
 status: complete
 ---
 
-# Cassette Compatibility — Dual-Cassette Koji Endgame Strain (Computational, comp-010)
+# Cassette Compatibility — Dual-Cassette Koji Multi-Payload Configuration (Computational, comp-010)
 
 > This wiki stub remains so cross-references resolve and the page stays discoverable.
 > Computational analyses are write-once artifacts; the daemon does not need to re-read

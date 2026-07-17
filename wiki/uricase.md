@@ -81,7 +81,7 @@ Two systemic IV uricase programs are currently in clinical development, both pur
 - **PRX-115 (Protalix) — Phase 2 RELEASE trial NCT07280156** (Clinical Trial). Pegylated recombinant uricase ± methotrexate, IV, 24 weeks; N=150, started 2025-12-22, primary completion Dec 2027. Targets treatment-naive gout (not just refractory); excludes eGFR ≤ 40. (source: gout-clinical-pipeline.md)
 - **SSS11 (Shenyang Sunshine) — Phase 1 NCT06629376** (Clinical Trial). Pegylated *Candida utilis* uricase, IV, N=60, single-center (Huashan Hospital, Shanghai). First clinical use of *C. utilis*-derived uricase. (source: gout-clinical-pipeline.md)
 
-**All current clinical uricase programs are systemic IV.** No active program (clinical or pharmacological) targets the gut-lumen-uricase angle that Open Enzyme pursues. This positioning is uncompeted in any registered trial as of April 2026. (source: gout-clinical-pipeline.md)
+**All current clinical uricase programs are systemic IV.** No active program (clinical or pharmacological) targets the gut-lumen-uricase angle evaluated by this track. This positioning is uncompeted in any registered trial as of April 2026. (source: gout-clinical-pipeline.md)
 
 ## The Gut-Lumen Insight
 
@@ -99,7 +99,7 @@ For oral delivery applications, constitutive promoters (pTEF1, pGPK1) are prefer
 
 ### Aspergillus oryzae (Koji)
 
-*A. oryzae* and *A. flavus* are extremely closely related (>99.5% genome similarity in coding regions). The *A. flavus* uricase gene should express well in *A. oryzae* without codon optimization due to nearly identical codon usage. Engineering koji to produce uricase alongside its native digestive enzymes creates a dual-purpose therapeutic organism. (Source: engineered-koji-protocol.md)
+*A. oryzae* and *A. flavus* are extremely closely related (>99.5% genome similarity in coding regions). The *A. flavus* uricase gene should express well in *A. oryzae* without codon optimization due to nearly identical codon usage. Engineering koji to produce uricase alongside its native digestive enzymes would create a candidate dual-purpose configuration if both functions validate. (Source: engineered-koji-protocol.md)
 
 Using the **PamyB promoter** (α-amylase promoter, starch-inducible) maximizes expression when koji is grown on rice—the enzyme auto-activates on the exact substrate being used. (Source: engineered-koji-protocol.md)
 
@@ -131,7 +131,7 @@ The **PULSE system** demonstrated this approach: engineered *E. coli* Nissle 191
 
 ### Koji on Rice / Fermented Food Format
 
-Wild-type *A. oryzae* koji, grown on steamed rice for 36–48 hours at 30–32°C with >80% humidity, naturally produces amylases, proteases, and lipases at therapeutically relevant levels. Engineering to add uricase would create a dual-purpose food format consumed as shio koji (koji + salt + water, fermented 7–14 days, shelf-stable for months) or fresh koji rice (used immediately or processed into amazake). (Source: engineered-koji-protocol.md, etc/open-enzyme-vision.md)
+Wild-type *A. oryzae* koji, grown on steamed rice for 36–48 hours at 30–32°C with >80% humidity, naturally produces amylases, proteases, and lipases at therapeutically relevant levels. Engineering to add uricase would create a candidate dual-purpose food format consumed as shio koji (koji + salt + water, fermented 7–14 days, shelf-stable for months) or fresh koji rice (used immediately or processed into amazake). This remains a koji-track delivery hypothesis rather than a project-wide requirement. (Source: engineered-koji-protocol.md, etc/open-enzyme-vision.md)
 
 ## Dosing Considerations
 

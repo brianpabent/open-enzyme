@@ -49,17 +49,17 @@ status: scope-page
 
 # Duckweed (Lemnaceae) — Aquatic-Sibling Chassis to Koji
 
-**Status:** scope page. This page evaluates duckweed as a candidate chassis using a global, multilingual literature review. It defines the chassis class and its discriminating questions; it does not assume a global chassis hierarchy.
+This page evaluates duckweed as a candidate chassis using global, multilingual evidence. It defines the chassis class and its discriminating questions without assuming a global chassis hierarchy.
 
 ---
 
-## Why this page exists
+## Track question
 
-Open Enzyme is a **chokepoint-first, chassis-second** platform (see [`chassis-pending-interventions.md`](./chassis-pending-interventions.md)). The discipline the umbrella `CLAUDE.md` enforces is an inversion: don't ask "does duckweed fit koji?" — ask "what open question could duckweed answer that koji can't?"
+Open Enzyme is a **chokepoint-first, chassis-second** platform (see [`chassis-pending-interventions.md`](./chassis-pending-interventions.md)). The relevant question is not whether duckweed fits koji, but what specific production or delivery problem duckweed could solve.
 
 Run that inversion and duckweed becomes more than “another expression host.” It can be evaluated as a combined production-and-delivery chassis with a photosynthetic feedstock, plant glycosylation, and edible-vaccine precedent. Those properties are useful only if they match a specific gout payload and pass the relevant exposure and safety gates.
 
-This is a **peer-track / chassis-class scope page**, the same shape as [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md). Duckweed's comparative advantages and liabilities are evaluated in [§Where duckweed beats koji](#where-duckweed-beats-koji-and-where-it-doesnt).
+As a **peer chassis-class track**, duckweed stands or falls on its own payload fit, exposure, safety, and production evidence. Its comparative advantages and liabilities are evaluated in [§Where duckweed beats koji](#where-duckweed-beats-koji-and-where-it-doesnt).
 
 ---
 
@@ -87,9 +87,7 @@ The mechanism is exactly the one OE's gut-luminal thesis depends on: the plant c
 
 ---
 
-## The standout OE-specific finding: the chassis organism is itself a urate-relevant herb
-
-This surfaced *only* via the multilingual discipline — a mechanism-name query ("XO inhibitor natural product") never reaches it; a species-name + phytochemistry query (紫萍 → flavonoid → XO) does. It is the canonical worked example of the query-framing rule in `CLAUDE.md` (see [§Multilingual-discipline note](#multilingual-discipline-note-this-page-is-a-worked-example)).
+## Native urate-relevant phytochemistry
 
 **The lead duckweed bioreactor chassis, *Spirodela polyrhiza*, is botanically identical to the classical TCM herb 浮萍 / 紫萍** (Chinese Pharmacopoeia; *verified* — the Pharmacopoeia sources 浮萍 from *S. polyrhiza* and lists its constituents as orientin, vitexin, apigenin, **luteolin**, sterols, potassium salts). So the chassis organism is, unmodified, a documented medicinal plant.
 
@@ -104,7 +102,7 @@ And the wild-type background carries urate-active chemistry:
 
 ---
 
-## Genomics & transformation: the tooling bottleneck is largely solved (2024–2025)
+## Genomics and transformation
 
 The historical knock on duckweed — slow, low-efficiency transformation; fragmented strains; weak genomics — has substantially closed:
 
@@ -196,7 +194,7 @@ So even before counting effort, uricase plays to duckweed's strength (luminal ac
 
 ---
 
-## Open follow-ups (cheapest-first, no chassis commitment)
+## Unresolved tests (cheapest first, no chassis commitment)
 
 | # | Follow-up | Cost | Weeks | Decision it informs |
 |---|---|---|---|---|
@@ -215,12 +213,6 @@ So even before counting effort, uricase plays to duckweed's strength (luminal ac
 - **The "duckweed dip" is transient/reporter-only** — not a stable production route, despite the social-media framing.
 - **Commercial base rate is brutal:** ~$190M and two decades produced no marketed duckweed biologic. The risk is business-model, not biology — but it is the dominant historical signal.
 - **Access/source caveats from the dig:** a few Chinese full-text reviews (Yaoxue Xuebao XO/anti-gout reviews; a Hainan Univ. duckweed-applications review) and one Japanese BSJ-Review PDF were unreadable; their duckweed-specific flavonoid quantitation is unconfirmed at full-text level. The two lynchpin numbers (浮萍 = *S. polyrhiza*; luteolin XO IC₅₀) are primary-source verified.
-
----
-
-## Multilingual-discipline note (this page is a worked example)
-
-This page is itself a demonstration of the global-multilingual rule in `CLAUDE.md`. The headline OE-specific finding — *the chassis organism is the same species as a classical TCM herb that natively makes a xanthine-oxidase inhibitor* — is **invisible to English mechanism-name queries** and only surfaced through species-name + phytochemistry + traditional-formula framing across Chinese (浮萍/紫萍, 黄酮, 黄嘌呤氧化酶) and Japanese/Korean (浮萍/フヒョウソウ, 부평초) sources. It sits alongside the *Houttuynia cordata* / complement case as a canonical instance of the traditional-name-vs-mechanism-name query gap. The Biolex parts toolkit was likewise most cleanly documented in a **Korean-filed** patent. English-only search would have produced a strictly poorer page.
 
 ---
 

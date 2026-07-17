@@ -52,10 +52,10 @@ See [AGENTS.md](AGENTS.md) for the complete authoring and review rules.
 
 The research library is the codebase. Before opening an issue or pull request:
 
-- check the [dashboard](index.md) and canonical concept page;
+- check the [dashboard](index.md) and relevant concept page;
 - source the real project claim before challenging it;
 - add evidence levels and primary provenance;
-- keep detailed evidence in one canonical home and link from related pages;
+- keep detailed evidence in one home and link from related pages;
 - define how the new information changes a track or decision.
 
 ## Team and license

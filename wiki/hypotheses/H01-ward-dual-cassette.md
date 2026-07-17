@@ -15,7 +15,7 @@ tags:
   - kojic-acid
   - ergothioneine
   - feasibility-gate
-  - endgame-strain
+  - multi-payload-strain
 related:
   - ../koji-endgame-strain.md
   - ../engineered-koji-protocol.md
@@ -63,7 +63,7 @@ sources:
 
 > **Pre-registration note.** The claim, assumption stack, and killshot menu below are frozen as of the first commit of this file (2026-04-24, git SHA TBD at commit time). Subsequent edits log in git with rationale in the commit message. See [README.md](./README.md) and [../linter-design.md](../linter-design.md) §6 for the convention.
 
-> **Current sequencing correction (2026-07-13):** H01 remains Pending and remains the decisive one-strain-versus-two-strain koji-endgame card. It is no longer the first gout-program wet-lab gate. [Validation §1.33](../validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) must select a physiologically credible, peroxide-controlled UOX topology before the UOX-only and dual portions of §1.9 are frozen. The Lf-only arm may proceed independently in parallel.
+> **Current sequence:** H01 remains Pending and decides one-strain versus two-strain routing only within the koji multi-payload hypothesis. [Validation §1.33](../validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) must select a physiologically credible, peroxide-controlled UOX topology before the UOX-only and dual portions of §1.9 are frozen. The Lf-only arm may proceed independently.
 
 ---
 
@@ -71,7 +71,7 @@ sources:
 
 Ward's *A. awamori* glucoamylase-KEX2 dual-cassette architecture, validated for single-cassette human lactoferrin (hLf) expression at >2 g/L submerged (Ward 1995, PMID 9634791), can be layered with a second expression cassette for *A. flavus* uricase (*uaZ*) in *A. oryzae* solid-state rice koji fermentation without silencing either heterologous protein or disrupting native metabolite production (kojic acid, ergothioneine).
 
-This is the decisive cassette-coexistence feasibility test for the [koji endgame strain](../koji-endgame-strain.md) thesis, conditional on an upstream §1.33 UOX topology pass. If it passes, Year 2–3 koji development can converge on one engineered strain. If it fails after both single-cassette arms pass, the platform falls back to the two-strain co-ferment path, preserving the coverage matrix at the cost of single-strain elegance.
+This is the cassette-coexistence feasibility test for the [koji multi-payload strain](../koji-endgame-strain.md) hypothesis, conditional on an upstream §1.33 UOX topology pass. A pass supports one-strain development; a failure after both single-cassette arms pass routes the hypothesis to a two-strain co-ferment or closes it if that route loses the intended advantage.
 
 ---
 
@@ -97,7 +97,7 @@ This is the decisive cassette-coexistence feasibility test for the [koji endgame
 
 Ranked by `score = (kill_pr × info_weight) / (cost × time_penalty)` per `linter-design.md` §4. Sorted descending. Higher score = run first.
 
-**External prerequisite added 2026-07-13:** §1.33 is upstream of this H01-specific ranking. It selects the UOX topology; this card ranks how to test coexistence once that input exists. Lf-only work is independent and may proceed in parallel.
+**External prerequisite:** §1.33 selects the UOX topology before this card ranks coexistence tests. Lf-only work is independent and may proceed in parallel.
 
 | # | Killshot | Cost | Weeks | kill_pr | info_weight | Failure modes | Score (rel.) |
 |---|---|---|---|---|---|---|---|
@@ -257,7 +257,7 @@ Synthesis of literature against H01's assumption stack:
 2. **Protease-deletion host is now elevated from "fallback" to "default."** Huynh 2020 [1] shows ten-protease-deletion (NSlD-ΔP10) was necessary to detect functional antibody at all; the wild-type RIB40 background may be a non-starter for the Lf side of the dual cassette. The §1.9 design should consider starting from NSlD-ΔP10 or an equivalent industrial protease-knockout chassis.
 3. **The solid-state question is the real load-bearing test.** Sun 2024 [9] explicitly notes glaB-type proteins fail to secrete in solid-state despite secreting in submerged. Whether AmyB-fused Lf and AmyB-fused uricase fall on the "secretes in both" or "secretes in submerged only" side of this divide is the actual experimental novelty.
 4. **The 5-marker NSAR1 platform** (Oikawa 2020 [4]) is the suggested host platform — it's already industrial-practice and accommodates the 2-cassette H01 design with three slots to spare for downstream additions (e.g., kojic-acid-pathway enhancement, ergothioneine pathway maintenance).
-5. **Historical conclusion from this literature pass (superseded 2026-07-13):** this pass did not change §1.9 urgency within the koji-endgame question. Comp-044/045 later inserted §1.33 as the upstream gout-program Gate 0 and split §1.9 into Lf-only, selected UOX-only, and dual stages.
+5. **Current sequencing:** §1.33 precedes the UOX-only and dual stages of §1.9; Lf-only testing can proceed independently.
 
 ### comp-010 Follow-Up: Cassette Compatibility (2026-05-05)
 
@@ -371,12 +371,12 @@ The Killshot #1 caveat — "~30% probability of unpublished industrial IP from N
 2. **No industrial-IP failure-mode disclosure was surfaced.** The hypothetical "Novonesis or DSM-Firmenich filed a patent disclosing systemic silencing of co-expressed cassettes in *A. oryzae*" scenario did not materialize. If such a failure mode is known industrial trade-secret knowledge, it has not been disclosed in any published patent, which weakly suggests either (a) it doesn't exist, or (b) it exists but the assignees prefer trade-secret protection over patent-claim disclosure (the standard biotech-process-IP preference). Either way, the §1.9 design is not deflected by this search.
 3. **No industrial-IP solid-state-format precedent was surfaced.** Despite searching across Japanese (Asahi Breweries, Gekkeikan, U Tokyo), Chinese (East China Univ of Sci & Tech, Jiangnan), and Western (Novozymes, DSM, Genencor) assignees, **no patent was found that demonstrates two heterologous proteins simultaneously expressed in *A. oryzae* solid-state at therapeutic-grade titers**. The Senoo 2024 publication is the closest disclosure (multi-enzyme × solid-state) but is self-cloning, not heterologous, and academic rather than IP-protected. **The H01 §1.9 architecture is genuinely first-in-class on the heterologous × solid-state × dual-cassette × therapeutic-titer axis.**
 4. **Industrial Novonesis lineage is the de facto strain platform.** The Nielsen 2025 paper publicly discloses that the Novonesis *A. oryzae* BECh1 lineage (with large chromosomal deletion removing aflatoxin + cyclopiazonic acid clusters) is the industry-standard heterologous-protein chassis. This is now the natural reference strain for §1.9 — though the published academic NSAR1 / NSlD-ΔP10 strains remain the practical starting point for an academic collaborator (Maruyama or a Role 2 / Pharma Translation collaborator) without Novonesis access.
-5. **Historical conclusion from this patent pass (superseded 2026-07-13):** the patent landscape did not change §1.9 urgency within the koji-endgame question. Comp-044/045 later moved §1.33 ahead of its UOX and dual stages for scientific, not IP, reasons.
+5. **Current sequencing:** the patent landscape does not remove H01, but §1.33 remains scientifically upstream of its UOX and dual stages.
 
 ### Most material caveat / what couldn't be verified
 
 1. **Trade-secret industrial process knowledge is by definition outside the patent literature.** The remaining ~10% residual risk is unrecoverable without a Novonesis / DSM-Firmenich / Genencor / Ajinomoto insider source. This is a hard limit of any patent-database search and not a deficiency of this particular execution.
-2. **Espacenet direct API access was blocked (HTTP 403 unauthenticated).** Workaround via Google Patents indirection captures the EP patent corpus, so this is not a substantive coverage gap, but for any future patent-FTO opinion (e.g., before commercial commitments) an authenticated Espacenet / Lens.org / Derwent World Patents Index pass via Brian's institutional access (Emory library or external IP counsel) would tighten confidence.
+2. **Espacenet direct API access was blocked (HTTP 403 unauthenticated).** Google Patents captured the EP corpus for this scan, but a future patent-FTO opinion should use authenticated Espacenet, Lens.org, Derwent, or external IP counsel.
 3. **CNIPA full-text Chinese-language patents may be incompletely indexed in Google Patents** — the major active assignees (Jiangnan University, Tianjin Institute of Industrial Biotechnology, Wang Shihua at Fujian Agriculture and Forestry Univ) have prolific publication records that may include unindexed patents. A native Chinese-speaker pass via the CNIPA UI would be the gold standard for this segment.
 4. **The Nielsen 2025 Novonesis β-lactoglobulin paper hints at undisclosed industrial dual-cassette work** — Novonesis publishing single-heterologous data in 2025 is consistent with the company having dual-cassette proof-of-concept internally but choosing not to disclose. This is the most plausible scenario for the residual <10% trade-secret risk.
 
@@ -425,7 +425,7 @@ None.
 
 ## Cross-References
 
-- [koji-endgame-strain.md](../koji-endgame-strain.md) — the platform-thesis page this hypothesis gates. §3 (Ward 1995 architecture layering), §3.4 (protocol sketch), §4 (fallback paths if H01 is killed).
+- [koji-endgame-strain.md](../koji-endgame-strain.md) — the track-local multi-payload hypothesis this card gates.
 - [engineered-koji-protocol.md](../engineered-koji-protocol.md) §16 — the single-cassette lactoferrin co-expression module this hypothesis ladders on top of. Also §02–14 (Year 1 uricase-only starting strain, which is killshot 3 reframed as a standalone deliverable).
 - [lactoferrin.md](../lactoferrin.md) — full dossier for the Lf side of the dual cassette; §7 discusses the Open Enzyme feasibility bet.
 - [uricase-variant-selection.md](../uricase-variant-selection.md) — source-gene analysis (*A. flavus uaZ* primary, *C. utilis* secondary).

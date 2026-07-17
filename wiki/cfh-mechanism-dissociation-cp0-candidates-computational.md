@@ -28,7 +28,7 @@ sources:
   - "Lu Y, Jiang Y, Ling L, Zhang Y, Li H, Chen D. Beneficial effects of Houttuynia cordata polysaccharides on \"two-hit\" acute lung injury and endotoxic fever in rats associated with anti-complementary activities. Acta Pharm Sin B 2018;8(2):218-227. PMID 29719782 / PMC5925397"
   - "Xu YY et al. Houttuynia cordata Thunb. polysaccharides ameliorates lipopolysaccharide-induced acute lung injury in mice. J Ethnopharmacol 2015;173:81-90. PMID 26190353 / PMC7127486"
   - "UniProt P08603 (CFAH_HUMAN) Sushi domain feature annotations — Sushi 7 = aa 387-444, contains Y402; Y402H = rs1061170 ARMD4 association"
-status: complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)
+status: complete
 ---
 
 # comp-039 — CFH-dependence mechanism-dissociation of dietary upstream-CP0 candidates
@@ -45,7 +45,7 @@ status: complete (propagation to gout-genetic-variants.md Category 5 row + compl
 
 CFH (Complement Factor H) Y402H — the missense variant rs1061170, p.Tyr402His — sits in Sushi/CCP domain 7 of CFH (UniProt P08603 verified: Sushi 7 = aa 387-444 [grep-verified against the P08603 JSON record this session]; Y402 is in the middle of that domain). CCP6-8 of CFH is the canonical CRP-binding and host-glycosaminoglycan-binding surface. Y402H weakens both surface contacts. CFH itself regulates alternative-pathway complement amplification by (a) decay-accelerating the C3bBb convertase and (b) acting as a Factor-I cofactor for C3b → iC3b cleavage. Both functions operate on **surface-deposited C3b** — that is, *downstream* of where C3b is first generated and deposited.
 
-The OE hypothesis ([`complement-c5a-gout.md` §6.3](./complement-c5a-gout.md), added 2026-05-19): the comp-018 / comp-020 upstream-CP0 dietary candidates inhibit complement *upstream of* where CFH acts (preventing C3 convertase assembly or C3b deposition), so Y402H carriers — who have *more* unregulated surface C3b at baseline — should benefit *more* from these candidates, not less. The AMD-paradox counter-evidence (Klein 2008 PMID 18423869 / Awh 2013 PMID 23972322 / Vavvas 2018 PMID 29311295 AREDS zinc + Merle 2015 PMID 26132079 DHA → CFH high-risk carriers WORSE) is hypothesized to apply only to interventions that work *through* CFH (zinc-induced complement inactivation requires CFH-CRP-bridging, which Y402H performs poorly), not to interventions that work *upstream of* CFH.
+The OE hypothesis ([`complement-c5a-gout.md` §6.3](./complement-c5a-gout.md)): the comp-018 / comp-020 upstream-CP0 dietary candidates inhibit complement *upstream of* where CFH acts (preventing C3 convertase assembly or C3b deposition), so Y402H carriers — who have *more* unregulated surface C3b at baseline — should benefit *more* from these candidates, not less. The AMD-paradox counter-evidence (Klein 2008 PMID 18423869 / Awh 2013 PMID 23972322 / Vavvas 2018 PMID 29311295 AREDS zinc + Merle 2015 PMID 26132079 DHA → CFH high-risk carriers WORSE) is hypothesized to apply only to interventions that work *through* CFH (zinc-induced complement inactivation requires CFH-CRP-bridging, which Y402H performs poorly), not to interventions that work *upstream of* CFH.
 
 This comp converts that hypothesis from hand-wavy plausibility to a **per-candidate CFH-dependence classification** with falsifiable predictions.
 
@@ -169,7 +169,7 @@ Luteolin additionally has documented gout-relevant non-complement modes (per [co
 
 ## 5. Recommended biobank collaboration ask — UK Biobank + All of Us as co-primary
 
-**Updated 2026-05-22 (sweep 2026-05-21 Contradiction #1 + Experiment #3).** The original specification led with UK Biobank as the primary cross-tab cohort. That framing under-powers the cross-ancestry direction-check: CFH Y402H allele frequency is comparable in European (~36–39%) and African (~35–37%) populations (per [`gout-genetic-variants.md`](./gout-genetic-variants.md) Category 5), but the UK Biobank cohort is European-ancestry-skewed, and Volcik 2008 (ARIC) found the CFH 402H × hypertension interaction was significant in whites but null in African-Americans — i.e., the variant has population-specific effect-direction differences for a related outcome. A UKB-only cross-tab would be well-powered for the European signal but provide no cross-ancestry direction-check for the African-ancestry population where the variant is equally common and the effect-direction may differ. The corrected framing: **UK Biobank and All of Us as co-primary cohorts**, not UKB as primary with AoU as a parallel side-check. The All of Us Researcher Workbench has substantially better African-American representation, lower credentialing friction (~2–4 weeks, free), and is the appropriate cross-ancestry direction-check counterpart to UKB. Two independent cross-tabs in two cohorts with comparable CFH 402H frequency but different ancestry composition and dietary patterns produce the most informative answer.
+**Cohort design.** **UK Biobank and All of Us are co-primary cohorts.** CFH Y402H allele frequency is comparable in European (~36–39%) and African (~35–37%) populations, but UK Biobank is European-ancestry-skewed and Volcik 2008 found population-specific effect-direction differences for a related outcome. All of Us provides the cross-ancestry direction-check. Report the two cohorts independently before any ancestry-stratified integration.
 
 For the UK Biobank gout-GWAS collaborators (Merriman/Otago, Major-Wrigley/Auckland, Choi/MGH per [`gout-genetic-variants.md`](./gout-genetic-variants.md) Category 5 CFH row) AND for the All of Us Researcher Workbench cross-tab, the candidate-stratified specification is the following:
 
@@ -211,7 +211,7 @@ For the UK Biobank gout-GWAS collaborators (Merriman/Otago, Major-Wrigley/Auckla
 
 7. **Population-stratification confound for Y402H frequency.** Y402H is ~36-39% in Europeans, ~35-37% in Africans, ~30% in South Asians, ~5-6% in East Asians. The UKB cohort is European-ancestry-skewed. Replication across ancestries needs separate analyses, ideally collaborations with All of Us (better African-American representation) and the East Asian cohorts above for HCP.
 
-## 7. New follow-ups surfaced
+## 7. Follow-ups
 
 - **comp-040 (proposed):** wet-lab in-vitro CFH-depleted-serum MSU-crystal complement-activation assay — definitive falsification test of the CFH-independence classification for rosmarinic acid, luteolin, and HCP. Estimated cost: low (assay reagents commercially available; serum sourcing via CompTech or Complement Technology Inc).
 - **comp-041 (proposed):** Y402H × candidate cross-tab feasibility scan in East Asian cohorts (KoGES, CKB, Singapore Chinese Health Study) for Houttuynia-specific cross-tab — paralleling the UKB feasibility analysis done 2026-05-19.
@@ -219,8 +219,8 @@ For the UK Biobank gout-GWAS collaborators (Merriman/Otago, Major-Wrigley/Auckla
 
 ## 8. Cross-references
 
-- [`gout-genetic-variants.md`](./gout-genetic-variants.md) Category 5 CFH row (canonical; this comp informs the predicted-stratification framing but does not edit the canonical row until Brian reviews)
-- [`complement-c5a-gout.md`](./complement-c5a-gout.md) §6.3 (canonical; this comp informs the dietary-CP0 stratification framing but does not edit until Brian reviews)
+- [`gout-genetic-variants.md`](./gout-genetic-variants.md) Category 5 CFH row
+- [`complement-c5a-gout.md`](./complement-c5a-gout.md) §6.3
 - [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) — comp-018, the original modulator discovery + Phase 2 Houttuynia + Helicteres + C1-INH thread
 - [`upstream-complement-verification-rerun-computational.md`](./upstream-complement-verification-rerun-computational.md) — comp-020, the brief-scrubbed verification rerun
 - [`logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md`](../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md) — biobank feasibility analysis

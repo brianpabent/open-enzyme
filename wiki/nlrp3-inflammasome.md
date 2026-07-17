@@ -40,7 +40,7 @@ The inflammasome is not unique to gout—it evolved to respond to pathogenic dan
 
 The NLRP3 inflammasome pathway operates as a sequential cascade with seven primary vulnerability points (chokepoints), several with mechanistically distinct sub-branches. Each is a potential therapeutic target — gout can be attacked at multiple nodes simultaneously rather than through a single intervention. The CP0–CP6b vocabulary below is referenced throughout the corpus; the [NLRP3 Exploit Map](./nlrp3-exploit-map.md) owns the full per-chokepoint catalog.
 
-The v1.2 restructure (April 2026) added CP0 (complement priming, C5a-dominant, upstream of NF-κB), sub-branches CP1a (TNFSF14/LIGHT priming amplifier) and CP1b (C5a→ROS), CP5b (active resolution via ALX/FPR2 SPMs, alongside CP5a receptor blockade), and promoted 5-LOX/LTB4 neutrophil chemotaxis to a first-class CP6a chokepoint. (source: nlrp3-exploit-map.md)
+The model includes CP0 complement priming; CP1a TNFSF14/LIGHT and CP1b C5a→ROS branches; CP5a receptor blockade and CP5b active resolution; and separate CP6a 5-LOX/LTB4 and CP6b GSDMD branches. (source: nlrp3-exploit-map.md)
 
 | Chokepoint | The step | Canonical exploit |
 |---|---|---|
@@ -58,20 +58,20 @@ For the full per-chokepoint exploit catalog (mechanism detail, all compound entr
 
 ## Reactome Pathway Audit (Release 96)
 
-The official Reactome report for `R-HSA-844456` is now preserved as raw provenance at [`reference/papers/R-HSA-844456_.pdf`](../reference/papers/R-HSA-844456_.pdf). Reactome is useful here as a curated pathway map, not as primary experimental evidence. It confirms several NLRP3 activation nodes already relevant to Open Enzyme:
+The Reactome report for `R-HSA-844456` is preserved at [`reference/papers/R-HSA-844456_.pdf`](../reference/papers/R-HSA-844456_.pdf). Reactome is useful here as a curated pathway map, not as primary experimental evidence. It confirms several NLRP3 activation nodes relevant to this research:
 
 - **P2X7 / pannexin-1 activation trigger:** extracellular ATP activates P2X7, potassium efflux, and pannexin-1-associated pore formation upstream of NLRP3 activation (Reactome events `R-HSA-877178`, `R-HSA-877187`, `R-HSA-877198`; In Vitro pathway curation, including Pelegrin and Surprenant 2006 PMID: 17036048).
 - **SGT1:HSP90 chaperone dependency:** SGT1 and HSP90 bind inactive NLRP3 and support signaling competence (Reactome events `R-HSA-874087`, `R-HSA-873951`; In Vitro / cell biology, Mayor et al. 2007 PMID: 17435760).
 - **TXNIP/HMOX1 regulatory axis:** Reactome models TXNIP binding to NLRP3 and includes negative regulation by cytosolic HMOX1 (Reactome event `R-HSA-1250272`; HMOX1 paper requires primary-source verification before adding detailed structural claims; the corrected PubMed record is PMID: 30333233, not 30121650).
-- **Pyrin/ASC interaction:** Reactome includes `Pyrin binds ASC` (`R-HSA-877361`) and its summation states that pyrin-ASC binding can interfere with NLRP3 association with ASC. Treat this as an already-modeled pathway note, not a novel Open Enzyme contribution. Detailed residue/interface claims should stay out of the wiki until primary-source grep verification is complete.
+- **Pyrin/ASC interaction:** Reactome includes `Pyrin binds ASC` (`R-HSA-877361`) and its summation states that pyrin-ASC binding can interfere with NLRP3 association with ASC. Detailed residue/interface claims remain gated on primary-source verification.
 
 Contribution opportunity is therefore narrower than the first Antigravity draft implied. The plausible Reactome gaps from Open Enzyme's corpus are small-molecule/regulatory edges around already modeled events: [oridonin](./oridonin.md) as a covalent NLRP3/NEK7-blocking inhibitor (PMID: 29959312), [tranilast](../reference/papers/tranilast-nlrp3-embo-2018.md) as a direct NACHT-domain inhibitor (PMID: 29531021), and [BHB/ketones](./bhb-ketones.md) as a ketone-body inhibitor of potassium efflux and ASC oligomerization (PMID: 25686106). These should be proposed as targeted curation additions only after checking the current Reactome graph for each compound name, synonym, ChEBI entity, and target event.
 
-### Chokepoint 5 — endogenous IL-1Ra biology (anakinra is not a foreign molecule)
+### Chokepoint 5 — endogenous IL-1Ra biology
 
-This is the canonical explainer for why recombinant IL-1Ra has such a clean safety profile — referenced from [`chassis-pending-interventions.md` §4](./chassis-pending-interventions.md). The acute-flare anakinra protocol (100 mg SC daily × 3 days, ~$900/flare, cumulative-steroid-burden framing) and the inhaled mRNA-IL-1RA pulse comparator live canonically in [gout-action-guide.md §"Active flare"](./gout-action-guide.md) and [chassis-pending-interventions.md §4](./chassis-pending-interventions.md) respectively; the [exploit map's CP5a section](./nlrp3-exploit-map.md) carries the full mechanism entries.
+Recombinant IL-1Ra extends an endogenous feedback mechanism. [Chassis-pending interventions](./chassis-pending-interventions.md) compares systemic and mRNA-encoded delivery concepts, while the [exploit map's CP5a section](./nlrp3-exploit-map.md) carries the full mechanism entries. Clinical use remains a prescribing decision, not a protocol supplied by this page.
 
-Humans naturally produce IL-1Ra (~17 kDa, encoded by IL1RN, secreted primarily by macrophages and neutrophils as a feedback brake on IL-1 signaling). Endogenous IL-1Ra competes with IL-1α and IL-1β for the same IL-1R1 receptor — when bound, it occupies the receptor without triggering downstream signaling. The IL-1β / IL-1Ra ratio determines net signaling: at homeostatic baseline, endogenous IL-1Ra is in ~100× molar excess over IL-1β, keeping signaling damped. Inflammatory states (gout flare, autoimmune, sepsis) tip the ratio by driving IL-1β production faster than IL-1Ra, exceeding the endogenous brake. **Therapeutic anakinra is the same protein the body makes, just at supplemental dose** — which is why the safety profile is so clean (essentially zero immunogenicity, no ADCC/CDC off-target effects, simple competitive-antagonism mechanism). The same "endogenous brake" framing is why mRNA-encoded IL-1Ra is a cleaner payload than an mRNA-encoded anti-IL-1β monoclonal: IL-1Ra is small (no glycosylation, no disulfides, no heavy/light chain assembly), broader-mechanism (blocks IL-1α AND IL-1β at the same receptor), and immunogenicity-free as a recombinant version of an endogenous protein. (source: chassis-pending-interventions.md, gout-action-guide.md, nlrp3-exploit-map.md)
+Humans naturally produce IL-1Ra (~17 kDa, encoded by IL1RN, secreted primarily by macrophages and neutrophils as a feedback brake on IL-1 signaling). Endogenous IL-1Ra competes with IL-1α and IL-1β for IL-1R1 without triggering downstream signaling. Inflammatory states can drive IL-1β production faster than this endogenous brake. Recombinant anakinra uses the same receptor-antagonist mechanism; mRNA-encoded IL-1Ra is therefore a candidate payload, but comparative safety, exposure, and efficacy require direct testing. (source: chassis-pending-interventions.md, gout-action-guide.md, nlrp3-exploit-map.md)
 
 ## Multi-Chokepoint Compounds
 
@@ -93,9 +93,9 @@ The most efficient exploits hit three or more chokepoints — BHB (CP1+CP2+CP3),
 
 - **MCC950 (CRID3)**: The first specific NLRP3 inhibitor. Binds the Walker B motif in the NACHT domain, blocking ATP hydrolysis required for oligomerization. Clinical development terminated due to hepatotoxicity in Phase 1 RA trial, but it defined the druggable target and validated the mechanism. **ChEMBL cross-check (2026-04-23):** MCC950 / CRID3 / CP-456773 are not retrievable by common synonyms in ChEMBL v34's name search; the cited 7.5 nM IC50 (Coll et al. 2015 *J Biol Chem*, cell-free Walker B) has not been independently re-indexed by the MCP cross-check. Benchmark status unchanged, but the IC50 is not verified via ChEMBL. (source: nlrp3-inhibitor-screen.md)
 
-### Two-Tier Labeling: Direct Inhibitors vs. Pathway Modulators (2026-04-23)
+### Direct inhibitors versus pathway modulators
 
-The 2026-04-23 ChEMBL v34 cross-check (see [nlrp3-inhibitor-screen.md](nlrp3-inhibitor-screen.md) appendix) surfaced a labeling rigor issue. Only two compounds in the wiki's broader NLRP3 discussion have a curated direct human NLRP3 IC50 in ChEMBL:
+The ChEMBL v34 cross-check (see [nlrp3-inhibitor-screen.md](nlrp3-inhibitor-screen.md) appendix) distinguishes direct human NLRP3 measurements from functional pathway readouts. At that snapshot, two compounds had a curated direct human NLRP3 IC50:
 
 - **Dapansutrile:** 1.0 μM (human MDM, *Eur J Med Chem* 2023) — but 1 nM in mouse J774A.1 (1,000× species gap)
 - **Oridonin:** 5.18 μM (human THP-1, *Eur J Med Chem* 2023)
@@ -104,7 +104,7 @@ MCC950 and tranilast have published direct NLRP3 assays in the primary literatur
 
 **Compounds with zero curated direct human NLRP3 entries in ChEMBL:** quercetin, ursolic acid, tranilast, beta-caryophyllene. Their "NLRP3 inhibitor" status rests on functional IL-1β readouts in macrophage assays or upstream pathway effects (NF-κB priming, ROS, K⁺ efflux) — not direct NLRP3 binding/inhibition measurements.
 
-**Going-forward convention:** Distinguish "direct NLRP3 inhibitor" (binding/inhibition IC50 measured against NLRP3 protein) from "NLRP3 pathway modulator" (functional IL-1β reduction, mechanism inferred). Both are clinically relevant — Open Enzyme ultimately cares about IL-1β output, not NLRP3 biochemistry per se — but the distinction sharpens how claims are written. **As of ChEMBL v37 (2026-07-01), three compounds in the wiki have a curated direct human NLRP3 IC50:** dapansutrile (1.0 μM), oridonin (5.18 μM), and curcumin (24.2 μM). (In Vitro; source: chembl-cross-check.md)
+**Claim convention:** “Direct NLRP3 inhibitor” requires a binding or inhibition measurement against NLRP3; “NLRP3 pathway modulator” denotes a functional IL-1β readout or an inferred upstream mechanism. In ChEMBL v37, three compounds in the wiki have a curated direct human NLRP3 IC50: dapansutrile (1.0 μM), oridonin (5.18 μM), and curcumin (24.2 μM). (In Vitro; source: chembl-cross-check.md)
 
 ### NLRP3 Pipeline Has Drifted Out of Gout
 
@@ -114,11 +114,11 @@ The broader NLRP3 inhibitor pipeline has moved to other indications where the bi
 
 A 2024 *Annals of the Rheumatic Diseases* study (Ea et al., DOI: 10.1136/ard-2023-225305, PMID: 38373842) used the Olink 92-protein inflammation panel on gout flare vs. intercritical vs. treat-to-target patients. **TNFSF14 (TNF superfamily 14, also called LIGHT) was the second-highest fold-change gout-flare biomarker after IL-6.** LIGHT signals via HVEM and LTβR receptors on fibroblast-like synoviocytes, B cells, monocytes, and myeloid cells, activating NF-κB and AP-1 — a priming amplifier parallel to LPS/TLR4 (classified as CP1a in the exploit map v1.2). Ex vivo TNFSF14 blockade reduced LPS+MSU cytokine production; SNPs in TNFSF14 modulate myeloid cytokine output. CERC-002 (anti-LIGHT mAb) showed positive Phase 2 data in COVID ARDS — potential repurposing candidate. Safety caveat: LIGHT has dual roles (LIGHT-null mice have worse colitis) — episodic or LTβR-selective blockade is safer than total suppression. Natural compounds: EGCG suppresses TNFSF14-induced IL-6 and downregulates HVEM receptor expression (In Vitro); DHA shows inverse genetic association with circulating LIGHT. (Clinical Trial + In Vitro; source: gout-clinical-pipeline.md, tnfsf14-gout-target.md) See [TNFSF14 Gout Target](./tnfsf14-gout-target.md) for the dedicated analysis.
 
-## Engineered Koji & Production Candidates
+## Production candidates
 
 *A. oryzae* could be engineered to overproduce food-derived NLRP3-suppressing compounds (procyanidin/EGCG-like polyphenols), and several stack compounds have established microbial titers — ursolic acid (8.59 g/L in *S. cerevisiae*), quercetin (930 mg/L), carnosine (the only candidate with dual hyperuricemia + NLRP3 rat data), and native kojic acid (3–5 g/L, NLRP3 mechanism unscreened). The full production-candidate analysis (titers, potency rankings, bioavailability, stacking strategy) lives in the [NLRP3 Exploit Map "AI Analysis — Microbial Production Candidates" section](./nlrp3-exploit-map.md) and [07 — NLRP3 Inhibitor Screen](nlrp3-inhibitor-screen.md). (source: nlrp3-exploit-map.md)
 
-## The SIBO–Gout–Lynn Connection
+## SIBO–gout connection
 
 NLRP3 activation is a shared driver of both gout and SIBO-driven intestinal inflammation, so several stack compounds (berberine, KPV, omega-3 SPMs, BHB/fasting, spermidine+trehalose) suppress both conditions through the same mechanism. See the [NLRP3 Exploit Map "SIBO–Gout–Lynn Connection" section](./nlrp3-exploit-map.md) for the full per-compound dual-indication mapping. (source: nlrp3-exploit-map.md)
 
@@ -126,11 +126,11 @@ NLRP3 activation is a shared driver of both gout and SIBO-driven intestinal infl
 
 ## Key Insights
 
-**The Crystal Dissolution Danger Window:** When urate-lowering therapy (including [[uricase|koji-uricase]]) begins dissolving existing MSU crystal deposits, crystals temporarily become smaller with more surface area. Crystal shedding from tophi can trigger acute flares. The NLRP3 stack is essential during this phase—it prevents dissolution-triggered flares while the uricase handles the underlying uric acid problem. Both strategies must run simultaneously. (Source: nlrp3-exploit-map.md, gout-deep-dive.md)
+**Crystal-dissolution danger window:** Urate-lowering therapy can mobilize existing MSU deposits and transiently increase flare risk. The research question is whether a separately validated anti-inflammatory arm reduces those events; no particular stack is assumed essential. (Source: nlrp3-exploit-map.md, gout-deep-dive.md)
 
-**Disulfiram is Underrated:** An FDA-approved drug with 70 years of safety data, costing ~$30/month, that blocks the final step of IL-1β release and prevents pyroptotic amplification. Few rheumatologists discuss it because it was discovered by immunologists studying sepsis—a market inefficiency in medical knowledge. (Source: nlrp3-exploit-map.md)
+**Disulfiram repurposing hypothesis:** Its GSDMD mechanism motivates gout-specific testing, but existing approval in another indication does not establish gout efficacy or a usable exposure window. (Source: nlrp3-exploit-map.md)
 
-**Ketosis Paradox Resolved:** The conventional wisdom that ketosis is bad for gout (ketones compete with urate for renal excretion) misses that BHB simultaneously and potently suppresses NLRP3 inflammasome activation. With [[uricase|koji-uricase]] handling uric acid clearance, ketosis becomes purely beneficial—all inflammasome suppression, no uric acid penalty. (Source: nlrp3-exploit-map.md)
+**Ketosis tradeoff:** Ketones can compete with urate for renal excretion while BHB can suppress NLRP3 activation. Whether a urate-lowering intervention offsets the renal penalty is a testable combination hypothesis, not an established net benefit. (Source: nlrp3-exploit-map.md)
 
 ## References
 
@@ -141,6 +141,6 @@ NLRP3 activation is a shared driver of both gout and SIBO-driven intestinal infl
 - Source: spm-resolution-pathway.md — Active resolution via ALX/FPR2 SPMs (CP5b); RvD1 and MaR1 gout animal model evidence
 - Source: tnfsf14-gout-target.md — TNFSF14/LIGHT as second-highest gout-flare biomarker (CP1a); EGCG and DHA natural activity; CERC-002 clinical precedent
 - Source: chembl-cross-check.md — ChEMBL v34/v37 curated cross-check of stack compounds; curcumin 24.2 μM NLRP3 IC50 + new DYRK2 2.5 nM (v37), berberine TDO 30 nM top target (v34), resveratrol DPP-4 0.6 nM top target (v34), EGCG proteasome 86 nM, ursolic acid ROR-γ 0.75 nM + NF-κB 31 nM (v37 new), β-caryophyllene CB2 150 nM now ChEMBL-curated (v37), disulfiram LOXL4 59 nM (v37 new)
-- Source: theaflavins.md — Theaflavins (black-tea polyphenols): NLRP3-NEK7 disruption (CP2/CP3), direct MSU peritonitis Animal Model, URAT1/GLUT9 downregulation, TF3 TNFSF14/HVEM modulation (CP1a); Tier 2 supplement candidate added 2026-05-05
+- Source: theaflavins.md — Black-tea polyphenols with NLRP3-NEK7, MSU-peritonitis, urate-transporter, and TNFSF14/HVEM evidence
 - Source: zileuton.md — Zileuton (FDA-approved 5-LOX inhibitor, asthma): CP6a repurposing candidate; zero gout trials registered; hepatotoxicity monitoring required; n=1 protocol design
 - Source: nlrp3-inhibitor-screen.md — 2026-05-05 audit: sulforaphane upgraded to Tier 2 (Yang 2018 PMID 29340626 direct MSU gout; Greaney 2015 PMID 26269198 Nrf2-independent inflammasome inhibition); theaflavins added as Tier 2

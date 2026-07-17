@@ -79,6 +79,15 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 - Use active voice, precise language
 - Cross-reference liberally
 
+**Reader contract for intervention and compound pages:**
+1. Lead with the gout weakness the intervention might exploit and the strength of the evidence.
+2. Explain where the intervention is found or sourced, how it could reach the relevant compartment, and what limits useful exposure.
+3. End with the experiment or observation that would advance, redirect, or kill the hypothesis.
+4. Discuss a production chassis only when chassis choice changes an active sourcing or delivery decision. Never screen every intervention through yeast or koji by default.
+5. Keep editorial history in Git. Creation dates, sweep provenance, “added/promoted/reframed” narration, and statements about when the wiki noticed something do not belong in reader-facing prose.
+6. Do not describe a page as canonical, explain why the page exists, or narrate how content is distributed across the corpus. State the current knowledge and link to the supporting evidence home.
+7. Research pages describe evidence and experiments, not personalized dosing or treatment instructions. Established clinical practice may be summarized only with its evidence and scope made explicit.
+
 **Example (good):**
 > Oridonin blocks NLRP3 inflammasome assembly by preventing ASC oligomerization (in vitro, J. Immunol. 2020). In a murine lipopolysaccharide + MSU model, oridonin reduced IL-1β by 60% relative to vehicle (p < 0.01, n=8). Human efficacy unknown.
 
@@ -89,15 +98,11 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 
 **Every load-bearing quantitative claim in newly-authored wiki content must be grep-verified against its primary source BEFORE the commit lands.** This applies to disulfide counts, residue positions, sequence lengths, kinetic constants (IC50, Km, Ki), dose-response numbers, cohort sizes, percent changes, evidence-tier verdicts — anything downstream reasoning will depend on. Not "verify after the sweep flags an inconsistency"; verify before the content ships into the corpus.
 
-**Operational protocol:** see [`wiki/manual-literature-mining.md` §"Pre-commit verification gate"](./wiki/etc/manual-literature-mining.md#pre-commit-verification-gate-the-rule-that-catches-errors-before-the-sweep-not-after) — the canonical statement of the discipline, including the per-claim micro-protocol (identify load-bearing numbers → name primary source → grep-verify → cite line-anchored → drop or placeholder if unverifiable).
+Follow the per-claim protocol in [`manual-literature-mining.md`](./wiki/etc/manual-literature-mining.md): identify the load-bearing claim, name and inspect the primary source, verify the exact value, cite it, and omit or mark the claim unresolved when verification fails. This applies to COMPs, hypothesis cards, scope pages, and primary-research edits. Put the requirement in every delegated authoring brief.
 
-**Why this rule exists:** The wiki sweep daemon catches cross-page inconsistencies in Pass 2 / Pass 3, but by then the wrong number has already propagated to multiple pages and been ingested into downstream synthesis. The DAF SCR1-4 disulfide-count incident (2026-05-06) is the canonical case: a Sonnet subagent authoring `wiki/daf-cd55-scr14-truncated-computational.md` (comp-012) hallucinated "3 disulfides per SCR domain → 12 total" in 4 places of prose narrative — a number the comp-012 pipeline doesn't actually compute (its Limitations section says "Disulfide bonds not modelled"). The error propagated into `wiki/hypotheses/H05-daf-scr14-cp0-thesis.md` overnight, drove a downstream chaperone-orthogonal triple-cassette synergy panic ("17+12=29 disulfides, 1.8× Huynh"), and was only caught by the next day's sweep + walkthrough verification against UniProt P08174 (which has exactly 8 DISULFID feature annotations in SCR1-4 — canonical sushi/CCP fold, 2 per domain). The sweep is a backstop; the pre-commit gate is where this class of error should die.
+**COMP lifecycle gate:** every new or materially revised comp-NNN requires two context-isolated adversarial reviews: one of code, inputs, provenance, rules, and planned outputs before result-bearing execution; another of the complete artifact and every proposed interpretation after execution. Each review binds to a SHA-256 manifest. Any post-run change to the model, code, inputs, parameters, decision rules, or sensitivity plan returns to the pre-run gate. Follow [`new-comp-experiment`](./skills/new-comp-experiment/SKILL.md) and [`comp-review-manifest.py`](./scripts/comp-review-manifest.py). Push review is an additional backstop, not a substitute.
 
-**The discipline applies to all comp-NNN authoring runs, all H-card stubs, all scope pages, all primary-research wiki edits.** When delegating wiki authoring to a subagent, the verification protocol must be in the subagent's brief — not "verify if you have time," but "verify each load-bearing number against primary source before writing it into the page."
-
-**COMP lifecycle gate:** every new or materially revised comp-NNN must receive two context-isolated adversarial subagent reviews. The first occurs after the experiment code, inputs, provenance, decision rules, and planned outputs are written but **before any result-bearing execution**. The second occurs after execution and must inspect the complete code/input/output contract plus every generated output, summary, and proposed wiki update before completion or commit. Each review binds to a SHA-256 manifest of the exact artifact; manifest verification immediately before execution and commit prevents post-review drift. A post-run finding that changes the model, code, inputs, parameters, decision rules, or sensitivity plan returns the comp to the pre-run gate before rerun. Follow [`skills/new-comp-experiment/SKILL.md`](./skills/new-comp-experiment/SKILL.md), [`scripts/comp-review-manifest.py`](./scripts/comp-review-manifest.py), and the review briefs in [`scripts/comp-pre-run-review-prompt.md`](./scripts/comp-pre-run-review-prompt.md) and [`scripts/comp-review-prompt.md`](./scripts/comp-review-prompt.md). The push-triggered comp-review daemon is an additional backstop, not a substitute for either authoring-time gate.
-
-**Sister discipline — subagent brief hygiene:** when *composing* a subagent's brief, scope and method propagate from user direction; predictions and contrived examples don't. User's contrived "if it's rosemary I'll grow rosemary" framing landed verbatim in the comp-018 brief 2026-05-08 and biased the headline finding toward narrative-cohesion. Full discipline + empirical case at [`scripts/SWEEP-ARCHITECTURE.md` §"Subagent brief hygiene"](./scripts/SWEEP-ARCHITECTURE.md). Retrospective at [`operations/comp-018-vs-comp-020-retrospective.md`](./operations/comp-018-vs-comp-020-retrospective.md). The pre-commit grep-verify gate above catches errors *inside* the subagent's output; subagent brief hygiene catches contamination *upstream of* the subagent's run. Different failure modes, both worth disciplined practice.
+**Brief hygiene:** propagate the user's scope and method, not predictions, metaphors, or contrived examples that could bias the result.
 
 ### 5. Evidence Levels
 
@@ -110,11 +115,7 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 | **In Vitro** | Cell culture, tissue, biochemical assay | Uricase kinetics in solution, NLRP3 activation in macrophages |
 | **Mechanistic Extrapolation** | Reasonable inference from foundational biology; no direct evidence | "BHB inhibits HDAC, which suppresses IL-1β signaling (known mechanism); therefore BHB may suppress gout" |
 
-**Format in text:**
-- "Uricase degrades uric acid in vitro with Km = 2.1 mM (Biochemistry, 1998)."
-- "Oridonin blocks ASC speck formation (in vitro, J. Immunol. 2020)."
-- "S. cerevisiae colonizes the mouse gut (animal model, murine gnotobiotic, Microbiome. 2023)."
-- "Mechanistic extrapolation: If engineered S. cerevisiae express uricase at high levels and survive passage to the colon, they should degrade luminal uric acid."
+Attach the tag and source close to the claim. Do not infer a higher tier from a downstream marker, adjacent disease, or computational prediction.
 
 ### 6. Cross-References & Links
 
@@ -151,54 +152,9 @@ These are frequently cited or mechanistically central. Use as touchstones:
 
 ---
 
-## Workflow for Updates
+## Authoring workflow
 
-Publishing and bounded propagation run on relevant pushes. Full-corpus synthesis does not: dispatch it explicitly at a logical research batch boundary. Changed COMP artifacts receive independent push review before their derived claims become eligible for propagation or synthesis. The steps below describe the authoring responsibilities that remain regardless of automation.
-
-### When new data emerges:
-
-1. **Determine scope:** Which concepts or mechanisms does this affect?
-   - Example: "New data on BHB + NLRP3" → affects `wiki/nlrp3-exploit-map.md`, `wiki/bhb-ketones.md`
-
-2. **Update the relevant wiki page(s):**
-   - Add new content or revise existing claims inline with evidence level and inline provenance (`(source: <filename>)`)
-   - Update YAML frontmatter if adding cross-references
-
-3. **Update `index.md`** if a new page was created or the mission or portfolio changed.
-
-4. **Verify consistency:**
-   - Check cross-references resolve
-   - Verify evidence levels are tagged throughout
-
----
-
-## Common Tasks
-
-### Task: Add a new intervention (e.g., a small-molecule NLRP3 inhibitor)
-
-1. Create `wiki/[compound].md` with:
-   - Mechanism of action
-   - Evidence (in vitro → animal → clinical) with evidence-level tags
-   - Dosing, safety, GI tolerability
-   - Synergies with uricase / barrier repair
-
-2. Update:
-   - `index.md` (add to the appropriate section)
-   - `wiki/nlrp3-inflammasome.md` (add to related concepts)
-   - `wiki/nlrp3-exploit-map.md` if it fits the exploit map
-
-### Task: Revise a mechanism based on new data
-
-1. Edit the relevant wiki page(s)
-2. Update evidence level tags and citations
-3. Re-read all wiki pages that reference this mechanism
-4. Update wiki pages with new understanding
-
-### Task: Ensure a new page is discoverable
-
-1. Add to `index.md` with one-line description
-2. Link from related wiki pages using standard markdown links
-3. Include YAML frontmatter with `title`, `date`, `tags` (and `related`, `sources` when applicable)
+Publishing and bounded propagation run on relevant pushes; full-corpus synthesis runs only on explicit request. For new evidence: identify affected concepts, update the evidence page and direct dependents, tag evidence and provenance, update `index.md` only for discoverability or mission/portfolio changes, then run link, privacy, corpus-hygiene, and relevant test checks. Changed COMP artifacts require current push review before derived claims become eligible.
 
 ### Task: Query Reactome pathway data
 
@@ -221,76 +177,17 @@ Use the repo-local Reactome integration before manually downloading reports:
 
 ---
 
-## Questions to Ask When Evaluating New Information
-
-1. **What's the evidence level?** (Clinical, animal, in vitro, mechanistic)
-2. **Does this affect multiple wiki pages?** (Trigger doc sweep rule)
-3. **Are there new concepts?** (Trigger new wiki page creation)
-4. **Are assumptions/limitations stated clearly?** (Maintain rigor)
-5. **Is it PhD-audience appropriate?** (No marketing, honest about unknowns)
-
----
-
-## Version Control & Maintenance
-
-- **Source of truth:** `wiki/`
-- **Dashboard:** `index.md` (repo root)
-- **Action queue:** `synthesis/queue/` (per-item files); architecture at `synthesis/README.md`
-- **Canonical material (read-only):** `reference/`
-- **Published format:** `*.html` (do not edit directly)
-- **Metadata:** YAML frontmatter in all `.md` files
-- **Cross-references:** Prefer standard markdown links; Obsidian `[[wiki-links]]` work in Obsidian but not on GitHub
-- **Revision history:** Git. No inline changelogs in documents.
-
 ### Global-multilingual research by default (no English-only bias)
 
-Treat the wiki sweep, every literature scan, every subagent research task, and every "what does the field say" investigation as **multilingual by default.** The AI substrate (Claude, DeepSeek, Qwen, Gemini) is fluent in Chinese, Japanese, Korean, German, Russian, French, Spanish, Arabic, Hindi, Portuguese, Italian and more. The marginal cost of reading a Chinese-language paper or Japanese database is zero. Treating language as a "barrier" in 2026 is path-dependent narrowing — it silently shrinks the search space and biases findings toward the English-language Western-research subset.
-
-**Operational rules:**
-
-- **Lit scan briefings** (subagent prompts) MUST explicitly include non-English sources where relevant: ChiCTR (China Clinical Trial Registry), CNKI / WanFang (Chinese-language papers — read in original, no translation step needed), J-STAGE / CiNii / J-GLOBAL (Japanese), KISS / RISS (Korean), eLIBRARY.RU (Russian), TIB / GND (German), SciELO (Latin American Spanish/Portuguese). For each query, name the non-English sources to check.
-- **Distributed synthesis prompts** should explicitly note that the wiki may have inherited Western-research bias and that genuinely new connections may require non-English-source angles.
-- **Compound and mechanism investigations** should check both Western (PubMed-indexed) AND Chinese (CNKI / TCM materia medica) AND Japanese (Kampo medicine literature) sources before declaring an evidence-tier verdict. A compound with thin Western evidence but substantial Chinese clinical evidence has stronger empirical backing than the Western-only view shows.
-- **Query-framing discipline** *(added 2026-05-19, Cluster M walkthrough — promoted from comp-018 Phase 2 finding)***:** for non-Western-medicine compound discovery, **query by traditional-formula-name + species-name + traditional-pathology-framing IN ADDITION TO mechanism-name.** Mechanism-name is the wrong starting point for non-Western literature — it silently filters out traditional-name-anchored papers that the Western citation network underweights. The canonical worked example: a "C3 convertase inhibitor" query misses *Houttuynia cordata*; a "*Houttuynia cordata* anti-complementary" query catches it (comp-018 Phase 2). The lesson generalizes across mechanism classes:
-  - **URAT1 inhibitors:** "URAT1 inhibitor natural product" misses Smilax glabra formulations; "Si Miao San 四妙散 hyperuricemia" catches them.
-  - **XO inhibitors:** "XO inhibitor flavonoid" misses many curcuminoids; "Jiang Huang 姜黄 xanthine oxidase" (turmeric) catches them.
-  - **NLRP3 inhibitors:** "NLRP3 inhibitor natural product" misses *G. lucidum* spore-powder evidence; "Lingzhi 灵芝 anti-inflammatory mechanism" catches it.
-  - **Complement modulators:** Pass 3's diagnosis was "language barrier" for Chen Daofeng / Yamada-Kiyohara groups — actually wrong; those groups publish 80–95% in English. The real barriers are **citation-network insularity + traditional-name vs mechanism-name query framing + source-journal impact-factor underweighting.** Treating it as a language barrier silently shrinks the search space.
-  
-  **Operational pattern:** every lit-scan subagent prompt should include traditional-formula-name + species-name + traditional-pathology-framing query variants when the compound class has non-Western traditional-use literature. ChEMBL-only coverage (comp-013, comp-014, comp-018, comp-020 all document) systematically undercovers non-Western natural-product domains; the query-framing discipline is the cheapest fix for that gap.
-- **Do not flag "language barrier" as a limitation** in wiki pages or subagent briefings. It is not a limitation. If a relevant source is non-English, read it directly, cite it directly (with original-language title in the citation alongside an English gloss).
-- **Brian-facing summaries stay in English** — the multilingual ingestion happens upstream; the synthesis you present to Brian is in English. The discipline is about what you READ, not what you WRITE for the project's working language.
-
-**Why this rule exists:** explicitly added 2026-05-05 after a TCM × modern rigor scope page was drafted with "language barrier" listed as a limitation. Brian's correction: *"i think one of the things that i want to take advantage of is that you are multilingual, so you can read chinese papers. you can read chinese text. you can read japanese. so we should be ingesting EVERYTHING not just western-centric research. seems foolish to not search globally in 2026."* Path-dependent narrowing, exactly the failure mode the umbrella's "Curiosity and First-Principles Framing" rule warns against.
+Literature scans and research tasks are multilingual by default. Use relevant regional sources, including ChiCTR, CNKI/WanFang, J-STAGE/CiNii/J-GLOBAL, KISS/RISS, eLIBRARY.RU, TIB/GND, and SciELO. For traditional-medicine compounds, search traditional formula name, species name, and traditional pathology framing in addition to the modern mechanism name; mechanism-only and ChEMBL-only searches under-cover this literature. Read and cite non-English sources directly with the original title plus an English gloss. Do not list language as a limitation. Brian-facing synthesis remains in English.
 
 #### Translation protocol (two-model independent cross-check + inline disagreement annotations)
 
-When ingesting non-English source material, **translate with two independent models** (different vendors) and produce an annotated translation that **surfaces disagreements as inline annotations rather than silently picking a winner** — the same heterogeneity guard the sweep daemon uses (translation carries the same homogenization risk). For Chinese sources, at least one model must be a Chinese-vendor model (DeepSeek / Qwen). Load-bearing disagreements (evidence tier, dose, mechanism) get a `[TRANSLATION-DISAGREEMENT]` flag. Rationale: translation is interpretation, and the disagreements are exactly where nuance lives.
-
-**Full protocol** — operational pattern, disagreement-annotation conventions, high-risk categories, the Model-A cost rule, and the "why": [`wiki/etc/manual-literature-mining.md` §"Translation protocol"](./wiki/etc/manual-literature-mining.md). The `lit-scan` skill and `translate_source_two_model()` in `wiki/etc/experiments/lib/agentic_lit_synthesis.py` implement it. (Added 2026-05-05; consolidated to the methodology doc 2026-07-14.)
+Translate non-English source material with two independent vendors; for Chinese, one must be DeepSeek or Qwen. Annotate disagreements inline and flag load-bearing dose, mechanism, or evidence-tier disagreements as `[TRANSLATION-DISAGREEMENT]`. Follow the protocol in [`manual-literature-mining.md`](./wiki/etc/manual-literature-mining.md).
 
 ### Push-batching discipline (Open Enzyme overrides the umbrella's "push immediately" rule)
 
-The umbrella repo's `CLAUDE.md` git steward pattern says "Push immediately after each commit, every time." **That rule is overridden in this repo.** Relevant pushes run publishing, exact COMP review when applicable, and bounded propagation. Full synthesis is manual, but coherent push batches still reduce repeated propagation, review cost, and merge contention.
-
-**Commit eagerly. Push at logical batch boundaries.**
-
-| Push when | Don't push when |
-|---|---|
-| End of a queue walkthrough (after the inbox-zero pass) | After every individual commit during active session |
-| End of a clearly-bounded work batch (e.g., a peer-track scope page + its 6-surface tracking infrastructure) | After each subagent's output lands in isolation |
-| User explicitly says "push" or "ship it" | Just because a commit is "done" |
-| End of session | Just because the working tree is clean |
-| Before walking away from the laptop with unpushed work pending | Just because propagation has not caught up yet |
-
-**Operational rules:**
-- Commit immediately after each substantive write (per the umbrella steward pattern — that part still applies).
-- Hold all pushes until a batch boundary OR end of session.
-- If asked "did you push?" — answer honestly. Don't auto-push to clear the conversation.
-- Surface uncommitted-but-unpushed state at end of session: "8 commits sitting locally, ready when you want to push."
-- The exception: if the work is genuinely time-critical (e.g., a hotfix to a broken page that's actively being read by collaborators), push immediately. Default is batch.
-
-**Why this matters specifically for this repo:** coherent batches reduce repeated COMP review and propagation while preserving free publishing. Full synthesis accumulates changes across any number of pushes and runs only when explicitly requested.
+Commit substantive writes promptly. Push only at a logical batch boundary, explicit user request, end of session, or urgent hotfix. Report unpushed commits honestly. Relevant pushes publish, review changed COMPs, and run bounded propagation; full synthesis remains manual. Coherent batches reduce repeated review, propagation cost, and merge contention.
 
 ---
 

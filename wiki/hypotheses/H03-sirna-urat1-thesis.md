@@ -35,7 +35,7 @@ sources:
 
 # H03 — siRNA / URAT1 Discovery-Engine Output Thesis (Stub)
 
-> **Stub status.** This card is committed at stub-level on 2026-05-05 to register the hypothesis in the falsification-card directory and force the "what would kill this thesis" framing onto the [siRNA / URAT1 page](../sirna-urat1-modality.md). Full population (assumption stack, killshot menu, pre-committed thresholds, kill switches, failure-mode coverage map) is queued as Phase 2 P2-5 — see [sirna-urat1-modality.md § Open Follow-Ups](../sirna-urat1-modality.md#open-follow-ups).
+> **Evidence status:** stub. Assumptions, pre-committed thresholds, kill switches, and failure-mode coverage remain incomplete; see [siRNA / URAT1](../sirna-urat1-modality.md).
 >
 > The pre-registration note on H01 ([H01-ward-dual-cassette.md](./H01-ward-dual-cassette.md) §Pre-registration) does not apply until this stub is upgraded to a full card. When the upgrade happens, the upgraded version is what gets pre-registered; the stub is informational scaffolding only.
 

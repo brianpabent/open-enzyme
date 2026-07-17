@@ -37,13 +37,13 @@ sources:
   - Wathanavasin et al. 2025 (PMID 39998074)
 ---
 
-# ABCG2 Modulators — Pharmacological Levers on the Gut Urate Sink
+# ABCG2 Modulators — Evidence Map for Intestinal Urate Export
 
-Gut ABCG2 is the apical-membrane efflux transporter that moves urate from blood into the intestinal lumen, accounting for ~30% of daily urate elimination. The engineered-uricase platform's "gut-lumen sink" thesis (see [`gut-lumen-sink.md`](./gut-lumen-sink.md)) requires the substrate (luminal urate) to be there before the enzyme can act. ABCG2 is the gate that controls substrate supply.
+Gut ABCG2 is the apical-membrane efflux transporter that moves urate from blood into the intestinal lumen, accounting for ~30% of daily urate elimination. It is a gout-relevant disposal weakness independent of any particular urate-degradation platform. Luminal uricase hypotheses add a downstream substrate-demand question, but they do not define ABCG2's importance.
 
-This page maps the pharmacological levers on ABCG2 in the gut: what suppresses it (closing the gate), what induces it (opening the gate), what specifically rescues the common gout-associated ABCG2 variant Q141K, and where the existing supplement stack accidentally fights the gut-lumen-sink mechanism.
+This page maps what suppresses intestinal ABCG2, what induces wild-type ABCG2, what might rescue the common Q141K trafficking defect, and which compounds create directionally conflicting evidence. Each mechanism requires tissue-selective exposure and functional urate-flux validation.
 
-The landscape was characterized through PubMed scans on 2026-04-26 with primary-source verification. Evidence tiers are tagged inline.
+Evidence tiers are tagged inline and primary sources are listed below.
 
 ---
 
@@ -73,7 +73,7 @@ Most ABCG2 literature conflates two mechanisms with opposite implications for th
 
 **Q141K trafficking rescue** is a third, distinct mode discussed in §6 — relevant only to carriers of the Q141K polymorphism but mechanistically different from both functional inhibition and transcriptional induction.
 
-> **Quantitative correction (2026-07-13):** [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) invalidated comp-019's ΔSUA and genotype ordering. Increasing functional ABCG2 can plausibly supply more substrate to a luminal sink, but the magnitude and genotype interaction are unmeasured. The earlier “triple-mechanism” PDB-butyrate claim is also reopened because Basseville did not test PDB-derived butyrate and CBT2.0 carbon fate is unresolved; see [purine-degrading bacteria](./purine-degrading-bacteria.md) and validation experiments [1.14](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens-tnf-butyrate-rescue-lactoferrin-synergy) and [1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test).
+> **Quantitative boundary:** [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) invalidates comp-019's ΔSUA and genotype ordering. Increasing functional ABCG2 can plausibly supply more substrate to a luminal sink, but the magnitude and genotype interaction are unmeasured. The PDB-butyrate “triple-mechanism” claim is unresolved because Basseville did not test PDB-derived butyrate and CBT2.0 carbon fate is unknown; see [purine-degrading bacteria](./purine-degrading-bacteria.md) and validation experiments [1.14](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens-tnf-butyrate-rescue-lactoferrin-synergy) and [1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test).
 
 ---
 
@@ -92,7 +92,7 @@ The most authoritative review of ABCG2/BCRP transcriptional regulation across ti
 
 (All Mechanistic Extrapolation + In Vitro / Animal Model unless specifically tagged as Clinical.)
 
-**Key correction relative to first-pass deep dive:** The original framing of "butyrate → HDAC inhibition → ABCG2 induction via HNF4α" was incomplete. Per Xie et al. 2020 (*Acta Pharmacologica Sinica*, PMID 32555444; [DOI](https://doi.org/10.1038/s41401-020-0402-x)), butyrate has **two independent effects** on intestinal transporters:
+Per Xie et al. 2020 (*Acta Pharmacologica Sinica*, PMID 32555444; [DOI](https://doi.org/10.1038/s41401-020-0402-x)), butyrate has **two independent effects** on intestinal transporters:
 
 - **HDAC inhibition** → P-gp (ABCB1) downregulation via NF-κB / p65 — a separate phenomenon affecting drug-efflux pumps, not directly relevant to urate.
 - **PPARγ activation** → BCRP / ABCG2 induction — the urate-relevant effect.
@@ -109,11 +109,11 @@ What is making the gate leaky in the typical gout patient:
 
 ### 1. Sex-dimorphic intestinal ABCG2 — covered in [`androgen-urate-axis.md`](./androgen-urate-axis.md)
 
-**[REFRAMED 2026-05-07 per [comp-016 evidence-mining](./t-abcg2-suppression-evidence-mining-computational.md).]** Earlier framing here described "AR-mediated transcriptional repression of ABCG2 in gut and kidney." The comp-016 17-study primary-literature scan found **zero** primary studies demonstrating direct androgen-driven suppression of intestinal ABCG2 in vivo. No published ChIP-seq locates a classical androgen response element on the ABCG2 promoter. The closest mechanistic anchor (Jeong 2015 LNCaP, PMID 25615818) is an indirect CREB/CRTC2 axis in **prostate cancer cells**, not intestinal epithelium. One in vitro study (Klyushova 2023 Caco-2) shows testosterone INCREASES ABCG2 via PXR/FXR — opposite direction to the prior framing. MacLean 2008 (PMID 18378562) found NO sex difference in healthy rat intestinal ABCG2 across all four segments.
+**Current evidence boundary.** [Comp-016](./t-abcg2-suppression-evidence-mining-computational.md) found **zero** primary studies demonstrating direct androgen-driven suppression of intestinal ABCG2 in vivo. No published ChIP-seq locates a classical androgen response element on the ABCG2 promoter. The closest mechanistic anchor (Jeong 2015 LNCaP, PMID 25615818) is an indirect CREB/CRTC2 axis in **prostate cancer cells**, not intestinal epithelium. Klyushova 2023 shows testosterone increases ABCG2 via PXR/FXR in Caco-2 cells, and MacLean 2008 found no sex difference in healthy rat intestinal ABCG2 across all four segments.
 
-**Updated framing** [refined post-[comp-017](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md) full-text re-read 2026-05-07]: Intestinal ABCG2 is sex-dimorphic in a urate-relevant way (Hoque 2020 Nat Commun PMID 32488095 — male Q140K mice show **78% Western-jejunum / 88% combined Western+IHC** intestinal ABCG2 protein loss + severe hyperuricemia; female Q140K mice protected), but the mechanistic driver is **estradiol POSITIVE on the female side via PI3K/Akt** (Yu 2021 Nutr Metab PMID 34144706, In Vitro + Animal Model — **at strong-pharmacological E2 tier (100 µM, 5–6 orders above physiological); magnitude at physiological E2 unestablished per comp-017**), not androgen NEGATIVE on the male side. The male-female asymptote difference at healthy baseline is empirically near-null (MacLean 2008, replicated by Tubic-Grozdanis 2020) and only emerges under disease state (e.g., Q141K-positive gout patients per Hoque 2020) or strong-pharmacological perturbation. The renal arm of the androgen-urate axis IS partially supported (Hosoyamada/Takiue 2010 PMID 20589576: T → URAT1 mRNA in mouse kidney; **NEW per comp-017 full-text re-read: T → URAT1 protein UNCHANGED in non-orchiectomized animals; the actual protein-level renal drivers are Smct1 protein induction + GLUT9 attenuation**) — but this is renal, not intestinal.
+**Current interpretation:** Intestinal ABCG2 is sex-dimorphic in a urate-relevant way (Hoque 2020 Nat Commun PMID 32488095 — male Q140K mice show **78% Western-jejunum / 88% combined Western+IHC** intestinal ABCG2 protein loss + severe hyperuricemia; female Q140K mice protected), but the mechanistic driver is **estradiol positive on the female side via PI3K/Akt** (Yu 2021 Nutr Metab PMID 34144706, In Vitro + Animal Model — **at strong-pharmacological E2 tier; magnitude at physiological E2 unestablished per comp-017**), not androgen negative on the male side. Healthy-baseline sex differences are near-null and emerge under disease-state or strong-pharmacological perturbation. The renal arm is partially supported: testosterone increased URAT1 mRNA but not protein, while Smct1 induction and GLUT9 attenuation were the protein-level changes. This is renal, not intestinal.
 
-**Klyushova 2023 nuance** [post-[comp-017](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md) full-text re-read]: ALL three sex hormones (T, E2, P) at all three concentrations (1, 10, 100 µM — lowest active 30–100× above physiological free T) INCREASE Caco-2 ABCG2 via PXR/FXR. This is a **xenobiotic-sensor response, not hormone-receptor-specific**. The "T INDUCES not suppresses" framing direction is correct; the mechanism is xenobiotic-tier promiscuous induction.
+**Klyushova 2023 nuance:** all three sex hormones (T, E2, P) at 1, 10, and 100 µM increased Caco-2 ABCG2 via PXR/FXR. This is a **xenobiotic-sensor response, not hormone-receptor-specific**; the lowest active testosterone concentration is 30–100× above physiological free testosterone.
 
 **Clinical-cohort anchoring** (cohort-level, mechanism-not-isolated-to-intestine): Sakamoto 2018 (PMID 30557349) reports −0.66 mg/dL serum UA at 6 months ADT (n=150 ADT vs 339 surgery); Yahyaoui 2008 PMID 18349066 confirms FtM cross-sex T administration raises serum UA + decreases FEUA over 2 years. These are real and clinically meaningful but consistent with URAT1 mRNA + Smct1 protein + GLUT9 attenuation (renal mechanism) being the dominant transporter axis affected; they do NOT distinguish the intestinal ABCG2 mechanism. (Clinical — observational, not RCT.)
 
@@ -184,7 +184,7 @@ Ranked roughly by evidence + safety + tissue selectivity:
 - **Mechanism:** Empirically uncharacterized. Could be transcriptional (PPARγ / HNF4α / AhR / Nrf2 — none tested), chaperone-class trafficking rescue (analogous to UDCA / TUDCA per comp-032), or class I HDAC inhibition (no HDAC isoform was tested). The unidentified mechanism is itself the highest-leverage open question.
 - **Anchoring evidence:** Sun et al. 2021, *Front Pharmacol* (PMID 33651969). Hyperuricemic mouse model. Both ethanol and water extracts significantly elevated intestinal ABCG2 mRNA + protein. Water extract effect magnitude **exceeded benzbromarone positive control** (p < 0.01). Concurrent UA-lowering via XO inhibition + renal protection. **Animal Model.**
 - **Five computationally predicted bioactives** (PubChem CIDs 267, 277, 13824, 15730, 5759) docked to ABCG2; in vitro validation not yet performed. Pachymic acid mentioned only as HPLC reference standard, not implicated as active agent.
-- **Traditional context:** Poria cocos is a canonical ingredient of Si Miao San (the gout-indicated TCM formula already surveyed by comp-013) and Wu Ling San (the canonical urinary-tract / fluid-metabolism formula). Per comp-013's `inputs/compounds.json`, Poria cocos was implicitly included via the Si Miao San source citation but NOT separately spawned as a compound source — exactly the formula-completeness gap flagged in the 2026-05-19 query-framing retrospective audit.
+- **Traditional context:** Poria cocos is a canonical ingredient of Si Miao San and Wu Ling San. comp-013 included Poria implicitly through the Si Miao San source but did not evaluate it as a separate compound source, leaving formula-level coverage incomplete.
 - **Practical lever:** Poria cocos extract is widely available as a TCM supplement (5-15g daily of decoction or 1-3g of standardized extract is the canonical dose range). Mechanism uncertainty makes off-label dosing for ABCG2 induction premature.
 - **Tissue selectivity:** Not characterized.
 - **Next move:** Caco-2 transwell assay (sister to §1.14 butyrate dose-response arm) — pachymic acid + polyporenic acid C + dehydroeburicoic acid panel against ABCG2 expression + Q141K trafficking. Marginal cost <$2K on existing infrastructure. **High platform-relevance: closes the mechanism question on a TCM-grade compound that already has robust in-vivo HUA evidence.**
@@ -235,15 +235,15 @@ The first route has supporting evidence; the second is mechanistic extrapolation
 
 A pharmacogenomic-stratified study could test the differential-response hypothesis, but serum UA alone would not identify the mechanism; exposure, surface trafficking, and functional urate flux are required.
 
-**Attribution and concentration caveat (corrected 2026-07-13):** Basseville 2012 established pharmacological/chemical-chaperone rescue of Q141K ABCG2, not direct rescue by 1–5 mM butyrate. Butyrate is a proposed food-grade HDAC-directed test compound. Its ability to reproduce Q141K surface trafficking and functional urate efflux—and the epithelial exposure required—must be established directly in validation §1.14 before any in-vivo rescue claim.
+**Attribution and concentration boundary:** Basseville 2012 established pharmacological/chemical-chaperone rescue of Q141K ABCG2, not direct rescue by 1–5 mM butyrate. Butyrate is a proposed food-grade HDAC-directed test compound. Its ability to reproduce Q141K surface trafficking and functional urate efflux—and the epithelial exposure required—must be established directly in validation §1.14 before any in-vivo rescue claim.
 
 **Genotype-source framing — clinical, not consumer.** The trial must generate its own genotype data at enrollment via a CLIA-certified clinical PCR assay for rs2231142 (Quest, LabCorp, or equivalent single-SNP genotyping; ~$40–80 per patient at clinical-lab pricing). Consumer-grade genotype exports (23andMe, Ancestry, etc.) are explicitly excluded as the data source — not as a personal-preference call but for trial-design rigor: reproducibility, documented assay performance, sample-chain-of-custody, and CLIA-grade QA are all preconditions for a publishable pharmacogenomic stratification. The trial framing is therefore agnostic at recruitment (no presumed prior genotype knowledge); patients are screened, genotyped on-site, and assigned to arms by the trial's own assay.
 
 **Population-frequency caveat for trial design.** Q141K allele frequency varies substantially by ancestry. A pharmacogenomic fiber trial should pre-specify population and power genotype strata, but it must test rather than assume a Q141K-specific butyrate response or allele-dose scaling.
 
-On-site clinical genotyping is still required for a publishable stratified study. Sample size must be calculated from pilot data rather than the earlier assumed Q141K-conditional effect.
+On-site clinical genotyping is required for a publishable stratified study. Sample size must be calculated from pilot data because no Q141K-conditional effect size is established.
 
-### Pharmacological-chaperone route — orthogonal small-molecule rescue (added 2026-05-16)
+### Pharmacological-chaperone route — orthogonal small-molecule rescue
 
 Pharmacologic HDAC-inhibitor rescue is one demonstrated in-vitro strategy for Q141K; butyrate is only a candidate within that strategy. A distinct hypothesis is a **pharmacological chaperone** that binds and stabilizes the misfolded protein. CFTR correctors provide class precedent, but no validated ABCG2 Q141K candidate exists.
 
@@ -254,7 +254,7 @@ This route is mechanistically orthogonal to the butyrate / HDAC track: a chapero
 - Daily-pill modality via compounding pharmacy if a hit is found among FDA-approved molecules (off-label / 503A) — see [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md).
 - Stacks additively with the HDI rescue (different mechanism, same target outcome).
 
-The full chassis-pending entry is at [`chassis-pending-interventions.md` §7 "Pharmacological chaperones for ABCG2 Q141K folding rescue"](./chassis-pending-interventions.md). The cheapest first move — AlphaFold Q141K structure + virtual screen of FDA-approved molecules — was run as [comp-032](./abcg2-q141k-chaperone-screen-computational.md) (2026-05-16) and then **superseded by [comp-047](./abcg2-q141k-chaperone-rescreen-computational.md) (2026-07-14, real AutoDock Vina docking) → INCONCLUSIVE.** comp-032's GREEN was a descriptor/class-prior heuristic whose positive-control validation was tautological (comp-review 2026-07-13); when comp-047 re-ran the screen with real docking and no class prior, the CFTR-corrector positive controls **failed to earn rank** (0/4). **The list below is comp-032's prior-ranked hypotheses — NOT validated wet-lab priorities, NOT empirically supported chaperone candidates.** It is retained only as a hypothesis-generation starting point for a folding-ΔΔG or wet-lab study; do not act on it as a ranking:
+The full chassis-pending entry is at [`chassis-pending-interventions.md` §7 "Pharmacological chaperones for ABCG2 Q141K folding rescue"](./chassis-pending-interventions.md). **[comp-047](./abcg2-q141k-chaperone-rescreen-computational.md) supersedes [comp-032](./abcg2-q141k-chaperone-screen-computational.md) and is INCONCLUSIVE.** comp-032's GREEN depended on a descriptor/class-prior heuristic with tautological positive-control validation. In comp-047's AutoDock Vina screen without the class prior, the CFTR-corrector positive controls failed to earn rank (0/4). **The list below contains comp-032's hypothesis-generating priors, not validated wet-lab priorities or empirically supported chaperone candidates:**
 
 1. **Lumacaftor** (Tier 2, CFTR corrector) — strongest mechanistic prior; same ABC superfamily; on-patent for CF (Vertex), navigate patent landscape for off-label 503A
 2. **Tafamidis** (Tier 2, TTR tetramer stabilizer) — aromatic-acid stabilizer at hydrophobic interface; misfolded-state selective
@@ -268,7 +268,7 @@ The full chassis-pending entry is at [`chassis-pending-interventions.md` §7 "Ph
 
 ## The substrate-supply chokepoint — the sink and the Q141K rescue are one question
 
-Everything on this page treats ABCG2 modulation as a lever. It is worth naming *why* that lever is load-bearing: the [gut-lumen uricase sink](./gut-lumen-sink.md) can only degrade urate that ABCG2 delivers to the lumen. **The sink's substrate supply is this pump's output.** So the Q141K rescue axis and the gut-lumen-sink thesis are not two parallel tracks — they share one bottleneck. Q141K throttles apical ABCG2 trafficking, so in a Q141K carrier the pump that fuels the sink is throttled, and the platform's core question collapses to one: does the engineered strain's uricase output exceed the Q141K-limited ABCG2 flux, or is the transporter the rate-limiter?
+The [gut-lumen uricase sink](./gut-lumen-sink.md) can degrade only the urate delivered to the lumen. **Its substrate supply is ABCG2 output.** Q141K rescue and luminal uricase therefore share one bottleneck: whether engineered-strain uricase capacity exceeds Q141K-limited ABCG2 flux or the transporter remains rate-limiting.
 
 If transporter supply proves rate-limiting, WT induction and Q141K rescue become separate engineering questions. The shared wet-lab resolver is [`validation-experiments.md` §1.14](./validation-experiments.md); no rescue layer is load-bearing until that assay establishes functional urate flux.
 
@@ -286,15 +286,13 @@ ABCG2 is expressed at multiple barrier sites with different physiological roles:
 | Placenta | Effluxes drugs from fetal circulation | Clinically irrelevant for adult gout |
 | Hepatic canalicular membrane | Effluxes substrates into bile | Mixed — affects drug clearance kinetics |
 
-**Pick gut-selective inducers, not pan-tissue ones.** The HNF4α and PPARγ axes are relatively gut-enriched (PPARγ also adipose/liver but minimal BBB). PXR is the worst — gut/liver/BBB simultaneously, so rifampicin is a no-go for chronic use.
-
-A patient on chronic CNS-active medication (e.g., SSRIs, antipsychotics, anti-epileptics) should be cautious about pan-tissue ABCG2 inducers — measurable drug-level changes can result.
+**Research requirement:** distinguish gut-selective induction from pan-tissue transporter effects. HNF4α, PPARγ, and PXR have different tissue distributions and drug-interaction surfaces; a candidate must be tested in the relevant tissue and against clinically relevant transported drugs before it can be advanced.
 
 ---
 
-## The supplements-stack contradiction
+## Compound-interaction contradiction
 
-Several compounds in [`supplements-stack.md`](./supplements-stack.md) are functional ABCG2 inhibitors at typical supplement doses, even though they were added for anti-NLRP3 or anti-inflammatory reasons. **In androgen-dominant contexts, the stack may work pharmacologically against the gut-lumen-sink mechanism.**
+Several compounds in [`supplements-stack.md`](./supplements-stack.md) have functional ABCG2-inhibition evidence despite anti-NLRP3 or anti-inflammatory rationales. This creates a testable interaction hypothesis, not a reason to prescribe or prohibit a stack.
 
 Documented functional ABCG2 inhibitors at supplement-relevant doses:
 
@@ -305,24 +303,22 @@ Documented functional ABCG2 inhibitors at supplement-relevant doses:
 | EGCG | Functional BCRP inhibitor in pharmacology assays. Yu et al. 2024 (*Food Funct*, PMID 38757391) showed mouse PO-induced hyperuricemic model net-favorable effect on ABCG2/URAT1/GLUT9 expression at the tissue level — direction opposite to the in vitro inhibition story. Net clinical effect on gut sink: unresolved. | Mixed: pharmacology in vitro vs. animal model in vivo |
 | Genistein / soy isoflavones | Established BCRP substrate-inhibitor. Dietary intake from natto/miso is much smaller than supplement doses. | Pharmacology literature |
 
-**The EGCG paradox is not a one-off — it is a candidate tea-polyphenol class pattern (added 2026-06-01).** The EGCG in-vitro-inhibition / in-vivo-favorable split (above) is mirrored by its black-tea cousin: **theaflavins** are ABCG2/BCRP *substrates* in vitro (not inhibitors) yet *up-regulate* ABCG2 at the gene level in hyperuricemic mice while lowering serum urate (Tai et al. 2020, *J Funct Foods* 66:103803, attributed to Nrf2/HO-1 — see [`theaflavins.md` §2](./theaflavins.md)). Two independent tea polyphenols thus show the same pattern: acute pharmacological inhibition in a dish, net-favorable ABCG2 phenotype in a live animal. The unifying hypothesis is **hormetic, Nrf2-driven transcriptional up-regulation under chronic exposure** — the same mechanism by which [sulforaphane](./supplements-stack.md) (a corpus-documented ABCG2 *inducer*) works. This places EGCG and theaflavins provisionally in the Nrf2-inducer bucket rather than the net-inhibitor bucket, *for chronic dietary exposure*. **This remains a hypothesis, not a resolution** (per the open question below): the in vivo data are rodent and transcript-level, the Nrf2 mechanism is inferred, and the acute inhibition is real at high concentrated-extract doses (hence the high-dose stratification rows below). The dose-and-chronicity axis is the load-bearing variable — dietary tea plausibly favorable, mega-dose extract plausibly the opposite.
+**The EGCG paradox may be a tea-polyphenol class pattern.** The EGCG in-vitro-inhibition / in-vivo-favorable split (above) is mirrored by its black-tea cousin: **theaflavins** are ABCG2/BCRP *substrates* in vitro (not inhibitors) yet *up-regulate* ABCG2 at the gene level in hyperuricemic mice while lowering serum urate (Tai et al. 2020, *J Funct Foods* 66:103803, attributed to Nrf2/HO-1 — see [`theaflavins.md` §2](./theaflavins.md)). Two independent tea polyphenols thus show the same pattern: acute pharmacological inhibition in a dish, net-favorable ABCG2 phenotype in a live animal. The unifying hypothesis is **hormetic, Nrf2-driven transcriptional up-regulation under chronic exposure** — the same mechanism by which [sulforaphane](./supplements-stack.md) works. This places EGCG and theaflavins provisionally in the Nrf2-inducer bucket for chronic dietary exposure. **This remains a hypothesis, not a resolution**: the in vivo data are rodent and transcript-level, the Nrf2 mechanism is inferred, and acute inhibition is real at high concentrated-extract doses. The dose-and-chronicity axis is load-bearing.
 
-**Risk-tier stratification** (propagated from `supplements-stack.md` §"Stack-level contradictions" 2026-04-27; updated framing 2026-05-05):
+**Risk-tier stratification:**
 
-| User profile | ABCG2 status | Risk tier | Practical implication |
+| Research stratum | ABCG2 status | Concern | Experimental implication |
 |---|---|---|---|
 | Q141K homozygote + androgen-suppressed (TRT / SERM / AAS) + high-dose flavonoid (>500 mg quercetin OR >600 mg EGCG OR >500 mg curcumin) | Triple-hit suppressed | **Highest research concern** | Treat transporter capacity as a prospective vulnerability and control high-dose inhibitor exposure in experiments. Do not infer that fiber or butyrate rescues Q141K; no wild-type allele remains for the supported WT-induction route. |
-| Q141K heterozygote OR androgen-dominant (high-T, no SERM) + supplement-grade flavonoid | One axis suppressed + acute pharmacological inhibition | **High concern** | Meaningful gut-sink narrowing during the dose window. Time inhibitor flavonoids away from urate spikes (post-fructose meals, peri-flare). Acceptable with UA monitoring. |
-| Wild-type ABCG2 + supplement-grade flavonoid | Pharmacological inhibition only | **Moderate concern** | Net effect dose- and chronicity-dependent. Watch UA trajectory after introduction; down-titrate if UA rises. |
-| Any genotype + dietary-level flavonoid (onions, tea, turmeric, fermented soy at normal food portions) | Sub-Ki gut concentrations | **Minimal concern** | No restriction. Food-level intake is unlikely to be clinically significant for the gut sink. |
+| Q141K heterozygote OR androgen-dominant (high-T, no SERM) + supplement-grade flavonoid | One axis suppressed + acute pharmacological inhibition | **High concern** | Measure time-resolved exposure, ABCG2 function, and urate flux; do not infer a clinical timing rule. |
+| Wild-type ABCG2 + supplement-grade flavonoid | Pharmacological inhibition only | **Moderate concern** | Test dose and chronicity separately; transcript changes do not resolve acute functional inhibition. |
+| Any genotype + dietary-level flavonoid | Expected lower exposure | **Lower concern** | Include as a defined exposure stratum rather than assuming no effect. |
 
-Stratification matters because a blanket "avoid quercetin" message undermines compliance for the largest cohort (wild-type genotype, dietary intake) where the risk is essentially zero. The clinically meaningful signal concentrates in androgen-suppressed Q141K-positive readers at supplement-grade doses.
-
-**Practical inference for high-T or Q141K-positive patients:** avoid high-dose curcumin and quercetin acutely when the gut sink matters most (post-meal urate spikes, fructose challenges, etc.). Dietary-level intake of these compounds (turmeric in food, onions, tea) is unlikely to be problematic; supplement-grade doses are the concern.
+Stratification is an experimental necessity because genotype, androgen context, dose, gut segment, and chronicity may change direction. The current evidence does not support a blanket clinical rule for quercetin, curcumin, EGCG, or dietary flavonoids.
 
 This also surfaces a research-level open question: how much of the "non-responder" rate in nutraceutical gout RCTs is explained by ABCG2-inhibitor co-supplementation rather than by per-compound efficacy failure?
 
-### Gut-luminal metabolic stability resolves the CBD-vs-flavonoid inconsistency (added 2026-07-13)
+### Gut-luminal metabolic stability and the CBD-vs-flavonoid inconsistency
 
 The corpus contained an unstated contradiction: [`cannabinoids-terpenes.md`](./cannabinoids-terpenes.md) argues that CBD's poor oral bioavailability does **not** yield a high functional gut-luminal concentration, while the flavonoid ABCG2-inhibitor warning above rests on the opposite premise (poor absorption ⇒ high, functionally relevant luminal concentration). Both can be true — the discriminating variable is **gut-luminal metabolic stability × gut segment × in-vivo net direction**. A 2026-07-13 multilingual literature scan ([`logs/cbd-vs-flavonoid-gut-degradation-lit-scan-2026-07-13.md`](../logs/cbd-vs-flavonoid-gut-degradation-lit-scan-2026-07-13.md)) resolved each compound — the upshot is **stratify per compound, not one class rule**:
 
@@ -331,7 +327,7 @@ The corpus contained an unstated contradiction: [`cannabinoids-terpenes.md`](./c
 | **Curcumin** | Chemically unstable, colonic biotransformation — **but** functional inhibition demonstrated in a live primate ([Karibe 2018, PMID 29358184](https://doi.org/10.1124/dmd.117.078931)) | **HOLDS — strongest case** | Inhibitor (in vivo-confirmed) |
 | **Quercetin** | Dietary = glycosides → obligate bacterial deglycosylation + C-ring fission; genuine low-µM BCRP inhibitor in the **proximal** small intestine right after a dose, but catabolized before the colon ([Rechner 2004, PMID 14744633](https://doi.org/10.1016/j.freeradbiomed.2003.10.008); Di Pede 2020) | **PARTIAL** — holds proximally/acutely, overstated for colonic/sustained concentration | Inhibitor (proximal-gut window only) |
 | **EGCG** | Unstable at intestinal pH → gallocatechin + gallic acid; ring-fissioned by microbiota; net-**favorable** ABCG2/URAT1/GLUT9 phenotype in vivo ([Yu 2024, PMID 38757391](https://doi.org/10.1039/d3fo05606f)) | **MOST OVERSTATED** — parent doesn't persist; in vivo net-favorable | Move to **Nrf2-inducer bucket** (with theaflavins) |
-| **CBD** | Not degraded by colonic microbes as previously stated — actual fate is **lipid/fecal sequestration + gastric-acid lability + host metabolism**; and CBD is not an ABCG2 inhibitor anyway (target P2X7/NLRP3) | N/A — never an ABCG2-inhibitor story | Neither |
+| **CBD** | Predominant fate is **lipid/fecal sequestration + gastric-acid lability + host metabolism**, not colonic microbial degradation; CBD is not an ABCG2 inhibitor (target P2X7/NLRP3) | N/A — not an ABCG2-inhibitor mechanism | Neither |
 
 **The class warning does not stand as written — it needs per-compound stratification.** Curcumin earns the strongest warning (in vivo primate); quercetin is a real but *proximal-gut-only* inhibitor; EGCG likely belongs with the favorable Nrf2 inducers (consistent with the theaflavins reclassification, §"The EGCG paradox is not a one-off" above). The CBD "gets degraded" logic generalizes cleanly to EGCG, partly to quercetin, and **not** to curcumin (the counterexample).
 
@@ -381,29 +377,29 @@ Khosroshahi et al. 2019, *Nutrition & Metabolism* ([DOI](https://doi.org/10.1186
 
 ---
 
-## Engineering implications
+## Experimental and delivery implications
 
-### For the engineered koji (uricase + lactoferrin endgame strain)
+### Substrate-supply hypotheses
 
-Three potential additions to the koji configuration that would couple substrate supply (ABCG2 induction) with substrate degradation (uricase):
+Three mechanisms could couple ABCG2 substrate supply to luminal urate degradation. They must be tested independently of the production route:
 
-1. **Glucoraphanin co-production.** *A. oryzae* can be cultured on cruciferous substrates (or engineered to produce glucoraphanin from glucose precursors). Glucoraphanin is the sulforaphane precursor; gut myrosinase from cruciferous-resident bacteria converts it to active sulforaphane. Co-delivery of uricase + glucoraphanin would pair "degrade urate in lumen" with "induce more urate transport into lumen" in a single product. **Speculative — synthetic biology feasibility not yet assessed for this specific coupling.**
+1. **Glucoraphanin substrate supply.** Test conversion to sulforaphane, intestinal ABCG2 protein and function, luminal urate, and tissue selectivity before evaluating dietary, microbial, or engineered delivery. **Speculative.**
 
-2. **Resistant-starch-rich substrate.** The koji rice itself is the substrate. Engineering or selecting rice strains with higher resistant-starch content → more colonic butyrate → more PPARγ drive on ABCG2. The protein/enzyme delivery vehicle becomes a fiber-delivery vehicle simultaneously. **Mechanistically plausible; needs quantification of incremental SCFA yield from engineered vs. wild-type substrate.**
+2. **Resistant-starch substrate.** Test incremental SCFA production, epithelial exposure, PPARγ dependence, and functional ABCG2 urate flux. **Mechanistically plausible; unvalidated.**
 
-3. **Tryptophan-pathway probiotic co-strain.** *L. reuteri* or similar AhR-agonist-producing strain co-formulated with the engineered *S. boulardii* or *S. cerevisiae* uricase strain. Each contributes a different mechanism to the gut sink. **Speculative — strain compatibility under fermentation conditions and survival post-ingestion not yet established.**
+3. **Tryptophan-pathway microbial route.** Test AhR engagement, ABCG2 function, luminal urate, compatibility, and survival before selecting an organism or co-formulation. **Speculative.**
 
-### For an engineered LBP peer track (commercial-pharmaceutical chassis)
+### Sustained local butyrate hypothesis
 
 The supported LBP rationale is sustained local butyrate for PPARγ-mediated wild-type ABCG2 induction. Direct Q141K trafficking rescue by butyrate is an unvalidated extension and cannot make the route genotype-agnostic. Oral and LBP delivery also require measured colonic and epithelial exposure.
 
 **An engineered colonically resident butyrate producer is a testable bioavailability hypothesis, not a solved delivery system.** *Faecalibacterium prausnitzii* is one candidate chassis because it natively produces butyrate in the colon, but the route requires a workable engineering toolkit plus measured colonization density, butyrate titer, dosing durability, and epithelial exposure. No quarterly-capsule or continuous-crypt-exposure claim is established.
 
-This is a **commercial-pharmaceutical research track**, not a home-fermentation route: an obligate-anaerobe product would require anaerobic manufacturing, stabilization, and an LBP regulatory path. See [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md). Patient-population claims remain premature, especially for Q141K, until direct rescue and delivery are demonstrated.
+Manufacturing, stabilization, and regulatory route are downstream constraints. Patient-population claims remain premature, especially for Q141K, until direct rescue, epithelial exposure, and functional urate flux are demonstrated.
 
-### For the supplements stack catalog
+### Compound catalog requirement
 
-Per-compound stack-interaction fields including ABCG2 status should be a required field for any new compound considered for [`supplements-stack.md`](./supplements-stack.md). The four functional inhibitors documented above are the current contradiction set; new entries that meet that pharmacology profile should carry a counter-indication note for high-T or Q141K-positive readers.
+Each compound dossier should record acute ABCG2 function, chronic expression effects, tissue context, genotype interaction, and evidence level. Conflicting signals should generate an experiment, not a patient-facing contraindication unless established clinical evidence supports one.
 
 ---
 
@@ -413,7 +409,7 @@ Per-compound stack-interaction fields including ABCG2 status should be a require
 
 2. **Tissue-selective PPARγ agonists.** Pharmacology question: are there PPARγ agonists with gut-enrichment selectivity (sparing adipose, liver, BBB)? Selective PPARγ modulators (SPPARMs) are an active drug-development area; some have differential tissue activity. Worth a desk review.
 
-3. **Engineered koji + glucoraphanin co-production.** Synthetic biology desk review: is co-expression of glucoraphanin biosynthetic pathway feasible in *A. oryzae*? The plant pathway involves several enzymes; whether a fungal host can support it is open.
+3. **Glucoraphanin delivery.** After biological target engagement is established, which dietary, microbial, or engineered route provides reproducible intestinal exposure?
 
 4. **EGCG net effect on the gut sink.** Yu 2024 (PMID 38757391) shows favorable in vivo phenotype despite EGCG being a known functional ABCG2 inhibitor in vitro. Resolution requires direct in vivo measurement of gut ABCG2 protein/function before and after EGCG dosing in a relevant model.
 
@@ -438,5 +434,3 @@ All claims tagged with evidence level: **Clinical Trial / Animal Model / In Vitr
 - **Human RCT — inulin in CKD (positive):** He et al. 2021 ([DOI](https://doi.org/10.1007/s00394-021-02669-y), PMID 34491388).
 - **Meta-analysis — fiber in CKD (UA null):** Wathanavasin et al. 2025 ([DOI](https://doi.org/10.3390/toxins17020057), PMID 39998074).
 - **NFIB regulation:** Solbakk et al. 2025 ([DOI](https://doi.org/10.1016/j.dmd.2025.100100), PMID 40554316).
-
-Information retrieved via PubMed on 2026-04-26.

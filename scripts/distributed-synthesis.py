@@ -327,6 +327,7 @@ def extraction_prompt(shard: list[dict[str, Any]], residue: bool) -> str:
     header = f"""Mission: {MISSION}
 {mode}
 Read every SOURCE_SECTION in full. Do not summarize the document. Do not reconcile or improve claims.
+Do not emit authoring history, page-creation timing, sweep/review provenance, or corpus-placement narration as scientific atoms.
 Return one JSON object: {{"atoms": [{{"type": one of {sorted(ATOM_TYPES)}, "statement": "atomic statement", "section_id": "supplied id", "path": "supplied path", "start_line": int, "end_line": int, "evidence_level": "Clinical Trial|Animal Model|In Vitro|Mechanistic Extrapolation|Computational|Project decision|Unstated", "excerpt": "short exact source excerpt", "domain": "supplied domain", "dispute": "optional"}}], "covered_section_ids": ["every supplied id"]}}.
 Every supplied section id must appear in covered_section_ids even when it yields no atoms.
 """
@@ -395,7 +396,7 @@ def bridge_prompt(domain_a: str, domain_b: str, atoms_a: list[dict[str, Any]], a
     ]
     return f"""Mission: {MISSION}
 Compare the COMPLETE atomic ledgers for domains {domain_a} and {domain_b}. Trigger paths are attention hints, never scope filters: {triggers}.
-Seek non-obvious connections, contradictions, transferable engineering patterns, shared constraints, discriminating experiments, and real project assumptions worth challenging. Do not invent a project claim to rebut. A track-local failure is not mission failure. Suppress restatements of this active queue:\n{active_queue_fingerprints()}
+Seek non-obvious connections, contradictions, transferable engineering patterns, shared constraints, discriminating experiments, and real project assumptions worth challenging. Do not invent a project claim to rebut. A track-local failure is not mission failure. Do not rank an intervention by fit with the current yeast or koji work; production and chassis enter only when they change the hypothesized source, delivery, or experiment. Suppress restatements of this active queue:\n{active_queue_fingerprints()}
 Return JSON {{"compared_domains": ["{domain_a}", "{domain_b}"], "candidates": [{{"type": "connection|contradiction|experiment|open-question|priority-action|riskiest-assumption|most-curious-thread", "headline": "...", "hypothesis": "...", "atom_ids": ["at least one from each domain unless contradiction is intra-constraint"], "why_novel": "..."}}]}}. Emit at most the single strongest genuinely novel candidate for this pair; use an empty array rather than a weak restatement.
 DOMAIN_A_ATOMS={json.dumps(compact(atoms_a), ensure_ascii=False)}
 DOMAIN_B_ATOMS={json.dumps(compact(atoms_b), ensure_ascii=False)}
@@ -480,7 +481,7 @@ def exact_source_packet(candidate: dict[str, Any], atom_by_id: dict[str, dict[st
 
 def review_prompt(packet: dict[str, Any]) -> str:
     return f"""Mission: {MISSION}
-You are the independent adversarial reviewer. Judge this candidate only from the rehydrated raw sources, exact computational support, and contrary evidence below. Verify evidence tiers; reject invented project claims and restatements; test compartment, dose, timing, topology, host, assay, population, and safety constraints. A negative result kills only the supported scope. `eligible_with_warning` is not clean: every COMP receipt's `lane_adjudication.synthesis_allowed_scope` and `forbidden_inferences` is binding. Reject any candidate that exceeds that scope, and carry the limitations into the promoted text. If genuinely novel and actionable, give the cheapest discriminating next step.
+You are the independent adversarial reviewer. Judge this candidate only from the rehydrated raw sources, exact computational support, and contrary evidence below. Verify evidence tiers; reject invented project claims, restatements, editorial history, and chassis-fit rankings that are not load-bearing to source or delivery; test compartment, dose, timing, topology, host, assay, population, and safety constraints. A negative result kills only the supported scope. `eligible_with_warning` is not clean: every COMP receipt's `lane_adjudication.synthesis_allowed_scope` and `forbidden_inferences` is binding. Reject any candidate that exceeds that scope, and carry the limitations into the promoted text. If genuinely novel and actionable, give the cheapest discriminating next step.
 Return JSON {{"status": "supported|partial|contradicted|restatement|speculative-but-testable|rejected", "promote": true|false, "type": "connection|contradiction|experiment|open-question|priority-action|riskiest-assumption|most-curious-thread", "headline": "...", "body": "grounded Markdown with source paths and evidence levels", "review": "concise adversarial verdict", "cheapest_next_step": "... or none", "comp_limitations_carried": ["..."]}}.
 PACKET={json.dumps(packet, ensure_ascii=False)}
 """

@@ -24,6 +24,7 @@ comp_review = load("comp_review_test", ROOT / "scripts" / "comp-review.py")
 manifest = load("comp_manifest_test", ROOT / "scripts" / "comp-review-manifest.py")
 distributed = load("distributed_synthesis_test", ROOT / "scripts" / "distributed-synthesis.py")
 normalize = load("distributed_normalize_test", ROOT / "scripts" / "synthesis_normalize.py")
+hygiene = load("corpus_hygiene_test", ROOT / "scripts" / "check-corpus-hygiene.py")
 
 
 class CompReviewContractTests(unittest.TestCase):
@@ -103,6 +104,36 @@ Long review-history material.
         self.assertIn('tracked_only=args.phase == "push"', source)
         self.assertIn('["git", "ls-files", "--", relative(comp_dir)]', source)
         self.assertIn('and "reviews" not in rel.parts', source)
+
+    def test_reader_contract_has_deterministic_residue_guards(self):
+        patterns = hygiene.READER_RESIDUE_PATTERNS
+        self.assertRegex("Why this page exists", patterns["wiki-discovery narration"])
+        self.assertRegex(
+            "Not producible in engineered yeast or koji",
+            patterns["default chassis disqualification"],
+        )
+        self.assertRegex(
+            "For Brian as of 2026-05-08",
+            patterns["personalized stack protocol"],
+        )
+        self.assertRegex("like sourdough", patterns["invented sourdough premise"])
+        self.assertRegex("the canonical protocol", patterns["wiki-discovery narration"])
+        self.assertRegex(
+            "the wiki currently attributes",
+            patterns["wiki-discovery narration"],
+        )
+        self.assertRegex(
+            "(added 2026-05-08)",
+            patterns["editorial timestamp"],
+        )
+
+    def test_synthesis_ignores_editorial_history_and_chassis_defaulting(self):
+        source = (ROOT / "scripts/distributed-synthesis.py").read_text()
+        self.assertIn("Do not emit authoring history", source)
+        self.assertIn("Do not rank an intervention by fit", source)
+
+    def test_index_catalog_has_a_concise_entry_budget(self):
+        self.assertLessEqual(hygiene.INDEX_ENTRY_MAX_CHARS, 420)
 
 
 class WorkflowTriggerTests(unittest.TestCase):

@@ -33,17 +33,17 @@ status: scope-page
 
 # siRNA Against URAT1 — Discovery-Engine Output, Kidney-Tropic Modality
 
-**Status:** scope-page (2026-05-05). Dedicated page formalizing the kidney-tropic siRNA / URAT1 vector flagged in [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) as the cleanest "elegant solution" in the matrix's open-exploration queue. Phase 2 follow-ups (lit scans on conjugate chemistry, commercial / clinical landscape, regulatory path; comp-009 target site selection; falsification card H03; comparative analysis vs. existing small-molecule URAT1 inhibitors) are tracked in [Open Follow-Ups](#open-follow-ups).
+**Status:** scope page. Kidney-tropic siRNA against URAT1 is an open exploration vector from [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md). Lit scans, comp-009 target-site selection, falsification card H03, and comparison with small-molecule URAT1 inhibitors are tracked in [Open Follow-Ups](#open-follow-ups).
 
 ---
 
-## Why this page exists
+## Research question
 
-[`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) ranks kidney-tropic siRNA against URAT1 as the **#1 open exploration vector** — "the cleanest 'elegant solution' in the entire matrix." The 2026-05-05 sweep Open Question / Priority Action #3 formalizes this as a dedicated page.
+Can kidney-tropic delivery make sequence-specific URAT1 knockdown a safer or more durable way to reduce renal urate reabsorption than existing small molecules? The hypothesis is independently falsifiable through delivery, knockdown, selectivity, durability, and safety gates.
 
 The mission is to use red-teaming to identify exploitable weaknesses in gout and creative engineering to exploit them. Kidney-tropic siRNA is one independently falsifiable route, alongside [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md), koji, small molecules, and other modalities.
 
-**This vector is fundamentally non-fermentable.** Kidney-tropic siRNA biologics require synthetic oligonucleotide chemistry, conjugate or LNP formulation, IV / subcutaneous delivery, and the FDA biologic regulatory pathway. There is no microbial chassis that produces a kidney-tropic siRNA conjugate. This vector therefore lives in the **discovery-engine output** half of Open Enzyme's two-output architecture (per [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §2.2 "The repurposing surface" — non-microbial mechanism candidates the platform identifies but does not itself manufacture). Parallel to how zileuton, disulfiram, and avacopan appear in the OE corpus as repurposing candidates (small-molecule pharma drugs the platform recommends but does not engineer), siRNA against URAT1 is positioned as a *discovery-engine output* the platform scopes, characterizes, and publishes — for partner companies, academic groups, or future spinouts to actually develop.
+Kidney-tropic siRNA requires synthetic oligonucleotide chemistry plus conjugate or LNP formulation for IV or subcutaneous delivery. It is therefore a **discovery-engine output**, not a microbial-production program: Open Enzyme can scope the target, sequence, delivery requirements, and falsification criteria while downstream development would require an appropriate oligonucleotide and delivery platform.
 
 ---
 
@@ -135,7 +135,7 @@ The three tracks sample different design constraints. Their rankings should chan
 
 ## Open Follow-Ups
 
-Six in-silico follow-ups require no pharma partner to start. This page is the canonical track list; other surfaces should link here rather than duplicate it.
+Six in-silico follow-ups require no pharma partner to start. Other surfaces should link to this list rather than duplicate it.
 
 | ID | Item | Type | Status |
 |---|---|---|---|

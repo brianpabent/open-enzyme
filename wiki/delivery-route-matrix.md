@@ -24,7 +24,6 @@ related:
   - etc/open-enzyme-vision.md
   - etc/open-source-platform.md
 sources:
-  - "2026-05-15 conversation: 'are we exploring all available delivery mechanisms, or do we have blinders because of the oral koji chassis?'"
   - "Existing wiki coverage: uricase.md §Hydrogen Peroxide Byproduct; engineered-koji-protocol.md §The Hydrogen Peroxide Question; aspergillus-oryzae.md §Hydrogen Peroxide Byproduct Management; bpc-157.md §Delivery Routes; peptide-gout-addendum.md §Delivery Routes and Bioavailability; compounding-pharmacy-track.md"
   - "Schiavon, Veronese et al. uricase-catalase fusion / co-encapsulation literature (early 2000s)"
   - "SEL-212 (Selecta Biosciences) pegadricase + ImmTOR PLGA-rapamycin tolerogenic-NP co-administration; Sands 2022 Nat Commun PMID 35022448"
@@ -33,15 +32,15 @@ status: published
 
 # Delivery Route × Compound Class Matrix — Exploration Surface
 
-## Why this page exists
+## Research question
 
 [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) is anchored on the **target** axis — where in the body each modality acts. That page surfaces "what mechanisms haven't we considered." It does not surface a different, equally load-bearing question: **for each compound class we already have a candidate for, have we explored all available delivery routes?**
 
-The risk this page exists to mitigate is path-dependent narrowing of the **delivery** search space. Several developed tracks (engineered koji, *S. boulardii*, and LBPs) are intrinsically oral, so route choice can be inherited without being challenged. The 503A/503B compounding-pharmacy track ([`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md)) opens the small-molecule formulation surface, although its current emphasis is oral repurposing. The peptide layer ([`bpc-157.md`](./bpc-157.md), [`peptide-gout-addendum.md`](./peptide-gout-addendum.md)) is the only compound class where multi-route coverage (SC, intranasal, oral, transdermal, intra-articular) is already a first-class question in the wiki.
+This matrix tests the **delivery** search space for path-dependent narrowing. Several developed tracks (engineered koji, *S. boulardii*, and LBPs) are intrinsically oral, so route choice can be inherited without being challenged. The 503A/503B compounding-pharmacy track ([`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md)) opens the small-molecule formulation surface, although its current emphasis is oral repurposing. The peptide layer ([`bpc-157.md`](./bpc-157.md), [`peptide-gout-addendum.md`](./peptide-gout-addendum.md)) is the only compound class where multi-route coverage (SC, intranasal, oral, transdermal, intra-articular) is already a first-class question in the wiki.
 
 Outside the peptide row, the platform mostly inherits "oral" as the assumed route and treats other routes as "those are pharma" — a frame that conflates the *chassis economics* (why we picked oral koji) with the *engineering layer's portability* (the strain produces protein that could in principle feed multiple downstream formulation formats).
 
-This page is the orthogonal-to-modality view: **rows are compound classes**, **columns are delivery routes**, each cell answers "what's the route × class fit, what's currently in OE, what's open." The empty cells (🟡) are the genuine exploration vectors — most of them sit OFF the oral axis and have nothing to do with the chassis economics.
+The orthogonal-to-modality view uses **compound classes as rows** and **delivery routes as columns**. Each cell asks what the route × class fit is, what evidence exists, and what remains open. The empty cells (🟡) are exploration vectors; most sit off the oral axis and do not depend on chassis economics.
 
 The framing question per cell, paralleling [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md): **"For this compound class delivered via this route, what gout-relevant problem could that combination open?"** — not "does this route fit the chassis?" The inversion is load-bearing.
 
@@ -130,7 +129,7 @@ This is where the blinder lives. The OE chassis produces uricase, lactoferrin, c
 
 **The current implicit answer is "oral whole-cell shio-koji / amazake / S. boulardii capsule."** That's the chassis economics talking. The engineering layer (the strain + the construct) is portable across formats — purified enzyme could in principle be IV, SC, intra-articular, rectal, or inhaled.
 
-**Why the non-oral routes have been deprioritized — honestly:**
+**Why the non-oral routes remain constrained:**
 
 - **IV:** Already the clinical state of art ([rasburicase](./uricase.md), [pegloticase](./gout-clinical-pipeline.md), [SEL-212](./uricase.md)). The immunogenicity ceiling (~60% ADA rate for non-PEGylated, PEGylation cuts it but doesn't eliminate, [ImmTOR co-administration](./uricase.md) solves it per Sands 2022 PMID 35022448). OE's value-add against the IV path is the chassis economics — same drug, $5-40K/dose IV vs cents/dose oral koji. Not the engineering, the formulation economics.
 - **SC:** Substrate access is poor at the depot (urate is a plasma analyte, interstitial concentration tracks plasma but the depot has limited diffusion exchange); H2O2 byproduct accumulates in tissue without endogenous catalase to clear; immunogenicity is identical to IV. See §"Why SC uricase doesn't work" below.
@@ -184,7 +183,7 @@ This is a design opportunity for whole-cell delivery, not a closed safety case. 
 
 The transferable principle is reaction-site scavenger capacity, not chassis identity.
 
-### Catalase capacity principle — route-agnostic H₂O₂ safety design rule (added 2026-05-19, Cluster F3 walkthrough)
+### Catalase capacity principle — route-agnostic H₂O₂ safety design rule
 
 **For any uricase delivery format, H₂O₂ safety is determined by total catalase capacity at the site of H₂O₂ generation, not by residue-level proximity. The specific mechanism (peroxisomal co-localization, co-formulation, fusion protein, bulk-phase scavenging from dispersed droplets) is an implementation detail.**
 
@@ -213,7 +212,7 @@ If yes → H₂O₂ safety is in hand regardless of geometric arrangement. If no
 
 ## Why SC uricase doesn't work (even with catalase co-formulation, even with tolerogenic NP)
 
-A 2026-05-15 conversation surfaced the obvious-to-ask-but-not-obvious-to-answer question: could uricase be delivered SC? Brief answer: no, for layered reasons that compound and that are not solved by adding components.
+Subcutaneous uricase is a poor fit for layered reasons that are not solved by adding components.
 
 1. **Substrate access at the depot is poor.** Urate is a plasma analyte (~5-7 mg/dL in normals, 8-10+ in hyperuricemics — see [`gout-pathophysiology.md`](./gout-pathophysiology.md)). Interstitial fluid urate roughly tracks plasma. A SC depot is in interstitial space — bathed in interstitial fluid with normal urate concentration but no continuous flux delivery the way circulating blood delivers urate to an IV-circulating enzyme. The enzyme either sits in the depot with limited substrate exchange (slow local degradation, minimal systemic effect) or gets absorbed into circulation over days (essentially becomes a slow-release IV — the depot is doing PK work but the substrate-access advantage of IV is what makes IV work in the first place).
 2. **H2O2 byproduct accumulates in tissue without local catalase.** Per §"Chassis-as-formulation" above. Endogenous catalase is abundant in circulation (RBCs, liver) but sparse in subcutaneous interstitial space. Whatever H2O2 uricase generates at the depot oxidizes nearby tissue before circulating catalase clears it. Co-formulated catalase helps but doesn't fully solve — H2O2 diffuses faster (small, uncharged, crosses membranes) than catalase (240 kDa tetramer) can scavenge it spatially. A uricase-catalase fusion (Schiavon class) tightens the spatial coupling but doesn't change the fundamental substrate-access problem in #1.
@@ -251,15 +250,4 @@ Ordered by leverage (highest-leverage first; "leverage" = how much an underexplo
 - [`bpc-157.md`](./bpc-157.md), [`peptide-gout-addendum.md`](./peptide-gout-addendum.md) — the peptide multi-route precedent
 - [`gout-clinical-pipeline.md`](./gout-clinical-pipeline.md) — IV uricase pipeline state
 - [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) — kidney-tropic SC siRNA conjugate
-- [`open-questions.md`](./open-questions.md) — meta-index; matrix exploration questions should propagate as named open questions when the sweep daemon reads this page
-
-## Maintenance
-
-- **When a new delivery technology lands** (new conjugate chemistry, new NP platform, new oral protein-delivery breakthrough): add it as a column or note in the relevant existing column; ask the framing question per cell.
-- **When OE adds a new compound class** (e.g., terpenoid discovery via the medicinal-mushroom track): add it as a row; mark which routes are mechanistically applicable.
-- **When OE makes a build commitment on a non-oral cell:** mark the cell ✅ or 🧪 and link to the canonical wiki page; the matrix becomes the index.
-- **The matrix is a meta-tool for exploration, not a roadmap.** A 🟡 cell is an unexplored vector, not a committed program. A ⚪ cell may flip when a new technology lands.
-
-### Origin
-
-This page exists because of a 2026-05-15 conversation that explicitly asked: "are we exploring all available delivery mechanisms, regardless of how we get the compounds — or do we have blinders because the koji chassis is oral?" The answer surfaced in that conversation was: peptides are well-explored, uricase has IV named but treated as "pharma's lane," everything else has inherited oral by default. The matrix is the navigable view of that answer.
+- [`open-questions.md`](./open-questions.md) — unresolved delivery questions

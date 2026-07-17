@@ -1,41 +1,37 @@
 ---
-title: Supplements Stack
+title: Compound Evidence Catalog
 aliases: [stack, multi-intervention, NLRP3 protocol, inflammasome suppression]
 related: [nlrp3-inflammasome, gout-pathophysiology, validation-experiments, androgen-urate-axis, androgen-natural-modulation, abcg2-modulators, gut-lumen-sink]
 sources: [nlrp3-exploit-map.md, gout-deep-dive.md, peptide-gout-addendum.md, abcg2-modulators.md]
 ---
 
-# Supplements Stack
+# Compound Evidence Catalog
 
 ## Overview
 
-This is a project-generic catalog of compounds with documented activity on NLRP3, urate, or related inflammation pathways. **It is not a recommended stack.** Each compound has trade-offs that depend on context — sex, genetics (notably ABCG2 Q141K and androgen-axis state), comorbidities, current medications, and interactions with other compounds in this catalog. Read individual entries for contraindications, drug interactions, dose-dependent risk, and stack-level antagonisms before considering use.
+This catalog records compounds with reported activity on NLRP3, urate, or related pathways. It is an evidence and interaction map, not a recommended stack or prescribing guide. Candidate priority depends on gout-specific evidence, human-relevant exposure, safety, tissue context, and a falsifiable next experiment.
 
-This catalog is not a replacement for medical care. Work with a physician on any of these compounds, especially those with drug interactions or dose-ceiling concerns.
+Established drugs are included as research comparators. Clinical use belongs under current guidance and qualified medical care; investigational compounds and off-label hypotheses are not treatment recommendations.
 
 > **TCM lineage note:** Several compounds in this catalog have explicit TCM materia medica lineage — oridonin (*Rabdosia rubescens* / Dong Ling Cao 冬凌草), EGCG (green tea / Lu Cha 绿茶), theaflavins (black tea / Hong Cha 红茶), berberine (*Coptis chinensis* / Huang Lian 黄连), resveratrol (*Polygonum cuspidatum* / Hu Zhang 虎杖), curcumin (turmeric / Jiang Huang 姜黄). The methodology for applying modern scientific rigor to these compounds — including chokepoint mapping, ChEMBL cross-check, bioavailability-honest framing, and formula decomposition — is formalized in [`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md). (source: tcm-modern-rigor-intersection.md)
 
 > **Species-gap caveat:** Prefer human-cell potency when available and apply the cross-species standard in [`chembl-cross-check.md`](./etc/chembl-cross-check.md) before translating rodent results.
 
-> **Per-entry template (standardized 2026-04-25):** Each compound entry below uses a fixed template — Mechanism, Evidence level, Population context, Dosing range, Contraindications, Drug interactions, Dose-dependent risk profile, Stack interactions (within this catalog), Cost. The Stack-interactions field is the cross-link to [abcg2-modulators.md](./abcg2-modulators.md), [androgen-urate-axis.md](./androgen-urate-axis.md), and the Stack-level interactions section near the bottom of this page. Several compounds in this catalog are functional ABCG2 inhibitors at typical supplement doses and may pharmacologically antagonize the [gut-lumen-sink](./gut-lumen-sink.md) thesis in androgen-dominant or Q141K-positive readers — see the "Stack-level contradictions" subsection.
+> **Per-entry fields:** mechanism, evidence level, population context, reported exposure, contraindications, drug interactions, dose-dependent risk, cross-compound interactions, and sourcing. Reported doses describe source studies or approved uses; they are not recommendations.
 
 ---
 
-## Where to start (triage by situation)
+## How to use this catalog
 
-**This catalog is compound-first.** If you arrived with "I have gout, what do I do?" and want a *situation-first* entry surface — what to start today, what to build out over a month, what to plan for over a year — read **[`gout-action-guide.md`](./gout-action-guide.md)** first. It triages by patient situation (default-male, androgen-elevated, Q141K-positive, active flare, on allopurinol, prevention) and links back into the per-compound entries below for depth.
+Start with the biological weakness in [`gout-pathophysiology.md`](./gout-pathophysiology.md) or [`nlrp3-exploit-map.md`](./nlrp3-exploit-map.md), then use this page to compare candidate evidence, exposure limits, safety, and interactions. The [`gout-action-guide.md`](./gout-action-guide.md) is a research-context map, not a treatment pathway.
 
-**Use this catalog when** you've already identified a candidate compound and want full mechanism, dose, contraindications, drug interactions, and stack-level antagonism details. Each entry below has all of that.
-
-**Use the action guide when** you don't yet know which compound is right for your situation, or when you're new to the project and want a 5-minute orientation rather than a 1,100-line catalog read.
-
-The two surfaces are linked: every action-guide compound entry points back here for compound depth, and major catalog changes must propagate to the action guide through the push-time knowledge update.
+Do not infer that compounds should be combined because they hit different nodes. Each arm must pass independently before a nonredundant combination is tested.
 
 ---
 
-## Section 1: NOW (Available Today)
+## Section 1: Accessible compounds and dietary exposures
 
-Compounds currently accessible, with strong evidence, that can be started immediately.
+Accessibility is recorded as a sourcing property, not as evidence strength or a reason to begin use.
 
 ### Beta-Hydroxybutyrate (BHB) / Exogenous Ketones
 
@@ -188,7 +184,7 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 
 **Mechanism:** Activates Keap1-Nrf2 pathway → master regulator of cellular antioxidant defense; cross-talk with NF-κB (CP1/CP2). **Sub-μM Nrf2 activation: EC50 = 580 nM** (*J Med Chem* 2019, ChEMBL) — rare potency for a food-derived compound. **ABCG2 induction bonus:** Sulforaphane activates Nrf2 in enterocytes → upregulates intestinal ABCG2 expression, increasing gut urate secretion capacity (In Vitro + Animal Model; source: abcg2-modulators.md). This makes sulforaphane the only stack compound that simultaneously suppresses NLRP3 priming (CP1/CP2) AND enhances the gut-lumen sink substrate supply.
 
-**Evidence level:** Established (Nrf2 activation) + **Animal Model hyperuricemia (2026-04-23 re-audit, PROMOTED from Tier 4)** — Wang 2022 *J Adv Res* (PMID 36371056): sulforaphane decreased urate synthesis + increased renal urate excretion + Nrf2-mediated epigenetic modification in hyperuricemic rats. This bridges the uric-acid and inflammation axes in a single compound. The prior "no gout-specific evidence" framing was keyword-gated on "gout" in abstracts and missed the hyperuricemia rat model. (source: nlrp3-inhibitor-screen.md 2026-04-23 re-audit) **Upgraded to Tier 2 on 2026-05-05** with two additional citations: Yang 2018 *Rheumatology (Oxford)* (PMID 29340626) — oral SFN attenuated MSU-crystal-induced foot-pad swelling and air-pouch acute gout in mice (Animal Model, oral); Greaney 2015 *J Leukoc Biol* (PMID 26269198) — sulforaphane inhibits NLRP1, NLRP3, NAIP5/NLRC4, and AIM2 inflammasomes **independent of Nrf2** in macrophages and in vivo acute gout peritonitis. Adds a direct caspase-1 / inflammasome-assembly mechanism distinct from the Nrf2 → ABCG2 / NF-κB axis.
+**Evidence level:** Established (Nrf2 activation) + **Animal Model hyperuricemia; Tier 2.** Wang 2022 *J Adv Res* (PMID 36371056) reported decreased urate synthesis, increased renal urate excretion, and Nrf2-mediated epigenetic modification in hyperuricemic rats. Yang 2018 *Rheumatology (Oxford)* (PMID 29340626) reported oral sulforaphane attenuated MSU-crystal-induced foot-pad swelling and air-pouch acute gout in mice. Greaney 2015 *J Leukoc Biol* (PMID 26269198) reported NLRP1, NLRP3, NAIP5/NLRC4, and AIM2 inflammasome inhibition independent of Nrf2. This supports both urate and inflammasome axes in animal models.
 
 **Population context:** Broad applicability. Animal-model UA evidence is in male rats; sex-differential effect on urate axis is not characterized. Goitrogenic effect of cruciferous glucosinolates is dose-dependent and clinically negligible at supplement-relevant doses, but patients with overt iodine deficiency or untreated hypothyroidism may want iodine adequacy in parallel. Hashimoto's patients: cruciferous goitrogen concern is largely overstated at dietary doses but present at concentrated extract doses.
 
@@ -221,7 +217,7 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 
 ---
 
-### Theaflavins (Black Tea Polyphenols) — ADDED 2026-05-05
+### Theaflavins (Black Tea Polyphenols)
 
 **Category:** Phytonutrient / NLRP3 inhibitor / multi-transporter renal urate handling
 
@@ -255,7 +251,7 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 - **EGCG (additive, not redundant):** EGCG and theaflavins overlap on TNFSF14/HVEM but the dominant non-redundant activities are different (EGCG → proteasome 86 nM; theaflavins → URAT1/inflammasome assembly). Combining adds CP1a + CP2/CP3 + URAT1 coverage. Strong recommended pairing.
 - **Carnosine (overlap at URAT1 — pick one):** both downregulate URAT1 in animal models. Theaflavins do not face the carnosinase clearance ceiling. **Diminishing returns if stacked at maximum dose; pick one for the URAT1 axis** — theaflavins are favored if the carnosinase question is unresolved.
 - **Sulforaphane / quercetin / oridonin (Nrf2 axis):** theaflavins do not strongly activate Nrf2. Mechanism-orthogonal — combine without redundancy.
-- **ABCG2: substrate + favorable in-vivo up-regulator, NOT an inhibitor (updated 2026-06-01 per multilingual lit scan).** Theaflavins are *not* on the curcumin/quercetin/EGCG/genistein ABCG2 functional-inhibitor list, and the scan confirmed why: theaflavins are ABCG2/BCRP **substrates** (Caco-2, contributing to low oral bioavailability), and in vivo they **up-regulate** ABCG2 expression while lowering serum urate (Tai 2020, *J Funct Foods* 66:103803, hyperuricemic mice, Nrf2/HO-1). That is the **platform-favorable** direction — they help open the gut urate sink, not close it — placing them with EGCG/sulforaphane in the hormetic Nrf2-inducer bucket, not the inhibitor bucket. Do not add an ABCG2-inhibitor warning. Full discussion: [`theaflavins.md` §2](./theaflavins.md) + [`abcg2-modulators.md` §"The supplements-stack contradiction"](./abcg2-modulators.md).
+- **ABCG2: substrate + favorable in-vivo up-regulator, NOT an inhibitor.** Theaflavins are *not* on the curcumin/quercetin/EGCG/genistein ABCG2 functional-inhibitor list, and the scan confirmed why: theaflavins are ABCG2/BCRP **substrates** (Caco-2, contributing to low oral bioavailability), and in vivo they **up-regulate** ABCG2 expression while lowering serum urate (Tai 2020, *J Funct Foods* 66:103803, hyperuricemic mice, Nrf2/HO-1). That is the **platform-favorable** direction — they help open the gut urate sink, not close it — placing them with EGCG/sulforaphane in the hormetic Nrf2-inducer bucket, not the inhibitor bucket. Do not add an ABCG2-inhibitor warning. Full discussion: [`theaflavins.md` §2](./theaflavins.md) + [`abcg2-modulators.md` §"The supplements-stack contradiction"](./abcg2-modulators.md).
 
 **Cost:** $20–40/month for theaflavin-enriched supplement (300 mg/day). ~$10/week if relying on brewed black tea.
 
@@ -263,7 +259,7 @@ Compounds currently accessible, with strong evidence, that can be started immedi
 
 ---
 
-### Houttuynia cordata Polysaccharide (HCP / HCPM / 鱼腥草 / どくだみ) — Dual-Chokepoint Candidate (added 2026-05-19)
+### Houttuynia cordata Polysaccharide (HCP / HCPM / 鱼腥草 / どくだみ) — Dual-Chokepoint Candidate
 
 **Category:** Dietary polysaccharide / Multi-chokepoint (CP0 + CP1) / Research-stage
 
@@ -343,7 +339,7 @@ HCP is the first dietary polysaccharide in the OE corpus with documented activit
 
 **Dosing range:** 3–4g EPA+DHA daily
 
-> **DHA-specific update (2026-04-24 Pass 2 synthesis):** The direct MSU-gout animal evidence driving this entry's CP5b ranking is **DHA-derived, not EPA-derived**:
+> **DHA-specific evidence:** The direct MSU-gout animal evidence in this entry is **DHA-derived, not EPA-derived**:
 > - RvD1 (DHA-derived) — murine MSU gout (Zaninelli 2022, PMID 35716378)
 > - MaR1 (DHA-derived) — MSU peritonitis (Jiang 2023, PMID 37996809)
 > - DHA separately correlates with lower circulating TNFSF14 (Huang 2024, PMID 38235898, Mendelian randomization — see [tnfsf14-gout-target.md](./tnfsf14-gout-target.md))
@@ -464,7 +460,7 @@ HCP is the first dietary polysaccharide in the OE corpus with documented activit
 - **CP4 (caspase-1 suppression):** pro-caspase-1 transcription is NF-κB-dependent → same proteasome/IκBα axis blocks its induction. ROS reduction is a secondary contributor. **Sub-100 nM proteasome potency is a hepatotoxicity dose-ceiling flag** for intense-use protocols.
 - **CP5a (IL-1β receptor-downstream suppression):** same proteasome/IκBα axis on receiving cells (chondrocytes, synoviocytes) blocks IL-1β-induced NF-κB signaling.
 
-**Evidence level (PROMOTED to Tier 2 supplement use, 2026-04-23 re-audit):** Direct MSU mouse gout evidence — Lee 2019 *Molecules* (PMID 31174271): EGCG blocked MSU-induced caspase-1(p10) and IL-1β in primary mouse macrophages; oral EGCG alleviated MSU-injected mouse foot inflammation via NLRP3 suppression; mechanism = mtDNA synthesis block + ROS reduction. Plus hyperuricemic mouse serum-UA lowering (Yu 2024, *Food Funct*, PMID 38757391). The prior "no gout evidence" framing missed these. (Animal Model; source: nlrp3-inhibitor-screen.md)
+**Evidence level (Tier 2 supplement use):** Direct MSU mouse gout evidence — Lee 2019 *Molecules* (PMID 31174271): EGCG blocked MSU-induced caspase-1(p10) and IL-1β in primary mouse macrophages; oral EGCG alleviated MSU-injected mouse foot inflammation via NLRP3 suppression; mechanism = mtDNA synthesis block + ROS reduction. Plus hyperuricemic mouse serum-UA lowering (Yu 2024, *Food Funct*, PMID 38757391). The prior "no gout evidence" framing missed these. (Animal Model; source: nlrp3-inhibitor-screen.md)
 
 **Population context:** Broad applicability for NLRP3 mechanism, but **functional ABCG2 inhibitor** at supplement doses — relevant for the engineered-uricase platform. Yu 2024 mouse data shows favorable in vivo phenotype on urate axis in hyperuricemic mice despite EGCG's known in vitro BCRP inhibition; net clinical effect on the gut sink in androgen-dominant patients is unresolved (see Stack-level contradictions section). Hepatotoxicity risk is **dose-dependent and sex-irrelevant** but amplified by alcohol, fasting, pre-existing liver disease, and male androgen-axis liver-stress patterns. Avoid in pregnancy at supplement (>500 mg/day) doses; food-level intake (matcha, green tea) is acceptable.
 
@@ -503,13 +499,13 @@ HCP is the first dietary polysaccharide in the OE corpus with documented activit
 
 ---
 
-### Limonene (d-Limonene, Citrus Peel Oil) — PROMOTED Tier 3 Supplement
+### Limonene (d-Limonene, Citrus Peel Oil) — Tier 3 Supplement
 
 **Category:** Monoterpene / Food Additive (GRAS)
 
 **Mechanism:** Nrf2 activator + TLR4 suppression (upstream NLRP3 priming block); also suppresses NF-κB, NLRP3, ASC, caspase-1 expression via NRF2-dependent pathway.
 
-**Evidence level (PROMOTED to Tier 3 supplement, 2026-04-23 re-audit):** Direct rat PO+MSU dual gout model — Venkatesan 2025 *Nutrients* (PMID 41515190): 50 mg/kg limonene reduced paw thickness, serum UA, IL-1β/TNF/IL-6, and improved antioxidant status; authors invoke NLRP3-IL-1β suppression as the mechanistic frame. (Animal Model; source: nlrp3-inhibitor-screen.md)
+**Evidence level (Tier 3 supplement):** Direct rat PO+MSU dual gout model — Venkatesan 2025 *Nutrients* (PMID 41515190): 50 mg/kg limonene reduced paw thickness, serum UA, IL-1β/TNF/IL-6, and improved antioxidant status; authors invoke NLRP3-IL-1β suppression as the mechanistic frame. (Animal Model; source: nlrp3-inhibitor-screen.md)
 
 **Population context:** Broad applicability. No documented sex-differential effect. GERD patients: d-limonene is actually marketed for GERD support, but at the same dose can transiently worsen reflux in subset (paradoxical effect from LES relaxation in some). Pregnancy: insufficient supplement-dose data; food-level intake fine.
 
@@ -571,7 +567,7 @@ HCP is the first dietary polysaccharide in the OE corpus with documented activit
 - **Mechanism orthogonality (the strategic position):** lactoferrin is the only CP5-active stack compound that is not a $300K/year biologic (canakinumab) — fills a unique position. Mechanism does not overlap with polyphenol NF-κB/Nrf2 cluster.
 - **No ABCG2 interaction documented.**
 
-**Strategic position:** The only CP5 candidate in the stack that is fermentable at scale, food-grade, and has direct NLRP3/IL-1β evidence. Fills the Open Enzyme CP5 gap that canakinumab currently occupies at ~$300K/year. Koji expression not yet tried — potential future module for the Open Enzyme platform.
+**Strategic position:** The only CP5 candidate in the stack that combines fermentability at scale, food-grade status, and direct NLRP3/IL-1β evidence; canakinumab is the comparator at ~$300K/year. Fermentability is a track-local production advantage, not an Open Enzyme coverage requirement. Koji expression has not been tried and remains a possible future module within the koji track.
 
 **Cost:** $30–60/month (bovine oral capsules, 300 mg/day)
 
@@ -609,7 +605,7 @@ HCP is the first dietary polysaccharide in the OE corpus with documented activit
 - **Synergy in androgen-driven hyperuricemia:** counters URAT1 upregulation that exogenous T / SERMs / AAS produce.
 - **No ABCG2 interaction documented.** Does not antagonize the platform.
 
-**Strategic position:** Unique dual-phenotype (UA + NLRP3) that other stack compounds don't match. ~150 mg/L estimated titer in engineered yeast — moderate engineering complexity, lower titer than polyphenols, but the only compound that compresses both problems (hyperuricemia + inflammasome) into a single molecule. Co-engineering with uricase in koji is the long-term platform play.
+**Strategic position:** Unique dual-phenotype (UA + NLRP3) that other stack compounds don't match. ~150 mg/L estimated titer in engineered yeast — moderate engineering complexity, lower titer than polyphenols, but the only compound that compresses both problems (hyperuricemia + inflammasome) into a single molecule. Co-engineering with uricase in koji is one long-term track hypothesis, separate from the immediate supplement route.
 
 **Cost:** $20–35/month (oral L-carnosine, 500–1,000 mg/day)
 
@@ -783,9 +779,9 @@ HCP is the first dietary polysaccharide in the OE corpus with documented activit
 
 ---
 
-## Section 2: SOON (Implementation Within 2-4 Weeks)
+## Section 2: Repurposed-drug and specialty-sourcing hypotheses
 
-Compounds and approaches that are viable near-term but require medical discussion or sourcing from specialty suppliers.
+These entries require indication-specific evidence, regulated access, and clinical safety review. Approval in another indication does not establish gout efficacy.
 
 ### Disulfiram (Antabuse)
 
@@ -797,7 +793,7 @@ Compounds and approaches that are viable near-term but require medical discussio
 
 **Population context:** Broad applicability for GSDMD mechanism, but **the absolute alcohol contraindication is the dominant population filter**. Patients who consume alcohol in any form (including some mouthwashes, OTC cold preparations, kombucha, or fermented foods with residual ethanol) cannot use disulfiram safely. Patients with hepatic dysfunction: dose-reduced or contraindicated. Pregnancy: contraindicated. Older adults: increased CNS side effects.
 
-**Dosing range:** 250 mg once daily (standard for alcohol use disorder; off-label for gout). **Sub-AUD GSDMD-dominant dose per [comp-027](./disulfiram-dose-modeling-computational.md) (2026-05-16; downgraded to hypothesis-generator per comp-review 2026-07-14): a single strict-GREEN modeled point at 100 mg/day — the 75–125 mg/d range was broadened from that point, not validated, and it sits exactly on a hard-coded decision boundary (a dose-finding hypothesis, not a recommendation)** — at this dose, parent DSF Cmax (0.40 µM) engages GSDMD pore-formation blockade at 1.3× cell-free IC50 while plasma Me-DTC peak (~70 nM) stays at or below the DER hypotension threshold. Two-phase compounding protocol: IR capsule 50→100 mg/d titration over 14 days, then ER lipid-matrix 100 mg QD chronic. (Mechanistic Extrapolation + In Silico; source: disulfiram-dose-modeling-computational.md)
+**Exposure evidence:** The approved alcohol-use-disorder regimen is not a gout regimen. [comp-027](./disulfiram-dose-modeling-computational.md) produced one modeled point on a hard-coded decision boundary; it did not validate a dose window, titration, chronic formulation, or gout efficacy. A controlled dose-finding and safety study is required. (Mechanistic Extrapolation + In Silico.)
 
 **Key advantage:** FDA-approved for 70+ years, well-tolerated in alcohol-abstinent patients, ~$30/month
 
@@ -810,9 +806,7 @@ Compounds and approaches that are viable near-term but require medical discussio
 - 500 mg/day (historical dose, less common now): more side effects (drowsiness, peripheral neuropathy, hepatic stress) without proportional efficacy gain.
 - Disulfiram-ethanol reaction severity scales with both disulfiram dose and ethanol exposure.
 
-**Medical requirement:** Requires physician discussion. Can frame as off-label GSDMD inhibitor for gout flare prevention, or as standard-of-care for any alcohol use history.
-
-**Practical note:** This is the single most accessible pharma-grade NLRP3 pathway exploit in the entire supplement arsenal. (Source: nlrp3-exploit-map.md)
+**Clinical status:** Approved for alcohol use disorder, not gout. The GSDMD hypothesis does not establish an off-label prevention strategy.
 
 **Stack interactions (within this catalog):**
 - **Mechanism orthogonality (CP6):** distinct CP from any other stack compound — covers pyroptosis pore-formation specifically.
@@ -834,12 +828,9 @@ Compounds and approaches that are viable near-term but require medical discussio
 
 **Population context:** Broad applicability for NLRP3 mechanism. Approved in Japan (Rizaben) and South Korea since 1982; not FDA-approved in US. International sourcing introduces supply-quality variability. Pregnancy: insufficient data for off-label indication.
 
-**Dosing range:** 300–600 mg/day
+**Reported approved-use exposure:** 300–600 mg/day in its approved markets; not a gout recommendation.
 
-**Access:** Approved in Japan (Rizaben) and South Korea since 1982; not FDA-approved in US but available through:
-- International pharmacies
-- Informed physician compassionate use
-- Clinical trial if enrolled (unlikely for gout specifically)
+**Regulatory status:** Approved in Japan and South Korea; not FDA-approved in the United States. This catalog does not recommend international sourcing or off-label access.
 
 **Safety profile:** Up to 600 mg/day used clinically for months without hepatotoxicity (unlike MCC950)
 
@@ -854,7 +845,7 @@ Compounds and approaches that are viable near-term but require medical discussio
 - 300–600 mg/day: well-tolerated chronically (decades of post-marketing data).
 - Higher doses (>600 mg/day): rare bladder symptoms, hepatic enzyme elevation; not the gout-relevant range.
 
-**Medical requirement:** Requires physician discussion; insurance unlikely to cover off-label, may be out-of-pocket
+**Gout research gate:** indication-specific efficacy, exposure, and safety evidence are required before clinical translation.
 
 **Stack interactions (within this catalog):**
 - **Mechanism orthogonality (CP2 NACHT):** distinct binding mode from oridonin (Cys279); could be additive.
@@ -914,23 +905,9 @@ Compounds and approaches that are viable near-term but require medical discussio
 
 ---
 
-### Discussion with Doctor: Disulfiram or Tranilast
+## Section 3: Engineered-delivery hypotheses
 
-**Timeline:** Schedule rheumatology or primary care visit in next 2–4 weeks
-
-**Talking points:**
-1. You're interested in exploring GSDMD pathway inhibition for gout flare prevention
-2. Disulfiram is a 70-year safety record, FDA-approved drug with specific GSDMD-blocking activity
-3. Tranilast is approved in Asia with clinical data in gout; worth exploring if willing to use international pharmacy
-4. Neither is standard-of-care but both have mechanism-based rationale and published clinical efficacy in gout
-
-**What to expect:** Many rheumatologists will be unfamiliar with these mechanisms but may be willing to discuss as off-label options, especially if you share the published papers.
-
----
-
-## Section 3: FUTURE (Dependent on Engineered Strains)
-
-These become available as Open Enzyme [[engineered-yeast-uricase]] and [[engineered-koji-protocol]] strains are validated and deployed.
+These candidates remain contingent on mechanism, physiological flux, exposure, stability, containment, and safety gates. Host selection is downstream of those questions.
 
 ### Engineered Yeast (S. cerevisiae or S. boulardii) — Uricase
 
@@ -997,47 +974,21 @@ These become available as Open Enzyme [[engineered-yeast-uricase]] and [[enginee
 
 **Timeline to availability:** Phase 1 koji optimization (weeks 4–10), Phase 2 EPI model (weeks 12–18), Phase 3 human trial (weeks 20–32+). Earliest: Q2 2026 for validation, Q3–Q4 2026 for deployment.
 
-**Expected benefit:**
-- Brian: 15–30% reduction serum uric acid, potential 50% reduction flare frequency
-- Lynn: Improved fat absorption, normalized GI symptoms, reduced inflammatory markers
+**Current gate:** no validated human-effect prediction. Establish physiological luminal flux, target exposure, peroxide safety, and functional urate disposal before estimating clinical benefit.
 
 **Cost:** TBD
 
 ---
 
-## Reference daily pattern (NOT a recommendation)
+## Combination-study design
 
-> **Framing note (2026-04-25 catalog refactor):** The block below is **one possible scheduling pattern, kept for reference**, not a recommended daily protocol. It survived from a pre-catalog version of this page and is preserved because the dose-timing logic (fat-soluble with meals, peptide on rising, fiber away from minerals, etc.) is reusable. **Do not read this as "the Open Enzyme stack."** Compound selection should always be filtered by individual contraindications, drug interactions, and the Stack-level contradictions section below.
+This catalog does not define a daily schedule, flare protocol, or dose-escalation sequence. Before testing a combination:
 
-**Morning (with breakfast):**
-- Vitamin D3 (5,000–10,000 IU) + K2 (200 mcg) — with fat
-- Sulforaphane supplement (50 mg) OR raw broccoli sprouts (100g)
-- Quercetin phytosome (500 mg)
-- Omega-3 (high-DHA preferred for gout; 2g EPA+DHA) — with food
-- NAC (600 mg) — optional, can take on empty stomach if prefer
-- KPV nasal spray (200–300 mcg) — before breakfast
-
-**Midday:**
-- Oridonin (50 mg) — with lunch
-- Exogenous BHB or MCT oil if not doing ketogenic diet (10–15g)
-
-**Evening (with dinner):**
-- Omega-3 (2g EPA+DHA) — second dose
-- Cherry extract (8 oz juice concentrate or equivalent)
-- NAC (600 mg) — if split dosing
-
-**Intermittent Fasting Window:**
-- Minimum 16:8 daily
-- One 24-hour fast weekly or biweekly (if tolerated; skip during active flares)
-
-**Optional/As Tolerated:**
-- Fermented foods daily: natto, aged cheese, miso, kimchi, kombucha
-- Trehalose (5–10g) mixed into coffee or tea
-
-**PRN (As Needed During Prodrome of Flare):**
-- Disulfiram (250 mg daily × 7–14 days) — if flare symptoms appear
-- Consider BPC-157 IM injection or intensify nasal spray dosing
-- **Topical CBD+THC (1:1 ratio, high-mg/oz) + ice cycling** — apply to affected joint; ice 10–15 min → apply topical → ice again 30–60 min later. CB2-mediated NLRP3 suppression + TRPV1 desensitization. Jurisdiction-dependent. (In Vitro/Animal Model mechanism; direct gout-flare RCT absent. source: gout-action-guide.md, cannabinoids-terpenes.md)
+1. Verify each input and relevant exposure.
+2. Test each arm against the same gout-relevant comparator.
+3. Separate urate handling from acute inflammatory outcomes.
+4. Predefine interaction risks, stopping rules, and a nonredundancy criterion.
+5. Advance the combination only if the individual arms pass and the combined result exceeds the prespecified expectation.
 
 ---
 
@@ -1089,7 +1040,7 @@ Detailed mechanism, primary citations, and tissue-selectivity discussion in [`ab
 
 > **Note:** Curcumin is not currently a separate entry in this catalog — it's flagged here because it is the prototypical functional ABCG2 inhibitor in this class, and is frequently stacked alongside the catalog compounds in real gout-supplement use. If curcumin is added in the future, it carries the same stack-contradiction flag as quercetin.
 
-**Risk-tier stratification** (added 2026-04-27 per synthesis Pass 3 review — "blanket warnings undermine compliance when the actual risk is genotype/dose-dependent"):
+**Risk-tier stratification:**
 
 | User profile | ABCG2 status | Risk tier | Practical implication |
 |---|---|---|---|
@@ -1102,7 +1053,7 @@ Stratification matters because a blanket "avoid quercetin" message undermines co
 
 **Practical inference for high-T or Q141K-positive readers:** avoid high-dose curcumin and quercetin acutely when the gut sink matters most (post-meal urate spikes, fructose challenges, peri-flare). Dietary-level intake (turmeric in food, onions, tea, fermented soy at normal portions) is unlikely to be clinically problematic; supplement-grade doses are the concern.
 
-> **Per-compound stability stratification (added 2026-07-13).** A gut-luminal-metabolic-stability scan refined the flavonoid warning from a class rule to per-compound (full table + citations in [`abcg2-modulators.md` §"Gut-luminal metabolic stability resolves the CBD-vs-flavonoid inconsistency"](./abcg2-modulators.md)): **curcumin** is the strongest antagonist — functional intestinal-ABCG2 inhibition confirmed in a live primate ([Karibe 2018](https://doi.org/10.1124/dmd.117.078931)); **quercetin** is a real inhibitor but only in the *proximal* gut right after a dose (deglycosylated + catabolized before the colon); **EGCG** is the weakest — unstable, ring-fissioned, and net-*favorable* in vivo, so it likely belongs with the Nrf2 inducers (sulforaphane, theaflavins), not the inhibitors. The load-bearing quantity — free luminal concentration vs. the ABCG2-for-*urate* Ki, segment-resolved — remains unmeasured for all of them.
+> **Per-compound stability stratification.** Gut-luminal metabolic stability makes the warning compound-specific (full table + citations in [`abcg2-modulators.md` §"Gut-luminal metabolic stability resolves the CBD-vs-flavonoid inconsistency"](./abcg2-modulators.md)): **curcumin** is the strongest antagonist — functional intestinal-ABCG2 inhibition confirmed in a live primate ([Karibe 2018](https://doi.org/10.1124/dmd.117.078931)); **quercetin** is a real inhibitor but only in the *proximal* gut right after a dose (deglycosylated + catabolized before the colon); **EGCG** is the weakest — unstable, ring-fissioned, and net-*favorable* in vivo, so it likely belongs with the Nrf2 inducers (sulforaphane, theaflavins), not the inhibitors. The load-bearing quantity — free luminal concentration vs. the ABCG2-for-*urate* Ki, segment-resolved — remains unmeasured for all of them.
 
 **Counter-balancing inducers in the catalog (Tier 1 ABCG2 inducers per [abcg2-modulators.md](./abcg2-modulators.md)):**
 - **Sulforaphane** (Nrf2 axis) — gut-enriched
@@ -1145,36 +1096,14 @@ Cases where multiple catalog compounds compound a single safety risk.
 
 ---
 
-## Practical Implementation
+## Experimental sequencing
 
-(Implementation discussion below remains catalog-level — i.e., "if a reader were to consider these compounds, here's a rough sequencing logic." It is not a recommended protocol; see the "Reference daily pattern" framing above.)
-
-**Week 1 (low-friction entry):**
-- Begin BHB/ketones (dietary or supplement)
-- Start intermittent fasting (16:8 minimum)
-- Add sulforaphane + quercetin (both are safe, rapid onset); note quercetin's ABCG2-functional-inhibitor flag for androgen-dominant readers
-- Continue BPC-157 nasal spray (already in use)
-
-**Week 2–3:**
-- Add KPV nasal spray (order from supplier)
-- Add omega-3 (DHA-emphasis) and NAC
-- Add cherry extract
-- Add oridonin (order from Chinese herb supplier or research chemical)
-- Begin raw broccoli sprout protocol (if not using supplement form)
-
-**Week 4+:**
-- Introduce vitamin D3 + K2 (warfarin-incompatible without monitoring)
-- Consider fermented foods (natto 1–2×/week minimum, with same warfarin flag)
-- Schedule physician visit to discuss disulfiram/tranilast if appropriate
-
-**Ongoing:**
-- Track serum uric acid monthly (initially), then every 3 months
-- Monitor flare frequency/severity in journal
-- Re-read Stack-level contradictions section before adding curcumin or high-dose isoflavones
-- Periodic ALT/AST monitoring for any reader running EGCG ≥600 mg/day chronically
+- Begin with the candidate whose mechanism is most directly tied to the stated gout weakness, not the easiest compound to purchase.
+- Require a controlled single-candidate result before combination testing.
+- Use established clinical care as the comparator where applicable; do not substitute an investigational compound during an active flare.
+- Record ABCG2, androgen-axis, hepatic, renal, anticoagulant, and alcohol-interaction risks as exclusion or stratification variables.
+- Treat null, inverted, or exposure-limited results as reasons to revise or stop the hypothesis.
 
 ---
 
-*This catalog is a living document. Update as [[validation-experiments]] (Phase 2 & 3) generate new data. Individual compounds may be emphasized or de-emphasized based on personal context, tolerability, and efficacy.*
-
-*Not medical advice. All use should be supervised by a physician.*
+*Research catalog only. Investigational use is not a substitute for clinical care.*

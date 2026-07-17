@@ -106,7 +106,7 @@ The textbook function of Lf is **nutritional immunity**: sequestering free iron 
 
 For the gout context specifically, the **iron-chelation arm is less directly relevant** than the receptor/immunomodulatory arms (§3-4). Gout is not fundamentally an iron-dysregulation disease. But two indirect connections matter:
 
-1. **Fenton chemistry.** Free iron catalyzes hydroxyl-radical formation from hydrogen peroxide (Fenton reaction), and hydroxyl radicals prime NLRP3 via ROS ([CP1b](./nlrp3-exploit-map.md) — the non-transcriptional priming branch). Lf's iron sequestration reduces Fenton-available iron and should therefore reduce ROS-dependent inflammasome priming at least in principle. Quantitative ROS suppression by Lf has been reported in a variety of in vitro and animal-model systems (Habib 2023 PMID 37926296; Shan 2026 PMID 41524100 below); whether this is predominantly the Fenton-iron mechanism versus receptor-mediated anti-inflammatory signaling is not cleanly separable in most experiments. **Cross-track complementarity (added 2026-05-08):** Lf's iron-sequestration ROS-reduction mechanism is *mechanistically orthogonal* to dietary ergothioneine's direct thiol-scavenging (hydroxyl-radical + peroxynitrite) — Lf reduces the iron catalyst feeding Fenton chemistry; EGT scavenges the radical product. The two mechanisms are predicted additive in combination, gated on the proposed combination ROS assay in MSU-stimulated THP-1 macrophages (`gout-pathophysiology.md` §"Multi-track urate transporter coverage" → ROS / CP1b priming row, added 2026-05-08; sister to `medicinal-mushroom-complement-track.md` ergothioneine entry).
+1. **Fenton chemistry.** Free iron catalyzes hydroxyl-radical formation from hydrogen peroxide, and hydroxyl radicals prime NLRP3 via ROS. Lf's iron sequestration may therefore reduce ROS-dependent priming. Lf and ergothioneine act at different points—Lf reduces the iron catalyst; EGT scavenges radical products—but additivity is only a prediction pending a combination ROS assay in MSU-stimulated macrophages.
 2. **Commercial holo-Lf for iron delivery.** Some supplement formulations deliberately iron-saturate Lf as an iron-repletion strategy (anemia-focused products). For Open Enzyme's gout context, this is the wrong direction — we want apo- or low-saturation Lf to preserve the sequestration and anti-ROS functions.
 
 ---
@@ -221,13 +221,13 @@ Fu et al. 2025 (*Front Immunol* 16:1576069; PMID 40589746; [DOI](https://doi.org
 3. **Lactoferrin suppresses TNFα** at the systemic level — Habib 2023 PMID 37926296 (carfilzomib-nephrotoxicity model, §4.1 above) reports concurrent TNFα and NLRP3-cascade suppression in renal and pulmonary tissue, and the §4.4 LPS-neutralization mechanism (Appelmelk 1994 PMID 8188389; Caccavo 1999 PMID 10456914) provides an upstream route by which Lf reduces TLR4 → NF-κB → TNFα drive. Multiple older references (Håversen 2002 et al.) document direct Lf-mediated TNFα suppression in monocyte/macrophage models.
 4. **The composed mechanism:** engineered koji-derived lactoferrin in the gut lumen → ↓ local TNFα drive → relief of TNFα suppression of ABCG2 → ↑ ABCG2 transport activity → ↑ luminal urate substrate → ↑ effective uricase activity. **This makes lactoferrin a direct synergist for the co-expressed uricase, not just a parallel NLRP3-modulator.**
 
-**Why this matters strategically.** The previous framing of lactoferrin in the koji endgame strain ([koji-endgame-strain.md](./koji-endgame-strain.md) §2.2 / coverage matrix §1) was three NLRP3 chokepoints (CP1a + CP4 + CP6b) — the case for layering the lactoferrin cassette on top of uricase rested entirely on inflammatory-cascade dampening downstream of the urate trigger. The substrate-supply mechanism here is a **mechanistically distinct second axis** of synergy: lactoferrin doesn't just suppress what uricase fails to prevent (the inflammasome cascade after MSU crystals form), it actively **increases the throughput of uricase's primary mechanism** by removing an upstream brake on substrate availability. The two-cassette dual-payload thesis is strengthened by this finding regardless of how the chokepoint-coverage debate plays out.
+**Koji-configuration implication.** The substrate-supply hypothesis is mechanistically distinct from lactoferrin's downstream inflammasome effects. If the composed TNFα→ABCG2 chain holds, lactoferrin could affect both inflammatory signaling and urate availability to a co-delivered uricase. That combined geometry has not been tested.
 
-**Evidence level: Speculative (composed of three Animal Model / In Vitro links, none directly tested in this combined geometry).** The proposed direct test is in [`validation-experiments.md` §1.14](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens-tnf-butyrate-rescue-lactoferrin-synergy) — extended 2026-05-05 from the existing DHT + TNFα + butyrate Caco-2 transwell to include a lactoferrin rescue arm at the worst-case (high TNFα) condition, comparing against butyrate's PPARγ-mediated rescue. Same Caco-2 infrastructure, same urate-flux readout; the marginal cost is ~$300 for the additional lactoferrin reagent and TNFα ELISA confirmation.
+**Evidence level: Speculative (composed of three Animal Model / In Vitro links, none directly tested in this combined geometry).** The direct test is [`validation-experiments.md` §1.14](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens-tnf-butyrate-rescue-lactoferrin-synergy), which includes a lactoferrin arm in the DHT + TNFα + butyrate Caco-2 transwell design.
 
 **Open question — gut-lumen vs. systemic Lf delivery for this mechanism.** The Habib 2023 / Håversen 2002 TNFα-suppression evidence is from oral/parenteral Lf reaching systemic TNFα. Whether *gut-lumen-localized* Lf produced from a koji-resident strain achieves equivalent local TNFα suppression of intestinal-epithelial ABCG2 is the empirical question — the §1.14 extension answers it by applying Lf basolaterally to the Caco-2 transwell, mimicking gut-side delivery.
 
-**Cross-references:** [koji-endgame-strain.md](./koji-endgame-strain.md) §2.2 (coverage matrix, lactoferrin row); [abcg2-modulators.md](./abcg2-modulators.md) §3 (TNFα → ABCG2 suppression mechanism); [gut-lumen-sink.md](./gut-lumen-sink.md); [validation-experiments.md §1.14](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens-tnf-butyrate-rescue-lactoferrin-synergy); [synthesis/](../synthesis/README.md) 2026-05-05 Connection #1.
+**Cross-references:** [koji-endgame-strain.md](./koji-endgame-strain.md) §2.2; [abcg2-modulators.md](./abcg2-modulators.md) §3; [gut-lumen-sink.md](./gut-lumen-sink.md); [validation-experiments.md §1.14](./validation-experiments.md#114-additive-abcg2-suppression-by-androgens-tnf-butyrate-rescue-lactoferrin-synergy).
 
 ---
 
@@ -250,7 +250,7 @@ The existing published literature for lactoferrin spans decades, but the **gout-
 
 ## 6. Production — Recombinant Expression Systems
 
-Lactoferrin has been heterologously produced in a wider range of hosts than most therapeutic proteins: yeast (both *Saccharomyces* and *Pichia/Komagataella*), filamentous fungi (*Aspergillus*), transgenic dairy cattle, transgenic rice, and transgenic tobacco. The yeast and fungal systems are the only ones relevant for Open Enzyme's GRAS-host-only thesis. (Transgenic cattle and rice work but are outside Open Enzyme's platform scope.)
+Lactoferrin has been heterologously produced in a wider range of hosts than most therapeutic proteins: yeast (both *Saccharomyces* and *Pichia/Komagataella*), filamentous fungi (*Aspergillus*), transgenic dairy cattle, transgenic rice, and transgenic tobacco. The yeast and fungal systems are the options evaluated in this fermentation subtrack under its GRAS-host constraint. Transgenic cattle and rice remain alternative production systems outside this subtrack, not outside the project mission.
 
 ### 6.1 *Pichia pastoris* — The Published Gold Standard
 
@@ -302,11 +302,11 @@ Conesa et al. 2010 (*Biotechnol Adv* 28:831-838; PMID 20624450; [DOI](https://do
 | *Aspergillus awamori* (hLf, fusion) | **>2 g/L** | Submerged | Glucoamylase + KEX-2 + strain improvement | Ward 1995 PMID 9634791 |
 | *Aspergillus oryzae* (hLf, fusion) | — | **Solid-state rice koji** | — | **Open — Open Enzyme feasibility experiment** |
 
-The last row is the feasibility gap Open Enzyme is proposing to close. See §7.
+The last row is the production-feasibility gap addressed in §7.
 
 ---
 
-## 7. Koji Engineering Outlook — The Open Enzyme Feasibility Bet
+## 7. Koji-Track Production Feasibility
 
 The full design lives in [engineered-koji-protocol.md §16](./engineered-koji-protocol.md). This section is the science-and-strategy summary; readers building the construct should use the protocol document for the cassette-level detail.
 
@@ -319,7 +319,7 @@ The transition from Ward 1995's **submerged-culture *A. awamori***, glucoamylase
 - **Substrate iron availability.** Rice grain has low free iron. Whether ferric supplementation is required to produce holo- vs. apo-Lf in koji is a production-parameter question with direct downstream effect on product profile.
 - **Glycosylation variability.** Solid-state fermentation glycosylation profiles can differ from submerged (reported for several other Aspergillus-produced proteins); this could affect the allergenicity / bioavailability downstream.
 
-### 7.2 Design Decisions Already Committed
+### 7.2 Current Design Assumptions
 
 Per [engineered-koji-protocol.md §16](./engineered-koji-protocol.md):
 
@@ -327,7 +327,7 @@ Per [engineered-koji-protocol.md §16](./engineered-koji-protocol.md):
 - **Architecture:** Glucoamylase fusion + KEX-2 processing site — matches Ward 1995 (the high-titer architecture).
 - **Gene choice:** Human Lf preferred for the published precedent; bovine Lf is a secondary target (food-grade infant-formula regulatory history may be easier). Validation experiment will compare both.
 - **Selection marker:** Separate auxotrophy from uricase and carnosine cassettes (sequential transformation).
-- **Host:** *A. oryzae* RIB40 or auxotrophic NSAR1 derivative. **Updated recommendation (post-H01 Killshot #1, 2026-05-05):** Protease-deletion is now the default host choice for the lactoferrin cassette, not a fallback. Huynh et al. 2020 (PMC7257131) demonstrated that wild-type RIB40 was inadequate for functional antibody production — only the ten-protease-deletion strain (NSlD-ΔP10: ΔtppA ΔpepE ΔnptB ΔdppIV ΔdppV ΔalpA ΔpepA ΔAopepAa ΔAopepAd ΔcpI) reached the 39.7 mg/L titer. For the Lf side of the H01 dual cassette to clear the 500 mg/L threshold, starting from a comparable protease-knockout chassis is the safer default. RIB40 should be reserved for the uricase-only Year 1 starting strain where titer requirements are lower and the protease load matters less. The NSAR1 5-marker platform (Oikawa 2020, PMC7725655) provides 5 simultaneous integration slots — the lactoferrin cassette uses one, leaving four free for downstream additions. (In Vitro; source: H01-ward-dual-cassette.md)
+- **Host:** A protease-deletion *A. oryzae* background is the default lactoferrin host. Huynh et al. 2020 (PMC7257131) found the highest functional-antibody titer, 39.7 mg/L, in the ten-protease-deletion NSlD-ΔP10 strain. RIB40 remains a comparator rather than the preferred lactoferrin host. The NSAR1 marker system provides five integration slots, subject to host-background compatibility. (In Vitro; source: H01-ward-dual-cassette.md)
 - **KEX2 internal site (comp-010, 2026-05-05):** Sequence-level analysis identified two internal K-R dipeptides in mature lactoferrin: position 38 (P1'=D — cleavage abolished, non-functional) and position 579 (P1'=K — cleavage reduced ~2–3× below baseline, moderate risk). Monitor by SDS-PAGE in §1.9 for a ~67 kDa truncated band. If truncation is visible, mutate K597→Q (full-sequence position) in the codon-optimized gene design. This is a pre-experiment design note, not a blocking issue. (Mechanistic Extrapolation; source: cassette-compatibility-computational.md)
 - **Disulfide load (comp-010, 2026-05-05):** Lactoferrin carries 16 disulfide bonds (per Notari 2023 PMC10465537; corrected from prior "17" count — see [chaperone-orthogonal-stacking.md §10.2](./chaperone-orthogonal-stacking.md#102-architecture-coefficient-verification-provenance-added-2026-05-06)). The architecture-adjusted effective PDI load is 24–40 (16 disulfides × transferrin-lobe α = 1.5–2.5 per [chaperone-orthogonal-stacking.md §3.5](./chaperone-orthogonal-stacking.md)). Uricase contributes zero disulfide load (fungal intracellular enzyme, all three cysteines are free thiols). Combined ER PDI/ERO1 burden is therefore entirely attributable to lactoferrin and is within the demonstrated capacity of the NSlD-ΔP10 host. The 12.6× titer gap vs. Huynh 2020 (39.7 mg/L adalimumab) is not the correct benchmark for Lf titer — Ward 1995 >2 g/L Lf is the appropriate reference. (Mechanistic Extrapolation; source: cassette-compatibility-computational.md)
 
@@ -406,7 +406,7 @@ Intelectin-1 (§3.1) is the primary enterocyte uptake mechanism for intact Lf. T
 
 ### 9.1 Supplement-Grade Bovine Lactoferrin
 
-Kilotonne-scale production via dairy whey fractionation (cation-exchange chromatography of cheese-whey byproduct). Major suppliers: Morinaga (Japan), Fonterra (New Zealand), Glanbia (Ireland). Unit cost ~$300–$600/kg wholesale as of 2026; retail supplement pricing is ~5–10× higher. **bLf is not the production bottleneck** — Open Enzyme's value proposition is not "cheaper Lf" but "Lf + uricase + carnosine + kojic acid in a single GRAS living organism."
+Kilotonne-scale production via dairy whey fractionation (cation-exchange chromatography of cheese-whey byproduct). Major suppliers: Morinaga (Japan), Fonterra (New Zealand), Glanbia (Ireland). Unit cost ~$300–$600/kg wholesale as of 2026; retail supplement pricing is ~5–10× higher. **bLf is not the production bottleneck.** Within the koji multi-payload hypothesis, the proposed advantage would be combined delivery rather than cheaper Lf; the Open Enzyme portfolio does not depend on placing Lf, uricase, carnosine, and kojic acid in one organism.
 
 ### 9.2 Talactoferrin Alfa (CHEMBL2108651) — Recombinant Human Lactoferrin
 
@@ -431,30 +431,30 @@ ChEMBL v34 also records: **Bovine lactoferrin CHEMBL5095320, max_phase=3** — r
 
 **hLF1-11** — synthetic 11-residue peptide derived from the N-terminus of hLf. Investigated for invasive-fungal-infection prophylaxis in hematology patients. Minimal systemic development.
 
-For Open Enzyme, the full-length Lf is the primary production target (largest chokepoint coverage, highest integrated activity). Peptide derivatives are production-friendlier (smaller, no glycosylation requirement, feasible in *E. coli* or as chemical synthesis) but cover a narrower mechanism subset (mostly antimicrobial, not the receptor-mediated anti-inflammatory pleiotropy). Peptides are therefore a plausible secondary track — not a replacement for the full-length Lf bet.
+For the full-length lactoferrin track, peptide derivatives are production-friendlier but cover a narrower mechanism subset. They are a distinct fallback or secondary track rather than evidence that the full-length construct will work.
 
 ---
 
-## 10. Open Enzyme Angle — Platform Fit
+## 10. Track Fit
 
-### 10.1 What Lactoferrin Adds to the Platform
+### 10.1 Chokepoint coverage within the lactoferrin hypothesis
 
-Pre-lactoferrin, the Open Enzyme platform chokepoint coverage profile was:
+The relevant comparison across the current candidate set is:
 
-- **CP0 (complement C5a):** Zero fermentable coverage (honest gap; see [complement-c5a-gout.md](./complement-c5a-gout.md))
+- **CP0 (complement C5a):** Zero direct coverage within the current fermentation candidate set; this is a track gap, not a portfolio requirement (see [complement-c5a-gout.md](./complement-c5a-gout.md))
 - **CP1a (NF-κB priming):** Partial — EGCG, sulforaphane, kojic acid (indirectly)
 - **CP1b (C5a→ROS priming):** Zero direct coverage
 - **CP2 (NLRP3 assembly):** Partial — BHB (from diet), no engineered-product target yet
 - **CP3 (ASC speck):** Zero coverage
-- **CP4 (caspase-1):** Partial — colchicine (pharma, not Open Enzyme platform)
+- **CP4 (caspase-1):** Partial — colchicine (pharma)
 - **CP5a (IL-1β receptor):** Pharma-only (anakinra, canakinumab)
 - **CP5b (ALX/FPR2 resolution):** Zero direct, EPA/DHA via precursor loading only
 - **CP6a (5-LOX):** Partial — quercetin, AKBA, EPA, zileuton (pharma)
 - **CP6b (GSDMD):** Pharma-only (disulfiram)
 
-Adding lactoferrin to the platform adds direct or indirect coverage at **CP1a (LPS/CD14), CP1b (iron-ROS), CP2 (mitophagy-mediated upstream), CP4 (via NLRP3 suppression), CP5b (macrophage polarization, speculative), and CP6b (direct GSDMD-pathway suppression via mitophagy)** — five to six chokepoints depending on how strictly the CP5b link is scored.
+Lactoferrin has direct or indirect evidence at **CP1a (LPS/CD14), CP1b (iron-ROS), CP2 (mitophagy-mediated upstream), CP4 (via NLRP3 suppression), CP5b (macrophage polarization, speculative), and CP6b (GSDMD-pathway suppression via mitophagy)**. These links differ substantially in evidence strength and do not establish a combined product effect.
 
-**The CP6b add is the most mechanistically direct** — Shan 2026's data is a strong signal that Lf suppresses pyroptosis via the mitophagy axis, and CP6b was previously pharma-only in the Open Enzyme stack.
+**The CP6b link is the most mechanistically direct** — Shan 2026 reports pyroptosis suppression through the mitophagy axis.
 
 ### 10.2 A four-target koji configuration
 
@@ -525,32 +525,7 @@ In rough priority order for Open Enzyme's research agenda:
 
 12. **Does Lf affect joint-resident synovial macrophages differently than tissue-resident colonic macrophages?** Joint-resident macrophages are a partially distinct lineage with different receptor expression profiles. All existing mechanistic data (Zhao 2020, Habib 2023, Shan 2026, He 2023) is from non-synovial tissues. A synovial-fluid macrophage isolation + Lf dose-response + MSU challenge would directly test the gout-context mechanism.
 
-13. **RFdiffusion + ProteinMPNN tool-stack integration for variant design** *(added 2026-05-15; status updated 2026-05-16)*. Lactoferrin variant design — lactoferricin / lactoferrampin peptide-only constructs per #7 above, host-optimized glycosylation variants per #3, apo-form-stabilized variants per #4, or **protease-resistant inter-lobe linker variants** (the koji-shio production gate question per comp-005) — is a **redesign** problem. Per the BioDesignBench-validated tool stack (Kim & Romero 2026; see [`etc/bio-ai-tools.md` §BioDesignBench](./etc/bio-ai-tools.md)), the canonical computational tools for structure-conditioned sequence redesign are **RFdiffusion** and **ProteinMPNN**, both available via the **protein-design-mcp** package ([github.com/jasonkim8652/protein-design-mcp](https://github.com/jasonkim8652/protein-design-mcp), MIT licence, Docker images).
-
-**Current tool-stack status (post-2026-05-15 install per [`etc/bio-ai-tools.md`](./etc/bio-ai-tools.md) A1):**
-- **ProteinMPNN** — installed locally, CPU-mode functional. Sequence-design and optimization tools (`design_sequence`, `optimize_sequence`) are available. Slow on CPU but workable for small-to-medium redesign tasks (loops, linkers, single-domain variants).
-- **RFdiffusion** — pending GPU access (A4 task: Apple Silicon MPS port spec'd; or Modal cloud GPU fallback A2). De novo structure-generation tools (`design_binder`, `design_fold`, `generate_backbone`) blocked until then.
-- **PyRosetta-backed scoring** — ✅ **unblocked 2026-05-29** (UW academic Rosetta/PyRosetta license update; `pyrosetta 2026.3` installed credential-free, non-commercial — commercial use requires a separate paid UW license). End-to-end `rosetta_score` verified; the `rosetta_*` energy-scoring leg of the N-of-M concordance gate is live. First use: the comp-034 Cartesian ΔΔG + structure-gated cleavage leg (see ★ note below).
-- **Boltz-2-backed structure prediction via the same MCP** — blocked by torch-version conflict with RFdiffusion (separate-venv resolution pending).
-
-The CPU-functional ProteinMPNN subset is sufficient for sequence-design-only redesign tasks where the starting structure is known (lactoferrin has multiple PDB structures: 1BLF bovine apo, 1B0L human apo, 1LFG human holo). Structure-redesign tasks (de novo loops, novel folds) require RFdiffusion and remain blocked.
-
-**Pilot completed (2026-05-16):** [comp-034](./lactoferrin-linker-redesign-computational.md) (inter-lobe linker redesign for shio-koji protease resistance) — the first concrete use case for the newly installed tool stack. **15 of 60 candidates pass N-of-5 ≥ 3 (GREEN). Zero pass STRICT 5-of-5.** WT linker passes 3-of-5 (the redesign premise is empirically grounded — WT is the most protease-rich linker in the candidate pool, with 16 cleavage sites across the three koji proteases). The WT linker is a high-pLDDT structured α-helix (AF mean 95.6), not flexible loop, so the design strategy is **rigidify in place** (proline substitution) rather than truncate. **[⚠ overturned 2026-05-30 — see ★ note below: because the linker is a helix, proline *breaks* it, which both destabilizes the fold and removes the helix's own protease protection. The correct strategy is charge/polar substitution that preserves the helix.]**
-
-Three wet-lab arms span the design-aggressiveness spectrum (per Pass 3 2026-05-17 grep-verification + 2026-05-19 ProteinMPNN rerun results):
-- **Conservative — single V357P (`SEEEPAARRAR`, 91% WT identity).** Passes 3-of-5. Cleavage drops ~24% from WT. Single substitution; safest gene-synthesis bet.
-- **Primary — S353E + V357P (`EEEEPAARRAR`, 82% WT identity).** Passes 4-of-5. Cleavage drops 0.407 → 0.290 (~29%). Two substitutions; balances aggressiveness vs WT identity.
-- **Aggressive — MPNN-native STRICT (`NEEEQQQEEEQ`, identified by the 2026-05-19 ProteinMPNN rerun).** Passes 5-of-5 (the substitute sampler had ZERO 5-of-5 candidates). **Cleavage drops 10.4× from WT** (0.039 vs 0.407). Identified by genuine ProteinMPNN — the substitute sampler never proposed this candidate. Sibling 5-of-5 candidates `NEEEEQQEQEQ` and `NEEEEEQEQEQ` available as alternate aggressive arms. Replaces the originally-planned `DEEDPANPQAH` / `EEEEPAAPPAP` arms in the §1.10 wet-lab plate.
-
-Outputs feed `validation-experiments.md §1.10` linker-variant arm. (Mechanistic Extrapolation; source: lactoferrin-linker-redesign-computational.md + ProteinMPNN rerun 2026-05-19.)
-
-**★ Physics ΔΔG + structure-gated cleavage revision (2026-05-30, PyRosetta unblocked 2026-05-29).** Adding two orthogonal methods to the gate — Cartesian ΔΔG (fold stability) and structure-gated cleavage (real SASA + secondary-structure conformation gate) — **inverts the arm ordering above.** The proline arms (`V357P`, `S353E+V357P`), framed as "conservative/safe," are in fact destabilizing (ΔΔG +20 / +21 REU) and deliver little net protease benefit (−9% / −17%), because proline breaks the protective inter-lobe helix. The MPNN-native `NEEEQQQEEEQ` is stability-neutral (ΔΔG +0.23 REU), keeps the helix (0.818), and cuts structure-gated cleavage −66% — it should be the **primary** arm, not the "aggressive" one. The multi-proline `EEEEPAAPPAP` is the worst (ΔΔG +57 REU, helix collapsed to 0.364). **Revised plate: WT control + `NEEEQQQEEEQ` (primary) + `NEEEQEEQDQQ` (sibling backup); proline arms demoted/optional.** Unifying variable: inter-lobe **helix retention** governs both fold stability and protease resistance. Full three-method analysis + honest magnitude corrections: [`comp-034/rosetta_concordance/README.md`](./etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/README.md). (Mechanistic Extrapolation; wet-lab proteolysis + Tm assays are the validators.)
-
-**ProteinMPNN rerun update (2026-05-19, E2 walkthrough):** the comp-034 substitute-sampler caveat is **resolved**. ProteinMPNN was cloned to `tools/ProteinMPNN/` (repo-local fallback; sandbox blocked `/opt/`). Smoke test passed; lactoferrin sampling runs in ~52 s/pool on CPU. **Headline finding from the rerun:** (a) the substitute sampler's 15 GREEN candidates are NOT artifacts — mean MPNN log-likelihood 2.74 GREEN vs 3.74 FAIL gives clean separation; the substitute sampler's proline-bias + WT-mix-in heuristic was a functional proxy for what ProteinMPNN encodes structurally. (b) Genuine ProteinMPNN additionally identified 3 STRICT 5-of-5 candidates the substitute missed. Full report: [`logs/proteinmpnn-comp-034-rerun-2026-05-19.md`](../logs/proteinmpnn-comp-034-rerun-2026-05-19.md). The §1.10 wet-lab arm is now validated for gene synthesis with the corrected NEEEQQQEEEQ aggressive arm.
-
-**Platform-pattern note (added 2026-05-19, Cluster E walkthrough):** the comp-005 → comp-034 → §1.10 loop is the first concrete use of the **protease-vulnerability-to-redesign workflow** on a load-bearing OE engineering problem. The pattern is documented as a generalizable platform template in [`etc/bio-ai-tools.md`](./etc/bio-ai-tools.md) §"Protease-vulnerability-to-redesign workflow" — designed to be reused on future secreted OE payloads with **structured-mandatory-connector-type** linker vulnerabilities (the open generalization question is queued in [`lactoferrin-linker-redesign-computational.md`](./lactoferrin-linker-redesign-computational.md)). Note that this design strategy applies to "redesign-in-place" linker problems specifically — NOT to "truncatable spacer" problems like DAF SCR1-4, which are solved by stalk truncation per [comp-012](./daf-cd55-scr14-truncated-computational.md) instead.
-
-**Fires-when conditions for additional variant-design pilots:** any of #3 (glycosylation comparison), #4 (apo vs holo), or #7 (lactoferricin / lactoferrampin) moves from open question to scope-able computational experiment; OR a §1.10 wet-lab result returns a stability problem the comp-034 linker redesign doesn't cover. Until then, the additional pilots remain dormant — the tool-stack readiness no longer gates them.
+13. **Can the inter-lobe linker be redesigned for protease resistance without destabilizing lactoferrin?** [Comp-034](./lactoferrin-linker-redesign-computational.md) tested this question computationally. Cartesian ΔΔG and structure-gated cleavage reversed the initial proline-heavy ranking: the proline arms were destabilizing, while `NEEEQQQEEEQ` was stability-neutral (ΔΔG +0.23 REU), retained the helix (0.818), and reduced structure-gated cleavage by 66%. The current wet-lab plate is WT control + `NEEEQQQEEEQ` + sibling backup `NEEEQEEQDQQ`; proline arms are optional. This remains **Mechanistic Extrapolation** until proteolysis and melting-temperature assays validate the prediction. The redesign-in-place logic does not transfer automatically to truncatable spacers such as the DAF stalk.
 
 ---
 

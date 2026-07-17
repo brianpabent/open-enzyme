@@ -32,7 +32,7 @@ sources:
 
 # H02 — Engineered LBP Thesis (Stub)
 
-> **Stub status.** This card is committed at stub-level on 2026-05-05 to register the hypothesis in the falsification-card directory and force the "what would kill this thesis" framing onto the [LBP chassis page](../engineered-lbp-chassis.md). Full population (assumption stack, killshot menu, pre-committed thresholds, kill switches, failure-mode coverage map) is queued as Phase 2 P2-5 — see [engineered-lbp-chassis.md § Open Follow-Ups](../engineered-lbp-chassis.md#open-follow-ups).
+> **Evidence status:** stub. Assumptions, pre-committed thresholds, kill switches, and failure-mode coverage remain incomplete; see [engineered-lbp-chassis.md](../engineered-lbp-chassis.md).
 >
 > The pre-registration note on H01 ([H01-ward-dual-cassette.md](./H01-ward-dual-cassette.md) §Pre-registration) does not apply until this stub is upgraded to a full card. When the upgrade happens, the upgraded version is what gets pre-registered; the stub is informational scaffolding only.
 
@@ -48,7 +48,7 @@ An engineered *Faecalibacterium prausnitzii* strain producing colonic butyrate i
 The "viable peer-track" claim has multiple sub-components that the full card will decompose:
 1. *F. prausnitzii* engineering toolkit is mature enough to produce therapeutic-grade butyrate-augmenting strains (vs. WT colonization establishing the colonic baseline)
 2. Lyophilized oxygen-protected capsule formulations achieve sufficient post-ingestion viability to colonize at therapeutic densities
-3. FDA LBP regulatory path is traversable within capital constraints reasonable for a research-platform-derived therapeutic
+3. FDA LBP regulatory path is traversable within the track's capital constraints
 4. WT-ABCG2 induction translates to functional human urate flux at achievable colonic butyrate concentrations
 
 ---

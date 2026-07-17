@@ -15,7 +15,7 @@ related:
 
 ## Scope
 
-H09 tests one possible production and distribution model within the [engineered-koji track](../koji-track.md). It is not a project claim and is not required for other gout tracks. The project has not made a sourdough-equivalence claim about therapeutic production.
+H09 tests one possible production and distribution model within the [engineered-koji track](../koji-track.md). It is not required for other gout tracks.
 
 If H09 fails, the koji track may use centralized manufacture, licensed community facilities, a non-viable preparation, or another chassis. The red-team mission and unrelated interventions remain intact.
 

@@ -34,7 +34,7 @@ sources:
 
 # H04 — TCM × Modern Rigor Methodology Lens (Stub)
 
-> **Stub status.** This card is committed at stub-level on 2026-05-05 to register the meta-hypothesis in the falsification-card directory and force the "what would kill this thesis" framing onto the [TCM × modern rigor scope page](../tcm-modern-rigor-intersection.md). Full population (assumption stack, killshot menu, pre-committed thresholds, kill switches, failure-mode coverage map) is queued as Phase 2 P2-5 — see [tcm-modern-rigor-intersection.md § Open Follow-Ups](../tcm-modern-rigor-intersection.md#open-follow-ups).
+> **Evidence status:** stub. Assumptions, pre-committed thresholds, kill switches, and failure-mode coverage remain incomplete; see [TCM × modern rigor](../tcm-modern-rigor-intersection.md).
 >
 > The pre-registration note on H01 ([H01-ward-dual-cassette.md](./H01-ward-dual-cassette.md) §Pre-registration) does not apply until this stub is upgraded to a full card. When the upgrade happens, the upgraded version is what gets pre-registered; the stub is informational scaffolding only.
 
@@ -51,7 +51,7 @@ The "actionable" bar is operationalized as one or more of:
 3. **Falsification-card-grade hypotheses** for specific TCM-derived interventions (Smilax glabra as koji-payload candidate; Si Miao San as allopurinol adjunct; etc.) with pre-committed kill thresholds.
 4. **Cross-domain insights** — e.g., a TCM compound's classical "damp-heat" indication mapping onto a specific modern chokepoint (XO + ABCG2 modulation) suggests other "damp-heat" herbs in the same classical category may share the mechanism — testable hypothesis.
 
-The thesis is **gated on multilingual research access** — Chinese-language clinical trial literature, ChiCTR registry data, Japanese Kampo literature, Korean traditional medicine sources. The 2026-05-05 conversation that triggered this page made explicit that Open Enzyme should ingest global multilingual sources by default rather than treating language as a "barrier" — the AI substrate (Claude, DeepSeek, Qwen) is multilingual at zero marginal cost. See [`CLAUDE.md`](../../CLAUDE.md) for the global-multilingual-search default rule.
+The thesis is **gated on multilingual evidence coverage** across Chinese-language clinical literature, ChiCTR, Japanese Kampo sources, and Korean traditional-medicine sources. English-language indexing alone is insufficient to evaluate this hypothesis.
 
 ---
 
@@ -64,7 +64,7 @@ The full assumption stack will be populated after the Phase 2 lit scans (P2-1 cl
 3. Modern Chinese clinical trial literature (ChiCTR registry) is sufficient quality to update wiki evidence tiers (Chinese RCTs have heterogeneous quality; this is empirically verifiable)
 4. The "embrace gut-luminal mechanisms" reframe (rule #3) actually predicts therapeutic effect for low-bioavailability TCM compounds (vs. the alternative explanation that they don't work at all). Comp-004's IC50 occupancy framework on curcumin / quercetin / EGCG is a partial validation; broader compound classes need similar treatment.
 5. The "designed coverage" interpretation of multi-component formulas (rule #4) is biologically defensible vs. being modern bias projection onto historical practice. Formula decomposition needs to falsify this too.
-6. Open Enzyme's bandwidth is sufficient to apply the methodology rigorously across enough compounds to surface non-obvious findings (vs. a cataloging exercise that adds compound pages without producing new platform-relevant insight)
+6. The methodology can be applied rigorously across enough compounds to surface non-obvious findings rather than merely expanding a catalog
 
 ---
 
@@ -89,7 +89,7 @@ To be defined when the killshot menu is populated. Anticipated structure follows
 
 To be populated. Anticipated relevant failure modes from [linter-design.md](../linter-design.md) §5: published-literature-gap, training-distribution bias (Western-research bias in the corpus), evidence-tier inflation (overstating "Animal Model" claims as "Supported" because TCM has long traditional use), the alternative-medicine-washing failure mode (modern-language dressing without underlying rigor — rule #6's discipline is the guard).
 
-**Partial closure on the ChEMBL-coverage-gap failure mode (added 2026-05-19).** comp-013's original ChEMBL cross-check returned "5/9 compounds had no ChEMBL data" — the falsification card flagged this as a methodology-limit failure (ChEMBL coverage too sparse for TCM-relevant compounds to support rule #2). The 2026-05-19 traditional-name + traditional-formula re-scan ([URAT1 rescan](../../logs/urat1-classical-formula-rescan-2026-05-19.md), [XO rescan](../../logs/xo-classical-formula-rescan-2026-05-19.md)) **partially closes this failure mode**: mangiferin (CHEMBL3611008), apigenin (well-cataloged), acteoside (curated) are all in ChEMBL — the gap wasn't database coverage, it was **seed-list construction at the herb level rather than the formula + marker level**. The methodology fix is the 4-framing query matrix codified in [`manual-literature-mining.md` §"Query-framing for non-Western compound classes"](../etc/manual-literature-mining.md). Rule #2 (ChEMBL cross-checked) survives intact; rule needing reinforcement is *seed-list construction discipline* upstream of rule #2.
+**ChEMBL-coverage-gap failure mode:** comp-013's "5/9 compounds had no ChEMBL data" result partly reflected seed-list construction at the herb level rather than formula + marker level. Traditional-name and formula queries recovered curated entries for mangiferin, apigenin, and acteoside. Rule #2 survives, but the seed-list method must use the four-framing query matrix in [`manual-literature-mining.md`](../etc/manual-literature-mining.md).
 
 ---
 

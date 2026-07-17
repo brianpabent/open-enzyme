@@ -736,7 +736,7 @@ With predicted expression level in mg/L and reasoning for each choice.
 
 ### 6. Koji (A. oryzae) Construct Design
 
-> **Why This Matters:** The koji track runs in parallel with the yeast track. *A. oryzae* (koji mold) is the original fermentation organism for miso, sake, and soy sauce — it's GRAS by centuries of tradition. It also naturally produces high levels of digestive enzymes, making it the ideal chassis for Lynn's digestive enzyme therapy and potentially a second uricase production platform.
+> **Why This Matters:** The koji track runs in parallel with the yeast track. *A. oryzae* (koji mold) is the original fermentation organism for miso, sake, and soy sauce — it's GRAS by centuries of tradition. It also naturally produces high levels of digestive enzymes, making it a candidate chassis for the combined digestive-enzyme and uricase hypothesis, not the default chassis for Open Enzyme.
 >
 > **What to expect back:** *A. oryzae*-specific construct design addressing the unique biology of filamentous fungi vs. yeast. Different codon bias, different promoter systems, different secretion machinery.
 

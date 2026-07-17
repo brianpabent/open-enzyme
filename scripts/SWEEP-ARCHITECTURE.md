@@ -91,6 +91,8 @@ Raw model output and review files are recovery artifacts with short CI retention
 
 Do not create completed-item directories, immutable review logs, per-run synthesis narratives, inline changelogs, or “for posterity” copies.
 
+Reader-facing intervention pages follow one current-state sequence: exploitable gout weakness, evidence, source, delivery, exposure constraints, and falsification. Chassis analysis is local to an active production or delivery decision; it is never the default filter for whether an intervention belongs in the project. Editorial provenance and page-creation history live in Git, not prose. Research pages do not prescribe personalized dosing.
+
 ## Failure behavior
 
 - Publication is independent and should still run when knowledge automation fails.

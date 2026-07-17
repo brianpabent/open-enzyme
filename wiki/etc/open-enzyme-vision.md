@@ -57,7 +57,7 @@ A track is killed when its stated kill criteria fire. The next move is to preser
 
 - Distinguish clinical, animal, in-vitro, computational, and mechanistic evidence.
 - Source the project claim before challenging it. Do not invent a stronger claim to make a critique easier.
-- Keep detailed evidence in one canonical home; other pages link and state only the local implication.
+- Keep detailed evidence in one home; other pages link and state only the local implication.
 - Verify load-bearing numbers against primary sources before they enter the corpus.
 - Computational evidence requires current hash-bound pre-run, post-run, and push-review receipts where the modern COMP lifecycle applies.
 - Keep current scientific state in the live tree. Git is the revision history.

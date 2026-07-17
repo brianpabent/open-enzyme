@@ -19,13 +19,13 @@ status: published
 
 A deep dive into whether the peptides gaining traction in the biohacking world — BPC-157, TB-500, KPV, GHK-Cu, and others — have any real relevance to gout. What the science actually says, where it's speculative, and what's worth considering.
 
-**April 2026** • ~25 min read • Addendum to the Gout Deep Dive
+**Evidence snapshot: April 2026**
 
 ---
 
 ## Quick Primer: Why Gout Is an Inflammasome Disease
 
-Before we get into peptides, a refresher on what's actually happening during a gout flare — because understanding the mechanism is what makes the peptide discussion interesting.
+Peptide relevance depends on the two-stage biology of urate crystallization followed by inflammasome activation.
 
 Gout isn't just "too much uric acid." It's a two-stage process. First, uric acid levels rise high enough to form monosodium urate (MSU) crystals in your joints. Second — and this is where the real pain comes from — your immune system goes absolutely nuclear in response to those crystals.
 
@@ -291,23 +291,23 @@ Technically not a peptide, but worth including because it's the most advanced *d
 
 This is what a purpose-built gout anti-inflammatory looks like — it goes directly after the molecular target (NLRP3) rather than working through upstream or parallel pathways like the peptides discussed above. Its single gout trial was an open-label **phase 2a** proof-of-concept (N=34, *Lancet Rheumatol* 2020, PMID 33005902), which showed 52–68% target-joint-pain reduction at day 3. **No Phase 2b or Phase 3 gout trial is registered** as of April 2026 — Olatec's later active programs moved to heart failure and COVID-19, so its gout development appears stalled rather than advancing. See [NLRP3 Exploit Map](nlrp3-exploit-map.md) for the full pipeline status and the 1,000× mouse-vs-human cellular-potency caveat.
 
-> **Phase number note:** an earlier version of this addendum (and some sibling pages) described dapansutrile as "Phase II" or "Phase 3" for gout. The primary source (PMID 33005902) is explicitly a **phase 2a** trial, and it is the only registered dapansutrile gout trial — there is no Phase 2b/3 in gout. The "Phase 3" framing on other pages refers to non-gout indications and should not be read as gout-stage.
+> **Clinical-stage boundary:** PMID 33005902 reports a **phase 2a** gout trial, the only registered dapansutrile gout trial. No Phase 2b or Phase 3 gout program is registered; later-stage references concern non-gout indications.
 
-Worth keeping on your radar not as something you'd take now, but as context for where the field is heading. The fact that pharma is investing in direct NLRP3 inhibitors for gout validates the entire thesis that the inflammasome is *the* target.
+Dapansutrile supports NLRP3 as a clinically tested gout target but does not establish efficacy for the peptides discussed here.
 
 ---
 
-## Practical Considerations: Stacking for Gout
+## Mechanism-ranked stacking hypotheses
 
-What you could consider adding to your existing BPC-157 routine, specifically for gout management. Starting from where you are now.
+The combinations below are mechanistic hypotheses, not validated gout regimens.
 
 > **The Necessary Disclaimer**
 >
 > None of this is medical advice. These are research peptides without FDA approval for gout or any other condition (except PPS for interstitial cystitis). Discuss any protocol with your physician. The information below is a synthesis of the available research and mechanistic reasoning — not a prescription.
 
-### Your Current Setup
+### Evidence boundary
 
-You're running BPC-157 nasal spray for post-workout inflammation. That's giving you systemic anti-inflammatory coverage at roughly 30-50% bioavailability. Based on the research above, here's what could be layered in for gout specifically, ordered by strength of the mechanistic case:
+No listed peptide has human gout-efficacy evidence. Route, timing, and stacking claims below derive from non-gout studies, practitioner usage, or mechanistic extrapolation.
 
 ### Tier 1 — Strongest Mechanistic Case for Gout
 
@@ -356,7 +356,7 @@ If you went all-in (which is aggressive and entirely your call):
 
 ```text
 Morning (daily):
-  BPC-157 nasal spray — systemic anti-inflammatory (your current routine)
+  BPC-157 nasal spray — proposed systemic anti-inflammatory route
   BPC-157 oral — gut barrier support / intestinal uric acid excretion
   KPV oral — gut anti-inflammatory + systemic NLRP3 suppression
 
@@ -368,9 +368,9 @@ Topical (optional, low-risk):
   GHK-Cu cream over affected joints
 ```
 
-> **The Sane Approach**
+> **Study-design boundary**
 >
-> You don't need to run everything at once. If I were prioritizing for gout specifically, I'd start with adding KPV (for the NLRP3/NF-κB dual inhibition) and oral BPC-157 (for gut support) to your existing nasal BPC-157 routine. Run that for 8-12 weeks and see if flare frequency or intensity changes. Then consider TB-500 if you're dealing with joint damage that needs repair support. GHK-Cu is the "nice to have" tier for long-term maintenance.
+> Combining multiple unvalidated peptides prevents attribution. An 8–12-week single-change observation could generate a flare-frequency or intensity hypothesis, but it would remain uncontrolled and non-causal. KPV has the closest pathway match; BPC-157, TB-500, and GHK-Cu remain broader repair or gut-barrier hypotheses.
 
 ---
 
@@ -430,7 +430,7 @@ This matters more for injectable and nasal peptides than oral ones (your gut aci
 
 The peptide approach to gout management is, at this point, an educated bet. The mechanisms are plausible. The pathways are validated (the pharmaceutical industry is targeting the same ones). But the specific peptides haven't been tested for gout in humans, and "mechanistically reasonable" is a lower bar than "clinically proven."
 
-If you're already running BPC-157 for workout recovery and it's well-tolerated, adding an oral dose for gut support is low-risk and addresses a real (if unproven) connection to uric acid excretion. Adding KPV for targeted NLRP3/NF-κB modulation is the strongest mechanistic play for gout flare prevention. And continuing to use evidence-based gout management (urate-lowering therapy, colchicine for flare prophylaxis, dietary modifications) as your foundation — with peptides as a potential adjunct, not a replacement — is the sane path.
+KPV has the strongest pathway match through NLRP3/NF-κB modulation, while oral BPC-157 remains an unproven gut-barrier hypothesis. Neither has established gout efficacy or a validated role as an adjunct to standard urate-lowering or flare therapy.
 
 Don't let the elegance of the mechanism convince you the outcome is guaranteed. Biology is messier than pathway diagrams. But if you're someone who's comfortable operating at the frontier of the evidence — and you're keeping your conventional treatment as the baseline — the peptide angle is at least worth exploring with your eyes open.
 
@@ -450,7 +450,5 @@ This document is part of the [Open Enzyme](etc/open-enzyme-vision.md) project �
 - [Engineered Yeast Uricase Proposal](engineered-yeast-uricase-proposal.md)
 
 ---
-
-Peptide & Gout Research Addendum • Compiled April 2026
 
 *This document is for informational purposes only and does not constitute medical advice. Discuss any supplement or peptide protocol with your physician.*

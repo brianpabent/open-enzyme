@@ -94,7 +94,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 - **Answers [paradox-page](./gsdmd-pore-delivery-paradox.md) Open Question #4 (pore lifetime):** for a ~1 nm solute through a 20 nm pore, equilibration is complete in seconds; even the short end of the 1–30 min lifetime range is far longer than needed. Peak intracellular [KPV] is *capped at synovial [KPV]* (the naive moles-in/volume estimate overshoots by ~140×, confirming saturation).
 - **A1 flux:** IA clears the 10 nM IC50 (Dalmasso 2008) by ~29,000×; SC ~3× (assumption-limited); oral ~0.1× (fails). Robust for pores/cell ≥ ~10.
 - **A2 selectivity:** meaningful (≥3×) only if synovial macrophages lack functional PepT1 — but immune-cell PepT1 is *demonstrated* (Jurkat; Dalmasso 2008). At moderate/high PepT1, selectivity collapses to ~1 or below (healthy cells accumulate KPV *more* via concentrative electrogenic PepT1 + intact Vm). No route passes both a therapeutic and a selectivity threshold.
-- **Peer-review-surfaced conceptual kill:** PD timing mismatch — KPV is an *upstream* inhibitor (NLRP3 assembly / NF-κB priming); pores open *downstream* of inflammasome firing, so pore-delivery arrives after KPV's target has acted and IL-1β is released.
+- **Conceptual kill:** PD timing mismatch — KPV is an *upstream* inhibitor (NLRP3 assembly / NF-κB priming); pores open *downstream* of inflammasome firing, so pore-delivery arrives after KPV's target has acted and IL-1β is released.
 - **KPV is the wrong molecule to *demonstrate* pore-selectivity** (it has a transporter and resists intracellular degradation — both anti-selective). A transporter-orphan, intracellularly-labile impermeant payload is the clean probe.
 - Method: diffusive-flux / mass-balance with two-sided access resistance; MM PepT1 baseline; 20k Monte Carlo; lifetime × pores/cell robustness sweep. No MD, no docking. Grep-verify gate passed; ≥3 compounding named assumptions → provisional.
 
@@ -116,7 +116,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 - CFH Y402 structural footprint grep-verified: Sushi/CCP 7 = aa 387-444 of UniProt P08603. The four candidates' binding sites all map to upstream complement nodes (C3 thioester, C3 itself, classical-pathway C2 + C4 + C1q), not the CCP6-8 CRP/GAG-binding surface.
 - Recommended lead UKB cross-tab: rs1061170 × Phenol-Explorer-derived rosmarinic-acid intake × incident gout M10.x. Secondary: rs1061170 × Apiaceae-family intake × incident gout (luteolin proxy + 24h-urate intermediate readout). HCP cross-tab deferred to East Asian cohorts (KoGES / CKB / Singapore Chinese Health Study). Helicteres not actionable until comp-018 Phase 2 replication closes.
 - Total OpenRouter spend: ~$0.0022 (Model B counter-reads × 4 candidates).
-- New follow-ups surfaced: comp-040 (proposed) — wet-lab CFH-depleted-serum MSU-crystal assay as definitive falsification test; comp-041 (proposed) — East Asian cohort feasibility scan for Houttuynia × CFH cross-tab.
+- Follow-ups: comp-040 (proposed) — wet-lab CFH-depleted-serum MSU-crystal assay as definitive falsification test; comp-041 (proposed) — East Asian cohort feasibility scan for Houttuynia × CFH cross-tab.
 
 **Informs:** [gout-genetic-variants.md](./gout-genetic-variants.md) Category 5 CFH row · [complement-c5a-gout.md](./complement-c5a-gout.md) §6.3 · [upstream-complement-modulator-sweep-computational.md](./upstream-complement-modulator-sweep-computational.md) · [upstream-complement-verification-rerun-computational.md](./upstream-complement-verification-rerun-computational.md) · [logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md](../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md)
 
@@ -128,7 +128,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Question:** Is there a Tier 2 butyrate quantification assay (colorimetric, enzymatic, breath-proxy, electrochemical, or other low-cost intermediate method) that can be validated against Tier 3 GC-MS for stool, serum, breath, or culture-supernatant matrices?
 
-**Verdict:** **YELLOW.** No ready-to-adopt simple/home colorimetric or breath-based butyrate assay surfaced. Two plausible Tier 2 candidates surfaced: HPLC-UV SCFA + lactate assay for culture-supernatant / engineered-strain work, and electrochemical fecal SCFA profiling with ANN deconvolution as an emerging stool-specific direction. Both require full-text/protocol review and paired GC-MS validation before OE adoption.
+**Verdict:** **YELLOW.** No ready-to-adopt simple/home colorimetric or breath-based butyrate assay was identified. Two plausible Tier 2 candidates identified: HPLC-UV SCFA + lactate assay for culture-supernatant / engineered-strain work, and electrochemical fecal SCFA profiling with ANN deconvolution as an emerging stool-specific direction. Both require full-text/protocol review and paired GC-MS validation before OE adoption.
 
 **Key findings:**
 - PubMed snapshot: 27 queries / 74 records; source snapshot committed at `outputs/pubmed-snapshot.json`.
@@ -146,7 +146,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ### comp-037 — C1-INH (SERPING1) Protease Stability + Glycosylation Feasibility in EcN-Luminal Format — MODERATE (kinetic-competition gated) (2026-05-17)
 
-**Question:** Will human C1-INH (UniProt P05155) survive luminal-secreted expression in engineered *E. coli* Nissle 1917, and is the loss of N-glycosylation a hard block? Closes the C1-INH-on-EcN side of the two-chassis CP0 architecture surfaced 2026-05-16 (C1-INH on LBP-luminal + DAF SCR1-4 on koji-secreted).
+**Question:** Will human C1-INH (UniProt P05155) survive luminal-secreted expression in engineered *E. coli* Nissle 1917, and is the loss of N-glycosylation a hard block? Closes the C1-INH-on-EcN side of the two-chassis CP0 architecture (C1-INH on LBP-luminal + DAF SCR1-4 on koji-secreted).
 
 **Verdict:** **MODERATE — kinetic-competition gated.** Strictly-degradative protease risk on the folded serpin body is **LOW (0.1)**. The by-design exposed reactive-center loop (RCL, R466-T467 cleavage by C1s) gives a 0.8 score that reflects the inhibitor *mechanism*, not body degradation. The remaining decision is a wet-lab kinetic question: k_C1s_engagement vs k_DegP_RCL_cleavage on the recombinant construct. **Glycosylation feasibility GREEN** for the serpin-core construct (aa 123–500) in luminal topology — N-glycans not required for catalytic suicide-substrate mechanism; plasma half-life concern is moot for a gut-luminal therapeutic; EcN's lack of N-glycosylation is not a hard block.
 
@@ -316,7 +316,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Question:** Is the complestatin-family NRPS biosynthetic gene cluster heterologous-expression-tractable in an engineered LBP chassis (*E. coli* Nissle 1917, *Bacteroides thetaiotaomicron*) as the next CP0 (complement priming) engineering payload?
 
-**Verdict:** **RED for the LBP-track framing.** Best host EcN YELLOW 0.544; *Bacteroides* RED 0.225. Dominant blocker: O₂-dependent tailoring chemistry (ComI/ComJ P450 oxidative phenolic coupling + ComH nonheme halogenase + Hmo FMN oxidase) fundamentally incompatible with colonic-anaerobic-resident lifestyle. Without P450-mediated phenolic coupling, the linear peptide lacks the rigid crosslinked architecture that gives complestatin its C1q/C4b affinity (Park 2016 M55/S56 deletions inactive). **C1-INH (LBP-luminal) parallel thread scores GREEN-provisional 0.774 on EcN** — recommended as next CP0 LBP payload instead (→ promoted to comp-037).
+**Verdict:** **RED for the LBP-track framing.** Best host EcN YELLOW 0.544; *Bacteroides* RED 0.225. Dominant blocker: O₂-dependent tailoring chemistry (ComI/ComJ P450 oxidative phenolic coupling + ComH nonheme halogenase + Hmo FMN oxidase) fundamentally incompatible with colonic-anaerobic-resident lifestyle. Without P450-mediated phenolic coupling, the linear peptide lacks the rigid crosslinked architecture that gives complestatin its C1q/C4b affinity (Park 2016 M55/S56 deletions inactive). **C1-INH (LBP-luminal) parallel thread scores GREEN-provisional 0.774 on EcN** — recommended as next CP0 LBP payload instead (→ tracked as comp-037).
 
 **Key findings:**
 - Complestatin stays in scope as **aerobic-fermentation production candidate** (Streptomyces-class manufacturing), NOT LBP-track payload.
@@ -346,7 +346,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-022 — ClockBase Combinatorial Ranking of A. oryzae Uricase Cassettes — candidate generator, topology unresolved (2026-05-14; reframed 2026-07-13)
+### comp-022 — ClockBase Combinatorial Ranking of A. oryzae Uricase Cassettes — candidate generator (2026-05-14; topology unresolved as of 2026-07-13)
 
 **Question:** Across the *A. oryzae* uricase cassette design space (43,200 combinations), which cassettes survive a multi-model concordance gate?
 
@@ -389,9 +389,9 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Key findings:**
 - "Chokepoint-hacker move" worked; rosmarinic acid is the most well-characterized natural-product upstream-complement modulator.
-- **Luteolin triple-convergence** (XO + URAT1 + C3 convertase CP+AP) — highest-leverage single dietary compound surfaced.
+- **Luteolin triple-convergence** (XO + URAT1 + C3 convertase CP+AP) — highest-leverage single dietary compound identified.
 - comp-014 β-glucan structure-dependence mechanistically explained; Ganoderma triterpene-enriched preps argued for.
-- Engineered C1-INH parallel thread proposed (near-twin to H05 DAF) → grounded in Phase 2 + promoted to comp-037.
+- Engineered C1-INH parallel thread proposed (near-twin to H05 DAF) → grounded in Phase 2 + tracked as comp-037.
 - ChEMBL anticomplement coverage 0/32 = 0% — same gap pattern as comp-013/014.
 - **Phase 2 (2026-05-17):** new TIER 1 candidate **Houttuynia cordata polysaccharide class** (CH50 79–318 µg/mL, multi-anchor Chen Daofeng Fudan group, widely dietary in SE Asia) — orthogonal to RA/luteolin/Helicteres on mechanism + structure class. Helicteres benzofuran lignan replication INCONCLUSIVE (single-anchor Yin 2016; structural neighbor Styrax egonol 3.7× weaker). C1-INH engineering anchors: Bos 2003 Pichia 30–180 mg/L active rhC1-INH, Liu 2004 N-deglycosylated retains inhibitor function, Ruconest 2014 FDA non-mammalian-glycosylation precedent.
 - **Phase 2 reframing — "language barrier" was the wrong diagnosis.** Chen Daofeng / Yamada-Kiyohara groups publish 80–95% in English-language journals; actual barriers are citation-network insularity + traditional-formula-name vs Western-mechanism-name query framing + source-journal impact-factor underweighting. Operational discipline: query by traditional-formula + species + traditional-pathology framings IN ADDITION to mechanism names. "C3 convertase inhibitor" misses Houttuynia; "Houttuynia cordata anti-complementary" catches it.
@@ -461,7 +461,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 **Key findings:**
 - v2 added XO panel after v1 missed eurycomanone XO mechanism trigger; the trigger was citation-laundering (PMID 31920654/34785103 establish transporter+purine-synthesis, not direct XO) but panel addition still correct.
 - v2 finds 5 direct-evidence cells vs v1's 1; eurycomanone now better-characterized than cordycepin on urate axis.
-- New chokepoint surfaced: **PRPS (phosphoribosyl pyrophosphate synthetase)** — eurycomanol mechanism, distinct from XO.
+- New chokepoint identified: **PRPS (phosphoribosyl pyrophosphate synthetase)** — eurycomanol mechanism, distinct from XO.
 
 **Informs:** [androgen-natural-modulation §10 H-AN-02](./androgen-natural-modulation.md) · [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) · [androgen-urate-axis](./androgen-urate-axis.md)
 
@@ -513,7 +513,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 - Hoque 2020 correction: Western-jejunum 78% : Western-kidney 44% (~1.8×), NOT comp-016's 88%:44%. Female FEUA unchanged (p=0.6263) — strong null on female protection.
 - Yu 2021: Caco-2 active at 100 µM EB (5–6 orders above physiological serum E2); mechanism real at strong-pharmacological tier; physiological magnitude unestablished.
 - Klyushova 2023: T/E2/P at 1/10/100 µM all INCREASE ABCG2 via PXR/FXR (NOT AR) — **H07 sub-claim 3 ("NOT AR-mediated") strongly supported.**
-- Hosoyamada 2010 surfaced: T affects renal URAT1 mRNA only (protein unchanged); actual androgen-responsive renal urate transporter is **Smct1**, GLUT9 attenuated.
+- Hosoyamada 2010 showed: T affects renal URAT1 mRNA only (protein unchanged); actual androgen-responsive renal urate transporter is **Smct1**, GLUT9 attenuated.
 
 **Informs:** [hypotheses/H07](./hypotheses/H07-clomid-intestinal-er-antagonism.md) · [t-abcg2-suppression-evidence-mining-computational](./t-abcg2-suppression-evidence-mining-computational.md) · [androgen-urate-axis](./androgen-urate-axis.md) · [abcg2-modulators §1](./abcg2-modulators.md) · [gut-lumen-sink](./gut-lumen-sink.md)
 
@@ -532,7 +532,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 - **Berkeleyamides / Berkeleyones** (Penicillium): first fungal natural products with direct sub-µM CASP1 and low-µM IL-1β hits — opens an inflammasome-effector-axis fungal candidate beyond the polysaccharide-priming literature comp-014 Phase 1 + Phase 2 emphasized.
 - **Target-orphan rate 98.19%** — SwissTargetPrediction predicted-target layer is the next load-bearing step; sandbox-blocked here, deferred to re-run. 9,601 compounds with zero empirical chokepoint hits.
 - **12 of 24 chokepoints have ZERO fungal-source ChEMBL hits**: NLRP3, ASC, GLUT9, C5aR1, Lp-PLA2, KEAP1, OAT4, PINK1, PDI, PDIA3, TXN, TXNIP. Confirms the comp-013 / comp-020 ChEMBL-Western-pharma-bias finding empirically for fungal-source NPs.
-- Multi-chokepoint compounds surfaced: morin (4 chokepoints: ABCG2, CASP1, URAT1, XO); genistein (4: ABCG2, CASP1, PPARG, XO). Both plant-origin flavonoids in mushroom substrate — not biosynthesis attribution.
+- Multi-chokepoint compounds identified: morin (4 chokepoints: ABCG2, CASP1, URAT1, XO); genistein (4: ABCG2, CASP1, PPARG, XO). Both plant-origin flavonoids in mushroom substrate — not biosynthesis attribution.
 - Phase 2 partial: 3 of 6 planned compound DBs reachable (LOTUS, NPAtlas, KNApSAcK partial); NPASS / TCMSP / HIT all sandbox-blocked. ChEMBL primary-source pre-commit grep-verify gate applied on top-2 load-bearing potency claims.
 
 **Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) · [complement-c5a-gout](./complement-c5a-gout.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [etc/open-source-platform](./etc/open-source-platform.md) · [nlrp3-exploit-map](./nlrp3-exploit-map.md) (Berkeleyamides → CASP1 effector axis) · [abcg2-modulators](./abcg2-modulators.md) (Quercetin × ABCG2 30 nM)
@@ -591,7 +591,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-010 — Cassette Compatibility for Dual-Cassette Koji Endgame Strain — LOW (2026-05-05)
+### comp-010 — Cassette Compatibility for Dual-Cassette Koji Multi-Payload Configuration — LOW (2026-05-05)
 
 **Question:** Does the uricase (Q00511) + lactoferrin (P02788) payload pair have cassette-design-specific issues (codon collisions, KEX2 geometry, secretion burden) that the Ward 1995 glucoamylase-KEX2 architecture won't handle?
 
@@ -668,8 +668,8 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | ~~comp-011 TCM~~ | Reassigned 2026-05-05; TCM ChEMBL cross-check landed as comp-013 | — | ✓ Done as comp-013 |
 | comp-021 | Compound × upstream-complement chokepoint × matched-assay-format mapping (resolves RA 44× spread) | [upstream-complement-verification-rerun-computational](./upstream-complement-verification-rerun-computational.md) | Low (parked) |
 | ~~comp-022~~ | Completed 2026-05-14 — see Analyses above | — | ✓ Done |
-| ~~comp-024~~ | Completed 2026-05-16 — RED for LBP framing; C1-INH parallel GREEN-provisional → promoted to comp-037. See Analyses above | — | ✓ Done |
-| comp-023 | Promoted to Analyses 2026-05-14 (GREEN) | — | ✓ Done |
+| ~~comp-024~~ | Completed 2026-05-16 — RED for LBP framing; C1-INH parallel GREEN-provisional → tracked as comp-037. See Analyses above | — | ✓ Done |
+| comp-023 | Completed 2026-05-14 — GREEN; see Analyses above | — | ✓ Done |
 | ~~comp-022 v2~~ | Completed 2026-05-14 — see comp-022 Status above | — | ✓ Done |
 | ~~comp-023 v2~~ | Deprioritized 2026-05-16 — koji-cordycepin removed from active stack ([koji-endgame-strain §3.5](./koji-endgame-strain.md)) | — | Closed |
 | ~~comp-025~~ | Deprioritized 2026-05-16 — koji-cordycepin removed; cultivation-route cordycepin inherits native ADA-inhibitor pairing | — | Closed |
@@ -685,9 +685,9 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | ~~comp-037~~ | Completed 2026-05-17 — MODERATE (kinetic-competition gated); glyco GREEN for serpin-core aa 123–500 in luminal topology. See Analyses above | — | ✓ Done |
 | ~~comp-038~~ | Completed 2026-05-20 — YELLOW; HPLC-UV culture-supernatant candidate + electrochemical fecal SCFA future direction; no home/colorimetric butyrate assay ready. See Analyses above | — | ✓ Done |
 | ~~comp-039~~ | Completed 2026-05-21 — All four upstream-CP0 candidates classified CFH-INDEPENDENT (rosmarinic acid High, luteolin Medium, HCP/HCPM/CHCP High, Helicteres Medium-replication-bounded). See Analyses above | — | ✓ Done |
-| comp-040 | Wet-lab in-vitro CFH-depleted-serum MSU-crystal complement-activation assay — definitive falsification test of comp-039 CFH-independence classification for rosmarinic acid, luteolin, and HCP. Surfaced by [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §7. **Sequenced downstream of [`validation-experiments.md` §1.30](./validation-experiments.md)** for HCP specifically — comp-040 only fires if §1.30 prioritization screen returns positive. (Other candidates — rosmarinic acid, luteolin — could fire comp-040 independent of §1.30 since they have their own analogous prioritization gates.) | [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md), [validation-experiments.md §1.30](./validation-experiments.md), [gout-genetic-variants.md](./gout-genetic-variants.md) Category 5, [complement-c5a-gout.md](./complement-c5a-gout.md) §6.3 | Blocked (OE wet-lab access; relevant to lab-partner conversations) |
-| comp-041 | East Asian cohort feasibility scan for Houttuynia × rs1061170 × incident gout cross-tab — KoGES, China Kadoorie Biobank, Singapore Chinese Health Study. Parallels the 2026-05-19 UKB feasibility analysis but for the Houttuynia-tractable population (HCP exposure captured; Y402H allele frequency ~5-6%). Surfaced by [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §5 + §7. | [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md), [logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md](../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md) | Queueable (opens when East Asian collaboration channel becomes available) |
-| ~~comp-028~~ | Reframed and deprioritized 2026-05-16 — cordycepin-arm moot; general design-escape question non-load-bearing today; re-openable for future cytosolic third-cassette candidate | — | Closed |
+| comp-040 | Wet-lab in-vitro CFH-depleted-serum MSU-crystal complement-activation assay — definitive falsification test of comp-039 CFH-independence classification for rosmarinic acid, luteolin, and HCP. Defined by [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §7. **Sequenced downstream of [`validation-experiments.md` §1.30](./validation-experiments.md)** for HCP specifically — comp-040 only fires if §1.30 prioritization screen returns positive. (Other candidates — rosmarinic acid, luteolin — could fire comp-040 independent of §1.30 since they have their own analogous prioritization gates.) | [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md), [validation-experiments.md §1.30](./validation-experiments.md), [gout-genetic-variants.md](./gout-genetic-variants.md) Category 5, [complement-c5a-gout.md](./complement-c5a-gout.md) §6.3 | Blocked (OE wet-lab access; relevant to lab-partner conversations) |
+| comp-041 | East Asian cohort feasibility scan for Houttuynia × rs1061170 × incident gout cross-tab — KoGES, China Kadoorie Biobank, Singapore Chinese Health Study. Parallels the 2026-05-19 UKB feasibility analysis but for the Houttuynia-tractable population (HCP exposure captured; Y402H allele frequency ~5-6%). Defined by [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §5 + §7. | [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md), [logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md](../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md) | Queueable (opens when East Asian collaboration channel becomes available) |
+| ~~comp-028~~ | Deprioritized 2026-05-16 — cordycepin-arm moot; general design-escape question non-load-bearing today; re-openable for future cytosolic third-cassette candidate | — | Closed |
 
 ---
 
@@ -703,7 +703,7 @@ Every comp-NNN run produces output from a *generation* agent; add a second-pass 
 
 ### pcSec-class proteome-constrained *A. oryzae* GEM build — Planned (2026-05-14)
 
-Layer secretion-pathway proteome-cost constraints on iWV1314 (Vongsangnak 2008): explicit PDI/calnexin/BiP saturation, signal-peptide processing capacity, KEX2 flux, Sec61 throughput. Enables rigorous burden evaluation for any future *secreted* third cassette (DAF SCR1-4 per H05; engineered C1-INH per comp-018 Phase 2; complestatin NRPS per comp-024). Validation gate: must reproduce comp-023 GREEN for cytosolic cns1+cns2. Multi-week research project; not a single-subagent task. Surfaced as comp-023 v1 limitation.
+Layer secretion-pathway proteome-cost constraints on iWV1314 (Vongsangnak 2008): explicit PDI/calnexin/BiP saturation, signal-peptide processing capacity, KEX2 flux, Sec61 throughput. Enables rigorous burden evaluation for any future *secreted* third cassette (DAF SCR1-4 per H05; engineered C1-INH per comp-018 Phase 2; complestatin NRPS per comp-024). Validation gate: must reproduce comp-023 GREEN for cytosolic cns1+cns2. Multi-week research project; not a single-subagent task. Current comp-023 v1 limitation.
 
 **Detail:** [chaperone-orthogonal-stacking](./chaperone-orthogonal-stacking.md) · companion to verification-agent proposal (per-run vs per-strain infrastructure scopes)
 

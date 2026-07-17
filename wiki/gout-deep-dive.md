@@ -7,11 +7,7 @@ status: published
 
 # Gout: A Deep Dive
 
-State of the art, frontier research, AI-driven discovery, evolutionary biology, and unconventional treatment angles — connecting dots across disciplines.
-
-**Compiled April 2026** · Research current through early 2026
-
-Part of the [Open Enzyme](etc/open-enzyme-vision.md) project — where this research led.
+State of the art, frontier research, AI-driven discovery, evolutionary biology, and unconventional intervention angles across the gout system.
 
 ## Contents
 
@@ -28,7 +24,7 @@ Part of the [Open Enzyme](etc/open-enzyme-vision.md) project — where this rese
 11. [Nanotechnology and Targeted Crystal Dissolution](#nanotechnology-and-targeted-crystal-dissolution)
 12. [The Uric Acid Paradox — Why Lowering It Isn't Free](#the-uric-acid-paradox--why-lowering-it-isnt-free)
 13. [Unconventional Angles and Cross-Disciplinary Connections](#unconventional-angles-and-cross-disciplinary-connections)
-14. [Actionable Summary — Where to Put Resources](#actionable-summary--where-to-put-resources)
+14. [Research Priorities](#research-priorities)
 15. [Peptides — BPC-157, KPV, and the Biohacking Angle](#peptides--bpc-157-kpv-and-the-biohacking-angle)
 16. [Engineered Organisms — Koji, Yeast, and Living Factories](#engineered-organisms--koji-yeast-and-living-factories)
 17. [The NLRP3 Chokepoint Framework](#the-nlrp3-chokepoint-framework)
@@ -278,9 +274,9 @@ Remember SLC2A9/GLUT9, the second-strongest GWAS hit for urate levels? GLUT9 tra
 
 Fructose consumption has increased dramatically in Western diets — from ~15g/day in the early 1900s to ~55–75g/day today, driven primarily by high-fructose corn syrup in processed foods and sugar-sweetened beverages. This aligns almost perfectly with the rising prevalence of gout. Additionally, fructose also reduces renal uric acid excretion, hitting both the production and excretion sides.
 
-> **Practical Implication**
+> **Exposure-reduction hypothesis**
 >
-> For a gout patient, eliminating sugar-sweetened beverages and foods with high-fructose corn syrup may be as impactful as any single medication change. The mechanism is now well-understood at the molecular level. This isn't dietary hand-waving — it's a direct biochemical pathway from fructose to uric acid with no regulatory braking system. A fructokinase (KHK) inhibitor could theoretically block this pathway without affecting glucose metabolism.
+> Sugar-sweetened beverages and high-fructose corn syrup are high-priority exposure variables because the fructose-to-urate pathway has a direct biochemical mechanism with limited regulatory braking. Controlled studies must establish the outcome effect and whether KHK inhibition blocks it without unacceptable tradeoffs.
 
 ---
 
@@ -394,7 +390,7 @@ This section connects research happening in adjacent fields that could — with 
 
 ---
 
-## Actionable Summary — Where to Put Resources
+## Research Priorities
 
 ### High-Confidence Bets (2–5 Year Horizon)
 
@@ -420,11 +416,9 @@ This section connects research happening in adjacent fields that could — with 
 
 **Polygenic risk scores + early intervention.** With 351 identified loci, the genetic architecture is rich enough for predictive modeling. Identify high-risk individuals in their 20s, intervene with lifestyle modification (fructose avoidance) and low-dose ULT before any joint damage occurs. Requires prospective validation studies.
 
-### What You Can Do Right Now
+### Near-term research and funding gates
 
-**For personal management:** Aggressively reduce fructose intake (especially sugar-sweetened beverages and processed foods with HFCS). The biochemistry is clear and unambiguous — fructose drives uric acid production through an unregulated pathway. Get HLA-B*5801 tested before starting allopurinol (especially if you have East Asian or African American ancestry — the hypersensitivity allele frequency is much higher in these populations). Ask your rheumatologist about combination therapy (XO inhibitor + uricosuric) if monotherapy isn't reaching target. Consider the gut microbiome angle — fermented foods and dietary fiber that promote SCFA-producing bacteria may have a modest but real effect on gut urate elimination.
-
-**For funding/investment:** The CRISPR uricase gene therapy at Georgia State is the most asymmetric opportunity — a relatively small investment could fund the animal studies that would make this attractive to a gene therapy biotech. The ABCG2 pharmacological chaperone concept is an "idea looking for a champion" that could be catalyzed by a focused research grant. The engineered probiotics space needs a bridge between academic labs and commercial development.
+Fructose exposure, HLA-B*58:01 pharmacogenetics, combination urate-lowering strategies, and microbiome effects are distinct evidence questions; this research page does not provide individual treatment instructions. Funding priorities are the cheapest studies that can kill or advance CRISPR uricase, ABCG2 pharmacological chaperones, and engineered-probiotic hypotheses.
 
 ---
 
@@ -444,19 +438,19 @@ Research peptides gaining traction in the biohacking world have genuine — if u
 
 ---
 
-## Engineered Organisms — Koji, Yeast, and Living Factories
+## Engineered organisms — candidate delivery tracks
 
-The research in this document eventually led to a practical question: could we engineer food-safe organisms to produce the missing uricase enzyme and deliver it orally? Two parallel tracks emerged, both now documented in detail:
+One portfolio question is whether food-safe organisms can produce uricase and deliver it orally. Yeast and koji are two candidate tracks, each independently falsifiable.
 
 ### The Yeast Track: Engineered *S. cerevisiae*
 
-Baker's yeast (*S. cerevisiae*) already produces rasburicase commercially — the FDA-approved IV uricase used for tumor lysis syndrome. The [Engineered Yeast Uricase Proposal](engineered-yeast-uricase-proposal.md) details a research plan to adapt this into an oral format: engineered yeast that produces uricase in the gut lumen, degrading the ~1/3 of uric acid excreted through the intestines. The core mechanism is supported by preclinical and early-clinical work from three independent systems (ALLN-346, PULSE probiotic, and a 2025 *ACS Synthetic Biology* paper on engineered *S. boulardii*). **Update (2026-04-23):** ALLN-346's Phase 2a CKD trial was terminated September 2022 — the scientific rationale remains intact, but no pharma champion is actively pursuing gut-lumen uricase in a clinical program. See [gout-clinical-pipeline.md](gout-clinical-pipeline.md) for the current competitive landscape (PRX-115 and SSS11 are both systemic IV, not gut-lumen).
+Baker's yeast (*S. cerevisiae*) already produces rasburicase commercially — the FDA-approved IV uricase used for tumor lysis syndrome. The [Engineered Yeast Uricase Proposal](engineered-yeast-uricase-proposal.md) details a research plan to adapt this into an oral format. The core mechanism is supported by preclinical and early-clinical work from ALLN-346, PULSE probiotic, and engineered *S. boulardii*. ALLN-346's Phase 2a CKD trial was terminated in September 2022, so the biological rationale remains open without an active gut-lumen uricase clinical program. See [gout-clinical-pipeline.md](gout-clinical-pipeline.md).
 
-**Uricase variant update (2026-05-05):** Industry-revealed preference analysis shows that 3-of-4 recent non-rasburicase uricase programs chose *Candida utilis* (SSS11, ALLN-346, SEL-212) over *A. flavus*. Tang 2025 directed evolution head-to-head (PMID 39892538) shows post-evolution *A. flavus* retains a ~50% specific-activity advantage (46.21 vs. 31.43 U/mg), but industry preference for *C. utilis* is driven by IP, oral-tolerance profile, and the publicly disclosed ALLN-346 ProteinGPS mutations (US10815461B2). For the oral/gut-lumen track, *C. utilis* is now co-primary alongside *A. flavus*. See [uricase-variant-selection.md](uricase-variant-selection.md) for the full analysis. (In Vitro + Clinical Trial; source: uricase-variant-selection.md)
+**Uricase variant comparison:** Three of four cited non-rasburicase programs chose *Candida utilis* over *A. flavus*. Tang 2025 (PMID 39892538) shows a post-evolution specific-activity advantage for *A. flavus*, while program choices also reflect IP, tolerance, and disclosed mutations. Both remain candidates for the oral track. See [uricase-variant-selection.md](uricase-variant-selection.md). (In Vitro + Clinical Trial; source: uricase-variant-selection.md)
 
 ### The Koji Track: Engineered *A. oryzae*
 
-The [Engineered Koji Protocol](engineered-koji-protocol.md) documents the complementary approach: engineering the koji mold (*A. oryzae*) to produce uricase alongside its native digestive enzymes. Wild-type koji already produces the proteases, lipases, and amylases in Lynn's digestive enzyme supplements — it's her solution without any engineering. The stretch goal is a dual-purpose strain producing both digestive enzymes and uricase.
+The [Engineered Koji Protocol](engineered-koji-protocol.md) tests whether *A. oryzae* can produce uricase alongside native digestive enzymes. The dual-purpose strain is a conditional configuration, not the project end state.
 
 ### The Key Insight: You Might Not Need to Cross the Barrier
 
@@ -464,15 +458,15 @@ Early in this research, we assumed oral uricase would need to cross the gut-bloo
 
 > **Key Insight**
 >
-> These engineered-organism approaches represent a root-cause solution rather than symptom management. Instead of inhibiting uric acid production (allopurinol) or forcing excretion (uricosurics) or suppressing the inflammatory response (colchicine/NSAIDs), they restore the missing enzymatic step — converting uric acid to allantoin, exactly as uricase would in other mammals. This vision is now formalized in the [Open Enzyme platform](etc/open-enzyme-vision.md).
+> These engineered-organism tracks test one root-cause strategy: restoring urate-to-allantoin conversion in a usable delivery context. Failure of a chassis or delivery route narrows that track, not the broader mission.
 
 ---
 
 ## The NLRP3 Chokepoint Framework
 
-The [biology recap above](#the-biology-of-gout--why-it-happens) (full cascade: [Gout Pathophysiology](./gout-pathophysiology.md)) introduced the NLRP3 inflammasome as the driver of gout flares. Subsequent research mapped the full cascade into **seven discrete chokepoints with labeled sub-branches** (v1.2 restructure, 2026-04-24) — each a potential intervention target. The complete analysis is in the [NLRP3 Exploit Map](nlrp3-exploit-map.md), but here's the framework:
+The [biology recap above](#the-biology-of-gout--why-it-happens) (full cascade: [Gout Pathophysiology](./gout-pathophysiology.md)) introduces the NLRP3 inflammasome as a driver of gout flares. The current model has **seven discrete chokepoints with labeled sub-branches**, each a potential intervention target. The complete analysis is in the [NLRP3 Exploit Map](nlrp3-exploit-map.md).
 
-**Chokepoint 0 (NEW):** Crystal-triggered priming via complement C5a (blocked by avacopan — FDA C5aR1 antagonist; honest stack gap — no fermentable option) (source: complement-c5a-gout.md)
+**Chokepoint 0:** Crystal-triggered priming via complement C5a; candidate blockade includes avacopan and other CP0 approaches. (source: complement-c5a-gout.md)
 **Chokepoint 1:** NF-κB priming — split into **CP1a** (NF-κB transcriptional, including TNFSF14/LIGHT amplifier; blocked by KPV, oridonin, sulforaphane, BHB, EGCG) and **CP1b** (non-transcriptional C5a→ROS priming)
 **Chokepoint 2:** NLRP3 conformational activation, P2X7/P2X2-mediated K⁺ efflux (blocked by dapansutrile, MCC950, BHB, colchicine via P2X7)
 **Chokepoint 3:** ASC speck formation (blocked by colchicine, parthenolide)
@@ -480,19 +474,19 @@ The [biology recap above](#the-biology-of-gout--why-it-happens) (full cascade: [
 **Chokepoint 5:** IL-1β / IL-18 output — split into **CP5a** (receptor blockade: anakinra, canakinumab *FDA-approved for gout Aug 2023*, rilonacept) and **CP5b** (active resolution via ALX/FPR2: RvD1, RvD2, MaR1 — direct MSU gout animal data, Zaninelli 2022 PMID 35716378; Jiang 2023 PMID 37996809; lactoferrin as fermentable adjunct) (source: spm-resolution-pathway.md)
 **Chokepoint 6:** Neutrophil amplification + pyroptotic exit — split into **CP6a** (5-LOX → LTB4 → neutrophil chemotaxis: quercetin 300 nM IC50, AKBA ~2.7 μM cellular, zileuton FDA-approved 5-LOX inhibitor never tested in gout [zero ClinicalTrials.gov entries as of 2026-05-05], EPA substrate competition) and **CP6b** (GSDMD pore formation: disulfiram, DMF, NSA — blocks pyroptotic IL-1β release) (source: zileuton.md, nlrp3-exploit-map.md)
 
-> **Theaflavins (added 2026-05-05):** Black-tea polyphenols (TF1/TF2A/TF2B/TF3) hit CP2/CP3 via NLRP3-NEK7 interaction disruption (distinct from EGCG's proteasome-mediated CP1a route) and CP1a via TF3 TNFSF14/HVEM modulation. Unique in the OE stack: simultaneous ↓URAT1, ↓GLUT9 (renal urate reabsorption block) + ↑OAT1/OCTN1/OAT2 (secretion enhancement). Direct MSU peritonitis Animal Model (Chen 2023 PMID 37221235). Tier 2 supplement candidate. See [theaflavins.md](./theaflavins.md). (In Vitro + Animal Model; source: theaflavins.md)
+> **Theaflavins:** Black-tea polyphenols hit CP2/CP3 via NLRP3-NEK7 interaction disruption and CP1a via TF3 TNFSF14/HVEM modulation, with animal evidence for MSU peritonitis and renal-transporter effects. See [theaflavins.md](./theaflavins.md). (In Vitro + Animal Model; source: theaflavins.md)
 
 > **Key Insight**
 >
 > **Beta-hydroxybutyrate (BHB)** — the ketone body produced during fasting or ketosis — hits three chokepoints (CP1, CP2, CP3). Still multi-chokepoint, but the v1.2 expansion reveals that **lactoferrin** (a single, fermentable 80 kDa protein) now covers CP1a (LPS/CD14 + NF-κB suppression), CP4/CP6b (direct GSDMD suppression via mitophagy, Shan 2026 PMID 41524100), and partial CP5b (resolution). Single-protein four-chokepoint coverage via one engineerable A. oryzae target. See the [NLRP3 Exploit Map](nlrp3-exploit-map.md) and [lactoferrin.md](lactoferrin.md) for the full analysis.
 >
-> **Species-gap caveat (2026-04-23):** Rodent cellular IC50 values for NLRP3 inhibitors can diverge from human cellular IC50 by up to 3 orders of magnitude (dapansutrile: 1 nM mouse vs. 1 μM human, same assay format). Every rodent-derived NLRP3 potency claim in the chokepoint framework should be read with that translation uncertainty in mind. (source: chembl-cross-check.md)
+> **Species-gap caveat:** Rodent cellular IC50 values for NLRP3 inhibitors can diverge from human cellular IC50 by up to three orders of magnitude. Every rodent-derived potency claim carries that translation uncertainty. (source: chembl-cross-check.md)
 
 ---
 
-## Open Enzyme Research Library
+## Related research
 
-This document is part of the [Open Enzyme](etc/open-enzyme-vision.md) project — an open-source therapeutic enzyme platform.
+Open Enzyme is a portfolio of falsifiable gout-intervention tracks; enzymes and engineered organisms are candidates within it.
 
 - [Founding Vision](etc/open-enzyme-vision.md)
 - [Gout: A Deep Dive](gout-deep-dive.md)
@@ -504,7 +498,5 @@ This document is part of the [Open Enzyme](etc/open-enzyme-vision.md) project �
 - [Engineered Yeast Uricase Proposal](engineered-yeast-uricase-proposal.md)
 
 ---
-
-Compiled from primary research literature, clinical trial registries, and press releases current through April 2026.
 
 Key sources: Nature Scientific Reports, Cell Reports Medicine, PNAS, NEJM, Arthritis & Rheumatology, Frontiers in Microbiology, Rheumatology (Oxford), UK Biobank, ClinicalTrials.gov, ACR Convergence 2025, and company press releases from Sobi/Arthrosi, Olatec, Selecta/Sobi, and Atom Therapeutics.

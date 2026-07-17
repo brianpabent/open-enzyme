@@ -17,7 +17,7 @@ sources:
 
 # Oridonin: Natural NLRP3 Inhibitor from Traditional Medicine
 
-**Oridonin** is an ent-kaurane diterpenoid compound isolated from *Rabdosia rubescens*, a plant used in traditional Chinese medicine. It is a **specific, covalent NLRP3 inflammasome inhibitor** that targets the exact same binding site used by the pharmaceutical NLRP3 inhibitor MCC950, achieving comparable potency through a natural product scaffold.
+**Oridonin** is an ent-kaurane diterpenoid isolated from *Rabdosia rubescens*, a plant used in traditional Chinese medicine. Its gout-relevant hypothesis is direct, covalent interruption of NLRP3–NEK7 assembly at Cys279. That mechanism is established in preclinical systems, including a human THP-1 assay, but has not been tested clinically in gout.
 
 > **Species-gap caveat:** Rodent NLRP3 potency does not establish human-cell potency; apply the cross-species standard in [`chembl-cross-check.md`](./etc/chembl-cross-check.md) before making dose claims.
 
@@ -46,9 +46,7 @@ Oridonin exhibits dose-dependent inhibition of NLRP3 in cell culture:
 
 **Curated human NLRP3 IC50 (ChEMBL v34, queried 2026-04-23):** 5,180 nM (5.18 μM) in human THP-1 macrophages under LPS/ATP stimulation (*Eur J Med Chem* 2023, ChEMBL ID CHEMBL1164920, pChEMBL = 5.29). This is the only direct human NLRP3 bioactivity for oridonin in the ChEMBL database — which is stricter than review-literature citations because it requires a curated binding/inhibition assay, not a downstream IL-1β readout. (In Vitro; source: nlrp3-inhibitor-screen.md)
 
-**Legacy citation (0.5–2 μM):** The commonly repeated "0.5–2 μM" figure — including earlier versions of this page — derives from the 2018 *Nature Communications* paper (Cys279 covalent binding kinetics), which reported cell-free and mouse-derived assays. It does not translate 1:1 to the curated human-cell IC50 above. Treat the two numbers as complementary: 0.5–2 μM for covalent-binding-kinetic potency (cell-free/mouse), 5.18 μM for human cellular IC50. (source: nlrp3-inhibitor-screen.md)
-
-These concentrations are physiologically achievable with oral supplementation, but the potency gap versus pharmaceutical benchmarks is larger than older wiki framing implied — dapansutrile (also 1 μM human cellular IC50) is in the same order of magnitude as oridonin in human cells, not orders of magnitude more potent. MCC950's 7.5 nM figure is from the original Coll et al. 2015 *J Biol Chem* paper (cell-free NACHT Walker B) and is not directly comparable to cellular IC50 without a head-to-head assay.
+The 0.5–2 μM figure from the 2018 *Nature Communications* paper reflects cell-free and mouse-derived covalent-binding assays; it does not translate 1:1 to the 5.18 μM human cellular IC50. MCC950's 7.5 nM figure is likewise cell-free and is not directly comparable without a head-to-head cellular assay. (source: nlrp3-inhibitor-screen.md)
 
 ### NLRP3-Specific
 
@@ -70,7 +68,7 @@ Direct suppression of NF-κB pathway in addition to Nrf2 effects.
 
 **(Source: nlrp3-exploit-map.md)** — "The dual hit: Beyond NLRP3, oridonin also activates Nrf2 and suppresses NF-κB independently. So it hits CP1 AND CP2 through different mechanisms."
 
-This multi-target property makes oridonin more potent than a single-mechanism inhibitor — it attacks both the priming step (NF-κB) and the activation step (NLRP3 direct inhibition).
+These secondary effects could broaden target engagement beyond NLRP3 assembly, but they do not establish greater potency or clinical benefit.
 
 ## Evidence Level: Published Mechanism in Nature Communications
 
@@ -91,7 +89,7 @@ The mechanism is well-established in cell culture and animal models, but clinica
 
 *Rabdosia rubescens* (also called *Isodon rubescens*) is a plant used in traditional Chinese medicine for inflammatory conditions, clearing heat, and removing toxins (冬凌草 Dong Ling Cao — "heat-clearing detoxification" category in TCM materia medica). The plant has been used for centuries in Asian herbal medicine, though oridonin specifically was only isolated and characterized in modern times.
 
-Oridonin is one of several TCM-lineage compounds in the Open Enzyme stack. The broader methodology for applying modern scientific rigor to TCM materia medica — including chokepoint mapping, ChEMBL cross-check, bioavailability-honest framing, and formula decomposition — is formalized in [`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md). Oridonin is explicitly listed there as a TCM-lineage compound with an existing wiki page. (source: tcm-modern-rigor-intersection.md)
+Apply the chokepoint, ChEMBL, bioavailability, and formula-decomposition standards in [`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md) when evaluating this TCM-lineage candidate. (source: tcm-modern-rigor-intersection.md)
 
 ### Modern Extraction & Standardization
 
@@ -104,32 +102,19 @@ Commercial preparations typically contain:
 
 Natural plant extracts vary significantly in bioavailability. Oridonin-specific extracts are more consistent than whole-plant preparations. Oral supplementation of isolated oridonin or standardized extracts (50–200 mg/day) achieves active serum concentrations.
 
-## Comparison: Oridonin vs. Pharmaceutical NLRP3 Inhibitors
+## Translation boundary
 
-| Compound | Target | Mechanism | Curated human NLRP3 IC50 (ChEMBL v34) | Status | Cost | Safety |
-|----------|--------|-----------|---|--------|------|--------|
-| **Oridonin** | NLRP3 Cys279 | Covalent (natural) | **5.18 μM** (THP-1, *Eur J Med Chem* 2023) | Available now | ~$20–40/month | Good (traditional use) |
-| **MCC950** | NLRP3 Walker B | Non-covalent (pharma) | 7.5 nM (cell-free, Coll 2015 — not in ChEMBL by common synonyms) | Discontinued (Phase 1 hepatotoxicity) | NA | Hepatotoxic |
-| **Dapansutrile** | NLRP3 (general) | Direct inhibitor | **1.0 μM human MDM** / 1.0 nM mouse J774A.1 (**1000× species gap**) | Phase 2a in gout published 2020; **no Phase 2b/3 registered as of 2026-04** | Unknown | Good (Phase 2 safety) |
-| **Tranilast** | NLRP3 NACHT | Non-covalent (pharma) | Zero direct human NLRP3 bioactivities in ChEMBL (2017 EMBO Mol Med NACHT-binding claim rests on non-ChEMBL assays) | Approved (Japan/Korea) | ~$30–50/month | Good (decades of use) |
-
-(IC50 values above reflect ChEMBL v34 curated cross-check, 2026-04-23. source: nlrp3-inhibitor-screen.md)
-
-**Key observation:** Oridonin is a covalent NLRP3 inhibitor like MCC950, but unlike MCC950 it has not shown hepatotoxicity. It's available immediately, costs far less than clinical-stage drugs, and has the advantage of traditional use history (though this is not the same as modern clinical trial validation).
-
-**Revised potency framing (2026-04-23):** When comparing cellular IC50 in human cells rather than cell-free NACHT-binding kinetics, oridonin (5.18 μM) and dapansutrile (1.0 μM) are within ~5× of each other. Dapansutrile's mouse cellular IC50 of 1 nM is 1,000× more potent than its own human cellular IC50 — a major species gap that reframes how we should interpret rodent NLRP3-inhibitor preclinical data generally. Oridonin's gap between cell-free covalent-binding kinetics (~0.5–2 μM) and human cellular IC50 (5.18 μM) is small by comparison. (source: nlrp3-inhibitor-screen.md)
+Oridonin's curated human cellular IC50 is 5.18 μM, versus 1.0 μM for dapansutrile in human MDM. Dapansutrile's mouse cellular IC50 is 1,000× lower than its human result, illustrating why rodent potency cannot stand in for human-cell exposure. Oridonin has no gout-specific study and no human clinical trial. (source: nlrp3-inhibitor-screen.md)
 
 ## Derivative Development
 
-Recent research (2025) has focused on **synthetic analogs of oridonin** that achieve even higher NLRP3 potency while maintaining the safety profile:
+Recent research (2025) has focused on **synthetic analogs of oridonin** with higher NLRP3 potency:
 
 **(Source: nlrp3-exploit-map.md)** — "recent 2025 research on oridonin analogs shows you can engineer even more potent derivatives."
 
-These next-generation compounds could combine oridonin's natural product scaffold with enhanced pharmaceutical properties.
+Whether those analogs retain an acceptable off-target and safety profile remains a separate question.
 
 ## Contraindications, Drug Interactions, and Dose-Dependent Risk
-
-> **Standardized safety profile (source: supplements-stack.md, 2026-04-26):** The following section consolidates contraindications, drug interactions, and dose-dependent risk from the supplements catalog.
 
 **Contraindications:**
 - Pregnancy (insufficient data; covalent-binding mechanism warrants caution)
@@ -149,33 +134,18 @@ These next-generation compounds could combine oridonin's natural product scaffol
 
 **Stack interactions:**
 - **Synergy with sulforaphane, quercetin (Nrf2 axis):** all three are Nrf2 activators; cumulative effect with diminishing returns.
-- **Mechanistic complementarity with BCP, BHB, dapansutrile (CP2):** oridonin (Cys279 covalent), BCP (CB2/TLR4), BHB (K+ efflux), dapansutrile (NACHT) all suppress NLRP3 assembly through distinct molecular touch-points — orthogonal additivity expected.
+- **Mechanistic complementarity with BCP, BHB, dapansutrile (CP2):** these candidates touch NLRP3 through different mechanisms, but additivity has not been established.
 - **No documented ABCG2 interaction.**
 
 (source: supplements-stack.md)
 
 ---
 
-## Practical Implementation
+## Sources and delivery
 
-### Sourcing
-
-- **Standardized Rabdosia extract:** ~50–100 mg oridonin per dose, easily sourced from supplement suppliers
-- **Isolated oridonin:** Higher concentration (95%+ pure), available from specialty suppliers
-- **Cost:** Significantly less than pharmaceutical alternatives ($20–40/month for therapeutic dosing)
-
-### Dosing
-
-- **Typical range:** 50–200 mg oridonin per day (from Rabdosia extract or isolated form)
-- **Timing:** With meals; fat may improve absorption
-- **Safety profile:** Decades of traditional use at these levels; no known serious adverse effects at therapeutic dosing
-
-### Integration with Other Compounds
-
-Oridonin + [[bhb-ketones|BHB]] represent a two-pronged NLRP3 inhibition strategy:
-- Oridonin: direct NLRP3 + Nrf2 activation
-- BHB: K⁺ efflux blockade + ASC oligomerization prevention
-- Combined: redundant suppression of multiple inflammasome activation pathways
+- **Whole-plant and standardized extracts:** *R. rubescens* preparations vary in diterpenoid composition; HPLC-standardized oridonin content improves characterization.
+- **Isolated compound:** Higher-purity material is available from specialty suppliers, but human oral pharmacokinetics and gout target engagement remain unresolved.
+- **Formulation question:** Extract consistency, systemic exposure, and covalent off-target reactivity need to be measured together; traditional use does not answer those questions.
 
 Oridonin + beta-caryophyllene is a third mechanistically distinct combination worth testing. Oridonin acts covalently at NLRP3 Cys279 (NACHT domain); beta-caryophyllene acts via CB2 agonism upstream (TLR4/MyD88/NF-κB suppression in MSU-stimulated synovium, animal model). No direct combination studies are published, but the mechanisms are non-overlapping, and a combination may allow dose reduction of oridonin — reducing any off-target covalent reactivity risk from chronic dosing. See [Cannabinoids & Terpenes](./cannabinoids-terpenes.md#experiments-that-would-move-the-needle) for the proposed MSU-model combination experiment. (source: cannabinoids-terpenes.md)
 
@@ -187,13 +157,8 @@ Oridonin + beta-caryophyllene is a third mechanistically distinct combination wo
 - [[dapansutrile|Dapansutrile]] — Pharmaceutical NLRP3 inhibitor in clinical trials
 - [[bhb-ketones|Beta-Hydroxybutyrate]] — Complementary NLRP3 mechanism
 
-## Key Insight
+## Falsification tests
 
-**Oridonin bridges traditional medicine and modern immunology.** It is a specific, covalent NLRP3 inhibitor with a well-characterized mechanism, available immediately at low cost, with the advantage of centuries of traditional use and the safety history of Rabdosia preparations. Unlike MCC950 (which caused hepatotoxicity) and unlike dapansutrile (which stalled at Phase 2a in gout — no Phase 2b/3 registered, PMID 33005902), oridonin is available now and targets exactly the same molecular vulnerability (NLRP3 Cys279) that pharmaceutical programs have identified.
-
-The limitation is the absence of gout-specific clinical trials, but the mechanistic case is as strong as it is for any other NLRP3 inhibitor.
-
----
-
-*Last updated: April 2026*
-*Wiki synthesized from primary research documents*
+1. Establish oral pharmacokinetics for a characterized preparation and compare achieved free concentration with the human THP-1 IC50.
+2. In human macrophages, verify Cys279 engagement, NLRP3–NEK7 disruption, and preservation of AIM2/NLRC4 signaling at the same exposure.
+3. In an MSU model, test whether target engagement changes flare readouts without unacceptable hepatic or covalent off-target signals.

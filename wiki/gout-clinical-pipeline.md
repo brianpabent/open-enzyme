@@ -21,15 +21,15 @@ sources:
 
 # Gout Clinical Pipeline: Current Snapshot and Implications for Open Enzyme
 
-Data compiled from ClinicalTrials.gov and PubMed via the Anthropic life-sciences MCP plugins on 2026-04-23. This page replaces scattered pipeline references across the wiki with a single, refreshable snapshot. Rerun the queries quarterly to keep it current — the underlying MCP calls are documented at the bottom.
+**Evidence-date boundary:** ClinicalTrials.gov and PubMed status was assessed on 2026-04-23. Trial and regulatory statements below should be read as a dated snapshot.
 
 **Bottom line up front:**
 
-1. **ALLN-346 (oral gut-lumen uricase) program appears dead.** The Phase 2a CKD trial was terminated September 2022 with only 19 patients enrolled against a 17-site protocol. Allena Pharmaceuticals has no active gout trials. This is a meaningful update — the wiki referenced ALLN-346 as the clinical proof-of-concept for gut-lumen uricase. The concept remains valid, but its commercial champion is gone.
+1. **ALLN-346 (oral gut-lumen uricase) is not an active clinical program.** The Phase 2a CKD trial was terminated in September 2022 with 19 patients enrolled across 17 sites, and Allena Pharmaceuticals has no active gout trials. The mechanism remains plausible, but ALLN-346 does not provide a completed Phase 2 efficacy precedent.
 
 2. **Dapansutrile (OLT1177) in gout: published Phase 2a, but no current late-phase trial.** The 2020 Phase 2a proof-of-concept (N=34) showed 52–68% pain reduction at day 3 across four dose levels. Olatec's subsequent gout development appears stalled; their active programs moved to heart failure (completed) and COVID-19 (terminated). Phase 2b/3 in gout is **not registered on ClinicalTrials.gov as of April 2026.**
 
-3. **Canakinumab finally got FDA approval for gout in August 2023** — the first biologic formally indicated for gout in the US, 12 years after its initial rejection. Our wiki references canakinumab but does not reflect this regulatory update.
+3. **Canakinumab received FDA approval for gout in August 2023** — the first biologic formally indicated for gout in the US, 12 years after its initial rejection.
 
 4. **The real competitor to Open Enzyme's thesis is PRX-115 (Protalix)**, whose Phase 2 RELEASE trial began recruiting December 2025. It's a systemic pegylated uricase + methotrexate — same immunomodulator strategy as SEL-212/Krystexxa+MTX. PRX-115 being in Phase 2 proves the systemic-uricase-with-tolerance-induction path is alive. Open Enzyme's gut-lumen-uricase angle remains the untested and uncompeted path.
 
@@ -58,11 +58,11 @@ Source: ClinicalTrials.gov via the Anthropic life-sciences MCP; regulatory statu
 
 ---
 
-## 2. The Critical Update: ALLN-346 Program Discontinued
+## 2. ALLN-346 Program Status
 
 Source: NCT04987294, NCT04987242, NCT04236219, NCT05168683 via the Anthropic life-sciences ClinicalTrials.gov MCP.
 
-**Wiki references to ALLN-346 as "clinical proof-of-concept for gut-lumen uricase" are now backward-looking, not forward-looking.** Status by trial:
+**Evidence boundary:** ALLN-346 is evidence that gut-lumen uricase entered clinical development, not proof that it works in Phase 2. Status by trial:
 
 | Trial | Phase | Status | N | Dates |
 |---|---|---|---|---|
@@ -75,24 +75,18 @@ The Phase 2a CKD trial — which was the pivotal study — was terminated on its
 
 **Allena Pharmaceuticals** has no active trials on ClinicalTrials.gov after September 2022. The ALLN-346 asset appears to be commercially dead.
 
-**Why this matters for Open Enzyme:**
+**Scientific interpretation:**
 
 - The *scientific rationale* for gut-lumen uricase remains intact. ABCG2-mediated gut secretion of uric acid is responsible for ~1/3 of total urate excretion (see [gut-lumen-sink.md](gut-lumen-sink.md)), and enzymatic degradation of luminal urate should reduce systemic load.
 - The *commercial* proof-of-concept is absent. ALLN-346 is not a precedent for "gut-lumen uricase works in Phase 2"; it's a precedent for "one company tried this and the trial did not deliver a pivotal readout."
-- This reframes Open Enzyme's positioning: we are no longer "the citizen-science version of a validated clinical program." We are "the citizen-science version of a promising mechanism that pharma has not yet validated."
+- Open Enzyme is pursuing a plausible mechanism without a validated clinical-program precedent.
 - The open-source, food-grade positioning may be an advantage here — a fermented koji supplement does not need a Phase 3 trial to reach users.
-
-**Action:** update the following pages to reflect ALLN-346's current status (not an endorsement, but an unfinished precedent):
-- [gout-deep-dive.md](gout-deep-dive.md) — "Current Treatments" section
-- [gut-lumen-sink.md](gut-lumen-sink.md) — remove ALLN-346 as "live clinical precedent"
-- [engineered-yeast-uricase-proposal.md](engineered-yeast-uricase-proposal.md) — reframe the commercial context
-- `index.md` — "Key Science References" table (the ALLN-346 row is current truth, but should note terminated status)
 
 ### Combination Positioning — Uricase Adjunct to Allopurinol *(Mechanistic Extrapolation; source: ALLN-346 Study 201 enrollment criteria, above)*
 
 **Mechanistic complementarity.** Allopurinol / febuxostat inhibit xanthine oxidase (upstream urate synthesis, reduces UA production by ~60%). Engineered koji / uricase degrades UA already in the gut lumen (downstream clearance, removes urate already formed). The two do not compete — they attack different points in the urate cycle. ALLN-346's Phase 2a enrolled patients already on stable allopurinol (Study 201 in gout+CKD), explicitly positioning the enzyme as adjunct to existing therapy rather than replacement.
 
-**Why this matters for Open Enzyme.** (1) Regulatory: adjunct positioning is lighter than monotherapy replacement — the enzyme is an add-on to a validated first-line, not a standalone claim. (2) Clinical: 30–40% of allopurinol-treated gout patients have imperfect UA control (above the 6 mg/dL target despite titrated allopurinol); adjunct uricase specifically addresses that residual population. (3) Self-experiment: combining engineered koji with an existing allopurinol regimen (if Brian is on one) is mechanistically additive and the safer first trial — you're adding a gut-lumen sink to an already-suppressed production rate, not removing a working drug.
+**Open Enzyme implication.** (1) Regulatory: adjunct positioning is narrower than monotherapy replacement because the enzyme is added to a validated first-line rather than making a standalone claim. (2) Clinical: 30–40% of allopurinol-treated patients remain above the 6 mg/dL target despite titration, defining a residual population for adjunct testing. (3) Evidence boundary: mechanistic complementarity does not establish efficacy or safety for an engineered-koji adjunct; that requires a controlled study on a stable standard-of-care background.
 
 **Open question.** Does adjunct koji allow lower allopurinol doses while maintaining target UA? A dose-sparing design is future work; first-order evidence is that adjunct reduces UA further, not that it replaces existing therapy. For HLA-B*58:01 carriers (at risk for allopurinol hypersensitivity), a successful dose-sparing result would be clinically meaningful — but proving it requires a controlled titration study that is well beyond Phase 0 scope.
 
@@ -139,7 +133,7 @@ According to PubMed, Dapansutrile (OLT1177) Phase 2a proof-of-concept in gout wa
 >
 > Cost: generic ~$50/month. Accessibility: prescription only; rheumatology or primary-care. Safety: hepatotoxicity boxed warning, monthly LFTs for first 3 months; many CYP1A2 interactions.
 >
-> See [wiki/zileuton.md](./zileuton.md) for the full dossier including theory of mechanism, expected outcomes, comparative side-effect profile, and open questions.
+> See [zileuton.md](./zileuton.md) for the mechanism, expected outcomes, comparative safety profile, and open questions.
 
 ---
 
@@ -231,7 +225,7 @@ Aggregate from the ClinicalTrials.gov MCP query: 153 total Phase 2/3 gout trials
 
 ---
 
-## 6a. Acute-Flare-Abort Comparator Table — Choosing Between Options for an Active Flare *(2026-05-17, source: gout-action-guide.md)*
+## 6a. Acute-Flare-Abort Comparator Table
 
 For recurrent-gout patients, the per-flare choice of abort therapy is a cumulative-burden decision — what you use × how many flares per year × how many decades adds up. Prednisone's per-flare burden is modest; its cumulative burden over 30 years of recurrent flares is substantial (bone loss, cataracts, adrenal suppression, glucose intolerance). The table below frames the decision across options, including anakinra SC — a cleaner IL-1R1 antagonist already in clinical use off-label for gout — and the future inhaled mRNA-IL-1RA modality.
 
@@ -259,41 +253,6 @@ According to PubMed:
 
 ---
 
-## 8. How to Refresh This Page
-
-The data above was pulled from ClinicalTrials.gov and PubMed via the Anthropic life-sciences MCP plugins (see [bio-ai-tools.md](etc/bio-ai-tools.md) for install instructions). To regenerate a current snapshot:
-
-**ClinicalTrials.gov queries used:**
-
-```text
-search_trials(
-  condition="gout OR hyperuricemia",
-  phase=["PHASE2","PHASE3"],
-  status=["RECRUITING","ACTIVE_NOT_RECRUITING","NOT_YET_RECRUITING","COMPLETED"],
-  page_size=50
-)
-
-search_trials(intervention="dapansutrile OR OLT1177 OR NLRP3", page_size=20)
-search_trials(intervention="ALLN-346 OR uricase OR rasburicase OR pegloticase",
-              condition="gout OR hyperuricemia", page_size=20)
-search_trials(intervention="rilonacept OR canakinumab OR firsekibart OR anakinra",
-              condition="gout", page_size=20)
-
-get_trial_details(nct_id=<NCT>)  # for each program of interest
-```
-
-**PubMed queries used:**
-
-```text
-search_articles(query="dapansutrile OR OLT1177 AND gout", sort="pub_date")
-search_articles(query="ALLN-346 OR \"Allena Pharmaceuticals\" AND gout", sort="pub_date")
-get_article_metadata(pmids=[...])
-```
-
-Recommended cadence: quarterly refresh. Trial statuses change (especially TERMINATED events), and new Phase 2/3 programs emerge ~1 per quarter in this therapeutic area.
-
----
-
 ## Related Pages
 
 - [Gout Deep Dive](gout-deep-dive.md) — core pathophysiology and treatment landscape
@@ -303,8 +262,4 @@ Recommended cadence: quarterly refresh. Trial statuses change (especially TERMIN
 - [NLRP3 Inflammasome](nlrp3-inflammasome.md) — six-chokepoint model
 - [NLRP3 Exploit Map](nlrp3-exploit-map.md) — multi-target stack strategy
 - [Engineered Yeast Uricase Proposal](engineered-yeast-uricase-proposal.md)
-- [Bio-AI Tools](etc/bio-ai-tools.md) — MCP plugin install and workflow
-
----
-
-*Generated 2026-04-23 using the Anthropic life-sciences marketplace MCP plugins (pubmed, clinical-trials). Citations include DOI links per the PubMed MCP's attribution requirement.*
+- [Bio-AI Tools](etc/bio-ai-tools.md) — literature and registry tooling

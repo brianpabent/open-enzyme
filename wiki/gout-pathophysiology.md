@@ -47,7 +47,7 @@ The first natural-product PRPS modulator documented in the OE corpus is **euryco
 
 **Adenosine deaminase (ADA)** catalyzes the irreversible deamination of adenosine → inosine and 2'-deoxyadenosine → 2'-deoxyinosine, a key step in purine catabolism upstream of xanthine oxidase. ADA sits in the purine degradation pathway between adenosine and inosine — modulating ADA activity changes the flux of purine nucleosides entering the XO → urate pipeline. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
 
-ADA was surfaced as a chokepoint candidate by comp-014 (medicinal mushroom compound × chokepoint mapping, Phase 2, 2026-05-06): the breadth aggregation of 6,798 fungal compounds across ChEMBL + LOTUS + PubMed identified ADA as a target with fungal-compound coverage, notably via **GLPP polysaccharide-peptide** from *Ganoderma lucidum* (lingzhi/reishi) and **cordycepin** (3'-deoxyadenosine) from *Cordyceps militaris*, which is itself an adenosine analog and ADA substrate. The native co-production of **pentostatin** (a clinical-grade ADA inhibitor) alongside cordycepin in *C. militaris* (Xia 2017, PMID 29056419) makes whole-fermentate Cordyceps a natural ADA-modulating preparation. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md, medicinal-mushroom-complement-track.md)
+comp-014 identified ADA as a chokepoint candidate (medicinal mushroom compound × chokepoint mapping, Phase 2, 2026-05-06): the breadth aggregation of 6,798 fungal compounds across ChEMBL + LOTUS + PubMed identified ADA as a target with fungal-compound coverage, notably via **GLPP polysaccharide-peptide** from *Ganoderma lucidum* (lingzhi/reishi) and **cordycepin** (3'-deoxyadenosine) from *Cordyceps militaris*, which is itself an adenosine analog and ADA substrate. The native co-production of **pentostatin** (a clinical-grade ADA inhibitor) alongside cordycepin in *C. militaris* (Xia 2017, PMID 29056419) makes whole-fermentate Cordyceps a natural ADA-modulating preparation. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md, medicinal-mushroom-complement-track.md)
 
 **Status:** Chokepoint candidate — not yet formalized as a named chokepoint in the modality-chokepoint-matrix or NLRP3 exploit map. Pending Phase 3-6 comp-014 follow-ups for formal admit/reject decision. (source: medicinal-mushroom-compound-mapping-computational.md)
 
@@ -83,7 +83,7 @@ and the [multihop program](./gout-multihop-research-program.md).
 
 **PINK1 (PTEN-induced kinase 1)** is a mitochondrial serine/threonine kinase that serves as the master sensor of mitochondrial damage, recruiting Parkin (PRKN) to depolarized mitochondria to initiate mitophagy — the selective autophagic clearance of damaged mitochondria. Damaged mitochondria are a primary source of the mtROS that drives NLRP3 inflammasome activation (CP2). Enhancing PINK1/Parkin-mediated mitophagy clears damaged mitochondria before they can trigger NLRP3 assembly. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
 
-PINK1/mitophagy was surfaced as a chokepoint candidate by comp-014 (Phase 2, 2026-05-06): the breadth aggregation identified fungal compounds with PINK1-modulating activity. This mechanism is **NLRP3-priming-adjacent** — it operates upstream of CP2 (K⁺ efflux / mtROS) by removing the mitochondrial source of the activation signal, rather than blocking NLRP3 assembly directly. It is mechanistically distinct from both direct NLRP3 inhibitors (oridonin, dapansutrile) and pathway modulators (BHB, quercetin). (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
+comp-014 identified PINK1/mitophagy as a chokepoint candidate (Phase 2, 2026-05-06): the breadth aggregation identified fungal compounds with PINK1-modulating activity. This mechanism is **NLRP3-priming-adjacent** — it operates upstream of CP2 (K⁺ efflux / mtROS) by removing the mitochondrial source of the activation signal, rather than blocking NLRP3 assembly directly. It is mechanistically distinct from both direct NLRP3 inhibitors (oridonin, dapansutrile) and pathway modulators (BHB, quercetin). (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
 
 **Status:** Chokepoint candidate — not yet formalized. Pending Phase 3-6 comp-014 follow-ups for formal admit/reject decision. (source: medicinal-mushroom-compound-mapping-computational.md)
 
@@ -131,9 +131,9 @@ This distinction matters enormously for treatment strategy:
 - Under-excretors: benefit from URAT1 inhibitors, uricosurics, enhanced ABCG2, or gut-lumen degradation
 - Over-producers: benefit from XO inhibitors (allopurinol, febuxostat)
 
-### Multi-track urate transporter coverage (added 2026-05-06)
+### Urate-handling weaknesses and candidate mechanisms
 
-The Open Enzyme platform's three concurrently-developing tracks — **engineered koji**, **medicinal mushroom complement**, and **TCM × modern rigor** — each address a different therapeutic mechanism. When mapped onto the renal urate handling nodes plus xanthine oxidase upstream, they collectively cover all four major transporter targets + the production enzyme. This coverage is **emergent, not designed** — each track was chosen for an independent therapeutic mechanism, and the multi-node coverage fell out as a happy accident. The map is operationally useful: it shows which combinations of tracks are mechanism-additive (covering different nodes) vs. which would be redundant (covering the same node) for any given patient phenotype.
+The map below records which current candidate classes touch renal transport, intestinal export, purine production, or inflammatory priming. It is an evidence map, not a recommendation to combine tracks. Empty cells are biological or sourcing gaps; filled cells still require exposure, tissue-selectivity, safety, and functional urate-flux validation.
 
 **Mechanism-first view** (transporter rows × track columns; modality-first view in [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) is the complementary surface):
 
@@ -144,20 +144,20 @@ The Open Enzyme platform's three concurrently-developing tracks — **engineered
 | **ABCG2 — direct modulation** | Secretes urate into gut lumen + renal tubule; #1 genetic risk locus | — *(no current OE platform coverage at the direct-modulation tier — gap)* | — | — |
 | **ABCG2 — indirect derepression** *(Mechanistic Extrapolation, two-step composed)* | Indirect — via TNFα suppression → reduced transcriptional repression of ABCG2; weaker evidence tier than direct transporter effects | **Lactoferrin → TNFα suppression → ABCG2 derepression** (lactoferrin → TNFα suppression is Animal Model + In Vitro per [`lactoferrin.md`](./lactoferrin.md) §4.7; TNFα suppression → ABCG2 derepression is the Mechanistic Extrapolation step composed onto it; see also [`koji-endgame-strain.md`](./koji-endgame-strain.md) §2.2) | — | — |
 | **OAT1 / OAT3** (SLC22A6/8) | Basolateral uptake of urate from blood into tubular cells for secretion | — | **GLPP** (animal-model OAT1 modulation per comp-014 outputs) | — |
-| **Xanthine oxidase** (upstream) | Catalyzes hypoxanthine → xanthine → urate; #1 pharmacological target (allopurinol, febuxostat) | — | — | **Astilbin** (Animal Model XO inhibition + classical TCM use); **Acacetin** from *Agastache rugosa* / Huo Xiang (In Vitro IC50 = 0.58 μM, Yuk 2023 PMC9914411 — most potent flavonoid in panel, beats luteolin); **Kaempferol** from *Chrysanthemum morifolium* / Ju Hua (In Vitro IC50 = 2.18 μM, Wee 2023 PMC9864848; DKB114 formula 38.3% UA ↓ at 200 mg/kg, Lee 2018 PMC6213378); **Rhein** from *Rheum palmatum* / Da Huang (Animal Model direct XO inhibition, Meng 2015 — separable from emodin which acts via transporter excretion not XO). All four are flavonoid- or anthraquinone-class XO chokepoint hits surfaced by the 2026-05-19 classical-formula re-scan. |
+| **Xanthine oxidase** (upstream) | Catalyzes hypoxanthine → xanthine → urate; #1 pharmacological target (allopurinol, febuxostat) | — | — | **Astilbin** (Animal Model XO inhibition + classical TCM use); **Acacetin** from *Agastache rugosa* / Huo Xiang (In Vitro IC50 = 0.58 μM, Yuk 2023 PMC9914411 — most potent flavonoid in panel, beats luteolin); **Kaempferol** from *Chrysanthemum morifolium* / Ju Hua (In Vitro IC50 = 2.18 μM, Wee 2023 PMC9864848; DKB114 formula 38.3% UA ↓ at 200 mg/kg, Lee 2018 PMC6213378); **Rhein** from *Rheum palmatum* / Da Huang (Animal Model direct XO inhibition, Meng 2015 — separable from emodin which acts via transporter excretion not XO). All four are flavonoid- or anthraquinone-class XO chokepoint hits supported by the classical-formula search. |
 | **PRPS** (upstream) | Rate-limiting enzyme of de novo purine biosynthesis; PRPP synthesis; distinct chokepoint class from XO | — | — | **Eurycomanol** from *Eurycoma longifolia* / tongkat ali (In Vitro PRPS suppression, PMID 34785103; 2021 RCT SUA ↓7–11%, n=105) — see [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md) |
 | **Gut-lumen urate sink** (post-renal) | Direct degradation of urate in gut lumen, creating concentration gradient that pulls serum urate into gut for ABCG2-mediated secretion | **Uricase** (engineered koji secretes active uricase into gut lumen — degrades luminal urate, *direct mechanism*) | — | — |
-| **ROS / CP1b priming** *(added 2026-05-08, speculative)* | NLRP3 priming via reactive oxygen species — Fenton chemistry (iron-catalyzed hydroxyl-radical generation) and direct hydroxyl-radical / peroxynitrite scavenging are mechanistically orthogonal | **Lactoferrin** — iron sequestration → reduced Fenton-available iron → reduced ROS-driven NLRP3 priming (Animal Model + In Vitro per [`lactoferrin.md`](./lactoferrin.md) §4.1; Habib 2023 PMID 37926296; Shan 2026 PMID 41524100) | **Ergothioneine** from *P. citrinopileatus* (7.0 mg/g DW per Phase 7-1c correction in [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md)); direct thiol scavenging of hydroxyl radicals + peroxynitrite, Nrf2 induction. **Caveat:** mechanism is correct in principle but **not yet demonstrated in gout-relevant cell models** — promotion from speculative to supported is gated on the proposed ergothioneine + lactoferrin combination ROS assay in MSU-stimulated THP-1 macrophages (synthesis Item 25). Koji natively produces some EGT; cross-track distinction is *quantitative* (P. citrinopileatus ~5–10× more dietary EGT than koji-native) not *mechanistically-unique*. | — |
+| **ROS / CP1b priming** *(speculative)* | NLRP3 priming via reactive oxygen species — Fenton chemistry (iron-catalyzed hydroxyl-radical generation) and direct hydroxyl-radical / peroxynitrite scavenging are mechanistically orthogonal | **Lactoferrin** — iron sequestration → reduced Fenton-available iron → reduced ROS-driven NLRP3 priming (Animal Model + In Vitro per [`lactoferrin.md`](./lactoferrin.md) §4.1; Habib 2023 PMID 37926296; Shan 2026 PMID 41524100) | **Ergothioneine** from *P. citrinopileatus* (7.0 mg/g DW per Phase 7-1c correction in [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md)); direct thiol scavenging of hydroxyl radicals + peroxynitrite, Nrf2 induction. **Caveat:** mechanism is correct in principle but **not yet demonstrated in gout-relevant cell models** — support is gated on the proposed ergothioneine + lactoferrin combination ROS assay in MSU-stimulated THP-1 macrophages. Koji natively produces some EGT; cross-track distinction is *quantitative* (P. citrinopileatus ~5–10× more dietary EGT than koji-native) not *mechanistically-unique*. | — |
 
 **Evidence-tier discipline.** Direct transporter / enzyme effects (URAT1 by cordycepin, GLUT9/OAT1 by GLPP, XO by astilbin, gut-lumen urate degradation by koji uricase) sit at **Animal Model** evidence tier from primary literature. The **lactoferrin → ABCG2** link is **Mechanistic Extrapolation** (lactoferrin → TNFα suppression is documented in vitro / clinical biopsy per [`lactoferrin.md`](./lactoferrin.md) §4.7; TNFα suppression → ABCG2 transcriptional derepression is the Mechanistic Extrapolation step composed onto it). This is a substantively weaker claim than the direct-modulation claims and should be flagged as such whenever the multi-track coverage map is invoked downstream.
 
-**Compartment discipline.** Pass 2's framing called this an "all gut-luminal" coverage map. **That's wrong.** The mechanisms are multi-compartment: cordycepin and astilbin both have systemic bioavailability sufficient to act at renal URAT1 (per animal-model evidence cited in [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) and the medicinal mushroom track scope page); GLPP and the koji uricase work primarily in the gut-luminal compartment; lactoferrin's TNFα-suppression effect is systemic. The coverage map is best read as **mechanism + compartment composite** rather than collapsed to either dimension alone.
+**Compartment discipline.** The mechanisms are multi-compartment: cordycepin and astilbin have systemic bioavailability sufficient to act at renal URAT1 (per animal-model evidence cited in [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) and the medicinal mushroom track scope page); GLPP and luminal uricase act primarily in the gut; lactoferrin's TNFα-suppression effect is systemic. Read the map as a mechanism-plus-compartment composite.
 
-**Operational implication.** For a hyperuricemic patient phenotype where the dominant defect is **under-excretion** (~90% of gout patients per the Under-Excretor Problem section above), the mechanism-additive combination is **engineered koji (gut-lumen + ABCG2-derepression)** + **medicinal mushroom (URAT1 / GLUT9 / OAT1 direct)** + optionally **TCM-derived astilbin (URAT1 / XO)**. This is not a treatment recommendation — it's a mechanism-coverage map that informs clinical-design conversations once the platform reaches the relevant translation phase. For an **over-producer** phenotype (~10%), XO inhibition (astilbin or pharmacological allopurinol/febuxostat) is the priority, with under-excretor mechanisms as add-ons.
+**Experimental implication.** Stratify studies by production versus under-excretion phenotype, then test one target mechanism at a time. Apparent multi-node coverage does not establish additivity, adequate exposure, or a clinically meaningful effect. Combination testing belongs after the individual arms pass their biological and safety gates.
 
-(Source: synthesized 2026-05-06 from individual mechanism documentation across [`koji-endgame-strain.md`](./koji-endgame-strain.md), [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md), [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md), [`lactoferrin.md`](./lactoferrin.md), and [`androgen-urate-axis.md`](./androgen-urate-axis.md). Cross-reference: modality-first view in [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md).)
+(Sources: [`koji-endgame-strain.md`](./koji-endgame-strain.md), [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md), [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md), [`lactoferrin.md`](./lactoferrin.md), and [`androgen-urate-axis.md`](./androgen-urate-axis.md).)
 
-#### Dietary + engineered LBP composition — distinct architecture, chassis-pending *(added 2026-05-22, per sweep 2026-05-21 Connection #1 + Proposed Experiment #2)*
+#### Houttuynia × PDB combination hypothesis
 
 A proposed fourth architecture pairs dietary *Houttuynia cordata* polysaccharide with an engineered PDB live biotherapeutic. The earlier version specified “PDB-derived butyrate on EcN” as though CBT2.0's product were known. It is not: engineered EcN carbon fate must first pass [validation experiment 1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test).
 
@@ -170,7 +170,7 @@ A proposed fourth architecture pairs dietary *Houttuynia cordata* polysaccharide
 
 **Current interpretation:** the production stacks are distinct, but biological additivity is not “by construction.” Houttuynia activity, PDB carbon fate, epithelial exposure, and functional urate flux must each pass before combination testing.
 
-**Combined n=1 protocol gating (per Pass 3 discipline).** A combined Houttuynia + PDB-EcN n=1 protocol is **dormant** until both arms clear their individual validation gates: Houttuynia §1.30 prioritization screen (THP-1 MSU IL-1β suppression at ≤100 µg/mL across the three-arm dose-response) AND PDB engineered EcN chassis maturation (engineered EcN production + luminal stability validated separately). The combined protocol becomes relevant when both arms clear; drafting it now would be path-dependent speculation about two products that don't exist as a composed intervention yet.
+**Combination gate.** Do not test the combination until both arms clear their individual validation gates: the Houttuynia §1.30 prioritization screen and PDB carbon-fate, stability, exposure, and urate-flux validation. The route used to produce either arm does not establish additivity.
 
 **Cross-references:** [`complement-c5a-gout.md` §9.7](./complement-c5a-gout.md) (Houttuynia as Tier 1d dietary CP0+CP1 candidate), [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) (PDB chassis + conditional SCFA biology), [`abcg2-modulators.md` §6](./abcg2-modulators.md) (supported WT induction; direct butyrate Q141K rescue unvalidated), [`validation-experiments.md` §1.30](./validation-experiments.md), [`chassis-pending-interventions.md`](./chassis-pending-interventions.md).
 
@@ -255,13 +255,13 @@ The full treatment landscape — acute-flare management (NSAIDs, corticosteroids
 - **ULT-initiation prophylaxis:** ACR 2020 guideline recommends concurrent colchicine 0.5–0.6 mg once or twice daily for 3–6 months when starting allopurinol/febuxostat, to prevent mobilization flares as tophaceous urate dissolves. Duration keyed to stable serum UA <6.0 mg/dL with no flares for ≥3 months. Same dissolution-flare bridge applies to CRISPR-uricase gene therapy — see [crispr-uricase.md](./crispr-uricase.md) for the post-therapy prophylaxis protocol. (Clinical Trial — guideline; source: colchicine.md)
 - Problem: Narrow therapeutic index (~3–5×); CYP3A4/P-gp interaction surface (macrolides, azoles, calcineurin inhibitors); renal/hepatic dose adjustment required
 
-### Why There's No Cure
+### Why durable control requires sustained mechanism coverage
 
 The honest answer: **gout is a chronic metabolic deficiency.** Humans lack a gene. You can manage the downstream consequences — reduce production (XO inhibitors), increase excretion (uricosurics), treat inflammation (colchicine/NSAIDs/IL-1 blockers), or temporarily replace the missing enzyme (pegloticase) — but none address the root genetic deficit.
 
 Stop treatment, and uric acid climbs right back up.
 
-**A true cure would require:**
+**Durable mechanistic possibilities include:**
 1. Restoring uricase expression in human cells (gene therapy) — [[crispr-uricase]]
 2. Permanently altering kidney transporter function to excrete more urate
 3. Making the immune system permanently tolerant of MSU crystals
@@ -301,28 +301,23 @@ This reinforces: gout susceptibility isn't just about urate levels—it's about 
 
 ---
 
-## The Two-Solution Framework
+## Two separable biological problems
 
-> **Key Insight:** There are fundamentally two ways to "solve" gout:
+> Gout research must separate two outcomes:
 > 
-> **(1) Prevent uric acid from ever reaching crystallization levels** — traditional medicine approach (allopurinol, febuxostat, uricosurics, uricase)
+> **(1) Keep urate below crystallization conditions** — through production, excretion, or degradation mechanisms
 > 
-> **(2) Prevent the immune system from recognizing MSU crystals as a threat** — inflammatory suppression approach (NLRP3 inhibitors, IL-1β blockers)
+> **(2) Interrupt the inflammatory response to existing MSU crystals** — through NLRP3, IL-1, neutrophil, or resolution mechanisms
 >
-> Current medicine focuses almost entirely on #1. Approach #2—inflammasome modulation—is just now entering clinical trials and could be transformative for patients who can't tolerate or don't respond to urate-lowering therapy.
+> Success on the inflammatory axis does not establish urate control, and success on the urate axis does not establish acute-flare control.
 
 (Source: gout-deep-dive.md, §1)
 
-### Open Enzyme Approach: Combine Both
+### Research implication: test both outcomes independently
 
-- **Solution #1:** [[engineered-yeast-uricase]] and [[engineered-koji-protocol]] address the root genetic deficit by providing active uricase
-- **Solution #2:** [[nlrp3-inflammasome]] suppression stack and [[supplements-stack]] target the inflammatory cascade to prevent flares while uricase is being optimized
-
-The multi-attack strategy (Source: etc/open-enzyme-vision.md, §9):
-1. **Remove the cause:** Engineered yeast degrading uric acid
-2. **Defuse the bomb:** NLRP3 inflammasome suppression stack
-3. **Heal the damage:** Peptides for tissue repair (BPC-157, TB-500)
-4. **Optimize the terrain:** Gut health, SIBO treatment, barrier support
+- Urate-control experiments must measure production, renal and intestinal disposal, luminal flux, and crystal burden as appropriate.
+- Inflammation experiments must measure priming, inflammasome activation, IL-1 output, neutrophil amplification, and resolution as appropriate.
+- Combination studies require each arm to pass independently and must test nonredundancy rather than assume that multiple mechanisms add.
 
 ---
 
@@ -364,8 +359,8 @@ PURINE INTAKE → Purine Metabolism (XO) → URIC ACID
 
 INTERVENTION POINTS:
 - PRPS inhibition: Reduce de novo purine biosynthesis at the source (eurycomanol from tongkat ali, In Vitro; distinct from XO inhibition downstream) — see [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md)
-- ADA modulation: Alter purine catabolism flux upstream of XO (GLPP from *G. lucidum*, cordycepin + native pentostatin from *C. militaris* — chokepoint candidate surfaced by comp-014 Phase 2, 2026-05-06) — see [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md)
-- PINK1/mitophagy enhancement: Clear damaged mitochondria before they trigger NLRP3 (fungal compounds with PINK1-modulating activity — chokepoint candidate surfaced by comp-014 Phase 2, 2026-05-06) — see [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md)
+- ADA modulation: Alter purine catabolism flux upstream of XO (GLPP from *G. lucidum*, cordycepin + native pentostatin from *C. militaris* — chokepoint candidate identified by comp-014 Phase 2, 2026-05-06) — see [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md)
+- PINK1/mitophagy enhancement: Clear damaged mitochondria before they trigger NLRP3 (fungal compounds with PINK1-modulating activity — chokepoint candidate identified by comp-014 Phase 2, 2026-05-06) — see [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md)
 - XO inhibitors: Block uric acid production (Allopurinol, Febuxostat)
 - URAT1 inhibitors: Reduce renal reabsorption (Pozdeutinurad, Lesinurad)
 - ABCG2 enhancement: Boost gut secretion via butyrate/PPARγ (fermentable fiber, DASH RCT 0.25–0.73 mg/dL UA reduction, Clinical Trial), sulforaphane/Nrf2, Q141K rescue via HDAC inhibitors (In Vitro) — see [abcg2-modulators.md](./abcg2-modulators.md)

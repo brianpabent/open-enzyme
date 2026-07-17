@@ -36,11 +36,11 @@ status: scoped (Phase 1)
 
 # Compounding Pharmacy Track — Delivery Route for the Repurposing Surface
 
-## Why this page exists
+## Strategic role
 
-Open Enzyme's two parallel outputs (per [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §1–2) are (1) a **discovery engine** for chokepoint-to-intervention mapping, and (2) an **open-source strain library** as one synthesis of that engine. The discovery engine produces, among other things, a **repurposing surface** — FDA-approved drugs that hit gout-relevant chokepoints but were never clinically tested for gout (canonical examples: [disulfiram](./disulfiram.md) at CP6b GSDMD, zileuton at CP6a 5-LOX, avacopan at CP0 C5aR1).
+Open Enzyme's two parallel outputs (per [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §1–2) are (1) a **discovery engine** for chokepoint-to-intervention mapping, and (2) an **open-source strain library** as one synthesis of that engine. The discovery engine produces, among other things, a **repurposing surface** — FDA-approved drugs that hit gout-relevant chokepoints but were never clinically tested for gout. Examples include [disulfiram](./disulfiram.md) at CP6b GSDMD, zileuton at CP6a 5-LOX, and avacopan at CP0 C5aR1.
 
-The wiki has historically treated that repurposing surface as **scientifically interesting but operationally orphaned**: we identify a drug-chokepoint match, write it up, and move on. There is no canonical Open Enzyme path from "FDA-approved drug X hits gout chokepoint Y at off-label dose Z" to "patient can actually take it." That gap is exactly what the compounding pharmacy track closes.
+The compounding-pharmacy track asks whether an identified drug–chokepoint match can become a testable formulation under the applicable compounding rules. It covers the gap between mechanism identification and formulation access; it does not establish clinical efficacy or authorize treatment.
 
 **The cleavage rule:** Open Enzyme's compound catalog splits cleanly along a delivery-route axis:
 
@@ -72,9 +72,9 @@ This page formalizes the **compounding pharmacy track** as one independently fal
 
 The compounding pharmacy track is the **lowest engineering effort of any peer track and the fastest path from identification to patient access**, but it is also the most narrowly scoped — it only works for compounds where someone has already done the FDA-approval work (and the drug subsequently went off-patent or is being repurposed off-label).
 
-## How Section 503A actually works (correction added 2026-05-15)
+## How Section 503A works
 
-The wiki previously used "is this drug on the FDA 503A list?" as if the 503A list were a single flat lookup. **That's not how the statute works.** Per [21 CFR 216 + FDA's Section 503A guidance](https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding-under-section-503a-fdc-act), a 503A compounding pharmacy may use bulk drug substances that fall into any one of three tiers, in priority order:
+"Is this drug on the FDA 503A list?" is the wrong gate because Section 503A is not a single flat lookup. Per [21 CFR 216 + FDA's Section 503A guidance](https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding-under-section-503a-fdc-act), a 503A compounding pharmacy may use bulk drug substances that fall into any one of three tiers, in priority order:
 
 1. **Tier 1 — USP / NF monograph substances.** The substance is the subject of an applicable USP or NF monograph and compounded in compliance with USP <795>/<797>. Most of the well-established small-molecule drugs sit here — allopurinol, colchicine, probenecid all have long-standing USP monographs.
 2. **Tier 2 — Components of FDA-approved drug products.** If no applicable USP/NF monograph exists, the bulk substance qualifies if it's an active component of an FDA-approved drug product (with a valid certificate of analysis from an FDA-registered facility). Disulfiram, zileuton, pentostatin sit here — all FDA-approved drugs, all eligible for 503A compounding via Tier 2 regardless of whether they have a current USP monograph.
@@ -86,7 +86,7 @@ The wiki previously used "is this drug on the FDA 503A list?" as if the 503A lis
 - **Bulk API commercial supply** — a *supply-chain* question, not a regulatory one. Some FDA-approved drugs (notably pentostatin, which is parenteral and hospital-pharmacy-distributed) have bulk API that's hard to source for 503A pharmacies regardless of regulatory eligibility.
 - **Post-withdrawal Tier 2 status** — for lesinurad (FDA-approved 2015, commercially withdrawn 2019), does Tier 2 eligibility survive market withdrawal? This is the only genuinely uncertain regulatory question in the OE candidate set.
 
-The "bulk API audit" originally queued as Phase 2 §1 was scoped against a flat-list framing that doesn't match how 503A actually works. The audit's actual finding, captured here, is that 503A eligibility is structurally not the gating question for OE's discovery-engine outputs — supply availability and off-label prescribing infrastructure are.
+For the candidates assessed here, formal 503A-list status is usually not the gating question; commercial bulk-API supply and off-label prescribing infrastructure are.
 
 ## What goes on this track vs. the koji / fermentation track
 
@@ -157,13 +157,13 @@ These drugs are already first-line gout therapy. The compounding play is **custo
 - Compounded **BHB ester at therapeutic doses** in stable formulations (commercial BHB esters are typically diester salts; compounded monoester formulations have better PK).
 - Evidence level: **Mechanistic extrapolation** from upstream NLRP3 / xanthine oxidase data.
 
-### Stays with the koji / fermentation track (not compoundable)
+### Production routes outside the compounding track
 
 - **Recombinant uricase** ([engineered-yeast-uricase-proposal.md](./engineered-yeast-uricase-proposal.md), [engineered-koji-protocol.md](./engineered-koji-protocol.md)) — biologic; can be made by 503B outsourcing facility theoretically but the only currently approved uricase is rasburicase (IV, hospital-only); oral compounded uricase is not a 503A pathway because the protein degrades in stomach.
 - **Lactoferrin** ([lactoferrin.md](./lactoferrin.md)) — biologic; available as supplement-grade but engineered variants are koji-route.
 - **DAF SCR1-4** ([daf-cd55-scr14-truncated-computational.md](./daf-cd55-scr14-truncated-computational.md)) — engineered protein.
-- **Digestive enzymes (lipase / protease / amylase)** — Creon / Zenpep are FDA-approved pancrelipase preparations; compounding analog exists (compounded pancreatic enzymes) but the OE thesis is engineered koji as a fermentation-route alternative, not a compounding-route alternative.
-- **Native koji products (kojic acid, ergothioneine, KPV peptide)** — fermentation-route is the OE thesis; compounding could deliver KPV but doesn't add over the koji approach.
+- **Digestive enzymes (lipase / protease / amylase)** — Creon / Zenpep are FDA-approved pancrelipase preparations; a compounding analog exists (compounded pancreatic enzymes), while engineered koji is a separate fermentation-route candidate. Neither route defines the project.
+- **Native koji products (kojic acid, ergothioneine, KPV peptide)** — fermentation and compounding are alternative delivery routes. Compounded KPV and koji-derived KPV should be evaluated within their respective tracks rather than treating koji fit as the deciding gate.
 
 ### Combined / hybrid candidates
 
@@ -175,7 +175,7 @@ The Drug Quality and Security Act of 2013 created two distinct compounding pharm
 
 | | **503A** | **503B** |
 |---|---|---|
-| Statute | Section 503A of FDCA | Section 503B of FDCA (added 2013) |
+| Statute | Section 503A of FDCA | Section 503B of FDCA |
 | Who | Traditional compounding pharmacies | Outsourcing facilities (FDA-registered) |
 | Trigger | Valid patient-specific prescription | Can compound without patient-specific Rx |
 | Bulk API source | Must be on FDA 503A bulk drug substances list (or be a component of an FDA-approved drug) | Must be on FDA 503B bulk drug substances list |
@@ -222,18 +222,16 @@ Each on-patent + off-label combination needs a per-compound assessment for:
 
 The discovery engine outputs items 1–3 readily (it's already mining mechanism); items 4–5 require collaborator development outside OE's current team.
 
-## Open questions / Phase 2 follow-ups
+## Unresolved requirements
 
-> **Tracking status (2026-05-15):** the original 2026-05-11 priority-action ticket had three explicit closure criteria — bulk API audit, disulfiram dose modeling, pharmacy partner identification. Each is now tracked at the surface noted below.
-
-1. **Bulk API audit — completed 2026-05-15, finding reshapes the question.** The audit was originally scoped against a flat "is this drug on the FDA 503A list?" framing that turned out to be structurally inaccurate. Per the new §"How Section 503A actually works" above: 503A allows three tiers of bulk drug substances, and the formal 503A bulks list (Tier 3) contains only six obscure topical compounds — none gout-relevant. The OE candidates are 503A-compoundable via Tier 1 (USP monograph; allopurinol, colchicine, probenecid) or Tier 2 (component of FDA-approved drug; disulfiram, zileuton, pentostatin). The real gating questions are *bulk API commercial supply* (a supplier-side question for zileuton + pentostatin) and *post-withdrawal Tier 2 status* (for lesinurad, the only genuinely uncertain regulatory case in the OE candidate set). The candidate list above is now annotated with the correct tier per compound. **Status:** closed (audit findings landed in the candidate list above).
+1. **Bulk-substance basis.** The candidates assessed here fall under Tier 1 (USP monograph: allopurinol, colchicine, probenecid) or Tier 2 (component of an FDA-approved drug: disulfiram, zileuton, pentostatin). Verify this basis again against current FDA materials before acting.
 2. **Pharmacy partner identification.** What 503A compounding pharmacies have track record with gout / inflammation / off-label dose work? Empower Pharmacy, Olympia Pharmacy, others — needs primary-source verification. **Status:** user-action-required (real-world outreach, not Claude-actionable). Stays on this scope page; not in the synthesis queue. **Fires when:** Brian decides to pursue a 503A prescription pathway for any candidate. Until then, dormant.
 
 2a. **Bulk API supplier verification (zileuton, pentostatin, lesinurad).** Per-compound check with compounding-pharmacy supply networks (Spectrum Chemical, PCCA, Letco, FAGRON) for current bulk-API availability + cost + CoA. **Status:** user-action-required (supplier phone/email outreach, not Claude-actionable). **Fires when:** Brian decides to pursue a 503A prescription pathway for any of these three compounds. Until then, dormant — Tier 2 eligibility is confirmed for all three (see candidate list above), so the question is purely supply-chain.
 3. **Physician partner pathway.** Off-label prescribing is the physician's discretion but needs a real prescriber. Rheumatology / functional medicine cross-section. The team-building work overlaps with [`etc/team.md`](./etc/team.md) — possibly a fourth collaborator role. **Status:** user-action-required (overlaps team.md).
 4. **Dissolution / characterization protocol library.** What standard USP / in-house assays should OE publish as a quality framework for compounded gout formulations? Mirrors [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) for the supplement track.
 5. **Insurance / cost reality.** Compounded prescriptions are often not insurance-covered; patient out-of-pocket is the typical reality. What's the cost-per-month for a representative compounded gout repurposing pill, and how does it compare to (a) name-brand alternatives and (b) the engineered-koji daily-food UX?
-6. **Disulfiram-specific computational prior — completed 2026-05-16 as [comp-027](./disulfiram-dose-modeling-computational.md).** **Verdict: downgraded to hypothesis-generator (comp-review 2026-07-14) — a single strict-GREEN modeled point at 100 mg/day, NOT a validated 75–125 mg/d window** (those bounds were broadened from the single point, which sits exactly on a hard-coded decision boundary; treat as a dose-finding hypothesis to test). Two-phase compounding protocol: IR capsule 50→100 mg/d titration over 14 days, then ER lipid-matrix 100 mg QD chronic. Gout co-administration clean (allopurinol synergistic). Per-patient HPLC-anchored dose-finding is the wet-lab gate before broader patient use. **Status:** closed (dose modeling completed; findings landed in the disulfiram candidate entry above).
+6. **Disulfiram dose finding.** [comp-027](./disulfiram-dose-modeling-computational.md) is a hypothesis generator with one strict-GREEN modeled point at 100 mg/day, not a validated 75–125 mg/day window. Empirical exposure and safety data are required before interpreting a formulation or dose range.
 7. **Discovery engine output → 503A list intersection.** Build a recurring mechanism in the sweep daemon to flag whenever a new discovery-engine output (e.g., a newly identified repurposing surface compound) has bulk API on the 503A list — making the compounding-track-relevance call automatic rather than ad hoc.
 
 ## What this track is NOT
@@ -259,7 +257,3 @@ The honest summary: compounding pharmacy expands OE's *delivery menu* without ex
 - [Gout clinical pipeline](./gout-clinical-pipeline.md) — on-patent commercial pipeline that defines the gaps compounding can fill
 - [Medicinal mushroom complement track](./medicinal-mushroom-complement-track.md) — peer track for native-compound delivery
 - [Engineered koji protocol](./engineered-koji-protocol.md) — peer track for enzyme delivery
-
----
-
-**Status:** Phase 1 scoped. Phase 2 follow-ups (bulk API audit, pharmacy partner identification, disulfiram dose modeling) queued separately. No commitments to any specific compounded product or patient pathway at this stage — this page exists to make the delivery-route option legible alongside the other peer tracks.

@@ -251,7 +251,7 @@ The [[blood-barrier-exploits|14 routes to systemic delivery]] documented in the 
 - Patients have severe renal disease where ABCG2 is non-functional
 - Extended half-life (systemic) vs. immediate local action (lumen) becomes strategically desirable
 
-For the initial proof-of-concept and home-production vision, lumen-based delivery is the right target. (Source: blood-barrier-exploits.md, engineered-yeast-uricase-proposal.md)
+For this proof-of-concept and home-production subtrack, lumen-based delivery is the working target. Other Open Enzyme tracks are not gated on that route. (Source: blood-barrier-exploits.md, engineered-yeast-uricase-proposal.md)
 
 ## The SIBO–Uricase Connection
 
@@ -264,9 +264,9 @@ Implications for gout management:
 
 - **Treat SIBO first** (via berberine, rifaximin, or engineered koji with digestive enzymes)
 - **Then deploy uricase** (on a normalized luminal microbiota)
-- **Synergy:** Koji naturally produces digestive enzymes that address SIBO; adding uricase makes it a complete therapeutic platform
+- **Candidate combination:** Koji naturally produces digestive enzymes that may address the enzyme-deficit side of this hypothesis; adding uricase would create a dual-purpose configuration if both functions validate.
 
-This is why [[aspergillus-oryzae|koji]] is the strategic choice—it addresses both conditions simultaneously. (Source: enzyme-deficit-deep-dive.md, etc/open-enzyme-vision.md)
+This makes [[aspergillus-oryzae|koji]] one candidate for addressing both conditions simultaneously, not the strategic choice for the project as a whole. (Source: enzyme-deficit-deep-dive.md, etc/open-enzyme-vision.md)
 
 ## Research Questions
 

@@ -9,7 +9,7 @@ sources: [gout-deep-dive.md]
 
 ## Overview
 
-Fructose is the hidden accelerant of gout. Unlike glucose, fructose metabolism bypasses normal regulatory checkpoints and creates a unique purine synthesis cascade that directly generates uric acid. This is one of the most clinically actionable findings in recent gout research, yet it remains under-communicated to patients.
+Fructose is one accelerator of gout. Unlike glucose, fructose metabolism bypasses normal regulatory checkpoints and creates a purine cascade that can increase urate production. The page separates established metabolism from intervention hypotheses.
 
 ### A second loop: fructose may also close the intestinal urate gate
 
@@ -91,7 +91,7 @@ URIC ACID ← This is the endpoint in humans (no uricase)
 
 This cascade generates **new purines from scratch**, not just degrading existing DNA/RNA. This is called **de novo purine synthesis**, and it's accelerated by fructose.
 
-**The PRPS connection (added 2026-05-07):** The rate-limiting enzyme of de novo purine biosynthesis is **phosphoribosyl pyrophosphate synthetase (PRPS)**. Under normal conditions, PRPS is feedback-inhibited by IMP and ADP/GDP. Fructose-driven ATP depletion → AMP rise → IMP via AMP deaminase → **PRPS allosteric inhibition is relieved** → PRPP rises → de novo purine biosynthesis accelerates → urate production rises. This is the canonical pathological PRPP-elevation pathway — the molecular link between fructose and gout at the purine-biosynthesis level. See [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md) for the full chokepoint scope page, including the first natural-product PRPS modulator in the OE corpus (eurycomanol from tongkat ali, In Vitro, PMID 34785103). (Mechanistic Extrapolation; source: prps-purine-biosynthesis-chokepoint.md)
+**PRPS connection:** The rate-limiting enzyme of de novo purine biosynthesis is **phosphoribosyl pyrophosphate synthetase (PRPS)**. Under normal conditions, PRPS is feedback-inhibited by IMP and ADP/GDP. Fructose-driven ATP depletion → AMP rise → IMP via AMP deaminase → **PRPS allosteric inhibition is relieved** → PRPP rises → de novo purine biosynthesis accelerates → urate production rises. See [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md) for the full chokepoint analysis and eurycomanol evidence. (Mechanistic Extrapolation; source: prps-purine-biosynthesis-chokepoint.md)
 
 (Source: gout-deep-dive.md, Section 9)
 
@@ -192,9 +192,9 @@ Beyond production, fructose metabolism also dampens uric acid excretion by compe
 
 ---
 
-## Actionable Therapeutic Angle: KHK Inhibitors
+## Research target: KHK inhibition
 
-### The Drug Development Opportunity
+### Drug-development hypothesis
 
 A **fructokinase (KHK) inhibitor** could theoretically block this entire pathway without affecting glucose metabolism. Several candidates are in development:
 
@@ -204,19 +204,17 @@ A **fructokinase (KHK) inhibitor** could theoretically block this entire pathway
 - Mechanism: Blocks ATP-driven phosphorylation of fructose
 - Expected effect: Prevent fructose from entering the purine synthesis cascade
 
-If a KHK inhibitor works in humans, the impact would be massive for gout patients:
-- All dietary fructose reduction benefits without dietary restriction
-- Direct attack on the evolutionary vulnerability we inherited
+If a KHK inhibitor works in humans, it could test whether blocking fructose entry into the purine cascade reduces gout-relevant urate production without requiring dietary restriction.
 
 (Source: gout-deep-dive.md, Section 9)
 
 ---
 
-## Practical Recommendations for Gout Patients
+## Exposure-reduction evidence and research gates
 
-### Immediate (Dietary)
+### Dietary exposure hypothesis
 
-**Eliminate or strictly limit:**
+The strongest exposure-reduction candidates are:
 - High-fructose corn syrup products (soda, processed foods)
 - Sugar-sweetened beverages (the primary source of excessive fructose)
 - Fruit juices (concentrated fructose without fiber)
@@ -226,15 +224,15 @@ If a KHK inhibitor works in humans, the impact would be massive for gout patient
 2. Fiber slows absorption, reducing peak ATP depletion
 3. Whole fruit typically contains <15g fructose per serving
 
-**Honey and agave:** Despite natural reputation, both are 50%+ fructose. Avoid.
+**Honey and agave:** Both are 50%+ fructose and belong in the same exposure analysis rather than a separate “natural” category.
 
 (Source: gout-deep-dive.md, Section 9)
 
 ---
 
-### Medium-term (Supplements)
+### Candidate adjunct mechanisms
 
-None directly block KHK yet. However, some compounds indirectly help:
+No listed supplement directly blocks KHK. The following mechanisms are downstream or indirect and require separate efficacy tests:
 
 **Quercetin** (in [[supplements-stack]])
 - Inhibits xanthine oxidase (downstream of fructose cascade)
@@ -244,19 +242,15 @@ None directly block KHK yet. However, some compounds indirectly help:
 - Help restore ATP/phosphate balance post-fructose exposure
 - May slow the AMP accumulation cascade
 
-These are partial mitigation, not prevention.
+These are partial mechanistic hypotheses, not established prevention.
 
 (Source: gout-deep-dive.md, Section 9)
 
 ---
 
-### Long-term (Gene Therapy or Metabolic Engineering)
+### Long-horizon metabolic engineering hypothesis
 
-Once [[crispr-uricase]] gene therapy is available, it will permanently solve the fructose problem:
-
-- Uricase will degrade uric acid regardless of how much is produced
-- The fructose-uric acid link is broken
-- Patients can safely consume fructose without fear of gout flares
+Restoring uricase could buffer fructose-driven urate production, but it would not establish unlimited handling capacity or eliminate fructose's non-urate metabolic effects. The gate is direct measurement of urate flux and safety under realistic fructose exposure.
 
 (Source: gout-deep-dive.md, Section 6)
 
@@ -300,12 +294,12 @@ This could justify personalized dietary counseling based on genotype.
 
 ---
 
-## Summary: The Actionable Insight
+## Summary: testable model
 
-**For Brian's gout management:**
-1. Eliminating sugar-sweetened beverages and high-fructose corn syrup may be as impactful as any single medication change
-2. This is a direct biochemical pathway from fructose to uric acid with no regulatory braking system—it's not dietary hand-waving
-3. Once [[engineered-yeast-uricase]] is available, the fructose constraint disappears (uricase handles whatever uric acid is produced)
+**Evidence summary:**
+1. Sugar-sweetened beverages and high-fructose corn syrup are high-priority exposure variables for gout research.
+2. The fructose-to-urate pathway has a direct biochemical mechanism with limited regulatory braking.
+3. Any uricase intervention must demonstrate realistic flux capacity before it can be said to offset fructose-driven urate production.
 
 **For the research agenda:**
 - KHK inhibitors are the next pharmaceutical frontier for gout (complementary to URAT1 inhibitors, NLRP3 inhibitors)
@@ -314,6 +308,6 @@ This could justify personalized dietary counseling based on genotype.
 
 ---
 
-*The fructose connection reveals how gout is embedded in modern diet and ancient evolution simultaneously. Addressing it requires both immediate dietary change and long-term metabolic engineering.*
+*The fructose connection links modern exposure to ancient metabolism. Intervention claims remain gated on controlled exposure, flux, and outcome measurements.*
 
 (Source: gout-deep-dive.md, Section 9)

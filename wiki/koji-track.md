@@ -54,7 +54,7 @@ Start with the smallest payload–chassis assay that measures identity, active y
 
 ## 9. Status and next move
 
-Active Phase 0 track. Resolve the current single-payload, physiological-regime, and safety gates before treating a multi-cassette endgame as a product plan.
+Active Phase 0 track. Resolve the current single-payload, physiological-regime, and safety gates before treating a multi-payload configuration as a product plan.
 
 ## 10. What remains true if this track fails
 

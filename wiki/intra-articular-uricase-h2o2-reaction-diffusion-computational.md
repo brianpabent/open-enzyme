@@ -168,7 +168,7 @@ The **next architecture-selection-blocking experiment** is therefore not in vivo
 
 ## How this lands
 
-- **`chassis-pending-interventions.md` §6** — H₂O₂ housekeeping risk closed as not-prohibitive across all three architectures. The §6 entry can advance toward chassis selection: production economics, regulatory pathway, formulation engineering are now the load-bearing decision variables. The "key biochemistry gap" paragraph added 2026-05-16 will be updated by the walkthrough orchestrator to reflect the comp-035 verdict.
+- **`chassis-pending-interventions.md` §6** — H₂O₂ housekeeping is not prohibitive in the model but remains gated on the specified wet-lab measurement. Production economics, regulatory pathway, and formulation engineering are the other load-bearing variables.
 - **`gout-kill-chain-delivery-routes.md`** — the IA uricase + catalase / Pickering bioreactor open-territory framing is corroborated as a real and accessible vector; the 2025 preclinical literature (Liu 2025, Lin 2022, Liu 2025 *Nat Commun*) is the right precedent, and the safety case is mechanistically defensible.
 - **`delivery-route-matrix.md` §"Why SC uricase doesn't work"** — the H₂O₂ critique applies to SC depots (small volume, no joint clearance) but does NOT transfer to IA at typical dosing because bulk catalase scavenging dominates at the joint scale. The two pages are now mutually consistent.
 - **`engineered-koji-protocol.md` §"The Hydrogen Peroxide Question"** — koji's peroxisomal co-localization is one solution to the H₂O₂ problem (peroxisomal lumen-scale ~10 nm sufficient for direct catalase contact); for IA purified protein delivery, the equivalent solution is total catalase capacity at the joint scale, not residue-level proximity. Sister insight.

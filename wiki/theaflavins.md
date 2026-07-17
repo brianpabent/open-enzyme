@@ -22,13 +22,7 @@ status: published
 
 Theaflavins are dimeric polyphenols formed during the enzymatic oxidation of green-tea catechins (primarily EGCG and ECG) by polyphenol oxidase during black-tea processing. They are the dominant red-orange pigments of black tea, oolong, and pu'er — accounting for 1–6% of the dry weight of fully oxidized tea leaves. The family includes theaflavin (TF1), theaflavin-3-gallate (TF2A), theaflavin-3'-gallate (TF2B), and theaflavin-3,3'-digallate (TF3, the most potent), differing only in galloyl substitution at the 3 and 3' positions. (source: egcg.md §oxidation chemistry; this page)
 
-For Open Enzyme, theaflavins matter because **they are not just an oxidation product of EGCG — they have a distinct, multi-mechanism anti-gout profile that EGCG itself does not fully share.**
-
----
-
-## Why this page exists
-
-The original NLRP3 inhibitor screen (`nlrp3-inhibitor-screen.md`) was keyword-gated on "MSU" / "gout" in PubMed abstracts, which missed compounds whose direct MSU evidence was published under "monosodium urate" or "gouty arthritis" framings. The 2026-04-23 re-audit fixed this for EGCG, limonene, and sulforaphane. The 2026-05-05 Paperclip-equivalent audit (PubMed full-text + bioRxiv) surfaced theaflavins as a previously-missed candidate with two strong pieces of direct MSU/gout evidence and a multi-transporter renal urate handling mechanism. (source: open-questions.md §Tier-4 inhibitor screen — 2026-05-05 audit)
+The gout-relevant hypothesis is unusually broad: theaflavins may suppress MSU-triggered NLRP3 assembly while also shifting renal and intestinal urate handling in the favorable direction. Those effects remain preclinical, and poor oral exposure is the main translation constraint.
 
 ---
 
@@ -79,45 +73,28 @@ The EGCG → theaflavin oxidation breaks the catechin's flavan-3-ol skeleton and
 1. **Mechanism shift:** EGCG's most potent activity is direct proteasome inhibition (86 nM, ChEMBL) → IκB stabilization. Theaflavins' most potent gout-relevant activities are **inflammasome assembly disruption** (mtROS/NEK7) and **URAT1 downregulation** — neither of which EGCG covers strongly.
 2. **Bioavailability profile:** theaflavin oral bioavailability is poor (~0.1–1%), comparable to EGCG, and the same liposome / phytosome / nanoencapsulation formulation strategies that work for EGCG also work here. The Chen 2023 *Phytomedicine* review surveys formulation strategies.
 
-For Open Enzyme, this means theaflavins are best treated as a **sibling Tier 2–3 supplement candidate** to EGCG, not a redundant alternative — the mechanism overlap is partial, and the unique URAT1 / GLUT9 modulation pulls in a chokepoint that EGCG doesn't reach.
+The mechanism overlap with EGCG is therefore partial, and the URAT1 / GLUT9 modulation reaches a chokepoint that EGCG does not strongly cover.
 
 ---
 
-## Open Enzyme evaluation
+## Sources, delivery, and exposure constraints
 
-### Production feasibility
-
-- **Engineered microbial production:** Not viable. Theaflavin biosynthesis requires plant polyphenol oxidase + EGCG and ECG substrates — the full pathway has never been reconstructed in yeast or bacteria, and the substrate cost would dominate. **Tier 4 for engineered production.**
-- **Food-industry path:** Black tea, oolong, pu'er provide 1–6% theaflavins by dry weight. Concentrated extracts (theaflavin-enriched supplements) are commercially available, typically standardized to 30–80% theaflavins.
-
-### Supplement-tier ranking
-
-**Tier 2 supplement candidate** — direct MSU peritonitis mouse model (Animal Model, oral) + multi-transporter URAT1/GLUT9/OAT modulation + secondary TNFSF14/HVEM coverage. Mechanism breadth comparable to EGCG; unique URAT1 angle that EGCG lacks.
-
-**Engineered-production path: Tier 4** — no microbial route exists.
-
-### Dosing (preliminary)
-
-- **Theaflavin extract supplements:** typically 200–500 mg/day (standardized to 30–80% TF content).
-- **Black tea:** 4–6 cups/day delivers ~50–150 mg theaflavins (varies widely by leaf grade, brewing time, tea type — pu'er > black > oolong).
-- **No dedicated human gout RCT exists** — dose recommendations are extrapolated from cardiovascular and cholesterol RCTs (700–2,500 mg/day theaflavin-enriched extract has been used safely for 12+ weeks in lipid trials).
-
-### Contraindications and interactions
-
-- **CYP3A4:** weak inhibition similar to other tea polyphenols. Clinically minor at supplement doses; consider with narrow-therapeutic-index drugs (tacrolimus, cyclosporine, simvastatin).
-- **Hepatotoxicity — uncharacterized, NOT a documented signal:** theaflavins' liver-enzyme (ALT/AST) profile at concentrated-extract supplement doses is **uncharacterized in the literature** — there is *no* documented elevated hepatotoxicity signal for theaflavins. (A 2026-06-01 synthesis draft asserting a "documented ALT/AST elevation signal above 1,000 mg/day" was an unsupported Pass-2 fabrication, caught at Pass 3 and never propagated to any page; recorded here explicitly so it is not re-introduced by a future sweep.) **However**, EGCG — theaflavins' biosynthetic precursor and a frequent co-supplement — *does* carry a documented hepatotoxicity ceiling (EFSA 800 mg/day; high-dose case reports; see [`egcg.md`](./egcg.md)). Stacking two concentrated tea-polyphenol extracts on the same hepatic-stress axis is therefore a reasonable caution even though theaflavins' own profile is uncharacterized. The cardiovascular/lipid trials (700–2,500 mg/day theaflavin-enriched extract, 12+ weeks) reported no liver-safety signal — reassuring but not a liver-focused endpoint.
-- **Iron absorption:** theaflavins, like other tannins, chelate non-heme iron and reduce dietary iron absorption when consumed with meals. Take ≥1 hour separated from iron-containing meals or supplements.
+- **Food sources:** Black tea, oolong, and pu'er provide 1–6% theaflavins by dry weight. The amount delivered by brewed tea varies widely with leaf grade, brewing time, and tea type.
+- **Commercial delivery:** Theaflavin-enriched extracts are commercially available, typically standardized to 30–80% theaflavins. Cardiovascular and cholesterol trials have studied enriched extracts, but no dedicated human gout RCT exists.
+- **Formulation problem:** Oral bioavailability is poor (~0.1–1%). Liposome, phytosome, and nanoencapsulation strategies have been explored, but whether they reach the concentrations used in the direct NLRP3 experiments remains unresolved.
+- **CYP3A4:** weak inhibition similar to other tea polyphenols. Clinically minor at supplement doses; relevant to study design around narrow-therapeutic-index drugs (tacrolimus, cyclosporine, simvastatin).
+- **Hepatotoxicity — uncharacterized, not a documented signal:** theaflavins' liver-enzyme profile at concentrated-extract doses is uncharacterized. EGCG, a biosynthetic precursor and frequent co-supplement, does carry a documented hepatotoxicity ceiling; combined concentrated extracts therefore need explicit liver-safety assessment. The cardiovascular/lipid trials reported no liver-safety signal, but liver safety was not their primary endpoint.
+- **Iron absorption:** theaflavins, like other tannins, chelate non-heme iron and reduce dietary iron absorption when consumed with meals.
 - **Caffeine confounder:** black tea contains caffeine; concentrated theaflavin extracts may or may not be decaffeinated — check the label.
 - **Pregnancy:** dietary intake fine; concentrated extract doses unstudied.
 
 ---
 
-## Stack interactions
+## Combination hypotheses
 
-- **EGCG (overlap with refinement):** EGCG and theaflavins share TNFSF14/HVEM modulation but the dominant non-redundant activities are different (EGCG → proteasome 86 nM; theaflavins → URAT1/inflammasome assembly). **Combining adds CP1a + CP2/CP3 + URAT1 coverage — additive at the pathway level.**
-- **Carnosine (overlap at URAT1):** both downregulate URAT1 in animal models. Theaflavins do not face the serum carnosinase clearance ceiling. **Diminishing returns if stacked at maximum dose; pick one for the URAT1 axis** — theaflavins are favored if the carnosinase question is unresolved (see [carnosine.md §Open questions](./carnosine.md)).
-- **Sulforaphane (Nrf2 axis):** theaflavins do not strongly activate Nrf2. **Mechanism-orthogonal — combine without redundancy.**
-- **Quercetin (5-LOX axis):** orthogonal mechanisms. Combine.
+- **EGCG:** EGCG and theaflavins share TNFSF14/HVEM modulation, while their dominant proposed mechanisms differ. Pathway breadth does not establish combination additivity.
+- **Carnosine:** both downregulate URAT1 in animal models; diminishing returns are plausible and should be tested directly.
+- **Sulforaphane and quercetin:** their proposed Nrf2 and 5-LOX mechanisms are less overlapping, but no combination evidence establishes benefit.
 
 ---
 
@@ -127,25 +104,23 @@ For Open Enzyme, this means theaflavins are best treated as a **sibling Tier 2�
 2. **Does the NLRP3-NEK7 disruption mechanism apply at human-physiologic concentrations?** Chen 2023 *Acta Pharmacol Sin* used 50–200 μM in vitro. Plasma concentrations achievable from oral dosing are likely two orders of magnitude below this (~0.1–1 μM). Whether the in vivo MSU peritonitis effect operates through the same mechanism or via a different route at lower exposure is unresolved.
 3. **Does TF3 (theaflavin-3,3'-digallate) outperform mixed theaflavin extracts on a per-mg basis?** TF3 is the most potent fraction in vitro across multiple assays; commercial extracts are mostly mixtures.
 4. **Is there a head-to-head EGCG vs theaflavin gout trial anywhere?** None identified as of 2026-05-05.
-5. **Co-engineered route:** any GRAS host (koji, yeast) producing the polyphenol oxidase + supplied EGCG/ECG substrate could in principle generate theaflavins extracellularly. Substrate cost is the rate-limiter. Unexplored.
+5. **Which formulation, if any, produces target engagement at tolerable exposure?** Compare brewed tea, mixed extract, TF3-enriched extract, and an exposure-enhancing formulation using matched pharmacokinetics plus NLRP3/NEK7 readouts.
 
 ---
 
 ## TCM Lineage
 
-Theaflavins derive from black tea (Hong Cha 红茶), which has a long history of use in TCM-adjacent medicinal traditions. The broader methodology for applying modern scientific rigor to TCM-lineage compounds — including chokepoint mapping, ChEMBL cross-check, and bioavailability-honest framing — is formalized in [`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md). Theaflavins are listed there as a TCM-adjacent compound in the existing wiki corpus. (source: tcm-modern-rigor-intersection.md)
+Theaflavins derive from black tea (Hong Cha 红茶), which has a long history of use in TCM-adjacent medicinal traditions. Apply the chokepoint, bioavailability, and primary-source standards in [`tcm-modern-rigor-intersection.md`](./tcm-modern-rigor-intersection.md). (source: tcm-modern-rigor-intersection.md)
 
 ---
 
 ## Related
 
 - [EGCG](./egcg.md) — sibling green-tea polyphenol; theaflavins are EGCG/ECG oxidation products with distinct binding profile.
-- [NLRP3 Inhibitor Screen](./nlrp3-inhibitor-screen.md) — theaflavins added 2026-05-05 as a Tier 2 candidate for the supplement axis.
+- [NLRP3 Inhibitor Screen](./nlrp3-inhibitor-screen.md) — comparative evidence and mechanism screen.
 - [TNFSF14 / LIGHT in Gout](./tnfsf14-gout-target.md) — TF3 already cited at §3 as a TNFSF14/HVEM modulator.
 - [Carnosine](./carnosine.md) — overlapping URAT1-downregulation mechanism without the carnosinase clearance limitation.
-- [Supplements Stack](./supplements-stack.md) — practical NOW/SOON/FUTURE recommendations.
-- [Open Questions](./open-questions.md) — Tier-4 audit context.
+- [Supplements Stack](./supplements-stack.md) — cross-compound safety and interaction context.
+- [Open Questions](./open-questions.md) — unresolved research questions.
 
 ---
-
-*Last updated: 2026-05-05. Theaflavins surfaced via the Paperclip-equivalent audit of Tier-4 compounds; this page is the dossier for treating them as a first-class supplement candidate alongside EGCG.*

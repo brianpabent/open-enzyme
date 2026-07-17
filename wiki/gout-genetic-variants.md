@@ -57,17 +57,17 @@ status: published
 
 # Gout Genetic Variants — Unified Index Across the Cascade
 
-## What this page is
+## Scope
 
-A unified, cascade-stratified reference catalogue of the genetic variants that drive — or modulate — gout and hyperuricemia. The wiki already does substantial genotype-stratified intervention modeling in [`uricase-abcg2-genotype-stratification-computational.md`](./uricase-abcg2-genotype-stratification-computational.md), [`intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md`](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md), [`abcg2-modulators.md` §6](./abcg2-modulators.md), [`androgen-urate-axis.md`](./androgen-urate-axis.md), and [`gout-pathophysiology.md` §"Genomics and GWAS"](./gout-pathophysiology.md), but none of those pages link back to a single index of *all* relevant variants. This page is that index. Downstream stratification analyses should cross-reference this catalogue rather than re-list variants each time.
+This cascade-stratified catalogue covers genetic variants that drive or modulate gout and hyperuricemia. Detailed genotype-stratified intervention evidence is linked from the rightmost column, including computational analyses of uricase response, intestinal ABCG2, transporter regulation, and gout genomics.
 
 **Audience.** PhD-level scientists, clinical translation collaborators, and downstream subagents performing stratified literature scans or computational modeling.
 
 **Privacy gradient.** This is a public-research reference. No personal genotypes. No clinical data tied to individuals. Anyone reading this page is welcome to do so; nothing here would be inappropriate for an external collaborator.
 
-**How to use it.** Each variant entry carries an explicit evidence tier per [`CLAUDE.md` §"Evidence Levels"](../CLAUDE.md). When the source literature disagrees on effect direction, allele frequency, or evidence strength, the disagreement is surfaced in the entry rather than silently resolved — per the multi-source reconciliation discipline encoded in CLAUDE.md §"Pre-commit grep-verify gate." If you are running a stratified subagent task, link to specific table rows by anchor or quote the row inline; do not paraphrase across rows (paraphrasing loses the evidence-tier and cross-source-disagreement information).
+Each variant entry carries an explicit evidence tier. Disagreements in effect direction, allele frequency, or evidence strength remain visible rather than being collapsed into a single estimate.
 
-**Scope discipline.** This is a *reference index*, not a deep-dive page. The mechanism and intervention discussion for each variant lives on the canonical wiki page named in the rightmost column. Long mechanism narrative does not belong here.
+The rightmost column links each variant to its detailed mechanism and intervention evidence.
 
 ---
 
@@ -98,7 +98,7 @@ Per-category tables and per-variant notes for the load-bearing entries follow be
 
 Renal and intestinal urate handling collectively determine ~95% of inter-individual variance in serum urate at the polygenic level (Tin 2019, Köttgen 2013). The three dominant loci are **ABCG2**, **SLC2A9 (GLUT9)**, and **SLC22A12 (URAT1)**. Several minor transporters round out the renal handling apparatus.
 
-| Variant | Gene (chr) | Cascade step | Effect direction | Allele frequency | Evidence tier | OE-platform implication | Canonical wiki page |
+| Variant | Gene (chr) | Cascade step | Effect direction | Allele frequency | Evidence tier | OE-platform implication | Detailed evidence |
 |---|---|---|---|---|---|---|---|
 | **rs2231142 (p.Gln141Lys, Q141K)** | ABCG2 (chr4q22) | Renal tubular + intestinal urate secretion | Reduces ABCG2 transport activity by ~50% per allele through a folding/processing defect → ↑ serum urate | Frequency varies strongly by ancestry; see [`abcg2-modulators.md` §6](./abcg2-modulators.md) | **Clinical Trial** (GWAS) + **In Vitro** mechanism | Selected pharmacologic HDAC-inhibitor rescue conditions are demonstrated in vitro. Butyrate-mediated Q141K rescue is unvalidated; its supported route is PPARγ-mediated induction of remaining WT ABCG2. comp-047 found no validated chaperone candidate. Q141K remains an established allopurinol-response stratifier. | [abcg2-modulators.md](./abcg2-modulators.md) |
 | **rs2199936** | ABCG2 (chr4q22) | Renal tubular + intestinal urate secretion | Intronic; tag SNP for the ABCG2 risk haplotype | Common; LD pattern varies by ancestry | **Clinical Trial** (GWAS — 2025 UK Biobank gout study, p = 1.75 × 10⁻⁹⁷ per [`gout-pathophysiology.md`](./gout-pathophysiology.md)) | Index SNP for genotyping panels that don't include rs2231142 directly; both should be on any gout-relevant array | [gout-pathophysiology.md](./gout-pathophysiology.md) §"Genomics and GWAS" |
@@ -122,7 +122,7 @@ Renal and intestinal urate handling collectively determine ~95% of inter-individ
 
 The "over-producer" half of gout. Common gout (~90% of patients) is under-excretion; the genetic-overproduction phenotypes are rare but mechanistically illustrative.
 
-| Variant | Gene (chr) | Cascade step | Effect direction | Allele frequency | Evidence tier | OE-platform implication | Canonical wiki page |
+| Variant | Gene (chr) | Cascade step | Effect direction | Allele frequency | Evidence tier | OE-platform implication | Detailed evidence |
 |---|---|---|---|---|---|---|---|
 | **HPRT1 LoF** (multiple alleles) | HPRT1 (Xq26.2-q26.3) | Purine salvage; LoF re-routes hypoxanthine/guanine into degradation → urate | LOSS-of-function → **Lesch-Nyhan syndrome** (severe, OMIM #300322) or partial-function **Kelley-Seegmiller syndrome** (early-onset gout, hyperuricemia without neurological features) | Rare; X-linked recessive | **Clinical Trial** (clinical phenotype) | Validates that **purine salvage failure → urate flux** is a quantitatively meaningful axis; relevant to allopurinol/febuxostat use in over-producer phenotypes | [gout-pathophysiology.md](./gout-pathophysiology.md) §"Step 1" |
 | **PRPS1 superactivity** (e.g., p.Asp52His, p.Ala87Thr, p.Leu129Ile) | PRPS1 (Xq22.3) | De novo purine biosynthesis (rate-limiting) | GAIN-of-function → ↑ PRPP → ↑ purine flux → early-onset gout + sensorineural deafness in some pedigrees (OMIM #311850) | Rare; X-linked | **Clinical Trial** (clinical phenotype; In Vitro mechanism) | Direct human-genetic anchor for the [PRPS chokepoint](./prps-purine-biosynthesis-chokepoint.md) thesis — proves PRPP elevation alone drives clinical hyperuricemia | [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md) |
@@ -136,7 +136,7 @@ The "over-producer" half of gout. Common gout (~90% of patients) is under-excret
 
 This is the special case. The human *UOX* locus is **a pseudogene in every human** — not a polymorphism but a fixed loss-of-function state shared across the species. Functional uricase persists in most mammals (rats, mice, pigs, cows; reconstructed via CRISPR knock-in) but was inactivated independently in great apes and lesser apes ~15–20 million years ago.
 
-| Variant | Gene (chr) | Cascade step | Effect direction | Allele frequency | Evidence tier | OE-platform implication | Canonical wiki page |
+| Variant | Gene (chr) | Cascade step | Effect direction | Allele frequency | Evidence tier | OE-platform implication | Detailed evidence |
 |---|---|---|---|---|---|---|---|
 | **UOX pseudogenization** — nonsense mutations at codons 33 and 187 + aberrant splice site (Wu 1989, PMID 2780565; Oda 2002, PMID 11919282) | UOX (chr1p22.3 in humans) | Urate → allantoin degradation (would be the terminal step in mammals with functional uricase) | LOSS-of-function — fixed in human population | **Allele frequency = 1.0** (every human is homozygous pseudogene-carrier) | **Clinical Trial** (universal human phenotype: serum urate ~4–7 mg/dL vs ~1 mg/dL in uricase-positive mammals) | The **root chokepoint** every OE uricase track addresses: engineered koji (gut-lumen sink), [CRISPR uricase](./crispr-uricase.md) (germline / somatic restoration via ancestral-sequence reconstruction per Gaucher lab 2025), pegloticase / SEL-212 / PRX-115 (pegylated recombinant uricase as systemic enzyme replacement), rasburicase (acute tumor-lysis use of A. flavus uricase in S. cerevisiae background). Cross-references [`uricase.md`](./uricase.md) and [`crispr-uricase.md`](./crispr-uricase.md). | [uricase.md](./uricase.md), [crispr-uricase.md](./crispr-uricase.md) |
 
@@ -148,7 +148,7 @@ This is the special case. The human *UOX* locus is **a pseudogene in every human
 
 The inflammasome arm gates how much IL-1β a person produces in response to a given MSU crystal load. NLRP3 itself harbors both the rare CAPS gain-of-function variants (clinically severe autoinflammatory disease) and several common polymorphisms with modest gout-related signals.
 
-| Variant | Gene (chr) | Cascade step | Effect direction | Allele frequency | Evidence tier | OE-platform implication | Canonical wiki page |
+| Variant | Gene (chr) | Cascade step | Effect direction | Allele frequency | Evidence tier | OE-platform implication | Detailed evidence |
 |---|---|---|---|---|---|---|---|
 | **NLRP3 CAPS variants** — p.Arg260Trp, p.Asp303Asn, p.Thr348Met, p.Ala441Pro, p.Tyr570Cys, others | NLRP3 (chr1q44) | Inflammasome assembly | GAIN-of-function → constitutive ASC speck formation → constitutive IL-1β release → **cryopyrin-associated periodic syndromes** (FCAS, MWS, CINCA/NOMID spectrum, OMIM #606416, autosomal dominant) | Rare; pedigree-specific | **Clinical Trial** (clinical phenotype; In Vitro mechanism) | Human proof-of-concept that **NLRP3 alone is sufficient to drive IL-1β–mediated disease** — validates the entire IL-1 inhibitor class (anakinra, canakinumab, rilonacept) and informs the NLRP3-inhibitor class ([dapansutrile](./gout-clinical-pipeline.md), oridonin per [`nlrp3-inhibitor-screen.md`](./nlrp3-inhibitor-screen.md)) | [nlrp3-inflammasome.md](./nlrp3-inflammasome.md), [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) |
 | **rs10754558 (NLRP3 3′-UTR)** | NLRP3 (chr1q44) | Inflammasome assembly | C/G common variant in 3′-UTR; G allele associated with altered NLRP3 mRNA stability in some reports; modest effect-size signal for gout-flare severity in mixed-ancestry cohorts (dbSNP "benign" significance flag) | Common; both alleles substantial-frequency in all major ancestries | **In Vitro + GWAS — Clinical Trial** (modest effect, replication mixed) | Common-variant counterpart to CAPS; relevant for flare-stratification subagent design but **not a clinical-grade pharmacogenetic marker on its own** | [nlrp3-inflammasome.md](./nlrp3-inflammasome.md) |
@@ -161,7 +161,7 @@ The inflammasome arm gates how much IL-1β a person produces in response to a gi
 
 Variants here modulate how much pro-IL-1β is available for the inflammasome to cleave (priming arm) and how strongly downstream TLR4 / MyD88 signaling amplifies the response.
 
-| Variant | Gene (chr) | Cascade step | Effect direction | Allele frequency | Evidence tier | OE-platform implication | Canonical wiki page |
+| Variant | Gene (chr) | Cascade step | Effect direction | Allele frequency | Evidence tier | OE-platform implication | Detailed evidence |
 |---|---|---|---|---|---|---|---|
 | **rs16944 (IL1B −511 C/T)** | IL1B (chr2q14) | IL-1β priming (transcriptional) | Common promoter variant; T allele associated with ↑ IL-1β production in some LPS-stimulation assays (mixed across studies) | Common; both alleles substantial-frequency in all major ancestries | **In Vitro + GWAS — Clinical Trial** (mixed replication) | Modulates flare amplitude; relevant to anti-IL-1β responder-stratification logic | [nlrp3-inflammasome.md](./nlrp3-inflammasome.md) |
 | **rs1143634 (IL1B +3954 C/T, p.Phe105Phe synonymous)** | IL1B (chr2q14) | IL-1β output | Synonymous variant in exon 5; T allele reported in some studies as associated with ↑ IL-1β secretion (mechanism uncertain — likely LD with regulatory variant); inconsistent replication | Common | **In Vitro + GWAS — Clinical Trial** (inconsistent; dbSNP "association, benign") | Same role as rs16944; the two SNPs together form the historical "IL1B haplotype" used in pre-GWAS-era inflammation studies | [nlrp3-inflammasome.md](./nlrp3-inflammasome.md) |
@@ -176,7 +176,7 @@ Variants here modulate how much pro-IL-1β is available for the inflammasome to 
 
 The HLA-B*58:01 risk allele for allopurinol SCAR is the single most clinically-actionable pharmacogenetic finding in gout management. ACR 2020 conditionally recommends pre-testing in patients of Southeast Asian ancestry (for example Han Chinese, Korean, Thai) and African American patients, while CPIC gives a strong therapeutic recommendation that allopurinol is contraindicated in carriers. Several additional variants modulate response to less-frequently-used drugs.
 
-| Variant | Gene (chr) | Cascade step | Effect direction | Allele frequency | Evidence tier | OE-platform implication | Canonical wiki page |
+| Variant | Gene (chr) | Cascade step | Effect direction | Allele frequency | Evidence tier | OE-platform implication | Detailed evidence |
 |---|---|---|---|---|---|---|---|
 | **HLA-B\*58:01** | HLA-B (chr6p21, MHC class I) | Pharmacogenetics — allopurinol immunogenicity | Carrier → very high allopurinol-induced SCAR (SJS / TEN / DRESS) risk via oxypurinol-restricted T-cell activation; OR > 500 in Han Chinese (Hung 2005, PMID 15743917) | Carrier frequency varies substantially within "East Asian": **Taiwanese ~20% carrier (Ko 2015 PMID 26399967, n=2,910)**; Han Chinese ~10–15% allele; Korean ~12% allele; Hong Kong ~14% allele; Thai ~12% allele; **Vietnamese 6–8.4% allele (Kinh cord blood n=3,750 = 7.65%)**; Indonesian ~11%; Filipino 7.9% carrier (NMDP); Indian ~15% allele; Japanese ~6% allele (low end of East Asian range); ~1–2% European-ancestry; ~3–4% African-ancestry. **The ACR 2020 "East Asian" lumped framing spans a ~3× range across these sub-populations.** | **Clinical Trial** (PharmGKB Level 1A; ACR 2020 conditional testing recommendation for Southeast Asian and African American patients; CPIC strong carrier-avoidance recommendation; FDA label warning) | Pre-test in Southeast Asian / Han Chinese / Korean / Thai ancestry and African American patients before allopurinol initiation per ACR 2020; alternative ULT (febuxostat, pozdeutinurad, dotinurad) for carriers per CPIC/DPWG. **As of 2026: mandatory or universal screening implemented in Taiwan (post-2014), Korea (public insurance), Thailand (public insurance), and Hong Kong (March 2023 — electronic-prescribing-system prompt) per Yi 2025 JOGH PMC12372636.** Singapore tertiary-center only; Malaysia uncommon. Taiwan national cohort (Ko 2015): zero SCAR cases in B\*58:01-negative allopurinol recipients vs ~7 historically expected (p = 0.0026). The OE engineered-koji / CRISPR uricase tracks **sidestep this pharmacogenetic constraint entirely** because neither requires XO inhibition. | [gout-pathophysiology.md](./gout-pathophysiology.md), [gout-clinical-pipeline.md](./gout-clinical-pipeline.md) |
 | **TPMT variants** (e.g., \*2, \*3A, \*3B, \*3C) | TPMT (chr6p22) | Pharmacogenetics — azathioprine metabolism | LoF variants → reduced thiopurine S-methyltransferase activity → ↑ azathioprine toxicity (myelosuppression) | TPMT\*3A ~5% in European-ancestry; \*3C more common in Asian / African | **Clinical Trial** (PharmGKB Level 1A) | Relevant only to mixed-comorbidity patients on azathioprine (e.g., gout + IBD); not a frontline gout pharmacogenetic | — |
@@ -191,7 +191,7 @@ The HLA-B*58:01 risk allele for allopurinol SCAR is the single most clinically-a
 
 Variants here are not direct urate-cascade actors but modulate metabolic, lipid, or fructose-handling pathways with downstream urate consequences. These are the loci that link gout to metabolic syndrome.
 
-| Variant | Gene (chr) | Cascade step | Effect direction | Allele frequency | Evidence tier | OE-platform implication | Canonical wiki page |
+| Variant | Gene (chr) | Cascade step | Effect direction | Allele frequency | Evidence tier | OE-platform implication | Detailed evidence |
 |---|---|---|---|---|---|---|---|
 | **rs780094 (GCKR intron)** | GCKR (chr2p23) | Metabolic-syndrome × fructose × urate | Common variant in glucokinase regulatory protein; T allele associated with ↑ serum urate, ↑ triglycerides, ↓ fasting glucose (mixed lipid / glucose / urate pattern). Mechanism likely via altered hepatic fructose handling → AMP → urate flux | Common; both alleles substantial-frequency in all major ancestries | **Clinical Trial** (GWAS — Tin 2019, Köttgen 2013; multi-trait pleiotropy) | Mechanistic bridge between [`fructose-connection.md`](./fructose-connection.md) and the urate axis; relevant to dietary-fructose-stratification subagent design | [fructose-connection.md](./fructose-connection.md) |
 | **APOA1/C3/A4/A5 cluster variants** | APOA1-A5 (chr11q23) | Metabolic syndrome × triglycerides | Modest serum urate signal at GWAS scale; shared genetic architecture with hypertriglyceridemia | Common | **Clinical Trial** (GWAS) | Background-comorbidity loci; not a near-term OE intervention target | — |
@@ -232,27 +232,25 @@ The Tin et al. 2019 *Nature Genetics* meta-analysis (PMID 31578528, ~1M particip
 | Complete catalogue + regulatory + structural | Physician-routed CLIA whole-genome sequencing (WGS) | $1,000–3,000 |
 | Personal exploration only (ancestry, broad traits, gout *interest* but not gout *decisions*) | Consumer SNP array | $100–200 |
 
-**This caveat is the canonical statement.** Other wiki pages ([`gout-action-guide.md`](./gout-action-guide.md), [`personal-genome-protocol.md`](./personal-genome-protocol.md), [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md)) cross-reference this section rather than repeat the warning. Updates to consumer-SNP-quality discipline land here first; downstream pages link to it.
-
 ---
 
 ## Open questions / coverage gaps
 
-These are the gaps the OE corpus has noted but does not yet have evidence depth for. Each is a candidate for a future literature-scan subagent pass or computational-experiment design.
+These questions lack sufficient evidence for a current stratification verdict.
 
 1. **Comprehensive SLC22A12 (URAT1) allelic series across non-East-Asian RHUC1 cases.** Most published URAT1 LoF variants are characterized in Japanese cohorts (Ichida 2004, Enomoto 2002). The full allelic series in European, South Asian, and African-ancestry RHUC1 patients is less well documented; gnomAD provides exome-frequency data that could anchor a more complete catalogue.
 2. **Common-variant NLRP3 polymorphisms and gout-flare severity.** rs10754558 and rs35829419 (Q705K) have mixed replication for gout-flare-severity stratification. A dedicated meta-analysis across published gout-flare cohorts would help establish whether these variants justify being a NLRP3-inhibitor responder-stratification marker (relevant to dapansutrile, oridonin development per [`nlrp3-inhibitor-screen.md`](./nlrp3-inhibitor-screen.md)).
 3. **Polygenic risk score (PRS) calibration for gout across ancestries.** The 351 loci of Tin 2019 are predominantly European-ancestry-derived. Cross-ancestry PRS portability for serum urate is documented as moderate at best; the East Asian Biobank GWAS (Boocock 2020 and successors) would be the natural anchor for an East-Asian-calibrated PRS. The platform's stratification-mining computational experiments would benefit from PRS rather than single-variant indexing for some questions.
 4. **Q141K homozygote PK / PD response to systemic vs gut-lumen uricase.** This is open. [comp-019](./uricase-abcg2-genotype-stratification-computational.md) attempted a genotype ranking, but [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) invalidated its quantitative regime. No genotype-stratified uricase trial was identified, so Q141K belongs as a prospective stratification variable rather than a response predictor.
-5. **GLUT9 druggability.** SLC2A9 has the largest per-allele effect on serum urate of any locus, yet no clinical-grade GLUT9-targeted drug exists. Whether this is a tractability problem (structural / selectivity) or a clinical-priority problem (URAT1 was a richer initial substrate) deserves a dedicated chassis-pending entry.
-6. **G6PD deficiency × gut-lumen uricase safety.** Stated open question above in Category 6: whether the engineered-koji gut-lumen approach is safer for G6PD-deficient patients than systemic recombinant uricase is **mechanistically plausible but empirically untested**. Worth queuing as a peer-track open question.
+5. **GLUT9 druggability.** SLC2A9 has the largest per-allele effect on serum urate of any locus, yet no clinical-grade GLUT9-targeted drug exists. Whether the gap reflects structural/selectivity tractability or clinical prioritization of URAT1 is unresolved.
+6. **G6PD deficiency × gut-lumen uricase safety.** Whether the engineered-koji gut-lumen approach is safer for G6PD-deficient patients than systemic recombinant uricase is **mechanistically plausible but empirically untested**.
 7. **East-Asian-cohort Q141K × dietary-fiber RCT.** Per the multilingual scan 2026-05-19 (see `logs/multilingual-east-asian-gout-cohort-scan-2026-05-19.md`), no Q141K-stratified fiber or butyrate-supplementation RCT has been published in any database (PubMed, citation-chain through Chinese/Japanese cohorts). The Han Chinese / Japanese cohorts (Q141K frequency ~30% in general population, ~50% in gout patients) are the natural recruitment substrate for the canonical Q141K × fiber trial design at [`abcg2-modulators.md` §6](./abcg2-modulators.md). The empirical question remains genuinely untested in 2026.
 
 8. **W258X-homozygote lifetime EI-AKI risk.** Despite W258X being intensively studied across ~31,000 Japanese individuals (Iwai, Taniguchi, Tabara 2014, Hamajima 2011, Wakida 2008), the lifetime exercise-induced AKI incidence in homozygotes vs heterozygotes is not quantified in any published source. This is a tractable Japanese-cohort epidemiology study and a load-bearing constraint for the URAT1-siRNA modality safety case at [`sirna-urat1-modality.md`](./sirna-urat1-modality.md).
 
-9. **HLA-B\*58:01-positive febuxostat prospective safety cohort.** The substitution recommendation has strong mechanistic backing but no large prospective cohort tracks B\*58:01-positive febuxostat-takers for SCAR incidence. The Taiwan / Korea / Hong Kong universal-screening programs are now generating exactly this cohort by construction — published outcomes data from these programs (2025+) should be re-scanned in the next sweep.
+9. **HLA-B\*58:01-positive febuxostat prospective safety cohort.** The substitution recommendation has strong mechanistic backing, but no large prospective cohort tracks SCAR incidence among B\*58:01-positive febuxostat recipients. Universal-screening programs in Taiwan, Korea, and Hong Kong create the relevant cohort, but published prospective outcomes remain absent.
 
-10. **East-Asian-literature deep dive on TCM-era gout cohorts.** Per [`CLAUDE.md` §"Global-multilingual research by default"](../CLAUDE.md), direct CNKI / WanFang / J-STAGE / CiNii queries (requiring authenticated browser sessions) likely surface additional Chinese / Japanese cohort papers — particularly regional sub-cohort breakdowns and TCM-context intervention studies — not surfaced by the 2026-05-19 multilingual scan. A dedicated session with database credentials would close this gap.
+10. **East-Asian TCM-era gout cohorts.** The 2026-05-19 multilingual scan did not include authenticated CNKI, WanFang, J-STAGE, or CiNii coverage. Regional sub-cohort analyses and TCM-context intervention studies may therefore be underrepresented.
 
 ---
 
@@ -279,5 +277,4 @@ These are the gaps the OE corpus has noted but does not yet have evidence depth 
 
 ---
 
-*Index page; no inline mechanism deep-dives. Variant-specific mechanisms, rescue strategies, and intervention design belong on the canonical wiki pages linked in the "Canonical wiki page" column of each table.*
-*Downstream stratification analyses: use the [Pattern library](./genotype-informed-supplement-workflow.md) (variant → pathway vulnerability → bypass intervention) as the reusable template when adding new genotype-informed workflows.*
+Variant-specific mechanisms, rescue strategies, and intervention designs are linked from the "Detailed evidence" column. The [Pattern library](./genotype-informed-supplement-workflow.md) formalizes the variant → pathway vulnerability → bypass-intervention framework.

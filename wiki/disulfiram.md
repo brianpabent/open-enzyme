@@ -18,17 +18,11 @@ sources:
 
 # Disulfiram (Antabuse): The Repurposed GSDMD Inhibitor
 
-**Disulfiram** (brand name: Antabuse) is an FDA-approved drug prescribed to alcoholics as a deterrent — it causes severe flushing and illness if alcohol is consumed. In 2020, researchers discovered it has an entirely different and remarkable mechanism: **direct gasdermin D inhibition at the final step of the NLRP3 inflammasome pathway.**
+**Disulfiram** (Antabuse) is an FDA-approved alcohol-deterrent drug that also blocks gasdermin D pore formation, the pyroptotic exit step of the NLRP3 pathway. Its gout-relevant hypothesis is downstream containment of IL-1β release after inflammasome activation. That mechanism is preclinical; disulfiram has not established efficacy or a safe dose window in gout.
 
-This represents one of the most accessible, underrated, and economically efficient gout interventions available today.
+**Compounding route:** Bulk API availability makes a lower-dose extended-release formulation technically testable, but useful release kinetics, GSDMD target engagement, alcohol-response separation, and safety have not been established. (source: compounding-pharmacy-track.md)
 
-**Repurposing surface origin:** Disulfiram is one of three concrete examples surfaced by the Open Enzyme discovery engine's chokepoint-to-FDA-drug mapping methodology — FDA-approved drugs that hit a gout chokepoint but were never clinically tested for gout. The other two are zileuton (CP6a 5-LOX, FDA-approved for asthma) and avacopan (CP0 C5aR1, FDA-approved for ANCA vasculitis). See [open-enzyme-vision.md §2.2](./etc/open-enzyme-vision.md) for the full repurposing surface framing. (source: etc/open-enzyme-vision.md)
-
-**Compounding pharmacy delivery route:** Disulfiram is the highest-priority candidate on the [compounding pharmacy track](./compounding-pharmacy-track.md) — FDA-approved, off-patent, bulk API available, and the only barrier between the patient and a useful low-dose extended-release formulation is "no one has commercialized this specific formulation for gout." A compounded low-dose ER disulfiram tablet at sub-deterrent doses would allow exploring the GSDMD-inhibitor effect without the alcohol-flush mechanism dominating. (source: compounding-pharmacy-track.md)
-
-**Companion hypothesis: PDB-engineered EcN upstream of NLRP3.** Disulfiram targets downstream GSDMD while a PDB arm could reduce luminal urate. The mechanisms are non-identical, but the earlier additive claim is retired: [comp-031](./dual-chassis-ecn-pdb-uricase-computational.md) inherited an invalid UOX regime and unsupported CBT2.0-butyrate/Q141K assumptions. Measure PDB carbon fate in validation §1.37 and disulfiram/XO-inhibitor compatibility separately before combination inference. This is research-stage and not a dosing recommendation.
-
-**ChEMBL v37 off-target flag (2026-07-01):** Disulfiram has a newly curated **LOXL4 IC50 = 59 nM** (pChEMBL 7.23, *Bioorg Med Chem Lett* 2018), which was not present in v34. LOXL4 (lysyl oxidase homolog 4) is involved in collagen crosslinking, studied in fibrosis/cancer contexts. Relevance to gout or GSDMD biology is unclear — flag for tracking but do not propagate without primary-source verification. ALOX15 and tau binding hits remain phenotypic/unvalidated (null journal annotation). See [chembl-cross-check.md](./etc/chembl-cross-check.md) for full details. (In Vitro; source: chembl-cross-check.md)
+**Off-target flag:** ChEMBL v37 reports **LOXL4 IC50 = 59 nM** (pChEMBL 7.23, *Bioorg Med Chem Lett* 2018). Relevance to gout or GSDMD biology is unclear and requires primary-source verification. See [chembl-cross-check.md](./etc/chembl-cross-check.md). (In Vitro)
 
 > **Complementary pharma at CP6**: zileuton (5-LOX inhibitor, CP6a) and disulfiram (GSDMD inhibitor, CP6b) hit different branches of the same chokepoint. See [wiki/zileuton.md](./zileuton.md) for the CP6a pharma-grade option.
 
@@ -50,8 +44,6 @@ Critically, disulfiram allows GSDMD cleavage by caspase-1 to proceed normally �
 
 **(Source: nlrp3-exploit-map.md)** — "The elegance: disulfiram still allows IL-1β and GSDMD processing (caspase-1 can still cleave them) but abrogates pore formation. No pores = IL-1β stays trapped inside the cell. No pores = no pyroptosis = no inflammatory amplification from cell death."
 
-> **Reactome graph anchor (2026-06-01):** Disulfiram/GSDMD is already modeled by Reactome as `R-HSA-9693324` ("Disulfiram covalently modifies Cys191 in GSDMD") within the broader pyroptosis pathway `R-HSA-5620971`. Dimethyl fumarate modification of the same GSDMD cysteine is also modeled as `R-HSA-9716258`. This is useful pathway anchoring, but it means disulfiram is not a Reactome contribution gap. (Pathway anchor; source: `reference/generated/reactome/2026-06-01-open-enzyme-audit/`)
-
 ### Alternative Modifications
 
 Other compounds target the same Cys191 vulnerability:
@@ -67,53 +59,15 @@ The fact that multiple independent compounds converge on this single cysteine re
 
 Published in Nature Immunology (2020): researchers screened a library of FDA-approved drugs for NLRP3 pathway inhibition and found disulfiram's GSDMD-blocking activity. This wasn't a drug designed for this purpose — it was an accidental discovery during pharmacological screening.
 
-### Safety Profile: 70+ Years of Data
+### Human-use boundary
 
-Disulfiram has been prescribed for alcohol use disorder since the 1950s. Decades of clinical experience demonstrate:
+Disulfiram has decades of human use for alcohol use disorder, so its pharmacology and interactions are better characterized than those of a new chemical entity. That history does not validate gout use. The alcohol reaction, idiosyncratic hepatotoxicity, neuropathy, and drug interactions constrain any dose-finding study.
 
-- Excellent safety profile at standard doses (250 mg/day)
-- No hepatotoxicity (unlike MCC950, which caused liver failure in Phase 1 RA trials)
-- Well-characterized pharmacokinetics
-- Extensive understanding of drug interactions
+## Source, formulation, and safety constraints
 
-This safety history means disulfiram can move directly to gout trials without extensive new safety work.
-
-**(Source: nlrp3-exploit-map.md)** — "It's FDA-approved. It has 70+ years of safety data. It costs ~$30/month. You can get a prescription by... having a conversation with a doctor about alcohol use disorder, or by finding a physician interested in repurposed drug applications."
-
-## Economic Efficiency
-
-This is the most cost-effective intervention in the entire gout pharmacopeia:
-
-| Drug | Mechanism | Annual Cost |
-|------|-----------|-------------|
-| **Disulfiram** | GSDMD inhibitor | ~$120–360 (generic) |
-| **Colchicine** | Microtubule/inflammasome | ~$120–250 |
-| **Allopurinol** | Xanthine oxidase inhibitor | ~$12–50 |
-| **Pegloticase (IV)** | Recombinant uricase | ~$100,000+ per course |
-| **Dapansutrile** (Phase 2a, gout) | NLRP3 inhibitor | Unknown (likely $200–500/month) |
-| **Canakinumab** | Anti-IL-1β monoclonal | ~$300,000/year (uninsured) |
-
-Disulfiram is not only effective but **extraordinarily affordable**, placing it in the same price tier as current standard-of-care flare prevention.
-
-## Practical Implementation
-
-### Getting a Prescription
-
-Disulfiram requires a prescription. Access strategies:
-
-1. **Honest disclosure:** Work with a physician on alcohol use — even patients with mild or history of alcohol issues can receive disulfiram for that indication
-2. **Repurposed indication:** A rheumatologist or forward-thinking internist willing to prescribe off-label for gout given the GSDMD mechanism
-3. **Research enrollment:** Some clinical trials may test disulfiram for gout
-
-**(Source: nlrp3-exploit-map.md)** — "You can get a prescription by... having a conversation with a doctor about alcohol use disorder, or by finding a physician interested in repurposed drug applications. This is the single most accessible pharma-grade NLRP3 pathway exploit in this entire document."
-
-### Dosing
-
-- **Standard (alcohol deterrent):** 250 mg once daily, typically in the morning
-- **Gout prophylaxis (sub-AUD GSDMD-dominant window — hypothesis, not validated):** **100 mg/day modeled point** (the 75–125 mg/day range was broadened from that single point, not independently derived) — per [comp-027 dose modeling](./disulfiram-dose-modeling-computational.md) (2026-05-16; **downgraded to hypothesis-generator per comp-review 2026-07-14** — a single strict-GREEN modeled point sitting exactly on a hard-coded decision boundary; a dose-finding hypothesis to test, not a recommendation). At 100 mg/day, parent DSF Cmax (0.40 µM) engages GSDMD pore-formation blockade at 1.3× cell-free IC50 (0.30 µM per Hu 2020) while plasma Me-DTC peak (~70 nM) stays at or below the Faiman-1989 DER hypotension threshold (~70 nM at 40% ALDH inhibition). NLRP3-palmitoylation EC50 (Xu 2024, 10 µM) requires AUD-dose+ plasma — sub-AUD is selectively GSDMD-engaging, not pan-NLRP3-engaging. Two-phase compounding protocol: IR capsule 50→100 mg/d titration over 14 days, then ER lipid-matrix 100 mg QD chronic. (Mechanistic Extrapolation + In Silico; source: disulfiram-dose-modeling-computational.md)
-- **Acute flare:** Unclear; probably prophylactic use rather than acute dosing
-
-### Safety Considerations
+- **Source:** Generic prescription tablets and bulk API exist; gout remains an off-label research indication.
+- **Delivery question:** A lower-dose extended-release formulation could test whether sustained GSDMD engagement can be separated from the aldehyde-dehydrogenase effect, but the modeled window is not a dosing recommendation.
+- **Target-engagement requirement:** Parent disulfiram, metabolites, GSDMD pore formation, and aldehyde-dehydrogenase activity need to be measured together.
 
 - **Alcohol interaction:** Disulfiram blocks aldehyde dehydrogenase, causing severe flushing, nausea, and cardiovascular stress if alcohol is consumed. This is intentional for alcohol-use deterrence but requires absolute abstinence
 - **Copper chelation:** Disulfiram binds copper; patients on copper-dependent enzyme therapies (e.g., [[gotu-kola|GHK-Cu peptide]]) may experience reduced efficacy
@@ -138,49 +92,17 @@ Disulfiram requires a prescription. Access strategies:
 - **Acetaminophen at high doses:** competing hepatic stress (additive hepatotoxicity).
 - **Many ethanol-containing medications (some elixirs, sublingual sprays, IV preparations):** trigger reaction.
 
-**Dose-dependent risk profile:**
-- 250 mg/day (standard): well-tolerated in alcohol-abstinent patients. Hepatotoxicity (idiosyncratic) is the main rare serious side effect; baseline + periodic LFTs recommended.
-- 500 mg/day (historical dose, less common now): more side effects (drowsiness, peripheral neuropathy, hepatic stress) without proportional efficacy gain.
-- Disulfiram-ethanol reaction severity scales with both disulfiram dose and ethanol exposure.
-
-**Stack-level safety note — fermented foods:**
-- **Kombucha and koji-fermented foods** may contain residual ethanol that could trigger reaction in disulfiram-sensitive patients. Practical limit: dietary intake of well-fermented foods at typical portion sizes is generally below the threshold but is patient-specific. Disulfiram users should avoid kombucha entirely and treat any koji-derived fermented foods as a per-batch ethanol-content question.
-- **Home-fermented amazake / shio-koji:** wild-yeast contamination of a "failed" batch can push residual ethanol to 1–3% v/v. Disulfiram users running the [koji home-fermentation protocol](./koji-home-fermentation.md) should pre-screen every finished batch with consumer ethanol test strips (~$15, ±0.1% v/v) before consumption and discard any batch reading >0.1%. Do not rely on cook-off / volatilization — see the "Drug-interaction warning" subsection in [koji-home-fermentation.md](./koji-home-fermentation.md) for the routine precaution. (source: koji-home-fermentation.md)
-- **Hepatotoxicity stacking concern with EGCG, high-dose curcumin, acetaminophen:** all four contribute to hepatic stress; layering is a relative contraindication.
+- Disulfiram–ethanol reaction severity scales with both exposure levels; ethanol-containing foods and medicines are therefore a study-exclusion and safety-control problem.
+- Hepatic stress from other agents is a combination constraint.
 
 (source: supplements-stack.md)
 
-## Comparison: Disulfiram vs. Other Inflammasome Inhibitors
+## Falsification tests
 
-> **Mechanistic complement to the GSDMD pore self-delivery paradox (see [gsdmd-pore-delivery-paradox.md](./gsdmd-pore-delivery-paradox.md)).** Disulfiram prevents GSDMD pores from forming (CP6b blockade — upstream); the pore self-delivery paradox exploits already-formed pores as drug-delivery conduits (CP6b exploitation — downstream). The two strategies are complementary rather than competing: disulfiram as prophylaxis, pore-directed delivery as acute circuit-breaker. (Mechanistic Extrapolation; source: gsdmd-pore-delivery-paradox.md)
-
-| Drug | Chokepoint | Class | Status | Cost | Safety Data |
-|------|-----------|-------|--------|------|-------------|
-| **Disulfiram** | 6b (GSDMD pore) | Approved (Rx) | Widely available | ~$30/month | 70+ years |
-| **Zileuton** | 6a (5-LOX/LTB4) | Approved (Rx, asthma) | Available; off-label in gout | ~$50/month generic | 30+ years (asthma) |
-| **DMF** | 6b (GSDMD) | Approved (MS) | Requires MS diagnosis | High | 15+ years (MS) |
-| **Dapansutrile** | 2 (NLRP3) | Phase 2a (gout, completed) | Investigational | Unknown | <5 years |
-| **Oridonin** | 1, 2 | Natural/research | Preclinical | ~$30/month | Unknown human data |
-| **Colchicine** | 3 (ASC/microtubule) | Approved (Rx) | Standard of care | ~$20/month | 50+ years |
-
-**Key insight:** Disulfiram is the only GSDMD inhibitor with both FDA approval and extensive clinical safety history. It's a uniquely accessible entry point to inflammasome modulation.
-
-## The Black Hat Insight
-
-**(Source: nlrp3-exploit-map.md)** — "This is the black hat's dream exploit. Disulfiram — Antabuse — the drug prescribed to alcoholics since the 1950s — was discovered in 2020 (Nature Immunology) to specifically block gasdermin D pore formation at nanomolar concentrations... It's FDA-approved. It has 70+ years of safety data. It costs ~$30/month."
-
-Disulfiram represents a market inefficiency in medical knowledge: rheumatologists and immunologists know about NLRP3 inhibitors and GSDMD as a target, but gout specialists have not widely integrated this discovery into clinical practice. This is an underutilized tool that could be deployed immediately.
-
-## Integration with Multi-Attack Strategy
-
-In the context of comprehensive gout management:
-
-- **Remove the cause:** [[engineered-koji|Engineered koji]] or [[engineered-yeast|yeast expressing uricase]] address the underlying uric acid burden
-- **Defuse the bomb (upstream):** [[bhb-ketones|BHB]], [[kpv-peptide|KPV]], [[oridonin|oridonin]] suppress NLRP3 priming and assembly
-- **Defuse the bomb (downstream):** **Disulfiram** blocks the final IL-1β release step
-- **Heal the damage:** [[peptide-therapy|BPC-157, TB-500]] for tissue repair
-
-Disulfiram provides a simple, affordable, well-tolerated entry point to the NLRP3 pharmacological toolkit.
+1. Demonstrate GSDMD Cys191 engagement and pore blockade in MSU-stimulated human macrophages at exposure below the aldehyde-dehydrogenase effect.
+2. In an MSU model, measure intracellular versus extracellular IL-1β, pyroptosis, neutrophil recruitment, and flare readouts while holding urate constant.
+3. Compare immediate-release and extended-release exposure with matched parent/metabolite pharmacokinetics. If GSDMD engagement cannot be separated from unacceptable alcohol-response or hepatic risk, the lower-dose formulation hypothesis fails.
+4. Test CP6a plus CP6b blockade directly before making an additive claim about zileuton and disulfiram.
 
 ## Related Concepts
 
@@ -188,12 +110,3 @@ Disulfiram provides a simple, affordable, well-tolerated entry point to the NLRP
 - [[gasdermin-d|Gasdermin D]] — The specific target
 - [[gout|Gout Flare Cascade]] — The disease mechanism
 - [[dapansutrile|Dapansutrile (OLT1177)]] — NLRP3 inhibitor; Phase 2a completed in gout (PMID 33005902)
-
-## Key Insight
-
-**Disulfiram is the most economically efficient, safest, and most accessible gout pharmacotherapy targeting the NLRP3 inflammasome.** It blocks IL-1β release at the final step, preventing the inflammatory amplification that causes pain. It costs ~$30/month, has 70 years of safety data, and is available immediately with a prescription. The limitation is awareness — this repurposed drug has not yet entered rheumatology practice for gout, despite strong mechanistic rationale and exceptional economic and safety characteristics.
-
----
-
-*Last updated: April 2026*
-*Wiki synthesized from primary research documents*

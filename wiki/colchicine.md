@@ -42,7 +42,7 @@ status: published
 
 Tropolone alkaloid derived from *Colchicum autumnale* (autumn crocus) and *Gloriosa superba* (glory lily). Used for gout for ~2,000 years; FDA "approval" (under the unapproved-drugs initiative) in 2009. Modern mechanism: **dual-hit NLRP3 inhibitor** disrupting microtubule-mediated ASC speck assembly (CP3) plus direct P2X7 pore inhibition (CP2). Narrow therapeutic index drives both clinical caution and pharmacology — toxic dose sits within ~3–5× the therapeutic dose, and CYP3A4 / P-glycoprotein interactions can push therapeutic dosing into the toxic range. The low-dose acute regimen (1.2 mg + 0.6 mg one hour later) replaced the older "dose-to-GI-failure" approach after the AGREE trial. **Cardiovascular re-positioning** as a low-dose anti-inflammatory (COLCOT, LoDoCo2) led to FDA approval of [Lodoco](https://www.lodoco.com/) (0.5 mg colchicine) for atherosclerotic CVD in June 2023 — the first FDA-approved anti-inflammatory specifically for cardiovascular protection.
 
-For Open Enzyme: colchicine targets **CP2/CP3** of the NLRP3 axis; engineered-koji native metabolites (kojic acid, ergothioneine) target **CP1a** (NF-κB priming). Different chokepoints, complementary positioning, not competing.
+In the portfolio model, colchicine targets **CP2/CP3** of the NLRP3 axis. Candidate CP1a interventions are separate hypotheses; combination value must be tested rather than inferred from pathway separation.
 
 ---
 
@@ -105,9 +105,9 @@ Colchicine sits at CP2 (P2X7) and CP3 (ASC speck), but the practical question fo
 
 **The stacking logic differs per pair; a one-size answer is unlikely.** Anyone layering colchicine with other CP2/CP3 modulators should ask, per pair, whether the second compound hits an *upstream* node (additive) or the same node (redundant). See [`nlrp3-exploit-map.md`](nlrp3-exploit-map.md) for the chokepoint topology.
 
-**Topical CBD:THC at CB2 — the cleanest dual-receptor adjunct (added 2026-05-19, Cluster I1 walkthrough).** Topical 1:1 CBD:THC applied to the affected joint hits CP2 NLRP3 conformational suppression via **CB2 GPCR activation on synovial macrophages** — a completely different molecular mechanism than colchicine's β-tubulin binding, reaching the same chokepoint. The two arms are mechanism-non-redundant at CP2: colchicine acts intracellularly via cytoskeleton disruption, CBD:THC acts via plasma-membrane Gαi-coupled receptor signaling. Plus the topical route provides joint-site concentration that oral colchicine can't match. This composes a **dual-receptor, dual-route** acute-flare protocol — formalized as Protocol A in [`gout-action-guide.md` §"Combined-route flare protocols"](./gout-action-guide.md). See [`cannabinoids-terpenes.md`](./cannabinoids-terpenes.md) §1–2 (per-cannabinoid mechanism), §4a (topical protocol details), and §"Brian's n=1 observation" (real-subject layered-flare-interrupt anchor). Evidence: colchicine arm is Clinical Trial (AGREE trial); CBD:THC arm is In Vitro / Animal Model; combination is Speculative.
+**Topical cannabinoid combination hypothesis.** CB2 signaling and colchicine's tubulin mechanism are non-redundant at CP2/CP3, but direct human gout evidence for topical cannabinoids and evidence for the combination are absent. A controlled factorial study would need to establish joint exposure, mechanism separation, and incremental benefit. See [`cannabinoids-terpenes.md`](./cannabinoids-terpenes.md) §1–2 and §4a. Evidence: colchicine arm is Clinical Trial; cannabinoid arm is In Vitro / Animal Model; combination is Speculative.
 
-**Protocol C — Triple-mechanism (colchicine + topical CBD:THC + DHA SPM resolution arm):** a named composition crossing two mechanism *classes* — suppression (colchicine + CBD:THC) and active resolution (DHA-emphasis omega-3 → RvD1/MaR1 SPMs). Formalized at [`gout-action-guide.md` §"Combined-route flare protocols"](./gout-action-guide.md) Protocol C and [`self-experiment-protocol.md` §13](./self-experiment-protocol.md) (prospective n=1). Colchicine hits CP3 + CP2 (β-tubulin/P2X7), CBD:THC hits CP2 (CB2), DHA SPMs hit CP5b (ALX/FPR2 + LGR6 active resolution). The DHA resolution arm is gated on chronic omega-3 index ≥8% and produces a falsifiable mechanism signature — accelerated serum C5a decline during the resolution phase per [`spm-resolution-pathway.md` §7.3](./spm-resolution-pathway.md). Evidence: all three arms have per-arm mechanism evidence; combination as named is Speculative. (source: gout-action-guide.md, self-experiment-protocol.md)
+**Suppression-plus-resolution hypothesis.** Colchicine, topical cannabinoids, and DHA-derived SPMs address distinct pathway nodes, but per-arm evidence does not establish combination efficacy. Advancement requires independent exposure checks and a controlled comparison of each arm against the combination. Evidence: per-arm mechanisms vary from Clinical Trial to In Vitro / Animal Model; combination is Speculative. (source: gout-action-guide.md, self-experiment-protocol.md)
 
 ### 3.4 Other immunomodulatory effects
 
@@ -119,29 +119,29 @@ Colchicine sits at CP2 (P2X7) and CP3 (ASC speck), but the practical question fo
 
 The cumulative profile is broader than "NLRP3 inhibitor." Colchicine is better described as a **cytoskeleton-mediated multi-axis immune modulator**, with NLRP3 being the most clinically relevant axis for gout.
 
-## 4. Clinical use in gout
+## 4. Clinical evidence in gout
 
-### 4.1 Acute flare
+### 4.1 AGREE acute-flare exposure
 
-**Standard low-dose regimen** (US, AGREE-derived):
+The AGREE trial tested the following low-dose exposure:
 
 - **1.2 mg at first symptom**
 - **0.6 mg one hour later**
 - Total: 1.8 mg in two doses
 
-The [AGREE trial](https://pubmed.ncbi.nlm.nih.gov/20131255/) (Terkeltaub 2010) compared this regimen to the older "high-dose to GI failure" approach (4.8 mg over 6 hours) and showed equivalent efficacy with **dramatically less GI toxicity**. Modern guidelines (ACR 2020) recommend the low-dose regimen exclusively for acute flares in adults with normal renal/hepatic function. *[Clinical Trial]*
+The [AGREE trial](https://pubmed.ncbi.nlm.nih.gov/20131255/) (Terkeltaub 2010) compared this exposure to the older 4.8 mg approach and showed equivalent efficacy with substantially less GI toxicity. ACR 2020 incorporates the low-dose regimen for eligible adults; prescribing still depends on renal, hepatic, and interaction review. *[Clinical Trial]*
 
-**Window of efficacy**: most effective when started within 12 hours of flare onset; efficacy declines sharply after 24 hours. Patient education for "take at first twinge, not when it really hurts" is the difference between a 12-hour flare and a 5-day flare.
+**Timing boundary:** AGREE studied treatment begun within 12 hours of flare onset. Its efficacy estimate therefore supports early-flare exposure and should not be extrapolated into a precise effect estimate after 24 hours. This is a trial-population boundary, not individualized timing advice.
 
-### 4.2 Prophylaxis on ULT initiation
+### 4.2 ULT-initiation prophylaxis evidence
 
-Starting urate-lowering therapy (allopurinol, febuxostat) **mobilizes existing tophaceous urate**, which can paradoxically trigger flares for the first 3–6 months as crystal deposits dissolve. The ACR 2020 gout guideline recommends concurrent anti-inflammatory prophylaxis during this window:
+Starting urate-lowering therapy can mobilize existing urate deposits and trigger flares as deposits dissolve. ACR 2020 evaluates anti-inflammatory prophylaxis during this window, including these studied or guideline-listed exposures:
 
 - **Colchicine 0.5–0.6 mg once or twice daily** (most common)
 - Low-dose NSAID (alternative)
 - **Prednisone 5–10 mg daily** (alternative when colchicine/NSAIDs contraindicated)
 
-Duration: 3–6 months, or until serum UA stably <6.0 mg/dL with no flares for at least 3 months. *[Clinical Trial — guideline recommendation]*
+The guideline discusses 3–6 months of prophylaxis, with continuation conditioned on serum urate and flare state. This is guideline evidence, not an individual protocol. *[Clinical Trial — guideline recommendation]*
 
 ### 4.3 Comparison to alternatives
 
@@ -172,24 +172,27 @@ Fatalities have been reported at single doses as low as **7 mg** in adults (typi
 
 CYP3A4 inhibitors and P-gp inhibitors elevate colchicine concentrations:
 
-| Class | Examples | Action |
+| Class | Examples | Label or interaction consequence |
 |---|---|---|
-| Macrolide antibiotics | Clarithromycin, erythromycin | Avoid; severe interactions documented |
-| Azole antifungals | Ketoconazole, itraconazole | Avoid or substantially reduce dose |
-| HIV protease inhibitors | Ritonavir, nelfinavir | Avoid in renal/hepatic impairment |
-| Calcineurin inhibitors | Cyclosporine, tacrolimus | Avoid; multi-fold increase in colchicine exposure |
-| Statins | Simvastatin, atorvastatin (mild) | Increased myopathy risk; pravastatin/rosuvastatin preferred if statin needed |
-| Calcium channel blockers | Verapamil, diltiazem | Reduce colchicine dose |
-| Grapefruit juice | — | Avoid; CYP3A4 inhibition |
+| Macrolide antibiotics | Clarithromycin, erythromycin | Severe interactions documented; labeling restricts co-use |
+| Azole antifungals | Ketoconazole, itraconazole | Label contraindication or dose adjustment, depending on context |
+| HIV protease inhibitors | Ritonavir, nelfinavir | Label contraindication in renal/hepatic impairment |
+| Calcineurin inhibitors | Cyclosporine, tacrolimus | Multi-fold exposure increase; labeling restricts co-use |
+| Statins | Simvastatin, atorvastatin | Increased myopathy risk; requires medication review |
+| Calcium channel blockers | Verapamil, diltiazem | Label dose adjustment |
+| Grapefruit juice | — | CYP3A4 inhibition increases exposure |
 
 The size of the interaction surface is the practical reason colchicine is often avoided in older or polypharmacy patients. *[Clinical Trial pharmacology]*
 
-### 5.3 Renal and hepatic adjustments
+### 5.3 Renal and hepatic label constraints
 
-- **CrCl 30–80 mL/min**: caution; consider dose reduction
-- **CrCl <30 mL/min** or dialysis: avoid for prophylaxis; for acute flare, single 0.6 mg dose (no second dose), repeat no sooner than 14 days
-- **Hepatic impairment**: dose reduction; avoid in severe disease
-- **Combined renal + hepatic**: avoid
+- **Mild-to-moderate renal impairment:** the label requires close adverse-effect monitoring; dose reduction may be necessary.
+- **Severe renal impairment (CrCl <30 mL/min):** prophylaxis starts at 0.3 mg/day; an acute-flare course is not dose-adjusted but must not be repeated more than once every two weeks.
+- **Dialysis:** prophylaxis is 0.3 mg twice weekly; acute-flare treatment is limited to one 0.6 mg dose and must not be repeated more than once every two weeks.
+- **Severe hepatic impairment:** consider prophylaxis dose reduction; an acute-flare course is not dose-adjusted but must not be repeated more than once every two weeks.
+- **Drug-interaction constraint:** renal or hepatic impairment plus a P-gp or strong CYP3A4 inhibitor is contraindicated because fatal toxicity has occurred at therapeutic doses.
+
+These are label boundaries, not a dosing recommendation. Source: [FDA COLCRYS prescribing information](https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/022352s026lbl.pdf).
 
 ## 6. Cardiovascular re-positioning
 
@@ -200,31 +203,31 @@ NLRP3-driven inflammation contributes to atherosclerotic plaque instability. Two
 
 In June 2023, the FDA approved [Lodoco](https://www.lodoco.com/) (colchicine 0.5 mg tablet) for cardiovascular risk reduction in adults with established atherosclerotic cardiovascular disease — **the first FDA-approved anti-inflammatory specifically for CV protection**. This expanded the colchicine market beyond gout and rheumatology and re-anchored interest in NLRP3-targeted therapeutics for cardiometabolic disease.
 
-For Open Enzyme: the cardiovascular signal is mechanistically consistent with the same CP2/CP3 chokepoints relevant to gout. It does not change the engineered-koji thesis but it does suggest that **systemic NLRP3 suppression is a therapeutic axis with regulatory and clinical traction beyond gout** — supporting argument for the platform's broader relevance.
+The cardiovascular signal is mechanistically consistent with the same CP2/CP3 chokepoints relevant to gout. It supports systemic NLRP3 modulation as a clinically tractable axis, without validating any other intervention track.
 
-## 7. Position vs. Open Enzyme thesis
+## 7. Position in the intervention portfolio
 
-| Axis | Colchicine | Engineered-koji native metabolites |
+| Axis | Colchicine | Candidate CP1a interventions |
 |---|---|---|
-| Primary chokepoint | CP3 (ASC speck) + CP2 (P2X7 pore) | CP1a (NF-κB priming via kojic acid; Nrf2 via ergothioneine, ferulic acid) |
-| Onset | Acute (hours) | Continuous (food-dose) |
-| Use mode | Acute flare + ULT-initiation prophylaxis | Continuous food-grade prophylaxis |
-| Drug interactions | Large CYP3A4/P-gp surface | None known (food-grade) |
-| Therapeutic index | Narrow (~3–5×) | Wide (food consumption) |
-| Cost | Generic, low | Ingredient cost only at scale |
+| Primary chokepoint | CP3 (ASC speck) + CP2 (P2X7 pore) | CP1a mechanisms under investigation |
+| Onset | Acute (hours) | Candidate-dependent |
+| Use mode | Acute flare + ULT-initiation prophylaxis | Research-stage |
+| Drug interactions | Large CYP3A4/P-gp surface | Candidate-dependent |
+| Therapeutic index | Narrow (~3–5×) | Unestablished for the intended use |
+| Cost | Generic, low | Candidate-dependent |
 
-These are **complementary, not competing**. The koji track tests engineered food as an **adjunct to urate-lowering therapy, not a monotherapy replacement** (see [`open-enzyme-vision.md`](etc/open-enzyme-vision.md)). The same logic applies to colchicine: even an effective continuous CP1a-targeted koji adjunct would not eliminate the need for acute flare rescue, because:
+Pathway separation makes these candidates potentially complementary, but that claim requires direct testing. A CP1a intervention would not automatically replace acute flare treatment because:
 
 1. CP1a suppression reduces priming, not crystal deposition or established flares
 2. Acute flares may still occur during ULT initiation (urate mobilization)
 3. Patients with established tophaceous gout will continue to mobilize urate over months
 
-Plausibly testable hypothesis for the project: **engineered-koji prophylaxis on ULT initiation reduces the frequency of colchicine-rescue or prednisone-rescue events**. This is a flare-rate endpoint, measurable in any ULT-initiation cohort with adequate follow-up.
+Testable hypothesis: **a validated CP1a intervention during ULT initiation reduces the frequency of rescue-treatment events**. This is a flare-rate endpoint measurable in a controlled ULT-initiation cohort.
 
 ## 8. Open questions for the project
 
 1. **CP1a + CP2/CP3 synergy in vitro.** Is there a measurable synergy between kojic acid (CP1a) and colchicine (CP2/CP3) in suppressing MSU-induced IL-1β release in primary monocytes? A bead-MSU stimulation assay with combinatorial dosing would answer this. *[hypothesis-generating, see [`hypotheses/`](hypotheses/) for candidate Falsification Card]*
-2. **Does engineered-koji prophylaxis reduce flare frequency on ULT initiation?** This is the clinical question that justifies the platform's "adjunct" positioning. n=1 self-experiment is not adequate to answer it; would require a small ULT-initiation cohort.
+2. **Does a validated CP1a intervention reduce flare frequency on ULT initiation?** An n=1 observation is inadequate; this requires a controlled cohort.
 3. **CYP3A4 poor metabolizer status as a screening axis.** Patients who can't tolerate colchicine due to drug-interaction toxicity are precisely the population for whom a food-based NLRP3 adjunct is most attractive. Worth surfacing in any future patient-selection logic.
 4. **Cardiovascular signal transferability.** If colchicine reduces CV events via NLRP3 suppression, does engineered-koji-driven NLRP3 suppression have the same effect? Mechanistically plausible but unvalidated; mentioning it in any platform pitch should carry an explicit speculative tag.
 
@@ -235,7 +238,6 @@ Plausibly testable hypothesis for the project: **engineered-koji prophylaxis on 
 - Clinical pipeline comparator: [`gout-clinical-pipeline.md`](gout-clinical-pipeline.md)
 - Mission and relevant track: [`open-enzyme-vision.md`](etc/open-enzyme-vision.md), [`engineered-koji-protocol.md`](engineered-koji-protocol.md)
 - **Compounding pharmacy delivery route:** [`compounding-pharmacy-track.md`](compounding-pharmacy-track.md) — colchicine is a candidate for custom-dose compounding (pediatric/weight-based doses, liquid suspensions, fixed-dose combinations with allopurinol). (source: compounding-pharmacy-track.md)
-- Concept graph: [`etc/GRAPH.md`](etc/GRAPH.md) — **archived, no longer maintained** (2026-05-29); the colchicine→CP2/CP3 edges described below are preserved in the frozen historical artifact
 
 ## 10. References
 

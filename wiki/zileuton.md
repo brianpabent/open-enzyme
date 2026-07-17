@@ -27,13 +27,9 @@ sources:
 
 # Zileuton (Zyflo / Zyflo CR)
 
-Zileuton is an oral 5-lipoxygenase (5-LOX) inhibitor. FDA-approved for asthma in 1996 and still the only approved direct 5-LOX drug in the US. It is **never been tested in gout** and sits squarely on top of the CP6a chokepoint in the v1.2 [NLRP3 exploit map](./nlrp3-exploit-map.md) — the 5-LOX → LTB4 → neutrophil-chemotaxis amplification loop that drives the tissue-destructive phase of a gout flare. This dossier treats zileuton as a **testable hypothesis**, not an efficacy claim.
+Zileuton is an oral 5-lipoxygenase (5-LOX) inhibitor approved for asthma. Its gout-relevant hypothesis is direct blockade of the 5-LOX → LTB4 → neutrophil-chemotaxis amplification loop at CP6a. Zileuton has never been tested in gout, so this is a repurposing experiment rather than an efficacy claim.
 
-**Repurposing surface origin:** Zileuton is one of three concrete examples surfaced by the Open Enzyme discovery engine's chokepoint-to-FDA-drug mapping methodology — FDA-approved drugs that hit a gout chokepoint but were never clinically tested for gout. The other two are disulfiram (CP6b GSDMD, FDA-approved for alcohol use disorder) and avacopan (CP0 C5aR1, FDA-approved for ANCA vasculitis). See [open-enzyme-vision.md §2.2](./etc/open-enzyme-vision.md) for the full repurposing surface framing. (source: etc/open-enzyme-vision.md)
-
-**Compounding pharmacy delivery route:** Zileuton is a candidate on the [compounding pharmacy track](./compounding-pharmacy-track.md) — FDA-approved, off-patent, but bulk API availability is uncertain and would need verification. If bulk API is available, a compounded low-dose extended-release zileuton for flare prophylaxis is a clean repurposing experiment. Risk: zileuton has known hepatotoxicity signal in asthma cohorts; compounded use needs liver monitoring. (source: compounding-pharmacy-track.md)
-
-See [supplements-stack.md](./supplements-stack.md) for the over-the-counter CP6a entries (quercetin, AKBA, EPA) that already sit on this mechanism. Zileuton is the pharma-grade version of the same pathway reach.
+See [supplements-stack.md](./supplements-stack.md) for other compounds proposed to reach CP6a.
 
 ---
 
@@ -42,13 +38,11 @@ See [supplements-stack.md](./supplements-stack.md) for the over-the-counter CP6a
 - **Chemistry:** N-hydroxy-N-(1-benzo[b]thien-2-ylethyl)urea. Orally bioavailable small molecule, MW 236.29.
 - **Mechanism class:** Direct, reversible, iron-chelating 5-LOX inhibitor. Binds the non-heme iron at the active site of the 5-LOX enzyme and prevents arachidonic acid → 5-HPETE → LTA4 conversion. Unlike montelukast (a leukotriene-receptor antagonist acting downstream at CysLT1), zileuton blocks upstream leukotriene synthesis — both the LTB4 branch (neutrophil chemotaxis) and the cysteinyl-leukotriene branch (LTC4/D4/E4, bronchoconstriction).
 - **Approval:** FDA-approved 1996 for prophylaxis and chronic treatment of asthma in patients ≥12 years. Zyflo (immediate-release, 600 mg QID) and Zyflo CR (controlled-release, 1,200 mg BID) are bioequivalent for AUC.
-- **Sponsor history:** Abbott → Critical Therapeutics → Cornerstone Therapeutics → Chiesi. Now available generic.
-- **Cost:** ~$50/month generic as of 2026-05-05 (varies; the brand Zyflo CR remains expensive).
 - **Access:** Prescription required; written most often by pulmonologists for asthma. No current rheumatology indication.
 
 ---
 
-## Mechanism in gout (CP6a) — our theory
+## Mechanistic hypothesis in gout (CP6a)
 
 This section frames the case as a testable hypothesis, not an efficacy claim. No gout clinical trial of zileuton exists (ClinicalTrials.gov search 2026-05-05 returns zero results).
 
@@ -57,7 +51,7 @@ This section frames the case as a testable hypothesis, not an efficacy claim. No
 3. **LTB4 pulls additional neutrophils into the joint,** amplifying the flare. The neutrophil infiltration phase — not the initial macrophage activation — is what produces the clinical pain, swelling, and erosive tissue damage that define a gout attack.
 4. **Zileuton blocks 5-LOX directly**, reducing LTB4 (and cysteinyl-leukotriene) production, and should therefore attenuate the neutrophil-amplification loop. This is on-mechanism in asthma; the translation to gout is mechanistically reasonable but has not been clinically tested.
 5. **This is CP6a** — a first-class chokepoint in the v1.2 map. See [nlrp3-exploit-map.md § CP6a](./nlrp3-exploit-map.md). Blocking CP6a is orthogonal to CP0 (complement C5a priming), CP1 (NF-κB priming), CP2 (NLRP3 assembly), CP5a (IL-1β receptor blockade), and CP6b (GSDMD pore formation).
-6. **Mechanistic parallel to quercetin.** Quercetin's most potent curated ChEMBL bioactivity is 5-LOX IC50 = 300 nM (*J Med Chem* 1991; ChEMBL v34). Zileuton is the pharma-grade version of the same mechanism the stack already tries to reach via quercetin — higher potency, verified oral bioavailability, and dose precedent in humans at 1,200 mg BID for years of continuous dosing.
+6. **Mechanistic parallel to quercetin.** Quercetin's most potent curated ChEMBL bioactivity is 5-LOX IC50 = 300 nM (*J Med Chem* 1991; ChEMBL v34). Zileuton reaches the same enzyme through an approved small-molecule route with established asthma pharmacology.
 
 **Evidence level summary:**
 - 5-LOX → LTB4 → neutrophil chemotaxis in gout: In Vitro + ex vivo human (Rae & Smith 1981; Ford-Hutchinson 1990).
@@ -68,70 +62,46 @@ This section frames the case as a testable hypothesis, not an efficacy claim. No
 
 ---
 
-## What would we want to see (expected outcomes)
+## Falsification tests
 
-Framed as hypothesis-testing, n-of-1 style, on top of a stable allopurinol baseline. Pre-register endpoints before starting.
-
-- **Reduced flare frequency** on allopurinol + zileuton versus allopurinol alone. Primary endpoint: flares/year. This is the cleanest test of whether the neutrophil-amplification loop is rate-limiting in a given patient's gout.
-- **Shorter flare duration** when flares do occur. Neutrophil influx is a major determinant of how long a flare persists; cutting the chemotactic signal should compress the tail.
-- **Lower peak pain scores** during flares — less neutrophil recruitment should mean less tissue damage and less inflammatory mass.
-- **Urinary LTB4 / LTE4 should drop substantially** on zileuton. This is the on-target pharmacodynamic readout, well-established in asthma dose-ranging studies, and it functions as a check that the drug is reaching tissue and engaging 5-LOX. If LTE4 does not drop, the patient is either a non-absorber or non-compliant — investigate before interpreting efficacy.
-- **No change in serum uric acid.** Zileuton does not touch CP0 (complement), CP2 (NLRP3 assembly), or upstream purine metabolism. It is **not** a urate-lowering therapy. Keeping allopurinol in the regimen is essential if UA is above target.
-- **Secondary: hs-CRP** may decline if sustained 5-LOX block meaningfully reduces chronic low-grade inflammation between flares. Not a primary endpoint — the 5-LOX → hs-CRP link is indirect.
+- **Target engagement:** urinary LTB4 / LTE4 should fall with exposure, as in asthma dose-ranging studies. Without that change, a gout efficacy result cannot test the CP6a hypothesis cleanly.
+- **Disease effect:** with urate lowering held stable, compare flare frequency, duration, pain, and neutrophil influx between zileuton and control.
+- **Mechanistic specificity:** serum urate should not change if the effect is confined to 5-LOX amplification rather than urate production or transport.
 
 **Null outcome to rule out:** urinary LTE4 drops cleanly on drug (target is engaged) but flare frequency is unchanged. That would imply CP6a is not rate-limiting in this specific patient — complement-C5a priming (CP0) or NLRP3 assembly (CP2) may be the dominant bottleneck instead. A clean null result at CP6a is informative: it points the stack toward CP0/CP2 rather than amplification blockade.
 
 ---
 
-## Side effects — honest compare vs. alternatives
+## Exposure and safety constraints
 
 All of the below are currently used or plausibly used in gout management. Nothing here is an endorsement of any specific regimen.
 
-- **Zileuton:** Hepatotoxicity is the main concern — no boxed warning but significant Warnings and Precautions signal. Watkins et al. 2007 (Drug Safety 30(9):805-815, PMID 17722971; n=2,458 prospective open-label safety surveillance) gives the best numbers: ALT ≥3x ULN in 4.4% (vs. 1.0% control), ALT ≥8x ULN in 1.3%. The "ALT ≥15x ULN 0.4%" and "84% asymptomatic" figures cited in earlier drafts are not in the abstract — likely in the body of the paper but not yet verified against the primary source; treat as approximations until full-text confirmed. 64.2% of all elevations occurred within the first 3 months — meaning essentially none are documented within the first 1–2 weeks of use. For a 5–7 day short course, the hepatotoxicity risk is substantially lower than chronic use given this latency profile. Zero cases of acute liver failure across major prospective studies and the DILIN registry. Male risk for severe elevation (≥8x ULN) is 0.5% vs. 1.8% in women. Reversible on discontinuation (mean 4 weeks to resolution). **Requires baseline + monthly LFTs for first 3 months, then quarterly.** Contraindicated in active liver disease or baseline ALT ≥3x ULN. CYP1A2 drug interactions — notably theophylline (double theophylline AUC — halve dose) and warfarin (modest R-warfarin AUC +22%, manage with INR monitoring). **No clinically significant interaction with colchicine, NSAIDs (naproxen formally studied, negative), or prednisone/corticosteroids (formally studied, negative)** — relevant for the gout combination context.
+- **Zileuton:** Hepatotoxicity is the main concern. Watkins et al. 2007 (PMID 17722971; n=2,458 prospective open-label safety surveillance) reported ALT ≥3× ULN in 4.4% versus 1.0% in controls and ALT ≥8× ULN in 1.3%. Most elevations occurred within the first three months. The [FDA label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2018/022052s014lbl.pdf) requires hepatic-enzyme assessment before treatment, monthly for the first three months, every 2–3 months for the rest of the first year, and periodically thereafter; it contraindicates use in active liver disease or persistent enzymes ≥3× ULN. CYP1A2 interactions include theophylline and warfarin. Naproxen and prednisone interaction studies were negative; no zileuton–colchicine interaction is documented.
 - **Colchicine:** Diarrhea is dose-limiting; GI upset common. Rare myopathy. Well-established for acute flares and prophylaxis. Cheap. Narrow therapeutic index; cumulative toxicity at high doses. CYP3A4 / P-glycoprotein interactions (statins, macrolides) — several reported deaths from co-administration with clarithromycin in renal insufficiency.
 - **Allopurinol:** Hypersensitivity is rare but severe (SJS/TEN, notably in HLA-B*58:01 carriers — test before starting in Asian ancestry patients). Rash. Hepatotoxicity exists but is less common than zileuton's. Renal dose adjustment needed. Gold standard for UA lowering; does **not** address inflammation.
 - **Canakinumab (Ilaris):** Injection-site reactions. Infection risk — bacterial pneumonia ~5% of exposed patients in some cohorts. ~$300K/year US list price. Directly neutralizes IL-1β (CP5a). Used off-label for gout until FDA-approved August 2023. Reserved for refractory or contraindicated-to-colchicine cases.
 - **NSAIDs (indomethacin, naproxen):** GI ulcers and bleeding. Renal toxicity. Cardiovascular risk (all non-aspirin NSAIDs carry some signal; indomethacin worse than naproxen). First-line for acute flares in patients without contraindications; not appropriate for chronic prevention.
 - **Disulfiram (CP6b):** Ethanol intolerance — the disulfiram-ethanol reaction is a major practical issue for any patient who drinks. Hepatotoxicity exists but is less common than zileuton's. ~$30/month. Mechanism (GSDMD pore block) is **orthogonal to zileuton's** (5-LOX block), and the two could in principle be combined for dual CP6 coverage. See [disulfiram.md](./disulfiram.md).
 
-**Takeaway on comparative safety:** zileuton is not the safest option in this list, but it is the only option that hits CP6a directly at pharma-grade potency. Its hepatotoxicity signal is real and needs active monitoring — it's also the reason it has remained niche even in asthma practice since montelukast took over the leukotriene-modifier market. The monitoring is known and cheap (monthly LFT × 3 months); the risk is manageable but not zero.
+Comparisons with standard gout therapies do not establish a preferred regimen. Zileuton's distinguishing feature is direct CP6a target engagement; its distinguishing constraint is the liver-safety burden.
 
 ---
 
-## Where it fits in the stack
-
-Zileuton is a **pharma-grade adjunct** to the CP6a chokepoint, not a replacement for any other chokepoint. The working mental model:
-
-- **Upstream priming (CP0, CP1):** allopurinol (XO block, upstream UA), plus optional adjuncts — EGCG, quercetin, sulforaphane for NF-κB / Nrf2. See [supplements-stack.md](./supplements-stack.md).
-- **Assembly (CP2):** BHB, oridonin, dapansutrile (if accessible).
-- **Signal 1 scavenging (CP3, CP4):** colchicine (approved, CP3 ASC-speck / microtubule).
-- **Downstream (CP5a receptor, CP5b resolution):** anakinra / canakinumab / rilonacept (receptor), EPA → RvE1 / MaR1 for active resolution, lactoferrin as fermentable adjunct.
-- **Amplification + Exit (CP6):** **Zileuton (CP6a)** + **disulfiram (CP6b)** together give dual-branch coverage of the neutrophil-amplification-and-pyroptotic-exit chokepoint. Quercetin and AKBA are the supplement-tier options at CP6a.
-
-**Ideal combination** if the goal is maximum chokepoint coverage with the minimum number of moving parts:
-
-> allopurinol (UA lowering) + engineered koji (gut-lumen urate degradation + multi-chokepoint NLRP3 modulation) + zileuton (CP6a LTB4 block) ± disulfiram (CP6b GSDMD block, if ethanol-free lifestyle is acceptable)
-
-The koji intervention is still in Phase 0 — research and design. Zileuton is available today by prescription.
-
----
-
-## Availability + access
+## Source, formulation, and access
 
 - **Generic, prescription required.** No OTC path. US only — some countries never approved zileuton.
-- **Who writes the script:** pulmonology writes it routinely for asthma. Rheumatology and primary care are unlikely to think of it for gout — the CP6a mechanism rationale has to be explicitly pitched. A forward-thinking internist is more likely to engage than a gout-specialist rheumatologist; gout rheumatology is heavily anchored on urate-lowering + colchicine + IL-1 biologics, and 5-LOX is not part of the standard framework.
-- **Monitoring logistics:** baseline ALT/AST, then monthly × 3 months, then quarterly. Cheap lab — same panel most patients get anyway. Requires discipline, not expertise.
-- **Cost:** Generic zileuton ER 600mg available via GoodRx ~$283–320 per 120 tablets (2025–2026). For a 5–7 day course (40–56 tablets): ~$95–160. Retail without GoodRx: ~$2,900–$3,500/120 tablets — use GoodRx. Note: the $50/month estimate in earlier drafts of this page appears to reflect a specific pharmacy/plan combination; GoodRx price is more representative. Insurance coverage variable (off-label for gout).
+- **Approved formulations:** immediate-release and controlled-release oral products have established asthma pharmacokinetics.
+- **Compounded formulation:** A lower-dose extended-release formulation is an untested delivery hypothesis. Bulk API availability, release kinetics, target engagement, and liver safety all require verification.
 
 ---
 
 ## Open questions
 
-1. **Has zileuton ever been tested in gout clinically?** ClinicalTrials.gov search 2026-05-05: **zero gout trials.** PubMed search (2026-05-05): no gout-specific efficacy publications. The two PubMed hits for "zileuton + gout/uric acid" are incidental (PMID 34723750 — ESRD metabolomics paper mentioning zileuton-O-glucuronide as a biomarker; PMID 29727733 — Sri Lankan medicinal plant 5-LOX assay using zileuton as a positive control). Refreshed via the 2026-05-05 Paperclip-equivalent audit. This is a complete pipeline gap, not a "buried negative result" problem.
-2. **Does it abort acute flares or only reduce frequency?** 5-LOX block is continuous — the drug has a short half-life (~2.5 hours for immediate-release, longer for CR) but its effect on leukotriene synthesis is ongoing while circulating. Unlike colchicine, zileuton probably cannot "rescue" an in-progress flare the way microtubule disruption can; the amplification loop has already delivered most of its neutrophils by the time pain peaks. Best use case is chronic prophylaxis, not acute rescue.
+1. **Has zileuton ever been tested in gout clinically?** ClinicalTrials.gov and PubMed searches found no gout-specific efficacy study. The available hits are incidental rather than clinical tests.
+2. **Does timing change the effect?** The amplification loop may be more tractable before peak neutrophil recruitment than after it. Acute and prophylactic study designs should therefore be tested separately rather than assuming one indication.
 3. **Are there published case reports of asthma patients with incidental gout who responded to zileuton?** This is a natural population to survey — any pulmonology clinic with a zileuton-prescribing practice has a few dozen patients who also have gout. Retrospective chart review of flare frequency before/after zileuton start is cheap and could generate signal. **No such study has been published as of 2026-05-05** (re-confirmed via PubMed full-text + bioRxiv audit; the existence-search question is closed in the negative — the gap is real, not a "buried negative result" problem).
 4. **Does 5-LOX block synergize with NLRP3 block, or show a ceiling effect?** CP2 (NLRP3 assembly) and CP6a (LTB4 amplification) are mechanistically different. The prediction is additive, but a plateau is plausible if one branch is already rate-limiting. A quercetin + BHB combination in a MSU-mouse model would be the cheapest first test of the synergy question.
-5. **Is urinary LTE4 a reliable biomarker to titrate zileuton dose in gout?** In asthma, urinary LTE4 is the standard PD readout for leukotriene-modifier drugs. Its use in gout patients has not been validated — baseline LTE4 and response curves may differ. Worth including as a secondary endpoint in any n-of-1 protocol.
+5. **Is urinary LTE4 a reliable gout pharmacodynamic marker?** It is used in asthma but has not been validated in gout; baseline and response curves may differ.
 
 ---
 
@@ -139,7 +109,7 @@ The koji intervention is still in Phase 0 — research and design. Zileuton is a
 
 - [NLRP3 Exploit Map](./nlrp3-exploit-map.md) — CP6a is defined here, v1.2.
 - [Gout Clinical Pipeline](./gout-clinical-pipeline.md) — zileuton is flagged as a latent CP6a repurposing candidate.
-- [ChEMBL Cross-Check](./etc/chembl-cross-check.md) — quercetin 5-LOX = 300 nM, the finding that first surfaced CP6a as a first-class branch.
+- [ChEMBL Cross-Check](./etc/chembl-cross-check.md) — quercetin 5-LOX comparative activity.
 - [Supplements Stack](./supplements-stack.md) — quercetin, AKBA, EPA are the OTC CP6a entries.
 - [Disulfiram](./disulfiram.md) — companion pharma drug at CP6b (GSDMD).
 - [Cross-Validation](./cross-validation.md) — methodology for integrating in vitro and clinical evidence.
@@ -147,4 +117,4 @@ The koji intervention is still in Phase 0 — research and design. Zileuton is a
 
 ---
 
-*Last updated: May 2026. This is a research hypothesis dossier, not medical advice. Zileuton has not been tested in gout; the CP6a mechanism case is real but unvalidated clinically.*
+*Research hypothesis, not medical advice. Zileuton has not been tested in gout.*

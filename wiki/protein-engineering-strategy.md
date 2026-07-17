@@ -880,9 +880,9 @@ OPT-1 variant achieves ≥8–10 fold improvement in GI survival relative to wil
 
 16. **Systematic Engineering for Efficient Uric Acid-Degrading Activity in Probiotic Yeast *Saccharomyces boulardii*.** (2025). *ACS Synthetic Biology*, 14(6), 2030–2043. [365 μmol/h/OD uricase activity in yeast; transporter engineering].
 
-### Project-Specific References
+### Related track references
 
-17. **Open Enzyme Project.** (2026). Engineered S. cerevisiae Uricase Proposal. [Brian Abent, proposal framework and validation path]. /sessions/sleepy-upbeat-einstein/mnt/Open Enzyme/docs/engineered-yeast-uricase-proposal.md
+17. **Open Enzyme.** (2026). Engineered *S. cerevisiae* Uricase Proposal.
 
 18. **Open Enzyme Project.** (2026). Uricase Variant Selection for Oral Therapeutic Delivery. [Comparison of A. flavus, C. utilis, A. globiformis, K. marxianus candidates]. /sessions/sleepy-upbeat-einstein/mnt/Open Enzyme/ai-analysis/01-uricase-variant-selection.md
 
@@ -909,7 +909,7 @@ OPT-1 variant achieves ≥8–10 fold improvement in GI survival relative to wil
 
 **Status:** Draft analysis for peer review and experimental design  
 **Author:** AI-assisted protein engineering analysis (Claude, April 2026)  
-**Prepared for:** Open Enzyme Project, Brian Abent  
+**Prepared for:** Open Enzyme research library
 **Next Step:** Structural inspection (PDB 1R4S/1WS3), FoldX screening, gene synthesis, Phase 0 bench validation
 
 ---
@@ -1057,4 +1057,3 @@ Lookup table for every proposed variant, individual mutation, and rejected appro
 2. Pierzynowska, K., et al. (2020). Oral Treatment With an Engineered Uricase (ALLN-346). *Frontiers in Medicine*, 7, 569215. — 20-fold protease improvement (*C. utilis* uricase, directed evolution via Codexis ProteinGPS); the URKO-mouse preclinical proof-of-concept that motivated the Phase 1/2a program.
 3. Park et al. (2016). Accurate Protein Stability Predictions from Homology Models. *Protein Science*, 25(10). — Rosetta ddg_monomer + cartesian_ddg protocols.
 4. Ahmad, S., et al. (2012). Probing protein stability and proteolytic resistance by loop scanning. *Protein Science*, 21(3), 433–446. — proline concept; up to 1000-fold cleavage reduction.
-

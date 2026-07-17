@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PATHS = [ROOT / "README.md", ROOT / "index.md", ROOT / "CLAUDE.md", ROOT / "wiki"]
 ALLOWLIST = ROOT / "scripts" / "corpus-duplicate-allowlist.json"
 MIN_PARAGRAPH_CHARS = 500
+INDEX_ENTRY_MAX_CHARS = 420
 MISSION_SURFACES = {
     "README.md", "index.md", "CLAUDE.md", "wiki/index.md",
     "wiki/etc/open-enzyme-vision.md", "wiki/cross-validation.md",
@@ -35,6 +36,34 @@ RETIRED_REF = re.compile(
 )
 REVISION_HEADING = re.compile(r"^#{1,6}\s+(?:document\s+|revision\s+|update\s+)?(?:change\s*log|changelog|revision history)\s*$", re.I | re.M)
 ADVERSARIAL_HEADING = re.compile(r"^#{1,6}\s+.*(?:myth|strawman|objection|as easy as).*$", re.I | re.M)
+READER_SURFACE = re.compile(r"^(?:README\.md|index\.md|wiki/[^/]+\.md|wiki/hypotheses/[^/]+\.md)$")
+READER_RESIDUE_PATTERNS = {
+    "wiki-discovery narration": re.compile(
+        r"(?:was|were) not visible in (?:the )?wiki until|"
+        r"this (?:dossier|page) is the canonical|"
+        r"why this page exists|"
+        r"\bcanonical (?:page|home|protocol|dossier)\b|"
+        r"\b(?:the|this) wiki (?:currently|previously|originally|used|referenced|explains|attributes|cites|missed|found)\b",
+        re.I,
+    ),
+    "invented sourdough premise": re.compile(r"\bsourdough\b", re.I),
+    "editorial timestamp": re.compile(
+        r"(?:\(|\*\*)\s*(?:sub-bullet\s+)?(?:added|promoted|reframed)\s+20\d{2}-\d{2}-\d{2}",
+        re.I,
+    ),
+    "default chassis disqualification": re.compile(
+        r"not producible in engineered (?:yeast|koji)|"
+        r"not producible in engineered yeast or koji|"
+        r"outside Open Enzyme['’]s core platform thesis|"
+        r"not an Open Enzyme production target",
+        re.I,
+    ),
+    "personalized stack protocol": re.compile(
+        r"practical (?:safety )?protocol for the Open Enzyme stack|"
+        r"for Brian as of 20\d{2}",
+        re.I,
+    ),
+}
 
 
 def rel(path: Path) -> str:
@@ -99,6 +128,18 @@ def check_content(files: list[Path]) -> tuple[list[str], list[str]]:
                 if not re.search(r"(?:claim source|project claim)\s*:|\[[^]]+\]\([^)]+\)", following, re.I):
                     line = text[:match.start()].count("\n") + 1
                     errors.append(f"{name}:{line}: adversarial section lacks a real-claim source anchor")
+        if READER_SURFACE.match(name):
+            for label, pattern in READER_RESIDUE_PATTERNS.items():
+                for match in pattern.finditer(text):
+                    line = text[:match.start()].count("\n") + 1
+                    errors.append(f"{name}:{line}: {label}: {match.group(0)!r}")
+        if name == "index.md":
+            for line_number, line_text in enumerate(text.splitlines(), start=1):
+                if re.match(r"^-\s+(?:\*\*)?\[", line_text) and len(line_text) > INDEX_ENTRY_MAX_CHARS:
+                    errors.append(
+                        f"{name}:{line_number}: catalog entry is {len(line_text)} chars; "
+                        f"keep it at or below {INDEX_ENTRY_MAX_CHARS}"
+                    )
 
         if name.startswith("wiki/etc/experiments/"):
             continue

@@ -10,7 +10,7 @@ sources: ["Applied Microbiology and Biotechnology", "ACS Synthetic Biology", "Fr
 
 ## Executive Summary
 
-This document designs a gene construct for expressing *Aspergillus flavus* uricase in *Aspergillus oryzae* koji as an orally available, fermented therapeutic food product for gout. A. oryzae is GRAS by centuries of traditional use (miso, sake, soy sauce) and naturally secretes high levels of digestive enzymes—a superior platform to S. cerevisiae for food-scale fermentation on rice/grain.
+This document designs a candidate gene construct for expressing *Aspergillus flavus* uricase in *Aspergillus oryzae* koji for oral food-format testing. *A. oryzae* has a long history of food use and naturally secretes digestive enzymes; those properties justify testing it against *S. cerevisiae* for this specific configuration.
 
 **Primary construct recommendation:**
 - **Promoter**: amyB (α-amylase, starch-inducible, strongest known expression in A. oryzae)
@@ -22,7 +22,7 @@ This document designs a gene construct for expressing *Aspergillus flavus* urica
 
 ---
 
-## Platform Comparison: A. oryzae vs. S. cerevisiae
+## Chassis Comparison: *A. oryzae* vs. *S. cerevisiae*
 
 ### Why A. oryzae for the Koji Track?
 
@@ -35,7 +35,7 @@ This document designs a gene construct for expressing *Aspergillus flavus* urica
 | **pH optimum for growth** | 5–6 (acidic, GI-compatible) | 4.5–6.5 |
 | **Food fermentation precedent** | Millennia (koji, miso, sake); regulatory pathway clear | Industrial, not traditional; less consumer acceptance |
 | **Home fermentation feasibility** | Rice koji at 30–32°C, 48–60h; accessible to consumers | Requires precise pH, temperature, sterilization |
-| **GI stability platform** | Fermented food context; natural micronutrient matrix | Purified biopharmaceutical; cold chain required |
+| **GI-delivery context** | Fermented-food matrix | Yeast-derived or purified-product formats require separate formulation decisions |
 
 **Conclusion**: A. oryzae delivers **2–5× higher secreted protein yield** than S. cerevisiae and fits the "fermented food" delivery paradigm. A. flavus uricase in A. oryzae koji is a natural choice.
 
@@ -337,7 +337,7 @@ If initial yields are lower than 40 mg/g:
 - Deletes one or more endogenous amylase genes (amyB, glaA, or both) and replaces with uricase cassettes.
 - Rationale: Maximizes uricase expression as the dominant secreted enzyme.
 - Risk: Loss of native amylase may impair koji character (flavor, texture); koji may be less suitable as a fermented food without amyB/glaA activity.
-- Verdict: **Not recommended for the initial platform; save for Phase 2 if uricase yield targets are not met.**
+- Verdict: **Not recommended for the initial construct; retain as a later option if uricase yield targets are not met.**
 
 ---
 
@@ -431,17 +431,17 @@ Met  Phe  Pro  Gly  Arg  Arg  Lys  Ile  Asn  Ser  Lys  Lys  Leu  Tyr  Arg  Ala  
 
 ---
 
-## Comparison: A. oryzae Koji vs. S. cerevisiae Yeast Platform
+## Comparison: *A. oryzae* Koji vs. *S. cerevisiae* Yeast
 
 ### Yield Comparison
 
-| Platform | Expression Level | Context | Stability | Yield (mg uricase/g substrate) |
+| Chassis | Expression Level | Context | Stability | Yield (mg uricase/g substrate) |
 |----------|------------------|---------|-----------|-----|
 | **A. oryzae koji** | 5–10 g/L secreted protein | Solid-state fermentation on rice | Room-temperature dried; shelf-stable | **40–80** |
 | **S. cerevisiae engineered** | 0.5–2 g/L (intrinsic yeast limit) | Liquid culture (pH 4.5–6.5) | Cold chain required (4°C); frozen preferred | **10–30** |
 | **Pichia pink (optimized)** | 2.5 g/L (fed-batch, industrial) | Liquid culture (SMF) | Cold chain required; purification-grade | **500–2000** (per L culture) |
 
-**Key finding**: A. oryzae koji **rivals engineered yeast** on a per-gram-substrate basis (40–80 mg vs. 10–30 mg for S. cerevisiae) while providing a **food fermentation context** rather than a biopharmaceutical platform.
+**Current prediction:** *A. oryzae* koji could rival engineered yeast on a per-gram-substrate basis (40–80 mg vs. 10–30 mg for *S. cerevisiae*) while providing a food-fermentation context. These are design estimates, not measured head-to-head yields.
 
 ### Regulatory & Consumer Acceptance
 
@@ -589,5 +589,3 @@ Met  Phe  Pro  Gly  Arg  Arg  Lys  Ile  Asn  Ser  Lys  Lys  Leu  Tyr  Arg  Ala  
 **Document Status**: Complete draft. Ready for implementation phase.
 
 **Last Updated**: 2026-04-21
-
-**Author**: AI Research (Claude, Open Enzyme Project)

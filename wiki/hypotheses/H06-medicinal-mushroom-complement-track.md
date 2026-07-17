@@ -26,13 +26,12 @@ related:
   - ./README.md
 sources:
   - "comp-014 Phase 6 triage (2026-05-06) — GLPP, cordycepin, ergothioneine routed to cultivation track"
-  - "Brian framing 2026-05-06: 'is there another fungus that could be easily grown at home that would be either a better solution than koji or a complementary solution with koji?'"
   - "Phase 7 scope page `medicinal-mushroom-complement-track.md`"
 ---
 
 # H06 — Medicinal-Mushroom-Complement Track Viability (Stub)
 
-> **Stub status.** Committed 2026-05-06 alongside the Phase 7 scope page launch to register the hypothesis in the falsification-card directory and force the "what would kill this track" framing onto the just-opened parallel track. Full population (assumption stack, killshot menu, pre-committed thresholds, kill switches, failure-mode coverage map) queued as Phase 2 — see [`medicinal-mushroom-complement-track.md`](../medicinal-mushroom-complement-track.md) §"Six Phase 7 follow-ups queued" #5.
+> **Evidence status:** stub. Assumptions, pre-committed thresholds, kill switches, and failure-mode coverage remain incomplete; see [`medicinal-mushroom-complement-track.md`](../medicinal-mushroom-complement-track.md).
 >
 > Pre-registration discipline (per H01) does not apply until this stub is upgraded to a full card.
 
@@ -100,7 +99,7 @@ To be populated when H06 is upgraded from stub to full card. Will follow the H01
 
 To be populated when full-card. Conceptually similar to other peer-track stubs.
 
-**Refined kill criterion (added 2026-05-19):** if rigorous head-to-head testing (per [SOP-2 HPLC + SOP-6 protocols](../medicinal-mushroom-extract-sops.md)) reveals that the *Phellinus igniarius* / *Sanghuangporus vaninii* NLRP3-axis mechanism cannot be reproduced in standardized extract preparations within 2× of published animal-model effect sizes, **AND** if lentinan-style "explicitly tested negative at MSU" findings emerge for ≥2 other 2026-05-19 traditional-name re-scan-positive species, the cultivation track is downgraded from peer-track to "general adaptogen supplementation, no specific anti-gout claim." Failure-pattern is *reproducibility*, not mechanism truth — the underlying NLRP3 biology may still be intact, but the cultivation→extract→characterization pipeline fails to translate it consistently. Empirical anchor: [`logs/mushroom-traditional-name-nlrp3-rescan-2026-05-19.md`](../../logs/mushroom-traditional-name-nlrp3-rescan-2026-05-19.md).
+**Kill criterion:** if standardized head-to-head testing cannot reproduce the *Phellinus igniarius* / *Sanghuangporus vaninii* NLRP3-axis effects within 2× of published animal-model effect sizes, and ≥2 other rescan-positive species test negative in MSU-relevant assays, downgrade the cultivation track to general supplementation without a specific anti-gout claim. This kills translation reproducibility, not necessarily the underlying mechanism.
 
 ---
 

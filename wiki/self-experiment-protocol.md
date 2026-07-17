@@ -1,356 +1,171 @@
 ---
-title: "Self-Experiment Protocol"
+title: "N-of-1 Research Design and Safety Monitoring"
 date: 2026-04-25
-tags: ["self-experiment", "n-of-1", "safety", "monitoring", "open-enzyme", "protocol"]
+tags: ["n-of-1", "study-design", "safety", "monitoring", "falsification"]
 related:
-  - etc/open-enzyme-vision.md
   - cross-validation.md
   - validation-experiments.md
+  - genotype-informed-supplement-workflow.md
 sources:
   - "n-of-1 trial methodology (e.g., Kravitz & Duan, Ann Intern Med 2014)"
 ---
 
-# Self-Experiment Protocol
+# N-of-1 Research Design and Safety Monitoring
 
-A generic monitoring framework for n=1 self-experiments — applicable to any intervention an Open Enzyme user chooses to track on themselves: oral compounds, peptides, prescription dose changes, engineered organisms, injectable agents, dietary changes, sleep / training interventions, anything.
+This page defines a generic framework for prospectively measuring a single-subject intervention. It is a method for generating feasibility signals and identifying confounders; it does not establish efficacy, prescribe treatment, or justify exposing a person to an unvalidated compound, engineered organism, off-label drug, or combination.
 
-The protocol's job is to make sure (a) risks are surfaced before exposure, (b) data is collected prospectively rather than reconstructed afterward, (c) halt conditions are pre-defined, and (d) results are structured well enough to be useful to anyone — including a clinician you eventually share them with.
+The framework's evidence level is **Mechanistic Extrapolation** from standard clinical-monitoring and n-of-1 methods. Clinical decisions, prescription changes, acute-flare care, and abnormal results require qualified medical oversight.
 
-This page is the framework. Specific experiments (gout, EPI, autoimmune, sleep, performance) substitute their own metrics, timelines, and red-flag criteria into the structure below.
+## 1. Appropriate scope
 
-**Evidence level for this page.** The framework is Mechanistic Extrapolation — it applies standard clinical-monitoring principles to the n=1 setting. It does not establish efficacy of any intervention.
+An n-of-1 design is useful when:
 
----
+- the intervention and exposure are already sufficiently characterized for the proposed context;
+- the primary outcome can change within a practical observation window;
+- baseline care can remain stable;
+- safety monitoring and halt criteria are defined before exposure; and
+- a single-subject result is explicitly treated as non-generalizable.
 
-## 1. Scope
+It is not an authorization path for experimental biologics, engineered strains, unapproved delivery systems, or medication changes. Those require their own preclinical, regulatory, and clinical gates.
 
-This protocol covers **any single-variable intervention** the experimenter chooses to track:
+## 2. Prespecify the experiment
 
-- Oral supplements / nutraceuticals
-- Peptides (oral, intranasal, sublingual, injected, transdermal)
-- Prescription medications and dose changes (with prescriber's knowledge)
-- Engineered organisms
-- Diet / lifestyle changes if framed as an experiment
+Define these fields before collecting outcome data:
 
-It is intended for personal self-experimentation. It is **not** a clinical trial protocol and does not establish efficacy against a control. It is a framework for collecting your own data well.
-
----
-
-## 2. Designing the experiment
-
-Before starting any new intervention, define and write down:
-
-| Element | Question to answer |
+| Element | Required question |
 |---|---|
-| **Hypothesis** | What change is expected? Why? Mechanism of action? |
-| **Intervention** | Specific dose / form / timing / route |
-| **Metrics** | Which markers / symptoms / outcomes change if the hypothesis is right? |
-| **Cadence** | How often to retest, based on the intervention's pharmacokinetics and the marker's biology |
-| **Timeline** | Total experiment window — from start to primary endpoint |
-| **Halt criteria** | What outcomes mean stop |
-| **Single-variable rule** | What other things you commit to *not* change during the window |
+| **Hypothesis** | What mechanism predicts the outcome, and what result would falsify it? |
+| **Intervention** | What source, form, route, exposure, and timing are being studied? |
+| **Comparator** | Baseline, withdrawal, crossover, matched control, or another appropriate condition? |
+| **Primary outcome** | Which single measure decides the result? |
+| **Secondary outcomes** | Which measures explain mechanism, adherence, or safety without changing the primary decision? |
+| **Cadence** | When should exposure, target engagement, outcome, and safety be measured? |
+| **Confounders** | Which diet, medication, sleep, training, infection, or behavior changes must remain stable or be logged? |
+| **Halt criteria** | What result stops exposure and triggers clinical review? |
+| **Decision rule** | What result means pass, revise, null, or stop? |
 
-Write these down before starting. A retrospective hypothesis is hindsight, not data. Single-variable change is what makes the result interpretable.
+A retrospective hypothesis is not prospective evidence. If multiple variables change together, interpret the result as a confounded observation rather than attributing it to one arm.
 
----
+## 3. Match cadence to mechanism
 
-## 3. Cadence — pick by mechanism
-
-Different interventions need different retest cadences. Picking the wrong window produces noise, not signal — premature retests miss the effect; late retests miss safety problems.
-
-| Mechanism class | Typical retest window |
+| Mechanism class | Typical observation window |
 |---|---|
-| Drug at steady-state (most prescriptions, T-modulators, hormones) | 4–6 weeks after dose change (to reach new equilibrium) |
-| Vitamin / mineral correction with stored forms (D3, iron, B12) | 8–12 weeks |
-| Antibody-mediated effect (autoimmune-targeting interventions) | 3–6 months |
-| Microbiota-mediated (probiotics, dietary fibre interventions) | 6–8 weeks (community shifts stabilize) |
-| Acute / pharmacodynamic (caffeine, single-dose peptides) | hours to days |
-| Tissue-level adaptation (training, structured exercise) | weeks to months depending on outcome |
-| Cancer-prevention / risk-modifying (long-latency outcomes) | annual or longer; surrogate markers monthly |
+| Drug at steady state | 4–6 weeks after a change |
+| Stored vitamin or mineral correction | 8–12 weeks |
+| Antibody-mediated effect | 3–6 months |
+| Microbiota-mediated intervention | 6–8 weeks |
+| Acute pharmacodynamic effect | Hours to days |
+| Tissue-level adaptation | Weeks to months |
+| Long-latency risk modification | Annual or longer; surrogate markers may be more frequent |
 
-Match the half-life of the intervention and the kinetics of the affected marker. Don't average them — pick whichever is longer.
+Use the longer of the intervention's equilibration time and the outcome's response time. Add earlier safety measurements when the risk profile requires them.
 
----
+## 4. Measurement hierarchy
 
-## 4. Metrics — pick by what the intervention affects
+Every experiment should distinguish four layers:
 
-Standard elements common to most experiments:
+1. **Input identity and potency** — what was actually delivered?
+2. **Exposure** — did the relevant compartment receive it?
+3. **Target engagement** — did the proposed mechanism change?
+4. **Outcome** — did the prespecified clinical or biological measure change?
 
-- **Primary efficacy marker** — the thing the hypothesis says should change
-- **Safety markers** — organ-function and systemic markers relevant to the intervention's known risk profile
-- **Symptom diary** — daily entries with domain-relevant fields, designed to take <60 seconds/day to enter
-- **Compliance / adherence log** — did you take the intervention as planned, and when?
+A negative outcome with unverified input or exposure does not falsify the mechanism. A biomarker change without a matched outcome does not establish benefit.
 
-Common safety baseline for blood-panel-based experiments:
-- **CBC with differential** — catches infection, anemia, WBC shifts (especially relevant for any immunomodulator)
-- **CMP** — liver enzymes, kidney function, electrolytes (catches the most common organ-toxicity signals)
-- **hs-CRP** — systemic inflammation; useful even when not the primary endpoint
+Common safety measurements include CBC with differential, CMP, and hs-CRP where relevant. Additional tests should follow the intervention's known risk surface rather than a universal stack panel.
 
-Beyond that, the panel is intervention-specific:
-- T-axis intervention → Total T, Free T, Estradiol, **SHBG**, Hematocrit, lipids
-- Thyroid intervention → TSH, Free T4, Free T3, antibodies if autoimmune
-- Microbiota intervention → stool sequencing (16S minimum) baseline + endpoint
-- Glucose/metabolic intervention → fasting glucose, fasting insulin, A1C, lipids
-- Specialty markers (complement, leukotrienes, etc.) → as the mechanism dictates
+## 5. Gout and NLRP3 measurement map
 
-For symptom-only experiments without labs, structured daily tracking + a clear primary outcome is enough.
+These markers can help localize a signal, but none independently selects a compound or treatment.
 
-### Chokepoint-biomarker map
+| Marker | Research axis | Interpretation limits |
+|---|---|---|
+| Serum C5a (+ desArg) | CP0 complement priming | Strict pre-analytics: cold-chain EDTA, processing within 30 minutes, and frozen storage are required because warm transit can generate C5a in vitro. Onset and resolution measurements can estimate a decline slope, but the slope remains a mechanistic hypothesis. |
+| Urinary LTE4 | CP6a leukotriene flux | A pharmacodynamic readout for 5-LOX engagement; it does not by itself establish flare benefit or identify why exposure failed. |
+| Plasma SPMs (RvD1, MaR1) | CP5b active resolution | Research-grade LC-MS/MS; low values can reflect substrate, conversion, timing, or analytical limitations. |
+| hs-CRP | Integrated systemic inflammation | Non-specific; cannot identify a chokepoint without mechanism-specific measurements. |
+| Serum urate | Urate balance | Does not distinguish production, renal handling, intestinal export, or luminal degradation without additional measurements. |
 
-For NLRP3-targeted experiments specifically (the gout / autoimmune-flare track), a four-biomarker specialty panel — serum C5a, urinary LTE4, plasma SPMs (RvD1, MaR1), hs-CRP — maps onto distinct chokepoints in the [NLRP3 exploit map v1.2](./nlrp3-exploit-map.md). The point of this map is operational, not descriptive: the panel converts a binary "inflammation present / absent" readout into "which mechanism is currently active," and the decision rules below convert that into "which compound to add next if the stack underperforms." Evidence level is **Mechanistic Extrapolation** grounded in In Vitro and Animal Model evidence from the cited pages — not Clinical Trial. Specific cutoffs vary by lab; defer numeric thresholds to the ordering physician and the lab's reference range. The contingent NET panel (rule 5 below) is the only entry on this map that costs additional money per flare — keep it contingent.
+Optional genotype stratification such as CFH Y402H or ABCG2 Q141K must be prespecified. A genotype association does not establish a carrier-specific intervention response.
 
-| Biomarker | Reads out chokepoint | What "elevated" means | What "normal/low" means | Suggested next action if at variance with stack expectation |
-|---|---|---|---|---|
-| Serum C5a (+ desArg) | **CP0** — complement priming (MSU → C1/CRP → C5 convertase → C5a) | Active complement-driven priming; the upstream non-transcriptional "Signal 1" the stack does not currently cover (see [complement-c5a-gout.md §11](./complement-c5a-gout.md)) | Complement priming is not the rate-limiter for this flare phenotype | Persistently elevated C5a + clinical flares despite stack → discuss [avacopan](./complement-c5a-gout.md) (FDA-approved C5aR1 antagonist) with prescriber. Pre-analytics matter: cold-chain EDTA, spun within 30 min, –80 °C — warm transit generates spurious C5a in vitro. **Optional flare-trajectory addition (added 2026-05-19, source: spm-resolution-pathway.md §7.3 falsifiable prediction):** measure C5a at flare onset (within 24 h) AND at flare resolution (7–14 days post-onset). Compute decline slope = (onset − resolution) / days. **Pair with event-linked blood omega-3 index** (EPA + DHA % of total RBC fatty acids; home dried-blood-spot kit or venous-draw assay) — "event-linked" means the omega-3 index is drawn close enough in time to each flare event to be informative about loading state at the time of that flare, not a stale months-old baseline. Per the SPM → aggNET → C5a-degradation loop, decline slope should be steeper in DHA-loaded subjects (omega-3 index ≥8%) than DHA-deficient subjects (omega-3 index <4%). **CFH Y402H stratification (added 2026-05-22):** if the subject is a CFH Y402H carrier (one or two copies of rs1061170 risk allele), the C5a-slope prediction acquires additional interpretive weight — Factor H regulates the alternative complement pathway that amplifies C5a on MSU crystals, and the variant weakens this regulation. The DHA → SPM → aggNET → C5a-degradation loop is mechanistically positioned to bypass CFH-dependent regulation (operating on already-released C5a rather than upstream of it), so CFH 402H carriers loaded on DHA should show steeper resolution slopes than CFH 402H carriers DHA-deficient — and steeper than CFH wild-type carriers under either DHA state, IF the bypass mechanism is real. See [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §3.1–3.2 for the genotype-stratified prediction and [`gout-genetic-variants.md`](./gout-genetic-variants.md) Category 5 for the CFH variant background. CFH genotype is a one-shot test; obtain from consumer-array raw data or single-SNP clinical PCR before the first flare event being scored. Adds ~$100–200/flare in lab cost (two extra C5a draws) + ~$50 home omega-3 DBS or venous add-on; doesn't change the intervention protocol. |
-| Urinary LTE4 | **CP6a** — 5-LOX / LTB4 neutrophil amplification (on-target PD readout for 5-LOX engagement) | Active leukotriene amplification arm; neutrophil chemotaxis loop is open (see [zileuton.md](./zileuton.md)) | 5-LOX flux is low — quercetin / AKBA / EPA substrate competition is engaging target, or this patient's gout is not CP6a-dominant | LTE4 fails to drop on quercetin/AKBA/zileuton → "non-absorber, not non-responder" — PK / bioavailability problem, not target-engagement problem; check formulation (Phytosome quercetin, Boswellin AKBA) before escalating dose. Clean LTE4 drop + unchanged flare frequency → CP6a is not rate-limiting; redirect attention to CP0 or CP2 |
-| Plasma SPMs (RvD1, MaR1) by LC-MS/MS | **CP5b** — active resolution via ALX/FPR2 (see [spm-resolution-pathway.md §12](./spm-resolution-pathway.md)) | Resolution program is engaged; omega-3 substrate is being converted to bioactive D-resolvins / maresins | Resolution-incompetent — substrate-limited (low omega-3 index) or pathway-limited (15-LOX / aspirin-acetylated COX-2 not generating intermediates) | Low SPMs + post-flare hs-CRP not returning to baseline → CP5b deficit; reframe omega-3 toward DHA emphasis per [supplements-stack.md](./supplements-stack.md) and check omega-3 index (target >8%); consider RvE1/LTE4 ratio (CP6a↔CP5b axis, [spm-resolution-pathway.md §12](./spm-resolution-pathway.md)) rather than absolute SPM number |
-| hs-CRP | **Systemic inflammation endpoint** — no specific chokepoint; the integrated downstream readout | Active systemic inflammation; non-specific to mechanism. Also an upstream stratifier for CP0 (CRP is the dominant classical-pathway initiator on MSU surfaces, [complement-c5a-gout.md §11.3](./complement-c5a-gout.md)) | Systemic inflammation suppressed regardless of which chokepoint is doing the work | hs-CRP elevated + all three mechanism-specific markers normal → look outside the NLRP3 axis (occult infection, metabolic, training load); CRP doubling from baseline is already a §6 universal halt criterion |
+## 6. Home and laboratory formats
 
-**Red-flag decision rules.** Each rule is a pattern across the four-biomarker panel that points to a specific next compound to discuss with the prescribing physician. None of these are clinical thresholds — they are interpretive heuristics for an n=1 PD readout.
-
-- **C5a elevated + LTE4 normal + hs-CRP elevated** → CP0 is the rate-limiting bottleneck; the stack's downstream (CP1/CP2/CP6a) coverage is fine but priming is unchecked → consider [avacopan](./complement-c5a-gout.md) discussion with the prescribing physician.
-- **LTE4 fails to drop despite quercetin / AKBA / zileuton at adequate dose** → "non-absorber, not non-responder" — PK / bioavailability problem, not target-engagement problem; check formulation and absorption (Phytosome quercetin, fed-state dosing) before concluding the drug doesn't work in this patient.
-- **Plasma SPMs low + hs-CRP elevated post-flare (>2 weeks)** → CP5b resolution-incompetent; reframe omega-3 toward DHA emphasis per [supplements-stack.md](./supplements-stack.md) and verify omega-3 index >8% before adding pharma at CP5a (anakinra / canakinumab / rilonacept).
-- **C5a normal + LTE4 normal + SPMs normal + hs-CRP elevated** → the inflammation signal is not coming from the NLRP3 axis this panel covers; investigate non-NLRP3 sources (occult infection, training load, metabolic) before adjusting the stack.
-- **If a flare occurs AND the standard panel returns ambiguous on the resolution axis** (specifically: plasma SPMs borderline + urinary LTE4 borderline + hs-CRP elevated, with no clear bottleneck pattern from the four rules above) → add a citH3 + cfDNA + MPO-DNA complex panel at the next post-flare draw (~$200–400 specialty lab). Reads out the free-vs-aggregated NET ratio — distinguishes a resolution-competent flare (cytokines being sequestered into aggNETs) from a resolution-stuck flare (free NETs amplifying inflammation), per the aggNET vs. free-NET framing in [nlrp3-exploit-map.md v1.2](./nlrp3-exploit-map.md) (Schauer 2014, PMID 24784231; In Vitro + Animal Model for the framing, Mechanistic Extrapolation for the resolution-competence interpretation) and the upstream SPM driver of aggNET formation in [spm-resolution-pathway.md §5](./spm-resolution-pathway.md). Don't run routinely; the existing SPM panel covers the resolution axis indirectly under most circumstances — citH3/cfDNA is the *consequence* readout where SPMs are the *signal*, and the marginal information rarely justifies the cost. (V4-Pro 2026-04-25 peer-review flagged routine NET panels as "impractical for n=1"; this contingent rule keeps the option available without burning $200–400/flare on routine cases.)
-
-**Cross-references:** [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) (canonical chokepoint definitions, v1.2; aggNET vs. free-NET framing), [complement-c5a-gout.md](./complement-c5a-gout.md) (CP0 biomarker handling and avacopan), [spm-resolution-pathway.md](./spm-resolution-pathway.md) (CP5b SPM panel methodology, RvE1/LTE4 ratio, §5 SPM-driven NET resolution), [zileuton.md](./zileuton.md) (urinary LTE4 as 5-LOX PD readout).
-
-### Home-testable formats for self-monitoring
-
-Several of the markers tracked under this protocol have validated home-test or consumer-accessible formats. Where one exists, it lowers the friction of event-linked sampling (e.g., omega-3 index at each flare onset rather than a stale months-old baseline) and avoids the appointment-scheduling overhead of every venous draw. Format choice should be driven by analytical fitness for the marker, not just convenience — capillary fingerstick chemistries underperform venous serum for some analytes — but for the markers below, the home format is well-validated against the lab gold standard.
-
-| Marker | Home/consumer format | Lab-only format | Notes |
+| Marker | Lower-friction format | Reference format | Method note |
 |---|---|---|---|
-| **Serum uric acid** | Fingerstick capillary UA meter (multiple devices on market; calibrated against reference materials per ISO 15197 for blood-glucose meters — UA meters use the same generic capillary-blood electrochemistry platform) | Venous serum UA panel (Quest / LabCorp / equivalent) | Capillary reads typically ~0.3–0.7 mg/dL lower than venous (literature variable, device-dependent). The **Δ-over-time** is the load-bearing signal — absolute capillary readings should be calibrated against one venous-paired draw to pin the offset for the specific meter. Suitable for daily / weekly home tracking; the venous draw remains canonical for clinical decision-making. |
-| **Omega-3 index** (DHA + EPA % of total RBC fatty acids) | Mail-in dried-blood-spot finger-stick kit (~$50, ~2 wk turnaround) | Venous draw → RBC fatty-acid profile (gas chromatography) | The DBS format reports the same metric (RBC EPA + DHA percentage) as the lab venous panel and is well-validated against it for the standard reporting target (≥ 8%). The home format makes **event-linked sampling** practical — finger-stick at flare onset doesn't require a phlebotomy appointment. |
-| **CFH Y402H genotype** (rs1061170) | Consumer-array raw-data lookup (23andMe, AncestryDNA, MyHeritage all report this SNP on their standard arrays) OR direct-to-consumer single-SNP PCR (~$30–60) | Clinical PCR via Quest / LabCorp ("CFH Y402H polymorphism" code) | **One-shot test** — genotype doesn't change. If consumer-array data is already on file, raw-data lookup is the lowest-friction path. The risk allele is C (rs1061170 C; the variant is also called CFH H402 vs. wild-type Y402). |
-| **Serum C5a (+ desArg)** | None — venous draw only | Quest send-out, specialty labs | No validated home format. Pre-analytics are strict (cold-chain EDTA, spun within 30 min, –80 °C); warm transit generates spurious C5a in vitro. Reserve for flare-onset and resolution-window venous draws. |
-| **Urinary LTE4** | None — clinical specialty | ARUP / specialty lab on urine specimen | Specialty send-out. Not home-testable. |
-| **Plasma SPMs (RvD1, MaR1)** | None — research-grade only | Research LC-MS/MS lipidomic panels (limited commercial availability) | Not routinely available outside research lab partnerships. |
-| **hs-CRP** | Some at-home immunoassay strips exist but accuracy in the <3 mg/L range (the clinically relevant CV-risk range) is poor | Venous serum hsCRP via Quest / LabCorp | Stick to venous for CV-risk-level interpretation; home strips can read directionally for "elevated vs not." |
+| Serum urate | Capillary UA meter | Venous serum UA | Pair the meter with a venous draw to estimate device-specific offset; emphasize within-device change. |
+| Omega-3 index | Mail-in dried-blood spot | Venous RBC fatty-acid profile | Event-linked sampling is feasible; use the same format across comparisons. |
+| Genotype | Existing array data or single-SNP assay | Clinical PCR | One-time measurement; trial-grade stratification requires an appropriate-quality assay. |
+| C5a | None | Specialty venous assay | Pre-analytical handling is load-bearing. |
+| Urinary LTE4 | Specialty urine collection | Specialty laboratory | Not a routine home test. |
+| Plasma SPMs | None | Research LC-MS/MS | Limited availability and timing sensitivity. |
+| hs-CRP | Some home immunoassays | Venous hs-CRP | Venous measurement is preferred for low-range interpretation. |
 
-**Operational implication.** When designing a protocol arm where the marker has a home-testable format, prefer it for the **between-event sampling cadence** (track the trajectory cheaply) and reserve venous draws for the **anchor measurements** (calibrate-once, clinical-decision-quality, regulatory-grade). For markers with no home format (C5a, urinary LTE4, plasma SPMs), all measurements must be venous/specialty and the sampling cadence is necessarily sparser.
+Use lower-friction formats for trajectory sampling only when analytically fit. Use reference methods for calibration anchors and decisions that require clinical-grade accuracy.
 
-**This subsection deliberately names formats, not brands.** Specific products change; format taxonomy is stable. Subjects executing this protocol in their own personal monitoring should add brand-specific pointers (which meter, which DBS vendor, which clinical-PCR code) in their private monitoring documentation, not in this generic protocol.
+## 7. Daily outcome and confounder log
 
----
+Keep entries brief enough to complete every day:
 
-## 5. Symptom diary
+- timestamp and adherence;
+- primary outcome on a fixed scale;
+- relevant symptoms using the same scale throughout;
+- medication, diet, alcohol, sleep, training, infection, and travel deviations;
+- adverse events; and
+- a free-text field for unexpected signals.
 
-Daily, low-friction entries. Pick fields relevant to what you're testing. Common scales:
+Examples include 0–10 severity scales, the Bristol Stool Scale, joint circumference, or a binary event count. Choose the measure before the experiment and do not redefine success after seeing the data.
 
-- **Likert (0–10)** for severity/intensity (pain, fatigue, energy, cognitive clarity, sleep quality)
-- **Bristol Stool Scale (1–7)** for GI consistency
-- **Likert (0–3)** for binary-with-gradient signals (bloating: none / mild / moderate / severe)
-- **Free-text "novel signal" field** for anything not covered (always include this)
-- **Timestamp + one row per day** — even a "nothing today" entry documents adherence
+## 8. Safety and halt criteria
 
-Storage: spreadsheet, plain text file, journaling app, daily log markdown — whatever you'll actually use consistently. The best diary is the one you'll fill out. Export to a structured format at endpoint for analysis.
+The following existing project thresholds are conservative research triggers, not a substitute for clinical judgment:
 
----
+1. New GI bleeding — halt and seek same-day care.
+2. ALT or AST above 2× the upper limit of normal — halt and obtain clinical review.
+3. eGFR decline above 15% from baseline or a creatinine rise — halt and evaluate.
+4. New rash, urticaria, angioedema, or anaphylaxis — halt immediately; airway symptoms require urgent care.
+5. Unexplained weight loss above 5 lb over four weeks — halt and evaluate.
+6. New unexplained fever — halt and seek care.
+7. hs-CRP doubling from baseline — halt and confirm with clinical review.
+8. Persistent diarrhea over 72 hours — halt and evaluate for infection or dysbiosis.
+9. Any new severe symptom absent at baseline — halt and evaluate.
 
-## 6. Red-flag halt criteria
+Define additional intervention-specific criteria before exposure. “Halt” applies to the investigational intervention; prescribed therapy should not be stopped without the responsible clinician unless emergency guidance requires it.
 
-These are **universal** halt criteria — apply regardless of what intervention is being tested:
+## 9. Privacy and consent
 
-1. **New GI bleeding** (blood in stool, melena, hematemesis) — halt + seek care same-day
-2. **Acute liver injury** (ALT or AST >2× upper limit of normal on a draw) — halt + re-draw at 2 weeks
-3. **Kidney function decline** (eGFR drop >15% from baseline, or creatinine rise) — halt + evaluate
-4. **New allergic / hypersensitivity signal** (rash, urticaria, angioedema, anaphylaxis) — halt immediately; seek care if airway involved
-5. **Unexplained weight loss >5 lb over 4 weeks** — halt + evaluate
-6. **New fever without identified infection** — halt + seek care
-7. **CRP doubling from baseline** on a scheduled draw — halt + re-draw at 1 week to confirm
-8. **Persistent diarrhea >72 hours** — halt + evaluate for dysbiosis or infection
-9. **Any new severe symptom not present at baseline** — halt + evaluate
+Raw laboratory results, daily logs, intervention plans, and identifiable health information do not belong in the public repository. Store them in a private repository, encrypted volume, or other controlled location with appropriate backup.
 
-In addition to universal criteria, **define experiment-specific halt criteria at design time**. Examples:
-- NLRP3-modulating interventions → unmasked infections (canakinumab side-effect class)
-- T-modulating interventions → hematocrit >50%, mood / aggression, lipid degradation
-- Anticoagulant changes → bruising, bleeding gums, blood pressure
-- Microbiota interventions → dysbiotic shift on 16S
-- Thyroid interventions → palpitations, anxiety, sleep disruption (T3 over-replacement signature)
+Data about another person requires their documented agreement. Public summaries must be de-identified and should report study design, deviations, qualitative outcome direction, and limitations without exposing raw personal health data.
 
-"Halt" means stop the investigational intervention. It does **not** mean stop medically-prescribed therapy unless the trigger specifically implicates that therapy. When in doubt, contact your prescriber.
+## 10. Interpretation
 
----
+Classify the result using the prespecified chain:
 
-## 7. Logging and version control
+- **Input failure** — identity or potency was not as specified.
+- **Exposure failure** — the intended compartment did not receive the intervention.
+- **Target-engagement failure** — exposure occurred but the proposed mechanism did not move.
+- **Outcome null** — target engagement occurred without the primary outcome.
+- **Safety stop** — adverse findings prevent interpretation or further exposure.
+- **Feasibility signal** — exposure, target engagement, and outcome moved in the predicted direction, subject to n=1 limitations.
 
-**Principle: personal n=1 data does not live in the public Open Enzyme repository.**
+An n=1 feasibility signal can motivate a controlled study. It cannot establish population efficacy, comparative effectiveness, a personalized treatment rule, or a dose recommendation.
 
-Lab results, daily logs, self-experiment plans, and stack tracking are PHI-bearing. Keep them in a **separate private location** of your choice. Common patterns:
+## 11. Worked design patterns
 
-| Pattern | When it fits |
-|---|---|
-| Private GitHub repository | Multi-machine sync, collaborator access, version history, off-site backup |
-| Local folder, not in git | Simplest; single-user; manual backup |
-| Encrypted volume + cloud backup | Higher privacy posture |
+### Timing or formulation comparison
 
-The public Open Enzyme repo's `.gitignore` should exclude whatever directory your private storage lives in if you nest it inside the working tree. The choice of folder name, internal layout, and tooling is yours.
+Use a characterized intervention, keep total exposure constant, randomize or alternate timing/formulation conditions where practical, and measure a short-latency outcome. A prior fungal-enzyme timing observation across approximately 30 meals illustrates how meal composition and lying flat after meals can emerge as confounders. The observation was single-subject, unblinded, and uncontrolled; it informs formal study design but does not establish a dosing framework.
 
-**Consent on partner / family data**: if your storage includes someone else's data (e.g., a spouse's labs), that data is theirs. Document their agreement before adding anything — a dated note in the relevant location is the lowest-friction way.
+### Biomarker-linked mechanism study
 
-**Summary log (public, committed)**: a stripped, de-identified summary can be added to `logs/self-experiment-log.md` in the public repo (append-only). Fields: date, intervention, observation, any protocol deviation. Safe to commit because it contains no raw PHI. Never reference specific lab values; use qualitative framing ("CRP trending up" rather than "CRP = 4.2"). Numeric trending stays in your private storage.
+For a candidate transporter or inflammasome mechanism, pair the clinical outcome with input verification, exposure, and a direct functional readout. For example, stool SCFAs alone are an exposure proxy and cannot establish epithelial ABCG2 trafficking or urate flux.
 
-**When a stack compound is added or removed**: note it with a dated rationale in your private location. The public-log version (if any) can be a stripped one-liner.
+### Ex vivo challenge
 
----
+An ex vivo MSU challenge can measure within-subject IL-1β response under prespecified biological strata. It remains a subject-specific feasibility signal and cannot replace the tiered cell, organoid, or animal experiments in [validation-experiments.md](./validation-experiments.md).
 
-## 8. What this protocol does NOT do
+## 12. Related methods
 
-- **Establish efficacy against a control.** n=1 is uncontrolled, unblinded. Efficacy signals are suggestive, not generalizable. They can motivate a future controlled trial; they cannot replace one.
-- **Replace medical supervision.** Your primary care provider and any specialists should know what you're doing. Halt criteria are escalation-to-care triggers, not self-directed-recovery instructions.
-- **Cover regulatory territory.** This is personal self-experimentation, not a clinical trial. Do not distribute engineered strains, compounded products, or off-label prescriptions to others under this protocol.
-
----
-
-## 9. Review and update
-
-Review this document and your active experiment designs: (a) before starting a new intervention arm, (b) after any halt, (c) annually, (d) whenever your understanding of the relevant biology changes. Changes go through git, not inline edits.
-
----
-
-## 10. Example: PERT-Timing Sub-Experiment (EPI Track, April 2026)
-
-An example of this protocol applied to the EPI track. A structured self-experiment on BoulderBio (wild-type *A. oryzae* OTC, 40,000 FIP lipase per capsule) dose and timing was run across ~30 meals (2026-04-19 → present). Key design elements:
-
-- **Hypothesis:** Label-default 1-cap dosing is insufficient for meals >15 g fat; 2-cap or split-dose protocol will improve symptom outcomes.
-- **Intervention variants:** A (1 cap at first bite), B (2 caps at first bite), C (1+1 split), D (pre-emptive during cooking).
-- **Metrics:** Post-meal stool consistency (Bristol Scale), pain (0–10 Likert), floaters/steatorrhea (binary), fat content per meal (estimated g).
-- **Single-variable rule:** Enzyme dose/timing varied; diet, other supplements held constant within each variant window.
-- **Confound flagged:** Lying flat <90 min post-meal identified as a strong contributor to overnight episodes — must be controlled separately from enzyme-dose effects.
-
-**Interim findings (n=1, unblinded, uncontrolled; source: digestive-enzyme-optimization.md):**
-- Variant B (2 caps at first bite) decoupled liquid-stool from pain on 2026-04-25 breakfast (~15–20 g fat) — a clear shift from a long-stable baseline.
-- Variant C (1+1 split) successful for >25 g fat meals.
-- No adverse reactions across 30+ meals; no allergic response.
-
-**Evidence level:** Clinical n=1, single subject, unblinded, uncontrolled. Suggestive only. Generates hypotheses for formal testing; does not establish efficacy. Paired stool-fat (steatocrit) measurement before and after a controlled trial would be the next-rigor step.
-
-Full daily log lives in the experimenter's private storage (e.g., `<your-private-repo>/<subject>/experiments/<date>_<topic>.md`). Only de-identified pattern findings are reproduced here, per the PHI policy in §7 above.
-
----
-
-## 11. Optional ex vivo monitoring add-ons
-
-Lower-cost subject-specific assays that supplement the standard four-biomarker panel for specific intervention contexts. Each is opt-in, runs as a quarterly add-on to the standard blood draw, and stays in the subject's private storage per §7.
-
-### 11.0 Selenium + yanthine — PDB function screen *(added 2026-05-15)*
-
-**When relevant:** Any draw while hyperuricemia is active or gout risk is being managed. One-time triage, not ongoing monitoring.
-
-**Rationale:** The PDB (purine-degrading bacteria) gut pathway enzyme DOPDH is selenium-dependent and runs 27x faster with selenium than without. Selenium deficiency could functionally knock out PDB activity without any change in bacterial abundance — the bacteria are present, they just can't work. Yanthine (2,8-dioxopurine) is the first PDB pathway intermediate; elevated serum yanthine indicates PDB are depleted or dysfunctional (can't process it downstream). Together these two markers answer whether Brian's gut-compartment urate disposal is operating normally or is constrained by a potentially trivial dietary factor. See [purine-degrading-bacteria.md §"Cofactor Requirements"](./purine-degrading-bacteria.md).
-
-**What to order:**
-- **Serum selenium** — standard clinical test, available at any reference lab (Quest/LabCorp), ~$40–80. Normal range 70–150 ng/mL; optimal for DOPDH function is likely mid-to-upper-normal. If low-normal (<90 ng/mL), supplementation at 100–200 µg/day (selenomethionine) is safe and cheap.
-- **Yanthine (2,8-dioxopurine)** — not on standard panels. Triage step: check whether Metabolon Precision Metabolomics, Genova NutrEval, Great Plains Organic Acids, or a clinical pharmacology lab measures it. If a metabolomics panel (Metabolon, ~$300–600) already on the radar covers it, add at no incremental cost. If not available without a research lab arrangement, defer — serum selenium alone is the practical first step.
-
-**Cost:** Selenium ~$40–80 (clinical). Yanthine: $0 if a planned metabolomics panel includes it; $300–600 for a standalone metabolomics run; defer if unavailable commercially.
-
-**Cross-references:** [purine-degrading-bacteria.md](./purine-degrading-bacteria.md) §"Open Questions" PDB-Q3 and PDB-Q4.
-
-### 11.0a Cranberry juice n=1 — direct hippuric-acid → ABCG2 axis test *(added 2026-05-15)*
-
-**When relevant:** Same draw context as §11.0 — any draw while hyperuricemia is active or gout risk is being managed. Particularly informative when run in the same window as a §11.0 selenium / yanthine draw (the two protocols test parallel mechanisms hitting the same downstream node, ABCG2).
-
-**Rationale:** *Alistipes indistinctus* produces hippuric acid via aromatic amino acid catabolism; hippuric acid enhances PPARγ binding to the ABCG2 promoter and promotes ABCG2 localization to the apical brush border via PDZK1 (Xu et al. 2024 Cell Host & Microbe, PMID 38412863). The standard dietary route is polyphenol-rich foods → gut catabolism → hippuric acid — slow, indirect, microbiome-dependent. **Cranberries bypass the bacterial step**: cranberries contain unusually high natural benzoic acid; benzoic acid is conjugated with glycine in the liver to produce hippuric acid directly. This is the established mechanism behind the cranberry-UTI lore (cranberry consumption → elevated urinary hippuric acid). For an n=1 test of whether the hippuric-acid → ABCG2 mechanism moves serum urate at dietary doses, cranberry juice is the cleanest probe — independent of needing to colonize *A. indistinctus*. See [`abcg2-modulators.md` Alistipes Tier 2 entry](./abcg2-modulators.md).
-
-**Protocol:**
-- 4 weeks unsweetened cranberry juice, ~8 oz/day with breakfast (or split across day if GI tolerance is an issue).
-- Cost: ~$20 for the protocol.
-- No other intervention changes during the 4 weeks (hold supplements stack constant; hold allopurinol dose constant).
-- Standard 4-biomarker panel (serum urate + hs-CRP + fasting insulin + ApoB) at week 0 baseline + week 4.
-- Optional add: urinary hippuric acid (specialty test, ~$40 at some reference labs) at week 0 + week 4 — confirms the cranberry → hippuric-acid mechanism is engaging in this individual.
-
-**Expected effects:**
-- **Serum urate down 0.2–0.5 mg/dL** if the hippuric-acid → ABCG2 axis is meaningful at dietary doses (Mechanistic Extrapolation; the Animal Model + Human Observational data in Xu et al. 2024 doesn't quantify the magnitude at dietary cranberry doses).
-- **Urinary hippuric acid up substantially** at week 4 vs. baseline — confirms the mechanism is engaging.
-- **No change in hs-CRP / insulin / ApoB** — cranberry-juice carb load is small (unsweetened); no expected metabolic-syndrome effects at this dose.
-
-**Why this is informative regardless of outcome:**
-- If serum urate moves AND urinary hippuric is up → mechanism replicates in this physiology, supports the broader chassis-pending PDB / *A. indistinctus* axis.
-- If serum urate doesn't move AND urinary hippuric is up → mechanism engages but doesn't translate to ABCG2 / SUA effect at dietary dose; the *A. indistinctus* / hippuric axis may need higher concentrations than dietary route delivers, or may not be rate-limiting in this patient.
-- If urinary hippuric doesn't move → cranberry isn't getting absorbed / conjugated as expected; the experiment didn't actually test the mechanism. Interpretation problem, not a mechanism falsification.
-
-**Cross-references:** [`abcg2-modulators.md`](./abcg2-modulators.md) §"Tier 2 — Alistipes / Hippuric acid"; [`chassis-pending-interventions.md` §1](./chassis-pending-interventions.md) (PDB entry, "Cheapest first move" includes this).
-
-### 11.1 Ex vivo MSU PBMC challenge (androgen-elevated subjects, Tier 4 of `validation-experiments.md` §1.23)
-
-**When relevant:** Subject is on clomid, TRT, anabolic-androgenic steroids, or has high baseline endogenous testosterone, AND has gout / hyperuricemia history. The 2026-05-05 androgen × NLRP3 literature scan ([`androgen-urate-axis.md`](./androgen-urate-axis.md) §"Beyond transporters") identified a gap: testosterone × MSU-crystal × NLRP3 in macrophages has zero indexed papers. The general-tissue literature suggests androgens are anti-inflammatory in macrophages (Norata 2006 in vitro), but cardiac macrophages flip the direction (testosterone → ↑NLRP3 → male-skewed myocarditis). Whether gout-relevant macrophages follow the general-tissue pattern or the cardiac-tissue pattern is an open question. This add-on provides a low-cost personal signal in the absence of formal Tier 1–3 wet-lab data.
-
-**What it measures:** Whether subject's PBMCs (peripheral blood mononuclear cells) produce more or less IL-1β in response to MSU crystal challenge ex vivo, tracked across panels as serum testosterone fluctuates (e.g., mid-cycle vs. trough on clomid; pre/post a TRT dose adjustment).
-
-**Protocol:**
-- **Sample:** Add 10 mL EDTA tube to the standard quarterly draw. Send to a clinical lab offering ex vivo cytokine release assays (these exist; vendors include Cellular Technology Limited and several specialty hospital labs).
-- **Lab protocol (request from vendor):** Isolate PBMCs by Ficoll gradient → seed at 1×10⁶/well → 6-hr challenge with MSU crystals (100 μg/mL) ± LPS pre-priming (100 ng/mL × 3 hr, optional second arm) → measure IL-1β in supernatant by ELISA. Negative control: vehicle only. Positive control: nigericin 5 μM (NLRP3 activator).
-- **Cost:** $500–1,000 per panel (vendor-dependent). Add-on to standard quarterly draw — no extra venipuncture.
-- **Tracking:** IL-1β (pg/mL) per panel, alongside serum total + free testosterone, hs-CRP, and the standard four-biomarker panel from §4. Plot quarterly trajectory.
-
-**What you can and can't conclude:**
-- **Can:** Detect within-subject directional signal — does *your* MSU-induced IL-1β response track *your* serum T fluctuations? Useful for personal protocol decisions (e.g., does a heavier anti-inflammatory layer correlate with lower MSU-IL-1β release in your own cells?).
-- **Cannot:** Prove causality (n=1, uncontrolled). Cannot generalize to other androgen-elevated subjects. Cannot substitute for the formal `validation-experiments.md` §1.23 Tier 1–3 cascade — that's where mechanistic claims get established.
-
-**Evidence level:** Clinical n=1, single subject, unblinded, uncontrolled. Suggestive only for personal protocol decisions. Generates hypotheses; does not establish efficacy.
-
-**Cross-references:** [`validation-experiments.md` §1.23](./validation-experiments.md) (the formal Tier 1–3 cascade this is the n=1 parallel of); [`androgen-urate-axis.md`](./androgen-urate-axis.md) §"Beyond transporters" (the literature gap being probed); [`nlrp3-inflammasome.md`](./nlrp3-inflammasome.md) (NLRP3 activation mechanism background).
-
----
-
-## 12. Genotype-informed supplement quantification workflow
-
-**Promoted to standalone page 2026-05-16.** The five-step workflow composing genotype-informed selection + home/community-biolab batch QC + biomarker tracking now lives at [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md). That page is the user-facing canonical surface for the closed-loop n=1 pharmacogenomics pipeline.
-
-This protocol page focuses on the per-subject self-experiment mechanics (§1–§11 above) — daily log, biomarker tracking, intervention scheduling. The genotype-informed-workflow page focuses on the cross-component pipeline that those mechanics participate in.
-
-When walking a new intervention end-to-end, follow [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) for the workflow shape; come back here for the biomarker-tracking detail.
-
----
-
-## 13. Acute-flare stack sub-experiment — Protocol C, prospective n=1 *(added 2026-05-21)*
-
-**Scope.** Prospective n=1 evaluation of the Protocol C triple-mechanism acute-flare stack from [`gout-action-guide.md` §"Combined-route flare protocols"](./gout-action-guide.md) — colchicine + topical CBD:THC + DHA-emphasis omega-3. The combination has not been tested in any human RCT and is tagged Speculative. The point of running it as a structured n=1 across multiple flares is to **separate timing and endpoints by mechanism arm** rather than collapsing into one "flare better" composite signal — the three arms operate on different time scales and different chokepoints, and pooling them obscures which arm is doing the work.
-
-**When relevant.** Subject has recurrent gout flares (≥3 per year), is already on colchicine (no statin / macrolide / cyclosporine / severe renal contraindication), maintains a chronic DHA-emphasis omega-3 dose with a measured blood omega-3 index ≥ 8% (the DHA-SPM arm is gated on chronic loading state; acute loading during a flare does not rescue an inadequate baseline), and has medical-cannabis access for the topical 1:1 CBD:THC arm.
-
-**Pre-flare baseline (panel before the next flare event).**
-- Serum omega-3 index (DHA + EPA % of total RBC fatty acids) — target ≥ 8%. **Event-linked requirement (added 2026-05-22):** measure within the ~2–4 weeks before each flare event being scored, not a stale months-old baseline. Omega-3 index reflects RBC fatty-acid composition with a ~120-day RBC lifespan, so a measurement taken >3 months before a flare may misrepresent the loading state at the flare. Home dried-blood-spot kits make this practical without an additional venipuncture per event.
-- Serum hs-CRP (baseline inflammatory tone)
-- Serum urate (chronic level — should already be tracked per §4)
-- 24h-urine urate if available
-- **CFH Y402H genotype** (rs1061170) if not already known. One-shot test (consumer-array raw data lookup OR single-SNP clinical PCR). CFH genotype stratifies the interpretation of the C5a-decline-slope endpoint in the during-flare panel below — see §4 C5a row "CFH Y402H stratification" note and [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §3.1–3.2.
-
-**During the flare (Protocol C timing per `gout-action-guide.md` Protocol C):**
-- **t = 0:** Oral colchicine 1.2 mg + topical 1:1 CBD:THC on affected joint + ice cycle 10–15 min
-- **t = +1 h:** Oral colchicine 0.6 mg + re-apply topical CBD:THC + ice cycle 30–60 min
-- **Throughout:** Continue chronic DHA-emphasis omega-3 at the standing dose (no acute load — baseline is the gating variable)
-- **At onset (t = 0–6 h) — draw 1:** Serum C5a, hs-CRP, IL-1β if available. *This is the resolution-slope anchor — without an onset C5a value, the wind-down slope is unmeasurable.*
-
-**Mechanism-separated endpoints — pick by which arm you want to evaluate.**
-
-| Arm | Endpoint | Measurement windows | What a positive signal looks like |
-|---|---|---|---|
-| Colchicine (suppression, systemic) | Joint pain (VAS 0–10), joint circumference (cm), patient global flare-severity (VAS 0–10) | 6 h, 24 h, 48 h, 72 h | AGREE-style ≥50% pain reduction by 24 h |
-| Topical CBD:THC (suppression, local) | Local joint pain at the application site (VAS 0–10) | 30 min, 1 h, 2 h, 4 h (rapid topical-onset window — separate from systemic colchicine timing) | Local pain drop within 30–120 min, before systemic colchicine kinetics would predict |
-| DHA SPM (resolution-class, systemic) | Serum C5a slope days 3–7 (resolution phase per [`spm-resolution-pathway.md` §7.3](./spm-resolution-pathway.md)); serum 17-HDHA / 14-HDHA on LC-MS/MS lipidomic panel if accessible | Onset draw (t = 0–6 h), resolution draws day 3, day 5, day 7 | Steeper C5a decline slope (faster ng/L per day) in DHA-loaded events vs. omega-3-deficient comparator events (within-subject across flares) |
-| Composite resolution | Flare duration to < 2/10 pain (days from onset) | Daily VAS log | Shorter than personal baseline median flare duration |
-
-**Cadence and within-subject control.** A single flare event is one data point per arm. Useful inference requires **n = several flares per arm-state combination** — ideally the subject can compare events where:
-- Omega-3 index was ≥ 8% (DHA arm "active") vs. < 4% (DHA arm "inactive") at flare onset
-- Topical CBD:THC was applied vs. omitted (controlling for jurisdictional access)
-- Colchicine was used at full AGREE dosing vs. partial / late
-
-Logging discipline (per §5 symptom diary) is the load-bearing variable here — without dated per-arm logs across flares, the mechanism-separated endpoints collapse back into the "flare better" composite.
-
-**What you can conclude.**
-- **Per-arm directional signal:** Does *your* local pain drop on the topical CBD:THC arm timing window? Does *your* C5a slope steepen in DHA-loaded events? Does *your* composite flare duration shorten on Protocol C vs. prior single-arm protocols?
-- **Within-subject mechanism-class evidence:** Is the resolution-class arm doing distinct work from the suppression-class arms in your own data, or is the composite signal entirely explained by the suppression arms?
-
-**What you cannot conclude.**
-- Cannot generalize to other subjects (n=1, uncontrolled, unblinded).
-- Cannot substitute for a future formal Protocol C RCT — that's where population-level claims get established.
-- Cannot disentangle a non-DHA arm of the SPM mechanism from a DHA-specific effect (the n=1 omega-3-index comparison is correlational across the subject's flare history).
-
-**Evidence level:** Clinical n=1, single subject, unblinded, uncontrolled. Suggestive only for personal protocol decisions. Generates hypotheses; does not establish efficacy.
-
-**Cross-references:** [`gout-action-guide.md` §"Combined-route flare protocols" Protocol C](./gout-action-guide.md) (the protocol composition canonical surface); [`spm-resolution-pathway.md` §7.3](./spm-resolution-pathway.md) (the C5a-decline-slope falsifiable prediction this n=1 partially tests); [`colchicine.md` §3.3.1](./colchicine.md) (colchicine arm mechanism + AGREE dosing); [`cannabinoids-terpenes.md` §4a](./cannabinoids-terpenes.md) (topical CBD:THC arm mechanism + Brian's n=1 layered-flare-interrupt anchor); [`complement-c5a-gout.md` §3.1](./complement-c5a-gout.md) (C5a half-life kinetics bounding the slope-measurement window).
+- [Genotype-informed intervention research workflow](./genotype-informed-supplement-workflow.md)
+- [Validation experiments](./validation-experiments.md)
+- [Quantification ladder](./quantification-ladder.md)
+- [Cross-validation](./cross-validation.md)

@@ -22,7 +22,7 @@ sources:
 
 ## Overview
 
-*Saccharomyces cerevisiae* is the most genetically tractable eukaryotic organism on Earth, with GRAS (Generally Recognized As Safe) status from the FDA and a millennia-long history of safe use in baking and brewing. It holds unparalleled advantages for rapid development of engineered therapeutic enzyme producers: a mature toolkit of characterized promoters, selectable markers, transformation protocols, and expression systems. Critically, the exact gene-host combination of *Aspergillus flavus* uricase expressed in *S. cerevisiae* forms the basis of **rasburicase (Elitek/Fasturtec)**, the FDA-approved intravenous uricase drug used since 2002. This means the proof-of-concept already exists as an approved pharmaceutical. The novel contribution of the [[open-enzyme-vision|Open Enzyme project]] is repurposing this same gene-host combination for oral, food-based delivery rather than IV administration. (Source: engineered-yeast-uricase-proposal.md, etc/open-enzyme-vision.md)
+*Saccharomyces cerevisiae* is the most genetically tractable eukaryotic organism on Earth, with GRAS (Generally Recognized As Safe) status from the FDA and a millennia-long history of safe use in baking and brewing. It offers a mature toolkit of characterized promoters, selectable markers, transformation protocols, and expression systems for rapid enzyme-production work. Critically, the exact gene-host combination of *Aspergillus flavus* uricase expressed in *S. cerevisiae* forms the basis of **rasburicase (Elitek/Fasturtec)**, the FDA-approved intravenous uricase drug used since 2002. The oral-delivery track asks whether that gene-host precedent can be adapted to a food-format route rather than IV administration. (Source: engineered-yeast-uricase-proposal.md, etc/open-enzyme-vision.md)
 
 ## GRAS Status and Food Safety
 
@@ -131,7 +131,7 @@ The uricase **product plan** — source-gene selection (*A. flavus* uaZ vs. *C. 
 | **Native enzymes** | None relevant to enzyme therapy | Lipase, protease, amylase (therapeutic) |
 | **GRAS status** | Yes (4,000+ years) | Yes (1,000+ years food use) |
 | **Fermentation** | Liquid (3–7 days, climate-controlled) | Solid-state on rice (36–48h, ambient) |
-| **Dual-purpose platform** | No (only uricase, requires optimization) | Yes (uricase + native digestive enzymes) |
+| **Native co-product scope** | Limited in this configuration | Native digestive enzymes alongside candidate uricase expression |
 | **Expression level precedent** | 13% of total protein (rasburicase) | Comparable expected from strong promoters |
 | **Therapeutic credibility** | Very high (rasburicase precedent) | Very high (GRAS, ancient safety history) |
 | **Strategic role** | Candidate chassis with strong yeast precedent | Candidate chassis with secretion and solid-state advantages |
@@ -169,12 +169,12 @@ Expose intestinal epithelial cell monolayers (Caco-2 or HT-29) to: (a) wild-type
 
 *S. cerevisiae* does not produce mycotoxins or virulence factors. Engineered strains carry only the uricase transgene—no foreign pathogenic elements. The genetic modifications are purely additive (expressing one additional protein). Safety profile is expected to be excellent. (Source: engineered-yeast-uricase-proposal.md)
 
-## AI Analysis Findings (April 2026)
+## Engineering implications
 
 The optimized uricase expression cassette (TDH3p constitutive promoter, intracellular localization, ADH1t terminator, predicted 800–1200 mg/L equivalent, codon-optimization parameters) is product-plan detail and lives with the proposal. See [Codon Optimization & Expression Cassette](./codon-optimization-expression-cassette.md) and [proposal §3](./engineered-yeast-uricase-proposal.md#construct).
 
 ## References
 
 - Source: engineered-yeast-uricase-proposal.md — Detailed technical proposal, dosing math, delivery format analysis, validation experiments
-- Source: etc/open-enzyme-vision.md — Platform vision and strategic positioning
+- Source: etc/open-enzyme-vision.md — Mission and track context
 - Source: gout-deep-dive.md — Uric acid biology and treatment context

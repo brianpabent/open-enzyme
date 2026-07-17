@@ -485,25 +485,25 @@ Cross-link with [complement-c5a-gout.md](./complement-c5a-gout.md):
 4. **Loop closure:** aggNET-mediated C5a degradation reduces further CP0 priming → self-limiting flare
 5. **Failure mode:** Insufficient SPM → NETs spread → no aggregation → C5a persists → flare continues → chronic phase → tophus formation as backup resolution attempt
 
-This is a mechanistically elegant closed loop. It also predicts that **CP0 blockade (avacopan) and CP5b enhancement (SPMs) are complementary, not redundant** — avacopan blocks the incoming signal, SPMs accelerate the outgoing resolution. A combination should be additive.
+This loop predicts that **CP0 blockade and CP5b enhancement may be non-redundant**, but additivity requires direct testing.
 
-#### Falsifiable prediction — serum C5a decline slope stratified by omega-3 index (added 2026-05-19, Cluster G1 walkthrough)
+#### Falsifiable prediction — serum C5a decline slope stratified by omega-3 index
 
 If the SPM → aggNET → C5a-degradation loop is real and load-bearing in human gout flare resolution, then **serum C5a should decline during flare resolution faster in DHA-loaded subjects (blood omega-3 index ≥8%) than in DHA-deficient subjects (omega-3 index <4%)**. The aggNET formation requires adequate SPM substrate availability, which is gated on omega-3 index — so the decline slope should track the subject's DHA loading state.
 
-**Operational test (cheap n=1, add-on to existing self-experiment protocols):**
+**Prospective observational test:**
 
 1. Measure serum C5a at **flare onset** (within 24 h of flare beginning) — captures peak C5a.
 2. Measure serum C5a at **flare resolution** (when pain has subsided, typically 7–14 days post-onset) — captures the post-resolution level.
 3. Compute the decline slope: (onset C5a − resolution C5a) / days.
 4. Pair with concurrent blood omega-3 index (EPA + DHA % of total RBC fatty acids; standard ~$50 add-on to lipid panel via OmegaQuant or equivalent).
-5. Across multiple flare events (n=several over months/years), correlate slope with omega-3 index. Prediction: steeper slope (faster C5a clearance) in DHA-loaded events.
+5. Across repeated flare events and participants, correlate slope with omega-3 index. Prediction: steeper slope in DHA-loaded events.
 
 **Pre-analytics matter** (per [`self-experiment-protocol.md` §4](./self-experiment-protocol.md)): cold-chain EDTA, spun within 30 min, –80 °C storage — warm transit generates spurious C5a in vitro. The onset draw is the timing-critical sample; resolution draw is loose in the 7–14 day window.
 
-**Platform implication if the prediction holds:** CP0 coverage shifts from **"pharma-only" (avacopan ~$150K/year)** to **"dietary + pharma" (omega-3 SPMs ~$30/month dietary plus avacopan for refractory cases)**. This would be a substantive reframe of the platform's most expensive coverage gap. The cost asymmetry alone makes the prediction worth testing aggressively.
+**Portfolio implication if the prediction holds:** A dietary precursor arm would become a candidate CP5b complement to direct CP0 blockade. Biomarker correlation alone would still not establish clinical efficacy or replacement of a drug intervention.
 
-**What this prediction is NOT** (epistemic discipline): it's a **mechanism-level prediction**, not a clinical-effect-size prediction. Even if confirmed, the dietary SPM arm doesn't replace avacopan for refractory cases — it potentially shifts the *first-line* coverage class from pharma-only to dietary-plus-pharma. Validation requires demonstrating the slope difference is real AND large enough to be clinically meaningful (e.g., flare duration shortened by ≥30%, peak IL-1β attenuated, recurrent-flare frequency reduced — all downstream of the C5a slope but not directly inferrable from it).
+**Evidence boundary:** This is a mechanism-level prediction, not a clinical-effect-size prediction. Validation requires showing that the slope difference is reproducible and linked to meaningful downstream outcomes.
 
 **Cross-references:** [`self-experiment-protocol.md` §4 C5a section](./self-experiment-protocol.md) for the protocol mechanics; [`complement-c5a-gout.md` §3.1](./complement-c5a-gout.md) for the C5a half-life kinetics that bound the slope-measurement window.
 
@@ -551,7 +551,7 @@ An SPM clinical trial in gout could pre-register "time to 50% pain reduction" as
 
 ---
 
-## 9. "Absence of Resolution as Exploit" — Philosophical Framing
+## 9. Resolution as a distinct intervention class
 
 Most anti-inflammatory drugs work by **suppression**:
 - NSAIDs block COX-1/COX-2 → less PGE2, less pain signaling
@@ -561,25 +561,25 @@ Most anti-inflammatory drugs work by **suppression**:
 
 SPMs and SPM-inducers operate through a **different mechanism class**: they *promote* the active resolution program rather than *blocking* the inflammation. Key consequences:
 
-1. **Combination is additive, not redundant.** Allopurinol (crystal elimination upstream) + canakinumab (IL-1β suppression, CP5a) + SPM (resolution at CP5b) operate at three independent layers and should stack cleanly.
+1. **Combination may be non-redundant.** Crystal elimination, IL-1β suppression, and CP5b resolution operate at different layers, but combination effects require direct testing.
 2. **Preserved host defense.** SPM-promoted resolution does not impair anti-microbial response (see §5.6). Unlike IL-1β blockade, which carries a real infection risk, SPMs appear neutral or mildly protective in sepsis models.
 3. **Tissue repair.** SPMs actively promote tissue regeneration (§5.4). Suppression-only drugs do not — they simply reduce ongoing damage. In chronic tophaceous joints, this distinction could be disease-modifying.
 4. **Different side-effect profile.** No evidence SPMs cause immunosuppression, GI ulceration (unlike NSAIDs), osteoporosis (unlike steroids), or weight gain (unlike steroids). The "dirty" side-effect profile of fish oil is GI (fishy reflux, mild diarrhea at high doses) and, at very high doses, minor increases in bleeding time.
-5. **Pharmacologic class-distinct from what most of the stack covers.** The Open Enzyme stack is predominantly suppression-class (EGCG, curcumin, quercetin, sulforaphane — all NF-κB / ROS suppressors). Adding SPMs (via omega-3 loading or direct SPM supplements) is the stack's resolution arm.
+5. **Pharmacologically distinct.** SPM signaling is a resolution-class mechanism rather than another NF-κB or ROS suppression mechanism.
 
-The framing: **"You can't fight your way out of gout by suppression alone. You have to switch on resolution."**
+The research question is whether activating resolution adds benefit beyond suppression and urate lowering.
 
 ---
 
-## 10. Dose, Delivery, Supplementation
+## 10. Exposure, delivery, and evidence gates
 
 ### 10.1 Omega-3 precursor loading
 
-**Typical dose for anti-inflammatory / pro-resolution effect:** 3-4 g/day combined EPA + DHA. Below ~2 g/day, effects are marginal; above ~4 g/day, diminishing returns and increased GI/bleeding risk.
+**Studied exposure range:** Human anti-inflammatory studies commonly examine 3–4 g/day combined EPA + DHA; lower exposures may have smaller effects, while higher exposures increase GI and bleeding concerns. This is not a gout dosing recommendation.
 
 **Conversion efficiency to SPMs:** Estimated 5-10% of precursor pool is enzymatically converted to SPMs at rest. Higher during active inflammation (when 5-LOX/15-LOX/12-LOX are upregulated). Bioavailability depends on formulation (triglyceride > ethyl ester > phospholipid in some studies; re-esterified triglyceride preferred for absorption).
 
-**DHA-emphasis for gout — the key nuance (per round 2 synthesis commit 1d720b2):**
+**DHA-emphasis hypothesis:**
 The direct MSU-gout animal evidence at CP5b is **DHA-derived, not EPA-derived**:
 - RvD1 (DHA → ALX/FPR2) — Zaninelli 2022 PMID 35716378
 - MaR1 (DHA → LGR6) — Jiang 2023 PMID 37996809
@@ -588,22 +588,20 @@ The direct MSU-gout animal evidence at CP5b is **DHA-derived, not EPA-derived**:
 
 Separately, DHA correlates with lower circulating TNFSF14 in a Mendelian-randomization study (see [tnfsf14-gout-target.md](./tnfsf14-gout-target.md), Huang 2024 PMID 38235898), tying DHA to the CP1a (LIGHT amplifier) arm.
 
-EPA is not inactive — EPA → RvE1 operates at CP5b (CMKLR1) and EPA substrate competition reduces LTB4 at CP6a. But for **gout-specific** use, the weight of direct MSU evidence is DHA. **Prefer DHA-emphasis or high-DHA formulations** (algae oil is often 2-3× higher DHA than EPA; most fish oils are EPA-dominant because they target cardiovascular endpoints).
-
-Practical dosing: 2-3 g DHA + 1-2 g EPA/day is a reasonable gout-targeted SPM precursor load. With food to improve absorption and reduce GI side effects.
+EPA is not inactive — EPA → RvE1 operates at CP5b and EPA substrate competition reduces LTB4 at CP6a. The direct MSU evidence weighs toward DHA, motivating a controlled DHA-dominant versus EPA-dominant comparison rather than a preferred formulation or dose.
 
 ### 10.2 Aspirin-triggered SPM
 
 **Mechanism:** Low-dose aspirin (81 mg/day) acetylates COX-2 (irreversibly; 10-50% of circulating COX-2 is acetylated at steady state on 81 mg daily), shifting its product profile toward **15-epi-LXA4** (from AA) and **17R-RvD series** (from DHA via CYP450 + aspirin-COX-2 tandem). These R-epimers are equipotent or more potent at ALX/FPR2 / GPR32 / GPR18 and have **longer plasma half-lives** because 15-PGDH (the dehydrogenase that inactivates native S-epimer SPMs) processes R-epimers less efficiently.
 
-**Practical upshot:** Adding low-dose aspirin to a DHA-loaded regimen **qualitatively shifts the SPM output** toward longer-lived R-epimer forms. This repositions "baby aspirin" from an anti-platelet drug into a **pro-resolution synergist**. The gout literature on aspirin is equivocal (some patients report benefit, mainstream guidelines have not endorsed); this provides a mechanistic rationale at CP5b, distinct from the anti-platelet mechanism.
+**Combination hypothesis:** Low-dose aspirin can shift SPM output toward longer-lived R-epimer forms, but the gout literature is equivocal and low-dose aspirin can raise urate. This is a controlled-trial question, not an adjunct recommendation.
 
 **Caveats:**
 - Aspirin and urate handling: aspirin at very low dose (<325 mg/day) paradoxically *increases* serum urate by inhibiting URAT1-mediated renal excretion; at high dose (>3 g/day) it is uricosuric. For gout, the 81 mg dose is in the urate-raising zone, a real if small concern
 - Bleeding risk: 81 mg aspirin + fish oil at 3-4 g/day marginally increases bleeding time; not clinically significant for most patients but worth checking if any surgical plan is imminent
 - Aspirin sensitivity / NSAID-induced respiratory disease: absolute contraindication
 
-The combined "aspirin + fish oil" stack for SPM production is used in some functional-medicine practices; rigorous clinical evidence for gout specifically is absent.
+Rigorous gout-specific evidence for the aspirin-plus-omega-3 combination is absent.
 
 ### 10.3 Direct SPM supplements
 
@@ -636,7 +634,7 @@ Lactoferrin promotes resolution through multiple overlapping mechanisms — iron
 
 ---
 
-## 11. Engineered Production — What's Feasible
+## 11. Production and delivery candidates
 
 ### 11.1 Direct SPM biosynthesis in yeast/koji
 
@@ -647,37 +645,35 @@ Lactoferrin promotes resolution through multiple overlapping mechanisms — iron
 3. **Product stability** — SPMs are labile (oxidation-prone, short-half-life lipids). Co-formulation with antioxidants would be required. Extraction yields from yeast biomass are untested.
 4. **GRAS compatibility** — A. oryzae and S. cerevisiae are GRAS; Yarrowia is not yet GRAS for food use in the US (it is for some feed applications).
 
-### 11.2 Realistic near-term path: precursor co-formulation
+### 11.2 Precursor co-formulation hypothesis
 
-**Short-term (years 1-2):** EPA/DHA omega-3 co-formulation with uricase koji. No engineering required; leverages existing global omega-3 supply chain. This is **CP5b coverage at the substrate-loading level** — not direct SPM production but substrate provision at adequate titer to drive endogenous SPM biosynthesis.
+EPA/DHA precursor co-formulation requires no SPM biosynthesis engineering, but substrate loading does not establish CP5b efficacy. It can be tested independently or alongside any validated urate-lowering track; it is not coupled to koji.
 
-Formulation logic: One daily dose of engineered koji uricase (crystal-eliminator, CP upstream) + one daily dose of DHA-emphasis omega-3 (SPM precursor for CP5b) + optional low-dose aspirin (aspirin-triggered SPM enhancement). Zero engineering burden on the SPM side; all the engineering complexity is on the uricase koji.
-
-### 11.3 Medium-term: lactoferrin co-expression in koji (resolution-adjacent)
+### 11.3 Lactoferrin co-expression hypothesis
 
 Lactoferrin in *A. oryzae* or *A. awamori* is a demonstrated-in-literature target (Ward 1992 PMID 1368268, Ward 1995 PMID 9634791, Sun 1999 PMID 10089347). Co-expressing lactoferrin alongside uricase in a single engineered koji strain would cover both upstream crystal elimination (uricase) and resolution-adjacent macrophage modulation (lactoferrin), without requiring SPM-direct biosynthesis. **See [lactoferrin.md](./lactoferrin.md) for the dedicated feasibility dossier.**
 
-This is a more tractable near-term target than direct SPM biosynthesis in yeast, and it fills a complementary resolution niche (protein-based, macrophage-targeting) that SPMs (lipid-based, multi-receptor) do not fully cover.
+This may be more tractable than direct SPM biosynthesis, but its resolution effect and co-expression feasibility remain separate gates.
 
-### 11.4 Long-term: dedicated SPM-producing strain
+### 11.4 Dedicated SPM-producing strain
 
-A dedicated engineered SPM-producing strain is a **distinct project** from the uricase koji — probably better pursued as a separate chassis (e.g., engineered *Y. lipolytica* with a heterologous 15-LOX / 12-LOX / CYP1A1 pathway producing 17-HDHA / 14-HDHA / 18-HEPE precursors), formulated alongside the uricase koji. This is years 5+ research, not Phase 0.
+A dedicated engineered SPM-producing strain is a distinct track. *Y. lipolytica*, *S. cerevisiae*, and *A. oryzae* remain chassis candidates for a future feasibility comparison.
 
-### 11.5 Assessment — honest accounting
+### 11.5 Assessment
 
-The engineered-koji configuration covers CP5b **indirectly** (via lactoferrin if co-expression clears feasibility, through downstream resolution signaling) but **not directly** (no native or near-native SPM production in the yeast/koji hosts evaluated). Candidate CP5b coverage is:
+No evaluated yeast or koji host directly produces SPMs at a validated intervention scale. Candidate CP5b routes are:
 
-1. **Substrate-loaded omega-3** (DHA-emphasis, 2-3 g DHA + 1-2 g EPA/day) — commercial, unengineered
-2. **Engineered koji uricase + lactoferrin** (if co-expression feasibility clears) — platform-native, indirect CP5b via lactoferrin
-3. **Aspirin-triggered shift** (low-dose aspirin, optional) — off-the-shelf, repositions SPM output toward longer-lived R-epimers
+1. **Omega-3 substrate loading** — commercial and unengineered; gout efficacy unvalidated
+2. **Lactoferrin expression** — indirect resolution hypothesis; chassis and activity gated
+3. **Aspirin-triggered shift** — mechanistically plausible with urate and bleeding tradeoffs
 4. **Direct SPM supplements** (SPM Active or similar) — commercial supplement-grade
-5. **Future: engineered SPM-producing yeast** (years 5+) — research-stage
+5. **Engineered SPM production** — research-stage
 
-This is an honest assessment. The platform has substrate loading, indirect resolution-modulator (lactoferrin), and commercial access to direct SPMs, but does **not** produce SPMs at enzyme-engineered scale. That's a tractable future project, not a current deliverable.
+These routes remain independent hypotheses. Failure of any chassis, supplement, or combination does not close CP5b as a target.
 
 ---
 
-## 12. Clinical Biomarkers and Self-Experiment Relevance
+## 12. Biomarker research design
 
 ### 12.1 Serum / plasma SPM measurement
 
@@ -689,15 +685,15 @@ This is an honest assessment. The platform has substrate loading, indirect resol
 - Cost: ~$300-700 per panel (research pricing; not reimbursable)
 - Reference ranges: not well-established for gout; existing data come from healthy volunteers and chronic inflammatory disease cohorts
 
-**Practical utility in gout:** Mostly research-setting. SPM panels during flare vs. inter-flare vs. on fish-oil loading would inform a specific patient's resolution signaling, but there's insufficient comparative data to act on a result clinically yet.
+**Research utility in gout:** SPM panels during flare, inter-flare, and controlled precursor exposure could characterize resolution signaling, but comparative data are insufficient for clinical action.
 
-### 12.2 Urinary LTE4 (already in self-experiment §3)
+### 12.2 Urinary LTE4
 
 Urinary LTE4 is a CP6a (5-LOX pathway) readout — indicates leukotriene production. **Inverse relationship with SPMs is expected**: high LTE4 + low SPMs indicates a pro-inflammatory 5-LOX/15-LOX ratio shifted toward LTB4/LTE4 (inflammation) vs. RvE1/lipoxin (resolution). Per [self-experiment-protocol.md §"Chokepoint-biomarker map"](./self-experiment-protocol.md#chokepoint-biomarker-map), urinary LTE4 is already in the planned assay panel. Pairing with an SPM plasma panel would let you compute a simple "resolution ratio" (e.g., RvE1/LTE4 or sum-SPM/LTE4) as a CP6a ↔ CP5b axis biomarker.
 
 ### 12.3 Surrogate clinical endpoints
 
-For self-experiment or a future trial:
+Candidate endpoints for a prospective study:
 - **Time to 50% pain reduction** from flare onset — resolution speed proxy
 - **Duration of flare** (hours/days)
 - **Recurrence rate** over 6-12 months
@@ -712,7 +708,7 @@ The omega-3 index (% EPA + DHA in erythrocyte membranes) is a more stable measur
 
 ## 13. Open Research Questions
 
-1. **Why do gout patients' SPM levels remain low during flare?** Is there a specific SPM-biosynthesis deficit in chronic gout patients (dietary precursor shortage? 15-LOX/12-LOX expression defect? age-related decline in ALOX15?), or is the problem simply that demand outpaces production during acute flares? A lipidomic study of flare-phase vs. inter-flare plasma SPMs in the same patient (N=20-30, paired) would resolve this.
+1. **Why do gout patients' SPM levels remain low during flare?** Is there a specific biosynthesis deficit—dietary precursor shortage, altered 15-LOX/12-LOX expression, or age-related ALOX15 decline—or does acute demand simply outpace production? A paired flare-phase versus inter-flare plasma-lipidomics study in 20–30 participants would discriminate these explanations.
 2. **ALX/FPR2 polymorphisms in gout.** Are there genetic variants of FPR2 associated with gout flare severity, tophi formation rates, or SPM response? An association study using existing gout biobank DNA is feasible.
 3. **GPR18 variants and gout.** GPR18 is the RvD2 receptor (Lopategi 2018). Variants that alter RvD2 binding or signaling could predict resolution failure. No gout-specific GPR18 association study exists.
 4. **SPM ratios in gout — which family dominates resolution?** Are gout-patient flares resolved primarily by D-resolvins, maresins, protectins, or a combination? A ratio-based biomarker could guide targeted supplementation (e.g., DHA-emphasis for D-resolvin-dominant resolvers vs. EPA emphasis for E-resolvin-dominant).

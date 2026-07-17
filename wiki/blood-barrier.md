@@ -49,9 +49,9 @@ This reframes the barrier-crossing problem: it becomes an optimization bonus, no
 
 If barrier crossing ever becomes necessary, [Pen-Testing the Gut-Blood Barrier](./blood-barrier-exploits.md) catalogs 14 exploitable routes with mechanisms, expected bioavailability, and precedents. They span paracellular permeation enhancers (SNAC, C10, chitosan, ZOT), transcellular receptor hijacking (FcRn, M cell targeting), microbe- and vesicle-based delivery (probiotic gene therapy, OMVs, exosomes, nanoparticles), and mucosal/transdermal routes that bypass the GI tract entirely (sublingual, nasal, microneedle). Expected bioavailabilities run from ~1% for the hardest GI-paracellular cases up to 50–100% for the GI-bypassing routes.
 
-For the [[open-enzyme-vision|Open Enzyme]] project's initial goals these remain scientifically interesting but unnecessary — see "When Systemic Delivery Becomes Relevant" below for the conditions that would change that.
+For the gut-lumen uricase track, these remain scientifically interesting but are not required for the hypothesis being tested — see "When Systemic Delivery Becomes Relevant" below for the conditions that would change that.
 
-## Why Lumen-Based Delivery Wins (For Now)
+## Why Lumen-Based Delivery Is Attractive for the Uricase Track
 
 ### Simplicity
 - No barrier crossing required
@@ -60,7 +60,7 @@ For the [[open-enzyme-vision|Open Enzyme]] project's initial goals these remain 
 
 ### Cost
 - No complex formulations, nanoparticles, or fusion proteins
-- Simple fermentation (koji, yeast) is the production bottleneck, not delivery engineering
+- For the koji and yeast subtracks, construct production is the immediate bottleneck rather than delivery engineering
 
 ### Safety
 - Enzyme never enters bloodstream (in lumen-based approach)
@@ -82,7 +82,7 @@ Systemic delivery optimization (routes 1–14 above) would be valuable if:
 3. **Extended half-life needed:** Systemic enzyme (naturally protein-degraded over days) could allow less-frequent dosing than gut transit (hours to days)
 4. **Joint microenvironment targeting:** Direct enzyme action on synovial fluid and intra-articular crystal deposits (not relevant for early-stage gout, but potentially relevant for chronic tophaceous disease)
 
-For the initial [[open-enzyme-vision|Open Enzyme]] platform and home fermentation vision, **lumen-based delivery is the right target.** (Source: engineered-yeast-uricase-proposal.md)
+For the home-fermentation uricase subtrack, **lumen-based delivery is the working target**, not a default target for the wider Open Enzyme portfolio. (Source: engineered-yeast-uricase-proposal.md)
 
 ## Oral Tolerance and Mucosal Immunity
 
