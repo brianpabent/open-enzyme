@@ -379,7 +379,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -410,13 +410,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2024,7 +2017,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2059,7 +2052,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2129,7 +2122,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3113,7 +3106,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3148,7 +3141,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -3935,13 +3928,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4255,7 +4241,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -5032,7 +5018,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5675,7 +5661,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Recommendation for the privacy-prioritizing self-experimenter: Tier 5 only if multi-year amortization is realistic.</strong> Current real-world buildout (~$5K hardware + ~$1K/run) puts Tier 5 ABOVE Tier 4 (physician-routed CLIA WGS, $1,000–3,000) on raw cost — Tier 5's case rests entirely on (a) self-sovereign data, (b) dual-purpose hardware that doubles as Open Enzyme strain-QC infrastructure (see Project Crossover below), and &copy; cost-amortization across many runs over years. <strong>For Brian as of 2026-05-08, this is not imminent</strong> — the $5K hardware buildout is too expensive to justify against the personal-pharmacogenomics use case alone. Becomes load-bearing only when (i) the engineered-koji strain pipeline reaches Phase 1+ wet work and needs in-house genome QC, OR (ii) a contributor with the hardware joins the project. If short-read accuracy is later needed for a clinical-grade SNP confirmation (e.g., HLA-B*58:01 typing), do it Tier 4 (physician-routed) — never touch Tier 1.</p>
+<p><strong>Decision gate for local sequencing:</strong> Tier 5 is justified only if multi-year amortization is realistic. Current real-world buildout (~$5K hardware + ~$1K/run) puts Tier 5 above Tier 4 (physician-routed CLIA WGS, $1,000–3,000) on raw cost. Tier 5's case rests on (a) self-sovereign data, (b) dual-purpose hardware that doubles as Open Enzyme strain-QC infrastructure (see Project Crossover below), and &copy; cost-amortization across many runs over years. It becomes load-bearing only when (i) the engineered-koji strain pipeline reaches Phase 1+ wet work and needs in-house genome QC, or (ii) a contributor with the hardware joins the project. Clinical-grade SNP confirmation remains a separate physician-routed question.</p>
 <h2 id="kitchen-table-setup">Kitchen-table setup<a class="headerlink" href="#kitchen-table-setup" title="Permanent link">&para;</a></h2>
 <h3 id="hardware-one-time-5000-all-in-minion-supporting-wet-lab-kit-gpu-laptop">Hardware (one-time, ~$5,000 all-in: MinION + supporting wet-lab kit + GPU laptop)<a class="headerlink" href="#hardware-one-time-5000-all-in-minion-supporting-wet-lab-kit-gpu-laptop" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5708,7 +5694,7 @@
 </ul>
 <h3 id="tier-2-gout-risk-drug-response-variants">Tier 2 — Gout risk + drug response variants<a class="headerlink" href="#tier-2-gout-risk-drug-response-variants" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>ABCG2 Q141K (rs2231142)</strong> — Major gout risk allele; reduced renal/gut urate secretion. (Clinical Trial; Matsuo et al. 2009; Cleophas et al. 2017.) Heterozygotes ~1.5–2× gout risk; homozygotes ~3×. Predicts <strong>reduced allopurinol response</strong>. See <a href="../abcg2-modulators/"><code>abcg2-modulators.md</code></a> for the full mechanism + butyrate/HDAC-inhibitor rescue strategy — Q141K homozygotes are exactly the population the Open Enzyme butyrate-coexpression thesis is designed for.</li>
+<li><strong>ABCG2 Q141K (rs2231142)</strong> — Major gout risk allele; reduced renal/gut urate secretion and reduced allopurinol response. Selected pharmacologic HDAC-inhibitor rescue is demonstrated in vitro, but direct butyrate rescue is not. Use Q141K as a research-stratification variable, not as a butyrate recommendation.</li>
 <li><strong>SLC2A9 (GLUT9) variants</strong> — Renal urate reabsorption; multiple GWAS hits. Smaller per-variant effect, cumulative across the locus.</li>
 <li><strong>SLC22A12 (URAT1) variants</strong> — Both loss-of-function (protective; common in some Asian populations) and gain-of-function (gout risk).</li>
 <li><strong>PDZK1 variants</strong> — Scaffolding for renal urate transporters; modulates URAT1 / GLUT9 surface expression.</li>
@@ -5782,7 +5768,7 @@
 </ul>
 <h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="../genotype-informed-supplement-workflow/"><code>genotype-informed-supplement-workflow.md</code></a> — canonical user-facing closed-loop n=1 pharmacogenomics pipeline.</strong> Step 1 of that workflow is this page's variant-informed compound selection. The promoted version of <code>self-experiment-protocol.md</code> §12.</li>
+<li><strong><a href="../genotype-informed-supplement-workflow/"><code>genotype-informed-supplement-workflow.md</code></a> — closed-loop n=1 pharmacogenomics research workflow.</strong> Step 1 of that workflow is this page's variant-informed compound selection.</li>
 <li><a href="../self-experiment-protocol/"><code>self-experiment-protocol.md</code></a> — biomarker monitoring framework that the workflow's step 5 uses for the readout layer</li>
 <li><a href="../quantification-ladder/"><code>quantification-ladder.md</code></a> — home / community-biolab Tier 2 assay framework that turns supplement dose from fixed-input to verified variable (workflow steps 3–4)</li>
 <li><a href="../enzyme-quantification-protocol/"><code>enzyme-quantification-protocol.md</code></a> — koji enzyme activity quantification (Tier &#8532;)</li>

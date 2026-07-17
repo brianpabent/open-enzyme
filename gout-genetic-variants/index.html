@@ -379,7 +379,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -410,13 +410,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -839,10 +832,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-this-page-is" class="md-nav__link">
+  <a href="#scope" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What this page is
+        Scope
       
     </span>
   </a>
@@ -2229,7 +2222,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2264,7 +2257,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2334,7 +2327,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3316,7 +3309,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3351,7 +3344,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -3892,13 +3885,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4212,7 +4198,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -4989,7 +4975,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5567,12 +5553,12 @@
 
 
 <h1 id="gout-genetic-variants-unified-index-across-the-cascade">Gout Genetic Variants — Unified Index Across the Cascade<a class="headerlink" href="#gout-genetic-variants-unified-index-across-the-cascade" title="Permanent link">&para;</a></h1>
-<h2 id="what-this-page-is">What this page is<a class="headerlink" href="#what-this-page-is" title="Permanent link">&para;</a></h2>
-<p>A unified, cascade-stratified reference catalogue of the genetic variants that drive — or modulate — gout and hyperuricemia. The wiki already does substantial genotype-stratified intervention modeling in <a href="../uricase-abcg2-genotype-stratification-computational/"><code>uricase-abcg2-genotype-stratification-computational.md</code></a>, <a href="../intestinal-abcg2-sex-dimorphism-public-data-mining-computational/"><code>intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md</code></a>, <a href="../abcg2-modulators/"><code>abcg2-modulators.md</code> §6</a>, <a href="../androgen-urate-axis/"><code>androgen-urate-axis.md</code></a>, and <a href="../gout-pathophysiology/"><code>gout-pathophysiology.md</code> §"Genomics and GWAS"</a>, but none of those pages link back to a single index of <em>all</em> relevant variants. This page is that index. Downstream stratification analyses should cross-reference this catalogue rather than re-list variants each time.</p>
+<h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h2>
+<p>This cascade-stratified catalogue covers genetic variants that drive or modulate gout and hyperuricemia. Detailed genotype-stratified intervention evidence is linked from the rightmost column, including computational analyses of uricase response, intestinal ABCG2, transporter regulation, and gout genomics.</p>
 <p><strong>Audience.</strong> PhD-level scientists, clinical translation collaborators, and downstream subagents performing stratified literature scans or computational modeling.</p>
 <p><strong>Privacy gradient.</strong> This is a public-research reference. No personal genotypes. No clinical data tied to individuals. Anyone reading this page is welcome to do so; nothing here would be inappropriate for an external collaborator.</p>
-<p><strong>How to use it.</strong> Each variant entry carries an explicit evidence tier per <a href="../CLAUDE.md"><code>CLAUDE.md</code> §"Evidence Levels"</a>. When the source literature disagrees on effect direction, allele frequency, or evidence strength, the disagreement is surfaced in the entry rather than silently resolved — per the multi-source reconciliation discipline encoded in CLAUDE.md §"Pre-commit grep-verify gate." If you are running a stratified subagent task, link to specific table rows by anchor or quote the row inline; do not paraphrase across rows (paraphrasing loses the evidence-tier and cross-source-disagreement information).</p>
-<p><strong>Scope discipline.</strong> This is a <em>reference index</em>, not a deep-dive page. The mechanism and intervention discussion for each variant lives on the canonical wiki page named in the rightmost column. Long mechanism narrative does not belong here.</p>
+<p>Each variant entry carries an explicit evidence tier. Disagreements in effect direction, allele frequency, or evidence strength remain visible rather than being collapsed into a single estimate.</p>
+<p>The rightmost column links each variant to its detailed mechanism and intervention evidence.</p>
 <hr />
 <h2 id="unified-summary-table-top-variants-by-load-bearing-impact">Unified summary table — top variants by load-bearing impact<a class="headerlink" href="#unified-summary-table-top-variants-by-load-bearing-impact" title="Permanent link">&para;</a></h2>
 <p>The 12 variants below are the ones a downstream stratification subagent or computational-experiment author would touch first. Order is approximate — by depth of evidence × OE-platform relevance — not by raw effect size alone.</p>
@@ -5602,7 +5588,7 @@
 <td>ABCG2</td>
 <td>Renal + intestinal urate secretion</td>
 <td>~50% reduction in transport activity per allele</td>
-<td>#1 common genetic risk for gout; rescue lever (HDI, butyrate, fiber, chaperones); large ancestry-frequency gradient</td>
+<td>#1 common genetic risk for gout; pharmacologic rescue precedent exists, but butyrate and chaperone candidates remain unvalidated; large ancestry-frequency gradient</td>
 </tr>
 <tr>
 <td>3</td>
@@ -5700,7 +5686,7 @@
 <th>Allele frequency</th>
 <th>Evidence tier</th>
 <th>OE-platform implication</th>
-<th>Canonical wiki page</th>
+<th>Detailed evidence</th>
 </tr>
 </thead>
 <tbody>
@@ -5708,11 +5694,11 @@
 <td><strong>rs2231142 (p.Gln141Lys, Q141K)</strong></td>
 <td>ABCG2 (chr4q22)</td>
 <td>Renal tubular + intestinal urate secretion</td>
-<td>Reduces ABCG2 transport activity by ~50% per allele (mild folding/processing defect → reduced plasma-membrane delivery; Saranko 2013, PMID 23800412; independently re-confirmed in Ichida 2024 Japanese urate-transporter review, DOI <code>10.1248/yakushi.23-00217</code>) → ↑ serum urate</td>
-<td>T allele ~10–15% in European-ancestry cohorts; <strong>~30% in East Asian general population (Japanese, Han Chinese, Korean) — Ichida 2024 gives ~32% for Japanese Q141K; rising to ~50% in Han Chinese gout cohorts</strong> (Zhang 2014 PMID 24857923, A allele 49.6% in n=352 male gout patients vs 30.9% in controls); ~3–5% African-ancestry. <strong>Within Polynesia: present in Pacific Islanders (OR 2.80 for gout per Phipps-Green 2010 PMID 20858603) but functionally absent in Māori (OR 1.08 — same study).</strong> Substantial ancestry stratification — see <a href="../abcg2-modulators/"><code>abcg2-modulators.md</code> §6</a> for trial-design implications.</td>
-<td><strong>Clinical Trial</strong> (GWAS replication across multiple ancestries; Wallace 2018 meta-analysis OR ≈ 2.43 in homozygotes)</td>
-<td>Rescue lever stack: HDI-mediated trafficking rescue (butyrate, vorinostat — In Vitro); PPARγ-mediated WT-allele induction (butyrate, fermentable fiber — Animal Model + Clinical Trial); <strong>pharmacological chaperone class — <a href="../abcg2-q141k-chaperone-screen-computational/">comp-032</a> (2026-05-16 GREEN) SUPERSEDED by <a href="../abcg2-q141k-chaperone-rescreen-computational/">comp-047</a> real-docking rescreen (2026-07-14) → INCONCLUSIVE: CFTR-corrector positive controls failed to earn rank; comp-032's list (lumacaftor, tafamidis, ursodiol/UDCA, diflunisal, TUDCA) is prior-ranked hypothesis-only, not a validated ranking</strong> (Mechanistic Extrapolation; source: abcg2-q141k-chaperone-rescreen-computational.md). Q141K-stratified butyrate RCT is the canonical computational-experiment design. <strong>Q141K is an allopurinol pharmacogenomic stratifier</strong> — Wen 2018 meta-analysis (PMID 29342288) OR 2.43 for poor allopurinol response, replicated at genome-wide significance by Roberts 2017 (PMID 26810134, p = 8.06×10⁻¹¹). <strong>Q141K is NOT a febuxostat-response stratifier</strong> (Stamp 2018 PMID 30274827). In Q141K-positive East Asian patients, febuxostat is the rational first-line ULT modulo cardiovascular comorbidity, independent of HLA-B*58:01 status.</td>
-<td><a href="../abcg2-modulators/">abcg2-modulators.md</a>, <a href="../uricase-abcg2-genotype-stratification-computational/">uricase-abcg2-genotype-stratification-computational.md</a></td>
+<td>Reduces ABCG2 transport activity by ~50% per allele through a folding/processing defect → ↑ serum urate</td>
+<td>Frequency varies strongly by ancestry; see <a href="../abcg2-modulators/"><code>abcg2-modulators.md</code> §6</a></td>
+<td><strong>Clinical Trial</strong> (GWAS) + <strong>In Vitro</strong> mechanism</td>
+<td>Selected pharmacologic HDAC-inhibitor rescue conditions are demonstrated in vitro. Butyrate-mediated Q141K rescue is unvalidated; its supported route is PPARγ-mediated induction of remaining WT ABCG2. comp-047 found no validated chaperone candidate. Q141K remains an established allopurinol-response stratifier.</td>
+<td><a href="../abcg2-modulators/">abcg2-modulators.md</a></td>
 </tr>
 <tr>
 <td><strong>rs2199936</strong></td>
@@ -5817,7 +5803,7 @@
 </tbody>
 </table>
 <p><strong>Multi-source disagreement to flag.</strong> The Q141K homozygote odds ratio for gout in published meta-analyses ranges from ~2.0 (some European-ancestry cohorts) to ~3.5 (East Asian cohorts), reflecting both real ancestry-related allele-frequency differences and study-design heterogeneity (case definition, ULT-status filtering). Wallace 2018 meta-analysis cites OR ≈ 2.43 (<a href="../uricase-abcg2-genotype-stratification-computational/"><code>uricase-abcg2-genotype-stratification-computational.md</code></a>). The "~50% reduction in transport activity" framing is from in-vitro studies (Saranko 2013); the <em>in-vivo</em> serum-urate effect per allele is smaller (~0.2–0.5 mg/dL) because of compensatory renal flux. Both numbers are accurate at their own evidence tier; downstream stratification should specify which one is being invoked.</p>
-<p><strong>Per-variant note — Q141K is the load-bearing one.</strong> The Q141K rescue thesis is one of the most-developed scope areas in the wiki. The <a href="../abcg2-modulators/"><code>abcg2-modulators.md</code> §6</a> page documents (a) PPARγ-induction of wild-type ABCG2 by butyrate, (b) HDAC-inhibitor trafficking rescue of the Q141K variant specifically (Basseville 2012, PMID 22472121, In Vitro), and &copy; the pharmacological-chaperone class as a chassis-pending intervention. The genotype-stratified butyrate trial design at <a href="../abcg2-modulators/"><code>abcg2-modulators.md</code> §6 "Q141K × fiber differential response"</a> is the canonical pharmacogenomic-RCT scope for the platform.</p>
+<p><strong>Per-variant note — Q141K is the load-bearing one.</strong> Keep three evidence claims separate: butyrate/PPARγ induction of wild-type ABCG2; pharmacologic HDAC-inhibitor rescue of Q141K in vitro; and the unproven proposal that butyrate reproduces that Q141K rescue. Genotype-stratified butyrate work is a falsification design, not a current rescue recommendation.</p>
 <hr />
 <h2 id="category-2-urate-production-enzymes">Category 2 — Urate-production enzymes<a class="headerlink" href="#category-2-urate-production-enzymes" title="Permanent link">&para;</a></h2>
 <p>The "over-producer" half of gout. Common gout (~90% of patients) is under-excretion; the genetic-overproduction phenotypes are rare but mechanistically illustrative.</p>
@@ -5831,7 +5817,7 @@
 <th>Allele frequency</th>
 <th>Evidence tier</th>
 <th>OE-platform implication</th>
-<th>Canonical wiki page</th>
+<th>Detailed evidence</th>
 </tr>
 </thead>
 <tbody>
@@ -5900,7 +5886,7 @@
 <th>Allele frequency</th>
 <th>Evidence tier</th>
 <th>OE-platform implication</th>
-<th>Canonical wiki page</th>
+<th>Detailed evidence</th>
 </tr>
 </thead>
 <tbody>
@@ -5930,7 +5916,7 @@
 <th>Allele frequency</th>
 <th>Evidence tier</th>
 <th>OE-platform implication</th>
-<th>Canonical wiki page</th>
+<th>Detailed evidence</th>
 </tr>
 </thead>
 <tbody>
@@ -5989,7 +5975,7 @@
 <th>Allele frequency</th>
 <th>Evidence tier</th>
 <th>OE-platform implication</th>
-<th>Canonical wiki page</th>
+<th>Detailed evidence</th>
 </tr>
 </thead>
 <tbody>
@@ -6050,7 +6036,7 @@
 <td>Missense reducing CFH's inhibition of alternative-pathway complement activation; drives ~30–50% of age-related macular degeneration risk; mechanistically implicated in complement-amplified MSU response via elevated CRP (Hecker 2023 PMID 37940657, n=153: CFH 402HH → 38% vs 10% in 3–10 mg/L CRP range, p=0.037) and hypertension-interaction effects on stroke (Volcik 2008 ARIC PMID 18292760, n=15,792: HRR 1.47 in whites, null in African Americans)</td>
 <td><strong>gnomAD v4:</strong> European 39%, <strong>African 37% (parity with European, not lower)</strong>, South Asian 31%, Latino 18%, East Asian 6%. The "common in European, rare elsewhere" framing in some reviews is wrong — African-ancestry frequency is comparable to European</td>
 <td><strong>Clinical Trial</strong> (AMD phenotype, GWAS-replicated); <strong>Mechanistic Extrapolation</strong> (gout-severity link via C5a-NLRP3 priming, no direct gout-cohort effect-size data yet)</td>
-<td><strong>Predicted stratification (Speculative, with counter-evidence flag):</strong> CFH Y402H carriers should benefit MORE from <em>upstream-of-CFH</em> dietary CP0 blockade (rosmarinic acid at C3 convertase, luteolin at CH50/AP50, Houttuynia cordata multi-target) — same mechanistic logic as Q141K × butyrate. <strong>⚠ Counter-evidence to acknowledge:</strong> the closest empirical analog (CFH × dietary supplementation × AMD progression) shows the OPPOSITE direction — Vavvas 2018 reports HR 2.9 (p=0.018) <strong>paradoxical worsening</strong> for CFH high-risk on AREDS zinc/antioxidant formulation; Merle 2015 / Klein 2008 replicate the direction. <strong>Mechanism-dissociation per <a href="../cfh-mechanism-dissociation-cp0-candidates-computational/">comp-039</a> (2026-05-21):</strong> all four upstream-CP0 candidates (rosmarinic acid, luteolin, HCP/HCPM/CHCP, Helicteres benzofuran lignans) classified <strong>CFH-independent</strong> with mechanism-site justification — rosmarinic acid binds nascent C3b thioester Cys988 (Sahu 1999); HCP/HCPM blocks at C3 + <strong>C4</strong> cleavage (Lu 2018, and CFH is AP-specific not C4 — mechanistically incompatible with CFH-dependence); luteolin's matched CP/AP IC50 (Zhang 2008) inconsistent with CFH-competitive mechanism; Helicteres CP&gt;AP IC50 (Yin 2016) similarly inconsistent. Two-model agreement on classification (Claude as Model A, DeepSeek as Model B); both reject AMD-paradox direction; preserved disagreement on prediction strength (Model A negative / Model B null) → UKB cross-tab pre-specifies both. <strong>Empirically untested as of 2026-05-21</strong> — biobank-mining feasibility: UK Biobank application = £3–9K + 6–12 months; AoU Researcher Workbench ~2–4 weeks free; cheapest practical path = collaboration with existing UKB gout-GWAS groups (Merriman/Otago, Major-Wrigley/Auckland, Choi/MGH). <strong>Lead candidate-stratified cross-tab (per comp-039):</strong> rs1061170 × Phenol-Explorer rosmarinic-acid intake × incident gout M10.x, pre-specifying negative AND null directions; HR &gt; 1.5 refutes upstream-CP0-bypass hypothesis. HCP cross-tab deferred to East Asian cohorts (KoGES / CKB / Singapore Chinese Health Study — <a href="../computational-experiments/">comp-041 queued</a>) where Houttuynia exposure is captured. <strong>Wet-lab definitive test (<a href="../computational-experiments/">comp-040 queued</a>, blocked on OE lab access):</strong> CFH-depleted-serum MSU-crystal complement-activation assay. See <code>logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md</code> for the full biobank feasibility scan.</td>
+<td><strong>Predicted stratification (Speculative, with counter-evidence flag):</strong> upstream-of-CFH dietary CP0 candidates may bypass weakened CFH regulation, but no carrier-specific benefit is established. The closest empirical analog (CFH × dietary supplementation × AMD progression) showed paradoxical worsening in high-risk carriers (Vavvas 2018; Merle 2015; Klein 2008). comp-039 classified the four candidates as CFH-independent on mechanistic grounds and pre-specified negative and null outcomes for a biobank test. This is a falsifiable hypothesis, not a recommendation. See comp-039 and the canonical complement page for the full evidence and assay plan.</td>
 <td><a href="../complement-c5a-gout/">complement-c5a-gout.md</a> §6.3, <a href="../upstream-complement-modulator-sweep-computational/">upstream-complement-modulator-sweep-computational.md</a>, <a href="../cfh-mechanism-dissociation-cp0-candidates-computational/">cfh-mechanism-dissociation-cp0-candidates-computational.md</a> (comp-039)</td>
 </tr>
 </tbody>
@@ -6068,7 +6054,7 @@
 <th>Allele frequency</th>
 <th>Evidence tier</th>
 <th>OE-platform implication</th>
-<th>Canonical wiki page</th>
+<th>Detailed evidence</th>
 </tr>
 </thead>
 <tbody>
@@ -6128,7 +6114,7 @@
 <th>Allele frequency</th>
 <th>Evidence tier</th>
 <th>OE-platform implication</th>
-<th>Canonical wiki page</th>
+<th>Detailed evidence</th>
 </tr>
 </thead>
 <tbody>
@@ -6269,17 +6255,16 @@
 </tr>
 </tbody>
 </table>
-<p><strong>This caveat is the canonical statement.</strong> Other wiki pages (<a href="../gout-action-guide/"><code>gout-action-guide.md</code></a>, <a href="../personal-genome-protocol/"><code>personal-genome-protocol.md</code></a>, <a href="../genotype-informed-supplement-workflow/"><code>genotype-informed-supplement-workflow.md</code></a>) cross-reference this section rather than repeat the warning. Updates to consumer-SNP-quality discipline land here first; downstream pages link to it.</p>
 <hr />
 <h2 id="open-questions-coverage-gaps">Open questions / coverage gaps<a class="headerlink" href="#open-questions-coverage-gaps" title="Permanent link">&para;</a></h2>
-<p>These are the gaps the OE corpus has noted but does not yet have evidence depth for. Each is a candidate for a future literature-scan subagent pass or computational-experiment design.</p>
+<p>These questions lack sufficient evidence for a current stratification verdict.</p>
 <ol>
 <li><strong>Comprehensive SLC22A12 (URAT1) allelic series across non-East-Asian RHUC1 cases.</strong> Most published URAT1 LoF variants are characterized in Japanese cohorts (Ichida 2004, Enomoto 2002). The full allelic series in European, South Asian, and African-ancestry RHUC1 patients is less well documented; gnomAD provides exome-frequency data that could anchor a more complete catalogue.</li>
 <li><strong>Common-variant NLRP3 polymorphisms and gout-flare severity.</strong> rs10754558 and rs35829419 (Q705K) have mixed replication for gout-flare-severity stratification. A dedicated meta-analysis across published gout-flare cohorts would help establish whether these variants justify being a NLRP3-inhibitor responder-stratification marker (relevant to dapansutrile, oridonin development per <a href="../nlrp3-inhibitor-screen/"><code>nlrp3-inhibitor-screen.md</code></a>).</li>
 <li><strong>Polygenic risk score (PRS) calibration for gout across ancestries.</strong> The 351 loci of Tin 2019 are predominantly European-ancestry-derived. Cross-ancestry PRS portability for serum urate is documented as moderate at best; the East Asian Biobank GWAS (Boocock 2020 and successors) would be the natural anchor for an East-Asian-calibrated PRS. The platform's stratification-mining computational experiments would benefit from PRS rather than single-variant indexing for some questions.</li>
 <li><strong>Q141K homozygote PK / PD response to systemic vs gut-lumen uricase.</strong> This is open. <a href="../uricase-abcg2-genotype-stratification-computational/">comp-019</a> attempted a genotype ranking, but <a href="../gut-lumen-uricase-physiologic-regime-computational/">comp-044</a> invalidated its quantitative regime. No genotype-stratified uricase trial was identified, so Q141K belongs as a prospective stratification variable rather than a response predictor.</li>
-<li><strong>GLUT9 druggability.</strong> SLC2A9 has the largest per-allele effect on serum urate of any locus, yet no clinical-grade GLUT9-targeted drug exists. Whether this is a tractability problem (structural / selectivity) or a clinical-priority problem (URAT1 was a richer initial substrate) deserves a dedicated chassis-pending entry.</li>
-<li><strong>G6PD deficiency × gut-lumen uricase safety.</strong> Stated open question above in Category 6: whether the engineered-koji gut-lumen approach is safer for G6PD-deficient patients than systemic recombinant uricase is <strong>mechanistically plausible but empirically untested</strong>. Worth queuing as a peer-track open question.</li>
+<li><strong>GLUT9 druggability.</strong> SLC2A9 has the largest per-allele effect on serum urate of any locus, yet no clinical-grade GLUT9-targeted drug exists. Whether the gap reflects structural/selectivity tractability or clinical prioritization of URAT1 is unresolved.</li>
+<li><strong>G6PD deficiency × gut-lumen uricase safety.</strong> Whether the engineered-koji gut-lumen approach is safer for G6PD-deficient patients than systemic recombinant uricase is <strong>mechanistically plausible but empirically untested</strong>.</li>
 <li>
 <p><strong>East-Asian-cohort Q141K × dietary-fiber RCT.</strong> Per the multilingual scan 2026-05-19 (see <code>logs/multilingual-east-asian-gout-cohort-scan-2026-05-19.md</code>), no Q141K-stratified fiber or butyrate-supplementation RCT has been published in any database (PubMed, citation-chain through Chinese/Japanese cohorts). The Han Chinese / Japanese cohorts (Q141K frequency ~30% in general population, ~50% in gout patients) are the natural recruitment substrate for the canonical Q141K × fiber trial design at <a href="../abcg2-modulators/"><code>abcg2-modulators.md</code> §6</a>. The empirical question remains genuinely untested in 2026.</p>
 </li>
@@ -6287,10 +6272,10 @@
 <p><strong>W258X-homozygote lifetime EI-AKI risk.</strong> Despite W258X being intensively studied across ~31,000 Japanese individuals (Iwai, Taniguchi, Tabara 2014, Hamajima 2011, Wakida 2008), the lifetime exercise-induced AKI incidence in homozygotes vs heterozygotes is not quantified in any published source. This is a tractable Japanese-cohort epidemiology study and a load-bearing constraint for the URAT1-siRNA modality safety case at <a href="../sirna-urat1-modality/"><code>sirna-urat1-modality.md</code></a>.</p>
 </li>
 <li>
-<p><strong>HLA-B*58:01-positive febuxostat prospective safety cohort.</strong> The substitution recommendation has strong mechanistic backing but no large prospective cohort tracks B*58:01-positive febuxostat-takers for SCAR incidence. The Taiwan / Korea / Hong Kong universal-screening programs are now generating exactly this cohort by construction — published outcomes data from these programs (2025+) should be re-scanned in the next sweep.</p>
+<p><strong>HLA-B*58:01-positive febuxostat prospective safety cohort.</strong> The substitution recommendation has strong mechanistic backing, but no large prospective cohort tracks SCAR incidence among B*58:01-positive febuxostat recipients. Universal-screening programs in Taiwan, Korea, and Hong Kong create the relevant cohort, but published prospective outcomes remain absent.</p>
 </li>
 <li>
-<p><strong>East-Asian-literature deep dive on TCM-era gout cohorts.</strong> Per <a href="../CLAUDE.md"><code>CLAUDE.md</code> §"Global-multilingual research by default"</a>, direct CNKI / WanFang / J-STAGE / CiNii queries (requiring authenticated browser sessions) likely surface additional Chinese / Japanese cohort papers — particularly regional sub-cohort breakdowns and TCM-context intervention studies — not surfaced by the 2026-05-19 multilingual scan. A dedicated session with database credentials would close this gap.</p>
+<p><strong>East-Asian TCM-era gout cohorts.</strong> The 2026-05-19 multilingual scan did not include authenticated CNKI, WanFang, J-STAGE, or CiNii coverage. Regional sub-cohort analyses and TCM-context intervention studies may therefore be underrepresented.</p>
 </li>
 </ol>
 <hr />
@@ -6310,14 +6295,13 @@
 <li><a href="../sirna-urat1-modality/">sirna-urat1-modality.md</a> — URAT1 LoF (RHUC1) as the human-genetic anchor for URAT1-targeted siRNA</li>
 <li><a href="../chassis-pending-interventions/">chassis-pending-interventions.md</a> — pharmacological-chaperone class for Q141K (§7)</li>
 <li><a href="../gout-clinical-pipeline/">gout-clinical-pipeline.md</a> — current drug pipeline; informs which variants are clinically actionable now</li>
-<li><a href="../genotype-informed-supplement-workflow/">genotype-informed-supplement-workflow.md</a> §"Pattern library" — reusable variant → pathway vulnerability → bypass intervention pattern instantiated by Q141K × butyrate, OCTN1 × EGT, and CFH Y402H × dietary CP0 candidates</li>
+<li><a href="../genotype-informed-supplement-workflow/">genotype-informed-supplement-workflow.md</a> §"Pattern library" — variant → vulnerability → bypass hypothesis, with Q141K × butyrate explicitly unconfirmed</li>
 <li><a href="../cfh-mechanism-dissociation-cp0-candidates-computational/">cfh-mechanism-dissociation-cp0-candidates-computational.md</a> — comp-039 per-candidate CFH-independence classification with UKB ↔ AoU biobank cross-tab specification</li>
 <li><a href="../complement-c5a-gout/">complement-c5a-gout.md</a> §9.7 — CFH Y402H stratification context within the dietary CP0 strategy</li>
 <li><a href="../medicinal-mushroom-complement-track/">medicinal-mushroom-complement-track.md</a> — OCTN1 / SLC22A4 variant context for ergothioneine prioritization</li>
 </ul>
 <hr />
-<p><em>Index page; no inline mechanism deep-dives. Variant-specific mechanisms, rescue strategies, and intervention design belong on the canonical wiki pages linked in the "Canonical wiki page" column of each table.</em>
-<em>Downstream stratification analyses: use the <a href="../genotype-informed-supplement-workflow/">Pattern library</a> (variant → pathway vulnerability → bypass intervention) as the reusable template when adding new genotype-informed workflows.</em></p>
+<p>Variant-specific mechanisms, rescue strategies, and intervention designs are linked from the "Detailed evidence" column. The <a href="../genotype-informed-supplement-workflow/">Pattern library</a> formalizes the variant → pathway vulnerability → bypass-intervention framework.</p>
 
 
 

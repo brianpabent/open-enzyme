@@ -375,7 +375,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -406,13 +406,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2020,7 +2013,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2055,7 +2048,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2125,7 +2118,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3107,7 +3100,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3142,7 +3135,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -3683,13 +3676,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4003,7 +3989,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -4780,7 +4766,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5360,29 +5346,29 @@
 <h1 id="comp-046-staged-purine-sink-mass-balance">comp-046 — Staged purine-sink mass balance<a class="headerlink" href="#comp-046-staged-purine-sink-mass-balance" title="Permanent link">&para;</a></h1>
 <p><strong>Status:</strong> Complete first pass — 2026-07-13</p>
 <h2 id="question">Question<a class="headerlink" href="#question" title="Permanent link">&para;</a></h2>
-<p>When are proximal nucleoside interception, microoxic UOX, and distal anaerobic PDB genuinely complementary rather than redundant—or counterproductive?</p>
+<p>Two separate questions: when does whole-cell GR-5 interception reduce modeled absorbed dietary precursor, and when does spatial UOX→PDB access capture more endogenous luminal urate than the selected overlap-adjusted well-mixed architecture? This model does not test joint three-stage complementarity or counterproductivity relative to either sink alone.</p>
 <h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
-<p>The corrected model keeps two 100-unit ledgers separate:</p>
+<p>The corrected model keeps two normalized questions separate:</p>
 <ol>
 <li><strong>Dietary precursor ledger:</strong> whole-cell GR-5 nucleoside interception, microbial salvage/retention, free-base liberation, absorbed material, and unabsorbed material. Every grid cell conserves mass.</li>
-<li><strong>Endogenous luminal-urate ledger:</strong> UOX and PDB capture under either overlap-adjusted well-mixed access or spatial UOX→residual-transfer→PDB access.</li>
+<li><strong>Endogenous luminal-urate architecture comparison:</strong> capture fractions under either overlap-adjusted well-mixed access or spatial UOX→residual-transfer→PDB access. This is not a conserved fate ledger because uncaptured residual material is not explicitly tracked.</li>
 </ol>
-<p>A 6,561-cell discrete full-factorial spans broad, explicitly non-clinical parameter levels. Outputs are conserved fate ledgers and an architecture boundary, not probabilities or serum urate.</p>
+<p>Two independent 81-cell discrete full-factorials span broad, explicitly non-clinical parameter levels. Outputs are one conserved dietary fate ledger plus an endogenous capture-fraction comparison and architecture boundary—not probabilities or serum urate.</p>
 <h2 id="reproduce">Reproduce<a class="headerlink" href="#reproduce" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python3<span class="w"> </span>analyze.py
 </code></pre></div>
-<p>Python standard library only. The discrete full-factorial is deterministic; outputs are reproducible.</p>
+<p>Python standard library only. Both discrete full-factorials are deterministic; outputs are reproducible.</p>
 <h2 id="headline-result">Headline result<a class="headerlink" href="#headline-result" title="Permanent link">&para;</a></h2>
-<p>The upstream stage is beneficial only when whole-cell GR-5 cleavage is coupled to microbial salvage/retention or reduced absorption. Cleavage alone is not removal. Spatial staging is not guaranteed to win: it beats overlap-adjusted well-mixed access only when residual transfer is efficient enough. Dietary and endogenous ledgers are never summed into one efficacy number.</p>
-<p>The decisive experiment is isotope-resolved: nucleosides, free bases, microbial incorporation, transepithelial transfer, urate, and PDB products must all be measured.</p>
+<p>The upstream stage is beneficial only when whole-cell GR-5 cleavage is coupled to microbial salvage/retention or reduced absorption. Cleavage alone is not removal. Spatial staging is not guaranteed to win: it beats overlap-adjusted well-mixed access only when residual transfer is efficient enough. The dietary ledger and endogenous comparison are never combined into one efficacy number.</p>
+<p>The decisive experiment is isotope-resolved: nucleosides, free bases, microbial incorporation, transepithelial transfer, urate, and PDB products must all be measured. The dietary ledger and endogenous capture comparison are never summed into one efficacy number.</p>
 <h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>analyze.py</code> — conserved ledgers, architecture boundary, and sensitivity analysis</li>
+<li><code>analyze.py</code> — conserved dietary fate ledger, endogenous architecture boundary, and separate sensitivity analyses</li>
 <li><code>inputs/model_parameters.json</code> — discrete scenario levels and architecture definitions</li>
 <li><code>inputs/provenance.md</code> — evidence boundary</li>
 <li><code>inputs/query-strategy.json</code> — query-framing artifact</li>
-<li><code>outputs/results.json</code> — machine-readable <strong>summary</strong> results (aggregates + architecture boundary), reproducible from the full-factorial by rerunning <code>analyze.py</code>; the 6,561 per-cell rows are not committed</li>
+<li><code>outputs/results.json</code> — machine-readable <strong>summary</strong> results (aggregates + architecture boundary), reproducible from the two 81-cell full-factorials by rerunning <code>analyze.py</code>; per-cell rows are not committed</li>
 <li><code>outputs/summary.md</code> — interpretive output</li>
 </ul>
 

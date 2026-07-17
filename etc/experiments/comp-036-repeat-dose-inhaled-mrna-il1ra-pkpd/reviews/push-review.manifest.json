@@ -1,0 +1,111 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/README.md",
+      "kind": "design",
+      "bytes": 15818,
+      "sha256": "3a2e07779f2d1a3843fee101be3a9985ddde221cc2159785dce692f981f29e33"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/analyze.py",
+      "kind": "design",
+      "bytes": 42730,
+      "sha256": "6bdffe325411ae58cabce46d5934873abf774ff37a2e176ce9f52ed3c02d09ed"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/inputs/clinical_comparators.json",
+      "kind": "design",
+      "bytes": 9233,
+      "sha256": "4043d4fbedd61d49074afa914b7f9b57d9214b656efdc024362c8d51ee2c11e4"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/inputs/dosing_regimens.json",
+      "kind": "design",
+      "bytes": 3228,
+      "sha256": "f6631bf468425d64ca7125df4370bdd7bda7349edc60bb8efe3d64a5ad45868b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/inputs/il1ra_receptor_binding.json",
+      "kind": "design",
+      "bytes": 7856,
+      "sha256": "5c222c51e0de8756781b602b46a111344bf44e1db6fc970f35254416ba683745"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/inputs/model_parameters.json",
+      "kind": "design",
+      "bytes": 3278,
+      "sha256": "aba1b4c4deec37366d5fca9475b60baafe8929db8510388f21c2430c0dd5b277"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 9735,
+      "sha256": "261694133c301ab57b64e2938a955b88c58bb5e534a12e73a967051f2c69c92b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/inputs/single_dose_pk_inherited.json",
+      "kind": "design",
+      "bytes": 4007,
+      "sha256": "09820a77ce92cafadac918ffe08fc47c997e759d5dde183c31daf740ebf1844d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/outputs/dose_pkpd_prediction.json",
+      "kind": "generated_output",
+      "bytes": 39012,
+      "sha256": "f40bb057b1b343451505f73683a458b1a1d12be41a6a9b8bb00e1352b565e714"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 5314,
+      "sha256": "8f40ed5f0531ece616d386cd825ac4bcbdfa5f5d6c92ac2f4dfaabaeae3685e9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-036-repeat-dose-inhaled-mrna-il1ra-pkpd/outputs/trajectory_data.json",
+      "kind": "generated_output",
+      "bytes": 47820,
+      "sha256": "3ad589bcad4387e53c38523dab35daac575e19c91946a2a4a1b7a607721ea9e2"
+    },
+    {
+      "path": "wiki/chassis-pending-interventions.md",
+      "kind": "proposed_update",
+      "bytes": 37221,
+      "sha256": "a14617bdc4b75b69b543878ce0cbf8b202098e82756593c5a66ec437a61121b9"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
+    },
+    {
+      "path": "wiki/delivery-route-matrix.md",
+      "kind": "proposed_update",
+      "bytes": 37753,
+      "sha256": "8709717f92c64cd194458d7b0a9b184afe9a48016f5029cc701b31469b68f2a2"
+    },
+    {
+      "path": "wiki/gout-clinical-pipeline.md",
+      "kind": "proposed_update",
+      "bytes": 25630,
+      "sha256": "2be47a3fe3264374852ddd146d981344663c651bb2dc494a59120880f5da96e2"
+    },
+    {
+      "path": "wiki/nlrp3-exploit-map.md",
+      "kind": "proposed_update",
+      "bytes": 81255,
+      "sha256": "7c642b8308458111398fac152af7155db9f9c16f9cafa5c9674dda0069e3aeaf"
+    },
+    {
+      "path": "wiki/repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md",
+      "kind": "proposed_update",
+      "bytes": 4796,
+      "sha256": "2a125ce78124d76076d6b6b4b773724ca4a095bb511ee3ae1688cc031eaee0ef"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "62d46d80a747ba4ea27ac75b16bd2e935f20876f70ff4a30078086879e0824ad"
+}

@@ -379,7 +379,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -410,13 +410,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2024,7 +2017,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2059,7 +2052,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2129,7 +2122,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3111,7 +3104,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3146,7 +3139,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -3689,13 +3682,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4009,7 +3995,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -4786,7 +4772,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5477,8 +5463,8 @@
 
 
 <h1 id="quantification-ladder">Quantification Ladder<a class="headerlink" href="#quantification-ladder" title="Permanent link">&para;</a></h1>
-<p>A four-tier framework for measuring compound or enzyme content in Open Enzyme outputs (engineered koji, medicinal mushroom extracts, future TCM and siRNA tracks). The ladder lets a distributed open-source contributor work at the lowest rigor tier their use case tolerates, while staying anchored to a higher-rigor calibration done once per protocol revision.</p>
-<p>This page is the <strong>canonical definition</strong> of the framework. Track-specific instantiations (assay chemistry, target compounds, calibration anchors) live in their own protocol pages and reference this one.</p>
+<p>A four-tier framework for measuring compound or enzyme content. Use the lowest tier that satisfies the decision, anchored to a higher-rigor calibration for each protocol and material class.</p>
+<p>Track-specific pages define assay chemistry, standards, sample preparation, and calibration anchors.</p>
 <h2 id="the-four-tiers">The four tiers<a class="headerlink" href="#the-four-tiers" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -5518,34 +5504,34 @@
 </table>
 <h2 id="the-operational-pattern-calibrate-once-track-batches-cheap">The operational pattern: calibrate once, track batches cheap<a class="headerlink" href="#the-operational-pattern-calibrate-once-track-batches-cheap" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Initial Tier 3 calibration.</strong> Quantify a reference batch by the protocol's canonical bench method. Anchor numbers (e.g., mg cordycepin / g extract; U lipase / g koji). Document extract source, batch ID, lot, harvest conditions.</li>
+<li><strong>Initial Tier 3 calibration.</strong> Quantify a reference batch by the protocol's validated bench method. Anchor numbers (e.g., mg cordycepin / g extract; U lipase / g koji). Document extract source, batch ID, lot, and harvest conditions.</li>
 <li><strong>Batch tracking at Tier 1 or Tier 2.</strong> For each new batch from the same protocol, run a cheap assay against the reference batch as the standard curve anchor. If the batch reads within ±20% of reference, accept. If outside, escalate to Tier 3 re-quantification or investigate the deviation.</li>
-<li><strong>End-user dosing follows the Tier 3-calibrated ratio.</strong> "1 g of this batch ≈ 8 mg cordycepin per the SOP done on this lot." Tier 1 at the consumption side, not the characterization side.</li>
-<li><strong>Tier 4 only on demand.</strong> Invoked when regulatory submission requires it, or when in-house Tier 3 produces a result surprising enough to want independent verification before publishing or acting clinically.</li>
+<li><strong>Experimental sample mass follows the calibrated ratio.</strong> Record the lot-specific relationship between material mass and measured compound or activity. This is an experimental input, not a human dose recommendation.</li>
+<li><strong>Tier 4 only on demand.</strong> Use it when an audit trail, regulatory-grade result, or independent verification is required.</li>
 </ol>
 <h2 id="why-this-matters-operationally">Why this matters operationally<a class="headerlink" href="#why-this-matters-operationally" title="Permanent link">&para;</a></h2>
-<p>Without the tiered framework, every batch would need a full Tier 3 instrumented assay. That is cost-prohibitive at scale and impossible for distributed open-source contributors without lab access. With it, Tier 3 is invoked once per protocol revision; Tier 2 handles batch consistency cheaply; Tier 1 keeps end-user dosing tied to verified content. This is the same discipline that lets the koji track work as a home-fermentation project rather than a CRO-only project, and that lets the medicinal mushroom track ship characterized compounds without an HPLC in every contributor's basement.</p>
+<p>Tier 3 establishes the reference value; Tier 2 tracks routine batch variation; Tier 1 provides categorical process control. The ladder reduces routine assay cost without pretending that visual or phone-based measurements are equivalent to instrumented analysis.</p>
 <p>The ladder also catches a specific class of failure: dose-vs-product-content mismatches. If a commercial extract is marketed at one content level but a Tier 2 colorimetric check shows another, the discrepancy surfaces before downstream therapeutic-dose reasoning depends on the marketed number. See <a href="../medicinal-mushroom-complement-track/"><code>medicinal-mushroom-complement-track.md</code></a> §"Reality check" for the Real Mushrooms Cordyceps-M case (3–4 mg cordycepin per 1 g serving at 0.4% content, surfaced by tier-discipline thinking).</p>
-<p><strong>Low-cost automation add-on (Picolab prior art, 2026-05-19).</strong> The ladder's main reproducibility bottleneck is often not assay chemistry; it is operator variation in serial dilution, mixing, transfer order, and image timing. <a href="https://github.com/OmkarKovvali/picolab_v2">Picolab v2</a> shows an open-source, non-production pattern for reducing that variance at tube scale: repurposed printer gantry, syringe actuation, G-code planning, camera snapshots, and operator-approved action execution. Treat this as optional method infrastructure for Tier &#8532; development, not as evidence that OE assays are automated or validated. First OE use should be benign dye/standard-curve work before any biological material. (Engineering prior art; source: Picolab v2 repository; see <a href="../etc/practitioner-toolkit/"><code>practitioner-toolkit.md</code></a>)</p>
+<p><strong>Optional low-cost automation.</strong> Operator variation in serial dilution, mixing, transfer order, and image timing can dominate assay variance. <a href="https://github.com/OmkarKovvali/picolab_v2">Picolab v2</a> provides engineering prior art for tube-scale automation using a printer gantry, syringe actuation, G-code planning, camera snapshots, and operator-approved actions. Validate any adaptation first with benign dye and standard-curve work; this is method infrastructure, not evidence that a biological assay is validated.</p>
 <h2 id="instantiations">Instantiations<a class="headerlink" href="#instantiations" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Koji digestive enzyme quantification.</strong> <a href="../enzyme-quantification-protocol/"><code>enzyme-quantification-protocol.md</code></a>. Lipase (olive-oil titration → p-NPP smartphone → spectrophotometer p-NPP or pH-stat → outsourced HUT or USP units). Amylase (starch-iodine clearance → DNS reducing-sugar smartphone → bench DNS or Bernfeld → outsourced). Protease (gelatin liquefaction or skim-milk plate → ninhydrin or azocasein smartphone → bench azocasein or pH-stat → outsourced).</li>
 <li><strong>Medicinal mushroom extract characterization.</strong> <a href="../medicinal-mushroom-extract-sops/"><code>medicinal-mushroom-extract-sops.md</code></a> §SOP-6. Cordycepin (visual dosing-by-ratio → speculative diazo Tier 2 pending verification, UV 260 nm fallback → HPLC SOP-2 → outsourced GMP-HPLC). EGT (visual → DTNB Ellman's thiol smartphone → HILIC-HPLC SOP-3 → outsourced). GLPP (visual + mass-balance → phenol-sulfuric total-polysaccharide smartphone → SEC-MALS SOP-1 → outsourced).</li>
 <li><strong>Microbiome-derived butyrate / SCFA quantification.</strong> <a href="../tier-2-butyrate-assay-audit-computational/"><code>tier-2-butyrate-assay-audit-computational.md</code></a> (comp-038) found no ready-to-adopt home/colorimetric butyrate Tier 2 assay. Current path: GC-MS remains the Tier 3 anchor; HPLC-UV is a plausible Tier 2-lab candidate for culture supernatants after spike-recovery + GC-MS validation; electrochemical fecal SCFA profiling is a promising stool-specific future direction, not production-ready.</li>
 </ul>
-<p><strong>Structural gap — extends beyond butyrate to all microbiome-derived metabolites (added 2026-05-21; promoted to named Platform / Strategic Open Question 2026-05-22).</strong> The Tier 2 absence is not a butyrate-specific inconvenience; it is a class-level methodology bottleneck for every intervention whose active molecule is produced <em>in situ</em> by gut bacteria. The same dose-verification problem applies to: <strong>other SCFAs</strong> (propionate, acetate — same GC-MS Tier 3 path, same Tier 2 absence); <strong>secondary bile acids</strong> (lithocholic acid, deoxycholic acid — Tier 3 is LC-MS/MS, no validated Tier 2 colorimetric or enzymatic surface); <strong>microbial indoles</strong> (indole-3-propionate, indole-3-aldehyde, AhR ligand class — Tier 3 is LC-MS/MS, Tier 2 absent); <strong>TMAO</strong> (Tier 3 LC-MS/MS, Tier 2 absent). The personalised-medicine pipeline can verify the <em>precursor</em> was administered (fiber, resistant starch, probiotic strain, dietary tryptophan), but cannot verify that the downstream metabolite reached the target tissue at the intended concentration — the dose remains an unverified variable, indistinguishable from mechanism-failure noise. Closing this gap for even <em>one</em> metabolite class with a validated Tier 2 proxy unlocks the QC loop for every future microbiome-metabolite intervention. comp-038's "Next Step" — full-text/protocol verification on PMID 23542733 and PMID 42041444 (<strong>both completed 2026-07-14</strong>: De Baere HPLC-UV confirmed for culture supernatant; Gu 2026 electrochemical-ANN confirmed GC-MS-validated for stool, n=30) + paired sodium-butyrate spike/recovery against GC-MS (the remaining wet-lab gate, <a href="../validation-experiments/">§1.31</a>) — is the cheapest path to that proof-of-concept for the SCFA sub-class; analogous desk audits + paired-validation designs would be needed per other metabolite class. <strong>See <a href="../open-questions/"><code>open-questions.md</code> §"Class-level Tier 2 assay gap for microbiome-derived metabolites"</a> (Platform / Strategic section)</strong> — this closing-note paragraph has been promoted to a named platform open question with Phase 2 follow-ups (P2-1 comp-038 next-step protocol-verification, P2-2 multi-operator round-robin when a Tier 2 candidate exists, P2-3 secondary-bile-acid extension).
+<p><strong>Class-level measurement gap.</strong> The lack of Tier 2 assays extends to other <em>in situ</em> microbiome metabolites: propionate and acetate generally retain GC-MS as the Tier 3 anchor; secondary bile acids, microbial indoles, and TMAO generally require LC-MS/MS. Measuring a precursor does not establish that the downstream metabolite reached the target tissue at the intended concentration. For butyrate, PMID 23542733 supports HPLC-UV in culture supernatant and PMID 42041444 reports a GC-MS-validated electrochemical/ANN approach for stool (n=30); paired spike-recovery against GC-MS remains the wet-lab gate (<a href="../validation-experiments/">validation experiment §1.31</a>). See the <a href="../open-questions/">class-level Tier 2 assay question</a>.
 - <strong>Future tracks.</strong> TCM compound triage (per <a href="../tcm-modern-rigor-intersection/"><code>tcm-modern-rigor-intersection.md</code></a>) and siRNA / URAT1 modality (per <a href="../sirna-urat1-modality/"><code>sirna-urat1-modality.md</code></a>) inherit the framework as new compound classes are added.</p>
 <h2 id="discipline-notes">Discipline notes<a class="headerlink" href="#discipline-notes" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Single source of truth for tier definitions.</strong> This page. Tier-specific assay details live in the instantiation pages; the abstract framework definition stays here. Reason: two parallel definitions diverge over time. The 2026-05-14 walkthrough caught the early drift between <code>enzyme-quantification-protocol.md</code> and <code>medicinal-mushroom-extract-sops.md</code> SOP-6 and consolidated them here.</li>
+<li><strong>Keep one tier definition.</strong> Tier-specific assay details live in the method pages; do not redefine the ladder within each assay.</li>
 <li><strong>Tier 3 is the calibration anchor for the others.</strong> Every Tier 1 and Tier 2 reading needs to translate back to an absolute number, and the only way to get there is through a Tier 3 standard curve. Skipping Tier 3 ("we'll just do Tier 1 forever") collapses inter-sample ratios into vibes.</li>
 <li><strong>Tier 4 is not a default escalation.</strong> Outsourced assay is for one-time benchmarking or regulatory submission, not routine analysis. The 10× cost gap from Tier 3 to Tier 4 is not value-additive unless you specifically need the audit trail or the GMP chain of custody.</li>
 <li><strong>The framework is operational quality, not novelty.</strong> Adopting it does not require any new science. It requires the discipline to run the calibration step once, log the reference numbers somewhere persistent, and trust the cheap-tier readings against that anchor.</li>
 </ul>
 <h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="../genotype-informed-supplement-workflow/"><code>genotype-informed-supplement-workflow.md</code></a></strong>: closed-loop n=1 pharmacogenomics workflow that composes this ladder (steps 3–4: Tier 2 batch QC + calibrated dose) with genotype-informed compound selection and biomarker tracking. The user-facing entry point that walks the whole pipeline end-to-end.</li>
-<li><a href="../enzyme-quantification-protocol/"><code>enzyme-quantification-protocol.md</code></a>: canonical first instantiation; koji digestive enzymes (lipase, amylase, protease).</li>
+<li><strong><a href="../genotype-informed-supplement-workflow/"><code>genotype-informed-supplement-workflow.md</code></a></strong>: genotype-stratified intervention research workflow using batch QC and exposure measurement.</li>
+<li><a href="../enzyme-quantification-protocol/"><code>enzyme-quantification-protocol.md</code></a>: digestive-enzyme assays for lipase, amylase, and protease.</li>
 <li><a href="../medicinal-mushroom-extract-sops/"><code>medicinal-mushroom-extract-sops.md</code></a> §SOP-6: second instantiation; cordycepin, EGT, GLPP.</li>
 <li><a href="../etc/open-source-platform/"><code>open-source-platform.md</code></a>: platform-level quality methodologies; this ladder is one of them.</li>
 </ul>

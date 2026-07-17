@@ -1,0 +1,129 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling/README.md",
+      "kind": "design",
+      "bytes": 8788,
+      "sha256": "a46fe9b50b0f56ddcc0590a6946f9956582b09a0f4a91f97a8fa36dc5d22a04d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling/inputs/der_threshold_data.json",
+      "kind": "design",
+      "bytes": 3903,
+      "sha256": "e2b3ae53e5e724120d3fbd3ae7a31e017138d6c747e26e7fbc87e8852ba16c1b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling/inputs/di_landscape.json",
+      "kind": "design",
+      "bytes": 5290,
+      "sha256": "d3eab9e6dedeb986a23e595e60c4227afc006d0d197973af5043feb88fd6123b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling/inputs/ec50_data.json",
+      "kind": "design",
+      "bytes": 4017,
+      "sha256": "4a54bb296694dabab6837cd0f59ccfced39e16dd980626e6c9c5032a60f110a3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling/inputs/formulation_data.json",
+      "kind": "design",
+      "bytes": 5449,
+      "sha256": "4887012a6b643e5aa1be5471181fd1feead6fe8dcfbc497f65a60d1d59c86495"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling/inputs/pk_data.json",
+      "kind": "design",
+      "bytes": 5414,
+      "sha256": "ad294dd71430eb3b5f8a28bea26cb034f7778a374f0eed907b5068674475965c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 8389,
+      "sha256": "3bd2fe7a12807ebb486f9f9de355b8d599563a359ed254d4eaa5a8c47bea46ef"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling/scripts/analyze.py",
+      "kind": "design",
+      "bytes": 28033,
+      "sha256": "a32149970ab4dc5751fe77780ee7b6acdeed803630f6ef8f1d029fa2be7f5e0f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling/outputs/dose_response.json",
+      "kind": "generated_output",
+      "bytes": 15087,
+      "sha256": "5c938ea0869cb910602838a2aec34ffc512fdda6aed883997197ae02239128c9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling/outputs/dose_response_table.csv",
+      "kind": "generated_output",
+      "bytes": 1424,
+      "sha256": "1072646878933bbd919b7abdbaed37080a38ef87546167352a89364bb526a1e9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 2306,
+      "sha256": "25d069feaea0a19c5706bcc29a8a14d0131992e852f533de3253e4a82b50ebf0"
+    },
+    {
+      "path": "wiki/chassis-pending-interventions.md",
+      "kind": "proposed_update",
+      "bytes": 37221,
+      "sha256": "a14617bdc4b75b69b543878ce0cbf8b202098e82756593c5a66ec437a61121b9"
+    },
+    {
+      "path": "wiki/compounding-pharmacy-track.md",
+      "kind": "proposed_update",
+      "bytes": 32516,
+      "sha256": "f7a9de93c7233a75771978c18f7a94b81b3e12aaeb755e57a1783b0d1afea23d"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
+    },
+    {
+      "path": "wiki/disulfiram-dose-modeling-computational.md",
+      "kind": "proposed_update",
+      "bytes": 6714,
+      "sha256": "6a93a3f375ecb5c5f5114c0f73effa679535c721d7cdd9c3c6b2f41b13d3afc4"
+    },
+    {
+      "path": "wiki/etc/autonomous-screening-methodology.md",
+      "kind": "proposed_update",
+      "bytes": 25106,
+      "sha256": "22f922f454cf6b90d526e0902e48f7cc24c345a8076d68246eef1d86080c5fbf"
+    },
+    {
+      "path": "wiki/etc/bio-ai-tools.md",
+      "kind": "proposed_update",
+      "bytes": 63996,
+      "sha256": "d9a021e8d7debec90a2786475027c0a08bef82d05eca3d9ebb75111709682376"
+    },
+    {
+      "path": "wiki/gout-kill-chain-delivery-routes.md",
+      "kind": "proposed_update",
+      "bytes": 52167,
+      "sha256": "016a847c1247591eac450fa178c34eb2946c13f0be6bac78ad60ca2efc2fd0f8"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 94611,
+      "sha256": "d14f205ec6cd1927ee2906beb4e4254522f51288201618fbc7722799d7bb0d23"
+    },
+    {
+      "path": "wiki/supplements-stack.md",
+      "kind": "proposed_update",
+      "bytes": 103306,
+      "sha256": "4c2540a17fbec191a9fed0a7f9399ff60ad6706e201bedd5996e30d08a47e85a"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "153b343820c4455bac2da87bc7577378205e53012820bbe61a4187e14fc839b4"
+}

@@ -379,7 +379,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -410,13 +410,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2024,7 +2017,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2059,7 +2052,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2129,7 +2122,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3111,7 +3104,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3146,7 +3139,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -3689,13 +3682,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4009,7 +3995,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -4910,7 +4896,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5493,7 +5479,7 @@
 <blockquote>
 <p><strong>The screen does not identify a credible pharmacological-chaperone candidate, and — more importantly — it cannot, as designed, discriminate one.</strong> Of 134 docked molecules: <strong>0 high-confidence candidates, 2 marginal "uncertain"</strong> (rosuvastatin, vorinostat — reduced to <strong>1</strong> after the Axis 2 expansion disqualified rosuvastatin as a known ABCG2 substrate; see Residual gaps), 132 "no." The decisive result is in the controls: <strong>the four CFTR-corrector positive controls failed to earn rank</strong> (0 of 4 reached candidate tier), while all known ABCG2 inhibitors were correctly rejected (0 false positives). Because the positive controls — the closest thing to ground-truth pharmacological chaperones in the set — do not separate from the field, the screen has no demonstrated power to find real chaperones. <strong>The chaperone-rescue candidate ranking for ABCG2 Q141K is not computationally established</strong> (In Silico; comp-047).</p>
 </blockquote>
-<p><strong>This empirically confirms the comp-032 audit.</strong> The <a href="../logs/comp-reviews/2026-07-13-comp-032-fae0e36.md">2026-07-13 independent review</a> argued comp-032's "positive-control pass" was <strong>tautological</strong> — CFTR correctors scored high only because they were <em>assigned</em> the maximum drug-class prior (1.00), not because the heuristic detected chaperone-like binding. comp-047 removes every prior and forces the same positive controls to earn their rank from docking alone. <strong>They don't.</strong> That is the review's suspicion, confirmed by construction: when the class prior is gone, the chaperone signal comp-032 reported disappears.</p>
+<p><strong>This empirically confirms the comp-032 audit.</strong> The 2026-07-13 independent review argued comp-032's "positive-control pass" was <strong>tautological</strong> — CFTR correctors scored high only because they were <em>assigned</em> the maximum drug-class prior (1.00), not because the heuristic detected chaperone-like binding. comp-047 removes every prior and forces the same positive controls to earn their rank from docking alone. <strong>They don't.</strong> That is the review's suspicion, confirmed by construction: when the class prior is gone, the chaperone signal comp-032 reported disappears.</p>
 <h2 id="control-performance-the-validity-check-comp-032-lacked">Control performance — the validity check comp-032 lacked<a class="headerlink" href="#control-performance-the-validity-check-comp-032-lacked" title="Permanent link">&para;</a></h2>
 <p>Positive controls carry <strong>no prior</strong> here; they must earn rank from Vina scores. "fold-rank" is the rank of the fold-site@Q141K affinity among all 134 molecules (1 = strongest).</p>
 <p><strong>Positive controls — CFTR correctors (must earn candidate tier):</strong></p>

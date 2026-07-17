@@ -375,7 +375,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -406,13 +406,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2020,7 +2013,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2055,7 +2048,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2125,7 +2118,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3107,7 +3100,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3142,7 +3135,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -3683,13 +3676,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4003,7 +3989,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -4780,7 +4766,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5385,7 +5371,6 @@
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  summary.md                            Human-readable findings — this is the artifact cited in the wiki
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>analyze.py                              Analysis script (stdlib only; Lumry-Eyring two-state thermal model + Henderson-Hasselbalch pH + Hofmeister salt + pLDDT interface integrity)
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>README.md                               This file
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>wiki-archive.md                         Long-form narrative (≤archived from sweep daemon synthesis)
 </code></pre></div>
 <h2 id="method-summary">Method summary<a class="headerlink" href="#method-summary" title="Permanent link">&para;</a></h2>
 <p>Composite biophysical scoring framework with four orthogonal axes:</p>
@@ -5404,7 +5389,7 @@
 </li>
 </ol>
 <p>Composite: <code>retention = thermal × (a + b × ph_intact × iface_intact) × salt</code>, with a = 0.30 (monomer-level floor) and b = 0.70 (tetramer-mediated stabilization). Uncertainty band: worst-case / best-case bracket perturbing Tm ±2°C, ΔH_vH ±100 kJ/mol, pKa ±0.5, salt-factor ±0.05.</p>
-<h2 id="limitations-high-level-full-list-in-outputssummarymd-and-wiki-archivemd">Limitations (high-level — full list in <code>outputs/summary.md</code> and <code>wiki-archive.md</code>)<a class="headerlink" href="#limitations-high-level-full-list-in-outputssummarymd-and-wiki-archivemd" title="Permanent link">&para;</a></h2>
+<h2 id="limitations-high-level-full-list-in-outputssummarymd">Limitations (high-level — full list in <code>outputs/summary.md</code>)<a class="headerlink" href="#limitations-high-level-full-list-in-outputssummarymd" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Stdlib only — no MD simulation, no Rosetta ΔΔG, no PDB-coordinate extraction. Interface footprint is from published analyses, not extracted in this run. MD remains the rigorous next step.</li>
 <li>Tm = 27°C from a single primary source (Imani &amp; Shahmohamadnejad 2017). A second independent DSF measurement on Q00511 would harden the load-bearing anchor.</li>
@@ -5414,7 +5399,7 @@
 <h2 id="wiki-links">Wiki links<a class="headerlink" href="#wiki-links" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Interpretive page: <a href="../../../uricase-shio-koji-thermal-stability-computational/"><code>wiki/uricase-shio-koji-thermal-stability-computational.md</code></a></li>
-<li>Frozen long-form analysis: <a href="wiki-archive/"><code>wiki-archive.md</code></a></li>
+<li>Current generated summary: <a href="outputs/summary/"><code>outputs/summary.md</code></a></li>
 <li>Tracking index: <a href="../../../computational-experiments/"><code>wiki/computational-experiments.md</code></a></li>
 <li>Wet-lab experiment this informs: <a href="../../../validation-experiments/"><code>wiki/validation-experiments.md</code> §1.10</a> and §1.16</li>
 <li>Sister analysis (protease axis): <a href="../comp-001-uricase-shio-koji-protease-stability/"><code>experiments/comp-001-uricase-shio-koji-protease-stability/</code></a> and <a href="../../../uricase-protease-stability-computational/"><code>wiki/uricase-protease-stability-computational.md</code></a></li>

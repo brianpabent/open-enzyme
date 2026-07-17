@@ -23,7 +23,7 @@
     
     
       
-        <title>Index - Open Enzyme</title>
+        <title>comp-031 — Invalidated dual-chassis prior - Open Enzyme</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#comp-031-dual-chassis-ecn-pdb-uricase-additive-sua-prediction" class="md-skip">
+        <a href="#comp-031-invalidated-dual-chassis-prior" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              comp-031 — Invalidated dual-chassis prior
             
           </span>
         </div>
@@ -375,7 +375,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -406,13 +406,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2020,7 +2013,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2055,7 +2048,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2125,7 +2118,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3107,7 +3100,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3142,7 +3135,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -3683,13 +3676,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4003,7 +3989,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -4780,7 +4766,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5357,38 +5343,26 @@
   
 
 
-<blockquote>
-<p><strong>⚠️ INVALIDATED (comp-review 2026-07-14).</strong> comp-031 is a toy composition of hard-coded prior effect sizes and inherited comp-019 failed UOX regime. Its combined ΔSUA (−1.8 to −1.9 mg/dL) and "optimal dual-mechanism" claims are RETIRED — no efficacy prior may be drawn here. The separate-strain-vs-dual-cassette reasoning (substrate competition) is preserved. Gated by comp-044/comp-046 and validation §1.34/§1.37. Frozen invalidated provenance.</p>
-</blockquote>
-<h1 id="comp-031-dual-chassis-ecn-pdb-uricase-additive-sua-prediction">comp-031 — Dual-chassis EcN PDB + uricase additive SUA prediction<a class="headerlink" href="#comp-031-dual-chassis-ecn-pdb-uricase-additive-sua-prediction" title="Permanent link">&para;</a></h1>
-<p><strong>Question (from <code>wiki/chassis-pending-interventions.md</code> §"Multi-chassis stacks" M1):</strong> does a dual-chassis stack of engineered EcN expressing the 2,8-dioxopurine PDB cluster (CBT2.0 precedent, Li 2025 PMID 41070194) co-administered with a PULSE-style luminal uricase deliver additive serum urate reduction beyond either arm alone? And does PDB-derived butyrate compound with the gut-lumen uricase sink via ABCG2 induction / Q141K trafficking rescue?</p>
-<p><strong>Verdict: YELLOW (provisional)</strong> — combined dual-chassis intervention is meaningfully better than either single arm but additivity is well below the naive sum because the two urate-consumption arms compete for the same scarce luminal urate substrate. The PDB pathway adds an INDEPENDENT mechanism axis via butyrate-mediated PPARγ ABCG2 induction + HDAC-mediated Q141K trafficking rescue. Combined predicted ΔSUA: <strong>−1.8 to −1.9 mg/dL across genotypes</strong> (90% CI roughly −2.2 to −1.3 mg/dL).</p>
-<p><strong>Engineering handoff: route PDB and uricase to SEPARATE strains, not a dual-cassette EcN.</strong> The substrate-competition penalty means single-chassis dual-cassette engineering gains ~nothing in additional SUA reduction relative to two separate strains co-administered. Avoid the regulatory and stability complexity of an 8-gene PDB cluster + uricase coordinated expression in one chassis.</p>
-<h2 id="reproduce">Reproduce<a class="headerlink" href="#reproduce" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python3<span class="w"> </span>analyze.py
-</code></pre></div>
-<p>Python stdlib only. Generates <code>outputs/results.json</code> and <code>outputs/summary.md</code>. Deterministic seed (42) for Monte Carlo reproducibility.</p>
-<h2 id="file-index">File index<a class="headerlink" href="#file-index" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>analyze.py                            # Analysis script
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>inputs/
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  model_parameters.json               # All parameters with sources/tiers
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  provenance.md                       # Detailed source citations + verification tier
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>outputs/
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  results.json                        # Machine-readable Monte Carlo summaries
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  summary.md                          # Human-readable: tables, headline, engineering handoff
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>README.md                             # This file
-</code></pre></div>
-<h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
+<h1 id="comp-031-invalidated-dual-chassis-prior">comp-031 — Invalidated dual-chassis prior<a class="headerlink" href="#comp-031-invalidated-dual-chassis-prior" title="Permanent link">&para;</a></h1>
+<p><strong>Status: INVALIDATED. No result or engineering recommendation survives.</strong></p>
+<p>comp-031 attempted to predict whether PDB-EcN plus luminal uricase would produce additive serum-urate reduction and whether a PDB-derived butyrate axis would rescue ABCG2/Q141K. The model cannot answer those questions because it:</p>
+<ol>
+<li>inherited comp-019's invalid uricase saturation regime;</li>
+<li>transferred a <em>C. sporogenes</em> butyrate assumption into CBT2.0/EcN without product measurement;</li>
+<li>misattributed direct butyrate rescue to Basseville 2012;</li>
+<li>used unmatched background butyrate; and</li>
+<li>treated spatially distinct oxidative and anaerobic processes as well-mixed competitors.</li>
+</ol>
+<p>The former YELLOW verdict, all ΔSUA values, substrate-competition result, butyrate and Q141K effects, and separate-strain recommendation are retracted. Separate strains, one strain, and temporal staging remain unranked experimental options.</p>
+<p>The obsolete executable model, parameter file, and raw outputs have been removed from the live tree. Git preserves the exact historical run. Do not rerun or patch that model. Any renewed analysis must be a new COMP using physiologic UOX kinetics, measured CBT2.0 carbon fate, matched comparators, explicit compartments and staging, and independently validated serum-urate mapping.</p>
+<p>Current replacements:</p>
 <ul>
-<li><code>wiki/dual-chassis-ecn-pdb-uricase-computational.md</code> — interpretive wiki page</li>
-<li><code>wiki/computational-experiments.md</code> — tracking index</li>
-<li><code>wiki/purine-degrading-bacteria.md</code> — PDB pathway biology + CBT2.0 anchor</li>
-<li><code>wiki/gut-lumen-sink.md</code> — PULSE uricase chassis context</li>
-<li><code>wiki/abcg2-modulators.md</code> — Two distinct modulation modes (PPARγ vs HDAC)</li>
-<li><code>wiki/chassis-pending-interventions.md</code> §"Multi-chassis stacks" M1 — the question this experiment answers</li>
-<li><code>experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/</code> — substrate-limited regime that drives competition logic</li>
+<li><a href="../../../gut-lumen-uricase-physiologic-regime-computational/">comp-044</a> reopens the UOX regime.</li>
+<li><a href="../../../staged-purine-sink-mass-balance-computational/">comp-046</a> conserves dietary fate, treats the endogenous side as a capture-fraction comparison, and defines conditional architecture boundaries.</li>
+<li><a href="../../../validation-experiments/#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux">Validation §1.34</a> tests sequential flux.</li>
+<li><a href="../../../validation-experiments/#137-cbt20-carbon-fate-and-pdb-self-niche-test">Validation §1.37</a> measures CBT2.0 carbon fate.</li>
 </ul>
+<p>See the <a href="../../../dual-chassis-ecn-pdb-uricase-computational/">canonical interpretive page</a>.</p>
 
 
 

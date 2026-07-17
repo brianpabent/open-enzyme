@@ -379,7 +379,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -410,13 +410,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -1548,10 +1541,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cross-validation-feasibility-rating-5810-critical-de-risking-path" class="md-nav__link">
+  <a href="#cross-validation-track-specific-threat-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cross-Validation: Feasibility Rating 5.8/10, Critical De-Risking Path
+        Cross-Validation: Track-Specific Threat Model
       
     </span>
   </a>
@@ -2487,7 +2480,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2522,7 +2515,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2592,7 +2585,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3574,7 +3567,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3609,7 +3602,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -4150,13 +4143,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4470,7 +4456,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -5247,7 +5233,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -6042,7 +6028,7 @@ The <em>S. boulardii</em> group's reported activity of 365 μmol/h/OD<a href="#r
 </ul>
 <p>10–15 g of dry koji as a daily food is realistic — it's in the same mass range as a Creon pancreatic enzyme dose, and orders of magnitude smaller than the yeast mass required for the same enzyme output.</p>
 <p><strong>Interpretation.</strong> Yeast intracellular expression is scientifically sound — the rasburicase precedent (Established) confirms the gene-host combination works at pharmaceutical scale. The problem is <em>format</em>, not biology. At clinical enzyme doses, the yeast mass required to act as a daily food product is implausible for anything short of a highly concentrated, lyophilized, and encapsulated preparation — which starts to look more like a pharmaceutical than a fermented food. Koji, by contrast, delivers the same enzyme mass from a portion that resembles a normal food serving.</p>
-<p><strong>Bottom line.</strong> Yeast intracellular expression is scientifically sound but mass-impractical as a daily food product. Koji is dose-advantaged on scaling grounds and probably the right primary platform for oral delivery. This is consistent with the koji-first framing already adopted in <a href="../etc/open-enzyme-vision/">open-enzyme-vision.md</a> §3, and the yeast track is best understood as: (a) a rapid bench platform for construct validation, (b) a path to a concentrated powder/capsule product for the subset of patients who can't tolerate koji, or &copy; the <em>S. boulardii</em> probiotic route where the dose is set by colonization, not by food mass.</p>
+<p><strong>Bottom line.</strong> Yeast intracellular expression remains a candidate bench, concentrated-product, or probiotic route. Koji may have a mass or solid-state advantage for some oral configurations, but the host decision belongs to the payload, topology, format, and discriminating assay—not a project-wide chassis ranking. See <a href="../koji-track/">koji-track.md</a> and <a href="../etc/open-enzyme-vision/">open-enzyme-vision.md</a>.</p>
 <h2 id="6-open-scientific-questions">6. Open Scientific Questions <a id="questions"></a><a class="headerlink" href="#6-open-scientific-questions" title="Permanent link">&para;</a></h2>
 <p>These are framed as questions for specific experts, but each one includes a path to an answer.</p>
 <h3 id="for-role-1-gut-microbiome-gnotobiotic-models-actively-recruiting">For Role 1 — Gut Microbiome / Gnotobiotic Models <em>(actively recruiting)</em><a class="headerlink" href="#for-role-1-gut-microbiome-gnotobiotic-models-actively-recruiting" title="Permanent link">&para;</a></h3>
@@ -6386,7 +6372,7 @@ If intact yeast cells protect the enzyme better than free enzyme, that supports 
 <td></td>
 </tr>
 <tr>
-<td>This clarifies the lanes: <strong>yeast is the fastest path to uricase for Brian</strong>, wild-type koji handles Lynn's needs today, and engineered koji (uricase + digestive enzymes) is the stretch-goal platform play. See the full koji engineering protocol: <a href="../engineered-koji-protocol/">Engineered Koji Protocol</a>.</td>
+<td>This clarifies the track-local lanes: <strong>yeast is the fastest path to uricase in this proposal</strong>, wild-type koji addresses Lynn's immediate digestive-enzyme use case, and engineered koji (uricase + digestive enzymes) is an optional combined-delivery hypothesis. The broader project does not depend on that combination. See the full koji engineering protocol: <a href="../engineered-koji-protocol/">Engineered Koji Protocol</a>.</td>
 <td></td>
 <td></td>
 <td></td>
@@ -6659,18 +6645,9 @@ If intact yeast cells protect the enzyme better than free enzyme, that supports 
 <li><strong>Integration</strong>: CEN plasmid with URA3 marker for lab-stage work; chromosomal integration (CRISPR-based) for scaled production.</li>
 </ul>
 <p><em>Rationale (Mechanistic Extrapolation)</em>: Secretion of a 135 kDa tetramer is inefficient in yeast. Intracellular accumulation followed by natural autolysis in the fermentation broth or in the gut offers the best balance of expression yield and GI delivery.</p>
-<h3 id="cross-validation-feasibility-rating-5810-critical-de-risking-path">Cross-Validation: Feasibility Rating 5.8/10, Critical De-Risking Path<a class="headerlink" href="#cross-validation-feasibility-rating-5810-critical-de-risking-path" title="Permanent link">&para;</a></h3>
-<p>An integrated feasibility assessment across all constraints (enzyme activity, GI survival, dosing, regulatory) yields a composite rating of <strong>5.8 / 10.0</strong> — higher than naive estimates but highlighting significant unknowns.</p>
-<p><strong>Critical constraints (lowest confidence):</strong>
-- GI survival post-engineering: <strong>4.0 / 10</strong> (protease resistance unvalidated in unmodified A. flavus; depends on variant selection and delivery format)
-- Therapeutic efficacy in humans: <strong>5.0 / 10</strong> (rodent data supportive; human dose-response for oral uricase still uncertain per ALLN-346 Phase 2a divergence)</p>
-<p><strong>De-risking budget and timeline:</strong>
-Estimated cost to achieve high-confidence proof-of-concept (Phases 0–3 with variant comparison): <strong>~$300,000</strong> over <strong>12–18 months</strong>. This includes:
-- Phases 0–2 (bench + in vitro): ~$5,000–8,000, 4–6 months
-- Phase 3 (gnotobiotic mouse validation with top 2 variants): ~$20,000–35,000, 8–12 weeks
-- Extended validation (human volunteer dosing, manufacturing scale): ~$250,000+, 6+ months</p>
-<p><em>(Mechanistic Extrapolation based on comparative cost models for probiotic and enzyme-delivery studies)</em></p>
-<p><strong>Next gate decision</strong>: Upon completion of Phase 1 GI survival testing, the predicted improvement from the variant tiers should drive variant selection for Phase 3. If SB-1 achieves &gt;3× baseline survival in SGF/SIF assay, proceed to single-variant Phase 3. If survival remains &lt;2×, prioritize engineering (BAL-1) or reconsider delivery format (enteric capsule).</p>
+<h3 id="cross-validation-track-specific-threat-model">Cross-Validation: Track-Specific Threat Model<a class="headerlink" href="#cross-validation-track-specific-threat-model" title="Permanent link">&para;</a></h3>
+<p>Do not reduce this proposal or Open Enzyme to a composite feasibility score. The yeast–uricase configuration has separable gates: expression and folding, activity under physiological conditions, topology and access, GI survival, coproduct safety, effect on the gut-lumen urate sink, manufacturing, and translation. Each gate should update the smallest dependent claim.</p>
+<p>The current adversarial method is <a href="../cross-validation/">cross-validation.md</a>; shared gut-sink assumptions are tracked in <a href="../hypotheses/H08-gut-lumen-sink-platform-thesis/">H08</a>. A failed yeast configuration may redirect the payload, topology, format, or chassis without deciding unrelated gout tracks.</p>
 <h3 id="revision-sources">Revision &amp; Sources<a class="headerlink" href="#revision-sources" title="Permanent link">&para;</a></h3>
 <p>This section synthesizes computational and structural analysis conducted in April 2026. All claims carry the stated evidence level (In Vitro, Animal Model, Clinical Trial, or Mechanistic Extrapolation) and are anchored to published precedent (ACS Synthetic Biology 2025, Scientific Reports 2025, historical rasburicase literature) where available.</p>
 <p>For detailed calculations, variant structural models, and GI transit simulation parameters, see ai-analysis/01–05 technical reports.</p>

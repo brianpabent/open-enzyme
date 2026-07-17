@@ -1,0 +1,141 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/README.md",
+      "kind": "design",
+      "bytes": 2779,
+      "sha256": "f832a9f7acef26fadec1b11effd3b68a827f9bb2b07a8cd65c1788ce383651c5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/analyze.py",
+      "kind": "design",
+      "bytes": 14915,
+      "sha256": "86578e16072db1701fb2a0de1ff31550787529bd690e236d175bbbf1733410d3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/inputs/compounds.json",
+      "kind": "design",
+      "bytes": 2046,
+      "sha256": "456edc0b11339c6d9c71aed01574ac7523ed738100c22602e4bf50874d1a99e6"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/inputs/gut_model.json",
+      "kind": "design",
+      "bytes": 1256,
+      "sha256": "f316e7cf22a7d08304b37db744f7903896cd459633c2ec1855d70bba0d746b4a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/inputs/ic50_data.json",
+      "kind": "design",
+      "bytes": 3321,
+      "sha256": "90f5f27626ec6ffdc413648678f310470f875736f34836212018359ea30b15fb"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 3209,
+      "sha256": "81f3af2252473b408162c6398493e8f212258a658c03e39b22606a7f2f0219df"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/risk_assessment.json",
+      "kind": "generated_output",
+      "bytes": 5782,
+      "sha256": "a5a75f8091a6763e0d5471f844a1b702dd665018072849542fa6ce9460e4d4ee"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 8089,
+      "sha256": "03856174c014af02f5f43fb542b75a5fd9f2c27c1d7f0a0ea3c2a6603a017dc0"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md",
+      "kind": "proposed_update",
+      "bytes": 7178,
+      "sha256": "2e9dfaebb068123b223fa5774856c6e42aba7a805cccb3e423a84eadd9b642fd"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 16933,
+      "sha256": "2c40532b7ca8b5c92ea00b4a2d3aa87696d7ea3da634c456ac973719eb8b78fc"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md",
+      "kind": "proposed_update",
+      "bytes": 7844,
+      "sha256": "e6548837d343162f982781296377a7aaffa4a007eb900e12232a3be709defd48"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 11469,
+      "sha256": "6478fc9c3aca251600eadde1d31e745004aaf287dd43bf8b2cbc830a19c8aa05"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 19676,
+      "sha256": "34c8e07894ee045a67a68480b93eea01d06525ca9ebf34280e0da8d387a2ef4c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 5316,
+      "sha256": "49d572cdec31ee45314ae074baec8fb0fa3b7f64db5ff6bcec78b1ef74fa82f9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
+      "kind": "proposed_update",
+      "bytes": 30992,
+      "sha256": "e1af5d1bc51b784aa3fea2eae804c9ae5ac92d012fc0c1cdf708c719a177f433"
+    },
+    {
+      "path": "wiki/hypotheses/H04-tcm-rigor-intersection.md",
+      "kind": "proposed_update",
+      "bytes": 9364,
+      "sha256": "160fd51ff7a3e449a7c72922630eeaf09747030a0b24986a9b02b4d44cedc388"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 94611,
+      "sha256": "d14f205ec6cd1927ee2906beb4e4254522f51288201618fbc7722799d7bb0d23"
+    },
+    {
+      "path": "wiki/supplement-abcg2-antagonism-computational.md",
+      "kind": "proposed_update",
+      "bytes": 1590,
+      "sha256": "936e33308fa70a0e691850830701e5a8d1fc047df1567b1add9acc740216dd6f"
+    },
+    {
+      "path": "wiki/tcm-gout-compound-triage-computational.md",
+      "kind": "proposed_update",
+      "bytes": 11066,
+      "sha256": "1eb840e631ac1e38a16ca3b3e0d49a5a4c58dd18b7f9c922e77928b81254cd6b"
+    },
+    {
+      "path": "wiki/tcm-modern-rigor-intersection.md",
+      "kind": "proposed_update",
+      "bytes": 30057,
+      "sha256": "8ba1a1fafe2a64e18ffb1f34a90b7dbb0fd236d8f808a986975a2b0b1fd0fd23"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "8996b270346aa708818592b1bd687fc5503e7609346292e1b6432b646e0f8a3a"
+}

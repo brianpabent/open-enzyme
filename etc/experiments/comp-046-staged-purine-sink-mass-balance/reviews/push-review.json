@@ -1,0 +1,51 @@
+{
+  "schema_version": 2,
+  "comp": "comp-046",
+  "comp_dir": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance",
+  "source_commit": "0a6a0c6b2b6bdff78fa564eb5e0f8f96447299f4",
+  "artifact_manifest_sha256": "72b964f2c76a8e00230bf66ba60351a2b9c85fcff2311a4662d74062ea736ff8",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-17T00:38:12Z",
+  "comp_verdict": "review_completed_actioned",
+  "propagation_eligibility": "eligible_with_warning",
+  "synthesis_eligibility": "eligible_with_warning",
+  "action_required": false,
+  "derived_paths": [
+    "wiki/computational-experiments.md",
+    "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
+    "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
+    "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md",
+    "wiki/gout-multihop-research-program.md",
+    "wiki/purine-degrading-bacteria.md",
+    "wiki/purine-load-koji-vs-yeast.md",
+    "wiki/staged-purine-sink-mass-balance-computational.md",
+    "wiki/validation-experiments.md"
+  ],
+  "actual_cost_usd": 0.0,
+  "binding_mode": "fresh_authoring_review",
+  "authoring_review": {
+    "completed": true,
+    "reviewed_snapshot": "ae81b0ae5766f7947cc17d22a98a3a7b2face2d0c3d61c64ec861272cf4e15bd",
+    "receipt": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/reviews/post-run.md",
+    "action_required": false
+  },
+  "note": "The corrected artifact contains a conserved dietary fate ledger and a separate non-conserved endogenous capture comparison.",
+  "lane_adjudication": {
+    "date": "2026-07-16T23:21:02Z",
+    "method": "exact authoring review plus committed push-manifest binding",
+    "new_artifact_review_performed": true,
+    "queue_action_remains_open": false,
+    "propagation_allowed_scope": "Propagate the two conditional analyses with their accounting labels and limitations.",
+    "synthesis_allowed_scope": "Use the dietary fate ledger and endogenous capture comparison as separate design-space analyses.",
+    "forbidden_inferences": [
+      "two conserved ledgers",
+      "joint three-stage efficacy or Delta-SUA",
+      "grid occupancy as probability",
+      "a general topology winner"
+    ]
+  },
+  "post_review_changed_manifest_paths": [
+    "wiki/computational-experiments.md",
+    "wiki/validation-experiments.md"
+  ]
+}

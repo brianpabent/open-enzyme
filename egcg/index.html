@@ -379,7 +379,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -410,13 +410,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2024,7 +2017,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2059,7 +2052,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2129,7 +2122,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -2902,10 +2895,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dose-and-bioavailability" class="md-nav__link">
+  <a href="#sources-delivery-and-bioavailability" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dose and bioavailability
+        Sources, delivery, and bioavailability
       
     </span>
   </a>
@@ -2913,21 +2906,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#safety-hepatotoxicity-ceiling" class="md-nav__link">
+  <a href="#exposure-and-safety-constraints" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Safety — hepatotoxicity ceiling
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#engineered-production-angle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Engineered-production angle
+        Exposure and safety constraints
       
     </span>
   </a>
@@ -3248,7 +3230,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3283,7 +3265,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -3824,13 +3806,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4144,7 +4119,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -4921,7 +4896,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5499,28 +5474,27 @@
 
 
 <h1 id="egcg-epigallocatechin-gallate">EGCG (Epigallocatechin Gallate)<a class="headerlink" href="#egcg-epigallocatechin-gallate" title="Permanent link">&para;</a></h1>
-<p>EGCG = (−)-epigallocatechin-3-gallate (ChEMBL ID CHEMBL297453). This dossier unifies four separately-catalogued chokepoint effects through a single upstream mechanism — <strong>20S proteasome inhibition → IκBα stabilization → NF-κB blockade</strong> — that was not visible in the wiki until the 2026-04-24 ChEMBL cross-check surfaced the sub-100 nM human proteasome IC50 (source: <a href="../etc/chembl-cross-check/">chembl-cross-check.md</a>).</p>
+<p>EGCG = (−)-epigallocatechin-3-gallate (ChEMBL ID CHEMBL297453). Its gout-relevant hypothesis is that <strong>20S proteasome inhibition → IκBα stabilization → NF-κB blockade</strong> could suppress several inflammatory chokepoints through one upstream mechanism. The central translation question is whether a tolerable oral formulation can produce enough exposure to engage that mechanism (source: <a href="../etc/chembl-cross-check/">chembl-cross-check.md</a>).</p>
 <p>See also the stack-level entry in <a href="../supplements-stack/">supplements-stack.md</a> and the chokepoint map in <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a>.</p>
 <hr />
 <h2 id="what-it-is">What it is<a class="headerlink" href="#what-it-is" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Chemistry:</strong> Flavan-3-ol (catechin) with a gallate ester at the C3 position. Three phenolic rings, eight free hydroxyl groups — the highest hydroxyl density of any major dietary polyphenol. The gallate group is what drives proteasome chymotrypsin-site binding; non-gallated catechins (EC, EGC) are 10–100× weaker at the same target.</li>
 <li><strong>Source:</strong> The dominant flavan-3-ol in <em>Camellia sinensis</em> (green tea); ~50–60% of total green tea catechins by mass. Matcha and white tea concentrate EGCG further; fully oxidized teas (black, pu'er) convert much of the EGCG into theaflavins and thearubigins.</li>
-<li><strong>Not producible in engineered yeast or koji at practical titers</strong> — see <a href="#engineered-production-angle">Engineered-production angle</a> below. EGCG is a dietary / supplement compound, not an Open Enzyme production target.</li>
 <li><strong>TCM lineage:</strong> EGCG is the dominant catechin in green tea (Lu Cha 绿茶), which has a long history of medicinal use in TCM. The broader methodology for applying modern scientific rigor to TCM-lineage compounds — including chokepoint mapping, ChEMBL cross-check, and bioavailability-honest framing — is formalized in <a href="../tcm-modern-rigor-intersection/"><code>tcm-modern-rigor-intersection.md</code></a>. EGCG is explicitly listed there as a TCM-lineage compound with an existing wiki page. (source: tcm-modern-rigor-intersection.md)</li>
 </ul>
 <hr />
 <h2 id="unifying-mechanism-proteasome-ib-nf-b">Unifying mechanism: proteasome → IκBα → NF-κB<a class="headerlink" href="#unifying-mechanism-proteasome-ib-nf-b" title="Permanent link">&para;</a></h2>
-<p>The four chokepoint effects the wiki currently attributes to EGCG (CP1 NF-κB priming block, CP1a TNFSF14 suppression, CP4 caspase-1 suppression, CP5a IL-1β-receptor-downstream block) are not four separate mechanisms. They are downstream consequences of a single upstream block at the <strong>20S proteasome chymotrypsin-like site</strong>.</p>
+<p>The four proposed gout-relevant effects—CP1 NF-κB priming block, CP1a TNFSF14 suppression, CP4 caspase-1 suppression, and CP5a IL-1β-receptor-downstream block—may be downstream consequences of a single upstream block at the <strong>20S proteasome chymotrypsin-like site</strong>.</p>
 <p><strong>Step by step:</strong></p>
 <ol>
 <li><strong>EGCG inhibits the 20S proteasome chymotrypsin-like activity at IC50 = 86 nM</strong> in human cells (In Vitro; <em>Bioorg Med Chem</em> 2010, confirmed <em>Eur J Med Chem</em> 2019, ChEMBL assay CHEMBL4433382, pChEMBL 7.07; source: <a href="../etc/chembl-cross-check/">chembl-cross-check.md</a>). This is EGCG's single most potent human target in the curated ChEMBL v34 database outside the <em>Plasmodium</em> anti-malarial activity (ENR Ki = 8 nM, not human-relevant).</li>
 <li><strong>The 26S proteasome (which contains the 20S core) is the sole enzymatic route for IκBα degradation.</strong> Canonical NF-κB activation requires IKK to phosphorylate IκBα at Ser32/Ser36 → SCF^βTrCP ubiquitin ligase polyubiquitinates phospho-IκBα → 26S proteasome degrades IκBα → NF-κB heterodimers (p50/p65) are released into the cytoplasm.</li>
 <li><strong>With the proteasome chymotrypsin site inhibited, polyubiquitinated IκBα accumulates instead of being degraded.</strong> Accumulated IκBα continues to sequester NF-κB in the cytoplasm regardless of how much upstream IKK activity is present.</li>
-<li><strong>No nuclear NF-κB → no transcription of pro-IL-1β, NLRP3, TNFSF14, COX2, or the other NF-κB-dependent priming genes.</strong> This is CP1 blockade at a layer upstream of where the wiki previously located it.</li>
+<li><strong>No nuclear NF-κB → no transcription of pro-IL-1β, NLRP3, TNFSF14, COX2, or the other NF-κB-dependent priming genes.</strong> This places the proposed CP1 block upstream of IKK-centered functional readouts.</li>
 <li><strong>The previously-cited "IKK inhibition" framing is mechanistically downstream or redundant.</strong> IKK's only output in this pathway is to phosphorylate IκBα to tag it for proteasomal destruction. If the proteasome cannot destroy IκBα, IKK activity is decoupled from NF-κB release. The IKK-inhibition literature for EGCG (most of which is functional, not direct-binding) is better read as <strong>the cellular consequence of proteasome inhibition</strong>, not as an independent mechanism. (Mechanistic Extrapolation; see <a href="#open-questions">Open questions</a> for what an IKK vs. proteasome dose-response experiment would look like.)</li>
 </ol>
-<p><strong>Why this reframe matters:</strong> A compound that hits four chokepoints through pleiotropy is hard to validate and hard to dose. A compound that hits four chokepoints through one coherent upstream mechanism is falsifiable — the dose-response curves at CP1, CP1a, CP4, and CP5a should all track the proteasome IC50, and a Western for IκBα stabilization is a direct mechanistic readout. See <a href="../validation-experiments/">validation-experiments.md §1.7</a> for the priority THP-1 MSU macrophage assay that tests this.</p>
+<p><strong>Why this matters:</strong> A compound that hits four chokepoints through one coherent upstream mechanism is falsifiable: the dose-response curves at CP1, CP1a, CP4, and CP5a should track the proteasome IC50, and a Western for IκBα stabilization is a direct mechanistic readout. See <a href="../validation-experiments/">validation-experiments.md §1.7</a> for the THP-1 MSU macrophage assay that tests this.</p>
 <hr />
 <h2 id="chokepoint-coverage-4-of-7">Chokepoint coverage (4 of 7)<a class="headerlink" href="#chokepoint-coverage-4-of-7" title="Permanent link">&para;</a></h2>
 <table>
@@ -5541,7 +5515,7 @@
 </tr>
 <tr>
 <td><strong>CP1a</strong> (TNFSF14 amplifier)</td>
-<td>Suppresses TNFSF14-induced IL-6 in human gingival fibroblasts; <strong>downregulates HVEM</strong> (TNFSF14 receptor) on target cells. This is a direct receptor-level effect beyond the NF-κB-blockade story. The only compound in the Open Enzyme stack with curated direct TNFSF14 data.</td>
+<td>Suppresses TNFSF14-induced IL-6 in human gingival fibroblasts; <strong>downregulates HVEM</strong> (TNFSF14 receptor) on target cells. This is a direct receptor-level effect beyond the NF-κB-blockade story.</td>
 <td>In Vitro (human HGF)</td>
 <td>Hosokawa 2010 (PMID 20461739); see <a href="../tnfsf14-gout-target/">tnfsf14-gout-target.md</a></td>
 </tr>
@@ -5560,7 +5534,7 @@
 </tbody>
 </table>
 <p><strong>Not covered:</strong> CP0 (complement C5a), CP2 (NLRP3 assembly — no direct NACHT-domain binding in ChEMBL), CP3 (ASC speck), CP5b (SPM resolution pathway), CP6a (5-LOX / LTB4), CP6b (GSDMD pore). EGCG's spectrum is wide but located entirely on the priming / transcription side and its immediate receptor-level consequences.</p>
-<p>The four-chokepoint coverage is now mechanistically unified, not a pleiotropic list. This is rare in the Open Enzyme stack: most compounds either hit a single chokepoint with high specificity (dapansutrile at CP2, disulfiram at CP6b) or hit multiple chokepoints through genuinely distinct mechanisms (quercetin at CP1 + CP6a + XO).</p>
+<p>The four-chokepoint hypothesis is mechanistically unified rather than a list of unrelated effects. Dapansutrile and disulfiram provide more target-specific comparison points; quercetin provides a multi-mechanism comparison.</p>
 <hr />
 <h2 id="gout-specific-evidence">Gout-specific evidence<a class="headerlink" href="#gout-specific-evidence" title="Permanent link">&para;</a></h2>
 <p>Direct gout / hyperuricemia evidence, in descending order of translation strength:</p>
@@ -5571,7 +5545,7 @@
 </ul>
 <p>No human RCT data specifically in gout. Human trials exist for hypertension, insulin resistance, and weight management at 400–800 mg EGCG/day doses (reviewed by EFSA 2018); none have gout or serum UA as primary endpoints.</p>
 <hr />
-<h2 id="dose-and-bioavailability">Dose and bioavailability<a class="headerlink" href="#dose-and-bioavailability" title="Permanent link">&para;</a></h2>
+<h2 id="sources-delivery-and-bioavailability">Sources, delivery, and bioavailability<a class="headerlink" href="#sources-delivery-and-bioavailability" title="Permanent link">&para;</a></h2>
 <p><strong>Free EGCG in green tea:</strong>
 - Brewed green tea: ~50–100 mg EGCG per 200 mL cup (varies 3–5× with brew time, water temperature, leaf grade, and whether the tea is sencha vs. gyokuro vs. matcha).
 - Matcha (powdered whole-leaf): ~100–150 mg EGCG per 2 g serving (the highest natural dietary concentration, because the whole leaf is consumed).
@@ -5584,38 +5558,24 @@
 - <strong>Phospholipid-complex formulations (Greenselect Phytosome, etc.)</strong> improve bioavailability to ~5–10% — a 30–50× gain, and the only practical way to reach plasma concentrations near the 86 nM proteasome IC50.
 - <strong>Fasted dosing</strong> raises free-EGCG Cmax substantially — which is also what raises hepatotoxicity risk. Food intake blunts Cmax. The safety and efficacy windows trade against each other here; see <a href="#safety--hepatotoxicity-ceiling">safety</a> below.
 - EGCG is a substrate for catechol-O-methyltransferase (COMT) — COMT-inhibitor combinations (quercetin as a mild COMT inhibitor, for instance) can raise free-EGCG exposure, with the same safety caveat.</p>
-<p><strong>Practical protocol for the Open Enzyme stack (cross-ref <a href="../supplements-stack/">supplements-stack.md</a>):</strong> 400–600 mg EGCG/day from a standardized extract, taken <strong>with food</strong>, split between morning and early afternoon. Stay below 800 mg/day sustained. Phytosome formulations are preferred for bioavailability at lower total mg; matcha (2–3 servings/day) is a reasonable dietary alternative.</p>
-<hr />
-<h2 id="safety-hepatotoxicity-ceiling">Safety — hepatotoxicity ceiling<a class="headerlink" href="#safety-hepatotoxicity-ceiling" title="Permanent link">&para;</a></h2>
+<h2 id="exposure-and-safety-constraints">Exposure and safety constraints<a class="headerlink" href="#exposure-and-safety-constraints" title="Permanent link">&para;</a></h2>
 <p>The same 86 nM 20S proteasome activity that makes EGCG interesting at CP1 also makes it a <strong>hepatotoxicity liability at high doses</strong>. The clinical literature on proteasome inhibitors is consistent on this point:</p>
 <ul>
 <li><strong>Bortezomib and carfilzomib</strong> (clinical proteasome inhibitors, multiple myeloma) have documented hepatotoxicity profiles at their therapeutic plasma levels (single-digit nM to low hundred nM for 20S chymotrypsin inhibition). Liver function abnormalities are a monitored adverse event in both drug labels. (Mechanistic Extrapolation to EGCG.)</li>
 <li><strong>EGCG case reports:</strong> High-dose green tea extract (especially fasted, &gt;800 mg/day sustained) has caused multiple published hepatotoxicity cases, some progressing to acute liver failure. Meta-analysis of RCT safety data supports a dose-dependent ALT/AST elevation signal above 800 mg/day.</li>
 <li><strong>EFSA Scientific Opinion (2018)</strong> formally recommended a <strong>800 mg EGCG/day safety ceiling for food supplements</strong> based on this hepatotoxicity signal, and noted that fasted dosing raises the risk materially.</li>
 </ul>
-<p><strong>Practical safety protocol:</strong>
-1. Stay at or below <strong>600 mg EGCG/day</strong> for sustained use in the stack (buffer below the EFSA 800 mg ceiling).
-2. <strong>Take with food</strong> — this lowers free-EGCG Cmax and reduces hepatotoxicity risk, even though it also lowers the proteasome-level plasma concentration. The safety / efficacy trade here favors food-concurrent dosing for chronic supplementation.
-3. <strong>Avoid combining with alcohol or other hepatotoxic agents</strong> (acetaminophen at hepatotoxic doses, amiodarone, isoniazid, methotrexate). The mechanism of EGCG hepatotoxicity is still debated (proteasome-driven vs. redox-driven — see <a href="#open-questions">Open questions</a>), so additive liver stress from any angle is a concern.
-4. <strong>Monitor ALT/AST annually</strong> if sustaining doses ≥400 mg/day for &gt;6 months. Stop and investigate if ALT &gt;3× ULN.
-5. <strong>Avoid the compound entirely</strong> if there is any baseline liver disease (viral hepatitis, NAFLD with elevated enzymes, autoimmune hepatitis).</p>
-<p>This safety ceiling is not a reason to exclude EGCG from the stack — it is a reason to cap the dose and monitor. Within the 400–600 mg/day window with food, the safety record is long (green tea consumption in East Asia predates written records) and the CP1/CP1a/CP4/CP5a coverage is uniquely wide for a food-grade compound.</p>
-<hr />
-<h2 id="engineered-production-angle">Engineered-production angle<a class="headerlink" href="#engineered-production-angle" title="Permanent link">&para;</a></h2>
-<p>EGCG is a plant secondary metabolite requiring 8–10 heterologous enzyme steps (PAL → C4H → 4CL → CHS → CHI → F3H → F3'H → FLS → gallate conjugation via UGT) to reconstitute in <em>S. cerevisiae</em>. Published engineered-yeast titers for EGCG specifically are in the <strong>10–50 mg/L range</strong> (source: <a href="../nlrp3-inhibitor-screen/">nlrp3-inhibitor-screen.md</a>), well below the economic threshold for an Open Enzyme production module.</p>
-<p><strong>Current Open Enzyme position on EGCG:</strong> Dietary / supplement, not a production target. Green tea is already an engineered agricultural product (centuries of cultivar selection + processing refinement) that outperforms any plausible microbial production route. The practical engineering problem for EGCG is <strong>bioavailability enhancement</strong>, not biosynthesis — phospholipid complexes (Greenselect Phytosome), lipid-nanoparticle encapsulation, and COMT-inhibitor co-formulation are the relevant levers. These are formulation-chemistry problems, not strain-engineering problems, and sit outside Open Enzyme's core platform thesis.</p>
-<p>If a future Open Enzyme module wants to work on flavan-3-ol delivery (e.g., koji-fermented matcha with improved catechin bioavailability through the fermentation matrix), that is a plausible secondary avenue — but it would be a formulation project, not a biosynthesis project.</p>
+<p>The useful exposure window remains unresolved. Food lowers free-EGCG peak exposure and hepatotoxicity risk, but may also make the proposed proteasome mechanism harder to engage. Phospholipid-complex formulations increase exposure, which could improve target engagement while also narrowing the safety margin. Baseline liver disease and concurrent hepatotoxic agents therefore matter to any future formulation or human study design.</p>
 <hr />
 <h2 id="open-questions">Open questions<a class="headerlink" href="#open-questions" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>Is the 86 nM proteasome IC50 reached at physiological green-tea doses?</strong> At 0.1–0.3% oral bioavailability, even 800 mg EGCG oral → plasma free-EGCG in the low nM range, well below the 86 nM IC50 in cells. Phytosome formulations (5–10% bioavailability) can plausibly reach the IC50; unformulated green tea probably cannot. This is the central translation question for the CP1 story. An ex vivo assay (incubate human PBMCs with serum drawn 1–4 h post-EGCG dose; Western for IκBα retention) would resolve it directly.</li>
 <li><strong>Proteasome vs. IKK dose-response.</strong> If the reframe above is correct, the dose-response for IκBα stabilization (Western) and for IKK activity (IKK kinase assay, phospho-IκBα readout) should diverge — IκBα stabilization tracks proteasome IC50 (86 nM), IKK activity should require much higher EGCG (the literature suggests IKK IC50 is ≥10 μM for EGCG, not sub-μM). A dose titration with both readouts in the same experiment falsifies or confirms the reframe.</li>
-<li><strong>Hepatotoxicity mechanism.</strong> Is EGCG-induced liver injury driven by proteasome inhibition (analogous to bortezomib), by redox chemistry (pro-oxidant at high doses via auto-oxidation of the gallate ring), by mitochondrial membrane effects, or by an idiosyncratic immune mechanism? The existing literature is divided. The practical dose cap (600 mg/day, with food) is conservative enough to cover all four hypotheses, but mechanistic clarity would inform future formulation choices — a proteasome-driven mechanism might be worsened by phytosome bioavailability boosters, whereas a redox-driven mechanism might be mitigated by them.</li>
+<li><strong>Hepatotoxicity mechanism.</strong> Is EGCG-induced liver injury driven by proteasome inhibition (analogous to bortezomib), by redox chemistry (pro-oxidant at high doses via auto-oxidation of the gallate ring), by mitochondrial membrane effects, or by an idiosyncratic immune mechanism? The existing literature is divided. Mechanistic clarity would inform future formulation choices — a proteasome-driven mechanism might be worsened by phytosome bioavailability boosters, whereas a redox-driven mechanism might be mitigated by them.</li>
 <li><strong>Does EGCG suppress TNFSF14 at the HVEM-receptor level specifically, or only through general NF-κB blockade?</strong> Hosokawa 2010 reported <strong>HVEM downregulation</strong>, which if real is a receptor-specific effect not reducible to proteasome inhibition (HVEM transcription is not obviously NF-κB-dominant in HGF cells). Replicating this in human macrophages (THP-1 or PBMC-derived MDM) with a TNFSF14-stimulated IL-6 / IL-1β readout would determine whether CP1a is a separate EGCG mechanism or a consequence of general CP1 blockade.</li>
 <li><strong>Can DHA + EGCG achieve combined TNFSF14 suppression?</strong> DHA lowers circulating TNFSF14 (Huang 2024 Mendelian randomization; source: <a href="../tnfsf14-gout-target/">tnfsf14-gout-target.md</a>); EGCG suppresses TNFSF14 signal transduction at the receiving cell. These are orthogonal layers of the same amplifier. A combination trial would have clear synergy logic and both compounds are already in the stack.</li>
 </ol>
 <hr />
-<p><em>This dossier is the canonical EGCG page. The stack-level entry in <a href="../supplements-stack/">supplements-stack.md</a> keeps the short dosing summary; the chokepoint row in <a href="../nlrp3-exploit-map/">nlrp3-exploit-map.md</a> keeps the mechanism pointer; anything deeper — mechanistic reframe, primary-source evidence, safety rationale, engineering position — lives here.</em></p>
 
 
 

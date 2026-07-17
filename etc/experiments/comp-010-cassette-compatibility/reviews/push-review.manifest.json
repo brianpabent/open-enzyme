@@ -1,0 +1,177 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-010-cassette-compatibility",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/README.md",
+      "kind": "design",
+      "bytes": 5196,
+      "sha256": "590248fc0a18aa266161f27756653a6a9f43468c244759961d197fab0d4832db"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/analyze.py",
+      "kind": "design",
+      "bytes": 62742,
+      "sha256": "e4c0bbf9c89498280354cfd86ea47ad0a318f5fc063c15d3b4bc12e117696b05"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/inputs/P02788.fasta",
+      "kind": "design",
+      "bytes": 802,
+      "sha256": "c78b74212c8370fced3b2040577c9ce854be045e76e74ccb0048bd17464dc94b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/inputs/Q00511.fasta",
+      "kind": "design",
+      "bytes": 385,
+      "sha256": "fd006ac91dc08f796bd2032ee975677c16f6e8e7d3d0762ba1f2b295183b4274"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/inputs/a_oryzae_codon_usage.json",
+      "kind": "design",
+      "bytes": 5321,
+      "sha256": "61b8e7293388d5d605f19e36fce9d94d19a526baf35f3c9205bf17d0b717a24e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/inputs/glucoamylase_carrier.fasta",
+      "kind": "design",
+      "bytes": 737,
+      "sha256": "8003d465b1549048b99aee0e44207c13bcd107fd95ea2bb53f86d15e6fe0937d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/inputs/kex2_site_specs.json",
+      "kind": "design",
+      "bytes": 4350,
+      "sha256": "8c6e6cc3c50657d129b6979426c15dee0e464239188120b8584e8d8c2af0b0ad"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 4793,
+      "sha256": "6b4b9b57b989205b0adffd9c28861da22339c06169abafb199705b94aa341940"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/outputs/cassette_analysis.json",
+      "kind": "generated_output",
+      "bytes": 15452,
+      "sha256": "be4da7a353a472581e4e0b2824ea284ca2aefcb65b28fea7b24ed7b3ae818c53"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 15579,
+      "sha256": "8c882c6ce107ade0332839eaa551edc6dc726f5f63c4864fdc7c9f728875325f"
+    },
+    {
+      "path": "wiki/aspergillus-oryzae.md",
+      "kind": "proposed_update",
+      "bytes": 32246,
+      "sha256": "255ec54730903032557015ac5da7a5981b60f9adf874a1e35c1b5393f6f706ef"
+    },
+    {
+      "path": "wiki/cassette-compatibility-computational.md",
+      "kind": "proposed_update",
+      "bytes": 2239,
+      "sha256": "0fbc1353e6f455617f5690b90b34cb16691fe050b5726c7982cc1295c10aeace"
+    },
+    {
+      "path": "wiki/chaperone-orthogonal-stacking.md",
+      "kind": "proposed_update",
+      "bytes": 96959,
+      "sha256": "ce64482c142f0578e5b518fb3fa4cb6ce53fb688927d8777455b2999b6f82d6f"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 42433,
+      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/README.md",
+      "kind": "proposed_update",
+      "bytes": 5857,
+      "sha256": "958dc1168f93003237899710272a136589de10c1a27ce2a4a4f0fe0eb7a56101"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 7578,
+      "sha256": "ba1b604324cdc3d598f79b67584cfe7ac6522ec1f7d3bd3f0a78da61e1ac279f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 28230,
+      "sha256": "6d1f445df427368cc9fbc56ab1911c35f2f43bd92469ba54a597c722ccee5a13"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/README.md",
+      "kind": "proposed_update",
+      "bytes": 8405,
+      "sha256": "de8d071ade874717aae0e3745d62fc34ff9e11d03af66c0057a189a9a5cfd937"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 5093,
+      "sha256": "857fd34155f3c8a1039c852f0e2861a1ec6fcd46e4dcc967ff2fd1a1324e79dc"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 11562,
+      "sha256": "bd7a1516b34661af542a161aa4ec579c9d9dd1d84346463acf96c94ed2cf097b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 12165,
+      "sha256": "bb8b595fad8bd0d5d900dedcd00db1188b489296be592f8dea77a9d04e6db959"
+    },
+    {
+      "path": "wiki/etc/manual-literature-mining.md",
+      "kind": "proposed_update",
+      "bytes": 30317,
+      "sha256": "fb29bc39cbb836f632f4f309553c967a8bb832f0366ee6808a24405c7709222c"
+    },
+    {
+      "path": "wiki/hypotheses/H01-ward-dual-cassette.md",
+      "kind": "proposed_update",
+      "bytes": 67670,
+      "sha256": "3e311d05bd99bf6df7d39edf4c57d26b18903ccfec7b21fd1c4cc68175af6de6"
+    },
+    {
+      "path": "wiki/koji-endgame-strain.md",
+      "kind": "proposed_update",
+      "bytes": 70835,
+      "sha256": "d04cf72152a144b6251db16e090e61dfff645266bb3e3701a525765d65d1a321"
+    },
+    {
+      "path": "wiki/lactoferrin.md",
+      "kind": "proposed_update",
+      "bytes": 74908,
+      "sha256": "8a6f79ddedfacf8e50569d52e3dd4fa6a34ca2b0ef682506bcbfb60f2500c8f6"
+    },
+    {
+      "path": "wiki/uricase-variant-selection.md",
+      "kind": "proposed_update",
+      "bytes": 48056,
+      "sha256": "79e9551287e40f948d8e1a8c952a275f437a29d4470a8a083ebbbe81bf9c1513"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "53f5bd4c1693764c4e4d2b09c499358ed5339d35a9b24900a4fe52fb51b89eb3"
+}

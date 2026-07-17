@@ -1,0 +1,53 @@
+{
+  "schema_version": 2,
+  "comp": "comp-009",
+  "comp_dir": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection",
+  "source_commit": "0a6a0c6b2b6bdff78fa564eb5e0f8f96447299f4",
+  "artifact_manifest_sha256": "3f4c8b0e92ba1ea50b5b63bb1184991dbdad173c653a0849899832a64b225828",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-17T00:38:12Z",
+  "comp_verdict": "review_completed_open_actions",
+  "propagation_eligibility": "eligible_with_warning",
+  "synthesis_eligibility": "eligible_with_warning",
+  "action_required": true,
+  "derived_paths": [
+    "wiki/chassis-pending-interventions.md",
+    "wiki/computational-experiments.md",
+    "wiki/hypotheses/H03-sirna-urat1-thesis.md",
+    "wiki/modality-chokepoint-matrix.md",
+    "wiki/open-questions.md",
+    "wiki/sirna-urat1-modality.md",
+    "wiki/urat1-sirna-target-site-selection-computational.md"
+  ],
+  "actual_cost_usd": 0.0,
+  "binding_mode": "completed_review_migration",
+  "independent_review": {
+    "completed": true,
+    "date": "2026-07-15",
+    "reviewed_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
+    "review_log_git_path": "logs/comp-reviews/2026-07-15-comp-009-eeab5b5.md",
+    "review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+  },
+  "post_review_changed_manifest_paths": [
+    "wiki/chassis-pending-interventions.md",
+    "wiki/computational-experiments.md",
+    "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection/README.md",
+    "wiki/hypotheses/H03-sirna-urat1-thesis.md",
+    "wiki/modality-chokepoint-matrix.md",
+    "wiki/open-questions.md",
+    "wiki/sirna-urat1-modality.md"
+  ],
+  "note": "Carries forward the completed independent review and its remediation state. Exact current manifest binding is a migration receipt; lane eligibility was separately adjudicated without claiming a new artifact review.",
+  "lane_adjudication": {
+    "date": "2026-07-16T21:15:41Z",
+    "method": "context-isolated lane adjudication of the completed July 15 review against current artifacts",
+    "new_artifact_review_performed": false,
+    "queue_action_remains_open": true,
+    "propagation_allowed_scope": "Corrective-only: repair or retract the review-identified stale claims; do not spread positive derived claims until the open actions close.",
+    "synthesis_allowed_scope": "Use only that filter-passing sites exist on real NM_144585.4; accessibility and off-target clearance remain open.",
+    "forbidden_inferences": [
+      "original guide sequences or funnel counts",
+      "accessible, viable, cross-species-reusable, off-target-cleared, or wet-lab-ready guides"
+    ]
+  }
+}

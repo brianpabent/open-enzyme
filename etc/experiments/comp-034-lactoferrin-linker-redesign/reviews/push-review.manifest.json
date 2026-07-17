@@ -1,0 +1,795 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/README.md",
+      "kind": "design",
+      "bytes": 7575,
+      "sha256": "11a8de68bcf25acad7b92ccc92595ab3df6b5976654eb3b77ecbf319e70f37ea"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/analyze.py",
+      "kind": "design",
+      "bytes": 26746,
+      "sha256": "736ac46807224eb936b98da662adbec1964c3923b66a8d50e592c86e9347beb6"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/inputs/P02788.fasta",
+      "kind": "design",
+      "bytes": 802,
+      "sha256": "c78b74212c8370fced3b2040577c9ce854be045e76e74ccb0048bd17464dc94b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/inputs/a_oryzae_codon_usage.json",
+      "kind": "design",
+      "bytes": 5321,
+      "sha256": "61b8e7293388d5d605f19e36fce9d94d19a526baf35f3c9205bf17d0b717a24e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/inputs/alphafold_P02788_plddt.json",
+      "kind": "design",
+      "bytes": 9755,
+      "sha256": "5cc1d11ac8bf366c1d83d292ce5f6c580d19675b2e5254d5a5639cf7204a4c88"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/inputs/linker_residue_range.json",
+      "kind": "design",
+      "bytes": 4088,
+      "sha256": "f3c97c0e0ec7b06b147cdc31c8cc9f97c07a4e34f69c564f1aefa68192c6a644"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 6464,
+      "sha256": "3855b9a7dd5e914e45c6d8076579d4fc908f8a1971be046ee7c922d936f31366"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/AF-P02788-F1-model_v6.pdb",
+      "kind": "design",
+      "bytes": 452708,
+      "sha256": "12ae718c7cb0bdefaf4e766de9e4565beea4245f179f7bf0d7cb64d6bc2fd514"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/assigned_chains.jsonl",
+      "kind": "design",
+      "bytes": 39,
+      "sha256": "a5d08974740ddb1a20d44a8e4b5524d1836e326f724cb007ac6df32a0bd768e1"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/build_substitute_fasta.py",
+      "kind": "design",
+      "bytes": 2979,
+      "sha256": "b244f05fcee4d30a81e36416a0a6026f3e8612d68e6ec33d94d5056e516d11df"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/candidates_mpnn_constrained.json",
+      "kind": "design",
+      "bytes": 57235,
+      "sha256": "7f47df7be92625317ce3ea6eea927c8815fb2b01218d7c96e44aa2d79c04375b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/candidates_mpnn_unconstrained.json",
+      "kind": "design",
+      "bytes": 57708,
+      "sha256": "b59bdf122988dc4b323f28f14cda5f6ba645f67fbc95468ced300fb383998577"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/comparison_with_substitute.json",
+      "kind": "design",
+      "bytes": 34295,
+      "sha256": "94d2e094a1c42f8568714a515d9a0e06ef533164297a6d5e2d91b5924f5b7d20"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/fixed_positions.jsonl",
+      "kind": "design",
+      "bytes": 3422,
+      "sha256": "ffa6fde17d2598d9c7ffed531db7e4de283592f9f650a5b27594fbd88bb79238"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_constrained/probs/AF-P02788-F1-model_v6.npz",
+      "kind": "design",
+      "bytes": 7331286,
+      "sha256": "9a82d4690a60ccc62c8d09f66a2a3f461bc78effbf4ba6b446cc47a0d8628ab5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_constrained/scores/AF-P02788-F1-model_v6.npz",
+      "kind": "design",
+      "bytes": 1000,
+      "sha256": "11ea2df0fff239f1f7d1038a27d01f2da93760b464135c6cffd0e5111efcf9ed"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_constrained/seqs/AF-P02788-F1-model_v6.fa",
+      "kind": "design",
+      "bytes": 47948,
+      "sha256": "8198492d047e7af55575e57ee547fe71bb3aebd478b310a72d99e51e2566637f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_1.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "6bfe9567c991ef1c9be9c6ca22639698f36783efc55b42eff68e20264ce1b19f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_10.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "a816813bf465f438461c2a8df7f3b01b9df159ae1b69e124aabe0131dab5ab9b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_11.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "09bd84fa6b2485a18433af7be83c0611f0207a5e41ece02b0a0fe04c16eeabc6"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_12.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "de76ab12cbdb5b8bd27fc9ad4c7cd240e3c56047dda8cd120902e55cb2fa40b1"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_13.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "5fce37e910ea09789818fa9ece07635c99a69725b815c23887be7059cad9f8bd"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_14.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "9083d643c680e4584445274c6fbae76a5f54bb25fb47c3959aeae278c366a89b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_15.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "7ef603918e3f0e0f015281d045800020de917f5d331927ff5b1240517a316d01"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_16.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "e8a1ef4aa31936af368cddfcec248740bd81697d372b1d5445ff434703f2342c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_17.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "df4b74cf231d77919e372b645ec0e35f13488043820cb580c5d1b1f329286cf6"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_18.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "645fdc129b53dd24f8c9fe0beecc01f22094763121c70976b1c663f610738176"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_19.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "6815511d787b6295c3f0fe66ec1c615ce90ade0f9fddab83839cb9c77bbafe7b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_2.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "6552f5382b170b079940b1bc82676860202b7ed21ad5da59a70acd86a9014360"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_20.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "3ce520d447382e30b36f48a01a4446069199d5e60483ca9a271649de1027aef3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_21.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "80f64664c22330dacdde6821dbbbdd99a656f9d90021e3cc6fdbcc6677b2d88f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_22.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "51c74a5675962b5c308754db7b2e63350a845990b01c22643bcfb85996436b11"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_23.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "24ede3cfc4bf4679e867be0b125867cd88d4c5e72251641cea318208319b262e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_24.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "a95b913b3f6688e9c551d629bf9cfe7bc682a920c3462455c92608ddca29d605"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_25.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "ccbc46ccd2e2de26b69d9b1782ae2778667779e85e17bb972a95265cabb1a54d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_26.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "37a9cb0a8d9b34f770f61b18960f2d1ebad39fb07775b7b3ea3effe8ba468714"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_27.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "7b23a27f0250156bb0048d98bb3ab8f14e45000095f8eeefbede3f496eb93ede"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_28.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "eb0df643e560d648e6761c73b4e62e7bff173e0ad04666f428cc1c4158cef7a5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_29.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "76d0dddab7e2dbb3f2abdc34555c5d30d2af6916e7a023bc9b37ba80cfeadd58"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_3.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "7ac791afdafa8aa544e60f881749ead8c231a536cd86bbf11050d2a6a6c16177"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_30.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "b23637396ca1c87425e25124759286b2a4e9593227652ee6fdcc6464c90bb409"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_31.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "50bb33dedf057a6dccd22b7574846f9246a650cf372f356d3fe07b81aacbf910"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_32.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "9818571c0f3be4a6a63e53d4e15025e7cc3a4ef676bfd3d2b7fc2e594aa3fe1c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_33.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "6aff4dc662a6a0578b72063395890a938d56d4c724c59a579fd8b112f61ce349"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_34.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "68a3da3c830084789a5c280cc8a6cd03e0a7fc9dda75c85c337163a800277eec"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_35.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "3390ad34ed542e98ebcffd00801fb8f231fa5c54a5b4f84aa165f1e3b559f956"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_36.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "a1bf6615c34391b79644c95e7f76f23b47a5074afd3fe29848fdacaa38c8324b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_37.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "6318bf45b4fd7e3214604ef303e2712a0ef3221f07fe2186e0a1b8f593abd52e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_38.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "e887cd566f3a26b9b72ee38e29e4ccb2cbf8cf53072f3bc8b23d3ecfb7d799e9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_39.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "b0635813f8c7cb4a08c9c43d31eac12540554e47ff1872bfc493e648314f660d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_4.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "45141c43e83fc84717f50b98a58f935d30c59b54b281ff0ee6866fb0ba908546"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_40.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "fbb4412d204dbe610268859b8bfa2f5215c63459e82496e99aea6f505fc8e3f7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_41.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "79b0997d298a7b34c9b7ab6507db24d8548e339dd01e479c0850d83774ec5c44"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_42.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "f2d91cc51e0c29f1cc703b864f07697ff0eb5921ae1398a6d0952fbf5b44174b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_43.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "f8bfe3212616b7569648c59b2e91270cf1521b6715b4440e7f7e7725dc8df653"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_44.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "2be05e9131b8eeee8b945620c42cf6b20f15600e89474d86935b51190f47730c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_45.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "27b26303abe2eb166bd5e86c7ac76aa53679503804923e1c2255b41770d5992d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_46.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "3665a394382914b456921a64c270af8c562af3cbd8d6d26895e58a9f31eb9bad"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_47.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "b6c5ee536bc0715ccf783ecea28abde891b7e0b08750095372013c532bba9f5d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_48.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "e2f7dc58c5fc868c6a8f825bc55646a470f5da0e6d212e35cdaf63d98d63a1b1"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_49.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "3de0a57d61efd515e2b1ae1d1b75f922f8a2b629e4621487eb679c5addb6bc79"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_5.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "c6d72346540f41ea9cfa1c2d1f29604d3ae45f5def5f4a07955070166bdad935"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_50.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "2dbe2cee58d010914f5d6d39f28bc280b26a35901766074ef4547e22f4049455"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_51.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "2d3e6817d1b0381c86abcd7db3c7374935fcb4ff097f757b29c80817f66650cf"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_52.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "be70318616629b61550e13ef089561674c7a8c28da273aca689c02a84feb6f88"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_53.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "e1c773cefd14817f3a5f8a3b152ae990f4e0fa785280a595ca260016350ff9f8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_54.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "62855a856b6bedf494e6912f6417e337f3de3ad582bbfab2421402de1bd1b719"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_55.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "2f093ab3ce2e4097592a20637f85198a5bb99e06f7e3c7e7329277cee34d6489"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_56.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "69706f54efcaa02dc286a6cb46f2b42b640eca2e3f29f612574416260f3840fb"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_57.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "d0100c7959cf32e617a76eba0c799eef6d1f6e21b39775d417da34fdf7a496a2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_58.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "4c933d36b7ddaddea974b221e4562c0cd76069569972ac3659bbd781b1b858a5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_59.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "1eaa33819eb470a1fcff1abd5c15909d7a6c6b771dd79a0586b84e9b5f994ede"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_6.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "d796fd68958c3331123b9d5174e08f4016f7e953b31d077ff781b7a018690627"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_60.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "cbd72793bb2832c36af542b83b8620eff314364a55164c2890511ed6c496cf38"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_61.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "55923653f76d0349c5c4828835a0b81d4253cc1536ccc1adce76c3016e80fc72"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_62.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "d82716957e52e0c6e3f9a3a96d7ec5aa8f2a18ee9d5c025146b046eaf5cb2580"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_63.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "fa2ec75aa781ad45dd8a6a817b910c1204f155fdfe2553a86b58a5cf2bdd78e3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_64.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "90c56d5ebc27d2e72472cda1403ca576d33945cf4cc7bf419c8b2c441bb42f4e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_65.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "611908d9da2818abfbdef69bb49a918d0d405cfcf7ff8357aeebce3efecaa2c7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_66.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "45e0de4b66e8e8c097ef2fc7020909b4d638826d44f821a50969d00d0185cb13"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_67.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "b4a6d68fe0556b431e73ed3b6c8da9ec354a2730075eb23ebf3295feb6196b0b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_68.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "179e561f53cf63daf2e87626ee5170420287f1e6f9bf1b7124f07fc6941c5d62"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_69.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "5aecb7e8326904b4d1c68825c71f349b86e2825a19e031cc76f408d32a0759fd"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_7.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "ff501f630374e7ed97e218e399bda69cdc616c413781c7ebae43035a209c44eb"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_70.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "4b72c01f193c67c6ba9da9cac658703dd04ca7b7680ef9ec61981a11844a0fac"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_71.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "efecd1422f91909854f51e5c5f3b9d232615ae36a56c37352ecffb9173bc8e32"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_72.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "006133417e3eb8dd066f898673a7ce858680897999d4b4f68da0136421404cc4"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_73.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "0f8cebf15e5844db172edd412c15bcb01b2d29cf765400ccfd69565e032a18be"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_74.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "f84403cef8da90ea51ec3d0e81868cc662ec782cb8cff83061f39168f7320229"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_8.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "974f983ca9d10569ce990ef19053680423dbc4bb9828049004b3fa541ba4922d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_fasta_9.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "223fa831831f5d9538e905e93adf5f3cdd7d67556527a57d00eb1df63ecd641e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_score_only/score_only/AF-P02788-F1-model_v6_pdb.npz",
+      "kind": "design",
+      "bytes": 9528,
+      "sha256": "17dcc7c79f84514adae5bc05124eb2050ee91a745233b139037f3052e754164a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_scores_substitute.json",
+      "kind": "design",
+      "bytes": 20093,
+      "sha256": "2545fb9b64768b3eac9e7d17eba19d8a24b7048de5565fd6ffc2de94e12edbbb"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_unconstrained/probs/AF-P02788-F1-model_v6.npz",
+      "kind": "design",
+      "bytes": 7331286,
+      "sha256": "fb98650a50cd23ff9c8700e620b262f163ff91eabe7af64f9394c0ed3aa7cffa"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_unconstrained/scores/AF-P02788-F1-model_v6.npz",
+      "kind": "design",
+      "bytes": 1000,
+      "sha256": "6f6d0a76c8783ac48e2ad5ff48720a22a6b6d5842d8202c6aeebe944874da08b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/mpnn_unconstrained/seqs/AF-P02788-F1-model_v6.fa",
+      "kind": "design",
+      "bytes": 47948,
+      "sha256": "c62d53a692c51be4c555c67f6a1dd6382f260b49b9aa5642e2e9dde4a4f0117a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/parsed_chains.jsonl",
+      "kind": "design",
+      "bytes": 74785,
+      "sha256": "e170cca541412a4725727c2a932fad6348fe7eb5d7b499c5d0db7b3f60e42abe"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/pdbs/AF-P02788-F1-model_v6.pdb",
+      "kind": "design",
+      "bytes": 452708,
+      "sha256": "12ae718c7cb0bdefaf4e766de9e4565beea4245f179f7bf0d7cb64d6bc2fd514"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/score_mpnn_candidates.py",
+      "kind": "design",
+      "bytes": 23421,
+      "sha256": "090aeb861a6e10fe441b72c3ad4c10dba2b47c90236de4f6750ef543bf3838bf"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/shortlist_mpnn.json",
+      "kind": "design",
+      "bytes": 45250,
+      "sha256": "2f5fccfe7d94b64a61625e9e275e9c51caa76c6a2842239c92008844c03ebae9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/substitute_candidates_full.fasta",
+      "kind": "design",
+      "bytes": 57902,
+      "sha256": "1d7ad5df49683f7e455b1ed3ee90f3c3c506b71d4dfb977672f4dec9ef1cf249"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/summary.md",
+      "kind": "design",
+      "bytes": 5638,
+      "sha256": "afc1b15509bf0347beb2ce98ec7dbe9b32b2800b45348b9ba7234e1d81d3b08c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/README.md",
+      "kind": "design",
+      "bytes": 9173,
+      "sha256": "16099d1556bb84048286663be7160a7e42a6ab22bd42387be0bf2de2c1610b06"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/esmfold_feasibility.py",
+      "kind": "design",
+      "bytes": 1456,
+      "sha256": "60406f1bafe5180f11ac328167d87f2080445b5823f36e31fc7f68f53590438a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/provenance.md",
+      "kind": "design",
+      "bytes": 3463,
+      "sha256": "9b46e45ab5bd981fb2cd9362a70164abb2de12b5b7c1a3c04411f79f03acd2d5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/refold_via_relax.py",
+      "kind": "design",
+      "bytes": 5283,
+      "sha256": "56718fd7ebc7a875bfface830633460f293ff551fd8c75454dc1c4598a917a22"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/refold_via_relax_results.json",
+      "kind": "design",
+      "bytes": 9511,
+      "sha256": "135a28e2b9770915ef6fdb26f9b30fe6d7b53a3ccb2f93cdb58c8ae823dba53e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/relaxed_mutant_poses/AGGR_PRO_EEEEPAAPPAP.pdb",
+      "kind": "design",
+      "bytes": 980334,
+      "sha256": "815f735e6db44ae634d521934aa96171ac73474f827c4a1ac300901dd804bc70"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/relaxed_mutant_poses/MPNN_NEEEQEEQDQQ.pdb",
+      "kind": "design",
+      "bytes": 982297,
+      "sha256": "efa49af2c1d03aefada1b5e83f6bd301a82e1635db23535c754b7af3f84629b3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/relaxed_mutant_poses/MPNN_NEEEQQQEEEQ.pdb",
+      "kind": "design",
+      "bytes": 982541,
+      "sha256": "68ca9d4d78b0b95237e7eec3dfb1ef42e75ee01005518f5cc42c39feb9be61fb"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/relaxed_mutant_poses/S353E_V357P_EEEEPAARRAR.pdb",
+      "kind": "design",
+      "bytes": 982769,
+      "sha256": "1d5241604fdc9fbd865d77a574684bfc6973b49cedad4ce8b57fd5374c9dae66"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/relaxed_mutant_poses/V357P_SEEEPAARRAR.pdb",
+      "kind": "design",
+      "bytes": 982485,
+      "sha256": "8be912538e158b1eb17d186f3108bfd572da20c3c624d7ffba63b1f6a49bb2df"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/relaxed_mutant_poses/WT_SEEEVAARRAR.pdb",
+      "kind": "design",
+      "bytes": 982618,
+      "sha256": "7efa3a1273c6971236de6439d34f19091436a4809042c0c7410522cb98ffea00"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/rosetta_ddg.py",
+      "kind": "design",
+      "bytes": 9850,
+      "sha256": "1bc1485e23876381d4d812f84995b6250ac46761c8bfdfcb7094d70a924c3e78"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/rosetta_ddg_results.json",
+      "kind": "design",
+      "bytes": 1428,
+      "sha256": "01ee6f7aee63f7f6f46d667cbb1f2c61b4fbac5925412d60969171b7e8d07751"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/rosetta_ddg_results_cartesian10.json",
+      "kind": "design",
+      "bytes": 4588,
+      "sha256": "496ad6e16d35403aaf1d39cab302366d5333376cf9854c2186cfcb0955b5c4ae"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/rosetta_ddg_results_torsion3.json",
+      "kind": "design",
+      "bytes": 2616,
+      "sha256": "c6ce11c58bee5a5d765fe6bae23059e275c8cbd19b4b36f20789dc91f1af202c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/structure_gated_cleavage.py",
+      "kind": "design",
+      "bytes": 8360,
+      "sha256": "f57b31e81ef8da2fe3447f8732d093aaee397c68fc7e69e149aa4eae000e26ce"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/structure_gated_cleavage_results.json",
+      "kind": "design",
+      "bytes": 2076,
+      "sha256": "5625f37bae838255311535f99d322242a6c95267b0821561e97df99093f74aa7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/outputs/candidates.json",
+      "kind": "generated_output",
+      "bytes": 50971,
+      "sha256": "718c2bcba474d544ec0d0d4d8b7559a7339bbd53294f907ccfef4f37256ec3c1"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/outputs/shortlist.json",
+      "kind": "generated_output",
+      "bytes": 13500,
+      "sha256": "a8a170fddf9bee78b9fd3f6f7a767dfd5c9b5be7db0720befaeac01c6f1c6ed0"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 3039,
+      "sha256": "5b24772a5d83192f6dbff219fedb140659fc25fb65f8598da71d06706eefca2a"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
+    },
+    {
+      "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
+      "kind": "proposed_update",
+      "bytes": 17427,
+      "sha256": "791b36462f9dd5953e76d951c0291d209985ead2410f1988ceb62d4ddf227461"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 42433,
+      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+    },
+    {
+      "path": "wiki/etc/autonomous-screening-methodology.md",
+      "kind": "proposed_update",
+      "bytes": 25106,
+      "sha256": "22f922f454cf6b90d526e0902e48f7cc24c345a8076d68246eef1d86080c5fbf"
+    },
+    {
+      "path": "wiki/etc/bio-ai-tools.md",
+      "kind": "proposed_update",
+      "bytes": 63996,
+      "sha256": "d9a021e8d7debec90a2786475027c0a08bef82d05eca3d9ebb75111709682376"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/README.md",
+      "kind": "proposed_update",
+      "bytes": 4907,
+      "sha256": "cc78464096af73044281c4b706ad84bd3dac8b4bc2b6e416c39ce5b5e70e8f4a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 9701,
+      "sha256": "e456fa12f5aeb1901a4c50934afec59a182d7941279acb4e6115b2e3c54efa9d"
+    },
+    {
+      "path": "wiki/lactoferrin-linker-redesign-computational.md",
+      "kind": "proposed_update",
+      "bytes": 6957,
+      "sha256": "d005adf396ab2a5bb8ee54d8f6e8eeaafd356d238ed882ccf9d01d5633bbd681"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "97fb6cc8f9d02e05f651e66c174a0b3591a5a93847c32fc214697a5e667833cd"
+}

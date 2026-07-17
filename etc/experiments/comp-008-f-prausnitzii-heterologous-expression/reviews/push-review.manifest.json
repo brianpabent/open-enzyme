@@ -1,0 +1,87 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/README.md",
+      "kind": "design",
+      "bytes": 8171,
+      "sha256": "d0eb79115f149099c4e3c7e9b89cd5947d0c5b347d6606d19479f54019975f6d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/analyze.py",
+      "kind": "design",
+      "bytes": 34292,
+      "sha256": "28ea9cf65ad8cbd63184f0ec0b1f456d3349425963f6ea9d2fd7f79b46d07e1e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/inputs/chassis_profile.json",
+      "kind": "design",
+      "bytes": 6120,
+      "sha256": "14483a4648db406a37f6594eb9cd404a8c3b6e075591c82d7a1bbba7889f2314"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/inputs/payloads.json",
+      "kind": "design",
+      "bytes": 6145,
+      "sha256": "ecf4aca439eee19bbc97b3e8922651ba28d743228172424b8f7139eb0d532a2c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 6935,
+      "sha256": "5ad32d662b9248f4c6c5ae642beded71ecca07c670f72b9dfe0c1751951fa10a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 16316,
+      "sha256": "aa41d8be5b6b322ef082797accb8c396f215969b6ffbb9f8c2f6a9ba749d4fd5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 18623,
+      "sha256": "8b4c94f89e87c538b0f61cafd074fac887ac271646ee22678e830d350f1f2465"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
+    },
+    {
+      "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
+      "kind": "proposed_update",
+      "bytes": 17427,
+      "sha256": "791b36462f9dd5953e76d951c0291d209985ead2410f1988ceb62d4ddf227461"
+    },
+    {
+      "path": "wiki/engineered-lbp-chassis.md",
+      "kind": "proposed_update",
+      "bytes": 20084,
+      "sha256": "770f3a6a5b8c9dd5b7f47b092d97963f9f1091bddb1d32300af62ad042e99481"
+    },
+    {
+      "path": "wiki/f-prausnitzii-heterologous-expression-computational.md",
+      "kind": "proposed_update",
+      "bytes": 5968,
+      "sha256": "97a834d4c37d911efb0fe3bbc5b0c3ef0dfa5d6e8a6121b3e4473a1bb20a63f0"
+    },
+    {
+      "path": "wiki/hypotheses/H02-engineered-lbp-thesis.md",
+      "kind": "proposed_update",
+      "bytes": 7844,
+      "sha256": "1e27f3bb9a8749931f7172e4a56f5da9ca36aeb55fc13ace31609b30552abeca"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 94611,
+      "sha256": "d14f205ec6cd1927ee2906beb4e4254522f51288201618fbc7722799d7bb0d23"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "1d7aea3007baa0dd92f9acaad26e999f174801544177da84eee152545f2cbd19"
+}

@@ -375,7 +375,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -406,13 +406,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2020,7 +2013,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2055,7 +2048,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2125,7 +2118,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3107,7 +3100,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3142,7 +3135,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -3683,13 +3676,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4003,7 +3989,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -4780,7 +4766,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5360,15 +5346,13 @@
 <h1 id="gut-lumen-uricase-abcg2-genotype-stratification-flux-model-comp-019">Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model (comp-019)<a class="headerlink" href="#gut-lumen-uricase-abcg2-genotype-stratification-flux-model-comp-019" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Superseded 2026-07-13 by <a href="../gut-lumen-uricase-physiologic-regime-computational/">comp-044</a>.</strong> comp-019's code did not use the luminal-urate concentration or UOX Km stored in its inputs and assumed 24 hours of saturated activity. Its quantitative ΔSUA, genotype-effect magnitudes, capacity ratios, flat-dose conclusion, and yield-priority recommendations are retired. The frozen artifact remains for provenance only; do not use it for dose or efficacy decisions.</p>
-<p><strong>Frozen analysis archived to <a href="../etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/wiki-archive/"><code>./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/wiki-archive.md</code></a></strong> (272 lines).
-This wiki stub remains so cross-references resolve and the page stays discoverable.
+<p>This wiki stub remains so cross-references resolve and the page stays discoverable.
 Computational analyses are write-once artifacts; the daemon does not need to re-read
 them on every sweep, so the long content lives next to the experiment that produced it
 at <code>etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/</code>.</p>
 </blockquote>
-<p>There was a worry that the engineered-koji platform's whole therapeutic mechanism might only work in patients who carry a specific genetic variant — Q141K in the ABCG2 transporter — which is the #1 genetic risk factor for gout. About 25% of European-ancestry gout patients carry this variant; up to 50% of East-Asian-ancestry patients do. <strong>If</strong> the platform mechanism only worked in this subset, the addressable demographic would shrink dramatically and the trial design would have to change.</p>
+<p>This analysis asked whether an ABCG2-dependent gut-lumen uricase mechanism might work only in patients who carry Q141K. If so, the eligible population and trial stratification for that mechanism would change. The conclusion applies to the affected oral-uricase tracks, not to Open Enzyme as a whole.</p>
 <p><strong>Where the analysis lives:</strong>
-- Full archived analysis: <a href="../etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/wiki-archive/"><code>./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/wiki-archive.md</code></a>
 - Experiment directory (inputs, scripts, outputs): <a href="./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/"><code>./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/</code></a>
 - Computational experiments index: <a href="../computational-experiments/"><code>computational-experiments.md</code></a></p>
 

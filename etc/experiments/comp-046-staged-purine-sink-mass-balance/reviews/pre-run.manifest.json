@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/README.md",
+      "kind": "design",
+      "bytes": 2747,
+      "sha256": "5c59a0bae978dd61747a9ecceb8e010a1d1d7bf8a8097a3cfdeef419ff6ac1fd"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/analyze.py",
+      "kind": "design",
+      "bytes": 11315,
+      "sha256": "2bff6d0d87179e14cd8f1d42e90dfad691f8cfbc799e4ce2be01cf1690e97e43"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/inputs/model_parameters.json",
+      "kind": "design",
+      "bytes": 1382,
+      "sha256": "84152ded1ab858193029aba405436dd7896d05694a25a78f44660e650e09f2ba"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 2100,
+      "sha256": "a804895d6a20de273f0c320dbd8e9da5ef1966d60be77842e4c0f19c28bf0c6b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/inputs/query-strategy.json",
+      "kind": "design",
+      "bytes": 681,
+      "sha256": "c5c2b42ebba7cde1c40f57495ff7606c47dac0171873ea1d77c9e7755c173d44"
+    }
+  ],
+  "prior_output_baseline": [
+    {
+      "path": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/outputs/results.json",
+      "kind": "prior_output",
+      "bytes": 4107,
+      "sha256": "bbcc25fe1df7a9e8434e8044c72d486bdac7c04be663cfb0be66b9a8ccc3c1c1"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/outputs/summary.md",
+      "kind": "prior_output",
+      "bytes": 2934,
+      "sha256": "e6aaee0041d919377dd1827dee8795d897dd292cfa193abf6d3ca6844096c837"
+    }
+  ],
+  "manifest_sha256": "fa59c318a2e6835201d4613e2f6aa765ee81f1cf3b43a94c3bf4ffb10ec11fcd"
+}

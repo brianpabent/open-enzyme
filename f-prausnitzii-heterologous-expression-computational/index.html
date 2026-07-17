@@ -375,7 +375,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -406,13 +406,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2020,7 +2013,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2055,7 +2048,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2125,7 +2118,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3107,7 +3100,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3142,7 +3135,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -3683,13 +3676,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4003,7 +3989,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -4780,7 +4766,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5358,9 +5344,6 @@
 
 
 <h1 id="f-prausnitzii-heterologous-expression-feasibility-comp-008">F. prausnitzii Heterologous Expression Feasibility (comp-008)<a class="headerlink" href="#f-prausnitzii-heterologous-expression-feasibility-comp-008" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p><strong>Frozen analysis archived at <a href="../etc/experiments/comp-008-f-prausnitzii-heterologous-expression/wiki-archive/"><code>etc/experiments/comp-008-f-prausnitzii-heterologous-expression/wiki-archive.md</code></a>. Reproducible artifact: <code>python3 etc/experiments/comp-008-f-prausnitzii-heterologous-expression/analyze.py</code>.</strong></p>
-</blockquote>
 <h2 id="headline-ranking">Headline ranking<a class="headerlink" href="#headline-ranking" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -5376,7 +5359,7 @@
 <tbody>
 <tr>
 <td>1</td>
-<td>Butyrate-pathway boost (native BCoAT, UniProt C7H5K4)</td>
+<td>Native BCoAT overexpression candidate (UniProt C7H5K4)</td>
 <td><strong>0.748</strong></td>
 <td>[0.641, 0.822]</td>
 <td><strong>GREEN</strong></td>
@@ -5410,7 +5393,7 @@
 </table>
 <h2 id="key-findings">Key findings<a class="headerlink" href="#key-findings" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Butyrate-pathway boost wins decisively.</strong> It is the only GREEN payload at the base score and remains GREEN with the engineering-toolkit gap excluded (toolkit-conditional score 0.875). CAI=1.0 (native gene), no secretion, no folding burden, native pathway alignment.</li>
+<li><strong>Native BCoAT overexpression has the highest point estimate.</strong> It is the only GREEN candidate at the base score and remains GREEN with the engineering-toolkit factor excluded (toolkit-conditional point score 0.875), but its declared range overlaps sCR1. Native-gene status avoids cross-host codon mismatch; it does not imply CAI = 1.0 or prove increased butyrate flux.</li>
 <li><strong>Uricase is the wrong payload for this chassis.</strong> Uricase catalyzes uric acid + O2 → 5-hydroxyisourate + H2O2 (<a href="https://www.uniprot.org/uniprotkb/Q00511">UniProt Q00511</a>; verified 2026-05-16). F. prausnitzii is a strict obligate anaerobe in an anoxic colonic lumen. Even with a perfect engineering toolkit, the chemistry can't run. <strong>Strategic reclassification:</strong> uricase belongs on koji or <em>E. coli</em> Nissle (facultative anaerobe), not F. prausnitzii.</li>
 <li><strong>Lactoferrin and sCR1 are conditional-GREEN candidates.</strong> Both have favorable host-physiology fit, both bottleneck on the same anoxic-environment-disulfide-folding question (lactoferrin 16 disulfides per Notari 2023, sCR1 SCR1-4 8 disulfides). Mitigatable via heterologous DsbA/DsbB co-expression but not yet validated experimentally.</li>
 <li><strong>The engineering-toolkit gap (0.25 across all payloads) is the gating factor.</strong> As of 2026-05, <strong>F. prausnitzii has no published transformation protocol.</strong> The 2023 <a href="https://doi.org/10.20517/mrr.2022.13">Sheridan review of gut-bacteria genetic manipulation</a> covers Bifidobacterium, Bacteroides, Roseburia, E. rectale — not F. prausnitzii. The literature workaround: MAM (F. prausnitzii's anti-inflammatory effector protein) is delivered to mouse gut via <em>Lactococcus lactis</em> carrying the plasmid (<a href="https://doi.org/10.1136/gutjnl-2014-307649">Quévrain 2016</a>; <a href="https://doi.org/10.3389/fmicb.2017.00114">Breyner 2017</a>) — researchers engineered <em>L. lactis</em>, not F. prausnitzii. Closest engineering precedent for adapting a toolkit: Roseburia inulinivorans conjugation (<a href="https://doi.org/10.1016/j.anaerobe.2019.06.008">Sheridan 2019 Anaerobe doi:10.1016/j.anaerobe.2019.06.008</a>; <a href="https://doi.org/10.21769/BioProtoc.3575">Sheridan 2020 Bio Protoc doi:10.21769/BioProtoc.3575</a>) — Lachnospiraceae phylogenetic neighbor, conjugative-transposon-based, 10⁻⁴ to 10⁻⁶ transconjugants/recipient. Estimated 1-2 yr to adapt to F. prausnitzii A2-165.</li>
@@ -5418,15 +5401,15 @@
 <h2 id="codon-gc-secretion-summary">Codon / GC / secretion summary<a class="headerlink" href="#codon-gc-secretion-summary" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Genome:</strong> 2.78-3.23 Mbp, <strong>56.6% GC</strong> (<a href="https://doi.org/10.1128/mra.00824-22">Fraccascia 2022 doi:10.1128/mra.00824-22</a>). A2-165 = JCM 31915 = DSM 17677, reclassified as <em>F. duncaniae</em> by <a href="https://doi.org/10.1099/ijsem.0.005379">Sakamoto 2022</a>.</li>
-<li><strong>GC match:</strong> human payloads ~58% GC ↔ Fp 56.6% — only 1.4 pp mismatch, <strong>best of any chassis in the LBP track</strong> (vs Bacteroides 43%, EcN 51%). A. flavus uricase ~52% GC, 4-5 pp mismatch. Codon-optimization low-cost ($1-5K/cassette).</li>
+<li><strong>Codon compatibility:</strong> no CDS-level CAI or cross-chassis codon analysis was performed. Approximate source/host GC values are framework estimates and cannot establish a preferred chassis or cassette cost.</li>
 <li><strong>Secretion:</strong> Sec-translocon (SecA/Y/E) + Tat-translocon (TatABC) both annotated. Native MAM secretion documented (<a href="https://doi.org/10.1136/gutjnl-2014-307649">Quévrain 2016</a>). Heterologous-payload secretion titers never measured.</li>
 </ul>
 <h2 id="cross-reference-for-engineered-lbp-chassis-phase-2">Cross-reference for engineered-lbp-chassis Phase 2<a class="headerlink" href="#cross-reference-for-engineered-lbp-chassis-phase-2" title="Permanent link">&para;</a></h2>
 <p>This comp informs / decides:</p>
 <ul>
-<li><strong>P2-4 (this comp):</strong> complete; Fp engineering-naive as of 2026-05; Phase 2 should prioritize toolkit development BEFORE payload selection. <strong>P2-6 (chassis matrix):</strong> uricase belongs on EcN or koji; butyrate-boost belongs on Fp; lactoferrin / sCR1 routable to Fp or Bacteroides pending disulfide-folding investigation.</li>
+<li><strong>P2-4 (this comp):</strong> complete; Fp engineering-naive as of 2026-05; Phase 2 should prioritize toolkit development before payload selection. <strong>P2-6 (chassis matrix):</strong> uricase is poorly matched to strict-anaerobe Fp; native BCoAT overexpression is the lowest-complexity Fp construct to test; lactoferrin / sCR1 remain secretion- and folding-gated.</li>
 <li><strong>Wet-lab sequence (if committed):</strong> (1) adapt Sheridan 2019 Lachnospiraceae conjugation toolkit, (2) chromosomally boost native BCoAT, (3) heterologously secrete a small reporter (e.g. NanoLuc) via Sec, (4) only then attempt lactoferrin / sCR1.</li>
-<li><strong>comp-007 cross-link:</strong> butyrate was the top food-grade HDAC inhibitor by isoform selectivity (167× class-I over HDAC6). Continuous gut-luminal butyrate from engineered Fp solves oral bioavailability — comp-008 says it's the FIRST plausible engineering campaign in this chassis.</li>
+<li><strong>comp-007 cross-link:</strong> butyrate was the top food-grade HDAC inhibitor by isoform selectivity (167× class-I over HDAC6). Native BCoAT overexpression has the highest point estimate under comp-008's expert-prior rubric, but the ranges overlap and increased butyrate is untested. Any delivery claim requires measured colonization density, titer, epithelial exposure, surface trafficking, and functional urate flux.</li>
 </ul>
 
 

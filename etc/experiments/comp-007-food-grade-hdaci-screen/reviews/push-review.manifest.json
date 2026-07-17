@@ -1,0 +1,177 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/README.md",
+      "kind": "design",
+      "bytes": 4279,
+      "sha256": "f22b83cffa7f9b322a8b359af5a8c50aaef7e73f5d36ae89b14a826ce2d3279d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/analyze.py",
+      "kind": "design",
+      "bytes": 19530,
+      "sha256": "bc9cfd559269b5b75c4caae97126514a4298cb7b04d99ffbd632faafa428c12e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/inputs/bioactivity_data.json",
+      "kind": "design",
+      "bytes": 12341,
+      "sha256": "66aff0291dcdcadc63265612ceeeb64783a1d661efdb9b667b037f905f80e9ee"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/inputs/candidates.json",
+      "kind": "design",
+      "bytes": 8997,
+      "sha256": "bcd19c59f4f02ba103f2f81d3df257aa75ba6e90bc038647e343b00813618589"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/inputs/hdac_targets.json",
+      "kind": "design",
+      "bytes": 2404,
+      "sha256": "22b0765663536be0cba5fa58335d9f81e9f95b2d1a2f8766d36bb3a307aa19cd"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 11197,
+      "sha256": "6ee65c9ef13104b5d568bbda54963fb9eaf98cbd5555da2bf2f6ed7970e52892"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/outputs/ranking.json",
+      "kind": "generated_output",
+      "bytes": 11206,
+      "sha256": "ab53723ae222705bb54434cd55d8c5041bd889417987e4cfe36623d006ab5258"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 8275,
+      "sha256": "6a74f9210ee5a57a7534d09d0a702fd0e539ef9ab1915ac79043e370f16fbd72"
+    },
+    {
+      "path": "wiki/chassis-pending-interventions.md",
+      "kind": "proposed_update",
+      "bytes": 37221,
+      "sha256": "a14617bdc4b75b69b543878ce0cbf8b202098e82756593c5a66ec437a61121b9"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 103744,
+      "sha256": "84c515706dfc5ccb9b2071bb47c53f83e44834b1032edf64fd85fca8909248ff"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
+    },
+    {
+      "path": "wiki/engineered-lbp-chassis.md",
+      "kind": "proposed_update",
+      "bytes": 20084,
+      "sha256": "770f3a6a5b8c9dd5b7f47b092d97963f9f1091bddb1d32300af62ad042e99481"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/README.md",
+      "kind": "proposed_update",
+      "bytes": 5540,
+      "sha256": "a60b0f1ce8e92a60c95b171efa206125a2a77e9d9ed21a33151e67fb424b07fa"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 11525,
+      "sha256": "71e14a816387867af91113ab01d13ae652ab7e7e54fbdb41da3c1322637b441b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 18623,
+      "sha256": "8b4c94f89e87c538b0f61cafd074fac887ac271646ee22678e830d350f1f2465"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md",
+      "kind": "proposed_update",
+      "bytes": 7178,
+      "sha256": "2e9dfaebb068123b223fa5774856c6e42aba7a805cccb3e423a84eadd9b642fd"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 16933,
+      "sha256": "2c40532b7ca8b5c92ea00b4a2d3aa87696d7ea3da634c456ac973719eb8b78fc"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 4067,
+      "sha256": "21bae59e66ffcebaf3ab2bfce5217c4400ad7860ec74be329716b45ad41bf35d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md",
+      "kind": "proposed_update",
+      "bytes": 7844,
+      "sha256": "e6548837d343162f982781296377a7aaffa4a007eb900e12232a3be709defd48"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/README.md",
+      "kind": "proposed_update",
+      "bytes": 5741,
+      "sha256": "e06b9dda77d4b8613f1e58ddbf13b5e6fbc68ee15bddfbdc978ecffb1b0e351f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 11469,
+      "sha256": "6478fc9c3aca251600eadde1d31e745004aaf287dd43bf8b2cbc830a19c8aa05"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 19676,
+      "sha256": "34c8e07894ee045a67a68480b93eea01d06525ca9ebf34280e0da8d387a2ef4c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
+      "kind": "proposed_update",
+      "bytes": 30992,
+      "sha256": "e1af5d1bc51b784aa3fea2eae804c9ae5ac92d012fc0c1cdf708c719a177f433"
+    },
+    {
+      "path": "wiki/f-prausnitzii-heterologous-expression-computational.md",
+      "kind": "proposed_update",
+      "bytes": 5968,
+      "sha256": "97a834d4c37d911efb0fe3bbc5b0c3ef0dfa5d6e8a6121b3e4473a1bb20a63f0"
+    },
+    {
+      "path": "wiki/food-grade-hdaci-screen-computational.md",
+      "kind": "proposed_update",
+      "bytes": 1874,
+      "sha256": "9fa7323872e10a9d4f58140667c9504e3d8b8e6c4923ee183dd04c1bc5dc83cd"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 94611,
+      "sha256": "d14f205ec6cd1927ee2906beb4e4254522f51288201618fbc7722799d7bb0d23"
+    },
+    {
+      "path": "wiki/tcm-gout-compound-triage-computational.md",
+      "kind": "proposed_update",
+      "bytes": 11066,
+      "sha256": "1eb840e631ac1e38a16ca3b3e0d49a5a4c58dd18b7f9c922e77928b81254cd6b"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "1f9098a8d8f2521704b4fe8e93b21ab375ea5e5b3496ea1d0b54388af78635a5"
+}

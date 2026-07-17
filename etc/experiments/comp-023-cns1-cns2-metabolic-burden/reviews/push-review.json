@@ -1,0 +1,41 @@
+{
+  "schema_version": 2,
+  "comp": "comp-023",
+  "comp_dir": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden",
+  "source_commit": "0a6a0c6b2b6bdff78fa564eb5e0f8f96447299f4",
+  "artifact_manifest_sha256": "e7ffc3e962c74c22545794fb09a971964ca6d4b2a43b19d718895001378db891",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-17T00:38:12Z",
+  "comp_verdict": "review_completed_actioned",
+  "propagation_eligibility": "eligible_with_warning",
+  "synthesis_eligibility": "eligible_with_warning",
+  "action_required": false,
+  "derived_paths": [
+    "wiki/chaperone-orthogonal-stacking.md",
+    "wiki/computational-experiments.md",
+    "wiki/cordycepin-cassette-burden-computational.md",
+    "wiki/etc/GRAPH.md",
+    "wiki/etc/autonomous-screening-methodology.md",
+    "wiki/etc/bio-ai-tools.md",
+    "wiki/koji-endgame-strain.md",
+    "wiki/validation-experiments.md"
+  ],
+  "actual_cost_usd": 0.0,
+  "binding_mode": "completed_review_migration",
+  "independent_review": {
+    "completed": true,
+    "date": "2026-07-14",
+    "reviewed_snapshot": "8ee4d257b275ae42e4af64a49f1c766870726f4f",
+    "review_log_git_path": "logs/comp-reviews/2026-07-14-comp-023-8ee4d25.md",
+    "review_log_commit": "731e59b4b67ab993760bfbc5c086746f696032f4"
+  },
+  "post_review_changed_manifest_paths": [
+    "wiki/chaperone-orthogonal-stacking.md",
+    "wiki/computational-experiments.md",
+    "wiki/cordycepin-cassette-burden-computational.md",
+    "wiki/etc/bio-ai-tools.md",
+    "wiki/koji-endgame-strain.md",
+    "wiki/validation-experiments.md"
+  ],
+  "note": "Carries forward a completed independent review and its remediation state. The exact current manifest binding is a migration receipt, not a new review."
+}

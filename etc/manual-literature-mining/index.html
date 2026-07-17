@@ -379,7 +379,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -410,13 +410,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2024,7 +2017,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2059,7 +2052,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2129,7 +2122,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3111,7 +3104,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3146,7 +3139,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -3689,13 +3682,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4009,7 +3995,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -4786,7 +4772,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5757,7 +5743,7 @@
 <p><strong>When to use which:</strong> if a Pass 1 or comp-NNN scan returns "empty" for a fungal / botanical chokepoint after a mechanism-name-only query, treat this as a <strong>candidate for query-framing re-scan</strong>, not a confirmed empty chokepoint. The recovery rate from the 2026-05-19 audit was substantial — multiple "empty" verdicts were reversed by species-name + traditional-pathology re-seeding.</p>
 <p><strong>Pre-commit gate interaction:</strong> query-framing failures and the pre-commit grep-verify gate (§"Pre-commit verification gate" above) target different error modes. The pre-commit gate catches <em>fabricated or wrong numbers inside a single paper's claims</em>. Query-framing catches <em>whole subfields of evidence the search never surfaced</em>. A well-verified claim from a query-framing-incomplete scan can still mislead — the absence in the scan output isn't an absence in the literature. Apply both disciplines independently.</p>
 <p><strong>Cross-references:</strong>
-- <a href="../../scripts/sweep-prompt-2-synthesize.md"><code>scripts/sweep-prompt-2-synthesize.md</code></a> §"Query-framing discipline" — the Pass 2 prompt-level codification of this discipline
+- <a href="../../scripts/SWEEP-ARCHITECTURE.md"><code>scripts/SWEEP-ARCHITECTURE.md</code></a> — the current full-synthesis and source-rehydration architecture
 - <a href="../../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md"><code>logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md</code></a> — canonical retrospective with the empirical recovery rate
 - <a href="../../CLAUDE.md"><code>CLAUDE.md</code></a> §"Global-multilingual research by default" — the upstream discipline this operationalizes</p>
 <h2 id="translation-protocol-two-model-independent-cross-check-inline-disagreement-annotations">Translation protocol (two-model independent cross-check + inline disagreement annotations)<a class="headerlink" href="#translation-protocol-two-model-independent-cross-check-inline-disagreement-annotations" title="Permanent link">&para;</a></h2>

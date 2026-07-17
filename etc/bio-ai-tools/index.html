@@ -379,7 +379,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -410,13 +410,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2024,7 +2017,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2059,7 +2052,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2129,7 +2122,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3111,7 +3104,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3146,7 +3139,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -4622,13 +4615,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4942,7 +4928,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -5719,7 +5705,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -6354,7 +6340,7 @@
 <p><strong>ProteinMPNN install RESOLVED 2026-05-19 (E2 walkthrough rerun complete).</strong> ProteinMPNN cloned to <code>tools/ProteinMPNN/</code> (repo-local — sandbox blocked <code>/opt/</code> and <code>~/tools/</code>). Smoke test passed; lactoferrin sampling runs ~52 s/pool on CPU. <strong>Headline rerun finding:</strong> the substitute sampler's 15 GREEN candidates are NOT artifacts (mean MPNN log-likelihood 2.74 GREEN vs 3.74 FAIL — clean separation). Genuine MPNN additionally identified 3 STRICT (5-of-5) candidates the substitute missed: <code>NEEEQQQEEEQ</code>, <code>NEEEEQQEQEQ</code>, <code>NEEEEEQEQEQ</code> — all 10.4× cleavage reduction vs WT. §1.10 wet-lab arm validated for gene synthesis with NEEEQQQEEEQ as the aggressive arm. <strong>Install note 2026-05-19:</strong> the subagent's <code>tools/ProteinMPNN/</code> clone was sandbox-ephemeral and did not persist. <strong>For durable <code>/opt/ProteinMPNN</code> install outside the sandbox:</strong> <code>git clone https://github.com/dauparas/ProteinMPNN /opt/ProteinMPNN</code> (PyTorch 2.12 + NumPy 2.4 already on system; smoke-test via <code>examples/submit_example_1.sh</code>). The 2026-05-19 rerun artifacts persisted in <code>wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/proteinmpnn_rerun/</code> even though the install location didn't. Full report: <a href="../../logs/proteinmpnn-comp-034-rerun-2026-05-19.md"><code>logs/proteinmpnn-comp-034-rerun-2026-05-19.md</code></a>.</p>
 <p><strong>When to apply this workflow:</strong></p>
 <ul>
-<li>Adding a new secreted protein payload to the koji platform (uricase variants, lactoferrin, DAF SCR1-4, C1-INH if routed to secreted format, future fusion proteins, future therapeutic peptides ≥3 kDa with structured architecture).</li>
+<li>Adding a new secreted protein payload to the koji track (uricase variants, lactoferrin, DAF SCR1-4, C1-INH if routed to secreted format, future fusion proteins, future therapeutic peptides ≥3 kDa with structured architecture).</li>
 <li>When a shio-koji protease-stability analysis (comp-005-style) flags a structured-mandatory linker as a MODERATE/HIGH risk vulnerability.</li>
 <li>Skip when the vulnerability is a removable spacer (truncate is the answer; see comp-012 / DAF for the worked example).</li>
 </ul>

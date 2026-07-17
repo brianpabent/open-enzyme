@@ -1,0 +1,105 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/README.md",
+      "kind": "design",
+      "bytes": 7649,
+      "sha256": "00ba8710f9b416a8b7080e7691a43b401a60208804291ba5674dd4f0684d0e2d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/analyze.py",
+      "kind": "design",
+      "bytes": 21627,
+      "sha256": "d3f1a3822c9a6c3713acd9d44c7f1b36240b8fe4a449694ff24e02bcb5abad8c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/inputs/bgc_architecture.json",
+      "kind": "design",
+      "bytes": 4812,
+      "sha256": "f5dda2dc29db3f853e14bf4233b6f0972ca76b92e31f9f239f939ddaaad13644"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/inputs/chassis_profiles.json",
+      "kind": "design",
+      "bytes": 6270,
+      "sha256": "26003e7d430e2657ae3913a09c632cff877f468f36facf08e8545aab05d6a9e5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 5375,
+      "sha256": "f9dfd94c92d329a5dfc136f6d3330e2e25862eadb62dc063d02176879a370d93"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 3404,
+      "sha256": "515a6ef68935af6947da17531592655c65b9f8bc1fcd9704dad0d4bb4a34fcfc"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 6601,
+      "sha256": "9f71aecc74332657b1d265d4d674c49aee651a6a6a9761ae30dd80e7ccff7364"
+    },
+    {
+      "path": "wiki/c1-inh-protease-stability-ecn-computational.md",
+      "kind": "proposed_update",
+      "bytes": 16216,
+      "sha256": "7547f64e46d9efe86cc82c08706be56f1dd477b682a85e8307936dc0a56ec1f8"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 103744,
+      "sha256": "84c515706dfc5ccb9b2071bb47c53f83e44834b1032edf64fd85fca8909248ff"
+    },
+    {
+      "path": "wiki/complestatin-bgc-lbp-feasibility-computational.md",
+      "kind": "proposed_update",
+      "bytes": 6351,
+      "sha256": "1c37a1a73409c5efc23501c434a5f5e79f201d6fb9df2eb094c8f879ee003541"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
+    },
+    {
+      "path": "wiki/etc/autonomous-screening-methodology.md",
+      "kind": "proposed_update",
+      "bytes": 25106,
+      "sha256": "22f922f454cf6b90d526e0902e48f7cc24c345a8076d68246eef1d86080c5fbf"
+    },
+    {
+      "path": "wiki/etc/bio-ai-tools.md",
+      "kind": "proposed_update",
+      "bytes": 63996,
+      "sha256": "d9a021e8d7debec90a2786475027c0a08bef82d05eca3d9ebb75111709682376"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/README.md",
+      "kind": "proposed_update",
+      "bytes": 8171,
+      "sha256": "d0eb79115f149099c4e3c7e9b89cd5947d0c5b347d6606d19479f54019975f6d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/README.md",
+      "kind": "proposed_update",
+      "bytes": 10965,
+      "sha256": "0dee1992a12c19804b3cfa14334293dfafe08e71627c126d7bf60af742c8b3c2"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "16ef486343eb5e51728aa5ec783c2f52ab1f671cd9ba94faac1e4862a58ec173"
+}

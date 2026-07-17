@@ -1,0 +1,231 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/README.md",
+      "kind": "design",
+      "bytes": 9077,
+      "sha256": "172714505043925f4d2527267f9cf1f9146b3e4b28d5a25a3559d19792bf8d38"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/inputs/query-strategy.json",
+      "kind": "design",
+      "bytes": 5293,
+      "sha256": "22596d0d2c3c64d43a92103d313168a4aef3f2f31e976a19e4ed37f2a89218fe"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/inputs/targets.json",
+      "kind": "design",
+      "bytes": 6932,
+      "sha256": "abb01137d225bd5af46b6caa208e2603f8b353bd72f5284c6f0fc6ae86985d7c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-c1-inh-engineering-literature.md",
+      "kind": "design",
+      "bytes": 23284,
+      "sha256": "cbdc97d3c188c981ff7f898f3c83c24368400461f6a8e6f8bf963b3d49cc555d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json",
+      "kind": "design",
+      "bytes": 10223,
+      "sha256": "ff548f4b55aa689d0479ebd97c8ad00f9b8bdd41b957d0ad91164e76f85734a1"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-multilingual-findings.md",
+      "kind": "design",
+      "bytes": 29379,
+      "sha256": "b6a5301c45d256842df2d0fc910d94bcbd3c37873460c3474d81bee80b89a7fa"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-summary.md",
+      "kind": "design",
+      "bytes": 16265,
+      "sha256": "7431ea275e91f76bdb5a38dc153181ee72da57f3db35a287197041aaae9d02d9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/scripts/scope_validate.py",
+      "kind": "design",
+      "bytes": 4720,
+      "sha256": "1873a08abc3da33b771087403bfef17d07032a0fd2f438ff3cd92a390a72d062"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/outputs/compounds.json",
+      "kind": "generated_output",
+      "bytes": 44849,
+      "sha256": "e9773eb329e2e1f0c1d092667266712610935bb9eae07aca9ae628dca1a59222"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/outputs/scope-summary.md",
+      "kind": "generated_output",
+      "bytes": 3196,
+      "sha256": "9a4b429868f529ac0d6b81b6a0a5a97b5f38ab8312b28d3338c8950e80673308"
+    },
+    {
+      "path": "wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md",
+      "kind": "proposed_update",
+      "bytes": 32218,
+      "sha256": "99e518a4358e48a2c6e805f925f89f5c67193c313d41dd7597c4ac0dd7c425e0"
+    },
+    {
+      "path": "wiki/chaperone-orthogonal-stacking.md",
+      "kind": "proposed_update",
+      "bytes": 96959,
+      "sha256": "ce64482c142f0578e5b518fb3fa4cb6ce53fb688927d8777455b2999b6f82d6f"
+    },
+    {
+      "path": "wiki/combined-cp0-systems-model-computational.md",
+      "kind": "proposed_update",
+      "bytes": 12330,
+      "sha256": "d96687999c54e2798a651cf2da32fa8554f99c9e5f632a4a596f1bf027f808ad"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 103744,
+      "sha256": "84c515706dfc5ccb9b2071bb47c53f83e44834b1032edf64fd85fca8909248ff"
+    },
+    {
+      "path": "wiki/complestatin-bgc-lbp-feasibility-computational.md",
+      "kind": "proposed_update",
+      "bytes": 6351,
+      "sha256": "1c37a1a73409c5efc23501c434a5f5e79f201d6fb9df2eb094c8f879ee003541"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 42433,
+      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/README.md",
+      "kind": "proposed_update",
+      "bytes": 6070,
+      "sha256": "594d7a59666d222d4de7aa3beec673d775df0d7f2f055f91b9d35a3e01f3eb9f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 5316,
+      "sha256": "49d572cdec31ee45314ae074baec8fb0fa3b7f64db5ff6bcec78b1ef74fa82f9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/query-strategy.md",
+      "kind": "proposed_update",
+      "bytes": 2903,
+      "sha256": "a3cd548f7c20834ea64427b7324eeff63ace7dab22a2bfc34b900a28b9acd0e7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
+      "kind": "proposed_update",
+      "bytes": 30992,
+      "sha256": "e1af5d1bc51b784aa3fea2eae804c9ae5ac92d012fc0c1cdf708c719a177f433"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/README.md",
+      "kind": "proposed_update",
+      "bytes": 7238,
+      "sha256": "09fc1360fc93b92ad35b0f605b7fade2edb50b8d222aa547087699161418b1f2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 10185,
+      "sha256": "22190fca0e683d472b50ed1e85f1c1204569427f03898a541627002eedb838f7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/README.md",
+      "kind": "proposed_update",
+      "bytes": 7649,
+      "sha256": "00ba8710f9b416a8b7080e7691a43b401a60208804291ba5674dd4f0684d0e2d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 6601,
+      "sha256": "9f71aecc74332657b1d265d4d674c49aee651a6a6a9761ae30dd80e7ccff7364"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-029-combined-cp0-systems-model/README.md",
+      "kind": "proposed_update",
+      "bytes": 9943,
+      "sha256": "178fb801fbf92a3163e23ea778c1c1138d953157da89c72f32aa741956e54e2c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-029-combined-cp0-systems-model/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 9205,
+      "sha256": "293861ab7587082ab559967f3fe4ce813be6706f372c5491901e10f085b00347"
+    },
+    {
+      "path": "wiki/hypotheses/H05-daf-scr14-cp0-thesis.md",
+      "kind": "proposed_update",
+      "bytes": 12287,
+      "sha256": "c5a3183ee6d085198b12b975fcb93ccea5cafd28dfffa0b6fcfc604768727da6"
+    },
+    {
+      "path": "wiki/medicinal-mushroom-compound-mapping-computational.md",
+      "kind": "proposed_update",
+      "bytes": 17156,
+      "sha256": "6226419c1f34eb9d771c1faca6bb5ef3ef3d98a692fd81c2712db34ca007b366"
+    },
+    {
+      "path": "wiki/modality-chokepoint-matrix.md",
+      "kind": "proposed_update",
+      "bytes": 51347,
+      "sha256": "b2e228fe4e18156fd718976bd42ed2b1e5e029cc13eec7f1d4adfe10361cf18e"
+    },
+    {
+      "path": "wiki/nlrp3-exploit-map.md",
+      "kind": "proposed_update",
+      "bytes": 81255,
+      "sha256": "7c642b8308458111398fac152af7155db9f9c16f9cafa5c9674dda0069e3aeaf"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 94611,
+      "sha256": "d14f205ec6cd1927ee2906beb4e4254522f51288201618fbc7722799d7bb0d23"
+    },
+    {
+      "path": "wiki/supplements-stack.md",
+      "kind": "proposed_update",
+      "bytes": 103306,
+      "sha256": "4c2540a17fbec191a9fed0a7f9399ff60ad6706e201bedd5996e30d08a47e85a"
+    },
+    {
+      "path": "wiki/tcm-modern-rigor-intersection.md",
+      "kind": "proposed_update",
+      "bytes": 30057,
+      "sha256": "8ba1a1fafe2a64e18ffb1f34a90b7dbb0fd236d8f808a986975a2b0b1fd0fd23"
+    },
+    {
+      "path": "wiki/upstream-complement-modulator-sweep-computational.md",
+      "kind": "proposed_update",
+      "bytes": 12582,
+      "sha256": "39399dface72486830c809e2900fd7d57a0decc6617fa56350967da7878d15ee"
+    },
+    {
+      "path": "wiki/upstream-complement-verification-rerun-computational.md",
+      "kind": "proposed_update",
+      "bytes": 4607,
+      "sha256": "1ee1db83a1ec6646fc8340928b103116537ae9783f08499b860639fb61c2c849"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "00e49aa06bb5b04230f4298295d65196360f109d9e4329d62549b3139ffe935f"
+}

@@ -27,7 +27,7 @@
     
     
       
-        <title>Linter Design — Document Lint + Falsification Lint (Two-Linter Architecture) - Open Enzyme</title>
+        <title>Scientific Linter Design - Open Enzyme</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#linter-design-two-linter-architecture" class="md-skip">
+        <a href="#scientific-linter-design" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Linter Design — Document Lint + Falsification Lint (Two-Linter Architecture)
+              Scientific Linter Design
             
           </span>
         </div>
@@ -379,7 +379,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -410,13 +410,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2024,7 +2017,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2059,7 +2052,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2129,7 +2122,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3111,7 +3104,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3146,7 +3139,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -3698,13 +3691,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3722,13 +3708,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
   
 
       </a>
@@ -3749,10 +3728,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#intro-the-core-insight" class="md-nav__link">
+  <a href="#design-principles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Intro — The Core Insight
+        Design principles
       
     </span>
   </a>
@@ -3760,18 +3739,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-two-linters-not-one" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        §1 — Two Linters, Not One
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="§1 — Two Linters, Not One">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#document-lint" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3780,9 +3747,37 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Document Lint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output contract
+      
+    </span>
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
+  <a href="#rule-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rule catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#falsification-lint" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3791,63 +3786,14 @@
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#they-are-complementary-not-redundant" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        They Are Complementary, Not Redundant
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-design-principles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        §2 — Design Principles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-document-lint-rule-catalog-v0" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        §3 — Document Lint Rule Catalog (v0)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-falsification-card-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        §4 — Falsification Card Schema
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="§4 — Falsification Card Schema">
+    <nav class="md-nav" aria-label="Falsification Lint">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#frontmatter" class="md-nav__link">
+  <a href="#card-schema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Frontmatter
+        Card schema
       
     </span>
   </a>
@@ -3855,38 +3801,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#body-sections" class="md-nav__link">
+  <a href="#killshot-prioritization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Body Sections
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-failure-mode-ontology" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        §5 — Failure-Mode Ontology
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="§5 — Failure-Mode Ontology">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#v0-ontology-extended-from-the-brief" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        v0 Ontology — Extended from the Brief
+        Killshot prioritization
       
     </span>
   </a>
@@ -3894,10 +3812,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#extensibility" class="md-nav__link">
+  <a href="#failure-mode-ontology" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extensibility
+        Failure-mode ontology
       
     </span>
   </a>
@@ -3905,38 +3823,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#independence-calculation" class="md-nav__link">
+  <a href="#test-independence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Independence Calculation
+        Test independence
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-survival-score-calibration-retraction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        §6 — Survival Score, Calibration, Retraction
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="§6 — Survival Score, Calibration, Retraction">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#survival-score" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Survival Score
+        Survival score
       
     </span>
   </a>
@@ -3944,32 +3845,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#calibration" class="md-nav__link">
+  <a href="#calibration-and-retraction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Calibration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#retraction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Retraction
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pre-commit-hashing-addressed-by-git" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pre-Commit Hashing — Addressed by Git
+        Calibration and retraction
       
     </span>
   </a>
@@ -3982,10 +3861,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-n1-confounded-run-honesty" class="md-nav__link">
+  <a href="#n-of-1-evidence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        §7 — n=1 / Confounded-Run Honesty
+        N-of-1 evidence
       
     </span>
   </a>
@@ -3993,10 +3872,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-what-document-lint-wont-check" class="md-nav__link">
+  <a href="#boundaries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        §8 — What Document Lint Won't Check
+        Boundaries
       
     </span>
   </a>
@@ -4004,32 +3883,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-what-falsification-lint-wont-do" class="md-nav__link">
+  <a href="#implementation-questions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        §9 — What Falsification Lint Won't Do
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-phase-boundary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        §10 — Phase Boundary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-open-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        §11 — Open Questions
+        Implementation questions
       
     </span>
   </a>
@@ -4351,7 +4208,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -5128,7 +4985,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5705,326 +5562,209 @@
   
 
 
-<h1 id="linter-design-two-linter-architecture">Linter Design — Two-Linter Architecture<a class="headerlink" href="#linter-design-two-linter-architecture" title="Permanent link">&para;</a></h1>
-<h2 id="intro-the-core-insight">Intro — The Core Insight<a class="headerlink" href="#intro-the-core-insight" title="Permanent link">&para;</a></h2>
-<p>Generation and rigor are different modes of thought. Fusing them into a single pipeline strangles both: generation becomes cautious, rigor becomes dilute, and the entire apparatus becomes the 500-rule ESLint nobody actually runs. The trap most ML-bio platforms fall into is exactly this fusion — a "scientific discipline" layer bolted upstream of ideation, which filters out the non-obvious four-hop speculative connections that are the point of generation in the first place.</p>
-<p>The framing from the original brief is load-bearing:</p>
-<blockquote>
-<p><em>Generator stays free. Linter catches what we'd regret later.</em></p>
-</blockquote>
-<p>The refinement landed in the 2026-04-24 conversation: <strong>this is actually two linters, not one.</strong> One runs always, non-blocking, on every document change, and checks that documents are well-formed <em>as documents</em>. The other runs on demand, per committed hypothesis, and generates a Falsification Card probing whether the hypothesis is well-formed <em>as a scientific claim</em>. They share a philosophical stance (opt-in rigor, severity levels, honesty about confounding) but have different triggers, scopes, rule sets, and output surfaces.</p>
-<p>Splitting into two gives each one a single job and prevents the instinct to merge everything into one super-pass. This page is the design document for both.</p>
-<hr />
-<h2 id="1-two-linters-not-one">§1 — Two Linters, Not One<a class="headerlink" href="#1-two-linters-not-one" title="Permanent link">&para;</a></h2>
-<h3 id="document-lint">Document Lint<a class="headerlink" href="#document-lint" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Trigger.</strong> Always-on; runs per file change, per commit, or per PR.</li>
-<li><strong>Scope.</strong> Every <code>wiki/*.md</code> file, plus <code>index.md</code>, <code>mkdocs.yml</code>, top-level README.</li>
-<li><strong>Job.</strong> Check that documents are <em>correct as documents</em>. Evidence-level tags are present. Inline provenance is cited. Cross-refs resolve. CP labels conform to the v1.2 exploit map (no orphan "CP5" without the a/b sub-branch). Rodent IC50 citations carry a species-gap caveat. New pages appear in <code>mkdocs.yml</code> nav. YAML frontmatter is complete. No inline revision-history sections.</li>
-<li><strong>Output surface.</strong> Non-blocking reports / PR annotations. Never breaks a build. Findings are advisory — the author decides what to address.</li>
-<li><strong>Rule types.</strong> Mix of regex-level (cheap, deterministic, free) and Claude-semantic (token-priced, fuzzy). v0 starts with regex; semantic rules layer in as needed.</li>
-</ul>
-<h3 id="falsification-lint">Falsification Lint<a class="headerlink" href="#falsification-lint" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Trigger.</strong> On-demand, user-invoked. The user has committed to a hypothesis — written it down in <code>wiki/hypotheses/H0N-*.md</code> — and explicitly asks the linter to scrutinize it.</li>
-<li><strong>Scope.</strong> One hypothesis artifact at a time. Reads the committed hypothesis file plus the wiki pages it cross-references.</li>
-<li><strong>Job.</strong> Generate a Falsification Card: assumption stack + killshot menu + pre-committed thresholds + failure-mode tags. Surface the <em>cheapest upstream killshot that would collapse the branch</em> — the hero interaction per the brief.</li>
-<li><strong>Output surface.</strong> The Falsification Card itself (rendered into the hypothesis file, or into a companion artifact). Advisory — does not gate hypothesis creation. Does not determine "truth," only surfaces tests that would update belief.</li>
-<li><strong>Scoring.</strong> Ranks killshots by approximately <code>(kill_probability × information_weight) / (cost × time_penalty)</code>. Tracks survival score over time with decay and retraction.</li>
-</ul>
-<h3 id="they-are-complementary-not-redundant">They Are Complementary, Not Redundant<a class="headerlink" href="#they-are-complementary-not-redundant" title="Permanent link">&para;</a></h3>
-<p>Document Lint keeps the surface clean: every wiki page is a well-formed research artifact, evidence levels tagged, cross-refs resolve, nav is coherent. Its rules are <em>broad</em> (many rules, light checks) and <em>cheap</em> (mostly regex).</p>
-<p>Falsification Lint digs deep on one specific claim: assumption stack, killshot menu, failure-mode independence, pre-committed thresholds, survival tally. Its rules are <em>narrow</em> (one hypothesis at a time) and <em>expensive</em> (semantic reasoning, user-invoked).</p>
-<p>Neither linter pre-filters ideation. Pass 2 sweep synthesis stays promiscuous. New wiki page creation stays promiscuous. Brian's riffs stay promiscuous. The linters run where they pay — clean documents always, hypothesis scrutiny on demand — and nowhere else.</p>
-<hr />
-<h2 id="2-design-principles">§2 — Design Principles<a class="headerlink" href="#2-design-principles" title="Permanent link">&para;</a></h2>
-<p>Directly from the brief, adapted to the Open Enzyme context:</p>
-<ol>
-<li>
-<p><strong>Generator stays promiscuous.</strong> Pass 2 sweep synthesis (the second daemon pass that prepends new dot-connections to <code>synthesis/</code> (architecture: synthesis/README.md)), new wiki page creation, Brian's 3 a.m. speculation riffs — untouched by either linter. The generator's failure mode is <em>not generating</em>; a lint that discourages dot-connecting is a lint that kills the product.</p>
-</li>
-<li>
-<p><strong>Rigor is opt-in.</strong> Document Lint findings are non-blocking reports/annotations. Falsification Lint is user-invoked per hypothesis. Neither gates a commit, blocks a build, or pre-filters upstream. The user decides when rigor is worth the cost.</p>
-</li>
-<li>
-<p><strong>Severity levels matter.</strong> Hard / soft / style. Without severity, everything becomes an equal-priority warning and the lint loses signal. Severity maps onto the evidence-level tags already in use across the wiki (Clinical &gt; Animal &gt; In Vitro &gt; Mechanistic Extrapolation): a <em>hard</em> failure is a claim tagged at a higher evidence level than the cited source supports; a <em>soft</em> warning is missing or ambiguous provenance; a <em>style</em> note is formatting preference.</p>
-</li>
-<li>
-<p><strong>Honesty about confounding is a feature, not a failure.</strong> Especially for n=1 self-experiments where Brian is stacking koji + supplements + clomid + diet changes simultaneously by necessity. The linter logs concurrent interventions, flags that attribution is weak, and proposes single-variable follow-ups once the combined stack shows signal. Pretending a messy real-world experiment is clean is the worse outcome; tracking the mess honestly is the better one. See §7.</p>
-</li>
-<li>
-<p><strong>The hero moment is the redirect.</strong> The product's killer demo is when Falsification Lint says <em>don't run the expensive assay — here's a cheap upstream killshot that could collapse the whole branch</em>. User runs the cheap test. Branch dies. Expensive assay never happens. Every other feature of the linter justifies this moment. For H01 (see <code>hypotheses/H01-ward-dual-cassette.md</code>), that cheap upstream killshot is the literature/patent landscape deep-dive — $0 cost, 1 week, kill probability 0.3 on a root assumption — which is why it scores highest in the menu despite being the least "experimental" option.</p>
-</li>
-</ol>
-<hr />
-<h2 id="3-document-lint-rule-catalog-v0">§3 — Document Lint Rule Catalog (v0)<a class="headerlink" href="#3-document-lint-rule-catalog-v0" title="Permanent link">&para;</a></h2>
-<p>Rules are tagged with severity (hard / soft / style) and detection method (regex vs. Claude-semantic). Regex rules are free and deterministic; Claude-semantic rules cost tokens and are fuzzy. v0 starts with the regex set; semantic rules layer in incrementally.</p>
+<h1 id="scientific-linter-design">Scientific Linter Design<a class="headerlink" href="#scientific-linter-design" title="Permanent link">&para;</a></h1>
+<p>Two complementary linters apply rigor at different stages without constraining hypothesis generation.</p>
 <table>
 <thead>
 <tr>
-<th>Rule</th>
+<th>Linter</th>
+<th>Trigger</th>
+<th>Scope</th>
+<th>Output</th>
+<th>Enforcement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Document Lint</strong></td>
+<td>Every changed research document</td>
+<td>Structure, provenance, links, evidence labels, and claim calibration</td>
+<td>Findings with rule ID, severity, location, and suggested fix</td>
+<td>Advisory by default; selected structural rules may block publication</td>
+</tr>
+<tr>
+<td><strong>Falsification Lint</strong></td>
+<td>On demand for a committed hypothesis</td>
+<td>Assumptions, kill tests, thresholds, failure modes, and retraction state</td>
+<td>A versioned Falsification Card</td>
+<td>Review gate for hypothesis promotion, not for ideation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-principles">Design principles<a class="headerlink" href="#design-principles" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Generation remains unconstrained.</strong> Lint applies after an idea is written or committed as a hypothesis.</li>
+<li><strong>Rules are explicit and versioned.</strong> Each finding names the rule and rule version that produced it.</li>
+<li><strong>Severity reflects consequence.</strong> Structural invalidity, unsupported load-bearing claims, and broken provenance rank above style.</li>
+<li><strong>Findings are actionable.</strong> A finding identifies the affected text and the smallest defensible correction.</li>
+<li><strong>Automation does not replace scientific judgment.</strong> Semantic findings remain reviewable and may be dismissed with a recorded rationale.</li>
+<li><strong>Git provides artifact identity.</strong> Store the reviewed commit SHA with every lint result and Falsification Card.</li>
+</ol>
+<h2 id="document-lint">Document Lint<a class="headerlink" href="#document-lint" title="Permanent link">&para;</a></h2>
+<h3 id="output-contract">Output contract<a class="headerlink" href="#output-contract" title="Permanent link">&para;</a></h3>
+<p>Each finding contains:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">rule_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">evidence-tag-required</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">rule_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">error</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wiki/example.md</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">42</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">message</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Quantitative intervention claim lacks an evidence-level tag.</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nt">suggested_fix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add Clinical Trial, Animal Model, In Vitro, or Mechanistic Extrapolation.</span>
+</code></pre></div>
+<h3 id="rule-catalog">Rule catalog<a class="headerlink" href="#rule-catalog" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Rule ID</th>
 <th>Severity</th>
-<th>Detection</th>
-<th>Fix hint</th>
+<th>Check</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>evidence-tag-required</code></td>
-<td>hard</td>
-<td>regex (claim-pattern grep + nearby-tag check); Claude for ambiguity</td>
-<td>Every substantive claim carries one of: Clinical / Animal Model / In Vitro / Mechanistic Extrapolation. If a claim has a citation but no tag, flag.</td>
+<td>Hard</td>
+<td>Empirical or mechanistic claims carry an evidence-level tag.</td>
 </tr>
 <tr>
 <td><code>inline-provenance</code></td>
-<td>soft</td>
-<td>regex (<code>(source: &lt;name&gt;)</code> or PMID format)</td>
-<td>New claims should cite provenance inline. Accept <code>(source: filename.md)</code>, <code>PMID: nnnnnnnn</code>, <code>[DOI](...)</code>.</td>
+<td>Soft</td>
+<td>Load-bearing claims identify a source near the claim.</td>
 </tr>
 <tr>
 <td><code>cross-ref-resolves</code></td>
-<td>hard</td>
-<td>regex + filesystem existence check</td>
-<td><code>[text](./path.md)</code> targets must exist. Dangling refs flagged with the target path.</td>
+<td>Hard</td>
+<td>Relative Markdown links resolve.</td>
 </tr>
 <tr>
 <td><code>mkdocs-nav-coverage</code></td>
-<td>hard</td>
-<td>regex (scan <code>mkdocs.yml</code> nav + <code>wiki/*.md</code> filesystem)</td>
-<td>Every <code>wiki/*.md</code> must appear in <code>mkdocs.yml</code> nav, or in an explicit <code>nav-excluded.txt</code> allowlist.</td>
+<td>Hard</td>
+<td>Published pages are represented in navigation when required.</td>
 </tr>
 <tr>
 <td><code>chokepoint-label-v1.2</code></td>
-<td>soft</td>
-<td>regex</td>
-<td>References to "CP5" without <code>a</code>/<code>b</code>, or "Chokepoint 6" without <code>a</code>/<code>b</code>, are ambiguous post-v1.2 exploit map. Flag for disambiguation.</td>
+<td>Soft</td>
+<td>Chokepoint labels use the current vocabulary.</td>
 </tr>
 <tr>
 <td><code>species-gap-caveat</code></td>
-<td>soft</td>
-<td>Claude-semantic</td>
-<td>Rodent IC50 citations (<code>mouse</code>, <code>rat</code>, <code>murine</code>, <code>rodent</code> near <code>IC50</code>, <code>EC50</code>, <code>Ki</code>) require nearby species-gap caveat or link to <code>etc/chembl-cross-check.md</code>. Examples: dapansutrile 1000× mouse→human ratio; BCP rat 100–400 mg/kg → human 50–200 mg/day 20–50× under-dose.</td>
+<td>Soft</td>
+<td>Cross-species extrapolations state the gap.</td>
 </tr>
 <tr>
 <td><code>no-inline-revision-history</code></td>
-<td>hard</td>
-<td>regex</td>
-<td>Forbidden section headers: <code>## Changelog</code>, <code>## Revision History</code>, <code>## Change Log</code>, <code>## History</code>. Git is the revision history per project convention.</td>
+<td>Hard</td>
+<td>Research pages do not carry Git-owned revision narratives.</td>
 </tr>
 <tr>
 <td><code>frontmatter-complete</code></td>
-<td>hard</td>
-<td>regex (YAML block parse)</td>
-<td>Required keys: <code>title</code>, <code>date</code>, <code>tags</code>. Strongly recommended: <code>related</code>, <code>sources</code>, <code>status</code>.</td>
+<td>Hard</td>
+<td>Required frontmatter fields are present and parseable.</td>
 </tr>
 <tr>
 <td><code>standard-markdown-links</code></td>
-<td>style</td>
-<td>regex</td>
-<td>Prefer <code>[text](./path.md)</code> over <code>[[wiki-links]]</code> for GitHub rendering. <code>[[wiki-links]]</code> are Obsidian-only.</td>
+<td>Style</td>
+<td>Externally shared pages use standard Markdown links.</td>
 </tr>
 <tr>
 <td><code>claim-calibration</code></td>
-<td>soft</td>
-<td>Claude-semantic</td>
-<td>(Optional, v0.5+.) Does the claim's linguistic strength match the cited evidence level? "Lactoferrin <em>crushes</em> NLRP3" cited to in vitro is a mismatch; "<em>may suppress</em> NLRP3 (in vitro)" is calibrated. Flag strength-mismatches for author review.</td>
+<td>Soft</td>
+<td>Wording does not exceed the cited evidence level.</td>
 </tr>
 <tr>
 <td><code>orphan-page</code></td>
-<td>soft</td>
-<td>regex + filesystem</td>
-<td>A wiki page not referenced by any other wiki page, <code>index.md</code>, or <code>mkdocs.yml</code> is probably discoverability-broken.</td>
+<td>Soft</td>
+<td>New pages have an inbound link or index entry.</td>
 </tr>
 <tr>
 <td><code>duplicate-frontmatter-date</code></td>
-<td>style</td>
-<td>regex</td>
-<td><code>date:</code> frontmatter values that match another page's exactly might indicate copy-paste errors. Low-priority sanity check.</td>
+<td>Style</td>
+<td>Metadata does not duplicate revision history in prose.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>v0 scope decision.</strong> Implement the regex-level rules first: <code>evidence-tag-required</code> (regex heuristic only, not semantic), <code>cross-ref-resolves</code>, <code>mkdocs-nav-coverage</code>, <code>no-inline-revision-history</code>, <code>frontmatter-complete</code>, <code>standard-markdown-links</code>. These are free, deterministic, and cover ~80% of the consistency wins. Claude-semantic rules (<code>species-gap-caveat</code>, <code>claim-calibration</code>) layer in once the regex set is stable and we have calibration on token cost.</p>
-<p><strong>Existing infrastructure.</strong> <code>etc/chembl-cross-check.md</code> is effectively an already-deployed linter for one dimension (rodent-IC50 cross-check against ChEMBL human-target data). It's user-invoked, quarterly. Document Lint formalizes this pattern: existing tools stay, new lint rules slot in alongside.</p>
-<hr />
-<h2 id="4-falsification-card-schema">§4 — Falsification Card Schema<a class="headerlink" href="#4-falsification-card-schema" title="Permanent link">&para;</a></h2>
-<p>Each hypothesis lives at <code>wiki/hypotheses/H0N-slug.md</code> and conforms to this schema.</p>
-<h3 id="frontmatter">Frontmatter<a class="headerlink" href="#frontmatter" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nn">---</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">H0N</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;one-line claim&gt;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">committed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YYYY-MM-DD</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Alive | Killed | Pending | Retracted</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">survival_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">N</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nn">---</span>
+<p>Regex or parser-based rules should run first. Semantic rules should operate only on changed claim-bearing passages to control cost and reduce false positives.</p>
+<h2 id="falsification-lint">Falsification Lint<a class="headerlink" href="#falsification-lint" title="Permanent link">&para;</a></h2>
+<p>The Falsification Lint creates or evaluates one card per committed hypothesis.</p>
+<h3 id="card-schema">Card schema<a class="headerlink" href="#card-schema" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nn">---</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">H00</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Short falsifiable hypothesis</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">committed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;git-sha&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">active</span><span class="w">        </span><span class="c1"># active | weakened | retracted | survived</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">survival_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nn">---</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1">## Claim</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">## Assumption stack</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1">## Killshot menu</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="c1">## Failure-mode references</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c1">## Quantitative thresholds</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="c1">## Kill switches</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="c1">## Test log</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="c1">## Survival score</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="c1">## Retraction history</span>
 </code></pre></div>
+<h3 id="killshot-prioritization">Killshot prioritization<a class="headerlink" href="#killshot-prioritization" title="Permanent link">&para;</a></h3>
+<p>Rank candidate tests by expected information gained per unit cost and delay:</p>
+<p>[
+\text{priority} = \frac{P(\text{kill}) \times \text{information weight}}
+{\text{cost} \times \text{time penalty}}
+]</p>
+<p>The probabilities are explicit judgment calls, not measured frequencies. Their value is comparative: they reveal why one test precedes another.</p>
+<h3 id="failure-mode-ontology">Failure-mode ontology<a class="headerlink" href="#failure-mode-ontology" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Species gap</strong> — evidence in one species does not transfer to the target species.</li>
+<li><strong>Chokepoint collapse</strong> — the targeted mechanism is not rate-limiting in the intended context.</li>
+<li><strong>Assay specificity</strong> — the assay readout does not uniquely measure the proposed mechanism.</li>
+<li><strong>Substrate or compartment mismatch</strong> — substrate, oxygen, pH, localization, or tissue context differs from the assumed regime.</li>
+<li><strong>Expression or localization failure</strong> — the construct is not expressed, folded, secreted, or retained where required.</li>
+<li><strong>Kinetics or concentration failure</strong> — achievable exposure does not reach the mechanistically relevant range.</li>
+<li><strong>Dose-translation failure</strong> — animal or in-vitro exposure does not support the proposed human exposure.</li>
+<li><strong>Purity or formulation failure</strong> — the tested material differs materially from the intervention being interpreted.</li>
+<li><strong>Literature or training-distribution gap</strong> — the evidence search missed relevant sources, terminology, languages, or negative results.</li>
+</ol>
+<p>Cards should link failure modes rather than redefine them, so related hypotheses can be compared across the same vocabulary.</p>
+<h3 id="test-independence">Test independence<a class="headerlink" href="#test-independence" title="Permanent link">&para;</a></h3>
+<p>Repeated tests add less information when they share assumptions. A simple overlap diagnostic is Jaccard similarity:</p>
+<p>[
+J(A,B) = \frac{|A \cap B|}{|A \cup B|}
+]</p>
+<p>where (A) and (B) are the assumption sets exercised by two tests. High overlap should reduce the second test's information weight.</p>
+<h3 id="survival-score">Survival score<a class="headerlink" href="#survival-score" title="Permanent link">&para;</a></h3>
+<p>A card may summarize accumulated evidence with a time-decayed score:</p>
+<p>[
+S = \sum_i w_i \times o_i \times e^{-\lambda t_i}
+]</p>
+<p>where (w_i) is test weight, (o_i) is the signed outcome, (t_i) is evidence age, and (\lambda) is a declared decay constant. The score is a navigation aid, not a posterior probability. A prespecified kill switch overrides the aggregate score.</p>
+<h3 id="calibration-and-retraction">Calibration and retraction<a class="headerlink" href="#calibration-and-retraction" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>id</code> — zero-padded two-digit (H01, H02, …, H99). Three digits when needed.</li>
-<li><code>title</code> — single sentence, mechanistic, precise. This is the public one-liner.</li>
-<li><code>committed</code> — the date the hypothesis was first written to the file. Subsequent edits log in git.</li>
-<li><code>status</code> — one of:</li>
-<li><strong>Pending</strong> — committed, not yet tested.</li>
-<li><strong>Alive</strong> — at least one killshot executed, claim survived.</li>
-<li><strong>Killed</strong> — at least one killshot executed, claim falsified per its pre-committed threshold.</li>
-<li><strong>Retracted</strong> — a killshot result was later invalidated (bad control, wrong substrate batch, assay artifact); status reverts based on remaining valid killshots.</li>
-<li><code>survival_count</code> — running tally of valid (non-retracted) killshots survived.</li>
+<li>Define thresholds before observing the result when practical.</li>
+<li>Record null and adverse results with the same detail as supportive results.</li>
+<li>Treat a weakened hypothesis as distinct from a retracted one.</li>
+<li>Preserve the prior claim and reason for retraction in the card's retraction history; use Git for document-level revision history.</li>
+<li>Reopen a survived hypothesis when a new, materially independent failure mode appears.</li>
 </ul>
-<h3 id="body-sections">Body Sections<a class="headerlink" href="#body-sections" title="Permanent link">&para;</a></h3>
-<p><strong>Claim.</strong> One sentence. Mechanistic. Precise. No hedge words unless they carry information. The claim is load-bearing for every downstream section.</p>
-<p><strong>Assumption stack.</strong> Three to seven priors the claim rests on. Each tagged with severity:
-- <strong>load-bearing</strong> — if wrong, the claim collapses.
-- <strong>supporting</strong> — if wrong, the claim is weaker but recoverable.
-- <strong>stylistic</strong> — if wrong, the claim is unaffected; included for completeness.</p>
-<p>Each assumption carries a brief justification (1–3 sentences) and ideally a citation or pointer to the wiki page where it's defended in depth.</p>
-<p><strong>Killshot menu.</strong> Table with columns:
-- <code>#</code> — killshot identifier (1, 2, 3, …).
-- <code>killshot</code> — the observation or test that would falsify the claim (or a specific assumption).
-- <code>cost</code> — dollars or compute budget.
-- <code>weeks</code> — time to run.
-- <code>kill_pr</code> — estimated kill probability, 0–1. User-entered; calibrated over time per §6.
-- <code>info_weight</code> — how much of the hypothesis tree collapses if this kills. Root assumption = 1.0; leaf = 0.1.
-- <code>failure_modes</code> — tags from the §5 ontology.
-- <code>score</code> — computed as <code>(kill_pr × info_weight) / (cost × time_penalty)</code>. Sorted descending.</p>
-<p>The scoring math is intentionally un-baroque. The goal is <em>ordering better than intuition</em>, not Bayesian purity. v0 uses a simple multiplicative form; refinements layer in later.</p>
-<p><strong>Failure-mode ontology reference.</strong> Link to §5 of this page. Each killshot is tagged with 1–3 failure modes it probes.</p>
-<p><strong>Pre-committed thresholds.</strong> Declared <em>before execution</em>. What counts as <strong>Alive</strong> vs. <strong>Killed</strong> vs. <strong>Pending</strong> (intermediate). Quantitative where possible: "killed if X &lt; threshold"; "survived if Y &gt; threshold"; "pending if X–Y intermediate, plan follow-up."</p>
-<p><strong>Kill switches.</strong> Safety/sanity stops. Example: abort if aflatoxin detected above regulatory limit during koji engineering; abort if n=1 self-experiment triggers a red-flag halt criterion per <code>self-experiment-protocol.md</code>.</p>
-<p><strong>Log.</strong> Table recording actual executions: date, killshot run, outcome, notes. Append-only.</p>
-<p><strong>Survival score.</strong> Current value. Computed per §6: <code>Σ(weight × time_decay)</code> over valid survivals. Recorded as a number plus qualitative tag.</p>
-<p><strong>Retraction history.</strong> If any killshot result was later invalidated, document it here. This is what distinguishes a hypothesis that survived four fresh independent attacks from one that survived four redundant attacks that were later found to share a confound.</p>
-<hr />
-<h2 id="5-failure-mode-ontology">§5 — Failure-Mode Ontology<a class="headerlink" href="#5-failure-mode-ontology" title="Permanent link">&para;</a></h2>
-<p>Independence between killshots is defined as <em>non-overlapping failure modes</em>, not non-overlapping methods. Two tests that share a failure mode (e.g., both assume the same training distribution) are not independent even if the methods look different. The ontology is the vocabulary for that independence check.</p>
-<h3 id="v0-ontology-extended-from-the-brief">v0 Ontology — Extended from the Brief<a class="headerlink" href="#v0-ontology-extended-from-the-brief" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p><strong>Species-gap translation.</strong> Mouse/rat data extrapolated to human. Rodent IC50, dosing, receptor affinity, metabolic fate. Examples from this wiki: dapansutrile 1000× mouse→human efficacy ratio (NLRP3 inhibitor screen); GPR32 is a pseudogene in rodents but a functional resolution receptor in humans (SPM pathway); BCP rat 100–400 mg/kg → human 50–200 mg/day under-dose by ~20–50× (cannabinoids/terpenes).</p>
-</li>
-<li>
-<p><strong>Chokepoint collapse.</strong> Targeting CP2 when the actual bottleneck is CP0. The upstream trigger dominates and downstream interventions are low-leverage. Example: blocking NLRP3 assembly (CP2) matters less if C5a priming (CP0) is still driving the cascade; uricase trigger-elimination is a CP0-adjacent move that resolves the collapse (koji-endgame-strain.md §2.1).</p>
-</li>
-<li>
-<p><strong>Assay specificity.</strong> NLRP3 vs. NLRC4 vs. AIM2 readout confusion. A compound flagged as "NLRP3 inhibitor" based on IL-1β reduction might be hitting NLRC4 or AIM2 or an upstream shared component. Assay specificity failures manifest as false-positives in mechanism.</p>
-</li>
-<li>
-<p><strong>Substrate availability / compartment mismatch.</strong> Uricase needs luminal uric acid to act on; luminal UA depends on ABCG2; ABCG2 is androgen-suppressed in men with high T. A mechanism that works in principle fails when the substrate isn't actually present in the compartment where the enzyme lives. (See <code>gut-lumen-sink.md</code>, <code>androgen-urate-axis.md</code>.)</p>
-</li>
-<li>
-<p><strong>Expression / localization mismatch.</strong> Protein produced but not secreted. Secreted but not folded correctly. Folded but mis-glycosylated. The gene is there, the transcript is there, the polypeptide is there, but the functional protein in the right compartment isn't. The §3.3 concerns for Ward 1995 dual-cassette (KEX-2 capacity, shared secretion machinery, solid-state glycosylation) live here.</p>
-</li>
-<li>
-<p><strong>Kinetics / concentration mismatch.</strong> In vitro IC50 is achievable in a test tube but not at any pharmacologically feasible in vivo concentration. Oral bioavailability gates it; tissue partitioning gates it; metabolic clearance gates it. The IC50 number is right but the story around it is wrong.</p>
-</li>
-<li>
-<p><strong>Dose-translation scaling.</strong> Body-surface-area / mg-per-kg extrapolation from rodent to human gives a dose that's not actually what was tested. A rat 100 mg/kg × human BSA-scale ≠ human 100 mg/kg. BCP is the canonical example (see §5.1 of ontology — species-gap overlaps here but the scaling math is separable).</p>
-</li>
-<li>
-<p><strong>Compound purity / formulation.</strong> Curcumin bioavailability pre-nanocarrier. Quercetin aglycone vs. glycoside. Resveratrol trans vs. cis. "Curcumin doesn't work" conclusions often reflect formulation failures, not molecular failures.</p>
-</li>
-<li>
-<p><strong>Published-literature-gap / training-distribution.</strong> The claim rests on a published precedent that doesn't actually cover the specific case. Ward 1995 is <em>A. awamori</em> single-protein — layering a second cassette in <em>A. oryzae</em> on rice koji is outside the training distribution. Killshot: literature/patent landscape deep-dive before wet-lab work. This mode is usually the cheapest upstream killshot and the highest-leverage one.</p>
-</li>
-</ol>
-<h3 id="extensibility">Extensibility<a class="headerlink" href="#extensibility" title="Permanent link">&para;</a></h3>
-<p>The ontology is a living list. New modes land when a novel failure pattern shows up in practice. Editing this list is a sweep-triggering event (update <code>linter-design.md</code>, update any hypothesis cards that should now be tagged with the new mode). The v0 rule: don't invent modes prematurely; let failure patterns demand the vocabulary.</p>
-<h3 id="independence-calculation">Independence Calculation<a class="headerlink" href="#independence-calculation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>independence(K1, K2) ≈ 1 − |fail_modes(K1) ∩ fail_modes(K2)| / |fail_modes(K1) ∪ fail_modes(K2)|
-</code></pre></div>
-<p>Jaccard distance on failure-mode sets. Two killshots that share all failure modes are dependent (independence = 0). Two killshots that share none are fully independent (independence = 1). The survival-score weight §6 uses this to avoid double-counting when the same failure-mode vector has been probed twice.</p>
-<hr />
-<h2 id="6-survival-score-calibration-retraction">§6 — Survival Score, Calibration, Retraction<a class="headerlink" href="#6-survival-score-calibration-retraction" title="Permanent link">&para;</a></h2>
-<p>Adapted from the brief; concise treatment here.</p>
-<h3 id="survival-score">Survival Score<a class="headerlink" href="#survival-score" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Survival_Score = Σ (weight_i × time_decay_i)   over valid (non-retracted) killshots survived
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>weight_i = info_weight_i × independence_i
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>time_decay_i = exp(-λ × (t_now − t_i))   with λ tuned so a 2-year-old survival halves
-</code></pre></div>
-<p>Three properties the formula enforces:</p>
-<ol>
-<li><strong>Accumulation.</strong> Surviving more attacks adds weight. A hypothesis that has survived five independent killshots scores higher than one that survived one.</li>
-<li><strong>Decay.</strong> Old survivals weaken. Models get stale, data gets stale, assumptions drift. A killshot run in 2022 with 2022 assumptions is not equivalent to one run today.</li>
-<li><strong>Retraction.</strong> A killshot result later invalidated is removed from the sum. The retraction is logged; the hypothesis status is recomputed.</li>
-</ol>
-<p>Distinguishes: four fresh independent attacks survived vs. four redundant attacks two years ago.</p>
-<h3 id="calibration">Calibration<a class="headerlink" href="#calibration" title="Permanent link">&para;</a></h3>
-<p>User-entered <code>kill_pr</code> values are scored over time. For each executed killshot: record predicted <code>kill_pr</code> and actual outcome (killed / survived). Bucket predictions, compute calibration curve (predicted vs. actual kill rate per bucket).</p>
-<p>Visible, not hidden. Trains the user into a better forecaster. Corrects systematic over- or under-confidence. For the n=1 Brian-only regime, the curve is noisy (few data points), but the <em>direction</em> of bias becomes visible quickly. Team-scale calibration is Phase 2+.</p>
-<h3 id="retraction">Retraction<a class="headerlink" href="#retraction" title="Permanent link">&para;</a></h3>
-<p>Post-execution invalidation paths:
-- Bad control (killshot's negative control was contaminated).
-- Wrong substrate batch (enzyme was degraded before the assay ran).
-- Assay artifact (readout was a false signal from buffer, plastic, autofluorescence).
-- Model bug (in silico killshot used wrong parameter set).</p>
-<p>Retraction is a visible log entry, not a silent edit. Git-native — the retraction commit carries the rationale.</p>
-<h3 id="pre-commit-hashing-addressed-by-git">Pre-Commit Hashing — Addressed by Git<a class="headerlink" href="#pre-commit-hashing-addressed-by-git" title="Permanent link">&para;</a></h3>
-<p>The brief calls for hashing the <code>{claim, killshot_menu, thresholds}</code> at commit time to prevent silent post-hoc editing. For markdown-backed hypotheses in git, <strong>the git SHA of the commit that first wrote <code>wiki/hypotheses/H0N-*.md</code> is the hash.</strong> Any edit creates a new commit with a visible diff. A separate hash layer would be redundant.</p>
-<p>Convention: the hypothesis file's first commit establishes the pre-committed state. Subsequent commits log edits with commit messages like <code>H01: adjust threshold for lactoferrin titer (rationale: Ward 1995 was mg/L submerged, rice koji is pore-fluid equivalent)</code>. The git log is the audit trail.</p>
-<hr />
-<h2 id="7-n1-confounded-run-honesty">§7 — n=1 / Confounded-Run Honesty<a class="headerlink" href="#7-n1-confounded-run-honesty" title="Permanent link">&para;</a></h2>
-<p>Real experiments — especially personal-health n=1 where the subject is Brian — stack interventions by necessity. Brian adds koji, supplements, clomid titration, diet changes, training changes, all on overlapping timelines. Pretending any single intervention can be cleanly attributed is a lie; the honest framing is: <em>multiple interventions ran concurrently, attribution is weak, here's what we'll do about it</em>.</p>
-<p>Falsification Lint supports this explicitly:</p>
-<ol>
-<li>
-<p><strong>Log all concurrent interventions.</strong> Each hypothesis's execution log records <em>everything active at the time</em>, not just the variable being tested. Date ranges, dose ranges, and any deviations from baseline. This is a liability if read as "proof" and an asset if read as "context for signal interpretation."</p>
-</li>
-<li>
-<p><strong>Flag attribution weakness.</strong> If signal appears in a n=1 run where three interventions overlapped, the Falsification Card flags attribution as weak and declines to call the hypothesis Alive or Killed. Status stays Pending; the signal is logged as "interesting" but not dispositive.</p>
-</li>
-<li>
-<p><strong>Propose single-variable follow-ups.</strong> Once the combined stack shows signal, propose a subtractive A/B: remove one intervention for 2–4 weeks, observe whether the signal persists. If yes, that intervention wasn't load-bearing; if no, it was. This is the n=1 equivalent of a dropout experiment.</p>
-</li>
-</ol>
-<p>Cross-reference: <code>self-experiment-protocol.md</code> §7 (Logging and version control — the operational mechanics for intervention logging) and §6 (Red-flag halt criteria — the kill switches for n=1). The protocol already anticipates intervention stacking; Falsification Lint is the scientific-rigor counterpart to the protocol's operational rigor.</p>
-<hr />
-<h2 id="8-what-document-lint-wont-check">§8 — What Document Lint Won't Check<a class="headerlink" href="#8-what-document-lint-wont-check" title="Permanent link">&para;</a></h2>
+<h2 id="n-of-1-evidence">N-of-1 evidence<a class="headerlink" href="#n-of-1-evidence" title="Permanent link">&para;</a></h2>
+<p>The linter may improve an N-of-1 design but cannot remove confounding, regression to the mean, expectancy effects, or uncontrolled co-interventions. Cards should distinguish exposure verification, target engagement, and clinical outcome; a change in one does not establish the others.</p>
+<h2 id="boundaries">Boundaries<a class="headerlink" href="#boundaries" title="Permanent link">&para;</a></h2>
+<p>Document Lint does not judge whether a hypothesis is scientifically important. Falsification Lint does not generate hypotheses, certify safety, or turn a passed test into clinical evidence. Neither substitutes for primary-source verification, independent review, or appropriate ethical and regulatory oversight.</p>
+<h2 id="implementation-questions">Implementation questions<a class="headerlink" href="#implementation-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Creative generation quality.</strong> Pass 2 synthesis is a generation task. It produces new dot-connections, which are often speculative-by-design. Lint does not grade them.</li>
-<li><strong>Taste / prose quality.</strong> "Is this well-written?" is not a lint rule. Voice, rhythm, clarity at the sentence level are author judgment.</li>
-<li><strong>Whether a hypothesis is "good."</strong> That's Falsification Lint's domain, and even there the output is advisory. "Good" is not a lint category.</li>
-<li><strong>Anything that discourages document production.</strong> If a lint rule makes authors write less, the rule is wrong. The bias is always toward <em>more documents, lint catches later</em>, not <em>fewer documents, lint catches upfront</em>.</li>
+<li>Which hard rules block publication versus create advisory findings?</li>
+<li>What false-positive rate is acceptable for semantic claim calibration?</li>
+<li>Which ontology changes require migration of existing cards?</li>
+<li>What minimum independent-test set is required before a hypothesis may be labeled <code>survived</code>?</li>
+<li>How should dismissed findings be sampled for periodic quality review?</li>
 </ul>
-<hr />
-<h2 id="9-what-falsification-lint-wont-do">§9 — What Falsification Lint Won't Do<a class="headerlink" href="#9-what-falsification-lint-wont-do" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Gate hypothesis generation.</strong> A user can write as many half-formed hypotheses as they want. Falsification Lint runs only on committed ones, only on request.</li>
-<li><strong>Block commits.</strong> Writing a bad hypothesis file doesn't fail CI. The linter annotates; it doesn't reject.</li>
-<li><strong>Determine "truth."</strong> It surfaces tests that would update belief. It does not certify correctness. A hypothesis with survival_count = 10 is well-attacked, not proven.</li>
-<li><strong>Replace peer review.</strong> External expert review is a separate process. Falsification Lint is one author's tool for scrutinizing their own claims; it is not a substitute for a collaborator reading the wiki.</li>
-</ul>
-<hr />
-<h2 id="10-phase-boundary">§10 — Phase Boundary<a class="headerlink" href="#10-phase-boundary" title="Permanent link">&para;</a></h2>
-<p><strong>Current scope (v0, this commit).</strong> Design docs + <code>wiki/hypotheses/</code> directory scaffold + H01 seed (Ward 1995 dual-cassette feasibility gate). No CI automation, no linter script, no GitHub Actions workflow. Everything here is a <em>specification</em> for the infrastructure, plus one worked example.</p>
-<p><strong>Next phase (future).</strong> Implement the regex-level Document Lint rules as a GitHub Actions workflow that runs on PR and posts annotations as PR comments. Build Falsification Lint as a <code>claude</code> CLI invocation that reads the committed hypothesis file + the wiki pages it cross-references + this design doc, and emits/updates the Falsification Card. Neither blocks merge. Both are advisory.</p>
-<p><strong>Phase boundary discipline.</strong> The specification has to be clear enough that implementation is a translation job, not a re-design. This page plus <code>hypotheses/README.md</code> plus <code>hypotheses/H01-ward-dual-cassette.md</code> together should be a complete spec. If implementation later reveals gaps, update this page and commit — git preserves the design history.</p>
-<hr />
-<h2 id="11-open-questions">§11 — Open Questions<a class="headerlink" href="#11-open-questions" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p><strong>Where does Falsification Lint UX live?</strong> <em>Answer:</em> the <code>wiki/hypotheses/</code> directory <em>is</em> the artifact. Invocation is a <code>claude</code> agent call reading the hypothesis file + context. No new UI surface. The rendered Falsification Card can be appended to the hypothesis file or kept as a side-car; either works.</p>
-</li>
-<li>
-<p><strong>Pre-commit hashing — needed, or is git SHA sufficient?</strong> <em>Answer:</em> git SHA of the hypothesis file's first commit + commit-message discipline is sufficient for markdown-backed hypotheses. A separate hash layer would be redundant. Noted explicitly in §6.</p>
-</li>
-<li>
-<p><strong>Calibration: single-researcher vs. team?</strong> <em>Answer:</em> n=1 for now (Brian only). Calibration curve is still useful but noisy — few data points, wide CIs. The direction of systematic bias becomes visible quickly; the magnitude is less reliable. Team-scale calibration waits on team-scale activity; it's a Phase 2+ feature. Document this limitation in the rendered curve.</p>
-</li>
-<li>
-<p><strong>Claude-semantic rules vs. regex rules — token-cost ceiling for v0?</strong> <em>Open.</em> Regex rules are free; semantic rules cost per PR / per sweep. A reasonable v0 budget: 100–500 input tokens and 50–200 output tokens per semantic rule, per document, per sweep pass. At current Open Enzyme sweep volume (a few sweeps per day), this is ~$0.05–0.50/day. Acceptable. If it becomes a cost bottleneck, sampling (run semantic rules only on changed files, or only on promoted hypotheses) is the first knob.</p>
-</li>
-<li>
-<p><strong>Integration with existing infrastructure.</strong> <em>Partially resolved.</em> <code>etc/chembl-cross-check.md</code> is an existing user-invoked quarterly linter for one dimension (rodent-IC50 cross-check). Sweep-prompt Pass 1 does some lint-like work during propagation (enforces cross-refs, updates CP labels). Document Lint formalizes and extends these patterns without replacing them.</p>
-</li>
-<li>
-<p><strong>Who is Falsification Lint <em>for</em> in the current regime?</strong> <em>Answer:</em> Brian. When Brian commits to a hypothesis — when money, time, or collaborator attention is about to be spent — Falsification Lint is the scrutinize-yourself tool. If three PhD collaborators join, the calibration-curve question (§11.3) reopens; for now the answer is "single-researcher instrument."</p>
-</li>
-<li>
-<p><strong>Interaction between the two linters.</strong> Document Lint catches formatting / provenance / coverage at the document level. Falsification Lint catches assumption / killshot / threshold at the hypothesis level. In practice, the hypothesis file itself is a document and will also be run through Document Lint: the YAML frontmatter, the cross-refs, the evidence tags in assumption justifications. The linters cascade cleanly — Document Lint first (cheap, always), Falsification Lint second (expensive, on demand).</p>
-</li>
-<li>
-<p><strong>Retraction log visibility.</strong> Should retractions be visible on the main hypothesis page or moved to a separate <code>retractions/</code> directory? <em>Tentative answer:</em> in-line in the hypothesis file. The retraction is <em>part of the epistemic history of the claim</em> and belongs where the claim lives. A separate directory would hide it; visibility is the point.</p>
-</li>
-</ol>
-<hr />
-<p><em>Design emerged from Brian's ChatGPT-generated brief (<code>falsification-lint-brief.md</code>, personal download 2026-04-24) + Claude refinement conversation 2026-04-24, preserved in git history.</em></p>
 
 
 

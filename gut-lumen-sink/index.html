@@ -379,7 +379,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -410,13 +410,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2024,7 +2017,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2059,7 +2052,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2129,7 +2122,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -2577,22 +2570,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#integration-with-open-enzyme-platform" class="md-nav__link">
+  <a href="#integration-with-open-enzyme" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Integration with Open Enzyme Platform
+        Integration with Open Enzyme
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Integration with Open Enzyme Platform">
+    <nav class="md-nav" aria-label="Integration with Open Enzyme">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#koji-first-strategy" class="md-nav__link">
+  <a href="#koji-track-implication" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Koji-First Strategy
+        Koji-track implication
       
     </span>
   </a>
@@ -3532,7 +3525,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3567,7 +3560,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -4108,13 +4101,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4428,7 +4414,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -5205,7 +5191,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5835,8 +5821,8 @@ page is superseded by <a href="../hypotheses/H08-gut-lumen-sink-platform-thesis/
 <h3 id="the-substrate-supply-chokepoint-the-sink-and-the-q141k-rescue-axis-are-one-question">The substrate-supply chokepoint — the sink and the Q141K rescue axis are one question<a class="headerlink" href="#the-substrate-supply-chokepoint-the-sink-and-the-q141k-rescue-axis-are-one-question" title="Permanent link">&para;</a></h3>
 <p>The sink mechanism above has an implicit dependency that is easy to miss: <strong>its substrate supply is ABCG2's output.</strong> Steps 1 and 5 of the Sink Principle both route urate into the lumen through the apical ABCG2 pump, so the rate at which lumen-resident uricase can pull serum urate down is bounded by the rate at which ABCG2 delivers urate to the lumen. The sink cannot degrade urate that never reaches it.</p>
 <p>This links two threads the corpus had been treating as parallel. The <strong>Q141K</strong> variant (rs2231142) — the single largest genetic risk factor for gout, and over-represented in the male-majority gout population — reduces ABCG2 apical trafficking and surface expression (see <a href="../abcg2-modulators/"><code>abcg2-modulators.md</code></a> §"The Q141K rescue mechanism"). In a Q141K carrier, the pump that fuels the sink is throttled. So the gut-lumen-sink thesis and the Q141K-ABCG2-rescue thesis are not independent research tracks — <strong>they share one load-bearing bottleneck: substrate supply to the sink.</strong> The platform question is a single question, not two: does the engineered strain's uricase output exceed the Q141K-limited ABCG2 flux, or is the throttled transporter the rate-limiter?</p>
-<p>If the transporter is rate-limiting in the dominant demographic, then a Q141K rescue layer — butyrate and/or a pharmacological chaperone that restores ABCG2 trafficking — stops being an optional adjunct and becomes load-bearing for the koji endgame strain. Both rescue candidates are <strong>proposed, not established</strong>: direct butyrate rescue of Q141K trafficking has not been demonstrated (Basseville 2012 used pharmacological chaperones, not butyrate — see <a href="../abcg2-modulators/"><code>abcg2-modulators.md</code></a> §"Attribution and concentration caveat"), and the small-molecule chaperone candidates remain hypothesis-stage pending wet-lab confirmation.</p>
-<p><strong>Shared wet-lab gate:</strong> <a href="../validation-experiments/"><code>validation-experiments.md</code> §1.14</a> tests both mechanisms in one Caco-2 transwell — androgen (DHT) + TNFα suppression of ABCG2, butyrate and lactoferrin rescue, and a <strong>Q141K-transfected parallel arm</strong>. That single experiment gates whether the majority Q141K population benefits from the gut-lumen sink alone or requires the rescue adjunct. (Mechanistic Extrapolation, over established In Vitro ABCG2 biology.)</p>
+<p>If transporter supply proves rate-limiting, WT-ABCG2 induction and Q141K rescue become separate experimental branches. Direct butyrate rescue and small-molecule chaperone candidates are both unvalidated; neither is currently a load-bearing platform feature.</p>
+<p><strong>Shared wet-lab gate:</strong> <a href="../validation-experiments/"><code>validation-experiments.md</code> §1.14</a> tests WT induction and Q141K trafficking/urate flux in parallel. It determines whether any direct-butyrate Q141K effect exists; it does not begin from an assumed rescue adjunct.</p>
 <h2 id="clinical-validation-three-independent-systems">Clinical Validation: Three Independent Systems<a class="headerlink" href="#clinical-validation-three-independent-systems" title="Permanent link">&para;</a></h2>
 <h3 id="1-alln-346-allena-pharmaceuticals">1. ALLN-346 (Allena Pharmaceuticals)<a class="headerlink" href="#1-alln-346-allena-pharmaceuticals" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -5924,15 +5910,16 @@ page is superseded by <a href="../hypotheses/H08-gut-lumen-sink-platform-thesis/
 <li><strong>Koji production:</strong> 5–10 mg per 50g fermented koji on rice (multiple servings/day feasible)</li>
 </ul>
 <p><strong>Clinical optimization pending:</strong> The exact dose required for optimal response remains an open question, but the range suggests feasible supplement dosing. (Source: engineered-yeast-uricase-proposal.md)</p>
-<h2 id="integration-with-open-enzyme-platform">Integration with Open Enzyme Platform<a class="headerlink" href="#integration-with-open-enzyme-platform" title="Permanent link">&para;</a></h2>
-<h3 id="koji-first-strategy">Koji-First Strategy<a class="headerlink" href="#koji-first-strategy" title="Permanent link">&para;</a></h3>
-<p>The [[open-enzyme-vision|Open Enzyme project]] prioritizes [[aspergillus-oryzae|koji]] as the first platform because:</p>
+<h2 id="integration-with-open-enzyme">Integration with Open Enzyme<a class="headerlink" href="#integration-with-open-enzyme" title="Permanent link">&para;</a></h2>
+<h3 id="koji-track-implication">Koji-track implication<a class="headerlink" href="#koji-track-implication" title="Permanent link">&para;</a></h3>
+<p>The koji track tests whether [[aspergillus-oryzae|<em>A. oryzae</em>]] is a useful host for a gut-lumen uricase sink because:</p>
 <ol>
-<li><strong>Dual-enzyme benefit:</strong> Wild-type koji produces digestive enzymes (addressing Lynn's enzyme insufficiency); engineered koji adds uricase (addressing Brian's gout)</li>
-<li><strong>Simple home fermentation:</strong> Rice, spores, 36–48 hours at ambient humidity and moderate temperature</li>
-<li><strong>Ancient safety:</strong> Millennia of safe consumption; GRAS status</li>
-<li><strong>Gut-lumen strategy:</strong> Perfect fit for uricase; enzyme works where it's naturally produced during fermentation</li>
+<li><strong>Native secretion:</strong> Wild-type koji already produces several digestive enzymes.</li>
+<li><strong>Food-format option:</strong> Solid-state rice fermentation could provide an oral delivery matrix.</li>
+<li><strong>Food-use precedent:</strong> The species has a long history in food production, although the engineered strain requires its own safety case.</li>
+<li><strong>Local mechanism:</strong> The intended uricase action is luminal rather than systemic.</li>
 </ol>
+<p>These are reasons to run the track, not evidence that it will work. Yeast, purified enzymes, and engineered LBPs remain competing implementations of the same or adjacent mechanisms.</p>
 <h3 id="yeast-as-rapid-proof-of-concept">Yeast as Rapid Proof-of-Concept<a class="headerlink" href="#yeast-as-rapid-proof-of-concept" title="Permanent link">&para;</a></h3>
 <p>[[saccharomyces-cerevisiae|S. cerevisiae]] and [[saccharomyces-cerevisiae|S. boulardii]] serve as rapid development platforms:</p>
 <ol>
@@ -5953,7 +5940,7 @@ page is superseded by <a href="../hypotheses/H08-gut-lumen-sink-platform-thesis/
 - Lumen-based strategy proves insufficient at optimal dosing
 - Patients have severe renal disease where ABCG2 is non-functional
 - Extended half-life (systemic) vs. immediate local action (lumen) becomes strategically desirable</p>
-<p>For the initial proof-of-concept and home-production vision, lumen-based delivery is the right target. (Source: blood-barrier-exploits.md, engineered-yeast-uricase-proposal.md)</p>
+<p>For this proof-of-concept and home-production subtrack, lumen-based delivery is the working target. Other Open Enzyme tracks are not gated on that route. (Source: blood-barrier-exploits.md, engineered-yeast-uricase-proposal.md)</p>
 <h2 id="the-sibouricase-connection">The SIBO–Uricase Connection<a class="headerlink" href="#the-sibouricase-connection" title="Permanent link">&para;</a></h2>
 <p>SIBO (small intestinal bacterial overgrowth) alters the luminal environment:
 - Changes in pH, nutrient availability, and mucus layer composition
@@ -5963,9 +5950,9 @@ page is superseded by <a href="../hypotheses/H08-gut-lumen-sink-platform-thesis/
 <ul>
 <li><strong>Treat SIBO first</strong> (via berberine, rifaximin, or engineered koji with digestive enzymes)</li>
 <li><strong>Then deploy uricase</strong> (on a normalized luminal microbiota)</li>
-<li><strong>Synergy:</strong> Koji naturally produces digestive enzymes that address SIBO; adding uricase makes it a complete therapeutic platform</li>
+<li><strong>Candidate combination:</strong> Koji naturally produces digestive enzymes that may address the enzyme-deficit side of this hypothesis; adding uricase would create a dual-purpose configuration if both functions validate.</li>
 </ul>
-<p>This is why [[aspergillus-oryzae|koji]] is the strategic choice—it addresses both conditions simultaneously. (Source: enzyme-deficit-deep-dive.md, etc/open-enzyme-vision.md)</p>
+<p>This makes [[aspergillus-oryzae|koji]] one candidate for addressing both conditions simultaneously, not the strategic choice for the project as a whole. (Source: enzyme-deficit-deep-dive.md, etc/open-enzyme-vision.md)</p>
 <h2 id="research-questions">Research Questions<a class="headerlink" href="#research-questions" title="Permanent link">&para;</a></h2>
 <p><strong>Q1: What is the optimal uricase activity level (IU) needed in the lumen for therapeutic effect?</strong>
 - ALLN-346 data suggests 20–50 mg/day, but optimal dose-response curve remains undefined

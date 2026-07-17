@@ -1,0 +1,105 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/README.md",
+      "kind": "design",
+      "bytes": 2747,
+      "sha256": "5c59a0bae978dd61747a9ecceb8e010a1d1d7bf8a8097a3cfdeef419ff6ac1fd"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/analyze.py",
+      "kind": "design",
+      "bytes": 11315,
+      "sha256": "2bff6d0d87179e14cd8f1d42e90dfad691f8cfbc799e4ce2be01cf1690e97e43"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/inputs/model_parameters.json",
+      "kind": "design",
+      "bytes": 1382,
+      "sha256": "84152ded1ab858193029aba405436dd7896d05694a25a78f44660e650e09f2ba"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 2100,
+      "sha256": "a804895d6a20de273f0c320dbd8e9da5ef1966d60be77842e4c0f19c28bf0c6b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/inputs/query-strategy.json",
+      "kind": "design",
+      "bytes": 681,
+      "sha256": "c5c2b42ebba7cde1c40f57495ff7606c47dac0171873ea1d77c9e7755c173d44"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 3287,
+      "sha256": "9225d485fa932905e51ff0cf76709da0111080db1244703ee53b451299e69dd4"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-046-staged-purine-sink-mass-balance/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 3021,
+      "sha256": "16ae39ed9db7fb04a228a3fa1153dc86f9bf1553327cd96c6b3ff52e82b84a61"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
+    },
+    {
+      "path": "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3707,
+      "sha256": "8b0fdf52c7a2ff37cc6317be755dce0e745219de0d2c0bef14a67bd4119d1452"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
+      "kind": "proposed_update",
+      "bytes": 2036,
+      "sha256": "5857fa02b00f6e9ab8f5e0cf2c41b6f003a519c313e3875a22174e4cc2225481"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 930,
+      "sha256": "415ccf2ce84f77f97e0604f177576bd519a23371f6b30cb197498e7ba9e6d436"
+    },
+    {
+      "path": "wiki/gout-multihop-research-program.md",
+      "kind": "proposed_update",
+      "bytes": 6306,
+      "sha256": "cfbaeca5fd1bcae8afbfe1217d5306cf96ce2bfbbb01f31ae485a6d9b21158ac"
+    },
+    {
+      "path": "wiki/purine-degrading-bacteria.md",
+      "kind": "proposed_update",
+      "bytes": 36934,
+      "sha256": "30b8a201af729e624380c3860997ad6b76f1384b47d445bf10f27619773612be"
+    },
+    {
+      "path": "wiki/purine-load-koji-vs-yeast.md",
+      "kind": "proposed_update",
+      "bytes": 4786,
+      "sha256": "0d8a84e8e81051d162368edb374d31f91fe970b7fc45dbcdb93c9acc823ebbe0"
+    },
+    {
+      "path": "wiki/staged-purine-sink-mass-balance-computational.md",
+      "kind": "proposed_update",
+      "bytes": 6102,
+      "sha256": "e8d9d7114dc373ce90d7e16a7d714cf30fa5b1db9076bba056101b98fc2533fa"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "72b964f2c76a8e00230bf66ba60351a2b9c85fcff2311a4662d74062ea736ff8"
+}

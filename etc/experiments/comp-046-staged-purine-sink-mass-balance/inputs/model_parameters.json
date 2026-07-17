@@ -1,5 +1,5 @@
 {
-  "purpose": "Separate the dietary purine-precursor ledger from the endogenous luminal-urate ledger, then identify the conditions under which spatial UOX-to-PDB staging outperforms overlapping access to the same urate pool. No serum-urate efficacy is computed.",
+  "purpose": "Run two independent conditional comparisons: a conserved dietary purine-precursor fate ledger for whole-cell GR-5 interception, and a non-conserved endogenous luminal-urate capture comparison between spatial UOX-to-PDB staging and overlapping access. The model does not test joint three-stage complementarity or serum-urate efficacy.",
   "dietary_purine_units": 100.0,
   "endogenous_luminal_urate_units": 100.0,
   "full_factorial_levels": {
@@ -16,5 +16,5 @@
     "well_mixed": "max(uox,pdb) + (1-overlap)*min(uox,pdb)*(1-max(uox,pdb))",
     "spatially_staged": "uox + (1-uox)*transfer*pdb"
   },
-  "interpretation_policy": "Fractions of grid cells are design-space occupancy, not biological probabilities. Dietary and endogenous ledgers are never summed into a serum-urate effect."
+  "interpretation_policy": "Each four-factor structure has 81 unique grid cells. Fractions of grid cells are design-space occupancy, not biological probabilities. The conserved dietary fate ledger and non-conserved endogenous capture comparison are never combined into a serum-urate effect."
 }

@@ -1,0 +1,111 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/README.md",
+      "kind": "design",
+      "bytes": 8909,
+      "sha256": "e3e19c72cbdeba499bac711f7887d4afb8155b5d96af9def6a8f3eb868167aec"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/analyze.py",
+      "kind": "design",
+      "bytes": 18612,
+      "sha256": "cf9f06a66d7cc83fe8519d6f72f64a6616165519566914a933cb5565e36f77d7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/model-config.json",
+      "kind": "design",
+      "bytes": 3870,
+      "sha256": "5803b0d82bd2b6f666471d5d99a38b76aca448f4839fc2ec006a976f681f8fb9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 10171,
+      "sha256": "3602b195306a3349bacbb0264c294aadaed69b6ebb50b136bcf6674cbb790885"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/query-strategy.json",
+      "kind": "design",
+      "bytes": 6434,
+      "sha256": "8abcc1b32acd8bcf2aae06105d9474d389e8c68771892a9e980925005ee87ec2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/.gitkeep",
+      "kind": "generated_output",
+      "bytes": 174,
+      "sha256": "1abf74ec9abcefa2fc9c2629b732db10dc9bc17082c4c7d7637b01ce1a3685c8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/codex-synthesis-packet.md",
+      "kind": "generated_output",
+      "bytes": 133699,
+      "sha256": "c924fbb89bfcefaee414cb21e98dd684ad99f61331e39947ce89e8d5e58f90c0"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/pubmed-snapshot.json",
+      "kind": "generated_output",
+      "bytes": 168109,
+      "sha256": "0bd424e1ab2f92b6eeb7d136011f3966061ffd520a0442dcf498030f4e2e5f3a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 20898,
+      "sha256": "9f3a41f8d5e564e9be3ea6566f55514ea6116cd6b077a6729ab837d2029cc580"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 7281,
+      "sha256": "ec57e1d870762987a692d87ffe671117295b3c8adae827c6a2e8d7cc369ba197"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 42433,
+      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+    },
+    {
+      "path": "wiki/genotype-informed-supplement-workflow.md",
+      "kind": "proposed_update",
+      "bytes": 27998,
+      "sha256": "3819c8f43ae1a8c767d40545416f4f198723455e9231afab17cc488c2b9dc28f"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 94611,
+      "sha256": "d14f205ec6cd1927ee2906beb4e4254522f51288201618fbc7722799d7bb0d23"
+    },
+    {
+      "path": "wiki/quantification-ladder.md",
+      "kind": "proposed_update",
+      "bytes": 8624,
+      "sha256": "ca8b0426858c25afe75630dfba9dcf69564708d2b5a98585f040f3e04d335883"
+    },
+    {
+      "path": "wiki/tier-2-butyrate-assay-audit-computational.md",
+      "kind": "proposed_update",
+      "bytes": 11335,
+      "sha256": "018a2d57b74eb1f1024b6353a2d97bf711a6a886db39d6638b36d41b089a07db"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "2a8505fa0aa84a8a1eaf0fa7cb68b7c505e66b526c8c11102dcb36b05f4b1fc3"
+}

@@ -1,0 +1,135 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen/README.md",
+      "kind": "design",
+      "bytes": 9024,
+      "sha256": "c3e3fede085eb23600bc7e35ec5322c9e0910863cd6a00089bc8168a5467d0ff"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen/analyze.py",
+      "kind": "design",
+      "bytes": 40481,
+      "sha256": "814b2d6dda86a7470a2386701b8767672c0c242df74971393ee62f7fc79e4206"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen/inputs/Q9UNQ0.fasta",
+      "kind": "design",
+      "bytes": 799,
+      "sha256": "7fee2c811c4c660c006119b50f62f67b7de37cb57ac97903d6e504816c077cf3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen/inputs/alphafold_Q9UNQ0_confidence_v6.json",
+      "kind": "design",
+      "bytes": 9053,
+      "sha256": "e1e60f1210bf8d05dc52eb8aa34b8caa5c8f050d478608ef3f048adbbbdb9e43"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen/inputs/alphafold_Q9UNQ0_model_v6.pdb",
+      "kind": "design",
+      "bytes": 420227,
+      "sha256": "37c7ef98db99317949e39964dcbc797bd903b9bf6cabc7a4153e65dd9bedde74"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen/inputs/fda_approved_drug_library.json",
+      "kind": "design",
+      "bytes": 46851,
+      "sha256": "220af432d6253674ba91c073fcfe5e44bffebee0578f2b12232dff6e9184ddc3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 5846,
+      "sha256": "db47c74e64d01d8f6c43ade726fbedb54c38ce20abdc9b43816767531ff6bc51"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen/outputs/pocket_descriptor.json",
+      "kind": "generated_output",
+      "bytes": 2726,
+      "sha256": "7f9e3e1d3648705f9baa840b4143fe6e899c1d122e75e2cb968db4808cdbc673"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen/outputs/screening_results.json",
+      "kind": "generated_output",
+      "bytes": 109523,
+      "sha256": "b58b64afb22fee27492a3540e46f0c6bec98f30da3d434c9470cd67295160567"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 11023,
+      "sha256": "90c5f6a3711b3d20cabe72eb96a48fcdae6cd73ca96375c41c35d4e61c3917f6"
+    },
+    {
+      "path": "wiki/abcg2-modulators.md",
+      "kind": "proposed_update",
+      "bytes": 47568,
+      "sha256": "18dbbea2ab83f4ddc91c6afcd0e8ceba0cf784e7c0c0a5e422d7fc20258dbeba"
+    },
+    {
+      "path": "wiki/abcg2-q141k-chaperone-rescreen-computational.md",
+      "kind": "proposed_update",
+      "bytes": 13288,
+      "sha256": "dd5dbbfef8418385c5dacde8447ac84de6285aa9e30367e3868bbb96105403b4"
+    },
+    {
+      "path": "wiki/abcg2-q141k-chaperone-screen-computational.md",
+      "kind": "proposed_update",
+      "bytes": 901,
+      "sha256": "bba579ddb172c29381b78e111c925116fa277b906c15209d90d89e7042c913a8"
+    },
+    {
+      "path": "wiki/chassis-pending-interventions.md",
+      "kind": "proposed_update",
+      "bytes": 37221,
+      "sha256": "a14617bdc4b75b69b543878ce0cbf8b202098e82756593c5a66ec437a61121b9"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 42433,
+      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+    },
+    {
+      "path": "wiki/etc/ai-bio-tools-playbook.md",
+      "kind": "proposed_update",
+      "bytes": 84427,
+      "sha256": "0d09681dbabf761d111f7cf005a0d65383390632bc80f0612dc9ffc4ecbd93cb"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/README.md",
+      "kind": "proposed_update",
+      "bytes": 8750,
+      "sha256": "b59b81c8cfc936cf3b3ad6d691fdba05d5b75583d0f71d294278342531c41615"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 4662,
+      "sha256": "1f915cbbe4fc8d7d87985993325b60fd7c272489ad847efc749fdce36ab9d39c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 3748,
+      "sha256": "09ad8ac718e9cfca74471dd27409d197a7eb9ba2da1e732d38831b0a15bc4b34"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 238679,
+      "sha256": "7604643e4e4c58f16223a64648a76bd135f6e639ed73aab34c618deb32cebd08"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "f10f422cf01dea44cb6463c8458e56f910789fa7a56741334bc646465b381f92"
+}

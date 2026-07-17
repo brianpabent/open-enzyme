@@ -23,7 +23,7 @@
     
     
       
-        <title>Inputs provenance — comp-031 - Open Enzyme</title>
+        <title>comp-031 input audit — invalidated - Open Enzyme</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#inputs-provenance-comp-031" class="md-skip">
+        <a href="#comp-031-input-audit-invalidated" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Inputs provenance — comp-031
+              comp-031 input audit — invalidated
             
           </span>
         </div>
@@ -375,7 +375,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -406,13 +406,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2020,7 +2013,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2055,7 +2048,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2125,7 +2118,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3107,7 +3100,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3142,7 +3135,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -3683,13 +3676,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4003,7 +3989,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -4780,7 +4766,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5357,46 +5343,43 @@
   
 
 
-<h1 id="inputs-provenance-comp-031">Inputs provenance — comp-031<a class="headerlink" href="#inputs-provenance-comp-031" title="Permanent link">&para;</a></h1>
-<p>All parameters in <code>model_parameters.json</code> are literature-anchored. This document records source, fetch method, and verification tier for each input. Stdlib-only Python; no external dependencies.</p>
-<h2 id="cbt20-pdb-pathway-empirical-anchor">CBT2.0 / PDB-pathway empirical anchor<a class="headerlink" href="#cbt20-pdb-pathway-empirical-anchor" title="Permanent link">&para;</a></h2>
-<p><strong>Li et al. 2025 — Life Metabolism 4(6):loaf031. PMID 41070194.</strong> "A reductive uric acid degradation pathway in anaerobic bacteria." Defines CBT2.0 (engineered <em>E. coli</em> Nissle expressing the 2,8-dioxopurine cluster). Reported: <strong>plasma UA 463 → 172 μmol/L over 6 weeks in hyperuricemic mice (−63%)</strong>. Verification tier: corpus-tier (cited in <code>wiki/purine-degrading-bacteria.md</code> lines 30, 284, 311). Not full-text grep-verified against original PDF — use as anchor magnitude with ±50% uncertainty band.</p>
-<p><strong>Liu et al. 2023 — Cell 186(16):3400–3413. PMID 37541197.</strong> Establishes 8-gene PDB cluster, screening data: 59/240 isolates consumed &gt;50% uric acid after 48h anaerobic culture. DOPDH selenium-dependent variant ~412 s⁻¹ turnover (vs. sulfur-dependent bovine XOR ~15 s⁻¹). Verification tier: corpus-tier (<code>wiki/purine-degrading-bacteria.md</code> line 83).</p>
-<p><strong>Liu, Zhou, Jarman et al. 2025 — Nature Microbiology 10(9):2291–2305. PMID 40770490.</strong> Full pathway biochemistry. 2,102 MAGs from 1,350 taxa harbor the cluster. Verification tier: corpus-tier.</p>
-<h2 id="uricase-kinetic-priors">Uricase kinetic priors<a class="headerlink" href="#uricase-kinetic-priors" title="Permanent link">&para;</a></h2>
-<p>Inherits from comp-019 <code>inputs/flux_model_parameters.json</code>. Anchor:
-- <strong>Km_uricase ≈ 25 μM</strong> (Sanofi rasburicase label; range 5–100 μM across assay conditions).
-- <strong>Specific activity 8.3 U/mg</strong> (1 U = 1 μmol urate/min at pH 8.5, 37°C). Effective in colonic pH 7–8: ~75% of label value = <strong>6 U/mg in vivo central estimate</strong>.
-- <strong>ALLN-346</strong> (Allena Phase 2a): engineered <em>C. utilis</em> uricase, ~50 mg/day dosing in CKD subgroup. Validates that gut-lumen uricase reduces SUA in a clinically detectable range (statistically significant in Study 201 CKD subgroup, days 5–7).
-- <strong>PULSE probiotic</strong> (Cell Reports Medicine, Oct 2025): engineered EcN with HucR-driven uricase expression. Reduced persistent hyperuricemia in mice/rats.
-- <strong>comp-019 prediction:</strong> mid-dose 25 mg/day uricase → ΔSUA −0.83 mg/dL (WT/WT male gout, 90% CI −1.13 to −0.57), −0.67 mg/dL (Q141K het), −0.50 mg/dL (Q141K hom). Mechanism substrate-limited at all tested doses.</p>
-<h2 id="luminal-urate-concentration">Luminal urate concentration<a class="headerlink" href="#luminal-urate-concentration" title="Permanent link">&para;</a></h2>
-<p><strong>Miyazaki et al. 2025 — J Transl Med 23:257, PMID 40033341, PMC11877951.</strong> Double-balloon endoscopy direct human jejunal urate measurement, n=34. Baseline jejunal urate <strong>0.59 μM (median, IQR 0.06–1.16)</strong>. Verification tier: direct grep-verified from full-text PMC (per comp-019 inputs).</p>
-<p><strong>Post-meal / colonic upper bound:</strong> Brian's brief specifies 50–500 μM range to test. The 500 μM upper bound is post-fructose / high-purine-meal physiological spike (post-meal jejunal/ileal); colonic concentrations are typically lower due to dilution and reabsorption. The model bounds the sensitivity sweep over 1 μM → 500 μM to capture all physiologically plausible regimes.</p>
-<h2 id="butyrate-flux-from-pdb-pathway">Butyrate flux from PDB pathway<a class="headerlink" href="#butyrate-flux-from-pdb-pathway" title="Permanent link">&para;</a></h2>
-<p><strong>Stoichiometric ceiling.</strong> Per Liu 2023 pathway: pyruvate → fermentation → acetate + butyrate. Bacterial purinolytic fermentation of <em>Clostridium sporogenes</em> produces approximately <strong>0.5–0.7 mol butyrate per mol uric acid degraded</strong> (estimated from the bicarbonate / 8-carbon stoichiometry; partition between acetate and butyrate is strain-dependent and roughly 1:1 at the molar level for full pathway). Use <strong>0.5 mol butyrate / mol urate</strong> as a conservative central estimate. Verification tier: mechanistic extrapolation from pathway stoichiometry.</p>
-<p><strong>Net butyrate yield from PDB at expected luminal urate flux</strong> is fundamentally bounded by the urate substrate flux. <strong>Independent of CBT2.0 colonization density.</strong> If only ~200–300 mg/day of urate enters the colonic lumen (humans secrete ~33% of 700 mg/day daily production through the gut, ~233 mg/day), and PDB consumes some fraction of that, the maximum butyrate yield is in the low-millimolar-pulse range, NOT sustained mM concentrations across the entire colon.</p>
-<p><strong>Background colonic butyrate</strong> (high-fiber diet): 5–20 mM luminal, ~0.5–2 mM at the epithelial surface (per <code>wiki/purine-degrading-bacteria.md</code> line 232 "Concentration gap" framing). PDB-pathway butyrate is <strong>additive on top of this background</strong>.</p>
-<h2 id="cbt20-colonization-density">CBT2.0 colonization density<a class="headerlink" href="#cbt20-colonization-density" title="Permanent link">&para;</a></h2>
-<p><strong>Sensitivity range:</strong> 10⁸–10¹¹ CFU/g intestinal content. Brian's brief specifies 10⁹–10¹¹. Standard engineered probiotic colonization is 10⁷–10⁹ CFU/g for transit organisms; engineered LBP can transiently reach 10¹⁰–10¹¹ with adequate dosing. Use central 10¹⁰ CFU/g.</p>
-<h2 id="basseville-2012-hdac-threshold">Basseville 2012 HDAC threshold<a class="headerlink" href="#basseville-2012-hdac-threshold" title="Permanent link">&para;</a></h2>
-<p><strong>Basseville et al. 2012 — Cancer Res, PMID 22472121.</strong> HDAC-mediated Q141K ABCG2 trafficking rescue demonstrated at <strong>1–5 mM butyrate in cell culture</strong>. Verification tier: corpus-tier (<code>wiki/abcg2-modulators.md</code> line 198, <code>wiki/purine-degrading-bacteria.md</code> line 232).</p>
-<p><strong>Concentration gap caveat:</strong> rescue mechanism is in vitro at 1–5 mM applied directly to cells. In vivo enterocyte-nucleus concentrations after the mucus + epithelial gradient drop may be an order of magnitude lower than luminal. Model uses a Hill-function activation curve with EC50 = 1 mM (in vitro Basseville threshold), n = 2 (cooperative HDAC inhibition typical), and an in-vivo crypt-attenuation factor (central 0.1, range 0.05–0.5) mapping luminal to crypt concentration. The Hill function gives fractional Q141K trafficking rescue (0–1) — the model multiplies this by Q141K-positive residual ABCG2 capacity to get rescued substrate flux.</p>
-<h2 id="daily-mass-balance-constants">Daily mass balance constants<a class="headerlink" href="#daily-mass-balance-constants" title="Permanent link">&para;</a></h2>
-<p>Inherited from comp-019:
-- Total daily urate production: 700 mg/day (range 600–900).
-- Renal excretion fraction (normal kidney): 0.67 (range 0.60–0.70).
-- Intestinal excretion fraction: 0.33 (range 0.30–0.40).
-- Total miscible urate pool (gout): 1200 mg.
-- Renal compensation fraction (when intestinal flux changes): 0.30 (range 0.0–0.50).
-- SUA conversion: 1 mg/dL = 59.48 μM.
-- Typical gout SUA baseline: 8.0 mg/dL (male), 7.0 mg/dL (female).</p>
-<h2 id="fetch-metadata">Fetch metadata<a class="headerlink" href="#fetch-metadata" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Fetch date: 2026-05-16.</li>
-<li>All numbers either inherit from comp-019 inputs (already verified) or are corpus-tier from <code>wiki/purine-degrading-bacteria.md</code> (which carries Pass 3 sweep review).</li>
-<li>Pre-commit grep-verify gate per CLAUDE.md Rule 4: load-bearing numbers (CBT2.0 −63%, Basseville 1–5 mM, Miyazaki 0.59 μM, Nakayama Km 8.24 mM, rasburicase 8.3 U/mg) were grep-verified against <code>wiki/purine-degrading-bacteria.md</code> (lines 284, 232, 30) and comp-019 <code>inputs/flux_model_parameters.json</code> (lines 70, 88, 30) before this file was authored.</li>
-</ul>
+<h1 id="comp-031-input-audit-invalidated">comp-031 input audit — invalidated<a class="headerlink" href="#comp-031-input-audit-invalidated" title="Permanent link">&para;</a></h1>
+<p>This is an audit of rejected inputs, not an active parameter set.</p>
+<table>
+<thead>
+<tr>
+<th>Rejected input</th>
+<th>Failure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>comp-019 uricase effect sizes and saturation regime</td>
+<td>Omitted the stored substrate concentration, Km, and finite active window; invalidated by comp-044.</td>
+</tr>
+<tr>
+<td>CBT2.0 butyrate yield inferred from <em>C. sporogenes</em></td>
+<td>Organism/product transfer without isotope-resolved CBT2.0 measurement.</td>
+</tr>
+<tr>
+<td>Basseville 2012 as direct 1–5 mM butyrate rescue evidence</td>
+<td>The paper tested other HDAC inhibitors, not the claimed butyrate experiment.</td>
+</tr>
+<tr>
+<td>Background butyrate added only to the combination arm</td>
+<td>Unmatched comparator made the modeled rescue uninterpretable.</td>
+</tr>
+<tr>
+<td>One well-mixed luminal substrate pool</td>
+<td>Ignored oxygen, gut geography, residence time, and likely separation of UOX and PDB niches.</td>
+</tr>
+<tr>
+<td>Serum ΔSUA mapping</td>
+<td>No validated compartmental flux model connected the assumed luminal effects to serum urate.</td>
+</tr>
+</tbody>
+</table>
+<p>No quantitative prior or topology recommendation may be recovered from these inputs. The historical parameter file remains available in Git only.</p>
 
 
 

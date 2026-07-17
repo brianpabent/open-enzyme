@@ -1,8 +1,8 @@
 {
   "experiment": "comp-046",
   "verdict": "TWO CONDITIONAL HYPOTHESES, NOT ONE ADDITIVE EFFICACY CLAIM",
-  "n_full_factorial_grid_cells": 6561,
   "dietary_precursor_ledger": {
+    "n_grid_cells": 81,
     "gr5_precursor_reduction_fraction": {
       "median": 0.18100000000000002,
       "p05": -0.042105263157894736,
@@ -27,31 +27,17 @@
       },
       {
         "parameter": "free_base_absorption_relative_to_nucleoside",
-        "pearson_r": -0.21484394123058317
+        "pearson_r": -0.21484394123058315
       },
       {
         "parameter": "nucleoside_absorption_fraction",
-        "pearson_r": 0.02340712200177562
-      },
-      {
-        "parameter": "uox_capture_fraction",
-        "pearson_r": 2.746054206946086e-18
-      },
-      {
-        "parameter": "pdb_capture_fraction",
-        "pearson_r": 2.7460542069457902e-18
-      },
-      {
-        "parameter": "staged_residual_transfer_efficiency",
-        "pearson_r": -2.2662899101721375e-18
-      },
-      {
-        "parameter": "well_mixed_shared_pool_overlap",
-        "pearson_r": 0.0
+        "pearson_r": 0.023407122001775613
       }
     ]
   },
-  "endogenous_luminal_urate_ledger": {
+  "endogenous_luminal_urate_architecture_comparison": {
+    "accounting_type": "capture_fraction_not_conserved",
+    "n_grid_cells": 81,
     "well_mixed_capture_fraction": {
       "median": 0.8,
       "p05": 0.061875,
@@ -68,8 +54,8 @@
       "p95": 0.1221875
     },
     "architecture_grid_counts": {
-      "staging_greater": 4617,
-      "well_mixed_greater": 1944,
+      "staging_greater": 57,
+      "well_mixed_greater": 24,
       "equal": 0
     },
     "central_well_mixed_capture_fraction": 0.48609375,
@@ -77,7 +63,7 @@
     "sensitivity": [
       {
         "parameter": "staged_residual_transfer_efficiency",
-        "pearson_r": 0.48170601050213274
+        "pearson_r": 0.4817060105021328
       },
       {
         "parameter": "uox_capture_fraction",
@@ -89,23 +75,7 @@
       },
       {
         "parameter": "well_mixed_shared_pool_overlap",
-        "pearson_r": 0.10941197291273623
-      },
-      {
-        "parameter": "nucleoside_absorption_fraction",
-        "pearson_r": 3.115895836576067e-18
-      },
-      {
-        "parameter": "gr5_nucleoside_intercept_fraction",
-        "pearson_r": -1.8343580328230013e-18
-      },
-      {
-        "parameter": "whole_cell_microbial_salvage_fraction",
-        "pearson_r": -3.0153830676546556e-19
-      },
-      {
-        "parameter": "free_base_absorption_relative_to_nucleoside",
-        "pearson_r": 0.0
+        "pearson_r": 0.10941197291273624
       }
     ]
   },

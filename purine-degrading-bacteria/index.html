@@ -379,7 +379,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -410,13 +410,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2024,7 +2017,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2059,7 +2052,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2129,7 +2122,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3494,7 +3487,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3529,7 +3522,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -4070,13 +4063,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4390,7 +4376,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -5167,7 +5153,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5895,11 +5881,11 @@
 <p>The 2,8-dioxopurine pathway terminates in pyruvate → acetate + butyrate via organism-specific fermentation. These SCFAs are not waste — they are mechanistically load-bearing for multiple relevant pathways.</p>
 <p><strong>Butyrate:</strong>
 - PPARγ agonism → ABCG2 transcriptional upregulation (Li et al. 2023, PMID 36948133; Animal Model + DASH RCT, PMID 33615722 Juraschek 2021 — 0.25–0.73 mg/dL SUA reduction with high-fiber diet; Clinical Trial)
-- HDAC inhibition → rescue of Q141K ABCG2 trafficking in intestinal cells — restores membrane localization of the most common gout-associated ABCG2 variant (In Vitro, Basseville 2012 PMID 22472121)
+- Proposed HDAC-directed Q141K rescue — Basseville 2012 demonstrated rescue with selected pharmacologic conditions, not with butyrate or PDB-derived butyrate (Mechanistic Extrapolation)
 - Hepatic xanthine oxidase inhibition → reduces urate production at source (Animal Model)
 - NF-κB suppression → NLRP3 inflammasome dampening (see <a href="../nlrp3-inflammasome/">nlrp3-inflammasome.md</a>)
 - Intestinal barrier repair → reduced bacterial translocation → reduced systemic LPS → reduced NLRP3 priming</p>
-<p><strong>Net effect:</strong> PDB do double duty — directly degrade luminal urate AND produce SCFAs that independently enhance urate disposal (ABCG2) and reduce urate production (XO). This is the strongest mechanistic argument for PDB superiority over Lactobacillus probiotics (no 2,8-dioxopurine pathway; only 0.5–1.0 mg/dL SUA reduction in trials).</p>
+<p><strong>Net-effect hypothesis:</strong> PDB directly degrade luminal urate. Additional SCFA effects require organism-specific carbon-fate, epithelial-exposure, and functional assays; they cannot currently support a PDB-superiority or Q141K-rescue claim.</p>
 <h3 id="q141k-rescue-is-not-yet-attributable-to-pdb-derived-butyrate">Q141K rescue is not yet attributable to PDB-derived butyrate<a class="headerlink" href="#q141k-rescue-is-not-yet-attributable-to-pdb-derived-butyrate" title="Permanent link">&para;</a></h3>
 <p>Basseville et al. 2012 (PMID 22472121) established that chemical chaperone/HDAC-directed perturbation can rescue folding and trafficking of Q141K ABCG2 <strong>in vitro</strong>. It did not demonstrate that butyrate produced by a PDB strain reaches the relevant enterocyte compartment or reproduces that rescue. The previous version of this page incorrectly presented that composed chain as a natural genotype-targeted therapy.</p>
 <p>Two separate questions remain:</p>
@@ -6063,7 +6049,7 @@ Some Lactobacillus strains from kimchi, natto, miso, and Yunnan traditional ferm
 - Direct anaerobic urate degradation (<strong>conditionally complementary</strong> to a uricase-based gut sink — comp-046 found a near-zero median architecture difference between staged and well-mixed access; additivity is <em>not</em> automatic and requires measured residual transfer/overlap/products, not assumed)
 - Butyrate production → ABCG2 upregulation + XO inhibition + NLRP3 dampening (compounding the ABCG2 track)</p>
 <p>In the <a href="../gout-kill-chain-delivery-routes/">delivery routes table</a>, PDB is listed under the PO Microbiome route for the uricase axis. It should be understood as a parallel axis with independent mechanism — not just a delivery variant.</p>
-<p>The bacterial-track priority is now <strong>staged mechanism resolution</strong>, not a dual-cassette EcN efficacy prediction. <a href="../staged-purine-sink-mass-balance-computational/">comp-046</a> shows that sequencing can help or hurt depending on precursor salvage, urate appearance, transfer, and pathway overlap; its grid is a design-space occupancy analysis, not a probability or ΔSUA forecast.</p>
+<p>The bacterial-track priority is now <strong>staged mechanism resolution</strong>, not a dual-cassette EcN efficacy prediction. <a href="../staged-purine-sink-mass-balance-computational/">comp-046</a> provides two separate conditional results: the dietary sign depends on microbial salvage/retention and relative base absorption, while the endogenous architecture difference depends on residual transfer and shared-pool overlap. It does not test their sequence jointly; each grid is a design-space occupancy analysis, not a probability or ΔSUA forecast.</p>
 <h3 id="companion-intervention-compounded-disulfiram-cp6b-downstream">Companion intervention: compounded disulfiram (CP6b downstream)<a class="headerlink" href="#companion-intervention-compounded-disulfiram-cp6b-downstream" title="Permanent link">&para;</a></h3>
 <p>PDB acts <em>upstream</em> of NLRP3 — by draining luminal urate and inducing ABCG2 (via butyrate), it reduces the substrate that would have seeded MSU crystals in the first place. It does not, on its own, prevent the inflammatory amplification cascade if crystal formation has already occurred. Compounded oral disulfiram is the natural companion: it covalently modifies GSDMD Cys191 and blocks the pyroptotic pore that releases IL-1β downstream of NLRP3 firing. See <a href="../disulfiram/"><code>disulfiram.md</code></a> for the CP6b GSDMD mechanism.</p>
 <p>The PDB + downstream anti-inflammatory pairing remains conceptually orthogonal, but its urate-side magnitude is unquantified. <a href="../dual-chassis-ecn-pdb-uricase-computational/">comp-031</a> is invalidated because it inherited the nonphysiologic comp-019 regime, assigned an unsupported butyrate product to engineered EcN, and mixed compartments. Use <a href="../staged-purine-sink-mass-balance-computational/">comp-046</a> and <a href="../validation-experiments/#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux">validation experiments 1.34 and 1.37</a> before choosing one strain, two strains, or temporal staging.</p>

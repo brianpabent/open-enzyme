@@ -23,7 +23,7 @@
     
     
       
-        <title>wiki/etc/ — reference / methodology / tooling pages (synthesis-excluded) - Open Enzyme</title>
+        <title>wiki/etc — methods, reference, and computational artifacts - Open Enzyme</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              wiki/etc/ — reference / methodology / tooling pages (synthesis-excluded)
+              wiki/etc — methods, reference, and computational artifacts
             
           </span>
         </div>
@@ -375,7 +375,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--current"></span>
   
 
   
@@ -406,13 +406,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
@@ -2020,7 +2013,7 @@
     
   
   
-    <span class="md-status md-status--scoped (Phase 1)"></span>
+    <span class="md-status md-status--scoped"></span>
   
 
   
@@ -2055,7 +2048,7 @@
     
   
   
-    <span class="md-status md-status--stub"></span>
+    <span class="md-status md-status--draft"></span>
   
 
   
@@ -2125,7 +2118,7 @@
     
   
   
-    <span class="md-status md-status--working-note"></span>
+    <span class="md-status md-status--evaluated-deferred"></span>
   
 
   
@@ -3107,7 +3100,7 @@
     
   
   
-    <span class="md-status md-status--application-surface"></span>
+    <span class="md-status md-status--research-surface"></span>
   
 
   
@@ -3142,7 +3135,7 @@
     
   
   
-    <span class="md-status md-status--published"></span>
+    <span class="md-status md-status--research-framework"></span>
   
 
   
@@ -3683,13 +3676,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--design"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4003,7 +3989,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--active-stub"></span>
   
 
   
@@ -4780,7 +4766,7 @@
     
   
   
-    <span class="md-status md-status--complete (propagation to gout-genetic-variants.md Category 5 row + complement-c5a-gout.md §6.3 done 2026-05-21)"></span>
+    <span class="md-status md-status--complete"></span>
   
 
   
@@ -5357,109 +5343,21 @@
   
 
 
-<h1 id="wikietc">wiki/etc/<a class="headerlink" href="#wikietc" title="Permanent link">&para;</a></h1>
-<p>Reference, methodology, and tooling pages that <strong>belong in the wiki</strong> for human browsing but <strong>should not be re-synthesized by the daemon</strong> on every sweep.</p>
-<h2 id="what-lives-here">What lives here<a class="headerlink" href="#what-lives-here" title="Permanent link">&para;</a></h2>
-<p>Pages where the content is:
-- A <strong>catalog</strong> (tools, references, team) — humans want to find it via cross-reference, but it's not generative research the daemon should cross-connect.
-- A <strong>methodology / how-to</strong> — describes how OE does work; not a finding the daemon should re-evaluate.
-- A <strong>diagram / static artifact</strong> — Mermaid graphs, bibliographies; daemon can't usefully synthesize over them.</p>
-<p>Examples in this directory:</p>
-<table>
-<thead>
-<tr>
-<th>File</th>
-<th>Type</th>
-<th>Why</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bio-ai-tools.md</code></td>
-<td>Tool catalog</td>
-<td>Available AI/bio tools — reference, not research</td>
-</tr>
-<tr>
-<td><code>ai-bio-tools-playbook.md</code></td>
-<td>Playbook</td>
-<td>How to use the tools — methodology, not findings</td>
-</tr>
-<tr>
-<td><code>references.md</code></td>
-<td>Bibliography</td>
-<td>Citation list — daemon doesn't synthesize bibliographies</td>
-</tr>
-<tr>
-<td><code>GRAPH.md</code></td>
-<td>Mermaid diagram</td>
-<td>Graph diagrams — non-vision models can't usefully read them</td>
-</tr>
-<tr>
-<td><code>team.md</code></td>
-<td>Staff page</td>
-<td>Team roster — no biology synthesis value</td>
-</tr>
-<tr>
-<td><code>paperclip-deep-dive.md</code></td>
-<td>Tool deep-dive</td>
-<td>Single-tool reference</td>
-</tr>
-<tr>
-<td><code>practitioner-toolkit.md</code></td>
-<td>Utility guide</td>
-<td>How-to for practitioners</td>
-</tr>
-<tr>
-<td><code>manual-literature-mining.md</code></td>
-<td>Methodology</td>
-<td>How-to for lit mining</td>
-</tr>
-<tr>
-<td><code>autonomous-screening-methodology.md</code></td>
-<td>Methodology</td>
-<td>How-to for autonomous screens</td>
-</tr>
-<tr>
-<td><code>chembl-cross-check.md</code></td>
-<td>Quality methodology</td>
-<td>How OE validates against ChEMBL</td>
-</tr>
-<tr>
-<td><code>experiments/comp-NNN-*/</code></td>
-<td>Reproducible computational artifacts</td>
-<td>Too large for every global sweep; each changed comp receives its own bounded independent artifact review</td>
-</tr>
-</tbody>
-</table>
-<h2 id="what-does-not-live-here">What does NOT live here<a class="headerlink" href="#what-does-not-live-here" title="Permanent link">&para;</a></h2>
-<p>If a page contains <strong>active research findings</strong>, <strong>mechanistic claims</strong>, <strong>chokepoint analysis</strong>, <strong>engineering plans</strong>, <strong>hypothesis cards</strong>, or <strong>synthesis output</strong>, it normally belongs in <code>wiki/</code> proper, not in <code>wiki/etc/</code>. The global daemon should re-read it on every sweep so cross-document connections surface.</p>
-<p><strong>Exception — computational experiment artifacts.</strong> The narrative stub for each comp remains in <code>wiki/</code> proper, while its reproducible code/input/output/archive bundle lives under <code>wiki/etc/experiments/</code>. These artifacts are active evidence but are too large and too implementation-specific to inline into every global synthesis. They are covered by the independent <code>.github/workflows/comp-review.yml</code> daemon instead: every changed comp gets a bounded artifact-level review with on-demand corpus search. This exception must not be generalized to other active-research pages.</p>
-<p>When in doubt: ask "would the daemon's synthesis benefit from re-reading this every sweep?" If yes → <code>wiki/</code>. If no → <code>wiki/etc/</code>.</p>
-<h2 id="how-exclusion-works-mechanics">How exclusion works (mechanics)<a class="headerlink" href="#how-exclusion-works-mechanics" title="Permanent link">&para;</a></h2>
-<p>Two layers exclude <code>wiki/etc/</code> from the daemon:</p>
-<ol>
-<li>
-<p><strong>Corpus loader (<code>scripts/synthesize.py</code> <code>build_corpus()</code>):</strong> globs <code>wiki/*.md</code> + <code>wiki/hypotheses/*.md</code>. Does NOT glob <code>wiki/etc/*.md</code>. So pages in this directory are naturally excluded from the synthesis input. (The <code>EXCLUDE</code> set in synthesize.py is empty as of 2026-05-15 — directory-based exclusion replaced per-file exclusion.)</p>
-</li>
-<li>
-<p><strong>Workflow path trigger (<code>.github/workflows/wiki-sweep.yml</code>):</strong> the push trigger watches <code>wiki/**.md</code> with <code>!wiki/etc/**</code> negation. Editing a page in this directory does not trigger a sweep run.</p>
-</li>
-</ol>
-<p>Together: ordinary pages here are invisible to the <strong>global wiki daemon</strong>, both as input and as triggers. The <code>wiki/etc/experiments/comp-*/**</code> subtree is separately watched by <code>.github/workflows/comp-review.yml</code>; comp artifacts are excluded from global synthesis, not from review.</p>
-<h2 id="cross-references">Cross-references<a class="headerlink" href="#cross-references" title="Permanent link">&para;</a></h2>
-<p>Pages in <code>wiki/etc/</code> can be referenced from <code>wiki/</code> proper using <code>./etc/&lt;page&gt;.md</code> paths. References from <code>wiki/etc/</code> back to <code>wiki/</code> use <code>../&lt;page&gt;.md</code>. The script <code>/tmp/claude/move-to-etc.py</code> (run 2026-05-15) handled the cross-reference rewriting when the directory was created.</p>
-<h2 id="adding-a-new-etc-page">Adding a new etc/ page<a class="headerlink" href="#adding-a-new-etc-page" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Decide it's reference/methodology, not active research (per the criteria above).</li>
-<li>Create the file at <code>wiki/etc/&lt;name&gt;.md</code> (or <code>git mv wiki/&lt;name&gt;.md wiki/etc/&lt;name&gt;.md</code> to relocate).</li>
-<li>Update any cross-references in <code>wiki/*.md</code> to use <code>./etc/&lt;name&gt;.md</code>.</li>
-<li>No EXCLUDE list to update — the directory-based exclusion handles it automatically.</li>
-<li>Add a row to the table above so future readers know what's here and why.</li>
-</ol>
-<h2 id="when-to-promote-a-page-out-of-etc-back-to-wiki">When to promote a page OUT of etc/ back to wiki/<a class="headerlink" href="#when-to-promote-a-page-out-of-etc-back-to-wiki" title="Permanent link">&para;</a></h2>
-<p>If a page that started as reference/methodology evolves into active research (e.g., a methodology page accumulates evidence-tier findings the daemon should synthesize against), promote it back: <code>git mv wiki/etc/&lt;name&gt;.md wiki/&lt;name&gt;.md</code> and fix cross-references back to <code>./&lt;name&gt;.md</code>. Reverse of the move-in process.</p>
-<h2 id="origin">Origin<a class="headerlink" href="#origin" title="Permanent link">&para;</a></h2>
-<p>This convention was introduced 2026-05-15 after the post-PR-#11 sweep failed when the wiki corpus reached ~975K tokens (97.5% of DeepSeek V4-Pro's 1M-token cap). Brian's framing: reference catalogs and methodology pages "belong in the wiki, but they don't need to be synthesized" — the right solution is a within-wiki exclusion folder, not moving them out of the wiki entirely. See <a href="../../synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md"><code>synthesis/strategic-reflections/2026-05-15-chassis-is-downstream-of-chokepoint.md</code></a> for the same-session reflection that produced the chassis-pending discipline; the etc/ convention is a sister discipline operating on the corpus-management axis instead of the chassis-fit axis.</p>
+<h1 id="wikietc"><code>wiki/etc/</code><a class="headerlink" href="#wikietc" title="Permanent link">&para;</a></h1>
+<p>This directory holds material needed to reproduce or govern the research but not treated as independent scientific claims during every full synthesis:</p>
+<ul>
+<li>tool and source catalogs;</li>
+<li>authoring, literature, and validation methods;</li>
+<li>team and project-reference pages;</li>
+<li>static diagrams;</li>
+<li>reproducible <code>comp-NNN</code> code, inputs, outputs, provenance, and current reviews.</li>
+</ul>
+<p>Active mechanistic findings, track state, hypothesis cards, and decisions belong in <code>wiki/</code> or <code>wiki/hypotheses/</code>. The concise mission page, <a href="open-enzyme-vision/"><code>open-enzyme-vision.md</code></a>, is explicitly included in the scientific synthesis corpus.</p>
+<h2 id="computational-artifacts">Computational artifacts<a class="headerlink" href="#computational-artifacts" title="Permanent link">&para;</a></h2>
+<p>Each COMP has a top-level interpretive wiki page in the scientific corpus. Exact current outputs remain here. A synthesis candidate that relies on a COMP must reopen those outputs and verify its current push-review eligibility before promotion; the interpretive page alone is insufficient.</p>
+<h2 id="placement-test">Placement test<a class="headerlink" href="#placement-test" title="Permanent link">&para;</a></h2>
+<p>Put a page here when it explains <em>how to do or reproduce the work</em>. Put it in the scientific corpus when it says <em>what the current evidence means for a gout weakness or intervention track</em>.</p>
+<p>Use <code>./etc/&lt;page&gt;.md</code> from <code>wiki/</code> and <code>../&lt;page&gt;.md</code> from this directory. Git is the history; do not add origin narratives or revision sections.</p>
 
 
 

@@ -1,0 +1,153 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/README.md",
+      "kind": "design",
+      "bytes": 6070,
+      "sha256": "594d7a59666d222d4de7aa3beec673d775df0d7f2f055f91b9d35a3e01f3eb9f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 5316,
+      "sha256": "49d572cdec31ee45314ae074baec8fb0fa3b7f64db5ff6bcec78b1ef74fa82f9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/query-strategy.md",
+      "kind": "design",
+      "bytes": 2903,
+      "sha256": "a3cd548f7c20834ea64427b7324eeff63ace7dab22a2bfc34b900a28b9acd0e7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/target-nodes.json",
+      "kind": "design",
+      "bytes": 3335,
+      "sha256": "77e89951acee5a4469ac04215af731730fb37d81b26b8ab77e774fb1b7f434f8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
+      "kind": "generated_output",
+      "bytes": 30992,
+      "sha256": "e1af5d1bc51b784aa3fea2eae804c9ae5ac92d012fc0c1cdf708c719a177f433"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/search-log.md",
+      "kind": "generated_output",
+      "bytes": 7710,
+      "sha256": "4e0204b33c3829c280c3013cfc346ea7f90f1fd699f6e2fa0027a85805f2dac3"
+    },
+    {
+      "path": "wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md",
+      "kind": "proposed_update",
+      "bytes": 32218,
+      "sha256": "99e518a4358e48a2c6e805f925f89f5c67193c313d41dd7597c4ac0dd7c425e0"
+    },
+    {
+      "path": "wiki/combined-cp0-systems-model-computational.md",
+      "kind": "proposed_update",
+      "bytes": 12330,
+      "sha256": "d96687999c54e2798a651cf2da32fa8554f99c9e5f632a4a596f1bf027f808ad"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 103744,
+      "sha256": "84c515706dfc5ccb9b2071bb47c53f83e44834b1032edf64fd85fca8909248ff"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 82280,
+      "sha256": "4b3cec274fcbc7c37c2b2e37ad4f73a76d5f02acd965cf798529240ac7e4ac2a"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 42433,
+      "sha256": "9538998c903f265245c24ac7f8afea13fe752fe9a1f1f78e16e014dd8b4614ee"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-c1-inh-engineering-literature.md",
+      "kind": "proposed_update",
+      "bytes": 23284,
+      "sha256": "cbdc97d3c188c981ff7f898f3c83c24368400461f6a8e6f8bf963b3d49cc555d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-multilingual-findings.md",
+      "kind": "proposed_update",
+      "bytes": 29379,
+      "sha256": "b6a5301c45d256842df2d0fc910d94bcbd3c37873460c3474d81bee80b89a7fa"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-summary.md",
+      "kind": "proposed_update",
+      "bytes": 16265,
+      "sha256": "7431ea275e91f76bdb5a38dc153181ee72da57f3db35a287197041aaae9d02d9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/README.md",
+      "kind": "proposed_update",
+      "bytes": 7238,
+      "sha256": "09fc1360fc93b92ad35b0f605b7fade2edb50b8d222aa547087699161418b1f2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 10185,
+      "sha256": "22190fca0e683d472b50ed1e85f1c1204569427f03898a541627002eedb838f7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-029-combined-cp0-systems-model/README.md",
+      "kind": "proposed_update",
+      "bytes": 9943,
+      "sha256": "178fb801fbf92a3163e23ea778c1c1138d953157da89c72f32aa741956e54e2c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-029-combined-cp0-systems-model/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 9205,
+      "sha256": "293861ab7587082ab559967f3fe4ce813be6706f372c5491901e10f085b00347"
+    },
+    {
+      "path": "wiki/nlrp3-exploit-map.md",
+      "kind": "proposed_update",
+      "bytes": 81255,
+      "sha256": "7c642b8308458111398fac152af7155db9f9c16f9cafa5c9674dda0069e3aeaf"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 94611,
+      "sha256": "d14f205ec6cd1927ee2906beb4e4254522f51288201618fbc7722799d7bb0d23"
+    },
+    {
+      "path": "wiki/tcm-modern-rigor-intersection.md",
+      "kind": "proposed_update",
+      "bytes": 30057,
+      "sha256": "8ba1a1fafe2a64e18ffb1f34a90b7dbb0fd236d8f808a986975a2b0b1fd0fd23"
+    },
+    {
+      "path": "wiki/upstream-complement-assay-format-mapping-computational.md",
+      "kind": "proposed_update",
+      "bytes": 6150,
+      "sha256": "f2721eb20e2a7efcb2d9d226ec9b4a2d9ebb37959824226f082befa9f7030b6c"
+    },
+    {
+      "path": "wiki/upstream-complement-modulator-sweep-computational.md",
+      "kind": "proposed_update",
+      "bytes": 12582,
+      "sha256": "39399dface72486830c809e2900fd7d57a0decc6617fa56350967da7878d15ee"
+    },
+    {
+      "path": "wiki/upstream-complement-verification-rerun-computational.md",
+      "kind": "proposed_update",
+      "bytes": 4607,
+      "sha256": "1ee1db83a1ec6646fc8340928b103116537ae9783f08499b860639fb61c2c849"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "4760e62b5ad308feb9aee117116dd6d0f0848a31b3b293084fc729ff3bd81dc3"
+}
