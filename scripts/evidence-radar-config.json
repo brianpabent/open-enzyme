@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "clinical_trials": {
+    "initial_since": "2026-04-23",
+    "clinicaltrials_gov": {
+      "base_url": "https://clinicaltrials.gov/api/v2",
+      "page_size": 100,
+      "profiles": [
+        {
+          "id": "condition-gout",
+          "params": {
+            "query.cond": "gout"
+          }
+        },
+        {
+          "id": "condition-hyperuricemia-us",
+          "params": {
+            "query.cond": "hyperuricemia"
+          }
+        },
+        {
+          "id": "condition-hyperuricaemia-uk",
+          "params": {
+            "query.cond": "hyperuricaemia"
+          }
+        },
+        {
+          "id": "mechanism-uricase",
+          "params": {
+            "query.term": "uricase OR \"urate oxidase\""
+          }
+        },
+        {
+          "id": "mechanism-urat1",
+          "params": {
+            "query.term": "URAT1 OR SLC22A12"
+          }
+        },
+        {
+          "id": "mechanism-nlrp3",
+          "params": {
+            "query.term": "NLRP3"
+          }
+        },
+        {
+          "id": "mechanism-intestinal-urate",
+          "params": {
+            "query.term": "(intestinal OR gut OR microbiome OR probiotic) AND (urate OR uric acid)"
+          }
+        }
+      ]
+    },
+    "who_ictrp": {
+      "base_url": "https://trialsearch.who.int/",
+      "page_size": 100,
+      "max_records_per_query": 2500,
+      "queries": [
+        {
+          "id": "global-gout-en",
+          "language": "en",
+          "term": "gout"
+        },
+        {
+          "id": "global-hyperuricemia-en",
+          "language": "en",
+          "term": "hyperuricemia"
+        },
+        {
+          "id": "global-hyperuricaemia-en",
+          "language": "en",
+          "term": "hyperuricaemia"
+        },
+        {
+          "id": "global-gout-zh",
+          "language": "zh",
+          "term": "痛风"
+        },
+        {
+          "id": "global-hyperuricemia-zh",
+          "language": "zh",
+          "term": "高尿酸血症"
+        }
+      ]
+    }
+  },
+  "faers": {
+    "api_url": "https://api.fda.gov/drug/event.json",
+    "download_manifest_url": "https://api.fda.gov/download.json",
+    "event_terms": [
+      "GOUT",
+      "HYPERURICAEMIA",
+      "BLOOD URIC ACID INCREASED",
+      "GOUTY ARTHRITIS",
+      "GOUTY TOPHUS"
+    ],
+    "page_size": 100,
+    "max_reports_per_term_quarter": 25000,
+    "minimum_suspect_reports": 3,
+    "minimum_corpus_matched_suspect_reports": 2,
+    "maximum_suspect_drugs_per_informative_report": 3,
+    "maximum_review_candidates": 40,
+    "maximum_red_herring_examples": 25,
+    "known_gout_treatments": [
+      "ALLOPURINOL",
+      "FEBUXOSTAT",
+      "COLCHICINE",
+      "PEGLOTICASE",
+      "PROBENECID",
+      "LESINURAD",
+      "BENZBROMARONE",
+      "RASBURICASE"
+    ],
+    "confounding_indication_terms": [
+      "GOUT",
+      "HYPERURIC",
+      "TUMOR LYSIS",
+      "TUMOUR LYSIS",
+      "HYPERURICAEMIA",
+      "HYPERURICEMIA"
+    ]
+  },
+  "review": {
+    "model": "openai/gpt-5.5",
+    "max_cost_usd": 0.75,
+    "estimated_input_usd_per_million_tokens": 5.0,
+    "estimated_output_usd_per_million_tokens": 20.0,
+    "maximum_output_tokens": 8000
+  }
+}

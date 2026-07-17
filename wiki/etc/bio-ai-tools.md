@@ -670,7 +670,7 @@ Future compound deep dives can query ChEMBL for canonical bioactivity data (IC50
 
 **4. Clinical Pipeline Tracking** (uricase, NLRP3 drugs)
 
-`index.md`'s `Clinical Precedent` references (ALLN-346, Rasburicase, PULSE, Dapansutrile) are currently checked manually. A quarterly ClinicalTrials.gov MCP pull keeps these rows current.
+The evidence radar now compares ClinicalTrials.gov records monthly and WHO ICTRP records across its international registry network, including ChiCTR and CTIS. It detects new registrations and changes to reported status, enrollment, completion dates, interventions, and posted-results flags. Deterministic comparison runs before any model review; unchanged runs spend no model tokens. Registry metadata is protocol/status evidence, not evidence of efficacy, and only independently reviewed deltas can enter the active action queue. See [`scripts/SWEEP-ARCHITECTURE.md`](../../scripts/SWEEP-ARCHITECTURE.md).
 
 **5. Literature Front-Door for New Pages**
 
@@ -683,7 +683,7 @@ New wiki pages (like the cannabinoids page we just graduated) start with a liter
 | Biomedical literature search | WebSearch + WebFetch (fragile, scraping) | PubMed / bioRxiv MCP (structured) |
 | Compound bioactivity lookup | Read individual papers | ChEMBL MCP |
 | Target–disease evidence | Wiki page synthesis | Open Targets MCP |
-| Clinical trial status | Manual ClinicalTrials.gov browsing | ClinicalTrials.gov MCP |
+| Clinical trial status | Manual ClinicalTrials.gov browsing | Monthly ClinicalTrials.gov + WHO ICTRP delta radar; MCP remains useful for ad hoc record inspection |
 | Problem ranking / experiment prioritization | Ad-hoc in `synthesis/` (architecture: synthesis/README.md) | `/scientific-problem-selection` |
 | Protein structure / docking / design | ColabFold, Boltz-2, RFdiffusion2, DiffDock | **Unchanged** — the plugin is research/literature-oriented; core computational biology stays with the open-source stack |
 | Codon optimization | CodonTransformer | **Unchanged** |

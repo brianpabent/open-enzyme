@@ -1,0 +1,173 @@
+name: Gout evidence radar
+
+# Cheap source deltas only. Neither scheduled path invokes full-corpus synthesis.
+# ClinicalTrials.gov and WHO ICTRP are checked monthly; FAERS is checked after
+# its normal quarterly release window. Model review runs only when collection
+# finds a new or materially changed candidate.
+
+on:
+  schedule:
+    - cron: '23 13 8 * *'
+    - cron: '47 13 8 2,5,8,11 *'
+  workflow_dispatch:
+    inputs:
+      feed:
+        description: 'Source feed to run'
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - clinical_trials
+          - faers
+      baseline_only:
+        description: 'Record the current source baseline without reviewing historical records'
+        required: false
+        default: false
+        type: boolean
+      max_cost_usd:
+        description: 'Hard review cap per feed; zero-candidate runs spend nothing'
+        required: false
+        default: '0.75'
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: evidence-radar-main
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      WORK_DIR: /tmp/open-enzyme-evidence-radar
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      MANUAL_FEED: ${{ inputs.feed }}
+      BASELINE_ONLY: ${{ inputs.baseline_only }}
+      MAX_COST_USD: ${{ inputs.max_cost_usd || '0.75' }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Select feeds for this cadence
+        id: select
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            if [[ "$MANUAL_FEED" == "all" ]]; then
+              feeds="clinical_trials faers"
+            else
+              feeds="$MANUAL_FEED"
+            fi
+          elif [[ "$SCHEDULE" == "23 13 8 * *" ]]; then
+            feeds="clinical_trials"
+          else
+            feeds="faers"
+          fi
+          echo "feeds=$feeds" >> "$GITHUB_OUTPUT"
+          echo "Selected: $feeds"
+
+      - name: Collect, independently review, and apply exact deltas
+        env:
+          FEEDS: ${{ steps.select.outputs.feeds }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$WORK_DIR"
+          for feed in $FEEDS; do
+            spent="0"
+            for batch in {1..10}; do
+              feed_dir="$WORK_DIR/$feed/batch-$batch"
+              mkdir -p "$feed_dir"
+              baseline_args=()
+              if [[ "$BASELINE_ONLY" == "true" ]]; then
+                baseline_args+=(--baseline-only)
+              fi
+              python3 scripts/evidence-radar.py collect \
+                --feed "$feed" --work-dir "$feed_dir" "${baseline_args[@]}"
+              remaining=$(python3 -c 'import sys; print(max(0.0, float(sys.argv[1]) - float(sys.argv[2])))' "$MAX_COST_USD" "$spent")
+              if ! python3 scripts/evidence-radar.py review \
+                --packet "$feed_dir/$feed-packet.json" \
+                --output "$feed_dir/$feed-review.json" \
+                --prepare-only --max-cost-usd "$remaining"; then
+                echo "Review budget exhausted with the exact-window backlog retained"
+                break
+              fi
+              python3 scripts/evidence-radar.py review \
+                --packet "$feed_dir/$feed-packet.json" \
+                --output "$feed_dir/$feed-review.json" \
+                --max-cost-usd "$remaining"
+              apply_args=()
+              if [[ "$feed" == "clinical_trials" ]]; then
+                apply_args+=(--next-trial-records "$feed_dir/clinical_trials-records.json.gz")
+              fi
+              python3 scripts/evidence-radar.py apply \
+                --packet "$feed_dir/$feed-packet.json" \
+                --next-state "$feed_dir/$feed-next-state.json" \
+                --review "$feed_dir/$feed-review.json" "${apply_args[@]}"
+              batch_cost=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["usage"]["cost_usd"])' "$feed_dir/$feed-review.json")
+              spent=$(python3 -c 'import sys; print(float(sys.argv[1]) + float(sys.argv[2]))' "$spent" "$batch_cost")
+              backlog=$(python3 -c 'import json,sys; s=json.load(open(sys.argv[1])); print((s["feeds"][sys.argv[2]]["last_collection"].get("overflow_count") or 0))' logs/evidence-radar-state.json "$feed")
+              if [[ "$backlog" == "0" ]]; then
+                break
+              fi
+            done
+          done
+
+      - name: Verify current-state and queue contracts
+        run: |
+          set -euo pipefail
+          python3 -m unittest tests.test_evidence_radar
+          python3 scripts/evidence-radar.py check
+          python3 scripts/check-links.py --check README.md index.md CLAUDE.md wiki synthesis/queue
+          python3 scripts/check-corpus-hygiene.py --base HEAD README.md index.md CLAUDE.md wiki
+          python3 scripts/check-privacy.py --check README.md index.md CLAUDE.md wiki
+
+      - name: Commit current state and reviewed actions
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add logs/evidence-radar-state.json
+          if [[ -f logs/evidence-radar-clinical-records.json.gz ]]; then
+            git add logs/evidence-radar-clinical-records.json.gz
+          fi
+          shopt -s nullglob
+          radar_items=(synthesis/queue/radar-*.md)
+          if (( ${#radar_items[@]} )); then
+            git add -A -- "${radar_items[@]}"
+          fi
+          if git diff --cached --quiet; then
+            echo "No source or queue delta"
+          else
+            git commit -m "evidence-radar: record reviewed source deltas [skip-knowledge-update]"
+          fi
+
+      - name: Push current state
+        run: |
+          set -euo pipefail
+          if git log origin/main..HEAD --oneline | grep -q .; then
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Retain exact recovery artifacts temporarily
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-radar-${{ github.run_id }}
+          path: /tmp/open-enzyme-evidence-radar
+          retention-days: 7
+          if-no-files-found: warn

@@ -11,6 +11,7 @@ name: Corpus integrity
 #                        (one-way privacy gradient: private → public only)
 #   • check-corpus-hygiene.py — reader contract and current-state discipline
 #   • check-lit-scan-receipt.py — compact, reproducible scan-method receipts
+#   • evidence-radar.py check — current source cursors and reviewed delta state
 
 on:
   push:
@@ -44,3 +45,6 @@ jobs:
 
       - name: Check literature-scan method receipts
         run: python3 scripts/check-lit-scan-receipt.py
+
+      - name: Check evidence-radar current state
+        run: python3 scripts/evidence-radar.py check

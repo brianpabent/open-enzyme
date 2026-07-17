@@ -81,6 +81,21 @@ EOF
   fail=1
 fi
 
+if ! python3 scripts/evidence-radar.py check; then
+  cat >&2 <<'EOF'
+
+✗ pre-push hook (evidence-radar current state)
+
+The push was blocked because a source cursor, query receipt, or reviewed-delta
+binding is incomplete. Repair or rerun the affected feed; do not advance its
+cursor manually:
+
+    python3 scripts/evidence-radar.py status
+    python3 scripts/evidence-radar.py check
+EOF
+  fail=1
+fi
+
 if ! python3 scripts/check-privacy.py --check $SCOPE; then
   cat >&2 <<'EOF'
 

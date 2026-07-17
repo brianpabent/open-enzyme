@@ -18,6 +18,14 @@ push to main
        ├─ exact-snapshot COMP push review
        └─ bounded cross-page propagation if eligible
 
+scheduled source surveillance
+  └─ evidence radar
+       ├─ deterministic ClinicalTrials.gov + WHO ICTRP delta monthly
+       ├─ deterministic FAERS release-window delta quarterly
+       ├─ spend zero model tokens when nothing relevant changed
+       ├─ context-isolated review of exact changed records only
+       └─ emit reviewed unresolved queue items only
+
 explicit manual request
   └─ full-corpus distributed synthesis
        ├─ require propagation backlog = 0
@@ -31,7 +39,7 @@ explicit manual request
 
 ## State
 
-`logs/sweep-state.json` is compact operational state, not a narrative log. Compact literature-search method receipts live under `logs/lit-scans/*.json`; they preserve exact queries, coverage, and faults without duplicating the scientific synthesis. The full-corpus synthesizer deliberately excludes `logs/`.
+`logs/sweep-state.json` is compact operational state, not a narrative log. `logs/evidence-radar-state.json` is replaceable source state: the FAERS quarter cursor and exact-window backlog, retained monitor subjects, latest query faults, exact packet/review hashes, decision counts, and review cost. Clinical-trial comparison records live in deterministic compressed form at `logs/evidence-radar-clinical-records.json.gz`; an unchanged snapshot is byte-identical and does not create a monthly full-state diff. Compact literature-search method receipts live under `logs/lit-scans/*.json`; they preserve exact queries, coverage, and faults without duplicating the scientific synthesis. The full-corpus synthesizer deliberately excludes `logs/`.
 
 - `last_successful_propagation`: the latest fully considered push batch;
 - `last_successful_synthesis`: the latest completely covered corpus snapshot, including coverage digest and cost;
@@ -39,6 +47,20 @@ explicit manual request
 - `unresolved_failures`: active failures only.
 
 The two cursors are intentionally independent. A push may be fully published and propagated while remaining unsynthesized until Brian explicitly requests a sweep.
+
+## Evidence radar
+
+`evidence-radar.yml` runs two surveillance feeds without invoking propagation or full synthesis:
+
+- monthly ClinicalTrials.gov API and WHO ICTRP searches discover new trials and compare current status, enrollment, dates, interventions, and posted-results flags against exact prior fingerprints;
+- quarterly openFDA/FAERS searches scan the newly released receipt-date quarter for `GOUT`, `HYPERURICAEMIA`, `BLOOD URIC ACID INCREASED`, `GOUTY ARTHRITIS`, and `GOUTY TOPHUS`;
+- report-level parsing keeps each FAERS drug's suspect/concomitant/interacting classification attached to that drug, rather than treating every drug and reaction in a report as a pair;
+- deterministic collection happens before model review; zero-candidate runs cost zero model tokens;
+- capped FAERS review batches retain an exact-window backlog and do not advance the quarter cursor until every eligible subject has a disposition;
+- monitor decisions persist by subject with their rationale so later windows can accumulate or weaken the lead;
+- a hash-bound, context-isolated review may dismiss, monitor, or emit one active action brief; raw packets and review output expire from CI after seven days.
+
+Clinical-trial registrations are protocol/status evidence, not efficacy results. FAERS co-reports are unvalidated pharmacovigilance leads, not causality, incidence, or risk. A source fault remains visible in current state; the affected source is not called current. Neither feed triggers full synthesis. Reviewed radar actions enter `synthesis/queue/` only as verification tasks, and supported scientific claims still require their primary evidence and canonical wiki owner.
 
 ## Push-time propagation
 
@@ -86,6 +108,7 @@ Raw model output and review files are recovery artifacts with short CI retention
 - `wiki/`: current scientific understanding and active track state;
 - `synthesis/queue/`: unresolved actions only;
 - `logs/lit-scans/`: compact reproducibility receipts, never a second scientific narrative;
+- `logs/evidence-radar-state.json` plus its deterministic compressed trial store: replaceable source cursors/fingerprints, retained monitors/backlogs, and latest review receipt, excluded from synthesis;
 - COMP directories: exact reproducible artifacts plus current reviews;
 - `reference/`: immutable external source material;
 - Git: all revision and completed-action history.
@@ -100,6 +123,7 @@ Reader-facing intervention pages follow one current-state sequence: exploitable 
 - COMP review failure blocks only affected derived claims.
 - Propagation failure leaves its cursor unchanged and records an active failure.
 - Full-synthesis failure leaves its cursor unchanged and uploads recovery artifacts.
+- A failed FAERS query or undisposed capped batch does not advance the quarter cursor. A failed trial-registry profile preserves that source's prior complete baseline; another fully successful registry may still advance independently.
 - The watchdog notifies; it never authorizes or automatically dispatches a full synthesis.
 
 ## Primary commands
@@ -110,4 +134,6 @@ python3 scripts/sweep-state.py pending-propagation-paths
 python3 scripts/sweep-state.py pending-synthesis-paths
 python3 scripts/comp-review.py --help
 python3 scripts/distributed-synthesis.py --help
+python3 scripts/evidence-radar.py status
+python3 scripts/evidence-radar.py check
 ```

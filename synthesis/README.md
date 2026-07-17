@@ -20,6 +20,7 @@ COMP review findings use a stable filename, `comp-review-NNN.md`. A later exact-
 - `scripts/distributed-synthesis.py` produces candidate findings only during an explicit full synthesis.
 - `scripts/synthesis-emit-files.py --no-history` emits reviewed findings into the queue.
 - `scripts/comp-review.py` maintains the stable COMP action item.
-- Quarterly or manual detectors may add another unresolved item, but must follow the same delete-on-resolution rule.
+- `scripts/evidence-radar.py` may add a hash-bound, independently reviewed source-delta action. Registry entries remain protocol/status evidence and FAERS entries remain non-causal leads.
+- Other quarterly or manual detectors may add another unresolved item only after independent review and must follow the same delete-on-resolution rule.
 
 Scientific claims belong in `wiki/`; reproducible computational artifacts belong in their `comp-NNN` directories; Git is the revision history.
