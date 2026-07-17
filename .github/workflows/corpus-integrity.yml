@@ -1,7 +1,7 @@
 name: Corpus integrity
 
 # Server-side backstop for the pre-push hook (.githooks/pre-push). Runs the
-# same two guards on GitHub's runners, so they fire regardless of which tool
+# the same guards on GitHub's runners, so they fire regardless of which tool
 # or clone produced the commit — including pushes from a hookless cloud
 # sandbox, the GitHub API, or `git push --no-verify`. Pair with a branch
 # protection rule on `main` requiring this check to make the guarantee hard.
@@ -9,6 +9,8 @@ name: Corpus integrity
 #   • check-links.py   — broken relative links in the live corpus
 #   • check-privacy.py — references to private sibling repos / local paths
 #                        (one-way privacy gradient: private → public only)
+#   • check-corpus-hygiene.py — reader contract and current-state discipline
+#   • check-lit-scan-receipt.py — compact, reproducible scan-method receipts
 
 on:
   push:
@@ -39,3 +41,6 @@ jobs:
 
       - name: Check mission, current-state, and token hygiene
         run: python3 scripts/check-corpus-hygiene.py --base "${{ github.event.pull_request.base.sha || github.event.before || 'HEAD^' }}" README.md index.md CLAUDE.md wiki
+
+      - name: Check literature-scan method receipts
+        run: python3 scripts/check-lit-scan-receipt.py

@@ -11,6 +11,8 @@
 - Do not move completed items into another live directory. Git records the finding, decision, and deletion.
 - Do not store successful run narratives here. A full-synthesis run retains only its coverage/cost receipt in `logs/sweep-state.json`; raw recovery artifacts expire from CI.
 
+A queue file is a reviewed action brief, never ready-to-paste reader prose. Reopen its cited evidence, identify the canonical owner, and write the current scientific state there. Focused pages receive their own evidence/source/delivery/exposure/falsification update; comparative findings go to portfolio comparison surfaces. Other dependents receive only a local decision delta and a link.
+
 COMP review findings use a stable filename, `comp-review-NNN.md`. A later exact-snapshot review replaces that file or deletes it when clean, so there is never an accumulating review archive in the live tree.
 
 ## Producers

@@ -93,6 +93,15 @@ jobs:
             --model "$PROPAGATION_MODEL" \
             --max-iterations 12 --max-cost-usd "$MAX_COST_USD"
 
+      - name: Verify propagated reader contract
+        run: |
+          set -euo pipefail
+          python3 scripts/check-corpus-hygiene.py \
+            --base "${{ steps.select.outputs.coverage }}" \
+            README.md index.md CLAUDE.md wiki
+          python3 scripts/check-links.py --check README.md index.md CLAUDE.md wiki
+          python3 scripts/check-privacy.py --check README.md index.md CLAUDE.md wiki
+
       - name: Advance propagation coverage, including no-op batches
         run: |
           set -euo pipefail

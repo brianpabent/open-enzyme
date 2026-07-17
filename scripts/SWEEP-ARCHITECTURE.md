@@ -31,7 +31,7 @@ explicit manual request
 
 ## State
 
-`logs/sweep-state.json` is compact operational state, not a narrative log.
+`logs/sweep-state.json` is compact operational state, not a narrative log. Compact literature-search method receipts live under `logs/lit-scans/*.json`; they preserve exact queries, coverage, and faults without duplicating the scientific synthesis. The full-corpus synthesizer deliberately excludes `logs/`.
 
 - `last_successful_propagation`: the latest fully considered push batch;
 - `last_successful_synthesis`: the latest completely covered corpus snapshot, including coverage digest and cost;
@@ -85,13 +85,14 @@ Raw model output and review files are recovery artifacts with short CI retention
 
 - `wiki/`: current scientific understanding and active track state;
 - `synthesis/queue/`: unresolved actions only;
+- `logs/lit-scans/`: compact reproducibility receipts, never a second scientific narrative;
 - COMP directories: exact reproducible artifacts plus current reviews;
 - `reference/`: immutable external source material;
 - Git: all revision and completed-action history.
 
 Do not create completed-item directories, immutable review logs, per-run synthesis narratives, inline changelogs, or “for posterity” copies.
 
-Reader-facing intervention pages follow one current-state sequence: exploitable gout weakness, evidence, source, delivery, exposure constraints, and falsification. Chassis analysis is local to an active production or delivery decision; it is never the default filter for whether an intervention belongs in the project. Editorial provenance and page-creation history live in Git, not prose. Research pages do not prescribe personalized dosing.
+Reader-facing intervention pages follow one current-state sequence: exploitable gout weakness, evidence, source, delivery, exposure constraints, and falsification. Each focused intervention or chassis page stands on that track's own case; it does not use another track as a narrative foil. Cross-track rankings and comparison tables live only on portfolio surfaces such as `wiki/modality-chokepoint-matrix.md` and `wiki/chassis-pending-interventions.md`. Chassis analysis is local to an active production or delivery decision; it is never the default filter for whether an intervention belongs in the project. Editorial provenance and page-creation history live in Git, not prose. Research pages do not prescribe personalized dosing.
 
 ## Failure behavior
 

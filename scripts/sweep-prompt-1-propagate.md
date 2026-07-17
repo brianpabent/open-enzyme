@@ -14,11 +14,13 @@ Read `CLAUDE.md`, then the exact trigger paths appended to this prompt. This is 
 6. Verify load-bearing numbers against the named primary source before propagating them.
 7. Use standard Markdown links, explicit evidence levels, and inline provenance.
 8. Preserve the reader contract: exploit and evidence first, then source, delivery, exposure constraints, and falsification. Mention a chassis only when it changes an active sourcing or delivery decision.
+9. Preserve page ownership. A focused intervention or chassis page must stand on its own; never use another track as its narrative foil. Put genuine cross-track rankings and comparison tables only in portfolio surfaces such as `wiki/modality-chokepoint-matrix.md` or `wiki/chassis-pending-interventions.md`.
 
 ## Do not
 
 - invent a project claim in order to challenge it;
 - rank tracks by narrative appeal or current chassis fit;
+- insert a portfolio comparison section or winner table into a focused track page;
 - screen every intervention through yeast or koji, or lead with why it cannot be microbially produced;
 - add creation dates, sweep history, “added/promoted/reframed” narration, or explanations of why a page exists;
 - turn research hypotheses into personalized dosing or treatment instructions;

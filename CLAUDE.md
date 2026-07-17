@@ -29,8 +29,8 @@ Prefer standard markdown links (`[text](./path.md)`) over `[[wiki-links]]` in an
 ### index.md (repo root) — Dashboard
 Top of file: current mission and portfolio state, synthesis queue pointer, cheapest-next-experiments table. Bottom: concept index + primary-research doc list + AI-analysis links. This is the "what should I look at?" landing page.
 
-### logs/ — Compact automation state
-`logs/sweep-state.json` holds the current propagation cursor, synthesis cursor, current per-COMP eligibility, and unresolved failures. Successful run history belongs in GitHub Actions and Git, not an append-only live ledger.
+### logs/ — Compact machine-readable receipts
+`logs/sweep-state.json` holds the current propagation cursor, synthesis cursor, current per-COMP eligibility, and unresolved failures. `logs/lit-scans/*.json` retains compact literature-search reproducibility receipts: exact queries, sources attempted, counts, failures, translation checks, and verification status. Scientific findings live only in canonical wiki pages; do not store a second findings narrative in logs. Successful automation history belongs in GitHub Actions and Git, not an append-only live ledger.
 
 ### reference/ — Canonical (read-only)
 Published papers, external reports, vendor data, machine-generated output (under `reference/generated/`). Never modified by the daemon or by AI edits. Cite as provenance.

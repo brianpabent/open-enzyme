@@ -52,16 +52,16 @@ load_root_dotenv(start); read_json(path); write_json(path, data); safe_filename(
 
 ---
 
-## Artifact structure (`logs/<scope>-lit-scan-<date>.md`)
+## Canonical evidence update
 
-Follow the shape of recent scans (e.g. `logs/cbd-vs-flavonoid-gut-degradation-lit-scan-2026-07-13.md`):
+Write the supported current state into the relevant canonical `wiki/` page. Use this shape where it fits the page; do not create a separate dated scan narrative merely to preserve the work:
 
 ```markdown
 ---
 title/date/tags frontmatter
 ---
 
-# <the one question the scan answers>
+# <the evidence topic>
 
 ## Load-bearing findings (per compound / per claim)
 ### <item>
@@ -73,11 +73,46 @@ title/date/tags frontmatter
 ## Biggest evidence gap
 <what the literature does NOT resolve — the honest limitation>
 
-## Queries run
-<the multilingual query plan actually executed, per frame + language>
-
 ## Primary sources (PMID / DOI)
 <full citation list; non-English sources with original-language title + English gloss>
 ```
 
-**Workspace:** intermediates (fetched sources, per-source translations, `query-strategy.json`) live in `operations/<scope>-<date>/`; only the synthesized artifact + its primary-source list land in `logs/`. Propagate load-bearing findings from the artifact to the canonical wiki pages with evidence tiers — the scan is the working record, the wiki is the corpus.
+Preserve enough method detail on the canonical page to bound the conclusion when search coverage materially affects the verdict, but do not narrate page creation or the scan's chronology. Focused pages own their evidence, sourcing, delivery, exposure constraints, and falsification gate; portfolio comparisons go to portfolio surfaces.
+
+## Method receipt (`logs/lit-scans/<scope>-<date>.json`)
+
+Retain the reproducibility trail without duplicating scientific prose. The receipt records what was searched and what failed; the canonical wiki page records what the evidence means.
+
+```json
+{
+  "schema_version": 1,
+  "scan_id": "scope-2026-07-17",
+  "question": "The bounded question",
+  "started_at": "2026-07-17T12:00:00Z",
+  "completed_at": "2026-07-17T13:00:00Z",
+  "canonical_updates": ["wiki/example.md"],
+  "query_attempts": [
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "mechanism",
+      "query": "exact query string",
+      "status": "success",
+      "result_count": 12,
+      "error": null
+    }
+  ],
+  "source_ids_considered": ["PMID:12345678"],
+  "translation_checks": [],
+  "load_bearing_verifications": [],
+  "limitations": [],
+  "errors": [],
+  "workspace": {"path": "operations/scope-2026-07-17", "cleaned": true}
+}
+```
+
+Use `status: success|partial|failed` for each query attempt. A partial or failed attempt requires a non-empty `error`. Translation checks name both models/vendors and record any inline disagreement tag; load-bearing verification entries identify the claim, primary source, and `verified|unverified|disputed` status. Keep these fields factual and compact. Do not add `findings`, `summary`, `verdict`, `recommendations`, or another narrative conclusion.
+
+Run `python3 scripts/check-lit-scan-receipt.py <receipt>` before commit.
+
+**Workspace:** intermediates (fetched sources, per-source translations, `query-strategy.json`) live temporarily in uncommitted `operations/<scope>-<date>/`. Delete the workspace after the canonical update and method receipt are verified. The wiki is the scientific corpus, the compact receipt is the reproducibility record, and Git preserves both histories.

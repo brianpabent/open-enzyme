@@ -37,6 +37,11 @@ RETIRED_REF = re.compile(
 REVISION_HEADING = re.compile(r"^#{1,6}\s+(?:document\s+|revision\s+|update\s+)?(?:change\s*log|changelog|revision history)\s*$", re.I | re.M)
 ADVERSARIAL_HEADING = re.compile(r"^#{1,6}\s+.*(?:myth|strawman|objection|as easy as).*$", re.I | re.M)
 READER_SURFACE = re.compile(r"^(?:README\.md|index\.md|wiki/[^/]+\.md|wiki/hypotheses/[^/]+\.md)$")
+PORTFOLIO_COMPARISON_SURFACES = {
+    "wiki/modality-chokepoint-matrix.md",
+    "wiki/chassis-pending-interventions.md",
+    "wiki/delivery-route-matrix.md",
+}
 READER_RESIDUE_PATTERNS = {
     "wiki-discovery narration": re.compile(
         r"(?:was|were) not visible in (?:the )?wiki until|"
@@ -72,6 +77,10 @@ READER_RESIDUE_PATTERNS = {
         r"^#{1,6}\s+comparison with the [^\n]+chassis\s*$|"
         r"^#{1,6}\s+comparison with sister (?:exploration )?(?:vectors|tracks)\s*$|"
         r"^#{1,6}\s+regulatory clarity \(compared to the [^)]+track\)\s*$",
+        re.I | re.M,
+    ),
+    "winner table on a focused page": re.compile(
+        r"^\|\s*use case\s*\|\s*winner\s*\|",
         re.I | re.M,
     ),
 }
@@ -141,6 +150,8 @@ def check_content(files: list[Path]) -> tuple[list[str], list[str]]:
                     errors.append(f"{name}:{line}: adversarial section lacks a real-claim source anchor")
         if READER_SURFACE.match(name):
             for label, pattern in READER_RESIDUE_PATTERNS.items():
+                if label == "winner table on a focused page" and name in PORTFOLIO_COMPARISON_SURFACES:
+                    continue
                 for match in pattern.finditer(text):
                     line = text[:match.start()].count("\n") + 1
                     errors.append(f"{name}:{line}: {label}: {match.group(0)!r}")

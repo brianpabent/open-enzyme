@@ -32,6 +32,7 @@ You have read-only repository tools. Use them whenever a load-bearing check depe
 6. **Reproducibility contract.** Determine whether the stated command, declared dependencies, inputs, and committed outputs form a plausible deterministic reproduction path. In daemon mode, arbitrary experiment code is not executed. In authoring-time subagent mode, do not execute it unless the review brief explicitly authorizes independent reproduction. Identify what must be run or independently reproduced if the artifact cannot establish it by inspection.
 7. **Affected corpus surfaces.** Search for pages whose claim, priority, experiment design, hypothesis status, safety framing, or summary number should change if the comp is correct—or if it is wrong. Separate pages already reconciled from pages still requiring action.
 8. **New meaningful connections.** Look for cross-page implications that the short summary lost. Surface only implications grounded in the artifact and corpus; label mechanistic extrapolations honestly.
+9. **Reader-facing ownership.** Audit every proposed and affected page for the current reader contract. A focused intervention or chassis page owns its evidence, sourcing, delivery, exposure constraints, and falsification gate. Cross-track rankings and comparison tables belong only in portfolio comparison surfaces. Require action for narrative foils, editorial/sweep/phase history, explanations of page placement, personalized treatment instructions, or long duplicated exposition.
 
 ## Verdict and eligibility rule
 
@@ -81,6 +82,9 @@ After the receipt lines, use exactly these headings:
 
 ## Summary-fidelity audit
 [README/output summary/interpretive page/index/validation/hypothesis agreement or mismatches.]
+
+## Reader-facing ownership audit
+[Focused-page contract; portfolio-only comparisons; editorial, personalized, or duplicated residue.]
 
 ## Generated-output and proposed-update inventory
 | Path | Manifest kind | Inspected completely? | Finding |

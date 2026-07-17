@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 #
-# .githooks/pre-push — block a push that would ship broken relative links.
+# .githooks/pre-push — block a push that would ship a broken live corpus.
 #
 # Motivated by the 2026-06-02 audit: the wiki/ → wiki/etc/ and
 # operations/ reorgs silently rotted ~45 cross-references (and the public
-# README's front-door links) because nothing validated link integrity. The
-# sweep daemon checks content, not links. This hook closes that gap before
-# the push leaves the machine.
+# README's front-door links) because nothing validated link integrity.
+# This hook verifies links, reader-facing corpus hygiene, method receipts,
+# and the privacy gradient before the push leaves the machine.
 #
 # Scope: the live, published corpus + front-door files. Historical logs,
 # experiment archives, and worktrees are intentionally excluded (see
@@ -21,7 +21,7 @@ ROOT=$(git rev-parse --show-toplevel)
 cd "$ROOT"
 
 if ! command -v python3 >/dev/null 2>&1; then
-  echo "pre-push: python3 not found; skipping link check." >&2
+  echo "pre-push: python3 not found; skipping corpus checks." >&2
   exit 0
 fi
 
@@ -44,6 +44,39 @@ Fix, then commit, then push again:
 fix-links.py only rewrites links that resolve to a real in-repo file and
 never resolves a link escaping into a private sibling repo — anything it
 reports UNFIXABLE needs a human (often a genuine rename or a privacy fix).
+EOF
+  fail=1
+fi
+
+if ! python3 scripts/check-corpus-hygiene.py --base HEAD $SCOPE; then
+  cat >&2 <<'EOF'
+
+✗ pre-push hook (reader contract and corpus hygiene)
+
+The push was blocked because the live corpus contains reader-facing residue,
+duplicated exposition, mission drift, or another current-state violation
+(listed above). Repair the owning page, then commit and push again:
+
+    python3 scripts/check-corpus-hygiene.py --base HEAD README.md index.md CLAUDE.md wiki
+
+Focused pages must stand on their own evidence, sourcing, delivery, exposure
+constraints, and falsification. Put cross-track comparisons on portfolio
+surfaces; keep editorial history in Git.
+EOF
+  fail=1
+fi
+
+if ! python3 scripts/check-lit-scan-receipt.py; then
+  cat >&2 <<'EOF'
+
+✗ pre-push hook (literature-scan method receipt)
+
+The push was blocked because a compact literature-scan receipt is incomplete
+or contains a duplicate scientific narrative. Keep exact queries, coverage,
+failures, translation checks, and verification status in the JSON receipt;
+keep findings and verdicts in the canonical wiki page.
+
+    python3 scripts/check-lit-scan-receipt.py
 EOF
   fail=1
 fi

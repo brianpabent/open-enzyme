@@ -25,6 +25,7 @@ manifest = load("comp_manifest_test", ROOT / "scripts" / "comp-review-manifest.p
 distributed = load("distributed_synthesis_test", ROOT / "scripts" / "distributed-synthesis.py")
 normalize = load("distributed_normalize_test", ROOT / "scripts" / "synthesis_normalize.py")
 hygiene = load("corpus_hygiene_test", ROOT / "scripts" / "check-corpus-hygiene.py")
+lit_receipt = load("lit_scan_receipt_test", ROOT / "scripts" / "check-lit-scan-receipt.py")
 
 
 class CompReviewContractTests(unittest.TestCase):
@@ -150,6 +151,10 @@ Long review-history material.
             "## Comparison with sister exploration vectors",
             patterns["track framed as another track's foil"],
         )
+        self.assertRegex(
+            "| Use case | Winner | Why |",
+            patterns["winner table on a focused page"],
+        )
 
     def test_synthesis_ignores_editorial_history_and_chassis_defaulting(self):
         source = (ROOT / "scripts/distributed-synthesis.py").read_text()
@@ -158,6 +163,57 @@ Long review-history material.
 
     def test_index_catalog_has_a_concise_entry_budget(self):
         self.assertLessEqual(hygiene.INDEX_ENTRY_MAX_CHARS, 420)
+
+    def test_every_authoring_path_carries_page_ownership(self):
+        files_and_phrases = {
+            "skills/walk-synthesis/SKILL.md": "the queue item as an action brief",
+            "skills/new-comp-experiment/SKILL.md": "Reader-facing outputs follow the same ownership contract",
+            "scripts/sweep-prompt-1-propagate.md": "Preserve page ownership",
+            "scripts/comp-pre-run-review-prompt.md": "Downstream authoring plan",
+            "scripts/comp-review-prompt.md": "Reader-facing ownership",
+            "synthesis/README.md": "never ready-to-paste reader prose",
+        }
+        for relative, phrase in files_and_phrases.items():
+            with self.subTest(path=relative):
+                self.assertIn(phrase, (ROOT / relative).read_text())
+
+    def test_lit_scan_keeps_method_receipt_outside_scientific_corpus(self):
+        skill = (ROOT / "skills/lit-scan/SKILL.md").read_text()
+        synthesis = (ROOT / "scripts/distributed-synthesis.py").read_text()
+        self.assertIn("logs/lit-scans/<scope>-<date>.json", skill)
+        self.assertIn("must not duplicate the findings narrative", skill)
+        self.assertNotIn('(ROOT / "logs").glob', synthesis)
+
+    def test_lit_scan_receipt_validates_method_and_rejects_narrative(self):
+        receipt = {
+            "schema_version": 1,
+            "scan_id": "test-2026-07-17",
+            "question": "What does the evidence show?",
+            "started_at": "2026-07-17T12:00:00Z",
+            "completed_at": "2026-07-17T13:00:00Z",
+            "canonical_updates": ["wiki/example.md"],
+            "query_attempts": [{
+                "source": "PubMed", "language": "en", "frame": "mechanism",
+                "query": "gout mechanism", "status": "success",
+                "result_count": 3, "error": None,
+            }],
+            "source_ids_considered": ["PMID:123"],
+            "translation_checks": [],
+            "load_bearing_verifications": [],
+            "limitations": [],
+            "errors": [],
+            "workspace": {"path": "operations/test-2026-07-17", "cleaned": True},
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "receipt.json"
+            path.write_text(json.dumps(receipt))
+            self.assertEqual([], lit_receipt.validate(path))
+            receipt["findings"] = "Duplicated scientific conclusion."
+            receipt["workspace"]["cleaned"] = False
+            path.write_text(json.dumps(receipt))
+            errors = lit_receipt.validate(path)
+        self.assertTrue(any("scientific narrative belongs in wiki" in error for error in errors))
+        self.assertTrue(any("workspace.cleaned must be true" in error for error in errors))
 
 
 class WorkflowTriggerTests(unittest.TestCase):
@@ -172,6 +228,16 @@ class WorkflowTriggerTests(unittest.TestCase):
         propagate = text.split("  propagate:\n", 1)[1]
         self.assertIn("needs: [gate, comp-review]", propagate)
         self.assertIn("uses: ./.github/workflows/wiki-propagate.yml", propagate)
+
+    def test_local_and_generated_updates_fail_closed_on_reader_contract(self):
+        hook = (ROOT / ".githooks/pre-push").read_text()
+        propagation = (ROOT / ".github/workflows/wiki-propagate.yml").read_text()
+        integrity = (ROOT / ".github/workflows/corpus-integrity.yml").read_text()
+        self.assertIn("check-corpus-hygiene.py", hook)
+        self.assertIn("check-lit-scan-receipt.py", hook)
+        self.assertIn("Verify propagated reader contract", propagation)
+        self.assertIn("check-corpus-hygiene.py", propagation)
+        self.assertIn("check-lit-scan-receipt.py", integrity)
 
     def test_warning_lanes_carry_binding_scope(self):
         propagation = (ROOT / "scripts/sweep-prompt-1-propagate.md").read_text()
