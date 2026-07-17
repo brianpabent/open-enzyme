@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -3483,6 +3483,8 @@
       
         
       
+        
+      
     
     
     
@@ -3915,7 +3917,7 @@
   <span class="md-ellipsis">
     
   
-    H07 — Clomid Intestinal-ER Antagonism
+    H07 — Retracted Intestinal-ER Thesis
   
 
     
@@ -3925,7 +3927,7 @@
     
   
   
-    <span class="md-status md-status--Stub"></span>
+    <span class="md-status md-status--Retracted"></span>
   
 
   
@@ -3996,6 +3998,41 @@
   
   
     <span class="md-status md-status--active-stub"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="H10-clomiphene-dose-urate-coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H10 — Clomiphene Dose–Urate Coupling
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Pending"></span>
   
 
   
@@ -5428,8 +5465,8 @@
 </tr>
 <tr>
 <td>H07</td>
-<td>Clomid's serum-UA-elevating effect in gout-prone men is mediated primarily by intestinal estrogen-receptor antagonism (blocking the female-positive PI3K/Akt → ABCG2 induction signal), not by direct androgen-receptor effects on intestinal ABCG2</td>
-<td>Stub</td>
+<td>Clomiphene-associated urate elevation is mediated primarily by intestinal estrogen-receptor antagonism</td>
+<td>Retracted</td>
 <td>0</td>
 <td>2026-05-07</td>
 <td><a href="H07-clomid-intestinal-er-antagonism/">H07-clomid-intestinal-er-antagonism.md</a></td>
@@ -5450,6 +5487,14 @@
 <td>2026-05-15</td>
 <td><a href="H09-community-fermentation-reliability/">H09-community-fermentation-reliability.md</a></td>
 </tr>
+<tr>
+<td>H10</td>
+<td>Clomiphene exposure and serum urate are positively coupled in a susceptible high-androgen phenotype</td>
+<td>Pending</td>
+<td>0</td>
+<td>2026-07-17</td>
+<td><a href="H10-clomiphene-dose-urate-coupling/">H10-clomiphene-dose-urate-coupling.md</a></td>
+</tr>
 </tbody>
 </table>
 <p><em>(Add new rows as hypotheses are committed. Sort by ID.)</em></p>
@@ -5461,7 +5506,7 @@
 <li><strong>Test.</strong> Execute killshots in the order the menu dictates — cheapest, highest-info first. Record results inline in the <code>Log</code> table. Each executed killshot updates <code>status</code> and <code>survival_count</code>.</li>
 <li><strong>Log outcome.</strong> For each killshot: date, killshot identifier, outcome (killed / survived / ambiguous), notes, and any deviations from the pre-committed protocol. Survival-count and survival-score are updated per <code>linter-design.md</code> §6.</li>
 <li><strong>Update status.</strong> <code>Pending</code> → <code>Alive</code> on first survived killshot. <code>Pending</code> or <code>Alive</code> → <code>Killed</code> on first threshold-crossing kill. Status can move Alive → Killed if a later killshot crosses a threshold; it can move Killed → Alive only via Retraction (§ below).</li>
-<li><strong>Retract if needed.</strong> If a killshot result is later invalidated (bad control, assay artifact, substrate batch problem), document the retraction in the file's Retraction History section and recompute status based on remaining valid killshots. Status: <code>Retracted</code> while the recount is pending; resolves to <code>Alive</code> / <code>Killed</code> / <code>Pending</code> on re-evaluation.</li>
+<li><strong>Retract if needed.</strong> If a founding premise or provenance claim proves invalid, withdraw the card and state why. If a counted killshot is later invalidated (bad control, assay artifact, substrate batch problem), document the retraction and recompute status from the remaining valid tests. A materially different replacement claim receives a new hypothesis ID.</li>
 </ol>
 <p>The lifecycle is sequential per hypothesis but not per directory. Multiple hypotheses can be at different lifecycle stages simultaneously.</p>
 <hr />
@@ -5470,7 +5515,7 @@
 <li><strong>Pending.</strong> Committed, no killshot yet executed. The default initial state.</li>
 <li><strong>Alive.</strong> At least one killshot has been run; the claim has not been falsified per its pre-committed thresholds. Survival count &gt; 0.</li>
 <li><strong>Killed.</strong> At least one killshot has crossed its Killed threshold. The claim is falsified. Documented in the Log with the killshot result.</li>
-<li><strong>Retracted.</strong> A previously-counted killshot result has been invalidated. Status is being recomputed; intermediate holding state.</li>
+<li><strong>Retracted.</strong> The card was withdrawn because a founding premise or provenance claim failed, or a previously counted result was invalidated. The file states whether a recount is pending or a replacement hypothesis supersedes the claim.</li>
 </ul>
 <p>A hypothesis with status <strong>Killed</strong> is not deleted. The file stays; the killed claim is part of the wiki's epistemic history. A Killed hypothesis can motivate a new committed hypothesis (a revised claim at a new file, H0M-*), but the Killed file itself is preserved.</p>
 <hr />
@@ -5553,7 +5598,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "navigation.instant", "toc.integrate", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
