@@ -1,19 +1,16 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "7adf7c33cfefaa974de1bc88026533b3b59573a8",
-    "result_commit": "7adf7c33cfefaa974de1bc88026533b3b59573a8",
-    "timestamp": "2026-07-22T14:32:07Z",
+    "coverage_commit": "869f20a2a2fc5bd5b19ae88627f6d4314b01c1ad",
+    "result_commit": "869f20a2a2fc5bd5b19ae88627f6d4314b01c1ad",
+    "timestamp": "2026-07-22T14:43:31Z",
     "changed_paths": [
-      "wiki/etc/team.md",
-      "wiki/nlrp3-exploit-map.md",
-      "wiki/nlrp3-inflammasome.md",
-      "wiki/peptide-gout-addendum.md",
-      "wiki/thymulin.md"
+      "wiki/thymulin.md",
+      "wiki/validation-experiments.md"
     ],
     "affected_paths": [],
     "blocked_paths": [],
-    "cost_usd": 0.17376
+    "cost_usd": 0.251734
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
