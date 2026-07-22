@@ -16,6 +16,10 @@ sources:
   - peptide-gout-addendum.md
   - nlrp3-exploit-map.md
   - validation-experiments.md
+  - "PMID:10801955"
+  - "PMID:15003367"
+  - "PMID:16617301"
+  - "PMID:8353362"
 tags:
   - thymulin
   - peptides
@@ -58,6 +62,20 @@ The anti-inflammatory effect was present in aged animals and essentially absent 
 ## Sourcing & Delivery
 
 Thymulin is a nine-residue peptide requiring stoichiometric zinc for activity; native circulating half-life is short. In the 2026 study, active dosing was **thymulin acetate 1.5 mg/kg co-administered with an equimolar concentration of ZnCl₂, intraperitoneally, daily, continued for 4 weeks and tolerated** (control animals received ZnCl₂ alone). (Animal Model; Kanemaru et al. 2026, Methods) The zinc-loading requirement is thus a solved formulation detail in the preclinical setting rather than an open problem. A metabolically stabilized synthetic analog (metFTS) has been described in the earlier thymulin literature and is the more plausible starting point than the native peptide for any translational route; oral and gut-luminal delivery of a zinc-dependent nonapeptide has not been demonstrated and would be the delivery gate for any Open Enzyme fermentation or barrier-restricted framing.
+
+**Route evidence — injected or gene-delivered only.** Every administration route in the indexed literature is parenteral (subcutaneous, intraperitoneal) or gene/vector delivery: a synthetic DNA sequence encoding met-FTS was cloned into expression vectors to restore circulating thymulin long-term in thymectomized rodents (In Vitro / Animal Model; PMID 16617301). **No intranasal, oral, or other mucosal thymulin study exists** (2026-07 PubMed route scan). Nasal delivery is pharmacologically unpromising for this molecule specifically: it is a naked linear nonapeptide that must retain stoichiometric zinc in the active complex across a peptidase-rich mucosa, and the therapeutic target is systemic (circulating and tissue myeloid cells), which demands real plasma exposure — the hardest bar for the nasal route. The credible way to reduce injection frequency is therefore pharmacokinetic, not a route switch: a long-acting/depot formulation of the stabilized metFTS analog (dose-sparing the way canakinumab's long half-life covers months), or the single-administration gene/vector approach at the far end. (Mechanistic Extrapolation for the route assessment; Animal Model for gene-delivery precedent.)
+
+## Measurement & Biomarker
+
+There is **no routine clinical assay** for thymulin; published levels come from a research **rosette-inhibition bioassay**, not a standard immunoassay. Because activity is zinc-dependent, the peptide exists as a zinc-bound active form (ZnFTS) and a zinc-free inactive form (FTS), and a total-peptide number does not report the active fraction — the two dissociate in disease (e.g. in advanced HIV the active zinc-bound form falls while the inactive form rises; In Vitro / clinical, PMID 10801955). The practical orderable proxy is **serum zinc** (with copper/ceruloplasmin to watch the ratio): zinc is the rate-limiter on thymulin activity and is directly correctable. Thymulin declines in aging, zinc deficiency, and several endocrine states (Animal Model + clinical; reviewed PMID 15003367).
+
+**Documented thymulin levels in gout patients: none.** A direct PubMed search for thymulin × gout/hyperuricemia/uric-acid/urate returns zero results (2026-07). The deficiency-in-gout premise is inferential (gout is age-associated; thymulin declines with age; aged myeloid cells are thymulin's site of action per Kanemaru 2026) and **unmeasured**. This motivates a low-cost observational companion to the [§1.44 (THY-1)](./validation-experiments.md#144-thymulin--msu--nlrp3-in-aged-macrophages-thy-1--age-stratified-priming-to-flare-test) interventional gate: **serum active-thymulin (bioassay) + zinc in gout patients vs. age-matched controls** — a measurement study, no intervention, that would test whether gout patients are actually thymulin- or zinc-deficient before any reconstitution hypothesis is pursued.
+
+## Zinc-as-activator hypothesis
+
+Because thymulin is inactive without bound zinc, functional thymulin deficiency has two distinct causes with different interventions: **insufficient peptide** (the age-driven case, requiring peptide replacement) versus **sufficient peptide but insufficient zinc to activate it** (accumulated inactive FTS, correctable with zinc alone). In the second case the "therapy" is not a synthetic peptide but **zinc repletion, which reconstitutes the active ZnFTS complex from endogenous peptide** — cheaper, safer, and already available. This is consistent with zinc's documented role in thymulin activity and immune function in the elderly (clinical/review; PMID 8353362, 15003367).
+
+Boundaries on the hypothesis: (1) it is contingent on a **measured** zinc deficiency — repletion above sufficiency does not raise active thymulin and carries copper-depletion risk; (2) any anti-inflammatory benefit of repletion cannot be cleanly attributed to thymulin versus zinc's independent immune/antioxidant roles, so this is a permissive-cofactor / adjunct hypothesis, not a validated standalone mechanism; (3) chronic zinc requires copper/ceruloplasmin monitoring. Evidence tier: **Mechanistic Extrapolation** for the gout-specific claim (no gout data), resting on established In Vitro zinc-dependence of thymulin activity.
 
 ## Evidence Level
 
