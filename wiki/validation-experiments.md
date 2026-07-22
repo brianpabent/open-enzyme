@@ -58,6 +58,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 | [§1.23](#123-androgen-msu-nlrp3-in-macrophages-tiered-mechanistic-protocol) | Androgen × MSU × NLRP3 macrophage tiered protocol (T1 THP-1 / T2 PBMC / T3 mouse air-pouch) — fills literature gap | In Vitro | $5–10K (T1); $105–160K (full cascade) | 6–8 (T1); ~12 mo (full) | Proposed | [androgen-urate-axis](./androgen-urate-axis.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [self-experiment-protocol](./self-experiment-protocol.md) |
 | [§1.24](#124-carnosine-co-expression-validation-in-a-oryzae-koji-endgame-optional-third-cassette) | Carnosine co-expression in *A. oryzae* (koji multi-payload optional third cassette) | In Vitro | $1,500–2,500 | 4–6 | Proposed | [koji-endgame-strain](./koji-endgame-strain.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [carnosine](./carnosine.md), [androgen-urate-axis](./androgen-urate-axis.md) |
 | [§1.25](#125-dafcd55-scr1-4-truncated-single-cassette-expression-in-a-oryzae-cp0-engineering-candidate-wet-lab-gate) | DAF SCR1-4 single-cassette expression in *A. oryzae* (CP0 candidate + downstream chaperone calibration) | In Vitro | $4,445–6,745 (two-arm) | 6–8 | Proposed | [daf-cd55-scr14-truncated-computational](./daf-cd55-scr14-truncated-computational.md), [hypotheses/H05-daf-scr14-cp0-thesis](./hypotheses/H05-daf-scr14-cp0-thesis.md), [chaperone-orthogonal-stacking](./chaperone-orthogonal-stacking.md), [complement-c5a-gout](./complement-c5a-gout.md) |
+| [§1.44](#144-thymulin--msu--nlrp3-in-aged-macrophages-thy-1--age-stratified-priming-to-flare-test) | Thymulin (+Zn²⁺) × MSU × NLRP3 in **aged** macrophages (THY-1) — tests whether NF-κB priming block translates to reduced crystal-driven IL-1β; age-stratified | In Vitro | $5–10K (T1); $85–130K (full cascade) | 6–8 (T1); ~11 mo (full) | Proposed | [thymulin](./thymulin.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [peptide-gout-addendum](./peptide-gout-addendum.md) |
 | [§1.33](#133-physiological-uox-topology--oxygen--peroxide-factorial) | **Physiological UOX topology × oxygen × peroxide factorial — Gate 0** | In Vitro | TBD | TBD | Proposed | [gut-lumen-sink](./gut-lumen-sink.md), [uricase-topology-oxygen-peroxide-design-computational](./uricase-topology-oxygen-peroxide-design-computational.md) |
 | [§1.34](#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux) | Isotope-resolved precursor → UOX → PDB sequential flux — parallel first-wave architecture gate | In Vitro | TBD | TBD | Proposed | [purine-degrading-bacteria](./purine-degrading-bacteria.md), [staged-purine-sink-mass-balance-computational](./staged-purine-sink-mass-balance-computational.md) |
 | [§1.36](#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay) | Luminal urate antioxidant-loss × UOX-H₂O₂ safety — post-topology safety gate | In Vitro | TBD | TBD | Proposed | [uricase](./uricase.md), [gut-lumen-sink](./gut-lumen-sink.md) |
@@ -1498,6 +1499,73 @@ Each arm: parallel small-scale liquid (Arms A-C) or solid (Arm D) cultivation; h
 **Protocol:** First measure or obtain defensible human intestinal/fecal exposure distributions for allopurinol, oxypurinol, and febuxostat. Then run anaerobic dose–response studies in full-pathway *C. sporogenes*, CBT2.0, and pathway-deficient controls at those observed concentrations. Measure growth, urate disappearance, every pathway intermediate/product, and enzyme activity where isolatable.
 
 **Decision rule:** Claim additivity with XOR inhibitors only if no pathway inhibition or persistence loss occurs across measured intestinal exposures. A millimolar in-vitro effect outside human exposure does not fail the combination.
+
+---
+
+### 1.44 Thymulin × MSU × NLRP3 in Aged Macrophages (THY-1) — Age-Stratified Priming-to-Flare Test
+
+**Status**: Proposed | **Cost**: Tier 1: $5–10K; full T1+T2+T3 cascade $85–130K | **Weeks**: Tier 1: 6–8; full cascade ~11 months | **Phase**: 1
+
+**Affected wiki**: [thymulin](./thymulin.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) §CP1a, [peptide-gout-addendum](./peptide-gout-addendum.md)
+
+**What it tests:** Whether thymulin's demonstrated NF-κB priming block (Signal 1) translates into reduced **MSU-crystal-driven** mature IL-1β and caspase-1 activation in macrophages — i.e. whether suppressing the transcriptional priming arm is sufficient to blunt a crystal-triggered flare, or whether the untested assembly/caspase-1 steps (CP2–CP4) proceed regardless. Kanemaru et al. 2026 (*Nat Commun* 17:6534, [DOI 10.1038/s41467-026-75383-0](https://doi.org/10.1038/s41467-026-75383-0)) established, in aged bone-marrow macrophages and human PBMCs, that thymulin inhibits NF-κB p65 DNA-binding and IκBα phosphorylation and suppresses IL-1α/IL-1β/IL-6/TNF-α — but every stimulus was LPS or the aging state, never a urate crystal, and every readout was priming-level, never crystal-driven mature IL-1β secretion. This experiment supplies the missing MSU trigger and the assembly/output readouts.
+
+**The design pivot vs. §1.23:** thymulin's anti-inflammatory effect is **age-dependent** (present in aged cells, essentially absent in young; Kanemaru 2026). Cell/donor age is therefore the primary experimental variable here, not a nuisance covariate. A protocol run only in a standard (effectively "young"-phenotype) immortalized line could return a false null. Every tier is age-stratified.
+
+**Background on the gap:** No thymulin × MSU-crystal experiment exists in the indexed literature (2026-07 lit review, [thymulin.md](./thymulin.md)). The 2026 paper's framing is inflammaging and cancer immunotherapy; the gout-relevant CP1a mechanism is a spin-out from that work. Both halves are otherwise well-characterized — MSU × macrophage NLRP3 is textbook, and thymulin × NF-κB is now directly measured — so the assays are standard; only the intersection is new.
+
+**Protocol — Tiered, gating logic:**
+
+**Tier 1 — Age-contrasted macrophage in vitro screen ($5,000–10,000; 6–8 weeks):**
+- **Cells (age contrast is the core comparison):**
+  - *Aged-phenotype arm:* primary human monocyte-derived macrophages (MDMs) from older donors (≥60 yr), OR replicatively/inflammatory-aged THP-1 macrophages (extended PMA + serial passage) as a lower-cost proxy. The aged arm is where a thymulin effect is predicted.
+  - *Young-phenotype arm:* MDMs from young donors (≤35 yr), OR standard-passage PMA-differentiated THP-1. Predicted near-null — this arm tests the age-dependence, not just efficacy.
+- **Pre-treatment:** ± thymulin acetate at 0.1, 1, 10, 100 nM, **each co-administered with equimolar ZnCl₂** (zinc is obligatory for activity; a zinc-only vehicle arm is the matched control, mirroring the Kanemaru in vivo control) × 24 hr.
+- **Priming + challenge:** LPS prime (signal 1) followed by **MSU crystals (100–200 μg/mL, 4–6 hr)** as the gout-relevant activation trigger. Include an LPS+ATP (5 mM, 30 min) arm as an orthogonal non-crystal NLRP3 trigger, and an LPS-only (no crystal) arm to separate priming suppression from assembly effects.
+- **Readouts:**
+  - **Mature secreted IL-1β (ELISA) — primary endpoint** (this is the crystal-driven output the 2026 paper never measured).
+  - Cleaved caspase-1 (p20, Western) — tests whether the effect reaches the assembly/executioner step or stops at priming.
+  - ASC speck formation (immunofluorescence, % speck-positive cells).
+  - NF-κB priming confirmation: pro-IL-1β + NLRP3 mRNA (qPCR) and IκBα phosphorylation (Western) — replicates the Kanemaru priming readout in the MSU context and anchors the mechanism.
+  - IL-1α, IL-6, TNF-α (multiplex) — the broader cytokine set thymulin suppressed.
+  - Pyroptosis (LDH release).
+- **Success criterion (Tier 1 → Tier 2):** ≥30% suppression of MSU-induced mature IL-1β by thymulin in the **aged** arm at any concentration, with a demonstrably smaller effect in the young arm (age-dependence preserved). Interpretation branches:
+  - *IL-1β down AND caspase-1/ASC down:* priming suppression propagates to the output — strongest result; thymulin blunts the crystal flare, not just transcription.
+  - *IL-1β down but caspase-1/ASC unchanged:* priming reduction lowers substrate without blocking assembly — a partial, mechanistically bounded effect.
+  - *pro-IL-1β/NLRP3 mRNA down but mature IL-1β unchanged:* the priming-only limitation is confirmed — thymulin does not blunt crystal-driven output. Closes the flare hypothesis; thymulin remains a systemic-immunomodulation entry only.
+  - *No effect even on priming in the aged arm:* fails to replicate the 2026 mechanism under an MSU (vs. LPS) trigger; closes the question.
+
+**Tier 2 — Donor-age-stratified primary MDMs, expanded n ($20,000–30,000; 12 weeks; gated on Tier 1 positive):**
+- **Cells:** MDMs from older donors (≥60 yr, n=8) vs. young donors (≤35 yr, n=8); if a serum thymulin/zinc-status assay is feasible, stratify the aged arm further by endogenous thymulin activity.
+- **Same thymulin (+Zn²⁺) × LPS+MSU protocol as Tier 1.**
+- **Readouts:** mature IL-1β + IL-18 (gout-relevant cytokines); caspase-1; donor-age effect size.
+- **Success criterion (Tier 2 → Tier 3):** aged-donor MDMs show MSU-IL-1β suppression matching the Tier 1 direction with effect size ≥20%, and the young-donor arm confirms the age gap. Positive Tier 1 + null Tier 2 indicates an immortalized-line artifact and is itself useful (closes escalation).
+- **Ethics note:** donor recruitment and consent through standard IRB-approved protocols.
+
+**Tier 3 — Aged-mouse MSU air-pouch ± thymulin ($60,000–90,000; 6 months; gated on Tier 2 confirmation):**
+- **Animals:** aged (≥18-mo) vs. young (2–3-mo) C57BL/6 mice; arms: vehicle (ZnCl₂ only), thymulin + ZnCl₂ (1.5 mg/kg + equimolar ZnCl₂ i.p. daily, the Kanemaru regimen), across both age groups.
+- **Standard gout model:** subcutaneous air pouch raised over 6 days; MSU crystal injection (3 mg in PBS); 6-hr and 24-hr lavage.
+- **Readouts:** lavage neutrophil count (primary — standard gout-model readout); IL-1β + cascade (IL-6, CXCL1/KC); pouch-tissue NLRP3/ASC/caspase-1 (Western).
+- **Success criterion:** causal demonstration that thymulin reconstitution reduces MSU-induced gouty inflammation specifically in aged animals, with a quantified effect size. This is the in vivo test of the age-dependent-repurposing thesis.
+
+**BHB / KPV comparison arm (marginal add to Tier 1):** run thymulin head-to-head against KPV (the other CP1a peptide) and against BHB on the same aged-macrophage MSU plate. **What it adds:** thymulin, KPV, and BHB all touch CP1; whether they are additive (distinct routes into NF-κB / assembly) or redundant is untested, and the aged-cell context is exactly where thymulin is predicted to differentiate. Primary readout: MSU-induced IL-1β with single agents vs. pairs (Loewe combination index, CI <0.7 super-additive). Near-zero marginal cost (added arms on the existing plate).
+
+**Estimated cost (full cascade):** Tier 1 $5–10K → +Tier 2 $20–30K → +Tier 3 $60–90K = **$85–130K total** if all tiers fire. Tier 1 alone is the entry cost.
+
+**Estimated timeline (full cascade):** Tier 1: 6–8 weeks. + Tier 2: +12 weeks (gated). + Tier 3: +6 months (gated). Best case (early null): 8 weeks. Worst case (full cascade): ~11 months.
+
+**Success criteria (overall):**
+- **Crystal-driven output suppression, age-dependent (positive T1+T2+T3):** thymulin graduates from a CP1a mechanistic-extrapolation entry to a gout-validated priming inhibitor with an age-targeted use case. Updates [thymulin.md](./thymulin.md), the [exploit map CP1a](./nlrp3-exploit-map.md) evidence tier, and the age-demographic framing.
+- **Priming-only confirmed (mRNA down, mature IL-1β unchanged):** the untested-assembly limitation becomes a measured limitation; thymulin stays a systemic-immunomodulation hypothesis, not a flare intervention. Publishable gap-fill.
+- **Age-dependence not preserved (equal effect young + aged, or effect only young):** contradicts the 2026 mechanism under an MSU trigger; flags the age-dependent-repurposing thesis for revision.
+
+**Limitations:**
+- Tier 1's "aged-phenotype" immortalized-line proxy is an approximation of true replicative/inflammatory aging; the primary-MDM arm (Tier 1 optional / Tier 2) is the real age test.
+- Zinc co-administration is obligatory and must be matched in every control — an apparent thymulin effect that is actually a zinc effect is the key confound (the zinc-only vehicle arm controls for it).
+- Tiers focus on priming + activation + output; they do not address resolution (SPM) or T-cell/systemic immunomodulation — the latter is thymulin's other documented axis and a separate safety question for any gout use.
+- The murine air-pouch model is acute, not chronic-tophaceous.
+
+**Cross-references:** [thymulin.md](./thymulin.md) (dossier + falsification gate); [nlrp3-exploit-map.md §CP1a](./nlrp3-exploit-map.md); [nlrp3-inflammasome.md](./nlrp3-inflammasome.md); §1.23 (androgen × MSU × NLRP3, shared assay family); §1.17 (MSU-macrophage synergy readouts).
 
 ---
 

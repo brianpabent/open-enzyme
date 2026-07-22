@@ -15,6 +15,7 @@ related:
 sources:
   - peptide-gout-addendum.md
   - nlrp3-exploit-map.md
+  - validation-experiments.md
 tags:
   - thymulin
   - peptides
@@ -70,7 +71,7 @@ Thymulin is a nine-residue peptide requiring stoichiometric zinc for activity; n
 
 ## Falsification Gate
 
-The single experiment that would advance or kill the gout hypothesis: **aged human (or mouse) macrophages primed with MSU crystals ± thymulin (+ Zn²⁺), reading out mature secreted IL-1β and cleaved caspase-1**, with an LPS+MSU positive control and a young-donor arm to test the age-dependence. This fits the existing MSU-stimulated-macrophage assay family already used in the corpus (index cheapest-experiment #2, §1.17; androgen×MSU×NLRP3 screen §1.23-T1). If thymulin's NF-κB priming block translates to reduced crystal-driven IL-1β in aged macrophages, thymulin graduates from a CP1a mechanistic-extrapolation entry to a gout-validated priming inhibitor. If mature IL-1β is unchanged despite priming suppression, the priming-only limitation is confirmed and thymulin stays a systemic-immunomodulation hypothesis, not a flare intervention.
+The single experiment that would advance or kill the gout hypothesis: **aged human (or mouse) macrophages primed with MSU crystals ± thymulin (+ Zn²⁺), reading out mature secreted IL-1β and cleaved caspase-1**, with an LPS+MSU positive control and a young-donor arm to test the age-dependence. The full tiered protocol is registered as [§1.44 (THY-1)](./validation-experiments.md#144-thymulin--msu--nlrp3-in-aged-macrophages-thy-1--age-stratified-priming-to-flare-test); it is age-stratified because thymulin's effect is age-dependent, and it fits the existing MSU-stimulated-macrophage assay family already used in the corpus (§1.17; androgen×MSU×NLRP3 screen §1.23). If thymulin's NF-κB priming block translates to reduced crystal-driven IL-1β in aged macrophages, thymulin graduates from a CP1a mechanistic-extrapolation entry to a gout-validated priming inhibitor. If mature IL-1β is unchanged despite priming suppression, the priming-only limitation is confirmed and thymulin stays a systemic-immunomodulation hypothesis, not a flare intervention.
 
 ## Related Concepts
 
