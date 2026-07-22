@@ -60,6 +60,6 @@ The research library is the codebase. Before opening an issue or pull request:
 
 ## Team and license
 
-Open Enzyme is led by Brian Abent and is recruiting collaborators in microbiome/in-vivo validation, pharma translation/regulatory strategy, and innate-immune safety. See [team.md](wiki/etc/team.md).
+Open Enzyme is led by Brian Abent with Lauren Collier Hyams, PhD, serving as Scientific Advisor. See [team.md](wiki/etc/team.md).
 
 The repository is released under the [MIT License](LICENSE).
