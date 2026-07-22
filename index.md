@@ -37,6 +37,7 @@ Open Enzyme is Phase 0 research and design. It maps gout as a system, creates fa
 | LBP-1 | Engineering-toolkit, commercial-landscape, and FDA-LBP scans — see [`engineered-lbp-chassis.md`](wiki/engineered-lbp-chassis.md) Open Technical Questions | $0 | 1–2 | Whether a candidate organism supports controllable local payload activity and a viable delivery path |
 | LBP-2 | LBP track Phase 2: comp-008 *F. prausnitzii* heterologous expression feasibility | $0 | 1 | Which candidate constructs are tractable in *F. prausnitzii* (uricase / lactoferrin / sCR1 / native BCoAT overexpression) |
 | 1.23-T1 | Androgen × MSU × NLRP3 macrophage screen (§1.23 Tier 1, THP-1) — fills documented literature gap | $5–10K | 6–8 | Whether direct-androgen contribution to gout inflammation exists; gates Tiers 2–3 |
+| THY-1 | Thymulin (+Zn²⁺) on MSU-primed **aged** macrophages — mature IL-1β + cleaved caspase-1, young-donor arm — see [`thymulin.md`](wiki/thymulin.md) | $5–10K | 6–8 | Whether thymulin's NF-κB priming block translates to reduced crystal-driven IL-1β; graduates thymulin from CP1a extrapolation to gout-validated or kills it as priming-only |
 | siRNA-1 | Kidney-tropic conjugate, clinical-landscape, and regulatory scans — see [`sirna-urat1-modality.md`](wiki/sirna-urat1-modality.md) Falsification Program | $0 | 1–2 | Whether any delivery class has credible selective proximal-tubule exposure |
 | siRNA-2 | comp-009 URAT1 mRNA target-site selection (RNAfold + accessibility scoring) | $0 | 1 | Whether URAT1 mRNA has accessible, selective target sites before delivery work |
 | TCM-1 | TCM track Phase 2: P2-1 lit scan (Si Miao San family + Smilax glabra + Bai Hu Jia Gui Zhi Tang) — **global multilingual sources by default** (ChiCTR, CNKI/WanFang, J-STAGE) — see [`tcm-modern-rigor-intersection.md`](wiki/tcm-modern-rigor-intersection.md) Open Follow-Ups | $0 | 1–2 | Whether classical TCM gout formulas have credible modern Chinese clinical signal vs. tradition-only |
@@ -91,6 +92,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 
 - **[BPC-157](wiki/bpc-157.md)** — 15-amino-acid gastric peptide with indirect, evidence-limited relevance through gut-barrier hypotheses.
 - **[KPV Tripeptide](wiki/kpv-peptide.md)** — α-MSH fragment with NF-κB/NLRP3 pathway evidence and unresolved gout exposure and selectivity.
+- **[Thymulin](wiki/thymulin.md)** — Zinc-dependent thymic nonapeptide; CP1a NF-κB priming inhibition proven in aged macrophages + human PBMCs (Kanemaru 2026 *Nat Commun*), age-dependent; untested against MSU/crystal (priming only).
 - **[BHB / Ketones](wiki/bhb-ketones.md)** — Evidence and uncertainties for ketone-mediated effects across three NLRP3 chokepoints.
 - **[Oridonin](wiki/oridonin.md)** — Natural NLRP3 inhibitor; covalent NACHT domain Cys279 binding; traditional medicine origin
 - **[Disulfiram](wiki/disulfiram.md)** — Gasdermin D blocker (Antabuse); repurposed drug; CP6b in v1.2 NLRP3 map

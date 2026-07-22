@@ -8,6 +8,7 @@ tags:
   - TB-500
   - KPV
   - GHK-Cu
+  - thymulin
   - NLRP3
   - inflammation
   - uric acid
@@ -237,6 +238,28 @@ For systemic effects (gene expression changes, systemic anti-inflammatory action
 
 ---
 
+## Thymulin (Serum Thymic Factor)
+
+The thymic hormone with the most recent, and most directly relevant, mechanistic evidence of any peptide on this list.
+
+**Thymulin** • Zinc-dependent nonapeptide • H-Pyr-Ala-Lys-Ser-Gln-Gly-Gly-Ser-Asn-OH • Secreted by thymic epithelial cells; circulating activity declines with age
+
+**[In Vitro + Animal Model — NF-κB mechanism; Mechanistic Extrapolation for gout]**
+
+### Why This One Is Newly Interesting for Gout
+
+Thymulin is a zinc-dependent thymic peptide whose activity falls with age. A 2026 *Nature Communications* study (Kanemaru et al., USC Keck, *Nat Commun* 17:6534) — framed around inflammaging and cancer immunotherapy rather than gout — provided the cleanest mechanistic evidence yet that a thymic peptide acts on gout's priming node. In aged bone-marrow macrophages, thymulin inhibited NF-κB p65 DNA-binding and LPS-induced IκBα phosphorylation, and a luciferase reporter whose NF-κB binding site was mutated lost the effect entirely — pinning the cytokine suppression specifically on NF-κB (signal 1, the priming step that transcribes pro-IL-1β and NLRP3 itself). It lowered IL-1α, IL-1β, IL-6, and TNF-α not only in aged mouse myeloid cells in vivo but in **human PBMCs ex vivo** — a human-cell data point most peptides here lack.
+
+Two features make the gout fit unusually clean for a mechanistic-extrapolation entry. First, the NF-κB block is shown in the **macrophage** — the gout effector cell — with a binding-site-mutation control, not inferred from a downstream cytokine readout. Second, the effect is **age-dependent** (present in aged cells, essentially absent in young), which matches gout's strong age skew rather than working against it.
+
+### The Honest Limits
+
+The paper never used MSU crystals, and it demonstrates priming (signal 1) only — not inflammasome assembly, caspase-1, or mature crystal-driven IL-1β release. So thymulin's gout case is a priming-node hypothesis anchored by strong macrophage/human NF-κB evidence, not a demonstrated flare effect. Its therapeutic thrust in the paper is immune-tuning (enhancing antitumor T-cell immunity, sensitizing tumors to anti-PD-L1 in aged hosts), which raises systemic-immunomodulation questions a locally-acting inflammasome or IL-1 intervention avoids. Native thymulin needs stoichiometric zinc and has a short half-life; the study dosed thymulin acetate 1.5 mg/kg with equimolar ZnCl₂ i.p. daily (tolerated over 4 weeks), and a stabilized analog (metFTS) exists.
+
+Full dossier — mechanism figures, dose, evidence tiers, and the MSU-macrophage falsification gate: [Thymulin](./thymulin.md).
+
+---
+
 ## Other Peptides & Compounds of Interest
 
 The extended roster — pentosan polysulfate, SS-31, ANP, and emerging NLRP3-targeted compounds.
@@ -388,6 +411,7 @@ This section is the most important one. Peptides generate enormous enthusiasm in
 | **TB-500** | NF-κB inhibition, tissue repair, anti-fibrotic | Animal models. No gout studies. Limited human data. | Solid mechanistic case for NF-κB-mediated NLRP3 priming inhibition. Best argument is for tissue repair after gout damage, not flare prevention. |
 | **KPV** | NLRP3 + NF-κB dual inhibition, gut anti-inflammatory | Cell and animal studies. NLRP3 inhibition demonstrated in immune cells. Gut effects in colitis models. No gout-specific studies. No human trials. | Strongest mechanistic case for gout of any peptide here. Hits the exact pathways. But zero gout-specific testing — the connection is entirely via shared mechanisms. |
 | **GHK-Cu** | Gene expression changes (anti-inflammatory, antioxidant, ECM repair) | Gene expression data is solid (Broad Institute). Tissue repair in animal models. No gout studies. | Best suited for long-term joint protection rather than flare management. Gene expression breadth is impressive but non-specific. |
+| **Thymulin** | NF-κB priming inhibition (p65 DNA-binding, IκBα); suppresses IL-1α/IL-1β/IL-6/TNF-α | NF-κB mechanism proven in aged macrophages + human PBMCs (Kanemaru 2026 *Nat Commun*). No MSU/crystal or gout testing; priming only. Age-dependent. | Cleanest CP1a mechanistic evidence of any peptide here, in the gout effector cell and with human cells — but LPS/aging trigger, not urate; assembly and caspase-1 untested. |
 | **PPS** | Cartilage protection, enzyme inhibition, anti-crystallization | Human OA trials. Gout excluded from trials. No crystal arthropathy data. | Has human data — but for the wrong disease. Gout exclusion from trials is a yellow flag. The anti-crystallization property is interesting but unstudied for MSU. |
 | **SS-31** | Mitochondrial ROS reduction (NLRP3 trigger), renal protection | Phase II for heart failure. Preclinical for kidney protection. No gout studies. | Most directly targets an NLRP3 activation signal (mitochondrial ROS). Renal protection is a meaningful bonus. More human safety data than most on this list. |
 

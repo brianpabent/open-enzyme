@@ -45,7 +45,7 @@ The model includes CP0 complement priming; CP1a TNFSF14/LIGHT and CP1b C5a→ROS
 | Chokepoint | The step | Canonical exploit |
 |---|---|---|
 | **CP0** — Complement priming (C5a-dominant) | MSU activates complement → C5a→C5aR1 → ROS primes NLRP3, upstream of NF-κB | Avacopan (oral C5aR1 antagonist; platform gap — no fermentable modulator) |
-| **CP1 (CP1a/CP1b)** — NF-κB priming | TLR/LPS → NF-κB transcribes NLRP3, pro-IL-1β, pro-IL-18, ASC. CP1a = TNFSF14/LIGHT amplifier; CP1b = C5a→ROS | Sulforaphane (Nrf2); also berberine, curcumin, KPV, EGCG, TNFSF14 blockade |
+| **CP1 (CP1a/CP1b)** — NF-κB priming | TLR/LPS → NF-κB transcribes NLRP3, pro-IL-1β, pro-IL-18, ASC. CP1a = TNFSF14/LIGHT amplifier; CP1b = C5a→ROS | Sulforaphane (Nrf2); also berberine, curcumin, KPV, EGCG, thymulin, TNFSF14 blockade |
 | **CP2** — NLRP3 activation / ASC assembly | K⁺ efflux + mtROS drive NLRP3 oligomerization and ASC nucleation | BHB (direct oligomerization block); also oridonin, tranilast, theaflavins, NAC |
 | **CP3** — ASC speck assembly / caspase-1 recruitment | Microtubule transport assembles ASC specks → recruits pro-caspase-1 | Colchicine (microtubule depolymerization) |
 | **CP4** — Caspase-1 activation / substrate cleavage | Active caspase-1 cleaves pro-IL-1β and GSDMD (the executioner step) | VX-765/belnacasan (selective caspase-1 inhibitor) |
