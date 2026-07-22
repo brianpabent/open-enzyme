@@ -1,16 +1,15 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "869f20a2a2fc5bd5b19ae88627f6d4314b01c1ad",
-    "result_commit": "869f20a2a2fc5bd5b19ae88627f6d4314b01c1ad",
-    "timestamp": "2026-07-22T14:43:31Z",
+    "coverage_commit": "54d28cc6838078de373c5fda70a20a217cbb92cd",
+    "result_commit": "54d28cc6838078de373c5fda70a20a217cbb92cd",
+    "timestamp": "2026-07-22T15:07:29Z",
     "changed_paths": [
-      "wiki/thymulin.md",
-      "wiki/validation-experiments.md"
+      "wiki/thymulin.md"
     ],
     "affected_paths": [],
     "blocked_paths": [],
-    "cost_usd": 0.251734
+    "cost_usd": 0.084375
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
