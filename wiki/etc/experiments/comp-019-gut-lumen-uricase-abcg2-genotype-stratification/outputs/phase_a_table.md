@@ -1,3 +1,5 @@
+> **PARTIALLY SURVIVES; PHASE B INVALIDATED / SUPERSEDED by comp-044.** This is a frozen record of the sources searched for comp-019 on 2026-05-08. It supports only the bounded observation that no Q141K-stratified uricase clinical outcome was identified in that searched corpus; it does not establish universal absence. The Phase B ΔSUA estimates, genotype ordering, capacity ratios, flat-dose conclusion, yield recommendation, and trial-design implications are retired.
+
 # Phase A — Literature Stratification Mining: Findings Table
 
 Goal: identify any post-hoc stratification of oral-uricase or systemic-uricase response by ABCG2 Q141K (rs2231142) genotype, plus collect the empirical anchors the Phase B flux model needs.
@@ -18,9 +20,9 @@ Goal: identify any post-hoc stratification of oral-uricase or systemic-uricase r
 | **PRX-115 Phase 1** (Protalix 2024 ACR Convergence late-breaking poster) | n=64 (48 PRX-115 + 16 placebo) | Hyperuricemic adults | **NO** — no genotype reported | At highest IV dose, plasma urate <6.0 mg/dL for up to 12 weeks. Phase 2 RELEASE trial IND effective Oct 2025; topline H2 2027. | Phase 1 clinical trial (conference abstract tier) | n/a — IV systemic mechanism (not gut-lumen) |
 | **Rasburicase clinical corpus** (FDA 2001 + post-marketing) | Multiple Phase 3 + observational | Tumor-lysis-syndrome (TLS) populations | **NO published RCT pre-stratifies by Q141K** | Reduces plasma uric acid >85% within 4h IV. Off-label gout use limited by allergic reactions. | Multiple sources, regulatory + post-marketing | n/a — IV systemic |
 
-## Headline gap (this is the discovery)
+## Bounded literature gap
 
-**Across the entire published clinical-trial corpus of oral and systemic uricase therapy, ZERO trials have pre-stratified or post-stratified results by ABCG2 Q141K genotype.** The Q141K × ULT response literature is rich for allopurinol (Wallace 2018, Vora 2021, Stamp 2019), absent for uricase.
+**No trial in the sources searched for comp-019 reported pre-stratified or post-stratified uricase outcomes by ABCG2 Q141K genotype.** This is a dated searched-corpus observation, not proof that no such analysis exists. The searched Q141K × ULT response literature contained allopurinol studies (Wallace 2018, Vora 2021, Stamp 2019) but no genotype-stratified uricase outcome.
 
 The mechanistic anchor — direct in-vivo measurement of Q141K-stratified intestinal urate secretion — DOES exist (Miyazaki 2025, n=34, Crohn's-dominated, p for trend=0.058). This single paper is the load-bearing empirical input for Phase B's flux model.
 
@@ -36,8 +38,8 @@ The mechanistic anchor — direct in-vivo measurement of Q141K-stratified intest
 
 ## Implication for the Phase A negative result
 
-The absence of Q141K-stratified oral-uricase RCT data means we CANNOT directly answer "does the gut-lumen sink work in non-Q141K males?" from existing trials. We have to model it.
+The searched sources did not directly answer whether the gut-lumen sink works in non-Q141K males.
 
-**Phase B's job:** use the Miyazaki 2025 directly-measured ratios + the Matsuo 2014 functional-classification framework + ABCG2 transporter kinetics + uricase enzyme kinetics + standard urate physiology to predict ΔSUA in each genotype × dose × sex scenario. Without prior trial data, this is the fastest answer-moving move.
+Phase B attempted to combine the Miyazaki 2025 ratios, the Matsuo 2014 functional-classification framework, transporter kinetics, uricase kinetics, and urate-physiology assumptions into genotype × dose × sex ΔSUA predictions. comp-044 showed that the implementation omitted physiological luminal-urate occupancy and finite residence/exposure time, so those predictions are invalid.
 
-**The model's prediction (see flux_model_summary.md): the mechanism works MORE in non-Q141K patients than Q141K-positive patients, not less.** This refutes the binary "Q141K-only mechanism" worry that motivated comp-019.
+**No responder ordering survives.** Whether Q141K modifies response remains an empirical question for a physiological-regime experiment.

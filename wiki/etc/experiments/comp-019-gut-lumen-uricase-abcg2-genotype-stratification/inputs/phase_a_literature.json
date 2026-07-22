@@ -1,9 +1,15 @@
 {
-  "_schema_note": "Phase A literature stratification mining records. Each record names primary source, what it shows, what it does NOT show (i.e. genotype stratification gap), and the verification tier per CLAUDE.md Rule 4.",
+  "_metadata": {
+    "status": "frozen_dated_search_record",
+    "search_date": "2026-05-08",
+    "scope": "Sources searched for comp-019; not a universal literature-absence claim",
+    "surviving_result_scope": "Phase A found no Q141K-stratified uricase clinical outcome in the sources searched for comp-019 as of 2026-05-08."
+  },
+  "_schema_note": "Phase A literature stratification mining records. Each record names a source, what it shows, what the comp-019 search did not identify, and the recorded verification tier.",
 
   "miyazaki_2025": {
     "citation": "Miyazaki R, Ohashi Y, Sakurai T, Iwamoto T, Ichida K, Saruta M (2025) First verification of human small intestinal uric acid secretion and effect of ABCG2 polymorphisms. J Transl Med 23:257. PMID 40033341. PMC11877951. doi:10.1186/s12967-025-06145-7",
-    "design": "Direct in-vivo measurement of jejunal urate secretion using double-balloon endoscopy in n=34 subjects (32 Crohn's disease, 2 simple ulcer, 2 obscure GI bleeding) stratified into three ABCG2 functional groups by genotype combinations of rs72552713 (Q126*) and rs2231142 (Q141K).",
+    "design": "Direct in-vivo measurement of jejunal urate secretion using double-balloon endoscopy in n=34 subjects (30 Crohn's disease, 2 simple ulcer, 2 obscure GI bleeding) stratified into three ABCG2 functional groups by genotype combinations of rs72552713 (Q126*) and rs2231142 (Q141K).",
     "stratification": {
       "100% functional ABCG2": {
         "n": 11,

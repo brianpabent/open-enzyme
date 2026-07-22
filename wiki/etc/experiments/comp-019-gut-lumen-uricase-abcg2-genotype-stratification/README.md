@@ -3,8 +3,8 @@
 # comp-019 — Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model
 
 **Date:** 2026-05-08
-**Status:** Complete
-**Verdict:** **The gut-lumen uricase mechanism does NOT depend on Q141K-positive disease-state vulnerability. Non-Q141K (WT/WT) males show the LARGEST predicted ΔSUA, not the smallest. The platform's primary demographic positioning should NOT be narrowed to Q141K-positive patients.**
+**Status:** **Invalidated / superseded by comp-044**
+**Current verdict:** Phase A found no Q141K-stratified uricase clinical outcome in the sources searched for comp-019 as of 2026-05-08. The Phase B ΔSUA estimates, genotype ordering, capacity ratios, flat-dose conclusion, yield recommendation, and trial-design implications are invalid and must not be used.
 
 ## Question
 
@@ -37,20 +37,25 @@ comp-019-gut-lumen-uricase-abcg2-genotype-stratification/
 │   ├── flux_model_summary.md            # human-readable tables + interpretation
 │   └── phase_a_table.md                 # Phase A stratification findings table
 └── scripts/
-    └── flux_model.py                    # Python flux model + Monte Carlo
+    ├── flux_model.py                    # retired Python flux model + Monte Carlo
+    └── verify_retirement.py             # invalidation and archival-fidelity checks
 ```
 
 ## Reproduction
 
 ```bash
 cd wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/
-python3 scripts/flux_model.py
+python3 scripts/flux_model.py --reproduce-invalidated-history
 # results land in outputs/
 ```
 
-No external dependencies required (Python 3 stdlib only).
+The explicit flag is required because this command reproduces an invalidated historical model. Regenerated outputs retain the warning banner and machine-readable invalidation metadata. No external dependencies are required (Python 3 stdlib only).
 
-## Headline finding
+The reference retirement-contract check was recorded with **CPython 3.14.5**. Run `python3 scripts/verify_retirement.py` to verify refusal without the explicit flag, unchanged historical numerical payload, required warnings and JSON metadata, and byte-identical repeated flagged runs. The command reruns Phase B only; Phase A is a frozen literature-search record dated 2026-05-08.
+
+Reproduction creates no new evidence and authorizes no propagation. Only the scoped Phase A observation may remain active: no Q141K-stratified uricase clinical outcome was identified in the sources searched for comp-019 as of 2026-05-08. [comp-044](../../../gut-lumen-uricase-physiologic-regime-computational.md) owns the current quantitative interpretation.
+
+## Historical invalid output — do not use for decisions
 
 **Predicted ΔSUA at steady state (Monte Carlo medians, mid-dose 25 mg/day uricase):**
 
@@ -86,9 +91,9 @@ Interpretive page: [`wiki/uricase-abcg2-genotype-stratification-computational.md
 
 ## Limitations
 
-1. **No prospective Q141K-stratified oral uricase RCT exists.** ALLN-346 Phase 2a Studies 201 and 202 did not report ABCG2 stratification; PRX-115 Phase 1 (n=64) did not pre-specify genotype. The flux model's predictions are PROSPECTIVE — they have not been clinically validated. The Phase 2b RCT design recommendation is the bridge from this in-silico finding to clinical evidence.
-2. **Miyazaki 2025 substrate population is Crohn's-disease-dominated** (32 of 34 subjects). Inflammatory bowel disease may itself affect intestinal ABCG2 expression / function. The genotype-stratified secretion ratios this paper provides are the best available data, but their generalization to typical gout patients (no IBD) is an open question.
-3. **The flux model uses 1st-order steady-state approximation.** A more rigorous PBPK model with explicit clearance + reabsorption + circadian dosing would refine the magnitude estimates but is unlikely to flip the genotype-ordering conclusion.
-4. **Renal compensation fraction (central estimate 0.30, sensitivity 0.0–0.5) is a mechanistic-extrapolation parameter.** Not directly measured in oral uricase trials. Flux model is robust to this parameter direction (compensation reduces magnitude but doesn't flip genotype ordering).
+1. **No prospective Q141K-stratified oral-uricase outcome was identified in the sources searched for comp-019 as of 2026-05-08.** This is a bounded search result, not proof of universal absence. No Phase B trial-design recommendation survives.
+2. **Miyazaki 2025 substrate population is Crohn's-disease-dominated** (30 of 34 subjects). Inflammatory bowel disease may itself affect intestinal ABCG2 expression / function. The genotype-stratified secretion ratios this paper provides are the best available data, but their generalization to typical gout patients (no IBD) is an open question.
+3. **The flux model uses a first-order steady-state approximation and omits the physiological operating regime.** No ΔSUA magnitude or genotype-ordering conclusion survives.
+4. **Renal compensation fraction (central estimate 0.30, sensitivity 0.0–0.5) is a mechanistic-extrapolation parameter.** It was not directly measured in the searched oral-uricase trials and cannot rescue the invalid model.
 5. **Pre-commit verification gate (CLAUDE.md Rule 4):** Miyazaki 2025 numbers are full-text grep-verified from PMC11877951. Wallace 2018, Vora 2021, Stamp 2019, Matsuo 2014, Takada 2014, Nakayama 2011 numbers are abstract-tier-verified (not line-anchored to full-text). ALLN-346 Phase 2a Study 201/202 numbers are EULAR-abstract / press-release tier (not peer-reviewed full-text). PRX-115 Phase 1 is conference-abstract tier.
-6. **Multilingual scan deferred.** Per CLAUDE.md §"Global-multilingual research by default": ChiCTR / J-STAGE / KISS searches did not surface a published genotype-stratified oral-uricase RCT. The likelihood of finding one in a non-English source not already indexed by gnomAD-citing researchers is low, but a future Paperclip-MCP run on Chinese-language gout pharmacogenomics could refine the genotype-stratification picture for East-Asian-ancestry cohorts (Q141K MAF ~30% vs ~10% in European-ancestry).
+6. **Multilingual search scope was incomplete.** The comp-019 search included ChiCTR, J-STAGE, and KISS checks but did not establish universal absence across regional databases.

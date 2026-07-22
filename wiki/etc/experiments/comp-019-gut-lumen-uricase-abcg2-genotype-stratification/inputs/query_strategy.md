@@ -17,7 +17,7 @@ Identify post-hoc stratification of existing oral-uricase + systemic-uricase + A
 ## Targeted queries (keywords)
 
 - `ABCG2 Q141K rs2231142 allopurinol response`
-- `ABCG2 Q141K febuxostat response gout` (no hits → confirms gap)
+- `ABCG2 Q141K febuxostat response gout` (no qualifying hit in the comp-019 search)
 - `ABCG2 Q141K Mendelian randomization serum urate`
 - `ABCG2 dysfunction extra-renal urate excretion Ichida` (Matsuo / Ichida group, the Japanese functional-classification line)
 - `intestinal urate secretion ABCG2 polymorphism human` → Miyazaki 2025 (the load-bearing direct-measurement paper)
@@ -34,7 +34,7 @@ Every load-bearing number propagated into the wiki (effect size, allele frequenc
 
 For non-English sources (any China- or Japan-language clinical-trial protocols or post-marketing reports), translate with two independent models per CLAUDE.md §"Translation protocol." This run did not surface any non-English-source load-bearing claims that drove a verdict, so the two-model cross-check did not trigger.
 
-## What this query will NOT find (operational scoping)
+## What this dated search did not identify (operational scoping)
 
-- An RCT of oral uricase pre-stratified by Q141K genotype. **Does not exist.** ALLN-346 Phase 2a Studies 201 and 202 did not report ABCG2 stratification; PRX-115 Phase 1 (n=64) did not pre-specify genotype.
-- A direct human flux measurement of ΔSUA per gut-lumen uricase activity unit. **Does not exist.** The direct-flux datapoint (Miyazaki 2025) measured intestinal urate secretion in pg/µL/5min stratified by ABCG2 functional class, but did not pair it with luminal uricase to compute ΔSUA. This is exactly the gap Phase B's flux model fills computationally.
+- No oral-uricase RCT pre-stratified by Q141K genotype was identified in the comp-019 searched corpus as of 2026-05-08. ALLN-346 Phase 2a Studies 201 and 202 did not report ABCG2 stratification in the sources reviewed; PRX-115 Phase 1 did not pre-specify genotype in the source reviewed.
+- No direct human flux measurement of ΔSUA per gut-lumen uricase activity unit was identified in the comp-019 searched corpus as of 2026-05-08. Miyazaki 2025 measured intestinal urate secretion stratified by ABCG2 functional class but did not pair it with luminal uricase to compute ΔSUA. Phase B attempted to bridge that gap computationally; comp-044 invalidated the resulting quantitative interpretation.

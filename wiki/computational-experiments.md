@@ -490,10 +490,10 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Question:** Can the gut-lumen uricase sink produce meaningful SUA reduction in non-Q141K males, or does it rely on Q141K-positive disease-state vulnerability?
 
-**Current verdict:** **SUPERSEDED by comp-044.** The literature-scan result—no Q141K-stratified uricase trial identified—remains useful. The model's ΔSUA, genotype ranking, capacity ratios, flat dose-response, and engineering recommendation are retired because the capacity calculation omitted physiological substrate occupancy and finite residence time.
+**Current verdict:** **SUPERSEDED by comp-044.** Phase A found no Q141K-stratified uricase clinical outcome in the sources searched for comp-019 as of 2026-05-08; this is not a universal absence claim. The model's ΔSUA, genotype ranking, capacity ratios, flat dose-response, and engineering recommendation are retired because the capacity calculation omitted physiological substrate occupancy and finite residence time.
 
 **Key findings:**
-- No Q141K-stratified uricase clinical outcome was identified.
+- No Q141K-stratified uricase clinical outcome was identified in the comp-019 searched corpus as of 2026-05-08.
 - Physiological substrate, oxygen, access, survival, topology, and transit are now explicit gates.
 - Q141K remains a prospective stratification variable; adequate dose and responder ordering are open.
 

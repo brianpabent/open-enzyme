@@ -1,4 +1,4 @@
-> **⚠️ INVALIDATED / SUPERSEDED (comp-044 2026-07-13; comp-review 2026-07-14).** comp-019 ΔSUA, capacity ratios, genotype ranking, flat-dose, and yield recommendations are RETIRED — the model omitted luminal urate occupancy and finite residence/exposure time. Do NOT use any comp-019 output for dose, yield-deprioritization, genotype-ranking, or trial-arm design. Superseded by comp-044 (gut-lumen-uricase-physiologic-regime-computational.md); sink question reopened under H08 + validation §1.33/§1.36. Frozen invalidated provenance.
+> **INVALIDATED / SUPERSEDED by comp-044.** These historical quantitative outputs omit physiological luminal-urate occupancy and finite residence/exposure time. Do not use them for dose, efficacy, genotype ranking, flat-dose, yield, or trial-design decisions. Phase A found no Q141K-stratified uricase clinical outcome in the sources searched for comp-019 as of 2026-05-08.
 
 # comp-019 — Flux Model Results Summary
 
@@ -59,10 +59,6 @@ Ratio < 1.0 means capacity-limited (delta-intestinal bounded by enzyme dose).
 - 1st-order steady-state approximation for delta-SUA
 
 
-## Headline interpretation
+## Retired historical interpretation — invalid; do not use
 
-- **WT/WT non-Q141K males DO show meaningful delta-SUA** in the flux model. The mechanism is not Q141K-dependent.
-- **Q141K-positive carriers show LESS absolute reduction** because the gut compartment they're losing access to is already partially compromised — the substrate flux that uricase can amplify is smaller.
-- **Severe ABCG2 dysfunction (~25% functional) shows the smallest absolute response** despite having the highest baseline SUA — the gut compartment is so impaired that even a perfect uricase has little substrate to work with. This is the platform's structural ceiling for the worst-impaired patients.
-- The flux model contradicts the binary 'mechanism only works in Q141K' framing. The mechanism works ACROSS genotypes; the magnitude scales with the residual ABCG2 capacity at any given genotype.
-- **Most platform-relevant conclusion:** the gut-lumen uricase target demographic should NOT be narrowed to Q141K-positive patients. The opposite — non-Q141K patients have the LARGEST per-patient response. Q141K-positive patients are still candidates but for a different reason (high unmet ULT need, allopurinol resistance).
+The original model mapped nominal enzyme capacity to ΔSUA, responder ordering, and dose/yield conclusions without physiological luminal-urate occupancy or finite residence/exposure time. No Phase B interpretation survives. The numerical tables above remain only to reproduce the invalid artifact.

@@ -55,13 +55,12 @@ status: superseded-by-comp-044
 
 > **Superseded 2026-07-13 by [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md).** comp-019's code did not use the luminal-urate concentration or UOX Km stored in its inputs and assumed 24 hours of saturated activity. Its quantitative ΔSUA, genotype-effect magnitudes, capacity ratios, flat-dose conclusion, and yield-priority recommendations are retired. The frozen artifact remains for provenance only; do not use it for dose or efficacy decisions.
 
-> This wiki stub remains so cross-references resolve and the page stays discoverable.
-> Computational analyses are write-once artifacts; the daemon does not need to re-read
-> them on every sweep, so the long content lives next to the experiment that produced it
-> at `etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/`.
+## What survives
 
-This analysis asked whether an ABCG2-dependent gut-lumen uricase mechanism might work only in patients who carry Q141K. If so, the eligible population and trial stratification for that mechanism would change. The conclusion applies to the affected oral-uricase tracks, not to Open Enzyme as a whole.
+Phase A found no Q141K-stratified uricase clinical outcome in the sources searched for comp-019 as of 2026-05-08. This is a bounded search result, not proof of universal absence. Q141K therefore remains a prospective stratification variable rather than a computationally established response predictor.
 
-**Where the analysis lives:**
-- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/`](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/)
-- Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)
+## Current decision
+
+No Phase B interpretation survives. The gut-lumen uricase track remains open, but dose, genotype response, topology, oxygen, peroxide, access, survival, and transit require direct measurement. [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md), [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md), and [validation experiment 1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) define the current gate.
+
+The frozen inputs, code, invalidated outputs, and review receipts are in the [comp-019 experiment directory](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/).

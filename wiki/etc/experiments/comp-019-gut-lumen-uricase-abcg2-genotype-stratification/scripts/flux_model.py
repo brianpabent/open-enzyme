@@ -3,7 +3,11 @@
 comp-019 — Gut-Lumen Uricase x ABCG2 Genotype Flux Model
 ========================================================
 
-Phase B in-silico flux model. Predicts steady-state delta-SUA in:
+INVALIDATED / SUPERSEDED by comp-044. This script reproduces the retired
+historical Phase B payload only when explicitly requested; it does not produce
+decision-usable evidence.
+
+The historical in-silico flux model predicted steady-state delta-SUA in:
   - WT/WT (100% functional ABCG2)
   - Q141K heterozygous (75% functional)
   - Q141K homozygous (50% functional)
@@ -36,10 +40,11 @@ Sensitivity: Monte Carlo over parameter uncertainty bounds in
 flux_model_parameters.json. Outputs central estimate + 90% CI.
 
 Usage:
-  python3 flux_model.py
-Outputs land in ../outputs/.
+  python3 flux_model.py --reproduce-invalidated-history
+Outputs land in ../outputs/ and remain explicitly marked as invalidated.
 """
 
+import argparse
 import json
 import math
 import random
@@ -53,7 +58,42 @@ from collections import defaultdict
 HERE = Path(__file__).resolve().parent
 INPUTS_DIR = HERE.parent / "inputs"
 OUTPUTS_DIR = HERE.parent / "outputs"
-OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
+
+
+INVALIDATION_METADATA = {
+    "status": "invalidated",
+    "superseded_by": "comp-044",
+    "invalidation_reason": (
+        "The model omitted physiological luminal-urate occupancy and finite "
+        "residence/exposure time. Its quantitative verdict is not decision-usable."
+    ),
+    "surviving_result_scope": [
+        "Phase A found no Q141K-stratified uricase clinical outcome in the sources searched for comp-019 as of 2026-05-08."
+    ],
+    "do_not_use_for": [
+        "serum-urate effect prediction",
+        "dose selection",
+        "ABCG2 genotype-response ranking",
+        "flat-dose or substrate-limited classification",
+        "yield-priority decisions",
+        "trial-arm design",
+    ],
+}
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Reproduce the invalidated historical comp-019 output."
+    )
+    parser.add_argument(
+        "--reproduce-invalidated-history",
+        action="store_true",
+        help=(
+            "Explicitly regenerate the retired result while preserving its "
+            "machine-readable invalidation metadata and warning banner."
+        ),
+    )
+    return parser.parse_args()
 
 
 # ----------------------------------------------------------------------
@@ -231,6 +271,15 @@ def monte_carlo_delta_sua(
 # Main scenario sweep
 # ----------------------------------------------------------------------
 def main():
+    args = parse_args()
+    if not args.reproduce_invalidated_history:
+        raise SystemExit(
+            "comp-019 is invalidated and superseded by comp-044. "
+            "Use --reproduce-invalidated-history only to reproduce the retired "
+            "artifact; do not use its output for scientific decisions."
+        )
+
+    OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
     random.seed(42)
     params = load_params()
 
@@ -254,6 +303,7 @@ def main():
     results = {
         "_metadata": {
             "model_version": "comp-019 v1.0",
+            **INVALIDATION_METADATA,
             "model_assumptions": [
                 "ABCG2 operates in linear regime in vivo (lumen urate ~0.6 uM << Km 8240 uM)",
                 "Uricase clamps lumen urate to ~0; sink amplification factor 0.40 (40% of secreted urate would have been reabsorbed without uricase)",
@@ -301,6 +351,11 @@ def main():
     write_summary_md(results, genotypes, uricase_doses, params)
 
     # Print compact console table
+    print(
+        "WARNING: INVALIDATED / SUPERSEDED by comp-044. "
+        "The following values are retired historical output and are not decision-usable."
+    )
+    print()
     print("=" * 80)
     print("comp-019 — Gut-Lumen Uricase x ABCG2 Genotype Flux Model")
     print("=" * 80)
@@ -319,6 +374,13 @@ def main():
 
 def write_summary_md(results, genotypes, uricase_doses, params):
     lines = []
+    lines.append(
+        "> **INVALIDATED / SUPERSEDED by comp-044.** These historical quantitative "
+        "outputs omit physiological luminal-urate occupancy and finite residence/exposure "
+        "time. Do not use them for dose, efficacy, genotype ranking, flat-dose, yield, or "
+        "trial-design decisions. Phase A found no Q141K-stratified uricase clinical "
+        "outcome in the sources searched for comp-019 as of 2026-05-08.\n"
+    )
     lines.append("# comp-019 — Flux Model Results Summary\n")
     lines.append("Predicted delta-SUA (mg/dL) at steady state by ABCG2 genotype and uricase dose.\n")
     lines.append("Negative values = serum urate reduction.\n")
@@ -359,12 +421,13 @@ def write_summary_md(results, genotypes, uricase_doses, params):
     for a in results["_metadata"]["model_assumptions"]:
         lines.append(f"- {a}")
     lines.append("")
-    lines.append("\n## Headline interpretation\n")
-    lines.append("- **WT/WT non-Q141K males DO show meaningful delta-SUA** in the flux model. The mechanism is not Q141K-dependent.")
-    lines.append("- **Q141K-positive carriers show LESS absolute reduction** because the gut compartment they're losing access to is already partially compromised — the substrate flux that uricase can amplify is smaller.")
-    lines.append("- **Severe ABCG2 dysfunction (~25% functional) shows the smallest absolute response** despite having the highest baseline SUA — the gut compartment is so impaired that even a perfect uricase has little substrate to work with. This is the platform's structural ceiling for the worst-impaired patients.")
-    lines.append("- The flux model contradicts the binary 'mechanism only works in Q141K' framing. The mechanism works ACROSS genotypes; the magnitude scales with the residual ABCG2 capacity at any given genotype.")
-    lines.append("- **Most platform-relevant conclusion:** the gut-lumen uricase target demographic should NOT be narrowed to Q141K-positive patients. The opposite — non-Q141K patients have the LARGEST per-patient response. Q141K-positive patients are still candidates but for a different reason (high unmet ULT need, allopurinol resistance).")
+    lines.append("\n## Retired historical interpretation — invalid; do not use\n")
+    lines.append(
+        "The original model mapped nominal enzyme capacity to ΔSUA, responder ordering, "
+        "and dose/yield conclusions without physiological luminal-urate occupancy or finite "
+        "residence/exposure time. No Phase B interpretation survives. The numerical tables "
+        "above remain only to reproduce the invalid artifact."
+    )
     lines.append("")
     with open(OUTPUTS_DIR / "flux_model_summary.md", "w") as f:
         f.write("\n".join(lines))
