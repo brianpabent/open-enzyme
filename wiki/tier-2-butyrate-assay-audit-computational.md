@@ -31,7 +31,7 @@ No ready-to-adopt Tier 1 or Tier 2 butyrate assay has been established for curre
 | Candidate | Matrix | Current classification | Evidence boundary |
 |---|---|---|---|
 | HPLC-UV SCFA + lactate assay | Bacterial culture supernatant | **Tier 3 bench method; transfer candidate** | De Baere et al. validated direct UV at 210 nm after acidification and diethyl-ether extraction, with matrix-matched calibration from 0.5–50 mM. The method still requires qualification in the exact OE strain and medium. **In Vitro** ([PMID 23542733](https://pubmed.ncbi.nlm.nih.gov/23542733/)) |
-| Electrochemical fingerprints + ANN | Human stool | **Tier 2 candidate; not adopted** | Gu et al. compared the method with GC-MS in an independent 30-sample fecal test set; butyrate MAE/RMSE were 0.029/0.034 mM. External replication and transfer to an available hardware/model implementation remain open. **In Vitro** ([PMID 42041444](https://pubmed.ncbi.nlm.nih.gov/42041444/), [DOI](https://doi.org/10.3390/bios16040223)) |
+| Electrochemical fingerprints + ANN | Human stool | **Tier 2 candidate; not adopted** | Gu et al. compared the complete VBS-100/G3-electrode, pretreatment, feature-extraction, and ANN stack with GC-MS in an independent 30-sample fecal test set; butyrate MAE/RMSE were 0.029/0.034 mM. External replication, exact-hardware or cross-hardware transfer, electrode-lot robustness, and a reusable implementation remain open. **In Vitro method study** ([PMID 42041444](https://pmc.ncbi.nlm.nih.gov/articles/PMC13114974/), [DOI](https://doi.org/10.3390/bios16040223)) |
 | Butyric-acid / SCFA ELISA kits | Vendor-claimed serum, plasma, or tissue matrices | **RED-provisional** | COMP-038 did not surface primary method-comparison evidence sufficient to advance a kit. |
 | Breath H2/CH4 | Breath | **Not butyrate-specific** | Useful as a broad fermentation proxy, not a quantitative butyrate measurement. |
 | Generic free-fatty-acid colorimetry | Vendor-dependent | **Wrong assay class for this use** | The representative protocol reviewed by COMP-038 excluded short-chain fatty acids including butyrate. |
@@ -69,7 +69,7 @@ Run [validation §1.31](./validation-experiments.md#131-butyrate-culture-superna
 
 ### Stool monitoring
 
-Treat the Gu electrochemical/ANN workflow as a separate Tier 2 candidate. Before OE adoption, reproduce its performance independently with the intended hardware, analysis implementation, stool workflow, and paired GC-MS reference samples.
+Treat the Gu electrochemical/ANN workflow as a separate Tier 2 candidate. [Validation §1.45](./validation-experiments.md#145-fecal-butyrate-electrochemicalann-reproducibility-and-transfer-gate) first seeks the author package and exact hardware path, then separates analytical replication from independent cohort transfer. A successful result applies only to the locked implementation, fecal matrix, working range, and analytical objective tested.
 
 ### COMP artifact integrity
 

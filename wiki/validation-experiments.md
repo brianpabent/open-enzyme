@@ -69,6 +69,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 | [§1.31](#131-butyrate-culture-supernatant-hplc-uv-method-transfer-against-gc-ms) | Butyrate culture-supernatant HPLC-UV method transfer against GC-MS | In Vitro | TBD | TBD | Proposed — partner design required | [tier-2-butyrate-assay-audit-computational](./tier-2-butyrate-assay-audit-computational.md), [quantification-ladder](./quantification-ladder.md) |
 | [§1.32](#132-gsdmd-pore-self-delivery--selectivity-probe-transporter-orphan-tracer--pept1-blockade) | GSDMD-pore self-delivery selectivity probe | In Vitro | ~$2,000–5,000 | 4–6 | Proposed (wet-lab gated) | [gsdmd-pore-delivery-paradox](./gsdmd-pore-delivery-paradox.md), [kpv-gsdmd-pore-influx-computational](./kpv-gsdmd-pore-influx-computational.md) |
 | [§1.44](#144-thymulin--msu--nlrp3-in-aged-macrophages-thy-1--age-stratified-priming-to-flare-test) | Thymulin (+Zn²⁺) × MSU × NLRP3 in **aged** macrophages (THY-1) — tests whether NF-κB priming block translates to reduced crystal-driven IL-1β; age-stratified | In Vitro | Tier 1: $5–10K; full T1+T2+T3 cascade $85–130K | Tier 1: 6–8; full cascade ~11 months | Proposed | [thymulin](./thymulin.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [peptide-gout-addendum](./peptide-gout-addendum.md) |
+| [§1.45](#145-fecal-butyrate-electrochemicalann-reproducibility-and-transfer-gate) | Fecal butyrate electrochemical/ANN reproducibility and transfer | In Vitro method | TBD | TBD | Proposed — author package and partner design required | [tier-2-butyrate-assay-audit-computational](./tier-2-butyrate-assay-audit-computational.md), [quantification-ladder](./quantification-ladder.md), [open-questions](./open-questions.md) |
 | [§1.34](#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux) | Isotope-resolved precursor → UOX → PDB sequential flux — parallel first-wave architecture gate | In Vitro | TBD | TBD | Proposed | [purine-degrading-bacteria](./purine-degrading-bacteria.md), [staged-purine-sink-mass-balance-computational](./staged-purine-sink-mass-balance-computational.md) |
 | [§1.36](#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay) | Luminal urate antioxidant-loss × UOX-H₂O₂ safety — post-topology safety gate | In Vitro | TBD | TBD | Proposed | [uricase](./uricase.md), [gut-lumen-sink](./gut-lumen-sink.md) |
 | [§1.35](#135-enterocyte-nlrp3pdzk1abcg2-tissue-paradox-assay) | Enterocyte NLRP3–PDZK1–ABCG2 tissue-paradox assay | In Vitro | TBD | TBD | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [abcg2-modulators](./abcg2-modulators.md), [gut-lumen-sink](./gut-lumen-sink.md) |
@@ -1343,7 +1344,7 @@ If Stage 1 reproduces the cordycepin direction and reveals a decision-relevant r
 - **YELLOW:** standards pass but the biological matrix causes resolvable interference or unstable recovery. Revise extraction or chromatography and repeat qualification.
 - **RED:** the method cannot meet the prespecified matrix or reference-agreement criteria. Use the GC-MS reference path for that configuration.
 
-**Separate stool candidate:** Gu et al. reported an electrochemical/ANN workflow compared with GC-MS in an independent 30-sample fecal test set, with butyrate MAE/RMSE of 0.029/0.034 mM (**In Vitro**, [PMID 42041444](https://pubmed.ncbi.nlm.nih.gov/42041444/), [DOI](https://doi.org/10.3390/bios16040223)). That is a separate Tier 2 candidate for stool. It neither failed nor belongs in this culture-supernatant experiment; independent implementation and external validation remain open.
+**Separate stool candidate:** Gu et al. reported an electrochemical/ANN workflow compared with GC-MS in an independent 30-sample fecal test set, with butyrate MAE/RMSE of 0.029/0.034 mM (**In Vitro**, [PMID 42041444](https://pubmed.ncbi.nlm.nih.gov/42041444/), [DOI](https://doi.org/10.3390/bios16040223)). It neither failed nor belongs in this culture-supernatant experiment. Its hardware–chemistry–model transfer is defined separately in [§1.45](#145-fecal-butyrate-electrochemicalann-reproducibility-and-transfer-gate).
 
 **Dependencies:** An analytical partner with HPLC-UV and GC-MS access; the exact production strain and medium; a pilot sufficient to set the result-bearing design.
 
@@ -1563,6 +1564,46 @@ If Stage 1 reproduces the cordycepin direction and reveals a decision-relevant r
 - The murine air-pouch model is acute, not chronic-tophaceous.
 
 **Cross-references:** [thymulin.md](./thymulin.md) (dossier + falsification gate); [nlrp3-exploit-map.md §CP1a](./nlrp3-exploit-map.md); [nlrp3-inflammasome.md](./nlrp3-inflammasome.md); §1.23 (androgen × MSU × NLRP3, shared assay family); §1.17 (MSU-macrophage synergy readouts).
+
+---
+
+### 1.45 Fecal Butyrate Electrochemical/ANN Reproducibility and Transfer Gate
+
+**Status:** Proposed — author package and analytical-partner design required | **Cost:** TBD | **Weeks:** TBD | **Phase:** 1
+
+**Affected wiki:** [Tier 2 butyrate assay audit](./tier-2-butyrate-assay-audit-computational.md), [quantification ladder](./quantification-ladder.md), [open questions](./open-questions.md), and [genotype-informed workflow](./genotype-informed-supplement-workflow.md).
+
+**What it tests:** Whether the complete Gu et al. hardware–chemistry–model stack can be reproduced locally and retain prespecified agreement with GC-MS for fecal butyrate. A pass would qualify one implementation as a Tier 2 research method for one defined stool workflow and concentration range. It would not establish intestinal-wall exposure, ABCG2 engagement, Q141K rescue, gout efficacy, a clinical diagnostic, or a method for another metabolite.
+
+**Primary-source anchor:** Gu et al. used a VBS-100 portable workstation and single-use G3 planar gold electrodes, two stool-preparation streams, alkaline pretreatment for the butyrate route, voltammetric feature extraction, and a TensorFlow multilayer perceptron. The propionate/butyrate model used 72 training cases, including 18 authentic fecal samples, and an independent 30-sample fecal test set; reported butyrate MAE/RMSE were 0.029/0.034 mM against GC-MS (**In Vitro method study**; [PMID 42041444](https://pmc.ncbi.nlm.nih.gov/articles/PMC13114974/)). The article reports model architecture but does not link a reusable code, weights, or public data package; de-identified study data require an author request.
+
+### Stage 0 — reproducibility package and feasibility
+
+- Request the feature-extraction code, trained weights or complete training code, de-identified calibration/reference data, split identifiers, GC-MS reference method, and electrode/workstation specifications from the authors, subject to their approval process.
+- Confirm availability, lot specifications, and pricing for the VBS-100 workstation and G3 electrodes, or define an alternative implementation whose transfer must be validated rather than assumed.
+- Obtain analytical-partner and human-specimen-governance review before fixing sample counts, budget, schedule, or acceptance limits. No human sample is collected outside an appropriate consent and ethics framework.
+- If the package or exact hardware is unavailable, decide explicitly whether the paper and supplement support a ground-up recreation. Inability to transfer the implementation is an infrastructure result, not evidence that electrochemical SCFA measurement is biologically impossible.
+
+### Stage 1 — analytical replication
+
+- Reproduce the published standard-mixture fingerprints before introducing stool.
+- Use qualified archived or prospectively collected specimens, matrix-matched standards, spike/recovery, defined interferents, and paired GC-MS measurements on the same aliquots.
+- Test electrode lots, days, and operators. Preserve the published preprocessing branches and pretreatment conditions unless a deviation is registered and requalified.
+- Lock feature extraction, normalization, model weights, working range, and reference-agreement rules before evaluating a blinded hold-out set. Set sample count and acceptance limits from the pilot, analytical objective, and GC-MS precision—not from the synthesis queue.
+
+### Stage 2 — independent transfer
+
+Only after Stage 1 passes, evaluate the locked implementation in a separately sourced cohort spanning the intended preanalytical, dietary, and clinical variability. Keep the model locked for the primary transfer analysis; any recalibration creates a new version requiring its own hold-out test.
+
+### Decision rules
+
+- **GREEN:** standards, matrix controls, lots/operators, blinded GC-MS agreement, and independent transfer all meet the prespecified limits. Adopt only the tested implementation as a Tier 2 fecal-butyrate research method.
+- **YELLOW:** within-lab performance passes but hardware, electrode-lot, operator, or cohort transfer fails. Retain a local or recalibration-dependent method and define the failing boundary.
+- **RED:** the stack cannot meet its prespecified analytical objective in the intended workflow. Use a matrix-qualified Tier 3 reference method; do not generalize the failure to other electrochemical designs.
+
+**Cost and schedule:** obtain quotes only after the author package, hardware path, GC-MS partner, specimen source, replication design, and ethics requirements are known.
+
+**Cross-references:** [§1.31 culture-supernatant HPLC-UV transfer](#131-butyrate-culture-supernatant-hplc-uv-method-transfer-against-gc-ms), [Tier 2 butyrate assay audit](./tier-2-butyrate-assay-audit-computational.md), [quantification ladder](./quantification-ladder.md), and [matrix-specific open question](./open-questions.md#matrix-specific-assay-gap-for-microbiome-derived-metabolites).
 
 ---
 

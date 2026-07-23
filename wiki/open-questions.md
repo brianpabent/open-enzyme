@@ -355,11 +355,11 @@ Microbiome-metabolite measurement is matrix- and analyte-specific. A method vali
 For butyrate, two research candidates have primary-source support:
 
 - **Culture supernatant:** De Baere et al. validated underivatized HPLC-UV against bacterial culture supernatant over 0.5–50 mM, with a 0.5–1.0 mM LOQ ([PMID 23542733](https://doi.org/10.1016/j.jpba.2013.02.032)).
-- **Stool:** Gu et al. reported an electrochemical/ANN platform compared with GC-MS in an independent fecal cohort; the method still requires local hardware qualification and independent external replication before Open Enzyme use ([PMID 42041444](https://doi.org/10.3390/bios16040223)).
+- **Stool:** Gu et al. reported a coupled VBS-100/G3-electrode, chemical-pretreatment, feature-extraction, and ANN platform compared with GC-MS in an independent fecal cohort. The reported butyrate result is promising, but the full implementation still requires local reproduction and independent transfer before Open Enzyme use ([PMID 42041444](https://pmc.ncbi.nlm.nih.gov/articles/PMC13114974/)).
 
 These methods can support controlled research QC in their validated matrices. They do not verify a therapeutic exposure or a Q141K rescue. A butyrate experiment must separately measure exposure, ABCG2 surface trafficking, and functional urate flux. Secondary bile acids, microbial indoles, TMAO, and other metabolite classes each require their own validated method.
 
-**Next gate:** run matrix-matched spike/recovery and a multi-operator comparison against the appropriate Tier 3 reference, using prespecified calibration, precision, and acceptance rules. See [`validation-experiments.md` §1.31](./validation-experiments.md), [`quantification-ladder.md`](./quantification-ladder.md), and [comp-038](./tier-2-butyrate-assay-audit-computational.md).
+**Next gates:** [§1.31](./validation-experiments.md#131-butyrate-culture-supernatant-hplc-uv-method-transfer-against-gc-ms) qualifies HPLC-UV for one exact culture-supernatant workflow. [§1.45](./validation-experiments.md#145-fecal-butyrate-electrochemicalann-reproducibility-and-transfer-gate) treats the stool platform as a complete hardware–chemistry–model transfer: obtain the author package, reproduce analytical performance, and then test a locked implementation in an independent cohort. Both require prespecified calibration, precision, and reference-agreement rules.
 
 ### Genotype stratification — Q141K and the gut-lumen-sink responder hypothesis
 

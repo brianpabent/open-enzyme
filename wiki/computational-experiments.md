@@ -133,7 +133,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 **Key findings:**
 - PubMed snapshot: 27 queries / 74 records; source snapshot committed at `outputs/pubmed-snapshot.json`.
 - HPLC-UV is a Tier 3 bench method under the current ladder. De Baere 2013 (PMID 23542733) supports bacterial-culture-supernatant use; the remaining gate is transfer into one exact OE strain–medium matrix with a GC-MS comparison ([validation §1.31](./validation-experiments.md#131-butyrate-culture-supernatant-hplc-uv-method-transfer-against-gc-ms)).
-- Gu 2026 (PMID 42041444) supports an electrochemical/ANN stool-specific Tier 2 candidate compared with GC-MS in a 30-sample fecal test set. Independent implementation and external validation remain open.
+- Gu 2026 (PMID 42041444) supports an electrochemical/ANN stool-specific Tier 2 candidate compared with GC-MS in a 30-sample fecal test set. Independent reproduction of the complete hardware–chemistry–model stack and external transfer remain open ([validation §1.45](./validation-experiments.md#145-fecal-butyrate-electrochemicalann-reproducibility-and-transfer-gate)).
 - Breath H2/CH4 is useful as a broad fermentation/adherence proxy, not butyrate-specific quantification.
 - Generic free-fatty-acid colorimetric kits are a false-friend class; representative protocol excludes acetic, propionic, and butyric acid.
 - Completed with Codex/GPT-5.5 in-session synthesis from a committed source packet; no OpenRouter model calls were made.
