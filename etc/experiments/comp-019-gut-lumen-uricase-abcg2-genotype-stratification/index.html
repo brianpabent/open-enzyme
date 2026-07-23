@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#comp-019-gut-lumen-uricase-abcg2-genotype-stratification-flux-model" class="md-skip">
+        <a href="#comp-019-gut-lumen-uricase-abcg2-genotype-stratification" class="md-skip">
           Skip to content
         </a>
       
@@ -5341,128 +5341,32 @@
 
 
 <blockquote>
-<p><strong>⚠️ INVALIDATED / SUPERSEDED (comp-044 2026-07-13; comp-review 2026-07-14).</strong> comp-019 ΔSUA, capacity ratios, genotype ranking, flat-dose, and yield recommendations are RETIRED — the model omitted luminal urate occupancy and finite residence/exposure time. Do NOT use any comp-019 output for dose, yield-deprioritization, genotype-ranking, or trial-arm design. Superseded by comp-044 (gut-lumen-uricase-physiologic-regime-computational.md); sink question reopened under H08 + validation §1.33/§1.36. Frozen invalidated provenance.</p>
+<p><strong>INVALIDATED TOMBSTONE — NOT RUNNABLE.</strong> Phase B omitted physiological substrate occupancy and finite exposure, so none of its numerical outputs or decisions may be used. The retired executable artifact is preserved by Git, not duplicated in the live corpus.</p>
 </blockquote>
-<h1 id="comp-019-gut-lumen-uricase-abcg2-genotype-stratification-flux-model">comp-019 — Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model<a class="headerlink" href="#comp-019-gut-lumen-uricase-abcg2-genotype-stratification-flux-model" title="Permanent link">&para;</a></h1>
-<p><strong>Date:</strong> 2026-05-08
-<strong>Status:</strong> <strong>Invalidated / superseded by comp-044</strong>
-<strong>Current verdict:</strong> Phase A found no Q141K-stratified uricase clinical outcome in the sources searched for comp-019 as of 2026-05-08. The Phase B ΔSUA estimates, genotype ordering, capacity ratios, flat-dose conclusion, yield recommendation, and trial-design implications are invalid and must not be used.</p>
-<h2 id="question">Question<a class="headerlink" href="#question" title="Permanent link">&para;</a></h2>
-<p>Two-phase in-silico experiment answering the platform's most important open question for its primary demographic:</p>
-<p><strong>"Can the gut-lumen uricase sink produce meaningful serum urate reduction in non-Q141K males, or does the mechanism rely on Q141K-positive disease-state ABCG2 vulnerability to show benefit?"</strong></p>
+<h1 id="comp-019-gut-lumen-uricase-abcg2-genotype-stratification">comp-019 — Gut-Lumen Uricase × ABCG2 Genotype Stratification<a class="headerlink" href="#comp-019-gut-lumen-uricase-abcg2-genotype-stratification" title="Permanent link">&para;</a></h1>
+<p><strong>Status:</strong> Invalidated and superseded for quantitative decision use.</p>
+<p>The only surviving observation is bounded to the literature search performed for comp-019: the sources searched as of 2026-05-08 contained no Q141K-stratified uricase clinical outcome. This does not establish universal absence.</p>
+<p>No comp-019 ΔSUA estimate, capacity ratio, genotype ordering, dose, flat-dose classification, yield conclusion, trial design, efficacy claim, safety claim, or topology/chassis conclusion survives.</p>
+<h2 id="hash-bound-retirement-record">Hash-bound retirement record<a class="headerlink" href="#hash-bound-retirement-record" title="Permanent link">&para;</a></h2>
+<p><a href="invalidation.json"><code>invalidation.json</code></a> records:</p>
 <ul>
-<li><strong>Phase A — Literature stratification mining.</strong> Post-hoc stratification of existing oral-uricase + systemic-uricase + ABCG2-axis ULT response data by ABCG2 Q141K (rs2231142) genotype.</li>
-<li><strong>Phase B — First-principles flux model.</strong> Quantitative model of intestinal urate flux predicting ΔSUA in WT-male / Q141K-het male / Q141K-hom male / female under three uricase-dose scenarios.</li>
+<li>the exact Git commit containing the last live executable artifact;</li>
+<li>the SHA-256 and byte count of every retired design and output file;</li>
+<li>a canonical digest over that file set;</li>
+<li>the invalidated and surviving scopes; and</li>
+<li>the current evidence owners.</li>
 </ul>
-<h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
-<p><strong>Phase A:</strong> PubMed MCP <code>search_articles</code> + <code>get_article_metadata</code> + <code>get_full_text_article</code> against ABCG2-Q141K-ULT response literature, ALLN-346 trial corpus, PRX-115 Phase 1 data, and intestinal urate handling primary measurements. WebSearch + WebFetch against ClinicalTrials.gov, EULAR abstracts, Allena/Protalix press releases, and the Miyazaki 2025 J Transl Med paper (PMC11877951) — the load-bearing direct human in-vivo measurement of jejunal urate secretion stratified by ABCG2 functional class.</p>
-<p><strong>Phase B:</strong> Python flux model (<code>scripts/flux_model.py</code>, stdlib only — <code>json</code>, <code>math</code>, <code>random</code>, <code>pathlib</code>). Inputs from <code>inputs/flux_model_parameters.json</code> (literature-anchored). Monte Carlo sensitivity (n=5000) over uncertainty bounds (production rate, gut excretion fraction, renal compensation). Genotype scaling per Matsuo 2014 / Miyazaki 2025 functional-classification framework (100% / 75% / 50% / 25%).</p>
-<p><strong>Aggregation:</strong> Outputs land in <code>outputs/flux_model_results.json</code> and <code>outputs/flux_model_summary.md</code>.</p>
-<h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>comp-019-gut-lumen-uricase-abcg2-genotype-stratification/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── README.md                            # this file
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── inputs/
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── query_strategy.md                # Phase A query strategy + verification gate
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├── phase_a_literature.json          # Phase A stratification mining records
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   └── flux_model_parameters.json       # Phase B literature-anchored parameters
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── outputs/
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   ├── flux_model_results.json          # full machine-readable results (central + MC)
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   ├── flux_model_summary.md            # human-readable tables + interpretation
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   └── phase_a_table.md                 # Phase A stratification findings table
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>└── scripts/
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    ├── flux_model.py                    # retired Python flux model + Monte Carlo
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    └── verify_retirement.py             # invalidation and archival-fidelity checks
+<p>Historical files can be inspected with Git when needed. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>show<span class="w"> </span>dc7f4d2047dfb3bd378ee7a73618a11b67217257:wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/scripts/flux_model.py
 </code></pre></div>
-<h2 id="reproduction">Reproduction<a class="headerlink" href="#reproduction" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>python3<span class="w"> </span>scripts/flux_model.py<span class="w"> </span>--reproduce-invalidated-history
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># results land in outputs/</span>
-</code></pre></div>
-<p>The explicit flag is required because this command reproduces an invalidated historical model. Regenerated outputs retain the warning banner and machine-readable invalidation metadata. No external dependencies are required (Python 3 stdlib only).</p>
-<p>The reference retirement-contract check was recorded with <strong>CPython 3.14.5</strong>. Run <code>python3 scripts/verify_retirement.py</code> to verify refusal without the explicit flag, unchanged historical numerical payload, required warnings and JSON metadata, and byte-identical repeated flagged runs. The command reruns Phase B only; Phase A is a frozen literature-search record dated 2026-05-08.</p>
-<p>Reproduction creates no new evidence and authorizes no propagation. Only the scoped Phase A observation may remain active: no Q141K-stratified uricase clinical outcome was identified in the sources searched for comp-019 as of 2026-05-08. <a href="../../../gut-lumen-uricase-physiologic-regime-computational/">comp-044</a> owns the current quantitative interpretation.</p>
-<h2 id="historical-invalid-output-do-not-use-for-decisions">Historical invalid output — do not use for decisions<a class="headerlink" href="#historical-invalid-output-do-not-use-for-decisions" title="Permanent link">&para;</a></h2>
-<p><strong>Predicted ΔSUA at steady state (Monte Carlo medians, mid-dose 25 mg/day uricase):</strong></p>
-<table>
-<thead>
-<tr>
-<th>Genotype × sex</th>
-<th>ΔSUA</th>
-<th>90% CI</th>
-<th>Verdict</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>WT/WT male</td>
-<td><strong>−0.83 mg/dL</strong></td>
-<td>(−1.13, −0.57)</td>
-<td>Largest absolute response</td>
-</tr>
-<tr>
-<td>Q141K het male</td>
-<td>−0.67 mg/dL</td>
-<td>(−0.91, −0.45)</td>
-<td>Substantial response</td>
-</tr>
-<tr>
-<td>Q141K hom male</td>
-<td>−0.50 mg/dL</td>
-<td>(−0.68, −0.34)</td>
-<td>Moderate response</td>
-</tr>
-<tr>
-<td>WT/WT female</td>
-<td>−0.74 mg/dL</td>
-<td>(−1.00, −0.50)</td>
-<td>Substantial response</td>
-</tr>
-<tr>
-<td>Q141K het female</td>
-<td>−0.59 mg/dL</td>
-<td>(−0.80, −0.40)</td>
-<td>Substantial response</td>
-</tr>
-<tr>
-<td>Q141K hom female</td>
-<td>−0.42 mg/dL</td>
-<td>(−0.57, −0.29)</td>
-<td>Moderate response</td>
-</tr>
-<tr>
-<td>Severe dysfunction (Q126*+Q141K compound)</td>
-<td>−0.28 mg/dL</td>
-<td>(−0.37, −0.19)</td>
-<td>Smallest response — structural ceiling</td>
-</tr>
-</tbody>
-</table>
-<p><strong>The mechanism works ACROSS genotypes; the magnitude scales with the residual ABCG2 capacity. Q141K is associated with LESS response, not more.</strong></p>
-<h2 id="wiki-link">Wiki link<a class="headerlink" href="#wiki-link" title="Permanent link">&para;</a></h2>
-<p>Interpretive page: <a href="../../../uricase-abcg2-genotype-stratification-computational/"><code>wiki/uricase-abcg2-genotype-stratification-computational.md</code></a></p>
-<h2 id="tracking">Tracking<a class="headerlink" href="#tracking" title="Permanent link">&para;</a></h2>
+<p>There is no reproduction command in the live tree because invalidated numerical history is not an active experiment.</p>
+<h2 id="current-evidence-owners">Current evidence owners<a class="headerlink" href="#current-evidence-owners" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../../../computational-experiments/"><code>wiki/computational-experiments.md</code></a> — comp-019 entry</li>
-<li><a href="../../../cross-validation/"><code>wiki/cross-validation.md</code></a> Claim 1 — gut-lumen sink mechanism rating updated post-comp-019</li>
-<li><a href="../../../gut-lumen-sink/"><code>wiki/gut-lumen-sink.md</code></a> — genotype-stratification cross-reference</li>
-<li><a href="../../../abcg2-modulators/"><code>wiki/abcg2-modulators.md</code></a> — Q141K rescue context cross-reference</li>
-<li><a href="../../../synthesis.md"><code>wiki/synthesis.md</code></a> — Sweep 2026-05-08 Open Question 1 actioned</li>
-<li><a href="../../../open-questions/"><code>wiki/open-questions.md</code></a> — genotype-stratification entry update</li>
+<li><a href="../../../uricase-abcg2-genotype-stratification-computational/">Superseded comp-019 interpretation</a></li>
+<li><a href="../../../gut-lumen-uricase-physiologic-regime-computational/">COMP-044 physiological-regime audit</a></li>
+<li><a href="../../../validation-experiments/#133-physiological-uox-topology--oxygen--peroxide-factorial">Validation §1.33</a></li>
+<li><a href="../../../validation-experiments/#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay">Validation §1.36</a></li>
 </ul>
-<h2 id="predecessor-experiments">Predecessor experiments<a class="headerlink" href="#predecessor-experiments" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../comp-016-t-abcg2-suppression-evidence-mining/">comp-016</a> — established WEAK / UNCONFIRMED verdict on direct androgen-driven intestinal ABCG2 suppression</li>
-<li><a href="../comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/">comp-017</a> — established NULL-or-NEAR-NULL healthy-baseline sex dimorphism on intestinal ABCG2; shifted responder logic toward Q141K disease-state framing</li>
-</ul>
-<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>No prospective Q141K-stratified oral-uricase outcome was identified in the sources searched for comp-019 as of 2026-05-08.</strong> This is a bounded search result, not proof of universal absence. No Phase B trial-design recommendation survives.</li>
-<li><strong>Miyazaki 2025 substrate population is Crohn's-disease-dominated</strong> (30 of 34 subjects). Inflammatory bowel disease may itself affect intestinal ABCG2 expression / function. The genotype-stratified secretion ratios this paper provides are the best available data, but their generalization to typical gout patients (no IBD) is an open question.</li>
-<li><strong>The flux model uses a first-order steady-state approximation and omits the physiological operating regime.</strong> No ΔSUA magnitude or genotype-ordering conclusion survives.</li>
-<li><strong>Renal compensation fraction (central estimate 0.30, sensitivity 0.0–0.5) is a mechanistic-extrapolation parameter.</strong> It was not directly measured in the searched oral-uricase trials and cannot rescue the invalid model.</li>
-<li><strong>Pre-commit verification gate (CLAUDE.md Rule 4):</strong> Miyazaki 2025 numbers are full-text grep-verified from PMC11877951. Wallace 2018, Vora 2021, Stamp 2019, Matsuo 2014, Takada 2014, Nakayama 2011 numbers are abstract-tier-verified (not line-anchored to full-text). ALLN-346 Phase 2a Study 201/202 numbers are EULAR-abstract / press-release tier (not peer-reviewed full-text). PRX-115 Phase 1 is conference-abstract tier.</li>
-<li><strong>Multilingual search scope was incomplete.</strong> The comp-019 search included ChiCTR, J-STAGE, and KISS checks but did not establish universal absence across regional databases.</li>
-</ol>
 
 
 

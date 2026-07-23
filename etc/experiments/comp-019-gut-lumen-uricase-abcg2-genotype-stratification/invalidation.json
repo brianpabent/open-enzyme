@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "comp": "comp-019",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "dc7f4d2047dfb3bd378ee7a73618a11b67217257",
+  "retired_file_set_sha256": "ce744f989acb744a78f365e3a61f0154dc300545b7b4843ae05851bb5722529e",
+  "retired_post_run_manifest_sha256": "116ae39ac8778e456024f85a4487f4064e859480c10bdf4f0cebe25eb5629f84",
+  "last_push_review_manifest_sha256": "a62c6d224d82e89b68f383607693f6d4074e2918356e8d73f3bb9cf7f398bb1e",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 8650,
+      "sha256": "154b8826f43fc0929c9fac40072d8ceca345ef5b096a5651eb00906a26d67cc1"
+    },
+    {
+      "path": "inputs/flux_model_parameters.json",
+      "bytes": 7585,
+      "sha256": "f5c4ac8cc324280ded4f87dec5a9b47b47ba565331f4b7ba021c76b78067bb63"
+    },
+    {
+      "path": "inputs/phase_a_literature.json",
+      "bytes": 19965,
+      "sha256": "027b36b73ab811e87a774a42f5034645a32a3cb9f7778ab588790a73927d875c"
+    },
+    {
+      "path": "inputs/query_strategy.md",
+      "bytes": 3424,
+      "sha256": "a4a02041d479eae707512f24b8c72fa93b62f6a96f4fb57146b3d5fabdfb0310"
+    },
+    {
+      "path": "outputs/flux_model_results.json",
+      "bytes": 14828,
+      "sha256": "d681d0ff723ad47b612fb5825cdafda82b347eb68dfb31cf06b7a7d3830c12a9"
+    },
+    {
+      "path": "outputs/flux_model_summary.md",
+      "bytes": 3756,
+      "sha256": "6738ac618de9557bf562a0fde110234c0d681e63cc93e6fa52d2bad42998cae9"
+    },
+    {
+      "path": "outputs/phase_a_table.md",
+      "bytes": 7263,
+      "sha256": "ef87d4977be18dc3cc8bba7f4f582347cb2d1f8d081dbd31b7b7252ee70b6166"
+    },
+    {
+      "path": "scripts/flux_model.py",
+      "bytes": 20296,
+      "sha256": "63a6af2590f6901bed288fe44ca410af0606247daa8836547593fd2a3c564b58"
+    },
+    {
+      "path": "scripts/verify_retirement.py",
+      "bytes": 5977,
+      "sha256": "2871f25de60b112c87896fab743ea2564af4866de11065b3aeaf81acca5bb51b"
+    }
+  ],
+  "invalidated_scope": [
+    "Phase B serum-urate estimates",
+    "capacity ratios",
+    "genotype-response ordering",
+    "flat-dose classification",
+    "dose and yield conclusions",
+    "trial-design implications",
+    "efficacy and safety inferences",
+    "topology or chassis selection"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_search_observation",
+    "searched_as_of": "2026-05-08",
+    "statement": "The sources searched for comp-019 contained no Q141K-stratified uricase clinical outcome.",
+    "universal_absence_claim": false
+  },
+  "superseded_by": [
+    "comp-044",
+    "validation-1.33",
+    "validation-1.36"
+  ],
+  "current_evidence_home": "wiki/uricase-abcg2-genotype-stratification-computational.md"
+}
