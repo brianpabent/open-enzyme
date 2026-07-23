@@ -30,5 +30,6 @@ There is no reproduction command in the live tree because invalidated numerical 
 
 - [Superseded comp-019 interpretation](../../../uricase-abcg2-genotype-stratification-computational.md)
 - [COMP-044 physiological-regime audit](../../../gut-lumen-uricase-physiologic-regime-computational.md)
+- [COMP-045 topology × oxygen × peroxide design](../../../uricase-topology-oxygen-peroxide-design-computational.md)
 - [Validation §1.33](../../../validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial)
 - [Validation §1.36](../../../validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay)

@@ -42,7 +42,7 @@ flowchart TD
     REDIRECT["Stop or redesign only the failed configuration"]
 
     H08 --> C44
-    C44 --> G133
+    C44 -->|"audit motivates empirical closure"| G133
     V --> B
     CH --> B
     B --> G133
@@ -54,7 +54,7 @@ flowchart TD
 
 ### What the edges mean
 
-- **comp-044 → §1.33:** COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. The audit supplies no replacement ΔSUA, dose, genotype order, physiological regime, efficacy model, topology/chassis selection, production-sufficiency target, or safety conclusion. **Mechanistic Extrapolation.**
+- **comp-044 → §1.33:** COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. That result is a **Deterministic Computational Audit**, not mechanistic biological validation. Routing the unresolved substrate, oxygen, localization, and peroxide constraints into §1.33 is **Mechanistic Extrapolation**. The audit supplies no replacement ΔSUA, dose, genotype order, physiological regime, efficacy model, topology/chassis selection, production-sufficiency target, or safety conclusion.
 - **Construct build → §1.33:** protein mass, transcript, promoter strength, or activity at a high-substrate benchmark is insufficient. The decision variable is reproducible active UOX at the intended reaction site under the matched physiological test.
 - **§1.33 → §1.36:** only an exact configuration with product formation at the human-baseline prior, without a prespecified extracellular-H2O2 or viability penalty relative to matched controls, advances to the dedicated epithelial-safety test. A topology conclusion is transferable only within a controlled host comparison.
 - **§1.36 → later work:** lower H2O2 alone does not pass if barrier injury persists after urate removal. A pass supports designing the next study; it does not establish a human dose or serum-urate effect.

@@ -1,108 +1,123 @@
 ACTION_REQUIRED: no
-REVIEWED_SNAPSHOT: 643ad2cf43268ba93a34c7b884a73ef43e1dc7249c7709d5c702c4af6627cd9a
+REVIEWED_SNAPSHOT: e94a028963cd9fce98fbe066e6cae26bad7501530ecc9582d34de89f86b11fdc
 
 # Independent comp review — comp-019
 
 ## Reviewed snapshot
 
-Reviewer `/root/comp019_tombstone_post_review_v4`; authoring-time Gate 2 manifest canonical SHA-256 `643ad2cf43268ba93a34c7b884a73ef43e1dc7249c7709d5c702c4af6627cd9a`. The manifest file itself has SHA-256 `749ab7ef244d9a4f3eae222b6b78f0d19f2e0c6e5244bf5d7e76a7910d39c7d1`. All ten entries matched their recorded byte counts and SHA-256 hashes.
+Reviewer `/root/comp019_post_review_final`; authoring-time Gate 2 manifest canonical SHA-256 `e94a028963cd9fce98fbe066e6cae26bad7501530ecc9582d34de89f86b11fdc`. The manifest file’s byte-level SHA-256 is `22b19e901b0410781b4851a2f8e9ac446e701c7f5093d58307bb086dd56a1497`. All seven manifest entries matched their recorded byte counts and SHA-256 hashes and were inspected completely.
 
-The nine-file retired ledger was independently recovered from commit `dc7f4d2047dfb3bd378ee7a73618a11b67217257`; every blob matched `invalidation.json`, and the canonical ledger digest recomputed to `ce744f989acb744a78f365e3a61f0154dc300545b7b4843ae05851bb5722529e`.
+The two queue deletions were inspected separately because they are intentionally outside the manifest. Both files are absent from the working tree, and their prior required actions were compared directly with the current bound surfaces.
 
 ## Bottom-line verdict
 
-Clean. The proposed retirement leaves a policy-compliant, non-runnable tombstone; preserves only the dated Phase A searched-corpus observation; prohibits every Phase B numerical or decision use; closes the current COMP-019 and COMP-044 maintenance actions; and adds a deterministic dashboard-fidelity guard.
+Clean. This exact metadata-only tombstone and downstream-consistency batch accurately routes the current UOX evidence owners, separates COMP-044’s deterministic audit result from the mechanistic inference that routes unresolved constraints to validation §1.33, directly source-justifies `yanthine`, and preserves the complete prohibition on COMP-019 quantitative or decision reuse.
 
-Both `synthesis/queue/comp-review-019.md` and `synthesis/queue/comp-review-044.md` may be deleted as queue closure in the same change. Their current required actions are resolved.
+The current actions in both `synthesis/queue/comp-review-019.md` and `synthesis/queue/comp-review-044.md` are closed. Both queue files are genuinely deletable in this batch.
 
 ## Implementation and constraint closure
 
-The live non-review COMP-019 tree contains exactly `README.md` and `invalidation.json`. It contains no code, input, output, executable, symlink, bytecode, reproduction path, or generated numerical artifact. The README’s `git show` example retrieves a historical blob for provenance; it neither runs the model nor recreates outputs.
+The live non-review COMP-019 directory contains only `README.md` and `invalidation.json`. It contains no code, inputs, outputs, executable, symlink, bytecode, reproduction command, or result-bearing artifact. The README’s `git show` example retrieves historical source for audit; it does not execute or restore the retired model.
 
-The tombstone matches the repository convention that invalidated COMPs are not rerun and retain a hash-bound invalidation record while Git preserves history. `runnable: false`, the retired commit, nine exact blob hashes, retired manifest digests, invalidated scope, survivor scope, and current evidence owners are internally consistent.
+The retirement ledger was independently checked against commit `dc7f4d2047dfb3bd378ee7a73618a11b67217257`. All nine retired blobs matched their recorded byte counts and hashes, and the canonical retired-file-set digest recomputed to `ce744f989acb744a78f365e3a61f0154dc300545b7b4843ae05851bb5722529e`.
 
-The retired code was inspected statically only. Its historical Phase B failure remains correctly characterized: physiological substrate occupancy and finite exposure were absent from the decision model. No current surface rehabilitates its ΔSUA, capacity, genotype, dose, yield, trial, efficacy, safety, or topology conclusions.
+Static inspection of the retired model confirmed the invalidation basis: the capacity calculation used nominal specific activity for 1,440 minutes per day and compared that saturated capacity with genotype-scaled daily intestinal flux. The stored physiological luminal-urate concentration and UOX Km did not enter `evaluate_scenario`, and no finite physiological exposure window constrained the result. The live tombstone therefore correctly invalidates every Phase B ΔSUA, capacity, genotype-order, dose, yield, trial, efficacy, safety, and topology/chassis conclusion.
+
+Current evidence ownership is coherent:
+
+- the COMP-019 interpretation owns the invalidation boundary and bounded dated search observation;
+- COMP-044 owns the deterministic physiological-regime consistency audit;
+- COMP-045 owns the topology × oxygen × peroxide experimental design without selecting a topology;
+- validation §1.33 owns configuration-level physiological comparison;
+- validation §1.36 owns the subsequent antioxidant-loss and peroxide safety gate.
 
 ## Summary-fidelity audit
 
-The surviving statement is consistently limited to: the sources searched for COMP-019 as of 2026-05-08 contained no Q141K-stratified uricase clinical outcome. Each current statement rejects universal absence.
+The only surviving COMP-019 observation remains bounded to the sources searched as of 2026-05-08: no Q141K-stratified uricase clinical outcome was identified in that searched corpus. Every inspected surface explicitly rejects treating this as universal absence.
 
-`README.md`, `invalidation.json`, `wiki/computational-experiments.md`, and `wiki/uricase-abcg2-genotype-stratification-computational.md` consistently prohibit all Phase B decision use. The broader active corpus likewise describes COMP-044 only as an internal-consistency counterexample, not a replacement dose, ΔSUA, genotype-order, physiological-regime, efficacy, topology/chassis, production, or safety model.
+The README, invalidation record, computational index, current COMP-019 interpretation, COMP-044 interpretation, H08, graph, open-questions page, and validation plan consistently reject any replacement ΔSUA, dose, genotype ordering, physiological regime, efficacy model, topology/chassis selection, production target, or safety conclusion.
 
-The paper update replaces a dead live-tree script path with the exact retirement commit. Its approximate luminal-urate and Km values are used only to document the omitted-input failure, not as surviving COMP-019 output or decision evidence.
+The graph now makes the required provenance distinction:
 
-The validation maintenance closes the queued discrepancies:
+- “legacy flat-dose classification not robust under the tested diagnostics” is labeled a **Deterministic Computational Audit**;
+- routing unresolved substrate, oxygen, localization, and peroxide constraints to §1.33 is labeled **Mechanistic Extrapolation**;
+- the edge itself says the audit “motivates empirical closure,” rather than implying that COMP-044 supplied biological validation.
 
-- §1.10 now carries `$2,460–4,460`, `3–4` weeks, a four-lane core, and a fifth lane explicitly excluded from the core and permitted only as separately costed optional work.
-- §1.20 is a 3×3 full factorial, with a separately declared tenth midpoint condition if the prespecified midpoint is not among the nine cells.
-- §1.22 consistently carries `$5,000–8,000` and `8–10` weeks.
-- §1.25 consistently budgets a two-arm experiment and explicitly requires parallel RIB40 and NSlD-ΔP10 hosts.
-- Previously omitted §§1.26–1.32 and all other numbered sections now appear in the dashboard.
-- Every numbered section has Cost and Weeks metadata agreeing exactly with its dashboard row.
-- §1.34’s `yanthine` nomenclature is source-justified.
+The validation dashboard and protocol are consistent. The deterministic checker passed; 52 dashboard IDs match 52 numbered protocol sections. The previously relevant planning discrepancies are closed:
+
+- §1.10 agrees on `$2,460–4,460`, `3–4` weeks, a four-lane core, and an optional separately costed fifth lane;
+- §1.20 agrees on a 3×3 factorial plus a separately declared midpoint when needed;
+- §1.22 agrees on `$5,000–8,000` and `8–10` weeks;
+- §1.25 agrees on `$4,445–6,745 (two-arm)`, `6–8` weeks, and mandatory RIB40 plus NSlD-ΔP10 arms;
+- all numbered sections, including §§1.26–1.32, are represented in the dashboard;
+- §§1.33 and 1.34 agree with their dashboard `TBD` cost and duration metadata.
 
 ## Reader-facing ownership audit
 
-The focused COMP-019 interpretation owns the historical model failure, bounded survivor, current experimental gates, and provenance without cross-track ranking, personalized dosing, or editorial-history exposition. The tombstone is concise and does not duplicate the retired artifact.
+The tombstone is concise and archival rather than explanatory duplication of the retired model. It directs readers to current evidence owners without ranking sequences, hosts, topologies, or product formats.
 
-The validation changes remain experiment-planning metadata and protocol clarification. They do not promote computational priors into wet-lab results or clinical claims.
+The graph remains a routing surface rather than an evidence home. COMP-045 keeps topology conclusions configuration-specific and leaves all tested topologies open. Validation §1.33 owns the empirical decision rule and explicitly prohibits serum-urate, dose, production, or cross-host winner claims.
+
+No proposed change introduces personalized treatment instructions, a cross-track narrative foil, or duplicated scientific exposition.
 
 ## Conjecture preservation audit
 
-The retirement kills only COMP-019’s Phase B numerical and decision scope. It does not kill the broader gut-lumen UOX hypothesis, ABCG2 as a prospective stratification axis, or configuration-specific substrate/oxygen/access/survival/peroxide questions.
+The batch kills only COMP-019’s invalid Phase B numerical and decision scope. It does not kill the gut-lumen UOX hypothesis, ABCG2/Q141K as a prospective stratification variable, or the possibility that a specific configuration may pass physiological substrate, oxygen, localization, persistence, peroxide, and safety gates.
 
-Q141K remains an unvalidated prospective stratifier. No genotype-response direction, magnitude, fixed dose, or responder ordering survives.
+H08 remains open. COMP-045 eliminates no topology. Q141K remains a prospective variable with unresolved direction and magnitude. These surviving ideas are correctly routed to empirical discrimination rather than presented as COMP-019 results.
 
 ## Generated-output and proposed-update inventory
 
 | Path | Manifest kind | Inspected completely? | Finding |
 |---|---|---:|---|
-| `wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md` | design | Yes | Non-runnable tombstone; scope and Git provenance correct. |
-| `wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/invalidation.json` | design | Yes | Retirement ledger, scopes, digests, and evidence owners verified. |
-| `.githooks/pre-push` | proposed update | Yes | Dashboard guard runs from repository root and blocks failure. |
-| `.github/workflows/corpus-integrity.yml` | proposed update | Yes | Server-side guard integrated; YAML valid. |
-| `.github/workflows/wiki-propagate.yml` | proposed update | Yes | Post-propagation guard integrated before state advancement; YAML valid. |
-| `papers/cross-vendor-heterogeneity-guard/draft.md` | proposed update | Yes | Dead script path replaced by exact Git provenance. |
-| `scripts/check-validation-dashboard.py` | proposed update | Yes | Deterministic stdlib-only completeness and metadata checker. |
-| `wiki/computational-experiments.md` | proposed update | Yes | “Hash-bound tombstone” accurately describes the live artifact. |
-| `wiki/uricase-abcg2-genotype-stratification-computational.md` | proposed update | Yes | Git recovery and forbidden-use boundary are explicit. |
-| `wiki/validation-experiments.md` | proposed update | Yes | All enumerated queue discrepancies closed without new result claims. |
+| `wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md` | design | Yes | Clean non-runnable tombstone; COMP-045 now included among current evidence owners. |
+| `wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/invalidation.json` | design | Yes | Hash-bound retirement record; COMP-045 included symmetrically in `superseded_by`; invalidated and surviving scopes unchanged. |
+| `wiki/computational-experiments.md` | proposed update | Yes | COMP-019 remains non-decision-usable; COMP-044 numbers appear only as a bounded internal-consistency counterexample. |
+| `wiki/etc/GRAPH.md` | proposed update | Yes | Correctly separates deterministic audit provenance from mechanistic routing to §1.33. |
+| `wiki/open-questions.md` | proposed update | Yes | `yanthine` terminology and evidence tier are now source-justified and appropriately caveated. |
+| `wiki/uricase-topology-oxygen-peroxide-design-computational.md` | proposed update | Yes | COMP-045 owns experimental design; no topology, efficacy, dose, or safety winner asserted. |
+| `wiki/validation-experiments.md` | proposed update | Yes | Dashboard/protocol metadata consistent; §§1.33, 1.34, and 1.36 preserve the required UOX boundaries. |
+| `synthesis/queue/comp-review-019.md` | out-of-manifest queue deletion | Yes | Every listed action is closed; deletion verified in the working tree. |
+| `synthesis/queue/comp-review-044.md` | out-of-manifest queue deletion | Yes | Every listed action is closed; deletion verified in the working tree. |
 
-There are no generated outputs in this retirement manifest.
+There are no generated outputs in this metadata-only post-run manifest.
 
 ## Load-bearing verification table
 
 | Claim or parameter | Artifact location | Implementation use | Provenance status | Verdict |
 |---|---|---|---|---|
-| Manifest canonical digest | `post-run.manifest.json` | Exact Gate 2 binding | Independently recomputed | Pass |
-| Ten bound files | Manifest and current tree | Exact snapshot | Every byte count/hash matched | Pass |
-| Retired nine-file tree | `invalidation.json`; Git commit `dc7f4d…` | Historical provenance only | Every blob hash and byte count matched | Pass |
-| Retired-file-set digest | `invalidation.json` | Detect ledger alteration | Canonical JSON digest independently recomputed | Pass |
-| Dated Phase A survivor | README, invalidation record, interpretive pages | Only surviving COMP-019 observation | Search-bounded to 2026-05-08 | Pass |
-| Phase B prohibited scope | README and invalidation record | Blocks all numerical/decision reuse | Explicitly enumerated | Pass |
-| §1.10 cost/core lanes | Validation dashboard and §1.10 | Planning metadata | Internal cost breakdown and core/optional split agree | Pass |
-| §1.20 matrix | Validation §1.20 | Experimental design | Nine factorial conditions plus declared midpoint rule | Pass |
-| §1.22 cost/weeks | Dashboard and §1.22 | Planning metadata | Exact equality | Pass |
-| §1.25 hosts | Dashboard and §1.25 protocol | Experimental design | Both RIB40 and NSlD-ΔP10 mandatory | Pass |
-| `yanthine` | Validation §1.34 | Analyte identity | Li et al., DOI `10.1093/lifemeta/loaf031`, identifies UA reduction to 2,8-dioxopurine (yanthine), experimentally confirmed by LC-MS/co-elution and distinguished from the xanthine route | Pass |
-| Dashboard coverage | Validator and validation page | Maintenance guard | 52 dashboard IDs equal 52 numbered sections | Pass |
-| Cost/week equality | Validator | Maintenance guard | Exact string comparison for every shared ID | Pass |
-
-Read-only negative-path checks confirmed rejection of missing and orphaned entries, duplicate dashboard rows or sections, malformed row columns, intervening prose before status metadata, absent Cost or Weeks, and either dashboard-side or section-side cost/week drift. A blank Markdown separator between heading and status is intentionally accepted.
+| Gate 2 snapshot | `post-run.manifest.json` | Exact review binding | Canonical digest recomputed; seven entries hash-matched | Pass |
+| Retired nine-file ledger | `invalidation.json`; retired Git commit | Historical auditability only | Every blob byte count/hash matched | Pass |
+| Retired-file-set digest | `invalidation.json` | Detect ledger alteration | Independently recomputed exactly | Pass |
+| COMP-019 failure boundary | Retired `flux_model.py`; live tombstone | Prohibit Phase B reuse | Static code inspection confirmed no physiological substrate occupancy or finite active window in the decision calculation | Pass |
+| COMP-045 ownership | README, invalidation record, computational index, COMP-045 page | Route topology/oxygen/peroxide design | Present on all relevant current surfaces; no topology selected | Pass |
+| COMP-044 provenance split | `wiki/etc/GRAPH.md` | Distinguish audit result from experimental-routing inference | Explicit deterministic-audit and Mechanistic-Extrapolation labels | Pass |
+| Validation dashboard coverage | `wiki/validation-experiments.md` | Planning consistency | 52 dashboard rows equal 52 numbered sections; checker passed | Pass |
+| §1.33 decision boundary | Validation §1.33 | Empirical configuration gate | Requires product at human-baseline prior with matched peroxide/viability controls; forbids dose, serum, production, and cross-host conclusions | Pass |
+| `yanthine` identity | Open questions; validation §1.34 | PDB intermediate nomenclature | [Li et al. 2025](https://pmc.ncbi.nlm.nih.gov/articles/PMC12507026/) identifies UA reduction to 2,8-dioxopurine (`yanthine`), confirms the product by LC-MS and co-elution with a commercial standard, and treats xanthine as a distinct route | Pass |
+| `yanthine` biomarker scope | Open questions | Candidate analytical readout | Primary study reports a small serum case-control result; current text calls it a Human Observational biomarker candidate, not validated individual function | Pass |
+| No COMP-019 quantitative restoration | Current corpus search and all bound pages | Prevent stale decision reuse | Quantitative values occur only as explicitly bounded COMP-044 audit comparisons or retired-history warnings | Pass |
+| Queue closure | Both deleted queue files versus current surfaces | Remove resolved actions | COMP-045 routing, graph provenance, validation consistency, nomenclature, invalidation policy, and forbidden-inference boundaries all closed | Pass |
 
 ## Affected wiki pages
 
-- `wiki/computational-experiments.md` — already consistent — policy and tombstone now agree.
-- `wiki/uricase-abcg2-genotype-stratification-computational.md` — already consistent — Git provenance replaces live-artifact wording.
-- `wiki/validation-experiments.md` — already consistent — all current COMP-044 planning-maintenance findings are closed.
-- `wiki/open-questions.md`, `wiki/gout-action-guide.md`, `wiki/gout-genetic-variants.md`, `wiki/gut-lumen-sink.md`, and H08 — already consistent — no COMP-019 Phase B decision use found.
-- `papers/cross-vendor-heterogeneity-guard/draft.md` — already consistent — exact retirement commit replaces the deleted script path.
-- `synthesis/queue/comp-review-019.md` — current actions closed; eligible for deletion.
-- `synthesis/queue/comp-review-044.md` — current actions closed; eligible for deletion.
+- `wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md` — already consistent — complete current-owner routing and non-runnable boundary.
+- `wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/invalidation.json` — already consistent — machine-readable owner and invalidation scopes agree with README.
+- `wiki/computational-experiments.md` — already consistent — tombstone, bounded survivor, and replacement gates are accurate.
+- `wiki/etc/GRAPH.md` — already consistent — deterministic audit and mechanistic routing are separated.
+- `wiki/open-questions.md` — already consistent — `yanthine` is directly justified and appropriately bounded.
+- `wiki/uricase-topology-oxygen-peroxide-design-computational.md` — already consistent — no topology elimination or transferable winner.
+- `wiki/validation-experiments.md` — already consistent — dashboard and protocols agree; §§1.33, 1.34, and 1.36 own the correct empirical gates.
+- `wiki/uricase-abcg2-genotype-stratification-computational.md` — already consistent — no Phase B result survives.
+- `wiki/gut-lumen-uricase-physiologic-regime-computational.md` — already consistent — COMP-044 remains a bounded audit, not a replacement model.
+- `wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md` — already consistent — hypothesis remains open and non-numeric.
+- `index.md` — already consistent — COMP-044 is summarized with all forbidden inferences explicit.
+- `synthesis/queue/comp-review-019.md` — actions closed; delete.
+- `synthesis/queue/comp-review-044.md` — actions closed; delete.
 
 ## New connections or implications
 
-None beyond the already documented boundary: tombstoning invalidated executable history removes accidental reuse risk while preserving auditable Git provenance. The dashboard guard generalizes the queue correction into a deterministic maintenance invariant.
+None found. This batch closes archival and routing consistency only; it introduces no new scientific result or mechanistic claim.
 
 ## Required actions
 
@@ -110,4 +125,4 @@ None.
 
 ## Review limits
 
-No COMP experiment or result-bearing code was executed. Review used static inspection, Git object/hash verification, the non-result-bearing dashboard checker, in-memory negative-path mutations, shell/YAML syntax checks, and independent inspection of the cited Life Metabolism primary article. No binary artifact required representation, and no bound file was missing or unreadable.
+No COMP-019 or COMP-044 experiment/result-bearing logic was executed. The retired COMP-019 implementation was inspected statically, and its Git blobs and ledger were hash-verified. The dated 2026-05-08 Phase A literature search was not rerun, so its survivor remains valid only as the explicitly bounded searched-corpus observation. The Li et al. primary article was inspected directly for `yanthine`; other COMP-045 primary claims were not independently re-reviewed because this batch changes ownership metadata rather than COMP-045’s scientific result.
