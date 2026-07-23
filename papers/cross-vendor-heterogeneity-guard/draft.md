@@ -330,7 +330,7 @@ The operational response is a separate comp-review daemon rather than reinsertin
 
 **Causal humility.** The catch occurred during a run with a newer frontier model, but model identity, prompt, task scope, tool use, corpus state, and chance all changed together. This single case cannot support the claim that the new model is intrinsically more capable than the prior Opus-, Gemini-, DeepSeek-, or GPT-family models. The defensible conclusion is operational: the later run performed a different epistemic operation—whole-corpus first-principles implementation audit—than the earlier propagation and consistency-review passes.
 
-**Primary internal record:** `wiki/uricase-abcg2-genotype-stratification-computational.md` (legacy-model stub), `wiki/gut-lumen-uricase-physiologic-regime-computational.md` (COMP-044), `wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/scripts/flux_model.py` (legacy implementation), and `operations/notable-moments.md` (2026-07-13 public incident record).
+**Primary internal record:** `wiki/uricase-abcg2-genotype-stratification-computational.md` (legacy-model stub), `wiki/gut-lumen-uricase-physiologic-regime-computational.md` (COMP-044), the retired COMP-019 implementation at commit `dc7f4d2047dfb3bd378ee7a73618a11b67217257`, and `operations/notable-moments.md` (2026-07-13 public incident record).
 
 ---
 

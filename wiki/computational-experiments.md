@@ -499,7 +499,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Replacement:** [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) · [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md) · [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial)
 
-**Detail:** [superseded interpretation](./uricase-abcg2-genotype-stratification-computational.md) · [frozen artifact](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/)
+**Detail:** [superseded interpretation](./uricase-abcg2-genotype-stratification-computational.md) · [hash-bound tombstone](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/)
 
 ---
 

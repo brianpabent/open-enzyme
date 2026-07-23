@@ -10,6 +10,7 @@ name: Corpus integrity
 #   • check-privacy.py — references to private sibling repos / local paths
 #                        (one-way privacy gradient: private → public only)
 #   • check-corpus-hygiene.py — reader contract and current-state discipline
+#   • check-validation-dashboard.py — experiment registry completeness/fidelity
 #   • check-lit-scan-receipt.py — compact, reproducible scan-method receipts
 #   • evidence-radar.py check — current source cursors and reviewed delta state
 
@@ -42,6 +43,9 @@ jobs:
 
       - name: Check mission, current-state, and token hygiene
         run: python3 scripts/check-corpus-hygiene.py --base "${{ github.event.pull_request.base.sha || github.event.before || 'HEAD^' }}" README.md index.md CLAUDE.md wiki
+
+      - name: Check validation dashboard
+        run: python3 scripts/check-validation-dashboard.py
 
       - name: Check literature-scan method receipts
         run: python3 scripts/check-lit-scan-receipt.py

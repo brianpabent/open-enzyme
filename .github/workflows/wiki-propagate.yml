@@ -99,6 +99,7 @@ jobs:
           python3 scripts/check-corpus-hygiene.py \
             --base "${{ steps.select.outputs.coverage }}" \
             README.md index.md CLAUDE.md wiki
+          python3 scripts/check-validation-dashboard.py
           python3 scripts/check-links.py --check README.md index.md CLAUDE.md wiki
           python3 scripts/check-privacy.py --check README.md index.md CLAUDE.md wiki
 
