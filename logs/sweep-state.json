@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "adda2c395ef79cc9e8f6593071db18456c602bc8",
-    "result_commit": "adda2c395ef79cc9e8f6593071db18456c602bc8",
-    "timestamp": "2026-07-23T13:37:52Z",
+    "coverage_commit": "396136ce67e33ec2c7f0358d6bd9a2b33441a383",
+    "result_commit": "396136ce67e33ec2c7f0358d6bd9a2b33441a383",
+    "timestamp": "2026-07-23T14:12:01Z",
     "changed_paths": [
-      "wiki/computational-experiments.md",
-      "wiki/etc/autonomous-screening-methodology.md",
-      "wiki/etc/bio-ai-tools.md",
-      "wiki/uricase-abcg2-genotype-stratification-computational.md"
+      "wiki/etc/GRAPH.md",
+      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
+      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/invalidation.json",
+      "wiki/open-questions.md"
     ],
     "affected_paths": [],
     "blocked_paths": [],
-    "cost_usd": 0.258862
+    "cost_usd": 0.306958
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
