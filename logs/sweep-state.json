@@ -1,15 +1,39 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "54d28cc6838078de373c5fda70a20a217cbb92cd",
-    "result_commit": "54d28cc6838078de373c5fda70a20a217cbb92cd",
-    "timestamp": "2026-07-22T15:07:29Z",
+    "coverage_commit": "0a52b9704d5ba03d96428ea708e2d5731966221d",
+    "result_commit": "0a52b9704d5ba03d96428ea708e2d5731966221d",
+    "timestamp": "2026-07-23T12:44:03Z",
     "changed_paths": [
-      "wiki/thymulin.md"
+      "wiki/abcg2-modulators.md",
+      "wiki/aspergillus-oryzae.md",
+      "wiki/blood-barrier-exploits.md",
+      "wiki/blood-barrier.md",
+      "wiki/carnosine.md",
+      "wiki/chassis-pending-interventions.md",
+      "wiki/codon-optimization-expression-cassette.md",
+      "wiki/computational-experiments.md",
+      "wiki/cordycepin-cassette-burden-computational.md",
+      "wiki/crispr-uricase.md",
+      "wiki/delivery-route-matrix.md",
+      "wiki/digestive-enzymes.md",
+      "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
+      "wiki/engineered-koji-protocol.md",
+      "wiki/engineered-yeast-uricase-proposal.md",
+      "wiki/enzyme-deficit-deep-dive.md",
+      "wiki/etc/GRAPH.md",
+      "wiki/etc/ai-bio-tools-playbook.md",
+      "wiki/etc/autonomous-screening-methodology.md",
+      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
+      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/inputs/phase_a_literature.json",
+      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/inputs/query_strategy.md",
+      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/flux_model_results.json",
+      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/flux_model_summary.md",
+      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/phase_a_table.md"
     ],
     "affected_paths": [],
     "blocked_paths": [],
-    "cost_usd": 0.084375
+    "cost_usd": 0.280706
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
