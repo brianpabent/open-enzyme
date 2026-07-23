@@ -128,19 +128,19 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Question:** Is there a Tier 2 butyrate quantification assay (colorimetric, enzymatic, breath-proxy, electrochemical, or other low-cost intermediate method) that can be validated against Tier 3 GC-MS for stool, serum, breath, or culture-supernatant matrices?
 
-**Verdict:** **YELLOW.** No ready-to-adopt simple/home colorimetric or breath-based butyrate assay was identified. Two plausible Tier 2 candidates identified: HPLC-UV SCFA + lactate assay for culture-supernatant / engineered-strain work, and electrochemical fecal SCFA profiling with ANN deconvolution as an emerging stool-specific direction. Both require full-text/protocol review and paired GC-MS validation before OE adoption.
+**Verdict:** **YELLOW.** No ready-to-adopt Tier 1 or Tier 2 butyrate assay was established for current OE use. The scan surfaced a Tier 3 HPLC-UV method for culture supernatants and a separate electrochemical/ANN Tier 2 candidate for stool. Neither has been validated for an OE matrix or workflow.
 
 **Key findings:**
 - PubMed snapshot: 27 queries / 74 records; source snapshot committed at `outputs/pubmed-snapshot.json`.
-- HPLC-UV for bacterial culture supernatants is the best near-term Tier 2-lab candidate (De Baere 2013, PMID 23542733) — **full-text-verified against the primary source 2026-07-14** (0.5–50 mM, r 0.9951–0.9993, underivatized UV 210 nm, bacterial-culture-supernatant matrix). The remaining gate is OE spike/recovery + paired GC-MS (validation §1.31).
-- Electrochemical fecal SCFA profiling is the most promising stool-specific future Tier 2 direction (PMID 42041444), but remains research-platform grade.
+- HPLC-UV is a Tier 3 bench method under the current ladder. De Baere 2013 (PMID 23542733) supports bacterial-culture-supernatant use; the remaining gate is transfer into one exact OE strain–medium matrix with a GC-MS comparison ([validation §1.31](./validation-experiments.md#131-butyrate-culture-supernatant-hplc-uv-method-transfer-against-gc-ms)).
+- Gu 2026 (PMID 42041444) supports an electrochemical/ANN stool-specific Tier 2 candidate compared with GC-MS in a 30-sample fecal test set. Independent implementation and external validation remain open.
 - Breath H2/CH4 is useful as a broad fermentation/adherence proxy, not butyrate-specific quantification.
 - Generic free-fatty-acid colorimetric kits are a false-friend class; representative protocol excludes acetic, propionic, and butyric acid.
 - Completed with Codex/GPT-5.5 in-session synthesis from a committed source packet; no OpenRouter model calls were made.
 
 **Informs:** [quantification-ladder](./quantification-ladder.md) · [genotype-informed-supplement-workflow](./genotype-informed-supplement-workflow.md) · [validation-experiments §1.14](./validation-experiments.md#114-abcg2-response-to-dht-and-tnf-with-butyrate-and-lactoferrin-rescue) · [purine-degrading-bacteria](./purine-degrading-bacteria.md)
 
-**Detail:** [interpretive](./tier-2-butyrate-assay-audit-computational.md) · [experiments/](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/) · Complete first pass (next gate: full-text/protocol verification + small paired Tier 2 vs GC-MS validation)
+**Detail:** [interpretive](./tier-2-butyrate-assay-audit-computational.md) · [experiments/](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/) · Complete first pass; corrective artifact/provenance review and matrix-specific validation remain open.
 
 ---
 

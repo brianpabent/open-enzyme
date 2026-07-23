@@ -53,6 +53,8 @@ Engineered UOX is research material, not a default intervention source. Each exa
 
 Use the [`quantification-ladder.md`](./quantification-ladder.md) to calibrate a practical batch assay against an appropriate higher-specificity analytical method. Prespecify acceptance limits and how an exposure deviation changes analysis. An out-of-specification batch is documented or excluded under the protocol; it is not corrected through an unscripted exposure change.
 
+If no Tier 1 or Tier 2 method has been validated for the exact analyte and matrix, use a Tier 3 method directly. A cheaper measurement from another matrix is not an exposure substitute.
+
 Input potency, concentration in a sampled matrix, target-compartment exposure, and target engagement are distinct measurements. A certificate, stool metabolite result, or serum biomarker cannot substitute for the other links.
 
 ### 4. Measure target engagement

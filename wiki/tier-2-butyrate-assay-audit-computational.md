@@ -1,5 +1,5 @@
 ---
-title: "Tier 2 Butyrate Assay Audit — Computational Literature Synthesis (comp-038)"
+title: "Butyrate Measurement Audit — Computational Literature Synthesis (comp-038)"
 date: 2026-05-20
 tags: [computational, assay-validation, quantification-ladder, butyrate, scfa, microbiome, agentic-literature-synthesis]
 related:
@@ -16,96 +16,69 @@ sources:
   - "Abcam ab65341 protocol v17a — generic FFA kit excludes acetic, propionic, and butyric acid"
 ---
 
-# Tier 2 Butyrate Assay Audit — Computational Literature Synthesis (comp-038)
+# Butyrate Measurement Audit — Computational Literature Synthesis (comp-038)
 
-> **⚠️ Caveat (comp-review 2026-07-14).** The triage direction is reasonable (no ready home/colorimetric butyrate assay; HPLC-UV is the best near-term lab-tier candidate). BUT the **"full-text verification pass complete" + "validation §1.31" claims on downstream wiki pages are NOT present in the comp-038 artifact** — the committed artifact is the earlier abstract-level first pass and still treats electrochemical fecal SCFA profiling as promising. Do not cite a completed full-text verification for comp-038 until it is actually in the artifact.
-
-> **↳ Resolution (2026-07-14).** Both PubMed-indexed candidates are now full-text-verified against primary sources, and this artifact's [Full-text verification addendum](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/summary.md) records them — closing the "verification not in the artifact" gap. **De Baere et al. 2013 HPLC-UV** (PMID 23542733, [DOI](https://doi.org/10.1016/j.jpba.2013.02.032)): matrix-matched on bacterial culture supernatant, 0.5–50 mM (r 0.9951–0.9993), LOQ 0.5–1.0 mM, underivatized (UV 210 nm) — confirmed for the culture-supernatant track. **Gu et al. 2026 electrochemical-ANN** (PMID 42041444, [DOI](https://doi.org/10.3390/bios16040223)): GC-MS-validated fecal cohort n=30, butyric MAE 0.029 mM — a genuine stool-track candidate; the earlier downstream "electrochemical FAILS / do not re-surface" claim is **retracted as an error**. **SCFA ELISA kits stay RED-provisional** (no validation surfaced). Remaining wet-lab gate: empirical spike/recovery + paired GC-MS at [`validation-experiments.md` §1.31](./validation-experiments.md).
-
-**Status:** Complete first pass — 2026-05-20. **Experiment folder:** [`etc/experiments/comp-038-tier-2-butyrate-assay-audit/`](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/). **Output:** [`outputs/summary.md`](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/summary.md).
+**Status:** YELLOW. The original COMP-038 first pass was an abstract-level assay landscape. Its later full-text-verification provenance remains under corrective review; current method claims below are anchored directly to the primary papers. Neither candidate has been validated for an Open Enzyme strain, medium, operator workflow, or intervention study.
 
 ## Question
 
-Is there a Tier 2 butyrate quantification assay — colorimetric, enzymatic, breath-proxy, electrochemical, or other low-cost intermediate method — that can be validated against Tier 3 GC-MS for OE's stool, serum, breath, or culture-supernatant use cases?
+Which accessible methods could measure butyrate in culture supernatant, stool, serum, or breath, and what analytical validation would each matrix require?
 
-## Verdict
+## Current verdict
 
-**YELLOW.** A ready-to-adopt simple/home colorimetric or breath-based butyrate assay did **not** surface. Two plausible Tier 2 candidates did surface, but both require full-text/protocol review and paired GC-MS validation before wet-lab adoption:
+No ready-to-adopt Tier 1 or Tier 2 butyrate assay has been established for current OE use. The scan did, however, surface two useful and non-interchangeable directions:
 
-| Candidate | Matrix fit | Verdict | Evidence status |
+| Candidate | Matrix | Current classification | Evidence boundary |
 |---|---|---|---|
-| HPLC-UV SCFA + lactate assay for bacterial culture supernatants | Culture supernatant / engineered-strain work | **YELLOW** | PubMed abstract reports mM-range matrix-matched calibration and use for butyric-acid-producing bacteria; full text and OE spike-recovery still required. |
-| Electrochemical fecal SCFA profiling with ANN deconvolution | Stool / fecal SCFA profiling | **YELLOW** | Emerging fecal SCFA platform; needs full-text butyrate-specific performance, reference-method correlation, and external validation. |
-| Butyric-acid / SCFA ELISA kits | Serum/plasma/vendor-claimed matrices | **RED-provisional** | Vendor claims exist, but no PubMed/GC-MS validation surfaced; small-molecule specificity is a major concern. |
-| Breath H2/CH4 | Breath | **RED** | Broad fermentation/adherence proxy, not butyrate-specific quantification. |
-| Generic free-fatty-acid colorimetric kits | Serum/plasma/culture, vendor-dependent | **RED** | Representative FFA kit protocol excludes SCFAs including butyric acid. |
+| HPLC-UV SCFA + lactate assay | Bacterial culture supernatant | **Tier 3 bench method; transfer candidate** | De Baere et al. validated direct UV at 210 nm after acidification and diethyl-ether extraction, with matrix-matched calibration from 0.5–50 mM. The method still requires qualification in the exact OE strain and medium. **In Vitro** ([PMID 23542733](https://pubmed.ncbi.nlm.nih.gov/23542733/)) |
+| Electrochemical fingerprints + ANN | Human stool | **Tier 2 candidate; not adopted** | Gu et al. compared the method with GC-MS in an independent 30-sample fecal test set; butyrate MAE/RMSE were 0.029/0.034 mM. External replication and transfer to an available hardware/model implementation remain open. **In Vitro** ([PMID 42041444](https://pubmed.ncbi.nlm.nih.gov/42041444/), [DOI](https://doi.org/10.3390/bios16040223)) |
+| Butyric-acid / SCFA ELISA kits | Vendor-claimed serum, plasma, or tissue matrices | **RED-provisional** | COMP-038 did not surface primary method-comparison evidence sufficient to advance a kit. |
+| Breath H2/CH4 | Breath | **Not butyrate-specific** | Useful as a broad fermentation proxy, not a quantitative butyrate measurement. |
+| Generic free-fatty-acid colorimetry | Vendor-dependent | **Wrong assay class for this use** | The representative protocol reviewed by COMP-038 excluded short-chain fatty acids including butyrate. |
 
-## Why This Matters
+HPLC-UV is not Tier 2 under the [quantification ladder](./quantification-ladder.md): HPLC is bench instrumentation and therefore Tier 3. GC-MS is also Tier 3 when run in-house and becomes Tier 4 when an external qualified laboratory supplies the result and audit trail. Relative cost does not change the tier.
 
-The [quantification ladder](./quantification-ladder.md) needs a cheap Tier 2 surface between visual proxies and Tier 3 analytical anchors. For microbiome-derived metabolites, that gap blocks rigorous testing of the proposed Q141K × butyrate interaction; the workflow does not currently recommend butyrate as a validated Q141K rescue.
+## Why this matters
 
-comp-038 reframes that gap as two different problems:
+Butyrate creates at least three separate observability problems:
 
-1. **Culture-supernatant butyrate from engineered strains:** plausible Tier 2-lab path exists via HPLC-UV, with GC-MS as anchor.
-2. **Stool/serum/home butyrate exposure:** no ready-to-adopt Tier 2 method surfaced; electrochemical fecal SCFA profiling is promising but not production-ready.
+1. **Production:** did the exact organism and culture process produce butyrate?
+2. **Exposure:** what concentration appears in stool, serum, or the intended intestinal compartment?
+3. **Mechanism:** did the measured exposure change ABCG2, urate flux, inflammation, or another prespecified target?
 
-## Method Summary
+A culture-supernatant assay answers only the first question. A stool assay addresses one sampled exposure matrix. Neither establishes target-compartment exposure, direct Q141K rescue, gout efficacy, or safety.
 
-The run used the committed query strategy in [`inputs/query-strategy.json`](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/query-strategy.json), fetched a PubMed title/abstract snapshot via NCBI E-utilities, then performed five Codex/GPT-5.5 in-session synthesis trajectories from [`outputs/codex-synthesis-packet.md`](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/codex-synthesis-packet.md). The completed run used the local Codex synthesis path and made **no OpenRouter model calls**.
+The absence of a cheap assay does not block rigorous work: use a matrix-appropriate Tier 3 method directly. It does make routine distributed batch tracking more expensive until a lower-tier method is independently validated.
 
-The evidence gate was intentionally strict: PubMed title/abstract hits can surface candidates, but they cannot justify a GREEN wet-lab recommendation without full-text methods, protocol PDFs, vendor validation documents, or method-comparison data.
+## What COMP-038 established
 
-## Key Results
+The committed first pass used 27 PubMed queries and a 74-record title/abstract snapshot, then generated five in-session synthesis trajectories. It identified:
 
-| Result | Interpretation |
-|---|---|
-| PubMed snapshot: 27 queries / 74 records | Enough for a first-pass assay landscape; not a full-text review. |
-| HPLC-UV candidate: PMID 23542733 | Best near-term candidate for culture-supernatant butyrate in engineered-strain / fermentation work. |
-| Electrochemical fecal candidate: PMID 42041444 | Best stool-specific future direction, but still research-platform grade. |
-| Breath proxy literature | Useful for fermentation activity, not butyrate quantification. |
-| Generic FFA colorimetric kits | False-friend class; representative protocol excludes acetic, propionic, and butyric acid. |
+- HPLC-UV as the leading culture-supernatant method-transfer candidate.
+- Electrochemical/ANN profiling as a separate stool-specific direction.
+- Breath hydrogen/methane as a fermentation proxy rather than a butyrate assay.
+- Generic free-fatty-acid kits as a false-friend assay class for short-chain fatty acids.
 
-## Impact on Experimental Priorities
+These are candidate-selection results, not OE method validation.
 
-This does **not** unlock a home butyrate assay today. It does tighten the next experimental move:
+## Next gates
 
-- Keep **GC-MS as the Tier 3 anchor** for butyrate.
-- For engineered-strain / culture-supernatant work, run a small paired validation of HPLC-UV against GC-MS using sodium-butyrate standards and OE-relevant culture matrices.
-- For stool work, do a full-text and protocol review of the electrochemical fecal SCFA platform before spending on hardware or adaptation.
-- Do not spend on breath hydrogen/methane or generic FFA colorimetric kits for butyrate quantification.
+### Culture-supernatant production QC
 
-For [`validation-experiments.md` §1.14](./validation-experiments.md#114-abcg2-response-to-dht-and-tnf-with-butyrate-and-lactoferrin-rescue), this means the butyrate dose-response arm still needs a Tier 3 analytical anchor if concentration verification becomes load-bearing. HPLC-UV may become a cheaper intermediate check for culture-supernatant development, but not for the cellular dose-response arm without matrix validation.
+Run [validation §1.31](./validation-experiments.md#131-butyrate-culture-supernatant-hplc-uv-method-transfer-against-gc-ms): qualify HPLC-UV in one exact strain–medium configuration and compare it with GC-MS. A successful transfer would establish a Tier 3 in-house method for that matrix, not a universal butyrate assay.
 
-## Limitations
+### Stool monitoring
 
-- PubMed results are title/abstract/citation metadata, not full-text validation.
-- Vendor and patent searches were targeted, not exhaustive.
-- Commercial ELISA claims remain unverified and should not drive spend.
-- No non-English corpus pass was run because this specific scope is analytical-chemistry-heavy and Stage 1 was not sparse; revisit if full-text/vendor follow-up stalls.
-- The N=5 trajectories were performed in one Codex session to avoid OpenRouter spend, not by five independent paid model calls.
+Treat the Gu electrochemical/ANN workflow as a separate Tier 2 candidate. Before OE adoption, reproduce its performance independently with the intended hardware, analysis implementation, stool workflow, and paired GC-MS reference samples.
 
-## Next Step
+### COMP artifact integrity
 
-Run a focused full-text/protocol verification pass on PMID 23542733 and PMID 42041444, plus a vendor protocol audit for any butyric-acid/SCFA ELISA claims. If one candidate survives, design a small paired validation with sodium-butyrate spike/recovery and 10-20 real samples measured by the candidate Tier 2 method plus GC-MS.
+COMP-038 still requires its exact full-text-verification artifact, updated results/provenance, and a new exact-snapshot review. Until that closes, distinguish primary-paper method support from validation performed by Open Enzyme.
 
-### Full-text verification — completed 2026-06-01
-
-The full-text pass above was run (multilingual; English + Chinese analytical-chemistry sources). Outcome — **one candidate survives, two fail the full-text Tier-2 gate:**
-
-| Candidate | Resolves to | Verdict | Reason |
-|---|---|---|---|
-| **HPLC-UV** (PMID 23542733) | De Baere et al. 2013, *J Pharm Biomed Anal* 80:107–115 | **✅ SURVIVES** (community-biolab tier) | Validated on **bacterial culture supernatant** (OE's near-term matrix), linear **0.5–50 mM**, **no derivatization** (direct UV 210 nm), butyrate resolved from acetate/propionate/lactate. Gate-keeper is the HPLC instrument — not home/kitchen tier, but decentralizable to a community biolab. |
-| **Electrochemical + ANN** (PMID 42041444) | Gu et al. 2026, *Biosensors* 16(4):223 | **❌ FAILS** | Vendor-locked hardware (VidaBio chip + potentiostat), dual derivatization (esterification + dissociation), and butyrate specificity depends on an **unreleased ANN** adopters must retrain against their own GC-MS — making GC-MS a *prerequisite*, not a replacement. Fecal-only matrix. (Real paper, GC-MS-validated R²=0.998 — kept as a citation, not a Tier-2 option.) |
-| **SCFA/butyrate ELISA kits** | US Biological / Aviva / LSBio etc. | **❌ FAILS** (confirms RED) | Vendor dynamic range ~pg/mL (≈nM), **5–6 orders of magnitude** below mM culture/colonic butyrate; specificity on an 88-Da analyte unvalidated against GC-MS in a real SCFA matrix. |
-
-[TRANSLATION NOTE] Chinese analytical literature (短链脂肪酸 HPLC / 电化学检测) corroborated the load-bearing claim with no disagreement: most fecal-matrix SCFA-HPLC methods require pre-column derivatization (e.g. 3-nitrophenylhydrazine) because SCFAs lack a chromophore; De Baere's direct-UV-at-210 nm approach is the distinguishing feature that avoids derivatization, at the cost of non-selective absorbance (hence the medium-blank requirement).
-
-**Operationalized as a tracked wet-lab gate:** [`validation-experiments.md` §1.31](./validation-experiments.md) — HPLC-UV vs. GC-MS spike/recovery on culture supernatant, with GREEN/YELLOW/RED success criteria. The empirical spike/recovery remains wet-lab gated (OE is Phase 0; needs partner-CRO / community-biolab HPLC-UV + GC-MS access); the candidate-selection question is now closed.
-
-## Cross-References
+## Cross-references
 
 - [comp-038 experiment folder](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/)
-- [computational-experiments.md](./computational-experiments.md)
-- [validation-experiments.md §1.14](./validation-experiments.md#114-abcg2-response-to-dht-and-tnf-with-butyrate-and-lactoferrin-rescue)
-- [quantification-ladder.md](./quantification-ladder.md)
-- [genotype-informed-supplement-workflow.md](./genotype-informed-supplement-workflow.md)
+- [computational experiment registry](./computational-experiments.md)
+- [quantification ladder](./quantification-ladder.md)
+- [genotype-informed intervention research workflow](./genotype-informed-supplement-workflow.md)
+- [purine-degrading bacteria](./purine-degrading-bacteria.md)

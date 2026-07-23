@@ -66,7 +66,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 | [§1.28](#128-tier-2-colorimetric-cordycepin-assay-validation) | Tier 2 colorimetric cordycepin assay validation | In Vitro | ~$200 | 2 | Proposed | [quantification-ladder](./quantification-ladder.md), [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) |
 | [§1.29](#129-cordycepin--pentostatin--substrate-matrix) | Cordycepin × pentostatin exact-configuration medium effects | In Vitro | TBD | TBD | Proposed — pilot design required | [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [medicinal-mushroom-extract-sops](./medicinal-mushroom-extract-sops.md) |
 | [§1.30](#130-houttuynia-cordata-polysaccharide-fraction-comparison-in-msu-stimulated-thp-1-macrophages--prioritization-screen) | *Houttuynia cordata* polysaccharide fraction comparison in MSU-stimulated THP-1 macrophages | In Vitro | ~$1,500–2,500 | 4–6 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [medicinal-mushroom-extract-sops](./medicinal-mushroom-extract-sops.md) |
-| [§1.31](#131-tier-2-butyrate-assay-validation--hplc-uv-vs-gc-ms-spikerecovery) | Tier 2 butyrate assay validation — HPLC-UV vs. GC-MS spike/recovery | In Vitro | ~$500 | 2 | Proposed (wet-lab gated) | [tier-2-butyrate-assay-audit-computational](./tier-2-butyrate-assay-audit-computational.md), [quantification-ladder](./quantification-ladder.md) |
+| [§1.31](#131-butyrate-culture-supernatant-hplc-uv-method-transfer-against-gc-ms) | Butyrate culture-supernatant HPLC-UV method transfer against GC-MS | In Vitro | TBD | TBD | Proposed — partner design required | [tier-2-butyrate-assay-audit-computational](./tier-2-butyrate-assay-audit-computational.md), [quantification-ladder](./quantification-ladder.md) |
 | [§1.32](#132-gsdmd-pore-self-delivery--selectivity-probe-transporter-orphan-tracer--pept1-blockade) | GSDMD-pore self-delivery selectivity probe | In Vitro | ~$2,000–5,000 | 4–6 | Proposed (wet-lab gated) | [gsdmd-pore-delivery-paradox](./gsdmd-pore-delivery-paradox.md), [kpv-gsdmd-pore-influx-computational](./kpv-gsdmd-pore-influx-computational.md) |
 | [§1.44](#144-thymulin--msu--nlrp3-in-aged-macrophages-thy-1--age-stratified-priming-to-flare-test) | Thymulin (+Zn²⁺) × MSU × NLRP3 in **aged** macrophages (THY-1) — tests whether NF-κB priming block translates to reduced crystal-driven IL-1β; age-stratified | In Vitro | Tier 1: $5–10K; full T1+T2+T3 cascade $85–130K | Tier 1: 6–8; full cascade ~11 months | Proposed | [thymulin](./thymulin.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [peptide-gout-addendum](./peptide-gout-addendum.md) |
 | [§1.34](#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux) | Isotope-resolved precursor → UOX → PDB sequential flux — parallel first-wave architecture gate | In Vitro | TBD | TBD | Proposed | [purine-degrading-bacteria](./purine-degrading-bacteria.md), [staged-purine-sink-mass-balance-computational](./staged-purine-sink-mass-balance-computational.md) |
@@ -595,7 +595,7 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 **Computational prior (comp-004, 2026-05-05):** IC50 occupancy analysis generated strong inhibition predictions for quercetin and curcumin, but free segment-specific exposure and urate-substrate transfer remain unverified. The 72-hour EGCG arm is retained because its proposed transcriptional effect may not appear at 48 hours. Full analysis: [`wiki/supplement-abcg2-antagonism-computational.md`](./supplement-abcg2-antagonism-computational.md) and [`etc/experiments/comp-004-supplement-abcg2-antagonism/`](./etc/experiments/comp-004-supplement-abcg2-antagonism/).
 
-**Computational prior (comp-038, 2026-05-20):** Tier 2 butyrate assay audit finds **YELLOW** for the assay-infrastructure question. No ready-to-adopt simple/home colorimetric or breath-based butyrate assay was identified. HPLC-UV is a plausible Tier 2-lab path for culture-supernatant butyrate, and electrochemical fecal SCFA profiling is a promising stool-specific future direction, but neither replaces GC-MS for the §1.14 butyrate dose-response arm without matrix validation. This does not change §1.14's priority framing; it keeps concentration verification tied to a Tier 3 analytical anchor if butyrate exposure becomes load-bearing. Full analysis: [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md) and [`etc/experiments/comp-038-tier-2-butyrate-assay-audit/`](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/).
+**Computational prior (comp-038, 2026-05-20):** The assay-infrastructure question remains **YELLOW**. No ready-to-adopt Tier 1 or Tier 2 butyrate method has been established for current OE use. HPLC-UV is a Tier 3 bench method for culture-supernatant development, while electrochemical/ANN profiling is a separate stool-specific Tier 2 candidate. Neither transfers to this cellular exposure matrix without validation. If concentration verification becomes load-bearing in §1.14, use a matrix-qualified Tier 3 analytical method directly. Full analysis: [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md) and [`etc/experiments/comp-038-tier-2-butyrate-assay-audit/`](./etc/experiments/comp-038-tier-2-butyrate-assay-audit/).
 
 **Estimated timeline:** 4–6 weeks (unchanged — supplement arms run in the same batch).
 
@@ -1320,45 +1320,35 @@ If Stage 1 reproduces the cordycepin direction and reveals a decision-relevant r
 
 ---
 
-### 1.31 Tier 2 Butyrate Assay Validation — HPLC-UV vs. GC-MS spike/recovery
+### 1.31 Butyrate Culture-Supernatant HPLC-UV Method Transfer Against GC-MS
 
-**Status**: Proposed (wet-lab gated) | **Cost**: ~$500 | **Weeks**: 2 | **Phase**: 1
+**Status:** Proposed — partner design required | **Cost:** TBD | **Weeks:** TBD | **Phase:** 1
 
-**Affected wiki**: [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md) (comp-038); [`quantification-ladder.md`](./quantification-ladder.md); [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) (proposed Q141K experiment); [`abcg2-modulators.md`](./abcg2-modulators.md) (WT induction and the unvalidated direct-Q141K hypothesis); §1.14; and [`open-questions.md`](./open-questions.md).
+**Affected wiki:** [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md) (comp-038); [`quantification-ladder.md`](./quantification-ladder.md); [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md); §1.14; and [`open-questions.md`](./open-questions.md).
 
-**What it tests:** Whether a low-cost **Tier 2** method can quantify butyrate in **engineered-strain culture supernatant** against a **Tier 3 GC-MS** anchor. It validates an exposure measurement, not ABCG2 trafficking rescue or clinical effect.
+**What it tests:** Whether the De Baere HPLC-UV method can quantify butyrate in one exact engineered-strain culture-supernatant matrix with agreement adequate for the prespecified research decision. HPLC-UV is a **Tier 3 bench method** under the OE ladder. GC-MS is the reference comparator: Tier 3 when run in-house and Tier 4 when outsourced. This experiment validates a production measurement, not intestinal exposure, ABCG2 trafficking rescue, gout efficacy, or safety.
 
+**Primary-source anchor:** De Baere et al. validated direct UV detection at 210 nm for bacterial culture supernatants after acidification below pH 2 and liquid-liquid back-extraction with diethyl ether. Matrix-matched calibration covered 0.5–50 mM, and the method quantified four short-chain fatty acids plus lactate (**In Vitro**, [PMID 23542733](https://pubmed.ncbi.nlm.nih.gov/23542733/)).
 
-**Candidate selection (primary-source verified; see comp-038):** one Tier-2 candidate survives full-text verification:
+**Protocol-development requirements:**
 
-- **✅ HPLC-UV (De Baere et al. 2013, *J Pharm Biomed Anal* 80:107–115, PMID 23542733)** — **the candidate to validate.** Direct UV at 210 nm (no derivatization), validated on **bacterial culture supernatant** (OE's matrix), linear 0.5–50 mM (overlaps fermentation butyrate), butyrate chromatographically resolved from acetate/propionate/lactate. Gate-keeper is the HPLC instrument itself — community-biolab tier, **not** kitchen/home tier.
-- **❌ Electrochemical + ANN (Gu et al. 2026, *Biosensors* 16(4):223, PMID 42041444)** — failed the gate: vendor-locked hardware, dual derivatization, and butyrate specificity depends on an **unreleased** ANN that adopters must retrain against their own GC-MS (making GC-MS a prerequisite, not a replacement). Fecal-only matrix. Recorded as failed — do not re-surface.
-- **❌ SCFA/butyrate ELISA kits** — failed the gate: vendor-claimed dynamic range is pg/mL (≈nM), 5–6 orders of magnitude below mM culture/colonic butyrate; specificity on an 88-Da analyte unvalidated. Recorded as failed — do not re-surface.
+- Select one exact strain, complete medium, culture format, harvest time, and sample-preparation workflow before setting acceptance criteria.
+- Prepare matrix-matched sodium-butyrate calibration and spike/recovery samples across the decision-relevant range, bounded by the published 0.5–50 mM method range.
+- Run sterile-medium, spent-medium, and analyte-interference controls. Detection at 210 nm is non-selective, so chromatographic separation and matrix effects are load-bearing.
+- Measure the same biological samples by HPLC-UV and GC-MS. Set the biological-sample count after pilot variance and analytical-partner review.
+- Prespecify method-suitability criteria for recovery, within- and between-day precision, calibration fit, chromatographic resolution, and HPLC-UV/GC-MS agreement before the result-bearing comparison.
 
-**Protocol (HPLC-UV, culture-supernatant use case):**
+**Decision rules:**
 
-- **Reference standard:** sodium butyrate, ≥99%. Calibration series spanning **0.5–50 mM** in sterile culture medium (matrix-matched, not water).
-- **Sample prep:** acidify to pH < 2, liquid-liquid back-extraction into diethyl ether, centrifuge (per De Baere). Volatile-solvent fume handling required.
-- **Spike/recovery:** spike butyrate into sterile medium across the range; quantify by HPLC-UV (210 nm, polar-endcapped C18 e.g. Hypersil Gold aQ).
-- **Tier 3 anchor:** split 10–20 real fermentation-supernatant samples + the spiked standards; measure in parallel by GC-MS (contract lab).
-- **Medium blank:** run spent-medium and sterile-medium blanks — confirm the butyrate peak is clean (210 nm is non-selective; yeast extract / aromatic metabolites can co-elute).
+- **GREEN:** the prespecified method-suitability and reference-agreement criteria pass in the exact matrix. Adopt HPLC-UV as a matrix-qualified Tier 3 method for that configuration.
+- **YELLOW:** standards pass but the biological matrix causes resolvable interference or unstable recovery. Revise extraction or chromatography and repeat qualification.
+- **RED:** the method cannot meet the prespecified matrix or reference-agreement criteria. Use the GC-MS reference path for that configuration.
 
-**Success criterion (test → adopt):**
+**Separate stool candidate:** Gu et al. reported an electrochemical/ANN workflow compared with GC-MS in an independent 30-sample fecal test set, with butyrate MAE/RMSE of 0.029/0.034 mM (**In Vitro**, [PMID 42041444](https://pubmed.ncbi.nlm.nih.gov/42041444/), [DOI](https://doi.org/10.3390/bios16040223)). That is a separate Tier 2 candidate for stool. It neither failed nor belongs in this culture-supernatant experiment; independent implementation and external validation remain open.
 
-- **GREEN (adopt HPLC-UV as Tier 2 for culture supernatant):** recovery 80–120%, intra/inter-day RSD < 10%, calibration R² > 0.99, butyrate–propionate baseline resolution Rs > 1.5 in real supernatant, Bland-Altman agreement vs. GC-MS within ±0.3 mM at physiologic butyrate.
-- **YELLOW:** recovery/linearity pass but co-elution or resolution fails in the real strain's spent medium → optimize extraction or gradient; iterate.
-- **RED:** recovery < 70% or GC-MS disagreement > 30% → HPLC-UV does not transfer to OE's medium matrix; stay on GC-MS and record the Tier-2 gap as unclosed for culture supernatant.
+**Dependencies:** An analytical partner with HPLC-UV and GC-MS access; the exact production strain and medium; a pilot sufficient to set the result-bearing design.
 
-**Estimated cost:** ~$500 (sodium butyrate standard + HPLC consumables/column time + GC-MS anchor on 10–20 samples). **Wet-lab gated:** OE is Phase 0 with no analytical instruments — requires a partner CRO or community biolab with HPLC-UV + GC-MS access. The full-text *verification* step (which candidate to validate) is complete; the empirical spike/recovery is what remains.
-
-**Limitations:**
-
-1. The method was validated by De Baere on fecal/cecal-derived cultures, **not** engineered-yeast/koji medium — matrix transfer is the primary risk and the main thing this validation tests.
-2. 210 nm is non-selective; co-elution in a specific strain's spent medium is the most likely failure mode (hence the medium-blank requirement).
-3. Diethyl-ether extraction is volatile/flammable and extraction-efficiency-limited; validate recovery per medium type.
-4. **Stool/serum butyrate monitoring** (the patient-facing future) is a *separate* matrix and a separate validation — this entry covers culture supernatant only.
-
-**Cross-references:** [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md); [`quantification-ladder.md`](./quantification-ladder.md); [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) (proposed Q141K experiment); [`abcg2-modulators.md`](./abcg2-modulators.md); §1.14; §1.28; and [`open-questions.md`](./open-questions.md).
+**Cross-references:** [`tier-2-butyrate-assay-audit-computational.md`](./tier-2-butyrate-assay-audit-computational.md); [`quantification-ladder.md`](./quantification-ladder.md); [`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md); §1.14; §1.28; and [`open-questions.md`](./open-questions.md).
 
 ### 1.32 GSDMD-Pore Self-Delivery — Selectivity Probe (transporter-orphan tracer ± PepT1 blockade)
 
