@@ -91,6 +91,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[BPC-157](wiki/bpc-157.md)** — 15-amino-acid gastric peptide with indirect, evidence-limited relevance through gut-barrier hypotheses.
 - **[KPV Tripeptide](wiki/kpv-peptide.md)** — α-MSH fragment with NF-κB/NLRP3 pathway evidence and unresolved gout exposure and selectivity.
 - **[Thymulin](wiki/thymulin.md)** — Zinc-dependent thymic nonapeptide; CP1a NF-κB priming inhibition proven in aged macrophages + human PBMCs (Kanemaru 2026 *Nat Commun*), age-dependent; untested against MSU/crystal (priming only).
+- **[Apelin-13](wiki/apelin-13.md)** — Exact-form-sensitive APLNR/APJ agonist with one hyperuricemic-rat/uric-acid adipocyte study and separate non-gout NLRP3 evidence; no MSU or gout experiment.
 - **[BHB / Ketones](wiki/bhb-ketones.md)** — Evidence and uncertainties for ketone-mediated effects across three NLRP3 chokepoints.
 - **[Oridonin](wiki/oridonin.md)** — Natural NLRP3 inhibitor; covalent NACHT domain Cys279 binding; traditional medicine origin
 - **[Disulfiram](wiki/disulfiram.md)** — Gasdermin D blocker (Antabuse); repurposed drug; CP6b in v1.2 NLRP3 map

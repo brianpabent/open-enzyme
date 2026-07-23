@@ -260,6 +260,20 @@ Full dossier — mechanism figures, dose, evidence tiers, and the MSU-macrophage
 
 ---
 
+## Apelin-13
+
+**Apelin-13** • C-terminal APLN(65–77) peptide • APLNR/APJ agonist • exact terminal modification must be tracked per reagent
+
+**[Animal Model + In Vitro; no gout/MSU study]**
+
+Apelin-13 surfaced because one 2019 study directly crossed the urate boundary: repeated intraperitoneal treatment lowered serum urate and adipose oxidative/RAS readouts in fructose-fed hyperuricemic rats after 12 weeks, while 2 weeks had no obvious effect; the same paper reported reduced oxidative/RAS readouts in uric-acid-exposed 3T3-L1 adipocytes (PMID 30710622). The accessible abstract does not establish the administered dose or whether the reagent was unmodified apelin-13 or [Pyr1]apelin-13, and it does not identify a renal, intestinal, or production-side urate mechanism.
+
+Separately, studies using reagents described as apelin-13 report NF-κB/NLRP3 suppression in LPS lung injury, subarachnoid hemorrhage, osteolysis, and—most directly—APJ-dependent inhibition of NLRP3 assembly, caspase-1, GSDMD cleavage, and IL-1β maturation in stressed macrophages after myocardial infarction (Animal Model + In Vitro; PMID 30235451, 31791369, 38380581, 42030891). None used MSU crystals or a gout model. A 24-person crossover study establishes short-term human renal and cardiovascular exposure to explicitly pyroglutamated [Pyr1]apelin-13 but did not measure urate or gout outcomes (Clinical Trial; PMID 39402039).
+
+The resulting lead is a two-branch conjecture—possible urate-burden modulation plus possible macrophage inflammasome modulation—not a demonstrated multi-node gout effect. The first gates are to resolve the 2019 reagent and urate mechanism, then compare identified apelin-13 forms in an APJ-controlled, stage-resolved human macrophage MSU assay. Full evidence and the no-invented-edge boundary: [Apelin-13](./apelin-13.md).
+
+---
+
 ## Other Peptides & Compounds of Interest
 
 The extended roster — pentosan polysulfate, SS-31, ANP, and emerging NLRP3-targeted compounds.
@@ -412,6 +426,7 @@ This section is the most important one. Peptides generate enormous enthusiasm in
 | **KPV** | NLRP3 + NF-κB dual inhibition, gut anti-inflammatory | Cell and animal studies. NLRP3 inhibition demonstrated in immune cells. Gut effects in colitis models. No gout-specific studies. No human trials. | Strongest mechanistic case for gout of any peptide here. Hits the exact pathways. But zero gout-specific testing — the connection is entirely via shared mechanisms. |
 | **GHK-Cu** | Gene expression changes (anti-inflammatory, antioxidant, ECM repair) | Gene expression data is solid (Broad Institute). Tissue repair in animal models. No gout studies. | Best suited for long-term joint protection rather than flare management. Gene expression breadth is impressive but non-specific. |
 | **Thymulin** | NF-κB priming inhibition (p65 DNA-binding, IκBα); suppresses IL-1α/IL-1β/IL-6/TNF-α | NF-κB mechanism proven in aged macrophages + human PBMCs (Kanemaru 2026 *Nat Commun*). No MSU/crystal or gout testing; priming only. Age-dependent. | Cleanest CP1a mechanistic evidence of any peptide here, in the gout effector cell and with human cells — but LPS/aging trigger, not urate; assembly and caspase-1 untested. |
+| **Apelin-13** | APLNR/APJ signaling; separate urate/RAS and NF-κB/NLRP3 branches | One fructose-rat + adipocyte uric-acid study; multiple non-gout NLRP3 models, including APJ-dependent macrophage evidence. No MSU or gout study. | A credible screen hit that requires exact-form reconciliation and two independent validation gates; the urate and inflammasome branches have not been joined experimentally. |
 | **PPS** | Cartilage protection, enzyme inhibition, anti-crystallization | Human OA trials. Gout excluded from trials. No crystal arthropathy data. | Has human data — but for the wrong disease. Gout exclusion from trials is a yellow flag. The anti-crystallization property is interesting but unstudied for MSU. |
 | **SS-31** | Mitochondrial ROS reduction (NLRP3 trigger), renal protection | Phase II for heart failure. Preclinical for kidney protection. No gout studies. | Most directly targets an NLRP3 activation signal (mitochondrial ROS). Renal protection is a meaningful bonus. More human safety data than most on this list. |
 

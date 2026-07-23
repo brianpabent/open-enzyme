@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "scan_id": "apelin13-gout-2026-07-23",
+  "question": "What exact-form and primary evidence connects apelin-13 to urate burden, gout-relevant inflammatory events, human exposure, and a discriminating gout experiment?",
+  "started_at": "2026-07-23T16:34:05Z",
+  "completed_at": "2026-07-23T16:39:41Z",
+  "canonical_updates": [
+    "wiki/apelin-13.md",
+    "wiki/peptide-gout-addendum.md"
+  ],
+  "query_attempts": [
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "exact peptide plus gout/urate",
+      "query": "\"apelin-13\"[Title/Abstract] AND (gout OR hyperuricemia OR \"uric acid\" OR urate OR \"monosodium urate\")",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "peptide/receptor plus gout/urate",
+      "query": "(apelin[Title/Abstract] OR APLNR[Title/Abstract] OR APJ[Title/Abstract]) AND (gout OR hyperuricemia OR \"uric acid\" OR urate OR \"monosodium urate\")",
+      "status": "success",
+      "result_count": 8,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "exact peptide plus inflammatory mechanism",
+      "query": "\"apelin-13\"[Title/Abstract] AND (NLRP3 OR inflammasome OR pyroptosis OR \"NF-kappa B\" OR macrophage)",
+      "status": "success",
+      "result_count": 38,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "exact form plus renal exposure",
+      "query": "(\"apelin-13\"[Title/Abstract] OR \"Pyr-apelin-13\"[Title/Abstract] OR \"pyroglutamated apelin-13\"[Title/Abstract]) AND (kidney OR renal OR urate OR hyperuricemia)",
+      "status": "success",
+      "result_count": 50,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "receptor plus named urate-handling machinery",
+      "query": "(apelin[Title/Abstract] OR APLNR[Title/Abstract] OR APJ[Title/Abstract]) AND (ABCG2 OR URAT1 OR SLC22A12 OR GLUT9 OR SLC2A9 OR \"xanthine oxidase\" OR \"urate excretion\")",
+      "status": "success",
+      "result_count": 2,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "exact-title verification",
+      "query": "\"Apelin-13 reduces oxidative stress induced by uric acid via coupling with APJ and inhibition of renin-angiotensin system in adipose tissue\"",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "exact-title verification",
+      "query": "\"Apelin-13 alleviates post-infarction injury by modulating macrophage inflammation via APJ-dependent inhibition of NLRP3-mediated pyroptosis\"",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "exact peptide plus gout/hyperuricemia",
+      "query": "Apelin-13 痛風 高尿酸血症",
+      "status": "partial",
+      "result_count": null,
+      "error": "HTTP retrieval succeeded through the required local-curl path, but the result page did not expose a reliable exact count or a load-bearing source."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "exact peptide plus urate/NLRP3",
+      "query": "Apelin-13 尿酸 NLRP3",
+      "status": "partial",
+      "result_count": null,
+      "error": "HTTP retrieval succeeded through the required local-curl path, but the result page did not expose a reliable exact count or a load-bearing source."
+    },
+    {
+      "source": "RISS",
+      "language": "ko",
+      "frame": "exact peptide plus gout/hyperuricemia",
+      "query": "Apelin-13 통풍 고요산혈증",
+      "status": "partial",
+      "result_count": null,
+      "error": "HTTP retrieval succeeded through the required local-curl path, but the result page did not expose a reliable exact count or a load-bearing source."
+    },
+    {
+      "source": "RISS",
+      "language": "ko",
+      "frame": "exact peptide plus urate/NLRP3",
+      "query": "Apelin-13 요산 NLRP3",
+      "status": "partial",
+      "result_count": null,
+      "error": "HTTP retrieval succeeded through the required local-curl path, but the result page did not expose a reliable exact count or a load-bearing source."
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "exact peptide plus gout/hyperuricemia",
+      "query": "Apelin-13 痛风 高尿酸血症",
+      "status": "partial",
+      "result_count": null,
+      "error": "HTTP retrieval succeeded through the required local-curl path, but broad token matching produced unrelated '13' records and no load-bearing apelin-13 source."
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "exact peptide plus urate/NLRP3",
+      "query": "Apelin-13 尿酸 NLRP3",
+      "status": "partial",
+      "result_count": null,
+      "error": "HTTP retrieval succeeded through the required local-curl path, but broad token matching produced unrelated '13' records and no load-bearing apelin-13 source."
+    }
+  ],
+  "source_ids_considered": [
+    "PMID:9792798",
+    "PMID:30235451",
+    "PMID:30710622",
+    "PMID:31791369",
+    "PMID:31882594",
+    "PMID:34815457",
+    "PMID:38380581",
+    "PMID:39402039",
+    "PMID:42030891",
+    "Reactome:R-HSA-374315",
+    "Reactome:R-HSA-374317",
+    "Reactome:R-HSA-374337",
+    "UniProt:Q9ULZ1"
+  ],
+  "translation_checks": [],
+  "load_bearing_verifications": [
+    {
+      "claim": "The exact Reactome apelin-13 entity is APLN residues 65-77 from UniProt Q9ULZ1; Reactome groups it with apelin-28, -31, and -36 for the receptor-binding event rather than asserting form interchangeability.",
+      "primary_source": "Reactome:R-HSA-374315; Reactome:R-HSA-374317; Reactome:R-HSA-374337; UniProt:Q9ULZ1",
+      "status": "verified_curated_identifier_and_pathway_context"
+    },
+    {
+      "claim": "The 2019 study used a 60% fructose diet for 8 weeks, compared 2- and 12-week intraperitoneal apelin-13 treatment, and exposed 3T3-L1 adipocytes to 600 micromol/L uric acid for 48 hours; the reported serum-urate effect appeared after 12 weeks, not 2.",
+      "primary_source": "PMID:30710622",
+      "status": "verified_against_primary_abstract"
+    },
+    {
+      "claim": "The accessible 2019 abstract does not report apelin-13 dose, terminal modification, supplier/purity, urinary urate, or a named renal/intestinal urate transporter mechanism.",
+      "primary_source": "PMID:30710622",
+      "status": "verified_absent_from_primary_abstract"
+    },
+    {
+      "claim": "Separate apelin-13 studies report NF-kappa-B/NLRP3-related effects in LPS lung injury, subarachnoid hemorrhage, osteolysis, and APJ-dependent stressed-macrophage myocardial injury, but none of those primary abstracts reports an MSU or gout model.",
+      "primary_source": "PMID:30235451; PMID:31791369; PMID:38380581; PMID:42030891",
+      "status": "verified_against_primary_abstracts"
+    },
+    {
+      "claim": "The 2024 crossover study enrolled 24 participants, 12 with chronic kidney disease and 12 matched healthy participants, and explicitly administered 1 or 30 nmol/min [Pyr1]apelin-13; urate and gout were not reported endpoints.",
+      "primary_source": "PMID:39402039",
+      "status": "verified_against_primary_full_text_and_abstract"
+    },
+    {
+      "claim": "A six-volunteer infusion study detected intact [Pyr1]apelin-13 and multiple in-vivo metabolites, with prominent C-terminal truncation products.",
+      "primary_source": "PMID:31882594",
+      "status": "verified_against_primary_abstract"
+    }
+  ],
+  "limitations": [
+    "The 2019 Toxicol Lett full methods were not openly accessible in this scan, so exact reagent form, dose, supplier/purity, group sizes, and unreported urate-mechanism measurements remain unresolved.",
+    "The bounded PubMed and regional queries found no direct apelin-13 MSU-crystal, gouty-arthritis, or human-gout experiment; this is a search result, not a universal absence claim.",
+    "Several disease-adjacent apelin-13 studies were screened by title and abstract; only the sources carrying the page's load-bearing claims were promoted.",
+    "Reactome and UniProt were used for identifier and pathway context, not as substitutes for primary experimental evidence.",
+    "No non-English source supplied a load-bearing claim, so the two-model translation protocol was not triggered."
+  ],
+  "errors": [],
+  "workspace": {
+    "path": "operations/apelin13-gout-2026-07-23",
+    "cleaned": true
+  }
+}
