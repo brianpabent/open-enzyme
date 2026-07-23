@@ -36,6 +36,8 @@ The reusable form is [track-template.md](wiki/etc/track-template.md).
 
 Claims distinguish clinical trials, animal models, in-vitro evidence, computational results, and mechanistic extrapolation. Load-bearing numbers are verified against primary sources before commit. Computational experiments use hash-bound pre-run and post-run review gates plus an independent push review before their claims can propagate or enter synthesis.
 
+Open Enzyme is conservative about claims and aggressive about imagination. A **Research Conjecture** is a grounded but untested connection, not an evidence level: the sourced premises, unsupported leap, upside, and discriminating observation are shown separately.
+
 This repository is research-stage and does not provide medical advice.
 
 ## Knowledge workflow

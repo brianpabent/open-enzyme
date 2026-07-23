@@ -1,6 +1,6 @@
 name: ChEMBL Quarterly Refresh
 
-# Re-queries ChEMBL for every compound tracked in wiki/chembl-cross-check.md,
+# Re-queries ChEMBL for every compound tracked in wiki/etc/chembl-cross-check.md,
 # diffs against the recorded baseline, and surfaces new bioactivities or
 # discrepancies. ChEMBL updates roughly quarterly — see
 # scripts/chembl-refresh-prompt.md for the full refresh protocol.

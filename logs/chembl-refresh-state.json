@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "refreshed_at": "2026-07-01T12:59:22Z",
+  "trigger": {
+    "event": "schedule",
+    "note": null
+  },
+  "chembl": {
+    "version": "v37",
+    "base_url": "https://www.ebi.ac.uk/chembl/api/data/"
+  },
+  "queries": [
+    {
+      "compound": "17 baseline compounds and 10 newly tracked compounds",
+      "resolved_chembl_id": null,
+      "requests": [],
+      "result_count": 27,
+      "status": "ok",
+      "migration_note": "The legacy narrative receipt named the compounds and API family but did not retain exact request parameters. See wiki/etc/chembl-cross-check.md at the 2026-07-01 commit for the resolved IDs and results."
+    }
+  ],
+  "counts": {
+    "baseline_queried": 17,
+    "new_compounds_queried": 10,
+    "meaningful_discrepancies": 2
+  },
+  "failures": [
+    {
+      "source": "MCP",
+      "request": "ChEMBL compound search and bioactivity tools",
+      "error": "Unavailable; the run used the ChEMBL REST API fallback."
+    }
+  ],
+  "queue_files": [
+    "synthesis/queue/2026-07-01-chembl-discrepancy-1-ursolic-acid-ror-gamma.md",
+    "synthesis/queue/2026-07-01-chembl-discrepancy-2-curcumin-dyrk2.md"
+  ],
+  "verification_status": "partial"
+}

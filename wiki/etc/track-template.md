@@ -51,3 +51,17 @@ tags: [template, research track, falsification]
 ## 10. What remains true if this track fails
 
 [Reusable system knowledge, validated method, or surviving tracks.]
+
+## 11. Research leads
+
+Use only for a novel connection that is worth preserving but not ready for a committed falsification card. Research Conjecture is an epistemic status, not an evidence level.
+
+> **Research conjecture — [short title]**{ .research-conjecture-label }
+>
+> **Grounded premises:** [Source-backed premises with evidence levels and provenance.]
+>
+> **Novel leap:** [Exact untested connection; state that direct evidence is absent.]
+>
+> **Why it matters:** [Upside if true.]
+>
+> **Discriminating observation:** [Cheapest observation or experiment that advances, redirects, or kills the lead.]

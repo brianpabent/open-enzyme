@@ -33,6 +33,7 @@ You have read-only repository tools. Use them whenever a load-bearing check depe
 7. **Affected corpus surfaces.** Search for pages whose claim, priority, experiment design, hypothesis status, safety framing, or summary number should change if the comp is correct—or if it is wrong. Separate pages already reconciled from pages still requiring action.
 8. **New meaningful connections.** Look for cross-page implications that the short summary lost. Surface only implications grounded in the artifact and corpus; label mechanistic extrapolations honestly.
 9. **Reader-facing ownership.** Audit every proposed and affected page for the current reader contract. A focused intervention or chassis page owns its evidence, sourcing, delivery, exposure constraints, and falsification gate. Cross-track rankings and comparison tables belong only in portfolio comparison surfaces. Require action for narrative foils, editorial/sweep/phase history, explanations of page placement, personalized treatment instructions, or long duplicated exposition.
+10. **Conjecture preservation.** Audit factual support and idea value separately. An unsupported factual assertion must be corrected, but a grounded, useful untested connection may be rewritten as a compact Research Conjecture with sourced premises, an explicit unsupported leap, its upside, and a discriminating observation. Do not require deletion solely because direct evidence is absent. A negative COMP result kills only the exact claim, inputs, regime, and decision rule it tested; identify adjacent conjectures that survive and any whose required premise actually failed.
 
 ## Verdict and eligibility rule
 
@@ -86,6 +87,9 @@ After the receipt lines, use exactly these headings:
 ## Reader-facing ownership audit
 [Focused-page contract; portfolio-only comparisons; editorial, personalized, or duplicated residue.]
 
+## Conjecture preservation audit
+[Unsupported claims corrected; grounded leads preserved or redirected; exact scope killed by negative results; adjacent ideas that survive.]
+
 ## Generated-output and proposed-update inventory
 | Path | Manifest kind | Inspected completely? | Finding |
 |---|---|---|---|
@@ -98,7 +102,7 @@ After the receipt lines, use exactly these headings:
 - `path` — already consistent / change required — why
 
 ## New connections or implications
-[Grounded cross-corpus implications, or “None found.”]
+[Grounded cross-corpus implications. When direct evidence for the connection is absent, use the Research Conjecture boundary rather than presenting it as a claim. Or “None found.”]
 
 ## Required actions
 1. [Concrete action, owner surface, and verification criterion; or “None.”]

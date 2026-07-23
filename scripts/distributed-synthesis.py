@@ -74,6 +74,13 @@ TYPE_HEADING = {
     "most-curious-thread": "Most Curious Threads",
 }
 
+EPISTEMIC_STATUSES = {
+    "evidence-update",
+    "mechanistic-extrapolation",
+    "research-conjecture",
+    "project-decision",
+}
+
 MODEL_RATES = {
     "google/gemini-2.5-flash": (0.30, 2.50),
     "deepseek/deepseek-v4-pro": (0.435, 0.87),
@@ -330,6 +337,7 @@ Read every SOURCE_SECTION in full. Do not summarize the document. Do not reconci
 Do not emit authoring history, page-creation timing, sweep/review provenance, or corpus-placement narration as scientific atoms.
 Return one JSON object: {{"atoms": [{{"type": one of {sorted(ATOM_TYPES)}, "statement": "atomic statement", "section_id": "supplied id", "path": "supplied path", "start_line": int, "end_line": int, "evidence_level": "Clinical Trial|Animal Model|In Vitro|Mechanistic Extrapolation|Computational|Project decision|Unstated", "excerpt": "short exact source excerpt", "domain": "supplied domain", "dispute": "optional"}}], "covered_section_ids": ["every supplied id"]}}.
 Every supplied section id must appear in covered_section_ids even when it yields no atoms.
+Preserve existing Research Conjectures as atoms without converting their novel leaps into factual claims. Their grounded premises retain their own evidence levels; "Research Conjecture" is an epistemic status, not an evidence level.
 """
     bodies = []
     for section in shard:
@@ -396,8 +404,8 @@ def bridge_prompt(domain_a: str, domain_b: str, atoms_a: list[dict[str, Any]], a
     ]
     return f"""Mission: {MISSION}
 Compare the COMPLETE atomic ledgers for domains {domain_a} and {domain_b}. Trigger paths are attention hints, never scope filters: {triggers}.
-Seek non-obvious connections, contradictions, transferable engineering patterns, shared constraints, discriminating experiments, and real project assumptions worth challenging. Do not invent a project claim to rebut. A track-local failure is not mission failure. Do not rank an intervention by fit with the current yeast or koji work; production and chassis enter only when they change the hypothesized source, delivery, or experiment. Suppress restatements of this active queue:\n{active_queue_fingerprints()}
-Return JSON {{"compared_domains": ["{domain_a}", "{domain_b}"], "candidates": [{{"type": "connection|contradiction|experiment|open-question|priority-action|riskiest-assumption|most-curious-thread", "headline": "...", "hypothesis": "...", "atom_ids": ["at least one from each domain unless contradiction is intra-constraint"], "why_novel": "..."}}]}}. Emit at most the single strongest genuinely novel candidate for this pair; use an empty array rather than a weak restatement.
+Seek non-obvious connections, contradictions, transferable engineering patterns, shared constraints, discriminating experiments, and real project assumptions worth challenging. Be conservative about what you claim and aggressive about what you imagine. Do not require direct evidence for the connecting leap when the premises are grounded and the idea is useful; instead classify it as a research conjecture and make the unsupported leap explicit. Do not invent a project claim to rebut. A track-local failure is not mission failure. Do not rank an intervention by fit with the current yeast or koji work; production and chassis enter only when they change the hypothesized source, delivery, or experiment. Suppress restatements of this active queue:\n{active_queue_fingerprints()}
+Return JSON {{"compared_domains": ["{domain_a}", "{domain_b}"], "candidates": [{{"type": "connection|contradiction|experiment|open-question|priority-action|riskiest-assumption|most-curious-thread", "headline": "...", "hypothesis": "...", "epistemic_status": "evidence-update|mechanistic-extrapolation|research-conjecture|project-decision", "atom_ids": ["at least one from each domain unless contradiction is intra-constraint"], "grounded_premises": ["premise with atom id and evidence boundary", "..."], "novel_leap": "exact untested connection, or empty when not a conjecture", "why_it_matters": "upside if true", "discriminating_observation": "cheapest observation that advances, redirects, or kills it", "why_novel": "..."}}]}}. Emit at most the single strongest genuinely novel candidate for this pair; use an empty array rather than a weak restatement. A research-conjecture candidate must provide every structured conjecture field.
 DOMAIN_A_ATOMS={json.dumps(compact(atoms_a), ensure_ascii=False)}
 DOMAIN_B_ATOMS={json.dumps(compact(atoms_b), ensure_ascii=False)}
 """
@@ -481,8 +489,12 @@ def exact_source_packet(candidate: dict[str, Any], atom_by_id: dict[str, dict[st
 
 def review_prompt(packet: dict[str, Any]) -> str:
     return f"""Mission: {MISSION}
-You are the independent adversarial reviewer. Judge this candidate only from the rehydrated raw sources, exact computational support, and contrary evidence below. Verify evidence tiers; reject invented project claims, restatements, editorial history, and chassis-fit rankings that are not load-bearing to source or delivery; test compartment, dose, timing, topology, host, assay, population, and safety constraints. A negative result kills only the supported scope. `eligible_with_warning` is not clean: every COMP receipt's `lane_adjudication.synthesis_allowed_scope` and `forbidden_inferences` is binding. Reject any candidate that exceeds that scope, and carry the limitations into the promoted text. If genuinely novel and actionable, give the cheapest discriminating next step. The promoted body is a queue action brief, not ready-to-paste reader prose: name the correct canonical owner. A focused intervention or chassis page may receive only its own evidence/source/delivery/exposure/falsification update; route genuinely comparative conclusions to a portfolio comparison surface rather than adding a comparison section to one track's page.
-Return JSON {{"status": "supported|partial|contradicted|restatement|speculative-but-testable|rejected", "promote": true|false, "type": "connection|contradiction|experiment|open-question|priority-action|riskiest-assumption|most-curious-thread", "headline": "...", "body": "grounded Markdown with source paths and evidence levels", "review": "concise adversarial verdict", "cheapest_next_step": "... or none", "comp_limitations_carried": ["..."]}}.
+You are the independent adversarial reviewer. Judge this candidate only from the rehydrated raw sources, exact computational support, and contrary evidence below. Verify evidence tiers; reject invented project claims, restatements, editorial history, and chassis-fit rankings that are not load-bearing to source or delivery; test compartment, dose, timing, topology, host, assay, population, and safety constraints. A negative result kills only the supported scope. `eligible_with_warning` is not clean: every COMP receipt's `lane_adjudication.synthesis_allowed_scope` and `forbidden_inferences` is binding. Reject any candidate that exceeds that scope, and carry the limitations into the promoted text.
+
+Apply two independent tests. First, audit whether every premise is supported at the stated evidence level. Second, decide whether the connecting leap is novel, useful, and discriminable. Lack of direct evidence for the leap is not itself a rejection reason: promote a grounded, useful untested connection as `research-conjecture`, with the leap explicitly unsupported. Reject it when a required premise fails, it is a restatement, it has no plausible discriminating observation, or its upside is too weak to justify attention.
+
+The promoted body is a queue action brief, not ready-to-paste reader prose: name the correct canonical owner. A focused intervention or chassis page may receive only its own evidence/source/delivery/exposure/falsification update; route genuinely comparative conclusions to a portfolio comparison surface rather than adding a comparison section to one track's page. For a research conjecture, the queue action must instruct the owner to use the compact conjecture block and must not leave the scientific idea only in the queue.
+Return JSON {{"status": "supported|partial|contradicted|restatement|speculative-but-testable|rejected", "promote": true|false, "type": "connection|contradiction|experiment|open-question|priority-action|riskiest-assumption|most-curious-thread", "headline": "...", "epistemic_status": "evidence-update|mechanistic-extrapolation|research-conjecture|project-decision", "canonical_owner": "existing repo-relative wiki Markdown path", "body": "grounded queue-action Markdown with source paths and evidence levels; concise for conjectures", "grounded_premises": ["premise plus evidence level and source path"], "novel_leap": "exact unsupported leap, or empty when not a conjecture", "why_it_matters": "upside", "discriminating_observation": "cheapest observation that advances, redirects, or kills it", "review": "concise adversarial verdict", "cheapest_next_step": "... or none", "comp_limitations_carried": ["..."]}}.
 PACKET={json.dumps(packet, ensure_ascii=False)}
 """
 
@@ -648,6 +660,17 @@ def run_pipeline(args: argparse.Namespace) -> dict[str, Any]:
         for candidate in payload["candidates"]:
             if candidate.get("type") not in TYPE_HEADING:
                 raise RuntimeError("Bridge candidate has invalid type")
+            if candidate.get("epistemic_status") not in EPISTEMIC_STATUSES:
+                raise RuntimeError("Bridge candidate has invalid epistemic status")
+            if candidate["epistemic_status"] == "research-conjecture":
+                required = (
+                    candidate.get("grounded_premises"),
+                    candidate.get("novel_leap"),
+                    candidate.get("why_it_matters"),
+                    candidate.get("discriminating_observation"),
+                )
+                if not isinstance(required[0], list) or not all(required):
+                    raise RuntimeError("Research-conjecture candidate lacks its structured boundary")
             candidate["domain_pair"] = [domain_a, domain_b]
             candidate["candidate_id"] = canonical_hash(candidate)[:24]
             candidates.append(candidate)
@@ -671,12 +694,30 @@ def run_pipeline(args: argparse.Namespace) -> dict[str, Any]:
             "supported", "partial", "contradicted", "restatement", "speculative-but-testable", "rejected"
         } or not isinstance(verdict.get("promote"), bool):
             raise RuntimeError("Adversarial reviewer violated verdict contract")
+        if verdict.get("epistemic_status") not in EPISTEMIC_STATUSES:
+            raise RuntimeError("Adversarial reviewer returned invalid epistemic status")
         verdict["candidate_id"] = candidate["candidate_id"]
         write_json(work / "reviews" / f"{candidate['candidate_id']}.json", verdict)
         reviewed_ids.append(candidate["candidate_id"])
         if verdict["promote"]:
-            if verdict.get("type") not in TYPE_HEADING or not verdict.get("headline") or not verdict.get("body"):
-                raise RuntimeError("Promoted verdict lacks type, headline, or grounded body")
+            if (
+                verdict.get("type") not in TYPE_HEADING
+                or not verdict.get("headline")
+                or not verdict.get("body")
+                or not verdict.get("canonical_owner")
+            ):
+                raise RuntimeError("Promoted verdict lacks type, headline, canonical owner, or grounded body")
+            if verdict["epistemic_status"] == "research-conjecture":
+                premises = verdict.get("grounded_premises")
+                if (
+                    not isinstance(premises, list)
+                    or not premises
+                    or not all(
+                        isinstance(verdict.get(field), str) and verdict[field].strip()
+                        for field in ("novel_leap", "why_it_matters", "discriminating_observation")
+                    )
+                ):
+                    raise RuntimeError("Promoted research conjecture lacks its structured epistemic boundary")
             promoted.append(verdict)
 
     promoted, deduplicated_ids = deduplicate_promoted(promoted)

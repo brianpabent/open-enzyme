@@ -248,5 +248,6 @@ Detailed technical analyses for the uricase, yeast, and koji engineering tracks.
 - **`logs/`** — Compact automation state.
 - **`reference/`** — Read-only published papers, external reports, vendor data, and generated source material.
 - **Evidence levels** on every claim: `Clinical Trial`, `Animal Model`, `In Vitro`, or `Mechanistic Extrapolation`.
+- **Research Conjecture** is not an evidence level. It marks a grounded but untested connection, separates sourced premises from the novel leap, and names the observation that could advance or kill it.
 - **Inline provenance** on factual claims: `(source: <filename>)`.
 - **Git is the revision history** — no inline changelogs; use `git log -p <file>` to see what changed.

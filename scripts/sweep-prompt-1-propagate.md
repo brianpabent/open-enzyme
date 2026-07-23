@@ -6,7 +6,7 @@ Read `CLAUDE.md`, then the exact trigger paths appended to this prompt. This is 
 
 ## Do
 
-1. Extract changed claims, evidence levels, assumptions, decisions, and track status.
+1. Extract changed claims, evidence levels, Research Conjectures, assumptions, decisions, and track status.
 2. Search for direct dependents across `wiki/`, `wiki/hypotheses/`, `index.md`, and `mkdocs.yml`.
 3. Keep the complete evidence in one canonical home. On other pages, add only the local decision delta and a link.
 4. Rewrite contradicted claims in place. Do not leave a stale claim beside its correction.
@@ -15,6 +15,7 @@ Read `CLAUDE.md`, then the exact trigger paths appended to this prompt. This is 
 7. Use standard Markdown links, explicit evidence levels, and inline provenance.
 8. Preserve the reader contract: exploit and evidence first, then source, delivery, exposure constraints, and falsification. Mention a chassis only when it changes an active sourcing or delivery decision.
 9. Preserve page ownership. A focused intervention or chassis page must stand on its own; never use another track as its narrative foil. Put genuine cross-track rankings and comparison tables only in portfolio surfaces such as `wiki/modality-chokepoint-matrix.md` or `wiki/chassis-pending-interventions.md`.
+10. Audit conjecture premises separately from their novel leaps. If a changed premise strengthens, weakens, redirects, or defeats an existing Research Conjecture, update that compact block on its owning page and any one-line index link. Do not delete it merely because direct evidence is absent. A negative result invalidates only the claim and regime it tested.
 
 ## Do not
 
@@ -27,6 +28,7 @@ Read `CLAUDE.md`, then the exact trigger paths appended to this prompt. This is 
 - copy long exposition between pages;
 - add revision histories, successful-run logs, or completed queue artifacts;
 - perform cross-corpus novelty search or create synthesis findings;
+- turn a Research Conjecture into a factual claim, treat it as an evidence level, or leave its only scientific copy in the action queue;
 - edit `reference/`, HTML, workflow/code/instruction files, or `synthesis/queue/`.
 
 Before propagating a COMP-backed trigger, read its record in `logs/sweep-state.json` and its current `reviews/push-review.json` receipt. `eligible_with_warning` is not clean: obey the receipt's `lane_adjudication.propagation_allowed_scope` and `forbidden_inferences`. When that scope says corrective-only, repair or retract stale claims but do not spread any derived claim. A `blocked` COMP is excluded by the coordinator. The coordinator handles cursor state and commits. Make no commit yourself.

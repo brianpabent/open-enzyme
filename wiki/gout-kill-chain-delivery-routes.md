@@ -291,7 +291,7 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 **Clinically validated routes:**
 - SC: Anakinra, canakinumab, and rilonacept establish systemic IL-1-blockade routes with different indications and evidence bases. Product-specific labeling and trials define their clinical scope. **Clinical Trial.**
 - IV anakinra has adjacent clinical use but is not a standard gout-route comparator.
-- IA anakinra: small case series for acute gout flare — delivers high local concentrations without systemic immunosuppression. No large RCT. (Mechanistic Extrapolation with small case series)
+- IA anakinra: the gout evidence cited here uses systemic administration, including a randomized non-inferiority trial (PMID 30602035); it does not establish intra-articular delivery. Joint retention, systemic leakage, tissue safety, and gout efficacy for the IA route remain unmeasured. (Clinical Trial — systemic mechanism; Mechanistic Extrapolation — IA route)
 
 **Routes that fail and why:**
 - PO biologics (anakinra/canakinumab oral): GI proteases destroy recombinant proteins. Small-molecule IL-1R1 antagonists would solve this but none are approved.
@@ -322,6 +322,18 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 - **IA stable SPM analog:** A chemically modified resolvin or protectin analog (modified at metabolically vulnerable positions) delivered IA at flare onset could actively command resolution from within the joint. No clinical program. The topical resolvin E1 analog proof-of-concept (dry eye, Phase 2) demonstrates that stable SPM analogs are chemically achievable. (Mechanistic Extrapolation — IA route; no human trial)
 - **Aspirin-triggered SPM hypothesis:** Aspirin can redirect COX-2 toward aspirin-triggered mediators, but the joint exposure and gout effect of a combined precursor strategy are untested. A controlled study must measure mediator formation and joint-relevant target engagement before efficacy interpretation. **Mechanistic Extrapolation.**
 - **Lactoferrin expression route:** Lactoferrin has indirect ALX/FPR2-related hypotheses and heterologous expression precedent in *A. awamori* and *P. pastoris*. That supports an expression experiment, not a delivered CP5b effect or the safety of an engineered food format. See [nlrp3-exploit-map.md](./nlrp3-exploit-map.md).
+
+### Research conjecture — a local multi-node flare intervention may outperform single-node IA blockade
+
+> **Research conjecture — A local multi-node flare intervention may outperform single-node IA blockade**{ .research-conjecture-label }
+>
+> **Grounded premises:** An IA colchicine-loaded nanoemulsion reduced inflammation in a rat gout model (**Animal Model**; PMID 34032545). Systemic anakinra established IL-1R1 blockade as active in acute gout (**Clinical Trial**; PMID 30602035). Intrathecal or intraperitoneal RvD1 reduced gout-relevant inflammatory readouts in mice (**Animal Model**; PMID 35716378).
+>
+> **Novel leap:** A joint-retained combination spanning inflammasome/ASC control, IL-1R1 blockade, and active resolution might stop amplification and accelerate resolution with less systemic exposure. No direct evidence tests this combination, its timing, or whether the components add value rather than toxicity.
+>
+> **Why it matters:** Acute flares are spatially localized and sequentially amplified; a local factorial could reveal whether multi-node coverage is an engineering advantage rather than merely more drug.
+>
+> **Discriminating observation:** Start with a staged ex-vivo synovial/macrophage factorial, then an MSU-joint model, measuring retained exposure, IL-1β, neutrophil influx, resolution kinetics, cartilage toxicity, and whether each added arm beats the best singleton.
 
 ---
 

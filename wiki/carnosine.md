@@ -33,8 +33,20 @@ Carnosine's relevance to gout spans two distinct axes — urate handling and inf
 - **ROS scavenging.** Classical activity — carnosine chelates transition metals, quenches singlet oxygen and hydroxyl radicals, and scavenges reactive carbonyl species (methylglyoxal, 4-HNE). ROS reduction sits upstream of NLRP3 priming. (In Vitro)
 - **NF-κB axis suppression.** Reduces p-p65 phosphorylation and nuclear translocation in inflamed tissues; downstream effect is reduced pro-IL-1β and NLRP3 transcription. (In Vitro and Animal Model)
 - **JNK pathway suppression.** Reduces p-JNK in hyperuricemia rat renal tissue. (Animal Model; source: nlrp3-inhibitor-screen.md)
-- **Renal urate transporter modulation.** In hyperuricemia rat models, carnosine downregulated URAT1 (SLC22A12, reabsorption) and GLUT9 (SLC2A9, reabsorption) in renal proximal tubule, increasing urate excretion. This is a physiology-level effect, not just an anti-inflammatory one. (Animal Model; source: nlrp3-inhibitor-screen.md) The URAT1-downregulating effect is mechanistically opposite to the androgen-driven URAT1 upregulation described in [androgen-urate-axis.md](./androgen-urate-axis.md) — making carnosine particularly well-matched to androgen-driven hyperuricemia (TRT/SERM/AAS patients). Note: carnosine's renal URAT1/GLUT9 modulation is mechanistically distinct from ABCG2 modulation (the gut-lumen-sink axis covered in [abcg2-modulators.md](./abcg2-modulators.md)); carnosine addresses the renal reabsorption arm while ABCG2 modulators address the intestinal secretion arm — complementary, non-overlapping.
+- **Renal urate transporter modulation.** In hyperuricemia rat models, carnosine downregulated URAT1 (SLC22A12, reabsorption) and GLUT9 (SLC2A9, reabsorption) in renal proximal tubule, increasing urate excretion. This is a physiology-level effect, not just an anti-inflammatory one. (**Animal Model**; source: nlrp3-inhibitor-screen.md) This renal reabsorption mechanism is distinct from intestinal ABCG2 modulation; neither establishes additivity with a gut-lumen sink.
 - **HDAC and SIRT1 interaction.** Carnosine shows evidence of HDAC inhibitory activity and SIRT1 modulation in in-vitro systems, which overlaps with BHB/β-hydroxybutyrate's proposed anti-inflammatory mechanism. (In Vitro; Mechanistic Extrapolation for translation to gout.)
+
+### Research conjecture — carnosine may counter an androgen-associated renal urate phenotype
+
+> **Research conjecture — Carnosine may counter an androgen-associated renal urate phenotype**{ .research-conjecture-label }
+>
+> **Grounded premises:** Testosterone increased renal URAT1-pathway activity in mouse studies (**Animal Model**; [androgen–urate axis](./androgen-urate-axis.md), PMID 20589576). Carnosine downregulated renal URAT1 and GLUT9 while reducing urate in a separate hyperuricemia rat model (**Animal Model**; source: nlrp3-inhibitor-screen.md).
+>
+> **Novel leap:** Carnosine might preferentially offset androgen-associated renal urate retention. No direct evidence from an androgen × carnosine experiment or human phenotype-stratified study establishes that interaction.
+>
+> **Why it matters:** A positive interaction would identify a testable, phenotype-specific urate-disposal lead while retaining carnosine's separate inflammasome rationale.
+>
+> **Discriminating observation:** In an androgen-perturbed hyperuricemia model, compare carnosine with vehicle under matched exposure and measure serum and urinary urate, URAT1/GLUT9 protein, fractional urate excretion, and NLRP3 readouts.
 
 ## Gout-specific evidence
 
@@ -62,6 +74,6 @@ Carnosine's relevance to gout spans two distinct axes — urate handling and inf
 ## Cross-references
 
 - [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md) — comparative rationale and evidence summary.
-- [androgen-urate-axis.md](./androgen-urate-axis.md) — URAT1 upregulation mechanism driven by testosterone; carnosine as the mechanistically mirror-image countermeasure.
+- [androgen-urate-axis.md](./androgen-urate-axis.md) — androgen–urate evidence and the untested combined mechanism.
 - [supplements-stack.md](./supplements-stack.md) — carnosine as a standalone supplement entry (separate doc track).
 - [gout-deep-dive.md](./gout-deep-dive.md) — overall gout mechanism context (hyperuricemia, NLRP3, MSU flare).

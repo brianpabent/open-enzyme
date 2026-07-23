@@ -52,6 +52,15 @@ A topic-organized index of unresolved scientific, translational, safety, and del
 
 Include a question when the answer could change a mechanism verdict, evidence tier, target population, safety boundary, delivery route, or experiment sequence. Exclude authoring history, outreach logistics, and duplicated queue state.
 
+Research Conjectures live on the page that owns their mechanism. This page may carry a one-line title and link for discovery, but not a second copy of the premises or argument.
+
+## Research conjectures
+
+- **Could local lactoferrin exposure restore intestinal urate export by relieving TNFα-driven ABCG2 suppression?** See the grounded premises, unsupported leap, and discriminating co-culture observation in [ABCG2 modulators](./abcg2-modulators.md#research-conjecture-lactoferrin-could-couple-inflammatory-relief-to-urate-export).
+- **Could carnosine preferentially counter an androgen-associated renal urate phenotype?** See the separate animal-model premises and the untested combined experiment in [carnosine](./carnosine.md#research-conjecture-carnosine-may-counter-an-androgen-associated-renal-urate-phenotype).
+- **Could selenium availability gate microbial urate disposal even when PDB genes are present?** See the DOPDH cofactor premise and paired abundance-versus-flux test in [purine-degrading bacteria](./purine-degrading-bacteria.md#research-conjecture-selenium-availability-may-gate-microbial-urate-disposal).
+- **Could a joint-retained multi-node flare intervention outperform the best single intra-articular arm?** See the route-specific premises and staged factorial in the [gout kill-chain delivery analysis](./gout-kill-chain-delivery-routes.md#research-conjecture-a-local-multi-node-flare-intervention-may-outperform-single-node-ia-blockade).
+
 ---
 
 ## Uricase / Enzyme Engineering
@@ -218,7 +227,7 @@ Organized by compound, with links to supporting evidence and experiments.
 - **Koji carnosine co-expression feasibility.** No published carnosine-in-koji data; target is mechanistic extrapolation. See [engineered-koji-protocol.md §15](./engineered-koji-protocol.md), [validation-experiments.md §1.24](./validation-experiments.md).
 - **Serum carnosinase (CN1) half-life limits.** Whether rapid cleavage caps peak systemic exposure below effective NLRP3-suppression concentration in humans is unresolved. Carnosinase-resistant analogs (D-carnosine, N-acetyl-carnosine) not yet gout-tested. See [carnosine.md Open questions](./carnosine.md).
 - **Carnosine + uricase co-delivery: additive, synergistic, or flat?** Complementary mechanisms (renal URAT1/GLUT9 vs. luminal urate degradation). See [carnosine.md Open questions](./carnosine.md).
-- **Androgen + carnosine combined experiment not yet run.** The "precision countermeasure" framing in [koji-endgame-strain.md §2.5](./koji-endgame-strain.md) composes two Animal Model links (androgen → URAT1↑ in one set of experiments; carnosine → URAT1↓ in a different set). A combined experiment — hyperuricemia rat on androgen supplementation + carnosine co-treatment vs. androgen alone — would directly confirm or falsify the precision-countermeasure claim. (Mechanistic Extrapolation; source: koji-endgame-strain.md §2.5)
+- **Androgen + carnosine combined experiment not yet run.** See the compact [Research Conjecture and discriminating observation](./carnosine.md#research-conjecture-carnosine-may-counter-an-androgen-associated-renal-urate-phenotype).
 
 ### Zileuton
 
@@ -403,7 +412,7 @@ See [purine-degrading bacteria](./purine-degrading-bacteria.md). The 2,8-dioxopu
 
 **PDB-Q2 — Does PDB-derived butyrate at physiological gut concentrations activate ABCG2 via PPARγ?** The butyrate → PPARγ → ABCG2 mechanism is established at pharmacological doses and for dietary fiber effects (DASH RCT, Li 2023 PMID 36948133). Whether native PDB flux generates enough luminal butyrate to meaningfully activate this axis is unresolved. This is a tractable Caco-2 experiment: measure ABCG2 expression in enterocyte monolayers at the butyrate concentrations achievable via gut PDB fermentation vs. pharmacological sodium butyrate doses. **Estimated cost: $2,000–5,000 if a wet-lab partner has Caco-2 capability.** *(In Vitro; immediately testable)*
 
-**PDB-Q3 — Does selenium availability limit gut PDB activity in humans?** DOPDH is selenium-dependent, but selenium status has not been linked to pathway flux, microbial abundance, and serum urate in the same human study. Resolve the question with controlled microbial assays and genotype/metagenome-linked observational data before considering an intervention. **Mechanistic Extrapolation.**
+**PDB-Q3 — Does selenium availability limit gut PDB activity in humans?** See the compact [Research Conjecture and paired abundance-versus-flux test](./purine-degrading-bacteria.md#research-conjecture-selenium-availability-may-gate-microbial-urate-disposal).
 
 **PDB-Q4 — Can yanthine (2,8-dioxopurine) be measured reproducibly in a clinically accessible matrix?** The reported case-control difference makes yanthine a candidate pathway biomarker, not a validated measure of individual PDB function. Identify a validated assay, matrix, stability window, reference range, and relation to metagenomic pathway abundance before using it for stratification. **Human biomarker candidate.**
 

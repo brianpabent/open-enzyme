@@ -84,6 +84,26 @@ READER_RESIDUE_PATTERNS = {
         re.I | re.M,
     ),
 }
+CONJECTURE_START = re.compile(
+    r"^\s*>\s*\*\*Research conjecture\s+[—-]\s+.+?\*\*\{\s*\.research-conjecture-label\s*\}\s*$",
+    re.I,
+)
+CONJECTURE_PREFIX = re.compile(r"^\s*>\s*\*\*Research conjecture\b", re.I)
+CONJECTURE_FIELDS = (
+    "Grounded premises",
+    "Novel leap",
+    "Why it matters",
+    "Discriminating observation",
+)
+EVIDENCE_TAG = re.compile(
+    r"\b(?:Clinical Trial|Animal Model|In Vitro|Mechanistic Extrapolation|Computational)\b",
+    re.I,
+)
+SOURCE_ANCHOR = re.compile(r"\b(?:PMID|DOI|source:)\b|\[[^\]]+\]\([^)]+\)", re.I)
+UNSUPPORTED_BOUNDARY = re.compile(
+    r"\b(?:no direct (?:evidence|study)|not directly tested|unmeasured|unsupported|unvalidated)\b",
+    re.I,
+)
 
 
 def rel(path: Path) -> str:
@@ -119,6 +139,65 @@ def load_allowlist() -> set[str]:
     return set(json.loads(ALLOWLIST.read_text()).get("allowed_sha256", []))
 
 
+def check_research_conjectures(name: str, text: str) -> list[str]:
+    """Validate compact, visually distinct claim/conjecture boundaries."""
+    errors: list[str] = []
+    lines = text.splitlines()
+    index = 0
+    while index < len(lines):
+        line = lines[index]
+        if not CONJECTURE_PREFIX.match(line):
+            index += 1
+            continue
+        line_number = index + 1
+        if not CONJECTURE_START.match(line):
+            errors.append(
+                f"{name}:{line_number}: Research Conjecture block must use the exact "
+                "title marker and .research-conjecture-label class"
+            )
+        block_lines = [line]
+        index += 1
+        while index < len(lines) and re.match(r"^\s*>", lines[index]):
+            block_lines.append(lines[index])
+            index += 1
+        block = "\n".join(block_lines)
+        for field in CONJECTURE_FIELDS:
+            count = len(re.findall(rf"^\s*>\s*\*\*{re.escape(field)}:\*\*", block, re.I | re.M))
+            if count != 1:
+                errors.append(
+                    f"{name}:{line_number}: Research Conjecture requires exactly one "
+                    f"'**{field}:**' field; found {count}"
+                )
+        words = re.findall(r"\b[\w’-]+\b", re.sub(r"\{[^}]+\}", "", block))
+        if len(words) > 220:
+            errors.append(
+                f"{name}:{line_number}: Research Conjecture is {len(words)} words; "
+                "keep the complete block at or below 220"
+            )
+        premises = re.search(
+            r"^\s*>\s*\*\*Grounded premises:\*\*(.*?)(?=^\s*>\s*\*\*Novel leap:\*\*)",
+            block,
+            re.I | re.M | re.S,
+        )
+        if premises and (
+            not EVIDENCE_TAG.search(premises.group(1))
+            or not SOURCE_ANCHOR.search(premises.group(1))
+        ):
+            errors.append(
+                f"{name}:{line_number}: grounded premises need an evidence tag and source anchor"
+            )
+        leap = re.search(
+            r"^\s*>\s*\*\*Novel leap:\*\*(.*?)(?=^\s*>\s*\*\*Why it matters:\*\*)",
+            block,
+            re.I | re.M | re.S,
+        )
+        if leap and not UNSUPPORTED_BOUNDARY.search(leap.group(1)):
+            errors.append(
+                f"{name}:{line_number}: novel leap must explicitly say direct evidence is absent"
+            )
+    return errors
+
+
 def check_content(files: list[Path]) -> tuple[list[str], list[str]]:
     errors: list[str] = []
     reports: list[str] = []
@@ -149,6 +228,7 @@ def check_content(files: list[Path]) -> tuple[list[str], list[str]]:
                     line = text[:match.start()].count("\n") + 1
                     errors.append(f"{name}:{line}: adversarial section lacks a real-claim source anchor")
         if READER_SURFACE.match(name):
+            errors.extend(check_research_conjectures(name, text))
             for label, pattern in READER_RESIDUE_PATTERNS.items():
                 if label == "winner table on a focused page" and name in PORTFOLIO_COMPARISON_SURFACES:
                     continue

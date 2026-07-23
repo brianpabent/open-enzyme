@@ -22,8 +22,10 @@ Two main use cases:
    INCLUDING synthesis/queue/, so it sees what the daemon has already
    surfaced and can produce a differential.
 
-Reads OPENROUTER_API_KEY from env first, falls back to .env. Saves output
-to logs/fresh-synth-<model-slug>-<date>.md. Reports token usage and cost.
+Reads OPENROUTER_API_KEY from env first, falls back to .env. Saves the raw
+output under the system temporary directory for short-lived review. Apply any
+accepted finding to its canonical wiki owner, then discard the raw file; Git
+and the current corpus are the durable record. Reports token usage and cost.
 
 Run from the repo root:
     python3 scripts/fresh-synthesis.py
@@ -144,8 +146,10 @@ Your task: do an independent Pass-2-style synthesis on the same corpus, then com
 
 1. Read the entire corpus below (files concatenated under `=== filename ===` markers).
 2. Read the most recent block at the top of `synthesis/queue/` carefully — that's what the daemon's Pass 2 surfaced (with Pass 3 review verdicts inline).
-3. Generate your own synthesis: new connections you would surface, contradictions you spot, experiments you would propose, open questions you would flag.
-4. Add a final **Differential Analysis** section: which of the daemon's findings do you confirm, partially-confirm, push back on, or reject? What did the daemon miss that you found? What did the daemon find that you did not? Be specific — cite document names and PMIDs where applicable.
+3. Run a grounding pass: identify the source-backed premises, evidence boundaries, contradictions, and constraints that can support or block cross-domain reasoning.
+4. Run a deliberately creative connection pass. Be conservative about what you claim and aggressive about what you imagine. Seek high-upside connections between seemingly separate details. Direct evidence for the connecting leap is not required when the premises are grounded; label that output **Research Conjecture**, isolate the unsupported leap, and name a discriminating observation.
+5. Run a boundary pass: reject only candidates with a failed premise, a disguised factual claim, a restatement, no discriminating observation, or too little upside. A negative result kills only the scope actually tested.
+6. Add a final **Differential Analysis** section: which of the daemon's findings do you confirm, partially-confirm, push back on, or reject? What did the daemon miss that you found? What did the daemon find that you did not? Be specific — cite document names and PMIDs where applicable.
 
 Output format:
 
@@ -157,7 +161,10 @@ Output format:
 
 ### New Connections
 
-(numbered, each with Documents Connected / Why It Matters / Suggested Action / Supported-or-Speculative tag)
+(numbered; use either a source-backed finding or this compact structure:
+Epistemic status: Research Conjecture / Grounded Premises with evidence tags and sources /
+Novel Leap with explicit absence of direct evidence / Why It Matters /
+Discriminating Observation / Canonical Owner)
 
 ### Contradictions Found
 
@@ -177,7 +184,7 @@ Missed here (daemon caught): ...
 
 Discipline:
 - Tag every substantive claim with evidence level: **Clinical Trial / Animal Model / In Vitro / Mechanistic Extrapolation**.
-- Mark each Connection as **Supported** (multiple sources align) or **Speculative** (reasonable but unvalidated).
+- **Research Conjecture is not an evidence level.** Its premises retain evidence tags; its leap is explicitly unsupported.
 - Cite specific document names and PMIDs where applicable.
 - Do NOT propose file edits. Do NOT generate commit messages. Synthesis text only.
 - Honest framing: PhD audience. No marketing language. Distinguish proven from speculative.
@@ -277,8 +284,9 @@ print(f"  Cost:          ${total_cost:.4f}  (in: ${input_cost:.4f}, out: ${outpu
 date_str = datetime.date.today().isoformat()
 # Model-tagged filename so head-to-head runs on the same date don't overwrite.
 model_tag = args.model.split("/")[-1].replace("-pro", "").replace("-", "")
-output_path = f"logs/fresh-synth-{model_tag}-{date_str}.md"
-os.makedirs("logs", exist_ok=True)
+output_dir = os.path.join(tempfile.gettempdir(), "open-enzyme-fresh-synthesis")
+output_path = os.path.join(output_dir, f"fresh-synth-{model_tag}-{date_str}.md")
+os.makedirs(output_dir, exist_ok=True)
 
 header = f"""---
 title: "Fresh synthesis ({args.model}) — {date_str}"
@@ -310,4 +318,4 @@ with open(output_path, "w") as f:
     f.write(header + content + "\n")
 
 print(f"\nSaved: {output_path}")
-print(f"\nNext: read {output_path} and compare its Differential Analysis section against the most recent sweep block at the top of synthesis/queue/.")
+print(f"\nNext: review {output_path}, route accepted findings to their canonical wiki owners, and delete the temporary file.")

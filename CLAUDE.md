@@ -30,7 +30,7 @@ Prefer standard markdown links (`[text](./path.md)`) over `[[wiki-links]]` in an
 Top of file: current mission and portfolio state, synthesis queue pointer, cheapest-next-experiments table. Bottom: concept index + primary-research doc list + AI-analysis links. This is the "what should I look at?" landing page.
 
 ### logs/ — Compact machine-readable receipts
-`logs/sweep-state.json` holds the current propagation cursor, synthesis cursor, current per-COMP eligibility, and unresolved failures. `logs/evidence-radar-state.json` holds replaceable source cursors, review backlogs/monitors, and the latest query/review receipt; the deterministic compressed trial-fingerprint store sits beside it in `logs/evidence-radar-clinical-records.json.gz`. Both are operational state and excluded from synthesis. `logs/lit-scans/*.json` retains compact literature-search reproducibility receipts: exact queries, sources attempted, counts, failures, translation checks, and verification status. Scientific findings live only in canonical wiki pages; do not store a second findings narrative in logs. Successful automation history belongs in GitHub Actions and Git, not an append-only live ledger.
+`logs/sweep-state.json` holds the current propagation cursor, synthesis cursor, current per-COMP eligibility, and unresolved failures. `logs/evidence-radar-state.json` holds replaceable source cursors, review backlogs/monitors, and the latest query/review receipt; the deterministic compressed trial-fingerprint store sits beside it in `logs/evidence-radar-clinical-records.json.gz`. `logs/chembl-refresh-state.json` is the replaceable latest-run ChEMBL query/failure receipt. These are operational state and excluded from synthesis. `logs/lit-scans/*.json` retains compact literature-search reproducibility receipts: exact queries, sources attempted, counts, failures, translation checks, and verification status. Scientific findings live only in canonical wiki pages; do not store a second findings narrative in logs. Successful automation history belongs in GitHub Actions and Git, not an append-only live ledger.
 
 ### reference/ — Canonical (read-only)
 Published papers, external reports, vendor data, machine-generated output (under `reference/generated/`). Never modified by the daemon or by AI edits. Cite as provenance.
@@ -44,6 +44,33 @@ No inline revision-history sections in documents. Use `git log -p <file>` to see
 ---
 
 ## Core Rules
+
+### 0. Epistemic operating principle
+
+**Be conservative about what we claim and aggressive about what we imagine.**
+
+Accuracy and creativity are separate obligations:
+
+- A factual claim must remain inside its source and evidence boundary.
+- A **Mechanistic Extrapolation** connects established premises by a supported inference.
+- A **Research Conjecture** preserves a novel, useful leap that has not been directly tested. It is an epistemic status, not an evidence level and not permission to present the leap as fact.
+- Lack of direct evidence is a reason to label and test a good idea, not automatically a reason to delete it. Delete a conjecture when it is duplicated, no longer useful, or a required premise fails. A negative result kills only the scope it tested.
+
+Put a compact conjecture on the wiki page that owns its mechanism. Use this exact shape and keep the whole block near 100–200 words:
+
+```markdown
+> **Research conjecture — [short title]**{ .research-conjecture-label }
+>
+> **Grounded premises:** [Source-backed premises, each with its evidence level and provenance.]
+>
+> **Novel leap:** [The untested connection. Say explicitly that direct evidence is absent.]
+>
+> **Why it matters:** [The upside if the leap is true.]
+>
+> **Discriminating observation:** [The cheapest observation or experiment that would advance, redirect, or kill it.]
+```
+
+`wiki/open-questions.md` may index the lead with a one-line link; do not copy the block. Promote a lead to `wiki/hypotheses/` only when it is specific enough for a falsification card and Brian is ready to commit resources. `synthesis/queue/` holds the unresolved action needed to route or test a lead, never the only copy of the scientific idea. When the action closes, update the owning page and delete the queue file; Git is the archive.
 
 ### 1. Propagation and synthesis rule
 When new information emerges, re-evaluate every current page that depends on the affected concept. Bounded propagation runs on relevant pushes. Full-corpus synthesis is separate and manual: it reads the complete current corpus twice, compares all domain pairs, rehydrates candidates from raw sources, and independently reviews them. Never trigger full synthesis merely to publish or propagate a push.
@@ -72,7 +99,7 @@ Example: If a new NLRP3 inhibitor is discovered, update:
 **Tone:** Honest, rigorous, direct. Audience = PhD scientists.
 
 **Standards:**
-- Distinguish proven from speculative (see Rule 5)
+- Distinguish evidence, mechanistic extrapolation, and research conjecture (see Rules 0 and 5)
 - No marketing language or overselling
 - State assumptions and limitations clearly
 - Cite primary sources; include evidence level
@@ -118,6 +145,8 @@ Follow the per-claim protocol in [`manual-literature-mining.md`](./wiki/etc/manu
 
 Attach the tag and source close to the claim. Do not infer a higher tier from a downstream marker, adjacent disease, or computational prediction.
 
+**Research Conjecture is not a fifth evidence level.** Apply evidence tags to its grounded premises, then isolate the unsupported leap in the conjecture block. Do not relabel an unsupported factual assertion as a conjecture merely to save it; the block must contain a real connection, a reason it matters, and a discriminating observation.
+
 ### 6. Cross-References & Links
 
 **In wiki pages:**
@@ -155,7 +184,7 @@ These are frequently cited or mechanistically central. Use as touchstones:
 
 ## Authoring workflow
 
-Publishing and bounded propagation run on relevant pushes; full-corpus synthesis runs only on explicit request. For new evidence: identify affected concepts, update the evidence page and direct dependents, tag evidence and provenance, update `index.md` only for discoverability or mission/portfolio changes, then run link, privacy, corpus-hygiene, and relevant test checks. Changed COMP artifacts require current push review before derived claims become eligible.
+Publishing and bounded propagation run on relevant pushes; full-corpus synthesis runs only on explicit request. For new evidence: identify affected concepts, update the evidence page and direct dependents, tag evidence and provenance, update or redirect any conjecture whose premises changed, and update `index.md` only for discoverability or mission/portfolio changes. For a new connection: verify its premises, write the unsupported leap as a compact Research Conjecture on the owning page, and index it only when useful. Then run link, privacy, corpus-hygiene, and relevant test checks. Changed COMP artifacts require current push review before derived claims become eligible.
 
 ### Task: Query Reactome pathway data
 

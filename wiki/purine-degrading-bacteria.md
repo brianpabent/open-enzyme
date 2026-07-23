@@ -317,7 +317,19 @@ Strategic implication: a one-time or short-course PDB inoculation + maintained f
 
 3. **PDB gene cluster abundance in characterized gout patient populations.** The dysbiosis cohort data is suggestive but the specific 8-gene PDB cluster (as defined by Liu et al. 2023) has not been prospectively quantified in a well-characterized gout population with SUA and flare data. Needed to define the therapeutic target population.
 
-4. **Selenium status and gut PDB function in humans.** Ecological correlation cited in Liu et al. 2025 but no interventional data. If selenium deficiency phenocopies PDB functional depletion, selenium supplementation could be a trivial, cheap, safe intervention. Testable by correlating serum selenium with fecal PDB gene cluster abundance in existing cohorts.
+4. **Selenium availability as a possible PDB flux gate.** See the bounded Research Conjecture below.
+
+### Research conjecture — selenium availability may gate microbial urate disposal
+
+> **Research conjecture — Selenium availability may gate microbial urate disposal**{ .research-conjecture-label }
+>
+> **Grounded premises:** DOPDH, the entry enzyme in the reductive bacterial urate pathway, is selenium-dependent (**In Vitro**; Liu, Zhou, Jarman et al. 2025, PMID 40770490). The same source discusses population associations between trace-element status and urate, but no human study jointly measures selenium, microbial pathway abundance, pathway flux, and serum urate.
+>
+> **Novel leap:** Suboptimal selenium might create a host-dietary bottleneck that phenocopies low PDB pathway activity even when the organisms and genes are present. No direct evidence from a human cohort or intervention establishes this.
+>
+> **Why it matters:** A host-side cofactor constraint could explain part of the gap between PDB abundance and actual urate disposal without assuming that strain abundance alone is the therapeutic target.
+>
+> **Discriminating observation:** Pair serum selenium, fecal PDB gene-cluster abundance, isotope-resolved urate-to-yanthine/downstream flux, and serum urate in one cohort; use ex-vivo selenium perturbation to test whether flux changes independently of abundance.
 
 5. **Which specific fiber types most selectively expand PDB taxa.** Inulin/FOS enriches Lachnospiraceae/Ruminococcaceae broadly; whether this preferentially expands the PDB-positive fraction (15–25% of this community) vs. PDB-negative members is unknown. Needed for rational prebiotic design.
 

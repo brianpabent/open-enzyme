@@ -13,6 +13,8 @@
 
 A queue file is a reviewed action brief, never ready-to-paste reader prose. Reopen its cited evidence, identify the canonical owner, and write the current scientific state there. Focused pages receive their own evidence/source/delivery/exposure/falsification update; comparative findings go to portfolio comparison surfaces. Other dependents receive only a local decision delta and a link.
 
+When the useful output is a novel but untested connection, close the queue action by writing a compact **Research Conjecture** on the mechanism-owning wiki page. Its grounded premises retain their evidence tags; its novel leap is stated separately as unsupported; it names why the lead matters and the cheapest discriminating observation. Do not reject a useful lead merely because direct evidence is absent, and do not leave it only in the deletable queue. `wiki/open-questions.md` may receive a one-line link. Promote it to `wiki/hypotheses/` only when it is ready for a committed falsification card.
+
 COMP review findings use a stable filename, `comp-review-NNN.md`. A later exact-snapshot review replaces that file or deletes it when clean, so there is never an accumulating review archive in the live tree.
 
 ## Producers

@@ -32,6 +32,6 @@ Koji is an active, falsifiable track—not the project. Its canonical summary is
 
 ## Evidence and status
 
-This is Phase 0 research and design. Pages distinguish clinical trials, animal models, in-vitro evidence, computational results, and mechanistic extrapolation. Computational claims require current exact-artifact review. The site does not provide medical advice.
+This is Phase 0 research and design. Pages distinguish clinical trials, animal models, in-vitro evidence, computational results, and mechanistic extrapolation. Computational claims require current exact-artifact review. A visually distinct **Research Conjecture** is a grounded but untested connection: its premises carry evidence tags, while the novel leap is stated separately and paired with a discriminating observation. It is not a fifth evidence level. The site does not provide medical advice.
 
 The live corpus represents current state. Closed actions and superseded prose are available through Git history rather than duplicated archive pages.

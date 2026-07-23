@@ -17,6 +17,7 @@ If the artifact already contains outputs, wiki verdicts, an earlier review, or a
 7. **Reproducibility contract.** Is the command, environment, dependency policy, random seed, external-service version, input provenance, and deterministic-output claim complete enough for another researcher to reproduce?
 8. **Scope and search framing.** For literature/data-seeded comps, check inclusion/exclusion criteria, global multilingual coverage where relevant, and traditional-name/species/pathology query framing for non-Western natural-product domains.
 9. **Downstream authoring plan.** Does the plan name one canonical evidence home and the exact decision surfaces it may update? Require focused intervention/chassis pages to own only their evidence, sourcing, delivery, exposure constraints, and falsification. Route planned cross-track rankings or comparison tables to portfolio surfaces, not into one track's page. Reject planned editorial history, corpus-placement narration, personalized treatment instructions, or duplicated exposition.
+10. **Conjecture boundary.** Require the plan to distinguish claims the run can decide from adjacent ideas it cannot. Unsupported factual conclusions are prohibited, but grounded novel connections may be preserved as Research Conjectures with an explicit leap and discriminating observation. Decision rules must not turn one negative result into deletion of untested neighboring hypotheses.
 
 ## Gate rule
 
@@ -63,7 +64,7 @@ After the two receipt lines, use exactly these headings:
 [Whether contrary results can win; dominant uncertainties; diagnostics the outputs must retain.]
 
 ## Downstream authoring contract
-[Canonical evidence home; focused-page updates; portfolio-only comparisons; prohibited reader-facing residue.]
+[Canonical evidence home; claim/conjecture boundary; focused-page updates; portfolio-only comparisons; prohibited reader-facing residue.]
 
 ## Required actions before execution
 1. [Concrete action and verification criterion; or “None.”]

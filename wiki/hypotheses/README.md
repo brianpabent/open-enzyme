@@ -90,11 +90,14 @@ A hypothesis with status **Killed** is not deleted. The file stays; the killed c
 
 ## Relationship to `synthesis/` (architecture: synthesis/README.md) and `wiki/open-questions.md`
 
-- **synthesis/** is the generative action queue — new dot-connections, proposed experiments, cross-doc findings. It is promiscuous, fast-moving, and pruned manually by Brian. Items in synthesis/ are candidates for hypothesis promotion; not all candidates graduate.
-- **open-questions.md** is a cross-wiki index of unresolved questions. Some of those questions map to committed hypotheses; most don't. An open question is a prompt for investigation; a committed hypothesis is a specific falsifiable claim plus a plan to attempt falsification.
+- **A Research Conjecture on its mechanism-owning wiki page** is the durable current-state home for a grounded but untested connection. It separates sourced premises from the novel leap and names a discriminating observation.
+- **synthesis/queue/** is temporary action state. A reviewed synthesis finding may call for a conjecture, evidence correction, experiment, or hypothesis, but the queue file is deleted when that action lands.
+- **open-questions.md** is a concise cross-wiki index. It links to selected conjectures and unresolved questions without copying their reasoning.
 - **hypotheses/** is where a specific, falsifiable claim gets a Falsification Card and a commit. Not everything in synthesis or open-questions becomes a hypothesis — only the ones the user is ready to commit resources against.
 
-Flow (typical): synthesis/ finding → open-questions.md entry → (if worth testing) → hypotheses/H0N commit → Falsification Lint → execute killshots → update status.
+Flow (typical): synthesis finding → Research Conjecture on the owning page → optional open-questions link → (when ready to commit) hypotheses/H0N → Falsification Lint → execute killshots → update status.
+
+An unconfirmed conjecture is not a failed hypothesis. Delete it when duplicated, no longer useful, or when a required premise fails; Git preserves the prior text. A COMP or experiment kills only the exact claim and regime it tested. Surviving adjacent leads remain unless their own premises collapse.
 
 ---
 

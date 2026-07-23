@@ -123,7 +123,17 @@ Ferrer-Picón et al. 2020, *Inflammatory Bowel Diseases* ([DOI](https://doi.org/
 
 **Implication:** TNFα can suppress gut ABCG2 in inflammatory epithelial models. **In Vitro + clinical biopsy correlation.** Whether hormone state adds to that effect is unestablished and is a direction-finding question for the proposed factorial experiment.
 
-**Lactoferrin as a TNFα-mediated ABCG2 rescue candidate.** Habib et al. 2023 (PMID 37926296; **Animal Model**) and monocyte/macrophage studies motivate a composed hypothesis: reduced local TNFα drive could relieve TNFα-mediated suppression of intestinal ABCG2. No study establishes that sequence, its effect on luminal urate, or additivity with UOX. Validation §1.14 tests epithelial responses under fixed exogenous TNFα; local cytokine production and apical delivery require a later immune–epithelial co-culture. See [`lactoferrin.md`](./lactoferrin.md). **Mechanistic Extrapolation.**
+### Research conjecture — lactoferrin could couple inflammatory relief to urate export
+
+> **Research conjecture — Lactoferrin could couple inflammatory relief to urate export**{ .research-conjecture-label }
+>
+> **Grounded premises:** TNFα suppresses ABCG2 in patient-derived intestinal organoids (**In Vitro + clinical biopsy correlation**; Ferrer-Picón et al. 2020, PMID 31211831). Lactoferrin can reduce TNFα-linked inflammatory signaling in relevant animal and monocyte/macrophage studies (**Animal Model + In Vitro**; Habib et al. 2023, PMID 37926296; see [lactoferrin](./lactoferrin.md)).
+>
+> **Novel leap:** Local lactoferrin exposure might reduce immune-cell TNFα drive enough to restore enterocyte surface ABCG2 and functional urate export. No direct study establishes this sequence, luminal urate flux, or additivity with UOX.
+>
+> **Why it matters:** One local intervention could weaken inflammatory priming while increasing substrate delivery to a separate luminal urate sink.
+>
+> **Discriminating observation:** In an immune–epithelial co-culture, test lactoferrin against matched controls for TNFα, total and surface ABCG2, and polarized urate flux. Fixed exogenous-TNFα epithelial testing in validation §1.14 remains a separate mechanism-control arm.
 
 ### 3. NFIB upregulation
 

@@ -1,0 +1,31 @@
+/*
+ * Evidence stays visually neutral. Research conjectures are deliberately
+ * distinct: useful enough to preserve, but not source-backed conclusions.
+ */
+.md-typeset blockquote:has(.research-conjecture-label) {
+  border: 1px solid color-mix(in srgb, var(--md-accent-fg-color) 55%, transparent);
+  border-left: 0.25rem solid var(--md-accent-fg-color);
+  border-radius: 0.35rem;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--md-accent-fg-color) 10%, transparent),
+      transparent 68%
+    );
+  padding: 0.8rem 1rem;
+}
+
+.md-typeset .research-conjecture-label {
+  color: var(--md-accent-fg-color);
+  font-size: 0.74rem;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.md-typeset blockquote:has(.research-conjecture-label) p:first-child {
+  margin-top: 0;
+}
+
+.md-typeset blockquote:has(.research-conjecture-label) p:last-child {
+  margin-bottom: 0;
+}

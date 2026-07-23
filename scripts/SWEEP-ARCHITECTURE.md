@@ -33,7 +33,7 @@ explicit manual request
        ├─ read every corpus section twice
        ├─ compare every domain pair
        ├─ reopen cited raw sections and exact COMP outputs
-       ├─ independent adversarial review
+       ├─ independently audit premises and creative leaps
        └─ emit unresolved queue items only
 ```
 
@@ -94,12 +94,13 @@ The reviews answer different questions and cannot substitute for one another. Cu
 3. perform a second independent complete read focused on residue and missed details;
 4. merge atoms without erasing disagreements;
 5. examine every unordered domain pair;
-6. rehydrate each candidate from exact source spans;
-7. for COMP-backed candidates, reopen the exact generated outputs covered by a current receipt;
-8. obtain an independent review;
-9. emit only reviewed unresolved actions.
+6. require each candidate to separate grounded premises from any novel leap;
+7. rehydrate each candidate from exact source spans;
+8. for COMP-backed candidates, reopen the exact generated outputs covered by a current receipt;
+9. independently review premise fidelity, novelty, upside, and the discriminating observation;
+10. emit only reviewed unresolved actions.
 
-The run fails closed unless every section has both reads, every domain pair is examined, and every candidate is rehydrated and reviewed. Cost is tracked from provider usage where available and conservatively estimated otherwise; the workflow enforces an explicit cap.
+The run fails closed unless every section has both reads, every domain pair is examined, and every candidate is rehydrated and reviewed. It is conservative about claims and deliberately aggressive about generating connections: a useful unsupported leap survives as a Research Conjecture when its premises are grounded and it has a discriminating observation. Direct evidence is not required for the leap; it is required before the leap can be restated as fact. Cost is tracked from provider usage where available and conservatively estimated otherwise; the workflow enforces an explicit cap.
 
 Raw model output and review files are recovery artifacts with short CI retention. The repository keeps only active queue items and the compact coverage/cost receipt. Git preserves prior runs.
 
@@ -115,7 +116,7 @@ Raw model output and review files are recovery artifacts with short CI retention
 
 Do not create completed-item directories, immutable review logs, per-run synthesis narratives, inline changelogs, or “for posterity” copies.
 
-Reader-facing intervention pages follow one current-state sequence: exploitable gout weakness, evidence, source, delivery, exposure constraints, and falsification. Each focused intervention or chassis page stands on that track's own case; it does not use another track as a narrative foil. Cross-track rankings and comparison tables live only on portfolio surfaces such as `wiki/modality-chokepoint-matrix.md` and `wiki/chassis-pending-interventions.md`. Chassis analysis is local to an active production or delivery decision; it is never the default filter for whether an intervention belongs in the project. Editorial provenance and page-creation history live in Git, not prose. Research pages do not prescribe personalized dosing.
+Reader-facing intervention pages follow one current-state sequence: exploitable gout weakness, evidence, source, delivery, exposure constraints, and falsification. A compact Research Conjecture may preserve a grounded but untested connection on the mechanism-owning page; it separates sourced premises, the unsupported leap, upside, and the cheapest discriminating observation. `open-questions.md` may link to it without copying it. Each focused intervention or chassis page stands on that track's own case; it does not use another track as a narrative foil. Cross-track rankings and comparison tables live only on portfolio surfaces such as `wiki/modality-chokepoint-matrix.md` and `wiki/chassis-pending-interventions.md`. Chassis analysis is local to an active production or delivery decision; it is never the default filter for whether an intervention belongs in the project. Editorial provenance and page-creation history live in Git, not prose. Research pages do not prescribe personalized dosing.
 
 ## Failure behavior
 

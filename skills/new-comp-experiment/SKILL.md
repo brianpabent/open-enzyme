@@ -27,6 +27,8 @@ Also maintain the interpretive `wiki/<slug>-computational.md`, `wiki/computation
 
 Reader-facing outputs follow the same ownership contract as the rest of the corpus: a focused page stands on its own evidence, sourcing, delivery, exposure constraints, and falsification gate. Cross-track rankings and comparison tables belong only in portfolio comparison surfaces. A COMP result is evidence for a decision, not permission to add editorial history, page-placement narration, personalized treatment instructions, or repeated exposition.
 
+Audit claims and ideas separately. Correct an unsupported factual assertion, but preserve a grounded, useful untested connection as a compact **Research Conjecture** on its mechanism-owning page: sourced premises with evidence tags, the explicit unsupported leap, why it matters, and a discriminating observation. Research Conjecture is an epistemic status, not an evidence tier. A COMP kills only the exact claim and regime its preregistered rules test; do not erase adjacent ideas unless their required premise also fails.
+
 ## Method rules
 
 - State the biological question, decision, model, assumptions, parameters, decision rules, sensitivity plan, planned outputs, and kill criteria before execution.
@@ -36,6 +38,7 @@ Reader-facing outputs follow the same ownership contract as the rest of the corp
 - Treat computational results as priors, not substitutes for wet-lab validation.
 - Grep-verify every load-bearing number against its primary source before writing it into a result-bearing page.
 - Name the planned canonical evidence home and each downstream decision surface before execution. Plan only a local decision delta plus a link on dependents; route genuinely comparative outputs to portfolio comparison surfaces rather than inserting them into one track's page.
+- Name which proposed claims the computation can decide and which adjacent connections remain conjectures regardless of outcome. Precommit narrow invalidation boundaries.
 - For natural-product discovery, use mechanism, species/original-language, traditional-formula, and traditional-pathology query frames. That work is normally a lit scan unless an executable model follows.
 
 ## Gate 1: pre-run
@@ -68,7 +71,7 @@ Draft every generated output and every proposed interpretation/propagation surfa
 python3 ../../../../scripts/comp-review-manifest.py create --phase post --comp-dir . --output reviews/post-run.manifest.json --proposed-file <path>
 ```
 
-Use a different fresh context-isolated reviewer and `scripts/comp-review-prompt.md`. It must inspect all code, inputs, outputs, summaries, and proposed updates, including whether each reader-facing update has the correct owner and shape. Only `ACTION_REQUIRED: no` passes.
+Use a different fresh context-isolated reviewer and `scripts/comp-review-prompt.md`. It must inspect all code, inputs, outputs, summaries, and proposed updates, including whether each reader-facing update has the correct owner and shape and whether unsupported claims were corrected without erasing useful conjectures outside the tested scope. Only `ACTION_REQUIRED: no` passes.
 
 If a finding changes code, inputs, parameters, decision rules, model, or sensitivity plan, return to Gate 1 before rerunning. Narrative-only changes still require a new post manifest and review. Verify the exact post snapshot before commit.
 
@@ -85,4 +88,4 @@ Any later COMP artifact change invalidates that exact-snapshot receipt until a n
 
 ## Completion
 
-A COMP is complete only when reproduction succeeds, both authoring gates pass on exact manifests, all interpretation surfaces match the outputs, evidence/limitations are explicit, focused pages remain track-local, comparative conclusions are routed to portfolio surfaces, and the push review does not block derived claims. Current receipts replace prior receipts; Git is the review history.
+A COMP is complete only when reproduction succeeds, both authoring gates pass on exact manifests, all interpretation surfaces match the outputs, evidence/limitations are explicit, claim-kill scope is narrow, surviving conjectures remain correctly bounded, focused pages remain track-local, comparative conclusions are routed to portfolio surfaces, and the push review does not block derived claims. Current receipts replace prior receipts; Git is the review history.
