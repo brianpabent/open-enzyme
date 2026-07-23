@@ -5342,155 +5342,165 @@
 
 <h1 id="independent-comp-review-comp-019">Independent comp review — comp-019<a class="headerlink" href="#independent-comp-review-comp-019" title="Permanent link">&para;</a></h1>
 <h2 id="reviewed-snapshot">Reviewed snapshot<a class="headerlink" href="#reviewed-snapshot" title="Permanent link">&para;</a></h2>
-<p>Daemon independent review for comp-019 at supplied push-review manifest SHA-256 <code>1ec63b843755383c76e32ab847f05145a2255ab88b8978e8ff7959aa5e38b34a</code>, source commit <code>6efddd88c579c3827c6fe4a8664e342da976df7c</code>. Authoring gates were reported modern and valid. Shard auditors reported complete inspection of all supplied text spans; targeted reads of the comp-019 tombstone, invalidation record, interpretive page, and computational index matched the invalidated-tombstone state. Local <code>push-review.manifest.json</code> was not readable as a repo file, and repository grep was unavailable due missing <code>rg</code>; this limits independent corpus discovery beyond supplied shard coverage and targeted reads.</p>
+<p>Independent daemon reviewer; push manifest SHA-256 <code>f8053438bfe6a4a7c707a233fb0e28c83e9f6210a51078e80f96b0ff1cf5e29e</code>. The daemon supplied modern valid authoring-gate status, no deterministic blocks, and hash-bound shard coverage over the relevant text spans. Targeted reopening of comp-019 tombstone, interpretive pages, graph, index, genetic-variants page, and action guide found no comp-019 material mismatch. Repository fixed-string search was attempted but unavailable because the underlying <code>rg</code> executable was missing; I relied on shard coverage plus targeted file reads.</p>
 <h2 id="bottom-line-verdict">Bottom-line verdict<a class="headerlink" href="#bottom-line-verdict" title="Permanent link">&para;</a></h2>
-<p>Action required, but the bounded current result is usable with warnings. The live comp-019 artifact correctly retires the old model: Phase B did not use physiological substrate occupancy/Km and assumed saturated 24 h activity, so the quantitative verdict is invalidated. Current pages mostly enforce that no comp-019 ΔSUA, dose, genotype order, efficacy, safety, or topology claim survives. Required actions are corpus-maintenance issues: add comp-045 to the comp-019 README current evidence-owner/replacement list, and close existing UOX-related validation/provenance inconsistencies before any wider synthesis.</p>
+<p>Clean with limitations. The live comp-019 artifact is no longer a runnable experiment; it is a hash-bound invalidation tombstone. That is appropriate because the retired Phase B model answered the wrong kinetic question: it treated delivered UOX as 24-hour saturated capacity and did not use the stored luminal-urate concentration or UOX Km. The only surviving comp-019 content is the bounded Phase A search observation: sources searched as of 2026-05-08 contained no Q141K-stratified uricase clinical outcome. This does not prove universal absence.</p>
 <h2 id="implementation-and-constraint-closure">Implementation and constraint closure<a class="headerlink" href="#implementation-and-constraint-closure" title="Permanent link">&para;</a></h2>
-<p>The current implementation is not a runnable model; it is a hash-bound tombstone. <code>invalidation.json</code> records retired commit, retired file hashes, non-runnable status, invalidated scopes, and surviving scope. This is appropriate because the old executable artifact answered the wrong physical question: nominal uricase capacity was treated as if substrate-saturated for a whole day, while stored luminal urate concentration, UOX Km, finite active window, oxygen/access/survival, replenishment, and transit constraints were not closed.</p>
-<p>Constraint closure is therefore negative rather than affirmative. Reaction substrates and products for UOX, oxygen demand, peroxide production, local urate access, compartment exposure, genotype-dependent supply, and serum mapping remain unmodeled by comp-019. COMP-044 gives only an internal-consistency counterexample to the unconditional flat-dose classification; it does not establish the true physiological regime. Validation §1.33 and §1.36 now own empirical topology/oxygen/peroxide and antioxidant-loss/H₂O₂ safety gates. The current tombstone correctly prevents resurrection of retired numerical outputs.</p>
+<p>The live tree contains no active comp-019 code or numerical output. <code>README.md</code> and <code>invalidation.json</code> explicitly state that the retired executable artifact is preserved only by Git, not duplicated as an active experiment. The invalidation record names the retired commit, per-file byte counts and SHA-256 hashes, the retired file-set digest, the retired post-run manifest SHA, and the invalidated versus surviving scopes.</p>
+<p>The implementation failure is closed at the documentation level: the retired model stored but did not use load-bearing substrate-regime inputs and substituted nominal enzyme capacity for physiological reaction rate. Specifically, it omitted Michaelis–Menten substrate occupancy, assumed 24 hours at saturated activity, and did not close finite residence/exposure time. The follow-on comp-044 audit demonstrates non-robustness of comp-019’s unconditional flat-dose classification under inherited substrate-occupancy and finite-window diagnostics, but it does not replace comp-019 with a validated physiological model.</p>
+<p>Reaction and constraint closure remains intentionally unresolved for the gut-lumen UOX hypothesis: urate concentration, UOX Km/activity under local pH, oxygen, electron acceptor access, allantoin/peroxide products, substrate transport, topology/localization, enzyme survival, residence time, diffusion, replenishment/depletion, reabsorption, genotype-specific urate supply, coproduct burden, local H₂O₂ peaks, epithelial safety, and serum-urate mapping all require empirical or new-model closure. Current corpus routing to validation §§1.33 and 1.36, and comp-045 topology/peroxide design, is consistent with that boundary.</p>
 <h2 id="summary-fidelity-audit">Summary-fidelity audit<a class="headerlink" href="#summary-fidelity-audit" title="Permanent link">&para;</a></h2>
-<p>The comp-019 README, <code>invalidation.json</code>, interpretive page, and computational-experiments index agree on the main decision: comp-019 is non-runnable and not decision-usable. They preserve only the bounded Phase A search observation: sources searched as of 2026-05-08 contained no Q141K-stratified uricase clinical outcome, not proof of universal absence.</p>
-<p>Material fidelity is good across reviewed surfaces: gout action, genetic variants, multihop program, comp-044 interpretive page, and open questions preserve “no replacement ΔSUA/dose/genotype order/topology/safety” wording. The minor mismatch is that the computational index lists comp-045 as a replacement/gate for topology/peroxide evidence, while the comp-019 README current evidence-owner list names comp-044, validation §1.33, and §1.36 but omits comp-045. Existing comp-044 review actions also remain relevant: validation dashboard/protocol inconsistencies, §1.34 “yanthine” analyte issue, and an invalidation-policy conflict should be resolved.</p>
+<p>The comp-019 README, invalidation JSON, <code>uricase-abcg2-genotype-stratification-computational.md</code>, <code>computational-experiments.md</code>, <code>gout-genetic-variants.md</code>, <code>gout-action-guide.md</code>, <code>gut-lumen-uricase-physiologic-regime-computational.md</code>, and <code>wiki/etc/GRAPH.md</code> consistently reject use of comp-019 numerical outputs for dose, efficacy, genotype order, topology/chassis, production target, safety, or clinical decisions.</p>
+<p>The computational index correctly states that comp-044 invalidates the legacy unconditional flat-dose classification but supplies no replacement ΔSUA, dose, genotype ordering, physiological regime, efficacy model, topology/chassis selection, production sufficiency, or safety conclusion. The genetic-variants page preserves Q141K as a prospective stratification variable rather than a response predictor. The action guide is not written as medical advice and keeps engineered UOX behind exact-configuration characterization, §1.33, and §1.36.</p>
+<p>The prior comp-044 push review required policing against over-propagation and a graph provenance-label correction. Targeted inspection of <code>wiki/etc/GRAPH.md</code> shows the current graph labels comp-044 as a deterministic computational audit and labels routing to §1.33 as mechanistic extrapolation, not biological validation; this appears closed for comp-019 purposes.</p>
+<p>Shard-noted non-comp-019 issues remain outside this verdict: stale comp-027 status in methodology audit content, partial comp-020 multilingual execution, and several validation-experiment threshold/provenance concerns. They do not create a comp-019 propagation defect, but downstream synthesis should not treat those unrelated pages as independently clean evidence.</p>
 <h2 id="reader-facing-ownership-audit">Reader-facing ownership audit<a class="headerlink" href="#reader-facing-ownership-audit" title="Permanent link">&para;</a></h2>
-<p>Current focused pages mostly satisfy the reader contract. The comp-019 page owns its invalidation and surviving search boundary without giving medical instructions or portfolio rankings. UOX advancement is routed to configuration-specific validation gates, not to comp-019. Cross-track comparisons remain in computational-experiment and validation surfaces. No personalized treatment instructions or narrative foils were found in inspected comp-019-related pages. The README evidence-owner list should include comp-045 so readers can find topology/peroxide design ownership without relying on the portfolio index.</p>
+<p>Reader-facing ownership is materially clean for comp-019. The focused comp-019 interpretation owns its tombstone status, surviving search boundary, current decision, and empirical gates. The graph is a routing surface and explicitly does not rank interventions, chassis, UOX sequences, topologies, or product formats. The action guide states Phase 0 research status and does not convert Q141K or UOX content into personalized treatment instructions. Cross-track comparisons remain on portfolio/index surfaces rather than being used to make a focused UOX page declare a winner.</p>
 <h2 id="conjecture-preservation-audit">Conjecture preservation audit<a class="headerlink" href="#conjecture-preservation-audit" title="Permanent link">&para;</a></h2>
-<p>The unsupported factual assertions from the old model are appropriately killed only in their tested scope: saturated, flat-dose, genotype-order, serum-urate, dose/yield, trial-design, safety, and topology conclusions. Adjacent conjectures survive with boundaries: Q141K remains a prospective stratification variable; gut-lumen uricase remains an open track; UOX topology, oxygen, substrate access, peroxide burden, and finite exposure can be tested in §1.33/§1.36 and comp-045-style designs. The negative comp-019 result should not be used to delete all gut-lumen uricase concepts, only to prevent use of the invalidated numerical regime.</p>
+<p>The invalidation kills only the exact comp-019 Phase B numerical model, inputs-as-implemented, 24-hour saturated-capacity decision rule, and derived dose/genotype/topology/safety conclusions. It does not kill the broader gut-lumen UOX sink hypothesis, the idea that Q141K may be useful for prospective stratification, or empirical topology comparisons. Those surviving ideas are correctly framed as open research questions requiring configuration-level substrate/oxygen/peroxide/safety measurement.</p>
+<p>A compact surviving conjecture is: if ABCG2 Q141K alters intestinal urate supply, then genotype might stratify response to a validated luminal UOX configuration; unsupported leap is that this will produce a measurable serum-urate or efficacy difference; discriminating observation is a genotype-stratified study using a configuration already passing physiological UOX and safety gates.</p>
 <h2 id="generated-output-and-proposed-update-inventory">Generated-output and proposed-update inventory<a class="headerlink" href="#generated-output-and-proposed-update-inventory" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Path</th>
 <th>Manifest kind</th>
-<th>Inspected completely?</th>
+<th style="text-align: right;">Inspected completely?</th>
 <th>Finding</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Correct non-runnable tombstone; omits comp-045 from current evidence owners.</td>
+<td>comp tombstone</td>
+<td style="text-align: right;">Yes</td>
+<td>Correctly non-runnable; all numerical conclusions invalidated.</td>
 </tr>
 <tr>
 <td><code>wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/invalidation.json</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Hash-bound retirement record; invalidated/surviving scopes clear.</td>
+<td>invalidation record</td>
+<td style="text-align: right;">Yes</td>
+<td>Hash-bound retired artifact record and scopes adequate.</td>
 </tr>
 <tr>
 <td><code>wiki/computational-experiments.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Comp-019 index aligned; includes comp-044/045/validation replacement gates.</td>
+<td>index/update surface</td>
+<td style="text-align: right;">Yes</td>
+<td>Comp-019/044 boundary faithful.</td>
 </tr>
 <tr>
 <td><code>wiki/uricase-abcg2-genotype-stratification-computational.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Correct invalidated-tombstone interpretation and forbidden uses.</td>
+<td>interpretive page</td>
+<td style="text-align: right;">Yes</td>
+<td>Correct tombstone and surviving search statement.</td>
 </tr>
 <tr>
 <td><code>wiki/gut-lumen-uricase-physiologic-regime-computational.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Correctly bounds comp-044 as counterexample, not replacement efficacy model.</td>
+<td>replacement audit page</td>
+<td style="text-align: right;">Yes</td>
+<td>Correctly limits comp-044 to internal-consistency diagnostics.</td>
 </tr>
 <tr>
 <td><code>wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Bounded corrective branch; output-dependent authority noted.</td>
+<td>related comp artifact</td>
+<td style="text-align: right;">Yes</td>
+<td>Useful only as bounded corrective audit; no generated outputs directly supplied in shard.</td>
 </tr>
 <tr>
 <td><code>wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/provenance.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Priors inherited/non-planning-grade; no serum mapping.</td>
+<td>related input provenance</td>
+<td style="text-align: right;">Yes</td>
+<td>Inputs inherited/scenario-level, not planning-grade.</td>
 </tr>
 <tr>
 <td><code>wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/reviews/push-review.md</code></td>
-<td>review text</td>
-<td>Yes</td>
-<td>Clean-with-limitations; open maintenance actions remain.</td>
+<td>prior review</td>
+<td style="text-align: right;">Yes</td>
+<td>Prior action appears closed in graph; restrictions still apply.</td>
 </tr>
 <tr>
-<td><code>wiki/dual-chassis-ecn-pdb-uricase-computational.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Correctly prevents comp-031 rehabilitation from comp-019 regime.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Requires new COMP for renewed dual-chassis analysis.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/provenance.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Rejects comp-019-derived quantitative priors.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/reviews/post-run.md</code></td>
-<td>review text</td>
-<td>Yes</td>
-<td>Confirms inherited unsupported UOX anchor.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/autonomous-screening-methodology.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Labels comp-019 Monte Carlo outputs non-decision-grade.</td>
+<td><code>wiki/etc/GRAPH.md</code></td>
+<td>routing surface</td>
+<td style="text-align: right;">Yes targeted</td>
+<td>Current wording labels audit/extrapolation correctly.</td>
 </tr>
 <tr>
 <td><code>wiki/gout-action-guide.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Medical boundary and no UOX dose/effect claim preserved.</td>
+<td>reader-facing surface</td>
+<td style="text-align: right;">Yes</td>
+<td>No medical-advice upgrade; UOX gates preserved.</td>
 </tr>
 <tr>
 <td><code>wiki/gout-genetic-variants.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Q141K/UOX open question correctly bounded.</td>
+<td>affected variant page</td>
+<td style="text-align: right;">Yes</td>
+<td>Q141K/UOX boundary preserved.</td>
 </tr>
 <tr>
 <td><code>wiki/gout-multihop-research-program.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>UOX sequencing through construct and validation gates preserved.</td>
+<td>program surface</td>
+<td style="text-align: right;">Yes via shard</td>
+<td>Sequencing consistent with comp-019 invalidation.</td>
 </tr>
 <tr>
 <td><code>wiki/open-questions.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>No comp-019 overreach; contains separate “yanthine” issue requiring action.</td>
+<td>affected questions page</td>
+<td style="text-align: right;">Yes via shard</td>
+<td>Comp-019 boundary mostly faithful; unrelated broad claims need own provenance.</td>
 </tr>
 <tr>
-<td><code>wiki/validation-experiments.md</code></td>
-<td>push text, two spans covering file</td>
-<td>Yes per shards</td>
-<td>UOX §1.33/§1.36 boundaries correct; many unrelated validation caveats found.</td>
+<td><code>wiki/dual-chassis-ecn-pdb-uricase-computational.md</code></td>
+<td>related retired UOX surface</td>
+<td style="text-align: right;">Yes</td>
+<td>Retired comp-031; does not reuse comp-019 conclusions.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/autonomous-screening-methodology.md</code></td>
+<td>methodology/audit surface</td>
+<td style="text-align: right;">Yes</td>
+<td>Comp-019 row consistent; unrelated comp-027 stale row noted.</td>
 </tr>
 <tr>
 <td><code>wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Independent of comp-019; no UOX support.</td>
+<td>unrelated artifact in manifest</td>
+<td style="text-align: right;">Yes</td>
+<td>Partial provenance caveats; not comp-019-bearing.</td>
 </tr>
 <tr>
 <td><code>wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/query-strategy.md</code></td>
-<td>push text</td>
-<td>Yes</td>
-<td>Independent upstream-complement scope only.</td>
+<td>unrelated artifact in manifest</td>
+<td style="text-align: right;">Yes</td>
+<td>Promised broader search than executed; not comp-019-bearing.</td>
 </tr>
 <tr>
 <td><code>wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md</code></td>
-<td>generated output</td>
-<td>Yes</td>
-<td>No comp-019 claim supported or leaked.</td>
+<td>unrelated generated output</td>
+<td style="text-align: right;">Yes</td>
+<td>Recommendations bounded; not comp-019-bearing.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md</code></td>
+<td>related retired artifact</td>
+<td style="text-align: right;">Yes</td>
+<td>Correctly retired; requires physiological UOX rerun.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/provenance.md</code></td>
+<td>related provenance</td>
+<td style="text-align: right;">Yes</td>
+<td>Consistent with retirement.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/reviews/post-run.md</code></td>
+<td>prior review</td>
+<td style="text-align: right;">Yes</td>
+<td>Reinforces nonuse of inherited comp-019 regime assumptions.</td>
+</tr>
+<tr>
+<td><code>wiki/validation-experiments.md</code></td>
+<td>affected validation surface</td>
+<td style="text-align: right;">Yes</td>
+<td>UOX gates preserved; several unrelated threshold/provenance issues not comp-019-specific.</td>
 </tr>
 </tbody>
 </table>
@@ -5507,79 +5517,101 @@
 </thead>
 <tbody>
 <tr>
-<td>Comp-019 Phase B omitted physiological substrate occupancy and finite exposure</td>
-<td>README; invalidation record; interpretive page</td>
-<td>Basis for tombstone/non-runnable status</td>
-<td>Verified by current artifact and corroborating comp-031/044 reviews; retired code not re-executed</td>
-<td>Supports invalidation</td>
+<td>Comp-019 is invalidated and non-runnable</td>
+<td>comp-019 README; invalidation JSON</td>
+<td>Governs all downstream use</td>
+<td>Directly present in live artifact</td>
+<td>Accepted.</td>
 </tr>
 <tr>
-<td>Old ΔSUA/capacity/genotype/dose/topology claims invalid</td>
-<td><code>invalidation.json</code>; README</td>
-<td>Defines forbidden scopes</td>
-<td>Hash-bound retired file list available; current live tree does not retain executable outputs</td>
-<td>Correct</td>
+<td>Retired artifact is hash-bound</td>
+<td><code>invalidation.json</code> retired commit/file hashes</td>
+<td>Provenance only; no active reproduction</td>
+<td>Directly present; not independently recomputed</td>
+<td>Adequate for tombstone.</td>
 </tr>
 <tr>
-<td>Surviving no Q141K-stratified uricase clinical outcome search</td>
-<td>README; interpretive page; <code>invalidation.json</code></td>
-<td>Only surviving comp-019 observation</td>
-<td>Search sources not independently re-run; bounded as of 2026-05-08</td>
-<td>Usable only as bounded search observation</td>
+<td>Phase B outputs invalidated</td>
+<td>README; invalidated_scope list</td>
+<td>Blocks ΔSUA, dose, capacity, genotype, topology, safety</td>
+<td>Directly present</td>
+<td>Accepted.</td>
 </tr>
 <tr>
-<td>0.59 µM jejunal urate prior</td>
-<td>comp-044 provenance</td>
-<td>Used by comp-044 diagnostic, not comp-019 live artifact</td>
-<td>Inherited from comp-019 extraction; arithmetic checked, primary not newly verified</td>
-<td>Non-planning-grade prior</td>
+<td>Only surviving observation: searched sources lacked Q141K-stratified uricase clinical outcome as of 2026-05-08</td>
+<td>README; <code>surviving_scope</code></td>
+<td>Permits bounded search statement only</td>
+<td>Search primary sources not reverified in this daemon review</td>
+<td>Usable only with bounded wording.</td>
 </tr>
 <tr>
-<td>Km 5–100 µM, central 25 µM; 8.3 U/mg activity</td>
-<td>comp-044 provenance/review</td>
-<td>Diagnostic sensitivity only</td>
-<td>Inherited literature/regulatory priors; not newly primary-verified</td>
-<td>Cannot support dose planning</td>
+<td>Universal absence of Q141K-stratified outcomes</td>
+<td>README/invalidation explicitly deny</td>
+<td>None</td>
+<td>Not established</td>
+<td>Forbidden inference.</td>
 </tr>
 <tr>
-<td>2–4 h active window; 233 mg/day denominator</td>
-<td>comp-044 README/review</td>
-<td>Diagnostic ratio denominator/window</td>
-<td>Derived/inherited; finite-window correction demonstrates non-robustness only</td>
-<td>Correctly bounded</td>
+<td>Retired model omitted luminal substrate occupancy and UOX Km use</td>
+<td>interpretive page; tombstone rationale; comp-044 context</td>
+<td>Explains invalidation</td>
+<td>Retired code not reopened/executed; accepted from tombstone plus prior review</td>
+<td>Sufficient for retirement, not for new quantification.</td>
 </tr>
 <tr>
-<td>UOX topology/peroxide safety</td>
-<td>comp-045 index; validation §1.33/§1.36</td>
+<td>Retired model assumed 24 h saturated activity</td>
+<td>interpretive page; comp-044 page</td>
+<td>Explains wrong-question substitution</td>
+<td>Retired code not executed</td>
+<td>Sufficient for invalidation.</td>
+</tr>
+<tr>
+<td>Comp-044 central diagnostic ratios below legacy ratios</td>
+<td>comp-044 interpretive page/index</td>
+<td>Corrective audit only</td>
+<td>Generated comp-044 outputs not directly inspected here; prior review limited</td>
+<td>Use only as non-robustness diagnostic.</td>
+</tr>
+<tr>
+<td>UOX physiological constraints: substrate, oxygen, peroxide, access, survival, transit, topology</td>
+<td>comp-044 page; graph; validation §§1.33/1.36</td>
 <td>Future empirical gates</td>
-<td>Design/validation surfaces inspected; not measured by comp-019</td>
-<td>Open, not inferred</td>
+<td>Not closed by comp-019</td>
+<td>Open constraints.</td>
+</tr>
+<tr>
+<td>Q141K as prospective stratification variable</td>
+<td>genetic-variants page; comp-019 interpretation</td>
+<td>Study-design hypothesis only</td>
+<td>Literature not reverified</td>
+<td>Correct if bounded.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="affected-wiki-pages">Affected wiki pages<a class="headerlink" href="#affected-wiki-pages" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md</code> — change required — add comp-045 as a current evidence owner/replacement topology-peroxide design surface.</li>
-<li><code>wiki/computational-experiments.md</code> — already consistent — comp-019 entry blocks quantitative use and lists comp-044/045/validation replacement gates.</li>
-<li><code>wiki/uricase-abcg2-genotype-stratification-computational.md</code> — already consistent — invalidated tombstone and bounded search wording.</li>
-<li><code>wiki/gut-lumen-uricase-physiologic-regime-computational.md</code> — already consistent — comp-044 not overextended into efficacy/dose.</li>
-<li><code>wiki/validation-experiments.md</code> — change required — close previously noted UOX dashboard/protocol inconsistencies and §1.34 analyte naming issue; §1.33/§1.36 boundaries themselves are appropriate.</li>
-<li><code>wiki/gout-action-guide.md</code> — already consistent — no reader-facing UOX medical advice.</li>
-<li><code>wiki/gout-genetic-variants.md</code> — already consistent — Q141K remains prospective/open.</li>
-<li><code>wiki/gout-multihop-research-program.md</code> — already consistent — proper UOX gate sequencing.</li>
-<li><code>wiki/dual-chassis-ecn-pdb-uricase-computational.md</code> — already consistent — does not rehabilitate comp-019-derived quantitative claims.</li>
-<li><code>wiki/etc/autonomous-screening-methodology.md</code> — already consistent — identifies comp-019 outputs as non-decision-grade.</li>
+<li><code>wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md</code> — already consistent — tombstone blocks numerical reuse.</li>
+<li><code>wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/invalidation.json</code> — already consistent — hash-bound retirement record adequate.</li>
+<li><code>wiki/uricase-abcg2-genotype-stratification-computational.md</code> — already consistent — no decision-usable comp-019 outputs.</li>
+<li><code>wiki/computational-experiments.md</code> — already consistent for comp-019 — index states comp-044 limitations and no replacement verdict.</li>
+<li><code>wiki/gut-lumen-uricase-physiologic-regime-computational.md</code> — already consistent — comp-044 is bounded audit, not physiological closure.</li>
+<li><code>wiki/etc/GRAPH.md</code> — already consistent — graph labels comp-044 audit and §1.33 routing boundary.</li>
+<li><code>wiki/gout-genetic-variants.md</code> — already consistent — Q141K remains prospective, not response-predictive.</li>
+<li><code>wiki/gout-action-guide.md</code> — already consistent — no clinical/personalized UOX guidance.</li>
+<li><code>wiki/gout-multihop-research-program.md</code> — already consistent — empirical UOX configuration gates precede escalation.</li>
+<li><code>wiki/open-questions.md</code> — already consistent for comp-019 — unrelated broad trial/biomarker assertions need their own provenance if used.</li>
+<li><code>wiki/validation-experiments.md</code> — already consistent for comp-019 routing — UOX validation remains empirical; unrelated threshold issues do not alter this verdict.</li>
+<li><code>wiki/dual-chassis-ecn-pdb-uricase-computational.md</code> and comp-031 files — already consistent — retired and not reusing comp-019 saturation assumptions.</li>
+<li><code>wiki/etc/autonomous-screening-methodology.md</code> — already consistent for comp-019 — unrelated comp-027 stale status noted but not a comp-019 action.</li>
 </ul>
 <h2 id="new-connections-or-implications">New connections or implications<a class="headerlink" href="#new-connections-or-implications" title="Permanent link">&para;</a></h2>
-<p>Comp-019’s failure is a reusable audit pattern: enzyme mass or nominal activity cannot substitute for physiologic reaction rate when substrate is far below Km, exposure is finite, oxygen/access are uncertain, and serum mapping is absent. This same boundary should govern comp-031-style additive UOX models and any future UOX topology comparison. Research Conjecture boundary: Q141K may still matter as a stratification variable if genotype changes intestinal urate supply into a validated luminal sink, but comp-019 provides no responder ordering or adequate-dose evidence; the discriminating observation is configuration-specific urate flux under human-baseline substrate with genotype-relevant supply modeling or matched clinical stratification.</p>
+<p>The comp-019 retirement usefully separates three ideas that were previously at risk of being conflated: (1) absence of located Q141K-stratified uricase outcome evidence in a bounded search, (2) gut-lumen UOX physiological feasibility, and (3) genotype-stratified response prediction. Only the first survives comp-019. The second moves to substrate/oxygen/peroxide/topology validation; the third survives only as a Research Conjecture dependent on a validated UOX configuration and a genotype-stratified outcome study.</p>
 <h2 id="required-actions">Required actions<a class="headerlink" href="#required-actions" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Update <code>wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md</code> current evidence owners to include comp-045 / <code>uricase-topology-oxygen-peroxide-design-computational.md</code>; verify the README and computational index list the same live UOX evidence surfaces.</li>
-<li>Resolve the open comp-044 maintenance actions touching UOX propagation: validation dashboard/protocol inconsistencies, validation §1.34 “yanthine” analyte naming/justification, and the comp-019 invalidation-policy conflict; verify by re-reading affected validation and interpretive pages.</li>
-<li>Do not propagate any comp-019-derived quantitative numbers, genotype ordering, dose, topology, or safety conclusions into synthesis; automated propagation may only carry the tombstone and bounded search observation.</li>
+<li>None for comp-019. Continue to forbid propagation of retired numerical outputs or derived dose/genotype/topology/safety claims.</li>
 </ol>
 <h2 id="review-limits">Review limits<a class="headerlink" href="#review-limits" title="Permanent link">&para;</a></h2>
-<p>No code was executed, and retired comp-019 code/outputs were not independently recovered from Git; the live artifact is intentionally non-runnable. Primary sources behind the Phase A search, urate concentration, Km, activity, and window priors were not independently verified. Repository fixed-string search failed because <code>rg</code> is unavailable, so affected-surface discovery relied on supplied complete shard audits plus targeted file reads. Local <code>push-review.manifest.json</code> was not readable as a repo file; this review is bound to the daemon-supplied manifest SHA and shard coverage.</p>
+<p>No experiment code was executed. Retired comp-019 code, inputs, and outputs were not reopened from Git; the live tombstone hashes were inspected instead. Primary sources behind the Phase A search and comp-044 priors were not independently verified. <code>grep_repo</code> failed because <code>rg</code> was unavailable, so repository-wide discovery relied on daemon shard coverage and targeted file reads. Unrelated issues reported in comp-020, methodology, and validation pages were not adjudicated as comp-019 blockers.</p>
 
 
 

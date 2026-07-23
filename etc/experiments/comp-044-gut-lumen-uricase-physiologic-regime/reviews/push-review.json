@@ -2,11 +2,11 @@
   "schema_version": 1,
   "comp": "comp-044",
   "comp_dir": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime",
-  "source_commit": "3ede1f4d7cc0d4978138b0b5e0a7cea487c0a075",
-  "artifact_manifest_sha256": "5a9cc8f6f6a4145dae6906f32dc59cdac95b44c9906c5918ad9abd1001276b88",
+  "source_commit": "2f2b3b73e8a77f78f75ece3bce11f9a95b7555b5",
+  "artifact_manifest_sha256": "df65073c0b1065ba8553cddb0b3fabe99925d5ffb8f0b2ec23cc0fdbb756c181",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-23T13:46:44Z",
-  "comp_verdict": "action_required",
+  "timestamp": "2026-07-23T14:17:20Z",
+  "comp_verdict": "clean_with_limitations",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
   "action_required": true,
@@ -20,7 +20,7 @@
   "coverage": [
     {
       "shard_id": "shard-001",
-      "coverage_sha256": "17d06fed7741cc0aab24625b5a28a68e46ee604e4468cd253b101739fe59bc3e",
+      "coverage_sha256": "52123899be00621d8808edfcfdd50ada520124929406adf15dfef7abc49636cf",
       "segments": [
         {
           "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
@@ -106,22 +106,22 @@
           "path": "wiki/etc/GRAPH.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 4322,
-          "file_sha256": "54a8cc417b5548bf68cd4f570c8460742550e4e7bc93e64f40800ece5002bc63",
+          "end": 4549,
+          "file_sha256": "e42f494ce8e76faf1a85ae017ee0a67301b6609312a651feea95bee70be4b7d0",
           "binary": false
         }
       ]
     },
     {
       "shard_id": "shard-002",
-      "coverage_sha256": "5cf9f41b65027fd1f2f0adfa928919241c929961f21ecb7af8c1c72a9e83936f",
+      "coverage_sha256": "aabf57f70f7e781305191ca926d12a328ddd5fd8bd0e6c50ff3b0374ecd17cd7",
       "segments": [
         {
           "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/reviews/push-review.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 14352,
-          "file_sha256": "6f6a4e8b05b91eb3544ccc672e65232c661785d016f4c2596777e887e752bf60",
+          "end": 15775,
+          "file_sha256": "a7052c505f69568bc44ed08435bcb119da0ba13552ce86758517a2cba52a98f1",
           "binary": false
         },
         {
@@ -192,8 +192,8 @@
           "path": "wiki/open-questions.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 75181,
-          "file_sha256": "c891a06eaf9a0f8357510984ea3e7e3d2085ec5a44b4bc00cd698a372aa216c8",
+          "end": 75450,
+          "file_sha256": "2f1a3bc2354d3fed6a510435dcbfbda1f264fd1741eeb2d9d87bc3ff8bf8792f",
           "binary": false
         }
       ]
@@ -228,28 +228,29 @@
     }
   ],
   "unsupported_binary_entries": [],
-  "projected_cost_usd": 1.636275,
-  "actual_cost_usd": 1.189296,
-  "input_tokens": 172938,
-  "output_tokens": 12049,
-  "tool_calls": 4,
-  "review_sha256": "22785b941002d8aa4ad44198ba55dd7a9b1d98dd81a5d9a8b47a411c543e55bf",
+  "projected_cost_usd": 1.638674,
+  "actual_cost_usd": 1.015296,
+  "input_tokens": 233034,
+  "output_tokens": 15049,
+  "tool_calls": 13,
+  "review_sha256": "106fb3080ef9a51698e2a131368ee6c943d5794fa4c1825bc331577c237eff9c",
   "lane_adjudication": {
-    "date": "2026-07-23T13:46:44Z",
+    "date": "2026-07-23T14:17:20Z",
     "method": "exact push review",
     "new_artifact_review_performed": true,
     "queue_action_remains_open": true,
-    "propagation_allowed_scope": "corrective propagation that comp-019 flat-dose robustness is non-robust under comp-044's bounded diagnostics; no derived efficacy claims",
-    "synthesis_allowed_scope": "bounded synthesis of comp-044 as a deterministic consistency audit with inherited priors and explicit open wet-lab gates",
+    "propagation_allowed_scope": "bounded corrective propagation only: comp-019 unconditional flat-dose robustness fails the comp-044 diagnostic",
+    "synthesis_allowed_scope": "bounded mechanistic audit synthesis with inherited-input and no-serum/no-dose/no-topology limitations",
     "forbidden_inferences": [
-      "serum urate or \u0394SUA prediction",
-      "oral dose or yield sufficiency",
+      "serum-urate effect",
+      "dose recommendation",
       "genotype ordering",
+      "true physiological regime",
       "topology or chassis winner",
-      "true physiological gut regime identified",
-      "grid fractions as probabilities",
-      "peroxide safety or redox closure",
-      "primary-source-verified quantitative planning values"
+      "production-sufficiency target",
+      "safety conclusion",
+      "probability from grid occupancy",
+      "clinical or self-experiment guidance"
     ]
   }
 }

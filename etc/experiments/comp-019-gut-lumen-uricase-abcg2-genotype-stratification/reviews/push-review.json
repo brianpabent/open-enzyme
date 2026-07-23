@@ -2,14 +2,14 @@
   "schema_version": 1,
   "comp": "comp-019",
   "comp_dir": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification",
-  "source_commit": "6efddd88c579c3827c6fe4a8664e342da976df7c",
-  "artifact_manifest_sha256": "1ec63b843755383c76e32ab847f05145a2255ab88b8978e8ff7959aa5e38b34a",
+  "source_commit": "170861c416cb0bf78f533d7844b040ac6f183dac",
+  "artifact_manifest_sha256": "f8053438bfe6a4a7c707a233fb0e28c83e9f6210a51078e80f96b0ff1cf5e29e",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-23T13:41:49Z",
-  "comp_verdict": "action_required",
+  "timestamp": "2026-07-23T14:07:34Z",
+  "comp_verdict": "clean_with_limitations",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
-  "action_required": true,
+  "action_required": false,
   "authoring_gates": {
     "status": "modern",
     "valid": true,
@@ -20,22 +20,22 @@
   "coverage": [
     {
       "shard_id": "shard-001",
-      "coverage_sha256": "8894976e72a94254708101f3aadbcf93bf5332a2d6a2fe737e5960509b487565",
+      "coverage_sha256": "b21e2d9a4f230c7a0493e6010c4db201c8b7ff9fe0527c5333f11ddecf66dc0c",
       "segments": [
         {
           "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
           "role": "comp_artifact",
           "start": 0,
-          "end": 1985,
-          "file_sha256": "3e1bdaeeb736f9a37b79d923a87ce31609b347b6976b9c4e8cb2ad5246e6a194",
+          "end": 2101,
+          "file_sha256": "4d7ed2ac4904028673f621c6517d12c49c99537637bf96b21d9bcaa0bc12233c",
           "binary": false
         },
         {
           "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/invalidation.json",
           "role": "comp_artifact",
           "start": 0,
-          "end": 2683,
-          "file_sha256": "960349dc7fd514bd94230a2d66d2868a7c7e533f7c58424b4cd1220e84ec5412",
+          "end": 2699,
+          "file_sha256": "1ed9f17bddeb00e1a3d62a69fa3fdd87f492c02b47e5980517ab40d3faa3ad58",
           "binary": false
         },
         {
@@ -114,7 +114,7 @@
     },
     {
       "shard_id": "shard-002",
-      "coverage_sha256": "2db31d37083888f5a70ac85b836e68dc7a80bbcf22807c0089a25f0bb4b2c550",
+      "coverage_sha256": "953891714f27a2f92884ab97632123ca18dbcded99f12713c728aabf05758498",
       "segments": [
         {
           "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
@@ -136,8 +136,8 @@
           "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/reviews/push-review.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 14125,
-          "file_sha256": "0659c67bd98dbf79a001ead81aa4c8e620f387113fa7ba12db2aa5bbb47ea16b",
+          "end": 15614,
+          "file_sha256": "a064e11035d5c594ab668aa13642baac78a5566a1c5e60794fe00f34f2ee9575",
           "binary": false
         },
         {
@@ -176,8 +176,8 @@
           "path": "wiki/open-questions.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 75181,
-          "file_sha256": "c891a06eaf9a0f8357510984ea3e7e3d2085ec5a44b4bc00cd698a372aa216c8",
+          "end": 75450,
+          "file_sha256": "2f1a3bc2354d3fed6a510435dcbfbda1f264fd1741eeb2d9d87bc3ff8bf8792f",
           "binary": false
         },
         {
@@ -220,28 +220,29 @@
     }
   ],
   "unsupported_binary_entries": [],
-  "projected_cost_usd": 1.701681,
-  "actual_cost_usd": 1.345262,
-  "input_tokens": 209230,
-  "output_tokens": 12812,
-  "tool_calls": 10,
-  "review_sha256": "a6f9c41c5258647383dc206a7aad6f012e95f5e45b5bbbaf63fb650956cadaf5",
+  "projected_cost_usd": 1.704044,
+  "actual_cost_usd": 1.145497,
+  "input_tokens": 218957,
+  "output_tokens": 12020,
+  "tool_calls": 12,
+  "review_sha256": "8b292c50ac294b9a9e014d957ade6a66e53ae1fe7cedb2eab7c40003a4ad62ba",
   "lane_adjudication": {
-    "date": "2026-07-23T13:41:49Z",
+    "date": "2026-07-23T14:07:34Z",
     "method": "exact push review",
     "new_artifact_review_performed": true,
-    "queue_action_remains_open": true,
-    "propagation_allowed_scope": "corrective propagation of comp-019 invalidation and bounded search observation only",
-    "synthesis_allowed_scope": "cite only as invalidated tombstone/audit lesson and as bounded no-Q141K-stratified-outcome search result",
+    "queue_action_remains_open": false,
+    "propagation_allowed_scope": "comp-019 retirement/tombstone status and bounded searched-source observation only",
+    "synthesis_allowed_scope": "bounded statement that comp-019 numerical/model conclusions are invalidated; Q141K remains prospective stratification only",
     "forbidden_inferences": [
-      "comp-019 \u0394SUA estimates",
-      "dose or yield conclusions",
-      "genotype responder ordering",
-      "flat-dose adequacy",
-      "topology or chassis selection",
-      "efficacy or safety claims",
-      "trial-design implications",
-      "treating bounded search as universal absence"
+      "any comp-019 \u0394SUA estimate",
+      "dose or yield sufficiency",
+      "capacity ratio",
+      "genotype-response ordering",
+      "flat-dose classification",
+      "topology/chassis selection",
+      "efficacy or safety claim",
+      "clinical or treatment guidance",
+      "universal absence of Q141K-stratified uricase outcomes"
     ]
   }
 }
