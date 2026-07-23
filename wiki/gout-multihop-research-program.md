@@ -29,10 +29,12 @@ signaling, and preventive urate lowering versus flare resolution.
 
 ## Three immediate corrections
 
-1. **The old oral-UOX dose regime is invalid.** [comp-019](./uricase-abcg2-genotype-stratification-computational.md)
+1. **The old oral-UOX flat-dose classification is not robust.** [comp-019](./uricase-abcg2-genotype-stratification-computational.md)
    converted flat enzyme mass into catalytic capacity without physiological substrate,
    oxygen, access, survival, or transit constraints. [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md)
-   retires its ΔSUA, genotype-ranking, flat-dose, and “yield is solved” conclusions.
+   found that the unconditional classification did not survive its tested substrate-occupancy
+   and finite-window diagnostics. It did not identify the true physiological regime or reverse
+   the old conclusion, so comp-019's ΔSUA, genotype ranking, dose, and yield claims cannot guide decisions.
 2. **UOX topology and peroxide handling cannot be separated.** Intracellular catalase directly
    co-localizes only with intracellular UOX. PULSE supports three topologies plus joint
    KatG+VHb, but does not identify the human-optimal architecture. [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md)
@@ -47,10 +49,10 @@ signaling, and preventive urate lowering versus flare resolution.
 
 | Thread | Multihop connection | Evidence boundary | Decisive next test |
 |---|---|---|---|
-| Physiologic UOX regime | human jejunal urate → oxygen/transit/access → topology → peroxide | Direct human substrate measurement + rodent/in-vitro engineering precedents; human efficacy unknown | [1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) |
+| Physiologic UOX regime | exact configuration → human jejunal urate → oxygen/transit/access → peroxide | Direct human substrate measurement + rodent/in-vitro engineering precedents; human efficacy unknown | Build and characterize exact configurations in the relevant construct-supply work (§§1.1, 1.2, and 1.5) or use an exact external configuration, then run [1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) |
 | Staged precursor sink | dietary nucleosides → whole-cell salvage → urate appearance → UOX/PDB | Each stage has precedent; ordering and net host flux are untested | [1.34](./validation-experiments.md#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux) |
 | Enterocyte tissue paradox | NLRP3 inhibition → PDZK1/ABCG2 trafficking → intestinal urate export | Direct intestinal-cell link exists; candidate-specific direction unknown | [1.35](./validation-experiments.md#135-enterocyte-nlrp3pdzk1abcg2-tissue-paradox-assay) |
-| Redox double edge | remove luminal urate antioxidant → generate UOX H2O2 → epithelial redox injury | Biochemical mechanism established; therapeutic window unmeasured | [1.36](./validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay) |
+| Redox double edge | remove luminal urate antioxidant → generate UOX H2O2 → epithelial redox injury | Biochemical mechanism established; therapeutic window unmeasured | [1.36](./validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay) before animal escalation |
 | PDB self-niche | reductive urate carbon fate → butyrate or other products → colonocyte O2 consumption → anaerobe persistence | Full-pathway anaerobe supports carbon fate; CBT2.0 output unresolved | [1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test) |
 | OMV gut-to-blood bridge | T0SS cargo loading → OMV epithelial transfer → active systemic UOX | Mouse/ex-vivo transport precedent; UOX cargo, safety, and activity untested | [1.38](./validation-experiments.md#138-t0ss-uox-omv-gut-to-systemic-bridge-assay) |
 | Fructose feed-forward loop | KHK/ATP depletion → urate/ROS → intestinal ABCG2 suppression → less gut excretion | Rat ileum/cell evidence plus canonical hepatic fructolysis; human causal chain open | [1.39](./validation-experiments.md#139-fructose--khk--nox--abcg2-human-enteroid-test) |
@@ -61,15 +63,17 @@ signaling, and preventive urate lowering versus flare resolution.
 
 ## Program order
 
-Run 1.33 and 1.34 first: they decide whether the core sink architecture and staging logic
-survive realistic chemistry. Run 1.35 and 1.36 before combining anti-inflammatory or redox
-modules with UOX. Run 1.37 before attributing butyrate-mediated host effects to CBT2.0. The
+Build and characterize the exact UOX configurations in the relevant construct-supply work
+(§§1.1, 1.2, and 1.5) or use an exact external configuration before §1.33. Within a controlled host, §1.33 may nominate a topology;
+cross-host results remain configuration-specific. Run §1.36 before animal escalation. Run 1.34
+to test the staging logic, 1.35 before combining anti-inflammatory modules with UOX, and 1.37
+before attributing butyrate-mediated host effects to CBT2.0. The
 remaining screens are parallel discovery branches whose positive results can change product
 architecture rather than merely add another ingredient.
 
-Within the koji track, §1.9A lactoferrin-only may run opportunistically in parallel with §1.33
-when NSlD-ΔP10 access is available. Freeze §1.9B UOX-only only after §1.33 selects a
-koji-compatible topology, and enter §1.9C dual-cassette only after both single-cassette arms
+Within the koji track, §1.9A lactoferrin-only may run opportunistically in parallel with the
+§1.5 build and §1.33 screen when NSlD-ΔP10 access is available. Freeze §1.9B UOX-only only
+after §1.33 advances an exact §1.5-built koji configuration, and enter §1.9C dual-cassette only after both single-cassette arms
 pass. This preserves lab-access momentum without spending the full dual-cassette budget on an
 unselected UOX architecture.
 

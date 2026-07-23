@@ -71,9 +71,7 @@ The linked mechanism dossier supplies the supporting evidence; each entry here s
 4. **Prebiotic enrichment** — inulin/FOS/resistant starch enriches PDB-positive Lachnospiraceae and Ruminococcaceae; ~10% SUA reduction in animal/small-human trials; doesn't require an engineered organism
 5. **Dietary cofactor adequacy (selenium)** — selenium-dependent DOPDH runs ~27× faster than the sulfur variant; selenium deficiency could phenocopy PDB depletion without changing bacterial abundance; trivially cheap if relevant
 
-**Cheapest first move.** Two parallel:
-- Serum selenium on next blood panel (~$40–80 standard clinical) — answers whether the cofactor side of the question is gating Brian's gut PDB function. Already added to [`self-experiment-protocol.md` §11.0](./self-experiment-protocol.md).
-- Cranberry juice n=1 (4 weeks unsweetened, ~$20) — tests the parallel *Alistipes indistinctus* / hippuric acid → ABCG2 axis via direct dietary benzoate → glycine conjugation → hippuric acid, without needing bacterial colonization. Different mechanism, same downstream node (ABCG2). See [`abcg2-modulators.md`](./abcg2-modulators.md) Alistipes Tier 2.
+**Cheapest first move.** In a controlled culture or gnotobiotic system, measure pathway activity across selenium-defined media and identify terminal carbon products by isotope tracing. Test the separate *Alistipes indistinctus* / hippuric-acid → ABCG2 hypothesis as its own controlled perturbation; dietary exposure or an n=1 observation cannot establish that mechanism.
 
 **Cross-reference.** [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) (mechanism), [`abcg2-modulators.md`](./abcg2-modulators.md) (PPARγ/ABCG2 axis), [`gut-lumen-sink.md`](./gut-lumen-sink.md) (PULSE context for EcN chassis option), [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) (LBP framework for anaerobic options).
 
@@ -117,7 +115,7 @@ The linked mechanism dossier supplies the supporting evidence; each entry here s
 
 ### 4. Inhaled mRNA-IL-1RA pulse therapy for acute gout flare
 
-**Intervention.** Lipid nanoparticle-formulated mRNA encoding IL-1 receptor antagonist (anakinra-equivalent), delivered via pulmonary inhaler. Transient expression matches the short flare window (12–72 hours). The pulmonary surface area (~70 m²) maximizes uptake; mRNA-LNP delivery for pulmonary indications is mature (CF, RSV, asthma research programs). Eliminates SC injection requirement for flare management; cost-competitive with $300K/yr canakinumab if mRNA manufacturing economics hold.
+**Intervention.** Lipid nanoparticle-formulated mRNA encoding IL-1 receptor antagonist, delivered by inhalation as a transient-expression hypothesis. Pulmonary expression, systemic exposure, receptor occupancy, efficacy, and repeat-dose safety are all unestablished.
 
 **Chokepoint(s) hit.** CP5a (IL-1β receptor blockade). Companion target for the existing SC anakinra / canakinumab options. See [`modality-chokepoint-matrix.md` §"Open exploration questions" #5](./modality-chokepoint-matrix.md).
 
@@ -133,18 +131,18 @@ The linked mechanism dossier supplies the supporting evidence; each entry here s
 
 **Research comparison.** The relevant test is not an assumed clinical substitution for prednisone or anakinra. It is whether the measured exposure and receptor occupancy produce a reproducible flare-model effect with acceptable repeat-dose pulmonary safety. The two wet-lab measurements above gate any clinical or economic comparison.
 
-**Why IL-1Ra over anti-IL-1β monoclonal as the mRNA payload (partner-conversation argument):** the alternative mRNA cassette would encode an anti-IL-1β antibody (canakinumab-equivalent). IL-1Ra wins for four reasons that partners ask about:
+**IL-1Ra versus an anti-IL-1β monoclonal as an mRNA payload:** the alternative cassette would encode an anti-IL-1β antibody. IL-1Ra has four candidate design advantages:
 
 1. **Mechanism breadth.** IL-1Ra blocks both IL-1α AND IL-1β at the single IL-1R1 receptor — broader pathway coverage. Anti-IL-1β monoclonals only neutralize IL-1β. For gout the difference is small (IL-1β is the dominant ligand), but for COPD / ARDS / IPF the cross-indications, IL-1α also drives sterile inflammation, so the broader-mechanism payload is a feature, not a quirk.
 2. **Protein size + structure.** IL-1Ra is **~17 kDa, no disulfide bonds, no glycosylation required for activity** — easier mRNA expression and lung-tissue translation. Antibodies are **~150 kDa with mandatory glycosylation + paired heavy/light chain assembly** — substantially harder for transient pulmonary mRNA expression. Translation-efficiency mass ratio (comp-033's dominant sensitivity driver, ρ = +0.78) favors small non-glycosylated payloads by ~10×.
 3. **Immunogenicity.** Human IL-1Ra is endogenous (body makes its own — see [`nlrp3-inflammasome.md`](./nlrp3-inflammasome.md) §"Chokepoint 5"); recombinant IL-1Ra is therefore essentially zero-immunogenicity. Humanized antibodies retain low but non-zero immunogenicity (anti-drug antibody response over chronic dosing).
 4. **Cleanness of mechanism.** IL-1Ra is purely competitive antagonism — no agonism, no ADCC, no CDC, no off-target effector function. Antibodies have Fc-mediated effector functions (ADCC / CDC / opsonization) that can produce off-target activity in some contexts.
 
-The payload choice is structurally similar to why ankakinra and not canakinumab is the preferred reference for the inhaled-mRNA cassette: same mechanism, smaller protein, broader pathway coverage, lower immunogenicity. Partners evaluating the cassette should land on IL-1Ra not anti-IL-1β.
+These properties nominate IL-1Ra as the initial payload for direct comparison. They do not establish pulmonary expression, exposure, efficacy, or safety; an anti-IL-1β payload remains a comparator rather than a clinically inferior option.
 
-**Cross-indication leverage — the commercial case is not gout alone:** gout is a low-priority indication for big pharma; nobody develops inhaled mRNA-IL-1RA *for gout*. But the IL-1 axis is implicated across many indications with much larger markets: **COPD exacerbations** (~16M US patients, ~$50B annual healthcare cost, clear IL-1β-driven neutrophilic inflammation), **severe asthma — T2-low/neutrophilic phenotype** (large unmet need; T2-high has biologics like dupilumab/mepolizumab, T2-low does not), **ARDS / acute lung injury** (~190K US cases/yr, 40% mortality), **IPF**, **CRS from CAR-T**, **recurrent pericarditis**. The regulatory strategy that actually works: approve for a primary indication first (most likely COPD exacerbations or ARDS by market size × mechanism fit), then off-label use spreads to gout — same playbook as anakinra (approved 2001 for RA, now widely off-label for gout / pericarditis / Schnitzler / sJIA / CAPS / COVID-CRS). **Implication for partner conversations:** the comp-033 Tier-A inhaled-mRNA companies (Arcturus LUNAR-CF, ReCode RCT2100, Ethris/AstraZeneca, Sanofi/Translate Bio) develop for CF/RSV/asthma, not gout. Open Enzyme's role is **target validation + the multi-indication cross-leverage argument** — making the case to a partner that IL-1Ra has indications beyond their initial target so an mRNA-IL-1RA cassette swap is platform-justifiable. Gout-patient access comes off-label after primary-indication approval, like anakinra. **Near-term bridge for gout patients while this 5–10 year development horizon plays out: anakinra SC** — see [`gout-action-guide.md` §"This year (advanced)"](./gout-action-guide.md) for the off-label gout protocol (100 mg/day SC × 3 days, NOT intra-articular).
+**Cross-indication research boundary.** IL-1 signaling is relevant across several inflammatory diseases, but indication choice, commercial value, and regulatory sequencing require disease-specific efficacy and safety evidence. For gout, the inhaled mRNA–IL-1Ra hypothesis remains a delivery and exposure experiment; existing anakinra use does not validate a pulmonary mRNA product.
 
-**Cross-reference.** [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) (CP5a × mRNA cell), [`delivery-route-matrix.md`](./delivery-route-matrix.md) (RNA platforms × inhaled cell), [`inhaled-mrna-il1ra-pulse-computational.md`](./inhaled-mrna-il1ra-pulse-computational.md) (comp-033 full analysis), [`disulfiram.md`](./disulfiram.md) + [`gout-action-guide.md`](./gout-action-guide.md) (anakinra SC bridge protocol).
+**Cross-reference.** [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) (CP5a × mRNA cell), [`delivery-route-matrix.md`](./delivery-route-matrix.md) (RNA platforms × inhaled cell), and [`inhaled-mrna-il1ra-pulse-computational.md`](./inhaled-mrna-il1ra-pulse-computational.md) (comp-033 full analysis).
 
 ---
 
@@ -168,7 +166,7 @@ The payload choice is structurally similar to why ankakinra and not canakinumab 
 
 ### 6. Intra-articular uricase ± co-formulated catalase for direct tophi dissolution
 
-**Intervention.** Direct injection of uricase (with co-formulated catalase or as a uricase-catalase fusion protein) into a tophi-bearing joint. Bypasses systemic immunogenicity issue (locally bounded immune exposure), bypasses substrate-access issue at SC depot (tophi ARE concentrated urate at ~100× plasma), bypasses H2O2-in-tissue issue via co-localized catalase (Schiavon / Veronese early-2000s precedent for uricase-catalase fusion). Clinical analog: intra-articular corticosteroid for acute gout flare.
+**Intervention.** Test UOX with co-formulated catalase or a UOX–catalase fusion in a controlled intra-articular model. Local crystal access, peroxide control, tissue safety, persistence, immunogenicity, sterility, and formulation behavior all remain empirical gates.
 
 **Chokepoint(s) hit.** CP6 (uricase mechanism), local tophi dissolution. Sister to the existing IV pegloticase / SEL-212 system at a different delivery target (one specific joint with crystal deposition rather than systemic). See [`delivery-route-matrix.md` §"Open exploration questions" #1](./delivery-route-matrix.md).
 
@@ -180,26 +178,19 @@ The payload choice is structurally similar to why ankakinra and not canakinumab 
 
 **Cheapest first move.** comp-NNN protease-stability + folding feasibility analysis of a uricase-catalase fusion construct under shio-koji conditions (extends the comp-006 / comp-007 framework to a chimeric protein). Then a single-construct expression test if the comp-NNN returns LOW risk.
 
-**H₂O₂ biochemistry gate — [comp-035](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) 2026-05-16: GREEN across all three architectures, but the GREEN is NOT decision-grade (comp-review 2026-07-14).** Treat H₂O₂ safety as a **testable Phase-0 prior gated on the Amplex Red wet-lab measurement** (validation §1.33/§1.36), not as closed — **do not promote the IA uricase route on this result alone**; several load-bearing choices are hardcoded. Reaction-diffusion analysis with Damköhler-number coupling, 20,000 Monte Carlo samples per architecture over kinetic / diffusion / geometric / joint-condition priors. Predicted steady-state [H₂O₂] at joint-tissue boundary (median, 5th–95th percentile):
-- **Pickering emulsion** (Liu 2025 PEBR geometry): **0.19 µM** [0.034–1.1 µM] — GREEN
-- **Fusion protein** (Schiavon class, 1–5 nm separation): **0.034 µM** [0.006–0.20 µM] — GREEN
-- **Free co-formulated**: **0.19 µM** [0.005–7.2 µM, max 120 µM in worst-case URI:CAT 100:1 corner] — GREEN at reasonable stoichiometry; YELLOW at uneven URI:CAT
+**H₂O₂ biochemistry gate.** [comp-035](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) is a non-decision-grade Phase-0 prior. It does not establish a safe steady-state threshold, clear any architecture, or select a chassis. Its review leaves Amplex Red, catalase activity, retention, stoichiometry, diffusion, and tissue safety open.
 
-All three clear the 10 µM safe threshold by 5–50× margin under reference conditions. Toxicity threshold band (GREEN < 10 µM, YELLOW 10–100 µM, RED > 100 µM) was itself a comp-035 contribution — no published steady-state synovial-tissue toxicity curve existed; anchored on Schalkwijk 1986/87 (PMID 3707631) injected-GOx model + 26+ in vitro chondrocyte bolus studies + endogenous synovial baseline (~1 µM).
+The modeled result supports one bounded design lesson: advertised nanoscale proximity is not enough; total reaction-site catalase capacity must be measured. Pickering, fusion, and free co-formulation remain unranked until they are compared under matched conditions.
 
-**Substantive proximity-claim reframe (load-bearing for chassis selection):** **The FRET <10 nm proximity advertised in Liu 2025 is NOT the safety mechanism in the Pickering architecture.** Da_shell ~5 × 10⁻³ means the 5 nm catalase shell is too thin to scavenge H₂O₂ in transit — escape fraction ~0.998. The actual safety mechanism is **bulk-phase catalase scavenging from catalase distributed across all dispersed droplets in the joint volume** — mathematically equivalent to free co-formulated at the same total dose. Catalase is so fast (kcat 10⁷–10⁸ s⁻¹) that bulk first-order destruction dominates regardless of proximity geometry. Pickering's actual load-bearing advantages are (a) fixed URI:CAT stoichiometry preservation in vivo, (b) catalase activity protection during storage / immune exposure, (c) mannose-targeted retention to tophi — **not the FRET proximity claim.**
+**Cheapest next wet-lab step (comp-035 handoff):** Compare H₂O₂ time courses under matched UOX and catalase activity in a synovial-fluid mimic, then test tissue safety for any architecture that advances. A low bulk H₂O₂ readout does not close local-exposure or tissue-safety questions.
 
-**Chassis-selection criteria:** choose architecture on **production economics + regulatory pathway + manufacturing complexity + in vivo retention + immunogenicity**, not advertised proximity claims. Catalase (kcat/Km) is the dominant safety-margin driver across all three architectures (Spearman r = −0.95 to −0.97); **catalase preparation quality + in vivo stability + proportional dosing** are first-order chassis-selection variables.
-
-**Cheapest next wet-lab step (comp-035 handoff):** **Amplex Red microelectrode H₂O₂ measurement** in synovial-fluid mimic with dispersed architecture + 0.5 mM urate substrate (~$2–5K per architecture). Tissue-level effects (cartilage damage, synoviocyte response) are downstream of [H₂O₂] exposure — sub-µM Amplex Red readout makes those low by construction. Chondrocyte-cytotoxicity titration only needed if Amplex Red surfaces unexpectedly high [H₂O₂].
-
-**Cross-reference.** [`delivery-route-matrix.md`](./delivery-route-matrix.md), [`gout-kill-chain-delivery-routes.md`](./gout-kill-chain-delivery-routes.md), [`engineered-koji-protocol.md` §"The Hydrogen Peroxide Question — and why the chassis solves it for free"](./engineered-koji-protocol.md), [`intra-articular-uricase-h2o2-reaction-diffusion-computational.md`](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) (comp-035 full analysis).
+**Cross-reference.** [`delivery-route-matrix.md`](./delivery-route-matrix.md), [`gout-kill-chain-delivery-routes.md`](./gout-kill-chain-delivery-routes.md), [`engineered-koji-protocol.md`](./engineered-koji-protocol.md), [`intra-articular-uricase-h2o2-reaction-diffusion-computational.md`](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) (comp-035 full analysis).
 
 ---
 
 ### 7. Pharmacological chaperones for ABCG2 Q141K folding rescue
 
-**Intervention.** Small molecules that bind misfolded Q141K ABCG2 and rescue trafficking from the ER aggresome to the apical brush border membrane. CFTR-corrector class precedent (ivacaftor / tezacaftor / elexacaftor for ΔF508 CFTR — multibillion-dollar therapeutic class). Same ATP-binding cassette superfamily as CFTR; same design problem. Q141K is the #1 gout-risk GWAS variant.
+**Intervention.** Small molecules that bind misfolded Q141K ABCG2 and rescue trafficking from the ER aggresome to the apical brush border membrane. CFTR correctors provide a precedent for pharmacological rescue of a misfolded ABC transporter, but they do not establish rescue of Q141K ABCG2. The gout-risk association motivates a trafficking assay; it does not identify a compound.
 
 **Chokepoint(s) hit.** Gut and renal ABCG2 simultaneously (oral systemic small molecule). This direct chaperone hypothesis is distinct from the separate, still-unvalidated proposal that butyrate could reproduce pharmacologic HDAC-inhibitor rescue of Q141K.
 
@@ -237,13 +228,13 @@ The superseded comp-032 hypothesis list and comp-047 correction live in [`abcg2-
 
 ---
 
-## Cross-modality combinations
+## Cross-modality interaction questions
 
-Compositions where two interventions on *different* chassis hit complementary chokepoints and stack additively without competing for the same production / delivery resource. These are not chassis-pending entries themselves — both arms have selected chassis — but the *composition* is worth surfacing here because the same chassis-is-downstream-of-chokepoint discipline applies: don't filter a stack as "off-platform" just because one arm doesn't live in the koji track.
+Mechanistic separation can justify an interaction experiment, but it does not establish biological additivity, compatible exposure, safety, or a product architecture. Each arm must first pass independently; any combination then needs a prespecified additive null, compatibility controls, and configuration-specific safety readouts.
 
-### M1. Engineered PDB EcN × compounded disulfiram — urate-disposal upstream + CP6b pyroptotic-exit blockade
+### M1. Engineered PDB configuration × disulfiram — upstream disposal and downstream pyroptotic-exit blockade
 
-**Composition.** Engineered *E. coli* Nissle CBT2.0 has animal-model urate-lowering precedent; its butyrate output and human magnitude are unresolved. Disulfiram targets downstream GSDMD. The mechanisms remain conceptually separated, but biological additivity and any SCFA-mediated host effect are unproven; comp-031's quantitative combination result is invalidated. Product carbon fate and drug–microbe compatibility now gate this stack.
+**Composition.** CBT2.0 has animal-model urate-lowering precedent; its terminal carbon products and human magnitude are unresolved. Disulfiram targets downstream GSDMD. The mechanisms are conceptually separated, but biological additivity, exposure compatibility, and any SCFA-mediated host effect are unproven.
 
 **Chokepoint(s) hit.** Urate disposal is upstream of the NLRP3 cascade; disulfiram targets CP6b GSDMD pyroptotic exit. They are not two branches of CP6.
 
@@ -251,11 +242,9 @@ Compositions where two interventions on *different* chassis hit complementary ch
 
 **Why this entry exists here.** The combination has a nonredundant mechanistic rationale, but it remains gated by carbon fate, exposure, compatibility, and additivity experiments.
 
-**Cheapest first move.** Two parallel comp-NNNs, both completed 2026-05-16:
-- **[comp-027](./disulfiram-dose-modeling-computational.md)** — downgraded to hypothesis-generator (comp-review 2026-07-14). It produced one modeled point on a hard-coded decision boundary, not a validated dose window or regimen. A dose-finding and drug–interaction study must precede any formulation or combination claim.
-- **[comp-031](./dual-chassis-ecn-pdb-uricase-computational.md)** — **fully INVALIDATED 2026-07-13.** Its ΔSUA, substrate-competition, PDB-derived butyrate, Q141K-rescue, additivity, and two-strain recommendation are all retracted. The model validates neither a dual-cassette EcN nor separate strains. One strain, separate strains, and temporal staging remain unranked options pending comp-044/045/046 and validation §§1.33/1.34/1.37.
+**Next evidence.** [comp-027](./disulfiram-dose-modeling-computational.md) is a hypothesis generator, not a dose or regimen model. [comp-031](./dual-chassis-ecn-pdb-uricase-computational.md) is unusable for current decisions because it inherits an unsupported flat UOX regime, assigns unmeasured butyrate production to engineered EcN, and mixes compartments. COMP-044 establishes only that the legacy unconditional flat-dose classification is not robust to the tested substrate-occupancy and finite-window diagnostics. It does not identify the true physiological regime or choose one strain, separate strains, or temporal staging.
 
-**Inter-arm PK interaction — resolved PK-clean (2026-07-13 lit scan).** A synthesis card proposed that PDB-derived butyrate might modulate the hepatic CYP enzymes that metabolize disulfiram, altering its effective dose. A focused scan ([`logs/disulfiram-butyrate-cyp-pk-scan-2026-07-13.md`](../logs/disulfiram-butyrate-cyp-pk-scan-2026-07-13.md)) found **no material interaction** and no dosing caveat: (1) disulfiram is a mechanism-based *inhibitor* of CYP2E1 (not a substrate whose clearance a CYP shift would swing), and no study shows butyrate-the-SCFA modulating CYP2E1 — the two CYP2E1-induction papers the claim leaned on used **β-hydroxybutyrate (a ketone) + palmitate**, which the card conflated with butyrate; (2) gut butyrate is exposure-limited — colonocytes oxidize ~70–80%, systemic butyrate is ~3–4 µM (portal tens of µM transiently), while HDAC-mediated hepatic CYP effects need ~0.5–5 mM (2–3 orders higher); (3) disulfiram's GSDMD-Cys191 blockade is covalent and nanomolar, insensitive to any modest CYP shift. The two arms stack **PK-clean** on the butyrate × CYP axis. (Butyrate does touch pyroptosis separately and *bidirectionally* — at upstream inflammasome priming, not the GSDMD pore step disulfiram blocks — so a *pharmacodynamic* interaction is not excluded, just not the CYP-PK one the card proposed.)
+Run carbon-fate and residual-flux experiments before choosing a microbial configuration. Then test the exact microbial configuration and disulfiram separately and together under a prespecified interaction model, with drug–microbe compatibility, exposure, GSDMD activity, urate disposal, carbon products, and safety measured directly. The literature scan rules out one conflation—β-hydroxybutyrate is not butyrate—but does not establish that the pair is pharmacokinetically or pharmacodynamically clean.
 
 **Cross-reference.** [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) §"Companion intervention: compounded disulfiram"; [`disulfiram.md`](./disulfiram.md) §"Companion intervention: PDB-engineered EcN"; [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md); [`computational-experiments.md`](./computational-experiments.md) comp-027 + comp-031.
 
@@ -266,7 +255,7 @@ Compositions where two interventions on *different* chassis hit complementary ch
 These hypotheses need the same mechanism, evidence, exposure, and delivery audit before admission:
 
 - **Engineered exosomes** carrying NLRP3 inhibitors targeted to CD163+ macrophages — see [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md).
-- **CRISPR / base editing in patient** for Q141K → Q141 in crypt stem cells — see [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md). Probably "delivery unsolved on a 5–10 year horizon" status.
+- **CRISPR / base editing** for Q141K → Q141 in crypt stem cells — see [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md). Delivery, off-target effects, durability, and tissue access remain unresolved.
 - **Wearable / microneedle continuous UA monitoring** — not an intervention per se, but a monitoring tool that changes intervention-titration kinetics. Different shape; possibly belongs in a separate monitoring-pending page.
 - **GSDMD pore-mediated self-delivery of OE-relevant biologics** (KPV / nanobodies / single SCR domains / IL-1RA — see [`gsdmd-pore-delivery-paradox.md`](./gsdmd-pore-delivery-paradox.md) §"Implication for OE biologics") — chassis-pending status: koji can produce the payloads; the chassis-question is the **delivery format** that gets the payload to the synovial fluid in time for the pore-opening window. Different chassis question than "what produces the molecule"; same general shape (real intervention, chassis open).
 - **Engineered C1-INH (SERPING1, recombinant complement regulator) in an LBP-luminal chassis** — the next CP0 LBP engineering gate. [Comp-024](./computational-experiments.md) (2026-05-16) ranked complestatin-family BGC heterologous expression RED for the LBP track and C1-INH GREEN-provisional 0.774 by comparison. The remaining single-axis problem is luminal-protease stability plus glycosylation, testable with a comp-006-style analysis of SERPING1 in EcN-secreted format. **Sister to DAF SCR1-4:** DAF accelerates convertase decay at the MSU crystal surface; C1-INH inactivates C1r/C1s + MASP-2 at the classical/lectin pathway entry point. **Next move:** protease-stability and glycosylation feasibility for SERPING1 in EcN luminal-secreted format.

@@ -20,7 +20,6 @@ related:
   - gout-clinical-pipeline.md
   - complement-c5a-gout.md
   - delivery-route-matrix.md
-  - compounding-pharmacy-track.md
   - chassis-pending-interventions.md
   - purine-degrading-bacteria.md
   - gsdmd-pore-delivery-paradox.md
@@ -50,7 +49,7 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 
 **Guiding principle:** compartment matching. Ask "where does this target live?" before asking "how do we deliver?" A renal proximal-tubule transporter (URAT1) is unreachable by intra-articular injection. A synovial macrophage target is unreachable by inhaled drug. Compartment mismatch is the dominant reason a mechanistically-correct compound fails to work in vivo.
 
-**Temporal axis:** The matrix below is largely time-static, but gout has at least three time regimes that gate route choice: (a) **flare onset** (0–6 hr) wants fast onset → sublingual / inhaled / IA; (b) **flare peak** (6–48 hr) wants sustained → IA hydrogel / SC depot; (c) **inter-flare chronic / lifetime prevention** wants once-daily oral or longer-cadence biologic / chassis-based. The right route for a given chokepoint depends on which clock you're on. Cells in the matrix should be read with this in mind even where it is not explicitly tagged.
+**Temporal axis:** Route choice depends on the target's time course as well as its compartment. Acute and inter-flare hypotheses require different onset and residence-time profiles; those profiles must be measured for the specific material rather than inferred from a route label.
 
 ---
 
@@ -141,7 +140,7 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 **Open territory:**
 - **Gut-restricted ABCG2 enhancers — no drug exists:** An oral compound acting exclusively in intestinal lumen without systemic absorption would upregulate intestinal ABCG2 while sparing hepatic/renal ABCG2. Analogous strategy to colesevelam (gut-restricted bile acid sequestrant). No such molecule exists for ABCG2. (Mechanistic Extrapolation — novel drug class)
 - **Q141K trafficking rescue via HDAC inhibition:** selected pharmacologic HDAC-inhibitor conditions can rescue Q141K ABCG2 in vitro. Butyrate supports a separate PPARγ/WT-induction route; its direct Q141K trafficking and urate-flux rescue remain untested. (In Vitro + Mechanistic Extrapolation)
-- **Gut-lumen uricase + ABCG2-upregulating probiotic as a two-stage combination:** Stage 1 — probiotic upregulates ABCG2 → more urate secreted into gut lumen. Stage 2 — uricase-expressing probiotic degrades that secreted urate → serum urate drawn down by combined flux. PULSE (E. coli Nissle expressing uricase) and the 2025 ABCG2-probiotic paper describe the two halves separately. The combination has not been tested. This is a two-stage gut-lumen clearance architecture with no clinical precedent. (Mechanistic Extrapolation — combination not tested)
+- **Gut-lumen uricase + ABCG2-upregulating probiotic as a two-stage combination:** One arm would attempt to increase intestinal urate export; the other would attempt to consume the resulting luminal substrate. PULSE (*E. coli* Nissle expressing uricase) and the 2025 ABCG2-probiotic paper study the two arms separately. Their effects cannot be assumed to add, and the combination has not been tested in any model. Advance it only by measuring epithelial urate flux, luminal disappearance, delivered UOX activity, and serum urate in the same system. (Mechanistic Extrapolation — combination not tested)
 - **Purine-degrading bacteria (PDB) — covered in [purine-degrading-bacteria.md](./purine-degrading-bacteria.md):** Full-pathway anaerobes can reduce urate through the 2,8-dioxopurine pathway; engineered EcN CBT2.0 reduced plasma UA in hyperuricemic mice. CBT2.0's terminal carbon products were not resolved to butyrate, so SCFA/ABCG2 compounding cannot be assigned to that strain without [validation experiment 1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test). (Animal Model + Mechanistic Extrapolation)
 
 ---
@@ -150,27 +149,27 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 
 **Target compartments:** (a) Systemic/vascular — degrading circulating urate. (b) Gut lumen — degrading secreted urate. (c) Intra-articular — dissolving MSU crystal deposits directly in joint.
 
-**Computational prior reset:** [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) invalidates comp-019's SUA band, genotype ordering, and flat-dose conclusion. The gut-lumen route remains biologically plausible, but dose/topology/oxygen/peroxide/access/survival/transit must be measured before serum-urate prediction. [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md) defines that comparison.
+**Computational boundary:** COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. COMP-044 supplies no replacement dose, ΔSUA, genotype, physiological regime, efficacy, topology or chassis, production, or safety conclusion. Build and characterize exact configurations first, then use §1.33 for configuration-level comparison. A topology may be nominated only within a controlled host comparison; cross-host results remain configuration-specific, and §1.36 safety precedes animal escalation.
 
 **Clinically validated routes:**
 - **IV systemic (pegylated):** Pegloticase (Krystexxa), rasburicase. Near-zero serum urate within hours. Anti-drug antibody formation limits durability in ~40–60%; methotrexate co-dosing (SEL-212/pegadricase strategy) partially resolves immunogenicity. PRX-115 Phase 2 RELEASE trial active (Dec 2025, N=150). (Clinical Trial — IV pegloticase/rasburicase)
-- **PO gut-lumen (ALLN-346):** Enteric-coated engineered *C. utilis* uricase. Phase 1 completed without safety signals; Phase 2a pivotal trial terminated September 2022 (not for safety reasons). Mechanism valid — exploits ABCG2-mediated intestinal urate secretion as concentration sink. No currently active oral uricase program. (Clinical Trial Phase 1/2a — oral gut-lumen)
+- **PO gut-lumen (ALLN-346):** Study 201 ([NCT04987242](https://clinicaltrials.gov/study/NCT04987242)) completed with an actual enrollment of 16; its Phase 2a abstract reports only the first 11 participants. Study 202 ([NCT04987294](https://clinicaltrials.gov/study/NCT04987294)) enrolled 19, terminated for company financing, and has no posted results. These records establish limited human route evidence, not a transferable dose, serum effect, formulation, chassis, or safety profile. **Clinical Trial; conference-abstract and registry evidence.**
 - **PO probiotic (PULSE):** *E. coli* Nissle 1917 expressing uricase with HucR UA-responsive biosensor (dynamically regulates expression based on luminal urate). Validated in Cell Reports Medicine 2025 in humanized microbiome mouse model. Not in human trials. (Animal Model)
 
 **Routes that fail and why:**
 - Inhaled/intranasal: no therapeutic urate elimination pathway exists in the airway for gout. Uric acid is not secreted into airways at clinically significant flux.
 - Topical skin: sweat contains trace urate; topical uricase degrades surface urate only. No systemic benefit.
-- SC: SC delivery of a large protein antigen (uricase ~135 kDa homotetramer) places enzyme directly in subcutaneous tissue where sensitization occurs without the oral tolerance advantage. IV provides faster PK/PD and standard monitoring protocol. No SC uricase program in development.
+- SC: SC delivery of a large protein antigen changes the exposure compartment, but sensitization risk is product- and route-specific; oral exposure cannot be assumed to confer tolerance. No SC uricase program is established here as an active comparator.
 
 **Open territory:**
 - **Oral Qβ bacteriophage capsid nanoparticle uricase:** Ancestral uricase encapsulated in Qβ VLP (virus-like particle) delivered orally reduced hyperuricemia in XO-knockout mice (Biomacromolecules 2023, PMID 37126604). VLP capsids provide protease protection superior to enteric coating alone and present different immunogenic epitopes than naked enzyme. First oral nanoparticle uricase with animal-model efficacy. (Animal Model)
-- **Intra-articular Pickering emulsion cascade bioreactor:** A 2025 *J Nanobiotechnology* paper describes uricase + catalase spatially co-confined at an oil-water interface (Pickering emulsion), delivered intra-articularly to dissolve MSU crystals while neutralizing H₂O₂ byproduct in situ. The H₂O₂ problem — uricase generates H₂O₂ alongside allantoin, which can drive oxidative damage — is solved by the co-confined catalase. (Animal Model — preclinical IA delivery)
+- **Intra-articular Pickering emulsion cascade bioreactor:** A 2025 *J Nanobiotechnology* paper describes uricase + catalase spatially co-confined at an oil-water interface (Pickering emulsion), delivered intra-articularly to dissolve MSU crystals while scavenging H₂O₂ byproduct in situ. This is a preclinical architecture, not evidence that co-confinement generically closes local peroxide or tissue-safety risk. (Animal Model — preclinical IA delivery)
 - **Intra-articular self-propelled nanomotors (uricase + ionic diffusiophoresis):** A 2025 PMC paper (hollow mesoporous silica nanomotors) demonstrated uricase-loaded nanomotors that migrate toward MSU crystals within the joint cavity driven by their own enzymatic activity (ionic diffusiophoresis from urate → allantoin conversion). Active crystal-seeking, not passive diffusion. (Animal Model — preclinical)
 - **Cell membrane-coated liposomal uricase (immune evasion):** M2 macrophage membrane + exosome membrane-coated liposome encapsulating uricase: ~91.9% enzyme activity retention after 1 hour of trypsin exposure; anti-inflammatory synovial macrophage targeting in gouty arthritis models (Frontiers Pharmacology 2025). M2 membrane coating co-delivers anti-inflammatory polarization signals. (Animal Model)
 - **RBC membrane-coated nanoparticle uricase (Biomimetic Bioreactor):** Uricase in red blood cell membrane-coated nanoparticles — autologous-membrane self-tolerance reduces immunogenicity without PEGylation. Extended half-life (PMC 2025). (Animal Model)
-- **CRISPR/LNP hepatic gene restoration (long-horizon curative):** Georgia State 2025 (*Scientific Reports*) demonstrated CRISPR insertion of ancestral uricase at the AAVS1 safe-harbor locus in Huh-7 liver cells, normalizing urate and blocking fructose-driven lipogenesis. LNP delivery of the CRISPR cassette to hepatocytes is the stated next step; animal studies pending. Not enzyme replacement — gene restoration. Timeline 5–10+ years to human trial but the direction is established. (In Vitro human cells — CRISPR; Mechanistic Extrapolation — LNP delivery in vivo)
+- **CRISPR UOX restoration:** Georgia State 2025 (*Scientific Reports*) tested ancestral-UOX insertion at the AAVS1 locus in edited human hepatocyte cultures and spheroids. In-vivo delivery, durability, off-target effects, immunogenicity, physiological urate control, and clinical translation remain untested. **In Vitro; in-vivo delivery is Mechanistic Extrapolation.**
 
-> **Key intra-articular gap:** No clinical IA uricase program exists. The Pickering bioreactor and nanomotor approaches together solve the two primary obstacles (H₂O₂ toxicity + crystal access) at the preclinical level. This is genuine open territory. **H₂O₂ safety gate resolved by [comp-035](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) 2026-05-16: GREEN across all three architectures (Pickering emulsion, fusion protein, free co-formulated).** All three clear the <10 µM safe threshold by 5–50× margin. Catalase (kcat/Km) is the dominant safety-margin driver; FRET-proximity claims are NOT the safety mechanism — bulk-phase catalase scavenging dominates. See [`chassis-pending-interventions.md` §6](./chassis-pending-interventions.md) for the full comp-035 handoff. (source: computational-experiments.md, intra-articular-uricase-h2o2-reaction-diffusion-computational.md)
+> **Key intra-articular gap:** No clinical IA uricase program exists. The Pickering bioreactor and nanomotor studies address peroxide handling and crystal access at the preclinical level, but do not close either problem for a development candidate. [comp-035](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) is a non-decision-grade Phase-0 prior: its historical values came from a well-mixed steady-state model and an unverified safety threshold, so they do not clear any architecture or select a chassis. Remaining peroxide gates are a matched reaction-site H₂O₂ time course; catalase activity, stoichiometry, retention, and diffusion; local exposure; and tissue safety. See [`chassis-pending-interventions.md` §6](./chassis-pending-interventions.md) for the IA handoff. (Mechanistic Extrapolation — comp-035)
 
 ---
 
@@ -197,7 +196,7 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 **Target compartment:** Systemic macrophages/monocytes (circulating and tissue-resident) that traffic to the joint; C5a generated in joint space but also systemically.
 
 **Clinically validated routes:**
-- PO systemic: Avacopan (Tavneos), 30 mg BID, FDA-approved oral C5aR1 antagonist for ANCA vasculitis; 64–129-hour half-life. No gout trial registered as of May 2026. Mechanism is directly applicable. (Clinical Trial — ANCA; Mechanistic Extrapolation — gout)
+- PO systemic: Avacopan is an approved oral C5aR1 antagonist for ANCA-associated vasculitis. No gout trial was identified in the cited scan. **Clinical Trial for ANCA-associated vasculitis; Mechanistic Extrapolation for gout.**
 - IV: Eculizumab (anti-C5 mAb), zilucoplan (anti-C5 peptide, MG). Not tested in gout.
 
 **Routes that fail and why:**
@@ -205,10 +204,10 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 - Inhaled: C5aR1 in lung is the target for pulmonary complement diseases. Wrong compartment for gout.
 
 **Open territory:**
-- **Avacopan gout repurposing — lowest-friction pharma-grade CP0 access:** Oral, generic pathway approaching, established safety profile, 64–129-hour half-life (near-once-daily dosing). An investigator-initiated flare trial with avacopan requires no formulation work. This is the single most accessible pharma-grade CP0 intervention. (Clinical Trial for ANCA; gap = no gout trial)
-- **DAF/CD55 SCR1-4 gut-lumen delivery via engineered koji:** The OE stack's H05 hypothesis — truncated DAF/CD55 secreted by koji into gut lumen to intercept mucosal complement activation upstream of systemic C5a. Three wet-lab unknowns remain. If validated, the first food-grade CP0 intervention with no pharma analogue. (Mechanistic Extrapolation; see `wiki/hypotheses/H05-daf-scr14-cp0-thesis.md`)
+- **Avacopan mechanism-transfer study:** A controlled gout study would test whether systemic C5aR1 blockade changes complement engagement and flare outcomes. Existing evidence supports the molecule's approved indication, not gout efficacy. **Clinical Trial for ANCA-associated vasculitis; gout translation untested.**
+- **DAF/CD55 SCR1-4 gut-lumen delivery hypothesis:** H05 asks whether a locally delivered soluble complement regulator could intercept mucosal complement activation upstream of systemic C5a. Payload activity, target access, exposure, containment, and product-specific safety must be established before selecting an expression host or route. (Mechanistic Extrapolation; see `wiki/hypotheses/H05-daf-scr14-cp0-thesis.md`)
 
-> **Fermentation-track gap:** The comp-014 screen found zero confirmed fermentable C5aR1 antagonists in ChEMBL or PubMed among 6,798 compounds. That result constrains the fermentation search space; it does not define an Open Enzyme portfolio gap. Avacopan repurposing is the near-term pharma candidate, while DAF/CD55 koji remains a long-horizon food-grade hypothesis.
+> **Fermentation-track gap:** The comp-014 screen found zero confirmed fermentable C5aR1 antagonists in ChEMBL or PubMed among 6,798 compounds. That result constrains the searched natural-product space; it does not select avacopan, a recombinant payload, a chassis, or the Open Enzyme portfolio.
 
 ---
 
@@ -225,7 +224,7 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 - Inhaled corticosteroids: suppress NF-κB in airway; do not reach joint macrophages at therapeutic concentrations for gout.
 
 **Open territory:**
-- **Nasal KPV (tripeptide) for CP1 — PK rationale:** KPV and GHK-Cu are PepT1 substrates — the intestinal oligopeptide transporter delivers tripeptides into enterocytes and portal circulation without protease destruction. Oral KPV provides gut-mucosal macrophage access for CP1 suppression. Nasal KPV (200–500 mcg/day, in the current OE protocol) crosses nasal mucosa and olfactory epithelium. These are two distinct delivery routes for the same tripeptide accessing different macrophage compartments. Pharmacokinetic characterization of each route's contribution to systemic CP1 suppression does not exist. (Mechanistic Extrapolation — PK; In Vitro — KPV mechanism)
+- **KPV route-comparison hypothesis:** Oral and intranasal KPV are distinct exposure hypotheses. A controlled pharmacokinetic study must measure material identity, local and systemic exposure, and pathway engagement for each route; the existing in-vitro mechanism does not establish systemic CP1 suppression. **In Vitro mechanism + Mechanistic Extrapolation for route transfer.**
 - **Gut microbiome LPS as systemic NF-κB primer:** Berberine's dual mechanism (direct NF-κB inhibition + reduction of LPS-producing gram-negative bacteria) means it delivers an "upstream source block" by reshaping the gut microbiome. Systemic LPS from gram-negative gut dysbiosis is Signal 1 for chronic macrophage NF-κB priming. Treating the microbiome as the NF-κB primer is an underappreciated delivery concept — the "drug" is the microbial ecosystem state. (Animal Model + Clinical Trial — berberine in SIBO/IBD; Mechanistic Extrapolation — LPS-NF-κB in gout priming)
 - **TNFSF14/HVEM blockade — no oral option:** CERC-002 is SC/IV only. Natural compounds with in vitro TNFSF14/HVEM modulation activity (EGCG, TF3 theaflavins) are the only oral-route CP1a candidates; in vivo HVEM receptor modulation has not been characterized for these compounds. (In Vitro — EGCG/TF3; Mechanistic Extrapolation — gout-specific)
 
@@ -236,16 +235,16 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 **Target compartment:** Cytoplasm of synovial macrophages and recruited monocytes. NLRP3 assembly is intracellular.
 
 **Clinically validated routes:**
-- PO systemic: BHB (exogenous ketone esters or ketogenic diet), oridonin, tranilast (oral, approved in Japan/South Korea), hydroxychloroquine (lysosomal stabilization), dapansutrile Phase 2a (100–2000 mg/day oral). The pharmaceutical NLRP3 inhibitor class is uniformly oral. (Clinical Trial — tranilast; Phase 2a — dapansutrile; Animal Model + In Vitro — most others)
+- PO systemic: BHB, oridonin, tranilast, hydroxychloroquine, and dapansutrile have different evidence bases and mechanisms. Dapansutrile reached Phase 2a testing in gout; evidence for the other candidates ranges from approved adjacent indications to animal and in-vitro studies. Route class does not make them interchangeable.
 - IV: Exogenous BHB IV infusion — pharmacologically established in ICU settings; not gout-specific.
 
 **Routes that fail and why:**
 - Inhaled NLRP3 inhibitors: NLRP3 in lung macrophages is the relevant target for ARDS, not gout. Inhaled MCC950/dapansutrile class would suppress pulmonary NLRP3 without meaningful synovial macrophage concentrations for gout.
 
 **Routes that are plausible but underexplored:**
-- **IA NLRP3 inhibitor with sustained-release depot:** NLRP3 assembles in synovial lining macrophages accessible from the joint space — IA delivery is mechanistically coherent (unlike nodes with distant target compartments). Challenge: small molecules clear from joint fluid in ~1–4 hours. A pH-responsive hydrogel depot (crosslinked hyaluronate, PLGA microspheres) releasing MCC950/oridonin-class inhibitor over 5–7 days per injection would maintain therapeutic NLRP3 suppression in synovial macrophages. A 2025 ScienceDirect paper demonstrates Gas6-loaded microsphere IA delivery in MSU models; a 2025 Trends Pharmacol Sci review cites IV and direct injection as the routes being explored for NLRP3 inhibitor nanoparticles — no gout-specific IA program in either. (Animal Model — IA colchicine nanoemulsion PMID 34032545; Mechanistic Extrapolation — IA sustained-release NLRP3 inhibitor)
+- **IA NLRP3 inhibitor with sustained-release depot:** NLRP3 assembles in synovial lining macrophages accessible from the joint space. A controlled depot study would measure release kinetics, local exposure, target engagement, clearance, and tissue safety against free-drug and empty-depot controls. Existing IA and nanoparticle studies provide preclinical route precedent, not a gout-ready formulation. **Animal Model precedent + Mechanistic Extrapolation.**
 - **Monocyte membrane-coated dual NP (mMc@DNCs) — RA precedent:** Co-delivery of MCC950 + dexamethasone in monocyte membrane-coated nanocrystals; IV injection; monocyte membrane enables active targeting to inflamed synovium via VCAM-1/ICAM-1 leukocyte trafficking. Published in RA context; directly applicable to gout. (Animal Model — RA; Mechanistic Extrapolation — gout translation)
-- **BHB ester vs. salt for acute flare-abort:** R-BHB ethyl ester achieves serum BHB 1–2 mM within 30 min orally; D-BHB salts achieve similar but lower peak with slower kinetics. For flare-abort use (ketone supplement at flare onset for rapid NLRP3 suppression), the ester form may be pharmacokinetically superior. Not compared in gout context. An n=1 serum-BHB-at-flare-onset experiment (ester vs. salt) is within Brian's self-experiment framework. (Mechanistic Extrapolation — comparative PK in gout)
+- **BHB formulation comparison:** Ester and salt formulations can produce different exposure profiles, but they have not been compared for gout-relevant NLRP3 target engagement. A controlled formulation study would measure identity, pharmacokinetics, NLRP3 readouts, and safety under a prespecified protocol. **Mechanistic Extrapolation for gout.**
 
 ---
 
@@ -254,7 +253,7 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 **Target compartment:** Cytoplasm of macrophages and neutrophils. ASC transport from mitochondria to ER-localized NLRP3 is microtubule-mediated.
 
 **Clinically validated routes:**
-- PO systemic: colchicine (AGREE trial, low-dose 1.2 + 0.6 mg regimen validated). Multi-mechanism: CP3 ASC transport block + CP2 P2X7 pore block + CP6a neutrophil tubulin disruption. (Clinical Trial — AGREE trial)
+- PO systemic: Colchicine has clinical-trial evidence in acute gout and affects microtubule-dependent inflammatory processes. This establishes the systemic route for colchicine, not the efficacy of a new formulation or combination. **Clinical Trial.**
 - IV colchicine: historically used; narrow therapeutic index + severe extravasation toxicity; essentially abandoned.
 
 **Routes that fail and why:**
@@ -281,7 +280,7 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 
 **Open territory:**
 - **GSDMD pore-mediated delivery of membrane-impermeant caspase inhibitors (2025 bioRxiv preprint):** A February 2025 bioRxiv preprint demonstrates that once GSDMD pores form (10–20 nm diameter), they serve as delivery conduits — membrane-impermeant caspase inhibitors passively enter GSDMD-pore-expressing pyroptotic cells more efficiently than normal cells. Paradoxical: the inflammatory cell's own exit pores become the drug delivery portal. This creates a therapeutic window at the intersection of CP4 and CP6b: as pyroptosis initiates (CP6b, GSDMD pores open), those pores enhance delivery of caspase inhibitors that close the CP4 executioner. No drug development program has exploited this in any disease, including gout. (In Vitro — preprint; Mechanistic Extrapolation — gout translation)
-- **Oral VX-765 for gout — zero trials in 28 years of mechanism availability:** Caspase-1 is the final executioner of the gout cascade (cleaves pro-IL-1β, pro-IL-18, GSDMD simultaneously). VX-765 has human Phase 2a safety data. No gout trials registered on ClinicalTrials.gov as of May 2026. Identical gap structure to zileuton at CP6a and disulfiram at CP6b — mechanistically-obvious repurposing candidates missed when discovering and treating research communities don't overlap. **Compounding pharmacy track candidate** — VX-765 is research-compound class (not FDA-approved for any indication), so compounding access is more constrained than for FDA-approved zileuton/disulfiram; tracked under [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) as a Tier 3 candidate pending API availability audit.
+- **VX-765 gout study:** VX-765 is investigational and has Phase 2a data in epilepsy, but no gout trial was identified in the cited scan. A gout program would require an investigational regulatory pathway plus direct target-engagement, exposure, efficacy, and safety evidence. It is not an approved or routine-access intervention. **Clinical Trial for epilepsy; Mechanistic Extrapolation for gout.**
 
 ---
 
@@ -290,8 +289,8 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 **Target compartment:** IL-1R1 on neutrophils, endothelial cells, synoviocytes. After IL-1β is released into the joint, it binds IL-1R1 on these cells to amplify the flare.
 
 **Clinically validated routes:**
-- SC: Anakinra (100 mg SC daily, 4–6 hour half-life — short), canakinumab (150 mg SC Q8 weeks for gout, FDA-approved August 2023, 26-day half-life), rilonacept (SC, IL-1 trap, not FDA-approved for gout). (Clinical Trial — anakinra off-label; Clinical Trial — canakinumab FDA-approved gout 2023)
-- IV: High-dose anakinra in ICU. Not gout standard.
+- SC: Anakinra, canakinumab, and rilonacept establish systemic IL-1-blockade routes with different indications and evidence bases. Product-specific labeling and trials define their clinical scope. **Clinical Trial.**
+- IV anakinra has adjacent clinical use but is not a standard gout-route comparator.
 - IA anakinra: small case series for acute gout flare — delivers high local concentrations without systemic immunosuppression. No large RCT. (Mechanistic Extrapolation with small case series)
 
 **Routes that fail and why:**
@@ -299,10 +298,10 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 - Inhaled: IL-1 signaling in gout is synovial/neutrophil compartment, not pulmonary.
 
 **Open territory:**
-- **IA anakinra depot (sustained-release microsphere):** Single IA injection of PLGA microsphere-encapsulated anakinra providing 5–7 days of sustained IL-1R1 blockade in the joint. Addresses the short-half-life problem (anakinra's 4–6 hours requires daily SC injection) and the systemic immunosuppression concern. PLGA IA delivery is established for dexamethasone; anakinra formulation for this format has not been reported. (Mechanistic Extrapolation — IA sustained-release platform for biologics). Note: anakinra (~17 kDa, ~4 nm) falls in the GSDMD pore size-permissive range — see [`gsdmd-pore-delivery-paradox.md`](./gsdmd-pore-delivery-paradox.md) §"Implication for OE biologics" for the size-selectivity table; IA anakinra during active pyroptosis would gain enhanced intracellular access via pore self-delivery.
-- **Inhaled mRNA-IL-1RA pulse for acute flare:** LNP-formulated mRNA encoding IL-1 receptor antagonist (anakinra-equivalent), delivered via pulmonary inhaler. Transient expression matches the short flare window (12–72 hours). Pulmonary surface area (~70 m²) maximizes uptake; mRNA-LNP delivery for pulmonary indications is mature (CF, RSV, asthma research programs). Eliminates SC injection requirement for flare management; potentially cost-competitive with $300K/yr canakinumab. Tracked in [`chassis-pending-interventions.md` §4](./chassis-pending-interventions.md) — chassis pending (synthetic mRNA + LNP + inhaler device, commercial pharma + clinical partner). (Mechanistic Extrapolation — no clinical program)
+- **IA anakinra depot:** A PLGA-microsphere formulation could test whether sustained local IL-1R1 blockade is feasible. Release, retained bioactivity, joint exposure, systemic leakage, tissue safety, and incremental benefit over free anakinra are unmeasured. GSDMD-pore access is a separate hypothesis, not an established property of this formulation. **Mechanistic Extrapolation.**
+- **Inhaled mRNA-IL-1RA hypothesis:** Pulmonary mRNA-LNP could generate transient systemic IL-1 receptor antagonist exposure, but joint exposure, expression kinetics, dose control, immunogenicity, and gout efficacy are unmeasured. **Mechanistic Extrapolation; no gout program.**
 - **Oral anti-IL-1β nanobody:** Nanobodies (VHH ~12–15 kDa) are far more acid- and protease-stable than full mAbs. Oral nanobody delivery for IBD demonstrated in mice. An oral anti-IL-1β nanobody for gout would eliminate SC injection requirement for flare management. No gout program. (Animal Model — oral nanobody IBD precedent; Mechanistic Extrapolation — gout translation)
-- **Canakinumab + gut-lumen uricase combination — ULT initiation flare window:** Canakinumab's 26-day half-life covers the peak flare-risk window during ULT initiation (crystal dissolution mobilization). A combination trial — canakinumab SC (flare-abort) + oral/probiotic uricase (serum urate reduction) — that co-targets the flare amplification (CP5a) and crystal burden upstream simultaneously does not exist. (Mechanistic Extrapolation — combination design)
+- **Canakinumab + gut-lumen uricase combination — ULT initiation flare window:** Canakinumab's 26-day half-life could cover part of the flare-risk window during ULT initiation. Pairing it with a gut-lumen UOX candidate would test two distinct hypotheses: flare suppression and luminal urate disposal. The UOX arm has no established dose or serum effect, and the combination has not been tested. (Mechanistic Extrapolation — combination design)
 
 ---
 
@@ -311,18 +310,18 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 **Target compartment:** ALX/FPR2 receptor on neutrophils and macrophages — commands neutrophil withdrawal and M1→M2 macrophage polarization switch. Distinct mechanism from IL-1 receptor blockade — resolution is not "suppress inflammation" but "command cessation."
 
 **Clinically validated routes:**
-- PO (precursor): High-dose EPA/DHA omega-3 (3–4 g/day) — endogenous biosynthesis of RvE1, RvD series. No gout-specific flare-shortening RCT with this combination. (Mechanistic Extrapolation for gout; Clinical Trial — cardiovascular omega-3 safety/efficacy)
+- PO precursor: EPA/DHA can supply substrates for specialized pro-resolving mediators, but no gout-specific flare-shortening RCT establishes this route. **Mechanistic Extrapolation for gout; Clinical Trial evidence in adjacent indications.**
 - Topical: RX-10045 (resolvin E1 analog) Phase 2 for dry eye disease — establishes that stable SPM analogs are pharmacologically deliverable topically. (Clinical Trial — dry eye; Mechanistic Extrapolation — joint delivery)
 - IA: RvD1 intrathecal + IP in mouse gout model reduced joint IL-1β, ASC specks, CGRP (PMID 35716378). Preclinical. (Animal Model)
 
 **Routes that fail and why:**
-- PO direct SPMs (not precursors): SPMs have plasma half-lives of minutes — destroyed by GI oxidation and first-pass metabolism before reaching joint macrophages. Supplements labeled "SPM Active" (Metagenics) provide 17-HDHA and 18-HEPE (precursors), not SPMs themselves.
+- PO direct SPMs: rapid metabolism and first-pass loss create a delivery problem. Precursor formulations and active SPMs are different research materials and require separate identity and exposure measurements.
 - Inhaled SPMs for gout: resolving pulmonary inflammation is the indicated use; gout is a joint disease. Inhaled SPMs do not reach knee/MTP joint at therapeutic concentration.
 
 **Open territory:**
 - **IA stable SPM analog:** A chemically modified resolvin or protectin analog (modified at metabolically vulnerable positions) delivered IA at flare onset could actively command resolution from within the joint. No clinical program. The topical resolvin E1 analog proof-of-concept (dry eye, Phase 2) demonstrates that stable SPM analogs are chemically achievable. (Mechanistic Extrapolation — IA route; no human trial)
-- **Low-dose aspirin + EPA combination for AT-SPM generation:** Low-dose aspirin redirects COX-2 to produce aspirin-triggered 15-epi-LXA4 and AT-RvD series — these are active-resolution mediators (not COX-2 inhibitors). The mechanism is "trigger resolution," not "reduce inflammation." Combining low-dose aspirin + EPA (3–4 g/day) to shift the joint toward active resolution via AT-SPM generation is the most accessible pharmacologically-supported CP5b combination. No gout flare trial exists. (Mechanistic Extrapolation — combination in gout)
-- **Lactoferrin as the only fermentable CP5b modulator in the OE stack:** Lactoferrin's indirect ALX/FPR2 modulation via multiple pathways makes it the OE platform's only food-grade CPsb option. Validated for expression in A. awamori and P. pastoris. See [nlrp3-exploit-map.md](./nlrp3-exploit-map.md).
+- **Aspirin-triggered SPM hypothesis:** Aspirin can redirect COX-2 toward aspirin-triggered mediators, but the joint exposure and gout effect of a combined precursor strategy are untested. A controlled study must measure mediator formation and joint-relevant target engagement before efficacy interpretation. **Mechanistic Extrapolation.**
+- **Lactoferrin expression route:** Lactoferrin has indirect ALX/FPR2-related hypotheses and heterologous expression precedent in *A. awamori* and *P. pastoris*. That supports an expression experiment, not a delivered CP5b effect or the safety of an engineered food format. See [nlrp3-exploit-map.md](./nlrp3-exploit-map.md).
 
 ---
 
@@ -339,9 +338,9 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 - IA 5-LOX inhibitor (small molecule): mechanistically plausible — 5-LOX operates in neutrophils that are IN the joint space. Challenge is rapid small-molecule clearance from joint fluid (1–4 hour half-life). IA sustained-release 5-LOX inhibition not studied for gout.
 
 **Open territory:**
-- **Zileuton for acute gout flare — 28-year opportunity gap:** A generic, oral, FDA-approved drug with direct CP6a mechanism that has never been trialed in gout. A physician-initiated retrospective analysis of asthma patients also taking colchicine for gout, or a small investigator-initiated trial, requires no formulation work. The absence of any such report after 28 years of zileuton availability suggests the immunology/asthma research community and rheumatology community simply haven't intersected around this compound. (Clinical Trial — asthma safety; gap = zero gout evidence). **Compounding pharmacy track candidate:** zileuton fits the cleavage rule (small-molecule + FDA-approved + off-patent → compoundable), pending bulk API availability audit — see [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md).
+- **Zileuton gout study:** Zileuton is a prescription 5-LOX inhibitor approved for asthma; no gout trial was identified in the cited scan. An ethics-reviewed retrospective or prospective study could test LTB4 target engagement and gout outcomes, but asthma evidence does not establish gout efficacy. **Clinical Trial for asthma; Mechanistic Extrapolation for gout.**
 - **BLT1 receptor antagonist (oral, one step downstream of 5-LOX):** BLT1 is the LTB4 receptor on neutrophils. BLT1 antagonists (LY293111, BIIL 260) tested in asthma and RA with modest results; no gout trial. BLT1 blockade is complementary to 5-LOX inhibition — same pathway, different target, non-overlapping resistance profile. (Animal Model + early clinical — asthma/RA; Mechanistic Extrapolation — gout)
-- **EPA + quercetin + AKBA triple 5-LOX interference — non-redundant stacking:** EPA competes with arachidonic acid for 5-LOX substrate (redirects toward RvE1); quercetin inhibits the catalytic site (~300 nM IC50); AKBA inhibits allosterically at a distinct site (~2.7 μM IC50). Three non-overlapping mechanisms on the same enzyme. This combination has not been tested in any gout model. (In Vitro — IC50 data for each; Mechanistic Extrapolation — combination in gout)
+- **EPA, quercetin, and AKBA mechanism-interaction study:** The three exposures are proposed to affect different parts of the 5-LOX pathway, but their combined activity, pharmacokinetics, off-target effects, and gout relevance have not been tested. Test each agent alone before a factorial combination. **In Vitro priors + Mechanistic Extrapolation.**
 
 ---
 
@@ -350,7 +349,7 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 **Target compartment:** GSDMD N-terminal fragment, specifically Cys191 (human) / Cys192 (mouse), in pyroptotic macrophage plasma membrane.
 
 **Clinically validated routes:**
-- PO systemic: Disulfiram (FDA-approved for alcohol use disorder, generic ~$30/month) — covalently modifies GSDMD Cys191. Dimethyl fumarate/DMF (Tecfidera, FDA-approved for MS) — succinates GSDMD Cys191. Both oral, both with established long-term safety data. Neither approved for gout; no gout trials registered. (Clinical Trial — approved indications; Mechanistic Extrapolation — gout)
+- PO systemic: Disulfiram and dimethyl fumarate are prescription drugs approved for other indications and have distinct GSDMD-directed hypotheses. Neither is approved or clinically validated for gout. **Clinical Trial for approved indications; Mechanistic Extrapolation for gout.**
 - No IV/SC GSDMD inhibitor in clinical use.
 
 **Routes that fail and why:**
@@ -358,10 +357,10 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 - GSDMD-targeted biologics: GSDMD is intracellular. Antibody delivery to intracellular targets requires endosomal escape chemistry or specialized conjugates; no such program in development for gout.
 
 **Open territory:**
-- **Disulfiram for gout — the recognized but untried window:** Disulfiram's GSDMD Cys191 mechanism was published in Nature Immunology 2020. Five years later, no published case series of disulfiram co-administration for refractory gout management. Identical pattern to zileuton — mechanistically-obvious repurposing candidate, treating and discovering communities non-overlapping. $30/month generic. (Clinical Trial — approved indication; gap = zero gout evidence). **Compounding pharmacy track — highest-priority candidate:** disulfiram is the lead candidate in [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) (FDA-approved for AUD, off-patent, bulk API available, comp-027 dose-modeling queued).
+- **Disulfiram gout study:** Disulfiram modifies GSDMD Cys191, but no gout case series or trial was identified in the cited scan. A controlled study would need direct pathway engagement, off-target, exposure, and safety measurements; approval for alcohol use disorder does not establish a gout intervention. **Clinical Trial for the approved indication; Mechanistic Extrapolation for gout.**
 - **GSDMD pore self-delivery paradox (2025 bioRxiv preprint) — dual relevance at CP4 and CP6b:** See CP4 note above. GSDMD pores (10–20 nm) serve as delivery conduits for membrane-impermeant inhibitors back into the pyroptotic cell — including GSDMD-derived blocking peptides (Ac-FLTD-CMK, PNAS 2018) that cannot normally cross intact plasma membranes. Once the pore opens, it enables delivery of compounds that close it. This paradox is unaddressed in gout pharmacology and in drug delivery literature generally. (In Vitro — preprint Feb 2025; Mechanistic Extrapolation)
-- **Lactoferrin CP6b via mitophagy pathway:** Lactoferrin induces PINK1/Parkin + FUNDC1/BNIP3/NIX mitophagy, clearing damaged mitochondria before they trigger GSDMD cleavage. Mechanistically upstream of Cys191 chemistry — prevents GSDMD cleavage rather than blocking the cleaved fragment's pore formation. **Source paper Shan et al. 2026 (PMID 41524100, Food & Function) is a *radiation-induced intestinal injury (RIII)* model, NOT a gout model**; the PINK1/Parkin + FUNDC1/BNIP3/NIX mitophagy → NLRP3/caspase-1/GSDMD pyroptosis suppression mechanism is what transfers to gout (Mechanistic Extrapolation). Delivery route: oral kojied lactoferrin. The only fermentable food-grade CP6b option in the OE stack. (Animal Model + In Vitro for the RIII paper itself; Mechanistic Extrapolation for gout translation.)
-- **DMF gout trial — the low-friction alternative to disulfiram:** DMF (generic, oral, FDA-approved) succinates GSDMD Cys191 via a distinct chemistry from disulfiram's dithiocarbamate mechanism. DMF also activates Nrf2/HO-1 (anti-oxidant) and has lower hepatotoxicity profile than disulfiram. An investigator-initiated DMF gout flare management case series faces no regulatory barriers.
+- **Lactoferrin CP6b via mitophagy pathway:** Lactoferrin induces PINK1/Parkin + FUNDC1/BNIP3/NIX mitophagy, clearing damaged mitochondria before they trigger GSDMD cleavage. Mechanistically upstream of Cys191 chemistry — prevents GSDMD cleavage rather than blocking the cleaved fragment's pore formation. **Source paper Shan et al. 2026 (PMID 41524100, Food & Function) is a *radiation-induced intestinal injury (RIII)* model, NOT a gout model**; the PINK1/Parkin + FUNDC1/BNIP3/NIX mitophagy → NLRP3/caspase-1/GSDMD pyroptosis suppression mechanism is what transfers to gout. An engineered-koji delivery configuration has not been tested; expression, retained activity, exposure, and product-specific safety are separate gates. (Animal Model + In Vitro for the RIII paper itself; Mechanistic Extrapolation for gout translation.)
+- **DMF gout study:** DMF succinates GSDMD Cys191 and activates Nrf2/HO-1, but its relative safety versus disulfiram and efficacy in gout remain empirical. A gout study requires the applicable regulatory and ethics review. **Mechanistic Extrapolation for gout.**
 
 ---
 
@@ -375,27 +374,25 @@ Nearly every node from CP2 through CP6b has a mechanistically coherent IA delive
 - Cell-membrane-coated NPs targeting synovial macrophages via leukocyte trafficking (VCAM-1/ICAM-1)
 - Co-delivery of multiple payloads in a single formulation
 
-...creates an IA combination platform that doesn't exist. A single IA injection combining an NLRP3 inhibitor (CP2), anakinra/IL-1Ra (CP5a), and an SPM analog (CP5b) could simultaneously block three nodes from within the joint. This is a research architecture, not a drug — but no lab has framed it this way.
+These components motivate a multi-node IA research architecture. Co-formulation, local pharmacokinetics, interactions, tissue safety, and incremental benefit over single-payload controls are untested.
 
 ### 2. The GSDMD pore self-delivery paradox
 
-The most structurally novel finding from this survey: GSDMD pores (10–20 nm diameter) serve as delivery conduits for membrane-impermeant caspase inhibitors and GSDMD-blocking peptides into the pyroptotic cell (bioRxiv February 2025). The inflammatory cell's own exit pore becomes the drug delivery portal. The CP4/CP6b overlap is the most concentrated opportunity — once GSDMD pores open (CP6b), they provide enhanced access for caspase-1 inhibitors (CP4) that normally cannot cross intact plasma membranes. No program in any disease. No gout pharmacologist has described this. The preprint is from 2025 and the delivery implication appears not to have been noticed by the gout field.
+A February 2025 bioRxiv preprint reports that GSDMD pores can admit membrane-impermeant caspase inhibitors and GSDMD-blocking peptides into pyroptotic cells. The CP4/CP6b delivery implication is hypothesis-generating and requires independent replication, payload-specific uptake measurements, and gout-relevant testing. **In Vitro preprint + Mechanistic Extrapolation.**
 
-### 3. Three generic repurposing candidates with zero gout trials
+### 3. Three mechanism-transfer candidates without gout trials in the cited scan
 
-Three mechanistically-correct, FDA-approved, oral, generic drugs have never been trialed for gout flare management:
+| Candidate | Node | Mechanism | Current status | Gout evidence |
+|---|---|---|---|---|
+| Zileuton | CP6a | 5-LOX inhibition → lower LTB4 | Prescription drug approved for asthma | No trial identified |
+| VX-765 (belnacasan) | CP4 | Caspase-1 inhibition | Investigational; Phase 2a evidence in epilepsy | No trial identified |
+| Disulfiram | CP6b | GSDMD Cys191 modification | Prescription drug approved for alcohol use disorder | No trial identified |
 
-| Drug | Node | Mechanism | Approved for | Generic price | Gout trials |
-|---|---|---|---|---|---|
-| Zileuton (Zyflo) | CP6a | 5-LOX inhibition → ↓LTB4 | Asthma (1996) | ~$30–100/month | Zero |
-| VX-765 (belnacasan) | CP4 | Caspase-1 inhibition | Phase 2a epilepsy | Research compound | Zero |
-| Disulfiram (Antabuse) | CP6b | GSDMD Cys191 covalent modification | Alcohol use disorder (1951) | ~$30/month | Zero |
-
-Zileuton and disulfiram are available over-the-counter or via standard prescription without clinical trial infrastructure. A physician managing a patient on both zileuton (for asthma) and colchicine (for gout) has generated real-world data on this question — that data simply hasn't been collected or published.
+The mechanistic matches justify controlled studies, not treatment or access claims. Approval in another indication does not establish gout efficacy, and VX-765 remains investigational.
 
 ### 4. Gut-lumen two-stage combination
 
-Combining ABCG2-upregulating probiotic (Stage 1: more urate secreted into gut lumen) with gut-lumen uricase expression (Stage 2: degrade the secreted urate) creates a two-stage clearance platform. The 2025 ABCG2-probiotic paper and PULSE paper describe the two halves separately. In principle, combining these in a single engineered organism or a co-administered pair generates additive serum urate reduction — each stage individually reduces SUA; together they close a positive feedback loop. Not tested as a combination in any model.
+The two-stage hypothesis pairs an ABCG2-directed intervention with gut-lumen UOX: first test whether the ABCG2 arm increases intestinal urate export, then whether delivered UOX consumes that substrate under the same conditions. The 2025 ABCG2-probiotic paper and PULSE paper study the arms separately. No evidence establishes additivity, a positive-feedback loop, a sufficient UOX dose, or a combined serum-urate effect. A single-organism and co-administered design therefore remain unranked until the coupled fluxes are measured in one model.
 
 ### 5. Purine-degrading bacteria (PDB) — now covered in [purine-degrading-bacteria.md](./purine-degrading-bacteria.md)
 
@@ -413,16 +410,16 @@ The 2,8-dioxopurine pathway is a conserved anaerobic urate-disposal route in gut
 | Intestinal ABCG2 | PO gut/dietary | Gut-restricted ABCG2 enhancer | No pharmacological ABCG2 enhancer exists |
 | Uricase | IV systemic | IA nanomotor/Pickering bioreactor | No clinical IA uricase program |
 | MSU phagocyte uptake | None (IA only makes sense) | IA crystal-coating NP | No clinical crystal surface modification |
-| CP0 — C5a | PO (avacopan, no gout trial) | DAF/CD55 koji (food-grade) | Zero gout trials with avacopan |
+| CP0 — C5a | PO (avacopan, no gout trial) | Engineered DAF/CD55 expression candidate | Zero gout trials with avacopan; engineered delivery untested |
 | CP1 — NF-κB | PO systemic | Gut microbiome LPS block | TNFSF14 has no oral antagonist |
 | CP2 — NLRP3 activation | PO systemic | IA sustained-release depot | Monocyte-membrane NP not translated to gout |
 | CP3 — ASC speck | PO colchicine | IA colchicine NP / transdermal MN | GI side effects remain dose-limiting |
 | CP4 — Caspase-1 | PO (VX-765 — no gout trial) | GSDMD pore self-delivery | Zero gout trials with VX-765 |
 | CP5a — IL-1β | SC (canakinumab, anakinra) | IA anakinra depot | No single-injection IA IL-1Ra format |
 | CP5b — SPM resolution | PO precursor (EPA/DHA) | IA stable SPM analog | No stable SPM analog in gout trials |
-| CP6a — 5-LOX/LTB4 | PO (zileuton — no gout trial) | Triple stacking (EPA+quercetin+AKBA) | 28 years of zero gout trials with zileuton |
+| CP6a — 5-LOX/LTB4 | PO (zileuton — no gout trial) | Controlled multi-agent interaction study | No gout trial identified for zileuton; combination effects untested |
 | CP6b — GSDMD | PO (disulfiram — no gout trial) | GSDMD pore self-delivery | Zero gout trials with disulfiram or DMF |
 
 ---
 
-*Delivery route reasoning reviewed against: [nlrp3-exploit-map.md](./nlrp3-exploit-map.md), [gout-pathophysiology.md](./gout-pathophysiology.md), [gout-clinical-pipeline.md](./gout-clinical-pipeline.md), [uricase.md](./uricase.md), [complement-c5a-gout.md](./complement-c5a-gout.md), [peptide-gout-addendum.md](./peptide-gout-addendum.md). Web research May 2026.*
+Supporting evidence is linked through [nlrp3-exploit-map.md](./nlrp3-exploit-map.md), [gout-pathophysiology.md](./gout-pathophysiology.md), [gout-clinical-pipeline.md](./gout-clinical-pipeline.md), [uricase.md](./uricase.md), [complement-c5a-gout.md](./complement-c5a-gout.md), and [peptide-gout-addendum.md](./peptide-gout-addendum.md).

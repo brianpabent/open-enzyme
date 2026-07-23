@@ -93,7 +93,7 @@ In most mammals, uric acid isn't the end of the line. An enzyme called **uricase
 
 **Humans, great apes, and some other primates lost the functional uricase gene roughly 15–20 million years ago.** The gene that once encoded it — *UOX* — is now a pseudogene, inactivated by two nonsense mutations at codons 33 and 187 and an aberrant splice site.
 
-We are stuck at the uric acid step. **This is the root cause of gout.**
+Loss of functional human UOX raises the background urate burden, but gout is not a single-cause UOX deficiency. Purine production, renal and intestinal transport, crystal formation, innate inflammation, and resolution all influence whether hyperuricemia becomes clinical gout.
 
 ---
 
@@ -119,17 +119,11 @@ Approximately **70% of daily uric acid elimination happens through the kidneys**
 
 **Approximately one-third of daily uric acid elimination occurs through the gut**, not the kidneys. This happens via the **ABCG2 transporter** on intestinal epithelial cells, which actively secretes uric acid into the intestinal lumen.
 
-This gut-lumen pathway is the mechanistic foundation for [[engineered-yeast-uricase]] and [[engineered-koji-protocol]] — if you place active uricase in the gut, it degrades uric acid present there, creating a "sink" that pulls additional uric acid from the serum.
-
-(Source: engineered-yeast-uricase-proposal.md, §1)
+This gut-lumen pathway creates a testable opening for luminal uricase: active enzyme can degrade urate that reaches the lumen, but the resulting effect on net intestinal urate disposal and serum urate cannot be inferred from enzyme activity alone. The Open Enzyme yeast and koji implementations remain conditional research tracks. Built and characterized configurations enter the physiological reaction-site screen in [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial); an exact survivor must then clear the antioxidant-loss/peroxide safety assay in [§1.36](./validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay). Functional in-vivo disposal and any serum effect remain later questions under [§§2.1–2.2](./validation-experiments.md#21-selected-uox-configuration-in-vivo-persistence-and-localization). (**Mechanistic Extrapolation**; sources: [gut-lumen sink](./gut-lumen-sink.md), [COMP-044](./gut-lumen-uricase-physiologic-regime-computational.md))
 
 ### The Under-Excretor Problem
 
-**Gout is, at its core, a kidney transporter problem.** Most gout patients (~90%) are "under-excretors" — their kidneys reabsorb too much uric acid. Only ~10% are true "over-producers."
-
-This distinction matters enormously for treatment strategy:
-- Under-excretors: benefit from URAT1 inhibitors, uricosurics, enhanced ABCG2, or gut-lumen degradation
-- Over-producers: benefit from XO inhibitors (allopurinol, febuxostat)
+Renal under-excretion is common in gout, but the relative contributions of production, renal transport, intestinal export, and mixed phenotypes vary. Mechanism studies should measure the relevant fluxes rather than infer an intervention from a single label. Gut-lumen degradation remains a research hypothesis for increasing net disposal.
 
 ### Urate-handling weaknesses and candidate mechanisms
 
@@ -137,7 +131,7 @@ The map below records which current candidate classes touch renal transport, int
 
 **Mechanism-first view** (transporter rows × track columns; modality-first view in [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) is the complementary surface):
 
-| Renal node / Enzyme | Mechanism | Engineered koji track | Medicinal mushroom track | TCM × rigor track |
+| Renal node / Enzyme | Mechanism | Engineered-organism UOX hypothesis | Medicinal mushroom track | TCM × rigor track |
 |---|---|---|---|---|
 | **URAT1** (SLC22A12) | Reabsorbs urate from tubular lumen back into blood; major drug target | — | **Cordycepin** (animal-model URAT1 mRNA reduction; PMID 29422889) | **Astilbin** from *Smilax glabra* (animal-model + classical TCM use) |
 | **GLUT9** (SLC2A9) | Basolateral exit transporter; strongest GWAS hit | — | **GLPP** (animal-model GLUT9 modulation per comp-014 outputs) | — |
@@ -146,12 +140,12 @@ The map below records which current candidate classes touch renal transport, int
 | **OAT1 / OAT3** (SLC22A6/8) | Basolateral uptake of urate from blood into tubular cells for secretion | — | **GLPP** (animal-model OAT1 modulation per comp-014 outputs) | — |
 | **Xanthine oxidase** (upstream) | Catalyzes hypoxanthine → xanthine → urate; #1 pharmacological target (allopurinol, febuxostat) | — | — | **Astilbin** (Animal Model XO inhibition + classical TCM use); **Acacetin** from *Agastache rugosa* / Huo Xiang (In Vitro IC50 = 0.58 μM, Yuk 2023 PMC9914411 — most potent flavonoid in panel, beats luteolin); **Kaempferol** from *Chrysanthemum morifolium* / Ju Hua (In Vitro IC50 = 2.18 μM, Wee 2023 PMC9864848; DKB114 formula 38.3% UA ↓ at 200 mg/kg, Lee 2018 PMC6213378); **Rhein** from *Rheum palmatum* / Da Huang (Animal Model direct XO inhibition, Meng 2015 — separable from emodin which acts via transporter excretion not XO). All four are flavonoid- or anthraquinone-class XO chokepoint hits supported by the classical-formula search. |
 | **PRPS** (upstream) | Rate-limiting enzyme of de novo purine biosynthesis; PRPP synthesis; distinct chokepoint class from XO | — | — | **Eurycomanol** from *Eurycoma longifolia* / tongkat ali (In Vitro PRPS suppression, PMID 34785103; 2021 RCT SUA ↓7–11%, n=105) — see [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md) |
-| **Gut-lumen urate sink** (post-renal) | Direct degradation of urate in gut lumen, creating concentration gradient that pulls serum urate into gut for ABCG2-mediated secretion | **Uricase** (engineered koji secretes active uricase into gut lumen — degrades luminal urate, *direct mechanism*) | — | — |
+| **Gut-lumen urate sink** (post-renal) | Candidate degradation of luminal urate; the effect on net intestinal flux and serum urate remains unmeasured | Conditional yeast or koji expression of active uricase; no chassis is selected, and neither implementation has passed §1.33 or §1.36 (**Mechanistic Extrapolation**) | — | — |
 | **ROS / CP1b priming** *(speculative)* | NLRP3 priming via reactive oxygen species — Fenton chemistry (iron-catalyzed hydroxyl-radical generation) and direct hydroxyl-radical / peroxynitrite scavenging are mechanistically orthogonal | **Lactoferrin** — iron sequestration → reduced Fenton-available iron → reduced ROS-driven NLRP3 priming (Animal Model + In Vitro per [`lactoferrin.md`](./lactoferrin.md) §4.1; Habib 2023 PMID 37926296; Shan 2026 PMID 41524100) | **Ergothioneine** from *P. citrinopileatus* (7.0 mg/g DW per Phase 7-1c correction in [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md)); direct thiol scavenging of hydroxyl radicals + peroxynitrite, Nrf2 induction. **Caveat:** mechanism is correct in principle but **not yet demonstrated in gout-relevant cell models** — support is gated on the proposed ergothioneine + lactoferrin combination ROS assay in MSU-stimulated THP-1 macrophages. Koji natively produces some EGT; cross-track distinction is *quantitative* (P. citrinopileatus ~5–10× more dietary EGT than koji-native) not *mechanistically-unique*. | — |
 
-**Evidence-tier discipline.** Direct transporter / enzyme effects (URAT1 by cordycepin, GLUT9/OAT1 by GLPP, XO by astilbin, gut-lumen urate degradation by koji uricase) sit at **Animal Model** evidence tier from primary literature. The **lactoferrin → ABCG2** link is **Mechanistic Extrapolation** (lactoferrin → TNFα suppression is documented in vitro / clinical biopsy per [`lactoferrin.md`](./lactoferrin.md) §4.7; TNFα suppression → ABCG2 transcriptional derepression is the Mechanistic Extrapolation step composed onto it). This is a substantively weaker claim than the direct-modulation claims and should be flagged as such whenever the multi-track coverage map is invoked downstream.
+**Evidence-tier discipline.** The cited cordycepin, GLPP, and astilbin transporter or enzyme effects have animal-model support. The proposed yeast- or koji-delivered luminal UOX implementation does **not**: its current status is **Mechanistic Extrapolation** until the construct, exposure, physiological flux, and safety gates are measured. The **lactoferrin → ABCG2** link is also **Mechanistic Extrapolation** (lactoferrin → TNFα suppression is documented in vitro / clinical biopsy per [`lactoferrin.md`](./lactoferrin.md) §4.7; TNFα suppression → ABCG2 transcriptional derepression is the extrapolated step).
 
-**Compartment discipline.** The mechanisms are multi-compartment: cordycepin and astilbin have systemic bioavailability sufficient to act at renal URAT1 (per animal-model evidence cited in [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) and the medicinal mushroom track scope page); GLPP and luminal uricase act primarily in the gut; lactoferrin's TNFα-suppression effect is systemic. Read the map as a mechanism-plus-compartment composite.
+**Compartment discipline.** The mechanisms are multi-compartment: cordycepin and astilbin have systemic bioavailability sufficient to act at renal URAT1 (per animal-model evidence cited in [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) and the medicinal mushroom track scope page); GLPP acts primarily in the gut; a successful luminal-UOX construct would also act there; and lactoferrin's TNFα-suppression effect is systemic. Read the map as a mechanism-plus-compartment composite.
 
 **Experimental implication.** Stratify studies by production versus under-excretion phenotype, then test one target mechanism at a time. Apparent multi-node coverage does not establish additivity, adequate exposure, or a clinically meaningful effect. Combination testing belongs after the individual arms pass their biological and safety gates.
 
@@ -240,39 +234,21 @@ IL-1β is a master cytokine—one molecule has cascading effects across the enti
 
 ## Acute flare vs. chronic tophus — two different problems
 
-Open Enzyme's chokepoint kill chain (CP0–CP6) is built around the **acute flare**: MSU crystal → NLRP3 → IL-1β → neutrophils (innate, fast, self-limiting). The **tophus** is a distinct, *chronic* problem — an organized granuloma (crystal core + macrophages + multinucleated giant cells + fibrous capsule + an adaptive-immune corona). Dissolving a tophus is two separate problems: (1) **dissolve the crystals** — a urate-solubility problem solved by sustained SUA <6 mg/dL, where the platform's [gut-lumen uricase sink](./gut-lumen-sink.md) contributes *if* it crosses the threshold (an adjunct, not a standalone dissolver); and (2) **resolve the organized inflammation + eroded bone** — driven by an innate-stromal **SPP1/MMP9 macrophage** subset + RANKL/osteoclast activity (*not* the Th17 axis, which single-cell tophus data show is a bystander), which the platform does **not** currently address. See [`open-questions.md` §"Chronic tophaceous gout — the adaptive-immune axis"](./open-questions.md) for the scoped no-go, the dissolution kinetics, and the intervention-node map. (2026-07-13 scoping scan.)
+Open Enzyme's chokepoint kill chain (CP0–CP6) is built around the **acute flare**: MSU crystal → NLRP3 → IL-1β → neutrophils (innate, fast, self-limiting). The **tophus** is a distinct, *chronic* problem — an organized granuloma (crystal core + macrophages + multinucleated giant cells + fibrous capsule + an adaptive-immune corona). Dissolving a tophus is two separate problems: (1) **dissolve the crystals** through sustained urate control; the [gut-lumen uricase sink](./gut-lumen-sink.md) is only a candidate contributor if it passes §1.33 and §1.36 and produces a sufficient systemic effect; and (2) **resolve the organized inflammation + eroded bone** — driven by an innate-stromal **SPP1/MMP9 macrophage** subset + RANKL/osteoclast activity (*not* the Th17 axis, which single-cell tophus data show is a bystander), which the platform does **not** currently address. See [`open-questions.md` §"Chronic tophaceous gout — the adaptive-immune axis"](./open-questions.md) for the scoped no-go, the dissolution kinetics, and the intervention-node map.
 
 ## Current Treatment Landscape
 
-The full treatment landscape — acute-flare management (NSAIDs, corticosteroids, IL-1 inhibitors), urate-lowering therapy (allopurinol, febuxostat, probenecid, pegloticase), and the drug-by-drug tradeoffs — lives at [gout-deep-dive.md §Current Treatment Landscape](./gout-deep-dive.md#current-treatment-landscape). Only the mechanism-relevant chokepoint mapping for **colchicine** is retained here, because it maps directly onto the NLRP3 cascade above.
-
-**Colchicine** (first-line) — see [colchicine.md](./colchicine.md) for the full dossier
-- Inhibits microtubule polymerization → prevents microtubule-mediated ASC transport to NLRP3 (CP3 block)
-- Also directly inhibits P2X7 pore → blocks K⁺ efflux upstream of NLRP3 activation (CP2 block) (Leung et al. 2015 PMID 26228647)
-- Reduces neutrophil chemotaxis and phagocytosis of MSU crystals
-- Low-dose regimen (1.2 mg + 0.6 mg at 1 h) validated by AGREE trial (Terkeltaub 2010 PMID 20131255); replaced older "dose-to-GI-failure" approach (Clinical Trial)
-- Cardiovascular repositioning: COLCOT (23% CV event reduction) and LoDoCo2 (31% reduction) led to FDA approval of Lodoco 0.5 mg for atherosclerotic CVD, June 2023 (Clinical Trial)
-- **ULT-initiation prophylaxis:** ACR 2020 guideline recommends concurrent colchicine 0.5–0.6 mg once or twice daily for 3–6 months when starting allopurinol/febuxostat, to prevent mobilization flares as tophaceous urate dissolves. Duration keyed to stable serum UA <6.0 mg/dL with no flares for ≥3 months. Same dissolution-flare bridge applies to CRISPR-uricase gene therapy — see [crispr-uricase.md](./crispr-uricase.md) for the post-therapy prophylaxis protocol. (Clinical Trial — guideline; source: colchicine.md)
-- Problem: Narrow therapeutic index (~3–5×); CYP3A4/P-gp interaction surface (macrolides, azoles, calcineurin inhibitors); renal/hepatic dose adjustment required
+The treatment landscape and clinical guidance live in [gout-deep-dive.md](./gout-deep-dive.md#current-treatment-landscape) and the compound dossiers. Mechanistically, colchicine disrupts microtubule-dependent ASC transport, P2X7-associated activation, neutrophil migration, and crystal phagocytosis. This pathway map does not provide a regimen or individualized treatment instruction.
 
 ### Why durable control requires sustained mechanism coverage
 
-The honest answer: **gout is a chronic metabolic deficiency.** Humans lack a gene. You can manage the downstream consequences — reduce production (XO inhibitors), increase excretion (uricosurics), treat inflammation (colchicine/NSAIDs/IL-1 blockers), or temporarily replace the missing enzyme (pegloticase) — but none address the root genetic deficit.
-
-Stop treatment, and uric acid climbs right back up.
-
-**Durable mechanistic possibilities include:**
-1. Restoring uricase expression in human cells (gene therapy) — [[crispr-uricase]]
-2. Permanently altering kidney transporter function to excrete more urate
-3. Making the immune system permanently tolerant of MSU crystals
-
-(Source: gout-deep-dive.md, §2)
+Durable urate control can act through sustained reduction of production, increased renal or intestinal disposal, systemic enzyme replacement, restoration of UOX activity, or a validated gut-lumen sink that changes net urate flux. These routes have different exposure, safety, and durability constraints. None is assumed necessary or sufficient, and inflammatory control remains a separate outcome from crystal-burden reduction.
 
 ---
 
 ## The Clinical Pipeline (2026)
 
-The gout pipeline is more active now than it's been in decades, with a paradigm shift toward **dual-mechanism approaches** that target both uric acid levels and inflammation. The full drug-by-drug pipeline table and the Open-Enzyme-positioning reality check live at [gout-deep-dive.md §The Clinical Pipeline](./gout-deep-dive.md#the-clinical-pipeline--whats-coming) and the dedicated [gout-clinical-pipeline.md](./gout-clinical-pipeline.md). The mechanism-relevant takeaway for this page: no active program in any phase targets the gut-lumen-uricase angle Open Enzyme pursues. (source: gout-clinical-pipeline.md)
+The full drug-by-drug pipeline table and Open Enzyme positioning live at [gout-deep-dive.md §The Clinical Pipeline](./gout-deep-dive.md#the-clinical-pipeline--whats-coming) and the dedicated [gout-clinical-pipeline.md](./gout-clinical-pipeline.md). Gut-lumen UOX is one conditional Open Enzyme track within that broader attack surface, not an established mechanism or the project itself.
 
 ---
 
@@ -364,7 +340,7 @@ INTERVENTION POINTS:
 - XO inhibitors: Block uric acid production (Allopurinol, Febuxostat)
 - URAT1 inhibitors: Reduce renal reabsorption (Pozdeutinurad, Lesinurad)
 - ABCG2 enhancement: Boost gut secretion via butyrate/PPARγ (fermentable fiber, DASH RCT 0.25–0.73 mg/dL UA reduction, Clinical Trial), sulforaphane/Nrf2, Q141K rescue via HDAC inhibitors (In Vitro) — see [abcg2-modulators.md](./abcg2-modulators.md)
-- Uricase: Degrade uric acid (Pegloticase, SEL-212, Engineered organisms)
+- Uricase: Degrade uric acid (systemic products have clinical evidence; engineered gut organisms remain conditional on §1.33 and §1.36)
 - C5a/C5aR1 blockade: Block complement priming (Avacopan — repurposing candidate; CP0)
 - TNFSF14/LIGHT blockade: Suppress priming amplifier (CERC-002, EGCG; CP1a)
 - NLRP3 inhibitors: Block inflammasome (Dapansutrile, Oridonin, BHB; CP2–CP4)
@@ -377,6 +353,6 @@ INTERVENTION POINTS:
 
 ---
 
-*Gout is solved at any point in this cascade. Multiple interventions hitting different points simultaneously (the Open Enzyme multi-attack strategy) have redundancy and resilience.*
+Each step is an exploitable weakness, not a promise that acting at any one point is sufficient. Multiple mechanisms can be tested together only after the individual arms pass and a prespecified interaction experiment distinguishes useful increment, redundancy, antagonism, and new safety liabilities.
 
 (Source: gout-deep-dive.md, nlrp3-exploit-map.md)

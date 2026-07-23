@@ -31,170 +31,70 @@ sources:
   - "van Stroe-Biezen et al. Anal Chim Acta 1993;273:553 — D_H₂O₂ aqueous ~1.4 × 10⁻⁹ m²/s biosensor canonical reference"
   - "Hansberg W. Antioxidants (Basel) 2022;11(11):2173 (PMC9687031, DOI 10.3390/antiox11112173) — monofunctional heme-catalase mechanism review with kcat ~10⁷-10⁸ s⁻¹"
   - "Najjari A et al. ACS Omega 2022;7(50):46251-46262 (PMC9773812, DOI 10.1021/acsomega.2c04071) — PASylated A. flavus urate oxidase kinetic characterization"
-status: complete (v1; all three architectures GREEN under reference conditions; chassis-pending §6 H₂O₂ housekeeping risk resolved)
+status: complete (frozen v1; non-decision-grade Phase-0 prior; empirical peroxide and tissue-safety gates open)
 ---
 
 # Intra-articular Uricase H₂O₂ Reaction-Diffusion Analysis (Computational, comp-035)
 
-> **⚠️ Verdict downgraded — GREEN is NOT decision-grade (comp-review 2026-07-14).** The reaction-diffusion mechanism (bulk-catalase scavenging dominates, not FRET <10 nm proximity) is sound as a Phase-0 model, but the corpus over-propagated it into "H₂O₂ risk closed / chassis selection can advance." Several load-bearing choices are hardcoded and the sensitivity report includes irrelevant variables. Treat H₂O₂ safety as a **testable Phase-0 prior gated by the Amplex Red wet-lab measurement + validation §1.33/§1.36**, NOT as closed. Do not promote the IA uricase route on this result alone.
+> **Current interpretation:** comp-035 is a non-decision-grade Phase-0 prior. It does not establish a safe H₂O₂ threshold, clear any architecture, select a chassis, or authorize economics-driven selection. Its frozen v1 values describe one simplified implementation and remain historical model outputs only. (Mechanistic Extrapolation)
 
-> **Frozen analysis lives at [`./etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/`](./etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/) — README + analyze.py + inputs/ + outputs/ all committed for reproducibility.**
-> This wiki page is the interpretive layer; the analysis script is stdlib-only Python 3 and reproduces deterministically with RNG seed 35.
+> The frozen artifact is preserved at [`./etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/`](./etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/) for provenance. Its artifact-era GREEN/YELLOW/RED labels are not active decision labels.
 
 ## The question
 
-[`chassis-pending-interventions.md` §6](./chassis-pending-interventions.md) — Intra-articular (IA) uricase ± co-formulated catalase for direct tophi dissolution — is a high-leverage local-tophi-dissolution route that bypasses the systemic-immunogenicity problem of IV pegloticase. The route's central safety question (added to §6 on 2026-05-16): does the spatial confinement (Pickering emulsion / fusion protein / nanoparticle co-encapsulation / free co-formulated catalase) close the H₂O₂ diffusion gap tightly enough to keep tissue-local steady-state [H₂O₂] below the synovial-tissue damage threshold?
+Can Pickering emulsion, uricase-catalase fusion, or free co-formulation control H₂O₂ at the reaction site without unsafe local tissue exposure?
 
-Uricase generates H₂O₂ as a byproduct (one H₂O₂ per urate oxidized). Mammals with native uricase keep it in peroxisomes specifically because peroxisomes contain catalase to mop up H₂O₂ at the source. For IA uricase therapeutics, the H₂O₂ housekeeping problem doesn't go away — it has to be solved at the delivery site.
+comp-035 evaluated a narrower question: steady-state bulk H₂O₂ under assumed uricase production and catalase scavenging in three idealized architectures. It did not resolve a spatial synovial-tissue boundary, reaction-site time course, local peaks, enzyme retention or inactivation, or tissue response. The computation therefore cannot answer the safety question by itself.
 
-A 2026-05-16 focused literature scan confirmed **the reaction-diffusion analysis is missing from every published architecture paper**. Every paper asserts safety qualitatively (FRET <10 nm distance, in vivo histology, dissolved-O₂ kinetics) — none computes the Damköhler-style coupling math. The toxicity threshold itself is weakly anchored — Schalkwijk 1986 reports injected GOx dose, not steady-state [H₂O₂]; in vitro chondrocyte papers use bolus 100 µM-2 mM as documented-toxic; sub-10 µM is presumptively tolerable; the band in between is unmodeled.
+## Historical v1 outputs — non-authorizing
 
-comp-035 closes this gap.
+The frozen v1 artifact reported the following modeled distributions:
 
-## Verdict per architecture (median, central parameters)
+| Architecture | Historical modeled bulk H₂O₂, median | Historical modeled bulk H₂O₂, p95 |
+|---|---:|---:|
+| Pickering emulsion | 0.19 µM | 1.1 µM |
+| Uricase-catalase fusion | 0.034 µM | 0.20 µM |
+| Free co-formulation | 0.19 µM | 7.2 µM |
 
-| Architecture | Predicted [H₂O₂] joint-tissue boundary | Verdict |
-|---|---|---|
-| **Pickering emulsion** (Liu 2025 geometry; URI+CAT at oil-water interface) | median 0.19 µM, p95 1.1 µM | **GREEN** |
-| **Fusion protein** (Schiavon class; URI-CAT covalent fusion, 1-5 nm separation) | median 0.034 µM, p95 0.20 µM | **GREEN** |
-| **Free co-formulated catalase** (rasburicase + bovine catalase mix; Schalkwijk rescue precedent) | median 0.19 µM, p95 7.2 µM | **GREEN** |
+These are not measured concentrations, validated tissue-boundary predictions, or safety margins. The artifact compared them with a derived 10 µM steady-state threshold that was not verified for sustained local synovial-tissue exposure. That threshold and the resulting GREEN/YELLOW/RED classifications are retired from active decision use.
 
-All three architectures clear the 10 µM presumptive-safe threshold under reference conditions.
+## What the model still contributes
 
-### Architecture-distinguishing edge cases
+Within its own assumptions, comp-035 suggested a testable distinction between nanometer-scale capture and bulk catalase scavenging: the Pickering shell calculation did not retain most modeled H₂O₂ locally, while the assumed bulk catalase sink carried the predicted steady-state result. This does not establish the operative in vivo safety mechanism. The conclusion depends on unresolved loading, active-site, activity, retention, and transport assumptions.
 
-The architectures differ in their robustness to off-reference conditions:
+The 2026-07-14 review identified four interpretation-limiting implementation problems:
 
-| Edge case | Pickering | Fusion | Free coformulated |
-|---|---|---|---|
-| Low CAT dose (1 µM) | GREEN (0.32 µM) | GREEN (0.05 µM) | GREEN (3.16 µM) |
-| Uneven dosing: URI 100 µM, CAT 1 µM | GREEN (0.32 µM) | GREEN (0.05 µM) | **YELLOW (31.6 µM)** |
-| Low kcat/Km of CAT (1e7 M⁻¹ s⁻¹) | GREEN (1.26 µM) | GREEN (0.21 µM) | GREEN (1.26 µM) |
-| Small joint (MTP1 0.3 mL) | GREEN (0.32 µM) | GREEN (0.05 µM) | GREEN (0.32 µM) |
+- the calculation is a well-mixed steady-state bulk surrogate, not a spatial tissue-boundary or exposure-time model;
+- Pickering loading and active-site accounting were hardcoded or internally unresolved;
+- named edge cases did not perturb all architectures consistently; and
+- sensitivity summaries included variables unused by the architecture being summarized.
 
-**The architecture-distinguishing finding:** Pickering and fusion fix URI:CAT stoichiometry by construction; free co-formulated fails at YELLOW only when the URI:CAT ratio is mis-engineered (high URI, low CAT). Under reasonable dosing, all three are safe.
+Accordingly, comp-035 neither rules an architecture in nor rules one out. It provides no architecture or chassis winner and no basis for moving selection to production economics, regulatory pathway, or manufacturing complexity.
 
-## Headline architectural finding: FRET proximity is NOT the safety mechanism
+## Remaining gates
 
-The Liu 2025 Pickering emulsion paper makes much of its **FRET-confirmed donor-acceptor distance <10 nm** as the "spatial confinement" enabling cascade catalysis. The diffusion math says:
+Architecture comparison remains blocked on all four of the following:
 
-- **Shell Damköhler number Da_shell median ~5 × 10⁻³** — far below 1. The catalase shell is too thin (~5 nm) for catalase to scavenge H₂O₂ in transit before it diffuses through to the bulk aqueous phase.
-- **Escape fraction f_escape median ~0.998** — virtually all H₂O₂ produced at the interfacial uricase escapes the shell to the bulk.
+1. **Matched reaction-site H₂O₂ time course:** measure each architecture under matched substrate conditions and explicitly matched uricase and catalase activities, spanning the intended operating window rather than relying on a single steady-state estimate.
+2. **Catalase activity, stoichiometry, retention, and diffusion:** quantify the delivered active URI:CAT ratio, catalase activity over the exposure period, retention or loss from the reaction site, and transport through the formulation and surrounding medium.
+3. **Local exposure:** resolve bulk concentration and local magnitude-duration profiles at crystals, injection or formulation depots, and the tissue-facing boundary.
+4. **Tissue safety:** test the measured local exposure profiles against relevant synovial and cartilage endpoints; do not substitute the retired 10 µM model threshold for this gate.
 
-So what keeps the Pickering architecture GREEN? **Bulk-phase catalase scavenging.** The catalase from all 10¹⁰-10¹¹ dispersed droplets in the joint volume acts as a bulk first-order H₂O₂ sink with rate constant (kcat/Km)_CAT × [CAT_bulk]. At Liu 2025's PEBR dose (0.23 mg catalase in 20 µL → ~16 nM CAT × 4 active sites = 64 nM active sites in a 3 mL joint, after dispersion ~0.4 nM active sites), this gives bulk destruction rate ~16 s⁻¹ — sufficient to keep bulk [H₂O₂] sub-µM. **Mathematically equivalent to free co-formulated catalase at the same total dose.**
+Only after these gates are met can non-peroxide criteria be used in an architecture comparison. comp-035 supplies no ordering among Pickering, fusion, and free co-formulation.
 
-This is the load-bearing architectural finding for chassis-selection: **the FRET <10 nm proximity is not what makes the Pickering safe.** The interfacial Pickering geometry contributes:
+## Evidence status
 
-1. **Fixed URI:CAT stoichiometry in vivo** — prevents the mis-dosing failure mode that lands free co-formulated at YELLOW.
-2. **Catalase activity preservation during storage and immune exposure** — Liu 2025 measures 5× boost in immobilized CAT specific activity vs free CAT.
-3. **Mannose-targeted retention at the inflammation site** — improves dose efficiency and reduces systemic exposure.
-
-These are real, load-bearing architectural advantages — but **the safety is driven by total catalase capacity in the joint, not by the FRET-confirmed proximity.** Any architecture that delivers sufficient catalase to the joint at the right URI:CAT ratio achieves the same safety outcome.
-
-(Mechanistic Extrapolation, in silico over published In Vitro kinetic anchors.)
-
-## Damköhler-number analysis per architecture
-
-| Architecture | Damköhler / capture probability | What it means |
-|---|---|---|
-| Pickering | Da_shell ~5 × 10⁻³ (median) | Catalase shell is too thin to scavenge in transit; bulk catalase across all droplets does the work |
-| Fusion | P_capture_intra ~0.24 (median) | ~24% of H₂O₂ captured by colocated catalase domain via Smoluchowski first-passage; rest goes to bulk |
-| Free | Da_joint ~10⁸ (median) | Joint-scale catalase capture is fast on the scale of joint radius; H₂O₂ never reaches tissue boundary |
-
-The fusion's 24% intramolecular capture is a modest but real safety margin contributed by the architecture — it reduces the effective bulk H₂O₂ production rate by 24% before bulk catalase scavenges the rest. The Pickering case has no intramolecular capture contribution (shell is too thin). The free case relies entirely on bulk scavenging.
-
-## Toxicity threshold band — derivation
-
-The synovial-tissue safe-threshold band was derived because no published steady-state synovial-tissue H₂O₂ toxicity curve exists. Anchors:
-
-- **Schalkwijk 1986 (PMID 3707631)** — canonical IA H₂O₂ damage model. Cationized GOx injected intra-articularly produces H₂O₂ in mouse knees → chondrocyte proteoglycan synthesis severely inhibited, vascular leak, subchondral erosions. **The paper reports injected GOx dose and outcomes, not steady-state [H₂O₂].** The conversion from GOx dose to local steady-state H₂O₂ is the load-bearing scientific unknown.
-- **In vitro chondrocyte bolus data** — 26+ PubMed-indexed studies use bolus H₂O₂ in the 50 µM - 2 mM range to induce chondrocyte apoptosis, mitochondrial dysfunction, ECM degradation. Sub-10 µM bolus is tolerated.
-- **Endogenous synovial baseline** — basal extracellular H₂O₂ in synovial fluid is sub-µM to low-µM; inflamed-joint baselines (gout flare neutrophil burst) can reach higher.
-
-Derived band (used as comp-035 decision rule):
-
-- **GREEN (presumptively safe)**: <10 µM steady-state — chondrocyte tolerance, sub-physiologic-burst, endogenous baseline range
-- **YELLOW (gray band)**: 10-100 µM — unmodeled in literature; variable in vivo outcomes
-- **RED (presumptively toxic)**: >100 µM — Schalkwijk damage anchor + in vitro chondrocyte apoptosis convergence
-
-(Mechanistic Extrapolation. The band itself is a comp-035 contribution; the underlying anchors are In Vitro and Animal Model.)
-
-## Dominant sensitivity drivers
-
-Spearman rank correlation between input dimensions and predicted [H₂O₂] across 20,000 Monte Carlo samples:
-
-| Architecture | Top driver (Spearman r) | What this means for wet-lab |
-|---|---|---|
-| Pickering | (kcat/Km)_CAT (r = −0.97) | Catalase specificity constant dominates; measure on the specific catalase preparation used |
-| Fusion | (kcat/Km)_CAT (r = −0.95) | Same — catalase activity is load-bearing |
-| Fusion | active-site separation L_fusion (r = +0.17) | Wider separation = less intramolecular capture; design the linker to minimize L |
-| Free | URI concentration (r = +0.60), CAT concentration (r = −0.60) | URI:CAT ratio is the load-bearing knob — ensure CAT is dosed proportional to URI |
-
-**The cross-architecture finding:** catalase activity (kcat/Km) is the single most load-bearing input across all three architectures. This means catalase preparation quality dominates the safety margin — degraded / partially denatured catalase shifts all architectures toward YELLOW/RED. Storage stability and in vivo immune-protection of the catalase moiety is the **first-order engineering question** for IA uricase chassis selection.
-
-## What comp-035 rules IN
-
-1. **All three architectures are mechanistically safe under reference dosing** for the H₂O₂ housekeeping question. The chassis-pending §6 entry's H₂O₂ load-bearing safety risk is resolved as not-prohibitive across all three architectures. (Mechanistic Extrapolation, in silico)
-2. **Catalase activity (kcat/Km) is the dominant load-bearing input** across all three architectures. Catalase preparation quality, in vivo stability, and proportional dosing relative to uricase are the first-order engineering questions for chassis selection.
-3. **Architecture choice should be driven by other criteria, not by H₂O₂ diffusion math.** Production economics, regulatory pathway, manufacturing complexity, in vivo retention, immunogenicity — these are the load-bearing chassis-selection variables now that H₂O₂ safety is closed.
-4. **The Schiavon-class fusion protein has the most robust safety margin** — both intramolecular Smoluchowski capture (~24% locally) AND bulk catalase scavenging contribute. This argues for fusion-protein architecture if a clean recombinant production route is available.
-5. **Free co-formulated catalase works when URI:CAT ratio is engineered correctly** — the YELLOW edge case at uneven URI 100 µM / CAT 1 µM is mitigated by ensuring proportional dosing. Schalkwijk's rescue precedent (IA catalase reverses GOx-induced damage) is consistent with this finding.
-
-## What comp-035 rules OUT
-
-1. **The "spatial confinement / FRET proximity" narrative as the safety mechanism for Pickering emulsion is structurally weak.** The 5 nm shell is too thin for catalase to scavenge H₂O₂ before diffusion across. The Pickering architecture is safe — but for a different reason than the Liu 2025 paper emphasizes. **This is a load-bearing finding for any chassis-selection that prioritizes architectures based on advertised proximity claims** — the diffusion math says proximity per se is not the load-bearing safety factor.
-2. **The "H₂O₂ diffuses faster than catalase can scavenge it" critique from `delivery-route-matrix.md` does not apply at typical IA dosing levels.** That critique was correct for the SC depot case (chronic high-dose uricase in a small depot volume), but at the IA injection scale with proportional catalase, bulk catalase scavenging is fast on the joint timescale.
-
-## Multilingual scan
-
-Per CLAUDE.md §"Global-multilingual research by default":
-
-- **CNKI / Wanfang Chinese-language search** for Pickering emulsion uricase + catalase architecture papers and IA-H₂O₂ damage studies. Liu 2025 is Chinese-authored (Linyi University / Qilu Normal University) but published in English in *J Nanobiotechnology* — already covered. CNKI search yields a small cluster of Chinese-language reviews echoing the Liu 2025 architectural class; no new quantitative reaction-diffusion anchor surfaced.
-- **J-STAGE / CiNii Japanese-language search** for chondrocyte oxidative stress threshold and Kampo-medicine cartilage protection. The Japanese cartilage literature uses similar in vitro chondrocyte H₂O₂ challenge protocols (50 µM-1 mM bolus) as the English literature; no separate steady-state synovial-tissue threshold curve is published.
-
-**Translation cross-check** not required because no non-English source produced a load-bearing claim divergent from the English-language consensus. The multilingual scan corroborates the English-language gap.
-
-## Wet-lab handoff
-
-**For each architecture, the cheapest wet-lab measurement to tighten the prediction:**
-
-- **Pickering emulsion**: Amplex Red microelectrode H₂O₂ measurement in synovial-fluid mimic ± dispersed PEBR droplets ± physiologic urate substrate (0.5 mM). Direct readout of bulk steady-state [H₂O₂]. ~$2-5K. Closes absolute-magnitude question.
-- **Fusion protein**: Same Amplex Red readout on a recombinantly produced uricase-catalase fusion. Additionally: AlphaFold or cryo-EM structural characterization to confirm active-site separation in the 1-5 nm range. Gene synthesis $1-3K + expression test $5-10K + Amplex Red $2-5K.
-- **Free co-formulated**: Amplex Red dose-titration study at varying URI:CAT ratios. ~$2-5K.
-
-**Load-bearing wet-lab readout: Amplex Red microelectrode H₂O₂ measurement in synovial-fluid mimic** resolves the absolute-magnitude uncertainty for all three architectures. Tissue-level effects (cartilage damage, synoviocyte response) are downstream consequences of [H₂O₂] exposure — sub-µM Amplex Red readout by-construction makes downstream effects low. Chondrocyte-cytotoxicity titration only becomes relevant if Amplex Red surfaces unexpectedly high [H₂O₂].
-
-The **next architecture-selection-blocking experiment** is therefore not in vivo histology (Liu 2025 / Lin 2022 / Schalkwijk 1986 already establish in vivo safety qualitatively); it's **Amplex Red dose-titration** to quantify the predicted steady-state [H₂O₂] under realistic substrate loading + dispersion conditions.
-
-## How this lands
-
-- **`chassis-pending-interventions.md` §6** — H₂O₂ housekeeping is not prohibitive in the model but remains gated on the specified wet-lab measurement. Production economics, regulatory pathway, and formulation engineering are the other load-bearing variables.
-- **`gout-kill-chain-delivery-routes.md`** — the IA uricase + catalase / Pickering bioreactor open-territory framing is corroborated as a real and accessible vector; the 2025 preclinical literature (Liu 2025, Lin 2022, Liu 2025 *Nat Commun*) is the right precedent, and the safety case is mechanistically defensible.
-- **`delivery-route-matrix.md` §"Why SC uricase doesn't work"** — the H₂O₂ critique applies to SC depots (small volume, no joint clearance) but does NOT transfer to IA at typical dosing because bulk catalase scavenging dominates at the joint scale. The two pages are now mutually consistent.
-- **`engineered-koji-protocol.md` §"The Hydrogen Peroxide Question"** — koji's peroxisomal co-localization is one solution to the H₂O₂ problem (peroxisomal lumen-scale ~10 nm sufficient for direct catalase contact); for IA purified protein delivery, the equivalent solution is total catalase capacity at the joint scale, not residue-level proximity. Sister insight.
-
-## Limitations + v2 follow-ups
-
-1. **Toxicity threshold band derivation is the load-bearing weakness.** The 10/100 µM bounds are a comp-035 contribution (no published steady-state synovial curve exists). If empirical chondrocyte data emerges that places the safe upper bound at 5 µM rather than 10 µM, the free co-formulated p95 (7.2 µM) shifts into YELLOW. The Pickering and fusion p95 (1.1 µM and 0.20 µM) stay GREEN.
-2. **Liu 2025 interfacial enzyme density exponent ambiguity** — flagged in `inputs/provenance.md` as [UNVERIFIED-AS-LITERAL]. Direct contact with Liu 2025 corresponding author or supplemental fetch would close. Not load-bearing for the verdict (covered by ±1 order-of-magnitude sensitivity range).
-3. **Fusion protein active-site separation** — no published crystal structure exists. A specific fusion construct + AlphaFold prediction would tighten the verdict. Currently [ESTIMATED — DESIGN-SPACE PRIOR].
-4. **Synovial-fluid H₂O₂ diffusion coefficient** — no direct measurement; aqueous-to-gel tortuosity scaled. Direct FRAP measurement in synovial fluid mimic would close.
-5. **MSU crystal local-substrate enhancement** — urate concentration at the crystal-solution interface may be elevated above bulk synovial; this drives higher localized uricase flux. Captured in the sensitivity analysis via urate_M range (0.5-5 mM) but not modeled spatially.
-
-## Evidence summary
-
-- **Mechanistic Extrapolation** — all comp-035 outputs (predicted steady-state [H₂O₂], Damköhler numbers, verdict assignments) are in silico predictions over published anchor kinetics.
-- **In Vitro** — uricase + catalase kinetic constants, D_H₂O₂ aqueous, Liu 2025 PEBR specific activities, in vitro chondrocyte bolus tolerance / toxicity data.
-- **Animal Model** — Schalkwijk 1986 cationized GOx IA damage, Liu 2025 / Lin 2022 / Liu 2025 *Nat Commun* preclinical in vivo IA delivery, Jung 2017 UOX+AuNP cascade.
-- **Clinical Trial** — none yet. No clinical IA uricase program exists.
-
-Per CLAUDE.md §"Evidence Levels", all in silico claims tagged as Mechanistic Extrapolation; published anchor kinetics tagged In Vitro; in vivo precedent tagged Animal Model.
+- **Mechanistic Extrapolation:** every comp-035 concentration, capture, sensitivity, and architecture comparison is an in silico output conditional on the frozen assumptions.
+- **Animal Model / In Vitro:** the cited studies provide formulation-specific precedent and input anchors; they do not validate comp-035's generic threshold or cross-architecture safety ranking.
+- **Clinical Trial:** no clinical IA uricase evidence is represented here.
 
 ## Reproduction
 
+From the repository root, the frozen v1 model can be rerun with:
+
 ```bash
-cd etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion
+cd wiki/etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion
 python3 analyze.py
 ```
 
-Stdlib-only Python 3. Deterministic given RNG seed 35. ~1.2 seconds wall-clock on a modest laptop.
+Reproduction regenerates the historical model outputs; it does not validate the safety interpretation.

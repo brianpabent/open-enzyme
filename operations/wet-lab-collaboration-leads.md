@@ -1,6 +1,6 @@
 # Wet-Lab Collaboration Leads & Outreach Strategy
 
-This document maps the global academic landscape for **Experiment 1.9 (Ward 1995 staged lactoferrin/UOX/dual-cassette feasibility)** and **Experiment 1.25 (DAF SCR1-4 single-cassette expression)**. After comp-044/045, §1.33 is the gout program's Gate 0; §1.9 remains the conditional #1 koji-endgame architecture gate. Partner outreach remains active because the §1.9A lactoferrin-only arm can run while §1.33 selects UOX topology, and the same chassis/infrastructure later supports §1.9B/C and §1.25.
+This document maps the global academic landscape for **Experiment 1.9 (Ward 1995 staged lactoferrin/UOX/dual-cassette feasibility)** and **Experiment 1.25 (DAF SCR1-4 single-cassette expression)**. Partner outreach remains active because the §1.9A lactoferrin-only arm can run while §1.5 builds and characterizes candidate koji UOX configurations. Those exact configurations then enter §1.33; an advanced configuration may proceed to §1.9B/C after the required safety gates. The same controlled chassis infrastructure can support §1.25 without making the koji track a project-level dependency.
 
 ---
 
@@ -56,7 +56,7 @@ These groups are actively publishing on *A. oryzae* expression, promoter design,
   - Mortensen et al. 2025 (*Fungal Biol Biotechnol*, DOI: 10.1186/s40694-025-00192-3) — *CRISPR Cas12a/Cpf1 multiplex gene editing in Aspergillus.*
   - Nødvig & Mortensen 2015 (*PLOS One*, PMC4503723) — *Foundational CRISPR-Cas9 toolkit for filamentous fungi.*
 * **Specific Project Value:**
-  - **CRISPR & Mutagenesis:** If we cannot obtain NSlD-ΔP10 and must construct a 10-protease knockout strain *de novo* in a food-grade background (like NSAR1), Mortensen's Cas12a/Mad7 multiplex toolkit is the best method available globally.
+  - **CRISPR & Mutagenesis:** If NSlD-ΔP10 is unavailable, Mortensen's Cas12a/Mad7 multiplex toolkit is a candidate method for constructing a defined protease-deletion background such as NSAR1. Host history does not determine the engineered strain's safety or regulatory status.
 
 ---
 
@@ -111,7 +111,7 @@ These are groups whose primary object of study **is uricase itself** — recombi
 * **Relevant Publication:**
   - 2025 (*J Microbiol Methods*, DOI: 10.1016/j.mimet.2025.107270) — *Microbial uricase enzymes in hyperuricemia management: Sources, challenges, and technological advances* (review; co-authored with Shivaji University, India — pbd_biochem@unishivaji.ac.in).
 * **Specific Project Value:**
-  - **Microbial-uricase landscape expertise.** Authored the current review of microbial uricase sources and expression challenges — i.e., they hold the map of which microbial uricases express well and where the bottlenecks are. A *Food Science* biotech department also fits the food-grade/GRAS framing of the project. Low-friction first contact: ask for their read on best-expressing microbial uricase source for a food-grade host.
+  - **Microbial-uricase landscape expertise.** Authored the current review of microbial uricase sources and expression challenges. Their value is source-enzyme and host-expression knowledge; any recommendation still enters the same exact-configuration activity, physiology, and safety gates.
 
 ### Secondary / to-confirm
 * **Hossein Ghafouri (University of Guilan, Rasht, Iran)** — corresponding author, *Recombinant Expression and Functional Assessment of Uricase from sp. Strain 17-1* (Iran J Biotechnol 2024, DOI: 10.30498/ijb.2024.379614.3602). Recombinant uricase from a novel halophilic source. Email not in the PubMed record — confirm via University of Guilan Biology faculty page before sending.
@@ -151,7 +151,7 @@ Tiers 1–3 above are **execution partners** — labs that could actually run ou
 * **Zhiyan Xiao (Institute of Materia Medica, CAMS, Beijing)** — `xiaoz@imm.ac.cn` — Wang et al. 2025 (*Bioorg Med Chem Lett*, PMID 40669671). Sustained URAT1-inhibitor medchem program.
 * **Shaojie Wang (Shenyang Pharmaceutical University, China)** — `Sjwang_99@163.com` — Mao et al. 2025 (*Eur J Med Chem*, PMID 40101451); Sun et al. 2025 (PMID 40286449). Structure-based URAT1 and NLRP3/URAT1 dual-target design.
 * **Xin Tian (First Affiliated Hospital of Zhengzhou University, China)** — `tianx@zzu.edu.cn` — Liu et al. 2025 (*Eur J Med Chem*, PMID 40305938). TRPV1/URAT1 dual-target lead optimization (piperine analogs).
-* **Geng Zhong & Yongbo Peng (Southwest University, Chongqing)** — `gzhong@swu.edu.cn`, `pengyongbo2021@cqmu.edu.cn` — Deng et al. 2025 (*Int J Biol Macromol*, PMID 41075904). PDZK1/ABCG2/NPT1 urate-secretion modulation by a **food-grade natural product** — on the ABCG2-gut-secretion + food-grade axis that matches our framing.
+* **Geng Zhong & Yongbo Peng (Southwest University, Chongqing)** — `gzhong@swu.edu.cn`, `pengyongbo2021@cqmu.edu.cn` — Deng et al. 2025 (*Int J Biol Macromol*, PMID 41075904). Relevant to the PDZK1/ABCG2/NPT1 intestinal-urate-secretion mechanism; material identity and exposure remain separate questions.
 * **Tomoaki Takata (Tottori University, Japan)** — `t-takata@tottori-u.ac.jp` — 2025 (*Sci Rep*, PMID 40089552). Dotinurad clinical renal-physiology / urinary-urate handling.
 
 *To-confirm:* **Peng Zhan / Fan Yi** (Shandong U) — high-output dual URAT1/GLUT9 medchem, PMID 42090242; **Hidekatsu Yanai** (NCGM, Japan) — dotinurad selectivity mechanism, PMID 38474414; **Changgui Li** (Qingdao U) — ABCG2 / gut-microbiota urate, recurring senior author.
@@ -219,13 +219,13 @@ Subject: Collaboration Inquiry / Request for Strain NSlD-ΔP10 — Open Enzyme P
 
 Dear Professor [Last Name],
 
-I am writing on behalf of the Open Enzyme Project (open-enzyme.org), a collaborative, open-source initiative developing food-grade microbial strains to express therapeutic enzymes for gastrointestinal targets (primarily uricase for hyperuricemia and gout).
+I am writing on behalf of the Open Enzyme Project (open-enzyme.org), an open research project that uses red-teaming to identify exploitable weaknesses in gout and engineers falsifiable interventions against them. Engineered microbial UOX is one candidate track.
 
 We have closely followed your lab's pioneering work in Aspergillus oryzae engineering, particularly [mention a specific paper, e.g., the development of the ten-protease-deletion strain NSlD-ΔP10 in Yoon et al. 2011 / the expression of complex multimeric proteins in Huynh et al. 2020].
 
 We are currently preparing a staged validation program:
 1. Human lactoferrin alone (codon-optimized, PamyB glucoamylase-KEX2 architecture) to establish folding, function, and solid-state titer in NSlD-ΔP10.
-2. Uricase alone, using the topology selected by a preceding physiological substrate × oxygen × peroxide screen.
+2. Uricase alone, using an exact host configuration built and characterized before advancement through the physiological substrate × oxygen × peroxide screen.
 3. A dual-cassette strain only if both single-cassette stages pass.
 
 Our corrected comp-010 comparison finds that the lactoferrin + uricase pair and the adalimumab construct in your Huynh 2020 paper each contain 16 bulk disulfides. We treat this only as a reference point—not as evidence of equivalent ER folding capacity—because lactoferrin and IgG have different folding and assembly architectures. The staged study is designed to measure lactoferrin-only folding and function before attempting the dual construct.

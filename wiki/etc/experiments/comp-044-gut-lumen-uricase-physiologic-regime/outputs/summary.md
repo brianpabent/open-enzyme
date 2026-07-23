@@ -1,6 +1,6 @@
 # comp-044 summary — gut-lumen uricase physiological regime
 
-**Verdict: LEGACY FLAT-DOSE REGIME NOT ROBUST.** Applying substrate concentration, Km and a finite active window **invalidates the unconditional flat-dose / saturated-capacity classification** for the central jejunal diagnostic before oxygen, access, or survival penalties are added. (The 50 mg central no-extra-penalty ratio is ~0.93 — close to the ratio-one boundary; this shows the unconditional classification is not robust, not that the physiological regime is definitively reversed.) This experiment does **not** predict ΔSUA or establish the true regime.
+**Verdict: LEGACY FLAT-DOSE REGIME NOT ROBUST.** COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. COMP-044 supplies no replacement dose, ΔSUA, genotype ordering, physiological regime, efficacy model, topology or chassis selection, production-sufficiency, or safety conclusion.
 
 ## Named-scenario capacity ratios
 
@@ -26,13 +26,16 @@ The fractions below one describe occupancy of the selected equally weighted desi
 
 ## Decision
 
-Retire comp-019's quantitative ΔSUA and flat-dose claims. Retain the biological gut-sink hypothesis as open. The next decision gate is a physiological topology × oxygen × peroxide experiment, informed by comp-045.
+Keep the biological gut-sink hypothesis and its quantitative regime open. Build and characterize exact configurations before the configuration-level physiological screen; complete the separate peroxide-safety gate before animal escalation.
 
 ## Limitations
 
 - pH, effective oxygen-dependent activity, access, and survival factors are nonmechanistic scenario variables, not measured patient parameters.
+- Oxygen is represented only by a dimensionless scenario multiplier; oxygen stoichiometry, delivery, depletion, and kinetic coupling are not modeled.
+- Hydrogen-peroxide production, scavenging, tissue exposure, and safety are not evaluated.
 - The legacy 233 mg/day flux denominator is a population prior, not a local compartment concentration.
 - Fixed-concentration capacity is an upper-bound screen; substrate depletion and replenishment require a dynamic gut model.
 - The grid is a discrete full-factorial over selected levels. Fractions of grid cells are design-space occupancy, not probabilities or uncertainty distributions.
 - Only the ratio=1 boundary has a direct mass-balance meaning; the 0.25 and 4 bins are descriptive heuristics.
+- The 8.3 U/mg specific activity, Km range, 2-4 hour window, and 233 mg/day denominator are inherited priors, not newly primary-source verified quantitative-planning inputs.
 - No renal compensation, reabsorption, microbiome metabolism, topology, or serum-urate mapping is modeled. A dynamic compartmental mass balance is required before dose decisions.

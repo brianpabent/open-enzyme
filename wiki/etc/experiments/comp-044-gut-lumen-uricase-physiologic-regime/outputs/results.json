@@ -1,7 +1,19 @@
 {
   "experiment": "comp-044",
   "verdict": "LEGACY FLAT-DOSE REGIME NOT ROBUST",
-  "interpretation": "Regime classification changes when the model's own substrate, time, oxygen, access, and survival terms are applied. No serum-urate efficacy is inferred.",
+  "decision_rule": {
+    "boundary": "capacity_ratio = 1",
+    "legacy_control_requirement": "all legacy_vmax_24h dose ratios must be at or above one",
+    "not_robust_condition": "legacy control is reproduced and at least one jejunal_baseline_no_extra_penalties dose ratio is below one",
+    "contrary_condition": "legacy control is reproduced and every jejunal_baseline_no_extra_penalties dose ratio remains at or above one"
+  },
+  "interpretation": "COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. COMP-044 supplies no replacement dose, serum-urate effect, genotype ordering, physiological regime, efficacy model, topology or chassis selection, production-sufficiency, or safety conclusion.",
+  "input_provenance_status": {
+    "uricase_specific_activity_U_per_mg": "inherited prior; not newly primary-source verified for quantitative planning",
+    "uricase_Km_urate_uM": "inherited range; enzyme-context dependent and not newly primary-source verified",
+    "small_bowel_active_window_hours": "inherited physiology range; not a measured comp-044 patient parameter",
+    "legacy_intestinal_urate_flux_mg_per_day": "derived corpus prior; not a patient-specific or local-compartment measurement"
+  },
   "named_scenarios": [
     {
       "scenario": "legacy_vmax_24h",
@@ -132,10 +144,13 @@
   },
   "limitations": [
     "pH, effective oxygen-dependent activity, access, and survival factors are nonmechanistic scenario variables, not measured patient parameters.",
+    "Oxygen is represented only by a dimensionless scenario multiplier; oxygen stoichiometry, delivery, depletion, and kinetic coupling are not modeled.",
+    "Hydrogen-peroxide production, scavenging, tissue exposure, and safety are not evaluated.",
     "The legacy 233 mg/day flux denominator is a population prior, not a local compartment concentration.",
     "Fixed-concentration capacity is an upper-bound screen; substrate depletion and replenishment require a dynamic gut model.",
     "The grid is a discrete full-factorial over selected levels. Fractions of grid cells are design-space occupancy, not probabilities or uncertainty distributions.",
     "Only the ratio=1 boundary has a direct mass-balance meaning; the 0.25 and 4 bins are descriptive heuristics.",
+    "The 8.3 U/mg specific activity, Km range, 2-4 hour window, and 233 mg/day denominator are inherited priors, not newly primary-source verified quantitative-planning inputs.",
     "No renal compensation, reabsorption, microbiome metabolism, topology, or serum-urate mapping is modeled. A dynamic compartmental mass balance is required before dose decisions."
   ]
 }

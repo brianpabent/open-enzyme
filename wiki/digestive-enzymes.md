@@ -3,283 +3,69 @@ title: Digestive Enzymes & EPI
 aliases:
   - Exocrine Pancreatic Insufficiency
   - EPI
-  - Enzyme Supplementation
+  - Enzyme Replacement
   - Fungal Enzymes
-  - Koji Enzymes
 related:
   - enzyme-deficit
   - sibo
-  - lynn-profile
-  - koji-fermentation
   - aspergillus-oryzae
+  - enzyme-quantification-protocol.md
 sources:
   - enzyme-deficit-deep-dive.md
-  - engineered-koji-protocol.md
-  - etc/open-enzyme-vision.md
+  - enzyme-quantification-protocol.md
 ---
 
-# Digestive Enzymes & Enzyme Insufficiency (EPI)
+# Digestive Enzymes & Enzyme Insufficiency
 
-**Digestive enzyme insufficiency** is a condition where the pancreas (or stomach/brush-border epithelium) does not produce adequate quantities of the enzymes needed to break down proteins, fats, and carbohydrates. When severe enough to require supplementation, it's clinically termed **Exocrine Pancreatic Insufficiency (EPI)**.
+Exocrine pancreatic insufficiency (EPI) is a clinical enzyme-deficit state. Symptoms alone do not distinguish it from mucosal disease, altered bile delivery, small-intestinal bacterial overgrowth, or other causes. This page separates established enzyme replacement from fungal-enzyme and engineered-production research.
 
-Lynn's situation — bloating, malabsorption, fatigue after eating — represents either mild EPI or brush-border damage (potentially from [[sibo|SIBO]]), both of which benefit from enzyme supplementation.
+## Physiological enzyme sources
 
-## Where Digestive Enzymes Originate
-
-The human digestive system produces enzymes from multiple sources, each with distinct pH optima and substrate specificity:
-
-| Source | Key Enzymes | pH Range | Substrate |
-|--------|-----------|----------|-----------|
-| **Saliva** | Amylase, lingual lipase | ~7 | Starches, some fats |
-| **Stomach** | Pepsin (from pepsinogen + HCl) | 1.5–3 | Proteins (initial cleavage) |
-| **Pancreas** | Trypsin, chymotrypsin, elastase, lipase, amylase, nucleases | ~8 | Proteins, fats, starches, nucleic acids |
-| **Brush border (intestinal wall)** | Lactase, sucrase, maltase, peptidases, DPP-IV | ~7 | Disaccharides, small peptides |
-| **Bile** | (Not enzymes) — bile salts emulsify fats | Variable | Fats (enables lipase access) |
-
-**(Source: enzyme-deficit-deep-dive.md)** — "The human digestive system produces an astonishing array of enzymes — from salivary amylase in your mouth to the full battery of pancreatic enzymes dumped into your small intestine, to the brush-border enzymes embedded in the intestinal lining itself."
-
-> **Reactome graph anchor (2026-06-01):** Reactome's human digestion pathway `R-HSA-8935690` contains dietary carbohydrate digestion (`R-HSA-189085`) and dietary lipid digestion (`R-HSA-192456`). Useful enzyme-level anchors include amylose digestion by extracellular amylase (`R-HSA-188979`), amylopectin digestion by extracellular amylase (`R-HSA-191114`), triacylglycerol digestion by pancreatic triglyceride lipase:colipase (`R-HSA-192422`), and cholesterol ester digestion by carboxyl ester lipase (`R-HSA-192417`). These IDs are useful for substrate/product vocabulary; they do not by themselves standardize fungal supplement activity or prove EPI clinical efficacy. (Pathway anchor; source: `reference/generated/reactome/2026-06-01-open-enzyme-audit/`)
-
-## Why the System Fails: Causes of EPI
-
-### Aging (Most Common)
-
-Pancreatic enzyme output declines naturally with age — roughly 20–30% reduction per decade after age 50. Stomach acid production also drops (hypochlorhydria), impairing pepsin activation.
-
-**(Source: enzyme-deficit-deep-dive.md)** — "After 50, many people are running their digestive cascade at 60–70% capacity without realizing it."
-
-### Chronic Pancreatitis
-
-Inflammation and fibrosis of pancreatic tissue destroy acinar cells (the cells that produce enzymes). This is often alcohol-related, but can also be idiopathic or autoimmune.
-
-### Pancreatic Surgery
-
-Removal or bypassing of pancreatic tissue (Whipple procedure, pancreatectomy) directly reduces enzyme production.
-
-### Cystic Fibrosis (CF)
-
-Genetic mutations in the CFTR gene cause thick, sticky pancreatic secretions that plug ducts, preventing enzyme release. Often diagnosed in childhood and requires lifelong enzyme supplementation.
-
-### Gut Inflammation
-
-Brush-border enzyme damage from [[sibo|SIBO]], inflammatory bowel disease (Crohn's, ulcerative colitis), or celiac disease reduces available enzyme surface area.
-
-**(Source: enzyme-deficit-deep-dive.md)** — "Brush-border enzymes. These are physically embedded in the intestinal villi — if the villi are inflamed or blunted, you lose enzyme surface area."
-
-## The Supplement Solution: Fungal Enzymes
-
-### Why Aspergillus?
-
-Rather than extract enzymes from animal pancreases (as some older supplements do), the modern supplement industry uses **Aspergillus species** — fungi that are prolific extracellular enzyme producers:
-
-| Species | Primary Enzymes | GRAS Status | Notes |
-|---------|-----------------|-----------|-------|
-| ***Aspergillus oryzae*** | Amylase, acid-stable protease, lipase | **Yes** | The koji mold. 1000+ years of food use. Safest choice. |
-| ***Aspergillus niger*** | Lactase, cellulase, pectinase, glucoamylase, lipase | **Yes** | Workhorse. Used in citric acid production since 1920s. |
-| ***Aspergillus melleus*** | Alkaline protease | Yes | Less common. |
-| ***Trichoderma reesei*** | Cellulase, hemicellulase | Yes | Not Aspergillus but often blended in. |
-
-**(Source: enzyme-deficit-deep-dive.md)** — "*Aspergillus* species are champion enzyme producers — it's their ecological strategy. In the wild, *Aspergillus* species colonize dead plant matter and secrete huge quantities of enzymes to externally digest their surroundings."
-
-### How They Work
-
-Fungal enzymes are grown in bioreactors on wheat bran or rice bran, the enzyme-rich broth is harvested, concentrated, freeze-dried, and encapsulated. They are not absorbed into the bloodstream — they work directly in the gut lumen, doing exactly what pancreatic enzymes would do: breaking chemical bonds.
-
-**(Source: enzyme-deficit-deep-dive.md)** — "The supplement industry grows *A. oryzae* in bioreactors on wheat bran or rice bran, harvests the enzyme-rich broth, purifies and concentrates it, freeze-dries it, and packs it into capsules. They're doing industrial koji fermentation — they just don't call it that."
-
-## Commercial Products: Creon, Zenpep, BoulderBio
-
-### Prescription Enzymes (Porcine-Derived)
-
-- **Creon** (pancrelipase): Pork pancreatic enzymes, enteric-coated
-- **Zenpep**: Similar formulation, different brand
-- Advantages: FDA-approved, precise dosing in lipase units (USP)
-- Disadvantages: Expensive (~$200–500/month with insurance), derived from pigs, only active in alkaline pH range (small intestine)
-
-### Over-the-Counter Fungal Enzymes (Like BoulderBio)
-
-- **Source:** Fungal-derived enzyme blends (amylase, protease, lipase, cellulase, lactase, DPP-IV, etc.)
-- **Advantages:** 
-  - Acid-stable proteases work in stomach pH range (porcine enzymes don't)
-  - Lower cost (~$30–100/month)
-  - Multiple enzyme activities in one capsule
-  - No prescription needed
-- **Disadvantages:** 
-  - Less precise standardization (different measurement systems: HUT, SAP, FCC units)
-  - Variable enzyme activity across brands
-  - No clinical trials specific to gout or defined conditions (though research exists)
-
-**(Source: enzyme-deficit-deep-dive.md)** — "A well-formulated digestive enzyme supplement typically includes a blend designed to cover every major food category."
-
-## Enzyme Composition Strategy
-
-### Coverage Across pH Ranges
-
-Well-formulated supplements include proteases that work across the full pH spectrum:
-
-- **Acid-stable proteases:** Active in stomach (pH 1.5–3)
-- **Neutral proteases:** Active in duodenum (pH 6–7)
-- **Alkaline proteases:** Active in small intestine (pH 7–8)
-
-This multi-protease approach is an advantage of fungal supplements over porcine pancreatic enzymes, which only work in alkaline conditions.
-
-### Complementary Enzymes
-
-Beyond the "big three" (protease, lipase, amylase), comprehensive supplements include:
-
-- **Cellulase:** Breaks down plant cell walls (humans produce zero cellulase)
-- **Lactase:** For those with lactose intolerance
-- **DPP-IV:** Breaks down proline-rich peptides (including gluten fragments)
-- **Glucoamylase:** Fine-tunes starch breakdown
-
-**(Source: enzyme-deficit-deep-dive.md)** — "*Cellulase* — humans don't produce this at all. It breaks down plant cell walls (cellulose), making the nutrients inside plant cells more accessible."
-
-## Limitations of Supplementation
-
-### Doesn't Treat Root Cause
-
-Enzyme supplements compensate for insufficiency but do not:
-- Treat underlying pancreatic inflammation
-- Heal gut damage from [[sibo|SIBO]] or IBD
-- Improve bile production or flow
-- Restore endogenous enzyme production
-
-**(Source: enzyme-deficit-deep-dive.md)** — "Enzyme supplements aren't magic. They can't fix the underlying cause of insufficiency. They don't address gut inflammation, SIBO, or biliary problems."
-
-### Imprecise Dosing
-
-Different manufacturers use different measurement systems (HUT, SAP, FCC, LU units), making comparison between products difficult. Clinical guidelines recommend dosing based on pancreatic lipase output (typically 25,000–40,000 USP units lipase with meals), but OTC supplements rarely have this precision.
-
-### Requires Consistent Timing
-
-Enzymes must be taken with meals to be effective. Delayed dosing or taking enzymes without food significantly reduces efficacy.
-
-## Adjunct Anti-Inflammatories for Gut Inflammation in EPI
-
-Primary EPI therapy is enzymatic replacement — pancrelipase (Creon, Zenpep) or fungal/koji-derived enzyme blends. That is the first-line intervention and the core of this document. But in a subset of patients, **secondary gut-lining inflammation** worsens symptom burden (bloating, abdominal pain, malabsorption) **beyond the purely enzymatic deficit**. Where inflammation is the symptom driver — e.g., in EPI secondary to IBD, chronic pancreatitis with downstream gut inflammation, or [[sibo|SIBO]]-associated brush-border damage — adjunct anti-inflammatories may be worth considering alongside enzyme replacement. These are **adjuncts only**, not replacements for enzymatic therapy.
-
-| Compound | Mechanism | Evidence | Format |
-| --- | --- | --- | --- |
-| **CBG** (cannabigerol) | Reduced colonic IL-1β, MPO, iNOS in DNBS and DSS colitis models; NLRP3/caspase-1/GSDMD reduction in CIA rat model (*Front Pharmacol* 2025) | Animal Model (colitis-specific; only cannabinoid with direct gut-inflammation animal data) | Oral; human dose uncertain |
-| **KPV peptide** (Lys-Pro-Val) | α-MSH-derived tripeptide; absorbed via PepT1 in gut epithelium; colitis efficacy in rodent models | Animal Model | Oral/sublingual; reaches gut directly |
-| **Omega-3 SPMs** (RvD1, MaR1) | Specialized pro-resolving mediators; direct resolution signaling in gut tissue | Animal Model; human pharmacokinetic data for parent omega-3s | Precursor dosing via fish oil |
-
-**CBG in particular** is notable because it is the only cannabinoid with gut-inflammation-specific animal evidence — reductions in colonic IL-1β, MPO (neutrophil infiltration marker), and iNOS in both DNBS and DSS murine colitis models, plus NLRP3/caspase-1/GSDMD reduction in a CIA rat model (Animal Model, *Front Pharmacol* 2025). Direct human efficacy data for gut inflammation is not yet published, and human dosing is uncertain. See [[cannabinoids-terpenes|cannabinoids-terpenes.md]] for the full CBG profile, pharmacokinetics, and cross-references to the NLRP3 literature.
-
-**Caveat:** The EPI track is enzymatic replacement first. These adjuncts are relevant only where inflammatory drive is suspected to be a material contributor to symptom burden — not as default add-ons for every EPI patient. (Source: cannabinoids-terpenes.md)
-
-## The Koji Alternative: Wild-Type Ready Now
-
-Here is where the [[open-enzyme-vision|Open Enzyme]] project offers an immediate practical solution: **wild-type koji (A. oryzae) already produces the exact digestive enzymes Lynn needs.**
-
-For a complete small-batch home protocol (koji-kin → koji rice → shio-koji / amazake), including the koji-kin-vs-koji-rice terminology distinction, see [Koji Home Fermentation](./koji-home-fermentation.md). That page is the wild-type baseline that the engineered strain must outperform, and it provides the practical starting point for n=1 / household EPI trials. (source: koji-home-fermentation.md)
-
-### Why Koji Works
-
-Traditional koji, fermented on steamed rice for 36–48 hours at 30°C, produces:
-- α-Amylase (starch breakdown)
-- Acid-stable protease (protein breakdown)
-- Glucoamylase (complex starches)
-- Lipase (fat breakdown)
-
-These are the same enzymes in commercial supplements — just produced at home rather than in an industrial bioreactor.
-
-**(Source: etc/open-enzyme-vision.md)** — "Wild-type *Aspergillus oryzae* (koji). No genetic engineering needed. Traditional koji grown on steamed rice already produces lipase, protease, and amylase at therapeutically relevant levels. This is the simplest possible entry point — a food that has been consumed for over a millennium, produced with equipment available in any kitchen, providing the same enzymes that patients with exocrine pancreatic insufficiency currently buy as pharmaceutical supplements."
-
-**Key limitation for fat malabsorption EPI:** Lipase activity of wild-type *A. oryzae* shio-koji is low compared to *A. niger* or engineered strains — likely the limiting digestive-enzyme axis for fat malabsorption phenotype EPI. Quantitative comparison of shio-koji lipase activity (units/g) vs. commercial PERT (Creon, Zenpep) units per pill has not yet been done. (Mechanistic Extrapolation; source: koji-home-fermentation.md)
-
-### Therapeutic Formats
-
-The wild-type home formats — fresh koji, shio-koji, amazake, and dried powder, with salt/water ratios, incubation times, and shelf lives — are canonical in [Koji Home Fermentation](./koji-home-fermentation.md). The EPI-relevant takeaways:
-
-- **Shio koji is the highest-leverage application for EPI** because its proteases pre-digest protein in the marinade phase (5–10% by weight on protein, 30 min to 24 h), reducing pancreatic protease demand at the table before food reaches the eater. (Mechanistic Extrapolation; source: koji-home-fermentation.md)
-- **Amazake** carries active amylase if it hasn't been heat-pasteurized — fresh amazake with a starchy meal contributes amylase activity directly; its 55–60°C hold is optimal for amylase but inactivates more heat-sensitive enzymes. (source: koji-home-fermentation.md)
-- **Fresh koji** has the highest enzyme activity but short shelf life; **dried powder** (dried <45°C, encapsulated) preserves activity for months.
-
-**(Source: enzyme-deficit-deep-dive.md)** — "Shio koji (塩麹) — rice koji blended with salt and water, fermented 7–14 days at room temperature. The salt (typically 12–13% by weight) halts the mold's growth but doesn't destroy the enzymes... When you marinate chicken in shio koji, you're watching proteases tenderize the meat in real time."
-
-### Gastric Survival Caveat
-
-Shio-koji-derived enzymes face the same gastric acid challenge as any oral enzyme: poor survival without enteric coating. The practical value of shio-koji for EPI is primarily in the **pre-digestion in the marinade phase** (protein arriving at the small intestine is already partially hydrolyzed), not in-gut activity post-ingestion. This is a meaningful distinction from prescription PERT (enteric-coated, designed for in-gut activity). (Mechanistic Extrapolation; source: koji-home-fermentation.md)
-
-## Practical Recommendation: Lynn's Path Forward
-
-1. **Continue BoulderBio** (or equivalent quality enzyme supplement) for immediate symptom management
-2. **Diagnose root cause:** SIBO breath test to confirm or rule out this driving factor
-3. **Treat underlying condition:** If SIBO-positive, rifaximin or berberine protocol
-4. **Add koji:** Make fresh shio koji or amazake at home to supplement enzyme capsules (fresh enzymes are synergistic with supplements)
-5. **Consider root-cause therapy:** If underlying pancreatitis or EPI is severe, work with GI specialist for long-term management
-
-## Connection to Brian's Gout
-
-This seems tangential until you note: **enzyme supplementation (like koji fermentation) supports the gut microbiome.** A healthier gut with better nutrient absorption and reduced inflammation creates a better environment for microbes that degrade uric acid, supporting Brian's parallel need for uric acid excretion optimization.
-
-Moreover, the koji brewing process itself — the fermentation — produces secondary metabolites including short-chain fatty acids and other microbiome-supporting compounds. Consuming fresh koji isn't just about the enzymes; it's about supporting healthy gut ecology.
-
-## AI Analysis: Fermentation Optimization (April 2026)
-
-**Optimized Koji Fermentation Protocol:**
-- **Substrate:** Rice bran (superior to rice alone for lipase production; 1,813–2,280 U/g vs. 1,000–1,500 U/g for white rice)
-- **Temperature:** 28–30°C (optimal for enzyme production without excessive heat stress)
-- **Duration:** 48–60 hours fermentation (peak lipase, protease, and amylase activity)
-- **Strain:** RIB40 recommended (complete genomic sequence, proven enzyme profiles, 65 endopeptidase + 69 exopeptidase genes)
-
-**Genetic Engineering Option (Advanced):**
-- **CRISPR/Cas9-targeted tglA overexpression** (lipase gene) achieves **2–3× fold improvement in lipase activity**
-- **Dosing equivalence:** Optimized koji (wild-type or engineered) at 10–15 g per meal provides ~25,000 USP lipase units (equivalent to standard Creon dose)
-- **Safety:** No off-target effects documented; lipase overexpression well-tolerated in A. oryzae fermentation
-
-See [[ai-analysis/08-digestive-enzyme-optimization|08 — Digestive Enzyme Optimization]] for complete strain comparisons (RIB40 vs. ATCC 11866), fermentation parameters, and CRISPR engineering rationale.
-
-## Wild-Type OTC Benchmark and n=1 PERT-Timing Findings (April 2026)
-
-The primary commercial benchmark for the engineered platform is **not Creon but the existing wild-type *A. oryzae* OTC product class** — e.g., BoulderBio digestive enzymes at 40,000 FIP lipase per capsule. This is the product an EPI patient typically uses before progressing to prescription Creon, and it is the closest commercial analogue to what an engineered koji product would look like in finished form. (source: digestive-enzyme-optimization.md)
-
-**Unit distinction — FIP vs. USP:** FIP units (Fédération Internationale Pharmaceutique) are the standard for plant/microbial-derived lipase; USP units are used for porcine-derived Creon. **40,000 FIP ≈ 9,000–10,000 USP** at standard activity assays (In Vitro). A 40,000 FIP cap therefore delivers roughly 1/3 of a 25,000 USP Creon meal-dose. (source: digestive-enzyme-optimization.md)
-
-**pH stability advantage:** Microbial *A. oryzae* lipase is active across pH 4–10, broader than porcine pancreatic lipase, which is why it survives gastric transit better without enteric coating. Engineered variants inherit this advantage. (In Vitro; source: digestive-enzyme-optimization.md)
-
-### n=1 PERT-Timing Self-Experiment (ongoing 2026-04-19 → present)
-
-A structured self-experiment on BoulderBio dose and timing across ~30 meals (3 weeks of daily logs) yielded the following findings. **Evidence level: Clinical n=1, single subject, unblinded, uncontrolled. Suggestive only — generates hypotheses, does not establish efficacy.** (source: digestive-enzyme-optimization.md)
-
-| Variant | Protocol | Outcome |
+| Source | Representative enzymes or cofactors | Main substrates |
 |---|---|---|
-| A | 1 cap at first bite (label-default) | Persistent post-meal sticky stools, occasional steatorrhea, post-fat-meal cramping. Insufficient for any meal >15 g fat. |
-| B | **2 caps at first bite** | Markedly improved comfort. 2026-04-25 breakfast (~15–20 g fat) produced loose-stool-with-floaters but **no pain — a clear decoupling of liquid-stool from pain against a long-stable baseline.** |
-| C | **1+1 split** (1 at first bite + 1 at ~10 min) | Successful for very fatty meals (>25 g fat). Hypothesis: enzyme exposure across longer absorption window. |
-| D | Pre-emptive enzyme during long cooking sessions | Cooking-and-tasting effectively = small-meal eating. Enzyme at start of significant cook prevented pre-dinner symptom buildup. |
+| Saliva | Amylase, lingual lipase | Starch, lipid |
+| Stomach | Pepsin activated by gastric acid | Protein |
+| Pancreas | Proteases, lipase, amylase, nucleases | Protein, lipid, carbohydrate, nucleic acid |
+| Intestinal brush border | Lactase, sucrase, maltase, peptidases | Disaccharides, small peptides |
+| Bile | Bile salts; not enzymes | Lipid emulsification and lipase access |
 
-**Working dose framework** (n=1, uncontrolled):
-- **<5 g fat** (snacks, cappuccino, boiled eggs): no enzyme needed
-- **15–25 g fat** (typical meal): 2 caps at first bite
-- **>25 g fat or extended eating window**: 1+1 split
-- **Long cook-and-taste sessions**: 1 cap at start of cooking
+Reactome's human digestion pathway `R-HSA-8935690` contains dietary-carbohydrate digestion (`R-HSA-189085`) and dietary-lipid digestion (`R-HSA-192456`). These identifiers standardize pathway vocabulary; they do not establish the activity of a fungal preparation or efficacy in EPI. **Evidence level: curated pathway infrastructure.**
 
-**Confound flagged:** Lying flat <90 min post-meal is a strong contributor to overnight episodes; needs to be controlled separately from enzyme-dose effects. (source: digestive-enzyme-optimization.md)
+## Causes and differential diagnosis
 
-### Implications for the Engineered Platform
+Loss of pancreatic tissue, chronic pancreatic injury, and cystic-fibrosis-associated duct dysfunction can reduce delivery of pancreatic enzymes to the intestine. Mucosal disease, bile-flow abnormalities, and altered microbial metabolism can produce overlapping symptoms through different mechanisms. A research design must therefore define the deficient function and compartment instead of treating nonspecific digestive symptoms as proof of EPI. **Evidence level: established clinical physiology.**
 
-1. **The 40,000 FIP benchmark is insufficient at 1 cap/meal** for the project's EPI persona. The 1,813–2,280 U/g lipase yields cited above translate to **~50,000–60,000 FIP per dried gram** at typical assay conditions — meaning a 1 g engineered koji dose could theoretically match BoulderBio's 2-cap dose. (Mechanistic Extrapolation; source: digestive-enzyme-optimization.md)
-2. **Split-dose performance suggests dose magnitude AND duration matter.** The engineered platform should consider sustained-release formulation, or instructions for split dosing on high-fat meals. (Mechanistic Extrapolation; source: digestive-enzyme-optimization.md)
-3. **The decoupling-of-liquid-stool-from-pain datum** on the 2-cap protocol — against a long-stable baseline — is a meaningful efficacy signal for the platform's mechanism of action even before any engineering. Wild-type *A. oryzae* enzyme + adequate dose + correct timing can move a long-stable symptom for at least one patient. (Clinical n=1; source: digestive-enzyme-optimization.md)
-4. **A. oryzae-derived enzymes are well-tolerated.** No adverse reactions across 30+ meals; no allergic response. This argues that downstream allergenicity testing of engineered variants on the same chassis is reasonable. (Clinical n=1; source: digestive-enzyme-optimization.md)
+## Three different evidence objects
 
----
+### Pancreatic enzyme replacement
 
-## Related Concepts
+Porcine pancrelipase formulations are established enzyme replacement for diagnosed EPI. Product activity, release profile, substrate contact, and the underlying disease state determine response. Clinical efficacy for an approved preparation does not transfer to an uncharacterized fungal mixture. **Evidence level: Clinical Trial / established clinical practice.**
 
-- [[enzyme-deficit|Enzyme Deficits: The Shared Pattern]] — The broader context
-- [[sibo|SIBO and Brush-Border Damage]] — A common cause of enzyme insufficiency
-- [[koji-fermentation|Koji Fermentation]] — The traditional and modern production method
-- [[aspergillus-oryzae|Aspergillus oryzae: The Koji Mold]] — The organism
-- [[lynn-profile|Lynn's Health Profile]] — Personal context
+### Native fungal enzymes
 
-## Key Insight
+Species used in industrial fermentation can produce proteases, amylases, glucoamylases, lipases, lactases, cellulases, and pectinases. Their potential advantage is biochemical rather than categorical: a characterized enzyme may retain useful activity across a defined pH and substrate range. Activity in an extract or simulated-digestion assay does not establish efficacy in EPI. **Evidence level: In Vitro.**
 
-**Enzyme supplementation is a straightforward, accessible intervention for digestive insufficiency — and the organisms that produce these enzymes (Aspergillus species) are some of the safest, most well-characterized, and most genetically tractable organisms available.** Wild-type koji is available immediately at virtually zero cost, and commercial supplements provide a convenient backup. The limitation is not the availability of enzymes but the difficulty in diagnosing and treating the underlying cause of insufficiency (whether aging, [[sibo|SIBO]], pancreatitis, or inflammation).
+### Engineered enzyme material
 
----
+An engineered host or recombinant protein is a separate product. Parent-organism food history does not establish the identity, purity, exposure, efficacy, or safety of the engineered material. Host choice matters only when it changes an active production, formulation, containment, or delivery decision. **Evidence level: Mechanistic Extrapolation until configuration-specific data exist.**
 
-*Last updated: April 2026*
-*Wiki synthesized from primary research documents*
+## Research requirements
+
+For each candidate material:
+
+1. Define the missing digestive activity and intended gastrointestinal compartment.
+2. Measure identity, specific activity, substrate range, and pH profile with matched controls.
+3. Test gastric and intestinal stability in a configuration-specific simulated-digestion system.
+4. Measure lot-to-lot reproducibility, impurities, coproducts, and formulation release.
+5. Compare against an appropriate enzyme-replacement control in a disease-relevant model.
+6. Prespecify the result that advances, redirects, or kills the candidate.
+
+The [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md) provides the activity-measurement framework. Disease-specific efficacy and safety require separate evidence.
+
+## Fungal production as a process reference
+
+Wild-type *Aspergillus oryzae* produces several digestive-enzyme classes during food fermentation. That makes it useful as a process and sourcing reference, not as evidence that a particular preparation treats EPI. A recombinant configuration still requires direct characterization of enzyme activity, stability, coproducts, batch reproducibility, containment, and product-specific safety. **Evidence level: In Vitro / Mechanistic Extrapolation.**
+
+## Falsification boundary
+
+A candidate fails at the scope supported by the experiment: absent activity, loss of activity in the intended compartment, irreproducible production, or unacceptable impurities can kill a material or configuration without resolving the broader enzyme-replacement question. Conversely, biochemical activity alone cannot support a clinical-use claim.

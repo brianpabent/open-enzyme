@@ -45,25 +45,22 @@ sources:
 status: complete (v1) — target deprioritized 2026-05-16
 ---
 
-> **Target deprioritized 2026-05-16 — koji-cordycepin engineering removed from active cassette stack.** Strategic call during 2026-05-15 sweep walkthrough Item 7. comp-023's GREEN verdict on metabolic burden stands as a successful methodology validation (FBA on iWV1314 works; cytosolic-cassette burden modeling is reliable), but cordycepin is no longer an active koji engineering target. Three reasons:
->
-> 1. **No novel chokepoint coverage.** Cordycepin's chokepoint targets (URAT1 modulation, AMPK / mitochondrial NLRP3-priming dampening) are already covered by the [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) via cultivation of *Cordyceps militaris*, which natively co-produces cordycepin with pentostatin at the co-evolved ratio. Engineering cordycepin into koji duplicates coverage that exists in a peer track at a different chassis (cultivation vs. genetic engineering).
-> 2. **Open dose-vs-achievable-titer gap.** comp-023 verified metabolic feasibility (cell carries the cassette at Jeennor 2023's 564 mg/L/day single-cassette optimized titer) but did NOT analyze whether that titer translates to a therapeutic dose in realistic home-fermentation conditions on a multi-cassette strain (uricase + lactoferrin competing for resources). Back-of-envelope at Jeennor's titer in a typical home batch lands at the LOW end of published nutraceutical doses (~70–280 mg/day vs 250–1500 mg/day target), assuming optimal titer transfer to home conditions and no multi-cassette penalty — both optimistic. The titer-to-therapeutic-dose conversion question was treated as out-of-scope by comp-023 and has not been closed by any subsequent analysis.
-> 3. **Commercial availability.** Cordycepin from cultivated *C. militaris* extract is widely available at $20–60/month nutraceutical pricing, with native pentostatin co-protection. The current configuration criterion — non-duplicative coverage with a reason to use the koji chassis — does not justify the engineering complexity (three open follow-up gates: comp-025 ADA substrate competition, comp-026 multi-cassette induction interference, comp-023 v2 dynamic FBA validation) for a payload that delivers no novel coverage and may not reach therapeutic dose anyway.
->
-> The active cordycepin route is cultivation per [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md). The current named koji configuration is uricase + lactoferrin, plus an optional cytosolic third cassette conditional on its titer and burden gates. DAF SCR1-4 remains a separate-strain or LBP-chassis target rather than a third secreted cassette. See [`koji-endgame-strain.md` §"Cordycepin third-cassette slot — deprioritized"](./koji-endgame-strain.md). comp-025 / comp-026 / comp-023 v2 are marked Deprioritized in [`computational-experiments.md`](./computational-experiments.md).
-
 # Cordycepin (cns1+cns2) Cassette Metabolic Burden: Computational Analysis (comp-023)
 
-> **⚠️ Verdict caveated (comp-review 2026-07-14).** The qualitative conclusion (Jeennor-scale cns1+cns2 unlikely to be a prohibitive **stoichiometric-FBA** burden) is plausible, but the artifact-summary contract is not clean — treat as a heuristic burden prior, not a validated flux result.
+## Current status
 
-> This wiki stub remains so cross-references resolve and the page stays discoverable.
-> Computational analyses are write-once artifacts; the daemon does not need to re-read
-> them on every sweep, so the long content lives next to the experiment that produced it
-> at `etc/experiments/comp-023-cns1-cns2-metabolic-burden/`.
+The *cns1+cns2* cordycepin cassette is deprioritized. Cultivated *Cordyceps militaris* remains the controlled-material route for investigating native cordycepin/pentostatin biology; there is no current reason to add a cordycepin cassette to an engineered *A. oryzae* configuration.
 
-Does adding the bacterial **cns1+cns2 cordycepin biosynthesis pathway** (Jeennor 2023, [PMID 38071331](https://pubmed.ncbi.nlm.nih.gov/38071331/), 564 mg/L/day in *A. oryzae*) on top of the dual uricase + lactoferrin cassette in the [koji-endgame-strain](./koji-endgame-strain.md) §1 design impose a prohibitive metabolic burden, defined by:
+## Evidence boundary
 
-**Where the analysis lives:**
+Jeennor et al. reported heterologous cordycepin production in *A. oryzae* at 564.64 ± 9.59 mg/L/day under their optimized conditions ([PMID 38071331](https://pubmed.ncbi.nlm.nih.gov/38071331/)). COMP-023 asked whether the modeled *cns1+cns2* pathway imposed a prohibitive stoichiometric burden in iWV1314. Its qualitative result is a heuristic burden prior, not a validated flux result. It does not establish multi-cassette growth, cordycepin productivity, material identity, delivered exposure, safety, or efficacy.
+
+## Reopen gate
+
+Reconsider the cassette only if a non-duplicative biological role requires cordycepin production in the same exact configuration. A new experiment would need a current model and exact construct inputs, prespecified burden and productivity rules, independent pre-run and post-run review, and wet-lab confirmation of growth and product identity.
+
+## Artifact links
+
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-023-cns1-cns2-metabolic-burden/`](./etc/experiments/comp-023-cns1-cns2-metabolic-burden/)
 - Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)
+- Related native-compound track: [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md)

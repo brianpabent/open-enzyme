@@ -3,7 +3,7 @@ id: H08
 title: "Can a gut-lumen uricase sink produce clinically meaningful serum-urate reduction under physiological substrate, oxygen, and transit constraints?"
 committed: 2026-05-15
 updated: 2026-07-13
-status: Reopened
+status: Open
 survival_count: 0
 tags: [hypothesis, core-thesis, gut-lumen-sink, uricase, abcg2, clinical-translation, riskiest-assumption]
 related:
@@ -34,10 +34,10 @@ This is deliberately not a numeric ΔSUA claim. A defensible magnitude requires 
 
 1. **Clinical human physiology:** ABCG2 contributes to intestinal urate transport, and direct human jejunal measurements show sub-micromolar baseline luminal urate in the sampled setting (Miyazaki 2025). This supports the route but creates a substrate-occupancy constraint.
 2. **Animal models:** PULSE lowered urate in hyperuricemic mice/rats using a 1:1:1 mixture of intracellular, secreted, and displayed smUOX topologies with KatG+VHb support (Gao 2025). Zhao 2022 independently demonstrated an EcN PucLM+YgfU+KatG+VHb architecture under restricted oxygen. **Evidence level: Animal Model + In Vitro.**
-3. **Computational audit:** comp-044 finds that the original regime classification changes when substrate occupancy and a finite active window are applied. It does not predict efficacy.
+3. **Computational audit:** comp-044 finds that the legacy unconditional flat-dose classification is not robust to its tested substrate-occupancy and finite-window diagnostics. It does not identify the true physiological regime, reverse the old conclusion, or predict efficacy.
 4. **Topology uncertainty:** comp-045 finds that no topology can yet be eliminated; the decisive comparison must measure urate, product, oxygen, peroxide, viability, and localization together.
 
-## Updated assumption stack
+## Assumption stack
 
 1. The reaction site receives enough urate for the chosen UOX Km and dose.
 2. The reaction site supplies enough oxygen for sustained oxidative turnover.
@@ -51,10 +51,10 @@ This is deliberately not a numeric ΔSUA claim. A defensible magnitude requires 
 
 | Rank | Killshot | Assumptions tested | Status |
 |---:|---|---|---|
-| 1 | Physiological topology × oxygen × peroxide factorial at 0.59/50/250 µM urate | 1–4, 7 | [Designed in §1.33](../validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) |
+| 1 | Build and characterize exact sequence–host–topology configurations, then run the physiological oxygen × peroxide factorial | 1–4, 7 | Relevant construct-supply work (§§1.1, 1.2, and 1.5) or exact external configuration → [§1.33](../validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial); topology nomination only within a controlled host comparison, with cross-host results treated as configuration-specific |
 | 2 | Dynamic compartmental model using measured local urate replenishment, O2, decay, residence, and reabsorption | 1–5 | Awaiting §1.33 measurements |
-| 3 | Human enteroid UOX redox/barrier assay ±NSAID context | 7 | [Designed in §1.36](../validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay) |
-| 4 | Human or human-relevant in-vivo local urate/product measurement with active UOX | 1–5 | Not started |
+| 3 | Human enteroid UOX redox/barrier assay ±NSAID context | 7 | [Designed in §1.36](../validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay); must pass before animal escalation |
+| 4 | Human-relevant in-vivo local urate/product measurement with active UOX | 1–5 | Downstream of §1.36; not started |
 | 5 | Controlled human efficacy study with local-mechanism biomarkers and genotype recorded | 5–6 | Downstream only |
 
 ## Pre-committed interpretation
@@ -68,7 +68,7 @@ No mg/dL boundary is pre-committed until the dynamic local model is rebuilt from
 
 ## Status
 
-**Reopened.** The original numeric prior did not survive audit. No biological killshot has yet been executed.
+**Open.** The legacy unconditional flat-dose classification was not robust to the tested diagnostics, but COMP-044 did not determine the true physiological regime or reverse the old conclusion. No biological killshot has yet been executed.
 
 **Survival count:** 0.
 
@@ -78,8 +78,8 @@ No mg/dL boundary is pre-committed until the dynamic local model is rebuilt from
 |---|---|---|
 | H08-1 | comp-044 physiological-regime audit | Complete 2026-07-13 |
 | H08-2 | comp-045 factorial design | Complete 2026-07-13 |
-| H08-3 | Run validation §1.33 | Proposed |
-| H08-4 | Run validation §1.36 | Proposed |
+| H08-3 | Build and characterize exact configurations, then run validation §1.33 | Proposed |
+| H08-4 | Run validation §1.36 before animal escalation | Proposed |
 | H08-5 | Rebuild dynamic compartmental model from measured §1.33 inputs | Blocked on data, not started |
 | H08-6 | Reassess clinical-study design only after H08-3/H08-5 | Deferred |
 
@@ -89,4 +89,4 @@ No mg/dL boundary is pre-committed until the dynamic local model is rebuilt from
 - [comp-044 interpretive page](../gut-lumen-uricase-physiologic-regime-computational.md)
 - [comp-045 interpretive page](../uricase-topology-oxygen-peroxide-design-computational.md)
 - [Validation experiments](../validation-experiments.md)
-- [Superseded comp-019 page](../uricase-abcg2-genotype-stratification-computational.md)
+- [Comp-019 interpretation](../uricase-abcg2-genotype-stratification-computational.md) — not decision-grade after COMP-044 found its flat-dose classification was not robust to the tested diagnostics

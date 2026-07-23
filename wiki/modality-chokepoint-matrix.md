@@ -1,32 +1,20 @@
 ---
 title: "Gout Weakness × Intervention Route Matrix"
-date: 2026-04-28
+date: 2026-05-05
 tags:
-  - modalities
+  - intervention-routes
   - chokepoints
-  - exploration
-  - platform-strategy
-  - multi-modal
-  - first-principles
+  - portfolio
+  - falsification
 related:
   - nlrp3-exploit-map.md
-  - gut-lumen-sink.md
-  - androgen-urate-axis.md
-  - abcg2-modulators.md
-  - open-questions.md
-  - ../synthesis/README.md
-  - etc/open-source-platform.md
-  - etc/open-enzyme-vision.md
   - gout-pathophysiology.md
-  - medicinal-mushroom-compound-mapping-computational.md
   - delivery-route-matrix.md
   - chassis-pending-interventions.md
-  - compounding-pharmacy-track.md
-  - ginkgo-cloud-lab-evaluation.md
   - purine-degrading-bacteria.md
+  - validation-experiments.md
 sources:
-  - "Brian framing 2026-04-28: 'OE is the mission, not the koji chassis'"
-  - "Synthesis derived from existing wiki pages (chokepoint map, transporter biology, exploit map)"
+  - "Evidence dossiers linked in each row"
 status: published
 ---
 
@@ -34,322 +22,85 @@ status: published
 
 ## Scope
 
-This matrix starts with exploitable weaknesses in urate production, disposal, crystallization, and inflammation, then asks which intervention routes can reach each weakness. It is an exploration surface, not a production roadmap.
-
-**Rows are intervention routes** and **columns are anatomical or pathway targets**. A cell records evidence, access, and the next falsification question. Route feasibility is downstream of target relevance and does not determine priority by itself.
-
-The framing question for each cell is: **what gout-relevant hypothesis can this route test, at what evidence level, and what result would falsify it?**
-
-## How to read this page
-
-The matrix below uses a 5-symbol legend:
-
-| Symbol | Meaning |
-|:-:|---|
-| ✅ | Direct evidence or a defined experiment exists at this cell — see linked page |
-| 🧪 | A computationally bounded candidate has an explicit wet-lab gate; not biologically validated |
-| 🔬 | Mechanism-relevant evidence exists, but exposure or intervention validation is incomplete |
-| 🟡 | Testable exploration vector; target or delivery fit remains open |
-| ⚪ | Mechanistically possible but no realistic path / overkill / addressed by another modality |
-| — | Not applicable / mechanism doesn't intersect target |
-
-The symbols describe evidence state, not priority. Rank questions separately by gout relevance, evidence gap, safety, and falsifiability.
-
----
-
-## The matrix
-
-Targets across the top, modalities down the side. Columns grouped by anatomical site / pathway access. Click into the per-modality and per-target sections below for the full per-cell prose.
-
-### Row 1: Gut compartment targets
-
-| Modality | Gut lumen (urate degradation) | Gut epithelium ABCG2 (transcellular secretion) | Gut macrophages (NLRP3 priming) | Gut barrier (TNFα cycle / LPS leak) | Gut microbiome (community shape) |
-|---|:-:|:-:|:-:|:-:|:-:|
-| Small molecules / supplements | ⚪ | ✅ ([sulforaphane](./supplements-stack.md)) | ✅ ([BHB](./bhb-ketones.md), [oridonin](./oridonin.md)) | ✅ ([zinc-carnosine](./carnosine.md)) | 🔬 ([berberine](./supplements-stack.md)) |
-| Peptides | ⚪ | ⚪ | 🔬 ([KPV](./kpv-peptide.md)) | ✅ ([BPC-157](./bpc-157.md), [KPV](./kpv-peptide.md)) | — |
-| Engineered yeast | ✅ ([uricase](./engineered-yeast-uricase-proposal.md)) | ⚪ | 🟡 (yeast-cell-wall β-glucan local NLRP3?) | 🔬 (transit organism) | 🟡 |
-| Engineered koji | ✅ ([uricase](./engineered-koji-protocol.md), [carnosine](./carnosine.md), [lactoferrin](./engineered-koji-protocol.md)) | 🟡 (glucoraphanin co-production — see [open-questions](./open-questions.md)) | 🔬 (kojic acid, ergothioneine local) | ✅ (lactoferrin TNFα suppression) | 🔬 |
-| **Native-compound medicinal mushroom complement** | 🔬 ([whole Cordyceps fermentate](./medicinal-mushroom-complement-track.md) delivers cordycepin + native pentostatin ADA-inhibitor pairing; mushroom polysaccharides shape gut microbiome → indirect luminal urate effects via *Bacteroides* purine fermentation) | 🔬 ([GLPP](./medicinal-mushroom-complement-track.md) modulates ABCG2/GLUT9/OAT1 expression in HUA mice [PMID 36385640](https://pubmed.ncbi.nlm.nih.gov/36385640); [FZ-Poria](./medicinal-mushroom-complement-track.md) multi-herb formula [PMID 37788785](https://pubmed.ncbi.nlm.nih.gov/37788785)) | 🔬 (β-glucan structure-dependent NLRP3 — *G. lucidum* EPS activate, spore-powder/GLP inhibit per [comp-014 Phase 5](./medicinal-mushroom-compound-mapping-computational.md); [ergothioneine](./medicinal-mushroom-complement-track.md) via Keap1/Nrf2 anti-priming) | ✅ ([ergothioneine](./medicinal-mushroom-complement-track.md) via OCTN1, *P. citrinopileatus* 50-100g/day delivers therapeutic dose; β-glucans general gut-barrier effect) | ✅ (mushroom polysaccharides extensively shape microbiome — established literature; central to whole-fermentate-mushroom mechanism) |
-| Engineered LBPs (obligate anaerobes — Bacteroides / Faecalibacterium / Akkermansia) | 🟡 (genuine colonization vs. yeast/koji transit) | 🟡 (engineered Faecalibacterium for local butyrate at crypt) | 🟡 | 🟡 (engineered Akkermansia for mucus-layer repair) | 🟡 (community-level by design) |
-| Engineered E. coli Nissle | ✅ ([PULSE](./engineered-yeast-uricase-proposal.md)) | ⚪ | 🟡 | 🟡 (engineered IL-22 secretion) | 🟡 |
-| Bacteriophages | — | ⚪ | ⚪ | 🟡 (selective suppression of LPS-producing gram-negatives) | 🟡 (selective rather than additive) |
-| Microbiome consortia / FMT | — | ⚪ | ⚪ | 🔬 | 🟡 (community-level) |
-| Engineered exosomes | ⚪ | 🟡 (oral-route exosomes carrying ABCG2-inducer) | 🟡 (macrophage-tropic NLRP3 silencer) | 🟡 (claudin / ZO-1 modulator delivery) | — |
-| mRNA / saRNA / circRNA + LNP | ⚪ | ⚪ (oral mRNA still research-stage) | 🟡 (myeloid-tropic LNP NLRP3 silencer) | ⚪ | — |
-| siRNA / ASOs | ⚪ | ⚪ | 🟡 (myeloid-tropic NLRP3 / NF-κB silencer) | 🟡 (TNFα siRNA local) | — |
-| CRISPR / base editing in patient | — | 🟡 (Q141K → Q141 base edit in crypt stem cells; delivery unsolved) | ⚪ | ⚪ | — |
-| Antibodies / biologics | — | ⚪ | ⚪ | ⚪ (anti-TNFα systemic; overkill) | — |
-| Engineered soluble complement regulators (sCR1, Factor H, DAF/CD55) | — | — | 🧪 (DAF/CD55 SCR1-4 truncated in silico-validated 2026-05-05 — LOW protease risk in shio-koji per [comp-012](./daf-cd55-scr14-truncated-computational.md), identical to uricase. CP0 status moved from "honest platform gap" to "active engineering candidate, three wet-lab unknowns documented in [`hypotheses/H05`](./hypotheses/H05-daf-scr14-cp0-thesis.md)". Wet-lab gate formalized 2026-05-06 as [`validation-experiments.md` §1.25](./validation-experiments.md) — single-cassette routing per [chaperone framework triple-cassette prediction](./chaperone-orthogonal-stacking.md) below 0.6 decision gate. **Two-chassis CP0 architecture substantiated 2026-05-17:** [comp-037](./c1-inh-protease-stability-ecn-computational.md) returned MODERATE for C1-INH (SERPING1) on EcN-LBP — serpin-core construct aa 123–500, LOW strictly-degradative risk, GREEN glycosylation feasibility, kinetic-competition gated at the RCL. C1-INH at classical/lectin entry + DAF SCR1-4 at surface convertase decay = two independent mechanisms at two cascade points via two independent chassis.) | ⚪ | — |
-| Pharmacological chaperones | — | 🟡 (Q141K folding rescue à la CFTR-corrector class) | ⚪ | ⚪ | — |
-| SPM precursors (DHA → RvD1/MaR1) | — | 🔬 | ✅ ([SPM](./spm-resolution-pathway.md)) | 🔬 | — |
-| Fermentable fiber / prebiotics | — | ✅ ([butyrate → PPARγ → ABCG2](./abcg2-modulators.md)) | 🔬 | 🔬 (mucus-layer support) | ✅ |
-| **Native-compound medicinal mushroom complement** | 🔬 ([GLPP](./medicinal-mushroom-complement-track.md) from *G. lucidum* — 40.6% UA reduction in HUA mice via ADA inhibition + GLUT9/OAT1, [PMID 36385640](https://pubmed.ncbi.nlm.nih.gov/36385640); cordycepin from *C. militaris* — URAT1 modulation 337→203 µmol/L, [PMID 29422889](https://pubmed.ncbi.nlm.nih.gov/29422889); **whole *C. militaris* water extract** — HUA rat serum UA 281.62→93.27 µmol/L at 0.5 g/(kg*d), Xiong 2024 *Biotechnology Bulletin*, DOI `10.13560/j.cnki.biotech.bull.1985.2024-0379`; *S. vaninii* ethanol/whole extract — Animal Model HUA signals via XOD + urate-transporter expression, DOI [`10.1016/j.biopha.2023.114970`](https://doi.org/10.1016/j.biopha.2023.114970) / [`10.3390/nu14204421`](https://doi.org/10.3390/nu14204421); whole-fermentate Cordyceps includes natural pentostatin ADA-inhibitor pairing per [Phase 7-1b](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7b-cordyceps-strain-scan.md)) | 🔬 (FZ-formula *Poria cocos* multi-herb modulates ABCG2/GLUT9/OAT1 + NLRP3, [PMID 37788785](https://pubmed.ncbi.nlm.nih.gov/37788785) — multi-herb attribution issue per [comp-014 Phase 6](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-6-triage.md); GLPP modulates GLUT9/OAT1 directly; *C. militaris* water extract modulates URAT1/GLUT9/OAT1/ABCG2 in HUA rats; *S. vaninii* SHEE promotes OAT1/OAT3/ABCG2 and inhibits URAT1/GLUT9 in HUA renal-injury mice) | 🔬 (*C. militaris* water extract reduces renal NLRP3 / IL-1β inflammatory markers in HUA rats, but not an MSU-flare model; *S. vaninii* / *I. hispidus* reduce ankle swelling and inflammatory markers in MSU-induced acute gouty arthritis rats; β-glucans + ergothioneine modulate NLRP3 — **directionality structure-dependent per Phase 5**: *G. lucidum* exopolysaccharides ACTIVATE; spore powder + GLP β-glucan INHIBIT; phase-6 methodology constraint) | ✅ ([ergothioneine](./medicinal-mushroom-complement-track.md) via OCTN1/SLC22A4 absorption — **dietary 50-100 g fresh oyster delivers 12-24 mg, within RCT-investigational range per [Phase 7-1c](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7c-pleurotus-strain-scan.md)**; *P. citrinopileatus* is highest fungal producer 7.0 mg/g DW; β-glucans general gut-barrier support) | ✅ (mushroom polysaccharides extensively shape gut microbiome — well-established literature; lentinan, GLPP, pleuran, PSK all documented; *C. militaris* water extract improved microbiome diversity in HUA rats) |
-| **Native-compound dietary complement modulators (CP0+CP1)** | ⚪ (not urate-degrading) | ⚪ | 🔬 (**[*Houttuynia cordata* polysaccharide (HCP/HCPM)](./supplements-stack.md)** — the corpus's **first dietary dual-chokepoint candidate**: CP0 complement initiation (classical/lectin/alternative-pathway inhibition, C3/C4/C5 targets, CH50 79–318 µg/mL — Chen Daofeng group, Lu 2018 [PMC5925397](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5925397/) / Li 2025 / Yu 2026) **+** CP1 TLR4-MD2/NF-κB/NLRP3 priming. **Structure-dependent directionality (critical):** purified 60 kDa HCP-2 fraction is *pro-*inflammatory on naïve PBMCs (Cheng 2014 [PMC7112369](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7112369/)); anti-inflammatory phenotype emerges only in disease-context inflammation — commercial capsules ≠ Chen-group HCPM fraction. Wet-lab gate: [`validation-experiments.md` §1.30](./validation-experiments.md) (THP-1/MSU prioritization screen). Sibling dietary-CP0 candidates rosmarinic acid / luteolin / *Helicteres angustifolia* (comp-018/020/[039](./cfh-mechanism-dissociation-cp0-candidates-computational.md)) act at the same CP0 node, CFH-independent. Dietary-PK side unanchored — [`open-questions.md` §"Riskiest assumption #3"](./open-questions.md)) | 🔬 (Houttuynia gut-mucosal TLR4 modulation; barrier-context anti-inflammatory in inflamed state) | 🔬 (Houttuynia polysaccharide gut-microbiota modulation) |
-| **Compounding pharmacy (503A/503B)** | ⚪ (proteins/enzymes not compoundable — stay on fermentation chassis) | ⚪ | ⚪ | ⚪ | ⚪ |
-
-### Row 2: Renal compartment targets
-
-| Modality | Kidney URAT1 / GLUT9 (renal reabsorption) | Kidney ABCG2 (renal secretion) | Kidney macrophages (urate nephropathy) |
-|---|:-:|:-:|:-:|
-| Small molecules / supplements | 🔬 ([carnosine](./carnosine.md) — animal model only) | 🔬 (fenofibrate adjacent) | 🔬 |
-| Peptides | ⚪ | ⚪ | ⚪ |
-| Engineered yeast | — | — | — |
-| Engineered koji | — | — | — |
-| Engineered LBPs | — | 🟡 (systemic SCFA from gut → renal PPARγ?) | — |
-| **Native-compound medicinal mushroom complement** | 🔬 ([GLPP](./medicinal-mushroom-complement-track.md) animal URAT1/GLUT9 expression-level modulation [PMID 36385640](https://pubmed.ncbi.nlm.nih.gov/36385640); [cordycepin](./medicinal-mushroom-complement-track.md) mouse SUA 337→203 µmol/L [PMID 29422889](https://pubmed.ncbi.nlm.nih.gov/29422889); whole *C. militaris* water extract HUA rat serum UA 281.62→93.27 µmol/L with URAT1/GLUT9 down, Xiong 2024 *Biotechnology Bulletin* DOI `10.13560/j.cnki.biotech.bull.1985.2024-0379`; *S. vaninii* SHEE lowers UA/Cr/BUN/XOD and suppresses URAT1/GLUT9 in HUA renal-injury mice, DOI [`10.1016/j.biopha.2023.114970`](https://doi.org/10.1016/j.biopha.2023.114970); *P. igniarius* TFPI lowers UA 105.0→82.3 micromol/L and liver XOD 48.91→44.09 U/g prot at 450 mg/kg in HUA/UN mice, DOI [`10.1016/j.heliyon.2023.e12979`](https://doi.org/10.1016/j.heliyon.2023.e12979); [DAE](./medicinal-mushroom-complement-track.md) dual XO+URAT1 effect [PMID 35750011](https://pubmed.ncbi.nlm.nih.gov/35750011)) | 🔬 (GLPP increases OAT1 in mice; *C. militaris* water extract upregulates OAT1/ABCG2 in HUA rats; *S. vaninii* SHEE promotes OAT1/OAT3/ABCG2 in HUA renal-injury mice; *P. igniarius* TFPI increases ABCG2 protein in MSU-treated HK-2 renal cells; FZ-Poria multi-herb confounded for ABCG2) | 🔬 (*C. militaris* water extract reduced renal oxidative-stress / inflammatory markers including NLRP3 and IL-1β in HUA rats; *S. vaninii* SHEE reduced HUA renal-injury/apoptosis markers; *P. igniarius* TFPI reduced TLR4/NF-kB/TXNIP/NLRP3 and IL-1β/TNF-α in MSU-treated HK-2 renal cells; ergothioneine OCTN1-mediated tissue distribution may reach kidney macrophages but remains indirect) |
-| Engineered E. coli Nissle | — | — | — |
-| Bacteriophages | — | — | — |
-| Microbiome consortia / FMT | ⚪ | ⚪ | ⚪ |
-| Engineered exosomes | 🟡 (kidney-tropic exosomes carrying URAT1 inhibitor) | 🟡 | 🟡 |
-| mRNA / saRNA / circRNA + LNP | 🟡 (kidney-tropic LNPs are research-active; mRNA encoding URAT1-blocker?) | 🟡 (mRNA encoding wild-type ABCG2 to renal tubule) | 🟡 (NLRP3-silencer mRNA) |
-| **siRNA / ASOs** | **🟡 (kidney-tropic siRNA against URAT1 mRNA — the cleanest "elegant solution"; megalin-binding conjugates are an active class)** | 🟡 | 🟡 |
-| CRISPR / base editing in patient | 🟡 (renal tubule editing — delivery hard) | 🟡 (Q141K rescue at renal expression — same problem) | ⚪ |
-| Antibodies / biologics | ⚪ | ⚪ | ⚪ |
-| Pharmacological chaperones | 🟡 (URAT1 destabilizer / GLUT9 destabilizer — research-class for renal transporters) | 🟡 (Q141K folding rescue at renal site) | — |
-| SPM precursors | — | — | 🔬 |
-| Fermentable fiber / prebiotics | — | 🔬 (systemic SCFA → modest renal effect) | — |
-| **Native-compound medicinal mushroom complement** | 🔬 (cordycepin URAT1 modulation animal evidence [PMID 29422889](https://pubmed.ncbi.nlm.nih.gov/29422889); GLPP GLUT9 down + OAT1 up [PMID 36385640](https://pubmed.ncbi.nlm.nih.gov/36385640); *P. igniarius* TFPI lowers serum UA and liver XOD in HUA/UN mice but does **not** establish direct URAT1 binding; these are expression / pathway-level signals — comp-014 Phase 5 plus P0-1 source-read finding) | 🔬 (GLPP modulates renal OAT1 expression; *P. igniarius* TFPI increases ABCG2 protein in MSU-treated HK-2 renal cells; FZ-formula *Poria* increases ABCG2 expression — multi-herb confounded) | 🟡 (ergothioneine OCTN1-mediated tissue distribution may reach kidney macrophages but **no direct evidence** in comp-014 scan; open exploration vector) |
-| **Compounding pharmacy (503A/503B)** | ✅ (allopurinol custom doses + probenecid combos — see [compounding-pharmacy-track.md](./compounding-pharmacy-track.md)) | ⚪ | ⚪ |
-
-### Row 3: Tissue-resident NLRP3 sites + acute flare
-
-| Modality | Synovial macrophages (joint flare site) | Vessel-wall macrophages (Lp-PLA2 / chronic vascular inflammation) | Acute flare termination (IL-1β block) |
-|---|:-:|:-:|:-:|
-| Small molecules / supplements | ✅ (systemic [BHB](./bhb-ketones.md), [oridonin](./oridonin.md), [EGCG](./egcg.md)) | 🔬 (same systemic compounds, low local concentration) | 🔬 ([colchicine](./colchicine.md), prednisone) |
-| Peptides | ⚪ (systemic peptides poorly absorbed) | ⚪ | ⚪ |
-| Engineered yeast / koji | — | — | ⚪ (chronic only — no fast onset) |
-| **Native-compound medicinal mushroom complement** | 🔬 (*S. vaninii* / *I. hispidus* extracts reduced ankle swelling and inflammatory markers in MSU-induced acute gouty arthritis rats; β-glucan + hispolon *Phellinus* + ergothioneine remain systemic anti-inflammatory layers, not proven synovium-targeted delivery) | 🔬 (ergothioneine OCTN1 distribution to vessel-wall macrophages; weak/indirect Lp-PLA2 evidence) | ⚪ (chronic supplement context, slow onset; not flare-termination tool) |
-| Engineered LBPs | — | 🟡 (systemic SCFA → vessel-wall PPARγ?) | — |
-| Bacteriophages | — | — | — |
-| Engineered exosomes | 🟡 (intra-articular exosome carrying NLRP3 inhibitor) | 🟡 (CD163 / mannose-receptor-tropic exosomes for Lp-PLA2 source macrophages) | 🟡 (rapid IL-1RA delivery) |
-| **mRNA / saRNA / circRNA + LNP** | 🟡 (intra-articular mRNA-IL-1RA at flare onset) | **🟡 (myeloid-tropic LNP delivering NLRP3-silencer mRNA — the genuinely novel angle for Lp-PLA2)** | **🟡 (mRNA-IL-1RA pulse therapy IV — fits because flare is short-window; transient expression IS the right shape)** |
-| siRNA / ASOs | 🟡 (NLRP3 silencer in joint tissue) | 🟡 (NLRP3 / NF-κB silencer in vessel-wall macrophages) | ⚪ (too slow for acute) |
-| CRISPR / base editing in patient | ⚪ | ⚪ | ⚪ |
-| Antibodies / biologics | ✅ (canakinumab, anakinra — exist, expensive) | 🔬 (no current biologic for vessel-wall NLRP3 specifically) | ✅ ($300K/yr canakinumab — the existing high-cost option) |
-| Pharmacological chaperones | ⚪ | ⚪ | ⚪ |
-| SPM precursors | ✅ ([SPM](./spm-resolution-pathway.md) — RvD1/MaR1 in animal MSU model) | 🔬 (DHA-emphasis rationale per [tnfsf14](./tnfsf14-gout-target.md)) | 🔬 |
-| Fermentable fiber | — | 🔬 (systemic anti-inflammatory) | ⚪ |
-| **Native-compound medicinal mushroom complement** | 🔬 (*S. vaninii* / *I. hispidus* extracts reduced ankle swelling and inflammatory markers in MSU-induced acute gouty arthritis rats; β-glucans + hispolon from *Phellinus* + ergothioneine remain broader systemic anti-inflammatory effects) | 🔬 (ergothioneine OCTN1-mediated tissue distribution; eritadenine cardiovascular activity from shiitake; **weak direct Lp-PLA2 evidence** — Phase 5 found this gap) | ⚪ (slow-onset chronic supplement context, not flare-termination tool — same limitation as engineered yeast/koji row) |
-| **Compounding pharmacy (503A/503B)** | 🔬 (colchicine custom doses for acute flare — see [compounding-pharmacy-track.md](./compounding-pharmacy-track.md)) | ⚪ | 🔬 (colchicine and prednisone already standard; compounding adds custom-dose flexibility) |
-
-### Row 4: Monitoring / detection
-
-| Modality | Real-time UA monitoring | Chokepoint biomarker readout | Microbiome state monitoring |
-|---|:-:|:-:|:-:|
-| Lab panel (Quest / clinical) | ✅ (intermittent) | 🔬 ([self-experiment-protocol](./self-experiment-protocol.md) — pending CP-biomarker map per) | ⚪ |
-| Wearable sensors | 🟡 (sweat UA — UCSD / Stanford research; ~5 yr from clinical) | ⚪ | ⚪ |
-| Microneedle patches | 🟡 (continuous interstitial UA — research-stage CGM-equivalent) | ⚪ | ⚪ |
-| Implantable monitors | 🟡 (overkill for gout-only; unit economics flip if multi-marker) | 🟡 (multi-analyte) | ⚪ |
-| Stool 16S / shotgun sequencing | ⚪ | ⚪ | 🔬 (Onegevity, Viome — getting cheaper) |
-| At-home immune-cell profiling | ⚪ | 🟡 (citH3 / cfDNA / aggNET ratio per) | ⚪ |
-| **Native-compound medicinal mushroom complement** | ⚪ | ⚪ | ⚪ |
-
----
-
-## Per-modality details (rows)
-
-### Engineered yeast / koji
-- **Strengths:** GRAS, food-grade, home-fermentable, dual-enzyme (uricase + carnosine + lactoferrin co-expression), gut-lumen sink mechanism is the cleanest fit for these chassis.
-- **Coverage gaps relative to platform mission:** anything that requires durable colonization, anything renal, anything systemic at high titer.
-- **Live OE pages:** [`engineered-koji-protocol.md`](./engineered-koji-protocol.md), [`engineered-yeast-uricase-proposal.md`](./engineered-yeast-uricase-proposal.md), [`koji-home-fermentation.md`](./koji-home-fermentation.md), [`koji-endgame-strain.md`](./koji-endgame-strain.md).
-
-### Compounding pharmacy (503A/503B) — delivery route, not chassis
-- **Strengths:** **lowest engineering effort of any peer track** — formulation engineering only (release matrix, dose, dissolution profile), no genetic engineering, no drug discovery. MINX-style pattern: AI-aided formulation review + lipid-matrix release-control design + 503A compounding pharmacy + dissolution testing → days, not years. The active ingredient is already FDA-approved; the work is formulation engineering.
-- **Cleavage rule:** small-molecule + FDA-approved API + off-patent / off-label → compoundable. Proteins / enzymes / biologics stay on fermentation chassis.
-- **Coverage gaps relative to current OE:** the wiki had no delivery-route page for the repurposing surface until the [compounding-pharmacy-track.md](./compounding-pharmacy-track.md) scope page (committed 2026-05-11). The discovery engine surfaces FDA-approved drugs hitting gout chokepoints; compounding is the output side that turns identification into access.
-- **Highest-priority candidate:** disulfiram (CP6b GSDMD inhibitor, FDA-approved for AUD, off-patent, bulk API available). Secondary candidates: colchicine custom doses, allopurinol custom doses, probenecid combos, zileuton (bulk API uncertain), pentostatin/cordycepin pairing.
-- **Regulatory class:** 503A (patient-specific Rx) or 503B (registered outsourcing facility). Off-label prescribing is physician's discretion.
-- **Critical limitation:** does NOT replace clinical trials. Compounding is an *access* path, not an *evidence* path. The discovery engine still has to do the science.
-- **Dedicated scope page (committed 2026-05-11):** [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md). 7 Phase 2 follow-ups queued (bulk API audit, pharmacy partner ID, physician partner pathway, USP characterization library, insurance reality, disulfiram dose modeling comp-NNN, sweep-daemon discovery-engine hook). (source: compounding-pharmacy-track.md)
-
-### Native-compound medicinal mushroom complement (Phase 7 peer track)
-
-- **Strengths:** **lightest engineering effort of any peer track** — strain selection + cultivation optimization + extract characterization, NO genetic engineering. Multiple species are already GRAS food (Pleurotus, Lentinula, Hericium); others are established supplement-grade (Ganoderma, Cordyceps, Trametes, Inonotus). Decades-to-centuries traditional-use precedent. **Easiest home-cultivation UX of the platform** — consumer mushroom grow kits cover most candidate species; 4-6 weeks oyster, 6-12 weeks reishi/cordyceps. Zero GMO regulatory burden.
-- **Coverage gaps relative to current OE:** the existing wiki had no row for native-compound producers as a modality class — until comp-014 Phase 7 (committed 2026-05-06). Open exploration questions are now consolidated in the [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) scope page.
-- **Top compounds (per [comp-014 Phase 6 triage](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-6-triage.md) and [Phase 7-1 strain scans](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/)):**
-  - **GLPP** polysaccharide-peptide (*Ganoderma lucidum* / lingzhi) — ADA + GLUT9 + OAT1; 40.6% UA reduction HUA mice ([PMID 36385640](https://pubmed.ncbi.nlm.nih.gov/36385640)). MW figure (520 kDa) needs Phase 5b verification — Lin lab's GL-PP is 37 kDa, GL-PP2 is 31 kDa.
-  - **Cordycepin / whole *C. militaris* water extract** — purified cordycepin has URAT1-modulation animal evidence; Xiong 2024 *Biotechnology Bulletin* adds whole-water-extract Animal Model evidence in HUA rats (serum UA 281.62→93.27 µmol/L at 0.5 g/(kg*d), URAT1/GLUT9 down, OAT1/ABCG2 up, hepatic XOD down). Whole-fermentate includes natural pentostatin ADA-inhibitor co-product. **Also producible in food-grade *A. oryzae* via cns1+cns2 koji-engineering route** ([Jeennor 2023, PMID 38071331](https://pubmed.ncbi.nlm.nih.gov/38071331)) — cordycepin spans both peer tracks, though OE currently prefers cultivation/extract over koji engineering.
-  - ***Sanghuangporus vaninii* ethanol/whole extract** — HUA renal-injury mouse evidence via XOD plus renal urate-transporter expression (URAT1/GLUT9 down; OAT1/OAT3/ABCG2 up; DOI [`10.1016/j.biopha.2023.114970`](https://doi.org/10.1016/j.biopha.2023.114970)); separate rodent paper includes both YEP/OXO HUA mice and MSU-induced acute gouty arthritis rats (DOI [`10.3390/nu14204421`](https://doi.org/10.3390/nu14204421)). Still Animal Model only; batch identity / extract standardization are SOP-gated.
-  - ***Phellinus igniarius* TFPI** — HUA / uric-acid-nephropathy mouse evidence via serum UA, creatinine, and liver XOD reduction, plus MSU-treated HK-2 renal-cell TLR4/NLRP3 suppression and ABCG2 protein upregulation (DOI [`10.1016/j.heliyon.2023.e12979`](https://doi.org/10.1016/j.heliyon.2023.e12979)). Still Animal Model + renal-cell evidence only; the 2025 CNKI TFPI transporter mRNA/protein nuance remains full-text-needed.
-  - **Ergothioneine** (*P. citrinopileatus* — golden oyster — highest fungal producer 7.0 mg/g DW; *P. ostreatus* easiest cultivation 2.4 mg/g DW) — Keap1/Nrf2/HO-1 redox modulator; folds into NLRP3 axis as priming-layer inhibitor (Phase 5 verdict, redox standalone REJECT, fold into NLRP3).
-  - **Eritadenine** (*Lentinula edodes* / shiitake) — cardiovascular cholesterol-lowering; vessel-wall NLRP3-adjacent.
-  - **Erinacines / hericenones** (*Hericium erinaceus* / lion's mane) — NGF-inducing CNS-relevant.
-  - **PSK / PSP** (*Trametes versicolor* / turkey tail) — β-glucan immunomodulator; FDA-approved adjuvant in Japan.
-  - **Inotodiol / betulinic acid derivatives** (*Inonotus obliquus* / chaga) — triterpenoid chemistry.
-- **Critical product-thesis advantage:** **regulatory simplicity.** All candidate species are GRAS food or established supplement-grade — no GRAS-pathway-certification required (unlike koji-engineering tracks). Existing supplement industry framework (DSHEA US / equivalent elsewhere). Open Enzyme's value-add is **reproducibility + characterization layer** on top of an industry with documented quality issues (93-100% of US "G. lucidum" supplements are species-mis-IDed per [Loyd 2018, Gunnels 2020](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7a-ganoderma-strain-scan.md)).
-- **Critical limitation flagged:** does **not** displace the koji-engineering track. Koji handles secreted recombinant enzymes (uricase, lactoferrin, DAF SCR1-4); medicinal mushrooms cover compounds koji cannot reach (polysaccharide-peptides, nucleoside analogs, terpenoids). The two tracks are **complementary**, not substitutional. Combined consumption: daily shio-koji condiment (uricase) + weekly reishi tea (GLPP) + dinner oyster mushroom (ergothioneine).
-- **Dedicated scope page (committed 2026-05-06):** [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) formalizes the parallel track sibling to engineered koji / engineered LBPs / siRNA discovery. Six Phase 7 follow-ups queued:
-  1. Strain selection lit scan ✅ (Phase 7-1, multilingual, 2026-05-06)
-  2. Cultivation method × yield meta-analysis ✅ (Phase 7-2, 2026-05-06)
-  3. Extract characterization protocol SOPs (Phase 7-3, queued)
-  4. GLPP+cordycepin synergy wet-lab gate — **now 4-arm with the natural Cordyceps pentostatin pairing reframing** (Phase 7-4, queued)
-  5. H06 hypothesis card — falsification dimensions for track viability ✅ (stub committed 2026-05-06)
-  6. Modality-chokepoint-matrix native-compound row — **this entry** ✅ (Phase 7-6, 2026-05-06)
-
-### Engineered LBPs (obligate anaerobes — Bacteroides / Faecalibacterium / Akkermansia)
-- **Strengths:** potential colonization rather than transit. *Faecalibacterium prausnitzii* engineering could supply sustained colonic butyrate for WT-ABCG2 induction; direct Q141K rescue remains unvalidated. *Akkermansia muciniphila* is mucus-layer-resident, and *Bacteroides* offers a broader engineering toolkit.
-- **Coverage gaps relative to current OE:** **the wiki has no dedicated page on this chassis class.** Brian-side Pendulum probiotic uses Akkermansia + butyrate-producers commercially; the engineering thesis for OE hasn't been developed.
-- **Open exploration questions:** see [`open-questions.md` §"Co-engineered substrate-supply mechanisms"](./open-questions.md). Engineered Faecalibacterium for local butyrate is the highest-leverage candidate.
-- **Regulatory class:** LBP framework (FDA 2018 guidance); same general lane as PULSE-style engineered E. coli Nissle, **distinct from yeast/koji food path.** Worth a dedicated wiki page.
-- **Critical product-thesis limitation:** obligate anaerobes cannot be home-fermented. The Open Enzyme home-fermentation thesis (grow koji at home, make shio-koji or amazake condiment) does not transfer to *F. prausnitzii* or *Akkermansia* — these are strict anaerobes requiring anaerobic bioreactor culture, cold-chain stabilization, and regulatory handling as Live Biotherapeutic Products (LBPs). An engineered *F. prausnitzii* is a commercial pharmaceutical product, not a home recipe. This is a fundamental platform-type distinction: LBP vector = commercial manufacturing + distribution track, not the "democratized home access" track the koji chassis enables.
-- **Dedicated scope page:** [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) owns this row and its follow-ups. The LBP track is already first-class; its evidence determines whether it remains active.
-
-### Bacteriophages
-- **Strengths:** **selective suppression** rather than additive probiotic. Could selectively reduce LPS-producing gram-negatives (gut barrier / TNFα cycle relief), purine-fermenting Bacteroides species (luminal urate substrate reduction), or specific dysbiosis patterns identified by sequencing.
-- **Current OE coverage:** zero. No wiki page.
-- **Clinical context:** approved in several Eastern European jurisdictions; compassionate-use US; clinical programs at Adamas, Locus, Phaxiam, BiomX. AMR-associated infection is the lead indication; microbiome-modulation indications are next wave.
-- **Open exploration questions:** does selective phage-mediated gut microbiome reshaping shift serum UA in hyperuricemia models? Does it reduce hs-CRP / Lp-PLA2 in chronic-inflammation gout patients? No clinical data, but mechanistically defensible — the Open Enzyme thesis would benefit from explicitly evaluating phages as a complementary modality to engineered organisms.
-
-### mRNA / saRNA / circRNA platforms
-- **Strengths:** transient expression (good for pulse therapy), sequence-specific (any encodable protein), lipid nanoparticle delivery (LNP) is a maturing platform.
-- **Best-fit cells in the matrix:**
-  1. **Acute flare termination via IV mRNA-IL-1RA pulse.** Transient expression IS the right shape — flare is short-window. mRNA-IL-1RA is a hypothetical canakinumab-equivalent at variable cost. Currently zero programs.
-  2. **Myeloid-tropic LNP delivering NLRP3-silencing mRNA / siRNA to vessel-wall macrophages.** Brian's persistent Lp-PLA2 across panels is exactly the source — chronically activated vessel-wall macrophages. Acuitas, Moderna, others have myeloid-tropic LNP programs (mostly oncology-directed). For gout: nobody.
-- **Worst-fit cells:** anything renal (kidney-tropic LNPs immature), anything in the gut (oral mRNA still research-stage), anything requiring durability (mRNA half-life is days at best).
-- **Adjacent platforms worth tracking:** **self-amplifying mRNA (saRNA)** for lower dose / longer expression; **circular RNA (circRNA)** for resistance to exonucleases (Orna Therapeutics); these change the durability calculus.
-
-### siRNA / ASOs
-- **Dedicated scope page (committed 2026-05-05):** [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) formalizes the kidney-tropic siRNA / URAT1 vector (the matrix's #1 open exploration question) as a **discovery-engine output** — non-fermentable, positioned for partner / spinout development. Sister page to [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) under the chase-every-avenue framing. Six in silico Phase 2 follow-ups queued (kidney-tropic conjugate chemistry lit scan, comp-009 URAT1 mRNA target site analysis, commercial landscape lit scan, comparative analysis vs. pozdeutinurad-class small-molecule URAT1 inhibitors, falsification card H03, FDA siRNA regulatory path lit scan).
-- **Strengths:** sequence-specific knockdown of any expressed gene; GalNAc conjugates already approved (inclisiran, patisiran) for liver targets; **kidney-tropic conjugate chemistry is an active research class** (megalin binding, kidney-cortex selectivity).
-- **Best-fit cells in the matrix:**
-  1. **Kidney URAT1 silencing.** This is **the cleanest "elegant solution"** in the entire matrix: sequence-specific knockdown of the renal-reabsorption transporter that drives Brian's hyperuricemia phenotype. Eliminates the dose-dependent off-target profile of small-molecule URAT1 inhibitors (benzbromarone hepatotoxicity). No clinical program for gout that I know of.
-  2. **Macrophage NLRP3 silencing** — slower than mRNA-IL-1RA pulse but more durable.
-  3. **Local TNFα siRNA in gut macrophages** — finer than systemic anti-TNFα biologic.
-- **Worst-fit cells:** acute flare (too slow), anything that requires de novo protein expression rather than knockdown.
-
-### CRISPR / base editing / prime editing in patient
-- **Strengths:** durable correction, single-edit mechanism for Q141K-style point variants.
-- **Best-fit cells:** Q141K → Q141 base edit in gut crypt stem cells. Mechanistically perfect; **delivery unsolved.**
-- **Worst-fit cells:** everything else. Differentiated tissue editing wastes the durability advantage; nothing approved for non-hematopoietic somatic editing yet.
-- **Status:** wait-and-see. Five-to-ten-year horizon for the delivery side. The OE thesis competes by sidestepping the editing problem entirely (gut-lumen sink + ABCG2 induction).
-
-### Pharmacological chaperones
-- **Strengths:** small molecules that bind misfolded protein variants (e.g., Q141K) and rescue trafficking. CFTR-corrector class (ivacaftor, tezacaftor, elexacaftor) is the precedent — multibillion-dollar therapeutic class for ΔF508 in CF.
-- **Best-fit cells:** **Q141K folding rescue at the gut and renal sites simultaneously**, oral systemic delivery. Pharmacologically similar to the CFTR play.
-- **Current research activity for ABCG2 Q141K specifically:** academic literature exists (Basseville 2012, others); **no clinical programs.** The market is small (gout has cheap alternatives), but mechanistically this is the cleanest non-genetic Q141K solution.
-- **Open exploration question:** is the CFTR-corrector class chemistry transferable to ABCG2? Same ATP-binding cassette superfamily; the design problem is similar.
-
-### Engineered exosomes
-- **Strengths:** native cell-derived nanocarriers; bilayer + surface-marker engineering; can carry small molecules, peptides, RNA, or proteins; cell-tropic via surface marker selection.
-- **Best-fit cells:**
-  1. **Macrophage-tropic exosomes carrying NLRP3 inhibitors** (Lp-PLA2 source). CD163 or mannose-receptor display.
-  2. **Kidney-tropic exosomes carrying URAT1 inhibitors or chaperones.**
-  3. **Intra-articular exosomes for acute flare** carrying IL-1RA or NLRP3 silencer.
-- **Status:** research-stage clinically; Codiak/Lonza alumni and several startups (Vesigen, Aegle, Ilias). For OE: a future complementary modality, not a near-term build.
-
-### Engineered soluble complement regulators (sCR1, Factor H, DAF/CD55)
-- **Strengths:** **closes the only "honest platform gap" in the OE corpus.** [`complement-c5a-gout.md`](./complement-c5a-gout.md) identifies CP0 (complement priming via C5a) as a dominant upstream chokepoint with no fermentable coverage — and `validation-experiments.md` §1.21 (executed 2026-04-27) confirmed via computational scan of ChEMBL / NPASS / LOTUS / Open Targets that **no validated natural-product C5aR1 antagonists exist.** This forced the platform to formally accept avacopan (a prescription pharma drug) as a permanent adjunct — awkward against the "your microbe makes the medicine" thesis. **The unexplored alternative** is to express endogenous human soluble complement regulators heterologously in the gut: sCR1 (soluble complement receptor 1), Factor H fragments, or DAF/CD55 ectodomain — proteins that already exist clinically as systemic IV biologics for autoimmune disease but have never been engineered for gut-luminal mucosal-complement coverage.
-- **Best-fit cells in the matrix:** gut macrophages NLRP3 priming (the CP0 step); plausibly gut barrier (complement deposition contributes to barrier dysfunction).
-- **Coverage gap relative to current OE:** **the wiki has no page on this.** All four candidate proteins (sCR1, Factor H, DAF/CD55, CD46) are in the human proteome — UniProt-fetchable, AlphaFold-modelled, MEROPS-screenable for shio-koji compatibility (the same comp-NNN protease-stability framework used for uricase and lactoferrin would apply directly).
-- **Open exploration questions:**
-  1. Can a soluble complement regulator be expressed in *A. oryzae* or *S. cerevisiae* at gut-luminal concentrations meaningful for mucosal C5a neutralization? sCR1 is ~190 kDa with 30 SCR domains — possibly too large for koji secretion. Factor H is ~150 kDa with 20 SCR domains. **DAF (CD55) ectodomain is ~70 kDa with 4 SCR domains — likely the most tractable engineering target.**
-  2. Does mucosal C5a inhibition (luminal-side) meaningfully blunt CP0 priming? The macrophages doing the priming are submucosal — does luminal sCR1 / Factor H reach them, or does it require basolateral access?
-  3. Same protease-stability question as uricase / lactoferrin: do the SCR (short consensus repeat) domains survive the koji fermentation environment? Run a comp-NNN analysis (e.g., comp-006) on the AlphaFold model of CD55 before any wet-lab engineering.
-- **Status:** **zero programs.** All systemic complement-regulator biologics (TP10/sCR1 by Avant, mirococept by Univ. Oxford, ARC1905 anti-C5 aptamer) target IV / intravitreal delivery for autoimmune indications. **A gut-luminal mucosal-complement strategy is genuinely unexplored** and well-aligned with the OE chassis.
-- **comp-006 protease-stability result (2026-05-05, Mechanistic Extrapolation):** AlphaFold pLDDT analysis of DAF/CD55 (P08174) under shio-koji conditions (17.5% NaCl, pH 4.5–5.0) returned **HIGH** for the soluble ectodomain (aa 35–353, max risk score 0.388, worst protease NPr). The verdict is **stalk-contingent**: the Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52) is fully disordered and drives all 9 NPr-exposed and 48 ALP-exposed ectodomain sites. The SCR1–4 domains (aa 35–285, pLDDT 85–98) contribute zero low-pLDDT exposed-by-proxy sites (pLDDT-based proxy, not SASA). The stalk-truncated construct (aa 35–285, SCR1–4 only) was analyzed as the follow-up in **comp-012** — which returned **LOW**, confirming the HIGH was 100% stalk-driven. (Also note the ectodomain HIGH is a conservative stress-test dependent on NPr pH factor = 1.0.) See [`wiki/daf-cd55-protease-stability-computational.md`](./daf-cd55-protease-stability-computational.md).
-- **Regulatory class:** if expressed in food-grade GRAS organism (koji, S. boulardii), this stays in the OE chassis lane — distinct from the systemic sCR1 biologic regulatory path. Same lane as engineered uricase / lactoferrin.
-
-### Microbiome consortia / FMT
-- **Strengths:** community-level intervention rather than single-strain. Vowst (Seres) FDA-approved 2023 for C. diff is the precedent.
-- **Best-fit cells:** gut microbiome reshaping at community level; gut barrier; potentially distal effects via systemic SCFA.
-- **Status:** zero programs for gout. Mechanistically defensible — adjacent indications (IBD, C. diff, metabolic syndrome) have positive signals.
-
-### Antibodies / biologics
-- **Existing in gout:** rasburicase, pegloticase (uricase variants — IV protein replacement, refractory gout). Canakinumab (IL-1β biologic, FDA-approved for gout 2023, very expensive). Anakinra (IL-1RA, off-label). All addressed in [`gout-clinical-pipeline.md`](./gout-clinical-pipeline.md).
-- **Coverage gap:** the wiki tracks the existing biologics but doesn't catalog them as a modality class with their own row of cells where novel engineering could land (e.g., bispecifics, Fc-fusion uricases, CD163-targeted ADCs delivering NLRP3 inhibitors to Lp-PLA2-source macrophages).
-
-### Wearable / implantable monitoring
-- **Best-fit cells:** real-time UA monitoring; multi-analyte chokepoint biomarker readout.
-- **Status:** sweat-based UA sensors are research-active (UCSD, Stanford); microneedle continuous monitoring is research-stage. Implantable multi-analyte is overkill for gout-only but flips when bundled with cardiometabolic indications.
-- **Why this matters for OE:** interventions whose research endpoint is serum urate benefit from denser time-series data than quarterly panels. This includes observing clinician-directed clomiphene exposure changes under [H10](./hypotheses/H10-clomiphene-dose-urate-coupling.md), where the urate direction remains unestablished. The synthesis-queue chokepoint-biomarker map ([`synthesis/`](../synthesis/README.md) #4) is partly bottlenecked by infrequent sampling.
-
----
-
-## Per-target details (columns)
-
-### Gut lumen
-The most-developed target in the OE wiki — the gut-lumen sink is the platform's thesis. Multi-modal coverage is solid (yeast, koji, E. coli Nissle precedent). Gap: phages and microbiome-consortia don't appear; both are mechanistically relevant for shaping the microbial community whose metabolism produces the urate substrate.
-
-### Gut epithelium ABCG2
-Fairly well-covered via fiber → butyrate → PPARγ. Sulforaphane (Nrf2) supplements; glucoraphanin co-production in koji is open (per [`abcg2-modulators.md`](./abcg2-modulators.md) Engineering Implications #1). The Q141K rescue mechanism sits adjacent.
-
-### Gut macrophages
-Small molecules systemic absorption is the current lever. Local action via engineered organisms (β-glucan from yeast cell wall, kojic acid from koji metabolites, KPV via PepT1 absorption) is partial. RNA-platform delivery (LNP-targeted to gut myeloid cells) is open and unexplored.
-
-### Gut barrier
-Peptide layer (BPC-157, KPV, zinc-carnosine) + lactoferrin co-expression in koji + fermentable fiber. Engineered Akkermansia and engineered IL-22-secreting probiotics are the obvious novel additions.
-
-### Gut microbiome (community shape)
-Berberine (small molecule) + fermentable fiber. Phages and microbiome consortia are the modalities specifically built for community-level intervention; both absent from the wiki.
-
-### Kidney URAT1 / GLUT9
-**The biggest coverage gap in the matrix.** Carnosine is the only OE-relevant modality, and it's animal-model evidence only. siRNA against URAT1 mRNA via kidney-tropic conjugates is the cleanest novel angle in the entire matrix — sequence-specific, no off-target small-molecule profile, eliminates the historical benzbromarone hepatotoxicity concern.
-
-### Kidney ABCG2
-Indirect coverage via systemic SCFA from gut fiber. Direct kidney-targeted ABCG2 induction is open; pharmacological chaperones for Q141K at the renal site are open.
-
-### Kidney macrophages (urate nephropathy)
-Sparse coverage. SPM precursors have weak evidence for renal macrophage modulation. Systemic small molecules reach but at low local concentration.
-
-### Synovial macrophages (joint flare site)
-Existing biologics work (canakinumab, anakinra). Systemic small molecules. Intra-articular delivery (exosomes, mRNA-IL-1RA) is open and would compete with biologics on cost.
-
-### Vessel-wall macrophages (Lp-PLA2)
-**Brian-specific significance.** Persistent Lp-PLA2 elevation across his 2023-2025 panels while hs-CRP normalized. Systemic small-molecule reach is partial; **myeloid-tropic LNPs delivering NLRP3-silencing payloads is the genuinely novel exploration vector here.** Also: DHA-emphasis omega-3 (RvD1/MaR1) is the closest current OE-aligned tool — see [`spm-resolution-pathway.md`](./spm-resolution-pathway.md).
-
-### Acute flare termination
-OE has zero fast-acting tools. Existing options are pharma (colchicine, prednisone, anakinra, canakinumab). **mRNA-IL-1RA pulse therapy is the open exploration vector** — transient expression matches the short flare window.
-
-### Real-time monitoring
-No OE coverage. Wearable / microneedle / implantable are open vectors. For self-experiment purposes ([`self-experiment-protocol.md`](./self-experiment-protocol.md)), continuous UA data would change the kinetics of intervention titration.
-
----
-
-## Open exploration questions surfaced by the matrix
-
-The numbered list is an inventory, not a production or funding rank:
-
-1. **siRNA against URAT1 mRNA via kidney-tropic conjugate.** Sequence-specific renal-reabsorption knockdown. Cleaner than benzbromarone-class. Adjacent to inclisiran-style precedent. Zero clinical programs for gout. Mechanism: see [`androgen-urate-axis.md`](./androgen-urate-axis.md), [`gout-pathophysiology.md`](./gout-pathophysiology.md).
-
-2. **Engineered Faecalibacterium prausnitzii for local butyrate at the gut crypt.** Supported target: wild-type ABCG2 induction through PPARγ. Direct Q141K rescue, durable colonization, titer, and epithelial exposure remain experimental gates; genotype-agnostic coverage is not established.
-
-3. **Myeloid-tropic LNP delivering NLRP3-silencing mRNA / siRNA to vessel-wall macrophages.** Brian-pattern Lp-PLA2 persistence is the n=1 case study. Acuitas / Moderna myeloid LNPs exist for oncology; gout repurposing is novel.
-
-4. **Pharmacological chaperone for ABCG2 Q141K folding rescue.** CFTR-corrector class precedent (~$10B annual market for ΔF508 correction). Same ATP-binding cassette superfamily. Academic mechanism literature exists; no clinical programs. Could be a small-molecule discovery campaign with AI-era binder design.
-
-4b. **Soluble complement regulator (sCR1 / Factor H / DAF/CD55 ectodomain) for CP0 coverage.** The biological question is whether local complement regulation suppresses MSU-driven C5a without unacceptable off-target complement effects. Expression host and route remain downstream choices. The CD55 ectodomain and SCR1–4 computational analyses define protease-stability priors, not biological validation. See [`daf-cd55-protease-stability-computational.md`](./daf-cd55-protease-stability-computational.md) and [`complement-c5a-gout.md`](./complement-c5a-gout.md).
-
-5. **mRNA-IL-1RA pulse therapy for acute flare termination.** Transient expression matches flare window. Zero programs; mechanistically defensible; competes with canakinumab on cost (mRNA manufacturing scales; $300K/yr biologic doesn't).
-
-6. **Engineered Akkermansia muciniphila for mucus-layer barrier repair.** Different chassis from yeast/koji. Mucus-resident colonization solves the transit-time problem. Adjacent to commercial Pendulum probiotic.
-
-7. **Bacteriophage-mediated selective suppression of LPS-producing or purine-fermenting gut species.** Different from "add-an-organism" thesis. Mechanistically distinct from probiotic addition. No gout programs.
-
-8. **Wearable sweat-based or microneedle continuous UA monitoring.** Changes intervention-titration kinetics. UCSD / Stanford research-stage.
-
-9. **Glucoraphanin substrate supply for intestinal ABCG2 induction.** Test substrate availability, conversion, tissue selectivity, and urate flux before choosing dietary, microbial, or engineered delivery.
-
-10. **Engineered exosomes carrying NLRP3 inhibitors targeted to CD163+ macrophages.** Specifically for vessel-wall and synovial sites. Research-stage chassis; longer horizon than #1-3 above.
-
----
-
-## Cross-references
-
-- [`open-questions.md`](./open-questions.md) — meta-index where the leverage-bearing matrix cells should propagate as named open questions
-- [`delivery-route-matrix.md`](./delivery-route-matrix.md) — companion page, complementary axis (route × compound class; "how to get there" vs "what tools")
-- [`chassis-pending-interventions.md`](./chassis-pending-interventions.md) — companion index: interventions hitting chokepoints but awaiting chassis fit
-- [`compounding-pharmacy-track.md`](./compounding-pharmacy-track.md) — delivery route for small-molecule repurposing surface
-- [`ginkgo-cloud-lab-evaluation.md`](./ginkgo-cloud-lab-evaluation.md) — wet-lab partner evaluation for cell-free pre-gating
-- [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) — gut PDB as independent urate disposal organ (chassis-pending entry #1)
-- [`synthesis/`](../synthesis/README.md) — reviewed cross-page findings
-- [`nlrp3-exploit-map.md`](./nlrp3-exploit-map.md) — the chokepoint map this matrix sits orthogonal to
-- [`abcg2-modulators.md`](./abcg2-modulators.md), [`androgen-urate-axis.md`](./androgen-urate-axis.md), [`gut-lumen-sink.md`](./gut-lumen-sink.md) — the transporter-biology trio that grounds the renal and gut columns
-- [`open-source-platform.md`](./etc/open-source-platform.md) — platform-strategy positioning; this matrix supports its "we explore all angles" claim
-- [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) — top-level mission statement that the matrix operationalizes
-
-## Additional chokepoint candidates
-
-Two candidates from [comp-014](./medicinal-mushroom-compound-mapping-computational.md) remain mechanistic extrapolations pending direct gout-relevant validation.
-
-- **ADA (adenosine deaminase)** — purine catabolism enzyme upstream of XO. Fungal-compound coverage via GLPP (*G. lucidum*) and cordycepin + native pentostatin (*C. militaris*). ADA modulation changes purine nucleoside flux entering the XO → urate pipeline. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
-- **PINK1/mitophagy** — mitochondrial quality-control pathway. PINK1 senses mitochondrial damage and recruits Parkin to initiate mitophagy, clearing damaged mitochondria before they generate the mtROS that triggers NLRP3 (CP2). NLRP3-priming-adjacent — operates upstream of CP2 rather than at NLRP3 assembly directly. (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
+This matrix starts with exploitable weaknesses in urate production, disposal, crystallization, and inflammation, then asks which intervention routes can test each weakness. A route is not a project identity, product recommendation, or priority by itself.
+
+Cells summarize evidence and the next falsification gate. They do not establish dose, access, clinical sufficiency, additivity, regulatory status, market fit, or a winning chassis.
+
+## Evidence key
+
+| State | Meaning |
+|---|---|
+| **Clinical** | Human intervention evidence for the stated mechanism and scope |
+| **Animal** | In-vivo evidence; human translation unresolved |
+| **In Vitro** | Cell, biochemical, tissue, or construct evidence |
+| **Mechanistic Extrapolation** | Composed or adjacent mechanism requiring direct validation |
+| **Open** | A testable route with no decision-grade evidence yet |
+
+## Matrix
+
+| Intervention route | Primary gout weakness it can test | Current boundary | Next discriminating gate |
+|---|---|---|---|
+| Established small molecules or biologics | XO, URAT1, IL-1, microtubule/ASC, 5-LOX, complement, systemic UOX | Clinical evidence is compound- and indication-specific; approval elsewhere does not establish gout use for a repurposing candidate | Verify gout-specific exposure, target engagement, safety, and outcome in an appropriate controlled study |
+| Natural compounds or characterized native materials | XO, transporter expression, NLRP3 priming/assembly, resolution pathways | Mostly In Vitro or Animal; material identity and achievable exposure often limit translation | Test exact material, free exposure, target-proximal readout, safety, and gout-relevant endpoint |
+| Peptides and recombinant proteins | Barrier, complement, IL-1, local anti-inflammatory nodes | Proteolysis, tissue access, immunogenicity, and active conformation are configuration-specific | Measure identity, active function, compartment exposure, stability, and safety before choosing delivery |
+| Engineered yeast | Luminal UOX or another locally acting payload | Mechanistic Extrapolation; parent-organism history does not transfer to an engineered configuration | Build and characterize exact configurations, then §1.33 → route-specific retention → §1.36 before animals |
+| Engineered *A. oryzae* | Luminal UOX or independently validated payloads | Mechanistic Extrapolation; no multi-payload architecture is established | Build and characterize exact single-payload configurations, advance UOX through §1.33, test coexistence only after single arms pass, then §1.36 before animals |
+| Engineered EcN | Luminal UOX, reductive PDB pathway, biosensor-controlled local activity | PULSE and CBT2.0 are separate precedents; they do not establish a combined strain, additivity, carbon fate, or human effect | Reconstruct the exact configuration; measure pathway completion, carbon fate, target engagement, persistence, and safety |
+| Obligate-anaerobe LBP | PDB restoration, butyrate-associated signaling, barrier or community functions | Host, payload, carbon fate, colonization, epithelial exposure, and manufacturing stability remain configuration-specific | Matched host/configuration screen with direct flux, exposure, persistence, community, and containment readouts |
+| Phage, consortium, or FMT | Microbiome subtraction or community restoration | Community effects and target specificity are unresolved for gout | Define the target community state, then measure urate flux, off-target ecological change, persistence, and safety |
+| RNA or oligonucleotide delivery | URAT1, NLRP3, IL-1, or other expressed targets | Sequence specificity does not solve tissue delivery, durability, or off-target exposure | Demonstrate target-cell uptake, knockdown/expression, functional effect, biodistribution, and safety |
+| Gene or cell editing | Durable transporter or UOX restoration hypotheses | Delivery, off-target effects, tissue renewal, and long-term safety remain open | Establish editing specificity, target-cell coverage, function, durability, and safety in a justified model |
+| Local depot or intra-articular delivery | Tophi, synovial NLRP3, local UOX–catalase | Local delivery does not eliminate peroxide, tissue, sterility, retention, or immune risks | Compare exact formulations under matched activity, diffusion, retention, tissue-safety, and immunogenicity conditions |
+| Sensors and biomarker systems | Urate dynamics or mechanism-proximal monitoring | A measurement tool does not validate an intervention or chokepoint | Validate analytical accuracy, matrix, calibration, temporal resolution, and relation to the biological endpoint |
+
+## Route-specific boundaries
+
+### Engineered UOX configurations
+
+The decision order is fixed:
+
+1. Build and characterize exact configurations in §§1.1, 1.2, and 1.5, or acquire and verify an exact external configuration.
+2. Run [§1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) on those extant configurations. A within-host matched comparison may nominate a localization strategy; cross-host observations remain configuration-specific.
+3. Run route-specific process-retention experiments only for an advanced configuration.
+4. Clear [§1.36](./validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay) before animal escalation.
+
+COMP-044 establishes only that the legacy unconditional flat-dose classification is not robust to the tested substrate-occupancy and finite-window diagnostics. It does not identify the true physiological regime, sufficient dose, serum effect, sequence, topology, host, or product architecture.
+
+See [engineered yeast](./engineered-yeast-uricase-proposal.md), [engineered koji](./engineered-koji-protocol.md), [gut-lumen sink](./gut-lumen-sink.md), and [validation experiments](./validation-experiments.md).
+
+### PDB and microbiome routes
+
+The reductive PDB pathway is distinct from oxidative UOX. CBT2.0 does not establish that engineered EcN produces butyrate, that butyrate reaches epithelium, or that PDB and UOX are additive. Compare one strain, separate strains, and temporal staging only after carbon fate and residual flux are measured. [Comp-031](./dual-chassis-ecn-pdb-uricase-computational.md) is unusable for current decisions because it inherits an unsupported flat UOX regime, assigns unmeasured butyrate production to engineered EcN, and mixes compartments.
+
+See [purine-degrading bacteria](./purine-degrading-bacteria.md), [engineered LBP chassis](./engineered-lbp-chassis.md), and validation [§§1.34 and 1.37](./validation-experiments.md#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux).
+
+### Native materials and compound combinations
+
+Cultivation, dietary occurrence, or commercial availability does not establish composition, free exposure, efficacy, safety, or regulatory status. Characterize the exact material and test individual mechanisms before a combination. A combination study must prespecify the interaction null and measure exposure, target engagement, efficacy, and new safety liabilities for the exact pair.
+
+See [medicinal mushroom track](./medicinal-mushroom-complement-track.md), [TCM rigor track](./tcm-modern-rigor-intersection.md), [supplements evidence catalog](./supplements-stack.md), and [validation §2.6](./validation-experiments.md#26-glpp--cordycepin-interaction-in-hyperuricemia--matched-wet-lab-gate-phase-7-4-stub).
+
+### RNA, editing, and targeted delivery
+
+Kidney-tropic siRNA against URAT1, macrophage-targeted inflammasome silencing, inhaled mRNA–IL-1Ra, and Q141K editing are independent hypotheses. Their biological elegance does not establish target-cell delivery, exposure, durability, safety, clinical value, or a development timeline.
+
+See [siRNA–URAT1](./sirna-urat1-modality.md), [inhaled mRNA–IL-1Ra](./inhaled-mrna-il1ra-pulse-computational.md), [Q141K chaperone work](./abcg2-modulators.md), and [chassis-pending interventions](./chassis-pending-interventions.md).
+
+### Complement and NLRP3 routes
+
+Complement regulators, small-molecule NLRP3 candidates, GSDMD inhibitors, SPMs, and IL-1 blockers act at different nodes. Node separation can justify a factorial experiment; it does not establish that the components add or that every chokepoint needs coverage. Production host and sourcing are downstream of the biological case.
+
+See [NLRP3 exploit map](./nlrp3-exploit-map.md), [complement C5a](./complement-c5a-gout.md), [SPM resolution](./spm-resolution-pathway.md), and [delivery route matrix](./delivery-route-matrix.md).
+
+## Open decisions
+
+- Which renal-targeted route reaches URAT1 or ABCG2 with sufficient tissue selectivity and functional urate-flux change?
+- Which exact luminal-UOX configurations, if any, pass physiological product-formation and redox-safety gates?
+- Which PDB configuration produces the intended terminal products and changes urate disposal without unacceptable community effects?
+- Which NLRP3-node candidates reproduce target-proximal effects at human-relevant exposure in gout-relevant systems?
+- Which local-delivery architecture controls UOX peroxide, retention, tissue injury, and immunogenicity under matched conditions?
+- Which biomarker systems measure a mechanism closely enough to guide experiments without being mistaken for efficacy?
+
+## Decision rule
+
+Rank experimental questions by gout relevance, evidence gap, safety, and falsifiability. Select a route only after the target mechanism and required compartment are explicit. Retire or redirect a route at the scope justified by the evidence; no single failed chassis or modality determines the project.

@@ -11,7 +11,9 @@ related:
   - gut-lumen-sink.md
   - engineered-yeast-uricase-proposal.md
 sources:
-  - "ClinicalTrials.gov via Anthropic life-sciences MCP (search date: 2026-04-23)"
+  - "ClinicalTrials.gov (pipeline assessed 2026-04-23; ALLN-346 records assessed through 2026-07-22)"
+  - "Clark et al., Ann Rheum Dis 2022;81(Suppl 1):906-907. DOI: 10.1136/annrheumdis-2022-eular.843"
+  - "Terkeltaub et al., Ann Rheum Dis 2022;81(Suppl 1):907. DOI: 10.1136/annrheumdis-2022-eular.1662"
   - "PubMed via Anthropic life-sciences MCP"
   - "J Inflamm Res 2026;19 PMID: 41867470"
   - "Lancet Rheumatol 2020;2(5):e270-e280 PMID: 33005902"
@@ -25,15 +27,15 @@ sources:
 
 **Bottom line up front:**
 
-1. **ALLN-346 (oral gut-lumen uricase) is not an active clinical program.** The Phase 2a CKD trial was terminated in September 2022 with 19 patients enrolled across 17 sites, and Allena Pharmaceuticals has no active gout trials. The mechanism remains plausible, but ALLN-346 does not provide a completed Phase 2 efficacy precedent.
+1. **No registered ALLN-346 trial is active.** Study 201 (NCT04987242) completed with 16 participants, but its Phase 2a conference abstract reports efficacy and short-term safety only for the first 11. Study 202 (NCT04987294) enrolled 19 participants and was terminated for company financing; ClinicalTrials.gov has no posted results. ALLN-346 therefore supplies human route and short-exposure evidence, not a transferable dose-response or broad Phase 2 efficacy precedent. **Clinical Trial evidence.**
 
 2. **Dapansutrile (OLT1177) in gout: published Phase 2a, but no current late-phase trial.** The 2020 Phase 2a proof-of-concept (N=34) showed 52–68% pain reduction at day 3 across four dose levels. Olatec's subsequent gout development appears stalled; their active programs moved to heart failure (completed) and COVID-19 (terminated). Phase 2b/3 in gout is **not registered on ClinicalTrials.gov as of April 2026.**
 
 3. **Canakinumab received FDA approval for gout in August 2023** — the first biologic formally indicated for gout in the US, 12 years after its initial rejection.
 
-4. **The real competitor to Open Enzyme's thesis is PRX-115 (Protalix)**, whose Phase 2 RELEASE trial began recruiting December 2025. It's a systemic pegylated uricase + methotrexate — same immunomodulator strategy as SEL-212/Krystexxa+MTX. PRX-115 being in Phase 2 proves the systemic-uricase-with-tolerance-induction path is alive. Open Enzyme's gut-lumen-uricase angle remains the untested and uncompeted path.
+4. **PRX-115 (Protalix) is a relevant systemic-UOX comparator.** Its Phase 2 RELEASE trial began recruiting in December 2025 and tests pegylated uricase with and without methotrexate. The program shows that systemic UOX plus immunomodulation remains an active development strategy. It does not validate or invalidate the separate gut-lumen-UOX hypothesis.
 
-5. **URAT1 inhibitors are crowded.** AR882 (Arthrosi), Epaminurad (JW Pharma), Dotinurad (Eisai), SAP-001 (Shanton), and ABP-671 (Atom) are all in Phase 2b/3. Competing here is not the Open Enzyme wedge.
+5. **URAT1 inhibitors are crowded.** AR882 (Arthrosi), Epaminurad (JW Pharma), Dotinurad (Eisai), SAP-001 (Shanton), and ABP-671 (Atom) were in Phase 2b/3 in this dated scan. That activity makes the transporter node important for portfolio comparison; it does not determine which Open Enzyme research track should advance.
 
 ---
 
@@ -46,7 +48,7 @@ Source: ClinicalTrials.gov via the Anthropic life-sciences MCP; regulatory statu
 | Allopurinol | Xanthine oxidase | Generic (1966) | First-line urate-lowering; HLA-B*58:01 hypersensitivity risk |
 | Febuxostat | Xanthine oxidase | Generic (2009 US) | CARES trial cardiovascular signal |
 | Pegloticase (Krystexxa) | Uricase (PEGylated pig/baboon chimera) | FDA 2010 | **Refractory gout only**; now co-administered with methotrexate (Phase 4 NCT04772313) to mitigate anti-drug antibodies |
-| Rasburicase (Elitek/Fasturtec) | Uricase (*A. flavus*, in *S. cerevisiae*) | FDA 2002 | **Tumor lysis syndrome only** — not approved for chronic gout. Open Enzyme's uricase is the same enzyme. |
+| Rasburicase (Elitek/Fasturtec) | Uricase (*A. flavus*, in *S. cerevisiae*) | FDA 2002 | **Tumor lysis syndrome only** — not approved for chronic gout. It provides systemic enzyme and manufacturing precedent for its own product, not evidence for an oral engineered construct. |
 | Lesinurad | URAT1 | FDA 2015, withdrawn 2019 | Commercial failure; Ardea Biosciences |
 | Canakinumab (Ilaris) | IL-1β (mAb) | **FDA approved August 2023 for gout** — first biologic indication | Novartis; previously approved for CAPS/JIA. *J Inflamm Res* 2026 (PMID: 41867470). |
 | Anakinra (Kineret) | IL-1 receptor antagonist | Off-label for gout | 2018 Sobi trial (NCT03002974) showed non-inferiority to triamcinolone |
@@ -54,41 +56,39 @@ Source: ClinicalTrials.gov via the Anthropic life-sciences MCP; regulatory statu
 | Colchicine | β-tubulin (CP3 ASC speck block) + P2X7 pore (CP2) | Generic | Narrow therapeutic index (~3–5×); CYP3A4/P-gp interaction surface; AGREE trial low-dose regimen; COLCOT/LoDoCo2 CV repositioning; Lodoco FDA 2023. See [colchicine.md](./colchicine.md). |
 | NSAIDs | COX-1/2 | Generic | Symptomatic only |
 
-**Implication for Open Enzyme:** Pegloticase + methotrexate (Amgen/Horizon Krystexxa+MTX) and canakinumab are the "biologics" standard-of-care for refractory/hard-to-treat gout. Both are expensive and IV/SC. The oral, food-derived positioning (engineered koji as adjunct to allopurinol) avoids direct competition with these.
+**Implication for Open Enzyme:** The clinical landscape contains validated systemic uricase and IL-1 routes. A gut-lumen UOX construct would answer a different compartment question, but it has no established dose, chassis, serum effect, safety profile, or product category. Competitive whitespace is not biological validation.
 
 ---
 
 ## 2. ALLN-346 Program Status
 
-Source: NCT04987294, NCT04987242, NCT04236219, NCT05168683 via the Anthropic life-sciences ClinicalTrials.gov MCP.
+**Evidence-date boundary:** ALLN-346 registry records and linked primary reports were assessed through 2026-07-22; the remaining pipeline entries retain the page-level 2026-04-23 boundary.
 
-**Evidence boundary:** ALLN-346 is evidence that gut-lumen uricase entered clinical development, not proof that it works in Phase 2. Status by trial:
+**Evidence boundary:** ALLN-346 is evidence that a specific gut-lumen UOX product entered clinical development. Its records do not establish another construct's dose, serum effect, safety, sequence performance, formulation, or chassis.
 
-| Trial | Phase | Status | N | Dates |
-|---|---|---|---|---|
-| NCT04236219 | 1 (SAD) | Completed | 24 | 2020-09 to 2020-11 |
-| NCT05168683 | 1 (scintigraphy, enteric coating) | Completed | 12 | 2022-01 to 2022-02 |
-| NCT04987242 | 2 (inpatient hyperuricemia) | Completed | 16 | 2021-07 to 2022-03 |
-| **NCT04987294** | **2a (CKD, multicenter)** | **TERMINATED** | **19** (of planned >200 across 17 sites) | **Started and terminated 2022-09-02** |
+| Sponsor study / record | Population and design | Phase; current status | Public result boundary |
+|---|---|---|---|
+| Study 101 / [NCT04236219](https://clinicaltrials.gov/study/NCT04236219) | 24 healthy volunteers; randomized single-ascending-dose study | Phase 1; completed | The combined Study 101/102 conference abstract reported no serious adverse events, no clinically significant safety signals, and no detectable systemic absorption during the sampled period ([Clark et al. 2022](https://doi.org/10.1136/annrheumdis-2022-eular.843)). **Clinical Trial; conference-abstract report.** |
+| Study 102 / [NCT04829435](https://clinicaltrials.gov/study/NCT04829435) | 18 healthy volunteers; randomized 7-day multiple-ascending-dose study | Phase 1; completed | Same combined Study 101/102 abstract and evidence boundary as above. It does not establish chronic or patient-population safety. **Clinical Trial; conference-abstract report.** |
+| Study 103 / [NCT05168683](https://clinicaltrials.gov/study/NCT05168683) | 12 healthy male volunteers; open-label scintigraphy/formulation study | Phase 1; completed | The registry has no posted results. This record establishes formulation testing, not efficacy or safety beyond the registered design. **Clinical Trial; registry only.** |
+| Study 201 / [NCT04987242](https://clinicaltrials.gov/study/NCT04987242) | 16 adults actually enrolled with hyperuricemia and normal renal function through stage 2 CKD; randomized 7-day inpatient study | Phase 2; completed | The Phase 2a abstract reports only the first 11 participants (7 ALLN-346, 4 placebo), who were not receiving concurrent urate-lowering therapy. It reported a statistically significant mean serum-urate reduction versus placebo, no serious adverse events or significant safety signals, and no detectable systemic absorption by ELISA ([Terkeltaub et al. 2022](https://doi.org/10.1136/annrheumdis-2022-eular.1662)). It is not a report of all 16 registered participants. **Clinical Trial; conference-abstract report.** |
+| Study 202 / [NCT04987294](https://clinicaltrials.gov/study/NCT04987294) | 19 adults with hyperuricemia, gout, and stage 2 or 3 CKD; randomized 14-day outpatient study | Phase 2; terminated for **company financing** | ClinicalTrials.gov has no posted results. A July 2022 sponsor release reported cohort enrollment and said results were expected; it did not report efficacy or safety results ([Allena, 2022](https://www.globenewswire.com/news-release/2022/07/19/2481757/0/en/Allena-Pharmaceuticals-Announces-Completion-of-Enrollment-of-Cohorts-A-and-B-of-ALLN-346-Phase-2a-Study-202-in-Patients-with-Gout-and-Stages-2-and-3-Chronic-Kidney-Disease.html)). **Clinical Trial; registry status only.** |
 
-The Phase 2a CKD trial — which was the pivotal study — was terminated on its scheduled primary completion date with 19 enrolled patients across 17 US sites. No published efficacy results.
-
-**Allena Pharmaceuticals** has no active trials on ClinicalTrials.gov after September 2022. The ALLN-346 asset appears to be commercially dead.
+The current registry records list Studies 101, 102, 103, and 201 as completed and Study 202 as terminated. None is recruiting or otherwise active.
 
 **Scientific interpretation:**
 
-- The *scientific rationale* for gut-lumen uricase remains intact. ABCG2-mediated gut secretion of uric acid is responsible for ~1/3 of total urate excretion (see [gut-lumen-sink.md](gut-lumen-sink.md)), and enzymatic degradation of luminal urate should reduce systemic load.
-- The *commercial* proof-of-concept is absent. ALLN-346 is not a precedent for "gut-lumen uricase works in Phase 2"; it's a precedent for "one company tried this and the trial did not deliver a pivotal readout."
-- Open Enzyme is pursuing a plausible mechanism without a validated clinical-program precedent.
-- The open-source, food-grade positioning may be an advantage here — a fermented koji supplement does not need a Phase 3 trial to reach users.
+- The *scientific rationale* for gut-lumen uricase remains testable. ABCG2 contributes urate to the intestinal lumen (see [gut-lumen-sink.md](gut-lumen-sink.md)), but local enzyme activity does not by itself establish increased net disposal or a serum-urate effect.
+- The small Study 201 report is a human pharmacology signal in its reported population. It is not a completed dose-response program, a result for all 16 registered participants, or evidence of broad efficacy.
+- Open Enzyme treats this as one falsifiable research track without a validated clinical-program precedent. Parent-organism food history does not make an engineered UOX construct food-safe or suitable for human use.
 
-### Combination Positioning — Uricase Adjunct to Allopurinol *(Mechanistic Extrapolation; source: ALLN-346 Study 201 enrollment criteria, above)*
+### Combination question — luminal UOX on a stable urate-lowering background *(Mechanistic Extrapolation)*
 
-**Mechanistic complementarity.** Allopurinol / febuxostat inhibit xanthine oxidase (upstream urate synthesis, reduces UA production by ~60%). Engineered koji / uricase degrades UA already in the gut lumen (downstream clearance, removes urate already formed). The two do not compete — they attack different points in the urate cycle. ALLN-346's Phase 2a enrolled patients already on stable allopurinol (Study 201 in gout+CKD), explicitly positioning the enzyme as adjunct to existing therapy rather than replacement.
+**Mechanistic complementarity is only a hypothesis.** Xanthine-oxidase inhibitors reduce urate production, while a successful luminal UOX system would attempt to increase intestinal disposal. The Study 201 abstract says its first 11 participants were **not** receiving concurrent urate-lowering therapy. The July 2022 Study 202 sponsor release described a planned allopurinol-combination Cohort D contingent on data and financing, but the registered trial terminated before any public result from such a cohort. ALLN-346 therefore does not establish adjunct efficacy.
 
-**Open Enzyme implication.** (1) Regulatory: adjunct positioning is narrower than monotherapy replacement because the enzyme is added to a validated first-line rather than making a standalone claim. (2) Clinical: 30–40% of allopurinol-treated patients remain above the 6 mg/dL target despite titration, defining a residual population for adjunct testing. (3) Evidence boundary: mechanistic complementarity does not establish efficacy or safety for an engineered-koji adjunct; that requires a controlled study on a stable standard-of-care background.
+**Open Enzyme implication.** If an engineered luminal-UOX candidate first clears [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) and [§1.36](./validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay), later studies could test it on a stable standard-of-care background. No chassis, additive effect, regulatory advantage, or dose-sparing claim is established now.
 
-**Open question.** Does adjunct koji allow lower allopurinol doses while maintaining target UA? A dose-sparing design is future work; first-order evidence is that adjunct reduces UA further, not that it replaces existing therapy. For HLA-B*58:01 carriers (at risk for allopurinol hypersensitivity), a successful dose-sparing result would be clinically meaningful — but proving it requires a controlled titration study that is well beyond Phase 0 scope.
+**Open question.** Does any luminal-UOX configuration increase net urate disposal and lower serum urate after accounting for substrate, oxygen, transit, access, survival, peroxide, and background therapy? That question precedes chassis selection and any combination study.
 
 See also [uricase.md](uricase.md) and [engineered-koji-protocol.md](engineered-koji-protocol.md).
 
@@ -105,7 +105,7 @@ According to PubMed, Dapansutrile (OLT1177) Phase 2a proof-of-concept in gout wa
 - 25/34 patients had treatment-emergent AEs (mostly metabolism and GI); 2 SAEs (one flare worsening, one coronary stenosis unrelated)
 - **Conclusion:** "Dapansutrile is a specific NLRP3 inflammasome inhibitor with a satisfactory safety profile and efficacy in the reduction of target joint pain."
 
-**Potency reframing (ChEMBL v34 cross-check, 2026-04-23):** Dapansutrile's curated cellular IC50 is **1.0 nM in mouse J774A.1 cells but 1.0 μM (1,000 nM) in human MDM cells — a 1,000× species gap** (*Eur J Med Chem* 2020/2023; *Bioorg Med Chem Lett* 2021). The 100–2,000 mg/day Phase 2a oral doses are consistent with human-cell μM potency at high systemic exposure, not with sub-nanomolar MCC950-class potency. This does not diminish the Phase 2a efficacy — the clinical result stands — but it reframes how the compound class should be described to potential collaborators: dapansutrile is an oral, μM-class human NLRP3 inhibitor with a very wide mouse-vs-human potency cliff, not a sub-nanomolar miracle drug. It also validates Open Enzyme's preference for human-cell (THP-1) validation assays over rodent cellular screens. (In Vitro; source: nlrp3-inhibitor-screen.md)
+**Species translation:** curated cellular IC50 values are 1.0 nM in mouse J774A.1 cells and 1.0 μM in human MDM cells, a 1,000-fold difference (*Eur J Med Chem* 2020/2023; *Bioorg Med Chem Lett* 2021). The clinical result and the cellular assays are different evidence objects. The interspecies difference makes human-cell validation necessary for related NLRP3 candidates. **In Vitro + Clinical Trial**; source: nlrp3-inhibitor-screen.md.
 
 **What happened next:**
 - No Phase 2b or Phase 3 in gout on ClinicalTrials.gov (as of 2026-04-23)
@@ -125,15 +125,11 @@ According to PubMed, Dapansutrile (OLT1177) Phase 2a proof-of-concept in gout wa
 
 **No active NLRP3-specific trials in gout as of April 2026.** The unmet need is real (pegloticase flares during dissolution, MSU-driven pyroptosis), but the pharma interest has drifted to metabolic and neurological indications where NLRP3 biology has broader appeal.
 
-**Implication for Open Enzyme:** the NLRP3 multi-target stack (oridonin + BHB + KPV + disulfiram) is not being pre-empted by a pharma success in gout. Dapansutrile's dormancy actually supports the project's "food-derived NLRP3 adjunct" positioning — the prescription pipeline isn't delivering.
+**Implication for Open Enzyme:** the dated scan found no active late-phase NLRP3-specific gout program. That gap supports continued mechanism-specific testing; it does not validate a predefined multi-compound stack, food-derived positioning, or delivery chassis.
 
 ### Mechanistic gaps in current pipeline
 
-> **Zileuton — the unexamined CP6a repurposing candidate.** FDA-approved oral 5-LOX inhibitor for asthma (1996, generic). Direct mechanism match for CP6a (5-LOX → LTB4 → neutrophil chemotaxis — the neutrophil-amplification loop that drives gout flare pain and tissue damage). **Never tested in gout** — zero ClinicalTrials.gov entries as of 2026-04-24. The absence is notable given that (a) 5-LOX is as mechanistically central to gout-flare biology as COX-2 is to inflammatory pain, and (b) quercetin — a supplement with 5-LOX IC50 = 300 nM in ChEMBL — is already in the stack on this rationale. Zileuton is the pharma-grade version of a mechanism we're already trying to reach via supplements.
->
-> Cost: generic ~$50/month. Accessibility: prescription only; rheumatology or primary-care. Safety: hepatotoxicity boxed warning, monthly LFTs for first 3 months; many CYP1A2 interactions.
->
-> See [zileuton.md](./zileuton.md) for the mechanism, expected outcomes, comparative safety profile, and open questions.
+> **Zileuton — CP6a repurposing hypothesis.** Zileuton is an approved 5-LOX inhibitor for asthma. The cited registry search found no gout trial as of 2026-04-24. A gout study would require indication-specific exposure, efficacy, hepatic safety, and interaction criteria; approval in asthma does not establish a gout treatment path. See [zileuton.md](./zileuton.md). **Clinical Trial for asthma; Mechanistic Extrapolation for gout.**
 
 ---
 
@@ -154,11 +150,11 @@ Source: NCT07280156 via the life-sciences ClinicalTrials.gov MCP.
 
 1. **Same strategy as SEL-212 (Sobi) and Krystexxa+MTX (Amgen):** systemic uricase + immunomodulator to prevent anti-drug antibody formation. Three programs now pursuing this exact approach. The anti-drug antibody problem is real and well-characterized.
 
-2. **PRX-115 is targeting the treatment-naive gout population,** not just refractory/CKD. This is a more ambitious commercial positioning than pegloticase's current label.
+2. **PRX-115 enrolls a treatment-naive population,** unlike pegloticase's refractory-gout indication and unlike the CKD population studied in ALLN-346 Study 202.
 
-3. **The gut-lumen angle is uncontested.** Every competitor uses systemic delivery. None use gut-retained/lumen-active uricase. Open Enzyme's engineered koji path remains the only gut-lumen approach in any form of development, clinical or otherwise.
+3. **The gut-lumen angle was clinically sparse in this dated scan.** The listed active competitors use systemic delivery, while ALLN-346 was no longer active. Open Enzyme tracks gut-lumen UOX as a research hypothesis, not a product in development; lack of competition does not establish feasibility.
 
-4. **Watch for RELEASE readouts.** Primary completion Dec 2027 means pivotal data by Q1 2028. A positive PRX-115 readout would validate IV-uricase-with-tolerance-induction as the dominant commercial path. A negative readout would reopen the mechanism question — systemic uricase may not be tolerable long-term regardless of immunomodulation.
+4. **The RELEASE result will test product-specific systemic UOX plus immunomodulation.** A positive or negative result would apply first to that construct, regimen, and population; it would not by itself establish or invalidate another UOX route.
 
 ---
 
@@ -171,12 +167,11 @@ Source: NCT06629376 via the life-sciences ClinicalTrials.gov MCP.
 - Single center: Huashan Hospital, Fudan University, Shanghai
 - Intervention: Pegylated recombinant *Candida utilis* uricase (PEG-CuU)
 
-**Why this is interesting to Open Enzyme:**
+**Evidence boundary:**
 
-- *Candida utilis* is a food-grade yeast; its uricase is one of the variants discussed in [uricase-variant-selection.md](uricase-variant-selection.md) alongside *A. flavus* (rasburicase source), *A. globiformis*, and *B. subtilis* uricases
-- This is the first clinical use of a *C. utilis*-derived uricase
-- SSS11 is still systemic IV, not gut-lumen, so it doesn't contest Open Enzyme's delivery angle
-- Higher specific activity vs. *A. flavus* uricase is the main engineering rationale (from published biochem data); clinical-grade confirmation pending
+- SSS11 is another systemic *C. utilis*-derived UOX program; ALLN-346 previously tested a distinct engineered *C. utilis* UOX by the oral gut-lumen route.
+- Its intravenous product, sequence, PEG architecture, manufacturing process, and clinical evidence are product-specific. They do not establish another construct's activity, safety, regulatory status, or delivery performance.
+- Sequence candidates remain unranked pending accession-bound comparison and matched measurement; see [uricase variant selection](./uricase-variant-selection.md).
 
 ---
 
@@ -225,23 +220,9 @@ Aggregate from the ClinicalTrials.gov MCP query: 153 total Phase 2/3 gout trials
 
 ---
 
-## 6a. Acute-Flare-Abort Comparator Table
+## 6a. Acute-Flare IL-1 Evidence
 
-For recurrent-gout patients, the per-flare choice of abort therapy is a cumulative-burden decision — what you use × how many flares per year × how many decades adds up. Prednisone's per-flare burden is modest; its cumulative burden over 30 years of recurrent flares is substantial (bone loss, cataracts, adrenal suppression, glucose intolerance). The table below frames the decision across options, including anakinra SC — a cleaner IL-1R1 antagonist already in clinical use off-label for gout — and the future inhaled mRNA-IL-1RA modality.
-
-| Option | Mechanism | Dosing for acute flare | Acute side effects | Cumulative burden (recurrent flares × decades) | Cost per flare | Access |
-|---|---|---|---|---|---|---|
-| **Prednisone taper** | Glucocorticoid receptor — system-wide | 30–40 mg/day × 5 days then taper over 7–10 days | Glucose spike, BP rise, sleep disruption, mood changes, immunosuppression | **Real, dose-dependent:** bone loss / osteoporosis, cataracts, adrenal suppression, glucose intolerance, weight gain | ~$10–30 (generic) | Any prescriber |
-| **Anakinra (Kineret) SC** | IL-1R1 competitive antagonist (recombinant endogenous IL-1Ra) | 100 mg SC daily × 3 days, self-administered in thigh/abdomen | Injection-site reactions (most common); modest infection-risk signal at 3-day acute use | **Minimal known burden** — anakinra is recombinant version of body's endogenous IL-1Ra; no bone / glucose / adrenal effects; long-term concern is only infection masking under chronic use (not relevant for 3-day acute use × few flares/yr) | ~$300/dose × 3 = ~$900 | Rheumatologist (off-label for gout) |
-| **Canakinumab (Ilaris) SC** | Anti-IL-1β monoclonal | 150 mg single SC | Same injection-site profile; longer half-life (~26 days) so chronic exposure window per dose | Same as anakinra's mechanism (no steroid burden); ADAs possible with chronic use but rare | **~$3,000/dose** (FDA-approved for gout but cost barrier) | Rheumatologist; insurance variable |
-| **Colchicine + NSAID** (mild flares) | Microtubule inhibition + COX | 1.2 mg colchicine + NSAID at flare onset | GI (colchicine), GI bleed risk (NSAID), renal (NSAID) | NSAID: real renal burden over years; colchicine: minimal at acute-use dose | ~$20–50 | OTC or any prescriber |
-| **Inhaled mRNA-IL-1RA** *(future, 5–10 yr horizon)* | Same as anakinra — pulmonary mRNA expression of IL-1Ra | Per [comp-036](./computational-experiments.md): BID × 4–14 days reaches **median 50–56% of flare window above 80% receptor occupancy** (best regimen tested); doesn't match anakinra Cmax but partial-suppression may be clinically meaningful vs prednisone burden | Pulmonary irritation; possible LNP innate immune activation; anti-PEG buildup over many lifetime exposures | TBD; in principle cleaner than steroid burden; chronic-LNP-exposure question is open | $25–200/flare projected | Doesn't exist yet (partner-tier development) |
-
-**The decision frame:** if you flare 3–6× per year over decades, **cumulative prednisone burden is the load-bearing concern** (bone / glucose / mood / cataract effects compound). Anakinra SC is the cleanest acute-flare-abort option clinically available *today* — same chokepoint as canakinumab and inhaled mRNA, just SC route. Canakinumab has the longest half-life (one shot covers months) but cost is prohibitive without insurance. Colchicine + NSAID is the right tool for mild flares; inadequate for severe. The inhaled mRNA-IL-1RA route is on a 5–10 year development horizon (per [comp-033](./computational-experiments.md) + [comp-036](./computational-experiments.md)) and is what would change the economics if it lands — same mechanism as anakinra, much lower per-dose cost, different delivery format.
-
-**Anakinra (Kineret) SC for acute flare — bridge while inhaled-mRNA pulse doesn't exist yet.** Off-label for acute gout flare, used in rheumatology practice when corticosteroids are contraindicated or undesirable (recurrent flares + steroid burden). **Route: subcutaneous injection in thigh or abdomen, 100 mg/day × 3 days** — same SC route as insulin, the patient self-administers with a prefilled syringe. **NOT** intra-articular (no needle into the gout joint itself; that's a totally different procedure used for IA corticosteroid injection or the chassis-pending IA uricase concept at [`chassis-pending-interventions.md` §6](./chassis-pending-interventions.md)). Mechanism: recombinant IL-1 receptor antagonist (IL-1Ra) competitively blocks IL-1β signaling — aborts flare within hours via the same CP5a chokepoint as canakinumab, but daily SC dosing vs canakinumab's monthly SC + ~100× lower cost. Side-effect profile: injection-site reactions (most common), low infection-risk signal at the 3-day acute-use protocol (label cautions about TB / fungal infection are for chronic immunosuppression-tier use). Vs prednisone 30-40 mg/day × 2-week taper: anakinra is **faster onset (hours vs days), narrower mechanism (single pathway block vs system-wide glucocorticoid receptor), cleaner cumulative side-effect burden over years of recurrent flares** (no bone loss, no glucose intolerance, no adrenal suppression, no mood / sleep / BP effects). Cost: ~$300/dose, ~$900/flare for the 3-day protocol; insurance coverage variable for off-label use. Access: rheumatologist or forward-thinking internist willing to prescribe off-label. **Bridge until the inhaled mRNA-IL-1RA modality exists** ([`chassis-pending-interventions.md` §4](./chassis-pending-interventions.md), 5–10 year development horizon per [comp-033](./computational-experiments.md) partner-tier analysis); anakinra is the same mechanism + same chokepoint, just SC delivery instead of pulmonary mRNA.
-
-**Evidence level:** Clinical Trial for approved indications; off-label gout use supported by the 2018 Sobi non-inferiority trial (NCT03002974) vs triamcinolone. Cumulative-burden framing is Mechanistic Extrapolation (no randomized trial comparing 30-year prednisone vs anakinra cumulative outcomes — that trial is ethically impossible and numerically intractable). (source: gout-action-guide.md)
+Anakinra is an IL-1 receptor antagonist used off-label in gout. NCT03002974 tested anakinra against triamcinolone for acute gout flares and reported non-inferiority for its primary pain endpoint. Canakinumab directly neutralizes IL-1β and has a US gout indication. These clinical results validate IL-1 signaling as an acute-flare target; they do not validate the separate inhaled mRNA–IL-1Ra proposal. That proposal remains gated on measured pulmonary exposure, receptor occupancy, flare-model efficacy, and repeat-dose pulmonary safety. **Clinical Trial evidence for anakinra and canakinumab; Mechanistic Extrapolation / In Silico for the proposed inhaled modality.**
 
 ---
 

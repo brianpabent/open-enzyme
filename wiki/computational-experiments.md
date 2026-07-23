@@ -50,13 +50,13 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-044 — Gut-Lumen Uricase Physiological Regime Audit — RED FOR LEGACY QUANTITATIVE CLAIM / BIOLOGICAL HYPOTHESIS OPEN (2026-07-13)
+### comp-044 — Gut-Lumen Uricase Physiological-Regime Robustness Audit (2026-07-13)
 
-**Question:** Does comp-019's flat-dose, always-substrate-limited verdict survive explicit use of its own luminal urate, Km, and finite active window?
+**Question:** Is comp-019's unconditional flat-dose classification robust to explicit substrate occupancy and a finite active window under the inherited priors?
 
-**Verdict:** **RED for comp-019's quantitative ΔSUA and flat-dose conclusions; gut-sink biology remains OPEN.** The central 0.59 µM, Km 25 µM, three-hour diagnostic gives capacity ratios 0.093 / 0.466 / 0.932 at 5 / 25 / 50 mg before oxygen, access, or survival penalties, versus the legacy 32.3 / 161.7 / 323.4 Vmax calculation.
+**Verdict:** **COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics.** Using the inherited central priors, the 0.59 µM, Km 25 µM, three-hour diagnostic gives capacity ratios 0.093 / 0.466 / 0.932 at 5 / 25 / 50 mg before additional oxygen, access, or survival penalties, versus the legacy 32.3 / 161.7 / 323.4 saturated-capacity calculation. This is an internal-consistency counterexample. It supplies no replacement ΔSUA, dose, genotype order, physiological regime, efficacy model, topology/chassis selection, production-sufficiency target, or safety conclusion.
 
-**Key findings:** 1,620-cell discrete full-factorial per dose; grid occupancy is not probability; no serum-urate mapping. Independent review confirmed arithmetic and required explicit labeling of pH/oxygen/access/survival as nonmechanistic scenario multipliers and ratio-one as the only physically meaningful regime boundary.
+**Key findings:** 1,620-cell discrete full-factorial per dose; grid occupancy is not probability; no serum-urate mapping. The 8.3 U/mg activity, Km range, 2–4-hour window, and 233 mg/day denominator are inherited or derived, non-planning-grade inputs. Oxygen, access, survival, and pH attenuation are nonmechanistic scenario multipliers; oxygen stoichiometry and peroxide safety are not modeled. Only the ratio-one boundary has direct meaning within the diagnostic.
 
 **Informs:** [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) · [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) · [comp-019 interpretation](./uricase-abcg2-genotype-stratification-computational.md)
 
@@ -164,20 +164,20 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-035 — Intra-articular Uricase H₂O₂ Reaction-Diffusion (3 Architectures) — GREEN (2026-05-16)
+### comp-035 — Intra-articular Uricase H₂O₂ Reaction-Diffusion (3 Architectures) — NON-DECISION-GRADE PHASE-0 PRIOR (2026-05-16; downgraded 2026-07-14)
 
-**Question:** Across Pickering emulsion / uricase-catalase fusion / free co-formulated catalase, does steady-state [H₂O₂] at the synovial-tissue boundary stay below the <10 µM presumptive-safe threshold?
+**Question:** What does a first-pass, well-mixed steady-state model predict for H₂O₂ handling by Pickering emulsion, uricase-catalase fusion, and free co-formulated catalase architectures?
 
-**Verdict:** **All three architectures GREEN under reference conditions.** Pickering median 0.19 µM (p95 1.1); fusion 0.034 µM (p95 0.20); free 0.19 µM (p95 7.2, max 120 worst-case). Free lands YELLOW at uneven URI:CAT ratio.
+**Verdict:** **Non-decision-grade Phase-0 prior; no architecture is cleared or selected.** The frozen v1 runs produced historical median/p95 values of 0.19/1.1 µM for Pickering, 0.034/0.20 µM for fusion, and 0.19/7.2 µM for free co-formulation. Those values describe the implemented assumptions only. They do not establish tissue safety because the steady-state threshold was unverified, loading and active-site accounting were unresolved, and local gradients and exposure time were not modeled.
 
 **Key findings:**
-- FRET-confirmed <10 nm proximity is NOT what closes the diffusion gap; bulk-phase catalase scavenging dominates at joint scale.
-- Catalase (kcat/Km) is the dominant load-bearing input across all architectures (Spearman r ≈ −0.95). Chassis selection driven by production economics / regulatory / formulation, not diffusion math.
-- Toxicity threshold band (10/100 µM) is itself a comp-035 contribution — no published synovial-tissue H₂O₂ curve exists.
+- Within the model, the low Pickering shell Damköhler result suggests that proximity alone did not drive the predicted bulk values; the alternative bulk-catalase explanation remains input-dependent and empirically unvalidated.
+- comp-035 does not establish a safe steady-state threshold, an architecture or chassis winner, or a basis for economics-driven selection.
+- Remaining gates are a matched reaction-site H₂O₂ time course; catalase activity, stoichiometry, retention, and diffusion; local exposure; and tissue safety.
 
 **Informs:** [chassis-pending-interventions §6](./chassis-pending-interventions.md) · [gout-kill-chain-delivery-routes](./gout-kill-chain-delivery-routes.md) · [delivery-route-matrix](./delivery-route-matrix.md) · [engineered-koji-protocol](./engineered-koji-protocol.md)
 
-**Detail:** [interpretive](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) · [experiments/](./etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/) · Complete v1
+**Detail:** [interpretive](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) · [frozen v1 artifact](./etc/experiments/comp-035-ia-uricase-h2o2-reaction-diffusion/) · Reviewed; non-decision-grade
 
 ---
 
@@ -420,17 +420,17 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-001 — Uricase Shio-Koji Protease Stability — LOW (2026-05-05)
+### comp-001 — Uricase Shio-Koji Protease-Site Proxy (2026-05-05)
 
-**Question:** Will *A. flavus* uricase (Q00511) survive the shio-koji protease environment with meaningful activity retained?
+**Question:** What prior do P1/P1' sequence rules and AlphaFold per-residue confidence provide for *A. flavus* UOX (Q00511) before a shio-koji proteolysis assay?
 
-**Verdict:** **LOW risk.** All 356 recognition sites across 3 proteases are in confidently-folded regions (100% residues pLDDT > 80, mean 97.1). Max risk score 0.039/1.0.
+**Verdict:** **Proxy only; empirical risk unresolved.** The analysis mapped predicted cleavage positions and their pLDDT values. pLDDT is model confidence, not solvent accessibility or protease resistance.
 
 **Key findings:**
-- Uricase is exceptionally well-folded (no exposed loops or disordered termini).
-- Shio-koji's 15–20% NaCl suppresses ALP to ~19% residual activity (second independent protective factor).
+- The predicted cleavage positions occur at residues with high AlphaFold confidence; no solvent-accessibility or SASA calculation was performed.
+- The analysis did not measure cleavage, retained activity, salt-conditioned protease behavior in the ferment, or any fermentation outcome.
 
-**Informs:** [validation-experiments §1.10](./validation-experiments.md) — reframes from feasibility gate to confirmation experiment
+**Informs:** [validation-experiments §1.10](./validation-experiments.md) — supplies a sequence/structure proxy while the empirical retained-activity assay remains the decision gate.
 
 **Detail:** [interpretive](./uricase-protease-stability-computational.md) · [experiments/](./etc/experiments/comp-001-uricase-shio-koji-protease-stability/) · Complete
 
@@ -490,7 +490,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Question:** Can the gut-lumen uricase sink produce meaningful SUA reduction in non-Q141K males, or does it rely on Q141K-positive disease-state vulnerability?
 
-**Current verdict:** **SUPERSEDED by comp-044.** Phase A found no Q141K-stratified uricase clinical outcome in the sources searched for comp-019 as of 2026-05-08; this is not a universal absence claim. The model's ΔSUA, genotype ranking, capacity ratios, flat dose-response, and engineering recommendation are retired because the capacity calculation omitted physiological substrate occupancy and finite residence time.
+**Current verdict:** **SUPERSEDED for decision use.** Phase A found no Q141K-stratified uricase clinical outcome in the sources searched for comp-019 as of 2026-05-08; this is not a universal absence claim. COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. COMP-044 supplies no replacement ΔSUA, dose, genotype order, physiological regime, efficacy model, topology/chassis selection, production-sufficiency target, or safety conclusion.
 
 **Key findings:**
 - No Q141K-stratified uricase clinical outcome was identified in the comp-019 searched corpus as of 2026-05-08.
@@ -581,7 +581,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 **Verdict:** **MODERATE** (vs *A. flavus* LOW per comp-010). Design-driven, not fundamental incompatibility.
 
 **Key findings:**
-- Current platform decision: retain both variants as candidates; use §1.33 to select topology, then compare both within a winning koji-compatible topology when the marginal cost remains bounded. The original direct-secretion/$0-fermentation recommendation is superseded.
+- Current platform decision: retain both variants as candidates. Build and characterize the relevant koji configurations first, then use §1.33 to compare them under controlled reaction-site conditions. Within-host results may advance a configuration and nominate its topology; they do not establish a cross-host winner. Compare both payload variants within the advanced configuration only when the marginal cost remains bounded. The original direct-secretion/$0-fermentation recommendation is superseded.
 - Three MODERATE drivers: codon burden 2.3× heavier (CAI 0.65 vs 1.51); 4 free cysteines vs 0; 2 internal KR sites vs 1. ALLN-346 mutation I132R adjacent to position 130 KR.
 - Corrects prior P15296 misattribution; canonical UniProt is **P78609**.
 
@@ -600,7 +600,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 **Key findings:**
 - OE pair equals Huynh 2020 only by bulk disulfide count; protein-architecture-specific ER capacity remains unresolved. Ward 1995 is the protein-specific Lf precedent, while §1.9A is the current-host empirical gate.
 - Monitor Lf KEX2 site at mature pos 579 (moderate truncation risk) by SDS-PAGE; verify uricase secretion vs C-terminal SKL PTS1 motif.
-- Uricase pos 128 high-risk KR is irrelevant within the direct-secretion candidate but becomes load-bearing if §1.33 selects a fusion topology.
+- Uricase pos 128 high-risk KR is irrelevant within the direct-secretion candidate but becomes load-bearing for any fusion configuration supplied to §1.33.
 
 **Informs:** [validation-experiments §1.33 and §1.9](./validation-experiments.md) — removes specific sequence-level blockers from one candidate architecture; does not select topology
 
@@ -677,7 +677,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | ~~comp-027~~ | Completed 2026-05-16; **downgraded to hypothesis-generator 2026-07-14** — single strict-GREEN modeled point at 100 mg/d (not a validated 75–125 window). See Analyses above | — | ✓ Done |
 | ~~comp-030~~ | Completed 2026-05-15 — see Analyses above | — | ✓ Done |
 | ~~comp-029~~ | Completed 2026-05-16 — YELLOW; see Analyses above | — | ✓ Done |
-| ~~comp-031~~ | **Invalidated 2026-07-13** — inherited comp-019's failed UOX regime and unsupported CBT2.0-butyrate assumptions. No quantitative result or topology recommendation survives; see [dual-chassis page](./dual-chassis-ecn-pdb-uricase-computational.md), comp-044/046, and §1.34/§1.37. | — | ✓ Done (invalidated) |
+| ~~comp-031~~ | **Not decision-usable** — its flat-UOX, PDB-derived-butyrate, and compartment assumptions do not support the reported quantitative result or topology recommendation. See [dual-chassis page](./dual-chassis-ecn-pdb-uricase-computational.md), comp-044/046, and §1.34/§1.37. | — | ✓ Done |
 | ~~comp-032~~ | Completed 2026-05-16 — ~~GREEN~~ **SUPERSEDED by comp-047 2026-07-14**; verdict retracted (tautological positive-control validation per comp-review 2026-07-13). See Analyses above | — | ✓ Done (superseded) |
 | ~~comp-047~~ | **Completed 2026-07-14 — INCONCLUSIVE** (real Vina docking). CFTR-corrector positive controls fail to earn rank (0/4); rigid docking can't discriminate Q141K chaperones; chaperone-rescue ranking not computationally established. Supersedes comp-032. See Analyses above | [Q141K trafficking + urate-flux assay](./validation-experiments.md) | ✓ Done |
 | ~~comp-033~~ | Completed 2026-05-16 — RED single-dose Cmax-equivalent; reframed in comp-036 (YELLOW receptor-occupancy). See Analyses above | — | ✓ Done |

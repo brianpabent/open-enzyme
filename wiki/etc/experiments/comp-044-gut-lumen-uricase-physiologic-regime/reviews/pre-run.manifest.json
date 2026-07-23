@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
+      "kind": "design",
+      "bytes": 16792,
+      "sha256": "e966e22765db0e49d84482fb1e6bc382cda35b80e16b07fad0d993cb70548b23"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/analyze.py",
+      "kind": "design",
+      "bytes": 16532,
+      "sha256": "e856e2bece4c446c1ffdae523fe6bf37e46a0a0e3680cca4a4afd540752a1e03"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/model_parameters.json",
+      "kind": "design",
+      "bytes": 2229,
+      "sha256": "f5a7dcf873d787d4586e958846f53e1955c74e56b8de85aa904cefd0ec33d80f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 2769,
+      "sha256": "4d72e6f11420caf7a27323db37005f61443acaee915cd4b38fafbd19c976e6ee"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/query-strategy.json",
+      "kind": "design",
+      "bytes": 620,
+      "sha256": "67c7ea5d9f32be75b494664e9e6b4d73f19de996364f5aef8fe790e6f52bcb7c"
+    }
+  ],
+  "prior_output_baseline": [
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/outputs/results.json",
+      "kind": "prior_output",
+      "bytes": 6122,
+      "sha256": "b782e5f0949b3562c6a6dfa51adddf5cd1e2680a38f3bd5619458d22d7b73f30"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/outputs/summary.md",
+      "kind": "prior_output",
+      "bytes": 3139,
+      "sha256": "6ea3ba07594a3d5a09628c0b1d0577bd49202ab9ff04d6022d970fa263370aa8"
+    }
+  ],
+  "manifest_sha256": "3ac3044399d576331db0c55167e6a5c421f9024d437f61889ef6978704303967"
+}

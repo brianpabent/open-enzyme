@@ -1,347 +1,100 @@
 ---
-title: Aspergillus oryzae (Koji Mold)
-aliases:
-  - koji
-  - koji mold
-  - A. oryzae
-  - Aspergillus oryzae
-related:
-  - saccharomyces-cerevisiae
-  - uricase
-  - etc/open-enzyme-vision
-  - engineered-koji-protocol
-  - gut-lumen-sink
-  - enzyme-deficit-deep-dive
-sources:
-  - engineered-koji-protocol.md
-  - enzyme-deficit-deep-dive.md
-  - etc/open-enzyme-vision.md
-  - blood-barrier-exploits.md
-  - gout-deep-dive.md
-  - koji-home-fermentation.md
+title: "Aspergillus oryzae (Koji)"
+date: 2026-04-21
+tags: [Aspergillus-oryzae, koji, fermentation, enzyme-production, uricase]
+related: [koji-track.md, engineered-koji-protocol.md, koji-construct-design.md, validation-experiments.md]
 ---
 
-# Aspergillus oryzae (Koji Mold)
+# *Aspergillus oryzae* (Koji)
 
-## Overview
+*Aspergillus oryzae* is a filamentous fungus used in East Asian food fermentation and supported by mature genetic and fermentation tools. Open Enzyme tests it as one possible production and delivery chassis for specific gout-relevant payloads. Its food-use history and native enzyme secretion justify experiments; they do not establish safety, dose, efficacy, or superiority for an engineered strain.
 
-*Aspergillus oryzae* (koji mold) is a filamentous fungus with a long history in East Asian food production and mature genetic tooling. It naturally produces lipase, proteases, and amylase. Open Enzyme tests it as one possible food-format chassis for gout payloads, including [[uricase|uricase]]. Native digestive-enzyme production is adjacent work, not the gout mission. (Source: engineered-koji-protocol.md, etc/open-enzyme-vision.md)
+## Native biology relevant to the track
 
-## GRAS Status and Food Safety History
+During solid-state growth on grain, *A. oryzae* produces amylases, proteases, and lipases that break down starch, protein, and fat. It also produces a substrate- and strain-dependent secondary-metabolite background that may include kojic acid, ergothioneine, and ferulic acid.
 
-*A. oryzae* holds FDA GRAS status and has decades of safety documentation. The organism has been used for over a millennium in the production of:
+These outputs create two distinct questions:
 
-- **Miso**: Fermented soybean paste, produced by koji-mediated fermentation
-- **Soy sauce**: Koji is essential to soy sauce production
-- **Sake**: Japanese rice wine, where koji breaks down rice starch into fermentable sugars
-- **Amazake**: Sweet rice drink made directly from koji
-- **Mirin**: Sweet cooking ingredient derived from koji fermentation
+1. Can a defined native enzyme or metabolite be measured reproducibly in the intended process?
+2. Does an engineered payload preserve, alter, or eliminate that native output?
 
-Billions of people have consumed koji-fermented foods without adverse effects. The organism does not produce mycotoxins (unlike some Aspergillus species, notably A. flavus). A. oryzae is a domesticated, carefully maintained organism—Japanese koji makers have propagated specific strains for centuries. (Source: engineered-koji-protocol.md, etc/open-enzyme-vision.md)
+An in-vitro anti-inflammatory mechanism or a fermentation titer does not establish therapeutic exposure. Compare parental and engineered strains under the same process and report the measured output and uncertainty.
 
-## Native Enzyme Production
+The separate wild-type food-fermentation track is documented in [Koji Home Fermentation](./koji-home-fermentation.md). It is not a production protocol for an engineered strain.
 
-Wild-type koji fermentation naturally produces:
+## Engineering toolkit
 
-### Lipase
-Cleaves dietary fats (triglycerides) into fatty acids and glycerol. Critical for fat absorption. Commercial lipase supplements derive from the same organism family. Wild-type koji produces lipase at concentrations equivalent to pharmaceutical-grade digestive enzyme supplements. (Source: enzyme-deficit-deep-dive.md)
+Candidate tools include protoplast-mediated transformation, *Agrobacterium*-mediated transformation, CRISPR/Cas9, auxotrophic selection, and chromosomal integration. Promoter and signal-peptide behavior is protein-, strain-, substrate-, and process-dependent.
 
-### Protease (Multiple Classes)
-Koji produces acid-stable serine proteases, carboxypeptidases, and endopeptidases. These cleave dietary proteins into peptides and amino acids. Acid stability is important because these enzymes function in the acidic stomach environment. Wild-type koji generates protease levels comparable to commercial pancreatic enzyme supplements. (Source: enzyme-deficit-deep-dive.md)
+For UOX work:
 
-### Amylase (Alpha-Amylase and Glucoamylase)
-Koji's primary product during rice fermentation. Breaks down starch (the primary macronutrient in rice) into glucose and maltose. This is why koji is essential to sake production—it converts rice starch into fermentable sugars. Amylase levels reach 15–25% of total soluble protein in koji grown on rice. (Source: enzyme-deficit-deep-dive.md, engineered-koji-protocol.md)
+- `amyB`, `glaA`, and constitutive promoters are candidates to compare;
+- intracellular/release, secretion, surface display, and cell-free recovery remain unranked topologies;
+- `pyrG`, `niaD`, or another justified marker/integration system must be evaluated in the actual host;
+- construct identity, copy number, stability, and off-target integration require direct verification.
 
-### Native Secondary Metabolites: Kojic Acid, Ergothioneine, Ferulic Acid
+See the [matched UOX construct screen](./koji-construct-design.md) for the build contract.
 
-Beyond digestive enzymes, wild-type *A. oryzae* natively produces a suite of bioactive secondary metabolites during standard koji fermentation — without any genetic engineering. These metabolites may matter to gout/NLRP3 hypotheses within the koji track, not only to digestive-enzyme production.
+## UOX hypothesis
 
-**Kojic acid** — *A. oryzae* natively produces kojic acid at **3–5 g/L** during standard rice koji fermentation. Kojic acid has documented **NF-κB suppression activity in multiple inflammatory cell types (In Vitro)**; direct NLRP3 inflammasome activity is unpublished and is flagged as an open question in [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md). Notably, 3–5 g/L native production exceeds the fermentation titers of most engineered NLRP3-inhibitor candidate compounds, which positions *A. oryzae* as a **uniquely endowed host**: it already produces a candidate NLRP3-adjacent compound at therapeutically relevant concentrations as a baseline metabolite. (Source: nlrp3-inhibitor-screen.md, engineered-koji-protocol.md)
+The track asks whether *A. oryzae* can produce active UOX in a configuration that survives processing and functions at an intestinal reaction site. Manufacturing precedent for recombinant proteins in fungi does not answer that question.
 
-**Ergothioneine** — ~20 mg/g dry mycelial mass. Antioxidant; Nrf2 inducer; mitochondrial-targeted ROS scavenger (In Vitro). (Source: engineered-koji-protocol.md)
+### Required measurements
 
-**Ferulic acid** — Present at substrate-dependent titers during rice/bran fermentation; ROS scavenger with GI-tract anti-inflammatory activity (In Vitro). (Source: engineered-koji-protocol.md)
+- UOX identity and mass in intracellular, surface, and extracellular fractions;
+- active IU per culture volume, dry biomass, and final processed material;
+- soluble fraction, oligomer state, aggregation, processing cleavage, and glycosylation where relevant;
+- strain and batch reproducibility;
+- retained activity through the intended fermentation, harvest, drying/formulation, and simulated-transit sequence;
+- substrate removal, oxygen dependence, peroxide, access, and persistence under [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial).
 
-**Koji-track implication:** Any engineered koji strain will retain a native secondary-metabolite background unless engineering changes it. Whether a candidate construct perturbs that background is an open experimental question; see the proposed WT-vs-engineered metabolite-titer comparison in [engineered-koji-protocol.md](./engineered-koji-protocol.md#01b-natural-metabolite-bonus--baseline-fermentation-byproducts).
+General fungal-protein yields, promoter strength, related-species codon usage, or native digestive-enzyme output cannot be converted into a UOX titer, serving, dose, or therapeutic claim.
 
-## Genetic Tractability
+## Reaction-site peroxide
 
-### Transformation Methods
+UOX consumes urate and oxygen and produces hydrogen peroxide. Peroxide control depends on reaction-site topology and measured scavenger capacity.
 
-*A. oryzae* can be transformed using multiple established protocols:
+Intracellular co-localization with host catalase is a hypothesis until localization and activity are measured. Secreted or surface-displayed UOX cannot be assumed to inherit intracellular catalase protection. Measure UOX activity, H₂O₂ time course, catalase activity, viability or tissue effects, and failure modes for every advancing topology. See [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md) and [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial).
 
-**Protoplast-Mediated Transformation (PEG):**
-- Remove cell wall enzymatically to create protoplasts
-- Apply polyethylene glycol (PEG) to facilitate DNA uptake
-- Allows homologous recombination and targeted integration
-- Standard protocol: published, routine in research labs
-- Efficiency: 10³–10⁵ transformants per microgram DNA (depending on protocol)
+## Processing and format gates
 
-**Agrobacterium-Mediated Transformation:**
-- Uses *Agrobacterium tumefaciens* as a biological delivery vector
-- Introduces DNA into *A. oryzae* cells via T-DNA transfer
-- Particularly efficient for targeted gene insertion
-- Enables complex multi-gene constructs
+Fresh material, dried material, lysate, purified enzyme, and other formulations expose UOX to different thermal, proteolytic, localization, and containment constraints. No format is selected from generic heat-stability or food-use assumptions.
 
-**CRISPR-Cas9 Genome Editing:**
-- Modern alternative to traditional homologous recombination
-- Multiple published protocols for CRISPR in *A. oryzae*
-- Enables precise gene editing, deletion, or multi-locus modifications
-- Highly efficient for targeted knockouts or insertions
+For each candidate format, measure:
 
-These transformation methods are routine in academic and industrial biotechnology. The toolkit is mature and reproducible. (Source: engineered-koji-protocol.md)
+- active UOX before and after processing and storage;
+- organism viability and containment status;
+- release and access in the target compartment;
+- impurities, native metabolites, and batch variance;
+- peroxide control and relevant safety endpoints.
 
-### Promoters and Expression Elements
+The output is an assay-qualified research configuration, not a home-use or dosing protocol.
 
-*A. oryzae* has a well-characterized library of characterized promoters available for expression optimization:
+## Engineered-strain safety boundary
 
-**PamyB (α-Amylase Promoter) — THE OPTIMAL CHOICE:**
-- Starch-inducible: activates in response to starch (the primary substrate during koji fermentation on rice)
-- Extremely strong: naturally drives production of amylase, one of the most abundant proteins *A. oryzae* produces
-- Auto-activating when koji is grown on rice—no external inducer needed
-- Proven to drive high-level heterologous protein expression in industrial koji production
-- This promoter is a strategic choice: it self-induces on the exact substrate you're already using for fermentation
+Food-use history applies to established wild-type production organisms and processes; it does not automatically transfer to a modified strain, new payload, new impurities, or new intended use. Advancing constructs require institutional biosafety, containment, identity, contamination, metabolite, allergenicity/immunogenicity, and product-release review appropriate to the work.
 
-**PglaA (Glucoamylase Promoter):**
-- Very strong, starch-inducible
-- Alternative to PamyB with similar induction profile
+ALLN-346 and rasburicase provide evidence about their own enzyme products and routes. They do not establish oral tolerance, efficacy, or safety for an engineered *A. oryzae* product.
 
-**Ptef1 (Translation Elongation Factor 1 Promoter):**
-- Strong, constitutive (always active)
-- Good if constant expression is desired regardless of substrate
-- Slightly weaker than PamyB on starch
+## Multi-cassette boundary
 
-**PgpdA (Glyceraldehyde-3-Phosphate Dehydrogenase Promoter):**
-- Moderate strength, constitutive
-- Reliable housekeeping promoter
-- Good for selection markers but weaker for therapeutic gene expression
+UOX plus lactoferrin or another payload is a later configuration, not an assumed end state. Each single-cassette leg must pass its own expression, activity, processing, reaction-site, and safety gates before a combined strain is justified. Published multi-gene integration and single-protein secretion precedents do not predict combined active output.
 
-**PalcA (Alcohol Dehydrogenase Promoter):**
-- Ethanol-inducible, not ideal for food fermentation
+The [koji endgame strain](./koji-endgame-strain.md) holds that conditional multi-payload hypothesis. Genuine cross-chassis comparison belongs in [modality-chokepoint-matrix.md](./modality-chokepoint-matrix.md) and [chassis-pending-interventions.md](./chassis-pending-interventions.md), not here.
 
-Recommendation: **PamyB is the winner** for a therapeutic koji expressing uricase. It provides strong, auto-inducing expression on rice without external inducers or complex fermentation optimization. (Source: engineered-koji-protocol.md)
+## Decision rule
 
-### Selectable Markers
+| Result | Action |
+|---|---|
+| A configuration produces reproducible active UOX and clears §1.33 | Advance it to [§1.36](./validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay). |
+| Expression is high but reaction-site activity is low | Diagnose topology, access, processing, oxygen, and persistence; do not infer that more yield solves it. |
+| UOX activity passes but peroxide or safety fails | Test a justified scavenger or different topology; do not promote the current construct. |
+| No *A. oryzae* configuration clears the gates | Document the failure and redirect the payload or test another gout exploit. |
 
-**pyrG (Uridine Prototrophy) — PREFERRED FOR FOOD-GRADE:**
-- Enables selection on media lacking uridine/uracil
-- Counter-selection available (5-FOA selects against pyrG)
-- No antibiotic resistance markers—food-safe
-- Enables marker recycling for sequential transformations
-- Standard *A. oryzae* host strain NSAR1 is pyrG-deficient, making this marker ideal
+## Sources
 
-**Other Options (Less Ideal for Food-Grade Applications):**
-- niaD (nitrate utilization) — food-safe, selects on nitrate as sole nitrogen source
-- amdS (acetamide utilization) — dominant marker, works in wild-type backgrounds
-- hph (hygromycin B resistance) — dominant antibiotic marker, simpler selection but less ideal for food organisms
-
-For a food-grade therapeutic organism, pyrG is strongly preferred. (Source: engineered-koji-protocol.md)
-
-## Genetic Relatedness to A. flavus
-
-*A. oryzae* and *A. flavus* are phylogenetically extremely close—they share >99.5% genome similarity in coding regions and nearly identical codon usage. This proximity means that the [[uricase|uricase gene (uaZ) from A. flavus]] should express well in *A. oryzae* without codon optimization, though optimization may further improve expression levels. The transcriptional and translational machinery of *A. oryzae* is essentially pre-adapted to handle *A. flavus* genes. (Source: engineered-koji-protocol.md)
-
-## Fermentation: Growing Koji on Rice
-
-Traditional koji fermentation is ancient, reproducible, and well-characterized. In brief: koji-kin (種麹, *tane-koji* — the dried spore inoculum, the starting material) is mixed into steamed short-grain white rice and held at 30–32°C / >80% humidity for 36–48 h with periodic turning (手入れ) to manage heat and moisture, yielding koji rice (麹, *kōji* — the working enzyme substrate). The koji-kin-vs-koji-rice distinction, the full turning schedule, endpoint criteria, and a contamination troubleshooting table are canonical in [Koji Home Fermentation](./koji-home-fermentation.md). That page is the wild-type baseline the engineered strain must outperform.
-
-### Enzymatic Activity Output
-
-Koji fermentation produces enzymes at concentrations comparable to commercial enzyme supplements:
-
-| Enzyme | Activity Level | Notes |
-|---|---|---|
-| Alpha-amylase | 15–25% of total soluble protein | Starch → glucose/maltose conversion |
-| Acid-stable protease | ~10–15% of total soluble protein | Protein → peptides, survives stomach pH |
-| Lipase | ~5–10% of total soluble protein | Fat → fatty acids + glycerol |
-
-These are the same enzymes in commercial pancreatic enzyme supplements like Creon and Zenpep. Traditional koji delivers them at food scale. (Source: enzyme-deficit-deep-dive.md, etc/open-enzyme-vision.md)
-
-## Engineered Koji: Adding Uricase
-
-### Expression Cassette Design
-
-The standard expression cassette for uricase in koji:
-
-```text
-5' ──┤ PamyB ├──┤ SPamyB ├──┤ uaZ CDS (Δ PTS1, codon-opt) ├──┤ TtrpC ├── 3'
-```
-
-**Components:**
-- **PamyB** — starch-inducible α-amylase promoter (strong, auto-activating on rice)
-- **SPamyB** — α-amylase signal peptide (directs protein to secretion, extracellular accumulation)
-- **uaZ CDS** — *Aspergillus flavus* uricase gene, codon-optimized, PTS1 signal removed
-- **TtrpC** — *Aspergillus nidulans* trpC terminator (universal in Aspergillus)
-
-**Selectable Marker:**
-- **pyrG** (uridine prototrophy) — enables selection on uridine-free media, food-safe
-
-Gene synthesis cost: ~$80–150 for the uaZ coding sequence (~906 bp), or ~$300 for the entire cassette. (Source: engineered-koji-protocol.md)
-
-### Integration Strategy
-
-**Genomic Integration (Preferred):**
-- *Aspergillus* lacks stable episomal plasmids—integration is chromosome-based
-- **Targeted integration** at a defined safe locus (neutral integration site) ensures:
-  - Single-copy gene insertion (predictable expression)
-  - No disruption of essential genes
-  - Reproducible expression over generations
-  - Strain stability for ongoing home fermentation
-
-**Methods:**
-- Homologous recombination (flanking sequences homologous to target site)
-- CRISPR-Cas9 (modern, highly efficient, precise)
-
-(Source: engineered-koji-protocol.md)
-
-### Expected Uricase Expression
-
-In *S. cerevisiae*, the same *A. flavus* uricase gene achieves ~13% of total cellular protein. In *A. oryzae*, comparable or higher expression is expected because:
-- A. oryzae naturally produces massive amounts of secreted proteins (amylase, proteases, lipase)
-- The PamyB promoter is one of the strongest promoters in any filamentous fungus
-- A. oryzae has evolved robust protein folding and secretion machinery for high-volume enzyme production
-
-Rough estimate: 50–100 mg of uricase per liter of koji culture, or ~5–10 mg per 50g of fermented koji on rice. This would be sufficient for therapeutic dosing in a food format. (Source: engineered-koji-protocol.md)
-
-## Delivery Formats for Therapeutic Koji
-
-The wild-type format recipes — fresh koji, shio-koji (salt/water ratios, marinade use), amazake-style beverage, and dried powder, with shelf lives and the shio-koji "highest-leverage for EPI" pre-digestion argument — are canonical in [Koji Home Fermentation](./koji-home-fermentation.md). That page is the wild-type baseline the engineered strain must outperform for EPI applications. The engineered-strain-specific constraints layered on top of those formats:
-
-- **Uricase heat sensitivity governs format choice.** *A. flavus* uricase loses activity above 40°C, so conventional heat drying (50–60°C) destroys it; **lyophilization** (with trehalose or maltodextrin lyoprotectant) is required for a dried-powder uricase format. Amazake's 55–60°C hold is near uricase denaturation temperature — expect some uricase activity loss in a beverage format, though digestive enzymes (amylase, protease) are more heat-stable. (Mechanistic Extrapolation; source: koji-home-fermentation.md)
-- **Capsule format:** size 00 capsules (~500 mg each), shelf-stable months refrigerated or frozen.
-
-(Source: engineered-koji-protocol.md, engineered-yeast-uricase-proposal.md, koji-home-fermentation.md)
-
-## Hydrogen Peroxide Byproduct Management
-
-Uricase catalyzes: Uric acid + O₂ + H₂O → 5-hydroxyisourate → allantoin + CO₂ + **H₂O₂**
-
-H₂O₂ (hydrogen peroxide) is generated as a byproduct. In cells, catalase immediately degrades this to water and oxygen. In the gut lumen and koji medium:
-
-- Koji naturally produces catalase (abundant in fungi — multiple homologs including catA, catR in the *A. oryzae* genome; peroxisomal localization)
-- Native uricase has a C-terminal PTS1 (SKL) peroxisomal targeting signal, putting uricase and catalase in the same organelle when retained
-- H₂O₂ production is minimal at expected therapeutic uricase activity levels
-- Gut lumen has significant peroxidase activity from microbiome and epithelial cells
-- H₂O₂ is rapidly scavenged and not a safety concern at therapeutic doses
-
-The peroxisomal co-localization of uricase + endogenous catalase is the basis for the chassis-as-formulation argument: the whole-cell oral chassis solves H2O2 housekeeping for free, an advantage every alternative delivery route has to re-solve through formulation engineering. See [`engineered-koji-protocol.md` §"The Hydrogen Peroxide Question — and why the chassis solves it for free"](./engineered-koji-protocol.md) and [`delivery-route-matrix.md` §"Chassis-as-formulation"](./delivery-route-matrix.md) for the route-by-route treatment.
-
-(Source: engineered-koji-protocol.md, delivery-route-matrix.md)
-
-## Safety Considerations
-
-### No Mycotoxin Production
-*A. oryzae* does not produce aflatoxins or other major mycotoxins. It is explicitly distinguished from its pathogenic relative *A. flavus*, which can produce aflatoxins. A. oryzae is used in food production precisely because of this safety profile. (Source: engineered-koji-protocol.md)
-
-### Immunogenicity Concerns (Minimal)
-- Koji is GRAS and consumed in food
-- Oral tolerance to fungal antigens is inherently high (mucosal immune system is tolerogenic)
-- Engineered strains carry only the uricase transgene (no virulence factors added)
-- Phase 1 trials of oral uricase (ALLN-346) showed no immune reactions or serious adverse events (Source: engineered-koji-protocol.md, engineered-yeast-uricase-proposal.md)
-
-### Proper Fermentation Controls
-- Prevent contamination with non-GRAS molds by using pure cultures and maintaining clean fermentation conditions
-- Monitor for off-odors or discoloration (signs of contamination)
-- Discard any koji that shows green, black, or unusual coloration
-
-## Yellow vs. White vs. Black Koji for Home Use
-
-For EPI / digestive-enzyme home use, yellow koji (*A. oryzae*) is the default — highest amylase and standard protease, sweetest amazake, most documentation. White koji (*A. luchuensis* var. *kawachii*) is functional but tangier with slightly lower diastatic power; black koji (*A. luchuensis* var. *awamori*) is rare in DIY use. The full strain-comparison table and sourcing notes are canonical in [Koji Home Fermentation §strain selection](./koji-home-fermentation.md). (source: koji-home-fermentation.md)
-
-**Key limitation for fat malabsorption EPI:** Lipase activity of *A. oryzae* shio-koji is low compared to *A. niger* or engineered strains — likely the limiting digestive-enzyme axis for fat malabsorption phenotype EPI. This is an open question requiring quantitative comparison vs. commercial PERT (Creon, Zenpep). (source: koji-home-fermentation.md)
-
-## Role in the Open Enzyme Portfolio
-
-*A. oryzae* is the chassis under test in the [engineered-koji track](./koji-track.md). Host choice is payload- and format-specific: yeast, live biotherapeutics, cell-free production, or non-biological delivery may be better for other exploits. Koji evidence should decide koji configurations, not define the project. (source: koji-track.md)
-
-**Why the koji track remains worth testing:**
-- Secretion capacity: native koji secretes 25–30 g/L into growth media (industrial fermentation); *S. cerevisiae* typically reaches 0.5–2 g/L for heterologous secreted proteins — an order-of-magnitude advantage for any secreted enzyme. (Mechanistic Extrapolation)
-- Multi-enzyme baseline: wild-type koji already produces lipase, protease, and amylase at therapeutically relevant levels, plus natural kojic acid, ergothioneine, and ferulic acid — pathway-modulator-adjacent compounds on day zero, before any engineering.
-- Dose scalability: ~10–15 g of engineered koji is in the therapeutic ballpark for Creon-equivalent digestive enzyme dosing — a lower mass burden than gram-scale yeast consumption for comparable activity.
-
-**Candidate multi-cassette configuration:** The **koji multi-payload strain** (see [wiki/koji-endgame-strain.md](./koji-endgame-strain.md)) — one engineered *A. oryzae* strain layering engineered uricase + engineered lactoferrin onto native kojic acid + native ergothioneine, covering five NLRP3-pathway chokepoints. The Ward 1995 *A. awamori* glucoamylase-KEX2 dual-cassette architecture is the gating feasibility test ($3–5k, 8–12 weeks). An optional third cassette — **carnosine co-expression** (Lactobacillus CarnS + bacterial panD for β-alanine supply) — is the highest-priority extension for a male/high-androgen product configuration, countering androgen-driven URAT1 upregulation at the renal level. Carnosine cannot be delivered via shio-koji (protease hydrolysis over 7–14 days); default format is dried/heat-inactivated koji powder. See [engineered-koji-protocol.md §15](./engineered-koji-protocol.md) for the full co-expression protocol. (source: etc/open-enzyme-vision.md, §4; koji-endgame-strain.md §2.5)
-
-**Killshot #1 update (2026-05-05):** The literature/patent landscape deep-dive for [H01](./hypotheses/H01-ward-dual-cassette.md) (the Ward 1995 dual-cassette feasibility hypothesis) **survived** with a partial-validates / confirms-novelty outcome. Key findings that update the *A. oryzae* engineering picture: (In Vitro; source: H01-ward-dual-cassette.md)
-
-- **Dual-cassette architecture in *A. oryzae* is well-precedented under submerged conditions.** Huynh et al. 2020 (PMC7257131) demonstrated adalimumab heavy + light chain co-expressed as two separate AmyB-KRGGG-fusion cassettes in *A. oryzae* RIB40-derived host at 39.7 mg/L functional IgG — a direct architectural analogue of the Ward 1995 design. Wakai et al. 2019 (PMID 30623869) demonstrated three distinct heterologous cellulases co-expressed in *A. oryzae* submerged culture. The species-translation assumption (*A. awamori* → *A. oryzae*) is no longer a mechanistic extrapolation — it is supported by multiple independent In Vitro precedents.
-- **Protease-deletion host is now the default recommendation for the lactoferrin cassette, not a fallback.** Huynh 2020 showed that wild-type RIB40 was inadequate for functional antibody production; only the **ten-protease-deletion strain (NSlD-ΔP10**: ΔtppA ΔpepE ΔnptB ΔdppIV ΔdppV ΔalpA ΔpepA ΔAopepAa ΔAopepAd ΔcpI) reached the 39.7 mg/L titer. For the Lf side of the dual cassette to clear the 500 mg/L threshold, starting from a comparable protease-knockout chassis is the safer default. (In Vitro; source: H01-ward-dual-cassette.md)
-- **NSAR1 5-marker platform confirmed.** Oikawa 2020 (PMC7725655) documents NSAR1 (niaD⁻, sC⁻, ΔargB, adeA⁻) plus *ptrA* pyrithiamine-resistance marker providing **5 simultaneous integration slots** — used for ≥17-gene fungal biosynthetic gene cluster reconstitutions. The H01 2-cassette design uses two of those slots; three remain free for downstream additions. (In Vitro; source: H01-ward-dual-cassette.md)
-- **Solid-state dual-protein remains the un-tested cell.** Sun et al. 2024 (PMC11051239) explicitly notes that "there are certain proteins that are not secreted in solid-state culture, unlike submerged culture, such as the glucoamylase-encoding gene glaB" — solid-state and submerged secretion patterns differ in protein-specific ways. Whether AmyB-fused Lf and uricase fall on the "secretes in both" or "secretes in submerged only" side of this divide is the actual experimental novelty of §1.9. (In Vitro; source: H01-ward-dual-cassette.md)
-
-**comp-010 cassette compatibility update (2026-05-05; count corrected 2026-07-13):** In silico sequence analysis of the uricase (Q00511) + lactoferrin (P02788) payload pair found **no blocking cassette-design issues** for the proposed asymmetric architecture (direct-secretion uricase + glucoamylase-KEX2 lactoferrin). Overall cassette-design risk: **LOW** (Mechanistic Extrapolation). Two actionable design notes before gene synthesis: (1) monitor lactoferrin's moderate-risk internal KEX2 site at mature position 579 by SDS-PAGE; (2) verify whether the *A. flavus* UOX C-terminal SKL causes peroxisomal misrouting and mask it if necessary. The pair has 16 bulk disulfides, all on Lf (Notari 2023, PMC10465537), equal by count to the Huynh 2020 adalimumab reference. Because fold architectures differ, equal count is not evidence of equal ER burden; the §1.9A Lf-only arm is the empirical resolver. Full analysis: [cassette-compatibility-computational.md](./cassette-compatibility-computational.md).
-
-**comp-011 C. utilis uricase cassette compatibility (2026-05-05; sequencing corrected 2026-07-13):** The same seven-analysis pipeline was run on *C. utilis* uricase (P78609) + lactoferrin in the Ward architecture. Verdict: **MODERATE** versus *A. flavus* LOW, driven by codon adaptation, four free cysteines, and internal KR sites. The ALLN-346 mutation set remains a candidate. The old recommendation to order both as parallel direct-secretion §1.9 cassettes is conditional on §1.33: select topology first, then compare variants within a winning koji-compatible topology if marginal cost remains bounded. (Mechanistic Extrapolation.)
-
-**Chaperone-orthogonal cassette stacking framework (2026-05-05):** A predictive design framework for multi-cassette *A. oryzae* yield was formalized in [chaperone-orthogonal-stacking.md](./chaperone-orthogonal-stacking.md). The key insight: multi-cassette yield is dominated by competition for ER folding subsystems (BiP/Kar2, PDI/ERO1, calnexin/calreticulin), not by genome real estate or transcription capacity. Cassettes partitioned across non-overlapping chaperone classes stack with near-additive yield; cassettes competing for the same subsystem show steep yield collapse. The koji multi-payload strain is implicitly chaperone-orthogonal: uricase (BiP-transit only, 0 disulfides), lactoferrin (PDI-heavy, 16 disulfides per Notari 2023 PMC10465537; architecture-adjusted effective PDI load 24–40 per [chaperone-orthogonal-stacking.md §3.5](./chaperone-orthogonal-stacking.md)), carnosine (cytosolic, bypasses secretion entirely), native digestives (light, well-adapted). Predicted weighted synergy ≥0.85 for the four-molecule multi-payload strain — approximately Huynh 2020 adalimumab equivalent burden. Key caveat: constitutive HacA<sup>i</sup> (UPR activation) is **not** a default lever in koji — Zhou 2016 found it suppresses native amylase output via RESS feedback, which would undermine the digestive-enzyme leg. The highest-leverage capacity-expansion lever is cross-class chaperone helper combinations (Pichia precedent: YDJ1+PDI 8.7×, YDJ1+Sec63 7.6×, Kar2+PDI 6.5× absolute uplift over baseline; Zhang 2006 *Biotechnol Prog* 22(4):1090-5, [DOI 10.1021/bp060019r](https://doi.org/10.1021/bp060019r), abstract verified 2026-05-06 — see [chaperone-orthogonal-stacking.md §10.1 Verification provenance](./chaperone-orthogonal-stacking.md#101-verification-provenance) for the intra-paper combination/single advantage caveat). Multilingual lit scan (J-STAGE, CiNii, CNKI) confirmed no published predictive chaperone-orthogonality framework exists for koji. (Mechanistic Extrapolation; source: chaperone-orthogonal-stacking.md)
-
-## Why this chassis remains worth testing
-
-Koji is one candidate chassis in the [[open-enzyme-vision|Open Enzyme]] portfolio. It combines a long food-use history, mature genetic tools, solid-state fermentation, and native secretion of digestive enzymes. Those properties make it a plausible host for specific oral enzyme configurations; they do not make it the project thesis. Its value is conditional on measured expression, activity, GI survival, safety, and reproducibility. Failure at those gates should be documented and should redirect work to another host or modality.
-
-## Comparison to Saccharomyces cerevisiae
-
-Both [[saccharomyces-cerevisiae|S. cerevisiae]] and *A. oryzae* can express uricase. The comparison is payload- and delivery-specific:
-
-| Feature | A. oryzae (Koji) | S. cerevisiae (Yeast) |
-|---|---|---|
-| Native enzymes | Lipase, protease, amylase | None relevant to the current enzyme configuration |
-| GRAS status | Yes (1000+ years food use) | Yes |
-| Genetic engineering | Mature, CRISPR-ready, industrial standard | Undergraduate coursework-level |
-| Food format | Shio koji, amazake, fermented paste | Non-alcoholic beverage, capsule |
-| Fermentation | 36–48h on rice, ambient conditions | Liquid fermentation, 3–7 days |
-| Enzyme stability (drying) | Good (when lyophilized) | Moderate |
-| Multi-enzyme option | Native digestive enzymes plus an engineered payload | Engineered payloads require explicit cassette design |
-
-Koji is favored only where its native secretion and food format improve a defined configuration. *S. cerevisiae* remains a competing host with a faster and more mature engineering workflow. The relevant experiment chooses between them; project identity does not. (Source: engineered-koji-protocol.md, engineered-yeast-uricase-proposal.md)
-
-## Future: Multi-Compound Koji
-
-The [[nlrp3-exploit-map|NLRP3 inflammasome pathway]] suggests optional payloads to test if the base chassis clears its gates:
-
-With modern CRISPR tools and *A. oryzae*'s robust synthetic biology toolkit, future iterations of koji could be engineered to simultaneously produce:
-
-1. **Uricase** — dissolves uric acid (upstream prevention)
-2. **KPV peptide-like** anti-inflammatory peptides — NF-κB suppression
-3. **Enhanced spermidine biosynthesis** — autophagy activation
-4. **Nrf2-activating compounds** — antioxidant defense
-
-This is a high-complexity, falsifiable configuration—not an assumed endpoint. Each added payload must beat the simpler alternative of separate manufacture or a different modality. (Source: nlrp3-exploit-map.md)
-
-## Track-specific engineering implications
-
-**Koji Construct Design Finalized:**
-- **Promoter:** amyB (α-amylase, starch-inducible, 6–10× baseline) — auto-activates on rice substrate without external induction
-- **Expected Uricase Yield:** 40–80 mg uricase per gram of fermented koji (assuming 5–10 g/L total secreted protein on rice substrate)
-- **Dual-output hypothesis:** Native digestive enzymes may remain available alongside engineered uricase, subject to direct activity and burden measurements.
-
-**Strain Recommendation: RIB40**
-- Complete genomic sequence enables CRISPR/Cas9 refinement
-- 65 endopeptidase + 69 exopeptidase genes support efficient protein degradation
-- Lipase activity: 1,813–2,280 U/g koji (rice bran substrate optimal)
-- Dosing equivalence: 10–15 g optimized koji ≈ single Creon dose (25,000 USP lipase units)
-
-**Wild-Type OTC Benchmark and Unit Conversion (updated April 2026):**
-- The nearest commercial benchmark for the digestive-enzyme configuration is the wild-type *A. oryzae* OTC product class (e.g., BoulderBio at 40,000 FIP lipase per capsule), not Creon. This is the closest commercial analogue to a finished koji-derived enzyme product. (source: digestive-enzyme-optimization.md)
-- **FIP vs. USP unit distinction:** 40,000 FIP ≈ 9,000–10,000 USP at standard activity assays (In Vitro). A 40,000 FIP cap delivers roughly 1/3 of a 25,000 USP Creon meal-dose. (source: digestive-enzyme-optimization.md)
-- **pH stability advantage:** *A. oryzae* lipase is active across pH 4–10, broader than porcine pancreatic lipase; survives gastric transit better without enteric coating. (In Vitro; source: digestive-enzyme-optimization.md)
-- **Engineered koji lipase yield in FIP terms:** 1,813–2,280 U/g koji translates to **~50,000–60,000 FIP per dried gram** at typical assay conditions — meaning 1 g engineered koji could match BoulderBio's 2-cap dose. (Mechanistic Extrapolation; source: digestive-enzyme-optimization.md)
-
-**n=1 Tolerability Datum (April 2026):**
-- Wild-type *A. oryzae*-derived enzymes (BoulderBio) were well-tolerated across 30+ meals in a single subject — no adverse reactions, no allergic response. (Clinical n=1, unblinded, uncontrolled; source: digestive-enzyme-optimization.md)
-- A clear decoupling of liquid stool from pain — against a long-stable baseline — was observed on the 2-cap protocol at 2026-04-25 breakfast (~15–20 g fat). This is an n=1 signal for the digestive-enzyme mechanism before engineering. (Clinical n=1; source: digestive-enzyme-optimization.md)
-- **Split-dose finding:** A 1+1 split (1 cap at first bite + 1 at ~10 min) was successful for very fatty meals (>25 g fat), suggesting dose magnitude and duration both matter. A future digestive-enzyme configuration should test sustained release or split dosing rather than assume either is beneficial. (Mechanistic Extrapolation; source: digestive-enzyme-optimization.md)
-
-**Codon Optimization for A. oryzae:**
-- Native GC content: 48% (A. flavus ~48%; near-perfect match)
-- A. flavus uricase requires minimal codon optimization (unlike S. cerevisiae)
-- Target GC 48–52% (aligned with A. oryzae preferences)
-
-See [[ai-analysis/06-koji-construct-design|06 — Koji Construct Design]] and [[ai-analysis/08-digestive-enzyme-optimization|08 — Digestive Enzyme Optimization]] for complete fermentation protocols, strain comparisons, and dosing calculations.
-
-## References
-
-- Source: engineered-koji-protocol.md — Complete protocol for A. oryzae transformation, fermentation, and dosing
-- Source: enzyme-deficit-deep-dive.md — Enzyme insufficiency and koji's native therapeutic potential
-- Source: etc/open-enzyme-vision.md — Mission and portfolio relationship to the koji track
-- Source: nlrp3-exploit-map.md — Future multi-compound koji engineering
-- Source: blood-barrier-exploits.md — Gut-lumen enzyme delivery route validation
+- [Genome sequence of *A. oryzae*](https://www.nature.com/articles/nature04300)
+- [*A. oryzae* as a cell factory](https://pmc.ncbi.nlm.nih.gov/articles/PMC11051239/)
+- [Promoter tools for *A. oryzae*](https://fungalbiolbiotech.biomedcentral.com/articles/10.1186/s40694-020-00093-1)
+- [Codon optimization in *A. oryzae*](https://pmc.ncbi.nlm.nih.gov/articles/PMC2576710/)
+- [Filamentous-fungal protein-expression engineering](https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2020.00293/full)

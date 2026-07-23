@@ -1,209 +1,93 @@
 ---
-title: Uricase (Urate Oxidase)
-aliases: 
-  - urate oxidase
-  - uox gene
-  - rasburicase
-related:
-  - nlrp3-inflammasome
-  - gut-lumen-sink
-  - abcg2-modulators
-  - androgen-urate-axis
-  - saccharomyces-cerevisiae
-  - aspergillus-oryzae
-  - blood-barrier
-sources:
-  - gout-deep-dive.md
-  - enzyme-deficit-deep-dive.md
-  - engineered-yeast-uricase-proposal.md
-  - engineered-koji-protocol.md
-  - blood-barrier-exploits.md
-  - etc/open-enzyme-vision.md
+title: "Uricase (Urate Oxidase)"
+aliases: [urate oxidase, UOX, rasburicase]
+related: [gut-lumen-sink.md, uricase-variant-selection.md, blood-barrier-exploits.md, validation-experiments.md]
+sources: [gout-deep-dive.md, gout-clinical-pipeline.md]
 ---
 
 # Uricase (Urate Oxidase)
 
-## Overview
+Uricase (UOX; EC 1.7.3.3) oxidizes urate toward allantoin while consuming oxygen and generating hydrogen peroxide. Humans lack functional UOX, which contributes to higher urate exposure than in uricase-positive mammals. Gout still emerges from the combined production, transport, solubility, crystal, inflammatory, renal, and treatment context; UOX loss is not a complete single-cause explanation.
 
-Uricase (EC 1.7.3.3), also called urate oxidase, is the enzyme that catalyzes the conversion of uric acid into allantoin—a highly soluble, easily excreted compound. It is present in nearly all mammals except humans, great apes, and some other primates. For humans, the functional uricase gene (UOX) is a non-functional pseudogene, inactivated by two nonsense mutations at codons 33 and 187, plus an aberrant splice site. (Source: gout-deep-dive.md)
+## Why it is an exploit
 
-## Evolutionary Loss
+Restoring UOX activity attacks urate upstream of monosodium-urate crystallization. Clinical systemic uricases establish that sufficiently exposed active enzyme can lower urate and dissolve crystal burden. They also expose the core constraints: immune response, repeat dosing, persistence, route-specific safety, and hydrogen peroxide. **Clinical Trial evidence.**
 
-The functional uricase gene (UOX) was inactivated ~15–20 million years ago and is now a pseudogene (nonsense mutations at codons 33 and 187 plus an aberrant splice site) — a loss that appears to have been positively selected. Three non-exclusive selective rationales (fructose-fat storage, antioxidant/neuroprotection, blood-pressure maintenance) are reviewed in depth, with the Gaucher-lab 2025 CRISPR confirmation of the fructose-lipogenesis link, in [gout-deep-dive.md §"Evolutionary Loss"](./gout-deep-dive.md) and [gout-pathophysiology.md](./gout-pathophysiology.md). The therapeutic upshot: because urate retains beneficial antioxidant roles, the optimal target is "below crystallization threshold," not "as low as possible."
+The engineering question is therefore not whether UOX catalysis exists. It is whether a specific sequence, topology, formulation, and route can place enough active enzyme at the intended reaction site with acceptable oxygen, peroxide, immune, tissue, and manufacturing behavior.
 
-## The Missing Enzyme Problem
+## Reaction and molecular boundary
 
-The absence of a functional uricase is the root cause of gout: humans maintain serum uric acid at 3.5–7.2 mg/dL (vs. <2 mg/dL in uricase-positive mammals), and above the ~6.8 mg/dL saturation point monosodium urate (MSU) crystals deposit in joints and tissues. Full pathophysiology — purine catabolism, transporter network, the under-excretor phenotype, NLRP3 → IL-1β flare cascade — is in [gout-pathophysiology.md](./gout-pathophysiology.md) and [gout-deep-dive.md](./gout-deep-dive.md). (Source: engineered-yeast-uricase-proposal.md, gout-deep-dive.md)
+The *Aspergillus flavus* rasburicase parent is a well-characterized tetrameric UOX and one candidate sequence among several. Sequence identity, oligomerization, kinetics, pH response, impurities, aggregation, and coproduct formation must be characterized for the actual product.
 
-## Molecular Characteristics
+Purified-enzyme specific activity measured under favorable assay conditions cannot be multiplied by a whole-body urate budget to obtain an oral dose. Local substrate, replenishment, topology, oxygen, peroxide, access, persistence, transit, reabsorption, renal compensation, and other disposal pathways intervene.
 
-The *Aspergillus flavus* uricase gene (uaZ), the most well-characterized and therapeutically relevant source, encodes a protein with these properties:
+## Evidence by route
 
-- **Protein size:** 301 amino acids per monomer; ~34 kDa per subunit
-- **Native quaternary structure:** Homotetramer, ~135 kDa total
-- **Cofactors:** None required (no metal, no heme)
-- **Reaction:** Uric acid + O₂ + H₂O → 5-hydroxyisourate → allantoin + CO₂ + H₂O₂
-- **Peroxisomal targeting:** Native protein has C-terminal PTS1 signal (SKL)
-- **Crystal structure:** Solved at high resolution (PDB: 1R56, 3BJP, others); active site well-characterized
+### Systemic enzyme replacement
 
-(Source: engineered-koji-protocol.md)
+Rasburicase and pegloticase demonstrate systemic UOX pharmacology in defined clinical settings. Their efficacy and risks belong to those products, routes, and patient populations; they do not validate a new oral, local, or engineered-organism configuration. **Clinical Trial evidence.**
 
-## FDA-Approved Uricase: Rasburicase
+### Oral purified enzyme
 
-**Rasburicase** (brand names: Elitek/Fasturtec) is the only FDA-approved recombinant uricase, approved by the EMA in 2001 and the FDA in 2002. It is produced by expressing the *A. flavus* uricase gene in genetically modified *Saccharomyces cerevisiae*. The enzyme is used intravenously for tumor lysis syndrome in cancer patients. (Source: gout-deep-dive.md, engineered-yeast-uricase-proposal.md)
+ALLN-346 tested engineered *Candida utilis* UOX intended to act in the gut lumen. Oral treatment reduced plasma urate in urate-oxidase-deficient mice under the reported conditions ([Pierzynowska et al. 2020](https://doi.org/10.3389/fmed.2020.569215)). Study 201 ([NCT04987242](https://clinicaltrials.gov/study/NCT04987242)) completed with 16 participants, but its Phase 2a abstract reports only the first 11 adults with hyperuricemia and normal renal function through stage 2 CKD; it reports a statistically significant mean serum-urate reduction versus placebo during seven days of treatment ([Terkeltaub et al. 2022](https://doi.org/10.1136/annrheumdis-2022-eular.1662)). Study 202 ([NCT04987294](https://clinicaltrials.gov/study/NCT04987294)) enrolled 19 and terminated for company financing with no results posted to the registry. This evidence does not supply a transferable human dose-response, serum effect, safety profile, formulation, or chassis. **Animal Model + limited Clinical Trial evidence.** See [gout clinical pipeline](./gout-clinical-pipeline.md).
 
-### Rasburicase Limitations
+### Living gut-local systems
 
-Approximately 60% of patients receiving repeated rasburicase doses develop anti-drug antibodies (ADAs) that neutralize the enzyme, limiting its use to short-course therapy and creating infusion reactions on reexposure. (Source: gout-deep-dive.md)
+PULSE used a local urate-responsive controller, multiple UOX topologies, and oxygen/peroxide-management components in engineered *E. coli* Nissle; it altered urate phenotypes in rodents. The sensor responds to local urate exposure, not serum urate directly. **In Vitro + Animal Model** (Gao et al. 2025, PMID 41038159).
 
-## Oral Uricase: ALLN-346
+An engineered *S. boulardii* system demonstrated UOX expression and urate-degradation activity under its assay conditions. **In Vitro.** Neither system establishes a human dose, dosing frequency, topology winner, or product format.
 
-**ALLN-346** was an engineered oral uricase developed by Allena Pharmaceuticals. It is an engineered variant of *Candida utilis* uricase, modified using protein engineering to have 20-fold increased stability against pancreatic proteases (half-life of 85.3 min vs. 4.3 min for wild-type *C. utilis* enzyme in 80 ng/μL pancreatin) while maintaining specific activity. (Source: engineered-yeast-uricase-proposal.md)
+## Gut-lumen boundary
 
-### Program Status (2026-04-23)
+Luminal UOX may act without crossing epithelium, but it must receive substrate and oxygen in the same compartment where active enzyme persists. [COMP-044](./gut-lumen-uricase-physiologic-regime-computational.md) found that the old unconditional flat-dose classification was not robust to its tested substrate-occupancy and finite-window diagnostics; it did not identify the true physiological regime, reverse the old conclusion, or supply an efficacy model.
 
-**The ALLN-346 program is no longer active.** The Phase 2a CKD trial NCT04987294 — the pivotal study planned across 17 US sites — was **terminated September 2022 with only 19 patients enrolled** against a planned cohort of >200. The three earlier Phase 1/2 studies (NCT04236219 SAD, NCT05168683 enteric coating scintigraphy, NCT04987242 inpatient hyperuricemia) had completed by March 2022. Allena Pharmaceuticals has registered no further gout trials on ClinicalTrials.gov after September 2022. (Animal Model + Clinical Trial; source: gout-clinical-pipeline.md)
+The [gut-lumen sink](./gut-lumen-sink.md) page owns the mechanism and evidence. After an exact configuration is built and characterized in the relevant construct-supply work (§§1.1, 1.2, and 1.5) or supplied externally, [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) owns the matched reaction-site test. Topology nomination is limited to a controlled within-host comparison; cross-host results remain configuration-specific, and §1.36 precedes animal escalation.
 
-The mechanism (gut-lumen uricase exploiting ABCG2 secretion) remains scientifically sound; the *commercial* proof-of-concept for oral uricase in gout has not been delivered. Open Enzyme can no longer be framed as "a citizen-science version of a validated clinical program" — it is the citizen-science version of a promising mechanism that pharma did not carry to a pivotal readout. See [gout-clinical-pipeline.md](gout-clinical-pipeline.md) for the full competitive snapshot.
+## Systemic and local delivery boundary
 
-### Clinical Evidence (Historical)
+IV, SC, intra-articular, transdermal, mucosal, device, and nucleic-acid routes expose different activity, immune, tissue, peroxide, sterility, and manufacturing gates. They remain unranked until compared on route-specific evidence. See [systemic UOX delivery attack surface](./blood-barrier-exploits.md) and the [delivery route matrix](./delivery-route-matrix.md).
 
-**In vivo:** In urate oxidase-deficient knockout mice, oral ALLN-346 treatment over 7- and 19-day studies normalized urine uric acid excretion and significantly reduced hyperuricemia. (Source: engineered-yeast-uricase-proposal.md)
+## Sequence and host selection
 
-**Human Phase 2a (Study 201):** Statistically significant reductions in serum uric acid (sUA) were observed from days 5–7 in patients with gout and chronic kidney disease (CKD). (Source: engineered-yeast-uricase-proposal.md)
+*A. flavus*, *C. utilis*, *V. vulnificus*, and other UOX sequences carry different evidence and engineering priors. No sequence is a universal co-primary or default oral-therapy candidate.
 
-**Human Phase 2a (Study 202):** The broader cohort showed mean sUA reductions of only 0–5% from baseline on days 7 and 14—not statistically significant vs. placebo. The Phase 2a CKD trial (Study 201's successor at scale, NCT04987294) was then terminated September 2022. (Source: engineered-yeast-uricase-proposal.md, gout-clinical-pipeline.md)
+Rasburicase manufacturing supports *A. flavus* UOX production in yeast; it does not prove oral retained activity. ALLN-346 provides a product-specific *C. utilis*-derived precedent, but the exact clinical-product sequence is not disclosed in the cited clinical records and reports. Its performance cannot be assigned to another sequence, host, or topology. Probiotic precedents support their own constructs.
 
-## Active Clinical Uricase Competitors (2026 Snapshot)
+Use the [variant-selection contract](./uricase-variant-selection.md): compare exact accession-bound sequences under the same topology and reaction-site conditions, retain controls, and advance only topology-specific measured results.
 
-Two systemic IV uricase programs are currently in clinical development, both pursuing the systemic-uricase + immunomodulator strategy that Krystexxa+MTX (Amgen) established:
+## Production chassis
 
-- **PRX-115 (Protalix) — Phase 2 RELEASE trial NCT07280156** (Clinical Trial). Pegylated recombinant uricase ± methotrexate, IV, 24 weeks; N=150, started 2025-12-22, primary completion Dec 2027. Targets treatment-naive gout (not just refractory); excludes eGFR ≤ 40. (source: gout-clinical-pipeline.md)
-- **SSS11 (Shenyang Sunshine) — Phase 1 NCT06629376** (Clinical Trial). Pegylated *Candida utilis* uricase, IV, N=60, single-center (Huashan Hospital, Shanghai). First clinical use of *C. utilis*-derived uricase. (source: gout-clinical-pipeline.md)
+Yeast, koji, bacteria, and cell-free manufacture are implementation candidates. Promoter strength, codon adaptation, food-use history, native enzyme output, general secretion capacity, or expression concentration does not establish delivered UOX activity or dose sufficiency.
 
-**All current clinical uricase programs are systemic IV.** No active program (clinical or pharmacological) targets the gut-lumen-uricase angle evaluated by this track. This positioning is uncompeted in any registered trial as of April 2026. (source: gout-clinical-pipeline.md)
+For every chassis, measure:
 
-## The Gut-Lumen Insight
+- exact product identity and active oligomer;
+- total and active UOX by relevant fraction;
+- processing and storage retention;
+- reaction-site release, access, and persistence;
+- substrate and oxygen response;
+- peroxide and scavenger capacity;
+- impurities, host effects, containment, and batch variance.
 
-Uricase may not require systemic absorption: intestinal ABCG2 supplies a substantial urate-elimination route, so lumen-resident uricase could create a sink without barrier crossing. ALLN-346, PULSE, and engineered probiotic systems support biological feasibility at different evidence tiers, but human effect size, genotype response, dose response, and the limiting engineering variable remain open. [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) invalidated comp-019's quantitative answers after restoring physiological substrate occupancy and finite residence time; [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md) now gates topology, oxygen, and peroxide management. The corrected evidence boundary is owned by [gut-lumen-sink.md](./gut-lumen-sink.md). (Mechanistic Extrapolation + Animal Model + limited Clinical Trial evidence.)
+Native koji digestive enzymes or metabolites are separate measured outputs; they do not establish therapeutic levels, dual-purpose benefit, or UOX performance.
 
-## Expression Systems
+## Hydrogen-peroxide gate
 
-Uricase has been successfully expressed heterologously in multiple GRAS organisms:
+UOX activity and H₂O₂ production are coupled. Safety depends on total scavenger capacity at the reaction site.
 
-### Saccharomyces cerevisiae
+Intracellular co-localization with catalase is a hypothesis until localization and activity are measured. Secreted, surface-displayed, released, or cell-free UOX cannot inherit intracellular catalase protection by assumption. Measure H₂O₂ time course, catalase activity and stoichiometry, diffusion/local exposure, viability or tissue effects, and retention for each topology. [COMP-035](./intra-articular-uricase-h2o2-reaction-diffusion-computational.md) is a non-decision-grade prior and clears no architecture.
 
-The *A. flavus* uaZ gene has been successfully expressed in *S. cerevisiae*, accumulating intracellular uricase to levels exceeding 13% of total cellular protein using a hybrid GAL7/ADH2 promoter. The rasburicase pharmaceutical product is manufactured using this exact gene-host combination. (Source: engineered-yeast-uricase-proposal.md)
+## Oral-tolerance boundary
 
-For oral delivery applications, constitutive promoters (pTEF1, pGPK1) are preferred over inducible ones, as you want the enzyme present during normal growth and fermentation without requiring external inducers. (Source: engineered-yeast-uricase-proposal.md)
+The combined Phase 1 report for ALLN-346 Studies 101 and 102 found no serious adverse events, no clinically significant safety signals, and no detectable systemic absorption during single-dose and seven-day exposure in healthy volunteers ([Clark et al. 2022](https://doi.org/10.1136/annrheumdis-2022-eular.843)). That short-term result does not establish general oral tolerance, chronic safety, or transfer to another sequence, host, impurity profile, or formulation. Mucosal exposure may differ by topology and barrier integrity. Measure systemic exposure, local inflammation, sensitization, and repeat-exposure effects appropriate to the candidate. **Clinical Trial; conference-abstract evidence.**
 
-### Aspergillus oryzae (Koji)
+## Decision path
 
-*A. oryzae* and *A. flavus* are extremely closely related (>99.5% genome similarity in coding regions). The *A. flavus* uricase gene should express well in *A. oryzae* without codon optimization due to nearly identical codon usage. Engineering koji to produce uricase alongside its native digestive enzymes would create a candidate dual-purpose configuration if both functions validate. (Source: engineered-koji-protocol.md)
+1. Verify exact sequence and product identity.
+2. Build and characterize exact sequence–host–topology configurations in the relevant construct-supply work (§§1.1, 1.2, and 1.5) or obtain an exact external configuration.
+3. Run §1.33 at physiological substrate, oxygen, and peroxide conditions. Nominate topology only within a controlled host comparison; treat cross-host results as configuration-specific.
+4. Test processing/transit retention and local safety.
+5. Use [§1.36](./validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay) to decide whether animal escalation is justified.
+6. Assign human dose, efficacy, or dosing frequency only from appropriately translated evidence.
 
-Using the **PamyB promoter** (α-amylase promoter, starch-inducible) maximizes expression when koji is grown on rice—the enzyme auto-activates on the exact substrate being used. (Source: engineered-koji-protocol.md)
-
-### Saccharomyces boulardii
-
-The 2025 ACS Synthetic Biology paper demonstrated systematic engineering of *S. boulardii* (a probiotic yeast variant of *S. cerevisiae*) for efficient uric acid degradation. This organism offers advantages over *S. cerevisiae*: GRAS status, established oral probiotic use, resistance to antibiotics, and eukaryotic protein folding machinery. (Source: engineered-yeast-uricase-proposal.md)
-
-## Delivery Formats
-
-### Beer and Fermented Beverages
-
-Traditional beer using engineered yeast is problematic. Alcohol raises uric acid through three mechanisms: (1) ethanol metabolism accelerates ATP degradation and purine turnover, increasing uric acid production; (2) lactate produced during ethanol metabolism competes with uric acid for renal tubular secretion, reducing excretion; (3) beer contains high purine content (8–14 mg per 100 mL). You are fighting the delivery vehicle. (Source: engineered-yeast-uricase-proposal.md)
-
-Non-alcoholic fermented beverages (kvass, tepache, kombucha-style with *S. cerevisiae*) remove the alcohol confound and are more therapeutically credible.
-
-### Nutritional Yeast / Dried Yeast Powder
-
-Enzyme stability after drying is critical. Conventional heat-based drying (50–60°C for pasteurization, then drum or spray drying) destroys uricase activity—the *A. flavus* enzyme loses significant activity above 40°C and nearly all activity at 40–45°C. 
-
-Lyophilization (freeze-drying) preserves enzyme activity far better, and encapsulation in trehalose or other lyoprotectants is standard for enzyme stabilization. A lyophilized yeast powder, packaged in capsules, could retain uricase activity. (Source: engineered-yeast-uricase-proposal.md)
-
-**Product-specific purine caveat.** Reference materials span 847.1 mg/100 g for the USDA/ODS merged “Yeast, dried” entry and 2,995.7 mg/100 g for one beer-yeast product measured by Kaneko et al.; this is product variation, not a justified range for the proposed formulation. The engineered yeast and rice-koji products are both unmeasured, and rice cannot substitute for colonized koji. Uricase also does not directly consume the adenine and guanine that dominate yeast purines; those compounds must first reach urate in the relevant compartment. The chassis comparison is therefore **open**, pending the final-product assay and isotope-resolved fate experiment in [validation experiment 1.34](./validation-experiments.md#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux). See the corrected [purine-load comparison](./purine-load-koji-vs-yeast.md).
-
-### Live Probiotic
-
-*S. boulardii* achieves steady-state concentrations in the human colon within 3 days of regular dosing and clears 2–5 days after discontinuation—it transits rather than colonizes. Daily dosing is therefore required to maintain gut levels. (Source: engineered-yeast-uricase-proposal.md)
-
-The **PULSE system** demonstrated this approach: engineered *E. coli* Nissle 1917 with a uric-acid-responsive biosensor (HucR repressor) that dynamically regulates urate oxidase expression. When serum uric acid rises, bacteria automatically produce more uricase; when it normalizes, production decreases. (Source: engineered-yeast-uricase-proposal.md, etc/open-enzyme-vision.md)
-
-### Koji on Rice / Fermented Food Format
-
-Wild-type *A. oryzae* koji, grown on steamed rice for 36–48 hours at 30–32°C with >80% humidity, naturally produces amylases, proteases, and lipases at therapeutically relevant levels. Engineering to add uricase would create a candidate dual-purpose food format consumed as shio koji (koji + salt + water, fermented 7–14 days, shelf-stable for months) or fresh koji rice (used immediately or processed into amazake). This remains a koji-track delivery hypothesis rather than a project-wide requirement. (Source: engineered-koji-protocol.md, etc/open-enzyme-vision.md)
-
-## Dosing Considerations
-
-### Therapeutic Need
-
-A typical adult produces ~600–900 mg of uric acid per day. Approximately 200–300 mg is eliminated via the intestine. To reduce serum urate from ~9 mg/dL (common without therapy) to below 6 mg/dL (therapeutic target) requires eliminating roughly 200–400 mg of additional uric acid per day—the amount that would otherwise accumulate. (Source: engineered-yeast-uricase-proposal.md)
-
-### Reference: Rasburicase (IV)
-
-The approved dose is 0.15–0.2 mg/kg/day. For a 90 kg adult, this is ~13.5–18 mg of pure enzyme per day, administered intravenously. This dramatically effective—typically reduces serum urate to near-zero within 4 hours. But IV delivery puts enzyme directly into bloodstream with access to all circulating urate; oral delivery works through the gut lumen, a fundamentally different and less efficient route. (Source: engineered-yeast-uricase-proposal.md)
-
-### Oral Dosing Estimates
-
-ALLN-346 Phase 2a studies used oral doses that were orders of magnitude higher than IV rasburicase, reflecting the inefficiency of the gut-lumen route. Mouse studies used approximately 3–30 mg of engineered enzyme per day, scaled to body weight. (Source: engineered-yeast-uricase-proposal.md)
-
-For engineered yeast expressing uricase: if accumulation reaches 13% of total cellular protein, and a yeast cell contains ~6 pg of total protein, then ~0.78 pg of uricase per cell. At 10⁸ cells/mL in dense culture, this yields ~78 μg uricase/mL, or 78 mg/L. To deliver 20–50 mg of active uricase per dose requires 250–640 mL of saturated culture—roughly a pint to a quart. Concentrated, dried, or capsule formats would reduce this significantly. (Source: engineered-yeast-uricase-proposal.md)
-
-## Safety and Immune Response
-
-### Immunogenicity
-
-Rasburicase (IV uricase) induces anti-drug antibodies in ~60% of patients, limiting re-dosing. However, IV delivery presents the antigen to the systemic immune system. Oral delivery primarily encounters the mucosal immune system, which is inherently **tolerogenic**—designed for tolerance to dietary proteins. The oral tolerance literature from allergen immunotherapy supports the hypothesis that repeated oral exposure to uricase would induce tolerance rather than sensitization. (Source: engineered-yeast-uricase-proposal.md)
-
-ALLN-346 Phase 1 trials showed no serious adverse events, no systemic absorption of enzyme, and no immune reactions at any dose level tested. (Source: engineered-koji-protocol.md)
-
-### Hydrogen Peroxide Byproduct
-
-Uricase produces H₂O₂ as a byproduct. **This is topology-dependent, not automatically solved (corrected 2026-07-14, comp-045):** in the *intracellular whole-cell* case, catalase is co-localized with uricase in the same compartment and degrades H₂O₂ at the reaction site. But for **secreted or surface-displayed** UOX topologies the peroxide is generated *outside* that compartment, so H₂O₂ safety must be demonstrated by measured reaction-site catalase/scavenger capacity — it is *not* guaranteed by the host having intracellular catalase. In the gut lumen, co-delivered *A. oryzae* catalase plus microbiome/epithelial peroxidase activity plausibly help, but at the intracellular reaction site this is a design assumption pending the [comp-045 topology/oxygen/peroxide factorial](./uricase-topology-oxygen-peroxide-design-computational.md) and [validation §1.33](./validation-experiments.md). The route-agnostic rule ([`delivery-route-matrix.md` §"Catalase capacity principle"](./delivery-route-matrix.md)): H₂O₂ safety is set by **total catalase capacity at the site of H₂O₂ generation**, not by the chassis merely possessing catalase. (Source: engineered-koji-protocol.md; comp-045)
-
-The peroxisomal co-localization of uricase + endogenous catalase in the whole-cell oral chassis is more than a safety reassurance — it's free formulation work that every alternative delivery route (IV, SC, intra-articular, rectal) has to re-solve through formulation engineering. See [`engineered-koji-protocol.md` §"The Hydrogen Peroxide Question — and why the chassis solves it for free"](./engineered-koji-protocol.md) and [`delivery-route-matrix.md` §"Chassis-as-formulation"](./delivery-route-matrix.md) for the route-by-route treatment. The **catalase capacity principle** (route-agnostic H₂O₂ safety design rule, [`delivery-route-matrix.md` §"Catalase capacity principle"](./delivery-route-matrix.md)) generalizes this: for any uricase delivery format, H₂O₂ safety is determined by total catalase capacity at the site of H₂O₂ generation, not by residue-level proximity. (source: delivery-route-matrix.md)
-
-## Therapeutic Applications
-
-### Gout Management
-
-Uricase (oral, engineered, or probiotic) addresses the root cause of gout by degrading urate before crystallization, exploiting the ABCG2 intestinal secretion pathway — see [gut-lumen-sink.md](./gut-lumen-sink.md). (Source: gout-deep-dive.md, etc/open-enzyme-vision.md)
-
-### Other Enzyme Deficiencies
-
-The success of uricase as an oral therapeutic enzyme opens pathways for other missing or insufficient enzymes in humans, as part of the broader [[open-enzyme-vision|Open Enzyme platform]]. (Source: etc/open-enzyme-vision.md)
-
-## Industry-Revealed Preference: *C. utilis* for Oral/Gut-Lumen Track
-
-An important finding from the 2026-05-05 audit of the clinical pipeline: of the four recent non-rasburicase/non-Krystexxa uricase programs with publicly disclosed parent enzyme, **three of four chose *C. utilis*** (SSS11, ALLN-346, SEL-212) and the fourth (ACS Synth Bio *S. boulardii* 2025) picked *V. vulnificus*. **None chose *A. flavus* for any recent oral, IV-with-tolerance, or probiotic program.** (source: uricase-variant-selection.md)
-
-This does not displace *A. flavus* for the *S. cerevisiae* intracellular track (where rasburicase precedent is decisive), but it elevates *C. utilis* to **co-primary alongside *A. flavus*** for the oral/gut-lumen track. Key drivers: (a) freedom-to-operate around the rasburicase IP estate, (b) publicly disclosed ALLN-346 protease-resistance mutations (US10815461B2: I180V, V190G, Y165F, E51K, Q244K, I132R, A87G), (c) GRAS food-yeast precedent. (In Vitro + Clinical Trial; source: uricase-variant-selection.md)
-
-**Tang 2025 head-to-head directed evolution (PMID 39892538):** Parallel error-prone-PCR + high-throughput screening of *A. flavus* and *C. utilis* uricases yielded af-UA at **46.21 U/mg** (Thr231Ala) vs. cu-UA at **31.43 U/mg** (Val234Met). Wild-type *C. utilis* (~38 IU/mg) actually exceeds wild-type *A. flavus*, but **post-evolution *A. flavus* retains a ~50% activity advantage**. Industry preference for *C. utilis* is therefore not about specific activity — it is about IP, oral-tolerance profile, and the disclosed ProteinGPS mutations. (In Vitro; source: uricase-variant-selection.md)
-
-**SEL-212 species attribution confirmed:** SEL-212 (pegadricase + ImmTOR) uses ***C. utilis* uricase** (pegylated), per Sands 2022 *Nat Commun* PMID 35022448. This is the Phase 3-validated systemic IV program that solved pegloticase's immunogenicity problem. (Clinical Trial; source: uricase-variant-selection.md)
-
-## AI Analysis Findings (April 2026)
-
-**Variant Comparison Completed:**
-- *Aspergillus flavus* confirmed as primary candidate for *S. cerevisiae* intracellular track (FDA approval via rasburicase; proven S. cerevisiae expression; extensive stability engineering precedent; post-evolution activity advantage per Tang 2025)
-- *Candida utilis* elevated to co-primary for oral/gut-lumen track (industry-revealed preference in 3-of-3 recent oral programs; publicly disclosed ALLN-346 mutations; GRAS food-yeast precedent)
-- *Arthrobacter globiformis* ranked secondary (superior thermostability, neutral pH activity; requires novel expression system optimization)
-- Four additional variants evaluated; see [uricase-variant-selection.md](./uricase-variant-selection.md) for detailed ranking
-
-**GI Survival Profile:**
-- Baseline survival: 15–25% of ingested enzyme reaches small intestine in active form
-- Acid protection required (enteric coating or disulfide bond engineering) improves survival to 40–50%
-- Active window: duodenum/jejunum (pH 5.5–7.5), 45–120 min transit
-- See [[ai-analysis/02-gi-survival-prediction|02 — GI Survival Prediction]] for complete transit modeling
-
-**Engineering Mutations Designed:**
-- Three mutation tiers identified: SB-1 (stability baseline), BAL-1 (balanced engineering), OPT-1 (comprehensive optimization)
-- Disulfide bond engineering validated for acid/thermal stability without activity loss
-- See [[ai-analysis/03-protein-engineering-strategy|03 — Protein Engineering Strategy]] for mutation details and expression yields
-
-## References
-
-- Oda, M. et al. (2002). "Loss of Urate Oxidase Activity in Hominoids and its Evolutionary Implications." *Molecular Biology and Evolution*, 19(5), 640–653.
-- Kratzer, J.T. et al. (2014). "Evolutionary history and metabolic insights of ancient mammalian uricases." *Proceedings of the National Academy of Sciences*, 111(10), 3763–3768.
-- Gaucher et al. (2025). "CRISPR-based restoration of ancestral uricase in human liver cells." *Scientific Reports*.
+If UOX cannot achieve usable reaction-site activity without unacceptable peroxide, tissue, immune, or manufacturing failure, retire or redirect that configuration. The project then moves to another urate-disposal route or gout vulnerability.

@@ -1,180 +1,99 @@
 ---
-title: Saccharomyces cerevisiae (Baker's Yeast)
+title: Saccharomyces cerevisiae — UOX Chassis Evidence and Gates
 aliases:
   - S. cerevisiae
   - baker's yeast
   - brewer's yeast
   - budding yeast
+tags: [saccharomyces, yeast, uricase, chassis, phase-0]
 related:
-  - uricase
-  - aspergillus-oryzae
-  - etc/open-enzyme-vision
-  - engineered-yeast-uricase-proposal
-  - delivery-formats
-sources:
   - engineered-yeast-uricase-proposal.md
-  - etc/open-enzyme-vision.md
-  - gout-deep-dive.md
-  - nlrp3-exploit-map.md
+  - codon-optimization-expression-cassette.md
+  - uricase-variant-selection.md
+  - validation-experiments.md
+sources:
+  - https://doi.org/10.1016/0378-1119(92)90041-M
+  - https://doi.org/10.1021/acssynbio.4c00831
 ---
 
-# Saccharomyces cerevisiae (Baker's Yeast)
+# *Saccharomyces cerevisiae* — UOX Chassis Evidence and Gates
 
-## Overview
+## Role in Scope
 
-*Saccharomyces cerevisiae* is the most genetically tractable eukaryotic organism on Earth, with GRAS (Generally Recognized As Safe) status from the FDA and a millennia-long history of safe use in baking and brewing. It offers a mature toolkit of characterized promoters, selectable markers, transformation protocols, and expression systems for rapid enzyme-production work. Critically, the exact gene-host combination of *Aspergillus flavus* uricase expressed in *S. cerevisiae* forms the basis of **rasburicase (Elitek/Fasturtec)**, the FDA-approved intravenous uricase drug used since 2002. The oral-delivery track asks whether that gene-host precedent can be adapted to a food-format route rather than IV administration. (Source: engineered-yeast-uricase-proposal.md, etc/open-enzyme-vision.md)
+*S. cerevisiae* is a candidate host for building and measuring UOX configurations. The chassis remains conditional on active expression, localization, substrate access, reaction-site activity, peroxide control, viability, genetic stability, containment, and host-response measurements.
 
-## GRAS Status and Food Safety
+This page does not rank yeast against another chassis or treat yeast expression as evidence for an oral route.
 
-*S. cerevisiae* holds FDA GRAS status and has been safely consumed by humans for at least 4,000 years in bread, beer, wine, and other fermented foods. The organism does not produce mycotoxins or pathogenic compounds. It is one of the safest food organisms available. Beyond fermentation, nutritional yeast (dried, inactive *S. cerevisiae*) is marketed as a dietary supplement and food additive for its nutritional content (B vitamins, amino acids, chromium). (Source: engineered-yeast-uricase-proposal.md)
+## Direct Evidence
 
-## Genetic Tractability: The Premier Toolkit
+| Evidence | Level | Supported claim | Boundary |
+|---|---|---|---|
+| Leplatois et al. expressed active, soluble *Aspergillus flavus* UOX intracellularly in *S. cerevisiae*. | **In Vitro** | This host can produce active intracellular *A. flavus* UOX under the reported construct and culture conditions. | Does not establish release, secretion, physiological substrate access, oral delivery, dose, efficacy, or safety. |
+| Wang et al. engineered uric-acid catabolism in *S. cerevisiae* and transferred the pathway to *S. boulardii*. | **In Vitro** | UOX identity, urate access, promoter context, and integration context can be varied and whole-cell uric-acid degradation measured in engineered yeast. | Does not select this project's host, payload, cassette, topology, or dose and does not establish activity at the human-baseline substrate prior. |
 
-*S. cerevisiae* is the eukaryotic model organism with the most mature genetic engineering toolkit. This represents decades of academic and industrial investment in making this organism amenable to genetic modification.
+Systemic UOX evidence does not establish a yeast-derived oral configuration and is not used as a chassis decision here.
 
-### Expression Systems
+## Build Options
 
-**Inducible Promoters:**
-- **GAL1, GAL7, GAL10** — Galactose-inducible promoters; repressed by glucose, derepressed when glucose is depleted and galactose is present
-- Strong expression levels in GAL conditions; enables temporal control of gene expression
-- Less practical for food fermentation (requires external galactose induction)
+The chassis supports matched comparisons across these axes:
 
-**Constitutive Promoters (Preferred for Food Applications):**
-- **pTEF1** (Translation Elongation Factor 1α promoter) — THE STRONGEST constitutive promoter in *S. cerevisiae*; active across all carbon sources; extensively characterized; default choice for maximal expression
-- **pPGK1** (Phosphoglycerate Kinase promoter) — Strong constitutive; slightly lower than TEF1 in most conditions; very well characterized
-- **pGPD/pTDH3** (Glyceraldehyde-3-Phosphate Dehydrogenase promoter) — Comparable strength to TEF1; constitutive
+- Defined *S. cerevisiae* and *S. boulardii* strain backgrounds.
+- Constitutive and inducible promoter candidates.
+- Plasmid and defined chromosomal-integration strategies.
+- Intracellular, secreted, and surface-displayed UOX cassettes.
+- Whole-cell configurations with and without a defined urate-access component.
+- Fresh-cell, extracellular, lysate, and processed fractions for activity recovery.
 
-For a food-product application, you want the enzyme expressed throughout normal growth and fermentation without requiring external inducers. Constitutive promoters like pTEF1 are the practical choice. (Source: engineered-yeast-uricase-proposal.md)
+Select an option only from matched results. Within a comparison, hold payload sequence, promoter, terminator, copy strategy, host background, process, and assay constant except for the tested axis. The exact cassette matrix is maintained in [Yeast UOX Expression Cassette](./codon-optimization-expression-cassette.md).
 
-### Vector Strategies
+## Required Chassis Measurements
 
-**Episomal (High-Copy) Plasmids:**
-- 2μ-based plasmids: 20–50 copies per cell
-- Higher expression per cell
-- Disadvantage: unstable without continuous selection pressure; cells that lose the plasmid grow faster and outcompete engineered strains
-- Impractical for a food product without antibiotic selection
+### Identity and Stability
 
-**Chromosomal Integration (Preferred for Food):**
-- Insert the gene directly into yeast chromosomes via homologous recombination or CRISPR
-- Single-copy or multi-copy integration at defined loci
-- Stable over cell divisions and fermentation
-- More predictable expression levels
-- Strain stability over generations (critical for home fermentation)
-- CRISPR/Cas9-based integration enables markerless insertion, important for regulatory considerations
+- Complete strain and construct identity.
+- Locus or vector, orientation, and measured copy number.
+- Viability, growth, passage history, genetic stability, and batch variance.
 
-For a therapeutic food product, **chromosomal integration is the more realistic path**. (Source: engineered-yeast-uricase-proposal.md)
+### Expression and Localization
 
-### Selectable Markers
+- Transcript abundance when needed to localize failure.
+- Total, soluble, intracellular, surface-associated, and extracellular UOX measured separately.
+- Oligomeric state, degradation products, and active IU in each fraction.
 
-**Auxotrophic Markers (Standard for Lab Work):**
-- URA3 (uracil prototrophy)
-- LEU2 (leucine prototrophy)
-- HIS3 (histidine prototrophy)
-- Suitable for laboratory-scale development
+### Reaction and Host Response
 
-**Dominant Markers (Food-Grade Alternatives):**
-- kanMX (G418 antibiotic resistance) — not ideal for food products
-- For food-grade applications: consider markerless CRISPR integration or marker excision after successful transformation
+- Urate access, dissolved oxygen, UOX persistence, reaction product, and hydrogen peroxide over time.
+- Viability during the reaction assay.
+- Barrier and immune readouts for the exact engineered configuration against its parental-host and inactive-UOX controls.
+- Containment and clearance measurements for any live configuration before downstream use.
 
-(Source: engineered-yeast-uricase-proposal.md)
+Expression percentage, culture density, CFU, or recovered protein mass does not establish delivered activity or dose.
 
-## The Rasburicase Precedent
+## Safety and Regulatory Boundary
 
-This is the critical piece: **rasburicase (Elitek/Fasturtec), the FDA-approved intravenous uricase drug, is *Aspergillus flavus* uricase expressed in genetically modified *S. cerevisiae*.** (Source: engineered-yeast-uricase-proposal.md)
+Parent-organism food-use or regulatory status does not establish the safety or classification of an engineered strain, a live configuration, a killed preparation, or a recovered protein fraction. Evaluate the exact construct, host background, process state, exposure, containment, barrier effects, immune effects, urate removal, and peroxide burden.
 
-- **Approval dates:** EMA approval in 2001, FDA approval in 2002
-- **Use:** Intravenous enzyme therapy for tumor lysis syndrome in cancer patients
-- **Manufacturing:** Commercial-scale production using this exact gene-host combination for over 20+ years
-- **Clinical validation:** Decades of safety and efficacy data in human patients
+No safety conclusion follows from an additive transgene description, absence of an intended virulence element, or prior use of the parental organism.
 
-This means the proof that *S. cerevisiae* can express active, correctly folded, therapeutically relevant *A. flavus* uricase is not theoretical—it is an approved pharmaceutical product.
+## Falsification Gates
 
-### Expression Levels
+1. Advance only a sequence-verified construct with reproducible active UOX, interpretable localization, viability, stability, and batch variance.
+2. Represent the yeast configuration explicitly in [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) or a preregistered matched extension using the same substrate, oxygen, peroxide, controls, and decision rule.
+3. A configuration that works only at a high-substrate benchmark remains physiologically unproven.
+4. A §1.33 survivor must clear [validation §1.36](./validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay).
+5. Failure of peroxide, viability, barrier, or antioxidant-loss criteria stops animal escalation for that configuration.
 
-Published academic work demonstrated that *S. cerevisiae* transformants accumulated active, soluble *A. flavus* uricase (Uox) to levels exceeding **13% of total cellular protein** using a hybrid GAL7/ADH2 promoter, with good proportionality between gene copy number (1–10 copies) and expression level. This is exceptionally high for a heterologous protein in yeast. (Source: engineered-yeast-uricase-proposal.md)
+Only a configuration that clears §§1.33 and 1.36 can inform a dynamic compartmental model and animal-study design.
 
-### Secretion vs. Intracellular Expression
+## Related Decision Pages
 
-The uricase-product design choice — secrete via the α-factor signal peptide vs. accumulate intracellularly and release on autolysis — and its resolution experiment live in the uricase proposal, not this chassis page. See [proposal §2 — Secretion vs. Intracellular Expression](./engineered-yeast-uricase-proposal.md#why-yeast). The organism-level fact that matters here: rasburicase manufacturing uses intracellular expression, and yeast secretion of the ~135 kDa tetramer is often inefficient.
+- [Engineered Yeast UOX — Current Research Plan](./engineered-yeast-uricase-proposal.md)
+- [Yeast UOX Expression Cassette](./codon-optimization-expression-cassette.md)
+- [UOX Variant Selection](./uricase-variant-selection.md)
+- [COMP-044 physiological-regime audit](./gut-lumen-uricase-physiologic-regime-computational.md)
+- [Validation experiments](./validation-experiments.md)
 
-## Gene Construct, Delivery, Dosing, and Regulatory — see the Proposal
+## Primary Sources
 
-The uricase **product plan** — source-gene selection (*A. flavus* uaZ vs. *C. utilis* vs. *V. vulnificus*), codon optimization, delivery formats (fermented beverages, nutritional yeast, *S. boulardii* probiotic, lysate, beer), dosing mathematics (the uric-acid budget and yeast-to-dose calculation), and the GMO-food regulatory pathway — is documented in the primary-research doc and is not duplicated on this chassis page:
-
-- Gene construct design (source gene, codon optimization, promoter, markers): [proposal §3](./engineered-yeast-uricase-proposal.md#construct)
-- Delivery formats (a–f, with honest credibility assessments): [proposal §4](./engineered-yeast-uricase-proposal.md#delivery)
-- Dosing mathematics (uric-acid budget, yeast-mass-per-dose, koji cross-check): [proposal §5](./engineered-yeast-uricase-proposal.md#dosing)
-- Regulatory framework (food / supplement / LBP / drug pathways): [proposal §6, Q4](./engineered-yeast-uricase-proposal.md#questions)
-
-## Role in the Open Enzyme Portfolio
-
-*S. cerevisiae* is a candidate production and validation chassis when its expression precedent, folding environment, process, or delivery format fits the payload. It is not a fallback required to wait for a koji result; host choice is an empirical decision within each track. (source: etc/open-enzyme-vision.md)
-
-**When yeast is the right choice:**
-- Tetrameric proteins where the rasburicase precedent (13% of total cellular protein in *S. cerevisiae*) is directly applicable
-- Ursolic acid (8.59 g/L record in engineered *S. cerevisiae*; untested in koji)
-- Carnosine (biosynthesis requires heterologous carnosine synthase; host choice open)
-- Uricase itself — the *S. cerevisiae* path is proven (rasburicase); the koji path needs to be developed
-
-**When koji is preferred:**
-- Secreted enzymes where koji's 25–30 g/L secretion capacity (vs. 0.5–2 g/L for *S. cerevisiae*) is decisive
-- Multi-enzyme products where native lipase/protease/amylase production is needed alongside engineered targets
-- Home-fermentation formats where solid-state rice fermentation is simpler than liquid culture
-
-(source: etc/open-enzyme-vision.md, §4)
-
-## Comparison to Aspergillus oryzae
-
-| Feature | S. cerevisiae | A. oryzae (Koji) |
-|---|---|---|
-| **Genetic tools** | Most mature yeast toolkit on Earth | Modern, CRISPR-ready, industrial standard |
-| **Native enzymes** | None relevant to enzyme therapy | Lipase, protease, amylase (therapeutic) |
-| **GRAS status** | Yes (4,000+ years) | Yes (1,000+ years food use) |
-| **Fermentation** | Liquid (3–7 days, climate-controlled) | Solid-state on rice (36–48h, ambient) |
-| **Native co-product scope** | Limited in this configuration | Native digestive enzymes alongside candidate uricase expression |
-| **Expression level precedent** | 13% of total protein (rasburicase) | Comparable expected from strong promoters |
-| **Therapeutic credibility** | Very high (rasburicase precedent) | Very high (GRAS, ancient safety history) |
-| **Strategic role** | Candidate chassis with strong yeast precedent | Candidate chassis with secretion and solid-state advantages |
-
-For Open Enzyme, the comparison is track-specific. Koji may be attractive for secreted or solid-state configurations; yeast may be attractive where expression and manufacturing precedent are stronger. The discriminating assay, not a global chassis hierarchy, selects the host. (source: etc/open-enzyme-vision.md; engineered-yeast-uricase-proposal.md)
-
-## Immunogenicity Considerations
-
-### Yeast Cell Wall Recognition
-
-*S. cerevisiae* cell wall components (β-glucan, mannan, chitin) are recognized by:
-- **Dectin-1 and Dectin-2** (C-type lectin receptors on immune cells)
-- **TLR2** (toll-like receptor on epithelial cells)
-
-These could trigger innate immune responses.
-
-### Oral Tolerance Mechanism
-
-However, oral delivery naturally encounters the **mucosal immune system**, which is inherently **tolerogenic**—designed for tolerance to dietary proteins. The oral tolerance literature from allergen immunotherapy supports the hypothesis that repeated oral exposure to yeast would induce tolerance rather than sensitization. (Source: engineered-yeast-uricase-proposal.md)
-
-### Phase 1 Precedent
-
-ALLN-346 (oral engineered uricase, a different organism/gene but same principle) Phase 1 trials showed:
-- No serious adverse events
-- No systemic absorption of enzyme
-- No immune reactions at any dose tested
-
-(Source: engineered-yeast-uricase-proposal.md)
-
-### Validation Path
-
-Expose intestinal epithelial cell monolayers (Caco-2 or HT-29) to: (a) wild-type *S. cerevisiae*, (b) engineered *S. cerevisiae* expressing uricase, (c) purified uricase alone, (d) LPS positive control. Measure cytokine panel (IL-8, TNF-α, IL-1β, IL-10) at 4h and 24h by ELISA. Monitor transepithelial electrical resistance (TEER) for barrier integrity. If engineered strain shows significantly different immune activation than wild-type, flag for further investigation. Cost: ~$2,000–4,000; Time: 3–4 weeks. (Source: engineered-yeast-uricase-proposal.md)
-
-## Safety: No Novel Pathogenicity
-
-*S. cerevisiae* does not produce mycotoxins or virulence factors. Engineered strains carry only the uricase transgene—no foreign pathogenic elements. The genetic modifications are purely additive (expressing one additional protein). Safety profile is expected to be excellent. (Source: engineered-yeast-uricase-proposal.md)
-
-## Engineering implications
-
-The optimized uricase expression cassette (TDH3p constitutive promoter, intracellular localization, ADH1t terminator, predicted 800–1200 mg/L equivalent, codon-optimization parameters) is product-plan detail and lives with the proposal. See [Codon Optimization & Expression Cassette](./codon-optimization-expression-cassette.md) and [proposal §3](./engineered-yeast-uricase-proposal.md#construct).
-
-## References
-
-- Source: engineered-yeast-uricase-proposal.md — Detailed technical proposal, dosing math, delivery format analysis, validation experiments
-- Source: etc/open-enzyme-vision.md — Mission and track context
-- Source: gout-deep-dive.md — Uric acid biology and treatment context
+- Leplatois P, et al. High-level production of a peroxisomal enzyme: *Aspergillus flavus* uricase accumulates intracellularly and is active in *Saccharomyces cerevisiae*. *Gene*. 1992;122(1):139–145. [doi:10.1016/0378-1119(92)90041-M](https://doi.org/10.1016/0378-1119(92)90041-M). **In Vitro.**
+- Wang et al. Systematic Engineering for Efficient Uric Acid-Degrading Activity in Probiotic Yeast *Saccharomyces boulardii*. *ACS Synthetic Biology*. 2025;14(6):2030–2043. [doi:10.1021/acssynbio.4c00831](https://doi.org/10.1021/acssynbio.4c00831). **In Vitro.**

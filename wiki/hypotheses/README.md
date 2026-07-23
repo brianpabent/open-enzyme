@@ -15,7 +15,7 @@ related:
   - ../validation-experiments.md
 sources:
   - "linter-design.md (design doc for the two-linter architecture)"
-  - "falsification-lint-brief.md (2026-04-24, personal download — the source brief)"
+  - "falsification-lint-brief.md (source brief)"
 status: index
 ---
 
@@ -49,15 +49,15 @@ Committing to a hypothesis is a commitment to *attempt to falsify it*, not a com
 
 | ID | Title | Status | Survival count | Committed | Link |
 |---|---|---|---|---|---|
-| H01 | Ward 1995 glucoamylase-KEX2 dual-cassette architecture layers uricase + lactoferrin in *A. oryzae* solid-state rice koji | Pending | 0 | 2026-04-24 | [H01-ward-dual-cassette.md](./H01-ward-dual-cassette.md) |
+| H01 | Can a Ward-derived dual-cassette retain active UOX and lactoferrin in solid-state *A. oryzae*? | Pending | 0 | 2026-04-24 | [H01-ward-dual-cassette.md](./H01-ward-dual-cassette.md) |
 | H02 | Engineered *Faecalibacterium prausnitzii* is a testable WT-ABCG2-induction chassis; direct butyrate rescue of Q141K remains unvalidated | Stub | 0 | 2026-05-05 | [H02-engineered-lbp-thesis.md](./H02-engineered-lbp-thesis.md) |
 | H03 | Kidney-tropic siRNA against URAT1 mRNA is a viable long-horizon therapeutic modality for under-excreter gout, mechanistically cleaner than small-molecule URAT1 inhibitors but gated on the maturation of kidney-tropic conjugate delivery chemistry | Stub | 0 | 2026-05-05 | [H03-sirna-urat1-thesis.md](./H03-sirna-urat1-thesis.md) |
 | H04 | Modern scientific rigor (chokepoint-mapping + ChEMBL cross-check + bioavailability honesty + falsification card discipline) applied to TCM materia medica produces actionable, gout-relevant findings beyond what reductionist single-compound analysis or holistic "alternative medicine" framings produce in isolation | Stub | 0 | 2026-05-05 | [H04-tcm-rigor-intersection.md](./H04-tcm-rigor-intersection.md) |
-| H05 | An *A. oryzae*-engineered soluble DAF/CD55 SCR1-4 construct is a candidate fermentable CP0 modulator | Stub | 0 | 2026-05-05 | [H05-daf-scr14-cp0-thesis.md](./H05-daf-scr14-cp0-thesis.md) |
+| H05 | An engineered soluble DAF/CD55 SCR1-4 construct is a candidate CP0 modulator | Stub | 0 | 2026-05-05 | [H05-daf-scr14-cp0-thesis.md](./H05-daf-scr14-cp0-thesis.md) |
 | H06 | Open Enzyme can produce reproducible, bioactivity-validated medicinal-mushroom-complement extracts (GLPP, cordycepin, ergothioneine) at quality sufficient to replicate published in vivo effect sizes within 2× — making the medicinal-mushroom-complement track a viable peer to the koji-engineering track | Stub | 0 | 2026-05-06 | [H06-medicinal-mushroom-complement-track.md](./H06-medicinal-mushroom-complement-track.md) |
 | H07 | Clomiphene-associated urate elevation is mediated primarily by intestinal estrogen-receptor antagonism | Retracted | 0 | 2026-05-07 | [H07-clomid-intestinal-er-antagonism.md](./H07-clomid-intestinal-er-antagonism.md) |
-| H08 | Can a gut-lumen uricase sink produce clinically meaningful serum-urate reduction under physiological substrate, oxygen, transit, access, survival, and peroxide constraints? **Reopened; no valid ΔSUA prior.** | Reopened | 1 | 2026-07-13 | [H08-gut-lumen-sink-platform-thesis.md](./H08-gut-lumen-sink-platform-thesis.md) |
-| H09 | Home- and community-fermented engineered koji can reliably deliver therapeutic doses of multi-cassette protein with batch-to-batch consistency sufficient for a chronic disease intervention, under the Community-BioLab + Home-Fermentation hybrid model — a **koji-track production/delivery risk**, not a project-level assumption | Stub | 0 | 2026-05-15 | [H09-community-fermentation-reliability.md](./H09-community-fermentation-reliability.md) |
+| H08 | Can a gut-lumen uricase sink produce clinically meaningful serum-urate reduction under physiological substrate, oxygen, transit, access, survival, and peroxide constraints? | Open | 0 | 2026-07-13 | [H08-gut-lumen-sink-platform-thesis.md](./H08-gut-lumen-sink-platform-thesis.md) |
+| H09 | A qualified engineered-*A. oryzae* configuration may be reproducible across controlled production sites if identity, propagation, contamination, activity, preservation, assay, and release controls hold; this is an optional koji-track production model, not a project-level assumption | Active stub | 0 | 2026-05-15 | [H09-community-fermentation-reliability.md](./H09-community-fermentation-reliability.md) |
 | H10 | Clomiphene exposure and serum urate are positively coupled in a susceptible high-androgen phenotype | Pending | 0 | 2026-07-17 | [H10-clomiphene-dose-urate-coupling.md](./H10-clomiphene-dose-urate-coupling.md) |
 
 *(Add new rows as hypotheses are committed. Sort by ID.)*

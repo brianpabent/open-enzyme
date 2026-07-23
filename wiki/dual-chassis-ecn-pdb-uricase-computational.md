@@ -28,7 +28,7 @@ The live [comp-031 artifact](./etc/experiments/comp-031-dual-chassis-ecn-pdb-uri
 
 ## Why the prior failed
 
-1. **Inherited invalid UOX regime:** comp-031 hard-coded comp-019's 32–1,300× saturation finding. [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) shows that conclusion is not robust because comp-019 omitted its own substrate concentration, Km, and finite active window.
+1. **Inherited unsupported UOX regime:** comp-031 hard-coded comp-019's 32–1,300× saturation finding. [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) shows that classification is not robust to the tested substrate-occupancy and finite-window diagnostics; it does not identify the true physiological regime.
 2. **Organism/product mismatch:** the CBT2.0 paper establishes urate-pathway products through pyruvate in engineered EcN; it does not establish butyrate production. A *C. sporogenes* butyrate-yield assumption was transferred into EcN without measurement.
 3. **False Basseville attribution:** Basseville 2012 tested HDAC inhibitors including vorinostat-class compounds and valproate, not direct 1–5 mM butyrate rescue of Q141K in this system.
 4. **Unmatched background:** the model added 0.8 mM background crypt butyrate to the combination arm. Most of the modeled rescue therefore came from a background term not matched across comparators.

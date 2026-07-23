@@ -26,14 +26,12 @@ Open Enzyme is Phase 0 research and design. It maps gout as a system, creates fa
 
 | # | Experiment | Cost | Weeks | Decides |
 |---|---|---|---|---|
-| **GATE 0** | **Physiological UOX topology × oxygen × peroxide (§1.33) — #1 gout-program wet-lab gate** | TBD | TBD | Whether any UOX topology works at the human-baseline substrate prior without unacceptable peroxide or viability cost; selects the architecture used downstream |
-| 0 | **PERT-timing self-experiment (IN PROGRESS)** — BoulderBio dose/timing n=1 | ~$0 | ongoing | Dose framework for engineered platform; split-dose vs. sustained-release formulation |
-| 1 | Rice bran vs plain rice substrate → uricase GI survival (§1.15) | $800 | 3 | Free substrate optimization, no engineering |
-| 2 | Quercetin + ursolic acid + carnosine combo on MSU-stimulated macrophages (§1.17) | $1,500 | 4 | Whether to engineer one NLRP3 inhibitor or three |
-| 3 | WT / SB-1 / OPT-1 engineered uricase variants in koji → GI simulation (§1.16) | $2,000 | 8 | Host choice within the oral-uricase track (koji vs yeast) |
-| **KOJI GATE 1** | **Ward 1995 staged Lf-only → selected UOX-only → dual-cassette feasibility (§1.9)** | $5,265–8,065 full path | 8–12 | Conditional multi-cassette gate: Stage A can parallel §1.33; Stage C decides single-strain vs. two-strain only after both single-cassette arms pass |
-| **SAFETY** | **Luminal urate antioxidant-loss × UOX-H₂O₂ (§1.36)** | TBD | TBD | Whether the §1.33/§1.9B winner is safe enough for animal escalation |
-| 4 | Carnosine co-expression in *A. oryzae* (§1.24) — optional third cassette | $1,500–2,500 | 4–6 | Whether this track-local carnosine module reaches its titer gate |
+| **UOX-0 / MATERIALS** | **Matched UOX configuration build and characterization (§§1.1, 1.2, 1.5; exact external configurations where used)** | TBD | TBD | Supplies sequence-verified, localized, active configurations and matched controls before the physiological screen |
+| **UOX-1 / PHYSIOLOGY** | **Configuration-level UOX × oxygen × peroxide (§1.33)** | TBD | TBD | Tests qualified configurations at the human-baseline substrate prior; topology can be nominated only within a controlled host comparison |
+| 1 | Quercetin + ursolic acid + carnosine combo on MSU-stimulated macrophages (§1.17) | $1,500 | 4 | Whether to engineer one NLRP3 inhibitor or three |
+| **KOJI GATE 1** | **Ward 1995 staged Lf-only → advanced UOX-only → dual-cassette feasibility (§1.9)** | $5,265–8,065 full path | 8–12 | Conditional multi-cassette gate: Stage A can parallel the UOX build/screen; Stage B consumes an exact §1.5-built, §1.33-advanced configuration; Stage C starts only after both single-cassette arms pass |
+| **UOX-2 / SAFETY** | **Luminal urate antioxidant-loss × UOX-H₂O₂ (§1.36)** | TBD | TBD | Whether a §1.33-surviving configuration avoids epithelial injury when urate is depleted, including the indomethacin context; no efficacy inference |
+| 2 | Carnosine co-expression in *A. oryzae* (§1.24) — optional third cassette | $1,500–2,500 | 4–6 | Whether this track-local carnosine module reaches its titer gate |
 | LBP-1 | Engineering-toolkit, commercial-landscape, and FDA-LBP scans — see [`engineered-lbp-chassis.md`](wiki/engineered-lbp-chassis.md) Open Technical Questions | $0 | 1–2 | Whether a candidate organism supports controllable local payload activity and a viable delivery path |
 | LBP-2 | LBP track Phase 2: comp-008 *F. prausnitzii* heterologous expression feasibility | $0 | 1 | Which candidate constructs are tractable in *F. prausnitzii* (uricase / lactoferrin / sCR1 / native BCoAT overexpression) |
 | 1.23-T1 | Androgen × MSU × NLRP3 macrophage screen (§1.23 Tier 1, THP-1) — fills documented literature gap | $5–10K | 6–8 | Whether direct-androgen contribution to gout inflammation exists; gates Tiers 2–3 |
@@ -50,7 +48,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 ## Core Pathology & Targets
 
 - **[Gout Pathophysiology](wiki/gout-pathophysiology.md)** — System map from purine metabolism through urate crystallization, NLRP3 activation, clinical interventions, and genomics.
-- **[Uricase (Urate Oxidase)](wiki/uricase.md)** — The missing enzyme: evolutionary loss ~15Mya, A. flavus uaZ gene, rasburicase, engineering for gut-lumen degradation
+- **[Uricase (Urate Oxidase)](wiki/uricase.md)** — Evolutionary loss, established systemic enzyme replacement, candidate luminal and local routes, and the reaction-site gates that separate them.
 - **[NLRP3 Inflammasome](wiki/nlrp3-inflammasome.md)** — Seven chokepoints spanning complement priming, inflammasome assembly, cytokine signaling, resolution, and neutrophil recruitment.
 - **[Digestive Enzymes & EPI](wiki/digestive-enzymes.md)** — Lipase, protease, and amylase deficits, replacement products, and wild-type koji as one candidate delivery format.
 - **[SIBO](wiki/sibo.md)** — Brush-border damage, enzyme loss, NLRP3 involvement, and candidate barrier-repair mechanisms.
@@ -63,7 +61,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 
 ## Engineered Organisms & Platforms
 
-- **[Saccharomyces cerevisiae](wiki/saccharomyces-cerevisiae.md)** — GRAS yeast; rasburicase expression precedent; S. boulardii; expression systems (TEF1p, GPDp); delivery formats
+- **[Saccharomyces cerevisiae](wiki/saccharomyces-cerevisiae.md)** — Candidate UOX chassis with direct active-expression evidence, matched build options, and unresolved reaction-site and safety gates.
 - **[Aspergillus oryzae](wiki/aspergillus-oryzae.md)** — Koji biology, native products, transformation methods, and limits as a candidate expression chassis.
 - **[Koji Multi-Payload Strain Hypothesis](wiki/koji-endgame-strain.md)** — Falsifiable multi-cassette koji configuration gated by single- and dual-cassette expression tests.
 - **[Chaperone-Orthogonal Cassette Stacking](wiki/chaperone-orthogonal-stacking.md)** — Framework for testing whether payloads compete for or partition across fungal folding and secretion machinery.
@@ -80,13 +78,13 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 
 ## Delivery & Barrier Biology
 
-- **[Gut-Lumen Sink](wiki/gut-lumen-sink.md)** — ABCG2 pathway; ~1/3 of UA excretion; the insight that systemic absorption isn't needed; ALLN-346, PULSE probiotic
+- **[Gut-Lumen Sink](wiki/gut-lumen-sink.md)** — Hypothesis that luminal UOX can consume transporter-delivered urate without the enzyme entering blood; human effect size, dose, topology, and safety remain open.
 - **[ABCG2 Modulators](wiki/abcg2-modulators.md)** — Induction, inhibition, and Q141K-rescue hypotheses for the intestinal urate-export pathway.
-- **[Blood Barrier](wiki/blood-barrier.md)** — Framing/decision layer: why gut-lumen delivery wins, when systemic matters, oral tolerance
+- **[Blood Barrier](wiki/blood-barrier.md)** — Decision layer for matching a payload to luminal, local-tissue, or systemic exposure without presuming one route wins.
 
 ## Gene Therapy
 
-- **[CRISPR Uricase](wiki/crispr-uricase.md)** — Georgia State breakthrough (2025); ancestral uricase reconstruction; pseudogene reactivation; delivery vectors (LNP, AAV, base editing)
+- **[CRISPR Uricase](wiki/crispr-uricase.md)** — An ancestral UOX construct lowered intracellular urate in edited human hepatocyte cultures; in-vivo delivery, durability, reaction safety, and circulating-urate effects remain untested.
 
 ## Peptides & Compounds
 
@@ -143,7 +141,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[CFH-Dependence Mechanism-Dissociation of CP0 Candidates (comp-039)](wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md)** — Four upstream CP0 candidates classify as CFH-independent under the stated mechanism tests.
 - **[KPV GSDMD Pore Influx (comp-042)](wiki/kpv-gsdmd-pore-influx-computational.md)** — **YELLOW:** pore flux survives, but KPV selectivity is falsified.
 - **[DAF+Lactoferrin EcN Folding Feasibility (comp-043)](wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md)** — C1-INH viable, DAF provisional, and lactoferrin not viable in the modeled EcN folding regime.
-- **[Gut-Lumen Uricase Physiological Regime (comp-044)](wiki/gut-lumen-uricase-physiologic-regime-computational.md)** — **RED for prior quantitative claims; biology open:** no ΔSUA or genotype ranking survives.
+- **[Gut-Lumen Uricase Physiological-Regime Audit (comp-044)](wiki/gut-lumen-uricase-physiologic-regime-computational.md)** — COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. The audit supplies no replacement dose, ΔSUA, genotype order, regime, efficacy model, topology/chassis, production target, or safety conclusion.
 - **[Uricase Topology × Oxygen × Peroxide (comp-045)](wiki/uricase-topology-oxygen-peroxide-design-computational.md)** — **YELLOW:** no topology is eliminated; the factorial wet-lab test remains decisive.
 - **[Staged Purine Sink Mass Balance (comp-046)](wiki/staged-purine-sink-mass-balance-computational.md)** — Two separate conditional models; neither grid is probabilistic or establishes joint efficacy.
 - **[ABCG2 Q141K Chaperone Re-screen (comp-047)](wiki/abcg2-q141k-chaperone-rescreen-computational.md)** — **INCONCLUSIVE:** failed positive controls show rigid docking cannot discriminate chaperones.
@@ -154,7 +152,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[Medicinal Mushroom Compound Mapping (comp-014)](wiki/medicinal-mushroom-compound-mapping-computational.md)** — Fungal compound-to-chokepoint map with ADA and PINK1/mitophagy as open candidate nodes.
 - **[DAF/CD55 SCR1-4 Truncated Protease Stability (comp-012)](wiki/daf-cd55-scr14-truncated-computational.md)** — **LOW protease risk:** the truncated construct remains gated by three wet-lab unknowns.
 - **[DAF SCR1-4 Cassette Ranking (comp-030)](wiki/daf-cd55-scr14-cassette-ranking-computational.md)** — Corroborates the direct-secretion baseline and rejects GlaA-KEX2 for this target.
-- **[Uricase Protease Stability (comp-001)](wiki/uricase-protease-stability-computational.md)** — AlphaFold + P1/P1' analysis: zero exposed cleavage sites, mean pLDDT 97.1; LOW risk verdict; shio-koji delivery thesis structurally supported.
+- **[Uricase Protease-Site Proxy (comp-001)](wiki/uricase-protease-stability-computational.md)** — P1/P1' sequence mapping plus AlphaFold pLDDT supplies a structural-confidence prior; it does not measure solvent exposure, protease survival, retained activity, or fermentation performance. The shio-koji assay remains the gate.
 - **[Lactoferrin Protease Stability (comp-005)](wiki/lactoferrin-protease-stability-computational.md)** — HIGH (full sequence, signal-peptide-driven) / MODERATE (mature protein); lactoferrin arm of §1.10 remains a feasibility gate.
 - **[DAF/CD55 Protease Stability (comp-006)](wiki/daf-cd55-protease-stability-computational.md)** — HIGH verdict for soluble ectodomain (aa 35–353); stalk-contingent (Ser/Thr stalk aa 286–353 drives all exposed sites); SCR1-4 core contributes zero exposed sites; stalk-truncated construct (aa 35–285) is the logical follow-up.
 - **[Food-Grade HDAC Inhibitor Screen (comp-007)](wiki/food-grade-hdaci-screen-computational.md)** — Stage 1 in silico screen: butyrate rank 1 (composite 0.374, HIGH confidence, 167× HDAC6 selectivity); sulforaphane rank 2 (LOW confidence); PEITC rank 3. Advances to Stage 2 Caco-2/HepG2 paired HDAC activity assay.
@@ -197,10 +195,10 @@ Long-form research documents supporting the concept pages above.
 - **[Open Enzyme Vision](wiki/etc/open-enzyme-vision.md)** — North Star: problem statement, insight, platform vision
 - **[Enzyme Deficit Deep Dive](wiki/enzyme-deficit-deep-dive.md)** — Epidemiology and clinical burden of enzyme deficiencies
 - **[Gout Deep Dive](wiki/gout-deep-dive.md)** — Uric acid metabolism, NLRP3, current therapies
-- **[Engineered Yeast Uricase Proposal](wiki/engineered-yeast-uricase-proposal.md)** — *S. cerevisiae* uricase engineering
-- **[Engineered Koji Protocol](wiki/engineered-koji-protocol.md)** — *A. oryzae* multi-enzyme fermentation
+- **[Engineered Yeast UOX Research Plan](wiki/engineered-yeast-uricase-proposal.md)** — Matched yeast builds, reaction-site measurements, safety gates, and stop rules.
+- **[Engineered Koji UOX Plan](wiki/engineered-koji-protocol.md)** — Matched *A. oryzae* builds, process measurements, and falsification gates; no chassis or product precommitment.
 - **[NLRP3 Exploit Map](wiki/nlrp3-exploit-map.md)** — NLRP3 inhibition strategies (oridonin, disulfiram, peptides)
-- **[Blood Barrier Exploits](wiki/blood-barrier-exploits.md)** — Canonical 14-route catalog: every delivery route evaluated, barrier biology + optimization
+- **[Systemic UOX Delivery Attack Surface](wiki/blood-barrier-exploits.md)** — Route-specific hypotheses and gates for recovering active UOX in blood or a defined tissue compartment; evidence does not transfer from the luminal route.
 - **[AI Bio Tools Playbook](wiki/etc/ai-bio-tools-playbook.md)** — Computational strain design, optimization, and tool access (includes Codex Life Sciences plugin setup and Hugging Science triage for open datasets/models)
 - **[Ginkgo Cloud Lab Evaluation](wiki/ginkgo-cloud-lab-evaluation.md)** — Evaluation of cell-free and strain-engineering services against specific wet-lab gates.
 - **[Peptide Gout Addendum](wiki/peptide-gout-addendum.md)** — BPC-157, KPV, immunomodulatory peptides
@@ -216,33 +214,31 @@ Long-form research documents supporting the concept pages above.
 Detailed technical analyses for the uricase, yeast, and koji engineering tracks.
 
 **Uricase / *S. cerevisiae* track:**
-- **[Uricase Variant Selection](wiki/uricase-variant-selection.md)** — Six variants evaluated; *A. flavus* primary, *A. globiformis* secondary. Rasburicase FDA precedent. Engineering roadmap.
-- **[GI Survival Prediction](wiki/gi-survival-prediction.md)** — Transit model: 15–25% baseline survival → 40–50% with enteric coating + disulfide engineering.
-- **[Protein Engineering Strategy](wiki/protein-engineering-strategy.md)** — Three mutation tiers (SB-1 / BAL-1 / OPT-1) for acid stability, protease resistance, and catalytic retention. Includes full mutation lookup table.
-- **[Codon Optimization & Expression Cassette](wiki/codon-optimization-expression-cassette.md)** — *S. cerevisiae* cassette: TDH3p constitutive promoter, intracellular uricase, ADH1 terminator. Predicted yield 800–1,200 mg/L.
+- **[Uricase Variant Selection](wiki/uricase-variant-selection.md)** — Matched candidate screen in which sequence, topology, reaction site, and process are interacting variables; no universal parent-enzyme ranking.
+- **[GI Survival Prediction](wiki/gi-survival-prediction.md)** — Empirical gate for activity retained across processing, gastric/intestinal transit, topology, and formulation; no validated survival fraction or oral dose.
+- **[Protein Engineering Strategy](wiki/protein-engineering-strategy.md)** — Matched wild-type, single-change, and combination screen for retained active UOX; no predicted survival or dose.
+- **[Yeast UOX Expression Cassette](wiki/codon-optimization-expression-cassette.md)** — Sequence-controlled build matrix; expression and topology remain measured gates.
 
 **Koji / *A. oryzae* track:**
-- **[Koji Construct Design](wiki/koji-construct-design.md)** — *A. oryzae* uricase via amyB promoter (starch-inducible, 6–10× baseline). Expected 40–80 mg/g koji.
+- **[Koji UOX Construct Screen](wiki/koji-construct-design.md)** — Matched intracellular, secreted, displayed, and cell-free configurations; no preselected winner.
 - **[Digestive Enzyme Optimization](wiki/digestive-enzyme-optimization.md)** — Koji enzyme-production benchmarks, substrate choices, engineering targets, and an uncontrolled PERT-timing observation.
-- **[Koji Home Fermentation](wiki/koji-home-fermentation.md)** — Wild-type small-batch process used as a baseline for candidate engineered strains.
+- **[Koji Home Fermentation](wiki/koji-home-fermentation.md)** — Separate wild-type small-batch process; engineered-strain work requires controlled containment and release criteria.
 
 **Compound screening:**
 - **[NLRP3 Inhibitor Screen](wiki/nlrp3-inhibitor-screen.md)** — Candidate comparison by gout-relevant mechanism, evidence, exposure, safety, and discriminating experiments; production routes are considered only when biologically relevant.
 
 **Cross-platform:**
-- **[Cross-Validation (Thesis Stress Test)](wiki/cross-validation.md)** — Risk matrix across all tracks; NLRP3 suppression confirmed; variant redundancy tested; ALLN-346 clinical bridge.
+- **[Cross-Validation (Thesis Stress Test)](wiki/cross-validation.md)** — Portfolio-level stress tests and scope boundaries across independently falsifiable tracks; current evidence lives in the linked source pages.
 
 ---
 
 ## Cross-Domain Relationships
 
-**Uricase engineering loop:** uricase → *S. cerevisiae* / *A. oryzae* → gut-lumen-sink → NLRP3 inflammasome suppression → gout flare prevention
+**Luminal UOX dependency:** candidate sequence and chassis → verified active construct → physiological topology × oxygen × peroxide test (§1.33) → urate-antioxidant-loss and epithelial-safety test (§1.36) → later compartmental and translational work. Expression, protein mass, or a favorable high-substrate assay cannot skip those gates.
 
-**Barrier repair loop:** BPC-157 + KPV → blood-barrier integrity → NLRP3 suppression via barrier signal transduction → oridonin / disulfiram (optional intensification)
+**Other UOX routes:** local-tissue and systemic delivery have separate active-enzyme, peroxide, PK, immunogenicity, and tissue-safety gates. A result from the luminal route does not validate or invalidate those routes.
 
-**Metabolic synergy:** BHB (ketogenic diet or supplementation) → NLRP3 inhibition + probiotic fitness advantage → enzyme-producing strains outcompete pathogenic flora (SIBO prevention)
-
-**One compositional hypothesis (not the project thesis):** Engineered *A. oryzae* koji (uricase + candidate NLRP3 modulators) + rice bran substrate + allopurinol adjunct may cover multiple gout chokepoints. Every component remains independently falsifiable; the portfolio continues if this composition fails.
+**Portfolio boundary:** urate production, renal and intestinal transport, inflammatory signaling, local delivery, and other disposal mechanisms remain independent exploit surfaces. A failed UOX sequence, topology, chassis, or route narrows only the claim it tested.
 
 ---
 

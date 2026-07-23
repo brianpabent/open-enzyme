@@ -1,7 +1,11 @@
 ---
 title: Gut-Blood Barrier and Enzyme Delivery Routes
+date: 2026-04-21
+tags:
+  - delivery
+  - gut barrier
+  - uricase
 aliases:
-  - blood-brain-barrier
   - gut barrier
   - intestinal epithelium
   - bioavailability
@@ -10,144 +14,43 @@ aliases:
 related:
   - uricase
   - gut-lumen-sink
-  - saccharomyces-cerevisiae
-  - aspergillus-oryzae
+  - blood-barrier-exploits
+  - validation-experiments
 sources:
   - blood-barrier-exploits.md
-  - engineered-yeast-uricase-proposal.md
-  - engineered-koji-protocol.md
+  - gut-lumen-sink.md
+  - uricase.md
 ---
 
 # Gut-Blood Barrier and Enzyme Delivery Routes
 
-## The Challenge: Why Large Proteins Struggle Across the Intestinal Epithelium
+The gut epithelium separates two different uricase hypotheses: degrade urate in the lumen without systemic enzyme exposure, or move an active enzyme or encoded payload across the barrier. Evidence for one route does not validate the other.
 
-The intestinal epithelium is a formidable barrier protecting the bloodstream from the hostile gut lumen. For a 135 kDa protein like [[uricase|uricase]], crossing this barrier is like trying to move a delivery truck through a security checkpoint designed for pedestrians.
+## Luminal UOX hypothesis
 
-### The Barrier's Multiple Defenses
+The luminal hypothesis exploits urate already secreted into the intestine. It does not require intact UOX to enter the bloodstream. Human oral-enzyme studies support the general proposition that an active luminal enzyme can alter systemic urate handling, but they do not validate an engineered yeast or koji construct, a delivery format, or a dose. **Clinical Trial evidence for the modality; Mechanistic Extrapolation for an untested engineered construct.** See [gut-lumen sink](./gut-lumen-sink.md) and [uricase](./uricase.md).
 
-The barrier stacks structural defenses (tight junctions limiting paracellular passage to <600 Da, single-cell-thick epithelium, a 100–800 μm mucus layer), chemical defenses (acidic gastric pH, GI proteases, bile salts), and biological defenses (GALT antigen sampling, epithelial lysosomes, first-pass hepatic metabolism). Together they make a 135 kDa protein's transit from lumen to blood extremely unlikely without active assistance.
+An engineered UOX candidate therefore remains conditional on two preclinical gates:
 
-Full barrier biology: [Pen-Testing the Gut-Blood Barrier](./blood-barrier-exploits.md).
+1. Build and characterize exact candidate configurations in their intended host or material, then use [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) to identify whether any produces product at the human-baseline substrate prior without an unacceptable peroxide or viability signal.
+2. A surviving topology must pass [validation §1.36](./validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay), which tests the coupled loss of urate antioxidant capacity and UOX-derived hydrogen peroxide before animal escalation.
 
-## The Paradigm Shift: Why Crossing the Barrier Isn't Necessary
+Until those gates pass, no fermented preparation, live organism, lysate, powder, or capsule is an established delivery format.
 
-**Critical Insight:** Recent validation of the [[gut-lumen-sink|gut-lumen sink strategy]] (ALLN-346, PULSE probiotic, engineered *S. boulardii*) reveals that **systemic enzyme absorption isn't required for therapeutic effect.**
+## Barrier-crossing hypotheses
 
-Approximately one-third of daily uric acid elimination occurs via intestinal secretion through the ABCG2 transporter. By placing active [[uricase|uricase]] in the intestinal lumen, the enzyme:
+[Blood-barrier exploits](./blood-barrier-exploits.md) catalogs paracellular, transcellular, vesicular, mucosal, and barrier-bypassing routes. These are separate delivery programs because systemic or tissue exposure introduces route-specific pharmacokinetic, immunogenicity, and safety questions. A route should be advanced only when the target requires exposure outside the lumen and the proposed carrier has a direct measurement and falsification plan.
 
-1. Degrades secreted uric acid (via normal ABCG2 elimination pathway)
-2. Creates a concentration gradient (lumen urate << blood urate)
-3. Pulls additional urate from blood across the epithelium (passive diffusion down gradient)
-4. Degrades this newly arrived urate before reabsorption
+For UOX, systemic and intra-articular routes should be compared with existing systemic uricase evidence rather than inferred from luminal feasibility. Deliberately increasing epithelial permeability also requires direct barrier-integrity and translocation measurements; theoretical bioavailability is not a safety result.
 
-**Result:** Serum uric acid drops without the enzyme ever entering the bloodstream.
+## Immune boundary
 
-This reframes the barrier-crossing problem: it becomes an optimization bonus, not a requirement. (Source: blood-barrier-exploits.md, engineered-yeast-uricase-proposal.md)
+Mucosal immune tolerance is a biological phenomenon, not a guarantee for a recombinant enzyme or engineered organism. The immune result depends on the antigen, formulation, exposure pattern, barrier state, host, and whether material reaches systemic compartments. Tolerability observed for one oral-enzyme formulation cannot be transferred to engineered yeast, engineered koji, or another payload. Each candidate needs direct local and systemic immune readouts in its own delivery configuration.
 
-## 14 Theoretical Routes Across the Barrier (For Reference)
+## Decision rule
 
-If barrier crossing ever becomes necessary, [Pen-Testing the Gut-Blood Barrier](./blood-barrier-exploits.md) catalogs 14 exploitable routes with mechanisms, expected bioavailability, and precedents. They span paracellular permeation enhancers (SNAC, C10, chitosan, ZOT), transcellular receptor hijacking (FcRn, M cell targeting), microbe- and vesicle-based delivery (probiotic gene therapy, OMVs, exosomes, nanoparticles), and mucosal/transdermal routes that bypass the GI tract entirely (sublingual, nasal, microneedle). Expected bioavailabilities run from ~1% for the hardest GI-paracellular cases up to 50–100% for the GI-bypassing routes.
+- Use a luminal route only if activity at physiological substrate, peroxide control, viability, and the §1.36 safety interaction survive testing.
+- Pursue barrier crossing only when a gout-relevant target cannot be reached from the lumen and the route has a measurable exposure advantage.
+- Kill or redirect the construct when the required compartment cannot be reached with an acceptable safety margin.
 
-For the gut-lumen uricase track, these remain scientifically interesting but are not required for the hypothesis being tested — see "When Systemic Delivery Becomes Relevant" below for the conditions that would change that.
-
-## Why Lumen-Based Delivery Is Attractive for the Uricase Track
-
-### Simplicity
-- No barrier crossing required
-- Leverages endogenous ABCG2 transport
-- Enzyme works where it's produced/secreted
-
-### Cost
-- No complex formulations, nanoparticles, or fusion proteins
-- For the koji and yeast subtracks, construct production is the immediate bottleneck rather than delivery engineering
-
-### Safety
-- Enzyme never enters bloodstream (in lumen-based approach)
-- No systemic immune challenge from foreign protein
-- Oral tolerance to commensal organisms and their products is inherent to mucosal immunity
-
-### Validation
-- ALLN-346, PULSE, engineered S. boulardii all demonstrate gut-lumen-only approach works
-- No need to optimize barrier crossing to achieve therapeutic effect
-
-(Source: blood-barrier-exploits.md, gut-lumen-sink.md)
-
-## When Systemic Delivery Becomes Relevant
-
-Systemic delivery optimization (routes 1–14 above) would be valuable if:
-
-1. **Lumen-based strategy plateaus:** Optimal dosing of lumen enzyme achieves partial response; systemic absorption could provide incremental benefit
-2. **Renal dysfunction:** Severe chronic kidney disease impairs ABCG2 function; systemic uricase becomes more relevant
-3. **Extended half-life needed:** Systemic enzyme (naturally protein-degraded over days) could allow less-frequent dosing than gut transit (hours to days)
-4. **Joint microenvironment targeting:** Direct enzyme action on synovial fluid and intra-articular crystal deposits (not relevant for early-stage gout, but potentially relevant for chronic tophaceous disease)
-
-For the home-fermentation uricase subtrack, **lumen-based delivery is the working target**, not a default target for the wider Open Enzyme portfolio. (Source: engineered-yeast-uricase-proposal.md)
-
-## Oral Tolerance and Mucosal Immunity
-
-A critical advantage of the lumen-based approach is interaction with **mucosal immunity**, which is inherently **tolerogenic** (designed for tolerance to dietary proteins and commensal organisms).
-
-### The Mechanism
-
-- **Oral tolerance** is the dominant mucosal immune response to dietary antigens
-- **Regulatory T cells (Tregs)** dominate in gut-associated lymphoid tissue (GALT)
-- **IgA secretion** is non-inflammatory (unlike systemic IgG/IgE)
-- **Epithelial barrier integrity** prevents translocation of intact antigens to systemic immunity
-
-### Implications for Engineered Organisms
-
-Repeated oral dosing of engineered yeast or bacteria expressing uricase should induce **tolerance** rather than sensitization, unlike IV enzyme delivery (which has ~60% anti-drug antibody formation with rasburicase).
-
-Evidence: ALLN-346 Phase 1 trials showed no immune reactions at any dose tested. (Source: engineered-yeast-uricase-proposal.md)
-
-## Delivery Format Implications
-
-### Fresh Koji or Yeast Fermented Beverage
-- Enzyme active locally in lumen
-- No barrier crossing needed
-- Mucosal tolerance to whole organism and its proteins
-- Optimal format for lumen-based strategy
-
-### Lyophilized Powder / Capsule
-- Enzyme intact but in dry form
-- Rehydrated in intestinal lumen
-- Still lumen-based if enzyme doesn't absorb
-- Standardizable dosing
-
-### Live Probiotic
-- Produces enzyme continuously in situ
-- Organism may colonize or transit depending on species
-- *S. boulardii*: transits (3 days steady state, clears in 2–5 days)
-- Daily dosing required for transiting organisms
-
-### Enzyme Concentrate / Lysate
-- Pre-formed enzyme
-- May allow higher concentration per dose
-- Still works via lumen mechanism if highly stable
-
-(Source: engineered-yeast-uricase-proposal.md, engineered-koji-protocol.md)
-
-## Safety Considerations for Barrier Crossing Routes
-
-If systemic delivery becomes relevant, several considerations:
-
-**Immunogenicity:**
-- Systemic exposure to foreign protein (uricase) triggers adaptive immunity
-- ~60% of IV rasburicase patients develop anti-drug antibodies (ADAs)
-- Oral/mucosal tolerance is more favorable but not guaranteed with absorbed enzyme
-
-**Barrier Integrity:**
-- Routes that deliberately open tight junctions (C10, ZOT) carry theoretical risk of increased pathogen translocation
-- Should be used transiently, not chronically
-
-**Hepatic Metabolism:**
-- Most routes bypass first-pass hepatic metabolism (lymphatic drainage)
-- Protects against rapid clearance but also means no "detoxification" by liver
-
-## References
-
-- Source: blood-barrier-exploits.md — Comprehensive catalog of 14 barrier-crossing routes, mechanisms, expected bioavailability, precedents
-- Source: engineered-yeast-uricase-proposal.md — Dosing, delivery formats, comparison to IV rasburicase
-- Source: engineered-koji-protocol.md — Koji fermentation and delivery options
-- Source: gut-lumen-sink.md — Why lumen-based delivery is optimal; ABCG2 mechanism
+This page concerns delivery logic. Chassis selection and cross-track ranking belong in the [modality–chokepoint matrix](./modality-chokepoint-matrix.md).

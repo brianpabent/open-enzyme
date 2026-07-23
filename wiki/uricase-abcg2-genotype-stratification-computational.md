@@ -48,12 +48,12 @@ sources:
   - "Allena Pharmaceuticals EULAR POS1157 (2022) ALLN-346 Phase 2a Study 201"
   - "Protalix BioTherapeutics (2024) PRX-115 Phase 1 ACR Convergence late-breaking poster"
   - "Nguyen KP et al. (2025) Clin Rheumatol 44(10):4275-4281, PMID 40858881, doi:10.1007/s10067-025-07656-w"
-status: superseded-by-comp-044
+status: historical-model-not-decision-usable
 ---
 
 # Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model (comp-019)
 
-> **Superseded 2026-07-13 by [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md).** comp-019's code did not use the luminal-urate concentration or UOX Km stored in its inputs and assumed 24 hours of saturated activity. Its quantitative ΔSUA, genotype-effect magnitudes, capacity ratios, flat-dose conclusion, and yield-priority recommendations are retired. The frozen artifact remains for provenance only; do not use it for dose or efficacy decisions.
+> **Not decision-usable.** COMP-019's code did not use the luminal-urate concentration or UOX Km stored in its inputs and assumed 24 hours of saturated activity. Separately, [COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics](./gut-lumen-uricase-physiologic-regime-computational.md). COMP-044 supplies no replacement ΔSUA, dose, genotype order, physiological regime, efficacy model, topology/chassis selection, production-sufficiency target, or safety conclusion. The frozen artifact remains for provenance only; do not use it for dose or efficacy decisions.
 
 ## What survives
 
@@ -61,6 +61,6 @@ Phase A found no Q141K-stratified uricase clinical outcome in the sources search
 
 ## Current decision
 
-No Phase B interpretation survives. The gut-lumen uricase track remains open, but dose, genotype response, topology, oxygen, peroxide, access, survival, and transit require direct measurement. [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md), [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md), and [validation experiment 1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) define the current gate.
+The Phase B outputs are not eligible for dose, efficacy, genotype-order, or engineering decisions. The gut-lumen uricase track remains open; substrate, oxygen, peroxide, access, survival, transit, and topology require direct measurement. Exact configurations must first be built or supplied and characterized; [validation experiment 1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) then supplies the configuration-level comparison, and [§1.36](./validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay) precedes animal escalation.
 
-The frozen inputs, code, invalidated outputs, and review receipts are in the [comp-019 experiment directory](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/).
+The frozen inputs, code, non-decision-eligible outputs, and review receipts are in the [comp-019 experiment directory](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/).

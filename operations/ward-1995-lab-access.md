@@ -36,18 +36,18 @@ status: scope-page
 
 # Ward 1995 §1.9 Wet-Lab Access — Global Landscape (Japan / China / Europe)
 
-**Status:** scope-page (2026-05-05; priority corrected 2026-07-13). Maps global options for executing [validation §1.9](../wiki/validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate), the conditional #1 koji-endgame architecture gate. §1.33 is now the upstream gout-program Gate 0, but access work should continue: §1.9A lactoferrin-only is independently informative and can run before UOX topology selection, while the same collaborator and chassis later support §1.9B/C. Companion to the US Role 2 contact thread; see [team](../wiki/etc/team.md).
+This page maps global options for executing [validation §1.9](../wiki/validation-experiments.md#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate). Access work can continue because §1.9A lactoferrin-only is independently informative. For UOX, §1.5 must first build and characterize exact koji configurations; §1.33 then screens those configurations before §1.9B/C. The same collaborator and controlled chassis infrastructure may support both stages. See [team](../wiki/etc/team.md).
 
 ---
 
 ## Why this page exists
 
-§1.9C is the coexistence experiment that decides whether the [koji-endgame-strain](../wiki/koji-endgame-strain.md) thesis stands as a one-strain construct or collapses to a two-strain co-fermentation fallback. The work is staged: §1.9A establishes the lactoferrin cassette independently, §1.9B establishes the §1.33-selected UOX topology in solid-state koji, and §1.9C combines only two passing single-cassette legs. The program needs:
+§1.9C is the coexistence experiment that decides whether the [koji-endgame-strain](../wiki/koji-endgame-strain.md) track continues as a one-strain construct or redirects to separate configurations. The work is staged: §1.9A establishes the lactoferrin cassette independently, §1.9B reproduces an exact §1.5-built, §1.33-advanced UOX configuration in solid-state koji, and §1.9C combines only two passing single-cassette legs. The program needs:
 
 - *A. oryzae* genetic-engineering capability (PEG/CaCl₂ protoplast transformation; Agrobacterium also acceptable)
 - Solid-state rice koji fermentation infrastructure (plus parallel submerged-culture controls)
 - A protease-deletion chassis — H01 Killshot #1 made the **NSlD-ΔP10** ten-protease-knockout strain the default, not a fallback (Huynh 2020 PMC7257131; Yoon 2011 PMID 20957357)
-- pyrG / niaD / amdS / ptrA selection markers — the food-grade-compatible set
+- pyrG / niaD / amdS / ptrA selectable-marker options; final marker strategy follows the exact construct, containment, release, and regulatory plan
 - qPCR (cassette copy number), ELISA + Western (heterologous protein quantification), spectrophotometric uricase activity assay, HPLC for kojic acid baseline
 
 The active US Role 2 (Pharma Translation) lead was emailed today and replied "ok lemme try to dig into this and i'll get back to ya" — engaged, no timeline. This page de-risks that timeline by mapping global parallel options; if the lead comes back without direct execution capacity, several leads here can carry the experiment.
@@ -134,7 +134,7 @@ WuXi AppTec, Pharmaron, and others are dominantly mammalian / yeast / *E. coli* 
 
 ### Realistic engagement note (China)
 
-Foreign-PI collaboration with Chinese academic labs on biotech generally works fine — the projects move through MOFCOM (Ministry of Commerce) approval for international agreements but this is procedural, not prohibitive. Strain export from China (CGMCC outbound) may have additional review depending on strain type, but for non-pathogenic GRAS *A. oryzae* should be straightforward.
+Foreign-PI collaboration with Chinese academic laboratories and any strain transfer require institution- and material-specific review. MOFCOM, repository, biosafety, export, and import requirements must be confirmed for the exact agreement and strain; parent-organism status does not make transfer automatic.
 
 ---
 
@@ -193,7 +193,7 @@ This is the single highest-leverage strain-side consideration. Synthesis of the 
 
 **Acceptable substitutes (more wet-lab work, but plausible):**
 
-1. **NSAR1 5-marker auxotroph (Oikawa 2020, PMC7725655)** — the platform comp-010 already analyzed for marker-slot capacity. Doesn't have the 10-protease background but provides 5 simultaneous integration slots. Lactoferrin titer may fall short of the protein-specific Ward 1995 precedent; UOX may be easier on the proteolysis axis, but system feasibility, topology, and peroxide safety remain gated by §1.33 rather than assumed from sequence properties.
+1. **NSAR1 5-marker auxotroph (Oikawa 2020, PMC7725655)** — the platform comp-010 analyzed for marker-slot capacity. It lacks the 10-protease background but provides five simultaneous integration slots. Lactoferrin output may differ from the Ward 1995 host; UOX expression, localization, physiological activity, and peroxide handling require exact-configuration measurement under §§1.5, 1.33, and 1.36.
 2. **AUT1-lD-v10-sD strain** (Huynh 2020 Table 1) — intermediate hyper-producer mutant with double deletion of *AosedD* + *Aovps10* + tppA + pepE. Published precedent for high heterologous expression. Same Maruyama lab.
 3. ***De novo* protease-knockout in NSAR1 background** — substantial wet-lab work (~12+ months for ten knockouts), but doable using the same CRISPR-Cas9 toolkit Maruyama and DTU groups have published. This is the "plan C" if the Maruyama lab path closes entirely.
 4. **C19 from Jiangnan** — published high-expression mutant; protease profile not characterized; would need separate validation work but the multi-locus integration toolkit is published and strong.
@@ -221,13 +221,13 @@ The substantive context for any researcher reaching out to the Maruyama group. T
 
 **Two asks, ordered by ambition:**
 1. **Material Transfer Agreement (MTA) for NSlD-ΔP10** — minimum needed to unblock §1.9. Standard academic MTA; expect 4–8 weeks for paperwork.
-2. **Collaboration or fee-for-service on the staged cassette program** — more ambitious. The project has candidate cassette designs (per [`koji-endgame-strain.md` §3.4](../wiki/koji-endgame-strain.md) and [`engineered-koji-protocol.md` §16](../wiki/engineered-koji-protocol.md)); the UOX cassette must inherit the §1.33 topology verdict. The Maruyama group's experience with the exact strain and a two-chain adalimumab architecture makes this the lowest-execution-risk path for §1.9A–C.
+2. **Collaboration or fee-for-service on the staged cassette program.** Candidate designs are documented in [`koji-endgame-strain.md`](../wiki/koji-endgame-strain.md) and [`engineered-koji-protocol.md`](../wiki/engineered-koji-protocol.md). §1.5 must first build and characterize exact UOX configurations; §1.33 may then advance one within that host. The Maruyama group's experience with the strain family and multi-chain expression is relevant execution precedent, not evidence that the UOX configuration will work.
 
 **Substantive technical points worth bringing in the first message:**
 - Reference the exact paper (Huynh 2020 PMC7257131) so context is unambiguous
 - Note the corrected comp-010 cassette-compatibility result: Lf + UOX has the same **bulk disulfide count** as the Maruyama group's adalimumab work (16 vs. 16), with LOW sequence-level design risk; this is a comparator, not proof of equivalent folding capacity because the protein architectures differ
 - Note the Killshot #1 (H01) falsification check explicitly cites their work as the closest architecture precedent
-- Brief on the project framing: open-source, food-grade, gout-focused, with the §1.9 spec and falsification card publicly readable
+- Brief on the project framing: open, gout-focused red-team research; §1.9 is one falsifiable koji-track experiment rather than the project mission
 
 **Project-context pages worth linking in the message:**
 - [`validation-experiments.md` §1.9](../wiki/validation-experiments.md) — the experiment spec
