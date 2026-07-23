@@ -1,89 +1,303 @@
 {
-  "schema_version": 2,
+  "schema_version": 1,
   "comp": "comp-044",
   "comp_dir": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime",
-  "source_commit": "917d49dadf04b084918b7850b46a02118591b9b1",
-  "artifact_manifest_sha256": "583d60f2b7fd1a5fc72a96ab7968e9d6ba0a885918f967ed1ba9ed1638351722",
+  "source_commit": "50ecf5a9d8c3fcffbd0b2114e9fafd79ca907807",
+  "artifact_manifest_sha256": "5dede85c414fee37043b8486faab8ff3bd1ed6bff1843ccc38d93c85694b7a7e",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-17T14:14:49Z",
-  "comp_verdict": "review_completed_open_actions",
+  "timestamp": "2026-07-23T12:40:29Z",
+  "comp_verdict": "clean_with_limitations",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
   "action_required": true,
-  "derived_paths": [
-    "wiki/abcg2-modulators.md",
-    "wiki/chassis-pending-interventions.md",
-    "wiki/computational-experiments.md",
-    "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
-    "wiki/etc/GRAPH.md",
-    "wiki/etc/autonomous-screening-methodology.md",
-    "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
-    "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/flux_model_summary.md",
-    "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
-    "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/provenance.md",
-    "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md",
-    "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/provenance.md",
-    "wiki/genotype-informed-supplement-workflow.md",
-    "wiki/gi-survival-prediction.md",
-    "wiki/gout-action-guide.md",
-    "wiki/gout-genetic-variants.md",
-    "wiki/gout-kill-chain-delivery-routes.md",
-    "wiki/gout-multihop-research-program.md",
-    "wiki/gut-lumen-sink.md",
-    "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
-    "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
-    "wiki/open-questions.md",
-    "wiki/purine-degrading-bacteria.md",
-    "wiki/uricase-abcg2-genotype-stratification-computational.md",
-    "wiki/uricase-variant-selection.md",
-    "wiki/uricase.md",
-    "wiki/validation-experiments.md"
-  ],
-  "actual_cost_usd": 0.0,
-  "binding_mode": "completed_review_migration",
-  "independent_review": {
-    "completed": true,
-    "date": "2026-07-15",
-    "reviewed_snapshot": "eeab5b53054b93544c428a476dad06a8f8fe2621",
-    "review_log_git_path": "logs/comp-reviews/2026-07-15-comp-044-eeab5b5.md",
-    "review_log_commit": "90411d413a8c639e545782ea26c0dddbb30a72e1"
+  "authoring_gates": {
+    "status": "modern",
+    "valid": true,
+    "details": [
+      "pre-run design matches post-run design; current COMP artifact matches the post-run snapshot; later wiki evolution is push-reviewed"
+    ]
   },
-  "post_review_changed_manifest_paths": [
-    "wiki/abcg2-modulators.md",
-    "wiki/chassis-pending-interventions.md",
-    "wiki/computational-experiments.md",
-    "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
-    "wiki/etc/GRAPH.md",
-    "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
-    "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/provenance.md",
-    "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md",
-    "wiki/genotype-informed-supplement-workflow.md",
-    "wiki/gi-survival-prediction.md",
-    "wiki/gout-action-guide.md",
-    "wiki/gout-genetic-variants.md",
-    "wiki/gout-kill-chain-delivery-routes.md",
-    "wiki/gout-multihop-research-program.md",
-    "wiki/gut-lumen-sink.md",
-    "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
-    "wiki/open-questions.md",
-    "wiki/purine-degrading-bacteria.md",
-    "wiki/uricase-abcg2-genotype-stratification-computational.md",
-    "wiki/uricase.md",
-    "wiki/validation-experiments.md"
+  "coverage": [
+    {
+      "shard_id": "shard-001",
+      "coverage_sha256": "704fb7a81f5ff6f55e8b41a65b032f4ade32a91553f8ee073d2f4a20d4c8d056",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 16633,
+          "file_sha256": "e966e22765db0e49d84482fb1e6bc382cda35b80e16b07fad0d993cb70548b23",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/analyze.py",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 16524,
+          "file_sha256": "e856e2bece4c446c1ffdae523fe6bf37e46a0a0e3680cca4a4afd540752a1e03",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/model_parameters.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 2229,
+          "file_sha256": "f5a7dcf873d787d4586e958846f53e1955c74e56b8de85aa904cefd0ec33d80f",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/provenance.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 2749,
+          "file_sha256": "4d72e6f11420caf7a27323db37005f61443acaee915cd4b38fafbd19c976e6ee",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/query-strategy.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 620,
+          "file_sha256": "67c7ea5d9f32be75b494664e9e6b4d73f19de996364f5aef8fe790e6f52bcb7c",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/outputs/results.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 6235,
+          "file_sha256": "ff3291adf13eee42e6cf071f3e21fe8a556a31ab92b86e3fdc121ef80a71f25e",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/outputs/summary.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 2957,
+          "file_sha256": "196821bea9d3cc286a6e47f2a3a526907989e5b7480872ba69012dfb3c89ce0a",
+          "binary": false
+        },
+        {
+          "path": "wiki/computational-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 82869,
+          "file_sha256": "199ab73b2a6f368a65d6997b0078616cb01e98e7dab5f7b946acfe5af2bc0043",
+          "binary": false
+        },
+        {
+          "path": "wiki/delivery-route-matrix.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 28188,
+          "file_sha256": "f780c61c3f8764a68c406ac4ed9956a6a591dffc98b3f899ffcb02fbbf15619a",
+          "binary": false
+        },
+        {
+          "path": "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 3725,
+          "file_sha256": "ef12f095d3198bf5bb915aecfe7d130f1cf29a63edfbfd5ac31ddb0d87e70e8d",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/GRAPH.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 4322,
+          "file_sha256": "54a8cc417b5548bf68cd4f570c8460742550e4e7bc93e64f40800ece5002bc63",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 8476,
+          "file_sha256": "154b8826f43fc0929c9fac40072d8ceca345ef5b096a5651eb00906a26d67cc1",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/inputs/query_strategy.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 3407,
+          "file_sha256": "a4a02041d479eae707512f24b8c72fa93b62f6a96f4fb57146b3d5fabdfb0310",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-002",
+      "coverage_sha256": "1edd29c9888bc0a1d0a3d4854d02ad191f158d5b040a257816f7061592c12c2e",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/flux_model_summary.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 3751,
+          "file_sha256": "6738ac618de9557bf562a0fde110234c0d681e63cc93e6fa52d2bad42998cae9",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/phase_a_table.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 7192,
+          "file_sha256": "ef87d4977be18dc3cc8bba7f4f582347cb2d1f8d081dbd31b7b7252ee70b6166",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/reviews/post-run.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 5899,
+          "file_sha256": "0686b1c33d0cf917ece35632ec4a81691a11ce7c9ed9cd99ae981a33e6c8bdf2",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/reviews/pre-run.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 4090,
+          "file_sha256": "ef7f63d4d32f84f78000c21148ab7578d150bec6acf6dd7bcf2d6106fa9c1ca2",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/reviews/push-review.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 15150,
+          "file_sha256": "2443ea33f7f7921dbbc96001c5761e501f3a16710de7b3a6fe798a1a717d2e07",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 2031,
+          "file_sha256": "5857fa02b00f6e9ab8f5e0cf2c41b6f003a519c313e3875a22174e4cc2225481",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/provenance.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 1093,
+          "file_sha256": "3bb98871ea5616454f64ede06f149ebedb1cfaa268639e0153f4a453e2d15b73",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 925,
+          "file_sha256": "415ccf2ce84f77f97e0604f177576bd519a23371f6b30cb197498e7ba9e6d436",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/provenance.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 2528,
+          "file_sha256": "4c8656d7efd0b9fb14a7e489439314b4a89d6f473b6261cfd92814b90c63198b",
+          "binary": false
+        },
+        {
+          "path": "wiki/gout-action-guide.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 9726,
+          "file_sha256": "da4b30e515abec9d31b3b1902717433bc33f77eec0376f22112d86ebaebda90e",
+          "binary": false
+        },
+        {
+          "path": "wiki/gout-multihop-research-program.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 6898,
+          "file_sha256": "c437ba0143704b2827adfe1d7912e5d3c31adac110f31a1dd21d540cc74cb15e",
+          "binary": false
+        },
+        {
+          "path": "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 5647,
+          "file_sha256": "bf60401e4e8fb1ef5b371efcd62ae92ba516d2265599e8c0feb9b2d94b2202f7",
+          "binary": false
+        },
+        {
+          "path": "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 6659,
+          "file_sha256": "2e91b03d0cddce09c274a4602d1155fee83bf005305d2187bca0d970f2fa30d5",
+          "binary": false
+        },
+        {
+          "path": "wiki/open-questions.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 75181,
+          "file_sha256": "c891a06eaf9a0f8357510984ea3e7e3d2085ec5a44b4bc00cd698a372aa216c8",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-003",
+      "coverage_sha256": "a236e959c6f0d6631fae98824715c1f2dfbe97012f6a6fa4acc4bee27d9f3a6f",
+      "segments": [
+        {
+          "path": "wiki/validation-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 180000,
+          "file_sha256": "ca8a5385d7eab1ddcccb33a07d891227d25e45969fd12c1ca64beb8922022802",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-004",
+      "coverage_sha256": "6d797879d3e2d7585736a8fbad5e528dfc67e0d1406cbd4ed48e1f37ff35a36d",
+      "segments": [
+        {
+          "path": "wiki/validation-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 180000,
+          "end": 231605,
+          "file_sha256": "ca8a5385d7eab1ddcccb33a07d891227d25e45969fd12c1ca64beb8922022802",
+          "binary": false
+        }
+      ]
+    }
   ],
-  "note": "Carries forward the completed independent review and its remediation state. Exact current manifest binding is a migration receipt; lane eligibility was separately adjudicated without claiming a new artifact review.",
+  "unsupported_binary_entries": [],
+  "projected_cost_usd": 1.670075,
+  "actual_cost_usd": 1.377886,
+  "input_tokens": 244214,
+  "output_tokens": 11832,
+  "tool_calls": 9,
+  "review_sha256": "d6aca16fa30e0d6cbe36448e129b357ebc5fa0e63eccc6015fd6b6d9e60f21ec",
   "lane_adjudication": {
-    "date": "2026-07-16T21:15:41Z",
-    "method": "context-isolated lane adjudication of the completed July 15 review against current artifacts",
-    "new_artifact_review_performed": false,
+    "date": "2026-07-23T12:40:29Z",
+    "method": "exact push review",
+    "new_artifact_review_performed": true,
     "queue_action_remains_open": true,
-    "propagation_allowed_scope": "Corrective-only: repair or retract the review-identified stale claims; do not spread positive derived claims until the open actions close.",
-    "synthesis_allowed_scope": "Use only that comp-019s unconditional flat-dose classification is not robust and the physiological regime remains open.",
+    "propagation_allowed_scope": "corrective-only propagation of comp-044\u2019s bounded finding that comp-019 flat-dose regime is not robust to tested substrate-occupancy and finite-window diagnostics",
+    "synthesis_allowed_scope": "bounded comp-044 synthesis as an internal-consistency audit and follow-up gate rationale only",
     "forbidden_inferences": [
-      "20-50 mg/day is sufficient",
-      "low local uricase suffices",
-      "yield is solved",
-      "the physiological regime reversed"
+      "no \u0394SUA prediction",
+      "no oral UOX dose sufficiency",
+      "no genotype responder ordering",
+      "no topology/chassis winner",
+      "no production target",
+      "no peroxide or safety clearance",
+      "no probabilistic interpretation of grid occupancy",
+      "no physiological-regime reversal"
     ]
   }
 }
