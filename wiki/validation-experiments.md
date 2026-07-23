@@ -64,7 +64,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 | [§1.26](#126-cordycepin--pentostatin--glpp--five-arm-ada-half-life-assay-ada-chokepoint-synergy-validation) | Cordycepin × pentostatin × GLPP five-arm ADA half-life assay | In Vitro | $1,500–2,500 | 3–4 | Proposed | [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [gout-pathophysiology](./gout-pathophysiology.md) |
 | [§1.27](#127-ergothioneine--lactoferrin-interaction-assay-in-msu-stimulated-thp-1-macrophages) | Ergothioneine × lactoferrin interaction in MSU-stimulated THP-1 macrophages | In Vitro | TBD | TBD | Proposed | [lactoferrin](./lactoferrin.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) |
 | [§1.28](#128-tier-2-colorimetric-cordycepin-assay-validation) | Tier 2 colorimetric cordycepin assay validation | In Vitro | ~$200 | 2 | Proposed | [quantification-ladder](./quantification-ladder.md), [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) |
-| [§1.29](#129-cordycepin--pentostatin--substrate-matrix) | Cordycepin × pentostatin × substrate matrix | In Vitro | ~$2,500–4,000 | 8–12 | Proposed | [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [medicinal-mushroom-extract-sops](./medicinal-mushroom-extract-sops.md) |
+| [§1.29](#129-cordycepin--pentostatin--substrate-matrix) | Cordycepin × pentostatin exact-configuration medium effects | In Vitro | TBD | TBD | Proposed — pilot design required | [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [medicinal-mushroom-extract-sops](./medicinal-mushroom-extract-sops.md) |
 | [§1.30](#130-houttuynia-cordata-polysaccharide-fraction-comparison-in-msu-stimulated-thp-1-macrophages--prioritization-screen) | *Houttuynia cordata* polysaccharide fraction comparison in MSU-stimulated THP-1 macrophages | In Vitro | ~$1,500–2,500 | 4–6 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [medicinal-mushroom-extract-sops](./medicinal-mushroom-extract-sops.md) |
 | [§1.31](#131-tier-2-butyrate-assay-validation--hplc-uv-vs-gc-ms-spikerecovery) | Tier 2 butyrate assay validation — HPLC-UV vs. GC-MS spike/recovery | In Vitro | ~$500 | 2 | Proposed (wet-lab gated) | [tier-2-butyrate-assay-audit-computational](./tier-2-butyrate-assay-audit-computational.md), [quantification-ladder](./quantification-ladder.md) |
 | [§1.32](#132-gsdmd-pore-self-delivery--selectivity-probe-transporter-orphan-tracer--pept1-blockade) | GSDMD-pore self-delivery selectivity probe | In Vitro | ~$2,000–5,000 | 4–6 | Proposed (wet-lab gated) | [gsdmd-pore-delivery-paradox](./gsdmd-pore-delivery-paradox.md), [kpv-gsdmd-pore-influx-computational](./kpv-gsdmd-pore-influx-computational.md) |
@@ -1277,22 +1277,32 @@ Each arm: **three log-spaced doses (10, 100, 1000 μg/mL)** in MSU-stimulated TH
 
 ### 1.29 Cordycepin × Pentostatin × Substrate Matrix
 
-**Status:** Proposed | **Cost:** ~$2,500–4,000 | **Weeks:** 8–12 | **Phase:** 1
+**Status:** Proposed — pilot design required | **Cost:** TBD | **Weeks:** TBD | **Phase:** 1
 
-**Affected wiki:** [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Substrate engineering as the most-accessible cultivation lever" (the Platform Principle 9 anchor); [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) §SOP-2 (cordycepin + pentostatin HPLC quantification — directly extensible to this experiment); [§SOP-7](./medicinal-mushroom-extract-sops.md) (substrate-engineering protocol matrix this validates).
+**Affected wiki:** [medicinal-mushroom-complement-track.md §Sourcing and delivery](./medicinal-mushroom-complement-track.md#sourcing-and-delivery); [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) §SOP-2 (cordycepin + pentostatin HPLC quantification) and [§SOP-7](./medicinal-mushroom-extract-sops.md#sop-7--substrate-engineering-protocol-matrix) (source-configuration registry).
 
 **What it tests:** How substrate composition modulates the cordycepin:pentostatin ratio in an exact *C. militaris* configuration. The Xia 2017 BGC study (PMID 29056419) establishes co-production, not a stable ratio, protective interaction, exposure advantage, or clinical effect.
 
 **Why this matters:** Ratio variability determines whether source materials can be compared and supplies defined inputs for a later ADA-interaction assay. It does not by itself establish cordycepin protection, pharmacokinetics, safety, or a preferred material.
 
-**Protocol — four-arm substrate matrix:**
+**Design rule:** Do not combine solid PDA, submerged broth, insect substrate, and rice grain into one four-arm comparison. Culture format, strain, base medium, harvest, and extraction would be confounded. Run one matched control/intervention pair at a time.
 
-- **Arm A: L-alanine 12 g/L** in PDA (Yu 2024 PMC11698586 protocol; expected 3× cordycepin via Cns2/Cns3 upregulation — pentostatin response unknown)
-- **Arm B: Corn steep liquor hydrolysate 1.5 g/L + peptone 3.5 g/L** (Chang 2024 PMC10931215 protocol; expected 4.83× cordycepin — pentostatin response unknown)
-- **Arm C: Oleic acid 1.0 g/L substrate supplementation** (Turk 2022 PMC9627333 mechanism; expected 1.5–3× cordycepin via fatty-acid-driven Cns1/Cns2 upregulation — pentostatin response unknown)
-- **Arm D: Standard rice-grain solid-state baseline** (reference batch; published cordycepin:pentostatin ratio anchor)
+**Stage 0 — analytical qualification**
 
-Each arm: parallel small-scale liquid (Arms A-C) or solid (Arm D) cultivation; harvest at peak cordycepin (~14d for liquid, ~28d for solid); ethanolic extraction; **SOP-2 HPLC-UV quantification** of both cordycepin (3'-deoxyadenosine, λmax 260 nm) and pentostatin (2'-deoxycoformycin, λmax 282 nm) against pure reference standards.
+- Confirm that SOP-2 resolves and quantifies cordycepin and pentostatin in the selected matrix using blanks, standards, spike recovery, and replicate precision.
+- Set detection, precision, and biological effect margins from the qualified method and pilot variance before preregistering the result-bearing comparison.
+
+**Stage 1 — reproduce one source configuration while adding the missing analyte**
+
+- **Solid option:** *C. militaris* CM01 on the Yu 2024 PDA/light schedule, comparing 0 with 12 g/L L-alanine ([PMC11698586](https://pmc.ncbi.nlm.nih.gov/articles/PMC11698586/)).
+- **Submerged option:** *C. militaris* GDMCC5.270 in the Chang 2024 base medium, comparing 5.0 g/L peptone with 1.5 g/L corn-steep-liquor hydrolysate plus 3.5 g/L peptone ([PMC10931215](https://pmc.ncbi.nlm.nih.gov/articles/PMC10931215/)).
+- Hold strain, base medium, format, inoculum, temperature, timing, harvest, extraction, and assay constant within the selected option. Measure biomass or dry weight, cordycepin, pentostatin, and the cordycepin:pentostatin ratio.
+
+The Turk 2022 oleic-acid result remains a candidate, but the article text does not report the supplement dose; it is not ready to serve as an exact replication arm. A rice-grain configuration should be tested separately with its own matched control, not used as the control for PDA or submerged culture.
+
+**Stage 2 — transfer only an advancing result**
+
+If Stage 1 reproduces the cordycepin direction and reveals a decision-relevant ratio change, test the same single variable in the intended production format with the intended strain. Treat that transfer as a new configuration with no assumed effect size.
 
 **Decision rules:**
 - If the ratio is stable within the prespecified analytical margin, carry the characterized material into the ADA-interaction assay; do not infer protection from co-production.
@@ -1300,13 +1310,13 @@ Each arm: parallel small-scale liquid (Arms A-C) or solid (Arm D) cultivation; h
 - If either analyte is absent or unstable, narrow or close the corresponding co-production hypothesis for that configuration.
 
 **Success criteria:**
-- All four arms yield detectable cordycepin (≥50 mg/L liquid or ≥0.5 mg/g DW solid) and pentostatin (≥1 mg/L liquid or ≥0.05 mg/g DW solid).
-- HPLC quantification reproducibility ±15% across triplicate runs per arm.
-- Reference batch (Arm D) cordycepin and pentostatin levels are within published range (per Kontogiannatos 2021 PMC8621325 cordycepin range 30–8570 mg/L liquid / 0.6–77.4 mg/g DW; Xia 2017 pentostatin co-production anchor).
+- The assay passes its prespecified matrix-specific suitability criteria for both analytes.
+- The selected source configuration is reproduced closely enough to interpret a matched pentostatin measurement; failure to reproduce the cordycepin direction closes or revises that configuration before transfer.
+- Biological replicates support a prespecified confidence interval for the ratio effect. Analytical replicates do not substitute for biological replication.
 
 **Dependencies:** SOP-2 HPLC infrastructure (cordycepin + pentostatin reference standards from Sigma C3394 + Cayman 10009152); *C. militaris* working strain with ITS-verified provenance (per SOP-5).
 
-**Cross-references:** [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) §"Combined / synergy candidates" (Phase 6 whole-fermentate vs. purified-cordycepin positioning); [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) §SOP-2 (HPLC infrastructure) + §SOP-7 (substrate-engineering protocol matrix); [`logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md`](../logs/substrate-engineering-mushroom-cultivation-lit-scan-2026-05-19.md).
+**Cross-references:** [medicinal-mushroom-complement-track.md §Sourcing and delivery](./medicinal-mushroom-complement-track.md#sourcing-and-delivery); [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) §SOP-2 and §SOP-7; [Culture configuration](./etc/open-source-platform.md#culture-configuration).
 
 ---
 

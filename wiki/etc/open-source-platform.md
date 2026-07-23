@@ -62,6 +62,10 @@ A current strain, construct, or formulation artifact should include:
 
 Do not call a design “released” because its sequence is available. Release means it passed the gate stated by its track.
 
+### Culture configuration
+
+For cultivated biological artifacts, the medium or substrate is part of the exact configuration whenever it can change growth, target yield, or compound profile. Record the strain, complete formulation, supplement dose, culture format, timing, harvest, extraction, and assay together. A result may motivate a transfer experiment across strains, species, or formats, but it does not predict the transferred direction or magnitude. The source-verified candidate registry and validation discipline are in [medicinal-mushroom-extract-sops.md §SOP-7](../medicinal-mushroom-extract-sops.md#sop-7--substrate-engineering-protocol-matrix).
+
 ## Computational artifacts
 
 The [COMP registry](../computational-experiments.md) contains reproducible computational experiments. New or materially revised COMPs require:

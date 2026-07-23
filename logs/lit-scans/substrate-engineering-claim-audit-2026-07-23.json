@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "scan_id": "substrate-engineering-claim-audit-2026-07-23",
+  "question": "Which substrate- or medium-level fungal cultivation leads in SOP-7 are supported by their cited primary sources, what exact configurations and outputs were tested, and which transfers remain research conjectures?",
+  "started_at": "2026-07-23T14:57:55Z",
+  "completed_at": "2026-07-23T15:11:22Z",
+  "canonical_updates": [
+    "wiki/etc/open-source-platform.md",
+    "wiki/koji-home-fermentation.md",
+    "wiki/medicinal-mushroom-extract-sops.md",
+    "wiki/validation-experiments.md"
+  ],
+  "query_attempts": [
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "western mechanism",
+      "query": "\"Aspergillus oryzae\" ergothioneine methionine",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "western mechanism",
+      "query": "\"Cordyceps militaris\" substrate cordycepin alanine oleic acid",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "western mechanism",
+      "query": "\"Ganoderma lucidum\" substrate ganoderic acid cellulose galactose",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "western mechanism",
+      "query": "mushroom ergothioneine methionine Ganoderma Lentinula Pleurotus",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "western mechanism",
+      "query": "\"Inonotus obliquus\" betulinic acid oleic acid elicitor",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "western mechanism",
+      "query": "\"Hericium erinaceus\" substrate erinacine",
+      "status": "success",
+      "result_count": 3,
+      "error": null
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "species plus precursor",
+      "query": "米曲霉 麦角硫因 甲硫氨酸",
+      "status": "partial",
+      "result_count": null,
+      "error": "HTTP retrieval succeeded, but the broad server-rendered page did not expose a reliable result count or a load-bearing source."
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "species plus cultivation",
+      "query": "蛹虫草 虫草素 培养基",
+      "status": "partial",
+      "result_count": null,
+      "error": "HTTP retrieval succeeded, but the broad server-rendered page did not expose a reliable result count or a load-bearing source."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "species plus precursor",
+      "query": "麹菌 エルゴチオネイン メチオニン",
+      "status": "partial",
+      "result_count": null,
+      "error": "HTTP retrieval succeeded; the visible match was not load-bearing and the exact result count could not be reliably parsed."
+    },
+    {
+      "source": "RISS",
+      "language": "ko",
+      "frame": "species plus precursor",
+      "query": "황국균 에르고티오네인 메티오닌",
+      "status": "partial",
+      "result_count": null,
+      "error": "HTTP retrieval succeeded, but no load-bearing result set or reliable exact count could be parsed."
+    }
+  ],
+  "source_ids_considered": [
+    "PMID:18688580",
+    "PMID:23983506",
+    "PMID:28422185",
+    "PMID:33807450",
+    "PMID:36139017",
+    "PMID:36338069",
+    "PMID:38385012",
+    "PMID:38472926",
+    "PMID:39735774",
+    "PMID:39752865",
+    "PMID:40181478",
+    "PMID:40493205",
+    "PMID:40985420"
+  ],
+  "translation_checks": [],
+  "load_bearing_verifications": [
+    {
+      "claim": "The alanine and corn-steep-liquor-hydrolysate cordycepin effects belong to distinct solid-PDA CM01 and submerged GDMCC5.270 configurations; neither study measured pentostatin.",
+      "primary_source": "PMID:39752865; PMID:38472926",
+      "status": "verified"
+    },
+    {
+      "claim": "Turk 2022 reported 89.5 mg/g cordycepin on Allomyrina dichotoma, 34-fold over Bombyx mori, and a 51.4% increase after oleic-acid addition, but did not state the oleic-acid dose in the article text.",
+      "primary_source": "PMID:36338069",
+      "status": "verified"
+    },
+    {
+      "claim": "Hu 2017 reported 85.96% and 63.9% increases in its total ganoderic-acid assay after 1.5% microcrystalline cellulose and 0.5% D-galactose were added at 72 hours.",
+      "primary_source": "PMID:28422185",
+      "status": "verified"
+    },
+    {
+      "claim": "In Luo 2024, wood-log samples favored total triterpenoid peak area and combined lucidenic acids, while substitute samples favored ganosporelactone B; the comparison was not a controlled within-strain substrate swap.",
+      "primary_source": "PMID:38385012",
+      "status": "verified"
+    },
+    {
+      "claim": "Lee 2009 did not support a Pleurotus-cysteine row: 2 mM methionine significantly increased EGT in six of nine tested mushroom species, while the separately published Ganoderma neo-japonicum optimum used 4 mM methionine plus 1 g/L yeast extract and reached 2.4-fold control.",
+      "primary_source": "PMID:23983506; PMID:18688580",
+      "status": "verified"
+    },
+    {
+      "claim": "Wild-type Aspergillus oryzae RIB40 on solid DPY showed about a two-fold EGT increase at 0.1% methionine and 5.12 mg/g dry weight at 0.8%; the 20.03 mg/g and eight-fold result was a composite engineered-strain and medium-optimization result.",
+      "primary_source": "PMID:40493205",
+      "status": "verified"
+    },
+    {
+      "claim": "Lou 2021 reported configuration-dependent betulinic-acid effects from oleic acid and fungal elicitor, including 22.2-fold intracellular but only 129.7% higher total BA for the day-7 combination; its abstract and results conflict on the standalone elicitor magnitude.",
+      "primary_source": "PMID:33807450",
+      "status": "verified"
+    },
+    {
+      "claim": "Doar 2025 established an approximately two-orders-of-magnitude erinacine-C difference between dextrose/oatmeal complex medium and barley-malt minimal medium, but did not quantify an erinacine C:Q ratio because Q lacked an analytical standard.",
+      "primary_source": "PMID:40181478",
+      "status": "verified"
+    },
+    {
+      "claim": "The Pleurotus uridine and Hericium straw-formula studies were production results, not target-compound enhancements; the Hericium wood-free formula had slightly lower fresh yield and biological efficiency than its wood-chip control but shortened the first crop by 7 to 9 days.",
+      "primary_source": "PMID:40985420; PMID:39735774",
+      "status": "verified"
+    }
+  ],
+  "limitations": [
+    "This was a bounded claim audit of the existing SOP-7 registry and the directly implicated 2025 Aspergillus oryzae study, not a systematic review of all fungal medium optimization.",
+    "Several source studies used unaccessioned or private-library strains, limiting exact independent replication.",
+    "The Luo host-substrate comparison and Drenkhan field-conk comparison confound strain or site with substrate and therefore cannot establish transfer causality.",
+    "The Lou 2021 standalone fungal-elicitor magnitude remains unresolved because the abstract and results assign incompatible values; the candidate was retained without a quantitative expectation.",
+    "No non-English source supplied a load-bearing claim, so the two-model translation protocol was not triggered.",
+    "The scan audited cultivation evidence and transfer fidelity; it did not re-evaluate the gout relevance or clinical exposure of every listed compound."
+  ],
+  "errors": [
+    "An initial unthrottled PubMed execution of the generated multilingual plan received HTTP 429. After a delay, the six exact English queries recorded above were rerun successfully; regional searches used their required local retrieval paths.",
+    "The four regional result pages did not expose reliable exact result counts or load-bearing sources."
+  ],
+  "workspace": {
+    "path": "operations/substrate-engineering-claim-audit-2026-07-23",
+    "cleaned": true
+  }
+}
