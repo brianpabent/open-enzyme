@@ -2,11 +2,11 @@
   "schema_version": 1,
   "comp": "comp-019",
   "comp_dir": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification",
-  "source_commit": "57c4c1a07de87cd3d6748ec9f51d6fae7e35316e",
-  "artifact_manifest_sha256": "72e91804f22b65993e0d92b09abcae042ff98afb360a3d6ff51bee1c00b32ec3",
+  "source_commit": "6efddd88c579c3827c6fe4a8664e342da976df7c",
+  "artifact_manifest_sha256": "1ec63b843755383c76e32ab847f05145a2255ab88b8978e8ff7959aa5e38b34a",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-23T13:30:03Z",
-  "comp_verdict": "quantitative_verdict_invalid",
+  "timestamp": "2026-07-23T13:41:49Z",
+  "comp_verdict": "action_required",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
   "action_required": true,
@@ -20,7 +20,7 @@
   "coverage": [
     {
       "shard_id": "shard-001",
-      "coverage_sha256": "2ca4f7f6003f1134f3e9be5362097ccbfb3ad1ed4b347ff8a7eeeb110bed1bef",
+      "coverage_sha256": "8894976e72a94254708101f3aadbcf93bf5332a2d6a2fe737e5960509b487565",
       "segments": [
         {
           "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
@@ -42,8 +42,8 @@
           "path": "wiki/computational-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 82874,
-          "file_sha256": "1a11012c082d9c0ecdb14bef1aca8fed5d25ca402741acd51bb4416eb5cbc2ba",
+          "end": 82928,
+          "file_sha256": "bf1ded3000a9686d835b4611acb60e8a8895f6b46963586c3dccabd7fd894334",
           "binary": false
         },
         {
@@ -58,22 +58,8 @@
           "path": "wiki/etc/autonomous-screening-methodology.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 24601,
-          "file_sha256": "75a20d4159a690cfd199245297487b73971422323b3cf59f118bafb5cd54c3e7",
-          "binary": false
-        }
-      ]
-    },
-    {
-      "shard_id": "shard-002",
-      "coverage_sha256": "5956ac7bbf55d0d203b6231a5a620880de7884b67b0fcb74c9a37d1bd16e713c",
-      "segments": [
-        {
-          "path": "wiki/etc/bio-ai-tools.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 64158,
-          "file_sha256": "6db7910558c7b3aee79e9f0d2396e7c20b261792571d4b5a2f9c4604d1b6d93e",
+          "end": 24621,
+          "file_sha256": "8deb2e526a0fa1792eb970602c436c00c3cf3daccb39f06b930a6c1c9c774ca9",
           "binary": false
         },
         {
@@ -123,7 +109,13 @@
           "end": 9830,
           "file_sha256": "84e63e0d55d0acfe041d8f889ee8b03278e29735fcdf17914c53a1081b77532b",
           "binary": false
-        },
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-002",
+      "coverage_sha256": "2db31d37083888f5a70ac85b836e68dc7a80bbcf22807c0089a25f0bb4b2c550",
+      "segments": [
         {
           "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
           "role": "referencing_wiki_surface",
@@ -155,13 +147,7 @@
           "end": 9726,
           "file_sha256": "da4b30e515abec9d31b3b1902717433bc33f77eec0376f22112d86ebaebda90e",
           "binary": false
-        }
-      ]
-    },
-    {
-      "shard_id": "shard-003",
-      "coverage_sha256": "b7f642acd7c0cfe10c4922ed23ba622df86c8faf57ed121851f2308263f8e2b9",
-      "segments": [
+        },
         {
           "path": "wiki/gout-genetic-variants.md",
           "role": "referencing_wiki_surface",
@@ -198,14 +184,14 @@
           "path": "wiki/uricase-abcg2-genotype-stratification-computational.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 4150,
-          "file_sha256": "3d6ab8a42eda2e643ae52e72efa9185a21028d3d105195ec702f49beec3172e4",
+          "end": 4135,
+          "file_sha256": "30bbe58ac1473a4ac28aa90faf0f4aeaf4703bc74e1c84708f1502f0691dbd98",
           "binary": false
         }
       ]
     },
     {
-      "shard_id": "shard-004",
+      "shard_id": "shard-003",
       "coverage_sha256": "10c1d6dc43efef1e5b4ea488198900700d549f7a5038a68b31efac1230180e5f",
       "segments": [
         {
@@ -219,7 +205,7 @@
       ]
     },
     {
-      "shard_id": "shard-005",
+      "shard_id": "shard-004",
       "coverage_sha256": "933ad617ce4b015f861ee4093d65ed72cd9ae8563de0c5e4d6400f0cdbc9745a",
       "segments": [
         {
@@ -234,31 +220,28 @@
     }
   ],
   "unsupported_binary_entries": [],
-  "projected_cost_usd": 1.941805,
-  "actual_cost_usd": 1.396053,
-  "input_tokens": 211737,
-  "output_tokens": 14548,
-  "tool_calls": 9,
-  "review_sha256": "151bb0c6e3749c64ed019f12f6fa1b840222d69825599da30e9028fe0ba76359",
+  "projected_cost_usd": 1.701681,
+  "actual_cost_usd": 1.345262,
+  "input_tokens": 209230,
+  "output_tokens": 12812,
+  "tool_calls": 10,
+  "review_sha256": "a6f9c41c5258647383dc206a7aad6f012e95f5e45b5bbbaf63fb650956cadaf5",
   "lane_adjudication": {
-    "date": "2026-07-23T13:30:03Z",
+    "date": "2026-07-23T13:41:49Z",
     "method": "exact push review",
     "new_artifact_review_performed": true,
     "queue_action_remains_open": true,
-    "propagation_allowed_scope": "corrective-only propagation that comp-019 is an invalidated tombstone plus its bounded no-Q141K-stratified-uricase-outcome search observation",
-    "synthesis_allowed_scope": "use only as negative provenance for retired comp-019 quantitative model and as a bounded literature-search gap",
+    "propagation_allowed_scope": "corrective propagation of comp-019 invalidation and bounded search observation only",
+    "synthesis_allowed_scope": "cite only as invalidated tombstone/audit lesson and as bounded no-Q141K-stratified-outcome search result",
     "forbidden_inferences": [
       "comp-019 \u0394SUA estimates",
-      "capacity ratios",
-      "genotype-response ordering",
-      "flat-dose classification",
-      "oral-UOX dose sufficiency",
-      "yield conclusions",
-      "trial-design implications",
-      "efficacy or safety claims",
+      "dose or yield conclusions",
+      "genotype responder ordering",
+      "flat-dose adequacy",
       "topology or chassis selection",
-      "comp-031 rehabilitation from comp-019",
-      "comp-044 replacement dose or serum-urate model"
+      "efficacy or safety claims",
+      "trial-design implications",
+      "treating bounded search as universal absence"
     ]
   }
 }

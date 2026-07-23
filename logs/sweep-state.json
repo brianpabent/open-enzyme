@@ -697,17 +697,16 @@
     },
     "comp-019": {
       "comp_dir": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification",
-      "artifact_manifest_sha256": "72e91804f22b65993e0d92b09abcae042ff98afb360a3d6ff51bee1c00b32ec3",
-      "source_commit": "57c4c1a07de87cd3d6748ec9f51d6fae7e35316e",
+      "artifact_manifest_sha256": "1ec63b843755383c76e32ab847f05145a2255ab88b8978e8ff7959aa5e38b34a",
+      "source_commit": "6efddd88c579c3827c6fe4a8664e342da976df7c",
       "review_receipt": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/reviews/push-review.md",
-      "comp_verdict": "quantitative_verdict_invalid",
+      "comp_verdict": "action_required",
       "propagation_eligibility": "eligible_with_warning",
       "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/computational-experiments.md",
         "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
         "wiki/etc/autonomous-screening-methodology.md",
-        "wiki/etc/bio-ai-tools.md",
         "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
         "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/query-strategy.md",
         "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
@@ -723,8 +722,8 @@
         "wiki/uricase-abcg2-genotype-stratification-computational.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-23T13:30:03Z",
-      "cost_usd": 1.396053
+      "timestamp": "2026-07-23T13:41:49Z",
+      "cost_usd": 1.345262
     },
     "comp-020": {
       "comp_dir": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun",
