@@ -67,6 +67,10 @@ Use **yes** if any correction, missing propagation, code/output reconciliation, 
 
 ## Required output
 
+Keep the complete receipt at or below 4,500 words. Do not reproduce shard
+audits or source prose. Inventory every required manifest entry in one compact
+row, then report only decision-relevant findings, boundaries, and actions.
+
 After the receipt lines, use exactly these headings:
 
 ```markdown

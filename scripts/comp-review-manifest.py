@@ -273,6 +273,123 @@ def check(args: argparse.Namespace) -> None:
     print(expected_digest)
 
 
+def load_bound_manifest(
+    manifest_path: Path,
+    review_path: Path,
+    required_line: str,
+    expected_phase: str,
+) -> tuple[dict[str, object], list[str]]:
+    """Validate immutable receipt binding without comparing historical files to HEAD."""
+    errors: list[str] = []
+    if not manifest_path.is_file():
+        return {}, [f"manifest is missing: {relative(manifest_path)}"]
+    if not review_path.is_file():
+        return {}, [f"review receipt is missing: {relative(review_path)}"]
+
+    try:
+        document = json.loads(manifest_path.read_text())
+    except (OSError, json.JSONDecodeError) as exc:
+        return {}, [f"manifest is unreadable: {exc}"]
+    expected_digest = document.get("manifest_sha256")
+    payload = {key: value for key, value in document.items() if key != "manifest_sha256"}
+    if expected_digest != manifest_digest(payload):
+        errors.append(f"{expected_phase} manifest payload digest mismatch")
+    if document.get("phase") != expected_phase:
+        errors.append(
+            f"{expected_phase} manifest has phase {document.get('phase')!r}"
+        )
+
+    review_lines = [
+        line.strip()
+        for line in review_path.read_text(errors="replace").splitlines()
+        if line.strip()
+    ]
+    if not review_lines or review_lines[0] != required_line:
+        errors.append(
+            f"{expected_phase} review first non-empty line is not: {required_line}"
+        )
+    snapshot_line = f"REVIEWED_SNAPSHOT: {expected_digest}"
+    if len(review_lines) < 2 or review_lines[1] != snapshot_line:
+        errors.append(
+            f"{expected_phase} review is not bound to its manifest: {snapshot_line}"
+        )
+    return document, errors
+
+
+def check_lifecycle(args: argparse.Namespace) -> None:
+    """Verify a completed authoring lifecycle while allowing later wiki evolution."""
+    comp_dir = repo_path(args.comp_dir)
+    if not comp_dir.is_dir() or not comp_dir.name.startswith("comp-"):
+        raise SystemExit(f"Not a COMP directory: {comp_dir}")
+    reviews = comp_dir / "reviews"
+    pre, errors = load_bound_manifest(
+        reviews / "pre-run.manifest.json",
+        reviews / "pre-run.md",
+        "PRE_RUN_GATE: GO",
+        "pre",
+    )
+    post, post_errors = load_bound_manifest(
+        reviews / "post-run.manifest.json",
+        reviews / "post-run.md",
+        "ACTION_REQUIRED: no",
+        "post",
+    )
+    errors.extend(post_errors)
+    expected_comp_dir = relative(comp_dir)
+    for phase, document in (("pre", pre), ("post", post)):
+        if document and document.get("comp_dir") != expected_comp_dir:
+            errors.append(
+                f"{phase} manifest comp_dir is {document.get('comp_dir')!r}, "
+                f"expected {expected_comp_dir!r}"
+            )
+
+    if pre and post:
+        pre_files = list(pre.get("files", []))
+        post_files = list(post.get("files", []))
+        pre_design = [item for item in pre_files if item.get("kind") == "design"]
+        post_design = [item for item in post_files if item.get("kind") == "design"]
+        errors.extend(
+            compare_entries(
+                pre_design,
+                post_design,
+                "design between pre-run and post-run",
+            )
+        )
+        if any(item.get("kind") == "generated_output" for item in pre_files):
+            errors.append("pre-run manifest unexpectedly contains generated outputs")
+        if any(item.get("kind") == "proposed_update" for item in pre_files):
+            errors.append("pre-run manifest unexpectedly contains proposed updates")
+        if list(post.get("prior_output_baseline", [])):
+            errors.append("post-run manifest unexpectedly contains a prior-output baseline")
+        if not any(item.get("kind") == "proposed_update" for item in post_files):
+            errors.append("post-run manifest contains no proposed updates")
+
+        current_design, current_outputs = comp_files(comp_dir)
+        errors.extend(
+            compare_entries(
+                post_design,
+                [entry(path, "design") for path in current_design],
+                "post-reviewed design file",
+            )
+        )
+        post_outputs = [
+            item for item in post_files if item.get("kind") == "generated_output"
+        ]
+        errors.extend(
+            compare_entries(
+                post_outputs,
+                [entry(path, "generated_output") for path in current_outputs],
+                "post-reviewed generated output",
+            )
+        )
+
+    if errors:
+        for error in errors:
+            print(f"ERROR: {error}", file=sys.stderr)
+        raise SystemExit(1)
+    print("authoring lifecycle valid")
+
+
 def parser() -> argparse.ArgumentParser:
     root = argparse.ArgumentParser(description=__doc__)
     subparsers = root.add_subparsers(dest="command", required=True)
@@ -289,6 +406,10 @@ def parser() -> argparse.ArgumentParser:
     check_parser.add_argument("--review")
     check_parser.add_argument("--required-line")
     check_parser.set_defaults(func=check)
+
+    lifecycle_parser = subparsers.add_parser("check-lifecycle")
+    lifecycle_parser.add_argument("--comp-dir", required=True)
+    lifecycle_parser.set_defaults(func=check_lifecycle)
     return root
 
 

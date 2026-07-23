@@ -75,6 +75,12 @@ Use a different fresh context-isolated reviewer and `scripts/comp-review-prompt.
 
 If a finding changes code, inputs, parameters, decision rules, model, or sensitivity plan, return to Gate 1 before rerunning. Narrative-only changes still require a new post manifest and review. Verify the exact post snapshot before commit.
 
+After authoring, the lifecycle validator requires the pre-run design to equal
+the post-run design and the current COMP artifact to equal the post-run
+snapshot. Later legitimate edits to canonical wiki pages do not invalidate
+those historical gates; the current push review rebinds and reviews the evolved
+pages.
+
 ## Gate 3: push review
 
 The push coordinator independently reviews the exact changed COMP plus every referencing wiki/hypothesis page. It writes only current files under `reviews/push-review.*` and a stable `synthesis/queue/comp-review-NNN.md` when action is required.

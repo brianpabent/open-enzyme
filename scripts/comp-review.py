@@ -35,6 +35,8 @@ SHARD_CHARS = 180_000
 MAX_TOOL_RESULT_CHARS = 80_000
 MAX_TOTAL_TOOL_RESULT_CHARS = 240_000
 MAX_TOOL_ITERATIONS = 8
+SHARD_OUTPUT_MAX_TOKENS = 8_000
+FINAL_OUTPUT_MAX_TOKENS = 16_000
 TEXT_SUFFIXES = {
     ".md", ".py", ".json", ".csv", ".tsv", ".txt", ".yaml", ".yml",
     ".fasta", ".fa", ".toml", ".sh", ".r", ".xml", ".html", ".jsonl",
@@ -106,34 +108,42 @@ def create_push_manifest(comp_rel: str, manifest_path: Path) -> str:
 
 def verify_authoring_gates(comp_dir: Path) -> dict[str, object]:
     reviews = comp_dir / "reviews"
-    pairs = {
-        "pre": (reviews / "pre-run.manifest.json", reviews / "pre-run.md", "PRE_RUN_GATE: GO"),
-        "post": (reviews / "post-run.manifest.json", reviews / "post-run.md", "ACTION_REQUIRED: no"),
-    }
-    present = [path.exists() for manifest, review, _line in pairs.values() for path in (manifest, review)]
+    paths = (
+        reviews / "pre-run.manifest.json",
+        reviews / "pre-run.md",
+        reviews / "post-run.manifest.json",
+        reviews / "post-run.md",
+    )
+    present = [path.exists() for path in paths]
     if not any(present):
         return {"status": "legacy", "valid": True, "details": ["COMP predates authoring-time gates"]}
-    details: list[str] = []
-    valid = True
-    for phase, (manifest, review, required) in pairs.items():
-        if not manifest.exists() or not review.exists():
-            valid = False
-            details.append(f"{phase} gate incomplete")
-            continue
-        result = run(
-            [
-                sys.executable, "scripts/comp-review-manifest.py", "check",
-                "--manifest", str(manifest), "--review", str(review),
-                "--required-line", required,
+    result = run(
+        [
+            sys.executable,
+            "scripts/comp-review-manifest.py",
+            "check-lifecycle",
+            "--comp-dir",
+            str(comp_dir),
+        ],
+        check=False,
+    )
+    if result.returncode:
+        return {
+            "status": "modern",
+            "valid": False,
+            "details": [
+                "authoring lifecycle invalid: "
+                + (result.stderr or result.stdout).strip()[:1000]
             ],
-            check=False,
-        )
-        if result.returncode:
-            valid = False
-            details.append(f"{phase} gate invalid: {(result.stderr or result.stdout).strip()[:500]}")
-        else:
-            details.append(f"{phase} gate valid")
-    return {"status": "modern", "valid": valid, "details": details}
+        }
+    return {
+        "status": "modern",
+        "valid": True,
+        "details": [
+            "pre-run design matches post-run design; current COMP artifact "
+            "matches the post-run snapshot; later wiki evolution is push-reviewed"
+        ],
+    }
 
 
 def _segments(path: Path, role: str) -> list[dict[str, object]]:
@@ -314,13 +324,27 @@ def call_openrouter(key: str, body: dict[str, object]) -> dict[str, object]:
     raise AssertionError("unreachable")
 
 
-def review(key: str, model: str, prompt: str, *, tools: bool = True) -> tuple[str, dict[str, float]]:
+def review(
+    key: str,
+    model: str,
+    prompt: str,
+    *,
+    tools: bool = True,
+    max_tokens: int = FINAL_OUTPUT_MAX_TOKENS,
+    reasoning_effort: str = "medium",
+    max_cost_usd: float | None = None,
+    stage: str = "review",
+) -> tuple[str, dict[str, float]]:
     messages: list[dict[str, object]] = [{"role": "user", "content": prompt}]
     totals = {"input_tokens": 0.0, "output_tokens": 0.0, "tool_calls": 0.0, "cost_usd": 0.0}
     tool_chars = 0
     for iteration in range(MAX_TOOL_ITERATIONS + 1):
         body: dict[str, object] = {
-            "model": model, "messages": messages, "temperature": 0.1, "max_tokens": 12_000,
+            "model": model,
+            "messages": messages,
+            "temperature": 0.1,
+            "max_tokens": max_tokens,
+            "reasoning": {"effort": reasoning_effort, "exclude": True},
         }
         if tools and iteration < MAX_TOOL_ITERATIONS:
             body["tools"] = TOOLS
@@ -331,11 +355,19 @@ def review(key: str, model: str, prompt: str, *, tools: bool = True) -> tuple[st
         totals["input_tokens"] += float(usage.get("prompt_tokens") or 0)
         totals["output_tokens"] += float(usage.get("completion_tokens") or 0)
         totals["cost_usd"] += float(usage.get("cost") or 0)
+        if max_cost_usd is not None and totals["cost_usd"] > max_cost_usd:
+            raise SystemExit(
+                f"{stage} exceeded its remaining ${max_cost_usd:.4f} cost budget; "
+                "partial review rejected"
+            )
         calls = message.get("tool_calls") or []
         content = str(message.get("content") or "")
         if content and not calls:
             if choice.get("finish_reason") == "length":
-                raise SystemExit("Review output truncated; partial review rejected")
+                raise SystemExit(
+                    f"{stage} output reached its {max_tokens}-token ceiling; "
+                    "partial review rejected"
+                )
             return content.strip(), totals
         if not calls:
             raise SystemExit("Reviewer returned neither content nor tool calls")
@@ -362,9 +394,15 @@ def review(key: str, model: str, prompt: str, *, tools: bool = True) -> tuple[st
 def shard_prompt(comp_id: str, shard: dict[str, object]) -> str:
     parts = [
         f"You are inspection pass {shard['id']} for {comp_id}. Read every supplied character. "
-        "Extract implementation facts, quantitative claims, constraints, provenance gaps, "
-        "summary mismatches, and required follow-ups. Do not issue the final COMP verdict. "
-        "For every supplied segment, state INSPECTED_COMPLETE and its path/range.\n"
+        "Audit implementation facts, load-bearing quantitative claims, constraints, provenance, "
+        "summary fidelity, conjecture boundaries, and required follow-ups. Do not issue the final "
+        "COMP verdict and do not retell or summarize the source. Return a compact audit ledger with "
+        "exactly two sections: COVERAGE and MATERIAL_FINDINGS. COVERAGE has one INSPECTED_COMPLETE "
+        "line per supplied segment with its exact path/range. MATERIAL_FINDINGS contains only "
+        "distinct decision-relevant findings, each no more than 55 words and anchored to a supplied "
+        "path/range. Consolidate duplicate evidence across segments. Use `none` when no material "
+        "finding exists. Emit at most 60 findings; prioritize anything that could change validity, "
+        "eligibility, a quantitative verdict, a claim boundary, or a required action.\n"
     ]
     for segment in shard["segments"]:
         parts.append(
@@ -528,7 +566,11 @@ def main() -> None:
     prompt_template = safe_path(args.prompt_file).read_text()
     total_chars = sum(int(shard["chars"]) for shard in shards) + len(prompt_template)
     projected = estimate_cost(
-        total_chars, output_tokens=max(4_000, len(shards) * 2_000 + 8_000),
+        total_chars,
+        output_tokens=(
+            len(shards) * SHARD_OUTPUT_MAX_TOKENS
+            + FINAL_OUTPUT_MAX_TOKENS
+        ),
         input_rate=args.estimated_input_usd_per_million,
         output_rate=args.estimated_output_usd_per_million,
     )
@@ -557,7 +599,16 @@ def main() -> None:
     audits: list[str] = []
     totals = {"input_tokens": 0.0, "output_tokens": 0.0, "tool_calls": 0.0, "cost_usd": 0.0}
     for shard in shards:
-        audit, usage = review(key, args.model, shard_prompt(comp_id, shard), tools=False)
+        audit, usage = review(
+            key,
+            args.model,
+            shard_prompt(comp_id, shard),
+            tools=False,
+            max_tokens=SHARD_OUTPUT_MAX_TOKENS,
+            reasoning_effort="low",
+            max_cost_usd=max(0.0, args.max_cost_usd - totals["cost_usd"]),
+            stage=f"{comp_id} {shard['id']}",
+        )
         audits.append(f"## {shard['id']} ({shard['coverage_sha256']})\n\n{audit}")
         for key_name in totals:
             totals[key_name] += usage[key_name]
@@ -580,7 +631,16 @@ def main() -> None:
           "Any deterministic block forces both eligibility fields to blocked.\n\n"
         + "\n\n".join(audits)
     )
-    final_text, final_usage = review(key, args.model, final_prompt, tools=True)
+    final_text, final_usage = review(
+        key,
+        args.model,
+        final_prompt,
+        tools=True,
+        max_tokens=FINAL_OUTPUT_MAX_TOKENS,
+        reasoning_effort="medium",
+        max_cost_usd=max(0.0, args.max_cost_usd - totals["cost_usd"]),
+        stage=f"{comp_id} final consolidation",
+    )
     for key_name in totals:
         totals[key_name] += final_usage[key_name]
     if totals["cost_usd"] > args.max_cost_usd:

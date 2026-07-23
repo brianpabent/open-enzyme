@@ -83,7 +83,7 @@ A changed COMP blocks its derived claims until the current artifact has an exact
 2. Authoring post-run review binds code/input/output plus every proposed interpretation before completion or commit.
 3. Push review independently inspects the exact changed COMP and every referencing wiki/hypothesis surface before propagation or later synthesis.
 
-The reviews answer different questions and cannot substitute for one another. Current push receipts live under each COMP's `reviews/` directory and replace prior receipts. A stable `synthesis/queue/comp-review-NNN.md` exists only while action is required.
+The completed authoring lifecycle requires unchanged design between the pre-run and post-run snapshots and a current COMP artifact that still matches the post-run snapshot. Later canonical-page edits do not retroactively invalidate those historical gates; the current push review binds and audits the evolved pages. The reviews answer different questions and cannot substitute for one another. Current push receipts live under each COMP's `reviews/` directory and replace prior receipts. A stable `synthesis/queue/comp-review-NNN.md` exists only while action is required.
 
 ## Explicit full synthesis
 
