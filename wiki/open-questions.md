@@ -343,10 +343,10 @@ The dietary-CP0 hypothesis requires an intact candidate to reach the relevant lu
 
 - Measure segmental intestinal concentration and chemical identity after a controlled exposure in an appropriate animal model before any human translation.
 - Pair concentration with ex-vivo complement activity and tissue-safety readouts; neither measurement alone establishes the mechanism.
-- Keep the §1.30 Houttuynia macrophage screen separate: it can test a cell response but not dietary exposure, complement suppression, or product equivalence.
+- Keep the two Houttuynia assays separate: [§1.30](./validation-experiments.md#130-houttuynia-cordata-polysaccharide-fraction-comparison-in-msu-stimulated-thp-1-macrophages--prioritization-screen) tests direct macrophage directionality, while [COMP-040](./computational-experiments.md) independently tests serum complement. Neither establishes dietary exposure or product equivalence, and neither gates the other.
 - Do not design a combination until each component has its own exposure, activity, and safety evidence and the interaction null is prespecified.
 
-See [combined CP0 systems model](./combined-cp0-systems-model-computational.md), [CFH mechanism dissociation](./cfh-mechanism-dissociation-cp0-candidates-computational.md), [complement C5a in gout](./complement-c5a-gout.md), and [validation §1.30](./validation-experiments.md#130-houttuynia-cordata-polysaccharide-fraction-comparison-in-msu-stimulated-thp-1-macrophages--prioritization-screen).
+See [Houttuynia](./houttuynia-cordata.md), [combined CP0 systems model](./combined-cp0-systems-model-computational.md), [CFH mechanism dissociation](./cfh-mechanism-dissociation-cp0-candidates-computational.md), and [complement C5a in gout](./complement-c5a-gout.md).
 
 ### Matrix-specific assay gap for microbiome-derived metabolites
 

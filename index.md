@@ -98,6 +98,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[Colchicine](wiki/colchicine.md)** — CP2/CP3 inflammasome effects, gout and cardiovascular evidence, and the narrow therapeutic and interaction window.
 - **[EGCG](wiki/egcg.md)** — Green tea catechin; 20S proteasome 86 nM (ChEMBL); unifies CP1a (IκBα) + CP4 (caspase-1) + CP5 (IL-1β) via single mechanism
 - **[Theaflavins](wiki/theaflavins.md)** — Black-tea polyphenols with animal evidence across inflammasome assembly and renal urate transport.
+- **[Houttuynia cordata polysaccharides](wiki/houttuynia-cordata.md)** — Exact-material CP0 complement and CP1 macrophage hypotheses with likely intestinal delivery, structure-dependent directionality, and separate falsification gates.
 - **[Lactoferrin](wiki/lactoferrin.md)** — Single protein, four-chokepoint coverage (CP1a/CP4/CP6b/CP5b); fermentable in *A. oryzae* (Ward 1992 25 mg/L → Ward 1995 >2 g/L *A. awamori*); Year 2-3 engineering target
 - **[Zileuton](wiki/zileuton.md)** — FDA-approved asthma 5-LOX inhibitor with direct CP6a target engagement, liver-monitoring constraints, and no gout efficacy trial.
 

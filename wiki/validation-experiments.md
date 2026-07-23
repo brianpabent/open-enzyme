@@ -65,7 +65,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 | [§1.27](#127-ergothioneine--lactoferrin-interaction-assay-in-msu-stimulated-thp-1-macrophages) | Ergothioneine × lactoferrin interaction in MSU-stimulated THP-1 macrophages | In Vitro | TBD | TBD | Proposed | [lactoferrin](./lactoferrin.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) |
 | [§1.28](#128-tier-2-colorimetric-cordycepin-assay-validation) | Tier 2 colorimetric cordycepin assay validation | In Vitro | ~$200 | 2 | Proposed | [quantification-ladder](./quantification-ladder.md), [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) |
 | [§1.29](#129-cordycepin--pentostatin--substrate-matrix) | Cordycepin × pentostatin exact-configuration medium effects | In Vitro | TBD | TBD | Proposed — pilot design required | [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [medicinal-mushroom-extract-sops](./medicinal-mushroom-extract-sops.md) |
-| [§1.30](#130-houttuynia-cordata-polysaccharide-fraction-comparison-in-msu-stimulated-thp-1-macrophages--prioritization-screen) | *Houttuynia cordata* polysaccharide fraction comparison in MSU-stimulated THP-1 macrophages | In Vitro | ~$1,500–2,500 | 4–6 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [medicinal-mushroom-extract-sops](./medicinal-mushroom-extract-sops.md) |
+| [§1.30](#130-houttuynia-cordata-polysaccharide-fraction-comparison-in-msu-stimulated-thp-1-macrophages--prioritization-screen) | *Houttuynia cordata* polysaccharide fraction comparison in MSU-stimulated THP-1 macrophages | In Vitro | TBD | TBD | Proposed — material and assay pilots required | [Houttuynia](./houttuynia-cordata.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) |
 | [§1.31](#131-butyrate-culture-supernatant-hplc-uv-method-transfer-against-gc-ms) | Butyrate culture-supernatant HPLC-UV method transfer against GC-MS | In Vitro | TBD | TBD | Proposed — partner design required | [tier-2-butyrate-assay-audit-computational](./tier-2-butyrate-assay-audit-computational.md), [quantification-ladder](./quantification-ladder.md) |
 | [§1.32](#132-gsdmd-pore-self-delivery--selectivity-probe-transporter-orphan-tracer--pept1-blockade) | GSDMD-pore self-delivery selectivity probe | In Vitro | ~$2,000–5,000 | 4–6 | Proposed (wet-lab gated) | [gsdmd-pore-delivery-paradox](./gsdmd-pore-delivery-paradox.md), [kpv-gsdmd-pore-influx-computational](./kpv-gsdmd-pore-influx-computational.md) |
 | [§1.44](#144-thymulin--msu--nlrp3-in-aged-macrophages-thy-1--age-stratified-priming-to-flare-test) | Thymulin (+Zn²⁺) × MSU × NLRP3 in **aged** macrophages (THY-1) — tests whether NF-κB priming block translates to reduced crystal-driven IL-1β; age-stratified | In Vitro | Tier 1: $5–10K; full T1+T2+T3 cascade $85–130K | Tier 1: 6–8; full cascade ~11 months | Proposed | [thymulin](./thymulin.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [peptide-gout-addendum](./peptide-gout-addendum.md) |
@@ -1219,59 +1219,58 @@ This is a free byproduct of the §1.9 readout — no additional fermentation cos
 
 ### 1.30 Houttuynia cordata polysaccharide fraction comparison in MSU-stimulated THP-1 macrophages — prioritization screen
 
-**Status:** Proposed | **Cost:** ~$1,500–2,500 | **Weeks:** 4–6 | **Phase:** 1
+**Status:** Proposed — material and assay pilots required | **Cost:** TBD | **Weeks:** TBD | **Phase:** 1
 
-**Scope discipline: this is a prioritization screen, NOT a mechanism-confirmation assay.** The single question it answers is: *does any form of Houttuynia suppress MSU-induced IL-1β in THP-1 macrophages, and does purification vs. commercial sourcing matter?* Mechanism-specific work (CP0 complement-axis, CFH-dependence) is sequenced downstream in [comp-040](./computational-experiments.md) only if §1.30 returns a positive signal. Per the anti-pattern: do not try to make one cheap assay answer six scientific questions simultaneously.
+**Scope:** This is a direct-macrophage directionality screen. It asks whether an exact, qualified *Houttuynia* polysaccharide material suppresses, amplifies, or does not change IL-1β release in a THP-1 LPS/MSU model. It does not test oral delivery, product equivalence, serum complement, CFH dependence, or human gout efficacy.
 
-**Affected wiki:** [`complement-c5a-gout.md`](./complement-c5a-gout.md) §9.7 (HCP/HCPM as Tier 1d dual-chokepoint candidate); [`nlrp3-exploit-map.md`](./nlrp3-exploit-map.md) §CP1 (Houttuynia entry); [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) (comp-018 Phase 2); [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §3.3 (comp-039 HCP CFH-independence classification — sequenced after §1.30); [`supplements-stack.md`](./supplements-stack.md) (Houttuynia catalog entry).
+**Affected wiki:** [Houttuynia evidence home](./houttuynia-cordata.md), [NLRP3 exploit map](./nlrp3-exploit-map.md), [complement C5a in gout](./complement-c5a-gout.md), and [COMP-040](./computational-experiments.md).
 
-**Why this matters:** Houttuynia is the corpus's first dual-CP0+CP1 dietary candidate. comp-039 classified HCP/HCPM/CHCP as CFH-independent on mechanism-site grounds, but cell-model translation is a separate question. Cheng 2014 (PMC7112369) documents structure-dependent directionality — purified 60 kDa HCP-2 is pro-inflammatory on naïve PBMCs while the anti-inflammatory phenotype appears in disease-context inflammation — so a generic "Houttuynia extract" capsule cannot be assumed equivalent to the Chen-group HCPM preparation without direct comparison.
+**Evidence prior:** Zhou 2022 characterized HCPM as a 19.1 kDa acidic heteropolysaccharide isolated from crude HCP by sequential ultrafiltration and reported anti-complement activity plus an H1N1 mouse phenotype (**In Vitro + Animal Model**; PMID 36252625). Li 2025 found that both HCPM and crude HCP reduced intestinal complement and NLRP3-related readouts in H1N1–MRSA coinfection mice (**Animal Model**; PMID 40654358). Cheng 2014 found that a different 60 kDa HCP-2 material increased IL-1β in naïve human PBMCs through a TLR4-sensitive response (**In Vitro**; PMID 24528726). These records justify a directionality test but do not predict its result.
 
+### Stage 0 — material and assay qualification
 
-**Protocol — three-arm fraction comparison:**
+- **HCPM reference:** obtain the originating-group material or reproduce the sequential-ultrafiltration preparation described by Zhou 2022. Confirm molecular-weight distribution, carbohydrate and uronic-acid content, monosaccharide profile, and batch identity.
+- **Crude HCP:** document plant identity and part, extraction, precipitation, deproteinization, drying, composition, and lot.
+- **Independent extract lots:** include only lots with documented identity, composition, contaminants, and extraction method. A retail label is not an equivalence claim.
+- **Directionality reference:** include HCP-2 only if an exact material can be sourced or reproduced and qualified; it is a source-anchored pro-inflammatory comparator, not a substitute for HCPM.
+- **Endotoxin gate:** quantify endotoxin with spike-recovery controls and include an appropriate contamination control before attributing any priming signal to a polysaccharide.
+- **Range finding:** determine soluble, non-aggregating, noncytotoxic exposure conditions for each material. Then prespecify at least three concentrations and a result margin from pilot variance. Concentrations from hemolysis, PBMC, or animal studies do not transfer directly to THP-1/MSU.
 
-- **Arm A: HCPM (19.1 kDa Fudan RG-I fraction)** — the mechanistically-cleanest anti-inflammatory candidate: an acidic RG-I heteropolysaccharide, and **the only HC fraction with a direct NLRP3 / caspase-1 / IL-1β / IL-18-suppression readout** (Li 2025, PMID 40654358 / PMC12254813). Characterized in **Zhou 2022 (PMID 36252625)** — *not* Lu 2018 (PMID 29719782), which is the CHCP *crude* paper (citation corrected 2026-07-14 per the [structure-activity lit scan](../logs/houttuynia-polysaccharide-structure-activity-lit-scan-2026-07-14.md)). Sourcing: direct request to Chen Daofeng / Fudan group OR independent preparation following the Zhou 2022 protocol (ethanol precipitation + DEAE-Sepharose ion-exchange + Sephadex G-100 size-exclusion).
-- **Arm B: Crude HCP** — a compositionally characterized boiled-water whole-herb extract, used to compare crude and purified material.
-- **Arm C: Independent standardized extracts** — multiple lots with identity, composition, contaminants, and extraction method documented. This tests material equivalence, not consumer products.
+### Stage 1 — priming × activation matrix
 
-Each arm: **three log-spaced doses (10, 100, 1000 μg/mL)** in MSU-stimulated THP-1 macrophages (1 × 10⁶/well, LPS pre-prime 100 ng/mL × 3 hr, MSU challenge 100 μg/mL × 6 hr). Vehicle-only and nigericin (NLRP3 activator) controls.
+For vehicle and every advancing material/concentration, cross two priming states (no LPS, LPS) with two activation states (no MSU, MSU):
 
-**Readouts (narrow):**
-- **IL-1β supernatant ELISA** — primary endpoint. NLRP3-axis output; the signature gout-inflammation signal.
-- **IL-6 supernatant ELISA** — secondary; serves triple duty at marginal cost: (a) broader inflammatory readout / technical-fail safeguard; (b) **CP1b amplifier probe** — Houttuynia's NF-κB suppression should hit TNFSF14-driven IL-6 amplification too ([`tnfsf14-gout-target.md`](./tnfsf14-gout-target.md)), tested on the same plate; (c) with the extract-alone arm (below), a **TLR4-priming detector** — a rise in extract-alone IL-6 flags signal-1 priming (see the directionality safety caution).
-- **Cell viability (CCK-8 or MTT)** — confounder check. Required to interpret null results (cytotoxicity at high doses can masquerade as "no effect").
+| Condition | What it can reveal |
+|---|---|
+| No LPS, no MSU | Basal material response |
+| LPS, no MSU | Interaction with an established signal-1 stimulus |
+| No LPS, MSU | Whether the material itself supplies enough priming for an MSU response |
+| LPS, MSU | Suppression, amplification, or null effect in the conventional gout-relevant cell model |
 
-**Dropped vs. earlier draft:** C3a + sC5b-9 readouts removed. THP-1 macrophages don't reproduce serum complement biology cleanly — a positive complement signal could be "the CP0 mechanism translates" OR "local-macrophage complement leaked" OR "assay format artifact," indistinguishable. The CP0 mechanism question is answered in [comp-040](./computational-experiments.md) (CFH-depleted serum + MSU) where the full complement cascade is operative.
+Use a qualified THP-1 differentiation and LPS/MSU procedure. Include vehicle and an NLRP3-pathway inhibitor control such as MCC950; an orthogonal activator such as nigericin may be used for assay characterization but does not need to exceed the MSU response by an arbitrary multiple.
 
-**Directionality safety caution + priming-only control arm.** The [Houttuynia polysaccharide structure-activity literature](../logs/houttuynia-polysaccharide-structure-activity-lit-scan-2026-07-14.md) establishes a mechanism-grounded risk this screen must control for:
-- **Structure → direction.** *Homogalacturonan* (pure linear 1,4-α-GalA, ~60 kDa; the HCP-2 fraction) is a **direct TLR4/MD-2 agonist that raises IL-1β on naïve monocytes** (Cheng 2014, PMID 24528726; In Vitro). *RG-I / branched* fractions (HCPM, HC-PS1/3, HBHP-3) are anti-complement → anti-inflammatory in disease models. Same receptor (TLR4/MD-2), opposite outcomes — TLR4 engagement is necessary but not sufficient to predict direction; structure (HG vs RG-I) **and** context (naïve vs challenge) both move it.
-- **The amplification risk.** MSU supplies signal-2 (NLRP3 assembly). If a Houttuynia material supplies **signal-1** (TLR4→NF-κB→pro-IL-1β priming) — which an HG-rich or crude/capsule extract can — it could **amplify** IL-1β rather than suppress it, inverting the readout. Xu 2015's same-material bidirectionality (pro-inflammatory alone, anti-inflammatory vs LPS; PMID 26190353) is the empirical proof the sign flips.
-- **Required control — priming-only / extract-alone arm.** Run each arm **without MSU** (extract + vehicle, no MSU challenge) as a priming-detection control. A rise in IL-1β / IL-6 in the extract-alone condition flags TLR4-priming and makes the with-MSU result interpretable (suppression vs amplification). Without it, an amplifying extract is indistinguishable from a failed suppressor.
-- **Arm guidance.** Purified HCPM is the mechanistic reference. Independent extracts are interpretable only when HG:RG-I composition and other material attributes are measured; a label or source category cannot substitute for characterization.
-- **Context.** No HC polysaccharide has **ever** been tested in an MSU / urate / gout model (confirmed EN + Chinese corpora) — §1.30 would be the first, so the directionality caution is load-bearing, not hypothetical.
+**Readouts:**
 
-**Decision rules:**
-- If **HCPM suppresses IL-1β under the prespecified margin and independent extracts fail to match**: record a material-specific in-vitro signal and retain the material-equivalence caveat. Then run the separately designed complement-mechanism assay.
-- If **all three arms suppress IL-1β equivalently**: record equivalence only for the tested materials and assay endpoints. Human exposure, safety, and efficacy remain separate gates. **Fire [comp-040](./computational-experiments.md) next**.
-- If **none of the three arms suppress IL-1β**: the mechanism does not translate to the macrophage model. **Deprioritize Houttuynia**; do NOT proceed to comp-040 — the mechanism work is wasted if cell-model translation fails.
-- If **crude HCP performs ≥ HCPM**: purification is not required for this in-vitro endpoint; preparation reproducibility, composition, exposure, and safety remain open. **Fire [comp-040](./computational-experiments.md) next** for mechanism confirmation.
+- **Primary:** IL-1β in supernatant.
+- **Secondary:** IL-6 as a general signal-1/inflammatory readout, plus cell viability. IL-6 is not a TNFSF14-specific probe unless TNFSF14 is separately introduced and controlled.
+- **Follow-up only after a reproducible signal:** add a mechanism-proximal readout such as pro-IL-1β transcription, caspase-1 cleavage, or ASC specks to distinguish altered priming from altered inflammasome activation.
 
-**Success criteria:**
-- Detectable IL-1β baseline in MSU-stimulated vehicle controls (≥500 pg/mL by ELISA standard curve).
-- Nigericin positive control reaches ≥3× MSU IL-1β (confirms NLRP3 axis intact).
-- All three Houttuynia arms tested at full dose-response with cell viability ≥85% throughout.
+Cytotoxicity can masquerade as cytokine suppression. A concentration with morphology or viability failure is not evidence of anti-inflammatory activity.
 
-**Dependencies:** Qualified THP-1 macrophage assay capability; verified HCPM identity; and independently prepared extracts with composition, contaminants, extraction, and lot provenance documented.
+### Decision rules
 
-**Sequential gate logic** (this assay's position in the Houttuynia validation cascade):
+- **Advance the direct-macrophage route:** a qualified material produces a prespecified, concentration-responsive direction with acceptable viability, no endotoxin explanation, and independent replication.
+- **Retain a material-specific caution:** the material increases signal-1 or LPS/MSU output under qualified conditions.
+- **Close only the tested direct route:** no qualified material changes the prespecified endpoint. This does not refute complement suppression, intestinal mediation, another material, or another exposure condition.
+- **Do not infer product equivalence:** similar responses among the tested lots apply only to those materials and endpoints.
 
-| Gate | Question | Cost | Fires if... |
-|---|---|---|---|
-| **§1.30 (this assay)** | Does Houttuynia suppress MSU-induced IL-1β in a gout-relevant cell model, and does sourcing matter? | $1.5–2.5K | Always (prioritization screen) |
-| **comp-040** | Is the CFH-independence classification correct? (mechanism confirmation) | Similar order | Only if §1.30 returns positive on at least one arm |
-| **Controlled translational study** | Does an exact characterized material reach the target compartment and change a gout-relevant endpoint safely? | Design after preclinical evidence | Only after mechanism, exposure, and safety gates pass |
+[COMP-040](./computational-experiments.md) tests the separate CP0/CFH hypothesis in MSU-exposed serum and is not gated by the §1.30 result. The two experiments may be prioritized independently and compared only after each produces interpretable data.
 
-**Cross-references:** [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §3.3 (comp-039 HCP CFH-independence — mechanism-side analysis sequenced downstream); [`complement-c5a-gout.md`](./complement-c5a-gout.md) §9.7 (HCP/HCPM Tier 1d dual-chokepoint candidate); [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) (comp-018 Phase 2 HCP discovery); [`logs/houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md`](../logs/houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md).
+**Cost and schedule:** obtain a quote after confirming HCPM acquisition or preparation, number of independent lots, material analytics, endotoxin controls, pilot plate design, and replication plan.
+
+**Dependencies:** qualified THP-1/MSU capability; exact HCPM or another prespecified material; material analytics; and a pilot-derived analysis plan.
+
+**Cross-references:** [Houttuynia](./houttuynia-cordata.md), [COMP-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md), [complement C5a in gout](./complement-c5a-gout.md), and the dated [structure–activity scan](../logs/houttuynia-polysaccharide-structure-activity-lit-scan-2026-07-14.md).
 
 ---
 

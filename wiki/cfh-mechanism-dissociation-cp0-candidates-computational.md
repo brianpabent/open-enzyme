@@ -33,7 +33,7 @@ status: complete
 
 # comp-039 — CFH-dependence mechanism-dissociation of dietary upstream-CP0 candidates
 
-> **Plain-English summary first.** Open Enzyme has identified four dietary candidates that block complement activation upstream of MSU-crystal-driven gout flares: rosmarinic acid (in rosemary, lemon balm, perilla), luteolin (in celery, parsley, chamomile), *Houttuynia cordata* polysaccharide (in fish-mint, a herb commonly eaten across Southeast Asia), and *Helicteres angustifolia* benzofuran lignans (a tropical folk-medicine plant — not dietary). A common genetic variant called **CFH Y402H** is present in ~36-39% of Europeans, ~35-37% of Africans, ~30% of South Asians, ~5-6% of East Asians. It weakens one specific complement-regulator protein (Factor H). The OE prediction is that Y402H carriers should benefit *more* from these dietary candidates because the candidates work *upstream of* where Factor H normally acts — they prevent the problem before Factor H would have to clean it up. **There is one big counter-evidence:** in age-related macular degeneration (AMD), Y402H carriers paradoxically did *worse* on the AREDS zinc-antioxidant formulation. The OE hypothesis is that AREDS works *through* Factor H (and carriers can't capitalize on it because their Factor H is broken), while these dietary candidates work *upstream of* Factor H (so carriers can still benefit). This comp converts that hand-wavy plausibility argument into a candidate-by-candidate prediction the UK Biobank cross-tab can test.
+> **Plain-English summary first.** Open Enzyme identified four candidates with preclinical anti-complement activity and hypothesized relevance upstream of MSU-driven inflammation: rosmarinic acid, luteolin, exact *Houttuynia cordata* polysaccharide materials, and *Helicteres angustifolia* benzofuran lignans. None is established here as a gout intervention. A common genetic variant called **CFH Y402H** is present at different frequencies across populations and weakens one complement-regulator protein, Factor H. This COMP asks whether each candidate's measured mechanism depends on Factor H and generates predictions for empirical falsification; it does not establish that carriers benefit.
 
 > **Where the analysis lives:**
 > - Operations workspace: [`operations/cfh-mechanism-dissociation-2026-05-21/`](../operations/cfh-mechanism-dissociation-2026-05-21/)
@@ -213,7 +213,7 @@ For the UK Biobank gout-GWAS collaborators (Merriman/Otago, Major-Wrigley/Auckla
 
 ## 7. Follow-ups
 
-- **comp-040 (proposed):** wet-lab in-vitro CFH-depleted-serum MSU-crystal complement-activation assay — definitive falsification test of the CFH-independence classification for rosmarinic acid, luteolin, and HCP. Estimated cost: low (assay reagents commercially available; serum sourcing via CompTech or Complement Technology Inc).
+- **comp-040 (proposed):** wet-lab in-vitro CFH-replete/depleted-serum MSU-crystal complement-activation assay — direct falsification test of the CFH-independence classification for rosmarinic acid, luteolin, and qualified HCP materials. The HCP arm is independent of [validation §1.30](./validation-experiments.md), which tests direct macrophage directionality. Cost and schedule require a quote after exact materials, serum conditions, endpoints, controls, and replication are specified.
 - **comp-041 (proposed):** Y402H × candidate cross-tab feasibility scan in East Asian cohorts (KoGES, CKB, Singapore Chinese Health Study) for Houttuynia-specific cross-tab — paralleling the UKB feasibility analysis done 2026-05-19.
 - **Open follow-up — comp-018 Phase 2 Helicteres replication:** unchanged; this comp does not displace the load-bearing replication requirement on Yin 2016.
 
@@ -223,6 +223,7 @@ For the UK Biobank gout-GWAS collaborators (Merriman/Otago, Major-Wrigley/Auckla
 - [`complement-c5a-gout.md`](./complement-c5a-gout.md) §6.3
 - [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) — comp-018, the original modulator discovery + Phase 2 Houttuynia + Helicteres + C1-INH thread
 - [`upstream-complement-verification-rerun-computational.md`](./upstream-complement-verification-rerun-computational.md) — comp-020, the brief-scrubbed verification rerun
+- [`houttuynia-cordata.md`](./houttuynia-cordata.md) — exact-material evidence, delivery boundary, and independent CP0/CP1 gates
 - [`logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md`](../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md) — biobank feasibility analysis
 - [`computational-experiments.md`](./computational-experiments.md) — comp-039 entry
 - Operations workspace: [`operations/cfh-mechanism-dissociation-2026-05-21/`](../operations/cfh-mechanism-dissociation-2026-05-21/)

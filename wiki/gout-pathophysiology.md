@@ -151,22 +151,21 @@ The map below records which current candidate classes touch renal transport, int
 
 (Sources: [`koji-endgame-strain.md`](./koji-endgame-strain.md), [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md), [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md), [`lactoferrin.md`](./lactoferrin.md), and [`androgen-urate-axis.md`](./androgen-urate-axis.md).)
 
-#### Houttuynia × PDB combination hypothesis
+#### Houttuynia × PDB combination conjecture
 
-A proposed fourth architecture pairs dietary *Houttuynia cordata* polysaccharide with an engineered PDB live biotherapeutic. The earlier version specified “PDB-derived butyrate on EcN” as though CBT2.0's product were known. It is not: engineered EcN carbon fate must first pass [validation experiment 1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test).
+The two components remain independent research tracks. Exact-material *Houttuynia* has separate complement and macrophage hypotheses; an engineered purine-degrading bacterium has separate carbon-fate, stability, exposure, and urate-flux gates. Neither component is established by its proposed production or dietary route.
 
-| Chokepoint coverage | Houttuynia cordata polysaccharide (dietary) | Engineered PDB arm | Composition logic |
-|---|---|---|---|
-| **CP0 — complement priming** (MSU → C1/CRP → C3/C5 convertase → C5a) | Multi-target at C2 + C4 + C5 (Chen Daofeng / Fudan group; Lu 2018 PMC5925397 CH50 79–318 µg/mL) | — | Houttuynia covers CP0 entry-blockade from the gut-luminal side |
-| **CP1 — TLR4 / NF-κB priming** | TLR4-MD2 partial agonism / hormetic antagonism → NF-κB → NLRP3 suppression (Yu 2026 PMC12937656; tight-junction restoration + intestinal NLRP3/caspase-1/IL-1β/IL-18 suppression per Li 2025 PMC12254813). **First dual-CP0+CP1 dietary candidate in the corpus.** | — | Houttuynia uniquely doubles as a CP1 candidate |
-| **ABCG2 substrate supply** | — | Conditional: only if the selected strain produces sufficient butyrate and epithelial flux confirms an effect | Product and exposure gates are open |
-| **NLRP3 dampening** (CP2 / CP4 downstream) | NLRP3/caspase-1/IL-1β suppression in vivo via TLR4 priming dampening (Li 2025) | HDAC inhibition independently dampens NLRP3 (per [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md)) | Two independent mechanisms converging on the same downstream node |
+> **Research conjecture — Houttuynia and a purine-degrading bacterium may cover nonredundant gout weaknesses**{ .research-conjecture-label }
+>
+> **Grounded premises:** Qualified *Houttuynia* materials have preclinical complement and context-dependent inflammatory activity (**In Vitro + Animal Model**; [Houttuynia evidence](./houttuynia-cordata.md)). Purine-degrading bacteria may alter luminal purine handling, while any ABCG2 or NLRP3 contribution depends on the strain's measured products and exposure (**Mechanistic Extrapolation**; [PDB track](./purine-degrading-bacteria.md)).
+>
+> **Novel leap:** A validated material and a validated bacterial strain may cover nonredundant CP0/CP1 and luminal-purine mechanisms. No direct combination study exists, and additivity is unmeasured.
+>
+> **Why it matters:** Orthogonal activity could make a combination more robust than either component without requiring them to share a chassis.
+>
+> **Discriminating observation:** First establish at least one reproducible Houttuynia route and the strain's carbon fate, stability, exposure, and urate flux. Then compare each singleton with the combination under a prespecified interaction null.
 
-**Current interpretation:** the production stacks are distinct, but biological additivity is not “by construction.” Houttuynia activity, PDB carbon fate, epithelial exposure, and functional urate flux must each pass before combination testing.
-
-**Combination gate.** Do not test the combination until both arms clear their individual validation gates: the Houttuynia §1.30 prioritization screen and PDB carbon-fate, stability, exposure, and urate-flux validation. The route used to produce either arm does not establish additivity.
-
-**Cross-references:** [`complement-c5a-gout.md` §9.7](./complement-c5a-gout.md) (Houttuynia as Tier 1d dietary CP0+CP1 candidate), [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md) (PDB chassis + conditional SCFA biology), [`abcg2-modulators.md` §6](./abcg2-modulators.md) (supported WT induction; direct butyrate Q141K rescue unvalidated), [`validation-experiments.md` §1.30](./validation-experiments.md), [`chassis-pending-interventions.md`](./chassis-pending-interventions.md).
+Houttuynia [validation §1.30](./validation-experiments.md) and [COMP-040](./computational-experiments.md) test independent macrophage and complement routes; neither gates the other. The bacterial arm must pass [validation §1.37](./validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test) and its downstream exposure and flux gates. A negative result retires only the exact component, route, or combination tested.
 
 ---
 
