@@ -149,7 +149,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[Cassette Compatibility — Dual-Cassette Koji Configuration (comp-010)](wiki/cassette-compatibility-computational.md)** — **LOW design risk:** two sequence-level uncertainties remain for the dual-cassette test.
 - **[C. utilis Uricase Cassette Compatibility (comp-011)](wiki/c-utilis-uricase-cassette-compatibility-computational.md)** — **MODERATE design risk:** variant comparison is conditional on topology selection.
 - **[Uricase Cassette Ranking, ClockBase-Style (comp-022)](wiki/uricase-cassette-ranking-computational.md)** — Candidate-level cassette priors that do not decide secretion topology.
-- **[TCM Gout Compound Triage (comp-013)](wiki/tcm-gout-compound-triage-computational.md)** — Four gut-luminal candidates, one moderate candidate, and four mechanism-unclear candidates under incomplete ChEMBL coverage.
+- **[TCM Gout Compound Triage (comp-013)](wiki/tcm-gout-compound-triage-computational.md)** — Source/compound/target evidence inventory survives; the viability ranking is invalid because it did not preserve target-effect polarity and inherited nominal gut-concentration/IC50 occupancy.
 - **[Medicinal Mushroom Compound Mapping (comp-014)](wiki/medicinal-mushroom-compound-mapping-computational.md)** — Fungal compound-to-chokepoint map with ADA and PINK1/mitophagy as open candidate nodes.
 - **[DAF/CD55 SCR1-4 Truncated Protease Stability (comp-012)](wiki/daf-cd55-scr14-truncated-computational.md)** — **LOW protease risk:** the truncated construct remains gated by three wet-lab unknowns.
 - **[DAF SCR1-4 Cassette Ranking (comp-030)](wiki/daf-cd55-scr14-cassette-ranking-computational.md)** — Corroborates the direct-secretion baseline and rejects GlaA-KEX2 for this target.
@@ -157,7 +157,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[Lactoferrin Protease Stability (comp-005)](wiki/lactoferrin-protease-stability-computational.md)** — HIGH (full sequence, signal-peptide-driven) / MODERATE (mature protein); lactoferrin arm of §1.10 remains a feasibility gate.
 - **[DAF/CD55 Protease Stability (comp-006)](wiki/daf-cd55-protease-stability-computational.md)** — HIGH verdict for soluble ectodomain (aa 35–353); stalk-contingent (Ser/Thr stalk aa 286–353 drives all exposed sites); SCR1-4 core contributes zero exposed sites; stalk-truncated construct (aa 35–285) is the logical follow-up.
 - **[Food-Grade HDAC Inhibitor Screen (comp-007)](wiki/food-grade-hdaci-screen-computational.md)** — Stage 1 in silico screen: butyrate rank 1 (composite 0.374, HIGH confidence, 167× HDAC6 selectivity); sulforaphane rank 2 (LOW confidence); PEITC rank 3. Advances to Stage 2 Caco-2/HepG2 paired HDAC activity assay.
-- **[Supplement ABCG2 Antagonism (comp-004)](wiki/supplement-abcg2-antagonism-computational.md)** — IC50 occupancy analysis: quercetin 6.8× IC50 (87% predicted inhibition), curcumin 8.3× IC50 (89% predicted inhibition) at standard supplement doses; EGCG operates via expression downregulation (not scored by this framework). VERY HIGH risk for quercetin and curcumin.
+- **[Supplement–ABCG2 Assay-Evidence Audit (comp-004)](wiki/supplement-abcg2-antagonism-computational.md)** — Quantitative occupancy/risk verdict invalid; three cited interaction records route quercetin, curcumin, and EGCG to direct intestinal ABCG2-attributed urate-flux testing.
 
 ## Practitioner Toolkit
 

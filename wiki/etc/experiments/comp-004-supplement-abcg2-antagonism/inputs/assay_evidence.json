@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "evidence_set": {
+    "scope": "Three primary records already cited by Open Enzyme for quercetin, curcumin, and EGCG ABCG2/BCRP interaction signals; not a literature census",
+    "cutoff_date": "2026-07-23",
+    "selection_rule": "One named primary record per compound, chosen only to test whether that cited record supports a quantitative intestinal urate-transport conclusion."
+  },
+  "records": [
+    {
+      "compound": "Quercetin",
+      "evidence_level": "In Vitro",
+      "assay_context": "Functional BCRP assays used drug substrates in non-intestinal cell systems.",
+      "reported_substrates": ["mitoxantrone", "BODIPY-FL-prazosin"],
+      "urate_evidence_status": "not_established_by_cited_record",
+      "intestinal_model_tested": false,
+      "source": {
+        "citation": "Cooray et al. Biochem Biophys Res Commun. 2004.",
+        "pmid": "15047179",
+        "doi": null,
+        "verified_location": "primary abstract"
+      }
+    },
+    {
+      "compound": "Curcumin",
+      "evidence_level": "Animal Model",
+      "assay_context": "A cynomolgus-monkey intestinal drug-interaction study used sulfasalazine and rosuvastatin as BCRP probe substrates.",
+      "reported_substrates": ["sulfasalazine", "rosuvastatin"],
+      "urate_evidence_status": "not_established_by_cited_record",
+      "intestinal_model_tested": true,
+      "source": {
+        "citation": "Karibe et al. Drug Metab Dispos. 2018.",
+        "pmid": "29358184",
+        "doi": "10.1124/dmd.117.078931",
+        "verified_location": "primary abstract"
+      }
+    },
+    {
+      "compound": "EGCG",
+      "evidence_level": "In Vitro",
+      "assay_context": "After EGCG exposure, a tamoxifen-resistant MCF-7 mitoxantrone assay showed reduced BCRP activity without changed BCRP mRNA or protein.",
+      "reported_substrates": ["mitoxantrone"],
+      "urate_evidence_status": "not_established_by_cited_record",
+      "intestinal_model_tested": false,
+      "source": {
+        "citation": "Farabegoli et al. Phytomedicine. 2010.",
+        "pmid": "20149610",
+        "doi": "10.1016/j.phymed.2010.01.001",
+        "verified_location": "primary abstract"
+      }
+    }
+  ]
+}

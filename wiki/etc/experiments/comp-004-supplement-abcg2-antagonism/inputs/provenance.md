@@ -1,66 +1,28 @@
-# Provenance — comp-004 inputs
+# Provenance — comp-004 assay-evidence audit
 
-All inputs documented with sources, fetch dates, and versions.
+The revised artifact contains no dose, bioavailability, solubility, gut-volume, free-exposure, IC50-occupancy, percent-inhibition, clinical-risk, or genotype parameters. Those inputs belonged to the invalidated quantitative model and remain available through Git history.
 
-## ic50_data.json
+## Quercetin
 
-### ABCG2 target identification
-- **Source:** ChEMBL MCP query, 2026-05-05
-- **Target:** CHEMBL5393 (ABCG2/BCRP, *Homo sapiens*)
-- **UniProt:** Q9UNQ0
-- **GO term confirmed:** GO:0015143 "urate transmembrane transporter activity" — verified via UniProt Q9UNQ0 GO annotations
+- Cooray HC, Janvilisri T, van Veen HW, et al. "Interaction of the breast cancer resistance protein with plant polyphenols." *Biochem Biophys Res Commun.* 2004;317(1):269-275. PMID 15047179.
+- The primary abstract reports functional BCRP modulation using the drug substrates mitoxantrone and BODIPY-FL-prazosin in BCRP-overexpressing cell lines. That record does not establish intestinal urate transport.
+- Earlier comp-004 versions averaged two ChEMBL IC50 values from different cell systems and treated the mean as one assay context. That average is retired and is not present in the revised input or output.
 
-### Quercetin IC50 vs ABCG2
-- **ChEMBL compound ID:** CHEMBL50
-- **Fetch date:** 2026-05-05
-- **Fetch method:** ChEMBL MCP `get_bioactivity` query (standard_type=IC50, target=CHEMBL5393)
-- **Values retrieved:** 6900 nM and 7600 nM (two activities)
-- **Used:** 7250 nM (arithmetic mean)
-- **Assay:** Hoechst 33342 efflux, MCF7 cells expressing ABCG2
-- **Source paper:** Bioorg Med Chem 2011 (ChEMBL document reference)
+## Curcumin
 
-### EGCG (mechanism, no IC50)
-- **ChEMBL compound ID:** CHEMBL297453
-- **Fetch date:** 2026-05-05
-- **Fetch method:** ChEMBL MCP (no transport inhibition IC50 found for ABCG2); PubMed literature search
-- **Finding:** EGCG modulates ABCG2 via expression downregulation, not acute transport inhibition
-- **PubMed sources:** Multiple papers on EGCG-mediated ABCG2 mRNA/protein reduction in cancer cell lines; Yu 2024 in vivo gout study (net urate direction favorable, likely anti-inflammatory rather than ABCG2 transport block)
+- Karibe T, Imaoka T, Abe K, Ando O. "Curcumin as an In Vivo Selective Intestinal Breast Cancer Resistance Protein Inhibitor in Cynomolgus Monkeys." *Drug Metab Dispos.* 2018;46(5):667-679. PMID 29358184; DOI 10.1124/dmd.117.078931.
+- This is direct Animal Model evidence for intestinal BCRP interaction, but the reported probe substrates were drugs rather than urate. The cited record supports including curcumin in an intestinal urate-flux assay, not a quantitative urate-inhibition or clinical-risk estimate.
 
-### Curcumin IC50 vs ABCG2
-- **ChEMBL compound ID:** CHEMBL140
-- **Fetch date:** 2026-05-05
-- **Fetch method:** ChEMBL MCP `get_bioactivity` query (standard_type=IC50, target=CHEMBL5393)
-- **Value retrieved:** 1630 nM
-- **Used:** 1630 nM
-- **Assay:** Mitoxantrone efflux, MCF7-VP cells (ABCG2-overexpressing)
-- **Source paper:** Eur J Med Chem 2022 (ChEMBL document reference)
+## EGCG
 
----
+- Farabegoli F, Papi A, Bartolini G, Ostan R, Orlandi M. "(-)-Epigallocatechin-3-gallate downregulates Pg-P and BCRP in a tamoxifen resistant MCF-7 cell line." *Phytomedicine.* 2010;17(5):356-362. PMID 20149610; DOI 10.1016/j.phymed.2010.01.001.
+- EGCG exposure reduced BCRP functional activity in a mitoxantrone assay while BCRP mRNA transcription and protein level did not change. The cited record does not report an applicable kinetic IC50 or Ki or establish intestinal urate transport.
 
-## compounds.json
+## Separate EGCG animal evidence
 
-### Quercetin bioavailability (~17%)
-- **Source:** Manach C et al. "Quercetin is recovered in human plasma as conjugated derivatives which retain antioxidant properties." Am J Clin Nutr 2005;81(1 Suppl):230S-242S.
-- **PMID:** 15640486
-- **DOI:** 10.1093/ajcn/81.1.230S
+- Yu H, Lou Z, Wu T, et al. "Mechanisms of epigallocatechin gallate (EGCG) in ameliorating hyperuricemia: insights into gut microbiota and intestinal function in a mouse model." *Food Funct.* 2024;15(11):6068-6081. PMID 38757391; DOI 10.1039/D4FO01606H.
+- EGCG lowered serum urate in potassium-oxonate hyperuricemic mice. The primary abstract reports renal Oat1/Oct1 upregulation and Urat1/Glut9 downregulation, plus microbiome and intestinal-transcriptome changes; it does not report an ABCG2 result or Nrf2-mediated ABCG2 sign switch. That abstract therefore cannot support the corpus's claimed favorable ABCG2 phenotype.
 
-### Quercetin aqueous solubility (7 mg/L)
-- **Source:** Literature consensus; see Merkle HP et al. studies on quercetin biopharmaceutics; FaSSIF solubility estimates
+## Decision boundary
 
-### Curcumin bioavailability (<1%)
-- **Source:** Metzler M et al. "Curcumin uptake and metabolism." Biofactors 2013;39(1):14-20.
-- **PMID:** 22996406
-- **DOI:** 10.1002/biof.1042
-- **Note:** Essentially all oral dose remains in gut lumen; <1% reaches systemic circulation
-
-### Curcumin intestinal solubility (5 mg/L estimate)
-- **Source:** Estimate from literature range 0.6-8 mg/L depending on formulation and intestinal conditions (bile salt content, lipid content, pH). Standard unformulated curcumin 0.6 mg/L aqueous; with intestinal bile salts ~2-8 mg/L. Conservative midpoint 5 mg/L used.
-
-### EGCG bioavailability (~2%)
-- **Source:** Literature consensus across multiple PK studies; EGCG is among least-absorbed flavonoids despite high water solubility
-
----
-
-## gut_model.json
-- **Small intestine volume 250 mL:** Johnson LR (ed.) *Physiology of the Gastrointestinal Tract*; commonly cited fasted SI fluid volume
-- **pH 6.5–7.0:** Standard reference for proximal SI; relevant for ABCG2 expression zone (duodenum/jejunum)
+These three cited records establish assay signals in different systems. They do not supply the combination of measured free intestinal exposure, intestinal ABCG2 protein, and urate flux needed to rank intestinal-urate hazard. The revised code therefore emits an evidence-bounded experimental disposition and prohibits quantitative or clinical inference.

@@ -233,30 +233,27 @@ ABCG2 is expressed at multiple barrier sites with different physiological roles:
 
 ## Compound-interaction evidence
 
-Several compounds in [`supplements-stack.md`](./supplements-stack.md) have functional ABCG2-inhibition evidence despite anti-NLRP3 or anti-inflammatory rationales. This creates a testable interaction hypothesis, not a reason to prescribe or prohibit a stack.
+Several compounds in [`supplements-stack.md`](./supplements-stack.md) have ABCG2/BCRP interaction signals despite anti-NLRP3 or anti-inflammatory rationales. The cited assays identify candidates for a context-matched urate-flux experiment; they do not establish intestinal urate inhibition or a clinical warning.
 
-Documented functional ABCG2 inhibitors at supplement-relevant doses:
-
-| Compound | Inhibition tier | Source |
+| Compound | What the cited record shows | Evidence boundary |
 |---|---|---|
-| Curcumin | Established BCRP/ABCG2 inhibitor in vitro (Ki ~5–10 μM) — **and confirmed in vivo**: oral curcumin acts as a selective intestinal BCRP inhibitor in cynomolgus monkeys ([Karibe 2018, PMID 29358184](https://doi.org/10.1124/dmd.117.078931)). Despite curcumin's chemical instability, functional gut inhibition survives in a live primate — the **strongest** case in this table (caveat: substrates were sulfasalazine/rosuvastatin, **not urate**). | In vitro (multiple labs) + **Animal Model in vivo (primate)** |
-| Quercetin | Substrate/inhibitor at low μM (functional); transcriptional upregulation in chronic dosing (mixed). Net effect on gut sink: probably negative acutely. | Pharmacology + nutritional biochemistry literature |
-| EGCG | Functional BCRP inhibitor in pharmacology assays. Yu et al. 2024 (*Food Funct*, PMID 38757391) showed mouse PO-induced hyperuricemic model net-favorable effect on ABCG2/URAT1/GLUT9 expression at the tissue level — direction opposite to the in vitro inhibition story. Net clinical effect on gut sink: unresolved. | Mixed: pharmacology in vitro vs. animal model in vivo |
-| Genistein / soy isoflavones | Established BCRP substrate-inhibitor. Dietary intake from natto/miso is much smaller than supplement doses. | Pharmacology literature |
+| Curcumin | Oral curcumin altered intestinal BCRP handling of sulfasalazine and rosuvastatin in cynomolgus monkeys ([Karibe 2018, PMID 29358184](https://doi.org/10.1124/dmd.117.078931)). | **Animal Model.** Intestinal BCRP interaction with drug probes; urate was not the tested substrate. |
+| Quercetin | Cooray et al. measured functional BCRP interactions with mitoxantrone and BODIPY-FL-prazosin in non-intestinal cell systems (PMID 15047179). | **In Vitro.** Drug-substrate signal; no intestinal urate-flux result in the cited record. |
+| EGCG | EGCG exposure reduced mitoxantrone-assayed BCRP activity in tamoxifen-resistant MCF-7 cells without changing BCRP mRNA or protein ([Farabegoli 2010, PMID 20149610](https://doi.org/10.1016/j.phymed.2010.01.001)). | **In Vitro.** Cancer-cell functional signal; no applicable kinetic parameter, intestinal model, or urate-flux result in the cited record. |
 
-**The EGCG paradox may be a tea-polyphenol class pattern.** The EGCG in-vitro-inhibition / in-vivo-favorable split (above) is mirrored by its black-tea cousin: **theaflavins** are ABCG2/BCRP *substrates* in vitro (not inhibitors) yet *up-regulate* ABCG2 at the gene level in hyperuricemic mice while lowering serum urate (Tai et al. 2020, *J Funct Foods* 66:103803, attributed to Nrf2/HO-1 — see [`theaflavins.md` §2](./theaflavins.md)). Two independent tea polyphenols thus show the same pattern: acute pharmacological inhibition in a dish, net-favorable ABCG2 phenotype in a live animal. The unifying hypothesis is **hormetic, Nrf2-driven transcriptional up-regulation under chronic exposure** — the same mechanism by which [sulforaphane](./supplements-stack.md) works. This places EGCG and theaflavins provisionally in the Nrf2-inducer bucket for chronic dietary exposure. **This remains a hypothesis, not a resolution**: the in vivo data are rodent and transcript-level, the Nrf2 mechanism is inferred, and acute inhibition is real at high concentrated-extract doses. The dose-and-chronicity axis is load-bearing.
+Yu et al. 2024 ([PMID 38757391](https://doi.org/10.1039/D4FO01606H)) reported lower serum urate in potassium-oxonate hyperuricemic mice, renal Oat1/Oct1 upregulation and Urat1/Glut9 downregulation, plus microbiome and intestinal-transcriptome changes (**Animal Model**). The primary abstract does not report an ABCG2 result and therefore does not establish an ABCG2 sign reversal.
 
-**Risk-tier stratification:**
+> **Research conjecture — Context may change EGCG's net intestinal ABCG2 effect**{ .research-conjecture-label }
+>
+> **Grounded premises:** Farabegoli 2010 found reduced mitoxantrone-assayed BCRP activity after EGCG exposure without changed BCRP mRNA or protein (**In Vitro**; PMID 20149610). Yu 2024 found a serum-urate-lowering mouse phenotype with renal Oat1/Oct1, Urat1/Glut9, microbiome, and intestinal-transcriptome changes (**Animal Model**; PMID 38757391), but its primary abstract does not report ABCG2.
+>
+> **Novel leap:** Free parent exposure, metabolites, exposure time, and intestinal tissue context may change EGCG's net effect on ABCG2-mediated urate export. No direct evidence establishes that connection.
+>
+> **Why it matters:** A context-dependent effect could explain why a drug-substrate cancer-cell signal does not predict net intestinal urate delivery and could expose a controllable formulation or timing variable.
+>
+> **Discriminating observation:** In a polarized intestinal model, pair measured free EGCG and metabolites with total and surface ABCG2 plus ABCG2-attributed basolateral-to-apical urate flux at prespecified short and extended exposures. Redirect or kill the conjecture if flux is not ABCG2-specific or does not change with context.
 
-| Research stratum | ABCG2 status | Concern | Experimental implication |
-|---|---|---|---|
-| Q141K homozygote + high-dose flavonoid exposure | Genetic loss-of-function plus candidate pharmacological inhibition | **Highest research concern** | Measure surface ABCG2 and urate flux; do not infer that transcriptional induction or butyrate rescues Q141K. |
-| Q141K heterozygote + supplement-grade flavonoid | Partial genetic function plus candidate pharmacological inhibition | **High research concern** | Measure time-resolved exposure, ABCG2 function, and urate flux; do not infer a clinical timing rule. |
-| Hormone-elevated state, any genotype | Direction of intestinal ABCG2 effect unknown | **Unresolved covariate** | Record hormone state as a study covariate; do not classify it as transporter suppression. |
-| Wild-type ABCG2 + supplement-grade flavonoid | Pharmacological inhibition only | **Moderate concern** | Test dose and chronicity separately; transcript changes do not resolve acute functional inhibition. |
-| Any genotype + dietary-level flavonoid | Expected lower exposure | **Lower concern** | Include as a defined exposure stratum rather than assuming no effect. |
-
-Stratification is an experimental necessity because genotype, androgen context, dose, gut segment, and chronicity may change direction. The current evidence does not support a blanket clinical rule for quercetin, curcumin, EGCG, or dietary flavonoids.
+Genotype, hormone state, exposure, intestinal segment, and chronicity remain experimental strata. They do not support patient risk tiers or a dietary-versus-extract rule without direct urate-flux evidence.
 
 This also surfaces a research-level open question: how much of the "non-responder" rate in nutraceutical gout RCTs is explained by ABCG2-inhibitor co-supplementation rather than by per-compound efficacy failure?
 
@@ -266,14 +263,14 @@ Poor oral bioavailability does not by itself establish high functional gut-lumin
 
 | Compound | Gut-luminal fate | Premise (poor absorption ⇒ real gut-ABCG2 inhibition) | Bucket |
 |---|---|---|---|
-| **Curcumin** | Chemically unstable, colonic biotransformation — **but** functional inhibition demonstrated in a live primate ([Karibe 2018, PMID 29358184](https://doi.org/10.1124/dmd.117.078931)) | **HOLDS — strongest case** | Inhibitor (in vivo-confirmed) |
-| **Quercetin** | Dietary = glycosides → obligate bacterial deglycosylation + C-ring fission; genuine low-µM BCRP inhibitor in the **proximal** small intestine right after a dose, but catabolized before the colon ([Rechner 2004, PMID 14744633](https://doi.org/10.1016/j.freeradbiomed.2003.10.008); Di Pede 2020) | **PARTIAL** — holds proximally/acutely, overstated for colonic/sustained concentration | Inhibitor (proximal-gut window only) |
-| **EGCG** | Unstable at intestinal pH → gallocatechin + gallic acid; ring-fissioned by microbiota; net-**favorable** ABCG2/URAT1/GLUT9 phenotype in vivo ([Yu 2024, PMID 38757391](https://doi.org/10.1039/d3fo05606f)) | **MOST OVERSTATED** — parent doesn't persist; in vivo net-favorable | Move to **Nrf2-inducer bucket** (with theaflavins) |
+| **Curcumin** | Chemical instability and colonic biotransformation coexist with an intestinal BCRP interaction in cynomolgus monkeys ([Karibe 2018, PMID 29358184](https://doi.org/10.1124/dmd.117.078931)). | Supported for drug probes; transfer to urate is unresolved. | Direct urate flux required |
+| **Quercetin** | Dietary glycosides undergo deglycosylation and microbial ring fission ([Rechner 2004, PMID 14744633](https://doi.org/10.1016/j.freeradbiomed.2003.10.008)); Cooray's functional BCRP record used non-intestinal drug-substrate systems. | Free segment-specific exposure and urate direction are unresolved. | Direct urate flux required |
+| **EGCG** | Parent instability and microbial metabolism change exposure; Farabegoli's cancer-cell assay and Yu's renal/microbiome mouse phenotype do not measure the same compartment or endpoint. | No cited ABCG2 sign reversal or intestinal urate direction is established. | Direct urate flux required |
 | **CBD** | Predominant fate is **lipid/fecal sequestration + gastric-acid lability + host metabolism**, not colonic microbial degradation; CBD is not an ABCG2 inhibitor (target P2X7/NLRP3) | N/A — not an ABCG2-inhibitor mechanism | Neither |
 
-Curcumin has the strongest in-vivo inhibition evidence in this set; quercetin has a proximal-gut inhibition window; and EGCG has conflicting in-vitro and animal-model directions. None supplies a blanket clinical rule.
+The cited interaction records differ in substrate, system, and endpoint. None supplies a blanket clinical rule or ranks net intestinal urate effects.
 
-**Load-bearing evidence gap:** no study measures the actual **free luminal concentration** of any of these compounds, segment-resolved along the gut after a realistic dose, against **urate** efflux via intestinal ABCG2 (Karibe used drug substrates; the EGCG in vivo data measure transporter *expression*, not acute luminal inhibition). So `[free compound]_lumen` vs `Ki(ABCG2-for-urate)` per gut segment remains unmeasured for all four — the quantity every warning above ultimately depends on. (source: CBD-vs-flavonoid gut-degradation lit scan 2026-07-13; per-compound PMIDs in the scan log.)
+**Load-bearing evidence gap:** the cited records do not combine measured free segment-specific exposure, intestinal ABCG2 attribution, and urate flux. Those measurements—not nominal bulk concentration divided by a drug-substrate IC50—are the required basis for an intestinal-urate conclusion.
 
 ---
 
@@ -353,7 +350,7 @@ Each compound dossier should record acute ABCG2 function, chronic expression eff
 
 3. **Glucoraphanin delivery.** After biological target engagement is established, which dietary, microbial, or engineered route provides reproducible intestinal exposure?
 
-4. **EGCG net effect on the gut sink.** Yu 2024 (PMID 38757391) shows favorable in vivo phenotype despite EGCG being a known functional ABCG2 inhibitor in vitro. Resolution requires direct in vivo measurement of gut ABCG2 protein/function before and after EGCG dosing in a relevant model.
+4. **EGCG net effect on the gut sink.** Farabegoli 2010 supplies a functional drug-substrate signal in a non-intestinal cancer-cell system; Yu 2024 supplies a serum-urate-lowering mouse phenotype without an ABCG2 result in the primary abstract. Resolution requires measured free parent/metabolites, intestinal ABCG2 protein and attribution, and direct urate flux across exposure times.
 
 5. **TNFα × hormone interaction.** TNFα suppresses ABCG2 in inflammatory epithelial models; DHT direction is unresolved. A factorial experiment should classify DHT as suppressive, null, or inductive and measure its interaction with TNFα rather than assume additivity.
 

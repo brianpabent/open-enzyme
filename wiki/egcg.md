@@ -16,7 +16,8 @@ sources:
   - "Nam et al. *Bioorg Med Chem* 2001 / confirmed *Bioorg Med Chem* 2010 — 20S proteasome IC50 = 86 nM, ChEMBL assay CHEMBL4433382 (pChEMBL 7.07)"
   - "Lee et al. *Molecules* 2019;24(11):2138 (PMID 31174271) — EGCG blocks MSU-induced NLRP3 in mouse macrophages + foot inflammation"
   - "Hosokawa et al. *Mol Nutr Food Res* 2010;54 Suppl 2:S151–8 (PMID 20461739) — EGCG suppresses TNFSF14-induced IL-6 and downregulates HVEM"
-  - "Yu et al. *Food Funct* 2024;15(11):5962–5975 (PMID 38757391) — EGCG lowers serum UA in hyperuricemic mice via gut microbiota + urate transporters"
+  - "Yu et al. *Food Funct* 2024;15(11):6068–6081 (PMID 38757391; DOI 10.1039/D4FO01606H) — EGCG lowers serum UA in hyperuricemic mice; primary abstract reports renal Oat1/Oct1, Urat1/Glut9, microbiome, and intestinal-transcriptome changes"
+  - "Farabegoli et al. *Phytomedicine* 2010;17(5):356–362 (PMID 20149610; DOI 10.1016/j.phymed.2010.01.001) — mitoxantrone-assayed BCRP activity fell after EGCG exposure in MCF-7Tam cells without changed BCRP mRNA or protein"
   - "Chen & Xu *Eur Rev Med Pharmacol Sci* 2018;22(21):7458–7464 (PMID 30468495) — EGCG protects renal fibroblasts from UA injury via miR-9/NF-κB/JAK-STAT"
   - "EFSA NDA Panel. Scientific opinion on the safety of green tea catechins. *EFSA Journal* 2018;16(4):e05239"
 ---
@@ -73,8 +74,12 @@ The four-chokepoint hypothesis is mechanistically unified rather than a list of 
 Direct gout / hyperuricemia evidence, in descending order of translation strength:
 
 - **Lee et al. 2019 *Molecules* (PMID 31174271).** Primary mouse macrophages + MSU-injected mouse foot model. EGCG blocked MSU-induced caspase-1(p10) cleavage and IL-1β secretion in macrophages; oral EGCG reduced foot swelling in the MSU model; mechanism invoked was mtDNA synthesis block + ROS reduction, feeding into NLRP3 suppression. (**Animal Model + In Vitro**; source: [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md))
-- **Yu et al. 2024 *Food Funct* (PMID 38757391).** PO (potassium oxonate)-induced hyperuricemic mouse model. EGCG lowered serum uric acid via gut microbiota modulation and urate transporter (URAT1, GLUT9, ABCG2) modulation — the same transporter axis carnosine targets. (**Animal Model**; source: [nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md)) **Note:** This in vivo favorable ABCG2 effect contrasts with EGCG's established in vitro role as a functional ABCG2/BCRP inhibitor in pharmacology assays. The net effect on the gut urate sink at supplement doses is unresolved — see [abcg2-modulators.md](./abcg2-modulators.md) §Supplements-stack contradiction for the full discussion. (In Vitro inhibition vs. Animal Model in vivo; source: abcg2-modulators.md)
+- **Yu et al. 2024 *Food Funct* (PMID 38757391; DOI 10.1039/D4FO01606H).** In a potassium-oxonate hyperuricemic mouse model, EGCG lowered serum urate. The primary abstract reports renal Oat1/Oct1 upregulation and Urat1/Glut9 downregulation, plus microbiome and intestinal-transcriptome changes; it does not report an ABCG2 result. (**Animal Model**)
 - **Chen & Xu 2018 *Eur Rev Med Pharmacol Sci* (PMID 30468495).** Rat renal fibroblasts exposed to UA injury. EGCG protected cells via the miR-9 / NF-κB / JAK-STAT axis — consistent with the proteasome/NF-κB mechanism above, but at the kidney tissue level where UA-driven fibrosis is the relevant endpoint. (**In Vitro**)
+
+### ABCG2 evidence boundary
+
+Farabegoli et al. 2010 (PMID 20149610) found that EGCG exposure reduced mitoxantrone-assayed BCRP activity in tamoxifen-resistant MCF-7 cells while BCRP mRNA and protein remained unchanged (**In Vitro**). That result does not provide an applicable kinetic parameter, an intestinal model, or urate flux. Yu 2024 does not supply the missing favorable-ABCG2 result. The net effect on intestinal ABCG2-mediated urate export therefore remains an open experimental question; the bounded context hypothesis and direct test are specified in [ABCG2 modulators](./abcg2-modulators.md).
 
 No human RCT data specifically in gout. Human trials exist for hypertension, insulin resistance, and weight management at 400–800 mg EGCG/day doses (reviewed by EFSA 2018); none have gout or serum UA as primary endpoints.
 
@@ -116,5 +121,6 @@ The useful exposure window remains unresolved. Food lowers free-EGCG peak exposu
 3. **Hepatotoxicity mechanism.** Is EGCG-induced liver injury driven by proteasome inhibition (analogous to bortezomib), by redox chemistry (pro-oxidant at high doses via auto-oxidation of the gallate ring), by mitochondrial membrane effects, or by an idiosyncratic immune mechanism? The existing literature is divided. Mechanistic clarity would inform future formulation choices — a proteasome-driven mechanism might be worsened by phytosome bioavailability boosters, whereas a redox-driven mechanism might be mitigated by them.
 4. **Does EGCG suppress TNFSF14 at the HVEM-receptor level specifically, or only through general NF-κB blockade?** Hosokawa 2010 reported **HVEM downregulation**, which if real is a receptor-specific effect not reducible to proteasome inhibition (HVEM transcription is not obviously NF-κB-dominant in HGF cells). Replicating this in human macrophages (THP-1 or PBMC-derived MDM) with a TNFSF14-stimulated IL-6 / IL-1β readout would determine whether CP1a is a separate EGCG mechanism or a consequence of general CP1 blockade.
 5. **Can DHA + EGCG achieve combined TNFSF14 suppression?** DHA lowers circulating TNFSF14 (Huang 2024 Mendelian randomization; source: [tnfsf14-gout-target.md](./tnfsf14-gout-target.md)); EGCG suppresses TNFSF14 signal transduction at the receiving cell. These are orthogonal layers of the same amplifier. A combination trial would have clear synergy logic and both compounds are already in the stack.
+6. **What is EGCG's net effect on intestinal ABCG2 urate flux?** Test measured free parent compound and metabolites, total and surface ABCG2, and ABCG2-attributed basolateral-to-apical urate flux at prespecified short and extended exposures. Neither Farabegoli's cancer-cell drug-substrate result nor Yu's mouse renal/microbiome phenotype answers this question.
 
 ---

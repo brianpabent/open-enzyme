@@ -323,7 +323,7 @@ That said: **cruciferous vegetables (broccoli, cabbage, Brussels sprouts, kale, 
 
 - **Urate direction unknown.** A smaller or inconsistent testosterone effect does not establish a lower gout risk.
 - **However**: DIM modulates Phase II hepatic conjugation enzymes generally; theoretical interaction with allopurinol/febuxostat clearance not characterized. The mechanism-tier concern is now slightly better-defined: DIM is a PXR activator and induces CYP1A2 and CYP3A4 ([Sun et al. 2015 *Drug Metab Pharmacokinet*, PMC4568078](https://pmc.ncbi.nlm.nih.gov/articles/PMC4568078/); Hwang et al. 2016 PMC4759426 cites DIM induction of CYP1A2 in human liver slices). Allopurinol is metabolized to oxypurinol primarily by xanthine oxidase and aldehyde oxidase, not the major CYPs DIM affects. So the most-likely DIM-allopurinol interaction is **upstream theophylline-style CYP1A2 substrate competition** rather than direct XO-pathway interference.
-- DIM does **not** appear in the [supplement-abcg2-antagonism-computational](./supplement-abcg2-antagonism-computational.md) list of pharmacological ABCG2 inhibitors — it's not antagonizing the gut-lumen-sink. This is favorable.
+- [Comp-004](./supplement-abcg2-antagonism-computational.md) audits only three named compounds and supplies no evidence about DIM. DIM's intestinal ABCG2 urate direction is therefore unclassified, not favorable by omission.
 
 ### 4.8 Translation assessment
 
@@ -510,7 +510,7 @@ Enclomiphene raises testosterone while preserving gonadotropins and may produce 
 
 **H-AN-05: The TCM urate-endpoint gap.** Search CNKI/WanFang for urate endpoints in cistanche, epimedium, and cordyceps androgen studies; if absent, prospective studies should track urate alongside hormone endpoints.
 
-**H-AN-06: Curcumin's ABCG2 antagonism in supplementing gout patients in vivo.** *Curcumin in vitro is an ABCG2 inhibitor; the in-vivo magnitude at supplement doses with bioavailability-enhanced formulations is unclear.* Cross-references [supplement-abcg2-antagonism-computational.md](./supplement-abcg2-antagonism-computational.md). Falsifiable via direct ABCG2-activity assay in patient stool / serum on/off curcumin supplementation. **Decision-relevant to any ABCG2-dependent gut-lumen-sink track.**
+**H-AN-06: Curcumin's effect on intestinal ABCG2-mediated urate flux.** Karibe 2018 supports an intestinal BCRP interaction in cynomolgus monkeys with sulfasalazine and rosuvastatin (**Animal Model**; PMID 29358184), not urate. Test curcumin in a polarized intestinal model with measured free exposure, barrier and viability controls, ABCG2 attribution, and basolateral-to-apical urate flux. Stool or serum concentration alone cannot report transporter-specific flux. **Decision-relevant to any ABCG2-dependent gut-lumen-sink track.**
 
 **H-AN-07: Transition biomarkers.** Can hs-CRP or IL-1β distinguish an impending mobilization flare during an androgen-related urate transition? Test prospectively with urate and symptom tracking. See [self-experiment-protocol.md](./self-experiment-protocol.md).
 
@@ -528,5 +528,5 @@ Enclomiphene raises testosterone while preserving gonadotropins and may produce 
 - [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) — cordyceps detail; the gout-favorable T-adjuvant claim depends on this.
 - [carnosine.md](./carnosine.md) — URAT1/GLUT9 modulation; mirror-image to androgen-driven URAT1 upregulation.
 - [fructose-connection.md](./fructose-connection.md) — KHK pathway caveat for the dietary-carbohydrate SHBG-management discussion in [androgen-urate-axis.md](./androgen-urate-axis.md).
-- [supplement-abcg2-antagonism-computational.md](./supplement-abcg2-antagonism-computational.md) — the curcumin/quercetin/EGCG counterindication for ABCG2-aligned patients.
+- [supplement-abcg2-antagonism-computational.md](./supplement-abcg2-antagonism-computational.md) — bounded assay-evidence audit for curcumin, quercetin, and EGCG; direct intestinal urate-flux effects remain unresolved.
 - [spm-resolution-pathway.md](./spm-resolution-pathway.md) — omega-3 SPM mechanism for flare prophylaxis layer.

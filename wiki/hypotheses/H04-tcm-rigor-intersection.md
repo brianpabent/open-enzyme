@@ -29,7 +29,7 @@ sources:
   - "Si Miao San / Si Miao Wan family — modern Chinese RCT meta-analyses (ChiCTR registry)"
   - "ChEMBL bioactivity curation as cross-check substrate"
   - "Berberine / resveratrol / EGCG ChEMBL surprise cases (most-potent target ≠ most-cited mechanism)"
-  - "Comp-004 (supplement-abcg2-antagonism-computational.md) demonstrating gut-luminal IC50 occupancy framework on TCM-lineage compounds (curcumin, quercetin, EGCG)"
+  - "Comp-004 (supplement-abcg2-antagonism-computational.md) — nominal gut-concentration/drug-substrate-IC50 occupancy is invalid as an intestinal urate-transport decision metric"
 ---
 
 # H04 — TCM × Modern Rigor Methodology Lens (Stub)
@@ -62,7 +62,7 @@ The full assumption stack will be populated after the Phase 2 lit scans (P2-1 cl
 1. The chokepoint map ([`nlrp3-exploit-map.md`](../nlrp3-exploit-map.md), [`gout-pathophysiology.md`](../gout-pathophysiology.md)) is granular enough to capture TCM compound mechanisms (vs. forcing them into mismatched modern categories)
 2. ChEMBL's curated bioactivity dataset has sufficient coverage of TCM-relevant compounds (many natural products are sparsely curated in ChEMBL relative to medicinal-chemistry-derived compounds — this is documented in `etc/chembl-cross-check.md`)
 3. Modern Chinese clinical trial literature (ChiCTR registry) is sufficient quality to update wiki evidence tiers (Chinese RCTs have heterogeneous quality; this is empirically verifiable)
-4. The "embrace gut-luminal mechanisms" reframe (rule #3) actually predicts therapeutic effect for low-bioavailability TCM compounds (vs. the alternative explanation that they don't work at all). Comp-004's IC50 occupancy framework on curcumin / quercetin / EGCG is a partial validation; broader compound classes need similar treatment.
+4. The "embrace gut-luminal mechanisms" reframe (rule #3) actually predicts therapeutic effect for low-bioavailability TCM compounds rather than merely relocating an exposure assumption. Comp-004 does not validate nominal gut-concentration/IC50 occupancy: local free exposure, stability, assay context, and the mechanism-matched functional endpoint must be measured.
 5. The "designed coverage" interpretation of multi-component formulas (rule #4) is biologically defensible vs. being modern bias projection onto historical practice. Formula decomposition needs to falsify this too.
 6. The methodology can be applied rigorously across enough compounds to surface non-obvious findings rather than merely expanding a catalog
 
@@ -108,7 +108,7 @@ To be populated. Anticipated relevant failure modes from [linter-design.md](../l
 - [tcm-modern-rigor-intersection.md](../tcm-modern-rigor-intersection.md) — the track this hypothesis formalizes
 - [modality-chokepoint-matrix.md](../modality-chokepoint-matrix.md) — the chokepoint framework the lens applies across
 - [chembl-cross-check.md](../etc/chembl-cross-check.md) — the cross-check discipline (rule #2)
-- [supplement-abcg2-antagonism-computational.md](../supplement-abcg2-antagonism-computational.md) (comp-004) — partial validation of the gut-luminal IC50 occupancy framework on TCM-lineage compounds
+- [supplement-abcg2-antagonism-computational.md](../supplement-abcg2-antagonism-computational.md) (comp-004) — evidence that nominal gut-concentration/drug-substrate-IC50 occupancy cannot substitute for context-matched functional testing
 - [engineered-lbp-chassis.md](../engineered-lbp-chassis.md), [sirna-urat1-modality.md](../sirna-urat1-modality.md) — sister peer-track scope pages under chase-every-avenue
 - [linter-design.md](../linter-design.md) — schema for the Falsification Card format
 - [H01](./H01-ward-dual-cassette.md), [H02](./H02-engineered-lbp-thesis.md), [H03](./H03-sirna-urat1-thesis.md) — sibling falsification cards

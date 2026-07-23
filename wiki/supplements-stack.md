@@ -55,7 +55,7 @@ Intestinal ABCG2 is one contributor to luminal urate supply, so its function is 
 |---|---|---|---|
 | Curcumin | Functional BCRP/ABCG2 inhibition in vitro; selective intestinal BCRP inhibition reported in cynomolgus monkeys | **In Vitro + Animal Model**; tested substrates were not urate | Candidate inhibitor control; measure intestinal urate flux directly |
 | Quercetin | Substrate/inhibitor in pharmacology assays; transcriptional upregulation reported after repeated animal exposure | **In Vitro + Animal Model**, context-dependent | Separate acute function from expression and chronicity |
-| EGCG | Functional inhibition in pharmacology assays; favorable transporter-expression phenotype reported in a mouse hyperuricemia model | **In Vitro + Animal Model**, direction differs by assay | Measure free exposure, expression, and urate flux together |
+| EGCG | Reduced mitoxantrone-assayed BCRP activity after exposure in MCF-7Tam cells; Yu's mouse phenotype reports renal Oat1/Oct1 and Urat1/Glut9, not ABCG2 in the primary abstract | **In Vitro + Animal Model**, different systems and endpoints | Measure free parent/metabolites, ABCG2 protein and attribution, and intestinal urate flux together |
 | Genistein / soy isoflavones | BCRP substrate/inhibitor signals | **In Vitro** | Food and concentrated-material exposures require separate controls |
 
 ABCG2 genotype, hormone state, exposure, intestinal segment, and chronicity are experimental strata. They do not identify a personalized combination or timing rule. Candidate inducer arms such as sulforaphane, fermentable-fiber-derived butyrate, and AhR-active indoles also require direct urate-flux testing.

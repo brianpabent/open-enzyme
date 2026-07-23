@@ -308,10 +308,10 @@ This screen evaluates food-derived compounds against gout-relevant NLRP3-pathway
 **Limitations:**
 - Production titers likely 10–50 mg/L (lowest among evaluated polyphenols)
 - Pathway complexity (8–10 heterologous genes + galloylation)
-- No gout-specific evidence
+- No human gout evidence; gout-specific evidence is limited to the mouse and primary-macrophage studies above
 - Bioavailability limited (~20–30%); undergoes extensive gut metabolism
 
-**Current gate:** Direct mouse evidence supports an MSU-relevant signal, but acute ABCG2 inhibition, chronic expression effects, stability, and human-relevant exposure remain unresolved. Test those before selecting a source.
+**Current gate:** Direct mouse evidence supports MSU-relevant inflammatory and hyperuricemia signals. A separate MCF-7Tam study found reduced mitoxantrone-assayed BCRP activity after EGCG exposure without changed BCRP mRNA or protein; it does not establish an acute-versus-chronic switch or intestinal urate direction. Resolve stability, free exposure, ABCG2 attribution, and urate flux before selecting a source.
 
 ---
 
@@ -560,7 +560,7 @@ The two measure different things and should not be cross-compared. Cell-free / m
 | **Lactoferrin** | — (no direct NLRP3 IC50; CP5 downstream) | ~μg/mL range (NLRP3/caspase-1/GSDMD axis) | No direct gout study | GI stability and tissue access | MSU-gout CP5/pyroptosis assay |
 | **Taurine** | — (upstream K⁺ efflux, not direct) | μM–mM range | No direct gout study | Required concentration | MSU assay with K⁺-efflux readout |
 | **Resveratrol** | — (no curated entry) | 0.1–25 μM | No direct gout study | Low bioavailability | Mechanistic comparator only |
-| **EGCG** | — (no curated entry) | 10–50 μM | MSU mouse (Lee 2019) | Stability and ABCG2 direction | Reconcile acute function with chronic expression |
+| **EGCG** | — (no curated entry) | 10–50 μM | MSU mouse (Lee 2019) | Stability and intestinal ABCG2 urate direction | Measure free exposure, ABCG2 attribution, and urate flux |
 | **Curcumin** | **24.2 μM** (human THP-1, ChEMBL v34/v37); DYRK2 IC50 = 2.5 nM (*J Med Chem* 2023) | 10–50 μM | MSU model | Very low bioavailability; intestinal ABCG2 inhibition | Exposure and transporter-interaction gate |
 | **β-Caryophyllene** | — (docking only, no NLRP3 IC50); **CB2 Ki = 150 nM** | μM range | MSU rat | Low oral bioavailability | Human-cell MSU/CB2 dependence assay |
 | **Sulforaphane** | — (no direct; Nrf2 EC50 **580 nM**) | μM range | HUA rat (Wang 2022) | Conversion and tissue exposure | Direct MSU and ABCG2-function assay |

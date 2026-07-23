@@ -58,7 +58,7 @@ status: Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued
 | 3 | Target mapping: ChEMBL `activity.json` per chokepoint UniProt → InChIKey intersection across 24 chokepoint targets, 26,830 unique ChEMBL molecules resolved, 323 (compound × chokepoint) empirical hits | 2026-05-17 | **Complete** for ChEMBL-empirical; SwissTargetPrediction prediction layer NOT RUN (sandbox-blocked, deferred) |
 | 4 (v2) | Re-run chokepoint intersection on the unified compound table (9,778 compounds vs. the LOTUS-only 6,798 from Phase 2b) | 2026-05-17 | Complete |
 | 5 | Multilingual literature deep-dive (CNKI / Wanfang / J-STAGE / KISS with two-model translation cross-check) per Phase 4 chokepoint-hit species | — | Queued |
-| 6 | Per-compound triage (comp-013-style IC50 occupancy + composite scoring) on Phase 4 candidates | — | Queued |
+| 6 | Per-compound evidence triage with target-effect polarity, free-exposure qualification, and context-matched functional gates; no nominal occupancy viability score | — | Queued |
 
 ## Phase 2 unified table — what's in / what's out
 
@@ -83,21 +83,21 @@ The LOTUS-only Phase 2 outputs are not wrong, just incomplete. The unified table
 
 ## Phase 3 — target mapping headline findings
 
-**323 empirical (compound × chokepoint) hits** across 24 chokepoint targets, after toxicity filter. Coverage:
+**323 empirical compound × target bioactivity records** across 24 queried chokepoint targets, after toxicity filter. A record is not automatically favorable: assay context, substrate, and target-effect polarity must be verified before mechanistic interpretation. Coverage:
 
-- Compounds with ≥1 empirical chokepoint hit: **177 of 9,778 (1.81%)**
+- Compounds with ≥1 empirical record at a queried target: **177 of 9,778 (1.81%)**
 - Target-orphan compounds (no ChEMBL activity at any of the 24 chokepoints): **9,601 (98.19%)** — Phase 3 SwissTargetPrediction layer is the load-bearing next step for closing this gap
-- Empty chokepoints (zero ChEMBL fungal-compound hits in this corpus): GLUT9, NLRP3, ASC, C5aR1, Lp-PLA2, KEAP1, OAT4, PINK1, PDI, PDIA3, TXN, TXNIP — twelve of 24 chokepoints have no fungal-source small molecule in ChEMBL with measurable activity at the target
+- Empty target queries (zero ChEMBL fungal-compound records in this corpus): GLUT9, NLRP3, ASC, C5aR1, Lp-PLA2, KEAP1, OAT4, PINK1, PDI, PDIA3, TXN, TXNIP
 
-**Top empirical findings (potency-ranked, toxicity-pass only):**
+**Top empirical records (potency-ranked, toxicity-pass only):**
 
 1. **Ganoderic acid H** / *Ganoderma lucidum* — **TNFα Kd = 2.45 nM** (pChEMBL 8.61, ChEMBL1922178, 2014). The highest-potency single-compound × chokepoint hit in the entire breadth pass. Multiple stereoisomer / numbered-position variants of the same scaffold cluster at this Kd. *Ganoderic acid D* hits TNFα at Kd 8.39 nM (pChEMBL 8.08).
 2. **Berkeleyamides A and D** / *Penicillium* — **CASP1 IC50 = 330 / 610 nM** (pChEMBL 6.48 / 6.21, ChEMBL466565 / CHEMBL466747, 2008). The highest-potency direct caspase-1 fungal natural-product hits — distinct from the inflammasome-priming literature, this is direct effector-caspase inhibition.
 3. **Berkeleyones A / B / C** / *Penicillium* — **IL-1β IC50 = 2.7 / 3.7 / 37.8 μM** (pChEMBL 5.57-4.42, 2011). Modest potency but a direct IL-1β fungal-source hit.
-4. **Quercetin** / *Agaricus* — **ABCG2 EC50 = 30 nM** (pChEMBL 7.52, ChEMBL50, 2018). Plant-origin flavonoid that accumulates in mushroom substrates; the most-potent ABCG2 hit in the corpus.
+4. **Quercetin** / *Agaricus* — the mapped ChEMBL record reports **ABCG2 EC50 = 30 nM** (pChEMBL 7.52, ChEMBL50, 2018). Its assay direction, substrate, and relevance to urate are unresolved here; it is not an ABCG2 benefit or inhibition verdict.
 5. **Ellagic acid** / *Penicillium* / *Phellinus* — **OAT1 IC50 = 270 nM** (pChEMBL 6.57, 2005). Fungal-source organic anion transporter modulator.
 
-**Multi-chokepoint compounds** (≥2 chokepoints hit, suggesting platform-level rather than single-target mechanism):
+**Multi-target records** (activity recorded at ≥2 queried targets; favorable polarity and functional relevance are not implied):
 
 - **bois d'arc / morin** (ChEMBL28626, *Ganoderma*): 4 chokepoints — ABCG2, CASP1, URAT1, XO
 - **genistein** (ChEMBL44, *Cordyceps sinensis*, *Ophiocordyceps*): 4 chokepoints — ABCG2, CASP1, PPARG, XO

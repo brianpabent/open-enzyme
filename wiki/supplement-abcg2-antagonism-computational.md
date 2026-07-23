@@ -1,5 +1,5 @@
 ---
-title: "Supplement ABCG2 Antagonism — Computational Analysis (comp-004)"
+title: "Supplement–ABCG2 Assay-Evidence Audit (comp-004)"
 date: 2026-05-05
 tags: [abcg2, supplement, quercetin, curcumin, egcg, polyphenol, urate, gout, computational, pharmacology]
 related:
@@ -7,20 +7,21 @@ related:
   - validation-experiments.md
   - abcg2-gut-urate-secretion.md
   - nlrp3-inflammasome.md
-status: archived-to-experiments
+status: quantitative-verdict-invalid
 ---
 
-# Supplement ABCG2 Antagonism — Computational Analysis (comp-004)
+# Supplement–ABCG2 Assay-Evidence Audit (comp-004)
 
-> **⚠️ Verdict caveated (comp-review 2026-07-14).** This supports a **nominal gut-lumen IC50-occupancy HAZARD screen** for quercetin/curcumin only — it does NOT resolve the net in-vivo ABCG2 effect (Yu 2024 shows EGCG net-favorable in vivo despite in-vitro inhibition). Treat as a hazard prior, not an efficacy/safety conclusion.
+**Question:** Do three cited ABCG2/BCRP interaction records—one each for quercetin, curcumin, and EGCG—support a quantitative prediction of intestinal urate-transport inhibition?
 
-> This wiki stub remains so cross-references resolve and the page stays discoverable.
-> Computational analyses are write-once artifacts; the daemon does not need to re-read
-> them on every sweep, so the long content lives next to the experiment that produced it
-> at `etc/experiments/comp-004-supplement-abcg2-antagonism/`.
+**Result:** No. The calculation that divided nominal bulk gut concentration by IC50 values from drug-substrate assays cannot estimate intestinal urate transport. Its ratios, predicted inhibition percentages, and clinical-risk labels are invalid.
 
-**Question:** Do common dietary polyphenol supplements (quercetin, EGCG, curcumin) reach gut-lumen concentrations sufficient to inhibit ABCG2-mediated urate efflux from blood into the gut?
+The cited records still carry useful, narrower evidence:
 
-**Where the analysis lives:**
-- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-004-supplement-abcg2-antagonism/`](./etc/experiments/comp-004-supplement-abcg2-antagonism/)
-- Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)
+- **Quercetin — In Vitro:** Cooray et al. used mitoxantrone and BODIPY-FL-prazosin in non-intestinal BCRP systems (PMID 15047179).
+- **Curcumin — Animal Model:** Karibe et al. found an intestinal BCRP interaction in cynomolgus monkeys using sulfasalazine and rosuvastatin, not urate (PMID 29358184).
+- **EGCG — In Vitro:** Farabegoli et al. found reduced mitoxantrone-assayed BCRP activity after EGCG exposure in MCF-7Tam cells without changed BCRP mRNA or protein (PMID 20149610).
+
+These records route the compounds to a direct intestinal assay; they do not rank hazard or predict clinical direction. The discriminating experiment measures free parent compound and metabolites, total and surface ABCG2, ABCG2 attribution, barrier integrity, viability, and basolateral-to-apical urate flux across prespecified exposure times. See [validation §1.14](./validation-experiments.md#114-abcg2-response-to-dht-and-tnf-with-butyrate-and-lactoferrin-rescue).
+
+The bounded machine-readable audit, inputs, provenance, and deterministic summary are in [`etc/experiments/comp-004-supplement-abcg2-antagonism/`](./etc/experiments/comp-004-supplement-abcg2-antagonism/).

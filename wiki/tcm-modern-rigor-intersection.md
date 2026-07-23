@@ -73,18 +73,19 @@ Each cross-check tightens the mechanism story and surfaces non-obvious off-targe
 
 ### 3. Bioavailability honesty — embrace gut-luminal mechanisms
 
-TCM compounds frequently have terrible oral systemic bioavailability. Curcumin <1%, resveratrol heavily first-pass-metabolized, baicalein gut-conjugated, oridonin moderate but variable. Classical Western pharmacology dismissed this as "the compounds don't work systemically." That framing is wrong for at least some TCM compounds.
+Poor systemic bioavailability can motivate a local gut hypothesis, but it does not establish high free exposure at the relevant intestinal surface. Dissolution, chemical stability, metabolism, binding, gut segment, residence time, and formulation determine whether parent compound or metabolites reach a local target.
 
-**Most orally-administered TCM compounds achieve high gut-lumen concentrations precisely because they don't get absorbed.** This fits Open Enzyme's gut-lumen sink thesis ([`gut-lumen-sink.md`](./gut-lumen-sink.md)) perfectly. A TCM compound that:
+A gut-luminal mechanism is credible when it specifies and tests:
 
-- Reaches the colon at high concentration (because systemic absorption is poor),
-- Modulates ABCG2 expression locally (e.g., curcumin per [`abcg2-modulators.md`](./abcg2-modulators.md) §"The supplements-stack contradiction"),
-- Or modulates the gut microbiome (berberine's documented Bacteroidetes / Firmicutes shift),
-- Or interacts with gut-resident immune cells (sulforaphane, EGCG locally)
+- free parent compound and relevant metabolites in the proposed compartment;
+- chemical and microbial stability over the exposure window;
+- the correct intestinal cell or microbial context;
+- target engagement and a mechanism-matched functional endpoint;
+- a result that cannot be explained by barrier injury or nonspecific toxicity.
 
-— is acting via mechanisms that classical bioavailability metrics miss. **The bar:** bioavailability is reported honestly (with the gut-vs-systemic split named) and the gut-luminal mechanism is treated as legitimate, not as a fallback explanation.
+This keeps local mechanisms fully available to the portfolio without laundering poor absorption into presumed target engagement. **The bar:** name the gut-versus-systemic hypothesis, measure the relevant exposure, and test function directly.
 
-This is the same discipline as comp-004 ([supplement-abcg2-antagonism-computational.md](./supplement-abcg2-antagonism-computational.md)) which explicitly modeled curcumin's gut-luminal concentration via the dose-bioavailability paradox.
+[Comp-004](./supplement-abcg2-antagonism-computational.md) demonstrates the failure mode: nominal bulk gut concentration divided by a drug-substrate IC50 did not support a quantitative intestinal urate-transport conclusion.
 
 ### 4. Formula decomposition (designed coverage vs. redundancy)
 
@@ -232,7 +233,7 @@ The four tracks together represent the chase-every-avenue framing: koji for the 
 - What are the oral bioavailability, gut-versus-systemic distribution, first-pass metabolism, and microbiome transformations of the leading compounds?
 - Does the methodology produce actionable candidates more reliably than compound cataloguing alone? See [H04](./hypotheses/H04-tcm-rigor-intersection.md).
 
-The completed [comp-013 triage](./tcm-gout-compound-triage-computational.md) classified luteolin, astilbin, emodin, and berberine as gut-luminal viable; rhein as moderate with a dose caveat; and aucubin, cylindrin, chlorogenic acid, and atractylenolide I as mechanism-unclear. Sparse ChEMBL coverage means in-vivo dose-response evidence must be evaluated directly rather than treating database absence as negative evidence.
+[Comp-013](./tcm-gout-compound-triage-computational.md) provides a source/compound/target lead inventory, but its viability ranking is invalid because the score did not preserve target-effect polarity and inherited nominal gut-concentration/IC50 occupancy. The listed compounds remain leads for source verification, measured free exposure, and context-matched functional testing. Sparse ChEMBL coverage is a search gap, not negative biological evidence.
 
 ## Limitations
 

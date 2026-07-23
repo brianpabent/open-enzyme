@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/README.md",
+      "kind": "design",
+      "bytes": 7135,
+      "sha256": "1b406c1f70578dd1f77abcf457348612b537714da9718d4c3d00beb6db61e199"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/analyze.py",
+      "kind": "design",
+      "bytes": 9120,
+      "sha256": "ba68ba6b20c3b99d7d8a07e6896242e61328e29f916778d14e8de714c2ab7d33"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/inputs/assay_evidence.json",
+      "kind": "design",
+      "bytes": 2182,
+      "sha256": "727203db454d6cf66fc045f8013024b82f922b155d13e564966a3ae8286b610f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 3008,
+      "sha256": "fdae845824b6706269b225c6ce483297404d3439cc8efabf1ff1019e836c0911"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/assay_evidence_audit.json",
+      "kind": "generated_output",
+      "bytes": 4160,
+      "sha256": "dde77c1989a4ca29f7e92b1b7f2a859deff7168e52461a3f3b3d085d01fc211d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 2135,
+      "sha256": "0b6e99fa1e51ca1e806c177fcd13b2c7a2ec9a0f9124ebaaf8a50d20a192bc53"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 33683,
+      "sha256": "561f2eb81cfd342eafda87bac34c53bcad6cb5db9cbcbbe4b7cafa3729762f35"
+    },
+    {
+      "path": "wiki/abcg2-modulators.md",
+      "kind": "proposed_update",
+      "bytes": 36184,
+      "sha256": "a79ade314df0d61d2836a5d436f0e6eee66371f3bd858c1f7d79a096b8016ea6"
+    },
+    {
+      "path": "wiki/androgen-natural-modulation.md",
+      "kind": "proposed_update",
+      "bytes": 52252,
+      "sha256": "1df0171422120946069a8d8670bcf8429be22a3bfbc348aa27f02029aaf92997"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 84129,
+      "sha256": "26085a0dfbe3346cdc616754b9f05a0d19010b938619b8a20f3608c60f7160f1"
+    },
+    {
+      "path": "wiki/egcg.md",
+      "kind": "proposed_update",
+      "bytes": 16122,
+      "sha256": "8a6767dae25e0649edebbbe1fd4d71f5b5961872ff237085569d20670b3dcbf1"
+    },
+    {
+      "path": "wiki/hypotheses/H04-tcm-rigor-intersection.md",
+      "kind": "proposed_update",
+      "bytes": 9449,
+      "sha256": "530d826e8c79909effb0ff3b8fe0cc041d616f0729f8ad80d35dd971872148c1"
+    },
+    {
+      "path": "wiki/medicinal-mushroom-compound-mapping-computational.md",
+      "kind": "proposed_update",
+      "bytes": 17356,
+      "sha256": "79790143b2b755c57175c2d9fc881c856e40f24c8c73559feaa61ecf6a87f02f"
+    },
+    {
+      "path": "wiki/nlrp3-inhibitor-screen.md",
+      "kind": "proposed_update",
+      "bytes": 54740,
+      "sha256": "f1ecd0830bf5cde766928e0741064954505daa53405a169f38c9ca4dc8f54d67"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 75706,
+      "sha256": "14a2f3838418a3a2baeaf8ce3bfd692d59ecd3e1c2dc49b30366c7d2667a9be1"
+    },
+    {
+      "path": "wiki/supplement-abcg2-antagonism-computational.md",
+      "kind": "proposed_update",
+      "bytes": 2067,
+      "sha256": "0f11d31223536f0c9bc61983a42cc46edcc76351ee1ce068b44f323c0b159be5"
+    },
+    {
+      "path": "wiki/supplements-stack.md",
+      "kind": "proposed_update",
+      "bytes": 12355,
+      "sha256": "52b547b0b384b5aface81dda733c85308b2ca97c1fc6680b6f9edef720f02317"
+    },
+    {
+      "path": "wiki/tcm-gout-compound-triage-computational.md",
+      "kind": "proposed_update",
+      "bytes": 10594,
+      "sha256": "a488e47c57af2f178b6801d6e46461e4b14ffcfc948c11acd01164683de9e537"
+    },
+    {
+      "path": "wiki/tcm-modern-rigor-intersection.md",
+      "kind": "proposed_update",
+      "bytes": 29810,
+      "sha256": "611c3617c979de53ebf48091f871bbeeff7d2e045350d7623feb93dbc7c84992"
+    },
+    {
+      "path": "wiki/theaflavins.md",
+      "kind": "proposed_update",
+      "bytes": 11202,
+      "sha256": "31fe47434694db490c717717dcee0557769c6d8dfa3dc7081c1434ede39b781d"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 239907,
+      "sha256": "407314e913d07386b52d01f665c06a26d94c27cde7fbecd538f072b4f732f895"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "a24a4d1dbf46d008a899b1c69933c0b311000d244326466c364436439026dedd"
+}

@@ -50,14 +50,9 @@ status: complete
 
 # TCM Gout Compound Triage — Computational Analysis (comp-013)
 
-> **⚠️ Quantitative verdict downgraded (comp-review 2026-07-14).** The "4 GUT-LUMINAL VIABLE + 1 MODERATE" triage is **invalidated by `assign_verdict` logic errors** — off-target ABCG2-inhibition occupancy was counted toward viability, and target-effect polarity (inhibition vs down-regulation vs off-target) was not distinguished. Treat this page as a **curated lead inventory / hypothesis list**, not a validated viability ranking. A logic-corrected, polarity-aware, gout-relevant-target-only recompute is the proper follow-up before any "viable" claim.
+> **Result boundary.** Treat this as a curated lead inventory, not a validated viability ranking. The score counted off-target ABCG2 occupancy toward viability, did not preserve target-effect polarity, and inherited comp-004's invalid nominal gut-concentration/IC50 shortcut. A renewed triage must use polarity-aware evidence plus measured or justified free exposure and context-matched function before any “viable” claim.
 
-> This wiki stub remains so cross-references resolve and the page stays discoverable.
-> Computational analyses are write-once artifacts; the daemon does not need to re-read
-> them on every sweep, so the long content lives next to the experiment that produced it
-> at `etc/experiments/comp-013-tcm-gout-compound-triage/`.
-
-**Question:** Which Traditional Chinese Medicine (TCM) compounds with documented gout indication are mechanistically viable when triaged via the comp-004 IC50 occupancy + comp-007 composite scoring frameworks?
+**Question:** Which Traditional Chinese Medicine compounds with documented gout indications have source-backed target evidence worth advancing to context-matched exposure and functional testing?
 
 **Where the analysis lives:**
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-013-tcm-gout-compound-triage/`](./etc/experiments/comp-013-tcm-gout-compound-triage/)

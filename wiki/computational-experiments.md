@@ -525,32 +525,32 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Question:** Across all known characterized fungal natural products (globally, not Western pharma only), which compounds map onto OE chokepoints, and which fungal species are highest-leverage producers?
 
-**Verdict:** **PHASE 3 COMPLETE.** 9,778 unified fungal compounds (LOTUS 6,798 + NPAtlas 4,535 + KNApSAcK 20 InChIKey-resolved; NPASS / TCMSP / HIT unreachable from sandbox — documented gap). 24 chokepoint targets queried via ChEMBL; **323 (compound × chokepoint) empirical hits across 12 chokepoints**; 177 / 9,778 compounds (1.81%) have ≥1 hit. Highest-potency: **Ganoderic acid H × TNFα Kd = 2.45 nM** (pChEMBL 8.61, CHEMBL1922178, *Ganoderma lucidum*); **Berkeleyamides A/D × CASP1 IC50 = 330 / 610 nM** (*Penicillium*); **Quercetin × ABCG2 EC50 = 30 nM** (*Agaricus*); **Ellagic acid × OAT1 IC50 = 270 nM** (*Penicillium* / *Phellinus*).
+**Verdict:** **PHASE 3 COMPLETE as a bioactivity map.** 9,778 unified fungal compounds (LOTUS 6,798 + NPAtlas 4,535 + KNApSAcK 20 InChIKey-resolved; NPASS / TCMSP / HIT unreachable from sandbox — documented gap). ChEMBL returned **323 compound × target records across 12 of 24 queried chokepoints**; 177 / 9,778 compounds (1.81%) have at least one record. These are not uniformly favorable hits: assay context, substrate, and target-effect polarity must be verified before mechanistic interpretation. The mapped quercetin × ABCG2 EC50 = 30 nM record is polarity- and urate-context-unresolved.
 
 **Key findings:**
 - *Ganoderma* triterpenoid scaffold (ganoderic acids H/D and stereoisomers) emerges as highest-potency direct-binding hit at TNFα, **on top of** the Phase 2 *G. applanatum* 2,4-DAE urate-axis finding — two distinct chokepoint axes, both worth pursuing. *Ganoderma* spp. earn closer look.
 - **Berkeleyamides / Berkeleyones** (Penicillium): first fungal natural products with direct sub-µM CASP1 and low-µM IL-1β hits — opens an inflammasome-effector-axis fungal candidate beyond the polysaccharide-priming literature comp-014 Phase 1 + Phase 2 emphasized.
 - **Target-orphan rate 98.19%** — SwissTargetPrediction predicted-target layer is the next load-bearing step; sandbox-blocked here, deferred to re-run. 9,601 compounds with zero empirical chokepoint hits.
 - **12 of 24 chokepoints have ZERO fungal-source ChEMBL hits**: NLRP3, ASC, GLUT9, C5aR1, Lp-PLA2, KEAP1, OAT4, PINK1, PDI, PDIA3, TXN, TXNIP. Confirms the comp-013 / comp-020 ChEMBL-Western-pharma-bias finding empirically for fungal-source NPs.
-- Multi-chokepoint compounds identified: morin (4 chokepoints: ABCG2, CASP1, URAT1, XO); genistein (4: ABCG2, CASP1, PPARG, XO). Both plant-origin flavonoids in mushroom substrate — not biosynthesis attribution.
+- Multi-target records identified: morin (ABCG2, CASP1, URAT1, XO) and genistein (ABCG2, CASP1, PPARG, XO). These are mapping leads, not favorable multi-target mechanisms; both are plant-origin flavonoids found in mushroom substrate, not fungal-biosynthesis attributions.
 - Phase 2 partial: 3 of 6 planned compound DBs reachable (LOTUS, NPAtlas, KNApSAcK partial); NPASS / TCMSP / HIT all sandbox-blocked. ChEMBL primary-source pre-commit grep-verify gate applied on top-2 load-bearing potency claims.
 
-**Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) · [complement-c5a-gout](./complement-c5a-gout.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [etc/open-source-platform](./etc/open-source-platform.md) · [nlrp3-exploit-map](./nlrp3-exploit-map.md) (Berkeleyamides → CASP1 effector axis) · [abcg2-modulators](./abcg2-modulators.md) (Quercetin × ABCG2 30 nM)
+**Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) · [complement-c5a-gout](./complement-c5a-gout.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [etc/open-source-platform](./etc/open-source-platform.md) · [nlrp3-exploit-map](./nlrp3-exploit-map.md) (Berkeleyamides → CASP1 effector axis) · [abcg2-modulators](./abcg2-modulators.md) (quercetin record requires polarity, substrate, and urate-context verification)
 
 **Detail:** [interpretive](./medicinal-mushroom-compound-mapping-computational.md) · [Phase 3 target-mapping summary](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-target-mapping-summary.md) · [Phase 2 findings](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS.md) · [experiments/](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/) · Phase 3 complete; Phase 2 partial (3 of 6 DBs); Phase 5 multilingual deep-dive + Phase 6 triage queued (SwissTargetPrediction layer is the load-bearing next step)
 
 ---
 
-### comp-013 — TCM Gout Compound Triage — 4 viable + 1 caveat (2026-05-06)
+### comp-013 — TCM Gout Compound Triage — evidence inventory; viability ranking invalid
 
-**Question:** Which TCM compounds with documented gout indication are mechanistically viable when triaged via comp-004 IC50 occupancy + comp-007 composite scoring?
+**Question:** Which TCM compounds with documented gout indications have source-backed target evidence worth advancing to context-matched exposure and functional testing?
 
-**Verdict:** **4 GUT-LUMINAL VIABLE** (luteolin rank 1, astilbin, emodin, berberine) **+ 1 MODERATE / VIABLE-WITH-DOSE-CAVEAT** (rhein) **+ 4 MECHANISM UNCLEAR** (aucubin, cylindrin, chlorogenic acid, atractylenolide I). Si Miao San formula has strongest clinical evidence (24-RCT meta SUA −90.62 µmol/L, p<0.00001) but multi-component.
+**Verdict:** The curated lead inventory survives, but the biological viability ranking does not. Its `assign_verdict` logic counted off-target ABCG2 occupancy toward viability and did not preserve target-effect polarity. The inherited comp-004 nominal gut-concentration/IC50 component is also invalid as a direct biological decision metric.
 
 **Key findings:**
-- ChEMBL coverage gap is load-bearing for TCM: 5 of 9 candidates have NO ChEMBL data. Workaround: admit animal-model in vivo dose-response.
-- Most-represented mechanism: URAT1 expression downregulation in murine PO hyperuricemia (astilbin, luteolin, berberine all 5–25 mg/kg).
-- Berberine ChEMBL cross-check: most-potent target is TDO 30 nM, NOT NLRP3.
+- Compound/source/target records remain leads that can be re-read independently of the invalid score.
+- Any renewed triage must preserve target-effect polarity, distinguish direct from off-target assays, and measure or justify free exposure in the relevant compartment.
+- “Viable” and “non-viable” require context-matched functional evidence; nominal bulk concentration divided by an assay IC50 is insufficient.
 
 **Informs:** [tcm-modern-rigor-intersection](./tcm-modern-rigor-intersection.md) — closes P2-2
 
@@ -641,17 +641,18 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-004 — Supplement ABCG2 Antagonism — VERY HIGH risk (provisional) (2026-05-05)
+### comp-004 — Supplement–ABCG2 assay-evidence audit — quantitative verdict invalid
 
-**Question:** Do quercetin, EGCG, and curcumin reach gut-lumen concentrations sufficient to inhibit ABCG2-mediated urate efflux at standard supplement doses?
+**Question:** Do three cited ABCG2/BCRP interaction records—one each for quercetin, curcumin, and EGCG—support a quantitative prediction of intestinal urate-transport inhibition?
 
-**Verdict:** **VERY HIGH risk (provisional)** for quercetin and curcumin; 6.8× and 8.3× IC50, predicting 87–89% ABCG2 inhibition. EGCG acts via expression downregulation, not scored by this framework.
+**Verdict:** No. The nominal bulk-concentration/drug-substrate-IC50 ratios, predicted inhibition percentages, and clinical-risk labels are invalid. The three records support ABCG2/BCRP interaction signals in different systems; they do not quantify intestinal urate transport.
 
 **Key findings:**
-- **Curcumin paradox:** <1% bioavailability concentrates >99% of oral dose in gut lumen, reaching 8.3× IC50 (1,630 nM) despite lower gut concentration than quercetin.
-- Supplement-induced ABCG2 inhibition may reduce gut urate excretion, paradoxically worsening hyperuricemia.
+- Karibe supplies intestinal BCRP interaction evidence for curcumin with drug probes, not urate.
+- Cooray and Farabegoli supply non-intestinal drug-substrate signals for quercetin and EGCG.
+- The next gate is measured free parent/metabolites, ABCG2 protein and attribution, barrier integrity and viability, and basolateral-to-apical urate flux in an intestinal epithelial model.
 
-**Informs:** [validation-experiments §1.14](./validation-experiments.md) — shifts supplement arms from screening to quantification
+**Informs:** [validation-experiments §1.14](./validation-experiments.md) — direct context-matched urate-flux assay
 
 **Detail:** [interpretive](./supplement-abcg2-antagonism-computational.md) · [experiments/](./etc/experiments/comp-004-supplement-abcg2-antagonism/) · Complete
 
