@@ -6,56 +6,38 @@
     {
       "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
       "kind": "design",
-      "bytes": 1993,
-      "sha256": "3e1bdaeeb736f9a37b79d923a87ce31609b347b6976b9c4e8cb2ad5246e6a194"
+      "bytes": 2111,
+      "sha256": "4d7ed2ac4904028673f621c6517d12c49c99537637bf96b21d9bcaa0bc12233c"
     },
     {
       "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/invalidation.json",
       "kind": "design",
-      "bytes": 2683,
-      "sha256": "960349dc7fd514bd94230a2d66d2868a7c7e533f7c58424b4cd1220e84ec5412"
-    },
-    {
-      "path": ".githooks/pre-push",
-      "kind": "proposed_update",
-      "bytes": 4618,
-      "sha256": "649cd2db009030e537cc616071a41a99d731552b341330df85b676d83aeab570"
-    },
-    {
-      "path": ".github/workflows/corpus-integrity.yml",
-      "kind": "proposed_update",
-      "bytes": 2107,
-      "sha256": "5252adaf010fa98b4064c01835f43a7be2f34cd0a895d705eef794e9eb7ad12d"
-    },
-    {
-      "path": ".github/workflows/wiki-propagate.yml",
-      "kind": "proposed_update",
-      "bytes": 5306,
-      "sha256": "a003617fc129428d602097ba2c18ec384d2f1911a902c251f1bb00c238b269ff"
-    },
-    {
-      "path": "papers/cross-vendor-heterogeneity-guard/draft.md",
-      "kind": "proposed_update",
-      "bytes": 175049,
-      "sha256": "5a5f03679d9e7cb3bc7e49c876d3179696e72627446c3825d24d2201df9b1912"
-    },
-    {
-      "path": "scripts/check-validation-dashboard.py",
-      "kind": "proposed_update",
-      "bytes": 6058,
-      "sha256": "c4cc57349e37dba4a634e5d3803a693f8db8e275a955493842e0efd771423597"
+      "bytes": 2699,
+      "sha256": "1ed9f17bddeb00e1a3d62a69fa3fdd87f492c02b47e5980517ab40d3faa3ad58"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 83840,
-      "sha256": "1a11012c082d9c0ecdb14bef1aca8fed5d25ca402741acd51bb4416eb5cbc2ba"
+      "bytes": 83896,
+      "sha256": "bf1ded3000a9686d835b4611acb60e8a8895f6b46963586c3dccabd7fd894334"
     },
     {
-      "path": "wiki/uricase-abcg2-genotype-stratification-computational.md",
+      "path": "wiki/etc/GRAPH.md",
       "kind": "proposed_update",
-      "bytes": 4154,
-      "sha256": "3d6ab8a42eda2e643ae52e72efa9185a21028d3d105195ec702f49beec3172e4"
+      "bytes": 4578,
+      "sha256": "e42f494ce8e76faf1a85ae017ee0a67301b6609312a651feea95bee70be4b7d0"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 75881,
+      "sha256": "2f1a3bc2354d3fed6a510435dcbfbda1f264fd1741eeb2d9d87bc3ff8bf8792f"
+    },
+    {
+      "path": "wiki/uricase-topology-oxygen-peroxide-design-computational.md",
+      "kind": "proposed_update",
+      "bytes": 5173,
+      "sha256": "5f37cc66d5fcb1a07d7a1d6524da2ee12434536177d31f58b615b9c15fd2d4db"
     },
     {
       "path": "wiki/validation-experiments.md",
@@ -65,5 +47,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "643ad2cf43268ba93a34c7b884a73ef43e1dc7249c7709d5c702c4af6627cd9a"
+  "manifest_sha256": "e94a028963cd9fce98fbe066e6cae26bad7501530ecc9582d34de89f86b11fdc"
 }

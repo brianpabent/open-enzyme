@@ -18,8 +18,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 83840,
-      "sha256": "1a11012c082d9c0ecdb14bef1aca8fed5d25ca402741acd51bb4416eb5cbc2ba"
+      "bytes": 83896,
+      "sha256": "bf1ded3000a9686d835b4611acb60e8a8895f6b46963586c3dccabd7fd894334"
     },
     {
       "path": "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
@@ -30,14 +30,8 @@
     {
       "path": "wiki/etc/autonomous-screening-methodology.md",
       "kind": "proposed_update",
-      "bytes": 24727,
-      "sha256": "75a20d4159a690cfd199245297487b73971422323b3cf59f118bafb5cd54c3e7"
-    },
-    {
-      "path": "wiki/etc/bio-ai-tools.md",
-      "kind": "proposed_update",
-      "bytes": 64492,
-      "sha256": "6db7910558c7b3aee79e9f0d2396e7c20b261792571d4b5a2f9c4604d1b6d93e"
+      "bytes": 24749,
+      "sha256": "8deb2e526a0fa1792eb970602c436c00c3cf3daccb39f06b930a6c1c9c774ca9"
     },
     {
       "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
@@ -114,8 +108,8 @@
     {
       "path": "wiki/uricase-abcg2-genotype-stratification-computational.md",
       "kind": "proposed_update",
-      "bytes": 4154,
-      "sha256": "3d6ab8a42eda2e643ae52e72efa9185a21028d3d105195ec702f49beec3172e4"
+      "bytes": 4139,
+      "sha256": "30bbe58ac1473a4ac28aa90faf0f4aeaf4703bc74e1c84708f1502f0691dbd98"
     },
     {
       "path": "wiki/validation-experiments.md",
@@ -125,5 +119,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "72e91804f22b65993e0d92b09abcae042ff98afb360a3d6ff51bee1c00b32ec3"
+  "manifest_sha256": "1ec63b843755383c76e32ab847f05145a2255ab88b8978e8ff7959aa5e38b34a"
 }

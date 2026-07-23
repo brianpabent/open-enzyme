@@ -72,6 +72,7 @@
   },
   "superseded_by": [
     "comp-044",
+    "comp-045",
     "validation-1.33",
     "validation-1.36"
   ],

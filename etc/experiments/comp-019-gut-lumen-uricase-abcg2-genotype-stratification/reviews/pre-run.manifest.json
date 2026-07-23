@@ -6,16 +6,16 @@
     {
       "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
       "kind": "design",
-      "bytes": 1993,
-      "sha256": "3e1bdaeeb736f9a37b79d923a87ce31609b347b6976b9c4e8cb2ad5246e6a194"
+      "bytes": 2111,
+      "sha256": "4d7ed2ac4904028673f621c6517d12c49c99537637bf96b21d9bcaa0bc12233c"
     },
     {
       "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/invalidation.json",
       "kind": "design",
-      "bytes": 2683,
-      "sha256": "960349dc7fd514bd94230a2d66d2868a7c7e533f7c58424b4cd1220e84ec5412"
+      "bytes": 2699,
+      "sha256": "1ed9f17bddeb00e1a3d62a69fa3fdd87f492c02b47e5980517ab40d3faa3ad58"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "a3616383b205ace269f069dfadd8ff381b4a1d782400dfb13e69570db5eb5ce7"
+  "manifest_sha256": "3d1537a92521803fb861cc6efa245decda1a7d2b2bd4846b4f1eeb0aa7280bc3"
 }
