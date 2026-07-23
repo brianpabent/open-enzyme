@@ -697,10 +697,10 @@
     },
     "comp-019": {
       "comp_dir": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification",
-      "artifact_manifest_sha256": "1ec63b843755383c76e32ab847f05145a2255ab88b8978e8ff7959aa5e38b34a",
-      "source_commit": "6efddd88c579c3827c6fe4a8664e342da976df7c",
+      "artifact_manifest_sha256": "f8053438bfe6a4a7c707a233fb0e28c83e9f6210a51078e80f96b0ff1cf5e29e",
+      "source_commit": "170861c416cb0bf78f533d7844b040ac6f183dac",
       "review_receipt": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/reviews/push-review.md",
-      "comp_verdict": "action_required",
+      "comp_verdict": "clean_with_limitations",
       "propagation_eligibility": "eligible_with_warning",
       "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
@@ -722,8 +722,8 @@
         "wiki/uricase-abcg2-genotype-stratification-computational.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-23T13:41:49Z",
-      "cost_usd": 1.345262
+      "timestamp": "2026-07-23T14:07:34Z",
+      "cost_usd": 1.145497
     },
     "comp-020": {
       "comp_dir": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun",
