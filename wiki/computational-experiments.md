@@ -486,11 +486,11 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-019 — Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model — SUPERSEDED (2026-07-13)
+### comp-019 — Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model — INVALIDATED TOMBSTONE
 
 **Question:** Can the gut-lumen uricase sink produce meaningful SUA reduction in non-Q141K males, or does it rely on Q141K-positive disease-state vulnerability?
 
-**Current verdict:** **SUPERSEDED for decision use.** Phase A found no Q141K-stratified uricase clinical outcome in the sources searched for comp-019 as of 2026-05-08; this is not a universal absence claim. COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. COMP-044 supplies no replacement ΔSUA, dose, genotype order, physiological regime, efficacy model, topology/chassis selection, production-sufficiency target, or safety conclusion.
+**Current verdict:** **INVALIDATED TOMBSTONE — non-runnable and not eligible for quantitative decision use.** Phase A found no Q141K-stratified uricase clinical outcome in the sources searched for comp-019 as of 2026-05-08; this is not a universal absence claim. COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. COMP-044 supplies no replacement ΔSUA, dose, genotype order, physiological regime, efficacy model, topology/chassis selection, production-sufficiency target, or safety conclusion.
 
 **Key findings:**
 - No Q141K-stratified uricase clinical outcome was identified in the comp-019 searched corpus as of 2026-05-08.
@@ -499,7 +499,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Replacement:** [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) · [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md) · [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial)
 
-**Detail:** [superseded interpretation](./uricase-abcg2-genotype-stratification-computational.md) · [hash-bound tombstone](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/)
+**Detail:** [historical interpretation](./uricase-abcg2-genotype-stratification-computational.md) · [hash-bound tombstone](./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/)
 
 ---
 

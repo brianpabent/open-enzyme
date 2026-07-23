@@ -48,7 +48,7 @@ sources:
   - "Allena Pharmaceuticals EULAR POS1157 (2022) ALLN-346 Phase 2a Study 201"
   - "Protalix BioTherapeutics (2024) PRX-115 Phase 1 ACR Convergence late-breaking poster"
   - "Nguyen KP et al. (2025) Clin Rheumatol 44(10):4275-4281, PMID 40858881, doi:10.1007/s10067-025-07656-w"
-status: historical-model-not-decision-usable
+status: invalidated_tombstone
 ---
 
 # Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model (comp-019)
