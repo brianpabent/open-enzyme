@@ -1173,8 +1173,8 @@
     },
     "comp-044": {
       "comp_dir": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime",
-      "artifact_manifest_sha256": "df65073c0b1065ba8553cddb0b3fabe99925d5ffb8f0b2ec23cc0fdbb756c181",
-      "source_commit": "2f2b3b73e8a77f78f75ece3bce11f9a95b7555b5",
+      "artifact_manifest_sha256": "95076ab1c4e287024aa1e178f463a025d55131c99f2d07dfd0a28239ffc0e3da",
+      "source_commit": "8c8be0642f5839afc2925b361c8746d2eaa252b6",
       "review_receipt": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/reviews/push-review.md",
       "comp_verdict": "clean_with_limitations",
       "propagation_eligibility": "eligible_with_warning",
@@ -1195,8 +1195,8 @@
         "wiki/open-questions.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-23T14:17:20Z",
-      "cost_usd": 1.015296
+      "timestamp": "2026-07-23T14:27:50Z",
+      "cost_usd": 0.921772
     },
     "comp-045": {
       "comp_dir": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design",
