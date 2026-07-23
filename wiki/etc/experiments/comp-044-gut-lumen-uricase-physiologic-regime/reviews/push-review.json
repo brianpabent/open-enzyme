@@ -2,11 +2,11 @@
   "schema_version": 1,
   "comp": "comp-044",
   "comp_dir": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime",
-  "source_commit": "50ecf5a9d8c3fcffbd0b2114e9fafd79ca907807",
-  "artifact_manifest_sha256": "5dede85c414fee37043b8486faab8ff3bd1ed6bff1843ccc38d93c85694b7a7e",
+  "source_commit": "3ede1f4d7cc0d4978138b0b5e0a7cea487c0a075",
+  "artifact_manifest_sha256": "5a9cc8f6f6a4145dae6906f32dc59cdac95b44c9906c5918ad9abd1001276b88",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-23T12:40:29Z",
-  "comp_verdict": "clean_with_limitations",
+  "timestamp": "2026-07-23T13:46:44Z",
+  "comp_verdict": "action_required",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
   "action_required": true,
@@ -20,7 +20,7 @@
   "coverage": [
     {
       "shard_id": "shard-001",
-      "coverage_sha256": "704fb7a81f5ff6f55e8b41a65b032f4ade32a91553f8ee073d2f4a20d4c8d056",
+      "coverage_sha256": "17d06fed7741cc0aab24625b5a28a68e46ee604e4468cd253b101739fe59bc3e",
       "segments": [
         {
           "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
@@ -82,8 +82,8 @@
           "path": "wiki/computational-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 82869,
-          "file_sha256": "199ab73b2a6f368a65d6997b0078616cb01e98e7dab5f7b946acfe5af2bc0043",
+          "end": 82928,
+          "file_sha256": "bf1ded3000a9686d835b4611acb60e8a8895f6b46963586c3dccabd7fd894334",
           "binary": false
         },
         {
@@ -109,67 +109,19 @@
           "end": 4322,
           "file_sha256": "54a8cc417b5548bf68cd4f570c8460742550e4e7bc93e64f40800ece5002bc63",
           "binary": false
-        },
-        {
-          "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 8476,
-          "file_sha256": "154b8826f43fc0929c9fac40072d8ceca345ef5b096a5651eb00906a26d67cc1",
-          "binary": false
-        },
-        {
-          "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/inputs/query_strategy.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 3407,
-          "file_sha256": "a4a02041d479eae707512f24b8c72fa93b62f6a96f4fb57146b3d5fabdfb0310",
-          "binary": false
         }
       ]
     },
     {
       "shard_id": "shard-002",
-      "coverage_sha256": "1edd29c9888bc0a1d0a3d4854d02ad191f158d5b040a257816f7061592c12c2e",
+      "coverage_sha256": "5cf9f41b65027fd1f2f0adfa928919241c929961f21ecb7af8c1c72a9e83936f",
       "segments": [
-        {
-          "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/flux_model_summary.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 3751,
-          "file_sha256": "6738ac618de9557bf562a0fde110234c0d681e63cc93e6fa52d2bad42998cae9",
-          "binary": false
-        },
-        {
-          "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/phase_a_table.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 7192,
-          "file_sha256": "ef87d4977be18dc3cc8bba7f4f582347cb2d1f8d081dbd31b7b7252ee70b6166",
-          "binary": false
-        },
-        {
-          "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/reviews/post-run.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 5899,
-          "file_sha256": "0686b1c33d0cf917ece35632ec4a81691a11ce7c9ed9cd99ae981a33e6c8bdf2",
-          "binary": false
-        },
-        {
-          "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/reviews/pre-run.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 4090,
-          "file_sha256": "ef7f63d4d32f84f78000c21148ab7578d150bec6acf6dd7bcf2d6106fa9c1ca2",
-          "binary": false
-        },
         {
           "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/reviews/push-review.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 15150,
-          "file_sha256": "2443ea33f7f7921dbbc96001c5761e501f3a16710de7b3a6fe798a1a717d2e07",
+          "end": 14352,
+          "file_sha256": "6f6a4e8b05b91eb3544ccc672e65232c661785d016f4c2596777e887e752bf60",
           "binary": false
         },
         {
@@ -248,56 +200,56 @@
     },
     {
       "shard_id": "shard-003",
-      "coverage_sha256": "a236e959c6f0d6631fae98824715c1f2dfbe97012f6a6fa4acc4bee27d9f3a6f",
+      "coverage_sha256": "10c1d6dc43efef1e5b4ea488198900700d549f7a5038a68b31efac1230180e5f",
       "segments": [
         {
           "path": "wiki/validation-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 0,
           "end": 180000,
-          "file_sha256": "ca8a5385d7eab1ddcccb33a07d891227d25e45969fd12c1ca64beb8922022802",
+          "file_sha256": "6e54a43261d17e36319e119800a1083bc42d63195e4068203f21072edb0d1710",
           "binary": false
         }
       ]
     },
     {
       "shard_id": "shard-004",
-      "coverage_sha256": "6d797879d3e2d7585736a8fbad5e528dfc67e0d1406cbd4ed48e1f37ff35a36d",
+      "coverage_sha256": "933ad617ce4b015f861ee4093d65ed72cd9ae8563de0c5e4d6400f0cdbc9745a",
       "segments": [
         {
           "path": "wiki/validation-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 180000,
-          "end": 231605,
-          "file_sha256": "ca8a5385d7eab1ddcccb33a07d891227d25e45969fd12c1ca64beb8922022802",
+          "end": 238119,
+          "file_sha256": "6e54a43261d17e36319e119800a1083bc42d63195e4068203f21072edb0d1710",
           "binary": false
         }
       ]
     }
   ],
   "unsupported_binary_entries": [],
-  "projected_cost_usd": 1.670075,
-  "actual_cost_usd": 1.377886,
-  "input_tokens": 244214,
-  "output_tokens": 11832,
-  "tool_calls": 9,
-  "review_sha256": "d6aca16fa30e0d6cbe36448e129b357ebc5fa0e63eccc6015fd6b6d9e60f21ec",
+  "projected_cost_usd": 1.636275,
+  "actual_cost_usd": 1.189296,
+  "input_tokens": 172938,
+  "output_tokens": 12049,
+  "tool_calls": 4,
+  "review_sha256": "22785b941002d8aa4ad44198ba55dd7a9b1d98dd81a5d9a8b47a411c543e55bf",
   "lane_adjudication": {
-    "date": "2026-07-23T12:40:29Z",
+    "date": "2026-07-23T13:46:44Z",
     "method": "exact push review",
     "new_artifact_review_performed": true,
     "queue_action_remains_open": true,
-    "propagation_allowed_scope": "corrective-only propagation of comp-044\u2019s bounded finding that comp-019 flat-dose regime is not robust to tested substrate-occupancy and finite-window diagnostics",
-    "synthesis_allowed_scope": "bounded comp-044 synthesis as an internal-consistency audit and follow-up gate rationale only",
+    "propagation_allowed_scope": "corrective propagation that comp-019 flat-dose robustness is non-robust under comp-044's bounded diagnostics; no derived efficacy claims",
+    "synthesis_allowed_scope": "bounded synthesis of comp-044 as a deterministic consistency audit with inherited priors and explicit open wet-lab gates",
     "forbidden_inferences": [
-      "no \u0394SUA prediction",
-      "no oral UOX dose sufficiency",
-      "no genotype responder ordering",
-      "no topology/chassis winner",
-      "no production target",
-      "no peroxide or safety clearance",
-      "no probabilistic interpretation of grid occupancy",
-      "no physiological-regime reversal"
+      "serum urate or \u0394SUA prediction",
+      "oral dose or yield sufficiency",
+      "genotype ordering",
+      "topology or chassis winner",
+      "true physiological gut regime identified",
+      "grid fractions as probabilities",
+      "peroxide safety or redox closure",
+      "primary-source-verified quantitative planning values"
     ]
   }
 }

@@ -48,8 +48,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 83835,
-      "sha256": "199ab73b2a6f368a65d6997b0078616cb01e98e7dab5f7b946acfe5af2bc0043"
+      "bytes": 83896,
+      "sha256": "bf1ded3000a9686d835b4611acb60e8a8895f6b46963586c3dccabd7fd894334"
     },
     {
       "path": "wiki/delivery-route-matrix.md",
@@ -68,30 +68,6 @@
       "kind": "proposed_update",
       "bytes": 4350,
       "sha256": "54a8cc417b5548bf68cd4f570c8460742550e4e7bc93e64f40800ece5002bc63"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
-      "kind": "proposed_update",
-      "bytes": 8650,
-      "sha256": "154b8826f43fc0929c9fac40072d8ceca345ef5b096a5651eb00906a26d67cc1"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/inputs/query_strategy.md",
-      "kind": "proposed_update",
-      "bytes": 3424,
-      "sha256": "a4a02041d479eae707512f24b8c72fa93b62f6a96f4fb57146b3d5fabdfb0310"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/flux_model_summary.md",
-      "kind": "proposed_update",
-      "bytes": 3756,
-      "sha256": "6738ac618de9557bf562a0fde110234c0d681e63cc93e6fa52d2bad42998cae9"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/phase_a_table.md",
-      "kind": "proposed_update",
-      "bytes": 7263,
-      "sha256": "ef87d4977be18dc3cc8bba7f4f582347cb2d1f8d081dbd31b7b7252ee70b6166"
     },
     {
       "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
@@ -150,10 +126,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 233986,
-      "sha256": "ca8a5385d7eab1ddcccb33a07d891227d25e45969fd12c1ca64beb8922022802"
+      "bytes": 240572,
+      "sha256": "6e54a43261d17e36319e119800a1083bc42d63195e4068203f21072edb0d1710"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "5dede85c414fee37043b8486faab8ff3bd1ed6bff1843ccc38d93c85694b7a7e"
+  "manifest_sha256": "5a9cc8f6f6a4145dae6906f32dc59cdac95b44c9906c5918ad9abd1001276b88"
 }

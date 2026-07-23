@@ -1176,10 +1176,10 @@
     },
     "comp-044": {
       "comp_dir": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime",
-      "artifact_manifest_sha256": "5dede85c414fee37043b8486faab8ff3bd1ed6bff1843ccc38d93c85694b7a7e",
-      "source_commit": "50ecf5a9d8c3fcffbd0b2114e9fafd79ca907807",
+      "artifact_manifest_sha256": "5a9cc8f6f6a4145dae6906f32dc59cdac95b44c9906c5918ad9abd1001276b88",
+      "source_commit": "3ede1f4d7cc0d4978138b0b5e0a7cea487c0a075",
       "review_receipt": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/reviews/push-review.md",
-      "comp_verdict": "clean_with_limitations",
+      "comp_verdict": "action_required",
       "propagation_eligibility": "eligible_with_warning",
       "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
@@ -1187,10 +1187,6 @@
         "wiki/delivery-route-matrix.md",
         "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
         "wiki/etc/GRAPH.md",
-        "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
-        "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/inputs/query_strategy.md",
-        "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/flux_model_summary.md",
-        "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/phase_a_table.md",
         "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
         "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/provenance.md",
         "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md",
@@ -1202,8 +1198,8 @@
         "wiki/open-questions.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-23T12:40:29Z",
-      "cost_usd": 1.377886
+      "timestamp": "2026-07-23T13:46:44Z",
+      "cost_usd": 1.189296
     },
     "comp-045": {
       "comp_dir": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design",
