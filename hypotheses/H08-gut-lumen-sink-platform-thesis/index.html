@@ -53,6 +53,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1064,13 +1066,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1126,13 +1121,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -1522,13 +1510,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1557,13 +1538,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1591,13 +1565,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -3593,13 +3560,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3971,7 +3931,7 @@
     
   
   
-    <span class="md-status md-status--Reopened"></span>
+    <span class="md-status md-status--Open"></span>
   
 
   
@@ -3996,7 +3956,7 @@
     
   
   
-    <span class="md-status md-status--Reopened"></span>
+    <span class="md-status md-status--Open"></span>
   
 
   
@@ -4041,10 +4001,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updated-assumption-stack" class="md-nav__link">
+  <a href="#assumption-stack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Updated assumption stack
+        Assumption stack
       
     </span>
   </a>
@@ -4846,7 +4806,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1; all three architectures GREEN under reference conditions; chassis-pending §6 H₂O₂ housekeeping risk resolved)"></span>
+    <span class="md-status md-status--complete (frozen v1; non-decision-grade Phase-0 prior; empirical peroxide and tissue-safety gates open)"></span>
   
 
   
@@ -5536,10 +5496,10 @@
 <ol>
 <li><strong>Clinical human physiology:</strong> ABCG2 contributes to intestinal urate transport, and direct human jejunal measurements show sub-micromolar baseline luminal urate in the sampled setting (Miyazaki 2025). This supports the route but creates a substrate-occupancy constraint.</li>
 <li><strong>Animal models:</strong> PULSE lowered urate in hyperuricemic mice/rats using a 1:1:1 mixture of intracellular, secreted, and displayed smUOX topologies with KatG+VHb support (Gao 2025). Zhao 2022 independently demonstrated an EcN PucLM+YgfU+KatG+VHb architecture under restricted oxygen. <strong>Evidence level: Animal Model + In Vitro.</strong></li>
-<li><strong>Computational audit:</strong> comp-044 finds that the original regime classification changes when substrate occupancy and a finite active window are applied. It does not predict efficacy.</li>
+<li><strong>Computational audit:</strong> comp-044 finds that the legacy unconditional flat-dose classification is not robust to its tested substrate-occupancy and finite-window diagnostics. It does not identify the true physiological regime, reverse the old conclusion, or predict efficacy.</li>
 <li><strong>Topology uncertainty:</strong> comp-045 finds that no topology can yet be eliminated; the decisive comparison must measure urate, product, oxygen, peroxide, viability, and localization together.</li>
 </ol>
-<h2 id="updated-assumption-stack">Updated assumption stack<a class="headerlink" href="#updated-assumption-stack" title="Permanent link">&para;</a></h2>
+<h2 id="assumption-stack">Assumption stack<a class="headerlink" href="#assumption-stack" title="Permanent link">&para;</a></h2>
 <ol>
 <li>The reaction site receives enough urate for the chosen UOX Km and dose.</li>
 <li>The reaction site supplies enough oxygen for sustained oxidative turnover.</li>
@@ -5562,9 +5522,9 @@
 <tbody>
 <tr>
 <td style="text-align: right;">1</td>
-<td>Physiological topology × oxygen × peroxide factorial at 0.59/50/250 µM urate</td>
+<td>Build and characterize exact sequence–host–topology configurations, then run the physiological oxygen × peroxide factorial</td>
 <td>1–4, 7</td>
-<td><a href="../../validation-experiments/#133-physiological-uox-topology--oxygen--peroxide-factorial">Designed in §1.33</a></td>
+<td>Relevant construct-supply work (§§1.1, 1.2, and 1.5) or exact external configuration → <a href="../../validation-experiments/#133-physiological-uox-topology--oxygen--peroxide-factorial">§1.33</a>; topology nomination only within a controlled host comparison, with cross-host results treated as configuration-specific</td>
 </tr>
 <tr>
 <td style="text-align: right;">2</td>
@@ -5576,13 +5536,13 @@
 <td style="text-align: right;">3</td>
 <td>Human enteroid UOX redox/barrier assay ±NSAID context</td>
 <td>7</td>
-<td><a href="../../validation-experiments/#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay">Designed in §1.36</a></td>
+<td><a href="../../validation-experiments/#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay">Designed in §1.36</a>; must pass before animal escalation</td>
 </tr>
 <tr>
 <td style="text-align: right;">4</td>
-<td>Human or human-relevant in-vivo local urate/product measurement with active UOX</td>
+<td>Human-relevant in-vivo local urate/product measurement with active UOX</td>
 <td>1–5</td>
-<td>Not started</td>
+<td>Downstream of §1.36; not started</td>
 </tr>
 <tr>
 <td style="text-align: right;">5</td>
@@ -5601,7 +5561,7 @@
 </ul>
 <p>No mg/dL boundary is pre-committed until the dynamic local model is rebuilt from measured inputs.</p>
 <h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
-<p><strong>Reopened.</strong> The original numeric prior did not survive audit. No biological killshot has yet been executed.</p>
+<p><strong>Open.</strong> The legacy unconditional flat-dose classification was not robust to the tested diagnostics, but COMP-044 did not determine the true physiological regime or reverse the old conclusion. No biological killshot has yet been executed.</p>
 <p><strong>Survival count:</strong> 0.</p>
 <h2 id="open-follow-ups">Open follow-ups<a class="headerlink" href="#open-follow-ups" title="Permanent link">&para;</a></h2>
 <table>
@@ -5625,12 +5585,12 @@
 </tr>
 <tr>
 <td>H08-3</td>
-<td>Run validation §1.33</td>
+<td>Build and characterize exact configurations, then run validation §1.33</td>
 <td>Proposed</td>
 </tr>
 <tr>
 <td>H08-4</td>
-<td>Run validation §1.36</td>
+<td>Run validation §1.36 before animal escalation</td>
 <td>Proposed</td>
 </tr>
 <tr>
@@ -5651,7 +5611,7 @@
 <li><a href="../../gut-lumen-uricase-physiologic-regime-computational/">comp-044 interpretive page</a></li>
 <li><a href="../../uricase-topology-oxygen-peroxide-design-computational/">comp-045 interpretive page</a></li>
 <li><a href="../../validation-experiments/">Validation experiments</a></li>
-<li><a href="../../uricase-abcg2-genotype-stratification-computational/">Superseded comp-019 page</a></li>
+<li><a href="../../uricase-abcg2-genotype-stratification-computational/">Comp-019 interpretation</a> — not decision-grade after COMP-044 found its flat-dose classification was not robust to the tested diagnostics</li>
 </ul>
 
 

@@ -53,6 +53,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1064,13 +1066,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1126,13 +1121,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -1522,13 +1510,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1557,13 +1538,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1591,13 +1565,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -3593,13 +3560,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3962,7 +3922,7 @@
     
   
   
-    <span class="md-status md-status--Reopened"></span>
+    <span class="md-status md-status--Open"></span>
   
 
   
@@ -4704,7 +4664,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1; all three architectures GREEN under reference conditions; chassis-pending §6 H₂O₂ housekeeping risk resolved)"></span>
+    <span class="md-status md-status--complete (frozen v1; non-decision-grade Phase-0 prior; empirical peroxide and tissue-safety gates open)"></span>
   
 
   
@@ -5706,7 +5666,7 @@
 <p><strong>Comp-NNN implementation:</strong> candidate-scoring agent produces a ranked shortlist; <strong>independent verification agent</strong> re-checks load-bearing numbers (residue indices, disulfide counts, predicted Tm, cleavage-site predictions) against primary databases (UniProt, ChEMBL, AlphaFold) before the candidate enters the wet-lab queue. The DAF SCR1-4 disulfide-count incident (2026-05-06) is the canonical case showing why this is needed — exactly what a verification-pass would have caught.</p>
 <p><strong>Operational instantiation (comp-022, 2026-05-14):</strong> The ClockBase exhaustive-search-then-rank pattern was instantiated at full cardinality for the first time in the OE corpus — 43,200 uricase cassette candidates enumerated, scored across 5 orthogonal models (CAI, ViennaRNA MFE, chaperone load, promoter×SP prior, ESM2 pseudo-pLDDT), with N-of-5 ≥ 4 concordance gate producing 71 promoted cassettes. The v1→v2 retrofit (adding real ViennaRNA MFE + ESM2 fold-quality proxy) confirmed the v1 top cluster at 100% survival. See <a href="../../uricase-cassette-ranking-computational/"><code>uricase-cassette-ranking-computational.md</code></a>. (Mechanistic Extrapolation; source: uricase-cassette-ranking-computational.md)</p>
 <p><strong>Proxy-quality lesson from comp-022 v2 retrofit (added 2026-05-15).</strong> comp-022 v1 used a GC-content + GC-clamp + palindromic-4mer proxy for mRNA 5′ secondary structure (cheap, no external dependency). The v2 retrofit replaced it with real ViennaRNA 2.7.2 MFE calculation. Spearman correlation between the v1 GC-clamp proxy and the v2 ViennaRNA MFE: <strong>ρ = 0.241</strong> (weak; see <a href="../../uricase-cassette-ranking-computational/"><code>uricase-cassette-ranking-computational.md</code> §9.4</a>). <strong>430 of 501 v1-shortlisted cassettes were re-ranked outside the v2 N-of-5 ≥ 4 gate</strong> when the real biophysical model replaced the proxy. The v1 top cluster survived intact (100% retained), but the long tail of v1-eligible candidates was substantially noise. The lesson generalizes: <strong>cheap proxies can be near-uncorrelated noise with the real biophysical quantity they're standing in for; if a comp-NNN uses any proxy in the composite ranking, the proxy's correlation against the real model must be explicitly validated before wet-lab promotion of the long-tail candidates.</strong> Operationally for new comp-NNNs: prefer real biophysical models (ViennaRNA / RNAfold for mRNA folding, ESMFold / AlphaFold for structure, Rosetta / PyRosetta for energy, FBA for metabolic) over cheap heuristics, unless a published proxy-vs-real correlation ≥ 0.7 already exists for the specific assay. This discipline is now wired into the walk-synthesis SKILL.md §4 subagent-briefing rule #9 (Deep multi-metric evaluation discipline) and into the Pass 3 review prompts' "Evaluation depth &gt; tool coverage" anchor — both anchored to the BioDesignBench finding (Kim &amp; Romero 2026, bioRxiv 10.64898/2026.05.06.723381) and now empirically corroborated by comp-022's own retrofit experience.</p>
-<p><strong>Second instance — pLDDT-as-accessibility proxy (added 2026-05-30, comp-034 rosetta_concordance).</strong> A different cheap proxy, same failure mode. The shared protease-stability model (<a href="../experiments/lib/protease_stability.py"><code>lib/protease_stability.py</code></a> <code>classify_accessibility</code>) uses <strong>pLDDT as a proxy for solvent accessibility</strong> (high pLDDT → assumed buried → 0.1× cleavage risk). But pLDDT is a <em>confidence</em> score, not burial: a confidently-predicted, solvent-<strong>exposed</strong> helix scores 90+ and gets mis-classified "buried." On the lactoferrin inter-lobe linker (pLDDT 93–98) this under-counted real cleavage risk ~10× — real SASA (PyRosetta SasaCalc, Tien 2013 relative) showed <strong>8 of 11 residues exposed, 0 buried.</strong> The fix (now demonstrated in <a href="../experiments/comp-034-lactoferrin-linker-redesign/rosetta_concordance/"><code>comp-034/rosetta_concordance/</code></a>) is real SASA + a secondary-structure conformation gate (proteases need an extended substrate; a helix resists even when exposed). The proxy affects every comp-NNN using that model (comp-001/005/006/012/037) — their cleavage scores systematically under-weight exposed-but-confident regions. Generalizes the comp-022 lesson beyond RNA folding to the <em>accessibility</em> axis: <strong>a structural-confidence score is not a structural-property measurement.</strong> When PyRosetta is available (it now is, since 2026-05-29), prefer real SASA over the pLDDT proxy for any load-bearing accessibility judgment.</p>
+<p><strong>Known proxy failure — pLDDT is not accessibility.</strong> The shared protease-stability model (<a href="../experiments/lib/protease_stability.py"><code>lib/protease_stability.py</code></a> <code>classify_accessibility</code>) used AlphaFold pLDDT as a solvent-accessibility proxy. pLDDT is prediction confidence, not burial, secondary-structure compatibility with cleavage, protease survival, or retained activity. COMP-001 therefore supplies only P1/P1′ sequence mapping plus a structural-confidence prior for <em>A. flavus</em> UOX. It cannot support a LOW-risk, survival, or fermentation-performance conclusion. Any UOX shio-koji survival claim requires the direct <a href="../../validation-experiments/#110-protease-stability-assay-shio-koji">§1.10 protease-stability assay</a>; a structure/SASA analysis may refine candidate selection but cannot replace that gate. The same boundary applies to other COMPs that inherited the proxy.</p>
 <h3 id="4-autonomy-boundary-ranking-not-validation">4. Autonomy boundary = ranking, not validation<a class="headerlink" href="#4-autonomy-boundary-ranking-not-validation" title="Permanent link">&para;</a></h3>
 <p>Useful prior: keep the AI on the <strong>"produce ranked shortlist + provenance + composite score"</strong> side of the boundary; humans (or an explicit gating ritual) make the wet-lab commit. Don't oversell autonomy.</p>
 <p>This connects to the existing comp-NNN gating ritual: comp-NNN produces a verdict (LOW / MODERATE / HIGH / VERY HIGH risk + composite score + explicit limitations), and the human-driven §1.9 / §1.10 gating tests are the autonomy boundary. The shape is right; the discipline of explicitly naming the boundary is what's worth importing.</p>
@@ -5734,17 +5694,17 @@
 <td>comp-019</td>
 <td>Gut-lumen uricase × ABCG2 flux model</td>
 <td>Yes (Monte Carlo n=5000 across genotype × sex × dose)</td>
-<td><strong>No—invalid regime</strong> (multiple reported metrics inherited one Vmax-only capacity error)</td>
+<td><strong>No—unconditional classification not robust</strong> (multiple reported metrics inherited one Vmax-only capacity assumption)</td>
 <td>Implicit grid; no empirical calibration</td>
-<td><strong>Superseded by comp-044</strong> — evaluation depth did not protect against omission of substrate occupancy and finite residence time</td>
+<td>COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. COMP-044 supplies no replacement physiology, dose, efficacy, genotype order, production target, topology/chassis, or safety conclusion.</td>
 </tr>
 <tr>
 <td>comp-022</td>
 <td>Uricase cassette ranking (v1 + v2)</td>
 <td>Yes (43,200 enumerated; 195 pass v1; 71 pass v2 N-of-5 ≥ 4)</td>
-<td><strong>Yes</strong> (CAI + ViennaRNA MFE + chaperone-load + promoter×SP prior + ESM2 pseudo-pLDDT)</td>
-<td><strong>Yes</strong> (N-of-5 ≥ 4 gate; v1→v2 retrofit confirms top cluster at 100% survival)</td>
-<td><strong>Canonical exemplar</strong> — exactly the BioDesignBench-recommended cure</td>
+<td>Multiple computational axes, with shared assumptions and proxy limits</td>
+<td>Prespecified N-of-5 gate</td>
+<td>Candidate-prioritization result; exact build, expression, localization, physiological-reaction, and safety gates remain empirical.</td>
 </tr>
 <tr>
 <td>comp-023</td>
@@ -5794,7 +5754,7 @@
 <li><strong>comp-027 methodology spec.</strong> When comp-027 brief is finalized, explicitly require multi-method evaluation per BioDesignBench's "≥3 evaluation-metric categories" finding. Don't ship comp-027 as a single-axis PK model.</li>
 <li><strong>General rule for new comp-NNN authoring.</strong> Subagent briefs for new comp-NNNs must explicitly require multi-method evaluation + candidate filtering + termination only after head-to-head comparison. The walk-synthesis SKILL.md §4 briefing-rules now carries this guidance. The Pass 3 review prompt also emphasizes evaluation-depth-over-tool-coverage.</li>
 </ol>
-<p>The audit reaffirms that the N-of-M concordance pattern this page advocates IS the BioDesignBench cure; the gap is consistency of application across all comp-NNNs, not the methodology itself.</p>
+<p>The audit supports using prespecified multi-metric comparison to reduce shallow candidate promotion. It does not show that an N-of-M rule is a general solution: the metrics may share assumptions, and empirical validation remains required.</p>
 <h2 id="honest-critiques">Honest critiques<a class="headerlink" href="#honest-critiques" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Reproducibility:</strong> Preprint, not peer-reviewed. Mouse cohort sizes, dosing schedule, blinding protocol, and statistical correction for multiple comparisons across 40 clocks are not pinned down in lay coverage. Need to read supplementary methods before citing specific numbers downstream.</li>

@@ -49,6 +49,8 @@
       
     
     
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1060,13 +1062,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1122,13 +1117,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -1518,13 +1506,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1553,13 +1534,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1587,13 +1561,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -3587,13 +3554,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3956,7 +3916,7 @@
     
   
   
-    <span class="md-status md-status--Reopened"></span>
+    <span class="md-status md-status--Open"></span>
   
 
   
@@ -4698,7 +4658,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1; all three architectures GREEN under reference conditions; chassis-pending §6 H₂O₂ housekeeping risk resolved)"></span>
+    <span class="md-status md-status--complete (frozen v1; non-decision-grade Phase-0 prior; empirical peroxide and tissue-safety gates open)"></span>
   
 
   
@@ -5381,7 +5341,7 @@
 
 
 <h1 id="comp-044-gut-lumen-uricase-physiological-regime">comp-044 — Gut-lumen uricase physiological regime<a class="headerlink" href="#comp-044-gut-lumen-uricase-physiological-regime" title="Permanent link">&para;</a></h1>
-<p><strong>Status:</strong> Complete first pass — 2026-07-13</p>
+<p><strong>Status:</strong> Deterministic design; generated output controls the verdict</p>
 <h2 id="question">Question<a class="headerlink" href="#question" title="Permanent link">&para;</a></h2>
 <p>Does comp-019's conclusion that 5–50 mg/day oral uricase is always substrate-limited survive when its own luminal-urate concentration and Km are actually used, together with finite residence time, oxygen availability, substrate access, and enzyme survival?</p>
 <h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
@@ -5391,9 +5351,8 @@
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python3<span class="w"> </span>analyze.py
 </code></pre></div>
 <p>Python standard library only. Outputs are deterministic.</p>
-<h2 id="headline-result">Headline result<a class="headerlink" href="#headline-result" title="Permanent link">&para;</a></h2>
-<p>The legacy 24-hour Vmax calculation gives approximately the published 32.6× / 163.1× / 326.2× WT ratios. Using this experiment's explicit 233 mg/day denominator, then applying 0.59 µM urate, Km 25 µM, and a three-hour window gives 0.093× / 0.466× / 0.932× before any oxygen, accessibility, or survival penalty. The previous flat-dose classification is therefore not robust.</p>
-<p>This does not disprove the gut-lumen sink. It removes an unsupported quantitative shortcut and identifies the measurements needed to recover a defensible dose model.</p>
+<h2 id="output-authority">Output authority<a class="headerlink" href="#output-authority" title="Permanent link">&para;</a></h2>
+<p>This design does not embed a result. The current verdict must be read from a freshly generated <code>outputs/results.json</code> and <code>outputs/summary.md</code> produced from an exact pre-run-reviewed snapshot. The three possible verdicts and their distinct propagation permissions are defined below; no prior output authorizes a branch.</p>
 <h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>analyze.py</code> — deterministic bounded sensitivity analysis</li>
@@ -5404,7 +5363,66 @@
 <li><code>outputs/summary.md</code> — human-readable result</li>
 </ul>
 <h2 id="key-limitation">Key limitation<a class="headerlink" href="#key-limitation" title="Permanent link">&para;</a></h2>
-<p>The analysis still holds concentration fixed within each active window and compares it with a whole-day flux denominator. The 0.25 and 4 regime bins are descriptive; only ratio 1 has direct mass-balance meaning. A later dynamic model requires measured local urate replenishment, topology-specific oxygen and enzyme survival, reabsorption, and spatial residence. Therefore comp-044 is a regime-audit prior, not a clinical efficacy model or a basis for dose selection.</p>
+<p>The analysis still holds concentration fixed within each active window and compares it with a whole-day flux denominator. The 8.3 U/mg activity, Km range, 2–4-hour window, and 233 mg/day denominator remain inherited or derived priors rather than newly verified quantitative-planning inputs. The 0.25 and 4 regime bins are descriptive; only ratio 1 has direct mass-balance meaning. A later dynamic model requires measured local urate replenishment, topology-specific oxygen and enzyme survival, reabsorption, and spatial residence. Therefore comp-044 is a regime-audit prior, not a clinical efficacy model or a basis for dose selection.</p>
+<h2 id="conditional-authoring-contract">Conditional authoring contract<a class="headerlink" href="#conditional-authoring-contract" title="Permanent link">&para;</a></h2>
+<p>The actual generated verdict controls what may be written:</p>
+<ul>
+<li><strong><code>LEGACY FLAT-DOSE REGIME NOT ROBUST</code>:</strong> apply the corrective propagation inventory below. State only that comp-019's unconditional classification is not robust; do not claim a physiological-regime reversal.</li>
+<li><strong><code>LEGACY ROBUSTNESS NOT REJECTED</code>:</strong> do not publish the pre-authored wide corrective branch or use comp-044 to retract the legacy classification. Update the canonical evidence home and run the contrary-result correction cascade below before publishing. Keep the COMP-044 queue action open.</li>
+<li><strong><code>LEGACY CONTROL NOT REPRODUCED</code>:</strong> do not publish the pre-authored wide corrective branch or use comp-044 to adjudicate robustness. Update the canonical evidence home and run the contrary-result correction cascade below before publishing. Keep the COMP-044 queue action open.</li>
+</ul>
+<p>For either contrary branch, build a fresh repository-wide inventory of every active comp-044 reference and every paraphrase of its result. Correct each result-dependent consumer; a direct link or a claim sourced elsewhere may remain only after inspection shows that it is branch-invariant. The current minimum inventory includes <code>index.md</code>; the canonical comp-044 page; <code>wiki/computational-experiments.md</code>; <code>wiki/gout-kill-chain-delivery-routes.md</code>; <code>wiki/gout-action-guide.md</code>; <code>wiki/gout-pathophysiology.md</code>; <code>wiki/gout-clinical-pipeline.md</code>; <code>wiki/supplements-stack.md</code>; <code>wiki/modality-chokepoint-matrix.md</code>; <code>wiki/enzyme-deficit-deep-dive.md</code>; <code>wiki/crispr-uricase.md</code>; <code>wiki/open-questions.md</code>; <code>wiki/validation-experiments.md</code>; <code>wiki/uricase-abcg2-genotype-stratification-computational.md</code>; <code>wiki/blood-barrier.md</code>; <code>wiki/blood-barrier-exploits.md</code>; <code>wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md</code>; <code>wiki/dual-chassis-ecn-pdb-uricase-computational.md</code>; <code>wiki/gi-survival-prediction.md</code>; <code>wiki/etc/GRAPH.md</code>; <code>wiki/uricase.md</code>; <code>wiki/purine-degrading-bacteria.md</code>; <code>wiki/protein-engineering-strategy.md</code>; <code>wiki/etc/autonomous-screening-methodology.md</code>; <code>wiki/genotype-informed-supplement-workflow.md</code>; <code>wiki/codon-optimization-expression-cassette.md</code>; <code>wiki/engineered-koji-protocol.md</code>; <code>wiki/gout-multihop-research-program.md</code>; <code>wiki/gout-genetic-variants.md</code>; <code>wiki/nlrp3-exploit-map.md</code>; <code>wiki/uricase-variant-selection.md</code>; <code>wiki/gut-lumen-sink.md</code>; <code>wiki/abcg2-modulators.md</code>; <code>wiki/engineered-yeast-uricase-proposal.md</code>; <code>wiki/chassis-pending-interventions.md</code>; and the comp-019/comp-031 records that name comp-044 as their rationale. Preserve any separate comp-019 or comp-031 status only where its rationale is independently supported; do not leave comp-044 named as evidence for a result the fresh run did not produce.</p>
+<p>For the <code>LEGACY FLAT-DOSE REGIME NOT ROBUST</code> branch, the canonical evidence home is <a href="../../../gut-lumen-uricase-physiologic-regime-computational/"><code>wiki/gut-lumen-uricase-physiologic-regime-computational.md</code></a>. Corrective propagation is local to oral luminal-UOX feasibility and permits changes only to:</p>
+<ul>
+<li><a href="../../../gut-lumen-sink/"><code>wiki/gut-lumen-sink.md</code></a> — remove or qualify low-local-UOX sufficiency, 20–50 mg/day feasibility, “dosing is achievable,” and initial-proof-of-concept readiness claims.</li>
+<li><a href="../../../uricase/"><code>wiki/uricase.md</code></a> — remove the 20–50 mg/day culture-volume arithmetic and fixed survival/mutation-validation claims; state that neither dose sufficiency nor current production sufficiency is established.</li>
+<li><a href="../../../engineered-yeast-uricase-proposal/"><code>wiki/engineered-yeast-uricase-proposal.md</code></a> — remove the inherited oral-dose requirement, predicted GI-stability gains, fixed expression yield, intracellular-topology recommendation, mouse-first tier progression, and downstream biomass/chassis-serving comparisons.</li>
+<li><a href="../../../blood-barrier-exploits/"><code>wiki/blood-barrier-exploits.md</code></a> — replace the claim that gut-lumen delivery “may be sufficient” with the current physiological feasibility gate.</li>
+<li><a href="../../../codon-optimization-expression-cassette/"><code>wiki/codon-optimization-expression-cassette.md</code></a> — remove claims that intracellular release or the predicted per-CFU activity is sufficient for efficacy; return topology and delivered activity to validation §1.33.</li>
+<li><a href="../../../engineered-koji-protocol/"><code>wiki/engineered-koji-protocol.md</code></a> — delete the unvalidated dose/serving calculation and personalized titration instructions; replace PULSE-derived sufficiency, ALLN “science works,” and koji-superiority claims with bounded animal/human evidence and the unresolved physiological gate.</li>
+<li><a href="../../../aspergillus-oryzae/"><code>wiki/aspergillus-oryzae.md</code></a> — remove the conversion from rough expression yield to sufficient therapeutic dosing; require measured delivered activity before dose or format conclusions.</li>
+<li><a href="../../../koji-construct-design/"><code>wiki/koji-construct-design.md</code></a> — remove the unvalidated therapeutic-dose and ALLN-346-based achievability conversion while retaining expression yield as an assay target rather than efficacy evidence.</li>
+<li><a href="../../../protein-engineering-strategy/"><code>wiki/protein-engineering-strategy.md</code></a> — remove the predicted administrable oral product dose and return GI-survival improvements to an activity-preservation hypothesis pending physiological validation.</li>
+<li><a href="../../../gi-survival-prediction/"><code>wiki/gi-survival-prediction.md</code></a> — remove the unsupported 500–800 mg dosing model, serum-urate predictions, patient-stratified recommendations, and biomass conversions; retain the survival question as an empirical gate.</li>
+<li><a href="../../../koji-endgame-strain/"><code>wiki/koji-endgame-strain.md</code></a> — remove the 40–80 mg/g, 150–400 mg-per-meal, and ALLN-dose-matching planning values from the active configuration.</li>
+<li><a href="../../../saccharomyces-cerevisiae/"><code>wiki/saccharomyces-cerevisiae.md</code></a> — replace links and summaries that present urate-budget and yeast-to-dose arithmetic as current dosing mathematics with the measured-delivered-activity gate.</li>
+<li><a href="../../../computational-experiments/"><code>wiki/computational-experiments.md</code></a> — report the actual generated verdict, label the specific-activity/Km/window/flux inputs as inherited and non-planning-grade, and retain the no-serum/no-dose boundary.</li>
+<li><a href="../../../delivery-route-matrix/"><code>wiki/delivery-route-matrix.md</code></a> — remove the unsupported dollars-versus-cents per-dose comparison and chassis-economics ranking; retain route-specific engineering gates without inferring oral production sufficiency.</li>
+<li><a href="../../../../index.md"><code>index.md</code></a> — replace predicted yeast/koji UOX yields, fixed survival fractions, validated-mutation language, and host-choice framing with the delivered-activity measurement gate.</li>
+<li><a href="../../../uricase-variant-selection/"><code>wiki/uricase-variant-selection.md</code></a> — remove the daily enzyme-mass, activity-unit, CFU-dose, and formulation-volume arithmetic; route variant selection through §1.33 before dose or production conclusions.</li>
+<li><a href="../../../open-questions/"><code>wiki/open-questions.md</code></a> — remove the fixed whole-cell survival advantage and human self-experiment path; keep topology and genotype response as controlled experimental questions.</li>
+<li><a href="../../../validation-experiments/"><code>wiki/validation-experiments.md</code></a> — remove the “koji-realistic dose,” fixed GI-survival threshold, validated-OPT-1 claim, and host-choice interpretation; make §1.16 a matched retained-active-UOX screen feeding §1.33.</li>
+<li><a href="../../../chassis-pending-interventions/"><code>wiki/chassis-pending-interventions.md</code></a> — remove the stale “chassis solves peroxide” reference and keep intra-articular architectures behind measured reaction-site peroxide and tissue-safety gates.</li>
+<li><a href="../../../gout-pathophysiology/"><code>wiki/gout-pathophysiology.md</code></a> — do not present an engineered-koji UOX construct, its serum effect, or its evidence tier as though it has been tested.</li>
+<li><a href="../../../supplements-stack/"><code>wiki/supplements-stack.md</code></a> — remove provisional biomass doses, expected serum effects, home-fermentation formats, personal-use timing, and UOX pairing recommendations.</li>
+<li><a href="../../../gout-kill-chain-delivery-routes/"><code>wiki/gout-kill-chain-delivery-routes.md</code></a> — keep ABCG2-plus-UOX and anti-inflammatory-plus-UOX combinations as untested coupled-flux hypotheses; do not predict additivity or a serum effect.</li>
+<li><a href="../../../modality-chokepoint-matrix/"><code>wiki/modality-chokepoint-matrix.md</code></a> — do not transfer parental GRAS or food-use status to engineered constructs, treat planned payloads as realized, or select a chassis before measurement.</li>
+<li><a href="../../../enzyme-deficit-deep-dive/"><code>wiki/enzyme-deficit-deep-dive.md</code></a> — remove food-safety transfer, personal consumption, build-ease, and yeast-winner claims.</li>
+<li><a href="../../../crispr-uricase/"><code>wiki/crispr-uricase.md</code></a> — remove forecasts that engineered yeast or koji UOX is validated, in use, or an interim therapy.</li>
+<li><a href="../../../genotype-informed-supplement-workflow/"><code>wiki/genotype-informed-supplement-workflow.md</code></a> — exclude engineered-UOX home production or personal intervention paths.</li>
+<li><a href="../../../nlrp3-exploit-map/"><code>wiki/nlrp3-exploit-map.md</code></a> — do not infer that a payload-bearing engineered organism is a food from the parent organism's status.</li>
+<li><a href="../../../blood-barrier/"><code>wiki/blood-barrier.md</code></a> — treat oral tolerance versus sensitization for repeated engineered-UOX exposure as an unresolved safety question.</li>
+<li><a href="../../../gout-clinical-pipeline/"><code>wiki/gout-clinical-pipeline.md</code></a> — remove product-in-development, food-derived adjunct, regulatory-ease, dose-sparing, and chassis-ownership claims; keep the clinical scan as a dated comparator landscape.</li>
+<li><a href="../../../gout-deep-dive/"><code>wiki/gout-deep-dive.md</code></a> — separate ALLN-346 Study 201's published interim cohort from Study 202's terminated, results-unposted record; remove delivery or efficacy generalizations unsupported by either trial.</li>
+<li><a href="../../ai-bio-tools-playbook/"><code>wiki/etc/ai-bio-tools-playbook.md</code></a> — remove prompts that presuppose a consumer dose, serum effect, default chassis, food format, or personal experiment before configuration-level feasibility and safety are measured.</li>
+<li><a href="../../../../papers/cross-vendor-heterogeneity-guard/draft.md"><code>papers/cross-vendor-heterogeneity-guard/draft.md</code></a> — narrow the COMP-044 interpretation to the legacy flat-dose classification and remove the personal engineered-UOX experiment.</li>
+<li><a href="../../../../operations/notable-moments.md"><code>operations/notable-moments.md</code></a> — describe the result at its actual model scope rather than as a general physiological-dose adjudication.</li>
+<li><a href="../../../digestive-enzymes/"><code>wiki/digestive-enzymes.md</code></a> — remove home-koji treatment and dose extrapolations; retain delivered activity and safety as empirical gates.</li>
+<li><a href="../../practitioner-toolkit/"><code>wiki/etc/practitioner-toolkit.md</code></a> — keep the PERT record confined to its direct commercial-enzyme observation and remove transfer to engineered ingestion or production.</li>
+<li><a href="../../../gout-multihop-research-program/"><code>wiki/gout-multihop-research-program.md</code></a> — make construct supply precede the configuration-level physiological screen and prevent §1.33 from selecting an abstract topology before host implementation.</li>
+<li><a href="../../../hypotheses/H01-ward-dual-cassette/"><code>wiki/hypotheses/H01-ward-dual-cassette.md</code></a> — bind the downstream dual-cassette work to an exact §1.5-built, §1.33-advanced koji configuration rather than transferring a topology into the host after selection.</li>
+<li><a href="../../../hypotheses/"><code>wiki/hypotheses/README.md</code></a> — align H09 with controlled, specification-based production rather than home delivery of therapeutic doses.</li>
+<li><a href="../../../../operations/ward-1995-lab-access.md"><code>operations/ward-1995-lab-access.md</code></a> — request access for exact configuration-level testing without implying that an abstract topology or parent-organism status settles host, safety, or delivery questions.</li>
+<li><a href="../../../../operations/wet-lab-collaboration-leads.md"><code>operations/wet-lab-collaboration-leads.md</code></a> — describe engineered microbial UOX as one candidate track and sequence construct supply before configuration-level physiological testing.</li>
+<li><a href="../../../abcg2-modulators/"><code>wiki/abcg2-modulators.md</code></a> — keep ABCG2 modulation and luminal UOX as separately unresolved flux levers rather than presuming a combined serum effect.</li>
+<li><a href="../../../cordycepin-cassette-burden-computational/"><code>wiki/cordycepin-cassette-burden-computational.md</code></a> — keep cassette-burden computation as a prioritization proxy and remove product, dosing, or home-use extensions.</li>
+<li><a href="../../../dual-chassis-ecn-pdb-uricase-computational/"><code>wiki/dual-chassis-ecn-pdb-uricase-computational.md</code></a> — prevent parent-host status or computational scores from selecting a delivered configuration before controlled measurement.</li>
+<li><a href="../../autonomous-screening-methodology/"><code>wiki/etc/autonomous-screening-methodology.md</code></a> — require exact built configurations and controlled measurements before topology, chassis, dose, or delivery conclusions.</li>
+<li><a href="../../../gout-action-guide/"><code>wiki/gout-action-guide.md</code></a> — state the exact non-robustness boundary and keep the page as a research roadmap rather than a personal treatment guide.</li>
+<li><a href="../../../gout-genetic-variants/"><code>wiki/gout-genetic-variants.md</code></a> — keep genotype effects as controlled stratification hypotheses rather than automatic intervention rules.</li>
+<li><a href="../../../hypotheses/H08-gut-lumen-sink-platform-thesis/"><code>wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md</code></a> — preserve the sink as a falsifiable platform hypothesis whose dose, delivery, and chassis remain unresolved.</li>
+</ul>
+<p>No other corpus conclusion is authorized by this run. It does not rank koji, yeast, or bacterial chassis; establish a physiological-regime reversal; predict serum urate; or establish dose/yield sufficiency. Configuration supply in validation §§1.1, 1.2, and 1.5—or acquisition and verification of an exact external configuration—precedes the configuration-level <a href="../../../validation-experiments/#133-physiological-uox-topology--oxygen--peroxide-factorial">§1.33 screen</a>. Comp-045 supplies a candidate plate layout, not materials or a winner; §1.36 then owns the pre-animal safety gate.</p>
 
 
 

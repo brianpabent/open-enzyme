@@ -53,6 +53,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1064,13 +1066,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1126,13 +1121,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -1522,13 +1510,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1557,13 +1538,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1591,13 +1565,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -3593,13 +3560,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3962,7 +3922,7 @@
     
   
   
-    <span class="md-status md-status--Reopened"></span>
+    <span class="md-status md-status--Open"></span>
   
 
   
@@ -4704,7 +4664,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1; all three architectures GREEN under reference conditions; chassis-pending §6 H₂O₂ housekeeping risk resolved)"></span>
+    <span class="md-status md-status--complete (frozen v1; non-decision-grade Phase-0 prior; empirical peroxide and tissue-safety gates open)"></span>
   
 
   
@@ -5417,7 +5377,7 @@
 <tbody>
 <tr>
 <td>H01</td>
-<td>Ward 1995 glucoamylase-KEX2 dual-cassette architecture layers uricase + lactoferrin in <em>A. oryzae</em> solid-state rice koji</td>
+<td>Can a Ward-derived dual-cassette retain active UOX and lactoferrin in solid-state <em>A. oryzae</em>?</td>
 <td>Pending</td>
 <td>0</td>
 <td>2026-04-24</td>
@@ -5449,7 +5409,7 @@
 </tr>
 <tr>
 <td>H05</td>
-<td>An <em>A. oryzae</em>-engineered soluble DAF/CD55 SCR1-4 construct is a candidate fermentable CP0 modulator</td>
+<td>An engineered soluble DAF/CD55 SCR1-4 construct is a candidate CP0 modulator</td>
 <td>Stub</td>
 <td>0</td>
 <td>2026-05-05</td>
@@ -5473,16 +5433,16 @@
 </tr>
 <tr>
 <td>H08</td>
-<td>Can a gut-lumen uricase sink produce clinically meaningful serum-urate reduction under physiological substrate, oxygen, transit, access, survival, and peroxide constraints? <strong>Reopened; no valid ΔSUA prior.</strong></td>
-<td>Reopened</td>
-<td>1</td>
+<td>Can a gut-lumen uricase sink produce clinically meaningful serum-urate reduction under physiological substrate, oxygen, transit, access, survival, and peroxide constraints?</td>
+<td>Open</td>
+<td>0</td>
 <td>2026-07-13</td>
 <td><a href="H08-gut-lumen-sink-platform-thesis/">H08-gut-lumen-sink-platform-thesis.md</a></td>
 </tr>
 <tr>
 <td>H09</td>
-<td>Home- and community-fermented engineered koji can reliably deliver therapeutic doses of multi-cassette protein with batch-to-batch consistency sufficient for a chronic disease intervention, under the Community-BioLab + Home-Fermentation hybrid model — a <strong>koji-track production/delivery risk</strong>, not a project-level assumption</td>
-<td>Stub</td>
+<td>A qualified engineered-<em>A. oryzae</em> configuration may be reproducible across controlled production sites if identity, propagation, contamination, activity, preservation, assay, and release controls hold; this is an optional koji-track production model, not a project-level assumption</td>
+<td>Active stub</td>
 <td>0</td>
 <td>2026-05-15</td>
 <td><a href="H09-community-fermentation-reliability/">H09-community-fermentation-reliability.md</a></td>
@@ -5521,11 +5481,13 @@
 <hr />
 <h2 id="relationship-to-synthesis-architecture-synthesisreadmemd-and-wikiopen-questionsmd">Relationship to <code>synthesis/</code> (architecture: synthesis/README.md) and <code>wiki/open-questions.md</code><a class="headerlink" href="#relationship-to-synthesis-architecture-synthesisreadmemd-and-wikiopen-questionsmd" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>synthesis/</strong> is the generative action queue — new dot-connections, proposed experiments, cross-doc findings. It is promiscuous, fast-moving, and pruned manually by Brian. Items in synthesis/ are candidates for hypothesis promotion; not all candidates graduate.</li>
-<li><strong>open-questions.md</strong> is a cross-wiki index of unresolved questions. Some of those questions map to committed hypotheses; most don't. An open question is a prompt for investigation; a committed hypothesis is a specific falsifiable claim plus a plan to attempt falsification.</li>
+<li><strong>A Research Conjecture on its mechanism-owning wiki page</strong> is the durable current-state home for a grounded but untested connection. It separates sourced premises from the novel leap and names a discriminating observation.</li>
+<li><strong>synthesis/queue/</strong> is temporary action state. A reviewed synthesis finding may call for a conjecture, evidence correction, experiment, or hypothesis, but the queue file is deleted when that action lands.</li>
+<li><strong>open-questions.md</strong> is a concise cross-wiki index. It links to selected conjectures and unresolved questions without copying their reasoning.</li>
 <li><strong>hypotheses/</strong> is where a specific, falsifiable claim gets a Falsification Card and a commit. Not everything in synthesis or open-questions becomes a hypothesis — only the ones the user is ready to commit resources against.</li>
 </ul>
-<p>Flow (typical): synthesis/ finding → open-questions.md entry → (if worth testing) → hypotheses/H0N commit → Falsification Lint → execute killshots → update status.</p>
+<p>Flow (typical): synthesis finding → Research Conjecture on the owning page → optional open-questions link → (when ready to commit) hypotheses/H0N → Falsification Lint → execute killshots → update status.</p>
+<p>An unconfirmed conjecture is not a failed hypothesis. Delete it when duplicated, no longer useful, or when a required premise fails; Git preserves the prior text. A COMP or experiment kills only the exact claim and regime it tested. Surviving adjacent leads remain unless their own premises collapse.</p>
 <hr />
 <h2 id="conventions-summary">Conventions Summary<a class="headerlink" href="#conventions-summary" title="Permanent link">&para;</a></h2>
 <ul>

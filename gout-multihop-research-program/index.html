@@ -53,6 +53,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1146,13 +1148,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1208,13 +1203,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -1604,13 +1592,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1639,13 +1620,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1673,13 +1647,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -3673,13 +3640,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4042,7 +4002,7 @@
     
   
   
-    <span class="md-status md-status--Reopened"></span>
+    <span class="md-status md-status--Open"></span>
   
 
   
@@ -4784,7 +4744,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1; all three architectures GREEN under reference conditions; chassis-pending §6 H₂O₂ housekeeping risk resolved)"></span>
+    <span class="md-status md-status--complete (frozen v1; non-decision-grade Phase-0 prior; empirical peroxide and tissue-safety gates open)"></span>
   
 
   
@@ -5474,10 +5434,12 @@ transport versus inflammation, oxygen versus peroxide, microbial carbon fate ver
 signaling, and preventive urate lowering versus flare resolution.</p>
 <h2 id="three-immediate-corrections">Three immediate corrections<a class="headerlink" href="#three-immediate-corrections" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>The old oral-UOX dose regime is invalid.</strong> <a href="../uricase-abcg2-genotype-stratification-computational/">comp-019</a>
+<li><strong>The old oral-UOX flat-dose classification is not robust.</strong> <a href="../uricase-abcg2-genotype-stratification-computational/">comp-019</a>
    converted flat enzyme mass into catalytic capacity without physiological substrate,
    oxygen, access, survival, or transit constraints. <a href="../gut-lumen-uricase-physiologic-regime-computational/">comp-044</a>
-   retires its ΔSUA, genotype-ranking, flat-dose, and “yield is solved” conclusions.</li>
+   found that the unconditional classification did not survive its tested substrate-occupancy
+   and finite-window diagnostics. It did not identify the true physiological regime or reverse
+   the old conclusion, so comp-019's ΔSUA, genotype ranking, dose, and yield claims cannot guide decisions.</li>
 <li><strong>UOX topology and peroxide handling cannot be separated.</strong> Intracellular catalase directly
    co-localizes only with intracellular UOX. PULSE supports three topologies plus joint
    KatG+VHb, but does not identify the human-optimal architecture. <a href="../uricase-topology-oxygen-peroxide-design-computational/">comp-045</a>
@@ -5501,9 +5463,9 @@ signaling, and preventive urate lowering versus flare resolution.</p>
 <tbody>
 <tr>
 <td>Physiologic UOX regime</td>
-<td>human jejunal urate → oxygen/transit/access → topology → peroxide</td>
+<td>exact configuration → human jejunal urate → oxygen/transit/access → peroxide</td>
 <td>Direct human substrate measurement + rodent/in-vitro engineering precedents; human efficacy unknown</td>
-<td><a href="../validation-experiments/#133-physiological-uox-topology--oxygen--peroxide-factorial">1.33</a></td>
+<td>Build and characterize exact configurations in the relevant construct-supply work (§§1.1, 1.2, and 1.5) or use an exact external configuration, then run <a href="../validation-experiments/#133-physiological-uox-topology--oxygen--peroxide-factorial">1.33</a></td>
 </tr>
 <tr>
 <td>Staged precursor sink</td>
@@ -5521,7 +5483,7 @@ signaling, and preventive urate lowering versus flare resolution.</p>
 <td>Redox double edge</td>
 <td>remove luminal urate antioxidant → generate UOX H2O2 → epithelial redox injury</td>
 <td>Biochemical mechanism established; therapeutic window unmeasured</td>
-<td><a href="../validation-experiments/#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay">1.36</a></td>
+<td><a href="../validation-experiments/#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay">1.36</a> before animal escalation</td>
 </tr>
 <tr>
 <td>PDB self-niche</td>
@@ -5568,14 +5530,16 @@ signaling, and preventive urate lowering versus flare resolution.</p>
 </tbody>
 </table>
 <h2 id="program-order">Program order<a class="headerlink" href="#program-order" title="Permanent link">&para;</a></h2>
-<p>Run 1.33 and 1.34 first: they decide whether the core sink architecture and staging logic
-survive realistic chemistry. Run 1.35 and 1.36 before combining anti-inflammatory or redox
-modules with UOX. Run 1.37 before attributing butyrate-mediated host effects to CBT2.0. The
+<p>Build and characterize the exact UOX configurations in the relevant construct-supply work
+(§§1.1, 1.2, and 1.5) or use an exact external configuration before §1.33. Within a controlled host, §1.33 may nominate a topology;
+cross-host results remain configuration-specific. Run §1.36 before animal escalation. Run 1.34
+to test the staging logic, 1.35 before combining anti-inflammatory modules with UOX, and 1.37
+before attributing butyrate-mediated host effects to CBT2.0. The
 remaining screens are parallel discovery branches whose positive results can change product
 architecture rather than merely add another ingredient.</p>
-<p>Within the koji track, §1.9A lactoferrin-only may run opportunistically in parallel with §1.33
-when NSlD-ΔP10 access is available. Freeze §1.9B UOX-only only after §1.33 selects a
-koji-compatible topology, and enter §1.9C dual-cassette only after both single-cassette arms
+<p>Within the koji track, §1.9A lactoferrin-only may run opportunistically in parallel with the
+§1.5 build and §1.33 screen when NSlD-ΔP10 access is available. Freeze §1.9B UOX-only only
+after §1.33 advances an exact §1.5-built koji configuration, and enter §1.9C dual-cassette only after both single-cassette arms
 pass. This preserves lab-access momentum without spending the full dual-cassette budget on an
 unselected UOX architecture.</p>
 <p>Negative results are useful. They can eliminate a topology, separate prevention from flare

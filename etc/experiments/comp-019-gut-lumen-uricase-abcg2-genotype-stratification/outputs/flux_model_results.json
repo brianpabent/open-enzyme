@@ -1,6 +1,20 @@
 {
   "_metadata": {
     "model_version": "comp-019 v1.0",
+    "status": "invalidated",
+    "superseded_by": "comp-044",
+    "invalidation_reason": "The model omitted physiological luminal-urate occupancy and finite residence/exposure time. Its quantitative verdict is not decision-usable.",
+    "surviving_result_scope": [
+      "Phase A found no Q141K-stratified uricase clinical outcome in the sources searched for comp-019 as of 2026-05-08."
+    ],
+    "do_not_use_for": [
+      "serum-urate effect prediction",
+      "dose selection",
+      "ABCG2 genotype-response ranking",
+      "flat-dose or substrate-limited classification",
+      "yield-priority decisions",
+      "trial-arm design"
+    ],
     "model_assumptions": [
       "ABCG2 operates in linear regime in vivo (lumen urate ~0.6 uM << Km 8240 uM)",
       "Uricase clamps lumen urate to ~0; sink amplification factor 0.40 (40% of secreted urate would have been reabsorbed without uricase)",

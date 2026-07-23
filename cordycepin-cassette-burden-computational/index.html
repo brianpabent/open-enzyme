@@ -53,6 +53,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1064,13 +1066,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1126,13 +1121,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -1522,13 +1510,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1557,13 +1538,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1591,13 +1565,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -3593,13 +3560,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3962,7 +3922,7 @@
     
   
   
-    <span class="md-status md-status--Reopened"></span>
+    <span class="md-status md-status--Open"></span>
   
 
   
@@ -4437,6 +4397,31 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cordycepin Cassette Metabolic Burden (comp-023)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete (v1) — target deprioritized 2026-05-16"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -4460,6 +4445,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#current-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidence-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence boundary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reopen-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reopen gate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifact-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifact links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4714,7 +4762,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1; all three architectures GREEN under reference conditions; chassis-pending §6 H₂O₂ housekeeping risk resolved)"></span>
+    <span class="md-status md-status--complete (frozen v1; non-decision-grade Phase-0 prior; empirical peroxide and tissue-safety gates open)"></span>
   
 
   
@@ -5396,27 +5444,19 @@
   
 
 
-<blockquote>
-<p><strong>Target deprioritized 2026-05-16 — koji-cordycepin engineering removed from active cassette stack.</strong> Strategic call during 2026-05-15 sweep walkthrough Item 7. comp-023's GREEN verdict on metabolic burden stands as a successful methodology validation (FBA on iWV1314 works; cytosolic-cassette burden modeling is reliable), but cordycepin is no longer an active koji engineering target. Three reasons:</p>
-<ol>
-<li><strong>No novel chokepoint coverage.</strong> Cordycepin's chokepoint targets (URAT1 modulation, AMPK / mitochondrial NLRP3-priming dampening) are already covered by the <a href="../medicinal-mushroom-complement-track/">medicinal-mushroom-complement-track</a> via cultivation of <em>Cordyceps militaris</em>, which natively co-produces cordycepin with pentostatin at the co-evolved ratio. Engineering cordycepin into koji duplicates coverage that exists in a peer track at a different chassis (cultivation vs. genetic engineering).</li>
-<li><strong>Open dose-vs-achievable-titer gap.</strong> comp-023 verified metabolic feasibility (cell carries the cassette at Jeennor 2023's 564 mg/L/day single-cassette optimized titer) but did NOT analyze whether that titer translates to a therapeutic dose in realistic home-fermentation conditions on a multi-cassette strain (uricase + lactoferrin competing for resources). Back-of-envelope at Jeennor's titer in a typical home batch lands at the LOW end of published nutraceutical doses (~70–280 mg/day vs 250–1500 mg/day target), assuming optimal titer transfer to home conditions and no multi-cassette penalty — both optimistic. The titer-to-therapeutic-dose conversion question was treated as out-of-scope by comp-023 and has not been closed by any subsequent analysis.</li>
-<li><strong>Commercial availability.</strong> Cordycepin from cultivated <em>C. militaris</em> extract is widely available at $20–60/month nutraceutical pricing, with native pentostatin co-protection. The current configuration criterion — non-duplicative coverage with a reason to use the koji chassis — does not justify the engineering complexity (three open follow-up gates: comp-025 ADA substrate competition, comp-026 multi-cassette induction interference, comp-023 v2 dynamic FBA validation) for a payload that delivers no novel coverage and may not reach therapeutic dose anyway.</li>
-</ol>
-<p>The active cordycepin route is cultivation per <a href="../medicinal-mushroom-complement-track/"><code>medicinal-mushroom-complement-track.md</code></a>. The current named koji configuration is uricase + lactoferrin, plus an optional cytosolic third cassette conditional on its titer and burden gates. DAF SCR1-4 remains a separate-strain or LBP-chassis target rather than a third secreted cassette. See <a href="../koji-endgame-strain/"><code>koji-endgame-strain.md</code> §"Cordycepin third-cassette slot — deprioritized"</a>. comp-025 / comp-026 / comp-023 v2 are marked Deprioritized in <a href="../computational-experiments/"><code>computational-experiments.md</code></a>.</p>
-</blockquote>
 <h1 id="cordycepin-cns1cns2-cassette-metabolic-burden-computational-analysis-comp-023">Cordycepin (cns1+cns2) Cassette Metabolic Burden: Computational Analysis (comp-023)<a class="headerlink" href="#cordycepin-cns1cns2-cassette-metabolic-burden-computational-analysis-comp-023" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p><strong>⚠️ Verdict caveated (comp-review 2026-07-14).</strong> The qualitative conclusion (Jeennor-scale cns1+cns2 unlikely to be a prohibitive <strong>stoichiometric-FBA</strong> burden) is plausible, but the artifact-summary contract is not clean — treat as a heuristic burden prior, not a validated flux result.</p>
-<p>This wiki stub remains so cross-references resolve and the page stays discoverable.
-Computational analyses are write-once artifacts; the daemon does not need to re-read
-them on every sweep, so the long content lives next to the experiment that produced it
-at <code>etc/experiments/comp-023-cns1-cns2-metabolic-burden/</code>.</p>
-</blockquote>
-<p>Does adding the bacterial <strong>cns1+cns2 cordycepin biosynthesis pathway</strong> (Jeennor 2023, <a href="https://pubmed.ncbi.nlm.nih.gov/38071331/">PMID 38071331</a>, 564 mg/L/day in <em>A. oryzae</em>) on top of the dual uricase + lactoferrin cassette in the <a href="../koji-endgame-strain/">koji-endgame-strain</a> §1 design impose a prohibitive metabolic burden, defined by:</p>
-<p><strong>Where the analysis lives:</strong>
-- Experiment directory (inputs, scripts, outputs): <a href="./etc/experiments/comp-023-cns1-cns2-metabolic-burden/"><code>./etc/experiments/comp-023-cns1-cns2-metabolic-burden/</code></a>
-- Computational experiments index: <a href="../computational-experiments/"><code>computational-experiments.md</code></a></p>
+<h2 id="current-status">Current status<a class="headerlink" href="#current-status" title="Permanent link">&para;</a></h2>
+<p>The <em>cns1+cns2</em> cordycepin cassette is deprioritized. Cultivated <em>Cordyceps militaris</em> remains the controlled-material route for investigating native cordycepin/pentostatin biology; there is no current reason to add a cordycepin cassette to an engineered <em>A. oryzae</em> configuration.</p>
+<h2 id="evidence-boundary">Evidence boundary<a class="headerlink" href="#evidence-boundary" title="Permanent link">&para;</a></h2>
+<p>Jeennor et al. reported heterologous cordycepin production in <em>A. oryzae</em> at 564.64 ± 9.59 mg/L/day under their optimized conditions (<a href="https://pubmed.ncbi.nlm.nih.gov/38071331/">PMID 38071331</a>). COMP-023 asked whether the modeled <em>cns1+cns2</em> pathway imposed a prohibitive stoichiometric burden in iWV1314. Its qualitative result is a heuristic burden prior, not a validated flux result. It does not establish multi-cassette growth, cordycepin productivity, material identity, delivered exposure, safety, or efficacy.</p>
+<h2 id="reopen-gate">Reopen gate<a class="headerlink" href="#reopen-gate" title="Permanent link">&para;</a></h2>
+<p>Reconsider the cassette only if a non-duplicative biological role requires cordycepin production in the same exact configuration. A new experiment would need a current model and exact construct inputs, prespecified burden and productivity rules, independent pre-run and post-run review, and wet-lab confirmation of growth and product identity.</p>
+<h2 id="artifact-links">Artifact links<a class="headerlink" href="#artifact-links" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Experiment directory (inputs, scripts, outputs): <a href="./etc/experiments/comp-023-cns1-cns2-metabolic-burden/"><code>./etc/experiments/comp-023-cns1-cns2-metabolic-burden/</code></a></li>
+<li>Computational experiments index: <a href="../computational-experiments/"><code>computational-experiments.md</code></a></li>
+<li>Related native-compound track: <a href="../medicinal-mushroom-complement-track/"><code>medicinal-mushroom-complement-track.md</code></a></li>
+</ul>
 
 
 

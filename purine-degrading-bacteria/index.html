@@ -53,6 +53,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1064,13 +1066,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1126,13 +1121,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -1522,13 +1510,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1557,13 +1538,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1591,13 +1565,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -2706,10 +2673,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#commercial-availability" class="md-nav__link">
+  <a href="#implementation-constraints" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Commercial Availability
+        Implementation constraints
       
     </span>
   </a>
@@ -2739,15 +2706,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#oe-platform-implications" class="md-nav__link">
+  <a href="#engineering-implications" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OE Platform Implications
+        Engineering implications
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="OE Platform Implications">
+    <nav class="md-nav" aria-label="Engineering implications">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2784,10 +2751,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tiered-intervention-ranking" class="md-nav__link">
+  <a href="#candidate-experiment-classes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tiered intervention ranking
+        Candidate experiment classes
       
     </span>
   </a>
@@ -2808,6 +2775,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Open Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#research-conjecture-selenium-availability-may-gate-microbial-urate-disposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research conjecture — selenium availability may gate microbial urate disposal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2823,10 +2807,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#companion-intervention-compounded-disulfiram-cp6b-downstream" class="md-nav__link">
+  <a href="#downstream-interaction-hypothesis-gsdmd-blockade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Companion intervention: compounded disulfiram (CP6b downstream)
+        Downstream interaction hypothesis: GSDMD blockade
       
     </span>
   </a>
@@ -3974,13 +3958,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -4343,7 +4320,7 @@
     
   
   
-    <span class="md-status md-status--Reopened"></span>
+    <span class="md-status md-status--Open"></span>
   
 
   
@@ -5085,7 +5062,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1; all three architectures GREEN under reference conditions; chassis-pending §6 H₂O₂ housekeeping risk resolved)"></span>
+    <span class="md-status md-status--complete (frozen v1; non-decision-grade Phase-0 prior; empirical peroxide and tissue-safety gates open)"></span>
   
 
   
@@ -5909,7 +5886,7 @@
 <li><strong>Diet pushing high purine load through the first step faster than downstream can clear</strong> — high purine intake elevates substrate flux; downstream throughput is the rate-limiter.</li>
 <li><strong>Genuine PDB depletion at the strain level</strong> — fewer PDB-positive bacteria overall reduces total flux but elevates intermediate accumulation.</li>
 </ol>
-<p>This is <strong>more informative than 16S sequencing for gut PDB capacity</strong> — sequencing tells you which bacteria are present; serum yanthine tells you whether the pathway is actually moving urate through to SCFAs at meaningful rates. For self-experiment design (see <a href="../self-experiment-protocol/"><code>self-experiment-protocol.md</code> §11.0</a>), yanthine + selenium + 16S together would triangulate which of the four causes above is gating an individual.</p>
+<p>These measurements answer different questions: sequencing estimates which organisms and genes are present, whereas yanthine and downstream carbon products test whether the pathway is active. A controlled study would need both, together with selenium status and validated carbon-fate measurements, to distinguish pathway absence from pathway inactivity.</p>
 <h3 id="gnotobiotic-mouse-evidence">Gnotobiotic Mouse Evidence<a class="headerlink" href="#gnotobiotic-mouse-evidence" title="Permanent link">&para;</a></h3>
 <p><em>Uox</em>⁻/⁻ mice (no functional uricase, approximating human physiology) + antibiotic cocktail → severe hyperuricemia + acute kidney injury. Colonization with urate-consuming anaerobic PDB reversed this. (Animal Model — uricase-deficient murine model)</p>
 <p><strong>Fitness competition experiment:</strong> Gnotobiotic mice co-colonized with WT <em>C. sporogenes</em> and DOPDH-mutant <em>C. sporogenes</em> on high-urate diet. By day 7, the mutant was barely detectable; WT remained stably colonized. Fitness advantage detectable at 24h. Mechanism: urate is a carbon and nitrogen source. (Animal Model, gnotobiotic)</p>
@@ -5924,7 +5901,7 @@
 - Intestinal barrier repair → reduced bacterial translocation → reduced systemic LPS → reduced NLRP3 priming</p>
 <p><strong>Net-effect hypothesis:</strong> PDB directly degrade luminal urate. Additional SCFA effects require organism-specific carbon-fate, epithelial-exposure, and functional assays; they cannot currently support a PDB-superiority or Q141K-rescue claim.</p>
 <h3 id="q141k-rescue-is-not-yet-attributable-to-pdb-derived-butyrate">Q141K rescue is not yet attributable to PDB-derived butyrate<a class="headerlink" href="#q141k-rescue-is-not-yet-attributable-to-pdb-derived-butyrate" title="Permanent link">&para;</a></h3>
-<p>Basseville et al. 2012 (PMID 22472121) established that chemical chaperone/HDAC-directed perturbation can rescue folding and trafficking of Q141K ABCG2 <strong>in vitro</strong>. It did not demonstrate that butyrate produced by a PDB strain reaches the relevant enterocyte compartment or reproduces that rescue. The previous version of this page incorrectly presented that composed chain as a natural genotype-targeted therapy.</p>
+<p>Basseville et al. 2012 (PMID 22472121) established that chemical chaperone/HDAC-directed perturbation can rescue folding and trafficking of Q141K ABCG2 <strong>in vitro</strong>. It did not demonstrate that butyrate produced by a PDB strain reaches the relevant enterocyte compartment or reproduces that rescue.</p>
 <p>Two separate questions remain:</p>
 <ol>
 <li>Does the chosen PDB chassis actually produce butyrate from urate? Full-pathway <em>C. sporogenes</em> has isotope-tracing precedent, but CBT2.0 carbon fate was not resolved to butyrate in the cited efficacy study.</li>
@@ -5933,24 +5910,17 @@
 <p>The first is addressed by <a href="../validation-experiments/#137-cbt20-carbon-fate-and-pdb-self-niche-test">validation experiment 1.37</a>; the second remains in <a href="../validation-experiments/#114-abcg2-response-to-dht-and-tnf-with-butyrate-and-lactoferrin-rescue">validation experiment 1.14</a>. Until both pass, PDB→butyrate→Q141K rescue is <strong>Mechanistic Extrapolation</strong>, not an intervention claim.</p>
 <hr />
 <h2 id="the-alistipes-indistinctus-hippuric-acid-abcg2-axis">The Alistipes indistinctus / Hippuric Acid / ABCG2 Axis<a class="headerlink" href="#the-alistipes-indistinctus-hippuric-acid-abcg2-axis" title="Permanent link">&para;</a></h2>
-<p>Mechanistically distinct from PDB but directly relevant and additive. (Xu et al. 2024, Cell Host &amp; Microbe, PMID 38412863; Animal Model + Human Observational)</p>
+<p>This is mechanistically distinct from PDB. Whether the two axes interact additively, redundantly, or antagonistically is untested. (Xu et al. 2024, <em>Cell Host &amp; Microbe</em>, PMID 38412863; Animal Model + Human Observational)</p>
 <p><em>Alistipes indistinctus</em> is depleted in hyperuricemia subjects. It produces hippuric acid via aromatic amino acid catabolism. Hippuric acid:
 - Enhances PPARγ binding to the ABCG2 promoter → ABCG2 transcriptional upregulation
 - Promotes ABCG2 localization to brush border membranes via PDZK1 (a PDZ-domain scaffold that retains ABCG2 at the apical membrane)
 - <em>A. indistinctus</em> gavage decreased serum urate to baseline in mouse models</p>
-<p>The dietary precursor pathway: polyphenol-rich foods → gut catabolism → hippuric acid → ABCG2 upregulation. Foods with relevant benzoic acid / hippuric acid precursors: tea, berries, citrus.</p>
-<p><strong>OE relevance:</strong> Both PDB (via butyrate) and <em>A. indistinctus</em> (via hippuric acid) converge on PPARγ → ABCG2. A combined prebiotic strategy — fiber to boost PDB (generating butyrate) + dietary support for <em>A. indistinctus</em> (generating hippuric acid) — could have additive ABCG2 induction. Neither requires an engineered organism. This is the highest-leverage, lowest-regulatory-complexity intervention in the gut compartment.</p>
+<p>Dietary precursors may contribute to hippuric-acid production through gut metabolism, but precursor intake does not establish <em>A. indistinctus</em> abundance, target-compartment exposure, ABCG2 flux, or a gout effect.</p>
+<p><strong>Research implication:</strong> PDB-derived products and the <em>A. indistinctus</em> / hippuric-acid axis may converge on PPARγ → ABCG2. Test each axis independently, then compare the combination against a prespecified interaction null with direct metabolite, ABCG2-surface, and urate-flux readouts.</p>
 <p>See <a href="../abcg2-modulators/">abcg2-modulators.md</a> for the full PPARγ → ABCG2 mechanism.</p>
 <hr />
-<h2 id="commercial-availability">Commercial Availability<a class="headerlink" href="#commercial-availability" title="Permanent link">&para;</a></h2>
-<p><strong>Direct PDB organisms (obligate anaerobes, full pathway) — NOT commercially available:</strong>
-- <em>Clostridium sporogenes</em>, <em>Lacrimispora saccharolytica</em>, <em>Enterocloster bolteae</em>, <em>Hungatella hathewayi</em>: all are obligate or strict anaerobes. Manufacturing under commercial conditions is technically challenging — oxygen exposure kills them during production, encapsulation, and storage. No PDB-focused probiotic is currently registered or marketed for gout or hyperuricemia.</p>
-<p><strong>Adjacents that are near-PDB but without the full pathway:</strong>
-- <em>Roseburia intestinalis</em> (Lachnospiraceae): keystone butyrate producer, strict anaerobe; in development for IBD
-- <em>Faecalibacterium prausnitzii</em>: butyrate producer, strict anaerobe; some European products
-- Pendulum Life (formerly Pendulum Therapeutics): sells butyrate-producing Clostridia for metabolic health; not PDB-targeted for gout</p>
-<p><strong>Fermented foods (Lactobacillus-based) — not the PDB mechanism:</strong>
-Some Lactobacillus strains from kimchi, natto, miso, and Yunnan traditional fermented foods show uric acid degradation in vitro — but this is the nucleoside hydrolase pathway (iunH, yxjA, rihA, rihC), not the 2,8-dioxopurine gene cluster. Mechanism, products, and magnitude are different. The 0.5–1.0 mg/dL SUA reduction seen in Lactobacillus probiotic trials likely reflects a combination of XO inhibition and nucleoside degradation, not SCFA production.</p>
+<h2 id="implementation-constraints">Implementation constraints<a class="headerlink" href="#implementation-constraints" title="Permanent link">&para;</a></h2>
+<p>Full-pathway organisms such as <em>C. sporogenes</em>, <em>L. saccharolytica</em>, <em>E. bolteae</em>, and <em>H. hathewayi</em> are strict or obligate anaerobes. Any live configuration must establish identity, pathway activity, oxygen tolerance through manufacture and storage, delivery, persistence, shedding, community effects, and containment. Adjacent butyrate producers and Lactobacillus strains do not establish the 2,8-dioxopurine mechanism; strain identity and carbon fate must be measured directly.</p>
 <hr />
 <h2 id="quantitative-magnitude-current-evidence-bounds">Quantitative Magnitude — Current Evidence Bounds<a class="headerlink" href="#quantitative-magnitude-current-evidence-bounds" title="Permanent link">&para;</a></h2>
 <p>The critical unresolved question: in a patient with established hyperuricemia and intact renal function (the typical gout patient, not an Uox⁻/⁻ mouse), how much SUA reduction does restoration of PDB-normal gut abundance produce?</p>
@@ -6008,8 +5978,7 @@ Some Lactobacillus strains from kimchi, natto, miso, and Yunnan traditional ferm
 </tr>
 </tbody>
 </table>
-<p><strong>Mechanistic extrapolation:</strong> The gut handles ~33% of daily urate elimination. If PDB depletion impairs this by 40–50% (per fecal urate data), that's ~15–20% of total daily elimination compromised. Restoring it could recover ~0.5–1.5 mg/dL SUA in a hyperuricemic patient — highly uncertain, depends on renal compensation and baseline gut urate flux. (Mechanistic Extrapolation)</p>
-<p>The pharmacotherapy bar for context: allopurinol typically lowers SUA by 2–4 mg/dL. The target is &lt;6.0 mg/dL. PDB restoration is unlikely to achieve this alone in established hyperuricemia but is meaningful as adjunctive therapy and potentially sufficient for prevention-stage intervention.</p>
+<p>The animal and observational results do not support a human serum-urate forecast. Renal compensation, baseline intestinal flux, pathway abundance, terminal carbon fate, and target-compartment exposure must be measured before estimating clinical magnitude.</p>
 <hr />
 <h2 id="cofactor-requirements-selenium-and-molybdenum">Cofactor Requirements: Selenium and Molybdenum<a class="headerlink" href="#cofactor-requirements-selenium-and-molybdenum" title="Permanent link">&para;</a></h2>
 <p>The DOPDH enzyme requires both selenium (via SelD selenophosphate synthase) and the molybdenum cofactor. Both are co-localized in the PDB gene cluster (Liu et al. 2025; PMC11448449).</p>
@@ -6017,15 +5986,13 @@ Some Lactobacillus strains from kimchi, natto, miso, and Yunnan traditional ferm
 <li><strong>Selenium:</strong> The selenium-dependent variant of DOPDH has ~27x higher turnover than the sulfur-dependent variant. Selenium RDA is 55 μg/day; selenium deficiency is common in regions with selenium-poor soils (parts of China, eastern Europe, sub-Saharan Africa). In vitro: selenium concentration affects DOPDH activity.</li>
 <li><strong>Molybdenum:</strong> Rarely deficient in well-fed populations; cofactor for human XO as well. <strong>Bidirectional effect on urate:</strong> XO uses Mo-pterin to PRODUCE urate (low Mo → low XO → less urate produced — beneficial for hyperuricemia); DOPDH uses Mo-pterin to DEGRADE urate (low Mo → low DOPDH → less PDB disposal — harmful for hyperuricemia). The two effects oppose each other; net direction depends on which step is rate-limiting in a given individual. Liu et al. 2025 cites correlations between lower urinary molybdenum and higher serum urate, suggesting the disposal side dominates at the population level — but this is correlational and uncertain.</li>
 </ul>
-<p><strong>Clinical implication (Mechanistic Extrapolation):</strong> Selenium deficiency could phenocopy PDB functional depletion even when PDB bacteria are present in the gut at normal abundance. <strong>Selenium adequacy is asymmetric</strong> — it strongly enhances DOPDH (PDB disposal side) without affecting XO (XO is sulfur-cofactor based). So selenium adequacy is a <strong>one-way bet</strong> for hyperuricemia: clean upside if PDB-flux-limited, no downside if not. <strong>Molybdenum is bidirectional</strong> — supplementation could help (more PDB disposal) or hurt (more XO urate production); DON'T extrapolate the selenium recommendation to molybdenum without per-person testing. If serum selenium tracks with serum urate after controlling for diet and renal function, targeted selenium supplementation (55–200 μg/day; safe range) could be a trivially cheap and safe intervention. No interventional data in gout — this is an open question.</p>
+<p><strong>Mechanistic extrapolation:</strong> Selenium or molybdenum availability could alter pathway activity, but the direction and human relevance cannot be inferred from enzyme requirements alone. Measure cofactor status, PDB abundance, pathway flux, human XO activity, and urate handling together before considering an intervention.</p>
 <p><strong>Correlation data:</strong> Liu et al. 2025 cites correlations between lower urinary molybdenum and higher serum urate / gout incidence; quantitative data not extracted from available sources.</p>
 <hr />
-<h2 id="oe-platform-implications">OE Platform Implications<a class="headerlink" href="#oe-platform-implications" title="Permanent link">&para;</a></h2>
+<h2 id="engineering-implications">Engineering implications<a class="headerlink" href="#engineering-implications" title="Permanent link">&para;</a></h2>
 <h3 id="heterologous-gene-cluster-expression-the-cbt20-precedent">Heterologous gene cluster expression: the CBT2.0 precedent<a class="headerlink" href="#heterologous-gene-cluster-expression-the-cbt20-precedent" title="Permanent link">&para;</a></h3>
 <p>The Life Metabolism 2025 paper demonstrates <strong>CBT2.0</strong> — <em>E. coli</em> overexpressing the full uric acid degradation gene cluster — reduced plasma UA by <strong>63%</strong> in hyperuricemic mice (463 → 172 μmol/L over 6 weeks). (Animal Model — engineered organism)</p>
-<p>This is the most strategically significant finding for the OE platform:</p>
-<p><strong>EcN chassis:</strong> <em>E. coli</em> Nissle 1917 is both the CBT2.0 and PULSE chassis, which establishes engineering feasibility for the two modules separately. It does <strong>not</strong> establish that a combined strain is additive: both UOX and the reductive PDB pathway can compete for luminal urate, and CBT2.0's downstream carbon products were not fully resolved in the efficacy study. Treat urate removal, carbon fate, and epithelial signaling as separate measurements.</p>
-<p><strong>Koji is the wrong chassis for this — but the intervention is real, the chassis question is open.</strong> DOPDH requires SelD (prokaryote-specific selenophosphate synthase) and is an obligate anaerobic enzyme. Both properties make the PDB gene cluster incompatible with <em>A. oryzae</em> (eukaryote, aerobic fermentation). <em>S. boulardii</em> has the same issue (eukaryote, no SelD pathway, aerobic). <strong>This does not deprioritize PDB as an intervention — it names the chassis question.</strong> Candidate chassis include engineered EcN (CBT2.0 precedent above; facultative anaerobe with native SelD), defined-strain anaerobic probiotic (<em>C. sporogenes</em> / <em>Lacrimispora saccharolytica</em>; oxygen-sensitive manufacturing is the barrier), FMT, and prebiotic enrichment. Chassis selection is the next question, not the filter that kills the first one. Tracked in <a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §1</a>. Koji remains the right chassis for the uricase / ABCG2 / lactoferrin / DAF SCR1-4 multi-cassette path; PDB is a parallel intervention with a parallel chassis question.</p>
+<p>CBT2.0 and PULSE establish that distinct engineered configurations can be studied in EcN; they do not establish a combined strain, pathway additivity, carbon products, epithelial signaling, or human translation. DOPDH's SelD and anaerobic requirements constrain the eligible host set, but no host is preselected. Compare exact candidate configurations on pathway completion, carbon fate, activity under relevant oxygen conditions, stability, containment, and safety before choosing a host or topology. See <a href="../chassis-pending-interventions/"><code>chassis-pending-interventions.md</code> §1</a>.</p>
 <h3 id="prebiotic-approach-the-fiber-finding-is-load-bearing">Prebiotic approach: the fiber finding is load-bearing<a class="headerlink" href="#prebiotic-approach-the-fiber-finding-is-load-bearing" title="Permanent link">&para;</a></h3>
 <p>The FARMM fiber-free (EEN) subgroup showed persistent fecal urate elevation even after antibiotic depletion ended, while omnivore and vegan groups normalized rapidly. The returning PDB families (Oscillospiraceae, Lachnospiraceae, Clostridiaceae) are fiber-dependent. This is a clean prebiotic signal.</p>
 <ul>
@@ -6037,18 +6004,12 @@ Some Lactobacillus strains from kimchi, natto, miso, and Yunnan traditional ferm
 <h3 id="natural-colonization-persistence-advantage">Natural colonization persistence advantage<a class="headerlink" href="#natural-colonization-persistence-advantage" title="Permanent link">&para;</a></h3>
 <p>PDB are commensal anaerobes that stably colonize the gut (demonstrated by the gnotobiotic fitness competition: WT <em>C. sporogenes</em> remained stably colonized at day 7; DOPDH-mutant was undetectable). This is categorically different from transit probiotics (Lactobacillus, <em>S. boulardii</em>) which require daily dosing. If native PDB taxa are restored via probiotic or FMT with concurrent fiber diet, they may persist without continuous supplementation.</p>
 <p>Strategic implication: a one-time or short-course PDB inoculation + maintained fiber diet could produce durable urate lowering, whereas engineered transit probiotics require indefinite daily dosing. The caveat: modern dysbiotic conditions (low-fiber diet, antibiotic exposure, CKD) continuously deplete PDB taxa, potentially requiring maintenance supplementation.</p>
-<h3 id="tiered-intervention-ranking">Tiered intervention ranking<a class="headerlink" href="#tiered-intervention-ranking" title="Permanent link">&para;</a></h3>
-<p><strong>Tier 1 — Implementable now, no regulatory barrier:</strong>
-- High-fiber diet / Mediterranean diet: enriches PDB, raises butyrate, activates ABCG2 via PPARγ. Effect: ~0.25–1.0 mg/dL SUA reduction (fiber RCT data). Additive to pharmacotherapy.
-- Inulin/FOS supplementation: ~10% SUA reduction (animal + small human). OTC.
-- Selenium adequacy: theoretical; no gout-specific interventional data.</p>
-<p><strong>Tier 2 — Near-term (1–3 years):</strong>
-- Engineered EcN expressing PDB gene cluster: CBT2.0 precedent (−63% plasma UA in mice). Requires safety evaluation + GMP manufacturing.
-- FMT from PDB-rich donors: proof-of-concept for gout FMT exists (case reports). Regulatory pathway exists for some FMT indications.
-- <em>Alistipes indistinctus</em> enrichment: no commercial supplement; potentially achievable via diet (polyphenol-rich foods for hippuric acid precursors).</p>
-<p><strong>Tier 3 — Platform development (3–10 years):</strong>
-- GMP-grade anaerobic PDB probiotic (<em>C. sporogenes</em> or <em>Lacrimispora saccharolytica</em>): technically feasible but oxygen-sensitive manufacturing is cost-intensive.
-- Dual-mechanism EcN (PULSE uricase + PDB pathway): combination topology is <strong>open, not optimal</strong> (the "optimal" claim came from the invalidated comp-031) — gated by comp-044/045/046 and validation §1.33/§1.37; highest complexity.</p>
+<h3 id="candidate-experiment-classes">Candidate experiment classes<a class="headerlink" href="#candidate-experiment-classes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Controlled prebiotic or community perturbation with pathway-abundance, isotope-flux, intestinal urate, and safety readouts.</li>
+<li>Exact engineered or native-strain configuration tests with identity, pathway completion, carbon fate, oxygen tolerance, stability, containment, and host-response measurements.</li>
+<li>Combination testing only after the individual mechanisms pass, using a prespecified interaction model and matched residual-flux measurements.</li>
+</ul>
 <hr />
 <h2 id="open-questions">Open Questions<a class="headerlink" href="#open-questions" title="Permanent link">&para;</a></h2>
 <ol>
@@ -6062,8 +6023,18 @@ Some Lactobacillus strains from kimchi, natto, miso, and Yunnan traditional ferm
 <p><strong>PDB gene cluster abundance in characterized gout patient populations.</strong> The dysbiosis cohort data is suggestive but the specific 8-gene PDB cluster (as defined by Liu et al. 2023) has not been prospectively quantified in a well-characterized gout population with SUA and flare data. Needed to define the therapeutic target population.</p>
 </li>
 <li>
-<p><strong>Selenium status and gut PDB function in humans.</strong> Ecological correlation cited in Liu et al. 2025 but no interventional data. If selenium deficiency phenocopies PDB functional depletion, selenium supplementation could be a trivial, cheap, safe intervention. Testable by correlating serum selenium with fecal PDB gene cluster abundance in existing cohorts.</p>
+<p><strong>Selenium availability as a possible PDB flux gate.</strong> See the bounded Research Conjecture below.</p>
 </li>
+</ol>
+<h3 id="research-conjecture-selenium-availability-may-gate-microbial-urate-disposal">Research conjecture — selenium availability may gate microbial urate disposal<a class="headerlink" href="#research-conjecture-selenium-availability-may-gate-microbial-urate-disposal" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong class="research-conjecture-label">Research conjecture — Selenium availability may gate microbial urate disposal</strong></p>
+<p><strong>Grounded premises:</strong> DOPDH, the entry enzyme in the reductive bacterial urate pathway, is selenium-dependent (<strong>In Vitro</strong>; Liu, Zhou, Jarman et al. 2025, PMID 40770490). The same source discusses population associations between trace-element status and urate, but no human study jointly measures selenium, microbial pathway abundance, pathway flux, and serum urate.</p>
+<p><strong>Novel leap:</strong> Suboptimal selenium might create a host-dietary bottleneck that phenocopies low PDB pathway activity even when the organisms and genes are present. No direct evidence from a human cohort or intervention establishes this.</p>
+<p><strong>Why it matters:</strong> A host-side cofactor constraint could explain part of the gap between PDB abundance and actual urate disposal without assuming that strain abundance alone is the therapeutic target.</p>
+<p><strong>Discriminating observation:</strong> Pair serum selenium, fecal PDB gene-cluster abundance, isotope-resolved urate-to-yanthine/downstream flux, and serum urate in one cohort; use ex-vivo selenium perturbation to test whether flux changes independently of abundance.</p>
+</blockquote>
+<ol>
 <li>
 <p><strong>Which specific fiber types most selectively expand PDB taxa.</strong> Inulin/FOS enriches Lachnospiraceae/Ruminococcaceae broadly; whether this preferentially expands the PDB-positive fraction (15–25% of this community) vs. PDB-negative members is unknown. Needed for rational prebiotic design.</p>
 </li>
@@ -6074,7 +6045,7 @@ Some Lactobacillus strains from kimchi, natto, miso, and Yunnan traditional ferm
 <p><strong>Heterologous expression of the full 8-gene cluster (including selenoprotein DOPDH) in EcN at therapeutic levels.</strong> CBT2.0 demonstrates feasibility in mice; GI survival under human luminal conditions, expression stability, and the selenoprotein handling in EcN are uncharacterized.</p>
 </li>
 <li>
-<p><strong>No clinical trial of PDB-targeted intervention (probiotic, FMT, prebiotic) for gout is registered as of May 2026.</strong> This is genuinely pre-competitive territory.</p>
+<p><strong>Clinical translation.</strong> Identify or conduct controlled human studies that measure pathway activity, urate flux, safety, and attribution for an exact PDB-targeted intervention.</p>
 </li>
 </ol>
 <hr />
@@ -6082,14 +6053,14 @@ Some Lactobacillus strains from kimchi, natto, miso, and Yunnan traditional ferm
 <p>The gut compartment currently has two active OE tracks:
 - <strong>Engineered uricase in gut lumen</strong> (PULSE probiotic chassis, <em>S. boulardii</em> / EcN): degrades luminal urate to allantoin. See <a href="../gut-lumen-sink/">gut-lumen-sink.md</a>.
 - <strong>ABCG2 upregulation via butyrate/PPARγ</strong> and <strong>hippuric acid/PPARγ</strong> axes: enhance intestinal urate secretion. See <a href="../abcg2-modulators/">abcg2-modulators.md</a>.</p>
-<p>PDB adds a third gut track with distinct products and compounding effects:
-- Direct anaerobic urate degradation (<strong>conditionally complementary</strong> to a uricase-based gut sink — comp-046 found a near-zero median architecture difference between staged and well-mixed access; additivity is <em>not</em> automatic and requires measured residual transfer/overlap/products, not assumed)
-- Butyrate production → ABCG2 upregulation + XO inhibition + NLRP3 dampening (compounding the ABCG2 track)</p>
+<p>PDB adds a third gut track with distinct products and unresolved interactions:
+- direct anaerobic urate degradation, whose relation to a UOX sink depends on residual transfer, shared-pool overlap, and product measurements;
+- possible SCFA-mediated host effects, conditional on organism-specific carbon fate and target-compartment exposure.</p>
 <p>In the <a href="../gout-kill-chain-delivery-routes/">delivery routes table</a>, PDB is listed under the PO Microbiome route for the uricase axis. It should be understood as a parallel axis with independent mechanism — not just a delivery variant.</p>
 <p>The bacterial-track priority is now <strong>staged mechanism resolution</strong>, not a dual-cassette EcN efficacy prediction. <a href="../staged-purine-sink-mass-balance-computational/">comp-046</a> provides two separate conditional results: the dietary sign depends on microbial salvage/retention and relative base absorption, while the endogenous architecture difference depends on residual transfer and shared-pool overlap. It does not test their sequence jointly; each grid is a design-space occupancy analysis, not a probability or ΔSUA forecast.</p>
-<h3 id="companion-intervention-compounded-disulfiram-cp6b-downstream">Companion intervention: compounded disulfiram (CP6b downstream)<a class="headerlink" href="#companion-intervention-compounded-disulfiram-cp6b-downstream" title="Permanent link">&para;</a></h3>
-<p>PDB acts <em>upstream</em> of NLRP3 — by draining luminal urate and inducing ABCG2 (via butyrate), it reduces the substrate that would have seeded MSU crystals in the first place. It does not, on its own, prevent the inflammatory amplification cascade if crystal formation has already occurred. Compounded oral disulfiram is the natural companion: it covalently modifies GSDMD Cys191 and blocks the pyroptotic pore that releases IL-1β downstream of NLRP3 firing. See <a href="../disulfiram/"><code>disulfiram.md</code></a> for the CP6b GSDMD mechanism.</p>
-<p>The PDB + downstream anti-inflammatory pairing remains conceptually orthogonal, but its urate-side magnitude is unquantified. <a href="../dual-chassis-ecn-pdb-uricase-computational/">comp-031</a> is invalidated because it inherited the nonphysiologic comp-019 regime, assigned an unsupported butyrate product to engineered EcN, and mixed compartments. Use <a href="../staged-purine-sink-mass-balance-computational/">comp-046</a> and <a href="../validation-experiments/#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux">validation experiments 1.34 and 1.37</a> before choosing one strain, two strains, or temporal staging.</p>
+<h3 id="downstream-interaction-hypothesis-gsdmd-blockade">Downstream interaction hypothesis: GSDMD blockade<a class="headerlink" href="#downstream-interaction-hypothesis-gsdmd-blockade" title="Permanent link">&para;</a></h3>
+<p>PDB acts upstream by degrading luminal urate. A GSDMD inhibitor tests a separate downstream inflammatory node, but mechanistic separation does not establish biological additivity, compatible exposure, or safety. See <a href="../disulfiram/"><code>disulfiram.md</code></a> for the CP6b GSDMD mechanism.</p>
+<p>The pairing remains an interaction hypothesis. <a href="../dual-chassis-ecn-pdb-uricase-computational/">comp-031</a> is unusable for current decisions because it inherits an unsupported flat UOX regime, assigns unmeasured butyrate production to engineered EcN, and mixes compartments. COMP-044 establishes only that the legacy unconditional flat-dose classification is not robust to the tested substrate-occupancy and finite-window diagnostics. Use <a href="../staged-purine-sink-mass-balance-computational/">comp-046</a> and <a href="../validation-experiments/#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux">validation experiments 1.34 and 1.37</a> before choosing one strain, separate strains, temporal staging, or any downstream combination.</p>
 
 
 

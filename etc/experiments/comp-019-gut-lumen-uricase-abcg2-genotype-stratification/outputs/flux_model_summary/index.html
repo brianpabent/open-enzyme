@@ -49,6 +49,8 @@
       
     
     
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1060,13 +1062,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1122,13 +1117,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -1518,13 +1506,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1553,13 +1534,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1587,13 +1561,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -3587,13 +3554,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3956,7 +3916,7 @@
     
   
   
-    <span class="md-status md-status--Reopened"></span>
+    <span class="md-status md-status--Open"></span>
   
 
   
@@ -4698,7 +4658,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1; all three architectures GREEN under reference conditions; chassis-pending §6 H₂O₂ housekeeping risk resolved)"></span>
+    <span class="md-status md-status--complete (frozen v1; non-decision-grade Phase-0 prior; empirical peroxide and tissue-safety gates open)"></span>
   
 
   
@@ -5381,7 +5341,7 @@
 
 
 <blockquote>
-<p><strong>⚠️ INVALIDATED / SUPERSEDED (comp-044 2026-07-13; comp-review 2026-07-14).</strong> comp-019 ΔSUA, capacity ratios, genotype ranking, flat-dose, and yield recommendations are RETIRED — the model omitted luminal urate occupancy and finite residence/exposure time. Do NOT use any comp-019 output for dose, yield-deprioritization, genotype-ranking, or trial-arm design. Superseded by comp-044 (gut-lumen-uricase-physiologic-regime-computational.md); sink question reopened under H08 + validation §1.33/§1.36. Frozen invalidated provenance.</p>
+<p><strong>INVALIDATED / SUPERSEDED by comp-044.</strong> These historical quantitative outputs omit physiological luminal-urate occupancy and finite residence/exposure time. Do not use them for dose, efficacy, genotype ranking, flat-dose, yield, or trial-design decisions. Phase A found no Q141K-stratified uricase clinical outcome in the sources searched for comp-019 as of 2026-05-08.</p>
 </blockquote>
 <h1 id="comp-019-flux-model-results-summary">comp-019 — Flux Model Results Summary<a class="headerlink" href="#comp-019-flux-model-results-summary" title="Permanent link">&para;</a></h1>
 <p>Predicted delta-SUA (mg/dL) at steady state by ABCG2 genotype and uricase dose.</p>
@@ -5562,14 +5522,8 @@ Ratio &lt; 1.0 means capacity-limited (delta-intestinal bounded by enzyme dose).
 <li>Renal compensation offsets 30% of gut delta-flux (sensitivity: 0-50%)</li>
 <li>1<sup>st</sup>-order steady-state approximation for delta-SUA</li>
 </ul>
-<h2 id="headline-interpretation">Headline interpretation<a class="headerlink" href="#headline-interpretation" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>WT/WT non-Q141K males DO show meaningful delta-SUA</strong> in the flux model. The mechanism is not Q141K-dependent.</li>
-<li><strong>Q141K-positive carriers show LESS absolute reduction</strong> because the gut compartment they're losing access to is already partially compromised — the substrate flux that uricase can amplify is smaller.</li>
-<li><strong>Severe ABCG2 dysfunction (~25% functional) shows the smallest absolute response</strong> despite having the highest baseline SUA — the gut compartment is so impaired that even a perfect uricase has little substrate to work with. This is the platform's structural ceiling for the worst-impaired patients.</li>
-<li>The flux model contradicts the binary 'mechanism only works in Q141K' framing. The mechanism works ACROSS genotypes; the magnitude scales with the residual ABCG2 capacity at any given genotype.</li>
-<li><strong>Most platform-relevant conclusion:</strong> the gut-lumen uricase target demographic should NOT be narrowed to Q141K-positive patients. The opposite — non-Q141K patients have the LARGEST per-patient response. Q141K-positive patients are still candidates but for a different reason (high unmet ULT need, allopurinol resistance).</li>
-</ul>
+<h2 id="retired-historical-interpretation-invalid-do-not-use">Retired historical interpretation — invalid; do not use<a class="headerlink" href="#retired-historical-interpretation-invalid-do-not-use" title="Permanent link">&para;</a></h2>
+<p>The original model mapped nominal enzyme capacity to ΔSUA, responder ordering, and dose/yield conclusions without physiological luminal-urate occupancy or finite residence/exposure time. No Phase B interpretation survives. The numerical tables above remain only to reproduce the invalid artifact.</p>
 
 
 

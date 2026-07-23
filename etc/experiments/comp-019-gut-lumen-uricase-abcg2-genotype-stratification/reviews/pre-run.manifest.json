@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
+      "kind": "design",
+      "bytes": 8650,
+      "sha256": "154b8826f43fc0929c9fac40072d8ceca345ef5b096a5651eb00906a26d67cc1"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/inputs/flux_model_parameters.json",
+      "kind": "design",
+      "bytes": 7585,
+      "sha256": "f5c4ac8cc324280ded4f87dec5a9b47b47ba565331f4b7ba021c76b78067bb63"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/inputs/phase_a_literature.json",
+      "kind": "design",
+      "bytes": 19965,
+      "sha256": "027b36b73ab811e87a774a42f5034645a32a3cb9f7778ab588790a73927d875c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/inputs/query_strategy.md",
+      "kind": "design",
+      "bytes": 3424,
+      "sha256": "a4a02041d479eae707512f24b8c72fa93b62f6a96f4fb57146b3d5fabdfb0310"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/scripts/flux_model.py",
+      "kind": "design",
+      "bytes": 20296,
+      "sha256": "63a6af2590f6901bed288fe44ca410af0606247daa8836547593fd2a3c564b58"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/scripts/verify_retirement.py",
+      "kind": "design",
+      "bytes": 5977,
+      "sha256": "2871f25de60b112c87896fab743ea2564af4866de11065b3aeaf81acca5bb51b"
+    }
+  ],
+  "prior_output_baseline": [
+    {
+      "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/flux_model_results.json",
+      "kind": "prior_output",
+      "bytes": 14828,
+      "sha256": "d681d0ff723ad47b612fb5825cdafda82b347eb68dfb31cf06b7a7d3830c12a9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/flux_model_summary.md",
+      "kind": "prior_output",
+      "bytes": 3756,
+      "sha256": "6738ac618de9557bf562a0fde110234c0d681e63cc93e6fa52d2bad42998cae9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/phase_a_table.md",
+      "kind": "prior_output",
+      "bytes": 7263,
+      "sha256": "ef87d4977be18dc3cc8bba7f4f582347cb2d1f8d081dbd31b7b7252ee70b6166"
+    }
+  ],
+  "manifest_sha256": "716dc148ee677b44f340bf2fe072f5f5a4e354c6aa90bbab413ec24f322f6cbb"
+}

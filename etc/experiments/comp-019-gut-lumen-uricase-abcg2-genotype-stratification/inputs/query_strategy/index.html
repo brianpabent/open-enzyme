@@ -49,6 +49,8 @@
       
     
     
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1060,13 +1062,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1122,13 +1117,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -1518,13 +1506,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1553,13 +1534,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1587,13 +1561,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -3587,13 +3554,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3956,7 +3916,7 @@
     
   
   
-    <span class="md-status md-status--Reopened"></span>
+    <span class="md-status md-status--Open"></span>
   
 
   
@@ -4698,7 +4658,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1; all three architectures GREEN under reference conditions; chassis-pending §6 H₂O₂ housekeeping risk resolved)"></span>
+    <span class="md-status md-status--complete (frozen v1; non-decision-grade Phase-0 prior; empirical peroxide and tissue-safety gates open)"></span>
   
 
   
@@ -5417,7 +5377,7 @@
 <h2 id="targeted-queries-keywords">Targeted queries (keywords)<a class="headerlink" href="#targeted-queries-keywords" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>ABCG2 Q141K rs2231142 allopurinol response</code></li>
-<li><code>ABCG2 Q141K febuxostat response gout</code> (no hits → confirms gap)</li>
+<li><code>ABCG2 Q141K febuxostat response gout</code> (no qualifying hit in the comp-019 search)</li>
 <li><code>ABCG2 Q141K Mendelian randomization serum urate</code></li>
 <li><code>ABCG2 dysfunction extra-renal urate excretion Ichida</code> (Matsuo / Ichida group, the Japanese functional-classification line)</li>
 <li><code>intestinal urate secretion ABCG2 polymorphism human</code> → Miyazaki 2025 (the load-bearing direct-measurement paper)</li>
@@ -5430,10 +5390,10 @@
 <p>Every load-bearing number propagated into the wiki (effect size, allele frequency, Km, Vmax, sample size, p-value) is grep-verified against its primary-source full text or a directly-quoted snippet from the source paper. Where the verification tier is snippet-not-line-anchored (e.g., a press release or an abstract), the wiki page flags the verification level explicitly.</p>
 <h2 id="translation-cross-check">Translation cross-check<a class="headerlink" href="#translation-cross-check" title="Permanent link">&para;</a></h2>
 <p>For non-English sources (any China- or Japan-language clinical-trial protocols or post-marketing reports), translate with two independent models per CLAUDE.md §"Translation protocol." This run did not surface any non-English-source load-bearing claims that drove a verdict, so the two-model cross-check did not trigger.</p>
-<h2 id="what-this-query-will-not-find-operational-scoping">What this query will NOT find (operational scoping)<a class="headerlink" href="#what-this-query-will-not-find-operational-scoping" title="Permanent link">&para;</a></h2>
+<h2 id="what-this-dated-search-did-not-identify-operational-scoping">What this dated search did not identify (operational scoping)<a class="headerlink" href="#what-this-dated-search-did-not-identify-operational-scoping" title="Permanent link">&para;</a></h2>
 <ul>
-<li>An RCT of oral uricase pre-stratified by Q141K genotype. <strong>Does not exist.</strong> ALLN-346 Phase 2a Studies 201 and 202 did not report ABCG2 stratification; PRX-115 Phase 1 (n=64) did not pre-specify genotype.</li>
-<li>A direct human flux measurement of ΔSUA per gut-lumen uricase activity unit. <strong>Does not exist.</strong> The direct-flux datapoint (Miyazaki 2025) measured intestinal urate secretion in pg/µL/5min stratified by ABCG2 functional class, but did not pair it with luminal uricase to compute ΔSUA. This is exactly the gap Phase B's flux model fills computationally.</li>
+<li>No oral-uricase RCT pre-stratified by Q141K genotype was identified in the comp-019 searched corpus as of 2026-05-08. ALLN-346 Phase 2a Studies 201 and 202 did not report ABCG2 stratification in the sources reviewed; PRX-115 Phase 1 did not pre-specify genotype in the source reviewed.</li>
+<li>No direct human flux measurement of ΔSUA per gut-lumen uricase activity unit was identified in the comp-019 searched corpus as of 2026-05-08. Miyazaki 2025 measured intestinal urate secretion stratified by ABCG2 functional class but did not pair it with luminal uricase to compute ΔSUA. Phase B attempted to bridge that gap computationally; comp-044 invalidated the resulting quantitative interpretation.</li>
 </ul>
 
 

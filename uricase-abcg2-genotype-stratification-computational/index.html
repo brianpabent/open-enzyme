@@ -49,6 +49,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1060,13 +1062,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1122,13 +1117,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -1518,13 +1506,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1553,13 +1534,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1587,13 +1561,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
   
 
       </a>
@@ -3587,13 +3554,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--published"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3956,7 +3916,7 @@
     
   
   
-    <span class="md-status md-status--Reopened"></span>
+    <span class="md-status md-status--Open"></span>
   
 
   
@@ -4698,7 +4658,7 @@
     
   
   
-    <span class="md-status md-status--complete (v1; all three architectures GREEN under reference conditions; chassis-pending §6 H₂O₂ housekeeping risk resolved)"></span>
+    <span class="md-status md-status--complete (frozen v1; non-decision-grade Phase-0 prior; empirical peroxide and tissue-safety gates open)"></span>
   
 
   
@@ -5382,16 +5342,13 @@
 
 <h1 id="gut-lumen-uricase-abcg2-genotype-stratification-flux-model-comp-019">Gut-Lumen Uricase × ABCG2 Genotype Stratification + Flux Model (comp-019)<a class="headerlink" href="#gut-lumen-uricase-abcg2-genotype-stratification-flux-model-comp-019" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Superseded 2026-07-13 by <a href="../gut-lumen-uricase-physiologic-regime-computational/">comp-044</a>.</strong> comp-019's code did not use the luminal-urate concentration or UOX Km stored in its inputs and assumed 24 hours of saturated activity. Its quantitative ΔSUA, genotype-effect magnitudes, capacity ratios, flat-dose conclusion, and yield-priority recommendations are retired. The frozen artifact remains for provenance only; do not use it for dose or efficacy decisions.</p>
-<p>This wiki stub remains so cross-references resolve and the page stays discoverable.
-Computational analyses are write-once artifacts; the daemon does not need to re-read
-them on every sweep, so the long content lives next to the experiment that produced it
-at <code>etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/</code>.</p>
+<p><strong>Not decision-usable.</strong> COMP-019's code did not use the luminal-urate concentration or UOX Km stored in its inputs and assumed 24 hours of saturated activity. Separately, <a href="../gut-lumen-uricase-physiologic-regime-computational/">COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics</a>. COMP-044 supplies no replacement ΔSUA, dose, genotype order, physiological regime, efficacy model, topology/chassis selection, production-sufficiency target, or safety conclusion. The frozen artifact remains for provenance only; do not use it for dose or efficacy decisions.</p>
 </blockquote>
-<p>This analysis asked whether an ABCG2-dependent gut-lumen uricase mechanism might work only in patients who carry Q141K. If so, the eligible population and trial stratification for that mechanism would change. The conclusion applies to the affected oral-uricase tracks, not to Open Enzyme as a whole.</p>
-<p><strong>Where the analysis lives:</strong>
-- Experiment directory (inputs, scripts, outputs): <a href="./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/"><code>./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/</code></a>
-- Computational experiments index: <a href="../computational-experiments/"><code>computational-experiments.md</code></a></p>
+<h2 id="what-survives">What survives<a class="headerlink" href="#what-survives" title="Permanent link">&para;</a></h2>
+<p>Phase A found no Q141K-stratified uricase clinical outcome in the sources searched for comp-019 as of 2026-05-08. This is a bounded search result, not proof of universal absence. Q141K therefore remains a prospective stratification variable rather than a computationally established response predictor.</p>
+<h2 id="current-decision">Current decision<a class="headerlink" href="#current-decision" title="Permanent link">&para;</a></h2>
+<p>The Phase B outputs are not eligible for dose, efficacy, genotype-order, or engineering decisions. The gut-lumen uricase track remains open; substrate, oxygen, peroxide, access, survival, transit, and topology require direct measurement. Exact configurations must first be built or supplied and characterized; <a href="../validation-experiments/#133-physiological-uox-topology--oxygen--peroxide-factorial">validation experiment 1.33</a> then supplies the configuration-level comparison, and <a href="../validation-experiments/#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay">§1.36</a> precedes animal escalation.</p>
+<p>The frozen inputs, code, non-decision-eligible outputs, and review receipts are in the <a href="./etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/">comp-019 experiment directory</a>.</p>
 
 
 
