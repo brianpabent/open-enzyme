@@ -76,7 +76,7 @@ jobs:
             if [[ "$MANUAL_COMP" == "all" ]]; then
               find wiki/etc/experiments -mindepth 1 -maxdepth 1 -type d -name 'comp-*' | sort > /tmp/comp-dirs.txt
             else
-              printf '%s' "$MANUAL_COMP" | tr ',' '\n' | while IFS= read -r token; do
+              printf '%s\n' "$MANUAL_COMP" | tr ',' '\n' | while IFS= read -r token; do
                 token=$(printf '%s' "$token" | xargs)
                 [[ -n "$token" ]] || continue
                 if [[ -d "$token" ]]; then
