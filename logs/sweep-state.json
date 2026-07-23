@@ -1,27 +1,18 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "35b13ef82bc7796c720ebbac0114f99f44d6385d",
-    "result_commit": "35b13ef82bc7796c720ebbac0114f99f44d6385d",
-    "timestamp": "2026-07-23T13:33:39Z",
+    "coverage_commit": "adda2c395ef79cc9e8f6593071db18456c602bc8",
+    "result_commit": "adda2c395ef79cc9e8f6593071db18456c602bc8",
+    "timestamp": "2026-07-23T13:37:52Z",
     "changed_paths": [
       "wiki/computational-experiments.md",
-      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
-      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/inputs/flux_model_parameters.json",
-      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/inputs/phase_a_literature.json",
-      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/inputs/query_strategy.md",
-      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/invalidation.json",
-      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/flux_model_results.json",
-      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/flux_model_summary.md",
-      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/outputs/phase_a_table.md",
-      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/scripts/flux_model.py",
-      "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/scripts/verify_retirement.py",
-      "wiki/uricase-abcg2-genotype-stratification-computational.md",
-      "wiki/validation-experiments.md"
+      "wiki/etc/autonomous-screening-methodology.md",
+      "wiki/etc/bio-ai-tools.md",
+      "wiki/uricase-abcg2-genotype-stratification-computational.md"
     ],
     "affected_paths": [],
     "blocked_paths": [],
-    "cost_usd": 0.359706
+    "cost_usd": 0.258862
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
