@@ -161,7 +161,7 @@ Return actionable discrepancies. Do not repair a failed model by inventing repla
 
 ## Known Proxy Failure: COMP-001
 
-COMP-001 maps P1/P1′ sequence motifs and attaches AlphaFold per-residue confidence. That is a cleavage-site and structural-confidence prior only. pLDDT is not solvent accessibility, protease survival, retained activity, or fermentation performance. Any claim about UOX survival in shio-koji requires the empirical [§1.10 assay](../validation-experiments.md#110-protease-stability-assay-shio-koji) or another preregistered direct measurement; a structure/SASA calculation can refine candidate selection but cannot replace that gate.
+COMP-001 maps adjacent Q00511 pairs that match three unverified legacy preference filters and attaches AlphaFold per-residue confidence. The arrays are not established exhaustive protease-specificity rules. pLDDT is not solvent accessibility, protease survival, retained activity, or fermentation performance. Any claim about UOX survival in shio-koji requires the empirical [§1.10 assay](../validation-experiments.md#110-heterologous-uricase--lactoferrin-stability-in-shio-koji-salt-protease-ferment) or another preregistered direct measurement; a structure/SASA calculation can refine candidate selection but cannot replace that gate.
 
 ## Reporting Contract
 

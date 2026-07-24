@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/README.md",
+      "kind": "design",
+      "bytes": 1642,
+      "sha256": "75db7cc7709e3e32bfa0912bb293c02840efb350a280742a8a65321b6a10f6c8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/invalidation.json",
+      "kind": "design",
+      "bytes": 2771,
+      "sha256": "ff5e40e9bb37d5cb2aee355e2d04611a3e2aafb2687aa9b4ed04873e4e226fbc"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
+    },
+    {
+      "path": "wiki/engineered-lbp-chassis.md",
+      "kind": "proposed_update",
+      "bytes": 14428,
+      "sha256": "aa0b0f5bc81dc46ed516dc7b5d0824b78ed17beb8b57c4231644f840c3ca62c2"
+    },
+    {
+      "path": "wiki/f-prausnitzii-heterologous-expression-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3327,
+      "sha256": "e62f1397aefebadf3e45675d86cae3aeed94ca1292f31ee6499a880b85aca7fd"
+    },
+    {
+      "path": "wiki/hypotheses/H02-engineered-lbp-thesis.md",
+      "kind": "proposed_update",
+      "bytes": 7659,
+      "sha256": "aa316d3486d495b073318f66919eb93615dbb2bba3ed16629ea90729ab316bce"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 72511,
+      "sha256": "f9c07b41bc65f4a49b91ea47efba69cc8d1b85c77161e17e9437ada4248b9bc4"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "6ed661069647a10ebf67f97c167f12e8cdb96cdd37aaea6b718735e1eefc781f"
+}

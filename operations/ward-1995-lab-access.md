@@ -106,7 +106,7 @@ China leads global publication volume in *Aspergillus* engineering since ~2020. 
 **Most-direct dual-cassette-relevant Chinese lead.** The group at the Science Center for Future Foods + Key Laboratory of Industrial Biotechnology of Ministry of Education, Jiangnan University, published the C19 *A. oryzae* mutant strain platform with multi-locus integration into α-amylase loci (Li et al. 2024, PMC11742560 / PMID 39830075) — a 3.3× boost in heterologous lipase activity from 3-amylase-site integration. **This is functionally adjacent to what §1.9 needs** (multi-cassette integration into a *A. oryzae* chassis at validated high-expression loci). The group runs 5-L bioreactor capacity in addition to shake-flask scale.
 
 - **Affiliation:** Jiangnan University, Wuxi 214122, Jiangsu, China
-- **Realistic engagement model:** academic collaboration. Jiangnan has a strong international-collaboration culture in food science / fermentation. The group's engineering toolkit and the NSlD-ΔP10 chassis are not obviously compatible (their C19 strain is independently derived), so a Jiangnan path likely means using their **C19** chassis instead of NSlD-ΔP10 — which is a meaningful design change that needs cross-checking against Killshot #1 / comp-010 assumptions before committing. The C19 strain has not been characterized for the protease-deletion profile that Huynh 2020 found necessary for antibody-grade titers.
+- **Realistic engagement model:** academic collaboration. Jiangnan has a strong international-collaboration culture in food science / fermentation. The group's engineering toolkit and the NSlD-ΔP10 chassis are not obviously compatible (their C19 strain is independently derived), so a Jiangnan path likely means using their **C19** chassis instead of NSlD-ΔP10. That exact host–construct configuration requires its own expression, localization, folding, activity, and safety measurements. The C19 strain has not been characterized for the protease-deletion profile that Huynh 2020 found necessary for antibody-grade titers.
 - **What's unverified:** Specific PI contact emails (would come from the publication corresponding-author info); MTA terms for the C19 strain; cost / timeline for fee-for-service work if offered. Direct outreach required.
 
 ### Bin Wang / Li Pan group — South China University of Technology (Guangzhou)
@@ -193,7 +193,7 @@ This is the single highest-leverage strain-side consideration. Synthesis of the 
 
 **Acceptable substitutes (more wet-lab work, but plausible):**
 
-1. **NSAR1 5-marker auxotroph (Oikawa 2020, PMC7725655)** — the platform comp-010 analyzed for marker-slot capacity. It lacks the 10-protease background but provides five simultaneous integration slots. Lactoferrin output may differ from the Ward 1995 host; UOX expression, localization, physiological activity, and peroxide handling require exact-configuration measurement under §§1.5, 1.33, and 1.36.
+1. **NSAR1 5-marker auxotroph (Oikawa 2020, PMC7725655)** — provides five simultaneous integration slots but lacks the 10-protease background. Lactoferrin output may differ from the Ward 1995 host; UOX expression, localization, physiological activity, and peroxide handling require exact-configuration measurement under §§1.5, 1.33, and 1.36.
 2. **AUT1-lD-v10-sD strain** (Huynh 2020 Table 1) — intermediate hyper-producer mutant with double deletion of *AosedD* + *Aovps10* + tppA + pepE. Published precedent for high heterologous expression. Same Maruyama lab.
 3. ***De novo* protease-knockout in NSAR1 background** — substantial wet-lab work (~12+ months for ten knockouts), but doable using the same CRISPR-Cas9 toolkit Maruyama and DTU groups have published. This is the "plan C" if the Maruyama lab path closes entirely.
 4. **C19 from Jiangnan** — published high-expression mutant; protease profile not characterized; would need separate validation work but the multi-locus integration toolkit is published and strong.
@@ -225,7 +225,7 @@ The substantive context for any researcher reaching out to the Maruyama group. T
 
 **Substantive technical points worth bringing in the first message:**
 - Reference the exact paper (Huynh 2020 PMC7257131) so context is unambiguous
-- Note the corrected comp-010 cassette-compatibility result: Lf + UOX has the same **bulk disulfide count** as the Maruyama group's adalimumab work (16 vs. 16), with LOW sequence-level design risk; this is a comparator, not proof of equivalent folding capacity because the protein architectures differ
+- If useful, note the primary-record bulk-count coincidence: Lf + Q00511 UOX and the Maruyama group's adalimumab work each total 16 annotated disulfides. This is not evidence of equivalent folding capacity or LOW design risk because the protein architectures and configurations differ.
 - Note the Killshot #1 (H01) falsification check explicitly cites their work as the closest architecture precedent
 - Brief on the project framing: open, gout-focused red-team research; §1.9 is one falsifiable koji-track experiment rather than the project mission
 
@@ -233,7 +233,7 @@ The substantive context for any researcher reaching out to the Maruyama group. T
 - [`validation-experiments.md` §1.9](../wiki/validation-experiments.md) — the experiment spec
 - [`koji-endgame-strain.md`](../wiki/koji-endgame-strain.md) — the platform thesis the experiment gates
 - [`hypotheses/H01-ward-dual-cassette.md`](../wiki/hypotheses/H01-ward-dual-cassette.md) — the falsification card with assumption stack and Killshot #1 findings
-- [`cassette-compatibility-computational.md`](../wiki/cassette-compatibility-computational.md) — comp-010, the cassette-design-risk verdict
+- [`cassette-compatibility-computational.md`](../wiki/cassette-compatibility-computational.md) — retired comp-010 evidence boundary and direct-test conjecture
 
 ### If the US lead falls through — order-of-operations parallel pursuit
 
@@ -261,7 +261,7 @@ The substantive context for any researcher reaching out to the Maruyama group. T
 - [`validation-experiments.md`](../wiki/validation-experiments.md) §1.9 — the experiment this page is about
 - [`team.md`](../wiki/etc/team.md) — Brian + the three actively-recruiting collaborator roles, plus the addendum pointing here
 - [`hypotheses/H01-ward-dual-cassette.md`](../wiki/hypotheses/H01-ward-dual-cassette.md) — the falsification card; Killshot #1 surfaced NSlD-ΔP10 as the default chassis
-- [`cassette-compatibility-computational.md`](../wiki/cassette-compatibility-computational.md) — comp-010, the in silico cassette-design analysis (LOW sequence-level design risk)
+- [`cassette-compatibility-computational.md`](../wiki/cassette-compatibility-computational.md) — retired comp-010 evidence boundary and direct-test conjecture
 - [`koji-endgame-strain.md`](../wiki/koji-endgame-strain.md) — the endgame strain thesis §1.9 gates
 - [`engineered-koji-protocol.md`](../wiki/engineered-koji-protocol.md) — the construct-design and assay protocol stack
 - [`aspergillus-oryzae.md`](../wiki/aspergillus-oryzae.md) — chassis-level reference page

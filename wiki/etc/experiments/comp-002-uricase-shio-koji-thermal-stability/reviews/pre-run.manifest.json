@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability/README.md",
+      "kind": "design",
+      "bytes": 2396,
+      "sha256": "c5e438d6e65427d54ce8b2b797edf26bbcb1adc9848162208de293dcdde3b03a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-002-uricase-shio-koji-thermal-stability/invalidation.json",
+      "kind": "design",
+      "bytes": 3356,
+      "sha256": "8ad9afa775c1917cbb243a29d8ceba8d8edf4a948c6b13ff9b8d1f47067ce595"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "3c6689b4c00156898fdf92227249a2488e2697986f7d143a501c80e8eff36c77"
+}

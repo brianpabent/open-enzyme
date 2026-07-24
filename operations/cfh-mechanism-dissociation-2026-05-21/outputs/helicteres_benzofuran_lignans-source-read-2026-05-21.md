@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-21
 **Author:** Claude Opus 4.7 (Model A in two-model cross-check protocol)
-**Scope:** comp-039 mechanism-dissociation classification of *Helicteres angustifolia* benzofuran lignans (Compound 4 = machicendonal; Compound 5 = (7S,8R)-dihydrodehydrodiconiferyl alcohol). The most potent single-compound CH50 in the comp-018/comp-020 corpus, but on a single-paper anchor (Yin 2016) without independent wet-lab replication.
+**Scope:** comp-039 mechanism-dissociation classification of *Helicteres angustifolia* benzofuran lignans (Compound 4 = machicendonal; Compound 5 = (7S,8R)-dihydrodehydrodiconiferyl alcohol). Yin 2016 is the single direct anchor identified in this workspace; independent matched-material replication has not been established here.
 
 ## Primary source read
 
@@ -40,11 +40,11 @@ The Yin 2016 targets are dominated by:
 
 **CFH-dependence: CFH-INDEPENDENT (Medium confidence — limited by single-anchor replication risk, not by mechanism uncertainty).**
 
-The mechanism per Yin 2016 is clearly upstream / orthogonal to CFH. The Medium-vs-High confidence call is dominated by the **comp-018 Phase 2 INCONCLUSIVE replication verdict**: no independent group has reproduced the Yin 2016 CH50 9/40 μM benzofuran lignan finding on a matched assay format. Structurally-adjacent benzofuran lignans (*Styrax japonica* egonol, Min 2004 PMID 15643559) are 3.7× weaker. The mechanistic classification is robust *conditional on the Yin 2016 finding being correct*; the replication risk is the larger uncertainty.
+The mechanism reported by Yin 2016 is upstream of and does not name CFH. The confidence boundary comes from the current source record: Yin 2016 is the single direct anchor identified in this workspace, and an independent matched-material reproduction has not been established here. Structurally adjacent records do not substitute for replication of the exact *Helicteres* materials. The mechanistic classification is conditional on Yin 2016 holding up.
 
 **Predicted Y402H × Helicteres × incident gout interaction:** **negative direction (effect ≥ in carriers)** — predicted by mechanism (multi-target upstream-of-CFH), but with very wide uncertainty bands because (a) Helicteres benzofuran lignans are NOT dietary (Helicteres angustifolia is a tropical Sterculiaceae plant from southern China/India/SE Asia, used in folk medicine but not widely consumed as food); (b) the single-paper finding has not been independently replicated; (c) UK Biobank Oxford WebQ does not capture Helicteres exposure. **The candidate is the wrong shape for the UKB cross-tab anyway** — it would need a focused Chinese/SE Asian folk-medicine-user cohort, not a UK dietary panel.
 
-**Falsification threshold:** for this candidate, the more urgent falsification is the **independent wet-lab replication of Yin 2016** before the Y402H cross-tab is run at all (comp-018 Phase 2 already flagged this). If replication confirms the CH50 9/40 μM activity and target identification, the CFH-independence classification follows directly from the binding-target pattern.
+**Falsification threshold:** independently replicate Yin 2016 with matched materials before any Y402H cross-tab. If the reported activity and target-identification pattern reproduce, the CFH-independence classification can then be tested directly.
 
 **Confidence:** Medium. Mechanism is clear from Yin 2016. Replication risk is the dominant uncertainty source.
 
@@ -54,7 +54,7 @@ The mechanism per Yin 2016 is clearly upstream / orthogonal to CFH. The Medium-v
 
 ## Limitations
 
-- **Single-paper anchor; comp-018 Phase 2 verdict = INCONCLUSIVE replication.** Independent wet-lab replication on Yin 2016's CH50 9/40 μM activity is the load-bearing first step. The CFH-dependence classification rests on this paper holding up.
+- **Single-paper anchor in the current source record.** Independent matched-material replication of Yin 2016 is the load-bearing first step. The CFH-dependence classification rests on this paper holding up.
 - Binding site at single-residue resolution is not characterized. Depletion-rescue identifies "the cascade component whose absence rescues hemolysis" but does not pin the specific epitope.
 - Helicteres is **not dietary in any meaningful sense for OE's UKB cross-tab strategy.** Even if mechanism is CFH-independent, the candidate is not actionable through dietary intake adjustment — it would need to be a herbal-supplement / formulated-product channel.
 - The Yin 2016 paper does not report Y402H × Helicteres carrier-stratification data. Classification is mechanistic extrapolation from binding-target identification.

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/README.md",
+      "kind": "design",
+      "bytes": 1575,
+      "sha256": "2a0179e448a1b03fa12cf502d89a68383946693c4a92d52b3bd548da020ce6f6"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/invalidation.json",
+      "kind": "design",
+      "bytes": 2875,
+      "sha256": "5b293d236b2750646195d2ad4c9e457ea971a70b7951ef7b081c58c425983d45"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 34492,
+      "sha256": "e8c456daa4bfa3d112146826c1c194b29830079e4bca052a7821b25735c097c5"
+    },
+    {
+      "path": "mkdocs.yml",
+      "kind": "proposed_update",
+      "bytes": 10864,
+      "sha256": "3828a103947229958349cda8cb6751b19a1a1e31e4cfd49143eb3ba888087629"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
+    },
+    {
+      "path": "wiki/cordycepin-cassette-burden-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3255,
+      "sha256": "31dbf7db131729e60e6d0146b8e4a79566458a807d95859f0a76d141b3431602"
+    },
+    {
+      "path": "wiki/etc/autonomous-screening-methodology.md",
+      "kind": "proposed_update",
+      "bytes": 23852,
+      "sha256": "acc80ba60a56e7a859b7da7dd6caa474c5fdb570ac5a769111a8651fa71c73d6"
+    },
+    {
+      "path": "wiki/etc/bio-ai-tools.md",
+      "kind": "proposed_update",
+      "bytes": 62248,
+      "sha256": "21afccea68cd9e24ec0d32381632667716347579ce7cbf91e2da7c60d6afe06b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
+      "kind": "proposed_update",
+      "bytes": 16823,
+      "sha256": "907bcad9020fd8a06c8ba959eddf0f24035ec2099817a89feff035914f4e2710"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 230784,
+      "sha256": "192427c173ad894e33e6c76c6f427fc8264ec44446b244366f22a4577e1c3cff"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "2fb0951fdf6b719422cc3d890c1313b08482beabe63e6a410211231319c144b3"
+}

@@ -22,9 +22,9 @@ Across all known upstream complement cascade nodes — C1q/MBL/MASP-2 (initiatio
 
 1. Target node list constructed from the brief's upstream-complement scope. See [`inputs/target-nodes.json`](inputs/target-nodes.json).
 2. Per-node anchor queries via Paperclip MCP (PMC + bioRxiv + medRxiv full-text). See [`inputs/query-strategy.md`](inputs/query-strategy.md).
-3. Top results' primary-paper text grep-verified for IC50/CH50/AP50 numbers; numbers cited line-anchored where the source paper is in the Paperclip corpus.
+3. Returned primary-paper records inspected for IC50/CH50/AP50 values; values cited line-anchored where the source paper is in the Paperclip corpus.
 4. Targeted WebSearch supplements for non-corpus PubMed records (notably rosmarinic acid PMID 10353266 / 1761351 / 3198307 — three primary papers documenting C3 convertase / C5 convertase IC50 values).
-5. ChEMBL coverage spot-check per top-tier compound. ChEMBL anti-complement assay coverage gap documented as a methodological output.
+5. ChEMBL coverage spot-check for tabulated compounds. ChEMBL anti-complement assay coverage gaps documented as a methodological output.
 6. CNKI / WanFang / J-STAGE multilingual scope scoped but only partially executed in 60-min time budget — Phase 2 follow-up explicitly flagged.
 7. Compound × target × IC50 × assay format × evidence tier × source language × primary citation table assembled per node. See [`outputs/per-node-findings.md`](outputs/per-node-findings.md).
 
@@ -40,7 +40,7 @@ Target 30-60 min. Actual: ~50 min.
 
 ## Output
 
-- [`outputs/per-node-findings.md`](outputs/per-node-findings.md) — per-target-node compound × evidence tier × source language tables; assay-format heterogeneity log; ChEMBL coverage gap analysis; multilingual coverage analysis; recommendations.
+- [`outputs/per-node-findings.md`](outputs/per-node-findings.md) — per-target-node compound × evidence tier × source language tables; assay-format heterogeneity log; ChEMBL coverage gap analysis; multilingual coverage analysis; unranked discriminating follow-ups.
 - Wiki page: [`wiki/upstream-complement-verification-rerun-computational.md`](../../../upstream-complement-verification-rerun-computational.md) — interpretive plain-English-summary-first synthesis.
 
 ## Reproducibility
@@ -57,13 +57,13 @@ The Paperclip MCP queries used are documented in `outputs/per-node-findings.md` 
 ## Comparison with predecessor (queued)
 
 After both this re-run and the predecessor scan are complete, Brian compares:
-1. **Compound list overlap** — which top-tier candidates appear in both, which only in one?
-2. **Headline-bias check** — does the predecessor's headline reflect the evidence ranking, or is there a narrative-cohesion bias the re-run reveals?
+1. **Compound list overlap** — which source records appear in both, and which appear in only one?
+2. **Headline-bias check** — does the predecessor promote one result beyond what its source record supports, or does the re-run reveal narrative-cohesion bias?
 3. **Assay-format discipline** — does either scan flag the rosmarinic-acid 44× IC50 spread or the heparin 50× pathway-stratified spread?
 4. **Multilingual coverage** — does either scan show evidence of CNKI/WanFang/J-STAGE deep work?
 5. **ChEMBL coverage gap** — do both surfaces flag the structural coverage gap?
 
-This re-run's deliberate stance: **no single headline compound surfaced.** Top-tier candidates within ~20% of lead metric are surfaced as a tied tier per node per the brief's no-prioritization-in-headline rule.
+This re-run supplies an assay-specific source inventory, not a headline compound, tier, comparative potency verdict, or platform priority. Candidate routing requires independent evidence verification, exact-material qualification, exposure and safety assessment, and a prespecified experiment.
 
 ## File index
 

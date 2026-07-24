@@ -21,7 +21,7 @@ Pipeline (cascading-filter, NOT all-models-on-all-candidates; see Limitations in
       + signal-peptidase complex load); truncated = 6; direct = 0.
     - KEX2-saturation modifier: tandem-KR scaffolds add 0.5 capacity penalty (Spencer 1998).
     - PTS1-routing modifier: native SKL C-terminus with no PTS1-blocking tag adds 0.3 penalty
-      (comp-010 routing risk; partial peroxisomal loss).
+      (candidate routing hypothesis; partial peroxisomal loss is not established).
 
   Tier 3 (fold-quality proxy, applied to top ~200 surviving Tier 2):
     - ESMFold/AlphaFold not accessible from this subagent (no GPU, no API key, network restricted).
@@ -53,8 +53,8 @@ V1 simplifications owned (per parent brief):
 
 Discipline:
   - All A. oryzae codon-table numbers come from inputs/a_oryzae_codon_usage.json (Kazusa
-    + Nakao 1992 PMID 1482437 + Machida 2005 PMID 16372010; verified in comp-010 provenance).
-  - All cassette-architecture conventions match comp-010 (cassette-compatibility-computational.md).
+    + Nakao 1992 PMID 1482437 + Machida 2005 PMID 16372010).
+  - Cassette-architecture conventions are fixed scenario inputs, not validated by retired comp-010.
   - All architecture coefficients alpha match chaperone-orthogonal-stacking.md §3.5.2.
   - All literature citations are primary-source (PMID/PMC IDs in inputs/parts_list.json).
 
@@ -360,7 +360,7 @@ def rare_cluster_penalty(nt_seq):
 
 URICASE_INTRINSIC_DISULFIDES = 0
 URICASE_INTRINSIC_ALPHA = 0  # zero disulfides x anything = 0
-URICASE_INTRINSIC_GLYC_LOAD = 0.2  # 1 predicted NSS at pos 191 (comp-010), unlikely occupied
+URICASE_INTRINSIC_GLYC_LOAD = 0.2  # heuristic for 1 predicted NSS at pos 191; occupancy unmeasured
 
 CARRIER_LOADS = {
     "none":            {"disulfides": 0, "alpha": 0,   "glyc": 0,   "name": "no carrier"},

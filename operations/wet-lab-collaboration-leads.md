@@ -207,7 +207,7 @@ Since Brian does not have a formal biochemistry PhD background, **having a PhD-l
 
 ### Technical Hooks for the Email
 * **Reference Specific Precedents:** Cite Huynh et al. 2020 ( adalimumab production in NSlD-ΔP10) to establish context.
-* **Address the Chaperone Burden (comp-010/comp-030):** State that the corrected bulk disulfide count is equal to their published adalimumab comparator (16 vs. 16), while explicitly noting that this does not predict equivalent folding capacity because lactoferrin and IgG have different architectures.
+* **Address the folding question:** Primary records give lactoferrin 16 annotated disulfides and Q00511 none, so the pair happens to equal the published adalimumab comparator by bulk count. State explicitly that this does not predict equivalent folding capacity because lactoferrin and IgG have different architectures.
 * **Open Source & Open Science:** Provide links to our public research repository, showing that all construct designs, hypotheses (H01, H05), and protocols are fully documented.
 
 ---
@@ -228,7 +228,7 @@ We are currently preparing a staged validation program:
 2. Uricase alone, using an exact host configuration built and characterized before advancement through the physiological substrate × oxygen × peroxide screen.
 3. A dual-cassette strain only if both single-cassette stages pass.
 
-Our corrected comp-010 comparison finds that the lactoferrin + uricase pair and the adalimumab construct in your Huynh 2020 paper each contain 16 bulk disulfides. We treat this only as a reference point—not as evidence of equivalent ER folding capacity—because lactoferrin and IgG have different folding and assembly architectures. The staged study is designed to measure lactoferrin-only folding and function before attempting the dual construct.
+Primary records give lactoferrin 16 annotated disulfides and Q00511 uricase none, so the pair and the adalimumab construct in your Huynh 2020 paper happen to match at 16 by bulk count. We treat this only as a reference point—not as evidence of equivalent ER folding capacity—because lactoferrin and IgG have different folding and assembly architectures. The staged study is designed to measure lactoferrin-only folding and function before attempting the dual construct.
 
 For the lactoferrin and coexistence stages, host proteolytic degradation is a major gating risk. Your NSlD-ΔP10 ten-protease-knockout strain is therefore the preferred genetic background for this staged test.
 

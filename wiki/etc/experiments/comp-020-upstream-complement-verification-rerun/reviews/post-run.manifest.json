@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/README.md",
+      "kind": "design",
+      "bytes": 6185,
+      "sha256": "42cebb98a60fe4f5068a3843d85ab6c34a68626a1581d955d1987272e44e0a64"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 5316,
+      "sha256": "49d572cdec31ee45314ae074baec8fb0fa3b7f64db5ff6bcec78b1ef74fa82f9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/query-strategy.md",
+      "kind": "design",
+      "bytes": 2903,
+      "sha256": "a3cd548f7c20834ea64427b7324eeff63ace7dab22a2bfc34b900a28b9acd0e7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/target-nodes.json",
+      "kind": "design",
+      "bytes": 3335,
+      "sha256": "77e89951acee5a4469ac04215af731730fb37d81b26b8ab77e774fb1b7f434f8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
+      "kind": "generated_output",
+      "bytes": 25429,
+      "sha256": "0c6920db6b2d2a45cc193f74cd56d761311b107a72a621f0a261fce52335a9d4"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/search-log.md",
+      "kind": "generated_output",
+      "bytes": 7710,
+      "sha256": "4e0204b33c3829c280c3013cfc346ea7f90f1fd699f6e2fa0027a85805f2dac3"
+    },
+    {
+      "path": "operations/cfh-mechanism-dissociation-2026-05-21/README.md",
+      "kind": "proposed_update",
+      "bytes": 7799,
+      "sha256": "1e0c8254aaaeef9eeb7aba5b8136e33ac780c603b6a74a45fc0853e49991e52c"
+    },
+    {
+      "path": "operations/cfh-mechanism-dissociation-2026-05-21/outputs/helicteres_benzofuran_lignans-source-read-2026-05-21.md",
+      "kind": "proposed_update",
+      "bytes": 7525,
+      "sha256": "d66e63548f78f6ae8014f54d5f53ce54fcf2572dfbc3f4c7cc3643986fbff20b"
+    },
+    {
+      "path": "operations/cfh-mechanism-dissociation-2026-05-21/outputs/helicteres_benzofuran_lignans-two-model-annotated-2026-05-21.md",
+      "kind": "proposed_update",
+      "bytes": 4472,
+      "sha256": "97a13db4e95eb570566886a2efe1d4cf94a513d417536bfd663cc272c1544fba"
+    },
+    {
+      "path": "operations/cfh-mechanism-dissociation-2026-05-21/outputs/houttuynia_cordata_polysaccharide-source-read-2026-05-21.md",
+      "kind": "proposed_update",
+      "bytes": 9758,
+      "sha256": "377c6430d130c51f14c65c1b7465987c6580edaa05682afe8e0a5693ce5c0b3c"
+    },
+    {
+      "path": "operations/cfh-mechanism-dissociation-2026-05-21/outputs/houttuynia_cordata_polysaccharide-two-model-annotated-2026-05-21.md",
+      "kind": "proposed_update",
+      "bytes": 5198,
+      "sha256": "0f8578748e09a782cf8d13875ce1520704f2ed57e4d4b75cca96f620f78b53e1"
+    },
+    {
+      "path": "operations/comp-018-vs-comp-020-retrospective.md",
+      "kind": "proposed_update",
+      "bytes": 2680,
+      "sha256": "0cbfedca7af16d138125390773d26b1aef2f83c3fb52fa0ad1418501e59d8f7a"
+    },
+    {
+      "path": "operations/global-lit-scan-gap-audit-2026-05-20.md",
+      "kind": "proposed_update",
+      "bytes": 8291,
+      "sha256": "0ff26cd94759d2233c04bb3a48d70a3b3dd610a0fad861a4fda9ba9f5ef4fb39"
+    },
+    {
+      "path": "operations/notable-moments.md",
+      "kind": "proposed_update",
+      "bytes": 81450,
+      "sha256": "f8d930932a50481b09dbb557193d3b2f186b304346188aaf203b41e88ce88480"
+    },
+    {
+      "path": "operations/specs/2026-05-08-synthesis-filesystem-migration-spec-review.md",
+      "kind": "proposed_update",
+      "bytes": 32754,
+      "sha256": "89377ad9d8a1200c5847ad49c8dab5be372a5af8991006e667111a6b5fcb059e"
+    },
+    {
+      "path": "operations/specs/2026-05-08-synthesis-filesystem-migration.md",
+      "kind": "proposed_update",
+      "bytes": 52790,
+      "sha256": "e0070f99f3db7ef2aa3f69fbab07fabe604dbd9428b8fc81ee1738e9272ff02c"
+    },
+    {
+      "path": "wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md",
+      "kind": "proposed_update",
+      "bytes": 31231,
+      "sha256": "295cce89597b7c8ace56d016f3f5b501682119354ea63959b6e1fc4de2a42343"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 94334,
+      "sha256": "3e547ff4444758e4e37c6795c9d7b9c60059aaf5e2d3d0d31f6f76994321af8f"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 72511,
+      "sha256": "f9c07b41bc65f4a49b91ea47efba69cc8d1b85c77161e17e9437ada4248b9bc4"
+    },
+    {
+      "path": "wiki/upstream-complement-assay-format-mapping-computational.md",
+      "kind": "proposed_update",
+      "bytes": 2658,
+      "sha256": "a8922c4663ba8f86fc4ca365033d6826aac36f37c97f8fb9064f52fdf659f037"
+    },
+    {
+      "path": "wiki/upstream-complement-modulator-sweep-computational.md",
+      "kind": "proposed_update",
+      "bytes": 2521,
+      "sha256": "ec36045ed03e655ee8234114a7cbd04eb617fe1eadd394947d9b48c669935bb0"
+    },
+    {
+      "path": "wiki/upstream-complement-verification-rerun-computational.md",
+      "kind": "proposed_update",
+      "bytes": 5947,
+      "sha256": "f7bdcbc64bb5486100d5a166a94ec9863eb980424c7fc48b721e71b800cdd3f5"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "c0f1dcc515a97adbcc317befdba54410749778f743a0abaffe2968555142ec45"
+}

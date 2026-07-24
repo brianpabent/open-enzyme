@@ -55,13 +55,13 @@ The "viable peer-track" claim has multiple sub-components that the full card wil
 
 ## Assumption Stack (placeholder — to be populated in Phase 2 P2-5)
 
-The full assumption stack will be populated after the three Phase 2 lit scans (P2-1 engineering, P2-2 commercial, P2-3 regulatory) and comp-008 (P2-4 expression feasibility) land. Anticipated load-bearing assumptions, to be confirmed:
+The full assumption stack will be populated after fresh engineering, commercial, and regulatory scans plus an exact-strain genetic-entry test. Retired COMP-008 supplies no feasibility result. Anticipated load-bearing assumptions, to be confirmed:
 
-1. *F. prausnitzii* genetic engineering toolkit supports therapeutic-grade payload modification (current state: no published transformation protocol established in the comp-008 review; closest precedents are neighboring Lachnospiraceae and heterologous delivery of *Fp* effectors from other hosts)
-2. Lyophilized + lipid-encapsulated oral *F. prausnitzii* preparations achieve >10⁸ CFU/dose live delivery to the colon (current best-published: ~10⁶–10⁷ CFU; gap to therapeutic threshold uncharacterized)
+1. An exact *Faecalibacterium* strain can be transformed reproducibly and maintain reporter expression without unacceptable fitness loss.
+2. A qualified oral *F. prausnitzii* preparation can deliver a prespecified viable-cell exposure to the intended colonic compartment; neither the achieved exposure nor a therapeutic threshold is established here.
 3. Engineered butyrate overproduction does not destabilize *F. prausnitzii* viability or trigger PFOR-pathway feedback that quenches the augmentation
 4. Colonic butyrate concentration thresholds for clinically-meaningful PPARγ activation (WT) and HDAC inhibition (Q141K) are achievable from a single delivered LBP strain rather than requiring a designed consortium
-5. The 2018 FDA LBP regulatory framework supports an engineered-strain BLA filing within current scientific advisory committee precedent (vs. requiring a category-creation pathway that adds 2–4 years)
+5. The applicable FDA LBP pathway, containment expectations, and evidence package are compatible with the exact engineered strain and intended use; timeline and precedent require a current regulatory assessment.
 6. Proposed butyrate-mediated Q141K trafficking rescue—**not directly shown by Basseville 2012**—translates to native human gut epithelium at exposures achievable from the engineered LBP
 
 ---
@@ -73,10 +73,10 @@ The full killshot menu will follow the H01 template: ranked by `score = (kill_pr
 Anticipated highest-priority killshots:
 
 - **Lit scan + commercial scan first.** Cheapest possible upstream move — answers whether NextBiotix, Synlogic-adjacent, or other published programs have already killed (or already validated) major sub-claims of this hypothesis. (Phase 2 P2-1 + P2-2 do this.)
-- **comp-008 expression feasibility.** Tests whether *F. prausnitzii*'s codon usage, GC content, and secretion machinery support the desired payload class without a multi-year toolkit-development project. (Phase 2 P2-4 does this.)
+- **Exact-strain genetic-entry gate.** Demonstrate stable transformation and reporter expression before evaluating a native-pathway intervention or heterologous payload.
 - **In vivo butyrate concentration measurement after engineered-strain colonization** (animal model). Tests assumption 4 directly.
 - **Q141K trafficking rescue dose-response in primary human enterocytes.** Tests assumption 6 directly.
-- **GMP anaerobic manufacturing cost ceiling analysis.** If per-dose cost projections exceed ~$5,000 at clinical-relevant scale, the commercial-pharmaceutical case dies regardless of mechanism.
+- **GMP anaerobic manufacturing feasibility.** Obtain configuration-specific process, release, storage, and dose-cost estimates, then compare them with a prespecified program budget before commercial routing.
 
 ---
 

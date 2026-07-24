@@ -10,7 +10,7 @@ Comp-022 adds three sequence-level refinements to the direct-secretion candidate
 
 **Interpretive wiki page:** [`wiki/uricase-cassette-ranking-computational.md`](../../../uricase-cassette-ranking-computational.md)
 
-**Related experiments:** [comp-010 (cassette compatibility, LOW)](../comp-010-cassette-compatibility/) | [comp-011 (C. utilis variant compatibility, MODERATE)](../comp-011-c-utilis-uricase-cassette-compatibility/) | [comp-001 (uricase protease stability, LOW)](../comp-001-uricase-shio-koji-protease-stability/)
+**Related experiments:** [comp-010 (invalidated cassette model)](../comp-010-cassette-compatibility/) | [comp-011 (invalidated *C. utilis* cassette model)](../comp-011-c-utilis-uricase-cassette-compatibility/) | [comp-001 (uricase protease-site proxy; empirical risk unresolved)](../comp-001-uricase-shio-koji-protease-stability/)
 
 ---
 
@@ -43,8 +43,8 @@ comp-022-clockbase-uricase-cassette-ranking/
   analyze.py                       ← analysis script (run this)
   inputs/
     parts_list.json                ← enumerated 6 promoters x 12 SPs x 10 codons x 60 scaffolds
-    a_oryzae_codon_usage.json      ← Kazusa RIB40 codon table (shared with comp-010)
-    Q00511.fasta                   ← A. flavus uricase, 302 aa (shared with comp-010)
+    a_oryzae_codon_usage.json      ← fixed Kazusa RIB40 codon table
+    Q00511.fasta                   ← A. flavus uricase, 302 aa (UniProt Q00511)
     provenance.md                  ← source-by-source citations + verification table
   outputs/
     report.json                    ← machine-readable full report (top 25 + distributions)

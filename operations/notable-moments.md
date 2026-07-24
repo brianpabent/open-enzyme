@@ -137,7 +137,7 @@ The AI substrate is fluent in Mandarin, Japanese, Korean, classical Chinese form
 
 The fix is mechanical: a 4-framing seed-query matrix and a `query-strategy.json` artifact. The discipline is now upstream of the next comp-NNN. The pattern generalizes well beyond gout/NLRP3 — any pharma research touching non-Western traditional medicine has the same exposure to this failure mode.
 
-**Honest framing on how we found it.** The audit didn't fire because the daemon flagged the empty verdict as suspicious. It fired because Brian was working through the synthesis queue, noticed that comp-018 Phase 2 had identified citation-network insularity + traditional-formula-name framing as the diagnosis at the complement chokepoint, and asked: *what other comp-NNN experiments would have the same exposure?* That question triggered the retrospective. The discipline is now codified so the next comp-NNN doesn't depend on the same kind of cross-experiment intuition firing — but credit where due: the catch came from human pattern-matching across walkthrough closure annotations, not from any individual daemon pass. Instinct first, discipline after. Same ordering as the brief-contamination entry, same lesson: the multi-vendor + multi-pass infrastructure is the floor, not the ceiling, on what catches errors.
+**Honest framing on how we found it.** The daemon did not flag the empty verdict. During the synthesis walk, Brian recognized that query framing and citation-network coverage might affect other computational searches and asked which experiments shared that exposure. That question triggered the retrospective. The discipline is now codified so the next experiment does not depend on the same cross-experiment intuition firing.
 
 **External-comms angle.** This is a clean third-in-a-series methodology post: hallucination → contamination → query framing. Each is a structural failure mode of AI-assisted research that doesn't exist (or doesn't exist in the same shape) in human-only research. The arc:
 
@@ -155,45 +155,15 @@ Notable for: AI-assisted research methodology, non-Western traditional medicine 
 
 ---
 
-## 2026-05-08 — Brief contamination is real: a contrived "if it's in rosemary I'll grow rosemary" example landed verbatim in the subagent brief and biased the headline finding. A scrubbed re-run found something better.
+## 2026-05-08 — A contrived example contaminated a delegated research brief
 
-**What happened.** Today's wiki sweep proposed running comp-018 (Upstream Complement Modulator Sweep) — a literature-mining experiment to find compounds that interfere with the complement cascade upstream of C5a. While Brian was clarifying the scope on his end (telling Claude to broaden beyond just fungal compounds), he said *"if the answer is rosemary, I'll grow some fucking rosemary"* — meant as a contrived example, the first herb that popped into his head, not as an actual hint about what to look for.
+Brian used a plant name only to illustrate the breadth of an upstream-complement search. The delegation brief copied that example, and the report promoted the corresponding plant-associated compound while echoing Brian's phrasing. Brian challenged the narrative fit and requested a context-isolated re-run that retained the scope and method but removed predictions, compound names, and motivational examples. The two reports differed enough to demonstrate prompt sensitivity.
 
-Claude (drafting the comp-018 subagent brief) included that exact phrase verbatim as motivational framing. The subagent then ran a 32-compound breadth scan and came back with **rosmarinic acid** (the active compound in rosemary, lemon balm, and spearmint, named after rosemary because it was first isolated from rosemary in 1958) as the singular headline finding — TIER-1 dietary C3-convertase inhibitor, IC50 5-10 µM optimal, three independent in vivo precedents, FDA-GRAS source plants, and the subagent's report-back literally said *"Brian's literal 'if it's in rosemary I'll grow rosemary' framing landed empirically."*
+The scientific rankings and cross-paper comparisons from both legacy reports are not current authority. COMP-018 is retired, and current candidate evidence lives on the [COMP-020 evidence page](../wiki/upstream-complement-verification-rerun-computational.md) and candidate-specific pages.
 
-Brian's first reaction was suspicion: *"This has got to be a hallucination — I just said rosemary because it was the first herb that popped into my head, and now you're telling me there's a compound called rosmarinic acid that does this exact thing?"* That suspicion was the catch.
+The operational lesson is **brief hygiene**: scope, methods, evidence standards, and known constraints propagate; contrived examples and expected winners do not. A rhetorical callback or unusually neat match to the brief is a trigger for an independent scrubbed re-run. That re-run tests prompt sensitivity, not biological replication.
 
-**Verification, layer 1:** the underlying claim is real. Englberger et al. 1988 (PMID 3198307) is a real foundational paper titled literally *"Rosmarinic acid: a new inhibitor of complement C3-convertase with anti-inflammatory activity."* Two follow-on in vivo precedents (Proctor 2006 PMID 16782534; Su 2014 PMID 24494798) extended the evidence. Rosemary is FDA GRAS. Rosmarinic acid is *the* most well-characterized natural-product upstream complement modulator in the published literature. Not a hallucination. The "coincidence" between Brian saying rosemary and the headline being rosmarinic acid is partly explained by name-bias: rosmarinic acid is named after rosemary specifically because rosemary is where it was first isolated, so any complement-related compound found in plants will over-index in rosemary.
-
-**Verification, layer 2 (the actually-noteworthy part):** Brian asked Claude to write a *scrubbed* version of the subagent brief — no compound names, no user-framing phrases, no contrived examples — and re-run the sweep as comp-020 to test whether rosmarinic acid as headline was a real result or a contamination artifact.
-
-The comp-020 (scrubbed) re-run came back with three significant differences from comp-018:
-
-1. **No singular headline.** Three tier-1 candidates tied within 20%: *Helicteres* benzofuran lignans (CH50 9/40 µM — the highest-potency single hit in the corpus, single-paper anchor PMC6273495, needs replication), rosmarinic acid (still real, still tier-1, but not singular), and luteolin (a dietary flavonoid with three independent gout-relevant mechanisms across the OE corpus).
-
-2. **comp-018 missed Helicteres entirely at the headline tier.** *Helicteres* benzofuran lignans beat rosmarinic acid by 4-20× on a matched CH50 hemolytic assay. comp-018's brief contamination apparently nudged the subagent toward narrative-cohesion with the user's "rosemary" framing strongly enough that Helicteres got buried.
-
-3. **comp-018 underweighted marine sulfated polysaccharides** (Ascophyllum ANW, sea cucumber SC, Saccharina SJW-3) — IC50 0.98-3.11 µg/mL, with the caveat that they have anticoagulation safety considerations.
-
-4. **The rosmarinic acid IC50 spread is wider than comp-018 reported** — 44× across assays (34 µM C3b deposition vs. 1500 µM C5 convertase), which implies RMA's load-bearing mechanism is upstream covalent C3b modification rather than direct C5 convertase inhibition. comp-018 framed it less precisely.
-
-**Verdict on the contamination:** underlying findings were NOT contaminated (rosmarinic acid IS real and surfaced again on independent search). Headline-promotion WAS contaminated (comp-018 promoted it singular; comp-020 places it in a 3-way tie). Coverage breadth was PARTIALLY contaminated (comp-018 missed Helicteres at headline tier and underweighted marine polysaccharides; comp-020 surfaced both).
-
-**Brian's suspicion was empirically correct.**
-
-**Why it matters.** AI-assisted research has a class of confounder that doesn't exist in human-only research: **prompt contamination**. If the user's phrasing ends up in the subagent brief — through carelessness, motivational framing, or just unconsidered handover — the subagent can be biased toward narrative-cohesion with the user's framing without ever overtly hallucinating. The subagent does what its brief said; the brief silently constrained the answer.
-
-The fix is upstream of the subagent: **brief hygiene at the moment of brief composition.** Scope and method propagate from user direction (those describe the work). Predictions and contrived examples don't (those describe the user's hopes about the work). Independent re-run with scrubbed framing — at ~$5 in compute and 30-60 minutes wall-clock — is cheap enough to make a default whenever a brief contains user-named compounds or phrases.
-
-For citizen scientists doing AI-assisted research without the multi-pass safety net the Open Enzyme project has: **this is a category of error you should know about. Your prompt is part of the experiment. Control for it.**
-
-**The catch came from Brian's instinct, not the discipline.** The discipline is being formalized AFTER the suspicion forced verification. That's the right ordering for first-time issues — instinct catches it once, discipline prevents the next instance.
-
-**External-comms angle.** Builds on yesterday's DAF SCR1-4 disulfide-hallucination story (single-AI confabulation caught by multi-vendor sweep) and on this morning's "two independent reads of the same wiki, same day, same insight" story (multi-vendor convergent intelligence). Today's story is the third in the series: **brief-level multi-vendor heterogeneity guard**. Different prompt → different output. The same multi-pass discipline that catches model-level errors also catches prompt-level contamination, but you have to apply it explicitly.
-
-The full retrospective with side-by-side comparison and recommendations for citizen-science workflows lives at [`operations/comp-018-vs-comp-020-retrospective.md`](./comp-018-vs-comp-020-retrospective.md). The methodological discipline is codified at [`scripts/SWEEP-ARCHITECTURE.md`](../scripts/SWEEP-ARCHITECTURE.md) §"Subagent brief hygiene." Three story arcs across three days — homogenization (DAF SCR1-4), convergent insight (DAF retrospective post), and brief contamination (this entry) — together describe the multi-vendor discipline as a search amplifier, an opportunity surface, AND a confounder guard. None of these were predictable from first principles; all of them surfaced empirically.
-
-Notable for: AI-assisted research methodology, citizen-science workflow design, the structural property that subagent briefs are part of the experimental setup and not just project-management overhead.
+The compact [method retrospective](./comp-018-vs-comp-020-retrospective.md) and [`scripts/SWEEP-ARCHITECTURE.md`](../scripts/SWEEP-ARCHITECTURE.md) preserve the current control.
 
 ---
 
@@ -297,7 +267,7 @@ Adjacent post angles from the same verification pass: the boron Naghii 2011 sing
 
 ## 2026-05-06 — An AI agent invented a number nobody asked it to invent. The next day's process found it. Here's exactly what happened and what discipline catches this.
 
-**What happened.** Yesterday (2026-05-05), an AI subagent was asked to write up a computational experiment on a complement-system protein called DAF/CD55 (specifically a truncated version called SCR1-4, relevant to the project's CP0 chokepoint closure thesis). The experiment itself was a protease-stability analysis — does the protein survive being cooked into the koji-fermentation environment? The AI's analysis pipeline used AlphaFold-predicted protein structure to score how exposed each protease cleavage site is. The experiment is well-defined and reproducible.
+**What happened.** An AI subagent was asked to analyze whether a truncated complement regulator, DAF/CD55 SCR1-4, might retain activity through koji processing. The pipeline reproducibly mapped sequence-filter matches and then incorrectly treated AlphaFold pLDDT as solvent accessibility. That does not answer whether a site is exposed or whether the protein survives fermentation, so the later COMP review invalidated the HIGH/LOW protease verdict while preserving stalk truncation as a testable construct hypothesis.
 
 The pipeline does NOT count disulfide bonds. The page itself, in its own Limitations section, says explicitly: *"Disulfide bonds not modelled."*
 
@@ -443,62 +413,38 @@ H01 status: survival count 1→2, survival score 0.3→0.45.
 
 ---
 
-## 2026-05-05 — comp-011: don't pick — run BOTH uricase variants in parallel at ~$200 extra cost
-
-**What happened.** comp-010 ([cassette compatibility for the dual-cassette koji endgame strain](../wiki/cassette-compatibility-computational.md)) had verified LOW design risk for *Aspergillus flavus* uricase + lactoferrin in the Ward 1995 architecture — that was the design we'd been planning. But the wiki's [`uricase-variant-selection.md`](../wiki/uricase-variant-selection.md) had documented an industry-revealed preference for ***Candida utilis* uricase** instead — three independent commercial programs (Allena/ALLN-346 + two others) had picked *C. utilis* over *A. flavus* for oral delivery. comp-010's LOW verdict didn't transfer automatically: *C. utilis* uricase has a different sequence, different disulfide profile, different KEX2 site profile, different codon-usage profile.
-
-A Sonnet subagent ran comp-011 (the same seven-analysis pipeline, on *C. utilis* uricase). **Result: MODERATE risk vs. *A. flavus* LOW.** Three drivers:
-1. **Codon burden 2.3× heavier** (CAI 0.65 vs 1.51) — full codon-optimized gene synthesis mandatory
-2. **4 free cysteines** in *C. utilis* (vs. 0 in *A. flavus*) — risk of aberrant ER disulfide formation; mitigation via non-reducing SDS-PAGE QC
-3. **2 internal KR sites** (positions 130, 138) — non-load-bearing for direct-secretion design
-
-But the killer recommendation: **don't pick. Run BOTH variants in §1.9 as parallel direct-secretion cassettes** at ~$200–400 in additional gene synthesis cost and $0 additional fermentation cost. The empirical wet-lab comparison resolves the *A. flavus* vs. *C. utilis* platform decision in the same fermentation run.
-
-**Current consequence:** retain both sequences as candidates, but first build and characterize the exact sequence–host–topology configurations. §1.33 can nominate a topology only within a controlled host comparison; it cannot transfer a winner across hosts. The original direct-secretion and `$0 marginal fermentation` assumptions are historical, not the current execution plan, and §1.36 safety precedes animal escalation.
-
-**Bonus: an accession correction.** P15296 (which the brief had cited as the *C. utilis* uricase) is a defunct/reassigned accession that now returns a Drosophila transposable element protein. The *C. utilis* / *Cyberlindnera jadinii* UOX record used here is **P78609 (URIC_CYBJA)**; *A. flavus* UOX is **Q00511**.
-
-**Why it matters.** "Don't pick — run both" is a structurally underused move in early-stage biotech engineering. The cost of choosing wrong (months of wet-lab on the worse variant) is much higher than the cost of running both in parallel ($200 in gene synthesis). The chokepoint methodology naturally surfaces this kind of recommendation because it's not committed in advance to a particular candidate — the framework asks "which variants meet the spec?" rather than "is variant X the right one?"
-
-**Where outside expertise would help:** anyone with experience on *C. utilis* heterologous protein expression in *Aspergillus*. The bioavailability + protease-resistance reasons for the industry's revealed preference are documented; what's missing is published *C. utilis* uricase secretion data in fungal hosts. Could be a Paperclip search-and-grep task using the new [`manual-literature-mining.md`](../wiki/etc/manual-literature-mining.md) discipline.
-
-**Reference:** [`wiki/c-utilis-uricase-cassette-compatibility-computational.md`](../wiki/c-utilis-uricase-cassette-compatibility-computational.md).
-
----
-
 ## 2026-05-05 — CP0 went from "honest platform gap" to "active fermentable engineering candidate" in 6 hours
 
-**What happened.** The wiki had explicitly named complement priming (CP0) as the project's only "honest platform gap" — the one chokepoint in the gout cascade where no fermentable molecule was on the table, and the platform's official stance was "avacopan (a prescription pharma drug) as permanent adjunct." A 2026-04-27 computational scan of natural-product C5aR1 antagonists across ChEMBL / NPASS / LOTUS / Open Targets had returned zero validated hits — that was the prior result.
+**What happened.** Complement priming (CP0) had no fermentable candidate in the portfolio. A 2026-04-27 computational scan of natural-product C5aR1 antagonists across ChEMBL, NPASS, LOTUS, and Open Targets identified no validated hit in its searched sources.
 
-In one ~6-hour working session today (2026-05-05), the chokepoint methodology + AI-assisted research substrate moved CP0 from "pharma-only territory" to "in silico-validated stalk-truncated DAF/CD55 SCR1-4 construct, structurally comparable to uricase, with a concrete wet-lab proposal." Trace:
+The session produced a stalk-truncated DAF/CD55 SCR1-4 hypothesis and a concrete wet-lab proposal. The computational protease labels were later found to rely on pLDDT confidence as an accessibility proxy, so they do not validate stability.
 
 | Step | Time | Outcome |
 |---|---|---|
 | Scoped engineered soluble complement regulators (sCR1 / Factor H / DAF/CD55) as exploration vector | morning | DAF/CD55 ectodomain identified as most tractable candidate |
-| comp-006: protease stability of full DAF ectodomain | midday | HIGH risk — disordered Ser/Thr stalk drives all the exposed sites |
+| comp-006: protease proxy for full DAF ectodomain | midday | Lower-confidence Ser/Thr stalk identified as a truncation hypothesis; no empirical risk verdict |
 | Sweep daemon's Pass 2 (DeepSeek V4-Pro) found the truncation hypothesis explicitly | afternoon | "A construct truncated at SCR4 would remove all exposed sites" |
-| comp-012: protease stability of SCR1-4 truncated (aa 35-285) | evening | **LOW (0.039) — identical to uricase** |
+| comp-012: protease proxy for SCR1-4 truncated (aa 35–285) | evening | Stalk-truncation candidate identified; empirical protease stability unresolved |
 
-The platform's CP0 status shifted from **"avacopan dependency"** to **"fermentable candidate identified, computationally validated, three known wet-lab unknowns"** — in a single session.
+The portfolio gained a fermentable candidate hypothesis, not a validated platform component. Expression, folding, retained complement function, luminal access, and processing stability remain empirical gates.
 
-**Why it matters.** Gout research has treated complement priming as pharma-only territory because (a) C5a is a hard target for natural-product antagonism, (b) the FDA-approved compound (avacopan) is mechanically clean but commercially expensive ($60K+/year in some indications), (c) heterologous expression of human soluble complement regulators in food-grade GRAS organisms simply hadn't been seriously scoped for any indication. The path that opened — engineered DAF/CD55 SCR1-4 in *A. oryzae* — is genuinely first-in-class, even with three remaining unknowns.
+**Why it matters.** The work created a falsifiable engineered-complement-regulator thread where the portfolio previously had no fermentable candidate. It did not establish novelty, feasibility, protease survival, or clinical value.
 
-**The deeper meta-story:** this is what the discovery-engine methodology produces when given AI-assisted research velocity. Six hours from "platform gap" to "actionable engineering plan" would have been months in a human-only workflow — literature triage + computational protease analysis + multi-vendor cross-checked synthesis + falsification-card discipline applied at every step. None of the individual moves was magic; the speed of compounding was.
+**Methodological lesson:** rapid computational iteration is useful when it produces a discriminating experiment, but speed does not upgrade a proxy into evidence. The invalid pLDDT-accessibility assumption is the reason this thread must remain an open engineering hypothesis.
 
 **Three places we genuinely need help — these are the unknowns that will determine whether the engineering path is real or only computationally elegant.** If you work in any of these areas, get in touch — the questions are concrete enough that a substantive conversation can happen quickly.
 
-1. **Disulfide folding / protein expression** — wet-lab *A. oryzae* expression of the truncated DAF SCR1-4 construct (aa 35–285). Does it fold correctly with all 12 disulfide bonds (3 per SCR domain × 4 SCRs)? Does it secrete? Does it survive solid-state koji fermentation in practice (vs. the in silico prediction)? **Who can help:** *A. oryzae* engineering labs with protease-deletion host access (NSlD-ΔP10 ideal, RIB40 acceptable for first-pass), filamentous-fungus protein expression CROs. The Maruyama lab at Tokyo University is the strain-source contact (their adalimumab-in-*A. oryzae* paper is the foundational reference for this whole architecture).
+1. **Disulfide folding / protein expression** — wet-lab *A. oryzae* expression of the truncated DAF SCR1-4 construct (aa 35–285). Does it form the 8 intrachain disulfides annotated for the four SCR domains, secrete, and retain activity through solid-state koji fermentation? **Who can help:** *A. oryzae* engineering labs with protease-deletion host access, filamentous-fungus protein-expression CROs.
 2. **Functional complement-regulatory activity** — does the truncated SCR1-4 fragment, expressed soluble (no GPI anchor), retain C3b/C4b binding and decay-accelerating function? Native DAF uses all four SCR domains plus the membrane GPI anchor for proper geometry. A soluble truncated form changes the geometry. **Who can help:** complement biologists with C3b deposition / C5a generation assays, anyone with experience on soluble-DAF or sCR1 / Factor H truncated-construct activity work. Even a literature deep-dive of published soluble-DAF activity profiles would be valuable; we're not aware of an aa 35–285 boundary specifically being tested.
 3. **Mucosal-surface delivery geometry** — even if the protein is functional and shio-koji-stable, does luminal-side DAF SCR1-4 actually engage the submucosal-macrophage CP0 priming step? The macrophages doing the priming are submucosal; whether luminal DAF can reach them, or only acts on bacterial complement-priming at the mucus interface, is unresolved. **Who can help:** mucosal immunologists, gut-luminal complement-activation researchers, anyone who's quantified epithelial transit of soluble proteins in this size range.
 
-Each unknown is real. Honest framing: not "CP0 closed," more like **"CP0 has a real candidate in active engineering investigation, with three specific gating questions where outside expertise would be valuable."** That's the recruiting hook — the unknowns are the invitation.
+Each unknown is real. The bounded framing is: **CP0 has a candidate construct and a concrete validation path; no feasibility conclusion has landed.**
 
 **External-comms angle.** Two natural formats:
 
-- **LinkedIn post (~150-300 words):** Lead with the headline. Show the 6-hour timeline. Name the methodology (chokepoint mapping + AI-assisted research velocity + falsification card discipline). End with "three known unknowns before this closes — wet lab is the gating step." Close with a link to the comp-012 page (`https://brianpabent.github.io/open-enzyme/daf-cd55-scr14-truncated-computational/`). Tone: direct, no over-claim, "here's the working state, not a victory lap."
-- **Blog post / longer technical piece (~800-1500 words):** Same arc but with the deeper methodology story. Highlight the multi-vendor sweep architecture (Gemini Pass 2 + Claude Pass 3 + DeepSeek peer-review for synthesis). Show the chain of computational experiments (comp-006 → sweep finding → comp-012). Cite the in silico verdicts with the "Mechanistic Extrapolation" evidence-tier honesty. Open-source angle: every step is committed, anyone can clone the repo and re-run the analyses.
+- Any external account should lead with the construct hypothesis and the wet-lab gates, state that the original HIGH/LOW labels were invalid, and avoid presenting the session as a validation milestone.
 
-**Reference for either format:** the [historical synthesis log at commit `3b2261e3`](https://github.com/brianpabent/open-enzyme/blob/3b2261e3/logs/v4-synthesis-2026-05-05-487fad3.md) shows the exact moment the daemon surfaced the truncation hypothesis as a wet-lab proposal; the comp-012 page shows the in silico validation that landed within the same session. Concrete, citable, reproducible.
+The comp-012 page records the current bounded interpretation; Git contains the historical sequence of changes.
 
 ---
 

@@ -4,7 +4,7 @@
 
 **Methodology:** for each upstream complement node, anchor queries → top results → grep verification of load-bearing IC50/CH50/AP50 values from primary-paper full text → flag assay format → record source language, evidence tier, and primary citation.
 
-**Caveat:** ALL hemolytic-assay IC50 values are highly assay-format-dependent. CH50 (sheep erythrocyte, classical pathway), AP50 (rabbit erythrocyte, alternative pathway), Wieslab ELISA (terminal MAC deposition), C4-deposition assay (MASP-2 specific), C3c ELISA (lectin-pathway specific) report different operative values for the same compound. See cross-cutting heterogeneity log below.
+**Caveat:** The listed studies use different assay formats and conditions: CH50 (sheep erythrocyte, classical pathway), AP50 (rabbit erythrocyte, alternative pathway), Wieslab ELISA (terminal MAC deposition), C4-deposition assays (MASP-2 specific), and C3c ELISA (lectin-pathway specific). Their values are descriptive records, not interchangeable estimates of an operative gout-compartment potency. The current records do not isolate how much of each spread is caused by assay format, pathway context, serum dilution, material, laboratory, or another condition. See the cross-cutting heterogeneity log below.
 
 ---
 
@@ -24,9 +24,7 @@
 | **Apigenin** | Plant flavone | 3.40 ± 0.06 | 2.02 ± 0.21 | CP + AP, weak | In vitro | English | Zhang & Chen 2008, PMC7126446 |
 | **Ginsenoside Rg3** | Plant triterpene saponin | not in matched-format paradigm | — | C1q reduction (mouse brain, depression model) | Animal model — chronic restraint depression mouse | English (China-based) | Yang D et al., PMC12594608 (2025) |
 
-**Reference: Heparin sodium salt** in the same Zhang & Chen 2008 paradigm: CH50 38.5 ± 1.78 μg/mL ≈ 2.6 μM (assuming MW 15 kDa). On a μM basis the Helicteres lignan compound 5 (CH50 9 μM) is comparable to heparin and 20× more potent than luteolin.
-
-**Top-tier within ~20% on lead metric (CH50 ≤ 0.20 mM = 200 μM):** the Helicteres benzofuran lignans (compound 5 + compound 4) and luteolin are the only three sub-200-μM compounds; compounds 4 and 5 are ~5–20× more potent than luteolin and stand alone at the top. Per the no-headline rule, both Helicteres benzofuran lignans tie for top tier; luteolin sits at the next tier (~5× weaker on CH50, ~1× on AP50).
+**Reference record:** Zhang & Chen 2008 reported heparin sodium salt in the same experimental paradigm. Molecular-weight conversion is not used here because heparin is heterogeneous and a mass-to-molar comparison would create false precision. The tabulated values remain material- and assay-specific observations, not a cross-compound rank.
 
 ### A.2 Lectin pathway — MASP-2 / MBL-MASP
 
@@ -41,7 +39,7 @@
 | **Suramin** | Synthetic polysulfonated naphthylurea (FDA-approved trypanosomiasis drug) | LP IC50 not stated as μM but operates on LP per PMC4629277 | Hemolysis + C3c ELISA | CP and LP | Pre-clinical (FDA-approved for off-label complement use) | English | PMC4629277 — used as positive control |
 | **TFPI1-derived peptide** (engineered MASP-2 inhibitor) | Protein engineering | High potency vs MASP-2 (Ki sub-nM range) | Direct enzymatic + ischemia-reperfusion model | MASP-2-selective | Animal model | English | Szakács D et al. JBC 2019, PMC6527154 |
 
-**Top-tier on LP-selective metric:** heparin octa-/hexasaccharides (3-4 μg/mL) are the most potent natural-derived LP-selective inhibitors; Bupleurum chinense polysaccharide (98 μg/mL i.e. 0.098 mg/mL) is the most potent plant-natural LP-active polysaccharide in the literature surveyed.
+The oligosaccharide and polysaccharide values describe different exact materials in the cited assays. They do not establish a class-wide or cross-material priority.
 
 ### A.3 Complement-fixation polysaccharides (immunomodulatory; effect direction context-dependent)
 
@@ -65,7 +63,7 @@ These cause complement *fixation* (consumption of complement at tissue sites awa
 
 ### B.2 C5 convertase
 
-Rosmarinic acid is the only natural compound with directly-named C5 convertase inhibition activity in the surveyed corpus (1500 μM — weak direct inhibition, but compound primarily acts upstream at C3b).
+The surveyed Sahu 1999 record directly names C5-convertase inhibition by rosmarinic acid. This search observation is not a universal absence claim about other natural compounds and does not establish operative potency.
 
 ---
 
@@ -128,7 +126,7 @@ The C5 axis ENGINEERING surface (anti-C5 antibodies eculizumab, ravulizumab; ant
 | **HFS** | *Hizikia fusiforme* (acid-extract) | 24.65 | CP hemolysis | CP | In vitro | Jin 2015 |
 | **Sea cucumber polysaccharide (SC)** | *Acaudina molpadioides* (marine invertebrate) | similar to ANW (~1 μg/mL range) | CP hemolysis | CP | In vitro | Jin 2015 |
 
-**Top-tier on CP-only metric:** ANW (0.98 μg/mL) and SJW-3 (3.11 μg/mL) are within ~3× of each other in the same assay; both stand alone at top-tier for marine sulfated polysaccharides. SC (~1 μg/mL) joins this top tier per same paper. Per the no-headline rule, **all three (ANW, SJW-3, SC)** are surfaced as the top marine-polysaccharide tier.
+These marine-polysaccharide values are descriptive records for the exact materials and assay reported by Jin 2015. They do not establish oral exposure, safety, material equivalence, or a priority order.
 
 **Activator (negative finding):** **Floridoside** from *Mastocarpus stellatus* (red alga) is a potent CP **activator** — recruits IgM to drive CP. Inverse hit, included for completeness; not a CP0 candidate. (Courtois A et al. PMC2579733)
 
@@ -155,44 +153,9 @@ Survey of bacterial-metabolite anticomplement activity surfaced:
 
 ---
 
-## I. Top-tier compound list per node — depth-first compilation
+## I. Node-level source inventory
 
-For each upstream complement node, all compounds within ~20% of the lead metric (NO single headline):
-
-### Lead-metric tier per node
-
-**C1q-cascade direct (CP via C1q)**, ranking by CH50 in the matched Zhang/Chen + Yin/Chen 2008/2016 paradigm (μM-scale):
-
-| Rank tier | Compounds |
-|---|---|
-| Top tier (CH50 < 50 μM) | (7S,8R)-Dihydrodehydrodiconiferyl alcohol (9 μM); Machicendonal (40 μM) |
-| Mid tier (CH50 50–500 μM) | Luteolin (190 μM); Quercetin (500 μM); Quercitrin (530 μM); Rutin (580 μM); Helicteres compound 6 (kaempferol-3-O-glucoside, 143–1000 μM range across compounds 6–12) |
-| Heparin reference | ~2600 μM (38.5 μg/mL ÷ ~15 kDa MW) |
-
-**MASP-2 / Lectin pathway selective**, ranking by LP IC50 in WieLISA (μg/mL):
-
-| Rank tier | Compounds |
-|---|---|
-| Top tier (LP IC50 < 5 μg/mL, LP-selective) | Heparin octasaccharide (3); Heparin hexasaccharide (4); Heparin tetrasaccharide LP only (21) |
-| Pan-pathway top tier (also CP+AP active) | Unfractionated heparin (LP 2, CP 39, AP 76); LMW heparin (enoxaparin, fragmin, fraxiparin) |
-| Plant polysaccharide top tier | Bupleurum chinense polysaccharide BCPs (LP 98 μg/mL; CH50 350 μg/mL; AP50 337 μg/mL) |
-
-**C3 convertase / C5 convertase indirect via C3b**:
-
-| Rank tier | Compounds |
-|---|---|
-| Lead | Rosmarinic acid (C3b covalent IC50 34 μM; CP hemolysis 180 μM; AP hemolysis 160 μM) |
-| Indirect: C3-binding cyclic peptide (engineered) | Compstatin / pegcetacoplan family (sub-μM; FDA-approved 2021) |
-
-**Marine sulfated polysaccharides (CP)**:
-
-| Rank tier | Compounds |
-|---|---|
-| Top tier (CP IC50 < 5 μg/mL) | ANW (*Ascophyllum nodosum* fucoidan, 0.98); SC (sea cucumber polysaccharide, ~1); SJW-3 (*Saccharina japonica* sulfated galactofucan, 3.11); SJS (4.51) |
-
-**Factor B / Factor D / Factor H (direct natural-product modulators)**: COVERAGE GAP — no characterized natural-product direct modulators with IC50 evidence in the surveyed corpus. Engineering thread (mini-FH constructs) and synthetic small-molecule thread (iptacopan, danicopan) own these nodes.
-
-**CD55 / CD59 / CR1 expression upregulators**: COVERAGE GAP — engineering thread territory (comp-012, H05).
+The tables above preserve records by complement node, material, assay, and primary source. They are an inventory, not a ranking surface. Factor B, Factor D, Factor H, CD55, CD59, and CR1 natural-product queries returned no directly characterized candidate in the searched corpus; that bounded search result is a coverage gap, not evidence that the class is universally empty.
 
 ---
 
@@ -209,11 +172,7 @@ For compounds with reported IC50 spanning >5× across the literature:
 | Alternative pathway hemolysis (human serum) | 160 μM | Sahu 1999 |
 | Direct C5 convertase enzymatic | 1500 μM | Sahu 1999 |
 
-**Range: 34 → 1500 μM = 44× variation.** Format-driven explanation: rosmarinic acid acts via **covalent C3b modification** — most efficient when C3b is being deposited (cell surface assay, IC50 34 μM), less efficient at later cascade steps where C3b is already bound (hemolysis IC50 180 μM), and very inefficient when forced to act on assembled C5 convertase directly (1500 μM). Mechanism is upstream of C5 convertase, not at it. Future use-case selection should match assay paradigm to intended mechanism:
-
-- Soft-tissue gout MSU surface C3b deposition → Sahu's 34 μM number is the operative one
-- Serum-pathway broad inhibition → 160-180 μM range
-- Late-cascade C5/C5b-9 quench → 1500 μM (rosmarinic acid is NOT the right tool)
+**Descriptive range: 34 → 1500 μM = 44× across the listed assay records.** The covalent-C3b mechanism makes assay-step dependence plausible, but these records also differ in assay context and do not isolate format as the cause of the spread. No value is an operative gout-compartment potency. A matched-material, matched-condition replication across prespecified formats must determine whether the spread follows cascade step, laboratory context, or both.
 
 ### Heparin
 
@@ -225,7 +184,7 @@ For compounds with reported IC50 spanning >5× across the literature:
 | C4 cleavage MASP-mediated | 102 μg/mL | Talsma 2020 |
 | Sheep-erythrocyte CH50 (Zhang & Chen paradigm) | 38.5 μg/mL | Zhang & Chen 2008 |
 
-**Range: 2 → 102 μg/mL = 50× variation.** Format-driven explanation: heparin is more potent vs LP because the LP assay uses 1:100 serum (less competing serum protein) AND because MASP-2 has a heparin-binding active-site geometry (Talsma 2020 Kd ~2 μM for direct binding). CP/AP IC50 values are higher because they involve more steps of the cascade and use 1:100 / 1:50 serum dilutions. Sheep-erythrocyte CH50 ≈ WieLISA CP IC50 within order of magnitude (38 vs 39 μg/mL).
+**Descriptive range: 2 → 102 μg/mL = 50× across the listed records.** Talsma 2020 directly supports pathway-specific inhibition and MASP-2 binding/inhibition for the tested heparin materials. The records do not isolate how much of the numerical spread is caused by assay format, pathway context, serum dilution, material, laboratory, or another condition; none supplies an operative gout-compartment potency. A matched-material, matched-condition panel is required before attributing the spread or using it for experimental routing.
 
 ### Luteolin
 
@@ -291,37 +250,15 @@ If the Phase 2 CNKI/WanFang follow-up surfaces primary-language IC50 papers (e.g
 
 ---
 
-## N. Recommendations
+## N. Discriminating follow-ups
 
-### N.1 Prioritize for in vitro confirmation
+This artifact does not choose a candidate. Candidate selection must come from an independently verified evidence home, exact-material availability, compartment plausibility, safety, and a prespecified decision.
 
-**Tier 1 — strongest combined evidence (matched assay format + multiple groups + in vivo data where available):**
+Useful next observations include:
 
-1. **Rosmarinic acid** — C3 convertase / C3b covalent inhibitor, 34 μM (PMID 10353266); 30+ year record across 3 independent papers (1988, 1991, 1999); Lamiaceae family (rosemary, perilla, lemon balm) is dietary-tier; in vivo activity in 3 models documented. **Highest-leverage candidate** for upstream-complement natural-product intervention. Specific gout-relevant follow-up: does rosmarinic acid reduce C3b deposition on MSU crystal surface in vitro? (Answer not in surveyed literature; specific Phase 2 test.)
-2. **Luteolin** — broad CP+AP inhibitor, 190 μM CH50 (PMC7126446); flavonoid common to *Apium graveolens* (celery), *Petroselinum crispum* (parsley), *Camomilla*, dietary-tier; multiple TCM clinical contexts. Already partially in OE corpus per comp-013 (luteolin XO IC50 550 nM, URAT1 expression downregulation). The convergence of XO + URAT1 + complement-inhibitor activity makes luteolin a multi-mechanism candidate worth elevating.
-3. **Helicteres benzofuran lignans** (compounds 4 and 5, machicendonal + (7S,8R)-dihydrodehydrodiconiferyl alcohol) — most potent CH50 in the surveyed corpus (9–40 μM), single-paper documentation (Yin 2016), C1q + C2 + C3 + C9 mapping done. **Tier-1-with-replication-needed:** rerun the assay before in vivo work; single-paper finding is fragile.
+1. Independently replicate the Yin 2016 *Helicteres* result with matched compound identity, stocks, assay conditions, and controls before translational routing.
+2. Test one qualified rosmarinic-acid material in an MSU-associated complement assay while measuring material recovery and C5a or C5b-9. This asks whether the cited C3b mechanism is active in the proposed system; it does not presume gut exposure.
+3. Repeat one exact material across preregistered complement formats under harmonized conditions before attributing cross-paper numerical variation to assay format.
+4. Run dedicated CNKI/WanFang and J-STAGE searches using compound, species, formula, and traditional-pathology frames; apply the two-model translation protocol to load-bearing non-English findings.
 
-**Tier 2 — strong in vitro but mechanism gap or limited replication:**
-
-4. Bupleurum chinense polysaccharide (BCPs) — pan-pathway active including LP, oral GI use long history in TCM; concrete IC50 numbers (CH50 0.35 mg/mL); polysaccharide MW heterogeneity is a downside for reproducibility.
-5. Marine fucoidans — sulfated GAG class; structurally similar to heparin (which is FDA-approved); broad-pathway activity. Cardiovascular safety profile is a known risk (fucoidan alginate microbeads cause coagulation per PMC11783016 — caution).
-
-### N.2 Drop or de-prioritize
-
-- **Direct natural-product Factor B / Factor D / Factor H modulators** — corpus is empty at this resolution. Engineering thread (mini-FH per Kamala 2021) and synthetic small-molecule thread (iptacopan, danicopan) own these nodes for now. Natural-product CP0 is C1q/C3-targeted, not Factor B/D-targeted.
-- **CD55 / CD59 / CR1 expression upregulator natural-product class** — also empty at this resolution. Engineering thread (comp-012, H05) is the right tool here.
-- **Floridoside** (red alga) — confirmed CP **activator**, not inhibitor; do not pursue as a CP0 candidate.
-
-### N.3 Phase 2 follow-ups (explicit)
-
-1. **CNKI / WanFang Chinese-language deep dive** for 补体抑制剂 + 黄酮 / 多糖 / 木脂素 (complement inhibitor + flavonoid / polysaccharide / lignan) — verify there is no large untapped Chinese-only corpus. Spot-check via 2-model translation per CLAUDE.md.
-2. **J-STAGE Kampo formulary search** for 補体 + 漢方医学 (complement + Kampo). Sho-saiko-to and Juzen-taiho-to (already known TCM/Kampo formulas) may have direct anti-complement work in Japanese-only literature.
-3. **Helicteres benzofuran lignan replication** — Yin 2016 is single-paper; rerun the CH50/AP50 with independent compound stocks before further work.
-4. **Rosmarinic acid + MSU crystal surface assay** — operative gap: does the 34 μM C3b-covalent IC50 translate to MSU-crystal-induced C5a generation suppression at gut-luminal-tractable doses? Concrete Phase 2 in vitro test.
-5. **Multi-level comp-021 candidate**: compound × upstream-complement chokepoint × matched-assay-format mapping. The 44× rosmarinic-acid IC50 spread (34 → 1500 μM) is the canonical example of why future scans need format-stratified IC50 reporting.
-
-### N.4 What this re-run does NOT do (scope discipline)
-
-- Does NOT triage compounds by oral bioavailability / gut-luminal tractability (that's the comp-004/comp-013 framework, future Phase 2 follow-up via comp-NNN extension)
-- Does NOT propose engineering decisions (e.g., "express compound X biosynthetic pathway in koji") — that's downstream of mechanism confirmation
-- Does NOT replace the comp-012/H05 engineering thread — protein-engineering CD55 SCR1-4 is a separate exploration vector, complementary to natural-product work catalogued here
+The re-run does not establish oral bioavailability, a gout-compartment concentration, engineering route, cross-class rank, or replacement for the independent CD55 engineering track.

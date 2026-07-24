@@ -1,44 +1,61 @@
-# comp-001 — Uricase Shio-Koji Protease Stability
+# COMP-001 — Q00511 Legacy Preference-Filter and pLDDT-Context Audit
 
-**Question:** Will *A. flavus* uricase (Q00511) survive the protease environment of a shio-koji ferment (15–20% NaCl, pH 4.5–5.0, RT, 7–14 days) with meaningful activity retained?
+**Question:** Which adjacent residue pairs in *Aspergillus flavus* uricase (Q00511) match three fixed legacy preference filters, and what AlphaFold confidence surrounds each match?
 
-**Short answer:** Computational analysis predicts **low risk**. All protease recognition sites are in confidently-folded regions (100% of residues pLDDT > 80). Combined with strong salt inhibition of the dominant protease (ALP retains ~19% activity at shio-koji NaCl concentrations), the structural evidence argues against significant proteolytic degradation.
+**Decision boundary:** This COMP supplies an auditable inventory of fixed filter matches and pLDDT context. The legacy arrays do not have claim-level provenance and are not treated as exhaustive protease specificity rules. The computation does not model solvent accessibility, cleavage probability, exposure time, protease concentration, retained activity, or fermentation survival. It cannot issue a LOW/MODERATE/HIGH protease-risk verdict. The empirical [§1.10 shio-koji retained-activity assay](../../../validation-experiments.md#110-heterologous-uricase--lactoferrin-stability-in-shio-koji-salt-protease-ferment) remains the feasibility gate for every possible result.
 
-**Verdict:** §1.10 wet-lab stability experiment should still run — this analysis shifts the prior from "unknown" to "probably fine," reframing §1.10 as confirmation rather than feasibility gate.
+## Planned computation
 
-## How to reproduce
+1. Load and validate the fixed Q00511 sequence and the reviewed position–residue–pLDDT mapping.
+2. Load three legacy Boolean preference filters. A nonempty list is an inclusion filter; an empty list leaves that side of the adjacent pair unrestricted.
+3. Enumerate every adjacent pair satisfying each fixed filter.
+4. For each pair, report pLDDT over an inclusive window containing P1 and P1' plus up to three flanking residues on each side. Boundary windows truncate at the sequence termini.
+5. Emit filter arrays, pair positions, exact window bounds, residue counts, and unrounded calculation values.
+6. Emit no biological recognition claim, accessibility class, risk score, survival prediction, or fermentation verdict.
+
+The script is self-contained. It validates canonical sequence and filter residues, uniqueness and schema constraints, finite pLDDT values in `[0,100]`, exact positions, the Q00511 sequence hash, and the reviewed position–residue–pLDDT mapping hash. Built-in checks cover the first peptide bond, an internal bond, and the terminal K301/L302 pair so residue 302 cannot be dropped from its window.
+
+## Result and sensitivity map
+
+All possible results have the same verdict:
+
+> **PROXY ONLY — EMPIRICAL PROTEASE RISK UNRESOLVED**
+
+This is an exact enumeration of fixed inputs, so no inferential sensitivity analysis is planned. A different preference-filter encoding or pLDDT window width is a new design requiring its own pre-run review. Neither favorable nor unfavorable descriptive output can convert §1.10 from feasibility testing to confirmation.
+
+## Reproduce
 
 ```bash
 python3 analyze.py
-# Outputs: outputs/cleavage_sites.json, outputs/summary.md
 ```
 
-Requirements: Python 3.8+, stdlib only (json, pathlib, os). No packages to install.
-
-## Re-running with updated data
-
-- **New AlphaFold model:** Download updated PDB from `https://alphafold.ebi.ac.uk/files/AF-Q00511-F1-model_v<version>.pdb`, re-extract pLDDT values into `inputs/alphafold_Q00511_plddt.json`, update `inputs/provenance.md`, re-run.
-- **Updated protease specificities:** Edit `inputs/protease_specificities.json` and update `_source` field with new MEROPS reference.
-- **Different protein:** Replace `Q00511.fasta` and `alphafold_Q00511_plddt.json` with inputs for the new target.
+Requirements: Python 3.8+ and the committed inputs; no third-party packages. Run twice and require byte-identical outputs.
 
 ## File index
 
-```
+```text
 inputs/
-  Q00511.fasta                    UniProt sequence (fetched 2026-05-05)
-  alphafold_Q00511_plddt.json     Per-residue pLDDT from AlphaFold v6 PDB (fetched 2026-05-05)
-  protease_specificities.json     P1/P1' rules + salt inhibition data (MEROPS + primary literature)
-  provenance.md                   Data sources, fetch dates, version notes
+  Q00511.fasta
+  alphafold_Q00511_plddt.json
+  legacy_preference_filters.json
+  provenance.md
 outputs/
-  cleavage_sites.json             Full machine-readable results
-  summary.md                      Human-readable findings — this is the artifact cited in the wiki
-analyze.py                        Analysis script
-README.md                         This file
+  cleavage_sites.json
+  summary.md
+reviews/
+  pre-run.manifest.json
+  pre-run.md
+  post-run.manifest.json
+  post-run.md
+analyze.py
+README.md
 ```
 
-## Wiki links
+## Canonical and downstream surfaces
 
-- Interpretive page: [`wiki/uricase-protease-stability-computational.md`](../../../uricase-protease-stability-computational.md)
+- Interpretive evidence home: [`wiki/uricase-protease-stability-computational.md`](../../../uricase-protease-stability-computational.md)
 - Tracking index: [`wiki/computational-experiments.md`](../../../computational-experiments.md)
-- Wet-lab experiment this informs: [`wiki/validation-experiments.md` §1.10](../../../validation-experiments.md)
-- Platform context: [`wiki/koji-endgame-strain.md`](../../../koji-endgame-strain.md)
+- Empirical gate: [`wiki/validation-experiments.md` §1.10](../../../validation-experiments.md#110-heterologous-uricase--lactoferrin-stability-in-shio-koji-salt-protease-ferment)
+- Direct UOX dependent: [`wiki/uricase-shio-koji-thermal-stability-computational.md`](../../../uricase-shio-koji-thermal-stability-computational.md)
+
+Before post-run review, search the active corpus for COMP-001-derived accessibility, burial, LOW-risk, survival, and “confirmation experiment” claims. Correct direct UOX dependents in this batch. Shared-proxy conclusions for other payloads remain separately reviewable under their own COMP queue items; they must not use COMP-001 as a validated benchmark.

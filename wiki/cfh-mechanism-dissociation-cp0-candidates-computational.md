@@ -45,7 +45,7 @@ status: complete
 
 CFH (Complement Factor H) Y402H — the missense variant rs1061170, p.Tyr402His — sits in Sushi/CCP domain 7 of CFH (UniProt P08603 verified: Sushi 7 = aa 387-444 [grep-verified against the P08603 JSON record this session]; Y402 is in the middle of that domain). CCP6-8 of CFH is the canonical CRP-binding and host-glycosaminoglycan-binding surface. Y402H weakens both surface contacts. CFH itself regulates alternative-pathway complement amplification by (a) decay-accelerating the C3bBb convertase and (b) acting as a Factor-I cofactor for C3b → iC3b cleavage. Both functions operate on **surface-deposited C3b** — that is, *downstream* of where C3b is first generated and deposited.
 
-The OE hypothesis ([`complement-c5a-gout.md` §6.3](./complement-c5a-gout.md)): the comp-018 / comp-020 upstream-CP0 dietary candidates inhibit complement *upstream of* where CFH acts (preventing C3 convertase assembly or C3b deposition), so Y402H carriers — who have *more* unregulated surface C3b at baseline — should benefit *more* from these candidates, not less. The AMD-paradox counter-evidence (Klein 2008 PMID 18423869 / Awh 2013 PMID 23972322 / Vavvas 2018 PMID 29311295 AREDS zinc + Merle 2015 PMID 26132079 DHA → CFH high-risk carriers WORSE) is hypothesized to apply only to interventions that work *through* CFH (zinc-induced complement inactivation requires CFH-CRP-bridging, which Y402H performs poorly), not to interventions that work *upstream of* CFH.
+The OE hypothesis ([`complement-c5a-gout.md` §6.3](./complement-c5a-gout.md)): candidate-specific upstream-CP0 mechanisms documented in current evidence homes may act *upstream of* where CFH regulates deposited C3b. The untested leap is that Y402H carriers might therefore respond differently to those candidates. The AMD-paradox counter-evidence (Klein 2008 PMID 18423869 / Awh 2013 PMID 23972322 / Vavvas 2018 PMID 29311295 AREDS zinc + Merle 2015 PMID 26132079 DHA → CFH high-risk carriers WORSE) may apply differently to interventions that require CFH-CRP bridging than to interventions acting at another complement step, but the direction of a gout interaction is not established.
 
 This comp converts that hypothesis from hand-wavy plausibility to a **per-candidate CFH-dependence classification** with falsifiable predictions.
 
@@ -125,7 +125,7 @@ Luteolin additionally has documented gout-relevant non-complement modes (per [co
 
 **Predicted Y402H × HCP × incident gout interaction:** **negative direction, possibly notably greater in carriers (Model A — dual CP0+CP1 chokepoint compounds the genotype-baseline-severity amplification) vs null direction (Model B).** Both reject the AMD-paradox direction.
 
-[TRANSLATION-DISAGREEMENT — dual-chokepoint framing]: Model A explicitly highlights HCP's dual CP0 (complement) + CP1 (TLR4) mechanism as a reason for *amplified* benefit in Y402H carriers; Model B does not foreground this. The dual-chokepoint framing is consistent with the comp-018 Phase 2 "DUAL-CHOKEPOINT" classification of HCP/HCPM as a Tier 1d candidate.
+[TRANSLATION-DISAGREEMENT — dual-chokepoint framing]: Model A explicitly highlights HCP's candidate CP0 (complement) + CP1 (TLR4) mechanisms as a reason for *amplified* benefit in Y402H carriers; Model B does not foreground this. This is an untested mechanistic extrapolation from the candidate-specific evidence above, not a validated rank or interaction direction.
 
 **Multi-hypothesis discipline — rejected alternative:**
 1. *HCP polysaccharide acts as a CFH-mimic — binding C3b at the same surface CFH binds.* Partially rejected: depletion-rescue data (Lu 2018) shows HCP blocks the cascade at C3 *cleavage*, not at C3b *inactivation*. CFH-mimicry would predict downstream-of-cleavage action. HCP's pectic polysaccharide structure is structurally nothing like CFH's CCP-fold. Same prediction direction (negative) but better-evidenced as activation-blocker than CFH-mimic.
@@ -140,19 +140,19 @@ Luteolin additionally has documented gout-relevant non-complement modes (per [co
 
 **Primary mechanism evidence:**
 - Yin 2016 (PMID 27834928 / PMC6273495, full text read): depletion-rescue target identification for *Helicteres angustifolia* benzofuran sesquilignans. **Compound 4 (machicendonal): CH50 = 40 μM, AP50 = 105 μM; targets C1q, C2, C3, C4, C9. Compound 5 (dihydrodehydrodiconiferyl alcohol): CH50 = 9 μM, AP50 = 21 μM; targets C1q, C2, C3, C9 (NOT C4).** [Verbatim verified against PMC6273495.] **[In Vitro, single-paper anchor]**
-- **comp-018 Phase 2 replication status: INCONCLUSIVE** ([phase-2-helicteres-replication.json](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json)) — no independent group has reproduced Yin 2016. Structurally-adjacent benzofuran lignans (*Styrax japonica* egonol, Min 2004 PMID 15643559) are 3.7× weaker, leaving open the question of whether Yin 2016 represents exceptional pharmacology or assay-format artifact.
+- **Replication status: unresolved.** Yin 2016 is a single-paper anchor in the current corpus. Independent matched-assay replication is required before treating its potency or target pattern as a priority signal.
 
 **CFH-footprint mapping:** C1q, C2, C4, C9 are not CFH-regulated. C3 binding is upstream of cleavage (CFH regulates the cleavage product, not C3 itself). The multi-target lignan pattern is structurally orthogonal to CFH's CCP6-8 binding surface. **The CP-pathway IC50 (9 μM CH50 for compound 5) is more potent than the AP-pathway IC50 (21 μM)** — inconsistent with a CFH-competitive mechanism (CFH is AP-specific; competition would predict AP-selectivity).
 
 **Predicted Y402H × Helicteres × incident gout interaction:** **negative direction (effect ≥ in carriers, Model A) vs null (Model B), with wide uncertainty bands. Practically: Helicteres is not part of any UKB-tractable dietary corpus.** The candidate's CFH-classification value is more relevant to a future TCM-supplement clinical evaluation than to the present UKB cross-tab.
 
-[TRANSLATION-DISAGREEMENT — confidence framing]: Model A bounds confidence by comp-018 Phase 2 replication risk (Medium); Model B does not weight replication risk into the confidence call (High). Model A's framing is the appropriate one for OE's evidence discipline — replication risk is a *published* Phase 2 finding, not informal speculation.
+[TRANSLATION-DISAGREEMENT — confidence framing]: Model A bounds confidence by the single-paper replication risk (Medium); Model B does not weight replication risk into the confidence call (High). Model A's framing is retained because the current corpus has no independent matched-assay replication.
 
 **Multi-hypothesis discipline — rejected alternative:**
 1. *Helicteres lignans act via CCP6-8 occupation displacing CRP / GAG from CFH.* Rejected: Yin 2016 depletion-rescue identifies C1q + C2 + C3 + C4 + C9 (not CFH) as targets; CP-pathway IC50 is more potent than AP, inconsistent with CFH-competitive mechanism.
 
 **Falsification test priority order:**
-1. Independent wet-lab replication of Yin 2016 (comp-018 Phase 2 open follow-up). **Load-bearing.**
+1. Independent wet-lab replication of Yin 2016. **Load-bearing.**
 2. If replication confirms, compound 5 on MSU + CFH-depleted vs CFH-replete serum.
 3. Consider whether Helicteres has a route to clinical translation given non-dietary status.
 
@@ -185,7 +185,7 @@ For the UK Biobank gout-GWAS collaborators (Merriman/Otago, Major-Wrigley/Auckla
 
 3. **NOT in UKB:** Houttuynia cordata cross-tab. The exposure is rare in UK dietary corpus. Defer to Korean Genome Epidemiology Study (KoGES) / China Kadoorie Biobank (CKB) / Singapore Chinese Health Study collaborations when available — flag that the East Asian cohorts have lower Y402H allele frequency (~5-6%) but adequate Houttuynia exposure data.
 
-4. **Not actionable in any biobank yet:** Helicteres benzofuran lignans (non-dietary; comp-018 Phase 2 replication required first).
+4. **Not actionable in any biobank yet:** Helicteres benzofuran lignans (non-dietary; independent replication required first).
 
 **Co-primary cohort allocation (UKB ↔ AoU):**
 
@@ -203,7 +203,7 @@ For the UK Biobank gout-GWAS collaborators (Merriman/Otago, Major-Wrigley/Auckla
 
 3. **Bioavailability of dietary candidates is variably characterized.** Rosmarinic acid reported low systemic absorption (≤1% per PMC9143754); luteolin variable (Apiaceae sources better than supplementation); HCP polysaccharide bioavailability after oral intake incompletely characterized; Helicteres benzofuran lignans not relevant (non-dietary). The operative *in-vivo* concentration at MSU-crystal sites in joints is unknown for all four. Gut-luminal or systemic-plasma routes may differ.
 
-4. **Single-anchor replication risk for Helicteres.** comp-018 Phase 2 verdict on Yin 2016 is INCONCLUSIVE. The Helicteres CFH-independence classification is conditional on the Yin 2016 target identification holding up in independent replication.
+4. **Single-anchor replication risk for Helicteres.** The CFH-independence classification is conditional on Yin 2016's target identification holding up in independent replication.
 
 5. **Mechanism-site resolution varies across candidates.** Rosmarinic acid (high, Sahu 1999 radioiodination); HCP / Helicteres (medium, depletion-rescue resolution per Lu 2018 + Yin 2016); luteolin (low, no depletion-rescue or single-residue data). Confidence calls reflect this gradient.
 
@@ -215,13 +215,13 @@ For the UK Biobank gout-GWAS collaborators (Merriman/Otago, Major-Wrigley/Auckla
 
 - **comp-040 (proposed):** wet-lab in-vitro CFH-replete/depleted-serum MSU-crystal complement-activation assay — direct falsification test of the CFH-independence classification for rosmarinic acid, luteolin, and qualified HCP materials. The HCP arm is independent of [validation §1.30](./validation-experiments.md), which tests direct macrophage directionality. Cost and schedule require a quote after exact materials, serum conditions, endpoints, controls, and replication are specified.
 - **comp-041 (proposed):** Y402H × candidate cross-tab feasibility scan in East Asian cohorts (KoGES, CKB, Singapore Chinese Health Study) for Houttuynia-specific cross-tab — paralleling the UKB feasibility analysis done 2026-05-19.
-- **Open follow-up — comp-018 Phase 2 Helicteres replication:** unchanged; this comp does not displace the load-bearing replication requirement on Yin 2016.
+- **Open follow-up — Helicteres replication:** this comp does not displace the load-bearing independent replication requirement on Yin 2016.
 
 ## 8. Cross-references
 
 - [`gout-genetic-variants.md`](./gout-genetic-variants.md) Category 5 CFH row
 - [`complement-c5a-gout.md`](./complement-c5a-gout.md) §6.3
-- [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) — comp-018, the original modulator discovery + Phase 2 Houttuynia + Helicteres + C1-INH thread
+- [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) — retired COMP-018 routing page; no ranking authority
 - [`upstream-complement-verification-rerun-computational.md`](./upstream-complement-verification-rerun-computational.md) — comp-020, the brief-scrubbed verification rerun
 - [`houttuynia-cordata.md`](./houttuynia-cordata.md) — exact-material evidence, delivery boundary, and independent CP0/CP1 gates
 - [`logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md`](../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md) — biobank feasibility analysis

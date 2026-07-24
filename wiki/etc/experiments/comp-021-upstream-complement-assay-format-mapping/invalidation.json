@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "comp": "comp-021",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "70e60ea9a7c84a92cec37164f38b456aaa6d6881",
+  "last_push_review_manifest_sha256": "486488850faa84b42574cb7b2d0c9d7aa3dbb7366e4928b2a01093645ab2f3b9",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 7238,
+      "sha256": "09fc1360fc93b92ad35b0f605b7fade2edb50b8d222aa547087699161418b1f2"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 13252,
+      "sha256": "aaec7e7e98e26413121fa9be4a729749981a7577cad091dd54487a2a0d20afa2"
+    },
+    {
+      "path": "inputs/assay-formats.json",
+      "bytes": 12335,
+      "sha256": "f76a4d8340fb99920bed9772661962d89b9838d84a90ba83b44f8327249a9753"
+    },
+    {
+      "path": "inputs/compound-list.json",
+      "bytes": 8331,
+      "sha256": "6cc100378fa550a9dde5ea3cc543207e962e0875ae0b1d2f0e22e3910944f7be"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 10185,
+      "sha256": "22190fca0e683d472b50ed1e85f1c1204569427f03898a541627002eedb838f7"
+    },
+    {
+      "path": "outputs/matrix.json",
+      "bytes": 29758,
+      "sha256": "5a95104cdadbe99d3dd97ef81a2cfb209c636b714a9c042b6342a593be97932e"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 9745,
+      "sha256": "8fd5b8906d046fae3323f920828cb1ae234eeeba4e850f206bbc5137d5a83e6c"
+    }
+  ],
+  "invalidated_scope": [
+    "all numerical ranges and uncertainty-collapse claims",
+    "compound buckets, rankings, and candidate privilege",
+    "assay-relevance scores and gut-luminal relevance assignments",
+    "operative gut concentration or potency",
+    "downstream model updates and decision routing"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_historical_inventory_and_research_conjecture",
+    "statements": [
+      "Assay-format stratification remains a research conjecture for planning matched replication experiments; it conveys no quantitative result or candidate priority."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/upstream-complement-assay-format-mapping-computational.md",
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "d7e867b5d711258ddc8bdf8a69d3a67a1fc7d3b729dfa46e498ba444065e60a3"
+  }
+}

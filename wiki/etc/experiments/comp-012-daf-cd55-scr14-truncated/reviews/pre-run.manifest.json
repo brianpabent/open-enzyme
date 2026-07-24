@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/README.md",
+      "kind": "design",
+      "bytes": 2181,
+      "sha256": "1978c3191f4c0e0471b36509adbd0afcd1d4dcdada916d3567bc0e73cee4354a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/invalidation.json",
+      "kind": "design",
+      "bytes": 2955,
+      "sha256": "4b4c0e5c7b5e360e616d7d5612eb140f29e6c8ab2cd9f2cd40f0c2fbed5630d5"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "5a79515222ff032175604ff4f8e4d0325f0f3ef9cfc4512b2220054bf9a3ebb0"
+}

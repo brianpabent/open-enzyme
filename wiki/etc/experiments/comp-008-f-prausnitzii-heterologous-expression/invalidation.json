@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "comp": "comp-008",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "70e60ea9a7c84a92cec37164f38b456aaa6d6881",
+  "last_push_review_manifest_sha256": "6714995a90517ecda33b3735aa6f1485b746060d84d74b02aae88ef1d7a21c54",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 8171,
+      "sha256": "d0eb79115f149099c4e3c7e9b89cd5947d0c5b347d6606d19479f54019975f6d"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 34292,
+      "sha256": "28ea9cf65ad8cbd63184f0ec0b1f456d3349425963f6ea9d2fd7f79b46d07e1e"
+    },
+    {
+      "path": "inputs/chassis_profile.json",
+      "bytes": 6120,
+      "sha256": "14483a4648db406a37f6594eb9cd404a8c3b6e075591c82d7a1bbba7889f2314"
+    },
+    {
+      "path": "inputs/payloads.json",
+      "bytes": 6145,
+      "sha256": "ecf4aca439eee19bbc97b3e8922651ba28d743228172424b8f7139eb0d532a2c"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 6935,
+      "sha256": "5ad32d662b9248f4c6c5ae642beded71ecca07c670f72b9dfe0c1751951fa10a"
+    },
+    {
+      "path": "outputs/results.json",
+      "bytes": 16316,
+      "sha256": "aa41d8be5b6b322ef082797accb8c396f215969b6ffbb9f8c2f6a9ba749d4fd5"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 18623,
+      "sha256": "8b4c94f89e87c538b0f61cafd074fac887ac271646ee22678e830d350f1f2465"
+    }
+  ],
+  "invalidated_scope": [
+    "all hard-coded factor scores, ranges, geometric means, and GREEN/YELLOW/RED labels",
+    "payload ordering, lowest-risk construct, toolkit-conditional ranking, and investment sequence",
+    "native-gene CAI equals 1.0 claim and all dependent rationales",
+    "host-safety, transfer-efficiency, transformation-timeline, tractability, and chassis-assignment claims",
+    "retired COMP-005, COMP-006, COMP-012, or COMP-024 authority"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_historical_inventory_and_research_conjecture",
+    "statements": [
+      "Stable transformation and reporter expression in one exact Faecalibacterium strain remain empirical entry gates.",
+      "Native butyrate-pathway, uricase, lactoferrin, and CR1 ideas remain separate configuration-level research conjectures with no ordering."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/f-prausnitzii-heterologous-expression-computational.md",
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "d3f1005b10475be30e1e41637342afc2b5525e68932f15635cb9e5ea904eeba9"
+  }
+}

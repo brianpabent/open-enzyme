@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/README.md",
+      "kind": "design",
+      "bytes": 1575,
+      "sha256": "2a0179e448a1b03fa12cf502d89a68383946693c4a92d52b3bd548da020ce6f6"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-023-cns1-cns2-metabolic-burden/invalidation.json",
+      "kind": "design",
+      "bytes": 2875,
+      "sha256": "5b293d236b2750646195d2ad4c9e457ea971a70b7951ef7b081c58c425983d45"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "e35975f3a1915e5ae860c2eaf58d81df31150797bef7dc708d85bbcff45a250d"
+}

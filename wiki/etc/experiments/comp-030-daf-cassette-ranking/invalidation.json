@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "comp": "comp-030",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "70e60ea9a7c84a92cec37164f38b456aaa6d6881",
+  "last_push_review_manifest_sha256": "32e02138fa52bffdb02247684fb37add88e015728e51986e92e7a94ed0acfd62",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 4651,
+      "sha256": "8b74badaf215170032aa1911680fd6a44bde6419a5636abfd018959411570807"
+    },
+    {
+      "path": "code/analyze.py",
+      "bytes": 32477,
+      "sha256": "64eeffb7bec19de3ae31b301d5f39e24b3c3e40e200562d6189423379718fcae"
+    },
+    {
+      "path": "code/rerank_final.py",
+      "bytes": 15339,
+      "sha256": "a032327b61ae59e667b66d5a0b19c679310a658df11f613a8cc39e277f424e67"
+    },
+    {
+      "path": "code/run_esm2.py",
+      "bytes": 12534,
+      "sha256": "90f8fead943c710ac93c7b3a957ef0c6b26b4cba2a48f1f28fb34c4e98d1f684"
+    },
+    {
+      "path": "figures/plddt_histogram.tsv",
+      "bytes": 136,
+      "sha256": "e64bffb2bdf95a1b5ce4765c470400325b6f1ad3ccb7fec15f9258a67a98f745"
+    },
+    {
+      "path": "inputs/P08174_scr14.fasta",
+      "bytes": 380,
+      "sha256": "cf9f5cd1bf95c23a0798a4ec30f284bfeea3e0fd78c7d7ba8eeffaec3d3e9c51"
+    },
+    {
+      "path": "inputs/a_oryzae_codon_usage.json",
+      "bytes": 5321,
+      "sha256": "61b8e7293388d5d605f19e36fce9d94d19a526baf35f3c9205bf17d0b717a24e"
+    },
+    {
+      "path": "inputs/protein_candidates.fasta",
+      "bytes": 259298,
+      "sha256": "d16ae13723905e094c1284c97ed4a2ad15ce4b3ed6a5c9c9de05cf996cc6de45"
+    },
+    {
+      "path": "inputs/protein_candidates_keymap.csv",
+      "bytes": 93758,
+      "sha256": "6382a9fc469d994ff9434cc8737c829cc38fcb4e56e8bb49c6ea71565e8cf5d9"
+    },
+    {
+      "path": "provenance.md",
+      "bytes": 7073,
+      "sha256": "4a1fb738b2b48c9f08313d4af79dfc7b867071466b8022725f800f7feab9a419"
+    },
+    {
+      "path": "results/all_candidates_scores.csv",
+      "bytes": 4819851,
+      "sha256": "78ebf8dcf33fe98778862e94b39466f5d6175f19855a29c1d6e810dad0b6554b"
+    },
+    {
+      "path": "results/alpha_coefficient_check.json",
+      "bytes": 1209,
+      "sha256": "126d545831b26ba7cb796cf421c4a6821116b8b04bf9d87de43532ac313f06a1"
+    },
+    {
+      "path": "results/esm2_pseudo_pLDDT.csv",
+      "bytes": 103864,
+      "sha256": "f82ea0ef83e5a716c3165b61bd1f919cc28cc57591e549b86dc0051c8bcad2dc"
+    },
+    {
+      "path": "results/final_summary.json",
+      "bytes": 6380,
+      "sha256": "b2437f64163ca49dff88752bd34146cbca045d34fd6c979033c7d2e07ac29a61"
+    },
+    {
+      "path": "results/plddt_distribution.csv",
+      "bytes": 229,
+      "sha256": "700cc0c941e2a66fbefd01d57c34afd458a4851a4b794bef4e4bf52ec6f1348f"
+    },
+    {
+      "path": "results/pre_esm2_top50.csv",
+      "bytes": 5902,
+      "sha256": "464fa6a798882b94589d3cb6ef70cad8fac86c7c94c249c84457339d492438e1"
+    },
+    {
+      "path": "results/shortlist_n5eq5.csv",
+      "bytes": 5056,
+      "sha256": "9009f93546e14a2517a612892b6f069a32041f4b4895497de9502e1a72d1caa0"
+    },
+    {
+      "path": "results/shortlist_n5ge4.csv",
+      "bytes": 78212,
+      "sha256": "a1c2a410479bb8b873f7750f4fbee1cdcdf8db0556af0efea82e8621b5e55856"
+    },
+    {
+      "path": "results/summary_pre_esm2.json",
+      "bytes": 890,
+      "sha256": "fc0c90f3acd536e58017d00d9ecabeeb3f765874edbd3bf0db609fc11ef8f750"
+    },
+    {
+      "path": "results/top25.md",
+      "bytes": 3788,
+      "sha256": "08501a641766729d0da099355249b057ca36f44953e38120b0af93363fa44b47"
+    }
+  ],
+  "invalidated_scope": [
+    "all candidate scores, ranks, counts, promoted sets, and N-of-five verdicts",
+    "max-CAI, promoter, signal-peptide, tag, propeptide, or direct-secretion preferences",
+    "GlaA-KEX2 rejection or inferiority claims",
+    "ESM2 pseudo-pLDDT as evidence of folding, folding rate, secretion, viability, or any chaperone coefficient",
+    "invented alpha coefficients, chaperone-load values, composite axes, correlated-axis concordance, and threshold logic",
+    "all generic, dummy, fallback, or unverified sequence-derived conclusions and cross-target generalizations",
+    "experimental-routing, configuration-validation, or corroboration claims derived from the retired model"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_historical_inventory_and_research_conjecture",
+    "statements": [
+      "Direct secretion and GlaA-KEX2 are distinct candidate processing routes whose relative performance for an exact DAF SCR1-4 construct remains an empirical question.",
+      "Codon variants may be included as an independently controlled factor in a matched construct experiment; the retired ranking supplies no preferred variant.",
+      "A matched experiment must measure expression, processing fidelity, native-fold attainment, secretion, and retained complement-regulatory function before advancing an exact configuration."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/daf-cd55-scr14-cassette-ranking-computational.md",
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "29cb4007fa4876a1aa1145205531f700782f516a9e29080560543d32055430ce"
+  }
+}

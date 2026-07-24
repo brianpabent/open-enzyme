@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "comp": "comp-018",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "70e60ea9a7c84a92cec37164f38b456aaa6d6881",
+  "last_push_review_manifest_sha256": "6e705988a5c49426363f400e5c8a1c91903137a6db8a1026034b62d285617b0a",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 9077,
+      "sha256": "172714505043925f4d2527267f9cf1f9146b3e4b28d5a25a3559d19792bf8d38"
+    },
+    {
+      "path": "inputs/query-strategy.json",
+      "bytes": 5293,
+      "sha256": "22596d0d2c3c64d43a92103d313168a4aef3f2f31e976a19e4ed37f2a89218fe"
+    },
+    {
+      "path": "inputs/targets.json",
+      "bytes": 6932,
+      "sha256": "abb01137d225bd5af46b6caa208e2603f8b353bd72f5284c6f0fc6ae86985d7c"
+    },
+    {
+      "path": "outputs/compounds.json",
+      "bytes": 44849,
+      "sha256": "e9773eb329e2e1f0c1d092667266712610935bb9eae07aca9ae628dca1a59222"
+    },
+    {
+      "path": "outputs/scope-summary.md",
+      "bytes": 3196,
+      "sha256": "9a4b429868f529ac0d6b81b6a0a5a97b5f38ab8312b28d3338c8950e80673308"
+    },
+    {
+      "path": "phase-2/phase-2-c1-inh-engineering-literature.md",
+      "bytes": 23284,
+      "sha256": "cbdc97d3c188c981ff7f898f3c83c24368400461f6a8e6f8bf963b3d49cc555d"
+    },
+    {
+      "path": "phase-2/phase-2-helicteres-replication.json",
+      "bytes": 10223,
+      "sha256": "ff548f4b55aa689d0479ebd97c8ad00f9b8bdd41b957d0ad91164e76f85734a1"
+    },
+    {
+      "path": "phase-2/phase-2-multilingual-findings.md",
+      "bytes": 29379,
+      "sha256": "b6a5301c45d256842df2d0fc910d94bcbd3c37873460c3474d81bee80b89a7fa"
+    },
+    {
+      "path": "phase-2/phase-2-summary.md",
+      "bytes": 16265,
+      "sha256": "7431ea275e91f76bdb5a38dc153181ee72da57f3db35a287197041aaae9d02d9"
+    },
+    {
+      "path": "scripts/scope_validate.py",
+      "bytes": 4720,
+      "sha256": "1873a08abc3da33b771087403bfef17d07032a0fd2f438ff3cd92a390a72d062"
+    }
+  ],
+  "invalidated_scope": [
+    "all compound tiers, winner or final rankings, record counts, cross-assay comparisons, and dietary-scale conclusions",
+    "shallow schema counting as scientific or literature validation",
+    "single-model translations and any quantitative conclusion depending on them",
+    "COMP-020 cross-material ranking authority and COMP-037 model authority",
+    "Pichia-to-Aspergillus or LBP chassis transfer, mature-deglycosylation, and Ruconest regulatory extrapolations",
+    "portfolio and engineering priorities"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_historical_inventory_and_research_conjecture",
+    "statements": [
+      "Rosmarinic acid, luteolin, Helicteres compounds, Houttuynia polysaccharides, and C1-INH remain separate research leads governed by their current evidence homes and exact material or configuration gates."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/upstream-complement-modulator-sweep-computational.md",
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "9521b47d54a6b464d32ca12d7c04301eb4666e69f6657edb9ce532fa71f120de"
+  }
+}

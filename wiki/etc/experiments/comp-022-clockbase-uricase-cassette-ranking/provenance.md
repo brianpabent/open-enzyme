@@ -16,8 +16,8 @@ before commit.
 ### Target gene: A. flavus uricase Q00511
 
 - **Claim:** 302 aa, 0 disulfides, C-terminal SKL PTS1 signal, no N-terminal signal peptide.
-- **Verification:** `inputs/Q00511.fasta` (302 aa confirmed via assertion in analyze.py); comp-001 protease analysis confirmed 0 disulfide bonds; comp-010 explicitly flagged C-terminal SKL as PTS1 risk.
-- **Source:** UniProt Q00511 (cross-checked via comp-010 provenance, fetch date 2026-05-05).
+- **Verification:** `inputs/Q00511.fasta` confirms the 302-aa sequence via an assertion in `analyze.py`; UniProt Q00511 records no `DISULFID` features; the terminal SKL motivates a routing test but does not establish partial peroxisomal loss.
+- **Source:** UniProt Q00511 owns the sequence and zero-disulfide provenance (fetch date 2026-05-05).
 
 ### Codon Adaptation Index (CAI) methodology
 
@@ -28,7 +28,7 @@ before commit.
 ### A. oryzae codon usage table
 
 - **Claim:** A. oryzae RIB40 RSCU values + per-1000-codon frequencies; 64 codons; rare-codon threshold RSCU<0.4.
-- **Verification:** Table imported verbatim from `comp-010-cassette-compatibility/inputs/a_oryzae_codon_usage.json`, which was cross-validated against Nakao 1992 PMID 1482437 and Machida 2005 PMID 16372010. Spot check: TTC (Phe) freq_per1000 = 18.1 in our table; Kazusa A. oryzae entry shows 17.8-18.2 (within ±2% rounding).
+- **Verification:** The fixed input table was cross-validated against Nakao 1992 PMID 1482437 and Machida 2005 PMID 16372010. Spot check: TTC (Phe) freq_per1000 = 18.1 in our table; Kazusa A. oryzae entry shows 17.8-18.2 (within ±2% rounding).
 - **Source:** Kazusa Codon Usage Database, A. oryzae entry; Machida M et al. Genome sequencing and analysis of Aspergillus oryzae. Nature. 2005;438(7071):1157-61. PMID 16372010. Nakao Y et al. Codon usage in Aspergillus oryzae. Nucleic Acids Res. 1992;20 Suppl:2117. PMID 1482437.
 
 ### 5' mRNA secondary-structure dominance for translation initiation
@@ -46,8 +46,8 @@ before commit.
 ### Uricase has 0 disulfides
 
 - **Claim:** A. flavus uricase Q00511 carries 0 disulfide bonds.
-- **Verification:** UniProt Q00511 DISULFID feature count = 0. Cross-confirmed by comp-010 §4 disulfide load analysis. Cross-confirmed by chaperone-orthogonal-stacking.md §4 table (line 223: "0 disulfides" for A. flavus uricase). Cross-confirmed by comp-011 §4.2 (which contrasts to C. utilis variant's "0 disulfides + 4 free Cys").
-- **Source:** UniProt Q00511; multiple internal cross-checks.
+- **Verification:** UniProt Q00511 DISULFID feature count = 0. Cross-confirmed by chaperone-orthogonal-stacking.md §4 table.
+- **Source:** UniProt Q00511.
 
 ### Glucoamylase carrier disulfide count (Ward 1995 architecture)
 
@@ -89,8 +89,8 @@ before commit.
 ### C-terminal SKL PTS1 routing risk
 
 - **Claim:** A. flavus uricase ends in ...SKL, a canonical PTS1 peroxisomal targeting signal in fungi.
-- **Verification:** Q00511 sequence (verified in Q00511.fasta) ends with "...KSKL" at residues 299-302. PTS1 consensus is (S/A/C)-(K/R/H)-(L/M); KL is the canonical PTS1 anchor and SKL is the prototype. Comp-010 §3 explicitly flagged this as a MODERATE secretion-routing risk.
-- **Source:** UniProt Q00511 sequence; Gould SJ et al. 1989 (original PTS1 characterization); comp-010 cassette-compatibility-computational.md §3.
+- **Verification:** Q00511 sequence (verified in Q00511.fasta) ends with "...KSKL" at residues 299-302. PTS1 consensus is (S/A/C)-(K/R/H)-(L/M); KL is the canonical PTS1 anchor and SKL is the prototype. Whether the proposed secretion configuration is measurably rerouted remains empirical.
+- **Source:** UniProt Q00511 sequence; Gould SJ et al. 1989 (original PTS1 characterization).
 
 ### ClockBase N-of-M concordance threshold precedent
 

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/README.md",
+      "kind": "design",
+      "bytes": 2190,
+      "sha256": "071108e61628aacaf3d5cd08dc92bd8be687cc7840c0d283cf903a37ea3d9adf"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/invalidation.json",
+      "kind": "design",
+      "bytes": 2986,
+      "sha256": "694c49b88c82596d89e64537175e2e73e836273ba49338a4d890d969b067f339"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 34492,
+      "sha256": "e8c456daa4bfa3d112146826c1c194b29830079e4bca052a7821b25735c097c5"
+    },
+    {
+      "path": "mkdocs.yml",
+      "kind": "proposed_update",
+      "bytes": 10864,
+      "sha256": "3828a103947229958349cda8cb6751b19a1a1e31e4cfd49143eb3ba888087629"
+    },
+    {
+      "path": "wiki/c1-inh-protease-stability-ecn-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3788,
+      "sha256": "d0f5010c2161df29d971de31e13311681ff142bb2c3dcda9519602e582a67ae4"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 94334,
+      "sha256": "3e547ff4444758e4e37c6795c9d7b9c60059aaf5e2d3d0d31f6f76994321af8f"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
+    },
+    {
+      "path": "wiki/engineered-lbp-chassis.md",
+      "kind": "proposed_update",
+      "bytes": 14428,
+      "sha256": "aa0b0f5bc81dc46ed516dc7b5d0824b78ed17beb8b57c4231644f840c3ca62c2"
+    },
+    {
+      "path": "wiki/nlrp3-exploit-map.md",
+      "kind": "proposed_update",
+      "bytes": 60665,
+      "sha256": "e30593887912b1579694222c25e40736744b8dd33b60effff278cf3daba07a3d"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "6b800efaeccee6586eeae6b735adca3697a06a5d54d6c83061973cc4ffd9aab2"
+}

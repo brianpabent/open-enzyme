@@ -91,7 +91,7 @@ Link to:
 - The wiki page or experiment entry that surfaced the bottleneck (the upstream gating)
 - Any related falsification card (`wiki/hypotheses/H<NN>-*.md`) where the bottleneck shows up as a load-bearing assumption
 - Sister operational search artifacts (other instances of the template — read each other for patterns)
-- The platform-level reference: this template page itself + [`open-source-platform.md`](../wiki/open-source-platform.md) §"Platform Principles"
+- The platform-level reference: this template page itself + [`open-source-platform.md`](../wiki/etc/open-source-platform.md) §"Platform Principles"
 
 ---
 
@@ -154,7 +154,7 @@ The operational search artifact is a fifth document class — bottleneck-specifi
 - [`ward-1995-lab-access.md`](./ward-1995-lab-access.md) — first instance; canonical example for §A-§E region-specific deep-dive structure
 - [`README.md`](./README.md) — operations/ folder framing and document-class boundaries
 - [`../CLAUDE.md`](../CLAUDE.md) — global-multilingual research default that operational searches inherit by default
-- [`../wiki/open-source-platform.md`](../wiki/open-source-platform.md) — platform principles; this template is an operational complement to the methodology principles documented there
+- [`../wiki/etc/open-source-platform.md`](../wiki/etc/open-source-platform.md) — platform principles; this template is an operational complement to the methodology principles documented there
 - [`todos.md`](./todos.md) — for resource-acquisition tasks that don't need the full template (single candidate, trivial scope, etc.)
 
 ---
@@ -165,7 +165,7 @@ When peer-track scope pages reach a resource-acquisition bottleneck, instantiate
 
 | Bottleneck | Triggering scope page | When to instantiate |
 |---|---|---|
-| Engineered LBP chassis collaborators (Sonnenburg-lab alumni / Synlogic alumni / NextBiotix alumni / Pendulum alumni) | [`engineered-lbp-chassis.md`](../wiki/engineered-lbp-chassis.md) | When the LBP comp-008 feasibility analysis lands and the chassis selection narrows |
+| Engineered LBP chassis collaborators (Sonnenburg-lab alumni / Synlogic alumni / NextBiotix alumni / Pendulum alumni) | [`engineered-lbp-chassis.md`](../wiki/engineered-lbp-chassis.md) | When direct transformation, expression, and configuration evidence narrows the chassis question |
 | Kidney-tropic siRNA conjugate-chemistry partner (Alnylam / Arrowhead / Dicerna / Acuitas / Genevant) | [`sirna-urat1-modality.md`](../wiki/sirna-urat1-modality.md) | When the comp-009 target-site selection lands and the conjugate-chemistry approach narrows |
 | Standardized TCM extract sourcing (Smilax glabra, Si Miao San components, etc.) — Chinese suppliers | [`tcm-modern-rigor-intersection.md`](../wiki/tcm-modern-rigor-intersection.md) | When P2-2 / comp-013 ChEMBL cross-check identifies which TCM compounds are platform-relevant |
 | Recombinant DAF SCR1-4 expression in *A. oryzae* — wet-lab capacity if H05 advances | [`hypotheses/H05-daf-scr14-cp0-thesis.md`](../wiki/hypotheses/H05-daf-scr14-cp0-thesis.md) | If the §1.9 dual-cassette result encourages triple-cassette OR if the LBP-chassis-as-DAF-host route is pursued |

@@ -51,7 +51,7 @@ Methodology that applies to wet-lab, computational, literature, and n-of-1 obser
 - **[`chembl-cross-check.md`](./chembl-cross-check.md)** — quarterly ChEMBL v34 cross-reference of stack compounds; separates direct-inhibitor claims from pathway-modulator claims (e.g., quercetin → 5-LOX, not NLRP3).
 - **[`linter-design.md`](../linter-design.md)** — two-linter architecture (Document Lint always-on; Falsification Lint on-demand per-hypothesis with killshot menus, failure-mode ontology, survival scoring).
 - **[`tcm-modern-rigor-intersection.md`](../tcm-modern-rigor-intersection.md)** — six-rule methodology for evidence-leveling traditional-medicine claims (chokepoint mapping, ChEMBL cross-check, bioavailability-honest framing, formula decomposition, standardized-extract specification, falsification-card discipline).
-- **[`autonomous-screening-methodology.md`](./autonomous-screening-methodology.md)** — peer-track methodology page on ClockBase Agent (Ying et al. bioRxiv v3, late 2025 / early 2026); transferable patterns for comp-NNN: search-space sizing, composite-score ranking across orthogonal predictors, hypothesis-then-verify, autonomy boundary, N-of-M concordance for wet-lab handoff.
+- **[`autonomous-screening-methodology.md`](./autonomous-screening-methodology.md)** — peer-track methodology page on ClockBase Agent; transferable patterns for comp-NNN: search-space sizing, provenance-bound property tables, hypothesis-then-verify, autonomy boundaries, and multi-model promotion only when predictors are calibrated to the same named outcome.
 - **[`cross-validation.md`](../cross-validation.md)** — thesis stress-test discipline; risk matrix across all tracks; identifies true blockers vs. surmountable obstacles.
 
 ## Section conventions

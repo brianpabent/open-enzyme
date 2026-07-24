@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "comp": "comp-002",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "70e60ea9a7c84a92cec37164f38b456aaa6d6881",
+  "last_push_review_manifest_sha256": "a784dd8972f7c2aa6731bafdd4f98ceddc51f5ca656fdf356962a3ba61a3c867",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 6239,
+      "sha256": "9a8078a15f46f7993d818e688bd8e41a63afbb84ccccb7bf23ccc6694c97aa9b"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 41792,
+      "sha256": "2f2ee1c5b5797dc641e46357d3391de5ee2f54b2b82b734646ca2e5283d00cbf"
+    },
+    {
+      "path": "inputs/Q00511.fasta",
+      "bytes": 385,
+      "sha256": "fd006ac91dc08f796bd2032ee975677c16f6e8e7d3d0762ba1f2b295183b4274"
+    },
+    {
+      "path": "inputs/alphafold_Q00511_plddt.json",
+      "bytes": 4087,
+      "sha256": "116c6922971ade3824f2a815257c22ac9291ba4e79554b5ff15f77de262c5d51"
+    },
+    {
+      "path": "inputs/biophysical_priors.json",
+      "bytes": 5786,
+      "sha256": "c589f4902b40e91ab8e4def27c58a6f41ecf9b4444d2b86b810d8554bf23f126"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 9027,
+      "sha256": "02d5ddde79d44147db72d3699742640fc18aaa3d8ad752fc78979aa184f2561b"
+    },
+    {
+      "path": "inputs/tetramer_interface_residues.json",
+      "bytes": 2836,
+      "sha256": "5dc841b31dbd91f9f45df4342216507ef6aa960907e1352f0f62d165098c63e5"
+    },
+    {
+      "path": "outputs/stability_predictions.json",
+      "bytes": 356271,
+      "sha256": "1de9b4d4ce996f80656fb6982ccef87cd2cf27ccec7982ea2bfedcad00553efe"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 11716,
+      "sha256": "1f2239db2af12899e85d5c4d1e36d3ab6aa9ec7154034a0658f6c44b88afc233"
+    }
+  ],
+  "invalidated_scope": [
+    "all numerical retained-activity predictions and uncertainty bands",
+    "all GREEN, YELLOW, RED, LOW, MODERATE, or HIGH classifications and routing decisions",
+    "all pLDDT-derived physical-interface integrity, burial, flexibility, or dissociation conclusions",
+    "all modeled interface salt-bridge and pH-integrity conclusions",
+    "all salt-effect, thermal-driver, and failure-mode rankings from the retired model",
+    "all variant or intervention priorities derived from the retired model"
+  ],
+  "surviving_scope": {
+    "kind": "empirical_engineering_questions",
+    "evidentiary_status": "questions_only",
+    "questions": [
+      "Does Q00511 retain specific activity and oligomeric state under the joint shio-koji temperature, pH, salt, and duration ranges?",
+      "What thermal, pH, and salt effects are observed when varied under controlled measurements?",
+      "How does ferment pH evolve over time, and how do activity-per-total-protein and an orthogonal tetramer-state readout change with it?",
+      "If a limiting failure mode is measured, do stabilization variants improve that measured endpoint?"
+    ]
+  },
+  "current_evidence_home": "wiki/uricase-shio-koji-thermal-stability-computational.md",
+  "retirement_scope_digest": {
+    "algorithm": "sha256",
+    "canonicalization": "UTF-8 bytes, no trailing LF, of recursively key-sorted compact JSON containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; array order preserved",
+    "sha256": "ec648dbe6485afb9ed9a59c9db5381f521dddafcde2dc789786f50d9e819c067"
+  }
+}

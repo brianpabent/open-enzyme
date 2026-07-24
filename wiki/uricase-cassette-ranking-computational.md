@@ -34,7 +34,7 @@ sources:
   - "Punt PJ et al. PMID 2113023; PgpdA A. nidulans GAPDH promoter"
   - "Angov E. Biotechnol J 2009;4(11):1583-94 (PMID 18851725); codon harmonization"
   - "Ying K, Tyshkovskiy A, Gladyshev VN et al. bioRxiv 2023.02.28.530532v3 (PMC12667862, PMID 41332661); ClockBase autonomous screening"
-status: complete (v1; fold-quality model deferred to wet-lab)
+status: corrective review open; current shortlist non-authoritative
 ---
 
 # Uricase Cassette Ranking, ClockBase-Style Combinatorial Composite Scoring (Computational, comp-022)
@@ -46,7 +46,7 @@ status: complete (v1; fold-quality model deferred to wet-lab)
 
 Across the *A. oryzae* uricase expression cassette design space, parameterized as **6 promoters × 12 signal peptides × 10 codon variants × 60 secretion scaffolds = 43,200 combinations**, which cassettes survive a multi-model concordance gate?
 
-> **Interpretation correction (2026-07-13):** comp-022 ranks cassette designs inside the koji-secreted design space; it does not establish that secretion is the human-relevant UOX topology. Its strict direct-secretion winners remain candidates for [§1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial). Promotion to §1.9B occurs only if a koji-compatible topology clears the physiological-substrate, oxygen, peroxide, localization, and viability gate.
+> **Current evidence boundary:** COMP-022 enumerates hypotheses inside a koji cassette-design space, but its current shortlist and “winner” labels are non-authoritative. One concordance axis uses uncalibrated chaperone-load coefficients inherited from the retired folding-score framework; the remaining axes also predict different intermediate properties rather than a shared measured outcome. The open [COMP-022 review](../synthesis/queue/comp-review-022.md) must recompute or retire the affected ranking before any candidate is promoted. Separately, [§1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) must determine whether an exact koji-compatible configuration functions under physiological substrate, oxygen, peroxide, localization, and viability conditions.
 
 **Where the analysis lives:**
 - Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/`](./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/)

@@ -4,14 +4,14 @@ All inputs grep-verified against primary sources before commit per CLAUDE.md Rul
 
 ## Q00511.fasta: A. flavus uricase (uaZ)
 
-- **Source:** UniProt Q00511, 302 aa, sequence verified 2026-05-05 (carried over from comp-010).
-- **Fetch date:** 2026-05-05 (copied from comp-010-cassette-compatibility/inputs/Q00511.fasta).
-- **Notes:** Same target gene as comp-001 (protease stability), comp-010 (cassette compatibility). C-terminal SKL = PTS1 peroxisomal targeting signal; flagged by comp-010 as routing risk; secretion scaffolds in this experiment include PTS1-blocking 3xAla and His6 C-terminal tag variants.
+- **Source:** UniProt Q00511, 302 aa, sequence verified 2026-05-05.
+- **Fetch date:** 2026-05-05.
+- **Notes:** Same target gene as comp-001. The C-terminal SKL motivates a PTS1-routing test, but partial peroxisomal loss is unmeasured; secretion scaffolds include PTS1-masking 3xAla and His6 C-terminal tag variants.
 
 ## a_oryzae_codon_usage.json: A. oryzae RIB40 codon usage
 
 - **Source:** Codon Usage Database (Kazusa); A. oryzae entry; cross-validated against Nakao et al. 1992 PMID 1482437 and Machida et al. 2005 PMID 16372010 (A. oryzae genome).
-- **Fetch date:** 2026-05-05 (copied from comp-010).
+- **Fetch date:** 2026-05-05.
 - **Notes:** RSCU + freq_per1000 for all 64 codons. Rare-codon threshold: RSCU<0.4 AND freq<10/1000. Used for CAI computation.
 
 ## parts_list.json: enumerated combinatorial parts list
@@ -36,7 +36,7 @@ All inputs grep-verified against primary sources before commit per CLAUDE.md Rul
 
   **Pro-region sequences** for native pro-regions (SPglaA_pro, SPpepO_pro, SPalpA_pro, SPlipase_pro) are taken from primary characterization papers. Synthetic pro-regions (SPamyB_pro, SPcbhI_pro) are ablation controls; 6-aa Ala/Pro-rich linker and 8-aa Gly/Ser linker respectively.
 
-- **Codon variants (10):** 10 strategies; native, max-CAI, balanced, max-CAI GC-constrained, harmonized (Angov 2008 PMID 18851725), rare-avoid (comp-010 threshold), low-GC (48%), high-GC (62%), 5'-softened (Kudla 2009 PMID 19359587), 5'-softened-balanced. Each strategy is deterministic given the input AA sequence (Q00511) plus codon table; the analysis script reproduces them.
+- **Codon variants (10):** 10 strategies; native, max-CAI, balanced, max-CAI GC-constrained, harmonized (Angov 2008 PMID 18851725), rare-avoid (fixed heuristic threshold), low-GC (48%), high-GC (62%), 5'-softened (Kudla 2009 PMID 19359587), 5'-softened-balanced. Each strategy is deterministic given the input AA sequence (Q00511) plus codon table; the analysis script reproduces them.
 
 - **Secretion scaffolds (60):** 10 base scaffolds × 3 propeptide states × 2 N-glyc states = 60.
   - 10 base scaffolds cover direct-secretion (3 C-term tag variants), glaA-full KEX2 fusion (Ward 1995 architecture, 4 KEX2 site / tag variants), glaA-truncated KEX2 fusion (Gouka 1997, 2 variants), tandem-KEX2 (Spencer 1998).

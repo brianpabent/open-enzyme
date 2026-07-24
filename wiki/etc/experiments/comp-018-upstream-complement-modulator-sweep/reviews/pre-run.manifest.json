@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/README.md",
+      "kind": "design",
+      "bytes": 1848,
+      "sha256": "505171989b6f452da9c13565644054953e46122c7e4acf558037a898cf946907"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/invalidation.json",
+      "kind": "design",
+      "bytes": 3357,
+      "sha256": "36075bcf94af6d9d4a06a4a5c6b008ec02fa754dec716dd5a012a0967b23b203"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "061785964b3f137df4c6bafc369cbcf98a4372572fb0522f340528acb2c02e44"
+}

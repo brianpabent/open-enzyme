@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "comp": "comp-023",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "70e60ea9a7c84a92cec37164f38b456aaa6d6881",
+  "last_push_review_manifest_sha256": "d7a3db6e5ee5f948c836cd85e6e6ec3e35d9f82fe02f6d3270928c654651e274",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 4032,
+      "sha256": "30ed8f114c16e5df5cdb619a389689698c29a6896172fe2355ddf69aa0837470"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 41600,
+      "sha256": "d40b2f8f8032d151eec5dfc6aa68ae1a3ffd626058fa560822ff2b1ee1cf7659"
+    },
+    {
+      "path": "inputs/iWV1314.xml",
+      "bytes": 3021094,
+      "sha256": "9a7d5077e7db9ec693bda7fe0b89c6a0e296c409611ac5ea6a6e2edbf4e16e6e"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 12165,
+      "sha256": "bb8b595fad8bd0d5d900dedcd00db1188b489296be592f8dea77a9d04e6db959"
+    },
+    {
+      "path": "outputs/results.json",
+      "bytes": 9004,
+      "sha256": "afd84389c7a39ddc9fa5e6749a6d14781d9b3a33350db56842fa362678e31229"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 4322,
+      "sha256": "86b5768e16fa21812537b30da3aff1ea20549aef6f1c5b0d49b4aac72121a22c"
+    }
+  ],
+  "invalidated_scope": [
+    "all growth-change, flux, yield, headroom, burden-breakpoint, scenario-comparison, and GREEN/YELLOW/RED results",
+    "the conversion of source-reported batch-average productivity into a fixed continuous mmol/gDW/h demand using assumed biomass density without time-resolved, condition-matched calibration, and every inference dependent on that conversion",
+    "the cns1+cns2 stoichiometry, mechanistic ATP-substitution, artificial export-bound, and reaction-boundary assumptions",
+    "separately optimized capacity maxima interpreted as concurrent yields or proteome-gap closure",
+    "feasibility, effectively-free, multi-cassette compatibility, and roadmap claims"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_historical_inventory_and_research_conjecture",
+    "statements": [
+      "Jeennor et al. directly demonstrated heterologous cordycepin production in Aspergillus oryzae in their tested configuration.",
+      "A cytosolic cns1+cns2 route avoiding direct ER-folding competition remains an unranked research conjecture requiring an isogenic product-and-cell-state experiment."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/cordycepin-cassette-burden-computational.md",
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "167f52640460c420f3b8abea2a067d30f58fbf2a89583f1432b6f710a72bae95"
+  }
+}

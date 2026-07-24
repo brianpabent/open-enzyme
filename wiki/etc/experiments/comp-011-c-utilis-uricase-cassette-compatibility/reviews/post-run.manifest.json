@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/README.md",
+      "kind": "design",
+      "bytes": 2517,
+      "sha256": "489d1e0149b15b8daca09f9dccad883922727286f0f87fab7110f111586cb515"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/invalidation.json",
+      "kind": "design",
+      "bytes": 3974,
+      "sha256": "0fa987e8b404722bfabd18a8e5f4e7dffb512f0066110fe948b58cb45096ee3e"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 34492,
+      "sha256": "e8c456daa4bfa3d112146826c1c194b29830079e4bca052a7821b25735c097c5"
+    },
+    {
+      "path": "mkdocs.yml",
+      "kind": "proposed_update",
+      "bytes": 10864,
+      "sha256": "3828a103947229958349cda8cb6751b19a1a1e31e4cfd49143eb3ba888087629"
+    },
+    {
+      "path": "wiki/c-utilis-uricase-cassette-compatibility-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3958,
+      "sha256": "785338ed47af1a2a3e29b042f633cfa3cbbd9e750f047102cf44b8422d3d1352"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
+    },
+    {
+      "path": "wiki/etc/manual-literature-mining.md",
+      "kind": "proposed_update",
+      "bytes": 29358,
+      "sha256": "3f50e8ca54fcdf552c56dc5857f4afd4b603899edf06447d94cc5ec389caeeb9"
+    },
+    {
+      "path": "wiki/uricase-variant-selection.md",
+      "kind": "proposed_update",
+      "bytes": 6329,
+      "sha256": "edbdba89304c49dd7a88ef30f89516d723cc86fc2993e68a955853779b17f87c"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "fd8961a3615d8031744001d4fbe815f8927f106f7b5c606e688daa2f96d2266a"
+}

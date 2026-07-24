@@ -141,7 +141,7 @@ H04 stub at [`hypotheses/H04-tcm-rigor-intersection.md`](./hypotheses/H04-tcm-ri
 
 **Worked example:** a "C3 convertase inhibitor" query missed *Houttuynia cordata*, while a "*Houttuynia cordata* anti-complementary" query retrieved the relevant literature. The practical barriers were citation-network insularity, traditional-name versus mechanism-name framing, and source-journal underweighting—not the language of the papers.
 
-**Why this is its own discipline, not a sub-point of §2 (ChEMBL cross-check):** ChEMBL is curated bioactivity data; the query-framing discipline is about *what literature you read before consulting ChEMBL*. ChEMBL undercoverage (documented in comp-013 TCM gout, comp-014 medicinal mushrooms, comp-018 upstream complement, comp-020 verification re-run) reflects what's been curated; traditional-name-anchored papers that never made it into ChEMBL's curation pipeline are invisible to mechanism-name search regardless of language. The query-framing discipline closes a different gap than ChEMBL cross-check.
+**Why this is its own discipline, not a sub-point of §2 (ChEMBL cross-check):** ChEMBL is curated bioactivity data; the query-framing discipline is about *what literature you read before consulting ChEMBL*. Undercoverage documented in the TCM, medicinal-mushroom, and brief-scrubbed complement searches reflects what has been curated; traditional-name-anchored papers that never made it into ChEMBL's curation pipeline are invisible to mechanism-name search regardless of language. The query-framing discipline closes a different gap than ChEMBL cross-check.
 
 **Cross-mechanism generalization:**
 
@@ -151,7 +151,7 @@ H04 stub at [`hypotheses/H04-tcm-rigor-intersection.md`](./hypotheses/H04-tcm-ri
 
 **Operational pattern for lit-scan briefings:** include traditional-formula-name + species-name + traditional-pathology-framing query variants when the compound class has non-Western traditional-use literature. The CLAUDE.md global-multilingual rule (§"Global-multilingual research by default" → "Query-framing discipline") now encodes this as a project-wide convention.
 
-**Cross-reference:** [`CLAUDE.md` §"Global-multilingual research by default"](../CLAUDE.md) (Query-framing discipline bullet); [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) Phase 2 (the comp-018 finding that surfaced the discipline).
+**Cross-reference:** [`CLAUDE.md` §"Global-multilingual research by default"](../CLAUDE.md) (query-framing discipline); [query-framing retrospective audit](../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md) (methodology diagnosis and correction).
 
 ---
 

@@ -9,7 +9,7 @@
 1. **Tian L, Zhao Y, Guo C, Yang X.** Anti-complementary constituents of *Houttuynia cordata* and their targets in complement activation cascade. *J Ethnopharmacol* 2014. PMID 24423008 — abstract only (no PMC ID returned).
 2. **Lu Y, Jiang Y, Ling L, Zhang Y, Li H, Chen D.** Beneficial effects of *Houttuynia cordata* polysaccharides on "two-hit" acute lung injury and endotoxic fever in rats associated with anti-complementary activities. *Acta Pharm Sin B* 2018;8(2):218–227. PMID 29719782 / PMC5925397 — full text read. Polysaccharide fraction = CHCP.
 3. **Xu YY, Zhang YY, Ou YY, Lu XX, Pan LY, Li H, Lu Y, Chen DF.** *Houttuynia cordata* Thunb. polysaccharides ameliorates lipopolysaccharide-induced acute lung injury in mice. *J Ethnopharmacol* 2015;173:81–90. PMID 26190353 / PMC7127486 — full text read. Polysaccharide fraction = HCP.
-4. **Cheng D, Sun L, Zou S, Chen J, Mao H, Zhang Y, Liao N, Zhang R.** Anti-complementary Activity of *Houttuynia cordata* Polysaccharide HCP-1. *Carbohydr Polym* (Chen Daofeng group, Fudan University). Referenced in comp-018 Phase 2.
+4. **Cheng D, Sun L, Zou S, Chen J, Mao H, Zhang Y, Liao N, Zhang R.** Anti-complementary Activity of *Houttuynia cordata* Polysaccharide HCP-1. *Carbohydr Polym* (Chen Daofeng group, Fudan University). Candidate identity and material boundaries are maintained on the current [Houttuynia evidence page](../../../wiki/houttuynia-cordata.md).
 
 ## Binding-site / target evidence
 

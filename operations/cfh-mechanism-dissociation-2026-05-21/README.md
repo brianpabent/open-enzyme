@@ -8,9 +8,9 @@ status: complete (first pass; left uncommitted for Brian's walkthrough review)
 
 ## Scope
 
-For each top OE candidate from [comp-018](../../wiki/upstream-complement-modulator-sweep-computational.md) and [comp-020](../../wiki/upstream-complement-verification-rerun-computational.md) — rosmarinic acid, luteolin, *Houttuynia cordata* polysaccharide (HCP/HCPM/CHCP), *Helicteres* benzofuran lignans — produce a CFH-dependence classification (CFH-dependent / CFH-independent / mixed) with structural justification, and generate a per-candidate genotype × candidate interaction prediction table that the UK Biobank collaboration (Merriman/Otago, Major-Wrigley/Auckland, Choi/MGH) can test.
+For four candidates with independent source records—rosmarinic acid, luteolin, exact *Houttuynia cordata* polysaccharide materials, and *Helicteres* benzofuran lignans—produce a CFH-dependence classification (CFH-dependent / CFH-independent / mixed) with structural justification, and generate a per-candidate genotype × candidate interaction prediction table for possible cohort testing. Candidate identity is grounded in the current [COMP-020 evidence page](../../wiki/upstream-complement-verification-rerun-computational.md), [Houttuynia evidence page](../../wiki/houttuynia-cordata.md), and cited primary sources; COMP-018 supplies no rank or priority.
 
-The hypothesis under test (from [`complement-c5a-gout.md`](../../wiki/complement-c5a-gout.md) §6.3, added 2026-05-19): the comp-018 / comp-020 dietary candidates inhibit complement *upstream of* where CFH acts (preventing C3 convertase assembly), so Y402H carriers should benefit *more*, not less. The AMD-paradox counter-evidence (Klein 2008 / Awh 2013 / Vavvas 2018 AREDS; Merle 2015 DHA) is hypothesized to apply only to interventions that work *through* CFH-CRP-bridging.
+The hypothesis under test (from [`complement-c5a-gout.md`](../../wiki/complement-c5a-gout.md) §6.3) is that a candidate acting independently of CFH might retain activity across CFH Y402H strata. Any carrier-specific direction remains a falsifiable conjecture, not a benefit claim.
 
 ## Candidates
 

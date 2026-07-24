@@ -1,103 +1,32 @@
 ---
-title: "Upstream Complement Modulator Sweep — Computational Analysis (comp-018)"
+title: "Upstream Complement Modulator Leads (comp-018)"
 date: 2026-05-08
-tags:
-  - complement
-  - upstream-cp0
-  - cp0
-  - c3-convertase
-  - rosmarinic-acid
-  - luteolin
-  - bupleurum-polysaccharide
-  - ganoderic-acid
-  - natural-products
-  - dietary
-  - chokepoint-mapping
-  - global-multilingual
-  - computational
+tags: [complement, upstream-cp0, natural-products, literature-scan]
 related:
-  - computational-experiments.md
+  - upstream-complement-verification-rerun-computational.md
+  - houttuynia-cordata.md
+  - c1-inh-protease-stability-ecn-computational.md
   - complement-c5a-gout.md
-  - cfh-mechanism-dissociation-cp0-candidates-computational.md
-  - gout-genetic-variants.md
-  - daf-cd55-scr14-truncated-computational.md
-  - hypotheses/H05-daf-scr14-cp0-thesis.md
-  - medicinal-mushroom-compound-mapping-computational.md
-  - tcm-gout-compound-triage-computational.md
-  - modality-chokepoint-matrix.md
-  - nlrp3-exploit-map.md
-  - etc/manual-literature-mining.md
-  - gout-action-guide.md
-sources:
-  - "Brian framing 2026-05-08: 'What are all the things upstream of CP0 that we could exploit, and any compound — fungal, plant, bacterial, marine — that affects them. If the answer is rosemary, I'll grow rosemary.'"
-  - "Open Enzyme/CLAUDE.md §Tool discipline (Pass 3 review 2026-05-08): Paperclip restricted to PMC/arXiv/bioRxiv/medRxiv corpus; CNKI/WanFang/J-STAGE handled by direct multilingual searches"
-  - "complement-c5a-gout.md §2.6 — classical pathway is the dominant initiator of MSU complement activation; therefore C3 convertase is the highest-leverage upstream node"
-  - "Englberger W et al., Int J Immunopharmacol 1988;10(6):729-37 (PMID 3198307) — rosmarinic acid as C3 convertase inhibitor, IC50 5-10 µM optimal"
-  - "Zhang T, Chen D, J Ethnopharmacol 2008;117(2):351-61 (PMID 18400428) — luteolin most potent flavonoid CP+AP, CH50/AP50 0.19/0.17 mM"
-  - "Wu M et al., Acta Pharm Sin B 2015;5(4):316-22 (PMID 26579461) — Bupleurum polysaccharides lectin pathway IC50 ~1 mg/mL"
-  - "Seo HW et al., Arch Pharm Res 2009;32(11):1573-9 (PMID 20091270) — Ganoderma triterpenes CP convertase, ganoderic acid Sz IC50 44.6 µM"
-status: complete (Phase 2)
+  - validation-experiments.md
+status: retired-invalid-model
 ---
 
-# Upstream Complement Modulator Sweep — Computational Analysis (comp-018)
+# Upstream Complement Modulator Leads (comp-018)
 
-> **⚠️ Keep Phase-0 hypothesis-generating (comp-review 2026-07-14).** comp-018 is a useful literature-catalog artifact, but the reproducible script only validates/rewrites a scope summary — it does NOT reproduce the literature sweep, `outputs/summary.md` is referenced but not tracked, and several headline numbers (rosmarinic-acid 5–10 µM, dietary-scale CP0 relevance) are stronger than the artifact + provenance support. "Documented anticomplement activity exists upstream of C5aR1" holds as a catalog conclusion; "dietary rosemary / luteolin / Houttuynia will modulate gout-relevant CP0 in vivo" is NOT resolved here.
+The useful question remains: which upstream complement nodes and materials expose testable weaknesses before C5a generation?
 
-> This wiki stub remains so cross-references resolve and the page stays discoverable.
-> Computational analyses are write-once artifacts; the daemon does not need to re-read
-> them on every sweep, so the long content lives next to the experiment that produced it
-> at `etc/experiments/comp-018-upstream-complement-modulator-sweep/`.
+COMP-018 does not answer that question as a reproducible or validated sweep. Its script performed shallow schema counting over a hand-curated catalog. It did not rerun searches, verify primary evidence, enforce translation review, or validate tiers. Cross-assay rankings, record totals, dietary conclusions, chassis extrapolations, and engineering priorities are invalid. The [COMP-018 tombstone](./etc/experiments/comp-018-upstream-complement-modulator-sweep/) is non-runnable; Git retains the retired catalog and narratives.
 
-> **⚠️ Read this before propagating any finding from this page.** > > The brief that produced this experiment was contaminated by a contrived user-framing example ("if it's in rosemary I'll grow rosemary"), which biased the headline-promotion of rosmarinic acid as the singular Tier-1 candidate. **An independent brief-scrubbed verification re-run (comp-020)** ran 2026-05-08 and produced a meaningfully different ranking: three tied tier-1 candidates instead of one, with ***Helicteres* benzofuran lignans** (CH50 9/40 µM, single-paper anchor PMC6273495) as the highest-potency single hit in the corpus — beating rosmarinic acid by 4-20× on a matched assay. comp-020 also […]
+## Research leads that remain open
 
-**Where the analysis lives:**
-- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/)
-- **Phase 2 multilingual + Helicteres replication + C1-INH engineering literature:** [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/)
-- Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)
+- **Rosmarinic acid, luteolin, and *Helicteres* compounds:** assay-specific complement leads. Use the independently scrubbed [COMP-020 evidence boundary](./upstream-complement-verification-rerun-computational.md); do not import a universal rank.
+- ***Houttuynia cordata* polysaccharides:** exact material identity, inflammatory direction, exposure, and gout relevance remain load-bearing. See the [Houttuynia evidence page](./houttuynia-cordata.md).
+- **C1-INH:** exact-construct expression, folding, glycosylation dependence, stability, retained inhibition, and compartment access remain open. See the [C1-INH evidence page](./c1-inh-protease-stability-ecn-computational.md).
 
----
+Each lead advances through its own material, compartment, exposure, function, and falsification gates. A negative result kills only the tested material and configuration.
 
-## Phase 2 — Multilingual + Helicteres Replication + C1-INH Engineering Literature (2026-05-17)
+## Refresh rule
 
-> **Phase 2 deliverables live in [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/).** The Phase 1 contamination warning above remains in force; Phase 2 is additive, not a replacement.
+A future upstream-complement scan must use the repository literature-scan workflow: retain exact queries and failures in a compact receipt, write scientific findings only to their evidence homes, verify load-bearing values against primary sources, complete required independent translations, and avoid ranking incomparable assays or materials.
 
-### Headline finding
-
-Phase 2 preserved the comp-020 small-molecule ranking and surfaced an orthogonal material class that Phase 1 missed: ***Houttuynia cordata* polysaccharides**. Crude CHCP and defined HCPM have preclinical anti-complement evidence, but material identity, inflammatory direction, exposure, and gout translation remain open. The current evidence and experiment boundaries are maintained on the [Houttuynia page](./houttuynia-cordata.md). Phase 2 also grounded the C1-INH parallel engineering thread on three load-bearing literature anchors:
-
-- **Bos 2003 ([PMID 12758149](https://pubmed.ncbi.nlm.nih.gov/12758149/), [doi:10.1016/s1570-9639(03)00107-9](https://doi.org/10.1016/s1570-9639(03)00107-9))** — Pichia pastoris yields 30-180 mg/L active rhC1-INH with same inhibitory capacity as plasma C1-INH despite different N-glycosylation. Direct precedent that yeast (Ascomycota) chassis is sufficient for active C1-INH production → koji thread plausible.
-- **Liu 2004 ([PMID 15039314](https://pubmed.ncbi.nlm.nih.gov/15039314/), [PMC375168](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC375168/), [doi:10.1128/IAI.72.4.1946-1955.2004](https://doi.org/10.1128/IAI.72.4.1946-1955.2004))** — N-deglycosylated C1-INH RETAINS protease-inhibitor function (C1s complex formation) but LOSES LPS-binding endotoxin protection. For OE platform CP0 use case (MSU-driven complement priming), protease-inhibitor function is load-bearing → major risk reduction for non-mammalian (koji, LBP) chassis with different or absent N-glycan.
-- **Cancian 2015 ([PMID 26106828](https://pubmed.ncbi.nlm.nih.gov/26106828/), [doi:10.1097/ACI.0000000000000186](https://doi.org/10.1097/ACI.0000000000000186))** — Ruconest (conestat alfa, transgenic rabbit milk, non-human glycosylation) FDA-approved 2014 for HAE. Establishes regulatory precedent that FDA accepts recombinant C1-INH with non-human glycosylation provided protease-inhibitor function is demonstrated.
-
-### New tier-1 ranking (Phase 2 final)
-
-| Rank | Compound class | Lead candidate | Potency | Dietary access | Anchor status |
-|---|---|---|---|---|---|
-| 1a | Phenolic acid | Rosmarinic acid | C3b 34 µM; CP 137-180 µM; bell-shape | FDA GRAS rosemary / lemon balm / spearmint | Multi-anchor |
-| 1b | Flavone (multi-mechanism) | Luteolin | CH50 190 µM (CP), AP50 170 µM | Dietary (parsley, celery, honeysuckle) | Multi-anchor across XO + URAT1 + CP |
-| 1c | Benzofuran sesquilignan glucoside | Helicteres compound 5 | CH50 9 µM (highest single-compound potency) | Not dietary; tropical Sterculiaceae | SINGLE-ANCHOR — replication INCONCLUSIVE per Phase 2 ([`./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json)) |
-| **1d (NEW in Phase 2)** | Pectic polysaccharide; exact material load-bearing | ***Houttuynia cordata* polysaccharides (CHCP / HCP / HCPM)** | CHCP implicated C3/C4 with a partial C5 effect; HCPM is a defined 19.1 kDa anti-complement material; HCPM and crude HCP changed intestinal complement/NLRP3 readouts in infection-model mice | Likely intestinal oral exposure; product equivalence and joint exposure unestablished | [Current evidence and independent CP0/CP1 gates](./houttuynia-cordata.md); no direct MSU or gout evidence |
-
-### Helicteres replication outcome
-
-INCONCLUSIVE / ANCHOR-STILL-SINGLE. Phase 2 found no independent group has reproduced the Yin 2016 ([PMC6273495](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273495/), [doi:10.3390/molecules21111506](https://doi.org/10.3390/molecules21111506)) CH50 9/40 µM benzofuran lignan finding on a matched assay format. The Helicteres angustifolia genus has substantial cancer + antifibrotic + triterpene pharmacology literature but the upstream-complement angle is isolated to the single Yin 2016 paper. Structurally-adjacent benzofuran lignans (Styrax japonica egonol [PMID 15643559](https://pubmed.ncbi.nlm.nih.gov/15643559/), CP IC50 33 µM per Min 2004) are 3.7× weaker — possibly real exceptional pharmacology, possibly assay-format artifact. **Independent wet-lab replication on a different laboratory's CH50 protocol remains the load-bearing risk-closure step. Full structured analysis at [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json).**
-
-### Multilingual-citation gap reframing
-
-Phase 1 §10 listed "language barrier" as a limitation. **Phase 2 reframes this:** the upstream-complement natural product subfield is overwhelmingly Chinese-group (Chen Daofeng / Fudan, 14+ papers post-1999) and Japanese-group (Yamada / Kiyohara / Kitasato, 13+ papers since 1985) dominated, but these groups publish 80-95% in English-language journals (Planta Med, Carbohydr Res, Acta Pharm Sin B, Int J Biol Macromol, Phytomedicine). The actual barriers operational in Phase 1 were:
-
-1. **Citation-network insularity** — the Chen / Yamada matched-assay anti-complementary CH50/AP50 hemolytic discipline is a self-contained methodology stream that doesn't get heavily cited outside its immediate field
-2. **Topic-discovery framing** — traditional Chinese / Japanese terminology framings ("heat-clearing," "toxin-eliminating," 鱼腥草 vs Houttuynia cordata vs "anti-complementary polysaccharide") don't map cleanly to Western pharma mechanism-name queries
-3. **Source-journal weighting** — Zhongguo Zhong Yao Za Zhi and Acta Pharm Sin B are PubMed-indexed but underweighted in Web of Science impact-factor rankings
-
-**Implication for OE platform:** the CLAUDE.md "global-multilingual research by default" rule operates correctly. The operational discipline is to query by traditional-formula-name + species-name + traditional-pathology-framing in addition to mechanism-name. **A "C3 convertase inhibitor" query misses Houttuynia; a "Houttuynia cordata anti-complementary" query catches it.** Mechanism-name is the wrong starting point for non-Western literature.
-
-### Phase 2 status
-
-**Phase 2 complete — 2026-05-17.** Files:
-- [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-multilingual-findings.md`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-multilingual-findings.md) — Tier 1/2/3 candidates surfaced from non-English-corpus + Chinese-group + Japanese-group English-corpus
-- [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json) — Helicteres benzofuran lignan replication attempt + verdict + recommendation
-- [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-c1-inh-engineering-literature.md`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-c1-inh-engineering-literature.md) — C1-INH heterologous expression literature thread + top-3 anchors for comp-037
-- [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-summary.md`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-summary.md) — synthesis + new tier-1 ranking + comp-037 inputs
-
-**Open follow-ups:** Independent wet-lab Helicteres replication; exact-material Houttuynia assays through independent [macrophage §1.30](./validation-experiments.md) and [serum-complement COMP-040](./computational-experiments.md) routes; comp-037 commit with explicit reference to Bos 2003 + Liu 2004 + Cancian 2015; Phase 3 multilingual extension for other mechanism classes; DeepSeek V4-Pro translation cross-check for four Chinese-language Phase 2 sources flagged `[TRANSLATION-SINGLE-MODEL]`.
+Related: [complement mechanism](./complement-c5a-gout.md) · [assay-format mapping](./upstream-complement-assay-format-mapping-computational.md) · [open questions](./open-questions.md)

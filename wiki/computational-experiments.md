@@ -64,23 +64,21 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-043 — Does EcN periplasmic disulfide-folding scale from C1-INH (2) to DAF SCR1-4 (8) and lactoferrin (16)? — C1-INH VIABLE / DAF PROVISIONAL / lactoferrin NOT-VIABLE (2026-07-13)
+### comp-043 — EcN Periplasmic Disulfide-Folding Arithmetic — INVALIDATED MODEL (2026-07-13)
 
-**Question:** [comp-037](./c1-inh-protease-stability-ecn-computational.md) showed EcN's periplasmic DsbA/DsbC machinery can plausibly fold C1-INH (2 disulfides). A synthesis card overreached: "so EcN is superior to koji for PDI-heavy payloads like DAF SCR1-4 (8) and lactoferrin (16)." Does EcN's periplasmic disulfide-folding + colonic-protease survival actually *scale* with disulfide count, and where does the crossover sit? Explicitly **not** a genome-scale metabolic model (a GEM models flux, not folding-machinery competition — the card's category error) — a [comp-006](./daf-cd55-protease-stability-computational.md)/[comp-037](./c1-inh-protease-stability-ecn-computational.md)-style structural + sequence folding-feasibility analysis.
+**Question:** Which exact-configuration measurements are needed before assigning an EcN configuration to C1-INH, DAF SCR1-4, or lactoferrin?
 
-**Verdict:** **Relative ranking, crossover AT DAF SCR1-4 — not a false-precision GREEN.** C1-INH (2 disulfides) **VIABLE** (disulfide axis; comp-037 kinetic caveat still governs). DAF SCR1-4 (8) **PROVISIONAL** — folding-capacity-gated. Lactoferrin (16) **NOT-VIABLE** — folding-limited across the entire plausible capacity band. **Card claim REFUTED as stated.** Bounded thesis: EcN plausibly extends to low/moderate-disulfide, compact-fold, glyco-independent payloads (C1-INH, DAF SCR1-4-provisional); it does not scale to lactoferrin; and koji is *not* dominated (folds DAF at LOW protease risk per comp-012, >2 g/L lactoferrin in *A. awamori* per Ward 1995).
+**Verdict:** **Invalidated and retired.** The arbitrary weighting formula and pLDDT-as-accessibility axis cannot establish periplasmic folding capacity, protease survival, viability, priority, or a chassis winner.
 
 **Key findings:**
-- Three orthogonal axes, limiting-factor (Liebig) composite where **folding is the gate**: (1) architecture-weighted disulfide-folding demand vs. a precedent-derived DsbA/DsbC capacity band; (2) strictly-degradative colonic-protease exposure (pLDDT scan); (3) glycosylation-dependence for function.
-- Effective folding demand (loop-length + interleaved-crossing weighted): C1-INH **4.0**, DAF SCR1-4 **10.0**, lactoferrin **23.5** vs. capacity band conservative 5 / moderate 8 / optimistic 12. Folding-nonviability: C1-INH plausible across the band; DAF straddles it; lactoferrin limited even at optimistic capacity (3 C-lobe-spanning long-range bonds = transferrin hierarchical-folding signature).
-- Disulfide counts grep-verified against UniProt: C1-INH P05155 = 2, DAF P08174 = 8 (all in SCR1-4), lactoferrin P02788 = 16. Every Cys position asserted in `analyze.py`.
-- **Single biggest unresolved question:** no published DsbA/DsbC capacity metric at 8-16 disulfide scale (chaperone-orthogonal-stacking.md §8 item 6) — the capacity band is an *inference, not a measurement*, hence DAF's PROVISIONAL label. The optimistic (SHuffle) anchor is cytoplasmic disulfide formation, compartment-mismatched with the secreted luminal format, biasing the honest read conservative for DAF.
-- **Glycosylation does NOT independently kill DAF or lactoferrin function** (DAF decay-acceleration is protein-protein; lactoferrin iron-binding tolerates non-native glycans, Sun 1999) — the dominant filter is Axis 1 (folding), not glycosylation. Over-attributing the lactoferrin problem to glycosylation would be a mechanism error.
-- Peer-review-incorporated: interleaved sushi topology folded into DAF's demand; C1-INH softened to "disulfide-axis viable" (serpin metastability = unmodeled fold-attainment risk); compartment-mismatch of the SHuffle anchor flagged.
+- The live corpus does not preserve the invalid numerical outputs; Git is the audit trail.
+- DAF and lactoferrin have distinct disulfide-containing native folds, but annotation does not predict native-fold attainment. Reverify exact feature counts against the current primary record before using them as design inputs.
+- **Single biggest unresolved question:** exact-configuration expression, native-fold attainment, secretion, stability, and retained function. No calibrated DsbA/DsbC capacity rule was identified for the proposed secreted configurations.
+- Compare baseline and DsbC-co-expression arms; either result applies only to the tested construct × route × folding-support configuration.
 
-**Informs:** [engineered-lbp-chassis.md](./engineered-lbp-chassis.md) (chassis assignment: lactoferrin stays on koji, DAF EcN provisional-secondary) · [chaperone-orthogonal-stacking.md](./chaperone-orthogonal-stacking.md) §8 (EcN-side capacity-metric gap, analogue of the koji α-coefficient gap) · [complement-c5a-gout.md](./complement-c5a-gout.md) (two-chassis CP0 architecture stands, chassis assignment does not invert) · [validation-experiments.md](./validation-experiments.md)
+**Informs:** [engineered-lbp-chassis.md](./engineered-lbp-chassis.md) (measurement priorities, not chassis assignment) · [chaperone-orthogonal-stacking.md](./chaperone-orthogonal-stacking.md) (capacity-calibration gap) · [validation-experiments.md](./validation-experiments.md)
 
-**Detail:** [interpretive](./daf-lactoferrin-ecn-folding-feasibility-computational.md) · [experiments/](./etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/) · Complete first pass (next gate: DsbA/DsbC folding-capacity measurement at 8-16 disulfide scale)
+**Detail:** [interpretive](./daf-lactoferrin-ecn-folding-feasibility-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/) · Next gate: exact-configuration expression, native-fold attainment, and retained-function measurement
 
 ---
 
@@ -106,15 +104,15 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ### comp-039 — CFH-dependence mechanism-dissociation of dietary upstream-CP0 candidates — CFH-INDEPENDENT (rosmarinic acid High, luteolin Medium, HCP/HCPM/CHCP High, Helicteres Medium-replication-bounded) (2026-05-21)
 
-**Question:** For each top upstream-CP0 candidate from comp-018 / comp-020 — rosmarinic acid, luteolin, *Houttuynia cordata* polysaccharide (HCP / HCPM / CHCP), *Helicteres* benzofuran lignans — does the candidate's anti-complement mechanism *require* functional CFH (and therefore lose efficacy in Y402H carriers, AMD-paradox-style), or does it work *upstream of* CFH (so Y402H carriers retain the benefit)? Generates the per-candidate prediction the UKB collaboration (Merriman/Otago, Major-Wrigley/Auckland, Choi/MGH) needs to run candidate-stratified cross-tabs rather than a generic "any-polyphenol × CFH" query.
+**Question:** For rosmarinic acid, luteolin, exact *Houttuynia cordata* polysaccharide materials, and *Helicteres* benzofuran lignans, does the candidate's anti-complement mechanism require functional CFH? Candidate identity comes from current evidence homes, not a COMP-018 ranking.
 
-**Verdict:** **All four candidates classified CFH-INDEPENDENT.** Rosmarinic acid (High confidence) — Sahu 1999 binds nascent C3b α'-chain thioester (Cys988) upstream of where CFH acts. Luteolin (Medium confidence) — broad CP+AP inhibition with mechanism site under-resolved; matched CP/AP IC50 inconsistent with CFH-competitive mechanism. HCP / HCPM / CHCP (High confidence) — Lu 2018 + Tian 2014 depletion-rescue maps targets to C3 + C4 + partial C5; C4 specificity is mechanistically incompatible with CFH-dependence (CFH is AP-specific). Helicteres benzofuran lignans (Medium confidence, bounded by comp-018 Phase 2 INCONCLUSIVE replication of Yin 2016) — multi-target on C1q + C2 + C3 + C4 + C9, structurally orthogonal to CFH's CCP6-8 binding surface.
+**Verdict:** **All four candidates classified CFH-INDEPENDENT within the cited mechanism records.** The *Helicteres* classification is conditional on a single-paper anchor and requires independent replication before translational use.
 
 **Key findings:**
 - Two-model independent cross-check (Claude Opus 4.7 = Model A; DeepSeek `deepseek/deepseek-chat-v3` = Model B): both models AGREE on classification for all four candidates.
 - Two-model DISAGREEMENT on predicted Y402H × candidate × incident-gout direction: Model A predicts negative direction (effect ≥ in carriers, because Y402H baseline severity amplifies absolute effect size); Model B predicts null (mechanism independence implies genotype indifference). Both reject the AMD-paradox direction (carriers worse). For UKB cross-tab, both predictions need separate falsification thresholds.
 - CFH Y402 structural footprint grep-verified: Sushi/CCP 7 = aa 387-444 of UniProt P08603. The four candidates' binding sites all map to upstream complement nodes (C3 thioester, C3 itself, classical-pathway C2 + C4 + C1q), not the CCP6-8 CRP/GAG-binding surface.
-- Recommended lead UKB cross-tab: rs1061170 × Phenol-Explorer-derived rosmarinic-acid intake × incident gout M10.x. Secondary: rs1061170 × Apiaceae-family intake × incident gout (luteolin proxy + 24h-urate intermediate readout). HCP cross-tab deferred to East Asian cohorts (KoGES / CKB / Singapore Chinese Health Study). Helicteres not actionable until comp-018 Phase 2 replication closes.
+- Recommended lead UKB cross-tab: rs1061170 × Phenol-Explorer-derived rosmarinic-acid intake × incident gout M10.x. Secondary: rs1061170 × Apiaceae-family intake × incident gout. *Helicteres* is not actionable until independent replication closes.
 - Total OpenRouter spend: ~$0.0022 (Model B counter-reads × 4 candidates).
 - Follow-ups: comp-040 (proposed) — wet-lab CFH-depleted-serum MSU-crystal assay as definitive falsification test; comp-041 (proposed) — East Asian cohort feasibility scan for Houttuynia × CFH cross-tab.
 
@@ -144,23 +142,22 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-037 — C1-INH (SERPING1) Protease Stability + Glycosylation Feasibility in EcN-Luminal Format — MODERATE (kinetic-competition gated) (2026-05-17)
+### comp-037 — C1-INH (SERPING1) EcN-Luminal Protease/Glycosylation Proxy — INVALIDATED MODEL (2026-05-17)
 
-**Question:** Will human C1-INH (UniProt P05155) survive luminal-secreted expression in engineered *E. coli* Nissle 1917, and is the loss of N-glycosylation a hard block? Closes the C1-INH-on-EcN side of the two-chassis CP0 architecture (C1-INH on LBP-luminal + DAF SCR1-4 on koji-secreted).
+**Question:** Which sequence-filter, structure-confidence, glycosylation, and kinetic questions should be tested for a human C1-INH (UniProt P05155) payload produced by engineered *E. coli* Nissle 1917?
 
-**Verdict:** **MODERATE — kinetic-competition gated.** Strictly-degradative protease risk on the folded serpin body is **LOW (0.1)**. The by-design exposed reactive-center loop (RCL, R466-T467 cleavage by C1s) gives a 0.8 score that reflects the inhibitor *mechanism*, not body degradation. The remaining decision is a wet-lab kinetic question: k_C1s_engagement vs k_DegP_RCL_cleavage on the recombinant construct. **Glycosylation feasibility GREEN** for the serpin-core construct (aa 123–500) in luminal topology — N-glycans not required for catalytic suicide-substrate mechanism; plasma half-life concern is moot for a gut-luminal therapeutic; EcN's lack of N-glycosylation is not a hard block.
+**Verdict:** **Proxy only; empirical protease and glycosylation effects unresolved.** The inherited LOW/RED labels used pLDDT as accessibility. Polypeptide-encoded serpin chemistry motivates testing an unglycosylated core, but exact-configuration folding, luminal stability, productive target engagement, and retained inhibition remain empirical gates.
 
 **Key findings:**
-- **Disulfide count grep-verified against UniProt FT DISULFID: exactly 2 disulfides** (C123-C428, C130-C205) on SV=2 entry. Casual literature sometimes quotes higher counts; the canonical entry has 2. This is the same class of check the DAF SCR1-4 incident (CLAUDE.md Rule 4) exists to enforce.
-- **Engineering recommendation: serpin-core construct aa 123–500.** Truncation starts at C123 (first canonical disulfide cysteine; pLDDT > 80 from this position onward); eliminates two boundary-artifact elastase sites (G120-S121, S121-F122).
-- **Brief-supplied glycosylation positions did not all align with UniProt features.** Subagent corrected to verified positions: N-glycans at 25, 69, 81, 238, 253, 272-variant, 352 + O-glycans at 47, 48, 64, 71, 83, 88, 92, 96 (mucin-like domain). The mucin-like O-glycan domain (residues ~1–122) is what gets truncated — its function (serum half-life extension via O-glycan shield) is irrelevant for luminal topology.
-- Protease panel: DegP P1 V/I/L/F/Y/A (Krojer 2008), OmpT di-basic (Dekker 2001), pancreatic trypsin/chymotrypsin/elastase. Colonic pH 6–7 (Fallingborg 1999) is within DegP active range — load-bearing assumption.
-- Glycosylation cross-reference: Bos 1998 (PMID 9799502) + Stavenhagen 2018 (PMID 29381136) — ~26 kDa of glycan on ~52 kDa polypeptide; Liu 2004 (PMID 15039314) — N-deglycosylated C1-INH retains inhibitor function (this is the load-bearing precedent for the GREEN glyco verdict).
-- Substantiates comp-024's GREEN-provisional 0.774 EcN prior for C1-INH at higher resolution.
+- **Disulfide count grep-verified against UniProt FT DISULFID: exactly 2 disulfides** (C123-C428, C130-C205) on the SV=2 entry. This is a sequence annotation, not folding evidence.
+- **Candidate construct: serpin core aa 123–500.** This exact boundary preserves the two annotated disulfides and RCL while making mucin-domain truncation directly testable; the proxy does not validate the construct.
+- UniProt features record N-glycans at 25, 69, 81, 238, 253, 272-variant, and 352 plus O-glycans at 47, 48, 64, 71, 83, 88, 92, and 96. The effect of removing the native N-terminal region remains empirical.
+- The retired five-enzyme filter panel did not model concentration, extended specificity, matrix, export topology, or kinetics and supplies no survival result.
+- Glycosylation precedents justify an unglycosylated test arm; they do not establish that an EcN-produced construct will fold or retain activity in the intended compartment.
 
-**Informs:** [complement-c5a-gout §9.8](./complement-c5a-gout.md) · [complestatin-bgc-lbp-feasibility-computational](./complestatin-bgc-lbp-feasibility-computational.md) (comp-024 anchor) · [engineered-lbp-chassis](./engineered-lbp-chassis.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) (sister-thread DAF SCR1-4 on koji) · [upstream-complement-modulator-sweep-computational](./upstream-complement-modulator-sweep-computational.md) Phase 2 (engineering-literature anchors Bos 2003, Liu 2004, Ruconest 2014)
+**Informs:** [complement-c5a-gout §9.8](./complement-c5a-gout.md) · [complestatin-bgc-lbp-feasibility-computational](./complestatin-bgc-lbp-feasibility-computational.md) (comp-024 boundary) · [engineered-lbp-chassis](./engineered-lbp-chassis.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) (sister-thread DAF SCR1-4 on koji) · [current C1-INH evidence](./c1-inh-protease-stability-ecn-computational.md)
 
-**Detail:** [interpretive](./c1-inh-protease-stability-ecn-computational.md) · [experiments/](./etc/experiments/comp-037-c1-inh-protease-stability-ecn/) · Complete v1 (wet-lab kinetic-competition assay is the next gate; engineering construct = serpin-core aa 123–500)
+**Detail:** [interpretive](./c1-inh-protease-stability-ecn-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-037-c1-inh-protease-stability-ecn/) · Exact-configuration folding, stability, kinetics, and function remain open
 
 ---
 
@@ -181,37 +178,31 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-034 — Lactoferrin Inter-Lobe Linker Redesign Pilot — Pilot Complete (2026-05-16)
+### comp-034 — Lactoferrin Inter-Lobe Linker Redesign — INVALIDATED MODEL
 
-**Question:** Can the hLf inter-lobe linker (P02788 aa 353–363, `SEEEVAARRAR`) be redesigned to reduce predicted shio-koji protease cleavage while preserving fold quality, codon compatibility, and loop flexibility?
+**Question:** If direct testing identifies a reproducible linker-associated failure, can the exact connector be redesigned while preserving lactoferrin fold and function?
 
-**Verdict:** **15 of 60 candidates pass N-of-5 ≥ 3 (GREEN). Zero pass STRICT 5-of-5.** Primary wet-lab variant `EEEEPAARRAR` (S353E + V357P, 82% WT identity) passes 4-of-5; cleavage 0.407 → 0.290 (~29% reduction). Secondary: true single-V357P `SEEEPAARRAR` (91% WT identity, 3-of-5).
+**Verdict:** **No candidate ranking survives.** The model reused COMP-005's unverified protease-preference table as a biological cleavage axis. ProteinMPNN and Rosetta supplied additional model scores but did not validate that target. Cleavage values, GREEN/STRICT tiers, concordance claims, winners, and wet-lab priorities are invalid.
 
-**Key findings:**
-- WT linker is a high-pLDDT structured α-helix (AF mean 95.6), not flexible loop — redesign premise empirically grounded by 16 cleavage sites.
-- ProteinMPNN MCP wrapper loads but `/opt/ProteinMPNN` repo absent; substitute biased sampler used transparently; single-command rerun when installed.
-- First concrete use of protein-design-mcp tool stack; documents install gap.
+**What survives:** The exact connector remains a candidate engineering region only after WT fragment mapping or retained-function data identify a reproducible failure. A new design COMP must bind verified specificity and structural constraints before generating a matched diversity panel.
 
 **Informs:** [validation-experiments §1.10](./validation-experiments.md) · [lactoferrin-protease-stability-computational](./lactoferrin-protease-stability-computational.md) · [etc/bio-ai-tools](./etc/bio-ai-tools.md) · [lactoferrin](./lactoferrin.md)
 
-**Detail:** [interpretive](./lactoferrin-linker-redesign-computational.md) · [experiments/](./etc/experiments/comp-034-lactoferrin-linker-redesign/) · Complete pilot v1 (v2: real ProteinMPNN + full ESM2 + epitope screen queued)
+**Detail:** [interpretive](./lactoferrin-linker-redesign-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-034-lactoferrin-linker-redesign/) · Historical artifact retained in Git
 
 ---
 
-### comp-029 — Combined CP0 Systems Model (RA + DAF SCR1-4) — YELLOW (2026-05-16)
+### comp-029 — Combined CP0 Scenario (RA + DAF SCR1-4) — INVALIDATED MODEL
 
-**Question:** Does dietary rosmarinic acid (C3 convertase) combined with engineered DAF SCR1-4 (decay-accelerator) provide additive CP0 coverage meaningfully larger than either alone?
+**Question:** Could rosmarinic acid and active DAF SCR1-4 suppress MSU-associated complement activation more than either exact material alone?
 
-**Verdict:** **YELLOW at all three DAF accessibility priors.** Combined median 1.08–1.10× the better singleton (below 1.5× GREEN threshold); 95% CI overlaps both singletons. Both arms saturate individually. RED path closed (no interaction blocker).
+**Result boundary:** Every numerical result, interval, category, co-localization claim, complementarity claim, and routing conclusion is invalid. The live corpus does not preserve those outputs; Git is the audit trail.
 
-**Key findings:**
-- RA's CP0 leverage is gut-luminal (Kang 2021 252–1100 µM), not systemic plasma (Baba 2004 Cmax ~20 nM, 1700× below IC50). Correct readout is gut-luminal complement-activation assay.
-- Dominant uncertainty driver: DAF SCR1-4 MSU-surface accessibility α (the §1.25 load-bearing wet-lab unknown).
-- Combined-strategy thesis not refuted; gated on reducing prior uncertainty before co-administration wet-lab spend.
+**Next test:** Once an active DAF preparation exists, compare vehicle, rosmarinic acid, DAF SCR1-4, and their combination in one matched MSU-associated complement assay. Measure C5a, C5b-9, DAF recovery, retained function, and surface association; do not route the experiment with an inferred accessibility coefficient.
 
-**Informs:** [complement-c5a-gout §9.7](./complement-c5a-gout.md) · [validation-experiments §1.25](./validation-experiments.md) (optional co-treatment arm gated on α ≥ 0.5) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md)
+**Informs:** [complement-c5a-gout §9.7](./complement-c5a-gout.md) · [validation experiments](./validation-experiments.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md)
 
-**Detail:** [interpretive](./combined-cp0-systems-model-computational.md) · [experiments/](./etc/experiments/comp-029-combined-cp0-systems-model/) · Complete v1
+**Detail:** [current evidence](./combined-cp0-systems-model-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-029-combined-cp0-systems-model/)
 
 ---
 
@@ -312,93 +303,88 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-024 — Complestatin-Family BGC LBP-Chassis Feasibility — RED for LBP framing; C1-INH parallel GREEN-provisional (2026-05-16)
+### comp-024 — Complestatin-Family BGC / LBP Proxy — INVALIDATED MODEL (2026-05-16)
 
-**Question:** Is the complestatin-family NRPS biosynthetic gene cluster heterologous-expression-tractable in an engineered LBP chassis (*E. coli* Nissle 1917, *Bacteroides thetaiotaomicron*) as the next CP0 (complement priming) engineering payload?
+**Question:** Can the historical hand-scored model establish a tractable LBP chassis or choose complestatin versus C1-INH as the next CP0 payload?
 
-**Verdict:** **RED for the LBP-track framing.** Best host EcN YELLOW 0.544; *Bacteroides* RED 0.225. Dominant blocker: O₂-dependent tailoring chemistry (ComI/ComJ P450 oxidative phenolic coupling + ComH nonheme halogenase + Hmo FMN oxidase) fundamentally incompatible with colonic-anaerobic-resident lifestyle. Without P450-mediated phenolic coupling, the linear peptide lacks the rigid crosslinked architecture that gives complestatin its C1q/C4b affinity (Park 2016 M55/S56 deletions inactive). **C1-INH (LBP-luminal) parallel thread scores GREEN-provisional 0.774 on EcN** — recommended as next CP0 LBP payload instead (→ tracked as comp-037).
+**Verdict:** **Invalidated and retired.** Hand-assigned factors, arbitrary color thresholds, and an incomparable nine-factor-versus-eleven-factor composite cannot establish feasibility, a chassis, comparator superiority, or portfolio priority.
 
 **Key findings:**
-- Complestatin stays in scope as **aerobic-fermentation production candidate** (Streptomyces-class manufacturing), NOT LBP-track payload.
-- Bacterial NRPS BGC + O₂-dependent tailoring + anaerobic chassis is a load-bearing incompatibility worth surfacing as a general design rule.
-- Comp-024's recommendation (promote C1-INH to real comp-NNN) is the origin of comp-037.
+- Chiu 2001 reported a 48.7 kb cluster with 16 open reading frames and seven NRPS modules; Park 2016 reconstituted a 54.5 kb cluster in *S. lividans* and recovered monocyclic M55 and linear S56 from gene-deletion experiments.
+- The accessible Park primary record does not establish that M55 or S56 was inactive.
+- An exact host × oxygen-regime experiment must recover chemically identified, functionally active crosslinked product before the active-product-formation hypothesis advances. Delivery, access, safety, and priority require separate evidence.
+- C1-INH is a separate conjecture requiring exact-construct expression, folding, glycosylation-dependence, stability, function, and access measurements.
 
 **Informs:** [complement-c5a-gout §9.8](./complement-c5a-gout.md) · [engineered-lbp-chassis](./engineered-lbp-chassis.md) · [modality-chokepoint-matrix](./modality-chokepoint-matrix.md)
 
-**Detail:** [interpretive](./complestatin-bgc-lbp-feasibility-computational.md) · [experiments/](./etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/) · Complete v1
+**Detail:** [current evidence](./complestatin-bgc-lbp-feasibility-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/)
 
 ---
 
-### comp-030 — ClockBase Combinatorial Ranking of A. oryzae DAF SCR1-4 Cassettes — §1.25 baseline confirmed (2026-05-15)
+### comp-030 — DAF SCR1-4 Cassette Ranking — INVALIDATED MODEL (2026-05-15)
 
-**Question:** Across the DAF SCR1-4 cassette design space (43,200 combinations), which cassettes survive a multi-model concordance gate; does the §1.25 baseline (PamyB + amyB SP + direct) survive, and does the ESM2 pLDDT distribution corroborate α = 0.3–0.6 for CCP/SCR fold?
+**Question:** Which expression and processing configuration can produce intact, natively folded, functional DAF SCR1-4 in *A. oryzae*?
 
-**Verdict:** **§1.25 baseline survives; one target-specific refinement (max-CAI codon, NOT 5'-softened).** 40 candidates pass N-of-5 = 5 (0.09%); 632 pass N-of-5 ≥ 4. α-coefficient CORROBORATED: ESM2 pseudo-pLDDT mean 88.8, std 0.5, 100% above 80.
+**Verdict:** **Invalidated and retired.** The candidate scores, promoted sets, codon preference, direct-secretion ranking, ESM2 pseudo-pLDDT inference, chaperone-load coefficients, and cross-target generalizations do not support candidate selection or experimental routing.
 
 **Key findings:**
-- Codon optimization is target-specific: 5'-softened for uricase (comp-022); max-CAI for DAF SCR1-4. Run the framework on each new target.
-- Glucoamylase-KEX2 fusion is wrong for CCP/SCR (adds ~10 PDI load on top of intrinsic 3.6).
-- ESM2 pLDDT distribution is the narrowest/highest seen for any OE target — in silico fingerprint of cooperatively-folding 2-disulfide β-sandwich.
+- No numerical rank, count, preferred codon strategy, promoter, signal peptide, processing route, or fold/secretion conclusion survives.
+- Direct secretion and GlaA-KEX2 remain unranked candidate routes. Codon variants may be an independent factor, but the retired model supplies no preferred variant.
+- Compare exact constructs under matched conditions and measure expression, processing fidelity, native-fold attainment, intact secreted product, and retained complement-regulatory function.
 
-**Informs:** [validation-experiments §1.25](./validation-experiments.md) · [chaperone-orthogonal-stacking §3.5.2](./chaperone-orthogonal-stacking.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md)
+**Informs:** [validation-experiments §1.25](./validation-experiments.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md)
 
-**Detail:** [interpretive](./daf-cd55-scr14-cassette-ranking-computational.md) · [experiments/](./etc/experiments/comp-030-daf-cassette-ranking/) · Complete v1 (v2: real ESMFold on 40-strict tier when openfold unblocked)
+**Detail:** [current evidence](./daf-cd55-scr14-cassette-ranking-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-030-daf-cassette-ranking/)
 
 ---
 
-### comp-022 — ClockBase Combinatorial Ranking of A. oryzae Uricase Cassettes — candidate generator (2026-05-14; topology unresolved as of 2026-07-13)
+### comp-022 — *A. oryzae* Uricase Cassette Search Space — CORRECTIVE REVIEW OPEN
 
 **Question:** Across the *A. oryzae* uricase cassette design space (43,200 combinations), which cassettes survive a multi-model concordance gate?
 
-**Current verdict:** **Useful candidate ranking; topology not selected.** The direct-secretion top cluster and its gene-synthesis refinements survive within comp-022's search space, but comp-044/045 showed that §1.33 must determine whether secretion is physiologically credible before promotion to §1.9B.
+**Current verdict:** **Enumeration survives; the shortlist does not currently authorize candidate selection.** One ranking axis uses uncalibrated chaperone-load coefficients inherited from the retired folding-score framework. The other axes describe different intermediate properties and were not calibrated to one shared biological outcome. The open review must recompute or retire every shortlist and “winner” claim dependent on that axis; §1.33 separately determines whether an exact configuration works under the intended physiological conditions.
 
 **Key findings:**
-- Zero-cost gene-synthesis refinements that survive v2 concordance: 5'-softened codon optimization; N191Q glycosylation ablation. PTS1-blocking C-terminal tag remains biologically motivated (addresses comp-010 routing risk) but is **not** a v2-strict-tier requirement—non-PTS1-blocked scaffolds also reach N-of-5 = 5 (see comp-022 `v2/provenance.md`).
-- The v2 strict N-of-5 = 5 tier is a distinct 4-cassette set spanning PamyB + PglaA promoters, **not** identical to the v1 top cluster (only 1 of the 4 is a v1-top-cluster member). The v1 top cluster does survive the looser N-of-5 ≥ 4 gate (4 of 4).
-- Within the tested koji-secreted cassette space, glucoamylase-KEX2 fusion ranks below direct secretion. This does not compare koji secretion with intracellular, displayed, or bacterial topologies in §1.33.
+- The enumerated promoter, signal-peptide, codon, scaffold, and routing choices remain a hypothesis inventory, not a ranked build list.
+- The reported N-of-5 tiers, direct-secretion cluster, gene-synthesis refinements, and GlaA-KEX2 ordering depend on the current scoring system and are not decision-eligible.
+- PTS1 masking, codon design, direct secretion, GlaA-KEX2 processing, and other topologies remain separate empirical configuration questions.
 - v1 GC-clamp proxy vs real ViennaRNA MFE Spearman ρ = 0.241; v2 materially shifted ranks while preserving the internal direct-secretion cluster.
 
 **Informs:** [validation-experiments §1.33 (topology gate) + conditional §1.9B](./validation-experiments.md) · [cassette-compatibility-computational](./cassette-compatibility-computational.md) · [koji-endgame-strain §3.4](./koji-endgame-strain.md) · [etc/autonomous-screening-methodology](./etc/autonomous-screening-methodology.md)
 
-**Detail:** [interpretive](./uricase-cassette-ranking-computational.md) · [experiments/](./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/) · v2 complete (v2.5 deferred until §1.33/§1.9B wet-lab data lands)
+**Detail:** [current evidence boundary](./uricase-cassette-ranking-computational.md) · [open corrective review](../synthesis/queue/comp-review-022.md) · [artifact](./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/)
 
 ---
 
-### comp-023 — cns1+cns2 Cordycepin Cassette Metabolic Burden (FBA on iWV1314) — GREEN (2026-05-14)
+### comp-023 — *cns1+cns2* Cordycepin-Burden FBA — INVALIDATED
 
-**Question:** Does adding the bacterial cns1+cns2 cordycepin pathway (Jeennor 2023, 564 mg/L/d) on top of dual uricase + Lf impose prohibitive metabolic burden?
+**Question:** Could the encoded iWV1314 scenario establish the metabolic burden or multi-cassette compatibility of a *cns1+cns2* cordycepin route?
 
-**Verdict:** **GREEN; cns1+cns2 burden-feasible at empirical titer.** Growth penalty +0.02% vs WT; kojic + EGT yield headroom 100%; cordycepin demand consumes ~0.02% of cellular carbon. Breakpoint ~1000× empirical titer.
+**Verdict:** **Invalidated, non-runnable artifact.** The model converted source-reported batch-average productivity into a fixed continuous mmol/gDW/h demand using an assumed biomass density without time-resolved, condition-matched calibration. Together with unverified pathway assumptions, an artificial export bound, broken scenario boundaries, and separate capacity maxima mislabeled as yields, this prevents any burden, flux, breakpoint, product, feasibility, or compatibility conclusion.
 
-**Key findings:**
-- Jeennor titer is three orders of magnitude below the burden breakpoint; cassette effectively free on carbon + ATP + NADPH axes.
-- Cordycepin biosynthesis taps intracellular adenosine via SAH hydrolysis (r857); cordycepin export substitutes for ATP-wasting adenosine kinase step.
-- Plain FBA does NOT capture PDI/chaperone proteome saturation — orthogonal to chaperone-orthogonal-stacking framework (different burden axes).
+**What survives independently:** Jeennor et al. directly demonstrated *cns1+cns2*-enabled cordycepin production in *A. oryzae* in their tested configuration (PMID 38071331). A cytosolic route avoiding direct ER-folding competition remains an unranked research conjecture; the exact four-arm isogenic product-and-cell-state experiment is specified on the evidence page.
 
-**Informs:** [chaperone-orthogonal-stacking](./chaperone-orthogonal-stacking.md) · [koji-endgame-strain §1.9](./koji-endgame-strain.md) · [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) · [validation-experiments §1.9](./validation-experiments.md) · [cassette-compatibility-computational](./cassette-compatibility-computational.md)
+**Informs:** [cordycepin route and experimental gate](./cordycepin-cassette-burden-computational.md) · [chaperone-orthogonal-stacking](./chaperone-orthogonal-stacking.md) · [validation-experiments](./validation-experiments.md)
 
-**Detail:** [interpretive](./cordycepin-cassette-burden-computational.md) · [experiments/](./etc/experiments/comp-023-cns1-cns2-metabolic-burden/) · Complete v1 (v2 dynamic-FBA deprioritized 2026-05-16 — koji-cordycepin removed from active stack)
+**Detail:** [evidence page](./cordycepin-cassette-burden-computational.md) · [non-runnable tombstone](./etc/experiments/comp-023-cns1-cns2-metabolic-burden/)
 
 ---
 
-### comp-018 — Upstream Complement Modulator Sweep — Phase 1 + Phase 2 complete (2026-05-17)
+### comp-018 — Upstream Complement Modulator Sweep — INVALIDATED CATALOG (2026-05-17)
 
 **Question:** Across all compound classes, which compounds have documented activity at upstream complement cascade nodes proximal to C5a generation, and which are gout-platform-relevant?
 
-**Verdict:** **Direct natural-product C5aR1 antagonists empty (re-confirms comp-014 + §1.21).** Moving one node upstream uncovers substantial literature anchored by **rosmarinic acid** (TIER 1; C3 convertase IC50 5–10 µM, three in vivo precedents, FDA-GRAS sources). TIER 2: luteolin (triple-mechanism with comp-013 XO + URAT1), tiliroside, Bupleurum polysaccharides, falcarindiol, ganoderic acid Sz, quercetin, K-76, complestatin.
+**Verdict:** **Retired as a computational experiment.** The script counted fields in a hand-curated catalog; it did not rerun searches, verify primary evidence, enforce translation review, or validate tiers. Cross-assay rankings, counts, dietary conclusions, chassis extrapolations, and engineering priorities are invalid.
 
 **Key findings:**
-- "Chokepoint-hacker move" worked; rosmarinic acid is the most well-characterized natural-product upstream-complement modulator.
-- **Luteolin triple-convergence** (XO + URAT1 + C3 convertase CP+AP) — highest-leverage single dietary compound identified.
-- comp-014 β-glucan structure-dependence mechanistically explained; Ganoderma triterpene-enriched preps argued for.
-- Engineered C1-INH parallel thread proposed (near-twin to H05 DAF) → grounded in Phase 2 + tracked as comp-037.
-- ChEMBL anticomplement coverage 0/32 = 0% — same gap pattern as comp-013/014.
-- **Phase 2 (2026-05-17):** surfaced ***Houttuynia cordata* polysaccharides** as a material-dependent anti-complement candidate orthogonal to rosmarinic acid, luteolin, and Helicteres; direct gout evidence, exact-material equivalence, inflammatory direction, and delivered exposure remain unresolved. See the [current evidence home](./houttuynia-cordata.md). Helicteres benzofuran lignan replication remained INCONCLUSIVE. C1-INH engineering anchors included Bos 2003, Liu 2004, and the Ruconest precedent.
-- **Phase 2 reframing — "language barrier" was the wrong diagnosis.** Chen Daofeng / Yamada-Kiyohara groups publish 80–95% in English-language journals; actual barriers are citation-network insularity + traditional-formula-name vs Western-mechanism-name query framing + source-journal impact-factor underweighting. Operational discipline: query by traditional-formula + species + traditional-pathology framings IN ADDITION to mechanism names. "C3 convertase inhibitor" misses Houttuynia; "Houttuynia cordata anti-complementary" catches it.
+- Rosmarinic acid, luteolin, and *Helicteres* compounds remain assay-specific leads governed by the independently scrubbed COMP-020 evidence boundary.
+- *Houttuynia cordata* polysaccharides remain exact-material leads governed by the Houttuynia evidence page.
+- C1-INH remains a separate exact-configuration expression, folding, stability, function, and access question.
+- None of those leads inherits a rank, dietary inference, or chassis assignment from COMP-018.
 
-**Informs:** [complement-c5a-gout](./complement-c5a-gout.md) · [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) · [gout-action-guide](./gout-action-guide.md) · comp-037 (C1-INH protease-stability, concurrent)
+**Current evidence homes:** [COMP-020](./upstream-complement-verification-rerun-computational.md) · [Houttuynia](./houttuynia-cordata.md) · [C1-INH](./c1-inh-protease-stability-ecn-computational.md)
 
-**Detail:** [interpretive](./upstream-complement-modulator-sweep-computational.md) · [experiments/](./etc/experiments/comp-018-upstream-complement-modulator-sweep/) · [phase-2/](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/) · **Phase 1 + Phase 2 complete; v2 DeepSeek translation cross-check pending on 4 Chinese-language + 1 Japanese flagged sources.** Brief contained user-framing bias on Phase 1; verification re-run is comp-020. See [retrospective](../operations/comp-018-vs-comp-020-retrospective.md).
+**Detail:** [current routing page](./upstream-complement-modulator-sweep-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-018-upstream-complement-modulator-sweep/) · [brief-contamination retrospective](../operations/comp-018-vs-comp-020-retrospective.md)
 
 ---
 
@@ -410,45 +396,46 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Key findings:**
 - **Three independent scans now agree** (comp-013 + comp-014 + comp-020): ChEMBL is structurally biased (~20% NP coverage vs >70% kinase/GPCR). Primary-literature mining is the load-bearing tool.
-- Two assay-format spreads documented: rosmarinic acid 44× (C3b 34 µM → C5 convertase 1500 µM); heparin 50× (LP vs AP). Stratifying IC50 by assay type is load-bearing.
+- Published assay records span 34–1500 µM for rosmarinic acid and 2–102 µg/mL for heparin across different formats and conditions. Those descriptive ranges motivate matched-format replication; they do not establish format as the cause or supply an operative potency.
 - Luteolin convergence-multi-mechanism candidate confirmed; rosmarinic acid is highest mechanistic-distinctiveness candidate (covalent C3b modification).
 - Coverage gaps: Factor H upregulators (empty), CD55/CD59/CR1 upregulators (engineering territory), direct fungal upstream modulators (zero — extends comp-014).
 
 **Informs:** [complement-c5a-gout](./complement-c5a-gout.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md)
 
-**Detail:** [interpretive](./upstream-complement-verification-rerun-computational.md) · [experiments/](./etc/experiments/comp-020-upstream-complement-verification-rerun/) · Phase 1 complete (Phase 2: CNKI/WanFang/J-STAGE + Helicteres replication + RA/MSU assay + comp-021 mapping queued)
+**Detail:** [interpretive](./upstream-complement-verification-rerun-computational.md) · [experiments/](./etc/experiments/comp-020-upstream-complement-verification-rerun/) · Phase 1 complete (Phase 2: CNKI/WanFang/J-STAGE + *Helicteres* replication + RA/MSU assay; matched assay-format stratification remains a separate conjecture)
 
 ---
 
 ### comp-001 — Uricase Shio-Koji Protease-Site Proxy (2026-05-05)
 
-**Question:** What prior do P1/P1' sequence rules and AlphaFold per-residue confidence provide for *A. flavus* UOX (Q00511) before a shio-koji proteolysis assay?
+**Question:** Which Q00511 adjacent pairs match three fixed legacy preference filters, and what AlphaFold confidence surrounds each match?
 
-**Verdict:** **Proxy only; empirical risk unresolved.** The analysis mapped predicted cleavage positions and their pLDDT values. pLDDT is model confidence, not solvent accessibility or protease resistance.
+**Verdict:** **Proxy only; empirical risk unresolved.** The analysis mapped adjacent-pair matches to unverified legacy filters and their pLDDT context. The filters are not established exhaustive protease-specificity rules, and pLDDT is model confidence rather than solvent accessibility or protease resistance.
 
 **Key findings:**
-- The predicted cleavage positions occur at residues with high AlphaFold confidence; no solvent-accessibility or SASA calculation was performed.
+- The fixed filters returned 215 ALP, 97 NPr, and 44 acid-protease adjacent-pair matches. These counts describe the encoded filters, not demonstrated cleavage sites.
+- Q00511 has mean pLDDT 97.14 and minimum 80.50; no solvent-accessibility or SASA calculation was performed.
 - The analysis did not measure cleavage, retained activity, salt-conditioned protease behavior in the ferment, or any fermentation outcome.
 
-**Informs:** [validation-experiments §1.10](./validation-experiments.md) — supplies a sequence/structure proxy while the empirical retained-activity assay remains the decision gate.
+**Informs:** [validation-experiments §1.10](./validation-experiments.md) — supplies a fixed-filter and structural-confidence inventory while the empirical retained-activity assay remains the decision gate.
 
 **Detail:** [interpretive](./uricase-protease-stability-computational.md) · [experiments/](./etc/experiments/comp-001-uricase-shio-koji-protease-stability/) · Complete
 
 ---
 
-### comp-006 — DAF/CD55 Shio-Koji Protease Stability (full ectodomain) — HIGH (2026-05-05)
+### comp-006 — DAF/CD55 Shio-Koji Protease Proxy (full ectodomain) (2026-05-05)
 
-**Question:** Would the DAF/CD55 soluble ectodomain (aa 35–353: SCR1–4 + Ser/Thr stalk) survive shio-koji protease conditions?
+**Question:** What sequence-filter and AlphaFold-confidence prior does the inherited model provide for the DAF/CD55 soluble ectodomain (aa 35–353)?
 
-**Verdict:** **HIGH / HIGH / HIGH** across full / mature / soluble-ectodomain scopes. Driver: Ser/Thr-rich stalk (aa 286–353, pLDDT 30–52, disordered). SCR1–4 (aa 35–285, pLDDT 85–98) contribute **zero low-pLDDT exposed-by-proxy sites** (pLDDT-based proxy, not a SASA result). Note the ectodomain HIGH is a **conservative stress-test dependent on NPr pH factor = 1.0**; at realistic NPr activity (~0.3–0.5) it shifts toward MODERATE/LOW, leaving the disordered stalk as the liability (corrected 2026-07-14).
+**Verdict:** **Proxy verdict invalid; empirical protease risk unresolved.** The reported HIGH labels used pLDDT confidence as accessibility. The Ser/Thr-rich stalk has lower AlphaFold confidence than SCR1–4 and remains a testable engineering liability, but the model does not establish solvent exposure, cleavage, degradation, or survival.
 
 **Key findings:**
-- HIGH verdict is stalk-contingent, not SCR-domain-contingent. Truncation at SCR4 surfaces as the load-bearing follow-up (became comp-012).
-- SCR1–4 core compares favorably with uricase (comp-001) in structural stability.
+- Removing the lower-confidence stalk is a falsifiable construct-design hypothesis, not a computationally validated stability improvement.
+- SCR1–4 has high AlphaFold confidence, but COMP-001 is not a validated protease-stability benchmark and cannot support a cross-payload survival comparison.
 
 **Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) — Engineered soluble complement regulators row
 
-**Detail:** [interpretive](./daf-cd55-protease-stability-computational.md) · [experiments/](./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/) · Complete
+**Detail:** [interpretive](./daf-cd55-protease-stability-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/) · Historical filter inventory only
 
 ---
 
@@ -558,53 +545,53 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-012 — DAF/CD55 SCR1-4 Truncated Shio-Koji Protease Stability — LOW (2026-05-05)
+### comp-012 — DAF/CD55 SCR1-4 Truncated Shio-Koji Protease Proxy (2026-05-05)
 
-**Question:** Does the stalk-truncated DAF SCR1-4 construct (aa 35–285, removing the disordered Ser/Thr stalk that drove comp-006 HIGH) survive shio-koji protease conditions?
+**Question:** What sequence-filter and AlphaFold-confidence prior does the inherited model provide for stalk-truncated DAF SCR1-4 (aa 35–285)?
 
-**Verdict:** **LOW (max risk 0.039, identical to uricase comp-001).** Stalk truncation removed 100% of exposed sites: 9 NPr + 48 ALP + 1 acid → 0 exposed in SCR1-4. All 242 recognition sites buried.
+**Verdict:** **Proxy verdict invalid; empirical risk unresolved.** The reported LOW score used pLDDT confidence as an accessibility class. COMP-001 cannot validate that mapping or serve as a protease-stability benchmark. The stalk-truncation hypothesis remains separately reviewable under comp-012 and requires direct retained-activity testing.
 
 **Key findings:**
-- CP0 platform-gap closure thesis in silico-validated. comp-006's HIGH was 100% stalk-driven, not SCR-driven.
-- Fermentable engineering candidate for the wiki's only "honest platform gap" now exists. Three wet-lab unknowns remain (disulfide folding, CCP function preservation, mucosal delivery geometry).
+- Removing the lower-confidence stalk remains a testable construct-design hypothesis; the computation does not establish improved protease survival.
+- Expression, correct disulfide folding, retained complement function, processing stability, and mucosal delivery remain empirical gates.
 
-**Informs:** [complement-c5a-gout](./complement-c5a-gout.md) (CP0 status reframe) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) (new stub) · [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) (row updated 🟡→🔬)
+**Informs:** [complement-c5a-gout](./complement-c5a-gout.md) (CP0 evidence boundary) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) (stalk-truncation hypothesis) · [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) (portfolio status)
 
-**Detail:** [interpretive](./daf-cd55-scr14-truncated-computational.md) · [experiments/](./etc/experiments/comp-012-daf-cd55-scr14-truncated/) · Complete
+**Detail:** [interpretive](./daf-cd55-scr14-truncated-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-012-daf-cd55-scr14-truncated/) · Historical filter inventory only
 
 ---
 
-### comp-011 — *C. utilis* Uricase Cassette Compatibility — MODERATE (2026-05-05)
+### comp-011 — *C. utilis* Uricase Cassette Compatibility — INVALIDATED MODEL (2026-05-05)
 
-**Question:** Does *C. utilis* uricase (industry-revealed preference per ALLN-346) have the same cassette-compatibility profile as *A. flavus* uricase, or does the alternative payload introduce blocking issues?
+**Question:** What exact processing, folding, and secretion failures should be tested when wild-type P78609 or a patent-mutation proxy is placed in a Ward-style *Aspergillus* cassette?
 
-**Verdict:** **MODERATE** (vs *A. flavus* LOW per comp-010). Design-driven, not fundamental incompatibility.
+**Verdict:** **Invalidated and retired.** The model lacked a planned CDS, mixed wild type with a synthetic mutation proxy, mis-mapped glycosylation coordinates, and converted unverified processing and cysteine proxies into categorical risk. No MODERATE verdict or exact-ALLN-346 interpretation survives.
 
 **Key findings:**
-- Current platform decision: retain both variants as candidates. Build and characterize the relevant koji configurations first, then use §1.33 to compare them under controlled reaction-site conditions. Within-host results may advance a configuration and nominate its topology; they do not establish a cross-host winner. Compare both payload variants within the advanced configuration only when the marginal cost remains bounded. The original direct-secretion/$0-fermentation recommendation is superseded.
-- Three MODERATE drivers: codon burden 2.3× heavier (CAI 0.65 vs 1.51); 4 free cysteines vs 0; 2 internal KR sites vs 1. ALLN-346 mutation I132R adjacent to position 130 KR.
-- Corrects prior P15296 misattribution; canonical UniProt is **P78609**.
+- UniProt P78609 identifies the wild-type sequence; the patent-disclosed mutation set does not establish the exact clinical ALLN-346 parent.
+- Retain wild type and a precisely defined mutation proxy only when a matched construct comparison is decision-relevant.
+- Produced termini, intact abundance, folding/assembly, compartment, and retained activity are the discriminating readouts.
 
 **Informs:** [uricase-variant-selection](./uricase-variant-selection.md) · [validation-experiments §1.9](./validation-experiments.md)
 
-**Detail:** [interpretive](./c-utilis-uricase-cassette-compatibility-computational.md) · [experiments/](./etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/) · Complete
+**Detail:** [interpretive](./c-utilis-uricase-cassette-compatibility-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/)
 
 ---
 
-### comp-010 — Cassette Compatibility for Dual-Cassette Koji Multi-Payload Configuration — LOW (2026-05-05)
+### comp-010 — Cassette Compatibility for Dual-Cassette Koji Multi-Payload Configuration — INVALIDATED MODEL (2026-05-05)
 
 **Question:** Does the uricase (Q00511) + lactoferrin (P02788) payload pair have cassette-design-specific issues (codon collisions, KEX2 geometry, secretion burden) that the Ward 1995 glucoamylase-KEX2 architecture won't handle?
 
-**Verdict:** **LOW** overall cassette-design risk for the asymmetric architecture (direct-secretion uricase + glucoamylase-KEX2-fusion Lf). Uricase: 0 disulfides; Lf: 16 disulfides, equal by bulk count to the 16-disulfide Huynh 2020 reference (Notari 2023 count correction propagated 2026-07-13). Fold-specific burden remains empirical; no blocking sequence-level issues.
+**Verdict:** **Invalidated and retired.** The model inferred codon burden without an actual CDS, transferred KEX2-family specificity without an *A. oryzae* matrix, mis-mapped glycosylation coordinates, and converted bulk sequence proxies into a LOW secretion-burden verdict. No LOW, codon-collision, cleavage-certainty, host-capacity, or combined-cassette conclusion survives.
 
 **Key findings:**
-- OE pair equals Huynh 2020 only by bulk disulfide count; protein-architecture-specific ER capacity remains unresolved. Ward 1995 is the protein-specific Lf precedent, while §1.9A is the current-host empirical gate.
-- Monitor Lf KEX2 site at mature pos 579 (moderate truncation risk) by SDS-PAGE; verify uricase secretion vs C-terminal SKL PTS1 motif.
-- Uricase pos 128 high-risk KR is irrelevant within the direct-secretion candidate but becomes load-bearing for any fusion configuration supplied to §1.33.
+- Ward 1995 remains a production precedent, not validation of the proposed sequence–junction–host configuration.
+- Internal sequence matches can nominate terminal mapping; they cannot predict cleavage or exclude a topology.
+- Build single-cassette controls first and measure transcript, produced termini, compartment, abundance, and retained function before a combined configuration.
 
-**Informs:** [validation-experiments §1.33 and §1.9](./validation-experiments.md) — removes specific sequence-level blockers from one candidate architecture; does not select topology
+**Informs:** [validation-experiments §1.33 and §1.9](./validation-experiments.md) — exact-configuration measurement requirements; no topology selected
 
-**Detail:** [interpretive](./cassette-compatibility-computational.md) · [experiments/](./etc/experiments/comp-010-cassette-compatibility/) · Complete
+**Detail:** [interpretive](./cassette-compatibility-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-010-cassette-compatibility/)
 
 ---
 
@@ -624,20 +611,20 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-005 — Lactoferrin Shio-Koji Protease Stability — HIGH (full) / MODERATE (mature) (2026-05-05)
+### comp-005 — Lactoferrin Shio-Koji Protease Proxy (2026-05-05)
 
-**Question:** Will human lactoferrin (P02788) survive the shio-koji protease environment with meaningful structural integrity retained?
+**Question:** What sequence-filter and AlphaFold-confidence prior does the inherited protease proxy provide for human lactoferrin (P02788)?
 
-**Verdict:** **HIGH (full sequence) / MODERATE (mature aa 20–710).** All top-5 sites in signal peptide (pLDDT 35–54). Mature max risk 0.188 (ALP, 3 exposed sites). If signal peptide cleaved by *A. oryzae*, operative risk is MODERATE.
+**Verdict:** **Proxy only; empirical protease risk unresolved.** The reported HIGH/MODERATE labels used pLDDT confidence as an accessibility class and do not establish exposure, cleavage, degradation, or survival.
 
 **Key findings:**
-- HIGH verdict is signal-peptide-contingent. Mature Lf less resistant than uricase (LOW) but substantially more resistant than full-sequence headline.
-- ALP's conservative pH factor (1.0, outside active pH 6–12) likely overstates mature-protein risk. Glycosylation at N137/N478/N623 not modelled; may further reduce accessibility.
-- Inter-lobe linker flagged as most plausible secondary vulnerability → became comp-034.
+- The exact inter-lobe connector is not a lower-confidence segment in the retired input. COMP-005 supplies no fragment-region priority.
+- Signal-peptide processing, glycosylation, context-specific protease activity, and retained function were not measured.
+- Inter-lobe-linker redesign remains a separate hypothesis that activates only if untargeted WT fragment mapping identifies a reproducible linker-associated failure.
 
-**Informs:** [validation-experiments §1.10](./validation-experiments.md) — Lf arm remains feasibility gate (unlike uricase)
+**Informs:** [validation-experiments §1.10](./validation-experiments.md) — both lactoferrin and UOX arms remain empirical feasibility gates
 
-**Detail:** [interpretive](./lactoferrin-protease-stability-computational.md) · [experiments/](./etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/) · Complete
+**Detail:** [current evidence](./lactoferrin-protease-stability-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/)
 
 ---
 
@@ -662,28 +649,28 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 | ID | Scope | Primary informs | Priority |
 |---|---|---|---|
-| comp-002 | Uricase thermal/pH stability under shio-koji conditions (MD or Rosetta ΔΔG) | [§1.10 follow-up](./validation-experiments.md) | Low (pending §1.10 result) |
+| ~~comp-002~~ | Invalidated, non-runnable thermal/pH composite model; source-backed thermal sensitivity and the multi-day attrition conjecture now route directly to §1.10 measurement | [§1.10 follow-up](./validation-experiments.md) | Retired |
 | ~~comp-003~~ | Reassigned 2026-05-05 → comp-005 (lactoferrin cleavage-site analysis) | — | ✓ Done as comp-005 |
-| ~~comp-008~~ | **Completed 2026-05-16; review actions remain open.** Expert-prior *F. prausnitzii* construct-tractability triage. Native BCoAT overexpression has the highest point estimate, but ranges overlap and increased butyrate is untested; uricase is poorly matched to anaerobic Fp. The complement candidate is not decision-ready because the artifact conflates CR1/P17927 with the DAF/CD55 comp-012 precedent. See [interpretive page](./f-prausnitzii-heterologous-expression-computational.md) and current COMP receipt. | [engineered-lbp-chassis](./engineered-lbp-chassis.md) Phase 2 P2-4 | ⚠ Reviewed; actions open |
+| ~~comp-008~~ | Invalidated, non-runnable hand-scored payload rubric. Stable transformation + reporter expression is the common genetic-entry gate; native-pathway, uricase, lactoferrin, and CR1 tests remain separate unranked configuration questions. | [engineered-lbp-chassis](./engineered-lbp-chassis.md) | Retired |
 | ~~comp-009~~ | **Completed; RERUN 2026-07-14** on the real NM_144585.4 mRNA (original artificial-CDS run invalidated). 8 real-transcript target sites pass design filters; accessibility low (real RNAplfold) + off-target uncleared. See [interpretive page](./urat1-sirna-target-site-selection-computational.md). | [sirna-urat1-modality](./sirna-urat1-modality.md) Phase 2 P2-2 | ✓ Done (rerun) |
 | ~~comp-011 TCM~~ | Reassigned 2026-05-05; TCM ChEMBL cross-check landed as comp-013 | — | ✓ Done as comp-013 |
-| comp-021 | Compound × upstream-complement chokepoint × matched-assay-format mapping (resolves RA 44× spread) | [upstream-complement-verification-rerun-computational](./upstream-complement-verification-rerun-computational.md) | Low (parked) |
-| ~~comp-022~~ | Completed 2026-05-14 — see Analyses above | — | ✓ Done |
-| ~~comp-024~~ | Completed 2026-05-16 — RED for LBP framing; C1-INH parallel GREEN-provisional → tracked as comp-037. See Analyses above | — | ✓ Done |
-| comp-023 | Completed 2026-05-14 — GREEN; see Analyses above | — | ✓ Done |
-| ~~comp-022 v2~~ | Completed 2026-05-14 — see comp-022 Status above | — | ✓ Done |
+| ~~comp-021~~ | Invalidated, non-runnable mixed-tier assay-format model. Matched-format replication planning survives only as a conjecture; no quantitative range, candidate rank, or operative gut potency survives. | [assay-format conjecture](./upstream-complement-assay-format-mapping-computational.md) | Retired |
+| comp-022 | Corrective review open; enumeration survives, current shortlist non-authoritative | [open actions](../synthesis/queue/comp-review-022.md) | Open |
+| ~~comp-024~~ | Invalidated, non-runnable hand-scored model. Complestatin tailoring and C1-INH expression/folding/function require separate configuration-level tests. See Analyses above | — | Retired |
+| ~~comp-023~~ | Invalidated, non-runnable FBA. Jeennor's direct *A. oryzae* production evidence and one ER-orthogonality conjecture survive independently; burden, flux, yield, breakpoint, and feasibility results do not. | [cordycepin route](./cordycepin-cassette-burden-computational.md) | Retired |
+| comp-022 v2 | Included in the same open corrective review | [open actions](../synthesis/queue/comp-review-022.md) | Open |
 | ~~comp-023 v2~~ | Deprioritized 2026-05-16 — koji-cordycepin removed from active stack ([koji-endgame-strain §3.5](./koji-endgame-strain.md)) | — | Closed |
 | ~~comp-025~~ | Deprioritized 2026-05-16 — koji-cordycepin removed; cultivation-route cordycepin inherits native ADA-inhibitor pairing | — | Closed |
 | ~~comp-026~~ | Deprioritized 2026-05-16 — multi-cassette induction interference moot for cordycepin; re-openable for future cytosolic third-cassette candidate | — | Closed |
 | ~~comp-027~~ | Completed 2026-05-16; **downgraded to hypothesis-generator 2026-07-14** — single strict-GREEN modeled point at 100 mg/d (not a validated 75–125 window). See Analyses above | — | ✓ Done |
-| ~~comp-030~~ | Completed 2026-05-15 — see Analyses above | — | ✓ Done |
-| ~~comp-029~~ | Completed 2026-05-16 — YELLOW; see Analyses above | — | ✓ Done |
+| ~~comp-030~~ | Invalidated, non-runnable cassette-ranking model. Direct secretion and GlaA-KEX2 remain unranked configurations for a matched experiment. See Analyses above | — | Retired |
+| ~~comp-029~~ | Invalidated, non-runnable toy scenario. The matched singleton/combination conjecture is grounded in independent single-arm evidence, not in the retired arithmetic. See Analyses above | — | Retired |
 | ~~comp-031~~ | **Not decision-usable** — its flat-UOX, PDB-derived-butyrate, and compartment assumptions do not support the reported quantitative result or topology recommendation. See [dual-chassis page](./dual-chassis-ecn-pdb-uricase-computational.md), comp-044/046, and §1.34/§1.37. | — | ✓ Done |
 | ~~comp-032~~ | Completed 2026-05-16 — ~~GREEN~~ **SUPERSEDED by comp-047 2026-07-14**; verdict retracted (tautological positive-control validation per comp-review 2026-07-13). See Analyses above | — | ✓ Done (superseded) |
 | ~~comp-047~~ | **Completed 2026-07-14 — INCONCLUSIVE** (real Vina docking). CFTR-corrector positive controls fail to earn rank (0/4); rigid docking can't discriminate Q141K chaperones; chaperone-rescue ranking not computationally established. Supersedes comp-032. See Analyses above | [Q141K trafficking + urate-flux assay](./validation-experiments.md) | ✓ Done |
 | ~~comp-033~~ | Completed 2026-05-16 — RED single-dose Cmax-equivalent; reframed in comp-036 (YELLOW receptor-occupancy). See Analyses above | — | ✓ Done |
 | ~~comp-036~~ | Completed 2026-05-16 — YELLOW repeat-dose receptor-occupancy framing; salvages comp-033 RED. See Analyses above | — | ✓ Done |
-| ~~comp-037~~ | Completed 2026-05-17 — MODERATE (kinetic-competition gated); glyco GREEN for serpin-core aa 123–500 in luminal topology. See Analyses above | — | ✓ Done |
+| ~~comp-037~~ | Invalidated, non-runnable proxy — exact-configuration folding, stability, kinetics, glycosylation effects, and function remain open. See Analyses above | — | Retired |
 | ~~comp-038~~ | Completed 2026-05-20 — YELLOW; HPLC-UV culture-supernatant candidate + electrochemical fecal SCFA future direction; no home/colorimetric butyrate assay ready. See Analyses above | — | ✓ Done |
 | ~~comp-039~~ | Completed 2026-05-21 — All four upstream-CP0 candidates classified CFH-INDEPENDENT (rosmarinic acid High, luteolin Medium, HCP/HCPM/CHCP High, Helicteres Medium-replication-bounded). See Analyses above | — | ✓ Done |
 | comp-040 | Wet-lab in-vitro CFH-replete/depleted-serum MSU-crystal complement-activation assay — direct falsification test of the comp-039 CFH-independence classification for rosmarinic acid, luteolin, and qualified HCP materials. The HCP complement arm is independent of [validation §1.30](./validation-experiments.md), which tests direct macrophage directionality; either may run when its exact material and assay capability are available, and failure in one does not adjudicate the other. | [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md), [Houttuynia](./houttuynia-cordata.md), [validation §1.30](./validation-experiments.md), [gout-genetic-variants.md](./gout-genetic-variants.md) Category 5, [complement-c5a-gout.md](./complement-c5a-gout.md) §6.3 | Blocked (OE wet-lab access and exact-material sourcing; relevant to lab-partner conversations) |
@@ -704,7 +691,7 @@ Every comp-NNN run produces output from a *generation* agent; add a second-pass 
 
 ### pcSec-class proteome-constrained *A. oryzae* GEM build — Planned (2026-05-14)
 
-Layer secretion-pathway proteome-cost constraints on iWV1314 (Vongsangnak 2008): explicit PDI/calnexin/BiP saturation, signal-peptide processing capacity, KEX2 flux, Sec61 throughput. Enables rigorous burden evaluation for any future *secreted* third cassette (DAF SCR1-4 per H05; engineered C1-INH per comp-018 Phase 2; complestatin NRPS per comp-024). Validation gate: must reproduce comp-023 GREEN for cytosolic cns1+cns2. Multi-week research project; not a single-subagent task. Current comp-023 v1 limitation.
+Layer secretion-pathway proteome-cost constraints on iWV1314 (Vongsangnak 2008): explicit PDI/calnexin/BiP saturation, signal-peptide processing capacity, KEX2 flux, and Sec61 throughput. This could evaluate a future *secreted-protein* cassette such as DAF SCR1-4 or an engineered C1-INH configuration. Complestatin NRPS biosynthesis is not a secreted-protein cassette and does not belong in this model. Any future *cns1+cns2* analysis needs verified pathway boundaries and calibration against exact product and cell-state measurements; it must not reproduce COMP-023's retired scenario. Multi-week research project; not a single-subagent task.
 
 **Detail:** [chaperone-orthogonal-stacking](./chaperone-orthogonal-stacking.md) · companion to verification-agent proposal (per-run vs per-strain infrastructure scopes)
 

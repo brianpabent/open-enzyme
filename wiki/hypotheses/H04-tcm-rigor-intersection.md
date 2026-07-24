@@ -57,7 +57,7 @@ The thesis is **gated on multilingual evidence coverage** across Chinese-languag
 
 ## Assumption Stack (placeholder — to be populated in Phase 2 P2-5)
 
-The full assumption stack will be populated after the Phase 2 lit scans (P2-1 classical formulas, P2-3 Smilax glabra deep-dive, P2-4 Si Miao San decomposition, P2-6 bioavailability characterization) and comp-011 (P2-2 ChEMBL cross-check) land. Anticipated load-bearing assumptions:
+The full assumption stack will be populated after the Phase 2 lit scans (P2-1 classical formulas, P2-3 Smilax glabra deep-dive, P2-4 Si Miao San decomposition, P2-6 bioavailability characterization) and comp-013 (P2-2 ChEMBL cross-check) land. Anticipated load-bearing assumptions:
 
 1. The chokepoint map ([`nlrp3-exploit-map.md`](../nlrp3-exploit-map.md), [`gout-pathophysiology.md`](../gout-pathophysiology.md)) is granular enough to capture TCM compound mechanisms (vs. forcing them into mismatched modern categories)
 2. ChEMBL's curated bioactivity dataset has sufficient coverage of TCM-relevant compounds (many natural products are sparsely curated in ChEMBL relative to medicinal-chemistry-derived compounds — this is documented in `etc/chembl-cross-check.md`)

@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "comp": "comp-005",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "70e60ea9a7c84a92cec37164f38b456aaa6d6881",
+  "last_push_review_manifest_sha256": "1ea5af3fd83a280080db69e9a2bb566dacc158a800d7a943092c6c027d8763d4",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 3476,
+      "sha256": "6aaa27617d8cbbe7ca9d5269b72099ca2de66727cd7489058d7a839892c536af"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 14375,
+      "sha256": "109b651bfa83e5f96eed09ef16f3fbbbefa6f3f5671dce6fbeba05da7306ad5d"
+    },
+    {
+      "path": "inputs/P02788.fasta",
+      "bytes": 802,
+      "sha256": "c78b74212c8370fced3b2040577c9ce854be045e76e74ccb0048bd17464dc94b"
+    },
+    {
+      "path": "inputs/alphafold_P02788_plddt.json",
+      "bytes": 9755,
+      "sha256": "5cc1d11ac8bf366c1d83d292ce5f6c580d19675b2e5254d5a5639cf7204a4c88"
+    },
+    {
+      "path": "inputs/protease_specificities.json",
+      "bytes": 4008,
+      "sha256": "618abc2f69b34b45cbe0e256693d696e05547994b07ef41c3024889cb658b0e0"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 1482,
+      "sha256": "d82b19cb14769b4ae189a1e6ae3b626776f0e4f6c5e91e03334202122f3c7559"
+    },
+    {
+      "path": "outputs/cleavage_sites.json",
+      "bytes": 7954,
+      "sha256": "a3947900d5d1dbcf6fae45d57dcdf750629810e3ea24b8a2c9053a095d18cdd5"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 8558,
+      "sha256": "600c826d60ccdde7adc9dfea44c2c52fe0fe165b4a35b09751e5eec327c4633e"
+    }
+  ],
+  "invalidated_scope": [
+    "pLDDT-derived accessibility classes",
+    "exposed, partially exposed, or buried site claims",
+    "HIGH, MODERATE, or LOW risk labels",
+    "protease cleavage, degradation, resistance, or survival conclusions",
+    "all pLDDT-derived cleavage-region or fragment-mapping priorities",
+    "folding or process-feasibility conclusions",
+    "chassis or cross-payload conclusions"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_historical_inventory_and_research_conjecture",
+    "statements": [
+      "No biological interpretation or candidate-region priority survives; direct untargeted fragment mapping and retained-function testing own the process question."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/lactoferrin-protease-stability-computational.md",
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "cd83d7eb14632b701a3ed9fbbb3119cd35df6b52f37f4bd6bb8d829dbea95060"
+  }
+}

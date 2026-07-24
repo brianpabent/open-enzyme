@@ -1,57 +1,41 @@
 ---
-title: "DAF/CD55 SCR1-4 Cassette Ranking, ClockBase-Style Combinatorial Composite Scoring (Computational, comp-030)"
+title: "DAF/CD55 SCR1-4 Cassette Configuration (comp-030)"
 date: 2026-05-15
 tags:
   - computational
   - comp-030
-  - clockbase-pattern
   - cassette-design
   - daf
   - cd55
   - scr14
-  - ccp-fold
-  - codon-optimization
   - signal-peptide
   - secretion-scaffold
-  - chaperone-load
   - aspergillus-oryzae
-  - ranking
-  - alpha-coefficient
 related:
-  - daf-cd55-scr14-truncated-computational.md
-  - uricase-cassette-ranking-computational.md
   - validation-experiments.md
-  - chaperone-orthogonal-stacking.md
-  - etc/autonomous-screening-methodology.md
-  - cassette-compatibility-computational.md
-  - engineered-koji-protocol.md
   - hypotheses/H05-daf-scr14-cp0-thesis.md
   - computational-experiments.md
 sources:
-  - "Sharp PM, Li WH. Nucleic Acids Res. 1987;15(3):1281-95 (PMID 3547335); CAI methodology"
-  - "Kudla G, Murray AW, Tollervey D, Plotkin JB. Science 2009;324(5924):255-8 (PMID 19359587); 5' mRNA structure dominates translation initiation"
-  - "Schmidt CQ et al. J Mol Biol 2010;396(1):1-10 (PMC2806952); NMR/SAXS CCP rigid-unit evidence (alpha-coefficient primary source)"
-  - "Huynh HH et al. Fungal Biol Biotechnol 2020;7:7 (PMC7257131); A. oryzae NSlD-ΔP10 PDI-load capacity calibration"
-  - "Machida M et al. Nature 2005;438(7071):1157-61 (PMID 16372010); A. oryzae RIB40 genome / codon usage"
-  - "Nakao Y et al. Nucleic Acids Res 1992;20 Suppl:2117 (PMID 1482437); A. oryzae codon usage reference"
-  - "Tada S et al. PMID 1937733; PamyB Taka-amylase A promoter"
-  - "UniProt P08174 (human DAF/CD55 SV=4); DISULFID feature annotations for SCR1-4; verified 2026-05-06 + 2026-05-15"
-  - "Verkuil R et al. bioRxiv 2022; Hsu C et al. 2022; ESM2 pseudo-likelihood fold-quality proxy"
-  - "Ward PP et al. Biotechnology (N Y) 1995;13(5):498-503 (PMID 9634791); glucoamylase-KEX2 architecture"
-status: complete (v1, 2026-05-15)
+  - "Ward PP et al. Biotechnology (N Y) 1995;13(5):498-503 (PMID 9634791); glucoamylase-KEX2 expression architecture"
+status: retired-invalid-model; matched construct comparison unresolved
 ---
 
-# DAF/CD55 SCR1-4 Cassette Ranking, ClockBase-Style Combinatorial Composite Scoring (Computational, comp-030)
+# DAF/CD55 SCR1-4 Cassette Configuration
 
-> **⚠️ Verdict caveated (comp-review 2026-07-14).** Useful as a **heuristic design screen**, but the artifact overstates what its proxies resolve and has reproducibility defects + code/summary mismatches. Treat the cassette ranking as a gene-synthesis-design prior, not a validated ranking.
+Which expression and processing configuration can produce intact, natively folded, functional DAF SCR1-4 in *Aspergillus oryzae*?
 
-> This wiki stub remains so cross-references resolve and the page stays discoverable.
-> Computational analyses are write-once artifacts; the daemon does not need to re-read
-> them on every sweep, so the long content lives next to the experiment that produced it
-> at `etc/experiments/comp-030-daf-cassette-ranking/`.
+COMP-030 does not answer that question. Its candidate scores, promoted sets, max-CAI preference, direct-secretion ranking, ESM2 pseudo-pLDDT, chaperone-load coefficients, and cross-target generalizations are invalid. The [COMP-030 tombstone](./etc/experiments/comp-030-daf-cassette-ranking/) is non-runnable; Git retains the retired implementation and outputs.
 
-Across the *A. oryzae* DAF/CD55 SCR1-4 expression cassette design space, parameterized as **6 promoters × 12 signal peptides × 10 codon variants × 60 secretion scaffolds = 43,200 combinations**, which cassettes survive a multi-model concordance gate and warrant promotion to the [§1.25 wet-lab feasibility test](./validation-experiments.md)?
+> **Research conjecture — processing route may determine usable DAF SCR1-4 production**{ .research-conjecture-label }
+>
+> **Grounded premises:** Direct signal-peptide secretion and a GlaA-KEX2 fusion expose a heterologous protein to different expression and processing contexts (**Mechanistic Extrapolation**; source: Ward et al. 1995 documents the GlaA-KEX2 architecture for a different human protein). An exact DAF SCR1-4 product must be recovered with its native fold and retained complement-regulatory function before the configuration is useful (**Mechanistic Extrapolation**; source: [DAF SCR1-4 evidence](./daf-cd55-scr14-truncated-computational.md)).
+>
+> **Novel leap:** One route may yield more correctly processed, natively folded, functional DAF SCR1-4 than the other. No direct evidence establishes a winner for these exact constructs. Codon variants may also interact with route, but the retired computation supplies no preferred variant.
+>
+> **Why it matters:** A route-specific result can select a build without mistaking a sequence heuristic for product formation.
+>
+> **Discriminating observation:** Compare exact direct-secretion and GlaA-KEX2 constructs under matched promoter, integration, host, culture, and quantification conditions. Optionally cross a prespecified small codon-variant panel. Measure transcript and protein abundance, processing fidelity, native-fold attainment, intact secreted product, and concentration-dependent retained complement-regulatory function. Advance only the exact configuration that passes prespecified quality and function gates.
 
-**Where the analysis lives:**
-- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-030-daf-cassette-ranking/`](./etc/experiments/comp-030-daf-cassette-ranking/)
-- Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)
+A negative result kills only the tested construct × processing route × codon configuration. It does not reject DAF-mediated complement regulation or another production chassis.
+
+Related: [validation §1.25](./validation-experiments.md) · [H05 falsification card](./hypotheses/H05-daf-scr14-cp0-thesis.md) · [COMP registry](./computational-experiments.md)

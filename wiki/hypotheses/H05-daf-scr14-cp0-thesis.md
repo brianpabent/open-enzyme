@@ -25,8 +25,8 @@ related:
   - ./H04-tcm-rigor-intersection.md
   - ./README.md
 sources:
-  - "comp-006 (full DAF ectodomain protease stability) — `daf-cd55-protease-stability-computational.md`"
-  - "comp-012 (SCR1-4 truncated DAF protease stability — verdict LOW, 2026-05-05) — `daf-cd55-scr14-truncated-computational.md`"
+  - "comp-006 (full DAF ectodomain protease proxy; risk unresolved) — `daf-cd55-protease-stability-computational.md`"
+  - "comp-012 (SCR1-4 truncated DAF protease proxy; risk unresolved) — `daf-cd55-scr14-truncated-computational.md`"
   - "DAF/CD55 UniProt P08174"
   - "complement-c5a-gout.md — CP0 mechanism + therapeutic landscape"
 ---
@@ -37,7 +37,7 @@ sources:
 >
 > Pre-registration discipline (per H01) does not apply until this stub is upgraded to a full card.
 
-> **Relationship to comp-018:** the [upstream complement modulator scan](../upstream-complement-modulator-sweep-computational.md) examines compound-class breadth, whereas H05 examines engineered DAF at C3-convertase decay acceleration. Rosmarinic acid and DAF would operate at different geometric scales. C1-INH remains a separate candidate pending a protease-stability gate.
+> **Relationship to adjacent tracks:** H05 examines engineered DAF at C3-convertase decay acceleration. Retired COMP-018 supplies no compound ranking or C1-INH transfer authority. Rosmarinic acid, C1-INH, and EcN DAF remain separate, unranked hypotheses with their own material or configuration gates. [COMP-043](../daf-lactoferrin-ecn-folding-feasibility-computational.md) supplies no EcN folding-capacity or chassis-priority evidence.
 
 ---
 
@@ -47,13 +47,13 @@ A soluble DAF/CD55 SCR1-4 construct (UniProt P08174, residues 35–285) heterolo
 
 The thesis composes three sub-claims, each independently falsifiable:
 
-1. **Cassette feasibility.** The SCR1-4 construct can be cloned with a koji-native α-amylase signal peptide, expressed in *A. oryzae* (RIB40 or NSlD-ΔP10 protease-deletion host) at therapeutic-relevant titers (≥50 mg/L pore-fluid equivalent, mirroring the H01 lactoferrin floor scaled for the smaller protein), and secreted as a correctly-folded soluble fragment with all 8 intrachain disulfide bonds (2 per SCR domain × 4 SCRs, per UniProt P08174) intact.
+1. **Cassette feasibility.** The SCR1-4 construct can be cloned with a koji-native α-amylase signal peptide, expressed reproducibly in *A. oryzae* (RIB40 or NSlD-ΔP10), and recovered as an active soluble fragment. The eight annotated intrachain disulfide pairs (two per SCR domain, UniProt P08174) require peptide-level connectivity mapping; titer alone cannot establish native fold.
 
 2. **Functional CCP-regulatory activity.** The expressed soluble truncated fragment retains decay-accelerating function — specifically C3b and C4b binding, and C3 convertase decay-acceleration sufficient to suppress C5a generation in a complement-activation assay (e.g., zymosan-stimulated human serum + ELISA for C5a).
 
 3. **Mucosal-surface delivery.** Luminal-side soluble DAF SCR1-4 (delivered orally as part of an engineered koji product) actually engages the gout-relevant complement-priming step in the gut → submucosal macrophage signaling axis, OR alternatively acts at the bacterial/mucus complement-priming interface in a manner that meaningfully reduces downstream CP0 priming load. The macrophages doing the CP0 priming are submucosal; whether luminal DAF can reach them or only modulate proximal complement activation is empirically open.
 
-The truncation is grounded in [comp-012](../daf-cd55-scr14-truncated-computational.md): the full DAF ectodomain (aa 35–353) failed comp-006 protease stability (HIGH risk, max 0.388 — driven by the disordered Ser/Thr stalk aa 286–353); the truncated SCR1-4 construct (aa 35–285) tested LOW (0.039, identical to uricase) with 100% of exposed sites eliminated. Computational feasibility is in silico-validated; the three sub-claims above are the wet-lab gating questions.
+The truncation is motivated by [comp-012](../daf-cd55-scr14-truncated-computational.md): the full ectodomain includes a low-confidence Ser/Thr-rich stalk (aa 286–353), while the SCR1-4 construct removes it. The inherited model's HIGH/LOW contrast is invalid because it used pLDDT confidence as solvent accessibility; it neither demonstrated exposed cleavage sites nor validated survival. Stalk truncation remains a useful, falsifiable design hypothesis, and the sub-claims above plus retained activity through processing are wet-lab gating questions.
 
 ---
 
@@ -61,26 +61,13 @@ The truncation is grounded in [comp-012](../daf-cd55-scr14-truncated-computation
 
 Anticipated load-bearing assumptions:
 
-1. **Disulfide folding fidelity.** *A. oryzae* ER PDI capacity is sufficient to fold 8 intrachain disulfides on a single ~28 kDa secreted protein. The OE uricase + lactoferrin pair has 16 bulk disulfides, all on lactoferrin (Notari 2023, PMC10465537), equal by count to the 16-disulfide Huynh 2020 adalimumab reference but not necessarily equal in folding burden. Adding DAF SCR1-4's 8 disulfides (UniProt P08174; corrected from an earlier estimate of 12) produces 24 total — about 17% below the earlier 29-disulfide estimate. Architecture-adjusted PDI load, not bulk count, remains the operative uncertainty.
+1. **Disulfide folding fidelity.** Whether *A. oryzae* can form the eight annotated intrachain disulfides on the DAF SCR1-4 construct is unmeasured. The annotations define peptide-level connectivity measurements; they do not predict PDI demand, secretion capacity, or compatibility with another payload.
 
-   **Triple-cassette synergy prediction:** The [chaperone-orthogonal stacking framework §5.5](../chaperone-orthogonal-stacking.md#55-triple-cassette-prospective-prediction--uricase--lactoferrin--daf-scr1-4) predicts **0.35–0.65 synergy (central expectation 0.45–0.55)** for uricase + Lf + DAF SCR1-4, with Lf's transferrin-lobe folding architecture as the dominant bottleneck. This is prospective and unvalidated.
-
-   - Lf's effective PDI load = 16 disulfides × α(1.5–2.5) = 24–40 (architecture-adjusted), substantially above its bulk count of 16 implies
-   - DAF SCR1-4's effective PDI load = 8 disulfides × α(0.3–0.6) = 2.4–4.8, substantially *below* its bulk count implies (compact CCP modules fold quickly)
-   - Combined triple-cassette effective PDI load = 26.4–44.8 vs. Huynh reference 16.0 (= 1.65–2.80× Huynh), compared to prior bulk estimate of 25/16 = 1.56×
-   - The architecture refinement increases the effective load range (from 1.56× fixed to 1.65–2.80×), driving the revised central prediction below the prior range
-
-   The three decision gates (framework-convention, not empirically derived):
-
-   - **Synergy >0.85** (very low probability): consider the triple-cassette strain only after payload-specific activity and safety gates pass.
-   - **Synergy 0.6–0.85** (low–medium probability): pursue triple-cassette with PDI co-expression helper augmentation (4-cassette design). Achievable only if Lf's α is at the favorable end (1.5) AND §1.9 Lf-alone arm confirms >500 mg/L (resolving the Huynh ambiguity favorably). Single PDI overexpression captures ~1.05–1.15× rescue (intra-paper Zhang 2006 PMID 16889384); combination helpers add 1.2–1.5× over singles.
-   - **Synergy <0.6**: route DAF to a separate strain or the [engineered LBP chassis](../engineered-lbp-chassis.md); this changes the chassis route rather than deciding H05's mechanism.
-
-   The falsifiable test: measure Lf titer in the triple-cassette strain vs. the dual-cassette (uricase + Lf) baseline in the same §1.9 wet-lab experiment. If Lf titer in the triple is >85% of the dual-cassette baseline, the triple stacks cleanly. If <60%, separate-strain routing is recommended. The §1.9 Lf-alone arm must run first to resolve the [capacity-vs-titer benchmark ambiguity](../chaperone-orthogonal-stacking.md#8-what-this-framework-does-not-predict) (§8 item 7) before interpreting any dual or triple result — if Lf alone reaches >500 mg/L in NSlD-ΔP10 solid-state, the upper bound of the triple prediction shifts more favorably. See [chaperone-orthogonal-stacking.md §5.5](../chaperone-orthogonal-stacking.md#55-triple-cassette-prospective-prediction--uricase--lactoferrin--daf-scr1-4) for the full bounded analysis.
+   The falsifiable interaction test measures expression, native fold, secretion, retained activity, stress, and growth for every payload across matched single-, pairwise-, and triple-cassette configurations. A loss in one configuration triggers mechanism-specific diagnosis and redesign; no disulfide count, titer band, or single-payload result selects separate strains or another chassis. See [chaperone-orthogonal-stacking.md](../chaperone-orthogonal-stacking.md#matched-experiment).
 2. **CCP-regulatory function survives truncation.** Native DAF/CD55's decay-accelerating function uses all four SCR domains plus the membrane GPI anchor for proper geometry; truncating to soluble SCR1-4 changes the geometry. Some published soluble DAF constructs retain function; whether the specific aa 35–285 boundary preserves activity is not pre-validated.
 3. **Mucosal access geometry.** Submucosal macrophages doing CP0 priming are on the basolateral side of the epithelium; luminal-side soluble DAF would need to either cross the epithelium (unlikely for a 28 kDa protein) or modulate complement upstream (in the lumen, on bacterial surfaces, in the mucus layer) in a way that meaningfully reduces priming load reaching the macrophages.
 4. **Alternative-pathway dominance in gout-relevant complement priming.** DAF inhibits both classical and alternative pathway C3 convertases; if the gout-relevant priming is driven primarily by a pathway DAF doesn't cover (e.g., MBL-pathway dominance or direct C5 cleavage), the inhibition is incomplete.
-5. **Ferment-stability of the active form.** comp-012 verifies protease stability of the polypeptide backbone in shio-koji; whether the disulfide-folded active form survives ALL of fermentation + storage + gut transit + reaching the colonic activity site is empirically open.
+5. **Ferment-stability of the active form.** COMP-012 does not verify protease stability. Whether the correctly folded construct retains activity through fermentation, storage, gut transit, and arrival at the intended activity site is empirically open.
 
 ---
 
@@ -88,25 +75,26 @@ Anticipated load-bearing assumptions:
 
 Anticipated highest-priority killshots:
 
-- **Wet-lab expression in *A. oryzae* RIB40 first** (~$2K, ~6 weeks): is the construct secreted at all? SDS-PAGE under non-reducing conditions for disulfide assessment.
+- **Wet-lab expression in *A. oryzae* RIB40 first** (~$2K, ~6 weeks): is intact construct recovered reproducibly? Reducing/nonreducing SDS-PAGE screens identity and aggregation but does not establish native disulfide connectivity.
 - **CCP-regulatory activity assay on the secreted fragment** (~$1K reagents + assay): does the truncated soluble form retain function?
 - **Literature deep-dive on published soluble DAF constructs** ($0, ~1 week — could be a Paperclip-grep follow-up per `etc/manual-literature-mining.md`): has anyone made and tested an aa 35–285 soluble DAF? What was the activity profile?
 - **Comparison with sCR1 / Factor H truncated soluble constructs** ($0): if other complement regulators have published soluble-truncated activity precedents, that informs the DAF design space.
 
 ---
 
-## Pre-Committed Thresholds (placeholder — to be populated when this stub is upgraded)
+## Provisional experiment-design constants
 
-Anticipated structure:
-- **Alive:** secreted ≥50 mg/L pore-fluid equivalent + ≥40% native disulfide-folded form on non-reducing SDS-PAGE + ≥30% C5a-generation inhibition vs. control in a zymosan-activation assay
-- **Killed:** secreted <10 mg/L OR fully reduced (no disulfides) OR no detectable CCP-regulatory activity
-- **Pending:** intermediate values; iterate on construct boundaries (try aa 35–250 alternative truncation), host strain (NSlD-ΔP10 vs. RIB40), or secretion signal
+The legacy 50 mg/L titer, 30% C5a-inhibition, and intermediate response bands are provisional routing constants, not literature-derived therapeutic thresholds. Freeze the exact concentration series, assay precision, replicate design, and confirmatory decision rule after a pilot and before the result-bearing comparison.
+
+- **Advance the exact configuration:** reproducible intact-protein recovery; peptide-level LC-MS/MS identifies the eight annotated disulfide pairs without a dominant alternative-connectivity species at the validated detection limit; free-thiol results are consistent with the mapped oxidized form; and the blinded complement assay shows reproducible activity relative to inactive-material and buffer controls.
+- **Redirect the configuration:** absent or irreproducible expression, unresolved/mixed connectivity after prespecified optimization, or no activity above the validated assay detection limit.
+- **Intermediate:** change one construct, signal, host, or process variable at a time and repeat the full identity, connectivity, free-thiol, and activity workflow.
 
 ---
 
 ## Status
 
-**Stub.** Computational claim verified by comp-012 (LOW protease risk, 2026-05-05). Wet-lab not yet executed. Falsification card to be upgraded to full when wet-lab access is confirmed and a sub-experiment is committed.
+**Stub.** Stalk truncation is a computationally motivated construct hypothesis; empirical protease risk and function are unresolved. Wet-lab not yet executed. Upgrade the falsification card when a sub-experiment is committed.
 
 **Survival count:** 0.
 
@@ -116,12 +104,13 @@ Anticipated structure:
 
 ## Cross-References
 
-- [`daf-cd55-protease-stability-computational.md`](../daf-cd55-protease-stability-computational.md) — comp-006, the analysis that surfaced the stalk problem
-- [`daf-cd55-scr14-truncated-computational.md`](../daf-cd55-scr14-truncated-computational.md) — comp-012, the in silico validation of the truncated construct
+- [`daf-cd55-protease-stability-computational.md`](../daf-cd55-protease-stability-computational.md) — comp-006 generated the matched full-ectodomain-versus-truncation hypothesis; it did not establish protease exposure or survival
+- [`daf-cd55-scr14-truncated-computational.md`](../daf-cd55-scr14-truncated-computational.md) — comp-012, the invalid pLDDT-accessibility proxy that still motivates direct testing of the truncated construct
 - [`complement-c5a-gout.md`](../complement-c5a-gout.md) — CP0 mechanism and therapeutic landscape
 - [`engineered-lbp-chassis.md`](../engineered-lbp-chassis.md) — alternative chassis for soluble complement regulators (LBP track)
-- [`modality-chokepoint-matrix.md`](../modality-chokepoint-matrix.md) — the matrix's "Engineered soluble complement regulators" row (now reflecting comp-012 verdict)
+- [`daf-lactoferrin-ecn-folding-feasibility-computational.md`](../daf-lactoferrin-ecn-folding-feasibility-computational.md) — invalidated COMP-043 arithmetic; any EcN DAF arm requires independent exact-configuration expression, native-fold, and retained-function evidence
+- [`modality-chokepoint-matrix.md`](../modality-chokepoint-matrix.md) — portfolio context for engineered soluble complement regulators
 - [`koji-endgame-strain.md`](../koji-endgame-strain.md) — could add CP0 as a candidate row alongside the four current chokepoints if H05 progresses through wet-lab
 - [`linter-design.md`](../linter-design.md) — schema for the Falsification Card format
-- [`validation-experiments.md` §1.25](../validation-experiments.md) — formalized wet-lab gate (single-cassette DAF SCR1-4 expression in *A. oryzae*); readouts directly address the three named wet-lab unknowns above (titer / disulfide folding / CCP-regulatory activity). Single-cassette routing per [`chaperone-orthogonal-stacking.md` §5.5](../chaperone-orthogonal-stacking.md) triple-cassette prediction landing below 0.6 decision gate.
+- [`validation-experiments.md` §1.25](../validation-experiments.md) — exact single-cassette DAF SCR1-4 test; readouts address expression, disulfide folding, processing stability, and CCP-regulatory activity without preselecting a later architecture.
 - [H01](./H01-ward-dual-cassette.md), [H02](./H02-engineered-lbp-thesis.md), [H03](./H03-sirna-urat1-thesis.md), [H04](./H04-tcm-rigor-intersection.md) — sibling falsification cards

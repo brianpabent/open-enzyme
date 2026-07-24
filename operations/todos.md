@@ -22,7 +22,7 @@ Surfaced from comp-014 Phase 7 (committed 2026-05-06). All four are doable from 
 
 ## §1.9 Ward 1995 dual-cassette execution path
 
-- **[2026-05-05] Wait for the US Role 2 (Pharma Translation) lead's read on §1.9.** They replied "ok lemme try to dig into this and i'll get back to ya" after the Huynh-2020 + comp-010 follow-up. If no response by 2026-05-12, send a soft check-in nudge.
+- **[2026-05-05] Wait for the US Role 2 (Pharma Translation) lead's read on §1.9.** They replied "ok lemme try to dig into this and i'll get back to ya" after the Huynh-2020 follow-up. If no response by 2026-05-12, send a soft check-in nudge.
 - **[2026-05-05] Outreach to Maruyama group at Tokyo University.** See [`ward-1995-lab-access.md`](./ward-1995-lab-access.md) for substantive context. Two asks: MTA on NSlD-ΔP10 (minimum) + collaboration / fee-for-service on the dual-cassette transformation (more ambitious). Send when the US lead's path is clearer (parallel-track, don't double-ask).
 - **[2026-05-05] Verify NSlD-ΔP10 is genuinely not in any public strain repository.** Direct catalog queries to JCM, NBRC, CGMCC, CBS-KNAW, ATCC, FGSC. The lab-access subagent's verification was best-effort; one batch of confirmation emails would close this with certainty. Particularly check NBRC (the Japanese repository the Maruyama group is most likely to deposit through).
 - **[2026-05-05] Pull PI corresponding-author emails for Jiangnan, DTU, Wösten, South China Univ of Tech groups.** They exist in the published papers' corresponding-author footers but weren't pulled into [`ward-1995-lab-access.md`](./ward-1995-lab-access.md). Pre-outreach data hygiene.
@@ -32,9 +32,9 @@ Surfaced from comp-014 Phase 7 (committed 2026-05-06). All four are doable from 
 
 - **[2026-05-05] Verify wiki page URLs render on the GitHub Pages site** before sending links to external collaborators. Particularly the deeply-anchored URLs (`#19-ward-1995-...`) that depend on mkdocs-material slug generation. Last-known-working URL pattern: `https://brianpabent.github.io/open-enzyme/<page-slug>/#<heading-slug>`.
 - **[Standing] Add Phase 2 follow-up subagent runs to the queue when Brian has bandwidth.** From the four peer-track scope pages:
-  - LBP track: P2-1 *F. prausnitzii* engineering toolkit lit scan, P2-2 commercial landscape lit scan, P2-3 FDA LBP regulatory path lit scan, P2-4 comp-008 *F. prausnitzii* expression feasibility, P2-5 H02 full population, P2-6 chassis comparative matrix
+  - LBP track: P2-1 *F. prausnitzii* engineering toolkit lit scan, P2-2 commercial landscape lit scan, P2-3 FDA LBP regulatory path lit scan, P2-4 exact-strain transformation + reporter-expression gate followed by separately scoped, unranked configuration tests, P2-5 H02 full population, P2-6 evidence-grounded chassis comparison after configuration-specific measurements
   - siRNA / URAT1 track: P2-1 kidney-tropic conjugate chemistry lit scan, P2-2 comp-009 URAT1 mRNA target site analysis, P2-3 commercial landscape lit scan, P2-4 vs. pozdeutinurad comparative analysis, P2-5 H03 full population, P2-6 FDA siRNA regulatory path lit scan
-  - TCM × rigor track: P2-1 classical TCM gout formulas lit scan (multilingual: ChiCTR + CNKI + J-STAGE), P2-2 comp-011 ChEMBL cross-check of TCM gout compounds, P2-3 Smilax glabra deep-dive, P2-4 Si Miao San decomposition, P2-5 H04 full population, P2-6 bioavailability characterization
+  - TCM × rigor track: P2-1 classical TCM gout formulas lit scan (multilingual: ChiCTR + CNKI + J-STAGE), P2-2 comp-013 ChEMBL cross-check of TCM gout compounds, P2-3 Smilax glabra deep-dive, P2-4 Si Miao San decomposition, P2-5 H04 full population, P2-6 bioavailability characterization
   - Engineered LBP H02 + siRNA H03 + TCM H04 falsification card stubs all need full population
 - **[Standing] Run /sweep-status before declaring inbox-zero at end of any working session.** Don't rely on memory of "did I push everything?" — the registry is authoritative.
 

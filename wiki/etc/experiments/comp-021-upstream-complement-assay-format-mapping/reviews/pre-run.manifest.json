@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/README.md",
+      "kind": "design",
+      "bytes": 1487,
+      "sha256": "164e2374409f5c5965ae7828a9e8fc3b77385900a3b0593e0f052b59f72357df"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/invalidation.json",
+      "kind": "design",
+      "bytes": 2529,
+      "sha256": "1d4cb6af11a4549554fbed8cc27a6ab5ae66790d742cf3cf670f46277e014e01"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "4d6113f9e6699831549a5b9403ed306c803d1ec2dbc04b47e43c8b979a4440a8"
+}

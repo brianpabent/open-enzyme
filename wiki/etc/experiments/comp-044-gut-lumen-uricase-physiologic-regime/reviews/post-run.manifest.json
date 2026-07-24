@@ -6,8 +6,8 @@
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
       "kind": "design",
-      "bytes": 16792,
-      "sha256": "e966e22765db0e49d84482fb1e6bc382cda35b80e16b07fad0d993cb70548b23"
+      "bytes": 16823,
+      "sha256": "907bcad9020fd8a06c8ba959eddf0f24035ec2099817a89feff035914f4e2710"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/analyze.py",
@@ -48,32 +48,32 @@
     {
       "path": "index.md",
       "kind": "proposed_update",
-      "bytes": 33303,
-      "sha256": "84ec57e91813caec35c5a41dcbcfb70d323a765ff87dbb6a48a713ee29616487"
+      "bytes": 34492,
+      "sha256": "e8c456daa4bfa3d112146826c1c194b29830079e4bca052a7821b25735c097c5"
     },
     {
       "path": "operations/notable-moments.md",
       "kind": "proposed_update",
-      "bytes": 93799,
-      "sha256": "e660ac1578dd80cf2ae3757f975a7b26f2d0303ef49063682152a08f27eb88e1"
+      "bytes": 81450,
+      "sha256": "f8d930932a50481b09dbb557193d3b2f186b304346188aaf203b41e88ce88480"
     },
     {
       "path": "operations/ward-1995-lab-access.md",
       "kind": "proposed_update",
-      "bytes": 30876,
-      "sha256": "433ffaf27c6d142d0dcc6a7764893991101802277dc00b64de947737b61be947"
+      "bytes": 30801,
+      "sha256": "ff7436af6dc828f124879cc3426fab0cddeff9db38677d5dd82d2f19a8a46ec7"
     },
     {
       "path": "operations/wet-lab-collaboration-leads.md",
       "kind": "proposed_update",
-      "bytes": 30967,
-      "sha256": "20f01aa990802e1d58796e4f7ac29a62bb7898dacee5a15562400181d85eb4c6"
+      "bytes": 31007,
+      "sha256": "4a7c84f3e634245d4fc92d67010e0cce0ecdd759af421840f414ee42cfb2135a"
     },
     {
       "path": "papers/cross-vendor-heterogeneity-guard/draft.md",
       "kind": "proposed_update",
-      "bytes": 175086,
-      "sha256": "ba4587b861b3c952e0c077b329680b6605b39d98baf6e9695d727a85658b6922"
+      "bytes": 175097,
+      "sha256": "6e32155b95915b15ac8bae6aacfb64e6c88d0cfed1b59e18676266d0cff4c923"
     },
     {
       "path": "papers/cross-vendor-heterogeneity-guard/revisions.md",
@@ -82,16 +82,10 @@
       "sha256": "353bee7e24f235f87f939e28b33b4c3e2a12964473ac7823b583f279c3a14c27"
     },
     {
-      "path": "synthesis/queue/2026-07-15-1b163d72-most-curious-thread-1-the-single-thread-i-would-spend-the-next-experiment-slot-on.md",
-      "kind": "proposed_update",
-      "bytes": 1615,
-      "sha256": "bcae601015aedc65dab8683445722df8eaaff16c10516a50ac676f307c2cbaa7"
-    },
-    {
       "path": "wiki/abcg2-modulators.md",
       "kind": "proposed_update",
-      "bytes": 36990,
-      "sha256": "f4b3f062d84c239e319a0c906aacc27d14b09f64919cfbed6d6f1829b5f0c72a"
+      "bytes": 36184,
+      "sha256": "a79ade314df0d61d2836a5d436f0e6eee66371f3bd858c1f7d79a096b8016ea6"
     },
     {
       "path": "wiki/aspergillus-oryzae.md",
@@ -114,8 +108,8 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 30873,
-      "sha256": "5eda99f5f17107cf7abde06fe550d1b976a1cdde49c79da430a52788d53fbafc"
+      "bytes": 30751,
+      "sha256": "46f243991338d56835b52076548624c07e2e7290d2f55998ae4e9bf51dca5821"
     },
     {
       "path": "wiki/codon-optimization-expression-cassette.md",
@@ -126,14 +120,14 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 83835,
-      "sha256": "199ab73b2a6f368a65d6997b0078616cb01e98e7dab5f7b946acfe5af2bc0043"
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
     },
     {
       "path": "wiki/cordycepin-cassette-burden-computational.md",
       "kind": "proposed_update",
-      "bytes": 4257,
-      "sha256": "1a4f1428521f8b6053e42bef5a6c5919942df8d3b0231cc9419f9c1c3342f81f"
+      "bytes": 3255,
+      "sha256": "31dbf7db131729e60e6d0146b8e4a79566458a807d95859f0a76d141b3431602"
     },
     {
       "path": "wiki/crispr-uricase.md",
@@ -180,32 +174,32 @@
     {
       "path": "wiki/etc/GRAPH.md",
       "kind": "proposed_update",
-      "bytes": 4350,
-      "sha256": "54a8cc417b5548bf68cd4f570c8460742550e4e7bc93e64f40800ece5002bc63"
+      "bytes": 4578,
+      "sha256": "e42f494ce8e76faf1a85ae017ee0a67301b6609312a651feea95bee70be4b7d0"
     },
     {
       "path": "wiki/etc/ai-bio-tools-playbook.md",
       "kind": "proposed_update",
-      "bytes": 10790,
-      "sha256": "2f21847c129939ce30dc3797471e7109c0a74f5687a0e67422af12c1813f0f84"
+      "bytes": 10893,
+      "sha256": "a556a86649861ecf73c45c595fa9e2c4eaa6a10b68a20ce7de203f476259c145"
     },
     {
       "path": "wiki/etc/autonomous-screening-methodology.md",
       "kind": "proposed_update",
-      "bytes": 24727,
-      "sha256": "75a20d4159a690cfd199245297487b73971422323b3cf59f118bafb5cd54c3e7"
+      "bytes": 23852,
+      "sha256": "acc80ba60a56e7a859b7da7dd6caa474c5fdb570ac5a769111a8651fa71c73d6"
     },
     {
       "path": "wiki/etc/practitioner-toolkit.md",
       "kind": "proposed_update",
-      "bytes": 8181,
-      "sha256": "0727601c57daddf70e1469529a44a58c66c02e4e02e28fb339893fa4284f3394"
+      "bytes": 8163,
+      "sha256": "432c6cb9c3339e7e48cd23976ee829260127897ee09e7da5fbe774f7194180a7"
     },
     {
       "path": "wiki/genotype-informed-supplement-workflow.md",
       "kind": "proposed_update",
-      "bytes": 8554,
-      "sha256": "0a8e7db1eed94107ae87742cc7598ed175f7ae8ade8aab57776f6e543c5dc1a2"
+      "bytes": 8741,
+      "sha256": "9c61a7aeca6956822c0fc5f854f03f521b2b28ef7c3a427110d0bf3b0aea30b3"
     },
     {
       "path": "wiki/gi-survival-prediction.md",
@@ -240,8 +234,8 @@
     {
       "path": "wiki/gout-kill-chain-delivery-routes.md",
       "kind": "proposed_update",
-      "bytes": 47429,
-      "sha256": "cbb64428433519042f2ef92f004e555177a81c9820be728608983444ab967684"
+      "bytes": 49009,
+      "sha256": "9c8774694fff5d707caccd4a9a899af58c66d30b79df54ce5b5cd6714382ff98"
     },
     {
       "path": "wiki/gout-multihop-research-program.md",
@@ -252,8 +246,8 @@
     {
       "path": "wiki/gout-pathophysiology.md",
       "kind": "proposed_update",
-      "bytes": 37246,
-      "sha256": "edd46f5581a9f3ad40349b3fead73776c5dd17b8d077376d85b1200f07ac8c53"
+      "bytes": 36518,
+      "sha256": "407e5ced233299e3acba8f383b28c7aaee109eb930648d6419d8aca024c12034"
     },
     {
       "path": "wiki/gut-lumen-sink.md",
@@ -282,8 +276,8 @@
     {
       "path": "wiki/hypotheses/README.md",
       "kind": "proposed_update",
-      "bytes": 9741,
-      "sha256": "51bd66261b39057ee0f609236004b97720fe9e8f8e5e67d46af4e0780a9c5a8d"
+      "bytes": 10119,
+      "sha256": "e263b30f084d331f0fb14f308984356b67e88f7a6994f9e35b35dcc4283c8ac9"
     },
     {
       "path": "wiki/intra-articular-uricase-h2o2-reaction-diffusion-computational.md",
@@ -312,14 +306,14 @@
     {
       "path": "wiki/nlrp3-exploit-map.md",
       "kind": "proposed_update",
-      "bytes": 61985,
-      "sha256": "ef70e61ff8d5523f6a2114812e3b50d8f7720d51d7fa5ffbaf2fc19d990234a4"
+      "bytes": 60665,
+      "sha256": "e30593887912b1579694222c25e40736744b8dd33b60effff278cf3daba07a3d"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 74589,
-      "sha256": "eb0fcb39a10782af6b5f50981323d42d6f8f0c9b7b7e6ed107e3eb2b967e67a4"
+      "bytes": 72511,
+      "sha256": "f9c07b41bc65f4a49b91ea47efba69cc8d1b85c77161e17e9437ada4248b9bc4"
     },
     {
       "path": "wiki/protein-engineering-strategy.md",
@@ -330,8 +324,8 @@
     {
       "path": "wiki/purine-degrading-bacteria.md",
       "kind": "proposed_update",
-      "bytes": 32568,
-      "sha256": "9342b7d398805c5853d07a3f02440403ab244b6036605465182d35be00254a93"
+      "bytes": 33595,
+      "sha256": "9e05fb80f122a3f5fa7c3d3a628cb374587621385c5ca95a5940191ad90f0387"
     },
     {
       "path": "wiki/saccharomyces-cerevisiae.md",
@@ -342,20 +336,20 @@
     {
       "path": "wiki/supplements-stack.md",
       "kind": "proposed_update",
-      "bytes": 12266,
-      "sha256": "431a1f426007496a78e8b179a6b6663c4b0b4788289f86f9eada02f44085c15e"
+      "bytes": 12329,
+      "sha256": "f6a4e47909dfbf1a77b08ba24c7304813aec43ecea452ec73f9f70fbe70f4a81"
     },
     {
       "path": "wiki/uricase-abcg2-genotype-stratification-computational.md",
       "kind": "proposed_update",
-      "bytes": 4039,
-      "sha256": "ba2a585f0393b9c2613fea2566bd080a53b617522070d1475bd8c1f4ee61d43d"
+      "bytes": 4139,
+      "sha256": "30bbe58ac1473a4ac28aa90faf0f4aeaf4703bc74e1c84708f1502f0691dbd98"
     },
     {
       "path": "wiki/uricase-variant-selection.md",
       "kind": "proposed_update",
-      "bytes": 6174,
-      "sha256": "bf819c02879669847b45512f5a8dd9947c1b12333399744d6f5e1d1ed16ccc92"
+      "bytes": 6329,
+      "sha256": "edbdba89304c49dd7a88ef30f89516d723cc86fc2993e68a955853779b17f87c"
     },
     {
       "path": "wiki/uricase.md",
@@ -366,10 +360,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 233986,
-      "sha256": "ca8a5385d7eab1ddcccb33a07d891227d25e45969fd12c1ca64beb8922022802"
+      "bytes": 230784,
+      "sha256": "192427c173ad894e33e6c76c6f427fc8264ec44446b244366f22a4577e1c3cff"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "1253735cafb47e0bae661e6d6385c18387e653ea68a99d5d3b18f2614011aefb"
+  "manifest_sha256": "981cecf9600da9d7ee9abe524226d6fe1fa6955be68437ca6af7b2260c8756b4"
 }

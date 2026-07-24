@@ -18,13 +18,13 @@ The depletion-rescue target identification in Yin 2016 (compound 4: C1q + C2 + C
 
 CH50 values verified directly from PMC6273495: compound 4 CH50 = 40 μM (AP50 105 μM); compound 5 CH50 = 9 μM (AP50 21 μM). Both models accept these. **The CP-pathway IC50 is the more-potent regime** (9 μM CH50 vs 21 μM AP50 for compound 5), inconsistent with a CFH-binding-surface mechanism (CFH is AP-specific; a CFH-binding mode would predict AP-selective potency).
 
-**{Model A: "Medium confidence — bounded by single-paper anchor; comp-018 Phase 2 verdict = INCONCLUSIVE replication" | Model B: "High confidence — taking Yin 2016 target identification at face value"}** [TRANSLATION-DISAGREEMENT — confidence-framing-only, not science direction: Model A explicitly weights the replication risk into the confidence call (comp-018 Phase 2 flagged Yin 2016 as a single-paper unreplicated anchor; Styrax egonol structurally-adjacent analogs are 3.7× weaker). Model B treats the published target-identification data as the primary input without weighting replication risk. For load-bearing downstream reasoning, Model A's Medium-confidence framing is more conservative and is the version that should propagate into the comp-039 wiki page.]
+**{Model A: "Medium confidence — bounded by single-paper anchor" | Model B: "High confidence — taking Yin 2016 target identification at face value"}** [TRANSLATION-DISAGREEMENT — confidence-framing-only, not science direction: Model A weights the current source record's single-anchor replication risk; Model B treats the published target-identification data as sufficient for the mechanistic classification. For load-bearing downstream reasoning, the single-anchor boundary should remain explicit.]
 
 **{Model A: "negative direction (effect ≥ in carriers) — predicted by mechanism but with very wide uncertainty bands; candidate is wrong shape for UKB cross-tab anyway (Helicteres NOT dietary)" | Model B: "null direction (no differential effect)"}** [TRANSLATION-DISAGREEMENT: Same negative-vs-null pattern as the other candidates. Operational note both models implicitly agree on: Helicteres is not part of any dietary corpus tractable in UK Biobank — the candidate's CFH-classification value is more relevant to a future TCM-supplement clinical-context evaluation than to the present UKB cross-tab.]
 
 ## Disagreement notes
 
-- **confidence framing:** Model A bounds confidence by replication risk (comp-018 Phase 2 verdict); Model B does not. Model A's framing is the appropriate one for OE's evidence-discipline rules (replication risk is a published Phase 2 finding, not informal speculation).
+- **confidence framing:** Model A bounds confidence by the single-paper source record; Model B does not. The current corpus therefore preserves the replication requirement without treating a retired COMP as evidence.
 
 - **hedging — predicted Y402H direction:** Model A picks "negative"; Model B picks "null". Same logic divergence as the other candidates.
 
@@ -32,7 +32,7 @@ CH50 values verified directly from PMC6273495: compound 4 CH50 = 40 μM (AP50 10
 
 ## Recommended falsification test (consensus, with priority)
 
-**Priority 1 (load-bearing):** independent wet-lab replication of Yin 2016 CH50 9/40 μM benzofuran lignan finding on a matched assay format. This is the comp-018 Phase 2 open follow-up and must close before the CFH-dependence classification is operationally trusted.
+**Priority 1 (load-bearing):** independent matched-material replication of the Yin 2016 benzofuran-lignan finding. This must close before the CFH-dependence classification is used for routing.
 
 **Priority 2 (downstream):** if replication confirms, run compound 5 (dihydrodehydrodiconiferyl alcohol, 9 μM CH50) on MSU-crystal-driven complement activation in CFH-depleted vs CFH-replete serum. Retained activity in CFH-depleted serum confirms CFH-independence.
 

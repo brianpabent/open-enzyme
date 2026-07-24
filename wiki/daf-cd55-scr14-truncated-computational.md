@@ -1,5 +1,5 @@
 ---
-title: "DAF/CD55 SCR1-4 Truncated Construct: Shio-Koji Protease Stability (comp-012)"
+title: "DAF/CD55 SCR1-4 Truncated Construct Protease Proxy (comp-012)"
 date: 2026-05-05
 tags: [complement, CD55, DAF, protease, shio-koji, computational, alphafold, structural-biology, CP0, SCR]
 related:
@@ -16,20 +16,31 @@ sources:
   - "MEROPS database release 12.4"
   - "Koaze et al. 1964 (acid protease pH-activity curve)"
   - "Ward et al. 1995 (A. oryzae α-amylase secretion signal)"
-status: archived-to-experiments
+status: retired-invalid-model
 ---
 
-# DAF/CD55 SCR1-4 Truncated Construct: Shio-Koji Protease Stability (comp-012)
+# DAF/CD55 SCR1-4 Truncated Construct Protease Proxy (comp-012)
 
-> **⚠️ Verdict caveated (pLDDT-proxy class, comp-review 2026-07-14).** The LOW verdict (max score 0.039) rests on a **known-invalid proxy — pLDDT confidence used as accessibility**; it is a low-pLDDT-by-proxy result, not a SASA / time-integrated survival model. Same class as comp-001/006.
+The construct hypothesis is that removing the Ser/Thr-rich stalk from soluble DAF/CD55 may preserve the four complement-regulatory SCR domains while avoiding a processing liability. COMP-012 does not establish that outcome.
 
-> This wiki stub remains so cross-references resolve and the page stays discoverable.
-> Computational analyses are write-once artifacts; the daemon does not need to re-read
-> them on every sweep, so the long content lives next to the experiment that produced it
-> at `etc/experiments/comp-012-daf-cd55-scr14-truncated/`.
+## What the computation establishes
 
-**Status:** Complete — 2026-05-05 **Experiment folder:** [`etc/experiments/comp-012-daf-cd55-scr14-truncated/`](./etc/experiments/comp-012-daf-cd55-scr14-truncated/) **Evidence level:** Mechanistic Extrapolation — AlphaFold pLDDT-based structural inference; no wet-lab confirmation. **Predecessor:** [comp-006 — full ectodomain (aa 35–353): HIGH](./daf-cd55-protease-stability-computational.md) **Companion analyses:** [comp-001 (uricase, LOW)](./uricase-protease-stability-computational.md), [comp-005 (lactoferrin, HIGH/MODERATE)](./lactoferrin-protease-stability-computational.md)
+The retired artifact applied the inherited sequence filters to SCR1–4 and reported high AlphaFold confidence across the construct. Its original LOW verdict is invalid because the model used pLDDT confidence as accessibility. It did not establish burial, cleavage, degradation, retained activity, or survival in shio-koji; COMP-001 is not a validated comparator.
 
-**Where the analysis lives:**
-- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-012-daf-cd55-scr14-truncated/`](./etc/experiments/comp-012-daf-cd55-scr14-truncated/)
-- Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)
+The source-backed construct boundary is P08174 aa 35–285. The sequence-filter inventory is a historical record of the retired computation, not a predictive result.
+
+> **Research conjecture — SCR1–4 truncation may change process survival**{ .research-conjecture-label }
+>
+> **Grounded premises:** [UniProt P08174](https://www.uniprot.org/uniprotkb/P08174/entry) defines aa 35–285 as the four SCR domains, and [AlphaFold AF-P08174-F1](https://alphafold.ebi.ac.uk/entry/P08174) reports higher confidence across this region than across the downstream Ser/Thr-rich stalk (**Mechanistic Extrapolation**). These records do not measure solvent accessibility, cleavage, process survival, folding, or retained activity.
+>
+> **Novel leap:** The aa 35–285 construct may recover more intact, functional DAF than a matched full ectodomain under the intended production and processing conditions. No direct evidence establishes that advantage.
+>
+> **Why it matters:** A real configuration-specific advantage could focus DAF engineering without promoting the retired proxy.
+>
+> **Discriminating observation:** Compare matched full-ectodomain and aa 35–285 constructs in the same host, route, and processing conditions; measure product identity, intact recovery, fold, complement-regulatory function, and retained function after process exposure.
+
+## Delivery and falsification gate
+
+Under [§1.25](./validation-experiments.md#125-dafcd55-scr1-4-truncated-single-cassette-expression-in-a-oryzae-cp0-engineering-candidate-wet-lab-gate), express the exact SCR1–4 construct in *A. oryzae* and measure useful expression, formation of the eight annotated intrachain disulfides, retained complement-regulatory activity, and function through the intended processing conditions. A favorable result advances this exact construct but does not prove that truncation caused the outcome; failed expression, misfolding, loss of activity, or process instability redirects the construct while leaving other CP0 interventions open.
+
+Related: [full-ectodomain proxy](./daf-cd55-protease-stability-computational.md) · [H05 falsification card](./hypotheses/H05-daf-scr14-cp0-thesis.md) · [invalidated, non-runnable COMP-012 tombstone](./etc/experiments/comp-012-daf-cd55-scr14-truncated/)

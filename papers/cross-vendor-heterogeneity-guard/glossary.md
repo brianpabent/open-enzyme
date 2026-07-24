@@ -98,9 +98,9 @@ Terms grouped by topic, not by section.
 
 **UniProt.** The international canonical database of protein sequences and annotations. UniProt feature annotations are the authoritative source for things like disulfide-bond positions; the §5.1 catch came from grepping UniProt P08174 directly.
 
-**pLDDT.** AlphaFold's per-residue confidence score (0-100). High pLDDT (>80) means AlphaFold is confident in the local structure; low pLDDT (<50) usually means the region is disordered or poorly predicted. Used in the comp-012 pipeline to decide which protein regions are surface-exposed enough to be protease-accessible.
+**pLDDT.** AlphaFold's per-residue confidence score (0-100). High pLDDT means the model is confident in local structure; low pLDDT can reflect disorder or poor prediction. The retired comp-012 pipeline incorrectly treated pLDDT as evidence of surface exposure and protease accessibility. pLDDT does not measure solvent accessibility.
 
-**MEROPS.** A database of proteases (enzymes that cut other proteins) and their cleavage-site preferences. Used in OE to predict which proteases will cut a designed construct.
+**MEROPS.** A database of proteases and reported substrate preferences. Open Enzyme has used those preferences for sequence-filter matching and hypothesis generation; a match does not establish accessibility, cleavage, degradation, or retained function, which require configuration-specific validation.
 
 **Km (Michaelis-Menten substrate-affinity constant).** The substrate concentration at which an enzyme operates at half its maximum velocity. A core kinetic parameter for any enzyme; the §5.3 Paperclip probe surfaced a ~7.5-fold error on Km specifically (the magnitude is small but the misreport is qualitatively wrong, kinetic parameters are diagnostic of enzyme identity). The earlier "~7,500×" framing in this glossary and elsewhere in the corpus was itself an arithmetic error caught by cross-vendor review during paper drafting (see revisions.md Catch 9).
 

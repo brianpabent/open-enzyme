@@ -1,72 +1,27 @@
-# comp-012: DAF/CD55 SCR1-4 Truncated Construct — Shio-Koji Protease Stability
+> **INVALIDATED TOMBSTONE — NOT RUNNABLE.** The retired model treated AlphaFold pLDDT confidence as solvent accessibility and converted that invalid mapping into exposure, protease-risk, resistance, and survival labels. The executable artifact is preserved by Git, not duplicated in the live corpus.
 
-**Question:** Does the DAF/CD55 SCR1-4-only construct (aa 35–285, stalk removed) survive the shio-koji protease environment if expressed in *A. oryzae*?
+# comp-012 — DAF/CD55 SCR1–4 Truncated Protease Proxy
 
-**Verdict: LOW**
+**Status:** Invalidated for biological interpretation and retired from execution.
 
-| Scope | Verdict | Max risk score | Worst protease |
-|---|---|---|---|
-| SCR1-4 only (aa 35–285; stalk aa 286–353 removed) | **LOW** | 0.039 | NPr |
+## Required disulfide correction
 
-**The key finding:** Truncating the Ser/Thr-rich stalk (aa 286–353) from the DAF/CD55 ectodomain drops the verdict from HIGH (comp-006, full ectodomain, max score 0.388) to LOW (comp-012, SCR1-4 only, max score 0.039). The stalk was the sole driver of the HIGH verdict — every exposed site across all three proteases (9 NPr sites, 48 ALP sites, 1 acid_protease site) was in the stalk. After truncation, zero exposed sites remain. All 242 recognition sites in the SCR1-4 construct (157 ALP + 60 NPr + 25 acid_protease) are buried (pLDDT ≥ 80, risk weight 0.1).
+The legacy generator and summary falsely stated that SCR1–4 contains **12 disulfides**. UniProt P08174 annotates **eight intrachain disulfide pairs** across the SCR1–4 construct. The eight-pair annotation is a sequence-feature fact; it does **not** establish correct folding, solvent accessibility, protease resistance, process survival, or retained complement-regulatory activity.
 
-**The SCR1-4 construct (aa 35–285) is structurally comparable to uricase (comp-001):** mean pLDDT 96.7 vs. 97.1, min pLDDT 85.6 vs. 80.5, 100% residues pLDDT > 80 in both constructs. This is the benchmark for protease stability in the shio-koji platform.
+No LOW, HIGH, exposed, buried, cleavage, degradation, protease-risk, structural-resistance, process-survival, folding, shio-koji compatibility, CP0 gate-closure, chassis, or cross-payload conclusion survives.
 
-**Platform implication:** A stalk-truncated DAF/CD55 SCR1-4 construct is the first computationally validated complement regulator candidate compatible with shio-koji fermentation. This closes the computational feasibility gate for the CP0 platform gap (complement priming via C5a). The next question — whether the expressed fragment retains complement-regulatory activity (C3b deposition inhibition, C3 convertase decay acceleration, C5a reduction in a gut-lumen assay) — is a wet-lab question.
+The historical aa 35–285 sequence-filter inventory and AlphaFold values remain inspectable in Git as records of the retired computation. pLDDT is confidence only. Comparing the stalk-truncated construct with the full ectodomain remains a testable matched-construct conjecture, not a validated survival advantage.
 
-**Predecessor:** [comp-006 (full ectodomain, HIGH)](../comp-006-daf-cd55-shio-koji-protease-stability/) — the HIGH verdict that motivated this follow-on  
-**Informs:** [`wiki/modality-chokepoint-matrix.md`](../../../modality-chokepoint-matrix.md) — "Engineered soluble complement regulators" row (CP0 platform gap)  
-**Interpretive wiki page:** [`wiki/daf-cd55-scr14-truncated-computational.md`](../../../daf-cd55-scr14-truncated-computational.md)
+The current evidence boundary, eight-pair correction, and matched-comparison conjecture live on the [canonical interpretive page](../../../daf-cd55-scr14-truncated-computational.md).
 
----
+## Hash-bound retirement record
 
-## How to reproduce
+[`invalidation.json`](./invalidation.json) records the exact retired Git tree, SHA-256 and byte count for every retired non-review file, a canonical digest over the retirement scope, and the current evidence owner.
+
+Historical files can be inspected with Git when needed:
 
 ```bash
-cd experiments/comp-012-daf-cd55-scr14-truncated
-python3 analyze.py
+git show 70e60ea9a7c84a92cec37164f38b456aaa6d6881:wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/outputs/summary.md
 ```
 
-No external packages required (stdlib only: json, pathlib). Outputs land in `outputs/`.
-
-The core algorithm lives in `experiments/lib/protease_stability.py` — shared with comp-001, comp-005, and comp-006. This script is the orchestrator; the library exports functions only.
-
-**Verify:** Construct length analyzed should be **251 aa** (aa 35–285 inclusive). Confirmed in terminal output on completion.
-
----
-
-## File index
-
-```
-comp-012-daf-cd55-scr14-truncated/
-  analyze.py                          ← analysis script (run this)
-  inputs/
-    P08174.fasta                      ← human DAF/CD55 sequence (copied from comp-006)
-    alphafold_P08174_plddt.json       ← per-residue pLDDT scores (copied from comp-006)
-    protease_specificities.json       ← koji protease rules + shio-koji conditions (copied from comp-006)
-    provenance.md                     ← sources + relationship to comp-006
-  outputs/                            ← generated by analyze.py; committed as artifacts
-    cleavage_sites.json               ← machine-readable full results
-    summary.md                        ← human-readable; cited in the wiki
-  README.md                           ← this file
-```
-
----
-
-## Key results
-
-| Protease | Recognition sites (SCR1-4) | Buried | Partially exposed | Exposed | Max risk score |
-|---|---|---|---|---|---|
-| ALP (alkaline subtilisin) | 157 | 157 | 0 | 0 | 0.019 |
-| NPr (neutral metalloprotease) | 60 | 60 | 0 | 0 | 0.039 |
-| acid_protease (aspergillopepsin) | 25 | 25 | 0 | 0 | 0.020 |
-
-**Zero exposed sites** in the SCR1-4 construct across all three proteases. The verdict floor for buried-only sites is risk score = accessibility_weight × effective_activity = 0.1 × 0.388 (NPr) = 0.039 — which is the exact max score observed.
-
-Compare with comp-006 (full ectodomain, NPr): 9 exposed stalk sites driving max risk score 0.388.
-
----
-
-## Disagreement protocol
-
-If you reproduce the outputs and disagree with the methods or numbers, file a GitHub issue referencing this folder (`comp-012-daf-cd55-scr14-truncated`). Primary candidates for revision: truncation boundary (aa 285 per UniProt P08174 SV=4 SCR4 C-terminus; verify against current UniProt entry), disulfide bond correction factor, or protease pH factors.
+There is no reproduction command. Old push-review receipts were retired with the executable artifact; `reviews/` contains only current tombstone review material.

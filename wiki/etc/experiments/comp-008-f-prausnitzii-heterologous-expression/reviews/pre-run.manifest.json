@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/README.md",
+      "kind": "design",
+      "bytes": 1642,
+      "sha256": "75db7cc7709e3e32bfa0912bb293c02840efb350a280742a8a65321b6a10f6c8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-008-f-prausnitzii-heterologous-expression/invalidation.json",
+      "kind": "design",
+      "bytes": 2771,
+      "sha256": "ff5e40e9bb37d5cb2aee355e2d04611a3e2aafb2687aa9b4ed04873e4e226fbc"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "510680fdcde793f47fe7b946171f140d15997433f7619ba9afd91de538dee916"
+}

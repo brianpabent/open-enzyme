@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "comp": "comp-043",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "70e60ea9a7c84a92cec37164f38b456aaa6d6881",
+  "last_push_review_manifest_sha256": "701fe64d33e15bf81385c6a3e783d2ab60dac609b2e7d2f8e2ff4fcdd4267e9e",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 4907,
+      "sha256": "cc78464096af73044281c4b706ad84bd3dac8b4bc2b6e416c39ce5b5e70e8f4a"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 33174,
+      "sha256": "a3d3e4a777bdb37a80e55d203446d6da492bd9c0d9fa2c85cd7a16b5ff404e6f"
+    },
+    {
+      "path": "inputs/P02788.fasta",
+      "bytes": 802,
+      "sha256": "c78b74212c8370fced3b2040577c9ce854be045e76e74ccb0048bd17464dc94b"
+    },
+    {
+      "path": "inputs/P05155.fasta",
+      "bytes": 605,
+      "sha256": "c50b8b8911858eed876d98f180a0f2acad5e7e6033a38e7ac2feb13cfcd50811"
+    },
+    {
+      "path": "inputs/P08174.fasta",
+      "bytes": 488,
+      "sha256": "bc36a8c6ea865de87e258901afa71da4930b89c043648fbd7892743ba71af412"
+    },
+    {
+      "path": "inputs/alphafold_P02788_plddt.json",
+      "bytes": 9755,
+      "sha256": "5cc1d11ac8bf366c1d83d292ce5f6c580d19675b2e5254d5a5639cf7204a4c88"
+    },
+    {
+      "path": "inputs/alphafold_P05155_plddt.json",
+      "bytes": 7348,
+      "sha256": "39610711b785f64fac4572c17d156c3011ff5dba5282a91b0ed93cbebdd462af"
+    },
+    {
+      "path": "inputs/alphafold_P08174_plddt.json",
+      "bytes": 5196,
+      "sha256": "f885b364115e59ac7d8799f00db1b372017ce197c6e04af3a1c5b51661fd6a56"
+    },
+    {
+      "path": "inputs/colonic_ecn_protease_panel.json",
+      "bytes": 9064,
+      "sha256": "92c594e430b441ceeb53a0afbe7414a1a0d13d921717b3b86d07382c99639ac9"
+    },
+    {
+      "path": "inputs/disulfide_topology.json",
+      "bytes": 3932,
+      "sha256": "c7eb2bff7e799d1fecb508922c105e6d25e0648c18dc9a3da8d63762484dc7a6"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 4438,
+      "sha256": "e368f2814121ab8adcd8a78690d44cb63d9896bd5c20968467810e2b0f92ac18"
+    },
+    {
+      "path": "outputs/results.json",
+      "bytes": 17078,
+      "sha256": "908e54536422bb278b9dfe96fb66eb89f42a540e4f17d1cee10c8c9cc5f67175"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 9701,
+      "sha256": "e456fa12f5aeb1901a4c50934afec59a182d7941279acb4e6115b2e3c54efa9d"
+    }
+  ],
+  "invalidated_scope": [
+    "all numerical and categorical model outputs",
+    "pLDDT-derived accessibility or protease-risk inference",
+    "capacity crossover",
+    "viability inference",
+    "glycan sufficiency",
+    "chassis selection",
+    "EcN/koji comparison",
+    "experiment priority"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_historical_inventory_and_research_conjecture",
+    "statements": [
+      "DAF and lactoferrin have distinct disulfide-containing native folds; any exact feature count must be reverified against the current primary record before use.",
+      "Whether an exact EcN payload configuration exceeds the useful capacity of its folding route remains an empirical question requiring native-fold and retained-function measurements."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "06e9672a1e07330b525013d75f54256a4a953e211736ecd0a968c790f1b01d24"
+  }
+}

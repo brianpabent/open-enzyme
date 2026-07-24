@@ -60,8 +60,8 @@ The rule is not "translate English query into Chinese." The rule is: **query the
 ### P1 — Important, But Less Likely To Flip Near-Term Decisions
 
 5. **Houttuynia / Tibetan complement-modulator protocol deepening**
-   - Why: the mechanism gap was already corrected by comp-018 Phase 2, but CNKI/WanFang may hold extraction, QC, and industrial-process details.
-   - Native query anchors: `鱼腥草 抗补体 多糖`, `鱼腥草 C3转化酶`, Tibetan species names from comp-018 Phase 2.
+   - Why: current *Houttuynia* evidence supports exact-material complement and context-dependent inflammatory questions, while CNKI/WanFang may hold extraction, QC, and industrial-process details.
+   - Native query anchors: `鱼腥草 抗补体 多糖`, `鱼腥草 C3转化酶`, and Tibetan species names recorded in the current [Houttuynia evidence page](../wiki/houttuynia-cordata.md).
    - Expected wiki impact: upstream complement modulator pages and Houttuynia CP1/CP0 follow-up protocols.
 
 6. **Cordyceps × ADA / mitophagy deepening**

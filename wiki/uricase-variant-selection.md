@@ -50,7 +50,7 @@ A candidate advances only within the topology and conditions in which it was mea
 
 Retain *A. flavus* and *C. utilis* as well-documented initial comparators. Add the *V. vulnificus* construct when its sequence and assay context can be reproduced. Other candidates enter only when they add a defined property or diversity axis that can be tested under the same protocol.
 
-[comp-010](./etc/experiments/comp-010-cassette-compatibility/) and [comp-011](./etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/) are cassette-design priors, not oral-therapy rankings. Their codon, cysteine, and processing-site observations can inform construct design, but they do not select secretion, a chassis, or a delivered dose.
+[comp-010](./etc/experiments/comp-010-cassette-compatibility/) and [comp-011](./etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/) are invalidated, non-runnable tombstones. Their codon, cysteine-risk, processing, secretion-burden, and overall-risk conclusions do not survive. Wild-type Q00511, wild-type P78609, and any patent-mutation proxy remain distinct sequence objects that require exact CDS definition and matched expression, localization, assembly, activity, and safety measurements.
 
 ## Decision table
 

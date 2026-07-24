@@ -191,7 +191,7 @@ A critical constraint from [engineered-koji-protocol.md §15](./engineered-koji-
 | **Fresh koji** (refrigerated, days, no salt) | Medium | Proteases active but short exposure window; cold storage slows hydrolysis |
 | **Shio-koji** (7–14 day salt ferment) | **Effectively zero** | Sustained protease exposure; salt does not protect peptide bonds |
 
-**Shio-koji remains the optimal format for robustly folded enzyme payloads** (uricase tetramer, lactoferrin glycoprotein) where conformational stability and disulfide bonding provide protease resistance — not exposed peptide bonds. For the multi-format multi-payload strain, this implies a split delivery model: shio-koji for live-enzyme payloads, dried powder or amazake for peptide payloads. (source: engineered-koji-protocol.md §15)
+**Shio-koji is a candidate—not an established optimum—for folded protein payloads.** Folding confidence and disulfide architecture do not establish survival in a 7–14 day active-protease ferment. Uricase and lactoferrin each require direct abundance and retained-activity measurements under [§1.10](./validation-experiments.md#110-heterologous-uricase--lactoferrin-stability-in-shio-koji-salt-protease-ferment). A split format—tested shio-koji configurations for proteins and shorter or heat-terminated formats for peptides—remains an engineering hypothesis, not a platform conclusion. (Mechanistic Extrapolation)
 
 ---
 

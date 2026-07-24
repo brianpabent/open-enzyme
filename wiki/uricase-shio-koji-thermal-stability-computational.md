@@ -11,31 +11,44 @@ related:
   - engineered-koji-protocol.md
 sources:
   - "Imani & Shahmohamadnejad 2017, 3 Biotech 7:201, DOI:10.1007/s13205-017-0841-3, PMID:28667645 — WT *A. flavus* uricase Tm = 27°C, t½ = 38 min at 40°C"
-  - "Rezaeian Marjani et al. 2020, Iran J Biotechnol 18:e2662, DOI:10.30498/IJB.2020.2662, PMID:33850949 — disulfide-engineered Tm-boost, independent t½ cross-check"
+  - "Rezaeian Marjani et al. 2020, Iran J Biotechnol 18:e2662, DOI:10.30498/IJB.2020.2662, PMID:33850949 — disulfide-engineered optimum-activity-temperature and 40°C half-life comparison"
   - "Retailleau et al. 2004, Acta Cryst D60:453, PDB 1R56 — tetramer interface footprint"
   - "UniProt Q00511 — homotetramer (ECO:0000269|PubMed:16478683); zero native DISULFID features"
+status: retired-invalid-model
 ---
 
 # Uricase Thermal/pH Stability in Shio-Koji — Computational Analysis (comp-002)
 
-> **⚠️ Verdict caveated (comp-review 2026-07-14).** The 64.0% reference-retention arithmetic is traceable to the committed code, but the artifact-summary contract is not clean (several load-bearing claims are hardcoded / not primary-verified). Treat the thermal/tetramer verdict as a **heuristic stability prior**, not a validated result. Specifics + residuals in the comp-review item.
+The engineering weakness is loss of assembled, active *A. flavus* uricase during a multi-day shio-koji process. COMP-002 does not determine whether that happens.
 
-**Question:** Will the *A. flavus* uricase homotetramer maintain integrity and activity under shio-koji conditions (15–20% NaCl, pH 4.5–6.0, ~22°C, 7–14 days)? Sister to comp-001 (protease axis, LOW); this covers the thermal + pH + tetramer-integrity axes.
+## Current evidence boundary
 
-**Verdict: MODERATE (YELLOW).** Predicted activity retention at reference shio-koji (17.5% NaCl, pH 5.25, 22°C, 14 days) = **64%** (band 0.2–100%). The wide band reflects sensitivity to Tm and ΔH_vH — biophysical anchors not yet measured precisely for Q00511.
+- Wild-type *A. flavus* uricase had a reported melting temperature of 27°C and an approximately 38-minute half-life at 40°C in the Imani 2017 study (**In Vitro**). Those measurements establish thermal sensitivity under their assay conditions; they do not predict retention during a 7–14-day ferment.
+- UniProt and structural records identify Q00511 as a homotetramer (**In Vitro** structural/biochemical record). Whether the exact produced material remains assembled and active through the intended process is unmeasured.
+- Rezaeian Marjani 2020 reported engineered variants with a higher optimum-activity temperature and longer half-life under thermal stress (**In Vitro**). The study does not establish the size of a melting-temperature shift or performance in shio-koji.
+- COMP-001 supplies only a fixed-filter and pLDDT-context inventory. Protease survival remains a separate empirical question.
 
-## Key findings
+The retired COMP-002 model used an unswept refolding exponent, hard-coded interface weights, arbitrary category boundaries, and pLDDT as a physical interface/integrity proxy. Every quantitative result, failure-mode ranking, and engineering recommendation is invalid. The [COMP-002 tombstone](./etc/experiments/comp-002-uricase-shio-koji-thermal-stability/) is non-runnable; Git retains the retired implementation.
 
-- **Temperature is the dominant driver** (sensitivity sweep spread 61 pp over 22–32°C, vs. 15 pp for pH and 3 pp for NaCl). A warm-kitchen ferment at 28–30°C (above Tm = 27°C) destroys retention.
-- **Tm gap is narrow (5°C).** WT Tm = 27°C (Imani & Shahmohamadnejad 2017); shio-koji at 22°C sits 5°C below the cooperative-unfolding midpoint. Kinetic refolding protection (modeled as f_u² in the Lumry-Eyring sub-Tm regime) is what keeps WT viable — without it, predicted retention is near-zero.
-- **Salt is essentially neutral** (×1.058 net stabilization at 17.5% NaCl). Unlike the protease axis where NaCl was strongly protective, the thermal axis treats it as a mild Hofmeister kosmotrope.
-- **Interface pH integrity is intact at shio-koji pH** (91% at pH 5.25, 96% at pH 6.0; weakens to 88% at pH 4.5). Three modeled interface salt-bridge pairs with pKa ~4.0–4.4.
-- **Tetramer interface pLDDT is exceptional** (mean 97.3, all residues > 80) — structural confidence is not the limiting factor.
-- **Disulfide-engineered variants** (Ala6Cys, Ser282Cys; Rezaeian Marjani 2020) raise T_optimum by 10°C and thermal half-life ~3.6× (38.5 → 138 min at thermal stress) → would substantially relax the Tm-gap constraint. (T_opt boost is correlated with but not identical to Tm boost; magnitude on Tm specifically needs a DSF measurement on the mutants.) Single highest-value engineering intervention if WT fails the §1.10 thermal axis.
+> **Research conjecture — sub-Tm process attrition may still limit Q00511**{ .research-conjecture-label }
+>
+> **Grounded premises:** Wild-type *A. flavus* uricase shows thermal sensitivity in purified assays (**In Vitro**; Imani 2017, PMID 28667645). The [§1.10 process specification](./validation-experiments.md#110-heterologous-uricase--lactoferrin-stability-in-shio-koji-salt-protease-ferment) defines retention of assembly and activity through the multi-day matrix as a project requirement (**Mechanistic Extrapolation**). The current corpus contains no direct joint measurement of salt, pH, matrix, proteolysis, and repeated exposure for the exact construct.
+>
+> **Novel leap:** Even when the process temperature is below the reported melting temperature, cumulative process exposure might reduce intact tetramer and specific activity enough to become a practical bottleneck. No direct study has tested that multi-factor, multi-day failure mode.
+>
+> **Why it matters:** A confirmed thermal/assembly bottleneck would justify variant or process engineering; a negative result would keep attention on other delivery constraints.
+>
+> **Discriminating observation:** Under the exact process matrix, measure total protein, intact monomer, tetrameric assembly, and specific activity at day 0, 7, and 14 across the prespecified temperature and pH range.
+
+## Experiment that advances or redirects the track
+
+Run [validation §1.10](./validation-experiments.md#110-heterologous-uricase--lactoferrin-stability-in-shio-koji-salt-protease-ferment) on the exact construct and process. Native-PAGE or another validated assembly readout can distinguish loss of tetramer from loss of abundance; specific activity separates intact protein from functional enzyme. Measure ferment temperature and pH rather than importing a single nominal condition.
+
+If wild type loses assembly or activity reproducibly, compare the exact variant and process arms under the same readouts. A favorable result advances only that configuration. Failure redirects the variant, process, formulation, or delivery track without rejecting uricase or the wider project.
 
 ## Cross-references
 
-- **Wet-lab informed:** [`validation-experiments.md` §1.10](./validation-experiments.md) (uricase + lactoferrin shio-koji stability) — comp-002 adds three §1.10 readouts: native-PAGE for tetramer band, specific activity per total protein, ferment-pH-over-time tracking. [§1.16](./validation-experiments.md) (OPT-1 disulfide variant) — strategic value reinforced; recommend not pre-committing gene-synthesis budget until §1.10 confirms thermal is the limiting failure mode for WT.
-- **Sister analysis (protease):** [`uricase-protease-stability-computational.md`](./uricase-protease-stability-computational.md) (comp-001, LOW). Combined picture: proteases are not the load-bearing failure mode; **thermal cooperative unfolding is.**
+- **Wet-lab gate:** [`validation-experiments.md` §1.10](./validation-experiments.md) (uricase + lactoferrin shio-koji stability); [§1.16](./validation-experiments.md) (candidate disulfide variant only if the measured failure mode justifies it).
+- **Sister analysis (protease):** [`uricase-protease-stability-computational.md`](./uricase-protease-stability-computational.md) (comp-001, proxy only). The two computations do not identify a dominant failure mode: both protease survival and retained activity under the complete ferment conditions require direct measurement.
 - **Tracking index:** [`computational-experiments.md`](./computational-experiments.md)
 - **Platform context:** [`uricase.md`](./uricase.md), [`uricase-variant-selection.md`](./uricase-variant-selection.md), [`engineered-koji-protocol.md`](./engineered-koji-protocol.md)

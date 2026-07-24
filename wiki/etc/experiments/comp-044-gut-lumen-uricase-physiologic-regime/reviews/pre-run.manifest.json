@@ -6,8 +6,8 @@
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
       "kind": "design",
-      "bytes": 16792,
-      "sha256": "e966e22765db0e49d84482fb1e6bc382cda35b80e16b07fad0d993cb70548b23"
+      "bytes": 16823,
+      "sha256": "907bcad9020fd8a06c8ba959eddf0f24035ec2099817a89feff035914f4e2710"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/analyze.py",
@@ -38,15 +38,15 @@
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/outputs/results.json",
       "kind": "prior_output",
-      "bytes": 6122,
-      "sha256": "b782e5f0949b3562c6a6dfa51adddf5cd1e2680a38f3bd5619458d22d7b73f30"
+      "bytes": 6235,
+      "sha256": "ff3291adf13eee42e6cf071f3e21fe8a556a31ab92b86e3fdc121ef80a71f25e"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/outputs/summary.md",
       "kind": "prior_output",
-      "bytes": 3139,
-      "sha256": "6ea3ba07594a3d5a09628c0b1d0577bd49202ab9ff04d6022d970fa263370aa8"
+      "bytes": 2962,
+      "sha256": "196821bea9d3cc286a6e47f2a3a526907989e5b7480872ba69012dfb3c89ce0a"
     }
   ],
-  "manifest_sha256": "3ac3044399d576331db0c55167e6a5c421f9024d437f61889ef6978704303967"
+  "manifest_sha256": "1885ca37bc22731bfe91e93a9ada927010c31ece358a63411d1f608bfc726601"
 }

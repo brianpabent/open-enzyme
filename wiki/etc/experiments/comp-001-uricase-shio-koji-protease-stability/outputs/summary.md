@@ -1,128 +1,47 @@
-# comp-001 — Uricase Shio-Koji Protease Stability: Summary
+# COMP-001 — Q00511 Legacy Preference-Filter and pLDDT-Context Audit
 
-**Protein:** Uricase (urate oxidase), Aspergillus flavus (Q00511)  
-**Conditions modeled:** 17.5% NaCl, pH 4.5–5.2, 22°C, 7–14 days  
-**Analysis date:** 2026-05-05  
-**Script:** `experiments/comp-001-uricase-shio-koji-protease-stability/analyze.py`  
+**Verdict:** **PROXY ONLY — EMPIRICAL PROTEASE RISK UNRESOLVED**
 
----
+**Method boundary:** Adjacent-pair matches to unverified legacy preference filters plus AlphaFold pLDDT context only. The filters are not established exhaustive protease specificity rules, and pLDDT is model confidence rather than solvent accessibility. This output does not estimate cleavage, protease-survival risk, retained activity, or fermentation performance.
 
-## Structural Overview
+## Question
+
+Which adjacent residue pairs in *A. flavus* UOX (Q00511) match three fixed legacy preference filters, and what AlphaFold confidence surrounds each match?
+
+## Sequence-confidence snapshot
 
 | Metric | Value |
-|---|---|
+|---|---:|
 | Sequence length | 302 aa |
-| Mean pLDDT (AlphaFold confidence) | 97.1 / 100 |
-| Minimum pLDDT (most flexible residue) | 80.5 / 100 |
-| % residues pLDDT > 80 (well-folded) | 100.0% |
-| % residues pLDDT > 90 (core-folded) | 97.0% |
+| Mean pLDDT | 97.14 |
+| Minimum pLDDT | 80.50 |
+| Residues with pLDDT ≥90 | 293 |
+| Residues with pLDDT 70–<90 | 9 |
+| Residues with pLDDT 50–<70 | 0 |
+| Residues with pLDDT <50 | 0 |
 
-**Interpretation:** A mean pLDDT of 97.1 with a minimum of 80.5 is exceptional — essentially the entire protein is predicted to be in a well-folded conformation with no disordered loops or flexible termini. This is a structural *prior* for protease resistance: there are **no low-pLDDT (disordered) regions by the pLDDT proxy** for proteases to initiate cleavage. **Caveat (2026-07-14, comp-review):** pLDDT is model *confidence*, not solvent accessibility (SASA) — a confidently-modelled surface loop can still be exposed. No SASA calculation, exposure-time, or protease-concentration model was run; this is a sequence-confidence screen, not a survival model.
+pLDDT reports local prediction confidence. It does not establish burial or protease accessibility.
 
----
+## Encoded preference-filter inventory
 
-## Per-Protease Risk Assessment
+| Legacy filter label | Adjacent-pair matches | Lowest local mean pLDDT |
+|---|---:|---:|
+| ALP legacy P1 filter | 215 | 84.54 |
+| NPr legacy P1' filter | 97 | 84.54 |
+| Acid-protease legacy P1/P1' filter | 44 | 93.52 |
 
-### Alkaline protease (subtilisin-type, Alp/NpII) (`ALP`)
+The complete pair inventory, exact filter arrays, window bounds, included-residue counts, and unrounded means are in `cleavage_sites.json`. The legacy arrays lack claim-level provenance and are not treated as exhaustive biological specificity rules.
 
-| Parameter | Value |
-|---|---|
-| Recognition sites in sequence | 215 |
-| Buried (pLDDT ≥ 80) | 215 |
-| Partially exposed (pLDDT 65–80) | 0 |
-| Exposed (pLDDT < 65) | 0 |
-| Residual activity at 17.5% NaCl | 19% |
-| pH activity factor (shio-koji pH) | 100% |
-| Effective protease activity (salt × pH) | 18.8% |
-| Max risk score (0–1) | 0.019 |
+## Decision
 
-**Top 5 highest-risk cleavage sites:**
+COMP-001 supplies an auditable sequence-filter inventory and pLDDT context only. Every possible output leaves protease susceptibility unresolved. The §1.10 shio-koji retained-activity assay remains the feasibility gate.
 
-| Position | P1 | P1' | pLDDT (window) | Accessibility | Risk score |
-|---|---|---|---|---|---|
-| 1 | M | S | 90.8 | buried | 0.019 |
-| 2 | S | A | 92.0 | buried | 0.019 |
-| 3 | A | V | 92.8 | buried | 0.019 |
-| 4 | V | K | 93.5 | buried | 0.019 |
-| 5 | K | A | 96.0 | buried | 0.019 |
+No inferential sensitivity analysis is warranted for this exact enumeration. A different filter encoding or window width would be a new design requiring fresh review.
 
-### Neutral metalloprotease (thermolysin-like, NpI) (`NPr`)
+## Reproduction
 
-| Parameter | Value |
-|---|---|
-| Recognition sites in sequence | 97 |
-| Buried (pLDDT ≥ 80) | 97 |
-| Partially exposed (pLDDT 65–80) | 0 |
-| Exposed (pLDDT < 65) | 0 |
-| Residual activity at 17.5% NaCl | 39% |
-| pH activity factor (shio-koji pH) | 100% |
-| Effective protease activity (salt × pH) | 38.8% |
-| Max risk score (0–1) | 0.039 |
-
-**Top 5 highest-risk cleavage sites:**
-
-| Position | P1 | P1' | pLDDT (window) | Accessibility | Risk score |
-|---|---|---|---|---|---|
-| 2 | S | A | 92.0 | buried | 0.039 |
-| 3 | A | V | 92.8 | buried | 0.039 |
-| 5 | K | A | 96.0 | buried | 0.039 |
-| 6 | A | A | 97.0 | buried | 0.039 |
-| 13 | N | V | 98.8 | buried | 0.039 |
-
-### Acid protease (aspergillopepsin I) (`acid_protease`)
-
-| Parameter | Value |
-|---|---|
-| Recognition sites in sequence | 44 |
-| Buried (pLDDT ≥ 80) | 44 |
-| Partially exposed (pLDDT 65–80) | 0 |
-| Exposed (pLDDT < 65) | 0 |
-| Residual activity at 17.5% NaCl | 65% |
-| pH activity factor (shio-koji pH) | 30% |
-| Effective protease activity (salt × pH) | 19.5% |
-| Max risk score (0–1) | 0.02 |
-
-**Top 5 highest-risk cleavage sites:**
-
-| Position | P1 | P1' | pLDDT (window) | Accessibility | Risk score |
-|---|---|---|---|---|---|
-| 3 | A | V | 92.8 | buried | 0.02 |
-| 6 | A | A | 97.0 | buried | 0.02 |
-| 16 | V | Y | 98.5 | buried | 0.02 |
-| 30 | V | Y | 97.9 | buried | 0.02 |
-| 37 | V | L | 98.9 | buried | 0.02 |
+Run `python3 analyze.py` from the COMP directory. The script uses Python standard-library code and fixed committed inputs. Two runs must produce byte-identical outputs.
 
 ---
 
-## Overall Risk Verdict
-
-**Overall risk: Low**
-
-**LOW** — protease degradation in shio-koji is unlikely to meaningfully reduce uricase activity
-
-The highest single-site risk score is 0.039 (from `NPr` — Neutral metalloprotease (thermolysin-like, NpI)). 
-
-### Key factors driving the verdict
-
-1. **Exceptional structural stability (pLDDT 97.1 mean, 80.5 minimum).** All potential cleavage sites in the sequence are located in confidently-folded regions. There are no disordered loops or exposed termini — the primary entry points for protease attack.
-2. **Strong ALP salt inhibition.** ALP (the dominant koji protease) retains only ~10–20% activity at 15–20% NaCl. Shio-koji's defining salt level substantially neutralises the most active protease.
-3. **Uricase is a homotetramer.** This analysis models the monomer. In the native quaternary structure, subunit interfaces bury additional surface area, further protecting internal residues from protease access. The monomer analysis is conservative.
-4. **Acid protease is active at shio-koji pH (~4.5–5.0) but at reduced efficacy (~30% of pH-optimal).** It is also the most salt-tolerant of the three — the residual risk from the acid protease is the most meaningful of the three, but still modest given that all its recognition sites are in folded regions.
-
-### Limitations
-
-- pLDDT ≠ solvent accessibility. Some high-pLDDT residues on protein surface loops may still be accessible. A molecular dynamics simulation or explicit solvent-accessibility calculation would sharpen this.
-- P1/P1' rules only. Real protease extended binding subsites (P2–P4) are not modelled; this may over-count recognition sites.
-- Monomer structure only. Quaternary burial (tetramer interfaces) would reduce accessible surface further — this analysis is conservative.
-- ALP and NPr pH factors set to 1.0 (conservative). ALP is outside its active pH range at shio-koji pH 4.5–5.0; NPr is at its lower edge. True risk from these two proteases is lower than computed.
-- No fermentation dynamics. During active koji growth (before shio-koji is made), proteases operate at higher activity. The shio-koji format specifically starts after koji is harvested and mixed with salt — the peak-activity phase is before the salt environment.
-
-### Recommended action
-
-The structural analysis supports the hypothesis that uricase will be substantially resistant to shio-koji proteolysis **on the protease-site axis, as a pLDDT-proxy prior only** (not decision-grade). **`validation-experiments.md` §1.10 should still be run** — the experiment remains the ground truth and the actual test, NOT mere confirmation. Note also comp-002 subsequently found uricase shio-koji stability **MODERATE/YELLOW on the thermal/tetramer axis**, so the overall stability picture is axis-dependent, not uniformly LOW. This analysis shifts the protease-axis prior from 'unknown' to 'probably fine by sequence-confidence proxy'; it does not close feasibility.
-
-If §1.10 shows unexpected degradation, the primary suspects are: (a) the acid protease operating at pH 4.5–5.0 on any surface-accessible sites; (b) cooperative unfolding of the monomer in the salt/acid environment (the structure is stable in silico under standard conditions; shio-koji conditions may differ). comp-002 subsequently modelled thermal/pH stability explicitly and returned **MODERATE/YELLOW** on the thermal/tetramer axis — consistent with suspect (b).
-
----
-
-*Generated by `analyze.py` on 2026-05-05. Re-run after any AlphaFold model update or MEROPS specificity revision. See `inputs/provenance.md` for data sources.*
+*Generated from the fixed COMP-001 inputs. Source accessions, versions, transformations, and limitations are recorded in `inputs/provenance.md`.*

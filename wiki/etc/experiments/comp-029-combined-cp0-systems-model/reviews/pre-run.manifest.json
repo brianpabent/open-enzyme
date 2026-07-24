@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-029-combined-cp0-systems-model",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-029-combined-cp0-systems-model/README.md",
+      "kind": "design",
+      "bytes": 1439,
+      "sha256": "1beb2d4caf084f4e9193ace48101702b47d34580d39548005ab2f7e23a8b655d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-029-combined-cp0-systems-model/invalidation.json",
+      "kind": "design",
+      "bytes": 3600,
+      "sha256": "a96981186b78314ee2f55a49258f8920f897e7b44477dc0b323ec3b3a07f46dd"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "62848ec9d114d0da4d4a858c44d1fdf9afe4c8815ecc086875c6ed2c165ef82d"
+}

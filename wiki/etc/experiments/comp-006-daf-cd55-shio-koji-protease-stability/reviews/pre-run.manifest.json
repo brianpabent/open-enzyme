@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/README.md",
+      "kind": "design",
+      "bytes": 1867,
+      "sha256": "bbc0fffd8d71800115d159d64d8a1522f9d64968cbf4c7679d850f4ca9238af1"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/invalidation.json",
+      "kind": "design",
+      "bytes": 2756,
+      "sha256": "c23f56a3ba19e4da21ba04926ff8ee89c1d546a32b457984eda0fac87af2de76"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "e796965e76d1d8c9cc0e4d359c2d4e32754e761294ad8f4d8a7bc6be57191524"
+}

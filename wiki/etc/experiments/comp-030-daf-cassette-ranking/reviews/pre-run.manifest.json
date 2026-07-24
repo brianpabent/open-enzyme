@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-030-daf-cassette-ranking",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/README.md",
+      "kind": "design",
+      "bytes": 1884,
+      "sha256": "49311a42bf30e44d9f0a7813c8244a133506011117f8cfc9c94cc6076e808865"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-030-daf-cassette-ranking/invalidation.json",
+      "kind": "design",
+      "bytes": 5416,
+      "sha256": "e910bf9d63b993930a2462a3a4672b753b1d8eb29a4b051ae0eaa07533532b99"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "b1b76312964dba46fb5adebd43651e2f4755c43eefae6bc3179de86253235a85"
+}

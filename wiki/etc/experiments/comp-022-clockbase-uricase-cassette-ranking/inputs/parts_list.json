@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Enumerated parts list for comp-022 ClockBase-style combinatorial ranking of A. oryzae uricase expression cassettes.",
-    "target_gene": "uaZ (A. flavus uricase, UniProt Q00511, 302 aa); same gene as comp-001, comp-010.",
+    "target_gene": "uaZ (A. flavus uricase, UniProt Q00511, 302 aa); same gene as comp-001.",
     "host": "A. oryzae (RIB40 reference; NSlD-ΔP10 protease-deletion chassis for high-expression variants).",
     "design_space_size": 43200,
     "factorization": "6 promoters x 12 signal peptides x 10 codon variants x 60 secretion scaffolds = 43200",
@@ -221,7 +221,7 @@
       "strategy": "ban codons with RSCU<0.4; pick from remaining pool weighted by RSCU",
       "expected_cai_in_oryzae": 0.78,
       "expected_gc": 0.53,
-      "evidence": "comp-010 rare-codon definition (RSCU<0.4 AND freq<10/1000); no 3+ consecutive rares"
+      "evidence": "fixed heuristic: RSCU<0.4 AND freq<10/1000; no 3+ consecutive rares"
     },
     {
       "id": "low_gc",
@@ -265,7 +265,7 @@
       "c_term_tag": "none",
       "pts1_blocked": false,
       "n_glyc_state": "native (1 predicted NSS at pos 191)",
-      "evidence": "comp-010 baseline architecture"
+      "evidence": "fixed direct-secretion baseline scenario"
     },
     {
       "id": "direct_3xAla_pts1blk",
@@ -275,7 +275,7 @@
       "c_term_tag": "3xAla",
       "pts1_blocked": true,
       "n_glyc_state": "native",
-      "evidence": "comp-010 routing rescue; appends AAA to mask C-terminal SKL PTS1"
+      "evidence": "candidate routing test; appends AAA to mask C-terminal SKL PTS1"
     },
     {
       "id": "direct_his6_pts1ok",

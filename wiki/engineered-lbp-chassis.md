@@ -31,7 +31,7 @@ status: scope-page
 
 # Engineered Live Biotherapeutic Products (LBP) Chassis — Gout Exploit Track
 
-**Status:** active research track; comp-008 completed the initial payload-tractability screen, while organism-specific delivery and validation remain open.
+**Status:** active research track; organism-specific engineering, delivery, and validation remain open. Retired COMP-008 supplies no payload or chassis priority.
 
 ---
 
@@ -62,7 +62,7 @@ This is the structural reason the LBP chassis is a "commercial pharmaceutical pr
 
 ## Candidate species
 
-### *Faecalibacterium prausnitzii* (primary candidate)
+### *Faecalibacterium prausnitzii* (native-butyrate-route candidate)
 
 One of the most abundant species in a healthy human colon (3–5% of total gut bacteria). Strict anaerobe. Strain A2-165 is the model laboratory strain. Native butyrate production motivates the supported WT-ABCG2 induction route and the separate unvalidated Q141K-rescue test.
 
@@ -70,9 +70,9 @@ One of the most abundant species in a healthy human colon (3–5% of total gut b
 
 Strict anaerobe; resides in the mucus layer overlying the colonic epithelium. Documented to support gut barrier integrity and mucin turnover (Animal Model + human cohort). Already commercial as a non-engineered probiotic (Pendulum Therapeutics). Its niche makes it a candidate chassis for engineered **gut-barrier repair** payloads related to the TNFα-cycle hypothesis documented in [`abcg2-modulators.md`](./abcg2-modulators.md) and [`lactoferrin.md`](./lactoferrin.md).
 
-### *Bacteroides* species (broadest engineering toolkit)
+### *Bacteroides* species (engineering-toolkit candidate)
 
-Several *Bacteroides* species (notably *B. thetaiotaomicron*, *B. fragilis*) tolerate brief oxygen exposure and have the most mature genetic engineering toolkit among gut anaerobes (Sonnenburg lab at Stanford has driven much of this work). For payloads where genetic complexity is the bottleneck — multi-cassette constructs, conditional expression circuits, biosensor-driven payload release — *Bacteroides* may be the right starting chassis even if *F. prausnitzii* is the eventual target species.
+Several *Bacteroides* species (notably *B. thetaiotaomicron*, *B. fragilis*) tolerate brief oxygen exposure and have a comparatively mature genetic engineering toolkit among gut anaerobes. That makes exact *Bacteroides* configurations worth testing for multi-cassette constructs, conditional expression circuits, or biosensor-driven release. It does not establish a chassis winner over *Faecalibacterium*, *Akkermansia*, or EcN.
 
 ### *Akkermansia* + *Faecalibacterium* + *Bacteroides* as a designed consortium
 
@@ -80,9 +80,9 @@ A future direction surfaced by the matrix: rather than picking one chassis, engi
 
 ---
 
-## Butyrate as the highest-leverage payload
+## Butyrate as a mechanism candidate
 
-The cleanest reason to pursue *F. prausnitzii* engineering for gout specifically is that **butyrate hits two ABCG2-induction mechanisms at the same time:**
+One reason to test *F. prausnitzii* engineering for gout is that butyrate has one supported WT-ABCG2 induction route and one separate, unvalidated Q141K-rescue hypothesis:
 
 1. **Wild-type ABCG2 (everyone):** butyrate → PPARγ activation → upregulated ABCG2 transcription → more urate efflux from blood into the gut lumen. Mechanism: well-characterized; DASH RCT shows 0.25–0.73 mg/dL UA reduction in fiber-rich diets. (Clinical Trial / Mechanistic; source: [`abcg2-modulators.md`](./abcg2-modulators.md) §Inducers.)
 
@@ -90,30 +90,19 @@ The cleanest reason to pursue *F. prausnitzii* engineering for gout specifically
 
 This is not yet genotype-agnostic coverage. WT-ABCG2 induction is the supported target; Q141K rescue requires direct surface-trafficking and functional urate-flux validation with LBP-achievable butyrate exposure.
 
-The ranking work in [`food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md) (comp-007, 2026-05-05) further validates butyrate's profile: it is the only food-grade HDAC inhibitor with biochemical IC50 data for all four relevant HDAC isoforms (HDAC1/2/3/6), and its 167× class-I-over-HDAC6 selectivity puts it ahead of every screened alternative. The challenge with butyrate is **continuous gut-luminal availability** — orally dosed butyrate is rapidly absorbed in the small intestine and does not reach the colon. A colonically-resident butyrate producer is *proposed to* address the bioavailability problem at the dose-frequency level — but this is unproven (comp-008): it requires demonstrated colonization density, butyrate titer, epithelial exposure, and (for Q141K rescue specifically) the still-unvalidated direct-rescue mechanism. "Solves bioavailability" is the hypothesis, not an established result.
+The ranking work in [`food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md) (comp-007, 2026-05-05) further validates butyrate's profile: it is the only food-grade HDAC inhibitor with biochemical IC50 data for all four relevant HDAC isoforms (HDAC1/2/3/6), and its 167× class-I-over-HDAC6 selectivity puts it ahead of every screened alternative. The challenge with butyrate is **continuous gut-luminal availability** — orally dosed butyrate is rapidly absorbed in the small intestine and does not reach the colon. A colonically resident butyrate producer might address that exposure problem, but this remains a research conjecture: it requires demonstrated colonization density, butyrate titer, epithelial exposure, and, for Q141K rescue specifically, the still-unvalidated direct-rescue mechanism.
 
 ---
 
-## comp-008 payload ranking
+## Candidate payload questions — no ranking
 
-The 2026-05-16 [*F. prausnitzii* heterologous-expression feasibility analysis](./f-prausnitzii-heterologous-expression-computational.md) (comp-008) ranked four candidate payloads with explicit composite scores and limiting factors:
+[COMP-008](./f-prausnitzii-heterologous-expression-computational.md) is invalidated and non-runnable. Its scores, categories, roadmap, and payload ordering do not survive.
 
-| Payload | comp-008 composite | Verdict | Limiting factor |
-|---|---|---|---|
-| **Native BCoAT overexpression candidate** | **0.748** | **GREEN** (only point estimate) | Native cytoplasmic construct with no cross-host codon mismatch; no CAI or butyrate-flux increase was computed. Declared range overlaps sCR1. **Toolkit-conditional point score 0.875** |
-| sCR1 SCR1-4 truncation | 0.565 | YELLOW | Engineering toolkit maturity + anoxic-environment disulfide folding |
-| Human lactoferrin | 0.540 | YELLOW | Same bottleneck pattern as sCR1 |
-| ***A. flavus* uricase** | **0.393** | **YELLOW-toward-RED** | **Chemistry can't run** — uricase uses O₂ as substrate; *F. prausnitzii* is an obligate anaerobe in an anoxic colonic lumen. Even with a perfect engineering toolkit, the enzyme's catalytic requirement is incompatible with the host's physiology |
+- **Native butyrate-pathway intervention:** first establish stable transformation and reporter expression, then measure product flux, growth, genetic stability, colonization-relevant fitness, and epithelial exposure.
+- **Uricase:** oxygen and substrate access must be measured in the intended reaction compartment; strict-anaerobe identity alone does not decide every production or delivery configuration.
+- **Lactoferrin and soluble complement regulators:** exact constructs require native-fold, secretion, stability, retained-function, and local-access measurements.
 
-**Track implications:**
-
-1. **Stop considering uricase for *Fp*** — its O₂ substrate and H₂O₂ coproduct conflict with a strict-anaerobe host. Comp-008 does not rank other organisms or delivery routes.
-2. **Test native BCoAT overexpression first if the *Fp* toolkit is pursued** — it has the highest point-estimate tractability and lowest construct complexity, but the declared range overlaps sCR1 and increased butyrate remains a wet-lab outcome, not a computational result.
-3. **Defer lactoferrin / sCR1 to after the engineering toolkit matures** — both YELLOW with the toolkit gap + anoxic disulfide folding as gating constraints. Worth revisiting when *Fp* genetic tools advance (Sheridan 2019 *Lachnospiraceae* conjugation precedent may transfer).
-
-**Codon compatibility remains unmeasured.** Approximate source/host GC similarity is not a CAI calculation or a cross-chassis ranking. Any complex mammalian payload requires named CDS-level codon analysis after a workable *Fp* toolkit exists.
-
-*F. prausnitzii* should be benchmarked for local butyrate-production engineering against *E. coli* Nissle (facultative anaerobe, mature toolkit, already used in PULSE). The current 0.25 toolkit prior may make EcN faster to engineer, while actual BCoAT flux control, strain titer, and delivery performance remain unmeasured.
+Approximate source/host GC similarity is not a CAI calculation or a cross-chassis ranking. No payload currently has priority from this artifact.
 
 ---
 
@@ -122,34 +111,26 @@ The 2026-05-16 [*F. prausnitzii* heterologous-expression feasibility analysis](.
 Beyond the native BCoAT construct candidate, the LBP chassis class plausibly supports:
 
 - **Heterologous uricase** for colonic urate degradation; expression, activity, substrate access, and ecological effects are unmeasured in these organisms.
-- **Lactoferrin** for the TNFα-cycle and related hypotheses; comp-043 indicates EcN folding is not viable for this payload.
+- **Lactoferrin** for the TNFα-cycle and related hypotheses; its exact EcN expression, native fold, and function are unmeasured.
 - **Soluble complement regulators (sCR1, Factor H, DAF/CD55)** as candidate CP0 payloads, gated by folding capacity, proteolysis, and local access.
-- **C1-INH (SERPING1) — CP0 classical/lectin entry blocker.** [comp-037](./c1-inh-protease-stability-ecn-computational.md) returned **MODERATE (kinetic-competition gated)** for a secreted EcN luminal payload. The serpin-core construct had LOW strictly degradative risk and GREEN glycosylation feasibility for the modeled topology; RCL target-engagement versus DegP cleavage remains unresolved. *(Mechanistic Extrapolation.)*
+- **C1-INH (SERPING1) — CP0 classical/lectin entry blocker.** [comp-037](./c1-inh-protease-stability-ecn-computational.md) supplies a sequence-filter/pLDDT inventory and a kinetic-competition hypothesis, not a protease or glycosylation verdict. Exact-configuration folding, luminal stability, target engagement, and retained inhibition remain empirical gates. *(Mechanistic Extrapolation.)*
 - **IL-22 secretion** (gut barrier repair — already in clinical development as engineered E. coli Nissle by Synlogic-adjacent programs)
 - **Carnosine** (URAT1 / GLUT9 modulation — see [`carnosine.md`](./carnosine.md))
 
-Which of these are tractable in *F. prausnitzii* specifically (vs. *Bacteroides* vs. *Akkermansia*) remains partly open; [comp-008](./f-prausnitzii-heterologous-expression-computational.md) completed the initial payload triage, while organism-specific validation remains unresolved.
+Which of these are tractable in *Faecalibacterium* specifically versus *Bacteroides*, *Akkermansia*, or EcN remains open.
 
 ---
 
 ## EcN disulfide-folding limits
 
-[Comp-043](./daf-lactoferrin-ecn-folding-feasibility-computational.md) tested whether EcN periplasmic DsbA/DsbC folding plausibly scales across three disulfide-rich payloads:
+[COMP-043](./daf-lactoferrin-ecn-folding-feasibility-computational.md) is invalidated and supplies no numerical ordering, feature-count priority, or viability crossover. For each exact payload, compare baseline and folding-support arms while measuring expression, secretion, native-fold attainment, aggregation, stability, and retained function. Reverify any exact feature count against the current primary record before using it as a design input.
 
-| Payload | Disulfides | Fold | EcN verdict |
-|---|---|---|---|
-| C1-INH (serpin) | 2 | metastable serpin | **VIABLE** (disulfide axis; comp-037's kinetic-competition caveat still governs) |
-| DAF SCR1-4 (CCP/sushi) | 8 | compact β-sandwich modules | **PROVISIONAL** — folding-capacity-gated |
-| Lactoferrin (transferrin-lobe) | 16 | bilobal, long-range C-lobe bonds | **NOT-VIABLE** — folding-limited across the plausible capacity band |
+- **Folding and glycosylation remain configuration-specific gates.** EcN folding capacity for each exact construct is unmeasured; glycan loss and folding must be tested separately.
+- **The retired result cannot prioritize payloads.** Choose experiments from mechanism value and direct assay feasibility, then measure each exact configuration.
 
-The modeled plausible-to-not-plausible crossover sits at **DAF SCR1-4 (8 disulfides)**: EcN is plausible at 2, capacity-gated/provisional at 8, and not viable for lactoferrin at 16. Two findings sharpen it:
+**Bounded thesis:** disulfide-containing native folds require construct-specific controls; they do not establish relative tractability.
 
-- **Folding, not glycosylation, is the dominant filter.** EcN can't glycosylate, but comp-043 found loss of glycans does *not* independently abolish DAF or lactoferrin function (decay-acceleration and iron-binding/lactoferricin are polypeptide-encoded). Attributing lactoferrin's failure to the missing sugars would be a mechanism error — it's the 16-disulfide transferrin fold a periplasmic oxidase can't attain.
-- **The result is payload-specific.** C1-INH remains viable on the modeled disulfide axis, DAF SCR1-4 remains provisional, and lactoferrin is not a viable EcN payload under the modeled capacity range.
-
-**Bounded thesis:** EcN is plausible for selected low-to-moderate-disulfide, compact-fold, glycosylation-independent complement regulators. That inference does not generalize to PDI-heavy payloads.
-
-**Highest-leverage missing measurement:** a DsbA/DsbC oxidative-folding capacity assay at 8–16 disulfide scale. Until it exists, any EcN–DAF SCR1-4 folding claim stays provisional.
+**Highest-leverage missing measurement:** exact-configuration expression, native-fold attainment, and retained function, with a DsbA/DsbC oxidative-folding capacity assay as supporting calibration.
 
 ## Regulatory path
 

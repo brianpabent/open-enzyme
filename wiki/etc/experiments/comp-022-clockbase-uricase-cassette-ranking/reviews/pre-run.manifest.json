@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/README.md",
+      "kind": "design",
+      "bytes": 8401,
+      "sha256": "212cb4f24abe40c6887c84d95467bf94d5c61affb88377a7da63abef1c481587"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/analyze.py",
+      "kind": "design",
+      "bytes": 33067,
+      "sha256": "89b9b326f99bc4aadbb54ae2338eff5c21376d65d3ebb217d0bae19436480826"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/inputs/Q00511.fasta",
+      "kind": "design",
+      "bytes": 385,
+      "sha256": "fd006ac91dc08f796bd2032ee975677c16f6e8e7d3d0762ba1f2b295183b4274"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/inputs/a_oryzae_codon_usage.json",
+      "kind": "design",
+      "bytes": 5321,
+      "sha256": "61b8e7293388d5d605f19e36fce9d94d19a526baf35f3c9205bf17d0b717a24e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/inputs/parts_list.json",
+      "kind": "design",
+      "bytes": 15061,
+      "sha256": "cc0f696576763e27015935340d79ed9e2fc7be4728f92856f514d1f11667022e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 4911,
+      "sha256": "3657595318aba7af160291f0522bca26405141c091a8adb6b4b06206cb0e2128"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/provenance.md",
+      "kind": "design",
+      "bytes": 11246,
+      "sha256": "131fe026151c66f41f3cd84f17e25206fbfe604e962d9721c0bf85f6e115b9bc"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2/analyze_v2.py",
+      "kind": "design",
+      "bytes": 18988,
+      "sha256": "8daf36552968f5eecf6472cd41ac3da2528fd6b161e6e7badecca6aae1a73f29"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2/build_protein_shortlist.py",
+      "kind": "design",
+      "bytes": 6189,
+      "sha256": "b23fdfbb5aa429c26c1ed0436dea2c2829d6787190b0f6b6e907feaffcacfb96"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2/inputs/protein_shortlist.fasta",
+      "kind": "design",
+      "bytes": 49598,
+      "sha256": "404daac1cbc0bdae504324ad1ef34e05825a503814f46b86f4fd2a32fc674358"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2/inputs/protein_shortlist_keymap.csv",
+      "kind": "design",
+      "bytes": 7097,
+      "sha256": "3a337bff8eafd15cb18df4a1f0ab096e42137171664018e6345c41213fbe9131"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/esmfold_pLDDT.csv",
+      "kind": "design",
+      "bytes": 4413,
+      "sha256": "0f2f59977bbb847bf5f75d2346e68e933c497241774b16628e58e2bd342b546d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/esmfold_progress.log",
+      "kind": "design",
+      "bytes": 9390,
+      "sha256": "9e59359461029cc16670831bf8a072a52402d0bbbc081f5a0eeb701b48a654f9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/v2_shortlist.csv",
+      "kind": "design",
+      "bytes": 9337,
+      "sha256": "8e63611ccf70d533dda66e424c71860bd3b47767c77046664a70e59f0781e307"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/v2_summary.json",
+      "kind": "design",
+      "bytes": 2748,
+      "sha256": "4b15750b3cfb43b2e618abe4bf25e476813c5ac7f2252b664ce950c6de3f143f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/v2_top25.md",
+      "kind": "design",
+      "bytes": 4257,
+      "sha256": "9dc676b3eb07a59bfb059e49c383f936f743c6f9c756203353ddbb3a5d3e4eeb"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2/outputs/viennarna_mfe.csv",
+      "kind": "design",
+      "bytes": 3958,
+      "sha256": "56dc6b9955ebde368847d877fb80940993f78115b81933abf71494080cc64254"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2/provenance.md",
+      "kind": "design",
+      "bytes": 13457,
+      "sha256": "bba49900651a32dcbcd914633139fcff56eed79751a71c262f66d0cd6153786a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2/rerank_v2.py",
+      "kind": "design",
+      "bytes": 10483,
+      "sha256": "66629a5ccc87edc8e61ea583159fcc484634c804c44f3737e94fdf9a362f9cd5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2/run_esm2_pseudo_likelihood.py",
+      "kind": "design",
+      "bytes": 8904,
+      "sha256": "642da76de30acbbd115c3d30bf15049a56b5c881abc652873fe99bc40eacc65f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/v2/run_viennarna_mfe.py",
+      "kind": "design",
+      "bytes": 8867,
+      "sha256": "8381488f4eaefb82af0dc904c077f60d04d2a8a21a281fb1fc58b5f23205ad13"
+    }
+  ],
+  "prior_output_baseline": [
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/outputs/codon_variant_scores.md",
+      "kind": "prior_output",
+      "bytes": 594,
+      "sha256": "26747e98ebe434972dea22c077389cb557cbe3e25ae59c8bbe4e15cce4158e89"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/outputs/full_ranking_top1000.csv",
+      "kind": "prior_output",
+      "bytes": 125700,
+      "sha256": "2f7badedddfaabb086b82be324b549c64b59bbac64b717505a981699e1d4ae0d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/outputs/report.json",
+      "kind": "prior_output",
+      "bytes": 23554,
+      "sha256": "ff5f2c7d56f3f983e74fb9f64f8f7544514cde9f1699bf3d0f49a66b84ea3634"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/outputs/scaffold_chaperone_loads.md",
+      "kind": "prior_output",
+      "bytes": 717,
+      "sha256": "145a469313ae3dd7f52a24a1781f8ce0d86f95a84c1fa0acbfc60fd28677cf31"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/outputs/top25.md",
+      "kind": "prior_output",
+      "bytes": 3747,
+      "sha256": "69b13788bec18e428c52a8b014f5341f7cfde69d9a693de6e6341a13a752fd6a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/outputs/unique_cassette_shortlist.csv",
+      "kind": "prior_output",
+      "bytes": 62334,
+      "sha256": "44e2040264de600c686fba2c411bb05bb735092ac7d8e650fd350be46a18e0c2"
+    }
+  ],
+  "manifest_sha256": "05295607e9d85e60979e7dbf58f5dcf169b958450da1749b64b7ee951c705e0e"
+}

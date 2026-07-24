@@ -51,16 +51,26 @@ status: published
 
 # Upstream Complement Modulator Sweep — Brief-Scrubbed Verification Re-Run (comp-020)
 
-> **⚠️ Verdict caveated (comp-review 2026-07-14).** Useful Phase-0 literature-mining, but several load-bearing quantitative claims are **NOT primary-source verified** — treat the IC50/ratio numbers as citation-tier, not verified.
+MSU crystals activate complement and generate C5a, making upstream complement interference a plausible way to weaken flare priming. This literature re-run identifies assay-specific natural-product leads; it does not rank them, establish gout activity, or show that any reaches a useful compartment.
 
-> This wiki stub remains so cross-references resolve and the page stays discoverable.
-> Computational analyses are write-once artifacts; the daemon does not need to re-read
-> them on every sweep, so the long content lives next to the experiment that produced it
-> at `etc/experiments/comp-020-upstream-complement-verification-rerun/`.
+## Evidence that survives
 
-**Plain-English summary first.** Open Enzyme is mapping every avenue to address gout. One of the seven bottlenecks the platform tracks is "complement priming" — when monosodium urate crystals appear in a joint, they activate the complement immune cascade, which generates C5a, which primes the NLRP3 inflammasome, which drives the gout flare's signature inflammation. That priming step is named CP0 in the platform. So far the platform's main intervention at CP0 is a protein-engineering thread (an engineered shortened version of the human DAF/CD55 receptor expressed in koji — see [comp-012](./daf-cd55-scr14-truncated-computational.md) and […]
+- Rosmarinic acid covalently modified activated C3b and reduced C3b deposition in the Sahu 1999 biochemical system (**In Vitro**; PMID 10353266). Englberger 1988 and Peake 1991 used different complement formats and conditions (**In Vitro**; PMIDs 3198307 and 1761351). Their reported concentrations are descriptive records from non-interchangeable assays, not a combined potency range or an operative gout concentration.
+- *Helicteres angustifolia* benzofuran lignans inhibited complement in the Yin 2016 hemolytic and depletion-rescue experiments (**In Vitro, single-paper anchor**; PMID 27834928 / PMC6273495). Independent matched-material replication is required before priority or translation claims.
+- Luteolin and other flavonoids, *Bupleurum* polysaccharides, marine sulfated polysaccharides, and heparin-derived oligosaccharides have complement-assay evidence in the cited primary records (**In Vitro**). The materials, assay formats, units, and safety constraints differ, so cross-paper ordering is not justified.
 
-**Where the analysis lives:**
-- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-020-upstream-complement-verification-rerun/`](./etc/experiments/comp-020-upstream-complement-verification-rerun/)
-- **Helicteres benzofuran lignan replication track (comp-018 Phase 2, 2026-05-17):** [`./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json`](./etc/experiments/comp-018-upstream-complement-modulator-sweep/phase-2/phase-2-helicteres-replication.json) — replication INCONCLUSIVE / ANCHOR-STILL-SINGLE; independent wet-lab replication recommended
-- Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)
+COMP-020 preserves those source observations but supplies no headline compound, tier, assay-format causality, comparative potency, dietary efficacy, or platform priority. The narrative COMP-020 artifact predates the current reproducible lifecycle and remains literature-mining provenance, not a quantitative model.
+
+## Sourcing and delivery
+
+Rosmarinic acid and luteolin occur in multiple plants; *Helicteres* lignans require exact compound isolation or a qualified botanical material; polysaccharide activity depends on the exact extracted material. Botanical name alone is not a product specification.
+
+The proposed gout-relevant compartment is unresolved. Oral availability, metabolism, protein binding, intestinal concentration, and access to MSU-associated complement can differ sharply among small molecules and polysaccharides. Plasma exposure does not establish gut-luminal activity, and gut-luminal exposure does not establish joint exposure.
+
+## Experiment that changes the decision
+
+Choose a candidate from its independently verified evidence home, qualify one exact material, and test it in a preregistered concentration series using complement-competent serum with vehicle and positive controls. Measure an MSU-associated endpoint such as C5a or C5b-9, plus material stability and recovery under the same conditions. Replicate the exact material independently before comparing it with another class or making a sourcing decision.
+
+A positive result advances only that material, assay, and compartment hypothesis. A negative result redirects that candidate without rejecting upstream complement as an exploitable gout weakness.
+
+Related: [complement C5a in gout](./complement-c5a-gout.md) · [assay-format conjecture](./upstream-complement-assay-format-mapping-computational.md) · [Houttuynia evidence](./houttuynia-cordata.md) · [experiment provenance](./etc/experiments/comp-020-upstream-complement-verification-rerun/)

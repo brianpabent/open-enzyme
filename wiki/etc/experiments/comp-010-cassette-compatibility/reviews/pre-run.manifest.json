@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-010-cassette-compatibility",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/README.md",
+      "kind": "design",
+      "bytes": 2264,
+      "sha256": "fdc24dc9fb2c8b4c1a28cedca0a1c851d7dbd4585a28538df769e5d2b17e2de7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-010-cassette-compatibility/invalidation.json",
+      "kind": "design",
+      "bytes": 3571,
+      "sha256": "bf06ff77b73c0a4ff9be888126bfa63fe32a58a1dd7eb9e109335db393e46da1"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "26fe87e4bc062a30c19607177cddaf843bc0dfb5b133230bc0c64a0143bec3e8"
+}

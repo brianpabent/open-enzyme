@@ -1,33 +1,32 @@
 ---
-title: "Lactoferrin Shio-Koji Protease Stability: Computational Analysis (comp-005)"
+title: "Lactoferrin Shio-Koji Protease Proxy (comp-005)"
 date: 2026-05-05
-tags: [lactoferrin, protease, shio-koji, computational, alphafold, structural-biology]
+tags: [lactoferrin, protease, shio-koji, computational, alphafold]
 related:
   - lactoferrin.md
   - uricase-protease-stability-computational.md
   - computational-experiments.md
   - validation-experiments.md
-  - engineered-koji-protocol.md
-  - koji-endgame-strain.md
 sources:
   - "UniProt P02788 (human lactoferrin, canonical isoform, SV=6)"
   - "AlphaFold AF-P02788-F1-model_v6 (EMBL-EBI)"
-  - "MEROPS database release 12.4"
-  - "Koaze et al. 1964 (acid protease pH-activity curve)"
-status: archived-to-experiments
+status: retired-invalid-model
 ---
 
-# Lactoferrin Shio-Koji Protease Stability: Computational Analysis (comp-005)
+# Lactoferrin Shio-Koji Protease Proxy (comp-005)
 
-> **⚠️ Verdict caveated (pLDDT-proxy class, comp-review 2026-07-14).** The protease-vulnerability score is a **heuristic pLDDT/P1-P1′ proxy, NOT a degradation/survival model**; "exposed sites" are low-pLDDT-by-proxy, not SASA. Same class as comp-001/006 — a prioritisation prior, not decision-grade.
+The engineering weakness is loss of intact, functional lactoferrin during the 7–14 day shio-koji ferment. COMP-005 does not determine whether that happens.
 
-> This wiki stub remains so cross-references resolve and the page stays discoverable.
-> Computational analyses are write-once artifacts; the daemon does not need to re-read
-> them on every sweep, so the long content lives next to the experiment that produced it
-> at `etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/`.
+## Evidence boundary
 
-**Status:** Complete — 2026-05-05 **Experiment folder:** [`etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/`](./etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/) **Companion analysis:** [comp-001 (uricase)](./uricase-protease-stability-computational.md)
+The retired artifact mapped inherited sequence-filter matches onto the P02788 sequence and added AlphaFold pLDDT context. Its original HIGH/MODERATE labels are invalid because the model used pLDDT confidence as solvent accessibility. It did not calculate SASA, model the biological assembly or cleavage kinetics, or measure degradation and retained activity.
 
-**Where the analysis lives:**
-- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/`](./etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/)
-- Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)
+COMP-005 supplies no cleavage-region priority. In particular, the exact inter-lobe connector is not a lower-confidence AlphaFold segment in the retired input. COMP-001 also cannot serve as a validated uricase comparator. Empirical protease risk remains unresolved.
+
+## Delivery and falsification gate
+
+This question applies specifically to lactoferrin produced for delivery through shio-koji. Expression does not solve exposure: the payload must remain sufficiently intact and retain the relevant activity through the complete process.
+
+The [§1.10 assay](./validation-experiments.md#110-heterologous-uricase--lactoferrin-stability-in-shio-koji-salt-protease-ferment) is decisive. Measure abundance, fragment pattern, and retained iron-binding activity at day 0, 7, and 14 with matched controls. Map any reproducible fragment without prespecifying the linker as its origin. Only an observed linker-associated failure can activate the separate redesign conjecture. A favorable result advances that exact construct and process; failure redirects the construct, formulation, or delivery format without rejecting lactoferrin as a wider intervention.
+
+Related: [lactoferrin evidence page](./lactoferrin.md) · [COMP registry](./computational-experiments.md#comp-005--lactoferrin-shio-koji-protease-proxy-2026-05-05) · [invalidated, non-runnable COMP-005 tombstone](./etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/)

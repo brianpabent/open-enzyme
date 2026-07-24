@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/README.md",
+      "kind": "design",
+      "bytes": 2850,
+      "sha256": "32e94d36630cf4b8e849d70381ce74c2871c452ac87998cc16f5f5804f4f9664"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/invalidation.json",
+      "kind": "design",
+      "bytes": 3120,
+      "sha256": "e077fce3d8ae61974ba2f124f5461de1cc1ffd9e56e3e7287fc508ad63cccc67"
+    },
+    {
+      "path": "wiki/c1-inh-protease-stability-ecn-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3788,
+      "sha256": "d0f5010c2161df29d971de31e13311681ff142bb2c3dcda9519602e582a67ae4"
+    },
+    {
+      "path": "wiki/chassis-pending-interventions.md",
+      "kind": "proposed_update",
+      "bytes": 30751,
+      "sha256": "46f243991338d56835b52076548624c07e2e7290d2f55998ae4e9bf51dca5821"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 94334,
+      "sha256": "3e547ff4444758e4e37c6795c9d7b9c60059aaf5e2d3d0d31f6f76994321af8f"
+    },
+    {
+      "path": "wiki/complestatin-bgc-lbp-feasibility-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3963,
+      "sha256": "5e781ee4df6d54f5efb4c8893cfa9972af04c47ec08cd02bb3fc16a7a4d3f2a8"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
+    },
+    {
+      "path": "wiki/etc/autonomous-screening-methodology.md",
+      "kind": "proposed_update",
+      "bytes": 23852,
+      "sha256": "acc80ba60a56e7a859b7da7dd6caa474c5fdb570ac5a769111a8651fa71c73d6"
+    },
+    {
+      "path": "wiki/etc/bio-ai-tools.md",
+      "kind": "proposed_update",
+      "bytes": 62248,
+      "sha256": "21afccea68cd9e24ec0d32381632667716347579ce7cbf91e2da7c60d6afe06b"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "732f3c873304de0f07a12d36618f0276eea7e452f85375508ffcacdfb22d8e05"
+}
