@@ -57,7 +57,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 | [§1.19](#119-methodological-standard-rodent-cellular-ic50-translation-caveat) | Methodology — rodent cellular IC50 translation caveat | Standing | $0 | ongoing | Standing | [chembl-cross-check](./etc/chembl-cross-check.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md) |
 | [§1.20](#120-lactoferrin-egcg-cp1a-super-additivity-assay-thp-1-macrophage-33-full-factorial--prespecified-midpoint) | Lactoferrin + EGCG CP1a interaction (THP-1 3×3 full factorial + prespecified midpoint); recombinant Lf can run now | In Vitro | $1,500 | 3–4 | Proposed | [lactoferrin](./lactoferrin.md), [egcg](./egcg.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [supplements-stack](./supplements-stack.md), [koji-endgame-strain](./koji-endgame-strain.md) |
 | [§1.21](#121-natural-product-c5ar1-antagonist-screening-computational-pass-closes-the-cp0-fermentable-coverage-question) | Natural-product C5aR1 antagonist screen (CP0 fermentable-coverage question) | Computational | $0 | 0.5 | **Closed (negative, 2026-04-27)** | [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [open-enzyme-vision](./etc/open-enzyme-vision.md) |
-| [§1.22](#122-gut-compartment-hdac-directed-candidate-screen-for-q141k-abcg2-trafficking-rescue) | Gut-compartment HDAC-directed candidate screen for Q141K-ABCG2 trafficking rescue | In Vitro | $5,000–8,000 | 8–10 | Proposed | [abcg2-modulators](./abcg2-modulators.md), [gut-lumen-sink](./gut-lumen-sink.md) |
+| [§1.22](#122-gut-compartment-hdac-directed-candidate-screen-for-q141k-abcg2-trafficking-rescue) | Direct gut-compartment test of HDAC-directed candidates for Q141K-ABCG2 trafficking rescue | In Vitro | TBD | TBD | Proposed | [abcg2-modulators](./abcg2-modulators.md), [gut-lumen-sink](./gut-lumen-sink.md) |
 | [§1.23](#123-androgen-msu-nlrp3-in-macrophages-tiered-mechanistic-protocol) | Androgen × MSU × NLRP3 macrophage tiered protocol (T1 THP-1 / T2 PBMC / T3 mouse air-pouch) — fills literature gap | In Vitro | Tier 1: $5–10K; full T1+T2+T3 cascade $105–160K | Tier 1: 6–8; full cascade ~12 months | Proposed | [androgen-urate-axis](./androgen-urate-axis.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md) |
 | [§1.24](#124-carnosine-co-expression-validation-in-a-oryzae-koji-endgame-optional-third-cassette) | Carnosine co-expression in *A. oryzae* (koji multi-payload optional third cassette) | In Vitro | $1,500–2,500 | 4–6 | Proposed | [koji-endgame-strain](./koji-endgame-strain.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [carnosine](./carnosine.md), [androgen-urate-axis](./androgen-urate-axis.md) |
 | [§1.25](#125-dafcd55-scr1-4-truncated-single-cassette-expression-in-a-oryzae-cp0-engineering-candidate-wet-lab-gate) | DAF SCR1-4 route × host single-cassette comparison in *A. oryzae* (CP0 candidate + matched chaperone-conjecture test) | In Vitro | TBD after route-factorial and disulfide-mapping quotes | TBD | Proposed | [daf-cd55-scr14-truncated-computational](./daf-cd55-scr14-truncated-computational.md), [hypotheses/H05-daf-scr14-cp0-thesis](./hypotheses/H05-daf-scr14-cp0-thesis.md), [chaperone-orthogonal-stacking](./chaperone-orthogonal-stacking.md), [complement-c5a-gout](./complement-c5a-gout.md) |
@@ -859,47 +859,43 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 
 ### 1.22 Gut-Compartment HDAC-Directed Candidate Screen for Q141K-ABCG2 Trafficking Rescue
 
-**Status**: Proposed | **Cost**: $5,000–8,000 | **Weeks**: 8–10 | **Phase**: 1
+**Status**: Proposed | **Cost**: TBD | **Weeks**: TBD | **Phase**: 1
 
 **Affected wiki**: [abcg2-modulators](./abcg2-modulators.md), [supplements-stack](./supplements-stack.md), [gut-lumen-sink](./gut-lumen-sink.md)
 
-**What it tests:** Q141K ABCG2 has a folding/trafficking defect that can be rescued by pharmacological/chemical-chaperone perturbation (Basseville et al. 2012, PMID 22472121). Direct Q141K rescue by butyrate was not shown in that paper. This experiment screens defined candidates for class selectivity, compartment-relevant activity, surface-trafficking rescue, functional urate efflux, and safety, with a Basseville-class rescue condition as the positive control.
+**What it tests:** Whether a defined material, at measured intracellular exposure, restores Q141K ABCG2 apical-surface localization and ABCG2-attributed urate flux without directly inhibiting the transporter, injuring the epithelial barrier, or causing unacceptable off-target activity. Basseville et al. 2012 (PMID 22472121) supplies pharmacological positive and contrast controls; it did not test butyrate or urate.
 
-**Design requirement:** include a tissue-selectivity assay (Caco-2 versus hepatocyte HDAC activity) and explicit HDAC1/2/3 focus; HDAC6 inhibition is off-target. The $5,000–8,000 estimate includes paired Caco-2/hepatocyte assays.
-
-**Background on Q141K mechanism:** ABCG2-Q141K has a folding/processing defect that reduces surface transporter. Basseville 2012 provides a positive-control pharmacological/chemical-chaperone rescue pathway, but it did not report ~30–50% restoration at 1 mM butyrate. Butyrate must be treated as an unvalidated candidate in this assay, not as its established benchmark.
+**Mechanistic boundary:** Basseville reported rescue with romidepsin, panobinostat, and vorinostat; valproate did not rescue, and HDAC6-selective tubastatin did not reproduce the effect. Rescue required new protein synthesis and appeared after an approximately 16-hour delay. BiP, Hsc70, Hsp70, and Hsp90 expression did not explain the result; dynamitin-associated retrograde transport was implicated but did not establish one causal HDAC isoform. The experiment must reproduce this control pattern before interpreting a candidate failure or hit.
 
 **Pharmacological-chaperone candidate class — computational route came back inconclusive (2026-07-14).** A parallel small-molecule pharmacological-chaperone route (CFTR correctors, bile-acid chaperones, tetramer stabilizers) was triaged computationally in [comp-032](./abcg2-q141k-chaperone-screen-computational.md) (descriptor screen, GREEN) and then re-screened with real AutoDock Vina docking in [comp-047](./abcg2-q141k-chaperone-rescreen-computational.md) → **INCONCLUSIVE**: the CFTR-corrector positive controls failed to earn rank (0/4), and rigid-receptor docking cannot discriminate chaperones (mechanism mismatch — a chaperone stabilizes a folding intermediate / raises ΔTm, which static-structure docking can't model). **No computationally validated chaperone candidate survives.** Consequence for this experiment: if the pharmacological-chaperone class is ever added as an arm here, comp-032's candidate list (lumacaftor, tafamidis, ursodiol, diflunisal, TUDCA) enters as **hypothesis-only** — this wet-lab assay would be the *first* real test of that route, not confirmation of a computational hit. The decisive computational next step, if pursued before wet-lab, is a folding-ΔΔG calculation (MD / Rosetta on the Q141K mutant), not another docking pass. This assay's readouts (WT/Q141K surface trafficking + basolateral→apical urate flux + ABCG2-inhibition counterscreen + cytotoxicity) are exactly what a chaperone-class test would require — so it doubles as the registered validation surface the comp-032 audit (2026-07-13) asked for.
 
 **Protocol:**
 
-**Stage 1 — In silico candidate selection ($500):**
-- Compile defined candidates with documented HDAC inhibition: butyrate/short-chain fatty acids (test candidates, not established Q141K-rescue benchmarks), sulforaphane, allyl mercaptan, phenethyl isothiocyanate, hydroxycinnamic acids, and diallyl disulfide. Dietary occurrence does not establish safety or regulatory transfer at the tested exposure.
-- Screen each candidate against: class I HDAC (HDAC1/2/3) IC50 from ChEMBL / primary literature; HDAC6 IC50 (if known — selectivity check); Caco-2 permeability / gut-lumen-achievable concentration estimate; reported hepatotoxicity signal (LD50 or NOAEL from TOXNET / EFSA).
-- Select top 5–7 candidates by gut-enriched concentration × class I HDAC potency ratio.
+**Stage 1 — Control-pattern reproduction and material qualification:**
+- In the Basseville-compatible cell system, reproduce surface-trafficking and drug-substrate-efflux rescue with at least one reported positive HDI condition, with vehicle, valproate, and tubastatin contrasts. Prespecify minimum assay responsiveness before candidate interpretation.
+- Qualify each test material by identity, purity, stability, conversion products, free concentration, intracellular exposure, and exposure time. Food occurrence or low oral bioavailability is not an exposure measurement.
+- Carry the seven COMP-007 labels—butyrate, sulforaphane, allyl mercaptan, diallyl disulfide, phenethyl isothiocyanate, caffeic acid, and ferulic acid—as an unranked inventory. Do not eliminate or advance a material from nominal HDAC IC50, HDAC6 selectivity, or `1 − bioavailability`.
 
-**Stage 2 — Paired Caco-2 / hepatocyte HDAC activity assay ($2,000–3,000):**
-- **Cell lines:** Caco-2 (enterocyte model) and HepG2 or primary human hepatocytes (hepatocyte model). The primary screen discriminator is Caco-2 HDAC activity ÷ hepatocyte HDAC activity for each candidate at matched concentrations. Gut-selective candidates have ratio > 2 (more HDAC inhibition in enterocytes than hepatocytes).
-- **Readout:** Fluorometric HDAC activity assay (FLUOR DE LYS-based or equivalent) in nuclear extracts from each cell type + 24h candidate treatment.
-- **HDAC1/2/3 vs. HDAC6 isoform specificity:** use a class I-selective substrate (acetylated H3K9/H4K12 peptide) and a HDAC6-selective substrate (acetylated tubulin peptide) to distinguish isoform selectivity within the Caco-2 data.
+**Stage 2 — Direct polarized-intestinal test:**
+- Use WT-only, Q141K-only, and WT/Q141K co-expression arms in a polarized intestinal model.
+- Measure total and apical-surface ABCG2, ABCG2-attributed basolateral-to-apical urate flux, intracellular material exposure, viability, and barrier integrity.
+- Include a direct ABCG2-inhibition counterscreen so greater surface abundance cannot hide impaired transporter function.
+- Run a concentration-time series inside the qualified exposure range; one nominal concentration cannot define a hit or failure.
 
-**Stage 3 — Q141K ABCG2 trafficking rescue in HEK293T or Caco-2 Q141K-transfected cells ($2,500–4,500):**
-- Transfect cells with ABCG2-Q141K-GFP construct (standard overexpression assay, as in Basseville 2012).
-- Treat with top candidates at Caco-2-achievable concentrations, including butyrate as a test candidate. Use a Basseville-demonstrated pharmacologic HDAC-inhibitor rescue condition as the positive control, with matched vehicle and ABCG2-inhibition counterscreens.
-- Readouts: ABCG2 surface expression (flow cytometry / confocal — ratio of membrane-localized to total GFP signal), urate efflux (transwell if Caco-2-based), ABCG2 protein abundance (Western — total vs. glycosylated mature form).
+**Stage 3 — Route and safety qualification for direct hits:**
+- Use PPARγ antagonism or silencing to distinguish endogenous-ABCG2 induction from Q141K trafficking rescue.
+- Measure HDAC isoform activity only as follow-up mechanism evidence; do not require or infer a class-I/HDAC6 profile before direct rescue is observed.
+- Compare intestinal and hepatocyte exposure and effects, then add compound-specific off-target and toxicity assays. HDAC6 is one possible axis, not a complete safety model.
 
-**HDAC isoform note:** HDAC1/2/3 and HDAC6 activity helps interpret mechanism and off-target risk. Isoform and tissue selectivity alone cannot establish Q141K rescue or safety; advancement requires the trafficking, functional-flux, cytotoxicity, and inhibition counterscreens above.
-
-**Estimated cost:** $5,000–8,000 (in silico $500 + Caco-2/HepG2 HDAC assay $2,000–3,000 + trafficking rescue $2,500–4,500). Original synthesis proposal ($5,000) was optimistic for a design that includes paired tissue-selectivity assay; $8,000 covers the paired hepatocyte arm + Q141K-transfected cell assay.
-
-**Estimated timeline:** 8–10 weeks.
+**Cost and timeline:** Requote after selecting the control system, exposure-analytics method, and number of candidate concentration-time points. The retired $5,000–8,000 / 8–10-week estimate was tied to an invalid preselection design and is not retained.
 
 **Success criteria:**
 - **A candidate reproduces positive-control surface trafficking and functional urate flux without ABCG2 inhibition or unacceptable toxicity:** advance that exact material to independent replication and exposure validation.
-- **No candidate, including butyrate, reproduces positive-control surface trafficking plus functional urate flux:** no Q141K-rescue agent is validated; do not infer rescue from HDAC selectivity alone.
-- **A candidate with class I selectivity and hepatocyte-sparing profile emerges but doesn't rescue trafficking:** updates the Q141K rescue model (suggests additional misfolding mechanism beyond class I HDAC).
+- **No candidate, including butyrate, reproduces positive-control surface trafficking plus functional urate flux:** no tested material/exposure is validated. This result does not kill the pharmacological-rescue class or untested materials and exposures.
+- **A candidate changes surface abundance without ABCG2-attributed urate flux, or inhibits ABCG2 directly:** do not advance it as a urate-export rescue.
+- **The positive-control pattern does not reproduce:** the screen is uninterpretable; repair the assay before judging candidates.
 
-**Stage 1 results (comp-007, 2026-05-05):** In silico screen completed. Composite scoring (potency × HDAC6 selectivity × gut-enrichment proxy) across 7 candidates ranked: **Butyrate** (0.374, HIGH confidence — confirmed 167× HDAC6 selectivity, biochemical IC50 data from ChEMBL/ACS Med Chem Lett 2011) >> **Sulforaphane** (0.090, LOW — estimated IC50, HDAC6 profile uncharacterized) > **PEITC** (0.060, LOW — estimated IC50 by analogy with SFN). Caffeic acid and ferulic acid score 0 (no isoform-specific IC50 available). **Advancing to Stage 2:** Butyrate, Sulforaphane, PEITC. Stage 2 must include HDAC6 isoform-selective substrate assay for SFN and PEITC; butyrate's HDAC6 selectivity is confirmed. Full analysis: [`etc/experiments/comp-007-food-grade-hdaci-screen/`](./etc/experiments/comp-007-food-grade-hdaci-screen/). Interpretive wiki: [`wiki/food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md). Evidence level: Mechanistic Extrapolation.
+**COMP-007 status:** Its in-silico ranking, scores, and shortlist are invalidated. The seven materials enter this experiment unranked. Full current evidence: [food-associated HDAC-directed candidates](./food-grade-hdaci-screen-computational.md); [non-runnable tombstone](./etc/experiments/comp-007-food-grade-hdaci-screen/).
 
 **Cross-references:** [abcg2-modulators.md](./abcg2-modulators.md) §6; [gut-lumen-sink.md](./gut-lumen-sink.md); and [food-grade-hdaci-screen-computational.md](./food-grade-hdaci-screen-computational.md).
 

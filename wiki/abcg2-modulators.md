@@ -95,9 +95,9 @@ Per Xie et al. 2020 (*Acta Pharmacologica Sinica*, PMID 32555444; [DOI](https://
 - **HDAC inhibition** → P-gp (ABCB1) downregulation via NF-κB / p65 — a separate phenomenon affecting drug-efflux pumps, not directly relevant to urate.
 - **PPARγ activation** → BCRP / ABCG2 induction — the urate-relevant effect.
 
-Xie et al. specifically tested HDAC inhibitors (vorinostat, valproate) and TNF-α / NF-κB pathway disruption. None affected BCRP protein expression. PPARγ antagonist GW9662 abolished butyrate's BCRP induction. Butyrate's effect on the gut urate sink is therefore PPARγ-mediated, not HDAC-mediated, in wild-type ABCG2 carriers.
+Xie et al. specifically tested HDAC inhibitors (vorinostat, valproate) and TNF-α / NF-κB pathway disruption. None affected BCRP protein expression. PPARγ antagonist GW9662 abolished butyrate's BCRP induction. In the tested non-Q141K-specific systems, the BCRP induction was therefore PPARγ-mediated rather than HDAC-mediated; genotype dependence and urate transport were not tested.
 
-This refinement separates supported wild-type induction from Q141K rescue. Pharmacologic HDAC-inhibitor rescue of Q141K is established in vitro, but direct rescue by butyrate is not; no patient group can yet be said to benefit from both butyrate mechanisms.
+This refinement separates endogenous ABCG2 induction in non-Q141K-specific systems from Q141K rescue. Pharmacologic HDAC-inhibitor rescue of Q141K is established in vitro, but direct rescue by butyrate is not; no patient group can yet be said to benefit from both butyrate mechanisms.
 
 ---
 
@@ -175,19 +175,29 @@ The Q141K (rs2231142, p.Gln141Lys) ABCG2 polymorphism is the single largest gene
 
 Basseville et al. 2012, *Cancer Research* ([DOI](https://doi.org/10.1158/0008-5472.CAN-11-2008), PMID 22472121) demonstrated:
 
-- HDAC inhibitors (vorinostat, romidepsin, others tested) **rescue Q141K trafficking from aggresome to plasma membrane**
-- HDIs restore wild-type-equivalent ABCG2 expression and substrate-efflux activity in Q141K cells
-- Mechanism is via altered microtubule motor protein expression (kinesins/dyneins involved in protein trafficking), not direct chromatin opening at the ABCG2 locus
+- Selected HDAC inhibitors (romidepsin, panobinostat, and vorinostat) **rescued Q141K trafficking from aggresome to plasma membrane**; valproate was the non-rescuing HDI contrast.
+- The rescuing conditions increased Q141K surface expression and ABCG2-specific drug-substrate efflux.
+- Rescue required new protein synthesis and appeared after an approximately 16-hour delay. BiP, Hsc70, Hsp70, and Hsp90 expression did not change, and HDAC6-selective tubastatin did not rescue. Dynamitin-associated disruption of retrograde transport was implicated, but the study did not establish a single causal HDAC isoform or complete pathway.
 - **In Vitro.** No human RCT in Q141K-positive gout patients yet.
 
 **Implication for the gut-lumen-sink hypothesis:**
 
-Butyrate is an HDAC inhibitor and can induce wild-type ABCG2 through PPARγ. Two distinct hypotheses must not be conflated:
+Butyrate is an HDAC inhibitor and can induce endogenous ABCG2 through PPARγ in non-Q141K-specific preclinical systems. Two distinct hypotheses must not be conflated:
 
-1. **PPARγ-mediated induction** of any wild-type allele (most Q141K carriers are heterozygous)
+1. **PPARγ-mediated endogenous ABCG2 induction**, with its genotype dependence unmeasured
 2. **Proposed HDI-mediated trafficking rescue** of the Q141K variant, not yet demonstrated for butyrate
 
 The first route has supporting evidence; the second is mechanistic extrapolation from other HDAC inhibitors. Whether Q141K changes response to a defined PPARγ- or HDAC-directed exposure is an open test.
+
+> **Research conjecture — One butyrate exposure could engage two ABCG2 routes**{ .research-conjecture-label }
+>
+> **Grounded premises:** Xie et al. found that butyrate increased endogenous intestinal BCRP/ABCG2 expression and drug-substrate function in non-Q141K-specific rat, primary mouse-enterocyte, and Caco-2 systems; PPARγ antagonist and silencing supported dependence in Caco-2 (**In Vitro + Animal Model**; PMID 32555444). Basseville et al. separately showed that selected pharmacological HDAC inhibitors rescued Q141K surface trafficking and ABCG2-specific drug-substrate efflux (**In Vitro**; PMID 22472121). Neither study tested butyrate-mediated Q141K rescue or urate flux.
+>
+> **Novel leap:** In cells containing both WT and Q141K ABCG2, one measured butyrate exposure might increase endogenous ABCG2 through PPARγ while separately rescuing some Q141K trafficking. No direct evidence establishes the combined effect.
+>
+> **Why it matters:** A dual-route response could restore more intestinal urate-export capacity than either induction or trafficking rescue alone.
+>
+> **Discriminating observation:** In polarized, isogenic WT-only, Q141K-only, and WT/Q141K co-expression models, run a butyrate concentration-time series with PPARγ blockade and Basseville-matched positive and negative rescue controls. Measure total and apical-surface ABCG2, ABCG2-attributed urate flux, intracellular exposure, barrier integrity, viability, and direct transporter inhibition.
 
 A pharmacogenomic-stratified study could test the differential-response hypothesis, but serum UA alone would not identify the mechanism; exposure, surface trafficking, and functional urate flux are required.
 
@@ -330,7 +340,7 @@ Three mechanisms could couple ABCG2 substrate supply to luminal urate degradatio
 
 ### Sustained local butyrate hypothesis
 
-The supported LBP rationale is sustained local butyrate for PPARγ-mediated wild-type ABCG2 induction. Direct Q141K trafficking rescue by butyrate is an unvalidated extension and cannot make the route genotype-agnostic. Oral and LBP delivery also require measured colonic and epithelial exposure.
+The supported preclinical LBP rationale is sustained local butyrate for PPARγ-mediated endogenous ABCG2 induction; genotype dependence is unmeasured. Direct Q141K trafficking rescue by butyrate is an unvalidated extension and cannot make the route genotype-agnostic. Oral and LBP delivery also require measured colonic and epithelial exposure.
 
 **An engineered colonically resident butyrate producer is a testable bioavailability hypothesis, not a solved delivery system.** *Faecalibacterium prausnitzii* is one candidate chassis because it natively produces butyrate in the colon, but the route requires a workable engineering toolkit plus measured colonization density, butyrate titer, dosing durability, and epithelial exposure. No quarterly-capsule or continuous-crypt-exposure claim is established.
 

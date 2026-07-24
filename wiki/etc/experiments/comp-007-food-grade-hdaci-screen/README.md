@@ -1,72 +1,44 @@
-# comp-007: Food-Grade HDAC Inhibitor Screen for Q141K-ABCG2 Trafficking Rescue
+> **INVALIDATED TOMBSTONE — NOT RUNNABLE.** The retired artifact converted heterogeneous and estimated HDAC evidence plus exposure surrogates into a quantitative candidate ranking that could not support the claimed wet-lab priority.
 
-**Question:** Which food-grade or GRAS-classified HDAC inhibitor candidates show the best class I HDAC potency (HDAC1/2/3), HDAC6 selectivity (off-target safety), and gut-enriched exposure profile for Q141K-ABCG2 trafficking rescue?
+# comp-007 — Food-Associated HDAC-Directed Candidate Screen
 
-**Verdict: Butyrate (rank 1, confirmed) >> Sulforaphane (rank 2, estimated) > PEITC (rank 3, estimated)**
+**Status:** Invalidated for candidate ranking, composite scores, confidence-ranked verdicts, causal isoform assignment, safety inference, and Stage 2 advancement.
 
-Butyrate is the only candidate with HIGH-confidence biochemical IC50 data and confirmed HDAC6 selectivity (167×). Sulforaphane and PEITC rank 2nd and 3rd on estimated class I potency, but their HDAC6 selectivity is uncharacterized (selectivity penalty applied). Caffeic acid and ferulic acid lack isoform-specific IC50 data and score 0. All rankings are Mechanistic Extrapolation (no wet-lab data generated).
+No rank, score, “confirmed” label, top-three shortlist, or advancement decision survives. The model used an arbitrary penalty for unknown HDAC6 activity, an arbitrary selectivity midpoint, `1 − oral bioavailability` as a gut-exposure surrogate, and mixed-assay or analogical potency estimates. It stored estimated gut concentrations but did not use them in the score.
 
-**Informs:** [`validation-experiments.md` §1.22](../../../validation-experiments.md#122-gut-selective-food-grade-hdac-inhibitor-screen-for-q141k-abcg2-trafficking-rescue) — Stage 1 in silico screen; top 3 advance to Stage 2 (paired Caco-2/HepG2 HDAC activity assay)
+The artifact also attributed Q141K rescue to an HDAC1/2/3–HSF1–Hsp90 pathway and treated HDAC6 avoidance as the principal safety discriminator. Basseville et al. did not establish that causal chain: selected pharmacological HDAC inhibitors rescued Q141K trafficking and substrate-efflux function **in vitro**, but HDAC6-selective inhibition did not reproduce rescue and the measured chaperone proteins did not explain it.
 
-**Interpretive wiki page:** [`wiki/food-grade-hdaci-screen-computational.md`](../../../food-grade-hdaci-screen-computational.md)
+## What survives
 
----
+The seven labels—butyrate, sulforaphane, allyl mercaptan, diallyl disulfide, phenethyl isothiocyanate, caffeic acid, and ferulic acid—survive only as an unranked historical candidate inventory. Their compound-specific evidence, exposure, Q141K trafficking effect, ABCG2-attributed urate flux, and safety must be tested independently.
 
-## How to reproduce
+One unranked connection also survives. Xie et al. found that butyrate increased endogenous intestinal BCRP/ABCG2 expression and drug-substrate function in rat, primary mouse-enterocyte, and Caco-2 systems that were not Q141K-specific and did not use urate as the substrate. PPARγ antagonism and silencing supported dependence in Caco-2 cells; the rat PPARγ result was correlational. Selected pharmacological HDAC inhibitors provide a separate Q141K-rescue precedent. Whether one butyrate exposure can combine the induction route with any Q141K trafficking rescue is directly untested.
 
-```bash
-cd wiki/etc/experiments/comp-007-food-grade-hdaci-screen
-python3 analyze.py
-```
+## Current evidence owners and correction cascade
 
-No external packages required (stdlib only: json, math, pathlib). Outputs land in `outputs/`.
+The [focused COMP page](../../../food-grade-hdaci-screen-computational.md) owns the invalidated verdict and unranked evidence inventory. The [ABCG2 evidence map](../../../abcg2-modulators.md) owns the surviving Research Conjecture and its discriminating experiment.
 
-The script reads from `inputs/` and writes `outputs/ranking.json` and `outputs/summary.md`. No runtime fetching — all ChEMBL and PubMed data is committed in `inputs/bioactivity_data.json` with full provenance in `inputs/provenance.md`.
+Correction targets in this retirement batch are:
 
----
+- `wiki/food-grade-hdaci-screen-computational.md`
+- `wiki/abcg2-modulators.md`
+- `wiki/validation-experiments.md`
+- `wiki/computational-experiments.md`
+- `wiki/engineered-lbp-chassis.md`
+- `wiki/open-questions.md`
+- `index.md`
 
-## File index
+The remaining repository references are adjudicated as follows:
 
-```
-comp-007-food-grade-hdaci-screen/
-  analyze.py                     ← analysis script (run this)
-  inputs/
-    candidates.json              ← 7 food-grade HDACi candidates with GRAS status, oral BA, food source
-    hdac_targets.json            ← HDAC1/2/3 (on-target) and HDAC6 (off-target) metadata
-    bioactivity_data.json        ← IC50 values from ChEMBL + primary literature; confidence tier per compound
-    provenance.md                ← ChEMBL activity IDs, PubMed PMIDs, DOIs, query dates for every data point
-  outputs/                       ← generated by analyze.py; committed as artifacts
-    ranking.json                 ← machine-readable ranked results
-    summary.md                   ← human-readable; cited in the wiki
-  README.md                      ← this file
-```
+- `wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/analyze.py`, `README.md`, `inputs/provenance.md`, `outputs/results.json`, and `outputs/summary.md` incorrectly attribute local achievable-concentration/IC50 thresholds to COMP-007. COMP-007 supplies no such method. The already-open `synthesis/queue/comp-review-015.md` owns that correction under COMP-015's lifecycle; those thresholds are not decision-eligible as COMP-007 evidence.
+- `wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md` and `outputs/summary.md` describe historical method lineage inside a viability ranking that its current focused page already invalidates. They do not preserve a usable COMP-007 result.
+- `wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/provenance.md` and `outputs/scope-summary.md`, plus `wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md`, contain descriptive historical references only; they do not reuse a rank, score, advancement decision, causal isoform map, exposure proxy, safety inference, or decision rule.
+- References inside this tombstone and its review receipts are retirement provenance, not active scientific evidence.
 
----
+After the seven correction targets are reconciled and the COMP-015 dependency is handed to its existing queue item, `synthesis/queue/comp-review-007.md` is deleted in the same commit.
 
-## Key results
+## Hash-bound retirement record
 
-| Rank | Compound | Mean HDAC1-3 IC50 | HDAC6 IC50 | Sel. ratio | Gut BA | Composite | Confidence |
-|---|---|---|---|---|---|---|---|
-| 1 | **Butyrate** | 12,000 nM | 2,000,000 nM | 167× | 5% | **0.3734** | HIGH |
-| 2 | **Sulforaphane** | 5,000 nM* | N/A | unknown | 70% | **0.0900** | LOW |
-| 3 | **PEITC** | 10,000 nM* | N/A | unknown | 60% | **0.0600** | LOW |
-| 4 | Allyl Mercaptan | 50,000 nM* | N/A | unknown | 25% | 0.0225 | LOW |
-| 5 | DADS | 1,000,000 nM* | N/A | unknown | 40% | 0.0009 | LOW |
-| 6 | Caffeic Acid | N/A | N/A | unknown | 33% | 0.0000 | DATA_UNAVAILABLE |
-| 7 | Ferulic Acid | N/A | N/A | unknown | 30% | 0.0000 | DATA_UNAVAILABLE |
+[`invalidation.json`](./invalidation.json) binds every retired non-review file to the exact pre-retirement Git tree by byte count and SHA-256 and defines the invalidated and surviving scopes.
 
-\* = estimated value (see `inputs/provenance.md`); isoform-specific IC50 not available from ChEMBL or primary literature
-
-**Scoring formula:** `composite = potency_score × selectivity_score × gut_selectivity_score`
-- potency_score: 1/geomean(HDAC1/2/3 IC50 nM), max-normalized
-- selectivity_score: HDAC6_IC50/(HDAC6_IC50 + mean_class_I_IC50), midpoint ratio=10; unknown HDAC6 → penalty 0.30
-- gut_selectivity_score: 1 − oral bioavailability fraction
-
-**Stage 2 advance:** Butyrate, Sulforaphane, PEITC
-**Stage 2 prerequisite (biochemical IC50 screen first):** Caffeic Acid, Ferulic Acid
-
----
-
-## Disagreement protocol
-
-If you reproduce the outputs and disagree with the methods or numbers, file a GitHub issue referencing this folder (`comp-007-food-grade-hdaci-screen`). Primary candidates for revision: IC50 estimates for sulforaphane/AM/PEITC (isoform-specific data, if published after 2026-05-05); HDAC6 selectivity data for any candidate; oral bioavailability values at food-achievable doses; selectivity penalty constant (0.30) or midpoint ratio (10) in the scoring formula.
+There is no reproduction command. Git retains the retired code, inputs, outputs, and reviews.

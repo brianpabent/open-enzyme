@@ -595,19 +595,20 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-007 — Food-Grade HDAC Inhibitor Candidate Screen — Butyrate ranks first on proxy score (2026-05-05)
+### comp-007 — Food-Associated HDAC-Directed Candidate Screen — Invalidated
 
-**Question:** Which food-grade HDAC inhibitor candidates best combine class I potency, HDAC6 selectivity, and gut-enriched exposure for direct Q141K testing?
+**Question:** Could heterogeneous HDAC and exposure evidence support a quantitative priority order for direct Q141K testing?
 
-**Verdict:** **Butyrate (rank 1, 0.374) >> Sulforaphane (rank 2, 0.090) > PEITC (rank 3, 0.060)** on the artifact's candidate score. This ranks direct-test candidates; it does not demonstrate Q141K trafficking or urate-flux rescue.
+**Verdict:** **Invalidated and retired.** The model mixed assay types and analogical estimates, used arbitrary selectivity constants and `1 − oral bioavailability` as an exposure surrogate, and did not use its stored concentration estimates. No rank, score, shortlist, causal HDAC-isoform assignment, HDAC6-centered safety inference, or advancement decision survives.
 
 **Key findings:**
-- Butyrate is the only food-grade compound with biochemical IC50 against all four HDAC isoforms; 167× HDAC1/2/3-over-HDAC6 structurally explained (carboxylate zinc coordination).
-- Sulforaphane ranking fragile; isoform selectivity uncharacterized; indirect mercapturic-metabolite mechanism differs from butyrate.
+- Seven compound names survive only as an unranked evidence inventory.
+- Selected pharmacological HDAC inhibitors provide an in-vitro Q141K-rescue precedent, but direct butyrate rescue, epithelial exposure, ABCG2-attributed urate flux, causal isoform mapping, and safety remain unestablished.
+- The possible combination of butyrate-associated endogenous ABCG2 induction and Q141K trafficking rescue is preserved as a Research Conjecture, not a COMP result.
 
-**Informs:** [validation-experiments §1.22](./validation-experiments.md#122-gut-selective-food-grade-hdac-inhibitor-screen-for-q141k-abcg2-trafficking-rescue) — top 3 advance to Stage 2
+**Informs:** [validation-experiments §1.22](./validation-experiments.md#122-gut-compartment-hdac-directed-candidate-screen-for-q141k-abcg2-trafficking-rescue) — direct, unranked candidate testing
 
-**Detail:** [interpretive](./food-grade-hdaci-screen-computational.md) · [experiments/](./etc/experiments/comp-007-food-grade-hdaci-screen/) · Complete
+**Detail:** [current evidence](./food-grade-hdaci-screen-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-007-food-grade-hdaci-screen/)
 
 ---
 

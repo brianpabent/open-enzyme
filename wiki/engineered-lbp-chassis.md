@@ -64,7 +64,7 @@ This is the structural reason the LBP chassis is a "commercial pharmaceutical pr
 
 ### *Faecalibacterium prausnitzii* (native-butyrate-route candidate)
 
-One of the most abundant species in a healthy human colon (3–5% of total gut bacteria). Strict anaerobe. Strain A2-165 is the model laboratory strain. Native butyrate production motivates the supported WT-ABCG2 induction route and the separate unvalidated Q141K-rescue test.
+One of the most abundant species in a healthy human colon (3–5% of total gut bacteria). Strict anaerobe. Strain A2-165 is the model laboratory strain. Native butyrate production motivates the preclinical endogenous-ABCG2 induction route and the separate unvalidated Q141K-rescue test.
 
 ### *Akkermansia muciniphila* (mucus-layer specialist)
 
@@ -82,15 +82,15 @@ A future direction surfaced by the matrix: rather than picking one chassis, engi
 
 ## Butyrate as a mechanism candidate
 
-One reason to test *F. prausnitzii* engineering for gout is that butyrate has one supported WT-ABCG2 induction route and one separate, unvalidated Q141K-rescue hypothesis:
+One reason to test *F. prausnitzii* engineering for gout is that butyrate has one supported endogenous-ABCG2 induction route in non-Q141K-specific preclinical systems and one separate, unvalidated Q141K-rescue hypothesis:
 
-1. **Wild-type ABCG2 (everyone):** butyrate → PPARγ activation → upregulated ABCG2 transcription → more urate efflux from blood into the gut lumen. Mechanism: well-characterized; DASH RCT shows 0.25–0.73 mg/dL UA reduction in fiber-rich diets. (Clinical Trial / Mechanistic; source: [`abcg2-modulators.md`](./abcg2-modulators.md) §Inducers.)
+1. **Endogenous ABCG2 induction:** Xie et al. found butyrate-associated increases in intestinal BCRP/ABCG2 expression and drug-substrate function in non-Q141K-specific preclinical systems; PPARγ perturbation supported dependence in Caco-2. The study did not use urate, and human fiber trials do not isolate this mechanism. (**In Vitro + Animal Model**; source: [`abcg2-modulators.md`](./abcg2-modulators.md) §Inducers.)
 
 2. **Q141K variant ABCG2:** pharmacological/chemical-chaperone rescue is established in vitro (Basseville 2012, PMID 22472121), but direct rescue by LBP-derived butyrate is not. Butyrate remains a candidate requiring surface-trafficking and functional urate-flux testing. (Mechanistic Extrapolation; source: [ABCG2 modulators](./abcg2-modulators.md).)
 
-This is not yet genotype-agnostic coverage. WT-ABCG2 induction is the supported target; Q141K rescue requires direct surface-trafficking and functional urate-flux validation with LBP-achievable butyrate exposure.
+This is not yet genotype-agnostic coverage. Endogenous-ABCG2 induction is the supported preclinical target, but its genotype dependence is unmeasured; Q141K rescue requires direct surface-trafficking and functional urate-flux validation with LBP-achievable butyrate exposure.
 
-The ranking work in [`food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md) (comp-007, 2026-05-05) further validates butyrate's profile: it is the only food-grade HDAC inhibitor with biochemical IC50 data for all four relevant HDAC isoforms (HDAC1/2/3/6), and its 167× class-I-over-HDAC6 selectivity puts it ahead of every screened alternative. The challenge with butyrate is **continuous gut-luminal availability** — orally dosed butyrate is rapidly absorbed in the small intestine and does not reach the colon. A colonically resident butyrate producer might address that exposure problem, but this remains a research conjecture: it requires demonstrated colonization density, butyrate titer, epithelial exposure, and, for Q141K rescue specifically, the still-unvalidated direct-rescue mechanism.
+COMP-007 cannot prioritize butyrate over other materials; its ranking and HDAC6-centered safety inference are invalid. Butyrate remains interesting because of the independent endogenous-ABCG2 induction evidence and the separate, untested possibility of Q141K trafficking rescue. A colonically resident producer is one delivery hypothesis, not a solved route: it requires demonstrated genetic stability, colonization-relevant fitness, butyrate titer, epithelial intracellular exposure, surface trafficking, ABCG2-attributed urate flux, and safety.
 
 ---
 
@@ -182,8 +182,8 @@ The current preliminary program landscape:
 ## Cross-References
 
 - [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) — cross-modality comparison
-- [`abcg2-modulators.md`](./abcg2-modulators.md) — WT-ABCG2 PPARγ pathway and the unvalidated direct-butyrate Q141K-rescue hypothesis
+- [`abcg2-modulators.md`](./abcg2-modulators.md) — endogenous-ABCG2 PPARγ pathway and the unvalidated direct-butyrate Q141K-rescue hypothesis
 - [`open-questions.md`](./open-questions.md) — related unresolved questions
 - [`computational-experiments.md`](./computational-experiments.md) — comp-008 tracking
-- [`food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md) — comp-007; validated butyrate's HDAC isoform profile
+- [`food-grade-hdaci-screen-computational.md`](./food-grade-hdaci-screen-computational.md) — invalidated COMP-007 ranking and current unranked evidence inventory
 - [`hypotheses/H02-engineered-lbp-thesis.md`](./hypotheses/H02-engineered-lbp-thesis.md) — falsification card

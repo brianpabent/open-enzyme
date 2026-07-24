@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/README.md",
+      "kind": "design",
+      "bytes": 4599,
+      "sha256": "d5c108ca72a02c5a8d756796cbe230f3ff5d3516c8d48741b5b682879e05f296"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/invalidation.json",
+      "kind": "design",
+      "bytes": 3988,
+      "sha256": "b3537a72f144966c8ad7a617159b4f579a806b08b3999bc965d9edda0670de55"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "fc26a394962e842a321f4c7dedd01f70f69a229f52cac2ad567fd07184d7407d"
+}
