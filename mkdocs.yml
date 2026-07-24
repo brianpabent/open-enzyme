@@ -178,7 +178,7 @@ nav:
     - Supplement ABCG2 Antagonism (comp-004): supplement-abcg2-antagonism-computational.md
     - Retired Cassette Compatibility Model (comp-010): cassette-compatibility-computational.md
     - Retired C. utilis Cassette Compatibility Model (comp-011): c-utilis-uricase-cassette-compatibility-computational.md
-    - Uricase Cassette Ranking, ClockBase-Style (comp-022): uricase-cassette-ranking-computational.md
+    - Retired Uricase Cassette Ranking (comp-022): uricase-cassette-ranking-computational.md
     - DAF SCR1-4 Cassette Configuration (comp-030 retired): daf-cd55-scr14-cassette-ranking-computational.md
     - Cordycepin Route — Retired Burden FBA + Experimental Gate (comp-023): cordycepin-cassette-burden-computational.md
     - Disulfiram Dose Modeling (comp-027): disulfiram-dose-modeling-computational.md

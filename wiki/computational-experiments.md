@@ -338,21 +338,17 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-022 — *A. oryzae* Uricase Cassette Search Space — CORRECTIVE REVIEW OPEN
+### comp-022 — *A. oryzae* Uricase Cassette Ranking — INVALIDATED
 
-**Question:** Across the *A. oryzae* uricase cassette design space (43,200 combinations), which cassettes survive a multi-model concordance gate?
+**Question:** Could heterogeneous computational proxies identify an *A. oryzae* UOX cassette to advance?
 
-**Current verdict:** **Enumeration survives; the shortlist does not currently authorize candidate selection.** One ranking axis uses uncalibrated chaperone-load coefficients inherited from the retired folding-score framework. The other axes describe different intermediate properties and were not calibrated to one shared biological outcome. The open review must recompute or retire every shortlist and “winner” claim dependent on that axis; §1.33 separately determines whether an exact configuration works under the intended physiological conditions.
+**Verdict:** **No; the ranking is invalidated and non-runnable.** The CAI, RNA-structure, chaperone-load, promoter–signal-peptide, and ESM2 axes were not calibrated to one named biological outcome. No score, rank, tier, shortlist, winner, component preference, gene-synthesis recommendation, or expression/fold/secretion/function inference survives.
 
-**Key findings:**
-- The enumerated promoter, signal-peptide, codon, scaffold, and routing choices remain a hypothesis inventory, not a ranked build list.
-- The reported N-of-5 tiers, direct-secretion cluster, gene-synthesis refinements, and GlaA-KEX2 ordering depend on the current scoring system and are not decision-eligible.
-- PTS1 masking, codon design, direct secretion, GlaA-KEX2 processing, and other topologies remain separate empirical configuration questions.
-- v1 GC-clamp proxy vs real ViennaRNA MFE Spearman ρ = 0.241; v2 materially shifted ranks while preserving the internal direct-secretion cluster.
+**What survives:** The declared 43,200-row enumeration is a historical inventory fact only. Direct secretion, GlaA-KEX2 processing, promoter, signal-peptide, codon, terminal, propeptide, and glycosylation choices remain unranked experimental factors. Exact constructs require matched expression, processing, localization, native-state, active-product, oxygen/peroxide, viability, and process-retention measurements.
 
-**Informs:** [validation-experiments §1.33 (topology gate) + conditional §1.9B](./validation-experiments.md) · [cassette-compatibility-computational](./cassette-compatibility-computational.md) · [koji-endgame-strain §3.4](./koji-endgame-strain.md) · [etc/autonomous-screening-methodology](./etc/autonomous-screening-methodology.md)
+**Historical corrections:** Four of four v1 cluster rows entered the retired v2 N-of-five ≥4 tier, but only one entered N-of-five =5; the strict tier included PTS1-blocked and unblocked routes. The file called `esmfold_pLDDT.csv` held rescaled single-pass ESM2 log probabilities, not ESMFold pLDDT. Q00511 residues 191–193 are `NFS`, not `NSS`.
 
-**Detail:** [current evidence boundary](./uricase-cassette-ranking-computational.md) · [open corrective review](../synthesis/queue/comp-review-022.md) · [artifact](./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/)
+**Detail:** [current evidence boundary](./uricase-cassette-ranking-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-022-clockbase-uricase-cassette-ranking/) · [matched construct design](./koji-construct-design.md) · [validation §1.5 and §1.33](./validation-experiments.md)
 
 ---
 
@@ -666,13 +662,12 @@ verdict, evidence-cell comparison, or H-AN-02 adjudication survives.
 | ~~comp-003~~ | Reassigned 2026-05-05 → comp-005 (lactoferrin cleavage-site analysis) | — | ✓ Done as comp-005 |
 | ~~comp-008~~ | Invalidated, non-runnable hand-scored payload rubric. Stable transformation + reporter expression is the common genetic-entry gate; native-pathway, uricase, lactoferrin, and CR1 tests remain separate unranked configuration questions. | [engineered-lbp-chassis](./engineered-lbp-chassis.md) | Retired |
 | ~~comp-009~~ | Invalidated, non-runnable target-site ranking. No guide, filter funnel, score, shortlist, GREEN verdict, accessibility, specificity, cross-species reuse, target-site-availability conclusion, H03 support, or P2-2 closure survives. | [invalidated interpretation](./urat1-sirna-target-site-selection-computational.md) | Retired |
-| comp-048 | Human proximal-tubule delivery-handle screen: search for internalizing surface receptors that co-localize with SLC22A12-positive cells while separating target coverage, kidney/systemic off-target expression, protein/spatial support, and internalization evidence | [pre-run design](./etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/) | Pre-run design |
+| comp-048 | Human proximal-tubule delivery-handle screen: identify surface-expression and topology candidates while keeping receptor identity, internalization, polarity, target coverage, and off-target expression as separate evidence gates | [pre-run design](./etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/) | Gate 1 GO; not run |
 | ~~comp-011 TCM~~ | Reassigned 2026-05-05; TCM ChEMBL cross-check landed as comp-013 | — | ✓ Done as comp-013 |
 | ~~comp-021~~ | Invalidated, non-runnable mixed-tier assay-format model. Matched-format replication planning survives only as a conjecture; no quantitative range, candidate rank, or operative gut potency survives. | [assay-format conjecture](./upstream-complement-assay-format-mapping-computational.md) | Retired |
-| comp-022 | Corrective review open; enumeration survives, current shortlist non-authoritative | [open actions](../synthesis/queue/comp-review-022.md) | Open |
+| ~~comp-022~~ | Invalidated, non-runnable cassette ranking. The 43,200-row enumeration survives only as historical inventory; every rank, tier, shortlist, winner, and component preference is retired. | [evidence boundary](./uricase-cassette-ranking-computational.md) | Retired |
 | ~~comp-024~~ | Invalidated, non-runnable hand-scored model. Complestatin tailoring and C1-INH expression/folding/function require separate configuration-level tests. See Analyses above | — | Retired |
 | ~~comp-023~~ | Invalidated, non-runnable FBA. Jeennor's direct *A. oryzae* production evidence and one ER-orthogonality conjecture survive independently; burden, flux, yield, breakpoint, and feasibility results do not. | [cordycepin route](./cordycepin-cassette-burden-computational.md) | Retired |
-| comp-022 v2 | Included in the same open corrective review | [open actions](../synthesis/queue/comp-review-022.md) | Open |
 | ~~comp-023 v2~~ | Deprioritized 2026-05-16 — koji-cordycepin removed from active stack ([koji-endgame-strain §3.5](./koji-endgame-strain.md)) | — | Closed |
 | ~~comp-025~~ | Deprioritized 2026-05-16 — koji-cordycepin removed; cultivation-route cordycepin inherits native ADA-inhibitor pairing | — | Closed |
 | ~~comp-026~~ | Deprioritized 2026-05-16 — multi-cassette induction interference moot for cordycepin; re-openable for future cytosolic third-cassette candidate | — | Closed |

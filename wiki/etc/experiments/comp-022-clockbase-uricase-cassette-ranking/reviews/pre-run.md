@@ -1,57 +1,52 @@
 PRE_RUN_GATE: GO
-REVIEWED_SNAPSHOT: 05295607e9d85e60979e7dbf58f5dcf169b958450da1749b64b7ee951c705e0e
+REVIEWED_SNAPSHOT: 5d60f71b00c8fbdf95ccadec3b7fd9bfc742d7ce0bb3928471b268b9ac19dd86
 
 # Adversarial pre-run review — comp-022
 
 ## Reviewed snapshot
 
-Reviewer `/root/comp022_pre_review_v2`; 21 design files and 6 prior-output baselines. The manifest payload, byte counts, and file hashes matched every inspected file.
+Reviewer: `/root/comp022_retirement_gate1`. The two-file manifest payload,
+file hashes, and byte counts matched the inspected `README.md` and
+`invalidation.json`.
+
+All 26 retired non-review files matched commit
+`5b0a548445bde2da5395be65fb8042f3b033a350` by path, byte count, and SHA-256.
+The retirement digest independently recomputed to
+`d68d0e0b7e8a8461494ac232cf40ad6912034a99d6bdd3dfc7ac4f052d95b3d9`.
 
 ## Bottom-line verdict
 
-GO for this provenance/narrative correction only. No result-bearing execution is planned or justified. The changes correct source ownership and epistemic labels without altering executable parameters, ranking logic, decision rules, outputs, or existing corrective actions.
+GO authorizes the retirement disposition, not execution of the historical
+analysis. No COMP-022 score, rank, shortlist, tier, winner, component
+preference, gene-synthesis recommendation, or downstream inference remains
+decision-eligible.
 
-## Question and model fit
+The declared 43,200-row enumeration survives only as historical inventory.
+Direct secretion, GlaA-KEX2 processing, and the other cassette variables remain
+unranked empirical questions. A successor COMP is not required until exact
+cassette selection will drive near-term gene-synthesis spending.
 
-COMP-022’s ranking question and downstream decision remain unchanged. The correction:
+## Independent checks
 
-- Relabels COMP-010 and COMP-011 consistently with their non-runnable invalidation tombstones.
-- Attributes Q00511 sequence and zero-`DISULFID` annotation to UniProt rather than retired COMPs.
-- Attributes the fixed codon table directly to Kazusa/Nakao/Machida.
-- Treats terminal SKL as motivation for a routing test, not evidence of partial peroxisomal loss.
-- Labels the rare-codon threshold and glycan/PTS1 penalties as heuristics or hypotheses.
-
-## Constraint and implementation audit
-
-The five changed files contain 23 added and 23 removed lines. After stripping documentation strings, the `analyze.py` executable AST is identical to HEAD. The four `parts_list.json` changes affect only `_meta.target_gene` and three unused `evidence` strings; all numeric fields and enumerated parts are unchanged.
-
-The v1 output tree, complete v2 tree, and all six prior-output baselines are byte-identical to HEAD. No score, cutoff, cohort, shortlist, composite, verdict mapping, output schema, or reproduction command changed.
-
-Current COMP-010/011 tombstones explicitly invalidate their cassette, codon, PTS1, glycosylation, folding, routing, and chassis conclusions. COMP-022 no longer presents either retired model as evidence.
-
-## Load-bearing pre-run table
-
-| Planned claim or parameter | Artifact location | Intended implementation use | Provenance status | Verdict |
-|---|---|---|---|---|
-| COMP-010/011 status | `README.md:13` | Related-experiment labels | Matches current invalidated tombstones | Pass |
-| Q00511 sequence and disulfide annotation | Input and root provenance | Existing sequence assertion and load input | Reattributed to UniProt; FASTA/value unchanged | Pass |
-| Terminal SKL/PTS1 penalty | `analyze.py:23-24`; input provenance | Existing 0.3 heuristic penalty | Explicitly a routing hypothesis; value unchanged | Pass |
-| Intrinsic glycan penalty | `analyze.py:363` | Existing 0.2 heuristic load | Explicitly heuristic with occupancy unmeasured; value unchanged | Pass |
-| Rare-codon rule | `parts_list.json:224`; input provenance | Existing fixed codon heuristic | No longer sourced to retired COMP-010; logic unchanged | Pass |
-| Ranking and outputs | v1/v2 code and outputs | Historical result set | Byte-identical; no rerun | Pass |
-
-## Falsification, sensitivity, and output contract
-
-No falsification rule, sensitivity plan, baseline, threshold, diagnostic, or output contract changed. Running the experiment would incorrectly imply new numerical evidence.
-
-## Downstream authoring contract
-
-The existing seven-item `synthesis/queue/comp-review-022.md` action list remains unchanged and open. This correction does not resolve the v1/v2 strict-tier wording, PTS1 interpretation, README v2 note, `v2_top25.md` ambiguity, ESM2 naming, corpus-wide stale claims, or exhaustive row-audit action.
+- The historical program enumerated `6 × 12 × 10 × 60 = 43,200` labels.
+- All four defined v1-cluster rows entered the retired v2 N-of-five ≥4 tier;
+  only one entered N-of-five =5. The strict tier contained PTS1-blocked and
+  unblocked routes, so it did not confirm PTS1 masking.
+- `esmfold_pLDDT.csv` contains single-pass ESM2 log probabilities rescaled to
+  50–90. The producing code did not run ESMFold or calculate pLDDT.
+- The bound 302-residue Q00511 sequence contains `NFS` at residues 191–193
+  and terminates in `SKL`, matching the reviewed UniProt Q00511 record. N191Q
+  would disrupt the N-X-S sequon, but the model established no mutation
+  preference.
+- Compartment, processing, native or oligomeric state, active fraction,
+  oxygen, peroxide, and viability remain mandatory downstream measurements.
 
 ## Required actions before execution
 
-None. No result-bearing execution is planned or authorized by this receipt.
+None.
 
 ## Review limits
 
-This GO is strictly scoped to the manifest-bound provenance/narrative correction. It does not revalidate historical COMP-022 rankings, independently reverify primary literature, or close any existing COMP-022 queue action.
+Static, read-only retirement review. No historical model or result-bearing code
+was executed. Historical outputs were inspected only to verify the bounded
+inventory, tier correction, proxy characterization, and sequence facts.

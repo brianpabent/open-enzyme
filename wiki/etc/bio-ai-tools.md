@@ -558,31 +558,28 @@ Output: Safety assessment document (white paper format) with:
 
 ---
 
-#### Use Case 4: Personalized Supplementation Stack Design
+#### Use Case 4: Compound-Evidence and Safety-Landscape Mapping
 
 **Prompt to Claude:**
 
 ```text
-Generate a personalized anti-gout supplement stack for a 55-year-old male with:
-- Serum uric acid: 8.2 mg/dL
-- Recent gout flare (ankle, resolved but recurrent)
-- No significant comorbidities (kidney function normal)
-- Cannot tolerate allopurinol (rash)
-- Interested in NLRP3 inflammasome targeting (not just uric acid lowering)
+Map research-stage compounds proposed to affect NLRP3-relevant gout
+mechanisms without producing a treatment protocol.
 
 Task:
-1. Design a multi-compound stack targeting multiple NLRP3 chokepoints
-2. Each compound should have published human or animal evidence
-3. Address drug-supplement interactions
-4. Provide dosing, timing, sourcing
-5. Cost breakdown
-6. Monitoring biomarkers (to assess efficacy)
-7. Timeline (when to escalate if not working)
+1. Separate direct gout evidence from adjacent-disease or mechanistic evidence
+2. Preserve Clinical Trial, Human Observational, Animal Model, In Vitro, and
+   Mechanistic Extrapolation boundaries
+3. Identify exposure, delivery, interaction, and safety constraints
+4. State which combinations are unsupported conjectures rather than facts
+5. Propose the cheapest discriminating research observation for each lead
+6. Exclude personalized dosing, timing, sourcing, or treatment escalation
 
-Output: Personalized protocol document (similar to [[supplements-stack]] but individualized)
+Output: Research evidence matrix plus falsification priorities
 ```
 
-**Expected output:** [[supplements-stack]]-level detail but customized to one person's needs.
+**Expected output:** A research-only comparison that can inform hypothesis
+selection without becoming medical advice.
 
 ---
 
@@ -774,7 +771,7 @@ A first end-to-end test (uricase variant landscape + *A. oryzae* expression evid
 
 | Paper | Abstract / body says | `map` returned |
 |---|---|---|
-| PMC9773812 (Najjari 2022, PASylated UOX) | *A. flavus* UOX, K<sub>m</sub> 52.61 µM | *A. globiformis* uricase variant, K<sub>m</sub> 0.007 mM (~7,500× off) |
+| PMC9773812 (Najjari 2022, PASylated UOX) | *A. flavus* UOX, K<sub>m</sub> 52.61 µM | *A. globiformis* uricase variant, K<sub>m</sub> 0.007 mM (~7.5× off) |
 | PMC4881585 (Xie 2016, chimeric uricase) | Porcine-human exon-replacement chimera | *P. chrysogenum*-human exon chimera (different organism) |
 | PMC10561068 (Yan 2023, *Arthrobacter* CSAJ-16) | Optimal T 20°C, K<sub>m</sub> 0.048 mM | Optimal T 40°C, K<sub>m</sub> 0.015 mM |
 | PMC12106716 (Rahbar 2025, A. flavus disulfide design) | Pure computational paper — no wet-lab | Invented Tm, K<sub>m</sub>/k<sub>cat</sub> measurements; named non-existent mutation pair |
@@ -865,8 +862,8 @@ The protein-design-mcp package is **directly deployable** — OE could mount it 
 
 ### What this means for OE
 
-1. **N-of-M voting is useful only when the axes are independent enough and calibrated to the decision they vote on.** BioDesignBench supports deeper multi-metric evaluation, not arbitrary score aggregation. COMP-022 is a counterexample-in-review: its current shortlist combines heterogeneous proxies, including an uncalibrated chaperone-load axis, so the N-of-5 result is not candidate-selection authority.
-2. **Continue auditing OE's comp-NNNs for shallow-eval risk.** Comp-019, comp-023, and comp-024 are invalidated counterexamples: multiple outputs or factors did not create independent, calibrated evidence. Comp-022 remains under corrective review because one ranking axis uses uncalibrated coefficients. Apply the three-axis audit—multiple candidates, genuinely independent calibrated metrics, and head-to-head filtering—to comp-025, comp-026, comp-027, and later artifacts. Current status lives in [`autonomous-screening-methodology.md` §"BioDesignBench evaluation-depth audit"](./autonomous-screening-methodology.md).
+1. **N-of-M voting is useful only when the axes are independent enough and calibrated to the decision they vote on.** BioDesignBench supports deeper multi-metric evaluation, not arbitrary score aggregation. Retired COMP-022 is the counterexample: its heterogeneous proxies and uncalibrated chaperone-load axis supplied no candidate-selection authority.
+2. **Continue auditing OE's comp-NNNs for shallow-eval risk.** Comp-019, comp-022, comp-023, and comp-024 are invalidated counterexamples: multiple outputs or factors did not create independent, calibrated evidence. Apply the three-axis audit—multiple candidates, genuinely independent calibrated metrics, and head-to-head filtering—to comp-025, comp-026, comp-027, and later artifacts. Current status lives in [`autonomous-screening-methodology.md` §"BioDesignBench evaluation-depth audit"](./autonomous-screening-methodology.md).
 3. **Tool-stack gap is concrete and addressable.** For OE's DAF SCR1-4 + lactoferrin redesign work, RFdiffusion + ProteinMPNN are the canonical de-novo / sequence-design tools that the protein-design-mcp package would unlock at near-zero integration cost.
 4. **Citation hook.** Direct reference for both [`autonomous-screening-methodology.md`](./autonomous-screening-methodology.md) §"Computational-to-wet-lab handoff: N-of-M concordance" and the cross-vendor heterogeneity-guard paper draft.
 

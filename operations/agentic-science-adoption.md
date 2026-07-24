@@ -23,7 +23,7 @@ Two independent groups (FutureHouse / Robin and Google DeepMind / Gemini for Sci
 
 This document captures the methodology changes worth adopting, the tooling decisions worth making (or deferring), and the first validation instance — **comp-038 tier-2-butyrate-assay-audit** — which tests whether an agentic literature-synthesis cycle can resolve a documented OE assay-infrastructure gap without defaulting to extra API spend when Codex can perform the GPT-5.5 synthesis role in-session.
 
-The parallel strategic reflection ([`../synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md`](../synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md)) names six OE stuck items that may be eligible for re-classification from "wet-lab gated" to "agentic-search candidate." This operations doc handles the *methodology and tooling*. The reflection handles the *what gets re-classed*.
+The [current autonomous-screening methodology](../wiki/etc/autonomous-screening-methodology.md) owns the reusable decision rules for when search or computation can advance a question and when an empirical gate remains necessary. This operations doc records the methodology and tooling rationale.
 
 ## Why this lands now
 
@@ -49,7 +49,7 @@ These are the methodological units worth incorporating into OE's workflow. Each 
 
 **Where it applies in OE:**
 
-- **comp-022 / comp-032 chaperone-orthogonal stacking** — the framework's coefficients (per [synthesis queue riskiest-assumption-1](../synthesis/queue/2026-05-20-riskiest-assumption-1-the-chaperoneorthogonal-stacking-frameworks-coefficients.md)) rest on expert-estimate values, not large-scale empirical datasets. Multi-trajectory analysis with different starting prompts and consensus selection would surface which coefficients are robust to phrasing and which are artifact.
+- **Historical heuristic rankers such as comp-022 and comp-032** — both lost decision authority for different reasons: comp-022 combined uncalibrated heterogeneous axes, while comp-032 embedded a drug-class prior in its score. Multiple LLM trajectories can expose prompt-sensitive assumptions, but consensus cannot calibrate an invented coefficient or rescue either ranking.
 - **Any future comp-NNN protease/stability analysis** — pLDDT-vs-SASA, monomer-vs-tetramer, point-estimate-vs-distribution. Run 8 trajectories with different defensible methodology choices, report consensus.
 - **Subagent peer review pass** in the existing `new-comp-experiment` workflow — currently single subagent run; the Robin pattern argues for N parallel reviewers with consensus on "which limitations are real."
 
@@ -65,7 +65,7 @@ These are the methodological units worth incorporating into OE's workflow. Each 
 
 **Where it applies in OE:**
 
-- **comp-032 (and follow-ups) pharmacological-chaperone candidate ranking** — currently the comp-032 output ranks candidates by composite score. Re-ranking with pairwise tournament would tighten the top-3 vs top-10 boundary that drives wet-lab spend on the ABCG2 Q141K trafficking assay.
+- **Future pharmacological-chaperone candidate comparisons** — COMP-032's composite ranking is retired, and COMP-047's rigid-docking rescreen was inconclusive. A pairwise tournament could compare a future evidence-grounded candidate set only after the candidate properties are established by a method suited to folding rescue; it cannot re-rank the old list into wet-lab-spend authority.
 - **Synthesis-queue triage** — `walk-synthesis` currently walks items in arrival order. A pre-pass that pairwise-ranks queue items by leverage (defined: blocks-most-downstream-work × tractability × cost) would let the walk happen in leverage order.
 - **Any future multi-candidate evaluation step** in comp-NNN experiments where the analysis surfaces a ranked list (drug candidates, strain variants, formulation conditions, etc.).
 
@@ -188,7 +188,7 @@ For N <= 6 candidates: full pairwise (15 comparisons). For N > 6: Swiss-style (e
 
 **Question:** Is there a Tier 2 butyrate quantification assay (colorimetric, enzymatic, or breath-hydrogen proxy) that can be validated against Tier 3 GC-MS to close the microbiome-metabolite quantification gap?
 
-**Why this question:** Already named in [synthesis queue open-question-2](../synthesis/queue/2026-05-20-open-question-2-is-there-a-tier2-butyrate-assay-colorimetric-enzymatic-or.md) and [synthesis queue connection-5](../synthesis/queue/2026-05-20-connection-5-the-tier2-butyrate-assay-gap-identified-in-the.md) — both Pass-3 confirmed as "prioritize, $0 desk audit before wet-lab investment." The gap blocks every microbiome-derived intervention downstream (engineered LBP butyrate-boost, bile-acid modulators, indole-based AhR agonists). It's pure literature synthesis. It's the cleanest possible test of the Robin-cycle methodology against OE's actual stuck list.
+**Why this question:** The [current assay evidence page](../wiki/tier-2-butyrate-assay-audit-computational.md) preserves the underlying gap and its empirical validation boundary. The question is a clean test of the Robin-cycle methodology because literature synthesis can nominate assay formats before wet-lab investment without pretending to validate them.
 
 **Sub-type:** agentic-literature-synthesis (proposed comp-NNN extension above)
 
@@ -236,21 +236,20 @@ Deliverable: a comp-038 retrospective section in the README documenting whether 
 Honest delineation, in the spirit of operations/README.md's "caveats are the recruiting angle" rule:
 
 - **Not a claim that Robin/Gemini-for-Science replace wet lab.** Robin's own paper is honest: humans selected 5 of 30 candidates to test, swapped pHrodo beads for ROS, used ARPE-19 instead of suggested primary cells, ran the LDH cytotoxicity assay. "Semi-autonomous" is the right framing. The pattern shifts priors and triages. It doesn't run experiments.
-- **Not a claim that OE's stuck list dissolves under agentic search.** Some items genuinely need wet lab (SGF protein stability under actual shio-koji conditions; ABCG2 Q141K trafficking assay in real cells). The reflection at [`../synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md`](../synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md) names which items are eligible for re-classification and which aren't.
+- **Not a claim that OE's stuck list dissolves under agentic search.** Some items genuinely need wet lab (SGF protein stability under actual shio-koji conditions; ABCG2 Q141K trafficking assay in real cells). The [current methodology](../wiki/etc/autonomous-screening-methodology.md) requires that search, computation, and empirical validation retain distinct roles.
 - **Not a blanket methodology victory from one run.** The proposed comp-NNN sub-type extension remains provisional after comp-038. If follow-up review finds the recommendation weak, or if future instances burn budget without converging, the extension does not land as standard practice.
 - **Not a claim that any one of these models is "better."** The Deep Think bench is the empirical question. Until that runs, no model claim in this document is load-bearing.
 - **Not a commitment to fork Aviary.** comp-038 deliberately starts with an OE-native runner. If that runner proves brittle or spends too much effort on generic retrieval/orchestration, Aviary / PaperQA2 gets revisited for the next cycle.
 
 ## Cross-references
 
-- [`../synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md`](../synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md) — sister strategic reflection; names the six OE stuck items eligible for re-classification
+- [`../wiki/etc/autonomous-screening-methodology.md`](../wiki/etc/autonomous-screening-methodology.md) — current reusable screening and evidence-boundary rules
 - [`../wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/`](../wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/) — first validation instance scaffold
 - [`./README.md`](./README.md) — operations folder framing
 - [`./operational-search-template.md`](./operational-search-template.md) — sister operations doc class (resource-acquisition bottlenecks). This doc is the methodology-adoption analog.
 - [`../.claude/skills/new-comp-experiment/SKILL.md`](../.claude/skills/new-comp-experiment/SKILL.md) — the skill this doc proposes extending
-- [`../synthesis/queue/2026-05-20-open-question-2-is-there-a-tier2-butyrate-assay-colorimetric-enzymatic-or.md`](../synthesis/queue/2026-05-20-open-question-2-is-there-a-tier2-butyrate-assay-colorimetric-enzymatic-or.md) — the queue item that comp-038 addresses
-- [`../synthesis/queue/2026-05-20-connection-5-the-tier2-butyrate-assay-gap-identified-in-the.md`](../synthesis/queue/2026-05-20-connection-5-the-tier2-butyrate-assay-gap-identified-in-the.md) — the platform-level framing of the same gap
-- [`../synthesis/queue/2026-05-20-riskiest-assumption-1-the-chaperoneorthogonal-stacking-frameworks-coefficients.md`](../synthesis/queue/2026-05-20-riskiest-assumption-1-the-chaperoneorthogonal-stacking-frameworks-coefficients.md) — N-trajectory consensus pattern target
+- [`../wiki/tier-2-butyrate-assay-audit-computational.md`](../wiki/tier-2-butyrate-assay-audit-computational.md) — current comp-038 evidence boundary
+- [`../wiki/chaperone-orthogonal-stacking.md`](../wiki/chaperone-orthogonal-stacking.md) — current home for the framework whose assumptions require calibration
 
 ## Provenance
 
