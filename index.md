@@ -115,6 +115,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[SPM Resolution Pathway](wiki/spm-resolution-pathway.md)** — CP5b: RvD1/MaR1 direct MSU gout animal model evidence; ALX/FPR2 agonism; aspirin-triggered resolvins
 - **[Self-Experiment Protocol](wiki/self-experiment-protocol.md)** — N-of-1 monitoring framework with biomarker, diary, attribution, and halt-criteria controls.
 - **[Enzyme Quantification Protocol](wiki/enzyme-quantification-protocol.md)** — Tiered assays for amylase, protease, and lipase activity from kitchen-scale through outsourced testing.
+- **[Butyrate Measurement Audit](wiki/tier-2-butyrate-assay-audit-computational.md)** — Matrix-specific culture-supernatant and stool measurement options, their evidence boundaries, and the paired reference-method gates required before use.
 - **[Medicinal Mushroom Extract SOPs](wiki/medicinal-mushroom-extract-sops.md)** — Planned characterization methods for mushroom extracts, active compounds, functional readouts, and strain identity.
 - **[Open Questions](wiki/open-questions.md)** — Cross-wiki index of unresolved scientific questions organized by chokepoint and mechanism.
 - **[Modality × Target Matrix](wiki/modality-chokepoint-matrix.md)** — Crosses intervention modalities with anatomical and cellular targets to expose underexplored combinations.

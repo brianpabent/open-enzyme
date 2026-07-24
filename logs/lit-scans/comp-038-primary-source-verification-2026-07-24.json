@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "scan_id": "comp-038-primary-source-verification-2026-07-24",
+  "question": "Which claims in the unsupported COMP-038 July addendum are directly reconstructable from De Baere 2013 and Gu 2026, and what source-access and validation boundaries apply?",
+  "started_at": "2026-07-24T20:29:04Z",
+  "completed_at": "2026-07-24T20:40:45Z",
+  "canonical_updates": [
+    "wiki/tier-2-butyrate-assay-audit-computational.md",
+    "wiki/computational-experiments.md",
+    "wiki/open-questions.md",
+    "wiki/quantification-ladder.md",
+    "wiki/validation-experiments.md"
+  ],
+  "query_attempts": [
+    {
+      "source": "U.S. EPA HERO",
+      "language": "en",
+      "frame": "direct identifier primary-source abstract verification",
+      "query": "PMID 23542733; DOI 10.1016/j.jpba.2013.02.032",
+      "status": "partial",
+      "result_count": 1,
+      "error": "The official record reproduced the primary abstract and supported the recorded abstract-level method fields, but a full article was not available through the accessed path."
+    },
+    {
+      "source": "NCBI PMC BioC",
+      "language": "en",
+      "frame": "direct identifier primary-source full-text verification",
+      "query": "PMCID PMC13114974; PMID 42041444; DOI 10.3390/bios16040223",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    }
+  ],
+  "source_ids_considered": [
+    "PMID:23542733",
+    "DOI:10.1016/j.jpba.2013.02.032",
+    "PMID:42041444",
+    "PMCID:PMC13114974",
+    "DOI:10.3390/bios16040223"
+  ],
+  "translation_checks": [],
+  "load_bearing_verifications": [
+    {
+      "claim": "De Baere supports bacterial-culture-supernatant HPLC-UV at 210 nm after ether back-extraction and acidification below pH 2, with matrix-matched 0.5-50 mM calibration and analyte-spanning LOD/LOQ ranges of 0.13-0.33/0.5-1.0 mM.",
+      "primary_source": "PMID:23542733; DOI:10.1016/j.jpba.2013.02.032",
+      "status": "verified_at_primary_abstract_scope"
+    },
+    {
+      "claim": "The accessible De Baere source does not explicitly support the shorthand underivatized.",
+      "primary_source": "PMID:23542733",
+      "status": "retracted"
+    },
+    {
+      "claim": "Gu used the VBS-100/G3-electrode, alkaline butyrate pretreatment, voltammetric feature-extraction, and ANN stack and compared its predictions with GC-MS in a within-study independent 30-sample fecal test cohort.",
+      "primary_source": "PMID:42041444; PMCID:PMC13114974",
+      "status": "verified_at_full_text_scope"
+    },
+    {
+      "claim": "Gu reported fecal test-cohort butyrate MAE/RMSE/R2 of 0.029 mM/0.034 mM/0.998, 24 of 30 samples within plus or minus five percent, and a -0.015 mM bias with limits -0.065 to 0.035 mM and p-values 0.0027/0.0031.",
+      "primary_source": "PMID:42041444; PMCID:PMC13114974",
+      "status": "verified_at_full_text_scope"
+    },
+    {
+      "claim": "The Gu test cohort is within the source study and does not establish independent external replication or Open Enzyme method qualification.",
+      "primary_source": "PMID:42041444; PMCID:PMC13114974",
+      "status": "verified_boundary"
+    },
+    {
+      "claim": "No evidence artifact establishes that a July 14 full-text verification of both papers occurred.",
+      "primary_source": "Git history and reachable COMP-038 artifact history",
+      "status": "retracted"
+    }
+  ],
+  "limitations": [
+    "This was targeted verification of two named sources, not a refreshed assay-landscape search or systematic review.",
+    "The De Baere full article was not available through the accessed path, so its retained claims are limited to fields stated in the primary abstract.",
+    "The Gu source reports within-study test-cohort performance and does not supply independent external replication.",
+    "Neither source qualifies a method for an Open Enzyme matrix or workflow.",
+    "No non-English text was encountered, so the two-model translation protocol was not triggered."
+  ],
+  "errors": [
+    "De Baere full text was unavailable through the accessed official record; the verification was deliberately downgraded to primary-abstract scope."
+  ],
+  "workspace": {
+    "path": "operations/comp-038-primary-source-verification-2026-07-24",
+    "cleaned": true
+  }
+}

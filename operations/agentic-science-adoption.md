@@ -1,256 +1,144 @@
 ---
-title: "Agentic-Science Adoption — Process Changes and Tooling from Robin (Nature 2026) and Gemini for Science (I/O 2026)"
+title: "Agentic Search and Computational-Experiment Boundary"
 date: 2026-05-20
 status: active
-tags: [operational, methodology, agentic-search, comp-nnn, tooling, platform]
+tags: [operational, methodology, agentic-search, comp-nnn, literature]
 related:
-  - ../synthesis/strategic-reflections/2026-05-20-agentic-science-methodology.md
-  - ./README.md
+  - ../wiki/etc/autonomous-screening-methodology.md
+  - ../skills/lit-scan/SKILL.md
+  - ../skills/new-comp-experiment/SKILL.md
   - ../wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/
-  - ../.claude/skills/new-comp-experiment/SKILL.md
 sources:
-  - "Ghareeb et al. 2026 (Nature) — Robin: A multi-agent system for automating scientific discovery — doi:10.1038/s41586-026-10652-y"
-  - "Google 2026-05 — Gemini for Science: AI experiments and tools for a new era of discovery — blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/"
+  - "Ghareeb et al. 2026 — Robin: A multi-agent system for automating scientific discovery — doi:10.1038/s41586-026-10652-y"
   - "Google DeepMind 2025 — Towards an AI co-scientist — arXiv:2502.18864"
-  - "FutureHouse 2024 — PaperQA2 / Aviary — arXiv:2409.13740, arXiv:2412.21154"
+  - "FutureHouse 2024 — PaperQA2 / Aviary — arXiv:2409.13740; arXiv:2412.21154"
 ---
 
-# Agentic-Science Adoption — Process Changes and Tooling from Robin (Nature 2026) and Gemini for Science (I/O 2026)
+# Agentic Search and Computational-Experiment Boundary
 
-## TL;DR
+## Current decision
 
-Two independent groups (FutureHouse / Robin and Google DeepMind / Gemini for Science) shipped converging multi-agent architectures for literature-grounded scientific discovery within weeks of each other (Robin: Nature 2026-05-13 accepted; Gemini for Science: Google I/O 2026-05-19). The patterns they document — N-trajectory consensus, LLM-judged pairwise tournament, concise/deep lit-search tier split, full disease→mechanism→assay→candidate cycle — are all directly applicable to OE's existing comp-NNN workflow and to the literature-bound chokepoints currently classed as "wet-lab gated."
+Use agentic search to find evidence, expose blind spots, and nominate testable
+leads. Do not treat search consensus, model voting, or candidate ranking as
+experimental validation.
 
-This document captures the methodology changes worth adopting, the tooling decisions worth making (or deferring), and the first validation instance — **comp-038 tier-2-butyrate-assay-audit** — which tests whether an agentic literature-synthesis cycle can resolve a documented OE assay-infrastructure gap without defaulting to extra API spend when Codex can perform the GPT-5.5 synthesis role in-session.
+- **Literature-only work routes through
+  [`lit-scan`](../skills/lit-scan/SKILL.md).** It updates canonical wiki pages
+  and leaves one compact method receipt with exact queries, sources attempted,
+  counts, failures, translation checks, and claim verification status.
+- **Executable scientific models route through
+  [`new-comp-experiment`](../skills/new-comp-experiment/SKILL.md).** A COMP
+  requires frozen inputs, implementation, decision rules, outputs, and
+  independent pre- and post-run review.
+- **Git is the archive.** Current files hold current evidence and operating
+  rules, not append-only retrospectives or superseded narratives.
 
-The [current autonomous-screening methodology](../wiki/etc/autonomous-screening-methodology.md) owns the reusable decision rules for when search or computation can advance a question and when an empirical gate remains necessary. This operations doc records the methodology and tooling rationale.
+This boundary keeps literature work source-centered and COMPs
+computation-centered. A ranked literature result may motivate a COMP or wet-lab
+experiment, but ranking does not change the evidence tier.
 
-## Why this lands now
+## Patterns worth retaining
 
-Three things converged at the same moment:
+### Multiple trajectories as sensitivity
 
-1. **Robin demonstrated a closed-loop semi-autonomous discovery cycle in Nature.** Given just the disease name "dry age-related macular degeneration," Robin proposed enhancing RPE phagocytosis, screened 30 candidates, ran two wet-lab iterations, and surfaced **ripasudil** (a Japan-approved ROCK inhibitor never proposed for dAMD) and **KL001** (a circadian modulator, genuinely novel hit). Mechanism story: ROCK inhibition → ABCA1 upregulation → lipid efflux → ties cleanly into APOE-driven AMD genetics. Cost per full cycle: $10.76. Time: ~30 min compute + human-in-the-loop wet lab. The architecture is published; Aviary is open-sourced.
+Independent trajectories can reveal prompt-sensitive omissions or assumptions.
+Report the variation when it affects a decision. Multiple trajectories from
+one model and one source packet are not independent scientific replication and
+must not be described as such.
 
-2. **Gemini for Science formalized the same architecture as a platform.** Co-Scientist's "idea tournament" is literally Robin's LLM-judged pairwise ranking. AlphaEvolve + ERA is the code-generating discovery agent. Science Skills bundle 30+ life-science databases as Antigravity skills. Deep Think hits gold on the 2025 Physics/Chem Olympiad written sections.
+Use additional models or reviewers when their independence is decision-relevant
+and worth the cost. Do not multiply calls merely to create a vote count.
 
-3. **OE's stuck list has a specific shape.** Per the diagnostic walkthrough on 2026-05-20: three clusters dominate — assay infrastructure gaps (Tier 2 butyrate quantification blocks the whole microbiome track), East Asian cohort RCTs that haven't been designed, and the engineered-koji validation gauntlet (SGF survival, protease stability, native kojic-acid NLRP3 activity, gut persistence). Of these, the items most plausibly resolvable via aggressive literature synthesis — not wet lab — are the items Robin-style cycles are best at.
+### Pairwise comparison after evidence qualification
 
-The convergence isn't an accident: the architecture has matured enough that two well-resourced groups arrived at the same shape within weeks. OE doesn't need to invent the pattern. It needs to adopt the pieces that fit and decide what to wait on.
+Pairwise comparison can be more stable than free-form numeric scoring when
+the candidate properties are already source-qualified and the comparison rule
+is explicit. It cannot calibrate invented coefficients, repair missing
+properties, or turn heterogeneous evidence into a biological winner.
 
-## Pattern library — four reusable patterns
+Keep component evidence visible. A tournament rank is a triage device unless
+it has been validated against the outcome it predicts.
 
-These are the methodological units worth incorporating into OE's workflow. Each is small. Each is independently adoptable. None of them are research content; they're process discipline.
+### Shallow versus deep search
 
-### Pattern 1 — N-trajectory consensus for noisy analyses
+Use a bounded triage scan to decide whether a thread deserves a deeper source
+read. Once a claim becomes load-bearing, inspect the primary source and record
+its exact access scope.
 
-**What:** Run the same analysis N times (Robin used N=8) with independent LLM trajectories, then consensus-vote across the outputs. Report only the findings that survive the vote.
+“Full text” is a source-access status, not a quality adjective. An abstract,
+publisher metadata page, supplementary table, preprint, and complete article
+must not be collapsed into one label.
 
-**Why:** LLM-driven analyses make subjective methodological choices (gating thresholds in flow cytometry, filter cutoffs in RNA-seq, MSA depth in structural prediction, scoring rubrics in chaperone-orthogonal stacking). A single trajectory's choice may not generalize. Eight trajectories with a consensus step lets the methodology variance show itself — and gives a quantitative confidence signal ("identified in 7/8 trajectories" beats "identified once").
+### Search-to-experiment handoff
 
-**Where it applies in OE:**
+Search may:
 
-- **Historical heuristic rankers such as comp-022 and comp-032** — both lost decision authority for different reasons: comp-022 combined uncalibrated heterogeneous axes, while comp-032 embedded a drug-class prior in its score. Multiple LLM trajectories can expose prompt-sensitive assumptions, but consensus cannot calibrate an invented coefficient or rescue either ranking.
-- **Any future comp-NNN protease/stability analysis** — pLDDT-vs-SASA, monomer-vs-tetramer, point-estimate-vs-distribution. Run 8 trajectories with different defensible methodology choices, report consensus.
-- **Subagent peer review pass** in the existing `new-comp-experiment` workflow — currently single subagent run; the Robin pattern argues for N parallel reviewers with consensus on "which limitations are real."
+- identify a method, target, mechanism, delivery route, or source;
+- establish published parameters within their reported matrix and design;
+- preserve a grounded Research Conjecture and its cheapest discriminating
+  observation.
 
-**Cost:** Roughly Nx the single-trajectory cost. For LLM-driven analyses this is cheap (8 × $1-2 = $8-16). For structural simulations it depends on the underlying compute.
+Search may not:
 
-**Engineering footprint:** A `for i in 1..8` wrapper and a consensus-reducer script. One-day add to the new-comp-experiment skill.
+- establish local reproducibility, matrix transfer, dose, efficacy, or safety;
+- substitute a published source-study cohort for independent external
+  replication;
+- imply that failure to find evidence proves biological impossibility;
+- declare an entire project blocked because one lower-cost assay is absent.
 
-### Pattern 2 — LLM-judged pairwise tournament for ranking
+If no lower-tier assay is validated for an exact analyte and matrix, a Tier 3
+method can be used directly. The consequence is cost and access, not automatic
+failure of every downstream research track.
 
-**What:** Instead of asking one model to score N candidates with numeric ratings, do all-pairs (or Swiss-style) pairwise comparisons judged by an LLM, then derive an Elo-style ranking. Robin uses this for both disease-mechanism ranking and drug-candidate ranking. Co-Scientist's "idea tournament" is the same pattern.
+## COMP-038 lesson
 
-**Why:** Numeric scoring from LLMs is unreliable across candidates (the same model rates the same item differently depending on context). Pairwise comparison is a much more stable judgment task. Tournament ranking aggregates the comparisons into a defensible ordering.
+COMP-038 began as a 27-query, 74-record PubMed abstract scan with five
+in-session Codex trajectories. That structure was useful for candidate
+discovery, but it exposed why literature synthesis is no longer a COMP
+sub-type:
 
-**Where it applies in OE:**
+1. the executable runner captured discovery metadata, not the later
+   primary-source reads;
+2. a narrative addendum claimed a full-text pass without a source-read
+   artifact;
+3. the structured result, summary, provenance, and downstream pages drifted;
+4. HPLC-UV was initially mislabeled as Tier 2 even though the equipment
+   ceiling makes it Tier 3;
+5. one paper’s within-study test cohort was at risk of being described as
+   independent external validation.
 
-- **Future pharmacological-chaperone candidate comparisons** — COMP-032's composite ranking is retired, and COMP-047's rigid-docking rescreen was inconclusive. A pairwise tournament could compare a future evidence-grounded candidate set only after the candidate properties are established by a method suited to folding rescue; it cannot re-rank the old list into wet-lab-spend authority.
-- **Synthesis-queue triage** — `walk-synthesis` currently walks items in arrival order. A pre-pass that pairwise-ranks queue items by leverage (defined: blocks-most-downstream-work × tractability × cost) would let the walk happen in leverage order.
-- **Any future multi-candidate evaluation step** in comp-NNN experiments where the analysis surfaces a ranked list (drug candidates, strain variants, formulation conditions, etc.).
+The corrected artifact keeps the useful result:
 
-**Cost:** O(N²) pairwise calls, or O(N log N) for Swiss-style. For N=30 candidates and ~$0.10/comparison, full pairwise is $90 — acceptable for items that drive wet-lab spend, overkill for a 5-item triage.
+- De Baere et al. supports a Tier 3 HPLC-UV culture-supernatant
+  method-transfer candidate at primary-abstract scope.
+- Gu et al. supports a separate Tier 2 electrochemical/ANN stool candidate at
+  full-text scope.
+- Neither is qualified for an Open Enzyme workflow.
 
-**Engineering footprint:** A pairwise-judge prompt template and an Elo aggregator. Two-day build.
+The source-specific repair and matrix-specific gates live in the
+[Butyrate Measurement Audit](../wiki/tier-2-butyrate-assay-audit-computational.md).
 
-### Pattern 3 — Concise / deep lit-search tier split
+## Operating checklist
 
-**What:** Robin uses two literature-search agents: Crow (concise reports, ~$4.33/call) for triage and Falcon (deep reports, ~$6.43/call) for committed candidates. The split is just budget discipline made architectural.
+For a literature question:
 
-**Why:** Without an explicit tier split, every literature query gets either over-served (deep search on triage items) or under-served (concise search on committed items). Making the tier explicit lets you put per-call cost ceilings on each.
+1. Define the decision and claim boundary.
+2. Run multilingual search frames appropriate to the domain.
+3. Record exact queries, sources, failures, and translation checks.
+4. Verify load-bearing claims in primary sources.
+5. Write findings once in the canonical wiki page.
+6. Leave a compact method receipt under `logs/lit-scans/`.
+7. Propagate only to direct dependents.
 
-**Where it applies in OE:**
+For an executable model:
 
-- **Phase 2 subagent runs across the four peer-track scope pages** (per [operations/todos.md](./todos.md) standing item) — these are currently a single "go research X" prompt class. Splitting into Crow-tier (triage scan, 10-20 papers, half-page summary) and Falcon-tier (deep evaluation, 50+ papers, full mechanism + limitations report) lets the triage runs happen at sweep cadence and the deep runs happen on committed items only.
-- **Subagent calls in `new-comp-experiment` workflow** — currently the skill describes "subagent peer review" as a single class. The Crow/Falcon split argues for a triage subagent (catches obvious gaps) feeding a deep subagent (full critique on items that pass triage).
-- **Already-implicit in `walk-synthesis`** — the CTO-not-PhD framing in the skill is functionally a Crow-tier triage. Making it explicit in the doc would let it be tuned.
+1. Freeze the question, inputs, provenance, code, parameters, decision rules,
+   sensitivity plan, and output contract.
+2. Pass context-isolated Gate 1.
+3. Execute the frozen design.
+4. Reconcile generated output and every proposed interpretation.
+5. Pass context-isolated Gate 2.
+6. Let current push review bind the committed artifact and active dependents.
 
-**Cost:** Same total budget, smarter allocation. The discipline saves money on items that don't need deep search and gives more budget to items that do.
-
-**Engineering footprint:** A prompt-template split and a routing rule. Half-day build.
-
-### Pattern 4 — Full Robin-cycle methodology (the disease→mechanism→assay→candidate funnel)
-
-**What:** A four-stage closed-loop cycle:
-
-1. **General questions about the problem** → Crow-tier literature reports
-2. **Causal mechanisms** ranked via pairwise tournament → top mechanism + suggested assay
-3. **Drug/intervention candidates** for the chosen assay, ranked via pairwise tournament → top N for testing
-4. **Iteration** — wet-lab results fed back as analysis input; round 2 hypothesis generation
-
-Robin demonstrated this end-to-end on dry AMD: "dry age-related macular degeneration" → enhance RPE phagocytosis → 30 candidates → ripasudil + KL001 → ABCA1 mechanism story.
-
-**Why:** This is the full agentic-discovery pattern. The other three patterns are units that compose into it.
-
-**Where it applies in OE:**
-
-- **Any peer-track scope page reaching Phase 2 maturity** — TCM × rigor track, engineered LBP track, siRNA URAT1 track, medicinal-mushroom-complement track. Each is currently a hand-curated landscape map. Running a Robin-cycle on each would surface (or fail to surface) candidates that the human curation missed.
-- **comp-038 (this PR's first instance)** — a single-purpose Robin-cycle focused on assay-method discovery rather than therapeutic candidates. Same architecture, different output type.
-- **Future chassis-pending interventions** — the [`chassis-pending-interventions.md`](../wiki/chassis-pending-interventions.md) page exists; a Robin-cycle on each entry would surface candidate chassis the human curation missed.
-
-**Cost:** ~$10-20/cycle at Robin's published configuration. Cheap enough to run as a default first step on any committed track.
-
-**Engineering footprint:** For comp-038, start with a lightweight OE-native runner rather than adopting Aviary up front. When Codex runs it locally, Codex performs the GPT-5.5 synthesis / judge role from a committed source packet; OpenRouter is reserved for explicit external-vendor roles such as DeepSeek query critique, Opus review, or two-model translation. Revisit Aviary only if repeated agentic-search comps create enough orchestration burden to justify a framework.
-
-## Tooling adoption decisions
-
-Four explicit decisions. Each names go / no-go / wait + revisit-trigger.
-
-### 1. Fork Aviary for OE's first Robin-cycle? **No for comp-038; revisit after validation.**
-
-- **What:** FutureHouse open-sourced the Aviary framework that Robin uses. Forking-and-modifying is faster than rebuilding the multi-agent orchestration from scratch.
-- **Decision:** Do **not** use Aviary for comp-038. Use a small OE-native runner that preserves the methodological primitives without framework adoption. Default local path: fetch source snapshots, write a Codex packet, and have the current Codex/GPT-5.5 session perform N=5 synthesis trajectories and source-evidence gating. Optional paid path: use OpenRouter only when a second vendor is intentionally needed.
-- **Risk:** A custom runner may underbuild retrieval ergonomics compared with PaperQA2 / Aviary, especially for full-text acquisition and citation-graph traversal.
-- **Revisit trigger:** comp-038 completion. If the OE-native runner spends too much effort on generic orchestration or retrieval plumbing, revisit Aviary / PaperQA2 for the next agentic-literature-synthesis comp.
-
-### 2. Benchmark Gemini 3 Deep Think on enzyme/mechanism reasoning? **Yes, scheduled as separate eval.**
-
-- **What:** Google's claim is gold-medal performance on the 2025 Physics and Chemistry Olympiad written sections. If true for the *kinds of reasoning OE uses* — enzyme transition states, cofactor geometry, mechanism inference from structural and biochemical priors — Deep Think becomes the right model for the mechanism-interpretation step in any comp-NNN.
-- **Decision:** Run a blind comparison on 3-5 mechanism-reasoning questions where we already have strong priors. Candidates: lactoferrin apo-vs-holo iron-saturation effects, kojic acid × NLRP3 binding mode plausibility, Houttuynia polysaccharide complement-modulation mechanism. Models: Claude Opus 4.7, Claude Sonnet 4.6, OpenAI o4-mini, Gemini Deep Think. Score blind by Brian (and ideally one outside reviewer).
-- **Cost:** ~$50-100 in API spend + a half-day human review.
-- **Decision criterion:** If Deep Think wins or ties on >=3 of 5, swap it into the comp-NNN mechanism-interpretation step. If it loses badly, document the result and stay with the current stack.
-- **Revisit trigger:** Whenever a new frontier model lands (Claude/OpenAI/Google) on a reasoning-benchmark claim; re-run the same 5 prompts.
-
-### 3. Adopt Science Skills / Antigravity for biological-data plumbing? **No, wait and revisit Q3 2026.**
-
-- **What:** Google is bundling 30+ life-sci databases (UniProt, PDB, BRENDA, Reactome, etc.) as Antigravity skills. If this ships with broad coverage and reasonable query semantics, it removes the need for OE to build bespoke database integrations.
-- **Decision:** **Don't build** OE-specific UniProt / PDB / ChEMBL plumbing in the meantime. The OE thesis depends on integration of these data sources, but the integration layer is not a structural advantage — it's commodity infrastructure that Google is about to ship.
-- **Exception:** OE-specific data sources NOT in those 30 databases (CNKI / J-STAGE / KISS Korean literature corpora, ChiCTR trial registry, NBRC strain catalog, specific Aspergillus oryzae genomics resources) DO remain build-targets. Those are the structural data advantage; build them now.
-- **Revisit trigger:** Q3 2026 (Antigravity Science Skills GA release), OR earlier if a specific OE comp-NNN is blocked on a missing database integration.
-
-### 4. Adopt AlphaEvolve-style code-variant generation in comp-NNN? **No, defer indefinitely.**
-
-- **What:** AlphaEvolve generates and scores thousands of code variations in parallel. Useful for combinatorial optimization, less obviously useful for OE's comp-NNN scope (where analyses are mostly single-script structural/sequence work).
-- **Decision:** Defer. No current OE comp-NNN is the right shape for AlphaEvolve's approach. If a future analysis becomes one (e.g., systematic strain-engineering combinatorics, large-scale formulation-condition search), revisit.
-- **Revisit trigger:** Any future comp-NNN proposal that explicitly involves combinatorial search over scripts or parameter spaces.
-
-## Process changes to comp-NNN methodology
-
-Three proposed extensions to [`.claude/skills/new-comp-experiment/SKILL.md`](../.claude/skills/new-comp-experiment/SKILL.md). Each is small.
-
-### Extension 1 — Add agentic-literature-synthesis as a comp-NNN sub-type
-
-The current skill explicitly EXCLUDES literary synthesis: *"Question is purely literary synthesis (writing a wiki page) | No"*. This rule pre-dates the Robin pattern.
-
-A Robin-style literature synthesis is NOT "purely literary" in the original sense — it's:
-
-- **Reproducible** (query strategy + sources + model + temperature documented per the existing comp-NNN provenance discipline)
-- **Parameterized** (search depth, candidate pool size, tournament rounds are all explicit knobs)
-- **Consensus-ranked** (N-trajectory consensus is part of the artifact, not a one-shot LLM judgment)
-- **Structured-output** (the artifact is a ranked candidate list with per-candidate justification, not a narrative wiki page)
-
-Proposed extension: add a sub-type to the skill's "When to use" table:
-
-| Situation | Use? | Sub-type |
-|---|---|---|
-| Brian asks "could we model this computationally?" | Yes | structural / sequence |
-| Wet-lab experiment has open structural/sequence question | Yes | structural / sequence |
-| New protein target needs initial protease/stability assessment | Yes | structural / sequence |
-| Question is **agentic literature synthesis** with structured ranked output | Yes | **agentic-literature-synthesis** |
-| Question requires live cells, fermentation dynamics, in vivo readouts | No — needs wet-lab | — |
-| Question is **purely narrative** literary synthesis (writing a wiki page) | No | — |
-
-The distinction between agentic-literature-synthesis and "purely narrative" lit synthesis is: does the output have structured ranked candidates with reproducible methodology? If yes, comp-NNN. If no, it's a wiki page.
-
-### Extension 2 — Add N-trajectory consensus as an optional methodology knob
-
-Add to skill Step 3 ("Write the analysis"): for any LLM-driven analysis step where the methodology choice is subjective, run N trajectories with consensus selection. Default N=5 for lit synthesis, N=8 for analysis runs that drive wet-lab spend.
-
-Document the consensus methodology in the experiment's README. Report consensus statistics in `outputs/summary.md` ("identified in K of N trajectories").
-
-### Extension 3 — Replace single-pass numeric scoring with pairwise-tournament ranking
-
-Add to skill Step 3: where the analysis produces a ranked list of candidates (drugs, mechanisms, strains, conditions), prefer pairwise-tournament ranking over single-pass numeric scoring. Document the tournament structure (full pairwise vs Swiss) and the judge model used.
-
-For N <= 6 candidates: full pairwise (15 comparisons). For N > 6: Swiss-style (each candidate gets log₂(N) comparisons), or sample-and-tournament hybrid.
-
-## First validation instance: comp-038
-
-**Question:** Is there a Tier 2 butyrate quantification assay (colorimetric, enzymatic, or breath-hydrogen proxy) that can be validated against Tier 3 GC-MS to close the microbiome-metabolite quantification gap?
-
-**Why this question:** The [current assay evidence page](../wiki/tier-2-butyrate-assay-audit-computational.md) preserves the underlying gap and its empirical validation boundary. The question is a clean test of the Robin-cycle methodology because literature synthesis can nominate assay formats before wet-lab investment without pretending to validate them.
-
-**Sub-type:** agentic-literature-synthesis (proposed comp-NNN extension above)
-
-**Scaffold:** [`wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/`](../wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/)
-
-**Status:** Runner scaffolded and run in this PR (`analyze.py`, shared `agentic_lit_synthesis.py`, inputs/ + committed outputs). The completed comp-038 pass used Codex synthesis from `outputs/codex-synthesis-packet.md` and made no OpenRouter model calls.
-
-**Methodology questions to resolve before running:**
-
-1. Does `analyze.py` for an agentic-search experiment fit the existing comp-NNN stdlib-only constraint? Yes at the dependency layer: the comp-038 runner uses only Python stdlib plus shared OE helpers. The default live path fetches source snapshots and writes a Codex synthesis packet with no model API calls. The explicit `--run-openrouter` path can call external models over HTTPS, so reproducibility for that path is achieved via committed query-strategy.json + model-config.json + response IDs + dated snapshots rather than deterministic local computation.
-
-2. What's the consensus methodology? Implemented: N=5 Codex/GPT-5.5 in-session synthesis trajectories over the committed PubMed snapshot and query plan; consensus-style collapse on Tier 2 candidate assays; source-evidence gating prevents GREEN verdicts from PubMed abstracts alone. DeepSeek / Opus roles remain optional external checks when the cost is justified.
-
-3. What's the budget ceiling? Default Codex-run path: $0 incremental OpenRouter spend. Optional `--run-openrouter` path: $25 ceiling. Robin's published per-cycle cost ($10.76) is the precedent for paid external runs, not a reason to spend when the local Codex subscription can do the synthesis seat.
-
-**Decision criterion for the methodology test:** If comp-038 produces a defensible Tier 2 assay recommendation without unnecessary model spend, in under 90 minutes wall clock, with source snapshots and consensus-style reasoning that any reader can audit — the agentic-literature-synthesis sub-type is adopted as a candidate OE comp-NNN pattern. If it fails any of those, document the failure mode and decide whether to iterate or abandon the sub-type.
-
-## Open evaluation experiments
-
-Two evals that aren't comp-NNN instances but inform OE platform decisions. Park in [`operations/todos.md`](./todos.md) on PR merge.
-
-### Eval 1 — Gemini Deep Think mechanism-reasoning bench
-
-Described in Tooling Decision #2 above. Concrete steps:
-
-1. Pick 5 OE mechanism-reasoning questions where we have strong prior beliefs (suggested: lactoferrin apo-vs-holo, kojic acid × NLRP3, Houttuynia polysaccharide complement modulation, koji-acid ABCG2 interaction, Y402H CFH × dietary polyphenol mechanism).
-2. Run each through Claude Opus 4.7, Claude Sonnet 4.6, o4-mini, Gemini 3 Deep Think, with identical prompts.
-3. Blind-score each response on (a) mechanistic accuracy, (b) limitation honesty, (c) novel-link surfacing.
-4. Threshold: Deep Think wins/ties on >=3 of 5 → adopt as comp-NNN mechanism-interpretation default.
-
-Estimated cost: $50-100 + half-day Brian time (+ optional external reviewer).
-
-### Eval 2 — OE-native runner vs Aviary fit
-
-During comp-038 run, log:
-
-- Did the OE-native runner spend too much code on generic orchestration / retrieval plumbing that Aviary or PaperQA2 would already solve?
-- Did the cost-aware role split work as config: Codex/GPT-5.5 in-session by default, OpenRouter only for explicit external-vendor checks?
-- Where did the orchestration friction show up? (full-text retrieval, consensus aggregation, pairwise ranking, output formatting)
-
-Deliverable: a comp-038 retrospective section in the README documenting whether to keep the OE-native runner or adopt Aviary / PaperQA2 for the next agentic-literature-synthesis comp.
-
-## What this is NOT
-
-Honest delineation, in the spirit of operations/README.md's "caveats are the recruiting angle" rule:
-
-- **Not a claim that Robin/Gemini-for-Science replace wet lab.** Robin's own paper is honest: humans selected 5 of 30 candidates to test, swapped pHrodo beads for ROS, used ARPE-19 instead of suggested primary cells, ran the LDH cytotoxicity assay. "Semi-autonomous" is the right framing. The pattern shifts priors and triages. It doesn't run experiments.
-- **Not a claim that OE's stuck list dissolves under agentic search.** Some items genuinely need wet lab (SGF protein stability under actual shio-koji conditions; ABCG2 Q141K trafficking assay in real cells). The [current methodology](../wiki/etc/autonomous-screening-methodology.md) requires that search, computation, and empirical validation retain distinct roles.
-- **Not a blanket methodology victory from one run.** The proposed comp-NNN sub-type extension remains provisional after comp-038. If follow-up review finds the recommendation weak, or if future instances burn budget without converging, the extension does not land as standard practice.
-- **Not a claim that any one of these models is "better."** The Deep Think bench is the empirical question. Until that runs, no model claim in this document is load-bearing.
-- **Not a commitment to fork Aviary.** comp-038 deliberately starts with an OE-native runner. If that runner proves brittle or spends too much effort on generic retrieval/orchestration, Aviary / PaperQA2 gets revisited for the next cycle.
-
-## Cross-references
-
-- [`../wiki/etc/autonomous-screening-methodology.md`](../wiki/etc/autonomous-screening-methodology.md) — current reusable screening and evidence-boundary rules
-- [`../wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/`](../wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/) — first validation instance scaffold
-- [`./README.md`](./README.md) — operations folder framing
-- [`./operational-search-template.md`](./operational-search-template.md) — sister operations doc class (resource-acquisition bottlenecks). This doc is the methodology-adoption analog.
-- [`../.claude/skills/new-comp-experiment/SKILL.md`](../.claude/skills/new-comp-experiment/SKILL.md) — the skill this doc proposes extending
-- [`../wiki/tier-2-butyrate-assay-audit-computational.md`](../wiki/tier-2-butyrate-assay-audit-computational.md) — current comp-038 evidence boundary
-- [`../wiki/chaperone-orthogonal-stacking.md`](../wiki/chaperone-orthogonal-stacking.md) — current home for the framework whose assumptions require calibration
-
-## Provenance
-
-Drafted 2026-05-20 in response to Brian's review of the Robin paper (Ghareeb et al., Nature 2026, accepted 2026-05-12) and the Gemini for Science announcement (Google I/O 2026-05-19). The full conversation surfaced (a) the methodology patterns worth adopting and (b) the OE-specific stuck items potentially eligible for re-classification. This doc captures (a); the strategic reflection captures (b). comp-038 is the first instance.
+The reusable evidence and screening rules are maintained in
+[Autonomous AI Screening Methodology](../wiki/etc/autonomous-screening-methodology.md).
