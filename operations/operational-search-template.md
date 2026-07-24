@@ -166,7 +166,7 @@ When peer-track scope pages reach a resource-acquisition bottleneck, instantiate
 | Bottleneck | Triggering scope page | When to instantiate |
 |---|---|---|
 | Engineered LBP chassis collaborators (Sonnenburg-lab alumni / Synlogic alumni / NextBiotix alumni / Pendulum alumni) | [`engineered-lbp-chassis.md`](../wiki/engineered-lbp-chassis.md) | When direct transformation, expression, and configuration evidence narrows the chassis question |
-| Kidney-tropic siRNA conjugate-chemistry partner (Alnylam / Arrowhead / Dicerna / Acuitas / Genevant) | [`sirna-urat1-modality.md`](../wiki/sirna-urat1-modality.md) | When the comp-009 target-site selection lands and the conjugate-chemistry approach narrows |
+| Kidney-tropic siRNA conjugate-chemistry partner (Alnylam / Arrowhead / Dicerna / Acuitas / Genevant) | [`sirna-urat1-modality.md`](../wiki/sirna-urat1-modality.md) | When human delivery-handle evidence or another delivery architecture supports a specific proximal-tubule entry route |
 | Standardized TCM extract sourcing (Smilax glabra, Si Miao San components, etc.) — Chinese suppliers | [`tcm-modern-rigor-intersection.md`](../wiki/tcm-modern-rigor-intersection.md) | When P2-2 / comp-013 ChEMBL cross-check identifies which TCM compounds are platform-relevant |
 | Recombinant DAF SCR1-4 expression in *A. oryzae* — wet-lab capacity if H05 advances | [`hypotheses/H05-daf-scr14-cp0-thesis.md`](../wiki/hypotheses/H05-daf-scr14-cp0-thesis.md) | If the §1.9 dual-cassette result encourages triple-cassette OR if the LBP-chassis-as-DAF-host route is pursued |
 

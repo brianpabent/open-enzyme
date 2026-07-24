@@ -116,9 +116,17 @@ The Open Enzyme repository's git history, operational logs, and paper-drafting a
 **Three layers caught:**
 - **L1:** "37% testosterone elevation" figure traces to Talbott 2013 PMID 23705671 — salivary T in mixed-sex moderately-stressed cohort, treated by supplement marketing for a decade as serum free-T in hypogonadal men
 - **L2:** "Shin KH 2024 enclomiphene vs clomiphene" citation appears in parent + daughter wiki pages, doesn't exist in PubMed. Actual paper is Saffati G et al. 2024 PMID 39434750
-- **L3:** "eurycomanone is an XO inhibitor" — neither cited PMID claims XO inhibition. True mechanism is multi-target transporter modulation + PRPS suppression. **Direction-of-effect flipped:** v1 GOUT-UNFAVORABLE → v2 GOUT-FAVORABLE
+- **L3:** "eurycomanone is an XO inhibitor" — neither cited PMID
+  establishes XO inhibition. The initial repair then collapsed a stem extract,
+  eurycomanol-type compounds 4–7, pure eurycomanone, purified eurycomanol, and
+  Physta. The claimed GOUT-UNFAVORABLE → GOUT-FAVORABLE reversal was
+  subsequently withdrawn.
 
-**Why interesting:** corpus-level contamination that single vendors inherit identically from training. Multi-vendor cross-checks don't help — all vendors see the same contaminated training corpus. What protected: verification-of-verification (independent subagent checks the verification subagent against primary source).
+**Why interesting:** widely indexed secondary claims create common-cause risk
+across vendors, but this case did not test whether every vendor carried the
+same contamination. What protected here was verification-of-verification
+against primary source, followed by exact-snapshot review that caught the
+identity collapse in the first repair.
 
 ---
 
@@ -162,14 +170,21 @@ The Open Enzyme repository's git history, operational logs, and paper-drafting a
 
 **Why interesting:** confabulation the model SHOULD have caught by primary-source verification. Reflexively powerful: it happened while drafting the paper that warns against this exact failure mode.
 
-### 3.2 Direction-of-Effect Reversal via Mechanism Verification (2026-05-07)
+### 3.2 Claimed Direction-of-Effect Reversal — Later Withdrawn (2026-05-07)
 
 **Date:** 2026-05-07 (comp-015 v2, commit `c32a623`)
 **Source:** commit `c32a623` "wiki: comp-015 v2 — t-axis adjuvant urate-target mapping (XO added; eurycomanone gout-favorable reversal)"
 
-**What changed:** v1 tagged eurycomanone GOUT-UNFAVORABLE (assumed XO inhibitor); v2 verified mechanism is multi-target transporter modulation + PRPS-suppression — GOUT-FAVORABLE.
+**What changed:** v1 tagged eurycomanone GOUT-UNFAVORABLE from an unsupported
+XO attribution. v2 correctly rejected the XO claim but incorrectly transferred
+extract and eurycomanol evidence to pure eurycomanone, producing a false
+GOUT-FAVORABLE verdict. Later exact-snapshot review retired both verdicts and
+preserved only source-specific leads.
 
-**Why interesting:** the reversal was caught by verification-of-verification, not by vendor heterogeneity. Different defensive mechanism than the paper currently emphasizes.
+**Why interesting:** verification can fix one claim while creating an
+entity-resolution error in the repair. The required defense is primary-source
+V-of-V plus independent review of the exact correction artifact and its
+propagation.
 
 ---
 
@@ -252,7 +267,7 @@ Structurally analogous to the multi-pass sweep, applied at the translation level
 | Finding | Dates | Cost | Impact | Tier |
 |---------|-------|------|--------|------|
 | Brief contamination (comp-018 vs 020) | 2026-05-08 | ~$5, 30-60min | Helicteres found at headline tier (4-20× missed); mechanism reframe | Verified |
-| Citation laundering (androgen-urate axis) | 2026-05-07–09 | ~$3-4 | Direction-of-effect reversal; 3 wiki pages corrected | Verified |
+| Citation laundering (androgen-urate axis) | 2026-05-07–09; exact-material correction 2026-07-24 | ~$3-4 for the initial chain | Unsupported XO claim removed; later review withdrew the false direction verdict and separated extract/quassinoid identities | Initial catch verified; first repair superseded |
 | Pass 3 model swap (Opus → GPT-5.5 tuned) | 2026-05-07–08 | Eval cost | 5× cost reduction; verification depth 2 → 7 tool calls | Empirical eval |
 | Prompt caching (Opus 4.7 Pass 3) | 2026-05-06+ | ~$0.20/review amortized | 91% cache-hit; effective ~75% cost reduction | Measured |
 | Retry-with-backoff | 2026-04-28+ | ~$0.05/retry | Eliminated silent 503/429 failures; 100% recovery | Empirical |

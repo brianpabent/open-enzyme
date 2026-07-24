@@ -79,7 +79,7 @@ The linked mechanism dossier supplies the supporting evidence; each entry here s
 
 ### 2. Kidney-tropic siRNA against URAT1 mRNA
 
-**Intervention.** Sequence-specific siRNA knockdown of URAT1 mRNA in renal proximal tubule cells, delivered via kidney-tropic conjugate chemistry (folate-receptor, megalin-binding, or related approaches). Eliminates the dose-dependent off-target profile of small-molecule URAT1 inhibitors (benzbromarone hepatotoxicity, lesinurad cardiovascular signal). Quarterly SC dosing precedent from GalNAc-siRNA approvals (inclisiran for PCSK9, patisiran for TTR — both liver-tropic, kidney-tropic chemistry is the active research class).
+**Intervention.** Synthetic siRNA intended to reduce URAT1 mRNA in renal proximal-tubule cells through a kidney-targeted delivery route. An oligonucleotide would not generate benzbromarone's reactive small-molecule metabolites, but no cleaner overall safety profile is established: guide off-targets, innate-immune activation, formulation toxicity, unintended biodistribution, excessive uricosuria, renal hypouricemia, reversibility, and dosing interval remain open. Approved liver-targeted siRNAs provide a modality precedent, not evidence for kidney delivery or quarterly URAT1 dosing.
 
 **Chokepoint(s) hit.** Renal URAT1 reabsorption — the single largest reabsorption step in the renal urate handling chain. GLUT9 is a parallel target. Renal urate disposal sits on a different mechanism axis from gut-lumen disposal (the koji thesis); the two are complementary, not substitutional. See [`sirna-urat1-modality.md`](./sirna-urat1-modality.md).
 
@@ -89,7 +89,7 @@ The linked mechanism dossier supplies the supporting evidence; each entry here s
 
 **Candidate implementation route.** Synthetic siRNA plus a kidney-tropic conjugate, with commercial manufacturing and a clinical development partner.
 
-**Cheapest first move.** comp-009 (URAT1 mRNA target site selection via RNAfold + accessibility scoring) — $0, ~1 week, queued in [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) Phase 2.
+**Cheapest first move.** [COMP-048](./etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/) screens for a selective, plausibly internalizing surface handle on SLC22A12-positive human proximal-tubule cells. Guide design is downstream: [COMP-009 is invalid](./urat1-sirna-target-site-selection-computational.md) and supplies no candidate, rank, accessibility, specificity, or tractability verdict.
 
 **Cross-reference.** [`sirna-urat1-modality.md`](./sirna-urat1-modality.md), [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) (Renal compartment row), [`delivery-route-matrix.md`](./delivery-route-matrix.md) (RNA platforms × SC cell).
 

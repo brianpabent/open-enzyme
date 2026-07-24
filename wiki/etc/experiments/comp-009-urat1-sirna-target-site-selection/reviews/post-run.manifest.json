@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection/README.md",
+      "kind": "design",
+      "bytes": 3849,
+      "sha256": "ee8dd2b7b5adde7f91f195aff3c96e09c557bb8be0122dd64cf43b710316edd7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection/invalidation.json",
+      "kind": "design",
+      "bytes": 4136,
+      "sha256": "f696e0f00a1988439631576b16c9bb92662cc7d756a64ee6d8113898897b0a09"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 34535,
+      "sha256": "f6790657a9ee88daea78c7f533c33b45f8e426d3d8441d7b293394a6cd68ea9b"
+    },
+    {
+      "path": "logs/multilingual-east-asian-gout-cohort-scan-2026-05-19.md",
+      "kind": "proposed_update",
+      "bytes": 27010,
+      "sha256": "868a1a5b28c8233f25dbfebfb6702d303f3aaa898f2ad2352f22f93994d939a4"
+    },
+    {
+      "path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/p0-2-east-asian-gout-genetics-source-read-2026-05-20.md",
+      "kind": "proposed_update",
+      "bytes": 6567,
+      "sha256": "8b1ca64b6f6ed0c7fa371b14cd45e72c99ab593628693880855138f5f837fd0d"
+    },
+    {
+      "path": "operations/operational-search-template.md",
+      "kind": "proposed_update",
+      "bytes": 14714,
+      "sha256": "086a1996fae62b0693a3accb99673859867ea992f15abf7b9129b7dcdca7b928"
+    },
+    {
+      "path": "operations/todos.md",
+      "kind": "proposed_update",
+      "bytes": 10763,
+      "sha256": "9b90a495420f3073b7dcbc838b789cac2c5848ffa4c9f52e9154bb5844b59059"
+    },
+    {
+      "path": "wiki/chassis-pending-interventions.md",
+      "kind": "proposed_update",
+      "bytes": 31026,
+      "sha256": "7ef4282fce3ee47e6bc0dcf8861d3dd862172537629d2e5f3a83be274d46bd7b"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 78066,
+      "sha256": "39cf4979422b080dfa6ce5f20394d1a51510cb74e4ddf261ab80fe64d7f7f596"
+    },
+    {
+      "path": "wiki/hypotheses/H03-sirna-urat1-thesis.md",
+      "kind": "proposed_update",
+      "bytes": 9254,
+      "sha256": "bf78dab96b67baf8b7ebdfc2ba66501382629fc8a4119b4ca69ab6cac105178e"
+    },
+    {
+      "path": "wiki/hypotheses/README.md",
+      "kind": "proposed_update",
+      "bytes": 9952,
+      "sha256": "78fe1ebb11837f567a85cb96caeec7726fa77908c5cb2b8eec3ff880f13c9a29"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 73183,
+      "sha256": "07a9eb9f3081535e04160972c2ed87d3d770d967e11c2832a2928f0aeb53a483"
+    },
+    {
+      "path": "wiki/sirna-urat1-modality.md",
+      "kind": "proposed_update",
+      "bytes": 9254,
+      "sha256": "21673d95ef8b06f0f69dcd39e479c3e1042724394280aa402859bd62e34a7dd9"
+    },
+    {
+      "path": "wiki/urat1-sirna-target-site-selection-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3245,
+      "sha256": "35cfebd6d43fcbd83840932a0b60c01244304b42793e4c71dd4f02c39ff4095f"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "9172b45ec49760f2286ef53a2d1679ac017a6d98c82cc0da9dd409fbad40a8ef"
+}

@@ -76,16 +76,39 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 
 **Target compartment:** Liver (dominant flux), intestinal epithelium (significant), every rapidly-dividing cell.
 
-**Clinically validated routes:**
-- PO systemic — the only route used. No pharma-grade PRPS inhibitor in clinical development for gout. Eurycomanol (tongkat ali extract) reduces SUA 7–11% in oral RCT (n=105). (Clinical Trial — eurycomanol PO)
+**Current delivery evidence:**
+- Purified eurycomanol was administered orally at 5–20 mg/kg in hyperuricemic
+  mice and changed serum urate, 24-hour urate clearance, hepatic PRPS
+  expression, and renal and intestinal transporters (**Animal Model**; PMID
+  34785103). This does not establish a clinically validated PRPS route, direct
+  PRPS inhibition, or equivalence to a tongkat ali extract.
+- Physta's 12-week human study reported a null urate comparison versus placebo
+  (**Clinical Trial — null urate outcome**; PMC8254464). It supplies no human
+  efficacy bridge for eurycomanol.
 
 **Routes that fail and why:**
 - IA: PRPS is hepatic/intestinal, not synovial. Delivering a PRPS inhibitor into the joint suppresses only local purine synthesis — the systemic urate load is unaffected.
 - Inhaled/topical: same compartment mismatch.
 
-**Open territory:**
-- **GalNAc-siRNA for PRPS1 mRNA knockdown (hepatocyte-tropic):** The same delivery chemistry as inclisiran (GalNAc-PCSK9 siRNA, approved 2021) is structurally applicable to PRPS1 in liver. Quarterly dosing, liver-targeted, durable knockdown. No gout program exists. (Mechanistic Extrapolation — GalNAc-siRNA; freedom-to-operate open)
-- **Gut-epithelium-targeted oral NP:** Upper GI enterocytes are high-flux purine synthesis sites. pH-triggered nanoparticles releasing in small intestine (pH 6–7), taken up by enterocytes without reaching systemic circulation — selective intestinal PRPS suppression without hepatic/hematologic toxicity risk. Not tested. (Mechanistic Extrapolation)
+> **Research conjecture — tissue-restricted PRPP-supply suppression**{ .research-conjecture-label }
+>
+> **Grounded premises:** PRPS supplies PRPP to de-novo purine synthesis,
+> salvage, and pyrimidine synthesis. Purified eurycomanol changed hepatic PRPS
+> expression alongside urate and transporter endpoints in hyperuricemic mice
+> (**Animal Model**; PMID 34785103), without establishing direct PRPS
+> causality. Hepatocyte-directed GalNAc-siRNA delivery has clinical precedent
+> for other targets (**Clinical Trial**), not for PRPS or gout.
+>
+> **Novel leap:** Tissue-restricted PRPS suppression might reduce urate-producing flux while avoiding unacceptable disruption of nucleotide supply. No direct evidence tests that selectivity, route, or gout effect.
+>
+> **Why it matters:** A successful result would expose an upstream production
+> lever distinct from XO inhibition.
+>
+> **Discriminating observation:** In hepatocyte and intestinal-organoid models,
+> measure delivery, PRPS knockdown, isotope-resolved purine flux, urate output,
+> nucleotide pools, viability, and reversibility together. A urate change
+> without preserved nucleotide-pool and safety boundaries rejects the tested
+> configuration.
 
 ---
 
@@ -416,7 +439,7 @@ The 2,8-dioxopurine pathway is a conserved anaerobic urate-disposal route in gut
 
 | Kill chain node | Best clinical route | Most underexplored route | Key gap |
 |---|---|---|---|
-| PRPS | PO systemic | GalNAc-siRNA (liver) | No pharma-grade PRPS inhibitor for gout |
+| PRPS / PRPP supply | None validated for gout | Tissue-directed RNA delivery | Causal flux leverage and a tolerable selectivity window are unmeasured |
 | XO | PO systemic | Transdermal microneedle (oxypurinol) | No GalNAc-siRNA XDH program |
 | URAT1/GLUT9 | PO systemic | Kidney-tropic siRNA | GLUT9 has no drug despite strongest GWAS effect |
 | Intestinal ABCG2 | PO gut/dietary | Gut-restricted ABCG2 enhancer | No pharmacological ABCG2 enhancer exists |

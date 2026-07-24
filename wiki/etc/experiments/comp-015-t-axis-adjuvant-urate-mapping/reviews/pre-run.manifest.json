@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/README.md",
+      "kind": "design",
+      "bytes": 6860,
+      "sha256": "5f07411280d665bd280b25da74b4a9035ef0770a94832ae3594d5ffe83851ae3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/invalidation.json",
+      "kind": "design",
+      "bytes": 5180,
+      "sha256": "17dfe69b12323c93bf4f86111f8131f2377a43dc5662ff00d51c0aaa3b67b803"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "579361004668254795602fca0dfd20914470cf72ea8ee5fd308a6ef234673ae7"
+}

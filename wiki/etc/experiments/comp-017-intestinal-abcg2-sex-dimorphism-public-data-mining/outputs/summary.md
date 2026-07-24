@@ -182,7 +182,7 @@
 - Sub-claim 4 follows logically from 1-3 status.
 - Given (a) sub-claim 3 is now strongly supported (NOT AR-mediated), (b) sub-claim 1 is mechanistically plausible but magnitude-weak at physiological tiers: the platform should DOWNGRADE confidence in 'aromatase inhibitors / DIM are net unfavorable' as a strong recommendation.
 - The reframe should be: stack-design recommendations should NOT presuppose the AR-suppression model (sub-claim 3 supported), but the alternative-positive prediction (PI3K/Akt-blocking mechanism is meaningfully active in vivo) is also weakly supported (sub-claim 1 magnitude open).
-- Net: stack design should default to mechanism-agnostic urate-axis interventions (cordycepin, eurycomanone, butyrate per H07's framing) rather than risk-stratifying based on assumed AR-mediated or assumed PI3K/Akt-mediated dominance.
+- Net: COMP-017 does not select a urate-axis intervention or stack. It supports avoiding response stratification based on an assumed AR-mediated or assumed PI3K/Akt-mediated mechanism; cordycepin, each exact Eurycoma material, and butyrate require their own material-identity, exposure, and functional evidence.
 
 ## Methodological note
 

@@ -83,7 +83,7 @@ Target wiki: gout-genetic-variants.md (Categories 1 and 6)
 - **Documented in homozygotes and compound heterozygotes.** Multiple Japanese case series (PMID 23525542 — posterior reversible encephalopathy syndrome + EI-AKI in a 13-year-old W258X homozygote; PMID 19092327 — Japanese sumo wrestler with RHUC1; PMID 21789139 — compound heterozygote case).
 - **Quantitative lifetime risk is not published.** PMC9313227 (Mancikova 2022 review) confirms EI-AKI "occurs mostly in individuals with homozygous/compound heterozygous URAT1 mutation" but does not give a percentage. **This is a real empirical gap** — the lifetime EI-AKI risk in W258X homozygotes vs heterozygotes is undocumented despite the variant being intensively studied.
 - **Heterozygote risk is lower but non-zero.** Some case reports of EI-AKI in W258X heterozygotes exist (e.g., compound-heterozygous patients with W258X + R90H), suggesting partial dosage sensitivity.
-- **Clinical implication for OE.** If the URAT1-targeted siRNA modality at `sirna-urat1-modality.md` is pursued, the human-genetic safety case is W258X heterozygotes (no clinical disease) — *not* W258X homozygotes (RHUC1 + EI-AKI risk). The siRNA approach should target ~50% knockdown ceiling to avoid recapitulating homozygote-equivalent phenotype under exercise stress. This is a load-bearing dosage constraint the modality page should note.
+- **Research implication for OE.** W258X and other loss-of-function phenotypes establish that excessive URAT1 suppression can produce renal hypouricemia and exercise-associated kidney risk. They do not establish a universal safe knockdown percentage: genotype, chronic germline dosage, therapeutic knockdown, tissue exposure, and recovery after dosing are not interchangeable. Any siRNA program must measure knockdown depth against urate transport, serum and urinary urate, renal stress, exercise context, reversibility, and human variation.
 
 ### Polynesian gap
 
@@ -167,7 +167,7 @@ Replace the current allele-frequency cell with multi-study converged frequency:
 
 Add to "OE-platform implication":
 
-> **W258X homozygote SUA = 0.75 mg/dL (Japanese males, Sakiyama 2021 PMID 34440216 n=30,685)** — ~12% of population mean. Clean knockout phenotype. Lifetime exercise-induced AKI risk in homozygotes is documented but not quantified; heterozygotes have non-zero but lower risk. **Dosage implication for siRNA-against-URAT1 modality:** target ≤50% knockdown to avoid recapitulating homozygote phenotype under exercise stress.
+> **W258X homozygote SUA = 0.75 mg/dL (Japanese males, Sakiyama 2021 PMID 34440216 n=30,685)** — ~12% of population mean. This loss-of-function phenotype supports a safety boundary against excessive URAT1 suppression. It does not establish a therapeutic knockdown ceiling; lifetime exercise-induced AKI risk, heterozygote-versus-homozygote risk, tissue exposure, dose recovery, and the mapping from guide activity to phenotype remain unresolved.
 
 ### Category 6 — HLA-B*58:01 row update
 

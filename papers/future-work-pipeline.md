@@ -17,14 +17,27 @@ When an item moves into active drafting, create a sibling directory under `paper
 
 ### F1. Verification-of-verification as a discipline
 
-**Angle.** When AI-summarized literature inherits supplement-industry citation laundering, multi-vendor cross-checks don't help (every vendor inherits the same contaminated training corpus). What defends is a second independent subagent that checks the first subagent's verification against primary source. This is structurally distinct from cross-vendor heterogeneity and earns its own treatment.
+**Angle.** When AI-summarized literature inherits a claim laundered through
+widely indexed supplement-industry sources, models from different vendors may
+repeat it because their upstream information overlaps. The cited case did not
+run a controlled all-vendor comparison, so it establishes a common-cause risk,
+not identical contamination in every vendor. The defense that worked was an
+independent subagent checking the first verification against primary source,
+followed by exact-snapshot review of the repair.
 
 **Source material:**
 - `operations/notable-moments.md` 2026-05-07 entry (three-layer laundering of the "37% testosterone elevation" figure)
 - `papers/cross-vendor-heterogeneity-guard/audit-2026-05-13-catch-history.md` §1.7 + §3.2
-- Commits `a61f0d9`, `c32a623` (eurycomanone direction-of-effect reversal: GOUT-UNFAVORABLE → GOUT-FAVORABLE)
+- Commits `a61f0d9`, `c32a623` plus the later COMP-015 retirement
+  (the claimed eurycomanone direction reversal was withdrawn after
+  exact-material review)
 
-**Why it earns its own write-up:** the heterogeneity paper's §5 will mention this as a case study, but the *discipline* (V-of-V protocol, cost economics, when to fire it) needs its own argument. Cost was $3-4 per verification chain. The flipped direction-of-effect is a real biology consequence — supplement marketing has gout-favorable compounds tagged as gout-unfavorable for a decade.
+**Why it earns its own write-up:** the case now contains both halves of the
+discipline: a primary-source V-of-V pass caught an inherited mechanism claim,
+and a later exact-snapshot review caught identity collapse in the repair. The
+initial chain cost was $3–4; the methodological consequence is that a
+correction must itself be independently reviewed and propagated before it
+becomes canonical.
 
 **Recommended channel:** short paper (methods note for biorxiv or Patterns letter) OR a long-form Substack blog. The blog version reaches the right audience faster (supplement-skeptical biology people) and doesn't need formal peer review.
 

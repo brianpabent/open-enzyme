@@ -1,141 +1,146 @@
 ---
-title: Personal Genome Protocol — Kitchen-Table Sequencing + Gout Pharmacogenomics
+title: Genome sequencing for gout research and strain QC
 date: 2026-05-07
-tags: [self-experiments, sequencing, pharmacogenomics, ABCG2, HLA-B5801, infrastructure, nanopore]
+tags:
+  - sequencing
+  - pharmacogenomics
+  - ABCG2
+  - SLC22A12
+  - SLC2A9
+  - infrastructure
+  - nanopore
 related:
-  - self-experiment-protocol.md
+  - gout-genetic-variants.md
   - abcg2-modulators.md
   - gout-pathophysiology.md
   - etc/ai-bio-tools-playbook.md
 sources:
-  - Hung S-I et al. 2005 (HLA-B*5801 and allopurinol SCAR; PNAS)
+  - Hung S-I et al. 2005 (HLA-B*58:01 and allopurinol SCAR; PNAS)
   - Matsuo H et al. 2009 (ABCG2 Q141K and gout; Sci Transl Med)
   - Cleophas MCP et al. 2017 (ABCG2 Q141K and allopurinol response)
-  - GINA (US, 2008) — health insurance + employment only
-  - Oxford Nanopore Technologies product specs (R10.4.1, Dorado)
+  - Oxford Nanopore Technologies platform documentation
+status: draft
 ---
 
-# Personal Genome Protocol
+# Genome sequencing for gout research and strain QC
 
-Dual-purpose page: **(1)** Brian's personal genome sequencing as a self-experiment, and **(2)** the same hardware/wetware capability becomes Open Enzyme strain-QC infrastructure (CRISPR integration verification, off-target indel checks, plasmid validation). One investment, two outputs. The capability build is load-bearing for the platform either way; the personal genome is the ride-along.
+## Purpose
 
-## Why this isn't 23andMe
+Sequencing can support two Open Enzyme capabilities:
 
-The privacy threat model is **active**, not paranoid:
+1. **Variant-stratified research:** use a verified human genotype to define
+   assay strata and ask whether a mechanism behaves differently across genetic
+   backgrounds.
+2. **Engineered-strain quality control:** verify construct identity,
+   integration, and genome-scale changes in experimental organisms.
 
-- 23andMe's 2023 credential-stuffing breach (~7M users) plus their 2024-25 financial wobble means "who buys the database in a sale?" is an open question. Pure data-governance risk, no scientific defense.
-- 23andMe's GSK pharma partnership monetizes user data into ML drug-discovery pipelines without per-user compensation — the "you are the product" critique made literal.
-- **GINA gap (US):** the 2008 Genetic Information Nondiscrimination Act protects against genetic discrimination in **health insurance and employment only**. **Life insurance, disability insurance, and long-term-care insurance have NO statutory protection.** Real underwriting risk if your genome ends up in a queryable database.
-- A SNP chip (23andMe-class) is enough to genetically fingerprint you and your relatives in any future database. WGS contains everything but isn't more identifying than a chip — both are unique.
-- **Data-quality gap for gout-relevant variants:** Consumer SNP arrays (23andMe, AncestryDNA, etc.) are not clinical-grade for the specific variants gout stack design depends on — see the canonical [Consumer SNP data-quality caveat](./gout-genetic-variants.md#consumer-snp-data-quality-caveat--canonical-statement) for the full reasoning, including HLA typing weakness and the recommended CLIA-grade alternatives.
+Neither capability turns a sequence call into a treatment rule. Human
+medication decisions, clinical diagnosis, and prescribing are outside this
+research page.
 
-## Privacy gradient (worst → best)
+## Gout-relevant research strata
 
-| Tier | Option | Privacy posture | Cost | Data | Tradeoff |
-|------|--------|-----------------|------|------|----------|
-| 1 | 23andMe / Ancestry / MyHeritage | Worst — monetized; breach + sale risk | $99–199 | SNP chip | You are the product |
-| 2 | Sequencing.com / Dante / generic WGS services | Better but third-party-held; read TOS not marketing | $400–600 | WGS | "We don't sell your data" usually means "yet" |
-| 3 | Nebula Genomics | Privacy-architected (blockchain-gated access; you can host your own decrypted data) | $300–600 | WGS | Still a third party physically holds the sample |
-| 4 | **Clinical routing — physician-ordered CLIA WGS** | Best send-out option (HIPAA chain of custody; lab destroys sample) | $1,000–3,000 | WGS | Needs willing physician |
-| 5 | **MinION at home, basecall locally** | Self-sovereign — data never leaves your laptop | **~$5,000 all-in setup** [CALIBRATED 2026-05-08 — actual real-world buildout: ~$3,000+ for MinION Mk1B device itself (Nanopore Store) **plus ~$3,500 of supporting wet-lab equipment** (microcentrifuge, micropipettes, magnetic rack, thermocycler-or-equivalent, GPU laptop if not already owned), **plus ~$1,000/run** for flow cell + library prep reagents at usable read depth — NOT the entry-tier "$200–300/run" framing. The historical "$1K MinION = casual hobby purchase" era is fully over.] | Long-read WGS | Higher per-base raw error; you do all the wet work; the hardware buildout makes this a deliberate multi-year-amortized investment, not a casual hobby purchase |
+The canonical variant evidence and primary citations live in
+[gout genetic variants](./gout-genetic-variants.md). The table below defines
+how selected variants may enter an experiment.
 
-**Decision gate for local sequencing:** Tier 5 is justified only if multi-year amortization is realistic. Current real-world buildout (~$5K hardware + ~$1K/run) puts Tier 5 above Tier 4 (physician-routed CLIA WGS, $1,000–3,000) on raw cost. Tier 5's case rests on (a) self-sovereign data, (b) dual-purpose hardware that doubles as Open Enzyme strain-QC infrastructure (see Project Crossover below), and (c) cost-amortization across many runs over years. It becomes load-bearing only when (i) the engineered-koji strain pipeline reaches Phase 1+ wet work and needs in-house genome QC, or (ii) a contributor with the hardware joins the project. Clinical-grade SNP confirmation remains a separate physician-routed question.
-
-## Kitchen-table setup
-
-### Hardware (one-time, ~$5,000 all-in: MinION + supporting wet-lab kit + GPU laptop)
-- **Oxford Nanopore MinION Mk1B starter pack (~$3,000+)** — [VERIFIED 2026-05-07 against [Nanopore Store](https://store.nanoporetech.com/minion.html); historical ~$1,000 starter pricing era is over. The corpus inherited the "$1K MinION" claim from earlier marketing material; current store-listed entry tier is meaningfully higher. Verify current bundle structure (device + flow cells + sequencing kits + accessories) before purchase. The Mk1C variant with embedded compute runs higher still; Mk1B requires GPU laptop.]
-- **Supporting wet-lab equipment (~$3,500)** — [CALIBRATED 2026-05-08 by Brian — the MinION device alone is the headline number, but a working setup also needs: microcentrifuge, micropipette set (P2 / P10 / P20 / P200 / P1000) + tips, magnetic rack for SPRI bead cleanups, thermocycler or thermomixer-or-equivalent for incubation steps, vortex mixer, balance for reagent prep, labware (tubes, racks, plates), basic PPE. Together these are the "$3.5K of supporting equipment" that turn a MinION purchase into a working sequencing setup. Without them the device sits idle.]
-- Laptop with NVIDIA GPU (8GB+ VRAM) for Dorado basecaller — local, no cloud round-trip. ~$1,500–3,000 if purchasing new; many CTO-tier self-experimenters already own one.
-- Microcentrifuge (used eBay, $100–200) — needed for library prep
-
-### Per-run consumables (~$200–300/genome)
-- Rapid sequencing kit (SQK-RAD114) or ligation kit (SQK-LSK114) for ~30× WGS depth
-- DNA extraction kit (saliva collection + magnetic-bead extraction; ~$30/sample)
-- Flow cell (R10.4.1, ~$500–900; reusable for ~24h runtime if washed between samples per ONT protocol)
-
-### Software stack (open source, all local)
-- **Dorado** (Oxford Nanopore, GPU-accelerated basecaller)
-- **Flye** or **Shasta** (long-read genome assembly)
-- **Clair3** or **PEPPER-Margin-DeepVariant** (variant calling from long reads)
-- **bcftools** / **vcftools** (variant filtering)
-- **IGV** (visualization)
-
-### Total time
-~2 days end-to-end: 1 day wet lab + library prep, 1 day sequencing + basecall + assembly + variant calling. Iteration loop is fast enough for routine strain QC once the workflow is dialed in.
-
-## Gout-specific pharmacogenomic query list
-
-Once you have your VCF, the highest-signal queries given Open Enzyme's gout focus:
-
-### Tier 1 — Critical drug-safety variants
-
-- **HLA-B*58:01** — Allopurinol-induced Stevens-Johnson syndrome / TEN risk. (Clinical Trial; Hung et al. 2005 PNAS; ACR guidelines recommend pre-prescribing screening in Asian-ancestry populations.) **Carrier status changes prescribing.** If positive: never take allopurinol; febuxostat is the alternative. Confirm with CLIA-grade short-read assay before clinical action — long-read HLA typing is improving (R10.4.1 chemistry) but historically short-read territory due to repeat density.
-
-### Tier 2 — Gout risk + drug response variants
-
-- **ABCG2 Q141K (rs2231142)** — Major gout risk allele; reduced renal/gut urate secretion and reduced allopurinol response. Selected pharmacologic HDAC-inhibitor rescue is demonstrated in vitro, but direct butyrate rescue is not. Use Q141K as a research-stratification variable, not as a butyrate recommendation.
-- **SLC2A9 (GLUT9) variants** — Renal urate reabsorption; multiple GWAS hits. Smaller per-variant effect, cumulative across the locus.
-- **SLC22A12 (URAT1) variants** — Both loss-of-function (protective; common in some Asian populations) and gain-of-function (gout risk).
-- **PDZK1 variants** — Scaffolding for renal urate transporters; modulates URAT1 / GLUT9 surface expression.
-
-### Tier 3 — Inflammasome-related variants (NLRP3 chokepoint relevance)
-
-- **MEFV variants** — Familial Mediterranean Fever spectrum; pyrin-driven IL-1β. (Mechanistic Extrapolation from FMF biology to gout cross-reactivity.) Worth checking if there's a history of unexplained inflammatory episodes.
-- **NLRP3 gain-of-function variants** — Cryopyrin-associated periodic syndromes (CAPS); rare but high-effect.
-
-### Tier 4 — Conditionally relevant (EPI co-target only)
-
-- **CFTR, PRSS1, SPINK1** — only if EPI is in personal/family history. Otherwise skip.
-- **HNF1A, HNF1B** — pancreatic function modifiers; relevant only if EPI co-target applies.
-
-## Genotype-stratified T-axis adjuvant selection (speculative)
-
-The [T-axis adjuvant urate mapping](./t-axis-adjuvant-urate-mapping-computational.md) (comp-015 v2) generated cordycepin and *Eurycoma longifolia*-derived candidates from mixed compound, extract, Animal Model, and In Vitro evidence. It did not establish a genotype-specific treatment response. ABCG2 expression induction also cannot be assumed to rescue Q141K folding, surface trafficking, or urate flux.
-
-| Genotype context | Research question | Required evidence |
+| Variant or locus | Evidence boundary | Research use |
 |---|---|---|
-| ABCG2 Q141K homozygote | Is impaired surface trafficking or residual transport the limiting step? | Matched WT/Q141K surface-expression and urate-flux assays; transcriptional induction alone is insufficient. |
-| ABCG2 wild-type with a validated SLC22A12 functional variant | Does a verified candidate alter URAT1-dependent flux in that variant background? | Variant-specific renal-cell transport assay plus exposure verification. |
-| ABCG2 Q141K heterozygote | Does the wild-type allele provide inducible functional reserve? | Allele-aware expression, trafficking, and urate-flux measurements. |
-| SLC2A9 functional variant | Does the variant change the response to a verified GLUT9-active candidate? | Variant-specific functional transport data; target mention or docking is insufficient. |
+| **HLA-B*58:01** | Associated with allopurinol severe cutaneous adverse reactions in human case-control evidence (**Human Observational**; Hung et al. 2005). | A clinical-safety marker, not an Open Enzyme intervention target. Research-grade or nanopore calls must not be used for prescribing; validated clinical typing and clinical interpretation are separate requirements. |
+| **ABCG2 Q141K / rs2231142** | Associated with gout and altered urate handling in humans, with transporter-function evidence in experimental systems (**Human Observational + In Vitro**; Matsuo et al. 2009 and linked sources). | Stratify trafficking, surface-expression, and urate-flux assays. A genotype does not establish that a proposed inducer, chaperone, or HDAC-related intervention rescues functional flux. |
+| **SLC22A12 / URAT1 variants** | Human variants can alter renal urate transport (**Human Observational**; see canonical variant page). | Test variant-specific transporter function and response to an exact intervention in renal-cell models. |
+| **SLC2A9 / GLUT9 variants** | Human genetic evidence links the locus to serum urate (**Human Observational**; see canonical variant page). | Stratify direct transport assays. A locus association does not establish fructose handling, intervention response, or a delivery route for a specific variant. |
+| **PDZK1 and related transporter scaffolds** | Human association and mechanistic evidence are context-specific. | Use only when the experiment measures the relevant transporter complex, localization, and urate flux. |
 
-**This is experiment stratification, not a clinical selection rule.** None of the cited studies stratified response by ABCG2, SLC22A12, or SLC2A9 genotype, and comp-015 still has open entity-resolution and evidence-labeling actions. A genotype effect becomes actionable only after direct exposure, trafficking, and functional urate-flux evidence.
+## Variant-to-experiment discipline
 
-**Future COMP candidate:** use ABCG2 Q141K, SLC22A12, and SLC2A9 variants to prioritize direct functional assays for the comp-015 candidate panel. An in-silico matrix may rank experiments, but it must not output a genotype-aware compound selection rule without variant-specific functional data.
+1. **Define the question before inspecting genotype.** Predeclare the variant,
+   mechanism, cell model, endpoint, and decision rule. This reduces
+   genotype-driven storytelling.
+2. **Verify the call.** Record reference build, transcript, allele, zygosity,
+   coverage, base quality, mapping quality, caller, and pipeline version.
+   Orthogonally confirm any load-bearing call.
+3. **Separate association from mechanism.** A gout-risk allele can justify an
+   assay stratum; it cannot by itself select a compound, dose, or delivery
+   route.
+4. **Use the exact intervention.** The invalidated
+   [COMP-015](./t-axis-adjuvant-urate-mapping-computational.md) demonstrated
+   why extracts, purified compounds, and related metabolites cannot share an
+   evidence label. Genotype does not repair that identity problem.
+5. **Measure functional output.** Expression, docking, and target mention are
+   insufficient. Depending on the hypothesis, require surface localization,
+   transport, isotope-resolved flux, exposure, and safety.
+6. **Preserve nulls locally.** A null result rejects the tested
+   genotype–material–exposure configuration, not the entire target or genetic
+   mechanism.
 
-## Interpretation discipline
+## Sequencing and data boundary
 
-- **Evidence-level tagging.** Every finding gets the standard wiki tagging (Clinical Trial / Animal Model / In Vitro / Mechanistic Extrapolation). A pharmacogenomic finding from a single GWAS in one population is not the same as an FDA-actionable variant.
-- **Confounders matter.** ABCG2 Q141K interacts with diet, BMI, alcohol, NSAIDs. A "high-risk" variant in someone with an elite-athlete phenotype is not the same as in someone with metabolic syndrome.
-- **Don't act on findings without confirmation.** Long-read consensus accuracy at 30× is ~99%, but for a critical variant (e.g., HLA-B*58:01 typing for an allopurinol decision), confirm with a CLIA-grade short-read assay before changing prescribing.
-- **GINA gap reminder.** Life / disability / LTC underwriting can use genetic data. Once findings are shared (with doctors, into EHRs), the disclosure is hard to retract.
+Human genomes are identifiable and implicate biological relatives. A research
+workflow therefore needs explicit consent, access control, encrypted storage,
+retention and deletion rules, and a defined policy for secondary findings.
+Raw reads and variant files should not enter the public wiki or synthesis
+corpus.
 
-## Project crossover — strain QC infrastructure
+Long-read sequencing is a candidate discovery and phasing tool, not a blanket
+clinical validator. Difficult loci, structural variants, HLA typing, low
+coverage, and homology can require orthogonal methods. Platform chemistry,
+base callers, variant callers, and reference resources change; the executable
+protocol must pin those versions and validation controls when the experiment
+is commissioned.
 
-Same MinION + library prep + variant-calling pipeline that sequences Brian's genome does:
+## Engineered-strain QC
 
-- **CRISPR integration verification** — confirm the engineered cassette is at the intended locus + orientation in *A. oryzae* / *S. cerevisiae* / *F. prausnitzii*.
-- **Off-target indel screening** — check for unintended Cas9 cuts elsewhere in the strain genome.
-- **Plasmid validation** — verify the construct sequence matches the design before transformation. Catches synthesis errors before wet-lab spend.
-- **Released-strain genome QC** — every released engineered strain in the Open Enzyme library ships with its own assembled genome as proof-of-construct. Open-source strain library + open-source genome data is the OE thesis literalized: forkable strains include their full reference genome.
+The same sequencing capability can support experimental strain verification,
+but each claim needs a defined assay:
 
-This is not optional for Phase 1+ wet work. The hardware investment is both personal genomics AND platform infrastructure — same dollar, two outputs.
+- **Plasmid or construct identity:** compare the assembled construct with the
+  intended sequence and report coverage, discrepancies, and ambiguous bases.
+- **Integration-site verification:** require reads spanning both genome–insert
+  junctions, orientation, copy-number assessment, and absence of the
+  unintended backbone sequences covered by the assay.
+- **Genome-scale change detection:** compare the engineered isolate with its
+  actual parent strain, not only a public reference genome.
+- **Off-target assessment:** define the nuclease, predicted sites, detectable
+  variant classes, coverage threshold, caller performance, and confirmation
+  method. Whole-genome sequencing does not automatically prove absence of
+  off-target edits.
+- **Release provenance:** bind the construct, parent strain, raw-read digest,
+  assembly, analysis code, and QC verdict to one immutable manifest. Public
+  release of sequence data remains a separate governance decision.
 
-## Open questions / follow-ups
+Nanopore sequencing may be useful for long inserts, junction-spanning reads,
+and local analysis. It is one implementation option, not the scientific
+requirement; the required capability is validated resolution of the
+predeclared QC questions.
 
-- **Can MinION-only confirm HLA-B*58:01?** HLA typing is historically short-read territory due to repeat density. Long-read methods are improving (PacBio HiFi works well; nanopore R10.4.1 chemistry is closing the gap). Worth verifying current SOTA before relying on nanopore alone for a prescribing-relevant call.
-- **Strain-genome publication policy.** Should every released OE strain have its assembled genome published as part of the strain release? Cost ~$300/genome at nanopore tier. Aligns with the open-source-strain-library thesis. Decision pending.
-- **Self-experiment integration.** Pharmacogenomic findings should feed [`self-experiment-protocol.md`](./self-experiment-protocol.md) as priors — e.g., "if ABCG2 Q141K homozygote, allopurinol response will be blunted, plan biomarker monitoring accordingly." Likely yes; integration not yet drafted.
+## Research conjecture
 
-## See also
+> **Research conjecture — verified genotype can expose response heterogeneity hidden by pooled assays**{ .research-conjecture-label }
+>
+> **Grounded premises:** ABCG2, SLC22A12, and SLC2A9 variants are associated with human urate phenotypes (**Human Observational**), and transporter function can be measured in experimental systems (**In Vitro**; [gout genetic variants](./gout-genetic-variants.md), including Matsuo et al. 2009).
+>
+> **Novel leap:** A compositionally verified intervention may alter urate flux differently across a specific variant background even when pooled or wild-type assays look neutral. No direct evidence tests this interaction for the candidate materials currently under consideration.
+>
+> **Why it matters:** A real interaction would identify a responder boundary
+> and reveal which mechanistic step—expression, trafficking, or transport—is
+> limiting.
+>
+> **Discriminating observation:** In isogenic wild-type and variant cell
+> models, measure material identity and exposure, transporter localization,
+> urate flux, viability, and rescue controls. Advance only an interaction that
+> replicates and survives orthogonal genotype confirmation.
 
-- **[`genotype-informed-supplement-workflow.md`](./genotype-informed-supplement-workflow.md) — closed-loop n=1 pharmacogenomics research workflow.** Step 1 of that workflow is this page's variant-informed compound selection.
-- [`self-experiment-protocol.md`](./self-experiment-protocol.md) — biomarker monitoring framework that the workflow's step 5 uses for the readout layer
-- [`quantification-ladder.md`](./quantification-ladder.md) — home / community-biolab Tier 2 assay framework that turns supplement dose from fixed-input to verified variable (workflow steps 3–4)
-- [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md) — koji enzyme activity quantification (Tier 2/3)
-- [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) — Tier 2 assay SOPs for cordycepin, ergothioneine, GLPP
-- [`abcg2-modulators.md`](./abcg2-modulators.md) — pharmacological levers on ABCG2; PPARγ induction via butyrate; HDAC-inhibitor rescue of Q141K
-- [`gout-pathophysiology.md`](./gout-pathophysiology.md) — full gout cascade including 351 GWAS loci
-- [`etc/ai-bio-tools-playbook.md`](./etc/ai-bio-tools-playbook.md) — computational stack including variant interpretation
-- [`etc/practitioner-toolkit.md`](./etc/practitioner-toolkit.md) — section umbrella (self-experiments + DIY-bio + rigor disciplines)
+## Next implementation gate
+
+Commission one bounded protocol only when both the variant and intervention
+are fixed. The pre-run review must verify reference build, exact material,
+isogenic controls, sequencing/confirmation method, functional endpoint, and
+the rule that distinguishes a genotype interaction from a main effect.
+
+## Related evidence
+
+- [Gout genetic variants](./gout-genetic-variants.md)
+- [ABCG2 modulators](./abcg2-modulators.md)
+- [Gout pathophysiology](./gout-pathophysiology.md)
+- [AI and bioinformatics tools](./etc/ai-bio-tools-playbook.md)

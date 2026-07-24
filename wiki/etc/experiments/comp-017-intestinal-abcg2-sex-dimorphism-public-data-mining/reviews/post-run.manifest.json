@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/README.md",
+      "kind": "design",
+      "bytes": 4135,
+      "sha256": "d16cfd52ef4c85897a9bab45625df37ddfa9986f261bdcd7100856f0dfae2769"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/analyze.py",
+      "kind": "design",
+      "bytes": 19923,
+      "sha256": "8b4600d91459d893e8e49c85b5da57c9e6541018c7ef48555441c155318f5dd0"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/full_text_extract.json",
+      "kind": "design",
+      "bytes": 21297,
+      "sha256": "82a43d71e5447843fe8c8813e5bde47aaa73810a6e8795411548b5f934a8f683"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/gtex_data.json",
+      "kind": "design",
+      "bytes": 4736,
+      "sha256": "be09b1c80ad6d8409c24189e269a824b31b94d117f73fa007aa9523c9fb704b5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/hpa_data.json",
+      "kind": "design",
+      "bytes": 3199,
+      "sha256": "952e70365e4fd419a7d4af968ccef23489037d9f231e49b1b36b99df9fda7658"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 12678,
+      "sha256": "12347a28d04d798d8d5f2aa06685003e3c42ecc014e8681c5e5b975a261c0ced"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 24663,
+      "sha256": "aa2d58715e70ce24c09fc2a1429df5de274ec4c0094cbe04cbde42a53e371e5d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 24000,
+      "sha256": "0e910dbcf514591b4212296fef4b95dc1998fdceb627fb4463316182333b5b2b"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 78066,
+      "sha256": "39cf4979422b080dfa6ce5f20394d1a51510cb74e4ddf261ab80fe64d7f7f596"
+    },
+    {
+      "path": "wiki/hypotheses/H07-clomid-intestinal-er-antagonism.md",
+      "kind": "proposed_update",
+      "bytes": 3079,
+      "sha256": "8fde7bb3b61ca143c2f2fece6cf19ffbfe633d73b5dca572339ecde4800ab130"
+    },
+    {
+      "path": "wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3196,
+      "sha256": "29f15a5e5cd21b6015ce54532bf7eab8166e4ba918fd2a51a376d9954c59db6a"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "67973321f14f11c0d99b44e40d0add38ba2aa8a8d9733d5bf3c03077f8140595"
+}

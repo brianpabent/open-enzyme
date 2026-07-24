@@ -106,7 +106,12 @@ Three genes dominate the genetic architecture of hyperuricemia and gout, all enc
 
 **ABCG2** (chromosome 4): The single strongest genetic association with gout. The common Q141K variant (rs2231142, found in ~10% of European and ~30% of East Asian populations) reduces ABCG2 transport function by ~50%. This means less uric acid is secreted into both the gut and kidney tubule. The 2025 UK Biobank GWAS found the most significant gout association at rs2199936 in ABCG2 (p = 1.75 × 10⁻⁹⁷).
 
-**SLC2A9 / GLUT9** (chromosome 4): The second-strongest association (rs58656183, p = 5.52 × 10⁻⁹⁰). GLUT9 is a fascinating dual-function transporter — it moves both urate and fructose. Genetic variants here have the largest per-allele effect on serum urate of any known locus. This gene is also the link between fructose metabolism and gout (more on this in Section 9).
+**SLC2A9 / GLUT9** (chromosome 4): The second-strongest association
+(rs58656183, p = 5.52 × 10⁻⁹⁰). SLC2A9 is a major renal urate-reabsorption
+transporter. Rare loss-of-function variants cause renal hypouricemia rather
+than hyperuricemia (**Human Observational + In Vitro**; PMID 19926891). Common
+locus associations do not specify individual direction, fructose sensitivity,
+or an intervention response.
 
 **SLC22A12 / URAT1** (chromosome 11): Encodes the primary reabsorption transporter. Loss-of-function variants actually *protect* against gout (and cause renal hypouricemia). Gain-of-function or regulatory variants that increase URAT1 expression increase gout risk.
 
@@ -214,13 +219,16 @@ This is where it gets really interesting. Two cutting-edge approaches are in dev
 
 ---
 
-## Fructose: The Hidden Accelerant
+## Fructose: An Urate-Production Accelerator
 
-The fructose-gout connection is one of the most clinically actionable findings in recent gout research, yet it remains under-communicated to patients.
+Fructose-driven KHK activity is a direct urate-production mechanism and a
+testable intervention point. This section defines the mechanism; it does not
+provide dietary or treatment instructions.
 
 ### The Metabolic Mechanism
 
-Unlike glucose, fructose is metabolized primarily in the liver by a dedicated pathway that uniquely generates uric acid:
+KHK-mediated fructose phosphorylation can consume ATP rapidly and increase
+degradation of the existing adenine nucleotide pool to urate:
 
 ```mermaid
 graph TD
@@ -231,19 +239,32 @@ graph TD
     E -->|Xanthine Oxidase| F[Uric Acid]
 ```
 
-The key insight: fructokinase has **no negative feedback**. Unlike hexokinase (which phosphorylates glucose), fructokinase doesn't slow down when ATP is low or when downstream products accumulate. This means a large fructose load causes *unregulated* ATP consumption, rapid AMP accumulation, and a surge of uric acid production. It also means fructose increases *de novo* purine synthesis — creating new purines from scratch, not just degrading existing ones.
+The key insight: fructokinase has **no negative feedback**. Unlike hexokinase
+(which phosphorylates glucose), fructokinase does not slow down when ATP is low
+or when downstream products accumulate. A large fructose load can therefore
+drive rapid ATP consumption, AMP accumulation, and degradation of the
+pre-existing adenine nucleotide pool to urate. This is purine catabolism, not
+the creation of new purines through de-novo synthesis. Whether fructose also
+changes PRPP-supply or de-novo flux enough to matter is a separate,
+unresolved question.
 
-### The GLUT9 Connection
+### The SLC2A9 boundary
 
-Remember SLC2A9/GLUT9, the second-strongest GWAS hit for urate levels? GLUT9 transports both urate and fructose. This creates a direct molecular link: the same transporter that handles uric acid excretion in the kidney also handles fructose transport in the liver and gut. Genetic variants that affect GLUT9 function alter both fructose metabolism and uric acid handling simultaneously.
+SLC2A9 genotype cannot be used as a proxy for KHK activity or fructose
+sensitivity. Homozygous SLC2A9 loss-of-function impairs renal urate
+reabsorption and causes renal hypouricemia, with possible nephrolithiasis and
+exercise-induced acute kidney injury (**Human Observational + In Vitro**;
+PMID 19926891). The old “dual vulnerability” direction was wrong.
 
-### Clinical Implications
-
-Fructose consumption has increased dramatically in Western diets — from ~15g/day in the early 1900s to ~55–75g/day today, driven primarily by high-fructose corn syrup in processed foods and sugar-sweetened beverages. This aligns almost perfectly with the rising prevalence of gout. Additionally, fructose also reduces renal uric acid excretion, hitting both the production and excretion sides.
+### Research implications
 
 > **Exposure-reduction hypothesis**
 >
-> Sugar-sweetened beverages and high-fructose corn syrup are high-priority exposure variables because the fructose-to-urate pathway has a direct biochemical mechanism with limited regulatory braking. Controlled studies must establish the outcome effect and whether KHK inhibition blocks it without unacceptable tradeoffs.
+> Defined fructose exposure is a useful experimental variable because the
+> KHK-to-AMP-catabolism mechanism is direct. Controlled studies must establish
+> urate mass balance, whether KHK inhibition blocks the production arm, and
+> whether a separate NOX/ABCG2 effect changes intestinal export. See
+> [fructose-driven urate production](./fructose-connection.md).
 
 ---
 
@@ -337,7 +358,12 @@ This section identifies adjacent mechanisms that generate testable gout hypothes
 
 > **Connection 3: Metabolic Syndrome Research → Fructokinase (KHK) Inhibitors**
 >
-> Several pharmaceutical companies (Pfizer, Johnson & Johnson) have developed ketohexokinase (KHK) inhibitors for non-alcoholic fatty liver disease (NAFLD/NASH). KHK catalyzes the first step of fructose metabolism — the very step that initiates the ATP-depletion cascade leading to uric acid. A KHK inhibitor would *simultaneously* reduce fructose-driven uric acid production, prevent fructose-driven lipogenesis, and protect against metabolic syndrome. The gout application is an obvious line extension that these companies may not be prioritizing. Pfizer's PF-06835919 (a KHK inhibitor) reduced serum uric acid by up to 20% in clinical trials for NAFLD.
+> PF-06835919 establishes that KHK can be pharmacologically engaged in humans
+> studied for metabolic disease (**Clinical Trial**; PMCID PMC8050029 and DOI
+> 10.1111/dom.14946). It does not establish gout efficacy or a gout-relevant
+> serum-urate effect. The next question is whether verified KHK engagement
+> changes isotope-resolved AMP catabolism and urate mass balance under a
+> defined fructose exposure.
 
 > **Connection 4: CAR-T / Immune Tolerance Engineering → Crystal Tolerance**
 >

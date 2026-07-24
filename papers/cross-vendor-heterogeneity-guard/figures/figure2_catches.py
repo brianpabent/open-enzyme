@@ -69,11 +69,11 @@ CLASSES = [
     },
     {
         "title": "Corpus-level\ncontamination",
-        "exemplar": "§5.6 — Tongkat ali\ncitation laundering /\neurycomanone reversal",
+        "exemplar": "§5.6 — Tongkat ali\ncitation laundering /\nidentity-collapse catch",
         "exemplar_date": "2026-05-07",
-        "surfacing": "V-of-V chain\n(primary source)",
+        "surfacing": "V-of-V + exact-\nsnapshot review",
         "surfacing_color": "vov",
-        "what_it_is": "Contamination distributes\nidentically across vendors\nbecause it is in every\nvendor's training corpus.",
+        "what_it_is": "Widely indexed secondary\nclaims can create common-\ncause errors; the attempted\nrepair can preserve identity drift.",
     },
 ]
 
@@ -173,7 +173,7 @@ def main():
         mpatches.Patch(facecolor=COLORS["manual"],
                        label="Within-pipeline manual discipline"),
         mpatches.Patch(facecolor=COLORS["vov"],
-                       label="Verification-of-verification (primary-source chain)"),
+                       label="Verification-of-verification + correction review"),
     ]
     ax.legend(handles=handles, loc="lower center", fontsize=8.5,
               ncol=3, frameon=False, bbox_to_anchor=(0.5, -0.04))

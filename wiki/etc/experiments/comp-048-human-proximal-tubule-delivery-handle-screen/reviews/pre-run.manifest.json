@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/.gitignore",
+      "kind": "design",
+      "bytes": 31,
+      "sha256": "6cb495eca6406d16842cbc5e59ad4d1de0c453b37de2829d7afcf957ea41d24b"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/README.md",
+      "kind": "design",
+      "bytes": 10289,
+      "sha256": "10d5d2f086e242b3517e3df1e2f625afb0f9255d63a4bd160ad130f43bd0195c"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/analyze.py",
+      "kind": "design",
+      "bytes": 72372,
+      "sha256": "b086bcb12acb7ccda7fc9b09e8d320736bea87bd86978dfbcbbf0a700d8ae594"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/fetch_inputs.py",
+      "kind": "design",
+      "bytes": 4792,
+      "sha256": "4a7ff4e241788ae9fcbd12096be0c91319902e8f308ce0567379ca774908b918"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/inputs/controls.tsv",
+      "kind": "design",
+      "bytes": 1774,
+      "sha256": "490288d33a6d3a8c77c2f95581120bb71a6c39414ac1794f2bb8f41b7e674546"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/inputs/design-rules.json",
+      "kind": "design",
+      "bytes": 9094,
+      "sha256": "6b2736c08d9c11147b264011c75c42ea336f71802e68da51a90ea66cb3bd5f98"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 4292,
+      "sha256": "c4fb9f723e123d25fe85f2ff9bd8166f19bfd7dae8f47c58650b98c760b08cc2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/inputs/source-manifest.json",
+      "kind": "design",
+      "bytes": 4010,
+      "sha256": "c4c1b225dc5a8dbc7bee25e876d0549d61cb9edc8dd18848105b5448c6a09857"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/requirements.lock.txt",
+      "kind": "design",
+      "bytes": 255,
+      "sha256": "b284069312d56f7e164d9e7cbbf219775281e5a1648e899cc32b8729e1af8889"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "635a65b6a7020e26fe0406544ff3ad1e908256fd60e54af41473f01880e85aa7"
+}

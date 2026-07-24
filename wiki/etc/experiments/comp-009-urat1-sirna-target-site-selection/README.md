@@ -1,104 +1,45 @@
-# comp-009: URAT1 mRNA target site selection for siRNA
+> **INVALIDATED TOMBSTONE — NOT RUNNABLE.** COMP-009 does not establish a usable URAT1 siRNA guide, target-site tractability, accessibility, specificity, cross-species reuse, or support for H03.
 
-**Question:** Which 21-nt target sites on SLC22A12 (URAT1) mRNA are mechanistically viable for siRNA design, when filtered through Reynolds + Ui-Tei + immunogenicity + cross-mammalian-conservation rules?
+# comp-009 — URAT1 mRNA Target-Site Selection
 
-**Verdict (top-line):** **GREEN** — 10 ranked target-site candidates survive all filters. The H03 killshot ("if URAT1 mRNA has no accessible siRNA target sites, the entire thesis collapses before delivery is even considered") does not fire. URAT1 mRNA is amenable to standard siRNA design.
+**Status:** Invalidated for every candidate sequence, filter funnel, rank, composite score, shortlist, GREEN verdict, target-site-availability conclusion, H03-support claim, and P2-2 closure.
 
-**Pipeline:** 1488 windows scanned → 365 pass Reynolds GC (30–52%) → 292 pass immunogenicity (TLR7/8 + GU-rich) → 204 pass homopolymer exclusion → 74 pass Reynolds≥5/8 + Ui-Tei AU≥4/7 → 10-candidate shortlist with 60-nt positional diversity. Top candidate at CDS position 1561 (AA 521, `LPLPDTI`) has 100% mammalian conservation, composite score 81.1/100.
+The rerun corrected the original use of an artificial back-translated CDS by scanning RefSeq NM_144585.4, but the revised model still could not support its decision:
 
-**Closes Phase 2 P2-2** from [`wiki/sirna-urat1-modality.md`](../../../sirna-urat1-modality.md) §Open Follow-Ups. **Informs H03 stub** at [`wiki/hypotheses/H03-sirna-urat1-thesis.md`](../../../hypotheses/H03-sirna-urat1-thesis.md) Assumption 1 (URAT1 mRNA has accessible target sites — confirmed at CDS level).
+- The Reynolds implementation applied the cited sense-strand positional preferences to the antisense strand, omitted the source's terminal-stability and inverted-repeat criteria, and substituted a four-base homopolymer check.
+- The Ui-Tei gate did not require the cited terminal-composition, A/U-richness, and long-GC-stretch rules simultaneously.
+- The composite score combined raw RNAplfold unpaired probability with arbitrary, uncalibrated weights. Its protein-conservation term could dominate the target-accessibility term. This is not the RNAxs model calibrated and independently tested by Tafer et al.
+- No transcriptome or 3′-UTR off-target clearance was performed, only one SLC22A12 transcript was scanned, protein conservation cannot establish cross-species siRNA reuse, and midpoint-based region annotation mislabeled a window spanning the 5′-UTR/CDS boundary.
+- No candidate was tested for intracellular activity, URAT1 knockdown, target-cell uptake, urate transport, or renal safety.
 
-**Reproducible artifact:** this directory. Run `python3 scripts/analyze.py`. stdlib only.
+The governing primary methods are [Reynolds et al. 2004](https://doi.org/10.1038/nbt936), [Ui-Tei et al. 2004](https://doi.org/10.1093/nar/gkh247), and [Tafer et al. 2008](https://doi.org/10.1038/nbt1404).
 
-**Interpretive wiki page:** [`wiki/urat1-sirna-target-site-selection-computational.md`](../../../urat1-sirna-target-site-selection-computational.md)
+## What survives
 
----
+The URAT1-siRNA hypothesis survives independently of COMP-009. The historical rerun did examine NM_144585.4, but that fact has no predictive or decision use and does not establish that SLC22A12 is tractable for therapeutic siRNA design.
 
-## How to reproduce
+Kidney-tropic delivery remains the upstream gate. [COMP-048](../comp-048-human-proximal-tubule-delivery-handle-screen/) is the planned human proximal-tubule delivery-handle screen. A new guide-design COMP is deferred until a delivery route survives. It must use a validated current design method, cover relevant SLC22A12 transcripts and human variation, perform transcriptome-wide off-target analysis, separate target accessibility from other evidence dimensions, and require empirical URAT1 knockdown before any guide advances.
 
-```bash
-cd wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection
-# RERUN (2026-07-14) requires ViennaRNA for real RNAplfold accessibility:
-uv venv .venv --python 3.13 && uv pip install --python .venv/bin/python ViennaRNA
-.venv/bin/python scripts/analyze.py
-```
+## Current evidence owners and correction cascade
 
-**Reproduction contract (updated 2026-07-14 RERUN):** requires **ViennaRNA** (not stdlib) for real RNAplfold accessibility. Input is the **real** `inputs/NM_144585.4_mrna.fasta` (RefSeq, fetched from NCBI 2026-07-14), NOT a back-translated CDS. The original stdlib-only run scanned an artificial back-translated CDS and was invalidated by the 2026-07-14 comp-review.
+The [focused COMP page](../../../urat1-sirna-target-site-selection-computational.md) owns the invalidated verdict. The [siRNA/URAT1 modality page](../../../sirna-urat1-modality.md) owns the surviving track, delivery dependency, and conditional guide-design gate.
 
-Outputs land in `outputs/`:
-- `target_sites.json` — full machine-readable results (pipeline metadata, shortlist, top-50 passing candidates)
-- `shortlist.csv` — flat CSV of the 10 ranked candidates for spreadsheet use
-- `summary.md` — human-readable summary table + per-candidate detail
+Correction targets in this retirement batch are:
 
----
+- `wiki/urat1-sirna-target-site-selection-computational.md`
+- `wiki/sirna-urat1-modality.md`
+- `wiki/hypotheses/H03-sirna-urat1-thesis.md`
+- `wiki/chassis-pending-interventions.md`
+- `wiki/computational-experiments.md`
+- `wiki/open-questions.md`
+- `operations/operational-search-template.md`
+- `operations/todos.md`
+- `index.md`
 
-## File index
+References inside the retained review receipts are historical review provenance, not current scientific evidence. After the nine correction targets are reconciled, `synthesis/queue/comp-review-009.md` is deleted in the same commit.
 
-```
-comp-009-urat1-sirna-target-site-selection/
-  scripts/
-    analyze.py                   ← analysis script (run this)
-  inputs/
-    urat1_orthologs.fasta        ← human/chimp/mouse/rat URAT1 protein sequences (fetched from UniProt 2026-05-16)
-    orthologs.json               ← ortholog provenance metadata (UniProt IDs, RefSeq IDs)
-    design_parameters.json       ← Reynolds + Ui-Tei + immunogenicity thresholds with grep-verifiable provenance
-    human_codon_usage.json       ← Kazusa human codon-usage frequencies (for seeded back-translation)
-  outputs/                       ← generated by analyze.py
-    target_sites.json
-    shortlist.csv
-    summary.md
-  README.md                      ← this file
-```
+## Hash-bound retirement record
 
----
+[`invalidation.json`](./invalidation.json) binds every retired non-review file to the exact pre-retirement Git tree by byte count and SHA-256 and defines the invalidated and surviving scopes.
 
-## Methodology summary
-
-1. **Input.** UniProt Q96S37 (human URAT1, 553 aa). Orthologs: chimp H2R5A9 (TrEMBL), mouse Q8CFZ5, rat Q3ZAV1 — all 553 aa, >85% identity.
-2. **Back-translation.** Protein → representative CDS (1659 nt, GC 56.5%) via seeded weighted sampling from Kazusa human codon-usage frequencies. Seed = 42 for reproducibility. The CDS is **not** the actual NM_144585.3 mRNA — UTRs are absent and the synonymous codon distribution is human-genome-average, not gene-specific. See Limitations.
-3. **Sliding window.** All 1488 21-nt windows over CDS positions 76 to 1584 (skips first / last 75 nt to avoid ribosome-competition edge effects).
-4. **Per-window scoring:**
-   - **Reynolds 0–8:** GC 30–52%, no 4-nt runs, positional preferences for antisense pos 1/3/10/13/19 (Reynolds Nat Biotechnol 2004).
-   - **Ui-Tei seed:** AU count in antisense positions 1–7 (≥4/7 required) for asymmetric RISC loading (Ui-Tei NAR 2004).
-   - **Immunogenicity filter (hard exclusion):** TLR7/8-activating motifs (`UGUGU`, `GUCCUUCAA`, `GUUGUGG`, `UGUUGU` — Judge NBT 2005, Hornung 2005) and GU-rich 9-mers (≥7 of 9 G/U).
-   - **Homopolymer exclusion (hard):** any 4-nt run of A/T/G/C kills the candidate.
-   - **Local structural accessibility:** Tinoco-style nearest-neighbor stack-energy sum over the best inverted-repeat stem in the 21-mer. **Surrogate for ViennaRNA RNAplfold** which was not available in the analysis environment — directionally correct, must be re-validated with real ViennaRNA at wet-lab handoff time. Empirical correlation with full RNAplfold is r ~ 0.6–0.7 in published benchmarks (Tafer 2008).
-   - **Conservation:** positional pairwise AA identity of the codon window across human/chimp/mouse/rat. Highly-conserved (≥95% all 4) = same siRNA likely works in rodent preclinical PK/PD AND human therapeutic.
-5. **Composite scoring:** weighted sum (Reynolds 3.75×/criterion, Ui-Tei AU 2.14×/count, accessibility 25×, conservation 0.30×). Total scale 0–100.
-6. **Final shortlist:** top 10 by composite score with ≥60-nt CDS positional separation to avoid clustered redundancy.
-
----
-
-## Top-line shortlist
-
-| Rank | CDS pos | AA window | Antisense guide (5'→3') | GC% | Reynolds | Conservation | Composite |
-|---|---|---|---|---|---|---|---|
-| 1 | 1561 | LPLPDTI | `UAUAGUAUCUGGCAAAGGUAG` | 38.1 | 6/8 | 100% | **81.1** |
-| 2 | 1039 | RFRTCIS | `UGAAAUACAUGUCCUGAAACG` | 38.1 | 8/8 | 81% | 78.1 |
-| 3 | 969 | AMREELS | `AUUGAUAGCUCUUCGCGCAUU` | 42.9 | 7/8 | 76% | 77.7 |
-| 4 | 1115 | QALGSNI | `AGAUAUUGCUUCCCAAUGCCU` | 42.9 | 6/8 | 100% | 74.6 |
-| 5 | 603 | LFRFLLA | `AAAGCCAGGAGGAAUCGAAAU` | 42.9 | 7/8 | 95% | 73.4 |
-| 6 | 507 | RFGRRLV | `AGAACAAGUCUUCUACCGAAC` | 42.9 | 7/8 | 91% | 71.3 |
-| 7 | 362 | VYDRSIF | `UGAAGAUGCUUCUAUCGUAAA` | 33.3 | 8/8 | 81% | 69.5 |
-| 8 | 1447 | GPLVRLL | `GAGAAGUCUUACAAGUGGUCC` | 47.6 | 5/8 | 100% | 68.3 |
-| 9 | 212 | ALLAISI | `GUAUGGAAAUGGCUAAUAGGG` | 42.9 | 5/8 | 76% | 66.9 |
-| 10 | 1358 | TIYSSEL | `ACAACUCACUAGAGUAGAUUG` | 38.1 | 7/8 | 91% | 66.5 |
-
----
-
-## Limitations (from the run)
-
-1. **CDS-only.** NCBI was not in the allowed network host list — UTRs were not analysable. UTR-targeting siRNAs (especially 3' UTR, where seed-region miRNA-like activity is most-effective) are a real handoff item. Re-run with NM_144585.3 mRNA at wet-lab time.
-2. **Back-translation surrogate, not real mRNA.** Most of the synonymous codons in NM_144585.3 likely differ from the seeded sampling used here. The shortlist is **directionally correct for CDS-region targeting** but the exact 21-nt nucleotide sequences MUST be re-derived from the actual RefSeq mRNA before oligo synthesis. The AA-window column and conservation columns are robust across this caveat; the nucleotide-sequence column is not.
-3. **No ViennaRNA RNAplfold.** Local accessibility is a Tinoco-style surrogate. Wet-lab handoff item: re-validate with full RNAplfold.
-4. **No BLAST against full human transcriptome.** Seed off-target burden (positions 2–8 vs. all human 3' UTRs) requires NCBI access. Wet-lab handoff item.
-5. **Conservation at AA level, not nucleotide level.** Two species with identical AA may use different synonymous codons → cross-species reuse claim is upper-bound. Re-validate with actual ortholog mRNA at handoff.
-
----
-
-## Cross-references
-
-- Scope page: [`wiki/sirna-urat1-modality.md`](../../../sirna-urat1-modality.md)
-- Hypothesis card: [`wiki/hypotheses/H03-sirna-urat1-thesis.md`](../../../hypotheses/H03-sirna-urat1-thesis.md)
-- Wiki interpretive page: [`wiki/urat1-sirna-target-site-selection-computational.md`](../../../urat1-sirna-target-site-selection-computational.md)
-- Tracking index: [`wiki/computational-experiments.md`](../../../computational-experiments.md)
+There is no reproduction command. Git retains the retired code, inputs, outputs, and reviews.

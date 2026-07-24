@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "frozen_on": "2026-07-24",
+  "sources": [
+    {
+      "id": "kpmp_cellxgene_integrated_human_kidney",
+      "role": "donor-level kidney single-cell and single-nucleus expression",
+      "collection_id": "bcb61471-2a44-4d00-a0af-ff085512674c",
+      "collection_version_id": "379e9a9b-8436-496f-9370-042491bc27d6",
+      "dataset_id": "0b75c598-0893-4216-afe8-5414cab7739d",
+      "dataset_version_id": "4cd166f1-ef51-4137-869d-0a3688bc2bc8",
+      "url": "https://datasets.cellxgene.cziscience.com/4cd166f1-ef51-4137-869d-0a3688bc2bc8.h5ad",
+      "local_name": "kpmp-integrated-human-kidney.h5ad",
+      "bytes": 2959305098,
+      "sha256": "e582fdbe0658dc846106f68e56d967aa550e51083466935d51cb66767c9bc9d2",
+      "schema": "CELLxGENE 7.1.0; AnnData CSR matrix, 304652 observations by 33140 features",
+      "schema_reference": "https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/7.1.0/schema.md",
+      "collection_metadata_api": "https://api.cellxgene.cziscience.com/curation/v1/collections/bcb61471-2a44-4d00-a0af-ff085512674c",
+      "primary_publication": "Lake et al., Nature 2023, DOI:10.1038/s41586-023-05769-3"
+    },
+    {
+      "id": "bausch_fluck_surfaceome",
+      "role": "candidate universe, surface-evidence class, topology prior",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6243280/supplementaryFiles",
+      "archive_member": "pnas.1808790115.sd01.xls",
+      "local_name": "bausch-fluck-surfaceome.xls",
+      "bytes": 31009792,
+      "sha256": "c904a3c12360625a4a5245a52789f5210b673db8c4cdf9fc9aa867dd4ad257ce",
+      "sheet": "11.7_Surfaceome",
+      "primary_publication": "Bausch-Fluck et al., PNAS 2018, DOI:10.1073/pnas.1808790115"
+    },
+    {
+      "id": "hpa_single_cell_type",
+      "role": "cross-cell-type RNA expression",
+      "release": "25.1",
+      "release_page": "https://v25.proteinatlas.org/about/download",
+      "data_dictionary_page": "https://v25.proteinatlas.org/humanproteome/single+cell/single+cell+type/data",
+      "url": "https://v25.proteinatlas.org/download/tsv/rna_single_cell_type.tsv.zip",
+      "local_name": "rna_single_cell_type.tsv.zip",
+      "bytes": 16346850,
+      "sha256": "2ddd3d90fb050a8efea508792ba7741c510fb5aa3d89f352aab99794ec2c9d64",
+      "archive_member": "rna_single_cell_type.tsv",
+      "required_header": ["Gene", "Gene name", "Cell type", "nCPM"],
+      "primary_key": ["Gene", "Cell type"],
+      "unit": "nCPM"
+    },
+    {
+      "id": "hpa_tissue_consensus",
+      "role": "cross-tissue RNA expression",
+      "release": "25.1",
+      "release_page": "https://v25.proteinatlas.org/about/download",
+      "data_dictionary_page": "https://v25.proteinatlas.org/humanproteome/tissue/data",
+      "url": "https://v25.proteinatlas.org/download/tsv/rna_tissue_consensus.tsv.zip",
+      "local_name": "rna_tissue_consensus.tsv.zip",
+      "bytes": 5293680,
+      "sha256": "b001903da23f802c8dfbd1b6b3a8c20b831fedd4932f4bb721b06622d83ae60b",
+      "archive_member": "rna_tissue_consensus.tsv",
+      "required_header": ["Gene", "Gene name", "Tissue", "nTPM"],
+      "primary_key": ["Gene", "Tissue"],
+      "unit": "nTPM"
+    },
+    {
+      "id": "hpa_normal_ihc",
+      "role": "protein-level tissue and cell-type localization corroboration",
+      "release": "25.1",
+      "release_page": "https://v25.proteinatlas.org/about/download",
+      "data_dictionary_page": "https://v25.proteinatlas.org/humanproteome/tissue/data",
+      "url": "https://v25.proteinatlas.org/download/tsv/normal_ihc_data.tsv.zip",
+      "local_name": "normal_ihc_data.tsv.zip",
+      "bytes": 5732831,
+      "sha256": "fa2315e5a53ecffd9427a5bfe219c8cc41b54089ef6f6be7b5d79b5455e0677f",
+      "archive_member": "normal_ihc_data.tsv",
+      "required_header": ["Gene", "Gene name", "Tissue", "IHC tissue name", "Cell type", "Level", "Reliability"],
+      "primary_key": ["Gene", "Tissue", "IHC tissue name", "Cell type"],
+      "unit": "ordinal IHC level with HPA reliability"
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "schema_version": 2,
+  "runtime": {
+    "python_exact": "3.11.9",
+    "candidate_batch_size": 48,
+    "hash_chunk_bytes": 1048576,
+    "download_timeout_seconds": 120,
+    "download_user_agent": "Open-Enzyme-COMP-048/2.0"
+  },
+  "required_input_schema": {
+    "kpmp_shape": [304652, 33140],
+    "kpmp_schema_version": "7.1.0",
+    "kpmp_obs_columns": [
+      "assay",
+      "cell_type",
+      "condition.l1",
+      "donor_id",
+      "specimen",
+      "subclass.l1"
+    ],
+    "kpmp_var_columns": ["feature_name"],
+    "kpmp_required_conditions": ["Ref", "AKI", "CKD"],
+    "hpa_cell_columns": ["Gene", "Gene name", "Cell type", "nCPM"],
+    "hpa_tissue_columns": ["Gene", "Gene name", "Tissue", "nTPM"],
+    "hpa_ihc_columns": [
+      "Gene",
+      "Gene name",
+      "Tissue",
+      "IHC tissue name",
+      "Cell type",
+      "Level",
+      "Reliability"
+    ],
+    "surfaceome_header_row": 1,
+    "surfaceome_required_columns": [
+      "UniProt accession",
+      "UniProt description",
+      "UniProt gene",
+      "Surfaceome Label",
+      "Surfaceome Label Source",
+      "topology",
+      "topology source",
+      "Ensembl gene",
+      "CSPA category",
+      "UniProt subcellular",
+      "UniProt keywords"
+    ]
+  },
+  "labels": {
+    "target_gene": "SLC22A12",
+    "primary_condition": "Ref",
+    "disease_conditions": ["AKI", "CKD"],
+    "exact_pt_cell_type": "epithelial cell of proximal tubule",
+    "pt_subclass": "PT",
+    "cell_type_missing_tokens": ["", "nan", "NA", "unknown"],
+    "hpa_proximal_tubule_cell_type": "proximal tubule cells",
+    "hpa_hepatocyte_cell_type": "hepatocytes",
+    "hpa_kidney_tissue": "kidney",
+    "hpa_liver_tissue": "liver",
+    "hpa_ihc_kidney_tissue": "Kidney",
+    "required_surfaceome_label": "surface"
+  },
+  "pt_assignment": {
+    "policy": "exact_then_missing_only_fallback",
+    "exact": "cell_type equals labels.exact_pt_cell_type",
+    "fallback": "subclass.l1 equals labels.pt_subclass only when cell_type is missing according to labels.cell_type_missing_tokens",
+    "conflict": "a nonmissing, non-exact cell_type with subclass.l1 PT remains non-PT and is reported as a label conflict",
+    "maximum_conflict_fraction_before_method_failure": 0.01
+  },
+  "expression_detection": {
+    "detected_if_value_strictly_greater_than": 0.0,
+    "matrix": "X",
+    "gene_mapping_policy": "when a row supplies explicit surfaceome Ensembl IDs, require every supplied ID to be present in KPMP and use all of them; use all exact feature_name symbol matches only when that row supplies no explicit ID; never use a partial explicit-ID set or symbol fallback after an explicit-ID failure",
+    "multi_ensembl_policy": "union_nonzero",
+    "multi_ensembl_hpa_policy": "maximum value across the same mapped Ensembl IDs within each HPA category",
+    "multi_ensembl_note": "For a gene mapped to more than one Ensembl gene ID, a cell is detected when any mapped column exceeds the detection threshold; every ID is reported.",
+    "candidate_csv_row_policy": "one row per frozen surfaceome candidate; unresolved candidates retain mapping status and failure reason with all computed axes blank and all gates false"
+  },
+  "count_corrections": {
+    "binomial_hits_pseudocount": 0.5,
+    "binomial_total_pseudocount": 1.0,
+    "hpa_ratio_pseudocount": 0.1,
+    "disease_coverage_ratio_pseudocount": 0.1
+  },
+  "summary_statistics": {
+    "median_quantile": 0.5,
+    "lower_quartile_quantile": 0.25,
+    "quantile_method": "linear"
+  },
+  "eligible_donor_rules": {
+    "minimum_proximal_tubule_cells": 20,
+    "minimum_slc22a12_positive_cells": 5,
+    "minimum_slc22a12_negative_pt_cells_for_diagnostic": 5,
+    "minimum_eligible_reference_donors": 3,
+    "minimum_cells_per_non_target_cell_type": 20
+  },
+  "stratification": {
+    "primary_gate_pooling": "Within each donor and condition, assay and specimen strata are pooled only after all donor-by-assay-by-specimen-by-condition denominators and detection fractions are written to stratum-metrics.csv.",
+    "diagnostic_columns": ["condition.l1", "donor_id", "assay", "specimen"],
+    "empty_strata": "not emitted",
+    "stratum_metrics_are_gating": false
+  },
+  "method_controls": {
+    "positive_pattern_genes": ["ASGR1", "ASGR2"],
+    "positive_pattern_min_hpa_hepatocyte_to_next_cell_type_ratio": 2.0,
+    "positive_pattern_min_hpa_liver_to_next_tissue_ratio": 2.0,
+    "negative_surface_genes": ["ALB", "GAPDH"],
+    "slc22a12_min_reference_donor_detection_fraction": 0.05
+  },
+  "surface_evidence": {
+    "minimum_noncytoplasmic_residues": 20,
+    "topology_noncytoplasmic_prefix": "NC:",
+    "classes": [
+      {
+        "name": "CSPA high confidence",
+        "ordinal": 3,
+        "matcher": "cspa_prefix",
+        "value": "1"
+      },
+      {
+        "name": "CSPA lower confidence",
+        "ordinal": 2,
+        "matcher": "cspa_nonempty"
+      },
+      {
+        "name": "positive training set",
+        "ordinal": 2,
+        "matcher": "label_source_contains_any",
+        "values": ["pos. trainingset", "positive"]
+      },
+      {
+        "name": "machine-learning/annotation prior",
+        "ordinal": 1,
+        "matcher": "fallback"
+      }
+    ],
+    "direct_classes": [
+      "CSPA high confidence",
+      "CSPA lower confidence",
+      "positive training set"
+    ]
+  },
+  "technical_completeness": {
+    "minimum_surfaceome_to_kpmp_mapping_fraction": 0.9,
+    "minimum_mapped_candidates_with_complete_hpa_cell_ratio_inputs_fraction": 0.9,
+    "minimum_mapped_candidates_with_complete_hpa_tissue_ratio_inputs_fraction": 0.9,
+    "hpa_ratio_requires_any_data": true,
+    "hpa_ratio_requires_target_category": true,
+    "hpa_ratio_requires_non_target_comparison_category": true,
+    "negative_verdict_requires_zero_unresolved_candidate_mappings": true,
+    "negative_verdict_requires_zero_incomplete_hpa_cell_ratio_inputs": true,
+    "negative_verdict_requires_zero_incomplete_hpa_tissue_ratio_inputs": true,
+    "duplicate_hpa_gene_category_rows": "METHOD_FAILURE",
+    "duplicate_surfaceome_gene_rows": "METHOD_FAILURE",
+    "duplicate_kpmp_observation_ids": "METHOD_FAILURE",
+    "duplicate_kpmp_feature_ids": "METHOD_FAILURE",
+    "missing_donor_ids": "METHOD_FAILURE"
+  },
+  "disease_stability_axis": {
+    "minimum_eligible_donors_per_condition": 3,
+    "stable_if_condition_to_reference_median_coverage_ratio_at_least": 0.5,
+    "states": ["stable", "unstable", "insufficient"],
+    "not_used_in_primary_reference_gate": true
+  },
+  "sensitivity_sets": [
+    {
+      "name": "permissive",
+      "coverage_median": 0.1,
+      "coverage_q25": 0.05,
+      "target_to_non_pt_ratio": 1.5,
+      "non_pt_median_max": 0.5,
+      "non_pt_cell_type_max": 0.75,
+      "hpa_cell_type_ratio": 1.5,
+      "hpa_tissue_ratio": 1.5
+    },
+    {
+      "name": "primary",
+      "coverage_median": 0.25,
+      "coverage_q25": 0.1,
+      "target_to_non_pt_ratio": 2.0,
+      "non_pt_median_max": 0.25,
+      "non_pt_cell_type_max": 0.5,
+      "hpa_cell_type_ratio": 2.0,
+      "hpa_tissue_ratio": 2.0
+    },
+    {
+      "name": "stringent",
+      "coverage_median": 0.5,
+      "coverage_q25": 0.25,
+      "target_to_non_pt_ratio": 4.0,
+      "non_pt_median_max": 0.1,
+      "non_pt_cell_type_max": 0.25,
+      "hpa_cell_type_ratio": 4.0,
+      "hpa_tissue_ratio": 4.0
+    }
+  ],
+  "pareto_axes": {
+    "maximize": [
+      "median_reference_donor_target_coverage",
+      "q25_reference_donor_target_coverage",
+      "median_target_to_non_pt_detection_ratio",
+      "hpa_proximal_tubule_to_next_cell_type_ratio",
+      "hpa_kidney_to_next_tissue_ratio",
+      "noncytoplasmic_residue_count",
+      "surface_evidence_ordinal"
+    ],
+    "minimize": [
+      "median_reference_donor_non_pt_detection_fraction",
+      "maximum_reference_non_pt_cell_type_detection_fraction"
+    ],
+    "no_weighted_sum": true,
+    "required_for_every_sensitivity_set": true
+  },
+  "verdict_order": [
+    "METHOD_FAILURE",
+    "SCREEN_INCOMPLETE_TECHNICAL_MISSINGNESS",
+    "NO_SURFACE_EXPRESSION_TOPOLOGY_CANDIDATE_AT_PRIMARY_GATES",
+    "SURFACE_EXPRESSION_TOPOLOGY_CANDIDATES_NEED_RECEPTOR_INTERNALIZATION_AND_POLARITY_VALIDATION"
+  ],
+  "failure_output_contract": {
+    "clear_stale_outputs_before_preflight": true,
+    "preflight_exception": {
+      "required_files": [
+        "results.json",
+        "controls.json",
+        "missingness.json",
+        "run-manifest.json",
+        "summary.md"
+      ],
+      "diagnostic_scope": "minimal; the complete candidate, donor, stratum, control, and missingness audit did not finish"
+    },
+    "completed_audit": {
+      "required_files": [
+        "candidates.csv",
+        "donor-metrics.csv",
+        "stratum-metrics.csv",
+        "results.json",
+        "controls.json",
+        "missingness.json",
+        "run-manifest.json",
+        "summary.md"
+      ],
+      "method_failure_status": "METHOD_FAILURE_COMPLETED_AUDIT",
+      "diagnostic_scope": "full completed candidate, donor, stratum, control, and missingness audit; a failed method control still prohibits biological interpretation"
+    },
+    "exit_code": 2,
+    "no_biological_interpretation": true
+  }
+}

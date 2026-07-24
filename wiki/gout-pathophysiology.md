@@ -33,13 +33,34 @@ This is where drugs like **allopurinol** and **febuxostat** intervene — they i
 
 > **Reactome graph anchor (2026-06-01):** Human purine catabolism is represented by `R-HSA-74259`. The xanthine oxidoreductase branch includes hypoxanthine-to-xanthine reactions (`R-HSA-74247`, `R-HSA-9727347`) and xanthine-to-urate reactions (`R-HSA-74258`, `R-HSA-9727349`). Reactome correctly terminates the human pathway at urate; engineered microbial uricase is an Open Enzyme design layer rather than a missing human Reactome step. (Pathway anchor; source: `reference/generated/reactome/2026-06-01-open-enzyme-audit/`)
 
-### The De Novo Purine Biosynthesis Arm — PRPS as a Distinct Chokepoint
+### PRPP supply — PRPS as a distinct upstream research node
 
-**Phosphoribosyl pyrophosphate synthetase (PRPS)** catalyzes the rate-limiting first committed step of de novo purine biosynthesis: ribose-5-phosphate + ATP → PRPP + AMP. PRPP is the central substrate for purine (and pyrimidine) biosynthesis. PRPS sits **one biosynthetic step upstream** of the degradation pathway above — inhibiting PRPS reduces total purine flux at the source, which is mechanistically orthogonal to XO inhibition (which acts after purines are built and being broken down). (Mechanistic Extrapolation; source: prps-purine-biosynthesis-chokepoint.md)
+**Phosphoribosyl pyrophosphate synthetase (PRPS)** converts
+ribose-5-phosphate and ATP to PRPP and AMP. PRPP supplies de-novo purine
+synthesis, purine salvage, and pyrimidine synthesis; PRPS is therefore a
+shared supply node, not the first committed reaction unique to purine
+synthesis. Changing PRPP supply could alter the nucleotide pool available for
+eventual degradation to urate, but that is a **Mechanistic Extrapolation**
+until flux and safety are measured. XO inhibition acts later, during purine
+catabolism. (Source: [PRPS / PRPP supply](./prps-purine-biosynthesis-chokepoint.md).)
 
-PRPS is regulated by allosteric feedback from IMP and ADP/GDP. Conditions that deplete these (e.g., fructose-driven ATP depletion → AMP rise → IMP via AMP deaminase) **disinhibit PRPS** → PRPP rises → de novo purine biosynthesis accelerates → urate production rises. This is the canonical pathological PRPP-elevation pathway linking fructose to gout (see [fructose-connection.md](./fructose-connection.md)). PRPS1 gain-of-function mutations cause early-onset gout — direct human-genetic evidence that PRPS dysregulation drives clinical hyperuricemia. (In Vitro + Clinical Genetics; source: prps-purine-biosynthesis-chokepoint.md)
+Rapid hepatic fructose phosphorylation can deplete ATP, increase AMP turnover
+through AMP deaminase, and increase degradation of the existing adenine
+nucleotide pool to urate. The current evidence does not establish that
+fructose raises urate by relieving PRPS inhibition or accelerating de-novo
+purine synthesis. Whether PRPP supply materially contributes under that
+condition remains an experimental question; see
+[the fructose connection](./fructose-connection.md).
 
-The first natural-product PRPS modulator documented in the OE corpus is **eurycomanol** from *Eurycoma longifolia* (tongkat ali), which suppresses PRPS-driven purine biosynthesis in vitro (PMID 34785103). Tongkat ali Physta also shows SUA ↓7–11% in a 2021 placebo-controlled human RCT (n=105). See [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md) for the full chokepoint scope page and [androgen-natural-modulation.md](./androgen-natural-modulation.md) §1 for the tongkat ali entry. (In Vitro + Clinical Trial; source: prps-purine-biosynthesis-chokepoint.md, androgen-natural-modulation.md)
+Purified **eurycomanol** from *Eurycoma longifolia* lowered serum urate,
+increased 24-hour urate clearance, decreased hepatic PRPS expression, and
+changed renal and intestinal transporter measures in hyperuricemic mice
+(**Animal Model**; PMID 34785103). The concurrent changes do not establish
+direct PRPS inhibition or isolate production from excretion. Physta's human
+urate comparison was null, so it supplies no efficacy or mechanistic bridge
+(**Clinical Trial — null urate outcome**; PMC8254464). See
+[PRPS / PRPP supply](./prps-purine-biosynthesis-chokepoint.md) and
+[androgen-natural-modulation.md](./androgen-natural-modulation.md).
 
 (Source: prps-purine-biosynthesis-chokepoint.md)
 
@@ -108,7 +129,7 @@ Approximately **70% of daily uric acid elimination happens through the kidneys**
 | Transporter | Gene | Role | Status |
 |---|---|---|---|
 | **URAT1** | SLC22A12 | Reabsorbs uric acid from tubular lumen back into blood. The primary villain — reabsorbs ~90% of filtered urate. | Major drug target (probenecid, lesinurad, pozdeutinurad, dotinurad). **Long-horizon discovery-engine output:** kidney-tropic siRNA against URAT1 mRNA is a sequence-specific knockdown approach that avoids small-molecule reactive-metabolite mechanisms; gated on kidney-tropic conjugate delivery. See [sirna-urat1-modality.md](./sirna-urat1-modality.md). (**Mechanistic Extrapolation**.) |
-| **GLUT9** | SLC2A9 | Basolateral exit transporter; moves uric acid from tubular cells into blood. Also handles fructose (the fructose-gout link). | Strongest GWAS hit for gout; under-explored as drug target |
+| **GLUT9** | SLC2A9 | High-capacity urate transporter with renal isoform-specific roles in reabsorption. Rare loss-of-function causes renal hypouricemia through excessive urate loss rather than protecting against fructose-driven urate production. | Major serum-urate and gout locus; loss-of-function physiology is a safety boundary, not a simple inhibition target |
 | **ABCG2** | ABCG2 | Secretes uric acid into both gut lumen AND renal tubule. Loss-of-function variants are #1 genetic risk for gout. | Enhancing ABCG2 activity is unexplored (most drugs inhibit, not enhance). Candidate levers include butyrate-associated PPARγ signaling, sulforaphane-associated Nrf2 signaling, TNFα-suppression contexts, and direct Q141K trafficking rescue; each requires functional urate-flux validation. Direct androgen suppression of intestinal ABCG2 is unsupported—see [androgen-urate-axis.md](./androgen-urate-axis.md). |
 | **OAT1/OAT3** | SLC22A6/8 | Basolateral uptake of urate from blood into tubular cells for secretion. | Modulated by some existing uricosurics |
 | **NPT1/NPT4** | SLC17A1/3 | Apical secretion of urate into tubular lumen. | Emerging targets |
@@ -134,12 +155,12 @@ The map below records which current candidate classes touch renal transport, int
 | Renal node / Enzyme | Mechanism | Engineered-organism UOX hypothesis | Medicinal mushroom track | TCM × rigor track |
 |---|---|---|---|---|
 | **URAT1** (SLC22A12) | Reabsorbs urate from tubular lumen back into blood; major drug target | — | **Cordycepin** (animal-model URAT1 mRNA reduction; PMID 29422889) | **Astilbin** from *Smilax glabra* (animal-model + classical TCM use) |
-| **GLUT9** (SLC2A9) | Basolateral exit transporter; strongest GWAS hit | — | **GLPP** (animal-model GLUT9 modulation per comp-014 outputs) | — |
+| **GLUT9** (SLC2A9) | High-capacity urate transporter; major serum-urate and gout locus | — | **GLPP** (animal-model GLUT9 modulation per comp-014 outputs) | — |
 | **ABCG2 — direct modulation** | Secretes urate into gut lumen + renal tubule; #1 genetic risk locus | — *(no current OE platform coverage at the direct-modulation tier — gap)* | — | — |
 | **ABCG2 — indirect derepression** *(Mechanistic Extrapolation, two-step composed)* | Indirect — via TNFα suppression → reduced transcriptional repression of ABCG2; weaker evidence tier than direct transporter effects | **Lactoferrin → TNFα suppression → ABCG2 derepression** (lactoferrin → TNFα suppression is Animal Model + In Vitro per [`lactoferrin.md`](./lactoferrin.md) §4.7; TNFα suppression → ABCG2 derepression is the Mechanistic Extrapolation step composed onto it; see also [`koji-endgame-strain.md`](./koji-endgame-strain.md) §2.2) | — | — |
 | **OAT1 / OAT3** (SLC22A6/8) | Basolateral uptake of urate from blood into tubular cells for secretion | — | **GLPP** (animal-model OAT1 modulation per comp-014 outputs) | — |
 | **Xanthine oxidase** (upstream) | Catalyzes hypoxanthine → xanthine → urate; #1 pharmacological target (allopurinol, febuxostat) | — | — | **Astilbin** (Animal Model XO inhibition + classical TCM use); **Acacetin** from *Agastache rugosa* / Huo Xiang (In Vitro IC50 = 0.58 μM, Yuk 2023 PMC9914411 — most potent flavonoid in panel, beats luteolin); **Kaempferol** from *Chrysanthemum morifolium* / Ju Hua (In Vitro IC50 = 2.18 μM, Wee 2023 PMC9864848; DKB114 formula 38.3% UA ↓ at 200 mg/kg, Lee 2018 PMC6213378); **Rhein** from *Rheum palmatum* / Da Huang (Animal Model direct XO inhibition, Meng 2015 — separable from emodin which acts via transporter excretion not XO). All four are flavonoid- or anthraquinone-class XO chokepoint hits supported by the classical-formula search. |
-| **PRPS** (upstream) | Rate-limiting enzyme of de novo purine biosynthesis; PRPP synthesis; distinct chokepoint class from XO | — | — | **Eurycomanol** from *Eurycoma longifolia* / tongkat ali (In Vitro PRPS suppression, PMID 34785103; 2021 RCT SUA ↓7–11%, n=105) — see [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md) |
+| **PRPS / PRPP supply** (upstream) | Supplies PRPP to de-novo purine synthesis, salvage, and pyrimidine synthesis; a broader control point than XO | — | — | Purified **eurycomanol** changed hepatic PRPS expression, urate clearance, and transporters in hyperuricemic mice (**Animal Model**; PMID 34785103); causal PRPS-flux contribution unresolved — see [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md) |
 | **Gut-lumen urate sink** (post-renal) | Candidate degradation of luminal urate; the effect on net intestinal flux and serum urate remains unmeasured | Conditional yeast or koji expression of active uricase; no chassis is selected, and neither implementation has passed §1.33 or §1.36 (**Mechanistic Extrapolation**) | — | — |
 | **ROS / CP1b priming** *(speculative)* | NLRP3 priming via reactive oxygen species — Fenton chemistry (iron-catalyzed hydroxyl-radical generation) and direct hydroxyl-radical / peroxynitrite scavenging are mechanistically orthogonal | **Lactoferrin** — iron sequestration → reduced Fenton-available iron → reduced ROS-driven NLRP3 priming (Animal Model + In Vitro per [`lactoferrin.md`](./lactoferrin.md) §4.1; Habib 2023 PMID 37926296; Shan 2026 PMID 41524100) | **Ergothioneine** from *P. citrinopileatus* (7.0 mg/g DW per Phase 7-1c correction in [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md)); direct thiol scavenging of hydroxyl radicals + peroxynitrite, Nrf2 induction. **Caveat:** mechanism is correct in principle but **not yet demonstrated in gout-relevant cell models** — support is gated on the proposed ergothioneine + lactoferrin combination ROS assay in MSU-stimulated THP-1 macrophages. Koji natively produces some EGT; cross-track distinction is *quantitative* (P. citrinopileatus ~5–10× more dietary EGT than koji-native) not *mechanistically-unique*. | — |
 
@@ -261,7 +282,7 @@ A meta-analysis of over **one million participants** identified **351 loci** ass
 
 ### The Three Transporter Genes
 
-The same three transporter genes that dominate the genetic architecture of gout — **ABCG2** (strongest association; Q141K rs2231142, ~50% function loss), **GLUT9/SLC2A9** (second-strongest; largest per-allele urate effect; also transports fructose), and **URAT1/SLC22A12** (the reabsorption villain) — are detailed with their roles and drug-target status in the [Step 2 transporter table](#step-2-renal-handling--the-excretion-bottleneck) above. The variant-by-variant catalogue (alleles, effect sizes, evidence tiers) lives at [`gout-genetic-variants.md`](./gout-genetic-variants.md).
+Three transporter genes are central to the genetic architecture of serum urate and gout: **ABCG2**, **SLC2A9/GLUT9**, and **SLC22A12/URAT1**. Their physiological roles and drug-target boundaries are summarized in the [Step 2 transporter table](#step-2-renal-handling--the-excretion-bottleneck) above. The variant-by-variant catalogue, including effect sizes and evidence tiers, lives at [`gout-genetic-variants.md`](./gout-genetic-variants.md).
 
 ### Beyond Transporters
 
@@ -333,7 +354,7 @@ PURINE INTAKE → Purine Metabolism (XO) → URIC ACID
                     (Pain, swelling, erythema)
 
 INTERVENTION POINTS:
-- PRPS inhibition: Reduce de novo purine biosynthesis at the source (eurycomanol from tongkat ali, In Vitro; distinct from XO inhibition downstream) — see [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md)
+- PRPS / PRPP-supply modulation: test whether upstream purine flux can be reduced without broad nucleotide-synthesis toxicity (purified eurycomanol is an **Animal Model** lead; causal flux effect unresolved) — see [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md)
 - ADA modulation: Alter purine catabolism flux upstream of XO (GLPP from *G. lucidum*, cordycepin + native pentostatin from *C. militaris* — chokepoint candidate identified by comp-014 Phase 2, 2026-05-06) — see [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md)
 - PINK1/mitophagy enhancement: Clear damaged mitochondria before they trigger NLRP3 (fungal compounds with PINK1-modulating activity — chokepoint candidate identified by comp-014 Phase 2, 2026-05-06) — see [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md)
 - XO inhibitors: Block uric acid production (Allopurinol, Febuxostat)

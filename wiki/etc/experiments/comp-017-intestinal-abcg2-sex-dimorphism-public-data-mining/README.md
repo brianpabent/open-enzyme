@@ -4,6 +4,8 @@
 **Status:** Complete  
 **Verdict:** **NULL OR NEAR-NULL SEX-DIMORPHISM** at healthy baseline; emerges only under disease-state genetic stress (Q140K LOF) — provisional pending direct GTEx access.
 
+**Current authoring boundary:** H07 is retracted, and this artifact does not select a urate-axis intervention or stack. Its ABCG2 observations can inform direct mechanism experiments, but cordycepin, any *Eurycoma* material, and butyrate each require their own exact-material, exposure, and functional evidence.
+
 ## Question
 
 Two-part Tier-0 killshot for [`H07-clomid-intestinal-er-antagonism`](../../../hypotheses/H07-clomid-intestinal-er-antagonism.md) sub-claims 1 and 3:
@@ -50,5 +52,5 @@ Interpretive page: [`wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-com
 ## Tracking
 
 - [`wiki/computational-experiments.md`](../../../computational-experiments.md) — comp-017 entry
-- [`wiki/hypotheses/H07-clomid-intestinal-er-antagonism.md`](../../../hypotheses/H07-clomid-intestinal-er-antagonism.md) — H07 falsification card; this experiment executes the Tier-0 killshot for sub-claims 1 and 3.
+- [`wiki/hypotheses/H07-clomid-intestinal-er-antagonism.md`](../../../hypotheses/H07-clomid-intestinal-er-antagonism.md) — retracted H07 card; the historical sub-claim framing does not restore its intestinal-clomiphene mechanism.
 - [`wiki/t-abcg2-suppression-evidence-mining-computational.md`](../../../t-abcg2-suppression-evidence-mining-computational.md) — comp-016 (predecessor); this experiment closes its full-text-verification follow-up.

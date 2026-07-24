@@ -1,5 +1,5 @@
 site_name: Open Enzyme
-site_description: Open source library of food-grade engineered microbial strains producing therapeutic enzymes
+site_description: Open research portfolio using red-team techniques to identify and creatively exploit weaknesses in gout
 site_url: https://brianpabent.github.io/open-enzyme
 repo_url: https://github.com/brianpabent/open-enzyme
 repo_name: brianpabent/open-enzyme
@@ -200,7 +200,7 @@ nav:
     - Gut-Lumen Uricase Physiological Regime (comp-044): gut-lumen-uricase-physiologic-regime-computational.md
     - Uricase Topology × Oxygen × Peroxide (comp-045): uricase-topology-oxygen-peroxide-design-computational.md
     - Staged Purine Sink Mass Balance (comp-046): staged-purine-sink-mass-balance-computational.md
-    - T-axis Adjuvant Urate Mapping (comp-015): t-axis-adjuvant-urate-mapping-computational.md
+    - T-axis Adjuvant Urate Mapping (comp-015, invalidated): t-axis-adjuvant-urate-mapping-computational.md
     - T × Intestinal ABCG2 Evidence Mining (comp-016): t-abcg2-suppression-evidence-mining-computational.md
     - Intestinal ABCG2 Sex-Dimorphism Mining (comp-017): intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md
     - Autonomous AI Screening Methodology: etc/autonomous-screening-methodology.md

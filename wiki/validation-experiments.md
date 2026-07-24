@@ -87,6 +87,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 | [§2.5](#25-pulse-probiotic-validation-in-hyperuricemic-mice) | PULSE probiotic validation (hyperuricemic mice) | Animal | TBD after pilot and model selection | TBD | Proposed — after §§1.33, 1.36, and 2.1 | [gout-deep-dive](./gout-deep-dive.md), [gout-clinical-pipeline](./gout-clinical-pipeline.md), [gut-lumen-sink](./gut-lumen-sink.md) |
 | [§2.6](#26-glpp--cordycepin-interaction-in-hyperuricemia--matched-wet-lab-gate-phase-7-4-stub) | GLPP + cordycepin interaction in hyperuricemia — matched wet-lab gate | Animal | TBD | TBD | Proposed — design pending exact material and pilot data | [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [hypotheses/H06-medicinal-mushroom-complement-track](./hypotheses/H06-medicinal-mushroom-complement-track.md) |
 | [§2.7](#27-koji--cordyceps-co-formulation-stability-test--ada-challenge-assay--deprioritized-2026-05-16-archived-2026-05-29) | Koji × *Cordyceps* co-formulation stability test | In Vitro | N/A (archived) | N/A (archived) | Abandoned — recover from Git only if decision-relevant | [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) |
+| [§2.8](#28-exact-material-androgen--urate-dual-axis-validation) | Exact-material androgen × urate dual-axis validation | Animal | TBD after material and exposure pilot | TBD | Proposed — one material/configuration per qualified study | [androgen-natural-modulation](./androgen-natural-modulation.md), [t-axis-adjuvant-urate-mapping-computational](./t-axis-adjuvant-urate-mapping-computational.md), [prps-purine-biosynthesis-chokepoint](./prps-purine-biosynthesis-chokepoint.md) |
 | [§3.3](#33-wild-type-fungal-enzyme-timing-study-design) | Wild-type fungal-enzyme timing study design | Human | TBD | TBD | Design only — gated on characterized material and oversight | [digestive-enzymes](./digestive-enzymes.md), [enzyme-quantification-protocol](./enzyme-quantification-protocol.md) |
 
 ---
@@ -1787,6 +1788,75 @@ This experiment is not active. Reconstruct it from Git only if the koji-cordycep
 
 ---
 
+### 2.8 Exact-Material Androgen × Urate Dual-Axis Validation
+
+**Status**: Proposed — one material/configuration per qualified study | **Cost**: TBD after material and exposure pilot | **Weeks**: TBD | **Phase**: 2
+
+**Affected wiki:** [androgen-natural-modulation](./androgen-natural-modulation.md),
+[t-axis-adjuvant urate mapping](./t-axis-adjuvant-urate-mapping-computational.md),
+and [PRPS / PRPP supply](./prps-purine-biosynthesis-chokepoint.md).
+
+**What it tests:** Whether one identity-verified material at a measured,
+tolerated exposure produces an androgen effect and an independently localized
+urate effect in the same study. It does not compare "cordyceps" with "tongkat
+ali" as classes, transfer a result among extracts and purified quassinoids, or
+infer either mechanism from serum urate alone.
+
+**Entry gates:**
+
+- Lock the exact purified compound or compositionally characterized extract,
+  including lot, marker panel, purity or constituent concentrations,
+  preparation method, vehicle, stability, and storage.
+- Choose a species and disease state capable of answering both prespecified
+  axes. Justify the androgen endpoint for that material independently of its
+  urate evidence.
+- Run a pharmacokinetic and tolerability pilot. Measure the candidate and
+  relevant metabolites in the compartments needed by the proposed mechanism;
+  do not convert administered dose into assumed exposure.
+- Freeze the estimand, clinically or biologically meaningful margins, sample
+  size, randomization, blinding, exclusion rules, and safety stops from the
+  pilot. Do not inherit COMP-015's ordinal scores or concentration heuristics.
+
+**Candidate-specific design:** Run each exact material as its own study with
+healthy and disease controls, matched vehicle, a prespecified exposure range,
+and axis-appropriate positive controls. A cross-material comparison is
+permitted only if the materials use the same model, schedule, analytical
+platforms, and adequately overlapping measured exposures; otherwise report
+parallel source-specific results without a rank.
+
+**Readouts:**
+
+- **Identity and exposure:** quantitative material markers, parent/metabolite
+  pharmacokinetics, target-tissue exposure, stability, and batch consistency.
+- **Androgen axis:** the endpoint implicated by the material's own evidence,
+  such as total and free testosterone, SHBG, LH/FSH, estradiol, and
+  tissue-specific steroidogenic markers. Select and preregister the primary
+  endpoint rather than treating the panel as interchangeable.
+- **Urate axis:** serum-urate time course plus urinary and fecal urate mass
+  balance. Add direct renal or intestinal URAT1, GLUT9, ABCG2, or NPT1
+  function only when that mechanism is prespecified.
+- **Production-side localization:** for an eurycomanol study, measure hepatic
+  PRPS protein and activity and isotope-resolved purine flux; PRPS expression
+  alone is insufficient.
+- **Safety:** clinical observations, weight, hematology, liver and renal
+  chemistry, histology, and material-specific toxicology.
+
+**Decision rule:** Advance only the exact material–exposure configuration that
+meets both prespecified axis margins, shows exposure-consistent target
+engagement, localizes the urate change, and clears safety. A favorable androgen
+result with null or adverse urate findings fails the dual-axis conjecture for
+that configuration. A favorable urate result without the prespecified androgen
+effect does the same. A null result kills only the tested material, dose,
+formulation, schedule, and model; it does not erase a different source-specific
+lead.
+
+**Interpretation limits:** This is an animal validation gate, not a treatment
+protocol or human-efficacy claim. It cannot turn Physta's null human urate
+comparison into efficacy, assign extract activity to pure eurycomanone, or
+establish superiority among unpaired materials.
+
+---
+
 ## Phase 3: Observational and human-method development
 
 Human observations in this section are feasibility signals, not treatment recommendations or efficacy evidence. Prospective intervention studies require appropriate oversight, established-care comparators, prespecified stopping rules, and a design capable of separating exposure from regression to the mean and background changes.
@@ -1870,7 +1940,11 @@ UOX promotion criteria are tied to matched controls and pilot-measured assay pre
 
 ## Notes on Open Questions
 
-- **GLUT9 and urate transport bottleneck:** Could engineered koji produce high fructokinase inhibitors to address the fructose-gout link? (Source: gout-deep-dive.md, Section 9)
+- **KHK and fructose-driven urate production:** Can a compositionally verified
+  KHK inhibitor reduce fructose-driven ATP depletion, AMP catabolism, and
+  urate output at a tolerable measured exposure? This question does not imply
+  a production chassis. (Source:
+  [fructose-connection.md](./fructose-connection.md))
 - **Delivery route optimization:** Is intestinal lumen degradation sufficient, or would systemic absorption of recombinant uricase be superior? (Source: blood-barrier-exploits.md)
 - **Microbiome stability:** Will engineered probiotics persist without colonization, or is daily dosing required long-term? (Source: gout-deep-dive.md, Section 8)
 - **Gene therapy as alternative:** Should we pursue CRISPR-based uricase gene therapy in parallel? (Source: gout-deep-dive.md, Section 6)

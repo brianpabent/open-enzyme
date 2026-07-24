@@ -439,20 +439,32 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ---
 
-### comp-015 — T-axis Adjuvant Urate-Target Mapping (v2) — H-AN-02 PARTIALLY FALSIFIED (2026-05-07)
+### comp-015 — T-axis Adjuvant Urate-Target Mapping — INVALIDATED
 
-**Question:** For four T-axis-active compounds (cordycepin, eurycomanone, icariin, echinacoside), what is the curated evidence at five urate-handling + T-axis targets (URAT1, ABCG2, OAT1, SHBG, XO)?
+**Question:** Can mixed literature labels and estimated exposures identify the
+most gout-favorable androgen-active natural product?
 
-**Verdict:** **H-AN-02 PARTIALLY FALSIFIED.** Cordycepin = **GOUT-FAVORABLE** (URAT1 down + supplementary XO IC50 55.7 µM). Eurycomanone = **GOUT-FAVORABLE** (v1→v2 REVERSED; hURAT1 + GLUT9 down + ABCG2/NPT1 up + PRPS suppression + 2021 RCT SUA −7-11% n=105). Icariin / echinacoside = **MECHANISM-UNCLEAR**.
+**Verdict:** **Invalidated for candidate comparison and decision use.** The
+artifact mixed purified compounds, botanical extracts, related but
+non-identical quassinoids, animal and cell evidence, a null human safety-table
+outcome, and heuristic exposure calculations. No ranking, gout-direction
+verdict, evidence-cell comparison, or H-AN-02 adjudication survives.
 
-**Key findings:**
-- v2 added XO panel after v1 missed eurycomanone XO mechanism trigger; the trigger was citation-laundering (PMID 31920654/34785103 establish transporter+purine-synthesis, not direct XO) but panel addition still correct.
-- v2 finds 5 direct-evidence cells vs v1's 1; eurycomanone now better-characterized than cordycepin on urate axis.
-- New chokepoint identified: **PRPS (phosphoribosyl pyrophosphate synthetase)** — eurycomanol mechanism, distinct from XO.
+**Source-specific leads retained:**
+- Purified cordycepin lowered serum urate and renal URAT1 expression in
+  hyperuricemic mice (**Animal Model**; PMID 29422889).
+- A 70% ethanol *Eurycoma longifolia* stem extract changed urate and
+  transporters in hyperuricemic rodents, while eurycomanol-type compounds 4–7
+  inhibited hURAT1 uptake at 50 µM in cells; pure eurycomanone was
+  comparatively low-activity in that assay (**Animal Model + In Vitro**; PMID
+  31920654).
+- Purified eurycomanol changed serum urate, clearance, hepatic PRPS
+  expression, and transporters in hyperuricemic mice (**Animal Model**; PMID
+  34785103). Physta's human urate comparison was null.
 
-**Informs:** [androgen-natural-modulation §10 H-AN-02](./androgen-natural-modulation.md) · [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) · [androgen-urate-axis](./androgen-urate-axis.md)
+**Informs:** [exact-material evidence boundary](./t-axis-adjuvant-urate-mapping-computational.md) · [androgen-natural-modulation](./androgen-natural-modulation.md) · [wet-lab validation §2.8](./validation-experiments.md#28-exact-material-androgen--urate-dual-axis-validation)
 
-**Detail:** [interpretive](./t-axis-adjuvant-urate-mapping-computational.md) · [experiments/](./etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/) · Complete v2
+**Detail:** [invalidated, non-runnable tombstone](./etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/) · Git retains the retired artifact
 
 ---
 
@@ -653,7 +665,8 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 | ~~comp-002~~ | Invalidated, non-runnable thermal/pH composite model; source-backed thermal sensitivity and the multi-day attrition conjecture now route directly to §1.10 measurement | [§1.10 follow-up](./validation-experiments.md) | Retired |
 | ~~comp-003~~ | Reassigned 2026-05-05 → comp-005 (lactoferrin cleavage-site analysis) | — | ✓ Done as comp-005 |
 | ~~comp-008~~ | Invalidated, non-runnable hand-scored payload rubric. Stable transformation + reporter expression is the common genetic-entry gate; native-pathway, uricase, lactoferrin, and CR1 tests remain separate unranked configuration questions. | [engineered-lbp-chassis](./engineered-lbp-chassis.md) | Retired |
-| ~~comp-009~~ | **Completed; RERUN 2026-07-14** on the real NM_144585.4 mRNA (original artificial-CDS run invalidated). 8 real-transcript target sites pass design filters; accessibility low (real RNAplfold) + off-target uncleared. See [interpretive page](./urat1-sirna-target-site-selection-computational.md). | [sirna-urat1-modality](./sirna-urat1-modality.md) Phase 2 P2-2 | ✓ Done (rerun) |
+| ~~comp-009~~ | Invalidated, non-runnable target-site ranking. No guide, filter funnel, score, shortlist, GREEN verdict, accessibility, specificity, cross-species reuse, target-site-availability conclusion, H03 support, or P2-2 closure survives. | [invalidated interpretation](./urat1-sirna-target-site-selection-computational.md) | Retired |
+| comp-048 | Human proximal-tubule delivery-handle screen: search for internalizing surface receptors that co-localize with SLC22A12-positive cells while separating target coverage, kidney/systemic off-target expression, protein/spatial support, and internalization evidence | [pre-run design](./etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/) | Pre-run design |
 | ~~comp-011 TCM~~ | Reassigned 2026-05-05; TCM ChEMBL cross-check landed as comp-013 | — | ✓ Done as comp-013 |
 | ~~comp-021~~ | Invalidated, non-runnable mixed-tier assay-format model. Matched-format replication planning survives only as a conjecture; no quantitative range, candidate rank, or operative gut potency survives. | [assay-format conjecture](./upstream-complement-assay-format-mapping-computational.md) | Retired |
 | comp-022 | Corrective review open; enumeration survives, current shortlist non-authoritative | [open actions](../synthesis/queue/comp-review-022.md) | Open |

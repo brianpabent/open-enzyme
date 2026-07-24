@@ -50,7 +50,11 @@ Research gates:
 - Establish a reproducible clomiphene–urate relationship before assigning a mechanism.
 - Test any proposed estradiol-pathway mechanism directly in the relevant tissue and exposure range.
 - Measure urate handling independently of testosterone-related outcomes.
-- Treat carnosine, cordycepin, eurycomanone, butyrate, and related candidates as mechanism probes until human gout evidence establishes direction and magnitude.
+- Treat carnosine, purified cordycepin, exact *Eurycoma longifolia* extracts,
+  eurycomanol-type quassinoids, purified eurycomanol, butyrate, and related
+  candidates as source-specific mechanism probes until matched evidence
+  establishes identity, exposure, direction, and magnitude. Do not transfer an
+  extract or related-quassinoid result to pure eurycomanone.
 
 ## ABCG2 Q141K context
 

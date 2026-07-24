@@ -1,6 +1,6 @@
 ---
 id: H03
-title: "Kidney-tropic siRNA against URAT1 mRNA is a viable long-horizon therapeutic modality for under-excreter gout, mechanistically cleaner than small-molecule URAT1 inhibitors but gated on the maturation of kidney-tropic conjugate delivery chemistry"
+title: "Selective kidney delivery could make URAT1 siRNA a long-horizon gout modality"
 committed: 2026-05-05
 status: Stub
 survival_count: 0
@@ -43,13 +43,15 @@ sources:
 
 ## Claim (provisional, stub-level)
 
-A kidney-tropic siRNA conjugate targeting URAT1 (SLC22A12) mRNA is a viable long-horizon therapeutic modality for under-excreter gout, with three distinguishing advantages over the existing small-molecule URAT1 inhibitor class (probenecid, lesinurad, dotinurad, pozdeutinurad / AR882):
-
-1. **Sequence-specificity** eliminates the off-target metabolite class — categorically different safety profile than benzbromarone-class chemistry, where reactive metabolites caused fulminant hepatotoxicity and market withdrawal
-2. **Durability** — single-dose effect persisting weeks to months (per inclisiran's ~6-month PCSK9 silencing precedent), shifting from daily-pill compliance to quarterly subcutaneous injection
-3. **Target-level hormone independence** — an siRNA can target SLC22A12 mRNA without requiring hormone-driven URAT1 upregulation. Whether hormone state changes baseline transcript abundance, knockdown magnitude, or clinical response remains empirical; delivery and renal-cell exposure are the dominant unresolved gates.
-
-The thesis is **gated on the maturation of kidney-tropic conjugate delivery chemistry** — none of the four current research-class approaches (megalin-binding peptide conjugates, CDP nanoparticles, kidney-cortex-selective LNPs, aptamer-siRNA chimeras) has reached first-in-human for any indication. The "viable" claim is therefore conditional: viable *if* kidney-tropic delivery chemistry converges within 3–5 years; deferred indefinitely *if* it does not.
+> **Research conjecture — Selective kidney delivery could make URAT1 siRNA useful**{ .research-conjecture-label }
+>
+> **Grounded premises:** URAT1 is an established renal urate-reabsorption pharmacology target (**Clinical Trial**; evidence map: [gout pathophysiology](../gout-pathophysiology.md)). Liver-targeted inclisiran and patisiran establish human RNAi-delivery precedents (**Clinical Trial**; [DOI 10.1056/NEJMoa1912387](https://doi.org/10.1056/NEJMoa1912387), [DOI 10.1056/NEJMoa1716153](https://doi.org/10.1056/NEJMoa1716153)). An oligonucleotide would not generate benzbromarone's reactive small-molecule metabolites, but it has different sequence, immune, formulation, biodistribution, reversibility, and renal-hypouricemia risks.
+>
+> **Novel leap:** A selectively delivered, off-target-cleared siRNA might reduce URAT1 in human proximal-tubule cells enough to improve urate handling with a useful safety and dosing profile. No direct study tests that complete chain.
+>
+> **Why it matters:** If the chain holds, URAT1 could be attacked with a modality whose exposure and duration differ from oral inhibitors.
+>
+> **Discriminating observation:** First identify a selective human proximal-tubule entry route, then require transcriptome-wide guide clearance, intracellular URAT1 knockdown, urate-transport change, dose-response, reversibility, and renal and immune safety.
 
 This vector is positioned as a **discovery-engine output** (per [`open-enzyme-vision.md`](../etc/open-enzyme-vision.md) §2.2), not a strain-library output. The thesis is that Open Enzyme contributes mechanistic clarity, target validation, and design rationale — partner companies, academic groups, or future spinouts execute the development.
 
@@ -57,14 +59,14 @@ This vector is positioned as a **discovery-engine output** (per [`open-enzyme-vi
 
 ## Assumption Stack (placeholder — to be populated in Phase 2 P2-5)
 
-The full assumption stack will be populated after the four Phase 2 lit scans (P2-1 conjugate chemistry, P2-3 commercial landscape, P2-4 competitive analysis vs. small-molecule URAT1 inhibitors, P2-6 FDA siRNA regulatory path) and comp-009 (P2-2 URAT1 mRNA target site selection) land. Anticipated load-bearing assumptions, to be confirmed:
+The full assumption stack will be populated after the Phase 2 delivery, commercial, competitive, and regulatory work lands. Anticipated load-bearing assumptions, to be confirmed:
 
-1. URAT1 mRNA has viable siRNA target sites (partially supported by comp-009 **RERUN 2026-07-14** on the real NM_144585.4 transcript: 8 sites pass Reynolds/Ui-Tei/immunogenicity design filters. **Caveats:** real RNAplfold shows the sites are structured / low-accessibility, so "sufficient secondary-structure exposure" is **not** yet demonstrated; and **no off-target clearance** was performed. The original comp-009 was invalidated — it scanned an artificial back-translated CDS, so its guide sequences were not real.)
-2. Kidney-tropic conjugate chemistry reaches first-in-human within 3–5 years for at least one indication (Alport syndrome, polycystic kidney disease, etc., not necessarily gout)
-3. Megalin-mediated proximal tubule uptake achieves siRNA delivery efficiency at therapeutically meaningful levels (target: ≥50% knockdown of URAT1 protein at well-tolerated dose)
-4. The 6-month durability inclisiran demonstrates for liver-targeted siRNA generalizes to kidney-tropic siRNA (proximal tubule cell turnover is ~6–12 months in healthy kidney; durability should be similar or longer)
-5. ~50% URAT1 knockdown produces clinically-meaningful uric acid reduction (analog: lesinurad at 200 mg/day produces ~1.1 mg/dL UA reduction per published trials; siRNA-mediated knockdown should produce comparable or larger effect)
-6. The 5–10 year competitive horizon vs. pozdeutinurad and post-pozdeutinurad small-molecule URAT1 modulators preserves a meaningful therapeutic niche (durability, safety, hormone-independence advantages outweigh the small-molecule class's earlier launch and lower cost)
+1. A validated, off-target-cleared siRNA can knock down relevant SLC22A12 transcripts across the intended human population. This remains unresolved and downstream of delivery: [COMP-009 is invalid](../urat1-sirna-target-site-selection-computational.md) and supplies no guide or tractability evidence.
+2. A delivery architecture can reach the relevant human proximal-tubule cells selectively enough for a therapeutic window.
+3. The selected route supports internalization and cytosolic guide activity rather than uptake without productive silencing.
+4. Liver-targeted siRNA durability transfers sufficiently to the selected renal-cell and formulation context; the dosing interval remains unmeasured.
+5. Partial URAT1 knockdown produces a useful urate-transport effect without a knockout-equivalent renal-hypouricemia phenotype; neither the target knockdown nor the safety ceiling is established.
+6. The measured efficacy, safety, reversibility, convenience, and cost profile remains competitive with contemporary small-molecule URAT1 inhibition.
 
 ---
 
@@ -75,27 +77,28 @@ The full killshot menu will follow the H01 / H02 template: ranked by `score = (k
 Anticipated highest-priority killshots:
 
 - **Lit scan first.** P2-1 (conjugate chemistry state-of-the-art) and P2-3 (commercial landscape) are the cheapest possible upstream moves. They answer whether the kidney-tropic delivery problem is being actively solved by competent groups (validation) or has been quietly stalled / abandoned (kill).
-- **comp-009 URAT1 mRNA target site selection.** If URAT1 mRNA has no viable siRNA target sites, the entire thesis collapses before delivery is even considered. Cheapest mechanistic killshot. **Status (comp-009 RERUN 2026-07-14, real NM_144585.4 transcript):** killshot does **not** fire on target-site *availability* — 8 filter-passing sites exist on the real mRNA. But two sub-questions remain open and were NOT closed: (a) real RNAplfold shows the sites are structured (low accessibility), so *exposure* is unproven; (b) no off-target seed-region clearance was performed. The original comp-009 result (artificial back-translated CDS) is invalidated and must not be cited.
-- **Pozdeutinurad Phase 3 outcome read** (timing-dependent). If pozdeutinurad delivers ~2 mg/dL UA reduction with clean liver / renal safety at ~$100/month price, the niche for siRNA's distinctive value (durability + sequence-specificity + hormone-independence) narrows substantially. The 5–10 year horizon thesis weakens.
-- **First-in-human kidney-tropic siRNA program failure** (any indication). If Alport / PKD / kidney-fibrosis siRNA programs fail in Phase 1 over the next 3 years for delivery-chemistry reasons, the gout-specific extension becomes harder to justify on a partnership / spinout basis.
+- **COMP-048 proximal-tubule delivery-handle screen.** If no sufficiently selective, accessible, and plausibly internalizing human proximal-tubule surface handle survives, receptor-targeted delivery loses its current entry hypothesis. That negative result would not kill other delivery architectures.
+- **Conditional guide-design gate.** Only after a delivery route survives, use a validated current pipeline with relevant transcript and variation coverage plus transcriptome-wide off-target analysis, then require empirical URAT1 knockdown. [COMP-009](../urat1-sirna-target-site-selection-computational.md) supplies no surviving guide, rank, or availability verdict.
+- **Current URAT1-therapy comparison.** Re-run the clinical, regulatory, safety, convenience, and cost comparison when delivery and guide evidence exist. The siRNA route loses priority if it cannot offer a measured advantage over the then-current standard.
+- **Kidney-delivery program read.** Track clinical and discontinued kidney-targeted RNA programs with exact failure attribution. Repeated delivery-chemistry failures would weaken the route; failures caused by another payload or indication would not adjudicate URAT1 siRNA.
 
 ---
 
 ## Pre-Committed Thresholds (placeholder — to be populated in Phase 2 P2-5)
 
-To be defined when the killshot menu is populated. Anticipated structure follows H01: declared Alive / Killed / Pending thresholds for each load-bearing claim (target site accessibility, delivery chemistry maturation timeline, knockdown efficiency, competitive niche preservation), plus kill switches independent of the scientific thresholds (regulatory-precedent collapse, kidney-tropic delivery field-wide stagnation, pozdeutinurad-class small-molecule dominance).
+To be defined when the killshot menu is populated. Anticipated structure follows H01: declared Alive / Killed / Pending thresholds for delivery selectivity, productive uptake, guide specificity, URAT1 knockdown, urate transport, renal and immune safety, reversibility, durability, and competitive value. No maturation timeline, dose ceiling, or dosing interval is precommitted without evidence.
 
 ---
 
 ## Failure Modes Probed (placeholder — to be populated in Phase 2 P2-5)
 
-To be populated. Anticipated relevant failure modes from [linter-design.md](../linter-design.md) §5: published-literature-gap (kidney-tropic delivery is field-wide pre-clinical), species-gap-translation (mouse kidney megalin vs. human), expression / localization mismatch, kinetics / concentration (knockdown depth at tolerable dose), dose-translation scaling, regulatory-precedent gap (first-in-class kidney-tropic siRNA biologic), competitive-displacement (small-molecule URAT1 class evolution).
+To be populated. Anticipated relevant failure modes from [linter-design.md](../linter-design.md) §5: published-literature gap, species-to-human translation, receptor-expression or localization mismatch, uptake without cytosolic delivery, sequence and seed off-targets, innate-immune or formulation toxicity, insufficient knockdown at tolerated exposure, excessive uricosuria or renal hypouricemia, poor reversibility, and competitive displacement by small-molecule URAT1 inhibitors.
 
 ---
 
 ## Status
 
-**Stub.** No killshot executed. No assumption stack pre-registered. Full hypothesis card is queued as Phase 2 P2-5 — see [sirna-urat1-modality.md § Open Follow-Ups](../sirna-urat1-modality.md#open-follow-ups).
+**Stub.** No killshot executed. No assumption stack pre-registered. Full hypothesis card is queued as Phase 2 P2-5 — see [sirna-urat1-modality.md § Falsification program](../sirna-urat1-modality.md#falsification-program).
 
 **Survival count:** 0.
 
@@ -108,7 +111,7 @@ To be populated. Anticipated relevant failure modes from [linter-design.md](../l
 - [sirna-urat1-modality.md](../sirna-urat1-modality.md) — the track this hypothesis formalizes
 - [modality-chokepoint-matrix.md](../modality-chokepoint-matrix.md) — siRNA / ASOs row that surfaced this question (#1 open exploration vector)
 - [gout-pathophysiology.md](../gout-pathophysiology.md) §"URAT1 (SLC22A12) — THE REABSORPTION VILLAIN" — URAT1 mechanism background
-- [androgen-urate-axis.md](../androgen-urate-axis.md) — testosterone effects on URAT1 (the hormone-axis interaction siRNA bypasses)
+- [androgen-urate-axis.md](../androgen-urate-axis.md) — androgen–urate evidence and the unresolved effect of hormone state on SLC22A12 expression and knockdown response
 - [engineered-lbp-chassis.md](../engineered-lbp-chassis.md) — sister peer-track exploration vector (commercial-pharma, durable-colonization angle)
 - [open-enzyme-vision.md](../etc/open-enzyme-vision.md) §2.2 (discovery-engine outputs / repurposing surface)
 - [open-questions.md](../open-questions.md) — meta-index entry

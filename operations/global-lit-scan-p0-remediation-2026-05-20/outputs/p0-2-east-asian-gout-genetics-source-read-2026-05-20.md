@@ -69,7 +69,7 @@ The wiki previously compressed this to "ACR 2020 strong recommendation." That is
 
 ## OE implications
 
-1. **URAT1 loss-of-function is protective but not a free therapeutic mimic.** W258X/R90H support the URAT1-knockdown thesis, but renal hypouricemia and exercise-induced AKI set the dose ceiling. The siRNA/URAT1 track should keep the <=50% knockdown guardrail until a better dose-risk model exists.
+1. **URAT1 loss-of-function is protective against hyperuricemia but not a free therapeutic mimic.** W258X/R90H support URAT1 as an intervention target, while renal hypouricemia and exercise-induced AKI establish a safety boundary against excessive suppression. They do not establish a universal siRNA knockdown percentage. A therapeutic window requires direct knockdown, urate-transport, serum and urinary urate, renal-stress, exercise-context, reversibility, and human-variation measurements.
 2. **ABCG2 should remain a first-class stratification variable.** Q141K is common enough in Japanese/East Asian cohorts and functionally large enough that gut-lumen urate interventions should pre-specify ABCG2 genotype strata rather than treat East Asian ancestry as a generic prevalence factor.
 3. **HLA-B*58:01 is safety/pharmacogenetics, not urate biology.** It belongs in allopurinol comparator/screening logic and patient-action guidance. It does not alter the mechanism of gut-lumen uricase or ABCG2-rescue interventions except by shaping the adjunct-drug landscape.
 

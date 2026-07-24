@@ -1,56 +1,74 @@
-# comp-015 — T-axis Adjuvant Urate-Target Mapping (v2)
+> **INVALIDATED TOMBSTONE — NOT RUNNABLE.** The retired artifact converted heterogeneous literature records into compound-level categorical verdicts without preserving material identity, assay comparability, exposure, or a valid scoring basis.
 
-> **⚠️ Verdict caveated (comp-review 2026-07-14).** The v2 qualitative direction (cordycepin gout-favorable; tongkat/eurycomanone-family reverses the v1 unfavorable extrapolation; H-AN-02 uniqueness partially falsified) is a **lead-generation reframe**, not a validated quantitative result. See the comp-review item for specifics.
+# comp-015 — T-axis Adjuvant Urate-Target Mapping
 
-## Question
+**Status:** Invalidated for candidate comparison, compound-level gout-direction verdicts, H-AN-02 adjudication, evidence-cell counting, concentration-threshold inference, and experimental prioritization.
 
-For each of four T-axis-active natural compounds (cordycepin, eurycomanone, icariin, echinacoside), what is the curated bioactivity evidence at the **five** dominant urate-handling targets (URAT1, ABCG2, OAT1, SHBG, **XO** — added v2), and which compound is the most gout-favorable T-axis adjuvant?
+No `GOUT-FAVORABLE`, `MECHANISM-UNCLEAR`, uniqueness, “partially falsified,” evidence-count, candidate-priority, or genotype-aware selection conclusion survives.
 
-## v1 → v2 change (2026-05-07)
+The implementation combined purified compounds, botanical extracts, mixed quassinoid fractions, animal expression changes, cell-uptake assays, a human safety-laboratory table, negative screens, and mechanistic extrapolations as if they were commensurate compound-by-target observations. In particular, the `eurycomanone` row inherited results from 70% ethanol *Eurycoma longifolia* stem extract, isolated quassinoids as a class, purified eurycomanol, and Physta. Those are different materials.
 
-Added xanthine oxidase (XO/XDH, CHEMBL1929, UniProt P47989) as 5th target. v1 4-target panel was systematically incomplete because XO — the upstream urate-PRODUCTION enzyme that allopurinol/febuxostat target and that classical TCM gout compounds modulate — was excluded. Trigger: parallel Sci-Hub-second-pass verification subagent on `wiki/androgen-natural-modulation.md` discovered eurycomanone-related XO claims (PMID 31920654 / 34785103) — which on closer reading actually establish multi-target transporter + purine-synthesis modulation for eurycomanone, NOT direct XO inhibition. But adding XO was still correct (panel completeness), AND the v2 re-read of those primary sources surfaced previously-missed eurycomanone × URAT1/ABCG2/OAT1 evidence that v1's PubMed search did not find. **v2 dual contribution: panel completeness (XO column) + eurycomanone evidence reversal (v1 GOUT-UNFAVORABLE → v2 GOUT-FAVORABLE).** H-AN-02 status: v1 SUPPORTED → v2 PARTIALLY FALSIFIED.
+The code also:
 
-## Hypothesis under test
+- treated `UNKNOWN — POSSIBLY INDUCER` as favorable because it searched direction text for favorable keywords;
+- collapsed a negative screen into `No-Data`;
+- assigned ordinal weights to heterogeneous evidence classes without validation;
+- called a candidate `GOUT-FAVORABLE` from one favorable transporter label without a coherent exposure or whole-system model;
+- estimated plasma concentration as dose × bioavailability ÷ volume of distribution, then treated concentration/IC50 ratios as fractional inhibition with an assumed Hill coefficient of one; and
+- attributed its local ratio thresholds to COMP-007 even though COMP-007 did not implement them.
 
-**H-AN-02** (from [`androgen-natural-modulation.md`](../../../androgen-natural-modulation.md) §10): *Cordycepin is uniquely positioned as a gout-favorable T-axis adjuvant — its T-elevation effect is small, but its URAT1 modulation works opposite to the URAT1 upregulation that high T usually produces. Predicted: net UA effect favorable or neutral despite T elevation.*
+The artifact therefore cannot determine which candidate is more gout-favorable or whether cordycepin is unique. Its old executable files and outputs are retained in Git only.
 
-This experiment falsifies or strengthens H-AN-02 by mapping all four T-axis adjuvants against the urate transporter axis in silico, BEFORE any wet-lab spend.
+## What survives
 
-## Method (target shape)
+Three source-specific leads survive without a cross-candidate ranking:
 
-1. **ChEMBL bioactivity lookup** for each compound × target pair (UniProt → ChEMBL target → curated bioactivity records). Per the [`chembl-cross-check.md`](../../../chembl-cross-check.md) discipline, this distinguishes "claimed mechanism" from "curated nanomolar binding."
-2. **Literature-claim aggregation** for compound × target pairs where ChEMBL coverage is sparse (common for natural products at transporter targets — comp-013 found 5 of 9 TCM compounds had no ChEMBL records at all). Animal-model in vivo dose-response data is admissible per the comp-013 methodology adaptation.
-3. **Achievable-concentration check** — for each compound, compute serum + gut-luminal concentration ranges based on oral dose × bioavailability × plausible distribution. Compare to the IC50/Ki at each target. The comp-007 pattern: a 100× achievable/Ki ratio is "decisively active"; <10× is "concentration unclear"; <1× is "below threshold."
-4. **Direction-of-effect tagging** — inhibitor / inducer / substrate / unknown for each compound × target.
-5. **Net-UA verdict per compound** based on aggregated evidence: gout-favorable / gout-neutral / gout-unfavorable / mechanism-unclear.
+1. **Cordycepin lead — Animal Model.** Yong et al. administered purified cordycepin at 15, 30, and 60 mg/kg in a mouse hyperuricemia model; serum urate was lower than hyperuricemic control and renal URAT1 mRNA/protein decreased (PMID 29422889). This does not establish human exposure, human urate lowering, or an androgen–urate dual benefit.
+2. ***Eurycoma longifolia* extract/quassinoid lead — Animal Model + In Vitro.** Bao et al. tested a 70% ethanol stem extract at 100, 200, and 400 mg/kg in hyperuricemic rodents, with renal urate-transporter changes. In hURAT1-expressing cells, eurycomanol-type compounds 4–7 at 50 µM inhibited urate uptake; pure eurycomanone was compound 3 and showed comparatively low activity. Eurycomanol was then tested in vivo (PMID 31920654). Extract-level transporter effects and eurycomanol activity do not become pure-eurycomanone effects.
+3. **Eurycomanol lead — Animal Model.** Bao et al. tested purified eurycomanol at 5–20 mg/kg orally in hyperuricemic mice and reported lower serum urate, increased urate clearance, decreased hepatic PRPS expression, and renal/intestinal transporter modulation (PMID 34785103). This does not establish a human effect or show that Physta acts through eurycomanol or PRPS.
 
-## Files
+The 2021 Physta trial enrolled 105 men and reported urate in a safety-outcomes table. At week 12, neither Physta arm differed from placebo for urate (100 mg, p=0.88; 200 mg, p=0.52), while the placebo arm also declined from baseline (PMCID PMC8254464). The table does not support a Physta urate-treatment effect or connect any observed value to eurycomanone, eurycomanol, transporters, or PRPS.
 
-- `analyze.py` — stdlib-only analysis script (Python 3); reproduces all `outputs/` from `inputs/`.
-- `inputs/compounds.json` — 4 compounds with PubChem CIDs, ChEMBL IDs, MW, oral bioavailability ranges from primary literature.
-- `inputs/targets.json` — 4 targets with UniProt accessions, ChEMBL target IDs, gout-mechanism role.
-- `inputs/chembl_bioactivity.json` — pre-fetched ChEMBL records for compound × target pairs (date-stamped, per-record provenance).
-- `inputs/literature_claims.json` — non-ChEMBL evidence (animal models, primary papers) per compound × target.
-- `inputs/concentration_estimates.json` — per-compound achievable serum + gut-luminal concentrations with primary-source citations.
-- `inputs/provenance.md` — every input source (URL, fetch date, paper PMID) for reproducibility.
-- `outputs/results.json` — machine-readable per-compound × target matrix + verdicts.
-- `outputs/summary.md` — human-readable; the artifact cited in the wiki page.
+These observations remain leads because their exact materials, evidence levels, and compartments can motivate direct experiments. They do not restore the retired matrix or verdicts.
 
-## Cross-references
+## Current evidence owners and correction cascade
 
-- [`wiki/t-axis-adjuvant-urate-mapping-computational.md`](../../../t-axis-adjuvant-urate-mapping-computational.md) — interpretive wiki page.
-- [`wiki/computational-experiments.md`](../../../computational-experiments.md) — comp-015 entry in tracking index.
-- [`wiki/androgen-natural-modulation.md`](../../../androgen-natural-modulation.md) §10 H-AN-02 — the falsifiable hypothesis this experiment tests.
-- [`wiki/medicinal-mushroom-complement-track.md`](../../../medicinal-mushroom-complement-track.md) — cordycepin URAT1 modulation evidence (337→203 µmol/L animal data) referenced as the prior.
-- [`experiments/comp-013-tcm-gout-compound-triage/`](../comp-013-tcm-gout-compound-triage/) — methodological precedent (compound × chokepoint mapping with verdict tagging).
-- [`experiments/comp-014-medicinal-mushroom-compound-mapping/`](../comp-014-medicinal-mushroom-compound-mapping/) — methodological precedent (breadth aggregation + chokepoint intersection).
+The [focused COMP page](../../../t-axis-adjuvant-urate-mapping-computational.md) owns the invalidated verdict and source-specific surviving evidence. The [androgen-natural-modulation page](../../../androgen-natural-modulation.md) owns the compact Research Conjecture and the matched-identity wet-lab discriminator. The [validation plan](../../../validation-experiments.md) owns the experiment.
 
-## Reproduction
+Correction targets in this retirement batch are:
 
-```bash
-cd experiments/comp-015-t-axis-adjuvant-urate-mapping
-python3 analyze.py
-# Verify outputs/results.json and outputs/summary.md regenerate identically.
-```
+- `wiki/t-axis-adjuvant-urate-mapping-computational.md`
+- `wiki/computational-experiments.md`
+- `wiki/androgen-natural-modulation.md`
+- `wiki/medicinal-mushroom-complement-track.md`
+- `wiki/prps-purine-biosynthesis-chokepoint.md`
+- `wiki/gout-pathophysiology.md`
+- `wiki/gout-kill-chain-delivery-routes.md`
+- `wiki/gout-action-guide.md`
+- `wiki/personal-genome-protocol.md`
+- `wiki/validation-experiments.md`
+- `wiki/etc/chembl-cross-check.md`
+- `wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/analyze.py`
+- `wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/results.json`
+- `wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/summary.md`
+- `wiki/etc/experiments/comp-007-food-grade-hdaci-screen/README.md`
+- `operations/notable-moments.md`
+- `papers/cross-vendor-heterogeneity-guard/draft.md`
+- `papers/cross-vendor-heterogeneity-guard/audit-2026-05-13-catch-history.md`
+- `papers/cross-vendor-heterogeneity-guard/revisions.md`
+- `papers/cross-vendor-heterogeneity-guard/figures/figure2_catches.py`
+- `papers/cross-vendor-heterogeneity-guard/figures/figure2_catches.pdf`
+- `papers/cross-vendor-heterogeneity-guard/figures/figure2_catches.png`
+- `papers/future-work-pipeline.md`
 
-Python 3 stdlib only (json, pathlib). No `pip install` required.
+References in historical review receipts remain review provenance, not active evidence. `operations/global-lit-scan-gap-audit-2026-05-20.md` preserves an unresolved multilingual search gap and does not reuse a retired verdict.
+
+COMP-017's decision text is corrected through COMP-017's own exact-snapshot lifecycle before the COMP-015 queue item closes.
+
+Before deleting `synthesis/queue/comp-review-015.md`, a repository-wide readback must show that every remaining COMP-015 or eurycomanone-verdict reference is corrected source-specific evidence, an explicitly untested conjecture, or clearly marked historical review provenance. All changed external surfaces are bound in the post-run manifest. After that readback and the independent post-run review pass, the queue file is deleted in the same commit.
+
+## Hash-bound retirement record
+
+[`invalidation.json`](./invalidation.json) binds every retired non-review file to the exact pre-retirement Git tree by byte count and SHA-256 and defines the invalidated and surviving scopes.
+
+There is no reproduction command. Git retains the retired code, inputs, outputs, and reviews.

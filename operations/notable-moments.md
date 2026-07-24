@@ -222,7 +222,25 @@ Subsequent verification work today on the same page surfaced two more citation-l
 
 **Layer 2 — "Shin KH 2024 enclomiphene vs clomiphene pharmacology" doesn't exist.** A parallel verification subagent running on the parent page (`wiki/androgen-urate-axis.md`) found the citation can't be located in PubMed. The actual paper fitting the description is **Saffati G et al. 2024, PMID 39434750**, *Translational Andrology and Urology*: n=66 patients, enclomiphene +166 vs. clomiphene +98 ng/dL T, fewer adverse events. The same misattribution had propagated to BOTH the parent and daughter pages — the laundering wasn't a single-page issue but corpus-wide contamination. Caught by: cross-vendor parent-page verification sweep, paired with Sci-Hub-tier paywalled-paper access for confirmation.
 
-**Layer 3 — "Eurycomanone is a xanthine oxidase inhibitor" is wrong; the actual mechanism is multi-target transporter modulation + purine-synthesis suppression.** A Sci-Hub-second-pass verification subagent surfaced what looked like a clean mechanism finding — the supplement-industry summary attributed direct XO inhibition to two PMIDs (31920654, 34785103). That triggered a v2 re-run of comp-015 (the T-axis-adjuvant urate-target mapping experiment) with XO added as the 5th target. **The v2 subagent, reading the primary papers' actual full text, found those PMIDs don't establish XO inhibition at all.** They establish: (1) eurycomanone directly modulates URAT1, GLUT9, ABCG2, NPT1 — a multi-target transporter mechanism, strong gout-favorable; (2) eurycomanol suppresses PRPS-driven purine biosynthesis, a separate gout-favorable mechanism. The "XO inhibitor" attribution was supplement-industry summary contamination — same shape as Layer 1, but inheriting through a different review-paper chain. Caught by: a computational experiment forcing primary-source verification of every load-bearing claim used to motivate it.
+**Layer 3 — the XO correction was right, but the first repair collapsed
+different materials and created a second error.** A secondary-literature pass
+attributed direct XO inhibition to PMID 31920654 and PMID 34785103. COMP-015
+correctly found that neither paper establishes that claim. It then overreached:
+it assigned extract-level and eurycomanol results to eurycomanone and flipped
+the compound to `GOUT-FAVORABLE`.
+
+The exact-material read is narrower. PMID 31920654 tested a 70% ethanol
+*Eurycoma longifolia* stem extract in hyperuricemic animals and isolated
+quassinoids in an hURAT1 assay. Eurycomanol-type compounds 4–7 showed activity
+at 50 µM; pure eurycomanone was compound 3 and had comparatively low activity.
+PMID 34785103 tested purified eurycomanol in hyperuricemic mice and found
+changes in serum urate, 24-hour clearance, hepatic PRPS expression, and renal
+and intestinal transporters. Those results do not establish a favorable
+eurycomanone verdict. Physta's separate human urate comparison was null.
+
+The first verification caught citation laundering; the later exact-snapshot
+COMP review caught identity collapse inside the correction. COMP-015 is now
+retired rather than repaired into another ranking.
 
 **The three layers in one workday on one wiki page:**
 
@@ -230,17 +248,31 @@ Subsequent verification work today on the same page surfaced two more citation-l
 |---|---|---|---|
 | 1 | "37% T elevation from tongkat ali" | Salivary T in mixed-sex moderately-stressed cohort (Talbott 2013 PMID 23705671) | First verification subagent reading the primary paper |
 | 2 | "Shin KH 2024 enclomiphene paper" | Paper doesn't exist; the actual paper is Saffati G et al. 2024 (PMID 39434750) | Parent-page parallel verification subagent + Sci-Hub-tier confirmation |
-| 3 | "Eurycomanone is an XO inhibitor" | Multi-target transporter modulation (PMID 31920654) + PRPS purine-synthesis suppression (PMID 34785103); NOT XO | comp-015 v2 computational experiment forcing primary-source verification of the trigger claim |
+| 3 | "Eurycomanone is an XO inhibitor" | Neither paper establishes XO inhibition. The 2019 record separates stem extract and eurycomanol-type compounds 4–7 from comparatively low-activity pure eurycomanone; the 2022 record is purified eurycomanol in mice. The first repair incorrectly collapsed those materials. | COMP-015 primary-source pass caught the XO error; later exact-snapshot COMP review caught the identity-collapse error in the repair |
 
 **The deeper pattern.** All three layers are the same shape from a verification-gate perspective: a load-bearing quantitative or mechanistic claim entered the corpus by inheritance from supplement-industry summary tier, not from primary-source verification. **Different stages of the discipline caught different instances of the same contamination.** No single verification step caught all three:
 
 - Layer 1 surfaced because the first subagent had PubMed full-text access for the most-cited tongkat ali RCTs.
 - Layer 2 surfaced because the parent-page sweep ran in parallel on the same misattributed citation appearing in both parent and daughter — cross-page consistency-checking caught what neither single-page sweep would have caught alone.
-- Layer 3 surfaced because the computational experiment forced primary-source verification of even the trigger that motivated the re-run — verification-of-verification.
+- Layer 3 required two different checks: the computational pass challenged the
+  inherited XO claim, and a later exact-snapshot COMP review checked whether
+  the proposed correction itself preserved compound, extract, and assay
+  identity.
 
-**The recursive lesson.** In supplement-industry-adjacent literature corpora, **even the verification process can inherit upstream laundering.** The Sci-Hub pass that surfaced Layer 3's trigger honestly reported what the secondary literature said about eurycomanone-XO. The computational experiment (Layer 3 catch) verified against the primary papers and found the secondary literature had laundered a claim that wasn't in the primary text. **Verification-of-verification is not paranoia; it's how multi-stage cross-checking actually catches multi-layer corpus contamination.**
+**The recursive lesson.** In supplement-industry-adjacent literature corpora,
+**even a successful correction can preserve the wrong entity boundary.** The
+first Layer 3 pass rejected the inherited XO claim but still treated
+eurycomanone, eurycomanol, an ethanol stem extract, and Physta as if evidence
+could flow among them. Verification-of-verification must inspect the repaired
+claim, not merely confirm that the original claim was wrong.
 
-The yield from a single workday on a single wiki page: **3 distinct citation-laundering layers, ~13 specific factual corrections, one direction-of-effect reversal (eurycomanone v1 GOUT-UNFAVORABLE → v2 GOUT-FAVORABLE) that materially shifts platform recommendations.** Cost: roughly $3-4 in subagent tokens across four parallel passes. The cost of skipping the verification stack: a wiki indistinguishable from any health-content blog post.
+The initial workday yielded **3 distinct citation-laundering layers and ~13
+specific factual corrections**, but its apparent eurycomanone
+direction-of-effect reversal did not survive later exact-material review. That
+failure is more useful than the abandoned verdict: it shows why independent
+review must bind and inspect the correction artifact and its downstream
+propagation, not stop after finding the first error. The recorded initial cost
+was roughly $3–4 in subagent tokens across four parallel passes.
 
 **Why it matters.** The DAF SCR1-4 incident yesterday was an AI hallucinating a number nobody asked for. Today's tongkat ali finding is structurally different and arguably more interesting: **the AI faithfully reproduced a number the supplement industry has been laundering for years.** The training data was contaminated; the AI inherited the contamination; only the multi-pass verification gate (per-claim primary-source check) surfaces the error.
 

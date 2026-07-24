@@ -521,7 +521,15 @@ After Brian's final read-pass through the manuscript, a wide-scope Explore agent
 
 **Pre-edit state:** §5 case studies covered four within-pipeline-catchable failure classes (§5.1–§5.4) plus a generative case study (§5.5). The paper claimed in §7 "Shared training-data leakage" that cross-vendor review cannot defend against corpus-level contamination inherited from training data, but offered no worked example.
 
-**Correction applied:** new §5.6 case study added: the 2026-05-07 three-layer citation laundering on the testosterone-axis adjuvant landscape. Layer 1: the "37% testosterone elevation" figure for *Eurycoma longifolia* traces to Talbott 2013 PMID 23705671 reporting salivary T in a mixed-sex moderately-stressed cohort, not serum free T in hypogonadal men. Layer 2: "Shin KH 2024 enclomiphene vs clomiphene" citation does not exist in PubMed; actual paper is Saffati et al. 2024 PMID 39434750. Layer 3: eurycomanone is not an XO inhibitor; verified mechanism is multi-target purine-handling modulation (URAT1, GLUT9, ABCG2, NPT1 + PRPS-suppression). Wiki tag flipped GOUT-UNFAVORABLE → GOUT-FAVORABLE (commit `c32a623`). Three-layer verification chain cost ~$3-4. Class: corpus-level contamination, defended by verification-of-verification, not by cross-vendor heterogeneity.
+**Correction applied:** new §5.6 case study added: the 2026-05-07
+three-layer citation laundering on the testosterone-axis adjuvant landscape.
+Layer 1 traced the "37% testosterone elevation" figure to salivary T in a
+mixed-sex moderately-stressed cohort. Layer 2 replaced a non-existent
+"Shin KH 2024" citation with Saffati et al. 2024. Layer 3 rejected the
+unsupported eurycomanone XO attribution. The initial revision then made a
+second-order error by collapsing distinct *Eurycoma* extracts and quassinoids
+into a GOUT-FAVORABLE eurycomanone verdict. A 2026-07-24 exact-snapshot review
+withdrew that verdict and added correction validation to the method.
 
 **Knock-on edits:**
 - §5 preamble updated from "four catches" to "five catches plus a generative case study"
@@ -565,7 +573,10 @@ The Methods Appendix and Appendix A vendor-attribution table required catch-up e
 **Pre-edit state:** Figure 2 was a 4-cell taxonomy (§5.1, §5.2, §5.3, §5.4) recast from a bar chart per Codex Catch 24. After adding §5.6 in Catch 37, the figure caption acknowledged §5.6 as a fifth failure class outside the figure's taxonomy. Visually inconsistent with the §5 case-study count.
 
 **Correction applied:** `figures/figure2_catches.py` updated:
-1. New cell for §5.6 (title "Corpus-level contamination", exemplar "Tongkat ali citation laundering / eurycomanone reversal", date 2026-05-07, surfacing "Verification-of-verification chain (primary-source)").
+1. New cell for §5.6 (title "Corpus-level contamination", subsequently
+   corrected to the exemplar "Tongkat ali citation laundering /
+   identity-collapse catch"; surfacing combines primary-source V-of-V with
+   exact-snapshot correction review).
 2. New surfacing color `vov` = `#A05858` (matches Figure 1's human-in-loop red) to distinguish V-of-V from cross-vendor (DeepSeek indigo) and within-pipeline manual discipline (grey).
 3. Layout widened from 1×4 to 1×5 (figsize 13 → 16, x-bounds 10 → 12.5; cell-w and cell-h preserved).
 4. Legend expanded from 2 to 3 entries.

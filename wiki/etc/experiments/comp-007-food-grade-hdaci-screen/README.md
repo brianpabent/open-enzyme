@@ -30,12 +30,16 @@ Correction targets in this retirement batch are:
 
 The remaining repository references are adjudicated as follows:
 
-- `wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/analyze.py`, `README.md`, `inputs/provenance.md`, `outputs/results.json`, and `outputs/summary.md` incorrectly attribute local achievable-concentration/IC50 thresholds to COMP-007. COMP-007 supplies no such method. The already-open `synthesis/queue/comp-review-015.md` owns that correction under COMP-015's lifecycle; those thresholds are not decision-eligible as COMP-007 evidence.
+- COMP-015 incorrectly attributed local achievable-concentration/IC50
+  thresholds to COMP-007. COMP-007 supplies no such method. COMP-015 is now a
+  non-runnable invalidated tombstone; its thresholds, matrix verdicts, and
+  rankings are withdrawn and are not decision-eligible as COMP-007 evidence.
 - `wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md` and `outputs/summary.md` describe historical method lineage inside a viability ranking that its current focused page already invalidates. They do not preserve a usable COMP-007 result.
 - `wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/provenance.md` and `outputs/scope-summary.md`, plus `wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md`, contain descriptive historical references only; they do not reuse a rank, score, advancement decision, causal isoform map, exposure proxy, safety inference, or decision rule.
 - References inside this tombstone and its review receipts are retirement provenance, not active scientific evidence.
 
-After the seven correction targets are reconciled and the COMP-015 dependency is handed to its existing queue item, `synthesis/queue/comp-review-007.md` is deleted in the same commit.
+The seven COMP-007 correction targets were reconciled before its queue item
+closed. The separate COMP-015 retirement owns removal of its false dependency.
 
 ## Hash-bound retirement record
 
