@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/README.md",
+      "kind": "design",
+      "bytes": 6643,
+      "sha256": "fd8a87a9d3d9c6c4b1cf7ba507933ca799887157c38612a2a5078664d2a9f560"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/analyze.py",
+      "kind": "design",
+      "bytes": 41380,
+      "sha256": "4a09986324037e1c7785d6014809f25c77baa12781f19b9606eb19095727badb"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/inputs/kpv_properties.json",
+      "kind": "design",
+      "bytes": 2913,
+      "sha256": "0ce8218336414af1429936d6e448eea3e9a7e38813bf478ca636358605adc111"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/inputs/macrophage_geometry.json",
+      "kind": "design",
+      "bytes": 1069,
+      "sha256": "dbc4eba521eb923f325b62ea0cbc5164f7c6c1dba5c8556a33edfa0a53deed87"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/inputs/pept1_and_effective_concentration.json",
+      "kind": "design",
+      "bytes": 3984,
+      "sha256": "a63c3cd1fe172436f56ccd654e38f5d7ab2fafac3b7a1be3524ddf357eb36895"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/inputs/pore_geometry.json",
+      "kind": "design",
+      "bytes": 2763,
+      "sha256": "96b91f748c29a9675300a39e297351613d9e4535f19ab72085b2645373362e2d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 10349,
+      "sha256": "4f97dfa0ef8eb4901d04b06eb6ef9b60483cf05055fb9c54e3a2aa5d571f3195"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/inputs/query-strategy.json",
+      "kind": "design",
+      "bytes": 1995,
+      "sha256": "1a58823f3dccf1bab756f87f9829a2e0c9db5bdc7c5912b828924058b66a3eb5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/inputs/route_concentrations.json",
+      "kind": "design",
+      "bytes": 2514,
+      "sha256": "78d8bf98b2da460f76535476ace27637a8bc283b9fea57b787701d4ae2052bdc"
+    }
+  ],
+  "prior_output_baseline": [
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/outputs/central_results.json",
+      "kind": "prior_output",
+      "bytes": 4918,
+      "sha256": "a09b3d79819440964e9b08fa0b552dbff7185c96bff9c8d439adfc713eba51ce"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/outputs/monte_carlo.json",
+      "kind": "prior_output",
+      "bytes": 1853,
+      "sha256": "c70f237d117843d543dfda30d01e5e93434f13c0301b1b1df8ff50b09be5e949"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/outputs/robustness_sweep.json",
+      "kind": "prior_output",
+      "bytes": 14559,
+      "sha256": "e039c0ae123a4a68580bcdcb253565a8fcd9733a49f2640c8c49bd5ab55b357f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/outputs/selectivity_grid.json",
+      "kind": "prior_output",
+      "bytes": 57368,
+      "sha256": "48fac32c05253042c4faf01e300cda6bafdc1f1c4dbce15332682768d6107c1a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/outputs/summary.md",
+      "kind": "prior_output",
+      "bytes": 11010,
+      "sha256": "a81b82fb20c3c946655464b91e93f4d8022eccd8abdba4d3ef72b2992919a0c6"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/outputs/verdicts.json",
+      "kind": "prior_output",
+      "bytes": 7420,
+      "sha256": "b53c6e49701f118c8c039f3516c7766768fb99e21df37d660a673d9cfa76fa93"
+    }
+  ],
+  "manifest_sha256": "f5e03f160f8760a62eca4572f2804ab94f96ecc6286b7a7ed8f8c4cf79ed3b63"
+}

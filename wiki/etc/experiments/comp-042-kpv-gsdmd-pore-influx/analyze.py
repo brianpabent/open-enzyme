@@ -11,18 +11,20 @@ THE QUESTION
 During a gout flare, pyroptotic macrophages open GSDMD pores (~20 nm inner
 diameter). The Trojan-horse thesis (gsdmd-pore-delivery-paradox.md) is that
 membrane-impermeant anti-inflammatory payloads flood selectively into exactly the
-dying flare-driving cells. KPV (Lys-Pro-Val), which inhibits intracellular NLRP3
-and NF-kB, is proposed as the ideal payload.
+dying flare-driving cells. KPV (Lys-Pro-Val) has been proposed as a payload because
+its reported NF-kB/NLRP3-related effects sit upstream in the inflammatory cascade.
 
 Two assumptions are load-bearing:
-  A1 -- FLUX SUFFICIENCY: over a pore's short open lifetime (1-30 min), does enough
-        KPV diffuse in to clear its intracellular IC50 (~10 nM, Dalmasso 2008)?
-  A2 -- SELECTIVITY over the PepT1 baseline (the quietly weak one): KPV ALREADY
-        enters cells (including immune cells) via the PepT1 transporter (SLC15A1),
-        independent of any pore. So the pore only confers SELECTIVITY if it delivers
-        meaningfully MORE than PepT1 already does AND healthy (non-pyroptotic) cells
-        do not already admit KPV via PepT1. The crux is synovial-macrophage PepT1
-        expression -- uncharacterized in the literature.
+  A1 -- EXPOSURE-PROXY SUFFICIENCY: over a pore's short open lifetime (1-30 min),
+        does the modeled passive pore contribution exceed the lowest extracellular
+        concentration effective in the Dalmasso 2008 PepT1-positive cell assay
+        (~10 nM)? This is a cross-compartment engineering proxy, not an intracellular
+        IC50 or efficacy bar.
+  A2 -- SELECTIVITY over the PepT1 baseline: KPV can enter PepT1-positive cells,
+        including the Jurkat immune-cell model in Dalmasso 2008, independent of a
+        pore. A pore-specific advantage therefore depends on the matched baseline
+        in intact cells. Synovial-macrophage PepT1 function and KPV accumulation
+        remain uncharacterized.
 
 THE MODEL (transport / mass-balance; NO MD, NO docking)
 -------------------------------------------------------
@@ -31,64 +33,76 @@ access (convergence) resistance (Hille / Hall):
 
     p_pore = H * D * pi * r_p^2 / (L_pore + pi*r_p/2)          [m^3/s]
 
-where H is the steric-electrostatic hindrance factor (~1: KPV radius ~0.5 nm is
-15-40x smaller than the pore radius, and the pore conduit is negatively charged and
-FAVORS KPV's +1 charge, Xia 2021). The access term pi*r_p/2 (~15.7 nm at r_p=10 nm)
+where H is the steric-electrostatic hindrance factor (central 1.0; conservative
+engineering sensitivity 0.5-1.0). Across the declared solute- and pore-radius
+bounds, the pore radius is approximately 8-24x the KPV radius. The pore conduit is
+negatively charged and favors cationic cargo
+(Xia 2021). The access term pi*r_p/2 (~15.7 nm at r_p=10 nm)
 dominates the channel term L_pore (~7 nm) -- i.e. this is an access-resistance-
 limited pore, so the exact channel length is low-sensitivity.
 
 Total pore conductance of a pyroptotic cell = N_pores * p_pore. Treating the cell as
-a well-mixed compartment of volume V, intracellular [KPV] approaches extracellular
-[KPV] with a first-order EQUILIBRATION time constant:
+a well-mixed compartment of volume V, the passive pore contribution approaches
+extracellular [KPV] with a first-order EQUILIBRATION time constant:
 
     tau_eq = V / (N_pores * p_pore)
     C_in(t) = C_ext * (1 - exp(-t / tau_eq))
     peak C_in = C_ext * (1 - exp(-tau_life / tau_eq))
 
-KEY PHYSICS RESULT: for a 20 nm pore, N_pores >= ~10, and a macrophage of ~3000 um3,
-tau_eq is SECONDS to tens of seconds -- far shorter than the minutes-scale pore
-lifetime. So the cell equilibrates its interior to the extracellular concentration
-almost completely. The naive "moles-in over lifetime / cell volume" estimate (integral
-of flux at a fixed gradient) OVER-shoots C_ext by orders of magnitude, which simply
-confirms the cell saturates: peak intracellular [KPV] is CAPPED at C_ext. This
-quantitatively answers gsdmd-pore-delivery-paradox.md Open Question #4.
+The planned outputs expose tau_eq, peak fraction, and every lifetime x pore-count
+grid cell. No pore-lifetime conclusion is preregistered.
 
-PepT1 BASELINE (present in BOTH pyroptotic and healthy cells):
-Healthy-cell steady-state KPV via Michaelis-Menten uptake balanced by efflux/turnover
-is written as a saturating accumulation:
+PepT1 COMPARATOR (a potential competing route in both cell states):
+Because synovial-macrophage Vmax, efflux, turnover, degradation, membrane potential,
+and proton coupling are unmeasured, a Michaelis-Menten-shaped accumulation equation
+is used only as a response-surface heuristic:
 
     C_in,healthy(C_ext) = C_in_max_healthy * C_ext / (Km + C_ext)
     C_in_max_healthy    = AR_lin * Km    (so low-C_ext slope AR_lin = C_in,healthy/C_ext)
 
 AR_lin (the dimensionless linear-regime accumulation ratio) encodes the UNKNOWN
 synovial-macrophage PepT1 functional expression (scenarios: absent / low / moderate /
-high-concentrative). In the pyroptotic cell the huge pore conductance short-circuits
-PepT1 and clamps C_in,pyroptotic = C_ext.
+high-concentrative). The pore model gives
+C_pore = f_pore * C_ext, where f_pore is the finite equilibration fraction. C_pore
+is the modeled passive pore contribution, not total KPV in a pyroptotic cell;
+concurrent PepT1 transport in that cell is not modeled.
 
-SELECTIVITY RATIO  S = C_in,pyroptotic / C_in,healthy = C_ext / [C_in_max_healthy * C_ext/(Km+C_ext)]
-                     = (Km + C_ext) / C_in_max_healthy.
-  - Linear regime (SC/oral, C_ext << Km):  S ~= Km/C_in_max_healthy = 1/AR_lin  -> fully gated by PepT1 expression.
-  - Saturating regime (IA, C_ext >> Km):   S ~= C_ext/C_in_max_healthy -> can rise, but C_in_max_healthy is unknown.
-Either way S is set by unknown synovial-macrophage PepT1 kinetics.
+HEURISTIC RATIO  S_model = C_pore / C_in,healthy
+                         = f_pore * (Km + C_ext) / C_in_max_healthy.
+  - Linear regime (SC/oral, C_ext << Km): S ~= f_pore/AR_lin.
+  - Saturating regime (IA, C_ext >> Km): S can rise with C_ext, but
+    C_in_max_healthy remains unknown.
+The modeled ratio depends on AR_lin and C_ext/Km; it is not a physiological estimate.
 
 METRICS (>=3 orthogonal) evaluated per dosing route (IA / SC / oral):
-  M1 -- peak intracellular [KPV] / IC50        (flux/therapeutic sufficiency; A1)
-  M2 -- selectivity ratio S vs healthy cell    (pore benefit over PepT1 baseline; A2)
-  M3 -- robustness: sweep pore lifetime (1-30 min) x pores/cell (10-1e4)
+  M1 -- modeled passive pore contribution / extracellular cell-assay
+        effective-concentration proxy (exposure-proxy sufficiency; A1)
+  M2 -- heuristic ratio S_model vs healthy-cell comparator (A2 diagnostic),
+        evaluated at the central case and over the declared 3 route-concentration
+        bounds x 3 Km bounds x 4 PepT1-expression scenarios
+  M3 -- robustness: sweep pore lifetime (1-30 min) x pores/cell (1-1e4)
+        for all routes; one-pore rows are stress cases outside the 10-1e4
+        main pore-count design range
 
-DECISION FILTER: a route "passes" only if it clears BOTH a therapeutic threshold
-(M1 >= 1x IC50) AND a meaningful selectivity threshold (M2 >= 3x) with the named
-assumptions holding.
+DECISION FILTER: a route qualifies only if it clears BOTH the preregistered exposure
+proxy threshold (M1 >= 1x) AND empirical selectivity evidence. Numerical M2
+ratio crossings at the preregistered 3x diagnostic line are not evidence of
+qualification: the PepT1
+expression state and healthy-cell accumulation model are unmeasured in synovial
+macrophages. No route may qualify on A2 until an empirical healthy-cell comparator
+resolves that uncertainty.
 """
 
 import json
 import math
 import random
+import sys
 from pathlib import Path
 
 # ----- repro -----
 SEED = 42
 random.seed(SEED)
+EXPECTED_PYTHON = (3, 14, 5)
 
 # ----- paths -----
 HERE = Path(__file__).resolve().parent
@@ -97,6 +111,10 @@ OUTPUTS = HERE / "outputs"
 OUTPUTS.mkdir(exist_ok=True, parents=True)
 
 N_MC = 20000
+ROUTE_NAMES = ["intra_articular", "subcutaneous", "oral"]
+SCENARIO_NAMES = ["absent", "low", "moderate", "high"]
+BOUND_NAMES = ["lower", "central", "upper"]
+HEURISTIC_RATIO_THRESHOLD = 3.0
 
 # ----- unit helpers -----
 UM_TO_MOL_PER_M3 = 1.0e-3   # 1 uM = 1e-6 mol/L = 1e-3 mol/m^3
@@ -108,9 +126,19 @@ def load_inputs():
     kpv = json.loads((INPUTS / "kpv_properties.json").read_text())
     pore = json.loads((INPUTS / "pore_geometry.json").read_text())
     mac = json.loads((INPUTS / "macrophage_geometry.json").read_text())
-    pk = json.loads((INPUTS / "pept1_and_ic50.json").read_text())
+    pk = json.loads((INPUTS / "pept1_and_effective_concentration.json").read_text())
     routes = json.loads((INPUTS / "route_concentrations.json").read_text())
     return kpv, pore, mac, pk, routes
+
+
+def check_runtime():
+    actual = sys.version_info[:3]
+    if actual != EXPECTED_PYTHON:
+        expected_text = ".".join(str(value) for value in EXPECTED_PYTHON)
+        actual_text = ".".join(str(value) for value in actual)
+        raise RuntimeError(
+            f"This design requires CPython {expected_text}; got {actual_text}"
+        )
 
 
 def log_uniform(lo, hi):
@@ -173,15 +201,46 @@ def equilibration(V_m3, N_pores, p_pore, tau_life_s):
 
 
 def healthy_pept1_conc_uM(C_ext_uM, AR_lin, Km_uM):
-    """Healthy-cell steady-state intracellular [KPV] via PepT1 (saturating)."""
+    """Unvalidated healthy-cell KPV accumulation heuristic."""
     C_in_max = AR_lin * Km_uM
     return C_in_max * C_ext_uM / (Km_uM + C_ext_uM)
 
 
+def selectivity_record(C_pore_uM, C_in_healthy_uM):
+    """Return an explicit strict-JSON representation of the heuristic ratio.
+
+    A zero healthy-cell baseline makes the mathematical ratio positive infinity.
+    JSON has no numeric infinity, so the ratio is null and the adjacent state field
+    distinguishes that value from missing or unknown data. C_pore_uM is the modeled
+    passive pore contribution, not total pyroptotic-cell accumulation.
+    """
+    if C_pore_uM < 0 or C_in_healthy_uM < 0:
+        raise ValueError("Concentrations must be non-negative")
+    if C_in_healthy_uM == 0 and C_pore_uM == 0:
+        return {
+            "selectivity_ratio": None,
+            "selectivity_ratio_state": "undefined_zero_over_zero",
+            "heuristic_ratio_ge_3x": False,
+        }
+    if C_in_healthy_uM == 0:
+        return {
+            "selectivity_ratio": None,
+            "selectivity_ratio_state": "positive_infinity_zero_healthy_baseline",
+            "heuristic_ratio_ge_3x": True,
+        }
+    ratio = C_pore_uM / C_in_healthy_uM
+    return {
+        "selectivity_ratio": ratio,
+        "selectivity_ratio_state": "finite",
+        "heuristic_ratio_ge_3x": ratio >= HEURISTIC_RATIO_THRESHOLD,
+    }
+
+
 def naive_flux_limited_conc_uM(N_pores, p_pore, C_ext_uM, tau_life_s, V_m3):
-    """Naive 'moles in over lifetime / cell volume' assuming a FIXED extracellular
-    gradient (no intracellular build-up). This is an UPPER BOUND that ignores
-    saturation; comparing it to C_ext shows how badly the cell saturates."""
+    """Naive pore-influx 'moles in over lifetime / cell volume' assuming a FIXED
+    extracellular gradient (no intracellular build-up). This is an upper bound for
+    the modeled passive pore contribution that ignores saturation; comparing it to
+    C_ext shows when the well-mixed compartment approaches equilibrium."""
     C_ext_molm3 = C_ext_uM * UM_TO_MOL_PER_M3
     moles_in = N_pores * p_pore * C_ext_molm3 * tau_life_s  # mol
     conc_molm3 = moles_in / V_m3
@@ -192,54 +251,66 @@ def naive_flux_limited_conc_uM(N_pores, p_pore, C_ext_uM, tau_life_s, V_m3):
 
 def central_values(kpv, pore, mac, pk, routes):
     D = kpv["aqueous_diffusion_coefficient_m2_per_s"]["central"]
-    H = 1.0  # hindrance ~1 (justified in provenance)
+    H = kpv["pore_hindrance_factor"]["central"]
     r_pore = (pore["inner_diameter_nm"]["central"] * 1e-9) / 2.0
     L_pore = pore["channel_length_nm"]["central"] * 1e-9
     N_pores = pore["pores_per_pyroptotic_cell"]["central"]
     tau_life = pore["open_lifetime_seconds"]["central"]
     V_m3 = mac["cell_volume_um3"]["central"] * 1e-18
     Km = pk["pept1_kpv_kinetics"]["Km_used_uM"]["central"]
-    ic50_uM = pk["kpv_intracellular_ic50"]["central_nM"] * NM_TO_UM
+    effective_proxy_uM = (
+        pk["kpv_cell_assay_effective_concentration_proxy"]["central_nM"] * NM_TO_UM
+    )
 
     p_pore = pore_permeability_m3_s(D, r_pore, L_pore, H)
     tau_eq, frac = equilibration(V_m3, N_pores, p_pore, tau_life)
 
     scenarios = pk["pept1_expression_scenarios"]
-    route_names = ["intra_articular", "subcutaneous", "oral"]
-
     out = {
+        "selectivity_ratio_null_semantics": {
+            "positive_infinity": {
+                "condition": "selectivity_ratio_state is positive_infinity_zero_healthy_baseline",
+                "meaning": "positive infinity",
+                "not_missing_data": True,
+            },
+            "undefined": {
+                "condition": "selectivity_ratio_state is undefined_zero_over_zero",
+                "meaning": "undefined 0/0",
+                "not_missing_data": True,
+            },
+        },
         "pore_permeability_m3_per_s": p_pore,
+        "pore_hindrance_factor": H,
         "equilibration_time_constant_s": tau_eq,
         "equilibration_peak_fraction_central": frac,
-        "ic50_uM": ic50_uM,
+        "central_pores_per_cell": N_pores,
+        "central_pore_lifetime_s": tau_life,
+        "central_cell_volume_um3": mac["cell_volume_um3"]["central"],
+        "cell_assay_effective_concentration_proxy_uM": effective_proxy_uM,
         "Km_uM": Km,
         "routes": {},
     }
-    for rn in route_names:
+    for rn in ROUTE_NAMES:
         C_ext = routes[rn]["C_ext_synovial_uM"]["central"]
-        C_in_pyro = C_ext * frac  # equilibration-capped intracellular in pyroptotic cell
+        C_pore = C_ext * frac
         naive_uM, moles_in = naive_flux_limited_conc_uM(N_pores, p_pore, C_ext, tau_life, V_m3)
         sel = {}
-        for sname in ["absent", "low", "moderate", "high"]:
+        for sname in SCENARIO_NAMES:
             AR = scenarios[sname]["AR_lin"]
             C_in_healthy = healthy_pept1_conc_uM(C_ext, AR, Km)
-            if C_in_healthy <= 0:
-                S = float("inf")
-            else:
-                S = C_in_pyro / C_in_healthy
             sel[sname] = {
                 "AR_lin": AR,
                 "C_in_healthy_uM": C_in_healthy,
-                "selectivity_ratio": S,
+                **selectivity_record(C_pore, C_in_healthy),
             }
         out["routes"][rn] = {
             "C_ext_synovial_uM": C_ext,
-            "C_in_pyroptotic_uM": C_in_pyro,
-            "ratio_over_ic50": C_in_pyro / ic50_uM,
+            "modeled_passive_pore_contribution_uM": C_pore,
+            "ratio_over_effective_concentration_proxy": C_pore / effective_proxy_uM,
             "naive_flux_limited_uM_UPPERBOUND": naive_uM,
             "naive_over_C_ext": naive_uM / C_ext if C_ext > 0 else float("inf"),
             "moles_in_over_lifetime_mol": moles_in,
-            "selectivity_by_pept1_scenario": sel,
+            "pore_vs_healthy_heuristic_by_pept1_scenario": sel,
         }
     return out
 
@@ -247,13 +318,14 @@ def central_values(kpv, pore, mac, pk, routes):
 # ===================== Monte Carlo =====================
 
 def monte_carlo(kpv, pore, mac, pk, routes):
-    route_names = ["intra_articular", "subcutaneous", "oral"]
-    ratio_samples = {rn: [] for rn in route_names}
+    ratio_samples = {rn: [] for rn in ROUTE_NAMES}
     frac_samples = []
     tau_eq_samples = []
 
     D_lo = kpv["aqueous_diffusion_coefficient_m2_per_s"]["lower"]
     D_hi = kpv["aqueous_diffusion_coefficient_m2_per_s"]["upper"]
+    H_lo = kpv["pore_hindrance_factor"]["lower"]
+    H_hi = kpv["pore_hindrance_factor"]["upper"]
     d_lo = pore["inner_diameter_nm"]["lower"]
     d_hi = pore["inner_diameter_nm"]["upper"]
     L_lo = pore["channel_length_nm"]["lower"]
@@ -264,40 +336,44 @@ def monte_carlo(kpv, pore, mac, pk, routes):
     t_hi = pore["open_lifetime_seconds"]["upper"]
     V_lo = mac["cell_volume_um3"]["lower"]
     V_hi = mac["cell_volume_um3"]["upper"]
-    ic_lo = pk["kpv_intracellular_ic50"]["lower_nM"]
-    ic_hi = pk["kpv_intracellular_ic50"]["upper_nM"]
+    proxy_lo = pk["kpv_cell_assay_effective_concentration_proxy"]["lower_nM"]
+    proxy_hi = pk["kpv_cell_assay_effective_concentration_proxy"]["upper_nM"]
 
     for _ in range(N_MC):
         D = log_uniform(D_lo, D_hi)
+        H = log_uniform(H_lo, H_hi)
         r_pore = (log_uniform(d_lo, d_hi) * 1e-9) / 2.0
         L_pore = log_uniform(L_lo, L_hi) * 1e-9
         N_pores = log_uniform(N_lo, N_hi)
         tau_life = log_uniform(t_lo, t_hi)
         V_m3 = log_uniform(V_lo, V_hi) * 1e-18
-        ic50_uM = log_uniform(ic_lo, ic_hi) * NM_TO_UM
+        effective_proxy_uM = log_uniform(proxy_lo, proxy_hi) * NM_TO_UM
 
-        p_pore = pore_permeability_m3_s(D, r_pore, L_pore, 1.0)
+        p_pore = pore_permeability_m3_s(D, r_pore, L_pore, H)
         tau_eq, frac = equilibration(V_m3, N_pores, p_pore, tau_life)
         frac_samples.append(frac)
         tau_eq_samples.append(tau_eq)
 
-        for rn in route_names:
+        for rn in ROUTE_NAMES:
             c_lo = routes[rn]["C_ext_synovial_uM"]["lower"]
             c_hi = routes[rn]["C_ext_synovial_uM"]["upper"]
             C_ext = log_uniform(c_lo, c_hi)
-            C_in_pyro = C_ext * frac
-            ratio_samples[rn].append(C_in_pyro / ic50_uM)
+            C_pore = C_ext * frac
+            ratio_samples[rn].append(C_pore / effective_proxy_uM)
 
     mc = {
         "n_samples": N_MC,
+        "sampling_policy": "Independent log-uniform design-space sampling over declared positive bounds. The resulting fractions are diagnostics, not calibrated probabilities.",
         "equilibration_fraction": stats(frac_samples),
         "equilibration_tau_eq_s": stats(tau_eq_samples),
-        "ratio_over_ic50": {},
-        "prob_clear_ic50": {},
+        "ratio_over_effective_concentration_proxy": {},
+        "fraction_design_space_draws_clearing_proxy": {},
     }
-    for rn in route_names:
-        mc["ratio_over_ic50"][rn] = stats(ratio_samples[rn])
-        mc["prob_clear_ic50"][rn] = sum(1 for x in ratio_samples[rn] if x >= 1.0) / len(ratio_samples[rn])
+    for rn in ROUTE_NAMES:
+        mc["ratio_over_effective_concentration_proxy"][rn] = stats(ratio_samples[rn])
+        mc["fraction_design_space_draws_clearing_proxy"][rn] = (
+            sum(1 for x in ratio_samples[rn] if x >= 1.0) / len(ratio_samples[rn])
+        )
     return mc
 
 
@@ -305,16 +381,20 @@ def monte_carlo(kpv, pore, mac, pk, routes):
 
 def robustness_sweep(kpv, pore, mac, pk, routes):
     D = kpv["aqueous_diffusion_coefficient_m2_per_s"]["central"]
+    H = kpv["pore_hindrance_factor"]["central"]
     r_pore = (pore["inner_diameter_nm"]["central"] * 1e-9) / 2.0
     L_pore = pore["channel_length_nm"]["central"] * 1e-9
     V_m3 = mac["cell_volume_um3"]["central"] * 1e-18
-    ic50_uM = pk["kpv_intracellular_ic50"]["central_nM"] * NM_TO_UM
-    p_pore = pore_permeability_m3_s(D, r_pore, L_pore, 1.0)
+    effective_proxy_uM = (
+        pk["kpv_cell_assay_effective_concentration_proxy"]["central_nM"] * NM_TO_UM
+    )
+    p_pore = pore_permeability_m3_s(D, r_pore, L_pore, H)
 
     lifetimes = [60, 300, 900, 1800]     # 1, 5, 15, 30 min
     pore_counts = [1, 10, 100, 1000, 10000]
     C_ia = routes["intra_articular"]["C_ext_synovial_uM"]["central"]
     C_sc = routes["subcutaneous"]["C_ext_synovial_uM"]["central"]
+    C_oral = routes["oral"]["C_ext_synovial_uM"]["central"]
 
     grid = []
     for N in pore_counts:
@@ -325,144 +405,264 @@ def robustness_sweep(kpv, pore, mac, pk, routes):
                 "lifetime_s": tl,
                 "tau_eq_s": tau_eq,
                 "equilibration_fraction": frac,
-                "IA_C_in_uM": C_ia * frac,
-                "IA_ratio_over_ic50": (C_ia * frac) / ic50_uM,
-                "IA_clears_ic50": (C_ia * frac) / ic50_uM >= 1.0,
-                "SC_C_in_uM": C_sc * frac,
-                "SC_ratio_over_ic50": (C_sc * frac) / ic50_uM,
-                "SC_clears_ic50": (C_sc * frac) / ic50_uM >= 1.0,
+                "IA_modeled_passive_pore_contribution_uM": C_ia * frac,
+                "IA_ratio_over_effective_concentration_proxy": (
+                    C_ia * frac
+                ) / effective_proxy_uM,
+                "IA_clears_effective_concentration_proxy": (
+                    C_ia * frac
+                ) / effective_proxy_uM >= 1.0,
+                "SC_modeled_passive_pore_contribution_uM": C_sc * frac,
+                "SC_ratio_over_effective_concentration_proxy": (
+                    C_sc * frac
+                ) / effective_proxy_uM,
+                "SC_clears_effective_concentration_proxy": (
+                    C_sc * frac
+                ) / effective_proxy_uM >= 1.0,
+                "oral_modeled_passive_pore_contribution_uM": C_oral * frac,
+                "oral_ratio_over_effective_concentration_proxy": (
+                    C_oral * frac
+                ) / effective_proxy_uM,
+                "oral_clears_effective_concentration_proxy": (
+                    C_oral * frac
+                ) / effective_proxy_uM >= 1.0,
             })
     return {
-        "note": "Central pore/cell/IC50; sweep lifetime x pores-per-cell. Shows the A1 flux verdict is robust: for pores_per_cell >= 10 the cell equilibrates within a lifetime and IA/SC clear IC50; only the physically implausible single-pore case is flux-limited at short lifetimes.",
+        "note": "Deterministic lifetime x pores-per-cell diagnostic with all other pore, cell, route-concentration, and effective-concentration-proxy inputs held central. The one-pore rows are explicit stress cases outside the main 10-10000-pore design range. The grid does not assign plausibility to a pore-count value or establish efficacy.",
+        "pore_count_scope": {
+            "main_design_range": [10, 10000],
+            "stress_case": 1,
+            "stress_case_is_outside_main_range": True,
+        },
         "pore_permeability_m3_per_s": p_pore,
+        "pore_hindrance_factor": H,
         "grid": grid,
     }
 
 
-# ===================== selectivity grid (A2) =====================
+# ===================== selectivity grid + sensitivity (A2) =====================
 
-def selectivity_grid(kpv, pore, mac, pk, routes, frac_central):
-    Km = pk["pept1_kpv_kinetics"]["Km_used_uM"]["central"]
+def classify_heuristic_ratio_pattern(n_clear, n_cases):
+    if n_clear == n_cases:
+        return "always_at_or_above_3x_in_declared_grid"
+    if n_clear == 0:
+        return "never_at_or_above_3x_in_declared_grid"
+    return "crosses_3x_in_some_declared_grid_cases"
+
+
+def selectivity_grid(pk, routes, frac_central):
+    km_bounds = pk["pept1_kpv_kinetics"]["Km_used_uM"]
     scenarios = pk["pept1_expression_scenarios"]
-    route_names = ["intra_articular", "subcutaneous", "oral"]
-    grid = {}
-    for rn in route_names:
+    central_grid = {}
+    sensitivity_grid = {}
+    sensitivity_summary = {}
+
+    for rn in ROUTE_NAMES:
         C_ext = routes[rn]["C_ext_synovial_uM"]["central"]
-        C_in_pyro = C_ext * frac_central
-        row = {"C_ext_uM": C_ext, "C_in_pyroptotic_uM": C_in_pyro, "by_scenario": {}}
-        for sname in ["absent", "low", "moderate", "high"]:
+        Km = km_bounds["central"]
+        C_pore = C_ext * frac_central
+        row = {
+            "C_ext_uM": C_ext,
+            "modeled_passive_pore_contribution_uM": C_pore,
+            "by_scenario": {},
+        }
+        for sname in SCENARIO_NAMES:
             AR = scenarios[sname]["AR_lin"]
             C_in_healthy = healthy_pept1_conc_uM(C_ext, AR, Km)
-            S = float("inf") if C_in_healthy <= 0 else C_in_pyro / C_in_healthy
             row["by_scenario"][sname] = {
                 "AR_lin": AR,
                 "C_in_healthy_uM": C_in_healthy,
-                "selectivity_ratio": S,
-                "meaningful_selectivity_ge_3x": (S >= 3.0),
+                **selectivity_record(C_pore, C_in_healthy),
             }
-        grid[rn] = row
+        central_grid[rn] = row
+
+        cases = []
+        by_scenario = {}
+        for sname in SCENARIO_NAMES:
+            by_scenario[sname] = {
+                "case_count": 0,
+                "heuristic_ratio_ge_3x_cases": 0,
+                "finite_ratios": [],
+                "positive_infinity_cases": 0,
+                "undefined_cases": 0,
+            }
+        for concentration_bound in BOUND_NAMES:
+            sensitivity_C_ext = routes[rn]["C_ext_synovial_uM"][concentration_bound]
+            sensitivity_C_pore = sensitivity_C_ext * frac_central
+            for km_bound in BOUND_NAMES:
+                sensitivity_Km = km_bounds[km_bound]
+                for sname in SCENARIO_NAMES:
+                    AR = scenarios[sname]["AR_lin"]
+                    C_in_healthy = healthy_pept1_conc_uM(
+                        sensitivity_C_ext, AR, sensitivity_Km
+                    )
+                    ratio_record = selectivity_record(
+                        sensitivity_C_pore, C_in_healthy
+                    )
+                    cases.append({
+                        "route_concentration_bound": concentration_bound,
+                        "Km_bound": km_bound,
+                        "PepT1_scenario": sname,
+                        "C_ext_uM": sensitivity_C_ext,
+                        "Km_uM": sensitivity_Km,
+                        "AR_lin": AR,
+                        "modeled_passive_pore_contribution_uM": sensitivity_C_pore,
+                        "C_in_healthy_uM": C_in_healthy,
+                        **ratio_record,
+                    })
+                    summary = by_scenario[sname]
+                    summary["case_count"] += 1
+                    if ratio_record["heuristic_ratio_ge_3x"]:
+                        summary["heuristic_ratio_ge_3x_cases"] += 1
+                    if ratio_record["selectivity_ratio_state"] == "finite":
+                        summary["finite_ratios"].append(
+                            ratio_record["selectivity_ratio"]
+                        )
+                    elif (
+                        ratio_record["selectivity_ratio_state"]
+                        == "positive_infinity_zero_healthy_baseline"
+                    ):
+                        summary["positive_infinity_cases"] += 1
+                    else:
+                        summary["undefined_cases"] += 1
+
+        route_summary = {}
+        for sname in SCENARIO_NAMES:
+            raw = by_scenario[sname]
+            finite = raw.pop("finite_ratios")
+            raw["finite_min_selectivity_ratio"] = min(finite) if finite else None
+            raw["finite_max_selectivity_ratio"] = max(finite) if finite else None
+            raw["heuristic_ratio_pattern"] = classify_heuristic_ratio_pattern(
+                raw["heuristic_ratio_ge_3x_cases"], raw["case_count"]
+            )
+            route_summary[sname] = raw
+        sensitivity_grid[rn] = cases
+        sensitivity_summary[rn] = route_summary
+
     return {
-        "note": "Selectivity S = C_in,pyroptotic / C_in,healthy across the four PepT1 expression scenarios. S collapses to 1/AR_lin in the linear (SC/oral) regime and rises with C_ext/Km in the saturating (IA) regime. In EVERY route the value is set by the unknown synovial-macrophage PepT1 expression (AR_lin) -- that is the headline empirical limitation.",
-        "caveat_S_is_optimistic": "The healthy-cell curve C_in,healthy = C_in_max*C_ext/(Km+C_ext) is a HEURISTIC saturating ceiling, not a transporter steady state -- it describes RATE saturation, not the equilibrium intracellular concentration. A genuinely equilibrating transporter gives C_in,healthy -> C_ext (S -> 1); an electrogenic H+-coupled/concentrative PepT1 plus the intact-cell membrane potential (Vm ~ -50 to -70 mV; Nernst factor ~7-14x for a +1 cation) gives C_in,healthy > C_ext (S < 1, anti-selective). So the TRUE selectivity is <= the values tabulated here, especially at IA. This only strengthens the skeptical read. (In the PYROPTOTIC cell Vm collapses through the pore, which is exactly why C_in,pyroptotic is capped at C_ext with no Nernst boost.)",
-        "caveat_PD_timing": "This is a TRANSPORT model. It does not capture that KPV is an UPSTREAM inhibitor (NLRP3 assembly / NF-kB priming) while GSDMD pores open DOWNSTREAM of inflammasome firing -- so even perfectly selective pore-delivery arrives after KPV's target has largely acted and IL-1beta has been released. Pharmacodynamically the pore selects for cells where an upstream inhibitor is too late; see interpretive page.",
-        "Km_uM": Km,
-        "grid": grid,
+        "selectivity_ratio_null_semantics": {
+            "positive_infinity": {
+                "condition": "selectivity_ratio_state is positive_infinity_zero_healthy_baseline",
+                "meaning": "positive infinity",
+                "not_missing_data": True,
+            },
+            "undefined": {
+                "condition": "selectivity_ratio_state is undefined_zero_over_zero",
+                "meaning": "undefined 0/0",
+                "not_missing_data": True,
+            },
+        },
+        "note": "S_model = modeled passive pore contribution / modeled healthy-cell accumulation under an unvalidated heuristic. Concurrent PepT1 transport in the pyroptotic cell is not modeled, so S_model is not total-cell pyroptotic-versus-healthy selectivity. The deterministic sensitivity grid crosses each declared route concentration bound with each declared Km bound and each PepT1-expression scenario. The scenarios are unweighted and are not probabilities or physiological estimates.",
+        "decision_boundary": "A modeled ratio >=3x is an equation-response diagnostic, not physiological selectivity or an A2 qualification. A2 remains unresolved until synovial-macrophage PepT1 function and a matched healthy-cell accumulation baseline are measured.",
+        "caveat_S_is_heuristic": "The healthy-cell curve C_in,healthy = C_in_max*C_ext/(Km+C_ext) borrows a rate-saturation shape as an accumulation heuristic. Without measured Vmax, efflux, turnover, degradation, membrane potential, and proton coupling in synovial macrophages, it is not a validated steady state or a proved upper/lower bound. Ratios can move in either direction; the grid is a diagnostic.",
+        "caveat_PD_timing": "This is a transport model. KPV is framed as an upstream NLRP3/NF-kB inhibitor, while GSDMD pore formation is downstream of inflammasome activation. The model does not resolve residual targetable activity, cytokine-release timing, or efficacy; pore influx is therefore not therapeutic-timing sufficiency.",
+        "central_Km_uM": km_bounds["central"],
+        "sensitivity_dimensions": {
+            "route_concentration_bounds": BOUND_NAMES,
+            "Km_bounds": BOUND_NAMES,
+            "PepT1_scenarios": SCENARIO_NAMES,
+            "cases_per_route": len(BOUND_NAMES) * len(BOUND_NAMES) * len(SCENARIO_NAMES),
+        },
+        "fixed_during_sensitivity": {
+            "equilibration_peak_fraction": frac_central,
+            "varied_parameters": ["route C_ext", "Km_used", "PepT1 AR scenario"],
+            "all_other_inputs": "central deterministic values, including pore hindrance factor 1.0",
+        },
+        "central_grid": central_grid,
+        "sensitivity_grid": sensitivity_grid,
+        "sensitivity_summary": sensitivity_summary,
     }
 
 
 # ===================== verdict logic =====================
 
 def verdicts(central, mc, selg):
-    """Per-route: A1 (flux/IC50) and A2 (selectivity) -> combined route verdict."""
-    route_names = ["intra_articular", "subcutaneous", "oral"]
+    """Per-route A1 result plus unresolved A2 evidence state."""
     v = {}
-    for rn in route_names:
+    for rn in ROUTE_NAMES:
         r = central["routes"][rn]
-        ratio = r["ratio_over_ic50"]
-        p_clear = mc["prob_clear_ic50"][rn]
-        # A1 flux sufficiency
-        if ratio >= 10 and p_clear >= 0.9:
+        ratio = r["ratio_over_effective_concentration_proxy"]
+        sample_fraction = mc["fraction_design_space_draws_clearing_proxy"][rn]
+        # Preregistered engineering traffic-light rule, not a clinical probability.
+        if ratio >= 10 and sample_fraction >= 0.9:
             a1 = "GREEN"
-        elif ratio >= 1.0 and p_clear >= 0.5:
+        elif ratio >= 1.0 and sample_fraction >= 0.5:
             a1 = "YELLOW"
         else:
             a1 = "RED"
-        # A2 selectivity: meaningful (>=3x) only if it holds across MOST plausible
-        # PepT1 scenarios. It does not (fails for moderate/high) -> unquantifiable.
-        sc = selg["grid"][rn]["by_scenario"]
-        n_meaningful = sum(1 for s in ["absent", "low", "moderate", "high"]
-                           if sc[s]["meaningful_selectivity_ge_3x"])
-        # Meaningful selectivity survives ONLY in the PepT1 absent/low scenarios.
-        # Functional PepT1 in immune cells is demonstrated (Dalmasso 2008, Jurkat),
-        # so the 'absent' scenario is the least likely -> selectivity is genuinely
-        # unquantifiable, not confidently present.
-        if n_meaningful >= 3:
-            a2 = "GREEN"
-        elif n_meaningful == 2:
-            a2 = "YELLOW-unquantifiable"
+        sc = selg["central_grid"][rn]["by_scenario"]
+        n_meaningful = sum(1 for s in SCENARIO_NAMES
+                           if sc[s]["heuristic_ratio_ge_3x"])
+        a2 = "UNRESOLVED-unmeasured-PepT1-baseline"
+        if a1 == "RED":
+            combined = "NOT-QUALIFIED-A1"
         else:
-            a2 = "RED-unquantifiable"
-        # combined: route passes filter only if A1 GREEN and A2 GREEN
-        if a1 == "GREEN" and a2 == "GREEN":
-            combined = "PASS"
-        elif a1 in ("GREEN", "YELLOW") and a2.startswith("YELLOW"):
-            combined = "MARGINAL-selectivity-unproven"
-        else:
-            combined = "FAIL"
+            combined = "NOT-QUALIFIED-A2-UNRESOLVED"
         v[rn] = {
-            "A1_flux_sufficiency": a1,
-            "A1_ratio_over_ic50_central": ratio,
-            "A1_prob_clear_ic50": p_clear,
-            "A2_selectivity": a2,
-            "A2_scenarios_with_meaningful_selectivity": n_meaningful,
+            "A1_exposure_proxy_state": a1,
+            "A1_metric": "modeled passive pore contribution / extracellular cell-assay effective-concentration proxy",
+            "A1_engineering_rule": "GREEN if central ratio >=10 and sampled fraction >=0.9; YELLOW if central ratio >=1 and sampled fraction >=0.5; otherwise RED",
+            "A1_ratio_over_effective_concentration_proxy_central": ratio,
+            "A1_fraction_design_space_draws_clearing_proxy": sample_fraction,
+            "A2_pore_vs_healthy_baseline": a2,
+            "A2_central_scenarios_with_heuristic_ratio_ge_3x": n_meaningful,
+            "A2_sensitivity_summary": selg["sensitivity_summary"][rn],
             "combined_route_verdict": combined,
         }
     return v
 
 
 def overall_verdict(v):
-    # A1 across routes
-    any_green_a1 = any(v[r]["A1_flux_sufficiency"] == "GREEN" for r in v)
-    any_pass = any(v[r]["combined_route_verdict"] == "PASS" for r in v)
+    any_green_a1 = any(v[r]["A1_exposure_proxy_state"] == "GREEN" for r in v)
+    any_yellow_a1 = any(v[r]["A1_exposure_proxy_state"] == "YELLOW" for r in v)
+    if any_green_a1:
+        overall_code = "YELLOW-A2-unresolved"
+    elif any_yellow_a1:
+        overall_code = "YELLOW-A1-limited"
+    else:
+        overall_code = "RED-A1"
+    a1_states = ", ".join(
+        f"{route}={v[route]['A1_exposure_proxy_state']}" for route in ROUTE_NAMES
+    )
     text = (
-        "YELLOW (provisional). The physics of KPV self-delivery is sound "
-        "(A1 flux-sufficiency GREEN for intra-articular, marginal for subcutaneous): "
-        "a 20 nm pore equilibrates intracellular [KPV] to the extracellular synovial "
-        "concentration within seconds, so any route reaching >= the ~10 nM IC50 in "
-        "synovial fluid clears the intracellular therapeutic bar. BUT the Trojan-horse "
-        "SELECTIVITY thesis (A2) -- the actual reason to prefer pore delivery -- is "
-        "UNQUANTIFIABLE for KPV: because KPV already enters cells via PepT1, the pore's "
-        "selectivity over the PepT1 baseline is gated entirely by synovial-macrophage "
-        "PepT1 expression, which is uncharacterized. No route clears BOTH the therapeutic "
-        "AND a meaningful-selectivity threshold with confidence. "
-        "Provisional because it rests on 3 compounding named assumptions: (i) pores/cell "
-        ">= ~10, (ii) design-space SC/oral synovial PK, (iii) the PepT1 AR_lin scenario band."
+        f"{overall_code}. Computed A1 engineering states: {a1_states}. "
+        "A1 compares the modeled passive pore contribution with an extracellular "
+        "cell-assay effective-concentration proxy; it does not establish target "
+        "engagement or efficacy. A2 remains unresolved because synovial-macrophage "
+        "PepT1 function and the matched healthy-cell accumulation baseline are "
+        "unmeasured. The heuristic grid reports every equation-response corner, "
+        "including modeled ratios >=3x, but none qualifies a route."
     )
     return {
-        "overall": "YELLOW-provisional",
+        "overall": overall_code,
+        "overall_policy": "Derived from the best A1 engineering state, then capped below GREEN while A2 remains empirically unresolved",
         "any_route_A1_GREEN": any_green_a1,
-        "any_route_PASSES_both_filters": any_pass,
+        "any_route_QUALIFIES_both_filters": False,
+        "A2_qualification_blocker": "unmeasured synovial-macrophage PepT1 function and healthy-cell accumulation baseline",
         "statement": text,
     }
 
 
 def main():
+    check_runtime()
     kpv, pore, mac, pk, routes = load_inputs()
 
     central = central_values(kpv, pore, mac, pk, routes)
     mc = monte_carlo(kpv, pore, mac, pk, routes)
-    selg = selectivity_grid(kpv, pore, mac, pk, routes,
-                            central["equilibration_peak_fraction_central"])
+    selg = selectivity_grid(
+        pk, routes, central["equilibration_peak_fraction_central"]
+    )
     robust = robustness_sweep(kpv, pore, mac, pk, routes)
     v = verdicts(central, mc, selg)
     overall = overall_verdict(v)
 
-    # Non-finite floats (inf = infinite selectivity when healthy-cell KPV conc is 0)
-    # are not valid JSON. Replace with null so all committed outputs parse under a
-    # strict JSON parser (the human-readable summary.md still shows "inf" via fmt()).
+    # Known mathematical infinity is encoded explicitly by selectivity_record().
+    # Reject any unexpected non-finite result instead of silently converting it.
     def _json_safe(o):
         if isinstance(o, float):
-            return o if (o == o and o != float("inf") and o != float("-inf")) else None
+            if not math.isfinite(o):
+                raise ValueError(f"Unexpected non-finite output: {o!r}")
+            return o
         if isinstance(o, dict):
             return {k: _json_safe(val) for k, val in o.items()}
         if isinstance(o, list):
@@ -478,20 +678,28 @@ def main():
 
     write_summary(central, mc, selg, robust, v, overall)
     print("comp-042 complete. Overall:", overall["overall"])
-    for rn in ["intra_articular", "subcutaneous", "oral"]:
-        print(f"  {rn}: A1={v[rn]['A1_flux_sufficiency']} "
-              f"(ratio/IC50 central={v[rn]['A1_ratio_over_ic50_central']:.3g}, "
-              f"P(clear)={v[rn]['A1_prob_clear_ic50']:.2f}), "
-              f"A2={v[rn]['A2_selectivity']} -> {v[rn]['combined_route_verdict']}")
+    for rn in ROUTE_NAMES:
+        print(f"  {rn}: A1={v[rn]['A1_exposure_proxy_state']} "
+              f"(ratio/proxy central="
+              f"{v[rn]['A1_ratio_over_effective_concentration_proxy_central']:.3g}, "
+              f"sample fraction={v[rn]['A1_fraction_design_space_draws_clearing_proxy']:.2f}), "
+              f"A2={v[rn]['A2_pore_vs_healthy_baseline']} -> "
+              f"{v[rn]['combined_route_verdict']}")
     print(f"  equilibration tau_eq central = {central['equilibration_time_constant_s']:.2f} s")
 
 
 def fmt(x, sig=3):
-    if x == float("inf"):
-        return "inf"
+    if x is None:
+        return "null"
     if x == 0:
         return "0"
     return f"{x:.{sig}g}"
+
+
+def fmt_selectivity(record, sig=3):
+    if record["selectivity_ratio_state"] == "positive_infinity_zero_healthy_baseline":
+        return "∞"
+    return fmt(record["selectivity_ratio"], sig)
 
 
 def write_summary(central, mc, selg, robust, v, overall):
@@ -503,88 +711,164 @@ def write_summary(central, mc, selg, robust, v, overall):
 
     L.append("## Core physics\n")
     L.append(f"- Per-pore permeability (with access resistance): {fmt(central['pore_permeability_m3_per_s'])} m^3/s")
-    L.append(f"- Equilibration time constant tau_eq (central: 200 pores, 3000 um3): "
-             f"**{fmt(central['equilibration_time_constant_s'])} s** "
-             f"-> intracellular [KPV] reaches {fmt(100*central['equilibration_peak_fraction_central'],4)}% "
-             f"of extracellular within a {int(300)} s lifetime.")
+    L.append(
+        f"- Equilibration time constant tau_eq (central: "
+        f"{fmt(central['central_pores_per_cell'])} pores, "
+        f"{fmt(central['central_cell_volume_um3'])} um3): "
+        f"**{fmt(central['equilibration_time_constant_s'])} s** "
+        f"-> the modeled passive pore contribution reaches "
+        f"{fmt(100*central['equilibration_peak_fraction_central'],4)}% "
+        f"of extracellular within a "
+        f"{fmt(central['central_pore_lifetime_s'])} s lifetime."
+    )
     L.append(f"- Monte Carlo equilibration fraction: median "
              f"{fmt(mc['equilibration_fraction']['median'])}, p5 {fmt(mc['equilibration_fraction']['p5'])}\n")
-    L.append("Interpretation: the pore is so wide and numerous that the macrophage interior "
-             "equilibrates to the extracellular concentration in seconds. Peak intracellular "
-             "[KPV] is therefore CAPPED at the synovial [KPV] -- the naive 'moles-in/volume' "
-             "estimate overshoots C_ext by orders of magnitude (see central_results.json "
-             "`naive_over_C_ext`), which just confirms saturation. This quantitatively answers "
-             "gsdmd-pore-delivery-paradox.md Open Question #4 (pore lifetime): even the SHORT "
-             "end of the lifetime range is far longer than needed.\n")
+    L.append(
+        "Interpretation within the central model: the modeled passive pore contribution "
+        "is capped at the extracellular value. The naive fixed-gradient calculation is retained only "
+        "as an upper-bound diagnostic. Pore-lifetime conclusions apply only to the "
+        "declared solute, parameter, lifetime, and pore-count regimes.\n"
+    )
 
-    L.append("## Metric 1 -- peak intracellular [KPV] / IC50 (flux sufficiency, A1)\n")
-    L.append("| Route | synovial [KPV] (uM) | intracellular [KPV] (uM) | / IC50 (10 nM) | P(clear IC50) | A1 |")
+    L.append("## Metric 1 -- modeled passive pore contribution / extracellular cell-assay effective-concentration proxy (A1)\n")
+    L.append("| Route | synovial [KPV] (uM) | modeled passive pore contribution (uM) | / 10 nM proxy | sampled design-space fraction >= proxy | A1 engineering state |")
     L.append("|---|---|---|---|---|---|")
-    for rn in ["intra_articular", "subcutaneous", "oral"]:
+    for rn in ROUTE_NAMES:
         r = central["routes"][rn]
         L.append(f"| {rn.replace('_',' ')} | {fmt(r['C_ext_synovial_uM'])} | "
-                 f"{fmt(r['C_in_pyroptotic_uM'])} | {fmt(r['ratio_over_ic50'])}x | "
-                 f"{fmt(mc['prob_clear_ic50'][rn])} | {v[rn]['A1_flux_sufficiency']} |")
+                 f"{fmt(r['modeled_passive_pore_contribution_uM'])} | "
+                 f"{fmt(r['ratio_over_effective_concentration_proxy'])}x | "
+                 f"{fmt(mc['fraction_design_space_draws_clearing_proxy'][rn])} | "
+                 f"{v[rn]['A1_exposure_proxy_state']} |")
     L.append("")
+    L.append("The 10 nM reference is the lowest extracellular concentration reported effective "
+             "in a PepT1-positive cell assay. It is not an intracellular IC50. The sampled "
+             "fractions come from unweighted log-uniform design-space draws and are not "
+             "calibrated probabilities. A1 therefore ranks modeled exposure against an "
+             "engineering proxy; it does not establish target engagement, therapeutic timing, "
+             "or efficacy.\n")
+    L.append("Route concentrations are design inputs, not established synovial exposures: "
+             "IA is arithmetic from unsourced dose and compartment-volume assumptions; "
+             "SC and oral are named PK design spaces.\n")
 
-    L.append("## Metric 2 -- selectivity ratio over PepT1 baseline (A2)\n")
-    L.append("Selectivity S = intracellular[pyroptotic] / intracellular[healthy]. Healthy-cell "
-             "uptake is via PepT1 (present in immune cells; Dalmasso 2008). AR_lin = the unknown "
-             "synovial-macrophage PepT1 linear accumulation ratio.\n")
+    L.append("## Metric 2 -- heuristic ratio over the PepT1 comparator (A2 diagnostic)\n")
+    L.append("S_model = modeled passive pore contribution / modeled intracellular[healthy]. "
+             "Concurrent PepT1 transport in the pyroptotic cell is not modeled, so this "
+             "is not total-cell pyroptotic-versus-healthy selectivity. AR_lin is an "
+             "unweighted PepT1 design scenario, not a measured synovial-macrophage "
+             "accumulation ratio.\n")
     L.append("| Route | PepT1 absent | low (AR 0.3) | moderate (AR 1) | high (AR 3) |")
     L.append("|---|---|---|---|---|")
-    for rn in ["intra_articular", "subcutaneous", "oral"]:
-        sc = selg["grid"][rn]["by_scenario"]
+    for rn in ROUTE_NAMES:
+        sc = selg["central_grid"][rn]["by_scenario"]
         L.append(f"| {rn.replace('_',' ')} | "
-                 f"{fmt(sc['absent']['selectivity_ratio'])} | "
-                 f"{fmt(sc['low']['selectivity_ratio'])} | "
-                 f"{fmt(sc['moderate']['selectivity_ratio'])} | "
-                 f"{fmt(sc['high']['selectivity_ratio'])} |")
+                 f"{fmt_selectivity(sc['absent'])} | "
+                 f"{fmt_selectivity(sc['low'])} | "
+                 f"{fmt_selectivity(sc['moderate'])} | "
+                 f"{fmt_selectivity(sc['high'])} |")
     L.append("")
-    L.append("The pore confers meaningful selectivity ONLY in the 'PepT1 absent/low' scenarios. "
-             "If synovial macrophages express functional PepT1 (moderate/high), selectivity "
-             "collapses to ~1 or below (healthy cells already admit -- or even concentrate -- KPV). "
-             "**Which scenario is real is unknown -> A2 is YELLOW-unquantifiable for every route** "
-             "(YELLOW, not RED: the absent/low-PepT1 scenarios numerically clear, so this is "
-             "unquantifiable-marginal, not a hard fail; matches the computed per-route verdicts).\n")
-    L.append("**Pharmacodynamic-timing caveat (added 2026-07-14):** even where transport is "
+    L.append("These are equation-response diagnostics, not physiological selectivity or an "
+             "A2 qualification. The declared "
+             "route-concentration and Km bounds are crossed below; the PepT1-expression "
+             "scenarios are unweighted and the healthy-cell accumulation curve is heuristic. "
+             "Which scenario describes synovial macrophages is unknown, so A2 remains unresolved.\n")
+    L.append("### A2 sensitivity: route concentration x Km\n")
+    L.append("| Route | PepT1 scenario | heuristic ratio >=3x cases / 9 | finite S_model range | pattern |")
+    L.append("|---|---|---|---|---|")
+    for rn in ROUTE_NAMES:
+        for sname in SCENARIO_NAMES:
+            s = selg["sensitivity_summary"][rn][sname]
+            if s["positive_infinity_cases"] == s["case_count"]:
+                value_range = "∞ (zero healthy baseline)"
+            else:
+                value_range = (
+                    f"{fmt(s['finite_min_selectivity_ratio'])}–"
+                    f"{fmt(s['finite_max_selectivity_ratio'])}"
+                )
+            L.append(
+                f"| {rn.replace('_',' ')} | {sname} | "
+                f"{s['heuristic_ratio_ge_3x_cases']} / {s['case_count']} | "
+                f"{value_range} | {s['heuristic_ratio_pattern']} |"
+            )
+    L.append("")
+    L.append("A >=3x point shows what the heuristic equation permits; it does not demonstrate "
+             "pore-specific selectivity. The absent-PepT1 rows use "
+             "`selectivity_ratio: null` in strict JSON with "
+             "`selectivity_ratio_state: positive_infinity_zero_healthy_baseline`; this means "
+             "mathematical positive infinity, not missing data.\n")
+    L.append("**Pharmacodynamic-timing caveat:** even where transport is "
              "sufficient, KPV is an *upstream* inflammasome inhibitor, whereas GSDMD pores form "
              "*downstream* of inflammasome firing. So a payload arriving through the pore arrives "
-             "after its target step has already fired -- transport sufficiency does NOT imply "
-             "therapeutic-timing sufficiency for KPV specifically. This is the second independent "
-             "reason KPV is the wrong proof-of-concept payload for pore self-delivery (the first "
-             "being PepT1 confounding). A downstream-acting, transporter-orphan payload is the clean probe.\n")
+             "after inflammasome activation -- transport sufficiency does NOT imply "
+             "therapeutic-timing sufficiency for KPV specifically. The model does not resolve "
+             "residual targetable activity or cytokine-release timing. This is the second independent "
+             "reason KPV is poorly matched to a clean proof-of-concept for pore self-delivery "
+             "(the first being PepT1 confounding). A downstream-acting, transporter-orphan "
+             "payload is the cleaner probe.\n")
 
     L.append("## Metric 3 -- robustness sweep (pore lifetime x pores/cell)\n")
-    L.append("| pores/cell | lifetime (s) | tau_eq (s) | equilib. frac | IA clears IC50 | SC clears IC50 |")
-    L.append("|---|---|---|---|---|---|")
+    L.append("The one-pore rows are stress cases outside the main 10–10,000-pore design range. "
+             "All route concentrations remain the design inputs described above.\n")
+    L.append("| pores/cell | lifetime (s) | tau_eq (s) | equilib. frac | route | modeled passive pore contribution (uM) | ratio / proxy | clears proxy |")
+    L.append("|---|---|---|---|---|---|---|---|")
     for g in robust["grid"]:
-        L.append(f"| {g['pores_per_cell']} | {g['lifetime_s']} | {fmt(g['tau_eq_s'])} | "
-                 f"{fmt(g['equilibration_fraction'])} | {g['IA_clears_ic50']} | {g['SC_clears_ic50']} |")
+        for route_label, field_prefix in [
+            ("intra articular", "IA"),
+            ("subcutaneous", "SC"),
+            ("oral", "oral"),
+        ]:
+            L.append(
+                f"| {g['pores_per_cell']} | {g['lifetime_s']} | "
+                f"{fmt(g['tau_eq_s'])} | {fmt(g['equilibration_fraction'])} | "
+                f"{route_label} | "
+                f"{fmt(g[f'{field_prefix}_modeled_passive_pore_contribution_uM'])} | "
+                f"{fmt(g[f'{field_prefix}_ratio_over_effective_concentration_proxy'])} | "
+                f"{g[f'{field_prefix}_clears_effective_concentration_proxy']} |"
+            )
     L.append("")
-    L.append("The A1 verdict is robust: for pores/cell >= 10 the cell equilibrates within any "
-             "lifetime in range and IA clears IC50 by ~4 orders of magnitude; SC clears it by ~3x. "
-             "Only the physically implausible single-pore case is flux-limited at short lifetimes.\n")
+    ia_clear = sum(
+        1 for g in robust["grid"]
+        if g["IA_clears_effective_concentration_proxy"]
+    )
+    sc_clear = sum(
+        1 for g in robust["grid"]
+        if g["SC_clears_effective_concentration_proxy"]
+    )
+    oral_clear = sum(
+        1 for g in robust["grid"]
+        if g["oral_clears_effective_concentration_proxy"]
+    )
+    L.append(
+        f"With all non-swept inputs held central, IA clears the exposure proxy in "
+        f"{ia_clear}/{len(robust['grid'])} grid cells and SC in "
+        f"{sc_clear}/{len(robust['grid'])}; oral clears it in "
+        f"{oral_clear}/{len(robust['grid'])}. Equilibration fraction varies across the grid; "
+        "the analysis assigns no plausibility weight to pore counts because per-cell count "
+        "is unmeasured.\n"
+    )
 
-    L.append("## Per-route combined verdict (decision filter: PASS needs A1 GREEN AND A2 GREEN)\n")
+    L.append("## Per-route qualification\n")
     L.append("| Route | A1 | A2 | Combined |")
     L.append("|---|---|---|---|")
-    for rn in ["intra_articular", "subcutaneous", "oral"]:
-        L.append(f"| {rn.replace('_',' ')} | {v[rn]['A1_flux_sufficiency']} | "
-                 f"{v[rn]['A2_selectivity']} | {v[rn]['combined_route_verdict']} |")
+    for rn in ROUTE_NAMES:
+        L.append(f"| {rn.replace('_',' ')} | {v[rn]['A1_exposure_proxy_state']} | "
+                 f"{v[rn]['A2_pore_vs_healthy_baseline']} | "
+                 f"{v[rn]['combined_route_verdict']} |")
     L.append("")
-    L.append("**No route PASSES both filters.** Intra-articular delivers KPV superbly (A1) but "
-             "at doses that flood ALL synovial cells and saturate PepT1 in healthy cells too, so "
-             "there is no pore-specific selectivity. Subcutaneous is marginal on flux and "
-             "unquantifiable on selectivity. Oral fails on absolute synovial concentration.\n")
+    L.append(
+        "No route qualifies while A2 is empirically unresolved. The per-route table above "
+        "reports the computed A1 state; heuristic >=3x A2 points remain diagnostics until "
+        "a matched healthy-cell comparator is measured.\n"
+    )
 
     L.append("## The single biggest limitation\n")
     L.append("Synovial-macrophage PepT1 (SLC15A1) functional expression is uncharacterized. It is "
-             "the sole determinant of whether the pore beats the constitutive KPV import route, and "
-             "it is not in the literature. Everything in the A2 column is gated on it. KPV is, in "
-             "effect, the WRONG payload to DEMONSTRATE pore-selectivity, precisely because it "
-             "already has an independent transporter route -- a truly transporter-orphan "
-             "membrane-impermeant payload would be the clean selectivity test.\n")
+             "the dominant empirical gap in whether the pore beats the constitutive KPV import "
+             "route; the heuristic ratio also varies with C_ext/Km. Everything in the A2 column "
+             "is conditional on the unmeasured healthy-cell baseline. KPV is, in "
+             "effect, a poor payload to demonstrate pore-selectivity because it already has an "
+             "independent transporter route. A transporter-orphan membrane-impermeant payload "
+             "would be the cleaner selectivity test.\n")
 
     (OUTPUTS / "summary.md").write_text("\n".join(L))
 

@@ -21,21 +21,21 @@
   "pept1_macrophage_expression": {
     "status": "QUALITATIVELY DEMONSTRATED, QUANTITATIVELY UNCHARACTERIZED IN SYNOVIAL MACROPHAGES",
     "evidence_for": "Dalmasso 2008 (PMID 18061177): 'KPV acts via hPepT1 expressed in immune and intestinal epithelial cells'; functional PepT1-mediated [3H]KPV uptake shown in Jurkat T cells. Viennois 2016 (PMID 27458604) and KPV-nanoparticle colitis papers (PMID 39211778, 31408067) repeatedly state KPV targets macrophages via PepT1 overexpressed on inflamed-tissue macrophages.",
-    "gap": "NO study quantifies PepT1 (SLC15A1) protein/functional expression in SYNOVIAL-JOINT macrophages, resting or MSU-activated. Whether a healthy (non-pyroptotic) synovial macrophage already admits KPV via PepT1 -- and how much -- is unknown. This single unknown gates the entire selectivity (A2) question.",
+    "gap": "NO study quantifies PepT1 (SLC15A1) protein/functional expression in SYNOVIAL-JOINT macrophages, resting or MSU-activated. Whether a healthy (non-pyroptotic) synovial macrophage already admits KPV via PepT1 -- and how much -- is unknown. This is the dominant empirical gap for A2; under the heuristic equation, modeled selectivity also varies with C_ext/Km.",
     "source_class": "qualitative_literature_plus_named_gap"
   },
   "pept1_expression_scenarios": {
-    "comment": "Healthy-cell KPV accumulation modeled as a linear-regime accumulation ratio AR_lin = C_in,healthy/C_ext (dimensionless) valid when C_ext << Km, from which the saturating ceiling C_in_max_healthy = AR_lin * Km is derived. Selectivity S = C_in,pyroptotic / C_in,healthy. Four scenarios span the unknown.",
-    "absent":   {"AR_lin": 0.0,  "meaning": "synovial macrophages express no functional PepT1; healthy cells exclude KPV -> pore confers full selectivity"},
+    "comment": "Healthy-cell KPV accumulation is represented by a linear-regime accumulation ratio AR_lin = C_in,healthy/C_ext (dimensionless) when C_ext << Km, from which the heuristic C_in_max_healthy = AR_lin * Km is derived. S_model = C_in,pyroptotic / C_in,healthy. These four unweighted design scenarios map equation behavior; they are not physiological estimates.",
+    "absent":   {"AR_lin": 0.0,  "meaning": "zero healthy-cell PepT1 baseline in the heuristic; mathematical ratio is positive infinity, encoded explicitly rather than treated as evidence"},
     "low":      {"AR_lin": 0.3,  "meaning": "low PepT1; healthy cells admit modest KPV"},
-    "moderate": {"AR_lin": 1.0,  "meaning": "PepT1 equilibrates KPV (net non-concentrative) -> pore adds ~no selectivity in linear regime"},
-    "high":     {"AR_lin": 3.0,  "meaning": "concentrative proton-coupled PepT1; healthy cells accumulate ABOVE extracellular -> pore selectivity < 1 (anti-selective) in linear regime"}
+    "moderate": {"AR_lin": 1.0,  "meaning": "heuristic healthy-cell accumulation approaches extracellular concentration in the linear regime"},
+    "high":     {"AR_lin": 3.0,  "meaning": "heuristic healthy-cell accumulation exceeds extracellular concentration in the linear regime"}
   },
-  "kpv_intracellular_ic50": {
+  "kpv_cell_assay_effective_concentration_proxy": {
     "central_nM": 10.0,
     "lower_nM": 1.0,
     "upper_nM": 100.0,
-    "comment": "Effective anti-inflammatory concentration of KPV. Dalmasso 2008 (PMID 18061177): 'Nanomolar concentrations of KPV inhibit the activation of NF-kappaB'; the lowest experimentally effective concentration was 10 nM KPV (co-incubation with IL-1beta significantly reduced NF-kB luciferase in Caco2-BBE). This is an EXTRACELLULAR effective concentration in a PepT1-expressing cell -> it already convolves transport + intracellular potency, so it is a conservative (if anything low) proxy for the intracellular concentration needed. Range 1-100 nM covers the nanomolar band and less-sensitive cell contexts. NOTE: because this IC50 is so low, the flux-sufficiency (A1) bar is trivially cleared by any route that reaches even nanomolar synovial [KPV] -- which sharpens the fact that SELECTIVITY, not flux, is the real decision variable.",
+    "comment": "Dalmasso 2008 (PMID 18061177) reports that nanomolar extracellular KPV inhibited NF-kB activation in PepT1-positive cells; 10 nM was the lowest tested concentration reported effective in the cited assay. It was not reported as an intracellular concentration or fitted IC50. comp-042 uses 10 nM as a cross-compartment engineering proxy only. The 1-100 nM range is a design-space band, not a confidence interval. Exceeding it does not establish target engagement, therapeutic timing, or efficacy.",
     "source_class": "NFkB_reporter_cell_assay"
   }
 }

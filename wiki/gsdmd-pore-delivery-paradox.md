@@ -1,6 +1,5 @@
 ---
-title: GSDMD Pore Self-Delivery Paradox
-date: May 2026
+title: GSDMD Pore Self-Delivery Hypothesis
 tags:
   - gsdmd
   - gasdermin
@@ -8,169 +7,73 @@ tags:
   - drug-delivery
   - nlrp3
   - cp6b
-  - caspase-1
-  - cp4
-  - novel-mechanism
 related:
   - nlrp3-exploit-map.md
   - gout-kill-chain-delivery-routes.md
-  - nlrp3-inflammasome.md
-  - delivery-route-matrix.md
-  - chassis-pending-interventions.md
-  - daf-cd55-scr14-truncated-computational.md
-  - bpc-157.md
-  - peptide-gout-addendum.md
+  - kpv-peptide.md
+  - kpv-gsdmd-pore-influx-computational.md
+  - validation-experiments.md
 sources:
-  - "bioRxiv Feb 2025 — caspase inhibitor delivery through GSDMD pores (https://www.biorxiv.org/content/10.1101/2025.02.11.637513v1.full)"
-  - "PNAS 2018 — Ac-FLTD-CMK GSDMD-derived blocking peptide"
-  - "Nature Immunology 2020 — disulfiram modifies GSDMD Cys191"
-status: published
+  - "Sborgi L et al. EMBO J 2016;35(16):1766-1778 (PMID 27418190; DOI 10.15252/embj.201694696)"
+  - "Xia S et al. Nature 2021;593:607-611 (PMID 33883744; DOI 10.1038/s41586-021-03478-3)"
+  - "bioRxiv 2025; DOI 10.1101/2025.02.11.637513"
 ---
 
-# GSDMD Pore Self-Delivery Paradox
+# GSDMD Pore Self-Delivery Hypothesis
 
-A February 2025 bioRxiv preprint describes a delivery mechanism that has not been incorporated into any gout pharmacology or drug delivery program: once gasdermin D pores form in the plasma membrane of a pyroptotic cell, those pores become passive delivery conduits for membrane-impermeant compounds that would otherwise be unable to enter the cell.
+Gasdermin D (GSDMD) pores breach the plasma membrane of a pyroptotic cell. The engineering opportunity is to test whether that transient breach can become a state-dependent entry route for an extracellular, otherwise membrane-impermeant payload with a still-actionable intracellular target.
 
-The inflammatory cell's own exit pore is the drug delivery portal.
+This is a physical-delivery hypothesis, not a qualified therapeutic route.
 
----
+## Observed basis
 
-## The mechanism
+Activated inflammatory caspases cleave GSDMD, and its N-terminal fragments assemble into membrane pores. Sborgi et al. measured rings with a mean inner diameter of 21.2 ± 5.6 nm by AFM (n=164; **In Vitro / structural**, [PMID 27418190](https://pubmed.ncbi.nlm.nih.gov/27418190/)). Xia et al. resolved a 33-subunit pore with an inner diameter of approximately 21.5 nm and reported a predominantly negatively charged conduit with charge-dependent cargo behavior (**In Vitro / structural**, [PMID 33883744](https://pubmed.ncbi.nlm.nih.gov/33883744/)).
 
-Gasdermin D (GSDMD) is cleaved by activated caspase-1 (or caspase-4/5/11). The cleaved N-terminal fragment oligomerizes into pores in the plasma membrane. These pores have an **inner diameter of 10–20 nm** — wide enough for:
+A 2025 preprint reports increased entry of the membrane-impermeant caspase-inhibitor configurations it studied in GSDMD-pore-expressing cells relative to intact-membrane controls (**In Vitro — preprint**, [DOI 10.1101/2025.02.11.637513](https://doi.org/10.1101/2025.02.11.637513)). Its exact compounds, cell systems, exposures, pore states, and time windows bound that observation.
 
-- Small molecules (< 1 kDa): easy passage
-- Peptides (1–5 kDa): passage demonstrated
-- Nanobodies (~12–15 kDa, ~3–4 nm hydrodynamic): pass readily
-- Single SCR domains (~7 kDa, ~3 nm): pass
-- IL-1RA / anakinra (~17 kDa, ~4 nm): passes
-- Lactoferrin monomer (~80 kDa, ~5–6 nm): borderline-permissive
-- DAF SCR1-4 ectodomain (~70 kDa, ~5–7 nm): borderline-permissive
-- Catalase tetramer (~240 kDa, ~10–12 nm): at the upper edge
-- Uricase tetramer (~134 kDa, ~10 nm): at the upper edge
-- Full-size IgG antibodies (~150 kDa, ~14 nm): pore-marginal to too-large
+Pore diameter alone does not establish passage. Charge, conformation, binding, hydrodynamic behavior, pore abundance, pore lifetime, and the extracellular boundary concentration can all change transport. KPV and larger Open Enzyme payloads are therefore candidates for exact-payload testing, not members of a validated deliverable class.
 
-**Implication for OE biologics specifically:** the pore is a size-selective delivery window. Several payloads on the OE roadmap (KPV, lactoferrin, DAF SCR1-4) fall in or near the permissive range. This converts the pore from "a way to deliver caspase inhibitors" into "a delivery mechanism for a *class* of OE-relevant biologics that happen to fall in the 10–20 nm size window." See [`delivery-route-matrix.md`](./delivery-route-matrix.md) for the broader compound-class × route grid in which this becomes a route option.
+## Why gout makes the question interesting
 
-Under normal conditions, the plasma membrane is a selective barrier. Many pharmacologically active compounds — charged peptides, certain caspase inhibitors, hydrophilic small molecules — are membrane-impermeant: they can be present in the extracellular fluid at therapeutic concentrations but cannot cross an intact plasma membrane to reach their intracellular target.
+In a gout-relevant inflammasome sequence, caspase-1 activation precedes GSDMD cleavage and pore formation. A pore could therefore create access to an intracellular target only after the inflammatory program has begun. Whether enough actionable biology remains at that point depends on payload influx, target activity, IL-1β release, membrane repair or lysis, and extracellular exposure in the same cell and time window. No current result establishes that ordering as therapeutically sufficient.
 
-Once GSDMD pores form, that barrier is breached locally. Membrane-impermeant compounds in the surrounding extracellular fluid passively diffuse through the pores into the cell.
+The cleanest first probe is not a known transporter substrate. A membrane-impermeant payload with no competing uptake route and a downstream target would separate pore-dependent entry from ordinary cellular uptake. KPV is useful as a confounded comparator because its PepT1 route can be manipulated, but it cannot by itself qualify the platform.
 
-The 2025 preprint demonstrates this specifically for caspase inhibitors: membrane-impermeant caspase inhibitors enter GSDMD-pore-expressing cells at higher rates than cells with intact membranes. The pore-expressing cells become selectively more permeable to these compounds. (In Vitro — preprint, not yet peer-reviewed)
+## COMP-042: KPV transport prior
 
----
+[COMP-042](./kpv-gsdmd-pore-influx-computational.md) is **YELLOW — A2 unresolved**.
 
-## Why this matters for gout
+- **A1:** against a 10 nM extracellular cell-assay proxy, the modeled passive pore contribution is GREEN for the intra-articular design space, YELLOW for subcutaneous, and RED for oral. These are engineering states, not target-engagement or efficacy results.
+- **Pore timing:** the central modeled time constant is 2.17 seconds, but the grid is not uniformly at equilibrium. At 10 pores over 60 seconds, the retained fraction is 0.749. Lifetime is low-sensitivity in much of the tested space, not universally irrelevant.
+- **A2:** the route concentration × Km grid retains favorable heuristic corners. Intra-articular crosses the ≥3× line in 2/9 moderate-PepT1 and 1/9 high-PepT1 cases; absent and low scenarios cross in all nine cases for every route.
+- **Empirical gap:** the healthy-cell equation and PepT1 scenarios are unvalidated, synovial-macrophage PepT1 function is unmeasured, and concurrent PepT1 transport in the pore-forming cell is excluded. KPV-specific selectivity is unresolved, not falsified.
+- **Timing boundary:** KPV is framed upstream of GSDMD pore formation. The model cannot determine whether enough relevant activity remains after pore opening.
 
-The gout flare involves a cascade where caspase-1 and GSDMD are co-activated in the same cell at the same time:
+> **Research conjecture — transporter-orphan downstream payload**{ .research-conjecture-label }
+>
+> **Grounded premises:** GSDMD pores admit the otherwise membrane-impermeant inhibitor configurations studied in a cell model (**In Vitro — preprint**; [DOI 10.1101/2025.02.11.637513](https://doi.org/10.1101/2025.02.11.637513)). [COMP-042](./kpv-gsdmd-pore-influx-computational.md) supports substantial passive entry for a KPV-sized solute in much of its declared model space (**Mechanistic Extrapolation**) but cannot resolve KPV/PepT1 selectivity.
+>
+> **Novel leap:** A membrane-impermeant payload with no competing transporter and a target still actionable after pore formation could create a useful pore-specific exposure difference. No direct evidence tests this exact design in gout.
+>
+> **Why it matters:** The pore could become a state-dependent delivery gate rather than only an inflammatory exit route.
+>
+> **Discriminating observation:** In matched pore-on/off cells, a prequalified transporter-orphan tracer must clear a prespecified intracellular-uptake margin, track verified pore state, and lose the differential under a pore-blocking control.
 
-```
-CP4: Caspase-1 activated → cleaves pro-IL-1β, pro-IL-18, and GSDMD simultaneously
-CP6b: GSDMD N-terminal fragment → plasma membrane pore formation
-```
+## Empirical gate
 
-These are not sequential — they happen in the same cell within the same brief window. Caspase-1 cleaves GSDMD; GSDMD pores then form. The pores appear during the same time window that caspase-1 is still active.
+[Validation §1.32](./validation-experiments.md#132-gsdmd-pore-self-delivery--matched-uptake-and-selectivity-probe) separates two experiments:
 
-**The delivery implication:**
+1. A prequalified transporter-orphan, membrane-impermeant tracer tests the pore-on versus pore-off physical-delivery difference.
+2. KPV in a pore-on/off × PepT1-on/off design estimates the competing transporter contribution without making an efficacy claim.
 
-A membrane-impermeant caspase-1 inhibitor present in the synovial fluid at the moment GSDMD pores form can now enter the macrophage through those pores and inhibit caspase-1 before it cleaves all its substrate.
+GREEN or RED is bounded to the exact tracer, concentration, cell model, pore induction, and time window. A successful tracer result would nominate exact downstream payloads for their own transit, retention, target-engagement, and safety tests. A failed configuration would not refute every payload or every GSDMD-pore state.
 
-Specifically relevant compounds:
-- **Ac-FLTD-CMK** — a GSDMD-derived octapeptide inhibitor (PNAS 2018, Rathkey et al.) that selectively blocks GSDMD cleavage sites and caspase-1 activity. This compound is membrane-impermeant under normal conditions — it cannot cross an intact plasma membrane to reach intracellular caspase-1. Through GSDMD pores, it can. This converts Ac-FLTD-CMK from a research tool with no cell-permeability into a potential self-targeted therapeutic at the exact moment it's needed.
-- **Z-YVAD-FMK** class caspase-1 inhibitors — peptidic, poorly cell-permeable, currently used as research tools rather than drugs for this reason. GSDMD pores could change the delivery calculus for this entire compound class.
-- **VX-765 (belnacasan)** — oral prodrug, converts to VRT-043198 (caspase-1 inhibitor). VRT-043198 is designed for cell permeability, so the pore-delivery effect is less critical here. But the pore phenomenon would still enhance intracellular concentration of the active metabolite in pyroptotic cells specifically.
+## Open measurements
 
----
+- Simultaneous payload influx, target activity, and IL-1β efflux after verified pore formation
+- Exact-payload permeability as a function of size, charge, conformation, and extracellular concentration
+- Pore abundance and open lifetime in primary human synovial macrophages
+- Functional PepT1 and matched KPV accumulation in resting and MSU-activated synovial macrophages
+- Intracellular payload stability and retained activity after transit
 
-## The paradox, precisely stated
-
-The paradox has two faces:
-
-**Face 1 — Therapeutic window:** The compounds that most need intracellular delivery (membrane-impermeant caspase/GSDMD inhibitors) gain access precisely at the moment their target is most active. The activation of the target creates its own delivery mechanism.
-
-**Face 2 — Race condition:** IL-1β exits through the same pores that drugs enter. Once pores form, there is a race: membrane-impermeant circuit-breakers diffuse in; IL-1β, IL-18, and other cytosolic contents leak out. The earlier the drug reaches the extracellular space around pore-forming cells (i.e., the more drug is already present in the synovial fluid), the faster the race is won.
-
-This race condition means that prophylactic or early-flare dosing matters more than acute intervention at peak flare. If the drug is already present in the joint fluid when the first macrophages begin pyroptosis, the self-delivery mechanism captures the earliest pore-forming cells — before IL-1β amplification has cascaded.
-
----
-
-## Implications for OE platform
-
-The OE stack currently addresses CP6b via:
-- Disulfiram / DMF (oral, Cys191 covalent modification — prevents GSDMD oligomerization; see [disulfiram.md](./disulfiram.md))
-- Lactoferrin (oral kojied, mitophagy-mediated upstream prevention — PINK1/Parkin pathway)
-
-**Disulfiram vs. pore self-delivery — complementary strategies (Mechanistic Extrapolation; source: disulfiram.md).** Disulfiram prevents GSDMD pores from forming at the CP6b step (upstream blockade at Cys191); the pore self-delivery paradox exploits already-formed pores as drug-delivery conduits (downstream exploitation). The two are complementary rather than competing: disulfiram for prophylaxis, pore-directed delivery for acute circuit-breaking. The pore-delivery mechanism works once disulfiram fails — different timing, different mechanism class.
-
-These are prevention-oriented: they work by stopping GSDMD from forming pores in the first place. The pore self-delivery mechanism is a *response*-oriented complement: useful once pores are already forming, as a circuit-breaker.
-
-For the OE platform specifically, there is a potential engineered application: if koji-derived compounds or peptides can be formulated to reach the synovial fluid and are membrane-impermeant under baseline conditions, the pore self-delivery mechanism selectively concentrates them in the most active pyroptotic cells. A compound that is otherwise too hydrophilic or charged to enter cells passively becomes self-targeted during the flare. This is speculative but mechanistically grounded. (Mechanistic Extrapolation) **Caveat (comp-042, 2026-07-13):** "membrane-impermeant under baseline conditions" is load-bearing — a payload with its own transporter route (e.g. KPV via PepT1) gets *no* selectivity from the pore. The ideal payload is transporter-orphan and downstream-acting; see §"Computational stress-test" below.
-
----
-
-## What this page does NOT claim
-
-1. This is based on a **preprint** (bioRxiv February 2025). It has not been peer-reviewed as of May 2026. The mechanism is plausible and the in vitro data is described — but load-bearing numbers (exact pore sizes, exact passage rates for specific compounds) should be verified against the primary preprint before any downstream reasoning depends on them.
-
-2. The therapeutic window implication — that membrane-impermeant inhibitors can be self-delivered through GSDMD pores in vivo, in a live joint, during an acute gout flare — is **Mechanistic Extrapolation**. The preprint demonstrates the phenomenon in cell culture. Translation to in vivo joint pharmacokinetics involves additional variables (drug stability in synovial fluid, joint fluid turnover rate, competition with IL-1β efflux, pore kinetics in primary vs. cell-line macrophages).
-
-3. **No drug development program in any disease** has been designed around this delivery mechanism as of May 2026. This is genuinely novel territory — a research opportunity, not an established approach.
-
----
-
-## Where this fits in the kill chain
-
-```
-CP4 (Caspase-1) ←── GSDMD pores allow membrane-impermeant
-         ↓              caspase inhibitors to enter during
-CP6b (GSDMD)  ──→    the same activation window
-```
-
-The pore self-delivery mechanism creates a pharmacological shortcut between CP6b (the point at which delivery is enabled) and CP4 (the target that becomes newly accessible). In the kill chain framing: hitting CP6b pharmacologically (preventing GSDMD pore formation) and exploiting CP6b mechanistically (using pore formation as a delivery route) are two distinct strategies. The OE stack currently only considers the former.
-
----
-
-## Broader relevance beyond gout
-
-GSDMD-mediated pyroptosis drives pathology in:
-- Sepsis (macrophage pyroptosis → cytokine storm)
-- ARDS / COVID-19 (alveolar macrophage pyroptosis)
-- Atherosclerosis (macrophage foam cell pyroptosis in plaques)
-- NASH / liver disease (hepatocyte pyroptosis)
-- Cryopyrin-associated periodic syndromes (CAPS)
-
-The pore self-delivery paradox is disease-agnostic — it applies wherever GSDMD is the terminal effector of inflammasome activation. Any membrane-impermeant compound targeting a molecule co-active with GSDMD (caspase-1, caspase-4/5, gasdermin family members) becomes more deliverable in any of these contexts through the same mechanism.
-
-This makes the delivery paradox a platform insight, not a gout-specific one. Gout is the immediate OE application but the intellectual territory is wider.
-
----
-
-## Computational stress-test (comp-042, 2026-07-13) — KPV is the wrong payload, but the mechanism survives
-
-A transport / mass-balance model ([`kpv-gsdmd-pore-influx-computational.md`](./kpv-gsdmd-pore-influx-computational.md), comp-042) put numbers on the KPV self-delivery thesis for the first time. **Verdict: YELLOW (provisional) — the physics is sound, but KPV specifically is the wrong payload to prove the concept.**
-
-**The physics works (and answers Open Question #4, below).** A ~20 nm pore equilibrates intracellular [KPV] to the extracellular (synovial) concentration in **~2 seconds** — far faster than the minutes-scale pore lifetime. So pore *lifetime* is never the binding constraint; peak intracellular concentration is simply capped at the synovial concentration. Any route reaching the ~10 nM intracellular IC50 in synovial fluid clears the therapeutic bar (intra-articular ~29,000×; subcutaneous marginal ~3×; oral fails). (Mechanistic Extrapolation, in silico.)
-
-**But the *selectivity* — the whole point of the paradox — is falsified for KPV, for two independent reasons:**
-
-1. **KPV already has a constitutive transporter route (PepT1 / SLC15A1).** KPV enters cells — including immune cells — via PepT1 independent of any pore ([Dalmasso 2008, PMID 18061177](https://doi.org/10.1053/j.gastro.2007.10.026), *Gastroenterology*; In Vitro). So the pore confers meaningful pyroptotic-vs-healthy selectivity only if synovial macrophages *lack* functional PepT1 — and if they express it, a concentrative electrogenic symporter plus an intact membrane potential can make **healthy** cells accumulate KPV *more* than pyroptotic cells (selectivity ≤ 1, i.e. anti-selective). Synovial-macrophage PepT1 expression is uncharacterized in the literature — the single datum that gates the whole selectivity question. See [`kpv-peptide.md`](./kpv-peptide.md).
-
-2. **PD timing mismatch (the deeper reason).** KPV is an *upstream* inhibitor — it blocks NLRP3 assembly and NF-κB priming. GSDMD pores open *downstream* of inflammasome firing (caspase-1 has already cleaved GSDMD; IL-1β is already being released). Pore-delivery therefore imports an upstream inhibitor into a cell where its target has *already acted*. The pore selects precisely for the cells where KPV is too late.
-
-**The reframe (why this is redirect, not dead-end).** The failure is specific to KPV's properties, not to the pore. comp-042 sharpens the design spec for a payload that *would* work: (i) **transporter-orphan** — no independent import route, so the pore is the only way in (real selectivity); (ii) **downstream-acting** — targets the pyroptotic execution/propagation step, so timing aligns; and (iii) ideally **intracellularly labile** — a payload degraded inside cells needs sustained flux, which only the open pore supplies, adding selectivity (KPV's enzymatic *resistance* is anti-selective here). **Ac-FLTD-CMK** (GSDMD-derived, acts on the pore machinery itself — see Open Question #5) fits this spec far better than KPV, and is the right molecule to prove the concept.
-
----
-
-## Open questions
-
-1. **Pore kinetics vs. IL-1β efflux kinetics:** Which is faster — drug influx through GSDMD pores or IL-1β efflux? This determines how much of the therapeutic race can actually be won. Not characterized in the preprint.
-
-2. **Primary macrophage vs. cell line:** The preprint uses cell line data. Do primary human synovial macrophages show the same pore self-delivery effect? Unknown.
-
-3. **Compound size limit in practice:** The 10–20 nm pore inner diameter is the structural upper bound. What is the practical permeability limit for globular peptides vs. linear peptides vs. small molecules through the pore under physiological conditions? Not characterized.
-
-4. **Pore lifetime:** GSDMD pores can be repaired by membrane shedding (ESCRT machinery) or persist until cell lysis. How long does the delivery window last? Minutes to tens of minutes — the timeline matters for whether a drug circulating in synovial fluid can accumulate intracellularly before the cell lyses. **Answered (comp-042, 2026-07-13):** for a small solute, a ~20 nm pore equilibrates the cell interior to the extracellular concentration in ~2 s — orders of magnitude faster than even the short end of the lifetime range. Lifetime is *not* the binding constraint; peak intracellular concentration is capped at the extracellular (synovial) value. See [`kpv-gsdmd-pore-influx-computational.md`](./kpv-gsdmd-pore-influx-computational.md).
-
-5. **First gout-relevant compound to test through pores:** Ac-FLTD-CMK is the most structurally interesting candidate (GSDMD-derived, selectively targets the same protein that created the pore). A cell culture experiment in LPS+MSU-stimulated primary human macrophages comparing Ac-FLTD-CMK efficacy before and after GSDMD pore formation would directly test the paradox in the gout context. This is a $2,000–5,000 experiment if a wet-lab partner has the MSU stimulation setup.
-
-   **Tier-1 delivery-readout gate.** Run [validation §1.32](./validation-experiments.md) before the efficacy test. The primary probe is a **transporter-orphan tracer**, with fluorescent KPV ± PepT1 inhibitor as the confounder control. **Refutation criterion:** if uptake is not higher in pore-forming than intact-membrane macrophages, the self-delivery thesis fails and the downstream efficacy experiment is moot.
+Until those measurements exist, GSDMD pore self-delivery remains a testable engineering conjecture rather than a gout intervention.

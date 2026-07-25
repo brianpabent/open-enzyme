@@ -1,18 +1,21 @@
-# comp-042: KPV self-delivery through GSDMD pyroptotic pores vs. the PepT1 baseline
+# comp-042: KPV entry through GSDMD pores vs. a PepT1 baseline
 
-**Question:** Does the physics support KPV (Lys-Pro-Val) flooding into pyroptotic macrophages through GSDMD pores fast enough to clear its intracellular IC50 (A1), and — the quietly weak assumption — does the pore confer real *selectivity* over the PepT1 route KPV already has (A2)?
+## Question
 
-**Verdict:** **YELLOW (provisional).**
-- **A1 (flux sufficiency): GREEN.** A ~20 nm pore equilibrates intracellular [KPV] to the extracellular synovial concentration within **~2 seconds** (τ_eq ≪ the minutes-scale pore lifetime). Intra-articular dosing clears the 10 nM IC50 by ~4 orders of magnitude; subcutaneous marginally (~3×); oral fails on absolute synovial concentration.
-- **A2 (selectivity over PepT1): unquantifiable.** Because KPV already enters cells (including immune cells — Jurkat, Dalmasso 2008) via PepT1, the pore's selectivity is gated entirely by **synovial-macrophage PepT1 expression, which is uncharacterized.** No route clears both a therapeutic AND a meaningful-selectivity threshold.
+Does a diffusive pore model support rapid KPV entry into a pyroptotic macrophage (A1), and what does a deliberately heuristic PepT1 comparator reveal about the measurements needed to establish pore-specific selectivity (A2)?
 
-**Headline:** The transport physics of KPV self-delivery is sound, but KPV is arguably the *wrong payload to demonstrate pore-selectivity* — precisely because it has an independent constitutive import route. The Trojan-horse selectivity thesis needs a transporter-orphan, truly membrane-impermeant payload to be proven.
+A1 compares the modeled passive pore contribution to intracellular KPV with the lowest extracellular concentration reported effective in a PepT1-positive cell assay. That reference is an engineering exposure proxy, not an intracellular IC50, target-engagement threshold, or efficacy claim.
 
-**Informs:** [`gsdmd-pore-delivery-paradox.md`](../../../gsdmd-pore-delivery-paradox.md) (quantitatively answers Open Question #4 on pore lifetime; stress-tests the KPV-as-ideal-payload claim); [`kpv-peptide.md`](../../../kpv-peptide.md); [`validation-experiments.md`](../../../validation-experiments.md) §1.32 (the proposed fluorescent-KPV-uptake wet-lab).
+A2 is not a physiological selectivity estimate. It maps how a heuristic healthy-cell accumulation equation responds to declared extracellular-concentration, Km, and PepT1-scenario inputs. Numerical ≥3× points are model diagnostics, not route qualifications.
 
-**Interpretive wiki page:** [`wiki/kpv-gsdmd-pore-influx-computational.md`](../../../kpv-gsdmd-pore-influx-computational.md)
+## Evidence-state boundary
 
----
+KPV is a poor proof-of-concept payload independent of any numerical A2 corner:
+
+- PepT1 provides a competing import route, while functional PepT1 and KPV accumulation remain unmeasured in synovial macrophages.
+- KPV is framed as an upstream NLRP3/NF-κB inhibitor, while GSDMD pore formation is downstream of inflammasome activation. This ordering makes therapeutic-timing sufficiency uncertain; the transport model does not resolve residual targetable activity, cytokine-release timing, or efficacy.
+
+A transporter-orphan, membrane-impermeant, downstream-acting payload is the cleaner test of the pore-delivery platform. The platform remains open regardless of the KPV-specific result.
 
 ## How to reproduce
 
@@ -21,79 +24,93 @@ cd wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx
 python3 analyze.py
 ```
 
-Stdlib-only Python 3 (no external packages). All inputs in `inputs/`. Outputs deterministic given RNG seed 42. ~1 s wall-clock.
+The design was frozen under CPython 3.14.5 with the standard library only, and the script rejects another Python version. The design-space sampler uses seed 42. Repeated runs on the same CPython/platform environment should be byte-identical; compare output hashes. Cross-platform byte identity is not guaranteed because standard-library floating-point functions can depend on the platform math implementation.
 
----
+## Files
 
-## File index
-
-```
+```text
 comp-042-kpv-gsdmd-pore-influx/
-  analyze.py                     ← diffusive-flux / mass-balance model (run this)
-  README.md                      ← this file
+  analyze.py
+  README.md
   inputs/
-    query-strategy.json          ← scope declaration (natural_product_scope: false)
-    provenance.md                ← Rule-4 verification table; source + status per input
-    kpv_properties.json          ← MW, charge, radius, D_aq, enzymatic-resistance note
-    pore_geometry.json           ← GSDMD inner diameter, length, count, lifetime
-    macrophage_geometry.json     ← cell volume, surface area
-    pept1_and_ic50.json          ← PepT1 Km, expression scenarios, KPV NF-κB IC50
-    route_concentrations.json    ← IA / SC / oral synovial [KPV]
+    query-strategy.json
+    provenance.md
+    kpv_properties.json
+    pore_geometry.json
+    macrophage_geometry.json
+    pept1_and_effective_concentration.json
+    route_concentrations.json
   outputs/
-    central_results.json         ← deterministic central pass (permeability, τ_eq, per-route)
-    monte_carlo.json             ← 20k-sample distributions of [KPV]/IC50 + P(clear)
-    selectivity_grid.json        ← route × PepT1-scenario selectivity table (A2)
-    robustness_sweep.json        ← lifetime × pores/cell grid (M3)
-    verdicts.json                ← per-route A1/A2/combined + overall
-    summary.md                   ← human-readable summary (auto-generated)
+    central_results.json
+    monte_carlo.json
+    selectivity_grid.json
+    robustness_sweep.json
+    verdicts.json
+    summary.md
 ```
 
----
+`selectivity_grid.json` and `central_results.json` use strict JSON. When PepT1 is absent and the modeled healthy-cell denominator is zero, mathematical positive infinity is encoded as `"selectivity_ratio": null` with `"selectivity_ratio_state": "positive_infinity_zero_healthy_baseline"`. This is not missing data. A future 0/0 case has a separate `undefined_zero_over_zero` state.
 
-## Model (transport / mass-balance only — no MD, no docking)
+## Model
 
-Per-pore permeability of a short wide aperture **including access (convergence) resistance**:
+Per-pore permeability includes two-sided access resistance:
 
-```
-p_pore = H · D · π · r_p² / (L_pore + π·r_p/2)          [m³/s]
-```
-
-- `H ≈ 1`: KPV radius (~0.5 nm) is 20–40× smaller than the pore radius; the negatively-charged conduit favors KPV's +1 charge (Xia 2021). Steric hindrance ≈ 1.
-- The access term `π·r_p/2` (~15.7 nm at r_p=10 nm) dominates the channel term `L_pore` (~7 nm) → access-resistance-limited pore.
-
-Cell equilibration (well-mixed compartment):
-
-```
-τ_eq   = V_cell / (N_pores · p_pore)
-C_in(t) = C_ext · (1 − exp(−t/τ_eq))          → peak capped at C_ext
+```text
+p_pore = H · D · π · r_p² / (L_pore + π·r_p/2)
 ```
 
-PepT1 baseline (both cells; healthy-cell saturating uptake):
+Cell equilibration uses a well-mixed compartment:
 
+```text
+τ_eq    = V_cell / (N_pores · p_pore)
+C_in(t) = C_ext · (1 − exp(−t/τ_eq))
 ```
-C_in,healthy = C_in_max_healthy · C_ext/(Km + C_ext),   C_in_max_healthy = AR_lin · Km
-S            = C_in,pyroptotic / C_in,healthy = (Km + C_ext) / C_in_max_healthy
+
+The PepT1 comparator is:
+
+```text
+C_in,healthy = AR_lin · Km · C_ext/(Km + C_ext)
+C_pore       = f_pore · C_ext
+S_model      = C_pore/C_in,healthy
 ```
 
-`AR_lin` (linear-regime accumulation ratio) encodes the **unknown** synovial-macrophage PepT1 expression (scenarios: absent / low / moderate / high-concentrative). In the pyroptotic cell the pore short-circuits PepT1 → `C_in,pyroptotic = C_ext`.
+`C_pore` is the modeled passive pore contribution, not total KPV in a pyroptotic cell. Concurrent PepT1 transport in the pyroptotic cell is not modeled. `AR_lin` is an unweighted design scenario, not a measured expression value or probability. The equation borrows a rate-saturation shape as an accumulation heuristic; without synovial-macrophage Vmax, efflux, turnover, degradation, membrane potential, and proton-coupling measurements, it is not a validated steady state or a proved upper/lower bound.
 
-### Three orthogonal metrics per route (IA / SC / oral)
-1. **peak intracellular [KPV] / IC50** — flux/therapeutic sufficiency (A1)
-2. **selectivity ratio S vs healthy cell** — pore benefit over the PepT1 baseline (A2)
-3. **robustness** — sweep pore lifetime (1–30 min) × pores/cell (10–10⁴)
+## Preregistered metrics and decision rules
 
-### Decision filter
-A route PASSES only if it clears BOTH ≥1× IC50 AND ≥3× selectivity with the named assumptions holding. **No route passes.**
+1. **A1 exposure-proxy diagnostic:** modeled passive pore contribution divided by the extracellular cell-assay effective-concentration proxy.
+2. **A2 heuristic ratio:** central case plus the full 3 route-concentration bounds × 3 Km bounds × 4 PepT1 scenarios. The 108 evaluations are unweighted.
+3. **Pore robustness:** lifetime × pores-per-cell grid for all three routes, with all other inputs central. The one-pore rows are stress cases outside the main 10–10,000-pore design range.
 
----
+A1 traffic lights are engineering rules:
 
-## Explicitly NOT done (mud-sculpture traps avoided)
-- **No molecular-dynamics** of KPV threading the pore — the pore is 15–40× wider than KPV; there is no meaningful threading physics.
-- **No docking** of KPV to NLRP3/NF-κB — that is a separate pharmacology question, out of scope. The IC50 is taken from the cell-assay literature.
+- GREEN: central ratio ≥10 and at least 0.9 of unweighted log-uniform design-space draws ≥1.
+- YELLOW: central ratio ≥1 and sampled fraction ≥0.5.
+- RED: otherwise.
 
-Model kept to transport/mass-balance. Stdlib-only. Deterministic.
+The sampled fraction is not a calibrated probability. A2 remains `UNRESOLVED` regardless of heuristic ≥3× crossings until a matched pyroptotic-versus-intact-cell experiment measures the healthy-cell baseline. A route cannot qualify without both an A1 pass and empirical A2 resolution.
 
----
+Contrary results can win: the generated outputs must report the computed A1 states and every A2 corner without suppressing threshold crossings. The overall machine verdict is derived from the best computed A1 state and capped below GREEN while A2 remains unresolved.
 
-## Status
-Complete (v1, 2026-07-13). Pre-commit grep-verify gate passed; three named compounding assumptions → verdict **provisional**. Subagent peer review incorporated (see interpretive page Limitations).
+## Limitations
+
+- Pores per cell, subcutaneous/oral synovial concentrations, and the PepT1 scenarios are named design-space assumptions.
+- A quantitative hindrance-factor band is a conservative engineering sensitivity, not a measured KPV/GSDMD value.
+- The 10 nM reference is an extracellular cell-assay observation.
+- Concurrent PepT1 transport in pyroptotic cells is excluded, so A2 is a pore-route-versus-healthy-baseline diagnostic rather than total-cell selectivity.
+- The model does not establish pharmacodynamics, therapeutic timing, tissue sparing, efficacy, or safety.
+- Intracellular KPV degradation is uncharacterized.
+
+## Authoring contract
+
+The canonical evidence home is [`kpv-gsdmd-pore-influx-computational.md`](../../../kpv-gsdmd-pore-influx-computational.md). Local decision deltas may update:
+
+- [`computational-experiments.md`](../../../computational-experiments.md)
+- [`gsdmd-pore-delivery-paradox.md`](../../../gsdmd-pore-delivery-paradox.md)
+- [`kpv-peptide.md`](../../../kpv-peptide.md)
+- [`open-questions.md`](../../../open-questions.md)
+- [`validation-experiments.md`](../../../validation-experiments.md) §1.32
+- [`chassis-pending-interventions.md`](../../../chassis-pending-interventions.md)
+- [`index.md`](../../../../index.md)
+
+The computation can resolve transport behavior within its declared model. It cannot establish KPV efficacy, physiological PepT1 selectivity, a preferred production chassis, or failure of the transporter-orphan pore-delivery platform.
