@@ -33,6 +33,9 @@ sources:
   - Juraschek et al. 2021 (PMID 33615722)
   - He et al. 2021 (PMID 34491388)
   - Wathanavasin et al. 2025 (PMID 39998074)
+  - Sugimoto et al. 2017 (PMID 27988213)
+  - FDA NDA 208743 clinical review and current TYMLOS label
+  - PMDA Ostabalo review report (2022)
 ---
 
 # ABCG2 Modulators — Evidence Map for Intestinal Urate Export
@@ -135,17 +138,57 @@ Ferrer-Picón et al. 2020, *Inflammatory Bowel Diseases* ([DOI](https://doi.org/
 >
 > **Discriminating observation:** In an immune–epithelial co-culture, test lactoferrin against matched controls for TNFα, total and surface ABCG2, and polarized urate flux. Fixed exogenous-TNFα epithelial testing in validation §1.14 remains a separate mechanism-control arm.
 
-### 3. NFIB upregulation
+### 3. PTH/PTHrP-PTH1R signaling
+
+Abaloparatide provides a controlled human PTH1R perturbation and a downstream
+serum-urate signal; it does not identify the intervening transport mechanism.
+In the 18-month ACTIVE trial, 25% of participants with normal baseline urate
+crossed the upper limit of normal at least once on abaloparatide versus 6% on placebo.
+The FDA clinical review reports that mean serum urate rose by 46.1, 62.2, and
+44.5 µmol/L at months 1, 6, and 18, respectively, while placebo remained near
+baseline and teriparatide produced a similar pattern. One participant in each
+arm developed gout, so the trial establishes a biochemical urate effect, not a
+gout-incidence effect. A separate Japanese controlled study reported a mean
+week-78 change of +0.98 mg/dL on abaloparatide versus -0.06 mg/dL on placebo.
+The smaller male osteoporosis trial did not reproduce a clear separation in
+crossing the normal range (7% versus 6%); that result does not establish a sex
+interaction. **Clinical Trial.** ([FDA label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/208743Orig1s015lbl.pdf);
+[FDA clinical review](https://www.accessdata.fda.gov/drugsatfda_docs/nda/2017/208743orig1s000medr.pdf);
+[PMDA review](https://www.pmda.go.jp/files/000251036.pdf))
+
+Sugimoto et al. found that PTH(1-34) reduced plasma-membrane ABCG2 in Caco-2
+cells without reducing ABCG2 mRNA or total protein. In uremic rats with
+secondary hyperparathyroidism, renal and intestinal membrane ABCG2 and urate
+excretion fell; cinacalcet prevented those changes. This establishes a
+PTH-responsive ABCG2-trafficking mechanism in the tested cell and disease
+models, not in abaloparatide-treated humans. **In Vitro + Animal Model.**
+([PMID 27988213](https://pubmed.ncbi.nlm.nih.gov/27988213/);
+[DOI](https://doi.org/10.1016/j.kint.2016.09.041))
+
+<a id="research-conjecture-abaloparatide-pth1r-abcg2"></a>
+### Research conjecture — abaloparatide may expose a PTH1R-ABCG2 urate-control axis
+
+> **Research conjecture — Abaloparatide may expose a PTH1R-ABCG2 urate-control axis**{ .research-conjecture-label }
+>
+> **Grounded premises:** Abaloparatide is a PTHrP analog and PTH1R agonist; controlled trials show a reproducible serum-urate rise without a demonstrated gout excess (**Clinical Trial**; FDA NDA 208743; PMDA Ostabalo review). PTH(1-34) reduced surface ABCG2 in Caco-2 cells, while the uremic-rat model showed lower renal and intestinal ABCG2 plus lower urate excretion (**In Vitro + Animal Model**; Sugimoto et al. 2017, PMID 27988213).
+>
+> **Novel leap:** Abaloparatide's human urate effect may be mediated partly by PTH1R-dependent loss of renal or intestinal surface ABCG2. No direct study has measured abaloparatide, ABCG2 trafficking, and urate flux together; other transport or hemodynamic mechanisms remain possible.
+>
+> **Why it matters:** A positive result would identify an endocrine control point over an existing gout-disposal chokepoint and a human perturbation probe for finding ways to preserve ABCG2 export.
+>
+> **Discriminating observation:** In matched intestinal and proximal-tubule models, compare abaloparatide with PTH(1-34), an inactive peptide control, and PTH1R/ABCG2 loss-of-function controls. Measure total and surface ABCG2 plus ABCG2-attributed urate flux. See [validation experiment 1.46](./validation-experiments.md#146-pth1r-agonist--abcg2-surface-trafficking-and-urate-flux).
+
+### 4. NFIB upregulation
 
 Solbakk et al. 2025, *Drug Metabolism and Disposition* ([DOI](https://doi.org/10.1016/j.dmd.2025.100100), PMID 40554316). NFIB overexpression in Caco-2 enterocytes suppressed ABCG2 by 25–30%. In humans, the rs28379954 T>C NFIB variant causes increased clozapine dose requirements consistent with reduced intestinal efflux. **In Vitro + pharmacogenomic correlation.**
 
 This is a less-studied lever than the others; clinical relevance for urate is unestablished but mechanistically plausible.
 
-### 4. Statins (mixed)
+### 5. Statins (mixed)
 
 Some statin isoforms suppress ABCG2 expression, contributing to the well-documented modest UA rise on statin therapy (~0.1–0.3 mg/dL). **Clinical observation + Mechanistic Extrapolation.** Effect varies by statin (rosuvastatin > atorvastatin > pravastatin per limited data).
 
-### 5. Colonic SCFA availability
+### 6. Colonic SCFA availability
 
 Lower colonic SCFA exposure could reduce PPARγ drive and ABCG2 expression, but diet-to-transporter causality has not been isolated in humans. **Mechanistic Extrapolation; clinical diet evidence below is not mechanism-specific.**
 
@@ -387,3 +430,5 @@ All claims tagged with evidence level: **Clinical Trial / Animal Model / In Vitr
 - **Human RCT — inulin in CKD (positive):** He et al. 2021 ([DOI](https://doi.org/10.1007/s00394-021-02669-y), PMID 34491388).
 - **Meta-analysis — fiber in CKD (UA null):** Wathanavasin et al. 2025 ([DOI](https://doi.org/10.3390/toxins17020057), PMID 39998074).
 - **NFIB regulation:** Solbakk et al. 2025 ([DOI](https://doi.org/10.1016/j.dmd.2025.100100), PMID 40554316).
+- **PTH-dependent ABCG2 trafficking:** Sugimoto et al. 2017 ([DOI](https://doi.org/10.1016/j.kint.2016.09.041), PMID 27988213) — PTH(1-34), Caco-2 surface ABCG2, uremic-rat renal/intestinal ABCG2 and urate excretion.
+- **Controlled abaloparatide urate signal:** [FDA NDA 208743 clinical review](https://www.accessdata.fda.gov/drugsatfda_docs/nda/2017/208743orig1s000medr.pdf), [current TYMLOS label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/208743Orig1s015lbl.pdf), and [PMDA Ostabalo review](https://www.pmda.go.jp/files/000251036.pdf).

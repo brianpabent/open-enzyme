@@ -70,6 +70,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 | [§1.32](#132-gsdmd-pore-self-delivery--matched-uptake-and-selectivity-probe) | GSDMD-pore matched uptake and selectivity probe | In Vitro | ~$2,000–5,000 | 4–6 | Proposed (wet-lab gated) | [gsdmd-pore-delivery-paradox](./gsdmd-pore-delivery-paradox.md), [kpv-gsdmd-pore-influx-computational](./kpv-gsdmd-pore-influx-computational.md) |
 | [§1.44](#144-thymulin--msu--nlrp3-in-aged-macrophages-thy-1--age-stratified-priming-to-flare-test) | Thymulin (+Zn²⁺) × MSU × NLRP3 in **aged** macrophages (THY-1) — tests whether NF-κB priming block translates to reduced crystal-driven IL-1β; age-stratified | In Vitro | Tier 1: $5–10K; full T1+T2+T3 cascade $85–130K | Tier 1: 6–8; full cascade ~11 months | Proposed | [thymulin](./thymulin.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [peptide-gout-addendum](./peptide-gout-addendum.md) |
 | [§1.45](#145-fecal-butyrate-electrochemicalann-reproducibility-and-transfer-gate) | Fecal butyrate electrochemical/ANN reproducibility and transfer | In Vitro method | TBD | TBD | Proposed — author package and partner design required | [tier-2-butyrate-assay-audit-computational](./tier-2-butyrate-assay-audit-computational.md), [quantification-ladder](./quantification-ladder.md), [open-questions](./open-questions.md) |
+| [§1.46](#146-pth1r-agonist--abcg2-surface-trafficking-and-urate-flux) | PTH1R agonist → ABCG2 surface-trafficking and urate-flux test | In Vitro | TBD | TBD | Proposed — staged mechanism transfer | [abcg2-modulators](./abcg2-modulators.md), [open-questions](./open-questions.md) |
 | [§1.34](#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux) | Isotope-resolved precursor → UOX → PDB sequential flux — parallel first-wave architecture gate | In Vitro | TBD | TBD | Proposed | [purine-degrading-bacteria](./purine-degrading-bacteria.md), [staged-purine-sink-mass-balance-computational](./staged-purine-sink-mass-balance-computational.md) |
 | [§1.36](#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay) | Luminal urate antioxidant-loss × UOX-H₂O₂ safety — post-topology safety gate | In Vitro | TBD | TBD | Proposed | [uricase](./uricase.md), [gut-lumen-sink](./gut-lumen-sink.md) |
 | [§1.35](#135-enterocyte-nlrp3pdzk1abcg2-tissue-paradox-assay) | Enterocyte NLRP3–PDZK1–ABCG2 tissue-paradox assay | In Vitro | TBD | TBD | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [abcg2-modulators](./abcg2-modulators.md), [gut-lumen-sink](./gut-lumen-sink.md) |
@@ -1574,6 +1575,26 @@ Only after Stage 1 passes, evaluate the locked implementation in a separately so
 **Cost and schedule:** obtain quotes only after the author package, hardware path, GC-MS partner, specimen source, replication design, and ethics requirements are known.
 
 **Cross-references:** [§1.31 culture-supernatant HPLC-UV transfer](#131-butyrate-culture-supernatant-hplc-uv-method-transfer-against-gc-ms), [Tier 2 butyrate assay audit](./tier-2-butyrate-assay-audit-computational.md), [quantification ladder](./quantification-ladder.md), and [matrix-specific open question](./open-questions.md#matrix-specific-assay-gap-for-microbiome-derived-metabolites).
+
+---
+
+### 1.46 PTH1R Agonist → ABCG2 Surface-Trafficking and Urate-Flux
+
+**Status:** Proposed — staged mechanism transfer | **Cost:** TBD | **Weeks:** TBD | **Phase:** 1
+
+**Affected wiki:** [ABCG2 modulators](./abcg2-modulators.md) and [open questions](./open-questions.md).
+
+**What it tests:** Whether abaloparatide reproduces the PTH(1-34)-dependent loss of surface ABCG2 reported by Sugimoto et al. and whether any surface change alters ABCG2-attributed urate flux. The controlled human serum-urate rise does not by itself identify ABCG2, kidney versus intestine, or altered production versus excretion.
+
+**Stage 1 — reproduce the mechanism control:** In polarized Caco-2 cells, reproduce the published PTH(1-34) time/concentration response with inactive PTH(13-34) and vehicle controls. Measure ABCG2 mRNA, total protein, apical-surface protein, barrier integrity, viability, and basolateral-to-apical urate flux. Attribute flux with a qualified ABCG2 loss-of-function or selective-inhibition control.
+
+**Stage 2 — test the new bridge:** Compare measured exposures of abaloparatide and teriparatide in the same system, with PTH1R loss-of-function or blockade. Repeat the advancing condition in a qualified human proximal-tubule model with the same surface-versus-total and urate-flux readouts. Measure other prespecified urate transporters only to resolve a discordant flux result, not as post hoc mechanism fishing.
+
+**Decision rule:** Advance the PTH1R→ABCG2 explanation only if the drug changes surface ABCG2 and ABCG2-attributed urate flux in a PTH1R-dependent direction while total protein, viability, and barrier controls exclude simpler artifacts. A surface change without urate-flux change rejects functional transfer. A flux change without ABCG2 dependence redirects to another transporter or hemodynamic mechanism. A null result narrows this mechanism and exact model; it does not erase the controlled human serum-urate effect.
+
+**Human follow-up:** If the cell mechanism passes, seek appropriately consented stored-trial samples or a prospective monitored study with paired serum urate, urine urate, and creatinine to estimate fractional urate excretion. Serum urate alone cannot localize the mechanism.
+
+**Primary anchors:** Sugimoto et al. 2017 (**In Vitro + Animal Model**; [PMID 27988213](https://pubmed.ncbi.nlm.nih.gov/27988213/)); FDA NDA 208743 and PMDA Ostabalo controlled safety analyses (**Clinical Trial**).
 
 ---
 

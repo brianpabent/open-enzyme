@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "scan_id": "abaloparatide-urate-safety-2026-07-26",
+  "question": "Does the FAERS abaloparatide urate/gout lead survive controlled safety review, and is there a source-grounded PTH1R-to-ABCG2 mechanism worth testing without claiming that the mechanism is established?",
+  "started_at": "2026-07-26T16:56:02Z",
+  "completed_at": "2026-07-26T18:22:52Z",
+  "canonical_updates": [
+    "wiki/abcg2-modulators.md",
+    "wiki/open-questions.md",
+    "wiki/validation-experiments.md"
+  ],
+  "query_attempts": [
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "drug plus safety outcome",
+      "query": "abaloparatide AND (uric acid OR hyperuricemia OR gout)",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "active comparator plus safety outcome",
+      "query": "teriparatide AND (uric acid OR hyperuricemia OR gout)",
+      "status": "partial",
+      "result_count": 10,
+      "error": "The bounded snapshot retained the first 10 records; direct primary and regulatory records were checked separately."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "endocrine urate mechanism",
+      "query": "(parathyroid hormone OR PTH1R) AND (urate clearance OR uric acid transport OR hyperuricemia)",
+      "status": "partial",
+      "result_count": 10,
+      "error": "The bounded snapshot retained the first 10 records; PMID 27988213 and older human physiology records were retrieved directly."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "direct primary-record retrieval",
+      "query": "27988213",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "zh",
+      "frame": "drug plus native hyperuricemia term",
+      "query": "abaloparatide 高尿酸血症",
+      "status": "partial",
+      "result_count": 10,
+      "error": "The returned English osteoporosis records did not meaningfully preserve the native term and were not treated as regional evidence or absence evidence."
+    },
+    {
+      "source": "PubMed",
+      "language": "ko",
+      "frame": "drug plus native hyperuricemia term",
+      "query": "abaloparatide 고요산혈증",
+      "status": "partial",
+      "result_count": 10,
+      "error": "The returned English osteoporosis records did not meaningfully preserve the native term and were not treated as regional evidence or absence evidence."
+    },
+    {
+      "source": "J-STAGE Search API",
+      "language": "ja",
+      "frame": "drug plus native urate term",
+      "query": "アバロパラチド 尿酸",
+      "status": "success",
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "source": "J-STAGE Search API",
+      "language": "ja",
+      "frame": "PTH plus ABCG2 plus native urate term",
+      "query": "副甲状腺ホルモン ABCG2 尿酸",
+      "status": "partial",
+      "result_count": 644,
+      "error": "The result set was broad; the directly relevant Japanese records led to the English primary paper at PMID 27988213, so no Japanese-language claim was imported."
+    },
+    {
+      "source": "FDA Drugs@FDA",
+      "language": "en",
+      "frame": "current label safety",
+      "query": "NDA 208743 TYMLOS label hyperuricemia",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "FDA Drugs@FDA",
+      "language": "en",
+      "frame": "controlled laboratory safety review",
+      "query": "NDA 208743 original clinical review uric acid",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PMDA",
+      "language": "en",
+      "frame": "Japanese controlled safety review",
+      "query": "Ostabalo review report abaloparatide uric acid",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "ClinicalTrials.gov API",
+      "language": "en",
+      "frame": "trial and extension registry records",
+      "query": "NCT01343004 OR NCT01657162",
+      "status": "failed",
+      "result_count": null,
+      "error": "Hosted API retrieval returned an internal error; registry pages, primary publications, and FDA/PMDA reviews were used instead."
+    }
+  ],
+  "source_ids_considered": [
+    "NDA:208743",
+    "NCT:01343004",
+    "NCT:01657162",
+    "PMDA:Ostabalo-2022",
+    "PMID:27533157",
+    "PMID:28160873",
+    "PMID:27988213",
+    "PMID:1392185",
+    "PMID:6667755",
+    "DOI:10.1001/jama.2016.11136",
+    "DOI:10.1016/j.kint.2016.09.041",
+    "DOI:10.1016/0026-0495(69)90134-6",
+    "DOI:10.14867/gnam1977.12.1_16"
+  ],
+  "translation_checks": [],
+  "load_bearing_verifications": [
+    {
+      "claim": "In the postmenopausal osteoporosis trial, 25% of abaloparatide recipients versus 6% of placebo recipients with normal baseline urate had at least one post-baseline value above the normal range; the label did not associate this laboratory finding with increased gout or arthralgia.",
+      "primary_source": "FDA NDA 208743 current label",
+      "status": "verified"
+    },
+    {
+      "claim": "The FDA clinical review reports mean serum-urate changes at months 1, 6, and 18 of +46.1, +62.2, and +44.5 micromol/L for abaloparatide versus -0.1, -2.7, and -1.7 micromol/L for placebo; one participant in each arm developed gout.",
+      "primary_source": "FDA NDA 208743 clinical review, Table 68 and hyperuricemia safety discussion",
+      "status": "verified"
+    },
+    {
+      "claim": "The Japanese controlled study reported a week-78 mean urate change of +0.98 mg/dL on abaloparatide versus -0.06 mg/dL on placebo, with abnormal variation in 27.1% versus 1.4%.",
+      "primary_source": "PMDA Ostabalo review report, uric-acid safety tables",
+      "status": "verified"
+    },
+    {
+      "claim": "The smaller male osteoporosis trial showed 7% on abaloparatide versus 6% on placebo crossing above the normal urate range and did not demonstrate increased gout or arthralgia.",
+      "primary_source": "FDA NDA 208743 current label",
+      "status": "verified"
+    },
+    {
+      "claim": "PTH(1-34) reduced plasma-membrane ABCG2 in Caco-2 cells without reducing ABCG2 mRNA or total protein; in uremic rats, renal and intestinal membrane ABCG2 and urate excretion fell, and cinacalcet prevented the changes.",
+      "primary_source": "PMID:27988213; DOI:10.1016/j.kint.2016.09.041",
+      "status": "verified"
+    },
+    {
+      "claim": "ACTIVExtend cannot test continued abaloparatide exposure because all continuing participants switched to alendronate.",
+      "primary_source": "NCT:01657162; ACTIVExtend primary publication",
+      "status": "verified"
+    },
+    {
+      "claim": "Abaloparatide raises serum urate by causing PTH1R-dependent loss of renal or intestinal surface ABCG2.",
+      "primary_source": "No study directly measured abaloparatide, ABCG2 trafficking, and urate flux together.",
+      "status": "unverified — retained only as a Research Conjecture with a discriminating experiment"
+    }
+  ],
+  "limitations": [
+    "The controlled trials establish a serum-urate effect, not an increased incidence of gout.",
+    "The male trial was smaller and did not reproduce a clear urate-range separation; no sex interaction is established.",
+    "Sugimoto et al. tested PTH(1-34) in Caco-2 cells, uremic rats, and a secondary-hyperparathyroidism context, not abaloparatide in healthy human intestine or proximal tubule.",
+    "ACTIVExtend switched all participants to alendronate and therefore is not a continued-exposure test.",
+    "Regional native-language searches were bounded and did not contribute a load-bearing non-English claim; no absence claim was drawn from them.",
+    "No non-English load-bearing text was used, so the two-model translation protocol was not triggered."
+  ],
+  "errors": [
+    "The initial sandboxed PubMed snapshot attempt failed on DNS; the same generated plan succeeded when rerun through the approved network path.",
+    "ClinicalTrials.gov API retrieval returned internal errors; the trial registry pages, primary publications, and regulatory reviews were used instead.",
+    "Several native-language PubMed queries returned the same English osteoporosis records regardless of the native term and were not used as regional evidence."
+  ],
+  "workspace": {
+    "path": "operations/abaloparatide-urate-safety-2026-07-26",
+    "cleaned": true
+  }
+}
