@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "scan_id": "tolvaptan-urate-water-handling-2026-07-26",
+  "question": "Do FAERS tolvaptan urate co-reports reproduce in controlled evidence, and do they expose a renal water-handling weakness worth preserving as a testable gout-research lead?",
+  "started_at": "2026-07-26T21:12:15Z",
+  "completed_at": "2026-07-26T21:18:20Z",
+  "canonical_updates": [
+    "wiki/abcg2-modulators.md",
+    "wiki/gout-pathophysiology.md",
+    "wiki/open-questions.md"
+  ],
+  "query_attempts": [
+    {
+      "source": "openFDA FAERS",
+      "language": "en",
+      "frame": "case-level reconstruction",
+      "query": "safetyreportid:\"23339186\"; safetyreportid:\"26232487\"; safetyreportid:\"26251913\"; safetyreportid:\"26264173\"; safetyreportid:\"26264179\"; safetyreportid:\"26363665\"",
+      "status": "success",
+      "result_count": 6,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "drug plus urate or gout phenotype",
+      "query": "tolvaptan AND (gout OR hyperuricemia OR hyperuricaemia OR \"uric acid\" OR \"serum urate\")",
+      "status": "success",
+      "result_count": 29,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "measured urate clearance",
+      "query": "tolvaptan AND (\"uric acid clearance\" OR \"urate clearance\" OR \"fractional excretion\")",
+      "status": "success",
+      "result_count": 15,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "pivotal ADPKD trials",
+      "query": "tolvaptan AND (TEMPO OR REPRISE) AND (hyperuricemia OR hyperuricaemia OR gout OR uric)",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "water-handling bridge",
+      "query": "tolvaptan AND (dehydration OR hypovolemia OR aquaresis OR osmolality) AND (urate OR uric)",
+      "status": "success",
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "randomized safety",
+      "query": "tolvaptan AND randomized AND (safety OR adverse)",
+      "status": "partial",
+      "result_count": 50,
+      "error": "The bounded snapshot retained the first 50 records."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "vasopressin-antagonist class context",
+      "query": "(\"vasopressin V2 antagonist\" OR vaptan) AND (urate OR \"uric acid\" OR gout)",
+      "status": "success",
+      "result_count": 3,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "non-ADPKD indication context",
+      "query": "tolvaptan AND (heart failure OR hyponatremia) AND (urate OR hyperuricemia OR hyperuricaemia)",
+      "status": "success",
+      "result_count": 11,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "ADPKD-specific context",
+      "query": "tolvaptan AND ADPKD AND (hyperuricemia OR hyperuricaemia OR gout OR uric)",
+      "status": "success",
+      "result_count": 15,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "zh",
+      "frame": "native drug and pathology names",
+      "query": "托伐普坦 痛风; 托伐普坦 高尿酸血症",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "ja",
+      "frame": "native drug and pathology names",
+      "query": "トルバプタン 痛風; トルバプタン 高尿酸血症",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "ko",
+      "frame": "native drug and pathology names with spelling variants",
+      "query": "톨밥탄 통풍; 톨밥탄 고요산혈증; 톨바프탄 통풍; 톨바프탄 고요산혈증",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "native drug plus gout",
+      "query": "托伐普坦 痛风",
+      "status": "partial",
+      "result_count": null,
+      "error": "The server-rendered search behaved as broad OR matching; the first result page did not expose a paired drug-plus-gout record or a reliable exact count."
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "native drug plus hyperuricemia",
+      "query": "托伐普坦 高尿酸血症",
+      "status": "partial",
+      "result_count": null,
+      "error": "The server-rendered search behaved as broad OR matching; the first result page did not expose a paired drug-plus-hyperuricemia record or a reliable exact count."
+    },
+    {
+      "source": "WanFang",
+      "language": "zh",
+      "frame": "native drug plus gout",
+      "query": "托伐普坦 痛风",
+      "status": "failed",
+      "result_count": null,
+      "error": "The fetched page exposed the application shell without static search results."
+    },
+    {
+      "source": "WanFang",
+      "language": "zh",
+      "frame": "native drug plus hyperuricemia",
+      "query": "托伐普坦 高尿酸血症",
+      "status": "failed",
+      "result_count": null,
+      "error": "The fetched page exposed the application shell without static search results."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "native drug plus gout",
+      "query": "トルバプタン 痛風",
+      "status": "partial",
+      "result_count": 68,
+      "error": "The search behaved as broad term matching; the first 20 titles contained separate tolvaptan and gout records but no paired drug-plus-gout record."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "native drug plus hyperuricemia",
+      "query": "トルバプタン 高尿酸血症",
+      "status": "partial",
+      "result_count": 122,
+      "error": "The search behaved as broad term matching; the first 20 titles contained separate tolvaptan and hyperuricemia records but no paired drug-plus-hyperuricemia record."
+    },
+    {
+      "source": "RISS",
+      "language": "ko",
+      "frame": "native drug and pathology spelling variants",
+      "query": "톨밥탄 통풍; 톨밥탄 고요산혈증; 톨바프탄 통풍; 톨바프탄 고요산혈증",
+      "status": "partial",
+      "result_count": null,
+      "error": "The fetched pages preserved the queries but did not expose a reliably parseable static result count or a relevant paired record."
+    },
+    {
+      "source": "DailyMed",
+      "language": "en",
+      "frame": "current chronic ADPKD label",
+      "query": "JYNARQUE setid 3febc0a1-9e5a-4ce0-843d-210f21d862c4: hyperuricemia; gout; uric acid clearance; GFR; dehydration",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "DailyMed",
+      "language": "en",
+      "frame": "current short-course hyponatremia label",
+      "query": "SAMSCA setid 5526617c-c7b9-4556-886d-729bbabbc566: hyperuricemia; gout; uric acid; dehydration",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PMDA",
+      "language": "en",
+      "frame": "ADPKD regulatory safety review",
+      "query": "tolvaptan ADPKD review: gout; hyperuricaemia; uric acid clearance",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "FDA Drugs@FDA",
+      "language": "en",
+      "frame": "REPRISE medical review",
+      "query": "NDA 204441 REPRISE: gout; hyperuricemia; uric acid",
+      "status": "partial",
+      "result_count": 1,
+      "error": "The FDA PDF endpoint returned an access-denial page to the local fetch; the indexed FDA review result and a corroborating Canadian monograph exposed the randomized gout rates."
+    }
+  ],
+  "source_ids_considered": [
+    "FAERS:23339186",
+    "FAERS:26232487",
+    "FAERS:26251913",
+    "FAERS:26264173",
+    "FAERS:26264179",
+    "FAERS:26363665",
+    "DailyMed:3febc0a1-9e5a-4ce0-843d-210f21d862c4",
+    "DailyMed:5526617c-c7b9-4556-886d-729bbabbc566",
+    "NDA:204441",
+    "NCT:00428948",
+    "NCT:02160145",
+    "NCT:05190744",
+    "PMDA:000208511",
+    "PMID:21544064",
+    "PMID:23121377",
+    "PMID:29123425",
+    "PMID:37982946",
+    "PMID:39355601",
+    "PMID:39953249",
+    "PMID:42298327",
+    "DOI:10.1038/ki.2011.119",
+    "DOI:10.1056/NEJMoa1205511",
+    "DOI:10.1172/JCI197021"
+  ],
+  "translation_checks": [],
+  "load_bearing_verifications": [
+    {
+      "claim": "TEMPO 3:4 reported hyperuricemia in 3.9% of tolvaptan recipients versus 1.9% with placebo and gout in 2.9% versus 1.4%.",
+      "primary_source": "Current JYNARQUE label and Torres et al. 2012; PMID:23121377; DOI:10.1056/NEJMoa1205511",
+      "status": "verified"
+    },
+    {
+      "claim": "The JYNARQUE pharmacodynamic record reports a reversible 20–25% decrease in uric-acid clearance and a 6–10% decrease in GFR.",
+      "primary_source": "Current JYNARQUE label, Clinical Pharmacology section",
+      "status": "verified"
+    },
+    {
+      "claim": "A one-week study in 20 people with ADPKD found that tolvaptan-induced serum-urate elevation resulted from decreased uric-acid clearance during aquaresis and lower GFR, without a significant renal-blood-flow change.",
+      "primary_source": "Boertien et al. 2011; PMID:21544064; DOI:10.1038/ki.2011.119",
+      "status": "verified"
+    },
+    {
+      "claim": "The PMDA TEMPO review reported combined gout/hyperuricemia in 6.7% versus 2.9%, clinically significant uric-acid increases in 6.2% versus 1.7%, reversal toward placebo after follow-up, and no severe, serious, or discontinuation events.",
+      "primary_source": "PMDA ADPKD tolvaptan review report, section 3.(iii).B.(5).5",
+      "status": "verified"
+    },
+    {
+      "claim": "REPRISE reported gout in 3.1% with tolvaptan versus 2.9% with placebo.",
+      "primary_source": "FDA NDA 204441 medical review; corroborated by the Canadian JYNARQUE product monograph",
+      "status": "verified"
+    },
+    {
+      "claim": "Collecting-duct intracellular urate is controlled by apical GLUT9b influx and ABCG2 efflux and can drive V2R-independent AQP2 accumulation through PDE4-mediated cAMP degradation and AMPK activation.",
+      "primary_source": "Hadla et al. 2026; PMID:42298327; DOI:10.1172/JCI197021",
+      "status": "verified"
+    },
+    {
+      "claim": "The SereNDIpity-pb1 study was open-label with 17 participants and reported a 30.2% mean reduction in 24-hour urine volume after probenecid was added to stable tolvaptan.",
+      "primary_source": "Hadla et al. 2026; PMID:42298327; DOI:10.1172/JCI197021",
+      "status": "verified"
+    },
+    {
+      "claim": "The six FAERS reports constitute six independent causal cases.",
+      "primary_source": "Case-level openFDA records show that reports 26232487 and 26264173 share age, sex, event date, indication, dose, and event terms, while report 26363665 lists tolvaptan as concomitant with a start date after the event date.",
+      "status": "unverified — no independent-case or causal inference retained"
+    },
+    {
+      "claim": "The complete water-output, filtration, urate-clearance, collecting-duct transporter, genotype, and gout-risk system has been demonstrated in humans.",
+      "primary_source": "No identified study measured the complete proposed system.",
+      "status": "unverified — retained only as a Research Conjecture with a discriminating paired-data analysis"
+    }
+  ],
+  "limitations": [
+    "FAERS lacks a denominator and cannot establish incidence or causality; incomplete chronology and likely duplicate reporting weaken the original six-report packet.",
+    "TEMPO establishes a chronic high-dose ADPKD signal, but REPRISE did not reproduce a gout imbalance and short-course lower-dose SAMSCA evidence does not establish the same effect.",
+    "The measured tolvaptan effect localizes to reversible renal clearance and hemodynamics but does not isolate a single transporter or show that dehydration is necessary.",
+    "SereNDIpity-pb1 was small, open-label, and uncontrolled; probenecid is nonselective, so the human water-handling result cannot be assigned specifically to ABCG2.",
+    "The Hadla et al. corresponding investigator reports a patent interest in probenecid for ADPKD, and the investigator-initiated clinical study received Otsuka support; the paper states that the sponsor had no role in the study.",
+    "Regional searches were bounded and several database interfaces used broad matching or exposed only application shells; no universal absence claim was made.",
+    "No non-English source supplied a load-bearing claim, so the two-model translation protocol was not triggered."
+  ],
+  "errors": [
+    "The initial sandboxed PubMed and openFDA retrieval failed on DNS; the same generated query and fetch plan succeeded through the approved network path.",
+    "The first regional-fetch receipt pass misread successful local_curl_fetch return objects as paths; the parser was corrected and the identical generated queries were rerun.",
+    "The FDA medical-review PDF endpoint returned a 419-byte access-denial page to the local fetch.",
+    "WanFang returned JavaScript application shells, and CQVIP and J-STAGE combined-term searches behaved as broad OR-style matching."
+  ],
+  "workspace": {
+    "path": "operations/tolvaptan-urate-water-handling-2026-07-26",
+    "cleaned": true
+  }
+}

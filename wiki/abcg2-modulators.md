@@ -34,6 +34,7 @@ sources:
   - He et al. 2021 (PMID 34491388)
   - Wathanavasin et al. 2025 (PMID 39998074)
   - Sugimoto et al. 2017 (PMID 27988213)
+  - Hadla et al. 2026 (PMID 42298327)
   - FDA NDA 208743 clinical review and current TYMLOS label
   - PMDA Ostabalo review report (2022)
 ---
@@ -62,6 +63,12 @@ Every lead NLRP3 inhibitor intended for combination with a gut-lumen sink should
 be screened for total and surface ABCG2 plus functional urate flux in polarized intestinal
 cells. See [validation experiment 1.35](./validation-experiments.md#135-enterocyte-nlrp3pdzk1abcg2-tissue-paradox-assay)
 and the [multihop gout program](./gout-multihop-research-program.md).
+
+### Collecting-duct ABCG2 adds a water-handling liability
+
+ABCG2 is not only an intestinal urate-export target. Hadla et al. found apical ABCG2 and GLUT9b in collecting-duct principal cells; reducing ABCG2 efflux raised intracellular urate and drove vasopressin-independent AQP2 membrane accumulation through PDE4 and AMPK (**In Vitro**; [PMID 42298327](https://pubmed.ncbi.nlm.nih.gov/42298327/)). Probenecid attenuated tolvaptan-induced polyuria in wild-type and ADPKD mice (**Animal Model**). A 17-person uncontrolled add-on study reported a 30.2% mean reduction in 24-hour urine volume together with lower serum urate, but probenecid's human effect cannot be assigned specifically to ABCG2 (**Human interventional study; hypothesis-generating**).
+
+**Experimental implication:** Direct ABCG2 modulators require tissue-resolved testing. Measure intestinal and renal urate flux separately, and include urine volume, osmolality, AQP2 localization, GFR, and serum and fractional urate excretion. A favorable systemic urate direction does not establish a favorable collecting-duct effect, or vice versa.
 
 Most ABCG2 literature conflates two mechanisms with opposite implications for the gut-lumen-sink hypothesis. Read every claim with this distinction in mind:
 

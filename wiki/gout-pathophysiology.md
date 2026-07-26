@@ -147,6 +147,25 @@ This gut-lumen pathway creates a testable opening for luminal uricase: active en
 
 Renal under-excretion is common in gout, but the relative contributions of production, renal transport, intestinal export, and mixed phenotypes vary. Mechanism studies should measure the relevant fluxes rather than infer an intervention from a single label. Gut-lumen degradation remains a research hypothesis for increasing net disposal.
 
+### Tolvaptan exposes a renal water–urate coupling
+
+Tolvaptan provides a controlled human perturbation of both water handling and urate clearance. In TEMPO 3:4, hyperuricemia occurred in 3.9% of the tolvaptan group versus 1.9% with placebo, while the primary report recorded gout in 2.9% versus 1.4% (**Clinical Trial**; [JYNARQUE label](https://dailymed.nlm.nih.gov/dailymed/downloadpdffile.cfm?setId=3febc0a1-9e5a-4ce0-843d-210f21d862c4); [PMID 23121377](https://pubmed.ncbi.nlm.nih.gov/23121377/)). The label's pharmacodynamic studies report a reversible 20–25% decrease in uric-acid clearance alongside a 6–10% decrease in GFR. A one-week study in 20 people with ADPKD likewise attributed the serum-urate rise to reduced urate clearance during aquaresis and lower GFR (**Clinical human mechanistic study**; [PMID 21544064](https://pubmed.ncbi.nlm.nih.gov/21544064/)).
+
+This is not a universal tolvaptan effect and should not be collapsed into dehydration alone. REPRISE reported gout in 3.1% with tolvaptan and 2.9% with placebo, while short-course, lower-dose SAMSCA trials do not establish a urate imbalance. Exposure, kidney-disease stage, trial design, and reversible renal hemodynamics may all matter (**Clinical Trial**; [FDA review](https://www.accessdata.fda.gov/drugsatfda_docs/nda/2018/204441Orig1s000MedR.pdf); [SAMSCA label](https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=5526617c-c7b9-4556-886d-729bbabbc566)).
+
+The reverse direction has direct mechanistic support. In collecting-duct cells, intracellular urate governed by apical GLUT9b influx and ABCG2 efflux activated a PDE4–AMPK pathway that retained AQP2 at the apical membrane independently of vasopressin V2 signaling (**In Vitro**). ABCG2 inhibition attenuated tolvaptan-induced polyuria in wild-type and ADPKD mice (**Animal Model**). An uncontrolled 17-person add-on study found that probenecid reduced 24-hour urine volume by 30.2%, but it cannot isolate ABCG2 or establish a gout intervention (**Human interventional study; hypothesis-generating**; [PMID 42298327](https://pubmed.ncbi.nlm.nih.gov/42298327/)).
+
+<a id="research-conjecture-renal-water-urate-coupling"></a>
+> **Research conjecture — Renal water handling may expose a compartment-specific urate phenotype**{ .research-conjecture-label }
+>
+> **Grounded premises:** Tolvaptan reduced urate clearance and produced a controlled hyperuricemia/gout imbalance in TEMPO, although the gout imbalance did not recur in REPRISE (**Clinical Trial**; [PMID 23121377](https://pubmed.ncbi.nlm.nih.gov/23121377/); [FDA review](https://www.accessdata.fda.gov/drugsatfda_docs/nda/2018/204441Orig1s000MedR.pdf)). GLUT9b/ABCG2-controlled intracellular urate altered collecting-duct AQP2 trafficking in cells, mice, and a small uncontrolled human study (**In Vitro + Animal Model + hypothesis-generating human evidence**; [PMID 42298327](https://pubmed.ncbi.nlm.nih.gov/42298327/)).
+>
+> **Novel leap:** Water output, filtration, urate clearance, and collecting-duct transporter state may define a phenotype in which serum urate and local urate signaling move differently. No direct evidence establishes the complete system or its link to gout risk.
+>
+> **Why it matters:** The phenotype could explain context-dependent urate responses to water-handling perturbations and prevent serum urate from being treated as a proxy for intracellular collecting-duct exposure.
+>
+> **Discriminating observation:** Reanalyze paired TEMPO, REPRISE, and SereNDIpity-pb1 data for serum urate, urate clearance or FEUA, urine volume and osmolality, GFR, hydration markers, and ABCG2/SLC2A9 genotype. Advance only if time-ordered within-person changes or genotype interactions separate the proposed phenotypes.
+
 ### Urate-handling weaknesses and candidate mechanisms
 
 The map below records which current candidate classes touch renal transport, intestinal export, purine production, or inflammatory priming. It is an evidence map, not a recommendation to combine tracks. Empty cells are biological or sourcing gaps; filled cells still require exposure, tissue-selectivity, safety, and functional urate-flux validation.
