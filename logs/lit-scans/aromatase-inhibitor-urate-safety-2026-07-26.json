@@ -1,0 +1,355 @@
+{
+  "schema_version": 1,
+  "scan_id": "aromatase-inhibitor-urate-safety-2026-07-26",
+  "question": "Do the 2026Q1 FAERS letrozole urate reports recur across aromatase inhibitors or controlled safety evidence strongly enough to establish a chronic androgen-urate-axis liability?",
+  "started_at": "2026-07-26T20:32:48Z",
+  "completed_at": "2026-07-26T20:42:26Z",
+  "canonical_updates": [
+    "wiki/androgen-urate-axis.md",
+    "wiki/open-questions.md"
+  ],
+  "query_attempts": [
+    {
+      "source": "openFDA FAERS",
+      "language": "en",
+      "frame": "case-level reconstruction",
+      "query": "safetyreportid:\"19642475\"; safetyreportid:\"20405369\"; safetyreportid:\"21408087\"; safetyreportid:\"22000822\"; safetyreportid:\"26210661\"; safetyreportid:\"26348202\"; safetyreportid:\"26381023\"; safetyreportid:\"26410521\"; safetyreportid:\"26411645\"; safetyreportid:\"26440127\"; safetyreportid:\"26452161\"; safetyreportid:\"26525115\"",
+      "status": "success",
+      "result_count": 12,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "drug class plus urate phenotype",
+      "query": "(letrozole OR anastrozole OR exemestane) AND (gout OR hyperuricemia OR hyperuricaemia OR \"uric acid\")",
+      "status": "success",
+      "result_count": 13,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "letrozole plus urate phenotype",
+      "query": "letrozole AND (gout OR hyperuricemia OR hyperuricaemia OR \"uric acid\")",
+      "status": "success",
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "anastrozole plus urate phenotype",
+      "query": "anastrozole AND (gout OR hyperuricemia OR hyperuricaemia OR \"uric acid\")",
+      "status": "success",
+      "result_count": 3,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "exemestane plus urate phenotype",
+      "query": "exemestane AND (gout OR hyperuricemia OR hyperuricaemia OR \"uric acid\")",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "class recurrence",
+      "query": "(\"aromatase inhibitor\" OR \"aromatase inhibitors\") AND (gout OR hyperuricemia OR hyperuricaemia OR \"serum urate\")",
+      "status": "success",
+      "result_count": 4,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "randomized safety",
+      "query": "(letrozole OR anastrozole OR exemestane) AND randomized AND safety",
+      "status": "partial",
+      "result_count": 50,
+      "error": "The bounded snapshot retained the first 50 records."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "landmark controlled trials",
+      "query": "(BIG 1-98 OR ATAC OR \"Intergroup Exemestane Study\") AND (gout OR uric OR safety)",
+      "status": "partial",
+      "result_count": 50,
+      "error": "The bounded snapshot retained the first 50 records."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "oncology and renal confounders",
+      "query": "(letrozole OR anastrozole OR exemestane) AND (tumor lysis OR tumour lysis OR renal dysfunction OR kidney) AND (urate OR uric OR gout)",
+      "status": "success",
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "urate transporter mechanism",
+      "query": "(aromatase inhibition OR estrogen deprivation) AND (urate transporter OR URAT1 OR GLUT9 OR ABCG2)",
+      "status": "success",
+      "result_count": 4,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "zh",
+      "frame": "native drug and pathology names",
+      "query": "来曲唑 痛风 高尿酸血症; 阿那曲唑 痛风 高尿酸血症; 依西美坦 痛风 高尿酸血症; 芳香化酶抑制剂 痛风 高尿酸血症",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "ja",
+      "frame": "native drug and pathology names",
+      "query": "レトロゾール 痛風 高尿酸血症; アナストロゾール 痛風 高尿酸血症; エキセメスタン 痛風 高尿酸血症; アロマターゼ阻害薬 痛風 高尿酸血症",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "ko",
+      "frame": "native drug and pathology names",
+      "query": "레트로졸 통풍 고요산혈증; 아나스트로졸 통풍 고요산혈증; 엑스메스탄 통풍 고요산혈증; 아로마타제 억제제 통풍 고요산혈증",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "native letrozole and pathology names",
+      "query": "来曲唑 痛风 高尿酸血症",
+      "status": "partial",
+      "result_count": null,
+      "error": "The server-rendered search behaved as broad OR matching; no paired drug-plus-gout-or-hyperuricemia record appeared in the first 20 records and the exact count could not be parsed."
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "native anastrozole and pathology names",
+      "query": "阿那曲唑 痛风 高尿酸血症",
+      "status": "partial",
+      "result_count": 117,
+      "error": "The server-rendered search behaved as broad OR matching; no paired drug-plus-gout-or-hyperuricemia record appeared in the first 20 records."
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "native exemestane and pathology names",
+      "query": "依西美坦 痛风 高尿酸血症",
+      "status": "partial",
+      "result_count": 504,
+      "error": "The server-rendered search behaved as broad OR matching; no paired drug-plus-gout-or-hyperuricemia record appeared in the first 20 records."
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "native class and pathology names",
+      "query": "芳香化酶抑制剂 痛风 高尿酸血症",
+      "status": "partial",
+      "result_count": 110,
+      "error": "The server-rendered search behaved as broad OR matching; no paired class-plus-gout-or-hyperuricemia record appeared in the first 20 records."
+    },
+    {
+      "source": "WanFang",
+      "language": "zh",
+      "frame": "native letrozole and pathology names",
+      "query": "来曲唑 痛风 高尿酸血症",
+      "status": "failed",
+      "result_count": null,
+      "error": "The fetched page exposed the application shell without static search results."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "native letrozole and pathology names",
+      "query": "レトロゾール 痛風 高尿酸血症",
+      "status": "partial",
+      "result_count": 8,
+      "error": "The search behaved as broad term matching; none of the returned titles paired the drug with gout or hyperuricemia."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "native anastrozole and pathology names",
+      "query": "アナストロゾール 痛風 高尿酸血症",
+      "status": "partial",
+      "result_count": 5,
+      "error": "The search behaved as broad term matching; none of the returned titles paired the drug with gout or hyperuricemia."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "native exemestane and pathology names",
+      "query": "エキセメスタン 痛風 高尿酸血症",
+      "status": "partial",
+      "result_count": 2,
+      "error": "The search behaved as broad term matching; neither returned title paired the drug with gout or hyperuricemia."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "native class and pathology names",
+      "query": "アロマターゼ阻害薬 痛風 高尿酸血症",
+      "status": "partial",
+      "result_count": 7,
+      "error": "The search behaved as broad term matching; none of the returned titles paired the class with gout or hyperuricemia."
+    },
+    {
+      "source": "RISS",
+      "language": "ko",
+      "frame": "native letrozole and pathology names",
+      "query": "레트로졸 통풍 고요산혈증",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "RISS",
+      "language": "ko",
+      "frame": "native anastrozole and pathology names",
+      "query": "아나스트로졸 통풍 고요산혈증",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "RISS",
+      "language": "ko",
+      "frame": "native exemestane and pathology names",
+      "query": "엑스메스탄 통풍 고요산혈증",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "RISS",
+      "language": "ko",
+      "frame": "native class and pathology names",
+      "query": "아로마타제 억제제 통풍 고요산혈증",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "DailyMed",
+      "language": "en",
+      "frame": "current letrozole label and controlled-safety tables",
+      "query": "FEMARA setid 82b77d74-085f-45ac-a7dd-1f5c038bf406: gout; hyperuric; uric acid; serum urate; blood uric",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "DailyMed",
+      "language": "en",
+      "frame": "current anastrozole label and controlled-safety tables",
+      "query": "ANASTROZOLE setid 69be1c52-93db-e2c3-e053-2a91aa0af774: gout; hyperuric; uric acid; serum urate; blood uric",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "DailyMed",
+      "language": "en",
+      "frame": "current exemestane label and controlled-safety tables",
+      "query": "AROMASIN setid cf066b7a-032a-416c-8d40-15ba581423e3: gout; hyperuric; uric acid; serum urate; blood uric",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    }
+  ],
+  "source_ids_considered": [
+    "FAERS:19642475",
+    "FAERS:20405369",
+    "FAERS:21408087",
+    "FAERS:22000822",
+    "FAERS:26210661",
+    "FAERS:26348202",
+    "FAERS:26381023",
+    "FAERS:26410521",
+    "FAERS:26411645",
+    "FAERS:26440127",
+    "FAERS:26452161",
+    "FAERS:26525115",
+    "DailyMed:82b77d74-085f-45ac-a7dd-1f5c038bf406",
+    "DailyMed:69be1c52-93db-e2c3-e053-2a91aa0af774",
+    "DailyMed:cf066b7a-032a-416c-8d40-15ba581423e3",
+    "PMID:11688358",
+    "PMID:17998546",
+    "PMID:21087898",
+    "PMID:26588809",
+    "PMID:26967690",
+    "PMID:27009458",
+    "PMID:29482983",
+    "PMID:29567078",
+    "PMID:31925474",
+    "PMID:33911874",
+    "PMID:34090245",
+    "PMID:34998791",
+    "PMID:38656713",
+    "PMID:40342887",
+    "PMID:41246601",
+    "PMID:42294476",
+    "PMID:42313386"
+  ],
+  "translation_checks": [],
+  "load_bearing_verifications": [
+    {
+      "claim": "The current US letrozole, anastrozole, and exemestane labels and their embedded controlled-safety tables contain no gout, hyperuricemia, uric-acid, serum-urate, or blood-uric term.",
+      "primary_source": "DailyMed setids 82b77d74-085f-45ac-a7dd-1f5c038bf406, 69be1c52-93db-e2c3-e053-2a91aa0af774, and cf066b7a-032a-416c-8d40-15ba581423e3",
+      "status": "verified"
+    },
+    {
+      "claim": "A randomized male letrozole trial demonstrated increased testosterone and decreased estradiol but did not report a serum-urate or renal-urate-handling endpoint.",
+      "primary_source": "PMID:42313386",
+      "status": "verified"
+    },
+    {
+      "claim": "The direct head-to-head FATA-GIM3 trial reported no unexpected serious adverse events, while urate was not a reported endpoint in its publication abstract.",
+      "primary_source": "PMID:29482983",
+      "status": "verified"
+    },
+    {
+      "claim": "Published letrozole and anastrozole hyperuricemia reports include acute tumor lysis syndrome after endocrine therapy in advanced breast cancer.",
+      "primary_source": "PMID:11688358; PMID:33911874; PMID:38656713; PMID:42294476",
+      "status": "verified"
+    },
+    {
+      "claim": "The published palbociclib-letrozole hyperuricemia cases attributed management to palbociclib interruption and dose reduction.",
+      "primary_source": "PMID:27009458",
+      "status": "verified"
+    },
+    {
+      "claim": "The 12 source FAERS reports resolve to 10 deduplicated cases; only one report lists letrozole as the sole suspect, and it lacks event chronology.",
+      "primary_source": "openFDA FAERS safetyreportids 19642475, 20405369, 21408087, 22000822, 26210661, 26348202, 26381023, 26410521, 26411645, 26440127, 26452161, and 26525115",
+      "status": "verified"
+    }
+  ],
+  "limitations": [
+    "FAERS lacks a denominator and the available fields do not establish incidence or causality; duplicate manufacturer reports and incomplete chronology required case-level interpretation.",
+    "The randomized-safety and landmark-trial PubMed snapshots were capped at 50 records and are marked partial.",
+    "No claim of universal literature absence was made; the direct-endpoint statement is bounded to the sources and search frames recorded here.",
+    "CQVIP and J-STAGE broad term matching prevented exact paired-query counts, and WanFang exposed no static result set.",
+    "No non-English source supplied a load-bearing claim, so the two-model translation protocol was not triggered."
+  ],
+  "errors": [
+    "The initial sandboxed PubMed and openFDA retrieval failed at DNS; the same generated query plan succeeded through the approved network path."
+  ],
+  "workspace": {
+    "path": "operations/aromatase-inhibitor-urate-safety-2026-07-26",
+    "cleaned": true
+  }
+}
