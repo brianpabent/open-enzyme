@@ -1,14 +1,14 @@
 {
   "_meta": {
-    "axis": "Axis 2b \u2014 substrate/clinical-interaction (complements the ChEMBL inhibition axis)",
-    "source": "DrugBank transporter cross-references via UniProt Q9UNQ0 (ABCG2). Fetched rest.uniprot.org/uniprotkb/Q9UNQ0.txt, DR DrugBank lines.",
+    "axis": "Axis 2b \u2014 UniProt/DrugBank ABCG2 relationship exclusion (complements the ChEMBL inhibition axis)",
+    "source": "DrugBank cross-references exposed by the UniProt Q9UNQ0 (ABCG2) flat file. Fetched rest.uniprot.org/uniprotkb/Q9UNQ0.txt, DR DrugBank lines. The cross-reference establishes an ABCG2 relationship, not a relationship subtype for every drug.",
     "date": "2026-07-14",
     "total_abcg2_interacting_drugs_in_drugbank": 286,
     "library_molecules_flagged": 31,
-    "why_this_axis": "ChEMBL logs INHIBITION assays and misses SUBSTRATES. DrugBank's curated transporter annotations capture substrate + clinical-interaction relationships. Cross-check confirms: rosuvastatin (an 'uncertain' docking candidate) IS ABCG2-interacting per DrugBank but returned 0 ChEMBL records -> the substrate blind spot, now closed by this axis.",
-    "complementarity": "Complete known-ABCG2 disqualifier = ChEMBL inhibitors UNION DrugBank substrates/interactions. Neither alone is complete: ChEMBL misses substrates (rosuvastatin); DrugBank (approved-drugs only) misses research-tool inhibitors (Ko143, fumitremorgin C).",
+    "why_this_axis": "ChEMBL inhibition/binding records do not cover every transporter-substrate or clinical interaction. The UniProt/DrugBank relationship set provides a broader conservative exclusion check. Rosuvastatin is independently verified as a BCRP substrate in the FDA CRESTOR label and is also flagged in this relationship set.",
+    "complementarity": "Conservative screen exclusion = curated controls UNION ChEMBL ABCG2 activity UNION independently verified substrates UNION UniProt/DrugBank ABCG2 relationships. A DrugBank relationship flag is not relabeled as substrate proof.",
     "gold_standard_alternatives": "UCSF-FDA TransPortal + PharmGKB give curated per-transporter substrate/inhibitor lists with primary references; use for a definitive framework build. UniProt+DrugBank is the free, immediately-scriptable first pass used here.",
-    "candidate_impact": "Of the 2 marginal 'uncertain' docking hits, rosuvastatin is flagged ABCG2-interacting (disqualified); vorinostat is NOT flagged (survives as the sole marginal hit)."
+    "candidate_impact": "Of the two marginal docking-tier rows, rosuvastatin is independently verified as a BCRP substrate and is also relationship-flagged, so it is excluded; vorinostat is not relationship-flagged and remains the sole marginal executable row."
   },
   "flagged": {
     "tezacaftor": {

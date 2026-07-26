@@ -1,29 +1,30 @@
 # comp-047 — Summary
 
-**Generated:** 2026-07-15  
-**Method:** AutoDock Vina docking (2 sites × WT/Q141K) + empirical ChEMBL ABCG2 grounding. Supersedes comp-032's descriptor/class-prior heuristic.  
-**Vina:** seed 20260714, exhaustiveness 8, cpu 4. N=134 docked.
+**Frozen docking run date:** 2026-07-14
 
-## VERDICT: INCONCLUSIVE — only weak/uncertain candidates; no high-confidence fold-selective hit
+**Method:** static-receptor AutoDock Vina at a modeled residue-141 region and Walker-A comparison box, followed by ChEMBL inhibition and UniProt/DrugBank relationship exclusion.
 
-Candidates (fold-selective AND not known ABCG2): **0 yes**, **2 uncertain**.
+**Vina:** seed 20260714, exhaustiveness 8, cpu 4; N=134 docked.
 
-## Ranked shortlist (candidates only)
+## VERDICT: INCONCLUSIVE — NO DEFENSIBLE DOCKING-BACKED RANKING
 
-| rank | molecule | drug_class | fold@Q141K | transport | margin | Q141K−WT sel. | ChEMBL ABCG2 | tier |
-|---|---|---|---|---|---|---|---|---|
-| 1 | rosuvastatin | Statin | -6.80 | -6.26 | 0.54 | 0.95 | no | uncertain |
-| 2 | vorinostat | HDAC inhibitor | -6.19 | -5.64 | 0.55 | 0.23 | no | uncertain |
+Executable rule output after both Axis-2 checks: **0 yes**, **1 uncertain**. An executable row is not a wet-lab priority: the screen has no validated ABCG2 chaperone positive control, uses a static conformation, and produced unstable fold-site rankings under the recorded perturbations.
 
-## Raw fold-site ranking (Axis 1a alone — box-choice-robust view)
+## Executable marginal rows (not wet-lab priorities)
 
-Top fold@Q141K binders regardless of transport margin. Use with Axis 2: a strong fold binder that is a known ABCG2 inhibitor is still disqualified. This table exists so the shortlist is not hostage to the transport-box choice (see distribution note below).
+| rank | molecule | class | fold@Q141K | Walker A | margin | Q141K−WT proxy | ChEMBL activity | DrugBank relationship | tier |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | vorinostat | HDAC inhibitor | -6.19 | -5.64 | 0.55 | 0.23 | no | no | uncertain |
 
-| rank | molecule | drug_class | fold@Q141K | transport | margin | known ABCG2? |
+## Base-run fold-site scores (descriptive, not a robust ranking)
+
+The table records the strongest scores in the original box. It is not a fallback shortlist: the sensitivity artifact shows material rank changes under box, seed, and protonation perturbations, and Axis 2 remains an exclusion layer rather than evidence of chaperone activity.
+
+| rank | molecule | class | fold@Q141K | Walker A | margin | excluded by Axis 2? |
 |---|---|---|---|---|---|---|
 | 1 | avacopan | C5aR1 antagonist | -7.82 | -7.54 | 0.28 | no |
 | 2 | lumacaftor | CFTR corrector | -7.35 | -8.77 | -1.42 | no |
-| 3 | rosuvastatin | Statin | -6.80 | -6.26 | 0.54 | no |
+| 3 | rosuvastatin | Statin | -6.80 | -6.26 | 0.54 | yes |
 | 4 | ver155008 | Hsp70 inhibitor (research) | -6.46 | -7.60 | -1.14 | no |
 | 5 | spiperone | Antipsychotic / receptor probe | -6.45 | -7.64 | -1.19 | no |
 | 6 | mcc950 | NLRP3 inhibitor (research) | -6.38 | -7.32 | -0.94 | no |
@@ -32,19 +33,28 @@ Top fold@Q141K binders regardless of transport margin. Use with Axis 2: a strong
 | 9 | glycerol_phenylbutyrate | Ammonia scavenger / chaperone | -6.20 | -5.94 | 0.26 | no |
 | 10 | vorinostat | HDAC inhibitor | -6.19 | -5.64 | 0.55 | no |
 | 11 | tariquidar | P-gp/ABCG2 inhibitor | -6.16 | -7.75 | -1.59 | yes |
-| 12 | sorafenib | Multikinase TKI | -6.11 | -7.14 | -1.03 | no |
-| 13 | ezetimibe | Cholesterol absorption inh | -6.06 | -6.23 | -0.17 | no |
+| 12 | sorafenib | Multikinase TKI | -6.11 | -7.14 | -1.03 | yes |
+| 13 | ezetimibe | Cholesterol absorption inh | -6.06 | -6.23 | -0.17 | yes |
 | 14 | lisinopril | ACE inhibitor | -6.06 | -6.69 | -0.63 | no |
-| 15 | gefitinib | EGFR TKI / ABCG2 substrate | -5.95 | -7.18 | -1.23 | no |
+| 15 | gefitinib | EGFR TKI / ABCG2 substrate | -5.95 | -7.18 | -1.23 | yes |
 
-**Transport-box distribution diagnostic:** transport affinities span -8.77..-3.51 (median -6.09); fold@Q141K span -7.82..-1.85 (median -4.86). If the transport (Walker A, apo-monomer) box binds most molecules as strongly as the fold box, the margin filter is over-permissive and the verdict should lean on fold-site absolute affinity + Axis 2, not margin. See interpretation in controls.md.
+**Walker-A comparison diagnostic:** scores span -8.77..-3.51 (median -6.09); modeled fold-site scores span -7.82..-1.85 (median -4.86). The substantial overlap makes the margin rule non-discriminating in this configuration; it does not establish a selective fold-site interaction.
 
-Margin = transport − fold@Q141K (>0 = prefers fold site over ATP site). 
-Q141K−WT sel. = fold@WT − fold@Q141K (>0 = binds mutant better than WT — weak chaperone-selectivity proxy). 
-See `controls.md` for the validity check and `../README.md` for limitations.
+**Sensitivity diagnostic:** among the recorded non-base perturbations, 2–7 of the eight tracked candidate positions changed. The base-run fold ranking is therefore not treated as robust.
 
-## Honest limitations (see README for full list)
-- **Q141K is a static side-chain substitution**, not a folding-ΔΔG calculation. Docking to a static modeled mutant is a proxy for a fold-stabilizing interaction, not evidence of folding rescue.
-- **Misfolded-state selectivity not modeled** — a true chaperone preferentially stabilizes the mutant folding intermediate; the WT/Q141K docking delta is a weak surrogate.
-- **Apo monomer** — the physiological ATP-bound NBD dimer is not represented; the transport box is the Walker A P-loop only and tests ATP-competitive binding, NOT the TMD drug/urate cavity where most clinical ABCG2 inhibitors act. Axis 2 (ChEMBL) is the real inhibitor filter.
-- **Vina scores are noisy** (~±1 kcal/mol); use ranks, not absolute affinities. See sensitivity.json.
+## Interpretation boundary
+
+- Rosuvastatin is removed from the executable shortlist because it is independently identified as a BCRP substrate and is also present in the UniProt/DrugBank ABCG2 relationship set.
+- Vorinostat is the sole marginal executable row. Its direct Q141K rescue precedent is phenotypic and independent of this docking result; it does not validate the modeled pocket or make the docking row a wet-lab priority.
+- Failure to recover the CFTR comparators is a setup-specific diagnostic, not evidence that ABCG2 cannot be pharmacologically rescued.
+- The decisive next observation is the registered Q141K surface-trafficking + urate-flux + ABCG2-inhibition counterscreen in validation experiment §1.22, not another pass through the same docking configuration.
+
+## Load-bearing limitations
+
+- Q141K is a static side-chain substitution, not a folding-ΔΔG model.
+- A folding intermediate and mutant-selective stabilization are not modeled.
+- The receptor is an apo monomer; the Walker-A box is not the physiological composite ATP site or the transmembrane substrate cavity.
+- Vina scores and close margins are not binding-affinity measurements.
+- Exposure at the intracellular folding compartment is not modeled.
+
+See `controls.md`, `sensitivity.json`, `receptor_verification.json`, and the README.

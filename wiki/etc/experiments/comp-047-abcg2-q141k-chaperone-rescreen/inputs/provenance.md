@@ -1,81 +1,106 @@
-# Provenance — comp-047 inputs
+# Provenance — comp-047
 
-comp-047 re-screens the same biological question as comp-032 but replaces the
-descriptor/class-prior heuristic with **real AutoDock Vina docking + empirical
-ChEMBL grounding**. Structural inputs are inherited unchanged from comp-032;
-the drug library is reused for *identity/descriptors only* — SMILES were newly
-resolved because comp-032's library contains none.
+## Structural inputs inherited from comp-032
 
-## Inherited from comp-032 (unchanged)
+### `alphafold_Q9UNQ0_model_v6.pdb`
 
-### alphafold_Q9UNQ0_model_v6.pdb — WT ABCG2 AlphaFold model
-- Source: AlphaFold Protein Structure Database (EMBL-EBI),
-  https://alphafold.ebi.ac.uk/files/AF-Q9UNQ0-F1-model_v6.pdb (fetched 2026-05-16, via comp-032)
-- Model: AF-Q9UNQ0-F1 v6, monomer, full 655 aa. Q141 CA pLDDT 97.06.
-- **Caveat (load-bearing):** this is an **apo monomer**. ABCG2 functions as a
-  homodimer and the physiological composite ATP site forms across the NBD-NBD
-  interface upon dimerization. In this monomer the Walker A motif (80-87) and
-  the second ATP-binding loop (184-190) are ~35 A apart — the composite
-  nucleotide site is NOT formed. The transport-site grid box is therefore
-  centered on the Walker A P-loop alone (see below).
+- Source: AlphaFold Protein Structure Database,
+  `https://alphafold.ebi.ac.uk/files/AF-Q9UNQ0-F1-model_v6.pdb`, fetched
+  2026-05-16.
+- Model: AF-Q9UNQ0-F1 v6, full-length 655-residue ABCG2 monomer.
+- Q141 CA pLDDT in the committed confidence artifact: 97.06.
+- Boundary: this is an apo monomer. It does not represent the physiological
+  ATP-bound NBD dimer or a Q141K folding intermediate.
 
-### Q9UNQ0.fasta / alphafold_Q9UNQ0_confidence_v6.json
-- UniProt sp|Q9UNQ0|ABCG2_HUMAN (655 aa) and AlphaFold per-residue pLDDT.
-- Q141K variant rs2231142 (c.421C>A, p.Gln141Lys): "associated with high serum
-  urate and increased gout risk; lower urate transport; decreased protein
-  abundance" (UniProt VARIANT). Position 141 is in the NBD.
+### `Q9UNQ0.fasta` and `alphafold_Q9UNQ0_confidence_v6.json`
 
-### fda_approved_drug_library.json — 134-molecule identity/descriptor set
-- Hand-curated (comp-032, 2026-05-16). **Used here only for molecule identity,
-  drug_class, and control role tagging.** comp-047 does NOT use comp-032's
-  physicochemical descriptors or `class_prior` field for scoring — those were
-  the source of comp-032's invalid class-prior verdict.
+- UniProt Q9UNQ0, ABCG2_HUMAN, 655 residues.
+- UniProt identifies rs2231142 as p.Gln141Lys and places residue 141 in the
+  nucleotide-binding domain.
 
-## New in comp-047
+### `fda_approved_drug_library.json`
 
-### work/ligands/smiles_resolved.json — SMILES (newly resolved)
-- comp-032's library has **zero SMILES**. Each of the 134 names + 1 appended
-  negative control (novobiocin) was resolved to an isomeric SMILES via
-  **PubChem PUG-REST** (`/compound/name/<name>/property/IsomericSMILES/JSON`),
-  fetched 2026-07-14. 135/135 resolved; all RDKit-parseable. CIDs recorded.
-- A small alias table handles non-standard names (e.g. `geldanamycin_17_aag`
-  -> tanespimycin; `ko143` -> "Ko143"; `egcg` -> epigallocatechin gallate). See
-  `resolve_smiles.py`.
-- Control role tags (`role_tag`):
-  - `cftr_corrector` (n=4): ivacaftor, tezacaftor, elexacaftor, lumacaftor —
-    POSITIVE controls. Must EARN rank from docking, no prior.
-  - `abcg2_inhibitor` (n=13): ko143, fumitremorgin_c, tariquidar, elacridar,
-    ketoconazole, itraconazole, cyclosporine_a, novobiocin, and the ABCG2
-    substrates mitoxantrone, topotecan, etoposide, sulfasalazine, methotrexate —
-    NEGATIVE controls. Must NOT rank as top chaperone candidates.
+- Hand-curated for comp-032 and retained as the identity, class-label, and
+  control-role set.
+- The comp-032 descriptors and `class_prior` are not used in COMP-047 scoring.
 
-### work/receptor/ — prepared receptors + grid boxes
-- `abcg2_wt_clean.pdb` / `abcg2_q141k_clean.pdb`: chain A, standard residues,
-  hydrogens/altlocs stripped (Biopython). Q141K built by **static side-chain
-  substitution** (see `prep_receptor.py` header + README limitations).
-- `abcg2_wt.pdbqt` / `abcg2_q141k.pdbqt`: rigid receptor PDBQT via **Open Babel
-  3.1.1** (`-xr -p 7.4`; AutoDock atom types C/A/N/NA/OA/HD/S). Meeko's
-  polymer/template receptor path failed on this AlphaFold model
-  (H-reconciliation error); Open Babel is the robust fallback and is a standard
-  Vina receptor-prep route. (Ligands use RDKit+Meeko; see README.)
-- `boxes.json`: two 22 A cubic grid boxes —
-  - `fold_site` center [1.09, 12.03, 10.33] (residue-141 side chain + contact
-    shell 137-145) — candidate fold-stabilizing NBD site.
-  - `transport_site` center [-21.76, -11.11, 12.75] (Walker A P-loop 80-87) —
-    ATP/nucleotide site; docking here flags an ATP-competitive inhibitor.
-  - Center separation 32.6 A (well-separated → fold-vs-transport contrast is
-    meaningful).
+## Frozen derived inputs
 
-### ChEMBL (Axis 2, live via bio-research MCP)
-- Target ABCG2/BCRP = **CHEMBL5393** (single protein, UniProt Q9UNQ0),
-  resolved 2026-07-14. 1307 human ABCG2 bioactivity records available; used to
-  empirically confirm/refute known ABCG2 activity for candidates + controls
-  (`chembl_axis2.json`).
+### `work/ligands/smiles_resolved.json`
 
-## Toolchain
-- Python 3.13 venv: RDKit 2026.03.3, Meeko, Open Babel 3.1.1 (openbabel-wheel),
-  scipy, gemmi, biopython.
-- AutoDock Vina 1.2.5 (x86_64 via Rosetta 2).
-- Determinism: Vina `--seed 20260714 --cpu 4 --exhaustiveness 8`; RDKit ETKDGv3
-  `randomSeed=42`. Exact scores depend on (seed, cpu, exhaustiveness) — all
-  pinned in the repro command (README).
+- 134 library names plus novobiocin were resolved through PubChem PUG-REST on
+  2026-07-14; 135/135 entries contain a SMILES and PubChem CID.
+- The file is frozen for this correction. Re-querying PubChem would create a
+  new input snapshot and require a new pre-run gate.
+
+### `work/receptor/`
+
+- `prep_receptor.py` cleaned the AlphaFold structure and created the static
+  GLN141→LYS141 side-chain substitution.
+- Open Babel 3.1.1 produced the rigid receptor PDBQT files with `-xr -p 7.4`.
+- `verify_receptors.py` independently checks the exact committed hashes,
+  atom/residue counts, residue-141 identities, clean-structure difference
+  scope, and grid geometry against `inputs/receptor_expected.json`.
+- Declared warning: Open Babel renamed terminal SER655 to `UNK` in both PDBQT
+  files. No other nonstandard PDBQT residue name is accepted by the verifier.
+
+### Original docking and sensitivity artifacts
+
+- `outputs/results.json`: original Vina result, seed 20260714, exhaustiveness 8,
+  CPU 4; 135 attempted molecules and 134 complete score rows.
+- `outputs/sensitivity.json`: recorded fold-site perturbations for box centers,
+  box sizes, Vina seeds, and ligand protonation.
+- This correction consumes both as frozen result-bearing artifacts. It does not
+  re-dock.
+
+## Axis 2 exclusion evidence
+
+### ChEMBL
+
+- Target: CHEMBL5393, ABCG2/BCRP, UniProt Q9UNQ0.
+- `outputs/chembl_axis2.json` is a bounded per-molecule inhibition/bioactivity
+  check, not a full-library transport-substrate catalog.
+- An absent ChEMBL activity record is not evidence that a molecule lacks an
+  ABCG2 substrate relationship.
+
+### UniProt/DrugBank relationship set
+
+- `outputs/drugbank_substrate_axis.json` records DrugBank identifiers exposed
+  as ABCG2 cross-references by the UniProt Q9UNQ0 flat file.
+- The source establishes an ABCG2 relationship/interactor flag. It does not
+  prove that all 286 cross-referenced drugs are substrates, and the executable
+  merge does not relabel them as such.
+- The relationship flag is used as conservative exclusion evidence because the
+  screen's stated requirement is no known ABCG2 interaction that could confound
+  urate transport.
+
+### Rosuvastatin
+
+- The current FDA CRESTOR label states that rosuvastatin is a substrate of BCRP
+  and OATP1B1:
+  `https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/021366s047lbl.pdf`.
+- That primary label supports the independent substrate exclusion. The
+  UniProt/DrugBank relationship flag is corroborating relationship evidence,
+  not the sole substrate proof.
+
+### Vorinostat
+
+- Basseville et al. reported increased Q141K ABCG2 expression, improved
+  cell-surface trafficking, and improved substrate efflux after vorinostat,
+  romidepsin, or panobinostat treatment (**In Vitro**; PMID 22472121,
+  PMCID PMC4163836).
+- This is phenotypic rescue evidence. It does not establish direct binding to
+  the modeled residue-141 pocket and is not used to validate the docking rank.
+
+## Historical toolchain record
+
+- Python 3.13
+- RDKit 2026.03.3
+- Open Babel 3.1.1
+- AutoDock Vina 1.2.5
+- Meeko, Biopython, NumPy, SciPy, and Gemmi were present, but exact committed
+  versions are not available for all packages.
+
+This is provenance for the historical run, not a claim that an exact current
+environment exists. Any new docking run must pin a rebuilt environment and pass
+a new lifecycle gate.

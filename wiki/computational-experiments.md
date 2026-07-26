@@ -237,15 +237,15 @@ At central pore parameters, the equilibration time constant is 2.17 seconds. At 
 
 ### comp-047 — ABCG2 Q141K Pharmacological-Chaperone Re-screen (real docking) — INCONCLUSIVE (2026-07-14)
 
-**Question:** Same as comp-032 — is there an FDA-approved molecule that binds a fold-stabilizing NBD site on Q141K ABCG2 (not the ATP pocket), not a known ABCG2 inhibitor, worth a wet-lab trafficking assay? Re-asked with **real AutoDock Vina docking** instead of comp-032's descriptor heuristic.
+**Question:** Does this static-receptor Vina configuration support a reproducible Q141K ABCG2 chaperone ranking after conservative known-ABCG2 exclusions?
 
-**Verdict:** **INCONCLUSIVE (honest null).** Of 134 docked molecules: 0 high-confidence candidates, 2 marginal "uncertain" (rosuvastatin, vorinostat). The decisive result is in the controls: the **4 CFTR-corrector positive controls failed to earn rank** (0/4 reached candidate tier, no class prior), while all 13 known ABCG2 inhibitors were correctly rejected (0 false positives). Because the positive controls don't separate from the field, the screen has no demonstrated power to find real chaperones.
+**Verdict:** **INCONCLUSIVE — no defensible docking-backed ranking.** The corrected executable merge reports **0 `yes` and 1 `uncertain` row, vorinostat**. Rosuvastatin is excluded because the FDA label identifies it as a BCRP substrate and the UniProt/DrugBank ABCG2 relationship set also flags it. Vorinostat's independent **In Vitro** Q141K-rescue precedent (Basseville 2012, PMID 22472121) does not validate the modeled pocket or make its docking row a wet-lab priority.
 
 **Key findings:**
-- **Empirically confirms the comp-032 audit.** Removing comp-032's class prior and making the same CFTR-corrector controls earn rank from docking → they fail (ivacaftor rank 91/134; lumacaftor is the #2 fold binder but binds the ATP pocket harder, margin −1.42). comp-032's "chaperone signal" was the prior.
-- **Two failure reasons:** (1) the fold-vs-transport margin is confounded — the ATP/Walker-A pocket is a strong generic binder (median transport −6.09 vs fold −4.86 kcal/mol), so "prefers fold site" selects against almost everything; boxes are disjoint (32.6 Å apart), not an overlap artifact. (2) Rigid-receptor docking can't model the chaperone mechanism (folding-intermediate stabilization / ΔTm).
-- **Two honest residual gaps:** sensitivity analysis did not run (no sensitivity.json); Axis 2 (ChEMBL) populated for only 3/135 molecules — known-inhibitor disqualification otherwise rests on curated role-tags. Neither changes the null (which rests on Axis 1 controls failing).
-- **Next step is not another docking pass** — it's folding-ΔΔG modeling (MD / Rosetta) or a wet-lab Q141K trafficking + urate-flux + ABCG2-inhibition counterscreen.
+- The four CFTR correctors are cross-protein mechanism comparators, not validated ABCG2 chaperone positives. Their failure to earn a tier is a setup diagnostic, not evidence that ABCG2 cannot be rescued.
+- The sensitivity run changed 2–7 of eight tracked positions across recorded perturbations. The base ordering is not robust for this setup; no absence-of-pocket conclusion follows.
+- The exact receptor snapshot passes hash, residue-141, mutation-scope, and geometry checks with one declared symmetric PDBQT warning (`SER655`→`UNK`).
+- The decisive next observation is [validation §1.22](./validation-experiments.md#122-gut-compartment-hdac-directed-candidate-screen-for-q141k-abcg2-trafficking-rescue), not another pass through the same static docking configuration.
 
 **Detail:** [interpretive](./abcg2-q141k-chaperone-rescreen-computational.md) · [experiments/](./etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/) · supersedes comp-032
 
@@ -253,7 +253,7 @@ At central pore parameters, the equilibration time constant is 2.17 seconds. At 
 
 ### comp-032 — ABCG2 Q141K Pharmacological-Chaperone Virtual Screen — ~~GREEN~~ SUPERSEDED (2026-05-16; superseded by comp-047 2026-07-14)
 
-> **⚠️ Verdict RETRACTED.** The GREEN below is a descriptor/class-prior heuristic whose positive-control validation was tautological (comp-review 2026-07-13). [comp-047](./abcg2-q141k-chaperone-rescreen-computational.md) re-ran it with real docking → INCONCLUSIVE (positive controls failed to earn rank). Retained as frozen record; do not cite as support.
+> **⚠️ Verdict RETRACTED.** The GREEN below is a descriptor/class-prior heuristic whose separation of the CFTR cross-protein comparators was tautological. [comp-047](./abcg2-q141k-chaperone-rescreen-computational.md) replaced the class-prior ranking with a static docking test → INCONCLUSIVE. Retained as a frozen record; do not cite it as binding or rescue support.
 
 **Question:** Is there an FDA-approved small molecule that binds ABCG2 Q141K's nucleotide-binding domain (NBD) and could rescue trafficking, or does the FDA-approved drug surface lack chaperone-active hits — requiring novel chemistry?
 
@@ -670,8 +670,8 @@ verdict, evidence-cell comparison, or H-AN-02 adjudication survives.
 | ~~comp-030~~ | Invalidated, non-runnable cassette-ranking model. Direct secretion and GlaA-KEX2 remain unranked configurations for a matched experiment. See Analyses above | — | Retired |
 | ~~comp-029~~ | Invalidated, non-runnable toy scenario. The matched singleton/combination conjecture is grounded in independent single-arm evidence, not in the retired arithmetic. See Analyses above | — | Retired |
 | ~~comp-031~~ | **Not decision-usable** — its flat-UOX, PDB-derived-butyrate, and compartment assumptions do not support the reported quantitative result or topology recommendation. See [dual-chassis page](./dual-chassis-ecn-pdb-uricase-computational.md), comp-044/046, and §1.34/§1.37. | — | ✓ Done |
-| ~~comp-032~~ | Completed 2026-05-16 — ~~GREEN~~ **SUPERSEDED by comp-047 2026-07-14**; verdict retracted (tautological positive-control validation per comp-review 2026-07-13). See Analyses above | — | ✓ Done (superseded) |
-| ~~comp-047~~ | **Completed 2026-07-14 — INCONCLUSIVE** (real Vina docking). CFTR-corrector positive controls fail to earn rank (0/4); rigid docking can't discriminate Q141K chaperones; chaperone-rescue ranking not computationally established. Supersedes comp-032. See Analyses above | [Q141K trafficking + urate-flux assay](./validation-experiments.md) | ✓ Done |
+| ~~comp-032~~ | Completed 2026-05-16 — ~~GREEN~~ **SUPERSEDED by comp-047**; verdict retracted because its CFTR-comparator separation was encoded by the class prior. See Analyses above | — | ✓ Done (superseded) |
+| ~~comp-047~~ | **INCONCLUSIVE.** Corrected executable result: rosuvastatin excluded; vorinostat is one marginal row, not a docking-backed priority. The CFTR rows are cross-protein comparators, and recorded rank instability invalidates this static ordering without establishing that no rescue site exists. | [Q141K trafficking + urate-flux assay §1.22](./validation-experiments.md#122-gut-compartment-hdac-directed-candidate-screen-for-q141k-abcg2-trafficking-rescue) | ✓ Done |
 | ~~comp-033~~ | Completed 2026-05-16 — RED single-dose Cmax-equivalent; reframed in comp-036 (YELLOW receptor-occupancy). See Analyses above | — | ✓ Done |
 | ~~comp-036~~ | Completed 2026-05-16 — YELLOW repeat-dose receptor-occupancy framing; salvages comp-033 RED. See Analyses above | — | ✓ Done |
 | ~~comp-037~~ | Invalidated, non-runnable proxy — exact-configuration folding, stability, kinetics, glycosylation effects, and function remain open. See Analyses above | — | Retired |

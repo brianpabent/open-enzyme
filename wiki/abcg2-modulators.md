@@ -213,7 +213,11 @@ Sample size must be calculated from pilot data because no Q141K-conditional effe
 
 Pharmacologic HDAC-inhibitor rescue is one demonstrated in-vitro strategy for Q141K; butyrate is only a candidate within that strategy. A distinct hypothesis is a **pharmacological chaperone** that binds and stabilizes the misfolded protein. CFTR correctors provide class precedent, but no validated ABCG2 Q141K candidate exists.
 
-This route is mechanistically distinct from PPARγ-mediated induction and HDAC-directed rescue, but neither [comp-032](./abcg2-q141k-chaperone-screen-computational.md) nor its [comp-047 rescreen](./abcg2-q141k-chaperone-rescreen-computational.md) validated a candidate. Rigid-receptor docking cannot test stabilization of a folding intermediate. Candidate compounds therefore remain class priors until a Q141K trafficking assay measures surface abundance and basolateral-to-apical urate flux with an ABCG2-inhibition counterscreen. See [`chassis-pending-interventions.md`](./chassis-pending-interventions.md).
+Neither [comp-032](./abcg2-q141k-chaperone-screen-computational.md) nor its [comp-047 rescreen](./abcg2-q141k-chaperone-rescreen-computational.md) supplies a validated direct-chaperone candidate. COMP-047 excludes rosuvastatin and leaves vorinostat as one marginal executable row, not a docking-backed priority; its static ordering is unstable under the recorded perturbations. The CFTR correctors are cross-protein mechanism comparators, not validated ABCG2 positives.
+
+Vorinostat is still experimentally important because Basseville et al. reported Q141K expression, surface-trafficking, and substrate-efflux rescue (**In Vitro**; PMID 22472121). That phenotypic result is independent of COMP-047 and does not establish direct binding or a pharmacological-chaperone mechanism. The superseded comp-032 compounds remain an unranked hypothesis inventory.
+
+[Validation §1.22](./validation-experiments.md#122-gut-compartment-hdac-directed-candidate-screen-for-q141k-abcg2-trafficking-rescue) owns the direct resolver: reproduce the Basseville control pattern, then measure Q141K surface abundance, basolateral-to-apical urate flux, direct ABCG2 inhibition, intracellular exposure, viability, and barrier integrity. See [`chassis-pending-interventions.md`](./chassis-pending-interventions.md).
 
 ---
 

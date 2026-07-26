@@ -15,17 +15,15 @@ is not (design requirement).
 
 Usage: sensitivity.py            # uses outputs/results.json, top 8 + controls
 """
-import json, subprocess, time
+import json, os, shutil, subprocess, time
 from pathlib import Path
 from statistics import pstdev, mean
 
-HERE = Path("wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen")
-VBIN = Path("/private/tmp/claude-501/-Users-brianabent-Documents-Claude-Projects-abent-Open-Enzyme/f6201cb6-d810-4925-b759-1443e5b758de/scratchpad/docking-smoketest/.venv/bin")
-VINA = "/private/tmp/claude-501/-Users-brianabent-Documents-Claude-Projects-abent-Open-Enzyme/f6201cb6-d810-4925-b759-1443e5b758de/scratchpad/docking-smoketest/vina"
-OBABEL = str(VBIN / "obabel")
+HERE = Path(__file__).resolve().parent
+VINA = os.environ.get("OE_VINA_BIN") or shutil.which("vina")
+OBABEL = os.environ.get("OE_OBABEL_BIN") or shutil.which("obabel")
 REC_Q141K = HERE / "work/receptor/abcg2_q141k.pdbqt"
 SDIR = HERE / "work/sensitivity"
-SDIR.mkdir(exist_ok=True)
 
 from rdkit import Chem
 from rdkit.Chem import AllChem
@@ -35,6 +33,16 @@ from meeko import MoleculePreparation, PDBQTWriterLegacy
 
 EXH = 8
 CPU = 4
+
+
+def require_toolchain():
+    missing = []
+    if not VINA or not Path(VINA).is_file():
+        missing.append("AutoDock Vina (`OE_VINA_BIN` or `vina` on PATH)")
+    if not OBABEL or not Path(OBABEL).is_file():
+        missing.append("Open Babel (`OE_OBABEL_BIN` or `obabel` on PATH)")
+    if missing:
+        raise SystemExit("missing required executable(s): " + "; ".join(missing))
 
 
 def prep_variant(name, smiles, protonate):
@@ -89,6 +97,9 @@ def dock(ligand, center, size, seed, tag):
 
 
 def main():
+    require_toolchain()
+    SDIR.mkdir(parents=True, exist_ok=True)
+    (HERE / "outputs").mkdir(parents=True, exist_ok=True)
     res = json.load(open(HERE / "outputs/results.json"))
     boxes = json.load(open(HERE / "work/receptor/boxes.json"))
     smi = json.load(open(HERE / "work/ligands/smiles_resolved.json"))

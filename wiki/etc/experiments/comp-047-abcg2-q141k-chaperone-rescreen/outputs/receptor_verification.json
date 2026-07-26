@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "status": "PASS_WITH_DECLARED_WARNING",
+  "checks": [
+    {
+      "path": "work/receptor/abcg2_wt_clean.pdb",
+      "sha256": "096b8a625b0c65be12fe63ce1673ccb253c90723a1e15fb9fb10b8fc3b121550",
+      "status": "PASS",
+      "atom_count": 5087,
+      "residue_count": 655
+    },
+    {
+      "path": "work/receptor/abcg2_q141k_clean.pdb",
+      "sha256": "990357ff094bd62df696d0e28d0cd339b78729a9ed041b6710fdc8544cddda2a",
+      "status": "PASS",
+      "atom_count": 5087,
+      "residue_count": 655
+    },
+    {
+      "path": "work/receptor/abcg2_wt.pdbqt",
+      "sha256": "4bb42d9a60111e126891ef533e69021d3281aed1e206226ac5c8ed6da519f038",
+      "status": "PASS",
+      "atom_count": 6190,
+      "residue_count": 655
+    },
+    {
+      "path": "work/receptor/abcg2_q141k.pdbqt",
+      "sha256": "85addabbb1366fbc075ff7271cdcc0020fb80f500852f1dacce77160abf675f7",
+      "status": "PASS",
+      "atom_count": 6190,
+      "residue_count": 655
+    },
+    {
+      "path": "work/receptor/boxes.json",
+      "sha256": "7f57f9dc6c36d2d4b77c19dbbd08712b1f48ca17e7b27fabf85f7141f91e8d5f",
+      "status": "PASS"
+    }
+  ],
+  "residue_141": {
+    "clean_wt": {
+      "resname": "GLN",
+      "atoms": [
+        "C",
+        "CA",
+        "CB",
+        "CD",
+        "CG",
+        "N",
+        "NE2",
+        "O",
+        "OE1"
+      ]
+    },
+    "clean_q141k": {
+      "resname": "LYS",
+      "atoms": [
+        "C",
+        "CA",
+        "CB",
+        "CD",
+        "CE",
+        "CG",
+        "N",
+        "NZ",
+        "O"
+      ]
+    },
+    "pdbqt_wt": {
+      "resname": "GLN",
+      "atoms": [
+        "C",
+        "CA",
+        "CB",
+        "CD",
+        "CG",
+        "H",
+        "H",
+        "H",
+        "N",
+        "NE2",
+        "O",
+        "OE1"
+      ]
+    },
+    "pdbqt_q141k": {
+      "resname": "LYS",
+      "atoms": [
+        "C",
+        "CA",
+        "CB",
+        "CD",
+        "CE",
+        "CG",
+        "H",
+        "H",
+        "H",
+        "N",
+        "NZ",
+        "O"
+      ]
+    }
+  },
+  "clean_structure_difference_scope": "all non-residue-141 ATOM records are byte-identical",
+  "pdbqt_nonstandard_residues": {
+    "pdbqt_wt": [
+      "A:655:UNK"
+    ],
+    "pdbqt_q141k": [
+      "A:655:UNK"
+    ]
+  },
+  "declared_warning": "Open Babel renamed terminal SER655 to UNK symmetrically in WT and Q141K PDBQT files.",
+  "boxes": {
+    "fold_site_center": [
+      1.089,
+      12.029,
+      10.327
+    ],
+    "transport_site_center": [
+      -21.76,
+      -11.112,
+      12.754
+    ],
+    "fold_size": [
+      22.0,
+      22.0,
+      22.0
+    ],
+    "transport_size": [
+      22.0,
+      22.0,
+      22.0
+    ],
+    "center_separation_A": 32.61
+  }
+}

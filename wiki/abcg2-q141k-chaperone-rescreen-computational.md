@@ -1,11 +1,10 @@
 ---
-title: "ABCG2 Q141K Pharmacological-Chaperone Re-screen (real docking) — Computational Analysis (comp-047)"
+title: "ABCG2 Q141K Pharmacological-Chaperone Re-screen — Computational Analysis (comp-047)"
 date: 2026-07-14
 tags:
   - abcg2
   - q141k
   - pharmacological-chaperone
-  - cftr-corrector
   - autodock-vina
   - docking
   - drug-repurposing
@@ -15,74 +14,128 @@ related:
   - abcg2-q141k-chaperone-screen-computational.md
   - abcg2-modulators.md
   - chassis-pending-interventions.md
-  - gout-genetic-variants.md
   - validation-experiments.md
   - computational-experiments.md
 sources:
-  - "UniProt Q9UNQ0 (ABCG2_HUMAN) — NBD aa 37-286; Walker A P-loop; Q141K rs2231142 (high serum UA, gout, decreased protein abundance)"
-  - "AlphaFold AF-Q9UNQ0-F1-model_v6 (EMBL-EBI): WT ABCG2 monomer; comp-032's receptor, reused"
-  - "AutoDock Vina 1.2.5 (Eberhardt et al. 2021, J Chem Inf Model) — docking engine"
-  - "ChEMBL target CHEMBL5393 (ABCG2/BCRP), 1307 human bioactivity records — Axis 2 empirical grounding (partial; see limitations)"
-  - "comp-032 independent push review, 2026-07-13 — the review this experiment answers"
+  - "UniProt Q9UNQ0 (ABCG2_HUMAN)"
+  - "AlphaFold AF-Q9UNQ0-F1-model_v6"
+  - "AutoDock Vina 1.2.5"
+  - "ChEMBL CHEMBL5393 (ABCG2/BCRP)"
+  - "FDA CRESTOR label 2026 — rosuvastatin is a BCRP substrate"
+  - "Basseville et al. 2012, PMID 22472121 — Q141K rescue by selected HDAC inhibitors"
 ---
 
-# ABCG2 Q141K Pharmacological-Chaperone Re-screen — real docking (comp-047)
+# ABCG2 Q141K pharmacological-chaperone re-screen (comp-047)
 
-**Question.** Does the FDA-approved drug surface contain a small molecule that binds a *fold-stabilizing* site on Q141K ABCG2's nucleotide-binding domain (NBD) — not the transport/ATP pocket — and is not already a known ABCG2 inhibitor/substrate, worth a wet-lab Q141K trafficking-rescue assay? This is the same question [comp-032](./abcg2-q141k-chaperone-screen-computational.md) asked with a descriptor heuristic; comp-047 re-asks it with **real AutoDock Vina docking**.
+## Question
 
-## Verdict: INCONCLUSIVE (honest null)
+Can this static-receptor docking configuration rank an FDA-approved molecule for
+Q141K ABCG2 trafficking rescue after known ABCG2 relationships are excluded?
 
-> **The screen does not identify a credible pharmacological-chaperone candidate, and — more importantly — it cannot, as designed, discriminate one.** Of 134 docked molecules: **0 high-confidence candidates, 2 marginal "uncertain"** (rosuvastatin, vorinostat — reduced to **1** after the Axis 2 expansion disqualified rosuvastatin as a known ABCG2 substrate; see Residual gaps), 132 "no." The decisive result is in the controls: **the four CFTR-corrector positive controls failed to earn rank** (0 of 4 reached candidate tier), while all known ABCG2 inhibitors were correctly rejected (0 false positives). Because the positive controls — the closest thing to ground-truth pharmacological chaperones in the set — do not separate from the field, the screen has no demonstrated power to find real chaperones. **The chaperone-rescue candidate ranking for ABCG2 Q141K is not computationally established** (In Silico; comp-047).
+The run docked 135 molecules; 134 produced complete scores. It compared a
+modeled region around residue 141 with a Walker-A box, then applied a separate
+ABCG2 exclusion layer. The scores are computational triage signals, not binding,
+folding, trafficking, or urate-transport measurements.
 
-**This empirically confirms the comp-032 audit.** The 2026-07-13 independent review argued comp-032's "positive-control pass" was **tautological** — CFTR correctors scored high only because they were *assigned* the maximum drug-class prior (1.00), not because the heuristic detected chaperone-like binding. comp-047 removes every prior and forces the same positive controls to earn their rank from docking alone. **They don't.** That is the review's suspicion, confirmed by construction: when the class prior is gone, the chaperone signal comp-032 reported disappears.
+## Verdict: inconclusive — no defensible docking-backed ranking
 
-## Control performance — the validity check comp-032 lacked
+After both exclusion checks, the executable result contains **0 `yes` rows and
+1 `uncertain` row: vorinostat**. Rosuvastatin was the other original
+`uncertain` docking-tier row, but it is excluded because the
+[FDA CRESTOR label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/021366s047lbl.pdf)
+identifies it as a BCRP substrate and the UniProt/DrugBank relationship set also
+flags it.
 
-Positive controls carry **no prior** here; they must earn rank from Vina scores. "fold-rank" is the rank of the fold-site@Q141K affinity among all 134 molecules (1 = strongest).
+Vorinostat's margin is small and its position is not robust enough to make it a
+docking-backed wet-lab priority. It has a separate reason to appear in the
+validation assay: Basseville et al. reported increased Q141K ABCG2 expression,
+surface trafficking, and substrate efflux after vorinostat treatment
+(**In Vitro**; [PMID 22472121](https://pubmed.ncbi.nlm.nih.gov/22472121/)).
+That phenotypic precedent does not establish direct binding to the modeled site
+or validate the docking row.
 
-**Positive controls — CFTR correctors (must earn candidate tier):**
+The result invalidates the ranking configuration. It does **not** invalidate
+the Q141K rescue route or establish that no druggable rescue site exists.
 
-| Molecule | fold@Q141K (kcal/mol) | transport@WT | margin | fold-rank | tier |
-|---|---|---|---|---|---|
-| lumacaftor | −7.35 | −8.77 | −1.42 | **2/134** | no |
-| tezacaftor | −5.91 | −7.35 | −1.44 | 16/134 | no |
-| elexacaftor | −5.80 | −7.75 | −1.95 | 18/134 | no |
-| ivacaftor | −4.54 | −6.80 | −2.26 | 91/134 | no |
+## Why the ranking is not decision-usable
 
-**0 of 4 earned candidate tier.** The tell: lumacaftor is the **#2 strongest fold-site binder of 134** — yet it binds the ATP/Walker-A pocket even harder (−8.77 vs −7.35), so the "prefers-fold-over-transport" filter (margin ≥ +1.5 for a candidate) kills it. Its margin is −1.42.
+### The modeled system does not represent the rescue mechanism
 
-**Negative controls — known ABCG2 inhibitors/substrates (must NOT rank as chaperones):** all 13 (Ko143, fumitremorgin C, tariquidar, elacridar, novobiocin, azoles, methotrexate, mitoxantrone, topotecan, etoposide, sulfasalazine, + cyclosporine A which errored on a docking timeout) ranked **as "no." 0 false positives.** The screen correctly rejects inhibitors — but note this rests partly on the curated `role_tag` disqualifier, not purely on docking (see gap 2 below).
+Q141K was modeled as a static side-chain substitution in an AlphaFold apo
+monomer. A pharmacological chaperone acts on a folding-competent state or
+ensemble. This experiment does not model a folding intermediate, folding
+free-energy change, mutant-selective stabilization, the ATP-bound ABCG2 dimer,
+or intracellular exposure at the folding compartment.
 
-## Why it fails — two mechanistic reasons
+The residue-141 box is a local structural region, not an experimentally
+validated pocket. The Walker-A box is neither the physiological composite ATP
+site nor the transmembrane substrate cavity. Their score difference therefore
+does not establish a selective fold-site interaction.
 
-The null is not a bug; it is what rigid-receptor docking can and cannot see:
+### The base ordering is unstable
 
-1. **The fold-vs-transport margin is confounded.** The ATP/Walker-A pocket is a strong *generic* binder — across the library its affinities run stronger than the fold-site's (median transport −6.09 vs fold-site −4.86 kcal/mol). Only **9 of 134 molecules** have any positive margin (fold-preferring) at all, and the largest is just +0.76. The "prefers the fold site" criterion therefore selects against almost everything, including real chaperones, because almost everything prefers the deep ATP pocket. The two grid boxes are genuinely disjoint (centers 32.6 Å apart), so this is not a box-overlap artifact — the fold-site surface near residue 141 simply is not a discriminating druggable cavity in the static structure.
-2. **Docking cannot model the chaperone mechanism.** A pharmacological chaperone works by stabilizing a *folding intermediate* / raising the protein's melting temperature — a thermodynamic, dynamic property. Docking a ligand into a single static folded (or statically-mutated) conformation tests shape/chemistry complementarity to that one snapshot; it does not compute whether the ligand lowers the folding free-energy barrier or rescues trafficking. This is comp-047's own stated weakest link (README limitation 1), and it is why even a perfectly executed docking screen would not be expected to rank chaperones reliably.
+The recorded sensitivity run perturbed box position, box size, Vina seed, and
+ligand protonation. Across the non-base perturbations, **2–7 of the eight
+tracked candidate positions changed**. That makes the base-run ordering
+descriptive for this setup, not a robust shortlist. It does not prove that a
+pocket is absent.
 
-## Residual gaps — closed (2026-07-14)
+### There is no ABCG2 chaperone positive control
 
-comp-047 fixes comp-032's **primary, fatal flaw** (the tautological positive-control validation) but at import carried two of comp-032's other weaknesses. Both were closed before corpus integration finalized. Neither changed the INCONCLUSIVE verdict — which rests entirely on Axis 1 positive controls failing to separate — but closing them strengthened it and surfaced one real finding.
+The four CFTR correctors are cross-protein chaperone mechanism comparators.
+None reached the executable tier. Because they are not validated ABCG2
+fold-site binders, this is a setup diagnostic—not a sensitivity estimate for
+ABCG2 chaperones.
 
-1. **Sensitivity analysis — run (2026-07-14), and it strengthens the null on two counts.** `sensitivity.py` re-docked the top-8 fold-site binders + 4 CFTR-corrector + 4 inhibitor controls at the Q141K fold site under 10 perturbations (grid-center shifts ±2/±3 Å, box sizes 18/26 Å vs base 22, two alternate Vina seeds, neutral-vs-pH-7.4 protonation) — 160 dockings (`outputs/sensitivity.json`).
-   - **(a) The null verdict is grid-robust.** No perturbation makes the CFTR-corrector positive controls separate as candidates: **tezacaftor, elexacaftor, and ivacaftor never reach strong fold-site binding (≤ −7 kcal/mol) in any of the 10 perturbations**; lumacaftor is a strong fold binder in 9/10 but still fails on the ATP-site margin (the instrument tests fold-site affinity, not the margin — margin-flip robustness rests on the disjoint-box geometry, 32.6 Å apart). Moving the grid does not rescue the chaperone signal.
-   - **(b) The ranking is *not* grid-stable — which confirms the mechanism.** The top-8 candidate ordering reshuffles by **5–7 of 8 positions** under grid-center shifts, box-size changes, and alternate seeds (only neutral-vs-pH protonation is stable, 2 changes). A real druggable pocket gives a stable ranking; this instability is itself evidence that the fold-site region near residue 141 is **not a discriminating pocket** in the static structure — the same conclusion the disjoint-box geometry and the failed positive controls point to. So the base-run "avacopan #1" is not a robust finding, and the INCONCLUSIVE verdict is confirmed, not merely asserted.
-2. **Axis 2 — expanded, a substrate blind spot found, and closed with a proper substrate axis.** At import only 3 molecules were queried against ChEMBL ABCG2 (CHEMBL5393); querying the three surviving candidates returned **0 ChEMBL records each** — which surfaced the structural limitation: **ChEMBL logs inhibition assays (IC50/Ki), not substrate transport.** rosuvastatin — one of the two "uncertain" survivors — is the canonical ABCG2 **substrate** (Q141K raises its plasma AUC ~1.6–2×; the statin-pharmacogenomics case in the FDA label), yet returns 0 ChEMBL records because it is transported by, not an inhibitor of, ABCG2.
-   **Closed with a DrugBank substrate axis (Axis 2b).** ChEMBL is the wrong tool for the substrate question; DrugBank's curated transporter annotations are the right one, reachable free via UniProt Q9UNQ0 cross-references (**286 ABCG2-interacting drugs**). Cross-checking the full 135-molecule library flags **31 as ABCG2-interacting** — every approved-drug inhibitor/substrate control AND **rosuvastatin** (the one ChEMBL missed), while **vorinostat is NOT flagged** and survives as the sole marginal hit (margin +0.55, within Vina noise). rosuvastatin is now disqualified on curated evidence, not just domain knowledge. Recorded in [`outputs/drugbank_substrate_axis.json`](./etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/drugbank_substrate_axis.json) (ChEMBL inhibition data in [`outputs/chembl_axis2.json`](./etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/chembl_axis2.json)).
-   **Framework lesson (reusable for any transporter-chaperone screen):** the complete "known-ABCG2" disqualifier = **ChEMBL inhibitors ∪ DrugBank/UniProt substrates** — neither alone is complete (ChEMBL misses substrates like rosuvastatin; DrugBank, approved-drugs-only, misses research-tool inhibitors like Ko143 / fumitremorgin C). **Reactome** has the canonical ABCG2 urate-efflux *reaction* but only thin per-drug substrate coverage — it is pathway infrastructure, not a substrate catalog, so it is not the right tool here. For a definitive build, **UCSF-FDA TransPortal + PharmGKB** give curated per-transporter substrate/inhibitor lists with primary references. This routing rule is now the canonical tooling guidance in [`etc/chembl-cross-check.md` §"ChEMBL scope & blind spots"](./etc/chembl-cross-check.md) and a required data-source-selection step (with a web-search-and-document fallback for gaps) in the comp-experiment design skill — so future transporter screens inherit it by default rather than rediscovering the blind spot.
+The curated ABCG2 inhibitor/substrate controls remain excluded. That shows the
+declared exclusion layer functions for those controls; it does not validate the
+fold-site ranking.
 
-## What comp-047 establishes — and what it does not
+## Evidence-axis boundary
 
-**Establishes:** (a) comp-032's chaperone signal was an artifact of its class prior (positive controls fail without it); (b) rigid-receptor fold-vs-transport docking does not discriminate pharmacological chaperones for ABCG2 Q141K; (c) no FDA-approved molecule in this 134-compound library is a docking-supported chaperone candidate.
+- **Axis 1:** frozen Vina scores and the original transparent docking tier.
+- **Axis 2a:** bounded ChEMBL ABCG2 activity checks. No ChEMBL record is not
+  evidence of no transporter relationship.
+- **Axis 2b:** UniProt-exposed DrugBank ABCG2 relationship flags, used as
+  conservative exclusions. A flag is not relabeled as proof that every listed
+  molecule is a substrate.
+- **Independent substrate evidence:** the FDA label establishes rosuvastatin's
+  BCRP-substrate status.
 
-**Does not establish:** that no chaperone exists (absence of a docking signal ≠ absence of a chaperone, given the mechanism mismatch); folding rescue; Q141K-vs-WT selectivity; urate-flux effect; or any wet-lab priority.
+Axis 2 can exclude a row. It cannot promote a survivor or establish
+pharmacological rescue.
 
-## What this means for the corpus
+## Receptor-integrity result
 
-- **The pharmacological-chaperone rescue route for Q141K stays a hedged hypothesis, not a validated repurposing surface.** Neither comp-032 (descriptor heuristic) nor comp-047 (real docking) produces a defensible candidate ranking. Any downstream page presenting a comp-032 "top-10 chaperone candidates" list must downgrade it to "prior-ranked hypotheses; real docking (comp-047) came back inconclusive."
-- **No compounding-pharmacy conversation is warranted on this route** until a fundamentally different method produces candidates. comp-032's queuing of a diflunisal/lumacaftor partner call is retracted.
-- **The route is not dead — the method is.** A genuine computational answer needs folding-stability modeling (MD-based ΔΔG of folding, FoldX/Rosetta ΔΔG on the Q141K mutant, or an explicit thermal-shift surrogate), not docking. The cheapest real answer is wet-lab: a HEK293/Caco-2 Q141K trafficking-rescue screen (surface 5D3 epitope by flow cytometry) paired with basolateral→apical **urate flux** and an ABCG2-inhibition counterscreen, registered as a validation experiment ([`validation-experiments.md`](./validation-experiments.md)).
+The frozen WT and Q141K PDB/PDBQT files and grid boxes pass exact SHA-256,
+atom/residue-count, residue-141, mutation-scope, and geometry checks. The clean
+WT and Q141K structures differ only at residue 141.
 
-## Cross-references
+The verifier records one declared preparation warning: Open Babel renamed
+terminal SER655 to `UNK` in both PDBQT files. This symmetric warning does not
+repair the missing score-to-receptor provenance of the historical docking run
+and does not justify retroactive re-docking for this inconclusive result.
 
-Supersedes: [comp-032 descriptor screen](./abcg2-q141k-chaperone-screen-computational.md). Experiment folder: [`etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/`](./etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/) (verdict in [`outputs/summary.md`](./etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/summary.md), control check in [`outputs/controls.md`](./etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/controls.md)). Platform context: [`abcg2-modulators.md`](./abcg2-modulators.md), [`chassis-pending-interventions.md`](./chassis-pending-interventions.md), [`gout-genetic-variants.md`](./gout-genetic-variants.md). Registry: [`computational-experiments.md`](./computational-experiments.md).
+## Decision and next observation
+
+- Do not use the comp-032 class-prior list or COMP-047 base-score ordering to
+  choose a compound.
+- Preserve the direct-chaperone route as an unvalidated hypothesis.
+- Treat vorinostat, romidepsin, panobinostat, valproate, and tubastatin according
+  to their independent Basseville control roles—not according to COMP-047 rank.
+- Resolve the route in
+  [validation experiment §1.22](./validation-experiments.md#122-gut-compartment-hdac-directed-candidate-screen-for-q141k-abcg2-trafficking-rescue):
+  Q141K surface trafficking, ABCG2-attributed urate flux, direct inhibition,
+  intracellular exposure, viability, and barrier integrity.
+
+Another pass through the same static docking configuration is not the next
+experiment. A future folding-ensemble or ΔΔG model would be a new computational
+experiment with its own lifecycle.
+
+## Artifact
+
+[Experiment README](./etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/) ·
+[machine result](./etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/results.json) ·
+[summary](./etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/summary.md) ·
+[control read-out](./etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/controls.md) ·
+[receptor verification](./etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/outputs/receptor_verification.json)
