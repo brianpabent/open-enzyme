@@ -1,0 +1,288 @@
+{
+  "schema_version": 1,
+  "scan_id": "bempedoic-acid-oat2-2026-07-26",
+  "question": "Does the controlled bempedoic-acid urate/gout signal reveal an OAT2-dependent renal urate-secretion weakness worth testing, and what result would distinguish that mechanism from other explanations?",
+  "started_at": "2026-07-26T18:39:12Z",
+  "completed_at": "2026-07-26T19:32:19Z",
+  "canonical_updates": [
+    "wiki/gout-pathophysiology.md",
+    "wiki/nlrp3-inhibitor-screen.md",
+    "wiki/open-questions.md",
+    "wiki/theaflavins.md",
+    "wiki/validation-experiments.md"
+  ],
+  "query_attempts": [
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "drug plus urate or gout phenotype",
+      "query": "\"bempedoic acid\" AND (uric acid OR hyperuricemia OR hyperuricaemia OR gout)",
+      "status": "partial",
+      "result_count": 25,
+      "error": "The bounded snapshot retained the first 25 records; controlled trials and regulatory records were retrieved directly."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "drug plus OAT2 mechanism",
+      "query": "(\"bempedoic acid\" OR ETC-1002) AND (OAT2 OR SLC22A7 OR \"organic anion transporter 2\")",
+      "status": "success",
+      "result_count": 2,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "human flux localization",
+      "query": "\"bempedoic acid\" AND (\"fractional excretion\" OR \"urinary uric acid\" OR \"urate clearance\")",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "metabolite mechanism",
+      "query": "\"bempedoic acid\" AND (metabolite OR ESP15228 OR glucuronide) AND (urate OR OAT2)",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "renal transporter pharmacokinetics",
+      "query": "\"bempedoic acid\" AND (pharmacokinetics OR kidney OR renal) AND transporter",
+      "status": "success",
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "controlled outcome trial safety",
+      "query": "\"CLEAR Outcomes\" AND (gout OR hyperuricemia OR uric acid)",
+      "status": "success",
+      "result_count": 12,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "baseline risk and urate-lowering therapy",
+      "query": "\"bempedoic acid\" AND (baseline uric acid OR allopurinol OR urate-lowering therapy)",
+      "status": "success",
+      "result_count": 11,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "OAT2 urate physiology",
+      "query": "(OAT2 OR SLC22A7) AND (urate OR uric acid) AND (human OR kidney OR proximal tubule)",
+      "status": "success",
+      "result_count": 19,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "OAT2 human genetics",
+      "query": "SLC22A7 AND (polymorphism OR genotype) AND (bempedoic OR urate OR uric acid)",
+      "status": "success",
+      "result_count": 3,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "creatinine and OAT2 bridge",
+      "query": "\"bempedoic acid\" AND creatinine AND OAT2",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "zh/ja/ko",
+      "frame": "native pathology terms combined with drug and transporter terms",
+      "query": "bempedoic acid, OAT2, SLC22A7, or uric acid transport paired separately with 痛风, 高尿酸血症, 痹证, 湿热痹, 痛風, 高尿酸血症, 통풍, or 고요산혈증",
+      "status": "partial",
+      "result_count": null,
+      "error": "PubMed repeatedly returned the same English records regardless of the native term; these queries were not treated as regional evidence or absence evidence."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "drug plus native urate and transporter terms",
+      "query": "ベムペド酸 尿酸 OAT2",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "drug plus native urate term",
+      "query": "ベムペド酸 尿酸",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "drug plus native urate and transporter terms",
+      "query": "贝派地酸 尿酸 OAT2",
+      "status": "partial",
+      "result_count": null,
+      "error": "The server-rendered search behaved as a broad OR query; no bempedoic-specific OAT2 or urate primary study could be isolated."
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "exact drug-name search",
+      "query": "\"贝派地酸\"",
+      "status": "partial",
+      "result_count": null,
+      "error": "The static result set contained Chinese secondary reviews and formulation or synthesis records, not a primary OAT2 urate-flux study; exact database result counts were not exposed reliably."
+    },
+    {
+      "source": "WanFang",
+      "language": "zh",
+      "frame": "drug plus native urate and transporter terms",
+      "query": "贝派地酸 尿酸 OAT2",
+      "status": "failed",
+      "result_count": null,
+      "error": "The fetched page exposed only a JavaScript application shell and no static results."
+    },
+    {
+      "source": "RISS",
+      "language": "ko",
+      "frame": "drug plus native urate and transporter terms",
+      "query": "벰페도익산 요산 OAT2",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "RISS",
+      "language": "ko",
+      "frame": "exact drug-name search",
+      "query": "벰페도익산",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "FDA Drugs@FDA",
+      "language": "en",
+      "frame": "current label and original integrated review",
+      "query": "NDA 211616 NEXLETOL uric acid gout OAT2",
+      "status": "success",
+      "result_count": 2,
+      "error": null
+    },
+    {
+      "source": "EMA",
+      "language": "en",
+      "frame": "initial assessment, current product information, outcomes variation, and post-authorisation study status",
+      "query": "Nilemdo and Nustendi bempedoic acid OAT2 uric acid assessment report RR 1002-500-079",
+      "status": "success",
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "source": "J-STAGE",
+      "language": "en",
+      "frame": "direct Japanese phase-2 trial retrieval",
+      "query": "\"Efficacy and Safety of Bempedoic Acid in Japanese Patients With Hypercholesterolemia\"",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    }
+  ],
+  "source_ids_considered": [
+    "NDA:211616",
+    "NCT:02993406",
+    "EMA:Nilemdo-EPAR-2020",
+    "EMA:Nilemdo-product-information",
+    "EMA:Nustendi-EPAR-2020",
+    "EMA:RR-1002-500-079",
+    "PMID:20190416",
+    "PMID:25904762",
+    "PMID:28371506",
+    "PMID:32609313",
+    "PMID:36876740",
+    "PMID:41014810",
+    "PMID:41922723",
+    "DOI:10.1248/bpb.33.498",
+    "DOI:10.1001/jamacardio.2020.2314",
+    "DOI:10.1056/NEJMoa2215024",
+    "DOI:10.1253/circj.CJ-25-0089",
+    "DOI:10.1016/j.jacadv.2025.102207",
+    "DOI:10.1038/s43856-026-01545-2"
+  ],
+  "translation_checks": [],
+  "load_bearing_verifications": [
+    {
+      "claim": "Human OAT2-expressing HEK293 cells mediated urate uptake but not efflux; the reported Km was 1168 ± 335 µM and Vmax was 2.57 ± 0.350 nmol/min/mg protein.",
+      "primary_source": "Sato et al. 2010; PMID:20190416; DOI:10.1248/bpb.33.498",
+      "status": "verified"
+    },
+    {
+      "claim": "The initial EMA assessment reported bempedoic-acid OAT2 IC50 values of 1.24 µg/mL for urate, 88.9 µg/mL for creatinine, and 142 µg/mL for cGMP, and stated that the substrate dependence was not understood.",
+      "primary_source": "EMA Nilemdo initial public assessment report, pharmacokinetic interaction section",
+      "status": "verified"
+    },
+    {
+      "claim": "The initial EMA assessment reported a median steady-state maximal bempedoic-acid concentration of about 20 µg/mL, with some individuals reaching 70 µg/mL after 180 mg.",
+      "primary_source": "EMA Nilemdo initial public assessment report, exposure relevant for safety evaluation",
+      "status": "verified"
+    },
+    {
+      "claim": "CLEAR Outcomes randomized 13,970 participants; gout occurred in 3.1% on bempedoic acid versus 2.1% on placebo, and serum urate rose by about 0.8 mg/dL at month 3.",
+      "primary_source": "PMID:36876740 and EMA Nilemdo product information",
+      "status": "verified"
+    },
+    {
+      "claim": "The pooled phase-3 trials reported increased blood uric acid in 2.1% versus 0.5% and gout in 1.4% versus 0.4% for bempedoic acid versus placebo.",
+      "primary_source": "PMID:32609313; DOI:10.1001/jamacardio.2020.2314",
+      "status": "verified"
+    },
+    {
+      "claim": "A 12-week randomized Japanese phase-2 trial with 48 participants per arm reported serum-urate changes of +0.73 ± 0.595 mg/dL on bempedoic acid and +0.11 ± 0.496 mg/dL on placebo, with no gout events.",
+      "primary_source": "DOI:10.1253/circj.CJ-25-0089",
+      "status": "verified"
+    },
+    {
+      "claim": "The completed in-vitro transporter study RR 1002-500-079 establishes the direction or magnitude of bempedoic-acid effects on OAT2-mediated urate transport.",
+      "primary_source": "EMA Nustendi post-authorisation procedural record confirms submission and acceptance of the final report but provides no public result summary.",
+      "status": "unverified — no result inferred"
+    },
+    {
+      "claim": "Bempedoic acid raises serum urate in humans specifically by inhibiting OAT2-dependent renal urate secretion.",
+      "primary_source": "No identified human study measured bempedoic-acid exposure, fractional urate excretion, and OAT2 dependence together.",
+      "status": "unverified — retained only as a Research Conjecture with a discriminating experiment"
+    }
+  ],
+  "limitations": [
+    "The public EMA procedural record shows that RR 1002-500-079 was submitted and accepted, but no public result summary was identified.",
+    "The regulatory OAT2 substrate assays are summarized in assessment reports; the complete raw study reports were not public.",
+    "No paired human serum and urine urate study, fractional urate-excretion analysis, or bempedoic-acid-by-SLC22A7 genotype study was identified in the bounded queries.",
+    "Serum urate and creatinine changes cannot by themselves localize the phenotype to OAT2, distinguish secretion from reabsorption or production, or quantify OAT2's contribution.",
+    "The Māori and Pacific resequencing study did not identify an SLC22A7 association in its n=1,808 population, but this does not establish universal genetic absence.",
+    "Regional searches were bounded; Chinese results were dominated by secondary reviews and formulation records, J-STAGE and RISS exact searches returned no native-language primary mechanism record, and no absence claim was drawn from those results.",
+    "No non-English source supplied a load-bearing claim, so the two-model translation protocol was not triggered."
+  ],
+  "errors": [
+    "The initial sandboxed network retrieval failed on DNS; the same generated search and fetch plan succeeded through the approved network path.",
+    "WanFang returned a JavaScript application shell without inspectable static results.",
+    "CQVIP's combined-term search behaved as a broad OR query and did not expose a reliable exact result count.",
+    "Native-language PubMed terms repeatedly returned the same English records and were not used as regional evidence."
+  ],
+  "workspace": {
+    "path": "operations/bempedoic-acid-oat2-deep-dive-2026-07-26",
+    "cleaned": true
+  }
+}

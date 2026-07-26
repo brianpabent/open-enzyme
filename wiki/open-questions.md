@@ -61,6 +61,7 @@ Research Conjectures live on the page that owns their mechanism. This page may c
 - **Could selenium availability gate microbial urate disposal even when PDB genes are present?** See the DOPDH cofactor premise and paired abundance-versus-flux test in [purine-degrading bacteria](./purine-degrading-bacteria.md#research-conjecture-selenium-availability-may-gate-microbial-urate-disposal).
 - **Could a joint-retained multi-node flare intervention outperform the best single intra-articular arm?** See the route-specific premises and staged factorial in the [gout kill-chain delivery analysis](./gout-kill-chain-delivery-routes.md#research-conjecture-a-local-multi-node-flare-intervention-may-outperform-single-node-ia-blockade).
 - **Could abaloparatide's controlled urate rise be a human readout of PTH1R-driven ABCG2 surface loss?** See the controlled-trial premises, unsupported mechanism bridge, and direct trafficking/flux test in [ABCG2 modulators](./abcg2-modulators.md#research-conjecture-abaloparatide-pth1r-abcg2).
+- **Could bempedoic acid expose an OAT2-sensitive renal urate-secretion phenotype?** See the controlled human perturbation, substrate-specific in-vitro premise, and knockout/rescue test in [gout pathophysiology](./gout-pathophysiology.md#research-conjecture-bempedoic-acid-oat2-urate-secretion).
 
 ---
 

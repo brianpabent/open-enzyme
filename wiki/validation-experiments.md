@@ -71,6 +71,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 | [§1.44](#144-thymulin--msu--nlrp3-in-aged-macrophages-thy-1--age-stratified-priming-to-flare-test) | Thymulin (+Zn²⁺) × MSU × NLRP3 in **aged** macrophages (THY-1) — tests whether NF-κB priming block translates to reduced crystal-driven IL-1β; age-stratified | In Vitro | Tier 1: $5–10K; full T1+T2+T3 cascade $85–130K | Tier 1: 6–8; full cascade ~11 months | Proposed | [thymulin](./thymulin.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [peptide-gout-addendum](./peptide-gout-addendum.md) |
 | [§1.45](#145-fecal-butyrate-electrochemicalann-reproducibility-and-transfer-gate) | Fecal butyrate electrochemical/ANN reproducibility and transfer | In Vitro method | TBD | TBD | Proposed — author package and partner design required | [tier-2-butyrate-assay-audit-computational](./tier-2-butyrate-assay-audit-computational.md), [quantification-ladder](./quantification-ladder.md), [open-questions](./open-questions.md) |
 | [§1.46](#146-pth1r-agonist--abcg2-surface-trafficking-and-urate-flux) | PTH1R agonist → ABCG2 surface-trafficking and urate-flux test | In Vitro | TBD | TBD | Proposed — staged mechanism transfer | [abcg2-modulators](./abcg2-modulators.md), [open-questions](./open-questions.md) |
+| [§1.47](#147-bempedoic-acid--oat2-urate-flux-attribution-and-rescue) | Bempedoic acid → OAT2 urate-flux attribution and rescue | In Vitro + human-data reanalysis | TBD | TBD | Proposed — human probe localization | [gout pathophysiology](./gout-pathophysiology.md), [open questions](./open-questions.md) |
 | [§1.34](#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux) | Isotope-resolved precursor → UOX → PDB sequential flux — parallel first-wave architecture gate | In Vitro | TBD | TBD | Proposed | [purine-degrading-bacteria](./purine-degrading-bacteria.md), [staged-purine-sink-mass-balance-computational](./staged-purine-sink-mass-balance-computational.md) |
 | [§1.36](#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay) | Luminal urate antioxidant-loss × UOX-H₂O₂ safety — post-topology safety gate | In Vitro | TBD | TBD | Proposed | [uricase](./uricase.md), [gut-lumen-sink](./gut-lumen-sink.md) |
 | [§1.35](#135-enterocyte-nlrp3pdzk1abcg2-tissue-paradox-assay) | Enterocyte NLRP3–PDZK1–ABCG2 tissue-paradox assay | In Vitro | TBD | TBD | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [abcg2-modulators](./abcg2-modulators.md), [gut-lumen-sink](./gut-lumen-sink.md) |
@@ -1595,6 +1596,28 @@ Only after Stage 1 passes, evaluate the locked implementation in a separately so
 **Human follow-up:** If the cell mechanism passes, seek appropriately consented stored-trial samples or a prospective monitored study with paired serum urate, urine urate, and creatinine to estimate fractional urate excretion. Serum urate alone cannot localize the mechanism.
 
 **Primary anchors:** Sugimoto et al. 2017 (**In Vitro + Animal Model**; [PMID 27988213](https://pubmed.ncbi.nlm.nih.gov/27988213/)); FDA NDA 208743 and PMDA Ostabalo controlled safety analyses (**Clinical Trial**).
+
+---
+
+### 1.47 Bempedoic Acid → OAT2 Urate-Flux Attribution and Rescue
+
+**Status:** Proposed — human probe localization | **Cost:** TBD | **Weeks:** TBD | **Phase:** 1
+
+**Affected wiki:** [Gout pathophysiology](./gout-pathophysiology.md) and [open questions](./open-questions.md).
+
+**What it tests:** Whether the reproducible serum-urate rise caused by bempedoic acid is materially mediated by loss of OAT2-dependent renal urate secretion. The drug is a positive perturbation control, not a proposed gout intervention. The initial EMA assessment reported strongly substrate-dependent OAT2 inhibition—urate IC50 1.24 µg/mL, creatinine 88.9 µg/mL, and cGMP 142 µg/mL—so creatinine or cGMP cannot substitute for direct urate transport.
+
+**Stage 0 — localize the human phenotype if samples or data exist:** Reanalyse appropriately consented trial data for paired serum urate, urine urate, and creatinine; calculate fractional urate excretion; model bempedoic-acid exposure, baseline urate, kidney function, urate-lowering therapy, and gout history. Add SLC22A7 genotype only if it was collected. A serum-urate-only analysis cannot distinguish secretion, reabsorption, production, or another transporter.
+
+**Stage 1 — reproduce substrate-specific inhibition:** In a human OAT2 expression system, measure bidirectional urate flux across a concentration series covering measured unbound bempedoic-acid exposures. Test parent drug, active metabolite ESP15228, and each glucuronide separately. Run creatinine and cGMP in parallel as substrate-dependence controls, not urate surrogates. Include vehicle, OAT2-null, and rescue controls and prespecify solubility, protein binding, viability, and non-specific permeability limits.
+
+**Stage 2 — establish proximal-tubule attribution:** Repeat the advancing conditions in a qualified human proximal-tubule model with OAT2 knockout and matched rescue. Quantify apical and basolateral urate movement, intracellular urate, OAT2 surface abundance, and cell integrity. Use OAT1/OAT3 perturbations only as prespecified specificity controls.
+
+**Stage 3 — exploit only after attribution:** If OAT2 loss explains a material share of the urate-flux phenotype, screen for interventions that restore OAT2-dependent urate movement or prevent bempedoic-acid inhibition without increasing reabsorption elsewhere. Do not begin a rescue screen after a merely correlative serum-urate or expression result.
+
+**Decision rule:** Advance OAT2 as an exploitable urate-secretion node only if bempedoic acid reduces direct urate flux in an exposure-relevant, OAT2-dependent manner and knockout/rescue reproduces the direction. A substrate-specific effect confined to cGMP or creatinine rejects urate transfer. A human fractional-excretion signal without OAT2 dependence redirects to broader renal handling. A null OAT2 result kills this mechanism attribution, not the controlled human urate phenotype.
+
+**Primary anchors:** Sato et al. 2010 (**In Vitro**; [PMID 20190416](https://pubmed.ncbi.nlm.nih.gov/20190416/)); CLEAR Outcomes (**Clinical Trial**; [PMID 36876740](https://pubmed.ncbi.nlm.nih.gov/36876740/)); [Nilemdo EMA initial assessment](https://www.ema.europa.eu/en/documents/assessment-report/nilemdo-epar-public-assessment-report_en.pdf).
 
 ---
 

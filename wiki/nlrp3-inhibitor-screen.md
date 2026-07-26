@@ -482,15 +482,14 @@ This screen evaluates food-derived compounds against gout-relevant NLRP3-pathway
 - TF3 (theaflavin-3,3'-digallate) is the most potent fraction across in vitro assays
 - **Secondary CP1a coverage:** Hosokawa 2010 (PMID 20461739) — TF3 + EGCG + ECG suppress TNFSF14-induced IL-6 and downregulate HVEM receptor on target cells
 
-**Renal urate handling (unique to theaflavins, not shared with EGCG):**
-- ↓ URAT1, ↓ GLUT9 (apical and basolateral reabsorption block)
-- ↑ OAT1, ↑ OCTN1, ↑ OAT2, ↑ Oct1/2 (proximal-tubule secretion)
-- This is the **only multi-transporter renal urate handling profile** in the wider OE supplement stack besides carnosine (which faces serum carnosinase clearance ceiling)
+**Renal urate handling (preclinical expression observations):**
+- Reported ↓ URAT1 and ↓ GLUT9 expression is directionally compatible with reduced reabsorption, but transporter-specific contribution to net urate handling was not isolated.
+- Reported ↑ OAT1, ↑ OCTN1, ↑ OAT2, and ↑ Oct1/2 expression does not establish direct urate flux. In particular, the OAT2 result cannot be promoted from expression to human renal secretion without substrate-specific functional testing.
 
 **Evidence Level:**
 - **In vitro (MSU NLRP3 assembly, 2026-05-05 audit, ADDED):** Chen 2023 *Acta Pharmacol Sin* (PMID 37221235): 50–200 μM theaflavin dose-dependently inhibited NLRP3 inflammasome activation in LPS-primed macrophages stimulated with ATP, nigericin, or **MSU crystals**. (In Vitro)
 - **Animal (oral, MSU peritonitis):** Same Chen 2023 paper — oral theaflavin significantly attenuated MSU-induced mouse peritonitis (acute-gout-flare proxy model); also rescued bacterial sepsis survival via the same NLRP3-NEK7 mechanism. (Animal Model)
-- **Mechanism review:** Chen 2023 *Phytomedicine* (PMID 36990009): comprehensive anti-gout mechanism review covering URAT1/GLUT9 downregulation + OAT1/OCTN1/OAT2 upregulation + network-pharmacology prediction (ABCB1, MAPK14, TERT, STAT1, MMP2/14, BCL2 as anti-gout targets).
+- **Mechanism review:** Chen 2023 *Phytomedicine* (PMID 36990009) is a secondary synthesis of preclinical URAT1/GLUT9/OAT1/OCTN1/OAT2 expression observations and network-pharmacology predictions; it is not a direct OAT2 urate-flux study.
 
 **Production Feasibility:**
 - **S. cerevisiae / A. oryzae:** No engineered route. Theaflavin biosynthesis requires plant polyphenol oxidase plus EGCG and ECG substrates; the full pathway has not been reconstructed in yeast or bacteria. This matters only if the biological and exposure gates pass.
@@ -503,7 +502,7 @@ This screen evaluates food-derived compounds against gout-relevant NLRP3-pathway
 
 **Research strengths:**
 - **Mechanism-orthogonal to EGCG** at the NLRP3 step (assembly disruption vs. proteasome) — additive when stacked
-- **Unique URAT1 downregulation** in the OE stack (without carnosine's carnosinase ceiling)
+- Preclinical URAT1/OAT expression hypothesis that can be tested with direct urate-flux attribution
 - Direct MSU peritonitis Animal Model (oral)
 - Mature commercial supply (theaflavin-enriched extracts)
 

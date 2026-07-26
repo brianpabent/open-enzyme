@@ -42,13 +42,12 @@ Theaflavins hit two distinct axes of gout pathology in a single compound class:
 
 This is mechanistically broader than the EGCG mechanism profile — EGCG's NLRP3 footprint is dominated by IκB stabilization (proteasome-mediated, CP1a) at 86 nM, with weaker direct inflammasome-assembly effects. Theaflavins hit the **assembly step itself** via mtROS-NEK7-NLRP3 disruption, which is a distinct and complementary mechanism.
 
-### 2. Renal urate handling — URAT1 + GLUT9 + OAT axis
+### 2. Renal urate handling — preclinical transporter-expression profile
 
 **Chen 2023, *Phytomedicine*** ([DOI](https://doi.org/10.1016/j.phymed.2023.154782), PMID 36990009) — comprehensive anti-gout mechanism review:
 
-- **↓ URAT1** (gene + protein) — reduces apical urate reabsorption from primary urine, increasing urinary urate excretion. Mechanism is the same chokepoint as benzbromarone-class uricosurics but without the hepatotoxicity profile. (In Vitro / Animal)
-- **↓ GLUT9** — additional reabsorption block at the basolateral membrane.
-- **↑ OAT1, ↑ OCTN1, ↑ OAT2, ↑ Oct1/2** — increased urate secretion at the proximal tubule.
+- **↓ URAT1 and ↓ GLUT9 expression** was reported in preclinical models. This is directionally compatible with lower urate reabsorption, but the contribution of either transporter to the net serum-urate result was not isolated. (**In Vitro / Animal Model**, summarized by a secondary review.)
+- **↑ OAT1, ↑ OCTN1, ↑ OAT2, and ↑ Oct1/2 expression** was also reported. Expression does not establish direct urate flux through any one transporter; the OAT2 arm is especially unresolved because OAT2 transport is substrate-dependent and its net human proximal-tubule role remains incompletely localized. (**In Vitro / Animal Model**, summarized by a secondary review.)
 - Network-pharmacology prediction: regulates ABCB1, MAPK14, TERT, STAT1, MMP2/14, BCL2 — overlapping with AGE-RAGE inflammatory signaling.
 
 **Tai et al. 2020, *J Funct Foods*** (66:103803, [DOI](https://doi.org/10.1016/j.jff.2020.103803); potassium-oxonate hyperuricemic mouse model, oral theaflavins) adds the **gut/renal secretory transporter arm** to the same picture:
@@ -58,7 +57,7 @@ This is mechanistically broader than the EGCG mechanism profile — EGCG's NLRP3
 
 > **ABCG2 evidence boundary.** The cited Caco-2 study identifies theaflavins as BCRP/ABCG2 substrates (PMC8409943), while Tai 2020 reports ABCG2 mRNA upregulation and lower serum urate in hyperuricemic mice (**Animal Model**). Neither result is a functional ABCG2 urate-transport assay. These data do not establish an EGCG/theaflavin class pattern or predict net human intestinal urate flux.
 
-Theaflavins are the **only** compound in the wider OE supplement stack with documented URAT1 *downregulation*. Carnosine has the closest profile (URAT1 downregulation in animal models per `carnosine.md`), but carnosine's clinical translation is capped by serum carnosinase. Theaflavins, being polyphenolic, do not face the carnosinase ceiling.
+This preclinical multi-transporter expression profile justifies exact-material replication with direct urate-flux attribution. It does not establish that theaflavins improve human renal secretion or that an OAT2 expression change is functional.
 
 ### 3. TNFSF14 / HVEM modulation (CP1a, secondary)
 
