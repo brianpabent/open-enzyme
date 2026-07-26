@@ -6,7 +6,7 @@
   "legacy_intestinal_urate_flux_mg_per_day": 233.0,
   "doses_mg": [5.0, 25.0, 50.0],
   "measured_or_regulatory_priors": {
-    "human_jejunal_urate_uM": {"central": 0.59, "low": 0.06, "high": 1.16},
+    "human_terminal_ileal_clinical_cohort_urate_uM": {"central": 0.59, "low": 0.06, "high": 1.16},
     "uricase_Km_urate_uM": {"central": 25.0, "low": 5.0, "high": 100.0},
     "small_bowel_active_window_hours": {"central": 3.0, "low": 2.0, "high": 4.0}
   },
@@ -19,8 +19,8 @@
   },
   "named_scenarios": [
     {"name": "legacy_vmax_24h", "urate_uM": null, "Km_uM": 25.0, "hours": 24.0, "oxygen_factor": 1.0, "access_factor": 1.0, "survival_factor": 1.0},
-    {"name": "jejunal_baseline_no_extra_penalties", "urate_uM": 0.59, "Km_uM": 25.0, "hours": 3.0, "oxygen_factor": 1.0, "access_factor": 1.0, "survival_factor": 1.0},
-    {"name": "jejunal_baseline_microoxic_access_limited", "urate_uM": 0.59, "Km_uM": 25.0, "hours": 3.0, "oxygen_factor": 0.15, "access_factor": 0.5, "survival_factor": 0.5},
+    {"name": "terminal_ileal_clinical_cohort_no_extra_penalties", "urate_uM": 0.59, "Km_uM": 25.0, "hours": 3.0, "oxygen_factor": 1.0, "access_factor": 1.0, "survival_factor": 1.0},
+    {"name": "terminal_ileal_clinical_cohort_microoxic_access_limited", "urate_uM": 0.59, "Km_uM": 25.0, "hours": 3.0, "oxygen_factor": 0.15, "access_factor": 0.5, "survival_factor": 0.5},
     {"name": "postprandial_sensitivity_microoxic", "urate_uM": 50.0, "Km_uM": 25.0, "hours": 3.0, "oxygen_factor": 0.15, "access_factor": 0.5, "survival_factor": 0.5},
     {"name": "distal_high_substrate_anoxic_sensitivity", "urate_uM": 500.0, "Km_uM": 25.0, "hours": 24.0, "oxygen_factor": 0.01, "access_factor": 0.25, "survival_factor": 0.25}
   ],

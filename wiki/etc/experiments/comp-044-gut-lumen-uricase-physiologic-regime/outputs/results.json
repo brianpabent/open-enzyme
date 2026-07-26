@@ -4,11 +4,12 @@
   "decision_rule": {
     "boundary": "capacity_ratio = 1",
     "legacy_control_requirement": "all legacy_vmax_24h dose ratios must be at or above one",
-    "not_robust_condition": "legacy control is reproduced and at least one jejunal_baseline_no_extra_penalties dose ratio is below one",
-    "contrary_condition": "legacy control is reproduced and every jejunal_baseline_no_extra_penalties dose ratio remains at or above one"
+    "not_robust_condition": "legacy control is reproduced and at least one terminal_ileal_clinical_cohort_no_extra_penalties dose ratio is below one",
+    "contrary_condition": "legacy control is reproduced and every terminal_ileal_clinical_cohort_no_extra_penalties dose ratio remains at or above one"
   },
   "interpretation": "COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. COMP-044 supplies no replacement dose, serum-urate effect, genotype ordering, physiological regime, efficacy model, topology or chassis selection, production-sufficiency, or safety conclusion.",
   "input_provenance_status": {
+    "human_terminal_ileal_clinical_cohort_urate_uM": "direct human terminal-ileal fluid measurement in a 34-person clinical endoscopy cohort; not a jejunal or healthy-population baseline",
     "uricase_specific_activity_U_per_mg": "inherited prior; not newly primary-source verified for quantitative planning",
     "uricase_Km_urate_uM": "inherited range; enzyme-context dependent and not newly primary-source verified",
     "small_bowel_active_window_hours": "inherited physiology range; not a measured comp-044 patient parameter",
@@ -33,7 +34,7 @@
       }
     },
     {
-      "scenario": "jejunal_baseline_no_extra_penalties",
+      "scenario": "terminal_ileal_clinical_cohort_no_extra_penalties",
       "doses": {
         "5": {
           "capacity_ratio": 0.09319684665080077,
@@ -50,7 +51,7 @@
       }
     },
     {
-      "scenario": "jejunal_baseline_microoxic_access_limited",
+      "scenario": "terminal_ileal_clinical_cohort_microoxic_access_limited",
       "doses": {
         "5": {
           "capacity_ratio": 0.003494881749405028,

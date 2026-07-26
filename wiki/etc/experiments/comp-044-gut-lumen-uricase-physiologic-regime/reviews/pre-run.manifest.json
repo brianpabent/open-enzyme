@@ -6,32 +6,32 @@
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
       "kind": "design",
-      "bytes": 16823,
-      "sha256": "907bcad9020fd8a06c8ba959eddf0f24035ec2099817a89feff035914f4e2710"
+      "bytes": 17580,
+      "sha256": "07a8035a544838bd05f227d8dce93c1bf79545d3de9aaa3fc4baca3a8d1b10cc"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/analyze.py",
       "kind": "design",
-      "bytes": 16532,
-      "sha256": "e856e2bece4c446c1ffdae523fe6bf37e46a0a0e3680cca4a4afd540752a1e03"
+      "bytes": 17038,
+      "sha256": "c6a018c3d88d74a866e823afa24563c29f8bd53f90450c2c269ab76d067c144e"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/model_parameters.json",
       "kind": "design",
-      "bytes": 2229,
-      "sha256": "f5a7dcf873d787d4586e958846f53e1955c74e56b8de85aa904cefd0ec33d80f"
+      "bytes": 2280,
+      "sha256": "2f1edff619db87e3a25b89fefecc0d68bdc368f5cbd9e771d74c3968c3ef49bf"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/provenance.md",
       "kind": "design",
-      "bytes": 2769,
-      "sha256": "4d72e6f11420caf7a27323db37005f61443acaee915cd4b38fafbd19c976e6ee"
+      "bytes": 3296,
+      "sha256": "2fca6e2900bd23cf9ec7c2a8a51ce1ce6176168aa0a76a2889552f8f8afb6762"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/query-strategy.json",
       "kind": "design",
-      "bytes": 620,
-      "sha256": "67c7ea5d9f32be75b494664e9e6b4d73f19de996364f5aef8fe790e6f52bcb7c"
+      "bytes": 766,
+      "sha256": "d6778942afda2555ca87735e3eb92b0705a328889e8c659fbfc5f7430034d7d2"
     }
   ],
   "prior_output_baseline": [
@@ -48,5 +48,5 @@
       "sha256": "196821bea9d3cc286a6e47f2a3a526907989e5b7480872ba69012dfb3c89ce0a"
     }
   ],
-  "manifest_sha256": "1885ca37bc22731bfe91e93a9ada927010c31ece358a63411d1f608bfc726601"
+  "manifest_sha256": "248abfa19e377c97848a3f5d185df0f92e56b6dd395cffce410fe5c9f63bb7b9"
 }

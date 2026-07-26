@@ -7,8 +7,8 @@
 | Scenario | 5 mg | 25 mg | 50 mg |
 |---|---:|---:|---:|
 | legacy_vmax_24h | 32.3377 | 161.6886 | 323.3773 |
-| jejunal_baseline_no_extra_penalties | 0.0932 | 0.4660 | 0.9320 |
-| jejunal_baseline_microoxic_access_limited | 0.0035 | 0.0175 | 0.0349 |
+| terminal_ileal_clinical_cohort_no_extra_penalties | 0.0932 | 0.4660 | 0.9320 |
+| terminal_ileal_clinical_cohort_microoxic_access_limited | 0.0035 | 0.0175 | 0.0349 |
 | postprandial_sensitivity_microoxic | 0.1011 | 0.5053 | 1.0106 |
 | distal_high_substrate_anoxic_sensitivity | 0.0192 | 0.0962 | 0.1925 |
 

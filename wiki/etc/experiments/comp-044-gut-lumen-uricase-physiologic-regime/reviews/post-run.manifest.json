@@ -6,364 +6,52 @@
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
       "kind": "design",
-      "bytes": 16823,
-      "sha256": "907bcad9020fd8a06c8ba959eddf0f24035ec2099817a89feff035914f4e2710"
+      "bytes": 17580,
+      "sha256": "07a8035a544838bd05f227d8dce93c1bf79545d3de9aaa3fc4baca3a8d1b10cc"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/analyze.py",
       "kind": "design",
-      "bytes": 16532,
-      "sha256": "e856e2bece4c446c1ffdae523fe6bf37e46a0a0e3680cca4a4afd540752a1e03"
+      "bytes": 17038,
+      "sha256": "c6a018c3d88d74a866e823afa24563c29f8bd53f90450c2c269ab76d067c144e"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/model_parameters.json",
       "kind": "design",
-      "bytes": 2229,
-      "sha256": "f5a7dcf873d787d4586e958846f53e1955c74e56b8de85aa904cefd0ec33d80f"
+      "bytes": 2280,
+      "sha256": "2f1edff619db87e3a25b89fefecc0d68bdc368f5cbd9e771d74c3968c3ef49bf"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/provenance.md",
       "kind": "design",
-      "bytes": 2769,
-      "sha256": "4d72e6f11420caf7a27323db37005f61443acaee915cd4b38fafbd19c976e6ee"
+      "bytes": 3296,
+      "sha256": "2fca6e2900bd23cf9ec7c2a8a51ce1ce6176168aa0a76a2889552f8f8afb6762"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/query-strategy.json",
       "kind": "design",
-      "bytes": 620,
-      "sha256": "67c7ea5d9f32be75b494664e9e6b4d73f19de996364f5aef8fe790e6f52bcb7c"
+      "bytes": 766,
+      "sha256": "d6778942afda2555ca87735e3eb92b0705a328889e8c659fbfc5f7430034d7d2"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/outputs/results.json",
       "kind": "generated_output",
-      "bytes": 6235,
-      "sha256": "ff3291adf13eee42e6cf071f3e21fe8a556a31ab92b86e3fdc121ef80a71f25e"
+      "bytes": 6480,
+      "sha256": "1d1b55f922f88d456df32cb2a174aee236c0ff294ffbfea93e9ef461bf66af4e"
     },
     {
       "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/outputs/summary.md",
       "kind": "generated_output",
-      "bytes": 2962,
-      "sha256": "196821bea9d3cc286a6e47f2a3a526907989e5b7480872ba69012dfb3c89ce0a"
-    },
-    {
-      "path": "index.md",
-      "kind": "proposed_update",
-      "bytes": 34492,
-      "sha256": "e8c456daa4bfa3d112146826c1c194b29830079e4bca052a7821b25735c097c5"
-    },
-    {
-      "path": "operations/notable-moments.md",
-      "kind": "proposed_update",
-      "bytes": 81450,
-      "sha256": "f8d930932a50481b09dbb557193d3b2f186b304346188aaf203b41e88ce88480"
-    },
-    {
-      "path": "operations/ward-1995-lab-access.md",
-      "kind": "proposed_update",
-      "bytes": 30801,
-      "sha256": "ff7436af6dc828f124879cc3426fab0cddeff9db38677d5dd82d2f19a8a46ec7"
-    },
-    {
-      "path": "operations/wet-lab-collaboration-leads.md",
-      "kind": "proposed_update",
-      "bytes": 31007,
-      "sha256": "4a7c84f3e634245d4fc92d67010e0cce0ecdd759af421840f414ee42cfb2135a"
-    },
-    {
-      "path": "papers/cross-vendor-heterogeneity-guard/draft.md",
-      "kind": "proposed_update",
-      "bytes": 175097,
-      "sha256": "6e32155b95915b15ac8bae6aacfb64e6c88d0cfed1b59e18676266d0cff4c923"
-    },
-    {
-      "path": "papers/cross-vendor-heterogeneity-guard/revisions.md",
-      "kind": "proposed_update",
-      "bytes": 83406,
-      "sha256": "353bee7e24f235f87f939e28b33b4c3e2a12964473ac7823b583f279c3a14c27"
-    },
-    {
-      "path": "wiki/abcg2-modulators.md",
-      "kind": "proposed_update",
-      "bytes": 36184,
-      "sha256": "a79ade314df0d61d2836a5d436f0e6eee66371f3bd858c1f7d79a096b8016ea6"
-    },
-    {
-      "path": "wiki/aspergillus-oryzae.md",
-      "kind": "proposed_update",
-      "bytes": 7325,
-      "sha256": "efe1e023f680812215521c9220025e6449062f847bbc6b81e1846f9f1b5fc42c"
-    },
-    {
-      "path": "wiki/blood-barrier-exploits.md",
-      "kind": "proposed_update",
-      "bytes": 7407,
-      "sha256": "e9e247086d4f916a9a6b5084dcb9612bf324d4d4b6116b4cdc911fc3b9d677ec"
-    },
-    {
-      "path": "wiki/blood-barrier.md",
-      "kind": "proposed_update",
-      "bytes": 3978,
-      "sha256": "633a34f8b6b930be96290d0bcd5d20a91b52d8ae615a5426ccd859735a8edaa7"
-    },
-    {
-      "path": "wiki/chassis-pending-interventions.md",
-      "kind": "proposed_update",
-      "bytes": 30751,
-      "sha256": "46f243991338d56835b52076548624c07e2e7290d2f55998ae4e9bf51dca5821"
-    },
-    {
-      "path": "wiki/codon-optimization-expression-cassette.md",
-      "kind": "proposed_update",
-      "bytes": 8201,
-      "sha256": "552577cdaa55c9695bd36c8b9443b0ec8adc5e77dc4a6164594da08574d81ebe"
-    },
-    {
-      "path": "wiki/computational-experiments.md",
-      "kind": "proposed_update",
-      "bytes": 77317,
-      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
-    },
-    {
-      "path": "wiki/cordycepin-cassette-burden-computational.md",
-      "kind": "proposed_update",
-      "bytes": 3255,
-      "sha256": "31dbf7db131729e60e6d0146b8e4a79566458a807d95859f0a76d141b3431602"
-    },
-    {
-      "path": "wiki/crispr-uricase.md",
-      "kind": "proposed_update",
-      "bytes": 3910,
-      "sha256": "6421cdf67e48b888d2ea42dc0c7e297e2ce82021100d996447164293c88af2c6"
-    },
-    {
-      "path": "wiki/delivery-route-matrix.md",
-      "kind": "proposed_update",
-      "bytes": 28558,
-      "sha256": "f780c61c3f8764a68c406ac4ed9956a6a591dffc98b3f899ffcb02fbbf15619a"
-    },
-    {
-      "path": "wiki/digestive-enzymes.md",
-      "kind": "proposed_update",
-      "bytes": 4998,
-      "sha256": "c6381750c9773d2d0015cf3ca768cff97583964105057b9f3e5e55df4d7b7ae0"
-    },
-    {
-      "path": "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
-      "kind": "proposed_update",
-      "bytes": 3744,
-      "sha256": "ef12f095d3198bf5bb915aecfe7d130f1cf29a63edfbfd5ac31ddb0d87e70e8d"
-    },
-    {
-      "path": "wiki/engineered-koji-protocol.md",
-      "kind": "proposed_update",
-      "bytes": 13785,
-      "sha256": "daa4e91c661aa31cd34d4962008b40d3403f23c54723da3c2255a3a794341ed5"
-    },
-    {
-      "path": "wiki/engineered-yeast-uricase-proposal.md",
-      "kind": "proposed_update",
-      "bytes": 7785,
-      "sha256": "e2d2baca59ebe26e726d41952d68b86a9a5cf4c4510c5341a1df8ee8758bfbae"
-    },
-    {
-      "path": "wiki/enzyme-deficit-deep-dive.md",
-      "kind": "proposed_update",
-      "bytes": 6554,
-      "sha256": "e076a8539cef5e89f64468a661ea11dde727f4eba431715a0b3785d4c343ba97"
-    },
-    {
-      "path": "wiki/etc/GRAPH.md",
-      "kind": "proposed_update",
-      "bytes": 4578,
-      "sha256": "e42f494ce8e76faf1a85ae017ee0a67301b6609312a651feea95bee70be4b7d0"
-    },
-    {
-      "path": "wiki/etc/ai-bio-tools-playbook.md",
-      "kind": "proposed_update",
-      "bytes": 10893,
-      "sha256": "a556a86649861ecf73c45c595fa9e2c4eaa6a10b68a20ce7de203f476259c145"
-    },
-    {
-      "path": "wiki/etc/autonomous-screening-methodology.md",
-      "kind": "proposed_update",
-      "bytes": 23852,
-      "sha256": "acc80ba60a56e7a859b7da7dd6caa474c5fdb570ac5a769111a8651fa71c73d6"
-    },
-    {
-      "path": "wiki/etc/practitioner-toolkit.md",
-      "kind": "proposed_update",
-      "bytes": 8163,
-      "sha256": "432c6cb9c3339e7e48cd23976ee829260127897ee09e7da5fbe774f7194180a7"
-    },
-    {
-      "path": "wiki/genotype-informed-supplement-workflow.md",
-      "kind": "proposed_update",
-      "bytes": 8741,
-      "sha256": "9c61a7aeca6956822c0fc5f854f03f521b2b28ef7c3a427110d0bf3b0aea30b3"
-    },
-    {
-      "path": "wiki/gi-survival-prediction.md",
-      "kind": "proposed_update",
-      "bytes": 8358,
-      "sha256": "cf904043dcf194640eb72362e81d5170df66ac34714632459a74b48ccc60a113"
-    },
-    {
-      "path": "wiki/gout-action-guide.md",
-      "kind": "proposed_update",
-      "bytes": 9746,
-      "sha256": "da4b30e515abec9d31b3b1902717433bc33f77eec0376f22112d86ebaebda90e"
-    },
-    {
-      "path": "wiki/gout-clinical-pipeline.md",
-      "kind": "proposed_update",
-      "bytes": 21487,
-      "sha256": "66a434508cc7f1c1b056a5251154edd6d2f50ef7e23ffa1f0da572e819965b7c"
-    },
-    {
-      "path": "wiki/gout-deep-dive.md",
-      "kind": "proposed_update",
-      "bytes": 49432,
-      "sha256": "3ba1224ef98187baf99378d30c198e2a7207e411a807727ba1d9e8bdcdd55e82"
-    },
-    {
-      "path": "wiki/gout-genetic-variants.md",
-      "kind": "proposed_update",
-      "bytes": 42093,
-      "sha256": "c67feb02f0fbec09bccd22f461b01cdfb4ac3424e6b9a521fb225501569ab8a2"
-    },
-    {
-      "path": "wiki/gout-kill-chain-delivery-routes.md",
-      "kind": "proposed_update",
-      "bytes": 49009,
-      "sha256": "9c8774694fff5d707caccd4a9a899af58c66d30b79df54ce5b5cd6714382ff98"
-    },
-    {
-      "path": "wiki/gout-multihop-research-program.md",
-      "kind": "proposed_update",
-      "bytes": 6970,
-      "sha256": "c437ba0143704b2827adfe1d7912e5d3c31adac110f31a1dd21d540cc74cb15e"
-    },
-    {
-      "path": "wiki/gout-pathophysiology.md",
-      "kind": "proposed_update",
-      "bytes": 36518,
-      "sha256": "407e5ced233299e3acba8f383b28c7aaee109eb930648d6419d8aca024c12034"
-    },
-    {
-      "path": "wiki/gut-lumen-sink.md",
-      "kind": "proposed_update",
-      "bytes": 7950,
-      "sha256": "7304683e7c24a9a3c085428668a5a7cd392fd08ca7524d4736ae797ce4933b91"
+      "bytes": 2990,
+      "sha256": "921226d21e7cfeee10ce4ee4c57a76f9666e7386202d77620ac51a497e00bdd4"
     },
     {
       "path": "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
       "kind": "proposed_update",
-      "bytes": 5681,
-      "sha256": "bf60401e4e8fb1ef5b371efcd62ae92ba516d2265599e8c0feb9b2d94b2202f7"
-    },
-    {
-      "path": "wiki/hypotheses/H01-ward-dual-cassette.md",
-      "kind": "proposed_update",
-      "bytes": 6250,
-      "sha256": "0fef61c626bc8220aeb6d5996c929f3153a0abea6e651f66ea9906956be43983"
-    },
-    {
-      "path": "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
-      "kind": "proposed_update",
-      "bytes": 6702,
-      "sha256": "2e91b03d0cddce09c274a4602d1155fee83bf005305d2187bca0d970f2fa30d5"
-    },
-    {
-      "path": "wiki/hypotheses/README.md",
-      "kind": "proposed_update",
-      "bytes": 10119,
-      "sha256": "e263b30f084d331f0fb14f308984356b67e88f7a6994f9e35b35dcc4283c8ac9"
-    },
-    {
-      "path": "wiki/intra-articular-uricase-h2o2-reaction-diffusion-computational.md",
-      "kind": "proposed_update",
-      "bytes": 7061,
-      "sha256": "792c86bcc89ac5b86b3a5567bc81560d057043a45f656f0996c2b4b44ac72206"
-    },
-    {
-      "path": "wiki/koji-construct-design.md",
-      "kind": "proposed_update",
-      "bytes": 6090,
-      "sha256": "1d2a42e6eeb46ebe945c7917c2d7786b6bb3086fee1ac090e88457bcfb633e94"
-    },
-    {
-      "path": "wiki/koji-endgame-strain.md",
-      "kind": "proposed_update",
-      "bytes": 12006,
-      "sha256": "bdc33220d3c6892b30b88a87ff6b2fbde3692b67c9dc9bcea09f525aba7cf207"
-    },
-    {
-      "path": "wiki/modality-chokepoint-matrix.md",
-      "kind": "proposed_update",
-      "bytes": 10100,
-      "sha256": "55204bd9cc88ef61b00c144ce57f7982eb7ecaa11d2be29302a7e4cd4367852d"
-    },
-    {
-      "path": "wiki/nlrp3-exploit-map.md",
-      "kind": "proposed_update",
-      "bytes": 60665,
-      "sha256": "e30593887912b1579694222c25e40736744b8dd33b60effff278cf3daba07a3d"
-    },
-    {
-      "path": "wiki/open-questions.md",
-      "kind": "proposed_update",
-      "bytes": 72511,
-      "sha256": "f9c07b41bc65f4a49b91ea47efba69cc8d1b85c77161e17e9437ada4248b9bc4"
-    },
-    {
-      "path": "wiki/protein-engineering-strategy.md",
-      "kind": "proposed_update",
-      "bytes": 7148,
-      "sha256": "968574293176db09802896e6ac05354b5423025b6256ef6593c80600a7dd993c"
-    },
-    {
-      "path": "wiki/purine-degrading-bacteria.md",
-      "kind": "proposed_update",
-      "bytes": 33595,
-      "sha256": "9e05fb80f122a3f5fa7c3d3a628cb374587621385c5ca95a5940191ad90f0387"
-    },
-    {
-      "path": "wiki/saccharomyces-cerevisiae.md",
-      "kind": "proposed_update",
-      "bytes": 6203,
-      "sha256": "d6bf22f05057fe5980c51d8d0b39a99862901a576ad7c9a2d05b9da3bcf1aceb"
-    },
-    {
-      "path": "wiki/supplements-stack.md",
-      "kind": "proposed_update",
-      "bytes": 12329,
-      "sha256": "f6a4e47909dfbf1a77b08ba24c7304813aec43ecea452ec73f9f70fbe70f4a81"
-    },
-    {
-      "path": "wiki/uricase-abcg2-genotype-stratification-computational.md",
-      "kind": "proposed_update",
-      "bytes": 4139,
-      "sha256": "30bbe58ac1473a4ac28aa90faf0f4aeaf4703bc74e1c84708f1502f0691dbd98"
-    },
-    {
-      "path": "wiki/uricase-variant-selection.md",
-      "kind": "proposed_update",
-      "bytes": 6329,
-      "sha256": "edbdba89304c49dd7a88ef30f89516d723cc86fc2993e68a955853779b17f87c"
-    },
-    {
-      "path": "wiki/uricase.md",
-      "kind": "proposed_update",
-      "bytes": 9452,
-      "sha256": "39c5814660999457e2a945f02ed55c78023f83bccef75fa476aee5d0006f26a3"
-    },
-    {
-      "path": "wiki/validation-experiments.md",
-      "kind": "proposed_update",
-      "bytes": 230784,
-      "sha256": "192427c173ad894e33e6c76c6f427fc8264ec44446b244366f22a4577e1c3cff"
+      "bytes": 5866,
+      "sha256": "acf99274edebf76905ddc1588a418c0a0ecea5a2691ebe1216a63ff5fc6037ee"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "981cecf9600da9d7ee9abe524226d6fe1fa6955be68437ca6af7b2260c8756b4"
+  "manifest_sha256": "f20c3c46bb91abfe2d6b7135a17cb3c222b43655937af77911b8949bdd442c1b"
 }

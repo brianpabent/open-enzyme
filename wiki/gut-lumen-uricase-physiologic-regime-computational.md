@@ -22,7 +22,7 @@ Does comp-019's conclusion that 5–50 mg/day oral uricase is always in a substr
 
 ## Verdict
 
-**Mechanistic Extrapolation (deterministic consistency audit; inherited inputs): LEGACY UNCONDITIONAL FLAT-DOSE CLASSIFICATION NOT ROBUST TO THE TESTED DIAGNOSTICS; biological gut-sink hypothesis remains OPEN.** The prior flat-dose and predicted-ΔSUA results should not guide dose or yield decisions. In the prespecified central diagnostic, applying 0.59 µM urate, Km 25 µM, and a three-hour window moves all three tested ratios below one before any oxygen, access, or survival penalty. This establishes only that comp-019's unconditional classification was not robust to the tested substrate-occupancy and finite-window diagnostics. It does not identify the true physiological regime, reverse the old conclusion, or establish a sufficient oral dose.
+**Mechanistic Extrapolation (deterministic consistency audit; inherited inputs): LEGACY UNCONDITIONAL FLAT-DOSE CLASSIFICATION NOT ROBUST TO THE TESTED DIAGNOSTICS; biological gut-sink hypothesis remains OPEN.** The prior flat-dose and predicted-ΔSUA results should not guide dose or yield decisions. In the prespecified terminal-ileal clinical-cohort diagnostic, applying 0.59 µM urate, Km 25 µM, and a three-hour window moves all three tested ratios below one before any oxygen, access, or survival penalty. This establishes only that comp-019's unconditional classification was not robust to the tested substrate-occupancy and finite-window diagnostics. It does not identify the true physiological regime, reverse the old conclusion, or establish a sufficient oral dose.
 
 ## Method summary
 
@@ -42,8 +42,8 @@ The 8.3 U/mg specific activity, Km range, 2–4 hour active-window range, and 23
 | Scenario | 5 mg | 25 mg | 50 mg |
 |---|---:|---:|---:|
 | Legacy 24-hour Vmax | 32.3377 | 161.6886 | 323.3773 |
-| 0.59 µM, Km 25 µM, three hours; no additional penalty | 0.0932 | 0.4660 | 0.9320 |
-| Same, with microoxic/access/survival scenario multipliers | 0.0035 | 0.0175 | 0.0349 |
+| Terminal-ileal clinical-cohort prior: 0.59 µM, Km 25 µM, three hours; no additional penalty | 0.0932 | 0.4660 | 0.9320 |
+| Same prior, with microoxic/access/survival scenario multipliers | 0.0035 | 0.0175 | 0.0349 |
 | 50 µM sensitivity case with the same multipliers | 0.1011 | 0.5053 | 1.0106 |
 
 Only the ratio-one boundary has direct mass-balance meaning. The other descriptive bins in the artifact are scanning aids. A ratio above one still does not prove complete luminal capture because local replenishment, depletion, diffusion, and reabsorption remain unmodeled.
@@ -58,7 +58,7 @@ Oxygen, topology, access, and survival add further uncertainty but were not need
 ## Limitations
 
 - The fixed-concentration screen is not a dynamic compartmental gut model.
-- The daily-flux denominator and local jejunal concentration are different kinds of quantities; their comparison is a bounded diagnostic, not physiological closure.
+- The daily-flux denominator and local terminal-ileal clinical-cohort concentration are different kinds of quantities; their comparison is a bounded diagnostic, not physiological closure.
 - The pH, oxygen, access, and survival multipliers are scenario variables and may be correlated.
 - The 50 and 500 µM cases are sensitivity values, not measured human baselines.
 - No renal compensation, intestinal reabsorption, microbial metabolism, genotype-specific supply, or serum-pool dynamics are modeled.

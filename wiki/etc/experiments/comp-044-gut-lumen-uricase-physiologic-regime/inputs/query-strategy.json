@@ -2,7 +2,7 @@
   "scope": "Physiological and kinetic priors for gut-luminal uricase regime classification",
   "natural_product_scope": false,
   "framings": [
-    {"type": "human_physiology", "queries": ["human jejunal uric acid concentration ABCG2 2025", "intestinal oxygen gradient human colon"], "rationale": "Locate direct human concentration and oxygen-context measurements."},
+    {"type": "human_physiology", "queries": ["human terminal ileal uric acid concentration ABCG2 2025", "intestinal oxygen gradient human colon"], "rationale": "Bind the direct human concentration prior to its terminal-ileal sampling site and clinical endoscopy cohort, and locate oxygen-context measurements without treating the concentration as a healthy baseline."},
     {"type": "engineered_biology", "queries": ["engineered EcN urate oxidase oxygen recycling KatG Vhb", "PULSE smUOX YgfU KatG Vhb"], "rationale": "Locate directly relevant low-oxygen engineered-uricase precedents."}
   ],
   "deferred_framings": []

@@ -32,9 +32,13 @@ This design does not embed a result. The current verdict must be read from a fre
 - `outputs/results.json` — machine-readable results
 - `outputs/summary.md` — human-readable result
 
+## Label-correction propagation inventory
+
+This reviewed rerun must bind the 0.59 µM input to its terminal-ileal clinical-cohort provenance in the input keys, named scenarios, decision-rule text, generated outputs, and the canonical COMP-044 evidence page. After regeneration, search every active non-receipt surface for stale `jejunal` or `healthy baseline` descriptions of this input. If the generated verdict differs from the currently published branch, follow the full conditional authoring contract below rather than treating the change as a label-only correction.
+
 ## Key limitation
 
-The analysis still holds concentration fixed within each active window and compares it with a whole-day flux denominator. The 8.3 U/mg activity, Km range, 2–4-hour window, and 233 mg/day denominator remain inherited or derived priors rather than newly verified quantitative-planning inputs. The 0.25 and 4 regime bins are descriptive; only ratio 1 has direct mass-balance meaning. A later dynamic model requires measured local urate replenishment, topology-specific oxygen and enzyme survival, reabsorption, and spatial residence. Therefore comp-044 is a regime-audit prior, not a clinical efficacy model or a basis for dose selection.
+The analysis still holds concentration fixed within each active window and compares it with a whole-day flux denominator. The 0.59 µM input is a rounded terminal-ileal fluid measurement from a 34-person clinical balloon-enteroscopy cohort; it is not a jejunal measurement or a healthy-population baseline. The 8.3 U/mg activity, Km range, 2–4-hour window, and 233 mg/day denominator remain inherited or derived priors rather than newly verified quantitative-planning inputs. The 0.25 and 4 regime bins are descriptive; only ratio 1 has direct mass-balance meaning. A later dynamic model requires measured local urate replenishment, topology-specific oxygen and enzyme survival, reabsorption, and spatial residence. Therefore comp-044 is a regime-audit prior, not a clinical efficacy model or a basis for dose selection.
 
 ## Conditional authoring contract
 
