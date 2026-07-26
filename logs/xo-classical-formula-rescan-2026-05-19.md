@@ -306,7 +306,6 @@ Per task constraints, this scan does **not** write to `wiki/*.md`. Below are the
 | Kong et al. 2000 screen of 122 Chinese medicinal plants — Cinnamomum cassia twig IC50 = 18 μg/mL; Chrysanthemum indicum flower IC50 = 22 μg/mL; Polygonum cuspidatum rhizome IC50 = 38 μg/mL; Lycopus europaeus IC50 = 26 μg/mL; allopurinol IC50 = 1.06 μg/mL | Kong et al. 2000, *J Ethnopharmacol* 73(1-2):199-207, [PubMed 11025157](https://pubmed.ncbi.nlm.nih.gov/11025157/) | In Vitro | WebFetch PubMed abstract |
 | Chinese sumac (*Rhus chinensis*) fruit ethanol extract → 39.56% serum UA reduction (mice high-purine diet) + XO inhibition + ABCG2 upregulation + URAT1/SLC2A9 downregulation | Wang et al. 2024, *Nutrients*, [PMC10819650](https://pmc.ncbi.nlm.nih.gov/articles/PMC10819650/) | Animal Model | WebFetch PMC; single read |
 | Sanmiao Wan / Ermiao Wan reduce serum + liver UA + inhibit hepatic XOD in mice | Kong et al. 2004, [PubMed 15234772](https://pubmed.ncbi.nlm.nih.gov/15234772/) (Ermiao) + multiple Sanmiao papers | Animal Model | Search-summary only; primary text not fetched (already aware via comp-013 Si Miao San citation) |
-| Houttuynia cordata polysaccharide regulates URAT1 + reduces XO activity in hyperuricemic mice | Cited from [houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md](./houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md) — full deep-read | In Vivo Animal Model | Already separately scanned 2026-05-19; cross-reference only |
 
 ---
 

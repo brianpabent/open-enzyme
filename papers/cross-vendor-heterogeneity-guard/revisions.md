@@ -46,7 +46,7 @@ The session 1 draft of §5.3 stated *"specific activity values were returned tha
 
 ### Catch 5, §5.4 misdescribed the pre-daemon architecture
 
-The session 1 draft of §5.4 stated *"the original sweep design used three passes, all routed to Claude models (Sonnet propagate → Opus synthesize → Opus review)."* Self-verification against `logs/v4-peer-review-2026-04-25-deepseek.md` shows the substrate at 2026-04-25 was described as a *"Claude Opus 4.7 local-session sweep, 2026-04-24"*, a single Claude session working as both author and reviewer. The formal three-pass daemon (and its cross-vendor model assignments) was a *consequence* of the DeepSeek Connection 7 self-flag, not the architecture that DeepSeek was reviewing.
+The session 1 draft of §5.4 stated *"the original sweep design used three passes, all routed to Claude models (Sonnet propagate → Opus synthesize → Opus review)."* Self-verification against `papers/cross-vendor-heterogeneity-guard/source-records/v4-peer-review-2026-04-25-deepseek.md` shows the substrate at 2026-04-25 was described as a *"Claude Opus 4.7 local-session sweep, 2026-04-24"*, a single Claude session working as both author and reviewer. The formal three-pass daemon (and its cross-vendor model assignments) was a *consequence* of the DeepSeek Connection 7 self-flag, not the architecture that DeepSeek was reviewing.
 
 **Correction landed:** §5.4 now correctly describes the pre-2026-04-25 state as a single Claude session driving both propagation and synthesis, with the multi-pass cross-vendor daemon being the architectural response to DeepSeek's Connection 7.
 

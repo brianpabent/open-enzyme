@@ -21,7 +21,7 @@ The wiki sweep daemon (and all the lit-scan / comp-NNN subagents around it) is e
 
 ## Why we think state of the art isn't quite there
 
-Of the three AI-paper systems surveyed in [`grounding-the-ai-scientist-hype.md`](../grounding-the-ai-scientist-hype.md), two automate the whole loop and one automates only the writing. None of the three is trying to solve the curiosity / steering problem head-on — Sakana's AI Scientist generates *novel* ideas via tree search but doesn't appear to commit to a single bet with corpus-anchored support; FARS optimizes for throughput, which is the opposite move. PaperOrchestra explicitly leaves the science to humans. The gap is real and not yet productized.
+Of the three AI-paper systems surveyed in the private draft *Grounding the AI Scientist Hype*, two automate the whole loop and one automates only the writing. None of the three is trying to solve the curiosity / steering problem head-on — Sakana's AI Scientist generates *novel* ideas via tree search but doesn't appear to commit to a single bet with corpus-anchored support; FARS optimizes for throughput, which is the opposite move. PaperOrchestra explicitly leaves the science to humans. The gap is real and not yet productized.
 
 Brian's read: we're close. We should be working on this now rather than waiting.
 

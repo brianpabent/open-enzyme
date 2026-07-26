@@ -148,7 +148,7 @@ Pass 1 has a dedup guard that prevents re-copying the *same* content across swee
 Change the propagation discipline so that, when propagating a finding to a page that is **not** the finding's canonical home:
 1. **Identify the canonical page** for the finding (the trigger file, or the established concept/primary-research page for that mechanism).
 2. **Write the full exposition once**, on the canonical page only.
-3. **On each related page, insert a one-line pointer + link**, carrying only the *minimal delta* needed for local context (e.g., "X also modulates CP2 — see [canonical page](./x.md) for mechanism and evidence"), with the evidence tag on the claim but **not** a copied mechanism block.
+3. **On each related page, insert a one-line pointer + link**, carrying only the *minimal delta* needed for local context (e.g., `X also modulates CP2 — see [canonical page](./x.md) for mechanism and evidence`), with the evidence tag on the claim but **not** a copied mechanism block.
 4. **Reserve full copies** for the genuinely-justified cases: a load-bearing number the local page's own reasoning depends on, or content with no other canonical home.
 
 ### B3. Implementation

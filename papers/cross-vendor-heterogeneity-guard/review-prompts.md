@@ -114,8 +114,9 @@ What to check:
 
 3. OPERATIONAL DATA. §6 cites specific cost and latency numbers (Pass 2 $0.7288 on
    2026-04-28; DeepSeek peer-review $0.2070 on 2026-04-25). Verify against
-   scripts/SWEEP-ARCHITECTURE.md (Pass 2 cost) and logs/v4-peer-review-2026-04-25-
-   deepseek.md (frontmatter for the peer-review cost). Flag any number that doesn't
+   scripts/SWEEP-ARCHITECTURE.md (Pass 2 cost) and
+   papers/cross-vendor-heterogeneity-guard/source-records/v4-peer-review-2026-04-25-deepseek.md
+   (frontmatter for the peer-review cost). Flag any number that doesn't
    match the primary source.
 
 4. GOOGLE-FAVORABLE FRAMING. You are a Google model. The paper names Gemini as one

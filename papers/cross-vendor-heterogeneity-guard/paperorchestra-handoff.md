@@ -106,7 +106,7 @@ Internal (for cross-references):
 - `wiki/open-source-platform.md` §"Multi-model synthesis as guard against epistemic homogenization", the original wiki statement of the heterogeneity-guard rationale.
 - `scripts/SWEEP-ARCHITECTURE.md`, the daemon's engineering doc; primary source for §3 architecture details.
 - `scripts/sweep-prompt-1-propagate.md`, `sweep-prompt-2-synthesize.md`, `sweep-prompt-3-review.md`, the operational prompts.
-- `logs/v4-peer-review-2026-04-25-deepseek.md`, the seminal DeepSeek peer-review pass; primary source for §5.4.
+- `papers/cross-vendor-heterogeneity-guard/source-records/v4-peer-review-2026-04-25-deepseek.md`, the seminal DeepSeek peer-review pass; primary source for §5.4.
 - `logs/sweep-state.json`, `logs/sweep-log.md`, operational data for §6.
 - `CLAUDE.md` §"Pre-commit grep-verify gate", §5.1 catch primary source.
 - `wiki/daf-cd55-scr14-truncated-computational.md` §1.5, §5.1 catch correction note.

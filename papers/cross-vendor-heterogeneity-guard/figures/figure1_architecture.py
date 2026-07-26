@@ -229,7 +229,7 @@ def main():
 
     # Audit trail
     make_box(ax, 7.5, 3.9, 3.0, 0.7,
-             "Audit trail\nlogs/v4-peer-review-*.md",
+             "Audit trail\nsource-records/v4-peer-review-*.md",
              fc=COLORS["output"], fontsize=8.5)
     arr_audit = FancyArrowPatch(
         (9.0, 5.0), (9.0, 4.6),

@@ -12,7 +12,7 @@ cost_usd: 0.6650
 # Peer-review pass — google/gemini-2.5-pro — 2026-04-25
 
 This is the first concrete instance of the multi-agent peer-review pattern named in
-[`open-enzyme-vision.md`](../wiki/open-enzyme-vision.md) §3. google/gemini-2.5-pro was given
+[`open-enzyme-vision.md`](../../../wiki/etc/open-enzyme-vision.md) §3. google/gemini-2.5-pro was given
 the same wiki corpus Claude swept yesterday (commit `4a40f74`) and asked to produce an
 independent Pass 2 synthesis plus a differential analysis. Output below is verbatim
 model output, unedited.

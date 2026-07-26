@@ -83,11 +83,11 @@ Five files have artifacts where a sed pass converted `wiki/synthesis.md` → `sy
 - Line 247: "Action queue: `synthesis/README.md`" — same.
 
 **`README.md`:**
-- Line 63: "[Synthesis](synthesis/README.md) — cross-doc connections and proposed experiments (action queue)" — labels as action queue, links to README.
-- Line 86: "Check [synthesis/README.md](synthesis/README.md) for the latest cross-doc connections" — points readers at the README for findings; findings live in `synthesis/queue/` (and historically in `synthesis/done/` and `synthesis/history/`).
+- Line 63: "[Synthesis](../../synthesis/README.md) — cross-doc connections and proposed experiments (action queue)" — labels as action queue, links to README.
+- Line 86: "Check [synthesis/README.md](../../synthesis/README.md) for the latest cross-doc connections" — points readers at the README for findings; findings live in `synthesis/queue/` (and historically in `synthesis/done/` and `synthesis/history/`).
 
 **`index.md`:**
-- Line 21: "Synthesis queue: [synthesis/README.md](synthesis/README.md) — unreviewed cross-analysis findings. The sweep daemon prepends new findings here after each save" — three errors: link target wrong, "prepends" framing stale (per-file emission now), and the daemon does NOT write to README.md.
+- Line 21: "Synthesis queue: [synthesis/README.md](../../synthesis/README.md) — unreviewed cross-analysis findings. The sweep daemon prepends new findings here after each save" — three errors: link target wrong, "prepends" framing stale (per-file emission now), and the daemon does NOT write to README.md.
 
 **Why this matters:** These are the canonical user-facing labels. CLAUDE.md is the AI-instruction contract; calling synthesis/README.md "the action queue" will mislead every AI session that reads CLAUDE.md. README.md and index.md are visible on GitHub. All three need to point "action queue" callouts at `synthesis/queue/` (or, if the intent is to land readers on a stable URL even when queue/ is empty, point at `synthesis/README.md` AND describe it as "the README for the action queue at synthesis/queue/").
 

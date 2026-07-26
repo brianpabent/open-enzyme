@@ -53,7 +53,7 @@ Codex external review (2026-05-13) flagged that the paper depends heavily on ope
    ```
 3. **Wait ~1-2 minutes for Zenodo to archive the release** and mint a DOI. The DOI appears on https://zenodo.org/account/settings/github/ under the repo's entry.
 4. **Update the manuscript's Data and Code Availability section** with the actual Zenodo DOI (e.g., `doi:10.5281/zenodo.XXXXXXX`). Add the DOI prominently in §1 Introduction and in the Methods Appendix.
-5. **Verify the Zenodo snapshot includes all artifacts** the paper references inline: `scripts/SWEEP-ARCHITECTURE.md`, `scripts/sweep-prompt-*.md`, `.github/workflows/wiki-sweep.yml`, `wiki/open-source-platform.md`, `wiki/paperclip-deep-dive.md`, `wiki/daf-cd55-scr14-truncated-computational.md`, `CLAUDE.md`, `logs/v4-peer-review-2026-04-25-deepseek.md`, `operations/comp-018-vs-comp-020-retrospective.md`, plus the entire `papers/cross-vendor-heterogeneity-guard/` directory (manuscript + workspace + reviews + figures).
+5. **Verify the Zenodo snapshot includes all artifacts** the paper references inline: `scripts/SWEEP-ARCHITECTURE.md`, `scripts/sweep-prompt-*.md`, `.github/workflows/wiki-sweep.yml`, `wiki/open-source-platform.md`, `wiki/paperclip-deep-dive.md`, `wiki/daf-cd55-scr14-truncated-computational.md`, `CLAUDE.md`, `papers/cross-vendor-heterogeneity-guard/source-records/v4-peer-review-2026-04-25-deepseek.md`, `operations/comp-018-vs-comp-020-retrospective.md`, plus the entire `papers/cross-vendor-heterogeneity-guard/` directory (manuscript + workspace + reviews + figures).
 
 ### Other code/data prep
 

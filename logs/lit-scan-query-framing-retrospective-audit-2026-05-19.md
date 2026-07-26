@@ -173,7 +173,7 @@ Note: the user task brief named this as "comp-029" but the actual computational 
 
 4. **Mushroom × HDAC6 (Q141K-ABCG2 rescue chaperone candidates).** Re-scan prompt: "灵芝三萜 ganoderic acid HDAC6 / HDAC inhibitor" + "桑黄 Sang Huang HDAC histone deacetylase" + Korean ethnomycology HDAC inhibitor surveys. Anchors: comp-007 food-grade HDACi compound list (Western-dietary scope); comp-014 Phase 3 found HDAC6 was not a top fungal-compound chokepoint hit via ChEMBL, but Phase 5 deep-read identified no HDAC6 candidates either — gap may be query-framing rather than absence.
 
-5. **Houttuynia × CP1 dual-mechanism + Tibetan medicine (Myricaria + Juniperus) complement modulation deepening.** Already queued — `logs/houttuynia-cp1-dual-mechanism-lit-scan-2026-05-19.md` exists in 2026-05-19 sweep. Lower priority for ADDITIONAL re-scan because the most recent walkthrough already actioned this.
+5. **Houttuynia × CP1 dual-mechanism + Tibetan medicine (Myricaria + Juniperus) complement modulation deepening.** Completed and consolidated on the [Houttuynia evidence page](../wiki/houttuynia-cordata.md); no additional rescan action remains here.
 
 ### MEDIUM leverage
 

@@ -119,7 +119,7 @@ grep -rln "synthesis\.md" wiki/
 ```
 
 Files (verified by reviewer):
-- `wiki/index.md` line 84 — "[Synthesis Queue](synthesis.md)" link → rewrite to `synthesis/README.md`
+- `wiki/index.md` line 84 — the historical `[Synthesis Queue](synthesis.md)` link → rewrite to [synthesis README](../../synthesis/README.md)
 - 26+ other wiki pages cited in the spec review's Finding 1 — each gets a per-file pass during implementation (mostly drop-the-breadcrumb).
 
 The implementation step for cross-link rewrites is §8 step before deletion, not after, so the repo is never in a state where the file is deleted but cross-links still point to it.
@@ -130,7 +130,7 @@ Enumerated per spec re-review N2 — each line location explicitly named:
 
 - **`README.md`** (top-level) — lines 63 + 86 link to `wiki/synthesis.md`. Rewrite both to `synthesis/README.md`.
 - **`mkdocs.yml`** — line 60 has `Platform Thesis & Synthesis: synthesis.md` in the nav. Rewrite to `synthesis/README.md` so the published docs site doesn't 404.
-- **`wiki/index.md`** line 84 — "[Synthesis Queue](synthesis.md)" link → rewrite to `synthesis/README.md`.
+- **`wiki/index.md`** line 84 — the historical `[Synthesis Queue](synthesis.md)` link → rewrite to [synthesis README](../../synthesis/README.md).
 - **`CLAUDE.md`** (`Open Enzyme/CLAUDE.md`) — three references:
   - Line 27 §"Document Structure" — `wiki/synthesis.md` mention. Update.
   - Line 130 §"Workflow for Updates" — reference if present. Update.
@@ -244,7 +244,7 @@ The `Proposed Experiments` regex tolerates the optional `(ranked by insight per 
 Per §4.4 — **drop-or-stub**, not per-item-rewrite. Three rules:
 
 - **Already-actioned-content links** (e.g., "synthesis.md Connection 7" where the canonical content lives in a wiki page anyway): drop the synthesis.md breadcrumb. Leave the substantive cross-reference to the canonical page.
-- **Whole-file links** (e.g., "[Synthesis Queue](synthesis.md)"): rewrite to `synthesis/README.md`.
+- **Whole-file links** (e.g., `[Synthesis Queue](synthesis.md)`): rewrite to `synthesis/README.md`.
 - **Anchor links to structured sections of synthesis.md** (e.g., `#strategic-reflections-queue`, `#sweep-history`, `#where-actioned-items-live-now`): rewrite to `synthesis/strategic-reflections/`, `synthesis/history/_pre-2026-05-08-archive.md`, or `synthesis/README.md` respectively.
 - **Dangling old anchors** (e.g., "2026-04-21 Open Question 3" pointing at long-deleted content): drop silently.
 

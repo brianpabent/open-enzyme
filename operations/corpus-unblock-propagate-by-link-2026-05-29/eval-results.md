@@ -52,4 +52,4 @@ The first-pass screen above was single-shot. Per Codex #2, Grok was re-run throu
 python3 scripts/fresh-synthesis.py --model x-ai/grok-4.20 --max-tokens 16000
 python3 scripts/fresh-synthesis.py --model meta-llama/llama-4-scout --max-tokens 16000
 ```
-Output logs: `logs/fresh-synth-grok4.20-2026-05-29.md`, (Scout produced no output file — empty completion).
+Archived output: [Grok 4.20 full synthesis at the reviewed repository snapshot](https://github.com/brianpabent/open-enzyme/blob/970e81bf048a31b46edb7e6b076e40d156922338/logs/fresh-synth-grok4.20-2026-05-29.md). Scout produced no output file (empty completion).

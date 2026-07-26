@@ -46,7 +46,7 @@ Three structural changes. Same length, same content, same invariants for output 
 - **Replaced ALWAYS/NEVER on tag and verdict definitions with explicit decision rules.** "Default to EXTENSION when uncertain. RESTATEMENT only when *every* element of the finding is already a named first-class topic in the wiki." Same for verdict severity: "Use Push-back when the synthesizer made a verifiable factual error. Downgrading to Partial to be polite obscures the error."
 - **Inverted the retrieval budget.** "Make a tool call when ANY of [the synthesizer claims a page does/doesn't say X | the OVERLAP tag depends on whether something appears elsewhere | the finding cites a page outside the warm cache] applies. A 6-marker review with thorough verification typically takes 6–12 tool calls. Stopping at 2 rounds is under-verification, not efficiency."
 
-Both prompts now live in the repo: [`scripts/sweep-prompt-3-review.md`](../scripts/sweep-prompt-3-review.md) (the original, still optimal for Anthropic models) and [`scripts/sweep-prompt-3-review-gpt55.md`](../scripts/sweep-prompt-3-review-gpt55.md) (the GPT-5.5-tuned version). The existing reviewer script accepts a `--prompt-file` flag. Switching is one workflow line.
+The two historical prompt versions are preserved in Git: [Anthropic-oriented prompt](https://github.com/brianpabent/open-enzyme/blob/7df1760323e8b8b882c1b6a09fe5428d65045221/scripts/sweep-prompt-3-review.md) and [GPT-5.5-tuned prompt](https://github.com/brianpabent/open-enzyme/blob/7df1760323e8b8b882c1b6a09fe5428d65045221/scripts/sweep-prompt-3-review-gpt55.md). The reviewer script accepted a `--prompt-file` flag; switching was one workflow line.
 
 ## What changed empirically
 
@@ -72,4 +72,4 @@ The 5× cost reduction is the headline. The discipline behind it is the actual t
 
 ---
 
-*Written 2026-05-08. Open Enzyme is an open-source library of engineered food-grade microbes producing therapeutic enzymes. The sweep daemon code, both prompts, and the full eval artifact are public in the repo.*
+*Written 2026-05-08. Open Enzyme is an open-source library of engineered food-grade microbes producing therapeutic enzymes. The sweep daemon code, archived prompt snapshots, and the full eval artifact are public in the repository history.*

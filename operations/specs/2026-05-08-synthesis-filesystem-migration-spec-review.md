@@ -47,7 +47,7 @@ A revised spec with §4 expanded, §5.7 redesigned, and §5.3 made concrete (or 
 **User-facing docs the spec partially addresses:**
 - `README.md` — lines 63 and 86 link to `wiki/synthesis.md`. Spec doesn't list README at all.
 - `mkdocs.yml` — line 60 has `Platform Thesis & Synthesis: synthesis.md` in the nav. The published docs site will 404 if not updated. Spec doesn't address.
-- `wiki/index.md` line 84 — "The [Synthesis Queue](synthesis.md)" link.
+- `wiki/index.md` line 84 — the historical `[Synthesis Queue](synthesis.md)` link.
 
 **Wiki cross-links — the largest category by far:** 27 wiki pages contain at least one `synthesis.md` link (e.g., `engineered-koji-protocol.md`, `computational-experiments.md`, `tcm-modern-rigor-intersection.md`, `chembl-cross-check.md`, `modality-chokepoint-matrix.md`, `chaperone-orthogonal-stacking.md`, `open-questions.md`, `validation-experiments.md`, etc.). Many cite specific items: e.g., `open-questions.md` line 76 cites "synthesis.md Connection 7"; `chaperone-orthogonal-stacking.md` line 215 anchors to "synthesis.md#strategic-reflections-queue". The spec's success criterion 11 ("no `wiki/synthesis.md` references remain anywhere") implies all 27 files need rewrites. That is substantial work and the spec doesn't acknowledge it.
 
