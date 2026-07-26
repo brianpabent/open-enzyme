@@ -35,7 +35,7 @@ comp-044 converts UOX dose and specific activity into an upper-bound urate-degra
 
 Five named scenarios and a discrete 1,620-cell full-factorial grid per dose are evaluated. Grid occupancy is not treated as probability. No serum-urate change is computed.
 
-The 8.3 U/mg specific activity, Km range, 2–4 hour active-window range, and 233 mg/day denominator are inherited or derived corpus priors. They were not newly primary-source verified for quantitative planning in comp-044. The 0.59 µM jejunal urate input is an inherited, grep-verified extraction from Miyazaki et al. 2025 (PMCID PMC11877951). These inputs are adequate for the bounded internal-consistency test, not for selecting a dose.
+The 8.3 U/mg specific activity, Km range, 2–4 hour active-window range, and 233 mg/day denominator are inherited or derived corpus priors. They were not newly primary-source verified for quantitative planning in comp-044. The 0.59 µM input is inherited from a grep-verified extraction of terminal-ileal fluid measurements in a balloon-enteroscopy cohort (Miyazaki et al. 2025, PMCID PMC11877951); it is not a healthy-population baseline. These inputs are adequate for the bounded internal-consistency test, not for selecting a dose.
 
 ## Key results
 

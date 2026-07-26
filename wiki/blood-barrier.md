@@ -32,7 +32,7 @@ The luminal hypothesis exploits urate already secreted into the intestine. It do
 
 An engineered UOX candidate therefore remains conditional on two preclinical gates:
 
-1. Build and characterize exact candidate configurations in their intended host or material, then use [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) to identify whether any produces product at the human-baseline substrate prior without an unacceptable peroxide or viability signal.
+1. Build and characterize exact candidate configurations in their intended host or material, then use [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) to identify whether any produces product at the terminal-ileal clinical-cohort substrate prior without an unacceptable peroxide or viability signal.
 2. A surviving topology must pass [validation §1.36](./validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay), which tests the coupled loss of urate antioxidant capacity and UOX-derived hydrogen peroxide before animal escalation.
 
 Until those gates pass, no fermented preparation, live organism, lysate, powder, or capsule is an established delivery format.

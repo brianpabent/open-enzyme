@@ -15,11 +15,11 @@ related:
   - ../open-questions.md
   - ./README.md
 sources:
-  - "Miyazaki et al. 2025 — PMID 40033341; direct human jejunal urate measurement"
+  - "Miyazaki et al. 2025 — PMID 40033341; direct human terminal-ileal-fluid urate measurement in a balloon-enteroscopy cohort"
   - "Gao et al. 2025 — PMID 41038159; PULSE animal-model precedent"
   - "Zhao et al. 2022 — PMID 35491895; EcN UOX oxygen-recycling precedent"
-  - "comp-044 — physiological-regime audit, 2026-07-13"
-  - "comp-045 — topology × oxygen × peroxide design, 2026-07-13"
+  - "comp-044 — physiological-regime audit"
+  - "comp-045 — topology × oxygen × peroxide design"
 ---
 
 # H08 — Gut-Lumen Sink Mechanism
@@ -32,10 +32,10 @@ This is deliberately not a numeric ΔSUA claim. A defensible magnitude requires 
 
 ## Current evidence
 
-1. **Clinical human physiology:** ABCG2 contributes to intestinal urate transport, and direct human jejunal measurements show sub-micromolar baseline luminal urate in the sampled setting (Miyazaki 2025). This supports the route but creates a substrate-occupancy constraint.
+1. **Clinical human physiology:** ABCG2 contributes to intestinal urate transport, and terminal-ileal fluid from a 34-patient balloon-enteroscopy cohort contained sub-micromolar urate at the reported median (Miyazaki 2025). This is a direct compartment measurement, not a healthy-population baseline; it supports testing the route while creating a substrate-occupancy constraint.
 2. **Animal models:** PULSE lowered urate in hyperuricemic mice/rats using a 1:1:1 mixture of intracellular, secreted, and displayed smUOX topologies with KatG+VHb support (Gao 2025). Zhao 2022 independently demonstrated an EcN PucLM+YgfU+KatG+VHb architecture under restricted oxygen. **Evidence level: Animal Model + In Vitro.**
 3. **Computational audit:** comp-044 finds that the legacy unconditional flat-dose classification is not robust to its tested substrate-occupancy and finite-window diagnostics. It does not identify the true physiological regime, reverse the old conclusion, or predict efficacy.
-4. **Topology uncertainty:** comp-045 finds that no topology can yet be eliminated; the decisive comparison must measure urate, product, oxygen, peroxide, viability, and localization together.
+4. **Topology uncertainty:** comp-045 generates a blocked candidate layout for measuring urate, product, oxygen, peroxide, viability, and localization together. It contains no biological measurements and does not evaluate or rank a topology.
 
 ## Assumption stack
 
@@ -59,7 +59,7 @@ This is deliberately not a numeric ΔSUA claim. A defensible magnitude requires 
 
 ## Pre-committed interpretation
 
-- **Mechanism strengthened:** reproducible UOX product formation at the human-baseline substrate prior under physiological oxygen, with controlled peroxide and viable epithelium, followed by increased net transepithelial elimination in a dynamic model or human-relevant system.
+- **Mechanism strengthened:** reproducible UOX product formation at the terminal-ileal clinical-cohort substrate prior under physiological oxygen, with controlled peroxide and viable epithelium, followed by increased net transepithelial elimination in a dynamic model or human-relevant system.
 - **Mechanism narrowed:** activity appears only at the 250 µM benchmark or only under oxic conditions; the approach becomes meal/inflammation- or niche-dependent rather than a continuous baseline sink.
 - **Current topology killed:** no measurable product at physiological substrate/oxygen despite confirmed expression and localization, or unacceptable peroxide/barrier injury relative to inactive-UOX controls.
 - **Mechanism killed:** a controlled human study with verified local UOX activity and adequate exposure shows no meaningful change in whole-body urate handling.
@@ -76,8 +76,8 @@ No mg/dL boundary is pre-committed until the dynamic local model is rebuilt from
 
 | ID | Item | Status |
 |---|---|---|
-| H08-1 | comp-044 physiological-regime audit | Complete 2026-07-13 |
-| H08-2 | comp-045 factorial design | Complete 2026-07-13 |
+| H08-1 | comp-044 physiological-regime audit | Complete |
+| H08-2 | comp-045 factorial design | Design generated; wet-lab blocked |
 | H08-3 | Build and characterize exact configurations, then run validation §1.33 | Proposed |
 | H08-4 | Run validation §1.36 before animal escalation | Proposed |
 | H08-5 | Rebuild dynamic compartmental model from measured §1.33 inputs | Blocked on data, not started |

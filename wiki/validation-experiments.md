@@ -489,7 +489,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 **Protocol:**
 - **Cells:** Caco-2 transwell monolayer, 21-day differentiated.
 - **Treatment arms:**
-  - Matched vehicle, inactive-UOX, and matrix- or chassis-only controls under the §1.33 human-baseline substrate prior.
+  - Matched vehicle, inactive-UOX, and matrix- or chassis-only controls under the §1.33 terminal-ileal clinical-cohort substrate prior.
   - The §1.33-advanced active-UOX configuration at a series derived from its measured product formation and H₂O₂, rather than a fixed enzyme-activity range.
   - Matched catalase and candidate antioxidant-rescue arms.
   - Separately labeled sensitivity-substrate arms where needed to define the response surface.
@@ -1349,18 +1349,18 @@ If Stage 1 reproduces the cordycepin direction and reveals a decision-relevant r
 
 **Status:** Proposed — first physiological reaction-site gate after construct supply | **Cost:** TBD | **Weeks:** TBD | **Phase:** 1 | **Affected wiki:** [gut-lumen sink](./gut-lumen-sink.md), [engineered koji protocol](./engineered-koji-protocol.md), [delivery-route matrix](./delivery-route-matrix.md)
 
-**What it tests:** Whether an already built and characterized UOX configuration forms product under the human-baseline substrate prior and defined oxygen contexts without a configuration-specific peroxide or viability penalty. It can compare localization strategies within a controlled host background. It cannot declare a topology transferable across EcN, yeast, koji, purified enzyme, or another chassis when the configurations differ in more than localization.
+**What it tests:** Whether an already built and characterized UOX configuration forms product under the terminal-ileal clinical-cohort substrate prior and defined oxygen contexts without a configuration-specific peroxide or viability penalty. It can compare localization strategies within a controlled host background. It cannot declare a topology transferable across EcN, yeast, koji, purified enzyme, or another chassis when the configurations differ in more than localization.
 
 **Entry requirements:**
 - Every arm must exist before randomization and must have sequence identity, host or matrix, localization, active-UOX recovery, batch variance, and supporting machinery recorded.
 - Yeast arms come from §1.2; koji arms come from §1.5; a PULSE/EcN arm requires the exact characterized strain or an explicitly bounded reconstruction. Catalase- or VHb-bearing arms require their own matched inactive-UOX and support-module controls.
 - Within-host topology comparisons must freeze payload, host background, copy state, promoter class, and support modules as far as technically possible. Unmatched features make the result configuration-specific.
 
-**Computational priors:** [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) shows that the legacy unconditional flat-dose robustness claim does not survive the tested diagnostics; it does not select a topology. [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md) supplies a candidate randomized plate layout. Use only the subset for which qualified materials and matched controls exist, and regenerate the randomization before execution if that subset changes. Primary topology precedents: Gao et al. 2025 ([PMID 41038159](https://pubmed.ncbi.nlm.nih.gov/41038159/)) and Zhao et al. 2022 ([PMID 35491895](https://pubmed.ncbi.nlm.nih.gov/35491895/)).
+**Computational priors:** [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) shows that the legacy unconditional flat-dose robustness claim does not survive the tested diagnostics; it does not select a topology. [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md) supplies a schema-2 candidate randomized layout with biological verdict `NOT_EVALUATED`; it is blocked pending exact control and sampling qualification. Use only the subset for which qualified materials and matched controls exist, and regenerate the randomization under a new exact lifecycle if that subset changes. Primary topology precedents: Gao et al. 2025 ([PMID 41038159](https://pubmed.ncbi.nlm.nih.gov/41038159/)) and Zhao et al. 2022 ([PMID 35491895](https://pubmed.ncbi.nlm.nih.gov/35491895/)).
 
-**Protocol:** Run at least three independent biological batches under separately measured oxic and microoxic contexts. Test the human-baseline substrate prior plus prespecified sensitivity and source-benchmark conditions. At every substrate condition include matched inactive-UOX, host- or matrix-only, support-module, no-urate, and medium controls appropriate to that exact configuration. Measure urate and oxidative product, H₂O₂, dissolved oxygen, viability, localization, and active UOX at the reaction site. Report within-host contrasts separately from cross-configuration observations.
+**Protocol:** Run at least three independent biological batches under separately measured oxygen contexts. Test the terminal-ileal clinical-cohort substrate prior plus prespecified sensitivity and source-benchmark conditions. At every substrate condition include matched inactive-UOX, host- or matrix-only, support-module, no-urate, and medium controls appropriate to that exact configuration. Measure urate and oxidative product, H₂O₂, dissolved oxygen, viability, localization, and active UOX at the reaction site. Report within-host contrasts separately from cross-configuration observations.
 
-**Decision rule:** Advance an exact configuration only if it shows reproducible product formation at the human-baseline prior without a prespecified extracellular-H₂O₂ or viability penalty relative to its matched controls. A result confined to a high-substrate benchmark remains benchmark-positive but physiologically unproven. A within-host localization effect may nominate a topology for that host; a cross-host rank does not. No serum-urate, dose, production, or chassis conclusion is allowed from this assay.
+**Decision rule:** Advance an exact configuration only if it shows reproducible product formation at the terminal-ileal clinical-cohort prior without a prespecified extracellular-H₂O₂ or viability penalty relative to its matched controls. A result confined to a high-substrate benchmark remains benchmark-positive but physiologically unproven. A within-host localization effect may nominate a topology for that host; a cross-host rank does not. No serum-urate, dose, production, or chassis conclusion is allowed from this assay.
 
 ### 1.34 Isotope-Resolved Dietary Precursor → UOX → PDB Sequential Flux
 
@@ -1927,7 +1927,7 @@ UOX promotion criteria are tied to matched controls and pilot-measured assay pre
 |-------|-----------|------------------|------------------|
 | 1 | Gene performance | Active UOX under matched construct conditions | Precision-aware reproducible difference; no topology or dose inference |
 | 1 | Configuration supply (§§1.2, 1.5) | Sequence identity, localization, active UOX, viability, variance | Qualified material and matched controls for §1.33; no physiological inference |
-| 1 | Physiological UOX system (§1.33) | Product formation at human-baseline substrate prior | Exact configuration reproducible vs. matched inactive-UOX control, with no prespecified H₂O₂ or viability penalty |
+| 1 | Physiological UOX system (§1.33) | Product formation at terminal-ileal clinical-cohort substrate prior | Exact configuration reproducible vs. matched inactive-UOX control, with no prespecified H₂O₂ or viability penalty |
 | 1 | Route-specific process retention (§§1.3, 1.4, 1.6, 1.15) | Retained active UOX and product formation | Pilot-derived reproducibility and noninferiority margins; no fixed survival fraction |
 | 1 | Candidate UOX variants (§1.16) | Retained active UOX in the advanced configuration | Simplest candidate clearing prespecified precision-aware activity and safety margins; changed payload returns to §1.33 |
 | 1 | UOX epithelial safety (§§1.12, 1.36) | Barrier, H₂O₂, antioxidant-loss, viability | §1.36 must pass before animal escalation |

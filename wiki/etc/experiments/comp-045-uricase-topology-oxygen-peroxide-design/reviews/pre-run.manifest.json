@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/README.md",
+      "kind": "design",
+      "bytes": 10358,
+      "sha256": "71bee9a79acd5ef23e3e0331901fab856461aba2844bd99de28e039aa452e43a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/analyze.py",
+      "kind": "design",
+      "bytes": 45164,
+      "sha256": "16a334b0281c5c35403c0fed745a7afde0dffaf5c4c1ae421cd2128854268a8e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/design_factors.json",
+      "kind": "design",
+      "bytes": 17774,
+      "sha256": "f095b963f5e3b3fd9a2c83cc7ae8eb8b9276a9abce6e06b8ef481231dee1d5dd"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 3949,
+      "sha256": "b2752671a300a78a65778a49ae2b4a81c7dfbe567b1d45337ed0943e53d72387"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/query-strategy.json",
+      "kind": "design",
+      "bytes": 1603,
+      "sha256": "f69366bcdec75d4c22897c417367cc591ba5fd968b0bce665104bfc4f8668113"
+    }
+  ],
+  "prior_output_baseline": [
+    {
+      "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/outputs/results.json",
+      "kind": "prior_output",
+      "bytes": 153916,
+      "sha256": "276e5ed39f567d389f01d7ba72765c04297c8cab5cf8e8ad0d993016d91f3c68"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/outputs/summary.md",
+      "kind": "prior_output",
+      "bytes": 2442,
+      "sha256": "2659d55962d91663a52addbeaf318e7a1fdd72eb101fab48be19217a29c67a52"
+    }
+  ],
+  "manifest_sha256": "43563a3d9660282e9ebd82a954130abcfc880b043ee84f25c9c5bd5f8e308006"
+}

@@ -1,18 +1,51 @@
 # Input provenance — comp-045
 
-Rechecked 2026-07-13.
+## Direct human small-bowel-fluid prior
 
-- Miyazaki et al. 2025, PMID 40033341, PMCID PMC11877951: direct human jejunal urate measurement. Median baseline 0.59 µM (IQR 0.06–1.16 µM). The conversion was independently verified in comp-044 provenance: 99.5 pg/µL = 99.5 µg/L; divided by urate molecular weight 168.11 g/mol = 0.592 µmol/L. This anchors the 0.59 µM arm.
+Miyazaki et al. 2025 (PMID 40033341; PMCID PMC11877951) sampled terminal-ileal fluid from 34 patients undergoing balloon-assisted enteroscopy. The reported median urate concentration was 99.5 pg/µL. Using urate molecular weight 168.11 g/mol:
 
-- Gao et al. *Cell Reports Medicine* 2025, PMID 41038159, PMCID PMC12629798: PULSE compared intracellular smUOX + YgfU, LamB-secreted smUOX, and InakN-displayed smUOX. KatG and VHb were then expressed; chronic-rat dosing used a 1:1:1 mixture of the three topologies. These are the experimental topology anchors.
-- Zhao R et al. *Gut Microbes* 2022, PMID 35491895, PMCID PMC9067508: engineered EcN expressed PucL/PucM, YgfU, KatG, and VHb; the complete construct improved urate degradation under restricted dissolved oxygen and lowered ROS. This anchors the intracellular closed-loop architecture.
-- Li et al. 2023, PMCID PMC10242094: pBR-pucLM + pAC-ygfU degraded urate in defined medium and FaSSIF-V2. This is an additional intracellular/importer precedent.
-- EcN C6 periplasmic UOX, PMCID PMC10013758: chromosomally insulated/periplasmic precedent relevant to containment and localization.
+- 99.5 pg/µL = 99.5 µg/L = 0.591874 µmol/L;
+- the reported IQR converts to 0.060080–1.154006 µmol/L.
 
-## Mechanistic inference made explicit
+The design rounds the median to 0.59 µM. This is a **direct human terminal-ileum measurement in the sampled clinical cohort**, not a jejunal measurement, healthy-population baseline, or UOX activity result. No cited UOX configuration was tested at 0.59 µM.
 
-The compartment concern is chemical, not a claimed efficacy result: H2O2 is generated where active UOX encounters urate. Intracellular catalase can be directly co-localized with intracellular UOX. For a secreted or surface-displayed UOX, intracellular catalase may reduce cell-associated ROS after H2O2 diffuses inward, but it is not at the extracellular generation site. PULSE nonetheless observed improvement after adding the joint KatG+VHb module to all three topologies. The design therefore uses graded states—direct support, indirect empirical support, proposed direct test, unresolved, or unsupported—rather than binary closure.
+## Exact PULSE configuration precedents
 
-KatG and VHb were combined in the principal PULSE/Zhao comparisons; their independent contributions were not fully isolated. The new factorial deliberately separates them. Co-secreted/fused or surface-tethered catalase arms are proposed constructs, not published PULSE configurations.
+Gao et al. 2025 (PMID 41038159; PMCID PMC12629798) constructed three HucR/YgfU-regulated EcN UOX topologies:
 
-No numerical ranking is assigned because the primary papers did not test all topology × oxygen × catalase combinations at human jejunal urate concentrations. The 250 µM arm reproduces the PULSE in-vitro benchmark; 0.59 µM is the direct-human jejunal prior; 50 µM is labeled sensitivity only.
+- intracellular smUOX;
+- LamB-smUOX;
+- InaK-N-smUOX.
+
+Each baseline topology was assayed at 250 µM urate. The authors then added one joint `VHb-KatG` vector to each topology and compared each baseline with its joint-module counterpart under the paper's low-oxygen method. The method used filled, sealed tubes but did not report a dissolved-oxygen target. These are direct whole-configuration precedents. They are not KatG-only or VHb-only comparisons.
+
+The source reports LamB-supernatant-associated UOX activity and InaK-N fusion/whole-cell activity. It does not provide a dedicated surface-accessibility assay that independently establishes the claimed InaK-N outer-surface localization.
+
+The paper used different 1:1:1 mixtures in different animal experiments: a non-KV topology mixture in acute mice and the 30-day rat study, and the three `-KV` topologies in a short eight-hour diet-induced rat comparison. It did not establish a three-topology mixture as an in-vitro positive control across 0.59/50/250 µM. COMP-045 therefore treats the KV mixture only as a proposed cross-plate anchor.
+
+## Related intracellular precedents
+
+Zhao et al. 2022 (PMID 35491895; PMCID PMC9067508) compared an intracellular EcN `PucL^M/PucM-vhb-ygfU-katG` configuration with the related construct lacking both VHb and KatG. The complete joint-module construct lowered measured ROS and improved restricted-DO urate degradation in the reported comparison. Zhao did not test KatG-only or VHb-only arms.
+
+Li et al. 2023 (PMCID PMC10242094) supports a related intracellular PucLM+YgfU EcN configuration at 250 µM in defined medium and FaSSIF-V2. It supplies no KatG or VHb evidence.
+
+The C6 periplasmic EcN UOX architecture (PMCID PMC10013758) is a separate localization precedent. It is outside the four-topology design and supports no current row.
+
+## Proposed configurations and evidence vocabulary
+
+No cited primary source establishes secreted active UOX in *A. oryzae*. The two koji rows are proposed configurations. Native intracellular catalase is background context, not a second physical arm and not evidence of peroxide closure at a secreted UOX reaction site.
+
+The evidence model separates:
+
+- `direct_exact_configuration_precedent`;
+- `proposed_configuration_from_published_topology`;
+- `no_direct_uox_precedent`;
+- `proposed_isolation_test_from_joint_module_precedent`;
+- `direct_joint_module_effect_component_attribution_unresolved`;
+- `proposed_novel_module_configuration`;
+- reaction-site peroxide status;
+- oxygen status.
+
+“Direct” applies only to the whole published configuration and source scope. Isolated KatG and VHb effects remain unresolved in every topology. PULSE supplies direct joint KatG+VHb construct precedents for all three EcN topologies, but the secreted/displayed configurations do not establish extracellular reaction-site peroxide closure.
+
+The 250 µM arm is the lowest PULSE topology-assay concentration. The 0.59 µM arm is the terminal-ileal human-fluid prior described above. The 50 µM arm is a sensitivity scenario only. No numerical efficacy score or topology ranking is assigned.

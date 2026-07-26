@@ -14,20 +14,17 @@ related:
   - uricase-topology-oxygen-peroxide-design-computational
   - staged-purine-sink-mass-balance-computational
   - validation-experiments
-sources:
-  - "Corpus-wide connection audit, 2026-07-13"
 ---
 
 # Gout Multihop Research Program
 
 **Status:** Phase 0 research map. These are testable threads, not treatment recommendations.
 
-The corpus-wide audit found that the highest-value gaps are not additional single-target
-inhibitors. They are **interfaces between compartments**: precursor versus urate, epithelial
+The highest-value open questions include **interfaces between compartments**: precursor versus urate, epithelial
 transport versus inflammation, oxygen versus peroxide, microbial carbon fate versus host
 signaling, and preventive urate lowering versus flare resolution.
 
-## Three immediate corrections
+## Three immediate evidence boundaries
 
 1. **The old oral-UOX flat-dose classification is not robust.** [comp-019](./uricase-abcg2-genotype-stratification-computational.md)
    converted flat enzyme mass into catalytic capacity without physiological substrate,
@@ -38,7 +35,7 @@ signaling, and preventive urate lowering versus flare resolution.
 2. **UOX topology and peroxide handling cannot be separated.** Intracellular catalase directly
    co-localizes only with intracellular UOX. PULSE supports three topologies plus joint
    KatG+VHb, but does not identify the human-optimal architecture. [comp-045](./uricase-topology-oxygen-peroxide-design-computational.md)
-   defines the factorial.
+   generates a blocked candidate layout and contains no biological topology verdict.
 3. **Dietary precursor and endogenous luminal urate require different accounting structures.** A whole-cell
    nucleoside-salvage stage and UOX/PDB urate stages cannot be added as independent ΔSUA
    effects. [comp-046](./staged-purine-sink-mass-balance-computational.md) conserves the dietary
@@ -49,7 +46,7 @@ signaling, and preventive urate lowering versus flare resolution.
 
 | Thread | Multihop connection | Evidence boundary | Decisive next test |
 |---|---|---|---|
-| Physiologic UOX regime | exact configuration → human jejunal urate → oxygen/transit/access → peroxide | Direct human substrate measurement + rodent/in-vitro engineering precedents; human efficacy unknown | Build and characterize exact configurations in the relevant construct-supply work (§§1.1, 1.2, and 1.5) or use an exact external configuration, then run [1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) |
+| Physiologic UOX regime | exact configuration → terminal-ileal clinical-cohort urate prior → oxygen/transit/access → peroxide | Direct human substrate measurement + rodent/in-vitro engineering precedents; human efficacy unknown | Build and characterize exact configurations in the relevant construct-supply work (§§1.1, 1.2, and 1.5) or use an exact external configuration, then run [1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) |
 | Staged precursor sink | dietary nucleosides → whole-cell salvage → urate appearance → UOX/PDB | Each stage has precedent; ordering and net host flux are untested | [1.34](./validation-experiments.md#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux) |
 | Enterocyte tissue paradox | NLRP3 inhibition → PDZK1/ABCG2 trafficking → intestinal urate export | Direct intestinal-cell link exists; candidate-specific direction unknown | [1.35](./validation-experiments.md#135-enterocyte-nlrp3pdzk1abcg2-tissue-paradox-assay) |
 | Redox double edge | remove luminal urate antioxidant → generate UOX H2O2 → epithelial redox injury | Biochemical mechanism established; therapeutic window unmeasured | [1.36](./validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay) before animal escalation |

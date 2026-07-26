@@ -29,7 +29,7 @@ This page does not rank yeast against another chassis or treat yeast expression 
 | Evidence | Level | Supported claim | Boundary |
 |---|---|---|---|
 | Leplatois et al. expressed active, soluble *Aspergillus flavus* UOX intracellularly in *S. cerevisiae*. | **In Vitro** | This host can produce active intracellular *A. flavus* UOX under the reported construct and culture conditions. | Does not establish release, secretion, physiological substrate access, oral delivery, dose, efficacy, or safety. |
-| Wang et al. engineered uric-acid catabolism in *S. cerevisiae* and transferred the pathway to *S. boulardii*. | **In Vitro** | UOX identity, urate access, promoter context, and integration context can be varied and whole-cell uric-acid degradation measured in engineered yeast. | Does not select this project's host, payload, cassette, topology, or dose and does not establish activity at the human-baseline substrate prior. |
+| Wang et al. engineered uric-acid catabolism in *S. cerevisiae* and transferred the pathway to *S. boulardii*. | **In Vitro** | UOX identity, urate access, promoter context, and integration context can be varied and whole-cell uric-acid degradation measured in engineered yeast. | Does not select this project's host, payload, cassette, topology, or dose and does not establish activity at the terminal-ileal clinical-cohort substrate prior. |
 
 Systemic UOX evidence does not establish a yeast-derived oral configuration and is not used as a chassis decision here.
 

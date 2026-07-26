@@ -174,14 +174,14 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 
 **Computational boundary:** COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. COMP-044 supplies no replacement dose, ΔSUA, genotype, physiological regime, efficacy, topology or chassis, production, or safety conclusion. Build and characterize exact configurations first, then use §1.33 for configuration-level comparison. A topology may be nominated only within a controlled host comparison; cross-host results remain configuration-specific, and §1.36 safety precedes animal escalation.
 
-**Clinically validated routes:**
+**Evidence by route:**
 - **IV systemic (pegylated):** Pegloticase (Krystexxa), rasburicase. Near-zero serum urate within hours. Anti-drug antibody formation limits durability in ~40–60%; methotrexate co-dosing (SEL-212/pegadricase strategy) partially resolves immunogenicity. PRX-115 Phase 2 RELEASE trial active (Dec 2025, N=150). (Clinical Trial — IV pegloticase/rasburicase)
 - **PO gut-lumen (ALLN-346):** Study 201 ([NCT04987242](https://clinicaltrials.gov/study/NCT04987242)) completed with an actual enrollment of 16; its Phase 2a abstract reports only the first 11 participants. Study 202 ([NCT04987294](https://clinicaltrials.gov/study/NCT04987294)) enrolled 19, terminated for company financing, and has no posted results. These records establish limited human route evidence, not a transferable dose, serum effect, formulation, chassis, or safety profile. **Clinical Trial; conference-abstract and registry evidence.**
-- **PO probiotic (PULSE):** *E. coli* Nissle 1917 expressing uricase with HucR UA-responsive biosensor (dynamically regulates expression based on luminal urate). Validated in Cell Reports Medicine 2025 in humanized microbiome mouse model. Not in human trials. (Animal Model)
+- **PO probiotic (PULSE):** *E. coli* Nissle 1917 expressing uricase with HucR UA-responsive biosensor (dynamically regulates expression based on luminal urate). Tested in animal models reported in Cell Reports Medicine 2025. Not in human trials. (Animal Model)
 
-**Routes that fail and why:**
-- Inhaled/intranasal: no therapeutic urate elimination pathway exists in the airway for gout. Uric acid is not secreted into airways at clinically significant flux.
-- Topical skin: sweat contains trace urate; topical uricase degrades surface urate only. No systemic benefit.
+**Routes without an established UOX path here:**
+- Inhaled/intranasal: this corpus has no demonstrated airway UOX route with measured urate substrate flux, systemic effect, and peroxide safety.
+- Topical skin: this corpus has no demonstrated topical UOX route with enough accessible urate flux to affect systemic handling.
 - SC: SC delivery of a large protein antigen changes the exposure compartment, but sensitization risk is product- and route-specific; oral exposure cannot be assumed to confer tolerance. No SC uricase program is established here as an active comparator.
 
 **Open territory:**

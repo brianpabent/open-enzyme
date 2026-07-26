@@ -7,75 +7,89 @@ related:
   - validation-experiments.md
   - gut-lumen-uricase-physiologic-regime-computational.md
   - gut-lumen-sink.md
-  - engineered-koji-protocol.md
 sources:
   - "Gao et al. 2025 — PMID 41038159; PMCID PMC12629798"
   - "Zhao et al. 2022 — PMID 35491895; PMCID PMC9067508"
   - "Li et al. 2023 — PMCID PMC10242094"
-  - "EcN C6 uricase — PMCID PMC10013758"
+  - "Miyazaki et al. 2025 — PMID 40033341; PMCID PMC11877951"
 ---
 
 # Uricase Topology × Oxygen × Peroxide — Computational Design (comp-045)
 
 ## Question
 
-How should intracellular, secreted, surface-displayed, and koji-secreted UOX be compared across substrate, oxygen, and peroxide constraints without encoding a topology winner in advance?
+How can exact published and proposed UOX configurations be compared across substrate concentration, dissolved-oxygen context, KatG, VHb, and reaction-site catalase without assigning a published joint effect to either component or encoding a topology winner?
 
-## Verdict
+## Current state
 
-**YELLOW — joint empirical comparison required; no topology eliminated.** Intracellular UOX+YgfU has the cleanest direct precedent for putting substrate import, UOX, KatG, and VHb in one cell. Secreted and displayed UOX avoid the importer gate and also benefited from PULSE's joint KatG+VHb module, but extracellular peroxide exposure and the source of low-oxygen benefit remain unresolved.
+**Design disposition: `CANDIDATE_LAYOUT_GENERATED`. Biological verdict: `NOT_EVALUATED`.**
 
-## Why this matters
+COMP-045 contains no biological measurements. It does not advance, eliminate, or rank intracellular, secreted, displayed, or koji-secreted UOX. It generates a blocked experimental template whose exact constructs, controls, stocks, oxygen targets, sampling plan, and assay qualifications must be fixed before wet-lab execution.
 
-The corpus previously described PULSE largely as secreted UOX and treated intracellular koji catalase as if it neutralized H2O2 before UOX secretion. The PULSE primary paper instead compared three UOX topologies and used all three in its chronic-rat mixture. H2O2 is generated when active UOX meets urate, so reaction-site localization—not chassis membership alone—determines whether catalase is directly co-localized.
+## Evidence boundary
 
-## Method summary
+Gao/PULSE provides **In Vitro** activity precedents at 250 µM urate for three exact EcN configurations: intracellular smUOX+YgfU, LamB-smUOX, and InaK-N-smUOX. The paper also compared each topology with the same joint KatG+VHb module under its low-oxygen method. It did not test KatG-only or VHb-only UOX configurations.
 
-comp-045 is a deterministic evidence-state and experimental-design model. It formalizes:
+Zhao provides a **related In Vitro** intracellular PucL-mutant/PucM+YgfU+KatG+VHb precedent, not the exact PULSE smUOX construct. Li provides a related intracellular PucLM+YgfU precedent without KatG or VHb. Neither related configuration is relabeled as exact PULSE evidence.
 
-- four topologies: intracellular+YgfU, LamB secretion, InakN display, and free koji secretion;
-- no peroxide module, intracellular KatG/native catalase, or a proposed compartment-matched catalase construct;
-- ±VHb where the chassis supports it;
-- separate oxic and microoxic contexts;
-- 0.59 µM human-baseline prior, 50 µM sensitivity, and 250 µM PULSE-benchmark urate.
+For LamB and InaK-N UOX, the joint construct is direct whole-configuration evidence, but intracellular KatG is not located at the extracellular UOX reaction site. The reported comparison therefore does not establish extracellular peroxide closure. InaK-N fusion and whole-cell activity were reported, but a dedicated surface-accessibility localization assay was not.
 
-Evidence is graded as direct support, indirect empirical support, proposed direct test, controlled-but-not-proven-sufficient, unresolved, or unsupported. No efficacy score is assigned.
+No cited primary source establishes secreted active UOX in *A. oryzae*. Both koji rows are proposed configurations. Native intracellular catalase is host background, not a separate engineered arm and not evidence that peroxide is controlled where secreted UOX reacts.
 
-## Key results
+## Substrate regimes
 
-The design contains:
+- **0 µM:** matched no-urate control.
+- **0.59 µM:** rounded direct measurement from terminal-ileal fluid in a 34-patient balloon-enteroscopy cohort; not a jejunal or healthy-population baseline and not tested in the cited UOX configurations.
+- **50 µM:** sensitivity scenario only.
+- **250 µM:** lowest reported PULSE topology-assay concentration.
 
-- 19 non-duplicative topology × peroxide × VHb conditions;
-- three urate concentrations;
-- three independent biological runs per oxygen context;
-- six randomized 96-well plates, with 81 used wells per plate;
-- inactive-UOX, chassis-only, and PULSE-mixture controls matched at 0.59/50/250 µM, plus explicit 0 µM no-urate and medium controls.
+PULSE used filled, sealed tubes without a reported dissolved-oxygen target. Zhao used approximately 15% of normal dissolved oxygen. A new `microoxic` label is not an exact match to both sources; each wet-lab oxygen target must be predeclared and measured.
 
-Oxic and microoxic conditions are separated by plate, every plate carries the same anchors, and topology is randomized within each plate. The primary readouts are urate, product formation, H2O2, dissolved oxygen, viability, and UOX localization.
+## Candidate design
 
-## Independent mechanism axes
+Schema 2 defines:
 
-1. **Substrate access:** intracellular UOX requires YgfU; extracellular and surface UOX do not.
-2. **Peroxide exposure:** intracellular KatG is directly co-localized only with intracellular UOX. PULSE provides indirect empirical support for KatG+VHb benefit in secreted and displayed forms, but does not establish that epithelial extracellular H2O2 is controlled.
-3. **Oxygen handling:** VHb improves cellular oxygen utilization but cannot create oxygen. Its direct relevance is strongest for intracellular UOX; dissolved oxygen and demand remain required readouts for every topology.
+- 18 unique physical configurations and 20 block assignments;
+- 14 preregistered same-block contrasts;
+- active UOX plus an otherwise support-module-matched inactive-UOX control at every concentration;
+- three biological runs × two measured oxygen contexts × two blocks;
+- 12 full 96-well plates with deterministic SHA-256 allocation;
+- urate, pathway product, H₂O₂, dissolved oxygen, viability, and localization readouts.
 
-## Limitations
+Two LamB comparator configurations repeat across blocks so the KatG/VHb and proposed reaction-site-catalase contrasts each retain a within-block comparator. The mixed three-topology PULSE-KV composition is a proposed cross-plate anchor, not a published in-vitro positive control.
 
-- KatG and VHb were introduced jointly in key precedents; the new factorial separates them precisely because their independent effects are unresolved.
-- Co-secreted/fused and surface-tethered catalase are proposed constructs, not published PULSE configurations.
-- Intracellular “compartment-matched catalase” is not a separate arm because it duplicates intracellular KatG/native catalase.
-- “Oxic” is a controlled context, not proof that oxygen supply exceeds UOX demand.
-- Cross-plate anchors help normalization but do not eliminate biological-run effects.
-- The design does not model expression burden, proteolysis, mucus retention, colonization, or containment.
-- Independent peer review rejected the initial binary “hard gate” model and plate-confounded layout; the final artifact uses graded evidence and randomized context-specific plates.
+> **Research conjecture — What drives the joint-module benefit outside the cell?**{ .research-conjecture-label }
+>
+> **Grounded premises:** PULSE compared exact LamB and InaK-N UOX configurations with and without joint KatG+VHb under its low-oxygen method (**In Vitro**; source: Gao 2025, PMID 41038159). KatG remained intracellular while UOX activity was associated with supernatant or whole cells; extracellular reaction-site peroxide closure was not measured.
+>
+> **Novel leap:** The observed joint-module difference may reflect VHb-mediated oxygen/cell-fitness support, intracellular ROS handling, or both rather than extracellular peroxide closure. No direct evidence separates those explanations.
+>
+> **Why it matters:** The answer determines whether to invest in intracellular support, reaction-site catalase, or both.
+>
+> **Discriminating observation:** Compare no module, KatG only, VHb only, joint KatG+VHb, and reaction-site catalase with matched product, dissolved oxygen, H₂O₂, viability, localization, and epithelial-exposure readouts.
 
-## Impact on experimental priorities
+## Wet-lab readiness
 
-This reframes topology selection from narrative preference to a **decision experiment**. The PULSE three-form mixture is the positive benchmark. Free secreted koji remains testable, but it cannot claim automatic peroxide closure from intracellular catalase; a matched-catalase arm is required.
+`BLOCKED_PENDING_EXACT_CONTROL_AND_SAMPLING_QUALIFICATION`
+
+Before execution, bind and review:
+
+- exact active/inactive UOX identities, retained activity, and matched expression/localization criteria;
+- exact KatG, VHb, and reaction-site-catalase constructs, retained function, localization, and co-expression compatibility;
+- chassis and mixed-anchor stocks plus cell normalization;
+- dissolved-oxygen targets;
+- sampling times, volume, aliquoting, and destructive-assay compatibility;
+- sensitivity and quantification limits at 0.59 µM.
+
+The template must be regenerated under a new exact lifecycle if the qualified subset, contrasts, concentrations, blocks, or controls change.
+
+## What would advance or redirect the track
+
+A topology can advance only from measured within-host, exact-configuration contrasts with qualified controls. Cross-host observations remain configuration-specific. A negative result applies to the tested construct × concentration × oxygen × control regime; it does not kill gut-lumen UOX, another topology, another chassis, or the project.
 
 ## Cross-references
 
 - [Reproducible artifact and plate maps](./etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/)
 - [Physiological-regime audit](./gut-lumen-uricase-physiologic-regime-computational.md)
-- [Validation experiments](./validation-experiments.md)
+- [Validation experiment §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial)
 - [Gut-lumen sink](./gut-lumen-sink.md)
