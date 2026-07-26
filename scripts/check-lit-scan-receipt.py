@@ -58,10 +58,10 @@ def validate(path: Path) -> list[str]:
             errors.append(f"{path}: {key} must be a non-empty string")
 
     updates = data.get("canonical_updates")
-    if not isinstance(updates, list) or not updates or not all(
+    if not isinstance(updates, list) or not all(
         _nonempty_string(item) and item.startswith("wiki/") for item in updates
     ):
-        errors.append(f"{path}: canonical_updates must be a non-empty list of wiki/ paths")
+        errors.append(f"{path}: canonical_updates must be a list of wiki/ paths")
 
     attempts = data.get("query_attempts")
     if not isinstance(attempts, list) or not attempts:

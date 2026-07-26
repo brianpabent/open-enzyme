@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "scan_id": "dupilumab-gout-safety-2026-07-26",
+  "question": "Does the 2026Q1 FAERS dupilumab gout cluster survive current regulatory labels and controlled safety evidence strongly enough to justify an IL-4/IL-13-to-MSU mechanism scan?",
+  "started_at": "2026-07-26T19:40:40Z",
+  "completed_at": "2026-07-26T20:19:57Z",
+  "canonical_updates": [],
+  "query_attempts": [
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "direct gout or urate phenotype",
+      "query": "dupilumab AND (gout OR hyperuricemia OR hyperuricaemia OR uric acid)",
+      "status": "success",
+      "result_count": 2,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "joint adverse events",
+      "query": "dupilumab AND (arthritis OR arthralgia OR enthesitis) AND (adverse OR safety)",
+      "status": "partial",
+      "result_count": 25,
+      "error": "The bounded snapshot retained the first 25 records."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "inflammatory arthritis phenotype",
+      "query": "dupilumab AND (inflammatory arthritis OR seronegative arthritis OR psoriatic arthritis)",
+      "status": "partial",
+      "result_count": 25,
+      "error": "The bounded snapshot retained the first 25 records."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "IL-4 or IL-13 plus gout mechanism",
+      "query": "(IL-4 OR IL-13 OR type 2 inflammation) AND (gout OR monosodium urate OR MSU OR NLRP3)",
+      "status": "partial",
+      "result_count": 25,
+      "error": "The bounded snapshot retained the first 25 records and the query was not dupilumab-specific."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "controlled joint safety",
+      "query": "dupilumab AND randomized AND safety AND (joint OR arthritis OR uric)",
+      "status": "success",
+      "result_count": 9,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "long-term safety",
+      "query": "dupilumab AND (long-term OR extension) AND safety",
+      "status": "partial",
+      "result_count": 25,
+      "error": "The bounded snapshot retained the first 25 records."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "renal or urate transport mechanism",
+      "query": "dupilumab AND (renal OR kidney OR urate transporter)",
+      "status": "partial",
+      "result_count": 25,
+      "error": "The bounded snapshot retained the first 25 records."
+    },
+    {
+      "source": "PubMed",
+      "language": "en",
+      "frame": "pharmacovigilance comparison",
+      "query": "dupilumab AND (FAERS OR pharmacovigilance) AND (gout OR arthritis)",
+      "status": "success",
+      "result_count": 3,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "zh",
+      "frame": "native drug name plus gout",
+      "query": "度普利尤单抗 痛风",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "zh",
+      "frame": "native drug name plus hyperuricemia",
+      "query": "度普利尤单抗 高尿酸血症",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "zh",
+      "frame": "native drug name plus arthritis",
+      "query": "度普利尤单抗 关节炎",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "zh",
+      "frame": "alternate native drug name plus gout",
+      "query": "杜匹鲁单抗 痛风",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "zh",
+      "frame": "alternate native drug name plus hyperuricemia",
+      "query": "杜匹鲁单抗 高尿酸血症",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "zh",
+      "frame": "alternate native drug name plus arthritis",
+      "query": "杜匹鲁单抗 关节炎",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "ja",
+      "frame": "native drug name plus gout",
+      "query": "デュピルマブ 痛風",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "ja",
+      "frame": "native drug name plus hyperuricemia",
+      "query": "デュピルマブ 高尿酸血症",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "ja",
+      "frame": "native drug name plus arthritis",
+      "query": "デュピルマブ 関節炎",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "ko",
+      "frame": "native drug name plus gout",
+      "query": "두필루맙 통풍",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "ko",
+      "frame": "native drug name plus hyperuricemia",
+      "query": "두필루맙 고요산혈증",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "PubMed",
+      "language": "ko",
+      "frame": "native drug name plus arthritis",
+      "query": "두필루맙 관절염",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "native drug name plus gout",
+      "query": "度普利尤单抗 痛风",
+      "status": "partial",
+      "result_count": 661,
+      "error": "The server-rendered search behaved as a broad OR query; no paired dupilumab-gout result appeared in the first 20 records."
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "native drug name plus hyperuricemia",
+      "query": "度普利尤单抗 高尿酸血症",
+      "status": "partial",
+      "result_count": 282,
+      "error": "The server-rendered search behaved as a broad OR query; no paired dupilumab-hyperuricemia result appeared in the first 20 records."
+    },
+    {
+      "source": "CQVIP",
+      "language": "zh",
+      "frame": "native drug name plus arthritis",
+      "query": "度普利尤单抗 关节炎",
+      "status": "partial",
+      "result_count": 496,
+      "error": "The server-rendered search behaved as a broad OR query; the first page included dupilumab-associated inflammatory-arthritis and severe-joint-pain case reports, not gout."
+    },
+    {
+      "source": "WanFang",
+      "language": "zh",
+      "frame": "native drug name plus gout",
+      "query": "度普利尤单抗 痛风",
+      "status": "failed",
+      "result_count": null,
+      "error": "The fetched page exposed the application shell without static search results."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "native drug name plus gout",
+      "query": "デュピルマブ 痛風",
+      "status": "partial",
+      "result_count": 12,
+      "error": "The search behaved as broad term matching; none of the 12 titles paired dupilumab with gout."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "native drug name plus hyperuricemia",
+      "query": "デュピルマブ 高尿酸血症",
+      "status": "partial",
+      "result_count": 13,
+      "error": "The search behaved as broad term matching; none of the 13 titles paired dupilumab with hyperuricemia."
+    },
+    {
+      "source": "J-STAGE",
+      "language": "ja",
+      "frame": "native drug name plus arthritis",
+      "query": "デュピルマブ 関節炎",
+      "status": "partial",
+      "result_count": 60,
+      "error": "The search behaved as broad term matching; the first 20 records included joint-pain and eosinophilic-disease material, not gout."
+    },
+    {
+      "source": "RISS",
+      "language": "ko",
+      "frame": "native drug name plus gout",
+      "query": "두필루맙 통풍",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "RISS",
+      "language": "ko",
+      "frame": "native drug name plus hyperuricemia",
+      "query": "두필루맙 고요산혈증",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "RISS",
+      "language": "ko",
+      "frame": "native drug name plus arthritis",
+      "query": "두필루맙 관절염",
+      "status": "success",
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "source": "FDA Drugs@FDA",
+      "language": "en",
+      "frame": "current label and controlled adverse-reaction tables",
+      "query": "NDA 761055 DUPIXENT label 2026 gout hyperuricemia uric acid arthralgia psoriatic arthritis",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "FDA Drugs@FDA",
+      "language": "en",
+      "frame": "regulatory joint-safety review",
+      "query": "NDA 761055 S-040 EoE multidisciplinary review arthralgia",
+      "status": "success",
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "source": "EMA",
+      "language": "en",
+      "frame": "current product information and initial assessment",
+      "query": "Dupixent EPAR product information assessment report gout hyperuricemia uric acid arthralgia",
+      "status": "success",
+      "result_count": 2,
+      "error": null
+    }
+  ],
+  "source_ids_considered": [
+    "FAERS:2026Q1-DUPILUMAB-GOUT-21-cases",
+    "FDA:NDA-761055-label-revised-2026-02",
+    "FDA:NDA-761055-S040-multidisciplinary-review-2022",
+    "EMA:Dupixent-product-information-updated-2026-05-08",
+    "EMA:EMA-512262-2017",
+    "PMID:31323136",
+    "PMID:33778985",
+    "PMID:34799224",
+    "PMID:35141380",
+    "PMID:35395222",
+    "PMID:36051735",
+    "PMID:38653607",
+    "PMID:39302201",
+    "PMID:40435582",
+    "PMID:40531497",
+    "PMID:40673627",
+    "PMID:41167262",
+    "PMID:41649402"
+  ],
+  "translation_checks": [],
+  "load_bearing_verifications": [
+    {
+      "claim": "The current US label contains no gout, hyperuricemia, uric-acid, or urate adverse reaction or warning.",
+      "source": "FDA:NDA-761055-label-revised-2026-02",
+      "status": "verified"
+    },
+    {
+      "claim": "The current US label's joint warning concerns arthralgia and psoriatic arthritis, and its controlled indication tables show only small arthralgia imbalances rather than gout.",
+      "source": "FDA:NDA-761055-label-revised-2026-02",
+      "status": "verified"
+    },
+    {
+      "claim": "Current EMA product information contains no gout or hyperuricemia and lists arthralgia as common with a postmarketing-source footnote.",
+      "source": "EMA:Dupixent-product-information-updated-2026-05-08",
+      "status": "verified"
+    },
+    {
+      "claim": "The initial EMA assessment report contains no gout, hyperuricemia, uric-acid, or urate finding.",
+      "source": "EMA:EMA-512262-2017",
+      "status": "verified"
+    },
+    {
+      "claim": "The two records returned by the direct PubMed gout-or-urate query do not report dupilumab-induced gout or hyperuricemia.",
+      "source": "PMID:36051735; PMID:38653607",
+      "status": "verified"
+    }
+  ],
+  "limitations": [
+    "FAERS lacks a denominator and the captured fields do not establish event chronology, incidence, or causality.",
+    "PubMed snapshots were capped at 25 records per query; capped searches are marked partial.",
+    "CQVIP and J-STAGE broad term matching prevented exact paired-query counts; inspected records were bounded as stated.",
+    "Controlled safety evidence was read through current regulatory tables and assessments rather than every individual clinical-study report."
+  ],
+  "errors": [
+    "Initial sandboxed PubMed and local-curl attempts failed at DNS; approved local-network reruns succeeded.",
+    "Direct FDA PDF downloads through local curl returned the FDA automated-request apology page; the current label and regulatory review were inspected through the FDA-hosted browser documents."
+  ],
+  "workspace": {
+    "path": "operations/dupilumab-gout-safety-2026-07-26",
+    "cleaned": true
+  }
+}

@@ -113,6 +113,8 @@ Retain the reproducibility trail without duplicating scientific prose. The recei
 
 Use `status: success|partial|failed` for each query attempt. A partial or failed attempt requires a non-empty `error`. Translation checks name both models/vendors and record any inline disagreement tag; load-bearing verification entries identify the claim, primary source, and `verified|unverified|disputed` status. Keep these fields factual and compact. Do not add `findings`, `summary`, `verdict`, `recommendations`, or another narrative conclusion.
 
+`canonical_updates` may be `[]` when the scan closes or redirects a queued lead without changing the current scientific corpus. The queue deletion and commit retain the decision; do not create a reader-facing dead-end note just to make this field non-empty.
+
 Run `python3 scripts/check-lit-scan-receipt.py <receipt>` before commit.
 
 **Workspace:** intermediates (fetched sources, per-source translations, `query-strategy.json`) live temporarily in uncommitted `operations/<scope>-<date>/`. Delete the workspace after the canonical update and method receipt are verified. The wiki is the scientific corpus, the compact receipt is the reproducibility record, and Git preserves both histories.

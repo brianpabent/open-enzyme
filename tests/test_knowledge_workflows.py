@@ -215,6 +215,35 @@ Long review-history material.
         self.assertTrue(any("scientific narrative belongs in wiki" in error for error in errors))
         self.assertTrue(any("workspace.cleaned must be true" in error for error in errors))
 
+    def test_lit_scan_receipt_allows_no_wiki_update_for_closed_lead(self):
+        receipt = {
+            "schema_version": 1,
+            "scan_id": "closed-lead-2026-07-26",
+            "question": "Does the candidate signal survive controlled evidence?",
+            "started_at": "2026-07-26T12:00:00Z",
+            "completed_at": "2026-07-26T13:00:00Z",
+            "canonical_updates": [],
+            "query_attempts": [{
+                "source": "PubMed", "language": "en", "frame": "safety signal",
+                "query": "candidate AND safety", "status": "success",
+                "result_count": 0, "error": None,
+            }],
+            "source_ids_considered": [],
+            "translation_checks": [],
+            "load_bearing_verifications": [],
+            "limitations": [],
+            "errors": [],
+            "workspace": {"path": "operations/closed-lead-2026-07-26", "cleaned": True},
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "receipt.json"
+            path.write_text(json.dumps(receipt))
+            self.assertEqual([], lit_receipt.validate(path))
+            receipt["canonical_updates"] = ["synthesis/queue/example.md"]
+            path.write_text(json.dumps(receipt))
+            errors = lit_receipt.validate(path)
+        self.assertTrue(any("must be a list of wiki/ paths" in error for error in errors))
+
 
 class WorkflowTriggerTests(unittest.TestCase):
     def test_full_synthesis_has_no_push_trigger(self):
