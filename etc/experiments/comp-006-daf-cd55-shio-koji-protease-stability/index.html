@@ -4119,7 +4119,7 @@
     
   
   
-    <span class="md-status md-status--quarantined-invalid-model"></span>
+    <span class="md-status md-status--retired-invalid-model"></span>
   
 
   
@@ -5327,17 +5327,17 @@
 
 
 <blockquote>
-<p><strong>QUARANTINED — COMPLETE ARTIFACT RETAINED, CLAIMS BLOCKED.</strong> The historical model treated AlphaFold pLDDT confidence as solvent accessibility and converted that invalid mapping into exposure, protease-risk, resistance, and survival labels. Its code, inputs, outputs, and shared scoring library are retained pending Brian’s final disposition decision; none is eligible for execution, propagation, synthesis, or decision use.</p>
+<p><strong>INVALIDATED — NON-RUNNABLE TOMBSTONE.</strong> The retired model treated AlphaFold pLDDT confidence as solvent accessibility and converted that invalid mapping into exposure, protease-risk, resistance, and survival labels. Its scope comparison was also degenerate by construction. The retired code, inputs, outputs, and shared scoring library remain hash-bound in Git; none is eligible for execution, propagation, synthesis, or decision use.</p>
 </blockquote>
 <h1 id="comp-006-dafcd55-shio-koji-protease-proxy">comp-006 — DAF/CD55 Shio-Koji Protease Proxy<a class="headerlink" href="#comp-006-dafcd55-shio-koji-protease-proxy" title="Permanent link">&para;</a></h1>
-<p><strong>Status:</strong> Quarantined. Independent review found retirement of the current verdict-producing experiment justified; Brian’s final decision is pending.</p>
+<p><strong>Status:</strong> Invalidated and retired. Independent review found the verdict-producing experiment not boundedly repairable, and Brian approved final retirement on 2026-07-27.</p>
 <p>No HIGH, MODERATE, LOW, exposed, buried, cleavage, degradation, protease-risk, structural-resistance, process-survival, folding, chassis, or cross-payload conclusion survives. The lower-confidence Ser/Thr-rich stalk was not shown to be solvent-exposed, cleaved, or the dominant cause of failure.</p>
-<p>The historical P08174 sequence-filter inventory, AlphaFold values, code, inputs, and generated outputs remain live for audit. pLDDT is confidence only. The contrast between the lower-confidence stalk and higher-confidence SCR1–4 region can motivate a matched full-ectodomain-versus-truncated experiment; it does not predict which construct survives.</p>
+<p>The historical P08174 sequence-filter inventory and AlphaFold values remain available only in the hash-bound retired Git tree. pLDDT is confidence only. The contrast between the lower-confidence stalk and higher-confidence SCR1–4 region can motivate a matched full-ectodomain-versus-truncated experiment; it does not predict which construct survives.</p>
 <p>The current evidence boundary and matched-comparison conjecture live on the <a href="../../../daf-cd55-protease-stability-computational/">canonical interpretive page</a>.</p>
-<h2 id="quarantine-boundary">Quarantine boundary<a class="headerlink" href="#quarantine-boundary" title="Permanent link">&para;</a></h2>
-<p><a href="quarantine.json"><code>quarantine.json</code></a> binds the complete retained artifact, blocks its derived claims without recurring model review, and records the owner and expiry for the pending decision.</p>
+<h2 id="retirement-boundary">Retirement boundary<a class="headerlink" href="#retirement-boundary" title="Permanent link">&para;</a></h2>
+<p><a href="invalidation.json"><code>invalidation.json</code></a> binds the retired tree, the independent disposition review, Brian’s decision, the surviving-scope map, and the closed correction cascade.</p>
 <p>The bound disposition review found a second fatal defect beyond the pLDDT mapping: the maximum-risk construction returns the same per-protease maximum across the retained sequence scopes and therefore cannot answer the comparison it claims to make. A defensible replacement would require a new scoring model and a new COMP lifecycle, not a correction of the retained output.</p>
-<p>Do not run <code>analyze.py</code> while quarantine is active. Any repair that changes code, inputs, parameters, rules, or outputs must re-enter the normal COMP authoring lifecycle before result-bearing execution.</p>
+<p>Do not reconstruct or rerun the retired model for decision use. A defensible replacement requires a new COMP ID and the normal COMP authoring lifecycle before result-bearing execution.</p>
 
 
 

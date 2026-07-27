@@ -1,0 +1,235 @@
+{
+  "schema_version": 2,
+  "comp": "comp-006",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "50286deb50236ac24a9253bce18ed88b61a1c0d1",
+  "last_push_review_manifest_sha256": null,
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 2247,
+      "sha256": "13d5c03003a02b1f9ea6c7e24d8f75f625742e501c112bfcf8d484ecabec11b6"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 21604,
+      "sha256": "cb5e441c0dac44c9bfd5a182f3bc40c35601794a1e3b9ec9192e4ae78e0d0ce9"
+    },
+    {
+      "path": "inputs/P08174.fasta",
+      "bytes": 488,
+      "sha256": "bc36a8c6ea865de87e258901afa71da4930b89c043648fbd7892743ba71af412"
+    },
+    {
+      "path": "inputs/alphafold_P08174_plddt.json",
+      "bytes": 5196,
+      "sha256": "f885b364115e59ac7d8799f00db1b372017ce197c6e04af3a1c5b51661fd6a56"
+    },
+    {
+      "path": "inputs/protease_specificities.json",
+      "bytes": 4008,
+      "sha256": "618abc2f69b34b45cbe0e256693d696e05547994b07ef41c3024889cb658b0e0"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 2683,
+      "sha256": "63f0183c3a810a05397cd40d6307c1552cf4e45958287278e8f4d2e3a0eae631"
+    },
+    {
+      "path": "outputs/cleavage_sites.json",
+      "bytes": 8949,
+      "sha256": "7ae87dcfba7e72ae85f09a46f58b510a21435340e1cd533d010f6eb13a65c36e"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 11525,
+      "sha256": "71e14a816387867af91113ab01d13ae652ab7e7e54fbdb41da3c1322637b441b"
+    },
+    {
+      "path": "quarantine.json",
+      "bytes": 2659,
+      "sha256": "0061e3849fcfa40a7b810430acb7dd95249f95c57009dc81dc68f13cc0c22e31"
+    }
+  ],
+  "invalidated_scope": [
+    "pLDDT-derived solvent-accessibility, exposure, burial, cleavage-liability, structural-resistance, or disorder-as-failure claims",
+    "recognition-pattern matches as demonstrated cleavage sites or validated protease-specificity conclusions",
+    "HIGH, MODERATE, or LOW labels and numeric risk scores as predictors of degradation, survival, retained activity, or process compatibility",
+    "comparisons among full, mature, ectodomain, and stalk scopes, including the claim that the Ser/Thr-rich stalk drives failure",
+    "folding, glycosylation, chassis, process-feasibility, and cross-payload conclusions",
+    "execution, reconstruction, or reuse of the historical decision model as current evidence"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_historical_inventory_and_research_conjecture",
+    "statements": [
+      "UniProt P08174 sequence and construct boundaries plus AlphaFold confidence values survive only as source-bound inputs; they do not establish protease behavior.",
+      "Recognition-pattern counts, region tallies, and pLDDT distributions are deterministic inventories under the retired rules and have no validated biological interpretation.",
+      "A matched full-ectodomain-versus-SCR1–4 comparison remains a Research Conjecture; direct evidence for a truncation advantage is absent."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/daf-cd55-protease-stability-computational.md",
+  "cascade": {
+    "status": "closed",
+    "paths": [
+      {
+        "path": "wiki/daf-cd55-protease-stability-computational.md",
+        "action": "Canonical evidence boundary, retirement status, deterministic-inventory boundary, and matched conjecture confirmed."
+      },
+      {
+        "path": "wiki/computational-experiments.md",
+        "action": "Registry status changed from quarantined artifact to invalidated tombstone."
+      },
+      {
+        "path": "index.md",
+        "action": "Dashboard label changed to retired; invalid result boundary retained."
+      },
+      {
+        "path": "wiki/hypotheses/H05-daf-scr14-cp0-thesis.md",
+        "action": "Retired status and direct-test conjecture boundary made explicit."
+      },
+      {
+        "path": "wiki/etc/manual-literature-mining.md",
+        "action": "Search queue status changed from quarantined to retired without changing the open evidence question."
+      },
+      {
+        "path": "wiki/daf-cd55-scr14-truncated-computational.md",
+        "action": "Verified unchanged: already rejects the proxy and preserves the matched comparison as a conjecture."
+      },
+      {
+        "path": "wiki/complement-c5a-gout.md",
+        "action": "Verified unchanged: already rejects exposure and survival conclusions."
+      },
+      {
+        "path": "wiki/validation-experiments.md",
+        "action": "Verified unchanged: the SCR1–4 gate remains, and the canonical evidence home states that a full-ectodomain arm is required for stalk attribution."
+      },
+      {
+        "path": "wiki/etc/experiments/lib/protease_stability.py",
+        "action": "Deleted with retirement after confirming COMP-006 was its only live importer."
+      },
+      {
+        "path": "mkdocs.yml",
+        "action": "Verified unchanged: navigation continues to the current interpretive evidence page."
+      }
+    ]
+  },
+  "decision_owner": "brian",
+  "decision_ref": "Brian direct approval in this Codex task on 2026-07-27 (\"approved\").",
+  "disposition_review": {
+    "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/reviews/disposition-review.md",
+    "sha256": "97fa4d706e659ac85b58affe34df536368bc78600bc7234bc809516fb7fdd204"
+  },
+  "reviewed_artifact_manifest_sha256": "8cb060cdabd6e58d9141768b1f3fde0de8843510a76e6469a95507b77ace9fda",
+  "surviving_scope_homes": [
+    {
+      "item_index": 0,
+      "path": "wiki/daf-cd55-protease-stability-computational.md",
+      "heading": "## What survives from the retired computation"
+    },
+    {
+      "item_index": 1,
+      "path": "wiki/daf-cd55-protease-stability-computational.md",
+      "heading": "## What survives from the retired computation"
+    },
+    {
+      "item_index": 2,
+      "path": "wiki/daf-cd55-protease-stability-computational.md",
+      "heading": "## What survives from the retired computation"
+    }
+  ],
+  "unique_detail_audit": [
+    {
+      "description": "Source identity, P08174 sequence and annotated construct boundaries, and AlphaFold confidence context",
+      "source_paths": [
+        "inputs/P08174.fasta",
+        "inputs/alphafold_P08174_plddt.json",
+        "inputs/provenance.md"
+      ],
+      "disposition": "canonicalized",
+      "canonical_path": "wiki/daf-cd55-protease-stability-computational.md",
+      "canonical_heading": "## What survives from the retired computation",
+      "rationale": "The current evidence home preserves these as source-bound inputs and confidence information, not protease-survival evidence."
+    },
+    {
+      "description": "Inherited protease-recognition table and shio-koji process-factor assumptions",
+      "source_paths": [
+        "inputs/protease_specificities.json",
+        "inputs/provenance.md"
+      ],
+      "disposition": "historical_git_only",
+      "rationale": "The table and process factors remain in the bound retired tree for audit but carry no current specificity, activity, or decision authority."
+    },
+    {
+      "description": "Existence and narrow meaning of the deterministic recognition-pattern, region, and pLDDT inventories",
+      "source_paths": [
+        "outputs/cleavage_sites.json",
+        "outputs/summary.md"
+      ],
+      "disposition": "canonicalized",
+      "canonical_path": "wiki/daf-cd55-protease-stability-computational.md",
+      "canonical_heading": "## What survives from the retired computation",
+      "rationale": "The evidence home records that these are deterministic inventories under retired rules and not validated biological interpretations."
+    },
+    {
+      "description": "Exact recognition-pattern rows, counts, region tallies, pLDDT distributions, and generated tables",
+      "source_paths": [
+        "outputs/cleavage_sites.json",
+        "outputs/summary.md"
+      ],
+      "disposition": "historical_git_only",
+      "rationale": "The exact inventory remains hash-bound in Git but is unnecessary in the living corpus and is not predictive."
+    },
+    {
+      "description": "pLDDT-derived accessibility classes, score construction, risk thresholds, scope verdicts, and survival interpretations",
+      "source_paths": [
+        "analyze.py",
+        "outputs/cleavage_sites.json",
+        "outputs/summary.md",
+        "wiki/etc/experiments/lib/protease_stability.py"
+      ],
+      "disposition": "invalidated",
+      "rationale": "pLDDT is not solvent accessibility, and the maximum-risk construction is scope-degenerate whenever a scope contains a qualifying match."
+    },
+    {
+      "description": "Folding, glycosylation, process-feasibility, chassis, and cross-payload conclusions",
+      "source_paths": [
+        "outputs/summary.md",
+        "README.md"
+      ],
+      "disposition": "invalidated",
+      "rationale": "The retired computation did not model or measure these outcomes."
+    },
+    {
+      "description": "Matched full-ectodomain-versus-SCR1–4 process-survival and retained-function conjecture",
+      "source_paths": [
+        "README.md",
+        "outputs/summary.md"
+      ],
+      "disposition": "canonicalized",
+      "canonical_path": "wiki/daf-cd55-protease-stability-computational.md",
+      "canonical_heading": "## What survives from the retired computation",
+      "rationale": "The untested connection remains useful when explicitly separated from the invalid model and paired with a discriminating matched experiment."
+    },
+    {
+      "description": "Authoring manifests, adversarial reviews, quarantine receipt, and prior reader-facing narrative",
+      "source_paths": [
+        "reviews/pre-run.manifest.json",
+        "reviews/pre-run.md",
+        "reviews/post-run.manifest.json",
+        "reviews/post-run.md",
+        "reviews/disposition-review.md",
+        "quarantine.json",
+        "README.md"
+      ],
+      "disposition": "historical_git_only",
+      "rationale": "The compact tombstone and current disposition review remain live; superseded authoring and quarantine state remain available through Git."
+    }
+  ],
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, runnable, and the schema-v2 governance fields; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "68047a65132aa64161f256a1a941a073867f0c25c49f260fde5a751b7aa4f82f"
+  }
+}
