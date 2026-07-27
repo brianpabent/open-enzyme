@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "comp": "comp-004",
+  "comp_dir": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism",
+  "source_commit": "0ef99dcc9102323608fc4e5384e09617e95e17e8",
+  "artifact_manifest_sha256": "5a9ca14cae9a8beb2f7bb4ca8ba3f56b4ca5ffff2772ffa24e637fcf05c1b4c0",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-27T11:46:04Z",
+  "comp_verdict": "action_required",
+  "propagation_eligibility": "eligible_with_warning",
+  "synthesis_eligibility": "blocked",
+  "action_required": true,
+  "authoring_gates": {
+    "status": "modern",
+    "valid": true,
+    "details": [
+      "pre-run design matches post-run design; current COMP artifact matches the post-run snapshot; later wiki evolution is push-reviewed"
+    ]
+  },
+  "coverage": [
+    {
+      "shard_id": "shard-001",
+      "coverage_sha256": "6b218cd93d8690f0ade2d244b062a191eff4d25128ce2bc40e45cb49654fee5d",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/README.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 7088,
+          "file_sha256": "1b406c1f70578dd1f77abcf457348612b537714da9718d4c3d00beb6db61e199",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/analyze.py",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 9114,
+          "file_sha256": "ba68ba6b20c3b99d7d8a07e6896242e61328e29f916778d14e8de714c2ab7d33",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/inputs/assay_evidence.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 2182,
+          "file_sha256": "727203db454d6cf66fc045f8013024b82f922b155d13e564966a3ae8286b610f",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/inputs/provenance.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 3006,
+          "file_sha256": "fdae845824b6706269b225c6ce483297404d3439cc8efabf1ff1019e836c0911",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/assay_evidence_audit.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 4158,
+          "file_sha256": "dde77c1989a4ca29f7e92b1b7f2a859deff7168e52461a3f3b3d085d01fc211d",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/summary.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 2133,
+          "file_sha256": "0b6e99fa1e51ca1e806c177fcd13b2c7a2ec9a0f9124ebaaf8a50d20a192bc53",
+          "binary": false
+        },
+        {
+          "path": "wiki/computational-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 74655,
+          "file_sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 7080,
+          "file_sha256": "2e9dfaebb068123b223fa5774856c6e42aba7a805cccb3e423a84eadd9b642fd",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/outputs/summary.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 16711,
+          "file_sha256": "2c40532b7ca8b5c92ea00b4a2d3aa87696d7ea3da634c456ac973719eb8b78fc",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 7737,
+          "file_sha256": "e6548837d343162f982781296377a7aaffa4a007eb900e12232a3be709defd48",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 5232,
+          "file_sha256": "49d572cdec31ee45314ae074baec8fb0fa3b7f64db5ff6bcec78b1ef74fa82f9",
+          "binary": false
+        },
+        {
+          "path": "wiki/hypotheses/H04-tcm-rigor-intersection.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 9398,
+          "file_sha256": "05350e55e25c18d6d6d5360ac12981e44404c41d4759394d63854c5f24cc690b",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-002",
+      "coverage_sha256": "2917277eed81dcc1e6cf345a6a0df6bd72e03bba1797d8e2d04bc06a082978e9",
+      "segments": [
+        {
+          "path": "wiki/open-questions.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 74447,
+          "file_sha256": "9ffef573b763d3471a545cb2700eee1b09910f8d906b5795344abf6e9beed09a",
+          "binary": false
+        },
+        {
+          "path": "wiki/supplement-abcg2-antagonism-computational.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 2052,
+          "file_sha256": "0f11d31223536f0c9bc61983a42cc46edcc76351ee1ce068b44f323c0b159be5",
+          "binary": false
+        },
+        {
+          "path": "wiki/tcm-gout-compound-triage-computational.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 10515,
+          "file_sha256": "a488e47c57af2f178b6801d6e46461e4b14ffcfc948c11acd01164683de9e537",
+          "binary": false
+        },
+        {
+          "path": "wiki/tcm-modern-rigor-intersection.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 29361,
+          "file_sha256": "1dba00fdb3754f5854d30e11ee83cbd6418d6161eff65b19d7c098a0ea910314",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-003",
+      "coverage_sha256": "b96da127bfd1b33a64e19f406ca972ade8dd030fd0dc76795d60f46fe401dbc5",
+      "segments": [
+        {
+          "path": "wiki/validation-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 180000,
+          "file_sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-004",
+      "coverage_sha256": "72acd7cf15738e5e3a68104ba96d37efd9fdd0cdbbcf7a0a29583b51dc543afa",
+      "segments": [
+        {
+          "path": "wiki/validation-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 180000,
+          "end": 239988,
+          "file_sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6",
+          "binary": false
+        }
+      ]
+    }
+  ],
+  "unsupported_binary_entries": [],
+  "projected_cost_usd": 1.60451,
+  "actual_cost_usd": 1.042639,
+  "input_tokens": 158627,
+  "output_tokens": 10544,
+  "tool_calls": 8,
+  "review_sha256": "d2963bb1e4dfb08447e9bf2fce31e4442565a64a2d96ea9404ebd1aa539b4861",
+  "lane_adjudication": {
+    "date": "2026-07-27T11:46:04Z",
+    "method": "exact push review",
+    "new_artifact_review_performed": true,
+    "queue_action_remains_open": true,
+    "propagation_allowed_scope": "corrective-only propagation of comp-004 invalidation and direct-assay routing boundaries",
+    "synthesis_allowed_scope": "none when based on downstream ABCG2/TCM rankings; bounded lead-inventory synthesis may resume only after stale comp-013/014/TCM surfaces are corrected",
+    "forbidden_inferences": [
+      "nominal gut-concentration/IC50 as intestinal urate-transport occupancy",
+      "percent ABCG2 urate inhibition",
+      "clinical-risk tiers",
+      "supplement dosing/formulation/genotype/patient direction",
+      "downstream viability rankings that count inherited comp-004 occupancy"
+    ]
+  }
+}

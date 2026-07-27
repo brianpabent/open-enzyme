@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "comp": "comp-017",
+  "comp_dir": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining",
+  "source_commit": "0ef99dcc9102323608fc4e5384e09617e95e17e8",
+  "artifact_manifest_sha256": "d48d5ef4581bf789a91d28a3397ee04ba7a0fd5421f3202203f01dbcd10ec209",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-27T11:48:48Z",
+  "comp_verdict": "quantitative_verdict_invalid",
+  "propagation_eligibility": "eligible_with_warning",
+  "synthesis_eligibility": "blocked",
+  "action_required": true,
+  "authoring_gates": {
+    "status": "modern",
+    "valid": true,
+    "details": [
+      "pre-run design matches post-run design; current COMP artifact matches the post-run snapshot; later wiki evolution is push-reviewed"
+    ]
+  },
+  "coverage": [
+    {
+      "shard_id": "shard-001",
+      "coverage_sha256": "5e59933a7b90fce6b0ed697ded5cdc5e3c7bd8aa0f00f8a0255cfbf9ac7bc6bd",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/README.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 4054,
+          "file_sha256": "d16cfd52ef4c85897a9bab45625df37ddfa9986f261bdcd7100856f0dfae2769",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/analyze.py",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 19845,
+          "file_sha256": "8b4600d91459d893e8e49c85b5da57c9e6541018c7ef48555441c155318f5dd0",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/full_text_extract.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 21182,
+          "file_sha256": "82a43d71e5447843fe8c8813e5bde47aaa73810a6e8795411548b5f934a8f683",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/gtex_data.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 4715,
+          "file_sha256": "be09b1c80ad6d8409c24189e269a824b31b94d117f73fa007aa9523c9fb704b5",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/hpa_data.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 3188,
+          "file_sha256": "952e70365e4fd419a7d4af968ccef23489037d9f231e49b1b36b99df9fda7658",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/provenance.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 12606,
+          "file_sha256": "12347a28d04d798d8d5f2aa06685003e3c42ecc014e8681c5e5b975a261c0ced",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/results.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 24663,
+          "file_sha256": "aa2d58715e70ce24c09fc2a1429df5de274ec4c0094cbe04cbde42a53e371e5d",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/summary.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 23828,
+          "file_sha256": "0e910dbcf514591b4212296fef4b95dc1998fdceb627fb4463316182333b5b2b",
+          "binary": false
+        },
+        {
+          "path": "wiki/abcg2-modulators.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 43822,
+          "file_sha256": "87943c5cfd967c82adabf6b58a6190e346d5f0e0be4a1549149d93c8e3dd8c5a",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-002",
+      "coverage_sha256": "336aed8a07034803a3148d513f7ed46d15c7eb2b84787c06d84d492ca8805729",
+      "segments": [
+        {
+          "path": "wiki/androgen-urate-axis.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 36688,
+          "file_sha256": "1dc9d71f7fc5d350417f216cecff60c76fea61e0812faa591c35c32ada350b26",
+          "binary": false
+        },
+        {
+          "path": "wiki/computational-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 74655,
+          "file_sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/README.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 6835,
+          "file_sha256": "5f07411280d665bd280b25da74b4a9035ef0770a94832ae3594d5ffe83851ae3",
+          "binary": false
+        },
+        {
+          "path": "wiki/gout-genetic-variants.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 41883,
+          "file_sha256": "8ee33b5d8d3518aa30dff1d4a7b05491ea5f7f6069ef0abb84f298335f8e20be",
+          "binary": false
+        },
+        {
+          "path": "wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 3187,
+          "file_sha256": "29f15a5e5cd21b6015ce54532bf7eab8166e4ba918fd2a51a376d9954c59db6a",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-003",
+      "coverage_sha256": "91fa6f314c90d6b0fe41c1339f6cf9ffc4800e20baf709a403250ad94f2e6e29",
+      "segments": [
+        {
+          "path": "wiki/open-questions.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 74447,
+          "file_sha256": "9ffef573b763d3471a545cb2700eee1b09910f8d906b5795344abf6e9beed09a",
+          "binary": false
+        }
+      ]
+    }
+  ],
+  "unsupported_binary_entries": [],
+  "projected_cost_usd": 1.307936,
+  "actual_cost_usd": 1.135081,
+  "input_tokens": 211115,
+  "output_tokens": 10407,
+  "tool_calls": 12,
+  "review_sha256": "8c3db9cd38f13e6acb261f69c391a38c746f31fc272a7ec4346a29008ebab23d",
+  "lane_adjudication": {
+    "date": "2026-07-27T11:48:48Z",
+    "method": "exact push review",
+    "new_artifact_review_performed": true,
+    "queue_action_remains_open": true,
+    "propagation_allowed_scope": "corrective-only propagation of provenance limits, no direct GTEx/HPA quantitative result, Hoque 78% vs 88% clarification, supraphysiological hormone-exposure caveats, and rejection of direct AR-mediated intestinal ABCG2 suppression",
+    "synthesis_allowed_scope": "none",
+    "forbidden_inferences": [
+      "quantified healthy-human intestinal ABCG2 sex-null",
+      "resolved GTEx/HPA population effect size",
+      "physiological estradiol/testosterone regulation magnitude from 100 \u00b5M or 1\u2013100 \u00b5M cell assays",
+      "clomiphene urate mechanism or intervention recommendation",
+      "pan-male non-responder rule",
+      "Q141K genotype-response ordering for gut-lumen uricase"
+    ]
+  }
+}
