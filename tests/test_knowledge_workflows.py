@@ -340,6 +340,7 @@ class WorkflowTriggerTests(unittest.TestCase):
         self.assertLess(commit, preflight)
         self.assertLess(preflight, review)
         self.assertIn("comp-review-deferred.txt", workflow)
+        self.assertIn('git add -A -- "$comp_dir"', workflow[commit:preflight])
 
     def test_local_and_generated_updates_fail_closed_on_reader_contract(self):
         hook = (ROOT / ".githooks/pre-push").read_text()
