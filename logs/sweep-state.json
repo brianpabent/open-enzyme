@@ -489,12 +489,12 @@
     },
     "comp-044": {
       "comp_dir": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime",
-      "artifact_manifest_sha256": null,
+      "artifact_manifest_sha256": "0d0148e43ade23213e148e0b97687eb5bb9b857a1f94cd1ec5d299dccca3c253",
       "source_commit": "8ddcf2c354b5478c6e31a74081f68399e2c8f1f2",
-      "review_receipt": null,
-      "comp_verdict": "review_pending_exact_push",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "review_receipt": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/reviews/push-review.md",
+      "comp_verdict": "action_required",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/computational-experiments.md",
         "wiki/delivery-route-matrix.md",
@@ -503,7 +503,6 @@
         "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
         "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/provenance.md",
         "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md",
-        "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/provenance.md",
         "wiki/gout-action-guide.md",
         "wiki/gout-multihop-research-program.md",
         "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
@@ -511,9 +510,8 @@
         "wiki/open-questions.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-27T12:12:46Z",
-      "cost_usd": null,
-      "pending_reason": "changed completed artifact awaits exact push review"
+      "timestamp": "2026-07-27T12:16:17Z",
+      "cost_usd": 1.224744
     },
     "comp-045": {
       "comp_dir": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design",
