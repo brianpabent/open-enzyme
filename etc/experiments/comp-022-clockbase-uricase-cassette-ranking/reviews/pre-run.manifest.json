@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/README.md",
+      "kind": "design",
+      "bytes": 3866,
+      "sha256": "3a6204d9cfb8ec846d48bb7fe1464aa39448342a9a6ddb010113315ac06a9cde"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/invalidation.json",
+      "kind": "design",
+      "bytes": 7720,
+      "sha256": "bd06ce9c955f50e2d4529958cbafca248654cef68e769eeaece7234637c6f6fa"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "5d60f71b00c8fbdf95ccadec3b7fd9bfc742d7ce0bb3928471b268b9ac19dd86"
+}

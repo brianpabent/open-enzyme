@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/README.md",
+      "kind": "design",
+      "bytes": 1867,
+      "sha256": "bbc0fffd8d71800115d159d64d8a1522f9d64968cbf4c7679d850f4ca9238af1"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/invalidation.json",
+      "kind": "design",
+      "bytes": 2756,
+      "sha256": "c23f56a3ba19e4da21ba04926ff8ee89c1d546a32b457984eda0fac87af2de76"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 34492,
+      "sha256": "e8c456daa4bfa3d112146826c1c194b29830079e4bca052a7821b25735c097c5"
+    },
+    {
+      "path": "mkdocs.yml",
+      "kind": "proposed_update",
+      "bytes": 10864,
+      "sha256": "3828a103947229958349cda8cb6751b19a1a1e31e4cfd49143eb3ba888087629"
+    },
+    {
+      "path": "operations/todos.md",
+      "kind": "proposed_update",
+      "bytes": 10655,
+      "sha256": "0dfd0b215e5b0999f41b22ae5a65f750bcba728a525debb44843ff12bd4fd781"
+    },
+    {
+      "path": "wiki/c1-inh-protease-stability-ecn-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3788,
+      "sha256": "d0f5010c2161df29d971de31e13311681ff142bb2c3dcda9519602e582a67ae4"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 94334,
+      "sha256": "3e547ff4444758e4e37c6795c9d7b9c60059aaf5e2d3d0d31f6f76994321af8f"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
+    },
+    {
+      "path": "wiki/daf-cd55-protease-stability-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3575,
+      "sha256": "c01acf1a99f218e70263e16692b86216e1f82b6b612083b64b3016c0320f1632"
+    },
+    {
+      "path": "wiki/etc/manual-literature-mining.md",
+      "kind": "proposed_update",
+      "bytes": 29358,
+      "sha256": "3f50e8ca54fcdf552c56dc5857f4afd4b603899edf06447d94cc5ec389caeeb9"
+    },
+    {
+      "path": "wiki/hypotheses/H05-daf-scr14-cp0-thesis.md",
+      "kind": "proposed_update",
+      "bytes": 10561,
+      "sha256": "dadf3c69bff36691fe7de2a72259df509467a13c5ae46fc42d55146ad409cafc"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "3dbf9ea384b5e8fd75e94d894b3227e0c3c939a52d6b3cfa76747d41397bf8aa"
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/README.md",
+      "kind": "design",
+      "bytes": 1854,
+      "sha256": "253ca2b8219162689c1f2a59aa8f4e4fbde6c47544d60f11e023a20ab6dc668e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/invalidation.json",
+      "kind": "design",
+      "bytes": 2790,
+      "sha256": "76a913705488a486a7b1ad808cae47d1df8e525b59e57431906421cd79f70a31"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 34492,
+      "sha256": "e8c456daa4bfa3d112146826c1c194b29830079e4bca052a7821b25735c097c5"
+    },
+    {
+      "path": "mkdocs.yml",
+      "kind": "proposed_update",
+      "bytes": 10864,
+      "sha256": "3828a103947229958349cda8cb6751b19a1a1e31e4cfd49143eb3ba888087629"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
+    },
+    {
+      "path": "wiki/etc/bio-ai-tools.md",
+      "kind": "proposed_update",
+      "bytes": 62248,
+      "sha256": "21afccea68cd9e24ec0d32381632667716347579ce7cbf91e2da7c60d6afe06b"
+    },
+    {
+      "path": "wiki/lactoferrin-protease-stability-computational.md",
+      "kind": "proposed_update",
+      "bytes": 2466,
+      "sha256": "354c940ebf2b073e9e4f3854b0946508930dd266ae4b76c05811a01e556ecf16"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 230784,
+      "sha256": "192427c173ad894e33e6c76c6f427fc8264ec44446b244366f22a4577e1c3cff"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "a5ab661c0733c7d0975c2ed731df35ef5aa0194f13bbde036b6e29c29d157873"
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "comp": "comp-029",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "70e60ea9a7c84a92cec37164f38b456aaa6d6881",
+  "last_push_review_manifest_sha256": "d4a64a549887d4c788c9241d38034aee47f2cacdd5f980c744f7ff6c4f0c1934",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 9943,
+      "sha256": "178fb801fbf92a3163e23ea778c1c1138d953157da89c72f32aa741956e54e2c"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 29672,
+      "sha256": "601a72007359a10c55f4dce6e2e668c3fe3470494df8617cc5e4518bcd8f2923"
+    },
+    {
+      "path": "inputs/daf_decay_kinetics_prior.json",
+      "bytes": 4307,
+      "sha256": "0f2703fd52e45f4db42d9645afd04d81000d8364e2d130fe23f7e6809ffafb90"
+    },
+    {
+      "path": "inputs/model_parameters.json",
+      "bytes": 2581,
+      "sha256": "a3145e846b7f3d9b0a335f5d2da941d870c9de4b50af60321a8d508161f27e34"
+    },
+    {
+      "path": "inputs/msu_c3b_deposition_rate.json",
+      "bytes": 2403,
+      "sha256": "f04d693fd31d736ed336ec4fa9bae0c15fc337e021d5b880baf021530504d5ad"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 9205,
+      "sha256": "293861ab7587082ab559967f3fe4ce813be6706f372c5491901e10f085b00347"
+    },
+    {
+      "path": "inputs/rosmarinic_acid_bioavailability.json",
+      "bytes": 3704,
+      "sha256": "91cbd29372019d6aa45fc67a3c2a416d4f95723ae67d90a9252db4761eca744f"
+    },
+    {
+      "path": "inputs/rosmarinic_acid_ic50_data.json",
+      "bytes": 3071,
+      "sha256": "d5cf76a3d5c2a361eed5f66d386725df3542cb7dd95a71df2f6216cfbb1b9425"
+    },
+    {
+      "path": "outputs/combined_predicted.json",
+      "bytes": 5472,
+      "sha256": "32ee6ed7e858e2149eb335579a3a22f98df9ec0e9ce22edacf9959fa0a182d8b"
+    },
+    {
+      "path": "outputs/daf_alone_predicted.json",
+      "bytes": 1659,
+      "sha256": "815e601e2507a205b95a5fad19c415d35c41dc9dba4fd8fde79ef25ccfa8d8b4"
+    },
+    {
+      "path": "outputs/rosmarinic_alone_predicted.json",
+      "bytes": 1815,
+      "sha256": "6e228b236ba6a0ee4561c04886b734916ee6eeb3bd4039524615bf39f4ba2a78"
+    },
+    {
+      "path": "outputs/sensitivity_analysis.json",
+      "bytes": 645,
+      "sha256": "8b7f3279c1fdfa9e38e77281f741e8de14c0bef862c494a1516eac669eea0fa8"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 4518,
+      "sha256": "41cf048503672aef91ab88108586e09e719a719cfdde49da107b06bd2b328dd9"
+    }
+  ],
+  "invalidated_scope": [
+    "all numerical outputs and confidence intervals",
+    "biological prediction",
+    "compartmental co-localization",
+    "mechanistic complementarity or independence",
+    "blocker closure",
+    "saturation, synergy, or additivity",
+    "GREEN/YELLOW/RED classification",
+    "decision routing"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_historical_inventory_and_research_conjecture",
+    "statements": [
+      "The matched four-arm rosmarinic-acid/DAF assay conjecture is retained at the current evidence home and is grounded in independent single-arm evidence, not in the retired arithmetic."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/combined-cp0-systems-model-computational.md",
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "23d918e49b01f782f57c31bf558ce92f75b9d06c47f8d93f36152397d162e4af"
+  }
+}

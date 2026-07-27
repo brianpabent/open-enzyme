@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "comp": "comp-010",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "70e60ea9a7c84a92cec37164f38b456aaa6d6881",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 5196,
+      "sha256": "590248fc0a18aa266161f27756653a6a9f43468c244759961d197fab0d4832db"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 62742,
+      "sha256": "e4c0bbf9c89498280354cfd86ea47ad0a318f5fc063c15d3b4bc12e117696b05"
+    },
+    {
+      "path": "inputs/P02788.fasta",
+      "bytes": 802,
+      "sha256": "c78b74212c8370fced3b2040577c9ce854be045e76e74ccb0048bd17464dc94b"
+    },
+    {
+      "path": "inputs/Q00511.fasta",
+      "bytes": 385,
+      "sha256": "fd006ac91dc08f796bd2032ee975677c16f6e8e7d3d0762ba1f2b295183b4274"
+    },
+    {
+      "path": "inputs/a_oryzae_codon_usage.json",
+      "bytes": 5321,
+      "sha256": "61b8e7293388d5d605f19e36fce9d94d19a526baf35f3c9205bf17d0b717a24e"
+    },
+    {
+      "path": "inputs/glucoamylase_carrier.fasta",
+      "bytes": 737,
+      "sha256": "8003d465b1549048b99aee0e44207c13bcd107fd95ea2bb53f86d15e6fe0937d"
+    },
+    {
+      "path": "inputs/kex2_site_specs.json",
+      "bytes": 4350,
+      "sha256": "8c6e6cc3c50657d129b6979426c15dee0e464239188120b8584e8d8c2af0b0ad"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 4793,
+      "sha256": "6b4b9b57b989205b0adffd9c28861da22339c06169abafb199705b94aa341940"
+    },
+    {
+      "path": "outputs/cassette_analysis.json",
+      "bytes": 15452,
+      "sha256": "be4da7a353a472581e4e0b2824ea284ca2aefcb65b28fea7b24ed7b3ae818c53"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 15579,
+      "sha256": "8c882c6ce107ade0332839eaa551edc6dc726f5f63c4864fdc7c9f728875325f"
+    }
+  ],
+  "invalidated_scope": [
+    "LOW or any overall cassette-design risk verdict",
+    "codon-burden, rare-codon-hotspot, and codon-optimization-sufficiency conclusions",
+    "Kex2 site certainty, cleavage-risk classes, exact truncation claims, and mutation recommendations",
+    "secretion, routing, terminal-SKL, PTS1, and topology conclusions",
+    "N-glycosylation occupancy or burden conclusions",
+    "disulfide, ER-folding, and folding-capacity conclusions",
+    "Huynh comparator and Ward titer or capacity conclusions",
+    "combined-burden, chassis, process-feasibility, and cross-payload conclusions"
+  ],
+  "surviving_scope": {
+    "kind": "historical_inventory_and_research_conjecture",
+    "statements": [
+      "The retired Git snapshot preserves the deterministic Q00511 and P02788 sequence, motif, and codon inventories as historical records only.",
+      "Source-verified sequence features belong to their primary records and the current canonical evidence page, not to this retired model.",
+      "The terminal SKL sequence may be a routing liability under some expression topologies, but that is a research conjecture rather than a validated secretion result.",
+      "Internal dibasic motifs can motivate empirical fragment mapping, but their presence does not establish Kex2 cleavage.",
+      "The exact cassette requires construct-level secretion, processing, and activity tests."
+    ]
+  },
+  "current_evidence_home": "wiki/cassette-compatibility-computational.md",
+  "retirement_scope_digest": {
+    "algorithm": "sha256",
+    "canonicalization": "UTF-8 bytes, no trailing LF, of: jq -cS '{retired_files,invalidated_scope,surviving_scope,current_evidence_home}' invalidation.json | tr -d '\\n'",
+    "sha256": "d8cdbbf3359c9edc230061f02d7397533b30ee2dc1f5d28735db1f177f90ed3b"
+  }
+}

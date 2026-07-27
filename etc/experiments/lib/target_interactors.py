@@ -1,32 +1,35 @@
 """
 experiments/lib/target_interactors.py
 
-Shared helper: assemble the complete "known interactor" set for a molecular
-target — the disqualifier axis any transporter / enzyme compound screen needs.
+Shared helper: assemble a conservative target-relationship exclusion set for a
+molecular-target compound screen.
 
 Encodes the UNION RULE documented in
 wiki/etc/chembl-cross-check.md §"ChEMBL scope & blind spots":
 
-    known interactors of target Y  =  ChEMBL inhibitors  ∪  DrugBank/UniProt substrates
+    conservative exclusions  =  ChEMBL activity  ∪  UniProt-exposed DrugBank relationships
 
-Neither source alone is complete:
-  - ChEMBL logs INHIBITION (IC50/Ki/Kd) and structurally MISSES SUBSTRATES.
-  - DrugBank (approved-drugs only, reached free via UniProt cross-refs) captures
-    substrate + clinical-interaction relationships but misses research-tool
-    inhibitors (e.g. Ko143, fumitremorgin C) that ChEMBL does have.
+This is a screening exclusion rule, not a complete biological-interactor set:
+  - ChEMBL activity records do not cover every transporter substrate.
+  - A DrugBank identifier exposed in a UniProt flat-file cross-reference
+    establishes a target relationship but does NOT type that relationship as
+    substrate, inhibitor, or clinical interaction.
+  - Assign a relationship subtype only from an independent per-drug source such
+    as a primary paper, FDA label, TransPortal, PharmGKB, or a directly inspected
+    DrugBank transporter annotation.
 
-Canonical case — comp-047 (ABCG2 Q141K): rosuvastatin is a textbook ABCG2
-SUBSTRATE (Q141K raises its plasma AUC ~2x) yet returns 0 ChEMBL records; it is
-caught only by the DrugBank axis. Using ChEMBL alone as the disqualifier silently
-dropped it. This helper exists so no future screen repeats that by hand.
+Canonical case — comp-047 (ABCG2 Q141K): the FDA CRESTOR label identifies
+rosuvastatin as a BCRP substrate; the UniProt-exposed DrugBank set independently
+flags a relationship, while the bounded ChEMBL check returned no ABCG2 activity
+row. The FDA label, not the generic cross-reference, supports the substrate type.
 
 Network:
   - UniProt (rest.uniprot.org) is in the OE sandbox allowlist -> the
-    DrugBank / substrate side runs IN-SANDBOX and is always available (it is the
-    half ChEMBL misses).
-  - ChEMBL REST (www.ebi.ac.uk) is NOT allowlisted -> the inhibitor side needs
+    DrugBank relationship side runs IN-SANDBOX and is available when UniProt is
+    reachable.
+  - ChEMBL REST (www.ebi.ac.uk) is NOT allowlisted -> the activity side needs
     network access (run with dangerouslyDisableSandbox, or supply ChEMBL results
-    from the bio-research ChEMBL MCP and merge). chembl_inhibitor() degrades to
+    from another reviewed source and merge). chembl_activity() degrades to
     (None, ...) when unreachable rather than failing the run.
 
 stdlib only. Name matching is normalized-exact (lowercase, '_'->' ', collapse
@@ -35,7 +38,7 @@ Limitations note in any comp that uses this.
 
 CLI:
   python target_interactors.py --uniprot Q9UNQ0 --library work/ligands/smiles_resolved.json \
-      --chembl-target CHEMBL5393 --out outputs/known_interactors.json
+      --chembl-target CHEMBL5393 --out outputs/target_relationship_exclusions.json
   python target_interactors.py --uniprot Q9UNQ0 --library names.txt --no-chembl
 """
 import argparse
@@ -71,11 +74,12 @@ def _norm(name):
     return _WS.sub(" ", str(name).replace("_", " ").strip().lower())
 
 
-def fetch_uniprot_drugbank(acc, timeout=30):
+def fetch_uniprot_drugbank_relationships(acc, timeout=30):
     """{normalized_name: original_name} for every DrugBank drug the UniProt entry
-    cross-references (the target's substrate + clinical-interaction drug set).
+    cross-references.
 
     Parses lines like:  DR   DrugBank; DB00437; Allopurinol.
+    The line establishes a relationship only; it does not encode its subtype.
     """
     txt = _get(UNIPROT_TXT.format(acc=acc), timeout)
     out = {}
@@ -100,8 +104,8 @@ def fetch_uniprot_reactions(acc, timeout=30):
     return rxns
 
 
-def chembl_inhibitor(mol_name, target_chembl_id, timeout=30):
-    """Best-effort ChEMBL inhibition check for one molecule vs one target.
+def chembl_activity(mol_name, target_chembl_id, timeout=30):
+    """Best-effort ChEMBL activity check for one molecule vs one target.
 
     Returns (has_activity, best_pchembl, chembl_id):
       - (True/False, float|None, id)  when reachable
@@ -124,43 +128,48 @@ def chembl_inhibitor(mol_name, target_chembl_id, timeout=30):
         return (None, None, None)
 
 
-def known_interactors(acc, compound_names, target_chembl_id=None, include_chembl=True):
-    """Assemble the union disqualifier set for `compound_names` against target `acc`.
+def build_conservative_exclusions(
+    acc, compound_names, target_chembl_id=None, include_chembl=True
+):
+    """Assemble a conservative exclusion set for `compound_names` and target `acc`.
 
-    Substrate axis (DrugBank via UniProt) is always run. Inhibitor axis (ChEMBL)
-    runs when include_chembl and target_chembl_id are given AND ChEMBL is reachable.
+    The DrugBank-via-UniProt axis is relationship-only. The ChEMBL activity axis
+    runs when include_chembl and target_chembl_id are given and ChEMBL is reachable.
+    Neither axis assigns a substrate subtype.
     """
-    db = fetch_uniprot_drugbank(acc)
+    db = fetch_uniprot_drugbank_relationships(acc)
     per = {}
     for name in compound_names:
-        sub = _norm(name) in db
-        inh, pchembl, cid = (None, None, None)
+        relationship = _norm(name) in db
+        activity, pchembl, cid = (None, None, None)
         if include_chembl and target_chembl_id:
-            inh, pchembl, cid = chembl_inhibitor(str(name).replace("_", " "), target_chembl_id)
+            activity, pchembl, cid = chembl_activity(
+                str(name).replace("_", " "), target_chembl_id
+            )
         per[name] = {
-            "drugbank_substrate_or_interaction": sub,
-            "chembl_inhibitor": inh,           # True / False / None(not queried)
+            "drugbank_relationship": relationship,
+            "chembl_activity": activity,       # True / False / None(not queried)
             "chembl_best_pchembl": pchembl,
             "chembl_id": cid,
-            "known_interactor": bool(sub) or (inh is True),
+            "conservative_exclusion": relationship or (activity is True),
         }
-    union = sorted([n for n, r in per.items() if r["known_interactor"]])
+    union = sorted([n for n, r in per.items() if r["conservative_exclusion"]])
     chembl_ran = include_chembl and bool(target_chembl_id) and any(
-        r["chembl_inhibitor"] is not None for r in per.values())
+        r["chembl_activity"] is not None for r in per.values())
     return {
         "_meta": {
             "uniprot": acc,
             "target_chembl_id": target_chembl_id,
-            "drugbank_list_size": len(db),
+            "drugbank_relationship_list_size": len(db),
             "chembl_queried": chembl_ran,
             "chembl_note": None if chembl_ran else
-                "ChEMBL inhibitor axis NOT run (unreachable in-sandbox or --no-chembl). "
-                "Substrate axis (DrugBank/UniProt) is complete; supply ChEMBL via REST "
-                "(dangerouslyDisableSandbox) or the ChEMBL MCP to complete the union.",
-            "union_rule": "known interactors = ChEMBL inhibitors UNION DrugBank/UniProt substrates",
+                "ChEMBL activity axis NOT run (unreachable or --no-chembl). "
+                "The UniProt-exposed DrugBank relationship axis still ran.",
+            "exclusion_rule": "conservative exclusions = ChEMBL activity UNION UniProt-exposed DrugBank relationships",
+            "typing_note": "DrugBank cross-references do not establish substrate/inhibitor subtype; verify subtype independently.",
         },
         "per_compound": per,
-        "known_interactor_union": union,
+        "conservative_exclusions": union,
     }
 
 
@@ -175,30 +184,36 @@ def _load_library(path):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Assemble the known-interactor union for a target.")
+    ap = argparse.ArgumentParser(
+        description="Assemble conservative ChEMBL-activity + DrugBank-relationship exclusions."
+    )
     ap.add_argument("--uniprot", required=True, help="UniProt accession (e.g. Q9UNQ0)")
     ap.add_argument("--library", required=True, help="JSON (names as keys/list) or newline text file")
     ap.add_argument("--chembl-target", default=None, help="ChEMBL target id (e.g. CHEMBL5393)")
-    ap.add_argument("--no-chembl", action="store_true", help="skip the ChEMBL inhibitor axis")
+    ap.add_argument("--no-chembl", action="store_true", help="skip the ChEMBL activity axis")
     ap.add_argument("--out", default=None, help="write JSON here (else stdout summary)")
     args = ap.parse_args()
 
     names = _load_library(args.library)
-    res = known_interactors(args.uniprot, names, target_chembl_id=args.chembl_target,
-                            include_chembl=not args.no_chembl)
+    res = build_conservative_exclusions(
+        args.uniprot,
+        names,
+        target_chembl_id=args.chembl_target,
+        include_chembl=not args.no_chembl,
+    )
     if args.out:
         json.dump(res, open(args.out, "w"), indent=2)
     m = res["_meta"]
-    print(f"target {m['uniprot']} | library {len(names)} | DrugBank list {m['drugbank_list_size']} "
+    print(f"target {m['uniprot']} | library {len(names)} | DrugBank relationships {m['drugbank_relationship_list_size']} "
           f"| ChEMBL axis {'run' if m['chembl_queried'] else 'SKIPPED'}")
-    print(f"known interactors (union): {len(res['known_interactor_union'])}")
-    for n in res["known_interactor_union"]:
+    print(f"conservative exclusions: {len(res['conservative_exclusions'])}")
+    for n in res["conservative_exclusions"]:
         r = res["per_compound"][n]
         tags = []
-        if r["drugbank_substrate_or_interaction"]:
-            tags.append("drugbank")
-        if r["chembl_inhibitor"]:
-            tags.append(f"chembl(p{r['chembl_best_pchembl']})")
+        if r["drugbank_relationship"]:
+            tags.append("drugbank-relationship")
+        if r["chembl_activity"]:
+            tags.append(f"chembl-activity(p{r['chembl_best_pchembl']})")
         print(f"  {n:28s} {'+'.join(tags)}")
     if args.out:
         print(f"wrote {args.out}")

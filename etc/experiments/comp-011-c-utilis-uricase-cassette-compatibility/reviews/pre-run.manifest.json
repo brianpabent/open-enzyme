@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/README.md",
+      "kind": "design",
+      "bytes": 2517,
+      "sha256": "489d1e0149b15b8daca09f9dccad883922727286f0f87fab7110f111586cb515"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-011-c-utilis-uricase-cassette-compatibility/invalidation.json",
+      "kind": "design",
+      "bytes": 3974,
+      "sha256": "0fa987e8b404722bfabd18a8e5f4e7dffb512f0066110fe948b58cb45096ee3e"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "6939ba0b2585f43178ebfb06093fe5387e9c4d08c18cfbc135ee147be9a262f8"
+}

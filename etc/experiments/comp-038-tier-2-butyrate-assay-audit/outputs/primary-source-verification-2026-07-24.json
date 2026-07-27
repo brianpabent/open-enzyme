@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "comp": "comp-038",
+  "verification_date": "2026-07-24",
+  "reviewer": "Codex/GPT-5",
+  "purpose": "Reconstruct and correct the unsupported full-text-verification claims appended on 2026-07-15 under a 2026-07-14 heading.",
+  "scope": {
+    "mode": "targeted_identifier_source_read",
+    "new_landscape_search": false,
+    "sources": 2,
+    "translation_required": false,
+    "reason_translation_not_required": "Both sources and all accessed text are in English."
+  },
+  "sources": [
+    {
+      "source_id": "de_baere_2013",
+      "citation": "De Baere S et al. Development of a HPLC-UV method for the quantitative determination of four short-chain fatty acids and lactic acid produced by intestinal bacteria during in vitro fermentation. J Pharm Biomed Anal. 2013;80:107-115.",
+      "pmid": "23542733",
+      "doi": "10.1016/j.jpba.2013.02.032",
+      "access_url": "https://hero.epa.gov/reference/2280264/",
+      "access_scope": "primary_source_abstract_verified",
+      "full_text_available_to_reviewer": false,
+      "retrieved_payload_sha256": "c6d7bbb45df98ccc84b5bece3fb3b92ec0edda330f3ec818ba37b53bf3d7b9bb",
+      "location_basis": "EPA HERO record, abstract",
+      "evidence_level": "In Vitro analytical-method study"
+    },
+    {
+      "source_id": "gu_2026",
+      "citation": "Gu B-C et al. Rapid Electrochemical Profiling of Fecal Short-Chain Fatty Acids Using Esterification/Dissociation Fingerprints and Artificial Neural Networks. Biosensors. 2026;16(4):223.",
+      "pmid": "42041444",
+      "pmcid": "PMC13114974",
+      "doi": "10.3390/bios16040223",
+      "access_url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC13114974/unicode",
+      "access_scope": "primary_source_full_text_verified",
+      "full_text_available_to_reviewer": true,
+      "retrieved_payload_sha256": "66a370ee9babd17f8c093e0a82903a5ec7a5efc1d5c14795359991b83c83477c",
+      "location_basis": "NCBI PMC full text, article sections, tables, and supplement index",
+      "evidence_level": "In Vitro analytical-method study"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "DB13-MATRIX-ANALYTES",
+      "source_id": "de_baere_2013",
+      "field": "matrix_and_analytes",
+      "value": "Bacterial culture supernatants; four short-chain fatty acids plus lactic acid.",
+      "source_location": "Abstract, opening and closing sentences",
+      "supporting_paraphrase": "The method measures four SCFAs and lactic acid produced during in-vitro fermentation and was used to screen bacterial-culture supernatants.",
+      "disposition": "retained",
+      "oe_boundary": "Does not establish transfer to an Open Enzyme strain, medium, or operator workflow."
+    },
+    {
+      "claim_id": "DB13-DETECTION",
+      "source_id": "de_baere_2013",
+      "field": "uv_detection",
+      "value": "210 nm; the abstract characterizes this wavelength as short and non-selective because the analytes lack a significant chromophore.",
+      "source_location": "Abstract, method rationale",
+      "supporting_paraphrase": "Detection was performed at 210 nm, making chromatographic separation and matrix controls load-bearing.",
+      "disposition": "retained",
+      "oe_boundary": "Published detection chemistry, not OE matrix selectivity."
+    },
+    {
+      "claim_id": "DB13-PREPARATION",
+      "source_id": "de_baere_2013",
+      "field": "sample_preparation",
+      "value": "Liquid-liquid back extraction with diethyl ether; samples acidified below pH 2 before HPLC-UV analysis.",
+      "source_location": "Abstract, sample-preparation description",
+      "supporting_paraphrase": "The final preparation used ether back-extraction and acidification below pH 2 before separation on a Hypersil Gold aQ column.",
+      "disposition": "retained",
+      "oe_boundary": "Recovery and interference remain untested in the intended OE culture matrix."
+    },
+    {
+      "claim_id": "DB13-CALIBRATION",
+      "source_id": "de_baere_2013",
+      "field": "calibration_and_fit",
+      "value": {
+        "matrix_matched_range_mM": [0.5, 50.0],
+        "correlation_coefficient_range": [0.9951, 0.9993],
+        "goodness_of_fit_percent_range": [3.88, 8.27]
+      },
+      "source_location": "Abstract, validation results",
+      "supporting_paraphrase": "Matrix-matched calibration covered 0.5-50 mM; reported correlation and goodness-of-fit coefficients fell within the recorded ranges.",
+      "disposition": "retained",
+      "oe_boundary": "A published calibration range is not an OE acceptance criterion."
+    },
+    {
+      "claim_id": "DB13-LIMITS",
+      "source_id": "de_baere_2013",
+      "field": "detection_and_quantification_limits",
+      "value": {
+        "lod_mM_range": [0.13, 0.33],
+        "loq_mM_range": [0.5, 1.0]
+      },
+      "source_location": "Abstract, validation results",
+      "supporting_paraphrase": "The abstract reports analyte-spanning LOD and LOQ ranges; it does not assign a specific value to butyrate in the accessible text.",
+      "disposition": "tightened",
+      "oe_boundary": "Do not present the range endpoints as butyrate-specific without the full article."
+    },
+    {
+      "claim_id": "DB13-UNDERIVATIZED",
+      "source_id": "de_baere_2013",
+      "field": "underivatized",
+      "value": null,
+      "source_location": "Accessible abstract",
+      "supporting_paraphrase": "The abstract describes direct 210-nm detection and its extraction workflow but does not explicitly use the term underivatized or state that no derivatization step exists.",
+      "disposition": "retracted",
+      "oe_boundary": "Use the exact preparation and detection description instead of the unsupported shorthand."
+    },
+    {
+      "claim_id": "GU26-HARDWARE",
+      "source_id": "gu_2026",
+      "field": "instrument_and_electrode",
+      "value": "VBS-100 portable workstation and disposable G3 screen-printed electrodes with a gold working electrode, carbon counter electrode, and on-chip Ag/AgCl reference electrode.",
+      "source_location": "Section 2.2, Instrumentation and Electrodes",
+      "supporting_paraphrase": "All electrochemical measurements used one named workstation and one electrode specification from VidaBio Technology.",
+      "disposition": "retained",
+      "oe_boundary": "The result belongs to the complete hardware-chemistry-model stack; cross-hardware transfer is untested."
+    },
+    {
+      "claim_id": "GU26-PRETREATMENT",
+      "source_id": "gu_2026",
+      "field": "butyrate_pretreatment",
+      "value": "1.0 mL sample plus 1.0 mL 0.6 mM KOH, reacted for 3 hours at room temperature.",
+      "source_location": "Section 2.5, Reaction Mechanisms and Procedures",
+      "supporting_paraphrase": "The butyrate route used alkaline dissociation under the reported sample, reagent, time, and temperature conditions.",
+      "disposition": "retained",
+      "oe_boundary": "The reported condition requires direct reproduction; it is not an interchangeable generic pretreatment."
+    },
+    {
+      "claim_id": "GU26-ACQUISITION",
+      "source_id": "gu_2026",
+      "field": "acquisition_and_replication",
+      "value": "The final dissociation route used CV; 200 uL of prepared sample was placed on a single-use electrode, each sample was measured in triplicate with fresh electrodes, and only the first scan per chip was used.",
+      "source_location": "Section 2.6, Electrochemical Protocols and Feature Extraction",
+      "supporting_paraphrase": "Fresh single-use chips and triplicate measurements were part of the published acquisition workflow.",
+      "disposition": "retained",
+      "oe_boundary": "Electrode-lot, day, and operator robustness remain transfer questions."
+    },
+    {
+      "claim_id": "GU26-COHORT",
+      "source_id": "gu_2026",
+      "field": "fecal_test_cohort",
+      "value": {
+        "n": 30,
+        "matrix": "human fecal samples",
+        "reference_method": "GC-MS",
+        "relationship": "independent test cohort within the same source study"
+      },
+      "source_location": "Section 3.3 and Table 2",
+      "supporting_paraphrase": "Thirty fecal samples not used for model tuning were compared with GC-MS within the study.",
+      "disposition": "tightened",
+      "oe_boundary": "This is not independent external replication or OE validation."
+    },
+    {
+      "claim_id": "GU26-BUTYRATE-PERFORMANCE",
+      "source_id": "gu_2026",
+      "field": "independent_fecal_test_performance",
+      "value": {
+        "mae_mM": 0.029,
+        "rmse_mM": 0.034,
+        "r_squared": 0.998
+      },
+      "source_location": "Figure 5d and Table 3",
+      "supporting_paraphrase": "For butyrate in the 30-sample fecal test cohort, ANN predictions were compared with GC-MS and produced the reported error and fit metrics.",
+      "disposition": "retained",
+      "oe_boundary": "Source-study performance does not establish transfer to another laboratory, instrument, electrode lot, cohort, or preprocessing implementation."
+    },
+    {
+      "claim_id": "GU26-INTERNAL-METRICS",
+      "source_id": "gu_2026",
+      "field": "model_development_internal_test_performance",
+      "value": {
+        "mae_mM": 0.025,
+        "rmse_mM": 0.029,
+        "r_squared": 0.999
+      },
+      "source_location": "Section 3.2 and Figure S2",
+      "supporting_paraphrase": "The internal model-development test split reports different butyrate metrics from the independent fecal cohort.",
+      "disposition": "retained_as_distinction",
+      "oe_boundary": "Do not substitute these internal metrics for the 30-sample fecal test-cohort result."
+    },
+    {
+      "claim_id": "GU26-PERCENT-AGREEMENT",
+      "source_id": "gu_2026",
+      "field": "samples_within_five_percent",
+      "value": {
+        "butyrate_samples": 24,
+        "total_samples": 30,
+        "percent": 80.0
+      },
+      "source_location": "Section 3.3",
+      "supporting_paraphrase": "Twenty-four of 30 butyrate results were reported within plus or minus five percent of the GC-MS reference.",
+      "disposition": "retained",
+      "oe_boundary": "Relative error can be unstable at low concentrations; use the full method-comparison statistics."
+    },
+    {
+      "claim_id": "GU26-BIAS",
+      "source_id": "gu_2026",
+      "field": "bland_altman_and_bias_tests",
+      "value": {
+        "mean_bias_mM": -0.015,
+        "limits_of_agreement_mM": [-0.065, 0.035],
+        "paired_test_p_values": [0.0027, 0.0031]
+      },
+      "source_location": "Section 3.3, Figure S5, and Table S3",
+      "supporting_paraphrase": "Butyrate showed a small negative bias that was statistically different from zero, with the reported limits of agreement.",
+      "disposition": "retained",
+      "oe_boundary": "The bias must be included when judging replication; high R-squared alone is insufficient."
+    },
+    {
+      "claim_id": "GU26-DATA",
+      "source_id": "gu_2026",
+      "field": "data_availability",
+      "value": "Study data are not public because of privacy and ethics restrictions; de-identified supporting data may be requested from the corresponding author subject to institutional approval.",
+      "source_location": "Data Availability Statement",
+      "supporting_paraphrase": "A reusable public data package is not linked by the article.",
+      "disposition": "retained",
+      "oe_boundary": "Reproduction depends on an author request or a ground-up implementation."
+    },
+    {
+      "claim_id": "GU26-CONFLICT",
+      "source_id": "gu_2026",
+      "field": "conflict_of_interest",
+      "value": "C.-H. T. was an employee of Germark Biotechnology Co., Ltd.; the article states that the company had no role in the study or publication decision.",
+      "source_location": "Conflicts of Interest",
+      "supporting_paraphrase": "The employment disclosure and the authors' no-role statement are both retained.",
+      "disposition": "retained",
+      "oe_boundary": "Disclosure is context, not evidence that the method is invalid or independently replicated."
+    },
+    {
+      "claim_id": "JULY14-FULLTEXT-PASS",
+      "source_id": null,
+      "field": "historical_verification_event",
+      "value": null,
+      "source_location": "Git history and reachable COMP-038 artifacts",
+      "supporting_paraphrase": "No July 14 full-text retrieval or verification artifact exists; the addendum was authored on July 15.",
+      "disposition": "retracted",
+      "oe_boundary": "The present artifact is newly dated and must not be backdated."
+    },
+    {
+      "claim_id": "BOTH-FULLTEXT-VERIFIED",
+      "source_id": null,
+      "field": "blanket_source_status",
+      "value": null,
+      "source_location": "Source-access audit",
+      "supporting_paraphrase": "Gu was read in full text; De Baere was verified only at primary-abstract scope.",
+      "disposition": "retracted",
+      "oe_boundary": "Use source-specific access labels."
+    }
+  ],
+  "result": {
+    "overall_verdict": "YELLOW",
+    "reason": "The source read supports two matrix-specific transfer candidates but no ready-to-adopt OE assay.",
+    "culture_supernatant": "De Baere HPLC-UV remains a Tier 3 method-transfer candidate; paired spike/recovery and GC-MS comparison are required in one exact OE matrix.",
+    "stool": "Gu electrochemical/ANN remains a Tier 2 candidate; complete-stack reproduction and independent external transfer are required.",
+    "clinical_or_gout_claim": false
+  }
+}

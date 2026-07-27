@@ -49,9 +49,9 @@ def assert_config_consistency(p):
 
     expected_grid = {
         "urate_uM": [
-            measured["human_jejunal_urate_uM"]["low"],
-            measured["human_jejunal_urate_uM"]["central"],
-            measured["human_jejunal_urate_uM"]["high"],
+            measured["human_terminal_ileal_clinical_cohort_urate_uM"]["low"],
+            measured["human_terminal_ileal_clinical_cohort_urate_uM"]["central"],
+            measured["human_terminal_ileal_clinical_cohort_urate_uM"]["high"],
             scenario["postprandial_or_inflamed_urate_uM"],
             scenario["high_distal_urate_uM"],
         ],
@@ -75,7 +75,7 @@ def assert_config_consistency(p):
         "scenario_only_values_not_measured_human_baselines"
     )
 
-    central_urate = measured["human_jejunal_urate_uM"]["central"]
+    central_urate = measured["human_terminal_ileal_clinical_cohort_urate_uM"]["central"]
     central_km = measured["uricase_Km_urate_uM"]["central"]
     central_hours = measured["small_bowel_active_window_hours"]["central"]
     oxygen_levels = scenario["effective_oxygen_dependent_activity_multipliers"]
@@ -92,13 +92,13 @@ def assert_config_consistency(p):
             "access_factor": full_access,
             "survival_factor": full_survival,
         },
-        "jejunal_baseline_no_extra_penalties": {
+        "terminal_ileal_clinical_cohort_no_extra_penalties": {
             "urate_uM": central_urate, "Km_uM": central_km, "hours": central_hours,
             "oxygen_factor": full_oxygen,
             "access_factor": full_access,
             "survival_factor": full_survival,
         },
-        "jejunal_baseline_microoxic_access_limited": {
+        "terminal_ileal_clinical_cohort_microoxic_access_limited": {
             "urate_uM": central_urate, "Km_uM": central_km, "hours": central_hours,
             "oxygen_factor": microoxic,
             "access_factor": limited_access,
@@ -133,7 +133,7 @@ def derive_verdict(named):
     """Apply the predeclared ratio-one decision rule, including contrary branches."""
     by_name = {row["scenario"]: row for row in named}
     legacy = by_name["legacy_vmax_24h"]["doses"]
-    diagnostic = by_name["jejunal_baseline_no_extra_penalties"]["doses"]
+    diagnostic = by_name["terminal_ileal_clinical_cohort_no_extra_penalties"]["doses"]
     legacy_all_at_or_above_one = all(row["capacity_ratio"] >= 1.0 for row in legacy.values())
     diagnostic_all_at_or_above_one = all(
         row["capacity_ratio"] >= 1.0 for row in diagnostic.values()
@@ -157,15 +157,15 @@ def self_check_decision_rule():
 
     assert derive_verdict([
         row("legacy_vmax_24h", (2.0, 3.0, 4.0)),
-        row("jejunal_baseline_no_extra_penalties", (1.1, 1.2, 1.3)),
+        row("terminal_ileal_clinical_cohort_no_extra_penalties", (1.1, 1.2, 1.3)),
     ]) == "LEGACY ROBUSTNESS NOT REJECTED"
     assert derive_verdict([
         row("legacy_vmax_24h", (2.0, 3.0, 4.0)),
-        row("jejunal_baseline_no_extra_penalties", (0.9, 1.2, 1.3)),
+        row("terminal_ileal_clinical_cohort_no_extra_penalties", (0.9, 1.2, 1.3)),
     ]) == "LEGACY FLAT-DOSE REGIME NOT ROBUST"
     assert derive_verdict([
         row("legacy_vmax_24h", (0.9, 3.0, 4.0)),
-        row("jejunal_baseline_no_extra_penalties", (0.5, 0.6, 0.7)),
+        row("terminal_ileal_clinical_cohort_no_extra_penalties", (0.5, 0.6, 0.7)),
     ]) == "LEGACY CONTROL NOT REPRODUCED"
 
 
@@ -184,7 +184,7 @@ def assert_reference_regression(p, diagnostic):
         "specific_activity": p["uricase_specific_activity_U_per_mg"],
         "pH_factor": p["in_vivo_ph_activity_factor_scenario_multiplier"],
         "flux_denominator": p["legacy_intestinal_urate_flux_mg_per_day"],
-        "urate": measured["human_jejunal_urate_uM"]["central"],
+        "urate": measured["human_terminal_ileal_clinical_cohort_urate_uM"]["central"],
         "Km": measured["uricase_Km_urate_uM"]["central"],
         "hours": measured["small_bowel_active_window_hours"]["central"],
     }
@@ -237,12 +237,15 @@ def main():
             "fraction_at_or_above_one": 1.0 - (counts["strongly_capacity_limited"] + counts["capacity_limited"]) / total
         }
 
-    diagnostic = next(x for x in named if x["scenario"] == "jejunal_baseline_no_extra_penalties")
+    diagnostic = next(
+        x for x in named
+        if x["scenario"] == "terminal_ileal_clinical_cohort_no_extra_penalties"
+    )
     assert_reference_regression(p, diagnostic)
     verdict = derive_verdict(named)
     interpretations = {
         "LEGACY FLAT-DOSE REGIME NOT ROBUST": "COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. COMP-044 supplies no replacement dose, serum-urate effect, genotype ordering, physiological regime, efficacy model, topology or chassis selection, production-sufficiency, or safety conclusion.",
-        "LEGACY ROBUSTNESS NOT REJECTED": "The legacy saturated control is reproduced and every central jejunal diagnostic dose remains at or above the ratio-one boundary. The audit does not establish dose sufficiency or serum-urate efficacy.",
+        "LEGACY ROBUSTNESS NOT REJECTED": "The legacy saturated control is reproduced and every central terminal-ileal clinical-cohort diagnostic dose remains at or above the ratio-one boundary. The audit does not establish dose sufficiency or serum-urate efficacy.",
         "LEGACY CONTROL NOT REPRODUCED": "The saturated 24-hour control fails to reproduce the legacy at-or-above-one classification across all doses, so the audit cannot adjudicate robustness or infer efficacy.",
     }
 
@@ -252,11 +255,12 @@ def main():
         "decision_rule": {
             "boundary": "capacity_ratio = 1",
             "legacy_control_requirement": "all legacy_vmax_24h dose ratios must be at or above one",
-            "not_robust_condition": "legacy control is reproduced and at least one jejunal_baseline_no_extra_penalties dose ratio is below one",
-            "contrary_condition": "legacy control is reproduced and every jejunal_baseline_no_extra_penalties dose ratio remains at or above one"
+            "not_robust_condition": "legacy control is reproduced and at least one terminal_ileal_clinical_cohort_no_extra_penalties dose ratio is below one",
+            "contrary_condition": "legacy control is reproduced and every terminal_ileal_clinical_cohort_no_extra_penalties dose ratio remains at or above one"
         },
         "interpretation": interpretations[verdict],
         "input_provenance_status": {
+            "human_terminal_ileal_clinical_cohort_urate_uM": "direct human terminal-ileal fluid measurement in a 34-person clinical endoscopy cohort; not a jejunal or healthy-population baseline",
             "uricase_specific_activity_U_per_mg": "inherited prior; not newly primary-source verified for quantitative planning",
             "uricase_Km_urate_uM": "inherited range; enzyme-context dependent and not newly primary-source verified",
             "small_bowel_active_window_hours": "inherited physiology range; not a measured comp-044 patient parameter",
@@ -284,7 +288,7 @@ def main():
         headline = "**Verdict: LEGACY FLAT-DOSE REGIME NOT ROBUST.** COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. COMP-044 supplies no replacement dose, ΔSUA, genotype ordering, physiological regime, efficacy model, topology or chassis selection, production-sufficiency, or safety conclusion."
         decision = "Keep the biological gut-sink hypothesis and its quantitative regime open. Build and characterize exact configurations before the configuration-level physiological screen; complete the separate peroxide-safety gate before animal escalation."
     elif verdict == "LEGACY ROBUSTNESS NOT REJECTED":
-        headline = "**Verdict: LEGACY ROBUSTNESS NOT REJECTED.** Every prespecified central jejunal diagnostic dose remains at or above the ratio-one boundary after applying substrate concentration, Km, and the finite active window. This does not validate dose sufficiency or predict ΔSUA; it means this audit does not falsify the legacy classification."
+        headline = "**Verdict: LEGACY ROBUSTNESS NOT REJECTED.** Every prespecified central terminal-ileal clinical-cohort diagnostic dose remains at or above the ratio-one boundary after applying substrate concentration, Km, and the finite active window. This does not validate dose sufficiency or predict ΔSUA; it means this audit does not falsify the legacy classification."
         decision = "Do not retire or confirm the legacy flat-dose claim from this audit. Keep the gut-sink hypothesis and dose regime open pending the physiological topology × oxygen × peroxide experiment."
     else:
         headline = "**Verdict: LEGACY CONTROL NOT REPRODUCED.** The saturated 24-hour control does not reproduce the legacy at-or-above-one classification across all doses, so this run cannot adjudicate its robustness. No dose, efficacy, or serum-urate inference is permitted."

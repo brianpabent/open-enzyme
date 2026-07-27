@@ -1,97 +1,137 @@
 {
+  "selectivity_ratio_null_semantics": {
+    "positive_infinity": {
+      "condition": "selectivity_ratio_state is positive_infinity_zero_healthy_baseline",
+      "meaning": "positive infinity",
+      "not_missing_data": true
+    },
+    "undefined": {
+      "condition": "selectivity_ratio_state is undefined_zero_over_zero",
+      "meaning": "undefined 0/0",
+      "not_missing_data": true
+    }
+  },
   "pore_permeability_m3_per_s": 6.917380956890963e-18,
+  "pore_hindrance_factor": 1.0,
   "equilibration_time_constant_s": 2.1684507609859605,
   "equilibration_peak_fraction_central": 1.0,
-  "ic50_uM": 0.01,
+  "central_pores_per_cell": 200,
+  "central_pore_lifetime_s": 300,
+  "central_cell_volume_um3": 3000.0,
+  "cell_assay_effective_concentration_proxy_uM": 0.01,
   "Km_uM": 700.0,
   "routes": {
     "intra_articular": {
       "C_ext_synovial_uM": 292.0,
-      "C_in_pyroptotic_uM": 292.0,
-      "ratio_over_ic50": 29200.0,
+      "modeled_passive_pore_contribution_uM": 292.0,
+      "ratio_over_effective_concentration_proxy": 29200.0,
       "naive_flux_limited_uM_UPPERBOUND": 40397.504788243226,
       "naive_over_C_ext": 138.34761913781927,
       "moles_in_over_lifetime_mol": 1.2119251436472968e-13,
-      "selectivity_by_pept1_scenario": {
+      "pore_vs_healthy_heuristic_by_pept1_scenario": {
         "absent": {
           "AR_lin": 0.0,
           "C_in_healthy_uM": 0.0,
-          "selectivity_ratio": null
+          "selectivity_ratio": null,
+          "selectivity_ratio_state": "positive_infinity_zero_healthy_baseline",
+          "heuristic_ratio_ge_3x": true
         },
         "low": {
           "AR_lin": 0.3,
           "C_in_healthy_uM": 61.814516129032256,
-          "selectivity_ratio": 4.723809523809524
+          "selectivity_ratio": 4.723809523809524,
+          "selectivity_ratio_state": "finite",
+          "heuristic_ratio_ge_3x": true
         },
         "moderate": {
           "AR_lin": 1.0,
           "C_in_healthy_uM": 206.0483870967742,
-          "selectivity_ratio": 1.417142857142857
+          "selectivity_ratio": 1.417142857142857,
+          "selectivity_ratio_state": "finite",
+          "heuristic_ratio_ge_3x": false
         },
         "high": {
           "AR_lin": 3.0,
           "C_in_healthy_uM": 618.1451612903226,
-          "selectivity_ratio": 0.4723809523809524
+          "selectivity_ratio": 0.4723809523809524,
+          "selectivity_ratio_state": "finite",
+          "heuristic_ratio_ge_3x": false
         }
       }
     },
     "subcutaneous": {
       "C_ext_synovial_uM": 0.03,
-      "C_in_pyroptotic_uM": 0.03,
-      "ratio_over_ic50": 3.0,
+      "modeled_passive_pore_contribution_uM": 0.03,
+      "ratio_over_effective_concentration_proxy": 3.0,
       "naive_flux_limited_uM_UPPERBOUND": 4.150428574134578,
       "naive_over_C_ext": 138.34761913781927,
       "moles_in_over_lifetime_mol": 1.2451285722403733e-17,
-      "selectivity_by_pept1_scenario": {
+      "pore_vs_healthy_heuristic_by_pept1_scenario": {
         "absent": {
           "AR_lin": 0.0,
           "C_in_healthy_uM": 0.0,
-          "selectivity_ratio": null
+          "selectivity_ratio": null,
+          "selectivity_ratio_state": "positive_infinity_zero_healthy_baseline",
+          "heuristic_ratio_ge_3x": true
         },
         "low": {
           "AR_lin": 0.3,
           "C_in_healthy_uM": 0.00899961430224419,
-          "selectivity_ratio": 3.3334761904761905
+          "selectivity_ratio": 3.3334761904761905,
+          "selectivity_ratio_state": "finite",
+          "heuristic_ratio_ge_3x": true
         },
         "moderate": {
           "AR_lin": 1.0,
           "C_in_healthy_uM": 0.029998714340813967,
-          "selectivity_ratio": 1.000042857142857
+          "selectivity_ratio": 1.000042857142857,
+          "selectivity_ratio_state": "finite",
+          "heuristic_ratio_ge_3x": false
         },
         "high": {
           "AR_lin": 3.0,
           "C_in_healthy_uM": 0.0899961430224419,
-          "selectivity_ratio": 0.33334761904761906
+          "selectivity_ratio": 0.33334761904761906,
+          "selectivity_ratio_state": "finite",
+          "heuristic_ratio_ge_3x": false
         }
       }
     },
     "oral": {
       "C_ext_synovial_uM": 0.001,
-      "C_in_pyroptotic_uM": 0.001,
-      "ratio_over_ic50": 0.1,
+      "modeled_passive_pore_contribution_uM": 0.001,
+      "ratio_over_effective_concentration_proxy": 0.1,
       "naive_flux_limited_uM_UPPERBOUND": 0.13834761913781926,
       "naive_over_C_ext": 138.34761913781927,
       "moles_in_over_lifetime_mol": 4.150428574134578e-19,
-      "selectivity_by_pept1_scenario": {
+      "pore_vs_healthy_heuristic_by_pept1_scenario": {
         "absent": {
           "AR_lin": 0.0,
           "C_in_healthy_uM": 0.0,
-          "selectivity_ratio": null
+          "selectivity_ratio": null,
+          "selectivity_ratio_state": "positive_infinity_zero_healthy_baseline",
+          "heuristic_ratio_ge_3x": true
         },
         "low": {
           "AR_lin": 0.3,
           "C_in_healthy_uM": 0.00029999957142918366,
-          "selectivity_ratio": 3.3333380952380955
+          "selectivity_ratio": 3.3333380952380955,
+          "selectivity_ratio_state": "finite",
+          "heuristic_ratio_ge_3x": true
         },
         "moderate": {
           "AR_lin": 1.0,
           "C_in_healthy_uM": 0.0009999985714306125,
-          "selectivity_ratio": 1.0000014285714285
+          "selectivity_ratio": 1.0000014285714285,
+          "selectivity_ratio_state": "finite",
+          "heuristic_ratio_ge_3x": false
         },
         "high": {
           "AR_lin": 3.0,
           "C_in_healthy_uM": 0.002999995714291837,
-          "selectivity_ratio": 0.3333338095238095
+          "selectivity_ratio": 0.3333338095238095,
+          "selectivity_ratio_state": "finite",
+          "heuristic_ratio_ge_3x": false
         }
       }
     }

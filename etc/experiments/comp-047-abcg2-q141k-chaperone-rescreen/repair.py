@@ -16,6 +16,10 @@ HERE = A.HERE
 
 
 def main(names):
+    A.require_toolchain()
+    A.LIGDIR.mkdir(parents=True, exist_ok=True)
+    A.DOCKDIR.mkdir(parents=True, exist_ok=True)
+    A.LOG.parent.mkdir(parents=True, exist_ok=True)
     boxes = json.load(open(HERE / "work/receptor/boxes.json"))
     fold_box, trans_box = boxes["fold_site"], boxes["transport_site"]
     smi = json.load(open(HERE / "work/ligands/smiles_resolved.json"))

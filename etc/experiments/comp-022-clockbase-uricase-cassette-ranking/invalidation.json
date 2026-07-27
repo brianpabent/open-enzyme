@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "comp": "comp-022",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "5b0a548445bde2da5395be65fb8042f3b033a350",
+  "last_push_review_manifest_sha256": "a48f82d2244afed3b85b6d006116354a7784c6ce2b901ec45b7669420e8561a1",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 8401,
+      "sha256": "212cb4f24abe40c6887c84d95467bf94d5c61affb88377a7da63abef1c481587"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 33067,
+      "sha256": "89b9b326f99bc4aadbb54ae2338eff5c21376d65d3ebb217d0bae19436480826"
+    },
+    {
+      "path": "inputs/Q00511.fasta",
+      "bytes": 385,
+      "sha256": "fd006ac91dc08f796bd2032ee975677c16f6e8e7d3d0762ba1f2b295183b4274"
+    },
+    {
+      "path": "inputs/a_oryzae_codon_usage.json",
+      "bytes": 5321,
+      "sha256": "61b8e7293388d5d605f19e36fce9d94d19a526baf35f3c9205bf17d0b717a24e"
+    },
+    {
+      "path": "inputs/parts_list.json",
+      "bytes": 15061,
+      "sha256": "cc0f696576763e27015935340d79ed9e2fc7be4728f92856f514d1f11667022e"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 4911,
+      "sha256": "3657595318aba7af160291f0522bca26405141c091a8adb6b4b06206cb0e2128"
+    },
+    {
+      "path": "outputs/codon_variant_scores.md",
+      "bytes": 594,
+      "sha256": "26747e98ebe434972dea22c077389cb557cbe3e25ae59c8bbe4e15cce4158e89"
+    },
+    {
+      "path": "outputs/full_ranking_top1000.csv",
+      "bytes": 125700,
+      "sha256": "2f7badedddfaabb086b82be324b549c64b59bbac64b717505a981699e1d4ae0d"
+    },
+    {
+      "path": "outputs/report.json",
+      "bytes": 23554,
+      "sha256": "ff5f2c7d56f3f983e74fb9f64f8f7544514cde9f1699bf3d0f49a66b84ea3634"
+    },
+    {
+      "path": "outputs/scaffold_chaperone_loads.md",
+      "bytes": 717,
+      "sha256": "145a469313ae3dd7f52a24a1781f8ce0d86f95a84c1fa0acbfc60fd28677cf31"
+    },
+    {
+      "path": "outputs/top25.md",
+      "bytes": 3747,
+      "sha256": "69b13788bec18e428c52a8b014f5341f7cfde69d9a693de6e6341a13a752fd6a"
+    },
+    {
+      "path": "outputs/unique_cassette_shortlist.csv",
+      "bytes": 62334,
+      "sha256": "44e2040264de600c686fba2c411bb05bb735092ac7d8e650fd350be46a18e0c2"
+    },
+    {
+      "path": "provenance.md",
+      "bytes": 11246,
+      "sha256": "131fe026151c66f41f3cd84f17e25206fbfe604e962d9721c0bf85f6e115b9bc"
+    },
+    {
+      "path": "v2/analyze_v2.py",
+      "bytes": 18988,
+      "sha256": "8daf36552968f5eecf6472cd41ac3da2528fd6b161e6e7badecca6aae1a73f29"
+    },
+    {
+      "path": "v2/build_protein_shortlist.py",
+      "bytes": 6189,
+      "sha256": "b23fdfbb5aa429c26c1ed0436dea2c2829d6787190b0f6b6e907feaffcacfb96"
+    },
+    {
+      "path": "v2/inputs/protein_shortlist.fasta",
+      "bytes": 49598,
+      "sha256": "404daac1cbc0bdae504324ad1ef34e05825a503814f46b86f4fd2a32fc674358"
+    },
+    {
+      "path": "v2/inputs/protein_shortlist_keymap.csv",
+      "bytes": 7097,
+      "sha256": "3a337bff8eafd15cb18df4a1f0ab096e42137171664018e6345c41213fbe9131"
+    },
+    {
+      "path": "v2/outputs/esmfold_pLDDT.csv",
+      "bytes": 4413,
+      "sha256": "0f2f59977bbb847bf5f75d2346e68e933c497241774b16628e58e2bd342b546d"
+    },
+    {
+      "path": "v2/outputs/v2_shortlist.csv",
+      "bytes": 9337,
+      "sha256": "8e63611ccf70d533dda66e424c71860bd3b47767c77046664a70e59f0781e307"
+    },
+    {
+      "path": "v2/outputs/v2_summary.json",
+      "bytes": 2748,
+      "sha256": "4b15750b3cfb43b2e618abe4bf25e476813c5ac7f2252b664ce950c6de3f143f"
+    },
+    {
+      "path": "v2/outputs/v2_top25.md",
+      "bytes": 4257,
+      "sha256": "9dc676b3eb07a59bfb059e49c383f936f743c6f9c756203353ddbb3a5d3e4eeb"
+    },
+    {
+      "path": "v2/outputs/viennarna_mfe.csv",
+      "bytes": 3958,
+      "sha256": "56dc6b9955ebde368847d877fb80940993f78115b81933abf71494080cc64254"
+    },
+    {
+      "path": "v2/provenance.md",
+      "bytes": 13457,
+      "sha256": "bba49900651a32dcbcd914633139fcff56eed79751a71c262f66d0cd6153786a"
+    },
+    {
+      "path": "v2/rerank_v2.py",
+      "bytes": 10483,
+      "sha256": "66629a5ccc87edc8e61ea583159fcc484634c804c44f3737e94fdf9a362f9cd5"
+    },
+    {
+      "path": "v2/run_esm2_pseudo_likelihood.py",
+      "bytes": 8904,
+      "sha256": "642da76de30acbbd115c3d30bf15049a56b5c881abc652873fe99bc40eacc65f"
+    },
+    {
+      "path": "v2/run_viennarna_mfe.py",
+      "bytes": 8867,
+      "sha256": "8381488f4eaefb82af0dc904c077f60d04d2a8a21a281fb1fc58b5f23205ad13"
+    }
+  ],
+  "invalidated_scope": [
+    "all composite scores, ranks, top-N tables, shortlist membership, winner labels, N-of-four and N-of-five tiers, concordance counts, and candidate-promotion claims",
+    "all PamyB, signal-peptide, 5-prime-softened codon, direct-secretion, GlaA-KEX2, propeptide, terminal-tag, PTS1-masking, N191Q, or other cassette-component preferences derived from the ranking",
+    "all chaperone-load coefficients, glycosylation and KEX2 penalties, promoter-signal-peptide priors, equal-weight composites, quintile thresholds, and votes across axes not calibrated to one named biological outcome",
+    "ESM2 single-pass log-probability values rescaled to 50-90 as ESMFold pLDDT, fold quality, folding, secretion, function, or candidate-selection evidence",
+    "all claims that v2 rescued, confirmed, or independently corroborated the v1 shortlist, direct-secretion cluster, PTS1 masking, N191Q, or gene-synthesis refinements",
+    "the historical NSS annotation at residues 191-193; the bound Q00511 sequence and current UniProt record contain NFS",
+    "all experimental-routing, gene-synthesis, expression, processing, localization, active-product, oxygen, peroxide, viability, production, dose, safety, or efficacy conclusions derived from the retired model",
+    "all inheritance of COMP-022 rankings, winners, or component preferences by later COMP artifacts or wiki pages"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_historical_inventory_and_research_conjecture",
+    "statements": [
+      "The retired program deterministically enumerated a declared 43,200-row Cartesian product; this is a historical inventory fact, not evidence that its parts were complete, correctly parameterized, or suitable for construction.",
+      "Within the retired v2 output, all four v1 top-cluster rows entered the N-of-five at least four artifact shortlist, while only one of those four entered the strict N-of-five equals five tier; neither internal tier has predictive or decision authority.",
+      "Direct secretion and GlaA-KEX2 processing remain distinct unranked engineering configurations; promoter, signal-peptide, codon, terminal handling, propeptide, and glycosylation choices may be tested only as prespecified factors, with no COMP-022 preference.",
+      "A matched configuration experiment must measure transcript, processing fidelity, localization, native or oligomeric state, fraction-specific intact active uricase, oxygen and peroxide behavior, and host viability before advancing an exact construct.",
+      "Retiring COMP-022 does not reject uricase, Aspergillus oryzae, direct secretion, carrier processing, or the wider gout exploit portfolio; it removes only the authority of this ranking model."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/uricase-cassette-ranking-computational.md",
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "d68d0e0b7e8a8461494ac232cf40ad6912034a99d6bdd3dfc7ac4f052d95b3d9"
+  }
+}

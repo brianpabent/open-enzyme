@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/README.md",
+      "kind": "design",
+      "bytes": 1487,
+      "sha256": "164e2374409f5c5965ae7828a9e8fc3b77385900a3b0593e0f052b59f72357df"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-021-upstream-complement-assay-format-mapping/invalidation.json",
+      "kind": "design",
+      "bytes": 2529,
+      "sha256": "1d4cb6af11a4549554fbed8cc27a6ab5ae66790d742cf3cf670f46277e014e01"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
+      "kind": "proposed_update",
+      "bytes": 25429,
+      "sha256": "0c6920db6b2d2a45cc193f74cd56d761311b107a72a621f0a261fce52335a9d4"
+    },
+    {
+      "path": "wiki/upstream-complement-assay-format-mapping-computational.md",
+      "kind": "proposed_update",
+      "bytes": 2658,
+      "sha256": "a8922c4663ba8f86fc4ca365033d6826aac36f37c97f8fb9064f52fdf659f037"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "45b654751eb93c8a23153784deadd8d0a1ee144069802f2fd7917cf4d6e6b2b5"
+}

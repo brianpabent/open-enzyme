@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/README.md",
+      "kind": "design",
+      "bytes": 4599,
+      "sha256": "d5c108ca72a02c5a8d756796cbe230f3ff5d3516c8d48741b5b682879e05f296"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/invalidation.json",
+      "kind": "design",
+      "bytes": 3988,
+      "sha256": "b3537a72f144966c8ad7a617159b4f579a806b08b3999bc965d9edda0670de55"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 34477,
+      "sha256": "99f71a40a68b9376635276b676defd9805cb92811b0f53ea07a0510c068ae188"
+    },
+    {
+      "path": "synthesis/queue/comp-review-015.md",
+      "kind": "proposed_update",
+      "bytes": 3064,
+      "sha256": "cf962ec88eaa000bb11ee6be825ff65134852ca016709a9d467eb3e944fbbda4"
+    },
+    {
+      "path": "wiki/abcg2-modulators.md",
+      "kind": "proposed_update",
+      "bytes": 38083,
+      "sha256": "daadf5147e1bac785f7f3790635ee69fb1c2fa4e9bde7764508fa886879c729f"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77557,
+      "sha256": "10ad85e3607dc17ceb8a264a2c928c585a93dc4f87ef5870a58534d673a557ff"
+    },
+    {
+      "path": "wiki/engineered-lbp-chassis.md",
+      "kind": "proposed_update",
+      "bytes": 14359,
+      "sha256": "830d3af9210c31e556caed5b2e403a06a6c9cdcc7a5a3ebcddc527827a10bc6b"
+    },
+    {
+      "path": "wiki/food-grade-hdaci-screen-computational.md",
+      "kind": "proposed_update",
+      "bytes": 6162,
+      "sha256": "d00ada062fd37cb5edb1107c38ac19c5520767044f0feea2c3d93d1175edf6fa"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 72496,
+      "sha256": "830fee62e84e4f22a8cfbcae8fa65ff8f35cd777aa1e4e8079928d315c24031e"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 229385,
+      "sha256": "591cb5516fd52e99b1239be4d26f782212ffa3dbc777e8e1c9446b5263be4e95"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "ecd53fe3d969474bd4dd4adeba8c530f4eac75289115d014fff1e64b72978892"
+}

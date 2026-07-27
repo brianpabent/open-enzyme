@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/README.md",
+      "kind": "design",
+      "bytes": 2132,
+      "sha256": "437abd20c82716506f8d3ae8986f5242e8c8185ba6bb9f5f847163becd345cae"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/invalidation.json",
+      "kind": "design",
+      "bytes": 25989,
+      "sha256": "137ec59afdd4b92293929f2d3cda4cb27ccd1bd493fc2188944a75e11dad653a"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "688741801bfc669cd8c0b87ee4ad3c4c86dbf8a33c8e11e452508fcea304bc32"
+}

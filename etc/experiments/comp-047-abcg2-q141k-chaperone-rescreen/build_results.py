@@ -1,207 +1,379 @@
 #!/usr/bin/env python3
-"""
-comp-047 final merge + report.
+"""Deterministically merge the frozen COMP-047 docking run with both Axis-2 checks.
 
-Merges Axis 1 (docking, outputs/results.json) with Axis 2 (empirical ChEMBL
-ABCG2 activity, outputs/chembl_axis2.json if present) and the curated control
-role tags, then writes:
-  outputs/results.json     (re-annotated with axis2 fields + final verdict)
-  outputs/controls.md      (control performance — the key validity check)
-  outputs/summary.md       (verdict + ranked shortlist + honest limits)
+This repair does not dock molecules. It consumes the existing result-bearing
+artifacts and rewrites only the annotated result and human-readable reports:
 
-A molecule is a wet-lab CANDIDATE only if it passes BOTH axes:
-  Axis 1: fold-selective docking (tier yes/uncertain, not ATP-site-preferring)
-  Axis 2: NOT a known/empirical ABCG2 inhibitor or substrate
+  outputs/results.json
+  outputs/controls.md
+  outputs/summary.md
+
+Axis 2a is the bounded ChEMBL inhibition check. Axis 2b is the broader
+UniProt/DrugBank ABCG2-relationship check. A relationship flag is conservative
+exclusion evidence for this screen; it is not relabeled as proof that every
+flagged molecule is an ABCG2 substrate.
 """
 import json
 from pathlib import Path
-from datetime import date
 from statistics import median
 
-HERE = Path("wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen")
+import verify_receptors
+
+HERE = Path(__file__).resolve().parent
 
 
-def load_axis2():
-    f = HERE / "outputs/chembl_axis2.json"
-    if f.exists():
-        return json.load(open(f))
-    return {}
+def load_json(relative_path):
+    path = HERE / relative_path
+    if not path.exists():
+        raise FileNotFoundError(f"required frozen artifact is missing: {path}")
+    return json.loads(path.read_text())
 
 
-def fmt(v):
-    return f"{v:.2f}" if isinstance(v, (int, float)) else "n/a"
+def fmt(value):
+    return f"{value:.2f}" if isinstance(value, (int, float)) else "n/a"
+
+
+def yes_no_unknown(value):
+    if value is True:
+        return "yes"
+    if value is False:
+        return "no"
+    return "unqueried"
 
 
 def main():
-    res = json.load(open(HERE / "outputs/results.json"))
-    meta = res["_meta"]
-    R = res["results"]
-    axis2 = load_axis2()
+    # Fail closed: no corrected report may be written unless the exact frozen
+    # receptor snapshot passes the bound integrity contract in this same process.
+    receptor_verification = verify_receptors.verify_and_write()
+    if receptor_verification.get("status") != "PASS_WITH_DECLARED_WARNING":
+        raise RuntimeError("receptor verification did not pass")
 
-    # merge axis2 empirical flags
-    for name, row in R.items():
-        a2 = axis2.get(name, {})
-        row["chembl_abcg2_empirical"] = a2.get("has_activity")  # True/False/None(unqueried)
-        row["chembl_best_pchembl"] = a2.get("best_pchembl")
-        row["chembl_note"] = a2.get("note")
-        # final known-inhibitor = curated OR empirical
-        known = bool(row.get("known_inhibitor_flag")) or (a2.get("has_activity") is True)
-        row["final_known_abcg2"] = known
-        # final verdict: candidate requires fold-selective tier AND not known ABCG2
+    result_doc = load_json("outputs/results.json")
+    chembl = load_json("outputs/chembl_axis2.json")
+    drugbank_doc = load_json("outputs/drugbank_substrate_axis.json")
+    sensitivity = load_json("outputs/sensitivity.json")
+
+    meta = result_doc["_meta"]
+    results = result_doc["results"]
+    drugbank_flagged = drugbank_doc.get("flagged", {})
+    artifact_date = str(meta.get("generated", "undated")).split()[0]
+
+    # Axis 2 is a conservative exclusion layer, not a positive chaperone score.
+    for name, row in results.items():
+        chembl_row = chembl.get(name, {})
+        drugbank_row = drugbank_flagged.get(name, {})
+        curated = bool(row.get("known_inhibitor_flag"))
+        chembl_activity = chembl_row.get("has_activity")
+        substrate_disqualified = bool(chembl_row.get("substrate_disqualified"))
+        drugbank_relationship = bool(
+            drugbank_row.get("drugbank_abcg2_interacting")
+        )
+
+        reasons = []
+        if curated:
+            reasons.append("curated ABCG2 inhibitor/substrate control")
+        if chembl_activity is True:
+            reasons.append("ChEMBL ABCG2 activity")
+        if substrate_disqualified:
+            reasons.append("independently identified ABCG2 substrate")
+        if drugbank_relationship:
+            reasons.append("UniProt/DrugBank ABCG2 relationship")
+
+        final_known = bool(reasons)
+        row["chembl_abcg2_empirical"] = chembl_activity
+        row["chembl_best_pchembl"] = chembl_row.get("best_pchembl")
+        row["chembl_note"] = chembl_row.get("note")
+        row["drugbank_abcg2_interacting"] = drugbank_relationship
+        row["substrate_disqualified"] = substrate_disqualified
+        row["final_known_abcg2"] = final_known
+        row["final_disqualify_reasons"] = reasons
+
         tier = row.get("chaperone_tier")
-        if tier in ("yes", "uncertain") and not known:
-            row["wetlab_candidate"] = tier  # 'yes' or 'uncertain'
-        else:
-            row["wetlab_candidate"] = "no"
+        row["wetlab_candidate"] = (
+            tier if tier in ("yes", "uncertain") and not final_known else "no"
+        )
 
-    # ranked shortlist: candidates first (yes>uncertain), by fold_q141k affinity
-    def sortkey(kv):
-        n, r = kv
-        rank_tier = {"yes": 0, "uncertain": 1, "no": 2}[r.get("wetlab_candidate", "no")]
-        fq = r.get("fold_q141k_affinity")
-        return (rank_tier, fq if isinstance(fq, (int, float)) else 0)
+    result_doc["_postprocessing"] = {
+        "contract": "frozen docking + ChEMBL inhibition + UniProt/DrugBank relationship exclusion",
+        "axis2a": "outputs/chembl_axis2.json",
+        "axis2b": "outputs/drugbank_substrate_axis.json",
+        "sensitivity": "outputs/sensitivity.json",
+        "artifact_date": artifact_date,
+    }
 
-    ordered = sorted(R.items(), key=sortkey)
-    candidates = [(n, r) for n, r in ordered if r.get("wetlab_candidate") in ("yes", "uncertain")]
+    def sort_key(item):
+        _, row = item
+        tier_rank = {"yes": 0, "uncertain": 1, "no": 2}.get(
+            row.get("wetlab_candidate"), 3
+        )
+        affinity = row.get("fold_q141k_affinity")
+        return (tier_rank, affinity if isinstance(affinity, (int, float)) else 0)
 
-    # re-save annotated results
-    json.dump(res, open(HERE / "outputs/results.json", "w"), indent=2)
+    ordered = sorted(results.items(), key=sort_key)
+    executable_rows = [
+        (name, row)
+        for name, row in ordered
+        if row.get("wetlab_candidate") in ("yes", "uncertain")
+    ]
 
-    # ---- controls.md ----
-    cftr = [(n, r) for n, r in R.items() if r.get("role_tag") == "cftr_corrector"]
-    inh = [(n, r) for n, r in R.items() if r.get("role_tag") == "abcg2_inhibitor"]
-    # overall docking rank (by fold_q141k) for context
-    valid = [(n, r) for n, r in R.items() if isinstance(r.get("fold_q141k_affinity"), (int, float))]
-    fold_rank = {n: i + 1 for i, (n, r) in enumerate(
-        sorted(valid, key=lambda kv: kv[1]["fold_q141k_affinity"]))}
-    N = len(valid)
+    (HERE / "outputs/results.json").write_text(
+        json.dumps(result_doc, indent=2) + "\n"
+    )
 
-    lines = ["# comp-047 — Control performance (validity check)", "",
-             f"Generated {date.today().isoformat()}. N={N} molecules with valid docking.",
-             "",
-             "Columns: fold@Q141K / fold@WT / transport (Walker A) affinities (kcal/mol, "
-             "more negative = stronger); margin = transport − fold@Q141K (>0 = fold-selective); "
-             "fold-rank = rank of fold@Q141K among all molecules (1 = strongest fold binder).",
-             ""]
+    valid = [
+        (name, row)
+        for name, row in results.items()
+        if isinstance(row.get("fold_q141k_affinity"), (int, float))
+    ]
+    fold_rank = {
+        name: index + 1
+        for index, (name, _) in enumerate(
+            sorted(valid, key=lambda item: item[1]["fold_q141k_affinity"])
+        )
+    }
+    n_valid = len(valid)
+    cftr = [
+        (name, row)
+        for name, row in results.items()
+        if row.get("role_tag") == "cftr_corrector"
+    ]
+    negative_controls = [
+        (name, row)
+        for name, row in results.items()
+        if row.get("role_tag") == "abcg2_inhibitor"
+    ]
 
-    lines.append("## POSITIVE controls — CFTR correctors (must EARN rank, no prior)")
-    lines.append("")
-    lines.append("| molecule | fold@Q141K | fold@WT | transport | margin | fold-rank | chaperone tier | wetlab candidate |")
-    lines.append("|---|---|---|---|---|---|---|---|")
-    for n, r in sorted(cftr, key=lambda kv: fold_rank.get(kv[0], 999)):
-        lines.append(f"| {n} | {fmt(r.get('fold_q141k_affinity'))} | {fmt(r.get('fold_wt_affinity'))} "
-                     f"| {fmt(r.get('transport_affinity'))} | {fmt(r.get('fold_vs_transport_margin'))} "
-                     f"| {fold_rank.get(n,'?')}/{N} | {r.get('chaperone_tier')} | {r.get('wetlab_candidate')} |")
-    lines.append("")
+    control_lines = [
+        "# comp-047 — Control and exclusion read-out",
+        "",
+        f"Frozen docking run date: {artifact_date}. N={n_valid} molecules with valid docking.",
+        "",
+        "Affinities are Vina scores in kcal/mol (more negative = stronger). "
+        "Margin = transport − fold@Q141K (>0 favors the modeled fold-site box). "
+        "These are method diagnostics, not binding or rescue measurements.",
+        "",
+        "## Cross-protein chaperone mechanism comparators",
+        "",
+        "CFTR correctors are not validated ABCG2 fold-site binders. Their failure "
+        "to earn rank shows that this setup did not recover these cross-protein "
+        "chaperone comparators; it is not proof that ABCG2 lacks a rescuable site.",
+        "",
+        "| molecule | fold@Q141K | fold@WT | Walker A | margin | base-run fold rank | docking tier | executable row |",
+        "|---|---|---|---|---|---|---|---|",
+    ]
+    for name, row in sorted(cftr, key=lambda item: fold_rank.get(item[0], 999)):
+        control_lines.append(
+            f"| {name} | {fmt(row.get('fold_q141k_affinity'))} "
+            f"| {fmt(row.get('fold_wt_affinity'))} "
+            f"| {fmt(row.get('transport_affinity'))} "
+            f"| {fmt(row.get('fold_vs_transport_margin'))} "
+            f"| {fold_rank.get(name, '?')}/{n_valid} "
+            f"| {row.get('chaperone_tier')} | {row.get('wetlab_candidate')} |"
+        )
 
-    lines.append("## NEGATIVE controls — known/empirical ABCG2 inhibitors & substrates (must NOT rank as chaperone)")
-    lines.append("")
-    lines.append("| molecule | fold@Q141K | transport | margin | fold-rank | chaperone tier | ChEMBL ABCG2 | wetlab candidate |")
-    lines.append("|---|---|---|---|---|---|---|---|")
-    for n, r in sorted(inh, key=lambda kv: fold_rank.get(kv[0], 999)):
-        a2 = "yes" if r.get("chembl_abcg2_empirical") is True else (
-            "no" if r.get("chembl_abcg2_empirical") is False else "curated")
-        lines.append(f"| {n} | {fmt(r.get('fold_q141k_affinity'))} | {fmt(r.get('transport_affinity'))} "
-                     f"| {fmt(r.get('fold_vs_transport_margin'))} | {fold_rank.get(n,'?')}/{N} "
-                     f"| {r.get('chaperone_tier')} | {a2} | {r.get('wetlab_candidate')} |")
-    lines.append("")
+    control_lines += [
+        "",
+        "## Curated ABCG2 negative controls",
+        "",
+        "| molecule | fold@Q141K | Walker A | margin | base-run fold rank | ChEMBL activity | DrugBank relationship | executable row |",
+        "|---|---|---|---|---|---|---|---|",
+    ]
+    for name, row in sorted(
+        negative_controls, key=lambda item: fold_rank.get(item[0], 999)
+    ):
+        control_lines.append(
+            f"| {name} | {fmt(row.get('fold_q141k_affinity'))} "
+            f"| {fmt(row.get('transport_affinity'))} "
+            f"| {fmt(row.get('fold_vs_transport_margin'))} "
+            f"| {fold_rank.get(name, '?')}/{n_valid} "
+            f"| {yes_no_unknown(row.get('chembl_abcg2_empirical'))} "
+            f"| {'yes' if row.get('drugbank_abcg2_interacting') else 'no'} "
+            f"| {row.get('wetlab_candidate')} |"
+        )
 
-    # validity summary
-    inh_top = [n for n, r in inh if r.get("wetlab_candidate") in ("yes", "uncertain")]
-    cftr_cand = [n for n, r in cftr if r.get("wetlab_candidate") in ("yes", "uncertain")]
-    lines.append("## Validity read-out")
-    lines.append("")
-    lines.append(f"- Known ABCG2 inhibitors/substrates ranked as chaperone candidates: "
-                 f"**{len(inh_top)}** ({inh_top if inh_top else 'none'}). "
-                 f"{'PASS — screen correctly rejects inhibitors.' if not inh_top else 'FAIL/PARTIAL — method still confounded; see summary.'}")
-    lines.append(f"- CFTR correctors that EARNED a candidate tier from docking: "
-                 f"**{len(cftr_cand)}** ({cftr_cand if cftr_cand else 'none'}).")
-    (HERE / "outputs/controls.md").write_text("\n".join(lines) + "\n")
+    axis2_impact = [
+        (name, row)
+        for name, row in results.items()
+        if row.get("chaperone_tier") in ("yes", "uncertain")
+    ]
+    control_lines += [
+        "",
+        "## Axis-2 impact on docking-tier survivors",
+        "",
+        "| molecule | docking tier | ChEMBL activity | substrate exclusion | DrugBank relationship | final executable row |",
+        "|---|---|---|---|---|---|",
+    ]
+    for name, row in sorted(axis2_impact):
+        control_lines.append(
+            f"| {name} | {row.get('chaperone_tier')} "
+            f"| {yes_no_unknown(row.get('chembl_abcg2_empirical'))} "
+            f"| {'yes' if row.get('substrate_disqualified') else 'no'} "
+            f"| {'yes' if row.get('drugbank_abcg2_interacting') else 'no'} "
+            f"| {row.get('wetlab_candidate')} |"
+        )
 
-    # ---- summary.md ----
-    n_yes = sum(1 for n, r in R.items() if r.get("wetlab_candidate") == "yes")
-    n_unc = sum(1 for n, r in R.items() if r.get("wetlab_candidate") == "uncertain")
-    if n_yes >= 1:
-        verdict = "DEFENSIBLE SHORTLIST for wet-lab Q141K trafficking assay"
-    elif n_unc >= 1:
-        verdict = "INCONCLUSIVE — only weak/uncertain candidates; no high-confidence fold-selective hit"
+    cftr_rows = [
+        name
+        for name, row in cftr
+        if row.get("wetlab_candidate") in ("yes", "uncertain")
+    ]
+    negative_rows = [
+        name
+        for name, row in negative_controls
+        if row.get("wetlab_candidate") in ("yes", "uncertain")
+    ]
+    control_lines += [
+        "",
+        "## Diagnostic interpretation",
+        "",
+        f"- Cross-protein chaperone comparators reaching an executable tier: "
+        f"**{len(cftr_rows)}** ({cftr_rows if cftr_rows else 'none'}).",
+        f"- Curated ABCG2 negative controls left as executable rows after Axis 2: "
+        f"**{len(negative_rows)}** ({negative_rows if negative_rows else 'none'}).",
+        "- The first result does not validate sensitivity, because the comparator "
+        "molecules are established for CFTR rather than ABCG2. The second shows "
+        "that the exclusion layer works for the declared controls; it does not "
+        "validate the fold-site ranking.",
+    ]
+    (HERE / "outputs/controls.md").write_text("\n".join(control_lines) + "\n")
+
+    n_yes = sum(
+        1 for row in results.values() if row.get("wetlab_candidate") == "yes"
+    )
+    n_uncertain = sum(
+        1 for row in results.values() if row.get("wetlab_candidate") == "uncertain"
+    )
+    if n_yes:
+        verdict = "DOCKING SHORTLIST GENERATED — REQUIRES BIOLOGICAL VALIDATION"
     else:
-        verdict = "NO CREDIBLE CANDIDATES — no molecule is both fold-selective and free of ABCG2 activity"
+        verdict = "INCONCLUSIVE — NO DEFENSIBLE DOCKING-BACKED RANKING"
 
-    s = [f"# comp-047 — Summary", "",
-         f"**Generated:** {date.today().isoformat()}  ",
-         f"**Method:** AutoDock Vina docking (2 sites × WT/Q141K) + empirical ChEMBL ABCG2 grounding. "
-         f"Supersedes comp-032's descriptor/class-prior heuristic.  ",
-         f"**Vina:** seed {meta['seed']}, exhaustiveness {meta['exhaustiveness']}, cpu {meta['cpu']}. "
-         f"N={len([1 for r in R.values() if isinstance(r.get('fold_q141k_affinity'),(int,float))])} docked.",
-         "",
-         f"## VERDICT: {verdict}",
-         "",
-         f"Candidates (fold-selective AND not known ABCG2): **{n_yes} yes**, **{n_unc} uncertain**.",
-         "",
-         "## Ranked shortlist (candidates only)",
-         "",
-         "| rank | molecule | drug_class | fold@Q141K | transport | margin | Q141K−WT sel. | ChEMBL ABCG2 | tier |",
-         "|---|---|---|---|---|---|---|---|---|"]
-    for i, (n, r) in enumerate(candidates[:15], 1):
-        a2 = "yes" if r.get("chembl_abcg2_empirical") is True else (
-            "no" if r.get("chembl_abcg2_empirical") is False else "unq")
-        s.append(f"| {i} | {n} | {r.get('drug_class','')} | {fmt(r.get('fold_q141k_affinity'))} "
-                 f"| {fmt(r.get('transport_affinity'))} | {fmt(r.get('fold_vs_transport_margin'))} "
-                 f"| {fmt(r.get('q141k_vs_wt_selectivity'))} | {a2} | {r.get('wetlab_candidate')} |")
-    if not candidates:
-        s.append("| — | (none) | | | | | | | |")
-    # ---- Axis 1a raw fold-site ranking (box-choice-robust view) ----
-    # Reported ALONGSIDE the tiered verdict so the shortlist is not hostage to the
-    # transport-box / margin filter. Shows the strongest fold@Q141K binders with
-    # their Axis-2 flag, regardless of margin.
-    fold_sorted = sorted(valid, key=lambda kv: kv[1]["fold_q141k_affinity"])
-    s += ["",
-          "## Raw fold-site ranking (Axis 1a alone — box-choice-robust view)",
-          "",
-          "Top fold@Q141K binders regardless of transport margin. Use with Axis 2: a strong "
-          "fold binder that is a known ABCG2 inhibitor is still disqualified. This table exists "
-          "so the shortlist is not hostage to the transport-box choice (see distribution note below).",
-          "",
-          "| rank | molecule | drug_class | fold@Q141K | transport | margin | known ABCG2? |",
-          "|---|---|---|---|---|---|---|"]
-    for i, (n, r) in enumerate(fold_sorted[:15], 1):
-        s.append(f"| {i} | {n} | {r.get('drug_class','')} | {fmt(r.get('fold_q141k_affinity'))} "
-                 f"| {fmt(r.get('transport_affinity'))} | {fmt(r.get('fold_vs_transport_margin'))} "
-                 f"| {'yes' if r.get('final_known_abcg2') else 'no'} |")
+    summary = [
+        "# comp-047 — Summary",
+        "",
+        f"**Frozen docking run date:** {artifact_date}",
+        "",
+        "**Method:** static-receptor AutoDock Vina at a modeled residue-141 region "
+        "and Walker-A comparison box, followed by ChEMBL inhibition and "
+        "UniProt/DrugBank relationship exclusion.",
+        "",
+        f"**Vina:** seed {meta['seed']}, exhaustiveness {meta['exhaustiveness']}, "
+        f"cpu {meta['cpu']}; N={n_valid} docked.",
+        "",
+        f"## VERDICT: {verdict}",
+        "",
+        f"Executable rule output after both Axis-2 checks: **{n_yes} yes**, "
+        f"**{n_uncertain} uncertain**. An executable row is not a wet-lab "
+        "priority: the screen has no validated ABCG2 chaperone positive control, "
+        "uses a static conformation, and produced unstable fold-site rankings "
+        "under the recorded perturbations.",
+        "",
+        "## Executable marginal rows (not wet-lab priorities)",
+        "",
+        "| rank | molecule | class | fold@Q141K | Walker A | margin | Q141K−WT proxy | ChEMBL activity | DrugBank relationship | tier |",
+        "|---|---|---|---|---|---|---|---|---|---|",
+    ]
+    for index, (name, row) in enumerate(executable_rows, 1):
+        summary.append(
+            f"| {index} | {name} | {row.get('drug_class', '')} "
+            f"| {fmt(row.get('fold_q141k_affinity'))} "
+            f"| {fmt(row.get('transport_affinity'))} "
+            f"| {fmt(row.get('fold_vs_transport_margin'))} "
+            f"| {fmt(row.get('q141k_vs_wt_selectivity'))} "
+            f"| {yes_no_unknown(row.get('chembl_abcg2_empirical'))} "
+            f"| {'yes' if row.get('drugbank_abcg2_interacting') else 'no'} "
+            f"| {row.get('wetlab_candidate')} |"
+        )
+    if not executable_rows:
+        summary.append("| — | (none) | | | | | | | | |")
 
-    # transport-box distribution diagnostic
-    tvals = [r["transport_affinity"] for n, r in valid if isinstance(r.get("transport_affinity"), (int, float))]
-    fvals = [r["fold_q141k_affinity"] for n, r in valid]
-    if tvals:
-        s += ["",
-              f"**Transport-box distribution diagnostic:** transport affinities span "
-              f"{min(tvals):.2f}..{max(tvals):.2f} (median {median(tvals):.2f}); "
-              f"fold@Q141K span {min(fvals):.2f}..{max(fvals):.2f} (median {median(fvals):.2f}). "
-              f"If the transport (Walker A, apo-monomer) box binds most molecules as strongly as the "
-              f"fold box, the margin filter is over-permissive and the verdict should lean on fold-site "
-              f"absolute affinity + Axis 2, not margin. See interpretation in controls.md."]
+    fold_sorted = sorted(valid, key=lambda item: item[1]["fold_q141k_affinity"])
+    summary += [
+        "",
+        "## Base-run fold-site scores (descriptive, not a robust ranking)",
+        "",
+        "The table records the strongest scores in the original box. It is not a "
+        "fallback shortlist: the sensitivity artifact shows material rank changes "
+        "under box, seed, and protonation perturbations, and Axis 2 remains an "
+        "exclusion layer rather than evidence of chaperone activity.",
+        "",
+        "| rank | molecule | class | fold@Q141K | Walker A | margin | excluded by Axis 2? |",
+        "|---|---|---|---|---|---|---|",
+    ]
+    for index, (name, row) in enumerate(fold_sorted[:15], 1):
+        summary.append(
+            f"| {index} | {name} | {row.get('drug_class', '')} "
+            f"| {fmt(row.get('fold_q141k_affinity'))} "
+            f"| {fmt(row.get('transport_affinity'))} "
+            f"| {fmt(row.get('fold_vs_transport_margin'))} "
+            f"| {'yes' if row.get('final_known_abcg2') else 'no'} |"
+        )
 
-    s += ["",
-          "Margin = transport − fold@Q141K (>0 = prefers fold site over ATP site). ",
-          "Q141K−WT sel. = fold@WT − fold@Q141K (>0 = binds mutant better than WT — weak chaperone-selectivity proxy). ",
-          "See `controls.md` for the validity check and `../README.md` for limitations.",
-          "",
-          "## Honest limitations (see README for full list)",
-          "- **Q141K is a static side-chain substitution**, not a folding-ΔΔG calculation. Docking to a "
-          "static modeled mutant is a proxy for a fold-stabilizing interaction, not evidence of folding rescue.",
-          "- **Misfolded-state selectivity not modeled** — a true chaperone preferentially stabilizes the "
-          "mutant folding intermediate; the WT/Q141K docking delta is a weak surrogate.",
-          "- **Apo monomer** — the physiological ATP-bound NBD dimer is not represented; the transport box is "
-          "the Walker A P-loop only and tests ATP-competitive binding, NOT the TMD drug/urate cavity where most "
-          "clinical ABCG2 inhibitors act. Axis 2 (ChEMBL) is the real inhibitor filter.",
-          "- **Vina scores are noisy** (~±1 kcal/mol); use ranks, not absolute affinities. See sensitivity.json."]
-    (HERE / "outputs/summary.md").write_text("\n".join(s) + "\n")
+    transport_values = [
+        row["transport_affinity"]
+        for _, row in valid
+        if isinstance(row.get("transport_affinity"), (int, float))
+    ]
+    fold_values = [row["fold_q141k_affinity"] for _, row in valid]
+    if transport_values:
+        summary += [
+            "",
+            f"**Walker-A comparison diagnostic:** scores span "
+            f"{min(transport_values):.2f}..{max(transport_values):.2f} "
+            f"(median {median(transport_values):.2f}); modeled fold-site scores span "
+            f"{min(fold_values):.2f}..{max(fold_values):.2f} "
+            f"(median {median(fold_values):.2f}). The substantial overlap makes "
+            "the margin rule non-discriminating in this configuration; it does not "
+            "establish a selective fold-site interaction.",
+        ]
+
+    changed_counts = [
+        item.get("positions_changed")
+        for item in sensitivity.get("rank_stability", {})
+        .get("per_perturbation", {})
+        .values()
+        if isinstance(item.get("positions_changed"), int)
+    ]
+    if changed_counts:
+        summary += [
+            "",
+            f"**Sensitivity diagnostic:** among the recorded non-base perturbations, "
+            f"{min(changed_counts)}–{max(changed_counts)} of the eight tracked "
+            "candidate positions changed. The base-run fold ranking is therefore "
+            "not treated as robust.",
+        ]
+
+    summary += [
+        "",
+        "## Interpretation boundary",
+        "",
+        "- Rosuvastatin is removed from the executable shortlist because it is "
+        "independently identified as a BCRP substrate and is also present in the "
+        "UniProt/DrugBank ABCG2 relationship set.",
+        "- Vorinostat is the sole marginal executable row. Its direct Q141K rescue "
+        "precedent is phenotypic and independent of this docking result; it does "
+        "not validate the modeled pocket or make the docking row a wet-lab priority.",
+        "- Failure to recover the CFTR comparators is a setup-specific diagnostic, "
+        "not evidence that ABCG2 cannot be pharmacologically rescued.",
+        "- The decisive next observation is the registered Q141K surface-trafficking "
+        "+ urate-flux + ABCG2-inhibition counterscreen in validation experiment §1.22, "
+        "not another pass through the same docking configuration.",
+        "",
+        "## Load-bearing limitations",
+        "",
+        "- Q141K is a static side-chain substitution, not a folding-ΔΔG model.",
+        "- A folding intermediate and mutant-selective stabilization are not modeled.",
+        "- The receptor is an apo monomer; the Walker-A box is not the physiological "
+        "composite ATP site or the transmembrane substrate cavity.",
+        "- Vina scores and close margins are not binding-affinity measurements.",
+        "- Exposure at the intracellular folding compartment is not modeled.",
+        "",
+        "See `controls.md`, `sensitivity.json`, `receptor_verification.json`, and the README.",
+    ]
+    (HERE / "outputs/summary.md").write_text("\n".join(summary) + "\n")
 
     print(f"verdict: {verdict}")
-    print(f"candidates: {n_yes} yes, {n_unc} uncertain")
-    print(f"neg-control inhibitors ranked as candidates: {inh_top}")
-    print(f"cftr correctors earning candidate tier: {cftr_cand}")
+    print(f"executable rows: {n_yes} yes, {n_uncertain} uncertain")
     print("wrote outputs/results.json, controls.md, summary.md")
 
 

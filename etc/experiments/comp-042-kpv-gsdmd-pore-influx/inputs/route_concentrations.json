@@ -1,20 +1,20 @@
 {
-  "comment": "Achievable synovial/extracellular [KPV] per dosing route. The pore equilibrates INTRACELLULAR [KPV] to this EXTRACELLULAR (synovial) value, so C_ext per route is the master input for the flux-sufficiency (A1) verdict. IA is computed directly (dose / synovial volume). SC and oral are design-space PK assumptions (KPV systemic PK is not well characterized) and are flagged as such.",
+  "comment": "Design-space synovial/extracellular KPV concentrations per route. The model uses C_ext as the boundary concentration for A1. IA is arithmetic from assumed dose and synovial volume; SC and oral are named PK assumptions because KPV systemic and synovial PK are poorly characterized. None is an efficacy or clinically achievable-exposure claim.",
   "intra_articular": {
     "C_ext_synovial_uM": {"central": 292.0, "lower": 15.0, "upper": 1460.0},
-    "derivation": "Dose / synovial fluid volume. Central: 0.2 mg KPV / 342.43 g/mol = 0.584 umol into 2 mL normal knee synovial volume = 292 uM. Range: 0.1-1 mg into 2-20 mL (normal-to-large-effusion). 1 mg/2 mL = 1460 uM; 0.1 mg/20 mL = 15 uM. Gout-flare joints (podagra MTP1 ~0.5-1 mL; knee effusion up to 10-50 mL) bracket this. All values are >> the 10 nM IC50 and near-or-above the PepT1 Km (160-700 uM), so PepT1 SATURATES in healthy cells at IA doses.",
-    "evidence_tier": "computed_from_dose_and_anatomy",
-    "source_class": "computed"
+    "derivation": "ARITHMETIC FROM NAMED DESIGN ASSUMPTIONS, not a clinical exposure claim. Central: assumed 0.2 mg KPV / 342.43 g/mol = 0.584 umol in an assumed 2 mL synovial compartment = 292 uM. Range crosses assumed 0.1-1 mg doses with assumed 2-20 mL compartments: 1 mg/2 mL = 1460 uM and 0.1 mg/20 mL = 15 uM after rounding. The dose and volume anchors are not source-qualified here. All values exceed the 10 nM cell-assay effective-concentration proxy, but their relation to the 160-1000 uM Km band varies.",
+    "evidence_tier": "arithmetic_from_named_design_assumptions",
+    "source_class": "named_assumption"
   },
   "subcutaneous": {
     "C_ext_synovial_uM": {"central": 0.030, "lower": 0.003, "upper": 0.200},
-    "derivation": "NAMED PK ASSUMPTION. 0.5 mg SC, bioavailability >80% (kpv-peptide.md). Peak plasma ~= dose/Vd with Vd ~ extracellular fluid (~15 L for a hydrophilic peptide): 0.5 mg/15 L = 33 ng/mL = ~0.10 uM peak plasma. Synovial fluid is a plasma ultrafiltrate; small-peptide synovial:plasma partition ~0.3-0.5 -> ~0.03-0.05 uM synovial peak. KPV plasma half-life is short (peptide, rapid clearance) so time-averaged synovial level is lower; central 0.030 uM (30 nM). Range 3-200 nM. This is ONLY ~3x the 10 nM IC50 -- a thin margin.",
+    "derivation": "NAMED PK ASSUMPTION. 0.5 mg SC, bioavailability >80% (kpv-peptide.md). Peak plasma ~= dose/Vd with Vd ~ extracellular fluid (~15 L for a hydrophilic peptide): 0.5 mg/15 L = 33 ng/mL = ~0.10 uM peak plasma. Synovial fluid is a plasma ultrafiltrate; small-peptide synovial:plasma partition ~0.3-0.5 -> ~0.03-0.05 uM synovial peak. KPV plasma half-life is short (peptide, rapid clearance) so time-averaged synovial level is lower; central 0.030 uM (30 nM). Range 3-200 nM. The central value is ~3x the 10 nM extracellular cell-assay effective-concentration proxy; this is a thin engineering margin, not an efficacy prediction.",
     "evidence_tier": "design_space_PK_assumption",
     "source_class": "named_assumption"
   },
   "oral": {
     "C_ext_synovial_uM": {"central": 0.001, "lower": 0.0001, "upper": 0.003},
-    "derivation": "NAMED PK ASSUMPTION. Oral KPV bioavailability is 'low but sufficient' and is optimized for LOCAL GUT action (PepT1 in enterocytes); systemic delivery is poor. Systemic plasma from oral KPV is estimated 10-100x below SC -> synovial [KPV] ~0.1-3 nM. Central 1 nM (0.1x IC50). Oral is a gut-luminal / intestinal-uricolysis route, not a systemic-joint route; included to show it fails the joint-delivery bar on absolute concentration.",
+    "derivation": "NAMED PK ASSUMPTION. Oral KPV is primarily framed for local gut exposure; systemic and synovial delivery are poorly characterized. This design case assumes systemic exposure 10-100x below the SC design case, giving synovial KPV of 0.1-3 nM and a central 1 nM value (0.1x the extracellular cell-assay effective-concentration proxy). It is included only as a low-systemic-exposure case.",
     "evidence_tier": "design_space_PK_assumption",
     "source_class": "named_assumption"
   }

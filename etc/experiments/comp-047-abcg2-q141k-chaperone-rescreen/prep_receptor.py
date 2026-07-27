@@ -16,12 +16,13 @@ Q141K modeling is a STATIC side-chain substitution:
   calculation. It is this experiment's acknowledged weakest link (see README).
 """
 import json, sys
+from pathlib import Path
 import numpy as np
 from Bio.PDB import PDBParser, PDBIO, Select
 
-HERE = "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen"
-PDB_IN = f"{HERE}/inputs/alphafold_Q9UNQ0_model_v6.pdb"
-REC = f"{HERE}/work/receptor"
+HERE = Path(__file__).resolve().parent
+PDB_IN = HERE / "inputs/alphafold_Q9UNQ0_model_v6.pdb"
+REC = HERE / "work/receptor"
 
 STD_AA = {
     "ALA","ARG","ASN","ASP","CYS","GLN","GLU","GLY","HIS","ILE","LEU","LYS",
@@ -48,10 +49,11 @@ class ProteinSelect(Select):
         return True
 
 def write_clean_wt():
+    REC.mkdir(parents=True, exist_ok=True)
     s = load()
     io = PDBIO()
     io.set_structure(s)
-    out = f"{REC}/abcg2_wt_clean.pdb"
+    out = REC / "abcg2_wt_clean.pdb"
     io.save(out, ProteinSelect())
     return out
 
@@ -91,7 +93,7 @@ def build_q141k():
 
     io = PDBIO()
     io.set_structure(s)
-    out = f"{REC}/abcg2_q141k_clean.pdb"
+    out = REC / "abcg2_q141k_clean.pdb"
     io.save(out, ProteinSelect())
     # report
     print(f"  Q141K built: CE={np.round(CE,2)} NZ={np.round(NZ,2)}")
@@ -151,7 +153,7 @@ def define_boxes():
             "note": "Boxes are >30 A apart; a molecule scoring well at both is rare and the fold-vs-transport contrast is meaningful.",
         },
     }
-    with open(f"{REC}/boxes.json", "w") as f:
+    with open(REC / "boxes.json", "w") as f:
         json.dump(boxes, f, indent=2)
     print(f"  fold_site center   {boxes['fold_site']['center']}")
     print(f"  transport center   {boxes['transport_site']['center']}")

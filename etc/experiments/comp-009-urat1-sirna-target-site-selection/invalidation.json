@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "comp": "comp-009",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "b6ca51a489e4ac321fda5f7a1f2e073d884ae0b7",
+  "last_push_review_manifest_sha256": "3ef9f84bca926645060437bde17c534089412f48c835af0158f1bd92abc8ed56",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 7952,
+      "sha256": "4a54f129ea57b3ff15260eb5c5b528f535a6089b0eac62a5871436918a213b2e"
+    },
+    {
+      "path": "inputs/NM_144585.4_mrna.fasta",
+      "bytes": 2933,
+      "sha256": "b204676eb6fd471ea2b24f849f7882f8ff4f014adda8d7e4b7b50e32cb2f18d5"
+    },
+    {
+      "path": "inputs/design_parameters.json",
+      "bytes": 4048,
+      "sha256": "0f58cc6b53666f41bec419d87bf7ee03f76121edf7f77f64139ce9d4f5bf6ae1"
+    },
+    {
+      "path": "inputs/human_codon_usage.json",
+      "bytes": 2041,
+      "sha256": "d5690794a92e9fe9759f946d3cec914566e6dd5806a897909074636504b36d03"
+    },
+    {
+      "path": "inputs/orthologs.json",
+      "bytes": 1219,
+      "sha256": "d425ab9a7518dbfec4cabf9fd4c6914fba252f4b250c5de2893fd99f28ff2c7a"
+    },
+    {
+      "path": "inputs/urat1_orthologs.fasta",
+      "bytes": 3909,
+      "sha256": "32410bf88a71a43a887f4378823f5388e5c98460fbfe6c15bb963929c8cd54eb"
+    },
+    {
+      "path": "outputs/shortlist.csv",
+      "bytes": 809,
+      "sha256": "cb257e8e82c4bbb8330a4698ebe54fbea8e489042bb3ca3aa5159aefa687f87e"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 3086,
+      "sha256": "973ce317afcea104c056e80e3162ad87a8f0a0201a644985cf6abf38f56e1990"
+    },
+    {
+      "path": "outputs/target_sites.json",
+      "bytes": 31956,
+      "sha256": "496af930dc25b9c5d13e4c42b976e53a2cdfbe85d422ac5890a45389e8f58400"
+    },
+    {
+      "path": "scripts/analyze.py",
+      "bytes": 19065,
+      "sha256": "527f42fba4838b15588dff9c53491a94719545b0199508fad0cb4995c5084112"
+    }
+  ],
+  "invalidated_scope": [
+    "all candidate nucleotide sequences, filter funnels, ranks, composite scores, shortlists, GREEN or viable labels, target-site-availability conclusions, H03-support claims, and P2-2 closure",
+    "the implementation's partial and strand-misoriented Reynolds rules, incomplete Ui-Tei gate, arbitrary weighted composite, and use of protein conservation as a siRNA-design term",
+    "all claims that the shortlisted windows are accessible, selective, off-target-cleared, cross-species reusable, active against URAT1, suitable for wet-lab handoff, or evidence that SLC22A12 is tractable for therapeutic siRNA design"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_historical_execution_fact_and_independent_hypothesis",
+    "statements": [
+      "The historical rerun examined RefSeq NM_144585.4, but that fact has no predictive or decision use and does not establish target-site or guide tractability.",
+      "The URAT1-siRNA hypothesis survives independently of COMP-009 and remains gated first by selective proximal-tubule delivery.",
+      "Guide design is deferred until a delivery route survives; a future guide-design experiment requires a validated current method, relevant transcript and variation coverage, transcriptome-wide off-target analysis, and empirical URAT1 knockdown."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/urat1-sirna-target-site-selection-computational.md",
+  "successor": {
+    "comp": "comp-048",
+    "path": "wiki/etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen",
+    "question": "Does any internalizing human cell-surface receptor co-localize with SLC22A12-positive proximal-tubule cells selectively enough to justify receptor-targeted siRNA delivery investigation?",
+    "status": "planned_pre_run_design"
+  },
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, successor, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "5d53e3d4972f61cb043c9b955d1b3316ad46c1f54e32c9bcdfc415b7ed6d08aa"
+  }
+}

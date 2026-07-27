@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/README.md",
+      "kind": "design",
+      "bytes": 1854,
+      "sha256": "253ca2b8219162689c1f2a59aa8f4e4fbde6c47544d60f11e023a20ab6dc668e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-005-lactoferrin-shio-koji-protease-stability/invalidation.json",
+      "kind": "design",
+      "bytes": 2790,
+      "sha256": "76a913705488a486a7b1ad808cae47d1df8e525b59e57431906421cd79f70a31"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "87ec3a8deb844976befd7e774192fd024e8870ce1dcf4c45b2a92201ae26d15f"
+}

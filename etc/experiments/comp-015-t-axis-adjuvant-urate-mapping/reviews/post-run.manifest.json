@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/README.md",
+      "kind": "design",
+      "bytes": 6860,
+      "sha256": "5f07411280d665bd280b25da74b4a9035ef0770a94832ae3594d5ffe83851ae3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/invalidation.json",
+      "kind": "design",
+      "bytes": 5180,
+      "sha256": "17dfe69b12323c93bf4f86111f8131f2377a43dc5662ff00d51c0aaa3b67b803"
+    },
+    {
+      "path": "mkdocs.yml",
+      "kind": "proposed_update",
+      "bytes": 10888,
+      "sha256": "59ed9f4f4f18473fa788bb62a1a418aced14a02cfd35a9b9f2f7b97542183c0e"
+    },
+    {
+      "path": "operations/notable-moments.md",
+      "kind": "proposed_update",
+      "bytes": 81743,
+      "sha256": "b6330eafa88077f77a753446dfddf2aefddafcfeda4a3349d00a2711ad15d27c"
+    },
+    {
+      "path": "papers/cross-vendor-heterogeneity-guard/audit-2026-05-13-catch-history.md",
+      "kind": "proposed_update",
+      "bytes": 17762,
+      "sha256": "cdd44df7e63d25d3720b896fc706a06919eea21d9049d1a7f2b2822645bd8e03"
+    },
+    {
+      "path": "papers/cross-vendor-heterogeneity-guard/draft.md",
+      "kind": "proposed_update",
+      "bytes": 175177,
+      "sha256": "80839d402a1f86366fe44a989450ad6443c96f42a6e85b275d638afb85033d41"
+    },
+    {
+      "path": "papers/cross-vendor-heterogeneity-guard/figures/figure2_catches.pdf",
+      "kind": "proposed_update",
+      "bytes": 56876,
+      "sha256": "3497aeb1ba69f81dd0f7c5bd60eca738d2cb5cb641a7174a4241a0b9a198a568"
+    },
+    {
+      "path": "papers/cross-vendor-heterogeneity-guard/figures/figure2_catches.png",
+      "kind": "proposed_update",
+      "bytes": 425946,
+      "sha256": "228849fcc39ec47aecb785c38012a09a0ef15d1d7279af823ac4a305aa1e466f"
+    },
+    {
+      "path": "papers/cross-vendor-heterogeneity-guard/figures/figure2_catches.py",
+      "kind": "proposed_update",
+      "bytes": 7613,
+      "sha256": "9ab5f2b55a1f365700a9c483ff6acf2728b1eb65be150bc25343247fa871d0f1"
+    },
+    {
+      "path": "papers/cross-vendor-heterogeneity-guard/revisions.md",
+      "kind": "proposed_update",
+      "bytes": 83226,
+      "sha256": "8ef6371ef88c06eb28f0976472088e34eeb11536bb951f4ce56129a83d4346a5"
+    },
+    {
+      "path": "papers/future-work-pipeline.md",
+      "kind": "proposed_update",
+      "bytes": 9470,
+      "sha256": "abe5c236ef579f6bbed07fdcc094a8d4b3deeeb54613f9dad3122a3d9eb791a6"
+    },
+    {
+      "path": "wiki/androgen-natural-modulation.md",
+      "kind": "proposed_update",
+      "bytes": 8248,
+      "sha256": "414043059d95ba3a7ea7434775777ef8d2c0233c5246642205fe1b93df3e2f4b"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 78066,
+      "sha256": "39cf4979422b080dfa6ce5f20394d1a51510cb74e4ddf261ab80fe64d7f7f596"
+    },
+    {
+      "path": "wiki/etc/chembl-cross-check.md",
+      "kind": "proposed_update",
+      "bytes": 42193,
+      "sha256": "b2bbf87d2c2800f4d10249a6827a7862dd449b56d44e0e51c0f23760ccf7309f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/README.md",
+      "kind": "proposed_update",
+      "bytes": 4424,
+      "sha256": "861da384ed3b6055bb812e771d351cbd3868cc151937a4c254d67661b50e5788"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/README.md",
+      "kind": "proposed_update",
+      "bytes": 4135,
+      "sha256": "d16cfd52ef4c85897a9bab45625df37ddfa9986f261bdcd7100856f0dfae2769"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/analyze.py",
+      "kind": "proposed_update",
+      "bytes": 19923,
+      "sha256": "8b4600d91459d893e8e49c85b5da57c9e6541018c7ef48555441c155318f5dd0"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/results.json",
+      "kind": "proposed_update",
+      "bytes": 24663,
+      "sha256": "aa2d58715e70ce24c09fc2a1429df5de274ec4c0094cbe04cbde42a53e371e5d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 24000,
+      "sha256": "0e910dbcf514591b4212296fef4b95dc1998fdceb627fb4463316182333b5b2b"
+    },
+    {
+      "path": "wiki/fructose-connection.md",
+      "kind": "proposed_update",
+      "bytes": 6366,
+      "sha256": "921501670f1e9e7a78414add4e537b3b0cab2f3a346fc7dee4676fce2840074b"
+    },
+    {
+      "path": "wiki/gout-action-guide.md",
+      "kind": "proposed_update",
+      "bytes": 9951,
+      "sha256": "c80754fcd99885a58de752d54cfda2f93eae077d86e5f246d26c57614aae1241"
+    },
+    {
+      "path": "wiki/gout-deep-dive.md",
+      "kind": "proposed_update",
+      "bytes": 48986,
+      "sha256": "daff1a03be36a7804fb4629f2555404d5a0e7912e7a319b0c6b24a8c62bb008d"
+    },
+    {
+      "path": "wiki/gout-genetic-variants.md",
+      "kind": "proposed_update",
+      "bytes": 42274,
+      "sha256": "8ee33b5d8d3518aa30dff1d4a7b05491ea5f7f6069ef0abb84f298335f8e20be"
+    },
+    {
+      "path": "wiki/gout-kill-chain-delivery-routes.md",
+      "kind": "proposed_update",
+      "bytes": 49915,
+      "sha256": "b545282d389945788a067c3e8f1d586aef650169b06a27beaef315c644e7138e"
+    },
+    {
+      "path": "wiki/gout-pathophysiology.md",
+      "kind": "proposed_update",
+      "bytes": 36529,
+      "sha256": "19a02efa8a3c530fc919529c44bb664282b5319a81307349b59d3e5a48052faf"
+    },
+    {
+      "path": "wiki/medicinal-mushroom-complement-track.md",
+      "kind": "proposed_update",
+      "bytes": 11266,
+      "sha256": "065411918fe8c622b2db0f6c8ebd019997c6e761859cc59ad72d069d8c24cbeb"
+    },
+    {
+      "path": "wiki/personal-genome-protocol.md",
+      "kind": "proposed_update",
+      "bytes": 8118,
+      "sha256": "5c8a22ddd93f3ce54cecf6a1501fa1a309136f9e3a090d1c0fc960a0dda193b1"
+    },
+    {
+      "path": "wiki/prps-purine-biosynthesis-chokepoint.md",
+      "kind": "proposed_update",
+      "bytes": 5040,
+      "sha256": "2e7f8e8fd0db5b5414c491c207e0cf8b4455e7c61c03cf9e9c6b0a83c4ead3fe"
+    },
+    {
+      "path": "wiki/t-axis-adjuvant-urate-mapping-computational.md",
+      "kind": "proposed_update",
+      "bytes": 4153,
+      "sha256": "ea7d950be3d011a66f8a9137f2e04eb81c4408e1c4fc897cd06ef0efcf645365"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 233877,
+      "sha256": "d2d7e6335bbf809eb0457bb20045da5ec1c0347b23579c31408699696293f93f"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "e01a25c678d9c8802f4bc627e2b898df017d45934955191e26a86615b5c9f95a"
+}

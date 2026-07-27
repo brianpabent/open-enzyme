@@ -7,14 +7,14 @@
   },
   "net_charge_pH7p4": {
     "central": 1.0,
-    "comment": "N-terminal alpha-amine (+1) + Lys epsilon-amine (+1) + C-terminal carboxylate (-1) = net +1 at physiological pH. KPV is a monovalent CATION. This matters: the GSDMD pore conduit is predominantly negatively charged and electrostatically FAVORS cationic and neutral cargo (Xia 2021), so KPV's +1 charge makes the pore hindrance factor >= 1 (not a barrier).",
+    "comment": "N-terminal alpha-amine (+1) + Lys epsilon-amine (+1) + C-terminal carboxylate (-1) = net +1 at physiological pH. Xia 2021 reports favorable conduit electrostatics for cationic versus negatively charged cargo in the studied comparisons, but it does not determine a KPV-specific permeability multiplier.",
     "source_class": "computed_from_pKa"
   },
   "hydrodynamic_radius_nm": {
     "central": 0.50,
     "lower": 0.45,
     "upper": 0.60,
-    "comment": "Estimated for a 342 Da tripeptide. Stokes-Einstein back-calc from D~5e-6 cm2/s gives r_h ~0.5 nm; empirical small-peptide/amino-acid hydrodynamic radii are 0.35-0.6 nm. r_solute/r_pore ~= 0.5/10 = 0.05, so steric partition (1-lambda)^2 ~= 0.90 and diffusive hindrance ~= 0.9 -> steric hindrance approximated as ~1 (justified: solute is 20-40x smaller than the pore radius).",
+    "comment": "Estimated for a 342 Da tripeptide. Stokes-Einstein back-calc from D~5e-6 cm2/s gives r_h ~0.5 nm; the declared 0.45-0.60 nm band crossed with the declared 5.0-10.75 nm pore-radius band gives lambda = r_solute/r_pore of approximately 0.04-0.12. The corresponding simple steric partition term (1-lambda)^2 is approximately 0.77-0.92. These estimates motivate sensitivity rather than a claim of zero hindrance.",
     "source_class": "estimated_stokes_einstein"
   },
   "aqueous_diffusion_coefficient_m2_per_s": {
@@ -24,5 +24,12 @@
     "comment": "5e-10 m2/s = 5e-6 cm2/s. Stokes-Einstein: D = kT/(6*pi*eta*r_h) with eta_water(37C)=0.69e-3 Pa.s, r_h=0.5 nm, T=310K -> D = (1.38e-23*310)/(6*pi*0.69e-3*0.5e-9) = 6.6e-10 m2/s. At 25C (0.89e-3 Pa.s) -> 4.5e-10. Central 5e-6 cm2/s is the standard order for a ~340 Da solute; range 4-6e-6 cm2/s brackets temperature and r_h uncertainty. This is a low-sensitivity parameter because access resistance (which scales as 1/D too) and pore permeability both scale linearly with D, so the equilibration time constant scales as 1/D uniformly.",
     "source_class": "estimated_stokes_einstein"
   },
-  "enzymatic_resistance_note": "Our wiki (kpv-peptide.md) states KPV is 'resistant to significant enzymatic degradation.' That claim is about EXTRACELLULAR/serum stability (short peptide, PepT1-transported, low plasma proteolysis). It is LOAD-BEARING here in the opposite direction from the thesis: if KPV is also poorly degraded INTRACELLULARLY, then a PepT1-expressing HEALTHY cell accumulates and retains KPV -> the healthy-cell baseline is higher -> the pore's selectivity advantage shrinks. The intracellular peptidase susceptibility of KPV is not separately characterized; treated as an assumption feeding the healthy-cell accumulation ceiling."
+  "pore_hindrance_factor": {
+    "central": 1.0,
+    "lower": 0.5,
+    "upper": 1.0,
+    "comment": "Dimensionless engineering sensitivity applied to the neutral diffusive permeability. Central 1.0 assumes no net hindrance. The lower bound 0.5 is a conservative design case covering unresolved steric, partition, and electrostatic effects; it is not a measured KPV/GSDMD value. Values above 1 from favorable electrostatic partition are not credited.",
+    "source_class": "named_engineering_sensitivity"
+  },
+  "enzymatic_resistance_note": "Intracellular KPV degradation is not characterized in the cited evidence. The healthy-cell comparator does not claim a measured retention time or degradation rate. Any inference that extracellular or serum stability transfers intracellularly remains conditional and is excluded from the model."
 }

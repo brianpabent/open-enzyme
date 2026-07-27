@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/README.md",
+      "kind": "design",
+      "bytes": 1722,
+      "sha256": "32fa95713ec05f194ef12a85b4c6aae596cb4cfbf71fd1e8d19d5892b0fdcd51"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/invalidation.json",
+      "kind": "design",
+      "bytes": 3683,
+      "sha256": "82b2c5c9ace130765c3fac4cba6506655895d0f76ae1e3483c0f5fd3b6f19c5c"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "79c86781d3326f31b9660f5ddbc6bdf79640f69121f3c21f7caa88eac597d784"
+}

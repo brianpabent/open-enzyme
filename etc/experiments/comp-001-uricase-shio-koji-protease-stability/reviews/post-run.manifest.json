@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/README.md",
+      "kind": "design",
+      "bytes": 3945,
+      "sha256": "ee4bcf971700b2461bc24f465f4cf57b473c1b5044c9392184e613e13dcfcfc8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/analyze.py",
+      "kind": "design",
+      "bytes": 14156,
+      "sha256": "56073b73199facb8305ccd25584a94d6818bbd96f92cbb4ceb1ebade854812e9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/inputs/Q00511.fasta",
+      "kind": "design",
+      "bytes": 385,
+      "sha256": "fd006ac91dc08f796bd2032ee975677c16f6e8e7d3d0762ba1f2b295183b4274"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/inputs/alphafold_Q00511_plddt.json",
+      "kind": "design",
+      "bytes": 4087,
+      "sha256": "116c6922971ade3824f2a815257c22ac9291ba4e79554b5ff15f77de262c5d51"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/inputs/legacy_preference_filters.json",
+      "kind": "design",
+      "bytes": 1193,
+      "sha256": "40e06867bac3003afbb619c33c2f5f3385eca2b7d798efbb3e183dcf64b8d5ba"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 2904,
+      "sha256": "5d68322e3ae5ddec47acd0f5f39c5e0525aca60b3070183e7be39215beb2db77"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/outputs/cleavage_sites.json",
+      "kind": "generated_output",
+      "bytes": 105159,
+      "sha256": "41e051de653f03bc406bc43b743aa6a1addb7f5924c7a2c00ab656d090005bf0"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 2312,
+      "sha256": "d85608f48e299143184d3533600908580728bced81acde7fa90636a111f7f74c"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 34492,
+      "sha256": "e8c456daa4bfa3d112146826c1c194b29830079e4bca052a7821b25735c097c5"
+    },
+    {
+      "path": "mkdocs.yml",
+      "kind": "proposed_update",
+      "bytes": 10864,
+      "sha256": "3828a103947229958349cda8cb6751b19a1a1e31e4cfd49143eb3ba888087629"
+    },
+    {
+      "path": "operations/corpus-unblock-propagate-by-link-2026-05-29/eval-results.md",
+      "kind": "proposed_update",
+      "bytes": 6238,
+      "sha256": "3b7d5f41f7a5d142a5d364aa238f814604f21b791918dfe93c636d1602fe7213"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
+    },
+    {
+      "path": "wiki/daf-cd55-scr14-truncated-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3755,
+      "sha256": "b61a30901d1965d60ca6cff90a6f153ffdaf90b4d0b6d23de280583ba6c4799b"
+    },
+    {
+      "path": "wiki/etc/ai-bio-tools-playbook.md",
+      "kind": "proposed_update",
+      "bytes": 10893,
+      "sha256": "a556a86649861ecf73c45c595fa9e2c4eaa6a10b68a20ce7de203f476259c145"
+    },
+    {
+      "path": "wiki/etc/autonomous-screening-methodology.md",
+      "kind": "proposed_update",
+      "bytes": 23852,
+      "sha256": "acc80ba60a56e7a859b7da7dd6caa474c5fdb570ac5a769111a8651fa71c73d6"
+    },
+    {
+      "path": "wiki/lactoferrin-protease-stability-computational.md",
+      "kind": "proposed_update",
+      "bytes": 2466,
+      "sha256": "354c940ebf2b073e9e4f3854b0946508930dd266ae4b76c05811a01e556ecf16"
+    },
+    {
+      "path": "wiki/uricase-protease-stability-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3308,
+      "sha256": "15df4afdbcd78e883c2bf8a12f828f3a9c91ddc2274998711bf68efd5bfd0880"
+    },
+    {
+      "path": "wiki/uricase-shio-koji-thermal-stability-computational.md",
+      "kind": "proposed_update",
+      "bytes": 5561,
+      "sha256": "d6dc95b9d5eb661a3bb584e5f9de4ac3d6d62b5472642cde329013877117eebb"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 230784,
+      "sha256": "192427c173ad894e33e6c76c6f427fc8264ec44446b244366f22a4577e1c3cff"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "c1651e30f794ff7857ff10632e8c9302cd09485423f2712d72b92bf906d2dddc"
+}

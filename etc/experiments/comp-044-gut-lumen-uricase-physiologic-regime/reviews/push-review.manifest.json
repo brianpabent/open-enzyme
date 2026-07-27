@@ -126,10 +126,10 @@
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 240572,
-      "sha256": "6e54a43261d17e36319e119800a1083bc42d63195e4068203f21072edb0d1710"
+      "bytes": 240820,
+      "sha256": "f62ed83386ae3176873625c5780099983451de128efb60703bc8c306e9f4104f"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "df65073c0b1065ba8553cddb0b3fabe99925d5ffb8f0b2ec23cc0fdbb756c181"
+  "manifest_sha256": "95076ab1c4e287024aa1e178f463a025d55131c99f2d07dfd0a28239ffc0e3da"
 }

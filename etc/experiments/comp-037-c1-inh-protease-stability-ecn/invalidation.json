@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "comp": "comp-037",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "70e60ea9a7c84a92cec37164f38b456aaa6d6881",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 10965,
+      "sha256": "0dee1992a12c19804b3cfa14334293dfafe08e71627c126d7bf60af742c8b3c2"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 36247,
+      "sha256": "4793ecc8436bac6a2896e28806e239287c2fcb9187725088e097972bf04820df"
+    },
+    {
+      "path": "inputs/P05155.fasta",
+      "bytes": 605,
+      "sha256": "c50b8b8911858eed876d98f180a0f2acad5e7e6033a38e7ac2feb13cfcd50811"
+    },
+    {
+      "path": "inputs/alphafold_P05155_plddt.json",
+      "bytes": 7348,
+      "sha256": "39610711b785f64fac4572c17d156c3011ff5dba5282a91b0ed93cbebdd462af"
+    },
+    {
+      "path": "inputs/protease_specificities.json",
+      "bytes": 9064,
+      "sha256": "92c594e430b441ceeb53a0afbe7414a1a0d13d921717b3b86d07382c99639ac9"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 7672,
+      "sha256": "8b837cab64b4bc4c4f6374d5e3c980410e62814e516cf9651b4bd7cafcd73bdc"
+    },
+    {
+      "path": "outputs/cleavage_sites.json",
+      "bytes": 16554,
+      "sha256": "eb79a02ff2e46acea8921bae7d90a3f336dd5429b60eac4fa2ad0ab782c69697"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 19650,
+      "sha256": "a34db25eedbaaa5b531c36db9271bdc411eabe4e72ca8fbab38579e590d19d38"
+    }
+  ],
+  "invalidated_scope": [
+    "pLDDT-derived accessibility classes",
+    "exposed, partially exposed, or buried site claims",
+    "LOW, MODERATE, HIGH, RED, GREEN, or YELLOW labels",
+    "protease cleavage, degradation, resistance, or survival conclusions",
+    "folding or glycosylation-feasibility conclusions",
+    "construct preference or EcN chassis assignment",
+    "two-chassis architecture or cross-payload conclusions"
+  ],
+  "surviving_scope": {
+    "kind": "historical_inventory_and_research_conjecture",
+    "statements": [
+      "The retired Git snapshot preserves the deterministic P05155 sequence-filter, sequence-feature, and AlphaFold inventories as historical records.",
+      "AlphaFold pLDDT may be reported as confidence only.",
+      "The two annotated C1-INH disulfides and R466-T467 reactive-region annotation are sequence-feature observations, not folding, accessibility, survival, or function results.",
+      "Productive target engagement versus unproductive cleavage at or near the reactive-center loop remains a research conjecture requiring direct kinetic and retained-function measurements."
+    ]
+  },
+  "current_evidence_home": "wiki/c1-inh-protease-stability-ecn-computational.md",
+  "retirement_scope_digest": {
+    "algorithm": "sha256",
+    "canonicalization": "UTF-8 bytes, no trailing LF, of: jq -cS '{retired_files,invalidated_scope,surviving_scope,current_evidence_home}' invalidation.json | tr -d '\\n'",
+    "sha256": "9b6611e9782777782e87e57293ba6a6540fb55d1f4f17ecf18784b9b0f8b0365"
+  }
+}

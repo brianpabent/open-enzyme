@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/README.md",
+      "kind": "design",
+      "bytes": 2190,
+      "sha256": "071108e61628aacaf3d5cd08dc92bd8be687cc7840c0d283cf903a37ea3d9adf"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/invalidation.json",
+      "kind": "design",
+      "bytes": 2986,
+      "sha256": "694c49b88c82596d89e64537175e2e73e836273ba49338a4d890d969b067f339"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "ca68ca396083e67876fe8f86331a1df5f426a6e201cf43ba19fd2fbb69051bb1"
+}

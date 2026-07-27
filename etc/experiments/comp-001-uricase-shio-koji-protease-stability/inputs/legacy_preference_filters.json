@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "provenance_status": "legacy_encoding_not_claim_level_verified",
+  "source_history": "Carried from the original COMP-001 input. That file attributed the arrays generally to MEROPS release 12.4 and author-year citations, but did not record a residue-by-residue derivation or support treating the arrays as exhaustive specificity rules.",
+  "filter_semantics": "A nonempty list is a Boolean inclusion filter. An empty list leaves that side of the adjacent pair unrestricted. These are code semantics, not a biological specificity claim.",
+  "rules": [
+    {
+      "id": "legacy_ALP_filter",
+      "legacy_label": "ALP legacy P1 filter",
+      "p1_filter": ["L", "F", "Y", "A", "V", "I", "M", "W", "K", "R", "G", "T", "S"],
+      "p1_prime_filter": []
+    },
+    {
+      "id": "legacy_NPr_filter",
+      "legacy_label": "NPr legacy P1' filter",
+      "p1_filter": [],
+      "p1_prime_filter": ["L", "F", "I", "V", "M", "A"]
+    },
+    {
+      "id": "legacy_acid_protease_filter",
+      "legacy_label": "Acid-protease legacy P1/P1' filter",
+      "p1_filter": ["F", "L", "Y", "A", "V", "I", "E", "D"],
+      "p1_prime_filter": ["F", "L", "Y", "A", "V", "I"]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "comp": "comp-015",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "b6ca51a4",
+  "last_push_review_manifest_sha256": "03698fb6aff369e030e885857f61f42a6663da5b638f55f0fdb7abe59eaf9ef8",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 5741,
+      "sha256": "e06b9dda77d4b8613f1e58ddbf13b5e6fbc68ee15bddfbdc978ecffb1b0e351f"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 38833,
+      "sha256": "61ded82faaae6aecaa6e03cdbe15bd313b0611dac019f5c9ac293f245a342778"
+    },
+    {
+      "path": "inputs/chembl_bioactivity.json",
+      "bytes": 16504,
+      "sha256": "f1f6d4007f9baf09b9cef73a4acb88b8c2d22055ff650442b4c47f96bcf43e7a"
+    },
+    {
+      "path": "inputs/compounds.json",
+      "bytes": 11047,
+      "sha256": "3983d04281cea92bcd76fef212f9568bd0ac3ff471db6800d670c39d03925217"
+    },
+    {
+      "path": "inputs/concentration_estimates.json",
+      "bytes": 7095,
+      "sha256": "ed9e5ff977f8ce09fb64e3668ebcd98d8062169b0684a289766a53ffced66195"
+    },
+    {
+      "path": "inputs/literature_claims.json",
+      "bytes": 26101,
+      "sha256": "aec7407b95a53aea5ac7851196554644457c7aa1efe15c5569deb9165c4b6960"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 11469,
+      "sha256": "6478fc9c3aca251600eadde1d31e745004aaf287dd43bf8b2cbc830a19c8aa05"
+    },
+    {
+      "path": "inputs/targets.json",
+      "bytes": 7951,
+      "sha256": "e2c32be686600d55b3060333e274d03740ad5dfc503b23735eeece5c88a90bac"
+    },
+    {
+      "path": "outputs/results.json",
+      "bytes": 26293,
+      "sha256": "7e3502093c5ed0e030f94b2602e5605436f2fe436078804d4e8520f8347e5b7e"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 19676,
+      "sha256": "34c8e07894ee045a67a68480b93eea01d06525ca9ebf34280e0da8d387a2ef4c"
+    }
+  ],
+  "invalidated_scope": [
+    "all GOUT-FAVORABLE, GOUT-UNFAVORABLE, GOUT-NEUTRAL, MECHANISM-UNCLEAR, uniqueness, and H-AN-02 partially-falsified verdicts",
+    "all candidate rankings, evidence-cell counts, cross-candidate comparisons, candidate priorities, genotype-aware selection implications, and head-to-head design claims derived from the matrix",
+    "the compound-by-target evidence matrix as a commensurate model, including its ordinal evidence weights, favorable-keyword direction parser, negative-screen handling, and one-hit categorical decision rule",
+    "all achievable-concentration, IC50-ratio, fractional-inhibition, target-coverage, and five-target-panel-completeness conclusions, including the false attribution of local ratio thresholds to COMP-007",
+    "all substitutions of Eurycoma longifolia extract, mixed or isolated quassinoids, purified eurycomanol, Physta, and pure eurycomanone as one material or one evidence object",
+    "the claim that the 2021 Physta trial established a serum-urate treatment effect or connected the safety-laboratory urate values to eurycomanone, eurycomanol, transporter modulation, or PRPS"
+  ],
+  "surviving_scope": {
+    "kind": "source_specific_unranked_leads_and_research_conjecture",
+    "statements": [
+      "Purified cordycepin at 15, 30, and 60 mg/kg lowered serum urate relative to hyperuricemic control and reduced renal URAT1 mRNA and protein in a mouse hyperuricemia model in PMID 29422889; human exposure, human urate lowering, and an androgen-urate dual benefit remain unestablished.",
+      "A 70% ethanol Eurycoma longifolia stem extract at 100, 200, and 400 mg/kg altered renal urate transporters in hyperuricemic rodents in PMID 31920654; in hURAT1-expressing cells, eurycomanol-type compounds 4-7 at 50 micromolar inhibited urate uptake, while pure eurycomanone was compound 3 and showed comparatively low activity. The extract and eurycomanol results do not establish a pure-eurycomanone cross-target verdict.",
+      "Purified eurycomanol at 5-20 mg/kg orally lowered serum urate, increased urate clearance, decreased hepatic PRPS expression, and modulated renal and intestinal urate transporters in hyperuricemic mice in PMID 34785103; human efficacy and a Physta mechanism remain unestablished.",
+      "The 2021 Physta trial reported urate only as a safety outcome; week-12 between-group comparisons versus placebo were p=0.88 for 100 mg and p=0.52 for 200 mg, so the table does not establish a Physta urate-treatment effect.",
+      "Whether a defined cordyceps or Eurycoma preparation can produce a reproducible androgen effect together with a favorable urate-axis effect remains an untested Research Conjecture requiring matched material identity, measured exposure, and direct urate and transporter endpoints."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/t-axis-adjuvant-urate-mapping-computational.md",
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "949f3d93a6b1a57fc677939bfe9a9b33080409dd0e1b93cee7096ff432bb06d1"
+  }
+}

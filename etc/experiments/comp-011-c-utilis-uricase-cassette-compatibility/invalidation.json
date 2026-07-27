@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "comp": "comp-011",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "70e60ea9a7c84a92cec37164f38b456aaa6d6881",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 5857,
+      "sha256": "958dc1168f93003237899710272a136589de10c1a27ce2a4a4f0fe0eb7a56101"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 90283,
+      "sha256": "cb7575e553ccd8d46ce443bbe56206bfb5f1845cc4077443d050786bf19b9ac5"
+    },
+    {
+      "path": "inputs/P02788.fasta",
+      "bytes": 802,
+      "sha256": "c78b74212c8370fced3b2040577c9ce854be045e76e74ccb0048bd17464dc94b"
+    },
+    {
+      "path": "inputs/P78609.fasta",
+      "bytes": 382,
+      "sha256": "08551885257b128c8dfa2c5779bc979dfb894b3aa19a054f32e31101d08296ee"
+    },
+    {
+      "path": "inputs/a_oryzae_codon_usage.json",
+      "bytes": 5321,
+      "sha256": "61b8e7293388d5d605f19e36fce9d94d19a526baf35f3c9205bf17d0b717a24e"
+    },
+    {
+      "path": "inputs/glucoamylase_carrier.fasta",
+      "bytes": 737,
+      "sha256": "8003d465b1549048b99aee0e44207c13bcd107fd95ea2bb53f86d15e6fe0937d"
+    },
+    {
+      "path": "inputs/kex2_site_specs.json",
+      "bytes": 4350,
+      "sha256": "8c6e6cc3c50657d129b6979426c15dee0e464239188120b8584e8d8c2af0b0ad"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 7578,
+      "sha256": "ba1b604324cdc3d598f79b67584cfe7ac6522ec1f7d3bd3f0a78da61e1ac279f"
+    },
+    {
+      "path": "outputs/cassette_analysis.json",
+      "bytes": 33610,
+      "sha256": "bfcaab0bd0a22cc9480faf838d331b914b56a7ec5f3153330ca63ba74107f8c0"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 28230,
+      "sha256": "6d1f445df427368cc9fbc56ab1911c35f2f43bd92469ba54a597c722ccee5a13"
+    }
+  ],
+  "invalidated_scope": [
+    "MODERATE or any overall cassette-design risk verdict",
+    "wild-type versus ALLN-346 or other mutant comparison, benefit, and recommendation conclusions",
+    "codon-burden, rare-codon-hotspot, and codon-optimization-sufficiency conclusions",
+    "Kex2 site certainty, cleavage-risk classes, exact truncation claims, and mutation-effect conclusions",
+    "secretion, routing, targeting-tail, and topology conclusions",
+    "N-glycosylation occupancy or burden conclusions",
+    "cysteine, aggregation, disulfide, ER-folding, and folding-capacity conclusions",
+    "Huynh comparator and Ward titer or capacity conclusions",
+    "protease-resistance, stability, ALLN clinical-sequence-equivalence, and freedom-to-operate conclusions",
+    "combined-burden, chassis, process-feasibility, and cross-payload conclusions"
+  ],
+  "surviving_scope": {
+    "kind": "historical_inventory_and_research_conjecture",
+    "statements": [
+      "The retired Git snapshot preserves the deterministic P78609 and P02788 sequence, motif, and codon inventories as historical records only.",
+      "Source-verified sequence and patent facts belong to their primary records and the current canonical evidence page, not to this retired model.",
+      "A published patent mutation set may remain a bounded patent observation only after primary-record verification; it does not establish the sequence of a clinical construct or freedom to operate.",
+      "Source-verified internal dibasic motifs, cysteine content, and a targeting tail can motivate exact-construct processing, folding, and secretion tests, but their presence does not establish failure.",
+      "A substitution that changes local motif context may alter processing, but cleavage and benefit are not established."
+    ]
+  },
+  "current_evidence_home": "wiki/c-utilis-uricase-cassette-compatibility-computational.md",
+  "retirement_scope_digest": {
+    "algorithm": "sha256",
+    "canonicalization": "UTF-8 bytes, no trailing LF, of: jq -cS '{retired_files,invalidated_scope,surviving_scope,current_evidence_home}' invalidation.json | tr -d '\\n'",
+    "sha256": "9797acf65e77b29fa1ad466342b8f6a078d1b0764d462a9bb4e7791126cece51"
+  }
+}

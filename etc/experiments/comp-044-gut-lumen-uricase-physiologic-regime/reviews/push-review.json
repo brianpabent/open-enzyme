@@ -2,14 +2,14 @@
   "schema_version": 1,
   "comp": "comp-044",
   "comp_dir": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime",
-  "source_commit": "2f2b3b73e8a77f78f75ece3bce11f9a95b7555b5",
-  "artifact_manifest_sha256": "df65073c0b1065ba8553cddb0b3fabe99925d5ffb8f0b2ec23cc0fdbb756c181",
+  "source_commit": "8c8be0642f5839afc2925b361c8746d2eaa252b6",
+  "artifact_manifest_sha256": "95076ab1c4e287024aa1e178f463a025d55131c99f2d07dfd0a28239ffc0e3da",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-23T14:17:20Z",
+  "timestamp": "2026-07-23T14:27:50Z",
   "comp_verdict": "clean_with_limitations",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
-  "action_required": true,
+  "action_required": false,
   "authoring_gates": {
     "status": "modern",
     "valid": true,
@@ -200,57 +200,57 @@
     },
     {
       "shard_id": "shard-003",
-      "coverage_sha256": "10c1d6dc43efef1e5b4ea488198900700d549f7a5038a68b31efac1230180e5f",
+      "coverage_sha256": "347a0cc08d6da40b45c64bb4939d5d87ffe8efcca5b77c22bbbebc6caa28a0fc",
       "segments": [
         {
           "path": "wiki/validation-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 0,
           "end": 180000,
-          "file_sha256": "6e54a43261d17e36319e119800a1083bc42d63195e4068203f21072edb0d1710",
+          "file_sha256": "f62ed83386ae3176873625c5780099983451de128efb60703bc8c306e9f4104f",
           "binary": false
         }
       ]
     },
     {
       "shard_id": "shard-004",
-      "coverage_sha256": "933ad617ce4b015f861ee4093d65ed72cd9ae8563de0c5e4d6400f0cdbc9745a",
+      "coverage_sha256": "29646e888e5519a661f773f70ae21b6650aaec4dc7b912774792846d673fa3cc",
       "segments": [
         {
           "path": "wiki/validation-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 180000,
-          "end": 238119,
-          "file_sha256": "6e54a43261d17e36319e119800a1083bc42d63195e4068203f21072edb0d1710",
+          "end": 238376,
+          "file_sha256": "f62ed83386ae3176873625c5780099983451de128efb60703bc8c306e9f4104f",
           "binary": false
         }
       ]
     }
   ],
   "unsupported_binary_entries": [],
-  "projected_cost_usd": 1.638674,
-  "actual_cost_usd": 1.015296,
-  "input_tokens": 233034,
-  "output_tokens": 15049,
-  "tool_calls": 13,
-  "review_sha256": "106fb3080ef9a51698e2a131368ee6c943d5794fa4c1825bc331577c237eff9c",
+  "projected_cost_usd": 1.638995,
+  "actual_cost_usd": 0.921772,
+  "input_tokens": 202526,
+  "output_tokens": 12485,
+  "tool_calls": 14,
+  "review_sha256": "1e4ca8c68c2b824eeeeaf9ad813ff54bad735bd6b519f312d0cfb851a630f1a1",
   "lane_adjudication": {
-    "date": "2026-07-23T14:17:20Z",
+    "date": "2026-07-23T14:27:50Z",
     "method": "exact push review",
     "new_artifact_review_performed": true,
-    "queue_action_remains_open": true,
-    "propagation_allowed_scope": "bounded corrective propagation only: comp-019 unconditional flat-dose robustness fails the comp-044 diagnostic",
-    "synthesis_allowed_scope": "bounded mechanistic audit synthesis with inherited-input and no-serum/no-dose/no-topology limitations",
+    "queue_action_remains_open": false,
+    "propagation_allowed_scope": "bounded corrective propagation that comp-019's unconditional flat-dose oral-UOX classification is not robust to comp-044's tested substrate-occupancy and finite-window diagnostics",
+    "synthesis_allowed_scope": "cite only as a deterministic consistency audit preserving the oral gut-sink hypothesis as open and requiring configuration-level measurement before dose, topology, or safety conclusions",
     "forbidden_inferences": [
-      "serum-urate effect",
-      "dose recommendation",
+      "replacement physiological regime",
+      "serum-urate or \u0394SUA prediction",
+      "clinical advice",
       "genotype ordering",
-      "true physiological regime",
+      "sufficient oral dose or production/yield target",
       "topology or chassis winner",
-      "production-sufficiency target",
-      "safety conclusion",
-      "probability from grid occupancy",
-      "clinical or self-experiment guidance"
+      "safety or peroxide closure",
+      "probabilistic interpretation of grid fractions",
+      "primary-source-verified quantitative planning inputs"
     ]
   }
 }

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection/README.md",
+      "kind": "design",
+      "bytes": 3849,
+      "sha256": "ee8dd2b7b5adde7f91f195aff3c96e09c557bb8be0122dd64cf43b710316edd7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-009-urat1-sirna-target-site-selection/invalidation.json",
+      "kind": "design",
+      "bytes": 4136,
+      "sha256": "f696e0f00a1988439631576b16c9bb92662cc7d756a64ee6d8113898897b0a09"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "5c4c8b1e07ba1de5d57a24d7bf311b625db797886ae0cc3ecdd7cc65a440bee0"
+}

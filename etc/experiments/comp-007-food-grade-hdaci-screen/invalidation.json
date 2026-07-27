@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "comp": "comp-007",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "35fd84865925592d42cbc89c84f45b1c8a81ad9f",
+  "last_push_review_manifest_sha256": "54c3cc4a284c929a20dec385a508352348b190e88e3a7043bb76f4a96fec68c1",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 4279,
+      "sha256": "f22b83cffa7f9b322a8b359af5a8c50aaef7e73f5d36ae89b14a826ce2d3279d"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 19530,
+      "sha256": "bc9cfd559269b5b75c4caae97126514a4298cb7b04d99ffbd632faafa428c12e"
+    },
+    {
+      "path": "inputs/bioactivity_data.json",
+      "bytes": 12341,
+      "sha256": "66aff0291dcdcadc63265612ceeeb64783a1d661efdb9b667b037f905f80e9ee"
+    },
+    {
+      "path": "inputs/candidates.json",
+      "bytes": 8997,
+      "sha256": "bcd19c59f4f02ba103f2f81d3df257aa75ba6e90bc038647e343b00813618589"
+    },
+    {
+      "path": "inputs/hdac_targets.json",
+      "bytes": 2404,
+      "sha256": "22b0765663536be0cba5fa58335d9f81e9f95b2d1a2f8766d36bb3a307aa19cd"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 11197,
+      "sha256": "6ee65c9ef13104b5d568bbda54963fb9eaf98cbd5555da2bf2f6ed7970e52892"
+    },
+    {
+      "path": "outputs/ranking.json",
+      "bytes": 11206,
+      "sha256": "ab53723ae222705bb54434cd55d8c5041bd889417987e4cfe36623d006ab5258"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 8275,
+      "sha256": "6a74f9210ee5a57a7534d09d0a702fd0e539ef9ab1915ac79043e370f16fbd72"
+    }
+  ],
+  "invalidated_scope": [
+    "all candidate ranks, composite scores, confidence-ranked verdicts, and top-three or Stage-2 advancement decisions",
+    "the potency × selectivity × gut-enrichment model, including the arbitrary unknown-HDAC6 penalty, selectivity midpoint, 1-minus-oral-bioavailability surrogate, mixed-assay IC50 estimates, and exclusion of the stored concentration estimates from scoring",
+    "the assignment of HDAC1/2/3 as the established causal Q141K-rescue targets, the HSF1-to-Hsp90 rescue explanation, and HDAC6 as the sole or primary off-target safety axis",
+    "all claims that any listed food-associated candidate is confirmed to rescue Q141K trafficking, increase ABCG2-attributed urate flux, achieve the required epithelial exposure, or provide a safe chronic intervention"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_historical_inventory_and_research_conjecture",
+    "statements": [
+      "Butyrate, sulforaphane, allyl mercaptan, diallyl disulfide, phenethyl isothiocyanate, caffeic acid, and ferulic acid survive only as an unranked historical candidate inventory whose evidence must be evaluated compound by compound.",
+      "Selected pharmacological HDAC inhibitors rescued Q141K ABCG2 surface trafficking and substrate-efflux function in Basseville et al. 2012 in vitro; the causal isoform mapping, direct butyrate effect, epithelial exposure, urate flux, and safety remain unestablished.",
+      "Xie et al. found that butyrate increased endogenous intestinal BCRP/ABCG2 expression and drug-substrate function in non-Q141K-specific, non-urate rat, primary mouse-enterocyte, and Caco-2 systems; PPAR-gamma antagonism and silencing supported dependence in Caco-2, while the rat PPAR-gamma result was correlational. Combining that induction route with a possible Q141K-trafficking effect is an explicitly untested Research Conjecture owned by wiki/abcg2-modulators.md."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/food-grade-hdaci-screen-computational.md",
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "6bba6541f53060b84ea20ad6a5d5e36a47f1ad3c8c31d1e737e474ff32ff4e8e"
+  }
+}

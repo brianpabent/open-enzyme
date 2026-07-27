@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-029-combined-cp0-systems-model",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-029-combined-cp0-systems-model/README.md",
+      "kind": "design",
+      "bytes": 1439,
+      "sha256": "1beb2d4caf084f4e9193ace48101702b47d34580d39548005ab2f7e23a8b655d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-029-combined-cp0-systems-model/invalidation.json",
+      "kind": "design",
+      "bytes": 3600,
+      "sha256": "a96981186b78314ee2f55a49258f8920f897e7b44477dc0b323ec3b3a07f46dd"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 34492,
+      "sha256": "e8c456daa4bfa3d112146826c1c194b29830079e4bca052a7821b25735c097c5"
+    },
+    {
+      "path": "mkdocs.yml",
+      "kind": "proposed_update",
+      "bytes": 10864,
+      "sha256": "3828a103947229958349cda8cb6751b19a1a1e31e4cfd49143eb3ba888087629"
+    },
+    {
+      "path": "wiki/combined-cp0-systems-model-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3940,
+      "sha256": "d36ef6a740cbea8ba9f78c2e1d67c5e275295c6d1ba99cf9d8d524de3fd0fb6e"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 94334,
+      "sha256": "3e547ff4444758e4e37c6795c9d7b9c60059aaf5e2d3d0d31f6f76994321af8f"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 72511,
+      "sha256": "f9c07b41bc65f4a49b91ea47efba69cc8d1b85c77161e17e9437ada4248b9bc4"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "782a45f15c310b1e68d09297769b2a6b8b6733c4ca32927fd60322562ed9729f"
+}

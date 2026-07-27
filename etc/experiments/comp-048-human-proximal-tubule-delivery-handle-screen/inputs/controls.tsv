@@ -1,0 +1,8 @@
+gene	role	expected_observation	interpretation	direct_internalization_evidence	evidence_id	evidence_scope
+ASGR1	positive_pattern	HPA hepatocyte and liver enrichment; member of the Bausch-Fluck surfaceome	Reproduces the expression architecture used by hepatocyte-targeted GalNAc-siRNA; not a kidney candidate	false	PMID:25110913	ASGPR-complex targeting precedent; does not establish ASGR1-specific internalization
+ASGR2	positive_pattern	HPA hepatocyte and liver enrichment; member of the Bausch-Fluck surfaceome	Companion ASGPR expression-pattern control; not a kidney candidate	false	PMID:25110913	ASGPR-targeted GalNAc-siRNA architecture; does not establish each subunit independently
+LRP2	kidney_context	Detected in proximal-tubule cells and kidney	Proximal-tubule uptake-context control; systemic selectivity is not presumed	false	PMID:11994745	Review-tier uptake context only; cannot satisfy direct internalization evidence and is not evidence for siRNA delivery
+CUBN	kidney_context	Detected in proximal-tubule cells and kidney	Proximal-tubule uptake-complex context control; not a delivery verdict	false	PMID:11994745	Cubilin/megalin uptake context; not evidence for an independently internalizing siRNA receptor
+SLC22A12	target_marker	Detected in proximal-tubule cells in eligible reference donors	Required target-compartment marker; not a receptor or internalization control	false	PMID:12024214	URAT1 identification and urate transport; not delivery evidence
+ALB	negative_surface	Not admitted to the transmembrane surfaceome candidate universe	Secreted liver protein negative control	false	NA	Method control only
+GAPDH	negative_surface	Not admitted to the transmembrane surfaceome candidate universe	Intracellular protein negative control	false	NA	Method control only

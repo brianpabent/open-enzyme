@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/README.md",
+      "kind": "design",
+      "bytes": 2181,
+      "sha256": "1978c3191f4c0e0471b36509adbd0afcd1d4dcdada916d3567bc0e73cee4354a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-012-daf-cd55-scr14-truncated/invalidation.json",
+      "kind": "design",
+      "bytes": 2955,
+      "sha256": "4b4c0e5c7b5e360e616d7d5612eb140f29e6c8ab2cd9f2cd40f0c2fbed5630d5"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 34492,
+      "sha256": "e8c456daa4bfa3d112146826c1c194b29830079e4bca052a7821b25735c097c5"
+    },
+    {
+      "path": "mkdocs.yml",
+      "kind": "proposed_update",
+      "bytes": 10864,
+      "sha256": "3828a103947229958349cda8cb6751b19a1a1e31e4cfd49143eb3ba888087629"
+    },
+    {
+      "path": "operations/todos.md",
+      "kind": "proposed_update",
+      "bytes": 10655,
+      "sha256": "0dfd0b215e5b0999f41b22ae5a65f750bcba728a525debb44843ff12bd4fd781"
+    },
+    {
+      "path": "papers/cross-vendor-heterogeneity-guard/draft.md",
+      "kind": "proposed_update",
+      "bytes": 175097,
+      "sha256": "6e32155b95915b15ac8bae6aacfb64e6c88d0cfed1b59e18676266d0cff4c923"
+    },
+    {
+      "path": "papers/cross-vendor-heterogeneity-guard/glossary.md",
+      "kind": "proposed_update",
+      "bytes": 16428,
+      "sha256": "111cb72225ee1f9b932fe5ccbe54a3e256610b31cc6695cddbde2dc7be55fbab"
+    },
+    {
+      "path": "wiki/c1-inh-protease-stability-ecn-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3788,
+      "sha256": "d0f5010c2161df29d971de31e13311681ff142bb2c3dcda9519602e582a67ae4"
+    },
+    {
+      "path": "wiki/combined-cp0-systems-model-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3940,
+      "sha256": "d36ef6a740cbea8ba9f78c2e1d67c5e275295c6d1ba99cf9d8d524de3fd0fb6e"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 94334,
+      "sha256": "3e547ff4444758e4e37c6795c9d7b9c60059aaf5e2d3d0d31f6f76994321af8f"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
+    },
+    {
+      "path": "wiki/daf-cd55-scr14-truncated-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3755,
+      "sha256": "b61a30901d1965d60ca6cff90a6f153ffdaf90b4d0b6d23de280583ba6c4799b"
+    },
+    {
+      "path": "wiki/etc/bio-ai-tools.md",
+      "kind": "proposed_update",
+      "bytes": 62248,
+      "sha256": "21afccea68cd9e24ec0d32381632667716347579ce7cbf91e2da7c60d6afe06b"
+    },
+    {
+      "path": "wiki/etc/manual-literature-mining.md",
+      "kind": "proposed_update",
+      "bytes": 29358,
+      "sha256": "3f50e8ca54fcdf552c56dc5857f4afd4b603899edf06447d94cc5ec389caeeb9"
+    },
+    {
+      "path": "wiki/hypotheses/H05-daf-scr14-cp0-thesis.md",
+      "kind": "proposed_update",
+      "bytes": 10561,
+      "sha256": "dadf3c69bff36691fe7de2a72259df509467a13c5ae46fc42d55146ad409cafc"
+    },
+    {
+      "path": "wiki/nlrp3-exploit-map.md",
+      "kind": "proposed_update",
+      "bytes": 60665,
+      "sha256": "e30593887912b1579694222c25e40736744b8dd33b60effff278cf3daba07a3d"
+    },
+    {
+      "path": "wiki/upstream-complement-verification-rerun-computational.md",
+      "kind": "proposed_update",
+      "bytes": 5947,
+      "sha256": "f7bdcbc64bb5486100d5a166a94ec9863eb980424c7fc48b721e71b800cdd3f5"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 230784,
+      "sha256": "192427c173ad894e33e6c76c6f427fc8264ec44446b244366f22a4577e1c3cff"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "23dda831a9915204fc56bdc2ea3c0f2ffc88ad9ee4bb2d09dbb9d2e0382538b1"
+}

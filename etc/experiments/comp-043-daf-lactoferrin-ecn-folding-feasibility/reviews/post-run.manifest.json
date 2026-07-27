@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/README.md",
+      "kind": "design",
+      "bytes": 1722,
+      "sha256": "32fa95713ec05f194ef12a85b4c6aae596cb4cfbf71fd1e8d19d5892b0fdcd51"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/invalidation.json",
+      "kind": "design",
+      "bytes": 3683,
+      "sha256": "82b2c5c9ace130765c3fac4cba6506655895d0f76ae1e3483c0f5fd3b6f19c5c"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 34492,
+      "sha256": "e8c456daa4bfa3d112146826c1c194b29830079e4bca052a7821b25735c097c5"
+    },
+    {
+      "path": "mkdocs.yml",
+      "kind": "proposed_update",
+      "bytes": 10864,
+      "sha256": "3828a103947229958349cda8cb6751b19a1a1e31e4cfd49143eb3ba888087629"
+    },
+    {
+      "path": "synthesis/queue/comp-review-022.md",
+      "kind": "proposed_update",
+      "bytes": 3175,
+      "sha256": "84cd2eb64b9c27d26723e235486e4539faf14e052f6e60cb75362588fabbbe6e"
+    },
+    {
+      "path": "wiki/chaperone-orthogonal-stacking.md",
+      "kind": "proposed_update",
+      "bytes": 11866,
+      "sha256": "8627c1b4805e4e0535091e5cb9a382e8f20fc5251c3251f22e866c21efdf1d40"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 94334,
+      "sha256": "3e547ff4444758e4e37c6795c9d7b9c60059aaf5e2d3d0d31f6f76994321af8f"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
+    },
+    {
+      "path": "wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3640,
+      "sha256": "814e7be2bbf4e5f28d8874426fc60f93a88020cc4cd38b10145dfc181cd22b6d"
+    },
+    {
+      "path": "wiki/engineered-lbp-chassis.md",
+      "kind": "proposed_update",
+      "bytes": 14428,
+      "sha256": "aa0b0f5bc81dc46ed516dc7b5d0824b78ed17beb8b57c4231644f840c3ca62c2"
+    },
+    {
+      "path": "wiki/etc/autonomous-screening-methodology.md",
+      "kind": "proposed_update",
+      "bytes": 23852,
+      "sha256": "acc80ba60a56e7a859b7da7dd6caa474c5fdb570ac5a769111a8651fa71c73d6"
+    },
+    {
+      "path": "wiki/etc/bio-ai-tools.md",
+      "kind": "proposed_update",
+      "bytes": 62248,
+      "sha256": "21afccea68cd9e24ec0d32381632667716347579ce7cbf91e2da7c60d6afe06b"
+    },
+    {
+      "path": "wiki/etc/practitioner-toolkit.md",
+      "kind": "proposed_update",
+      "bytes": 8163,
+      "sha256": "432c6cb9c3339e7e48cd23976ee829260127897ee09e7da5fbe774f7194180a7"
+    },
+    {
+      "path": "wiki/hypotheses/H05-daf-scr14-cp0-thesis.md",
+      "kind": "proposed_update",
+      "bytes": 10561,
+      "sha256": "dadf3c69bff36691fe7de2a72259df509467a13c5ae46fc42d55146ad409cafc"
+    },
+    {
+      "path": "wiki/uricase-cassette-ranking-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3606,
+      "sha256": "6ac1264883f9cc592d9d5b0ba644925afb8782a625a510c99792b9f745747079"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 230784,
+      "sha256": "192427c173ad894e33e6c76c6f427fc8264ec44446b244366f22a4577e1c3cff"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "ffd6acf3e1018ed22ab7848ff40a66fc594d7aea244cf3bf351e5ee2db234109"
+}

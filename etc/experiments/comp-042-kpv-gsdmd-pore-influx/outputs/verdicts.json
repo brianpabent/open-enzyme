@@ -1,34 +1,156 @@
 {
   "per_route": {
     "intra_articular": {
-      "A1_flux_sufficiency": "GREEN",
-      "A1_ratio_over_ic50_central": 29200.0,
-      "A1_prob_clear_ic50": 1.0,
-      "A2_selectivity": "YELLOW-unquantifiable",
-      "A2_scenarios_with_meaningful_selectivity": 2,
-      "combined_route_verdict": "MARGINAL-selectivity-unproven"
+      "A1_exposure_proxy_state": "GREEN",
+      "A1_metric": "modeled passive pore contribution / extracellular cell-assay effective-concentration proxy",
+      "A1_engineering_rule": "GREEN if central ratio >=10 and sampled fraction >=0.9; YELLOW if central ratio >=1 and sampled fraction >=0.5; otherwise RED",
+      "A1_ratio_over_effective_concentration_proxy_central": 29200.0,
+      "A1_fraction_design_space_draws_clearing_proxy": 1.0,
+      "A2_pore_vs_healthy_baseline": "UNRESOLVED-unmeasured-PepT1-baseline",
+      "A2_central_scenarios_with_heuristic_ratio_ge_3x": 2,
+      "A2_sensitivity_summary": {
+        "absent": {
+          "case_count": 9,
+          "heuristic_ratio_ge_3x_cases": 9,
+          "positive_infinity_cases": 9,
+          "undefined_cases": 0,
+          "finite_min_selectivity_ratio": null,
+          "finite_max_selectivity_ratio": null,
+          "heuristic_ratio_pattern": "always_at_or_above_3x_in_declared_grid"
+        },
+        "low": {
+          "case_count": 9,
+          "heuristic_ratio_ge_3x_cases": 9,
+          "positive_infinity_cases": 0,
+          "undefined_cases": 0,
+          "finite_min_selectivity_ratio": 3.383333333333333,
+          "finite_max_selectivity_ratio": 33.75,
+          "heuristic_ratio_pattern": "always_at_or_above_3x_in_declared_grid"
+        },
+        "moderate": {
+          "case_count": 9,
+          "heuristic_ratio_ge_3x_cases": 2,
+          "positive_infinity_cases": 0,
+          "undefined_cases": 0,
+          "finite_min_selectivity_ratio": 1.015,
+          "finite_max_selectivity_ratio": 10.125000000000002,
+          "heuristic_ratio_pattern": "crosses_3x_in_some_declared_grid_cases"
+        },
+        "high": {
+          "case_count": 9,
+          "heuristic_ratio_ge_3x_cases": 1,
+          "positive_infinity_cases": 0,
+          "undefined_cases": 0,
+          "finite_min_selectivity_ratio": 0.3383333333333333,
+          "finite_max_selectivity_ratio": 3.375,
+          "heuristic_ratio_pattern": "crosses_3x_in_some_declared_grid_cases"
+        }
+      },
+      "combined_route_verdict": "NOT-QUALIFIED-A2-UNRESOLVED"
     },
     "subcutaneous": {
-      "A1_flux_sufficiency": "YELLOW",
-      "A1_ratio_over_ic50_central": 3.0,
-      "A1_prob_clear_ic50": 0.68455,
-      "A2_selectivity": "YELLOW-unquantifiable",
-      "A2_scenarios_with_meaningful_selectivity": 2,
-      "combined_route_verdict": "MARGINAL-selectivity-unproven"
+      "A1_exposure_proxy_state": "YELLOW",
+      "A1_metric": "modeled passive pore contribution / extracellular cell-assay effective-concentration proxy",
+      "A1_engineering_rule": "GREEN if central ratio >=10 and sampled fraction >=0.9; YELLOW if central ratio >=1 and sampled fraction >=0.5; otherwise RED",
+      "A1_ratio_over_effective_concentration_proxy_central": 3.0,
+      "A1_fraction_design_space_draws_clearing_proxy": 0.679,
+      "A2_pore_vs_healthy_baseline": "UNRESOLVED-unmeasured-PepT1-baseline",
+      "A2_central_scenarios_with_heuristic_ratio_ge_3x": 2,
+      "A2_sensitivity_summary": {
+        "absent": {
+          "case_count": 9,
+          "heuristic_ratio_ge_3x_cases": 9,
+          "positive_infinity_cases": 9,
+          "undefined_cases": 0,
+          "finite_min_selectivity_ratio": null,
+          "finite_max_selectivity_ratio": null,
+          "heuristic_ratio_pattern": "always_at_or_above_3x_in_declared_grid"
+        },
+        "low": {
+          "case_count": 9,
+          "heuristic_ratio_ge_3x_cases": 9,
+          "positive_infinity_cases": 0,
+          "undefined_cases": 0,
+          "finite_min_selectivity_ratio": 3.3333433333333335,
+          "finite_max_selectivity_ratio": 3.3374999999999995,
+          "heuristic_ratio_pattern": "always_at_or_above_3x_in_declared_grid"
+        },
+        "moderate": {
+          "case_count": 9,
+          "heuristic_ratio_ge_3x_cases": 0,
+          "positive_infinity_cases": 0,
+          "undefined_cases": 0,
+          "finite_min_selectivity_ratio": 1.0000030000000002,
+          "finite_max_selectivity_ratio": 1.00125,
+          "heuristic_ratio_pattern": "never_at_or_above_3x_in_declared_grid"
+        },
+        "high": {
+          "case_count": 9,
+          "heuristic_ratio_ge_3x_cases": 0,
+          "positive_infinity_cases": 0,
+          "undefined_cases": 0,
+          "finite_min_selectivity_ratio": 0.33333433333333334,
+          "finite_max_selectivity_ratio": 0.33375,
+          "heuristic_ratio_pattern": "never_at_or_above_3x_in_declared_grid"
+        }
+      },
+      "combined_route_verdict": "NOT-QUALIFIED-A2-UNRESOLVED"
     },
     "oral": {
-      "A1_flux_sufficiency": "RED",
-      "A1_ratio_over_ic50_central": 0.1,
-      "A1_prob_clear_ic50": 0.04,
-      "A2_selectivity": "YELLOW-unquantifiable",
-      "A2_scenarios_with_meaningful_selectivity": 2,
-      "combined_route_verdict": "FAIL"
+      "A1_exposure_proxy_state": "RED",
+      "A1_metric": "modeled passive pore contribution / extracellular cell-assay effective-concentration proxy",
+      "A1_engineering_rule": "GREEN if central ratio >=10 and sampled fraction >=0.9; YELLOW if central ratio >=1 and sampled fraction >=0.5; otherwise RED",
+      "A1_ratio_over_effective_concentration_proxy_central": 0.1,
+      "A1_fraction_design_space_draws_clearing_proxy": 0.03635,
+      "A2_pore_vs_healthy_baseline": "UNRESOLVED-unmeasured-PepT1-baseline",
+      "A2_central_scenarios_with_heuristic_ratio_ge_3x": 2,
+      "A2_sensitivity_summary": {
+        "absent": {
+          "case_count": 9,
+          "heuristic_ratio_ge_3x_cases": 9,
+          "positive_infinity_cases": 9,
+          "undefined_cases": 0,
+          "finite_min_selectivity_ratio": null,
+          "finite_max_selectivity_ratio": null,
+          "heuristic_ratio_pattern": "always_at_or_above_3x_in_declared_grid"
+        },
+        "low": {
+          "case_count": 9,
+          "heuristic_ratio_ge_3x_cases": 9,
+          "positive_infinity_cases": 0,
+          "undefined_cases": 0,
+          "finite_min_selectivity_ratio": 3.3333336666666664,
+          "finite_max_selectivity_ratio": 3.3333958333333324,
+          "heuristic_ratio_pattern": "always_at_or_above_3x_in_declared_grid"
+        },
+        "moderate": {
+          "case_count": 9,
+          "heuristic_ratio_ge_3x_cases": 0,
+          "positive_infinity_cases": 0,
+          "undefined_cases": 0,
+          "finite_min_selectivity_ratio": 1.0000001,
+          "finite_max_selectivity_ratio": 1.00001875,
+          "heuristic_ratio_pattern": "never_at_or_above_3x_in_declared_grid"
+        },
+        "high": {
+          "case_count": 9,
+          "heuristic_ratio_ge_3x_cases": 0,
+          "positive_infinity_cases": 0,
+          "undefined_cases": 0,
+          "finite_min_selectivity_ratio": 0.3333333666666667,
+          "finite_max_selectivity_ratio": 0.33333958333333336,
+          "heuristic_ratio_pattern": "never_at_or_above_3x_in_declared_grid"
+        }
+      },
+      "combined_route_verdict": "NOT-QUALIFIED-A1"
     }
   },
   "overall": {
-    "overall": "YELLOW-provisional",
+    "overall": "YELLOW-A2-unresolved",
+    "overall_policy": "Derived from the best A1 engineering state, then capped below GREEN while A2 remains empirically unresolved",
     "any_route_A1_GREEN": true,
-    "any_route_PASSES_both_filters": false,
-    "statement": "YELLOW (provisional). The physics of KPV self-delivery is sound (A1 flux-sufficiency GREEN for intra-articular, marginal for subcutaneous): a 20 nm pore equilibrates intracellular [KPV] to the extracellular synovial concentration within seconds, so any route reaching >= the ~10 nM IC50 in synovial fluid clears the intracellular therapeutic bar. BUT the Trojan-horse SELECTIVITY thesis (A2) -- the actual reason to prefer pore delivery -- is UNQUANTIFIABLE for KPV: because KPV already enters cells via PepT1, the pore's selectivity over the PepT1 baseline is gated entirely by synovial-macrophage PepT1 expression, which is uncharacterized. No route clears BOTH the therapeutic AND a meaningful-selectivity threshold with confidence. Provisional because it rests on 3 compounding named assumptions: (i) pores/cell >= ~10, (ii) design-space SC/oral synovial PK, (iii) the PepT1 AR_lin scenario band."
+    "any_route_QUALIFIES_both_filters": false,
+    "A2_qualification_blocker": "unmeasured synovial-macrophage PepT1 function and healthy-cell accumulation baseline",
+    "statement": "YELLOW-A2-unresolved. Computed A1 engineering states: intra_articular=GREEN, subcutaneous=YELLOW, oral=RED. A1 compares the modeled passive pore contribution with an extracellular cell-assay effective-concentration proxy; it does not establish target engagement or efficacy. A2 remains unresolved because synovial-macrophage PepT1 function and the matched healthy-cell accumulation baseline are unmeasured. The heuristic grid reports every equation-response corner, including modeled ratios >=3x, but none qualifies a route."
   }
 }

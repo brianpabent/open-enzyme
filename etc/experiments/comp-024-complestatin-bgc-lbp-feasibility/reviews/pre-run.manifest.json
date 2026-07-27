@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/README.md",
+      "kind": "design",
+      "bytes": 2850,
+      "sha256": "32e94d36630cf4b8e849d70381ce74c2871c452ac87998cc16f5f5804f4f9664"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-024-complestatin-bgc-lbp-feasibility/invalidation.json",
+      "kind": "design",
+      "bytes": 3120,
+      "sha256": "e077fce3d8ae61974ba2f124f5461de1cc1ffd9e56e3e7287fc508ad63cccc67"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "dbcfb450c927893dff3d85b882a0c980e3180fdfb5aaa634edf4df53537a4c94"
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/README.md",
+      "kind": "design",
+      "bytes": 2132,
+      "sha256": "437abd20c82716506f8d3ae8986f5242e8c8185ba6bb9f5f847163becd345cae"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/invalidation.json",
+      "kind": "design",
+      "bytes": 25989,
+      "sha256": "137ec59afdd4b92293929f2d3cda4cb27ccd1bd493fc2188944a75e11dad653a"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 34492,
+      "sha256": "e8c456daa4bfa3d112146826c1c194b29830079e4bca052a7821b25735c097c5"
+    },
+    {
+      "path": "mkdocs.yml",
+      "kind": "proposed_update",
+      "bytes": 10864,
+      "sha256": "3828a103947229958349cda8cb6751b19a1a1e31e4cfd49143eb3ba888087629"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77317,
+      "sha256": "5d9693654b5579952bd0f8e7590f1eb4c58f8e61ed028aea12b2a68584e94f31"
+    },
+    {
+      "path": "wiki/etc/bio-ai-tools.md",
+      "kind": "proposed_update",
+      "bytes": 62248,
+      "sha256": "21afccea68cd9e24ec0d32381632667716347579ce7cbf91e2da7c60d6afe06b"
+    },
+    {
+      "path": "wiki/lactoferrin-linker-redesign-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3004,
+      "sha256": "304370ce10460e98aab55546ab0cb8920584ab03ac0ac78bc1daf40aaafbfd63"
+    },
+    {
+      "path": "wiki/lactoferrin.md",
+      "kind": "proposed_update",
+      "bytes": 74296,
+      "sha256": "c9d522cec509b3c6074c80580ea1f2274a8eb21e53648db44282aff66347c9cc"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 230784,
+      "sha256": "192427c173ad894e33e6c76c6f427fc8264ec44446b244366f22a4577e1c3cff"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "7f597fc7a8332202cef74c65f62043c649d6646ab530848097c63d0de4effe39"
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "phase": "post",
+  "comp_dir": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/README.md",
+      "kind": "design",
+      "bytes": 3866,
+      "sha256": "3a6204d9cfb8ec846d48bb7fe1464aa39448342a9a6ddb010113315ac06a9cde"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/invalidation.json",
+      "kind": "design",
+      "bytes": 7720,
+      "sha256": "bd06ce9c955f50e2d4529958cbafca248654cef68e769eeaece7234637c6f6fa"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 34591,
+      "sha256": "44210ebd179859e4cc519d31f3ce7adfa9b045b589d9b7587be303fc7f344398"
+    },
+    {
+      "path": "mkdocs.yml",
+      "kind": "proposed_update",
+      "bytes": 10879,
+      "sha256": "7bcd592d51dae9983f1b74bbeafb7c76e281821b64439e03491ffbce8e9e2c6c"
+    },
+    {
+      "path": "operations/agentic-science-adoption.md",
+      "kind": "proposed_update",
+      "bytes": 26596,
+      "sha256": "21d146b320516e82d904c1bbecf291b5d5a1cb10764a9f2cf5d98d5537d9fd72"
+    },
+    {
+      "path": "papers/cross-vendor-heterogeneity-guard/draft.md",
+      "kind": "proposed_update",
+      "bytes": 174662,
+      "sha256": "095e46b0270db1407bdaffd966886023b422e5f8bd496ffad3f25571958257d9"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 77659,
+      "sha256": "768c34d8aa386014745b35db2357c39f60525deab49994ef9da789a7018bc72d"
+    },
+    {
+      "path": "wiki/etc/autonomous-screening-methodology.md",
+      "kind": "proposed_update",
+      "bytes": 23722,
+      "sha256": "24a65c388bd080260027ae7d20593cd6af87fb08241a5fa70118fa289b690366"
+    },
+    {
+      "path": "wiki/etc/bio-ai-tools.md",
+      "kind": "proposed_update",
+      "bytes": 62059,
+      "sha256": "3eeccd776ee1bac5fbb6891d40367aaa3bc646dc9c66809eab8e11a24ab4d5a4"
+    },
+    {
+      "path": "wiki/uricase-cassette-ranking-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3330,
+      "sha256": "9b7aad407207974045e5eecdb60a7d9146c340f00b44d07dbeba4c71aea96337"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 233896,
+      "sha256": "53a34f004de5ec9a49c5d4effa2367bd4ec44f617f723235fdd62b8277a7fefe"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "e324f71b8ca043a121f0b1f66d400abd0036184f97519566d93966fceca0a948"
+}

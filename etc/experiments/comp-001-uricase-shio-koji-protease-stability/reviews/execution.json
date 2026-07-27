@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "pre_run_manifest_sha256": "dce2c4d10993623429e03b9a0f3f6e3f50e4aa97dd16c1d1dc0002d974eff5bd",
+  "command": "python3 analyze.py",
+  "runs": [
+    {
+      "run": 1,
+      "outputs": {
+        "outputs/cleavage_sites.json": "41e051de653f03bc406bc43b743aa6a1addb7f5924c7a2c00ab656d090005bf0",
+        "outputs/summary.md": "d85608f48e299143184d3533600908580728bced81acde7fa90636a111f7f74c"
+      }
+    },
+    {
+      "run": 2,
+      "outputs": {
+        "outputs/cleavage_sites.json": "41e051de653f03bc406bc43b743aa6a1addb7f5924c7a2c00ab656d090005bf0",
+        "outputs/summary.md": "d85608f48e299143184d3533600908580728bced81acde7fa90636a111f7f74c"
+      }
+    }
+  ],
+  "byte_identical": true
+}

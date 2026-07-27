@@ -15,10 +15,11 @@ role_tag classifies controls:
   other           -> screening compound
 """
 import json, time, urllib.request, urllib.parse, sys
+from pathlib import Path
 
-HERE = "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen"
-LIB = f"{HERE}/inputs/fda_approved_drug_library.json"
-OUT = f"{HERE}/work/ligands/smiles_resolved.json"
+HERE = Path(__file__).resolve().parent
+LIB = HERE / "inputs/fda_approved_drug_library.json"
+OUT = HERE / "work/ligands/smiles_resolved.json"
 
 # name -> PubChem query alias for names PubChem won't resolve as-is
 ALIASES = {
@@ -85,6 +86,7 @@ def role_of(name, mol):
 
 
 def main():
+    OUT.parent.mkdir(parents=True, exist_ok=True)
     lib = json.load(open(LIB))
     mols = {m["name"]: m for m in lib["molecules"]}
     names = list(mols.keys()) + list(EXTRA_INHIBITORS.keys())
