@@ -1,19 +1,14 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "1f46f2c110b6c51e8be2451914eadf5a8847de59",
-    "source_commit": "1f46f2c110b6c51e8be2451914eadf5a8847de59",
-    "result_commit": "1f46f2c110b6c51e8be2451914eadf5a8847de59",
-    "timestamp": "2026-07-27T19:52:38Z",
+    "coverage_commit": "e3520166511a15eb4b576cb80adfe45a2b9ffd51",
+    "source_commit": "e3520166511a15eb4b576cb80adfe45a2b9ffd51",
+    "result_commit": "e3520166511a15eb4b576cb80adfe45a2b9ffd51",
+    "timestamp": "2026-07-27T22:14:19Z",
     "changed_paths": [
-      "wiki/medicinal-mushroom-compound-mapping-computational.md",
-      "wiki/medicinal-mushroom-extract-sops.md",
-      "wiki/modality-chokepoint-matrix.md",
-      "wiki/nlrp3-exploit-map.md",
-      "wiki/open-questions.md",
-      "wiki/prps-purine-biosynthesis-chokepoint.md",
-      "wiki/tcm-modern-rigor-intersection.md",
-      "wiki/validation-experiments.md"
+      "wiki/daf-cd55-protease-stability-computational.md",
+      "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/quarantine.json",
+      "wiki/etc/manual-literature-mining.md"
     ],
     "affected_paths": [],
     "blocked_paths": [
@@ -27,7 +22,7 @@
       "wiki/gout-genetic-variants.md"
     ],
     "deferred_paths": [],
-    "cost_usd": 0.6274
+    "cost_usd": 0.314685
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
