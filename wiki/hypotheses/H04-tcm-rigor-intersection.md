@@ -1,114 +1,75 @@
 ---
 id: H04
-title: "Modern scientific rigor (chokepoint-mapping + ChEMBL cross-check + bioavailability honesty + falsification card discipline) applied to TCM materia medica produces actionable, gout-relevant findings beyond what reductionist single-compound analysis or holistic 'alternative medicine' framings produce in isolation"
+title: "Primary-evidence qualification plus traditional-name search can surface new, falsifiable gout exploits from TCM-derived materials without sacrificing claim fidelity"
 committed: 2026-05-05
 status: Stub
 survival_count: 0
 tags:
   - hypothesis
   - tcm
-  - methodology-lens
-  - chokepoint-mapping
-  - chembl-cross-check
-  - empirical-prior
+  - methodology
+  - primary-evidence
+  - multilingual
   - discovery-engine
-  - global-multilingual
 related:
   - ../tcm-modern-rigor-intersection.md
-  - ../modality-chokepoint-matrix.md
-  - ../etc/chembl-cross-check.md
-  - ../engineered-lbp-chassis.md
-  - ../sirna-urat1-modality.md
-  - ../etc/open-enzyme-vision.md
+  - ../tcm-gout-compound-triage-computational.md
   - ../open-questions.md
-  - ./H01-ward-dual-cassette.md
-  - ./H02-engineered-lbp-thesis.md
-  - ./H03-sirna-urat1-thesis.md
-  - ./README.md
 sources:
-  - "Si Miao San / Si Miao Wan family — modern Chinese RCT meta-analyses (ChiCTR registry)"
-  - "ChEMBL bioactivity curation as cross-check substrate"
-  - "Berberine / resveratrol / EGCG ChEMBL surprise cases (most-potent target ≠ most-cited mechanism)"
-  - "Comp-004 (supplement-abcg2-antagonism-computational.md) — nominal gut-concentration/drug-substrate-IC50 occupancy is invalid as an intestinal urate-transport decision metric"
+  - "Liu YF, Huang Y, Wen CY, et al. doi:10.1155/2017/6037037 (PMID 28373889; PMC5360963)"
+  - "COMP-004 — nominal concentration divided by a drug-substrate IC50 is not an intestinal urate-transport metric"
+  - "COMP-013 — invalidated ranking; unranked source-material names remain search leads"
 ---
 
-# H04 — TCM × Modern Rigor Methodology Lens (Stub)
+# H04 — TCM evidence qualification as a gout-exploit discovery method
 
-> **Evidence status:** stub. Assumptions, pre-committed thresholds, kill switches, and failure-mode coverage remain incomplete; see [TCM × modern rigor](../tcm-modern-rigor-intersection.md).
->
-> The pre-registration note on H01 ([H01-ward-dual-cassette.md](./H01-ward-dual-cassette.md) §Pre-registration) does not apply until this stub is upgraded to a full card. When the upgrade happens, the upgraded version is what gets pre-registered; the stub is informational scaffolding only.
+> **Evidence status:** Stub. This is a hypothesis about research method performance, not an efficacy claim for any material or formula.
 
----
+## Provisional claim
 
-## Claim (provisional, stub-level)
+A workflow that combines multilingual traditional-name discovery with primary-evidence records preserving material identity, target-effect polarity, assay context, exposure, and function will produce at least one non-obvious, falsifiable gout-exploit hypothesis that would be missed by either:
 
-The methodology lens defined in [`tcm-modern-rigor-intersection.md`](../tcm-modern-rigor-intersection.md) — six-rule discipline of (1) mechanism-mapped to chokepoints, (2) ChEMBL cross-checked, (3) bioavailability-honest with explicit gut-luminal embrace, (4) formula-decomposed for designed-coverage analysis, (5) standardized-extract-specified, (6) falsification-card-disciplined — produces **actionable, gout-relevant findings** beyond what either reductionist single-compound analysis (which loses the multi-component design) or holistic "alternative medicine" framings (which lose the rigor) produce in isolation.
+- database-only compound aggregation; or
+- formula-level efficacy summaries without component and target attribution.
 
-The "actionable" bar is operationalized as one or more of:
+The output must be more than a larger catalog. A useful success is a grounded connection with a discriminating experiment and a clear decision boundary.
 
-1. **Mechanistically-grounded compound recommendations** that survive ChEMBL cross-check at biologically achievable concentrations and map cleanly to a named chokepoint (NLRP3, ABCG2, URAT1, etc.).
-2. **Multi-component formula decompositions** that surface designed-coverage patterns (different components hitting different chokepoints) that justify the formula structure beyond folk tradition.
-3. **Falsification-card-grade hypotheses** for specific TCM-derived interventions (Smilax glabra as koji-payload candidate; Si Miao San as allopurinol adjunct; etc.) with pre-committed kill thresholds.
-4. **Cross-domain insights** — e.g., a TCM compound's classical "damp-heat" indication mapping onto a specific modern chokepoint (XO + ABCG2 modulation) suggests other "damp-heat" herbs in the same classical category may share the mechanism — testable hypothesis.
+## What counts as a success
 
-The thesis is **gated on multilingual evidence coverage** across Chinese-language clinical literature, ChiCTR, Japanese Kampo sources, and Korean traditional-medicine sources. English-language indexing alone is insufficient to evaluate this hypothesis.
+At least one bounded case must meet all of these conditions:
 
----
+1. the source material and primary record are verified;
+2. the gout weakness and effect polarity are explicit;
+3. the novel connection is not presented as established fact;
+4. the cheapest experiment could advance, redirect, or kill the connection;
+5. the result changes a research decision: which evidence to collect, which assay to run, or which combination to test.
 
-## Assumption Stack (placeholder — to be populated in Phase 2 P2-5)
+A compound recommendation, human dose, formula priority, or production chassis is not required and cannot be inferred from method success.
 
-The full assumption stack will be populated after the Phase 2 lit scans (P2-1 classical formulas, P2-3 Smilax glabra deep-dive, P2-4 Si Miao San decomposition, P2-6 bioavailability characterization) and comp-013 (P2-2 ChEMBL cross-check) land. Anticipated load-bearing assumptions:
+## Load-bearing assumptions
 
-1. The chokepoint map ([`nlrp3-exploit-map.md`](../nlrp3-exploit-map.md), [`gout-pathophysiology.md`](../gout-pathophysiology.md)) is granular enough to capture TCM compound mechanisms (vs. forcing them into mismatched modern categories)
-2. ChEMBL's curated bioactivity dataset has sufficient coverage of TCM-relevant compounds (many natural products are sparsely curated in ChEMBL relative to medicinal-chemistry-derived compounds — this is documented in `etc/chembl-cross-check.md`)
-3. Modern Chinese clinical trial literature (ChiCTR registry) is sufficient quality to update wiki evidence tiers (Chinese RCTs have heterogeneous quality; this is empirically verifiable)
-4. The "embrace gut-luminal mechanisms" reframe (rule #3) actually predicts therapeutic effect for low-bioavailability TCM compounds rather than merely relocating an exposure assumption. Comp-004 does not validate nominal gut-concentration/IC50 occupancy: local free exposure, stability, assay context, and the mechanism-matched functional endpoint must be measured.
-5. The "designed coverage" interpretation of multi-component formulas (rule #4) is biologically defensible vs. being modern bias projection onto historical practice. Formula decomposition needs to falsify this too.
-6. The methodology can be applied rigorously across enough compounds to surface non-obvious findings rather than merely expanding a catalog
+1. Traditional names, formula names, species names, and traditional pathology terms retrieve relevant evidence that mechanism-only searches miss.
+2. Primary records contain enough material and assay detail to prevent compound, extract, and formula evidence from being merged.
+3. Preserving effect polarity and endpoint type prevents an off-target or expression signal from being counted as a favorable functional mechanism.
+4. Local-delivery hypotheses remain testable when free exposure and mechanism-matched function are measured rather than inferred from poor absorption.
+5. Formula decomposition can distinguish a real interaction from redundant ingredients or modern retrospective storytelling.
 
----
+## Killshot menu
 
-## Killshot Menu (placeholder — to be populated in Phase 2 P2-5)
+- **No added insight:** a bounded sample produces no new testable connection or decision beyond what the source papers already state.
+- **Material irreproducibility:** the relevant extract or formula cannot be compositionally standardized enough to reproduce the claimed signal.
+- **Mechanism collapse:** direct function, exposure, or attribution tests fail for the proposed target under the relevant tissue and substrate conditions.
+- **Formula interaction failure:** a standardized full formula does not outperform components and declared combinations under the prespecified additivity model.
+- **Search-frame failure:** traditional-name and original-language queries add no relevant primary evidence beyond mechanism-only searches in a preregistered comparison.
 
-Full killshot menu follows the H01 / H02 / H03 template. Anticipated highest-priority killshots:
+Failure narrows the method or the tested lead. It does not imply that TCM-derived materials as a class are active or inactive.
 
-- **Lit scan + ChEMBL cross-check first** (Phase 2 P2-1 + P2-2). Cheapest move. If the systematic ChEMBL cross-check of the 8 candidate gout compounds reveals that most have NO curated bioactivity at biologically achievable concentrations against any chokepoint, the methodology lens produces nothing actionable — kill.
-- **Si Miao San decomposition outcome** (P2-4). If decomposition reveals all four herbs hit the same chokepoint (redundant rather than designed-coverage), the "formula decomposition surfaces designed coverage" claim weakens substantially.
-- **Smilax glabra clinical evidence quality assessment** (P2-3). If Chinese-language modern clinical literature on Smilax glabra is uniformly low-quality (small n, no controls, no hard endpoints), the "modern Chinese clinical trial literature is sufficient quality" assumption fails.
-- **Cross-validation against existing wiki TCM-lineage compounds** (oridonin, berberine, EGCG, theaflavins, curcumin, resveratrol). For each, retroactively apply the six-rule discipline. If the discipline produces no new insight beyond what the existing pages already capture, the methodology lens doesn't add value over the existing per-compound treatment.
+## Current test path
 
----
-
-## Pre-Committed Thresholds (placeholder — to be populated in Phase 2 P2-5)
-
-To be defined when the killshot menu is populated. Anticipated structure follows H01: declared Alive / Killed / Pending thresholds for each load-bearing claim.
-
----
-
-## Failure Modes Probed (placeholder — to be populated in Phase 2 P2-5)
-
-To be populated. Anticipated relevant failure modes from [linter-design.md](../linter-design.md) §5: published-literature-gap, training-distribution bias (Western-research bias in the corpus), evidence-tier inflation (overstating "Animal Model" claims as "Supported" because TCM has long traditional use), the alternative-medicine-washing failure mode (modern-language dressing without underlying rigor — rule #6's discipline is the guard).
-
-**ChEMBL-coverage-gap failure mode:** comp-013's "5/9 compounds had no ChEMBL data" result partly reflected seed-list construction at the herb level rather than formula + marker level. Traditional-name and formula queries recovered curated entries for mangiferin, apigenin, and acteoside. Rule #2 survives, but the seed-list method must use the four-framing query matrix in [`manual-literature-mining.md`](../etc/manual-literature-mining.md).
-
----
+- [COMP-013](../tcm-gout-compound-triage-computational.md) is invalidated and cannot test H04.
+- [COMP-049](../etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/) is the pre-run mixed-source evidence-qualification replacement. It tests record fidelity, simultaneous gap detection, and experiment routing—not whether H04 is true.
+- The [formula Research Conjecture](../tcm-modern-rigor-intersection.md#formula-decomposition-without-inventing-synergy) supplies one candidate connection for a later factorial experiment.
 
 ## Status
 
-**Stub.** No killshot executed. No assumption stack pre-registered. Full hypothesis card is queued as Phase 2 P2-5 — see [tcm-modern-rigor-intersection.md § Open Follow-Ups](../tcm-modern-rigor-intersection.md#open-follow-ups).
-
-**Survival count:** 0.
-
-**Survival score:** 0.0 (undefined until full card and first survived killshot).
-
----
-
-## Cross-References
-
-- [tcm-modern-rigor-intersection.md](../tcm-modern-rigor-intersection.md) — the track this hypothesis formalizes
-- [modality-chokepoint-matrix.md](../modality-chokepoint-matrix.md) — the chokepoint framework the lens applies across
-- [chembl-cross-check.md](../etc/chembl-cross-check.md) — the cross-check discipline (rule #2)
-- [supplement-abcg2-antagonism-computational.md](../supplement-abcg2-antagonism-computational.md) (comp-004) — evidence that nominal gut-concentration/drug-substrate-IC50 occupancy cannot substitute for context-matched functional testing
-- [engineered-lbp-chassis.md](../engineered-lbp-chassis.md), [sirna-urat1-modality.md](../sirna-urat1-modality.md) — sister peer-track scope pages under chase-every-avenue
-- [linter-design.md](../linter-design.md) — schema for the Falsification Card format
-- [H01](./H01-ward-dual-cassette.md), [H02](./H02-engineered-lbp-thesis.md), [H03](./H03-sirna-urat1-thesis.md) — sibling falsification cards
+**Stub.** No H04 killshot has been executed. Survival count remains 0.

@@ -53,7 +53,7 @@ The reusable authoring form is [track-template.md](./etc/track-template.md).
 | Engineered live biotherapeutics | [H02](./hypotheses/H02-engineered-lbp-thesis.md), [LBP chassis](./engineered-lbp-chassis.md) | Host engineering, colonization, containment, and regulatory path are track-local |
 | URAT1 siRNA | [H03](./hypotheses/H03-sirna-urat1-thesis.md) | Target accessibility, renal delivery, off-targets, and durability are track-local |
 | Complement/DAF | [H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) | Payload validity and delivery to the relevant compartment are track-local; complement biology informs other tracks |
-| Medicinal mushrooms | [H06](./hypotheses/H06-medicinal-mushroom-complement-track.md) | Extract identity, standardization, exposure, and assay validity are track-local |
+| Medicinal mushrooms | [Exact-material conjecture](./medicinal-mushroom-complement-track.md#research-conjecture--a-reproducible-medicinal-fungal-material-may-expose-a-gout-weakness) | Extract identity, standardization, exposure, and assay validity are track-local |
 | TCM × modern rigor | [H04](./hypotheses/H04-tcm-rigor-intersection.md) | Formula identity, trial quality, active constituents, and exposure are track-local |
 
 This index is not a ranking. Current priorities belong in the dashboard and may change as evidence changes.

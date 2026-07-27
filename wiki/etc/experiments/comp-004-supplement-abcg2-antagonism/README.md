@@ -25,7 +25,7 @@ Accordingly, the nominal ratios, percent-inhibition estimates, and VERY_HIGH lab
 
 `inputs/assay_evidence.json` contains one primary-source-bounded record for each compound. It is a bounded correction set, not a systematic or multilingual literature census. The code:
 
-1. validates the schema, exact compound set, controlled vocabularies, Boolean fields, substrates, and structured source identifiers;
+1. validates the schema, exact compound set, controlled vocabularies, Boolean fields, substrates, and nonempty source-metadata fields; it does not validate identifier syntax or source contents;
 2. assigns `DIRECT_INTESTINAL_URATE_FLUX_ASSAY_REQUIRED` when the cited record does not establish intestinal urate flux;
 3. assigns the contrary disposition `DIRECT_URATE_EVIDENCE_PRESENT_REVIEW_REQUIRED` if an updated record reports direct intestinal urate-flux evidence;
 4. emits explicit reasons and `quantitative_risk_rank_allowed: false`;

@@ -1,4 +1,8 @@
 {
+  "historical_snapshot": true,
+  "non_authoritative": true,
+  "lead_only": true,
+  "_authority_note": "Historical derived output. Retain source identifiers and rows only as retrieval leads; counts, coverage, joins, ranks, verdicts, recommendations, exposure, safety, production, delivery, and chassis implications have no current authority.",
   "_meta": {
     "date": "2026-05-06",
     "phase": "3a (intersection: LOTUS InChIKey-based fungal compounds × ChEMBL bioactivity by canonical SMILES)",

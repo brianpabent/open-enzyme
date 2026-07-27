@@ -60,7 +60,7 @@ The hypothesis under test (from [`complement-c5a-gout.md`](../../wiki/complement
 | Candidate | CFH-dependence | Confidence | Model A Y402H direction | Model B Y402H direction |
 |---|---|---|---|---|
 | Rosmarinic acid | CFH-independent | High | negative (effect ≥ in carriers) | null |
-| Luteolin | CFH-independent | Medium | negative (effect ≥ in carriers, with multi-mode confound) | null |
+| Luteolin | CFH-independent | Medium | negative (effect ≥ in carriers, with mechanism-site uncertainty) | null |
 | HCP / HCPM / CHCP | CFH-independent | High | negative, possibly notably greater (dual CP0+CP1) | null |
 | Helicteres benzofuran lignans | CFH-independent | Medium (replication-bounded) | negative (wide uncertainty bands; non-dietary) | null |
 

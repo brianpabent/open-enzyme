@@ -1,3 +1,7 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 # comp-014 Phase 2 — Headline findings (2026-05-06)
 
 Phase 2 ran three parallel passes against the chokepoint inventory. Each pass produced its own structured output; this file is the human-facing synthesis.

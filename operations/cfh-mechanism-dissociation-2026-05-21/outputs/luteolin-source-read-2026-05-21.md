@@ -32,15 +32,15 @@ Luteolin's mechanism is **not pinned to a specific site** in the surveyed primar
 
 Neither mechanism category implies dependence on a functional CFH-CRP-GAG bridging step. The AMD analog mechanism (zinc + CRP + functional CFH) requires the zinc-induced complement-inactivation pathway, which is specific to AREDS/DHA pharmacology and not characteristic of polyphenol direct-binding complement inhibition.
 
-**Counter-consideration:** luteolin is documented elsewhere (per comp-013) to be a multi-mechanism gout-relevant compound — XO IC50 550 nM, URAT1 expression downregulation. The complement-inhibition activity is one of several modes. A potential indirect CFH-coupling: if luteolin reduces upstream urate production (XO inhibition) and reduces urate reabsorption (URAT1 downregulation), serum urate falls, MSU crystallization risk drops — and the complement activation that CFH would normally regulate is itself diminished. This is **upstream of complement entirely** for the urate-axis mode of action; the complement-axis mode is plausibly CFH-independent at the C3 convertase level.
+**Urate-axis boundary:** The former COMP-013 XO potency and URAT1 attribution are invalid and cannot establish a parallel luteolin mechanism. This read therefore supports only the bounded complement interpretation below. Any urate-production or urate-transport claim requires separate primary-source qualification and mechanism-matched evidence.
 
 ## Classification
 
 **CFH-dependence: CFH-INDEPENDENT (Medium confidence).**
 
-Lower confidence than rosmarinic acid because: (a) the primary literature does not pin the binding site at single-residue resolution; (b) the broad CP+AP activity could in principle include weak CFH-binding-surface effects. But the dominant evidence points to convertase-level inhibition (CFH-independent), the AMD-paradox mechanism (zinc-CRP-CFH bridging) is specific to AREDS pharmacology, and luteolin has multiple non-complement modes that further dissociate its gout-relevant effect from CFH function.
+Lower confidence than rosmarinic acid because: (a) the primary literature does not pin the binding site at single-residue resolution; (b) the broad CP+AP activity could in principle include weak CFH-binding-surface effects. The available complement evidence points toward convertase-level inhibition (CFH-independent), while the AMD-paradox mechanism (zinc-CRP-CFH bridging) is specific to AREDS pharmacology.
 
-**Predicted Y402H × luteolin × incident gout interaction:** **negative direction (effect ≥ in carriers)** — predicted by mechanism, but with wider uncertainty than rosmarinic acid because of (a) mechanism ambiguity and (b) the multi-mode nature of luteolin's gout-relevance. **Falsification threshold:** UK Biobank candidate-stratified cross-tab HR > 1.4 (Y402HH × luteolin-rich diet vs Y402YY × luteolin-rich diet) would warrant retiring luteolin from the CFH-bypass upstream-CP0 candidate set.
+**Predicted Y402H × luteolin × incident gout interaction:** **negative direction (effect ≥ in carriers)** — predicted from the complement interpretation, with wider uncertainty than rosmarinic acid because the mechanism site is ambiguous. **Falsification threshold:** UK Biobank candidate-stratified cross-tab HR > 1.4 (Y402HH × luteolin-rich diet vs Y402YY × luteolin-rich diet) would warrant retiring luteolin from the CFH-bypass upstream-CP0 candidate set.
 
 **Confidence:** Medium. Mechanism-site evidence is at "broad CP+AP inhibition" granularity, not C3b-thioester or convertase-active-site granularity.
 
@@ -52,7 +52,7 @@ Lower confidence than rosmarinic acid because: (a) the primary literature does n
 
 - Luteolin binding site at single-residue resolution is unresolved in the surveyed primary literature.
 - Bioavailability of dietary luteolin is reportedly low (chrysanthemum, celery, parsley sources); the operative tissue concentration in a gout flare context is unknown.
-- Convergence with XO + URAT1 modes makes a clean "luteolin × CFH × gout" effect-size estimate difficult: a UKB cross-tab measuring luteolin-diet × Y402H × gout would be confounded by all three mechanisms. **Recommend cross-tabbing against celery/parsley/Apiaceae diet specifically + 24h-urate as an intermediate readout** to separate the complement-mode from the urate-axis mode (operational note for the UKB collaborators).
+- The surveyed complement sources do not establish any parallel urate-production or urate-transport mode. A genotype-by-exposure analysis must therefore remain complement-specific unless separate primary evidence qualifies another mechanism.
 
 ## Evidence-tier summary
 

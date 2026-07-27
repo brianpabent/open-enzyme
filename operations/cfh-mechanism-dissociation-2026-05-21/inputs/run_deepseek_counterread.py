@@ -109,7 +109,7 @@ Key results: luteolin tested in matched sheep-erythrocyte (CP, guinea pig serum)
 
 (2) Pieroni A et al. In vitro anti-complementary activity of flavonoids from olive (Olea europaea L.) leaves. Farmaco 1996;51(11):765-8. PMID 8941947. Class-level convergence.
 
-Additional context: luteolin is documented elsewhere (comp-013) to be XO IC50 = 550 nM and downregulates URAT1 expression - it has multiple gout-relevant modes beyond complement.
+Additional context boundary: COMP-013 is invalidated and cannot supply an XO potency, URAT1 attribution, or multi-mechanism gout conclusion for luteolin. Evaluate only the complement records supplied here; any urate-axis mechanism requires separate primary-source qualification.
 
 Structural context: CFH Y402 sits in Sushi/CCP 7 (residues 387-444 of P08603). CCP6-8 is the canonical CRP-binding + host-GAG-binding surface. The AMD-paradox mechanism (AREDS-zinc + DHA) operates via zinc-induced complement inactivation that requires CFH-CRP-bridging which Y402H performs poorly.
 

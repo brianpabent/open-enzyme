@@ -78,7 +78,7 @@ See [purine-degrading bacteria](./purine-degrading-bacteria.md), [engineered LBP
 
 Cultivation, dietary occurrence, or commercial availability does not establish composition, free exposure, efficacy, safety, or regulatory status. Characterize the exact material and test individual mechanisms before a combination. A combination study must prespecify the interaction null and measure exposure, target engagement, efficacy, and new safety liabilities for the exact pair.
 
-See [medicinal mushroom track](./medicinal-mushroom-complement-track.md), [TCM rigor track](./tcm-modern-rigor-intersection.md), [supplements evidence catalog](./supplements-stack.md), and [validation §2.6](./validation-experiments.md#26-glpp--cordycepin-interaction-in-hyperuricemia--matched-wet-lab-gate-phase-7-4-stub).
+See [medicinal mushroom track](./medicinal-mushroom-complement-track.md), [TCM rigor track](./tcm-modern-rigor-intersection.md), [supplements evidence catalog](./supplements-stack.md), and [validation §2.6](./validation-experiments.md#26-glpp--cordycepin-interaction-in-hyperuricemia--matched-wet-lab-gate).
 
 ### RNA, editing, and targeted delivery
 

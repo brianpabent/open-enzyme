@@ -1,260 +1,113 @@
 ---
-title: "Traditional Chinese Medicine × Modern Scientific Rigor — Discovery-Engine Lens"
+title: "TCM-Derived Gout Leads — Evidence Qualification and Experiment Design"
 date: 2026-05-05
 tags:
   - traditional-chinese-medicine
   - tcm
-  - empirical-prior
-  - chokepoint-mapping
-  - bioavailability
-  - gut-luminal
-  - chembl-cross-check
-  - discovery-engine
-  - non-fermentable
-  - peer-track
-  - platform-strategy
-  - first-principles
+  - gout
+  - hyperuricemia
+  - primary-evidence
+  - research-conjecture
+  - multilingual
 related:
-  - modality-chokepoint-matrix.md
-  - etc/chembl-cross-check.md
-  - oridonin.md
-  - egcg.md
-  - theaflavins.md
-  - supplements-stack.md
-  - nlrp3-inhibitor-screen.md
-  - engineered-lbp-chassis.md
-  - sirna-urat1-modality.md
-  - etc/open-enzyme-vision.md
-  - open-questions.md
-  - ../synthesis/README.md
+  - tcm-gout-compound-triage-computational.md
+  - abcg2-modulators.md
+  - gout-pathophysiology.md
+  - validation-experiments.md
   - hypotheses/H04-tcm-rigor-intersection.md
-  - ../operations/ward-1995-lab-access.md
 sources:
-  - "Yang Y, Cao Y, Wu Y, et al. Si Miao Wan in hyperuricemia / gout meta-analyses (Chinese clinical trials, ChiCTR registry)"
-  - "Li S, Wang Z, Chen S, et al. Smilax glabra (Tu Fu Ling) and gout — modern biochemical and clinical reviews"
-  - "Stone TW, Roberts LA, Morris BJ, et al. ChEMBL bioactivity curation as cross-check for natural-product mechanism claims"
-  - "Pan SY et al. Pharmacological Research 2014 PMID 24295976 — TCM compound bioavailability landscape"
-status: scope-page
+  - "Huang L, Deng J, Chen G, et al. doi:10.1016/j.jep.2019.03.004 (PMID 30851369)"
+  - "Hou SW, Chen SJ, Shen JD, et al. doi:10.3390/ph16060789 (PMID 37375737; PMC10304951)"
+  - "Wu G, et al. doi:10.3390/nu17101679 (PMC12114407)"
+  - "Liu T, et al. doi:10.3390/ijms25158548 (PMC11313179)"
+  - "Liu YF, Huang Y, Wen CY, et al. doi:10.1155/2017/6037037 (PMID 28373889; PMC5360963)"
+status: evidence-page
 ---
 
-# Traditional Chinese Medicine × Modern Scientific Rigor — Discovery-Engine Lens
+# TCM-derived gout leads
 
-This is a **methodology lens**, not a single chassis or mechanism; it applies across compounds, formulas, and gout chokepoints.
+Traditional-use and formula records can expose candidate weaknesses in gout across urate production, renal and intestinal transport, and inflammation. They are a lead-generation surface, not a validated priority order or a delivery modality.
 
----
+The current evidence is heterogeneous. Several useful records are animal models of extracts or mixtures; one formula-level systematic review reports a human signal but also rates most included trials as low quality. None of these records, by itself, establishes a compound rank, standardized dose, component-level causality, human efficacy, or a production chassis.
 
-## Research lens
+## Mixed-source evidence lead map
 
-The corpus contains compounds with TCM lineage: **oridonin** (`oridonin.md`) from *Rabdosia rubescens* (冬凌草), **berberine** from *Coptis chinensis* (黄连), **EGCG** (`egcg.md`) from green tea (绿茶), **theaflavins** (`theaflavins.md`) from black tea, **curcumin** from turmeric (姜黄), and **resveratrol** from *Polygonum cuspidatum* (虎杖, Hu Zhang). Traditional lineage is useful as a hypothesis-discovery route, while each modern mechanism and efficacy claim still requires its own evidence.
+| Material | Gout weakness touched | What the cited source supports | What remains open |
+|---|---|---|---|
+| *Smilax glabra* total-flavonoid fraction containing four astilbin stereoisomers | Urate production and renal excretion | In potassium-oxonate hyperuricemic mice, the fraction lowered serum urate, reduced hepatic xanthine-oxidase activity in one treatment group, and increased renal OAT1 and OCTN2 expression. **Animal Model**; Huang et al., PMID 30851369. | The verified abstract does not establish astilbin as the causal material, free exposure, direct renal function, or transporter flux. |
+| Emodin | Renal urate excretion | In a rat hyperuricemia model, emodin lowered serum urate in the reported treatment groups and increased fractional urate excretion; hepatic xanthine-oxidase activity did not change. **Animal Model**; Hou et al., PMID 37375737. | The causal renal transporter and relevant exposure were not measured. |
+| Coix seed oil | Urate production, renal excretion, and intestinal excretion | In hyperuricemic mice, coix seed oil lowered serum urate and changed hepatic enzyme activities plus renal and intestinal urate-transporter expression, including increased ABCG2 expression. **Animal Model**; Wu et al., PMC12114407. | Expression is not ABCG2-attributed urate flux. The active oil component, free epithelial exposure, and human effect are unresolved. |
+| *Plantaginis Semen* extract | Urate production and renal reabsorption | In hyperuricemic rats, the extract lowered serum urate, changed a serum XOD ELISA-associated signal, reduced renal Urat1 and Glut9 mRNA, and reduced URAT1 protein. The ELISA signal does not establish catalytic xanthine-oxidase activity. **Animal Model**; Liu et al., PMC11313179. | Serum-borne components were identified, but no single component was shown to cause the transporter or phenotype result. |
+| Modified Simiao decoction family | Serum urate and gout inflammation | A secondary systematic review reported formula-level serum-urate and inflammation signals across randomized trials. **Clinical Trial** evidence reported by a **Secondary Review**; Liu et al., PMID 28373889. | The underlying trials have not been independently rehydrated here, and most were rated low quality. Formula variation, component attribution, target attribution, exposure, and any synergy remain unresolved. |
 
-As a **discovery-engine output**, this lens combines chokepoint-mapped compound analysis, database cross-checks, primary-source review, and falsification cards. Findings can then be evaluated by clinical researchers, compound developers, or other contributors without presuming that they belong in a microbial chassis.
+These are unranked leads. A favorable animal phenotype is not evidence that the named target caused it, and a formula-level clinical signal is not evidence that any one component—or a proposed interaction among components—caused the result.
 
-Traditional-use records can supply hypothesis-generating priors; they are not substitutes for controlled evidence. Modern mechanistic biology and primary-source review can test which signals survive measurement, identify confounding, and define experiments that would falsify the proposed connection.
+## Evidence record required before prioritization
 
----
+Every natural-product or formula lead should preserve:
 
-## The discipline — what "TCM × modern rigor" actually means
+- exact material: isolated compound, standardized fraction, extract, or formula;
+- source species and formula context;
+- primary source and verified location;
+- gout weakness and target or endpoint;
+- effect polarity: increase, decrease, no change, mixed, or unknown;
+- assay type, tissue, species, substrate, and exposure time;
+- evidence level;
+- whether the endpoint is expression, direct function, whole-animal phenotype, or clinical biomarker;
+- measured free parent and metabolite exposure in the relevant compartment;
+- component and target attribution;
+- barrier integrity and viability controls for intestinal assays.
 
-Six rules. Applied to every TCM compound, formula, or claim that enters the wiki under this lens.
+ChEMBL and similar databases are useful for locating curated assay records, but database absence is not biological evidence. Natural-product searches should also use species and original-language names, traditional formula names, and traditional pathology terms. The literature scan supplies the evidence records; a COMP may then validate and route a fixed set without silently changing their meaning.
 
-### 1. Mechanism mapping (chokepoint-grounded)
+## Exposure and delivery
 
-Every TCM compound that enters the wiki must be mapped to a specific chokepoint in the modern map ([`nlrp3-exploit-map.md`](./nlrp3-exploit-map.md), [`gout-pathophysiology.md`](./gout-pathophysiology.md)) — NLRP3 (CP0 through CP6b), ABCG2 (gut + renal), URAT1, GLUT9, XO (xanthine oxidase), or a named adjacent target. Compounds that can't be mapped get tagged Mechanistic Extrapolation (which is honest — "we don't yet know how this works at the molecular level") rather than dressed up with vague "anti-inflammatory" claims.
+Poor systemic bioavailability does not establish useful gut exposure. A local intestinal hypothesis must measure free parent compound and relevant metabolites at the epithelial surface, preserve the tested substrate and tissue context, and demonstrate mechanism-matched function without barrier injury or nonspecific toxicity.
 
-### 2. ChEMBL cross-check (curated bioactivity, not folk claim)
+Delivery follows the evidence:
 
-Every claimed mechanism gets cross-checked against ChEMBL's curated bioactivity data per [`etc/chembl-cross-check.md`](./etc/chembl-cross-check.md). This is the discipline that already produced the Open Enzyme corpus's most useful surprises:
+- an isolated compound may be purified, synthesized, or formulated;
+- a fraction or extract requires compositional standardization and batch release assays;
+- a formula requires ingredient and preparation control plus component-attribution work;
+- a microbial or fungal chassis becomes relevant only if it improves a defined exposure or production constraint.
 
-- **Berberine's most-potent ChEMBL bioactivity is TDO (tryptophan 2,3-dioxygenase) at 30 nM, not NLRP3.** Berberine's NLRP3-pathway claim is via NF-κB / TLR4 modulation — real, but indirect.
-- **Resveratrol's most-potent ChEMBL bioactivity is DPP-4 at 0.6 nM, not SIRT1.** The SIRT1 / NF-κB story rests on mechanism rather than potency.
-- **EGCG's most-potent ChEMBL bioactivity is 20S proteasome at 86 nM** — upstream of NF-κB, but functionally relevant to NLRP3 priming.
+No chassis is the default screen for these leads.
 
-Each cross-check tightens the mechanism story and surfaces non-obvious off-targets that classical TCM didn't have language for. **The bar:** if a claimed mechanism has no curated ChEMBL bioactivity at biologically achievable concentrations, the claim is Mechanistic Extrapolation, not Supported.
+## Formula decomposition without inventing synergy
 
-### 3. Bioavailability honesty — embrace gut-luminal mechanisms
+A multi-component formula can be tested as a system without assuming that it was deliberately optimized for modern molecular chokepoints.
 
-Poor systemic bioavailability can motivate a local gut hypothesis, but it does not establish high free exposure at the relevant intestinal surface. Dissolution, chemical stability, metabolism, binding, gut segment, residence time, and formulation determine whether parent compound or metabolites reach a local target.
+> **Research conjecture — Some formula effects may depend on complementary urate-axis coverage**{ .research-conjecture-label }
+>
+> **Grounded premises:** Modified Simiao decoction trials supply a formula-level human signal, although most included trials were low quality (**Clinical Trial** review; PMID 28373889). Separate animal records for coix seed oil and other TCM-derived materials touch urate production and transport through different measured endpoints (**Animal Model**; PMC12114407 and the primary records above). Formula-level evidence does not establish component or synergy attribution.
+>
+> **Novel leap:** A standardized formula may produce a larger or more durable effect because different components engage complementary urate-production, transport, exposure, or inflammation constraints. No direct evidence currently establishes that interaction.
+>
+> **Why it matters:** A real interaction could reveal a combination exploit that single-compound cataloguing misses.
+>
+> **Discriminating observation:** Compare a composition-verified full formula with each component and prespecified combinations in a factorial design. Measure free exposures, xanthine-oxidase activity, renal transporter function, intestinal ABCG2-attributed urate flux where relevant, inflammatory endpoints, barrier integrity, and toxicity. Advance the interaction only if the combination exceeds a declared additivity model and the effect reproduces across batches.
 
-A gut-luminal mechanism is credible when it specifies and tests:
+## Cheapest discriminating work
 
-- free parent compound and relevant metabolites in the proposed compartment;
-- chemical and microbial stability over the exposure window;
-- the correct intestinal cell or microbial context;
-- target engagement and a mechanism-matched functional endpoint;
-- a result that cannot be explained by barrier injury or nonspecific toxicity.
+1. Complete primary-source evidence records before adding another score.
+2. Characterize the actual material: identity, composition, stability, and batch variance.
+3. Use the assay matched to the proposed weakness:
+   - xanthine-oxidase activity for a production claim;
+   - polarized transporter flux with attribution controls for a transport claim;
+   - serum urate and fractional urate excretion only as whole-animal outcomes, not target proof;
+   - MSU-triggered inflammatory assays for a flare-mechanism claim.
+4. For formulas, compare full formula, single components, and declared combinations rather than inferring coverage from ingredient lists.
+5. Redirect or kill only the tested attribution or exposure regime. Keep a source material as a lead when a neighboring mechanism remains untested.
 
-This keeps local mechanisms fully available to the portfolio without laundering poor absorption into presumed target engagement. **The bar:** name the gut-versus-systemic hypothesis, measure the relevant exposure, and test function directly.
+## Current computational status
 
-[Comp-004](./supplement-abcg2-antagonism-computational.md) demonstrates the failure mode: nominal bulk gut concentration divided by a drug-substrate IC50 did not support a quantitative intestinal urate-transport conclusion.
+[COMP-013](./tcm-gout-compound-triage-computational.md) is an invalidated tombstone. Its nine names survive only as an unranked historical lead inventory; its ranks, viability labels, occupancy calculations, exposure estimates, and advancement decisions do not.
 
-### 4. Formula decomposition (designed coverage vs. redundancy)
+[COMP-049](./etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/) is the pre-run mixed-source evidence-qualification design. It is intended to preserve the evidence fields above, expose simultaneous gaps, and route records without producing another viability score. It has not produced results.
 
-Classical TCM uses multi-herb decoctions — typically 5-15 components per formula for chronic conditions. The classical Si Miao San (四妙散) for gout / damp-heat Bi syndrome is a four-herb formula. The classical Bai Hu Jia Gui Zhi Tang has eight-plus components. Modern reductionism wants to extract the "active ingredient." But TCM formulators were doing **chokepoint coverage by design** — different herbs hitting complementary mechanisms.
+## Related
 
-**The bar:** when a TCM formula enters the wiki, decompose it. Map each component to its chokepoint(s). Identify whether the formula's design is:
-
-- **Designed coverage** — components hit different chokepoints (truly multi-mechanism therapy)
-- **Redundant** — components hit the same chokepoint (one is doing the work; others are tradition or buffer)
-- **Synergistic in a specific way** — one component improves the bioavailability or efficacy of another (verifiable mechanistically)
-
-This decomposition is exactly the same analytical structure as [`koji-endgame-strain.md`](./koji-endgame-strain.md) §1 coverage matrix — naming which chokepoints each payload hits.
-
-### 5. Standardization (defined extracts, not raw herb)
-
-Wild-collected TCM herbs vary 10–100× in active-compound content depending on growing region, season, age, drying method, storage. Modern rigor requires defined extracts with documented active-compound concentrations. **The bar:** any TCM-derived intervention proposed to the wiki specifies the standardized extract (e.g., Theracurmin, NovaSOL micellar curcumin, oridonin from a defined Rabdosia extract) or notes "standardization is unresolved" as an open question.
-
-#### 5a. TCM extract characterization SOPs
-
-Rule #5 above sets the bar; this subsection fills the operational gap by adapting the four-tier framework from [`medicinal-mushroom-extract-sops.md` SOP-6](./medicinal-mushroom-extract-sops.md) (which itself adapts [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md)) to TCM compound classes. The pattern is the same: kitchen → smartphone colorimetry → bench HPLC → outsourced GMP-grade, with the **calibrate-once-at-Tier-3, track-batches-at-Tier-1/2** discipline that makes home-feasibility tractable for any open-source contributor.
-
-**Tier table — comp-013 priority compounds:**
-
-| Compound | TCM source | Tier 1 (kitchen, ~$0) | Tier 2 (smartphone colorimetry, ~$50) | Tier 3 (bench HPLC, ~$2K) | Tier 4 (outsourced GMP) |
-|---|---|---|---|---|---|
-| **Luteolin** | *Lonicera japonica* (金银花), *Achyranthes bidentata* (牛膝); also dietary (parsley, celery, peppers) | Visual + dosing-by-known-extract-ratio against a Tier 3 calibrated batch | **AlCl₃ colorimetric flavonoid assay** (~415 nm yellow). Well-established for total flavonoids; **caveat: NON-SELECTIVE** — quantifies total flavonoids, not luteolin specifically. Useful as batch-to-batch consistency check ("this batch is in the same flavonoid ballpark as the calibrated reference"); not as luteolin-specific quantification. Rutin equivalents the standard expression. | HPLC-DAD with luteolin reference standard (Sigma L9283). Calibration curve at 350 nm. The load-bearing Tier-3 assay. | Outsourced GMP-grade HPLC if regulatory submission ever needed |
-| **Astilbin** | *Smilax glabra* (土茯苓) — the canonical PO-HUA-model gout indication compound per [comp-013](./tcm-gout-compound-triage-computational.md) | Visual + dosing-by-known-extract-ratio | **AlCl₃ colorimetric** (astilbin is a flavanonol — same chemistry; same caveat) OR **Folin-Ciocalteu total phenolics** (~765 nm); both are non-selective for astilbin specifically. Use as consistency check, not quantification. | HPLC-DAD with astilbin reference standard (Sigma SMB00478 or equivalent); 290 nm detection. **The load-bearing assay for the comp-013 astilbin claim.** | Outsourced GMP-grade |
-| **Emodin** | *Rheum officinale* (大黄), *Polygonum cuspidatum* (虎杖) | Visual + extract-ratio | **Bornträger reaction** (emodin is an anthraquinone — alkaline solution turns red, ~520 nm). Smartphone-readable, well-established. **Caveat: total anthraquinones** — co-extracted aloe-emodin, chrysophanol, rhein all give signal. | HPLC-DAD with emodin reference standard; 254/450 nm detection (anthraquinones absorb at both UV and visible) | Outsourced GMP-grade |
-| **Berberine** | *Coptis chinensis* (黄连), *Phellodendron chinense* (黄柏) | Visual (yellow color of crude extract is itself partially indicative) + dosing-by-known-extract-ratio | **Dragendorff reagent colorimetric** (orange precipitate with alkaloids, ~470 nm in TLC-densitometry) OR direct UV at 345 nm (berberine has a distinctive UV-Vis spectrum). **Caveat — alkaloid total** — berberine + palmatine + jatrorrhizine all give Dragendorff signal in *Coptis*; direct UV at 345 nm is more selective. | HPLC-DAD with berberine reference standard (Sigma B3251); 345 nm detection. | Outsourced GMP-grade |
-| **Rhein** | *Rheum officinale* (大黄) — same source as emodin | Visual + extract-ratio | **Same Bornträger reaction** as emodin (rhein is a related anthraquinone). Same total-anthraquinone caveat. | HPLC-DAD with rhein reference standard; 254/430 nm detection | Outsourced GMP-grade |
-
-**Operational pattern (the calibrate-once-track-batches discipline):**
-
-1. **Tier 3 once per cultivar / batch source.** When a contributor sources a new extract (specific Smilax glabra cultivar, specific Coptis chinensis vendor, etc.), run Tier 3 HPLC against the certified reference standard once. This produces the calibrated mg-compound-per-gram-extract value for that source.
-2. **Tier 1/2 every batch.** Subsequent batches from the same source get Tier 2 colorimetry (or just Tier 1 visual + dosing-by-extract-ratio) compared against the Tier-3-calibrated reference. The Tier 2 number is interpreted as "this batch is X% above/below the calibrated reference" — NOT as an absolute quantification (because the colorimetric assays are non-selective for the specific compound).
-3. **Re-Tier-3 at trigger conditions.** New cultivar, new vendor, suspect storage degradation, or any other reason to suspect the source has shifted requires re-running Tier 3 to recalibrate.
-
-**Tier 1/2 non-selectivity is the load-bearing caveat across compound classes.** Same pattern as SOP-6's GLPP phenol-sulfuric (total polysaccharide, not GLPP-specific). The Tier 2 assays in the table above are useful for consistency tracking but cannot substitute for Tier 3 HPLC for the actual compound-of-interest quantification. **Tier 3 HPLC is non-negotiable** as the load-bearing assay, with Tier 4 (outsourced GMP) reserved for regulatory-submission scenarios that aren't yet on the OE Phase 0 roadmap.
-
-**Reproducibility target:** consistent dose-response shape across operators and source-batches; absolute potency may vary 2× operator-to-operator on cell-based downstream assays (typical for biological readouts), but the consistency check at the extract-characterization layer prevents that variance from compounding with extract-batch variance.
-
-**Cross-references:** [`medicinal-mushroom-extract-sops.md` SOP-6](./medicinal-mushroom-extract-sops.md) (parent framework); [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md) (original koji-track framework); [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) (comp-013 priority compounds + verdicts);.
-
-### 6. Falsification card per major claim
-
-Per [`linter-design.md`](./linter-design.md) and the existing H01 / H02 / H03 cards, any TCM-derived claim that becomes load-bearing for a platform decision (e.g., "Smilax glabra is a viable koji-payload candidate," or "Si Miao San as adjunct to allopurinol shows additive UA reduction") gets a falsification card with assumption stack + killshot menu + pre-committed thresholds. **The bar:** TCM-source compounds get the same falsification discipline as engineered enzymes. No epistemic carve-out for "but it's traditional."
-
-H04 stub at [`hypotheses/H04-tcm-rigor-intersection.md`](./hypotheses/H04-tcm-rigor-intersection.md) is the meta-card for the lens itself; specific compound or formula claims would get H05+ as they emerge.
-
-### 7. Query-framing discipline — traditional name first, mechanism name second
-
-**For non-Western-medicine compound discovery, query by traditional-formula-name + species-name + traditional-pathology-framing IN ADDITION TO mechanism-name.** Mechanism-name is the wrong starting point for non-Western literature — it silently filters out the traditional-name-anchored papers that the Western citation network underweights.
-
-**Worked example:** a "C3 convertase inhibitor" query missed *Houttuynia cordata*, while a "*Houttuynia cordata* anti-complementary" query retrieved the relevant literature. The practical barriers were citation-network insularity, traditional-name versus mechanism-name framing, and source-journal underweighting—not the language of the papers.
-
-**Why this is its own discipline, not a sub-point of §2 (ChEMBL cross-check):** ChEMBL is curated bioactivity data; the query-framing discipline is about *what literature you read before consulting ChEMBL*. Undercoverage documented in the TCM, medicinal-mushroom, and brief-scrubbed complement searches reflects what has been curated; traditional-name-anchored papers that never made it into ChEMBL's curation pipeline are invisible to mechanism-name search regardless of language. The query-framing discipline closes a different gap than ChEMBL cross-check.
-
-**Cross-mechanism generalization:**
-
-- **URAT1 inhibitors:** "URAT1 inhibitor natural product" misses *Smilax glabra* formulations; "Si Miao San 四妙散 hyperuricemia" catches them.
-- **XO inhibitors:** "XO inhibitor flavonoid" misses many curcuminoids; "Jiang Huang 姜黄 xanthine oxidase" (turmeric) catches them.
-- **NLRP3 inhibitors:** "NLRP3 inhibitor natural product" misses *G. lucidum* spore-powder evidence; "Lingzhi 灵芝 anti-inflammatory mechanism" catches it.
-
-**Operational pattern for lit-scan briefings:** include traditional-formula-name + species-name + traditional-pathology-framing query variants when the compound class has non-Western traditional-use literature. The CLAUDE.md global-multilingual rule (§"Global-multilingual research by default" → "Query-framing discipline") now encodes this as a project-wide convention.
-
-**Cross-reference:** [`CLAUDE.md` §"Global-multilingual research by default"](../CLAUDE.md) (query-framing discipline); [query-framing retrospective audit](../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md) (methodology diagnosis and correction).
-
----
-
-## Candidate compounds with classical gout indication
-
-Compounds explicitly named in classical TCM materia medica for gout-like presentations (痛风 tongfeng, 痹证 Bi syndrome with hot/damp character, 高尿酸血症 hyperuricemia in modernized parlance). The "wiki status" column shows what the corpus already covers vs. what's a genuine gap.
-
-| Compound | Source / Pinyin | Classical gout indication | Modern mechanism | Wiki status | Bioavailability (oral) |
-|---|---|---|---|---|---|
-| **Smilax glabra** | Tu Fu Ling 土茯苓 | Direct — primary gout herb in TCM materia medica | XO inhibition + uricosuric (URAT1 modulation) | **Not in wiki — gap** | Low systemic; gut-luminal active |
-| **Rheum officinale** | Da Huang 大黄 (rhubarb) | Damp-heat drainage; gout via XO + anti-inflammatory | Emodin, chrysophanol — XO inhibition + NF-κB | **Not in wiki — gap** | Variable; emodin gut-modified |
-| **Plantago asiatica** | Che Qian Zi 车前子 | Uricosuric; classical "damp-heat in joints" formula component | Aucubin, polysaccharides — URAT1 modulation in animal models | **Not in wiki — gap** | Low systemic; gut + renal active |
-| **Phellodendron amurense** | Huang Bai 黄柏 | Heat-clearing, gout-like presentations | Berberine (already in wiki via supplements-stack.md) + obacunone | Berberine partial; Phellodendron-specific gap | Berberine ~5%; Phellodendron mixed |
-| **Polygonum cuspidatum** | Hu Zhang 虎杖 | Damp-heat clearing, gout-adjacent | Resveratrol + emodin (resveratrol in wiki via NLRP3 pages) | Partial (resveratrol covered, plant-source not) | Resveratrol ~1% systemic; gut active |
-| **Cinnamomum cassia** | Rou Gui 肉桂 / Gui Zhi 桂枝 | Component of Bai Hu Jia Gui Zhi Tang gout formula | Cinnamaldehyde — anti-inflammatory; modest XO | Not in wiki | Cinnamaldehyde ~75% — actually high |
-| **Atractylodes macrocephala** | Bai Zhu 白术 | Damp-resolving in gout formulas | Atractylenolides — anti-inflammatory; some XO | Not in wiki | Low systemic |
-| **Astragalus membranaceus** | Huang Qi 黄芪 | Adjunctive in chronic gout formulas | Astragalosides — adaptogenic; modest XO | Not in wiki | Astragaloside IV ~3% |
-
-Plus the compounds the wiki already covers that have explicit TCM lineage (and would benefit from explicit lineage-naming in their pages):
-
-| Compound | TCM source / lineage | Existing wiki page |
-|---|---|---|
-| Oridonin | *Rabdosia rubescens* (Dong Ling Cao 冬凌草) — TCM "heat-clearing detoxification" | [oridonin.md](./oridonin.md) |
-| Berberine | *Coptis chinensis* (Huang Lian 黄连) — TCM "damp-heat" | mentioned in [supplements-stack.md](./supplements-stack.md), [nlrp3-inflammasome.md](./nlrp3-inflammasome.md) |
-| EGCG | Green tea (Lu Cha 绿茶) — TCM long-history medicinal use | [egcg.md](./egcg.md) |
-| Theaflavins | Black tea (Hong Cha 红茶) — TCM-adjacent | [theaflavins.md](./theaflavins.md) |
-| Curcumin | Turmeric (Jiang Huang 姜黄) — TCM + Ayurveda crossover | mentioned in [nlrp3-inflammasome.md](./nlrp3-inflammasome.md), [abcg2-modulators.md](./abcg2-modulators.md), [comp-004](./supplement-abcg2-antagonism-computational.md) |
-| Resveratrol | *Polygonum cuspidatum* (Hu Zhang 虎杖) — TCM source antedates wine context | mentioned in [nlrp3-inflammasome.md](./nlrp3-inflammasome.md) |
-
----
-
-## Classical formulas worth modern re-evaluation
-
-A short list, ordered by gout-specific evidence strength:
-
-- **Si Miao San / Si Miao Wan (四妙散 / 四妙丸)** — four-herb formula explicitly used in TCM for damp-heat Bi syndrome with hyperuricemic presentations. Components: Phellodendron (Huang Bai), Atractylodes (Cang Zhu), *Achyranthes bidentata* (Niu Xi), *Coix lacryma-jobi* (Yi Yi Ren). Modern Chinese RCTs (multiple ChiCTR-registered) report 0.5-1.5 mg/dL UA reduction; some show additive effect with allopurinol. This is the highest-priority single formula for modern re-evaluation.
-- **Bai Hu Jia Gui Zhi Tang (白虎加桂枝汤)** — classical "white tiger plus cinnamon twig" formula for gout flares with febrile component. Eight-plus components; complex. Several Chinese clinical trials.
-- **Modified Si Miao formulas** — many regional / school variations with added Smilax glabra (Tu Fu Ling) for stronger uricosuric effect. The Smilax-enhanced versions have specific clinical data.
-
-The Phase 2 lit scan (P2-1 below) would systematically evaluate the Chinese clinical trial registry (ChiCTR) for these formulas + extract the modern Chinese-language evidence base.
-
----
-
-## Why this fits Open Enzyme structurally
-
-Three reasons this is not just a side interest:
-
-1. **The chokepoint methodology natively suits multi-compound formulas.** [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) already maps modalities × chokepoints. TCM formulas are exactly that: multiple compounds covering different chokepoints by design. The framework already exists.
-
-2. **Gut-local pharmacology is one exploitable route.** Low systemic bioavailability can be useful when a compound acts locally on intestinal transport, inflammation, or microbiome biology. That is a track-specific opportunity, not the platform's primary mechanism; other TCM-derived leads may require systemic exposure or different modalities.
-
-3. **It's a discovery-engine output, not a strain-library output.** Same positioning as [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) — Open Enzyme contributes mechanistic clarity, ChEMBL cross-checks, falsification cards, and chokepoint coverage maps. Partner organizations (Chinese pharma, US supplement formulators, clinical research groups, open-source recipe contributors) take findings forward to formulation, manufacturing, and clinical trials. This preserves the clean two-track narrative — strain library AND discovery engine.
-
----
-
-## Comparison with sister peer tracks
-
-| Dimension | Koji chassis | LBP chassis | siRNA / URAT1 | TCM × rigor (this page) |
-|---|---|---|---|---|
-| **OE output type** | Strain library | Strain library (commercial-pharma sub-track) | Discovery-engine output | Discovery-engine output |
-| **Manufacturing path** | Home-fermentable | Anaerobic bioreactor | Synthetic oligonucleotide | Standardized herbal extract OR synthesized compound |
-| **Regulatory path** | GRAS food / DSHEA supplement | FDA LBP biologic | FDA biologic (BLA) | DSHEA supplement, food, OR Chinese pharma path |
-| **Distribution** | Open-source spores | Pharmacy / mail-order | Subcutaneous injection in clinic | Supplement / functional food / TCM clinic |
-| **Capital to first commercial dose** | $0–500K | $50–200M | $200–500M+ | Variable; $0–10K for self-experiment / supplement, $1–10M for clinical trial |
-| **Time to first commercial dose** | Months | 5–8 years | 10+ years | Months for supplement; 3–7 years for FDA-cleared botanical drug |
-| **Empirical prior** | Modern engineering literature | Modern engineering + LBP clinical | Inclisiran / patisiran precedent | **2,000+ years of TCM observational data** (the distinctive feature) |
-| **Patient population** | Broad gout market | Q141K / refractory | Adherence-limited / hepatic-impaired / hormone-modulated | Self-experimenter, supplement-aware, TCM-aware (often overlapping with Brian's profile) |
-| **OE role** | Candidate chassis track | Candidate LBP track | Discovery output; partner / spinout | Discovery method applied across the compound corpus |
-
-The four tracks together represent the chase-every-avenue framing: koji for the broad democratized market, LBPs for the durable-colonization / refractory subset, siRNA for the long-horizon mechanistically-cleanest frontier, **TCM × rigor for the empirical-prior re-mining vector**.
-
----
-
-## Unresolved research questions
-
-- Which classical gout formulas have credible clinical signal after multilingual primary-source review, and which remain tradition-only?
-- What do global sources establish about *Smilax glabra* efficacy, mechanism, standardization, interactions, and safety?
-- Does component-level analysis of Si Miao San support designed coverage, redundancy, or a testable synergy claim?
-- What are the oral bioavailability, gut-versus-systemic distribution, first-pass metabolism, and microbiome transformations of the leading compounds?
-- Does the methodology produce actionable candidates more reliably than compound cataloguing alone? See [H04](./hypotheses/H04-tcm-rigor-intersection.md).
-
-[Comp-013](./tcm-gout-compound-triage-computational.md) provides a source/compound/target lead inventory, but its viability ranking is invalid because the score did not preserve target-effect polarity and inherited nominal gut-concentration/IC50 occupancy. The listed compounds remain leads for source verification, measured free exposure, and context-matched functional testing. Sparse ChEMBL coverage is a search gap, not negative biological evidence.
-
-## Limitations
-
-- **Standardization variability.** Wild-collected herbs vary 10–100× in active compound content. Modern findings on a defined extract (e.g., a specific Smilax glabra root extract from a specific cultivar) may not generalize to other extracts marketed as "Smilax glabra." This page's discipline rule #5 names this; the Phase 2 work should specify standardized extracts where possible.
-- **Multi-component complexity.** TCM formulas have 4-15 components; reductionism vs. holism is a real epistemic tension. The "formula decomposition" discipline (rule #4) tries to navigate this, but some genuinely synergistic interactions may be miscategorized as "redundant" if the synergy mechanism isn't captured by the chokepoint map.
-- **The line between rigor and "alternative-medicine-washing."** TCM-derived claims have a long history of being dressed up with the language of modern science to sell supplements without underlying rigor. The disciplines above are the guardrails, but the lens itself can fail if applied superficially. Brian's editorial discipline + the falsification card framework are the human-side checks against this failure mode.
-- **Open Enzyme expertise gap.** The platform's center-of-mass is engineered fungal genetics + chokepoint mapping. TCM pharmacology, classical Chinese medical theory, and Chinese clinical-trial methodology are outside the in-house competence. Pursuing this track meaningfully would benefit from collaboration with TCM-modernization research groups (especially Chinese university pharmacology departments) or with Western researchers explicitly working at this intersection (e.g., the Shanghai Institute of Materia Medica TCM-modernization program).
-
----
-
-## Cross-References
-
-- [`modality-chokepoint-matrix.md`](./modality-chokepoint-matrix.md) — the matrix this lens applies across
-- [`etc/chembl-cross-check.md`](./etc/chembl-cross-check.md) — the ChEMBL discipline (rule #2 of the methodology)
-- [`gut-lumen-sink.md`](./gut-lumen-sink.md) — the gut-luminal mechanism thesis that fits TCM bioavailability honestly (rule #3)
-- [`oridonin.md`](./oridonin.md), [`egcg.md`](./egcg.md), [`theaflavins.md`](./theaflavins.md), [`supplements-stack.md`](./supplements-stack.md), [`nlrp3-inhibitor-screen.md`](./nlrp3-inhibitor-screen.md) — existing wiki pages on TCM-lineage compounds
-- [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md), [`sirna-urat1-modality.md`](./sirna-urat1-modality.md) — sister peer-track scope pages under chase-every-avenue
-- [`open-enzyme-vision.md`](./etc/open-enzyme-vision.md) §2.2 — discovery-engine output / repurposing surface
-- [`open-questions.md`](./open-questions.md) — meta-index where the TCM Phase 2 follow-ups will be tracked
-- [`computational-experiments.md`](./computational-experiments.md) — **comp-013** (Phase 2 P2-2 closed 2026-05-06) Analyses table
-- [`tcm-gout-compound-triage-computational.md`](./tcm-gout-compound-triage-computational.md) — **comp-013 interpretive page** (per-compound triage verdicts, methodology adaptation notes, cross-cutting findings)
-- [`hypotheses/H04-tcm-rigor-intersection.md`](./hypotheses/H04-tcm-rigor-intersection.md) — falsification card stub for the methodology lens
-- [`synthesis/`](../synthesis/README.md) Strategic Reflections Queue — Phase 3 platform-framing reflection rolled in
-- [`../operations/ward-1995-lab-access.md`](../operations/ward-1995-lab-access.md) — sister operationalization of the **global-multilingual research default** (`Open Enzyme/CLAUDE.md` §"Global-multilingual research by default"). Both pages independently treat language as a non-barrier and proactively map non-English-world resources as first-class assets: this TCM page targets Chinese / Japanese clinical literature (CNKI / WanFang / J-STAGE / ChiCTR / Kampo medicine literature); the Ward 1995 lab-access page targets Japan / China / Europe academic + industrial fungal-engineering groups. Same methodology, different operational domains (literature ingestion vs. resource acquisition). The Maruyama lab at the University of Tokyo (the primary lead in the Ward lab-access page) is itself a parallel instance — Japan publishes substantial fungal-engineering work in Japanese-language journals that English PubMed indexes thinly; the lab-access strategy treats Japanese-language outreach as default, not workaround.
+- [ABCG2 modulators](./abcg2-modulators.md)
+- [Gout pathophysiology](./gout-pathophysiology.md)
+- [Validation experiments](./validation-experiments.md)
+- [H04 methodology hypothesis](./hypotheses/H04-tcm-rigor-intersection.md)

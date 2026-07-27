@@ -1,3 +1,7 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 ---
 title: comp-014 Phase 2a — ChEMBL fungal-source bioactivity sweep across 19 chokepoints
 date: 2026-05-06

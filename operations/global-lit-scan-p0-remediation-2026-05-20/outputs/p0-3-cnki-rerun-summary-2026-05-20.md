@@ -41,7 +41,7 @@ This is a discovery artifact only. Do not promote evidence-tier claims until the
 
 2. **Simiao Wan pharmacodynamic-substance work.**
    - `Study on the Pharmacodynamic Substances of Simiao Wan for Treatment of Hyperuricemia and Gout Based on Disease and Syndrome Model` (2024, *Traditional Chinese Drug Research and Clinical Pharmacology*).
-   - Why: this could separate the formula into active fractions/components and may connect to the existing comp-013 compound-level triage.
+   - Why: this could separate the formula into active fractions/components. COMP-013 is invalidated; its surviving names are unranked search leads only.
 
 3. **Smilax glabra / ABCG2 pathway lead.**
    - `Mechanism of Smilacis Glabrae Rhizoma in treating hyperuricemia due to dampness-heat through the AMPK/PGC-1α/PPARγ/ABCG2 pathway` (2025, *Natural Product Research and Development*).

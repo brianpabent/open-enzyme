@@ -27,7 +27,7 @@ status: scoped
 
 # Medicinal Mushrooms as Native-Compound Intervention Sources
 
-Medicinal fungi could exploit gout through native small molecules, polysaccharide-peptide fractions, and cultivation-tunable chemistry. Animal studies support several urate-production, urate-transport, renal-injury, or inflammatory signals. No medicinal-mushroom preparation has established clinical efficacy for gout, and preparation identity is often the load-bearing variable.
+Medicinal fungi could exploit gout through native small molecules, polysaccharide-peptide fractions, and cultivation-tunable chemistry. Animal studies support several urate-production, urate-transport, renal-injury, or inflammatory signals. The evidence cited here does not establish clinical gout efficacy for any preparation, and preparation identity is often the load-bearing variable.
 
 ## Gout exploit hypotheses
 
@@ -35,9 +35,19 @@ Three routes remain worth testing:
 
 1. **Reduce urate production or reabsorption.** Cordycepin-containing *Cordyceps militaris*, standardized GLPP, *Sanghuangporus vaninii* extracts, and *Phellinus igniarius* flavonoids have animal-model or cell evidence involving XOD, URAT1, GLUT9, OAT1/OAT3, or ABCG2.
 2. **Interrupt inflammatory amplification.** Selected fungal fractions may affect NLRP3-adjacent signaling or renal inflammatory injury. Other fractions activate innate immunity and could move gout in the wrong direction.
-3. **Preserve useful native compound pairs.** *C. militaris* co-produces cordycepin with the ADA inhibitor pentostatin, creating a testable exposure advantage over isolated cordycepin.
+3. **Test native compound pairs without assuming benefit.** *C. militaris* can co-produce cordycepin and the ADA inhibitor pentostatin; the actual ratio, stability, exposure, and functional consequence must be measured against isolated and matched controls.
 
 Each hypothesis is gated by species authentication, chemical standardization, achievable exposure, compartment fit, and a direct gout-relevant assay.
+
+> **Research conjecture — A reproducible medicinal-fungal material may expose a gout weakness**{ .research-conjecture-label }
+>
+> **Grounded premises:** Purified cordycepin altered urate-handling endpoints in hyperuricemic mice (**Animal Model**; PMID 29422889). Defined GLPP and *Sanghuangporus vaninii* preparations produced gout-relevant signals in separate mouse studies (**Animal Model**; DOI 10.1039/D2FO02431D and DOI 10.3390/nu14204421). Exact species, preparation, composition, and assay context differ across these records.
+>
+> **Novel leap:** One exact, composition-controlled fungal compound, fraction, or extract may reproduce a mechanism-matched gout signal across independently produced batches. No direct evidence establishes that complete reproducibility chain, and no material is selected.
+>
+> **Why it matters:** A reproducible material could turn a heterogeneous natural-product lead into an engineerable intervention track.
+>
+> **Discriminating observation:** Rehydrate one candidate’s primary record, select its exact preparation and functional endpoint, qualify the identity and exposure assays, and compare at least two independent batches. Promote a specific falsification card only after analytical tolerances and advance/kill thresholds are set.
 
 ## Candidate evidence
 
@@ -47,11 +57,11 @@ Each hypothesis is gated by species authentication, chemical standardization, ac
 | **GLPP from *Ganoderma lucidum*** | Hyperuricemic-mouse evidence implicates ADA and renal urate transport | **Animal Model** | “GLPP” can describe bulk material or smaller chromatographic fractions; generic reishi is not an exposure-equivalent product | Define the active fraction by SEC-MALS and composition, then reproduce the urate and ADA effects with a batch-release specification |
 | ***S. vaninii* extract** | Hyperuricemia/renal-injury mouse studies reported XOD and renal-transporter effects; a separate study included an MSU arthritis model | **Animal Model** plus renal-cell work | No human evidence; extract identity and batch composition are not portable across preparations | Authenticate species, standardize the active chemical fingerprint, and reproduce both urate and inflammatory readouts with the same preparation |
 | ***P. igniarius* total flavonoids** | Hyperuricemic/uric-acid-nephropathy mice and MSU-treated HK-2 cells showed urate, renal-injury, ABCG2, and NLRP3-adjacent signals | **Animal Model** and **In Vitro** | Does not establish direct transporter binding, synovial delivery, or human efficacy | Fractionate the extract, identify the active component(s), and pair transporter-flux assays with an inflammation counterscreen |
-| **Ergothioneine-rich *Pleurotus*** | Nrf2/redox and indirect NLRP3-adjacent rationale; human exposure and biomarker studies exist outside gout | **Clinical** for exposure/biomarkers; **Mechanistic Extrapolation** for gout | No demonstrated urate-lowering mechanism; should not be promoted as a primary gout intervention | Test whether realistic exposure changes a predefined gout-relevant inflammatory readout beyond general antioxidant markers |
+| **Ergothioneine-rich *Pleurotus*** | Nrf2/redox and indirect NLRP3-adjacent rationale | **Mechanistic Extrapolation** | The cited evidence does not establish a urate-lowering mechanism or a gout-relevant exposure-response relationship | Qualify an exact material and exposure range, then test a predefined gout-relevant inflammatory readout beyond general antioxidant markers |
 
 ## Candidates that do not currently belong in the gout set
 
-- **Astilbin** has a stronger connection to *Smilax glabra* and traditional-formula literature than to medicinal mushrooms. Its evidence belongs in the [TCM compound triage](./tcm-gout-compound-triage-computational.md).
+- The *Smilax glabra* total-flavonoid fraction and its astilbin-stereoisomer attribution question belong in the [TCM evidence rebuild](./tcm-modern-rigor-intersection.md), not the medicinal-fungal set. Purified astilbin is not established as the causal material.
 - **Eritadenine** has a lipid-metabolism mechanism but no established urate or gout mechanism.
 - **PSK/Krestin from *Trametes versicolor*** is an immune stimulant and may prime rather than suppress the TLR2/NLRP3 axis. Oncology evidence does not make it a gout candidate.
 - **Erinacines and inotodiol** lack a sufficiently direct urate or gout-inflammation mechanism to justify dose or product work.
@@ -103,7 +113,7 @@ Several source species are established foods or supplement ingredients, but that
 
 ## Related
 
-- [Medicinal Mushroom Compound Mapping (comp-014)](./medicinal-mushroom-compound-mapping-computational.md) — computational breadth map and source-level evidence
+- [Medicinal Mushroom Compound Mapping (comp-014)](./medicinal-mushroom-compound-mapping-computational.md) — partial retrieval inventory; each row requires primary-source qualification
 - [Medicinal Mushroom Extract Characterization SOPs](./medicinal-mushroom-extract-sops.md) — extraction, identity, and quantification methods
 - [Gout Weakness × Intervention Route Matrix](./modality-chokepoint-matrix.md) — portfolio-level route comparison
 - [Unresolved Delivery and Implementation Constraints](./chassis-pending-interventions.md) — sourcing and delivery decisions across tracks

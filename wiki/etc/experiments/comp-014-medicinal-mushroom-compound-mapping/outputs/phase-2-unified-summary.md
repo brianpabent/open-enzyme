@@ -1,3 +1,7 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 # Phase 2 unified — fungal compound aggregation (post-Phase-3 re-run)
 
 **Date:** 2026-05-17  

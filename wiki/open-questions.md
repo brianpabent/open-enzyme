@@ -154,10 +154,10 @@ Questions about chokepoint biology, priming mechanisms, species-gap caveats, and
 - **Direct SPM bioassay feasibility.** SPM measurement requires LC-MS/MS at pg/mL. Practical for clinical biomarker stacks, or research-only? See [spm-resolution-pathway.md §6 Q3](./spm-resolution-pathway.md).
 - **Does aggNET-mediated C5a sequestration feed back to CP0?** The resolution loop may close on itself (SPM → aggNET → C5a sequestration → reduced priming). Mechanistic elegance suggests yes; direct evidence is thin. See [spm-resolution-pathway.md §6 Q4](./spm-resolution-pathway.md).
 
-### Chokepoint candidates from comp-014 (2026-05-06)
+### Chokepoint leads surfaced by the COMP-014 inventory
 
-- **Does ADA (adenosine deaminase) warrant formal addition as a named gout chokepoint?** ADA catalyzes adenosine → inosine in purine catabolism upstream of XO. comp-014 Phase 2 (6,798 fungal compounds) identified ADA as a target with fungal-compound coverage via GLPP (*G. lucidum*) and cordycepin + native pentostatin (*C. militaris*). Pending Phase 3-6 comp-014 follow-ups for formal admit/reject decision. See [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md), [gout-pathophysiology.md §ADA](./gout-pathophysiology.md). (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
-- **Does PINK1/mitophagy warrant formal addition as a named gout chokepoint?** PINK1 senses mitochondrial damage and recruits Parkin to initiate mitophagy, clearing damaged mitochondria before they generate the mtROS that triggers NLRP3 (CP2). NLRP3-priming-adjacent — operates upstream of CP2. comp-014 Phase 2 identified fungal compounds with PINK1-modulating activity. Pending Phase 3-6 comp-014 follow-ups for formal admit/reject decision. See [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md), [gout-pathophysiology.md §PINK1](./gout-pathophysiology.md). (Mechanistic Extrapolation; source: medicinal-mushroom-compound-mapping-computational.md)
+- **Does ADA warrant formal addition as a gout chokepoint?** The purine-flux and adenosine-resolution directions must be measured together. COMP-014's fungal-associated rows are search leads only; they do not establish material identity, target attribution, useful direction, or exposure. See [medicinal-mushroom mapping](./medicinal-mushroom-compound-mapping-computational.md) and [gout pathophysiology §ADA](./gout-pathophysiology.md).
+- **Does PINK1/mitophagy warrant formal addition as a gout-inflammation chokepoint?** Test whether an exact material changes mitophagy and MSU-triggered NLRP3 function under matched exposure. COMP-014's target rows do not establish favorable modulation or a fungal intervention. See [medicinal-mushroom mapping](./medicinal-mushroom-compound-mapping-computational.md) and [gout pathophysiology §PINK1](./gout-pathophysiology.md).
 
 ### Upstream-complement sub-questions
 
@@ -275,12 +275,12 @@ See [nlrp3-inhibitor-screen.md §Meta-Finding](./nlrp3-inhibitor-screen.md), [th
 ### Quantification methodology — Tier 2 inter-operator reproducibility
 
 - **Can the [quantification-ladder.md](./quantification-ladder.md) Tier 2 assays meet a product-specific tracking specification when run by trained operators at more than one controlled site after a shared Tier 3 calibration?** The framework is specified; no multi-operator reproducibility data exists. Applies to:
-  - **Ergothioneine** ([SOP-6](./medicinal-mushroom-extract-sops.md) Ellman's reagent / DTNB) — well-anchored chemistry but multi-operator data lacking
-  - **GLPP** ([SOP-6](./medicinal-mushroom-extract-sops.md) phenol-sulfuric) — same
+  - **Ergothioneine** ([SOP-6](./medicinal-mushroom-extract-sops.md)) — a generic thiol/color readout is only a candidate until matrix specificity and agreement with the exact HILIC-LC/MS anchor are demonstrated
+  - **GLPP** ([SOP-6](./medicinal-mushroom-extract-sops.md)) — a total-polysaccharide readout may track a batch only after correlation with the exact SEC-MALS/composition-defined fraction is demonstrated
   - **Cordycepin** ([SOP-6](./medicinal-mushroom-extract-sops.md) diazo-coupling, Speculative) — the *method validity* question is the upstream gate; tracked at [`validation-experiments.md` §1.28](./validation-experiments.md). The *inter-operator reproducibility* question fires only after §1.28 returns GREEN.
   - **Uricase activity** ([enzyme-quantification-protocol.md](./enzyme-quantification-protocol.md), 293 nm UV absorbance) — same multi-operator gap
 - **Fires when:** a Tier 2 assay becomes a release or stability measurement at multiple sites. The prerequisite for [H09](./hypotheses/H09-community-fermentation-reliability.md) is to separate producer variation from assay-runner variation. Resolution work is a blinded round-robin using one calibrated reference batch; the site count, tolerance, and replication follow the assay and intended release decision rather than an inherited universal threshold.
-- **Cross-references:** [H06](./hypotheses/H06-medicinal-mushroom-complement-track.md), [H09](./hypotheses/H09-community-fermentation-reliability.md), [`quantification-ladder.md`](./quantification-ladder.md), [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) SOP-6, and [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md).
+- **Cross-references:** [medicinal-fungal exact-material conjecture](./medicinal-mushroom-complement-track.md#research-conjecture--a-reproducible-medicinal-fungal-material-may-expose-a-gout-weakness), [H09](./hypotheses/H09-community-fermentation-reliability.md), [`quantification-ladder.md`](./quantification-ladder.md), [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) SOP-6, and [`enzyme-quantification-protocol.md`](./enzyme-quantification-protocol.md).
 
 ---
 
@@ -421,32 +421,27 @@ See [purine-degrading bacteria](./purine-degrading-bacteria.md). The 2,8-dioxopu
 
 See [engineered-lbp-chassis.md](./engineered-lbp-chassis.md) (LBP chassis peer track), [gut-lumen-sink.md](./gut-lumen-sink.md) (PULSE/uricase context), [abcg2-modulators.md](./abcg2-modulators.md) (butyrate/PPARγ + *A. indistinctus*/hippuric acid axes).
 
-### TCM × Modern Rigor — discovery-engine output (fourth peer-track exploration vector)
+### TCM-derived urate-axis leads
 
-The [TCM × Modern Rigor track](./tcm-modern-rigor-intersection.md) treats traditional Chinese medicine materia medica as a **discovery-engine output** — applying a six-rule methodology lens (chokepoint mapping, ChEMBL cross-check, bioavailability-honest framing, formula decomposition, standardized-extract specification, falsification-card discipline) to TCM compounds with documented gout/hyperuricemia indications. Sister to the [LBP chassis](./engineered-lbp-chassis.md) and [siRNA/URAT1](./sirna-urat1-modality.md) peer tracks. Six in silico Phase 2 follow-ups queued — none requires pharma-partner involvement to start:
+[TCM-derived gout leads](./tcm-modern-rigor-intersection.md) treats traditional-use and formula records as a hypothesis-discovery surface across urate production, renal and intestinal transport, and inflammation. No compound rank, formula priority, or chassis follows from the current evidence.
 
-- **P2-1 — Lit scan: classical TCM gout formulas + modern Chinese clinical evidence.** Si Miao San family, Bai Hu Jia Gui Zhi Tang, Smilax-enhanced variations. **Global multilingual sources by default** — ChiCTR registry, CNKI/WanFang (Chinese-language papers, read in original), J-STAGE (Japanese Kampo medicine literature), PubMed (English cross-check only). Output: evidence-tier-tagged summary of which formulas have credible clinical signal vs. tradition-only. (Queued, Opus subagent.)
-- **P2-2 — Rebuild the TCM lead triage from its evidence inventory.** Preserve compound, source, target, and polarity; separate direct, off-target, and expression assays; then require measured or justified free exposure plus context-matched function before viability classification. Do not reuse comp-004's nominal gut-concentration/IC50 shortcut.
-- **P2-3 — Lit scan: Smilax glabra (Tu Fu Ling 土茯苓) deep-dive.** Highest-leverage single compound — explicit primary gout herb in classical TCM with substantial modern Chinese clinical literature. XO inhibition kinetics, uricosuric mechanism, standardization issues, drug interactions, adverse effects. (Queued, Opus subagent.)
-- **P2-4 — Lit scan: Si Miao San multi-component coverage analysis.** Decompose the four-herb formula (Phellodendron, Atractylodes, Achyranthes, Coix) per "formula decomposition" discipline. Map each component to chokepoints. Identify designed-coverage vs. redundant vs. synergistic design. (Queued, Opus subagent.)
-- **P2-5 — Falsification card H04: TCM × rigor methodology lens.** Stub: [`hypotheses/H04-tcm-rigor-intersection.md`](./hypotheses/H04-tcm-rigor-intersection.md); full population queued.
-- **P2-6 — Bioavailability characterization for top 3 compounds advancing from P2-2.** Quantitative oral bioavailability + gut-vs-systemic distribution + first-pass metabolism + microbiome metabolism. Maps to the "embrace gut-luminal mechanisms" discipline (rule #3). (Queued, Opus subagent.)
+- **Mixed-source evidence qualification:** [COMP-049](./etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/) is the pre-run replacement for invalidated COMP-013. It must distinguish primary from secondary sources, preserve tested material separately from traditional occurrence, expose simultaneous attribution/exposure/function gaps, and route without ranking.
+- **Formula interaction:** Does a composition-verified formula outperform its components and declared combinations under a prespecified additivity model? See the [formula Research Conjecture](./tcm-modern-rigor-intersection.md#formula-decomposition-without-inventing-synergy).
+- **Exposure and attribution:** For each lead, which material and compartment produce the measured effect, and does the named target cause it?
+- **Multilingual discovery:** Continue mechanism, species/original-language, traditional-formula, and traditional-pathology query frames; database absence is not biological evidence.
+- **H04:** Test whether this method produces new falsifiable connections rather than a larger catalog. See [H04](./hypotheses/H04-tcm-rigor-intersection.md).
 
-Phase 3 reflection (content-triggered, not calendar-triggered): does the TCM-rigor track accumulate enough substance to elevate from "methodology lens" to "first-class discovery-engine output named in `open-enzyme-vision.md` §2.2 alongside the repurposing-surface candidates"? Trigger: after P2-1 through P2-6 land.
+### Medicinal-fungal exact-material research thread
 
-### Medicinal mushroom complement — Phase 7 peer track (cultivation, not engineering)
+The [medicinal-mushroom research page](./medicinal-mushroom-complement-track.md) evaluates exact native materials. Cultivation does not establish composition, exposure, efficacy, safety, product equivalence, or portfolio priority.
 
-The [Medicinal Mushroom Complement Track](./medicinal-mushroom-complement-track.md) evaluates characterized native materials as an independent portfolio track. Cultivation does not establish composition, exposure, efficacy, safety, product equivalence, or regulatory status.
+- **Search boundary:** the retained COMP-014 strain and cultivation records are bounded query inventories, not multilingual closure, a meta-analysis, or a rank.
+- **Method qualification:** [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) contains draft analytical candidates whose tolerances remain unset until each method is validated.
+- **Matched interaction study:** [`validation-experiments.md` §2.6](./validation-experiments.md) defines a pilot-driven exact-material design; it assumes neither synergy nor a fixed arm count.
+- **Exact-material conjecture:** the [medicinal-mushroom research page](./medicinal-mushroom-complement-track.md#research-conjecture--a-reproducible-medicinal-fungal-material-may-expose-a-gout-weakness) asks whether one composition-defined material can produce a reproducible gout-relevant functional signal. It remains a conjecture until one exact material, endpoint, exposure regime, analytical tolerance, and advance/kill threshold are chosen.
+- **Exposure grounding:** verify material identity, measured exposure, route, and evidence tier in the primary study before using yield as a translational prior.
 
-- **#1 Strain selection lit scan ✅** (multilingual, 2026-05-06; outputs: Ganoderma / Cordyceps / Pleurotus per-species scan files in comp-014 outputs dir)
-- **#2 Cultivation × yield meta-analysis ✅** (2026-05-06)
-- **#3 Extract characterization SOPs** — stub at [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) (SOP-1 GLPP gated on Phase 5b CNKI dive; SOP-3 EGT lowest-friction)
-- **#4 GLPP+cordycepin synergy wet-lab gate** — stub at [`validation-experiments.md` §2.6](./validation-experiments.md) (4-arm: whole-fermentate / cordycepin / cordycepin+GLPP / cordycepin+pentostatin)
-- **#5 H06 hypothesis card ✅** (stub at [`hypotheses/H06-medicinal-mushroom-complement-track.md`](./hypotheses/H06-medicinal-mushroom-complement-track.md))
-- **#6 Modality-chokepoint-matrix native-compound row ✅** (2026-05-06)
-- **#7 Exposure grounding** — for each load-bearing compound, verify the material identity, measured exposure, route, and evidence tier in the primary study before using yield as a translational prior.
-
-The medicinal-mushroom-complement track is already a first-class portfolio track. Its evidence and experiment results—not a future branding decision—determine whether it remains active.
+The evidence decides whether an exact material and mechanism advance; an inherited rank or track label does not.
 
 ### siRNA against URAT1 — discovery-engine output (peer-track exploration vector to LBP)
 

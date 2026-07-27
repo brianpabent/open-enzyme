@@ -100,7 +100,7 @@ Per CLAUDE.md §"Multi-frame query discipline" + §"Pre-commit grep-verify gate 
 
 **CFH-footprint mapping:** the matched CP/AP IC50 (0.19 vs 0.17 mM) is consistent with a cascade node common to both pathways — most likely C3 itself or convertase active-site / assembly. Both candidate mechanisms are functionally upstream of CFH's AP-specific regulatory role. A CFH-competitive mechanism would predict AP-selective potency (CFH is AP-specific), which is not observed.
 
-Luteolin additionally has documented gout-relevant non-complement modes (per [comp-013](./tcm-gout-compound-triage-computational.md)): XO IC50 550 nM + URAT1 expression downregulation. These are CFH-orthogonal entirely. The multi-mode complicates the UKB cross-tab — see "Limitations" below.
+The complement result is independent of COMP-013. No current COMP-013-derived XO potency or URAT1 attribution may be used to define a parallel luteolin mechanism.
 
 **Predicted Y402H × luteolin × incident gout interaction:** **negative direction (effect ≥ in carriers, Model A) vs null direction (Model B).** Both reject the AMD-paradox direction.
 
@@ -109,7 +109,7 @@ Luteolin additionally has documented gout-relevant non-complement modes (per [co
 **Multi-hypothesis discipline — rejected alternative:**
 1. *Luteolin binds the CCP6-8 CRP-binding surface of CFH itself, competing with CRP.* Weakly rejected: (a) no surveyed paper reports CFH as a luteolin target; (b) the matched CP/AP IC50 is inconsistent with a CFH-competitive mechanism (CFH-competition predicts AP-selectivity, not matched CP+AP potency).
 
-**Falsification test:** luteolin on MSU-crystal-driven complement activation in CFH-depleted vs CFH-replete serum. **For the UKB cross-tab, additionally pre-specify a 24h-urate intermediate-phenotype arm** to dissociate the complement-mode from the XO + URAT1 urate-axis modes — otherwise the cross-tab is confounded by three parallel mechanisms.
+**Falsification test:** luteolin on MSU-crystal-driven complement activation in CFH-depleted vs CFH-replete serum. A 24-hour urate measure may remain exploratory, but no current source-qualified luteolin urate mechanism makes it a mechanistic dissociation arm.
 
 **UKB cross-tab specification:** rs1061170 × Apiaceae-family dietary intake (celery, parsley, chamomile — captures luteolin exposure better than total-flavonoid sums) × incident gout M10.x, with 24h-urate intermediate readout in a subset.
 
@@ -181,7 +181,7 @@ For the UK Biobank gout-GWAS collaborators (Merriman/Otago, Major-Wrigley/Auckla
 
 **Secondary queries (in priority order):**
 
-1. **rs1061170 × Apiaceae-family intake × incident gout M10.x** (luteolin proxy; Apiaceae captures luteolin-rich exposure better than total-flavonoid sums). Add 24h-urate intermediate-phenotype readout in the subset with biochemistry data to dissociate the complement-mode from the XO + URAT1 urate-axis modes.
+1. **rs1061170 × Apiaceae-family intake × incident gout M10.x** (luteolin exposure proxy; the proxy requires validation against measured intake). A 24-hour-urate readout may be retained as an exploratory intermediate phenotype in the subset with biochemistry data, but no luteolin-specific XO or URAT1 mechanism is assigned without independent primary evidence.
 
 2. **rs1061170 × dietary CFH-bypass diversity score × incident gout** (Bondonno 2025 Nature Food methodology generalized) — composite score over rosemary / lemon balm / perilla / celery / parsley intake, vs Yokose 2024 Rheumatology cohort framework.
 

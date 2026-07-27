@@ -1,3 +1,7 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 # Phase 5 Deep-Read: Cordyceps Cochrane Review (PMID 26457607)
 
 **Citation:** Hong T, Zhang M, Fan J. *Cordyceps sinensis* (a traditional Chinese medicine) for kidney transplant recipients. *Cochrane Database Syst Rev.* 2015 Oct 12;2015(10):CD009698. [DOI:10.1002/14651858.CD009698.pub2](https://doi.org/10.1002/14651858.CD009698.pub2). PMID: 26457607. PMCID: [PMC9446485](https://pmc.ncbi.nlm.nih.gov/articles/PMC9446485/).

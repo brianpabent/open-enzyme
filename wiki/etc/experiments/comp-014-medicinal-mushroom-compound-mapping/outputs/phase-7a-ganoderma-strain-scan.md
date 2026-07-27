@@ -1,8 +1,12 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 ---
 title: "comp-014 Phase 7a — Ganoderma lucidum strain selection + GLPP cultivation lit scan"
 date: 2026-05-06
 phase: 7-1a (medicinal mushroom complement track — strain selection)
-parent: medicinal-mushroom-complement-track.md
+parent: ../../../../medicinal-mushroom-complement-track.md
 scope: Ganoderma lucidum strain identity, GLPP yield/composition by strain, cultivation method, taxonomic verification, multilingual coverage gap
 ---
 
@@ -68,10 +72,10 @@ The literature uses "GLPP" loosely. What's actually been characterized:
 | **FYGL** ("Fudan-Yueyang-Ganoderma lucidum") | not specified | 17 : 77 protein:polyglycan; 78% glucose in polysaccharide | aspartic acid, glycine, glutamic acid, alanine, serine, threonine dominant | PMID 22453054 (PTP1B inhibitor; db/db diabetes) — **different lab (Fudan), different fraction**, different bioactivity. Often confused with GLPP in citation chains. |
 | **GLP1-GLP6** (Zhang 2022) | varies by strain | not reported | not reported | PMID 35993963 — strain comparison; GLP1 best, GLP1-I subfraction had β-glycosidic linkage |
 
-**The 520 kDa figure** referenced in the Phase 7 scope page (`medicinal-mushroom-complement-track.md`) for GLPP from PMID 36385640 — this is **higher than the 31-43 kDa range characterized in the Lin lab's own follow-up papers** (PMIDs 29541200, 37852403). Possibilities:
+**The 520 kDa figure** referenced in the [Phase 7 scope page](../../../../medicinal-mushroom-complement-track.md) for GLPP from PMID 36385640 — this is **higher than the 31-43 kDa range characterized in the Lin lab's own follow-up papers** (PMIDs 29541200, 37852403). Possibilities:
 - (a) The 520 kDa value refers to the *crude* polysaccharide-peptide complex before fractionation, and GL-PP / GL-PP2 are subfractions.
 - (b) Different extraction protocols yield different MW distributions in different papers (the Lin lab's protocol has evolved).
-- (c) The Phase 6 triage may have pulled the 520 kDa figure from a different paper than 36385640 — this should be re-verified. **comp-014 Phase 5 deep-read of 36385640 lives at `/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-5-deepread-PMID36385640.md`** — re-check whether 520 kDa was confirmed from the actual methods section or assumed from secondary references.
+- (c) The retired Phase 6 triage may have pulled the 520 kDa figure from a different paper than 36385640. The [historical Phase 5 deep-read](./phase-5-deepread-PMID36385640.md) does not replace verification against the primary methods.
 
 ### 2.2 Cross-strain yield comparison (the closest study to what we want)
 
@@ -194,7 +198,7 @@ This is a meaningful but tractable infrastructure ask — closer to "always run 
 
 ## 5. Multilingual coverage gap — Chinese / Japanese / Korean primary literature
 
-Per Open Enzyme/CLAUDE.md global-multilingual-research rule: **the Western-PubMed view is severely incomplete for this domain.** Specific gaps:
+The historical scan followed the global-multilingual-research rule in top-level [`CLAUDE.md`](../../../../../CLAUDE.md). Its PubMed-only segments remain bounded retrieval leads. Specific gaps recorded at the time:
 
 ### 5.1 What's missing from PubMed but exists in Chinese-language literature
 
@@ -267,7 +271,7 @@ Synthesizing across questions 1-5, the Open-Enzyme-tractable strain options for 
 - comp-014 Phase 5 deep-read of the GLPP-HUA paper: [`phase-5-deepread-PMID36385640.md`](./phase-5-deepread-PMID36385640.md)
 - comp-014 parent computational page: [`medicinal-mushroom-compound-mapping-computational.md`](../../../../medicinal-mushroom-compound-mapping-computational.md)
 - comp-014 anchor list (Phase 4): [`phase-4-ranked-candidates.md`](./phase-4-ranked-candidates.md)
-- Open Enzyme global multilingual research rule: top-level CLAUDE.md §"Global-multilingual research by default"
+- Open Enzyme global multilingual research rule: top-level [`CLAUDE.md`](../../../../../CLAUDE.md) §"Global-multilingual research by default"
 
 ## Citations (PubMed)
 

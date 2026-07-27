@@ -1,3 +1,7 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 # Phase 5 Deep-Read: Sanghuangporus davallialactone (PMID 36801789)
 
 **Paper.** Song J, Wang Z, Chi Y, Zhang Y, Fang C, Shu Y, Cui J, Bai H, Wang J. "Anti-gout activity and the interaction mechanisms between *Sanghuangporus vaninii* active components and xanthine oxidase." *Bioorganic Chemistry* 133:106394 (2023). DOI: [10.1016/j.bioorg.2023.106394](https://doi.org/10.1016/j.bioorg.2023.106394). Citation per PubMed.

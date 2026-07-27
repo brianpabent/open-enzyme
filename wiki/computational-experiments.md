@@ -386,10 +386,10 @@ At central pore parameters, the equilibration time constant is 2.17 seconds. At 
 **Verdict:** **Unranked assay-specific Phase 1 literature inventory.** No headline compound, tier, comparative potency, platform priority, dietary efficacy, or gout-compartment potency is established. The scan surfaced rosmarinic acid (covalent C3b modification, 34 µM in one cell-based deposition assay), *Helicteres* benzofuran lignans (single-paper in-vitro anchor), luteolin and other flavonoids, *Bupleurum* polysaccharides, marine sulfated polysaccharides, and heparin-derived oligosaccharides as assay-specific leads with heterogeneous formats, units, and safety constraints. Cross-paper ordering is not justified.
 
 **Key findings:**
-- **Three independent scans now agree** (comp-013 + comp-014 + comp-020): ChEMBL is structurally biased (~20% NP coverage vs >70% kinase/GPCR). Primary-literature mining is the load-bearing tool.
+- COMP-020's bounded spot-check found sparse natural-product coverage relative to the named comparator target classes; it is not a ChEMBL census. COMP-013 and COMP-014 reinforce only the qualitative warning that database absence cannot substitute for primary-literature search.
 - Published assay records span 34–1500 µM for rosmarinic acid and 2–102 µg/mL for heparin across different formats and conditions. Those descriptive ranges motivate matched-format replication; they do not establish format as the cause or supply an operative potency.
 - Rosmarinic acid's covalent C3b mechanism is mechanistically distinctive, but its primary full-text verification tier is unresolved and its direct C5-convertase potency (1500 µM) does not support a ≤100 µM threshold claim.
-- Bounded search gaps (not universal absence proofs): Factor H upregulators, CD55/CD59/CR1 upregulators, direct fungal upstream modulators, and Factor B/D natural-product direct inhibitors. C5aR1 was not independently re-executed; it was ruled out by cross-reference to comp-014.
+- Bounded search gaps (not universal absence proofs): Factor H upregulators, CD55/CD59/CR1 upregulators, direct fungal upstream modulators, and Factor B/D natural-product direct inhibitors. C5aR1 was not independently re-executed; COMP-014 supplies only a bounded no-match, not a rule-out.
 
 **Informs:** [complement-c5a-gout](./complement-c5a-gout.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md)
 
@@ -511,40 +511,38 @@ verdict, evidence-cell comparison, or H-AN-02 adjudication survives.
 
 ---
 
-### comp-014 — Medicinal Mushroom Compound × Chokepoint Mapping — Phase 3 complete (2026-05-17)
+### comp-014 — Medicinal Mushroom Compound × Chokepoint Mapping — partial lead inventory
 
-**Question:** Across all known characterized fungal natural products (globally, not Western pharma only), which compounds map onto OE chokepoints, and which fungal species are highest-leverage producers?
+**Question:** Which fungal natural-product records in the bounded source set map to gout-relevant targets and are worth primary-source qualification?
 
-**Verdict:** **PHASE 3 COMPLETE as a bioactivity map.** 9,778 unified fungal compounds (LOTUS 6,798 + NPAtlas 4,535 + KNApSAcK 20 InChIKey-resolved; NPASS / TCMSP / HIT unreachable from sandbox — documented gap). ChEMBL returned **323 compound × target records across 12 of 24 queried chokepoints**; 177 / 9,778 compounds (1.81%) have at least one record. These are not uniformly favorable hits: assay context, substrate, and target-effect polarity must be verified before mechanistic interpretation. The mapped quercetin × ABCG2 EC50 = 30 nM record is polarity- and urate-context-unresolved.
+**Verdict:** Partial database-derived lead inventory only. Source-species provenance is uneven, database coverage is incomplete, and assay polarity, substrate, exposure, and direct function are not consistently adjudicated. The artifact cannot rank candidates or establish efficacy, safety, dose, sourcing, production, delivery, or chassis choice.
 
 **Key findings:**
-- *Ganoderma* triterpenoid scaffold (ganoderic acids H/D and stereoisomers) emerges as highest-potency direct-binding hit at TNFα, **on top of** the Phase 2 *G. applanatum* 2,4-DAE urate-axis finding — two distinct chokepoint axes, both worth pursuing. *Ganoderma* spp. earn closer look.
-- **Berkeleyamides / Berkeleyones** (Penicillium): first fungal natural products with direct sub-µM CASP1 and low-µM IL-1β hits — opens an inflammasome-effector-axis fungal candidate beyond the polysaccharide-priming literature comp-014 Phase 1 + Phase 2 emphasized.
-- **Target-orphan rate 98.19%** — SwissTargetPrediction predicted-target layer is the next load-bearing step; sandbox-blocked here, deferred to re-run. 9,601 compounds with zero empirical chokepoint hits.
-- **12 of 24 chokepoints have ZERO fungal-source ChEMBL hits**: NLRP3, ASC, GLUT9, C5aR1, Lp-PLA2, KEAP1, OAT4, PINK1, PDI, PDIA3, TXN, TXNIP. Confirms the comp-013 / comp-020 ChEMBL-Western-pharma-bias finding empirically for fungal-source NPs.
-- Multi-target records identified: morin (ABCG2, CASP1, URAT1, XO) and genistein (ABCG2, CASP1, PPARG, XO). These are mapping leads, not favorable multi-target mechanisms; both are plant-origin flavonoids found in mushroom substrate, not fungal-biosynthesis attributions.
-- Phase 2 partial: 3 of 6 planned compound DBs reachable (LOTUS, NPAtlas, KNApSAcK partial); NPASS / TCMSP / HIT all sandbox-blocked. ChEMBL primary-source pre-commit grep-verify gate applied on top-2 load-bearing potency claims.
+- Compound/source/target rows remain search leads that require primary-source rehydration.
+- Plant-origin compounds found in mushroom-associated records cannot be treated as fungal biosynthesis products without direct source evidence.
+- Database absence is a coverage limitation, not evidence of inactivity.
+- The former Phase 6 occupancy/feasibility triage is retired; its script and outputs are removed from the live tree and none of its `PURSUE`, `DROP`, viability, dose, production, synergy, or chassis decisions survives.
 
-**Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) · [complement-c5a-gout](./complement-c5a-gout.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [etc/open-source-platform](./etc/open-source-platform.md) · [nlrp3-exploit-map](./nlrp3-exploit-map.md) (Berkeleyamides → CASP1 effector axis) · [abcg2-modulators](./abcg2-modulators.md) (quercetin record requires polarity, substrate, and urate-context verification)
+**Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) · [nlrp3-exploit-map](./nlrp3-exploit-map.md) · [abcg2-modulators](./abcg2-modulators.md)
 
-**Detail:** [interpretive](./medicinal-mushroom-compound-mapping-computational.md) · [Phase 3 target-mapping summary](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-target-mapping-summary.md) · [Phase 2 findings](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS.md) · [experiments/](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/) · Phase 3 complete; Phase 2 partial (3 of 6 DBs); Phase 5 multilingual deep-dive + Phase 6 triage queued (SwissTargetPrediction layer is the load-bearing next step)
+**Detail:** [interpretive](./medicinal-mushroom-compound-mapping-computational.md) · [artifact](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/) · Partial lead inventory; Phase 6 retired
 
 ---
 
-### comp-013 — TCM Gout Compound Triage — evidence inventory; viability ranking invalid
+### comp-013 — TCM Gout Compound Triage — invalidated tombstone
 
 **Question:** Which TCM compounds with documented gout indications have source-backed target evidence worth advancing to context-matched exposure and functional testing?
 
-**Verdict:** The curated lead inventory survives, but the biological viability ranking does not. Its `assign_verdict` logic counted off-target ABCG2 occupancy toward viability and did not preserve target-effect polarity. The inherited comp-004 nominal gut-concentration/IC50 component is also invalid as a direct biological decision metric.
+**Verdict:** No rank, viability label, exposure estimate, occupancy calculation, risk tier, dose conclusion, delivery route, or advancement decision survives. The retired model counted off-target evidence toward viability, failed to preserve target-effect polarity, and inherited invalid COMP-004 and COMP-007 shortcuts.
 
 **Key findings:**
-- Compound/source/target records remain leads that can be re-read independently of the invalid score.
-- Any renewed triage must preserve target-effect polarity, distinguish direct from off-target assays, and measure or justify free exposure in the relevant compartment.
-- “Viable” and “non-viable” require context-matched functional evidence; nominal bulk concentration divided by an assay IC50 is insufficient.
+- The nine names remain only an unranked historical search list; the names are not evidence.
+- Formula-level connections remain research leads but do not establish component, target, or synergy attribution.
+- COMP-049 is the Gate-1-only replacement design for a fixed mixed-source correction set: four primary animal studies plus one secondary systematic review. It has not run.
 
-**Informs:** [tcm-modern-rigor-intersection](./tcm-modern-rigor-intersection.md) — closes P2-2
+**Informs:** [tcm-modern-rigor-intersection](./tcm-modern-rigor-intersection.md)
 
-**Detail:** [interpretive](./tcm-gout-compound-triage-computational.md) · [experiments/](./etc/experiments/comp-013-tcm-gout-compound-triage/) · Complete
+**Detail:** [interpretive](./tcm-gout-compound-triage-computational.md) · [tombstone](./etc/experiments/comp-013-tcm-gout-compound-triage/) · Invalidated
 
 ---
 
@@ -658,13 +656,13 @@ verdict, evidence-cell comparison, or H-AN-02 adjudication survives.
 | ~~comp-008~~ | Invalidated, non-runnable hand-scored payload rubric. Stable transformation + reporter expression is the common genetic-entry gate; native-pathway, uricase, lactoferrin, and CR1 tests remain separate unranked configuration questions. | [engineered-lbp-chassis](./engineered-lbp-chassis.md) | Retired |
 | ~~comp-009~~ | Invalidated, non-runnable target-site ranking. No guide, filter funnel, score, shortlist, GREEN verdict, accessibility, specificity, cross-species reuse, target-site-availability conclusion, H03 support, or P2-2 closure survives. | [invalidated interpretation](./urat1-sirna-target-site-selection-computational.md) | Retired |
 | comp-048 | Human proximal-tubule delivery-handle screen: identify surface-expression and topology candidates while keeping receptor identity, internalization, polarity, target coverage, and off-target expression as separate evidence gates | [pre-run design](./etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/) | Gate 1 GO; not run |
-| ~~comp-011 TCM~~ | Reassigned 2026-05-05; TCM ChEMBL cross-check landed as comp-013 | — | ✓ Done as comp-013 |
+| ~~comp-011 TCM~~ | Reassigned to COMP-013; that attempt is now invalidated, and the COMP-049 replacement is Gate-1-only and not run | — | Retired |
 | ~~comp-021~~ | Invalidated, non-runnable mixed-tier assay-format model. Matched-format replication planning survives only as a conjecture; no quantitative range, candidate rank, or operative gut potency survives. | [assay-format conjecture](./upstream-complement-assay-format-mapping-computational.md) | Retired |
 | ~~comp-022~~ | Invalidated, non-runnable cassette ranking. The 43,200-row enumeration survives only as historical inventory; every rank, tier, shortlist, winner, and component preference is retired. | [evidence boundary](./uricase-cassette-ranking-computational.md) | Retired |
 | ~~comp-024~~ | Invalidated, non-runnable hand-scored model. Complestatin tailoring and C1-INH expression/folding/function require separate configuration-level tests. See Analyses above | — | Retired |
 | ~~comp-023~~ | Invalidated, non-runnable FBA. Jeennor's direct *A. oryzae* production evidence and one ER-orthogonality conjecture survive independently; burden, flux, yield, breakpoint, and feasibility results do not. | [cordycepin route](./cordycepin-cassette-burden-computational.md) | Retired |
 | ~~comp-023 v2~~ | Deprioritized 2026-05-16 — koji-cordycepin removed from active stack ([koji-endgame-strain §3.5](./koji-endgame-strain.md)) | — | Closed |
-| ~~comp-025~~ | Deprioritized 2026-05-16 — koji-cordycepin removed; cultivation-route cordycepin inherits native ADA-inhibitor pairing | — | Closed |
+| ~~comp-025~~ | Closed after the independent portfolio decision to remove koji-cordycepin. Native cordycepin–pentostatin co-production survives only as an unranked ratio, exposure, and function measurement question. | — | Closed |
 | ~~comp-026~~ | Deprioritized 2026-05-16 — multi-cassette induction interference moot for cordycepin; re-openable for future cytosolic third-cassette candidate | — | Closed |
 | ~~comp-027~~ | Completed 2026-05-16; **downgraded to hypothesis-generator 2026-07-14** — single strict-GREEN modeled point at 100 mg/d (not a validated 75–125 window). See Analyses above | — | ✓ Done |
 | ~~comp-030~~ | Invalidated, non-runnable cassette-ranking model. Direct secretion and GlaA-KEX2 remain unranked configurations for a matched experiment. See Analyses above | — | Retired |

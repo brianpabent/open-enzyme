@@ -1,11 +1,15 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 ---
 title: "Phase 7-1b — Cordyceps militaris strain selection + cordycepin yield characterization"
 date: 2026-05-06
 experiment: comp-014
 phase: 7-1b
 related:
-  - "../../../medicinal-mushroom-complement-track.md"
-  - "../PHASE-5-FINDINGS.md"
+  - "../../../../medicinal-mushroom-complement-track.md"
+  - "PHASE-5-FINDINGS.md"
   - "phase-5-deepread-PMID41905012.md"
 tags: [cordyceps-militaris, cordycepin, strain-selection, fermentation, lit-scan, multilingual-gap]
 ---
@@ -77,7 +81,7 @@ The published C. militaris strain catalog is fragmented across Chinese (CGMCC, G
 
 Three papers directly address the cordycepin → 3'-deoxyinosine ADA deamination problem:
 
-1. **Xia Y et al. 2017** (PMID 29056419, [10.1016/j.chembiol.2017.09.001](https://doi.org/10.1016/j.chembiol.2017.09.001)) — *the canonical paper.* Cordycepin and pentostatin are co-produced from a **single gene cluster** in C. militaris. PTN is the "safeguard molecule" — it inhibits ADA and protects cordycepin from deamination. ADA is derepressed only when cordycepin reaches self-toxic levels, allowing detoxification to 3'-deoxyinosine. **Key implication for OE:** if you grow C. militaris (or any heterologous chassis with the full cluster), you get cordycepin AND its built-in ADA inhibitor. This dramatically changes the in vivo bioavailability calculation — cordycepin from native cluster expression is co-delivered with PTN (a clinically validated FDA-approved ADA inhibitor used in hairy cell leukemia).
+1. **Xia Y et al. 2017** (PMID 29056419, [10.1016/j.chembiol.2017.09.001](https://doi.org/10.1016/j.chembiol.2017.09.001)) — historical source lead for cordycepin and pentostatin co-production from a **single gene cluster** in C. militaris. The record motivates direct co-quantification; it does not establish the ratio, stability, free exposure, or ADA effect of any retained whole material.
 
 2. **Zhao X et al. 2018** (PMID 30454654, [10.1016/j.micres.2018.09.005](https://doi.org/10.1016/j.micres.2018.09.005)) — Cordyceps kyushuensis transcriptome/proteomics confirms the four-gene cluster (ck1–ck4) producing both cordycepin and pentostatin. Generalizes the Xia 2017 result across Cordyceps species.
 
@@ -87,7 +91,7 @@ Three papers directly address the cordycepin → 3'-deoxyinosine ADA deamination
 
 5. **Wang Y et al. 2021** (PMID 34239513, [10.3389/fmicb.2021.698436](https://doi.org/10.3389/fmicb.2021.698436)) — hypoxic engineering with Vitreoscilla hemoglobin **inverts the adenosine/cordycepin ratio** (cordycepin drops to 9–15% of control while adenosine increases). Confirms the pathway is regulated by oxygen state and that ADA activity, cordycepin biosynthesis, and adenosine pool are tightly coupled.
 
-**Bottom line on Q3:** the ADA paradox isn't actually a paradox in fungal cell context — C. militaris has solved it via the PTN safeguard. The deamination concern applies primarily to **purified cordycepin oral delivery without PTN**. Whole-mycelium / whole-fermentate preparations (which is what koji-track delivery would naturally be) carry both molecules in the native ratio. **This is a load-bearing finding** for comp-014 Phase 6's URAT1 thesis: ALLN-346-style oral delivery via fermentation extract preserves the PTN co-presence; injecting purified cordycepin does not.
+**Unvalidated exposure test gate:** authenticate the source material; co-quantify cordycepin, pentostatin, and deamination products across batches; measure stability and free exposure; then test ADA activity and the proposed downstream endpoint with attribution, vehicle, toxicity, and purified-component controls. No whole-material, oral-delivery, chassis, or dose conclusion follows from the historical co-production lead.
 
 ---
 
@@ -153,7 +157,7 @@ Cordyceps research is ~60–70% Chinese-language by paper volume (CNKI + Wanfang
 
 ## Phase 5b CNKI/KISS/J-STAGE follow-ups — explicit queue
 
-Hand off the following multilingual queries to the next subagent (with translation protocol per Open Enzyme CLAUDE.md §"Translation protocol — two-model independent cross-check"):
+The historical query queue used the translation protocol in top-level [`CLAUDE.md`](../../../../../CLAUDE.md) §"Translation protocol — two-model independent cross-check":
 
 | ID | Source | Query (original language) | Priority | Why |
 |---|---|---|---|---|
@@ -169,17 +173,16 @@ Translation protocol reminder: use Claude (or Gemini) + DeepSeek (or Qwen) for t
 
 ---
 
-## Cross-references back into the OE wiki
+## Cross-references
 
-- `wiki/medicinal-mushroom-complement-track.md` — Phase 7 scope page; cordycepin track section needs strain-table propagation
-- `wiki/synthesis.md` — append Phase 7-1b finding card under comp-014 entries
-- `experiments/comp-014-medicinal-mushroom-compound-mapping/PHASE-5-FINDINGS.md` — link from URAT1 / cordycepin section
-- `experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-5-deepread-PMID41905012.md` — AMC-BFE cross-link for co-fermentation §4
-- Open Enzyme koji track (root `index.md`, `wiki/engineered-koji-protocol.md` if present) — propagate the **Jeennor 2023 A. oryzae cns1+cns2 result (564 mg/L/d)** as a major cross-track finding. Cordycepin is producible directly in food-grade A. oryzae — major chassis-decision implication.
+- [Medicinal mushroom complement track](../../../../medicinal-mushroom-complement-track.md)
+- [Historical Phase 5 findings](./PHASE-5-FINDINGS.md)
+- [Historical AMC-BFE deep-read](./phase-5-deepread-PMID41905012.md)
+- [Engineered koji protocol](../../../../engineered-koji-protocol.md)
 
 ---
 
-## Evidence-level summary (per OE CLAUDE.md §5)
+## Evidence-level summary (historical; see top-level [`CLAUDE.md`](../../../../../CLAUDE.md) §5)
 
 - All yield numbers cited from published peer-reviewed papers — **In Vitro / Bioprocess** evidence tier.
 - Strain catalog: deposited and cited but not independently re-cultured by OE — **Mechanistic Extrapolation** for any specific strain choice.

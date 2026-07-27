@@ -1,3 +1,7 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 # Phase 3a — LOTUS × ChEMBL chokepoint intersection
 
 **Method:** Exact canonical-SMILES match between LOTUS-pulled fungal compounds and ChEMBL bioactivity records for 5 priority chokepoint targets (ABCG2, C5aR1, NLRP3, URAT1, XO).

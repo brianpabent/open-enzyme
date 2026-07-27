@@ -6,8 +6,8 @@
     {
       "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/README.md",
       "kind": "design",
-      "bytes": 7135,
-      "sha256": "1b406c1f70578dd1f77abcf457348612b537714da9718d4c3d00beb6db61e199"
+      "bytes": 7196,
+      "sha256": "86032b26232a9159b6796019c3615b5c435275d067c713ea823b35446f8571bd"
     },
     {
       "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/analyze.py",
@@ -28,6 +28,19 @@
       "sha256": "fdae845824b6706269b225c6ce483297404d3439cc8efabf1ff1019e836c0911"
     }
   ],
-  "prior_output_baseline": [],
-  "manifest_sha256": "91b72ed87af76bb7ccd8746cdc240d62c1e3292ec00dd419dd725f4104d0c236"
+  "prior_output_baseline": [
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/assay_evidence_audit.json",
+      "kind": "prior_output",
+      "bytes": 4160,
+      "sha256": "dde77c1989a4ca29f7e92b1b7f2a859deff7168e52461a3f3b3d085d01fc211d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/summary.md",
+      "kind": "prior_output",
+      "bytes": 2135,
+      "sha256": "0b6e99fa1e51ca1e806c177fcd13b2c7a2ec9a0f9124ebaaf8a50d20a192bc53"
+    }
+  ],
+  "manifest_sha256": "4d1a41ff214e1e17c4d5fcc065078b7a6c4074f8c00ff4bab4b803daf94b5d26"
 }

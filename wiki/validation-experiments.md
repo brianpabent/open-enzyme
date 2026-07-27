@@ -46,7 +46,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 | [§1.8](#18-egcg-dose-escalation-on-msu-stimulated-thp-1-tnfsf14-induced-il-6-readout-cp1a) | EGCG dose-escalation CP1a readout | In Vitro | $500–800 | 3–4 | Proposed | [egcg](./egcg.md), [tnfsf14-gout-target](./tnfsf14-gout-target.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) |
 | [§1.9](#19-ward-1995-dual-cassette-feasibility-test-koji-endgame-strain-gate) | **Ward 1995 staged Lf-only → selected UOX-only → dual-cassette feasibility** — conditional #1 koji multi-payload gate | In Vitro | $5,265–8,065 (full path) | 8–12 | Proposed | [koji-endgame-strain](./koji-endgame-strain.md), [lactoferrin](./lactoferrin.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [aspergillus-oryzae](./aspergillus-oryzae.md) |
 | [§1.10](#110-heterologous-uricase--lactoferrin-stability-in-shio-koji-salt-protease-ferment) | Uricase + lactoferrin stability in shio-koji ferment (gates dual-use thesis for both payloads) | In Vitro | $520–900 core reagents; condition matrix, oligomer assay, and microbial QC TBD | 3–4 | Proposed — UOX decision after §1.33 | [koji-home-fermentation](./koji-home-fermentation.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [lactoferrin](./lactoferrin.md), [synthesis/](../synthesis/README.md) |
-| [§1.11](#111-ergothioneine-abcg2-induction-in-caco-2-native-koji-synergy-test) | Ergothioneine → ABCG2 Caco-2 (native koji synergy) | In Vitro | $1,000–1,500 | 3–4 | Proposed | [abcg2-modulators](./abcg2-modulators.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [gut-lumen-sink](./gut-lumen-sink.md) |
+| [§1.11](#111-ergothioneine--abcg2-expression-and-function-in-caco-2) | Ergothioneine → ABCG2 expression and function in Caco-2 | In Vitro | $1,000–1,500 | 3–4 | Proposed — source and exposure qualification required | [abcg2-modulators](./abcg2-modulators.md), [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [gut-lumen-sink](./gut-lumen-sink.md) |
 | [§1.12](#112-local-h2o2-stress-in-caco-2-from-the-selected-uox-configuration) | Selected-UOX epithelial H₂O₂ characterization | In Vitro | $800–1,200 | 2–3 | Proposed — after §1.33 | [uricase](./uricase.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [gut-lumen-sink](./gut-lumen-sink.md) |
 | [§1.13](#113-limonene-abcg2-induction-in-caco-2-tier-3-stack-synergy-test) | Limonene → ABCG2 Caco-2 (Tier-3 stack synergy) | In Vitro | $800–1,200 | 3–4 | Proposed | [supplements-stack](./supplements-stack.md), [abcg2-modulators](./abcg2-modulators.md), [cannabinoids-terpenes](./cannabinoids-terpenes.md) |
 | [§1.14](#114-abcg2-response-to-dht-and-tnf-with-butyrate-and-lactoferrin-rescue) | Direction-finding DHT × TNFα ABCG2 factorial + butyrate/lactoferrin response + supplement interaction/urate-flux gate + Q141K arm | In Vitro | TBD | 4–6 | Proposed | [abcg2-modulators](./abcg2-modulators.md), [androgen-urate-axis](./androgen-urate-axis.md), [gut-lumen-sink](./gut-lumen-sink.md), [lactoferrin](./lactoferrin.md), [supplements-stack](./supplements-stack.md), [koji-endgame-strain](./koji-endgame-strain.md) |
@@ -56,12 +56,12 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 | [§1.18](#118-native-koji-enzyme-sgf-survival-free-extract-vs-whole-biomass-2-arm) | Native koji enzyme SGF (free extract vs. whole biomass) | In Vitro | $300–500 | 2 | Proposed | [koji-home-fermentation](./koji-home-fermentation.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [gi-survival-prediction](./gi-survival-prediction.md) |
 | [§1.19](#119-methodological-standard-rodent-cellular-ic50-translation-caveat) | Methodology — rodent cellular IC50 translation caveat | Standing | $0 | ongoing | Standing | [chembl-cross-check](./etc/chembl-cross-check.md), [nlrp3-inhibitor-screen](./nlrp3-inhibitor-screen.md), [supplements-stack](./supplements-stack.md) |
 | [§1.20](#120-lactoferrin-egcg-cp1a-super-additivity-assay-thp-1-macrophage-33-full-factorial--prespecified-midpoint) | Lactoferrin + EGCG CP1a interaction (THP-1 3×3 full factorial + prespecified midpoint); recombinant Lf can run now | In Vitro | $1,500 | 3–4 | Proposed | [lactoferrin](./lactoferrin.md), [egcg](./egcg.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [supplements-stack](./supplements-stack.md), [koji-endgame-strain](./koji-endgame-strain.md) |
-| [§1.21](#121-natural-product-c5ar1-antagonist-screening-computational-pass-closes-the-cp0-fermentable-coverage-question) | Natural-product C5aR1 antagonist screen (CP0 fermentable-coverage question) | Computational | $0 | 0.5 | **Closed (negative, 2026-04-27)** | [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [open-enzyme-vision](./etc/open-enzyme-vision.md) |
+| [§1.21](#121-natural-product-c5ar1-antagonist-screening--historical-computational-pass) | Natural-product C5aR1 antagonist screen — historical bounded query | Computational | $0 | 0.5 | Historical bounded no-hit; class remains open | [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [open-enzyme-vision](./etc/open-enzyme-vision.md) |
 | [§1.22](#122-gut-compartment-hdac-directed-candidate-screen-for-q141k-abcg2-trafficking-rescue) | Direct gut-compartment test of HDAC-directed candidates for Q141K-ABCG2 trafficking rescue | In Vitro | TBD | TBD | Proposed | [abcg2-modulators](./abcg2-modulators.md), [gut-lumen-sink](./gut-lumen-sink.md) |
 | [§1.23](#123-androgen-msu-nlrp3-in-macrophages-tiered-mechanistic-protocol) | Androgen × MSU × NLRP3 macrophage tiered protocol (T1 THP-1 / T2 PBMC / T3 mouse air-pouch) — fills literature gap | In Vitro | Tier 1: $5–10K; full T1+T2+T3 cascade $105–160K | Tier 1: 6–8; full cascade ~12 months | Proposed | [androgen-urate-axis](./androgen-urate-axis.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md) |
 | [§1.24](#124-carnosine-co-expression-validation-in-a-oryzae-koji-endgame-optional-third-cassette) | Carnosine co-expression in *A. oryzae* (koji multi-payload optional third cassette) | In Vitro | $1,500–2,500 | 4–6 | Proposed | [koji-endgame-strain](./koji-endgame-strain.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [carnosine](./carnosine.md), [androgen-urate-axis](./androgen-urate-axis.md) |
 | [§1.25](#125-dafcd55-scr1-4-truncated-single-cassette-expression-in-a-oryzae-cp0-engineering-candidate-wet-lab-gate) | DAF SCR1-4 route × host single-cassette comparison in *A. oryzae* (CP0 candidate + matched chaperone-conjecture test) | In Vitro | TBD after route-factorial and disulfide-mapping quotes | TBD | Proposed | [daf-cd55-scr14-truncated-computational](./daf-cd55-scr14-truncated-computational.md), [hypotheses/H05-daf-scr14-cp0-thesis](./hypotheses/H05-daf-scr14-cp0-thesis.md), [chaperone-orthogonal-stacking](./chaperone-orthogonal-stacking.md), [complement-c5a-gout](./complement-c5a-gout.md) |
-| [§1.26](#126-cordycepin--pentostatin--glpp--five-arm-ada-half-life-assay-ada-chokepoint-synergy-validation) | Cordycepin × pentostatin × GLPP five-arm ADA half-life assay | In Vitro | $1,500–2,500 | 3–4 | Proposed | [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [gout-pathophysiology](./gout-pathophysiology.md) |
+| [§1.26](#126-ada-driven-cordycepin-loss--exact-material-interaction-screen) | ADA-driven cordycepin loss across exact materials and controls | In Vitro | TBD after pilot | TBD | Proposed — pilot design required | [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [gout-pathophysiology](./gout-pathophysiology.md) |
 | [§1.27](#127-ergothioneine--lactoferrin-interaction-assay-in-msu-stimulated-thp-1-macrophages) | Ergothioneine × lactoferrin interaction in MSU-stimulated THP-1 macrophages | In Vitro | TBD | TBD | Proposed | [lactoferrin](./lactoferrin.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) |
 | [§1.28](#128-tier-2-colorimetric-cordycepin-assay-validation) | Tier 2 colorimetric cordycepin assay validation | In Vitro | ~$200 | 2 | Proposed | [quantification-ladder](./quantification-ladder.md), [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) |
 | [§1.29](#129-cordycepin--pentostatin--substrate-matrix) | Cordycepin × pentostatin exact-configuration medium effects | In Vitro | TBD | TBD | Proposed — pilot design required | [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [medicinal-mushroom-extract-sops](./medicinal-mushroom-extract-sops.md) |
@@ -87,7 +87,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 | [§2.3](#23-engineered-koji-efficacy-in-digestive-enzyme-deficient-model) | Engineered koji EPI model | Animal | $6,000–10,000 | 8–10 | Proposed | [engineered-koji-protocol](./engineered-koji-protocol.md), [digestive-enzymes](./digestive-enzymes.md), [enzyme-deficit-deep-dive](./enzyme-deficit-deep-dive.md) |
 | [§2.4](#24-nlrp3-inflammasome-inhibition-in-msu-crystal-arthritis-model) | NLRP3 inhibition in MSU arthritis model | Animal | $10,000–15,000 | 10–12 | Proposed | [nlrp3-exploit-map](./nlrp3-exploit-map.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [gout-deep-dive](./gout-deep-dive.md), [supplements-stack](./supplements-stack.md) |
 | [§2.5](#25-pulse-probiotic-validation-in-hyperuricemic-mice) | PULSE probiotic validation (hyperuricemic mice) | Animal | TBD after pilot and model selection | TBD | Proposed — after §§1.33, 1.36, and 2.1 | [gout-deep-dive](./gout-deep-dive.md), [gout-clinical-pipeline](./gout-clinical-pipeline.md), [gut-lumen-sink](./gut-lumen-sink.md) |
-| [§2.6](#26-glpp--cordycepin-interaction-in-hyperuricemia--matched-wet-lab-gate-phase-7-4-stub) | GLPP + cordycepin interaction in hyperuricemia — matched wet-lab gate | Animal | TBD | TBD | Proposed — design pending exact material and pilot data | [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [hypotheses/H06-medicinal-mushroom-complement-track](./hypotheses/H06-medicinal-mushroom-complement-track.md) |
+| [§2.6](#26-glpp--cordycepin-interaction-in-hyperuricemia--matched-wet-lab-gate) | GLPP + cordycepin interaction in hyperuricemia — matched wet-lab gate | Animal | TBD | TBD | Proposed — design pending exact material and pilot data | [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) |
 | [§2.7](#27-koji--cordyceps-co-formulation-stability-test--ada-challenge-assay--deprioritized-2026-05-16-archived-2026-05-29) | Koji × *Cordyceps* co-formulation stability test | In Vitro | N/A (archived) | N/A (archived) | Abandoned — recover from Git only if decision-relevant | [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md) |
 | [§2.8](#28-exact-material-androgen--urate-dual-axis-validation) | Exact-material androgen × urate dual-axis validation | Animal | TBD after material and exposure pilot | TBD | Proposed — one material/configuration per qualified study | [androgen-natural-modulation](./androgen-natural-modulation.md), [t-axis-adjuvant-urate-mapping-computational](./t-axis-adjuvant-urate-mapping-computational.md), [prps-purine-biosynthesis-chokepoint](./prps-purine-biosynthesis-chokepoint.md) |
 | [§3.3](#33-wild-type-fungal-enzyme-timing-study-design) | Wild-type fungal-enzyme timing study design | Human | TBD | TBD | Design only — gated on characterized material and oversight | [digestive-enzymes](./digestive-enzymes.md), [enzyme-quantification-protocol](./enzyme-quantification-protocol.md) |
@@ -440,41 +440,41 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 
 ---
 
-### 1.11 Ergothioneine → ABCG2 Induction in Caco-2 (Native Koji Synergy Test)
+### 1.11 Ergothioneine → ABCG2 Expression and Function in Caco-2
 
-**Status**: Proposed | **Cost**: $1,000–1,500 | **Weeks**: 3–4 | **Phase**: 1
+**Status**: Proposed — source and exposure qualification required | **Cost**: $1,000–1,500 | **Weeks**: 3–4 | **Phase**: 1
 
-**Affected wiki**: [abcg2-modulators](./abcg2-modulators.md), [aspergillus-oryzae](./aspergillus-oryzae.md), [engineered-koji-protocol](./engineered-koji-protocol.md), [gut-lumen-sink](./gut-lumen-sink.md)
+**Affected wiki**: [abcg2-modulators](./abcg2-modulators.md), [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [gut-lumen-sink](./gut-lumen-sink.md)
 
-**What it tests:** Does ergothioneine—reported as natively produced by *A. oryzae*—induce ABCG2 expression in human enterocyte-lineage cells at concentrations achievable from koji-derived dietary intake? **Tag: Mechanistic Extrapolation testing a two-step inference (ergothioneine → Nrf2 stabilization → ABCG2 induction).** Ergothioneine's "Nrf2 inducer" classification is weaker than canonical activators (sulforaphane, CDDO-Me); it is more accurately a ROS scavenger that may indirectly stabilize Nrf2. This experiment tests whether the koji track gets incidental ABCG2-induction synergy from a native metabolite or whether the connection is too distant to matter. **Verify before running:** the achievable koji titer remains unverified against primary literature.
+**What it tests:** Whether source-qualified ergothioneine changes ABCG2 expression and mechanism-matched transport function in human enterocyte-lineage cells across an analytically verified, noninjurious exposure range. The proposed ergothioneine → redox/Nrf2 → ABCG2 connection is a **Mechanistic Extrapolation**; neither antioxidant activity nor ABCG2 expression alone establishes useful urate transport.
 
 
 **Protocol:**
 - **Cells:** Caco-2 (ATCC HTB-37), differentiated 21 days on transwell inserts to recapitulate apical/basolateral polarity.
-- **Treatment arms (n=4 wells per arm):**
+- **Treatment arms:**
   - Vehicle control
-  - Ergothioneine at 1, 10, 100 μM (apical) — brackets the koji-luminal-bioavailability range (OCTN1 transport is the rate-limiter)
+  - Ergothioneine at no fewer than three concentrations selected only after primary-source exposure review, analytical confirmation in the assay medium, and a viability pilot
   - Sulforaphane at 1 μM (positive control — established Nrf2 → ABCG2 inducer per Xie 2020)
-  - Combination: ergothioneine 100 μM + sulforaphane 0.1 μM (sub-threshold sulforaphane to test additivity)
+  - Combination: one pilot-supported ergothioneine concentration plus a prespecified subthreshold sulforaphane concentration; declare the interaction model before result-bearing use
 - **Time-course:** 6, 24, 48 h.
 - **Readouts:**
   - ABCG2 mRNA (qPCR, normalized to GAPDH)
   - ABCG2 protein (Western, apical-membrane fraction)
-  - Functional efflux (Hoechst 33342 accumulation assay; or urate-direct transport in bidirectional transwell if budget allows — strongly preferred per the L243-area review note that prior assays should ground in urate not just BCRP probe substrates)
+  - Mechanism-matched function: urate-direct transport in bidirectional transwells, with an ABCG2-attribution control; a generic BCRP probe may be secondary but cannot replace the urate endpoint
   - Nrf2 nuclear translocation (immunofluorescence, 6 h timepoint)
-- **Substrate-claim verification (parallel, $0):** desk-check `aspergillus-oryzae.md` against primary literature (Cheah & Halliwell 2012, Borodina 2020) before committing wet-lab spend.
+- **Analytical and injury controls:** verify free ergothioneine exposure in medium and prespecify viability/barrier-integrity exclusions.
 
 **Estimated cost:** $1,000–1,500 — Caco-2 culture + transwell inserts ($300), ergothioneine + sulforaphane standards ($150), qPCR primers + reagents ($200), Western antibodies for ABCG2 + Nrf2 ($300), Hoechst probe + plate reader time ($100), urate-transport reagents ($150) if pursuing the bidirectional transwell.
 
 **Estimated timeline:** 3–4 weeks.
 
-**Dependencies:** None — Caco-2 is a standard cell line. Could pair with §1.13 (limonene) to amortize fixed costs.
+**Dependencies:** Primary-source exposure review; exact material and purity record; analytical exposure check; viability/barrier pilot; Caco-2 access. The same cell infrastructure may be shared with §1.13.
 
 **Success criteria:**
-- **Confirms synergy claim:** ABCG2 mRNA and protein induction at koji-achievable ergothioneine concentrations (10–100 μM apical), with functional efflux upregulation. Promotes the "free synergy" claim from speculative to supported in [`engineered-koji-protocol.md`](./engineered-koji-protocol.md) and [`aspergillus-oryzae.md`](./aspergillus-oryzae.md).
-- **Falsifies / scopes down:** No detectable ABCG2 induction at koji-achievable doses. Removes this synergy from the koji-track configuration; positive sulforaphane control remains the canonical ABCG2 inducer route.
+- **Advance:** A qualifying ABCG2 expression change is accompanied by ABCG2-attributed urate transport at an analytically verified, noninjurious exposure. Any combination claim additionally requires the predeclared interaction criterion.
+- **Redirect or kill within the tested scope:** No mechanism-matched functional effect, an effect explained by injury, or failure of the prespecified interaction criterion closes only the tested material, exposure range, and combination—not ergothioneine or fungal sourcing as a class.
 
-**Cross-references:** [abcg2-modulators.md](./abcg2-modulators.md) §2 (Nrf2 transcriptional axis); [aspergillus-oryzae.md](./aspergillus-oryzae.md) (native ergothioneine claim — verify before spending).
+**Cross-references:** [abcg2-modulators.md](./abcg2-modulators.md) §2 (Nrf2 transcriptional axis); [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) (ergothioneine exact-material and exposure boundary).
 
 ---
 
@@ -819,13 +819,13 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 
 ---
 
-### 1.21 Natural-Product C5aR1 Antagonist Screening — Computational Pass (Closes the CP0 Fermentable-Coverage Question)
+### 1.21 Natural-Product C5aR1 Antagonist Screening — Historical Computational Pass
 
-**Status**: Closed (negative result, 2026-04-27) | **Cost**: $0 | **Weeks**: 0.5 | **Phase**: 1 (computational, complete)
+**Status**: Historical bounded search result — no validated natural-product hit in the recorded query set | **Cost**: $0 | **Weeks**: 0.5 | **Phase**: 1 (computational)
 
 **Affected wiki**: [complement-c5a-gout](./complement-c5a-gout.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) (CP0), [open-enzyme-vision](./etc/open-enzyme-vision.md) (CP0 gap statement).
 
-**What it tests:** The then-current engineered-koji / yeast / supplement composition had a gap at **CP0**—the complement-priming chokepoint where MSU crystals → classical-pathway activation → C5a → C5aR1 binding → non-transcriptional NLRP3 priming. Avacopan is a synthetic small-molecule option. This experiment scans for a natural-product C5aR1 antagonist worth wet-lab triage or closes that candidate class pending new evidence. The hit-rate prior was low because known antagonists are dominated by synthetic constrained peptides and small molecules. A negative result is operationally useful: it narrows this exploit route without defining what the rest of the project must do.
+**What it tests:** The recorded search asked whether its specified databases and literature queries surfaced a natural-product C5aR1 antagonist worth wet-lab triage. It can bound only that query set and date. A no-hit result does not close natural products as a class, establish structural impossibility, select a pharmaceutical answer, or determine the rest of the portfolio.
 
 
 **Protocol — what was actually run:**
@@ -837,7 +837,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 5. **Targeted primary-literature search.** PubMed-via-WebSearch queries for: `"C5aR1" antagonist plant`, `"C5aR1" natural product flavonoid OR terpenoid OR alkaloid`, `"C5a receptor" inhibitor flavonoid IC50 cell-based`, `"C5aR1" inhibitor marine fungus`. Catches any plant- or microbe-source antagonist reported in primary literature without ChEMBL curation.
 6. **Avacopan structural-class check.** Quick SwissSimilarity / pharmacophore scan against avacopan's cyclohexanecarboxamide / piperidine motif — most plant secondary metabolites won't share this scaffold but worth a fast pass. *(Skipped after step 5 returned <5 candidates — see "what was not run" below.)*
 
-**What was not run, and why:** AlphaFold + AutoDock Vina docking against a curated natural-product library was deferred. The protocol gates docking on ≥5 wet-lab-validated or strongly-prior-supported natural-product candidates emerging from steps 1–5; the actual count was **0 wet-lab-validated natural-product C5aR1 antagonists**, with only 2 computational-only docking hits and 1 indirect "neutraligand" surfacing in the literature (detailed below). At <5 candidates, docking adds no signal — it would either re-derive the existing computational hits (already published) or surface novel docking-only leads of the same evidence tier as those already discounted. The wet-lab triage gate is the binding constraint, and there is nothing to triage.
+**What was not run, and why:** AlphaFold + AutoDock Vina docking against a curated natural-product library was deferred. The protocol gated docking on at least five wet-lab-validated or strongly prior-supported candidates emerging from steps 1–5; the recorded search found none meeting that gate. Docking-only leads would not have supplied the missing functional evidence. This decision applies to that search and gate, not to every future library or candidate.
 
 **Result:**
 
@@ -845,16 +845,16 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 - **Curated natural-product hits at human C5AR1 with wet-lab functional or binding data: 0.** No compound flagged `natural_product=1` in ChEMBL appears in the sub-μM potency tail. The full pChEMBL ≥ 6 list at CHEMBL2373 is dominated by synthetic cyclic peptides (PMX-53/PMX-205 series, 1995–2006 BMCL/JMC papers, IC50 18–60 nM in [125I]-C5a binding or PMN glucosaminidase release), synthetic imidazolidinones / piperazines / piperidines (the CO13 binding-competition series, IC50 25–450 nM), and clinical-stage allosteric small molecules in the avacopan structural class.
 - **Apparent peptide hit, not a natural product:** CHEMBL217378 (sequence ISHKDMQLGR, EC50 1.3 nM in PMN polarization) initially looked natural-product-flavored at the sequence level but is curated as `molecule_type: "Protein"`, `natural_product: 0`, `pref_name: "ISHKDMQLGR"` — a synthetic decapeptide derived from C5a's own C-terminal sequence, designed as a receptor-engagement probe, not an isolated natural product.
 - **Computational-only natural-product candidates from primary literature (no wet-lab confirmation):**
-  - **Acteoside** (verbascoside; phenylethanoid glycoside; plant natural product widely distributed in *Olea europaea*, *Plantago*, *Verbascum*, *Rehmannia*, *Lamiales* generally) — Shaikh & Siu 2016, *Med Chem Res* 25:1564–1573 (PMID 27499603). Homology model of C5aR1 (Glide XP docking + MM-GBSA), ΔG_bind = −113.9 kcal/mol, XP GScore = −12.4 kcal/mol. Authors explicitly state: "biological experiments to validate this inhibitor are being planned as a future work." **No follow-up validation has been published in the decade since.** Evidence level: *Computational / homology-model docking only.*
-  - **Toxicarioside** (cardiac glycoside from *Antiaris toxicaria*, the upas tree; latex traditionally used as a dart poison in Southeast Asia) — same Shaikh & Siu 2016 paper, ΔG_bind = −90.1 kcal/mol. **Not pursuable on safety grounds:** the *A. toxicaria* cardenolides (toxicariosides J/K/L/O, antiarin) are cytotoxic Na+/K+-ATPase inhibitors at sub-μM doses; this is a fundamentally toxic scaffold, fermentable or not. Evidence level: *Computational only.*
+  - **Acteoside** (verbascoside; phenylethanoid glycoside; plant natural product widely distributed in *Olea europaea*, *Plantago*, *Verbascum*, *Rehmannia*, *Lamiales* generally) — Shaikh & Siu 2016, *Med Chem Res* 25:1564–1573 (PMID 27499603). Homology model of C5aR1 (Glide XP docking + MM-GBSA), ΔG_bind = −113.9 kcal/mol, XP GScore = −12.4 kcal/mol. Authors explicitly state: "biological experiments to validate this inhibitor are being planned as a future work." The recorded follow-up search did not find a validating functional study. Evidence level: *Computational / homology-model docking only.*
+  - **Toxicarioside** (cardiac glycoside from *Antiaris toxicaria*, the upas tree; latex traditionally used as a dart poison in Southeast Asia) — same Shaikh & Siu 2016 paper, ΔG_bind = −90.1 kcal/mol. **Safety flag:** the docking lead cannot advance without a primary toxicology, selectivity, and exposure review of the exact compound and comparator scaffold. Evidence level: *Computational only.*
   - **Resveratrol** — Mishra et al. 2020, *J Biomol Struct Dyn* (PMID 32131707). Molecular dynamics + automated docking + MM-GBSA + circular dichroism + steady-state fluorescence biophysics. Critically, resveratrol binds **hC5a (the ligand)**, not C5aR1 (the receptor) — a "neutraligand" approach that prevents C5a from engaging C5aR1 by sequestering the soluble anaphylatoxin. Mechanistically distinct from receptor antagonism (direct receptor antagonism) but tangentially relevant. No reported potency in standard inhibitor units; the biophysics suggest binding but do not establish a functional IC50 on C5a-driven C5aR1 signaling. Evidence level: *Computational + cell-free biophysical binding; no functional assay.* This signal does not qualify resveratrol for CP0 placement.
-- **Open Targets known-drugs list at C5AR1 (ENSG00000197405):** Avacopan (CCX-168, FDA-approved 2021, oral C5aR1 antagonist, 30 mg BID dosing, the canonical pharma reference) plus the upstream C5-binding biologics (eculizumab, ravulizumab, zilucoplan) which are not C5aR1-directed. **No natural-product-derived clinical or preclinical asset.**
-- **NPASS / LOTUS:** No curated natural-product entries at C5AR1 / CHEMBL2373 surface in either database (queried 2026-04-27). NPASS contains 222,092 NP-target pairs across 5,863 targets; the absence of C5AR1 in this corpus is itself informative — it means that across the full curated natural-product activity landscape, C5AR1 has not been assayed with sufficient hit confirmation to merit a database entry.
-- **Plant flavonoid CH50 literature:** As already documented in [`complement-c5a-gout.md`](./complement-c5a-gout.md) §10.2, broad complement-pathway inhibition (CH50, AP50) by quercetin, EGCG, baicalein, curcumin, resveratrol falls in the 50–500 μM range — 100–1000× weaker than synthetic C5aR1 antagonists, multi-target rather than C5aR1-selective, and not pursuable as CP0 coverage at dietary or supplement-achievable doses.
+- **Open Targets known-drugs list at C5AR1 (ENSG00000197405):** The recorded query surfaced avacopan as a synthetic C5aR1 antagonist and upstream C5-binding biologics that are not C5aR1-directed. It did not surface a natural-product-derived clinical or preclinical asset in that query result.
+- **NPASS / LOTUS:** The recorded queries did not surface a curated natural-product C5aR1 entry in either database. Database non-retrieval is not biological absence and does not show whether an uncurated material has been tested.
+- **Plant flavonoid CH50 literature:** The records summarized in [`complement-c5a-gout.md`](./complement-c5a-gout.md) §10.2 concern broad complement-pathway readouts rather than selective C5aR1 function. They did not satisfy this experiment's receptor-specific triage gate.
 
-**Conclusion — CP0 fermentable coverage is closed for natural products.** The scan returned zero wet-lab-validated natural-product C5aR1 antagonists. The two computational-only plant hits (acteoside, toxicarioside) have not been functionally validated in the decade since publication despite the original authors' stated plans, and toxicarioside is non-pursuable on safety grounds anyway. Resveratrol's hC5a binding is mechanistically distinct (neutraligand, not antagonist) and biophysically weak. Avacopan remains the pharma adjunct at CP0; the engineered koji / yeast / supplements stack does not have, and structurally is unlikely to acquire, fermentable CP0 coverage. This is a useful negative result — it converts the existing CP0 gap statement from "we don't have natural-product coverage at CP0" to "we ran the scan; here is exactly what we found and exactly why avacopan is the answer," removing this question from the platform's open backlog.
+**Bounded interpretation:** The recorded search returned no wet-lab-validated natural-product C5aR1 antagonist. It surfaced two computational-only plant leads and a mechanistically distinct cell-free hC5a-binding lead. That result lowers the priority of repeating the same query unchanged; it does not prove absence outside the searched sources, close the class, select avacopan, or imply that an engineered or natural-product route is structurally incapable of reaching CP0.
 
-**Re-open conditions:** (a) a new ChEMBL release (v35+) curates a sub-μM natural-product C5aR1 antagonist with primary-literature wet-lab confirmation; (b) a primary-literature paper reports a fermentable C5aR1 antagonist with functional cell-based or in vivo evidence; (c) avacopan loses regulatory or supply availability, raising the value of weaker fermentable backups; or (d) acteoside receives functional validation in C5aR1-expressing cells. Until then, this natural-product CP0 route stays closed.
+**Next-search triggers:** Revisit when a new database release or primary paper supplies functional C5aR1 evidence for an exact natural product, when a current computational lead receives functional validation, or when a meaningfully different multilingual/source query is proposed. Any new lead still requires primary-source verification, exact-material identity, exposure, functional attribution, and safety counterscreens.
 
 **Cross-references:** [complement-c5a-gout.md](./complement-c5a-gout.md) §9 (CP0 platform gap) + §10 (natural-product modulator literature); [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) (CP0 chokepoint); [open-enzyme-vision.md](./etc/open-enzyme-vision.md) ("CP0 gap — honest acknowledgment"); [synthesis/](../synthesis/README.md) 2026-04-24 Connection #2 + Proposed Experiment #3. Source: ChEMBL CHEMBL2373 (April 2026); Open Targets ENSG00000197405; Shaikh F, Siu SWI. *Med Chem Res* 25:1564–1573 (2016, PMID 27499603); Mishra et al. *J Biomol Struct Dyn* 2020 (PMID 32131707).
 
@@ -1034,78 +1034,19 @@ The initial planning count is therefore two route constructs, four configuration
 
 ---
 
-### 1.26 Cordycepin × Pentostatin × GLPP — Five-Arm ADA Half-Life Assay (ADA Chokepoint Synergy Validation)
+### 1.26 ADA-Driven Cordycepin Loss — Exact-Material Interaction Screen
 
-**Status**: Proposed | **Cost**: $1,500–2,500 | **Weeks**: 3–4 | **Phase**: 1
+**Status:** Proposed — pilot design required | **Cost:** TBD after pilot | **Weeks:** TBD
 
-**Affected wiki**: [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [gout-pathophysiology](./gout-pathophysiology.md), [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md)
+**What it tests:** Whether purified pentostatin, one composition-defined GLPP fraction, or one fully characterized *C. militaris* material changes ADA-driven cordycepin loss relative to matched controls. Co-production does not establish a fixed ratio, protection, or beneficial interaction; the actual material composition and free concentrations must be measured.
 
-**What it tests:** Whether pentostatin, a characterized GLPP fraction, or their source-material combinations change ADA-driven cordycepin loss in vitro relative to the corresponding single-material controls. The assay measures biochemical stability; it does not establish an oral product, dose, urate effect, or clinical use.
+**Entry requirements:** verify the exact materials and primary-source assay boundaries; quantify cordycepin and pentostatin in any whole material; validate the analytical method; and run a pilot to choose concentrations, sampling times, controls, replication, and the interaction estimand. Include GLPP only if its proposed ADA effect is independently source-qualified.
 
-**Design requirement:** the fifth arm tests the two-organism combination, which is not represented by purified pairings or whole-fermentate alone.
+**Readouts:** cordycepin and 3'-deoxyinosine over time, direct ADA activity, material identity, free concentrations, and assay-interference controls. The final arm count follows the estimand and pilot rather than an inherited five- or six-arm layout.
 
-**Background — the ADA chokepoint:** ADA deaminates cordycepin. Pentostatin is co-produced with cordycepin in *C. militaris* in the cited BGC study (Xia 2017, PMID 29056419); the GLPP arm tests a separate proposed inhibition mechanism. The matched arms are required because source-material composition and inhibition cannot be inferred from the purified compounds alone.
+**Decision rule:** advance only an exact material or pair that reproducibly beats its matched null while preserving assay validity. A null GLPP interaction removes only that fraction under those conditions; a null whole-material result rejects only the tested composition and ratio. No in-vitro result establishes an oral product, dose, urate effect, safety, delivery route, production chassis, or clinical use.
 
-**Protocol — Five-arm in-vitro design:**
-
-| Arm | Composition | Tests |
-|---|---|---|
-| **1. Cordycepin alone** | Recombinant human ADA (Sigma A6535) + cordycepin standard (Sigma C3394, 100 µM) in PBS pH 7.4, 37°C | Baseline ADA-driven cordycepin deamination kinetics |
-| **2. Cordycepin + pentostatin** | Arm 1 + research-grade pentostatin (Sigma P3650, 1 µM and 10 µM dose-response) | Pentostatin's quantitative ADA-inhibition contribution at gut-relevant concentrations |
-| **3. Cordycepin + GLPP** | Arm 1 + GLPP-enriched fraction from a SEC-MALS-characterized *G. lingzhi* dual-decoction extract (per [SOP-1](./medicinal-mushroom-extract-sops.md), 100 µg/mL polysaccharide-peptide) | GLPP's ADA-inhibition contribution alone, mechanistically distinct from pentostatin |
-| **4. Whole-fermentate *Cordyceps***  | Total water/ethanol-coextract from *C. militaris* (GYS60 strain or commercial fruiting-body extract; cordycepin-equivalent dose normalized to 100 µM via SOP-2 HPLC quantification) | Whole-fermentate co-delivery of cordycepin + native pentostatin in their natural ratio — single-organism baseline |
-| **5. Whole-fermentate *Cordyceps* + GLPP** | Arm 4 + GLPP from Arm 3 | The two-organism combination — does adding mechanistically-orthogonal GLPP-mediated ADA inhibition further extend cordycepin half-life beyond what whole-fermentate's native pentostatin already delivers? |
-
-**Primary readout:** cordycepin remaining at t = 0, 15, 30, 60, 120, 240 min, measured by HPLC (per [SOP-2](./medicinal-mushroom-extract-sops.md) cordycepin quantification — calibrated reference standard). Compute half-life per arm. Loewe combination index for arms 2/3/5 vs. additive expectation.
-
-**Secondary readout:** ADA enzyme activity (residual deamination rate) measured directly via commercial ADA assay kit (Diazyme, 1064-330) — confirms the ADA-inhibition mechanism rather than off-target cordycepin protection.
-
-**Success criteria:**
-- If Arm 5 shows the prespecified half-life extension over Arm 4 and the secondary readout supports ADA inhibition, advance that exact material pair to independently designed pharmacokinetic and safety work.
-- If Arm 5 does not improve on Arm 4, GLPP does not advance as an incremental component under these assay conditions.
-- If Arm 4 does not improve on Arm 1, the whole-fermentate protection hypothesis is not supported under these assay conditions.
-
-**Limitations:**
-- In vitro ADA assay does not capture gut-microbiome metabolism of cordycepin (which may matter for in vivo half-life). The half-life extension demonstrated here is necessary but not sufficient for clinical effect.
-- Recombinant human ADA (Sigma A6535) is the standard substrate but doesn't model intestinal mucosa-localized ADA dynamics. Mouse PK study (queued as gated follow-on) is the next-step de-risker.
-- GLPP fraction quality is load-bearing — Tier 3 SEC-MALS characterization per SOP-1 is non-negotiable. Generic "reishi extract" cannot substitute. Per the [structure-dependent β-glucan caveat](./medicinal-mushroom-complement-track.md#consumer-product-caveat--structure-dependent-β-glucan-nlrp3-directionality), wrong-fraction substitution would produce uninterpretable results.
-
-**Cross-references:** [medicinal-mushroom-complement-track.md §"Combined / synergy candidates"](./medicinal-mushroom-complement-track.md); [gout-pathophysiology.md §"ADA (Adenosine Deaminase) — Purine Catabolism Chokepoint Candidate"](./gout-pathophysiology.md); [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md) (comp-014 Phase 2).
-
-#### Sixth-arm extension — engineered-koji cordycepin + GLPP (**Deprioritized 2026-05-16**; gated on strain availability)
-
-> **Deprioritized 2026-05-16 — koji-cordycepin engineering removed from active cassette stack.** The sixth arm tests engineered-koji cordycepin + GLPP for ADA half-life protection; with the koji-cordycepin engineering effort deprioritized (full reasoning at [`koji-endgame-strain.md` §3.5](./koji-endgame-strain.md)), the §1.26 base assay (Arms 1–5) stands as the canonical ADA-protection investigation — those arms use whole-fermentate *Cordyceps* and purified compounds, all available via the cultivation track. Sixth arm is moot until/unless koji-cordycepin engineering is re-prioritized.
-
-
-**Status**: Proposed extension to §1.26 base | **Cost**: ~$500–1,000 adder | **Weeks**: same as §1.26 base | **Phase**: 2 | **Hard gating**: engineered-koji cordycepin strain must exist (downstream of §1.9-extended design + comp-025 ADA-competition GREEN + comp-028 three-axis GREEN)
-
-**What it tests:** Can koji-track cordycepin (lacking the native pentostatin that *C. militaris* co-produces from the same BGC) achieve ADA half-life protection equivalent to whole-fermentate *Cordyceps* by leveraging GLPP's polysaccharide-binding ADA inhibition? Specifically: does engineered-koji cordycepin extract + GLPP match the whole-fermentate *Cordyceps* native arms (§1.26 Arms 4 + 5) on ADA half-life?
-
-**Why a sixth arm:** the base assay does not test an independently characterized engineered-koji cordycepin material. If that material ever exists, a sixth arm could compare its ADA-driven loss with the other exact materials. The assay would remain a biochemical interaction test, not a delivery or product decision.
-
-**Distinction from §2.7:** §1.26 measures ADA-driven loss under defined in-vitro conditions. §2.7 would measure stability of a different exact material pairing. Neither assay establishes a preferred combination, exposure, efficacy, or safety.
-
-**Arm 6 protocol:** identical to §1.26 base — ADA challenge (recombinant human ADA, Sigma A6535) at defined enzyme concentration, sampling at 0/15/30/60/120/240 min, LC-MS cordycepin vs. 3'-deoxyinosine quantification — but the substrate is engineered-koji cordycepin extract (cns1+cns2 strain, post-fermentation extraction per [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) SOP-2) co-administered with Tier 3-anchored GLPP (per SOP-1 SEC-MALS characterization).
-
-**Success criteria (sixth arm → next phase):**
-- **Pass:** the sixth arm meets a prespecified half-life and ADA-activity margin versus the matched controls, justifying independent replication and material-specific exposure/safety work.
-- **Ambiguous:** repeat only after resolving material identity, assay precision, or concentration selection.
-- **Fail:** the sixth arm misses the prespecified margin; do not advance that exact interaction.
-
-**Estimated cost:** $500–1,000 adder
-- Engineered-koji cordycepin extract preparation (one-time, gated on strain): ~$200
-- Additional LC-MS quantification samples (1 arm × 6 timepoints × 3 replicates = 18 samples × $35 ≈ $630)
-- Tier 3-anchored GLPP reagent (shared with §1.26 base): negligible adder
-
-**Estimated timeline:** same as §1.26 base — sixth arm runs in parallel with Arms 1–5 once the strain exists; no incremental wall-clock time.
-
-**Limitations:**
-
-1. Same in-vitro-ADA limitation as §1.26 base — recombinant human ADA doesn't model gut-microbiome metabolism of cordycepin.
-2. The cordycepin extract from engineered koji may have different impurity profile than whole-fermentate *Cordyceps* extract; this affects interpretation only if impurities themselves modulate ADA activity (unlikely but flagged).
-3. GLPP fraction quality is the same load-bearing requirement as §1.26 base — Tier 3 SEC-MALS characterization per SOP-1 non-negotiable.
-
-**Cross-references:** §1.26 base (parent five-arm assay); [§2.7](#27-koji--cordyceps-co-formulation-stability-test--ada-challenge-assay--deprioritized-2026-05-16-archived-2026-05-29) (sister Tier 2 stability test on engineered-koji + whole-fermentate *Cordyceps* pairing — different ADA inhibitor source); [`medicinal-mushroom-complement-track.md` §"Combined / synergy candidates"](./medicinal-mushroom-complement-track.md) (the interaction hypothesis this optional arm tests); [`cordycepin-cassette-burden-computational.md`](./cordycepin-cassette-burden-computational.md) (comp-023 engineering thread); [`computational-experiments.md`](./computational-experiments.md) comp-025 (ADA × cns1 kinetic gate — must clear before this experiment runs).
+**Cross-references:** [medicinal-mushroom source and material boundaries](./medicinal-mushroom-complement-track.md); [ADA open question](./gout-pathophysiology.md); and the later [matched exposure/function study §2.6](#26-glpp--cordycepin-interaction-in-hyperuricemia--matched-wet-lab-gate).
 
 ---
 
@@ -1128,12 +1069,12 @@ The initial planning count is therefore two route constructs, four configuration
 - **Stimulation:** MSU crystals (250 µg/mL × 6 h) — gout-relevant inflammasome trigger.
 - **Treatment arms** (treatment 1 h before MSU, continued through readout):
   - Vehicle control
-  - Ergothioneine alone: 1, 10, 100 µM (brackets dietary-achievable plasma range ~5–25 µM per [P. citrinopileatus correction in `medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) Phase 7-1c)
-  - **Apo-lactoferrin alone: 10, 100, 500 µg/mL** (covers koji-pore-fluid-achievable concentrations)
-  - **Holo-lactoferrin (iron-loaded) at 500 µg/mL — apo-vs-holo comparator arm** (tests whether additivity depends on iron sequestration rather than a generic anti-inflammatory effect)
-  - Combination: ergothioneine 10 µM + apo-lactoferrin 100 µg/mL (mid-range × mid-range, Loewe-index reference point)
+  - Ergothioneine alone: concentration range to be set from a verified human-exposure source, analytical confirmation in the assay medium, and a viability pilot
+  - Apo-lactoferrin alone: concentration range selected from exact-material characterization, analytical verification in the assay medium, and a viability pilot
+  - Holo-lactoferrin: matched molar concentrations to the advancing apo-lactoferrin arm, with iron saturation measured rather than assumed; this comparator tests whether iron loading changes the result
+  - Combination: one ergothioneine concentration selected from the verified range and pilot plus apo-lactoferrin at a prespecified pilot-supported concentration; define the interaction model and reference point before result-bearing use
 
-- **Primary readout:** IL-1β ELISA (gold-standard NLRP3 activation readout)
+- **Primary readout:** secreted IL-1β, paired with a mechanism-proximal NLRP3/caspase-1 readout so a cytokine change is not treated as target attribution by itself
 - **Secondary readouts:** intracellular ROS (DCFDA fluorescence), NF-κB priming (IκBα Western blot)
 - **Analysis:** Prespecify an interaction model appropriate to the concentration-response data and report the interaction estimate with uncertainty. Analyze apo-versus-holo material as a mechanistic comparator.
 
@@ -1282,7 +1223,7 @@ If Stage 1 reproduces the cordycepin direction and reveals a decision-relevant r
 - The selected source configuration is reproduced closely enough to interpret a matched pentostatin measurement; failure to reproduce the cordycepin direction closes or revises that configuration before transfer.
 - Biological replicates support a prespecified confidence interval for the ratio effect. Analytical replicates do not substitute for biological replication.
 
-**Dependencies:** SOP-2 HPLC infrastructure (cordycepin + pentostatin reference standards from Sigma C3394 + Cayman 10009152); *C. militaris* working strain with ITS-verified provenance (per SOP-5).
+**Dependencies:** SOP-2 HPLC infrastructure (cordycepin reference standard from [Sigma C3394](https://www.sigmaaldrich.com/US/en/product/sigma/c3394) or equivalent; pentostatin reference standard from [Cayman 14878](https://www.caymanchem.com/product/14878/pentostatin) or equivalent); *C. militaris* working strain with ITS-verified provenance (per SOP-5).
 
 **Cross-references:** [medicinal-mushroom-complement-track.md §Sourcing and delivery](./medicinal-mushroom-complement-track.md#sourcing-and-delivery); [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) §SOP-2 and §SOP-7; [Culture configuration](./etc/open-source-platform.md#culture-configuration).
 
@@ -1777,11 +1718,11 @@ Only after Stage 1 passes, evaluate the locked implementation in a separately so
 
 ---
 
-### 2.6 GLPP + Cordycepin Interaction in Hyperuricemia — Matched Wet-Lab Gate (Phase 7-4 Stub)
+### 2.6 GLPP + Cordycepin Interaction in Hyperuricemia — Matched Wet-Lab Gate
 
 **Status**: Proposed — design pending exact material and pilot data | **Cost**: TBD | **Weeks**: TBD | **Phase**: 2
 
-**Affected wiki**: [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [hypotheses/H06-medicinal-mushroom-complement-track](./hypotheses/H06-medicinal-mushroom-complement-track.md), [medicinal-mushroom-extract-sops](./medicinal-mushroom-extract-sops.md), [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md), [modality-chokepoint-matrix](./modality-chokepoint-matrix.md)
+**Affected wiki**: [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [medicinal-mushroom-extract-sops](./medicinal-mushroom-extract-sops.md), [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md), [modality-chokepoint-matrix](./modality-chokepoint-matrix.md)
 
 **What it tests:** Whether a compositionally verified *C. militaris* material, purified cordycepin, and defined GLPP or pentostatin combinations differ in cordycepin exposure, urate handling, and safety in a model chosen for that question. Native co-production does not establish a fixed cordycepin:pentostatin exposure or a beneficial interaction.
 
@@ -1801,11 +1742,11 @@ Only after Stage 1 passes, evaluate the locked implementation in a separately so
 
 **Decision rule:** Prespecify the individual-material replication margin, interaction estimand, PK margin, and safety limits after the pilot. Advance a combination only if its effect exceeds the prespecified additive expectation or achieves the same biological effect at lower verified exposure without a new safety signal. A null interaction keeps the materials separate; failure of an individual material narrows that material-specific hypothesis rather than the whole Open Enzyme portfolio.
 
-**Cross-references:** [medicinal-mushroom-complement-track.md](./medicinal-mushroom-complement-track.md) (parent scope); [H06](./hypotheses/H06-medicinal-mushroom-complement-track.md) Dimension 3; [SOP-1](./medicinal-mushroom-extract-sops.md) (material-identity dependency); and the [comp-014 evidence files](./medicinal-mushroom-compound-mapping-computational.md).
+**Cross-references:** the [medicinal-mushroom exact-material conjecture](./medicinal-mushroom-complement-track.md#research-conjecture--a-reproducible-medicinal-fungal-material-may-expose-a-gout-weakness) and the [draft material-identity methods](./medicinal-mushroom-extract-sops.md). COMP-014 is a partial retrieval inventory, not evidence authority for the study.
 
-#### Phase 7-4b follow-up — UOX × mushroom interaction arm (queued, gated on §2.6 and the UOX safety chain)
+#### Conditional follow-up — UOX × mushroom interaction arm
 
-**Status**: Queued (gated on §2.6 base-study success and §§1.33, 1.36, and 2.1 for the exact UOX configuration) | **Cost and duration:** TBD from the final model, arm count, variance, and analytical plan
+**Status**: Conditional conjecture (opens only if §2.6 and §§1.33, 1.36, and 2.1 independently justify it) | **Cost and duration:** TBD from the final model, arm count, variance, and analytical plan
 
 **What it tests:** whether a mushroom-track intervention and an independently cleared luminal-UOX configuration interact additively, antagonistically, or not detectably in the selected animal model. The §2.6 base study tests cordycepin × GLPP × pentostatin within the medicinal-mushroom track only; it does not establish how a separate UOX mechanism will compose.
 
@@ -1824,7 +1765,7 @@ Only after Stage 1 passes, evaluate the locked implementation in a separately so
 **Decision gate to fire this follow-up:** Both conditions are required: (1) §2.6 identifies an advancing material under its pilot-informed replication, interaction, and safety rule; and (2) the exact UOX-only koji configuration completes §1.5 → §1.33 → §1.9B → §1.36 → §2.1. Failure or incompleteness of either chain keeps the combination study closed.
 
 **Limitations:**
-- Engineered-koji UOX readiness requires an exact §1.5-built configuration to pass §1.33, reproduce in the §1.9B solid-state context, clear §1.36, and be characterized under §2.1. The lactoferrin cassette and §1.9C dual-cassette result are not required for a UOX-only combination arm. If that sequence is incomplete when §2.6 concludes, Phase 7-4b waits; a surrogate must independently clear the same configuration-specific gates before use. No Huynh 2020 “koji-uricase strain” precedent is assumed.
+- Engineered-koji UOX readiness requires an exact §1.5-built configuration to pass §1.33, reproduce in the §1.9B solid-state context, clear §1.36, and be characterized under §2.1. The lactoferrin cassette and §1.9C dual-cassette result are not required for a UOX-only combination arm. If that sequence is incomplete when §2.6 concludes, this follow-up remains closed; a surrogate must independently clear the same configuration-specific gates before use. No Huynh 2020 “koji-uricase strain” precedent is assumed.
 - The final exposure window may still answer only an acute interaction question; chronic durability requires a separate design.
 - Model and strain consistency with the qualifying individual-arm studies must be maintained; do not use cross-cohort comparisons as an interaction estimate.
 

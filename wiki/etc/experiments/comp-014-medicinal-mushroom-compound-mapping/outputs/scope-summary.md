@@ -1,16 +1,16 @@
 # comp-014 — Medicinal Mushroom Compound × Chokepoint Mapping
 
-**Status:** Phase 1 scope complete; Phase 2 starting.
+**Status:** Breadth aggregation and target mapping are retained as a lead inventory. Historical rank and priority fields have no current decision authority; the former Phase 6 occupancy/feasibility triage is retired.
 
 ## Inventory
 
 - **Phase 5 anchor species (sanity-check):** 18
-- **Open Enzyme chokepoint targets:** 19 (1 proposed, not-yet-canonical)
-- **Compound databases planned:** 14
-- **Bioactivity / target databases planned:** 6
-- **Multilingual literature corpora planned:** 7
+- **Rendered historical target entries:** 19
+- **Compound databases recorded:** 14
+- **Bioactivity / target databases recorded:** 6
+- **Multilingual literature corpora recorded:** 7
 
-## Phase 5 anchor species (NOT the breadth gate — sanity-check only)
+## Historical anchor species (sanity-check set, not priorities)
 
 - *Ganoderma lucidum* (reishi / lingzhi)
 - *Cordyceps militaris* (cordyceps (cultivated))
@@ -20,7 +20,7 @@
 - *Inonotus obliquus* (chaga)
 - *Grifola frondosa* (maitake)
 - *Lentinula edodes* (shiitake)
-- *Pleurotus ostreatus* (oyster mushroom) — **redox chokepoint primary**
+- *Pleurotus ostreatus* (oyster mushroom)
 - *Agaricus blazei (A. subrufescens)* (almond mushroom)
 - *Antrodia camphorata (Taiwanofungus camphoratus)* (antrodia / niu zhang zhi)
 - *Phellinus linteus* (phellinus / sang hwang)
@@ -28,46 +28,43 @@
 - *Polyporus umbellatus* (zhu ling)
 - *Tremella fuciformis* (tremella / yin er)
 - *Auricularia auricula-judae* (wood ear / mu er)
-- *Aspergillus oryzae* (koji (Open Enzyme chassis)) — redox chokepoint secondary
+- *Aspergillus oryzae* (koji (Open Enzyme chassis))
 - *Aspergillus terreus* (Aspergillus terreus (lovastatin-original producer))
 
 ## Chokepoint targets
 
-| Chokepoint | UniProt | Site | Priority signal |
+| Chokepoint | UniProt | Site | Scope rationale |
 |---|---|---|---|
-| uricase_substrate | — | gut lumen | Not a protein target — substrate degradation. |
-| URAT1 | Q96S37 | renal tubule | Validated drug target (probenecid, benzbromarone, lesinurad, dotinurad). |
-| GLUT9 | Q9NRM0 | renal tubule + gut epithelium | Less drugged than URAT1 but mechanistically validated. |
-| ABCG2 | Q9UNQ0 | gut epithelium + renal tubule | comp-004 supplement screen validated this target. |
-| Xanthine_Oxidase | P47989 | systemic + gut + liver | Allopurinol, febuxostat target. |
-| NLRP3 | Q96P20 | macrophages (gut + synovial + vessel-wall) | Central gout-flare driver. |
-| ASC | Q9ULZ3 | — | Oridonin and related natural products block ASC oligomerization. |
-| Caspase_1 | P29466 | — | Downstream of NLRP3+ASC; pharmacological inhibition is a separate intervention class. |
-| IL_1B | P01584 | — | Canakinumab/anakinra target. |
-| TNFA | P01375 | — | Gut-barrier and vessel-wall inflammation cycle. |
-| DAF_CD55 | P08174 | engineered chassis output, not target | Open Enzyme is engineering CD55 SCR1-4 itself (comp-006/comp-012). |
-| C5aR1 | P21730 | — | validation-experiments. |
-| Lp_PLA2 | Q13093 | — | Brian's persistent elevation across panels. |
-| HDAC6 | Q9UBN7 | — | comp-007 ran the supplement-grade HDACi screen. |
-| PPARG | P37231 | — | Fungal triterpenoids (esp. |
-| NRF2_KEAP1 | Q14145 / Q16236 | — | Sulforaphane axis; fungal compounds (esp. |
-| OAT1_OAT3 | Q4U2R8 / Q8TCC7 | — | Off-target risk profile for any URAT1-targeted compound — needs counter-screen. |
-| OAT4 | Q9NS40 | — | Apical urate exchanger; benzbromarone hits this alongside URAT1. |
+| uricase_substrate | — | gut lumen | Historical uricase-substrate search node. Rehydrate source, substrate, compartment, material identity, and direct degradation function. |
+| URAT1 | Q96S37 | renal tubule | Historical URAT1 search node. Rehydrate target attribution, effect polarity, substrate, compartment, relevant exposure, and mechanism-matched function. |
+| GLUT9 | Q9NRM0 | renal tubule + gut epithelium | Historical GLUT9 search node. Rehydrate target attribution, effect polarity, substrate, compartment, relevant exposure, and direct function. |
+| ABCG2 | Q9UNQ0 | gut epithelium + renal tubule | Historical ABCG2 search node. Rehydrate source, interaction type, effect polarity, substrate, compartment, and direct urate-flux function before any current use. |
+| Xanthine_Oxidase | P47989 | systemic + gut + liver | Historical xanthine-oxidase search node. Rehydrate fungal provenance, assay context, effect polarity, exposure, and mechanism-matched function. |
+| NLRP3 | Q96P20 | macrophages (gut + synovial + vessel-wall) | Historical NLRP3 search node. Rehydrate exact material, assay layer, effect polarity, attribution, relevant exposure, and mechanism-matched function. |
+| ASC | Q9ULZ3 | — | Historical ASC search node. Rehydrate exact material, binding or oligomerization endpoint, effect polarity, attribution, exposure, and direct function. |
+| Caspase_1 | P29466 | — | Historical caspase-1 search node. Rehydrate material identity, assay type, effect polarity, attribution, and direct function. |
+| IL_1B | P01584 | — | Historical IL-1β search node. Rehydrate whether each record measures transcription, processing, release, receptor signaling, or another endpoint. |
+| TNFA | P01375 | — | Historical TNF search node. Rehydrate the material, endpoint, effect polarity, pathway attribution, compartment, and direct function. |
+| DAF_CD55 | P08174 | engineered chassis output, not target | Historical CD55 context node, not evidence of a fungal-compound target or a current production decision. |
+| C5aR1 | P21730 | — | Historical C5aR1 search node. Database non-retrieval does not establish universal absence; rehydrate source, material, effect polarity, exposure, and direct receptor function. |
+| Lp_PLA2 | Q13093 | — | Historical Lp-PLA2 search node. Rehydrate source, assay type, effect polarity, relevant exposure, and direct function without inferring personal relevance. |
+| HDAC6 | Q9UBN7 | — | Historical HDAC6 search node. Rehydrate direct activity, selectivity, material provenance, relevant exposure, and function. |
+| PPARG | P37231 | — | Historical PPARγ search node. Rehydrate exact compound and fungal provenance, assay type, agonist/antagonist polarity, concentration, and direct function. |
+| NRF2_KEAP1 | Q14145 / Q16236 | — | Historical Nrf2/KEAP1 search node. Rehydrate exact material, direct target or reporter endpoint, effect polarity, exposure, and downstream function. |
+| OAT1_OAT3 | Q4U2R8 / Q8TCC7 | — | Historical OAT1/OAT3 counter-screen node. Rehydrate substrate, assay system, effect polarity, concentration, and transporter function. |
+| OAT4 | Q9NS40 | — | Historical OAT4 search node. Rehydrate substrate, assay system, effect polarity, concentration, and transporter function. |
+| ADA | P00813 | systemic + liver + kidney | Historical ADA search node. Rehydrate exact composition, assay type, direct ADA function, effect polarity, exposure, and attribution controls. |
 
-**Proposed (not-yet-canonical):**
+## Recorded phase scope
 
-- **Redox/disulfide chemistry (PROPOSED — not yet a wiki chokepoint)** — PROPOSED 2026-05-06 by comp-014 scope. Not yet added to wiki/modality-chokepoint-matrix.md or wiki/nlrp3-exploit-map.md. Phase 5 deliverable: confirm or reject the chokepoint-warrant claim based on what fungal-compound coverage actually surfaces.
+- **phase_1_scope**: Historical source, species, toxicity, and target inventory; no database calls were part of this step.
+- **phase_2_breadth_aggregation**: Historical aggregation plan and retained outputs. The former pull/aggregation scripts are removed; rows are source leads only.
+- **phase_3_target_mapping**: Historical target-mapping plan and retained outputs. The former mapper is removed; empirical/predicted labels require source rehydration.
+- **phase_4_chokepoint_intersection**: Join compound × target × Open Enzyme chokepoints (chokepoint-targets.json). Retained rows are an unranked lead inventory; historical rank fields are invalid for decision use.
+- **phase_5_multilingual_deep_dive**: Rehydrate nominated rows in relevant multilingual primary literature with the required two-model translation cross-check. Do not cap the search by a historical rank.
+- **phase_6_per_compound_triage**: RETIRED. The former comp-013-style occupancy and composite-score triage is invalid for candidate ranking. Any successor must preserve target-effect polarity and require measured or justified free exposure plus mechanism-matched function.
 
-## Phase plan
-
-- **phase_1_scope**: This commit. Inventory sources, candidate species, chokepoint targets. No DB queries executed.
-- **phase_2_breadth_aggregation**: Pull LOTUS + NPAtlas + KNApSAcK + NPASS + TCMSP + COCONUT. Dedup by InChIKey. Output: unified fungal compound × species table.
-- **phase_3_target_mapping**: Empirical (ChEMBL + HIT + PubChem) → SwissTargetPrediction for orphans. Output: compound × target table with empirical/predicted flag.
-- **phase_4_chokepoint_intersection**: Join compound × target × Open Enzyme chokepoints (chokepoint-targets.json). Output: ranked candidate list.
-- **phase_5_multilingual_deep_dive**: For top 3-5 species flagged by Phase 4: ingest CNKI + J-STAGE primary literature with two-model translation cross-check. Compare Asian clinical evidence against the breadth-pass mechanism map.
-- **phase_6_per_compound_triage**: comp-013-style IC50 occupancy analysis for top candidates. Verdicts: GUT-LUMINAL VIABLE / SYSTEMIC VIABLE / MECHANISM UNCLEAR / NON-VIABLE. Subset gets shio-koji protease stability comp-NNN follow-ups.
-
-## Data sources (Phase 2-5 access plan)
+## Historical data-source inventory
 
 ### Compound databases
 - **LOTUS** — Open natural products with species-of-origin links. ~750K compound-organism pairs across all kingdoms. Filter to fungi (Kingdom=Fungi).
@@ -88,6 +85,8 @@
 ### Bioactivity / target databases
 - **ChEMBL** — European-hosted manually curated bioactivity DB. ~2M compounds, 1.5M assays. Western pharma-skewed.
 - **PubChem_BioAssay** — NIH bioassay corpus, broader than ChEMBL but less curated.
+- **HIT** — see compound_databases — also a target source
+- **BATMAN-TCM** — see compound_databases — also a target predictor
 - **SwissTargetPrediction** — Similarity-based target prediction for compounds with known structure but no empirical target.
 - **STITCH** — Chemical-protein interactions, integrates multiple sources.
 
@@ -103,8 +102,8 @@
 ## Reproducibility
 
 ```bash
-cd experiments/comp-014-medicinal-mushroom-compound-mapping
+cd wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping
 python3 scripts/scope_validate.py
 ```
 
-Phase 2+ will add per-phase scripts. This Phase 1 script validates inputs and emits this summary.
+This scope validator checks the current input structure and emits this summary. It does not reproduce the database pulls, later joins, historical rankings, or retired Phase 6.

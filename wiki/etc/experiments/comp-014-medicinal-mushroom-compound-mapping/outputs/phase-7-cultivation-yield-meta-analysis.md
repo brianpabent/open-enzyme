@@ -1,3 +1,7 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 ---
 title: "Phase 7-2 — Cultivation Method × Yield Meta-Analysis (Ganoderma / Cordyceps / Pleurotus)"
 date: 2026-05-06
@@ -8,13 +12,13 @@ parents:
   - "phase-7b-cordyceps-strain-scan.md"
   - "phase-7c-pleurotus-strain-scan.md"
   - "../../../../medicinal-mushroom-complement-track.md"
-scope: cultivation method × yield comparative meta-analysis for the three priority species; per-species recommendations for OE home-fermentable thesis vs OE-published-SOP reproducibility; cross-species summary; what-an-OE-contributor-should-actually-do recommendations
+scope: historical cultivation-method and yield comparison for three source-species leads; non-authoritative production notes; exposure claims require new testing
 tags: [comp-014, phase-7, cultivation, meta-analysis, ganoderma, cordyceps, pleurotus, glpp, cordycepin, ergothioneine, sop, reproducibility]
 ---
 
 # Phase 7-2: Cultivation Method × Yield Meta-Analysis
 
-**Inputs:** Phase 7-1a/b/c strain scans + a focused PubMed gap-fill pass. **Output:** the canonical cultivation × yield comparison table that an Open Enzyme contributor uses to choose HOW to grow the mushroom — what yields each method gives, what each method costs at home / consumer / industrial scale, where reproducibility breaks down, and which environmental controls an SOP must specify. Multilingual (CNKI / J-STAGE / KISS) work is preserved as deferred follow-ups; this pass is built on the English-indexed PubMed corpus.
+**Inputs:** Phase 7-1a/b/c strain scans + a focused PubMed gap-fill pass. **Historical output:** a non-authoritative cultivation × yield comparison retained to expose source identifiers and candidate process variables. It does not select a method, establish reproducibility, or support consumption, dose, delivery, production, or chassis decisions.
 
 ---
 
@@ -86,7 +90,7 @@ The reproducibility-tier framework is a Phase 7 synthesis call, not a published 
 ### 2.2 Optimal method per Open Enzyme objective
 
 **Optimal for the home-fermentable thesis:**
-**Brown rice solid-state fermentation in pre-sterilized jars, with light cycling.** This is the dominant consumer cordycepin method globally; consumer kits are widely available ($30–$80 from US/Korean/Taiwanese vendors). Cycle is 45–70 days. Yield 1–10 mg/g substrate is very tractable for daily-tea or supplement-equivalent dosing — a single 500 g rice jar produces 0.5–5 g cordycepin equivalent. **Critical caveat:** strain matters. Consumer kits routinely use degenerated single-ascospore lineages with declining productivity over generations (Shrestha 2012). Re-purchase fresh spawn every 2–3 cultivation cycles or accept yield drift.
+**Brown rice solid-state fermentation in pre-sterilized jars, with light cycling.** The historical notes report a 45–70-day cycle and 1–10 mg/g substrate yield range. Those values are retained only to define a candidate analytical test matrix; they do not support tea, supplement, consumption, or human-exposure arithmetic. A successor experiment must authenticate the strain and quantify cordycepin, pentostatin, parent/metabolite stability, free exposure, and mechanism-matched function before considering any delivery route.
 
 **Optimal for OE-published-SOP reproducibility:**
 **Liquid static culture, optimized glucose-peptone medium, 1 L glass-jar scale (Kang 2014 / Tang 2014 protocol).** Cordycepin yield is in the 2–7 g/L range with low variance within lab; cross-lab variance is ~2–3×. Multiple Chinese labs replicate. Critical: the culture must be **static** (no agitation) — agitated submerged culture gives substantially lower cordycepin. This is the cleanest reproducibility-grade SOP candidate that doesn't require institutional biosafety approval (the heterologous Pp29 / A. oryzae routes give higher titers but require recombinant DNA work). For an OE contributor with a home lab corner, this is a $200–$500 setup (1 L glass jars, autoclavable, plus a tabletop incubator with no shaking).
@@ -120,7 +124,7 @@ The reproducibility-tier framework is a Phase 7 synthesis call, not a published 
 ### 3.2 Optimal method per Open Enzyme objective
 
 **Optimal for the home-fermentable thesis:**
-**Pasteurized-straw bag of P. citrinopileatus (golden oyster) — consumer kit format.** Cycle time 12–20 days (fastest in the meta-analysis), kit cost $20–$30, EGT density 3–7 mg/g DW (~3× over commodity gray oyster), eat the fruiting body fresh in stir-fry or freeze-dry for powder. A single ~250 g fresh-mushroom flush from one bag delivers ~25 g DW × 5 mg/g = 125 mg EGT, which at OCTN1-saturated absorption (Cheah 2017) plateaus at clinically meaningful plasma EGT for several days. **This is the cleanest OE home-fermentable recommendation in the entire comp-014 track.**
+**Pasteurized-straw P. citrinopileatus (golden oyster) — historical consumer-kit lead.** The reported cycle and EGT-density values are retained as candidate inputs for analytical validation, not as a consumption or exposure recommendation. A successor must authenticate material, measure batch composition, run parent/metabolite stability and free-exposure studies, and test mechanism-matched function before any food, powder, or delivery comparison.
 
 **Optimal for OE-published-SOP reproducibility:**
 **Same as above (P. citrinopileatus on pasteurized straw + freeze-dry to powder), formalized to the Singapore-RCT specification (7.0 mg/g DW lyophilized powder).** Cross-cultivar variance is ~2× (acceptable for an OE SOP). Submerged-fermentation 641 mg/L (Li 2025) gives higher absolute yield but is single-lab and capital-intensive. The reproducibility ceiling here is bounded by source-strain variance; if the OE SOP specifies Mycelia.bvba / commercial cultivar X with documented EGT density, batch-to-batch variance lands at ≤30% CV.
@@ -143,15 +147,11 @@ The reproducibility-tier framework is a Phase 7 synthesis call, not a published 
 |---|---|---|---|---|
 | ***G. lucidum* / *G. lingzhi* → GLPP** | Hardwood sawdust block (consumer kit), ITS-verified G. lingzhi spawn, 7–18 wk cycle, freeze-dry fruiting body | Liquid submerged fermentation, defined natural medium, ITS-verified G. lingzhi (Mycelia M9724 or CGMCC accession), 250 mL shake-flask, 6–11 day cycle, solid-seed inoculum | **30–60 mg/g DW mycelial polysaccharide (liquid); fruiting-body GLPP yield poorly characterized in English PubMed (Chinese-language literature gap)** | **MEDIUM.** GLPP material is fruiting-body-derived in the anchor paper (PMID 36385640). Reproducing the 40.6% UA effect requires fruiting body, not liquid mycelium → Juncao SOP is the missing piece. **Higher comp-NNN priority is on the GLPP × cordycepin co-fermentation hypothesis** (Phase 6 finding) than on independently optimizing GLPP cultivation. |
 | ***C. militaris* → cordycepin** | Brown rice SSF in jars, light-cycled, 45–70 day cycle, freeze-dry whole jar contents | Liquid static culture, glucose-peptone defined medium, 1 L glass jar, 20–30 day cycle (Kang 2014 / Tang 2014 protocol); OR engineered A. oryzae cns1+cns2 chassis (Jeennor 2023) for OE-koji-track integration | **1–25 mg/g substrate (SSF); 0.3–7.4 g/L (liquid static, native); up to 8.1 g/L (heterologous Pp29); 564 mg/L/d (engineered A. oryzae)** | **HIGH.** The Jeennor 2023 *A. oryzae cns1+cns2* result converts cordycepin from "Cordyceps × koji co-fermentation" to "single-organism engineered koji" — major chassis-decision implication for the OE engineered-koji track. Plus the Phase 6 GLPP × cordycepin synergy hypothesis remains the cheapest experimental item in the comp-014 queue. |
-| ***P. ostreatus* / *P. citrinopileatus* → EGT** | Pasteurized-straw bag, P. citrinopileatus (golden oyster) consumer kit, 12–20 day cycle, freeze-dry to powder | Same as home method, formalized to 7.0 mg/g DW lyophilized powder spec (Singapore RCT formulation; PMID 40552321) | **0.8–7 mg/g DW fruiting body (commercial range); 11.4 mg/g DW with optimized extraction (extract-grade); 641 mg/L (submerged liquid, two-stage oxidative stimulus, single-lab)** | **MEDIUM-LOW.** The dietary-intake → therapeutic-plasma-EGT axis is well-established (Cheah 2017, Tang 2018, Hattori 2025). EGT is OCTN1-saturable so concentrated extracts give diminishing returns. **The Pleurotus track does NOT need a separate cultivation comp-NNN** — the published cultivation envelope is already adequate for the dietary delivery thesis. The remaining comp-014 work on Pleurotus is on bioavailability (already done in 7-1c) + multilingual fill-in. |
+| ***P. ostreatus* / *P. citrinopileatus* → EGT** | Pasteurized-straw bag, P. citrinopileatus (golden oyster) consumer kit, 12–20 day cycle, freeze-dry to powder | Same historical process lead, with a reported 7.0 mg/g DW lyophilized-powder formulation in PMID 40552321 | **0.8–7 mg/g DW fruiting body (commercial range); 11.4 mg/g DW with optimized extraction (extract-grade); 641 mg/L (submerged liquid, two-stage oxidative stimulus, single-lab)** | **NO CURRENT VERDICT.** These source leads do not establish therapeutic exposure or eliminate the need for a new material, composition, PK, and function experiment. |
 
 ### 4.2 Cleanest yield-vs-reproducibility tradeoff
 
-The cleanest tradeoff that emerges across all three species: **liquid submerged fermentation gives the highest reproducibility and the cleanest defined product, but the home-cultivation route via solid-state fermentation gives 5–20× lower per-unit-cost compound yield with adequate reproducibility for dietary-delivery scenarios.** The decision threshold:
-- If the downstream use is **dietary delivery** (EGT for daily oxidative-stress priming; cordycepin for daily NLRP3 dampening; GLPP for daily uricase complement) — solid-state / fruiting-body cultivation is cost-optimal and the published bioactivity translates.
-- If the downstream use is **wet-lab characterization** (kinetic assays, structure determination, dose-response curves on cell lines) — liquid submerged fermentation gives the defined product with bounded variance.
-
-The OE platform thesis is biased toward the dietary-delivery use case (gout sufferer eats reishi, cordyceps, oyster mushrooms daily), so **the home-cultivation routes should be treated as the primary cultivation SOPs, with liquid submerged fermentation as the validation/characterization method called in for any compound where the home-route variance is unacceptable for the H06 reproducibility question.**
+The retained comparison suggests process variables for a successor study but does not establish a cleanest tradeoff. Before comparing solid-state and submerged routes, use the same authenticated lineage and prespecified assay to measure identity, batch composition, target analyte, impurities, stability, and variance. Only then should a mechanism-matched exposure experiment compare free parent and metabolites in the proposed compartment. No consumption amount or delivery route is supported by this snapshot.
 
 ### 4.3 Where the published yield data is too sparse for confident recommendation
 
@@ -159,7 +159,7 @@ The OE platform thesis is biased toward the dietary-delivery use case (gout suff
 
 **The two-stage oxidative-stimulus Pleurotus protocol (Li 2025).** 641.76 mg/L EGT is a striking number but it's single-lab. The Phase 5b CNKI dive should include the Nanjing Tech group's Chinese-language predecessor papers — the English Bioresource Technology lead is presumably the tip of a longer Chinese-language methods-development arc.
 
-**Strain × substrate × drying interaction surfaces for Pleurotus.** Many published yields, but few studies cross all three axes simultaneously. The 5–10× cumulative envelope is well-supported; the specific combinatorics (e.g., is golden oyster on olive-byproduct substrate freeze-dried genuinely the apex, or is there a better combination?) is undercharacterized. Less critical for OE because the dietary-delivery target dose is achievable across most of the envelope.
+**Strain × substrate × drying interaction surfaces for Pleurotus.** Many published yields, but few studies cross all three axes simultaneously. The historical 5–10× envelope is a lead for factorial testing, not evidence that any exposure target is achievable.
 
 ---
 
@@ -235,7 +235,7 @@ The OE platform thesis is biased toward the dietary-delivery use case (gout suff
 **How to verify the output:**
 - Visual: golden yellow caps (golden oyster) or gray-blue caps (P. ostreatus). Misidentification rare in this genus.
 - EGT quantification: HPLC at any analytical core; ~$50–$100/sample. Method: HILIC column, UV 257 nm. EGT standard from Cayman Chemical (~$200 for 50 mg).
-- For dietary verification (no analytical equipment): consume 50–100 g fresh per serving; the cumulative dose math (~12–24 mg EGT/serving from gray oyster, ~25–50 mg from golden oyster) is in the OCTN1-saturating range and produces measurable plasma EGT elevation per Hattori 2025 dietary-intake-PK data.
+- **Unvalidated exposure test gate:** do not infer exposure from a serving. Authenticate and homogenize the material; quantify EGT and co-constituents per batch; measure parent/metabolite stability and free exposure in a prespecified model; then run OCTN1-dependent uptake and mechanism-matched function with negative, vehicle, and toxicity controls.
 
 ---
 
@@ -277,8 +277,8 @@ The Phase 7-3 document should pull these into a contributor-facing SOP manual; t
 - Phase 5 deepread (the GLPP-HUA anchor paper): [`phase-5-deepread-PMID36385640.md`](./phase-5-deepread-PMID36385640.md)
 - Phase 5 AMC-BFE deepread (cordycepin co-fermentation precedent): [`phase-5-deepread-PMID41905012.md`](./phase-5-deepread-PMID41905012.md)
 - Comp-014 parent computational page: [`medicinal-mushroom-compound-mapping-computational.md`](../../../../medicinal-mushroom-compound-mapping-computational.md)
-- Open Enzyme global multilingual research rule: top-level [`CLAUDE.md`](../../../CLAUDE.md) §"Global-multilingual research by default"
-- Open Enzyme engineered koji track (cordycepin chassis cross-link): [`engineered-koji-protocol.md`](../../../../engineered-koji-protocol.md) (if present)
+- Open Enzyme global multilingual research rule: top-level [`CLAUDE.md`](../../../../../CLAUDE.md) §"Global-multilingual research by default"
+- Open Enzyme engineered koji track (historical chassis cross-link): [`engineered-koji-protocol.md`](../../../../engineered-koji-protocol.md)
 
 ## Evidence-level summary (per OE CLAUDE.md §5)
 

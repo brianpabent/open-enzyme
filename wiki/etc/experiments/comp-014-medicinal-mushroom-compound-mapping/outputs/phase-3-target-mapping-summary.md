@@ -1,3 +1,7 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 # Phase 3 target-mapping summary (unified compound × chokepoint)
 
 **Date:** 2026-05-17  
@@ -113,7 +117,7 @@
 |---:|---|---|---|---|---|---|
 | 1 | Mycophenolic acid | Aspergillus, Penicillium roqueforti | Inhibition 74.0 % |  | 2007 | CHEMBL866 |
 | 2 | arachidonic acid | Agaricus | Ki 1500.0 nM | 5.82 | 1997 | CHEMBL7594 |
-| 3 | (2s)-2-({[(3r)-5-chloro-8-hydroxy-3-methyl-1-oxo-3,4-dihydro-2-benzopyran-7-yl](hydroxy)methylidene}amino)-3-phenylpropa | Aspergillus, Aspergillus niger | Potency 1995.3 nM |  |  | CHEMBL589366 |
+| 3 | `(2s)-2-({[(3r)-5-chloro-8-hydroxy-3-methyl-1-oxo-3,4-dihydro-2-benzopyran-7-yl](hydroxy)methylidene}amino)-3-phenylpropa` | Aspergillus, Aspergillus niger | Potency 1995.3 nM |  |  | CHEMBL589366 |
 | 4 | propylparaben | Cordyceps sinensis, Ophiocordyceps | Potency 5623.4 nM |  |  | CHEMBL194014 |
 | 5 | genistein | Cordyceps sinensis, Ophiocordyceps | Potency 10000.0 nM |  |  | CHEMBL44 |
 

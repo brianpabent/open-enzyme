@@ -1,3 +1,7 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 # Phase 5 Deep-Read: AMC-BFE Cordyceps×Astragalus (PMID 41905012, 2026)
 
 **Citation.** Xia X, Song H, Meng Y, Xu C, Niu H, Liu X, Zhang G, Ling J. Biotransformation-derived metabolites from *Astragalus membranaceus* and *Cordyceps militaris* alleviate hyperuricemia via multi-target regulation. *Bioorg Chem* 175:109806 (2026). DOI [10.1016/j.bioorg.2026.109806](https://doi.org/10.1016/j.bioorg.2026.109806). PMID 41905012.

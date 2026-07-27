@@ -16,7 +16,7 @@ Luteolin's anti-complementary activity per Zhang 2008 (PMC7126446) is **broad-sp
 
 **{Model A: "negative direction (effect ≥ in carriers) but wider uncertainty than rosmarinic acid" | Model B: "null direction (no differential effect)"}** [TRANSLATION-DISAGREEMENT: Same negative-vs-null disagreement as rosmarinic acid. Same logic — Model A reasons from genotype-baseline-severity amplification, Model B reasons from mechanism-independence-implies-genotype-indifference. The matched IC50 between CP and AP pathways in Zhang 2008 (0.19 vs 0.17 mM) is consistent with a node common to both pathways (C3 itself or convertase active site); this is functionally upstream of CFH's AP-specific regulatory role.]
 
-Luteolin's multi-mode gout-relevance (XO IC50 550 nM + URAT1 downregulation per comp-013) is also CFH-orthogonal. **Both models do not raise this as a CFH-dependence consideration.** Operational caveat (Model A only): the UKB cross-tab for luteolin × Y402H × incident gout would be confounded by the urate-axis mode running in parallel with the complement-mode. Brian's UKB collaborators should consider cross-tabbing against Apiaceae-specific (celery / parsley / chamomile) dietary intake + 24h-urate as an intermediate readout to dissociate the two modes.
+The former COMP-013 XO potency and URAT1 attribution are invalid and cannot establish a parallel luteolin urate-axis mechanism. **Neither model may use those claims as a CFH-dependence consideration.** This artifact therefore preserves only the complement-specific disagreement above. Any urate-axis cross-tab requires separately qualified primary evidence before it becomes an analysis plan.
 
 ## Disagreement notes
 
@@ -24,7 +24,7 @@ Luteolin's multi-mode gout-relevance (XO IC50 550 nM + URAT1 downregulation per 
 
 - **hedging — predicted Y402H direction:** Model A picks "negative (effect ≥ in carriers)"; Model B picks "null". Same logic as rosmarinic acid disagreement.
 
-- **multi-mode confound:** Model A explicitly raises XO + URAT1 modes as a confound for the UKB cross-tab; Model B does not. This is a brief-hygiene gap in Model B's reasoning (the primary-source bundle did not foreground the multi-mode context). Not a science disagreement.
+- **invalid multi-mode premise:** Model A raised COMP-013-derived XO + URAT1 modes as a confound, but those claims are invalid and outside this source bundle. They cannot be used to plan or interpret the cross-tab.
 
 ## Recommended falsification test (consensus)
 

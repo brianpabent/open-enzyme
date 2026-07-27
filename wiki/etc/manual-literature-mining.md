@@ -178,7 +178,7 @@ These are questions whose primary-literature grounding would meaningfully advanc
 
 ## Query-framing for non-Western compound classes (added 2026-05-19)
 
-The 2026-05-19 traditional-name re-scan ([`logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md`](../../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md)) closed three independent gaps that mechanism-name-only seeding had silently propagated through the corpus: comp-013 missed mangiferin / Zhi Mu + the Coix four-transporter mechanism + the Plantago acteoside/apigenin attribution; comp-014 declared NLRP3 + Caspase-1 + ASC as "empty chokepoints in fungi" when species-name + traditional-pathology framing surfaces ≥18 PubMed papers including ≥5 at the gout indication; the comp-014 ABCG2 hit list missed Poria cocos despite Sun 2021 PMID 33651969 showing Animal Model magnitude exceeding benzbromarone.
+The 2026-05-19 traditional-name re-scan ([method receipt](../../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md)) showed that mechanism-name-only seeding had produced query-bound gaps in the TCM and fungal-natural-product work. Species, material, formula, and traditional-pathology frames surfaced additional primary-study leads that the original database and mechanism queries did not. Neither pass was a coverage census, and the second pass supplies no cross-material rank.
 
 **Discipline:** for any compound-class scan touching natural products, TCM, Kampo, Ayurveda, or other non-Western traditional medicine subfields, **seed queries from multiple framings, not just mechanism-name**:
 
@@ -187,7 +187,7 @@ The 2026-05-19 traditional-name re-scan ([`logs/lit-scan-query-framing-retrospec
 3. **Traditional-formula-name query**: classical formula composition (e.g., `Si Miao San` AND component herbs; `Bai Hu Jia Gui Zhi Tang` AND `mangiferin`). Catches formula-level RCT evidence + the cardinal-herb attribution chain.
 4. **Traditional-pathology-term query**: the original-language pathology framing (e.g., `痛风`, `痹证`, `湿热痹`, `消渴`). Catches indication-anchored evidence where the paper doesn't index against a Western target column.
 
-**When to use which:** if a Pass 1 or comp-NNN scan returns "empty" for a fungal / botanical chokepoint after a mechanism-name-only query, treat this as a **candidate for query-framing re-scan**, not a confirmed empty chokepoint. The recovery rate from the 2026-05-19 audit was substantial — multiple "empty" verdicts were reversed by species-name + traditional-pathology re-seeding.
+**When to use which:** if a Pass 1 or comp-NNN scan returns no match for a fungal or botanical chokepoint after a mechanism-name-only query, treat this as a **candidate for query-framing re-scan**, not a confirmed empty chokepoint. Additional leads recovered by a second frame demonstrate search sensitivity; they do not make the second pass comprehensive.
 
 **Pre-commit gate interaction:** query-framing failures and the pre-commit grep-verify gate (§"Pre-commit verification gate" above) target different error modes. The pre-commit gate catches *fabricated or wrong numbers inside a single paper's claims*. Query-framing catches *whole subfields of evidence the search never surfaced*. A well-verified claim from a query-framing-incomplete scan can still mislead — the absence in the scan output isn't an absence in the literature. Apply both disciplines independently.
 

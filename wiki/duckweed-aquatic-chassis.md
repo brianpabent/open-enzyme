@@ -90,7 +90,7 @@ These studies support plant-cell bioencapsulation and whole-biomass dosing, but 
 And the wild-type background carries urate-active chemistry:
 
 - ***S. polyrhiza* natively produces luteolin, vitexin, orientin, isoorientin, and apigenin** (Phytother Res 2010, isolating these from the plant). *(In Vitro.)*
-- **Luteolin is a competitive xanthine-oxidase inhibitor: IC₅₀ = 4.79 ± 0.02 µM, Ki = 2.38 ± 0.05 µM** (Yan et al., *Food Chem.* 2013 — *verified against primary*; positive-control allopurinol IC₅₀ = 1.84 µM, so luteolin is real but **~2.6× weaker than allopurinol**, not a replacement for it). *(In Vitro.)* Luteolin also down-regulates URAT1/GLUT9 expression; a luteolin-rich chrysanthemum extract lowered baseline serum urate in mildly hyperuricemic Japanese subjects. *(Clinical, small — but from chrysanthemum, not duckweed.)*
+- **Luteolin is a competitive xanthine-oxidase inhibitor: IC₅₀ = 4.79 ± 0.02 µM, Ki = 2.38 ± 0.05 µM** (Yan et al., *Food Chem.* 2013 — *verified against primary*; positive-control allopurinol IC₅₀ = 1.84 µM, so luteolin is real but **~2.6× weaker than allopurinol**, not a replacement for it). *(In Vitro.)* This does not establish a renal-transporter mechanism or a whole-duckweed effect.
 
 There is **no published whole-duckweed-extract study showing that it lowers serum urate, inhibits XO in vivo, or modulates NLRP3**. The urate link is a *mechanistic extrapolation* from isolated flavonoids, not demonstrated duckweed efficacy. Classical 浮萍 indications include wind-heat dispersal, rash eruption, and **diuresis (利尿)**, but they do not supply a urate measurement.
 
@@ -164,7 +164,7 @@ A natural question once the native-luteolin background surfaces: would it be *ea
 
 **Axis 2 — does the mechanism match the delivery mode? (decisive edge to uricase).** This is the part that should lead.
 - **Uricase acts in the gut lumen** — degrading luminal urate catalytically without requiring systemic absorption. An edible biomass could match that delivery mode if enough active enzyme survives transit. *(Clinical Trial precedent for oral luminal uricase; Mechanistic Extrapolation for duckweed.)*
-- **Luteolin's urate mechanism wants the bloodstream** — XO that matters for urate is largely hepatic, and the URAT1/GLUT9 effects are renal; both require *systemic absorption*. Oral flavonoid bioavailability is poor (extensive gut/hepatic glucuronidation + sulfation; low solubility), and much of duckweed's flavonoid is already glycosylated. *The mechanism fights the delivery mode* — it leans on precisely the weakness of eating plant biomass.
+- **A luteolin/XO hypothesis requires systemic exposure** — the verified biochemical result does not show that duckweed-derived luteolin reaches hepatic XO at a useful free concentration. Oral metabolism, solubility, glycosylation, and the exact plant material therefore become measured variables, not a presumed renal-transporter benefit.
 
 So even before counting effort, uricase plays to duckweed's strength (luminal action) and luteolin plays to its weakness (needs absorption). And the luteolin route carries a **potency-plus-dose ceiling** uricase does not: ~2.6× weaker per molecule than allopurinol is the small problem; the absolute exposure achievable from edible biomass vs a 300 mg potent oral drug is the large one.
 

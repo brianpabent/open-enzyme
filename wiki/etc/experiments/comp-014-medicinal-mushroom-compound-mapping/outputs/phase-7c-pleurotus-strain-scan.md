@@ -1,3 +1,7 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 ---
 title: "Phase 7-1c — Pleurotus strain selection + ergothioneine yield characterization (lit scan)"
 date: 2026-05-06
@@ -75,7 +79,7 @@ From Tsiantas et al. 2021 [DOI](https://doi.org/10.3390/molecules26071832) (PMID
 
 - **Spent mushroom substrate (SMS) re-use:** P. pulmonarius cultivated on 7 different SMS types — biological efficiency varied 0–63.47%, EGT ranged 0.5–2.17 mg/g, with own-species SMS giving the highest EGT [DOI](https://doi.org/10.1615/IntJMedMushrooms.2025058216) (PMID 40100230). Circular cultivation works.
 - **Selenium and zinc biofortification:** Supplementing P. eryngii growth medium with sodium selenite (50 mg/L) and zinc sulfate (20 mg Zn²⁺/L) elevated trace-element content AND modestly altered phenolic and lovastatin content [DOI](https://doi.org/10.3390/molecules25040889) (PMID 32079328). Implication: substrate trace-element profile is a tuning knob beyond C/N source.
-- **Solid-state fermentation onto grains:** P. eryngii fermented adlay or buckwheat for 10 days produced ~0.8 mg/g EGT in the resulting grain product (Chen et al. 2012). The substrate becomes a delivery vehicle — the umami profile and the mycelium-grain conjugate are the consumption format.
+- **Solid-state fermentation onto grains:** P. eryngii fermented adlay or buckwheat for 10 days produced ~0.8 mg/g EGT in the resulting grain product (Chen et al. 2012). Retain the colonized-grain matrix as an analytical lead; no consumption or exposure inference follows.
 - **Drying matters as much as substrate:** Multiple studies (Villalobos-Pezos 2024 [DOI](https://doi.org/10.3390/antiox13121581), Zhang 2024 [DOI](https://doi.org/10.3390/foods13060878), Piskov 2018 [DOI](https://doi.org/10.24411/0042-8833-2018-10020)) — natural-ventilation drying or freeze-drying preserves EGT > hot-air drying > microwave. Hot-air drying does NOT substantially destroy EGT but degrades phenolic content (Kido et al. 2022, [DOI](https://doi.org/10.1016/j.foodchem.2022.133917)). Freeze-drying is best for maximum EGT preservation; for lovastatin, freeze-drying preserved 342 mg/kg vs. dry-air 190 mg/kg — a ~1.8× difference.
 
 ### Bottom line for Open Enzyme cultivation SOPs
@@ -86,7 +90,7 @@ From Tsiantas et al. 2021 [DOI](https://doi.org/10.3390/molecules26071832) (PMID
 
 ---
 
-## Section 3 — EGT bioavailability + dosing context
+## Section 3 — Historical EGT bioavailability leads and exposure gate
 
 ### Mechanism: OCTN1/SLC22A4 transporter
 
@@ -109,32 +113,20 @@ From Tang et al. 2018 (Sci Rep, mouse) [DOI](https://doi.org/10.1038/s41598-018-
 - Hercynine (metabolite) accumulates in brain after prolonged dosing
 - Long retention half-life consistent with weeks-scale tissue accumulation
 
-### Dietary mushroom intake — is it therapeutic-dose plausible?
+### Exposure translation remains unvalidated
 
-**This is the load-bearing question. The answer is conditionally yes, with caveats.**
+OYSACO, Hattori 2025, Shan 2025, Cheah 2017, Tang 2018, and McElwain 2023 remain retrieval leads spanning different materials, species, endpoints, and experimental systems. This snapshot does not justify equating mushroom composition with free EGT exposure, matching food to purified-compound studies, or inferring a therapeutic amount.
 
-The OYSACO randomized cross-over study (Pleurotus ostreatus oyster mushroom in noodle soup, n=33 healthy older adults, 0.5 / 1 / 2 servings) [acute oyster mushroom intervention 2026 — PMID per scan, exact DOI not in extraction] showed acute cognitive/inflammatory effects from a single mushroom serving — i.e. dietary-form EGT delivered in a meal context **does** produce measurable plasma response.
+### Required exposure test gate
 
-The 2025 hairless-mouse UVB study with cross-bred Pleurotus species (PS) and P. eryngii (PE) freeze-dried diet [Hattori et al. 2025, "Protective Effects of Pleurotus Species on UVB-Induced Skin Disorders at Clinically Relevant Plasma Concentrations of the Antioxidant Ergothioneine"] — title alone is the key signal: **dietary intake of EGT-rich Pleurotus achieved "clinically relevant plasma concentrations"** (i.e. plasma EGT levels comparable to those in supplemented humans). The study explicitly establishes the dietary-mushroom → plasma-EGT → tissue-EGT axis works.
+1. authenticate the fungal species, strain, growth substrate, harvest, and processing method;
+2. quantify EGT, hercynine, lovastatin, and major co-constituents across independent batches;
+3. measure parent and metabolite stability plus free exposure in the proposed experimental compartment;
+4. verify OCTN1-dependent uptake with transporter-negative controls;
+5. run a prespecified NLRP3- or redox-function assay with attribution, viability, and off-target controls; and
+6. compare matrices or routes only after equivalent free exposure is demonstrated.
 
-The Singapore P. citrinopileatus dementia-prevention RCT (Shan et al. 2025) is using **daily P. citrinopileatus powder, 7.0 mg EGT/g DW**, with electronic-diary compliance monitoring across 24 months. They selected a 7 mg/g formulation as a delivery target — implying the working target dose for oxidative-stress-related cognitive decline is on the order of **7–50 mg EGT/day** (depending on powder serving size, not specified in available scan).
-
-### Dosing arithmetic for Brian-relevant scenarios
-
-Using the conservative Pleurotus ostreatus baseline (~2.4 mg EGT/g DW, Cohen 2014):
-- Fresh oyster mushroom is ~10% DW → 50 g fresh ≈ 5 g DW × 2.4 mg/g = **12 mg EGT per 50 g fresh-mushroom serving**
-- A "high serving" of 100 g fresh ≈ 24 mg EGT
-- Using the optimized P. ostreatus (11.4 mg/g DW with UA-DES extraction-equivalent): not achievable in raw fruiting body; this is extract-grade
-- Using P. citrinopileatus selected strain (7 mg/g DW commercial powder): 1 g powder = 7 mg EGT; a 5 g daily serving = 35 mg EGT — landing in the published RCT-investigational range
-
-**Comparison to supplement form:**
-- Cheah 2017 used 5–25 mg/day of pure EGT in healthy volunteers, finding plasma elevation
-- McElwain 2023 [DOI](https://doi.org/10.1016/j.jri.2023.104171) (PMID 38029485) used 1 mM L-ergothioneine in placental explant culture (in vitro, NLRP3-inhibition demonstrated)
-- Most commercial EGT supplements: 5–30 mg per capsule
-
-**Dietary delivery is feasible at 10–30 mg/day from 50–100 g fresh oyster mushroom or 1–5 g of selected dried P. citrinopileatus powder.** This puts dietary delivery in the same plasma-PK envelope as clinical supplementation, NOT requiring concentrated extracts. The transporter-saturation curve flattens at higher doses anyway, so 10–30 mg from food is mechanistically equivalent to 25 mg from a supplement for plasma-EGT purposes.
-
-**Caveat:** the 2.4 mg/g baseline for P. ostreatus is the literature midpoint. Commercial/wild fruiting bodies can be lower (sub-1 mg/g). Strain selection + freeze-drying matter; consumer-grade kit-grown oyster mushroom may deliver 1–3× less than the quoted figure.
+No consumption amount, dosing schedule, or extract requirement is supported by this historical scan.
 
 ### Bridge to NLRP3 / gout axis
 
@@ -160,7 +152,7 @@ Yes — *P. ostreatus* is the original natural source of lovastatin (also called
 - **Lam 2015 [DOI](https://doi.org/10.1615/intjmedmushrooms.v17.i2.30)**: P. ostreatus β-glucan 23.9% DW; total polyphenols 487 mg GAE/100 g DW; **lovastatin not detected** (LOD-dependent — different strain or analytical sensitivity)
 - **Substrate-specific:** grape marc substrate gives highest lovastatin; olive byproduct gives highest EGT — same study, opposite optima
 
-**Implication:** P. ostreatus is multi-compound — eat for EGT (oxidative stress), get lovastatin secondarily (mild HMG-CoA reductase inhibition + cardiovascular benefit). For 50 g fresh ~ 5 g DW × 200 mg/kg = 1 mg lovastatin/serving — well below pharmaceutical statin doses (10–80 mg/day) but consistent with traditional dietary cardiovascular benefit. **Not** a therapeutic statin replacement; relevant for the multi-compound complement-track story.
+**Interpretive limit:** the co-occurrence of EGT and lovastatin-associated records makes Pleurotus a multi-analyte test matrix. It does not support consumption, cardiovascular-benefit, statin-equivalence, or dosing claims. Quantify both analytes and test mechanism-matched exposure separately.
 
 ### Pleuran (β-glucan)
 
@@ -178,7 +170,7 @@ Searched but no direct Pleurotus hexadecanal-content / aroma-profile paper surfa
 
 ### Eritadenine, hericenone, betulinic acid, etc.
 
-Out of scope for Pleurotus species — those belong to *Lentinula edodes* (eritadenine), *Hericium erinaceus* (hericenones), *Inonotus obliquus* (betulinic acid). Cross-referenced in the parent comp-014 Phase 5 anchor list and the medicinal-mushroom-complement-track scope page. Not a Pleurotus question.
+Out of scope for Pleurotus species — those belong to *Lentinula edodes* (eritadenine), *Hericium erinaceus* (hericenones), *Inonotus obliquus* (betulinic acid). See the [historical Phase 5 anchor list](../inputs/phase-5-anchor-species.json) and [medicinal-mushroom complement track](../../../../medicinal-mushroom-complement-track.md).
 
 ### Cordycepin
 
@@ -212,7 +204,7 @@ The English-indexed PubMed search covered ~50 substantive Pleurotus × ergothion
 
 ### Cost note
 
-Per Open Enzyme's CLAUDE.md translation protocol: each non-English source ingested gets two-model independent translation (Claude/Gemini × DeepSeek/Qwen, with Chinese-vendor model required for Chinese-source material). Cost <$0.05/paper. Negligible vs. value. Phase 5b queued.
+The historical queue referenced the top-level [`CLAUDE.md`](../../../../../CLAUDE.md) translation protocol. Any future non-English source review must use the current project protocol rather than this snapshot's cost or model assumptions.
 
 ---
 
@@ -227,9 +219,6 @@ Per Open Enzyme's CLAUDE.md translation protocol: each non-English source ingest
 
 **(b) Substrate × yield evidence:** 2–3× variation. Olive byproduct > wheat straw > coffee grounds (inferred) > grape marc for EGT. Grape marc inverts and gives highest lovastatin. SMS (spent mushroom substrate) re-use works at 0.5–2.2 mg/g range. Drying adds another 1.5–2× variation — freeze-dry or natural-vent dry, avoid microwave. Cumulative strain × substrate × drying = ~5–10× envelope (0.5–7 mg/g range cited in scope page is empirically correct).
 
-**(c) EGT dietary-vs-supplement bioavailability:** OCTN1/SLC22A4-mediated absorption is high and saturable. <4% urinary excretion confirms tissue retention. Cheah 2017 human PK + Tang 2018 mouse tissue distribution + the 2025 UVB hairless-mouse study explicitly establishing "clinically relevant plasma concentrations" from dietary Pleurotus show **dietary intake achieves the same plasma-EGT envelope as supplement intake** at comparable mg-EGT doses (10–30 mg/day range).
+**(c) Historical exposure leads:** OCTN1/SLC22A4, Cheah 2017, Tang 2018, and the 2025 Pleurotus study are source leads. Cross-study differences in material and endpoint prevent a food-versus-purified-compound exposure equivalence claim.
 
-**(d) Is dietary mushroom plausibly therapeutic-dose, or do you need extracts?**
-**Yes, dietary delivery is plausibly therapeutic-dose for the EGT-redox/NLRP3-priming mechanism** at 50–100 g fresh oyster mushroom daily (≈12–24 mg EGT) or 1–5 g dried P. citrinopileatus powder (≈7–35 mg EGT). The OCTN1 saturation curve flattens at 25+ mg/day so concentrated extracts have diminishing returns vs. food. **Concentrated extracts are NOT required** for the EGT mechanism — they would be required only if you wanted >50 mg/day or wanted EGT plus concentrated terpenoid fraction (which would target ganoderic-acid-style chemistry, a different molecular target — that goes with reishi, not Pleurotus).
-
-For Open Enzyme's **engineered koji + native-mushroom-complement** track: the Phase 7 scope page's framing of "daily oyster mushroom in dinner stir-fry for ergothioneine" is mechanistically correct. The dose calculation works. The Pleurotus-track peer-track-thesis holds.
+**(d) Required next observation:** authenticate and quantify the exact material, measure parent/metabolite free exposure, verify OCTN1-dependent uptake, and run mechanism-matched function with attribution and safety controls. No therapeutic amount, consumption instruction, extract decision, or delivery-track conclusion survives.

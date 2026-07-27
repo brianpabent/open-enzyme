@@ -1,3 +1,7 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 # Phase 5 Deep-Read: G. lucidum GLPP (PMID 36385640)
 
 **Citation.** Lin S, Meng J, Li F, Yu H, Lin D, Lin S, Li M, Zhou H, Yang B. *Ganoderma lucidum* polysaccharide peptide alleviates hyperuricemia by regulating adenosine deaminase and urate transporters. *Food Funct.* 2022 Dec 13;13(24):12619-12631. [DOI: 10.1039/d2fo02431d](https://doi.org/10.1039/d2fo02431d). PMID: 36385640.

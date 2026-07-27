@@ -1,93 +1,56 @@
 ---
-title: "TCM Gout Compound Triage — Computational Analysis (comp-013)"
+title: "TCM Gout Compound Triage — Invalidated Prior and Primary-Evidence Rebuild"
 date: 2026-05-06
 tags:
   - tcm
-  - traditional-chinese-medicine
   - gout
-  - hyperuricemia
   - computational
-  - chembl-cross-check
-  - bioavailability
-  - urat1
-  - abcg2
-  - xanthine-oxidase
-  - nlrp3
-  - astilbin
-  - rhein
-  - emodin
-  - berberine
-  - luteolin
-  - chlorogenic-acid
-  - smilax-glabra
-  - rheum-officinale
-  - si-miao-san
-  - global-multilingual
-  - peer-track
+  - invalidated
+  - primary-evidence
 related:
   - tcm-modern-rigor-intersection.md
-  - etc/chembl-cross-check.md
-  - supplement-abcg2-antagonism-computational.md
-  - food-grade-hdaci-screen-computational.md
   - computational-experiments.md
-  - etc/manual-literature-mining.md
-  - gut-lumen-sink.md
+  - supplement-abcg2-antagonism-computational.md
   - abcg2-modulators.md
-  - gout-pathophysiology.md
-  - hypotheses/H04-tcm-rigor-intersection.md
-sources:
-  - "Yuan Q, Cheng Y, Sheng R, Yuan Y, Hu M. A Brief Review of Natural Products with Urate Transporter 1 Inhibition for the Treatment of Hyperuricemia. doi:10.1155/2022/5419890 (PMC9635963)"
-  - "Liang G, Nie Y, Chang Y, et al. Protective effects of Rhizoma smilacis glabrae extracts on potassium oxonate- and monosodium urate-induced hyperuricemia and gout in mice. doi:10.1016/j.phymed.2018.11.032 (PMID 31005813)"
-  - "Huang L, Deng J, Chen G, et al. The anti-hyperuricemic effect of four astilbin stereoisomers in Smilax glabra on hyperuricemic mice. doi:10.1016/j.jep.2019.03.004 (PMID 30851369)"
-  - "Liu YF, Huang Y, Wen CY, et al. The Effects of Modified Simiao Decoction in the Treatment of Gouty Arthritis: A Systematic Review and Meta-Analysis. doi:10.1155/2017/6037037 (PMC5360963)"
-  - "Liu G, Wu J, Song H. Baihu Guizhi decoction alleviates inflammation in rats with acute gouty arthritis by targeting miR-17-5p to regulate the TLR4/Myd88/NF-kB signaling pathway. doi:10.1016/j.clinsp.2025.100665"
-  - "Hou SW, Chen SJ, Shen JD, et al. Emodin, a Natural Anthraquinone, Increases Uric Acid Excretion in Rats with Potassium Oxonate-Induced Hyperuricemia. doi:10.3390/ph16060789 (PMC10304951)"
-  - "Zhang D, Zhao M, Li Y, et al. Natural Xanthine Oxidase Inhibitor 5-O-Caffeoylshikimic Acid Ameliorates Kidney Injury Caused by Hyperuricemia in Mice. doi:10.3390/molecules26237307 (PMID 34885887)"
-  - "Petrangolini G, Corti F, Ronchi M, et al. Development of an Innovative Berberine Food-Grade Formulation with an Ameliorated Absorption: In Vitro Evidence Confirmed by Healthy Human Volunteers Pharmacokinetic Study. doi:10.1155/2021/7563889 (PMC8665891)"
-  - "ChEMBL v34 — bioactivity data accessed via mcp__plugin_chembl_ChEMBL__get_bioactivity, 2026-05-06"
-status: complete
+status: invalidated
 ---
 
-# TCM Gout Compound Triage — Computational Analysis (comp-013)
+# TCM gout compound triage
 
-> **Result boundary.** Treat this as a curated lead inventory, not a validated viability ranking. The score counted off-target ABCG2 occupancy toward viability, did not preserve target-effect polarity, and inherited comp-004's invalid nominal gut-concentration/IC50 shortcut. A renewed triage must use polarity-aware evidence plus measured or justified free exposure and context-matched function before any “viable” claim.
+## Verdict
 
-**Question:** Which Traditional Chinese Medicine compounds with documented gout indications have source-backed target evidence worth advancing to context-matched exposure and functional testing?
+COMP-013 is invalidated and non-runnable. It does not support a compound rank, `GUT-LUMINAL VIABLE` or other viability label, nominal gut or plasma exposure, target occupancy, percent inhibition, clinical-risk tier, dose conclusion, delivery route, or advancement decision.
 
-**Where the analysis lives:**
-- Experiment directory (inputs, scripts, outputs): [`./etc/experiments/comp-013-tcm-gout-compound-triage/`](./etc/experiments/comp-013-tcm-gout-compound-triage/)
-- Computational experiments index: [`computational-experiments.md`](./computational-experiments.md)
+The model inherited COMP-004's invalid nominal-concentration/drug-substrate-IC50 shortcut, adapted COMP-007's invalid composite score, failed to preserve target-effect polarity, and mixed direct assays, expression changes, whole-animal phenotypes, and off-target signals as if they were comparable.
 
----
+The [hash-bound tombstone](./etc/experiments/comp-013-tcm-gout-compound-triage/) preserves the exact retirement scope. Git contains the retired code, inputs, outputs, and reviews.
 
-## Addendum — 2026-05-19 traditional-name re-scan corrections + additions
+## What survives
 
-This addendum captures the **marker-correction batch** surfaced by the 2026-05-19 traditional-formula-name re-scans ([URAT1 rescan](../logs/urat1-classical-formula-rescan-2026-05-19.md), [XO rescan](../logs/xo-classical-formula-rescan-2026-05-19.md)). These are formula-anchored + species-anchored findings that the original comp-013 herb-by-herb query framing missed. Per [CLAUDE.md §"Global-multilingual research by default"](../CLAUDE.md), the discipline upgrade is to seed compound lists from **traditional formula composition + traditional pathology term** (e.g., 痛风 / 痹证 / 湿热痹) in addition to mechanism-name queries.
+The former input names remain an unranked historical search list:
 
-**1. Mangiferin → Zhi Mu / Anemarrhena asphodeloides (new tier-1 entry).** Mangiferin (CHEMBL3611008) is the cardinal anti-hyperuricemia active in *A. asphodeloides*. Niu 2015 + supporting series: dual-pathway URAT1 down-regulation + AQP2 modulation. Anemarrhena is a cardinal herb of Bai Hu Jia Gui Zhi Tang (BHGZ; the canonical gout-active formula in the modern Chinese RCT literature). **Tier-1 promotion based on (a) mechanism, (b) BHGZ RCT context, (c) ChEMBL coverage of mangiferin.** Adds to the comp-013 URAT1 row alongside cordycepin and astilbin. (In Vitro + Animal Model; source: urat1-classical-formula-rescan-2026-05-19.md)
+- luteolin
+- astilbin
+- rhein
+- emodin
+- aucubin
+- berberine
+- cylindrin
+- chlorogenic acid
+- atractylenolide I
 
-**2. Bai Hu Jia Gui Zhi Tang (BHGZ) — ChiCTR1900024974 RCT scope.** White Tiger Plus Cinnamon Branch decoction (Anemarrhena + gypsum + cinnamon + rice + licorice) is the canonical TCM gout formula in the modern Chinese RCT literature. ChiCTR1900024974 is a registered RCT (protocol PMC9013133, 2022); outcomes paper pending. 91% pilot effectiveness in the protocol's prior-series basis is **uncontrolled** — wait for the RCT outcomes paper before promoting beyond mechanism-tier. A later open-access rat MSU acute-gout study supports BHGZ as an inflammation-axis candidate through reduced ankle inflammation, IL-1β/IL-6, and TLR4/MyD88/NF-kB readouts, but this is **Animal Model** evidence and does not establish human efficacy or urate lowering. (Clinical Trial protocol; outcomes pending + Animal Model inflammation mechanism. Sources: urat1-classical-formula-rescan-2026-05-19.md; Liu 2025, *Clinics*, DOI `10.1016/j.clinsp.2025.100665`)
+The names are not evidence. Each must be rebuilt from the primary record with exact material identity, source, target or endpoint, effect polarity, assay system, evidence level, exposure status, and mechanism-matched function. Sparse database coverage is a reason to search more broadly, not a negative biological verdict.
 
-**3. Coix lacryma-jobi (Yi Yi Ren) — major mechanism upgrade.** Original comp-013 entry attributed activity to "atractylenolide I = MECHANISM UNCLEAR". The 2026-05-19 re-scan replaces this with **Coix seed oil four-transporter mechanism** (URAT1 + GLUT9 + OAT1 + ABCG2) at 73-87% SUA reduction in HUA rodent models (PMC12114407). This is a major upgrade — four-transporter coverage from a single GRAS food-grade input. (Animal Model; source: urat1-classical-formula-rescan-2026-05-19.md)
+The formula-level Si Miao San connection also survives as a research lead. A formula signal does not establish component, target, or synergy attribution.
 
-**4. Plantago seed (Che Qian Zi) — attribution correction.** Original comp-013 attributed Plantago activity to aucubin. The 2026-05-19 re-scan replaces aucubin attribution with **acteoside + apigenin + geniposidic acid via PPAR pathway → URAT1 + GLUT9** (Liu 2024 PMC11313179). Apigenin specifically deserves a separate URAT1 mechanism entry per Li 2021 PMID 34044255. (In Vitro + Animal Model; source: urat1-classical-formula-rescan-2026-05-19.md)
+## Current evidence and replacement
 
-**5. Si Miao San (SMS) — phytoecdysteroid + estrone arms missed.** The original comp-013 SMS row captured the main flavonoid + alkaloid contributions. The 2026-05-19 re-scan surfaced two additional axes: (a) **Phytoecdysteroids** from Achyranthes bidentata / Niu Xi (one of the four SMS cardinal herbs) — independent ecdysteroid-pathway anti-inflammatory mechanism. (b) **Estrone-family signaling** — multiple SMS components engage estrogen-receptor-mediated downstream effects relevant to bone + inflammation. Both axes are mechanism-additive to the existing flavonoid arm. (Mechanistic Extrapolation; source: urat1-classical-formula-rescan-2026-05-19.md)
+[TCM-derived gout leads](./tcm-modern-rigor-intersection.md) owns the current source-verified evidence boundaries, sourcing and delivery constraints, formula conjecture, and discriminating experiments.
 
-**6. Rhein / Emodin split in Rheum palmatum (Da Huang) — mechanism separation.** Original comp-013 framing treated rhein + emodin as a co-acting anthraquinone class. The 2026-05-19 re-scan separates them: **rhein → direct XO inhibition** (Meng 2015, Animal Model); **emodin → transporter-mediated UA excretion, NO XO inhibition** (Hou 2023 PMC10304951, already cited but mechanism not separated in narrative). Treat as two distinct chokepoint engagements rather than one. (Animal Model; source: xo-classical-formula-rescan-2026-05-19.md)
+[COMP-049](./etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/) is the pre-run replacement design. Its fixed correction set contains four primary animal studies and one secondary systematic review covering *Smilax glabra* total flavonoids, emodin, coix seed oil, *Plantaginis Semen* extract, and modified Simiao decoctions. The planned computation preserves source tier, tested-material identity, polarity, assay context, simultaneous evidence gaps, and deferred work without ranking the records.
 
-**7. Acacetin → Agastache rugosa / Huo Xiang (new tier-1 XO chokepoint candidate).** Yuk 2023 PMC9914411: acacetin XO IC50 = 0.58 μM. Most potent flavonoid in panel, beats luteolin. Classical formula context: Huo Xiang Zheng Qi. GRAS culinary status in Korea + Japan. Tier-1 XO chokepoint entry. (In Vitro; source: xo-classical-formula-rescan-2026-05-19.md)
+COMP-049 has not run. No result should be inferred from its design or inputs.
 
-**8. Kaempferol → Chrysanthemum morifolium / Ju Hua (new tier-1 XO chokepoint candidate).** Wee 2023 PMC9864848: kaempferol XO IC50 = 2.18 μM. Lee 2018 PMC6213378 DKB114 formula 38.3% UA ↓ at 200 mg/kg, XO IC50 104.4 μg/mL. Tier-1 XO chokepoint entry. (In Vitro + Animal Model; source: xo-classical-formula-rescan-2026-05-19.md)
+## Falsification boundary
 
-**9. Chlorogenic acid as a compound-class entry (not per-herb).** Chlorogenic acid family is XO-active across Wu Mei (Prunus mume), Lonicera japonica, and likely Crataegus pinnatifida (Shan Zha) and others. Reframe as a compound-class entry rather than per-herb redundant entries. (In Vitro; source: xo-classical-formula-rescan-2026-05-19.md)
-
-**10. H04 falsification card partial closure.** Comp-013's H04 hypothesis card flagged "ChEMBL coverage gap" — 5/9 compounds had no ChEMBL data. The 2026-05-19 traditional-name-first scan partially closes this: mangiferin (CHEMBL3611008), apigenin (well-cataloged), acteoside (curated). The methodology gap **isn't ChEMBL coverage** — it's **seed-list construction at the herb level rather than the formula + marker level**. Update H04 with this diagnosis: the falsification was query-framing, not database coverage.
-
-**Cross-references for this addendum:**
-- [`urat1-classical-formula-rescan-2026-05-19.md`](../logs/urat1-classical-formula-rescan-2026-05-19.md)
-- [`xo-classical-formula-rescan-2026-05-19.md`](../logs/xo-classical-formula-rescan-2026-05-19.md)
-- [`lit-scan-query-framing-retrospective-audit-2026-05-19.md`](../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md) — the audit triggering both re-scans
-- [`hypotheses/H04-tcm-rigor-intersection.md`](./hypotheses/H04-tcm-rigor-intersection.md) — needs marker-correction update incorporating items 1, 3, 4 above
-- [`gout-pathophysiology.md`](./gout-pathophysiology.md) §"multi-track urate transporter coverage" — XO row updated with acacetin + kaempferol + rhein
-- [`abcg2-modulators.md`](./abcg2-modulators.md) §"Tier 2 — Solid mechanism, modest evidence" — Poria cocos added (sister rescan finding, [`mushroom-hdac6-q141k-rescan-2026-05-19.md`](../logs/mushroom-hdac6-q141k-rescan-2026-05-19.md))
+An incomplete evidence record does not show that a material is ineffective. It shows which attribution, exposure, functional, or trial-level evidence is missing. A negative experiment kills only the exact material, exposure, endpoint, and decision rule it tested.

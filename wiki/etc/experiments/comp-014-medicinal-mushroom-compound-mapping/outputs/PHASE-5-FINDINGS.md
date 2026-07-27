@@ -1,3 +1,7 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 # comp-014 Phase 5 — Deep-Read Findings + Verdicts (2026-05-06)
 
 Five parallel subagent deep-reads of the top Phase 4 candidates (Model A = Claude). Two-model cross-check completed via DeepSeek-Chat-V3 (Model B) over OpenRouter — same `.env` key the wiki sweep daemon uses. Brian flagged the key was available; Model B cross-check landed substantive findings. See `phase-5-deepseek-cross-check.md` for full Model B output; key disagreement annotations integrated below per CLAUDE.md §Translation protocol.

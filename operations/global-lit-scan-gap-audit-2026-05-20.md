@@ -48,7 +48,7 @@ The rule is not "translate English query into Chinese." The rule is: **query the
    - Expected wiki impact: gout-genetic-variants, ABCG2 modulators, genotype-informed supplement workflow, East Asian cohort/RCT design.
 
 3. **TCM gout formula re-scan**
-   - Why: comp-013 had partial formula/species anchoring, but the retrospective still found likely gaps around formula-level evidence and non-canonical components.
+   - Why: COMP-013 is invalidated; its surviving unranked names do not resolve the retrospective gaps around formula-level evidence and non-canonical components.
    - Native query anchors: `四妙散 高尿酸血症 URAT1`, `白虎加桂枝汤 痛风`, `土茯苓 高尿酸血症`, `姜黄 黄嘌呤氧化酶`, `乌梅丸 高尿酸血症`.
    - Expected wiki impact: TCM gout compound triage, H04, modality/chokepoint matrix, URAT1/XO/NLRP3 pages.
 

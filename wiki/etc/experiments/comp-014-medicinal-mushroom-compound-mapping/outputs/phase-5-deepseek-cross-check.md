@@ -1,3 +1,7 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 # Phase 5 Model B Cross-Check (DeepSeek-Chat-V3 via OpenRouter)
 
 **Model A:** Claude (per-paper deep-reads in `phase-5-deepread-*.md`)
@@ -110,4 +114,3 @@ The dual inhibition claim particularly requires verification from full text rega
    - **AGREE-WITH-CAVEATS:** Model A’s summary is generally accurate but lacks depth in TCM-specific context and methodology nuances. The recommendation to downgrade the Phase 6 case due to selectivity concerns is valid but should be balanced with the multi-target nature of TCM compounds. Further full-text analysis is needed to confirm structural details, extraction methods, and assay conditions.
 
 ---
-

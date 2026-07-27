@@ -283,7 +283,7 @@ This screen evaluates food-derived compounds against gout-relevant NLRP3-pathway
 - **CP4 (caspase-1 suppression):** indirect via 20S proteasome inhibition, **IC50 = 86 nM** (ChEMBL). Sub-100 nM proteasome potency is a **hepatotoxicity dose-ceiling flag** at high-dose intense-use protocols.
 - **CP5a (IL-1β receptor-downstream suppression):** reduces IL-1β-induced signaling in target cells (chondrocytes, synoviocytes)
 - Green tea catechin; also suppresses ROS-driven NLRP3 activation and K⁺-efflux priming as adjunct mechanisms
-- **Summary framing:** EGCG is the widest-spectrum natural compound in the current Open Enzyme stack, hitting four of seven chokepoints (CP1, CP1a, CP4, CP5a). Its 20S proteasome sub-100 nM activity is a hepatotoxicity flag at high dose — safety dose-ceiling for intense use protocols.
+- **Summary framing:** EGCG has reported effects at several gout-adjacent pathway layers, but those records do not establish integrated chokepoint coverage, clinical benefit, or a safe/effective exposure. Free exposure, mechanism-specific target engagement, intestinal ABCG2-attributed urate flux, and hepatotoxicity remain separate gates.
 
 **Evidence Level:**
 - **In vitro:** EGCG (10–50 μM) attenuated α-hemolysin-induced NLRP3 inflammasome and reduced caspase-1, IL-1β, IL-18; direct binding to Hla (Kd = 1.71 × 10⁻⁴ M)
@@ -295,21 +295,21 @@ This screen evaluates food-derived compounds against gout-relevant NLRP3-pathway
 - **Estimated titers:** 10–50 mg/L (lower than kaempferol or quercetin due to galloylation complexity)
 - **Feasibility:** MODERATE — pathway complexity is highest among polyphenols; multiple post-translational modifications
 
-**Food Safety:**
-- GRAS: Green tea extract (40% EGCG) in dietary supplements
-- Safe: Clinical trials use 400–800 mg/day EGCG
-- Bioavailability: ~20–30% oral absorption (undergoes gut metabolism)
+**Exposure and safety boundary:**
+- Human studies outside gout have used EGCG-containing extracts, but study use does not establish safety for another preparation, exposure pattern, or population.
+- Free EGCG oral bioavailability is reported at approximately 0.1–0.3% of ingested dose by plasma AUC; absorbed, conjugated, and free exposure are not interchangeable.
+- Concentrated extracts and exposure-enhancing conditions can increase hepatotoxicity risk; no treatment dose is proposed here.
 
 **Research strengths:**
 - Multiple ROS reduction mechanisms; strong antioxidant activity
-- Established clinical use in dietary supplements
-- Synergistic with TLR4/NF-κB suppression (upstream priming block)
+- Existing dietary and commercial sources make sourcing testable without implying clinical efficacy.
+- Reported TLR4/NF-κB effects are a separate mechanism hypothesis, not evidence of synergy.
 
 **Limitations:**
 - Production titers likely 10–50 mg/L (lowest among evaluated polyphenols)
 - Pathway complexity (8–10 heterologous genes + galloylation)
 - No human gout evidence; gout-specific evidence is limited to the mouse and primary-macrophage studies above
-- Bioavailability limited (~20–30%); undergoes extensive gut metabolism
+- Free systemic exposure is low and metabolism is extensive; total absorption cannot substitute for measured free parent and metabolite exposure.
 
 **Current gate:** Direct mouse evidence supports MSU-relevant inflammatory and hyperuricemia signals. A separate MCF-7Tam study found reduced mitoxantrone-assayed BCRP activity after EGCG exposure without changed BCRP mRNA or protein; it does not establish an acute-versus-chronic switch or intestinal urate direction. Resolve stability, free exposure, ABCG2 attribution, and urate flux before selecting a source.
 
@@ -501,7 +501,7 @@ This screen evaluates food-derived compounds against gout-relevant NLRP3-pathway
 - TF3 standardized extracts in commercial OTC supplements
 
 **Research strengths:**
-- **Mechanism-orthogonal to EGCG** at the NLRP3 step (assembly disruption vs. proteasome) — additive when stacked
+- **Potentially distinct from EGCG** at the NLRP3 step (assembly disruption vs. proteasome); pathway separation is a rationale for an interaction experiment, not evidence of additivity.
 - Preclinical URAT1/OAT expression hypothesis that can be tested with direct urate-flux attribution
 - Direct MSU peritonitis Animal Model (oral)
 - Mature commercial supply (theaflavin-enriched extracts)

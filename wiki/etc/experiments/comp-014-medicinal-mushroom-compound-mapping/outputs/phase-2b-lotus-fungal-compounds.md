@@ -1,3 +1,7 @@
+# ⚠️ HISTORICAL SNAPSHOT — NON-AUTHORITATIVE
+
+> Retained rows and source IDs are retrieval leads only. Ranks, verdicts, recommendations, dose or exposure conclusions, and production, delivery, or chassis claims below have no current authority.
+
 # Phase 2b — LOTUS fungal-compound aggregation
 
 **Source:** LOTUS REST API (https://lotus.naturalproducts.net/api/search/simple)
