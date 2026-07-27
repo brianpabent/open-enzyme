@@ -266,7 +266,7 @@ See [nlrp3-inhibitor-screen.md §Meta-Finding](./nlrp3-inhibitor-screen.md), [th
 
 ### Other compounds (aggregated)
 
-- **ChEMBL cross-check on remaining stack compounds** (BHB, KPV, ursolic acid, taurine, sulforaphane, berberine, resveratrol, curcumin, ergothioneine, ferulic acid, kojic acid): 2-5 more mechanistic reframings are expected when primary curated bioactivities are compared to the current wiki mechanism claims. See.
+- **ChEMBL cross-check on remaining stack compounds** (BHB, KPV, ursolic acid, taurine, sulforaphane, berberine, resveratrol, curcumin, ergothioneine, ferulic acid, kojic acid): ChEMBL v37 quarterly refresh completed 2026-07-01 with significant new findings for ursolic acid (16 new entries), curcumin (DYRK2 2.5 nM), and β-caryophyllene (CB2 now curated). See [chembl-cross-check.md](./etc/chembl-cross-check.md).
 
 ### Do encoded folding-route features predict cassette interactions?
 
