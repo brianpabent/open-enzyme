@@ -4119,7 +4119,7 @@
     
   
   
-    <span class="md-status md-status--retired-invalid-model"></span>
+    <span class="md-status md-status--quarantined-invalid-model"></span>
   
 
   
@@ -5327,19 +5327,17 @@
 
 
 <blockquote>
-<p><strong>INVALIDATED TOMBSTONE — NOT RUNNABLE.</strong> The retired model treated AlphaFold pLDDT confidence as solvent accessibility and converted that invalid mapping into exposure, protease-risk, resistance, and survival labels. The executable artifact is preserved by Git, not duplicated in the live corpus.</p>
+<p><strong>QUARANTINED — COMPLETE ARTIFACT RETAINED, CLAIMS BLOCKED.</strong> The historical model treated AlphaFold pLDDT confidence as solvent accessibility and converted that invalid mapping into exposure, protease-risk, resistance, and survival labels. Its code, inputs, outputs, and shared scoring library are retained pending Brian’s final disposition decision; none is eligible for execution, propagation, synthesis, or decision use.</p>
 </blockquote>
 <h1 id="comp-006-dafcd55-shio-koji-protease-proxy">comp-006 — DAF/CD55 Shio-Koji Protease Proxy<a class="headerlink" href="#comp-006-dafcd55-shio-koji-protease-proxy" title="Permanent link">&para;</a></h1>
-<p><strong>Status:</strong> Invalidated for biological interpretation and retired from execution.</p>
+<p><strong>Status:</strong> Quarantined. Independent review found retirement of the current verdict-producing experiment justified; Brian’s final decision is pending.</p>
 <p>No HIGH, MODERATE, LOW, exposed, buried, cleavage, degradation, protease-risk, structural-resistance, process-survival, folding, chassis, or cross-payload conclusion survives. The lower-confidence Ser/Thr-rich stalk was not shown to be solvent-exposed, cleaved, or the dominant cause of failure.</p>
-<p>The historical P08174 sequence-filter inventory and AlphaFold values remain inspectable in Git as records of the retired computation. pLDDT is confidence only. The contrast between the lower-confidence stalk and higher-confidence SCR1–4 region can motivate a matched full-ectodomain-versus-truncated experiment; it does not predict which construct survives.</p>
+<p>The historical P08174 sequence-filter inventory, AlphaFold values, code, inputs, and generated outputs remain live for audit. pLDDT is confidence only. The contrast between the lower-confidence stalk and higher-confidence SCR1–4 region can motivate a matched full-ectodomain-versus-truncated experiment; it does not predict which construct survives.</p>
 <p>The current evidence boundary and matched-comparison conjecture live on the <a href="../../../daf-cd55-protease-stability-computational/">canonical interpretive page</a>.</p>
-<h2 id="hash-bound-retirement-record">Hash-bound retirement record<a class="headerlink" href="#hash-bound-retirement-record" title="Permanent link">&para;</a></h2>
-<p><a href="invalidation.json"><code>invalidation.json</code></a> records the exact retired Git tree, SHA-256 and byte count for every retired non-review file, a canonical digest over the retirement scope, and the current evidence owner.</p>
-<p>Historical files can be inspected with Git when needed:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>show<span class="w"> </span>70e60ea9a7c84a92cec37164f38b456aaa6d6881:wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/analyze.py
-</code></pre></div>
-<p>There is no reproduction command. Old push-review receipts were retired with the executable artifact; <code>reviews/</code> contains only current tombstone review material.</p>
+<h2 id="quarantine-boundary">Quarantine boundary<a class="headerlink" href="#quarantine-boundary" title="Permanent link">&para;</a></h2>
+<p><a href="quarantine.json"><code>quarantine.json</code></a> binds the complete retained artifact, blocks its derived claims without recurring model review, and records the owner and expiry for the pending decision.</p>
+<p>The bound disposition review found a second fatal defect beyond the pLDDT mapping: the maximum-risk construction returns the same per-protease maximum across the retained sequence scopes and therefore cannot answer the comparison it claims to make. A defensible replacement would require a new scoring model and a new COMP lifecycle, not a correction of the retained output.</p>
+<p>Do not run <code>analyze.py</code> while quarantine is active. Any repair that changes code, inputs, parameters, rules, or outputs must re-enter the normal COMP authoring lifecycle before result-bearing execution.</p>
 
 
 

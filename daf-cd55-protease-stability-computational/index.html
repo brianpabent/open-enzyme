@@ -4134,7 +4134,7 @@
     
   
   
-    <span class="md-status md-status--retired-invalid-model"></span>
+    <span class="md-status md-status--quarantined-invalid-model"></span>
   
 
   
@@ -4159,7 +4159,7 @@
     
   
   
-    <span class="md-status md-status--retired-invalid-model"></span>
+    <span class="md-status md-status--quarantined-invalid-model"></span>
   
 
   
@@ -5411,18 +5411,18 @@
 <h1 id="dafcd55-shio-koji-protease-proxy-comp-006">DAF/CD55 Shio-Koji Protease Proxy (comp-006)<a class="headerlink" href="#dafcd55-shio-koji-protease-proxy-comp-006" title="Permanent link">&para;</a></h1>
 <p>The engineering question is whether a soluble DAF/CD55 ectodomain can retain complement-regulatory activity through production and shio-koji processing. COMP-006 does not answer it.</p>
 <h2 id="what-the-computation-establishes">What the computation establishes<a class="headerlink" href="#what-the-computation-establishes" title="Permanent link">&para;</a></h2>
-<p>The retired artifact mapped inherited sequence-filter matches across P08174 and added AlphaFold pLDDT context. Its original HIGH label is invalid because the model used pLDDT confidence as solvent accessibility. It did not calculate SASA, model cleavage kinetics, or measure degradation and retained activity.</p>
+<p>The quarantined artifact mapped inherited sequence-filter matches across P08174 and added AlphaFold pLDDT context. Its original HIGH label is invalid because the model used pLDDT confidence as solvent accessibility. Its maximum-risk construction also returns the same per-protease maximum across the full, mature, ectodomain, and stalk scopes whenever each contains an “exposed” match, so it cannot support the claimed scope comparison. It did not calculate SASA, model cleavage kinetics, or measure degradation and retained activity.</p>
 <p>The Ser/Thr-rich stalk has lower AlphaFold confidence than SCR1–4. That difference is confidence information only; it does not establish that the stalk is exposed, cleaved, or the dominant cause of failure.</p>
 <blockquote>
 <p><strong class="research-conjecture-label">Research conjecture — stalk removal may change process survival</strong></p>
 <p><strong>Grounded premises:</strong> <a href="https://www.uniprot.org/uniprotkb/P08174/entry">UniProt P08174</a> defines the full ectodomain and SCR1–4 boundaries, while <a href="https://alphafold.ebi.ac.uk/entry/P08174">AlphaFold AF-P08174-F1</a> reports lower confidence for the Ser/Thr-rich stalk than for SCR1–4 (<strong>Mechanistic Extrapolation</strong>). Neither source measures solvent accessibility, cleavage, process survival, folding, or retained complement activity.</p>
 <p><strong>Novel leap:</strong> Removing the stalk may improve recovery of a functional soluble DAF construct under the intended production and processing conditions. No direct evidence establishes a survival or functional advantage for the truncated construct.</p>
-<p><strong>Why it matters:</strong> A real configuration-specific advantage could focus construct development without treating the retired proxy as predictive.</p>
+<p><strong>Why it matters:</strong> A real configuration-specific advantage could focus construct development without treating the invalid proxy as predictive.</p>
 <p><strong>Discriminating observation:</strong> Compare matched full-ectodomain and SCR1–4 constructs in the same host, route, and processing conditions; measure product identity, intact recovery, fold, complement-regulatory function, and retained function after process exposure.</p>
 </blockquote>
 <h2 id="delivery-and-falsification-gate">Delivery and falsification gate<a class="headerlink" href="#delivery-and-falsification-gate" title="Permanent link">&para;</a></h2>
 <p>For the proposed <em>A. oryzae</em> route, the exact secreted construct must fold correctly and retain complement-regulatory function through the intended processing conditions. <a href="../validation-experiments/#125-dafcd55-scr1-4-truncated-single-cassette-expression-in-a-oryzae-cp0-engineering-candidate-wet-lab-gate">§1.25</a> tests expression, disulfide/folding, process stability, and function of SCR1–4. Because its current design has no full-ectodomain arm, a favorable result advances the truncated construct but cannot attribute that outcome to stalk removal.</p>
-<p>Related: <a href="../daf-cd55-scr14-truncated-computational/">SCR1–4 proxy</a> · <a href="../hypotheses/H05-daf-scr14-cp0-thesis/">H05 falsification card</a> · <a href="./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/">invalidated, non-runnable COMP-006 tombstone</a></p>
+<p>Related: <a href="../daf-cd55-scr14-truncated-computational/">SCR1–4 proxy</a> · <a href="../hypotheses/H05-daf-scr14-cp0-thesis/">H05 falsification card</a> · <a href="./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/">quarantined, non-runnable COMP-006 artifact</a></p>
 
 
 
