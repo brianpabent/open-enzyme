@@ -490,7 +490,7 @@
     "comp-044": {
       "comp_dir": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime",
       "artifact_manifest_sha256": null,
-      "source_commit": "8526ba52fa406ffd2c43ed3648901c73ddc6fea4",
+      "source_commit": "8ddcf2c354b5478c6e31a74081f68399e2c8f1f2",
       "review_receipt": null,
       "comp_verdict": "review_pending_exact_push",
       "propagation_eligibility": "blocked",
@@ -511,7 +511,7 @@
         "wiki/open-questions.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-27T00:54:30Z",
+      "timestamp": "2026-07-27T12:12:46Z",
       "cost_usd": null,
       "pending_reason": "changed completed artifact awaits exact push review"
     },
@@ -571,7 +571,7 @@
     "comp-047": {
       "comp_dir": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen",
       "artifact_manifest_sha256": null,
-      "source_commit": "8526ba52fa406ffd2c43ed3648901c73ddc6fea4",
+      "source_commit": "8ddcf2c354b5478c6e31a74081f68399e2c8f1f2",
       "review_receipt": null,
       "comp_verdict": "review_pending_exact_push",
       "propagation_eligibility": "blocked",
@@ -589,7 +589,7 @@
         "wiki/gout-genetic-variants.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-27T00:54:30Z",
+      "timestamp": "2026-07-27T12:12:46Z",
       "cost_usd": null,
       "pending_reason": "changed completed artifact awaits exact push review"
     }
