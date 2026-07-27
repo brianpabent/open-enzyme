@@ -1,67 +1,49 @@
+> **INVALIDATED TOMBSTONE — NOT RUNNABLE.** No compound row, rank,
+> quantitative result, safety flag, production claim, or advancement decision
+> survives. Git preserves the retired artifact; the live tree does not.
+
 # comp-014 — Medicinal mushroom compound × chokepoint mapping
 
-**Status:** Partial lead inventory. The former candidate rankings and Phase 6 occupancy/feasibility triage are invalid for decision use.
+**Status:** Invalidated for scientific, quantitative, and decision use.
 
-## Current question
+## Why it was retired
 
-Which compound/source/target records in this bounded fungal-natural-product artifact are worth rehydrating from primary sources for a polarity-, exposure-, and function-aware experiment?
+The artifact mixed query-hint species labels with provenance, treated a
+permissive inclusion flag as if it were a toxicity screen, counted
+stereochemical and name variants without a stable deduplication rule, and
+ranked heterogeneous target records that included different endpoints,
+polarities, nulls, activation, expression, binding, and phenotype.
 
-The artifact does not represent all fungal natural products or the global literature. It cannot identify the best compound, species, producer, production route, delivery route, or chassis.
+The retained historical outputs also contained obsolete candidate tiers,
+`KEEP`/`DROP` and readiness language, practical purchase and SOP guidance, and
+unreconciled cultivation cost and yield arithmetic. Several mappings and row
+boundaries were defective. Correcting those tables would not make the retired
+search reproducible or decision-grade.
 
 ## What survives
 
-- Raw and joined compound/source/target rows survive as search leads.
-- Primary-source identifiers attached to a row survive as retrieval pointers, not as verification that the row's interpretation is correct.
-- ADA, PINK1/mitophagy, urate transport, urate production, inflammasome, redox, and barrier-associated rows remain open nodes for source rehydration.
-- Database absence survives only as a record of what the bounded query did not return.
+- Exact-material reproducibility, ADA, PINK1 or mitophagy, urate transport,
+  urate production, inflammasome, redox, barrier, and direct C5aR1-screen
+  ideas remain independently sourced research questions on their owning wiki
+  pages.
+- The failure modes remain useful design constraints for a future
+  natural-product screen: query labels are not provenance,
+  retained-for-review is not safe, heterogeneous endpoints are not rankable,
+  and bounded non-retrieval is not biological absence.
+- Invalidating this artifact does not reject fungal chemistry or neighboring
+  untested mechanisms. A new experiment may revisit them with primary-source
+  records, exact material identity, effect polarity, compartmental exposure,
+  mechanism-matched function, and safety controls.
 
-Plant-origin compounds found in mushroom-associated queries are not fungal biosynthesis products unless a primary source establishes that provenance. Binding, expression, target prediction, and whole-animal phenotype are not interchangeable with direct mechanism-matched function.
+Nothing survives from COMP-014 itself as predictive or decision evidence.
 
-## What does not survive
+## Hash-bound retirement record
 
-- Any candidate, potency, species, or production ranking.
-- `PURSUE`, `DROP`, tier, readiness, highest-priority, highest-leverage, or viability labels.
-- Nominal exposure, occupancy, dose-feasibility, clinical-risk, synergy, production, delivery, or chassis conclusions.
-- Universal claims that a target is empty, a fungal antagonist does not exist, or a whole material cannot act.
-- Component or target causality inferred from a formula, extract, expression result, database association, or phenotype alone.
-
-The former Phase 6 script and outputs are removed from the live tree. Other legacy derived files remain evidence-retrieval aids only where they expose a source identifier or row; their ranks and narrative verdicts have no current authority. Git preserves the retired logic.
-
-## Retained reproducible check
-
-From this directory:
-
-```bash
-python3 scripts/scope_validate.py
-```
-
-The standard-library validator checks the current Phase 1 input structure and regenerates `outputs/scope-summary.md`. It does not reproduce the database pulls, later joins, rankings, or retired Phase 6.
-
-`scripts/scope_validate.py` is the only runnable script retained in this directory. The old LOTUS pull/aggregation and target-mapping scripts are removed because their derived narratives are quarantined and their execution contract is not current.
-
-## Retained artifact map
-
-- `inputs/` records the bounded historical source, species, toxicity, and target scope.
-- `outputs/scope-summary.md` is the only currently regenerated output.
-- Other top-level `outputs/phase-*` files are historical snapshots and lead inventories.
-- Raw source captures remain unchanged in `outputs/_chembl_raw/`, `outputs/_lotus_raw/`, `outputs/_npatlas_raw/`, and `outputs/_knapsack_raw/`.
-- Historical lookup caches/intermediates remain unchanged in `outputs/_chembl_molecule_inchikey_cache.json`, `outputs/_knapsack_inchikey_cache.json`, and `outputs/_chokepoint_chembl_targets.json`.
-
-The unchanged raw captures preserve the retrieved source payloads. They are not evidence that any derived fungal provenance, target mapping, rank, or verdict is correct.
-
-## Lead-rehydration gate
-
-Before any row can support a current claim or experiment:
-
-1. verify exact material identity and producer/source provenance;
-2. inspect the primary record and preserve target or endpoint, effect polarity, substrate, assay, species, and compartment;
-3. distinguish direct function from binding, expression, prediction, or phenotype;
-4. measure or justify free parent and metabolite exposure in the proposed compartment;
-5. run mechanism-matched function with attribution, off-target, toxicity, barrier, and viability controls;
-6. compare sourcing and delivery only after the biological gate passes.
-
-A negative result kills only the tested material, exposure, endpoint, and route. It does not erase the source record or neighboring untested mechanisms.
+[`invalidation.json`](./invalidation.json) binds every retired non-review file
+to Git commit `ff351189200354cecaf641be6603ba5c6b1f549f` by byte count and
+SHA-256 and records the exact invalidated and surviving scopes.
 
 ## Current evidence home
 
-[Medicinal mushroom compound mapping](../../../medicinal-mushroom-compound-mapping-computational.md) states the current evidence and decision boundary.
+- [Medicinal mushroom compound mapping — invalidated prior and research
+  rebuild](../../../medicinal-mushroom-compound-mapping-computational.md)

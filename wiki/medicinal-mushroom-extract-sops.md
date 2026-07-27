@@ -194,12 +194,12 @@ These rows can improve cultivation or supply, but they do not establish more of 
 
 - [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md) — the scope page these SOPs operationalize
 - [`medicinal-mushroom-complement-track.md`](./medicinal-mushroom-complement-track.md#research-conjecture--a-reproducible-medicinal-fungal-material-may-expose-a-gout-weakness) — exact-material reproducibility conjecture
-- [`medicinal-mushroom-compound-mapping-computational.md`](./medicinal-mushroom-compound-mapping-computational.md) — partial COMP-014 retrieval inventory; not method authority
+- [`medicinal-mushroom-compound-mapping-computational.md`](./medicinal-mushroom-compound-mapping-computational.md) — invalidated COMP-014 boundary; no method authority
 - [`validation-experiments.md`](./validation-experiments.md) §2.6 — pilot-driven matched interaction study
 
-## Validation priorities
+## Open method-development gates
 
-1. Resolve SOP-1 upstream Juncao cultivation and GLPP fraction identity from primary Chinese sources.
-2. Qualify SOP-3 against an exact material without presuming it is the simplest route.
-3. Source a lawful research-use pentostatin standard before attempting SOP-2 co-quantification.
-4. Use independent operators to estimate method transferability, then set acceptance criteria before result-bearing batch comparisons.
+- For SOP-1, recover the exact cultivation, extraction, and GLPP fractionation methods for the material whose biological result is being tested. Historical Juncao search terms are retrieval aids, not a reason to select that cultivation route.
+- For SOP-3, qualify the method against one exact material without presuming it is the simplest sourcing route.
+- Before SOP-2 co-quantification, obtain lawful research-use reference standards and qualify both analytes in the intended matrix.
+- Use independent operators to estimate method transferability, then set acceptance criteria before result-bearing batch comparisons.

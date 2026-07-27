@@ -141,6 +141,7 @@ Questions about chokepoint biology, priming mechanisms, species-gap caveats, and
 ### Priming and upstream signals
 
 - **Is complement C5a activation necessary or sufficient for MSU-triggered NLRP3 priming in clinical gout flares, or is TLR4/LPS still dominant in real patients?** Cumpelik 2016 (PMID 26245757) and Khameneh 2017 (PMID 28167912) are animal model + in vitro; human C5a-priming dominance remains to be confirmed in vivo. See [complement-c5a-gout.md §6](./complement-c5a-gout.md), [nlrp3-exploit-map.md](./nlrp3-exploit-map.md).
+- **Can an exact natural product directly antagonize C5aR1?** The recorded database and literature queries did not retrieve a wet-lab-validated direct antagonist, but that bounded non-retrieval does not close the class. Revisit only with a meaningfully different multilingual or source-space query, or when a named material gains receptor-specific functional evidence. See [complement-c5a-gout.md](./complement-c5a-gout.md) and [validation experiment §1.21](./validation-experiments.md#121-natural-product-c5ar1-antagonist-screening--historical-computational-pass).
 - **Are there patient subgroups where non-complement priming (true LPS from SIBO) dominates?** Would change stack selection per patient. See [complement-c5a-gout.md §6 Q5](./complement-c5a-gout.md).
 - **Is TNFSF14/LIGHT elevation a universal feature of gout flares or a patient subtype?** Would a TNFSF14 biomarker identify responders to EGCG or CERC-002 better than generic hs-CRP? See [tnfsf14-gout-target.md](./tnfsf14-gout-target.md).
 - **Does lactoferrin-based CP5b engagement eliminate the CP0 priming signal, or only suppress downstream?** See [complement-c5a-gout.md §4 Q4](./complement-c5a-gout.md).
@@ -154,10 +155,16 @@ Questions about chokepoint biology, priming mechanisms, species-gap caveats, and
 - **Direct SPM bioassay feasibility.** SPM measurement requires LC-MS/MS at pg/mL. Practical for clinical biomarker stacks, or research-only? See [spm-resolution-pathway.md §6 Q3](./spm-resolution-pathway.md).
 - **Does aggNET-mediated C5a sequestration feed back to CP0?** The resolution loop may close on itself (SPM → aggNET → C5a sequestration → reduced priming). Mechanistic elegance suggests yes; direct evidence is thin. See [spm-resolution-pathway.md §6 Q4](./spm-resolution-pathway.md).
 
-### Chokepoint leads surfaced by the COMP-014 inventory
+### Independent chokepoint research leads
 
-- **Does ADA warrant formal addition as a gout chokepoint?** The purine-flux and adenosine-resolution directions must be measured together. COMP-014's fungal-associated rows are search leads only; they do not establish material identity, target attribution, useful direction, or exposure. See [medicinal-mushroom mapping](./medicinal-mushroom-compound-mapping-computational.md) and [gout pathophysiology §ADA](./gout-pathophysiology.md).
-- **Does PINK1/mitophagy warrant formal addition as a gout-inflammation chokepoint?** Test whether an exact material changes mitophagy and MSU-triggered NLRP3 function under matched exposure. COMP-014's target rows do not establish favorable modulation or a fungal intervention. See [medicinal-mushroom mapping](./medicinal-mushroom-compound-mapping-computational.md) and [gout pathophysiology §PINK1](./gout-pathophysiology.md).
+- **Does ADA warrant formal addition as a gout chokepoint?** The
+  purine-flux and adenosine-resolution directions must be measured together
+  for an exact, independently sourced material. See
+  [gout pathophysiology §ADA](./gout-pathophysiology.md).
+- **Does PINK1/mitophagy warrant formal addition as a gout-inflammation
+  chokepoint?** Test whether an exact, independently sourced material changes
+  mitophagy and MSU-triggered NLRP3 function under matched exposure. See
+  [gout pathophysiology §PINK1](./gout-pathophysiology.md).
 
 ### Upstream-complement sub-questions
 
@@ -435,7 +442,10 @@ See [engineered-lbp-chassis.md](./engineered-lbp-chassis.md) (LBP chassis peer t
 
 The [medicinal-mushroom research page](./medicinal-mushroom-complement-track.md) evaluates exact native materials. Cultivation does not establish composition, exposure, efficacy, safety, product equivalence, or portfolio priority.
 
-- **Search boundary:** the retained COMP-014 strain and cultivation records are bounded query inventories, not multilingual closure, a meta-analysis, or a rank.
+- **Search boundary:** retired COMP-014 supplies no strain, cultivation, or
+  candidate evidence. New leads must come from primary-source-qualified,
+  multilingual searches that preserve exact material identity and tested
+  context.
 - **Method qualification:** [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) contains draft analytical candidates whose tolerances remain unset until each method is validated.
 - **Matched interaction study:** [`validation-experiments.md` §2.6](./validation-experiments.md) defines a pilot-driven exact-material design; it assumes neither synergy nor a fixed arm count.
 - **Exact-material conjecture:** the [medicinal-mushroom research page](./medicinal-mushroom-complement-track.md#research-conjecture--a-reproducible-medicinal-fungal-material-may-expose-a-gout-weakness) asks whether one composition-defined material can produce a reproducible gout-relevant functional signal. It remains a conjecture until one exact material, endpoint, exposure regime, analytical tolerance, and advance/kill threshold are chosen.

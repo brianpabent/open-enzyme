@@ -386,10 +386,10 @@ At central pore parameters, the equilibration time constant is 2.17 seconds. At 
 **Verdict:** **Unranked assay-specific Phase 1 literature inventory.** No headline compound, tier, comparative potency, platform priority, dietary efficacy, or gout-compartment potency is established. The scan surfaced rosmarinic acid (covalent C3b modification, 34 µM in one cell-based deposition assay), *Helicteres* benzofuran lignans (single-paper in-vitro anchor), luteolin and other flavonoids, *Bupleurum* polysaccharides, marine sulfated polysaccharides, and heparin-derived oligosaccharides as assay-specific leads with heterogeneous formats, units, and safety constraints. Cross-paper ordering is not justified.
 
 **Key findings:**
-- COMP-020's bounded spot-check found sparse natural-product coverage relative to the named comparator target classes; it is not a ChEMBL census. COMP-013 and COMP-014 reinforce only the qualitative warning that database absence cannot substitute for primary-literature search.
+- COMP-020's bounded spot-check found sparse natural-product coverage relative to the named comparator target classes; it is not a ChEMBL census. The invalidated COMP-013 and COMP-014 artifacts do not corroborate its result.
 - Published assay records span 34–1500 µM for rosmarinic acid and 2–102 µg/mL for heparin across different formats and conditions. Those descriptive ranges motivate matched-format replication; they do not establish format as the cause or supply an operative potency.
 - Rosmarinic acid's covalent C3b mechanism is mechanistically distinctive, but its primary full-text verification tier is unresolved and its direct C5-convertase potency (1500 µM) does not support a ≤100 µM threshold claim.
-- Bounded search gaps (not universal absence proofs): Factor H upregulators, CD55/CD59/CR1 upregulators, direct fungal upstream modulators, and Factor B/D natural-product direct inhibitors. C5aR1 was not independently re-executed; COMP-014 supplies only a bounded no-match, not a rule-out.
+- Bounded search gaps (not universal absence proofs): Factor H upregulators, CD55/CD59/CR1 upregulators, direct fungal upstream modulators, and Factor B/D natural-product direct inhibitors. C5aR1 was not independently re-executed and remains unresolved.
 
 **Informs:** [complement-c5a-gout](./complement-c5a-gout.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md)
 
@@ -511,21 +511,17 @@ verdict, evidence-cell comparison, or H-AN-02 adjudication survives.
 
 ---
 
-### comp-014 — Medicinal Mushroom Compound × Chokepoint Mapping — partial lead inventory
+### comp-014 — Medicinal Mushroom Compound × Chokepoint Mapping — INVALIDATED
 
-**Question:** Which fungal natural-product records in the bounded source set map to gout-relevant targets and are worth primary-source qualification?
+**Question:** Could a bounded natural-product retrieval and target-mapping pipeline identify decision-relevant fungal leads?
 
-**Verdict:** Partial database-derived lead inventory only. Source-species provenance is uneven, database coverage is incomplete, and assay polarity, substrate, exposure, and direct function are not consistently adjudicated. The artifact cannot rank candidates or establish efficacy, safety, dose, sourcing, production, delivery, or chassis choice.
+**Verdict:** **Invalidated and non-runnable.** No compound row, count, target mapping, rank, safety flag, production claim, or advancement decision survives as current evidence.
 
-**Key findings:**
-- Compound/source/target rows remain search leads that require primary-source rehydration.
-- Plant-origin compounds found in mushroom-associated records cannot be treated as fungal biosynthesis products without direct source evidence.
-- Database absence is a coverage limitation, not evidence of inactivity.
-- The former Phase 6 occupancy/feasibility triage is retired; its script and outputs are removed from the live tree and none of its `PURSUE`, `DROP`, viability, dose, production, synergy, or chassis decisions survives.
+**What survives:** Only design lessons and independently sourced research questions. Query labels are not provenance; retained-for-review is not safe; heterogeneous endpoints and polarities are not rankable; and bounded non-retrieval is not biological absence. Exact-material fungal mechanisms may be revisited through a new primary-source-anchored experiment.
 
-**Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) · [nlrp3-exploit-map](./nlrp3-exploit-map.md) · [abcg2-modulators](./abcg2-modulators.md)
+**Current research home:** [medicinal mushroom compound mapping](./medicinal-mushroom-compound-mapping-computational.md)
 
-**Detail:** [interpretive](./medicinal-mushroom-compound-mapping-computational.md) · [artifact](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/) · Partial lead inventory; Phase 6 retired
+**Detail:** [interpretive boundary](./medicinal-mushroom-compound-mapping-computational.md) · [invalidated tombstone](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/)
 
 ---
 

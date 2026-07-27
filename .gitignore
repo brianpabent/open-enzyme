@@ -12,6 +12,16 @@ node_modules/
 .vscode/
 site/
 
+# Retired COMP-014 local retrieval caches. The tombstone and current corpus do
+# not depend on these workstation-only files.
+wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_molecule_inchikey_cache.json
+wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chembl_raw/
+wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_chokepoint_chembl_targets.json
+wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_inchikey_cache.json
+wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_knapsack_raw/
+wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_lotus_raw/
+wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/_npatlas_raw/
+
 # Claude Code state — track shared config (hooks, skills, plugins) but
 # exclude per-clone state (worktrees, locks, local-overrides).
 .claude/worktrees/

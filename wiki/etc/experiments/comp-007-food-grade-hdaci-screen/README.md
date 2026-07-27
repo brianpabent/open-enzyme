@@ -35,7 +35,11 @@ The remaining repository references are adjudicated as follows:
   non-runnable invalidated tombstone; its thresholds, matrix verdicts, and
   rankings are withdrawn and are not decision-eligible as COMP-007 evidence.
 - `wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md` and `outputs/summary.md` describe historical method lineage inside a viability ranking that its current focused page already invalidates. They do not preserve a usable COMP-007 result.
-- `wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/provenance.md` and `outputs/scope-summary.md`, plus `wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md`, contain descriptive historical references only; they do not reuse a rank, score, advancement decision, causal isoform map, exposure proxy, safety inference, or decision rule.
+- The hash-bound COMP-014 tombstone and
+  `wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md`
+  are historical context only; neither supplies a rank, score, advancement
+  decision, causal isoform map, exposure proxy, safety inference, or decision
+  rule for this retired artifact.
 - References inside this tombstone and its review receipts are retirement provenance, not active scientific evidence.
 
 The seven COMP-007 correction targets were reconciled before its queue item

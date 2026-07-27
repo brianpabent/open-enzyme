@@ -68,7 +68,11 @@ urate comparison was null, so it supplies no efficacy or mechanistic bridge
 
 ADA deaminates adenosine and deoxyadenosine to their inosine nucleosides. A patient-derived ADA mutation that abolished enzyme activity and clinical series linking complete ADA deficiency to SCID and abnormal purine metabolites establish the enzyme and phenotype boundaries (**In Vitro + Human Observational**; [PMID 3007108](https://pubmed.ncbi.nlm.nih.gov/3007108/) and [PMID 3436096](https://pubmed.ncbi.nlm.nih.gov/3436096/)). Whether partial ADA modulation changes urate flux favorably, preserves adenosine-mediated resolution, or has a usable therapeutic window in gout is a **Mechanistic Extrapolation**.
 
-COMP-014 contains fungal-associated ADA rows, but those rows are retrieval leads only. They do not establish a favorable material, target attribution, exposure, or effect on urate flux. ADA therefore remains an open chokepoint question rather than an admitted intervention node. The discriminating experiment must measure purine flux and the adenosine-resolution axis together for an exact, source-qualified material.
+ADA remains an open chokepoint question rather than an admitted intervention
+node. Retired COMP-014 supplies no candidate or target evidence. The
+discriminating experiment must measure purine flux and the
+adenosine-resolution axis together for an exact, independently sourced
+material.
 
 ### Purinergic resolution: ADA has a second, time-dependent role
 
@@ -102,7 +106,11 @@ and the [multihop program](./gout-multihop-research-program.md).
 
 In cell systems, loss of mitochondrial membrane potential stabilizes PINK1 on damaged mitochondria and recruits Parkin to initiate their autophagic clearance (**In Vitro**; [PMID 20404107](https://pubmed.ncbi.nlm.nih.gov/20404107/) and [PMID 20126261](https://pubmed.ncbi.nlm.nih.gov/20126261/)). Separate macrophage experiments show mitochondrial reactive oxygen species participating in NLRP3 priming or activation (**In Vitro**; [PMID 22948162](https://pubmed.ncbi.nlm.nih.gov/22948162/) and [PMID 24089192](https://pubmed.ncbi.nlm.nih.gov/24089192/)). The proposal that enhancing PINK1/Parkin mitophagy will reduce MSU-triggered NLRP3 function in gout remains a **Mechanistic Extrapolation**.
 
-COMP-014's fungal-associated PINK1 rows do not establish favorable modulation, direct mitophagy function, gout relevance, or a usable exposure. PINK1/mitophagy remains a mechanistic research lead. Advance an exact material only if matched assays show mitophagy engagement and reduced MSU-triggered NLRP3 function without a viability artifact.
+PINK1/mitophagy remains a mechanistic research lead on the strength of the
+independent cell-biology premises above, not COMP-014. Advance an exact,
+independently sourced material only if matched assays show mitophagy
+engagement and reduced MSU-triggered NLRP3 function without a viability
+artifact.
 
 ### The Evolutionary Loss
 
@@ -385,8 +393,8 @@ PURINE INTAKE → Purine Metabolism (XO) → URIC ACID
 
 INTERVENTION POINTS:
 - PRPS / PRPP-supply modulation: test whether upstream purine flux can be reduced without broad nucleotide-synthesis toxicity (purified eurycomanol is an **Animal Model** lead; causal flux effect unresolved) — see [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md)
-- ADA modulation: test whether an exact material changes purine flux without erasing a useful adenosine-resolution signal; COMP-014 rows are retrieval leads, not an intervention verdict — see [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md)
-- PINK1/mitophagy enhancement: test whether an exact material changes mitophagy and reduces MSU-triggered NLRP3 function under matched exposure; COMP-014 rows are retrieval leads only — see [medicinal-mushroom-compound-mapping-computational.md](./medicinal-mushroom-compound-mapping-computational.md)
+- ADA modulation: test whether an exact, independently sourced material changes purine flux without erasing a useful adenosine-resolution signal
+- PINK1/mitophagy enhancement: test whether an exact, independently sourced material changes mitophagy and reduces MSU-triggered NLRP3 function under matched exposure
 - XO inhibitors: Block uric acid production (Allopurinol, Febuxostat)
 - URAT1 inhibitors: Reduce renal reabsorption (Pozdeutinurad, Lesinurad)
 - ABCG2 enhancement: Boost gut secretion via butyrate/PPARγ (fermentable fiber, DASH RCT 0.25–0.73 mg/dL UA reduction, Clinical Trial), sulforaphane/Nrf2, Q141K rescue via HDAC inhibitors (In Vitro) — see [abcg2-modulators.md](./abcg2-modulators.md)

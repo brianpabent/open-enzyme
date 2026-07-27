@@ -230,7 +230,11 @@ A node-by-node pharmacological route analysis across all chokepoints in the gout
 - **Avacopan mechanism-transfer study:** A controlled gout study would test whether systemic C5aR1 blockade changes complement engagement and flare outcomes. Existing evidence supports the molecule's approved indication, not gout efficacy. **Clinical Trial for ANCA-associated vasculitis; gout translation untested.**
 - **DAF/CD55 SCR1-4 gut-lumen delivery hypothesis:** H05 asks whether a locally delivered soluble complement regulator could intercept mucosal complement activation upstream of systemic C5a. Payload activity, target access, exposure, containment, and product-specific safety must be established before selecting an expression host or route. (Mechanistic Extrapolation; see `wiki/hypotheses/H05-daf-scr14-cp0-thesis.md`)
 
-> **Bounded search gap:** COMP-014 returned no direct fungal C5aR1 antagonist in its recorded ChEMBL/PubMed query set. That is a coverage result for the searched records—not evidence that no such molecule exists—and it does not select avacopan, a recombinant payload, a chassis, or the Open Enzyme portfolio.
+> **Open discovery gap:** Retired COMP-014 supplies no C5aR1 absence evidence.
+> A mechanism-matched screen of an exact, source-qualified natural-product
+> library could identify a lead or close only that tested library and assay
+> regime. The gap does not select avacopan, a recombinant payload, a chassis,
+> or the Open Enzyme portfolio.
 
 ---
 

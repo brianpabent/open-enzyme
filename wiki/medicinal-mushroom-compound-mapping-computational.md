@@ -14,31 +14,26 @@ related:
   - nlrp3-exploit-map.md
   - abcg2-modulators.md
   - validation-experiments.md
-status: partial-lead-inventory
+status: invalidated-tombstone
 ---
 
 # Medicinal mushroom compound × gout chokepoint mapping
 
-Fungal natural products may expose gout weaknesses across urate production, renal or intestinal transport, inflammasome signaling, and adjacent inflammatory pathways. COMP-014 attempted a broad compound-to-target map so those leads could be found before selecting a delivery or production route.
+Fungal natural products may expose gout weaknesses across urate production, renal or intestinal transport, inflammasome signaling, and adjacent inflammatory pathways. COMP-014 attempted a broad compound-to-target map, but the artifact cannot support that map.
 
 ## Verdict
 
-The retained artifact is a partial lead inventory, not a comprehensive fungal natural-product map and not a candidate ranking.
+COMP-014 is invalidated for scientific, quantitative, and decision use. No compound row, count, target mapping, rank, safety flag, production claim, or advancement decision survives as current evidence.
 
-It combines manually seeded source-species records with partial LOTUS, NPAtlas, KNApSAcK, and ChEMBL coverage. Species provenance is uneven, assay types are heterogeneous, target-effect polarity is not consistently adjudicated, and absence from the queried databases is not evidence of biological inactivity.
+The retired search mixed query-hint species labels with provenance, treated a permissive inclusion flag as if it were a toxicity screen, used an unstable compound-deduplication boundary, and ranked heterogeneous endpoints and polarities together. Historical Phase 7 outputs also embedded purchase, cultivation, cost, and practical-SOP guidance that the search could not validate.
 
-The former Phase 6 occupancy and feasibility triage is retired. Its script and outputs have been removed from the live tree. No `PURSUE`, `DROP`, viability, dose, clinical-exposure, production-route, synergy, or chassis decision survives from that phase.
+The live tree retains only the non-runnable tombstone and its hash-bound invalidation record. Git preserves the retired files.
 
-## What survives
+## Research rebuild
 
-The source/compound/target rows remain search leads that can be re-read against their primary records. The historical candidate set includes fungal-source or fungal-associated records at:
+The failure does not reject fungal chemistry. Exact-material reproducibility, ADA, PINK1 or mitophagy, urate transport, urate production, inflammasome, redox, barrier, and direct C5aR1-screen ideas remain eligible research questions only where their owning pages establish them independently from primary sources.
 
-- urate production and renal or intestinal transport;
-- NLRP3, caspase-1, IL-1β, and TNF-related inflammatory nodes;
-- ADA and other purine-catabolism nodes;
-- PPARγ, Nrf2/KEAP1, and adjacent barrier or stress-response nodes.
-
-These categories do not establish favorable direction, physiological exposure, target attribution, or useful function. Plant-origin compounds found in mushroom-associated records must not be relabeled as products of fungal biosynthesis without direct source evidence.
+A replacement screen must treat query labels as retrieval hints rather than provenance, distinguish retained-for-review from safe, preserve assay endpoint and effect polarity, use a declared identity/deduplication rule, and treat bounded non-retrieval as a search result rather than biological absence.
 
 ## Evidence needed for any named lead
 
@@ -74,11 +69,9 @@ The fact that a lead is fungal-associated does not make a mushroom, koji, or eng
 4. Compare sourcing and delivery routes only for leads that survive the biological gate.
 5. Treat a negative result as local to the tested material, exposure, endpoint, and route.
 
-## Artifact
+## Tombstone
 
-- [COMP-014 directory](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/)
-- [Phase 2 unified table](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json)
-- [Phase 3 target mapping](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-compound-x-target.json)
-- [Phase 4 intersection](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-4-chokepoint-intersection-v2.json)
+- [COMP-014 invalidated tombstone](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/)
+- [Hash-bound invalidation record](./etc/experiments/comp-014-medicinal-mushroom-compound-mapping/invalidation.json)
 
-The artifact may nominate a record for primary review. It cannot establish efficacy, safety, dose, ranking, or delivery.
+Nothing from COMP-014 may nominate or prioritize a compound without fresh primary-source rehydration.

@@ -21,7 +21,11 @@ sources:
   - "Sun et al. 2022, Nutrients, DOI 10.3390/nu14204421 — Sanghuangporus vaninii in hyperuricemia and MSU arthritis models"
   - "Chen et al. 2023, Heliyon, DOI 10.1016/j.heliyon.2023.e12979 — Phellinus igniarius flavonoids"
   - "Xia et al. 2017, PMID 29056419 — linked cordycepin and pentostatin biosynthesis"
-  - "comp-014 medicinal-mushroom compound mapping and source reads"
+  - "Yong et al. 2022, Biomedicine & Pharmacotherapy, DOI 10.1016/j.biopha.2022.113303 — purified DAE in hyperuricemic mice"
+  - "Liu et al. 2023, Bioorganic Chemistry, DOI 10.1016/j.bioorg.2023.106394 — davallialactone and xanthine oxidase"
+  - "Xia et al. 2026, Bioorganic Chemistry, DOI 10.1016/j.bioorg.2026.109806 — composition-profiled AMC-BFE in hyperuricemic mice"
+  - "Stierle et al. 2008, Journal of Natural Products, DOI 10.1021/np0705054 — Berkeleyamide isolation and biochemical assays"
+  - "Yilmaz et al. 2012, Persoonia, DOI 10.3767/003158512X659500 — taxonomic reassessment of the Berkeley Pit isolate"
 status: scoped
 ---
 
@@ -55,7 +59,10 @@ Each hypothesis is gated by species authentication, chemical standardization, ac
 |---|---|---|---|---|
 | **Cordycepin / whole *C. militaris*** | Purified cordycepin affected renal urate transport in hyperuricemic mice; a whole-water extract affected serum urate, XOD, transporter expression, renal injury markers, and microbiome measures. Native pentostatin may slow cordycepin deamination. | **Animal Model**; linked biosynthesis established | No human gout efficacy; whole-extract activity cannot be assigned to cordycepin alone; consumer products are not reliable exposure proxies | Compare chemically standardized whole extract, purified cordycepin, cordycepin plus pentostatin, and vehicle while measuring cordycepin PK, ADA activity, serum urate, and renal transporter effects |
 | **GLPP from *Ganoderma lucidum*** | Hyperuricemic-mouse evidence implicates ADA and renal urate transport | **Animal Model** | “GLPP” can describe bulk material or smaller chromatographic fractions; generic reishi is not an exposure-equivalent product | Define the active fraction by SEC-MALS and composition, then reproduce the urate and ADA effects with a batch-release specification |
+| **Purified DAE associated with *G. applanatum*** | Purified 2,4-dihydroxybenzoic acid methyl ester inhibited XOD in vitro and altered serum urate and renal transporter-expression endpoints in hyperuricemic mice | **In Vitro** and **Animal Model**; DOI 10.1016/j.biopha.2022.113303 | Transporter expression does not establish direct transporter inhibition; the study does not establish useful DAE abundance or exposure from a fungal preparation | Rehydrate the full text, verify the exact dosed material and kinetics, quantify DAE in authenticated fungal material, and compare purified-compound exposure with the source preparation |
 | ***S. vaninii* extract** | Hyperuricemia/renal-injury mouse studies reported XOD and renal-transporter effects; a separate study included an MSU arthritis model | **Animal Model** plus renal-cell work | No human evidence; extract identity and batch composition are not portable across preparations | Authenticate species, standardize the active chemical fingerprint, and reproduce both urate and inflammatory readouts with the same preparation |
+| **Davallialactone from *S. vaninii*** | Purified davallialactone inhibited XO in a biochemical assay and changed inflammatory and oxidative-stress readouts in cells | **In Vitro**; DOI 10.1016/j.bioorg.2023.106394 | No in-vivo urate or gout evidence in that study; biochemical and cell readouts do not establish useful exposure | Verify the full assay context and test exposure-matched urate-production and MSU-response endpoints before any sourcing decision |
+| **AMC-BFE (*A. membranaceus* × *C. militaris*)** | A composition-profiled ethanol extract from bidirectional solid-state fermentation changed serum urate, XOD activity, renal urate-transporter expression, and hepatic pathway readouts in hyperuricemic mice | **Animal Model**; DOI 10.1016/j.bioorg.2026.109806 | Whole-extract evidence; the paper does not assign the effect to an individual metabolite, and hepatic ABCG2 expression is not intestinal urate flux | Reproduce the exact fermentation and extract fingerprint, then use fractionation and matched functional assays to locate or reject the causal material |
 | ***P. igniarius* total flavonoids** | Hyperuricemic/uric-acid-nephropathy mice and MSU-treated HK-2 cells showed urate, renal-injury, ABCG2, and NLRP3-adjacent signals | **Animal Model** and **In Vitro** | Does not establish direct transporter binding, synovial delivery, or human efficacy | Fractionate the extract, identify the active component(s), and pair transporter-flux assays with an inflammation counterscreen |
 | **Ergothioneine-rich *Pleurotus*** | Nrf2/redox and indirect NLRP3-adjacent rationale | **Mechanistic Extrapolation** | The cited evidence does not establish a urate-lowering mechanism or a gout-relevant exposure-response relationship | Qualify an exact material and exposure range, then test a predefined gout-relevant inflammatory readout beyond general antioxidant markers |
 
@@ -92,9 +99,9 @@ Those findings cannot be collapsed into “reishi beta-glucan is anti-inflammato
 
 ## *Talaromyces* CASP1 lead
 
-Berkeleyamides A and D provide sub-micromolar CASP1-inhibition leads, but the producing organism is associated with *Talaromyces amestolkiae*, not the food-ripening *Penicillium* species originally considered. The taxonomic assignment still requires primary-source confirmation before downstream commitment.
+Berkeleyamides A–D were isolated from a Berkeley Pit strain reported as *Penicillium rubrum*; Berkeleyamides A and D produced sub-micromolar CASP1 inhibition in the reported biochemical assay (DOI 10.1021/np0705054; **In Vitro**). A later polyphasic taxonomic study concluded that the Berkeley Pit isolate was probably *Talaromyces amestolkiae* (DOI 10.3767/003158512X659500). That reassignment remains probabilistic, and neither record provides MSU, gout-model, exposure, or therapeutic evidence.
 
-Food-grade *P. camemberti* and *P. roqueforti* should not be treated as interchangeable production sources. Their characterized biosynthetic clusters do not establish Berkeleyamide production, and mycophenolic acid can move inflammasome signaling in the wrong direction. The cheapest gate is an antiSMASH comparison against the Berkeleyamide-producing assembly; wet-lab extract screening is unjustified without a plausible cluster and a mycotoxin counterscreen.
+Food-grade *P. camemberti* and *P. roqueforti* are not interchangeable production sources: the isolation record does not establish Berkeleyamide production in either species. The cheapest gate is to verify the producing strain and identify a Berkeleyamide biosynthetic locus before considering heterologous production or extract screening; any later material also needs a mycotoxin counterscreen and an MSU-relevant CASP1 functional assay.
 
 ## Falsification program
 
@@ -113,7 +120,7 @@ Several source species are established foods or supplement ingredients, but that
 
 ## Related
 
-- [Medicinal Mushroom Compound Mapping (comp-014)](./medicinal-mushroom-compound-mapping-computational.md) — partial retrieval inventory; each row requires primary-source qualification
+- [Medicinal Mushroom Compound Mapping (comp-014)](./medicinal-mushroom-compound-mapping-computational.md) — invalidated prior and current research boundary
 - [Medicinal Mushroom Extract Characterization SOPs](./medicinal-mushroom-extract-sops.md) — extraction, identity, and quantification methods
 - [Gout Weakness × Intervention Route Matrix](./modality-chokepoint-matrix.md) — portfolio-level route comparison
 - [Unresolved Delivery and Implementation Constraints](./chassis-pending-interventions.md) — sourcing and delivery decisions across tracks
