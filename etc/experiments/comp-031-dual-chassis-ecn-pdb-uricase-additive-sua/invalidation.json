@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "comp": "comp-031",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "96846937607d1d436dec192ef7eec14948454885",
+  "last_push_review_manifest_sha256": "1201e97b6ea16594587fe714c277a4f3f8b4de71b613adb190f3db1ef96181d2",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 2138,
+      "sha256": "c8be495a535d27bfc12b50ce2e07b31420b4504e4864125365c12371accad1f1"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 1098,
+      "sha256": "3bb98871ea5616454f64ede06f149ebedb1cfaa268639e0153f4a453e2d15b73"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 930,
+      "sha256": "415ccf2ce84f77f97e0604f177576bd519a23371f6b30cb197498e7ba9e6d436"
+    }
+  ],
+  "invalidated_scope": [
+    "all numerical outputs and serum-urate estimates",
+    "additivity and substrate-competition results",
+    "CBT2.0-derived butyrate",
+    "direct butyrate rescue of ABCG2 Q141K",
+    "one-strain, separate-strain, or staged topology ranking",
+    "YELLOW classification",
+    "engineering or clinical decision routing"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_research_question",
+    "statements": [
+      "One-strain, separate-strain, and temporally staged UOX/PDB designs remain unranked experimental options.",
+      "Possible UOX/PDB complementarity remains a research question at the current evidence home and is not supported by the retired COMP-031 model."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "b550fbaa2a65f2fcb903d07f631c3cc374f1dfd49ce3ecbbf9ba8500dc651cd3"
+  }
+}
