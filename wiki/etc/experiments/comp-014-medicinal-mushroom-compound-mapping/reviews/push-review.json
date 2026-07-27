@@ -1,0 +1,1365 @@
+{
+  "schema_version": 1,
+  "comp": "comp-014",
+  "comp_dir": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping",
+  "source_commit": "510fb3a3ece81d906e50d1fa5fbc98a720b0da02",
+  "artifact_manifest_sha256": "0e2c3eec4a1368d333fccc81058855d7281478cfa816da50859b5ef1c962c7a8",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-27T19:12:23Z",
+  "comp_verdict": "action_required",
+  "propagation_eligibility": "eligible_with_warning",
+  "synthesis_eligibility": "blocked",
+  "action_required": true,
+  "authoring_gates": {
+    "status": "legacy_post_run_review",
+    "valid": true,
+    "details": [
+      "COMP predates Gate 1; an independent exact post-run review binds the current artifact and proposed interpretation surfaces"
+    ]
+  },
+  "coverage": [
+    {
+      "shard_id": "shard-001",
+      "coverage_sha256": "356a0656a644c1f477ae0b8314dd235d18b11fe3001c25eae3b26e2643c283ab",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/.gitignore",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 446,
+          "file_sha256": "7cde021f41cc3eb42a5e4ceb519cc98f1f1e1d8c1a0717a087bd88151a01829d",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/README.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 4457,
+          "file_sha256": "a4f7b207c8f872a9929dae14f7f64c825c285c3f6dace5c4d6941b9c9fd1bdd4",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/chokepoint-targets.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 10763,
+          "file_sha256": "3448a1eb02fe59149ccd2e0017ef3e99bc236924b43c6a6b93b7af7d66b7305c",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/data-sources.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 15011,
+          "file_sha256": "04a25dd3f2df851dd1946eb25830613ac16513a59121fb6f5fbcd776df18d208",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/phase-5-anchor-species.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 11330,
+          "file_sha256": "7ca11913ee6b6b8443bbf65d3d545759f4b8ca34f9c19732c9c6079043056f96",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/provenance.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 4889,
+          "file_sha256": "b15f4b6768d7172f5fffee5030c45e81457949aa35a9a524063e3fa92ee0d61b",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/inputs/toxicity-filter.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 9496,
+          "file_sha256": "4f9f548feb6d5b8f9e750299c0a280b12841cf72681a87b57cb40df5cea69d8e",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-2-FINDINGS.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 7674,
+          "file_sha256": "3954f745f8b64fc479c408f7d8352446a8e5ed5265ff434e22a1bf2a4314e78e",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/PHASE-5-FINDINGS.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 17615,
+          "file_sha256": "088ea22963373f4da15a5a1d6a24352053f5211dfea27b5171435f5aafa7a68f",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-002",
+      "coverage_sha256": "7ff4bbba5f898bff65493caff3c7f1a8845511c17328964f11bf8850b06ed631",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 180000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-003",
+      "coverage_sha256": "4b771eb86d37c4d46f8c5c4adb7e076adbc235d6c047fcd2dc2b8ae3fd0ef567",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 180000,
+          "end": 360000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-004",
+      "coverage_sha256": "dca7008f6d0be3ac1ef6a5588d8b5c4042b33492764bb7522bb083bc126a5026",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 360000,
+          "end": 540000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-005",
+      "coverage_sha256": "fed8614b92d246f99cb3e9206661152349b6059f132126c96253e1d4ee7d1460",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 540000,
+          "end": 720000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-006",
+      "coverage_sha256": "3ba8e33d54aecfabe9100e032ceae7ea9c7625bab6b3d5c57b61b393b7dce080",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 720000,
+          "end": 900000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-007",
+      "coverage_sha256": "76611fdd6605e96bdef45eebb120789ca65b419aa58e4b5f1e00ff4307446249",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 900000,
+          "end": 1080000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-008",
+      "coverage_sha256": "d64d88fb78c85ab7757f4921c0d673dc7497514ad5316b60c47f97a8b29e4cf5",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 1080000,
+          "end": 1260000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-009",
+      "coverage_sha256": "377dd1b8565f80839c20be0d2be6501c028aaab81ba0d787f6c1d5feef3ea016",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 1260000,
+          "end": 1440000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-010",
+      "coverage_sha256": "55abde0c4e3af1d05f74efc202b91b313c17bbc0a6bfb2b9ad17b5132a2281d1",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 1440000,
+          "end": 1620000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-011",
+      "coverage_sha256": "40b45085ba0afdf0e6d52910f16787b4fdc59ce84579f7950361d9054d25ca69",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 1620000,
+          "end": 1800000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-012",
+      "coverage_sha256": "5e5a4c145b0820164fb5ad9ba4da21070c58937c386f92020d9eac9a6c969d35",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 1800000,
+          "end": 1980000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-013",
+      "coverage_sha256": "3dd9771ed5657a3caf50801529588bd7df518fdde5e7903bf114c3fa634b24d9",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 1980000,
+          "end": 2160000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-014",
+      "coverage_sha256": "9856bf64da7449f907d95a578fe9d501480170223aef6dc317b56130a7a00980",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 2160000,
+          "end": 2340000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-015",
+      "coverage_sha256": "94f46eb6000869ede4de427954c8ee3cca67ad9105e02f05c4ffb20f16725eb9",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 2340000,
+          "end": 2520000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-016",
+      "coverage_sha256": "f581f709a7f48f2903f811f6a683204629cfaf5d12ad2615a25082f457296d65",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 2520000,
+          "end": 2700000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-017",
+      "coverage_sha256": "254f904b1d7576a416e42709d987ea5e2661604943bec2eb8414333ca2d1571b",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 2700000,
+          "end": 2880000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-018",
+      "coverage_sha256": "f931eb28c0ab85f4658a4885b8525d43e7b3e8afec0f7ffc1e7bf43668ebd2c5",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 2880000,
+          "end": 3060000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-019",
+      "coverage_sha256": "9568b5dfc65114a132540af10af695d5c2732376d69e19ba0730667a679516ca",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 3060000,
+          "end": 3240000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-020",
+      "coverage_sha256": "9295d8a16ec851dfa9568c3818cd3b50f7b379b8b35285ed857005fbacbf3bfb",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 3240000,
+          "end": 3420000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-021",
+      "coverage_sha256": "bc90d459c5101af3db70313060dde7ac96f24ce7e34478eb311f8868d3795a2f",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 3420000,
+          "end": 3600000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-022",
+      "coverage_sha256": "07ba8c3f969f5409cbc7a14fa8b6cef3f86fb468a7f468d2791954f2bf1e4849",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 3600000,
+          "end": 3780000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-023",
+      "coverage_sha256": "bef469b33df14e2bd2a6c66961eeecf1c27d50ed8d1fa15afc526cdd5fb44759",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 3780000,
+          "end": 3960000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-024",
+      "coverage_sha256": "dec68d504fcb6fe9c60560d9f2d0b22dcd41757c9788582e265c6fa79c136676",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 3960000,
+          "end": 4140000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-025",
+      "coverage_sha256": "8f32191d6b1c4b46b39e3e4e43b81a71e39a948661323bb5b360500184ccf028",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 4140000,
+          "end": 4320000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-026",
+      "coverage_sha256": "c82e3d633b7466f2fe6b436038eae037d30c8f024621799cfbd3966c7b92f795",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 4320000,
+          "end": 4500000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-027",
+      "coverage_sha256": "06ef8642b634778ccf498d6ea2a7dc41ac6ea5d4b6a741d5577d6f064b6e6aaa",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 4500000,
+          "end": 4680000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-028",
+      "coverage_sha256": "99fc6e38cfa4d3649fd568202820e05529463941cc21834ebd080f4597c0b0b8",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 4680000,
+          "end": 4860000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-029",
+      "coverage_sha256": "a521f42ae67eb87c5a9f7c06563b568009cc93dfbd708c29fb82e74e293fd3d9",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 4860000,
+          "end": 5040000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-030",
+      "coverage_sha256": "7b380a71c09059e10811b64894109f7ecd0f59039ba9501b682f5335bd3fe4df",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 5040000,
+          "end": 5220000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-031",
+      "coverage_sha256": "aae038e16cbae1b6b04a73b40c17830fb7dd3386a6f272232cfccac77745d141",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 5220000,
+          "end": 5400000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-032",
+      "coverage_sha256": "bfd4c09969be6c75dec21b0fd73f46f9e3d12fa2957f59fa270fa3f92f92654a",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 5400000,
+          "end": 5580000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-033",
+      "coverage_sha256": "5e1aa00f9499cab93f421110c80b9f5c9a0165b394d57ab88c28e2cd3416e94d",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 5580000,
+          "end": 5760000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-034",
+      "coverage_sha256": "630acefe9106e2476327f4a1b96b0b408e2d5126e1d34f3cd126fd54dd989905",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 5760000,
+          "end": 5940000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-035",
+      "coverage_sha256": "265f1f9a8e71f37d218d7f4bf8d69480468a5626dbecbfb8d07442ebd79692b6",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 5940000,
+          "end": 6120000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-036",
+      "coverage_sha256": "dddf1d47cf9bbd0760457a9d207b544c314db1f41fd24b506559ba0e2ea5e29e",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 6120000,
+          "end": 6300000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-037",
+      "coverage_sha256": "ab4eec815188c24ff084f17b365df89d2b6121ca66c700d23b9874ecc931b5a2",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 6300000,
+          "end": 6480000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-038",
+      "coverage_sha256": "a13b2abb56d5d9db003258a49698f100c7561b8e0ae6174370f9774141b54516",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 6480000,
+          "end": 6660000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-039",
+      "coverage_sha256": "4f25b0174fc104b640c7e775dd554e10a140b0393b1d95338e94c08529c28355",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 6660000,
+          "end": 6840000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-040",
+      "coverage_sha256": "dd2a4dac66a104440044949b1a913ce5e922f1a9b2d252ed4db8f623cf516fdf",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 6840000,
+          "end": 7020000,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-041",
+      "coverage_sha256": "a224affb5d5c7e99afc373a303709bd23189fa4614d4d9728b8dd206e686f953",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 7020000,
+          "end": 7069209,
+          "file_sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2-unified-summary.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 3061,
+          "file_sha256": "2a46a77621206328ccd80200d26a52fedb84e849985eea0e04fa8199a79a95fe",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2a-chembl-fungal-source.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 19195,
+          "file_sha256": "30661d8cdf5226ce69c76eb268e5c69180b7c3940824da0545b29602b5d46426",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2a-chembl-fungal-source.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 6577,
+          "file_sha256": "2f82eae9d44f85fafda7c26daaeaf53ec65e569c2da19abe5d9b9f3555aa436f",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-042",
+      "coverage_sha256": "b406f06cd11608aae1177b2155a5b61aceb3aeffa87901ad03c6b40fe0df1709",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 180000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-043",
+      "coverage_sha256": "7f61fbf3a528d2319da43eb0b1fc15a8a1a46f3c65df5bacf783a7fc30c3a703",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 180000,
+          "end": 360000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-044",
+      "coverage_sha256": "959df31fe699da860ee76479110e4ee4bdf5ea8dc9fcc7593777aa471a4108a3",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 360000,
+          "end": 540000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-045",
+      "coverage_sha256": "e59a7453c2ab80e30d0575f03be855cdbd3ca91fb892dbf3f9486843b10dc6d7",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 540000,
+          "end": 720000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-046",
+      "coverage_sha256": "d88a7034f5d1492f855916d37077422747ee63911a09ffeb271f94eb742da5a8",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 720000,
+          "end": 900000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-047",
+      "coverage_sha256": "2d426e063e8d09659afefef8689447844148b27bcdaa72865ec074e3066f78e8",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 900000,
+          "end": 1080000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-048",
+      "coverage_sha256": "86f680a2625ecde2c74de2d9460cd9168d008353c3c7ad8961e7be73f398524f",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 1080000,
+          "end": 1260000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-049",
+      "coverage_sha256": "9e971fa1e469b8ab3c2d61b40baaaf29b317c9388d8856742b09ebe78a4bf928",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 1260000,
+          "end": 1440000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-050",
+      "coverage_sha256": "623eb97bba769f5e4b6090ea69e57575d1d713e328cd154f9bd1a53815ee39f0",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 1440000,
+          "end": 1620000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-051",
+      "coverage_sha256": "bdf04e444ab8b51cbea4f3f95b4cf2e3c22d08af0fa4aa855b3371deea09e97d",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 1620000,
+          "end": 1800000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-052",
+      "coverage_sha256": "279f5c05960bbfdffc252d6c73753e043f1a4baec8cfe36b142b200fb7ba7d33",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 1800000,
+          "end": 1980000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-053",
+      "coverage_sha256": "c6c763f069f2c0b9c05732e88a9755f392b84427065aab21a700ca79e055d018",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 1980000,
+          "end": 2160000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-054",
+      "coverage_sha256": "2392d9976ec10a144c09f8333bdcd72ad7da98fcfbdd9a4c9aa9ebb292851dbe",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 2160000,
+          "end": 2340000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-055",
+      "coverage_sha256": "911e78c45905dfc903f4eabbaf9cfbb90061644d148ec95592556fc42e37a115",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 2340000,
+          "end": 2520000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-056",
+      "coverage_sha256": "7b26d2a430b1cb255ade111517f650ef89f6abc15fd8515dcc18aa07334ccf12",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 2520000,
+          "end": 2700000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-057",
+      "coverage_sha256": "8f1a81e066f151b6969949484f6fd746e8117216aa87d2c5dd2908863ef8380e",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 2700000,
+          "end": 2880000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-058",
+      "coverage_sha256": "b9bb737e45e06d835b253135a839d3e76c7441d043a0af0bbb8de8bc2e935efc",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 2880000,
+          "end": 3060000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-059",
+      "coverage_sha256": "ccec4d6bf4417bcfea51fbc71b16860fe25bb58df5aaa6f9a6b94be4f99a05be",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 3060000,
+          "end": 3240000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-060",
+      "coverage_sha256": "2b96dd05f206581b0c3967a6f6dadf5332ee9cf89ea8d82483c8dcc3ce3bf3d1",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 3240000,
+          "end": 3420000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-061",
+      "coverage_sha256": "3fb480847ef2925b7b379f4fe73270c10b5fb9fb883e35a059822f0aed39d604",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 3420000,
+          "end": 3600000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-062",
+      "coverage_sha256": "93ee546d7e1e555d450610b205e0c3a37d8768b2d7230a057cf31d5656ee3384",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 3600000,
+          "end": 3780000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-063",
+      "coverage_sha256": "58f3b8088331e1b714a244b457e8f86e0fdaa082cd78082d04300fa7971de7c4",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 3780000,
+          "end": 3960000,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-064",
+      "coverage_sha256": "f6e3ced14c5872478841950f6eedf2a00de3931ac52c781683022dd51ff74c5b",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-compounds-by-inchikey.json",
+          "role": "comp_artifact",
+          "start": 3960000,
+          "end": 3985926,
+          "file_sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-065",
+      "coverage_sha256": "e06e54dbd7449aba365b6cee0cf13fc83ff196ae3459f304015b0726a82a2d0d",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-lotus-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 180000,
+          "file_sha256": "1988c54c211cc09259c159837f04114c892db1b91ac36fd852d48809f92a1402",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-066",
+      "coverage_sha256": "5e405503f52aa653f28c03d6d5b71803fcbc1fa300315bc9d80692f0ab5f50c6",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-lotus-fungal-compounds.json",
+          "role": "comp_artifact",
+          "start": 180000,
+          "end": 224073,
+          "file_sha256": "1988c54c211cc09259c159837f04114c892db1b91ac36fd852d48809f92a1402",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2b-lotus-fungal-compounds.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 2932,
+          "file_sha256": "ef1134385918236fb44dac8606dba4646624c95ac689f5e3dcf41510519acd2d",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2c-pubmed-fungal-chokepoint.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 32113,
+          "file_sha256": "36f5c013638d1f6ed5b715358cb76b2e14cdbe8c0b766e2c01164fd5e9abef92",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-2c-pubmed-fungal-chokepoint.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 7784,
+          "file_sha256": "b8fa0c9c3c96b973872701766f7f8ad5907709e8d8b43153bc49f6b635e37d16",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-067",
+      "coverage_sha256": "05ffe1cb7fb6befb06183f7f1648440862654b503489d19702f42b6b152b87c4",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-compound-x-target.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 180000,
+          "file_sha256": "ea109a0affa3fb7194589e59a670a736816927bccd22bd627064380aa38c6839",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-068",
+      "coverage_sha256": "c8e20ad9617339d5f5312968f2c941ee459dae84b7ac53a2c3995b1bc1068266",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-compound-x-target.json",
+          "role": "comp_artifact",
+          "start": 180000,
+          "end": 289817,
+          "file_sha256": "ea109a0affa3fb7194589e59a670a736816927bccd22bd627064380aa38c6839",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-fungal-chokepoint-hits.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 9516,
+          "file_sha256": "00720180a9ce2e72f3fb7f43e44fa49e0c94d962b002a2acea0874b48c06d3ee",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-fungal-chokepoint-hits.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 3187,
+          "file_sha256": "f2af61c8c58f82811ecd77ebdcddb7eb7bdbcaaa8802f8b7f9f0d03a5d6d4af8",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-3-target-mapping-summary.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 9983,
+          "file_sha256": "ddee5ae65fdc68a14cae8a987cf44790de7feb4b645045933bdb40c44ee7de1a",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-069",
+      "coverage_sha256": "362e077de3f3ae346d40eaa4c8c48311ffb39d6cc86c37bc64ef16931d5f8b27",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-4-chokepoint-intersection-v2.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 180000,
+          "file_sha256": "6134338627f3d97f3d47a57bbf35335877e60a4f52bf2b6e8fee68c20a69bdec",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-070",
+      "coverage_sha256": "8a75b663396672123f58568a08bb175419ef78d38383af119bfc35dc7628bbcf",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-4-chokepoint-intersection-v2.json",
+          "role": "comp_artifact",
+          "start": 180000,
+          "end": 337270,
+          "file_sha256": "6134338627f3d97f3d47a57bbf35335877e60a4f52bf2b6e8fee68c20a69bdec",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-071",
+      "coverage_sha256": "c39f44f5e521eee5b50fefa2a1d8c31cc53b8d255c2c6641658662c340f925c0",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-4-ranked-candidates.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 39896,
+          "file_sha256": "81630a30e0f9f3c0622b378043efb6cf36556b892fecf6bb4aafe63130d60904",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-4-ranked-candidates.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 10836,
+          "file_sha256": "d172efae902de77a2f9acd306c97601078d52fce48befd0fdb38f8dd9a205712",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-5-deepread-PMID26457607.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 16387,
+          "file_sha256": "9842f495e5289f936c69738cb257b0c0466ffcd5503a9fa06bb49233ca4f921b",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-5-deepread-PMID35750011.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 26831,
+          "file_sha256": "1834a1125c39e178f15580e725dabad6f43620d4be8b5f533f8705bcc29ddf7a",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-5-deepread-PMID36385640.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 15405,
+          "file_sha256": "1d35dd6c8ebf90a40e65a968bf266e5b89fc53e2a214c8aee1bd41afb9c9f644",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-5-deepread-PMID36801789.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 15149,
+          "file_sha256": "36a8a685ea14eef5443f83c88ae76cb743e003f23511d1186695bc8f5a06947b",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-5-deepread-PMID41905012.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 16953,
+          "file_sha256": "53ba5b9183247c9e509135ac8ca77a79af7b6cbdf3d4a8c6842ac03feffceee3",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-5-deepseek-cross-check.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 12896,
+          "file_sha256": "b964224f0024291f952f713380f1aab15a4f0f5b7bc0e3a08968e678e79b18c2",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-072",
+      "coverage_sha256": "d2fbd725a8a04f956178ec9271747897eb0ddf4a0af6e5a8747088283028efda",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7-cultivation-yield-meta-analysis.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 46199,
+          "file_sha256": "28036a1258d0c50ef65841c161164614ff2e9b0ad0c0562797d4fbee1e6bef79",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7a-ganoderma-strain-scan.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 36030,
+          "file_sha256": "dd118a7ba6f9a1e032179e1e2e5aef892a39df660ea3154ec71aba671785a3fd",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7b-cordyceps-strain-scan.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 27961,
+          "file_sha256": "09821193e984fe84ed1d7310d10b9bf4bbd333947a6eef10daec479a0e21edd4",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7c-pleurotus-strain-scan.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 23189,
+          "file_sha256": "ede041ab750b1fccd1384906b3cadd67486476e3531dad12792daea6fdb53a35",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 9607,
+          "file_sha256": "f6e2cf580ea16084a0cf5e5c3f744fecf02a1e435b4962ffb2fb5cdbf889051f",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/scripts/scope_validate.py",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 7881,
+          "file_sha256": "5c69106dfbb534813df6a62aa2917cd5ec355f388391999b3a34e71c7994916e",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-073",
+      "coverage_sha256": "a30893ddc934b9ba4a5fcb715b9da3f437f78b8c51e73a7e9e13dd358b89485c",
+      "segments": [
+        {
+          "path": "wiki/computational-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 73222,
+          "file_sha256": "8ea8f1845ae656672d589ed841dfedbde8a9556b01bce4dec711ac0c2ff3608a",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/README.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 4404,
+          "file_sha256": "861da384ed3b6055bb812e771d351cbd3868cc151937a4c254d67661b50e5788",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/provenance.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 6351,
+          "file_sha256": "2322dfe3c212b27949bd896b7b0379524f03275083545bf7efc2ebe292fa2c2e",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/summary.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 15396,
+          "file_sha256": "3eaeffa0cd451910726bd71a4f56fa329404498c528ae28182a0180c9ac2d7d5",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 5232,
+          "file_sha256": "49d572cdec31ee45314ae074baec8fb0fa3b7f64db5ff6bcec78b1ef74fa82f9",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 25262,
+          "file_sha256": "0c6920db6b2d2a45cc193f74cd56d761311b107a72a621f0a261fce52335a9d4",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/reviews/push-review.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 14465,
+          "file_sha256": "aea6c3203253b9ab4593460bb074a015c47422d6a548582dd6cb14527a6e2c1c",
+          "binary": false
+        },
+        {
+          "path": "wiki/medicinal-mushroom-complement-track.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 12589,
+          "file_sha256": "833e4ec9a1f5d143424f44fdfcda116cfd15724767ee06e1f7efa81b40b361df",
+          "binary": false
+        },
+        {
+          "path": "wiki/medicinal-mushroom-compound-mapping-computational.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 4709,
+          "file_sha256": "6fdfe04e89139896c52dbfee2fc9ce0c3a74624777a55872d0ae4d4511ab28e5",
+          "binary": false
+        }
+      ]
+    }
+  ],
+  "unsupported_binary_entries": [],
+  "projected_cost_usd": 27.699906,
+  "actual_cost_usd": 29.046228,
+  "input_tokens": 5455032,
+  "output_tokens": 81538,
+  "tool_calls": 11,
+  "review_sha256": "ca12450252a9c96f56e3d0f67a5214e5f9d60c3a79fe18292ec36d371b16dccf",
+  "lane_adjudication": {
+    "date": "2026-07-27T19:12:23Z",
+    "method": "exact push review",
+    "new_artifact_review_performed": true,
+    "queue_action_remains_open": true,
+    "propagation_allowed_scope": "corrective boundary only: comp-014 is an unranked historical lead inventory with no efficacy, safety, dose, ranking, sourcing, production, delivery, or chassis conclusion",
+    "synthesis_allowed_scope": "none",
+    "forbidden_inferences": [
+      "ranked or top-tier mushroom candidates",
+      "toxicity_filter_pass means safe",
+      "query-hint species means confirmed source organism",
+      "database non-hit means biological absence",
+      "expression/binding/phenotype means direct gout-relevant function",
+      "Phase 6 PURSUE/DROP/readiness survives",
+      "Phase 7 practical SOP or purchase guidance is current advice",
+      "Cordyceps/GLPP/DAE/AMC-BFE/davallialactone results establish clinical gout efficacy"
+    ]
+  }
+}
