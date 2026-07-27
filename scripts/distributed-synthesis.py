@@ -236,11 +236,11 @@ def source_files() -> list[Path]:
 
 
 def artifact_comp_ids() -> set[str]:
-    """Return only COMP identifiers with an actual experiment artifact."""
+    """Return only result-bearing COMP identifiers requiring model receipts."""
     result = set()
     for path in (ROOT / "wiki" / "etc" / "experiments").glob("comp-*"):
         match = re.match(r"^(comp-\d{3})(?:-|$)", path.name)
-        if path.is_dir() and match:
+        if path.is_dir() and match and not (path / "invalidation.json").is_file():
             result.add(match.group(1))
     return result
 

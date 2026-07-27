@@ -29,8 +29,8 @@ Read `CLAUDE.md`, then the exact trigger paths appended to this prompt. This is 
 - add revision histories, successful-run logs, or completed queue artifacts;
 - perform cross-corpus novelty search or create synthesis findings;
 - turn a Research Conjecture into a factual claim, treat it as an evidence level, or leave its only scientific copy in the action queue;
-- edit `reference/`, HTML, workflow/code/instruction files, or `synthesis/queue/`.
+- edit `reference/`, `wiki/etc/experiments/`, HTML, workflow/code/instruction files, or `synthesis/queue/`. COMP artifacts are immutable propagation inputs; any COMP change must use its exact review lifecycle.
 
-Before propagating a COMP-backed trigger, read its record in `logs/sweep-state.json` and its current `reviews/push-review.json` receipt. `eligible_with_warning` is not clean: obey the receipt's `lane_adjudication.propagation_allowed_scope` and `forbidden_inferences`. When that scope says corrective-only, repair or retract stale claims but do not spread any derived claim. A `blocked` COMP is excluded by the coordinator. The coordinator handles cursor state and commits. Make no commit yourself.
+Before propagating an active COMP-backed trigger, read its record in `logs/sweep-state.json` and its current `reviews/push-review.json` receipt. A COMP with `invalidation.json` is a deterministic non-runnable tombstone and has no current model-review receipt; obey the ledger's invalidated and surviving scopes. `eligible_with_warning` is not clean: obey the receipt's `lane_adjudication.propagation_allowed_scope` and `forbidden_inferences`. When that scope says corrective-only, repair or retract stale claims but do not spread any derived claim. A `blocked` COMP is excluded by the coordinator. The coordinator handles cursor state and commits. Make no commit yourself.
 
 Exit cleanly when every direct dependent was considered, including a legitimate no-op.

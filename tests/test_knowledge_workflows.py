@@ -358,6 +358,11 @@ class WorkflowTriggerTests(unittest.TestCase):
             "Propagation model did not call done(); refusing to commit partial",
             propagation_driver,
         )
+        self.assertIn('"wiki/etc/experiments/**"', propagation_driver)
+        self.assertIn(
+            "COMP artifacts are immutable propagation inputs",
+            (ROOT / "scripts/sweep-prompt-1-propagate.md").read_text(),
+        )
         self.assertIn("check-lit-scan-receipt.py", integrity)
 
     def test_warning_lanes_carry_binding_scope(self):

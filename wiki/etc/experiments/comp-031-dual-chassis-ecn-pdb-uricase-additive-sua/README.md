@@ -1,24 +1,26 @@
-# comp-031 — Invalidated dual-chassis prior
+> **INVALIDATED TOMBSTONE — NOT RUNNABLE.** No result or engineering recommendation survives. Git preserves the retired artifact; the live tree does not.
 
-**Status: INVALIDATED. No result or engineering recommendation survives.**
+# comp-031 — Dual-chassis EcN PDB + uricase additivity
 
-comp-031 attempted to predict whether PDB-EcN plus luminal uricase would produce additive serum-urate reduction and whether a PDB-derived butyrate axis would rescue ABCG2/Q141K. The model cannot answer those questions because it:
+**Status:** Invalidated and superseded for biological or decision use.
 
-1. inherited comp-019's unconditional flat-dose UOX regime, which COMP-044 showed is not robust to the tested substrate-occupancy and finite-window diagnostics;
-2. transferred a *C. sporogenes* butyrate assumption into CBT2.0/EcN without product measurement;
-3. misattributed direct butyrate rescue to Basseville 2012;
-4. used unmatched background butyrate; and
-5. treated spatially distinct oxidative and anaerobic processes as well-mixed competitors.
+## What survives
 
-The former YELLOW verdict, all ΔSUA values, substrate-competition result, butyrate and Q141K effects, and separate-strain recommendation are retracted. Separate strains, one strain, and temporal staging remain unranked experimental options.
+- One-strain, separate-strain, and temporally staged UOX/PDB designs remain unranked experimental options. COMP-031 supplies no evidence for choosing among them.
+- Possible UOX/PDB complementarity remains a research question on the [current evidence page](../../../dual-chassis-ecn-pdb-uricase-computational.md), not a surviving COMP-031 result.
 
-The obsolete executable model, parameter file, and raw outputs have been removed from the live tree. Git preserves the exact historical run. Do not rerun or patch that model. Any renewed analysis must be a new COMP using physiologic UOX kinetics, measured CBT2.0 carbon fate, matched comparators, explicit compartments and staging, and independently validated serum-urate mapping.
+## What is invalidated
 
-Current replacements:
+The former YELLOW verdict, every ΔSUA and additivity estimate, the substrate-competition result, the CBT2.0-derived-butyrate assumption, the Q141K-rescue effect, and the separate-strain recommendation are retracted.
 
-- [comp-044](../../../gut-lumen-uricase-physiologic-regime-computational.md) reopens the UOX regime.
-- [comp-046](../../../staged-purine-sink-mass-balance-computational.md) conserves dietary fate, treats the endogenous side as a capture-fraction comparison, and defines conditional architecture boundaries.
-- [Validation §1.34](../../../validation-experiments.md#134-isotope-resolved-dietary-precursor--uox--pdb-sequential-flux) tests sequential flux.
-- [Validation §1.37](../../../validation-experiments.md#137-cbt20-carbon-fate-and-pdb-self-niche-test) measures CBT2.0 carbon fate.
+The model inherited COMP-019's unconditional flat-dose UOX regime, transferred a *C. sporogenes* butyrate assumption into CBT2.0/EcN, misattributed direct butyrate rescue to Basseville 2012, used unmatched background butyrate, and treated spatially distinct oxidative and anaerobic processes as well-mixed competitors. COMP-044 later showed that the inherited UOX classification is not robust to the tested substrate-occupancy and finite-window diagnostics.
 
-See the [canonical interpretive page](../../../dual-chassis-ecn-pdb-uricase-computational.md).
+## Hash-bound retirement record
+
+[`invalidation.json`](./invalidation.json) binds every retired non-review file to Git commit `96846937607d1d436dec192ef7eec14948454885` by byte count and SHA-256. It also records the exact invalidated and surviving scopes.
+
+Legacy artifacts and reviews are available only through Git history. Any renewed analysis must be a new COMP using physiological UOX kinetics, measured CBT2.0 carbon fate, matched comparators, explicit compartments and staging, and independently validated serum-urate mapping.
+
+## Current evidence home
+
+- [Dual-chassis EcN PDB + uricase additivity — invalidated prior](../../../dual-chassis-ecn-pdb-uricase-computational.md)

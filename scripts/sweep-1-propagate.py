@@ -49,6 +49,7 @@ DEFAULT_PROMPT = "scripts/sweep-prompt-1-propagate.md"
 READ_ONLY_GLOBS = [
     "synthesis/**",
     "reference/**",
+    "wiki/etc/experiments/**",
     "*.html",
     "CLAUDE.md",
     "README.md",
@@ -576,7 +577,7 @@ def main():
           "There is no git or shell — the harness will stage and commit your "
           "changes after you call done(). Do NOT attempt git operations.\n\n"
           "Read-only paths (the harness will reject writes to these): "
-          "synthesis/queue/, reference/, *.html, CLAUDE.md, README.md, "
+          "synthesis/queue/, reference/, wiki/etc/experiments/, *.html, CLAUDE.md, README.md, "
           "scripts/, .claude/, .obsidian/, .git/.\n\n"
           "Pass 1 scope: propagate the trigger findings to affected wiki "
           "pages with surgical edits. Do NOT synthesize, do NOT propose "
