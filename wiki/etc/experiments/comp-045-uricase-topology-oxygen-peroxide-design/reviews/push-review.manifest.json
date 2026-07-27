@@ -1,0 +1,93 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/README.md",
+      "kind": "design",
+      "bytes": 10358,
+      "sha256": "71bee9a79acd5ef23e3e0331901fab856461aba2844bd99de28e039aa452e43a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/analyze.py",
+      "kind": "design",
+      "bytes": 45164,
+      "sha256": "16a334b0281c5c35403c0fed745a7afde0dffaf5c4c1ae421cd2128854268a8e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/design_factors.json",
+      "kind": "design",
+      "bytes": 17774,
+      "sha256": "f095b963f5e3b3fd9a2c83cc7ae8eb8b9276a9abce6e06b8ef481231dee1d5dd"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 3949,
+      "sha256": "b2752671a300a78a65778a49ae2b4a81c7dfbe567b1d45337ed0943e53d72387"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/query-strategy.json",
+      "kind": "design",
+      "bytes": 1603,
+      "sha256": "f69366bcdec75d4c22897c417367cc591ba5fd968b0bce665104bfc4f8668113"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 639897,
+      "sha256": "f2c4ecde849699a90e5fc307c0e9bb3ffa67213a64af79485656266ab68b91de"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 4430,
+      "sha256": "094d4cf6819f7ac7fc4e253a3ebdc299a3f14b329e45c68e7ef3e170283003ed"
+    },
+    {
+      "path": "wiki/aspergillus-oryzae.md",
+      "kind": "proposed_update",
+      "bytes": 7325,
+      "sha256": "efe1e023f680812215521c9220025e6449062f847bbc6b81e1846f9f1b5fc42c"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 75330,
+      "sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 4578,
+      "sha256": "e42f494ce8e76faf1a85ae017ee0a67301b6609312a651feea95bee70be4b7d0"
+    },
+    {
+      "path": "wiki/gout-multihop-research-program.md",
+      "kind": "proposed_update",
+      "bytes": 6935,
+      "sha256": "b394b56f9d8126c495182bd17933722edefd50d81b38ef84400a77e97ffe11e9"
+    },
+    {
+      "path": "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
+      "kind": "proposed_update",
+      "bytes": 6897,
+      "sha256": "9f6efb4ea1659ba4e31a39ce4969fba94a9c9ca94fd87c8e89e0d08edb49b413"
+    },
+    {
+      "path": "wiki/uricase-topology-oxygen-peroxide-design-computational.md",
+      "kind": "proposed_update",
+      "bytes": 6554,
+      "sha256": "11505ad9dd2f95657fcbaa514e1e365114082cbbe91b961bec1d807360067caa"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 242023,
+      "sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "255fcd66cc5150ee38183d485c7e9cb8ed18146503383536793c8b75b33306f3"
+}
