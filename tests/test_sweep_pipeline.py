@@ -7,6 +7,8 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from contextlib import redirect_stdout
+from io import StringIO
 from pathlib import Path
 from unittest import mock
 
@@ -311,6 +313,82 @@ trigger_files: wiki/example.md
 
 
 class SweepStateBindingTests(unittest.TestCase):
+    def test_propagation_backlog_is_resumable_without_reprocessing_blocked_paths(self):
+        registry = {
+            "schema_version": 2,
+            "last_successful_propagation": {
+                "coverage_commit": "a" * 40,
+                "deferred_paths": ["wiki/b.md", "wiki/c.md"],
+                "blocked_paths": ["wiki/released.md"],
+            },
+            "last_successful_synthesis": None,
+            "comp_reviews": {
+                "comp-047": {
+                    "comp_dir": "wiki/etc/experiments/comp-047-example",
+                    "derived_paths": ["wiki/c.md"],
+                    "propagation_eligibility": "blocked",
+                }
+            },
+            "unresolved_failures": [],
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            deferred_path = Path(tmp) / "deferred.txt"
+            args = argparse.Namespace(
+                max_paths=2,
+                deferred_output=str(deferred_path),
+            )
+            with mock.patch.object(state, "read_registry", return_value=registry), mock.patch.object(
+                state,
+                "_git_changed_paths",
+                return_value=["wiki/a.md", "wiki/released.md"],
+            ):
+                output = StringIO()
+                with redirect_stdout(output):
+                    state.cmd_pending_propagation_paths(args)
+
+            self.assertEqual(
+                ["wiki/a.md", "wiki/b.md"],
+                output.getvalue().splitlines(),
+            )
+            self.assertEqual(
+                ["wiki/released.md"],
+                deferred_path.read_text().splitlines(),
+            )
+
+    def test_propagation_receipt_retains_source_and_deferred_paths(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            registry_path = Path(tmp) / "sweep-state.json"
+            registry_path.write_text(json.dumps({
+                "schema_version": 2,
+                "last_successful_propagation": {
+                    "coverage_commit": "a" * 40,
+                },
+                "last_successful_synthesis": None,
+                "comp_reviews": {},
+                "unresolved_failures": [],
+            }))
+            args = argparse.Namespace(
+                coverage_commit="c" * 40,
+                source_commit="b" * 40,
+                result_commit="c" * 40,
+                expected_cursor="a" * 40,
+                changed_paths="wiki/a.md,wiki/b.md",
+                affected_paths="wiki/dependent.md",
+                blocked_paths="wiki/blocked.md",
+                deferred_paths="wiki/c.md,wiki/d.md",
+                cost_usd=0.1,
+            )
+            with mock.patch.object(state, "REGISTRY_PATH", registry_path):
+                state.cmd_update_propagation(args)
+            saved = json.loads(registry_path.read_text())[
+                "last_successful_propagation"
+            ]
+            self.assertEqual("b" * 40, saved["source_commit"])
+            self.assertEqual("c" * 40, saved["coverage_commit"])
+            self.assertEqual(
+                ["wiki/c.md", "wiki/d.md"], saved["deferred_paths"]
+            )
+
     def test_cursor_advance_records_hash_binding_and_rejects_cursor_drift(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

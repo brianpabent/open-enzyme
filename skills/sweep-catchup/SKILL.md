@@ -21,7 +21,14 @@ python3 scripts/sweep-state.py pending-propagation-paths
 gh workflow run wiki-propagate.yml
 ```
 
-4. Watch the run and verify that `last_successful_propagation` advanced. A legitimate no-op may still advance the cursor because the reviewed paths were fully considered.
+4. Watch the run and verify that `last_successful_propagation` advanced. A
+   legitimate no-op may still advance the cursor because the reviewed paths
+   were fully considered.
+5. Re-read `pending-propagation-paths`. When a backlog exceeded the 25-trigger
+   bound, the workflow retains the exact deterministic remainder in
+   `deferred_paths`. Dispatch and verify another bounded run until the eligible
+   backlog reaches zero. Never replace this with silent truncation or a
+   full-corpus synthesis.
 
 Full synthesis is a separate, explicit decision. If Brian asks for it, first require zero eligible propagation backlog and clean synthesis eligibility for every referenced COMP, then dispatch `wiki-sweep.yml` with an explicit cost cap.
 

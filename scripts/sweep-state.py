@@ -71,6 +71,7 @@ def migrate_v1_to_v2(data: dict) -> dict:
             "changed_paths": old.get("trigger_files", []),
             "affected_paths": [],
             "blocked_paths": [],
+            "deferred_paths": [],
             "cost_usd": None,
             "_migrated_from_v1": True,
         }
@@ -151,25 +152,54 @@ def cmd_migrate(_args: argparse.Namespace) -> None:
     print("sweep-state.py: migrated registry from schema v1 to v2")
 
 
-def cmd_pending_propagation_paths(_args: argparse.Namespace) -> None:
-    data = read_registry()
+def _pending_propagation_paths(data: dict) -> list[str]:
     base = _cursor(data, "propagation")
     if not base:
         sys.exit("sweep-state.py: no propagation cursor recorded")
     paths = {
         path for path in _git_changed_paths(
-            base, ["wiki/*.md", "wiki/hypotheses/*.md", "wiki/etc/experiments/comp-*/**"]
+            base,
+            [
+                "wiki/*.md",
+                "wiki/hypotheses/*.md",
+                "wiki/etc/experiments/comp-*/*.md",
+                "wiki/etc/experiments/comp-*/*/*.md",
+                "wiki/etc/experiments/comp-*/*/*/*.md",
+                "wiki/etc/experiments/comp-*/invalidation.json",
+            ],
         )
         if "/reviews/" not in path
     }
+    paths.update(
+        (data.get("last_successful_propagation") or {}).get(
+            "deferred_paths", []
+        )
+    )
     # A cursor may move past a blocked mixed push so unrelated work can finish.
     # Keep the blocked subset explicitly pending until a later clean receipt
     # releases it.
     paths.update((data.get("last_successful_propagation") or {}).get("blocked_paths", []))
     blocked = _blocked_paths(data)
-    for path in sorted(paths):
-        if any(path == b or path.startswith(f"{b}/") for b in blocked):
-            continue
+    return [
+        path
+        for path in sorted(paths)
+        if not any(path == b or path.startswith(f"{b}/") for b in blocked)
+    ]
+
+
+def cmd_pending_propagation_paths(args: argparse.Namespace) -> None:
+    paths = _pending_propagation_paths(read_registry())
+    maximum = int(getattr(args, "max_paths", 0) or 0)
+    if maximum < 0:
+        sys.exit("sweep-state.py: --max-paths must be non-negative")
+    selected = paths[:maximum] if maximum else paths
+    deferred = paths[maximum:] if maximum else []
+    deferred_output = getattr(args, "deferred_output", "")
+    if deferred_output:
+        Path(deferred_output).write_text(
+            "".join(f"{path}\n" for path in deferred)
+        )
+    for path in selected:
         print(path)
 
 
@@ -192,13 +222,16 @@ def cmd_update_propagation(args: argparse.Namespace) -> None:
     changed = [p for p in args.changed_paths.split(",") if p]
     affected = [p for p in args.affected_paths.split(",") if p]
     blocked = [p for p in args.blocked_paths.split(",") if p]
+    deferred = [p for p in args.deferred_paths.split(",") if p]
     data["last_successful_propagation"] = {
         "coverage_commit": args.coverage_commit,
+        "source_commit": args.source_commit or args.coverage_commit,
         "result_commit": args.result_commit,
         "timestamp": _now_iso(),
         "changed_paths": changed,
         "affected_paths": affected,
         "blocked_paths": blocked,
+        "deferred_paths": deferred,
         "cost_usd": args.cost_usd,
     }
     write_registry(data)
@@ -335,7 +368,8 @@ def cmd_init(args: argparse.Namespace) -> None:
     data = _empty_registry()
     data["last_successful_propagation"] = {
         "coverage_commit": head, "result_commit": head, "timestamp": now,
-        "changed_paths": [], "affected_paths": [], "blocked_paths": [], "cost_usd": 0.0,
+        "changed_paths": [], "affected_paths": [], "blocked_paths": [],
+        "deferred_paths": [], "cost_usd": 0.0,
     }
     data["last_successful_synthesis"] = {
         "coverage_commit": head, "corpus_sha256": None, "timestamp": now,
@@ -350,18 +384,22 @@ def build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="cmd", required=True)
     sub.add_parser("read")
     sub.add_parser("migrate")
-    sub.add_parser("pending-propagation-paths")
+    pending_propagation = sub.add_parser("pending-propagation-paths")
+    pending_propagation.add_argument("--max-paths", type=int, default=0)
+    pending_propagation.add_argument("--deferred-output", default="")
     sub.add_parser("pending-synthesis-paths")
     sub.add_parser("pending-paths", help="compatibility alias for pending synthesis paths")
     sub.add_parser("should-sweep")
 
     prop = sub.add_parser("update-propagation")
     prop.add_argument("--coverage-commit", required=True)
+    prop.add_argument("--source-commit", default="")
     prop.add_argument("--result-commit", required=True)
     prop.add_argument("--expected-cursor", default="")
     prop.add_argument("--changed-paths", default="")
     prop.add_argument("--affected-paths", default="")
     prop.add_argument("--blocked-paths", default="")
+    prop.add_argument("--deferred-paths", default="")
     prop.add_argument("--cost-usd", type=float, default=0.0)
 
     comp = sub.add_parser("record-comp-review")

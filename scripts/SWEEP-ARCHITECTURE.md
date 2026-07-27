@@ -69,11 +69,22 @@ Clinical-trial registrations are protocol/status evidence, not efficacy results.
 Propagation:
 
 - receives an explicit eligible path set;
+- selects at most 25 semantic research triggers per run and carries every
+  unprocessed eligible path forward in compact state;
+- ignores regenerable COMP code, binary intermediates, and machine outputs
+  when a reviewed README, provenance page, or Markdown summary owns the
+  propagatable scientific meaning;
 - links to canonical evidence instead of copying exposition;
 - updates direct dependents, hypotheses, dashboard/nav, and public surfaces as needed;
 - refuses partial work beyond its path or cost cap;
 - can advance on a verified no-op;
 - never performs novelty synthesis.
+
+A catch-up backlog may therefore require several bounded runs. Each run moves
+the cursor to its own result commit, records the exact selected triggers, and
+retains the deterministic remainder. No path is silently dropped and a
+propagation-generated edit is not fed back into the next batch as a new
+scientific trigger.
 
 A changed completed COMP blocks its derived claims before any model call and remains blocked until the current artifact has an exact push review. Cost overflow defers the COMP rather than reusing a stale receipt. Hash-bound non-runnable tombstones are removed from eligibility and verified deterministically against their retired Git trees; Gate-1-only COMPs do not enter result-bearing push review. The structured review independently states propagation and synthesis eligibility.
 

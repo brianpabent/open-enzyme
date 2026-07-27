@@ -57,8 +57,12 @@ jobs:
           fi
           if [[ -n "$EXPLICIT_PATHS" ]]; then
             printf '%s' "$EXPLICIT_PATHS" | tr ', ' '\n' | grep -v '^$' | sort -u > /tmp/propagation-paths.txt
+            : > /tmp/propagation-deferred.txt
           else
-            python3 scripts/sweep-state.py pending-propagation-paths > /tmp/propagation-paths.txt
+            python3 scripts/sweep-state.py pending-propagation-paths \
+              --max-paths 25 \
+              --deferred-output /tmp/propagation-deferred.txt \
+              > /tmp/propagation-paths.txt
           fi
           count=$(grep -c . /tmp/propagation-paths.txt || true)
           if (( count > 25 )); then
@@ -69,6 +73,8 @@ jobs:
             echo "Propagation overflow: $count eligible paths; refusing silent truncation"
             exit 1
           fi
+          deferred=$(grep -c . /tmp/propagation-deferred.txt || true)
+          echo "Selected $count bounded triggers; retained $deferred for later batches"
           coverage=$(git rev-parse HEAD)
           {
             echo "cursor=$cursor"
@@ -120,11 +126,13 @@ jobs:
           print(",".join(sorted(p for p in paths if p)))
           ')
           python3 scripts/sweep-state.py update-propagation \
-            --coverage-commit "${{ steps.select.outputs.coverage }}" \
+            --coverage-commit "$result_commit" \
+            --source-commit "${{ steps.select.outputs.coverage }}" \
             --result-commit "$result_commit" \
             --expected-cursor "${{ steps.select.outputs.cursor }}" \
             --changed-paths "$(paste -sd, /tmp/propagation-paths.txt)" \
             --affected-paths "$affected_csv" --blocked-paths "$blocked" \
+            --deferred-paths "$(paste -sd, /tmp/propagation-deferred.txt)" \
             --cost-usd "${{ steps.run.outputs.cost_usd || '0' }}"
 
           git config user.name "github-actions[bot]"
