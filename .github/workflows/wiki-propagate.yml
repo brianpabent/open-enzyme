@@ -60,15 +60,15 @@ jobs:
             : > /tmp/propagation-deferred.txt
           else
             python3 scripts/sweep-state.py pending-propagation-paths \
-              --max-paths 25 \
+              --max-paths 10 \
               --deferred-output /tmp/propagation-deferred.txt \
               > /tmp/propagation-paths.txt
           fi
           count=$(grep -c . /tmp/propagation-paths.txt || true)
-          if (( count > 25 )); then
+          if (( count > 10 )); then
             python3 scripts/sweep-state.py record-failure \
               --failure-id "propagation-${{ github.run_id }}" --lane propagation-preflight \
-              --error-summary "Eligible trigger set exceeded 25-path bound" \
+              --error-summary "Eligible trigger set exceeded 10-unit bound" \
               --paths "$(paste -sd, /tmp/propagation-paths.txt)"
             echo "Propagation overflow: $count eligible paths; refusing silent truncation"
             exit 1

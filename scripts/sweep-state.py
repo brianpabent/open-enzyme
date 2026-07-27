@@ -152,6 +152,35 @@ def cmd_migrate(_args: argparse.Namespace) -> None:
     print("sweep-state.py: migrated registry from schema v1 to v2")
 
 
+def _semantic_propagation_path(path: str) -> str:
+    """Collapse a changed COMP artifact to one directory-level trigger.
+
+    Propagation reasons over the current COMP as a unit; it does not need one
+    model trigger for every provenance, result, and sub-analysis file. Active
+    COMPs use their README as the entry point. Invalidated COMPs use the
+    deterministic tombstone ledger. The complete directory remains available
+    to the propagation agent when either entry point requires inspection.
+    """
+    parts = Path(path).parts
+    try:
+        experiments_index = parts.index("experiments")
+    except ValueError:
+        return path
+    if experiments_index + 1 >= len(parts):
+        return path
+    comp_name = parts[experiments_index + 1]
+    if not comp_name.startswith("comp-"):
+        return path
+    comp_dir = Path(*parts[: experiments_index + 2])
+    invalidation = comp_dir / "invalidation.json"
+    if invalidation.is_file():
+        return invalidation.as_posix()
+    readme = comp_dir / "README.md"
+    if readme.is_file():
+        return readme.as_posix()
+    return path
+
+
 def _pending_propagation_paths(data: dict) -> list[str]:
     base = _cursor(data, "propagation")
     if not base:
@@ -179,6 +208,7 @@ def _pending_propagation_paths(data: dict) -> list[str]:
     # Keep the blocked subset explicitly pending until a later clean receipt
     # releases it.
     paths.update((data.get("last_successful_propagation") or {}).get("blocked_paths", []))
+    paths = {_semantic_propagation_path(path) for path in paths}
     blocked = _blocked_paths(data)
     return [
         path

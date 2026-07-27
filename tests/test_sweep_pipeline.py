@@ -313,6 +313,39 @@ trigger_files: wiki/example.md
 
 
 class SweepStateBindingTests(unittest.TestCase):
+    def test_comp_artifacts_collapse_to_one_semantic_propagation_trigger(self):
+        registry = {
+            "schema_version": 2,
+            "last_successful_propagation": {
+                "coverage_commit": "a" * 40,
+                "deferred_paths": [],
+                "blocked_paths": [],
+            },
+            "last_successful_synthesis": None,
+            "comp_reviews": {},
+            "unresolved_failures": [],
+        }
+        active_dir = Path("wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit")
+        tombstone_dir = Path("wiki/etc/experiments/comp-029-combined-cp0-systems-model")
+        changed = [
+            str(active_dir / "README.md"),
+            str(active_dir / "inputs/provenance.md"),
+            str(active_dir / "outputs/summary.md"),
+            str(tombstone_dir / "README.md"),
+            str(tombstone_dir / "outputs/summary.md"),
+            "wiki/urate-transport.md",
+        ]
+        with mock.patch.object(state, "_git_changed_paths", return_value=changed):
+            paths = state._pending_propagation_paths(registry)
+        self.assertEqual(
+            [
+                str(tombstone_dir / "invalidation.json"),
+                str(active_dir / "README.md"),
+                "wiki/urate-transport.md",
+            ],
+            paths,
+        )
+
     def test_propagation_backlog_is_resumable_without_reprocessing_blocked_paths(self):
         registry = {
             "schema_version": 2,
