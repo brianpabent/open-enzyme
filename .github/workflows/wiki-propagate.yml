@@ -99,7 +99,7 @@ jobs:
             --diff-base "${{ steps.select.outputs.cursor }}" \
             --trigger-files "${{ steps.select.outputs.paths }}" \
             --model "$PROPAGATION_MODEL" \
-            --max-iterations 20 --max-cost-usd "$MAX_COST_USD"
+            --max-iterations 40 --max-cost-usd "$MAX_COST_USD"
 
       - name: Verify propagated reader contract
         run: |
