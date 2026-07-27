@@ -1,21 +1,17 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "8bb4f545d121feb2c3eb76669ce87b92d9d0a22c",
-    "source_commit": "8bb4f545d121feb2c3eb76669ce87b92d9d0a22c",
-    "result_commit": "8bb4f545d121feb2c3eb76669ce87b92d9d0a22c",
-    "timestamp": "2026-07-27T15:24:44Z",
+    "coverage_commit": "e92cebf263071bf60e91feee1ceab31338aeed8c",
+    "source_commit": "7b55e32e4dfc685b7b87e6253219ecde81a2e52c",
+    "result_commit": "e92cebf263071bf60e91feee1ceab31338aeed8c",
+    "timestamp": "2026-07-27T15:31:07Z",
     "changed_paths": [
-      "wiki/supplements-stack.md",
-      "wiki/t-axis-adjuvant-urate-mapping-computational.md",
-      "wiki/tcm-gout-compound-triage-computational.md",
-      "wiki/tcm-modern-rigor-intersection.md",
-      "wiki/theaflavins.md",
-      "wiki/tier-2-butyrate-assay-audit-computational.md",
-      "wiki/upstream-complement-assay-format-mapping-computational.md",
-      "wiki/upstream-complement-modulator-sweep-computational.md",
-      "wiki/upstream-complement-verification-rerun-computational.md",
-      "wiki/urat1-sirna-target-site-selection-computational.md"
+      "wiki/uricase-cassette-ranking-computational.md",
+      "wiki/uricase-protease-stability-computational.md",
+      "wiki/uricase-shio-koji-thermal-stability-computational.md",
+      "wiki/uricase-topology-oxygen-peroxide-design-computational.md",
+      "wiki/uricase-variant-selection.md",
+      "wiki/validation-experiments.md"
     ],
     "affected_paths": [],
     "blocked_paths": [
@@ -28,15 +24,8 @@
       "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen",
       "wiki/gout-genetic-variants.md"
     ],
-    "deferred_paths": [
-      "wiki/uricase-cassette-ranking-computational.md",
-      "wiki/uricase-protease-stability-computational.md",
-      "wiki/uricase-shio-koji-thermal-stability-computational.md",
-      "wiki/uricase-topology-oxygen-peroxide-design-computational.md",
-      "wiki/uricase-variant-selection.md",
-      "wiki/validation-experiments.md"
-    ],
-    "cost_usd": 0.708987
+    "deferred_paths": [],
+    "cost_usd": 0.601167
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
