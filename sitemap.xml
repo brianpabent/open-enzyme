@@ -713,14 +713,6 @@
          <lastmod>2026-07-27</lastmod>
     </url>
     <url>
-         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-013-tcm-gout-compound-triage/outputs/summary/</loc>
-         <lastmod>2026-07-27</lastmod>
-    </url>
-    <url>
-         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-013-tcm-gout-compound-triage/reviews/push-review/</loc>
-         <lastmod>2026-07-27</lastmod>
-    </url>
-    <url>
          <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/</loc>
          <lastmod>2026-07-27</lastmod>
     </url>
@@ -789,10 +781,6 @@
          <lastmod>2026-07-27</lastmod>
     </url>
     <url>
-         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-6-triage/</loc>
-         <lastmod>2026-07-27</lastmod>
-    </url>
-    <url>
          <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7-cultivation-yield-meta-analysis/</loc>
          <lastmod>2026-07-27</lastmod>
     </url>
@@ -813,7 +801,7 @@
          <lastmod>2026-07-27</lastmod>
     </url>
     <url>
-         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/reviews/push-review/</loc>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/reviews/post-run/</loc>
          <lastmod>2026-07-27</lastmod>
     </url>
     <url>
@@ -1281,6 +1269,18 @@
          <lastmod>2026-07-27</lastmod>
     </url>
     <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/</loc>
+         <lastmod>2026-07-27</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/inputs/provenance/</loc>
+         <lastmod>2026-07-27</lastmod>
+    </url>
+    <url>
+         <loc>https://brianpabent.github.io/open-enzyme/etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/reviews/pre-run/</loc>
+         <lastmod>2026-07-27</lastmod>
+    </url>
+    <url>
          <loc>https://brianpabent.github.io/open-enzyme/hypotheses/</loc>
          <lastmod>2026-07-27</lastmod>
     </url>
@@ -1302,10 +1302,6 @@
     </url>
     <url>
          <loc>https://brianpabent.github.io/open-enzyme/hypotheses/H05-daf-scr14-cp0-thesis/</loc>
-         <lastmod>2026-07-27</lastmod>
-    </url>
-    <url>
-         <loc>https://brianpabent.github.io/open-enzyme/hypotheses/H06-medicinal-mushroom-complement-track/</loc>
          <lastmod>2026-07-27</lastmod>
     </url>
     <url>

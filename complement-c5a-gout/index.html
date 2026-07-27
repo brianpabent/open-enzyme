@@ -2924,7 +2924,7 @@
     
   
   
-    <span class="md-status md-status--scope-page"></span>
+    <span class="md-status md-status--evidence-page"></span>
   
 
   
@@ -4815,7 +4815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hypotheses/H06-medicinal-mushroom-complement-track/" class="md-nav__link">
+      <a href="../hypotheses/H06-medicinal-mushroom-complement-track.md" class="md-nav__link">
         
   
   
@@ -4828,13 +4828,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--Stub"></span>
-  
-
   
 
       </a>
@@ -5777,7 +5770,7 @@
     
   
   
-    <span class="md-status md-status--complete"></span>
+    <span class="md-status md-status--invalidated"></span>
   
 
   
@@ -5812,7 +5805,7 @@
     
   
   
-    <span class="md-status md-status--Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued"></span>
+    <span class="md-status md-status--partial-lead-inventory"></span>
   
 
   
@@ -6315,7 +6308,7 @@
 <h1 id="complement-c5a-as-the-dominant-nlrp3-priming-signal-in-gout">Complement C5a as the Dominant NLRP3 Priming Signal in Gout<a class="headerlink" href="#complement-c5a-as-the-dominant-nlrp3-priming-signal-in-gout" title="Permanent link">&para;</a></h1>
 <p><strong>Chokepoint 0</strong> in the <a href="../nlrp3-exploit-map/">NLRP3 exploit map</a>. This deep dive documents the evidence that gout priming is complement-dominant rather than LPS-dominant, maps the therapeutic landscape at this under-exploited step, and tracks the portfolio's CP0 evidence and validation gates.</p>
 <blockquote>
-<p><strong>Current CP0 status:</strong> Direct natural-product C5aR1 coverage remains unsupported after independent database and fungal-compound scans. Upstream complement candidates exist at C3 convertase and pathway-entry nodes, but their potency, exposure, and gout-specific activity remain gated.</p>
+<p><strong>Current CP0 status:</strong> The recorded database and fungal-compound searches did not retrieve a wet-lab-validated direct natural-product C5aR1 antagonist. This is a bounded search result, not a closed class. Upstream complement candidates exist at C3 convertase and pathway-entry nodes, while a direct functional screen remains the shortest route to discover or reject specific C5aR1 leads.</p>
 <p><strong>Engineered-regulator status:</strong> <a href="../daf-cd55-scr14-truncated-computational/">comp-012</a> supplies a sequence-filter/pLDDT proxy for truncated DAF SCR1-4 (aa 35–285), not a protease-risk result. Expression, eight-disulfide folding, processing stability, retained regulatory activity, and access to the relevant complement compartment require wet-lab validation under <a href="../validation-experiments/">§1.25</a>.</p>
 <p><strong>Dietary-regulator status:</strong> Rosmarinic acid, luteolin, <em>Houttuynia cordata</em> polysaccharides, and related upstream candidates have mechanism evidence but large assay-format, structure, exposure, and translation uncertainties. They are research leads, not recommendations.</p>
 <p>Falsification card: <a href="../hypotheses/H05-daf-scr14-cp0-thesis/">H05 — DAF SCR1-4 CP0 thesis</a>.</p>
@@ -6672,7 +6665,7 @@
 <p><strong>Comp-039 classifies the candidates individually.</strong> <a href="../cfh-mechanism-dissociation-cp0-candidates-computational/">comp-039</a> ran two-model independent cross-check (Claude Opus 4.7 = Model A, DeepSeek <code>deepseek/deepseek-chat-v3</code> = Model B) over the four top upstream-CP0 candidates. <strong>All four classified CFH-independent</strong> with mechanism-site justification:</p>
 <ul>
 <li><strong>Rosmarinic acid (High confidence):</strong> Sahu 1999 (PMID 10353266) localizes covalent attachment to the <strong>nascent C3b α'-chain thioester (Cys988)</strong>, structurally distant from CFH's CCP6-8 CRP/GAG-binding surface. IC50 = 34 μM. Mechanism quenches nascent C3b <em>before</em> surface deposition; CFH regulates already-deposited C3b — downstream of where rosmarinic acid acts.</li>
-<li><strong>Luteolin (Medium confidence):</strong> Zhang 2008 (PMID 18400428 / PMC7126446) matched CP and AP hemolytic IC50 (0.19 vs 0.17 mM) is <strong>inconsistent with a CFH-competitive mechanism</strong> — CFH is AP-specific; competition would predict AP-selectivity. Multi-mode confound for the UKB cross-tab — luteolin additionally has XO IC50 550 nM and URAT1 expression downregulation (CFH-orthogonal entirely).</li>
+<li><strong>Luteolin (Medium confidence):</strong> Zhang 2008 (PMID 18400428 / PMC7126446) matched CP and AP hemolytic IC50 (0.19 vs 0.17 mM) is <strong>inconsistent with a CFH-competitive mechanism</strong> — CFH is AP-specific; competition would predict AP-selectivity. No current COMP-013-derived XO potency or URAT1 attribution is eligible as a parallel mechanism.</li>
 <li><strong>Houttuynia cordata polysaccharide (HCP/HCPM/CHCP) (High confidence):</strong> Lu 2018 (PMID 29719782 / PMC5925397) depletion-rescue maps targets to <strong>C3 + C4 cleavage</strong> (C3-depleted serum rescue 9.29 ± 1.69%, C4-depleted 12.34 ± 1.39%, C5-depleted 44.54 ± 3.92%). <strong>CFH is AP-specific and does NOT regulate C4</strong> — C4 binding is mechanistically incompatible with CFH-dependence. TLR4-MD2 binding mode (Yu 2026 PMC12937656) is entirely upstream of complement. Three orthogonal lines converge.</li>
 <li><strong>Helicteres benzofuran lignans (Medium, replication-bounded):</strong> Yin 2016 (PMID 27834928 / PMC6273495) depletion-rescue identifies compound 5 targets as C1q + C2 + C3 + C9 (CH50 9 μM / AP50 21 μM). CP &gt; AP potency is inconsistent with CFH-competitive mechanism. This remains a single-paper anchor; independent matched-assay replication is the next gate.</li>
 </ul>
@@ -6681,7 +6674,7 @@
 <p><strong>Comp-039 per-candidate cross-tab specification.</strong> The candidate-stratified UKB ask (specific, falsifiable, mechanism-grounded) replaces a generic "any-polyphenol × CFH" query:</p>
 <ul>
 <li><strong>Lead query (highest-power tractable cross-tab):</strong> rs1061170 × Phenol-Explorer-derived rosmarinic-acid intake quartiles × incident gout M10.x in UKB participants without prior gout at baseline (target n ≈ 450K). Pre-specify <strong>both</strong> negative-direction (Model A) and null-direction (Model B) tests with separate falsification thresholds. AMD-paradox direction (HR &gt; 1.5 in carriers × high-intake vs non-carriers × high-intake, p&lt;0.05) refutes the upstream-CP0-bypass hypothesis and forces retiring rosmarinic acid from the CP0 stack.</li>
-<li><strong>Secondary:</strong> rs1061170 × Apiaceae-family intake × incident gout (luteolin proxy; better than total-flavonoid sums), with <strong>24h-urate intermediate-phenotype readout</strong> in the biochemistry subset to dissociate the complement mode from the XO + URAT1 urate-axis modes.</li>
+<li><strong>Secondary:</strong> rs1061170 × Apiaceae-family intake × incident gout (luteolin exposure proxy), with a 24-hour urate measure retained only as an exploratory phenotype rather than a mechanism-specific dissociation readout.</li>
 <li><strong>Tertiary:</strong> rs1061170 × dietary CFH-bypass diversity score × incident gout (composite over rosemary / lemon balm / perilla / celery / parsley intake, generalizing Bondonno 2025 Nature Food methodology).</li>
 <li><strong>Operational deferrals:</strong> HCP/Houttuynia cross-tab not UKB-actionable (rare in UK dietary corpus) → defer to East Asian cohorts (KoGES, China Kadoorie Biobank, Singapore Chinese Health Study); <a href="../computational-experiments/">comp-041 queued</a> to scan East Asian cohort feasibility. <em>Helicteres</em> is not actionable in a dietary biobank and remains gated by independent matched-assay replication of its single-paper biochemical anchor.</li>
 <li><strong>Wet-lab definitive test:</strong> <a href="../computational-experiments/">comp-040 queued</a>, blocked on OE wet-lab access — CFH-depleted-serum MSU-crystal complement-activation assay for rosmarinic acid, luteolin, and HCP. Retained suppression in CFH-depleted serum confirms CFH-independence; loss of suppression refutes.</li>
@@ -6926,7 +6919,7 @@ If priming signals are fully redundant → blocking CP0 yields minimal clinical 
 <hr />
 <h2 id="9-cp0-coverage-gap">9. CP0 coverage gap<a class="headerlink" href="#9-cp0-coverage-gap" title="Permanent link">&para;</a></h2>
 <h3 id="91-direct-coverage">9.1 Direct coverage<a class="headerlink" href="#91-direct-coverage" title="Permanent link">&para;</a></h3>
-<p>The current candidate set has no validated direct C5a/C5aR1/C3aR intervention. Database and natural-product scans found no wet-lab-validated fermentable C5aR1 antagonist; synthetic small molecules, constrained peptides, antibodies, and engineered complement regulators occupy the better-supported intervention classes.</p>
+<p>The current natural-product candidate set has no validated direct C5a/C5aR1/C3aR intervention. The recorded searches did not retrieve a wet-lab-validated C5aR1 antagonist from that set. Synthetic small molecules, constrained peptides, antibodies, and engineered complement regulators provide better-supported comparators, while an unbiased human-C5aR1 functional screen keeps the natural-product discovery route open.</p>
 <h3 id="92-indirect-urate-lowering-effect">9.2 Indirect urate-lowering effect<a class="headerlink" href="#92-indirect-urate-lowering-effect" title="Permanent link">&para;</a></h3>
 <p>A successful uricase intervention could reduce future complement activation by reducing the MSU crystal surface, but it does not directly inhibit CP0. Partial urate lowering may leave residual crystals, and existing deposits dissolve over a much slower timescale than complement activation during a flare.</p>
 <h3 id="93-portfolio-implication">9.3 Portfolio implication<a class="headerlink" href="#93-portfolio-implication" title="Permanent link">&para;</a></h3>
@@ -6939,10 +6932,9 @@ If priming signals are fully redundant → blocking CP0 yields minimal clinical 
 <li><strong>Ursolic acid</strong> (triterpenoid; broad anti-inflammatory; unknown at C5aR1)</li>
 <li><strong>Curcumin</strong> (known NF-κB inhibitor; C5aR1 unknown)</li>
 <li><strong>Resveratrol, pterostilbene</strong> (SIRT1 activators; C5aR1 unknown)</li>
-<li><strong>Berberine</strong> (isoquinoline alkaloid; known microbiome modulator; C5aR1 unknown)</li>
-<li><strong>Kojic acid</strong> (A. oryzae native; weakest prior expectation but relevant to platform)</li>
+<li><strong>Berberine</strong> (isoquinoline alkaloid; known microbiome modulator; C5aR1 unknown)
+Advance any reproducible hit only after concentration-response replication, orthogonal receptor attribution, counterscreens for cytotoxicity and assay interference, and an exposure assessment for the exact compound. A null plate would close only the tested compounds and assay conditions.</li>
 </ul>
-<p>Expected outcome: most will be negative or weak (low-μM at best). If any shows sub-μM C5aR1 antagonism, it is a significant finding and worth medicinal-chemistry follow-up on the koji-expressible scaffold. <strong>This is a concrete experiment</strong> — one 384-well plate, ~20 compounds, ~1 day of assay time.</p>
 <h3 id="97-combined-cp0-hypothesis-dietary-rosmarinic-acid-engineered-daf-scr1-4">9.7 Combined CP0 hypothesis — dietary rosmarinic acid + engineered DAF SCR1-4<a class="headerlink" href="#97-combined-cp0-hypothesis-dietary-rosmarinic-acid-engineered-daf-scr1-4" title="Permanent link">&para;</a></h3>
 <p>Two CP0 threads motivate a combined hypothesis:</p>
 <ul>
@@ -6998,7 +6990,7 @@ If priming signals are fully redundant → blocking CP0 yields minimal clinical 
 <hr />
 <h2 id="10-natural-product-modulators-what-the-literature-actually-shows">10. Natural-Product Modulators — What the Literature Actually Shows<a class="headerlink" href="#10-natural-product-modulators-what-the-literature-actually-shows" title="Permanent link">&para;</a></h2>
 <h3 id="101-chembl-survey-of-c5ar1-chembl2373">10.1 ChEMBL survey of C5aR1 (CHEMBL2373)<a class="headerlink" href="#101-chembl-survey-of-c5ar1-chembl2373" title="Permanent link">&para;</a></h3>
-<p>ChEMBL contains thousands of bioactivity records on human C5aR1 (CHEMBL2373) — the unfiltered activity API returned ~4,873 total records as of 2026-04-28 (<a href="https://www.ebi.ac.uk/chembl/api/data/activity.json?target_chembl_id=CHEMBL2373&amp;limit=1">direct query</a>), refreshed under the <a href="../validation-experiments/#121-natural-product-c5ar1-antagonist-screening-computational-pass-closes-the-cp0-fermentable-coverage-question">§1.21 computational scan</a>. The exact count is filter-dependent — distinct-compound counts, pChEMBL cutoffs, and target-relationship filters all yield substantially smaller numbers, so an earlier 506 figure cited here was likely a filtered subset rather than total records. The qualitative claim that follows holds independent of the exact number. The potent-compound tail (pChEMBL ≥ 6) is dominated by <strong>synthetic peptides</strong> (cyclic hexapeptides in the PMX-53 / PMX-205 / C5a C-terminal mimic series, 1995-2006 BMCL/JMC papers) and <strong>avacopan-class allosteric small molecules</strong>. There are <strong>no natural products</strong> flagged <code>natural_product=1</code> in the top C5aR1 antagonist rank list. Sub-μM natural product antagonists of human C5aR1 are effectively unreported in the curated database — confirmed on a fresh April 2026 query plus NPASS / LOTUS / Open Targets cross-checks (see §1.21 result section).</p>
+<p>ChEMBL contains thousands of bioactivity records on human C5aR1 (CHEMBL2373) — the unfiltered activity API returned ~4,873 total records as of 2026-04-28 (<a href="https://www.ebi.ac.uk/chembl/api/data/activity.json?target_chembl_id=CHEMBL2373&amp;limit=1">direct query</a>), recorded under the <a href="../validation-experiments/#121-natural-product-c5ar1-antagonist-screening--historical-computational-pass">§1.21 bounded computational scan</a>. The exact count is filter-dependent: distinct-compound counts, pChEMBL cutoffs, and target-relationship filters yield different totals. In that recorded query, the pChEMBL ≥ 6 tail was dominated by synthetic peptides and avacopan-class allosteric small molecules, and no entry in the inspected tail was flagged <code>natural_product=1</code>. NPASS, LOTUS, Open Targets, and the recorded literature queries also returned no qualifying direct natural-product hit. Those non-retrievals define the searched coverage; they do not establish biological absence outside it.</p>
 <h3 id="102-flavonoids-and-complement-the-weak-broad-literature">10.2 Flavonoids and complement — the weak, broad literature<a class="headerlink" href="#102-flavonoids-and-complement-the-weak-broad-literature" title="Permanent link">&para;</a></h3>
 <p>A broad literature (PubMed, ~73 articles on "complement inhibitor natural product flavonoid") reports weak complement-pathway inhibition (CH50 or AP50 suppression at 50-500 μM) for many polyphenols. Representative findings:</p>
 <ul>
@@ -7008,15 +7000,15 @@ If priming signals are fully redundant → blocking CP0 yields minimal clinical 
 <li><strong>Baicalein, baicalin</strong> (Chinese skullcap) — some C3 convertase inhibition reported</li>
 <li><strong>Curcumin</strong> — CH50 inhibition; mechanism unclear</li>
 </ul>
-<p>These are all 100-1000× weaker than synthetic C5aR1 antagonists (avacopan ~10 nM) and are broad-spectrum complement pathway modulators rather than specific C5a/C5aR1 drugs. At dietary doses they would not meaningfully plug CP0.</p>
+<p>These records use broad complement-pathway assays rather than direct C5aR1 function. Their materials, assay formats, and concentration regimes are not interchangeable with receptor-antagonist potency or dietary exposure. They remain source-qualified upstream-complement leads, not evidence of direct CP0 coverage.</p>
 <h3 id="103-omega-3-spm-indirect-effects">10.3 Omega-3 / SPM — indirect effects<a class="headerlink" href="#103-omega-3-spm-indirect-effects" title="Permanent link">&para;</a></h3>
 <p>EPA and DHA generate specialized pro-resolving mediators (RvE1, RvD1/D2, MaR1, PD1). These act via ALX/FPR2 and other receptors (see <a href="../spm-resolution-pathway/">spm-resolution-pathway.md</a>) — not directly at C5aR1. SPMs tilt the inflammatory phase toward resolution and partially suppress C5a-driven neutrophil chemotaxis by competing at the chemotactic level, but this is indirect and downstream. <strong>Not a CP0 therapy; a CP5b/CP6a resolver.</strong></p>
 <h3 id="104-vitamin-d">10.4 Vitamin D<a class="headerlink" href="#104-vitamin-d" title="Permanent link">&para;</a></h3>
-<p>VDR activation modestly suppresses complement component expression in some cell types, and vitamin D supplementation is associated with lower baseline CRP (which would reduce classical-pathway MSU activation per Wessig 2022). This is a <strong>weak, indirect</strong> effect — good for general health, irrelevant for acute CP0 blockade in a flare.</p>
+<p>VDR activation has been reported to change complement-component expression in some cell systems, and vitamin D studies report inflammatory-marker associations outside a direct C5aR1 assay. Whether either observation changes MSU-associated complement activation is unresolved; test it as an indirect pathway hypothesis, not as direct CP0 blockade.</p>
 <h3 id="105-traditional-medicine-candidates">10.5 Traditional medicine candidates<a class="headerlink" href="#105-traditional-medicine-candidates" title="Permanent link">&para;</a></h3>
-<p>Chinese medicine has multiple anti-gout herbal formulations (Baihu decoction, Simiao powder) without characterized complement mechanisms. Ayurvedic Boswellia / Tripterygium / Withania — no C5a-specific data. This is all hypothetical screening space.</p>
+<p>Traditional formulations and source materials may contain upstream-complement or C5aR1-relevant chemistry, but formula-level gout phenotypes do not identify the responsible compound or complement node. Exact materials require mechanism-matched fractionation or functional screening before target attribution.</p>
 <h3 id="106-honest-summary">10.6 Honest summary<a class="headerlink" href="#106-honest-summary" title="Permanent link">&para;</a></h3>
-<p><strong>Natural-product coverage of C5aR1 is weak to absent.</strong> The strongest C5aR1 antagonists are synthetic: avacopan (oral small molecule), PMX-53 (cyclic peptide, preclinical). Opening a natural-product screen against C5aR1 is a credible research move (§9.6) but should not be sold as "the plant medicine that replaces avacopan" — a pharma adjunct remains the honest stack position at CP0.</p>
+<p><strong>The present natural-product evidence does not establish direct C5aR1 antagonism.</strong> Avacopan and PMX-53 provide pharmacological comparators, not a reason to close other chemical space. The next useful move is the direct functional screen in §9.6, followed by exact-material, selectivity, exposure, and delivery gates for any hit.</p>
 <hr />
 <h2 id="11-clinical-biomarkers-measuring-cp0-in-a-real-patient">11. Clinical Biomarkers — Measuring CP0 in a Real Patient<a class="headerlink" href="#11-clinical-biomarkers-measuring-cp0-in-a-real-patient" title="Permanent link">&para;</a></h2>
 <h3 id="111-baseline-complement-panel-standard-availability">11.1 Baseline complement panel (standard availability)<a class="headerlink" href="#111-baseline-complement-panel-standard-availability" title="Permanent link">&para;</a></h3>

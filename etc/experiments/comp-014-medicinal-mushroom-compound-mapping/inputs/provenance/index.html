@@ -23,7 +23,7 @@
     
     
       
-        <title>comp-014 — Input Provenance - Open Enzyme</title>
+        <title>comp-014 — Input provenance - Open Enzyme</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              comp-014 — Input Provenance
+              comp-014 — Input provenance
             
           </span>
         </div>
@@ -1945,7 +1945,7 @@
     
   
   
-    <span class="md-status md-status--scope-page"></span>
+    <span class="md-status md-status--evidence-page"></span>
   
 
   
@@ -3836,7 +3836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../hypotheses/H06-medicinal-mushroom-complement-track/" class="md-nav__link">
+      <a href="../../../../../hypotheses/H06-medicinal-mushroom-complement-track.md" class="md-nav__link">
         
   
   
@@ -3849,13 +3849,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--Stub"></span>
-  
-
   
 
       </a>
@@ -4798,7 +4791,7 @@
     
   
   
-    <span class="md-status md-status--complete"></span>
+    <span class="md-status md-status--invalidated"></span>
   
 
   
@@ -4833,7 +4826,7 @@
     
   
   
-    <span class="md-status md-status--Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued"></span>
+    <span class="md-status md-status--partial-lead-inventory"></span>
   
 
   
@@ -5333,18 +5326,18 @@
   
 
 
-<h1 id="comp-014-input-provenance">comp-014 — Input Provenance<a class="headerlink" href="#comp-014-input-provenance" title="Permanent link">&para;</a></h1>
-<p><strong>Phase 1 (this commit) registers the experiment scope. No external database queries have been executed.</strong> Phase 2 will pull data; that pass will append per-source fetch dates, dump versions, and record counts to this file.</p>
+<h1 id="comp-014-input-provenance">comp-014 — Input provenance<a class="headerlink" href="#comp-014-input-provenance" title="Permanent link">&para;</a></h1>
+<p>The Phase 1 inputs register a bounded source and target scope. Later pulls and joins exist in the artifact, but the retained scope validator does not reproduce them. Their rows are retrieval leads, not current ranks or biological verdicts.</p>
 <h2 id="inputsdata-sourcesjson">inputs/data-sources.json<a class="headerlink" href="#inputsdata-sourcesjson" title="Permanent link">&para;</a></h2>
-<p>Hand-curated list of compound databases, bioactivity sources, and multilingual literature corpora planned for Phase 2-5. Each entry records URL, scope, access method, expected yield, and (where relevant) language and translation-protocol notes per <code>Open Enzyme/CLAUDE.md</code> §Translation protocol.</p>
+<p>Hand-curated list of compound databases, bioactivity sources, and multilingual literature corpora recorded for Phases 2–5. Each entry records URL, scope, access method, expected yield, and (where relevant) language and translation-protocol notes under the top-level <a href="../../../../../CLAUDE.md"><code>CLAUDE.md</code></a> translation protocol.</p>
 <p><strong>Source for the source list:</strong>
 - LOTUS, NPAtlas, COCONUT, MIBiG: known public natural-product databases, URLs from the database home pages
 - KNApSAcK, NPASS, TCMSP, TCMID, TCM Database@Taiwan, HIT, BATMAN-TCM: known East-Asian-hosted compound + target databases referenced in the natural products informatics literature; URLs are the maintainer-published canonical entry points
 - ChEMBL, PubChem BioAssay, SwissTargetPrediction, STITCH: standard bioactivity / target-prediction sources
-- CNKI, Wanfang, J-STAGE, CiNii, KISS, RISS: per <code>Open Enzyme/CLAUDE.md</code> global-multilingual-research rule, the canonical Chinese / Japanese / Korean primary-literature corpora</p>
-<p>No fetches executed in Phase 1 — the source list is documentation of intent, not yet retrieval.</p>
-<h2 id="inputscandidate-speciesjson">inputs/candidate-species.json<a class="headerlink" href="#inputscandidate-speciesjson" title="Permanent link">&para;</a></h2>
-<p>15 medicinal fungi selected by the criteria in the file (substantive characterized chemistry + human-use precedent + regulatory tractability). Sources for the candidate selection:
+- CNKI, Wanfang, J-STAGE, CiNii, KISS, RISS: regional Chinese, Japanese, and Korean literature corpora recorded under the project's multilingual-research rule</p>
+<p>No fetches were executed by the Phase 1 scope step. The source list documents the intended coverage; it is not proof that every source was successfully queried.</p>
+<h2 id="inputsphase-5-anchor-speciesjson">inputs/phase-5-anchor-species.json<a class="headerlink" href="#inputsphase-5-anchor-speciesjson" title="Permanent link">&para;</a></h2>
+<p>The file contains 18 historical anchor species used as retrieval and pipeline-coverage leads, not as a current candidate ranking. Sources recorded for that selection included:
 - TCM materia medica references (Ganoderma, Cordyceps, Wolfiporia, Polyporus, Tremella, Auricularia, Phellinus traditional indications)
 - Western medicinal-mushroom monographs (Hericium, Trametes, Inonotus, Grifola, Lentinula, Agaricus blazei, Pleurotus)
 - Industrial-fungus precedent (Aspergillus oryzae as Open Enzyme chassis; Aspergillus terreus as lovastatin-original)
@@ -5353,25 +5346,34 @@
 <p><strong>Excluded</strong> — three categories documented in the JSON: psychoactive (Schedule I), toxic (Amanita, Claviceps), and culinary-only (truffles).</p>
 <h2 id="inputschokepoint-targetsjson">inputs/chokepoint-targets.json<a class="headerlink" href="#inputschokepoint-targetsjson" title="Permanent link">&para;</a></h2>
 <p>Open Enzyme chokepoint targets to map fungal compounds against. Drawn directly from existing wiki pages:
-- <code>wiki/modality-chokepoint-matrix.md</code> — canonical chokepoint inventory (rows × columns)
-- <code>wiki/nlrp3-exploit-map.md</code> — NLRP3 sub-chokepoints (CP0–CP6)
-- <code>wiki/abcg2-modulators.md</code> — transporter biology (URAT1, GLUT9, ABCG2, OAT&#8531;)
-- <code>wiki/complement-c5a-gout.md</code> — CP0 complement layer (C5aR1, the platform-gap target)
-- <code>wiki/gout-pathophysiology.md</code> — XO, NLRP3, transporter axis
-- <code>wiki/spm-resolution-pathway.md</code>, <code>wiki/tnfsf14-gout-target.md</code> — Lp-PLA2 inflammation axis
-- <code>wiki/food-grade-hdaci-screen-computational.md</code> (comp-007) — HDAC6 axis
-- <code>wiki/supplements-stack.md</code> — Nrf2/KEAP1 axis</p>
+- <a href="../../../../../modality-chokepoint-matrix/"><code>modality-chokepoint-matrix.md</code></a> — chokepoint inventory
+- <a href="../../../../../nlrp3-exploit-map/"><code>nlrp3-exploit-map.md</code></a> — NLRP3 sub-chokepoints
+- <a href="../../../../../abcg2-modulators/"><code>abcg2-modulators.md</code></a> — transporter biology
+- <a href="../../../../../complement-c5a-gout/"><code>complement-c5a-gout.md</code></a> — complement layer
+- <a href="../../../../../gout-pathophysiology/"><code>gout-pathophysiology.md</code></a> — XO, NLRP3, and transporter context
+- <a href="../../../../../spm-resolution-pathway/"><code>spm-resolution-pathway.md</code></a> and <a href="../../../../../tnfsf14-gout-target/"><code>tnfsf14-gout-target.md</code></a> — Lp-PLA2 context
+- <a href="../../../../../food-grade-hdaci-screen-computational/"><code>food-grade-hdaci-screen-computational.md</code></a> — HDAC6 context
+- <a href="../../../../../supplements-stack/"><code>supplements-stack.md</code></a> — Nrf2/KEAP1 context</p>
 <p>UniProt accessions used as the join key. Each accession is the canonical human entry; rest.uniprot.org is whitelisted for Phase 2 verification queries if any accession is suspect.</p>
-<p><strong>One proposed addition</strong> — <code>_PROPOSED_redox_disulfide_modulators</code> — is flagged as not-yet-canonical. Phase 5 deliverable is a confirm/reject decision based on whether the breadth pass surfaces enough fungal-compound coverage to warrant a formal chokepoint addition. Rejection criteria documented in the JSON.</p>
+<p>The redox/disulfide entry is retained only as a historical lead container. It is not a proposed, admitted, preliminary, or rejected chokepoint. Any compound–target pair from that container requires primary-source rehydration and mechanism-matched testing.</p>
+<h2 id="raw-source-captures-left-unchanged">Raw source captures left unchanged<a class="headerlink" href="#raw-source-captures-left-unchanged" title="Permanent link">&para;</a></h2>
+<p>This cleanup does not modify source payloads under:</p>
+<ul>
+<li><code>outputs/_chembl_raw/*.json</code></li>
+<li><code>outputs/_lotus_raw/*.json</code></li>
+<li><code>outputs/_npatlas_raw/*.json</code></li>
+<li><code>outputs/_knapsack_raw/*.html</code></li>
+</ul>
+<p>It also leaves the historical identifier caches and target lookup intermediate unchanged. These files preserve retrieval provenance; derived summaries, ranks, and recommendations do not inherit authority from them.</p>
 <h2 id="what-phase-1-does-not-include">What Phase 1 does NOT include<a class="headerlink" href="#what-phase-1-does-not-include" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Actual compound records pulled from any database (Phase 2)</li>
 <li>Target-mapping output (Phase 3)</li>
-<li>Chokepoint intersection ranked candidate list (Phase 4)</li>
-<li>Multilingual primary-literature ingestion (Phase 5)</li>
-<li>Per-compound triage with comp-013-style methodology (Phase 6)</li>
+<li>Chokepoint-intersection rows suitable for current ranking (historical rank fields have no current decision authority)</li>
+<li>Complete multilingual primary-literature ingestion</li>
+<li>Per-compound viability ranking. The former comp-013-style Phase 6 method is retired; any successor must preserve effect polarity and require relevant exposure plus mechanism-matched function.</li>
 </ul>
-<p>Reason: this is a phase-gated multi-pass experiment with material data-volume and translation-cost implications. Brian reviews the scope first; Phase 2+ executes after sign-off.</p>
+<p>The sole retained execution step is <code>scripts/scope_validate.py</code>; no later phase has a current sign-off or runnable reproduction path in this artifact.</p>
 
 
 

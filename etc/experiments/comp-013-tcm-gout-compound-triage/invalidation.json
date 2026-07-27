@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "comp": "comp-013",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "e0419bb0125fe57e1e20200c411cb03825555ea8",
+  "last_push_review_manifest_sha256": "3f63abebcb11c04afa896fda9fe6f767e55ab4c269ceb87ab70a0bd941317bd7",
+  "retired_files": [
+    {
+      "path": "README.md",
+      "bytes": 7178,
+      "sha256": "2e9dfaebb068123b223fa5774856c6e42aba7a805cccb3e423a84eadd9b642fd"
+    },
+    {
+      "path": "inputs/bioactivity_data.json",
+      "bytes": 15526,
+      "sha256": "4632d6e54126b3a889d40900f200c96349528b73f972c4cd6054a50e438cd896"
+    },
+    {
+      "path": "inputs/compounds.json",
+      "bytes": 12934,
+      "sha256": "1ed34479ade3d3eaa63c346eea228b4a4168b13855ae4fe5918f0a0a623ac39c"
+    },
+    {
+      "path": "inputs/gut_model.json",
+      "bytes": 1002,
+      "sha256": "01935ff121e951a6a3bcfd08954f536d1d6ae831cae4b682ec969a957fe96226"
+    },
+    {
+      "path": "inputs/targets.json",
+      "bytes": 3047,
+      "sha256": "e4080da18602a7f329b3daaeab888a7466b4bd18b95efe0ef7c3c6cf78949dfa"
+    },
+    {
+      "path": "outputs/per_compound_table.csv",
+      "bytes": 3209,
+      "sha256": "922105dc01b22943bcd9775c7069a6c2739784350e7f951b9e681bb7567b5a1b"
+    },
+    {
+      "path": "outputs/summary.md",
+      "bytes": 16933,
+      "sha256": "2c40532b7ca8b5c92ea00b4a2d3aa87696d7ea3da634c456ac973719eb8b78fc"
+    },
+    {
+      "path": "outputs/triage.json",
+      "bytes": 21743,
+      "sha256": "205ad8cd6d0f69085faae2984a8398bf0e17e72e298ed89699ade7a0b2fd52fa"
+    },
+    {
+      "path": "scripts/analyze.py",
+      "bytes": 27930,
+      "sha256": "adfa83f6d09a431c6eb4210da08b8f5adada526b3c542d6964fb9eb9ea24404b"
+    }
+  ],
+  "invalidated_scope": [
+    "the rank order, composite scores, confidence tiers, and GUT-LUMINAL VIABLE, MODERATE, or MECHANISM UNCLEAR verdicts",
+    "nominal gut-lumen and plasma concentrations, occupancy ratios, Hill-equation percent inhibition, and VERY_HIGH, HIGH, MODERATE, or LOW risk labels",
+    "dose, bioavailability, solubility, achievable-exposure, formulation, safety, or clinical direction inferred by the retired model",
+    "reuse of COMP-004 or COMP-007 quantitative frameworks as evidence of TCM compound viability",
+    "formula-level quantitative clinical claims and single-component mechanism attributions not independently adjudicated within this COMP"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_historical_inventory_and_research_conjecture",
+    "statements": [
+      "The nine named compounds and their source materials remain an unranked historical lead inventory for primary-source re-review.",
+      "Si Miao San and other traditional formula connections remain research leads; formula-level signals do not establish component attribution.",
+      "Sparse database coverage is a search limitation, not evidence that an unrepresented compound is biologically inactive."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/tcm-gout-compound-triage-computational.md",
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "d55755f0b2137298162b094f9ec8ebd91771c56e18fa9d696b667814f441aeda"
+  }
+}

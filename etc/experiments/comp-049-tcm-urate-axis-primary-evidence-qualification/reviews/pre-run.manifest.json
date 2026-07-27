@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/README.md",
+      "kind": "design",
+      "bytes": 9604,
+      "sha256": "86a0f1b7420d91c318aa2563567a75621f74364b0e3449a9a40a2d99dfdcfa4f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/analyze.py",
+      "kind": "design",
+      "bytes": 42553,
+      "sha256": "d2ad7fc66b081ffc2821fa9deff982a7df09443aa0655e875b0a896771224847"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/inputs/evidence_records.json",
+      "kind": "design",
+      "bytes": 21193,
+      "sha256": "6c73f9c1425dd6fce196327cff37dc691d01d478da24b909a3f0997483ac468d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 5601,
+      "sha256": "15064a51ad722b47fd46b363e978498d011188f88390aae939c4931de5382a11"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/test_validation.py",
+      "kind": "design",
+      "bytes": 3081,
+      "sha256": "27c57e49a68e45200da8b9ea0a1d97a44bf362d6dc113067f38d7661fa7c37b1"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "51e49596906e05b820eb9b55f95a2cfedc5b1ca31d221284811a51fbff2a67c9"
+}

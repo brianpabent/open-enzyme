@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-6-triage/">
+        <link rel="canonical" href="https://brianpabent.github.io/open-enzyme/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/reviews/post-run/">
       
       
       
@@ -23,7 +23,7 @@
     
     
       
-        <title>Phase 6 — Triage of Phase 5-Surviving Leads - Open Enzyme</title>
+        <title>Independent comp review — comp-014 - Open Enzyme</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#phase-6-triage-of-phase-5-surviving-leads" class="md-skip">
+        <a href="#independent-comp-review-comp-014" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Phase 6 — Triage of Phase 5-Surviving Leads
+              Independent comp review — comp-014
             
           </span>
         </div>
@@ -1945,7 +1945,7 @@
     
   
   
-    <span class="md-status md-status--scope-page"></span>
+    <span class="md-status md-status--evidence-page"></span>
   
 
   
@@ -3836,7 +3836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../hypotheses/H06-medicinal-mushroom-complement-track/" class="md-nav__link">
+      <a href="../../../../../hypotheses/H06-medicinal-mushroom-complement-track.md" class="md-nav__link">
         
   
   
@@ -3849,13 +3849,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--Stub"></span>
-  
-
   
 
       </a>
@@ -4798,7 +4791,7 @@
     
   
   
-    <span class="md-status md-status--complete"></span>
+    <span class="md-status md-status--invalidated"></span>
   
 
   
@@ -4833,7 +4826,7 @@
     
   
   
-    <span class="md-status md-status--Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued"></span>
+    <span class="md-status md-status--partial-lead-inventory"></span>
   
 
   
@@ -5333,164 +5326,346 @@
   
 
 
-<h1 id="phase-6-triage-of-phase-5-surviving-leads">Phase 6 — Triage of Phase 5-Surviving Leads<a class="headerlink" href="#phase-6-triage-of-phase-5-surviving-leads" title="Permanent link">&para;</a></h1>
-<p><strong>Date:</strong> 2026-05-06
-<strong>Method:</strong> comp-013-style production-route + dose-feasibility + chokepoint-occupancy assessment, adapted for non-small-molecule compound classes.</p>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<h1 id="independent-comp-review-comp-014">Independent comp review — comp-014<a class="headerlink" href="#independent-comp-review-comp-014" title="Permanent link">&para;</a></h1>
+<h2 id="reviewed-snapshot">Reviewed snapshot<a class="headerlink" href="#reviewed-snapshot" title="Permanent link">&para;</a></h2>
+<p>Independent legacy post-only Gate-2 review of the exact 173-entry manifest:</p>
 <ul>
-<li><strong>PURSUE (koji-track / chemical-synthesis):</strong> DAE, cordycepin</li>
-<li><strong>PURSUE in Phase 7 (medicinal-mushroom cultivation track):</strong> GLPP</li>
-<li><strong>DEFER (Phase 5b prerequisites):</strong> AMC-BFE, FZ-Poria</li>
-<li><strong>DROP:</strong> lovastatin</li>
+<li>8 design files</li>
+<li>148 generated outputs</li>
+<li>17 proposed updates</li>
+<li>435,198,594 bound bytes</li>
 </ul>
-<h2 id="dae-methyl-24-dihydroxybenzoate-dae">DAE — methyl 2,4-dihydroxybenzoate (DAE)<a class="headerlink" href="#dae-methyl-24-dihydroxybenzoate-dae" title="Permanent link">&para;</a></h2>
-<p><strong>Class:</strong> small molecule (phenolic ester)
-<strong>MW:</strong> 168.15 g/mol
-<strong>Source:</strong> Ganoderma applanatum (computational attribution; commercial reagent in PMID 35750011)
-<strong>Chokepoints:</strong> XO, URAT1 (expression-level)</p>
-<p><strong>Verdict: PURSUE</strong></p>
-<p><em>Rationale:</em> Defined small molecule with verified mouse dose-response. Human equivalent dose (~455 mg/day at top mouse dose) is supplement-grade and feasible. Chemical synthesis is the right production route — heterologous expression in koji is not warranted for a simple methyl ester. Wet-lab gate is straightforward.</p>
-<p><strong>Dosing math:</strong> Mouse top dose → human equivalent ≈ 6.5 mg/kg → ~455 mg/day for a 70 kg person.</p>
-<p><strong>Production routes:</strong></p>
+<p>Every file was read byte-for-byte. Recorded byte counts and SHA-256 hashes matched. All 120 JSON files parsed, all 53 text files decoded, and the sole Python file parsed successfully. The manifest’s canonical payload digest and current snapshot check both resolve to the reviewed digest above.</p>
+<h2 id="bottom-line-verdict">Bottom-line verdict<a class="headerlink" href="#bottom-line-verdict" title="Permanent link">&para;</a></h2>
+<p>COMP-014 is now honestly bounded as a partial retrieval inventory. It no longer supports candidate rankings, feasibility verdicts, dose or exposure conclusions, production or chassis decisions, universal absence claims, or the retired Phase-6 <code>PURSUE</code>/<code>DROP</code> logic.</p>
+<p>The useful scientific leads remain available for primary-source rehydration. Historical outputs are visibly quarantined, raw captures remain unchanged, the sole live validator is deterministic, downstream pages preserve the corrected evidence boundary, and H06’s useful idea survives as a properly labeled exact-material Research Conjecture.</p>
+<p>No remaining correction is required for this snapshot.</p>
+<h2 id="implementation-and-constraint-closure">Implementation and constraint closure<a class="headerlink" href="#implementation-and-constraint-closure" title="Permanent link">&para;</a></h2>
+<p>The surviving implementation is limited to <code>scripts/scope_validate.py</code>. It validates the retained Phase-1 input structure and regenerates <code>outputs/scope-summary.md</code>; it does not claim to reproduce the historical database pulls, joins, rankings, or retired feasibility triage.</p>
+<p>Two independent executions produced identical output:</p>
 <ul>
-<li>chemical synthesis ⭐ — trivial (Fischer esterification of 2,4-dihydroxybenzoic acid + methanol); cost: &lt;$1/g at 100g scale</li>
-<li>commercial purchase — available (Sigma, Combi-Blocks); cost: ~$50/g pharma grade</li>
-<li>extraction from G. applanatum — low — natural abundance not validated; Model B flagged this gap; cost: high</li>
-<li>heterologous expression in koji — not warranted — small phenolic, synthesis is much easier than engineering BGC; cost: n/a</li>
+<li>18 historical anchor species</li>
+<li>19 rendered historical target entries</li>
+<li>output SHA-256 <code>f6e2cf580ea16084a0cf5e5c3f744fecf02a1e435b4962ffb2fb5cdbf889051f</code></li>
 </ul>
-<p><strong>Wet-lab gate:</strong></p>
+<p>The validator correctly renders both object-valued and alias/string-valued bioactivity-source entries. All six recorded bioactivity-source entries appear in the summary.</p>
+<p>The retired Phase-6 script and outputs are absent. The retired LOTUS aggregation, target-mapping, and other legacy executable scripts are also absent. <code>scope_validate.py</code> is the only executable retained in the COMP directory.</p>
+<p>All raw captures and historical caches match <code>HEAD</code> byte-for-byte. The correction changes their authority, not their contents.</p>
+<p>Repository checks pass:</p>
 <ul>
-<li>Synthesize or purchase 100g methyl 2,4-dihydroxybenzoate (≥99% purity, HPLC)</li>
-<li>PO+HX mouse HUA model, dose-response 20/40/80 mg/kg PO daily x 14d, n=8/group</li>
-<li>Primary endpoint: SUA reduction at d14</li>
-<li>Mechanism: liver XO activity + renal URAT1 mRNA/protein at endpoint</li>
-<li>Safety: ALT/AST, BUN/Cr, body weight, liver/kidney histology</li>
-<li><strong>Critical</strong>: confirm SUA does not over-correct below normal mouse SUA (~88 µmol/L) — Phase 5 flagged 134 is sub-normal-control</li>
+<li>relative links</li>
+<li>privacy gradient</li>
+<li>corpus hygiene</li>
+<li>validation-dashboard consistency</li>
+<li>exact manifest verification</li>
 </ul>
-<p><strong>Phase 5b verifications outstanding:</strong></p>
+<h2 id="summary-fidelity-audit">Summary-fidelity audit<a class="headerlink" href="#summary-fidelity-audit" title="Permanent link">&para;</a></h2>
+<p>The live README and regenerated scope summary agree:</p>
 <ul>
-<li>Full PDF of PMID 35750011 (~$30) — verify XOD IC50, kinetic constants, inhibition type</li>
-<li>CNKI dive on Yong/Liang group's TCM diuresis literature (per Model A recommendation)</li>
-<li>Confirm DAE natural abundance in G. applanatum (Model B flag)</li>
+<li>the artifact is a partial lead inventory;</li>
+<li>database absence is only a bounded non-retrieval;</li>
+<li>historical rank and priority fields have no decision authority;</li>
+<li>plant-origin compounds are not reclassified as fungal products without direct evidence;</li>
+<li>binding, expression, prediction, and phenotype do not substitute for mechanism-matched function;</li>
+<li>each lead requires exact identity, provenance, polarity, substrate, compartment, exposure, direct function, and safety controls.</li>
 </ul>
-<hr />
-<h2 id="cordycepin-cordycepin-3-deoxyadenosine">cordycepin — cordycepin (3'-deoxyadenosine)<a class="headerlink" href="#cordycepin-cordycepin-3-deoxyadenosine" title="Permanent link">&para;</a></h2>
-<p><strong>Class:</strong> small molecule (nucleoside analog)
-<strong>MW:</strong> 251.24 g/mol
-<strong>Source:</strong> Cordyceps militaris (cultivated) — abundant; sparse in wild O. sinensis
-<strong>Chokepoints:</strong> URAT1</p>
-<p><strong>Verdict: PURSUE</strong></p>
-<p><em>Rationale:</em> Production route is commercial fermentation (mature) or home C. militaris cultivation (substrate-limited but feasible). Mechanism (URAT1 modulation) is in-vivo-validated. The BA caveat is the binding constraint — combination with ADA inhibitor (e.g., GLPP from G. lucidum?) could dramatically extend half-life. Adjacent to GLPP — the comp-014 GLPP+cordycepin combination is a real Phase 6 question.</p>
-<p><strong>Dosing math:</strong> Mouse top dose → human equivalent ≈ 2.0 mg/kg → ~142 mg/day for a 70 kg person.</p>
-<p><strong>BA caveat:</strong> Cordycepin has notoriously poor oral BA — rapidly deaminated to 3'-deoxyinosine by serum/intestinal ADA. Effective BA may be &lt;5% without prodrug or co-administration with ADA inhibitor.</p>
-<p><strong>Production routes:</strong></p>
+<p>The scope summary does not quietly restore rankings or Phase-6 authority. Its source counts describe the recorded historical inventory, not successful or comprehensive coverage.</p>
+<h2 id="reader-facing-ownership-audit">Reader-facing ownership audit<a class="headerlink" href="#reader-facing-ownership-audit" title="Permanent link">&para;</a></h2>
+<p>The medicinal-mushroom page now stands on its own evidence, sourcing, exposure, immune-direction, and falsification gates. It does not use koji as its narrative foil or treat a production chassis as the default filter.</p>
+<p>The computational interpretation page clearly separates:</p>
 <ul>
-<li>C. militaris liquid fermentation (commercial) ⭐ — well-established; commercial cordycepin available at $200-500/g pharma-grade; cost: ~$200-500/g</li>
-<li>Shih et al. published optimized fermentation conditions; this is the production-mature route</li>
-<li>C. militaris solid-state fermentation (home) — moderate — slower than liquid culture; brown rice substrate works; cost: low (substrate + spores)</li>
-<li>Home-grown Cordyceps fruiting body cordycepin content varies 0.5-5 mg/g dry weight</li>
-<li>chemical synthesis — possible but more complex than DAE (nucleoside chemistry); not cost-competitive with fermentation; cost: high</li>
-<li>heterologous expression in koji — not warranted — C. militaris fermentation is mature; cost: n/a</li>
+<li>surviving retrieval leads;</li>
+<li>invalid rankings and feasibility conclusions;</li>
+<li>lead-specific sourcing and delivery;</li>
+<li>the primary-source rehydration workflow.</li>
 </ul>
-<p><strong>Wet-lab gate:</strong></p>
+<p>Cross-track comparisons remain on portfolio surfaces. ADA and PINK1 mechanism context is owned by gout pathophysiology, with independent primary sources rather than COMP-014 serving as evidence authority. C5aR1 non-retrieval is consistently framed as a bounded search gap across the complement, NLRP3, delivery-route, computational-experiment, and validation surfaces.</p>
+<p>Editorial Phase-&#8538;/7 narration and stale H06 references have been removed from active reader-facing prose where corrected by this snapshot.</p>
+<h2 id="conjecture-preservation-audit">Conjecture preservation audit<a class="headerlink" href="#conjecture-preservation-audit" title="Permanent link">&para;</a></h2>
+<p>The deleted H06 card is not silently lost. Its useful idea survives on the mechanism-owning page in the required Research Conjecture form:</p>
 <ul>
-<li>Source: commercial cordycepin (≥98% HPLC purity) for first wet-lab pass; Phase 7 home-cultivation comparison</li>
-<li>PO HUA mouse model, dose-response 6.25/12.5/25 mg/kg PO daily x 14d</li>
-<li>Primary endpoint: SUA reduction</li>
-<li>Mechanism arm: cordycepin alone vs cordycepin + ADA-inhibitor (pentostatin or GLPP)</li>
-<li>Pharmacokinetics: cordycepin + 3'-deoxyinosine plasma levels at multiple timepoints</li>
-<li>Critical question: does ADA inhibition co-treatment extend cordycepin half-life enough to lower the daily dose?</li>
+<li>source-backed Animal Model premises;</li>
+<li>an explicit untested leap about exact-material reproducibility;</li>
+<li>the value of an engineerable, reproducible material;</li>
+<li>a discriminating observation using primary-record rehydration, qualified identity/exposure assays, and independent batches.</li>
 </ul>
-<p><strong>Phase 5b verifications outstanding:</strong></p>
-<ul>
-<li>PK studies with/without ADA inhibitor co-administration</li>
-<li>Verify cordycepin content in commercially available C. militaris fruiting bodies (literature varies 0.5-5 mg/g dry weight)</li>
-</ul>
-<p><strong>Synergy candidates:</strong>
-- GLPP (G. lucidum) — ADA inhibition could extend cordycepin half-life. Both are accessible via medicinal mushroom cultivation. This is the Phase 7 medicinal-mushroom-complement integration point.</p>
-<hr />
-<h2 id="glpp-glpp-ganoderma-lucidum-polysaccharide-peptide">GLPP — GLPP (Ganoderma lucidum polysaccharide-peptide)<a class="headerlink" href="#glpp-glpp-ganoderma-lucidum-polysaccharide-peptide" title="Permanent link">&para;</a></h2>
-<p><strong>Class:</strong> polysaccharide-peptide hybrid (~520 kDa; glycopeptide vs proteoglycan distinction unresolved per Model B)
-<strong>MW:</strong> 520000 Da
-<strong>Source:</strong> Ganoderma lucidum mycelium (Juncao substrate, per Yang lab)
-<strong>Chokepoints:</strong> ADA, GLUT9, OAT1, (Keap1/Nrf2 in sister paper PMC11351902)</p>
-<p><strong>Verdict: PURSUE in Phase 7 (cultivation track, not koji-engineering)</strong></p>
-<p><em>Rationale:</em> Polysaccharide-peptide is fundamentally not a koji-engineering target — it's a fermentation product of G. lucidum mycelium. This is exactly the Phase 7 medicinal-mushroom-complement strategy use case. Native cultivation route is mature; the binding question is <strong>strain selection + extraction protocol standardization</strong> rather than genetic engineering. Polysaccharides have ~0% systemic bioavailability — they work via gut signaling (immune modulation, microbiome), not direct ADA binding. The 'ADA inhibition' mechanism is likely indirect via gut-associated lymphoid tissue.</p>
-<p><strong>Dosing math:</strong> Mouse top dose → human equivalent ≈ 32.5 mg/kg → ~2276 mg/day for a 70 kg person.</p>
-<p><strong>Production routes:</strong></p>
-<ul>
-<li>G. lucidum mycelium liquid fermentation ⭐ — well-established commercial process; multiple manufacturers; cost: ~$1-5/g extract grade</li>
-<li>Phase 7 territory — native cultivation track, not koji-engineering track</li>
-<li>G. lucidum solid-state fermentation (home) — moderate — Reishi mushroom kits available consumer-grade; fruiting body extraction yields lower polysaccharide than mycelium; cost: low ($10-30 grow kit)</li>
-<li>G. lucidum fruiting body extraction (commercial supplement) — ubiquitous; quality varies wildly; 'GLPP' specifically requires defined extraction protocol; cost: consumer supplements $0.50-2/g but uncharacterized</li>
-<li>heterologous expression in koji — infeasible — polysaccharide-peptide is biosynthesis product, not single gene; mycelium-specific glycosylation machinery; cost: n/a</li>
-</ul>
-<p><strong>Wet-lab gate (Phase 7 cultivation track):</strong></p>
-<ul>
-<li>Strain selection: compare 3-5 commercial G. lucidum strains for GLPP yield + composition</li>
-<li>Cultivation method comparison: liquid fermentation (defined media) vs Juncao substrate vs other solid-state</li>
-<li>Extraction protocol: hot water &gt; ethanol precipitation &gt; Sephacryl S-500 chromatography (per Yang lab method)</li>
-<li>Characterization: MW (SEC-MALS), peptide composition (amino acid analysis), glycan linkage (NMR)</li>
-<li>Mechanism question: is ADA inhibition direct or indirect? Test purified GLPP fraction vs intestinal lysate ADA in vitro</li>
-<li>Mouse HUA model verification: 200/400 mg/kg PO daily, replicate 40.6% UA reduction claim</li>
-</ul>
-<p><strong>Phase 5b verifications outstanding:</strong></p>
-<ul>
-<li>Full PDF of PMID 36385640 (Food &amp; Function paywalled)</li>
-<li>Sister paper PMC11351902 review for Keap1/Nrf2 mechanism evidence</li>
-<li>Resolve glycopeptide vs proteoglycan distinction (Model B flag) — affects pharmacology framing</li>
-</ul>
-<p><strong>Synergy candidates:</strong>
-- cordycepin — GLPP's ADA inhibition could extend cordycepin's notoriously short half-life. Both are home-cultivable medicinal mushrooms. Phase 7 medicinal-mushroom-complement integration.</p>
-<hr />
-<h2 id="amc-bfe-amc-bfe-cordyceps-militaris-astragalus-membranaceus-solid-state-fermentation-extract">AMC-BFE — AMC-BFE (Cordyceps militaris × Astragalus membranaceus solid-state fermentation extract)<a class="headerlink" href="#amc-bfe-amc-bfe-cordyceps-militaris-astragalus-membranaceus-solid-state-fermentation-extract" title="Permanent link">&para;</a></h2>
-<p><strong>Class:</strong> whole extract — active components NOT identified
-<strong>Source:</strong> Cordyceps militaris co-fermented with Astragalus
-<strong>Chokepoints:</strong> URAT1, GLUT9, (hepatic) ABCG2, PPARα downstream</p>
-<p><strong>Verdict: DEFER — full PDF retrieval required before triage</strong></p>
-<p><em>Rationale:</em> Phase 5 deep-read flagged that authors explicitly hedge 'contribution of individual metabolites requires further investigation.' Whole-extract evidence cannot be triaged with comp-013 IC50-occupancy methodology — there's no defined active compound to model. Phase 6 cannot complete this triage without (a) full PDF + (b) compound-fractionation work.</p>
-<p><strong>Production routes:</strong></p>
-<ul>
-<li>solid-state co-fermentation (academic protocol) — documented in analog studies (Zhao 2025 PMC12805540); reproducibility uncertain without full PDF; cost: moderate — substrate + dual-strain inoculum</li>
-</ul>
-<p><strong>Wet-lab gate:</strong></p>
-<p>BLOCKED on Phase 5b: retrieve full PDF, attempt compound fractionation, then re-triage. Estimated $30 + 4-6 weeks fractionation → re-enter Phase 6.</p>
-<hr />
-<h2 id="lovastatin-lovastatin-mevinolin">lovastatin — lovastatin (mevinolin)<a class="headerlink" href="#lovastatin-lovastatin-mevinolin" title="Permanent link">&para;</a></h2>
-<p><strong>Class:</strong> small molecule (HMG-CoA reductase inhibitor, statin class)
-<strong>MW:</strong> 404.54 g/mol
-<strong>Source:</strong> Aspergillus terreus (industrial), Pleurotus ostreatus (native producer)
-<strong>Chokepoints:</strong> HDAC6 (in vitro 16.3 µM), PPARγ (functional 1 µM, Kd ~110 µM)</p>
-<p><strong>Verdict: DROP</strong></p>
-<p><em>Rationale:</em> In vitro HDAC6 + PPARγ IC50s are ~100-1000× higher than clinical lovastatin Cmax. The chokepoint hits are pharmacologically irrelevant at clinical doses. Lovastatin's gout-axis relevance, IF any, is via hepatic HMG-CoA reductase inhibition reducing isoprenoid synthesis (NLRP3-priming-adjacent), NOT via the ChEMBL HDAC6/PPARγ off-targets. Statins are already a commercial drug class — Open Enzyme has nothing to add by re-engineering them.</p>
-<p><strong>Clinical exposure at standard dose:</strong> Lovastatin 20-80 mg/day → systemic Cmax ~50-200 nM
-<strong>In vitro chokepoint IC50:</strong> HDAC6 16.3 µM; PPARγ Kd ~110 µM
-<strong>Occupancy at clinical exposure:</strong> &lt;0.5% at HDAC6; &lt;0.1% at PPARγ</p>
-<p><strong>Wet-lab gate:</strong></p>
-<p>Not applicable — DROPPED for chokepoint occupancy reasons. The Pleurotus-as-native-lovastatin-producer thesis remains valid but for HMG-CoA-reductase pathway, not the comp-014 chokepoint set.</p>
-<hr />
-<h2 id="fz-poria-wolfiporia-cocos-poria-cocos-in-fz-multi-herb-formula">FZ-Poria — Wolfiporia cocos (Poria cocos) in FZ multi-herb formula<a class="headerlink" href="#fz-poria-wolfiporia-cocos-poria-cocos-in-fz-multi-herb-formula" title="Permanent link">&para;</a></h2>
-<p><strong>Class:</strong> multi-herb formula component (Poria + Pinellia + Cinnamomum + Achyranthes + Atractylodes)
-<strong>Source:</strong> Wolfiporia cocos sclerotium (TCM 茯苓)
-<strong>Chokepoints:</strong> ABCG2, GLUT9, OAT1, NLRP3/ASC</p>
-<p><strong>Verdict: DEFER — needs single-component Poria study before advancing</strong></p>
-<p><em>Rationale:</em> FZ formula contains 5+ herbs. The chokepoint-modulation is real for the formula but unattributable to Poria specifically. A standalone Poria study would be needed to triage. CNKI likely has single-component Poria pharmacology papers (Wolfiporia is heavily studied in TCM); a Phase 5b CNKI dive could resolve this.</p>
-<hr />
-<h2 id="synergy-pairs">Synergy pairs<a class="headerlink" href="#synergy-pairs" title="Permanent link">&para;</a></h2>
-<h3 id="glpp-cordycepin">GLPP + cordycepin<a class="headerlink" href="#glpp-cordycepin" title="Permanent link">&para;</a></h3>
-<p>GLPP's ADA inhibition could extend cordycepin's notoriously short half-life (cordycepin is rapidly deaminated to 3'-deoxyinosine by serum/intestinal ADA). Both are accessible via medicinal mushroom cultivation (G. lucidum + C. militaris). This is the cleanest Phase 7 medicinal-mushroom-complement integration point — two home-cultivable organisms producing complementary compounds.</p>
-<p><strong>Wet-lab question:</strong> Does combined GLPP + cordycepin co-administration achieve URAT1 modulation at lower individual doses than either alone, with acceptable PK/PD?</p>
-<hr />
-<h2 id="phase-7-handoff">Phase 7 handoff<a class="headerlink" href="#phase-7-handoff" title="Permanent link">&para;</a></h2>
-<p><strong>Compounds routed to cultivation track:</strong> GLPP (G. lucidum), cordycepin (C. militaris), ergothioneine (Pleurotus ostreatus, koji A. oryzae) — comp-014 anchor species</p>
-<p><strong>Compounds staying with koji engineering track:</strong> DAE (chemical synthesis preferred; not engineering candidate), DAF SCR1-4 / uricase / lactoferrin (existing koji engineering thesis, not comp-014 derived)</p>
-<p><strong>Platform thesis expansion:</strong> Engineering chassis (koji) + native-compound complement (medicinal mushrooms) = expanded Open Enzyme platform. Phase 7 scope page formalizes the parallel track.</p>
+<p>No direct evidence is claimed for the leap, and no material is prematurely selected. <code>open-questions.md</code> links to the owning conjecture rather than duplicating it.</p>
+<h2 id="generated-output-and-proposed-update-inventory">Generated-output and proposed-update inventory<a class="headerlink" href="#generated-output-and-proposed-update-inventory" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Manifest entries</th>
+<th>Kind</th>
+<th>Review result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.gitignore</code>, <code>README.md</code>, four input files, <code>inputs/provenance.md</code>, <code>scripts/scope_validate.py</code> — 8 files</td>
+<td>Design</td>
+<td>Exact, internally consistent</td>
+</tr>
+<tr>
+<td><code>_chembl_molecule_inchikey_cache.json</code>, <code>_chokepoint_chembl_targets.json</code>, <code>_knapsack_inchikey_cache.json</code> — 3 files</td>
+<td>Historical cache/intermediate</td>
+<td>Unchanged, non-authoritative</td>
+</tr>
+<tr>
+<td><code>_chembl_raw/*.json</code> — 28 files</td>
+<td>Raw capture</td>
+<td>Unchanged, parsed</td>
+</tr>
+<tr>
+<td><code>_knapsack_raw/*.html</code> — 12 files</td>
+<td>Raw capture</td>
+<td>Unchanged, decoded</td>
+</tr>
+<tr>
+<td><code>_lotus_raw/*.json</code> — 56 files</td>
+<td>Raw capture</td>
+<td>Unchanged, parsed</td>
+</tr>
+<tr>
+<td><code>_npatlas_raw/*.json</code> — 20 files</td>
+<td>Raw capture</td>
+<td>Unchanged, parsed</td>
+</tr>
+<tr>
+<td>Nine top-level derived Phase-&#8532;/4 JSON files</td>
+<td>Historical derived output</td>
+<td>All carry <code>historical_snapshot</code>, <code>non_authoritative</code>, <code>lead_only</code>, and <code>_authority_note</code></td>
+</tr>
+<tr>
+<td><code>PHASE-2-FINDINGS.md</code>, <code>PHASE-5-FINDINGS.md</code>, Phase-&#8532;/4 summaries, five Phase-5 deep reads, DeepSeek cross-check, and four Phase-7 files — 19 files</td>
+<td>Historical narrative output</td>
+<td>Exact non-authoritative banner present</td>
+</tr>
+<tr>
+<td><code>outputs/scope-summary.md</code></td>
+<td>Live generated output</td>
+<td>Deterministic and faithful</td>
+</tr>
+<tr>
+<td><code>index.md</code></td>
+<td>Proposed update</td>
+<td>Mission/portfolio framing correct</td>
+</tr>
+<tr>
+<td><code>operations/todos.md</code></td>
+<td>Proposed update</td>
+<td>Queue state consistent</td>
+</tr>
+<tr>
+<td><code>wiki/complement-c5a-gout.md</code></td>
+<td>Proposed update</td>
+<td>C5aR1 absence claim bounded</td>
+</tr>
+<tr>
+<td><code>wiki/computational-experiments.md</code></td>
+<td>Proposed update</td>
+<td>COMP verdict faithful</td>
+</tr>
+<tr>
+<td><code>wiki/cross-validation.md</code></td>
+<td>Proposed update</td>
+<td>Real-claim rule and portfolio semantics restored</td>
+</tr>
+<tr>
+<td><code>wiki/etc/manual-literature-mining.md</code></td>
+<td>Proposed update</td>
+<td>Evidence workflow consistent</td>
+</tr>
+<tr>
+<td><code>wiki/gout-genetic-variants.md</code></td>
+<td>Proposed update</td>
+<td>Evidence tiers and GLUT9/ADA boundaries corrected</td>
+</tr>
+<tr>
+<td><code>wiki/gout-kill-chain-delivery-routes.md</code></td>
+<td>Proposed update</td>
+<td>Search gap does not select a route</td>
+</tr>
+<tr>
+<td><code>wiki/gout-pathophysiology.md</code></td>
+<td>Proposed update</td>
+<td>ADA/PINK1 independently anchored</td>
+</tr>
+<tr>
+<td><code>wiki/hypotheses/README.md</code></td>
+<td>Proposed update</td>
+<td>H06 removal correctly reflected</td>
+</tr>
+<tr>
+<td><code>wiki/medicinal-mushroom-complement-track.md</code></td>
+<td>Proposed update</td>
+<td>Correct evidence owner; conjecture preserved</td>
+</tr>
+<tr>
+<td><code>wiki/medicinal-mushroom-compound-mapping-computational.md</code></td>
+<td>Proposed update</td>
+<td>Partial-inventory authority boundary clear</td>
+</tr>
+<tr>
+<td><code>wiki/medicinal-mushroom-extract-sops.md</code></td>
+<td>Proposed update</td>
+<td>Draft methods and reagent identities corrected</td>
+</tr>
+<tr>
+<td><code>wiki/modality-chokepoint-matrix.md</code></td>
+<td>Proposed update</td>
+<td>Portfolio comparison correctly located</td>
+</tr>
+<tr>
+<td><code>wiki/nlrp3-exploit-map.md</code></td>
+<td>Proposed update</td>
+<td>Fungal non-retrieval bounded</td>
+</tr>
+<tr>
+<td><code>wiki/open-questions.md</code></td>
+<td>Proposed update</td>
+<td>Current method/conjecture descriptions accurate</td>
+</tr>
+<tr>
+<td><code>wiki/validation-experiments.md</code></td>
+<td>Proposed update</td>
+<td>§1.21 and mushroom-related experiments bounded</td>
+</tr>
+</tbody>
+</table>
+<h2 id="load-bearing-verification-table">Load-bearing verification table<a class="headerlink" href="#load-bearing-verification-table" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Claim or boundary</th>
+<th>Verification</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manifest binds current files</td>
+<td>Canonical digest plus all file hashes and sizes checked</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Raw retrieval payloads were preserved</td>
+<td>All raw/cache paths compared with <code>HEAD</code></td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Validator is deterministic</td>
+<td>Two runs, identical output hash</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Historical Markdown is quarantined</td>
+<td>19/19 narrative files carry the exact warning banner</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Historical derived JSON is quarantined</td>
+<td>9/9 top-level derived JSON files carry all authority flags</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Phase-6 ranking remains executable</td>
+<td>Script and outputs absent</td>
+<td>Pass: retired</td>
+</tr>
+<tr>
+<td>Historical safety filter can authorize inclusion</td>
+<td>Explicitly non-authoritative and unused except structural presence</td>
+<td>Pass: cannot authorize</td>
+</tr>
+<tr>
+<td>Trial registration or missing mycotoxin flag proves safety</td>
+<td>Explicitly rejected</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>C5aR1 search proves universal absence</td>
+<td>Rewritten as query-bound non-retrieval</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>§1.21 closes natural products as a class</td>
+<td>It closes only repetition of the recorded query unchanged</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Toxicarioside is rejected without source review</td>
+<td>Replaced by a primary-toxicology/selectivity/exposure gate</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>ADA and PINK1 depend on COMP-014 as evidence</td>
+<td>Independent primary sources now anchor the mechanism</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>ADA-SCID/xanthinuria are clinical trials</td>
+<td>Corrected to human observational/clinical phenotype and functional evidence</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Ergothioneine or lactoferrin concentrations are asserted chassis-achievable</td>
+<td>Replaced by source-qualified, analytically verified, pilot-set ranges</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Cordycepin reference identity</td>
+<td>Sigma C3394 verified</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Pentostatin reference identity</td>
+<td>Cayman 14878 verified; erroneous valinomycin ID removed</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Xiong 2024 composition figures</td>
+<td>Publisher record supports 35.86%, 27.05%, 0.21%, and 0.83% for the exact whole extract</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>H06 scientific idea was deleted</td>
+<td>Preserved as exact-shape owner-page conjecture</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>SOP-6 index still promises specific unvalidated color chemistry</td>
+<td>Updated to generic candidate assays requiring analytical validation</td>
+<td>Pass</td>
+</tr>
+</tbody>
+</table>
+<h2 id="affected-wiki-pages">Affected wiki pages<a class="headerlink" href="#affected-wiki-pages" title="Permanent link">&para;</a></h2>
+<p>The correction propagates through the medicinal-fungal evidence home, COMP interpretation, experiment registry, gout pathophysiology and genetics, NLRP3/complement maps, delivery analysis, portfolio matrix, hypothesis index, open questions, computational-experiment index, cross-validation page, and repository dashboard.</p>
+<p>The propagated message is consistent: COMP-014 can nominate records for primary review but cannot rank interventions or choose efficacy, dose, safety, sourcing, production, delivery, or chassis.</p>
+<h2 id="new-connections-or-implications">New connections or implications<a class="headerlink" href="#new-connections-or-implications" title="Permanent link">&para;</a></h2>
+<p>The cleanup leaves three productive research directions without overclaiming:</p>
+<ol>
+<li>An exact fungal material can be treated as an engineering object only after identity, composition, exposure, and independent-batch reproducibility are established.</li>
+<li>ADA remains interesting because purine-flux reduction and adenosine-mediated resolution may move together or oppose one another; both axes must be measured.</li>
+<li>A bounded C5aR1 database no-hit argues for a direct human-receptor functional screen, not abandonment of natural-product chemical space.</li>
+</ol>
+<p>These are research-generating connections, not COMP-014 results.</p>
+<h2 id="required-actions">Required actions<a class="headerlink" href="#required-actions" title="Permanent link">&para;</a></h2>
+<p>None.</p>
+<h2 id="review-limits">Review limits<a class="headerlink" href="#review-limits" title="Permanent link">&para;</a></h2>
+<p>This was an independent exact-snapshot review of the retained artifact, its authority boundaries, and all bound proposed updates. The historical 435 MB source corpus was parsed and integrity-checked, but the legacy database pulls were not rerun and every historical source claim was not independently re-retrieved. That limitation is now explicit in the artifact itself: historical rows are retrieval leads until primary-source rehydration.</p>
+<p>The only executable run was the retained structural scope validator; no retired result-bearing analysis was executed.</p>
+<p>ACTION_REQUIRED: no
+REVIEWED_SNAPSHOT: 3e3d58c1c8ec957fc3aa9b1108aa0b151553e9083bfeb159c18bc1bcf2b964ca</p>
 
 
 
 
 
 
+
+  
+  
 
 
 

@@ -1945,7 +1945,7 @@
     
   
   
-    <span class="md-status md-status--scope-page"></span>
+    <span class="md-status md-status--evidence-page"></span>
   
 
   
@@ -3836,7 +3836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hypotheses/H06-medicinal-mushroom-complement-track/" class="md-nav__link">
+      <a href="../../../hypotheses/H06-medicinal-mushroom-complement-track.md" class="md-nav__link">
         
   
   
@@ -3849,13 +3849,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--Stub"></span>
-  
-
   
 
       </a>
@@ -4798,7 +4791,7 @@
     
   
   
-    <span class="md-status md-status--complete"></span>
+    <span class="md-status md-status--invalidated"></span>
   
 
   
@@ -4833,7 +4826,7 @@
     
   
   
-    <span class="md-status md-status--Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued"></span>
+    <span class="md-status md-status--partial-lead-inventory"></span>
   
 
   
@@ -5351,7 +5344,7 @@
 <h2 id="pre-registered-method">Pre-registered method<a class="headerlink" href="#pre-registered-method" title="Permanent link">&para;</a></h2>
 <p><code>inputs/assay_evidence.json</code> contains one primary-source-bounded record for each compound. It is a bounded correction set, not a systematic or multilingual literature census. The code:</p>
 <ol>
-<li>validates the schema, exact compound set, controlled vocabularies, Boolean fields, substrates, and structured source identifiers;</li>
+<li>validates the schema, exact compound set, controlled vocabularies, Boolean fields, substrates, and nonempty source-metadata fields; it does not validate identifier syntax or source contents;</li>
 <li>assigns <code>DIRECT_INTESTINAL_URATE_FLUX_ASSAY_REQUIRED</code> when the cited record does not establish intestinal urate flux;</li>
 <li>assigns the contrary disposition <code>DIRECT_URATE_EVIDENCE_PRESENT_REVIEW_REQUIRED</code> if an updated record reports direct intestinal urate-flux evidence;</li>
 <li>emits explicit reasons and <code>quantitative_risk_rank_allowed: false</code>;</li>

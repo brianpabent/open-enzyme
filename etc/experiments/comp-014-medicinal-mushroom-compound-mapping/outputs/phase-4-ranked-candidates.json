@@ -1,4 +1,8 @@
 {
+  "historical_snapshot": true,
+  "non_authoritative": true,
+  "lead_only": true,
+  "_authority_note": "Retain rows and source identifiers only as retrieval leads. Rank, verdict, recommendation, dose/exposure, production, delivery, and chassis fields have no current authority.",
   "_meta": {
     "date": "2026-05-06",
     "phase": "4 (v2 — chokepoint key canonicalization, plant-origin filter expanded)",

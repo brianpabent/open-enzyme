@@ -1945,7 +1945,7 @@
     
   
   
-    <span class="md-status md-status--scope-page"></span>
+    <span class="md-status md-status--evidence-page"></span>
   
 
   
@@ -3836,7 +3836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../hypotheses/H06-medicinal-mushroom-complement-track/" class="md-nav__link">
+      <a href="../../../../../hypotheses/H06-medicinal-mushroom-complement-track.md" class="md-nav__link">
         
   
   
@@ -3849,13 +3849,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--Stub"></span>
-  
-
   
 
       </a>
@@ -4798,7 +4791,7 @@
     
   
   
-    <span class="md-status md-status--complete"></span>
+    <span class="md-status md-status--invalidated"></span>
   
 
   
@@ -4833,7 +4826,7 @@
     
   
   
-    <span class="md-status md-status--Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued"></span>
+    <span class="md-status md-status--partial-lead-inventory"></span>
   
 
   
@@ -5334,29 +5327,66 @@
 
 
 <h1 id="adversarial-pre-run-review-comp-004">Adversarial pre-run review — comp-004<a class="headerlink" href="#adversarial-pre-run-review-comp-004" title="Permanent link">&para;</a></h1>
-<ul>
-<li>Reviewer: <code>/root/comp004_pre_review_v5</code> (fresh, context-isolated)</li>
-<li>Method: static, read-only inspection; no result-bearing logic was executed.</li>
-<li>Manifest: four design files, zero prior outputs; every recorded byte count and SHA-256 matched.</li>
-</ul>
-<h2 id="verdict">Verdict<a class="headerlink" href="#verdict" title="Permanent link">&para;</a></h2>
-<p>This bounded correction may run. It audits exactly three cited primary records and does not present them as a literature census. The design cannot estimate intestinal urate inhibition from nominal concentration, transfer drug-substrate kinetics to urate, assign a clinical-risk tier, rank compounds, or recommend a dose or formulation.</p>
-<h2 id="findings">Findings<a class="headerlink" href="#findings" title="Permanent link">&para;</a></h2>
+<h2 id="reviewed-snapshot">Reviewed snapshot<a class="headerlink" href="#reviewed-snapshot" title="Permanent link">&para;</a></h2>
+<p>Reviewer <code>/root/comp004_gate1_refresh</code>; four design files and two prior-output baseline files. The manifest payload and every bound file byte count and SHA-256 matched the inspected snapshot. The review was static and read-only; result-bearing code was not executed.</p>
+<h2 id="bottom-line-verdict">Bottom-line verdict<a class="headerlink" href="#bottom-line-verdict" title="Permanent link">&para;</a></h2>
+<p>The bounded correction may run. It audits exactly three cited primary records and can route them only to direct intestinal urate-flux testing. It cannot infer occupancy, inhibition magnitude, clinical risk, dose, delivery, or compound rank.</p>
+<h2 id="question-and-model-fit">Question and model fit<a class="headerlink" href="#question-and-model-fit" title="Permanent link">&para;</a></h2>
+<p>The model asks whether three reported ABCG2 interaction signals establish direct intestinal urate transport inhibition. They do not. The model preserves the interaction signals while rejecting transfer from nominal concentration or drug-substrate assays to intestinal urate flux.</p>
+<h2 id="constraint-and-implementation-audit">Constraint and implementation audit<a class="headerlink" href="#constraint-and-implementation-audit" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Cooray (PMID 15047179) supports a quercetin/BCRP functional signal with drug substrates in non-intestinal cells, not intestinal urate transport.</li>
 <li>Karibe (PMID 29358184) supports an intestinal curcumin/BCRP interaction in cynomolgus monkeys with sulfasalazine and rosuvastatin, not direct urate flux.</li>
 <li>Farabegoli (PMID 20149610) supports reduced mitoxantrone-assayed BCRP activity after EGCG exposure in tamoxifen-resistant MCF-7 cells without changed BCRP mRNA or protein, not an intestinal urate effect.</li>
-<li>The input gate validates the exact compound set, normalized duplicates, evidence and urate-status vocabularies, Boolean fields, nonempty substrates, and structured source metadata.</li>
-<li>Direct intestinal urate evidence has a prespecified contrary branch and cannot silently receive the default assay-required disposition.</li>
-<li>Both branches prohibit quantitative risk ranking.</li>
+<li>Yu (PMID 38757391) reports no ABCG2 result and cannot supply the missing urate-flux evidence.</li>
+<li>The input gate validates the exact compound set, normalized duplicates, vocabularies, Boolean fields, nonempty substrates, and nonempty source-metadata fields. It does not validate identifier syntax or source contents.</li>
 <li>The deterministic standard-library script writes only the declared UTF-8 JSON and Markdown outputs.</li>
-<li>The downstream map correctly assigns transporter evidence and the bounded Research Conjecture to <code>abcg2-modulators.md</code>, EGCG-specific evidence to <code>egcg.md</code>, and the context-matched exposure/protein/attribution/barrier/viability/urate-flux experiment to <code>validation-experiments.md</code>.</li>
-<li>The invalidation boundary is narrow: the nominal occupancy ratios, predicted inhibition percentages, VERY_HIGH labels, and derived clinical uses fail; the individual interaction signals and untested time/exposure/metabolite/context connection survive.</li>
 </ul>
+<h2 id="load-bearing-pre-run-table">Load-bearing pre-run table<a class="headerlink" href="#load-bearing-pre-run-table" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Boundary</th>
+<th>Evidence and implementation</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direct intestinal urate evidence</td>
+<td>None of the three records measures it</td>
+<td>Preserved</td>
+</tr>
+<tr>
+<td>Interaction evidence</td>
+<td>Each record retains its actual assay, substrate, system, and polarity</td>
+<td>Preserved</td>
+</tr>
+<tr>
+<td>Source metadata</td>
+<td>Structurally required and nonempty; content checked independently against the named abstracts</td>
+<td>Adequate for this fixed set</td>
+</tr>
+<tr>
+<td>Quantitative risk, rank, dose, or delivery</td>
+<td>Prohibited in both output branches</td>
+<td>Preserved</td>
+</tr>
+<tr>
+<td>Contrary outcome</td>
+<td>A record with direct intestinal urate evidence takes a prespecified evidence-present branch</td>
+<td>Preserved</td>
+</tr>
+</tbody>
+</table>
+<h2 id="falsification-sensitivity-and-output-contract">Falsification, sensitivity, and output contract<a class="headerlink" href="#falsification-sensitivity-and-output-contract" title="Permanent link">&para;</a></h2>
+<p>The exact fixed records, deterministic decision rules, and two declared outputs are preregistered. A contrary direct-evidence record cannot silently receive the default assay-required disposition. There is no justified quantitative sensitivity analysis because the correction makes no transferable kinetic or exposure estimate.</p>
+<h2 id="downstream-authoring-contract">Downstream authoring contract<a class="headerlink" href="#downstream-authoring-contract" title="Permanent link">&para;</a></h2>
+<p>The downstream map assigns transporter evidence and the bounded Research Conjecture to <code>abcg2-modulators.md</code>, EGCG-specific evidence to <code>egcg.md</code>, and the context-matched exposure/protein/attribution/barrier/viability/urate-flux experiment to <code>validation-experiments.md</code>. Unsupported COMP-013 occupancy ratios, predicted inhibition percentages, VERY_HIGH labels, and derived clinical uses may be invalidated; the individual interaction signals and untested context connection survive.</p>
 <h2 id="required-actions-before-execution">Required actions before execution<a class="headerlink" href="#required-actions-before-execution" title="Permanent link">&para;</a></h2>
 <p>None.</p>
 <h2 id="review-limits">Review limits<a class="headerlink" href="#review-limits" title="Permanent link">&para;</a></h2>
-<p>The review was limited to the manifest-bound design and the named primary abstracts. It did not conduct a literature census or inspect future outputs and downstream edits; those require the post-run gate.</p>
+<p>The review covered the exact manifest-bound design, prior-output baselines, and named primary abstracts. It did not conduct a literature census or inspect future outputs and downstream edits; those require the post-run gate.</p>
 
 
 

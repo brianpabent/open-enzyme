@@ -1951,7 +1951,7 @@
     
   
   
-    <span class="md-status md-status--scope-page"></span>
+    <span class="md-status md-status--evidence-page"></span>
   
 
   
@@ -4051,7 +4051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hypotheses/H06-medicinal-mushroom-complement-track/" class="md-nav__link">
+      <a href="../hypotheses/H06-medicinal-mushroom-complement-track.md" class="md-nav__link">
         
   
   
@@ -4064,13 +4064,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--Stub"></span>
-  
-
   
 
       </a>
@@ -5013,7 +5006,7 @@
     
   
   
-    <span class="md-status md-status--complete"></span>
+    <span class="md-status md-status--invalidated"></span>
   
 
   
@@ -5048,7 +5041,7 @@
     
   
   
-    <span class="md-status md-status--Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued"></span>
+    <span class="md-status md-status--partial-lead-inventory"></span>
   
 
   
@@ -5549,96 +5542,96 @@
 
 
 <h1 id="medicinal-mushroom-extract-characterization-sops">Medicinal Mushroom Extract Characterization SOPs<a class="headerlink" href="#medicinal-mushroom-extract-characterization-sops" title="Permanent link">&para;</a></h1>
-<p>Draft methods for identity, extraction, chemical characterization, and functional verification. The reproducibility target from <a href="../hypotheses/H06-medicinal-mushroom-complement-track/">H06</a> is <strong>±15% inter-operator variation</strong> for load-bearing chemical measurements. Methods that still require primary-source or bench validation are labeled accordingly.</p>
+<p>Draft methods for identity, extraction, chemical characterization, and functional verification. No analytical tolerance or acceptance threshold has been established; each must be set from method qualification before result-bearing use.</p>
 <h2 id="sops">SOPs<a class="headerlink" href="#sops" title="Permanent link">&para;</a></h2>
 <h3 id="sop-1-ganoderma-lingzhi-glpp-polysaccharide-peptide-fractionation-load-bearing">SOP-1 — <em>Ganoderma lingzhi</em> GLPP Polysaccharide-Peptide Fractionation (load-bearing)<a class="headerlink" href="#sop-1-ganoderma-lingzhi-glpp-polysaccharide-peptide-fractionation-load-bearing" title="Permanent link">&para;</a></h3>
-<p><strong>Status:</strong> Stub — gated on Phase 5b CNKI dive (Lin Zhanxi 林占熺 Juncao SOP + Lin Zhibin 林志彬 GLPP fractionation primary literature).</p>
-<p><strong>Source material:</strong> mycelium from ITS-verified <em>G. lingzhi</em> (Mycelia.bvba M9724 is the only commercially-verified ITS-authenticated strain per Phase 7-1a; Cao 2012 <em>Ganoderma</em>-specific primers G-ITS-F1/G-ITS-R2 at academic core facility, ~$20-40/sample, mandatory upstream gate).</p>
+<p><strong>Status:</strong> Stub — the exact upstream cultivation, extraction, and fractionation protocol still requires primary-source recovery and method qualification.</p>
+<p><strong>Source material:</strong> an authenticated <em>G. lingzhi</em> material with strain/accession, source, substrate, harvest state, and storage history recorded. No unique acceptable commercial strain has been established.</p>
 <p><strong>Planned method (extrapolated from English-language pharmacology papers — needs CNKI-sourced upstream protocol verification):</strong>
 1. Hot water extraction of dried mycelium (or freeze-dried fruiting body), 90°C, 2 hr, water:biomass = 10:1
 2. Centrifugation + concentration of supernatant under vacuum
 3. Ethanol precipitation (4 vol EtOH, 4°C overnight) → polysaccharide-peptide fraction
 4. DEAE-Sepharose anion-exchange chromatography → fraction by charge profile
 5. Sephacryl S-500 size-exclusion chromatography → MW-based separation
-6. SEC-MALS verification of MW (target: determine which Lin-lab fraction the HUA mechanism load-bears on — 520 kDa is the bulk crude prep per sister paper PMC11351902; 31–42 kDa are post-DEAE sub-fractions per PMID 37852403 + 29541200; Lin 2022 HUA paper itself does not specify which fraction. Resolved 2026-05-06 grep-verify gate — see <a href="../medicinal-mushroom-complement-track/"><code>medicinal-mushroom-complement-track.md</code></a> for full citation chain)
+6. SEC-MALS verification of molecular-weight distribution. The HUA-active GLPP fraction remains unresolved: related papers report materially different bulk and post-fractionation sizes, and those preparations are not interchangeable.
 7. Amino acid analysis (peptide composition)
 8. Glycan linkage NMR fingerprint</p>
-<p><strong>Phase 5b prerequisite:</strong> without the Lin Zhanxi Juncao cultivation SOP from CNKI, the upstream substrate is not Western-reproducible. SOP-1 cannot be drafted at usable detail before that dive lands. Phase 7-1a strain scan documents the specific search terms: <code>菌草 灵芝 栽培</code> (CNKI), <code>林占熺 灵芝</code> (CNKI author search).</p>
-<p><strong>Reproducibility target (per H06 Dimension 2):</strong> ±15% inter-operator on MW + peptide:polysaccharide ratio + glycan composition.</p>
+<p><strong>Primary-source prerequisite:</strong> recover and verify the exact cultivation, extraction, and fractionation methods for the material whose biological result is being tested. The historical search notes are query aids, not method authority.</p>
+<p><strong>Acceptance criteria:</strong> unset until the method's precision, recovery, specificity, and between-operator variance are measured.</p>
 <h3 id="sop-2-cordyceps-militaris-cordycepin-pentostatin-hplc-quantification">SOP-2 — <em>Cordyceps militaris</em> Cordycepin + Pentostatin HPLC Quantification<a class="headerlink" href="#sop-2-cordyceps-militaris-cordycepin-pentostatin-hplc-quantification" title="Permanent link">&para;</a></h3>
-<p><strong>Source material:</strong> <em>C. militaris</em> fruiting body or mycelium from cultivated source (top-yield strain GYS60 per Phase 7-1b, or commercial cultivation kit for home-cultivation track).</p>
-<p><strong>Phase 5b source-read anchor (2026-05-20):</strong> Xiong 2024 <em>Biotechnology Bulletin</em> reports a whole <em>C. militaris</em> water extract active in potassium-oxonate + yeast-paste hyperuricemia rats; the visible publisher-page composition includes 35.86% polysaccharides, 27.05% protein, 0.21% phenolics, and 0.83% cordycepin. SOP-2 should therefore quantify cordycepin without collapsing the biological result into cordycepin alone; total polysaccharide/protein and, where feasible, pentostatin remain part of the batch-release fingerprint.</p>
+<p><strong>Source material:</strong> an authenticated <em>C. militaris</em> fruiting-body or mycelial material with strain/accession and cultivation configuration recorded. Historical yield ranks do not select the material.</p>
+<p><a href="https://doi.org/10.13560/j.cnki.biotech.bull.1985.2024-0379">Xiong et al. 2024</a> reports a whole <em>C. militaris</em> water extract in potassium-oxonate + yeast-paste hyperuricemia rats. The publisher page reports that material as 35.86% polysaccharides, 27.05% protein, 0.21% phenolics, and 0.83% cordycepin. The biological result therefore cannot be assigned to cordycepin alone: SOP-2 should quantify cordycepin while retaining total polysaccharide/protein and, where feasible, pentostatin in the batch fingerprint (<strong>Animal Model</strong> for the whole-extract result).</p>
 <p><strong>Planned method (Wang 2014 with Xia 2017 cluster diagnostic ratio):</strong>
 1. Aqueous extraction of dried biomass, 80°C, 1 hr
 2. C18 SPE cleanup
 3. RP-HPLC, C18 column, water-methanol gradient
 4. UV detection at 260 nm
 5. Co-quantify: cordycepin (3'-deoxyadenosine), adenosine (precursor + ADA-deamination context), <strong>pentostatin</strong> (the natural ADA-inhibitor co-product per Xia 2017 PMID 29056419)
-6. Pentostatin:cordycepin ratio is a diagnostic for whether the cordycepin BGC is fully expressed — this is the load-bearing readout for whole-fermentate-vs-purified cordycepin clinical positioning (per Phase 7-4 wet-lab gate)
-7. Reference standard: cordycepin ≥98% HPLC purity (Sigma C9881 or equivalent); pentostatin reference standard is regulated (FDA-approved drug, restricted access — sourcing requires research-use license)</p>
-<p><strong>Reproducibility target:</strong> ±15% inter-operator on cordycepin mg/g; ±20% on pentostatin:cordycepin ratio (lower-abundance target).</p>
+6. Record the pentostatin:cordycepin ratio as batch-identity data. Co-production does not make the ratio a diagnostic of full-cluster expression, protection, exposure, efficacy, or clinical positioning without direct validation.
+7. Reference standards: cordycepin ≥98% HPLC purity (<a href="https://www.sigmaaldrich.com/US/en/product/sigma/c3394">Sigma C3394</a> or equivalent) and pentostatin (<a href="https://www.caymanchem.com/product/14878/pentostatin">Cayman 14878</a> or equivalent). Source and handle both under applicable institutional research-use and chemical-safety requirements.</p>
+<p><strong>Acceptance criteria:</strong> unset until cordycepin and pentostatin recovery, specificity, calibration, detection limits, and inter-operator precision are measured.</p>
 <h3 id="sop-3-pleurotus-citrinopileatus-ergothioneine-hilic-hplc-quantification">SOP-3 — <em>Pleurotus citrinopileatus</em> Ergothioneine HILIC-HPLC Quantification<a class="headerlink" href="#sop-3-pleurotus-citrinopileatus-ergothioneine-hilic-hplc-quantification" title="Permanent link">&para;</a></h3>
-<p><strong>Source material:</strong> dried fruiting body of <em>P. citrinopileatus</em> (golden oyster — highest fungal EGT producer at 7.0 mg/g DW per Phase 7-1c). Pasteurized-straw bag cultivation per Phase 7-2, freeze-dry to powder.</p>
+<p><strong>Source material:</strong> authenticated dried <em>P. citrinopileatus</em> fruiting body. One reported material contained 7.0 mg/g dry weight; that exact configuration is a calibration lead, not a cross-species production rank.</p>
 <p><strong>Planned method (Cohen 2014 with HILIC modification for polar zwitterion):</strong>
 1. UA-DES (urea-based deep eutectic solvent) or aqueous methanol extraction
 2. HILIC chromatography (suitable for polar zwitterionic EGT — reverse-phase fails for this analyte)
 3. UV detection at 254 nm (or LC-MS for sensitivity)
 4. Stable-isotope-labeled internal standard (²H₉-ergothioneine) for absolute quantification
 5. Calibration: 0.1-10 mg/g range covers dietary-relevant content</p>
-<p><strong>Reproducibility target:</strong> ±15% inter-operator; consistent with the 7.0 mg/g DW Singapore RCT formulation reference (PMID 40552321 per Phase 7-1c).</p>
+<p><strong>Acceptance criteria:</strong> unset until extraction recovery, matrix effects, calibration, detection limits, and inter-operator precision are measured against the exact material.</p>
 <h3 id="sop-4-functional-verification-readouts">SOP-4 — Functional Verification Readouts<a class="headerlink" href="#sop-4-functional-verification-readouts" title="Permanent link">&para;</a></h3>
 <p>For each compound, a downstream functional readout that confirms bioactivity beyond chemical identification:</p>
 <ul>
-<li><strong>GLPP — ADA inhibition assay:</strong> purified GLPP fraction + recombinant human ADA + adenosine substrate → measure 3'-deoxyinosine production decrease via HPLC. Target: dose-dependent inhibition with IC50 measurable.</li>
-<li><strong>Cordycepin — URAT1 expression assay:</strong> HEK293 cells stably expressing human SLC22A12 (URAT1) + qPCR for URAT1 mRNA after 24h cordycepin treatment. Target: dose-dependent URAT1 mRNA reduction (matches in vivo finding from PMID 29422889).</li>
-<li><strong>Ergothioneine — Nrf2-ARE reporter assay:</strong> HepG2 cells with stable ARE-luciferase reporter + EGT treatment → luciferase induction. Target: dose-dependent activation matching dietary-mushroom-derived EGT plasma range (~5-25 µM).</li>
+<li><strong>GLPP — proposed ADA test:</strong> qualify one exact fraction, then measure ADA-driven substrate/product conversion directly with interference controls. The ADA mechanism is a hypothesis, not an established property of generic GLPP.</li>
+<li><strong>Cordycepin — renal transport test:</strong> use a polarized urate-transport assay with transporter attribution; keep URAT1 expression as a secondary readout rather than the functional gate.</li>
+<li><strong>Ergothioneine — gout-inflammation test:</strong> choose a primary-source-grounded exposure range, then measure a prespecified MSU-relevant functional endpoint with Nrf2/redox readouts as mechanism probes.</li>
 </ul>
-<p><strong>Reproducibility target:</strong> consistent dose-response shape across operators; absolute potency may vary 2× operator-to-operator on cell-based assays (typical for biological readouts).</p>
+<p><strong>Acceptance criteria:</strong> preregister after pilot estimates establish assay variance, viability bounds, and the smallest effect that would change the decision.</p>
 <h3 id="sop-6-tiered-methodology-framework">SOP-6 — Tiered methodology framework<a class="headerlink" href="#sop-6-tiered-methodology-framework" title="Permanent link">&para;</a></h3>
-<p>The SOPs above (SOP-1 GLPP, SOP-2 cordycepin, SOP-3 EGT) are written at <strong>Tier 3 (bench, publication-grade)</strong> rigor. The same four-tier quantification ladder (kitchen → smartphone → bench → outsourced) that operationalizes the koji track also operationalizes the mushroom track, giving any open-source contributor a rigor-graded path from "I made a tea, did anything happen?" up to "this is a quantified extract suitable for synergy-experiment use."</p>
+<p>The SOPs above are unvalidated bench-method candidates. The <a href="../quantification-ladder/">quantification ladder</a> can organize method development, but a lower-cost readout becomes a batch-control method only after it is validated against a qualified analytical anchor for the exact material.</p>
 <p>The <a href="../quantification-ladder/">quantification ladder</a> defines the shared four tiers. This SOP supplies mushroom-specific assays and calibration anchors; <a href="../enzyme-quantification-protocol/">enzyme-quantification-protocol.md</a> supplies the koji-enzyme methods. First-batch values do not yet exist. GLPP requires Tier 3 SEC-MALS, and the proposed cordycepin Tier 2 diazo method remains speculative pending primary-literature and bench validation.</p>
 <table>
 <thead>
 <tr>
-<th>Compound</th>
-<th>Tier 1 (kitchen, ~$0)</th>
-<th>Tier 2 (smartphone colorimetry, ~$50)</th>
-<th>Tier 3 (bench HPLC, ~$2K)</th>
-<th>Tier 4 (outsourced regulatory)</th>
+<th>Material</th>
+<th>Tier 1 observation</th>
+<th>Tier 2 candidate screen</th>
+<th>Tier 3 analytical anchor</th>
+<th>Tier 4 qualified external method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Cordycepin</strong></td>
-<td>Visual + dosing-by-known-extract-ratio (calibrated against Tier 3 batch); not analytical, just consistency</td>
-<td><strong>Speculative — needs literature verification.</strong> Diazo-coupling chemistry typically targets phenolic/amine groups; cordycepin is a 3'-deoxyadenosine analog without those motifs. Do not use this method until primary literature or bench validation establishes the needed sensitivity. Alternative: UV-vis at 260 nm (purine absorption) with known extract-ratio backing. <strong>The validation experiment at <a href="../validation-experiments/"><code>validation-experiments.md</code> §1.28</a> (~$200, 2 weeks) compares diazo coupling with a UV 260 nm fallback and a Tier 3 HPLC-UV anchor, including an explicit adenosine cross-reactivity check.</strong></td>
-<td><strong>SOP-2</strong> above (HPLC, calibrated cordycepin standard from Sigma C3394)</td>
-<td>Outsourced GMP-grade HPLC if regulatory submission ever needed</td>
+<td><strong>Cordycepin material</strong></td>
+<td>Record mass, moisture, extraction yield, and appearance; no compound inference</td>
+<td>Candidate UV/color method must first pass specificity, recovery, and cross-reactivity against the Tier 3 anchor</td>
+<td>SOP-2 candidate HPLC/LC-MS method with reference standards</td>
+<td>Qualified external chromatography when required</td>
 </tr>
 <tr>
-<td><strong>Ergothioneine</strong></td>
-<td>Visual + dosing-by-known-extract-ratio</td>
-<td><strong>Ellman's reagent (DTNB) thiol detection</strong>, smartphone colorimetry. Well-established chemistry (DTNB → 412 nm yellow on free thiol); EGT's free thiol is the substrate. Pharmacy-accessible reagent. Calibrate against a Tier 3 EGT-quantified batch to convert absorbance → mg/g.</td>
-<td><strong>SOP-3</strong> above (HILIC-HPLC with stable-isotope internal standard)</td>
-<td>Outsourced GMP-grade HILIC-HPLC if regulatory ever needed</td>
+<td><strong>Ergothioneine material</strong></td>
+<td>Record mass, moisture, extraction yield, and appearance; no compound inference</td>
+<td>Candidate thiol/color method must first show that matrix interferents do not dominate</td>
+<td>SOP-3 candidate HILIC-LC/MS method with internal standard</td>
+<td>Qualified external HILIC-LC/MS when required</td>
 </tr>
 <tr>
-<td><strong>GLPP</strong></td>
-<td>Visual + extract weight + standardized decoction yield (mass-balance check, not compound-specific)</td>
-<td><strong>Phenol-sulfuric acid total polysaccharide assay</strong> (well-established colorimetric method, ~490 nm). <strong>Caveat: measures total polysaccharide, not GLPP specifically.</strong> Co-extracted <em>Ganoderma</em> polysaccharides + any residual decoction polysaccharides will be counted. Useful as a batch-to-batch consistency check ("this batch is in the same polysaccharide ballpark as the calibrated reference"), NOT as a GLPP-specific quantification. SOP-1's SEC-MALS at Tier 3 is non-negotiable for the protein:polysaccharide ratio per H06 Dimension 2 reproducibility discipline.</td>
-<td><strong>SOP-1</strong> above (SEC-MALS for MW + protein:polysaccharide ratio, with phenol-sulfuric and Bradford / Lowry as orthogonal anchors)</td>
-<td>Outsourced GMP-grade SEC-MALS if regulatory ever needed</td>
+<td><strong>GLPP material</strong></td>
+<td>Record mass and extraction yield; not GLPP-specific</td>
+<td>Total-polysaccharide assays may track a batch only after correlation with the exact fraction is validated</td>
+<td>SOP-1 candidate SEC-MALS plus composition methods</td>
+<td>Qualified external fraction-characterization method when required</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Operational pattern (the calibrate-once-track-batches workflow):</strong></p>
 <ol>
 <li><strong>Initial Tier 3 calibration</strong> — quantify a reference batch by SOP-&frac12;/3 above. Anchor numbers: mg/g extract for each target compound; document extract source, batch ID, lot, harvest details.</li>
-<li><strong>Batch tracking at Tier 2</strong> — for each new batch of extract from the same protocol, run the Tier 2 colorimetric assay against the reference batch as the standard curve anchor. If batch reads within ±20% of reference, accept. If outside, escalate to Tier 3 re-quantification.</li>
-<li><strong>Field-grade Tier 1</strong> — for end-user / kitchen-grade reproducibility, dosing follows the Tier 3-calibrated extract-ratio (e.g., "1 g of this batch ≈ 8 mg cordycepin per the SOP-2 quantification done on this lot"). Tier 1 is consumption-side, not characterization-side.</li>
+<li><strong>Batch tracking at Tier 2</strong> — use a lower-cost readout only after the validation study defines its acceptable agreement and scope.</li>
+<li><strong>Tier 1 observation</strong> — record process and mass-balance variables only; do not infer concentration, dose, or biological activity.</li>
 <li><strong>Tier 4 outsourced</strong> — only invoked if regulatory submission requires it. Adds GLP/GMP overhead but uses the same analytical chemistry as Tier 3.</li>
 </ol>
-<p><strong>Why this matters operationally:</strong> without the tiered framework, every batch would need full Tier 3 HPLC (cost-prohibitive at scale and impossible for distributed open-source contributors without HPLC access). With it, Tier 3 is invoked once per protocol revision; Tier 2 handles batch consistency cheaply; Tier 1 keeps end-user dosing tied to verified content. Same discipline that lets the koji track work as a home-fermentation project rather than a CRO-only project.</p>
+<p><strong>Operational boundary:</strong> method-transfer cost matters, but it cannot be solved by declaring a low-cost proxy valid. Recalibrate whenever strain, substrate, culture, extraction, matrix, or assay leaves the validated scope.</p>
 <h3 id="substrate-accumulated-vs-biosynthesized-compounds">Substrate-accumulated vs biosynthesized compounds<a class="headerlink" href="#substrate-accumulated-vs-biosynthesized-compounds" title="Permanent link">&para;</a></h3>
 <p>Not all compounds detected in a mushroom extract are produced by the fungus. <strong>Substrate-accumulated compounds</strong> pass through from the cultivation substrate (e.g., plant flavonoids from oak sawdust) and concentrate in mycelium without being biosynthesized by fungal metabolism. <strong>Biosynthesized compounds</strong> are produced by the fungal genome's secondary-metabolite biosynthetic gene clusters (BGCs). The two have fundamentally different batch-variability profiles:</p>
 <table>
@@ -5682,7 +5675,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>QC implication:</strong> for substrate-accumulated compounds, <strong>substrate lot variation — not strain genetics — dominates batch-to-batch variability.</strong> The Tier 2 colorimetric assay will detect a shifted quercetin batch but cannot distinguish "strain drift" from "substrate lot change" as the root cause. For H06 falsification-card Dimension 2 (characterization protocol robustness, ±15% inter-operator), substrate-accumulated origin must be a documented variable, not an invisible confound.</p>
+<p><strong>QC implication:</strong> substrate lot and strain genetics are both candidate sources of batch variation. A lower-cost readout cannot attribute a shift to either cause; substrate and strain provenance must remain documented variables.</p>
 <p><strong>Required documentation fields (cultivation data sheet):</strong>
 - <strong>Substrate species / source</strong> (e.g., oak species, sawdust grade, lot number, geographic origin, supplier)
 - <strong>Substrate lot identifier</strong> (vendor lot, harvest date, treatment history)
@@ -5852,29 +5845,27 @@
 <p><strong>Calibration-per-revision discipline:</strong> a replicated Tier 3 comparison estimates the effect for the exact configuration. A validated Tier 2 readout may then track later batches only while strain, formulation, culture conditions, extraction, and assay remain within that calibration's scope.</p>
 <p><strong>Transfer rule:</strong> strain, medium or substrate, supplement, culture format, timing, harvest, and assay form one configuration. Until a transferred configuration is tested, neither the source-study direction nor its magnitude is assumed. See <a href="../etc/open-source-platform/#culture-configuration">Culture configuration</a>.</p>
 <h3 id="sop-5-strain-banking-its-authentication">SOP-5 — Strain Banking + ITS Authentication<a class="headerlink" href="#sop-5-strain-banking-its-authentication" title="Permanent link">&para;</a></h3>
-<p><strong>Cross-reference:</strong> Phase 7-1a outlined the ITS-PCR authentication protocol (Cao 2012 <em>Ganoderma</em>-specific primers); applies to all medicinal mushroom strains used for Open Enzyme protocols.</p>
+<p><strong>Status:</strong> Draft identity workflow. Primer choice and taxonomic acceptance criteria require primary-source and reference-database qualification for the selected species.</p>
 <p><strong>Planned method:</strong>
 1. ITS region amplification (ITS1-5.8S-ITS2)
 2. Sanger sequencing
-3. BLAST against NCBI nt database with species-level confidence threshold (≥98% identity for genus, ≥99.5% for species)
+3. Compare against curated reference sequences using a preregistered locus- and species-specific acceptance rule
 4. Deposit verified strain in -80°C glycerol stock with documented provenance
-5. Re-verify ITS every 6 months or after 5 serial passages (whichever first)</p>
-<p><strong>Reproducibility target:</strong> binary — pass/fail on species ID; provenance fully documented per strain.</p>
+5. Define re-verification frequency from the propagation and contamination-control plan</p>
+<p><strong>Acceptance criteria:</strong> unset until the barcode locus, reference set, ambiguity policy, contamination controls, and confirmatory method are selected.</p>
 <h2 id="cross-references">Cross-references<a class="headerlink" href="#cross-references" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../medicinal-mushroom-complement-track/"><code>medicinal-mushroom-complement-track.md</code></a> — the scope page these SOPs operationalize</li>
-<li><a href="../hypotheses/H06-medicinal-mushroom-complement-track/"><code>hypotheses/H06-medicinal-mushroom-complement-track.md</code></a> — H06 Dimension 2 (characterization protocol robustness) is the falsification mirror for these SOPs</li>
-<li><a href="../medicinal-mushroom-compound-mapping-computational/"><code>medicinal-mushroom-compound-mapping-computational.md</code></a> — comp-014, parent computational analysis</li>
-<li><a href="../validation-experiments/"><code>validation-experiments.md</code></a> §2.6 — GLPP+cordycepin synergy wet-lab gate (uses these SOPs as input materials)</li>
-<li><a href="../etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7-cultivation-yield-meta-analysis/"><code>etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7-cultivation-yield-meta-analysis.md</code></a> — Phase 7-2 source for cultivation upstream parameters</li>
-<li><a href="../etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7a-ganoderma-strain-scan/"><code>etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7a-ganoderma-strain-scan.md</code></a>, <a href="../etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7b-cordyceps-strain-scan/"><code>phase-7b-cordyceps-strain-scan.md</code></a>, <a href="../etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/phase-7c-pleurotus-strain-scan/"><code>phase-7c-pleurotus-strain-scan.md</code></a> — strain selection inputs</li>
+<li><a href="../medicinal-mushroom-complement-track/#research-conjecture--a-reproducible-medicinal-fungal-material-may-expose-a-gout-weakness"><code>medicinal-mushroom-complement-track.md</code></a> — exact-material reproducibility conjecture</li>
+<li><a href="../medicinal-mushroom-compound-mapping-computational/"><code>medicinal-mushroom-compound-mapping-computational.md</code></a> — partial COMP-014 retrieval inventory; not method authority</li>
+<li><a href="../validation-experiments/"><code>validation-experiments.md</code></a> §2.6 — pilot-driven matched interaction study</li>
 </ul>
 <h2 id="validation-priorities">Validation priorities<a class="headerlink" href="#validation-priorities" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Resolve SOP-1 upstream Juncao cultivation and GLPP fraction identity from primary Chinese sources.</li>
-<li>Validate SOP-3 EGT as the lowest-complexity analytical method.</li>
+<li>Qualify SOP-3 against an exact material without presuming it is the simplest route.</li>
 <li>Source a lawful research-use pentostatin standard before attempting SOP-2 co-quantification.</li>
-<li>Require two independent operators to achieve the H06 ±15% reproducibility target before treating a method as validated.</li>
+<li>Use independent operators to estimate method transferability, then set acceptance criteria before result-bearing batch comparisons.</li>
 </ol>
 
 

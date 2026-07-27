@@ -23,7 +23,7 @@
     
     
       
-        <title>comp-014: Medicinal Mushroom Compound × Chokepoint Mapping - Open Enzyme</title>
+        <title>comp-014 — Medicinal mushroom compound × chokepoint mapping - Open Enzyme</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              comp-014: Medicinal Mushroom Compound × Chokepoint Mapping
+              comp-014 — Medicinal mushroom compound × chokepoint mapping
             
           </span>
         </div>
@@ -1945,7 +1945,7 @@
     
   
   
-    <span class="md-status md-status--scope-page"></span>
+    <span class="md-status md-status--evidence-page"></span>
   
 
   
@@ -3836,7 +3836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hypotheses/H06-medicinal-mushroom-complement-track/" class="md-nav__link">
+      <a href="../../../hypotheses/H06-medicinal-mushroom-complement-track.md" class="md-nav__link">
         
   
   
@@ -3849,13 +3849,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--Stub"></span>
-  
-
   
 
       </a>
@@ -4798,7 +4791,7 @@
     
   
   
-    <span class="md-status md-status--complete"></span>
+    <span class="md-status md-status--invalidated"></span>
   
 
   
@@ -4833,7 +4826,7 @@
     
   
   
-    <span class="md-status md-status--Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued"></span>
+    <span class="md-status md-status--partial-lead-inventory"></span>
   
 
   
@@ -5333,102 +5326,56 @@
   
 
 
-<h1 id="comp-014-medicinal-mushroom-compound-chokepoint-mapping">comp-014: Medicinal Mushroom Compound × Chokepoint Mapping<a class="headerlink" href="#comp-014-medicinal-mushroom-compound-chokepoint-mapping" title="Permanent link">&para;</a></h1>
-<p><strong>Question:</strong> Across all known characterized fungal natural products — aggregated from sources that span the global research corpus, not just Western pharma — which compounds map onto Open Enzyme's existing chokepoints (uricase substrate, URAT1, ABCG2, NLRP3 axis, complement CP0, Lp-PLA2, HDAC6, redox/disulfide chemistry), and which fungal species are the highest-leverage producers?</p>
-<p><strong>Status:</strong> <strong>Phase 1 — Scoped, execution pending.</strong> This commit registers the experiment scope (candidate species, chokepoint targets, multi-database aggregation plan, multilingual literature plan). It does NOT yet contain pulled compound data, target mappings, or per-compound triage verdicts. Phase 2+ executes after Brian's review.</p>
-<p><strong>Reproducible artifact:</strong> <code>python3 scripts/scope_validate.py</code> from this folder validates the input JSONs and emits <code>outputs/scope-summary.md</code>.</p>
-<p><strong>Interpretive wiki page:</strong> <a href="../../../medicinal-mushroom-compound-mapping-computational/"><code>wiki/medicinal-mushroom-compound-mapping-computational.md</code></a></p>
-<hr />
-<h2 id="why-this-experiment-exists">Why this experiment exists<a class="headerlink" href="#why-this-experiment-exists" title="Permanent link">&para;</a></h2>
-<p>Brian's framing (2026-05-06):</p>
-<blockquote>
-<p><em>"There are so many different types of fungus out there, and they have different compounds. Those compounds have different medicinal benefits depending on how they are ingested. I'm just really curious: is there a way to pull in all of the known compounds from as many species as possible and then map that to our chokepoints? Because I suspect there are some compounds in mushrooms that could be beneficial to this project in one way or another, whether that's directly in the body or, who knows, something else like helping disulfides or some shit."</em></p>
-</blockquote>
-<p>The path-dependent failure mode this experiment guards against (per <code>Open Enzyme/CLAUDE.md</code> global-multilingual-research rule and umbrella <code>CLAUDE.md</code> Curiosity &amp; First-Principles Framing): defaulting to ChEMBL-only (Western pharma slice) and missing the substantial East-Asian-clinical-experience evidence base for medicinal fungi. comp-013 surfaced this as a <em>named gap</em> for TCM phytochemicals; the same gap applies — and is likely larger — for medicinal mushrooms, because mycotherapy is a deeper traditional-medicine vertical in Chinese and Japanese practice than most TCM herbs.</p>
-<p>The "redox/disulfide chemistry" angle in Brian's framing is non-trivial. It points at a chokepoint Open Enzyme has not formally mapped on the patient side. The DAF SCR1-4 disulfide-count incident (<code>Open Enzyme/CLAUDE.md</code> §Pre-commit verification gate) shows disulfide chemistry is already load-bearing on the engineering side. Whether to elevate this to a formal patient-side chokepoint is a Phase 5 decision, gated on what the breadth pass surfaces.</p>
-<hr />
-<h2 id="multi-phase-execution-plan">Multi-phase execution plan<a class="headerlink" href="#multi-phase-execution-plan" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Phase</th>
-<th>What it does</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Phase 1</strong></td>
-<td>Scope: chokepoint targets, anchor species (sanity-check), toxicity filter, data-source inventory, multilingual literature plan.</td>
-<td><strong>Done.</strong></td>
-</tr>
-<tr>
-<td><strong>Phase 2</strong></td>
-<td>Breadth aggregation, <strong>species-agnostic with toxicity filter</strong>. Pull every fungal compound from LOTUS + NPAtlas + KNApSAcK + NPASS + TCMSP + COCONUT. Apply toxicity-filter.json (FDA GRAS / EFSA QPS inclusion; WHO Pathogens 2022 + mycotoxin producers + Schedule I/II exclusion). Expected: 500-2000 unique species after filter. Output: unified fungal compound × species table.</td>
-<td><strong>Starting now.</strong></td>
-</tr>
-<tr>
-<td><strong>Phase 3</strong></td>
-<td>Target mapping: ChEMBL + HIT + PubChem BioAssay (empirical) → SwissTargetPrediction (orphans). Output: compound × target table flagged empirical/predicted.</td>
-<td>Concurrent with Phase 2 where possible.</td>
-</tr>
-<tr>
-<td><strong>Phase 4</strong></td>
-<td>Chokepoint intersection: join compound × target × Open Enzyme chokepoints. Output: ranked candidate compound × chokepoint pairs.</td>
-<td>After Phases 2-3.</td>
-</tr>
-<tr>
-<td><strong>Phase 5</strong></td>
-<td>Multilingual literature ingestion <strong>for every chokepoint-hit species, parallel via subagents</strong>. CNKI + Wanfang + J-STAGE + KISS with two-model cross-check (Claude + DeepSeek for Chinese — DeepSeek as Model B per CLAUDE.md §Translation protocol). NOT capped at top-3-5 — that gating was the exact path-dependent narrowing the umbrella CLAUDE.md flags. Decide: redox/disulfide chokepoint ADMIT / PRELIMINARY / REJECT.</td>
-<td>After Phase 4.</td>
-</tr>
-<tr>
-<td><strong>Phase 6</strong></td>
-<td>Per-compound triage: comp-013-style IC50 occupancy + composite scoring on top candidates. Verdicts: GUT-LUMINAL VIABLE / SYSTEMIC VIABLE / MECHANISM UNCLEAR / NON-VIABLE. Subset gets shio-koji protease stability comp-NNN follow-ups.</td>
-<td>After Phase 5.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Why phase-gated rather than monolithic:</strong> Phase 2 alone is on the order of 30-80K compound records; Phase 5 multilingual literature ingestion has nontrivial token cost (translation cross-check doubles inference per source paper). Brian decides which phases are worth running, in what order, after seeing the scope.</p>
-<hr />
-<h2 id="reproducibility-phase-1-only">Reproducibility (Phase 1 only)<a class="headerlink" href="#reproducibility-phase-1-only" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>experiments/comp-014-medicinal-mushroom-compound-mapping
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python3<span class="w"> </span>scripts/scope_validate.py
-</code></pre></div>
-<p>stdlib only (json, pathlib). No external packages. Produces <code>outputs/scope-summary.md</code>.</p>
-<p>Phase 2+ will add per-phase scripts. Each will follow the same stdlib-only + reproducible-from-cold pattern as comp-013.</p>
-<hr />
-<h2 id="file-index">File index<a class="headerlink" href="#file-index" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>comp-014-medicinal-mushroom-compound-mapping/
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  scripts/
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    scope_validate.py              ← Phase 1 validation + summary emitter
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  inputs/
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    phase-5-anchor-species.json    ← 18 well-studied fungi for Phase 2 sanity-check + Phase 5 deep-dive seed
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    toxicity-filter.json           ← inclusion (GRAS/QPS/pharmacopoeia/clinical-trial) + exclusion (WHO 2022/mycotoxin/Schedule I) lists
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    chokepoint-targets.json        ← Open Enzyme chokepoints with UniProt + 1 proposed addition
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    data-sources.json              ← multi-DB aggregation plan + multilingual literature corpora + DeepSeek-as-Model-B translation pairing
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    provenance.md                  ← source-of-source notes for the input curation
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  outputs/                         ← generated by scope_validate.py
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    scope-summary.md               ← human-readable Phase 1 scope summary
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>  README.md                        ← this file
-</code></pre></div>
-<hr />
-<h2 id="what-this-experiment-is-not">What this experiment is NOT<a class="headerlink" href="#what-this-experiment-is-not" title="Permanent link">&para;</a></h2>
+<h1 id="comp-014-medicinal-mushroom-compound-chokepoint-mapping">comp-014 — Medicinal mushroom compound × chokepoint mapping<a class="headerlink" href="#comp-014-medicinal-mushroom-compound-chokepoint-mapping" title="Permanent link">&para;</a></h1>
+<p><strong>Status:</strong> Partial lead inventory. The former candidate rankings and Phase 6 occupancy/feasibility triage are invalid for decision use.</p>
+<h2 id="current-question">Current question<a class="headerlink" href="#current-question" title="Permanent link">&para;</a></h2>
+<p>Which compound/source/target records in this bounded fungal-natural-product artifact are worth rehydrating from primary sources for a polarity-, exposure-, and function-aware experiment?</p>
+<p>The artifact does not represent all fungal natural products or the global literature. It cannot identify the best compound, species, producer, production route, delivery route, or chassis.</p>
+<h2 id="what-survives">What survives<a class="headerlink" href="#what-survives" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Not a meal-planning tool.</strong> Does not recommend supplements or recipes.</li>
-<li><strong>Not a clinical guidance document.</strong> "GUT-LUMINAL VIABLE" verdicts (when Phase 6 runs) are research-stage triage, not patient recommendations.</li>
-<li><strong>Not a pharmacognosy textbook.</strong> Out of scope: total-synthesis tractability, marine-fungal natural products (separate corpus), mycotoxin survey for food safety (separate concern from chokepoint mapping).</li>
-<li><strong>Not a koji-engineering proposal.</strong> comp-014 is upstream of engineering decisions. If the breadth pass surfaces a fungal compound that maps strongly onto a chokepoint and the producer fungus is cultivable, that's evidence for considering a separate engineering-feasibility comp-NNN — not a deliverable of this experiment.</li>
+<li>Raw and joined compound/source/target rows survive as search leads.</li>
+<li>Primary-source identifiers attached to a row survive as retrieval pointers, not as verification that the row's interpretation is correct.</li>
+<li>ADA, PINK1/mitophagy, urate transport, urate production, inflammasome, redox, and barrier-associated rows remain open nodes for source rehydration.</li>
+<li>Database absence survives only as a record of what the bounded query did not return.</li>
 </ul>
-<hr />
-<h2 id="disagreement-protocol">Disagreement protocol<a class="headerlink" href="#disagreement-protocol" title="Permanent link">&para;</a></h2>
-<p>If you reproduce the Phase 1 scope and disagree with:</p>
+<p>Plant-origin compounds found in mushroom-associated queries are not fungal biosynthesis products unless a primary source establishes that provenance. Binding, expression, target prediction, and whole-animal phenotype are not interchangeable with direct mechanism-matched function.</p>
+<h2 id="what-does-not-survive">What does not survive<a class="headerlink" href="#what-does-not-survive" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Candidate species selection</strong> — file a GitHub issue against <code>comp-014-medicinal-mushroom-compound-mapping</code> proposing additions/removals with rationale.</li>
-<li><strong>Chokepoint inventory</strong> — should map back to wiki canonical chokepoints; if a chokepoint is missing or one of the listed ones is non-canonical, raise as an issue and reference the canonical wiki page.</li>
-<li><strong>The proposed redox/disulfide chokepoint addition</strong> — Phase 5 is the formal decision point; pre-Phase-5 disagreement is a useful prior to record but the rejection criteria are documented in <code>chokepoint-targets.json</code>.</li>
-<li><strong>Database coverage</strong> — if a major fungal-compound or East-Asian-pharmacology database is missing from the source list, that is a Phase 1 scope bug — file an issue with the source URL and access notes.</li>
+<li>Any candidate, potency, species, or production ranking.</li>
+<li><code>PURSUE</code>, <code>DROP</code>, tier, readiness, highest-priority, highest-leverage, or viability labels.</li>
+<li>Nominal exposure, occupancy, dose-feasibility, clinical-risk, synergy, production, delivery, or chassis conclusions.</li>
+<li>Universal claims that a target is empty, a fungal antagonist does not exist, or a whole material cannot act.</li>
+<li>Component or target causality inferred from a formula, extract, expression result, database association, or phenotype alone.</li>
 </ul>
+<p>The former Phase 6 script and outputs are removed from the live tree. Other legacy derived files remain evidence-retrieval aids only where they expose a source identifier or row; their ranks and narrative verdicts have no current authority. Git preserves the retired logic.</p>
+<h2 id="retained-reproducible-check">Retained reproducible check<a class="headerlink" href="#retained-reproducible-check" title="Permanent link">&para;</a></h2>
+<p>From this directory:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3<span class="w"> </span>scripts/scope_validate.py
+</code></pre></div>
+<p>The standard-library validator checks the current Phase 1 input structure and regenerates <code>outputs/scope-summary.md</code>. It does not reproduce the database pulls, later joins, rankings, or retired Phase 6.</p>
+<p><code>scripts/scope_validate.py</code> is the only runnable script retained in this directory. The old LOTUS pull/aggregation and target-mapping scripts are removed because their derived narratives are quarantined and their execution contract is not current.</p>
+<h2 id="retained-artifact-map">Retained artifact map<a class="headerlink" href="#retained-artifact-map" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>inputs/</code> records the bounded historical source, species, toxicity, and target scope.</li>
+<li><code>outputs/scope-summary.md</code> is the only currently regenerated output.</li>
+<li>Other top-level <code>outputs/phase-*</code> files are historical snapshots and lead inventories.</li>
+<li>Raw source captures remain unchanged in <code>outputs/_chembl_raw/</code>, <code>outputs/_lotus_raw/</code>, <code>outputs/_npatlas_raw/</code>, and <code>outputs/_knapsack_raw/</code>.</li>
+<li>Historical lookup caches/intermediates remain unchanged in <code>outputs/_chembl_molecule_inchikey_cache.json</code>, <code>outputs/_knapsack_inchikey_cache.json</code>, and <code>outputs/_chokepoint_chembl_targets.json</code>.</li>
+</ul>
+<p>The unchanged raw captures preserve the retrieved source payloads. They are not evidence that any derived fungal provenance, target mapping, rank, or verdict is correct.</p>
+<h2 id="lead-rehydration-gate">Lead-rehydration gate<a class="headerlink" href="#lead-rehydration-gate" title="Permanent link">&para;</a></h2>
+<p>Before any row can support a current claim or experiment:</p>
+<ol>
+<li>verify exact material identity and producer/source provenance;</li>
+<li>inspect the primary record and preserve target or endpoint, effect polarity, substrate, assay, species, and compartment;</li>
+<li>distinguish direct function from binding, expression, prediction, or phenotype;</li>
+<li>measure or justify free parent and metabolite exposure in the proposed compartment;</li>
+<li>run mechanism-matched function with attribution, off-target, toxicity, barrier, and viability controls;</li>
+<li>compare sourcing and delivery only after the biological gate passes.</li>
+</ol>
+<p>A negative result kills only the tested material, exposure, endpoint, and route. It does not erase the source record or neighboring untested mechanisms.</p>
+<h2 id="current-evidence-home">Current evidence home<a class="headerlink" href="#current-evidence-home" title="Permanent link">&para;</a></h2>
+<p><a href="../../../medicinal-mushroom-compound-mapping-computational/">Medicinal mushroom compound mapping</a> states the current evidence and decision boundary.</p>
 
 
 

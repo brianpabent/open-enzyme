@@ -4,9 +4,9 @@ comp-014 Phase 1 scope validation.
 Validates the input JSON files are well-formed and emits outputs/scope-summary.md.
 Stdlib only — no DB calls, no network, no external packages.
 
-Phase 2+ will replace this with actual aggregation scripts. This script's purpose is to:
+This is the only retained runnable script. Its purpose is to:
 1. Sanity-check the scope JSONs parse and have the expected structure.
-2. Emit a human-readable summary of what the experiment will do.
+2. Emit a human-readable summary of the retained scope.
 3. Serve as the reproducibility entry point: `python3 scope_validate.py` from the
    experiment folder produces the scope-summary.md artifact.
 """
@@ -35,7 +35,7 @@ def validate_data_sources(d: dict) -> list[str]:
 def validate_candidate_species(d: dict) -> list[str]:
     issues = []
     if "candidates" not in d:
-        issues.append("candidate-species.json missing 'candidates' array")
+        issues.append("phase-5-anchor-species.json missing 'candidates' array")
         return issues
     for c in d["candidates"]:
         for required_field in ("scientific", "compound_classes_known", "rationale", "regulatory_class"):
@@ -61,8 +61,17 @@ def validate_chokepoint_targets(d: dict) -> list[str]:
 
 def render_summary(sources: dict, species: dict, chokepoints: dict) -> str:
     n_species = len(species["candidates"])
-    n_chokepoints = len(chokepoints["chokepoints"])
-    proposed_chokepoint_count = sum(1 for k in chokepoints["chokepoints"] if k.startswith("_PROPOSED"))
+    rendered_chokepoints = [
+        (name, cp)
+        for name, cp in chokepoints["chokepoints"].items()
+        if not name.startswith("_")
+    ]
+    proposed_chokepoints = [
+        (name, cp)
+        for name, cp in chokepoints["chokepoints"].items()
+        if name.startswith("_PROPOSED")
+    ]
+    n_chokepoints = len(rendered_chokepoints)
 
     n_compound_dbs = len(sources["compound_databases"])
     n_bioactivity_dbs = len(sources["bioactivity_target_databases"])
@@ -71,58 +80,52 @@ def render_summary(sources: dict, species: dict, chokepoints: dict) -> str:
     lines = []
     lines.append("# comp-014 — Medicinal Mushroom Compound × Chokepoint Mapping")
     lines.append("")
-    lines.append("**Status:** Phase 1 scope complete; Phase 2 starting.")
+    lines.append(
+        "**Status:** Breadth aggregation and target mapping are retained as a "
+        "lead inventory. Historical rank and priority fields have no current "
+        "decision authority; the former Phase 6 occupancy/feasibility triage is retired."
+    )
     lines.append("")
     lines.append("## Inventory")
     lines.append("")
     lines.append(f"- **Phase 5 anchor species (sanity-check):** {n_species}")
-    lines.append(f"- **Open Enzyme chokepoint targets:** {n_chokepoints} ({proposed_chokepoint_count} proposed, not-yet-canonical)")
-    lines.append(f"- **Compound databases planned:** {n_compound_dbs}")
-    lines.append(f"- **Bioactivity / target databases planned:** {n_bioactivity_dbs}")
-    lines.append(f"- **Multilingual literature corpora planned:** {n_lit_corpora}")
+    lines.append(f"- **Rendered historical target entries:** {n_chokepoints}")
+    lines.append(f"- **Compound databases recorded:** {n_compound_dbs}")
+    lines.append(f"- **Bioactivity / target databases recorded:** {n_bioactivity_dbs}")
+    lines.append(f"- **Multilingual literature corpora recorded:** {n_lit_corpora}")
     lines.append("")
-    lines.append("## Phase 5 anchor species (NOT the breadth gate — sanity-check only)")
+    lines.append("## Historical anchor species (sanity-check set, not priorities)")
     lines.append("")
     for c in species["candidates"]:
-        flag = ""
-        if c.get("redox_chokepoint_relevance") == "primary":
-            flag = " — **redox chokepoint primary**"
-        elif c.get("redox_chokepoint_relevance") == "secondary":
-            flag = " — redox chokepoint secondary"
-        lines.append(f"- *{c['scientific']}* ({c.get('common_name', '—')}){flag}")
+        lines.append(f"- *{c['scientific']}* ({c.get('common_name', '—')})")
     lines.append("")
     lines.append("## Chokepoint targets")
     lines.append("")
-    lines.append("| Chokepoint | UniProt | Site | Priority signal |")
+    lines.append("| Chokepoint | UniProt | Site | Scope rationale |")
     lines.append("|---|---|---|---|")
-    for name, cp in chokepoints["chokepoints"].items():
-        if name.startswith("_"):
-            continue
+    for name, cp in rendered_chokepoints:
         uniprot = cp.get("uniprot", "—")
         if uniprot == "—" and "uniprot_oat1" in cp:
             uniprot = f"{cp['uniprot_oat1']} / {cp['uniprot_oat3']}"
         if uniprot == "—" and "uniprot_keap1" in cp:
             uniprot = f"{cp['uniprot_keap1']} / {cp['uniprot_nrf2']}"
         site = cp.get("site", "—")
-        rationale = cp.get("rationale", "")
-        # Truncate rationale to one sentence
-        priority = rationale.split(".")[0] + "." if rationale else ""
-        lines.append(f"| {name} | {uniprot} | {site} | {priority} |")
+        scope_rationale = cp.get("rationale", "").replace("|", "\\|").replace("\n", " ")
+        lines.append(f"| {name} | {uniprot} | {site} | {scope_rationale} |")
     lines.append("")
-    lines.append("**Proposed (not-yet-canonical):**")
-    lines.append("")
-    for name, cp in chokepoints["chokepoints"].items():
-        if not name.startswith("_PROPOSED"):
-            continue
-        lines.append(f"- **{cp['name']}** — {cp['_status']}")
-    lines.append("")
-    lines.append("## Phase plan")
+    if proposed_chokepoints:
+        lines.append("**Proposed (not-yet-canonical):**")
+        lines.append("")
+        for _, cp in proposed_chokepoints:
+            lines.append(f"- **{cp['name']}** — {cp['_status']}")
+        lines.append("")
+    lines.append("## Recorded phase scope")
     lines.append("")
     plan = sources["phase_plan_summary"]
     for phase_key in sorted(plan.keys()):
         lines.append(f"- **{phase_key}**: {plan[phase_key]}")
     lines.append("")
-    lines.append("## Data sources (Phase 2-5 access plan)")
+    lines.append("## Historical data-source inventory")
     lines.append("")
     lines.append("### Compound databases")
     for db_name, db in sources["compound_databases"].items():
@@ -133,6 +136,8 @@ def render_summary(sources: dict, species: dict, chokepoints: dict) -> str:
     for db_name, db in sources["bioactivity_target_databases"].items():
         if isinstance(db, dict):
             lines.append(f"- **{db_name}** — {db.get('scope', '')}")
+        else:
+            lines.append(f"- **{db_name}** — {db}")
     lines.append("")
     lines.append("### Multilingual literature corpora")
     for corp_name, corp in sources["literature_corpora"].items():
@@ -142,11 +147,15 @@ def render_summary(sources: dict, species: dict, chokepoints: dict) -> str:
     lines.append("## Reproducibility")
     lines.append("")
     lines.append("```bash")
-    lines.append("cd experiments/comp-014-medicinal-mushroom-compound-mapping")
+    lines.append("cd wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping")
     lines.append("python3 scripts/scope_validate.py")
     lines.append("```")
     lines.append("")
-    lines.append("Phase 2+ will add per-phase scripts. This Phase 1 script validates inputs and emits this summary.")
+    lines.append(
+        "This scope validator checks the current input structure and emits this summary. "
+        "It does not reproduce the database pulls, later joins, historical rankings, "
+        "or retired Phase 6."
+    )
     lines.append("")
     return "\n".join(lines)
 
@@ -173,7 +182,13 @@ def main():
     OUTPUTS.mkdir(exist_ok=True)
     summary = render_summary(sources, species, chokepoints)
     (OUTPUTS / "scope-summary.md").write_text(summary)
-    print(f"OK. Validated {len(species['candidates'])} species, {len(chokepoints['chokepoints'])} chokepoint entries.")
+    rendered_target_count = sum(
+        1 for name in chokepoints["chokepoints"] if not name.startswith("_")
+    )
+    print(
+        f"OK. Validated {len(species['candidates'])} species, "
+        f"{rendered_target_count} rendered historical target entries."
+    )
     print(f"Wrote {OUTPUTS / 'scope-summary.md'}")
 
 

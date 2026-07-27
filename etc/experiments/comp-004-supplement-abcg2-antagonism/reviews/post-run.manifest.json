@@ -6,8 +6,8 @@
     {
       "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/README.md",
       "kind": "design",
-      "bytes": 7135,
-      "sha256": "1b406c1f70578dd1f77abcf457348612b537714da9718d4c3d00beb6db61e199"
+      "bytes": 7196,
+      "sha256": "86032b26232a9159b6796019c3615b5c435275d067c713ea823b35446f8571bd"
     },
     {
       "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/analyze.py",
@@ -42,26 +42,110 @@
     {
       "path": "index.md",
       "kind": "proposed_update",
-      "bytes": 33683,
-      "sha256": "561f2eb81cfd342eafda87bac34c53bcad6cb5db9cbcbbe4b7cafa3729762f35"
+      "bytes": 35133,
+      "sha256": "f6b933012f351e735aa1c32b61364eb34c0b4c479917b8c4e77b45c0396d3ea7"
+    },
+    {
+      "path": "operations/cfh-mechanism-dissociation-2026-05-21/README.md",
+      "kind": "proposed_update",
+      "bytes": 7806,
+      "sha256": "f8d24862a9e5a2c1e812547fdbb6d619bce65a3f751ed33e6644d5b0cf4d4171"
+    },
+    {
+      "path": "operations/cfh-mechanism-dissociation-2026-05-21/inputs/run_deepseek_counterread.py",
+      "kind": "proposed_update",
+      "bytes": 14290,
+      "sha256": "56a33433561d1e987371e367252ed496b16526f07836b2cb1afdf1a3990c69bd"
+    },
+    {
+      "path": "operations/cfh-mechanism-dissociation-2026-05-21/outputs/luteolin-source-read-2026-05-21.md",
+      "kind": "proposed_update",
+      "bytes": 6884,
+      "sha256": "08eaba21664098b1bf1889375a15fbb658a1b23442bff19770b274818c5d15a9"
+    },
+    {
+      "path": "operations/cfh-mechanism-dissociation-2026-05-21/outputs/luteolin-two-model-annotated-2026-05-21.md",
+      "kind": "proposed_update",
+      "bytes": 4173,
+      "sha256": "9c0a44dcb9bede598bd203100d493182ed43381243858e5b18fc1b652b4f5a0c"
+    },
+    {
+      "path": "operations/global-lit-scan-gap-audit-2026-05-20.md",
+      "kind": "proposed_update",
+      "bytes": 8289,
+      "sha256": "68d7fbf5bf6f7aa2338b793ce83284f8404ec46227abf305e986b949af320ccf"
+    },
+    {
+      "path": "operations/global-lit-scan-p0-remediation-2026-05-20/outputs/p0-3-cnki-rerun-summary-2026-05-20.md",
+      "kind": "proposed_update",
+      "bytes": 6538,
+      "sha256": "f9ab4e4b1856e4b7b60700059593ff91e84643bb1ff8987d3df79c0e4d2fc14f"
+    },
+    {
+      "path": "operations/notable-moments.md",
+      "kind": "proposed_update",
+      "bytes": 81600,
+      "sha256": "5aa27c2895ad8bd965f049540df41b21fe282f0b7441b7d0c069fdd81be2b32e"
+    },
+    {
+      "path": "operations/operational-search-template.md",
+      "kind": "proposed_update",
+      "bytes": 14765,
+      "sha256": "ffccf39a695bd4fded6f5046a3d0654ce54cb3a6980ec4d66c65019197db8041"
+    },
+    {
+      "path": "operations/todos.md",
+      "kind": "proposed_update",
+      "bytes": 8237,
+      "sha256": "e859b1791c0f863a72ff096ed246127bdd600b7fb058e38f67443b3d36392556"
     },
     {
       "path": "wiki/abcg2-modulators.md",
       "kind": "proposed_update",
-      "bytes": 36184,
-      "sha256": "a79ade314df0d61d2836a5d436f0e6eee66371f3bd858c1f7d79a096b8016ea6"
+      "bytes": 44006,
+      "sha256": "87943c5cfd967c82adabf6b58a6190e346d5f0e0be4a1549149d93c8e3dd8c5a"
     },
     {
       "path": "wiki/androgen-natural-modulation.md",
       "kind": "proposed_update",
-      "bytes": 52252,
-      "sha256": "1df0171422120946069a8d8670bcf8429be22a3bfbc348aa27f02029aaf92997"
+      "bytes": 8248,
+      "sha256": "414043059d95ba3a7ea7434775777ef8d2c0233c5246642205fe1b93df3e2f4b"
+    },
+    {
+      "path": "wiki/androgen-urate-axis.md",
+      "kind": "proposed_update",
+      "bytes": 35501,
+      "sha256": "13dbb366812afbe9a85cd33d300a08229765e39cbbacff3a11c43df7f4bea12f"
+    },
+    {
+      "path": "wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md",
+      "kind": "proposed_update",
+      "bytes": 31550,
+      "sha256": "e666f4fa16f8756f8b1551b53ac20e8d9d3b98aa78d846c00f09719eff09968f"
+    },
+    {
+      "path": "wiki/complement-c5a-gout.md",
+      "kind": "proposed_update",
+      "bytes": 94082,
+      "sha256": "ce3cfbce73453a7dd1776d80df0016996e63029c5bd3d33565af7723a122db2c"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 84129,
-      "sha256": "26085a0dfbe3346cdc616754b9f05a0d19010b938619b8a20f3608c60f7160f1"
+      "bytes": 73854,
+      "sha256": "8ea8f1845ae656672d589ed841dfedbde8a9556b01bce4dec711ac0c2ff3608a"
+    },
+    {
+      "path": "wiki/cross-validation.md",
+      "kind": "proposed_update",
+      "bytes": 7130,
+      "sha256": "1de307d7a8c62a09b21d49943fd1f80663b1f115b54c81df0d4c8962dd57ea47"
+    },
+    {
+      "path": "wiki/duckweed-aquatic-chassis.md",
+      "kind": "proposed_update",
+      "bytes": 22726,
+      "sha256": "f05e5f250463fbeebc296129797787abb5335a57d5af30b0ae9b5280adc5bcc8"
     },
     {
       "path": "wiki/egcg.md",
@@ -70,28 +154,106 @@
       "sha256": "8a6767dae25e0649edebbbe1fd4d71f5b5961872ff237085569d20670b3dcbf1"
     },
     {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md",
+      "kind": "proposed_update",
+      "bytes": 2120,
+      "sha256": "f01b3dd81ea4df4e74cc08e29f914505db63d6dc3a887ad1920f424574ddb96e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/invalidation.json",
+      "kind": "proposed_update",
+      "bytes": 3450,
+      "sha256": "9ed9f9bae359cf9284e1bc003e8b9d96fbdb1870f8aaa3a137d269bcb05c4987"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/README.md",
+      "kind": "proposed_update",
+      "bytes": 4460,
+      "sha256": "a4f7b207c8f872a9929dae14f7f64c825c285c3f6dace5c4d6941b9c9fd1bdd4"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md",
+      "kind": "proposed_update",
+      "bytes": 9706,
+      "sha256": "f6e2cf580ea16084a0cf5e5c3f744fecf02a1e435b4962ffb2fb5cdbf889051f"
+    },
+    {
+      "path": "wiki/etc/manual-literature-mining.md",
+      "kind": "proposed_update",
+      "bytes": 29088,
+      "sha256": "5af9ace5ffbcc2e13aebfe24328138a77d20a37ca234970e1f5f4065a5187216"
+    },
+    {
+      "path": "wiki/gout-genetic-variants.md",
+      "kind": "proposed_update",
+      "bytes": 42214,
+      "sha256": "5f6cfd1417c6d5c9c6ecf86b849caa0b3af5e902471df031925bbc5dc477c309"
+    },
+    {
+      "path": "wiki/gout-kill-chain-delivery-routes.md",
+      "kind": "proposed_update",
+      "bytes": 49927,
+      "sha256": "edd3cf2d97a530ec57c6425a20b0c3f18403f76615df7bbb6d85f58e37eea600"
+    },
+    {
+      "path": "wiki/gout-pathophysiology.md",
+      "kind": "proposed_update",
+      "bytes": 41481,
+      "sha256": "6ef8c7422fc68ae031ac9285ee2cc85e26109faa7833aaf5b06f5ca96dd1f2d6"
+    },
+    {
       "path": "wiki/hypotheses/H04-tcm-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 9449,
-      "sha256": "530d826e8c79909effb0ff3b8fe0cc041d616f0729f8ad80d35dd971872148c1"
+      "bytes": 4469,
+      "sha256": "38a3601f3afe7ef471a849b60312b4cf267db93397064c1699838357357e4c32"
+    },
+    {
+      "path": "wiki/hypotheses/README.md",
+      "kind": "proposed_update",
+      "bytes": 9520,
+      "sha256": "33914c2f6f0b906f83b63c1b6f50f0819075864d0f854d9b20e7f43677a60835"
+    },
+    {
+      "path": "wiki/medicinal-mushroom-complement-track.md",
+      "kind": "proposed_update",
+      "bytes": 12624,
+      "sha256": "833e4ec9a1f5d143424f44fdfcda116cfd15724767ee06e1f7efa81b40b361df"
     },
     {
       "path": "wiki/medicinal-mushroom-compound-mapping-computational.md",
       "kind": "proposed_update",
-      "bytes": 17356,
-      "sha256": "79790143b2b755c57175c2d9fc881c856e40f24c8c73559feaa61ecf6a87f02f"
+      "bytes": 4713,
+      "sha256": "6fdfe04e89139896c52dbfee2fc9ce0c3a74624777a55872d0ae4d4511ab28e5"
+    },
+    {
+      "path": "wiki/medicinal-mushroom-extract-sops.md",
+      "kind": "proposed_update",
+      "bytes": 22780,
+      "sha256": "6cf4b27485115ac7a490bd59aabb42392b6d61fef0680fab622afa789f0fc368"
+    },
+    {
+      "path": "wiki/modality-chokepoint-matrix.md",
+      "kind": "proposed_update",
+      "bytes": 10085,
+      "sha256": "839bff3534e93a3b25efeac40b4f53d7e43442669f015fcc1d7841ca92d5a967"
+    },
+    {
+      "path": "wiki/nlrp3-exploit-map.md",
+      "kind": "proposed_update",
+      "bytes": 59330,
+      "sha256": "0d1590cca73fdf15fe37c026e683f2264c0e847bd3a41f239275944aad47f17c"
     },
     {
       "path": "wiki/nlrp3-inhibitor-screen.md",
       "kind": "proposed_update",
-      "bytes": 54740,
-      "sha256": "f1ecd0830bf5cde766928e0741064954505daa53405a169f38c9ca4dc8f54d67"
+      "bytes": 55382,
+      "sha256": "77a1764a00942df95f7e45d7457c2f65467624906699992869c0a0a8e64f9f32"
     },
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 75706,
-      "sha256": "14a2f3838418a3a2baeaf8ce3bfd692d59ecd3e1c2dc49b30366c7d2667a9be1"
+      "bytes": 72562,
+      "sha256": "f9410e06234a379304f70c4e2a8fea6cd399a20bee0ff5b725031e3f45b7750a"
     },
     {
       "path": "wiki/supplement-abcg2-antagonism-computational.md",
@@ -102,34 +264,34 @@
     {
       "path": "wiki/supplements-stack.md",
       "kind": "proposed_update",
-      "bytes": 12355,
-      "sha256": "52b547b0b384b5aface81dda733c85308b2ca97c1fc6680b6f9edef720f02317"
+      "bytes": 12329,
+      "sha256": "f6a4e47909dfbf1a77b08ba24c7304813aec43ecea452ec73f9f70fbe70f4a81"
     },
     {
       "path": "wiki/tcm-gout-compound-triage-computational.md",
       "kind": "proposed_update",
-      "bytes": 10594,
-      "sha256": "a488e47c57af2f178b6801d6e46461e4b14ffcfc948c11acd01164683de9e537"
+      "bytes": 2964,
+      "sha256": "b3273047590d474ab81db8702f1ac532eccb6880de3a2c60290cbf00578b5947"
     },
     {
       "path": "wiki/tcm-modern-rigor-intersection.md",
       "kind": "proposed_update",
-      "bytes": 29810,
-      "sha256": "611c3617c979de53ebf48091f871bbeeff7d2e045350d7623feb93dbc7c84992"
+      "bytes": 9382,
+      "sha256": "ade5748c6aec90e90d79b7bbaa4a446f36559c680a1dda15a237aa70b30a3b25"
     },
     {
       "path": "wiki/theaflavins.md",
       "kind": "proposed_update",
-      "bytes": 11202,
-      "sha256": "31fe47434694db490c717717dcee0557769c6d8dfa3dc7081c1434ede39b781d"
+      "bytes": 11361,
+      "sha256": "25dbe688284b167fb73e4531ce281c75bdf4d5ae55ae46ca1fd946b19bac4a95"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 239907,
-      "sha256": "407314e913d07386b52d01f665c06a26d94c27cde7fbecd538f072b4f732f895"
+      "bytes": 232441,
+      "sha256": "b8e72764627caa1e76e63254db036cc1a47a9aa763d63ac7eb8b3e4641e76f52"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "a24a4d1dbf46d008a899b1c69933c0b311000d244326466c364436439026dedd"
+  "manifest_sha256": "5ccb7440f0a9986048cfc19a1a739d453c7157f1ae93a0dce0c16e9f08c4519f"
 }

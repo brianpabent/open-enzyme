@@ -27,7 +27,7 @@
     
     
       
-        <title>TCM Gout Compound Triage — Computational Analysis (comp-013) - Open Enzyme</title>
+        <title>TCM Gout Compound Triage — Invalidated Prior and Primary-Evidence Rebuild - Open Enzyme</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tcm-gout-compound-triage-computational-analysis-comp-013" class="md-skip">
+        <a href="#tcm-gout-compound-triage" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TCM Gout Compound Triage — Computational Analysis (comp-013)
+              TCM Gout Compound Triage — Invalidated Prior and Primary-Evidence Rebuild
             
           </span>
         </div>
@@ -1949,7 +1949,7 @@
     
   
   
-    <span class="md-status md-status--scope-page"></span>
+    <span class="md-status md-status--evidence-page"></span>
   
 
   
@@ -3842,7 +3842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hypotheses/H06-medicinal-mushroom-complement-track/" class="md-nav__link">
+      <a href="../hypotheses/H06-medicinal-mushroom-complement-track.md" class="md-nav__link">
         
   
   
@@ -3855,13 +3855,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--Stub"></span>
-  
-
   
 
       </a>
@@ -4813,7 +4806,7 @@
     
   
   
-    <span class="md-status md-status--complete"></span>
+    <span class="md-status md-status--invalidated"></span>
   
 
   
@@ -4838,7 +4831,7 @@
     
   
   
-    <span class="md-status md-status--complete"></span>
+    <span class="md-status md-status--invalidated"></span>
   
 
   
@@ -4861,10 +4854,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#addendum-2026-05-19-traditional-name-re-scan-corrections-additions" class="md-nav__link">
+  <a href="#verdict" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Addendum — 2026-05-19 traditional-name re-scan corrections + additions
+        Verdict
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-survives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What survives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-evidence-and-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current evidence and replacement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#falsification-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Falsification boundary
       
     </span>
   </a>
@@ -4904,7 +4930,7 @@
     
   
   
-    <span class="md-status md-status--Phase 2 partial + Phase 3 complete (Phase 4 re-run); Phase 5+ queued"></span>
+    <span class="md-status md-status--partial-lead-inventory"></span>
   
 
   
@@ -5404,34 +5430,32 @@
   
 
 
-<h1 id="tcm-gout-compound-triage-computational-analysis-comp-013">TCM Gout Compound Triage — Computational Analysis (comp-013)<a class="headerlink" href="#tcm-gout-compound-triage-computational-analysis-comp-013" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p><strong>Result boundary.</strong> Treat this as a curated lead inventory, not a validated viability ranking. The score counted off-target ABCG2 occupancy toward viability, did not preserve target-effect polarity, and inherited comp-004's invalid nominal gut-concentration/IC50 shortcut. A renewed triage must use polarity-aware evidence plus measured or justified free exposure and context-matched function before any “viable” claim.</p>
-</blockquote>
-<p><strong>Question:</strong> Which Traditional Chinese Medicine compounds with documented gout indications have source-backed target evidence worth advancing to context-matched exposure and functional testing?</p>
-<p><strong>Where the analysis lives:</strong>
-- Experiment directory (inputs, scripts, outputs): <a href="./etc/experiments/comp-013-tcm-gout-compound-triage/"><code>./etc/experiments/comp-013-tcm-gout-compound-triage/</code></a>
-- Computational experiments index: <a href="../computational-experiments/"><code>computational-experiments.md</code></a></p>
-<hr />
-<h2 id="addendum-2026-05-19-traditional-name-re-scan-corrections-additions">Addendum — 2026-05-19 traditional-name re-scan corrections + additions<a class="headerlink" href="#addendum-2026-05-19-traditional-name-re-scan-corrections-additions" title="Permanent link">&para;</a></h2>
-<p>This addendum captures the <strong>marker-correction batch</strong> surfaced by the 2026-05-19 traditional-formula-name re-scans (<a href="../logs/urat1-classical-formula-rescan-2026-05-19.md">URAT1 rescan</a>, <a href="../logs/xo-classical-formula-rescan-2026-05-19.md">XO rescan</a>). These are formula-anchored + species-anchored findings that the original comp-013 herb-by-herb query framing missed. Per <a href="../CLAUDE.md">CLAUDE.md §"Global-multilingual research by default"</a>, the discipline upgrade is to seed compound lists from <strong>traditional formula composition + traditional pathology term</strong> (e.g., 痛风 / 痹证 / 湿热痹) in addition to mechanism-name queries.</p>
-<p><strong>1. Mangiferin → Zhi Mu / Anemarrhena asphodeloides (new tier-1 entry).</strong> Mangiferin (CHEMBL3611008) is the cardinal anti-hyperuricemia active in <em>A. asphodeloides</em>. Niu 2015 + supporting series: dual-pathway URAT1 down-regulation + AQP2 modulation. Anemarrhena is a cardinal herb of Bai Hu Jia Gui Zhi Tang (BHGZ; the canonical gout-active formula in the modern Chinese RCT literature). <strong>Tier-1 promotion based on (a) mechanism, (b) BHGZ RCT context, &copy; ChEMBL coverage of mangiferin.</strong> Adds to the comp-013 URAT1 row alongside cordycepin and astilbin. (In Vitro + Animal Model; source: urat1-classical-formula-rescan-2026-05-19.md)</p>
-<p><strong>2. Bai Hu Jia Gui Zhi Tang (BHGZ) — ChiCTR1900024974 RCT scope.</strong> White Tiger Plus Cinnamon Branch decoction (Anemarrhena + gypsum + cinnamon + rice + licorice) is the canonical TCM gout formula in the modern Chinese RCT literature. ChiCTR1900024974 is a registered RCT (protocol PMC9013133, 2022); outcomes paper pending. 91% pilot effectiveness in the protocol's prior-series basis is <strong>uncontrolled</strong> — wait for the RCT outcomes paper before promoting beyond mechanism-tier. A later open-access rat MSU acute-gout study supports BHGZ as an inflammation-axis candidate through reduced ankle inflammation, IL-1β/IL-6, and TLR4/MyD88/NF-kB readouts, but this is <strong>Animal Model</strong> evidence and does not establish human efficacy or urate lowering. (Clinical Trial protocol; outcomes pending + Animal Model inflammation mechanism. Sources: urat1-classical-formula-rescan-2026-05-19.md; Liu 2025, <em>Clinics</em>, DOI <code>10.1016/j.clinsp.2025.100665</code>)</p>
-<p><strong>3. Coix lacryma-jobi (Yi Yi Ren) — major mechanism upgrade.</strong> Original comp-013 entry attributed activity to "atractylenolide I = MECHANISM UNCLEAR". The 2026-05-19 re-scan replaces this with <strong>Coix seed oil four-transporter mechanism</strong> (URAT1 + GLUT9 + OAT1 + ABCG2) at 73-87% SUA reduction in HUA rodent models (PMC12114407). This is a major upgrade — four-transporter coverage from a single GRAS food-grade input. (Animal Model; source: urat1-classical-formula-rescan-2026-05-19.md)</p>
-<p><strong>4. Plantago seed (Che Qian Zi) — attribution correction.</strong> Original comp-013 attributed Plantago activity to aucubin. The 2026-05-19 re-scan replaces aucubin attribution with <strong>acteoside + apigenin + geniposidic acid via PPAR pathway → URAT1 + GLUT9</strong> (Liu 2024 PMC11313179). Apigenin specifically deserves a separate URAT1 mechanism entry per Li 2021 PMID 34044255. (In Vitro + Animal Model; source: urat1-classical-formula-rescan-2026-05-19.md)</p>
-<p><strong>5. Si Miao San (SMS) — phytoecdysteroid + estrone arms missed.</strong> The original comp-013 SMS row captured the main flavonoid + alkaloid contributions. The 2026-05-19 re-scan surfaced two additional axes: (a) <strong>Phytoecdysteroids</strong> from Achyranthes bidentata / Niu Xi (one of the four SMS cardinal herbs) — independent ecdysteroid-pathway anti-inflammatory mechanism. (b) <strong>Estrone-family signaling</strong> — multiple SMS components engage estrogen-receptor-mediated downstream effects relevant to bone + inflammation. Both axes are mechanism-additive to the existing flavonoid arm. (Mechanistic Extrapolation; source: urat1-classical-formula-rescan-2026-05-19.md)</p>
-<p><strong>6. Rhein / Emodin split in Rheum palmatum (Da Huang) — mechanism separation.</strong> Original comp-013 framing treated rhein + emodin as a co-acting anthraquinone class. The 2026-05-19 re-scan separates them: <strong>rhein → direct XO inhibition</strong> (Meng 2015, Animal Model); <strong>emodin → transporter-mediated UA excretion, NO XO inhibition</strong> (Hou 2023 PMC10304951, already cited but mechanism not separated in narrative). Treat as two distinct chokepoint engagements rather than one. (Animal Model; source: xo-classical-formula-rescan-2026-05-19.md)</p>
-<p><strong>7. Acacetin → Agastache rugosa / Huo Xiang (new tier-1 XO chokepoint candidate).</strong> Yuk 2023 PMC9914411: acacetin XO IC50 = 0.58 μM. Most potent flavonoid in panel, beats luteolin. Classical formula context: Huo Xiang Zheng Qi. GRAS culinary status in Korea + Japan. Tier-1 XO chokepoint entry. (In Vitro; source: xo-classical-formula-rescan-2026-05-19.md)</p>
-<p><strong>8. Kaempferol → Chrysanthemum morifolium / Ju Hua (new tier-1 XO chokepoint candidate).</strong> Wee 2023 PMC9864848: kaempferol XO IC50 = 2.18 μM. Lee 2018 PMC6213378 DKB114 formula 38.3% UA ↓ at 200 mg/kg, XO IC50 104.4 μg/mL. Tier-1 XO chokepoint entry. (In Vitro + Animal Model; source: xo-classical-formula-rescan-2026-05-19.md)</p>
-<p><strong>9. Chlorogenic acid as a compound-class entry (not per-herb).</strong> Chlorogenic acid family is XO-active across Wu Mei (Prunus mume), Lonicera japonica, and likely Crataegus pinnatifida (Shan Zha) and others. Reframe as a compound-class entry rather than per-herb redundant entries. (In Vitro; source: xo-classical-formula-rescan-2026-05-19.md)</p>
-<p><strong>10. H04 falsification card partial closure.</strong> Comp-013's H04 hypothesis card flagged "ChEMBL coverage gap" — 5/9 compounds had no ChEMBL data. The 2026-05-19 traditional-name-first scan partially closes this: mangiferin (CHEMBL3611008), apigenin (well-cataloged), acteoside (curated). The methodology gap <strong>isn't ChEMBL coverage</strong> — it's <strong>seed-list construction at the herb level rather than the formula + marker level</strong>. Update H04 with this diagnosis: the falsification was query-framing, not database coverage.</p>
-<p><strong>Cross-references for this addendum:</strong>
-- <a href="../logs/urat1-classical-formula-rescan-2026-05-19.md"><code>urat1-classical-formula-rescan-2026-05-19.md</code></a>
-- <a href="../logs/xo-classical-formula-rescan-2026-05-19.md"><code>xo-classical-formula-rescan-2026-05-19.md</code></a>
-- <a href="../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md"><code>lit-scan-query-framing-retrospective-audit-2026-05-19.md</code></a> — the audit triggering both re-scans
-- <a href="../hypotheses/H04-tcm-rigor-intersection/"><code>hypotheses/H04-tcm-rigor-intersection.md</code></a> — needs marker-correction update incorporating items 1, 3, 4 above
-- <a href="../gout-pathophysiology/"><code>gout-pathophysiology.md</code></a> §"multi-track urate transporter coverage" — XO row updated with acacetin + kaempferol + rhein
-- <a href="../abcg2-modulators/"><code>abcg2-modulators.md</code></a> §"Tier 2 — Solid mechanism, modest evidence" — Poria cocos added (sister rescan finding, <a href="../logs/mushroom-hdac6-q141k-rescan-2026-05-19.md"><code>mushroom-hdac6-q141k-rescan-2026-05-19.md</code></a>)</p>
+<h1 id="tcm-gout-compound-triage">TCM gout compound triage<a class="headerlink" href="#tcm-gout-compound-triage" title="Permanent link">&para;</a></h1>
+<h2 id="verdict">Verdict<a class="headerlink" href="#verdict" title="Permanent link">&para;</a></h2>
+<p>COMP-013 is invalidated and non-runnable. It does not support a compound rank, <code>GUT-LUMINAL VIABLE</code> or other viability label, nominal gut or plasma exposure, target occupancy, percent inhibition, clinical-risk tier, dose conclusion, delivery route, or advancement decision.</p>
+<p>The model inherited COMP-004's invalid nominal-concentration/drug-substrate-IC50 shortcut, adapted COMP-007's invalid composite score, failed to preserve target-effect polarity, and mixed direct assays, expression changes, whole-animal phenotypes, and off-target signals as if they were comparable.</p>
+<p>The <a href="./etc/experiments/comp-013-tcm-gout-compound-triage/">hash-bound tombstone</a> preserves the exact retirement scope. Git contains the retired code, inputs, outputs, and reviews.</p>
+<h2 id="what-survives">What survives<a class="headerlink" href="#what-survives" title="Permanent link">&para;</a></h2>
+<p>The former input names remain an unranked historical search list:</p>
+<ul>
+<li>luteolin</li>
+<li>astilbin</li>
+<li>rhein</li>
+<li>emodin</li>
+<li>aucubin</li>
+<li>berberine</li>
+<li>cylindrin</li>
+<li>chlorogenic acid</li>
+<li>atractylenolide I</li>
+</ul>
+<p>The names are not evidence. Each must be rebuilt from the primary record with exact material identity, source, target or endpoint, effect polarity, assay system, evidence level, exposure status, and mechanism-matched function. Sparse database coverage is a reason to search more broadly, not a negative biological verdict.</p>
+<p>The formula-level Si Miao San connection also survives as a research lead. A formula signal does not establish component, target, or synergy attribution.</p>
+<h2 id="current-evidence-and-replacement">Current evidence and replacement<a class="headerlink" href="#current-evidence-and-replacement" title="Permanent link">&para;</a></h2>
+<p><a href="../tcm-modern-rigor-intersection/">TCM-derived gout leads</a> owns the current source-verified evidence boundaries, sourcing and delivery constraints, formula conjecture, and discriminating experiments.</p>
+<p><a href="./etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/">COMP-049</a> is the pre-run replacement design. Its fixed correction set contains four primary animal studies and one secondary systematic review covering <em>Smilax glabra</em> total flavonoids, emodin, coix seed oil, <em>Plantaginis Semen</em> extract, and modified Simiao decoctions. The planned computation preserves source tier, tested-material identity, polarity, assay context, simultaneous evidence gaps, and deferred work without ranking the records.</p>
+<p>COMP-049 has not run. No result should be inferred from its design or inputs.</p>
+<h2 id="falsification-boundary">Falsification boundary<a class="headerlink" href="#falsification-boundary" title="Permanent link">&para;</a></h2>
+<p>An incomplete evidence record does not show that a material is ineffective. It shows which attribution, exposure, functional, or trial-level evidence is missing. A negative experiment kills only the exact material, exposure, endpoint, and decision rule it tested.</p>
 
 
 

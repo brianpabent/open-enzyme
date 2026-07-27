@@ -1,6 +1,10 @@
 {
-  "_doc": "Operational definition of 'known to be not toxic' for comp-014 species inclusion. Replaces the curated-candidate-list approach. Phase 2 pulls fungal-compound records species-agnostically from LOTUS / NPAtlas / KNApSAcK / NPASS / TCMSP, then applies this filter to the unique species list that emerges. Inclusion-OR (any positive match → include); Exclusion-OR (any positive match → drop, regardless of inclusion-list status — exclusion takes precedence).",
-  "_principle": "Brian framing 2026-05-06: 'we don't want to get every fungus, but we don't want to get toxic ones. So can we get the ones that are known to be not toxic?' Operationalized via authoritative safety lists rather than Claude's judgment.",
+  "historical_snapshot": true,
+  "non_authoritative": true,
+  "lead_only": true,
+  "_authority_note": "Retained only to explain the historical COMP-014 search scope. This file is not a validated safety filter. Pharmacopoeia listing, trial registration, and absence of a mycotoxin flag do not establish safety; every exact organism, material, preparation, route, exposure, contaminant profile, and intended use requires independent safety review.",
+  "_doc": "Historical COMP-014 species-filter proposal. It is not used by the sole retained runnable validator except for a structural presence check, and it must not drive inclusion, exclusion, safety, or downstream recommendations.",
+  "_principle": "Historical design intent was to avoid known-toxic fungi without relying on agent judgment. The proposed proxies below were not validated as a safety classifier and have no current decision authority.",
   "inclusion_lists": {
     "FDA_GRAS_Notice_Inventory": {
       "url": "https://www.fda.gov/food/generally-recognized-safe-gras/gras-notice-inventory",
@@ -27,19 +31,19 @@
         "United States Pharmacopoeia (USP) — herbal section + dietary supplement monographs",
         "European Pharmacopoeia (Ph. Eur.) — herbal monographs"
       ],
-      "scope": "Listing in any current pharmacopoeia (esp. herbal/traditional sections) implies long-standing human use without acute toxicity flag.",
-      "use": "Cross-reference Phase 2 species list against pharmacopoeia herbal/traditional sections."
+      "scope": "Historical-use lookup only. Pharmacopoeia listing does not establish safety for an exact preparation, route, exposure, population, or therapeutic use.",
+      "use": "Lead for manual source review; never sufficient for safety inclusion."
     },
     "Published_human_clinical_trials": {
       "sources": ["ClinicalTrials.gov (search filter: intervention contains species name)", "WHO ICTRP (International Clinical Trials Registry Platform)", "ChiCTR (China Clinical Trial Registry)", "PubMed published RCTs and Phase I-IV trials"],
-      "scope": "Any fungal species that has been administered to humans in a registered clinical trial implies a regulatory safety review preceded the trial.",
-      "use": "Inclusion if ≥1 trial registry entry exists, regardless of trial outcome.",
+      "scope": "Trial-registry search lead only. Registration does not establish administration, tolerability, safety, efficacy, or applicability to another preparation or exposure.",
+      "use": "Retrieve the primary trial record and results for manual review; never include on registration alone.",
       "examples": ["Trametes versicolor PSK (FDA-approved adjuvant in Japan)", "Cordyceps militaris (numerous Chinese trials)", "Ganoderma lucidum (numerous trials including FDA-IND-cleared studies)", "Hericium erinaceus", "Antrodia camphorata antroquinonol (Phase II oncology)"]
     },
     "LOTUS_NPAtlas_records_without_mycotoxin_flag": {
-      "scope": "Compounds appearing in LOTUS or NPAtlas with a fungal source-organism annotation, where neither the compound nor the source species appears in the mycotoxin reference DB.",
-      "use": "Default inclusion for less-studied species — environmental isolate or research-only fungus with characterized chemistry but no documented human exposure.",
-      "flag": "Mark as 'safety_review_pending' so Phase 4-5 re-checks before downstream recommendation."
+      "scope": "Historical database-absence check. Failure to find a mycotoxin flag is not evidence of safety.",
+      "use": "Unresolved lead only; do not include or recommend without affirmative exact-material safety evidence.",
+      "flag": "unresolved_safety_evidence"
     }
   },
   "exclusion_lists": {
@@ -88,7 +92,7 @@
   },
   "grey_zone_protocol": {
     "definition": "Species appearing in NEITHER inclusion list NOR exclusion list. Most likely environmental isolates with no documented human exposure data — neither evidence-of-safety nor evidence-of-harm.",
-    "default_handling": "Include with safety_review_pending flag.",
+    "default_handling": "Do not infer safety or include by default; preserve only as an unresolved retrieval lead pending affirmative exact-material review.",
     "Phase_4_5_treatment": "If chokepoint intersection promotes a grey-zone species as a candidate, Phase 5 does explicit human-exposure-data lookup before any downstream recommendation. Look for: documented natural occurrence in foodstuffs, documented allergenic reactions, documented case reports of clinical infection."
   },
   "expected_yield": {

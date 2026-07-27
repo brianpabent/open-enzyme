@@ -1,6 +1,6 @@
 {
-  "_doc": "Data sources planned for comp-014 multi-database aggregation. Phase 1 (this commit) registers sources and access methods; Phase 2 executes the aggregation. Per Open Enzyme/CLAUDE.md global-multilingual-research rule, non-English-corpus sources are first-class — not 'language barrier' caveats.",
-  "_phase_1_status": "scope only — no DB calls executed in Phase 1; Phase 2a starts now",
+  "_doc": "Historical comp-014 data-source and access-method inventory. Later bounded pulls are retained elsewhere in the artifact but are not reproduced by the sole live scope validator. Source inclusion does not establish successful coverage or current authority.",
+  "_phase_1_status": "scope snapshot only; later bounded pulls exist in this artifact but are not reproduced by the scope validator",
   "toxicity_reference_databases": {
     "FDA_GRAS_Notice_Inventory": {
       "url": "https://www.fda.gov/food/generally-recognized-safe-gras/gras-notice-inventory",
@@ -22,7 +22,7 @@
       "use": "Hard exclusion — controlled-substance-producing fungi (Psilocybe spp.)."
     },
     "ClinicalTrials_gov_WHO_ICTRP_ChiCTR": {
-      "use": "Inclusion list — any registered human clinical trial implies regulatory safety review preceded the trial."
+      "use": "Historical trial-registry search lead only. Registration does not establish administration, tolerability, safety, efficacy, or applicability to another preparation or exposure; retrieve the primary record and results for manual review."
     },
     "_full_filter_definition": "see toxicity-filter.json"
   },
@@ -155,7 +155,7 @@
       "scope": "European-hosted manually curated bioactivity DB. ~2M compounds, 1.5M assays. Western pharma-skewed.",
       "access": "Public REST + Open Enzyme has MCP plugin (mcp__plugin_chembl_ChEMBL__get_bioactivity, etc.).",
       "use_case": "Empirical IC50 / Ki / Kd against gout-relevant targets where curated.",
-      "limitation": "comp-013 surfaced ChEMBL coverage gap for TCM-specific phytochemicals — same gap likely applies to fungal compounds."
+      "limitation": "Curated bioactivity coverage is incomplete for natural products; absence from ChEMBL is a search limitation, not evidence of inactivity."
     },
     "PubChem_BioAssay": {
       "url": "https://pubchem.ncbi.nlm.nih.gov",
@@ -219,11 +219,11 @@
     }
   },
   "phase_plan_summary": {
-    "phase_1_scope": "This commit. Inventory sources, candidate species, chokepoint targets. No DB queries executed.",
-    "phase_2_breadth_aggregation": "Pull LOTUS + NPAtlas + KNApSAcK + NPASS + TCMSP + COCONUT. Dedup by InChIKey. Output: unified fungal compound × species table.",
-    "phase_3_target_mapping": "Empirical (ChEMBL + HIT + PubChem) → SwissTargetPrediction for orphans. Output: compound × target table with empirical/predicted flag.",
-    "phase_4_chokepoint_intersection": "Join compound × target × Open Enzyme chokepoints (chokepoint-targets.json). Output: ranked candidate list.",
-    "phase_5_multilingual_deep_dive": "For top 3-5 species flagged by Phase 4: ingest CNKI + J-STAGE primary literature with two-model translation cross-check. Compare Asian clinical evidence against the breadth-pass mechanism map.",
-    "phase_6_per_compound_triage": "comp-013-style IC50 occupancy analysis for top candidates. Verdicts: GUT-LUMINAL VIABLE / SYSTEMIC VIABLE / MECHANISM UNCLEAR / NON-VIABLE. Subset gets shio-koji protease stability comp-NNN follow-ups."
+    "phase_1_scope": "Historical source, species, toxicity, and target inventory; no database calls were part of this step.",
+    "phase_2_breadth_aggregation": "Historical aggregation plan and retained outputs. The former pull/aggregation scripts are removed; rows are source leads only.",
+    "phase_3_target_mapping": "Historical target-mapping plan and retained outputs. The former mapper is removed; empirical/predicted labels require source rehydration.",
+    "phase_4_chokepoint_intersection": "Join compound × target × Open Enzyme chokepoints (chokepoint-targets.json). Retained rows are an unranked lead inventory; historical rank fields are invalid for decision use.",
+    "phase_5_multilingual_deep_dive": "Rehydrate nominated rows in relevant multilingual primary literature with the required two-model translation cross-check. Do not cap the search by a historical rank.",
+    "phase_6_per_compound_triage": "RETIRED. The former comp-013-style occupancy and composite-score triage is invalid for candidate ranking. Any successor must preserve target-effect polarity and require measured or justified free exposure plus mechanism-matched function."
   }
 }

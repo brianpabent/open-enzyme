@@ -1,0 +1,496 @@
+{
+  "schema_version": 2,
+  "evidence_set": {
+    "scope": "Four primary animal studies plus one secondary systematic review selected to correct surviving COMP-013 and TCM urate-axis claims; not a literature census",
+    "cutoff_date": "2026-07-27",
+    "selection_rule": "One source record per correction target: Smilax total-flavonoid fraction, emodin, coix seed oil, Plantaginis Semen extract, and modified Simiao decoctions.",
+    "record_ids": [
+      "smilax-tfsg-2019",
+      "emodin-2023",
+      "coix-seed-oil-2025",
+      "plantaginis-semen-2024",
+      "modified-simiao-review-2017"
+    ]
+  },
+  "records": [
+    {
+      "record_id": "smilax-tfsg-2019",
+      "material": {
+        "name": "Smilax glabra total-flavonoid fraction",
+        "type": "defined_extract_fraction",
+        "tested_material": {
+          "source_kind": "plant_derived_fraction",
+          "identity": "total-flavonoid fraction from Smilax glabra",
+          "preparation_or_composition": "fraction containing neoastilbin, astilbin, neoisoastilbin, and isoastilbin; the abstract reports 55.6% combined content",
+          "authentication_boundary": "species, fraction, named stereoisomers, and combined content were verified in the primary abstract; full preparation details were not verified in this COMP"
+        },
+        "traditional_occurrence_or_formula_context": [
+          "Smilax glabra"
+        ],
+        "individual_component_causality_established": false,
+        "material_evidence_gaps": [
+          "preparation_not_verified"
+        ],
+        "identity_status": "sufficiently_specified_for_record"
+      },
+      "gout_weakness": [
+        "urate_production",
+        "renal_urate_excretion"
+      ],
+      "source_design": "primary_animal_study",
+      "source_tier": "primary",
+      "assay_type": "animal_model",
+      "underlying_evidence_level": "Animal Model",
+      "biological_system": "potassium-oxonate hyperuricemic mice",
+      "phenotype_status": "measured_in_primary_study",
+      "free_exposure": [
+        {
+          "compartment": "hepatic",
+          "status": "not_verified_in_available_source",
+          "relevant_weaknesses": ["urate_production"]
+        },
+        {
+          "compartment": "renal",
+          "status": "not_verified_in_available_source",
+          "relevant_weaknesses": ["renal_urate_excretion"]
+        }
+      ],
+      "intestinal_controls": {
+        "general_barrier_evidence": "not_applicable",
+        "direct_flux_assay_barrier_control": "not_applicable",
+        "direct_flux_assay_viability_control": "not_applicable",
+        "boundary": "No intestinal urate-flux claim is encoded for this record."
+      },
+      "mechanism_function_evidence": [
+        {
+          "weakness": "urate_production",
+          "status": "present_in_verified_source",
+          "boundary": "The verified abstract reports hepatic xanthine-oxidase activity."
+        },
+        {
+          "weakness": "renal_urate_excretion",
+          "status": "not_verified_in_available_source",
+          "boundary": "The verified abstract reports renal OAT1 and OCTN2 expression but does not establish whether the full study included a direct renal urate-function measurement."
+        }
+      ],
+      "mechanism_observations": [
+        {
+          "mechanism_id": "XOD",
+          "target_or_endpoint": "hepatic xanthine-oxidase activity",
+          "effect_polarity": "decrease",
+          "endpoint_kind": "enzyme_activity",
+          "compartment": "hepatic",
+          "measurement_directness": "direct_function",
+          "target_attribution": "associated_target_measure",
+          "effect_scope": "reported_in_one_tested_group",
+          "relevant_weaknesses": [
+            "urate_production"
+          ]
+        },
+        {
+          "mechanism_id": "OAT1",
+          "target_or_endpoint": "renal OAT1 expression",
+          "effect_polarity": "increase",
+          "endpoint_kind": "expression",
+          "compartment": "renal",
+          "measurement_directness": "expression",
+          "target_attribution": "associated_target_measure",
+          "effect_scope": "reported_in_at_least_one_tested_group",
+          "relevant_weaknesses": [
+            "renal_urate_excretion"
+          ]
+        },
+        {
+          "mechanism_id": "OCTN2",
+          "target_or_endpoint": "renal OCTN2 expression",
+          "effect_polarity": "increase",
+          "endpoint_kind": "expression",
+          "compartment": "renal",
+          "measurement_directness": "expression",
+          "target_attribution": "associated_target_measure",
+          "effect_scope": "reported_in_at_least_one_tested_group",
+          "relevant_weaknesses": [
+            "renal_urate_excretion"
+          ]
+        }
+      ],
+      "attribution_boundary": "The source tested a total-flavonoid fraction; it did not establish purified astilbin or another individual stereoisomer as the causal material.",
+      "source": {
+        "citation": "Huang et al. Journal of Ethnopharmacology. 2019.",
+        "pmid": "30851369",
+        "pmcid": null,
+        "doi": "10.1016/j.jep.2019.03.004",
+        "verified_location": "primary PubMed abstract"
+      }
+    },
+    {
+      "record_id": "emodin-2023",
+      "material": {
+        "name": "commercial emodin reagent",
+        "type": "isolated_compound",
+        "tested_material": {
+          "source_kind": "commercial_reagent",
+          "identity": "emodin, stated purity 90%",
+          "preparation_or_composition": "Combi-Blocks product ST-7788; administered as the isolated commercial reagent",
+          "authentication_boundary": "vendor, product identifier, and stated purity were verified in the primary Methods"
+        },
+        "traditional_occurrence_or_formula_context": [
+          "Rheum species",
+          "Polygonum cuspidatum"
+        ],
+        "individual_component_causality_established": false,
+        "material_evidence_gaps": [
+          "reagent_purity_attribution"
+        ],
+        "identity_status": "sufficiently_specified_for_record"
+      },
+      "gout_weakness": [
+        "renal_urate_excretion"
+      ],
+      "source_design": "primary_animal_study",
+      "source_tier": "primary",
+      "assay_type": "animal_model",
+      "underlying_evidence_level": "Animal Model",
+      "biological_system": "potassium-oxonate hyperuricemic rats",
+      "phenotype_status": "measured_in_primary_study",
+      "free_exposure": [
+        {
+          "compartment": "renal",
+          "status": "not_measured",
+          "relevant_weaknesses": ["renal_urate_excretion"]
+        }
+      ],
+      "intestinal_controls": {
+        "general_barrier_evidence": "not_applicable",
+        "direct_flux_assay_barrier_control": "not_applicable",
+        "direct_flux_assay_viability_control": "not_applicable",
+        "boundary": "No intestinal urate-flux claim is encoded for this record."
+      },
+      "mechanism_function_evidence": [
+        {
+          "weakness": "renal_urate_excretion",
+          "status": "present_in_verified_source",
+          "boundary": "The verified full text reports whole-animal fractional urate excretion; this is physiological renal-excretion function but does not identify the responsible transporter."
+        }
+      ],
+      "mechanism_observations": [
+        {
+          "mechanism_id": "FEUA",
+          "target_or_endpoint": "fractional urate excretion",
+          "effect_polarity": "increase",
+          "endpoint_kind": "whole_animal_function",
+          "compartment": "renal",
+          "measurement_directness": "whole_organism_function",
+          "target_attribution": "unattributed_system_function",
+          "effect_scope": "reported_in_at_least_one_tested_group",
+          "relevant_weaknesses": [
+            "renal_urate_excretion"
+          ]
+        },
+        {
+          "mechanism_id": "XOD",
+          "target_or_endpoint": "hepatic xanthine-oxidase activity",
+          "effect_polarity": "no_change",
+          "endpoint_kind": "enzyme_activity",
+          "compartment": "hepatic",
+          "measurement_directness": "direct_function",
+          "target_attribution": "associated_target_measure",
+          "effect_scope": "reported_no_change_in_tested_groups",
+          "relevant_weaknesses": [
+            "urate_production"
+          ]
+        }
+      ],
+      "attribution_boundary": "The 90%-purity commercial reagent does not establish impurity-free single-component attribution. The renal molecular target responsible for increased fractional urate excretion was not measured; unchanged hepatic xanthine-oxidase activity does not fill that renal attribution gap.",
+      "source": {
+        "citation": "Hou et al. Pharmaceuticals. 2023.",
+        "pmid": "37375737",
+        "pmcid": "PMC10304951",
+        "doi": "10.3390/ph16060789",
+        "verified_location": "primary full text: Methods 4.1; Results 2.1 and 2.4; Discussion"
+      }
+    },
+    {
+      "record_id": "coix-seed-oil-2025",
+      "material": {
+        "name": "coix seed oil",
+        "type": "defined_extract",
+        "tested_material": {
+          "source_kind": "plant_derived_extract",
+          "identity": "oil extracted from Coix lacryma-jobi seeds",
+          "preparation_or_composition": "petroleum-ether extraction of vendor-procured seeds; tested as the resulting oil mixture",
+          "authentication_boundary": "the primary full text reports the vendor-procured seed identity and extraction method but no independent botanical-authentication record; individual oil components were not assigned causal effects"
+        },
+        "traditional_occurrence_or_formula_context": [
+          "Coix lacryma-jobi"
+        ],
+        "individual_component_causality_established": false,
+        "material_evidence_gaps": [
+          "botanical_authentication_not_verified"
+        ],
+        "identity_status": "sufficiently_specified_for_record"
+      },
+      "gout_weakness": [
+        "urate_production",
+        "renal_urate_excretion",
+        "intestinal_urate_excretion"
+      ],
+      "source_design": "primary_animal_study",
+      "source_tier": "primary",
+      "assay_type": "animal_model",
+      "underlying_evidence_level": "Animal Model",
+      "biological_system": "potassium-oxonate and hypoxanthine hyperuricemic mice",
+      "phenotype_status": "measured_in_primary_study",
+      "free_exposure": [
+        {
+          "compartment": "hepatic",
+          "status": "not_measured",
+          "relevant_weaknesses": ["urate_production"]
+        },
+        {
+          "compartment": "renal",
+          "status": "not_measured",
+          "relevant_weaknesses": ["renal_urate_excretion"]
+        },
+        {
+          "compartment": "intestinal",
+          "status": "not_measured",
+          "relevant_weaknesses": ["intestinal_urate_excretion"]
+        }
+      ],
+      "intestinal_controls": {
+        "general_barrier_evidence": "present_histology_and_tight_junction_markers",
+        "direct_flux_assay_barrier_control": "absent_no_direct_flux_assay",
+        "direct_flux_assay_viability_control": "absent_no_direct_flux_assay",
+        "boundary": "The animal study reports intestinal histology and ZO-1, Occludin, and Claudin-1 measures; it did not run a direct intestinal urate-flux assay, so flux-assay barrier and viability controls are absent."
+      },
+      "mechanism_function_evidence": [
+        {
+          "weakness": "urate_production",
+          "status": "present_in_verified_source",
+          "boundary": "The verified full text reports hepatic xanthine-oxidase activity."
+        },
+        {
+          "weakness": "renal_urate_excretion",
+          "status": "not_reported_in_verified_source",
+          "boundary": "The verified full text reports renal transporter expression but no direct renal urate-flux assay."
+        },
+        {
+          "weakness": "intestinal_urate_excretion",
+          "status": "not_reported_in_verified_source",
+          "boundary": "The verified full text reports intestinal transporter expression but no direct intestinal urate-flux assay."
+        }
+      ],
+      "mechanism_observations": [
+        {
+          "mechanism_id": "ABCG2",
+          "target_or_endpoint": "renal and intestinal ABCG2 expression",
+          "effect_polarity": "increase",
+          "endpoint_kind": "expression",
+          "compartment": "renal_and_intestinal",
+          "measurement_directness": "expression",
+          "target_attribution": "associated_target_measure",
+          "effect_scope": "reported_in_at_least_one_tested_group",
+          "relevant_weaknesses": [
+            "renal_urate_excretion",
+            "intestinal_urate_excretion"
+          ]
+        },
+        {
+          "mechanism_id": "XOD",
+          "target_or_endpoint": "hepatic xanthine-oxidase activity",
+          "effect_polarity": "decrease",
+          "endpoint_kind": "enzyme_activity",
+          "compartment": "hepatic",
+          "measurement_directness": "direct_function",
+          "target_attribution": "associated_target_measure",
+          "effect_scope": "reported_in_at_least_one_tested_group",
+          "relevant_weaknesses": [
+            "urate_production"
+          ]
+        }
+      ],
+      "attribution_boundary": "The study tested coix seed oil as a mixture; expression changes do not establish ABCG2-attributed urate flux or a causal oil component.",
+      "source": {
+        "citation": "Wu et al. Nutrients. 2025.",
+        "pmid": null,
+        "pmcid": "PMC12114407",
+        "doi": "10.3390/nu17101679",
+        "verified_location": "primary full text: Methods and Results"
+      }
+    },
+    {
+      "record_id": "plantaginis-semen-2024",
+      "material": {
+        "name": "Plantaginis Semen extract",
+        "type": "defined_extract",
+        "tested_material": {
+          "source_kind": "plant_derived_extract",
+          "identity": "extract prepared from an authenticated Plantago asiatica seed lot",
+          "preparation_or_composition": "authenticated vendor lot extracted with eightfold 65% ethanol by three 2-hour refluxes, then concentrated for gavage; serum-borne components were characterized in a separate arm",
+          "authentication_boundary": "lot authentication, solvent, extraction ratio, reflux count and duration, and gavage-concentrate preparation were verified in the primary Methods; no serum-borne component was established as causal"
+        },
+        "traditional_occurrence_or_formula_context": [
+          "Plantago asiatica"
+        ],
+        "individual_component_causality_established": false,
+        "material_evidence_gaps": [],
+        "identity_status": "sufficiently_specified_for_record"
+      },
+      "gout_weakness": [
+        "urate_production",
+        "renal_urate_reabsorption"
+      ],
+      "source_design": "primary_animal_study",
+      "source_tier": "primary",
+      "assay_type": "animal_model",
+      "underlying_evidence_level": "Animal Model",
+      "biological_system": "potassium-oxonate hyperuricemic rats",
+      "phenotype_status": "measured_in_primary_study",
+      "free_exposure": [
+        {
+          "compartment": "systemic",
+          "status": "not_measured",
+          "relevant_weaknesses": ["urate_production"]
+        },
+        {
+          "compartment": "renal",
+          "status": "not_measured",
+          "relevant_weaknesses": ["renal_urate_reabsorption"]
+        }
+      ],
+      "intestinal_controls": {
+        "general_barrier_evidence": "not_applicable",
+        "direct_flux_assay_barrier_control": "not_applicable",
+        "direct_flux_assay_viability_control": "not_applicable",
+        "boundary": "No intestinal urate-flux claim is encoded for this record."
+      },
+      "mechanism_function_evidence": [
+        {
+          "weakness": "urate_production",
+          "status": "not_reported_in_verified_source",
+          "boundary": "The verified Methods establish an ELISA signal but do not establish catalytic substrate-turnover measurement."
+        },
+        {
+          "weakness": "renal_urate_reabsorption",
+          "status": "not_reported_in_verified_source",
+          "boundary": "The verified full text reports transporter expression but no direct renal urate-transport assay."
+        }
+      ],
+      "mechanism_observations": [
+        {
+          "mechanism_id": "URAT1",
+          "target_or_endpoint": "renal URAT1 protein",
+          "effect_polarity": "decrease",
+          "endpoint_kind": "expression",
+          "compartment": "renal",
+          "measurement_directness": "expression",
+          "target_attribution": "associated_target_measure",
+          "effect_scope": "reported_in_at_least_one_tested_group",
+          "relevant_weaknesses": [
+            "renal_urate_reabsorption"
+          ]
+        },
+        {
+          "mechanism_id": "URAT1_GLUT9",
+          "target_or_endpoint": "renal Urat1 and Glut9 mRNA",
+          "effect_polarity": "decrease",
+          "endpoint_kind": "expression",
+          "compartment": "renal",
+          "measurement_directness": "expression",
+          "target_attribution": "associated_target_measure",
+          "effect_scope": "reported_in_at_least_one_tested_group",
+          "relevant_weaknesses": [
+            "renal_urate_reabsorption"
+          ]
+        },
+        {
+          "mechanism_id": "XOD",
+          "target_or_endpoint": "serum xanthine-oxidase ELISA signal reported as activity/level",
+          "effect_polarity": "decrease",
+          "endpoint_kind": "assay_signal",
+          "compartment": "systemic",
+          "measurement_directness": "associated_measure",
+          "target_attribution": "associated_target_measure",
+          "effect_scope": "reported_in_at_least_one_tested_group",
+          "relevant_weaknesses": [
+            "urate_production"
+          ]
+        }
+      ],
+      "attribution_boundary": "Serum-borne extract components were identified, but no one component was established as causal for the transporter or phenotype result.",
+      "source": {
+        "citation": "Liu et al. International Journal of Molecular Sciences. 2024.",
+        "pmid": null,
+        "pmcid": "PMC11313179",
+        "doi": "10.3390/ijms25158548",
+        "verified_location": "primary full text: Results 2.2, 2.3, and 2.7; Methods 4.2 and 4.6"
+      }
+    },
+    {
+      "record_id": "modified-simiao-review-2017",
+      "material": {
+        "name": "modified Simiao decoction family",
+        "type": "multi_component_formula_family",
+        "tested_material": {
+          "source_kind": "variable_formula_family",
+          "identity": "modified Simiao decoctions reported across included trials",
+          "preparation_or_composition": "formula composition varied across the review's included trials",
+          "authentication_boundary": "the secondary review does not establish one standardized tested material across trials"
+        },
+        "traditional_occurrence_or_formula_context": [
+          "modified Simiao decoction family"
+        ],
+        "individual_component_causality_established": false,
+        "material_evidence_gaps": [],
+        "identity_status": "variable_formula_family"
+      },
+      "gout_weakness": [
+        "serum_urate"
+      ],
+      "source_design": "systematic_review_meta_analysis",
+      "source_tier": "secondary",
+      "assay_type": "systematic_review",
+      "underlying_evidence_level": "Clinical Trial",
+      "biological_system": "reported randomized controlled trials in people with gouty arthritis",
+      "phenotype_status": "reported_by_secondary_review_not_independently_verified",
+      "free_exposure": [
+        {
+          "compartment": "clinical",
+          "status": "not_verified_in_available_source",
+          "relevant_weaknesses": ["serum_urate"]
+        }
+      ],
+      "intestinal_controls": {
+        "general_barrier_evidence": "not_applicable",
+        "direct_flux_assay_barrier_control": "not_applicable",
+        "direct_flux_assay_viability_control": "not_applicable",
+        "boundary": "No intestinal urate-flux claim is encoded for this record."
+      },
+      "mechanism_function_evidence": [],
+      "mechanism_observations": [
+        {
+          "mechanism_id": "SERUM_URATE",
+          "target_or_endpoint": "serum urate",
+          "effect_polarity": "decrease",
+          "endpoint_kind": "clinical_biomarker",
+          "compartment": "clinical",
+          "measurement_directness": "clinical_biomarker",
+          "target_attribution": "unattributed_system_function",
+          "effect_scope": "reported_in_meta_analyzed_trial_set",
+          "relevant_weaknesses": [
+            "serum_urate"
+          ]
+        }
+      ],
+      "attribution_boundary": "The secondary review reported formula-level signals, but most included trials were low quality and the variable formula family does not establish component, target, or synergy attribution.",
+      "source": {
+        "citation": "Liu et al. Evidence-Based Complementary and Alternative Medicine. 2017.",
+        "pmid": "28373889",
+        "pmcid": "PMC5360963",
+        "doi": "10.1155/2017/6037037",
+        "verified_location": "secondary full text: Abstract, Methods, Results 3.3, and conclusion"
+      }
+    }
+  ]
+}
