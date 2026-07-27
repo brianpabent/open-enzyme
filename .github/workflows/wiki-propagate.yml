@@ -16,7 +16,7 @@ on:
       max_cost_usd:
         description: 'Hard propagation cap'
         required: false
-        default: '0.50'
+        default: '0.75'
         type: string
 
 permissions:
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
-      MAX_COST_USD: ${{ inputs.max_cost_usd || '0.50' }}
+      MAX_COST_USD: ${{ inputs.max_cost_usd || '0.75' }}
       PROPAGATION_MODEL: deepseek/deepseek-v4-pro
     steps:
       - uses: actions/checkout@v5
@@ -92,12 +92,14 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
           set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           python3 scripts/sweep-1-propagate.py \
             --commit-sha "${{ steps.select.outputs.coverage }}" \
             --diff-base "${{ steps.select.outputs.cursor }}" \
             --trigger-files "${{ steps.select.outputs.paths }}" \
             --model "$PROPAGATION_MODEL" \
-            --max-iterations 12 --max-cost-usd "$MAX_COST_USD"
+            --max-iterations 14 --max-cost-usd "$MAX_COST_USD"
 
       - name: Verify propagated reader contract
         run: |

@@ -606,6 +606,11 @@ def main():
         f"{cache_pct:.0f}%) out={loop['output_tokens']:,} cost={cost_str}",
         file=sys.stderr,
     )
+    if not loop["completed"]:
+        raise SystemExit(
+            "Propagation model did not call done(); refusing to commit partial "
+            "propagation"
+        )
 
     summary = loop["done_summary"] or loop["last_text"] or ""
     committed, changed_paths = stage_and_commit(

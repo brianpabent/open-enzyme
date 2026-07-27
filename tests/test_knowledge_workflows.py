@@ -290,11 +290,20 @@ class WorkflowTriggerTests(unittest.TestCase):
     def test_local_and_generated_updates_fail_closed_on_reader_contract(self):
         hook = (ROOT / ".githooks/pre-push").read_text()
         propagation = (ROOT / ".github/workflows/wiki-propagate.yml").read_text()
+        propagation_driver = (ROOT / "scripts/sweep-1-propagate.py").read_text()
         integrity = (ROOT / ".github/workflows/corpus-integrity.yml").read_text()
         self.assertIn("check-corpus-hygiene.py", hook)
         self.assertIn("check-lit-scan-receipt.py", hook)
         self.assertIn("Verify propagated reader contract", propagation)
         self.assertIn("check-corpus-hygiene.py", propagation)
+        self.assertLess(
+            propagation.index('git config user.name "github-actions[bot]"'),
+            propagation.index("python3 scripts/sweep-1-propagate.py"),
+        )
+        self.assertIn(
+            "Propagation model did not call done(); refusing to commit partial",
+            propagation_driver,
+        )
         self.assertIn("check-lit-scan-receipt.py", integrity)
 
     def test_warning_lanes_carry_binding_scope(self):
