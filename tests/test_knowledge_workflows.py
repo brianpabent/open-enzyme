@@ -377,9 +377,7 @@ class WorkflowTriggerTests(unittest.TestCase):
             self.assertNotEqual("legacy_review_pending", receipt["comp_verdict"])
             if receipt["action_required"]:
                 self.assertIn("lane_adjudication", receipt)
-        # Pending records are explicit and blocked during budgeted backfill.
-        # The final queue closure tightens this to an empty list.
-        self.assertEqual(sorted(pending), pending)
+        self.assertEqual([], pending)
 
 
 class DistributedSynthesisContractTests(unittest.TestCase):
