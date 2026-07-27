@@ -1,28 +1,23 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "96846937607d1d436dec192ef7eec14948454885",
-    "source_commit": "d8c03b6bcb790c36193ccaca5b1e9090a8807b0b",
-    "result_commit": "96846937607d1d436dec192ef7eec14948454885",
-    "timestamp": "2026-07-27T14:33:58Z",
+    "coverage_commit": "141482852bd681fdef8280c73ac76cb0f20c4144",
+    "source_commit": "141482852bd681fdef8280c73ac76cb0f20c4144",
+    "result_commit": "141482852bd681fdef8280c73ac76cb0f20c4144",
+    "timestamp": "2026-07-27T14:56:15Z",
     "changed_paths": [
-      "wiki/etc/experiments/comp-029-combined-cp0-systems-model/invalidation.json",
-      "wiki/etc/experiments/comp-030-daf-cassette-ranking/invalidation.json",
-      "wiki/etc/experiments/comp-034-lactoferrin-linker-redesign/invalidation.json",
-      "wiki/etc/experiments/comp-037-c1-inh-protease-stability-ecn/invalidation.json",
-      "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/README.md",
-      "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/README.md",
-      "wiki/etc/experiments/comp-043-daf-lactoferrin-ecn-folding-feasibility/invalidation.json",
-      "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
-      "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/README.md",
-      "wiki/etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/README.md"
+      "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/invalidation.json",
+      "wiki/etc/manual-literature-mining.md",
+      "wiki/etc/open-source-platform.md",
+      "wiki/etc/practitioner-toolkit.md",
+      "wiki/f-prausnitzii-heterologous-expression-computational.md",
+      "wiki/food-grade-hdaci-screen-computational.md",
+      "wiki/fructose-connection.md",
+      "wiki/genotype-informed-supplement-workflow.md",
+      "wiki/gout-action-guide.md",
+      "wiki/gout-deep-dive.md"
     ],
-    "affected_paths": [
-      "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
-      "wiki/open-questions.md",
-      "wiki/tier-2-butyrate-assay-audit-computational.md",
-      "wiki/validation-experiments.md"
-    ],
+    "affected_paths": [],
     "blocked_paths": [
       "wiki/abcg2-modulators.md",
       "wiki/abcg2-q141k-chaperone-rescreen-computational.md",
@@ -34,15 +29,6 @@
       "wiki/gout-genetic-variants.md"
     ],
     "deferred_paths": [
-      "wiki/etc/manual-literature-mining.md",
-      "wiki/etc/open-source-platform.md",
-      "wiki/etc/practitioner-toolkit.md",
-      "wiki/f-prausnitzii-heterologous-expression-computational.md",
-      "wiki/food-grade-hdaci-screen-computational.md",
-      "wiki/fructose-connection.md",
-      "wiki/genotype-informed-supplement-workflow.md",
-      "wiki/gout-action-guide.md",
-      "wiki/gout-deep-dive.md",
       "wiki/gout-kill-chain-delivery-routes.md",
       "wiki/gout-multihop-research-program.md",
       "wiki/gout-pathophysiology.md",
@@ -90,7 +76,7 @@
       "wiki/uricase-variant-selection.md",
       "wiki/validation-experiments.md"
     ],
-    "cost_usd": 0.892496
+    "cost_usd": 0.555274
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
