@@ -5328,30 +5328,20 @@
 
 <h1 id="independent-comp-review-comp-004">Independent comp review — comp-004<a class="headerlink" href="#independent-comp-review-comp-004" title="Permanent link">&para;</a></h1>
 <h2 id="reviewed-snapshot">Reviewed snapshot<a class="headerlink" href="#reviewed-snapshot" title="Permanent link">&para;</a></h2>
-<p>Independent daemon review for <code>SOURCE_COMMIT</code> 0ef99dcc9102323608fc4e5384e09617e95e17e8, bound to push manifest SHA-256 <code>5a9ca14cae9a8beb2f7bb4ca8ba3f56b4ca5ffff2772ffa24e637fcf05c1b4c0</code>. Authoring gates were reported modern and valid. Shard auditors inspected the manifest text spans; I reopened comp-004 README, code, output summary, and interpretive page for targeted cross-checks. Repository fixed-string search was unavailable because the <code>grep_repo</code> backend lacked <code>rg</code>; this is a review tooling limit, not a deterministic block because shard coverage supplied broad affected-surface inspection and targeted files were reopened.</p>
+<p>Independent daemon reviewer; push manifest SHA-256 <code>62d17bef9d42994394848f2271d5fedfe2c5e6667c56292782023c9a4937b20a</code>, source commit <code>65e78cbd3d101e6883a73209bbf1f48cf9ac8f4c</code>. Authoring gates are modern and valid. Shard auditors reported complete inspection of the comp artifact, generated outputs, <code>wiki/computational-experiments.md</code>, <code>wiki/validation-experiments.md</code>, and the interpretive page; I reopened the load-bearing comp files and affected mechanism pages for targeted cross-checks. No deterministic binary block was reported.</p>
 <h2 id="bottom-line-verdict">Bottom-line verdict<a class="headerlink" href="#bottom-line-verdict" title="Permanent link">&para;</a></h2>
-<p>Action required. The comp-004 artifact itself is a valid corrective audit: it invalidates the prior quantitative gut-lumen occupancy verdict and preserves only qualitative routing to direct intestinal urate-flux assays. However, downstream corpus surfaces still contain or inherit the forbidden inference class, especially comp-013/comp-014/TCM pages. Corrective propagation is eligible with warning; synthesis using ABCG2/TCM rankings is blocked until reconciled.</p>
+<p>Quantitative verdict invalid. The revised comp correctly kills the prior nominal bulk gut concentration ÷ drug-substrate IC50 model and preserves only a qualitative evidence-routing result: the three cited ABCG2/BCRP interaction records do not establish intestinal ABCG2-attributed urate flux, so quercetin, curcumin, and EGCG require direct intestinal urate-flux testing.</p>
 <h2 id="implementation-and-constraint-closure">Implementation and constraint closure<a class="headerlink" href="#implementation-and-constraint-closure" title="Permanent link">&para;</a></h2>
-<p>The computation asks whether three cited ABCG2/BCRP interaction records for quercetin, curcumin, and EGCG support quantitative prediction of intestinal urate-transport inhibition. That is a model-fit correction, not a de novo literature census or physiological simulation.</p>
-<p>I traced <code>inputs/assay_evidence.json</code> through <code>analyze.py</code> to both outputs. The code checks schema version, exact compound set, duplicate compound records, controlled evidence levels, controlled urate-evidence status, Boolean intestinal-model flag, nonempty substrates, and nonempty source fields. It classifies any record lacking direct intestinal urate flux as <code>DIRECT_INTESTINAL_URATE_FLUX_ASSAY_REQUIRED</code>; if a record reports direct intestinal urate flux, it routes to <code>DIRECT_URATE_EVIDENCE_PRESENT_REVIEW_REQUIRED</code>. It never computes occupancy, percent inhibition, clinical risk, genotype risk, or dose.</p>
-<p>Important limitation: README says the code validates “structured source identifiers,” but implementation only checks nonempty citation, PMID, verified location, and optional DOI string. It does not validate PMID/DOI syntax, uniqueness, source-location vocabulary, or primary-source contents. Current records are safe enough for a bounded audit, but provenance strength is abstract-tier unless separately verified.</p>
-<p>Constraint closure is scientifically appropriate for a negative/corrective audit. The artifact explicitly rejects substituting nominal bulk gut concentration for free enterocyte-surface exposure; drug-substrate IC50 for urate transport; non-intestinal/cancer-cell context for intestinal epithelium; and Hill occupancy for clinical direction. It also identifies missing substrates/context closure: urate itself, intestinal epithelial localization, ABCG2 attribution, parent/metabolite exposure, exposure time, protein/surface abundance, barrier integrity, viability, and basolateral-to-apical urate flux. No numerical sensitivity analysis is expected because the computation intentionally produces no numerical biological verdict.</p>
+<p>The code implements a bounded structural audit, not a pharmacokinetic or transporter model. It validates schema version, exact compound set, controlled vocabularies, nonempty metadata, reported substrates, Boolean intestinal-model flags, and source-metadata presence. It does not validate PMID/DOI syntax or primary-source contents, and it does not calculate dose, solubility, free exposure, IC50 occupancy, percent inhibition, clinical risk, genotype effects, chronicity, or formulation effects.</p>
+<p>The route from inputs to outputs closes: all three input records have <code>urate_evidence_status: not_established_by_cited_record</code>, so all three are classified as <code>DIRECT_INTESTINAL_URATE_FLUX_ASSAY_REQUIRED</code> with <code>quantitative_risk_rank_allowed: false</code>. The contrary condition is implemented: if a record reports direct intestinal urate flux, the code routes to <code>DIRECT_URATE_EVIDENCE_PRESENT_REVIEW_REQUIRED</code> rather than silently keeping the default result.</p>
+<p>Constraint closure is appropriate for a negative qualitative audit. The relevant substrates are drug probes, not urate: quercetin records use mitoxantrone and BODIPY-FL-prazosin in non-intestinal BCRP systems; curcumin uses sulfasalazine and rosuvastatin in a cynomolgus-monkey intestinal BCRP interaction study; EGCG uses mitoxantrone in MCF-7Tam cells. No Km/Ki/IC50, ATP-dependent transport rate, free enterocyte-surface concentration, metabolite exposure, residence time, barrier integrity, viability, transporter attribution, intestinal segment, or coproduct/safety burden is measured. The artifact correctly treats those as wet-lab variables, not tunable model parameters.</p>
 <h2 id="summary-fidelity-audit">Summary-fidelity audit<a class="headerlink" href="#summary-fidelity-audit" title="Permanent link">&para;</a></h2>
-<p>Comp-004 README, <code>outputs/summary.md</code>, machine-readable audit, <code>wiki/supplement-abcg2-antagonism-computational.md</code>, <code>wiki/computational-experiments.md</code>, <code>wiki/validation-experiments.md</code> §1.14, and H04 are materially aligned: ratios, predicted inhibition percentages, and VERY_HIGH/clinical-risk labels are invalid; only direct-assay routing survives.</p>
-<p>Material drift remains outside the core comp-004 page set:
-- comp-013 README and output summary still contain inherited gut-concentration/IC50 occupancy ratios, Hill-equation thresholds, percent inhibition, VERY_HIGH/HIGH risk levels, and GUT-LUMINAL viability labels. These are not decision-usable under comp-004.
-- comp-014 scope summary says the comp-004 supplement screen “validated this target” for ABCG2. That overstates support; comp-004 validates neither target tractability nor quantitative target priority.
-- TCM pages contain additional priority/clinical-evidence drift unrelated to comp-004’s core artifact but relevant to synthesis safety: outdated candidate mechanism attributions, possible self-experiment framing, and clinical Si Miao San quantitative claims needing primary-source adjudication.</p>
+<p>The generated <code>outputs/assay_evidence_audit.json</code>, generated <code>outputs/summary.md</code>, experiment README, interpretive page, computational-experiments index entry, and validation §1.14 are materially aligned. They invalidate the old ratios, percent-inhibition estimates, and VERY_HIGH labels; they do not reintroduce ranking or clinical-risk claims; and they route to measured free parent/metabolites, ABCG2 protein/surface abundance, ABCG2 attribution, barrier/viability controls, and basolateral-to-apical urate flux.</p>
+<p>Targeted cross-checks of <code>abcg2-modulators.md</code>, <code>egcg.md</code>, <code>supplements-stack.md</code>, <code>theaflavins.md</code>, TCM pages, mushroom mapping, and index surfaces found the main comp-004 corrections propagated: EGCG/Yu is no longer described as a favorable ABCG2/Nrf2 sign switch; Farabegoli is bounded to cancer-cell mitoxantrone-assayed BCRP activity; supplement pages present ABCG2 effects as assay-design warnings rather than contraindication or patient timing rules; comp-013 reuse of the occupancy shortcut is invalidated.</p>
 <h2 id="reader-facing-ownership-audit">Reader-facing ownership audit<a class="headerlink" href="#reader-facing-ownership-audit" title="Permanent link">&para;</a></h2>
-<p>The focused comp-004 interpretive page owns the evidence boundary and points to validation §1.14 for the falsification experiment. It does not offer personalized supplement instructions or clinical risk ranking. This satisfies the reader-facing contract.</p>
-<p>The remaining ownership problem is downstream duplication and portfolio leakage. Comp-013 and comp-014 outputs act as if cross-track rankings and viability labels can inherit comp-004 occupancy calculations. Those rankings belong, if at all, only on portfolio comparison surfaces after mechanism-matched evidence is rebuilt. Focused TCM/chassis/intervention pages must own their evidence, exposure, safety, and falsification gates rather than narrating comp history or using invalid ABCG2 occupancy as a foil or shortcut.</p>
+<p>The focused mechanism page <code>abcg2-modulators.md</code> owns the transporter evidence, sourcing boundaries, conjecture, and falsification gate. The EGCG page owns EGCG-specific evidence, exposure, safety, and the direct ABCG2 open question. Cross-compound comparison remains in catalog/index surfaces without promoting a portfolio rank or clinical instruction. The inspected pages avoid narrative “old artifact” clutter except where needed to mark invalidated COMP scope, and they do not present supplement use, discontinuation, genotype personalization, or dosing advice.</p>
 <h2 id="conjecture-preservation-audit">Conjecture preservation audit<a class="headerlink" href="#conjecture-preservation-audit" title="Permanent link">&para;</a></h2>
-<p>The unsupported factual assertion killed by comp-004 is narrow: nominal supplement gut concentration divided by ABCG2 drug-substrate IC50 does not establish intestinal urate-flux inhibition, percent inhibition, risk tier, dose/formulation direction, genotype susceptibility, or clinical effect.</p>
-<p>Adjacent conjectures survive if rewritten compactly and explicitly:
-- Quercetin, curcumin, and EGCG have ABCG2/BCRP interaction signals in non-matched contexts.
-- Exposure time, metabolites, and intestinal context could alter ABCG2 effects, including EGCG’s net direction.
-- These ideas should be preserved only as Research Conjectures with sourced premises, an unsupported leap, upside, and a discriminating intestinal urate-flux observation.</p>
-<p>The negative result does not prove the compounds are safe, unsafe, beneficial, or inert for gout; it only invalidates the tested shortcut and decision rule.</p>
+<p>The unsupported factual assertion that Yu 2024 showed an ABCG2/Nrf2 favorable sign switch has been corrected. The useful adjacent idea survives in bounded form: EGCG’s net intestinal ABCG2 effect may depend on free exposure, metabolites, time, and intestinal context, but this is explicitly a Research Conjecture with a discriminating polarized intestinal urate-flux assay. The negative COMP result kills only the exact quantitative shortcut and the claim that the three cited records establish intestinal urate-transport inhibition. It does not kill quercetin, curcumin, or EGCG as broader gout/inflammation leads, nor does it prove safety or benefit.</p>
 <h2 id="generated-output-and-proposed-update-inventory">Generated-output and proposed-update inventory<a class="headerlink" href="#generated-output-and-proposed-update-inventory" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -5364,106 +5354,70 @@
 </thead>
 <tbody>
 <tr>
-<td><code>wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/README.md</code></td>
-<td>proposed update / experiment doc</td>
-<td>Yes</td>
-<td>Correct boundary; overstates source-identifier validation slightly.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/analyze.py</code></td>
-<td>experiment code</td>
-<td>Yes</td>
-<td>Implements qualitative audit; no forbidden quantitative calculation; weak source syntax validation.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/inputs/assay_evidence.json</code></td>
-<td>input</td>
-<td>Yes</td>
-<td>Three bounded records; abstract-tier source locations.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/inputs/provenance.md</code></td>
-<td>provenance</td>
-<td>Yes</td>
-<td>Supports retirement of IC50 averaging and EGCG sign-switch claims; downstream correction required.</td>
-</tr>
-<tr>
 <td><code>wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/assay_evidence_audit.json</code></td>
 <td>generated output</td>
 <td>Yes</td>
-<td>Faithful to code/input; all three routed to direct intestinal urate-flux assay; no quantitative ranking.</td>
+<td>Faithful to inputs/code; all three records route to direct intestinal urate-flux assay; quantitative ranking forbidden.</td>
 </tr>
 <tr>
 <td><code>wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/summary.md</code></td>
 <td>generated output</td>
 <td>Yes</td>
-<td>Faithful; preserves “not a literature census” and forbidden inference boundaries.</td>
+<td>Matches JSON and README; no unsupported numerical or clinical inference.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/README.md</code></td>
+<td>experiment summary/update</td>
+<td>Yes</td>
+<td>Correct verdict boundary and downstream claim map; broader than executable but framed as follow-up surfaces.</td>
 </tr>
 <tr>
 <td><code>wiki/supplement-abcg2-antagonism-computational.md</code></td>
-<td>proposed interpretive update</td>
+<td>interpretive wiki update</td>
 <td>Yes</td>
-<td>Correctly reports quantitative verdict invalid.</td>
+<td>Consistent with artifact; compound-specific boundaries and direct-assay route preserved.</td>
 </tr>
 <tr>
 <td><code>wiki/computational-experiments.md</code></td>
-<td>proposed/index update</td>
-<td>Yes</td>
-<td>Current comp-004 entry consistent; comp-013 entry reportedly downgraded, but its experiment outputs remain stale.</td>
+<td>index update</td>
+<td>Yes via shard; targeted context reopened</td>
+<td>Comp-004 entry is corrective and bounded; no rank or risk tier propagated.</td>
 </tr>
 <tr>
 <td><code>wiki/validation-experiments.md</code></td>
-<td>proposed validation update</td>
-<td>Yes</td>
-<td>§1.14 correctly requires measured exposure/metabolites and ABCG2-attributed urate flux; other sections contain unrelated issues requiring separate action before synthesis.</td>
+<td>validation update</td>
+<td>Yes via shards</td>
+<td>§1.14 records comp-004 invalidation and required direct urate-flux controls. Future hard statistical thresholds should remain pilot-qualified before verdict use.</td>
 </tr>
 <tr>
-<td><code>wiki/open-questions.md</code></td>
-<td>proposed planning update</td>
-<td>Yes</td>
-<td>Correctly forbids comp-013 reuse of comp-004 shortcut and sets rebuilt triage requirements.</td>
+<td><code>wiki/abcg2-modulators.md</code></td>
+<td>affected mechanism page</td>
+<td>Targeted relevant sections inspected</td>
+<td>Owns evidence boundaries and Research Conjecture; consistent.</td>
 </tr>
 <tr>
-<td><code>wiki/tcm-gout-compound-triage-computational.md</code></td>
-<td>affected interpretive page</td>
-<td>Yes</td>
-<td>Correctly marks comp-013 viability ranking invalid, but underlying comp-013 outputs remain stale.</td>
+<td><code>wiki/egcg.md</code></td>
+<td>affected focused page</td>
+<td>Targeted relevant sections inspected</td>
+<td>Yu/Farabegoli boundary corrected; no favorable ABCG2 claim.</td>
 </tr>
 <tr>
-<td><code>wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md</code></td>
-<td>affected experiment doc</td>
-<td>Yes</td>
-<td>Change required: still uses comp-004 occupancy/Hill thresholds and GUT-LUMINAL viability.</td>
+<td><code>wiki/supplements-stack.md</code></td>
+<td>affected catalog page</td>
+<td>Targeted relevant sections inspected</td>
+<td>Presents ABCG2 interactions as experimental variables, not personalized rules.</td>
 </tr>
 <tr>
-<td><code>wiki/etc/experiments/comp-013-tcm-gout-compound-triage/outputs/summary.md</code></td>
-<td>affected generated output</td>
-<td>Yes</td>
-<td>Change required or quarantine: contains forbidden ratios, percent inhibition, risk tiers, viability rankings.</td>
+<td><code>wiki/theaflavins.md</code></td>
+<td>affected related compound page</td>
+<td>Targeted relevant sections inspected</td>
+<td>Does not use EGCG as a class-pattern proof; notes no EGCG/theaflavin class inference.</td>
 </tr>
 <tr>
-<td><code>wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md</code></td>
-<td>affected generated output</td>
-<td>Yes</td>
-<td>Change required: “validated this target” overstates comp-004.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md</code></td>
-<td>affected provenance</td>
-<td>Yes</td>
-<td>No direct conflict; future reuse must inherit comp-004 boundary.</td>
-</tr>
-<tr>
-<td><code>wiki/hypotheses/H04-tcm-rigor-intersection.md</code></td>
-<td>affected hypothesis</td>
-<td>Yes</td>
-<td>Consistent; preserves exposure/function requirement.</td>
-</tr>
-<tr>
-<td><code>wiki/tcm-modern-rigor-intersection.md</code></td>
-<td>affected reader page</td>
-<td>Yes</td>
-<td>Change required for TCM candidate/status and reader-facing framing issues; comp-004 boundary partly represented.</td>
+<td><code>wiki/tcm-modern-rigor-intersection.md</code>, <code>wiki/hypotheses/H04-tcm-rigor-intersection.md</code>, <code>wiki/tcm-gout-compound-triage-computational.md</code>, <code>wiki/medicinal-mushroom-compound-mapping-computational.md</code>, <code>wiki/open-questions.md</code>, <code>index.md</code>, <code>wiki/nlrp3-inhibitor-screen.md</code></td>
+<td>affected synthesis/index pages</td>
+<td>Targeted relevant sections inspected</td>
+<td>Correctly reject occupancy shortcut reuse or preserve only measured-exposure/function gates where relevant.</td>
 </tr>
 </tbody>
 </table>
@@ -5480,89 +5434,80 @@
 </thead>
 <tbody>
 <tr>
-<td>Exact compounds are quercetin, curcumin, EGCG</td>
-<td><code>analyze.py</code>, <code>assay_evidence.json</code></td>
-<td>Hard-coded exact set check</td>
-<td>Directly inspectable input/code</td>
-<td>Verified for bounded set.</td>
+<td>Exact compound set is Curcumin, EGCG, Quercetin</td>
+<td><code>analyze.py</code>, <code>inputs/assay_evidence.json</code></td>
+<td>Enforced by <code>EXPECTED_COMPOUNDS</code> equality</td>
+<td>Internal artifact</td>
+<td>Closed.</td>
 </tr>
 <tr>
-<td>Cited records lack direct intestinal urate-flux evidence</td>
-<td><code>assay_evidence.json</code>, output records</td>
-<td>Drives direct-assay routing</td>
-<td>Source locations are “primary abstract”; primary full text not verified here</td>
-<td>Usable only as abstract-tier bounded audit.</td>
+<td>Quercetin cited record used drug substrates in non-intestinal systems</td>
+<td>input/provenance/output</td>
+<td>Classification reason; no numerical use</td>
+<td>Citation string + “primary abstract”; source content not independently reverified here</td>
+<td>Sufficient for bounded audit; not a full source verification.</td>
 </tr>
 <tr>
-<td>Nominal gut concentration/IC50 cannot quantify intestinal urate transport</td>
-<td>README, summary, wiki page</td>
-<td>Basis for invalidating prior quantitative verdict</td>
-<td>Mechanistic reasoning in artifact; no primary-source verification needed for the computational-substitution critique</td>
-<td>Valid corrective conclusion.</td>
+<td>Curcumin cited record is intestinal BCRP interaction with sulfasalazine/rosuvastatin, not urate</td>
+<td>input/provenance/output</td>
+<td>Routes to direct urate-flux assay despite intestinal model flag</td>
+<td>PMID/DOI present; abstract-level verification claimed</td>
+<td>Sufficient for bounded audit.</td>
 </tr>
 <tr>
-<td><code>quantitative_risk_rank_allowed: false</code></td>
-<td><code>analyze.py</code>, audit JSON</td>
-<td>Emitted for all dispositions</td>
-<td>Directly inspectable</td>
-<td>Verified.</td>
+<td>EGCG Farabegoli record reduced mitoxantrone-assayed BCRP activity in MCF-7Tam without mRNA/protein change</td>
+<td>input/provenance/output; <code>egcg.md</code></td>
+<td>Routes to direct urate-flux assay; no kinetic parameter used</td>
+<td>PMID/DOI present; abstract-level verification claimed</td>
+<td>Sufficient for bounded audit.</td>
 </tr>
 <tr>
-<td>Source identifier validation</td>
-<td>README vs <code>analyze.py</code></td>
-<td>README says structured validation; code checks nonempty fields only</td>
-<td>Inspectable mismatch</td>
-<td>Limitation; action to qualify wording or strengthen code.</td>
+<td>Yu 2024 does not report ABCG2 or Nrf2-mediated ABCG2 sign switch in primary abstract</td>
+<td>provenance; <code>abcg2-modulators.md</code>; <code>egcg.md</code></td>
+<td>Not used in code; supports wiki correction</td>
+<td>Abstract-level provenance only</td>
+<td>Correctly bounded; do not treat as full-paper exclusion.</td>
 </tr>
 <tr>
-<td>Direct follow-up requires free parent/metabolites, ABCG2 protein/attribution, barrier/viability, urate flux</td>
-<td>README, summary, validation §1.14</td>
-<td>Not computed; stated falsification gate</td>
-<td>Corpus design claim; primary method qualification not independently verified</td>
-<td>Appropriate as next-gate design boundary.</td>
+<td>Quantitative risk/rank not allowed</td>
+<td>code/output/summary/wiki</td>
+<td>Set false for every record; invalidated-scope list</td>
+<td>Internal computational rule</td>
+<td>Closed.</td>
 </tr>
 <tr>
-<td>comp-013 ABCG2 occupancy/viability ranking remains usable</td>
-<td>comp-013 README/output</td>
-<td>Downstream decision artifact</td>
-<td>Contradicted by comp-004</td>
-<td>Invalid; action required.</td>
-</tr>
-<tr>
-<td>comp-014 “comp-004 validated ABCG2 target”</td>
-<td>comp-014 scope summary</td>
-<td>Downstream target framing</td>
-<td>Contradicted by comp-004</td>
-<td>Overstated; action required.</td>
+<td>Direct intestinal ABCG2-attributed urate flux is required resolver</td>
+<td>README/output/wiki/validation §1.14</td>
+<td>Output disposition and downstream experiment routing</td>
+<td>Mechanistic reasoning from substrate/system mismatch</td>
+<td>Valid qualitative routing; no biological effect inferred.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="affected-wiki-pages">Affected wiki pages<a class="headerlink" href="#affected-wiki-pages" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>wiki/supplement-abcg2-antagonism-computational.md</code> — already consistent — reports invalid quantitative method and direct-assay route.</li>
-<li><code>wiki/computational-experiments.md</code> — already consistent for comp-004 — warns against ratios/risk labels; ensure stale comp-013 outputs are visibly quarantined.</li>
-<li><code>wiki/validation-experiments.md</code> — already consistent for §1.14 — requires matrix-qualified exposure/metabolite and ABCG2-attributed urate flux; unrelated sections need separate review actions before broad synthesis.</li>
-<li><code>wiki/open-questions.md</code> — already consistent — instructs rebuilt TCM triage without comp-004 shortcut.</li>
-<li><code>wiki/hypotheses/H04-tcm-rigor-intersection.md</code> — already consistent — preserves measured free exposure and mechanism-matched endpoint requirements.</li>
-<li><code>wiki/tcm-gout-compound-triage-computational.md</code> — already consistent at interpretive level — marks comp-013 ranking invalid; depends on correcting source outputs.</li>
-<li><code>wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md</code> — change required — still encodes invalid occupancy/Hill/viability framework.</li>
-<li><code>wiki/etc/experiments/comp-013-tcm-gout-compound-triage/outputs/summary.md</code> — change required — contains forbidden ratios, percent inhibition, risk tiers, and rankings.</li>
-<li><code>wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md</code> — change required — replace “validated this target” with “identified direct urate-flux assay requirement.”</li>
-<li><code>wiki/tcm-modern-rigor-intersection.md</code> — change required — update outdated candidate attributions and remove/qualify self-experiment or unadjudicated clinical claims.</li>
+<li><code>wiki/supplement-abcg2-antagonism-computational.md</code> — already consistent — bounded comp result and direct assay route.</li>
+<li><code>wiki/computational-experiments.md</code> — already consistent — comp-004 listed as invalidating quantitative occupancy/risk verdict.</li>
+<li><code>wiki/validation-experiments.md</code> — already consistent for comp-004 — §1.14 captures assay mismatch and direct flux requirements; pilot variance should qualify future hard thresholds.</li>
+<li><code>wiki/abcg2-modulators.md</code> — already consistent — owns transporter evidence and EGCG context conjecture.</li>
+<li><code>wiki/egcg.md</code> — already consistent — corrected Yu/Farabegoli boundary and open ABCG2 question.</li>
+<li><code>wiki/supplements-stack.md</code> — already consistent — no patient-facing ABCG2 contraindication; direct flux required.</li>
+<li><code>wiki/theaflavins.md</code> — already consistent — no EGCG/theaflavin class-pattern inference.</li>
+<li><code>wiki/tcm-modern-rigor-intersection.md</code> — already consistent — poor absorption/occupancy shortcuts rejected in favor of measured exposure/function.</li>
+<li><code>wiki/hypotheses/H04-tcm-rigor-intersection.md</code> — already consistent — cites comp-004 as a method caution, not validation.</li>
+<li><code>wiki/tcm-gout-compound-triage-computational.md</code> — already consistent — comp-013 occupancy-derived rank/viability labels invalidated.</li>
+<li><code>wiki/medicinal-mushroom-compound-mapping-computational.md</code> — already consistent — ABCG2 drug-substrate/expression records not treated as urate flux.</li>
+<li><code>index.md</code> — already consistent — comp-004 public summary is corrective, not a risk ranking.</li>
 </ul>
 <h2 id="new-connections-or-implications">New connections or implications<a class="headerlink" href="#new-connections-or-implications" title="Permanent link">&para;</a></h2>
-<p>Comp-004’s correction applies beyond supplements: any natural-product triage that uses transporter occupancy from nominal luminal concentration and off-substrate IC50 needs measured free exposure and a context-matched functional endpoint before ranking.</p>
-<p>Research Conjecture boundary: polyphenol ABCG2 interactions may matter for intestinal urate handling if free parent/metabolite exposure at the enterocyte surface overlaps an urate-transport-relevant operating range and changes ABCG2-attributed basolateral-to-apical urate flux without barrier/viability artifacts. The discriminating observation is a prespecified intestinal epithelial flux assay with exposure analytics and ABCG2 attribution.</p>
+<p>Comp-004 strengthens a general corpus rule: transporter evidence must preserve substrate identity and compartment. This applies beyond supplements to TCM/fungal lead inventories, theaflavin transporter-expression claims, and any UOX substrate-supply enhancer. A drug-probe BCRP interaction can nominate a control arm, but only ABCG2-attributed urate flux under measured epithelial exposure can support a urate-transport conclusion.</p>
+<p>Research Conjecture boundary: EGCG’s cancer-cell BCRP inhibition and Yu’s mouse serum-urate phenotype may reflect context-dependent exposure/metabolism/tissue differences, but the direct link is unsupported until the polarized intestinal urate-flux experiment is run.</p>
 <h2 id="required-actions">Required actions<a class="headerlink" href="#required-actions" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Correct or quarantine <code>wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md</code> and <code>outputs/summary.md</code>: remove decision use of comp-004-derived occupancy ratios, Hill percent inhibition, VERY_HIGH/HIGH risk tiers, and GUT-LUMINAL viability labels; verification criterion is no remaining claim that nominal gut-concentration/IC50 supports biological viability or hazard ranking.</li>
-<li>Correct <code>wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md</code>: replace “comp-004 validated this target” with the bounded conclusion that comp-004 invalidated quantitative ABCG2 shortcut and routed to direct urate-flux assays.</li>
-<li>Qualify comp-004 README wording or strengthen code: either state that source metadata validation is nonempty-field validation only, or add PMID/DOI/location vocabulary validation and regenerate outputs.</li>
-<li>Audit <code>wiki/tcm-modern-rigor-intersection.md</code> for reader-facing ownership: update stale candidate mechanism attributions, avoid self-experiment framing, and mark Si Miao San quantitative clinical claims as requiring primary-source adjudication unless already verified.</li>
-<li>Before any synthesis using TCM/supplement ABCG2 priorities, rebuild triage from primary evidence preserving compound/source/target/polarity, assay type, measured/justified free exposure, and mechanism-matched function.</li>
+<li>None for comp-004 propagation or synthesis. Use only the bounded corrective result and forbidden-inference list above.</li>
 </ol>
 <h2 id="review-limits">Review limits<a class="headerlink" href="#review-limits" title="Permanent link">&para;</a></h2>
-<p>No experiment code was executed in daemon mode. Primary sources were not independently retrieved; source support is limited to artifact citations and shard-inspected provenance, with several comp-004 inputs marked “primary abstract.” Fixed-string repository search could not run because the tool backend lacked <code>rg</code>; affected-surface review relies on supplied hash-bound shard coverage plus targeted file reopening. Binary artifacts were not present as deterministic blocks.</p>
+<p>Code was inspected but not executed in daemon mode. Primary papers were not independently rehydrated beyond artifact-provided citation/abstract-level provenance. Repository full-text search tooling failed because <code>rg</code> was unavailable, so affected-surface checks relied on shard coverage plus targeted file reopening rather than a fresh exhaustive grep. Future use of validation §1.14 as a verdict-bearing wet-lab protocol should freeze statistical thresholds from pilot variance rather than treating current planning numbers as biologically validated.</p>
 
 
 

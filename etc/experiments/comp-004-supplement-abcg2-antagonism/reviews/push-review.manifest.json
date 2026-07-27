@@ -6,8 +6,8 @@
     {
       "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/README.md",
       "kind": "design",
-      "bytes": 7135,
-      "sha256": "1b406c1f70578dd1f77abcf457348612b537714da9718d4c3d00beb6db61e199"
+      "bytes": 7196,
+      "sha256": "86032b26232a9159b6796019c3615b5c435275d067c713ea823b35446f8571bd"
     },
     {
       "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/analyze.py",
@@ -42,26 +42,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 75330,
-      "sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md",
-      "kind": "proposed_update",
-      "bytes": 7178,
-      "sha256": "2e9dfaebb068123b223fa5774856c6e42aba7a805cccb3e423a84eadd9b642fd"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/outputs/summary.md",
-      "kind": "proposed_update",
-      "bytes": 16933,
-      "sha256": "2c40532b7ca8b5c92ea00b4a2d3aa87696d7ea3da634c456ac973719eb8b78fc"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md",
-      "kind": "proposed_update",
-      "bytes": 7844,
-      "sha256": "e6548837d343162f982781296377a7aaffa4a007eb900e12232a3be709defd48"
+      "bytes": 73854,
+      "sha256": "8ea8f1845ae656672d589ed841dfedbde8a9556b01bce4dec711ac0c2ff3608a"
     },
     {
       "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
@@ -70,42 +52,18 @@
       "sha256": "49d572cdec31ee45314ae074baec8fb0fa3b7f64db5ff6bcec78b1ef74fa82f9"
     },
     {
-      "path": "wiki/hypotheses/H04-tcm-rigor-intersection.md",
-      "kind": "proposed_update",
-      "bytes": 9449,
-      "sha256": "05350e55e25c18d6d6d5360ac12981e44404c41d4759394d63854c5f24cc690b"
-    },
-    {
-      "path": "wiki/open-questions.md",
-      "kind": "proposed_update",
-      "bytes": 74825,
-      "sha256": "9ffef573b763d3471a545cb2700eee1b09910f8d906b5795344abf6e9beed09a"
-    },
-    {
       "path": "wiki/supplement-abcg2-antagonism-computational.md",
       "kind": "proposed_update",
       "bytes": 2067,
       "sha256": "0f11d31223536f0c9bc61983a42cc46edcc76351ee1ce068b44f323c0b159be5"
     },
     {
-      "path": "wiki/tcm-gout-compound-triage-computational.md",
-      "kind": "proposed_update",
-      "bytes": 10594,
-      "sha256": "a488e47c57af2f178b6801d6e46461e4b14ffcfc948c11acd01164683de9e537"
-    },
-    {
-      "path": "wiki/tcm-modern-rigor-intersection.md",
-      "kind": "proposed_update",
-      "bytes": 29724,
-      "sha256": "1dba00fdb3754f5854d30e11ee83cbd6418d6161eff65b19d7c098a0ea910314"
-    },
-    {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 242023,
-      "sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6"
+      "bytes": 232441,
+      "sha256": "b8e72764627caa1e76e63254db036cc1a47a9aa763d63ac7eb8b3e4641e76f52"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "5a9ca14cae9a8beb2f7bb4ca8ba3f56b4ca5ffff2772ffa24e637fcf05c1b4c0"
+  "manifest_sha256": "62d17bef9d42994394848f2271d5fedfe2c5e6667c56292782023c9a4937b20a"
 }

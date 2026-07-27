@@ -2,14 +2,14 @@
   "schema_version": 1,
   "comp": "comp-004",
   "comp_dir": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism",
-  "source_commit": "0ef99dcc9102323608fc4e5384e09617e95e17e8",
-  "artifact_manifest_sha256": "5a9ca14cae9a8beb2f7bb4ca8ba3f56b4ca5ffff2772ffa24e637fcf05c1b4c0",
+  "source_commit": "65e78cbd3d101e6883a73209bbf1f48cf9ac8f4c",
+  "artifact_manifest_sha256": "62d17bef9d42994394848f2271d5fedfe2c5e6667c56292782023c9a4937b20a",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-27T11:46:04Z",
-  "comp_verdict": "action_required",
+  "timestamp": "2026-07-27T18:20:47Z",
+  "comp_verdict": "quantitative_verdict_invalid",
   "propagation_eligibility": "eligible_with_warning",
-  "synthesis_eligibility": "blocked",
-  "action_required": true,
+  "synthesis_eligibility": "eligible_with_warning",
+  "action_required": false,
   "authoring_gates": {
     "status": "modern",
     "valid": true,
@@ -20,14 +20,14 @@
   "coverage": [
     {
       "shard_id": "shard-001",
-      "coverage_sha256": "6b218cd93d8690f0ade2d244b062a191eff4d25128ce2bc40e45cb49654fee5d",
+      "coverage_sha256": "480114837892d16410835829fb704a13732d415d111d8250db596cf20e21c051",
       "segments": [
         {
           "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/README.md",
           "role": "comp_artifact",
           "start": 0,
-          "end": 7088,
-          "file_sha256": "1b406c1f70578dd1f77abcf457348612b537714da9718d4c3d00beb6db61e199",
+          "end": 7149,
+          "file_sha256": "86032b26232a9159b6796019c3615b5c435275d067c713ea823b35446f8571bd",
           "binary": false
         },
         {
@@ -74,32 +74,8 @@
           "path": "wiki/computational-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 74655,
-          "file_sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88",
-          "binary": false
-        },
-        {
-          "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/README.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 7080,
-          "file_sha256": "2e9dfaebb068123b223fa5774856c6e42aba7a805cccb3e423a84eadd9b642fd",
-          "binary": false
-        },
-        {
-          "path": "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/outputs/summary.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 16711,
-          "file_sha256": "2c40532b7ca8b5c92ea00b4a2d3aa87696d7ea3da634c456ac973719eb8b78fc",
-          "binary": false
-        },
-        {
-          "path": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/outputs/scope-summary.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 7737,
-          "file_sha256": "e6548837d343162f982781296377a7aaffa4a007eb900e12232a3be709defd48",
+          "end": 73222,
+          "file_sha256": "8ea8f1845ae656672d589ed841dfedbde8a9556b01bce4dec711ac0c2ff3608a",
           "binary": false
         },
         {
@@ -111,25 +87,11 @@
           "binary": false
         },
         {
-          "path": "wiki/hypotheses/H04-tcm-rigor-intersection.md",
+          "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/reviews/push-review.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 9398,
-          "file_sha256": "05350e55e25c18d6d6d5360ac12981e44404c41d4759394d63854c5f24cc690b",
-          "binary": false
-        }
-      ]
-    },
-    {
-      "shard_id": "shard-002",
-      "coverage_sha256": "2917277eed81dcc1e6cf345a6a0df6bd72e03bba1797d8e2d04bc06a082978e9",
-      "segments": [
-        {
-          "path": "wiki/open-questions.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 74447,
-          "file_sha256": "9ffef573b763d3471a545cb2700eee1b09910f8d906b5795344abf6e9beed09a",
+          "end": 14465,
+          "file_sha256": "aea6c3203253b9ab4593460bb074a015c47422d6a548582dd6cb14527a6e2c1c",
           "binary": false
         },
         {
@@ -139,74 +101,60 @@
           "end": 2052,
           "file_sha256": "0f11d31223536f0c9bc61983a42cc46edcc76351ee1ce068b44f323c0b159be5",
           "binary": false
-        },
-        {
-          "path": "wiki/tcm-gout-compound-triage-computational.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 10515,
-          "file_sha256": "a488e47c57af2f178b6801d6e46461e4b14ffcfc948c11acd01164683de9e537",
-          "binary": false
-        },
-        {
-          "path": "wiki/tcm-modern-rigor-intersection.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 29361,
-          "file_sha256": "1dba00fdb3754f5854d30e11ee83cbd6418d6161eff65b19d7c098a0ea910314",
-          "binary": false
         }
       ]
     },
     {
-      "shard_id": "shard-003",
-      "coverage_sha256": "b96da127bfd1b33a64e19f406ca972ade8dd030fd0dc76795d60f46fe401dbc5",
+      "shard_id": "shard-002",
+      "coverage_sha256": "11fc9801ada263d74483ff0c880253e27bc7d5410fea7439cc2e6e34bdd25805",
       "segments": [
         {
           "path": "wiki/validation-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 0,
           "end": 180000,
-          "file_sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6",
+          "file_sha256": "b8e72764627caa1e76e63254db036cc1a47a9aa763d63ac7eb8b3e4641e76f52",
           "binary": false
         }
       ]
     },
     {
-      "shard_id": "shard-004",
-      "coverage_sha256": "72acd7cf15738e5e3a68104ba96d37efd9fdd0cdbbcf7a0a29583b51dc543afa",
+      "shard_id": "shard-003",
+      "coverage_sha256": "af4bcac3c69e7b4c748b470f356e445df14c627eb113d9c5746c6592fe20d8db",
       "segments": [
         {
           "path": "wiki/validation-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 180000,
-          "end": 239988,
-          "file_sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6",
+          "end": 230542,
+          "file_sha256": "b8e72764627caa1e76e63254db036cc1a47a9aa763d63ac7eb8b3e4641e76f52",
           "binary": false
         }
       ]
     }
   ],
   "unsupported_binary_entries": [],
-  "projected_cost_usd": 1.60451,
-  "actual_cost_usd": 1.042639,
-  "input_tokens": 158627,
-  "output_tokens": 10544,
-  "tool_calls": 8,
-  "review_sha256": "d2963bb1e4dfb08447e9bf2fce31e4442565a64a2d96ea9404ebd1aa539b4861",
+  "projected_cost_usd": 1.255008,
+  "actual_cost_usd": 1.715562,
+  "input_tokens": 491100,
+  "output_tokens": 14273,
+  "tool_calls": 30,
+  "review_sha256": "1dc5144dce57ab9dc67470b4344ca8e839e826b267496495a29e76f1b9e0dbb9",
   "lane_adjudication": {
-    "date": "2026-07-27T11:46:04Z",
+    "date": "2026-07-27T18:20:47Z",
     "method": "exact push review",
     "new_artifact_review_performed": true,
-    "queue_action_remains_open": true,
-    "propagation_allowed_scope": "corrective-only propagation of comp-004 invalidation and direct-assay routing boundaries",
-    "synthesis_allowed_scope": "none when based on downstream ABCG2/TCM rankings; bounded lead-inventory synthesis may resume only after stale comp-013/014/TCM surfaces are corrected",
+    "queue_action_remains_open": false,
+    "propagation_allowed_scope": "corrective propagation only: prior nominal gut-concentration/IC50 ratios, percent inhibition, VERY_HIGH risk tiers, and clinical/patient inferences are invalid; direct intestinal ABCG2-attributed urate-flux testing is the surviving route",
+    "synthesis_allowed_scope": "bounded synthesis of evidence-gap routing for quercetin, curcumin, and EGCG from the three cited records; no ranking, dose, genotype, formulation, or clinical direction",
     "forbidden_inferences": [
-      "nominal gut-concentration/IC50 as intestinal urate-transport occupancy",
-      "percent ABCG2 urate inhibition",
+      "dose or formulation guidance",
+      "percent intestinal urate-transport inhibition",
       "clinical-risk tiers",
-      "supplement dosing/formulation/genotype/patient direction",
-      "downstream viability rankings that count inherited comp-004 occupancy"
+      "genotype-specific susceptibility",
+      "dietary/extract direction",
+      "extrapolation from drug-substrate BCRP assays to urate flux",
+      "treating this bounded correction set as a literature census"
     ]
   }
 }
