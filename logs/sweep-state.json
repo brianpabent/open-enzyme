@@ -558,7 +558,7 @@
     "comp-047": {
       "comp_dir": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen",
       "artifact_manifest_sha256": null,
-      "source_commit": "8ddcf2c354b5478c6e31a74081f68399e2c8f1f2",
+      "source_commit": "b3c1568bca27613c8a525732bba8b95bda39ed01",
       "review_receipt": null,
       "comp_verdict": "review_pending_exact_push",
       "propagation_eligibility": "blocked",
@@ -576,7 +576,7 @@
         "wiki/gout-genetic-variants.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-27T12:12:46Z",
+      "timestamp": "2026-07-27T12:28:20Z",
       "cost_usd": null,
       "pending_reason": "changed completed artifact awaits exact push review"
     }
