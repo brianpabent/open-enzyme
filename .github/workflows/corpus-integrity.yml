@@ -30,6 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          # Invalidation ledgers bind retired artifacts to historical commits.
+          # A shallow checkout cannot resolve those trees.
+          fetch-depth: 0
 
       - uses: actions/setup-python@v6
         with:
