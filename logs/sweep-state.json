@@ -1,21 +1,21 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "141482852bd681fdef8280c73ac76cb0f20c4144",
-    "source_commit": "141482852bd681fdef8280c73ac76cb0f20c4144",
-    "result_commit": "141482852bd681fdef8280c73ac76cb0f20c4144",
-    "timestamp": "2026-07-27T14:56:15Z",
+    "coverage_commit": "911d980717e59a2937f1fd0ae123cc13c19567fa",
+    "source_commit": "911d980717e59a2937f1fd0ae123cc13c19567fa",
+    "result_commit": "911d980717e59a2937f1fd0ae123cc13c19567fa",
+    "timestamp": "2026-07-27T15:04:13Z",
     "changed_paths": [
-      "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/invalidation.json",
-      "wiki/etc/manual-literature-mining.md",
-      "wiki/etc/open-source-platform.md",
-      "wiki/etc/practitioner-toolkit.md",
-      "wiki/f-prausnitzii-heterologous-expression-computational.md",
-      "wiki/food-grade-hdaci-screen-computational.md",
-      "wiki/fructose-connection.md",
-      "wiki/genotype-informed-supplement-workflow.md",
-      "wiki/gout-action-guide.md",
-      "wiki/gout-deep-dive.md"
+      "wiki/gout-kill-chain-delivery-routes.md",
+      "wiki/gout-multihop-research-program.md",
+      "wiki/gout-pathophysiology.md",
+      "wiki/gsdmd-pore-delivery-paradox.md",
+      "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
+      "wiki/houttuynia-cordata.md",
+      "wiki/hypotheses/H02-engineered-lbp-thesis.md",
+      "wiki/hypotheses/H03-sirna-urat1-thesis.md",
+      "wiki/hypotheses/H04-tcm-rigor-intersection.md",
+      "wiki/hypotheses/H05-daf-scr14-cp0-thesis.md"
     ],
     "affected_paths": [],
     "blocked_paths": [
@@ -29,16 +29,6 @@
       "wiki/gout-genetic-variants.md"
     ],
     "deferred_paths": [
-      "wiki/gout-kill-chain-delivery-routes.md",
-      "wiki/gout-multihop-research-program.md",
-      "wiki/gout-pathophysiology.md",
-      "wiki/gsdmd-pore-delivery-paradox.md",
-      "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
-      "wiki/houttuynia-cordata.md",
-      "wiki/hypotheses/H02-engineered-lbp-thesis.md",
-      "wiki/hypotheses/H03-sirna-urat1-thesis.md",
-      "wiki/hypotheses/H04-tcm-rigor-intersection.md",
-      "wiki/hypotheses/H05-daf-scr14-cp0-thesis.md",
       "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
       "wiki/hypotheses/README.md",
       "wiki/koji-home-fermentation.md",
@@ -76,7 +66,7 @@
       "wiki/uricase-variant-selection.md",
       "wiki/validation-experiments.md"
     ],
-    "cost_usd": 0.555274
+    "cost_usd": 1.033033
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
