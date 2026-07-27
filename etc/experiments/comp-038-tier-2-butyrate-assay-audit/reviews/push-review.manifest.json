@@ -1,0 +1,99 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/README.md",
+      "kind": "design",
+      "bytes": 4184,
+      "sha256": "98cdbd5d30eea2a36cc987494dd4f3422ec6c6d9208510642109532d88e3e200"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/analyze.py",
+      "kind": "design",
+      "bytes": 18612,
+      "sha256": "cf9f06a66d7cc83fe8519d6f72f64a6616165519566914a933cb5565e36f77d7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/model-config.json",
+      "kind": "design",
+      "bytes": 3870,
+      "sha256": "5803b0d82bd2b6f666471d5d99a38b76aca448f4839fc2ec006a976f681f8fb9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/primary-source-verification-plan-2026-07-24.md",
+      "kind": "design",
+      "bytes": 4716,
+      "sha256": "823f53f3b3f85913f9cc0e695df3a5450af0960fbf5d3383fcd6fd15cae048a5"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 3430,
+      "sha256": "0953d72e4528af82960d2d0f08369ce55f97b6c65f27e330f0304bbbf5c4dc56"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/query-strategy.json",
+      "kind": "design",
+      "bytes": 6434,
+      "sha256": "8abcc1b32acd8bcf2aae06105d9474d389e8c68771892a9e980925005ee87ec2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/.gitkeep",
+      "kind": "generated_output",
+      "bytes": 174,
+      "sha256": "1abf74ec9abcefa2fc9c2629b732db10dc9bc17082c4c7d7637b01ce1a3685c8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/codex-synthesis-packet.md",
+      "kind": "generated_output",
+      "bytes": 133699,
+      "sha256": "c924fbb89bfcefaee414cb21e98dd684ad99f61331e39947ce89e8d5e58f90c0"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/primary-source-verification-2026-07-24.json",
+      "kind": "generated_output",
+      "bytes": 13373,
+      "sha256": "f4f813fa00168dafe9811a0cb803ac45ae5307e603e2f8ebdc4cf31cddc0dcf7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/pubmed-snapshot.json",
+      "kind": "generated_output",
+      "bytes": 168109,
+      "sha256": "0bd424e1ab2f92b6eeb7d136011f3966061ffd520a0442dcf498030f4e2e5f3a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 4637,
+      "sha256": "9403f766cbc424b9d0408ee3efd8aa61d2a25a2496ebf2a74897385e93bbe6c9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 2487,
+      "sha256": "fbb170dcce73f443486436c1a1f9b5bd1e33c98fb812b65c06f8d2a81d5fecdb"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 75330,
+      "sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88"
+    },
+    {
+      "path": "wiki/tier-2-butyrate-assay-audit-computational.md",
+      "kind": "proposed_update",
+      "bytes": 4907,
+      "sha256": "6cf3961e38dec5c9f7617f7b8101fc08162876e8aed8b57f87213643fdd69202"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 242023,
+      "sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "c2b1ecc27d8820fbb81c1f2f23d0a810746b5ee29e706481dfd504239ecb3b76"
+}

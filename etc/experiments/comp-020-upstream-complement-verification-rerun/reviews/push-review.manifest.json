@@ -1,0 +1,69 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/README.md",
+      "kind": "design",
+      "bytes": 6185,
+      "sha256": "42cebb98a60fe4f5068a3843d85ab6c34a68626a1581d955d1987272e44e0a64"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 5316,
+      "sha256": "49d572cdec31ee45314ae074baec8fb0fa3b7f64db5ff6bcec78b1ef74fa82f9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/query-strategy.md",
+      "kind": "design",
+      "bytes": 2903,
+      "sha256": "a3cd548f7c20834ea64427b7324eeff63ace7dab22a2bfc34b900a28b9acd0e7"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/target-nodes.json",
+      "kind": "design",
+      "bytes": 3335,
+      "sha256": "77e89951acee5a4469ac04215af731730fb37d81b26b8ab77e774fb1b7f434f8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
+      "kind": "generated_output",
+      "bytes": 25429,
+      "sha256": "0c6920db6b2d2a45cc193f74cd56d761311b107a72a621f0a261fce52335a9d4"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/search-log.md",
+      "kind": "generated_output",
+      "bytes": 7710,
+      "sha256": "4e0204b33c3829c280c3013cfc346ea7f90f1fd699f6e2fa0027a85805f2dac3"
+    },
+    {
+      "path": "wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md",
+      "kind": "proposed_update",
+      "bytes": 31231,
+      "sha256": "295cce89597b7c8ace56d016f3f5b501682119354ea63959b6e1fc4de2a42343"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 75330,
+      "sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/README.md",
+      "kind": "proposed_update",
+      "bytes": 4424,
+      "sha256": "861da384ed3b6055bb812e771d351cbd3868cc151937a4c254d67661b50e5788"
+    },
+    {
+      "path": "wiki/upstream-complement-verification-rerun-computational.md",
+      "kind": "proposed_update",
+      "bytes": 5947,
+      "sha256": "f7bdcbc64bb5486100d5a166a94ec9863eb980424c7fc48b721e71b800cdd3f5"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "7aacc97a7e879d00cf653980b8e053e57a190c9c443e7da421e82ff89cf17589"
+}

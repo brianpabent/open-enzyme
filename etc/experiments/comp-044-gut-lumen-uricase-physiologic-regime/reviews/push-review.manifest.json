@@ -1,0 +1,129 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
+      "kind": "design",
+      "bytes": 17580,
+      "sha256": "07a8035a544838bd05f227d8dce93c1bf79545d3de9aaa3fc4baca3a8d1b10cc"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/analyze.py",
+      "kind": "design",
+      "bytes": 17038,
+      "sha256": "c6a018c3d88d74a866e823afa24563c29f8bd53f90450c2c269ab76d067c144e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/model_parameters.json",
+      "kind": "design",
+      "bytes": 2280,
+      "sha256": "2f1edff619db87e3a25b89fefecc0d68bdc368f5cbd9e771d74c3968c3ef49bf"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 3296,
+      "sha256": "2fca6e2900bd23cf9ec7c2a8a51ce1ce6176168aa0a76a2889552f8f8afb6762"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/inputs/query-strategy.json",
+      "kind": "design",
+      "bytes": 766,
+      "sha256": "d6778942afda2555ca87735e3eb92b0705a328889e8c659fbfc5f7430034d7d2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 6480,
+      "sha256": "1d1b55f922f88d456df32cb2a174aee236c0ff294ffbfea93e9ef461bf66af4e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 2990,
+      "sha256": "921226d21e7cfeee10ce4ee4c57a76f9666e7386202d77620ac51a497e00bdd4"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 75330,
+      "sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88"
+    },
+    {
+      "path": "wiki/delivery-route-matrix.md",
+      "kind": "proposed_update",
+      "bytes": 26650,
+      "sha256": "ce78ac9cd0d3030bc555dfca9d095cf3032c2f964ed7e92d0431271f731ebb79"
+    },
+    {
+      "path": "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3744,
+      "sha256": "ef12f095d3198bf5bb915aecfe7d130f1cf29a63edfbfd5ac31ddb0d87e70e8d"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 4578,
+      "sha256": "e42f494ce8e76faf1a85ae017ee0a67301b6609312a651feea95bee70be4b7d0"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
+      "kind": "proposed_update",
+      "bytes": 2036,
+      "sha256": "5857fa02b00f6e9ab8f5e0cf2c41b6f003a519c313e3875a22174e4cc2225481"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 1098,
+      "sha256": "3bb98871ea5616454f64ede06f149ebedb1cfaa268639e0153f4a453e2d15b73"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md",
+      "kind": "proposed_update",
+      "bytes": 930,
+      "sha256": "415ccf2ce84f77f97e0604f177576bd519a23371f6b30cb197498e7ba9e6d436"
+    },
+    {
+      "path": "wiki/gout-action-guide.md",
+      "kind": "proposed_update",
+      "bytes": 9951,
+      "sha256": "c80754fcd99885a58de752d54cfda2f93eae077d86e5f246d26c57614aae1241"
+    },
+    {
+      "path": "wiki/gout-multihop-research-program.md",
+      "kind": "proposed_update",
+      "bytes": 6935,
+      "sha256": "b394b56f9d8126c495182bd17933722edefd50d81b38ef84400a77e97ffe11e9"
+    },
+    {
+      "path": "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
+      "kind": "proposed_update",
+      "bytes": 5866,
+      "sha256": "acf99274edebf76905ddc1588a418c0a0ecea5a2691ebe1216a63ff5fc6037ee"
+    },
+    {
+      "path": "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
+      "kind": "proposed_update",
+      "bytes": 6897,
+      "sha256": "9f6efb4ea1659ba4e31a39ce4969fba94a9c9ca94fd87c8e89e0d08edb49b413"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 74825,
+      "sha256": "9ffef573b763d3471a545cb2700eee1b09910f8d906b5795344abf6e9beed09a"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 242023,
+      "sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "0d0148e43ade23213e148e0b97687eb5bb9b857a1f94cd1ec5d299dccca3c253"
+}

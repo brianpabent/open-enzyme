@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "comp": "comp-038",
+  "comp_dir": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit",
+  "source_commit": "1b57f9c213d67eda156ac41119428b0a09555ea9",
+  "artifact_manifest_sha256": "c2b1ecc27d8820fbb81c1f2f23d0a810746b5ee29e706481dfd504239ecb3b76",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-27T11:57:02Z",
+  "comp_verdict": "action_required",
+  "propagation_eligibility": "eligible_with_warning",
+  "synthesis_eligibility": "eligible_with_warning",
+  "action_required": true,
+  "authoring_gates": {
+    "status": "modern",
+    "valid": true,
+    "details": [
+      "pre-run design matches post-run design; current COMP artifact matches the post-run snapshot; later wiki evolution is push-reviewed"
+    ]
+  },
+  "coverage": [
+    {
+      "shard_id": "shard-001",
+      "coverage_sha256": "e2100cef1e8c205ef952a86f9af8affe922f9c6c68fe331de5f3a4ae7ad18168",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/README.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 4068,
+          "file_sha256": "98cdbd5d30eea2a36cc987494dd4f3422ec6c6d9208510642109532d88e3e200",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/analyze.py",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 18606,
+          "file_sha256": "cf9f06a66d7cc83fe8519d6f72f64a6616165519566914a933cb5565e36f77d7",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/model-config.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 3870,
+          "file_sha256": "5803b0d82bd2b6f666471d5d99a38b76aca448f4839fc2ec006a976f681f8fb9",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/primary-source-verification-plan-2026-07-24.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 4702,
+          "file_sha256": "823f53f3b3f85913f9cc0e695df3a5450af0960fbf5d3383fcd6fd15cae048a5",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/provenance.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 3426,
+          "file_sha256": "0953d72e4528af82960d2d0f08369ce55f97b6c65f27e330f0304bbbf5c4dc56",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/query-strategy.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 6432,
+          "file_sha256": "8abcc1b32acd8bcf2aae06105d9474d389e8c68771892a9e980925005ee87ec2",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/.gitkeep",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 174,
+          "file_sha256": "1abf74ec9abcefa2fc9c2629b732db10dc9bc17082c4c7d7637b01ce1a3685c8",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/codex-synthesis-packet.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 133699,
+          "file_sha256": "c924fbb89bfcefaee414cb21e98dd684ad99f61331e39947ce89e8d5e58f90c0",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-002",
+      "coverage_sha256": "58be077fca2c64a2bdd50abb19527c592ce8afcf540bdc24853113702ec33674",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/primary-source-verification-2026-07-24.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 13373,
+          "file_sha256": "f4f813fa00168dafe9811a0cb803ac45ae5307e603e2f8ebdc4cf31cddc0dcf7",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-003",
+      "coverage_sha256": "deb6d199f3f7de77be925fc9f859e81a1b492e8578c69e26a5f574ff4ea2ae5b",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/pubmed-snapshot.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 168109,
+          "file_sha256": "0bd424e1ab2f92b6eeb7d136011f3966061ffd520a0442dcf498030f4e2e5f3a",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/results.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 4635,
+          "file_sha256": "9403f766cbc424b9d0408ee3efd8aa61d2a25a2496ebf2a74897385e93bbe6c9",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/summary.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 2466,
+          "file_sha256": "fbb170dcce73f443486436c1a1f9b5bd1e33c98fb812b65c06f8d2a81d5fecdb",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-004",
+      "coverage_sha256": "10c1d1c84d562806fd200d9a7a227ec003c8882c1870b04e5805a224434bb75f",
+      "segments": [
+        {
+          "path": "wiki/computational-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 74655,
+          "file_sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88",
+          "binary": false
+        },
+        {
+          "path": "wiki/tier-2-butyrate-assay-audit-computational.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 4880,
+          "file_sha256": "6cf3961e38dec5c9f7617f7b8101fc08162876e8aed8b57f87213643fdd69202",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-005",
+      "coverage_sha256": "b96da127bfd1b33a64e19f406ca972ade8dd030fd0dc76795d60f46fe401dbc5",
+      "segments": [
+        {
+          "path": "wiki/validation-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 180000,
+          "file_sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-006",
+      "coverage_sha256": "72acd7cf15738e5e3a68104ba96d37efd9fdd0cdbbcf7a0a29583b51dc543afa",
+      "segments": [
+        {
+          "path": "wiki/validation-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 180000,
+          "end": 239988,
+          "file_sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6",
+          "binary": false
+        }
+      ]
+    }
+  ],
+  "unsupported_binary_entries": [],
+  "projected_cost_usd": 2.147292,
+  "actual_cost_usd": 1.425669,
+  "input_tokens": 243729,
+  "output_tokens": 14888,
+  "tool_calls": 13,
+  "review_sha256": "e688bad0a3e8a6e83f36424e19ded555b029a80202f760a82c094dc8954ded36",
+  "lane_adjudication": {
+    "date": "2026-07-27T11:57:02Z",
+    "method": "exact push review",
+    "new_artifact_review_performed": true,
+    "queue_action_remains_open": true,
+    "propagation_allowed_scope": "corrective/bounded COMP-038 assay-method status only",
+    "synthesis_allowed_scope": "bounded assay-method synthesis with explicit matrix/provenance limits",
+    "forbidden_inferences": [
+      "ready-to-adopt Tier 1 or Tier 2 OE butyrate assay",
+      "De Baere full-text verification",
+      "De Baere underivatized method",
+      "butyrate-specific De Baere LOD/LOQ endpoints",
+      "exhaustive assay-landscape absence claim",
+      "culture-supernatant/stool/serum/breath interchangeability",
+      "simplified linear electrochemical transfer from Gu",
+      "OE matrix qualification",
+      "target-compartment exposure",
+      "ABCG2/Q141K rescue",
+      "gout efficacy",
+      "safety or clinical inference"
+    ]
+  }
+}

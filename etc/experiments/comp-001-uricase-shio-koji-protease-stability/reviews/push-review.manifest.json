@@ -1,0 +1,87 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/README.md",
+      "kind": "design",
+      "bytes": 3945,
+      "sha256": "ee4bcf971700b2461bc24f465f4cf57b473c1b5044c9392184e613e13dcfcfc8"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/analyze.py",
+      "kind": "design",
+      "bytes": 14156,
+      "sha256": "56073b73199facb8305ccd25584a94d6818bbd96f92cbb4ceb1ebade854812e9"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/inputs/Q00511.fasta",
+      "kind": "design",
+      "bytes": 385,
+      "sha256": "fd006ac91dc08f796bd2032ee975677c16f6e8e7d3d0762ba1f2b295183b4274"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/inputs/alphafold_Q00511_plddt.json",
+      "kind": "design",
+      "bytes": 4087,
+      "sha256": "116c6922971ade3824f2a815257c22ac9291ba4e79554b5ff15f77de262c5d51"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/inputs/legacy_preference_filters.json",
+      "kind": "design",
+      "bytes": 1193,
+      "sha256": "40e06867bac3003afbb619c33c2f5f3385eca2b7d798efbb3e183dcf64b8d5ba"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 2904,
+      "sha256": "5d68322e3ae5ddec47acd0f5f39c5e0525aca60b3070183e7be39215beb2db77"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/outputs/cleavage_sites.json",
+      "kind": "generated_output",
+      "bytes": 105159,
+      "sha256": "41e051de653f03bc406bc43b743aa6a1addb7f5924c7a2c00ab656d090005bf0"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-001-uricase-shio-koji-protease-stability/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 2312,
+      "sha256": "d85608f48e299143184d3533600908580728bced81acde7fa90636a111f7f74c"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 75330,
+      "sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-032-abcg2-q141k-chaperone-screen/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 5846,
+      "sha256": "db47c74e64d01d8f6c43ade726fbedb54c38ce20abdc9b43816767531ff6bc51"
+    },
+    {
+      "path": "wiki/uricase-protease-stability-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3308,
+      "sha256": "15df4afdbcd78e883c2bf8a12f828f3a9c91ddc2274998711bf68efd5bfd0880"
+    },
+    {
+      "path": "wiki/uricase-shio-koji-thermal-stability-computational.md",
+      "kind": "proposed_update",
+      "bytes": 5561,
+      "sha256": "d6dc95b9d5eb661a3bb584e5f9de4ac3d6d62b5472642cde329013877117eebb"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 242023,
+      "sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "79de417c28c4d4644b70962752e06c0e302a7d3c2984e60ee813fba4fd991cb9"
+}
