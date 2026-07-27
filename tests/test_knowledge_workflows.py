@@ -106,6 +106,18 @@ Long review-history material.
         self.assertEqual(["run.py"], [path.name for path in design])
         self.assertEqual(["summary.json"], [path.name for path in outputs])
 
+    def test_authoring_manifest_excludes_gitignored_local_cache(self):
+        with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
+            comp = Path(tmp) / "comp-999-test"
+            (comp / "outputs").mkdir(parents=True)
+            (comp / ".gitignore").write_text("outputs/local-cache.json\n")
+            (comp / "run.py").write_text("print('ok')\n")
+            (comp / "outputs" / "summary.json").write_text("{}\n")
+            (comp / "outputs" / "local-cache.json").write_text('{"local": true}\n')
+            design, outputs = manifest.comp_files(comp)
+        self.assertEqual([".gitignore", "run.py"], [path.name for path in design])
+        self.assertEqual(["summary.json"], [path.name for path in outputs])
+
     def test_legacy_post_review_is_an_explicit_valid_lifecycle(self):
         comp = (
             ROOT
@@ -413,7 +425,7 @@ class WorkflowTriggerTests(unittest.TestCase):
 
         self.assertEqual(completed_active, set(records))
         self.assertTrue(tombstones)
-        self.assertEqual({"comp-048"}, pre_run_only)
+        self.assertEqual({"comp-048", "comp-049"}, pre_run_only)
         pending = []
         for identifier, record in records.items():
             if record["comp_verdict"] == "review_pending_exact_push":

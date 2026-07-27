@@ -71,9 +71,27 @@ def comp_files(comp_dir: Path, *, tracked_only: bool = False) -> tuple[list[Path
             ["git", "ls-files", "--", relative(comp_dir)], cwd=ROOT,
             text=True, capture_output=True, check=True,
         )
-        candidates = [ROOT / raw for raw in result.stdout.splitlines()]
     else:
-        candidates = list(comp_dir.rglob("*"))
+        # Authoring gates must include ordinary untracked files that are about
+        # to be committed, while excluding caches and other paths represented
+        # only in a populated local workspace. Git's standard ignore rules
+        # define that boundary reproducibly for a clean checkout.
+        result = subprocess.run(
+            [
+                "git",
+                "ls-files",
+                "--cached",
+                "--others",
+                "--exclude-standard",
+                "--",
+                relative(comp_dir),
+            ],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=True,
+        )
+    candidates = [ROOT / raw for raw in result.stdout.splitlines()]
     for path in sorted(candidates):
         if not path.is_file() or ignored(path):
             continue
