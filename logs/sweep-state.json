@@ -1,14 +1,15 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "e3520166511a15eb4b576cb80adfe45a2b9ffd51",
-    "source_commit": "e3520166511a15eb4b576cb80adfe45a2b9ffd51",
-    "result_commit": "e3520166511a15eb4b576cb80adfe45a2b9ffd51",
-    "timestamp": "2026-07-27T22:14:19Z",
+    "coverage_commit": "73d4927a0ecf78f3a0f6c5178ba9da056ec7f720",
+    "source_commit": "73d4927a0ecf78f3a0f6c5178ba9da056ec7f720",
+    "result_commit": "73d4927a0ecf78f3a0f6c5178ba9da056ec7f720",
+    "timestamp": "2026-07-27T22:44:53Z",
     "changed_paths": [
       "wiki/daf-cd55-protease-stability-computational.md",
-      "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/quarantine.json",
-      "wiki/etc/manual-literature-mining.md"
+      "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/invalidation.json",
+      "wiki/etc/manual-literature-mining.md",
+      "wiki/hypotheses/H05-daf-scr14-cp0-thesis.md"
     ],
     "affected_paths": [],
     "blocked_paths": [
@@ -22,7 +23,7 @@
       "wiki/gout-genetic-variants.md"
     ],
     "deferred_paths": [],
-    "cost_usd": 0.314685
+    "cost_usd": 0.370913
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
