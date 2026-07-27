@@ -357,7 +357,7 @@ def call_openrouter(api_key, model, messages, max_tokens=4000, max_retries=4):
         os.unlink(body_path)
 
 
-def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=12, max_cost_usd=0.50):
+def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=12, max_cost_usd=5.00):
     messages = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt},
@@ -550,7 +550,7 @@ def main():
                         help=f"OpenRouter model slug (default: {DEFAULT_MODEL})")
     parser.add_argument("--prompt-file", default=DEFAULT_PROMPT)
     parser.add_argument("--max-iterations", type=int, default=12)
-    parser.add_argument("--max-cost-usd", type=float, default=0.50)
+    parser.add_argument("--max-cost-usd", type=float, default=5.00)
     parser.add_argument("--dry-run", action="store_true",
                         help="Run the agentic loop and report changes, but skip git commit")
     args = parser.parse_args()

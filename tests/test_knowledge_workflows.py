@@ -324,6 +324,12 @@ class WorkflowTriggerTests(unittest.TestCase):
         self.assertIn("needs: [gate, comp-review]", propagate)
         self.assertIn("uses: ./.github/workflows/wiki-propagate.yml", propagate)
 
+    def test_propagation_cost_limit_is_a_runaway_guardrail(self):
+        workflow = (ROOT / ".github/workflows/wiki-propagate.yml").read_text()
+        self.assertIn("Emergency runaway cap", workflow)
+        self.assertIn("default: '5.00'", workflow)
+        self.assertIn("inputs.max_cost_usd || '5.00'", workflow)
+
     def test_comp_review_fails_closed_before_model_calls(self):
         workflow = (ROOT / ".github/workflows/comp-review.yml").read_text()
         classify = workflow.index(
