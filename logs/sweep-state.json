@@ -205,7 +205,7 @@
     "comp-014": {
       "comp_dir": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping",
       "artifact_manifest_sha256": null,
-      "source_commit": "65e78cbd3d101e6883a73209bbf1f48cf9ac8f4c",
+      "source_commit": "edb610c986c361af641cb46d31b3f1bf5f99a0df",
       "review_receipt": null,
       "comp_verdict": "review_pending_exact_push",
       "propagation_eligibility": "blocked",
@@ -243,7 +243,7 @@
         "wiki/tcm-modern-rigor-intersection.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-27T18:17:11Z",
+      "timestamp": "2026-07-27T18:43:08Z",
       "cost_usd": null,
       "pending_reason": "changed completed artifact awaits exact push review"
     },
