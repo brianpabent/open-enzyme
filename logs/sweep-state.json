@@ -198,27 +198,6 @@
       "timestamp": "2026-07-27T18:20:48Z",
       "cost_usd": 1.715562
     },
-    "comp-014": {
-      "comp_dir": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping",
-      "artifact_manifest_sha256": "0e2c3eec4a1368d333fccc81058855d7281478cfa816da50859b5ef1c962c7a8",
-      "source_commit": "510fb3a3ece81d906e50d1fa5fbc98a720b0da02",
-      "review_receipt": "wiki/etc/experiments/comp-014-medicinal-mushroom-compound-mapping/reviews/push-review.md",
-      "comp_verdict": "action_required",
-      "propagation_eligibility": "eligible_with_warning",
-      "synthesis_eligibility": "blocked",
-      "derived_paths": [
-        "wiki/computational-experiments.md",
-        "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/README.md",
-        "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/provenance.md",
-        "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/summary.md",
-        "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
-        "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/outputs/per-node-findings.md",
-        "wiki/medicinal-mushroom-complement-track.md",
-        "wiki/medicinal-mushroom-compound-mapping-computational.md"
-      ],
-      "timestamp": "2026-07-27T19:12:23Z",
-      "cost_usd": 29.046228
-    },
     "comp-016": {
       "comp_dir": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining",
       "artifact_manifest_sha256": "a92a1d0fe4c30a0048bee106261e61905988553282cacfe9dd200ecb802c95e1",
