@@ -1,25 +1,23 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "2e6518f204337bd66eaedd767b597b42572b5049",
-    "source_commit": "1865644d556c71ba1c89fa2e5c38a504360c04c3",
-    "result_commit": "2e6518f204337bd66eaedd767b597b42572b5049",
-    "timestamp": "2026-07-27T15:18:13Z",
+    "coverage_commit": "8bb4f545d121feb2c3eb76669ce87b92d9d0a22c",
+    "source_commit": "8bb4f545d121feb2c3eb76669ce87b92d9d0a22c",
+    "result_commit": "8bb4f545d121feb2c3eb76669ce87b92d9d0a22c",
+    "timestamp": "2026-07-27T15:24:44Z",
     "changed_paths": [
-      "wiki/nlrp3-exploit-map.md",
-      "wiki/nlrp3-inhibitor-screen.md",
-      "wiki/open-questions.md",
-      "wiki/peptide-gout-addendum.md",
-      "wiki/personal-genome-protocol.md",
-      "wiki/prps-purine-biosynthesis-chokepoint.md",
-      "wiki/quantification-ladder.md",
-      "wiki/saccharomyces-cerevisiae.md",
-      "wiki/sirna-urat1-modality.md",
-      "wiki/supplement-abcg2-antagonism-computational.md"
+      "wiki/supplements-stack.md",
+      "wiki/t-axis-adjuvant-urate-mapping-computational.md",
+      "wiki/tcm-gout-compound-triage-computational.md",
+      "wiki/tcm-modern-rigor-intersection.md",
+      "wiki/theaflavins.md",
+      "wiki/tier-2-butyrate-assay-audit-computational.md",
+      "wiki/upstream-complement-assay-format-mapping-computational.md",
+      "wiki/upstream-complement-modulator-sweep-computational.md",
+      "wiki/upstream-complement-verification-rerun-computational.md",
+      "wiki/urat1-sirna-target-site-selection-computational.md"
     ],
-    "affected_paths": [
-      "wiki/etc/chembl-cross-check.md"
-    ],
+    "affected_paths": [],
     "blocked_paths": [
       "wiki/abcg2-modulators.md",
       "wiki/abcg2-q141k-chaperone-rescreen-computational.md",
@@ -31,16 +29,6 @@
       "wiki/gout-genetic-variants.md"
     ],
     "deferred_paths": [
-      "wiki/supplements-stack.md",
-      "wiki/t-axis-adjuvant-urate-mapping-computational.md",
-      "wiki/tcm-gout-compound-triage-computational.md",
-      "wiki/tcm-modern-rigor-intersection.md",
-      "wiki/theaflavins.md",
-      "wiki/tier-2-butyrate-assay-audit-computational.md",
-      "wiki/upstream-complement-assay-format-mapping-computational.md",
-      "wiki/upstream-complement-modulator-sweep-computational.md",
-      "wiki/upstream-complement-verification-rerun-computational.md",
-      "wiki/urat1-sirna-target-site-selection-computational.md",
       "wiki/uricase-cassette-ranking-computational.md",
       "wiki/uricase-protease-stability-computational.md",
       "wiki/uricase-shio-koji-thermal-stability-computational.md",
@@ -48,7 +36,7 @@
       "wiki/uricase-variant-selection.md",
       "wiki/validation-experiments.md"
     ],
-    "cost_usd": 0.670408
+    "cost_usd": 0.708987
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
