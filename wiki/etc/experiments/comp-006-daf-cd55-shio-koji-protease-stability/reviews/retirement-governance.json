@@ -1,0 +1,159 @@
+{
+  "decision_owner": "brian",
+  "decision_ref": "Brian direct approval in this Codex task on 2026-07-27 (\"approved\").",
+  "disposition_review": {
+    "path": "wiki/etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/reviews/disposition-review.md",
+    "sha256": "97fa4d706e659ac85b58affe34df536368bc78600bc7234bc809516fb7fdd204"
+  },
+  "reviewed_artifact_manifest_sha256": "8cb060cdabd6e58d9141768b1f3fde0de8843510a76e6469a95507b77ace9fda",
+  "surviving_scope_homes": [
+    {
+      "item_index": 0,
+      "path": "wiki/daf-cd55-protease-stability-computational.md",
+      "heading": "## What survives from the retired computation"
+    },
+    {
+      "item_index": 1,
+      "path": "wiki/daf-cd55-protease-stability-computational.md",
+      "heading": "## What survives from the retired computation"
+    },
+    {
+      "item_index": 2,
+      "path": "wiki/daf-cd55-protease-stability-computational.md",
+      "heading": "## What survives from the retired computation"
+    }
+  ],
+  "unique_detail_audit": [
+    {
+      "description": "Source identity, P08174 sequence and annotated construct boundaries, and AlphaFold confidence context",
+      "source_paths": [
+        "inputs/P08174.fasta",
+        "inputs/alphafold_P08174_plddt.json",
+        "inputs/provenance.md"
+      ],
+      "disposition": "canonicalized",
+      "canonical_path": "wiki/daf-cd55-protease-stability-computational.md",
+      "canonical_heading": "## What survives from the retired computation",
+      "rationale": "The current evidence home preserves these as source-bound inputs and confidence information, not protease-survival evidence."
+    },
+    {
+      "description": "Inherited protease-recognition table and shio-koji process-factor assumptions",
+      "source_paths": [
+        "inputs/protease_specificities.json",
+        "inputs/provenance.md"
+      ],
+      "disposition": "historical_git_only",
+      "rationale": "The table and process factors remain in the bound retired tree for audit but carry no current specificity, activity, or decision authority."
+    },
+    {
+      "description": "Existence and narrow meaning of the deterministic recognition-pattern, region, and pLDDT inventories",
+      "source_paths": [
+        "outputs/cleavage_sites.json",
+        "outputs/summary.md"
+      ],
+      "disposition": "canonicalized",
+      "canonical_path": "wiki/daf-cd55-protease-stability-computational.md",
+      "canonical_heading": "## What survives from the retired computation",
+      "rationale": "The evidence home records that these are deterministic inventories under retired rules and not validated biological interpretations."
+    },
+    {
+      "description": "Exact recognition-pattern rows, counts, region tallies, pLDDT distributions, and generated tables",
+      "source_paths": [
+        "outputs/cleavage_sites.json",
+        "outputs/summary.md"
+      ],
+      "disposition": "historical_git_only",
+      "rationale": "The exact inventory remains hash-bound in Git but is unnecessary in the living corpus and is not predictive."
+    },
+    {
+      "description": "pLDDT-derived accessibility classes, score construction, risk thresholds, scope verdicts, and survival interpretations",
+      "source_paths": [
+        "analyze.py",
+        "outputs/cleavage_sites.json",
+        "outputs/summary.md",
+        "wiki/etc/experiments/lib/protease_stability.py"
+      ],
+      "disposition": "invalidated",
+      "rationale": "pLDDT is not solvent accessibility, and the maximum-risk construction is scope-degenerate whenever a scope contains a qualifying match."
+    },
+    {
+      "description": "Folding, glycosylation, process-feasibility, chassis, and cross-payload conclusions",
+      "source_paths": [
+        "outputs/summary.md",
+        "README.md"
+      ],
+      "disposition": "invalidated",
+      "rationale": "The retired computation did not model or measure these outcomes."
+    },
+    {
+      "description": "Matched full-ectodomain-versus-SCR1–4 process-survival and retained-function conjecture",
+      "source_paths": [
+        "README.md",
+        "outputs/summary.md"
+      ],
+      "disposition": "canonicalized",
+      "canonical_path": "wiki/daf-cd55-protease-stability-computational.md",
+      "canonical_heading": "## What survives from the retired computation",
+      "rationale": "The untested connection remains useful when explicitly separated from the invalid model and paired with a discriminating matched experiment."
+    },
+    {
+      "description": "Authoring manifests, adversarial reviews, quarantine receipt, and prior reader-facing narrative",
+      "source_paths": [
+        "reviews/pre-run.manifest.json",
+        "reviews/pre-run.md",
+        "reviews/post-run.manifest.json",
+        "reviews/post-run.md",
+        "reviews/disposition-review.md",
+        "quarantine.json",
+        "README.md"
+      ],
+      "disposition": "historical_git_only",
+      "rationale": "The compact tombstone and current disposition review remain live; superseded authoring and quarantine state remain available through Git."
+    }
+  ],
+  "cascade": {
+    "status": "closed",
+    "paths": [
+      {
+        "path": "wiki/daf-cd55-protease-stability-computational.md",
+        "action": "Canonical evidence boundary, retirement status, deterministic-inventory boundary, and matched conjecture confirmed."
+      },
+      {
+        "path": "wiki/computational-experiments.md",
+        "action": "Registry status changed from quarantined artifact to invalidated tombstone."
+      },
+      {
+        "path": "index.md",
+        "action": "Dashboard label changed to retired; invalid result boundary retained."
+      },
+      {
+        "path": "wiki/hypotheses/H05-daf-scr14-cp0-thesis.md",
+        "action": "Retired status and direct-test conjecture boundary made explicit."
+      },
+      {
+        "path": "wiki/etc/manual-literature-mining.md",
+        "action": "Search queue status changed from quarantined to retired without changing the open evidence question."
+      },
+      {
+        "path": "wiki/daf-cd55-scr14-truncated-computational.md",
+        "action": "Verified unchanged: already rejects the proxy and preserves the matched comparison as a conjecture."
+      },
+      {
+        "path": "wiki/complement-c5a-gout.md",
+        "action": "Verified unchanged: already rejects exposure and survival conclusions."
+      },
+      {
+        "path": "wiki/validation-experiments.md",
+        "action": "Verified unchanged: the SCR1–4 gate remains, and the canonical evidence home states that a full-ectodomain arm is required for stalk attribution."
+      },
+      {
+        "path": "wiki/etc/experiments/lib/protease_stability.py",
+        "action": "Deleted with retirement after confirming COMP-006 was its only live importer."
+      },
+      {
+        "path": "mkdocs.yml",
+        "action": "Verified unchanged: navigation continues to the current interpretive evidence page."
+      }
+    ]
+  }
+}

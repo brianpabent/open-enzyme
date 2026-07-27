@@ -3,7 +3,8 @@ DISPOSITION_REVIEW: RETIREMENT_JUSTIFIED
 RETIREMENT_REVIEW: GO
 UNIQUE_DETAIL_COVERAGE: complete
 REVIEWER_MODEL: anthropic/claude-opus-5
-DECISION_STATUS: pending_brian
+DECISION_STATUS: approved_brian
+DECISION_REF: Brian direct approval in this Codex task on 2026-07-27 ("approved").
 
 # Independent disposition review — COMP-006
 
@@ -32,6 +33,6 @@ Use a new COMP ID and normal authoring gates. At minimum: compute defensible str
 
 ## Containment audit
 
-The restored shared library is bound as a COMP-006 quarantine dependency. In the current tree, COMP-006 is its only live importer. COMP-005, COMP-012, and COMP-037 are tombstones. COMP-001 uses a separate, rewritten fixed-filter inventory and its current receipt expressly forbids accessibility, risk, survival, and cross-payload inferences.
+At the reviewed snapshot, the restored shared library was bound as a COMP-006 quarantine dependency and COMP-006 was its only live importer. COMP-005, COMP-012, and COMP-037 were tombstones. COMP-001 used a separate, rewritten fixed-filter inventory whose receipt expressly forbids accessibility, risk, survival, and cross-payload inferences.
 
-COMP-006 remains quarantined pending Brian’s final retirement decision. No execution or propagation is authorized by this review.
+Brian approved final retirement on 2026-07-27. No execution or propagation is authorized by this review or by the resulting tombstone.

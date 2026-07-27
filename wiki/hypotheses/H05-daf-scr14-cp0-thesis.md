@@ -25,7 +25,7 @@ related:
   - ./H04-tcm-rigor-intersection.md
   - ./README.md
 sources:
-  - "comp-006 (full DAF ectodomain protease proxy; risk unresolved) — `daf-cd55-protease-stability-computational.md`"
+  - "retired comp-006 (invalid full-ectodomain protease proxy; empirical risk unresolved) — `daf-cd55-protease-stability-computational.md`"
   - "comp-012 (SCR1-4 truncated DAF protease proxy; risk unresolved) — `daf-cd55-scr14-truncated-computational.md`"
   - "DAF/CD55 UniProt P08174"
   - "complement-c5a-gout.md — CP0 mechanism + therapeutic landscape"
@@ -104,7 +104,7 @@ The legacy 50 mg/L titer, 30% C5a-inhibition, and intermediate response bands ar
 
 ## Cross-References
 
-- [`daf-cd55-protease-stability-computational.md`](../daf-cd55-protease-stability-computational.md) — comp-006 generated the matched full-ectodomain-versus-truncation hypothesis; it did not establish protease exposure or survival
+- [`daf-cd55-protease-stability-computational.md`](../daf-cd55-protease-stability-computational.md) — retired comp-006 supplies no protease-exposure or survival result; the matched full-ectodomain-versus-truncation question remains a direct-test conjecture
 - [`daf-cd55-scr14-truncated-computational.md`](../daf-cd55-scr14-truncated-computational.md) — comp-012, the invalid pLDDT-accessibility proxy that still motivates direct testing of the truncated construct
 - [`complement-c5a-gout.md`](../complement-c5a-gout.md) — CP0 mechanism and therapeutic landscape
 - [`engineered-lbp-chassis.md`](../engineered-lbp-chassis.md) — alternative chassis for soluble complement regulators (LBP track)

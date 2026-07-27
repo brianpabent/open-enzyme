@@ -508,8 +508,7 @@ class WorkflowTriggerTests(unittest.TestCase):
             completed_active.add(identifier)
 
         self.assertEqual(completed_active, set(records))
-        self.assertTrue(tombstones)
-        self.assertTrue(quarantines)
+        self.assertTrue(tombstones or quarantines)
         self.assertEqual({"comp-048", "comp-049"}, pre_run_only)
         pending = []
         for identifier, record in records.items():

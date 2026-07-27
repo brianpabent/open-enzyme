@@ -414,7 +414,7 @@ At central pore parameters, the equilibration time constant is 2.17 seconds. At 
 
 ---
 
-### comp-006 — DAF/CD55 Shio-Koji Protease Proxy (full ectodomain) (2026-05-05)
+### comp-006 — DAF/CD55 Shio-Koji Protease Proxy (full ectodomain) — INVALIDATED (2026-05-05)
 
 **Question:** What sequence-filter and AlphaFold-confidence prior does the inherited model provide for the DAF/CD55 soluble ectodomain (aa 35–353)?
 
@@ -426,7 +426,7 @@ At central pore parameters, the equilibration time constant is 2.17 seconds. At 
 
 **Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) — Engineered soluble complement regulators row
 
-**Detail:** [interpretive](./daf-cd55-protease-stability-computational.md) · [quarantined, non-runnable artifact](./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/) · Historical filter inventory only
+**Detail:** [interpretive](./daf-cd55-protease-stability-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/) · Historical filter inventory only
 
 ---
 

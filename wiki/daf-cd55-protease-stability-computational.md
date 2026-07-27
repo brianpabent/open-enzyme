@@ -15,16 +15,16 @@ sources:
   - "MEROPS database release 12.4"
   - "Koaze et al. 1964 (acid protease pH-activity curve)"
   - "Ward et al. 1995 (A. oryzae α-amylase secretion signal)"
-status: quarantined-invalid-model
+status: retired-invalid-model
 ---
 
 # DAF/CD55 Shio-Koji Protease Proxy (comp-006)
 
-The engineering question is whether a soluble DAF/CD55 ectodomain can retain complement-regulatory activity through production and shio-koji processing. COMP-006 does not answer it.
+The engineering question is whether a soluble DAF/CD55 ectodomain can retain complement-regulatory activity through production and shio-koji processing. Retired COMP-006 does not answer it.
 
-## What the computation establishes
+## What survives from the retired computation
 
-The quarantined artifact mapped inherited sequence-filter matches across P08174 and added AlphaFold pLDDT context. Its original HIGH label is invalid because the model used pLDDT confidence as solvent accessibility. Its maximum-risk construction also returns the same per-protease maximum across the full, mature, ectodomain, and stalk scopes whenever each contains an “exposed” match, so it cannot support the claimed scope comparison. It did not calculate SASA, model cleavage kinetics, or measure degradation and retained activity.
+The retired artifact mapped inherited sequence-filter matches across P08174 and added AlphaFold pLDDT context. Those recognition-pattern counts, region tallies, and pLDDT distributions are deterministic inventories under the retired rules, not validated biological interpretations. Its original HIGH label is invalid because the model used pLDDT confidence as solvent accessibility. Its maximum-risk construction also returns the same per-protease maximum across the full, mature, ectodomain, and stalk scopes whenever each contains an “exposed” match, so it cannot support the claimed scope comparison. It did not calculate SASA, model cleavage kinetics, or measure degradation and retained activity.
 
 The Ser/Thr-rich stalk has lower AlphaFold confidence than SCR1–4. That difference is confidence information only; it does not establish that the stalk is exposed, cleaved, or the dominant cause of failure.
 
@@ -42,4 +42,4 @@ The Ser/Thr-rich stalk has lower AlphaFold confidence than SCR1–4. That differ
 
 For the proposed *A. oryzae* route, the exact secreted construct must fold correctly and retain complement-regulatory function through the intended processing conditions. [§1.25](./validation-experiments.md#125-dafcd55-scr1-4-truncated-single-cassette-expression-in-a-oryzae-cp0-engineering-candidate-wet-lab-gate) tests expression, disulfide/folding, process stability, and function of SCR1–4. Because its current design has no full-ectodomain arm, a favorable result advances the truncated construct but cannot attribute that outcome to stalk removal.
 
-Related: [SCR1–4 proxy](./daf-cd55-scr14-truncated-computational.md) · [H05 falsification card](./hypotheses/H05-daf-scr14-cp0-thesis.md) · [quarantined, non-runnable COMP-006 artifact](./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/)
+Related: [SCR1–4 proxy](./daf-cd55-scr14-truncated-computational.md) · [H05 falsification card](./hypotheses/H05-daf-scr14-cp0-thesis.md) · [invalidated, non-runnable COMP-006 tombstone](./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/)
