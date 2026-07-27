@@ -29,9 +29,36 @@ def main() -> None:
     parser.add_argument("--commit", required=True)
     parser.add_argument("--output", required=True)
     parser.add_argument("--current-evidence-home", required=True)
+    parser.add_argument(
+        "--governance-file",
+        required=True,
+        help=(
+            "Reviewed JSON containing decision_owner, decision_ref, "
+            "disposition_review, surviving_scope_homes, unique_detail_audit, "
+            "and a closed cascade"
+        ),
+    )
     parser.add_argument("--invalidated", action="append", default=[])
     parser.add_argument("--surviving", action="append", default=[])
     args = parser.parse_args()
+    governance_path = (ROOT / args.governance_file).resolve()
+    if governance_path != ROOT and ROOT not in governance_path.parents:
+        raise SystemExit("governance file escapes repository")
+    governance = json.loads(governance_path.read_text())
+    required_governance = {
+        "decision_owner",
+        "decision_ref",
+        "disposition_review",
+        "reviewed_artifact_manifest_sha256",
+        "surviving_scope_homes",
+        "unique_detail_audit",
+        "cascade",
+    }
+    missing = sorted(required_governance - set(governance))
+    if missing:
+        raise SystemExit(
+            "governance file is incomplete: " + ", ".join(missing)
+        )
 
     prefix = args.comp_dir.rstrip("/") + "/"
     listed = subprocess.run(
@@ -72,6 +99,7 @@ def main() -> None:
         "surviving_scope": surviving_scope,
         "current_evidence_home": args.current_evidence_home,
         "runnable": False,
+        **{key: governance[key] for key in sorted(required_governance)},
     }
     canonical = json.dumps(
         digest_payload,
@@ -81,7 +109,7 @@ def main() -> None:
     ).encode()
 
     ledger = {
-        "schema_version": 1,
+        "schema_version": 2,
         "comp": args.comp,
         "status": "invalidated_tombstone",
         "runnable": False,
@@ -91,12 +119,14 @@ def main() -> None:
         "invalidated_scope": args.invalidated,
         "surviving_scope": surviving_scope,
         "current_evidence_home": args.current_evidence_home,
+        **{key: governance[key] for key in sorted(required_governance)},
         "canonical_digest": {
             "algorithm": "sha256",
             "canonical_json": (
                 "UTF-8 JSON object containing exactly retired_files, "
                 "invalidated_scope, surviving_scope, current_evidence_home, "
-                "and runnable; object keys are sorted recursively, arrays "
+                "runnable, and the schema-v2 governance fields; object keys "
+                "are sorted recursively, arrays "
                 "preserve listed order, ensure_ascii is false, and separators "
                 "are ',' and ':'."
             ),

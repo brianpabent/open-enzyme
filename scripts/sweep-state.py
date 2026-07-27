@@ -157,9 +157,10 @@ def _semantic_propagation_path(path: str) -> str:
 
     Propagation reasons over the current COMP as a unit; it does not need one
     model trigger for every provenance, result, and sub-analysis file. Active
-    COMPs use their README as the entry point. Invalidated COMPs use the
-    deterministic tombstone ledger. The complete directory remains available
-    to the propagation agent when either entry point requires inspection.
+    COMPs use their README as the entry point. Quarantined COMPs use their
+    deterministic quarantine marker; invalidated COMPs use the tombstone
+    ledger. The complete directory remains available when its marker requires
+    inspection, but neither non-active state releases derived claims.
     """
     parts = Path(path).parts
     try:
@@ -172,6 +173,9 @@ def _semantic_propagation_path(path: str) -> str:
     if not comp_name.startswith("comp-"):
         return path
     comp_dir = Path(*parts[: experiments_index + 2])
+    quarantine = comp_dir / "quarantine.json"
+    if quarantine.is_file():
+        return quarantine.as_posix()
     invalidation = comp_dir / "invalidation.json"
     if invalidation.is_file():
         return invalidation.as_posix()
@@ -194,6 +198,7 @@ def _pending_propagation_paths(data: dict) -> list[str]:
                 "wiki/etc/experiments/comp-*/*.md",
                 "wiki/etc/experiments/comp-*/*/*.md",
                 "wiki/etc/experiments/comp-*/*/*/*.md",
+                "wiki/etc/experiments/comp-*/quarantine.json",
                 "wiki/etc/experiments/comp-*/invalidation.json",
             ],
         )

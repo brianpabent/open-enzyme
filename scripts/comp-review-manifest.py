@@ -10,6 +10,7 @@ from all three manifests so replacing a receipt cannot invalidate itself.
 from __future__ import annotations
 
 import argparse
+import ast
 import hashlib
 import json
 import re
@@ -105,6 +106,163 @@ def comp_files(comp_dir: Path, *, tracked_only: bool = False) -> tuple[list[Path
     return design, outputs
 
 
+def shared_dependencies(
+    comp_dir: Path,
+    *,
+    tracked_only: bool = False,
+) -> list[Path]:
+    """Return the transitive repository-local Python decision-code closure."""
+    shared_lib = comp_dir.parent / "lib"
+    if not shared_lib.is_dir():
+        return []
+    if tracked_only:
+        result = subprocess.run(
+            ["git", "ls-files", "--", relative(shared_lib)],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=True,
+        )
+    else:
+        result = subprocess.run(
+            [
+                "git",
+                "ls-files",
+                "--cached",
+                "--others",
+                "--exclude-standard",
+                "--",
+                relative(shared_lib),
+            ],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=True,
+        )
+    visible = {
+        ROOT / raw
+        for raw in result.stdout.splitlines()
+        if (ROOT / raw).is_file() and not ignored(ROOT / raw)
+    }
+    design, _outputs = comp_files(comp_dir, tracked_only=tracked_only)
+    pending = [path for path in design if path.suffix == ".py"]
+    inspected: set[Path] = set()
+    dependencies: set[Path] = set()
+    while pending:
+        path = pending.pop()
+        if path in inspected:
+            continue
+        inspected.add(path)
+        try:
+            tree = ast.parse(path.read_text(errors="replace"))
+        except SyntaxError:
+            continue
+        modules: set[str] = set()
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                modules.update(alias.name.split(".", 1)[0] for alias in node.names)
+            elif isinstance(node, ast.ImportFrom) and node.module and node.level == 0:
+                modules.add(node.module.split(".", 1)[0])
+        for module in modules:
+            candidate = shared_lib / f"{module}.py"
+            if candidate in visible and candidate not in dependencies:
+                dependencies.add(candidate)
+                pending.append(candidate)
+    return sorted(dependencies)
+
+
+def _git_paths(revision: str, prefix: str) -> list[str]:
+    result = subprocess.run(
+        ["git", "ls-tree", "-r", "--name-only", revision, "--", prefix],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+    )
+    return result.stdout.splitlines() if result.returncode == 0 else []
+
+
+def _git_text(revision: str, path: str) -> str | None:
+    result = subprocess.run(
+        ["git", "show", f"{revision}:{path}"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+    )
+    return result.stdout if result.returncode == 0 else None
+
+
+def shared_dependency_paths_at_revision(
+    comp_path: str,
+    revision: str,
+) -> set[str]:
+    """Resolve shared Python dependencies from an immutable Git snapshot."""
+    comp_path = comp_path.rstrip("/")
+    experiments = str(Path(comp_path).parent)
+    shared_prefix = f"{experiments}/lib"
+    visible = {
+        path
+        for path in _git_paths(revision, shared_prefix)
+        if path.endswith(".py")
+    }
+    pending = [
+        path
+        for path in _git_paths(revision, comp_path)
+        if path.endswith(".py") and "/reviews/" not in f"/{path}/"
+    ]
+    inspected: set[str] = set()
+    dependencies: set[str] = set()
+    while pending:
+        path = pending.pop()
+        if path in inspected:
+            continue
+        inspected.add(path)
+        source = _git_text(revision, path)
+        if source is None:
+            continue
+        try:
+            tree = ast.parse(source)
+        except SyntaxError:
+            continue
+        modules: set[str] = set()
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                modules.update(alias.name.split(".", 1)[0] for alias in node.names)
+            elif isinstance(node, ast.ImportFrom) and node.module and node.level == 0:
+                modules.add(node.module.split(".", 1)[0])
+        for module in modules:
+            candidate = f"{shared_prefix}/{module}.py"
+            if candidate in visible and candidate not in dependencies:
+                dependencies.add(candidate)
+                pending.append(candidate)
+    return dependencies
+
+
+def list_dependents(args: argparse.Namespace) -> None:
+    changed = set(args.changed_path)
+    if args.input:
+        changed.update(
+            line.strip()
+            for line in Path(args.input).resolve().read_text().splitlines()
+            if line.strip()
+        )
+    for comp_dir in sorted(
+        (ROOT / "wiki" / "etc" / "experiments").glob("comp-*")
+    ):
+        if not comp_dir.is_dir():
+            continue
+        comp_path = relative(comp_dir)
+        dependencies = shared_dependency_paths_at_revision(
+            comp_path,
+            args.head,
+        )
+        if args.base:
+            dependencies.update(
+                shared_dependency_paths_at_revision(comp_path, args.base)
+            )
+        if changed & dependencies:
+            print(comp_path)
+
+
 def comp_id(comp_dir: Path) -> str:
     match = re.match(r"^(comp-\d{3})(?:-|$)", comp_dir.name)
     if not match:
@@ -153,7 +311,9 @@ def create(args: argparse.Namespace) -> None:
     if reviews_dir.resolve() not in output.parents:
         raise SystemExit("Manifest output must live under the COMP reviews/ directory")
 
-    design_files, output_files = comp_files(comp_dir, tracked_only=args.phase == "push")
+    tracked_only = args.phase == "push"
+    design_files, output_files = comp_files(comp_dir, tracked_only=tracked_only)
+    dependencies = shared_dependencies(comp_dir, tracked_only=tracked_only)
     proposed = [repo_path(raw) for raw in args.proposed_file]
     if args.phase == "push":
         proposed.extend(referencing_wiki_files(comp_id(comp_dir), comp_dir))
@@ -171,10 +331,11 @@ def create(args: argparse.Namespace) -> None:
         raise SystemExit("Duplicate --proposed-file paths are not allowed")
 
     payload: dict[str, object] = {
-        "schema_version": 2 if args.phase == "push" else 1,
+        "schema_version": 2,
         "phase": args.phase,
         "comp_dir": relative(comp_dir),
         "files": [entry(path, "design") for path in design_files]
+        + [entry(path, "shared_dependency") for path in dependencies]
         + (
             [entry(path, "generated_output") for path in output_files]
             if args.phase in {"post", "push"}
@@ -253,6 +414,9 @@ def check(args: argparse.Namespace) -> None:
     recorded_outputs = [
         item for item in recorded_files if item.get("kind") == "generated_output"
     ]
+    recorded_dependencies = [
+        item for item in recorded_files if item.get("kind") == "shared_dependency"
+    ]
     recorded_proposed = [
         item for item in recorded_files if item.get("kind") == "proposed_update"
     ]
@@ -260,12 +424,24 @@ def check(args: argparse.Namespace) -> None:
     current_output_entries = [
         entry(path, "generated_output") for path in current_outputs
     ]
+    current_dependency_entries = [
+        entry(path, "shared_dependency")
+        for path in shared_dependencies(comp_dir, tracked_only=phase == "push")
+    ]
     current_proposed_entries: list[dict[str, object]] = []
     for item in recorded_proposed:
         path = repo_path(str(item.get("path", "")))
         if path.is_file():
             current_proposed_entries.append(entry(path, "proposed_update"))
     errors.extend(compare_entries(recorded_design, current_design_entries, "design file"))
+    if recorded_dependencies:
+        errors.extend(
+            compare_entries(
+                recorded_dependencies,
+                current_dependency_entries,
+                "shared dependency",
+            )
+        )
     if phase in {"post", "push"}:
         errors.extend(
             compare_entries(recorded_outputs, current_output_entries, "generated output")
@@ -366,6 +542,12 @@ def check_lifecycle(args: argparse.Namespace) -> None:
         post_files = list(post.get("files", []))
         pre_design = [item for item in pre_files if item.get("kind") == "design"]
         post_design = [item for item in post_files if item.get("kind") == "design"]
+        pre_dependencies = [
+            item for item in pre_files if item.get("kind") == "shared_dependency"
+        ]
+        post_dependencies = [
+            item for item in post_files if item.get("kind") == "shared_dependency"
+        ]
         design_for_execution_pre = pre_design
         design_for_execution_post = post_design
         if (comp_dir / "invalidation.json").is_file():
@@ -386,6 +568,14 @@ def check_lifecycle(args: argparse.Namespace) -> None:
                 "design between pre-run and post-run",
             )
         )
+        if pre_dependencies or post_dependencies:
+            errors.extend(
+                compare_entries(
+                    pre_dependencies,
+                    post_dependencies,
+                    "shared dependency between pre-run and post-run",
+                )
+            )
         if any(item.get("kind") == "generated_output" for item in pre_files):
             errors.append("pre-run manifest unexpectedly contains generated outputs")
         if any(item.get("kind") == "proposed_update" for item in pre_files):
@@ -403,6 +593,17 @@ def check_lifecycle(args: argparse.Namespace) -> None:
                 "post-reviewed design file",
             )
         )
+        if post_dependencies:
+            errors.extend(
+                compare_entries(
+                    post_dependencies,
+                    [
+                        entry(path, "shared_dependency")
+                        for path in shared_dependencies(comp_dir)
+                    ],
+                    "post-reviewed shared dependency",
+                )
+            )
         post_outputs = [
             item for item in post_files if item.get("kind") == "generated_output"
         ]
@@ -452,6 +653,9 @@ def check_legacy_post(args: argparse.Namespace) -> None:
         post_outputs = [
             item for item in post_files if item.get("kind") == "generated_output"
         ]
+        post_dependencies = [
+            item for item in post_files if item.get("kind") == "shared_dependency"
+        ]
         errors.extend(
             compare_entries(
                 post_design,
@@ -459,6 +663,17 @@ def check_legacy_post(args: argparse.Namespace) -> None:
                 "post-reviewed design file",
             )
         )
+        if post_dependencies:
+            errors.extend(
+                compare_entries(
+                    post_dependencies,
+                    [
+                        entry(path, "shared_dependency")
+                        for path in shared_dependencies(comp_dir)
+                    ],
+                    "post-reviewed shared dependency",
+                )
+            )
         errors.extend(
             compare_entries(
                 post_outputs,
@@ -497,6 +712,13 @@ def parser() -> argparse.ArgumentParser:
     legacy_post_parser = subparsers.add_parser("check-legacy-post")
     legacy_post_parser.add_argument("--comp-dir", required=True)
     legacy_post_parser.set_defaults(func=check_legacy_post)
+
+    dependents_parser = subparsers.add_parser("list-dependents")
+    dependents_parser.add_argument("--base")
+    dependents_parser.add_argument("--head", default="HEAD")
+    dependents_parser.add_argument("--input")
+    dependents_parser.add_argument("--changed-path", action="append", default=[])
+    dependents_parser.set_defaults(func=list_dependents)
     return root
 
 

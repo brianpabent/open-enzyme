@@ -86,7 +86,7 @@ retains the deterministic remainder. No path is silently dropped and a
 propagation-generated edit is not fed back into the next batch as a new
 scientific trigger.
 
-A changed completed COMP blocks its derived claims before any model call and remains blocked until the current artifact has an exact push review. Cost overflow defers the COMP rather than reusing a stale receipt. Hash-bound non-runnable tombstones are removed from eligibility and verified deterministically against their retired Git trees; Gate-1-only COMPs do not enter result-bearing push review. The structured review independently states propagation and synthesis eligibility.
+A changed completed COMP blocks its derived claims before any model call and remains blocked until the current artifact has an exact push review. Cost overflow defers the COMP rather than reusing a stale receipt. A deterministic quarantine retains the complete artifact and imported repository-local decision libraries, while excluding that COMP from execution, propagation, synthesis, and routine model review. Hash-bound non-runnable tombstones are removed from eligibility and verified deterministically against their retired Git trees; Gate-1-only COMPs do not enter result-bearing push review. The structured review independently states propagation and synthesis eligibility.
 
 ## Three COMP reviews
 
@@ -95,6 +95,8 @@ A changed completed COMP blocks its derived claims before any model call and rem
 3. Push review independently inspects the exact changed COMP and every referencing wiki/hypothesis surface before propagation or later synthesis.
 
 The completed authoring lifecycle requires unchanged executable design between the pre-run and post-run snapshots and a current COMP artifact that still matches the post-run snapshot. A non-runnable tombstone may receive a Gate-2-only README correction while its hash-bound invalidation ledger remains unchanged. A legacy artifact that honestly predates Gate 1 may instead carry an exact independent post-run binding. Later canonical-page edits do not retroactively invalidate those historical gates; the current push review binds and audits the evolved pages. The reviews answer different questions and cannot substitute for one another. Current push receipts live under each active completed COMP's `reviews/` directory and replace prior receipts. A stable `synthesis/queue/comp-review-NNN.md` exists only while action is required.
+
+Quarantine is reversible; final retirement is not. A new retirement requires a complete quarantined artifact, a context-isolated disposition review bound to its manifest, a unique-detail audit with current homes for every survivor, a closed dependency cascade, and Brian’s explicit decision. The deterministic checker caps a retirement batch at three and refuses a new tombstone while a retirement-cascade action remains open.
 
 ## Explicit full synthesis
 

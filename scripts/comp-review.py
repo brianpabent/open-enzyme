@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Exact-artifact, cost-bounded push review for one Open Enzyme COMP.
 
-Every tracked design/input/output file and every current wiki page that names
-the COMP is assigned to a complete shard inventory. Each shard is inspected;
-the final independent verdict separates artifact validity from propagation and
-synthesis eligibility. One current receipt replaces the previous receipt.
+Every tracked design/input/output file, imported repository-local decision
+library, and current wiki page that names the COMP is assigned to a complete
+shard inventory. Each shard is inspected; the final independent verdict
+separates artifact validity from propagation and synthesis eligibility. One
+current receipt replaces the previous receipt.
 """
 
 from __future__ import annotations
@@ -221,10 +222,21 @@ def _segments(path: Path, role: str) -> list[dict[str, object]]:
     return result
 
 
-def build_shards(comp_rel: str, comp_id: str) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+def build_shards(
+    comp_rel: str,
+    comp_id: str,
+    manifest_path: Path,
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
     segments: list[dict[str, object]] = []
     for path in tracked_files(comp_rel):
         segments.extend(_segments(path, "comp_artifact"))
+    manifest = json.loads(manifest_path.read_text())
+    for item in manifest.get("files", []):
+        if item.get("kind") != "shared_dependency":
+            continue
+        segments.extend(
+            _segments(safe_path(str(item["path"])), "shared_dependency")
+        )
     for path in comp_references(comp_id, comp_rel):
         segments.extend(_segments(path, "referencing_wiki_surface"))
 
@@ -595,7 +607,7 @@ def main() -> None:
     )
     manifest_sha = create_push_manifest(comp_rel, manifest_path)
     authoring_gates = verify_authoring_gates(comp_dir)
-    shards, binary = build_shards(comp_rel, comp_id)
+    shards, binary = build_shards(comp_rel, comp_id, manifest_path)
     prompt_template = safe_path(args.prompt_file).read_text()
     total_chars = sum(int(shard["chars"]) for shard in shards) + len(prompt_template)
     projected = estimate_cost(

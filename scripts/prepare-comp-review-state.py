@@ -132,12 +132,33 @@ def main() -> None:
     state = json.loads(STATE_PATH.read_text())
     records = state.setdefault("comp_reviews", {})
     review_candidates: list[str] = []
-    counts = {"tombstone": 0, "pre_run_only": 0, "pending_review": 0}
+    counts = {
+        "quarantine": 0,
+        "tombstone": 0,
+        "pre_run_only": 0,
+        "pending_review": 0,
+    }
 
     for comp_dir in selected:
         identifier = comp_id(comp_dir)
         relative = comp_dir.relative_to(ROOT).as_posix()
         prior = records.get(identifier, {})
+
+        if (comp_dir / "quarantine.json").is_file():
+            result = run(
+                [
+                    "python3",
+                    "scripts/check-comp-disposition.py",
+                    "--comp-dir",
+                    relative,
+                ]
+            )
+            if result.returncode:
+                raise SystemExit(result.stdout + result.stderr)
+            records.pop(identifier, None)
+            remove_push_receipts(comp_dir)
+            counts["quarantine"] += 1
+            continue
 
         if (comp_dir / "invalidation.json").is_file():
             result = run(
@@ -150,6 +171,16 @@ def main() -> None:
             )
             if result.returncode:
                 raise SystemExit(result.stdout + result.stderr)
+            governance = run(
+                [
+                    "python3",
+                    "scripts/check-comp-disposition.py",
+                    "--comp-dir",
+                    relative,
+                ]
+            )
+            if governance.returncode:
+                raise SystemExit(governance.stdout + governance.stderr)
             records.pop(identifier, None)
             remove_push_receipts(comp_dir)
             counts["tombstone"] += 1

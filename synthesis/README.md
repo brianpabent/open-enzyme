@@ -17,6 +17,8 @@ When the useful output is a novel but untested connection, close the queue actio
 
 COMP review findings use a stable filename, `comp-review-NNN.md`. A later exact-snapshot review replaces that file or deletes it when clean, so there is never an accumulating review archive in the live tree.
 
+A COMP retirement is not an ordinary queue-resolution edit. If repairability or surviving scope is uncertain, retain the complete artifact in deterministic quarantine and remove it from execution, propagation, and synthesis. A final tombstone requires the bound disposition and surviving-detail gates in `new-comp-experiment`, plus Brian’s explicit decision; queue pressure or synthesis cost is never a retirement criterion.
+
 ## Producers
 
 - `scripts/distributed-synthesis.py` produces candidate findings only during an explicit full synthesis.

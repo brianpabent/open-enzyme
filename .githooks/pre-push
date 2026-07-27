@@ -124,6 +124,28 @@ EOF
   fail=1
 fi
 
+disposition_base=$(git rev-parse --verify '@{upstream}' 2>/dev/null || true)
+if [[ -n "$disposition_base" ]]; then
+  disposition_base=$(git merge-base HEAD "$disposition_base")
+else
+  disposition_base="HEAD^"
+fi
+if ! python3 scripts/check-comp-disposition.py --all --base "$disposition_base"; then
+  cat >&2 <<'EOF'
+
+✗ pre-push hook (COMP disposition governance)
+
+The push was blocked because a quarantine is incomplete, a new retirement
+lacks its bound scientific-disposition decision, or a retirement batch exceeds
+the three-COMP/cascade limit.
+
+Quarantine retains the complete artifact while blocking its claims at zero
+routine model cost. Final retirement is a protected scientific decision:
+    python3 scripts/check-comp-disposition.py --all --base HEAD^
+EOF
+  fail=1
+fi
+
 if ! python3 scripts/check-privacy.py --check $SCOPE; then
   cat >&2 <<'EOF'
 

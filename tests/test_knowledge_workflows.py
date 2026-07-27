@@ -29,6 +29,9 @@ lit_receipt = load("lit_scan_receipt_test", ROOT / "scripts" / "check-lit-scan-r
 invalidation = load(
     "comp_invalidation_test", ROOT / "scripts" / "check-comp-invalidation.py"
 )
+disposition = load(
+    "comp_disposition_test", ROOT / "scripts" / "check-comp-disposition.py"
+)
 propagation = load(
     "sweep_propagation_test", ROOT / "scripts" / "sweep-1-propagate.py"
 )
@@ -106,6 +109,74 @@ Long review-history material.
         self.assertEqual(["run.py"], [path.name for path in design])
         self.assertEqual(["summary.json"], [path.name for path in outputs])
 
+    def test_authoring_manifest_binds_transitive_shared_decision_code(self):
+        with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
+            base = Path(tmp)
+            comp = base / "comp-999-test"
+            shared = base / "lib"
+            comp.mkdir()
+            shared.mkdir()
+            (comp / "analyze.py").write_text(
+                "from scoring_model import score\nprint(score())\n"
+            )
+            (shared / "scoring_model.py").write_text(
+                "from scoring_helper import value\n"
+                "def score():\n"
+                "    return value()\n"
+            )
+            (shared / "scoring_helper.py").write_text(
+                "def value():\n"
+                "    return 1\n"
+            )
+            dependencies = manifest.shared_dependencies(comp)
+        self.assertEqual(
+            ["scoring_helper.py", "scoring_model.py"],
+            [path.name for path in dependencies],
+        )
+
+    def test_git_snapshot_dependency_closure_finds_current_shared_importer(self):
+        comp_path = (
+            "wiki/etc/experiments/"
+            "comp-038-tier-2-butyrate-assay-audit"
+        )
+        dependencies = manifest.shared_dependency_paths_at_revision(
+            comp_path,
+            "HEAD",
+        )
+        self.assertIn(
+            "wiki/etc/experiments/lib/agentic_lit_synthesis.py",
+            dependencies,
+        )
+
+    def test_push_review_shards_inspect_manifest_bound_shared_dependency(self):
+        with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
+            base = Path(tmp)
+            comp = base / "comp-999-test"
+            comp.mkdir()
+            dependency = base / "shared_model.py"
+            dependency.write_text("def score():\n    return 1\n")
+            manifest_path = base / "push-manifest.json"
+            manifest_path.write_text(json.dumps({
+                "files": [
+                    {
+                        "path": dependency.relative_to(ROOT).as_posix(),
+                        "kind": "shared_dependency",
+                    }
+                ]
+            }))
+            shards, binary = comp_review.build_shards(
+                comp.relative_to(ROOT).as_posix(),
+                "comp-999",
+                manifest_path,
+            )
+        roles = [
+            segment["role"]
+            for shard in shards
+            for segment in shard["segments"]
+        ]
+        self.assertEqual([], binary)
+        self.assertEqual(["shared_dependency"], roles)
+
     def test_authoring_manifest_excludes_gitignored_local_cache(self):
         with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
             comp = Path(tmp) / "comp-999-test"
@@ -129,9 +200,10 @@ Long review-history material.
 
     def test_push_manifest_is_limited_to_git_tracked_artifacts(self):
         source = (ROOT / "scripts/comp-review-manifest.py").read_text()
-        self.assertIn('tracked_only=args.phase == "push"', source)
+        self.assertIn('tracked_only = args.phase == "push"', source)
         self.assertIn('["git", "ls-files", "--", relative(comp_dir)]', source)
         self.assertIn('and "reviews" not in rel.parts', source)
+        self.assertIn('"shared_dependency"', source)
 
     def test_reader_contract_has_deterministic_residue_guards(self):
         patterns = hygiene.READER_RESIDUE_PATTERNS
@@ -397,6 +469,12 @@ class WorkflowTriggerTests(unittest.TestCase):
         self.assertIn("push-review.manifest", (ROOT / "scripts/comp-review.py").read_text())
         self.assertNotIn("logs/comp-reviews", text)
 
+    def test_disposition_governance_runs_locally_and_in_ci(self):
+        hook = (ROOT / ".githooks/pre-push").read_text()
+        integrity = (ROOT / ".github/workflows/corpus-integrity.yml").read_text()
+        self.assertIn("check-comp-disposition.py --all --base", hook)
+        self.assertIn("Check COMP quarantine and retirement governance", integrity)
+
     def test_completed_review_baseline_preserves_real_provenance(self):
         state = json.loads((ROOT / "logs/sweep-state.json").read_text())
         records = state["comp_reviews"]
@@ -404,9 +482,15 @@ class WorkflowTriggerTests(unittest.TestCase):
         completed_active: set[str] = set()
         pre_run_only: set[str] = set()
         tombstones: set[str] = set()
+        quarantines: set[str] = set()
         for comp_dir in comp_root.glob("comp-*"):
             identifier = comp_dir.name[:8]
             reviews = comp_dir / "reviews"
+            if (comp_dir / "quarantine.json").is_file():
+                quarantines.add(identifier)
+                self.assertEqual([], disposition.validate_quarantine(comp_dir))
+                self.assertFalse(any(reviews.glob("push-review*")))
+                continue
             if (comp_dir / "invalidation.json").is_file():
                 tombstones.add(identifier)
                 self.assertEqual([], invalidation.validate(comp_dir))
@@ -425,6 +509,7 @@ class WorkflowTriggerTests(unittest.TestCase):
 
         self.assertEqual(completed_active, set(records))
         self.assertTrue(tombstones)
+        self.assertTrue(quarantines)
         self.assertEqual({"comp-048", "comp-049"}, pre_run_only)
         pending = []
         for identifier, record in records.items():
@@ -474,6 +559,11 @@ class DistributedSynthesisContractTests(unittest.TestCase):
         pairs = list(itertools.combinations(distributed.DOMAINS, 2))
         self.assertEqual(28, len(pairs))
         self.assertEqual(len(pairs), len(set(pairs)))
+
+    def test_domain_pair_preserves_up_to_three_orthogonal_candidates(self):
+        prompt = distributed.bridge_prompt("urate-physiology", "strategy-methods", [], [], [])
+        self.assertEqual(3, distributed.MAX_PAIR_CANDIDATES)
+        self.assertIn("up to 3 non-redundant", prompt)
 
     def test_same_run_duplicate_headlines_are_suppressed(self):
         items = [
@@ -549,6 +639,336 @@ class DistributedSynthesisContractTests(unittest.TestCase):
         receipt["coverage_receipt_sha256"] = distributed.canonical_hash(receipt)
         with self.assertRaises(RuntimeError):
             distributed.validate_coverage_receipt(receipt)
+
+    def test_coverage_receipt_accepts_deterministically_excluded_candidate(self):
+        receipt = {
+            "status": "complete",
+            "section_count": 1,
+            "pass_a_covered_sections": 1,
+            "pass_b_covered_sections": 1,
+            "domain_pairs_expected": 28,
+            "domain_pairs_completed": 28,
+            "candidate_count": 2,
+            "rehydrated_candidate_ids": ["active"],
+            "reviewed_candidate_ids": ["active"],
+            "excluded_candidate_ids": ["quarantined"],
+            "promoted_candidate_ids": [],
+            "cost": {"actual_usd": 1.0, "hard_cap_usd": 5.0},
+        }
+        receipt["coverage_receipt_sha256"] = distributed.canonical_hash(receipt)
+        distributed.validate_coverage_receipt(receipt)
+
+    def test_quarantined_comp_excludes_only_its_candidate(self):
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".md", dir=ROOT / "wiki", delete=False
+        ) as handle:
+            handle.write("comp-999 supplied the retired quantitative prior.\n")
+            source = Path(handle.name)
+        atom = {
+            "atom_id": "a",
+            "path": source.relative_to(ROOT).as_posix(),
+            "start_line": 1,
+            "end_line": 1,
+            "excerpt": "comp-999 supplied",
+            "type": "claim",
+            "statement": "The artifact supplied a prior.",
+        }
+        original = distributed.comp_dispositions
+        original_homes = distributed.comp_evidence_homes
+        distributed.comp_dispositions = lambda: {"comp-999": "quarantined"}
+        distributed.comp_evidence_homes = lambda: {
+            "comp-999": "wiki/current-evidence.md"
+        }
+        try:
+            with self.assertRaises(distributed.CandidateExcluded):
+                distributed.exact_source_packet(
+                    {"atom_ids": ["a"], "hypothesis": "artifact prior"},
+                    {"a": atom},
+                    {},
+                )
+        finally:
+            distributed.comp_dispositions = original
+            distributed.comp_evidence_homes = original_homes
+            source.unlink(missing_ok=True)
+
+    def test_nonactive_comp_current_evidence_home_remains_synthesizable(self):
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".md", dir=ROOT / "wiki", delete=False
+        ) as handle:
+            handle.write(
+                "comp-999 is invalid; the matched experiment remains a conjecture.\n"
+            )
+            source = Path(handle.name)
+        relative_source = source.relative_to(ROOT).as_posix()
+        atom = {
+            "atom_id": "a",
+            "path": relative_source,
+            "start_line": 1,
+            "end_line": 1,
+            "excerpt": "comp-999 is invalid",
+            "type": "constraint",
+            "statement": "The model is invalid; the matched experiment remains.",
+        }
+        original = distributed.comp_dispositions
+        original_homes = distributed.comp_evidence_homes
+        distributed.comp_dispositions = lambda: {"comp-999": "quarantined"}
+        distributed.comp_evidence_homes = lambda: {
+            "comp-999": relative_source
+        }
+        try:
+            packet = distributed.exact_source_packet(
+                {"atom_ids": ["a"], "hypothesis": "matched experiment conjecture"},
+                {"a": atom},
+                {},
+            )
+            self.assertEqual("a", packet["rehydrated_sources"][0]["atom"]["atom_id"])
+            self.assertEqual({}, packet["comp_support"])
+        finally:
+            distributed.comp_dispositions = original
+            distributed.comp_evidence_homes = original_homes
+            source.unlink(missing_ok=True)
+
+    def test_contrary_evidence_is_not_silently_truncated(self):
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".md", dir=ROOT / "wiki", delete=False
+        ) as handle:
+            handle.write("shared mechanism premise\n")
+            source = Path(handle.name)
+        base = {
+            "path": source.relative_to(ROOT).as_posix(),
+            "start_line": 1,
+            "end_line": 1,
+            "excerpt": "shared mechanism premise",
+        }
+        atoms = {
+            "selected": {
+                **base,
+                "atom_id": "selected",
+                "type": "claim",
+                "statement": "shared mechanism premise",
+            }
+        }
+        for index in range(40):
+            atoms[f"c{index}"] = {
+                **base,
+                "atom_id": f"c{index}",
+                "type": "constraint",
+                "statement": f"shared mechanism constraint {index}",
+            }
+        try:
+            packet = distributed.exact_source_packet(
+                {
+                    "atom_ids": ["selected"],
+                    "hypothesis": "shared mechanism could connect",
+                },
+                atoms,
+                {},
+            )
+        finally:
+            source.unlink(missing_ok=True)
+        self.assertEqual(40, packet["contrary_constraint_count"])
+        self.assertEqual(40, len(packet["contrary_constraint_atoms"]))
+        self.assertFalse(packet["contrary_constraint_overflow"])
+
+
+class CompDispositionContractTests(unittest.TestCase):
+    def test_quarantine_binds_complete_artifact_and_expires(self):
+        with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
+            comp = Path(tmp) / "comp-999-test"
+            (comp / "inputs").mkdir(parents=True)
+            (comp / "README.md").write_text("# Test\n")
+            (comp / "analyze.py").write_text("print('historical')\n")
+            (comp / "inputs" / "provenance.md").write_text("source\n")
+            manifest_entries = disposition.artifact_manifest(comp)
+            dependency_entries = disposition.artifact_dependencies(comp)
+            document = {
+                "schema_version": 1,
+                "comp": "comp-999",
+                "status": "quarantined",
+                "runnable": False,
+                "owner": "brian",
+                "entered_on": "2026-07-27",
+                "expires_on": "2026-08-27",
+                "decision_status": "pending_re_review",
+                "reason": "Bounded disposition review is pending.",
+                "blocked_scope": ["all derived claims"],
+                "current_evidence_home": "wiki/index.md",
+                "artifact_manifest": manifest_entries,
+                "artifact_dependencies": dependency_entries,
+                "artifact_manifest_sha256": disposition.canonical_quarantine_sha256(
+                    manifest_entries,
+                    dependency_entries,
+                ),
+            }
+            (comp / "quarantine.json").write_text(json.dumps(document))
+            self.assertEqual(
+                [],
+                disposition.validate_quarantine(
+                    comp,
+                    today=disposition.dt.date(2026, 7, 28),
+                ),
+            )
+            (comp / "analyze.py").write_text("print('changed')\n")
+            errors = disposition.validate_quarantine(
+                comp,
+                today=disposition.dt.date(2026, 7, 28),
+            )
+            self.assertTrue(any("artifact_manifest" in error for error in errors))
+            expiry_errors = disposition.validate_quarantine(
+                comp,
+                today=disposition.dt.date(2026, 8, 28),
+            )
+            self.assertTrue(any("expired" in error for error in expiry_errors))
+
+    def test_quarantine_binds_imported_shared_library(self):
+        with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
+            base = Path(tmp)
+            comp = base / "comp-999-test"
+            shared = base / "lib"
+            comp.mkdir()
+            shared.mkdir()
+            (comp / "README.md").write_text("# Test\n")
+            (comp / "analyze.py").write_text(
+                "from scoring_model import score\nprint(score())\n"
+            )
+            (shared / "scoring_model.py").write_text(
+                "from scoring_helper import value\n"
+                "def score():\n"
+                "    return value()\n"
+            )
+            (shared / "scoring_helper.py").write_text(
+                "def value():\n    return 1\n"
+            )
+            manifest_entries = disposition.artifact_manifest(comp)
+            dependency_entries = disposition.artifact_dependencies(comp)
+            self.assertEqual(
+                [
+                    (shared / "scoring_helper.py").relative_to(ROOT).as_posix(),
+                    (shared / "scoring_model.py").relative_to(ROOT).as_posix(),
+                ],
+                [entry["path"] for entry in dependency_entries],
+            )
+            document = {
+                "schema_version": 1,
+                "comp": "comp-999",
+                "status": "quarantined",
+                "runnable": False,
+                "owner": "brian",
+                "entered_on": "2026-07-27",
+                "expires_on": "2026-08-27",
+                "decision_status": "pending_re_review",
+                "reason": "Bounded disposition review is pending.",
+                "blocked_scope": ["all derived claims"],
+                "current_evidence_home": "wiki/index.md",
+                "artifact_manifest": manifest_entries,
+                "artifact_dependencies": dependency_entries,
+                "artifact_manifest_sha256": disposition.canonical_quarantine_sha256(
+                    manifest_entries,
+                    dependency_entries,
+                ),
+            }
+            (comp / "quarantine.json").write_text(json.dumps(document))
+            self.assertEqual(
+                [],
+                disposition.validate_quarantine(
+                    comp,
+                    today=disposition.dt.date(2026, 7, 28),
+                ),
+            )
+            (shared / "scoring_model.py").write_text(
+                "def score():\n    return 2\n"
+            )
+            errors = disposition.validate_quarantine(
+                comp,
+                today=disposition.dt.date(2026, 7, 28),
+            )
+            self.assertTrue(any("artifact_dependencies" in error for error in errors))
+
+    def test_final_disposition_pending_requires_bound_review(self):
+        with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
+            comp = Path(tmp) / "comp-999-test"
+            reviews = comp / "reviews"
+            reviews.mkdir(parents=True)
+            (comp / "README.md").write_text("# Test\n")
+            (comp / "analyze.py").write_text("print('historical')\n")
+            manifest_entries = disposition.artifact_manifest(comp)
+            dependency_entries = disposition.artifact_dependencies(comp)
+            manifest_sha = disposition.canonical_quarantine_sha256(
+                manifest_entries,
+                dependency_entries,
+            )
+            review = reviews / "disposition-review.md"
+            review.write_text(
+                f"ARTIFACT_MANIFEST_SHA256: {manifest_sha}\n"
+                "DISPOSITION_REVIEW: RETIREMENT_JUSTIFIED\n"
+            )
+            document = {
+                "schema_version": 1,
+                "comp": "comp-999",
+                "status": "quarantined",
+                "runnable": False,
+                "owner": "brian",
+                "entered_on": "2026-07-27",
+                "expires_on": "2026-08-27",
+                "decision_status": "final_disposition_pending",
+                "reason": "Independent review completed; final decision pending.",
+                "blocked_scope": ["all derived claims"],
+                "current_evidence_home": "wiki/index.md",
+                "artifact_manifest": manifest_entries,
+                "artifact_dependencies": dependency_entries,
+                "artifact_manifest_sha256": manifest_sha,
+            }
+            marker = comp / "quarantine.json"
+            marker.write_text(json.dumps(document))
+            errors = disposition.validate_quarantine(
+                comp,
+                today=disposition.dt.date(2026, 7, 28),
+            )
+            self.assertTrue(any("requires a bound" in error for error in errors))
+            document["disposition_review"] = {
+                "path": review.relative_to(ROOT).as_posix(),
+                "sha256": disposition.sha256(review),
+            }
+            marker.write_text(json.dumps(document))
+            self.assertEqual(
+                [],
+                disposition.validate_quarantine(
+                    comp,
+                    today=disposition.dt.date(2026, 7, 28),
+                ),
+            )
+
+    def test_new_retirement_requires_schema_two_governance(self):
+        with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
+            comp = Path(tmp) / "comp-999-test"
+            comp.mkdir()
+            (comp / "invalidation.json").write_text(json.dumps({
+                "schema_version": 2,
+                "comp": "comp-999",
+                "status": "invalidated_tombstone",
+                "runnable": False,
+                "invalidated_scope": ["all categorical rankings"],
+                "surviving_scope": {
+                    "kind": "bounded_question",
+                    "questions": ["Does the direct assay support the mechanism?"],
+                },
+                "current_evidence_home": "wiki/index.md",
+            }))
+            errors = disposition.validate_invalidation_governance(comp)
+        self.assertTrue(any("decision_owner" in error for error in errors))
+        self.assertTrue(any("disposition_review" in error for error in errors))
+        self.assertTrue(any("unique_detail_audit" in error for error in errors))
+        self.assertTrue(any("closed dependency cascade" in error for error in errors))
+
+    def test_retirement_batch_is_capped_and_cascade_blocked(self):
+        paths = [ROOT / f"comp-{index:03d}/invalidation.json" for index in range(4)]
+        errors = disposition.validate_retirement_batch_paths(paths, [])
+        self.assertTrue(any("maximum is 3" in error for error in errors))
+        errors = disposition.validate_retirement_batch_paths(
+            paths[:1],
+            [ROOT / "synthesis/queue/comp-retirement-cascade-001.md"],
+        )
+        self.assertTrue(any("open cascade" in error for error in errors))
 
     def test_promoted_markdown_normalizes_without_narrative_history(self):
         manifest = {"coverage_commit": "a" * 40}

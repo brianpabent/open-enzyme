@@ -418,7 +418,7 @@ At central pore parameters, the equilibration time constant is 2.17 seconds. At 
 
 **Question:** What sequence-filter and AlphaFold-confidence prior does the inherited model provide for the DAF/CD55 soluble ectodomain (aa 35–353)?
 
-**Verdict:** **Proxy verdict invalid; empirical protease risk unresolved.** The reported HIGH labels used pLDDT confidence as accessibility. The Ser/Thr-rich stalk has lower AlphaFold confidence than SCR1–4 and remains a testable engineering liability, but the model does not establish solvent exposure, cleavage, degradation, or survival.
+**Verdict:** **Proxy verdict invalid; empirical protease risk unresolved.** The reported HIGH labels used pLDDT confidence as accessibility, and the maximum-risk construction does not discriminate among the retained sequence scopes. The Ser/Thr-rich stalk has lower AlphaFold confidence than SCR1–4 and remains a testable engineering liability, but the model does not establish solvent exposure, cleavage, degradation, or survival.
 
 **Key findings:**
 - Removing the lower-confidence stalk is a falsifiable construct-design hypothesis, not a computationally validated stability improvement.
@@ -426,7 +426,7 @@ At central pore parameters, the equilibration time constant is 2.17 seconds. At 
 
 **Informs:** [modality-chokepoint-matrix](./modality-chokepoint-matrix.md) — Engineered soluble complement regulators row
 
-**Detail:** [interpretive](./daf-cd55-protease-stability-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/) · Historical filter inventory only
+**Detail:** [interpretive](./daf-cd55-protease-stability-computational.md) · [quarantined, non-runnable artifact](./etc/experiments/comp-006-daf-cd55-shio-koji-protease-stability/) · Historical filter inventory only
 
 ---
 

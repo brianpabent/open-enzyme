@@ -81,6 +81,8 @@ EPISTEMIC_STATUSES = {
     "project-decision",
 }
 
+MAX_PAIR_CANDIDATES = 3
+
 MODEL_RATES = {
     "google/gemini-2.5-flash": (0.30, 2.50),
     "deepseek/deepseek-v4-pro": (0.435, 0.87),
@@ -89,6 +91,10 @@ MODEL_RATES = {
 
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
 COMP_RE = re.compile(r"\bcomp-(\d{3})\b", re.I)
+
+
+class CandidateExcluded(RuntimeError):
+    """A single candidate depends on a non-eligible COMP disposition."""
 
 
 def sha256(data: bytes) -> str:
@@ -235,14 +241,52 @@ def source_files() -> list[Path]:
     return sorted(set(paths))
 
 
-def artifact_comp_ids() -> set[str]:
-    """Return only result-bearing COMP identifiers requiring model receipts."""
-    result = set()
+def comp_dispositions() -> dict[str, str]:
+    """Return the current deterministic state of every COMP directory."""
+    result: dict[str, str] = {}
     for path in (ROOT / "wiki" / "etc" / "experiments").glob("comp-*"):
         match = re.match(r"^(comp-\d{3})(?:-|$)", path.name)
-        if path.is_dir() and match and not (path / "invalidation.json").is_file():
-            result.add(match.group(1))
+        if not path.is_dir() or not match:
+            continue
+        if (path / "quarantine.json").is_file():
+            status = "quarantined"
+        elif (path / "invalidation.json").is_file():
+            status = "invalidated_tombstone"
+        else:
+            status = "active"
+        result[match.group(1)] = status
     return result
+
+
+def comp_evidence_homes() -> dict[str, str]:
+    """Return canonical current evidence homes for non-active COMPs."""
+    result: dict[str, str] = {}
+    for path in (ROOT / "wiki" / "etc" / "experiments").glob("comp-*"):
+        match = re.match(r"^(comp-\d{3})(?:-|$)", path.name)
+        if not path.is_dir() or not match:
+            continue
+        marker = path / "quarantine.json"
+        if not marker.is_file():
+            marker = path / "invalidation.json"
+        if not marker.is_file():
+            continue
+        try:
+            document = json.loads(marker.read_text())
+        except (OSError, json.JSONDecodeError):
+            continue
+        home = document.get("current_evidence_home")
+        if isinstance(home, str):
+            result[match.group(1)] = home
+    return result
+
+
+def artifact_comp_ids() -> set[str]:
+    """Return only active result-bearing COMPs requiring model receipts."""
+    return {
+        identifier
+        for identifier, status in comp_dispositions().items()
+        if status == "active"
+    }
 
 
 def domain_for(path: str, heading: str, text: str) -> str:
@@ -405,7 +449,7 @@ def bridge_prompt(domain_a: str, domain_b: str, atoms_a: list[dict[str, Any]], a
     return f"""Mission: {MISSION}
 Compare the COMPLETE atomic ledgers for domains {domain_a} and {domain_b}. Trigger paths are attention hints, never scope filters: {triggers}.
 Seek non-obvious connections, contradictions, transferable engineering patterns, shared constraints, discriminating experiments, and real project assumptions worth challenging. Be conservative about what you claim and aggressive about what you imagine. Do not require direct evidence for the connecting leap when the premises are grounded and the idea is useful; instead classify it as a research conjecture and make the unsupported leap explicit. Do not invent a project claim to rebut. A track-local failure is not mission failure. Do not rank an intervention by fit with the current yeast or koji work; production and chassis enter only when they change the hypothesized source, delivery, or experiment. Suppress restatements of this active queue:\n{active_queue_fingerprints()}
-Return JSON {{"compared_domains": ["{domain_a}", "{domain_b}"], "candidates": [{{"type": "connection|contradiction|experiment|open-question|priority-action|riskiest-assumption|most-curious-thread", "headline": "...", "hypothesis": "...", "epistemic_status": "evidence-update|mechanistic-extrapolation|research-conjecture|project-decision", "atom_ids": ["at least one from each domain unless contradiction is intra-constraint"], "grounded_premises": ["premise with atom id and evidence boundary", "..."], "novel_leap": "exact untested connection, or empty when not a conjecture", "why_it_matters": "upside if true", "discriminating_observation": "cheapest observation that advances, redirects, or kills it", "why_novel": "..."}}]}}. Emit at most the single strongest genuinely novel candidate for this pair; use an empty array rather than a weak restatement. A research-conjecture candidate must provide every structured conjecture field.
+Return JSON {{"compared_domains": ["{domain_a}", "{domain_b}"], "candidates": [{{"type": "connection|contradiction|experiment|open-question|priority-action|riskiest-assumption|most-curious-thread", "headline": "...", "hypothesis": "...", "epistemic_status": "evidence-update|mechanistic-extrapolation|research-conjecture|project-decision", "atom_ids": ["at least one from each domain unless contradiction is intra-constraint"], "grounded_premises": ["premise with atom id and evidence boundary", "..."], "novel_leap": "exact untested connection, or empty when not a conjecture", "why_it_matters": "upside if true", "discriminating_observation": "cheapest observation that advances, redirects, or kills it", "why_novel": "..."}}]}}. Emit up to {MAX_PAIR_CANDIDATES} non-redundant genuinely novel candidates for this pair; use an empty array rather than a weak restatement. Preserve orthogonal leads instead of forcing one winner. A research-conjecture candidate must provide every structured conjecture field.
 DOMAIN_A_ATOMS={json.dumps(compact(atoms_a), ensure_ascii=False)}
 DOMAIN_B_ATOMS={json.dumps(compact(atoms_b), ensure_ascii=False)}
 """
@@ -414,6 +458,8 @@ DOMAIN_B_ATOMS={json.dumps(compact(atoms_b), ensure_ascii=False)}
 def exact_source_packet(candidate: dict[str, Any], atom_by_id: dict[str, dict[str, Any]], state: dict[str, Any]) -> dict[str, Any]:
     selected = []
     comp_support: dict[str, Any] = {}
+    dispositions = comp_dispositions()
+    evidence_homes = comp_evidence_homes()
     for atom_id in candidate.get("atom_ids", []):
         if atom_id not in atom_by_id:
             raise RuntimeError(f"Candidate cites unknown atom {atom_id}")
@@ -428,7 +474,15 @@ def exact_source_packet(candidate: dict[str, Any], atom_by_id: dict[str, dict[st
         selected.append({"atom": atom, "raw_source": source_text})
         for match in COMP_RE.finditer(source_text):
             comp_id = f"comp-{match.group(1)}"
-            if comp_id not in artifact_comp_ids():
+            disposition = dispositions.get(comp_id)
+            if disposition in {"quarantined", "invalidated_tombstone"}:
+                if atom["path"] == evidence_homes.get(comp_id):
+                    continue
+                raise CandidateExcluded(
+                    f"Candidate cites {disposition} {comp_id}; use its current "
+                    "evidence home rather than the non-eligible artifact"
+                )
+            if disposition != "active":
                 continue
             review = state.get("comp_reviews", {}).get(comp_id)
             if not review:
@@ -483,7 +537,9 @@ def exact_source_packet(candidate: dict[str, Any], atom_by_id: dict[str, dict[st
         "candidate": candidate,
         "rehydrated_sources": selected,
         "comp_support": comp_support,
-        "contrary_constraint_atoms": contrary[:30],
+        "contrary_constraint_atoms": contrary,
+        "contrary_constraint_count": len(contrary),
+        "contrary_constraint_overflow": False,
     }
 
 
@@ -565,7 +621,12 @@ def validate_coverage_receipt(receipt: dict[str, Any]) -> None:
         errors.append("domain-pair coverage is incomplete")
     rehydrated = receipt.get("rehydrated_candidate_ids") or []
     reviewed = receipt.get("reviewed_candidate_ids") or []
-    if len(rehydrated) != receipt.get("candidate_count") or set(rehydrated) != set(reviewed):
+    excluded = receipt.get("excluded_candidate_ids") or []
+    if (
+        len(rehydrated) + len(excluded) != receipt.get("candidate_count")
+        or set(rehydrated) != set(reviewed)
+        or set(rehydrated) & set(excluded)
+    ):
         errors.append("not every candidate was rehydrated and reviewed")
     if not set(receipt.get("promoted_candidate_ids") or []).issubset(set(reviewed)):
         errors.append("a promoted candidate lacks review")
@@ -655,8 +716,11 @@ def run_pipeline(args: argparse.Namespace) -> dict[str, Any]:
         )
         if payload.get("compared_domains") != [domain_a, domain_b] or not isinstance(payload.get("candidates"), list):
             raise RuntimeError(f"Bridge output invalid for {domain_a}/{domain_b}")
-        if len(payload["candidates"]) > 1:
-            raise RuntimeError(f"Bridge exceeded one-candidate bound for {domain_a}/{domain_b}")
+        if len(payload["candidates"]) > MAX_PAIR_CANDIDATES:
+            raise RuntimeError(
+                f"Bridge exceeded {MAX_PAIR_CANDIDATES}-candidate bound for "
+                f"{domain_a}/{domain_b}"
+            )
         for candidate in payload["candidates"]:
             if candidate.get("type") not in TYPE_HEADING:
                 raise RuntimeError("Bridge candidate has invalid type")
@@ -682,8 +746,23 @@ def run_pipeline(args: argparse.Namespace) -> dict[str, Any]:
     promoted = []
     rehydrated_ids = []
     reviewed_ids = []
+    excluded_ids = []
     for candidate in candidates:
-        packet = exact_source_packet(candidate, atom_by_id, state)
+        try:
+            packet = exact_source_packet(candidate, atom_by_id, state)
+        except CandidateExcluded as exc:
+            exclusion = {
+                "candidate_id": candidate["candidate_id"],
+                "status": "excluded_noneligible_comp",
+                "reason": str(exc),
+                "candidate": candidate,
+            }
+            write_json(
+                work / "reviews" / f"{candidate['candidate_id']}.json",
+                exclusion,
+            )
+            excluded_ids.append(candidate["candidate_id"])
+            continue
         write_json(work / "packets" / f"{candidate['candidate_id']}.json", packet)
         rehydrated_ids.append(candidate["candidate_id"])
         verdict = client.json_call(
@@ -740,6 +819,7 @@ def run_pipeline(args: argparse.Namespace) -> dict[str, Any]:
         "candidate_count": len(candidates),
         "rehydrated_candidate_ids": rehydrated_ids,
         "reviewed_candidate_ids": reviewed_ids,
+        "excluded_candidate_ids": excluded_ids,
         "promoted_candidate_ids": [item["candidate_id"] for item in promoted],
         "deduplicated_candidate_ids": deduplicated_ids,
         "raw_synthesis_sha256": sha256(raw.encode()),

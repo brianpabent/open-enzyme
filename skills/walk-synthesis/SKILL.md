@@ -27,6 +27,8 @@ For one item only:
 
 For a `comp-review-NNN.md` item, do not edit the receipt to make it pass. Fix the experiment or interpretation, then obtain a new exact-snapshot review. The reviewer replaces or deletes the stable queue item.
 
+Do not use tombstoning to optimize walk speed. When repairability or retirement scope is uncertain, stop that COMP’s walk item, place the complete artifact and imported decision libraries in deterministic quarantine, and continue only with unrelated non-destructive items. Final retirement requires a bound independent disposition review, complete surviving-detail and dependency-cascade mapping, and Brian’s explicit decision. Present retirement decisions in batches of at most three.
+
 ## Finish
 
 Inbox zero means `synthesis/queue/` contains no unresolved item files. Commit eagerly, but ask before the single end-of-batch push. The push performs publication, COMP review, and propagation; it does not perform full synthesis.

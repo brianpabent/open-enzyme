@@ -14,6 +14,7 @@ name: Corpus integrity
 #   • check-lit-scan-receipt.py — compact, reproducible scan-method receipts
 #   • evidence-radar.py check — current source cursors and reviewed delta state
 #   • check-comp-invalidation.py — retired COMP/tree hash integrity
+#   • check-comp-disposition.py — quarantine and retirement governance
 
 on:
   push:
@@ -60,3 +61,11 @@ jobs:
 
       - name: Check retired COMP invalidation ledgers
         run: python3 scripts/check-comp-invalidation.py --all
+
+      - name: Check COMP quarantine and retirement governance
+        run: |
+          base="${{ github.event.pull_request.base.sha || github.event.before || 'HEAD^' }}"
+          if [[ -z "$base" || "$base" =~ ^0+$ ]]; then
+            base="HEAD^"
+          fi
+          python3 scripts/check-comp-disposition.py --all --base "$base"

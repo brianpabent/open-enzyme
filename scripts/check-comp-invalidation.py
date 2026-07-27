@@ -37,6 +37,17 @@ def canonical_digest(document: dict[str, object]) -> str:
     }
     if "successor" in document:
         payload["successor"] = document["successor"]
+    for key in (
+        "cascade",
+        "decision_owner",
+        "decision_ref",
+        "disposition_review",
+        "reviewed_artifact_manifest_sha256",
+        "surviving_scope_homes",
+        "unique_detail_audit",
+    ):
+        if key in document:
+            payload[key] = document[key]
     canonical = json.dumps(
         payload,
         ensure_ascii=False,
@@ -75,8 +86,8 @@ def validate(comp_dir: Path) -> list[str]:
     except (OSError, json.JSONDecodeError) as exc:
         return [f"invalidation ledger is unreadable: {exc}"]
 
-    if document.get("schema_version") != 1:
-        errors.append("schema_version must be 1")
+    if document.get("schema_version") not in {1, 2}:
+        errors.append("schema_version must be 1 or 2")
     if document.get("comp") != match.group(1):
         errors.append(f"comp must be {match.group(1)}")
     if document.get("status") != "invalidated_tombstone":

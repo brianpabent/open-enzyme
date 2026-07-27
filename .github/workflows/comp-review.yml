@@ -94,7 +94,15 @@ jobs:
             git diff --name-only "$base..$HEAD_SHA" -- 'wiki/etc/experiments/comp-*/**' \
               | grep -vE '/reviews/(push-review(\.manifest)?\.(md|json)|push-review\.json)$' \
               | sed -E 's#^(wiki/etc/experiments/comp-[^/]+)/.*#\1#' \
-              | sort -u > /tmp/comp-selected.txt || true
+              | sort -u > /tmp/comp-direct.txt || true
+            git diff --name-only "$base..$HEAD_SHA" -- 'wiki/etc/experiments/lib/**' \
+              > /tmp/comp-shared-changes.txt
+            python3 scripts/comp-review-manifest.py list-dependents \
+              --base "$base" --head "$HEAD_SHA" \
+              --input /tmp/comp-shared-changes.txt \
+              > /tmp/comp-dependent.txt
+            sort -u /tmp/comp-direct.txt /tmp/comp-dependent.txt \
+              > /tmp/comp-selected.txt
           fi
           count=$(grep -c . /tmp/comp-selected.txt || true)
           echo "count=$count" >> "$GITHUB_OUTPUT"

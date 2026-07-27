@@ -35,6 +35,7 @@ Audit claims and ideas separately. Correct an unsupported factual assertion, but
 - Use the database that answers the question. Inhibition, transport/substrate status, pathway membership, sequence, and structure are different data problems. Follow `wiki/etc/chembl-cross-check.md` and `wiki/etc/ai-bio-tools-playbook.md`; document any new source in both provenance and the relevant tooling page.
 - Fix inputs; record URL/accession/version/date and transformations.
 - Prefer deterministic, reproducible code. Commit code, inputs, and outputs together.
+- Imported repository-local decision libraries are part of the COMP design. The manifest binds their transitive Python dependency closure, and a push that changes shared code re-reviews every dependent COMP.
 - Treat computational results as priors, not substitutes for wet-lab validation.
 - Grep-verify every load-bearing number against its primary source before writing it into a result-bearing page.
 - Name the planned canonical evidence home and each downstream decision surface before execution. Plan only a local decision delta plus a link on dependents; route genuinely comparative outputs to portfolio comparison surfaces rather than inserting them into one track's page.
@@ -87,6 +88,7 @@ The push coordinator independently reviews the exact changed COMP plus every ref
 
 The coordinator classifies before spending tokens:
 
+- a deterministic `quarantine.json` retains and hash-binds the complete artifact plus imported repository-local decision libraries, but blocks execution, propagation, synthesis, and routine model review; it must name an owner, expiry, blocked claim scope, and current evidence home;
 - a hash-bound, non-runnable `invalidated_tombstone` is removed from COMP eligibility and checked deterministically against its retired Git tree;
 - a valid Gate-1-only COMP is not yet result-bearing and does not enter Gate 3;
 - a completed active COMP becomes explicitly blocked before any model call, then receives a new exact review; and
@@ -102,6 +104,21 @@ The push review is a backstop, not a substitute for Gates 1 or 2. Its structured
 - `SYNTHESIS_ELIGIBILITY`
 
 Any later COMP artifact change invalidates that exact-snapshot receipt until a new push review succeeds.
+
+## Quarantine and final retirement
+
+Quarantine is the default holding state when a COMP may be repairable, when a retirement decision is disputed, or when the complete computational object has not yet received an independent disposition review. Restore and retain code, inputs, outputs, and every imported repository-local decision library. Use `scripts/create-comp-quarantine.py`; do not execute the artifact. Quarantine carries no routine review spend and expires unless renewed with a bounded rationale.
+
+Final retirement is a protected scientific decision, not a queue-cleanup shortcut. A new tombstone requires:
+
+- a fresh context-isolated review bound to the complete quarantined artifact;
+- an explicit repair-versus-retirement verdict;
+- a unique-detail audit that maps every surviving fact, deterministic inventory, and conjecture to a current evidence home or marks it invalid;
+- a closed dependency/correction cascade;
+- Brian’s explicit final decision; and
+- a retirement batch of no more than three COMPs.
+
+Use `scripts/create-comp-invalidation.py` only after those conditions are met. If the reviewer finds bounded repair possible, keep the complete artifact quarantined and route the redesign through Gate 1. If repair changes the scientific question, decision function, inputs, or interpretation class, assign a new COMP ID.
 
 ## Completion
 
