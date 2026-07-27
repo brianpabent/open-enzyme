@@ -1,20 +1,16 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "7438acbce1abd8806c23b517b6cede991c32594d",
-    "source_commit": "7438acbce1abd8806c23b517b6cede991c32594d",
-    "result_commit": "7438acbce1abd8806c23b517b6cede991c32594d",
-    "timestamp": "2026-07-27T18:27:09Z",
+    "coverage_commit": "b5242cdae42c6a7acd57b2b0a922b265ad0bd1b5",
+    "source_commit": "b5242cdae42c6a7acd57b2b0a922b265ad0bd1b5",
+    "result_commit": "b5242cdae42c6a7acd57b2b0a922b265ad0bd1b5",
+    "timestamp": "2026-07-27T18:49:32Z",
     "changed_paths": [
-      "wiki/androgen-urate-axis.md",
-      "wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md",
-      "wiki/duckweed-aquatic-chassis.md",
-      "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/README.md",
-      "wiki/etc/experiments/comp-013-tcm-gout-compound-triage/invalidation.json",
-      "wiki/etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/README.md",
-      "wiki/hypotheses/H04-tcm-rigor-intersection.md",
-      "wiki/nlrp3-inhibitor-screen.md",
-      "wiki/tcm-gout-compound-triage-computational.md"
+      "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/invalidation.json",
+      "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/README.md",
+      "wiki/etc/experiments/comp-018-upstream-complement-modulator-sweep/invalidation.json",
+      "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/README.md",
+      "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/invalidation.json"
     ],
     "affected_paths": [],
     "blocked_paths": [
@@ -58,7 +54,7 @@
       "wiki/validation-experiments.md"
     ],
     "deferred_paths": [],
-    "cost_usd": 0.479889
+    "cost_usd": 0.328089
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
