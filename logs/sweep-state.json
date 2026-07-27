@@ -557,28 +557,23 @@
     },
     "comp-047": {
       "comp_dir": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen",
-      "artifact_manifest_sha256": null,
+      "artifact_manifest_sha256": "9001ca20952e1d387636f3336388dd563ee6908d7a1a805933eaf8a394beb874",
       "source_commit": "b3c1568bca27613c8a525732bba8b95bda39ed01",
-      "review_receipt": null,
-      "comp_verdict": "review_pending_exact_push",
+      "review_receipt": "wiki/etc/experiments/comp-047-abcg2-q141k-chaperone-rescreen/reviews/push-review.md",
+      "comp_verdict": "action_required",
       "propagation_eligibility": "blocked",
       "synthesis_eligibility": "blocked",
       "derived_paths": [
-        "index.md",
         "wiki/abcg2-modulators.md",
         "wiki/abcg2-q141k-chaperone-rescreen-computational.md",
         "wiki/abcg2-q141k-chaperone-screen-computational.md",
         "wiki/chassis-pending-interventions.md",
         "wiki/computational-experiments.md",
         "wiki/etc/chembl-cross-check.md",
-        "wiki/etc/experiments/lib/target_interactors.py",
-        "wiki/genotype-informed-supplement-workflow.md",
-        "wiki/gout-genetic-variants.md",
-        "wiki/validation-experiments.md"
+        "wiki/gout-genetic-variants.md"
       ],
-      "timestamp": "2026-07-27T12:28:20Z",
-      "cost_usd": null,
-      "pending_reason": "changed completed artifact awaits exact push review"
+      "timestamp": "2026-07-27T12:31:52Z",
+      "cost_usd": 1.549151
     }
   },
   "unresolved_failures": []
