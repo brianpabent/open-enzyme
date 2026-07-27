@@ -383,13 +383,13 @@ At central pore parameters, the equilibration time constant is 2.17 seconds. At 
 
 **Question:** Across upstream complement nodes (C1q/MBL-MASP-2/C3 tickover/convertases/soluble factors/membrane regulators), which compounds (anchored only to target nodes, no compound names supplied, no prior comp-018 consulted) have documented direct modulator activity?
 
-**Verdict:** **NO single headline compound.** Three classes occupy distinct top-tier mechanistic positions within ~5–20× of each other. **Top per node:** C1q — Helicteres benzofuran lignans + luteolin; MASP-2/LP — heparin oligos + Bupleurum polysaccharide; C3 convertase — rosmarinic acid (covalent IC50 34 µM, distinctive mechanism); marine sulfated polysaccharides 1–3 µg/mL.
+**Verdict:** **Unranked assay-specific Phase 1 literature inventory.** No headline compound, tier, comparative potency, platform priority, dietary efficacy, or gout-compartment potency is established. The scan surfaced rosmarinic acid (covalent C3b modification, 34 µM in one cell-based deposition assay), *Helicteres* benzofuran lignans (single-paper in-vitro anchor), luteolin and other flavonoids, *Bupleurum* polysaccharides, marine sulfated polysaccharides, and heparin-derived oligosaccharides as assay-specific leads with heterogeneous formats, units, and safety constraints. Cross-paper ordering is not justified.
 
 **Key findings:**
 - **Three independent scans now agree** (comp-013 + comp-014 + comp-020): ChEMBL is structurally biased (~20% NP coverage vs >70% kinase/GPCR). Primary-literature mining is the load-bearing tool.
 - Published assay records span 34–1500 µM for rosmarinic acid and 2–102 µg/mL for heparin across different formats and conditions. Those descriptive ranges motivate matched-format replication; they do not establish format as the cause or supply an operative potency.
-- Luteolin convergence-multi-mechanism candidate confirmed; rosmarinic acid is highest mechanistic-distinctiveness candidate (covalent C3b modification).
-- Coverage gaps: Factor H upregulators (empty), CD55/CD59/CR1 upregulators (engineering territory), direct fungal upstream modulators (zero — extends comp-014).
+- Rosmarinic acid's covalent C3b mechanism is mechanistically distinctive, but its primary full-text verification tier is unresolved and its direct C5-convertase potency (1500 µM) does not support a ≤100 µM threshold claim.
+- Bounded search gaps (not universal absence proofs): Factor H upregulators, CD55/CD59/CR1 upregulators, direct fungal upstream modulators, and Factor B/D natural-product direct inhibitors. C5aR1 was not independently re-executed; it was ruled out by cross-reference to comp-014.
 
 **Informs:** [complement-c5a-gout](./complement-c5a-gout.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md)
 

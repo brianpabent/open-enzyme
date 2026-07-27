@@ -74,6 +74,8 @@ Per CLAUDE.md §"Multi-frame query discipline" + §"Pre-commit grep-verify gate 
 - Englberger 1988 (PMID 3198307): inhibits **C3-convertase of the classical complement pathway**. Threshold 1 μM; optimal 5-10 μM, ~70% hemolysis inhibition. Mechanism is convertase active-site / assembly inhibition (elastase weakly co-inhibited supports serine-proteinase active-site involvement). **[In Vitro]**
 - Peake 1991 (PMID 1761351): mM-range C5 convertase inhibition; secondary regime. **[In Vitro]**
 
+**Provenance tier:** The Sahu 1999 IC50 = 34 μM was verified against the PubMed-hosted abstract; the primary full text was not independently retrieved and verified in this comp. The Englberger 1988 and Peake 1991 values are similarly abstract/snippet-tier. These numeric records are descriptive leads, not high-confidence primary-verified anchors. The CFH-independence classification rests on the mechanism description (covalent C3b thioester attachment), not on the exact IC50 value.
+
 **CFH-footprint mapping:** the C3b thioester (Cys988 α'-chain) is structurally distant from C3d (the CFH-binding fragment of C3b) and far from CFH's CCP6-8 CRP-binding surface. Rosmarinic acid quenches nascent C3b *before* it can be deposited on a target surface; CFH's regulatory functions (decay-acceleration of C3bBb, Factor-I cofactor for C3b → iC3b) operate on already-surface-deposited C3b — downstream of where rosmarinic acid acts. No primary source mentions CFH dependence.
 
 **Predicted Y402H × rosmarinic acid × incident gout interaction:** **negative direction (effect ≥ in carriers)** — Model A reasoning. Model B picks **null direction** (no differential effect). Both reject the AMD-paradox direction (+ harm in carriers).
