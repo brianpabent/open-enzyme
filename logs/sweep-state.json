@@ -1,21 +1,21 @@
 {
   "schema_version": 2,
   "last_successful_propagation": {
-    "coverage_commit": "911d980717e59a2937f1fd0ae123cc13c19567fa",
-    "source_commit": "911d980717e59a2937f1fd0ae123cc13c19567fa",
-    "result_commit": "911d980717e59a2937f1fd0ae123cc13c19567fa",
-    "timestamp": "2026-07-27T15:04:13Z",
+    "coverage_commit": "f31c3ff5164ca5f414afda8b1ad7c3e02c939f1c",
+    "source_commit": "f31c3ff5164ca5f414afda8b1ad7c3e02c939f1c",
+    "result_commit": "f31c3ff5164ca5f414afda8b1ad7c3e02c939f1c",
+    "timestamp": "2026-07-27T15:10:32Z",
     "changed_paths": [
-      "wiki/gout-kill-chain-delivery-routes.md",
-      "wiki/gout-multihop-research-program.md",
-      "wiki/gout-pathophysiology.md",
-      "wiki/gsdmd-pore-delivery-paradox.md",
-      "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
-      "wiki/houttuynia-cordata.md",
-      "wiki/hypotheses/H02-engineered-lbp-thesis.md",
-      "wiki/hypotheses/H03-sirna-urat1-thesis.md",
-      "wiki/hypotheses/H04-tcm-rigor-intersection.md",
-      "wiki/hypotheses/H05-daf-scr14-cp0-thesis.md"
+      "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
+      "wiki/hypotheses/README.md",
+      "wiki/koji-home-fermentation.md",
+      "wiki/kpv-gsdmd-pore-influx-computational.md",
+      "wiki/kpv-peptide.md",
+      "wiki/lactoferrin-linker-redesign-computational.md",
+      "wiki/lactoferrin-protease-stability-computational.md",
+      "wiki/lactoferrin.md",
+      "wiki/medicinal-mushroom-compound-mapping-computational.md",
+      "wiki/medicinal-mushroom-extract-sops.md"
     ],
     "affected_paths": [],
     "blocked_paths": [
@@ -29,16 +29,6 @@
       "wiki/gout-genetic-variants.md"
     ],
     "deferred_paths": [
-      "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
-      "wiki/hypotheses/README.md",
-      "wiki/koji-home-fermentation.md",
-      "wiki/kpv-gsdmd-pore-influx-computational.md",
-      "wiki/kpv-peptide.md",
-      "wiki/lactoferrin-linker-redesign-computational.md",
-      "wiki/lactoferrin-protease-stability-computational.md",
-      "wiki/lactoferrin.md",
-      "wiki/medicinal-mushroom-compound-mapping-computational.md",
-      "wiki/medicinal-mushroom-extract-sops.md",
       "wiki/nlrp3-exploit-map.md",
       "wiki/nlrp3-inhibitor-screen.md",
       "wiki/open-questions.md",
@@ -66,7 +56,7 @@
       "wiki/uricase-variant-selection.md",
       "wiki/validation-experiments.md"
     ],
-    "cost_usd": 1.033033
+    "cost_usd": 0.653784
   },
   "last_successful_synthesis": {
     "coverage_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
