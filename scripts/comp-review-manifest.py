@@ -348,10 +348,23 @@ def check_lifecycle(args: argparse.Namespace) -> None:
         post_files = list(post.get("files", []))
         pre_design = [item for item in pre_files if item.get("kind") == "design"]
         post_design = [item for item in post_files if item.get("kind") == "design"]
+        design_for_execution_pre = pre_design
+        design_for_execution_post = post_design
+        if (comp_dir / "invalidation.json").is_file():
+            # A non-runnable tombstone has no executable design. Its README is
+            # reader-facing retirement narration and may receive a Gate-2-only
+            # correction; invalidation.json remains exact across both gates.
+            readme_path = f"{expected_comp_dir}/README.md"
+            design_for_execution_pre = [
+                item for item in pre_design if item.get("path") != readme_path
+            ]
+            design_for_execution_post = [
+                item for item in post_design if item.get("path") != readme_path
+            ]
         errors.extend(
             compare_entries(
-                pre_design,
-                post_design,
+                design_for_execution_pre,
+                design_for_execution_post,
                 "design between pre-run and post-run",
             )
         )
@@ -390,6 +403,58 @@ def check_lifecycle(args: argparse.Namespace) -> None:
     print("authoring lifecycle valid")
 
 
+def check_legacy_post(args: argparse.Namespace) -> None:
+    """Verify an exact post-run review for a COMP that predates Gate 1."""
+    comp_dir = repo_path(args.comp_dir)
+    if not comp_dir.is_dir() or not comp_dir.name.startswith("comp-"):
+        raise SystemExit(f"Not a COMP directory: {comp_dir}")
+    reviews = comp_dir / "reviews"
+    post, errors = load_bound_manifest(
+        reviews / "post-run.manifest.json",
+        reviews / "post-run.md",
+        "ACTION_REQUIRED: no",
+        "post",
+    )
+    expected_comp_dir = relative(comp_dir)
+    if post and post.get("comp_dir") != expected_comp_dir:
+        errors.append(
+            f"post manifest comp_dir is {post.get('comp_dir')!r}, "
+            f"expected {expected_comp_dir!r}"
+        )
+    if post:
+        post_files = list(post.get("files", []))
+        if list(post.get("prior_output_baseline", [])):
+            errors.append("post-run manifest unexpectedly contains a prior-output baseline")
+        if not any(item.get("kind") == "proposed_update" for item in post_files):
+            errors.append("post-run manifest contains no proposed updates")
+        current_design, current_outputs = comp_files(comp_dir)
+        post_design = [
+            item for item in post_files if item.get("kind") == "design"
+        ]
+        post_outputs = [
+            item for item in post_files if item.get("kind") == "generated_output"
+        ]
+        errors.extend(
+            compare_entries(
+                post_design,
+                [entry(path, "design") for path in current_design],
+                "post-reviewed design file",
+            )
+        )
+        errors.extend(
+            compare_entries(
+                post_outputs,
+                [entry(path, "generated_output") for path in current_outputs],
+                "post-reviewed generated output",
+            )
+        )
+    if errors:
+        for error in errors:
+            print(f"ERROR: {error}", file=sys.stderr)
+        raise SystemExit(1)
+    print("legacy post-run authoring review valid")
+
+
 def parser() -> argparse.ArgumentParser:
     root = argparse.ArgumentParser(description=__doc__)
     subparsers = root.add_subparsers(dest="command", required=True)
@@ -410,6 +475,10 @@ def parser() -> argparse.ArgumentParser:
     lifecycle_parser = subparsers.add_parser("check-lifecycle")
     lifecycle_parser.add_argument("--comp-dir", required=True)
     lifecycle_parser.set_defaults(func=check_lifecycle)
+
+    legacy_post_parser = subparsers.add_parser("check-legacy-post")
+    legacy_post_parser.add_argument("--comp-dir", required=True)
+    legacy_post_parser.set_defaults(func=check_legacy_post)
     return root
 
 

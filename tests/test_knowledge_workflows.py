@@ -26,6 +26,9 @@ distributed = load("distributed_synthesis_test", ROOT / "scripts" / "distributed
 normalize = load("distributed_normalize_test", ROOT / "scripts" / "synthesis_normalize.py")
 hygiene = load("corpus_hygiene_test", ROOT / "scripts" / "check-corpus-hygiene.py")
 lit_receipt = load("lit_scan_receipt_test", ROOT / "scripts" / "check-lit-scan-receipt.py")
+invalidation = load(
+    "comp_invalidation_test", ROOT / "scripts" / "check-comp-invalidation.py"
+)
 
 
 class CompReviewContractTests(unittest.TestCase):
@@ -99,6 +102,15 @@ Long review-history material.
             design, outputs = manifest.comp_files(comp)
         self.assertEqual(["run.py"], [path.name for path in design])
         self.assertEqual(["summary.json"], [path.name for path in outputs])
+
+    def test_legacy_post_review_is_an_explicit_valid_lifecycle(self):
+        comp = (
+            ROOT
+            / "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun"
+        )
+        result = comp_review.verify_authoring_gates(comp)
+        self.assertEqual("legacy_post_run_review", result["status"])
+        self.assertTrue(result["valid"])
 
     def test_push_manifest_is_limited_to_git_tracked_artifacts(self):
         source = (ROOT / "scripts/comp-review-manifest.py").read_text()
@@ -258,6 +270,23 @@ class WorkflowTriggerTests(unittest.TestCase):
         self.assertIn("needs: [gate, comp-review]", propagate)
         self.assertIn("uses: ./.github/workflows/wiki-propagate.yml", propagate)
 
+    def test_comp_review_fails_closed_before_model_calls(self):
+        workflow = (ROOT / ".github/workflows/comp-review.yml").read_text()
+        classify = workflow.index(
+            "Fail closed and remove non-result artifacts from review scope"
+        )
+        commit = workflow.index(
+            "Commit fail-closed eligibility before any model call"
+        )
+        preflight = workflow.index("Complete-review cost preflight")
+        review = workflow.index(
+            "Review every selected artifact and update current eligibility"
+        )
+        self.assertLess(classify, commit)
+        self.assertLess(commit, preflight)
+        self.assertLess(preflight, review)
+        self.assertIn("comp-review-deferred.txt", workflow)
+
     def test_local_and_generated_updates_fail_closed_on_reader_contract(self):
         hook = (ROOT / ".githooks/pre-push").read_text()
         propagation = (ROOT / ".github/workflows/wiki-propagate.yml").read_text()
@@ -284,28 +313,41 @@ class WorkflowTriggerTests(unittest.TestCase):
     def test_completed_review_baseline_preserves_real_provenance(self):
         state = json.loads((ROOT / "logs/sweep-state.json").read_text())
         records = state["comp_reviews"]
-        self.assertEqual(40, len(records))
-        self.assertEqual(
-            16,
-            sum(r["comp_verdict"] == "review_completed_open_actions" for r in records.values()),
-        )
-        self.assertEqual(
-            24,
-            sum(r["comp_verdict"] == "review_completed_actioned" for r in records.values()),
-        )
-        open_records = [
-            r for r in records.values()
-            if r["comp_verdict"] == "review_completed_open_actions"
-        ]
-        self.assertEqual(
-            {"eligible_with_warning"},
-            {r["propagation_eligibility"] for r in open_records},
-        )
-        self.assertEqual(
-            0,
-            sum(r["synthesis_eligibility"] == "blocked" for r in open_records),
-        )
-        for record in records.values():
+        comp_root = ROOT / "wiki" / "etc" / "experiments"
+        completed_active: set[str] = set()
+        pre_run_only: set[str] = set()
+        tombstones: set[str] = set()
+        for comp_dir in comp_root.glob("comp-*"):
+            identifier = comp_dir.name[:8]
+            reviews = comp_dir / "reviews"
+            if (comp_dir / "invalidation.json").is_file():
+                tombstones.add(identifier)
+                self.assertEqual([], invalidation.validate(comp_dir))
+                self.assertFalse(any(reviews.glob("push-review*")))
+                continue
+            if (
+                (reviews / "pre-run.manifest.json").is_file()
+                and (reviews / "pre-run.md").is_file()
+                and not (reviews / "post-run.manifest.json").exists()
+                and not (reviews / "post-run.md").exists()
+            ):
+                pre_run_only.add(identifier)
+                self.assertFalse(any(reviews.glob("push-review*")))
+                continue
+            completed_active.add(identifier)
+
+        self.assertEqual(completed_active, set(records))
+        self.assertTrue(tombstones)
+        self.assertEqual({"comp-048"}, pre_run_only)
+        pending = []
+        for identifier, record in records.items():
+            if record["comp_verdict"] == "review_pending_exact_push":
+                pending.append(identifier)
+                self.assertEqual("blocked", record["propagation_eligibility"])
+                self.assertEqual("blocked", record["synthesis_eligibility"])
+                self.assertIsNone(record["artifact_manifest_sha256"])
+                self.assertIsNone(record["review_receipt"])
+                continue
             receipt = json.loads(
                 (ROOT / record["comp_dir"] / "reviews" / "push-review.json").read_text()
             )
@@ -313,21 +355,31 @@ class WorkflowTriggerTests(unittest.TestCase):
                 record["artifact_manifest_sha256"],
                 receipt["artifact_manifest_sha256"],
             )
-            if receipt["binding_mode"] == "completed_review_migration":
+            binding_mode = receipt.get("binding_mode")
+            if binding_mode == "completed_review_migration":
                 provenance = receipt["independent_review"]
                 self.assertTrue(provenance["completed"])
                 self.assertTrue(
                     provenance["review_log_git_path"].startswith("logs/comp-reviews/")
                 )
                 self.assertEqual(40, len(provenance["review_log_commit"]))
-            else:
+            elif binding_mode == "fresh_authoring_review":
                 self.assertEqual("fresh_authoring_review", receipt["binding_mode"])
                 authoring = receipt["authoring_review"]
                 self.assertTrue(authoring["completed"])
                 self.assertFalse(authoring["action_required"])
+            else:
+                self.assertIsNone(binding_mode)
+                self.assertTrue(receipt["authoring_gates"]["valid"])
+                lane = receipt["lane_adjudication"]
+                self.assertEqual("exact push review", lane["method"])
+                self.assertTrue(lane["new_artifact_review_performed"])
             self.assertNotEqual("legacy_review_pending", receipt["comp_verdict"])
             if receipt["action_required"]:
                 self.assertIn("lane_adjudication", receipt)
+        # Pending records are explicit and blocked during budgeted backfill.
+        # The final queue closure tightens this to an empty list.
+        self.assertEqual(sorted(pending), pending)
 
 
 class DistributedSynthesisContractTests(unittest.TestCase):

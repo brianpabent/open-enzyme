@@ -13,6 +13,7 @@ name: Corpus integrity
 #   • check-validation-dashboard.py — experiment registry completeness/fidelity
 #   • check-lit-scan-receipt.py — compact, reproducible scan-method receipts
 #   • evidence-radar.py check — current source cursors and reviewed delta state
+#   • check-comp-invalidation.py — retired COMP/tree hash integrity
 
 on:
   push:
@@ -52,3 +53,6 @@ jobs:
 
       - name: Check evidence-radar current state
         run: python3 scripts/evidence-radar.py check
+
+      - name: Check retired COMP invalidation ledgers
+        run: python3 scripts/check-comp-invalidation.py --all

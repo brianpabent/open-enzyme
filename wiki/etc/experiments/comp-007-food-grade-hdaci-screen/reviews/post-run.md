@@ -1,146 +1,112 @@
 ACTION_REQUIRED: no
-REVIEWED_SNAPSHOT: ecd53fe3d969474bd4dd4adeba8c530f4eac75289115d014fff1e64b72978892
+REVIEWED_SNAPSHOT: ff92421517641997a6fee07c0e74dfccd0eb59bdc96bcbaa4e4b8f7f4d95bfe0
 
 # Independent comp review — comp-007
 
 ## Reviewed snapshot
 
-Reviewer `/root/comp007_retirement_post_review_v4`; authoring post-manifest canonical SHA-256 `ecd53fe3d969474bd4dd4adeba8c530f4eac75289115d014fff1e64b72978892`. All two design and eight proposed-update entries matched the manifest byte counts and SHA-256 values and were inspected completely. The manifest file’s byte hash is distinct from its embedded canonical digest, as expected. The deletion of `synthesis/queue/comp-review-007.md`, which is outside the manifest, was separately inspected from Git history.
+Reviewer: Codex `/root/comp007_tombstone_gate2_refresh`, fresh authoring-time Gate‑2 reviewer.
+
+`python3 scripts/comp-review-manifest.py check --manifest wiki/etc/experiments/comp-007-food-grade-hdaci-screen/reviews/post-run.manifest.json` returned the snapshot digest above. Every listed file matched its recorded byte count and SHA‑256.
+
+The retirement record was also independently checked against Git commit `35fd84865925592d42cbc89c84f45b1c8a81ad9f`: all eight retired-file byte counts and SHA‑256 values matched, and the canonical invalidation digest recomputed to `6bba6541f53060b84ea20ad6a5d5e36a47f1ad3c8c31d1e737e474ff32ff4e8e`.
 
 ## Bottom-line verdict
 
-**Clean with limitations.** The retirement is internally complete and materially faithful. COMP-007 is now a non-runnable, hash-bound tombstone; every rank, composite score, confidence verdict, shortlist, advancement decision, causal HDAC1/2/3 assignment, HSF1–Hsp90 explanation, HDAC6-centered safety inference, exposure proxy, and genotype overreach is withdrawn.
+**Clean with limitations.** The exact current artifact is a coherent, non-runnable tombstone. It withdraws the full quantitative and decision-bearing COMP-007 model without overextending the negative result. The surviving seven-name inventory is explicitly unranked, the butyrate dual-route idea is preserved as an untested Research Conjecture, and the current reader-facing and validation surfaces consistently require direct trafficking, urate-flux, exposure, inhibition, and safety evidence.
 
-The seven labels survive only as an unranked historical inventory. The independent butyrate-induction evidence and pharmacological Q141K-rescue precedent are separated into a properly bounded Research Conjecture. The direct validation path now controls material identity, measured exposure, genotype, trafficking, ABCG2-attributed urate flux, direct transporter inhibition, barrier integrity, viability, and broader safety.
-
-The prior COMP-007 queue actions are all closed by retirement or explicit correction. The exact COMP-015 misattribution is operationally handed to its existing queue item and remains barred from decision use.
+The narrative-only COMP-015 delta is accurate: COMP-015 is now itself a non-runnable invalidated tombstone, and its falsely attributed achievable-concentration/IC50 thresholds, rankings, matrix verdicts, and decision use are withdrawn.
 
 ## Implementation and constraint closure
 
-Inspection of the retired implementation at Git tree `35fd84865925592d42cbc89c84f45b1c8a81ad9f` independently confirms the invalidation rationale:
+Inspection of the hash-bound retired implementation independently confirms the stated defects:
 
-- `typical_gut_concentration_uM` was stored and emitted but never entered the scoring calculation.
-- Potency combined direct recombinant IC50s, bulk nuclear-extract observations, cellular protein changes, and analogical estimates.
-- Unknown HDAC6 activity received the arbitrary constant `0.30`; selectivity used the arbitrary midpoint `10`.
-- Gut exposure was represented only as `1 − oral_bioavailability_fraction`, which does not establish free epithelial exposure.
-- A censored HDAC6 value was converted into a numerical score.
-- The implementation did not model Q141K trafficking, urate as substrate, polarized intestinal transport, intracellular exposure, concentration-time behavior, ABCG2 inhibition, tissue localization, barrier injury, or broad safety.
-- The code assigned HDAC1/2/3 as causal rescue targets and HDAC6 avoidance as the main safety discriminator without implementing or establishing either conclusion.
+- Unknown HDAC6 activity received the arbitrary constant `0.30`.
+- Selectivity used the arbitrary normalization midpoint `10`.
+- Gut selectivity was calculated as `1 − oral_bioavailability_fraction`.
+- Recombinant IC50 values, nuclear-extract results, cellular protein effects, inferred IC50 values, and an analogical PEITC estimate were treated as comparable potency inputs.
+- `typical_gut_concentration_uM` was copied into output rows but never entered the score.
+- Ranking was therefore not tied to epithelial free concentration, uptake, exposure duration, Q141K trafficking, ABCG2-attributed urate flux, transporter inhibition, finite compartment behavior, or a complete safety model.
+- The archived narrative overassigned HDAC1/2/3 causality, an HSF1–Hsp90 explanation, and HDAC6 avoidance as the governing safety discriminator.
 
-The retirement ledger reproduces exactly: all eight historical file byte counts and SHA-256 values match the named Git tree. Its canonical digest independently recomputes to `6bba6541f53060b84ea20ad6a5d5e36a47f1ad3c8c31d1e737e474ff32ff4e8e`.
-
-Pre/post design equality also passes: both manifests contain the same two design files with identical bytes and hashes. No code, input, parameter, decision-rule, model, or sensitivity change occurred between gates.
-
-Constraint closure is transferred appropriately to validation §1.22:
-
-- Basseville-pattern positive and contrast controls must reproduce before candidate interpretation.
-- Material identity, purity, stability, conversion products, free concentration, intracellular exposure, and exposure time are required.
-- WT-only, Q141K-only, and WT/Q141K co-expression arms prevent genotype overreach.
-- Surface abundance must be paired with ABCG2-attributed basolateral-to-apical urate flux.
-- A direct ABCG2-inhibition counterscreen prevents apparent trafficking rescue from masking transporter inhibition.
-- PPARγ perturbation separates endogenous induction from possible Q141K trafficking rescue.
-- Intestinal versus hepatocyte effects, compound-specific off-targets, barrier integrity, viability, and toxicity replace HDAC6-only safety logic.
+Because no quantitative output or decision survives, deleting executable files and retaining the exact archived tree through Git plus `invalidation.json` is appropriate. No reproduction command should exist.
 
 ## Summary-fidelity audit
 
-The retirement verdict is consistent across all proposed surfaces:
+The tombstone, invalidation record, focused COMP page, computational index, root index, ABCG2 evidence map, LBP chassis page, open-questions index, and validation plan agree on the material points:
 
-- The tombstone, focused COMP page, computational index, and dashboard all withdraw rank, score, shortlist, causal-isoform, HDAC6-safety, and advancement authority.
-- The focused page presents the seven materials in an explicitly unranked table with compound-specific evidence modalities and missing decision evidence.
-- The LBP page no longer treats butyrate as computationally prioritized or genotype-agnostic; it separates preclinical endogenous-ABCG2 induction from untested Q141K rescue.
-- `open-questions.md` retains the route as an unresolved, functionally gated question without importing the old ranking.
-- Validation §1.22 carries all seven labels unranked and requires the complete control pattern and direct functional readouts.
-- Validation §1.14 separately direction-finds butyrate in WT and Q141K systems while explicitly stating that Basseville did not test butyrate. It does not turn the conjecture into a positive prior.
-- Mechanism/stale-phrase searches covered COMP-007, the historical numerical scores, “rank 1,” “top three,” Stage 2 advancement, HSF1/Hsp90, class-I causal assignment, HDAC6 safety, direct butyrate rescue, and genotype-agnostic language. Remaining hits are explicit retirement statements, historical/log material, independently invalidated COMP artifacts, or properly labeled untested hypotheses.
+- No rank, score, confidence label, shortlist, Stage‑2 advancement, causal isoform assignment, exposure inference, or HDAC6-centered safety conclusion survives.
+- The seven materials remain only an unranked historical/evidence inventory.
+- Basseville supplies an **In Vitro** selected-pharmacological-HDI Q141K rescue precedent using drug-substrate efflux, not direct butyrate rescue, urate flux, intestinal exposure, or clinical evidence.
+- Xie supplies non-Q141K-specific, non-urate preclinical endogenous-BCRP/ABCG2 induction evidence; the stronger PPARγ perturbation inference is correctly limited to Caco‑2, while the rat PPARγ observation is not promoted to causal proof.
+- Validation §1.22 requires positive/contrast-control reproduction before candidate interpretation and then direct polarized-intestinal trafficking, urate-flux, exposure, inhibition, viability, barrier, and route/safety measurements.
+- The retired cost and timeline are not retained.
+- COMP-015’s false dependency is described as retired rather than still queued.
 
-The deleted COMP-007 queue item required seven actions. All are closed:
-
-1. Broken generated-output links are moot because the generated outputs are retired from the live tree.
-2. Misstated formula prose is removed with the invalid model.
-3. The absent exposure/operating-regime axis is named as an invalidation reason; no revised rank is retained.
-4. Arbitrary-parameter sensitivity is no longer needed because the quantitative model has no surviving decision use.
-5. The misleading `used_estimate` output is removed.
-6. HDAC6-only safety framing is explicitly invalidated and replaced by broad compound-specific safety testing.
-7. All named reader-facing surfaces are reconciled.
-
-The COMP-015 handoff is exact and operational: its queue item names `analyze.py`, README, `inputs/provenance.md`, `outputs/results.json`, and `outputs/summary.md`; requires removal of the false achievable-concentration/IC50 attribution; routes code/output changes through COMP-015’s authoring lifecycle; and requires regenerated outputs to contain no COMP-007 decision-rule attribution.
+No stale COMP-007 quantitative verdict or advancement instruction remains in the manifest-bound pages.
 
 ## Reader-facing ownership audit
 
-Ownership is clean:
+The focused page owns the current COMP verdict, evidence/source boundaries, delivery constraints, and falsifying experiment. `wiki/abcg2-modulators.md` owns the compact Research Conjecture. `wiki/validation-experiments.md` owns the empirical resolver. Cross-track ranking language has been removed rather than relocated to another focused track.
 
-- `wiki/food-grade-hdaci-screen-computational.md` owns the invalidated COMP verdict, unranked evidence inventory, sourcing/delivery constraints, and direct falsification gate.
-- `wiki/abcg2-modulators.md` owns the surviving dual-route Research Conjecture.
-- `wiki/validation-experiments.md` owns the detailed experimental controls and decision rules.
-- `wiki/computational-experiments.md` and `index.md` provide compact tracking/discovery summaries.
-- `wiki/engineered-lbp-chassis.md` keeps the delivery implication local to the LBP track without presenting a chassis winner.
-- `synthesis/queue/comp-review-015.md` owns the unresolved cross-COMP operational correction.
-
-No proposed reader-facing surface contains editorial history, personalized treatment instructions, a cross-track ranking, a narrative foil, or duplicated long-form conjecture exposition.
+The operational tombstone README appropriately carries retirement provenance and correction-closure language; the focused reader-facing page does not narrate queue history or page-placement mechanics. No personalized treatment instruction, narrative foil, or duplicated portfolio comparison was found.
 
 ## Conjecture preservation audit
 
-The correction separates factual support from idea value correctly.
+Unsupported factual claims were corrected without erasing the useful connection:
 
-The surviving block in `wiki/abcg2-modulators.md` has the required shape:
+- Killed: COMP-007’s ranking, composite score, confidence order, Stage‑2 shortlist, candidate-specific rescue/urate/exposure/safety claims, causal HDAC1/2/3 chain, and HDAC6-primary-safety inference.
+- Preserved: selected pharmacological HDIs can rescue Q141K trafficking and drug-substrate function **In Vitro**.
+- Preserved: butyrate can induce endogenous BCRP/ABCG2 in non-Q141K-specific preclinical systems, with PPARγ perturbation support in Caco‑2.
+- Explicitly untested: one measured butyrate exposure might combine endogenous ABCG2 induction with some Q141K trafficking rescue.
+- Correct discriminator: genotype-resolved polarized models, PPARγ blockade, Basseville-matched controls, apical surface abundance, ABCG2-attributed urate flux, intracellular exposure, direct inhibition, viability, and barrier integrity.
 
-- **Grounded premises:** Xie’s non-Q141K-specific, non-urate rat, primary mouse-enterocyte, and Caco-2 findings are tagged **In Vitro + Animal Model**; PPARγ antagonist/silencing support is limited to Caco-2. Basseville’s selected pharmacological-HDAC-inhibitor rescue is tagged **In Vitro**.
-- **Novel leap:** one measured butyrate exposure might combine PPARγ-mediated endogenous induction with some Q141K trafficking rescue; direct evidence is explicitly absent.
-- **Why it matters:** possible restoration of more intestinal urate-export capacity.
-- **Discriminating observation:** polarized isogenic genotype arms, concentration-time series, PPARγ blockade, matched positive/negative controls, surface trafficking, ABCG2-attributed urate flux, exposure, barrier, viability, and inhibition measurements.
-
-The negative retirement kills only COMP-007’s old model, quantitative ordering, causal assignments, and decisions. It does not erase the pharmacological rescue class, compound-specific testing, or the independent endogenous-ABCG2 induction route.
+The null/invalidated computation does not kill pharmacological rescue as a class, butyrate induction, untested butyrate exposures, or the other six materials.
 
 ## Generated-output and proposed-update inventory
 
 | Path | Manifest kind | Inspected completely? | Finding |
 |---|---|---:|---|
-| `wiki/etc/experiments/comp-007-food-grade-hdaci-screen/README.md` | design | Yes | Clean non-runnable tombstone; exact invalidated/surviving scopes and dependency owners |
-| `wiki/etc/experiments/comp-007-food-grade-hdaci-screen/invalidation.json` | design | Yes | Ledger, canonical digest, invalidation boundary, and surviving scope reproduce |
-| `index.md` | proposed_update | Yes | Compact invalidated-ranking summary; no stale priority |
-| `synthesis/queue/comp-review-015.md` | proposed_update | Yes | Exact five-file attribution correction, lifecycle routing, and verification criterion |
-| `wiki/abcg2-modulators.md` | proposed_update | Yes | Source modalities preserved; conjecture correctly shaped and bounded |
-| `wiki/computational-experiments.md` | proposed_update | Yes | No rank, score, shortlist, causal isoform, safety, or advancement survives |
-| `wiki/engineered-lbp-chassis.md` | proposed_update | Yes | No butyrate priority or genotype-agnostic claim; delivery and exposure gates explicit |
-| `wiki/food-grade-hdaci-screen-computational.md` | proposed_update | Yes | Correct evidence owner; unranked inventory, sourcing, delivery, and direct test |
-| `wiki/open-questions.md` | proposed_update | Yes | Surviving questions remain unresolved and functionally gated |
-| `wiki/validation-experiments.md` | proposed_update | Yes | Control-pattern reproduction, genotype arms, flux attribution, exposure, and safety logic complete |
+| `wiki/etc/experiments/comp-007-food-grade-hdaci-screen/README.md` | design | Yes | Accurate non-runnable tombstone; COMP-015 closure delta is current. |
+| `wiki/etc/experiments/comp-007-food-grade-hdaci-screen/invalidation.json` | design | Yes | Retired tree, invalidated scope, surviving scope, and canonical digest verified. |
+| `index.md` | proposed_update | Yes | Concise invalidated-ranking entry; no stale decision. |
+| `wiki/abcg2-modulators.md` | proposed_update | Yes | Correct evidence separation and conjecture ownership. |
+| `wiki/computational-experiments.md` | proposed_update | Yes | COMP-007 and COMP-015 both accurately marked invalidated. |
+| `wiki/engineered-lbp-chassis.md` | proposed_update | Yes | Butyrate rationale remains preclinical and conditional; no COMP-007 priority. |
+| `wiki/food-grade-hdaci-screen-computational.md` | proposed_update | Yes | Standalone evidence, delivery, and falsification contract is complete. |
+| `wiki/open-questions.md` | proposed_update | Yes | Surviving leads remain questions, not inherited results. |
+| `wiki/validation-experiments.md` | proposed_update | Yes | Direct unranked resolver replaces invalid preselection. |
 
-There are no `generated_output` entries in this retirement manifest.
+No `generated_output` entry exists, appropriately for a non-runnable tombstone.
 
 ## Load-bearing verification table
 
 | Claim or parameter | Artifact location | Implementation use | Provenance status | Verdict |
 |---|---|---|---|---|
-| Retirement is non-runnable | Tombstone README; `invalidation.json` | Prevents use of invalid model | Explicit state; executable artifacts removed from live tree | Pass |
-| Historical artifact identity | `retired_tree_commit`, `retired_files` | Auditability | All eight blobs reproduced from Git with exact bytes/hashes | Pass |
-| Retirement canonical digest | `invalidation.json` | Detects scope mutation | Independently recomputed exactly | Pass |
-| Pre/post design equality | pre/post manifests | Authoring lifecycle integrity | Same two design entries, bytes, and hashes | Pass |
-| Old ranks/scores/shortlist invalid | All summary surfaces | Removes decision use | Old code/output inspected; invalidation covers formula and verdicts | Pass |
-| Stored concentrations were unused | Old `analyze.py` and candidate inputs | Supports model invalidation | Values emitted only; not referenced by score | Pass |
-| HDAC1/2/3 causality withdrawn | Tombstone, focused page, validation | Prevents causal overclaim | Basseville precedent retained without isoform assignment | Pass |
-| HDAC6-only safety withdrawn | Same | Prevents false safety inference | Replaced by compound-specific off-target/toxicity testing | Pass |
-| Xie modality boundary | Tombstone, focused page, conjecture | Grounds induction premise | Systems, genotype, substrate, and Caco-2 PPARγ limits explicit | Pass |
-| Basseville modality boundary | Focused page, conjecture, §1.22 | Grounds rescue precedent/control logic | Selected pharmacological HDIs; **In Vitro**; no butyrate or urate claim | Pass |
-| Seven candidates unranked | Tombstone, focused page, validation | Preserves inventory without priority | Explicitly no predictive or decision use | Pass |
-| COMP-015 handoff | Tombstone README; queue item | Prevents false method inheritance | Exact files, lifecycle, and output verification named | Pass |
-| COMP-007 queue deletion | Deleted queue via Git show | Closes prior action ledger | Every action closed by retirement/correction; deletion condition satisfied | Pass |
+| Unknown-HDAC6 penalty `0.30` | Retired `analyze.py` | Multiplied into score | Internal arbitrary constant | Correctly invalidated |
+| Selectivity midpoint `10` | Retired `analyze.py` | Normalized selectivity | Internal arbitrary constant | Correctly invalidated |
+| `1 − oral BA` | Retired `analyze.py` | Multiplied into score | Exposure surrogate, not epithelial measurement | Correctly invalidated |
+| Gut concentrations | Retired candidate input/output | Stored only | Estimated heterogeneous values | Correctly identified as unused |
+| Mixed/analogical potency | Retired bioactivity/provenance | Produced potency ordering | Assay-incommensurate and partly inferred | Correctly invalidated |
+| Basseville Q141K precedent | Focused page; ABCG2 map; validation | Positive/contrast-control basis only | PMID 22472121; **In Vitro** | Scope is faithful |
+| Xie butyrate induction | Focused page; conjecture | Grounds endogenous-induction premise only | PMID 32555444; **In Vitro + Animal Model** | Scope is faithful |
+| COMP-015 false dependency | COMP-007 README; current COMP-015 tombstone | No surviving decision use | Current repository retirement record | Closure language accurate |
+| Retired-tree digest | `invalidation.json` | Binds deleted artifact | Independently recomputed from Git | Pass |
 
 ## Affected wiki pages
 
-- `wiki/food-grade-hdaci-screen-computational.md` — already consistent — owns invalidation, inventory, exposure, and direct test.
-- `wiki/abcg2-modulators.md` — already consistent — owns the bounded dual-route conjecture.
-- `wiki/validation-experiments.md` — already consistent — implements the required controls and functional gates.
-- `wiki/computational-experiments.md` — already consistent — tracks the retired verdict without surviving quantitative claims.
-- `wiki/engineered-lbp-chassis.md` — already consistent — removes butyrate priority and genotype overreach.
-- `wiki/open-questions.md` — already consistent — retains only unresolved, testable questions.
-- `index.md` — already consistent — discovery summary matches the retirement.
-- `synthesis/queue/comp-review-015.md` — already consistent — operational cross-COMP correction remains open under COMP-015.
-- `synthesis/queue/comp-review-007.md` — deletion justified — all prior actions and the handoff condition are satisfied.
+- `index.md` — already consistent; no quantitative priority survives.
+- `wiki/food-grade-hdaci-screen-computational.md` — already consistent; current evidence home.
+- `wiki/abcg2-modulators.md` — already consistent; owns surviving conjecture.
+- `wiki/validation-experiments.md` — already consistent; owns direct resolver.
+- `wiki/computational-experiments.md` — already consistent; both COMP-007 and COMP-015 are retired.
+- `wiki/engineered-lbp-chassis.md` — already consistent; delivery remains conditional.
+- `wiki/open-questions.md` — already consistent; no inherited ranking.
+- `wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/README.md` and `invalidation.json` — already consistent; corroborate the narrative delta.
 
 ## New connections or implications
 
-None found beyond the already preserved Research Conjecture. The artifact supports no additional cross-corpus inference.
+No additional propagation is required. The useful cross-page implication is already represented: endogenous ABCG2 induction and Q141K trafficking rescue are separable mechanisms and must be experimentally dissociated before any combined-route claim. Direct evidence for the combined butyrate effect remains absent and is correctly confined to a Research Conjecture.
 
 ## Required actions
 
@@ -148,4 +114,4 @@ None found beyond the already preserved Research Conjecture. The artifact suppor
 
 ## Review limits
 
-Static read-only review. The retired analysis was not executed. Historical code, inputs, outputs, and queue state were inspected through Git; current manifest files were hash-checked. Primary-paper full texts were not independently re-read, so this review verifies the corpus’s source modality, causality, and scope handling rather than re-adjudicating every primary experiment.
+No result-bearing code was executed. The archived implementation, inputs, outputs, and provenance were inspected from the hash-bound Git tree solely to verify the retirement rationale. This review does not independently re-establish every compound-specific historical bioactivity or exposure value because none remains decision-eligible; it verifies that those values are withdrawn and that the two surviving biological anchors are used only within their stated evidence boundaries.

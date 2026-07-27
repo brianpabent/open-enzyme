@@ -110,6 +110,20 @@ EOF
   fail=1
 fi
 
+if ! python3 scripts/check-comp-invalidation.py --all; then
+  cat >&2 <<'EOF'
+
+✗ pre-push hook (COMP invalidation ledgers)
+
+The push was blocked because a retired COMP no longer matches its hash-bound
+invalidation ledger or retains live result artifacts. Repair the tombstone;
+do not restore its retired model merely to make the check pass:
+
+    python3 scripts/check-comp-invalidation.py --all
+EOF
+  fail=1
+fi
+
 if ! python3 scripts/check-privacy.py --check $SCOPE; then
   cat >&2 <<'EOF'
 

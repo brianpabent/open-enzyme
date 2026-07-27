@@ -71,10 +71,10 @@ jobs:
           MANUAL_COMP: ${{ inputs.comp }}
         run: |
           set -euo pipefail
-          : > /tmp/comp-dirs.txt
+          : > /tmp/comp-selected.txt
           if [[ -n "$MANUAL_COMP" ]]; then
             if [[ "$MANUAL_COMP" == "all" ]]; then
-              find wiki/etc/experiments -mindepth 1 -maxdepth 1 -type d -name 'comp-*' | sort > /tmp/comp-dirs.txt
+              find wiki/etc/experiments -mindepth 1 -maxdepth 1 -type d -name 'comp-*' | sort > /tmp/comp-selected.txt
             else
               printf '%s\n' "$MANUAL_COMP" | tr ',' '\n' | while IFS= read -r token; do
                 token=$(printf '%s' "$token" | xargs)
@@ -84,7 +84,7 @@ jobs:
                 else
                   find wiki/etc/experiments -mindepth 1 -maxdepth 1 -type d -name "${token}*"
                 fi
-              done | sort -u > /tmp/comp-dirs.txt
+              done | sort -u > /tmp/comp-selected.txt
             fi
           else
             base="$BEFORE_SHA"
@@ -94,33 +94,89 @@ jobs:
             git diff --name-only "$base..$HEAD_SHA" -- 'wiki/etc/experiments/comp-*/**' \
               | grep -vE '/reviews/(push-review(\.manifest)?\.(md|json)|push-review\.json)$' \
               | sed -E 's#^(wiki/etc/experiments/comp-[^/]+)/.*#\1#' \
-              | sort -u > /tmp/comp-dirs.txt || true
+              | sort -u > /tmp/comp-selected.txt || true
           fi
-          count=$(grep -c . /tmp/comp-dirs.txt || true)
+          count=$(grep -c . /tmp/comp-selected.txt || true)
           echo "count=$count" >> "$GITHUB_OUTPUT"
           echo "Selected $count changed COMP artifacts"
-          cat /tmp/comp-dirs.txt
+          cat /tmp/comp-selected.txt
+
+      - name: Fail closed and remove non-result artifacts from review scope
+        id: classify
+        if: steps.select.outputs.count != '0'
+        env:
+          HEAD_SHA: ${{ inputs.head_sha || github.sha }}
+        run: |
+          set -euo pipefail
+          python3 scripts/prepare-comp-review-state.py \
+            --input /tmp/comp-selected.txt \
+            --review-output /tmp/comp-candidates.txt \
+            --source-commit "$HEAD_SHA"
+          count=$(grep -c . /tmp/comp-candidates.txt || true)
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          echo "$count completed active COMPs require exact push review"
+          cat /tmp/comp-candidates.txt
+
+      - name: Commit fail-closed eligibility before any model call
+        if: steps.select.outputs.count != '0'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          while IFS= read -r comp_dir; do
+            [[ -n "$comp_dir" ]] || continue
+            git add -A "$comp_dir/reviews"
+          done < /tmp/comp-selected.txt
+          git add logs/sweep-state.json
+          if git diff --cached --quiet; then
+            echo "Eligibility was already fail-closed"
+          else
+            git commit -m "comp-review: block changed artifacts before review [skip-knowledge-update]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
 
       - name: Complete-review cost preflight
-        if: steps.select.outputs.count != '0'
+        id: budget
+        if: steps.classify.outputs.count != '0'
         run: |
           set -euo pipefail
           total=0
           : > /tmp/comp-preflight.jsonl
+          : > /tmp/comp-review-now.txt
+          : > /tmp/comp-review-deferred.txt
           while IFS= read -r comp_dir; do
             [[ -n "$comp_dir" ]] || continue
             metadata=$(python3 scripts/comp-review.py \
               --comp-dir "$comp_dir" --commit-sha "${{ inputs.head_sha || github.sha }}" \
-              --prepare-only --max-cost-usd "$PER_COMP_CAP")
+              --prepare-only --max-cost-usd 999)
             printf '%s\n' "$metadata" >> /tmp/comp-preflight.jsonl
             cost=$(python3 -c 'import json,sys; print(json.loads(sys.argv[1])["projected_cost_usd"])' "$metadata")
-            total=$(python3 -c 'import sys; print(float(sys.argv[1])+float(sys.argv[2]))' "$total" "$cost")
-          done < /tmp/comp-dirs.txt
+            valid=$(python3 -c 'import json,sys; print(str(json.loads(sys.argv[1])["authoring_gates"]["valid"]).lower())' "$metadata")
+            candidate_total=$(python3 -c 'import sys; print(float(sys.argv[1])+float(sys.argv[2]))' "$total" "$cost")
+            if [[ "$valid" != "true" ]]; then
+              echo "$comp_dir: deferred because authoring gates are invalid"
+              printf '%s\n' "$comp_dir" >> /tmp/comp-review-deferred.txt
+            elif python3 -c 'import sys; raise SystemExit(float(sys.argv[1]) <= float(sys.argv[2]))' "$cost" "$PER_COMP_CAP"; then
+              echo "$comp_dir: deferred because projected cost \$$cost exceeds per-COMP cap \$$PER_COMP_CAP"
+              printf '%s\n' "$comp_dir" >> /tmp/comp-review-deferred.txt
+            elif python3 -c 'import sys; raise SystemExit(float(sys.argv[1]) <= float(sys.argv[2]))' "$candidate_total" "$AGGREGATE_CAP"; then
+              echo "$comp_dir: deferred because the aggregate cap would be exceeded"
+              printf '%s\n' "$comp_dir" >> /tmp/comp-review-deferred.txt
+            else
+              printf '%s\n' "$comp_dir" >> /tmp/comp-review-now.txt
+              total="$candidate_total"
+            fi
+          done < /tmp/comp-candidates.txt
+          count=$(grep -c . /tmp/comp-review-now.txt || true)
+          deferred=$(grep -c . /tmp/comp-review-deferred.txt || true)
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          echo "deferred=$deferred" >> "$GITHUB_OUTPUT"
           # shellcheck disable=SC2016
-          python3 -c 'import sys; total=float(sys.argv[1]); cap=float(sys.argv[2]); print(f"Projected aggregate: ${total:.4f} / ${cap:.4f}"); raise SystemExit(total > cap)' "$total" "$AGGREGATE_CAP"
+          python3 -c 'import sys; print(f"Projected selected aggregate: ${float(sys.argv[1]):.4f} / ${float(sys.argv[2]):.4f}")' "$total" "$AGGREGATE_CAP"
 
       - name: Review every selected artifact and update current eligibility
-        if: steps.select.outputs.count != '0'
+        if: steps.budget.outputs.count != '0'
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           HEAD_SHA: ${{ inputs.head_sha || github.sha }}
@@ -158,10 +214,10 @@ jobs:
             cost=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["actual_cost_usd"])' "$json_path")
             actual_total=$(python3 -c 'import sys; print(float(sys.argv[1])+float(sys.argv[2]))' "$actual_total" "$cost")
             python3 -c 'import sys; raise SystemExit(float(sys.argv[1]) > float(sys.argv[2]))' "$actual_total" "$AGGREGATE_CAP"
-          done < /tmp/comp-dirs.txt
+          done < /tmp/comp-review-now.txt
 
       - name: Commit current receipts and state
-        if: steps.select.outputs.count != '0'
+        if: steps.budget.outputs.count != '0'
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
@@ -173,7 +229,7 @@ jobs:
             if [[ -e "$queue_path" ]] || git ls-files --error-unmatch "$queue_path" >/dev/null 2>&1; then
               git add -A "$queue_path"
             fi
-          done < /tmp/comp-dirs.txt
+          done < /tmp/comp-review-now.txt
           git add logs/sweep-state.json
           if git diff --cached --quiet; then
             echo "No receipt changes"
@@ -182,7 +238,7 @@ jobs:
           fi
 
       - name: Push current receipts
-        if: steps.select.outputs.count != '0'
+        if: steps.budget.outputs.count != '0'
         run: |
           set -euo pipefail
           if git log origin/main..HEAD --oneline | grep -q .; then
@@ -193,9 +249,12 @@ jobs:
       - name: Publish reusable result
         id: result
         run: |
-          count="${{ steps.select.outputs.count }}"
+          count="${{ steps.budget.outputs.count || '0' }}"
+          deferred="${{ steps.budget.outputs.deferred || '0' }}"
           blocked=false
-          if [[ "$count" != "0" ]] && grep -Eq '^(PROPAGATION_ELIGIBILITY|SYNTHESIS_ELIGIBILITY)=blocked$' /tmp/comp-review-results.txt; then
+          if [[ "$deferred" != "0" ]]; then
+            blocked=true
+          elif [[ "$count" != "0" ]] && grep -Eq '^(PROPAGATION_ELIGIBILITY|SYNTHESIS_ELIGIBILITY)=blocked$' /tmp/comp-review-results.txt; then
             blocked=true
           fi
           echo "reviewed_count=$count" >> "$GITHUB_OUTPUT"

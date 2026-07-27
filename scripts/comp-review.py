@@ -108,15 +108,48 @@ def create_push_manifest(comp_rel: str, manifest_path: Path) -> str:
 
 def verify_authoring_gates(comp_dir: Path) -> dict[str, object]:
     reviews = comp_dir / "reviews"
-    paths = (
+    pre_paths = (
         reviews / "pre-run.manifest.json",
         reviews / "pre-run.md",
+    )
+    post_paths = (
         reviews / "post-run.manifest.json",
         reviews / "post-run.md",
     )
+    paths = pre_paths + post_paths
     present = [path.exists() for path in paths]
     if not any(present):
         return {"status": "legacy", "valid": True, "details": ["COMP predates authoring-time gates"]}
+    if not any(path.exists() for path in pre_paths) and all(
+        path.is_file() for path in post_paths
+    ):
+        result = run(
+            [
+                sys.executable,
+                "scripts/comp-review-manifest.py",
+                "check-legacy-post",
+                "--comp-dir",
+                str(comp_dir),
+            ],
+            check=False,
+        )
+        if result.returncode:
+            return {
+                "status": "legacy_post_run_review",
+                "valid": False,
+                "details": [
+                    "legacy post-run binding invalid: "
+                    + (result.stderr or result.stdout).strip()[:1000]
+                ],
+            }
+        return {
+            "status": "legacy_post_run_review",
+            "valid": True,
+            "details": [
+                "COMP predates Gate 1; an independent exact post-run review "
+                "binds the current artifact and proposed interpretation surfaces"
+            ],
+        }
     result = run(
         [
             sys.executable,

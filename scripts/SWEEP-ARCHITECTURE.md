@@ -75,7 +75,7 @@ Propagation:
 - can advance on a verified no-op;
 - never performs novelty synthesis.
 
-A changed COMP blocks its derived claims until the current artifact has an exact push review. The structured review independently states propagation and synthesis eligibility.
+A changed completed COMP blocks its derived claims before any model call and remains blocked until the current artifact has an exact push review. Cost overflow defers the COMP rather than reusing a stale receipt. Hash-bound non-runnable tombstones are removed from eligibility and verified deterministically against their retired Git trees; Gate-1-only COMPs do not enter result-bearing push review. The structured review independently states propagation and synthesis eligibility.
 
 ## Three COMP reviews
 
@@ -83,7 +83,7 @@ A changed COMP blocks its derived claims until the current artifact has an exact
 2. Authoring post-run review binds code/input/output plus every proposed interpretation before completion or commit.
 3. Push review independently inspects the exact changed COMP and every referencing wiki/hypothesis surface before propagation or later synthesis.
 
-The completed authoring lifecycle requires unchanged design between the pre-run and post-run snapshots and a current COMP artifact that still matches the post-run snapshot. Later canonical-page edits do not retroactively invalidate those historical gates; the current push review binds and audits the evolved pages. The reviews answer different questions and cannot substitute for one another. Current push receipts live under each COMP's `reviews/` directory and replace prior receipts. A stable `synthesis/queue/comp-review-NNN.md` exists only while action is required.
+The completed authoring lifecycle requires unchanged executable design between the pre-run and post-run snapshots and a current COMP artifact that still matches the post-run snapshot. A non-runnable tombstone may receive a Gate-2-only README correction while its hash-bound invalidation ledger remains unchanged. A legacy artifact that honestly predates Gate 1 may instead carry an exact independent post-run binding. Later canonical-page edits do not retroactively invalidate those historical gates; the current push review binds and audits the evolved pages. The reviews answer different questions and cannot substitute for one another. Current push receipts live under each active completed COMP's `reviews/` directory and replace prior receipts. A stable `synthesis/queue/comp-review-NNN.md` exists only while action is required.
 
 ## Explicit full synthesis
 

@@ -6,8 +6,8 @@
     {
       "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/README.md",
       "kind": "design",
-      "bytes": 4599,
-      "sha256": "d5c108ca72a02c5a8d756796cbe230f3ff5d3516c8d48741b5b682879e05f296"
+      "bytes": 4424,
+      "sha256": "861da384ed3b6055bb812e771d351cbd3868cc151937a4c254d67661b50e5788"
     },
     {
       "path": "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/invalidation.json",
@@ -18,26 +18,20 @@
     {
       "path": "index.md",
       "kind": "proposed_update",
-      "bytes": 34477,
-      "sha256": "99f71a40a68b9376635276b676defd9805cb92811b0f53ea07a0510c068ae188"
-    },
-    {
-      "path": "synthesis/queue/comp-review-015.md",
-      "kind": "proposed_update",
-      "bytes": 3064,
-      "sha256": "cf962ec88eaa000bb11ee6be825ff65134852ca016709a9d467eb3e944fbbda4"
+      "bytes": 35166,
+      "sha256": "6875a21cbf1822946ec106182c24ced19e939c6f5e9930346cb2c6699a513708"
     },
     {
       "path": "wiki/abcg2-modulators.md",
       "kind": "proposed_update",
-      "bytes": 38083,
-      "sha256": "daadf5147e1bac785f7f3790635ee69fb1c2fa4e9bde7764508fa886879c729f"
+      "bytes": 44006,
+      "sha256": "87943c5cfd967c82adabf6b58a6190e346d5f0e0be4a1549149d93c8e3dd8c5a"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 77557,
-      "sha256": "10ad85e3607dc17ceb8a264a2c928c585a93dc4f87ef5870a58534d673a557ff"
+      "bytes": 75330,
+      "sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88"
     },
     {
       "path": "wiki/engineered-lbp-chassis.md",
@@ -54,16 +48,16 @@
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 72496,
-      "sha256": "830fee62e84e4f22a8cfbcae8fa65ff8f35cd777aa1e4e8079928d315c24031e"
+      "bytes": 74825,
+      "sha256": "9ffef573b763d3471a545cb2700eee1b09910f8d906b5795344abf6e9beed09a"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 229385,
-      "sha256": "591cb5516fd52e99b1239be4d26f782212ffa3dbc777e8e1c9446b5263be4e95"
+      "bytes": 242023,
+      "sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "ecd53fe3d969474bd4dd4adeba8c530f4eac75289115d014fff1e64b72978892"
+  "manifest_sha256": "ff92421517641997a6fee07c0e74dfccd0eb59bdc96bcbaa4e4b8f7f4d95bfe0"
 }

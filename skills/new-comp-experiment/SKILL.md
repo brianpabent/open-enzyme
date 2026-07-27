@@ -85,6 +85,17 @@ pages.
 
 The push coordinator independently reviews the exact changed COMP plus every referencing wiki/hypothesis page. It writes only current files under `reviews/push-review.*` and a stable `synthesis/queue/comp-review-NNN.md` when action is required.
 
+The coordinator classifies before spending tokens:
+
+- a hash-bound, non-runnable `invalidated_tombstone` is removed from COMP eligibility and checked deterministically against its retired Git tree;
+- a valid Gate-1-only COMP is not yet result-bearing and does not enter Gate 3;
+- a completed active COMP becomes explicitly blocked before any model call, then receives a new exact review; and
+- a legacy COMP may use an exact independent post-run binding when it honestly predates Gate 1.
+
+Review cost caps defer an active COMP in the explicit blocked state rather than
+failing open or reusing a stale receipt. Unrelated propagation may continue
+while that COMP and its declared derived paths remain excluded.
+
 The push review is a backstop, not a substitute for Gates 1 or 2. Its structured result independently controls:
 
 - `PROPAGATION_ELIGIBILITY`
