@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "comp": "comp-004",
+  "comp_dir": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism",
+  "source_commit": "65e78cbd3d101e6883a73209bbf1f48cf9ac8f4c",
+  "artifact_manifest_sha256": "62d17bef9d42994394848f2271d5fedfe2c5e6667c56292782023c9a4937b20a",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-27T18:20:47Z",
+  "comp_verdict": "quantitative_verdict_invalid",
+  "propagation_eligibility": "eligible_with_warning",
+  "synthesis_eligibility": "eligible_with_warning",
+  "action_required": false,
+  "authoring_gates": {
+    "status": "modern",
+    "valid": true,
+    "details": [
+      "pre-run design matches post-run design; current COMP artifact matches the post-run snapshot; later wiki evolution is push-reviewed"
+    ]
+  },
+  "coverage": [
+    {
+      "shard_id": "shard-001",
+      "coverage_sha256": "480114837892d16410835829fb704a13732d415d111d8250db596cf20e21c051",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/README.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 7149,
+          "file_sha256": "86032b26232a9159b6796019c3615b5c435275d067c713ea823b35446f8571bd",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/analyze.py",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 9114,
+          "file_sha256": "ba68ba6b20c3b99d7d8a07e6896242e61328e29f916778d14e8de714c2ab7d33",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/inputs/assay_evidence.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 2182,
+          "file_sha256": "727203db454d6cf66fc045f8013024b82f922b155d13e564966a3ae8286b610f",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/inputs/provenance.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 3006,
+          "file_sha256": "fdae845824b6706269b225c6ce483297404d3439cc8efabf1ff1019e836c0911",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/assay_evidence_audit.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 4158,
+          "file_sha256": "dde77c1989a4ca29f7e92b1b7f2a859deff7168e52461a3f3b3d085d01fc211d",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/summary.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 2133,
+          "file_sha256": "0b6e99fa1e51ca1e806c177fcd13b2c7a2ec9a0f9124ebaaf8a50d20a192bc53",
+          "binary": false
+        },
+        {
+          "path": "wiki/computational-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 73222,
+          "file_sha256": "8ea8f1845ae656672d589ed841dfedbde8a9556b01bce4dec711ac0c2ff3608a",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 5232,
+          "file_sha256": "49d572cdec31ee45314ae074baec8fb0fa3b7f64db5ff6bcec78b1ef74fa82f9",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/reviews/push-review.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 14465,
+          "file_sha256": "aea6c3203253b9ab4593460bb074a015c47422d6a548582dd6cb14527a6e2c1c",
+          "binary": false
+        },
+        {
+          "path": "wiki/supplement-abcg2-antagonism-computational.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 2052,
+          "file_sha256": "0f11d31223536f0c9bc61983a42cc46edcc76351ee1ce068b44f323c0b159be5",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-002",
+      "coverage_sha256": "11fc9801ada263d74483ff0c880253e27bc7d5410fea7439cc2e6e34bdd25805",
+      "segments": [
+        {
+          "path": "wiki/validation-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 180000,
+          "file_sha256": "b8e72764627caa1e76e63254db036cc1a47a9aa763d63ac7eb8b3e4641e76f52",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-003",
+      "coverage_sha256": "af4bcac3c69e7b4c748b470f356e445df14c627eb113d9c5746c6592fe20d8db",
+      "segments": [
+        {
+          "path": "wiki/validation-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 180000,
+          "end": 230542,
+          "file_sha256": "b8e72764627caa1e76e63254db036cc1a47a9aa763d63ac7eb8b3e4641e76f52",
+          "binary": false
+        }
+      ]
+    }
+  ],
+  "unsupported_binary_entries": [],
+  "projected_cost_usd": 1.255008,
+  "actual_cost_usd": 1.715562,
+  "input_tokens": 491100,
+  "output_tokens": 14273,
+  "tool_calls": 30,
+  "review_sha256": "1dc5144dce57ab9dc67470b4344ca8e839e826b267496495a29e76f1b9e0dbb9",
+  "lane_adjudication": {
+    "date": "2026-07-27T18:20:47Z",
+    "method": "exact push review",
+    "new_artifact_review_performed": true,
+    "queue_action_remains_open": false,
+    "propagation_allowed_scope": "corrective propagation only: prior nominal gut-concentration/IC50 ratios, percent inhibition, VERY_HIGH risk tiers, and clinical/patient inferences are invalid; direct intestinal ABCG2-attributed urate-flux testing is the surviving route",
+    "synthesis_allowed_scope": "bounded synthesis of evidence-gap routing for quercetin, curcumin, and EGCG from the three cited records; no ranking, dose, genotype, formulation, or clinical direction",
+    "forbidden_inferences": [
+      "dose or formulation guidance",
+      "percent intestinal urate-transport inhibition",
+      "clinical-risk tiers",
+      "genotype-specific susceptibility",
+      "dietary/extract direction",
+      "extrapolation from drug-substrate BCRP assays to urate flux",
+      "treating this bounded correction set as a literature census"
+    ]
+  }
+}

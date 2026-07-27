@@ -1,0 +1,69 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/README.md",
+      "kind": "design",
+      "bytes": 7196,
+      "sha256": "86032b26232a9159b6796019c3615b5c435275d067c713ea823b35446f8571bd"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/analyze.py",
+      "kind": "design",
+      "bytes": 9120,
+      "sha256": "ba68ba6b20c3b99d7d8a07e6896242e61328e29f916778d14e8de714c2ab7d33"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/inputs/assay_evidence.json",
+      "kind": "design",
+      "bytes": 2182,
+      "sha256": "727203db454d6cf66fc045f8013024b82f922b155d13e564966a3ae8286b610f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 3008,
+      "sha256": "fdae845824b6706269b225c6ce483297404d3439cc8efabf1ff1019e836c0911"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/assay_evidence_audit.json",
+      "kind": "generated_output",
+      "bytes": 4160,
+      "sha256": "dde77c1989a4ca29f7e92b1b7f2a859deff7168e52461a3f3b3d085d01fc211d"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-004-supplement-abcg2-antagonism/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 2135,
+      "sha256": "0b6e99fa1e51ca1e806c177fcd13b2c7a2ec9a0f9124ebaaf8a50d20a192bc53"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 73854,
+      "sha256": "8ea8f1845ae656672d589ed841dfedbde8a9556b01bce4dec711ac0c2ff3608a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/inputs/provenance.md",
+      "kind": "proposed_update",
+      "bytes": 5316,
+      "sha256": "49d572cdec31ee45314ae074baec8fb0fa3b7f64db5ff6bcec78b1ef74fa82f9"
+    },
+    {
+      "path": "wiki/supplement-abcg2-antagonism-computational.md",
+      "kind": "proposed_update",
+      "bytes": 2067,
+      "sha256": "0f11d31223536f0c9bc61983a42cc46edcc76351ee1ce068b44f323c0b159be5"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 232441,
+      "sha256": "b8e72764627caa1e76e63254db036cc1a47a9aa763d63ac7eb8b3e4641e76f52"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "62d17bef9d42994394848f2271d5fedfe2c5e6667c56292782023c9a4937b20a"
+}
