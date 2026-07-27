@@ -14,9 +14,9 @@ on:
         required: false
         type: string
       max_cost_usd:
-        description: 'Hard propagation cap'
+        description: 'Emergency propagation cap; normal batches are typically below $0.50'
         required: false
-        default: '0.75'
+        default: '1.50'
         type: string
 
 permissions:
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
-      MAX_COST_USD: ${{ inputs.max_cost_usd || '0.75' }}
+      MAX_COST_USD: ${{ inputs.max_cost_usd || '1.50' }}
       PROPAGATION_MODEL: deepseek/deepseek-v4-pro
     steps:
       - uses: actions/checkout@v5

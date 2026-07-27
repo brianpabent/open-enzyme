@@ -410,6 +410,30 @@ def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=
         print(f"  [iter {iteration}] {dt:.1f}s in={in_tok}{cache_note} out={out_tok} tools={tc_summary}",
               file=sys.stderr, flush=True)
         if not tool_calls:
+            finish_reason = resp["choices"][0].get("finish_reason") or "unknown"
+            if iteration < max_iterations:
+                # Some reasoning models occasionally spend an entire turn on
+                # analysis, especially when the completion reaches its token
+                # ceiling, without emitting the required done() tool call.
+                # Treat that as an incomplete turn, not as agent termination:
+                # the explicit done() gate and the cost/iteration ceilings
+                # still fail closed if the model never completes.
+                messages.append({
+                    "role": "user",
+                    "content": (
+                        f"Your last turn ended with finish_reason={finish_reason!r} "
+                        "and no tool call. Continue using the available tools. "
+                        "Do not narrate the audit; call done() once every direct "
+                        "dependent has been considered and any needed edits are complete."
+                    ),
+                })
+                print(
+                    f"  [iter {iteration}] no tool call ({finish_reason}); "
+                    "requesting explicit completion",
+                    file=sys.stderr,
+                    flush=True,
+                )
+                continue
             break
 
         for tc in tool_calls:

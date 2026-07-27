@@ -29,6 +29,9 @@ lit_receipt = load("lit_scan_receipt_test", ROOT / "scripts" / "check-lit-scan-r
 invalidation = load(
     "comp_invalidation_test", ROOT / "scripts" / "check-comp-invalidation.py"
 )
+propagation = load(
+    "sweep_propagation_test", ROOT / "scripts" / "sweep-1-propagate.py"
+)
 
 
 class CompReviewContractTests(unittest.TestCase):
@@ -258,6 +261,57 @@ Long review-history material.
 
 
 class WorkflowTriggerTests(unittest.TestCase):
+    def test_propagation_nudges_truncated_no_tool_turn_to_explicit_done(self):
+        responses = iter([
+            {
+                "choices": [{
+                    "finish_reason": "length",
+                    "message": {"content": "Incomplete internal analysis"},
+                }],
+                "usage": {
+                    "prompt_tokens": 100,
+                    "completion_tokens": 4000,
+                    "cost": 0.01,
+                },
+            },
+            {
+                "choices": [{
+                    "finish_reason": "tool_calls",
+                    "message": {
+                        "content": None,
+                        "tool_calls": [{
+                            "id": "done-1",
+                            "function": {
+                                "name": "done",
+                                "arguments": json.dumps({"summary": "No propagation needed."}),
+                            },
+                        }],
+                    },
+                }],
+                "usage": {
+                    "prompt_tokens": 200,
+                    "completion_tokens": 20,
+                    "cost": 0.01,
+                },
+            },
+        ])
+        original = propagation.call_openrouter
+        propagation.call_openrouter = lambda *_args, **_kwargs: next(responses)
+        try:
+            result = propagation.run_agentic_loop(
+                "key",
+                "deepseek/deepseek-v4-pro",
+                "system",
+                "user",
+                max_iterations=3,
+                max_cost_usd=1.50,
+            )
+        finally:
+            propagation.call_openrouter = original
+        self.assertTrue(result["completed"])
+        self.assertEqual(2, result["iterations"])
+        self.assertEqual("No propagation needed.", result["done_summary"])
+
     def test_full_synthesis_has_no_push_trigger(self):
         text = (ROOT / ".github/workflows/wiki-sweep.yml").read_text()
         on_block = text.split("on:\n", 1)[1].split("\n# Never run", 1)[0]
