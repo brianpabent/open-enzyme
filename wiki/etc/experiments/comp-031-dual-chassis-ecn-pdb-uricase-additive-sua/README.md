@@ -4,7 +4,7 @@
 
 comp-031 attempted to predict whether PDB-EcN plus luminal uricase would produce additive serum-urate reduction and whether a PDB-derived butyrate axis would rescue ABCG2/Q141K. The model cannot answer those questions because it:
 
-1. inherited comp-019's invalid uricase saturation regime;
+1. inherited comp-019's unconditional flat-dose UOX regime, which COMP-044 showed is not robust to the tested substrate-occupancy and finite-window diagnostics;
 2. transferred a *C. sporogenes* butyrate assumption into CBT2.0/EcN without product measurement;
 3. misattributed direct butyrate rescue to Basseville 2012;
 4. used unmatched background butyrate; and

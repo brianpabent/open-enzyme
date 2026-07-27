@@ -336,7 +336,7 @@ Several oral enzyme tracks depend on the gut-lumen sink producing a clinically m
 - Complete §§1.33 and 1.36 with precommitted failure criteria before animal-dose design.
 - If preclinical evidence supports translation, use an appropriately manufactured product and an ethics/regulatory-reviewed human study with serum urate, FEUA, safety, exposure, and attribution controls. No engineered-UOX n=1 self-experiment follows from the current evidence.
 
-**Cross-references:** [cross-validation.md §Claim 1](./cross-validation.md) (feasibility 5.5/10), [gut-lumen-sink.md](./gut-lumen-sink.md), [uricase.md](./uricase.md), [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md).
+**Cross-references:** [cross-validation.md](./cross-validation.md), [gut-lumen-sink.md](./gut-lumen-sink.md), [uricase.md](./uricase.md), [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md).
 
 ### Dietary-CP0 track risk — do dietary doses of rosmarinic acid, luteolin, Houttuynia, and Helicteres reach gut-luminal complement-suppressing concentrations?
 
@@ -358,7 +358,7 @@ Microbiome-metabolite measurement is matrix- and analyte-specific. A method vali
 For butyrate, two research candidates have primary-source support:
 
 - **Culture supernatant:** The De Baere primary abstract reports HPLC-UV at 210 nm after ether back-extraction and acidification below pH 2, with matrix-matched calibration over 0.5–50 mM and an analyte-spanning 0.5–1.0 mM LOQ range. It does not explicitly state “underivatized” or assign an exact LOQ to butyrate in the accessible text ([PMID 23542733](https://doi.org/10.1016/j.jpba.2013.02.032)).
-- **Stool:** Gu et al. reported a coupled VBS-100/G3-electrode, chemical-pretreatment, feature-extraction, and ANN platform compared with GC-MS in a within-study independent 30-sample fecal test cohort. The reported butyrate result is promising, but the full implementation still requires local reproduction and independent external transfer before Open Enzyme use ([PMID 42041444](https://pmc.ncbi.nlm.nih.gov/articles/PMC13114974/)).
+- **Stool:** Gu et al. reported a coupled VBS-100/G3-electrode, chemical-pretreatment, feature-extraction, and ANN platform compared with GC-MS in a within-study independent 30-sample fecal test cohort. The reported butyrate result is promising, but the full implementation still requires local reproduction and independent external transfer before Open Enzyme use ([PMID 42041444](https://pubmed.ncbi.nlm.nih.gov/42041444/)).
 
 These methods support matrix-specific research directions in the source studies; neither is qualified for an OE workflow. They do not verify a therapeutic exposure or a Q141K rescue. A butyrate experiment must separately measure exposure, ABCG2 surface trafficking, and functional urate flux. Secondary bile acids, microbial indoles, TMAO, and other metabolite classes each require their own validated method.
 
@@ -371,7 +371,7 @@ These methods support matrix-specific research directions in the source studies;
   - **Path 2 — §1.33 physiological factorial:** polarized intestinal transport with topology, urate, oxygen, peroxide, survival, and Q141K/WT stratification. This replaces the comp-019-gated single transwell concept.
   - **Path 3 — Overseen genotype-stratified human study, only after the preclinical gates.** A future protocol would require an appropriately manufactured product, regulatory and ethics review, prespecified genotype strata, safety monitoring, and adequate power. Self-administration of shio-koji or engineered koji is not an evidence path.
   - **Path 4 — Existing trial-data partnership.** Seek appropriately consented genotype-linked data from completed uricase studies if available. This is not load-bearing unless a data holder confirms the relevant exposure and outcome fields.
-  - **Cross-references:** [comp-017 (intestinal ABCG2 sex-dimorphism)](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md), [comp-016 (T × intestinal ABCG2 evidence mining)](./t-abcg2-suppression-evidence-mining-computational.md), [cross-validation.md](./cross-validation.md) (gut-lumen uricase mechanism currently rated 6/10), [gut-lumen-sink.md](./gut-lumen-sink.md), [abcg2-modulators.md](./abcg2-modulators.md), and [personal-genome-protocol.md](./personal-genome-protocol.md).
+  - **Cross-references:** [comp-017 (intestinal ABCG2 sex-dimorphism)](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md), [comp-016 (T × intestinal ABCG2 evidence mining)](./t-abcg2-suppression-evidence-mining-computational.md), [cross-validation.md](./cross-validation.md), [gut-lumen-sink.md](./gut-lumen-sink.md), [abcg2-modulators.md](./abcg2-modulators.md), and [personal-genome-protocol.md](./personal-genome-protocol.md).
 
 ### Platform selection and thesis
 
