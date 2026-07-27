@@ -3636,10 +3636,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#128-tier-2-colorimetric-cordycepin-assay-validation" class="md-nav__link">
+  <a href="#128-low-cost-cordycepin-method-qualification" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.28 Tier 2 Colorimetric Cordycepin Assay Validation
+        1.28 Low-Cost Cordycepin Method Qualification
       
     </span>
   </a>
@@ -5695,7 +5695,7 @@
     
   
   
-    <span class="md-status md-status--partial-lead-inventory"></span>
+    <span class="md-status md-status--invalidated-tombstone"></span>
   
 
   
@@ -6479,12 +6479,12 @@
 <td><a href="../lactoferrin/">lactoferrin</a>, <a href="../nlrp3-exploit-map/">nlrp3-exploit-map</a></td>
 </tr>
 <tr>
-<td><a href="#128-tier-2-colorimetric-cordycepin-assay-validation">§1.28</a></td>
-<td>Tier 2 colorimetric cordycepin assay validation</td>
+<td><a href="#128-low-cost-cordycepin-method-qualification">§1.28</a></td>
+<td>Low-cost cordycepin method qualification</td>
 <td>In Vitro</td>
-<td>~$200</td>
-<td>2</td>
-<td>Proposed</td>
+<td>TBD after method selection</td>
+<td>TBD</td>
+<td>Proposed — design required</td>
 <td><a href="../quantification-ladder/">quantification-ladder</a>, <a href="../medicinal-mushroom-complement-track/">medicinal-mushroom-complement-track</a></td>
 </tr>
 <tr>
@@ -7412,34 +7412,12 @@
 - LPS + MSU stimulation is a two-signal model that doesn't capture all in vivo gout-flare priming pathways.
 - Fenton chemistry in cell culture and a gut-lumen exposure are different compartments; an interaction in one does not establish the other.</p>
 <p><strong>Cross-references:</strong> <a href="../gout-pathophysiology/">gout-pathophysiology.md §"Multi-track urate transporter coverage" ROS / CP1b row</a> (the speculative claim this experiment gates); <a href="../lactoferrin/">lactoferrin.md §4.1</a> (Fenton-iron mechanism); <a href="../medicinal-mushroom-complement-track/">medicinal-mushroom-complement-track.md</a> (P. citrinopileatus EGT source); <a href="./">validation-experiments.md §1.19</a> (rodent-IC50 species-gap discipline); <a href="./">validation-experiments.md §1.20</a> (sister CP1a super-additivity assay sharing THP-1 + MSU infrastructure).</p>
-<h3 id="128-tier-2-colorimetric-cordycepin-assay-validation">1.28 Tier 2 Colorimetric Cordycepin Assay Validation<a class="headerlink" href="#128-tier-2-colorimetric-cordycepin-assay-validation" title="Permanent link">&para;</a></h3>
-<p><strong>Status</strong>: Proposed | <strong>Cost</strong>: ~$200 | <strong>Weeks</strong>: 2 | <strong>Phase</strong>: 1</p>
-<p><strong>Affected wiki</strong>: <a href="../medicinal-mushroom-extract-sops/">medicinal-mushroom-extract-sops.md</a> SOP-6; <a href="../quantification-ladder/">quantification-ladder.md</a>; <a href="../cordycepin-cassette-burden-computational/">cordycepin-cassette-burden-computational.md</a>; and <a href="../medicinal-mushroom-complement-track/">medicinal-mushroom-complement-track.md</a>.</p>
-<p><strong>What it tests:</strong> Whether the diazo-coupling colorimetric assay proposed in <a href="../medicinal-mushroom-extract-sops/"><code>medicinal-mushroom-extract-sops.md</code> SOP-6</a> can quantify cordycepin against a reference method, or whether UV absorbance is the more defensible low-instrumentation fallback. This validates an analytical method; it does not validate an extract, dose, or intervention.</p>
-<p><strong>Background on the gap:</strong> SOP-6 proposes a Bratton-Marshall-style diazo-coupling colorimetric assay for cordycepin (3'-deoxyadenosine — a nucleoside analog with a primary aromatic amine accessible under hydrolysis conditions). The mechanism is plausible by analogy to nitrite-based colorimetric detection of aromatic amines (sulfanilamide, dapsone, etc.), but <strong>no primary-literature precedent for cordycepin-specific diazo-coupling has been verified.</strong> Until validated, the SOP carries the speculative caveat. UV 260 nm absorbance is the conservative fallback — cordycepin absorbs at λmax ~260 nm with ε ~14,500 M⁻¹·cm⁻¹, comparable to adenosine — but requires no derivatization and gives lower specificity (any 260-nm-absorbing contaminant interferes).</p>
-<p><strong>Protocol:</strong></p>
-<ul>
-<li><strong>Reference standard:</strong> Cordycepin reference standard (Sigma-Aldrich C3394 or equivalent, ≥98% purity, ~$50–80 for 10 mg). Prepare calibration series at 1, 5, 10, 25, 50, 100 µg/mL in 10% methanol/water (mirrors expected extract matrix).</li>
-<li><strong>Arm A — Diazo-coupling colorimetric:</strong> Per SOP-6 draft — acid hydrolysis (1 N HCl, 60 °C, 30 min) to expose the primary amine, neutralize, then react with sodium nitrite + N-(1-naphthyl)ethylenediamine (NEDA) per the standard Bratton-Marshall procedure. Read absorbance at 540–560 nm. Record: linearity (R² of standard curve), LoD (signal:noise ≥ 3), LoQ (signal:noise ≥ 10).</li>
-<li><strong>Arm B — UV 260 nm fallback:</strong> Direct absorbance at 260 nm in 10% methanol/water. Same calibration series. Same metrics.</li>
-<li><strong>Cross-validation:</strong> Send 3 calibration concentrations (low, mid, high) to a Tier 3 anchor (HPLC-UV, contract lab e.g. Eurofins or university analytical service, ~$50/sample × 3 = $150). Compare Tier 2 result (both arms) vs. Tier 3 ground truth.</li>
-<li><strong>Specificity check:</strong> Spike each calibration point with 100 µg/mL adenosine (the most likely cross-reactant — also a primary-amine-bearing nucleoside that diazo-couples). Quantify cross-reactivity: &lt; 5% interference = clean; 5–20% = needs hydrolysis-condition optimization or column cleanup before diazo step; &gt; 20% = method-fail for crude <em>Cordyceps</em> extracts (which contain orders-of-magnitude more adenosine than cordycepin by mass).</li>
-</ul>
-<p><strong>Success criterion (test → next phase):</strong></p>
-<ul>
-<li><strong>Diazo-coupling GREEN:</strong> linearity R² ≥ 0.98 across 1–100 µg/mL, LoD ≤ 2 µg/mL, adenosine cross-reactivity &lt; 20%, Tier 2 vs. Tier 3 agreement within 20% on all three concentrations. → Promote SOP-6 from Speculative to Validated; update <code>medicinal-mushroom-extract-sops.md</code> to remove the caveat.</li>
-<li><strong>Diazo-coupling YELLOW:</strong> linearity + LoD pass but adenosine cross-reactivity is 20–50%. → Investigate hydrolysis-condition optimization or simple C18 SPE cleanup before assay. Iterate.</li>
-<li><strong>Diazo-coupling RED</strong> (linearity &lt; 0.95 OR adenosine cross-reactivity &gt; 50% OR Tier 2 vs. Tier 3 disagreement &gt; 30%): use UV 260 nm fallback. Update SOP-6 to explicitly recommend UV 260 nm + downgrade the diazo path to "experimental, not for production quantification."</li>
-</ul>
-<p><strong>Estimated cost:</strong> ~$200 (cordycepin reference standard $50–80; diazo + UV reagents $20; Tier 3 anchor HPLC-UV $150; misc consumables $20).</p>
-<p><strong>Estimated timeline:</strong> 2 weeks (1 week reagent procurement + calibration; 1 week assay runs + Tier 3 turnaround).</p>
-<p><strong>Limitations:</strong></p>
-<ol>
-<li>The Bratton-Marshall-style diazo-coupling mechanism's applicability to cordycepin specifically is the speculative element this experiment tests. If literature surfaces a published precedent during execution, that may obviate the experimental validation step; check PubMed (English) + CNKI / J-STAGE per <code>Open Enzyme/CLAUDE.md</code> §"Global-multilingual research by default" before running.</li>
-<li>Adenosine cross-reactivity is the most likely failure mode. If detected, the workflow may require a brief solid-phase cleanup (C18 SPE cartridge separates polar adenosine from less-polar cordycepin) before diazo, adding ~$5/sample.</li>
-<li>Tier 3 HPLC-UV anchor cost is vendor-variable; $50/sample is a mid-range estimate. Verify quoting before committing.</li>
-<li>The validation is on pure cordycepin reference standard. Real-world extract performance (cordycepin in a <em>C. militaris</em> fermentate matrix) is a separate downstream question — typically the next experiment after a clean reference-standard validation.</li>
-</ol>
+<h3 id="128-low-cost-cordycepin-method-qualification">1.28 Low-Cost Cordycepin Method Qualification<a class="headerlink" href="#128-low-cost-cordycepin-method-qualification" title="Permanent link">&para;</a></h3>
+<p><strong>Status:</strong> Proposed — design required | <strong>Cost:</strong> TBD after method selection | <strong>Weeks:</strong> TBD | <strong>Phase:</strong> 1</p>
+<p><strong>Affected wiki:</strong> <a href="../medicinal-mushroom-extract-sops/">medicinal-mushroom-extract-sops.md</a> SOP-6; <a href="../quantification-ladder/">quantification-ladder.md</a>; <a href="../cordycepin-cassette-burden-computational/">cordycepin-cassette-burden-computational.md</a>; and <a href="../medicinal-mushroom-complement-track/">medicinal-mushroom-complement-track.md</a>.</p>
+<p><strong>What it tests:</strong> Whether a selected lower-cost method can quantify cordycepin in one exact intended matrix and range with acceptable agreement to a qualified HPLC or LC-MS anchor. It validates only that method–matrix–range configuration; it does not validate an extract, dose, intervention, or production process.</p>
+<p><strong>Design gate:</strong> No cordycepin-specific diazo-coupling method has been verified in the current evidence corpus. Before choosing a candidate method, rehydrate its analytical chemistry from primary sources and define the intended matrix, range, interferents, reference standard, calibration model, recovery, specificity, precision, detection limits, and reference-method comparison. UV absorbance and color chemistry remain candidates, not default fallbacks.</p>
+<p><strong>Decision rule:</strong> Promote a Tier 2 method only if its prespecified, pilot-informed suitability criteria pass in the exact intended matrix and an independent reference-method comparison supports the claimed range. A pure-standard result does not qualify an extract method. If no lower-cost candidate passes, retain the qualified Tier 3 method rather than inferring that another proxy works.</p>
 <p><strong>Cross-references:</strong> <a href="../medicinal-mushroom-extract-sops/"><code>medicinal-mushroom-extract-sops.md</code></a> SOP-6; <a href="../quantification-ladder/"><code>quantification-ladder.md</code></a>; <a href="../cordycepin-cassette-burden-computational/"><code>cordycepin-cassette-burden-computational.md</code></a>; and <a href="../medicinal-mushroom-complement-track/"><code>medicinal-mushroom-complement-track.md</code></a>.</p>
 <hr />
 <h3 id="130-houttuynia-cordata-polysaccharide-fraction-comparison-in-msu-stimulated-thp-1-macrophages-prioritization-screen">1.30 Houttuynia cordata polysaccharide fraction comparison in MSU-stimulated THP-1 macrophages — prioritization screen<a class="headerlink" href="#130-houttuynia-cordata-polysaccharide-fraction-comparison-in-msu-stimulated-thp-1-macrophages-prioritization-screen" title="Permanent link">&para;</a></h3>
@@ -7857,7 +7835,7 @@
 <p><strong>Estimated cost and timeline:</strong> Determine after material identity, arm count, model, sample size, PK schedule, and analytical plan are fixed.</p>
 <p><strong>Dependencies:</strong> Operational material-identity and fractionation methods; primary-source verification of the exact comparators; qualified analytical methods; preclinical oversight; and a pilot that supplies variance and safety bounds. Pentostatin is optional, not a required arm.</p>
 <p><strong>Decision rule:</strong> Prespecify the individual-material replication margin, interaction estimand, PK margin, and safety limits after the pilot. Advance a combination only if its effect exceeds the prespecified additive expectation or achieves the same biological effect at lower verified exposure without a new safety signal. A null interaction keeps the materials separate; failure of an individual material narrows that material-specific hypothesis rather than the whole Open Enzyme portfolio.</p>
-<p><strong>Cross-references:</strong> the <a href="../medicinal-mushroom-complement-track/#research-conjecture--a-reproducible-medicinal-fungal-material-may-expose-a-gout-weakness">medicinal-mushroom exact-material conjecture</a> and the <a href="../medicinal-mushroom-extract-sops/">draft material-identity methods</a>. COMP-014 is a partial retrieval inventory, not evidence authority for the study.</p>
+<p><strong>Cross-references:</strong> the <a href="../medicinal-mushroom-complement-track/#research-conjecture--a-reproducible-medicinal-fungal-material-may-expose-a-gout-weakness">medicinal-mushroom exact-material conjecture</a> and the <a href="../medicinal-mushroom-extract-sops/">draft material-identity methods</a>. COMP-014 is invalidated and supplies no evidence for the study.</p>
 <h4 id="conditional-follow-up-uox-mushroom-interaction-arm">Conditional follow-up — UOX × mushroom interaction arm<a class="headerlink" href="#conditional-follow-up-uox-mushroom-interaction-arm" title="Permanent link">&para;</a></h4>
 <p><strong>Status</strong>: Conditional conjecture (opens only if §2.6 and §§1.33, 1.36, and 2.1 independently justify it) | <strong>Cost and duration:</strong> TBD from the final model, arm count, variance, and analytical plan</p>
 <p><strong>What it tests:</strong> whether a mushroom-track intervention and an independently cleared luminal-UOX configuration interact additively, antagonistically, or not detectably in the selected animal model. The §2.6 base study tests cordycepin × GLPP × pentostatin within the medicinal-mushroom track only; it does not establish how a separate UOX mechanism will compose.</p>

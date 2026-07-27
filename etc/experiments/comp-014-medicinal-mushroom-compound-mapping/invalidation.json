@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "comp": "comp-014",
+  "status": "invalidated_tombstone",
+  "runnable": false,
+  "retired_tree_commit": "ff351189200354cecaf641be6603ba5c6b1f549f",
+  "last_push_review_manifest_sha256": "cc7395f0bb54699712f9bb03ec5b75c687e581bfe329579dffc8bad0fb8f301f",
+  "retired_files": [
+    {
+      "path": ".gitignore",
+      "bytes": 446,
+      "sha256": "7cde021f41cc3eb42a5e4ceb519cc98f1f1e1d8c1a0717a087bd88151a01829d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4460,
+      "sha256": "a4f7b207c8f872a9929dae14f7f64c825c285c3f6dace5c4d6941b9c9fd1bdd4"
+    },
+    {
+      "path": "inputs/chokepoint-targets.json",
+      "bytes": 10775,
+      "sha256": "3448a1eb02fe59149ccd2e0017ef3e99bc236924b43c6a6b93b7af7d66b7305c"
+    },
+    {
+      "path": "inputs/data-sources.json",
+      "bytes": 15076,
+      "sha256": "04a25dd3f2df851dd1946eb25830613ac16513a59121fb6f5fbcd776df18d208"
+    },
+    {
+      "path": "inputs/phase-5-anchor-species.json",
+      "bytes": 11462,
+      "sha256": "7ca11913ee6b6b8443bbf65d3d545759f4b8ca34f9c19732c9c6079043056f96"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 4913,
+      "sha256": "b15f4b6768d7172f5fffee5030c45e81457949aa35a9a524063e3fa92ee0d61b"
+    },
+    {
+      "path": "inputs/toxicity-filter.json",
+      "bytes": 9578,
+      "sha256": "4f9f548feb6d5b8f9e750299c0a280b12841cf72681a87b57cb40df5cea69d8e"
+    },
+    {
+      "path": "outputs/PHASE-2-FINDINGS.md",
+      "bytes": 7745,
+      "sha256": "3954f745f8b64fc479c408f7d8352446a8e5ed5265ff434e22a1bf2a4314e78e"
+    },
+    {
+      "path": "outputs/PHASE-5-FINDINGS.md",
+      "bytes": 17807,
+      "sha256": "088ea22963373f4da15a5a1d6a24352053f5211dfea27b5171435f5aafa7a68f"
+    },
+    {
+      "path": "outputs/phase-2-unified-fungal-compounds.json",
+      "bytes": 7080558,
+      "sha256": "a71ecfbc5e29ae469454a5b33e402586cd9dd6eaa436c7b2fc80988aea3597b1"
+    },
+    {
+      "path": "outputs/phase-2-unified-summary.md",
+      "bytes": 3081,
+      "sha256": "2a46a77621206328ccd80200d26a52fedb84e849985eea0e04fa8199a79a95fe"
+    },
+    {
+      "path": "outputs/phase-2a-chembl-fungal-source.json",
+      "bytes": 19294,
+      "sha256": "30661d8cdf5226ce69c76eb268e5c69180b7c3940824da0545b29602b5d46426"
+    },
+    {
+      "path": "outputs/phase-2a-chembl-fungal-source.md",
+      "bytes": 6649,
+      "sha256": "2f82eae9d44f85fafda7c26daaeaf53ec65e569c2da19abe5d9b9f3555aa436f"
+    },
+    {
+      "path": "outputs/phase-2b-compounds-by-inchikey.json",
+      "bytes": 3996498,
+      "sha256": "b9057bde18e8ca091f42e6f4c2362f209de26c06231a13bbc0c6d11fd4f2f15d"
+    },
+    {
+      "path": "outputs/phase-2b-lotus-fungal-compounds.json",
+      "bytes": 224073,
+      "sha256": "1988c54c211cc09259c159837f04114c892db1b91ac36fd852d48809f92a1402"
+    },
+    {
+      "path": "outputs/phase-2b-lotus-fungal-compounds.md",
+      "bytes": 2946,
+      "sha256": "ef1134385918236fb44dac8606dba4646624c95ac689f5e3dcf41510519acd2d"
+    },
+    {
+      "path": "outputs/phase-2c-pubmed-fungal-chokepoint.json",
+      "bytes": 32282,
+      "sha256": "36f5c013638d1f6ed5b715358cb76b2e14cdbe8c0b766e2c01164fd5e9abef92"
+    },
+    {
+      "path": "outputs/phase-2c-pubmed-fungal-chokepoint.md",
+      "bytes": 7851,
+      "sha256": "b8fa0c9c3c96b973872701766f7f8ad5907709e8d8b43153bc49f6b635e37d16"
+    },
+    {
+      "path": "outputs/phase-3-compound-x-target.json",
+      "bytes": 289885,
+      "sha256": "ea109a0affa3fb7194589e59a670a736816927bccd22bd627064380aa38c6839"
+    },
+    {
+      "path": "outputs/phase-3-fungal-chokepoint-hits.json",
+      "bytes": 9517,
+      "sha256": "00720180a9ce2e72f3fb7f43e44fa49e0c94d962b002a2acea0874b48c06d3ee"
+    },
+    {
+      "path": "outputs/phase-3-fungal-chokepoint-hits.md",
+      "bytes": 3199,
+      "sha256": "f2af61c8c58f82811ecd77ebdcddb7eb7bdbcaaa8802f8b7f9f0d03a5d6d4af8"
+    },
+    {
+      "path": "outputs/phase-3-target-mapping-summary.md",
+      "bytes": 10028,
+      "sha256": "ddee5ae65fdc68a14cae8a987cf44790de7feb4b645045933bdb40c44ee7de1a"
+    },
+    {
+      "path": "outputs/phase-4-chokepoint-intersection-v2.json",
+      "bytes": 337334,
+      "sha256": "6134338627f3d97f3d47a57bbf35335877e60a4f52bf2b6e8fee68c20a69bdec"
+    },
+    {
+      "path": "outputs/phase-4-ranked-candidates.json",
+      "bytes": 40099,
+      "sha256": "81630a30e0f9f3c0622b378043efb6cf36556b892fecf6bb4aafe63130d60904"
+    },
+    {
+      "path": "outputs/phase-4-ranked-candidates.md",
+      "bytes": 10926,
+      "sha256": "d172efae902de77a2f9acd306c97601078d52fce48befd0fdb38f8dd9a205712"
+    },
+    {
+      "path": "outputs/phase-5-deepread-PMID26457607.md",
+      "bytes": 16509,
+      "sha256": "9842f495e5289f936c69738cb257b0c0466ffcd5503a9fa06bb49233ca4f921b"
+    },
+    {
+      "path": "outputs/phase-5-deepread-PMID35750011.md",
+      "bytes": 27086,
+      "sha256": "1834a1125c39e178f15580e725dabad6f43620d4be8b5f533f8705bcc29ddf7a"
+    },
+    {
+      "path": "outputs/phase-5-deepread-PMID36385640.md",
+      "bytes": 15480,
+      "sha256": "1d35dd6c8ebf90a40e65a968bf266e5b89fc53e2a214c8aee1bd41afb9c9f644"
+    },
+    {
+      "path": "outputs/phase-5-deepread-PMID36801789.md",
+      "bytes": 15292,
+      "sha256": "36a8a685ea14eef5443f83c88ae76cb743e003f23511d1186695bc8f5a06947b"
+    },
+    {
+      "path": "outputs/phase-5-deepread-PMID41905012.md",
+      "bytes": 17138,
+      "sha256": "53ba5b9183247c9e509135ac8ca77a79af7b6cbdf3d4a8c6842ac03feffceee3"
+    },
+    {
+      "path": "outputs/phase-5-deepseek-cross-check.md",
+      "bytes": 12963,
+      "sha256": "b964224f0024291f952f713380f1aab15a4f0f5b7bc0e3a08968e678e79b18c2"
+    },
+    {
+      "path": "outputs/phase-7-cultivation-yield-meta-analysis.md",
+      "bytes": 46831,
+      "sha256": "28036a1258d0c50ef65841c161164614ff2e9b0ad0c0562797d4fbee1e6bef79"
+    },
+    {
+      "path": "outputs/phase-7a-ganoderma-strain-scan.md",
+      "bytes": 36481,
+      "sha256": "dd118a7ba6f9a1e032179e1e2e5aef892a39df660ea3154ec71aba671785a3fd"
+    },
+    {
+      "path": "outputs/phase-7b-cordyceps-strain-scan.md",
+      "bytes": 28559,
+      "sha256": "09821193e984fe84ed1d7310d10b9bf4bbd333947a6eef10daec479a0e21edd4"
+    },
+    {
+      "path": "outputs/phase-7c-pleurotus-strain-scan.md",
+      "bytes": 23439,
+      "sha256": "ede041ab750b1fccd1384906b3cadd67486476e3531dad12792daea6fdb53a35"
+    },
+    {
+      "path": "outputs/scope-summary.md",
+      "bytes": 9706,
+      "sha256": "f6e2cf580ea16084a0cf5e5c3f744fecf02a1e435b4962ffb2fb5cdbf889051f"
+    },
+    {
+      "path": "scripts/scope_validate.py",
+      "bytes": 7906,
+      "sha256": "5c69106dfbb534813df6a62aa2917cd5ec355f388391999b3a34e71c7994916e"
+    }
+  ],
+  "invalidated_scope": [
+    "all candidate, compound, species, potency, production, delivery, chassis, feasibility, readiness, tier, KEEP, DROP, PURSUE, and priority rankings or verdicts",
+    "all derived compound-source-target rows and counts as current evidence, including query-hint species attribution, permissive toxicity_filter_pass semantics, full-InChIKey duplicate inflation, mixed endpoint or polarity rankings, and known OAT4, PPAR, ATP-like, DPPH, and row-count defects",
+    "all Phase 5 quantitative or mechanistic interpretations unless independently rehydrated from primary sources in a current canonical page",
+    "all Phase 7 cultivation, substrate, strain, yield, cost, purchase, practical SOP, production, biosafety, or achievable-exposure conclusions",
+    "all universal absence claims, clinical efficacy implications, safety implications, dose or occupancy estimates, and component causality inferred from formulas, extracts, expression, binding, prediction, database association, or phenotype"
+  ],
+  "surviving_scope": {
+    "kind": "bounded_historical_inventory_and_research_conjecture",
+    "statements": [
+      "Exact-material reproducibility, ADA, PINK1 or mitophagy, urate transport, urate production, inflammasome, redox, barrier, and direct C5aR1-screen ideas survive only as independently sourced research questions on their owning wiki pages.",
+      "The COMP-014 failure modes remain method lessons for future natural-product searches: query labels are not provenance, retained-for-review is not safe, heterogeneous endpoints are not rankable, and bounded non-retrieval is not biological absence.",
+      "A negative result or invalid artifact kills only the tested or represented scope; neighboring fungal mechanisms and exact materials remain eligible for new, primary-source-anchored experiments."
+    ],
+    "predictive_or_decision_use": false
+  },
+  "current_evidence_home": "wiki/medicinal-mushroom-compound-mapping-computational.md",
+  "canonical_digest": {
+    "algorithm": "sha256",
+    "canonical_json": "UTF-8 JSON object containing exactly retired_files, invalidated_scope, surviving_scope, current_evidence_home, and runnable; object keys are sorted recursively, arrays preserve listed order, ensure_ascii is false, and separators are ',' and ':'.",
+    "sha256": "2d5bb9e192f3b0599e868cd0abbb9ed2610c328bc78c1667d4991b6ed482cd6a"
+  }
+}

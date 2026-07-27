@@ -23,7 +23,7 @@
     
     
       
-        <title>comp-014 — Medicinal mushroom compound × chokepoint mapping - Open Enzyme</title>
+        <title>Index - Open Enzyme</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              comp-014 — Medicinal mushroom compound × chokepoint mapping
+              Index
             
           </span>
         </div>
@@ -4826,7 +4826,7 @@
     
   
   
-    <span class="md-status md-status--partial-lead-inventory"></span>
+    <span class="md-status md-status--invalidated-tombstone"></span>
   
 
   
@@ -5326,56 +5326,49 @@
   
 
 
+<blockquote>
+<p><strong>INVALIDATED TOMBSTONE — NOT RUNNABLE.</strong> No compound row, rank,
+quantitative result, safety flag, production claim, or advancement decision
+survives. Git preserves the retired artifact; the live tree does not.</p>
+</blockquote>
 <h1 id="comp-014-medicinal-mushroom-compound-chokepoint-mapping">comp-014 — Medicinal mushroom compound × chokepoint mapping<a class="headerlink" href="#comp-014-medicinal-mushroom-compound-chokepoint-mapping" title="Permanent link">&para;</a></h1>
-<p><strong>Status:</strong> Partial lead inventory. The former candidate rankings and Phase 6 occupancy/feasibility triage are invalid for decision use.</p>
-<h2 id="current-question">Current question<a class="headerlink" href="#current-question" title="Permanent link">&para;</a></h2>
-<p>Which compound/source/target records in this bounded fungal-natural-product artifact are worth rehydrating from primary sources for a polarity-, exposure-, and function-aware experiment?</p>
-<p>The artifact does not represent all fungal natural products or the global literature. It cannot identify the best compound, species, producer, production route, delivery route, or chassis.</p>
+<p><strong>Status:</strong> Invalidated for scientific, quantitative, and decision use.</p>
+<h2 id="why-it-was-retired">Why it was retired<a class="headerlink" href="#why-it-was-retired" title="Permanent link">&para;</a></h2>
+<p>The artifact mixed query-hint species labels with provenance, treated a
+permissive inclusion flag as if it were a toxicity screen, counted
+stereochemical and name variants without a stable deduplication rule, and
+ranked heterogeneous target records that included different endpoints,
+polarities, nulls, activation, expression, binding, and phenotype.</p>
+<p>The retained historical outputs also contained obsolete candidate tiers,
+<code>KEEP</code>/<code>DROP</code> and readiness language, practical purchase and SOP guidance, and
+unreconciled cultivation cost and yield arithmetic. Several mappings and row
+boundaries were defective. Correcting those tables would not make the retired
+search reproducible or decision-grade.</p>
 <h2 id="what-survives">What survives<a class="headerlink" href="#what-survives" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Raw and joined compound/source/target rows survive as search leads.</li>
-<li>Primary-source identifiers attached to a row survive as retrieval pointers, not as verification that the row's interpretation is correct.</li>
-<li>ADA, PINK1/mitophagy, urate transport, urate production, inflammasome, redox, and barrier-associated rows remain open nodes for source rehydration.</li>
-<li>Database absence survives only as a record of what the bounded query did not return.</li>
+<li>Exact-material reproducibility, ADA, PINK1 or mitophagy, urate transport,
+  urate production, inflammasome, redox, barrier, and direct C5aR1-screen
+  ideas remain independently sourced research questions on their owning wiki
+  pages.</li>
+<li>The failure modes remain useful design constraints for a future
+  natural-product screen: query labels are not provenance,
+  retained-for-review is not safe, heterogeneous endpoints are not rankable,
+  and bounded non-retrieval is not biological absence.</li>
+<li>Invalidating this artifact does not reject fungal chemistry or neighboring
+  untested mechanisms. A new experiment may revisit them with primary-source
+  records, exact material identity, effect polarity, compartmental exposure,
+  mechanism-matched function, and safety controls.</li>
 </ul>
-<p>Plant-origin compounds found in mushroom-associated queries are not fungal biosynthesis products unless a primary source establishes that provenance. Binding, expression, target prediction, and whole-animal phenotype are not interchangeable with direct mechanism-matched function.</p>
-<h2 id="what-does-not-survive">What does not survive<a class="headerlink" href="#what-does-not-survive" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Any candidate, potency, species, or production ranking.</li>
-<li><code>PURSUE</code>, <code>DROP</code>, tier, readiness, highest-priority, highest-leverage, or viability labels.</li>
-<li>Nominal exposure, occupancy, dose-feasibility, clinical-risk, synergy, production, delivery, or chassis conclusions.</li>
-<li>Universal claims that a target is empty, a fungal antagonist does not exist, or a whole material cannot act.</li>
-<li>Component or target causality inferred from a formula, extract, expression result, database association, or phenotype alone.</li>
-</ul>
-<p>The former Phase 6 script and outputs are removed from the live tree. Other legacy derived files remain evidence-retrieval aids only where they expose a source identifier or row; their ranks and narrative verdicts have no current authority. Git preserves the retired logic.</p>
-<h2 id="retained-reproducible-check">Retained reproducible check<a class="headerlink" href="#retained-reproducible-check" title="Permanent link">&para;</a></h2>
-<p>From this directory:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3<span class="w"> </span>scripts/scope_validate.py
-</code></pre></div>
-<p>The standard-library validator checks the current Phase 1 input structure and regenerates <code>outputs/scope-summary.md</code>. It does not reproduce the database pulls, later joins, rankings, or retired Phase 6.</p>
-<p><code>scripts/scope_validate.py</code> is the only runnable script retained in this directory. The old LOTUS pull/aggregation and target-mapping scripts are removed because their derived narratives are quarantined and their execution contract is not current.</p>
-<h2 id="retained-artifact-map">Retained artifact map<a class="headerlink" href="#retained-artifact-map" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>inputs/</code> records the bounded historical source, species, toxicity, and target scope.</li>
-<li><code>outputs/scope-summary.md</code> is the only currently regenerated output.</li>
-<li>Other top-level <code>outputs/phase-*</code> files are historical snapshots and lead inventories.</li>
-<li>Raw source captures remain unchanged in <code>outputs/_chembl_raw/</code>, <code>outputs/_lotus_raw/</code>, <code>outputs/_npatlas_raw/</code>, and <code>outputs/_knapsack_raw/</code>.</li>
-<li>Historical lookup caches/intermediates remain unchanged in <code>outputs/_chembl_molecule_inchikey_cache.json</code>, <code>outputs/_knapsack_inchikey_cache.json</code>, and <code>outputs/_chokepoint_chembl_targets.json</code>.</li>
-</ul>
-<p>The unchanged raw captures preserve the retrieved source payloads. They are not evidence that any derived fungal provenance, target mapping, rank, or verdict is correct.</p>
-<h2 id="lead-rehydration-gate">Lead-rehydration gate<a class="headerlink" href="#lead-rehydration-gate" title="Permanent link">&para;</a></h2>
-<p>Before any row can support a current claim or experiment:</p>
-<ol>
-<li>verify exact material identity and producer/source provenance;</li>
-<li>inspect the primary record and preserve target or endpoint, effect polarity, substrate, assay, species, and compartment;</li>
-<li>distinguish direct function from binding, expression, prediction, or phenotype;</li>
-<li>measure or justify free parent and metabolite exposure in the proposed compartment;</li>
-<li>run mechanism-matched function with attribution, off-target, toxicity, barrier, and viability controls;</li>
-<li>compare sourcing and delivery only after the biological gate passes.</li>
-</ol>
-<p>A negative result kills only the tested material, exposure, endpoint, and route. It does not erase the source record or neighboring untested mechanisms.</p>
+<p>Nothing survives from COMP-014 itself as predictive or decision evidence.</p>
+<h2 id="hash-bound-retirement-record">Hash-bound retirement record<a class="headerlink" href="#hash-bound-retirement-record" title="Permanent link">&para;</a></h2>
+<p><a href="invalidation.json"><code>invalidation.json</code></a> binds every retired non-review file
+to Git commit <code>ff351189200354cecaf641be6603ba5c6b1f549f</code> by byte count and
+SHA-256 and records the exact invalidated and surviving scopes.</p>
 <h2 id="current-evidence-home">Current evidence home<a class="headerlink" href="#current-evidence-home" title="Permanent link">&para;</a></h2>
-<p><a href="../../../medicinal-mushroom-compound-mapping-computational/">Medicinal mushroom compound mapping</a> states the current evidence and decision boundary.</p>
+<ul>
+<li><a href="../../../medicinal-mushroom-compound-mapping-computational/">Medicinal mushroom compound mapping — invalidated prior and research
+  rebuild</a></li>
+</ul>
 
 
 
