@@ -459,20 +459,21 @@ verdict, evidence-cell comparison, or H-AN-02 adjudication survives.
 
 ---
 
-### comp-016 — T × Intestinal ABCG2 Suppression Evidence Mining — WEAK / UNCONFIRMED (2026-05-07)
+### comp-016 — T × Intestinal ABCG2 Suppression Evidence Mining — HISTORICAL BOUNDED SCAN (2026-05-07)
 
 **Question:** Does primary literature support the load-bearing claim that androgens directly suppress intestinal ABCG2 expression at platform-relevant magnitudes?
 
-**Verdict:** **WEAK / UNCONFIRMED (provisional; abstract-tier).** Of 17 studies, zero primary studies demonstrate androgen-driven intestinal ABCG2 suppression directly. 1 supports broader sex-dimorphism (Hoque 2020 Q140K mouse); 1 supports female-positive arm (Yu 2021, estradiol ↑ ABCG2); 1 directly contradicts (Klyushova 2023, T INDUCES via PXR/FXR).
+**Verdict:** **Direct androgen suppression was not demonstrated in the bounded scan.** This narrow negative finding survives. COMP-016 did not resolve healthy-human intestinal sex stratification, and its ABCG2 attribution and magnitude claims are superseded by the primary-verified COMP-017 correction.
 
 **Key findings:**
-- Intestinal compartment IS sex-dimorphic, but driver is **estradiol POSITIVE on female side**, not **androgen NEGATIVE on male side**.
-- The platform thesis should not assume an androgen-driven ABCG2 ceiling or absent estradiol-positive signaling in healthy male physiology; hormone effects are context-dependent and require direct transport measurement.
-- Sakamoto 2018 ADT cohort (−0.66 mg/dL at 6 months, n=489) consistent with URAT1-only renal mechanism; no direct AR-ARE on ABCG2 promoter identified.
+- The scan did not identify a primary in-vivo demonstration of testosterone or androgen-receptor suppression of intestinal ABCG2.
+- The old Hoque 53%/88% intestinal values were search-summary tier and are not supported by the primary article or source-data workbook; use the 78% jejunal versus 44% renal Western comparison.
+- The 2021 paper is by Liu et al.; the 2023 Caco-2 paper is by Slepnev et al., not Klyushova et al.
+- Healthy-human baseline magnitude and functional urate-flux response remain open.
 
-**Informs:** [androgen-urate-axis](./androgen-urate-axis.md) · [abcg2-modulators](./abcg2-modulators.md) · [gut-lumen-sink](./gut-lumen-sink.md) · [koji-endgame-strain](./koji-endgame-strain.md) · [cross-validation](./cross-validation.md)
+**Informs:** [current ABCG2 evidence boundary](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md) · [androgen-urate-axis](./androgen-urate-axis.md) · [abcg2-modulators](./abcg2-modulators.md)
 
-**Detail:** [interpretive](./t-abcg2-suppression-evidence-mining-computational.md) · [experiments/](./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/) · Complete (full-text follow-up → comp-017)
+**Detail:** [historical bounded-scan interpretation](./t-abcg2-suppression-evidence-mining-computational.md) · [preserved COMP-016 artifact](./etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/) · [current correction in COMP-017](./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/)
 
 ---
 
@@ -493,21 +494,21 @@ verdict, evidence-cell comparison, or H-AN-02 adjudication survives.
 
 ---
 
-### comp-017 — Intestinal ABCG2 Sex-Dimorphism Public-Data Mining + 4-Paper Full-Text Re-Read — NULL OR NEAR-NULL at healthy baseline (2026-05-07)
+### comp-017 — Intestinal ABCG2 Sex-Difference Evidence Audit — DIRECT HUMAN BASELINE UNRESOLVED (corrected 2026-07-27)
 
-**Question:** What do GTEx/HPA and four primary papers show about sex-stratified intestinal ABCG2? This was originally framed against H07 sub-claims 1 and 3; [H07](./hypotheses/H07-clomid-intestinal-er-antagonism.md) is now retracted, while the transporter result remains relevant.
+**Question:** Do healthy-human intestinal ABCG2 distributions differ by at least 1.5-fold between sexes, and what source-bounded conclusions survive from the Hoque, Liu, Slepnev, and MacLean records?
 
-**Verdict:** **NULL OR NEAR-NULL SEX-DIMORPHISM at healthy baseline (provisional).** Sex-dimorphism emerges only under **disease-state genetic stress** (Q140K LOF, Hoque) or **strong pharmacological perturbation** (100 µM E2, Yu; 1–100 µM sex hormones, Klyushova). Healthy-baseline literature converges on null.
+**Verdict:** **DIRECT HEALTHY-HUMAN BASELINE UNRESOLVED.** No sex-stratified GTEx intestinal distribution or HPA intestinal protein values were extracted, so the prespecified 1.5-fold threshold was not tested. Healthy-rat, Q140K mouse disease-state, and nominal Caco-2 exposure results remain separate evidence contexts.
 
 **Key findings:**
-- Hoque 2020 correction: Western-jejunum 78% : Western-kidney 44% (~1.8×), NOT comp-016's 88%:44%. Female FEUA unchanged (p=0.6263) — strong null on female protection.
-- Yu 2021: Caco-2 active at 100 µM EB (5–6 orders above physiological serum E2); mechanism real at strong-pharmacological tier; physiological magnitude unestablished.
-- Klyushova 2023: T/E2/P at 1/10/100 µM all increased ABCG2 via PXR/FXR rather than AR; this argues against direct AR-mediated intestinal ABCG2 repression at those supraphysiological exposures.
-- Hosoyamada 2010 showed: T affects renal URAT1 mRNA only (protein unchanged); actual androgen-responsive renal urate transporter is **Smct1**, GLUT9 attenuated.
+- Hoque et al. 2020: 78% jejunal versus 44% renal Western-blot reduction in Q140K+/+ mice; the article separately reports reduced jejunal immunofluorescence signal. The historical 53%/88% sentence is not primary-source text.
+- Liu et al. 2021: nominal 100 µM estradiol benzoate increased Caco-2 ABCG2 mRNA at 48 hours without a dose-dependent response (**In Vitro**); physiological magnitude is not established.
+- Slepnev et al. 2023: nominal 1, 10, and 100 µM testosterone, estradiol, and progesterone increased Caco-2 ABCG2 (**In Vitro**, official English abstract tier). PXR/FXR inhibitor conditions do not directly exclude androgen-receptor involvement, and no serum multiplier is justified.
+- MacLean et al. 2008: no sex-specific difference reported in a healthy-rat intestinal transporter scan (**Animal Model**); this does not establish a human null.
 
-**Informs:** [retracted H07](./hypotheses/H07-clomid-intestinal-er-antagonism.md) · [t-abcg2-suppression-evidence-mining-computational](./t-abcg2-suppression-evidence-mining-computational.md) · [androgen-urate-axis](./androgen-urate-axis.md) · [abcg2-modulators §1](./abcg2-modulators.md) · [gut-lumen-sink](./gut-lumen-sink.md)
+**Informs:** [current evidence boundary](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md) · [historical COMP-016 scan](./t-abcg2-suppression-evidence-mining-computational.md) · [androgen-urate-axis](./androgen-urate-axis.md) · [abcg2-modulators](./abcg2-modulators.md)
 
-**Detail:** [interpretive](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md) · [experiments/](./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/) · Complete (provisional; sandbox-blocked GTEx/HPA direct; Paperclip line-anchored re-run recommended)
+**Detail:** [evidence boundary](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md) · [exact-snapshot artifact, outputs, and reviews](./etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/)
 
 ---
 

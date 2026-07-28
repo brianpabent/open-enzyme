@@ -1,35 +1,27 @@
 ACTION_REQUIRED: no
-REVIEWED_SNAPSHOT: 67973321f14f11c0d99b44e40d0add38ba2aa8a8d9733d5bf3c03077f8140595
+REVIEWED_SNAPSHOT: 6f736ebed847d07b977cb6a0e46b9e03e8ffc0c5230e9bc2e044c2678ec10138
 
-# Independent comp review — COMP-017 maintenance
+# Independent post-run review — comp-017
 
-**Reviewer:** `/root/post_review_lbp_complement_cascade`
+Reviewer: Claude Opus (`opus` alias, maximum effort) via a fresh isolated CLI context with read-only repository access, no session persistence, no prior review, and no preferred verdict. The reviewer inspected all 17 manifest entries: six design files, two generated outputs, and nine proposed updates.
 
-The post-run manifest matches the reviewed snapshot, and the Gate 1 manifest
-recomputes to
-`5a731dea92173350d274538e51c29bbc611d2a2659731d9119badd43fcf635ad`.
+## Verdict
 
-All six design inputs are byte-identical to Gate 1. Compared with the Gate 1
-output snapshot:
+Clean. The artifact correctly refuses a quantitative healthy-human verdict because no sex-stratified GTEx/HPA intestinal values were extracted. It keeps healthy-rat, Q140K mouse disease-state, and nominal Caco-2 findings in separate evidence contexts and does not upgrade them into a human baseline.
 
-- `outputs/results.json` changed by exactly one rationale string;
-- `outputs/summary.md` changed by exactly the corresponding rendered line;
-- the core sex-dimorphism verdict and every other result remained unchanged.
+## Fidelity findings
 
-The JSON and Markdown outputs agree that COMP-017 does not select an
-intervention or stack. It supports avoiding stratification based on assumed
-AR- or PI3K/Akt-mediated dominance, while cordycepin, each exact *Eurycoma*
-material, and butyrate require independent material-identity, exposure, and
-functional evidence.
+- `analyze.py` fails closed on missing direct-human inputs and schema drift; the reviewer manually traced its deterministic outputs.
+- `results.json`, `summary.md`, the canonical evidence home, and every proposed dependent match the unresolved verdict.
+- The propagated pages preserve the 78% jejunal versus 44% renal Western comparison, correct the Liu and Slepnev attributions, and do not claim that androgen-receptor involvement was excluded.
+- No proposed page reasserts a healthy-human null, a hard male intestinal-ABCG2 ceiling, a clomiphene mechanism, a serum-testosterone multiplier, or genotype-conditioned luminal-uricase response ordering.
+- COMP-016 remains a historical bounded scan; only its attribution, magnitude, and healthy-baseline interpretations are superseded.
+- The genotype × hormone × inflammation lead is preserved as a properly sourced Research Conjecture with an explicit no-direct-evidence boundary and a discriminating experiment.
 
-The computational index remains bounded, the canonical COMP page preserves
-the direct-human-data limitation, and H07 remains retracted. No reviewed
-active surface uses COMP-017 to choose cordycepin, an *Eurycoma* material,
-butyrate, or a stack.
+## Required actions
 
-A pre-existing non-load-bearing presentation gap remains: P01's top-level
-abstract-versus-full-text note is not copied into one nested generated field.
-Its quantitative findings and interpretation remain present, and this
-maintenance neither introduced nor altered the issue.
+None.
 
-No further action is required.
+## Review limits
+
+The reviewer did not execute the code and could not recompute hashes with its read-only tool set; the mechanical lifecycle check owns those verifications. It independently checked Hoque against Europe PMC, including the absence of the old 53%/88% claim, but did not independently re-fetch Liu, Slepnev, or MacLean. Their primary/full-text versus abstract-only verification tiers remain explicit in the artifact and none drives the human-baseline verdict.

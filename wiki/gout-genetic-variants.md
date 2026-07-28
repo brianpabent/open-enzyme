@@ -230,7 +230,7 @@ These questions lack sufficient evidence for a current stratification verdict.
 - [gout-pathophysiology.md](./gout-pathophysiology.md) — the full cascade in which these variants act (§"Genomics and GWAS" is the partner section)
 - [abcg2-modulators.md](./abcg2-modulators.md) — Q141K rescue lever stack; §6 is the canonical Q141K dossier
 - [uricase-abcg2-genotype-stratification-computational.md](./uricase-abcg2-genotype-stratification-computational.md) — comp-019 interpretation; its unconditional flat-dose classification is not robust to COMP-044's tested diagnostics
-- [intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md) — comp-017 intestinal-ABCG2 sex-dimorphism scan
+- [intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md](./intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md) — COMP-017 intestinal-ABCG2 evidence boundary
 - [androgen-urate-axis.md](./androgen-urate-axis.md) — sex-hormone × ABCG2 axis (interacts with Q141K stratification)
 - [uricase.md](./uricase.md) — UOX pseudogene background; ancestral-sequence reconstruction context
 - [crispr-uricase.md](./crispr-uricase.md) — UOX restoration via CRISPR; ancestral sequence reconstruction (Georgia State / Gaucher lab 2025)

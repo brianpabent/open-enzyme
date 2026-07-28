@@ -1,29 +1,27 @@
 PRE_RUN_GATE: GO
-REVIEWED_SNAPSHOT: 5a731dea92173350d274538e51c29bbc611d2a2659731d9119badd43fcf635ad
+REVIEWED_SNAPSHOT: b6d68757d7b9aca6ac97608f27497c2ec7672ba6365d1a5c23c714d67d48f6cf
 
-# Adversarial pre-run review — COMP-017 maintenance
+# Adversarial pre-run review — comp-017
 
-**Reviewer:** `/root/comp044_pre_rebind`
+Reviewer: Claude Opus 4.8 via a fresh isolated CLI context with no tools, session persistence, prior review, or preferred verdict. The exact package contained the manifest, all six design files, and both historical outputs as prior-output baselines.
 
-The manifest digest and every bound file matched the six-file design snapshot
-and two prior-output baselines.
+## Verdict
 
-The maintenance rerun may proceed. The only executable change replaces one
-hard-coded Sub-claim 4 rationale string. README changes clarify the current
-authoring boundary and H07's retracted status. Inputs, provenance, aggregation
-logic, thresholds, decision mapping, output construction, and all other result
-fields are unchanged. The changed rationale cannot affect
-`assemble_overall_verdict`, so the core sex-dimorphism verdict cannot change.
+The corrective audit may execute unchanged. The design deterministically refuses the unanswerable direct-human question, fails closed on input/schema drift, keeps Animal Model and In Vitro evidence from substituting for healthy-human data, and removes the historical attribution, magnitude, exposure, and interpretation errors. No design, code, input, rule, sensitivity, or output-contract change is required.
 
-The authorized correction is narrow:
+## Load-bearing findings
 
-- H07 remains retracted.
-- COMP-017 selects no intervention or stack.
-- Cordycepin, each exact *Eurycoma* material, and butyrate require independent
-  material-identity, exposure, and functional evidence.
+- Missing sex-stratified GTEx and HPA intestinal values correctly force `DIRECT_HUMAN_BASELINE_UNRESOLVED`; the 1.5-fold threshold is not tested.
+- The historical GTEx HTTP 403/`host_not_allowed` trace is preserved as an operational explanation, not biological evidence.
+- Hoque's primary-verified like-for-like Western comparison is 78% jejunal versus 44% renal reduction in the Q140K mouse model.
+- The old 53%/88% sentence is correctly excluded: the article-representation audit and publisher source-data workbook do not support it, and repository provenance shows that it entered COMP-016 at explicitly unverified search-summary tier before historical COMP-017 mislabeled it as verbatim.
+- Slepnev, Liu, and MacLean records retain their declared verification tiers and do not support physiological hormone magnitude, clomiphene effects, a pan-male rule, or Q141K-conditioned gut-uricase response ordering.
+- Planned downstream edits are limited to correction/status plus links to the single evidence home.
 
-The historical outputs contain the stale recommendation. A rerun should change
-only that rationale in `results.json` and its rendered copy in `summary.md`;
-all other fields and the core verdict should remain identical.
+## Reviewer limitation and receipt correction
 
-No required action remains before execution.
+The reviewer performed static inspection and did not execute the code, recompute hashes, or retrieve sources. Its narrative incorrectly stated that `inputs/provenance.md` was absent from the manifest and counted five design files. The exact manifest contains six design entries and includes `inputs/provenance.md` at SHA-256 `25103445173b6a9d9c4d362a42328feaee0256f069dc7254de3aee8742787834`. This clerical review-text error does not alter the `GO` verdict or create a design gap.
+
+## Required actions before execution
+
+None.
