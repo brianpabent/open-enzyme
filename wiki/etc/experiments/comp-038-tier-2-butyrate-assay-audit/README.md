@@ -57,11 +57,45 @@ retracted rather than inferred.
 
 ## Reproduction and maintenance
 
-The legacy `analyze.py` can inspect or regenerate the 2026-05-20 discovery
-workflow, but it cannot reproduce the later primary-source verification and
-must not be used to overwrite the corrected current outputs. Future literature
-updates route through the repository's `lit-scan` workflow with a compact
-method receipt; they do not append narratives to this artifact.
+The default `python3 analyze.py` command is a read-only required-file check. It
+requires each expected output to be a regular file: the discovery snapshot,
+synthesis packet, current structured result, current summary, and the
+controlling 2026-07-24 primary-source-verification JSON. Exact content
+integrity is enforced by the SHA-256-bound COMP lifecycle command below.
+
+The legacy discovery modes cannot reproduce the later primary-source
+verification. `--prepare-codex` and `--run-openrouter` therefore refuse to
+proceed unless they are paired with `--regenerate-current-outputs`. That
+explicit flag prevents accidental replacement; it does not make regenerated
+outputs eligible without a new reviewed lifecycle. The bounded repair design
+is recorded in
+[`inputs/maintenance-repair-plan-2026-07-28.md`](./inputs/maintenance-repair-plan-2026-07-28.md).
+
+Future literature updates route through the repository's `lit-scan` workflow
+with a compact method receipt; they do not append narratives to this artifact.
+
+The bounded maintenance checks use CPython 3.14.5 and the Python standard
+library plus the manifest-bound repository helper
+`wiki/etc/experiments/lib/agentic_lit_synthesis.py`. They do not require a
+random seed, environment secret, network service, or model endpoint because
+the reviewed commands must stop before those paths. From this directory:
+
+```bash
+python3 -m unittest -v test_maintenance.py
+python3 analyze.py
+python3 analyze.py
+```
+
+Each command must exit 0. From the repository root,
+`python3 -m unittest discover -s tests` must also exit 0. The exact no-mutation
+check is `git diff --exit-code -- wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs`
+before and after the two default runs.
+
+Authorized regeneration is intentionally outside this maintenance run. Before
+any future use, the outputs directory must match a committed, reviewed
+snapshot. If an authorized regeneration fails after a partial write, discard
+the entire outputs-directory working-tree delta and restore that committed
+snapshot before retrying; never retain or interpret a mixed output set.
 
 Current artifact integrity is checked through the exact-snapshot COMP
 lifecycle:
@@ -77,8 +111,10 @@ python3 scripts/comp-review-manifest.py check-lifecycle \
 comp-038-tier-2-butyrate-assay-audit/
 ├── README.md
 ├── analyze.py
+├── test_maintenance.py
 ├── inputs/
 │   ├── model-config.json
+│   ├── maintenance-repair-plan-2026-07-28.md
 │   ├── primary-source-verification-plan-2026-07-24.md
 │   ├── provenance.md
 │   └── query-strategy.json
