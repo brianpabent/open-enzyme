@@ -23,10 +23,15 @@ from synthesis_normalize import NormalizationError, verify_manifest
 REGISTRY_PATH = Path("logs/sweep-state.json")
 SCHEMA_VERSION = 2
 ELIGIBILITY = {"eligible", "eligible_with_warning", "blocked"}
+LEGACY_SYNTHESIS_INTEGRITY_FAILURE = "legacy-synthesis-cursor-unverified"
 
 
 def _now_iso() -> str:
     return datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+
+
+def _synthesis_cursor_requires_full_recovery(cursor: dict) -> bool:
+    return cursor.get("integrity_status") != "verified"
 
 
 def _empty_registry() -> dict:
@@ -60,6 +65,13 @@ def migrate_v1_to_v2(data: dict) -> dict:
             "result_commit": old.get("review_commit"),
             "sweep_id": old.get("sweep_id"),
             "_migrated_from_v1": True,
+            "integrity_status": (
+                "verified"
+                if old.get("source_synthesis_sha256")
+                and old.get("canonical_items_sha256")
+                and old.get("sweep_id")
+                else "migrated_cursor_unverified"
+            ),
         }
         # The old three-pass workflow propagated the same semantic batch before
         # synthesis, so the old coverage snapshot is the only honest initial
@@ -84,6 +96,17 @@ def migrate_v1_to_v2(data: dict) -> dict:
                 "recorded_at": run.get("completed_at"),
                 "summary": run.get("error_summary", "Migrated unresolved v1 failure"),
             })
+    if synthesis and synthesis["integrity_status"] != "verified":
+        failures.append({
+            "id": LEGACY_SYNTHESIS_INTEGRITY_FAILURE,
+            "lane": "synthesis",
+            "recorded_at": synthesis.get("timestamp"),
+            "summary": (
+                "Migrated synthesis cursor lacks a complete corpus/coverage receipt. "
+                "The next manual synthesis must recover from the full scientific source set."
+            ),
+            "paths": ["logs/sweep-state.json"],
+        })
     return {
         "schema_version": SCHEMA_VERSION,
         "last_successful_propagation": propagation,
@@ -124,6 +147,24 @@ def _git_changed_paths(base: str, patterns: list[str]) -> list[str]:
     command = ["git", "diff", "--name-only", base, "HEAD", "--", *patterns]
     result = subprocess.run(command, capture_output=True, text=True, check=True)
     return sorted({p for p in result.stdout.splitlines() if p})
+
+
+def _all_synthesis_paths() -> list[str]:
+    """Return the complete tracked scientific source set for cursor recovery."""
+    command = [
+        "git",
+        "ls-files",
+        "--",
+        "wiki/*.md",
+        "wiki/hypotheses/*.md",
+        "wiki/etc/experiments/comp-*/**",
+    ]
+    result = subprocess.run(command, capture_output=True, text=True, check=True)
+    return sorted({
+        path
+        for path in result.stdout.splitlines()
+        if path and "/reviews/" not in path
+    })
 
 
 def _blocked_paths(data: dict) -> set[str]:
@@ -195,11 +236,7 @@ def _pending_propagation_paths(data: dict) -> list[str]:
             [
                 "wiki/*.md",
                 "wiki/hypotheses/*.md",
-                "wiki/etc/experiments/comp-*/*.md",
-                "wiki/etc/experiments/comp-*/*/*.md",
-                "wiki/etc/experiments/comp-*/*/*/*.md",
-                "wiki/etc/experiments/comp-*/quarantine.json",
-                "wiki/etc/experiments/comp-*/invalidation.json",
+                "wiki/etc/experiments/comp-*/**",
             ],
         )
         if "/reviews/" not in path
@@ -240,10 +277,18 @@ def cmd_pending_propagation_paths(args: argparse.Namespace) -> None:
 
 def cmd_pending_synthesis_paths(_args: argparse.Namespace) -> None:
     data = read_registry()
-    base = _cursor(data, "synthesis")
+    cursor = data.get("last_successful_synthesis") or {}
+    base = cursor.get("coverage_commit")
     if not base:
         sys.exit("sweep-state.py: no synthesis cursor recorded")
-    for path in _git_changed_paths(base, ["wiki/*.md", "wiki/hypotheses/*.md", "wiki/etc/experiments/comp-*/**"]):
+    if _synthesis_cursor_requires_full_recovery(cursor):
+        paths = _all_synthesis_paths()
+    else:
+        paths = _git_changed_paths(
+            base,
+            ["wiki/*.md", "wiki/hypotheses/*.md", "wiki/etc/experiments/comp-*/**"],
+        )
+    for path in paths:
         if "/reviews/" in path:
             continue
         print(path)
@@ -358,7 +403,13 @@ def cmd_update_success(args: argparse.Namespace) -> None:
         "cost_usd": getattr(args, "cost_usd", 0.0),
         "result_commit": args.commit,
         "sweep_id": manifest["sweep_id"],
+        "integrity_status": "verified",
     }
+    data["unresolved_failures"] = [
+        failure
+        for failure in data.get("unresolved_failures", [])
+        if failure.get("id") != LEGACY_SYNTHESIS_INTEGRITY_FAILURE
+    ]
     write_registry(data)
     print(f"sweep-state.py: synthesis coverage advanced to {coverage[:8]}")
 
@@ -392,6 +443,11 @@ def cmd_should_sweep(_args: argparse.Namespace) -> None:
     if not base:
         print("run")
         return
+    if _synthesis_cursor_requires_full_recovery(
+        data.get("last_successful_synthesis") or {}
+    ):
+        print("run")
+        return
     print("run" if _git_changed_paths(base, ["wiki/*.md", "wiki/hypotheses/*.md"]) else "skip")
 
 
@@ -410,6 +466,7 @@ def cmd_init(args: argparse.Namespace) -> None:
         "coverage_commit": head, "corpus_sha256": None, "timestamp": now,
         "trigger_paths": [], "coverage_receipt_sha256": None,
         "queue_items_emitted": 0, "cost_usd": 0.0, "result_commit": head,
+        "integrity_status": "initial_cursor_unverified",
     }
     write_registry(data)
 

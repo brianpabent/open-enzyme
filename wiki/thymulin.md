@@ -20,6 +20,7 @@ sources:
   - "PMID:15003367"
   - "PMID:16617301"
   - "PMID:8353362"
+  - "Kanemaru et al. 2026 — Thymulin suppresses age-associated myeloid inflammation in defined mouse and human-cell systems (Nature Communications 17:6534; DOI 10.1038/s41467-026-75383-0)"
 tags:
   - thymulin
   - peptides
@@ -28,12 +29,12 @@ tags:
   - NLRP3
   - inflammaging
   - myeloid
-status: published
+status: research_conjecture
 ---
 
 # Thymulin
 
-Thymulin is a zinc-dependent thymic nonapeptide whose **gout-relevant weakness it might exploit is NF-κB priming (Chokepoint 1a)** — the transcriptional arm that produces pro-IL-1β and NLRP3 itself. A 2026 *Nature Communications* study is the first to show, in macrophages and with human cells, that thymulin inhibits canonical NF-κB signalling and suppresses the exact cytokine set (IL-1α, IL-1β, IL-6, TNF-α) that drives the gout flare. The result was obtained in an aging/cancer-immunology context, not a gout model, so the gout application is mechanistic extrapolation at the priming node — but it is now anchored by direct macrophage and human-cell evidence rather than inference from adjacent inflammation models.
+Thymulin is a zinc-dependent thymic nonapeptide whose **gout-relevant weakness it might exploit is NF-κB priming (Chokepoint 1a)** — the transcriptional arm that produces pro-IL-1β and NLRP3 itself. Within the current source set, a 2026 *Nature Communications* study reports that thymulin inhibited canonical NF-κB signaling and lowered IL-1α, IL-1β, IL-6, and TNF-α in defined macrophage, mouse, and human-cell systems. The work used aging/cancer-immunology contexts rather than an MSU-gout model, so the gout application remains a mechanistic extrapolation at the priming node.
 
 **Sequence:** H-Pyr-Ala-Lys-Ser-Gln-Gly-Gly-Ser-Asn-OH (pyroglutamyl nonapeptide). Biological activity requires bound zinc; the zinc-free (apo) peptide is inactive, and circulating thymulin activity declines with age. (In Vitro; Kanemaru et al. 2026, *Nat Commun* 17:6534, [DOI 10.1038/s41467-026-75383-0](https://doi.org/10.1038/s41467-026-75383-0))
 
@@ -43,7 +44,7 @@ Thymulin is a zinc-dependent thymic nonapeptide whose **gout-relevant weakness i
 
 In aged bone-marrow-derived macrophages (BMDMs), thymulin treatment **inhibited NF-κB p65 DNA-binding activity in nuclear extracts** and **decreased LPS-induced phosphorylation of IκBα** — i.e. it holds NF-κB inactive in the cytoplasm rather than acting downstream. A gain/loss-of-function luciferase reporter closed the loop: thymulin suppressed LPS-induced NF-κB-dependent reporter activity, and **mutation of the NF-κB binding site abolished the effect**, establishing that the cytokine suppression runs specifically through NF-κB. (In Vitro; Kanemaru et al. 2026, Fig. 6i–k)
 
-This places thymulin at **CP1a** alongside [KPV](./kpv-peptide.md) and TB-500 in the [NLRP3 Exploit Map](./nlrp3-exploit-map.md). What distinguishes the thymulin evidence from most CP1a entries is that the NF-κB block is demonstrated directly in the gout effector cell (the macrophage), with a binding-site-mutation control, rather than inferred from a functional cytokine readout alone.
+The cited thymulin result motivates a CP1a experiment in a gout-relevant macrophage system. [KPV](./kpv-peptide.md) is not an equivalent CP1a anchor: it has PepT1-related uptake and an NF-κB reporter effect in named non-MSU cells, with direct MSU activity still untested. Compare exact materials only after their single-agent effects and mechanisms reproduce in the same assay.
 
 ### Pro-inflammatory cytokine suppression (output node)
 
@@ -51,7 +52,7 @@ Thymulin lowered IL-1α, IL-1β, IL-6, and TNF-α across three systems: aged BMD
 
 ### Age-dependence
 
-The anti-inflammatory effect was present in aged animals and essentially absent in young ones, tracking the age-related decline in endogenous thymulin. Aged myeloid cells in both mice and humans upregulate inflammasome components (NLRP3, PYCARD/ASC) as part of their pro-inflammatory signature (single-cell, Fig. 2g). Because gout incidence rises steeply with age, an intervention whose activity is restricted to aged myeloid cells is demographically aligned with the target population rather than a liability. (Animal Model + human single-cell; Kanemaru et al. 2026)
+The reported anti-inflammatory effect differed between aged and young experimental groups and was interpreted alongside age-related thymulin changes. Aged myeloid cells in the cited mouse and human datasets showed altered inflammatory programs that included NLRP3 and PYCARD/ASC (single-cell, Fig. 2g). Whether age modifies thymulin response in gout cannot be inferred from that adjacent context and requires a prespecified age-stratified MSU experiment. (**Animal Model + human observational single-cell data**; Kanemaru et al. 2026.)
 
 ## What the 2026 paper does *not* establish for gout
 
@@ -61,21 +62,21 @@ The anti-inflammatory effect was present in aged animals and essentially absent 
 
 ## Sourcing & Delivery
 
-Thymulin is a nine-residue peptide requiring stoichiometric zinc for activity; native circulating half-life is short. In the 2026 study, active dosing was **thymulin acetate 1.5 mg/kg co-administered with an equimolar concentration of ZnCl₂, intraperitoneally, daily, continued for 4 weeks and tolerated** (control animals received ZnCl₂ alone). (Animal Model; Kanemaru et al. 2026, Methods) The zinc-loading requirement is thus a solved formulation detail in the preclinical setting rather than an open problem. A metabolically stabilized synthetic analog (metFTS) has been described in the earlier thymulin literature and is the more plausible starting point than the native peptide for any translational route; oral and gut-luminal delivery of a zinc-dependent nonapeptide has not been demonstrated and would be the delivery gate for any Open Enzyme fermentation or barrier-restricted framing.
+Thymulin is a nine-residue peptide requiring zinc for activity. The 2026 study tested thymulin acetate with equimolar ZnCl₂ by intraperitoneal administration in mice; that exact formulation and route do not establish another route, human exposure, or a gout regimen (Animal Model; Kanemaru et al. 2026, Methods). An earlier rodent study used an expression vector encoding met-FTS to restore circulating thymulin (Animal Model; PMID 16617301). These positive route records leave oral, mucosal, depot, and other delivery hypotheses open rather than resolved.
 
-**Route evidence — injected or gene-delivered only.** Every administration route in the indexed literature is parenteral (subcutaneous, intraperitoneal) or gene/vector delivery: a synthetic DNA sequence encoding met-FTS was cloned into expression vectors to restore circulating thymulin long-term in thymectomized rodents (In Vitro / Animal Model; PMID 16617301). **No intranasal, oral, or other mucosal thymulin study exists** (2026-07 PubMed route scan). Nasal delivery is pharmacologically unpromising for this molecule specifically: it is a naked linear nonapeptide that must retain stoichiometric zinc in the active complex across a peptidase-rich mucosa, and the therapeutic target is systemic (circulating and tissue myeloid cells), which demands real plasma exposure — the hardest bar for the nasal route. The credible way to reduce injection frequency is therefore pharmacokinetic, not a route switch: a long-acting/depot formulation of the stabilized metFTS analog (dose-sparing the way canakinumab's long half-life covers months), or the single-administration gene/vector approach at the far end. (Mechanistic Extrapolation for the route assessment; Animal Model for gene-delivery precedent.)
+Any non-injected route must demonstrate intact zinc-bound peptide exposure in the intended compartment, retained activity, and a defined safety boundary. The current retained sources do not justify choosing among those routes.
 
 ## Measurement & Biomarker
 
-There is **no routine clinical assay** for thymulin; published levels come from a research **rosette-inhibition bioassay**, not a standard immunoassay. Because activity is zinc-dependent, the peptide exists as a zinc-bound active form (ZnFTS) and a zinc-free inactive form (FTS), and a total-peptide number does not report the active fraction — the two dissociate in disease (e.g. in advanced HIV the active zinc-bound form falls while the inactive form rises; In Vitro / clinical, PMID 10801955). The practical orderable proxy is **serum zinc** (with copper/ceruloplasmin to watch the ratio): zinc is the rate-limiter on thymulin activity and is directly correctable. Thymulin declines in aging, zinc deficiency, and several endocrine states (Animal Model + clinical; reviewed PMID 15003367).
+The cited human work used a research rosette-inhibition bioassay and distinguished zinc-bound active thymulin from inactive peptide (PMID 10801955; **Human observational evidence**). A total-peptide measurement would not establish the active fraction. Zinc measurements are relevant covariates but cannot attribute an inflammatory phenotype specifically to thymulin.
 
-**Documented thymulin levels in gout patients: none.** A direct PubMed search for thymulin × gout/hyperuricemia/uric-acid/urate returns zero results (2026-07). The deficiency-in-gout premise is inferential (gout is age-associated; thymulin declines with age; aged myeloid cells are thymulin's site of action per Kanemaru 2026) and **unmeasured**. This motivates a low-cost observational companion to the [§1.44 (THY-1)](./validation-experiments.md#144-thymulin--msu--nlrp3-in-aged-macrophages-thy-1--age-stratified-priming-to-flare-test) interventional gate: **serum active-thymulin (bioassay) + zinc in gout patients vs. age-matched controls** — a measurement study, no intervention, that would test whether gout patients are actually thymulin- or zinc-deficient before any reconstitution hypothesis is pursued.
+The current page has no source-verified measurement of active thymulin in a gout cohort. That is a corpus-evidence boundary, not a universal literature-absence claim. A low-cost observational companion to [§1.44 (THY-1)](./validation-experiments.md#144-thymulin--msu--nlrp3-in-aged-macrophages-thy-1--age-stratified-priming-to-flare-test) would compare active-thymulin bioassay and zinc measurements in a prespecified gout cohort and age-matched controls before treating deficiency as a disease premise.
 
 ## Zinc-as-activator hypothesis
 
-Because thymulin is inactive without bound zinc, functional thymulin deficiency has two distinct causes with different interventions: **insufficient peptide** (the age-driven case, requiring peptide replacement) versus **sufficient peptide but insufficient zinc to activate it** (accumulated inactive FTS, correctable with zinc alone). In the second case the "therapy" is not a synthetic peptide but **zinc repletion, which reconstitutes the active ZnFTS complex from endogenous peptide** — cheaper, safer, and already available. This is consistent with zinc's documented role in thymulin activity and immune function in the elderly (clinical/review; PMID 8353362, 15003367).
+Because thymulin is inactive without bound zinc, low measured activity could reflect insufficient peptide, insufficient zinc binding, or both. The cited evidence does not establish which state, if any, occurs in gout or whether changing zinc exposure would move a gout endpoint.
 
-Boundaries on the hypothesis: (1) it is contingent on a **measured** zinc deficiency — repletion above sufficiency does not raise active thymulin and carries copper-depletion risk; (2) any anti-inflammatory benefit of repletion cannot be cleanly attributed to thymulin versus zinc's independent immune/antioxidant roles, so this is a permissive-cofactor / adjunct hypothesis, not a validated standalone mechanism; (3) chronic zinc requires copper/ceruloplasmin monitoring. Evidence tier: **Mechanistic Extrapolation** for the gout-specific claim (no gout data), resting on established In Vitro zinc-dependence of thymulin activity.
+The gout-specific zinc–thymulin connection remains a **Mechanistic Extrapolation**. A discriminating study must measure baseline peptide, active zinc-bound thymulin, zinc status, and the exact inflammatory endpoint; zinc's independent immune effects otherwise prevent attribution.
 
 ## Evidence Level
 
@@ -96,7 +97,7 @@ The single experiment that would advance or kill the gout hypothesis: **aged hum
 - [NLRP3 Inflammasome](./nlrp3-inflammasome.md) — the cascade and chokepoint vocabulary
 - [NLRP3 Exploit Map](./nlrp3-exploit-map.md) — CP1a NF-κB priming node and full compound catalog
 - [Peptides & Gout Addendum](./peptide-gout-addendum.md) — comparator peptides (KPV, TB-500, BPC-157)
-- [KPV Tripeptide](./kpv-peptide.md) — the closest CP1a peptide analog
+- [KPV Tripeptide](./kpv-peptide.md) — separate PepT1/priming conjecture; not a validated CP1a analog
 
 ---
 

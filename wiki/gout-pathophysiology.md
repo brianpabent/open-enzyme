@@ -2,7 +2,7 @@
 title: Gout Pathophysiology
 aliases: [gout-cascade, purine-metabolism, uric-acid-handling, inflammasome, urate-transporters, clinical-treatments]
 related: [nlrp3-inflammasome, fructose-connection, validation-experiments, supplements-stack, complement-c5a-gout, spm-resolution-pathway, tnfsf14-gout-target, androgen-urate-axis, abcg2-modulators, theaflavins, zileuton, medicinal-mushroom-compound-mapping-computational]
-sources: [gout-deep-dive.md, nlrp3-exploit-map.md, complement-c5a-gout.md, tnfsf14-gout-target.md, spm-resolution-pathway.md, androgen-urate-axis.md, abcg2-modulators.md, theaflavins.md, zileuton.md]
+sources: [gout-deep-dive.md, gout-genetic-variants.md, nlrp3-exploit-map.md, complement-c5a-gout.md, tnfsf14-gout-target.md, spm-resolution-pathway.md, androgen-urate-axis.md, abcg2-modulators.md, theaflavins.md, zileuton.md, "PMID 31578528", "PMID 41075270"]
 ---
 
 # Gout Pathophysiology
@@ -126,15 +126,18 @@ Loss of functional human UOX raises the background urate burden, but gout is not
 
 ### Normal Uric Acid Handling
 
-Approximately **70% of daily uric acid elimination happens through the kidneys**. The proximal tubule engages in a complex dance of filtration, reabsorption, and secretion involving multiple transporter proteins.
+Roughly **two-thirds of daily urate elimination is renal**, with the remaining
+nonrenal elimination occurring mainly through the intestine. The proportions
+vary across people and study methods. The proximal tubule engages in filtration,
+reabsorption, and secretion involving multiple transporter proteins.
 
 ### The Key Transporters
 
 | Transporter | Gene | Role | Status |
 |---|---|---|---|
-| **URAT1** | SLC22A12 | Reabsorbs uric acid from tubular lumen back into blood. The primary villain — reabsorbs ~90% of filtered urate. | Major drug target (probenecid, lesinurad, pozdeutinurad, dotinurad). **Long-horizon discovery-engine output:** kidney-tropic siRNA against URAT1 mRNA is a sequence-specific knockdown approach that avoids small-molecule reactive-metabolite mechanisms; gated on kidney-tropic conjugate delivery. See [sirna-urat1-modality.md](./sirna-urat1-modality.md). (**Mechanistic Extrapolation**.) |
+| **URAT1** | SLC22A12 | Reabsorbs urate from tubular lumen back into blood; rare loss of function causes renal hypouricemia and exposes a renal-safety boundary. | Established drug target. Lesinurad is a commercially withdrawn historical comparator; pozdeutinurad (AR882) remained investigational after Phase 3 completion as of 2026-07-27 (ClinicalTrials.gov NCT06439602 and NCT06846515). **Long-horizon discovery-engine output:** kidney-tropic siRNA against URAT1 mRNA is a sequence-specific knockdown hypothesis gated on kidney-tropic conjugate delivery and partial-suppression safety. See [sirna-urat1-modality.md](./sirna-urat1-modality.md). (**Mechanistic Extrapolation**.) |
 | **GLUT9** | SLC2A9 | High-capacity urate transporter with renal isoform-specific roles in reabsorption. Rare loss-of-function causes renal hypouricemia through excessive urate loss rather than protecting against fructose-driven urate production. | Major serum-urate and gout locus; loss-of-function physiology is a safety boundary, not a simple inhibition target |
-| **ABCG2** | ABCG2 | Secretes uric acid into both gut lumen AND renal tubule. Loss-of-function variants are #1 genetic risk for gout. | Enhancing ABCG2 activity is unexplored (most drugs inhibit, not enhance). Candidate levers include butyrate-associated PPARγ signaling, sulforaphane-associated Nrf2 signaling, TNFα-suppression contexts, and direct Q141K trafficking rescue; each requires functional urate-flux validation. Direct androgen suppression of intestinal ABCG2 is unsupported—see [androgen-urate-axis.md](./androgen-urate-axis.md). |
+| **ABCG2** | ABCG2 | Secretes uric acid into both gut lumen AND renal tubule. Loss-of-function variants make it a major common gout-risk locus. | Enhancing ABCG2 activity is unexplored (most drugs inhibit, not enhance). Candidate levers include butyrate-associated PPARγ signaling, sulforaphane-associated Nrf2 signaling, TNFα-suppression contexts, and direct Q141K trafficking rescue; each requires functional urate-flux validation. Direct androgen suppression of intestinal ABCG2 is unsupported—see [androgen-urate-axis.md](./androgen-urate-axis.md). |
 | **OAT1/OAT3** | SLC22A6/8 | Basolateral uptake of urate from blood into tubular cells for secretion. | Modulated by some existing uricosurics |
 | **OAT2** | SLC22A7 | Human OAT2-expressing HEK293 cells took up urate but did not mediate efflux (**In Vitro**; [Sato et al. 2010, PMID 20190416](https://pubmed.ncbi.nlm.nih.gov/20190416/)). Its membrane localization and net contribution in human proximal tubule remain incompletely resolved. | Bempedoic acid is a controlled human perturbation associated with higher serum urate and gout, and it inhibits OAT2 in substrate-dependent assays. The clinical OAT2 attribution remains **Mechanistic Extrapolation**, not a localized human flux result. |
 | **NPT1/NPT4** | SLC17A1/3 | Apical secretion of urate into tubular lumen. | Emerging targets |
@@ -143,7 +146,10 @@ Approximately **70% of daily uric acid elimination happens through the kidneys**
 
 ### The Gut Excretion Pathway
 
-**Approximately one-third of daily uric acid elimination occurs through the gut**, not the kidneys. This happens via the **ABCG2 transporter** on intestinal epithelial cells, which actively secretes uric acid into the intestinal lumen.
+**Roughly one-third of daily urate elimination is intestinal/nonrenal**, with
+ABCG2 on intestinal epithelial cells contributing active urate secretion into
+the lumen. This is the complementary fraction to the rough renal estimate
+above, not an additional independently additive estimate; proportions vary.
 
 This gut-lumen pathway creates a testable opening for luminal uricase: active enzyme can degrade urate that reaches the lumen, but the resulting effect on net intestinal urate disposal and serum urate cannot be inferred from enzyme activity alone. The Open Enzyme yeast and koji implementations remain conditional research tracks. Built and characterized configurations enter the physiological reaction-site screen in [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial); an exact survivor must then clear the antioxidant-loss/peroxide safety assay in [§1.36](./validation-experiments.md#136-luminal-urate-antioxidant-loss--uox-h2o2-safety-assay). Functional in-vivo disposal and any serum effect remain later questions under [§§2.1–2.2](./validation-experiments.md#21-selected-uox-configuration-in-vivo-persistence-and-localization). (**Mechanistic Extrapolation**; sources: [gut-lumen sink](./gut-lumen-sink.md), [COMP-044](./gut-lumen-uricase-physiologic-regime-computational.md))
 
@@ -168,7 +174,7 @@ The reverse direction has direct mechanistic support. In collecting-duct cells, 
 >
 > **Why it matters:** The phenotype could explain context-dependent urate responses to water-handling perturbations and prevent serum urate from being treated as a proxy for intracellular collecting-duct exposure.
 >
-> **Discriminating observation:** Reanalyze paired TEMPO, REPRISE, and SereNDIpity-pb1 data for serum urate, urate clearance or FEUA, urine volume and osmolality, GFR, hydration markers, and ABCG2/SLC2A9 genotype. Advance only if time-ordered within-person changes or genotype interactions separate the proposed phenotypes.
+> **Discriminating observation:** First identify an accessible longitudinal trial or cohort dataset with paired serum urate, urate clearance or FEUA, urine volume or osmolality, GFR, and hydration markers; include ABCG2/SLC2A9 genotype only where it was measured. Prespecify the analysis before access. Advance only if time-ordered within-person changes or genotype interactions separate the proposed phenotypes.
 
 ### Urate-handling weaknesses and candidate mechanisms
 
@@ -180,16 +186,16 @@ The map below records which current candidate classes touch renal transport, int
 |---|---|---|---|---|
 | **URAT1** (SLC22A12) | Reabsorbs urate from tubular lumen back into blood; major drug target | — | **Cordycepin** (animal-model URAT1 mRNA reduction; PMID 29422889) | *Smilax glabra* fraction remains a lead, but no astilbin-specific URAT1 attribution survives |
 | **GLUT9** (SLC2A9) | High-capacity urate transporter; major serum-urate and gout locus | — | **GLPP** (extract-level animal-model expression lead; DOI 10.1039/D2FO02431D; direct transport unresolved) | — |
-| **ABCG2 — direct modulation** | Secretes urate into gut lumen + renal tubule; #1 genetic risk locus | — *(no current OE platform coverage at the direct-modulation tier — gap)* | — | — |
-| **ABCG2 — indirect derepression** *(Mechanistic Extrapolation, two-step composed)* | Indirect — via TNFα suppression → reduced transcriptional repression of ABCG2; weaker evidence tier than direct transporter effects | **Lactoferrin → TNFα suppression → ABCG2 derepression** (lactoferrin → TNFα suppression is Animal Model + In Vitro per [`lactoferrin.md`](./lactoferrin.md) §4.7; TNFα suppression → ABCG2 derepression is the Mechanistic Extrapolation step composed onto it; see also [`koji-endgame-strain.md`](./koji-endgame-strain.md) §2.2) | — | — |
+| **ABCG2 — direct modulation** | Secretes urate into gut lumen + renal tubule; major common gout-risk locus | — *(no current OE platform coverage at the direct-modulation tier — gap)* | — | — |
+| **ABCG2 — inflammatory-context conjecture** | TNFα can change ABCG2 expression in named intestinal systems; whether an exact lactoferrin material changes that signal and attributed urate flux is untested | **Lactoferrin branch:** adjacent evidence motivates a compartment-matched TNFα/ABCG2 experiment, but no direct evidence establishes lactoferrin-mediated urate export or transfer from another material, host, route, or model | — | — |
 | **OAT1 / OAT3** (SLC22A6/8) | Basolateral uptake of urate from blood into tubular cells for secretion | — | **GLPP** (extract-level animal-model expression lead; DOI 10.1039/D2FO02431D; direct transport unresolved) | — |
 | **OAT2** (SLC22A7) | Candidate blood-to-proximal-tubule urate uptake step. Bempedoic acid supplies a reproducible adverse human perturbation, but serum urate alone cannot attribute the effect to OAT2 or localize it to renal secretion (**Clinical Trial + Mechanistic Extrapolation**) | — | — | — |
 | **Xanthine oxidase** (upstream) | Catalyzes hypoxanthine → xanthine → urate; #1 pharmacological target (allopurinol, febuxostat) | — | — | A *Smilax glabra* total-flavonoid fraction containing four astilbin stereoisomers changed hepatic XOD activity in one treatment group (**Animal Model**; PMID 30851369); the study does not establish astilbin as causal. Acacetin, kaempferol, and rhein remain separately sourced leads on the [TCM evidence page](./tcm-modern-rigor-intersection.md). |
 | **PRPS / PRPP supply** (upstream) | Supplies PRPP to de-novo purine synthesis, salvage, and pyrimidine synthesis; a broader control point than XO | — | — | Purified **eurycomanol** changed hepatic PRPS expression, urate clearance, and transporters in hyperuricemic mice (**Animal Model**; PMID 34785103); causal PRPS-flux contribution unresolved — see [prps-purine-biosynthesis-chokepoint.md](./prps-purine-biosynthesis-chokepoint.md) |
 | **Gut-lumen urate sink** (post-renal) | Candidate degradation of luminal urate; the effect on net intestinal flux and serum urate remains unmeasured | Conditional yeast or koji expression of active uricase; no chassis is selected, and neither implementation has passed §1.33 or §1.36 (**Mechanistic Extrapolation**) | — | — |
-| **ROS / CP1b priming** *(speculative)* | NLRP3 priming via reactive oxygen species — Fenton chemistry (iron-catalyzed hydroxyl-radical generation) and direct hydroxyl-radical / peroxynitrite scavenging are mechanistically orthogonal | **Lactoferrin** — iron sequestration → reduced Fenton-available iron → reduced ROS-driven NLRP3 priming (Animal Model + In Vitro per [`lactoferrin.md`](./lactoferrin.md) §4.1; Habib 2023 PMID 37926296; Shan 2026 PMID 41524100) | **Ergothioneine-rich fungal materials** remain composition-specific redox leads. One *P. citrinopileatus* material reported 7.0 mg/g dry weight ([PMID 40552321](https://pubmed.ncbi.nlm.nih.gov/40552321/)), but no cross-species production rank or gout-relevant functional effect follows. Test exact-material exposure, ROS, IL-1β, viability, and mechanism-proximal readouts in an MSU model. | — |
+| **ROS / CP1b priming** *(speculative)* | NLRP3 priming can involve reactive oxygen species, but Fenton chemistry and direct radical scavenging are different mechanisms | **Lactoferrin** — exact-material iron handling and adjacent non-gout inflammatory studies motivate an MSU ROS experiment; they do not establish CP1b target engagement or a gout effect ([lactoferrin](./lactoferrin.md)) | **Ergothioneine-rich fungal materials** remain composition-specific redox leads. One *P. citrinopileatus* material reported 7.0 mg/g dry weight ([PMID 40552321](https://pubmed.ncbi.nlm.nih.gov/40552321/)), but no cross-species production rank or gout-relevant functional effect follows. Test exact-material exposure, ROS, IL-1β, viability, and mechanism-proximal readouts in an MSU model. | — |
 
-**Evidence-tier discipline.** Cordycepin and GLPP have material-specific animal-model signals, but expression results do not establish direct transporter function. The *Smilax* record applies to a total-flavonoid fraction, not purified astilbin. The proposed yeast- or koji-delivered luminal UOX implementation does **not** have animal-model support: its current status is **Mechanistic Extrapolation** until the construct, exposure, physiological flux, and safety gates are measured. The **lactoferrin → ABCG2** link is also **Mechanistic Extrapolation** (lactoferrin → TNFα suppression is documented in vitro / clinical biopsy per [`lactoferrin.md`](./lactoferrin.md) §4.7; TNFα suppression → ABCG2 transcriptional derepression is the extrapolated step).
+**Evidence-tier discipline.** Cordycepin and GLPP have material-specific animal-model signals, but expression results do not establish direct transporter function. The *Smilax* record applies to a total-flavonoid fraction, not purified astilbin. The proposed yeast- or koji-delivered luminal UOX implementation does **not** have animal-model support: its current status is **Mechanistic Extrapolation** until the construct, exposure, physiological flux, and safety gates are measured. The lactoferrin–TNFα–ABCG2–urate-flux chain is a **Research Conjecture**; each link and the exact material–compartment configuration require direct measurement.
 
 **Compartment discipline.** These mechanisms span renal, intestinal, hepatic, immune, and luminal compartments. A whole-animal phenotype or transporter-expression change does not establish free exposure or direct function in one of them. Read the map as a set of compartment-specific test requirements, not as evidence that the listed materials already reach or control those compartments.
 
@@ -216,7 +222,7 @@ The two components remain independent research tracks. Exact-material *Houttuyni
 
 > **Research conjecture — Houttuynia and a purine-degrading bacterium may cover nonredundant gout weaknesses**{ .research-conjecture-label }
 >
-> **Grounded premises:** Qualified *Houttuynia* materials have preclinical complement and context-dependent inflammatory activity (**In Vitro + Animal Model**; [Houttuynia evidence](./houttuynia-cordata.md)). Purine-degrading bacteria may alter luminal purine handling, while any ABCG2 or NLRP3 contribution depends on the strain's measured products and exposure (**Mechanistic Extrapolation**; [PDB track](./purine-degrading-bacteria.md)).
+> **Grounded premises:** Exact *Houttuynia* materials have context-dependent and directionally inconsistent inflammatory evidence: Cheng 2014 HCP-2 increased IL-1β in naïve human PBMCs, while other exact materials reduced inflammatory readouts in different systems; the materials and contexts are not interchangeable (**In Vitro + Animal Model**; [Houttuynia evidence](./houttuynia-cordata.md)). Purine-degrading bacteria may alter luminal purine handling, while any ABCG2 or NLRP3 contribution depends on the strain's measured products and exposure (**Mechanistic Extrapolation**; [PDB track](./purine-degrading-bacteria.md)).
 >
 > **Novel leap:** A validated material and a validated bacterial strain may cover nonredundant CP0/CP1 and luminal-purine mechanisms. No direct combination study exists, and additivity is unmeasured.
 >
@@ -254,9 +260,9 @@ MSU crystals are the match. The **NLRP3 inflammasome** is the gasoline. When tis
 
 These are "danger signals" recognized by the immune system.
 
-**Complement priming (CP0 — upstream of NF-κB):** MSU crystals also directly activate the complement system via classical and alternative pathways before intracellular signaling. Complement activation cleaves C5 → **C5a**, which binds C5aR1 on macrophages and generates ROS — the dominant priming signal for NLRP3 in gout (Cumpelik et al. 2016; Khameneh et al. 2017). This complement axis operates in parallel to TLR4/NF-κB priming and is not addressed by most NF-κB inhibitors. (Animal Model; source: complement-c5a-gout.md)
+**Complement priming (CP0 — upstream of or parallel to NF-κB):** MSU crystals can activate complement through classical and alternative-pathway machinery. An et al. reported C5a-dependent potentiation of MSU-associated IL-1β in human whole blood and primary monocytes (PMID 25229885), while Cumpelik et al. 2016 and Khameneh et al. 2017 supply related murine-system evidence. Its contribution relative to TLR4/NF-κB and other priming inputs in human flares is unresolved. (**In Vitro + Animal Model**; source: complement-c5a-gout.md)
 
-**TNFSF14/LIGHT (CP1a — priming amplifier):** TNFSF14 (LIGHT) is produced at the inflamed joint and is the second-highest fold-change gout-flare biomarker after IL-6 (Ea et al. 2024, *Ann Rheum Dis*). LIGHT signals via HVEM/LTβR → NF-κB, amplifying priming in parallel to LPS/TLR4. (Clinical Trial + In Vitro; source: tnfsf14-gout-target.md)
+**TNFSF14/LIGHT (CP1a — priming amplifier):** Ea et al. 2024 reported TNFSF14/LIGHT among cytokines elevated in gout-flare samples, while defined experimental systems connect LIGHT signaling through HVEM/LTβR to NF-κB. The human observation does not establish LIGHT as a causal flare driver. (**Human Observational + In Vitro**; source: tnfsf14-gout-target.md)
 
 ### The NLRP3 Inflammasome Assembly
 
@@ -294,9 +300,9 @@ IL-1β is a master cytokine—one molecule has cascading effects across the enti
 
 Open Enzyme's chokepoint kill chain (CP0–CP6) is built around the **acute flare**: MSU crystal → NLRP3 → IL-1β → neutrophils (innate, fast, self-limiting). The **tophus** is a distinct, *chronic* problem — an organized granuloma (crystal core + macrophages + multinucleated giant cells + fibrous capsule + an adaptive-immune corona). Dissolving a tophus is two separate problems: (1) **dissolve the crystals** through sustained urate control; the [gut-lumen uricase sink](./gut-lumen-sink.md) is only a candidate contributor if it passes §1.33 and §1.36 and produces a sufficient systemic effect; and (2) **resolve the organized inflammation + eroded bone** — driven by an innate-stromal **SPP1/MMP9 macrophage** subset + RANKL/osteoclast activity (*not* the Th17 axis, which single-cell tophus data show is a bystander), which the platform does **not** currently address. See [`open-questions.md` §"Chronic tophaceous gout — the adaptive-immune axis"](./open-questions.md) for the scoped no-go, the dissolution kinetics, and the intervention-node map.
 
-## Current Treatment Landscape
+## Clinical comparators
 
-The treatment landscape and clinical guidance live in [gout-deep-dive.md](./gout-deep-dive.md#current-treatment-landscape) and the compound dossiers. Mechanistically, colchicine disrupts microtubule-dependent ASC transport, P2X7-associated activation, neutrophil migration, and crystal phagocytosis. This pathway map does not provide a regimen or individualized treatment instruction.
+Established-care classes are causal comparators, not instructions on this pathway page. Mechanistically, colchicine perturbs microtubule-dependent ASC transport, P2X7-associated activation, neutrophil migration, and crystal phagocytosis in source-specific systems. Product-specific human evidence and the status-refresh protocol live on the [clinical evidence surface](./gout-clinical-pipeline.md).
 
 ### Why durable control requires sustained mechanism coverage
 
@@ -306,7 +312,7 @@ Durable urate control can act through sustained reduction of production, increas
 
 ## The Clinical Pipeline (2026)
 
-The full drug-by-drug pipeline table and Open Enzyme positioning live at [gout-deep-dive.md §The Clinical Pipeline](./gout-deep-dive.md#the-clinical-pipeline--whats-coming) and the dedicated [gout-clinical-pipeline.md](./gout-clinical-pipeline.md). Gut-lumen UOX is one conditional Open Enzyme track within that broader attack surface, not an established mechanism or the project itself.
+Selected exact clinical precedents and the time-sensitive status-refresh protocol live on the [clinical evidence surface](./gout-clinical-pipeline.md). Gut-lumen UOX is one conditional Open Enzyme track within the broader [gout exploit surface](./gout-deep-dive.md), not an established mechanism or the project itself.
 
 ---
 
@@ -316,7 +322,7 @@ The full drug-by-drug pipeline table and Open Enzyme positioning live at [gout-d
 
 ### The Big Numbers
 
-A meta-analysis of over **one million participants** identified **351 loci** associated with serum urate levels, with 17 previously unreported. A 2025 UK Biobank study (N=150,542) identified 13 loci associated with gout diagnosis, with notable sex-specific differences (16 loci in males, only 2 in females). The sex-specific GWAS signal is consistent with the **androgen-urate axis** (see [androgen-urate-axis.md](./androgen-urate-axis.md)) — sex hormones modulate URAT1/ABCG2 expression, gating which transporter polymorphisms actually manifest as hyperuricemia.
+Tin et al. 2019 analyzed serum urate in 457,690 participants and identified **183 loci, 147 previously unknown**, then evaluated gout prediction in an independent cohort of 334,880 (PMID 31578528; **Human Observational / GWAS**). A separate 2025 UK Biobank gout GWAS used 10,474 cases and 140,068 controls, reporting 13 loci in the primary analysis, 16 in a male-stratified analysis, and two in a female-stratified analysis (PMID 41075270). Those counts arise from different analysis sets and unequal case numbers; they do not by themselves establish a hormone mechanism. The [androgen–urate axis](./androgen-urate-axis.md) remains a separately sourced biological hypothesis for mechanistic testing.
 
 ### The Three Transporter Genes
 
@@ -396,15 +402,15 @@ INTERVENTION POINTS:
 - ADA modulation: test whether an exact, independently sourced material changes purine flux without erasing a useful adenosine-resolution signal
 - PINK1/mitophagy enhancement: test whether an exact, independently sourced material changes mitophagy and reduces MSU-triggered NLRP3 function under matched exposure
 - XO inhibitors: Block uric acid production (Allopurinol, Febuxostat)
-- URAT1 inhibitors: Reduce renal reabsorption (Pozdeutinurad, Lesinurad)
-- ABCG2 enhancement: Boost gut secretion via butyrate/PPARγ (fermentable fiber, DASH RCT 0.25–0.73 mg/dL UA reduction, Clinical Trial), sulforaphane/Nrf2, Q141K rescue via HDAC inhibitors (In Vitro) — see [abcg2-modulators.md](./abcg2-modulators.md)
+- URAT1 inhibitors: Reduce renal reabsorption (pozdeutinurad remained investigational as of 2026-07-27; lesinurad is a commercially withdrawn historical comparator)
+- ABCG2 enhancement: Candidate mechanistic leads include butyrate-associated PPARγ signaling, sulforaphane-associated Nrf2 signaling, and Q141K trafficking rescue; each requires direct urate-flux validation. The cited DASH trial changed serum urate but did not attribute the effect to ABCG2, so it is not evidence for this mechanism — see [abcg2-modulators.md](./abcg2-modulators.md)
 - Uricase: Degrade uric acid (systemic products have clinical evidence; engineered gut organisms remain conditional on §1.33 and §1.36)
-- C5a/C5aR1 blockade: Block complement priming (Avacopan — repurposing candidate; CP0)
+- C5a/C5aR1 perturbation: Test complement priming; avacopan supplies human pharmacology outside gout but no gout-efficacy result (CP0)
 - TNFSF14/LIGHT blockade: Suppress priming amplifier (CERC-002, EGCG; CP1a)
 - NLRP3 inhibitors: Block inflammasome (Dapansutrile, Oridonin, BHB; CP2–CP4)
-- 5-LOX/LTB4 inhibitors: Block neutrophil amplification (Quercetin 300 nM, AKBA, Zileuton FDA-approved 5-LOX inhibitor; CP6a) — see [zileuton.md](./zileuton.md) for the full repurposing dossier
+- 5-LOX/LTB4 inhibitors: Test neutrophil amplification (quercetin 300 nM in one primary 5-LOX assay, PMID 2066989; AKBA remains unqualified; zileuton is an approved asthma comparator, not a gout intervention; CP6a) — see [zileuton.md](./zileuton.md)
 - IL-1 blockers: Block cytokine (Firsekibart, Anakinra, Canakinumab; CP5a)
-- SPMs/ALX/FPR2 agonists: Active resolution (Omega-3-derived RvD1/MaR1; CP5b)
+- Exact RvD1 and MaR1: distinct active-resolution leads with MSU animal evidence; EPA/DHA precursors require a separate conversion-and-exposure experiment (CP5b)
 - Colchicine: Block neutrophil migration, inflammasome assembly
 - Theaflavins (black-tea polyphenols): NLRP3-NEK7 disruption (CP2/CP3 assembly block) + ↓URAT1/↓GLUT9 renal urate reabsorption + secondary TNFSF14/HVEM modulation (CP1a); direct MSU peritonitis Animal Model (Chen 2023 PMID 37221235); Tier 2 supplement candidate — see [theaflavins.md](./theaflavins.md) (source: theaflavins.md)
 ```

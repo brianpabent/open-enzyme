@@ -108,6 +108,34 @@ def create_push_manifest(comp_rel: str, manifest_path: Path) -> str:
 
 
 def verify_authoring_gates(comp_dir: Path) -> dict[str, object]:
+    if (comp_dir / "quarantine.json").is_file():
+        result = run(
+            [
+                sys.executable,
+                "scripts/check-comp-disposition.py",
+                "--comp-dir",
+                str(comp_dir),
+            ],
+            check=False,
+        )
+        if result.returncode:
+            return {
+                "status": "quarantined",
+                "valid": False,
+                "details": [
+                    "quarantine binding invalid: "
+                    + (result.stderr or result.stdout).strip()[:1000]
+                ],
+            }
+        return {
+            "status": "quarantined",
+            "valid": True,
+            "details": [
+                "Current artifact is hash-bound by quarantine.json and excluded "
+                "from execution, routine push review, propagation, and synthesis; "
+                "historical authoring receipts remain provenance, not current approval"
+            ],
+        }
     reviews = comp_dir / "reviews"
     pre_paths = (
         reviews / "pre-run.manifest.json",

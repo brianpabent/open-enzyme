@@ -313,6 +313,76 @@ trigger_files: wiki/example.md
 
 
 class SweepStateBindingTests(unittest.TestCase):
+    def test_unverified_migrated_synthesis_cursor_forces_full_source_set(self):
+        registry = {
+            "schema_version": 2,
+            "last_successful_propagation": None,
+            "last_successful_synthesis": {
+                "coverage_commit": "a" * 40,
+                "integrity_status": "migrated_cursor_unverified",
+            },
+            "comp_reviews": {},
+            "unresolved_failures": [],
+        }
+        with mock.patch.object(state, "read_registry", return_value=registry), mock.patch.object(
+            state,
+            "_all_synthesis_paths",
+            return_value=[
+                "wiki/a.md",
+                "wiki/etc/experiments/comp-001-example/reviews/review.md",
+                "wiki/hypotheses/H01.md",
+            ],
+        ):
+            output = StringIO()
+            with redirect_stdout(output):
+                state.cmd_pending_synthesis_paths(argparse.Namespace())
+        self.assertEqual(
+            ["wiki/a.md", "wiki/hypotheses/H01.md"],
+            output.getvalue().splitlines(),
+        )
+
+    def test_unverified_initial_synthesis_cursor_forces_full_source_set(self):
+        registry = {
+            "schema_version": 2,
+            "last_successful_propagation": None,
+            "last_successful_synthesis": {
+                "coverage_commit": "a" * 40,
+                "integrity_status": "initial_cursor_unverified",
+            },
+            "comp_reviews": {},
+            "unresolved_failures": [],
+        }
+        with mock.patch.object(state, "read_registry", return_value=registry), mock.patch.object(
+            state,
+            "_all_synthesis_paths",
+            return_value=["wiki/a.md", "wiki/hypotheses/H01.md"],
+        ):
+            output = StringIO()
+            with redirect_stdout(output):
+                state.cmd_pending_synthesis_paths(argparse.Namespace())
+        self.assertEqual(
+            ["wiki/a.md", "wiki/hypotheses/H01.md"],
+            output.getvalue().splitlines(),
+        )
+
+    def test_unverified_initial_cursor_requires_synthesis_without_diff_probe(self):
+        registry = {
+            "schema_version": 2,
+            "last_successful_synthesis": {
+                "coverage_commit": "a" * 40,
+                "integrity_status": "initial_cursor_unverified",
+            },
+        }
+        with mock.patch.object(state, "read_registry", return_value=registry), mock.patch.object(
+            state,
+            "_git_changed_paths",
+        ) as changed_paths:
+            output = StringIO()
+            with redirect_stdout(output):
+                state.cmd_should_sweep(argparse.Namespace())
+        self.assertEqual("run", output.getvalue().strip())
+        changed_paths.assert_not_called()
+
     def test_comp_artifacts_collapse_to_one_semantic_propagation_trigger(self):
         registry = {
             "schema_version": 2,
@@ -344,6 +414,34 @@ class SweepStateBindingTests(unittest.TestCase):
                 "wiki/urate-transport.md",
             ],
             paths,
+        )
+
+    def test_propagation_discovers_comp_artifacts_at_any_depth(self):
+        registry = {
+            "schema_version": 2,
+            "last_successful_propagation": {
+                "coverage_commit": "a" * 40,
+                "deferred_paths": [],
+                "blocked_paths": [],
+            },
+            "last_successful_synthesis": None,
+            "comp_reviews": {},
+            "unresolved_failures": [],
+        }
+        changed = [
+            "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/"
+            "v2-env/source_docs/esm/README.md"
+        ]
+        with mock.patch.object(state, "_git_changed_paths", return_value=changed) as git_paths:
+            paths = state._pending_propagation_paths(registry)
+        self.assertIn(
+            "wiki/etc/experiments/comp-022-clockbase-uricase-cassette-ranking/"
+            "invalidation.json",
+            paths,
+        )
+        self.assertIn(
+            "wiki/etc/experiments/comp-*/**",
+            git_paths.call_args.args[1],
         )
 
     def test_propagation_backlog_is_resumable_without_reprocessing_blocked_paths(self):
@@ -441,10 +539,14 @@ trigger_files: wiki/example.md
                 "schema_version": 2,
                 "last_successful_propagation": None,
                 "last_successful_synthesis": {
-                    "coverage_commit": manifest["source"]["diff_base"]
+                    "coverage_commit": manifest["source"]["diff_base"],
+                    "integrity_status": "migrated_cursor_unverified",
                 },
                 "comp_reviews": {},
-                "unresolved_failures": [],
+                "unresolved_failures": [{
+                    "id": state.LEGACY_SYNTHESIS_INTEGRITY_FAILURE,
+                    "lane": "synthesis",
+                }],
             }))
             args = argparse.Namespace(
                 commit="cccccccccccccccccccccccccccccccccccccccc",
@@ -471,6 +573,8 @@ trigger_files: wiki/example.md
                     saved["last_successful_synthesis"]["coverage_commit"],
                 )
                 self.assertEqual(args.commit, saved["last_successful_synthesis"]["result_commit"])
+                self.assertEqual("verified", saved["last_successful_synthesis"]["integrity_status"])
+                self.assertEqual([], saved["unresolved_failures"])
 
                 saved["last_successful_synthesis"]["coverage_commit"] = "dddddddddddddddddddddddddddddddddddddddd"
                 registry_path.write_text(json.dumps(saved))
@@ -547,7 +651,14 @@ trigger_files: wiki/example.md
         self.assertEqual(2, migrated["schema_version"])
         self.assertEqual("a" * 40, migrated["last_successful_propagation"]["coverage_commit"])
         self.assertEqual("a" * 40, migrated["last_successful_synthesis"]["coverage_commit"])
-        self.assertEqual(["bad"], [f["id"] for f in migrated["unresolved_failures"]])
+        self.assertEqual(
+            ["bad", state.LEGACY_SYNTHESIS_INTEGRITY_FAILURE],
+            [f["id"] for f in migrated["unresolved_failures"]],
+        )
+        self.assertEqual(
+            "migrated_cursor_unverified",
+            migrated["last_successful_synthesis"]["integrity_status"],
+        )
         self.assertNotIn("recent_runs", migrated)
 
     def test_comp_review_records_separate_lane_eligibility(self):

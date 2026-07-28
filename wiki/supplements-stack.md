@@ -23,18 +23,18 @@ The table records the highest relevant evidence class represented in the current
 |---|---|---|---|---|
 | BHB / ketone bodies | **In Vitro + Animal Model** | NLRP3 priming, potassium-efflux, and ASC-related effects | Human gout exposure and simultaneous renal-urate effects remain unresolved | [BHB / ketones](./bhb-ketones.md) |
 | Fasting | **Mechanistic Extrapolation** | Autophagy, AMPK/mTOR, endogenous ketone production | Not a validated NLRP3 or acute-flare intervention | [NLRP3 exploit map](./nlrp3-exploit-map.md) |
-| KPV | **In Vitro + Animal Model** | NF-κB / IκB-α and gut-epithelial signaling | Human gout efficacy and exposure are unknown | [KPV](./kpv-peptide.md) |
+| KPV | **In Vitro** | PepT1-related uptake and an NF-κB reporter effect in named intestinal/Jurkat systems | Direct MSU activity, synovial exposure, and a gout route are unestablished | [KPV](./kpv-peptide.md) |
 | BPC-157 | **Animal Model + Mechanistic Extrapolation** | Cytoprotection and nitric-oxide-related signaling | Adjacent-model evidence does not establish gout efficacy | [BPC-157](./bpc-157.md) |
 | Sulforaphane | **In Vitro + Animal Model** | Nrf2/NF-κB and NLRP3-related effects in MSU models | Human gout exposure-response is unknown | [NLRP3 exploit map](./nlrp3-exploit-map.md) |
 | Theaflavins | **In Vitro + Animal Model** | NLRP3–NEK7, inflammasome, and renal-transporter effects | Human gout efficacy and free exposure are unknown | [Theaflavins](./theaflavins.md) |
 | *Houttuynia cordata* polysaccharides | **In Vitro + Animal Model** | Complement and context-dependent inflammatory effects | Exact material, likely intestinal delivery, and direct MSU effects remain unresolved | [Houttuynia](./houttuynia-cordata.md) |
 | Oridonin | **In Vitro + Animal Model** | Covalent NLRP3 inhibition and inflammasome suppression | Human gout exposure, selectivity, and safety remain open | [Oridonin](./oridonin.md) |
-| Omega-3-derived SPM biology | **Animal Model** | Resolution signaling, neutrophil trafficking, and efferocytosis | Precursor exposure is not equivalent to a delivered SPM concentration | [SPM pathway](./spm-resolution-pathway.md) |
+| Exact RvD1 and MaR1 | **Animal Model + In Vitro** | Distinct MSU-model neuroimmune and Prdx5/AMPK/Nrf2-associated effects | Human gout exposure and efficacy are unestablished; EPA/DHA precursors are a separate conversion experiment | [SPM pathway](./spm-resolution-pathway.md) |
 | Tart-cherry preparations | **Clinical Trial**, preparation-specific | Candidate xanthine-oxidase and inflammatory effects | Preparation, exposure, and endpoint heterogeneity prevent a class-wide conclusion | [Gout deep dive](./gout-deep-dive.md) |
 | NAC / glutathione-axis perturbation | **In Vitro + Animal Model** | Redox and mitochondrial-ROS modulation upstream of NLRP3 | Gout-relevant compartmental exposure and efficacy are unestablished | [NLRP3 exploit map](./nlrp3-exploit-map.md) |
 | EGCG | **In Vitro + Animal Model** | NF-κB, proteasome, caspase-1, and IL-1-related effects | Food and concentrated-extract exposures are not interchangeable; human gout efficacy is unknown | [EGCG](./egcg.md) |
 | Limonene | **Animal Model** | Nrf2 and TLR4-related effects in an MSU model | Human translation and exposure adequacy are unknown | [Cannabinoids / terpenes](./cannabinoids-terpenes.md) |
-| Lactoferrin | **Animal Model + Clinical Trial in adjacent indications** | NLRP3/caspase-1/GSDMD and resolution-related effects | Gout-specific efficacy and exact-material exposure are unestablished | [Lactoferrin](./lactoferrin.md) |
+| Lactoferrin | **In Vitro + Animal Model in adjacent systems** | Material-specific iron, inflammatory, barrier, or mitophagy/pyroptosis hypotheses | No direct MSU-gout multi-chokepoint effect is established; exact material and compartment must be tested separately | [Lactoferrin](./lactoferrin.md) |
 | Carnosine | **Animal Model** | Urate and NLRP3-related effects in hyperuricemia models | Human gout exposure and serum-carnosinase effects remain open | [Carnosine](./carnosine.md) |
 | *Eurycoma longifolia* / Tongkat Ali | **Clinical Trial**, endpoint-specific | Reported hormone and urate-related effects | Product identity, mechanism, and reproducibility must remain source-specific | [Androgen natural modulation](./androgen-natural-modulation.md) |
 | Quercetin | **In Vitro + Animal Model** | 5-LOX/LTB4, NF-κB, XO, and mixed ABCG2 effects | Direct human gout efficacy and intestinal urate-flux effects are unmeasured | [ABCG2 modulators](./abcg2-modulators.md) |
@@ -66,11 +66,11 @@ The following clusters define factorial experiments, not combinations to use:
 
 | Cluster | Candidates | Question |
 |---|---|---|
-| Nrf2-related signaling | Sulforaphane, quercetin, oridonin, limonene, omega-3 metabolites | Are effects redundant, additive, or context-dependent at matched target engagement? |
-| NF-κB priming | KPV, sulforaphane, EGCG, quercetin, carnosine, curcumin | Do distinct upstream mechanisms produce nonredundant MSU responses? |
+| Nrf2-related signaling | Sulforaphane, quercetin, oridonin, limonene, and exact MaR1 | Are effects redundant, additive, or context-dependent at matched target engagement? |
+| NF-κB priming | Sulforaphane, EGCG, quercetin, carnosine, curcumin; KPV as a separate uptake/priming conjecture | Which exact materials reproduce under matched MSU exposure, and do any effects remain after mechanism attribution? |
 | XO-related activity | Tart-cherry preparations, quercetin, EGCG | Does the combination exceed either arm after exposure is matched? |
 | CP2 / NLRP3 assembly | Oridonin, beta-caryophyllene, tranilast, dapansutrile, BHB | Which molecular readout moves, and does node diversity translate to nonredundancy? |
-| Resolution / cytoprotection | SPM biology, KPV, BPC-157 | Does a resolution readout improve independently of inflammasome suppression? |
+| Resolution / cytoprotection | Exact RvD1 and MaR1; BPC-157 as a separate adjacent repair lead | Does an exact material change resolution or later repair independently of acute inflammasome suppression? |
 | Autophagy | Fasting-state biology, spermidine, trehalose, rapamycin | Is autophagy target engagement causal for the gout-relevant endpoint? |
 
 No cluster is presumed additive. Test each arm against the same comparator before testing a prespecified interaction.

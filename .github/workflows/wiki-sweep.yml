@@ -54,7 +54,11 @@ jobs:
             echo "Missing synthesis cursor"
             exit 1
           fi
-          if [[ -n "$EXPLICIT_PATHS" ]]; then
+          integrity_status=$(python3 -c 'import json; d=json.load(open("logs/sweep-state.json")); print((d.get("last_successful_synthesis") or {}).get("integrity_status", ""))')
+          if [[ "$integrity_status" != "verified" ]]; then
+            echo "Synthesis cursor lacks verified integrity receipts; forcing full-source recovery."
+            python3 scripts/sweep-state.py pending-synthesis-paths > /tmp/synthesis-triggers.txt
+          elif [[ -n "$EXPLICIT_PATHS" ]]; then
             printf '%s' "$EXPLICIT_PATHS" | tr ', ' '\n' | grep -v '^$' | sort -u > /tmp/synthesis-triggers.txt
           else
             python3 scripts/sweep-state.py pending-synthesis-paths > /tmp/synthesis-triggers.txt
@@ -98,7 +102,7 @@ jobs:
             --diff-base "${{ steps.preflight.outputs.diff_base }}" \
             --trigger-files "$trigger_csv" \
             --synthesizer "distributed-dual-read" \
-            --reviewer "openai/gpt-5.5" \
+            --reviewer "openai/gpt-5.5"
 
       - name: Commit queue and advance only exact synthesis coverage
         run: |

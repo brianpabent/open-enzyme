@@ -6,7 +6,7 @@ related:
   - complement-c5a-gout.md
   - nlrp3-exploit-map.md
   - validation-experiments.md
-  - cfh-mechanism-dissociation-cp0-candidates-computational.md
+  - cfh-mechanism-dissociation-cp0-candidates.md
   - supplements-stack.md
 sources:
   - "Zhou et al. Int J Biol Macromol 2022;222:2414–2425 (PMID 36252625; DOI 10.1016/j.ijbiomac.2022.10.027)"

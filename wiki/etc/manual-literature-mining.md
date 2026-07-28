@@ -22,7 +22,7 @@ status: published
 
 # Manual Literature Mining Protocol — Paperclip MCP Discipline
 
-A small but load-bearing methodology page. Codifies the verification discipline for using Paperclip MCP (the full-text PubMed / bioRxiv / medRxiv / arXiv corpus) safely in this project — surfaced 2026-05-05 by the wiki sweep daemon (Pass 2 Connection #3 + Priority Action #1). The motivation: Paperclip's index of ~11M full-text papers is genuinely valuable for deep-dive questions, but the `map` operator (the convenience-aggregation primitive) hallucinates — wrong organisms, fabricated kinetic numbers, made-up author affiliations — making automated unverified use unsafe. This page defines the safe-use workflow.
+A small but load-bearing methodology page. Codifies the verification discipline for using Paperclip MCP (a full-text PubMed / bioRxiv / medRxiv / arXiv index) safely in this project — surfaced 2026-05-05 by the wiki sweep daemon (Pass 2 Connection #3 + Priority Action #1). The index is useful for deep-dive questions, but the `map` operator (the convenience-aggregation primitive) has produced wrong organisms, fabricated kinetic numbers, and made-up author affiliations, making automated unverified use unsafe. This page defines the safe-use workflow.
 
 ## Why this protocol exists
 
@@ -52,7 +52,7 @@ For any quantitative claim sourced from Paperclip — IC50, Km, dose, sample siz
 ```bash
 # Example: verify a claimed IC50
 grep -i "IC50" /papers/<id>/content.lines
-grep "5\.18\|5.18 μM" /papers/<id>/content.lines
+grep "<exact-number>\\|<exact-number with units>" /papers/<id>/content.lines
 ```
 
 If the number doesn't appear in the source, it didn't come from the source. Do not propagate.
@@ -91,7 +91,7 @@ Rule 3 above ("grep-verify all numbers before they enter the wiki") covers Paper
 The wiki sweep daemon (Pass 1 Propagate → Pass 2 Synthesize → Pass 3 Review) is *good* at catching cross-page inconsistencies — exactly the failure mode that surfaced the DAF SCR1-4 disulfide-count error on 2026-05-06 (Sweep A Connection 2). But that means the discipline currently catches errors ~12–24 hours *after* they ship into the corpus, by which time:
 
 - The wrong number has propagated to multiple pages (DAF SCR1-4: comp-012 → H05 stub).
-- The wrong number has been ingested into the synthesizer's context for downstream reasoning (the chaperone-orthogonal triple-cassette synergy panic — predicting 17+12=29 disulfides, 1.8× Huynh — was based on a fabricated coefficient).
+- The wrong number has been ingested into the synthesizer's context for downstream reasoning (the chaperone-orthogonal triple-cassette concern used ~~1.8×~~, a fabricated coefficient with no valid replacement).
 - A second-opinion synthesis pass and a hand-walkthrough are required to find and fix the propagation, instead of catching it at the source.
 
 The sweep is a backstop, not a substitute. The pre-commit verification gate is the right moment to catch hallucinated numbers — at the moment they would enter the corpus, not after they've been laundered through the substrate.
@@ -143,7 +143,7 @@ Sister discipline to the pre-commit verification gate: **before declaring an exp
 
 | Tier | Cost | Time | Source / route | Examples |
 |---|---|---|---|---|
-| **Tier 0** | $0 | hours-days | Public dataset mining; full-text re-read of papers comp-NNN got at abstract-level; published-data synthesis | GTEx + Human Protein Atlas sex-stratified expression mining; GWAS catalog lookup; UniProt feature-annotation queries; full-text retrieval via Sci-Hub / Anna's Archive of papers cited only at abstract-tier; Mendelian randomization via published MR-Base summary statistics |
+| **Tier 0** | $0 | hours-days | Public dataset mining; lawful full-text re-read of papers comp-NNN got at abstract-level; published-data synthesis | GTEx + Human Protein Atlas sex-stratified expression mining; GWAS catalog lookup; UniProt feature-annotation queries; PubMed Central, author manuscripts, institutional-library or interlibrary-loan retrieval; Mendelian randomization via published MR-Base summary statistics |
 | **Tier 1** | $200–500 | days-weeks | Leverages existing self-experiment infrastructure | n=1 LabCorp / Quest panels (FEUA, hs-CRP, hormone panels); 16S microbiome OTU mining if the panel is already running; spot urinary biomarker measurements; serum-panel snapshots with pre-committed protocol |
 | **Tier 2** | $0–500 | weeks | Crowdsourced / community-leveraged | Recruiting men's-health forum cohorts to share LabCorp panels; Twitter/Reddit-based n>>1 cohort assembly; community-sourced patient-reported outcomes; OSF-style collaborative protocols on existing self-experimenter populations |
 | **Tier 3** | $2–5K | 4–12 weeks | Friendly bench (community college, undergrad thesis, sympathetic small lab) | Caco-2 / HEK293 / HepG2 cell-culture work with consumables-only budget; small-scale Western blot / qPCR / ELISA assay; tissue-culture collaboration where the academic partner has the equipment and the OE side funds reagents |
@@ -193,7 +193,7 @@ The 2026-05-19 traditional-name re-scan ([method receipt](../../logs/lit-scan-qu
 
 **Cross-references:**
 - [`scripts/SWEEP-ARCHITECTURE.md`](../../scripts/SWEEP-ARCHITECTURE.md) — the current full-synthesis and source-rehydration architecture
-- [`logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md`](../../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md) — canonical retrospective with the empirical recovery rate
+- [`logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md`](../../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md) — query-framing retrospective; neither pass was a literature-wide recall census
 - [`CLAUDE.md`](../../CLAUDE.md) §"Global-multilingual research by default" — the upstream discipline this operationalizes
 
 ## Translation protocol (two-model independent cross-check + inline disagreement annotations)
@@ -225,7 +225,7 @@ When ingesting non-English source material, **translate with two independent mod
 
 **Why two models, why independent, why surface disagreements:** translation is interpretation. A single model's interpretation has its training-distribution bias, vendor bias, and idiomatic-fluency strengths/weaknesses baked in. Two models from different vendors share less bias. The disagreements are EXACTLY where translation nuance lives — silently picking one model's choice loses information the original-language paper had. Surfacing the disagreement preserves the precision the source intended.
 
-**Cost note:** translation runs add a small marginal cost per non-English source (typically <$0.05/paper at current API pricing) — negligible relative to getting load-bearing scientific claims right. Does NOT add cost to the sweep daemon (English-corpus synthesis) — only to explicit lit-scan / source-ingestion flows.
+**Cost note:** translation runs add a variable, provider-dependent marginal cost only to explicit lit-scan or source-ingestion flows, not to the ordinary sweep daemon. Record the actual cost in the compact method receipt rather than relying on a standing per-paper estimate.
 
 **Why this rule exists:** added 2026-05-05 with the global-multilingual default. Brian's framing: *"if we bring in non-english papers, i think we need to have a protocol for translation that involves 2 completely independent models and we can have inline annotations where the models may disagree on nuance because in science nuance and precision matter."* The discipline matches the heterogeneity-guard logic established for the sweep daemon.
 

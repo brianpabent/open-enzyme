@@ -88,42 +88,42 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 
 ## Peptides & Compounds
 
-- **[BPC-157](wiki/bpc-157.md)** — 15-amino-acid gastric peptide with indirect, evidence-limited relevance through gut-barrier hypotheses.
-- **[KPV Tripeptide](wiki/kpv-peptide.md)** — α-MSH fragment with NF-κB/NLRP3 pathway evidence and unresolved gout exposure and selectivity.
+- **[BPC-157](wiki/bpc-157.md)** — Adjacent repair and gut-barrier lead; no direct MSU, gout, NLRP3, or qualified-route evidence in the reviewed packet.
+- **[KPV Tripeptide](wiki/kpv-peptide.md)** — α-MSH fragment with PepT1/NF-κB evidence and a direct, unresolved gout-priming conjecture.
 - **[Thymulin](wiki/thymulin.md)** — Zinc-dependent thymic nonapeptide; CP1a NF-κB priming inhibition proven in aged macrophages + human PBMCs (Kanemaru 2026 *Nat Commun*), age-dependent; untested against MSU/crystal (priming only).
 - **[Apelin-13](wiki/apelin-13.md)** — Exact-form-sensitive APLNR/APJ agonist with one hyperuricemic-rat/uric-acid adipocyte study and separate non-gout NLRP3 evidence; no MSU or gout experiment.
-- **[BHB / Ketones](wiki/bhb-ketones.md)** — Evidence and uncertainties for ketone-mediated effects across three NLRP3 chokepoints.
+- **[BHB / Ketones](wiki/bhb-ketones.md)** — Urate-crystal-relevant potassium-efflux and ASC evidence, with the net urate-handling question unresolved.
 - **[Oridonin](wiki/oridonin.md)** — Natural NLRP3 inhibitor; covalent NACHT domain Cys279 binding; traditional medicine origin
 - **[Disulfiram](wiki/disulfiram.md)** — Gasdermin D blocker (Antabuse); repurposed drug; CP6b in v1.2 NLRP3 map
 - **[Colchicine](wiki/colchicine.md)** — CP2/CP3 inflammasome effects, gout and cardiovascular evidence, and the narrow therapeutic and interaction window.
 - **[EGCG](wiki/egcg.md)** — Green tea catechin; 20S proteasome 86 nM (ChEMBL); unifies CP1a (IκBα) + CP4 (caspase-1) + CP5 (IL-1β) via single mechanism
 - **[Theaflavins](wiki/theaflavins.md)** — Black-tea polyphenols with animal evidence across inflammasome assembly and renal urate transport.
 - **[Houttuynia cordata polysaccharides](wiki/houttuynia-cordata.md)** — Exact-material CP0 complement and CP1 macrophage hypotheses with likely intestinal delivery, structure-dependent directionality, and separate falsification gates.
-- **[Lactoferrin](wiki/lactoferrin.md)** — Single protein, four-chokepoint coverage (CP1a/CP4/CP6b/CP5b); fermentable in *A. oryzae* (Ward 1992 25 mg/L → Ward 1995 >2 g/L *A. awamori*); Year 2-3 engineering target
+- **[Lactoferrin](wiki/lactoferrin.md)** — Exact-material inflammatory and pyroptosis hypotheses, separate gut and joint exposure gates, and fungal production precedents that do not establish solid-state koji performance or gout activity
 - **[Zileuton](wiki/zileuton.md)** — FDA-approved asthma 5-LOX inhibitor with direct CP6a target engagement, liver-monitoring constraints, and no gout efficacy trial.
 
 ## Strategy & Practice
 
 - **[Gout Action Guide](wiki/gout-action-guide.md)** — Situation-first research decision guide mapping contexts to mechanisms, evidence, and falsification gates; not a treatment protocol.
-- **[Gout Clinical Pipeline](wiki/gout-clinical-pipeline.md)** — Clinical-development status for oral uricase, NLRP3 inhibitors, IL-1 blockade, and systemic uricase programs.
+- **[Gout Clinical Evidence and Pipeline Refresh](wiki/gout-clinical-pipeline.md)** — Selected exact clinical precedents plus the reproducible protocol for time-sensitive status claims.
 - **[Supplements Stack](wiki/supplements-stack.md)** — Compound catalog covering mechanisms, exposures, contraindications, interactions, and stack-level antagonisms.
 - **[Purine-Degrading Bacteria (PDB)](wiki/purine-degrading-bacteria.md)** — anaerobic microbial urate disposal with engineered-EcN animal precedent. Terminal products are organism-specific: full-pathway anaerobes have isotope-resolved acetate/butyrate evidence, but CBT2.0 carbon fate is unresolved. Any downstream SCFA/ABCG2/NLRP3 benefit is therefore conditional, not part of the demonstrated CBT2.0 result.
-- **[Gout Kill Chain — Delivery Route Analysis](wiki/gout-kill-chain-delivery-routes.md)** — Route-by-route pharmacokinetic analysis across the gout kill chain, including local, systemic, and gut-luminal gaps.
+- **[Gout Kill Chain — Target-First Delivery](wiki/gout-kill-chain-delivery-routes.md)** — Compartment and exposure gates for each causal node; no route transfers between products by default.
 - **[GSDMD Pore Self-Delivery Paradox](wiki/gsdmd-pore-delivery-paradox.md)** — Hypothesis that GSDMD pores could admit normally impermeant inhibitors, with timing and selectivity unresolved.
 - **[Complement C5a in Gout](wiki/complement-c5a-gout.md)** — Evidence that MSU activates complement and that C5a can prime NLRP3, with direct and upstream intervention hypotheses.
 - **[TNFSF14 / LIGHT in Gout](wiki/tnfsf14-gout-target.md)** — CP1a: Second-highest gout-flare biomarker; LIGHT amplifies NF-κB; EGCG and DHA as natural moderators; CERC-002 mAb precedent
-- **[SPM Resolution Pathway](wiki/spm-resolution-pathway.md)** — CP5b: RvD1/MaR1 direct MSU gout animal model evidence; ALX/FPR2 agonism; aspirin-triggered resolvins
+- **[SPM Resolution Pathway](wiki/spm-resolution-pathway.md)** — Exact RvD1 and MaR1 MSU animal evidence, adjacent RvD2 evidence, and a separate precursor-conversion hypothesis.
 - **[Self-Experiment Protocol](wiki/self-experiment-protocol.md)** — N-of-1 monitoring framework with biomarker, diary, attribution, and halt-criteria controls.
 - **[Enzyme Quantification Protocol](wiki/enzyme-quantification-protocol.md)** — Tiered assays for amylase, protease, and lipase activity from kitchen-scale through outsourced testing.
 - **[Butyrate Measurement Audit](wiki/tier-2-butyrate-assay-audit-computational.md)** — Matrix-specific culture-supernatant and stool measurement options, their evidence boundaries, and the paired reference-method gates required before use.
 - **[Medicinal Mushroom Extract SOPs](wiki/medicinal-mushroom-extract-sops.md)** — Planned characterization methods for mushroom extracts, active compounds, functional readouts, and strain identity.
 - **[Open Questions](wiki/open-questions.md)** — Cross-wiki index of unresolved scientific questions organized by chokepoint and mechanism.
 - **[Modality × Target Matrix](wiki/modality-chokepoint-matrix.md)** — Crosses intervention modalities with anatomical and cellular targets to expose underexplored combinations.
-- **[Delivery Route × Compound Class Matrix](wiki/delivery-route-matrix.md)** — Crosses compound classes with enteral, systemic, and local delivery routes to expose route-specific gaps.
+- **[Delivery Route × Product Class Matrix](wiki/delivery-route-matrix.md)** — Exact-product exposure and safety gates across enteral, systemic, and local routes.
 - **[Chassis-Pending Interventions](wiki/chassis-pending-interventions.md)** — Interventions that hit gout chokepoints but still have an open engineering, delivery, or production question. Chassis selection follows exploit selection; it does not define project scope.
 - **[Carnosine](wiki/carnosine.md)** — Dual-phenotype (hyperuricemia + NLRP3) in rats; unique in the stack for addressing both UA and inflammation in a single compound
 - **[ChEMBL Cross-Check](wiki/etc/chembl-cross-check.md)** — Standing cross-reference of candidate compounds against curated bioactivity records.
-- **[Cannabinoids & Terpenes](wiki/cannabinoids-terpenes.md)** — CBD, CBG, CBC, THCV, beta-caryophyllene, myrcene: NLRP3 mechanisms, gout evidence, EPI applications; beta-caryophyllene has direct MSU gout animal model data
+- **[Cannabinoids & Terpenes](wiki/cannabinoids-terpenes.md)** — Exact-material MSU and adjacent inflammasome leads, kept separate until a matched assay supports comparison.
 - **[Validation Experiments](wiki/validation-experiments.md)** — Proposed in vitro, animal, observational, and human-method studies with explicit decision gates.
 - **[Bio-AI Tools](wiki/etc/bio-ai-tools.md)** — Protein-design, docking, omics, and literature tools mapped to Open Enzyme research workflows.
 - **[Paperclip (GXL)](wiki/etc/paperclip-deep-dive.md)** — Literature-search tool whose synthesis output requires primary-source verification before use.
@@ -132,6 +132,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[Autonomous AI Screening Methodology](wiki/etc/autonomous-screening-methodology.md)** — Search-space, calibrated multi-metric evaluation, provenance-bound property tables, verification, and human-handoff lessons from autonomous screening systems.
 - **[Hypotheses Index](wiki/hypotheses/README.md)** — Falsification cards for committed claims, their evidence, kill criteria, and open tests.
 - **[Computational Experiments](wiki/computational-experiments.md)** — Tracking index for current and invalidated COMPs, with verdicts and supersession state.
+- **[Legacy Upstream-Complement Inventory (comp-020)](wiki/upstream-complement-verification-rerun-computational.md)** — **QUARANTINED:** literature provenance only; no computational verdict, qualified hit set, potency rank, ChEMBL coverage rate, or exhaustive-absence authority.
 - **[Cordycepin cns1+cns2 Route (comp-023)](wiki/cordycepin-cassette-burden-computational.md)** — Invalidated FBA; Jeennor's direct *A. oryzae* production evidence and an unranked ER-orthogonality conjecture survive independently.
 - **[Disulfiram Dose Modeling (comp-027)](wiki/disulfiram-dose-modeling-computational.md)** — **Hypothesis generator:** one boundary-dependent GREEN point does not establish a dose window.
 - **[Dual-Chassis EcN PDB + Uricase (comp-031)](wiki/dual-chassis-ecn-pdb-uricase-computational.md)** — **INVALIDATED:** no efficacy, competition, additivity, genotype, or topology conclusion survives.
@@ -141,7 +142,7 @@ See [wiki/validation-experiments.md](wiki/validation-experiments.md) for the ful
 - **[Intra-Articular Uricase H₂O₂ Reaction-Diffusion (comp-035)](wiki/intra-articular-uricase-h2o2-reaction-diffusion-computational.md)** — **Phase-0 prior, not decision-grade:** modeled catalase control still requires Amplex Red and §§1.33/1.36 validation.
 - **[Combined CP0 Scenario (comp-029)](wiki/combined-cp0-systems-model-computational.md)** — Independent single-arm evidence preserves a two-node complement conjecture; the retired arithmetic establishes nothing, and a matched singleton/combination assay is the gate.
 - **[C1-INH EcN-Luminal Protease/Glycosylation Proxy (comp-037)](wiki/c1-inh-protease-stability-ecn-computational.md)** — The proxy supplies no protease or glycosylation verdict; folding, luminal stability, kinetic competition, and retained inhibition remain empirical gates.
-- **[CFH-Dependence Mechanism-Dissociation of CP0 Candidates (comp-039)](wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md)** — Four upstream CP0 candidates classify as CFH-independent under the stated mechanism tests.
+- **[CFH-Dependence Hypotheses for Upstream-CP0 Candidates](wiki/cfh-mechanism-dissociation-cp0-candidates.md)** — Four candidate-specific literature-grounded conjectures; exact-material CFH depletion/restoration testing is required before claiming CFH independence or a genotype-response direction.
 - **[KPV GSDMD Pore Influx (comp-042)](wiki/kpv-gsdmd-pore-influx-computational.md)** — **YELLOW-A2-unresolved:** modeled A1 states are intra-articular GREEN, subcutaneous YELLOW, and oral RED against an extracellular cell-assay proxy; favorable pore-only A2 heuristic cases do not establish total-cell selectivity, and the matched PepT1/healthy-cell baseline remains unmeasured.
 - **[DAF+Lactoferrin EcN Folding Question (comp-043)](wiki/daf-lactoferrin-ecn-folding-feasibility-computational.md)** — Invalidated arbitrary-score model; exact-configuration folding and retained function determine whether an EcN route advances.
 - **[Gut-Lumen Uricase Physiological-Regime Audit (comp-044)](wiki/gut-lumen-uricase-physiologic-regime-computational.md)** — COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. The audit supplies no replacement dose, ΔSUA, genotype order, regime, efficacy model, topology/chassis, production target, or safety conclusion.
@@ -197,7 +198,7 @@ Long-form research documents supporting the concept pages above.
 
 - **[Open Enzyme Vision](wiki/etc/open-enzyme-vision.md)** — North Star: problem statement, insight, platform vision
 - **[Enzyme Deficit Deep Dive](wiki/enzyme-deficit-deep-dive.md)** — Epidemiology and clinical burden of enzyme deficiencies
-- **[Gout Deep Dive](wiki/gout-deep-dive.md)** — Uric acid metabolism, NLRP3, current therapies
+- **[Gout Causal System and Exploit Surface](wiki/gout-deep-dive.md)** — Compact map from urate production through crystals, inflammation, resolution, delivery, and falsification gates.
 - **[Engineered Yeast UOX Research Plan](wiki/engineered-yeast-uricase-proposal.md)** — Matched yeast builds, reaction-site measurements, safety gates, and stop rules.
 - **[Engineered Koji UOX Plan](wiki/engineered-koji-protocol.md)** — Matched *A. oryzae* builds, process measurements, and falsification gates; no chassis or product precommitment.
 - **[NLRP3 Exploit Map](wiki/nlrp3-exploit-map.md)** — NLRP3 inhibition strategies (oridonin, disulfiram, peptides)

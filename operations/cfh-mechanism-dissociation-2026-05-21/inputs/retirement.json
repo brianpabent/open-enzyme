@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "status": "retired_literature_inputs",
+  "former_identifier": "comp-039",
+  "runnable": false,
+  "outputs_present": false,
+  "historical_code_present": false,
+  "historical_query_plan_present": false,
+  "blocked_scope": [
+    "No categorical CFH-independence classification",
+    "No Y402H response direction",
+    "No confidence rank, candidate rank, count, or computational verdict",
+    "No execution may recreate deleted output narratives as current evidence"
+  ],
+  "current_evidence_home": "wiki/cfh-mechanism-dissociation-cp0-candidates.md"
+}

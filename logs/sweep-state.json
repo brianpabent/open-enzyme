@@ -129,7 +129,8 @@
     "cost_usd": null,
     "result_commit": "84deb316b23ca53a4caee50d3e33da3cfdb0d9b0",
     "sweep_id": null,
-    "_migrated_from_v1": true
+    "_migrated_from_v1": true,
+    "integrity_status": "migrated_cursor_unverified"
   },
   "comp_reviews": {
     "comp-001": {
@@ -215,23 +216,6 @@
       ],
       "timestamp": "2026-07-27T11:48:48Z",
       "cost_usd": 1.135081
-    },
-    "comp-020": {
-      "comp_dir": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun",
-      "artifact_manifest_sha256": "7aacc97a7e879d00cf653980b8e053e57a190c9c443e7da421e82ff89cf17589",
-      "source_commit": "1b57f9c213d67eda156ac41119428b0a09555ea9",
-      "review_receipt": "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun/reviews/push-review.md",
-      "comp_verdict": "action_required",
-      "propagation_eligibility": "eligible_with_warning",
-      "synthesis_eligibility": "blocked",
-      "derived_paths": [
-        "wiki/cfh-mechanism-dissociation-cp0-candidates-computational.md",
-        "wiki/computational-experiments.md",
-        "wiki/etc/experiments/comp-007-food-grade-hdaci-screen/README.md",
-        "wiki/upstream-complement-verification-rerun-computational.md"
-      ],
-      "timestamp": "2026-07-27T11:53:21Z",
-      "cost_usd": 0.678785
     },
     "comp-027": {
       "comp_dir": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling",
@@ -481,5 +465,15 @@
       "cost_usd": 1.549151
     }
   },
-  "unresolved_failures": []
+  "unresolved_failures": [
+    {
+      "id": "legacy-synthesis-cursor-unverified",
+      "lane": "synthesis",
+      "recorded_at": "2026-07-28T07:29:16Z",
+      "summary": "Migrated synthesis cursor lacks a complete corpus/coverage receipt. The next manual synthesis must recover from the full scientific source set.",
+      "paths": [
+        "logs/sweep-state.json"
+      ]
+    }
+  ]
 }

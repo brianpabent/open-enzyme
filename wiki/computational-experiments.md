@@ -22,6 +22,20 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ## Analyses
 
+### comp-049 — Fixed Mixed-Source TCM Evidence Qualification — GATE 1 ONLY / NOT RUN
+
+**Question:** Can four named primary animal studies and one secondary systematic review be qualified into exact-material, polarity-preserving evidence records without reproducing the invalid COMP-013 ranking model?
+
+**Status:** **Gate 1 GO on the exact pre-run snapshot; no result-bearing execution has occurred.** The fixed source set and approved design define a bounded replacement experiment. They supply no compound rank, viability verdict, exposure conclusion, target coverage, or advancement decision.
+
+**Relationship to COMP-013:** COMP-049 does not revive or continue COMP-013’s outputs. It is a new experiment that may re-examine a bounded source set under current evidence and provenance rules.
+
+**Next gate:** Run only the manifest-bound design, then obtain the mandatory context-isolated post-run review before interpreting or propagating any output.
+
+**Detail:** [pre-run design, code, inputs, and exact review](./etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/)
+
+---
+
 ### comp-046 — Dietary Fate Ledger + Endogenous Capture-Fraction Comparison — YELLOW / TWO CONDITIONAL HYPOTHESES (2026-07-13)
 
 **Question:** Two independent comparisons: when does whole-cell GR-5 reduce modeled absorbed dietary precursor, and when does spatial UOX→PDB access exceed an overlap-adjusted well-mixed endogenous capture architecture?
@@ -98,23 +112,22 @@ At central pore parameters, the equilibration time constant is 2.17 seconds. At 
 
 ---
 
-### comp-039 — CFH-dependence mechanism-dissociation of dietary upstream-CP0 candidates — CFH-INDEPENDENT (rosmarinic acid High, luteolin Medium, HCP/HCPM/CHCP High, Helicteres Medium-replication-bounded) (2026-05-21)
+### Former comp-039 — reclassified literature synthesis; no computational verdict (2026-05-21)
 
 **Question:** For rosmarinic acid, luteolin, exact *Houttuynia cordata* polysaccharide materials, and *Helicteres* benzofuran lignans, does the candidate's anti-complement mechanism require functional CFH? Candidate identity comes from current evidence homes, not a COMP-018 ranking.
 
-**Verdict:** **All four candidates classified CFH-INDEPENDENT within the cited mechanism records.** The *Helicteres* classification is conditional on a single-paper anchor and requires independent replication before translational use.
+**Disposition:** This was literature synthesis, not a computational experiment. Its categorical CFH-independence and Y402H-response conclusions are non-authoritative. The cited records still support four candidate-specific Research Conjectures and a matched direct test.
 
 **Key findings:**
-- Two-model independent cross-check (Claude Opus 4.7 = Model A; DeepSeek `deepseek/deepseek-chat-v3` = Model B): both models AGREE on classification for all four candidates.
-- Two-model DISAGREEMENT on predicted Y402H × candidate × incident-gout direction: Model A predicts negative direction (effect ≥ in carriers, because Y402H baseline severity amplifies absolute effect size); Model B predicts null (mechanism independence implies genotype indifference). Both reject the AMD-paradox direction (carriers worse). For UKB cross-tab, both predictions need separate falsification thresholds.
-- CFH Y402 structural footprint grep-verified: Sushi/CCP 7 = aa 387-444 of UniProt P08603. The four candidates' binding sites all map to upstream complement nodes (C3 thioester, C3 itself, classical-pathway C2 + C4 + C1q), not the CCP6-8 CRP/GAG-binding surface.
-- Recommended lead UKB cross-tab: rs1061170 × Phenol-Explorer-derived rosmarinic-acid intake × incident gout M10.x. Secondary: rs1061170 × Apiaceae-family intake × incident gout. *Helicteres* is not actionable until independent replication closes.
-- Total OpenRouter spend: ~$0.0022 (Model B counter-reads × 4 candidates).
-- Follow-ups: comp-040 (proposed) — wet-lab CFH-depleted-serum MSU-crystal assay as definitive falsification test; comp-041 (proposed) — East Asian cohort feasibility scan for Houttuynia × CFH cross-tab.
+- Rosmarinic acid has C3b-directed biochemical evidence; luteolin has whole-pathway CP/AP hemolysis evidence; exact *Houttuynia* and *Helicteres* materials have depletion-rescue evidence at multiple complement nodes. **[In Vitro]**
+- Those records motivate, but do not prove, retained activity when CFH is absent or impaired. **[Mechanistic Extrapolation]**
+- Similar CP/AP potency does not localize luteolin's target. Related *Houttuynia* fractions cannot be treated as interchangeable. The *Helicteres* result requires independent matched-material replication.
+- A diet-by-genotype association can update the tested exposure-proxy hypothesis, not confirm or retire an exact biochemical mechanism.
+- Next gate: exact-material CFH-depleted/replete/restored serum with MSU activation, proximal C3 and C5a readouts, and assay-interference controls.
 
-**Informs:** [gout-genetic-variants.md](./gout-genetic-variants.md) Category 5 CFH row · [complement-c5a-gout.md](./complement-c5a-gout.md) §6.3 · [upstream-complement-modulator-sweep-computational.md](./upstream-complement-modulator-sweep-computational.md) · [upstream-complement-verification-rerun-computational.md](./upstream-complement-verification-rerun-computational.md) · [logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md](../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md)
+**Informs:** [gout-genetic-variants.md](./gout-genetic-variants.md) Category 5 CFH row · [complement-c5a-gout.md](./complement-c5a-gout.md) §6.3 · [upstream-complement-verification-rerun-computational.md](./upstream-complement-verification-rerun-computational.md)
 
-**Detail:** [interpretive](./cfh-mechanism-dissociation-cp0-candidates-computational.md) · operations workspace: [`operations/cfh-mechanism-dissociation-2026-05-21/`](../operations/cfh-mechanism-dissociation-2026-05-21/) · Complete first pass (next gate: UKB collaboration ask + comp-040 wet-lab depletion assay)
+**Detail:** [interpretive](./cfh-mechanism-dissociation-cp0-candidates.md)
 
 ---
 
@@ -195,7 +208,7 @@ At central pore parameters, the equilibration time constant is 2.17 seconds. At 
 
 **Next test:** Once an active DAF preparation exists, compare vehicle, rosmarinic acid, DAF SCR1-4, and their combination in one matched MSU-associated complement assay. Measure C5a, C5b-9, DAF recovery, retained function, and surface association; do not route the experiment with an inferred accessibility coefficient.
 
-**Informs:** [complement-c5a-gout §9.7](./complement-c5a-gout.md) · [validation experiments](./validation-experiments.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md)
+**Informs:** [complement-c5a-gout §9.5](./complement-c5a-gout.md) · [validation experiments](./validation-experiments.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md)
 
 **Detail:** [current evidence](./combined-cp0-systems-model-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-029-combined-cp0-systems-model/)
 
@@ -368,32 +381,31 @@ At central pore parameters, the equilibration time constant is 2.17 seconds. At 
 **Verdict:** **Retired as a computational experiment.** The script counted fields in a hand-curated catalog; it did not rerun searches, verify primary evidence, enforce translation review, or validate tiers. Cross-assay rankings, counts, dietary conclusions, chassis extrapolations, and engineering priorities are invalid.
 
 **Key findings:**
-- Rosmarinic acid, luteolin, and *Helicteres* compounds remain assay-specific leads governed by the independently scrubbed COMP-020 evidence boundary.
+- Rosmarinic acid, luteolin, and *Helicteres* compounds remain assay-specific leads. The former COMP-020 is quarantined literature provenance and supplies no quantitative verdict.
 - *Houttuynia cordata* polysaccharides remain exact-material leads governed by the Houttuynia evidence page.
 - C1-INH remains a separate exact-configuration expression, folding, stability, function, and access question.
 - None of those leads inherits a rank, dietary inference, or chassis assignment from COMP-018.
 
-**Current evidence homes:** [COMP-020](./upstream-complement-verification-rerun-computational.md) · [Houttuynia](./houttuynia-cordata.md) · [C1-INH](./c1-inh-protease-stability-ecn-computational.md)
+**Current evidence homes:** [legacy upstream-complement source inventory](./upstream-complement-verification-rerun-computational.md) · [Houttuynia](./houttuynia-cordata.md) · [C1-INH](./c1-inh-protease-stability-ecn-computational.md)
 
 **Detail:** [current routing page](./upstream-complement-modulator-sweep-computational.md) · [invalidated, non-runnable tombstone](./etc/experiments/comp-018-upstream-complement-modulator-sweep/) · [brief-contamination retrospective](../operations/comp-018-vs-comp-020-retrospective.md)
 
 ---
 
-### comp-020 — Upstream Complement Sweep (Brief-Scrubbed Verification Re-Run) — Phase 1 complete (2026-05-08)
+### comp-020 — QUARANTINED: legacy literature scan; no computational verdict (2026-05-08)
 
-**Question:** Across upstream complement nodes (C1q/MBL-MASP-2/C3 tickover/convertases/soluble factors/membrane regulators), which compounds (anchored only to target nodes, no compound names supplied, no prior comp-018 consulted) have documented direct modulator activity?
+**Historical question:** Across upstream complement nodes, which compounds have documented direct modulator activity at a qualified ≤100 µM-equivalent threshold?
 
-**Verdict:** **Unranked assay-specific Phase 1 literature inventory.** No headline compound, tier, comparative potency, platform priority, dietary efficacy, or gout-compartment potency is established. The scan surfaced rosmarinic acid (covalent C3b modification, 34 µM in one cell-based deposition assay), *Helicteres* benzofuran lignans (single-paper in-vitro anchor), luteolin and other flavonoids, *Bupleurum* polysaccharides, marine sulfated polysaccharides, and heparin-derived oligosaccharides as assay-specific leads with heterogeneous formats, units, and safety constraints. Cross-paper ordering is not justified.
+**Disposition:** **Quantitative verdict invalid; artifact quarantined.** This was a manual literature scan without an executable decision function or immutable source snapshot. It mixed heterogeneous assays, above-threshold observations, and mass-unit materials, so it did not establish a threshold-qualified hit set. Source-level observations may be reverified at their exact material, assay, unit, and provenance; no ranking, comparative potency, platform priority, dietary efficacy, gout-compartment potency, ChEMBL coverage rate, or exhaustive absence conclusion survives.
 
 **Key findings:**
-- COMP-020's bounded spot-check found sparse natural-product coverage relative to the named comparator target classes; it is not a ChEMBL census. The invalidated COMP-013 and COMP-014 artifacts do not corroborate its result.
-- Published assay records span 34–1500 µM for rosmarinic acid and 2–102 µg/mL for heparin across different formats and conditions. Those descriptive ranges motivate matched-format replication; they do not establish format as the cause or supply an operative potency.
-- Rosmarinic acid's covalent C3b mechanism is mechanistically distinctive, but its primary full-text verification tier is unresolved and its direct C5-convertase potency (1500 µM) does not support a ≤100 µM threshold claim.
-- Bounded search gaps (not universal absence proofs): Factor H upregulators, CD55/CD59/CR1 upregulators, direct fungal upstream modulators, and Factor B/D natural-product direct inhibitors. C5aR1 was not independently re-executed and remains unresolved.
+- Rosmarinic acid, *Helicteres* lignans, luteolin/flavonoids, and exact polysaccharide materials remain assay-specific in-vitro leads, not a ranked class.
+- Search gaps are bounded records of what this scan did not find, not universal absence proofs.
+- The matched-material, matched-condition assay idea survives as a Research Conjecture; more literature arithmetic cannot replace that experiment.
 
 **Informs:** [complement-c5a-gout](./complement-c5a-gout.md) · [hypotheses/H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) · [tcm-gout-compound-triage-computational](./tcm-gout-compound-triage-computational.md) · [medicinal-mushroom-compound-mapping-computational](./medicinal-mushroom-compound-mapping-computational.md)
 
-**Detail:** [interpretive](./upstream-complement-verification-rerun-computational.md) · [experiments/](./etc/experiments/comp-020-upstream-complement-verification-rerun/) · Phase 1 complete (Phase 2: CNKI/WanFang/J-STAGE + *Helicteres* replication + RA/MSU assay; matched assay-format stratification remains a separate conjecture)
+**Detail:** [current evidence boundary](./upstream-complement-verification-rerun-computational.md) · [quarantined legacy artifact](./etc/experiments/comp-020-upstream-complement-verification-rerun/)
 
 ---
 
@@ -440,6 +452,9 @@ artifact mixed purified compounds, botanical extracts, related but
 non-identical quassinoids, animal and cell evidence, a null human safety-table
 outcome, and heuristic exposure calculations. No ranking, gout-direction
 verdict, evidence-cell comparison, or H-AN-02 adjudication survives.
+COMP-007 did not establish the achievable-concentration or IC50 thresholds
+that COMP-015 attributed to it; those inherited thresholds are withdrawn with
+the comparison method.
 
 **Source-specific leads retained:**
 - Purified cordycepin lowered serum urate and renal URAT1 expression in
@@ -535,7 +550,7 @@ verdict, evidence-cell comparison, or H-AN-02 adjudication survives.
 **Key findings:**
 - The nine names remain only an unranked historical search list; the names are not evidence.
 - Formula-level connections remain research leads but do not establish component, target, or synergy attribution.
-- COMP-049 is the Gate-1-only replacement design for a fixed mixed-source correction set: four primary animal studies plus one secondary systematic review. It has not run.
+- [COMP-049](#comp-049--fixed-mixed-source-tcm-evidence-qualification--gate-1-only--not-run) is the separate Gate-1-only replacement design for a fixed mixed-source correction set. It has not run.
 
 **Informs:** [tcm-modern-rigor-intersection](./tcm-modern-rigor-intersection.md)
 
@@ -653,7 +668,7 @@ verdict, evidence-cell comparison, or H-AN-02 adjudication survives.
 | ~~comp-008~~ | Invalidated, non-runnable hand-scored payload rubric. Stable transformation + reporter expression is the common genetic-entry gate; native-pathway, uricase, lactoferrin, and CR1 tests remain separate unranked configuration questions. | [engineered-lbp-chassis](./engineered-lbp-chassis.md) | Retired |
 | ~~comp-009~~ | Invalidated, non-runnable target-site ranking. No guide, filter funnel, score, shortlist, GREEN verdict, accessibility, specificity, cross-species reuse, target-site-availability conclusion, H03 support, or P2-2 closure survives. | [invalidated interpretation](./urat1-sirna-target-site-selection-computational.md) | Retired |
 | comp-048 | Human proximal-tubule delivery-handle screen: identify surface-expression and topology candidates while keeping receptor identity, internalization, polarity, target coverage, and off-target expression as separate evidence gates | [pre-run design](./etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen/) | Gate 1 GO; not run |
-| ~~comp-011 TCM~~ | Reassigned to COMP-013; that attempt is now invalidated, and the COMP-049 replacement is Gate-1-only and not run | — | Retired |
+| ~~Pre-numbering TCM triage attempt~~ | Later assigned to COMP-013; that attempt is now invalidated, and COMP-049 is a separate Gate-1-only replacement that has not run | — | Retired |
 | ~~comp-021~~ | Invalidated, non-runnable mixed-tier assay-format model. Matched-format replication planning survives only as a conjecture; no quantitative range, candidate rank, or operative gut potency survives. | [assay-format conjecture](./upstream-complement-assay-format-mapping-computational.md) | Retired |
 | ~~comp-022~~ | Invalidated, non-runnable cassette ranking. The 43,200-row enumeration survives only as historical inventory; every rank, tier, shortlist, winner, and component preference is retired. | [evidence boundary](./uricase-cassette-ranking-computational.md) | Retired |
 | ~~comp-024~~ | Invalidated, non-runnable hand-scored model. Complestatin tailoring and C1-INH expression/folding/function require separate configuration-level tests. See Analyses above | — | Retired |
@@ -671,9 +686,9 @@ verdict, evidence-cell comparison, or H-AN-02 adjudication survives.
 | ~~comp-036~~ | Completed 2026-05-16 — YELLOW repeat-dose receptor-occupancy framing; salvages comp-033 RED. See Analyses above | — | ✓ Done |
 | ~~comp-037~~ | Invalidated, non-runnable proxy — exact-configuration folding, stability, kinetics, glycosylation effects, and function remain open. See Analyses above | — | Retired |
 | ~~comp-038~~ | **YELLOW** — Tier 3 HPLC-UV culture-supernatant transfer candidate plus a separate Tier 2 electrochemical/ANN fecal candidate; no ready Tier 1/2 OE butyrate assay. See Analyses above | — | ✓ Done |
-| ~~comp-039~~ | Completed 2026-05-21 — All four upstream-CP0 candidates classified CFH-INDEPENDENT (rosmarinic acid High, luteolin Medium, HCP/HCPM/CHCP High, Helicteres Medium-replication-bounded). See Analyses above | — | ✓ Done |
-| comp-040 | Wet-lab in-vitro CFH-replete/depleted-serum MSU-crystal complement-activation assay — direct falsification test of the comp-039 CFH-independence classification for rosmarinic acid, luteolin, and qualified HCP materials. The HCP complement arm is independent of [validation §1.30](./validation-experiments.md), which tests direct macrophage directionality; either may run when its exact material and assay capability are available, and failure in one does not adjudicate the other. | [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md), [Houttuynia](./houttuynia-cordata.md), [validation §1.30](./validation-experiments.md), [gout-genetic-variants.md](./gout-genetic-variants.md) Category 5, [complement-c5a-gout.md](./complement-c5a-gout.md) §6.3 | Blocked (OE wet-lab access and exact-material sourcing; relevant to lab-partner conversations) |
-| comp-041 | East Asian cohort feasibility scan for Houttuynia × rs1061170 × incident gout cross-tab — KoGES, China Kadoorie Biobank, Singapore Chinese Health Study. Parallels the 2026-05-19 UKB feasibility analysis but for the Houttuynia-tractable population (HCP exposure captured; Y402H allele frequency ~5-6%). Defined by [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md) §5 + §7. | [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md), [logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md](../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md) | Queueable (opens when East Asian collaboration channel becomes available) |
+| ~~comp-039~~ | Reclassified as literature synthesis; no computational result. Four candidate-specific CFH-dependence conjectures survive, with no genotype-response direction. | [CFH-dependence hypotheses](./cfh-mechanism-dissociation-cp0-candidates.md) | Reclassified |
+| comp-040 | Wet-lab in-vitro CFH-replete/depleted/restored-serum MSU-crystal complement-activation assay — direct test of the candidate-specific CFH-dependence hypotheses for rosmarinic acid, luteolin, and qualified *Houttuynia* materials. The *Houttuynia* complement arm is independent of [validation §1.30](./validation-experiments.md), which tests direct macrophage directionality; either may run when its exact material and assay capability are available, and failure in one does not adjudicate the other. | [CFH-dependence hypotheses](./cfh-mechanism-dissociation-cp0-candidates.md), [Houttuynia](./houttuynia-cordata.md), [validation §1.30](./validation-experiments.md), [gout-genetic-variants.md](./gout-genetic-variants.md) Category 5, [complement-c5a-gout.md](./complement-c5a-gout.md) §6.3 | Blocked (OE wet-lab access and exact-material sourcing) |
+| comp-041 | East Asian cohort feasibility scan for a *Houttuynia* exposure proxy × rs1061170 × incident gout cross-tab — assess whether a cohort records a usable exposure proxy and has adequate genotype/outcome support. Any resulting association would test that proxy in that population, not exact HCP biochemistry. | [CFH-dependence hypotheses](./cfh-mechanism-dissociation-cp0-candidates.md) | Queueable (opens when an appropriate cohort and access path exist) |
 | ~~comp-028~~ | Deprioritized 2026-05-16 — cordycepin-arm moot; general design-escape question non-load-bearing today; re-openable for future cytosolic third-cassette candidate | — | Closed |
 
 ---

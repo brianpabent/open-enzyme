@@ -191,7 +191,10 @@ nav:
     - IA Uricase H₂O₂ Reaction-Diffusion (comp-035): intra-articular-uricase-h2o2-reaction-diffusion-computational.md
     - Combined CP0 Systems Model (comp-029): combined-cp0-systems-model-computational.md
     - C1-INH Protease Stability + Glycosylation in EcN (comp-037): c1-inh-protease-stability-ecn-computational.md
-    - CFH-Dependence Mechanism-Dissociation of CP0 Candidates (comp-039): cfh-mechanism-dissociation-cp0-candidates-computational.md
+    - Quarantined Upstream Complement Modulator Sweep (comp-018): upstream-complement-modulator-sweep-computational.md
+    - Quarantined Upstream Complement Verification Re-run (comp-020): upstream-complement-verification-rerun-computational.md
+    - Quarantined Upstream Complement Assay Mapping (comp-021): upstream-complement-assay-format-mapping-computational.md
+    - CFH-Dependence CP0 Candidate Conjectures (retired comp-039 literature synthesis): cfh-mechanism-dissociation-cp0-candidates.md
     - TCM Gout Compound Triage (comp-013): tcm-gout-compound-triage-computational.md
     - Medicinal Mushroom Compound Mapping (comp-014): medicinal-mushroom-compound-mapping-computational.md
     - Butyrate Measurement Audit (comp-038): tier-2-butyrate-assay-audit-computational.md

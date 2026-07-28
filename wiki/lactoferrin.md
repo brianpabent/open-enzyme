@@ -1,5 +1,5 @@
 ---
-title: "Lactoferrin — Iron-Binding Glycoprotein, CP5b Resolution Candidate, and Koji Co-Expression Target"
+title: "Lactoferrin — Exact-Material Evidence, Delivery, and Production Questions"
 date: 2026-04-24
 tags:
   - lactoferrin
@@ -13,9 +13,6 @@ tags:
   - nlrp3
   - pyroptosis
   - gsdmd
-  - cp1
-  - cp5b
-  - cp6b
   - tlr4
   - lps
   - cd14
@@ -45,11 +42,12 @@ sources:
   - "Appelmelk BJ, An YQ, Geerts M, et al. Infect Immun 1994;62(6):2628-32 (PMID: 8188389)"
   - "Caccavo D, Afeltra A, Pece S, et al. Infect Immun 1999;67(9):4668-72 (PMID: 10456914)"
   - "Baveye S, Elass E, Fernig DG, Blanquart C, Mazurier J, Legrand D. Infect Immun 2000;68(12):6519-25 (PMID: 11083760)"
+  - "Ferrer-Picón E, Dotti I, Corraliza AM, et al. J Crohns Colitis 2020;14(12):1661-1673 (PMID: 31211831)"
   - "Iglesias-Figueroa B, Valdiviezo-Godina N, Siqueiros-Cendón T, Sinagawa-García S, Arévalo-Gallegos S, Rascón-Cruz Q. Int J Mol Sci 2016;17(6):902 (PMID: 27294912)"
   - "Yen CC, Wu PY, Ou-Yang H, Chen HL, Chong KY, Chang RL, Chen CM. Int J Mol Sci 2024;25(3):1818 (PMID: 38339093)"
   - "Zhao X, Li Q, Luo H, et al. Appl Microbiol Biotechnol 2026;110(1) (PMID: 41735545)"
   - "Conesa C, Calvo M, Sánchez L. Biotechnol Adv 2010;28(6):831-8 (PMID: 20624450)"
-  - "Almond RJ, Flanagan BF, Antonopoulos A, et al. Eur J Immunol 2012;43(1):170-81 (PMID: 23012214)"
+  - "Almond RJ, Flanagan BF, Antonopoulos A, et al. Eur J Immunol 2013;43(1):170-81; ePub 2012 (PMID: 23012214)"
   - "Ramalingam S, Crawford J, Chang A, et al. Ann Oncol 2013;24(11):2875-80 (PMID: 24050956)"
   - "Parikh PM, Vaid A, Advani SH, et al. J Clin Oncol 2011;29(31):4129-36 (PMID: 21969509)"
   - "Hayes TG, Falchook GS, Varadhachary A. Invest New Drugs 2010;28(2):156-62 (PMID: 19238327)"
@@ -64,31 +62,43 @@ status: published
 
 # Lactoferrin
 
-This is the canonical Open Enzyme dossier for lactoferrin. Companion entries:
+This page evaluates lactoferrin as an exact-material research track. Related mechanism and experiment pages:
 
-- [spm-resolution-pathway.md](./spm-resolution-pathway.md) — CP5b mechanism context where lactoferrin is listed as a "resolution-adjacent" modulator.
+- [spm-resolution-pathway.md](./spm-resolution-pathway.md) — exact RvD1, MaR1, and RvD2 evidence; lactoferrin does not inherit an SPM or CP5b role from that track.
 - [engineered-koji-protocol.md §16](./engineered-koji-protocol.md) — the co-expression module; engineering design, validation experiment, decision points.
-- [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) — chokepoint map; lactoferrin carried at CP5b and increasingly at CP1 (TLR4-LPS priming block) and CP6b (pyroptosis/GSDMD suppression).
+- [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) — chokepoint map used to design a direct MSU experiment; adjacent lactoferrin observations do not assign the material to multiple gout chokepoints.
 
-Why a standalone page: lactoferrin is the only Open Enzyme production-candidate compound with (a) peer-reviewed precedent for heterologous expression in the *Aspergillus* koji-chassis family at commercial titers, (b) a multi-chokepoint mechanism profile spanning both priming and resolution arms, and (c) an oral human safety record — simultaneously. That combination is rare enough to warrant a dedicated deep dive rather than scattering content across the koji-protocol and SPM pages.
+The useful research unit is an exact lactoferrin material: species sequence, glycosylation, iron loading, aggregation, fragments, production host, formulation, and route can all change the result. This page keeps the inflammatory, exposure, safety, and production questions together without treating them as one validated mechanism.
 
 ---
 
 ## 1. What It Is
 
-Lactoferrin (Lf) is an ~80 kDa iron-binding glycoprotein of the transferrin family. Produced by mucosal epithelia and neutrophil secondary granules, secreted into milk (where it is the second-most-abundant protein after caseins), tears, saliva, seminal fluid, and respiratory / gastrointestinal mucus. Bovine milk Lf (bLf) is the commercial mainstay — the dairy industry already handles kilotonne-scale supply, and bLf is GRAS in the United States for infant formula use.
+Lactoferrin (Lf) is an ~80 kDa iron-binding glycoprotein of the transferrin family produced by mucosal epithelia and neutrophils and present in milk and other secretions. Bovine, human, recombinant, apo-, holo-, intact, and fragmented materials are not interchangeable.
 
 ### 1.1 Primary Structure
 
-Human lactoferrin (hLf, UniProt P02788, gene LTF) is a 703-residue mature polypeptide following signal-peptide cleavage. The coding sequence is interrupted by 16 introns spanning ~35 kb on chromosome 3q21-q23. Bovine Lf (bLf, UniProt P24627) is 689 aa mature and shares ~69% sequence identity with hLf at the amino acid level. Porcine (pLf) and camel (cLf) variants are also characterized; camel Lf is of pharmaceutical interest because of its unusually high heat stability. (Evidence level: In Vitro — standard structural biology, well-established.)
+Human lactoferrin (hLf, UniProt P02788, gene LTF) is annotated as a 710-residue precursor with a 19-residue signal peptide and a 691-residue mature chain. Exact sequence numbering must therefore state whether it refers to precursor or mature protein. Bovine, porcine, camel, and recombinant variants require their own sequence and material records rather than inheritance from hLf. (**In Vitro structural/biochemical evidence**; UniProt P02788.)
 
 ### 1.2 Two Homologous Lobes, Two Iron Ions
 
-Lf folds into two globular lobes of approximately equal size (N-lobe, residues 1–333, and C-lobe, residues 345–703 in hLf) connected by a short α-helical linker. Each lobe is further split into two subdomains (N1/N2 and C1/C2) that close like clamshell jaws around an iron-binding cleft. Each lobe binds **one Fe³⁺ ion** coordinated by four conserved residues (two Tyr, one Asp, one His) plus a **synergistic bicarbonate (CO₃²⁻) anion** bridging iron and protein. Without bicarbonate, iron binding does not occur. Affinity is ~10⁻²⁰ M under physiologic conditions — among the tightest iron-binding constants known for a biological ligand, and roughly 300× tighter than serum transferrin. The recombinant *A. awamori* hLf structure (Sun et al. 1999 PMID 10089347; [DOI](https://doi.org/10.1107/s0907444998011226)) refined to 2.2 Å resolution confirms the native fold is preserved across fungal expression: the entire polypeptide main chain superimposes on native milk hLf with 0.3 Å RMSD, and iron-release kinetics agree closely. According to PubMed, this structural confirmation de-risks fungal expression for applications that depend on iron binding.
+Lf folds into two globular lobes, each with an iron-binding cleft. The
+recombinant human-lactoferrin structure reported by Sun et al. used a specific
+*A. awamori* product and found close structural and iron-release agreement with
+the native comparator (PMID 10089347; **In Vitro structural/biochemical
+evidence**). That result supports the exact construct, host, processing, and
+assays studied. It does not establish native folding across fungal hosts,
+solid-state koji, another species sequence, or a delivered gout product.
 
 ### 1.3 Glycosylation — The Awkward Variable
 
-hLf carries three N-glycosylation sites (Asn137, Asn478, Asn623); bLf carries four; pLf five. Native milk hLf has a complex sialylated/fucosylated/Lewis-X glycan profile; *Aspergillus*-produced hLf has a simpler, mannose-rich fungal glycan profile; rice- and *Pichia*-produced variants fall in between. Glycosylation differences are functionally consequential for bioavailability, allergenicity, and some receptor interactions — see §8.3 (bioavailability) and §12 (open questions). Importantly, Almond et al. 2012 (*Eur J Immunol* 43:170-81; PMID 23012214; [DOI](https://doi.org/10.1002/eji.201142345)) showed that **recombinant (*Aspergillus* or rice) hLf is ~40× less immunogenic and ~200× less allergenic than native human milk hLf** in BALB/c mice, attributable to the simpler recombinant glycoprofile. This is **a potential production advantage**: fungal-expressed Lf may be preferable over native-sourced for chronic dosing in atopic or immune-sensitive populations. (In Vitro + Animal Model.)
+hLf, bLf, and pLf differ in sequence and glycosylation sites; host and process
+can further change the glycan profile. Almond et al. compared named recombinant
+and native human-lactoferrin materials in BALB/c mice (PMID 23012214; **Animal
+Model**). Those material- and model-specific immunogenicity/allergenicity
+results do not generalize to every fungal product, predict human chronic-use
+safety, or select a production route. Product-specific glycan, aggregation,
+immune-reactivity, and functional measurements remain required.
 
 ### 1.4 Iron Saturation States
 
@@ -96,18 +106,18 @@ hLf carries three N-glycosylation sites (Asn137, Asn478, Asn623); bLf carries fo
 - **Holo-Lf** (diferric, fully iron-saturated): closed-lobe conformation; salmon-pink color; absorbance max ~465 nm (the UV-Vis readout used to confirm iron binding in koji-produced Lf — see [engineered-koji-protocol.md §16 Phase B](./engineered-koji-protocol.md)).
 - **Monoferric-Lf**: one lobe iron-loaded, one empty; exists as a mixture with N-lobe- and C-lobe-loaded isoforms.
 
-Commercial bLf supplements are typically 10–20% iron-saturated (predominantly apo-Lf by mass). Whether apo- or holo-Lf is more effective for a given indication is mechanism-dependent (§12 lists this as an open question for gout applications). Iron-sequestration effects clearly require apo-Lf (the protein must have capacity to bind new iron); receptor-mediated immunomodulatory effects may be form-independent or favor one form depending on which receptor is engaged.
+Commercial bovine-lactoferrin materials can differ in iron saturation, and a product label does not establish the measured state of a lot. Iron-sequestration hypotheses require available binding capacity; receptor- or fragment-mediated effects may have a different dependence. Measure iron state rather than assuming it.
 
 ---
 
 ## 2. Iron Biology — The Bacteriostatic Mechanism
 
-The textbook function of Lf is **nutritional immunity**: sequestering free iron from bacterial pathogens that require iron for growth. The affinity differential between Lf (~10⁻²⁰ M) and bacterial siderophores (~10⁻²² to 10⁻³⁴ M for the strongest microbial iron-scavenging molecules) is closer than it sounds — many enteric bacteria can compete for Lf-bound iron using xenosiderophore uptake, and some produce Lf-specific proteases to break the protein and steal its iron. But at the mucosal surface, the bulk effect of high Lf concentration + limited free iron is bacteriostatic for iron-dependent bacteria including many *E. coli*, *Klebsiella*, *Pseudomonas*, and *Haemophilus* strains.
+The textbook function of Lf is **nutritional immunity**: sequestering free iron from bacterial pathogens that require iron for growth. Some microbial siderophores bind Fe(III) extremely tightly, but exact constants depend on the ligand, protonation state, competing ions, and assay conditions; this page does not use a cross-assay affinity range as a quantitative comparator. Microbes can also use xenosiderophore uptake or lactoferrin-directed proteolysis. Whether an exact lactoferrin material is bacteriostatic in the intended compartment depends on iron loading, concentration, microbial composition, and exposure and must be measured directly.
 
 For the gout context specifically, the **iron-chelation arm is less directly relevant** than the receptor/immunomodulatory arms (§3-4). Gout is not fundamentally an iron-dysregulation disease. But two indirect connections matter:
 
 1. **Fenton chemistry.** Free iron catalyzes hydroxyl-radical formation from hydrogen peroxide, and hydroxyl radicals prime NLRP3 via ROS. Lf's iron sequestration may therefore reduce ROS-dependent priming. Lf and ergothioneine act at different points—Lf reduces the iron catalyst; EGT scavenges radical products—but additivity is only a prediction pending a combination ROS assay in MSU-stimulated macrophages.
-2. **Commercial holo-Lf for iron delivery.** Some supplement formulations deliberately iron-saturate Lf as an iron-repletion strategy (anemia-focused products). For Open Enzyme's gout context, this is the wrong direction — we want apo- or low-saturation Lf to preserve the sequestration and anti-ROS functions.
+2. **Holo-Lf as a comparator.** Iron-saturated material can separate iron-sequestration effects from receptor- or fragment-mediated effects. Do not preselect apo- or holo-Lf before the mechanism and exposure are measured.
 
 ---
 
@@ -117,22 +127,22 @@ Lf binds multiple mammalian receptors, which is why the pharmacology is pleiotro
 
 ### 3.1 Intelectin-1 (ITLN1, Intestinal Lactoferrin Receptor)
 
-Intelectin-1 is a secreted calcium-dependent lectin that the enterocyte brush-border expresses on the luminal surface. It binds the N-terminal region of Lf (across species) and is considered the primary intestinal lactoferrin receptor for systemic uptake of orally-ingested Lf. In humans a single ITLN1 gene is present; in some mouse strains (e.g., 129S7) the locus is expanded into six paralogs with tissue-specific expression (Lu et al. 2011 PMID 21324158; [DOI](https://doi.org/10.1186/1471-2164-12-110)) — important caveat for mouse-to-human translation of oral-Lf studies.
+Intelectin-1 has been reported as a candidate enterocyte lactoferrin receptor. In Caco-2 cells, lactoferrin-receptor knockdown reduced uptake of both apo- and holo-lactoferrin (**In Vitro**; Jiang et al. 2011, PMID 21935933; [DOI](https://doi.org/10.1002/jcp.22650)). That result does not establish that ITLN1 is the primary route in vivo or quantify intact systemic uptake after oral dosing. In humans a single ITLN1 gene is present; in some mouse strains (e.g., 129S7) the locus is expanded into six paralogs with tissue-specific expression (Lu et al. 2011, PMID 21324158; [DOI](https://doi.org/10.1186/1471-2164-12-110)) — an important caveat for mouse-to-human translation of oral-lactoferrin studies.
 
-Why it matters for gout: intestinal uptake via ITLN1 determines what fraction of an oral bLf dose reaches systemic circulation and can then reach joint-resident macrophages and hepatic/splenic myeloid compartments. Reported transintestinal absorption of intact Lf is on the order of 10–30% in healthy adult humans; the rest is degraded in the gut lumen or acts locally on gut-resident immune cells and microbiota.
+Why it matters for gout: ITLN1-mediated uptake is one possible determinant of oral lactoferrin disposition, but this page has no primary-source basis for assigning a fraction of an oral dose to intact systemic exposure in healthy adults. Gut-luminal, epithelial, circulating, and joint exposure must be measured separately for the exact material and formulation.
 
 ### 3.2 LRP1 and LRP2 (Low-Density Lipoprotein Receptor-Related Proteins)
 
 LRP1 (CD91) is expressed on macrophages, hepatocytes, and many stromal cells. LRP2 (megalin) is expressed on renal proximal tubule, thyroid, and some epithelia. Both bind Lf and contribute to receptor-mediated clearance and tissue distribution.
 
-Zhao et al. 2020 (*Acta Pharm Sin B* 10:1966-1976; PMID 33163347; [DOI](https://doi.org/10.1016/j.apsb.2020.07.019)) engineered **lactoferrin-modified liposomes targeting LRP1 on inflammatory-bowel-disease macrophages**. The LF-targeting element alone drove macrophage uptake in a DSS-colitis mouse model; the liposomes delivered patchouli alcohol as payload but the LF targeting is the generalizable finding. Key mechanistic readouts from that system:
+Zhao et al. 2020 (*Acta Pharm Sin B* 10:1966-1976; PMID 33163347; [DOI](https://doi.org/10.1016/j.apsb.2020.07.019)) engineered **lactoferrin-modified liposomes carrying patchouli alcohol** to target LRP1-expressing macrophages in a DSS-colitis model. The complete formulation changed inflammatory and NLRP3-associated readouts:
 
 - Reduced pro-inflammatory cytokine output (TNF-α, IL-6, IL-1β)
 - Reduced ROS
 - Suppressed MAPK/NF-κB signaling
 - **Suppressed NLRP3 inflammasome formation and IL-1β activation**
 
-According to PubMed, this is direct evidence that **LRP1-targeted delivery of an Lf-bearing ligand suppresses NLRP3 in activated colonic macrophages in vivo**. The Open Enzyme-relevant reading: the Lf protein itself functions as an LRP1-targeting ligand on macrophages, and the binding event is (at least partially) anti-inflammatory independent of the cargo. (Animal Model — DSS colitis; not MSU gout, so it remains an extrapolation to gout-context macrophages.)
+The study supports lactoferrin as a targeting ligand in that exact cargo-bearing formulation (**Animal Model**). It does not isolate an anti-inflammatory or NLRP3 effect of the lactoferrin surface ligand from patchouli alcohol, the liposome, or their interaction, and it is not an MSU-gout experiment.
 
 ### 3.3 CD14 (LPS Co-Receptor)
 
@@ -140,7 +150,7 @@ Baveye et al. 2000 (*Infect Immun* 68:6519-6525; PMID 11083760; [DOI](https://do
 
 ### 3.4 TLR4 Cross-Talk (Indirect)
 
-Lf does not appear to bind TLR4 directly, but modifies TLR4 signaling by (a) binding lipid A (§4.4), (b) binding CD14 (§3.3), and (c) possibly modulating MD-2 / MyD88 scaffolds downstream. The net effect is **LPS priming suppression**, which matters for CP1a (NF-κB transcriptional priming) in the gout exploit map. In gout, complement C5a is the dominant priming signal (not LPS — see [complement-c5a-gout.md](./complement-c5a-gout.md)), but TLR4-LPS priming is still relevant in metabolic-syndrome and leaky-gut gout phenotypes where chronic low-grade endotoxemia feeds CP1a.
+The reviewed records support lactoferrin interactions with lipid A and CD14 in defined systems; they do not establish direct TLR4 binding or an MSU-gout CP1a effect. Use LPS priming as a controlled mechanistic arm, and test C5a-associated priming separately. See [complement C5a](./complement-c5a-gout.md).
 
 > **Reactome graph anchor (2026-06-01):** TLR4 signaling is represented by `R-HSA-166016` Toll Like Receptor 4 cascade and `R-HSA-166166` MyD88-independent TLR4 cascade. Stress-response adjacency relevant to lactoferrin stack logic includes `R-HSA-9755511` KEAP1-NFE2L2 pathway, `R-HSA-9818749` NFE2L2 gene expression, `R-HSA-9612973` autophagy, and `R-HSA-5205647` mitophagy. These are pathway anchors only; lactoferrin-specific regulation remains primary-literature evidence. (Pathway anchor; source: `reference/generated/reactome/2026-06-01-open-enzyme-audit/`)
 
@@ -148,15 +158,15 @@ Lf does not appear to bind TLR4 directly, but modifies TLR4 signaling by (a) bin
 
 Surface nucleolin is an atypical Lf receptor on activated macrophages, some endothelia, and tumor cells. It mediates Lf endocytosis and has been linked to Lf's anti-tumor and anti-angiogenic effects (part of the rationale for talactoferrin development in NSCLC — §9). Gout-relevance is speculative at best.
 
-### 3.6 Why Receptor Diversity Matters for Dose Design
+### 3.6 Why receptor diversity matters for exposure design
 
-Each receptor has a different Kd, different tissue distribution, and potentially different downstream signaling outcome. Unlike a single-target small-molecule inhibitor, Lf's dose-response is a composite of several receptor-ligand occupancies at different tissue compartments. This is why oral Lf dosing in humans spans three orders of magnitude across indications (100 mg/day supplement to 4.5 g/day talactoferrin clinical trials) without a clearly defined "optimal" dose — the effective dose depends on which receptor pathway dominates the indication.
+Each receptor has a different tissue distribution and potential downstream consequence. A measured response to one material in one compartment cannot be assigned to another receptor, route, or tissue without target-engagement and exposure data. This argues for compartment-resolved experiments, not a single class-wide dose.
 
 ---
 
 ## 4. Mechanisms in the Gout Context
 
-Lactoferrin's putative relevance to gout spans four partially-overlapping mechanisms. **No MSU-crystal-triggered gout animal model study has yet been published with lactoferrin as the intervention.** This is a major gap — flagged in §12 and in [spm-resolution-pathway.md open questions](./spm-resolution-pathway.md#6-open-questions). All the evidence below is from adjacent inflammatory models (nephrotoxicity, radiation-induced intestinal injury, IBD, cognitive-impairment models) where the NLRP3/GSDMD/pro-IL-1β axis is engaged.
+Lactoferrin has several gout-adjacent mechanism leads, all bounded by exact material and model. The sources currently assembled here are nephrotoxicity, radiation-injury, IBD, cognitive-impairment, and biochemical LPS studies rather than a direct MSU-gout intervention experiment. This is a bounded corpus statement, not proof that no such study exists.
 
 ### 4.1 NLRP3 / Caspase-1 / GSDMD Axis Suppression
 
@@ -167,23 +177,23 @@ Habib et al. 2023 (*Life Sci* 335:122245; PMID 37926296; [DOI](https://doi.org/1
 - **Readouts:** Serum creatinine, BUN, **serum uric acid**, KIM-1, LDH, AST, ALP, histology. Tissue protein: NLRP3, p65 NF-κB, caspase-1, IL-1β, IL-18, MAPK, pAkt, pGSK-3β.
 - **Findings:** Lactoferrin reduced serum creatinine, BUN, **and serum uric acid**; reduced histologic kidney/lung injury; significantly suppressed NLRP3, p65 NF-κB, caspase-1, IL-1β, IL-18, and MAPK signaling in both tissues; restored pAkt and pGSK-3β.
 
-According to PubMed, this is the **closest-to-gout animal-model study for lactoferrin in the current literature** because it directly measures serum uric acid and demonstrates concurrent NLRP3/caspase-1/IL-1β suppression in the same animal. The authors describe the result as "lactoferrin might be a promising candidate for ameliorating carfilzomib-induced nephrotoxicity," but for the Open Enzyme purpose the value is the **cross-phenotype signal**: one intervention lowers serum UA *and* suppresses the NLRP3 cascade in renal tissue, the same dual phenotype that makes carnosine attractive (see [carnosine.md](./carnosine.md)). **Evidence level: Animal Model; direct MSU gout replication is the missing experiment.**
+This is an **Animal Model** result in drug-induced organ injury. Concurrent serum-urate and inflammasome-associated changes make a dual-readout MSU experiment worth running, but kidney injury can change urate independently of a gout-relevant mechanism. The study does not establish direct urate transport, joint exposure, or MSU efficacy.
 
-Shan et al. 2026 (*Food Funct* 17:1045-1060; PMID 41524100; [DOI](https://doi.org/10.1039/d5fo04989j)) adds a **mechanistic layer at pyroptosis (CP6b)**:
+Shan et al. 2026 (*Food Funct* 17:1045-1060; PMID 41524100; [DOI](https://doi.org/10.1039/d5fo04989j)) reported mitophagy- and pyroptosis-associated readouts in non-gout radiation-injury systems:
 
 - **Model:** Radiation-induced intestinal injury (RIII) in C57BL/6J mice (10 Gy total-abdominal) and IEC-6 rat intestinal epithelial cells (4 Gy X-ray).
 - **Intervention:** Lactoferrin pretreatment.
-- **Findings:** Lf inhibited activation of the **NLRP3 / caspase-1 / gasdermin-D (GSDMD) pyroptosis pathway** and activated mitophagy (both PINK1/Parkin-dependent and FUNDC1/BNIP3/NIX-driven). Pharmacological mitophagy inhibition (3-MA, Mdivi-1) abolished Lf's protective effect — the mitophagy-induction arm is mechanistically required, not incidental.
+- **Findings:** Lactoferrin changed NLRP3-, caspase-1-, GSDMD-, and mitophagy-associated readouts. The study used 3-MA and Mdivi-1 perturbations to test pathway dependence, but these are nonselective autophagy and mitochondrial-dynamics tools; their effects do not prove a target-specific mitophagy mechanism.
 
-According to PubMed, this positions lactoferrin as a GSDMD-axis modulator, which maps directly onto **CP6b (GSDMD pore formation)** in the Open Enzyme [nlrp3-exploit-map](./nlrp3-exploit-map.md). Lactoferrin's CP6b coverage is complementary to disulfiram (the current pharma-grade CP6b candidate) — disulfiram covalently modifies a GSDMD cysteine directly, while lactoferrin suppresses the pathway upstream via mitophagy-mediated clearance of damaged mitochondria. **Evidence level: Animal Model + In Vitro; GSDMD readout is direct, not extrapolated.**
+The **Animal Model + In Vitro** result supports a mitophagy-associated pyroptosis hypothesis in the tested radiation-injury systems. It does not establish direct GSDMD binding, an MSU effect, or complementarity with another intervention.
 
 ### 4.2 Macrophage NLRP3 Suppression (IBD / LRP1-Targeted)
 
-Zhao et al. 2020 (PMID 33163347, detailed in §3.2) — LF-modified liposomes targeted LRP1-expressing colonic macrophages in a DSS-colitis model and suppressed NLRP3 inflammasome formation and IL-1β activation, along with MAPK/NF-κB pathway suppression. For the gout question, this confirms: **Lf-tagged delivery to LRP1+ macrophages drives NLRP3 suppression in vivo** in at least one inflammatory model. Joint-resident synovial macrophages express LRP1. (Animal Model — DSS colitis; extrapolation to MSU-activated synovial macrophages.)
+Zhao et al. 2020 (PMID 33163347, detailed in §3.2) tested lactoferrin-modified, patchouli-alcohol-loaded liposomes in DSS colitis. The complete formulation changed macrophage and NLRP3-associated readouts (**Animal Model**). It supports an LRP1-targeting formulation lead but cannot attribute the inflammatory effect to lactoferrin alone or transfer it to synovial macrophages.
 
 ### 4.3 Cognitive Impairment / Neuroinflammation — NF-κB / NLRP3 in Hippocampus
 
-He et al. 2023 (*Curr Res Food Sci* 7:100533; PMID 37351541; [DOI](https://doi.org/10.1016/j.crfs.2023.100533)) — Western-diet-induced cognitive impairment model. Oral lactoferrin suppressed hippocampal microglial activation, reduced serum pro-inflammatory cytokines, **inhibited NF-κB / NLRP3 inflammasome activation in the hippocampus**, and improved tight junction proteins in the gut barrier. The antibiotic-depletion control group lost the Lf effect — **the anti-inflammatory action depends on an intact gut microbiome**, linking Lf's mechanism partly to microbiome modulation rather than direct systemic Lf-receptor engagement alone. Gout-relevance: metabolic-syndrome-dominant gout has a leaky-gut / LPS-priming phenotype, and Lf's microbiome-dependent mechanism may be more impactful in exactly this subgroup. (Animal Model.)
+He et al. 2023 (*Curr Res Food Sci* 7:100533; PMID 37351541; [DOI](https://doi.org/10.1016/j.crfs.2023.100533)) reported gut-barrier, microbiome, cytokine, and hippocampal NF-κB/NLRP3-associated changes in a Western-diet cognitive-impairment model. Antibiotic depletion altered the observed effect (**Animal Model**). This motivates a microbiome-dependence question; it does not identify a gout subgroup or distinguish local from systemic lactoferrin action.
 
 ### 4.4 LPS / Lipid A Neutralization — Priming Block
 
@@ -191,60 +201,50 @@ Appelmelk et al. 1994 (*Infect Immun* 62:2628-2632; PMID 8188389; [DOI](https://
 
 Caccavo et al. 1999 (*Infect Immun* 67:4668-4672; PMID 10456914; [DOI](https://doi.org/10.1128/IAI.67.9.4668-4672.1999)) confirmed that **lipid A is the dominant LPS determinant recognized by Lf**, and that the polysaccharide O-chain and oligosaccharide core interfere with binding — smoother LPS variants are bound less efficiently. Anti-Lf monoclonal AGM 10.14 blocked the Lf-lipid A interaction, providing a reagent for specificity-testing.
 
-According to PubMed, these two papers together establish Lf as a **direct LPS priming-layer antagonist**. In gout, this is relevant when chronic low-grade endotoxemia (metabolic syndrome, CKD, obesity — the gout-comorbid phenotype) is feeding TLR4-dependent NLRP3 priming. Lf neutralizes LPS at the lipid A layer; separately, the Baveye 2000 finding (§3.3) adds a second anti-LPS layer via sCD14 binding. **Evidence level: In Vitro — binding kinetics and cellular endotoxin response.**
+Together these papers support lipid-A/CD14 interactions and altered cellular LPS responses **In Vitro**. Whether an exact lactoferrin material reaches the relevant priming compartment and changes an MSU response must be tested directly.
 
-### 4.5 Mechanism Summary Mapped to the Exploit Map
+### 4.5 Adjacent Observations That Motivate Separate MSU Tests
 
-| Chokepoint | Lactoferrin mechanism | Evidence | Primary source |
-|---|---|---|---|
-| **CP1a** (NF-κB priming — LPS / TLR4 arm) | Lipid A binding (Kd ~0.5 nM equivalent; 2 × 10⁹ M⁻¹); sCD14 binding (Kd ~16 nM); suppression of CD14-LPS-driven endothelial activation | In Vitro | Appelmelk 1994 PMID 8188389; Baveye 2000 PMID 11083760 |
-| **CP1b** (non-transcriptional ROS priming) | Iron sequestration → reduced Fenton-ROS; confirmed ROS suppression in radiation-injury and nephrotoxicity models | Animal Model + In Vitro | Habib 2023 PMID 37926296; Shan 2026 PMID 41524100 |
-| **CP2** (NLRP3 assembly) | Indirect via mitophagy induction — clears damaged mitochondria before they trigger mtROS-driven NLRP3 | Animal Model + In Vitro | Shan 2026 PMID 41524100 |
-| **CP4** (caspase-1 activation) | Suppressed caspase-1 cleavage in carfilzomib-nephrotoxicity and DSS-colitis models | Animal Model | Habib 2023 PMID 37926296; Zhao 2020 PMID 33163347 |
-| **CP5b** (ALX/FPR2 resolution — **indirect only**) | No direct ALX/FPR2 agonism published; proposed via macrophage polarization (M1 → M2 — see §4.6) and via aggNET-favoring resolution signaling | In Vitro | Fu 2025 PMID 40589746 (M2 polarization in RSV context); extrapolated to gout |
-| **CP6b** (GSDMD pore formation / pyroptosis) | Suppressed GSDMD activation via mitophagy-dependent clearance of damaged mitochondria | Animal Model + In Vitro | Shan 2026 PMID 41524100 |
+| Exact observation | Evidence and system | Gout boundary |
+|---|---|---|
+| Lactoferrin bound lipid A and sCD14 and changed LPS-associated cellular responses | **In Vitro**; Appelmelk 1994 PMID 8188389; Baveye 2000 PMID 11083760 | Motivates an LPS-priming control; does not establish CP1 activity under MSU or C5a priming |
+| Exact lactoferrin materials changed iron/ROS-associated readouts in radiation-injury and nephrotoxicity models | **Animal Model + In Vitro**; Habib 2023 PMID 37926296; Shan 2026 PMID 41524100 | Does not establish a Fenton-limited gout mechanism or CP1b engagement |
+| Mitophagy, NLRP3-, caspase-1-, or GSDMD-associated readouts changed in named non-gout injury systems | **Animal Model + In Vitro**; Shan 2026 PMID 41524100; Habib 2023 PMID 37926296 | Does not assign direct CP2, CP4, or CP6b activity in gout |
+| A lactoferrin-targeted liposome carrying another active payload changed colitis readouts | **Animal Model**; Zhao 2020 PMID 33163347 | Carrier targeting and payload activity cannot be attributed to free lactoferrin |
+| A fixed cordycepin + lactoferrin + polysaccharide formulation changed macrophage-associated outcomes in an RSV model | **Animal Model**; Fu 2025 PMID 40589746 | Combination-confounded and disease-adjacent; does not establish lactoferrin-mediated resolution or CP5b engagement |
 
-**Cross-chokepoint coverage is notable** — five of seven chokepoints (all except CP0-complement and CP6a-5-LOX). This is wider than any single compound currently in the supplements stack except EGCG. The catch is that every link except CP6b is via an indirect / distributed mechanism, not a single high-affinity target. Lactoferrin is a protein-platform intervention, not a single-target drug.
+These observations define separate hypotheses, not additive “coverage.” One identity-qualified material must reproduce a mechanism-proximal effect in an MSU system before a gout chokepoint is assigned.
 
-### 4.6 Macrophage Polarization — Indirect CP5b Support
+### 4.6 Macrophage Polarization — Combination-Confounded Adjacent Lead
 
-Fu et al. 2025 (*Front Immunol* 16:1576069; PMID 40589746; [DOI](https://doi.org/10.3389/fimmu.2025.1576069)) — in a combination formulation (cordycepin + lactoferrin + *Sargassum* polysaccharide = CLS) in an RSV-infected mouse lung model, CLS **promoted M2-like macrophage polarization** (↑ M2 markers, ↓ M1 markers), reduced BALF injury, and reduced viral load. Alveolar macrophage depletion with clodronate abolished the effect — the macrophage polarization arm is mechanistically required. Individual contribution of the lactoferrin component is not isolated in this study (it's a fixed-combination formulation), so direct attribution to Lf alone requires extrapolation. But M1→M2 polarization is a **hallmark readout of active resolution** and is the most plausible mechanistic route by which Lf could connect to CP5b (SPM/resolution biology) without a direct ALX/FPR2 binding event. (Animal Model; combination-confounded for Lf alone.)
+Fu et al. 2025 (*Front Immunol* 16:1576069; PMID 40589746; [DOI](https://doi.org/10.3389/fimmu.2025.1576069)) reported macrophage-polarization and lung outcomes for a fixed cordycepin + lactoferrin + *Sargassum* polysaccharide formulation in an RSV mouse model. Macrophage depletion changed the complete formulation's effect, but the study did not isolate lactoferrin. It therefore supplies a combination-confounded **Animal Model** lead, not evidence that lactoferrin engages CP5b.
 
 ### 4.7 Indirect Substrate-Supply Synergy — TNFα → ABCG2 Derepression in the Gut-Lumen Sink
 
-**A separate, track-specific mechanism class.** The §4.5 mapping addresses lactoferrin as an NLRP3-cascade modulator. This section asks whether lactoferrin could increase substrate supply for a gut-lumen uricase configuration. It does not define the platform's primary mechanism.
-
-**The mechanism (Speculative — supporting links Animal Model + In Vitro):**
-
-1. A gut-lumen uricase configuration depends on the **ABCG2 transporter** moving urate from blood into the intestinal lumen (see [gut-lumen-sink.md](./gut-lumen-sink.md) and [abcg2-modulators.md](./abcg2-modulators.md)). Whether ABCG2 is rate-limiting in vivo remains an empirical question.
-2. **TNFα suppresses ABCG2 expression** in intestinal epithelium. Ferrer-Picón et al. 2020 ([*Inflamm Bowel Dis* 26:43-55](https://doi.org/10.1093/ibd/izz131); PMID 31211831) showed TNFα suppression of ABCG2 in IBD organoids; the same mechanism is documented across multiple inflammatory settings in [`abcg2-modulators.md`](./abcg2-modulators.md) §3. (Animal Model + In Vitro.)
-3. **Lactoferrin suppresses TNFα** at the systemic level — Habib 2023 PMID 37926296 (carfilzomib-nephrotoxicity model, §4.1 above) reports concurrent TNFα and NLRP3-cascade suppression in renal and pulmonary tissue, and the §4.4 LPS-neutralization mechanism (Appelmelk 1994 PMID 8188389; Caccavo 1999 PMID 10456914) provides an upstream route by which Lf reduces TLR4 → NF-κB → TNFα drive. Multiple older references (Håversen 2002 et al.) document direct Lf-mediated TNFα suppression in monocyte/macrophage models.
-4. **The composed mechanism:** engineered koji-derived lactoferrin in the gut lumen → ↓ local TNFα drive → relief of TNFα suppression of ABCG2 → ↑ ABCG2 transport activity → ↑ luminal urate substrate → ↑ effective uricase activity. If every link holds in the delivery geometry, lactoferrin could become a substrate-supply synergist for co-expressed uricase. The chain is not yet demonstrated.
-
-**Koji-configuration implication.** The substrate-supply hypothesis is mechanistically distinct from lactoferrin's downstream inflammasome effects. If the composed TNFα→ABCG2 chain holds, lactoferrin could affect both inflammatory signaling and urate availability to a co-delivered uricase. That combined geometry has not been tested.
-
-**Evidence level: Speculative (composed of three Animal Model / In Vitro links, none directly tested in this combined geometry).** [`validation-experiments.md` §1.14](./validation-experiments.md#114-abcg2-response-to-dht-and-tnf-with-butyrate-and-lactoferrin-rescue) tests whether research-grade lactoferrin changes epithelial signaling and urate flux under fixed exogenous TNFα. It does not test reduced TNFα production or luminal delivery from koji.
-
-**Open question — gut-lumen vs. systemic Lf delivery for this mechanism.** The Habib 2023 / Håversen 2002 TNFα-suppression evidence is from oral/parenteral Lf reaching systemic TNFα. Whether *gut-lumen-localized* Lf achieves relevant epithelial or immune-cell exposure requires a separate apical-delivery, stability, and immune–epithelial co-culture experiment. Basolateral exposure does not model the gut lumen.
+> **Research conjecture — local lactoferrin exposure could relieve inflammatory suppression of intestinal ABCG2**{ .research-conjecture-label }
+>
+> **Grounded premises:** ABCG2 contributes to intestinal urate export (**Mechanistic Extrapolation for rate limitation**; [gut-lumen sink](./gut-lumen-sink.md)). TNFα reduced ABCG2 expression in IBD-derived intestinal systems (**In Vitro + Human tissue context**; Ferrer-Picón 2020, PMID 31211831). Exact lactoferrin materials changed TNFα- or LPS-associated readouts in non-gout systems (**In Vitro + Animal Model**; PMIDs 8188389, 10456914, 37926296).
+>
+> **Novel leap:** If active lactoferrin reaches the relevant apical epithelial or local immune compartment, it may relieve TNFα-associated ABCG2 suppression and increase luminal urate export. No direct evidence establishes that composed mechanism, its direction, or a benefit to a co-located UOX system.
+>
+> **Why it matters:** A positive result would expose a transporter-supply weakness distinct from lactoferrin's separate macrophage hypothesis.
+>
+> **Discriminating observation:** In a polarized immune–epithelial co-culture, compare exact lactoferrin materials under apical and basolateral exposure while measuring TNFα, ABCG2 surface abundance, ABCG2-attributed urate flux, barrier integrity, material recovery, and viability. Test any UOX interaction only after the transporter effect reproduces.
 
 **Cross-references:** [koji-endgame-strain.md](./koji-endgame-strain.md) §2.2; [abcg2-modulators.md](./abcg2-modulators.md) §3; [gut-lumen-sink.md](./gut-lumen-sink.md); [validation-experiments.md §1.14](./validation-experiments.md#114-abcg2-response-to-dht-and-tnf-with-butyrate-and-lactoferrin-rescue).
 
 ---
 
-## 5. Evidence Hierarchy — An Honest Accounting
+## 5. Evidence boundary
 
-The existing published literature for lactoferrin spans decades, but the **gout-specific evidence tier is empty**. Here is the honest ranking:
+The current page contains:
 
-| Tier | Evidence | Status |
-|---|---|---|
-| **Clinical (gout)** | No published gout trial of oral or parenteral lactoferrin | **Absent** |
-| **Animal (MSU gout model)** | No published MSU-crystal-induced arthritis study with Lf as intervention | **Absent** |
-| **Animal (adjacent inflammasome models)** | Carfilzomib nephrotoxicity (Habib 2023, UA-lowering + NLRP3 suppression); radiation intestinal injury (Shan 2026, GSDMD suppression); DSS colitis via LF-liposomes (Zhao 2020, NLRP3 suppression); Western-diet cognitive impairment (He 2023, hippocampal NLRP3 suppression) | **Adequate for mechanism inference** |
-| **In Vitro — macrophage / epithelial** | IEC-6 cells (Shan 2026); colonic macrophages (Zhao 2020); HUVECs (Baveye 2000); LPS-stimulated monocytes (Appelmelk 1994; Caccavo 1999) | **Adequate for mechanism inference** |
-| **Clinical (adjacent indications)** | Talactoferrin Phase 2 NSCLC (positive, Parikh 2011); Phase 3 NSCLC (FORTIS-M, null, Ramalingam 2013); Phase 2/3 severe sepsis (OASIS, terminated, Vincent 2015 — safety signal); Phase 1B solid tumors (Hayes 2010); neonatal sepsis RCT (Sherman 2016 — 50% reduction, positive); diabetic foot ulcer systematic review (Mahdipour 2020) | **Safety well-characterized; efficacy indication-dependent** |
-| **Clinical (safety at high chronic oral dose)** | 4.5 g/day × 28 days (severe sepsis trial); 1.5 g BID × multiple cycles (NSCLC trials); 150 mg/kg BID (neonatal) | **Safety confirmed; minimal mechanism-related AEs** |
+- **In Vitro** evidence for lipid-A/CD14 interactions and cellular LPS responses.
+- **Animal Model + In Vitro** evidence for inflammasome-, mitophagy-, and pyroptosis-associated changes in non-gout injury models.
+- **Clinical Trial** evidence from exact lactoferrin products in non-gout populations, including both null and adverse signals.
+- **Mechanistic Extrapolation** for every claim connecting those records to MSU inflammation, joint exposure, urate handling, or flare resolution.
 
-**The crucial missing experiment is a direct MSU-crystal gout model with Lf as intervention.** Given carnosine's dual-phenotype rat data (serum UA + NLRP3 suppression in a hyperuricemia model — see [carnosine.md](./carnosine.md)) and Habib 2023's dual phenotype in a *different* model (carfilzomib nephrotoxicity), the hypothesis that Lf replicates the dual phenotype in an MSU-arthritis model is plausible but untested. Cost estimate: ~$10–15k for a standard intra-articular MSU mouse study with Lf vs. vehicle, 8-week duration. (Source: standard murine MSU peritonitis / ankle injection cost at academic services.)
+The discriminating first biological experiment is an exact-material human-macrophage MSU assay with exposure, viability, priming, inflammasome, and pyroptosis readouts. An animal study becomes informative only after that material and route are qualified. A negative result closes the tested material, exposure, and mechanism—not the wider inflammatory node.
 
 ---
 
@@ -252,55 +252,59 @@ The existing published literature for lactoferrin spans decades, but the **gout-
 
 Lactoferrin has been heterologously produced in a wider range of hosts than most therapeutic proteins: yeast (both *Saccharomyces* and *Pichia/Komagataella*), filamentous fungi (*Aspergillus*), transgenic dairy cattle, transgenic rice, and transgenic tobacco. The yeast and fungal systems are the options evaluated in this fermentation subtrack under its GRAS-host constraint. Transgenic cattle and rice remain alternative production systems outside this subtrack, not outside the project mission.
 
-### 6.1 *Pichia pastoris* — The Published Gold Standard
+### 6.1 *Pichia pastoris* production precedents
 
-Iglesias-Figueroa et al. 2016 (*Int J Mol Sci* 17:902; PMID 27294912; [DOI](https://doi.org/10.3390/ijms17060902)) achieved **3.5 g/L recombinant bovine Lf (rbLf)** in *P. pastoris* KM71-H under AOX1 methanol-inducible promoter control. Recombinant bLf retained antibacterial activity against *E. coli* BL21(DE3), *S. aureus* FRI137, and (weakly) *Pseudomonas aeruginosa*. According to PubMed, this is currently the most-cited single titer benchmark for recombinant bLf in yeast. Purification by molecular exclusion chromatography.
+Iglesias-Figueroa et al. 2016 (*Int J Mol Sci* 17:902; PMID 27294912; [DOI](https://doi.org/10.3390/ijms17060902)) reported **3.5 g/L recombinant bovine Lf (rbLf)** in *P. pastoris* KM71-H under AOX1 methanol-inducible promoter control. The material retained antibacterial activity in the tested assays. This is a configuration-specific submerged-culture precedent.
 
-Yen et al. 2024 (*Int J Mol Sci* 25:1818; PMID 38339093; [DOI](https://doi.org/10.3390/ijms25031818)) extended to **porcine lactoferrin (rpLf) at 2.8 g/L** in *P. pastoris* GS115 using a **glucose-inducible promoter (PG1) instead of methanol**. Significance for commercial food-grade production: methanol-induction (AOX1) is a regulatory hurdle for food use because residual methanol is unacceptable; glucose induction removes that hurdle entirely. The Yen system produced rpLf that retained iron binding and antimicrobial activity against multiple human pathogens, plus anticancer activity on A549, MDA-MB-231, and Hep3B lines. Tangential-flow ultrafiltration followed by heparin + size-exclusion chromatography gave >99% purity. **This is the most production-relevant recent Pichia paper** for an Open Enzyme pilot.
+Yen et al. 2024 (*Int J Mol Sci* 25:1818; PMID 38339093; [DOI](https://doi.org/10.3390/ijms25031818)) reported **2.8 g/L porcine lactoferrin** in *P. pastoris* GS115 using a glucose-inducible promoter. The exact promoter, host, species sequence, purification, and submerged format define the precedent; it does not select a production system for a different material.
 
-Zhao et al. 2026 (*Appl Microbiol Biotechnol* 110(1); PMID 41735545; [DOI](https://doi.org/10.1007/s00253-026-13744-x)) — published February 2026 — engineered *P. pastoris* to biosynthesize **N-acetylneuraminic acid (Neu5Ac, sialic acid) at 1.03 g/L** as a precursor for **sialylated lactoferrin expression**. Rationale: sialylation of Lf enhances functional activity vs. non-sialylated Lf, and native mammalian sialylation is absent from standard fungal expression. Co-engineering Neu5Ac biosynthesis in *P. pastoris* opens a path to **sialylated recombinant Lf with functionality closer to native milk Lf**. This is a cutting-edge development directly relevant to bridging the glycosylation gap that separates fungal-produced Lf from native bLf. The paper reports the Neu5Ac biosynthesis pathway engineering; it notes that sialylated Lf expression is the target application but does not yet report a sialylated-Lf titer. (Flag: important development for Open Enzyme to track; may change the Pichia-vs-Aspergillus comparison substantially.)
+Zhao et al. 2026 (*Appl Microbiol Biotechnol* 110(1); PMID 41735545; [DOI](https://doi.org/10.1007/s00253-026-13744-x)) reported **1.03 g/L N-acetylneuraminic acid** production in engineered *P. pastoris* and identified sialylated lactoferrin as a potential application. It did not report a sialylated-lactoferrin product, titer, equivalence, or function.
 
-### 6.2 *Aspergillus* — The Koji-Relevant Precedent (Ward 1992 / 1995)
+### 6.2 *Aspergillus* production precedents (Ward 1992 / 1995)
 
-These are the two papers that fundamentally reclassified lactoferrin from "Year 5+ speculative" to "Year 2–3 near-term tractable" for Open Enzyme. Summarized in [engineered-koji-protocol.md §16](./engineered-koji-protocol.md) and [spm-resolution-pathway.md §5](./spm-resolution-pathway.md); the deep-dive version:
+These papers establish heterologous lactoferrin production in tested *Aspergillus* configurations. They do not establish solid-state koji performance, delivery, or gout activity. Related construct questions appear in [engineered-koji-protocol.md §16](./engineered-koji-protocol.md).
 
 **Ward et al. 1992** — *Biotechnology (N Y)* 10:784-789 (PMID 1368268; [DOI](https://doi.org/10.1038/nbt0792-784)):
 
-- **Host:** *Aspergillus oryzae* — the commercial koji organism, same chassis Open Enzyme would use.
+- **Host:** *Aspergillus oryzae* in the reported submerged-culture configuration.
 - **Cassette:** Human lactoferrin cDNA under the *A. oryzae* α-amylase (amyB) promoter + *A. niger* glucoamylase 3′ flanking region (transcriptional terminator + polyadenylation signal).
 - **Titer:** 25 mg/L (submerged culture).
 - **Product characterization:** Secreted into growth medium; size, immunoreactivity, and iron-binding capacity indistinguishable from native human milk Lf; appropriately N-glycosylated (fungal-style, not mammalian-style); correctly N-terminally processed by *A. oryzae* secretory apparatus.
 - **Historical significance:** First mammalian glycoprotein ever expressed in the *Aspergillus* system. Validated the amyB promoter for heterologous mammalian expression.
-- **Limitation:** 25 mg/L is below the 500 mg/L–2 g/L range Open Enzyme needs for practical koji dosing. But it is a proof-of-concept at a production-relevant titer for a research pilot.
+- **Boundary:** 25 mg/L is a construct- and process-specific expression result. No practical-dose requirement follows until an active material and reaction compartment are defined.
 
 **Ward et al. 1995** — *Biotechnology (N Y)* 13:498-503 (PMID 9634791; [DOI](https://doi.org/10.1038/nbt0595-498)):
 
 - **Host:** *Aspergillus awamori* (close relative of *A. oryzae*; historically used for industrial submerged fermentation).
 - **Cassette:** Human lactoferrin as a **glucoamylase-hLf fusion polypeptide with a KEX-2 processing site** between the glucoamylase (as secretion carrier) and mature hLf. The fusion is secreted, then endogenously processed to mature hLf by the KEX-2 peptidase in the secretory pathway.
 - **Classical strain improvement:** Multiple rounds of UV/chemical mutagenesis and selection on top of the fusion cassette.
-- **Titer:** **>2 g/L** — commercial-scale submerged-culture titer, ~80× the 1992 result, and adequate for clinical supply-chain economics.
+- **Titer:** **>2 g/L** in the reported submerged-culture configuration; this cannot be transferred to solid-state *A. oryzae* or used as a delivery threshold.
 - **Product characterization:** Retained full iron-binding activity; retained **human enterocyte receptor (intelectin-1) binding**; retained broad-spectrum antimicrobial activity.
-- **IP:** Covered by US Patent 5,571,697 (Conneely et al., 1996) — now **expired**, which is why this architecture is publicly accessible for Open Enzyme to copy.
+- **Method provenance:** US Patent 5,571,697 and the primary paper provide additional construct detail; any new implementation requires independent design, legal, and biosafety review.
 
 **Sun et al. 1999** — *Acta Crystallogr D Biol Crystallogr* 55:403-407 (PMID 10089347; [DOI](https://doi.org/10.1107/s0907444998011226)):
 
 - **Result:** 2.2 Å X-ray crystal structure of the *A. awamori*-produced recombinant hLf.
-- **Significance:** Confirms the recombinant protein's three-dimensional fold is **indistinguishable from native milk hLf**, including both iron-binding sites and all side-chain conformations. RMSD 0.3 Å on main-chain atoms across the full polypeptide. Iron-release kinetics match native. This is the structural certification that closes the "is it really Lf?" question for fungal-produced recombinant hLf.
+- **Significance:** For this exact *A. awamori*-produced construct and comparator,
+  the reported three-dimensional fold, both iron-binding sites, side-chain
+  conformations, 0.3 Å main-chain RMSD, and iron-release kinetics were closely
+  matched. This is strong structural evidence for that product; it does not
+  certify another fungal host, construct, culture format, or delivered material.
 
 ### 6.3 Conesa 2010 Review — The Landscape Summary
 
-Conesa et al. 2010 (*Biotechnol Adv* 28:831-838; PMID 20624450; [DOI](https://doi.org/10.1016/j.biotechadv.2010.07.002)) reviews recombinant hLf production across yeast, transgenic cows, transgenic rice, and *Aspergillus*. Key quotes (paraphrased from PubMed abstract): "Human lactoferrin from *Aspergillus awamori* has been mainly directed to therapeutic uses with advanced phases of clinical trials currently in progress. In contrast, human lactoferrin produced in transgenic cows and rice brings the clear advantage of origins compatible with use in foods." The review is the landscape-level citation supporting the Open Enzyme strategic claim that **Aspergillus-produced hLf has a clinical-grade precedent (via talactoferrin) that transgenic cow and rice Lf do not yet share**.
+Conesa et al. 2010 (*Biotechnol Adv* 28:831-838; PMID 20624450; [DOI](https://doi.org/10.1016/j.biotechadv.2010.07.002)) reviews recombinant hLf production across yeast, transgenic cows, transgenic rice, and *Aspergillus*. It is a landscape source, not evidence that one host is clinically superior or that materials from different hosts are equivalent.
 
 ### 6.4 Production Titer Comparison
 
-| Host | Titer | Culture Format | Promoter | Reference |
+| Exact reported configuration | Reported output | Culture format | Expression feature | Reference |
 |---|---|---|---|---|
 | *Pichia pastoris* (bLf) | 3.5 g/L | Submerged, batch | AOX1 (methanol) | Iglesias-Figueroa 2016 PMID 27294912 |
 | *Pichia pastoris* (pLf) | 2.8 g/L | Submerged, fed-batch | PG1 (glucose) | Yen 2024 PMID 38339093 |
-| *Pichia pastoris* (hLf, sialylated — in development) | TBD | Submerged | Multi-gene Neu5Ac engineering | Zhao 2026 PMID 41735545 |
+| *Pichia pastoris* Neu5Ac-production platform; no hLf product reported | 1.03 g/L Neu5Ac (not lactoferrin) | Submerged | Multi-gene Neu5Ac engineering | Zhao 2026 PMID 41735545 |
 | *Aspergillus oryzae* (hLf) | 25 mg/L | Submerged | amyB (α-amylase, starch-inducible) | Ward 1992 PMID 1368268 |
-| *Aspergillus awamori* (hLf, fusion) | **>2 g/L** | Submerged | Glucoamylase + KEX-2 + strain improvement | Ward 1995 PMID 9634791 |
-| *Aspergillus oryzae* (hLf, fusion) | — | **Solid-state rice koji** | — | **Open — Open Enzyme feasibility experiment** |
+| *Aspergillus awamori* (hLf fusion; exact Ward configuration) | >2 g/L | Submerged | Glucoamylase + KEX-2 + strain improvement | Ward 1995 PMID 9634791 |
+| *Aspergillus oryzae* (hLf, fusion) | — | **Solid-state rice** | — | **Unmeasured candidate configuration** |
 
 The last row is the production-feasibility gap addressed in §7.
 
@@ -308,240 +312,156 @@ The last row is the production-feasibility gap addressed in §7.
 
 ## 7. Koji-Track Production Feasibility
 
-The full design lives in [engineered-koji-protocol.md §16](./engineered-koji-protocol.md). This section is the science-and-strategy summary; readers building the construct should use the protocol document for the cassette-level detail.
+The construct experiment is specified in [engineered-koji-protocol.md §16](./engineered-koji-protocol.md). This section states the evidence boundary.
 
 ### 7.1 The Specific Unknown
 
-The transition from Ward 1995's **submerged-culture *A. awamori***, glucoamylase-hLf-fusion + KEX-2 architecture at >2 g/L, to **solid-state rice koji fermentation in *A. oryzae*** at any comparable titer, **has not been published**. It is mechanistically plausible — same fungal family, same amyB/glucoamylase-promoter architecture, same secretory physiology — but the solid-state format differs from submerged in:
+Ward 1995 tested **submerged *A. awamori*** with a glucoamylase-hLf fusion and KEX-2 processing. The sources assembled here do not establish transfer to **solid-state rice culture in *A. oryzae***. The relevant differences include:
 
 - **Mass transfer.** Solid-state has steep O₂, CO₂, and moisture gradients; submerged is well-mixed. Protein secretion efficiency may or may not scale to solid-state rates.
 - **Proteolytic environment.** *A. oryzae* natively secretes several proteases as part of its starch-degrading lifestyle. Rice matrix may itself contribute proteases. Lactoferrin is moderately protease-resistant (§8.1) but not immune.
 - **Substrate iron availability.** Rice grain has low free iron. Whether ferric supplementation is required to produce holo- vs. apo-Lf in koji is a production-parameter question with direct downstream effect on product profile.
 - **Glycosylation variability.** Solid-state fermentation glycosylation profiles can differ from submerged (reported for several other Aspergillus-produced proteins); this could affect the allergenicity / bioavailability downstream.
 
-### 7.2 Current Design Assumptions
+### 7.2 Candidate design factors
 
 Per [engineered-koji-protocol.md §16](./engineered-koji-protocol.md):
 
 - **Promoter:** amyB (starch-inducible) — couples Lf synthesis to rice starch digestion, matches Ward 1992.
 - **Architecture:** Glucoamylase fusion + KEX-2 processing site — matches Ward 1995 (the high-titer architecture).
-- **Gene choice:** Human Lf preferred for the published precedent; bovine Lf is a secondary target (food-grade infant-formula regulatory history may be easier). Validation experiment will compare both.
+- **Gene choice:** Human and bovine lactoferrin are separate materials. Freeze one sequence per matched comparison and qualify its function independently.
 - **Selection marker:** Separate auxotrophy from uricase and carnosine cassettes (sequential transformation).
-- **Host:** A protease-deletion *A. oryzae* background is the default lactoferrin host. Huynh et al. 2020 (PMC7257131) found the highest functional-antibody titer, 39.7 mg/L, in the ten-protease-deletion NSlD-ΔP10 strain. RIB40 remains a comparator rather than the preferred lactoferrin host. The NSAR1 marker system provides five integration slots, subject to host-background compatibility. (In Vitro; source: H01-ward-dual-cassette.md)
+- **Host:** Huynh et al. 2020 (PMC7257131) provides an adjacent antibody-expression result in a ten-protease-deletion *A. oryzae* strain. That does not select a lactoferrin host. Compare candidate backgrounds under the same construct and process while measuring intact material, retained function, host stress, and growth.
 - **Junction and internal-processing risk:** The retired comp-010 model does not establish KEX2 cleavage at an internal K-R pair, a 2–3× rate change, a specific truncated product, or K597Q as the correct repair. Under §1.9, verify intact abundance and produced N- and C-termini for the exact construct. A reproducible fragment can then be mapped before selecting a sequence change. (Mechanistic Extrapolation; [current evidence boundary](./cassette-compatibility-computational.md))
 - **Disulfide and folding-demand hypothesis:** Lactoferrin carries 16 annotated disulfide bonds, and reduced-state in-vitro refolding follows an ordered oxidative sequence (Notari 2023, PMC10465537; see [construct-local annotations](./chaperone-orthogonal-stacking.md#construct-local-annotations-not-scores)). Neither fact measures ER folding demand, host capacity, titer, viability, or compatibility with another payload. Ward 1995 and Huynh 2020 are different construct/host/process precedents and do not define a transferable capacity ceiling. The §1.9 exact-configuration measurements remain decisive. (**In Vitro** precedents + **Mechanistic Extrapolation**.)
 
-### 7.3 Risks (Ranked)
+### 7.3 Unranked measurement gaps
 
-| Risk | Likelihood | Mitigation |
-|---|---|---|
-| Solid-state titer < 500 mg/L | Likely (first-pass) | Iterate promoter, fusion architecture, protease knockouts |
-| *A. oryzae* KEX-2 incompatible with glucoamylase-hLf fusion | Medium | Confirm kexB expression/specificity; add explicit Lys-Arg dipeptide if needed |
-| Rice-matrix proteases degrade Lf | Medium | Fermentation time-course stability study; Δalp / Δnpr protease-knockout host strain |
-| Solid-state glycosylation differs enough to alter function | Low-Medium | Measure iron binding + intelectin binding + antimicrobial activity directly |
-| Co-expression changes lactoferrin or another payload's native active output | Unmeasured | Qualify matched single-payload configurations, then compare pairs and any proposed combination with complete per-payload, stress, and growth readouts |
-| Published precedent cited (Ward 1995) used strain improvement that doesn't transfer | Low (mostly genetic rather than matrix-dependent) | Accept higher baseline titer penalty; retune via modern CRISPR edits |
+| Gap | Discriminating measurement |
+|---|---|
+| Solid-state production | Intact, identity-qualified lactoferrin per culture volume and dry biomass across matched constructs |
+| Processing | Produced N/C termini, fragment map, aggregation, and glycan profile |
+| Retained function | Iron binding plus a prespecified material-relevant functional assay |
+| Matrix stability | Time-course recovery before and after the intended workup |
+| Host burden | Growth, stress, and native metabolite outputs versus isogenic controls |
+| Co-expression | Full per-payload function and host-state comparison after both single-payload configurations qualify |
 
 ### 7.4 Fallback Ladder
 
-If solid-state koji fermentation fails to hit adequate titer:
+If a solid-state configuration fails its prespecified identity, retained-function, stability, and yield criteria:
 
-1. **Submerged *A. oryzae*** with the Ward 1995 architecture — likely achieves ~500 mg/L to 2 g/L but loses the "single-strain koji" product elegance.
-2. **Submerged *A. awamori*** — directly replicates Ward 1995 at >2 g/L but introduces a second chassis and regulatory pathway.
-3. **Submerged *Pichia pastoris*** — Yen 2024 glucose-inducible system at 2.8 g/L (pLf) or Iglesias-Figueroa 2016 at 3.5 g/L (bLf, methanol-induced) — proven, but not koji, and requires co-formulation with the uricase koji as two separate products.
+1. **Submerged *A. oryzae*** — an unmeasured route for the selected construct
+   and process.
+2. **Submerged *A. awamori*** — the closest host to the named Ward/Sun
+   recombinant-human-lactoferrin precedents; transfer still requires exact
+   construct and process reproduction.
+3. **Submerged *Pichia pastoris*** — published production precedents exist for
+   exact porcine and bovine materials under their reported processes. They do
+   not predict another sequence, product quality, or compatibility with UOX.
 
 The alternative hosts address lactoferrin production by different routes; the koji-specific question is whether solid-state koji can support the selected payload and format. Failure of that pairing does not imply that lactoferrin cannot be produced elsewhere.
 
 ---
 
-## 8. Dose, Bioavailability, Safety
+## 8. Delivery, exposure, and safety boundaries
 
 ### 8.1 Oral Stability
 
-Lactoferrin is **unusually protease-resistant among dietary proteins**:
+Published digestion studies make proteolytic state and iron loading testable variables:
 
-- **Pepsin resistance (gastric):** Partial. Native bLf survives pH 2 + pepsin for 30+ minutes with only partial degradation. The degradation product of pepsin digestion is **lactoferricin B** (Lfcin B) — a ~25-residue N-terminal cationic peptide with strong antimicrobial activity in its own right. So pepsin degradation generates an active fragment rather than inactivating the protein.
-- **Pancreatic / intestinal proteases:** Iron-saturated holo-Lf is more protease-resistant than apo-Lf; both survive the duodenum better than typical dietary proteins.
-- **Encapsulation for enhanced stability:** Chitosan-alginate microcapsules (Cots 2025 PMID 40074116; [DOI](https://doi.org/10.1016/j.ijbiomac.2025.141870)) and BSA-tannic acid multilayer microcapsules (Kilic 2017 PMID 28281573; [DOI](https://doi.org/10.1038/srep44159)) can further improve gastric stability and intestinal release — relevant if Open Enzyme ends up needing to formulate Lf outside of the koji matrix itself.
+- Pepsin digestion can produce lactoferricin fragments rather than leaving only intact protein.
+- Iron loading can change protease resistance, so apo- and holo-materials are not interchangeable.
+- Encapsulation studies such as Cots 2025 (PMID 40074116) and Kilic 2017 (PMID 28281573) provide formulation-specific stability precedents, not transfer to an untested matrix.
 
-For the koji product specifically, the **koji matrix provides natural protection** — Lf is embedded in rice biomass, released slowly as the matrix is digested, and reaches the small intestine in a more protected form than purified Lf swallowed as a capsule. This is a potential Open Enzyme-specific advantage worth measuring empirically in simulated gastric/intestinal fluid experiments.
+Whether a rice or koji matrix protects lactoferrin, changes its fragments, or instead accelerates proteolysis is unknown. Compare purified and matrix-embedded exact materials through the same simulated gastric and intestinal sequence and measure intact protein, fragments, iron state, and retained function.
 
-### 8.2 Intestinal Absorption
+### 8.2 Compartment-specific exposure
 
-Reported transintestinal uptake of intact oral Lf in healthy adult humans: **10–30%** (of orally-administered dose reaches systemic circulation as intact protein). The rest:
+An oral material can act or fail at several distinct sites: lumen, epithelial surface, lamina propria, circulation, and joint. Receptor expression and an adjacent-indication oral trial do not quantify intact exposure at any of those sites. The next useful study measures parent protein and defined fragments with a validated assay while preserving material identity, formulation, iron state, and time.
 
-- Acts locally on gut-resident immune cells (Peyer's patches, lamina propria macrophages) and directly on the gut microbiome.
-- Is hydrolyzed to peptides (including Lfcin) that have their own pharmacology.
-- Is lost to fecal excretion.
+Gut-local activity cannot be promoted as a systemic or joint mechanism without a measured causal bridge. Conversely, failure to recover intact systemic protein would not reject a separately demonstrated luminal mechanism.
 
-Intelectin-1 (§3.1) is the primary enterocyte uptake mechanism for intact Lf. The 10–30% systemic fraction is adequate for systemic anti-inflammatory effects at the 1–4 g/day doses used in talactoferrin clinical trials, and for the 100–600 mg/day doses used in supplement studies.
+### 8.3 Adjacent clinical exposure is not a gout dose
 
-### 8.3 Dose Ranges Across Indications
+Talactoferrin and bovine-lactoferrin studies in oncology, sepsis, and neonatal populations establish results for their exact products, schedules, populations, and endpoints. They do not select an Open Enzyme dose, demonstrate joint exposure, or establish efficacy in gout. Any future gout-relevant study must choose exposure from exact-material pharmacokinetics, assay-active concentrations, safety data, and the intended compartment—not by matching grams used in another indication.
 
-| Formulation | Typical daily dose | Indication | Evidence |
-|---|---|---|---|
-| Bovine Lf supplement (apo- or low-iron) | 100–600 mg/day | General immune support, gut health | Food-supplement tradition |
-| Colostrum concentrate | 1–3 g/day (Lf fraction ~50–200 mg/g) | Immune support, exercise recovery | Supplement literature |
-| Neonatal bLf (NEC/sepsis prevention) | 150 mg/kg twice daily (~300 mg/kg/day) | Preterm infant sepsis/NEC prevention | Sherman 2016 PMID 27260839 — 50% reduction in hospital-acquired infections |
-| Talactoferrin (recombinant hLf, oral) | **1.5 g twice daily = 3 g/day** | NSCLC (Phase 2 positive; Phase 3 null) | Parikh 2011 PMID 21969509; Ramalingam 2013 PMID 24050956 |
-| Talactoferrin (severe sepsis) | 1.5 g three times daily = **4.5 g/day** × 28 days | Severe sepsis (terminated early for safety) | Vincent 2015 PMID 26010687 |
+### 8.4 Safety
 
-**Open Enzyme target range** (per [engineered-koji-protocol.md §16](./engineered-koji-protocol.md)): 10–15 g dry koji/day × 200 mg Lf/g = **2–3 g Lf/day**, matching the talactoferrin Phase 3 oncology dose. This is an aspirational target contingent on hitting 1 g/L koji pore fluid.
-
-### 8.4 Safety Profile
-
-**Bovine lactoferrin** is GRAS in the US for infant formula use (FDA GRAS Notice 464, 2014). Oral safety at supplement doses (100 mg – 3 g/day) is well-established with minimal adverse events other than rare GI upset.
-
-**Talactoferrin** (recombinant hLf) safety across pooled clinical trials (NSCLC, sepsis, foot ulcer, neonatal): generally excellent tolerability, no DLTs in Phase 1 (Hayes 2010 PMID 19238327), minor GI side effects only, no organ toxicity at 4.5 g/day × 28 days.
-
-**The one red flag — the OASIS severe-sepsis trial.** Vincent et al. 2015 (*Crit Care Med* 43:1832-1838; PMID 26010687; [DOI](https://doi.org/10.1097/CCM.0000000000001090)) reported that talactoferrin 4.5 g/day × 28 days in severe sepsis patients showed **higher mortality than placebo** (24.8% vs. 17.8% at 28 days, not statistically significant; 28.1% vs. 17.8% in-hospital, p=0.037). The trial was terminated early for futility + safety. The signal was concentrated in the shock subgroup (31% vs. 20%); non-shock patients showed no mortality difference. **Mechanism of the signal is unclear** — possibly related to immune modulation in an already-dysregulated septic-shock immune state, which is a very different context from chronic gout.
-
-**Relevance to gout:** The OASIS signal does not translate mechanistically to a gout-patient population. But it does establish that **oral lactoferrin at 4.5 g/day is not universally benign** and that caution is warranted when stacking Lf with other immunomodulators in acutely ill or immunocompromised patients. For Open Enzyme's chronic-gout target population (otherwise-healthy adults with hyperuricemia and episodic flares), the safety buffer is enormous — but the n-of-1 / self-experiment protocol should flag the OASIS finding as the reason to avoid lactoferrin during acute febrile illness or sepsis.
-
-**Allergenicity.** Dairy-allergic individuals should avoid bovine Lf supplements (they may react to trace contaminants or to conserved Lf epitopes). Pure recombinant hLf has no such cross-reactivity. Recombinant Lf from fungal systems (*Aspergillus*, *Pichia*) showed reduced immunogenicity/allergenicity vs. native hLf in the Almond 2012 mouse model (PMID 23012214) — which is a potential production advantage for fungal-produced Open Enzyme Lf.
+FDA GRAS notices, clinical products, recombinant proteins, bovine materials, and fungal-produced materials have different identity and use boundaries. None provides a class-wide safety guarantee. The OASIS severe-sepsis trial (Vincent 2015, PMID 26010687) reported a concerning mortality pattern for its exact talactoferrin regimen and population; its mechanism and transfer to gout are unresolved. Almond 2012 (PMID 23012214) shows that production-dependent glycosylation can change immunogenicity in mice, not that fungal production is safer in humans. Product-specific allergenicity, impurities, iron state, fragments, immunogenicity, microbiome effects, and repeated-exposure safety remain gates.
 
 ---
 
-## 9. Commercial and Clinical Landscape
+## 9. Sourcing and adjacent clinical evidence
 
-### 9.1 Supplement-Grade Bovine Lactoferrin
+### 9.1 Bovine lactoferrin
 
-Kilotonne-scale production via dairy whey fractionation (cation-exchange chromatography of cheese-whey byproduct). Major suppliers: Morinaga (Japan), Fonterra (New Zealand), Glanbia (Ireland). Unit cost ~$300–$600/kg wholesale as of 2026; retail supplement pricing is ~5–10× higher. **bLf is not the production bottleneck.** Within the koji multi-payload hypothesis, the proposed advantage would be combined delivery rather than cheaper Lf; the Open Enzyme portfolio does not depend on placing Lf, uricase, carnosine, and kojic acid in one organism.
+Bovine lactoferrin can be isolated from dairy whey, making exact commercial material available for biological qualification without first engineering a chassis. Supplier identity alone is insufficient: record species sequence, purity, iron loading, glycosylation, aggregation, endotoxin, fragments, excipients, and lot.
 
 ### 9.2 Talactoferrin Alfa (CHEMBL2108651) — Recombinant Human Lactoferrin
 
-Developed by Agennix (Houston, TX) under USAN name "talactoferrin alfa" (USAN year 2004). Recombinant hLf produced in *Aspergillus niger* / *A. awamori* (Ward 1995 production system commercialized via license from Baylor). ChEMBL v34 records: **CHEMBL2108651, max_phase=3** (Phase 3 clinical development reached, no approval).
+Talactoferrin alfa is a recombinant human lactoferrin product produced through an *Aspergillus*-based lineage. It supplies exact-product clinical and manufacturing precedents, not a class-wide lactoferrin result.
 
-**Pipeline history:**
+- Parikh 2011 (PMID 21969509) reported a favorable phase 2 NSCLC result, while the larger FORTIS-M phase 3 study did not confirm benefit (Ramalingam 2013, PMID 24050956). **Clinical Trial; indication- and product-specific.**
+- OASIS reported a concerning severe-sepsis mortality pattern (Vincent 2015, PMID 26010687). **Clinical Trial; safety signal in the tested population and regimen.**
+- Sherman 2016 tested an oral talactoferrin solution in preterm infants (PMID 27260839). **Clinical Trial; neonatal infection context, not adult gout.**
 
-- **NSCLC (non-small-cell lung cancer):** Phase 2 single-agent oral talactoferrin in refractory metastatic NSCLC showed a 65% increase in median OS (3.7 → 6.1 months; HR 0.68; p=0.04) in the ITT population (Parikh 2011 PMID 21969509; [DOI](https://doi.org/10.1200/JCO.2010.34.4127)). The **Phase 3 FORTIS-M trial** (N=742, 2:1 randomization) did not confirm — median OS was 7.49 months for talactoferrin vs. 7.66 months for placebo (HR 1.04, p=0.66) (Ramalingam 2013 PMID 24050956; [DOI](https://doi.org/10.1093/annonc/mdt371)). **NSCLC program terminated** after FORTIS-M null.
-- **Severe sepsis — OASIS trial** (Vincent 2015, above): Phase 2/3 terminated early for higher mortality signal at 4.5 g/day × 28 days.
-- **Diabetic foot ulcers:** Reviewed in Mahdipour 2020 (PMID 32733969). Evidence base for talactoferrin in this indication remains thin; no definitive Phase 3.
-- **Neonatal sepsis (preterm infants):** Sherman 2016 RCT (PMID 27260839; [DOI](https://doi.org/10.1016/j.jpeds.2016.04.084)) — double-blind placebo-controlled, N=120, birth weight 750-1500 g, 150 mg/kg twice daily × 28 days. **50% reduction in hospital-acquired infections** (p<0.04); no adverse events attributed to TLf. This is the strongest positive clinical signal in the talactoferrin pipeline, though indication-specific (neonatal, very different from adult chronic gout).
-
-According to PubMed, **talactoferrin is currently in limbo** — Agennix dissolved, the Phase 3 NSCLC failure ended the oncology program, and the OASIS signal impeded sepsis development. No active clinical development is publicly visible as of 2026-04. **The Ward 1995 patent is expired**, and the production technology is freely available.
-
-ChEMBL v34 also records: **Bovine lactoferrin CHEMBL5095320, max_phase=3** — reflects non-oncology clinical trials of bovine Lf (including neonatal sepsis trials like Sherman 2016, where the active product in some arms was bLf not rhLf). Both Lf forms sit at max_phase=3 in the curated pharma database; neither has reached approval.
+These studies show that oral exposure to a defined recombinant material can be studied clinically and that outcomes differ by population and indication. They do not establish intact joint exposure, a gout effect, a safe chronic range, or equivalence to bovine or newly engineered fungal material.
 
 ### 9.3 Lactoferrin Peptide Derivatives
 
-**Lactoferricin B (Lfcin B)** — residues 17-41 of bLf, released by pepsin digestion. Cationic antimicrobial peptide, ~6× more potent than intact bLf on a molar basis against many bacteria. Under development for topical and systemic antimicrobial applications; minimal published clinical data as of 2026-04.
+**Lactoferricin B (Lfcin B)** — a pepsin-derived N-terminal bovine-lactoferrin fragment with antimicrobial evidence. Its identity, exposure, and receptor profile differ from full-length lactoferrin.
 
 **Lactoferrampin** — residues 268-284 of bLf. Second-generation antimicrobial peptide from the N1 domain. Synergizes with lactoferricin.
 
-**hLF1-11** — synthetic 11-residue peptide derived from the N-terminus of hLf. Investigated for invasive-fungal-infection prophylaxis in hematology patients. Minimal systemic development.
+**hLF1-11** — a synthetic N-terminal human-lactoferrin peptide investigated in infection-related contexts.
 
 For the full-length lactoferrin track, peptide derivatives are production-friendlier but cover a narrower mechanism subset. They are a distinct fallback or secondary track rather than evidence that the full-length construct will work.
 
 ---
 
-## 10. Track Fit
+## 10. Track-specific evidence and engineering boundary
 
-### 10.1 Chokepoint coverage within the lactoferrin hypothesis
+Lactoferrin has reported effects at several gout-adjacent inflammatory nodes, including LPS/CD14 signaling, iron-dependent ROS, mitophagy, NLRP3-associated output, and pyroptosis. The evidence comes from different materials, tissues, and disease models. It does not establish a combined multi-chokepoint effect, direct MSU-gout activity, or superiority to another intervention.
 
-The relevant comparison across the current candidate set is:
+Shan 2026 (PMID 41524100) provides a mechanistic pyroptosis/mitophagy result in radiation-induced intestinal injury (**Animal Model + In Vitro**), not gout. Ward 1995 (PMID 9634791) establishes recombinant human lactoferrin production above 2 g/L in submerged *A. awamori* culture. It does not establish expression, processing, activity, or exposure in solid-state *A. oryzae* koji.
 
-- **CP0 (complement C5a):** Zero direct coverage within the current fermentation candidate set; this is a track gap, not a portfolio requirement (see [complement-c5a-gout.md](./complement-c5a-gout.md))
-- **CP1a (NF-κB priming):** Partial — EGCG, sulforaphane, kojic acid (indirectly)
-- **CP1b (C5a→ROS priming):** Zero direct coverage
-- **CP2 (NLRP3 assembly):** Partial — BHB (from diet), no engineered-product target yet
-- **CP3 (ASC speck):** Zero coverage
-- **CP4 (caspase-1):** Partial — colchicine (pharma)
-- **CP5a (IL-1β receptor):** Pharma-only (anakinra, canakinumab)
-- **CP5b (ALX/FPR2 resolution):** Zero direct, EPA/DHA via precursor loading only
-- **CP6a (5-LOX):** Partial — quercetin, AKBA, EPA, zileuton (pharma)
-- **CP6b (GSDMD):** Pharma-only (disulfiram)
+The active questions are therefore lactoferrin-specific:
 
-Lactoferrin has direct or indirect evidence at **CP1a (LPS/CD14), CP1b (iron-ROS), CP2 (mitophagy-mediated upstream), CP4 (via NLRP3 suppression), CP5b (macrophage polarization, speculative), and CP6b (GSDMD-pathway suppression via mitophagy)**. These links differ substantially in evidence strength and do not establish a combined product effect.
+1. Does an identity-verified lactoferrin material alter MSU-triggered inflammasome and pyroptosis readouts in human macrophages without cytotoxicity?
+2. Which material properties—species sequence, glycosylation, iron loading, aggregation, and proteolytic state—change that result?
+3. Can a chosen production configuration reproduce the advancing material's identity, fold, activity, and stability?
+4. Does the intended route deliver active material to the tested compartment at a measured exposure?
 
-**The CP6b link is the most mechanistically direct** — Shan 2026 reports pyroptosis suppression through the mitophagy axis.
-
-### 10.2 A four-target koji configuration
-
-Target product profile, assuming all four cassettes succeed (§5 experiment plan in [engineered-koji-protocol.md](./engineered-koji-protocol.md)):
-
-| Target | Chokepoint | Cassette | Feasibility |
-|---|---|---|---|
-| **Uricase** | UA lowering (upstream of crystallization) | Primary cassette, validated 2025 | **High** |
-| **Lactoferrin** | CP1a + CP1b + CP2 + CP4 + CP6b (5+ chokepoints) | Section 16 proposed cassette | **Medium-High** — Aspergillus precedent, solid-state untested |
-| **Carnosine** | CP1 + UA lowering (dual phenotype) | Section 15 proposed cassette | **Medium** — 150 mg/L target unverified |
-| **Kojic acid (native)** | Indirect NLRP3 benefit (ROS + tyrosinase) | Native *A. oryzae* product | **Native** — no engineering required |
-
-A single-strain koji expressing all four compounds is more complex than any published multi-enzyme *A. oryzae* engineering. Expression burden, promoter competition, and cumulative proteolytic load are all legitimate risks that compound across cassettes. The split-strain alternative (uricase-Lf in one strain, carnosine in another, co-formulated) preserves the multi-chokepoint product even if the single-strain version proves unviable.
-
-### 10.3 Why Lactoferrin Is Potentially the Single Strongest CP5-Leg Addition
-
-Among fermentable candidates for the resolution/late-stage chokepoint coverage (CP5a receptor or CP5b resolution), lactoferrin is:
-
-- **The only candidate with published *Aspergillus* expression precedent.** SPMs require multi-enzyme pathways from PUFA precursors (not fermentable in koji without major metabolic engineering). Lf is a single protein.
-- **The only candidate covering CP6b via an engineered-product path.** Disulfiram is pharma; Lf via the Shan 2026 mitophagy mechanism is a fermentable alternative for the same chokepoint.
-- **The only candidate where Ward-1995-level titer (>2 g/L) has already been demonstrated in the Aspergillus chassis family.** The feasibility question is narrower than for any comparable candidate — it's not "can we make this," it's "can we make this in solid-state koji rice instead of submerged culture."
-
-This is the strategic argument for why the Year-2-3 upgrade of lactoferrin from the speculative tier is correct despite the absence of direct MSU-gout evidence. The engineering path is uniquely de-risked among CP5/CP6 options, and the mechanism is wide enough that even if CP5b turns out to be a weak link for Lf, CP1a+CP1b+CP4+CP6b coverage is already compelling on its own.
+A positive result at one gate advances only that exact material and configuration. Production-chassis comparisons and portfolio rankings belong on the relevant comparison surfaces, not this evidence page.
 
 ---
 
-## 11. Compared Against Other CP5b Candidates
+## 11. Open Research Questions
 
-The CP5b chokepoint has five candidate classes. Here is how lactoferrin stacks against them by Open Enzyme criteria (fermentable in GRAS host, oral bioavailability, human safety, mechanistic specificity):
-
-| Candidate | Mechanism | Fermentable in GRAS host? | Oral bioavailability | Human safety | MSU gout evidence |
-|---|---|---|---|---|---|
-| **RvD1 / RvD2 / MaR1 (direct SPMs)** | ALX/FPR2, GPR32, LGR6 agonism | No (multi-enzyme biosynthetic pathway from PUFA precursors; requires *Y. lipolytica*-style engineering) | Poor (labile, oxidation-prone) | Unknown at sustained doses | Direct (Zaninelli 2022 RvD1; Jiang 2023 MaR1) |
-| **EPA/DHA precursor loading** | Substrate for endogenous SPM biosynthesis | Partially (yeast PUFA engineering exists — *Y. lipolytica*) | Adequate (standard fish oil pharmacokinetics) | Excellent | Indirect (via endogenous SPM production) |
-| **Aspirin-triggered resolvins (aspirin low-dose)** | Acetylates COX-2 → 15-epi-LXA4, 17R-RvD series | No (aspirin is synthetic) | Adequate | Well-characterized | Indirect |
-| **BMS-986235 (ALX/FPR2 agonist)** | Direct small-molecule ALX/FPR2 agonism | No (pharma compound) | Oral | Phase 2 heart failure data (not gout) | None |
-| **Lactoferrin** | Indirect resolution (macrophage polarization, mitophagy, ROS reduction); CP6b direct via GSDMD suppression | **Yes — Aspergillus 2 g/L published (submerged)** | 10-30% intact absorption | GRAS (bLf) + Phase 3 safety data (talactoferrin) | **None published; inferred from adjacent models** |
-
-**Summary:** Lactoferrin has the weakest direct-MSU-gout evidence in this comparison but the most developed fermentable-production path. That makes it a candidate payload for the koji track, not a project-level commitment. Its continuation depends on direct gout relevance, expression, and activity gates.
+1. **Direct gout-relevant activity:** Compare exact lactoferrin materials in MSU-challenged human macrophages with inflammasome-, pyroptosis-, viability-, and exposure-proximal readouts.
+2. **Material dependence:** Cross bovine, human, and recombinant material with measured glycosylation, iron loading, aggregation, and proteolysis rather than treating “lactoferrin” as one reagent.
+3. **Compartment:** Test gut-lumen, epithelial, circulating, and synovial exposure as separate hypotheses. Activity in one compartment does not establish another.
+4. **Production transfer:** Reproduce identity, native fold, activity, and stability for any fungal-produced material. The submerged *A. awamori* precedent does not answer solid-state *A. oryzae* performance.
+5. **Safety:** Resolve the OASIS sepsis signal, kidney-compartment handling, microbiome effects, immunogenicity, and exact-material contaminants before any chronic-exposure study.
+6. **Derivative fallback:** Test lactoferricin and lactoferrampin as separate materials; their shorter sequences do not inherit the full-length protein's receptor or inflammatory effects.
+7. **Linker redesign:** [COMP-034](./lactoferrin-linker-redesign-computational.md) is invalid. Map a reproducible wild-type failure and retained-function loss before beginning a new sequence-design lifecycle.
 
 ---
 
-## 12. Open Research Questions
-
-In rough priority order for Open Enzyme's research agenda:
-
-1. **Does lactoferrin suppress MSU-induced NLRP3 in primary human macrophages?** The obvious experiment. THP-1 cells or PBMC-derived macrophages + MSU crystal + ± bLf (0.1-10 μM range, matching Habib 2023 plasma levels in mice). Readouts: ASC speck formation (microscopy), caspase-1(p10) cleavage (Western), mature IL-1β secretion (ELISA). Cost: ~$2-3k, 2-3 weeks. **This is the single most decision-informing experiment for the CP5b/CP1 attribution.** Flagged in both [spm-resolution-pathway.md §6](./spm-resolution-pathway.md#6-open-questions) and [validation-experiments.md](./validation-experiments.md).
-
-2. **Does solid-state *A. oryzae* koji achieve ≥500 mg/L lactoferrin titer?** The feasibility gate for the Open Enzyme production path. Detailed protocol in [engineered-koji-protocol.md §16 Phase A](./engineered-koji-protocol.md). Phase A cost ~$2-3k, 4-6 weeks.
-
-3. **Does bovine vs. human vs. recombinant fungal-produced Lf glycosylation matter for oral anti-NLRP3 efficacy?** Almond 2012 (PMID 23012214) showed recombinant fungal hLf is ~40× less immunogenic and ~200× less allergenic than native hLf — advantage for chronic dosing. Does the same glycosylation difference affect receptor binding (intelectin, LRP1, CD14) and therefore the anti-inflammatory mechanism? A side-by-side comparison of native milk bLf, *Pichia*-recombinant bLf, and (eventually) *A. oryzae*-recombinant bLf in a standardized THP-1/MSU assay would answer this directly.
-
-4. **Iron-saturated (holo) vs. iron-free (apo) Lf — which is more effective for gout?** Mechanistic expectation: apo-Lf's iron-sequestration effect contributes to ROS reduction (CP1b) in a way holo-Lf cannot; receptor-mediated effects (LRP1, CD14, intelectin) may be less form-dependent. A dose-response experiment with matched apo- and holo-Lf in an MSU-macrophage assay would separate these. Commercial supplement products are predominantly apo-; Open Enzyme should match that unless data says otherwise.
-
-5. **Does the koji matrix protect Lf better than encapsulated formulations in vivo?** The koji-embedded Lf hypothesis is that rice biomass + fungal cell walls provide natural controlled-release packaging superior to (or at least different from) pharma-grade encapsulation. Simulated gastric + intestinal fluid studies, then a rat oral PK study comparing koji-Lf vs. matched-dose purified Lf, would address this. Cost: ~$5-8k.
-
-6. **Does chronic oral Lf dosing shift gut microbiome composition?** Lactoferrin is bacteriostatic (§2). At chronic 1-3 g/day doses, does it meaningfully alter gut microbiome diversity, SCFA production, or colonization resistance? He 2023 PMID 37351541 hints the microbiome arm is mechanistically important (antibiotic-depletion abolishes the Lf cognitive-impairment benefit); conversely, chronic high-dose Lf in a hyperuricemic + CKD patient population could have risks not yet characterized.
-
-7. **Are lactoferricin / lactoferrampin peptides gout-relevant?** Short N-terminal peptides retain antimicrobial and partial LPS-binding activity. Whether they retain the NLRP3 / GSDMD suppression mechanism is unknown. If yes, they become a production-friendlier alternative for dedicated strains (e.g., *E. coli* expression; no glycosylation requirement; no Aspergillus engineering needed for a peptide-only product).
-
-8. **Does Lf synergize with uricase + EPA/DHA + aspirin-triggered resolvins in a combined CP5b stack?** The stacked hypothesis is that Lf provides mechanism breadth (CP1a + CP1b + CP4 + CP6b) while EPA/DHA + aspirin provide CP5b-specific ALX/FPR2 agonism. Dose-ranging in an MSU flare model with factorial dosing would test for synergy vs. redundancy.
-
-9. **Safety of chronic Lf dosing in CKD + hyperuricemia patients.** Most gout patients eventually develop some renal impairment (urate nephropathy, NSAID-associated CKD, or hypertension-driven nephrosclerosis). Lactoferrin is filtered by LRP2 (megalin) in the renal proximal tubule; protein load plus LRP2 engagement in compromised kidneys has an uncharacterized long-term safety profile. Talactoferrin safety data is in healthier populations.
-
-10. **Does the OASIS sepsis signal have mechanistic explanation?** Vincent 2015 found higher mortality in the shock-subgroup talactoferrin arm. If the mechanism is known (e.g., Lf-mediated enhancement of some pathogen's virulence, Lf-mediated suppression of a host response critical in shock but dispensable in chronic gout), the gout-context safety argument can be made rigorously. If unknown, caution on "do not dose Lf during acute febrile illness" is prudent.
-
-11. **Is there a published *A. oryzae*-in-solid-state-on-rice Lf result lurking in non-English literature?** Japanese dairy and fermentation industries have published extensively on lactoferrin and koji independently; literature search for Japanese- and Chinese-language sources may surface precedent not in PubMed.
-
-12. **Does Lf affect joint-resident synovial macrophages differently than tissue-resident colonic macrophages?** Joint-resident macrophages are a partially distinct lineage with different receptor expression profiles. All existing mechanistic data (Zhao 2020, Habib 2023, Shan 2026, He 2023) is from non-synovial tissues. A synovial-fluid macrophage isolation + Lf dose-response + MSU challenge would directly test the gout-context mechanism.
-
-13. **Can an observed inter-lobe-linker failure be redesigned without losing lactoferrin function?** [COMP-034](./lactoferrin-linker-redesign-computational.md) is invalid because its candidate ordering reused an unverified protease filter. First map any reproducible WT fragment and confirm retained-function loss under the intended process. Only then begin a new gated sequence-design lifecycle and test a matched diversity panel.
-
----
-
-## 13. Sources
+## 12. Sources
 
 Principal primary references, grouped by topic. Full DOIs where available per PubMed.
 
 ### Structure and Glycosylation
 
 - Sun XL, Baker HM, Shewry SC, Jameson GB, Baker EN. "Structure of recombinant human lactoferrin expressed in Aspergillus awamori." *Acta Crystallogr D Biol Crystallogr* 1999;55(Pt 2):403-407. [DOI](https://doi.org/10.1107/s0907444998011226). PMID: 10089347.
-- Almond RJ, Flanagan BF, Antonopoulos A, Haslam SM, Dell A, Kimber I, Dearman RJ. "Differential immunogenicity and allergenicity of native and recombinant human lactoferrins: role of glycosylation." *Eur J Immunol* 2012;43(1):170-181. [DOI](https://doi.org/10.1002/eji.201142345). PMID: 23012214.
+- Almond RJ, Flanagan BF, Antonopoulos A, Haslam SM, Dell A, Kimber I, Dearman RJ. "Differential immunogenicity and allergenicity of native and recombinant human lactoferrins: role of glycosylation." *Eur J Immunol* 2013;43(1):170-181 (ePub 2012). [DOI](https://doi.org/10.1002/eji.201142345). PMID: 23012214.
 
 ### Receptor Biology
 
 - Baveye S, Elass E, Fernig DG, Blanquart C, Mazurier J, Legrand D. "Human lactoferrin interacts with soluble CD14 and inhibits expression of endothelial adhesion molecules, E-selectin and ICAM-1, induced by the CD14-lipopolysaccharide complex." *Infect Immun* 2000;68(12):6519-6525. [DOI](https://doi.org/10.1128/IAI.68.12.6519-6525.2000). PMID: 11083760.
 - Lu ZH, di Domenico A, Wright SH, Knight PA, Whitelaw CB, Pemberton AD. "Strain-specific copy number variation in the intelectin locus on the 129 mouse chromosome 1." *BMC Genomics* 2011;12:110. [DOI](https://doi.org/10.1186/1471-2164-12-110). PMID: 21324158.
+- Ferrer-Picón E, Dotti I, Corraliza AM, et al. "Intestinal inflammation modulates the epithelial response to butyrate in patients with inflammatory bowel disease." *J Crohns Colitis* 2020;14(12):1661-1673. PMID: 31211831. **Human-tissue and in-vitro intestinal evidence used only for the TNFα/ABCG2 premise; not a lactoferrin or gout intervention study.**
 
 ### NLRP3 / Pyroptosis / GSDMD Mechanisms
 
@@ -584,4 +504,4 @@ Principal primary references, grouped by topic. Full DOIs where available per Pu
 
 ---
 
-*This is the canonical Open Enzyme lactoferrin dossier. The co-expression engineering detail lives in [engineered-koji-protocol.md §16](./engineered-koji-protocol.md); the CP5b resolution-pathway context lives in [spm-resolution-pathway.md](./spm-resolution-pathway.md); the chokepoint-map position lives in [nlrp3-exploit-map.md](./nlrp3-exploit-map.md). Any deeper mechanism, production, or clinical literature beyond the one-line pointer in those documents belongs here.*
+Related construct work is in [engineered-koji-protocol.md §16](./engineered-koji-protocol.md); resolution biology is in [spm-resolution-pathway.md](./spm-resolution-pathway.md); and the pathway map is in [nlrp3-exploit-map.md](./nlrp3-exploit-map.md).

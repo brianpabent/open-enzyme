@@ -53,13 +53,17 @@ Same structural pattern as `wiki/etc/experiments/` (created earlier when computa
 - [`reactome/`](./reactome/) — Reactome pathway-audit and contribution workspace, including the NLRP3 outreach email, supporting detail, audit results, and generated-provenance pointers.
 - [`operational-search-template.md`](./operational-search-template.md) — reusable structure + when-to-use criteria + required sections for any project bottleneck that is resource-acquisition rather than scientific question. Future peer-track scope pages requiring specialized resources should instantiate this template. See also [`open-source-platform.md` §"7. Operational Search Artifacts as a First-Class Document Class"](../wiki/etc/open-source-platform.md) for the platform-level framing.
 - [`todos.md`](./todos.md) — active operational todos across the project
-- [`notable-moments.md`](./notable-moments.md) — append-only log of project moments worth external communication (blog posts, LinkedIn posts, talks). Translated for non-scientific human readers.
+- [`notable-moments.md`](./notable-moments.md) — historical communications
+  notebook. It is non-authoritative and excluded from scientific synthesis;
+  current claims must be reverified against the wiki and primary sources.
+- [`cfh-mechanism-dissociation-2026-05-21/`](./cfh-mechanism-dissociation-2026-05-21/) — retired former-COMP-039 literature workspace. Only a compact retirement marker remains active; scientific conjectures live on the linked wiki page and Git retains the removed working files.
 
-## Standing rule — log noteworthy moments as they happen
+## Communications leads
 
-Whenever something genuinely remarkable, noteworthy, or surprising happens in the project — a long-held assumption breaks, a methodology produces a non-trivial result, AI-assisted research velocity does something a human-only workflow couldn't, an external collaborator engages meaningfully, a wet-lab result lands — **add an entry to [`notable-moments.md`](./notable-moments.md) immediately**, while the context is fresh. Don't batch noteworthy-moment-logging; the freshness is part of the value.
-
-The log is for **non-scientific human readers** — write it accessibly, not in evidence-tier-tagged PhD-audience prose. Translate the science into plain language. The notable-moments log is the substrate for actual external communication; the wiki is the substrate for evaluating the project rigorously. Different jobs.
+If a useful communications lead emerges, record only a compact link to the
+canonical evidence or Git change. Do not duplicate scientific findings,
+pipeline state, or revision history here. A future article must reconstruct and
+verify the claim from current sources rather than inherit the notebook's prose.
 
 ### Every entry must include the honest caveats — those ARE the recruiting angle
 

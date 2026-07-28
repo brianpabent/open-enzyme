@@ -19,7 +19,7 @@ COMP-018 does not answer that question as a reproducible or validated sweep. Its
 
 ## Research leads that remain open
 
-- **Rosmarinic acid, luteolin, and *Helicteres* compounds:** assay-specific complement leads. Use the independently scrubbed [COMP-020 evidence boundary](./upstream-complement-verification-rerun-computational.md); do not import a universal rank.
+- **Rosmarinic acid, luteolin, and *Helicteres* compounds:** assay-specific complement leads. The [candidate-specific CFH-dependence synthesis](./cfh-mechanism-dissociation-cp0-candidates.md) preserves the reverified premises and matched experiment; the former COMP-020 is [quarantined legacy literature provenance](./upstream-complement-verification-rerun-computational.md). Reverify an exact source record before reuse and do not import a threshold verdict or universal rank.
 - ***Houttuynia cordata* polysaccharides:** exact material identity, inflammatory direction, exposure, and gout relevance remain load-bearing. See the [Houttuynia evidence page](./houttuynia-cordata.md).
 - **C1-INH:** exact-construct expression, folding, glycosylation dependence, stability, retained inhibition, and compartment access remain open. See the [C1-INH evidence page](./c1-inh-protease-stability-ecn-computational.md).
 

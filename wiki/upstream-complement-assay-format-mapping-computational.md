@@ -32,4 +32,4 @@ COMP-021 is [invalidated and non-runnable](./etc/experiments/comp-021-upstream-c
 >
 > **Discriminating observation:** Test one exact batch, concentration series, serum source, timing scheme, and positive controls across at least two mechanistically distinct formats plus an MSU-relevant complement readout. Advance the stratification only if the pattern reproduces independently and changes a predeclared experimental decision.
 
-No compound inherits priority from COMP-021. Current candidate evidence remains at [COMP-020](./upstream-complement-verification-rerun-computational.md) and each candidate's own evidence page.
+No compound inherits priority from COMP-021. The former COMP-020 is quarantined literature provenance; current authority rests with each reverified, candidate-specific evidence page.

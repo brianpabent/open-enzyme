@@ -4,16 +4,19 @@ date: 2026-05-13
 auditor: Claude Sonnet (via Explore subagent, Claude Opus orchestrator)
 scope: full repo git history + operational notes + synthesis directory + eval runs
 context: candidate-catch sweep for the heterogeneity-guard methodology paper
-status: primary source — preserve verbatim
+status: historical agent memo — non-authoritative
 ---
 
 # Open Enzyme catch-history audit (2026-05-13)
 
-This document preserves the audit memo returned by a wide-scope Explore subagent on 2026-05-13, run during drafting of the cross-vendor-heterogeneity-guard methodology paper. The subagent walked git history across `wiki/`, `synthesis/`, `scripts/`, `logs/`, `operations/`, and `evals/`, and returned candidate catch moments not yet in the paper's §5 case studies.
-
-**Why preserved verbatim:** the agent surfaced ~3 dozen distinct items with specific commit hashes and file paths. Curation/triage happens in `papers/future-work-pipeline.md` (which references this file); the raw memo stays unfiltered so we can re-curate later without re-running the audit.
+This is a historical agent-authored memo returned during manuscript drafting.
+It is not a primary source or a canonical project record. Git preserves its
+revision history; every reused item must be re-derived from the cited commit,
+file, raw model response, or external primary source.
 
 **Verification status:** commit hashes and file paths in the memo are agent-reported. Each item used in the paper or in future work must be independently grep-verified against the codebase per the project's pre-commit grep-verify gate (`CLAUDE.md` Rule 4). The agent's summary describes what it intended to find, not necessarily what is canonical.
+
+**Post-hoc annotation boundary:** references below to the 2026-07-24 exact-material correction were added after the 2026-05-13 memo. They are later annotations, not findings returned by the original agent.
 
 ---
 
@@ -21,7 +24,7 @@ This document preserves the audit memo returned by a wide-scope Explore subagent
 
 ### Executive Summary
 
-The Open Enzyme repository's git history, operational logs, and paper-drafting artifacts surface **at least 7 distinct catch classes and 31+ operational catch moments** not yet covered in the cross-vendor heterogeneity paper's current §5 case studies.
+The agent returned a broad set of candidate catch classes and operational moments. No deduplicated count was independently verified, so the numbered sections below should be treated as leads to inspect, not a finding count.
 
 ---
 
@@ -64,7 +67,7 @@ The Open Enzyme repository's git history, operational logs, and paper-drafting a
 
 | Metric | Opus 4.7 | GPT-5.5 (canonical prompt) | GPT-5.5 (tuned prompt) |
 |--------|----------|---------------------------|----------------------|
-| Cost | $8.44 | $1.09 (7.76× cheaper) | $1.66 (5.08× cheaper) |
+| Cost | $8.44 | $1.09 (7.74× cheaper) | $1.66 (5.08× cheaper) |
 | Tool-using rounds | 11 | 2 | 7 |
 | Cached input tokens | 91% | 66% | 86% |
 | RESTATEMENT-bias (6 markers) | 1/6 | 6/6 | 4/6 |
@@ -82,7 +85,7 @@ The Open Enzyme repository's git history, operational logs, and paper-drafting a
 **Date(s):** 2026-05-06 (commit `c0fd16e`)
 **Source:** commit `c0fd16e` "scripts: add Anthropic prompt caching to Pass 3"; `evals/pass-3-reviewer/2026-05-07-abc8de9-comparison.md` (Opus 4.7 achieved 91% cache-hit rate)
 
-**Why interesting:** third failure-class candidate — implicit heterogeneity via vendor-specific optimization. Anthropic's prompt caching, OpenAI's structured outputs, Gemini's natively-fluent multilingual support are not about model quality but about capability profiles. Architecture must adapt to each.
+**Why interesting:** third failure-class candidate — vendor-specific infrastructure can change cost and workflow behavior. The memo's broader capability attributions were not independently verified.
 
 ---
 
@@ -202,11 +205,9 @@ propagation.
 - Trigger: push to wiki/ fires GitHub Actions
 - Process: 3 passes async, cross-vendor
 - Wall-clock: ~9-12 min per run, unbounded runs per day
-- Cost per sweep: $0.65–$1.20 at OpenRouter rates
+- Cost per sweep: agent-reported $0.65–$1.20 at then-current OpenRouter rates; not independently reconstructed
 
-**Catches per sweep window:**
-- 2026-05-05 to 2026-05-13 (8 days post-daemon): 31+ explicit catch moments
-- 2026-04-25 to 2026-05-05 (transition era): 2-3 major catches named (DAF disulfide, Paperclip, CP0 reframe)
+**Candidate moments per sweep window:** the memo reported 31+ post-daemon moments and 2–3 transition-era catches, but did not preserve a deduplicated disposition. Those counts are not used in the paper.
 
 ### 4.2 Model Assignments Have Drifted Deliberately
 
@@ -266,11 +267,11 @@ Structurally analogous to the multi-pass sweep, applied at the translation level
 
 | Finding | Dates | Cost | Impact | Tier |
 |---------|-------|------|--------|------|
-| Brief contamination (comp-018 vs 020) | 2026-05-08 | ~$5, 30-60min | Helicteres found at headline tier (4-20× missed); mechanism reframe | Verified |
-| Citation laundering (androgen-urate axis) | 2026-05-07–09; exact-material correction 2026-07-24 | ~$3-4 for the initial chain | Unsupported XO claim removed; later review withdrew the false direction verdict and separated extract/quassinoid identities | Initial catch verified; first repair superseded |
-| Pass 3 model swap (Opus → GPT-5.5 tuned) | 2026-05-07–08 | Eval cost | 5× cost reduction; verification depth 2 → 7 tool calls | Empirical eval |
-| Prompt caching (Opus 4.7 Pass 3) | 2026-05-06+ | ~$0.20/review amortized | 91% cache-hit; effective ~75% cost reduction | Measured |
-| Retry-with-backoff | 2026-04-28+ | ~$0.05/retry | Eliminated silent 503/429 failures; 100% recovery | Empirical |
+| Brief contamination (comp-018 vs 020) | 2026-05-08 | Agent-reported ~$5 and 30–60 min | Changed coverage and emphasis exposed prompt sensitivity; legacy biological ranks and cross-assay potency verdicts later retired | Methodological lead; scientific rankings superseded |
+| Citation laundering (androgen-urate axis) | 2026-05-07–09; post-submission exact-material correction added 2026-07-24 | Agent-reported ~$3-4 for the initial chain | Unsupported XO claim removed; later review withdrew the false direction verdict and separated extract/quassinoid identities | Initial catch verified; first repair superseded |
+| Pass 3 model swap (Opus → GPT-5.5 tuned) | 2026-05-07–08 | Eval cost | Tuned GPT-5.5 cost $1.66 vs Opus $8.44 (5.08× less); canonical GPT-5.5 used 2 tool rounds, tuned GPT-5.5 7, and Opus 11 | Historical eval |
+| Prompt caching (Opus 4.7 Pass 3) | 2026-05-06+ | Agent-reported ~$0.20/review amortized | 91% cache-hit in the cited evaluation; no independent 75% savings calculation retained | Historical eval |
+| Retry-with-backoff | 2026-04-28+ | Agent-reported ~$0.05/retry | Reduced exposure to transient 503/429 failures; no recovery-rate estimate retained | Historical operations |
 | Truncation tolerance | 2026-05-08+ | ~$0.01/check | Large sweeps recover partial synthesis | Empirical |
 
 ---

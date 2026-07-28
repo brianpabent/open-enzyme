@@ -69,8 +69,9 @@ Clinical-trial registrations are protocol/status evidence, not efficacy results.
 Propagation:
 
 - receives an explicit eligible path set;
-- selects at most 25 semantic research triggers per run and carries every
-  unprocessed eligible path forward in compact state;
+- uses an explicit semantic-trigger batch cap (currently 10 in
+  `wiki-propagate.yml`) and carries every unprocessed eligible path forward in
+  compact state;
 - ignores regenerable COMP code, binary intermediates, and machine outputs
   when a reviewed README, provenance page, or Markdown summary owns the
   propagatable scientific meaning;
@@ -137,6 +138,7 @@ Reader-facing intervention pages follow one current-state sequence: exploitable 
 - COMP review failure blocks only affected derived claims.
 - Propagation failure leaves its cursor unchanged and records an active failure.
 - Full-synthesis failure leaves its cursor unchanged and uploads recovery artifacts.
+- A migrated synthesis cursor without corpus and coverage hashes is marked unverified. `pending-synthesis-paths` then returns the complete tracked scientific source set, explicit path narrowing is ignored, and the next successful manual synthesis records fresh integrity hashes and clears the warning.
 - A failed FAERS query or undisposed capped batch does not advance the quarter cursor. A failed trial-registry profile preserves that source's prior complete baseline; another fully successful registry may still advance independently.
 - The watchdog notifies; it never authorizes or automatically dispatches a full synthesis.
 

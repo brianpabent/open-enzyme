@@ -59,7 +59,7 @@ Research Conjectures live on the page that owns their mechanism. This page may c
 - **Could local lactoferrin exposure restore intestinal urate export by relieving TNFα-driven ABCG2 suppression?** See the grounded premises, unsupported leap, and discriminating co-culture observation in [ABCG2 modulators](./abcg2-modulators.md#research-conjecture-lactoferrin-could-couple-inflammatory-relief-to-urate-export).
 - **Could carnosine preferentially counter an androgen-associated renal urate phenotype?** See the separate animal-model premises and the untested combined experiment in [carnosine](./carnosine.md#research-conjecture-carnosine-may-counter-an-androgen-associated-renal-urate-phenotype).
 - **Could selenium availability gate microbial urate disposal even when PDB genes are present?** See the DOPDH cofactor premise and paired abundance-versus-flux test in [purine-degrading bacteria](./purine-degrading-bacteria.md#research-conjecture-selenium-availability-may-gate-microbial-urate-disposal).
-- **Could a joint-retained multi-node flare intervention outperform the best single intra-articular arm?** See the route-specific premises and staged factorial in the [gout kill-chain delivery analysis](./gout-kill-chain-delivery-routes.md#research-conjecture-a-local-multi-node-flare-intervention-may-outperform-single-node-ia-blockade).
+- **Could a joint-retained multi-node flare intervention outperform a matched single-node local arm?** See the route-specific premises and discriminating comparison in the [gout kill-chain delivery analysis](./gout-kill-chain-delivery-routes.md#research-conjecture--local-multi-node-control-without-systemic-overreach).
 - **Could abaloparatide's controlled urate rise be a human readout of PTH1R-driven ABCG2 surface loss?** See the controlled-trial premises, unsupported mechanism bridge, and direct trafficking/flux test in [ABCG2 modulators](./abcg2-modulators.md#research-conjecture-abaloparatide-pth1r-abcg2).
 - **Could bempedoic acid expose an OAT2-sensitive renal urate-secretion phenotype?** See the controlled human perturbation, substrate-specific in-vitro premise, and knockout/rescue test in [gout pathophysiology](./gout-pathophysiology.md#research-conjecture-bempedoic-acid-oat2-urate-secretion).
 - **Could renal water handling expose a compartment-specific urate phenotype?** See the controlled tolvaptan perturbation, collecting-duct GLUT9b/ABCG2 mechanism, and paired-data test in [gout pathophysiology](./gout-pathophysiology.md#research-conjecture-renal-water-urate-coupling).
@@ -95,7 +95,7 @@ Questions about uricase variant selection, GI survival, protease resistance, yea
 ### Yeast vs. koji host choice within enzyme-production tracks
 
 - **At what expression and recovery levels does a yeast route become operationally competitive?** Existing mass-burden estimates are track-specific assumptions, not a reason to appoint a different chassis as the project default. See [engineered-yeast-uricase-proposal.md §5](./engineered-yeast-uricase-proposal.md).
-- **Can the Ward 1995 *A. awamori* glucoamylase-fusion + KEX-2 architecture (>2 g/L submerged) transfer to solid-state rice koji fermentation?** The submerged-culture precedent is solid (PMID 9634791). Solid-state mass transfer, redox, and proteolysis dynamics are different. This is the specific gating experiment for the lactoferrin co-expression module. See [engineered-koji-protocol.md §16](./engineered-koji-protocol.md), [spm-resolution-pathway.md §5](./spm-resolution-pathway.md).
+- **Can the Ward 1995 *A. awamori* glucoamylase-fusion + KEX-2 architecture (>2 g/L submerged) transfer to solid-state rice koji fermentation?** The submerged-culture precedent is material-, host-, and process-specific (PMID 9634791). Solid-state mass transfer, redox, and proteolysis dynamics are different. This is the gating experiment for that exact lactoferrin configuration, not evidence for its gout function or co-expression. See [engineered-koji protocol](./engineered-koji-protocol.md) and [lactoferrin](./lactoferrin.md).
 
 ### Protein engineering
 
@@ -140,20 +140,20 @@ Questions about chokepoint biology, priming mechanisms, species-gap caveats, and
 
 ### Priming and upstream signals
 
-- **Is complement C5a activation necessary or sufficient for MSU-triggered NLRP3 priming in clinical gout flares, or is TLR4/LPS still dominant in real patients?** Cumpelik 2016 (PMID 26245757) and Khameneh 2017 (PMID 28167912) are animal model + in vitro; human C5a-priming dominance remains to be confirmed in vivo. See [complement-c5a-gout.md §6](./complement-c5a-gout.md), [nlrp3-exploit-map.md](./nlrp3-exploit-map.md).
+- **How much does complement C5a contribute relative to TLR4/LPS, TNFSF14, and other priming inputs in clinical gout flares?** Cumpelik 2016 (PMID 26245757), Khameneh 2017 (PMID 28167912), and An 2014 (PMID 25229885) establish a C5a route in animal and human-cell systems; they do not establish comparative dominance across human flares. See [complement-c5a-gout.md](./complement-c5a-gout.md), [nlrp3-exploit-map.md](./nlrp3-exploit-map.md).
 - **Can an exact natural product directly antagonize C5aR1?** The recorded database and literature queries did not retrieve a wet-lab-validated direct antagonist, but that bounded non-retrieval does not close the class. Revisit only with a meaningfully different multilingual or source-space query, or when a named material gains receptor-specific functional evidence. See [complement-c5a-gout.md](./complement-c5a-gout.md) and [validation experiment §1.21](./validation-experiments.md#121-natural-product-c5ar1-antagonist-screening--historical-computational-pass).
 - **Are there patient subgroups where non-complement priming (true LPS from SIBO) dominates?** Would change stack selection per patient. See [complement-c5a-gout.md §6 Q5](./complement-c5a-gout.md).
 - **Is TNFSF14/LIGHT elevation a universal feature of gout flares or a patient subtype?** Would a TNFSF14 biomarker identify responders to EGCG or CERC-002 better than generic hs-CRP? See [tnfsf14-gout-target.md](./tnfsf14-gout-target.md).
-- **Does lactoferrin-based CP5b engagement eliminate the CP0 priming signal, or only suppress downstream?** See [complement-c5a-gout.md §4 Q4](./complement-c5a-gout.md).
+- **Does an exact lactoferrin material alter any MSU-relevant complement, priming, or resolution readout?** No direct gout experiment currently assigns lactoferrin to CP0, CP1, CP5b, or a multi-chokepoint role. Test one qualified material in one compartment with mechanism-proximal controls before asking whether it interacts with another node. See [lactoferrin](./lactoferrin.md) and [complement C5a](./complement-c5a-gout.md).
 
 ### Chokepoint biology
 
 - **Could an exact, qualified intervention configuration reduce flares during ULT initiation?** This is a future clinical question, not a food-use or home-production claim. An engineered configuration would first need product-specific identity, exposure, safety, containment, and preclinical efficacy gates; any later trial would use established-care prophylaxis as the controlled background. **Mechanistic Extrapolation.**
-- **CP1a + CP2/CP3 synergy in vitro.** Is there a measurable synergy between kojic acid (CP1a) and colchicine (CP2/CP3) in suppressing MSU-induced IL-1β release in primary monocytes? A bead-MSU stimulation assay with combinatorial dosing would answer this. (Mechanistic Extrapolation; source: colchicine.md §8)
-- **CP5b — why do gout patients' SPM levels remain low during flare?** Dietary precursor shortage, 15-LOX expression defect, or demand outpacing production? See [spm-resolution-pathway.md §6 Q1](./spm-resolution-pathway.md).
-- **ALX/FPR2 polymorphisms in gout.** Are there FPR2 genetic variants associated with flare severity or tophi formation? See [spm-resolution-pathway.md §6 Q2](./spm-resolution-pathway.md).
-- **Direct SPM bioassay feasibility.** SPM measurement requires LC-MS/MS at pg/mL. Practical for clinical biomarker stacks, or research-only? See [spm-resolution-pathway.md §6 Q3](./spm-resolution-pathway.md).
-- **Does aggNET-mediated C5a sequestration feed back to CP0?** The resolution loop may close on itself (SPM → aggNET → C5a sequestration → reduced priming). Mechanistic elegance suggests yes; direct evidence is thin. See [spm-resolution-pathway.md §6 Q4](./spm-resolution-pathway.md).
+- **CP1a × CP2/CP3 interaction in vitro.** First establish each exact material's single-agent MSU response and mechanism; only then use a prespecified interaction model. Pathway labels alone do not establish synergy.
+- **Do exact RvD1 and MaR1 effects reproduce in one matched MSU system?** The named mediators have distinct mouse evidence. Compare identity, stability, exposure, pathway engagement, and inflammatory/resolution readouts without assuming a class effect.
+- **Can an EPA- or DHA-precursor configuration generate a measured gout-relevant RvD1, MaR1, or other exact mediator exposure?** Precursor administration is a separate conversion experiment, not a substitute for the mediator.
+- **Can exact SPM identity and exposure be measured reproducibly in the selected matrix?** Qualify recovery, isomer discrimination, oxidation, calibration, and stability before using a mediator value as a biological endpoint.
+- **Could exact RvD1 or MaR1 couple aggNET behavior to reduced complement amplification?** See the explicitly bounded [Research Conjecture and discriminating experiment](./spm-resolution-pathway.md).
 
 ### Independent chokepoint research leads
 
@@ -168,7 +168,7 @@ Questions about chokepoint biology, priming mechanisms, species-gap caveats, and
 
 ### Upstream-complement sub-questions
 
-[COMP-018](./upstream-complement-modulator-sweep-computational.md) is retired and supplies no empty-class verdict, tier, or cross-material rank. Candidate-specific evidence now lives under COMP-020, Houttuynia, C1-INH, and the focused complement pages. These independent questions remain useful:
+[The retired non-evidential COMP-018 record](./upstream-complement-modulator-sweep-computational.md) supplies no empty-class verdict, tier, or cross-material rank. The former COMP-020 is [quarantined legacy literature provenance](./etc/experiments/comp-020-upstream-complement-verification-rerun/quarantine.json) and supplies source-level leads only. Candidate-specific evidence lives on the focused rosmarinic-acid/complement, Houttuynia, C1-INH, and related pages. These independent questions remain useful:
 
 - **Are there compounds that *upregulate the host-side complement regulators* (Factor H, DAF/CD55, CD59, clusterin, CR1), and would that create a distinct CP0 intervention route?** This remains unanswered. Anchor any focused scan to expression datasets plus complement-functional assays; gene upregulation alone would not prove C3/C5 convertase suppression.
   - **Anchor compound classes worth checking:** plant-derived Nrf2 activators (sulforaphane, curcumin, EGCG), butyrate and other HDAC-directed materials, retinoids, and dietary polyphenols. This is a search set, not a ranked or validated intervention list. HDAC activity does not by itself establish ABCG2 derepression or complement-regulator induction; each candidate requires direct expression plus complement-functional testing.
@@ -176,14 +176,14 @@ Questions about chokepoint biology, priming mechanisms, species-gap caveats, and
 
 - **Should upstream complement remain inside CP0 or become a separately named chokepoint?** Defer the naming decision until it changes experiment routing or portfolio ownership.
 
-- **What is the quantitative relationship between dietary rosmarinic-acid intake and active compound concentrations at the relevant gut and complement interfaces?** COMP-020 documents a wide assay-format IC50 spread, while Baba 2004, Konishi 2005, and Nakazawa 1998 provide human exposure anchors. None closes the dietary source → segmental gut concentration → plasma exposure → MSU-interface activity chain. COMP-029's YELLOW verdict and sensitivity coefficients are invalid toy-model outputs and do not narrow this question. **Resolution path:** first verify segmental intact-compound and metabolite exposure under a defined dietary source; only then design a concentration-matched complement assay. See [`complement-c5a-gout.md` §9.7](./complement-c5a-gout.md) and [`upstream-complement-verification-rerun-computational.md`](./upstream-complement-verification-rerun-computational.md).
+- **What is the quantitative relationship between dietary rosmarinic-acid intake and active compound concentrations at the relevant gut and joint/MSU interfaces?** The legacy literature inventory preserves non-interchangeable assay records; it does not supply a combined potency range. Human exposure papers do not close the dietary source → segmental gut concentration → plasma exposure → joint/MSU activity chain. COMP-029's invalid toy-model outputs do not narrow this question. **Resolution path:** measure intestinal and systemic/joint exposure as separate compartment hypotheses, then pair each with a concentration-matched functional assay. See [`complement-c5a-gout.md` §9.5](./complement-c5a-gout.md) and the [legacy literature inventory](./upstream-complement-verification-rerun-computational.md).
 
 - **Can a matrix-specific Tier 2 assay reproduce a Tier 3 reference result across operators and batches?** Validate analytical reproducibility on controlled research material before linking any assay to genotype, exposure, or an intervention study. Prespecify identity, matrix, calibration range, spike/recovery, operator count, batch count, and an acceptance rule. Cheap or portable measurement is useful for research QC only; it does not establish a delivered human dose, target-tissue exposure, safety, or efficacy. See the [genotype-informed intervention research workflow](./genotype-informed-supplement-workflow.md) and [H09 — Community Fermentation Reliability](./hypotheses/H09-community-fermentation-reliability.md).
 
-### Species-gap and translation
+### Cross-system translation
 
-- **Does the 1,000× dapansutrile mouse-vs-human cellular IC50 gap apply to every mouse-derived NLRP3 potency claim in the wiki?** Oridonin, BHB, ursolic acid, β-caryophyllene, carnosine — all have murine efficacy as primary evidence. Translation risk is now the dominant uncertainty. See [nlrp3-inhibitor-screen.md ChEMBL appendix](./nlrp3-inhibitor-screen.md).
-- **For "pathway modulator" class (quercetin, ursolic acid, BHB, KPV, carnosine, taurine), what's the correct primary-evidence yardstick?** ChEMBL IC50 doesn't exist by definition for these compounds. Is it functional IL-1β suppression in MSU-stimulated human macrophages? See.
+- **How much of a potency difference is caused by species versus cell system, stimulus, assay format, or exposure?** The existing dapansutrile records change several variables at once, so their numerical ratio cannot answer that question. Run matched mouse and human macrophage assays with the same stimulus, endpoint, timing, and free exposure. See [NLRP3 inhibitor screen](./nlrp3-inhibitor-screen.md).
+- **What is the right evidence yardstick for an NLRP3 pathway modulator?** Use mechanism-matched human-cell readouts—such as priming, ASC assembly, caspase-1, mature IL-1β, GSDMD, and viability—rather than treating database non-retrieval as a biological result.
 
 ### Biomarker interpretation
 
@@ -193,9 +193,9 @@ Questions about chokepoint biology, priming mechanisms, species-gap caveats, and
 
 ### Chronic tophaceous gout — the adaptive-immune axis (scoped 2026-07-13; no-go for a dedicated track)
 
-A scoping scan (Western PubMed / ClinicalTrials.gov + Chinese ChiCTR reached via local curl; two-model cross-check) tested whether the Th17/IL-17 (RORγt) adaptive-immune axis is a driver of tophus biology worth a dedicated Open Enzyme track. **Verdict: no.**
+A bounded scoping scan tested whether the Th17/IL-17 (RORγt) adaptive-immune axis had enough direct driver evidence to justify a dedicated Open Enzyme track. It did not establish that priority.
 
-- **Th17/IL-17 is a bystander, not a driver.** Single-cell + spatial transcriptomics of tophus tissue (Xu/Dalbeth/He 2025, PMID 41107120) shows intra-tophus CD4 T cells skew *regulatory*; the destructive work is done by a tophus-exclusive **SPP1/MMP9 macrophage** subset (innate-stromal) driving matrix remodeling + osteoclast bone erosion. **Zero IL-17-blocker gout trials exist** (ClinicalTrials.gov + ChiCTR both checked). Evidence tier for Th17-as-driver: ≤ Mechanistic Extrapolation.
+- **Current evidence does not establish Th17/IL-17 as the tophus driver.** Single-cell and spatial transcriptomics of tophus tissue (PMID 41107120) reported regulatory-skewed intra-tophus CD4 T cells and an SPP1/MMP9 macrophage population associated with matrix remodeling and bone erosion. The bounded registry scan did not retrieve an IL-17-blocker gout trial, but that search observation is not universal absence.
 - **What the platform's uricase sink does for tophi (bounded honesty).** Tophus dissolution is a urate-*solubility* problem: sustained SUA <6 mg/dL (ideally <5) dissolves crystals over months (DECT −96% at 6 mo, complete ~24 mo — Pascart 2025 PMID 40139560; pegloticase −71% in ~3 mo — Araujo 2015 PMID 26509070; febuxostat −83% at 52 wk — Becker 2005 PMID 16339094). The gut-lumen sink could contribute only if it produces sustained serum lowering; no valid effect-size prior currently exists after comp-044. It also does nothing directly for the fibrous capsule + eroded-bone scaffold, which may persist after crystals clear.
 - **The real (downstream) intervention nodes, if ever pursued:** RANKL/osteoclast bone erosion (denosumab repurposing candidate — with a live comparator: **ChiCTR2300069207**, baricitinib/JAK1-2 for chronic tophaceous gouty arthritis, Phase-4 RCT, primary endpoint = gouty bone erosion, Huashan/Fudan) and the SPP1-macrophage/ECM-fibrosis program (the most distinct novel biology, but no approved SPP1/MMP9 drug — untractable). TCM adjunct signal: **ChiCTR2300071056** (Jianpi Shenshi Granule + febuxostat, tophus endpoint) — sits inside the urate-solubility frame.
 - **Adaptive-immune axis remains out of scope:** a peer track needs a falsifiable *driver* thesis; the adaptive-immune axis fails the driver test, and the genuinely distinct chronic-tophus biology is innate-stromal, largely downstream of the crystal burden + IL-1β the CP framework already covers, and not food-grade-engineerable. Ursolic acid's RORγt activity ([nlrp3-inhibitor-screen.md](./nlrp3-inhibitor-screen.md)) is a curiosity here, not a priority. Scan log: [`logs/chronic-tophus-adaptive-axis-scoping-scan-2026-07-13.md`](../logs/chronic-tophus-adaptive-axis-scoping-scan-2026-07-13.md).
@@ -215,20 +215,20 @@ Organized by compound, with links to supporting evidence and experiments.
 
 ### Quercetin
 
-- **Does quercetin's 300 nM ChEMBL 5-LOX IC50 translate to cellular neutrophil-chemotaxis block in a gout-relevant assay?** A zileuton head-to-head could resolve this if the question becomes decision-relevant.
+- **Does quercetin's 300 nM primary 5-LOX IC50 (PMID 2066989) translate to cellular neutrophil-chemotaxis block in a gout-relevant assay?** A zileuton head-to-head could resolve this if the question becomes decision-relevant.
 - **Is quercetin + Boswellia (AKBA) redundant at 5-LOX, or complementary at IKKβ + 5-LOX?** Depends on AKBA's 5-LOX IC50 and whether the two compounds bind at the same site. ChEMBL query pending. See.
 
 ### BHB / Ketones
 
-- **Does the ketogenic-diet-gout rat result translate to a human oral BHB dosing regimen?** The rat study used intrinsic ketogenesis (diet); exogenous BHB dosing has different PK. See [bhb-ketones.md](./bhb-ketones.md), [nlrp3-exploit-map.md](./nlrp3-exploit-map.md).
-- **Does BHB's mouse-vs-human species gap follow the dapansutrile pattern?** Mouse ketogenic data may overstate BHB's required human dose. See.
+- **Can an exact BHB exposure reproduce the urate-crystal pathway result without an adverse urate-handling shift?** The cited study used BHB or a ketogenic context in mouse NLRP3-disease models, including urate-crystal peritonitis; it does not establish a human formulation or regimen (PMID 25686106). Measure exact exposure, inflammasome target engagement, and urate handling together. See [BHB](./bhb-ketones.md).
+- **How does BHB activity transfer across species and systems?** Compare matched mouse and human macrophage assays; the existing dapansutrile records do not define a reusable numerical species penalty.
 - **Does androgen status shift BHB's NLRP3 concentration-response?** BHB has reported activity at multiple NLRP3 nodes ([bhb-ketones.md](./bhb-ketones.md)); direct androgen effects on NLRP3 priming remain directionally ambiguous ([androgen-urate-axis.md](./androgen-urate-axis.md) §"Beyond transporters"). Test androgen × MSU × BHB in a concentration matrix with HCAR2 expression, inflammasome readouts, and viability rather than inferring a human dose. See [validation §1.23](./validation-experiments.md) and [nlrp3-exploit-map.md](./nlrp3-exploit-map.md).
 
 ### Lactoferrin
 
-- **Can lactoferrin be expressed as an intact, active product in solid-state *A. oryzae*?** The *A. awamori* >2 g/L precedent is submerged and single-protein. Solid-state output, processing, activity, and batch variance remain unmeasured; a useful exposure target must be derived separately. See [engineered-koji-protocol.md §16](./engineered-koji-protocol.md), [spm-resolution-pathway.md §6 Q6](./spm-resolution-pathway.md).
+- **Can lactoferrin be expressed as an intact, active product in solid-state *A. oryzae*?** The *A. awamori* >2 g/L precedent is submerged and single-protein. Solid-state output, processing, activity, and batch variance remain unmeasured; a useful exposure target must be derived separately. See [engineered-koji protocol](./engineered-koji-protocol.md) and [lactoferrin](./lactoferrin.md).
 - **Does *A. oryzae* KEX-2 process a glucoamylase-lactoferrin fusion identically to *A. awamori*?** Critical for transferring the Ward 1995 architecture. See [engineered-koji-protocol.md §16 Risks](./engineered-koji-protocol.md).
-- **Is there a dedicated gout trial of oral lactoferrin anywhere?** None identified. See [spm-resolution-pathway.md §6 Q5](./spm-resolution-pathway.md).
+- **Has an exact oral lactoferrin material been tested in gout?** Run a source-pinned multilingual literature and registry refresh before treating the current corpus gap as absence. See [lactoferrin](./lactoferrin.md).
 - **Which lactoferrin sequence and product format should enter the matched screen?** Bovine food-use history and human *Aspergillus* expression precedent answer different questions; neither transfers safety, processing, or activity to the proposed engineered configuration. See [engineered-koji-protocol.md §16](./engineered-koji-protocol.md).
 
 ### Carnosine
@@ -245,31 +245,21 @@ Organized by compound, with links to supporting evidence and experiments.
 - **Does zileuton (5-LOX inhibitor) abort or shorten gout flares in any case series or retrospective data?** Asthma patients who also have gout are a natural population to query.
 - **What's the theory of action beyond 5-LOX?** Any secondary effects (redox, cytokine-modulation, neutrophil-direct) that could be advantageous or detrimental in gout context? Dossier in progress.
 
-### Tier-4 inhibitor screen — missed gout-model data *(largely closed 2026-04-23 + 2026-05-05; one residual gap)*
+### Natural-product NLRP3 evidence qualification
 
-- Do any other Tier-4 compounds (limonene, alpha-pinene, sulforaphane, omega-3 metabolites, EGCG/curcumin variants) have published MSU/gout animal-model data that the keyword-gated original screen missed? A 2021 MSU rat paper supports β-caryophyllene above the no-gout-evidence tier.
-- **Current classification:** EGCG → Tier 2; limonene → Tier 3 supplement / Tier 4 production; sulforaphane → Tier 2–3 supplement / Tier 4 production. Candidate review must check MSU animal models, hyperuricemia rat models, human-cell NLRP3 assays, and Nrf2/NF-κB sub-μM activity for every compound — not just those with "gout" in the title.
-- **Current evidence classification:**
-  - **Sulforaphane:** upgraded from Tier 2–3 to **Tier 2** with two additional citations — Yang 2018 *Rheumatology* PMID 29340626 (oral SFN attenuated MSU foot-pad and air-pouch acute gout in mice) and Greaney 2015 *J Leukoc Biol* PMID 26269198 (Nrf2-independent inflammasome inhibition + in vivo gout peritonitis). Three independent in vivo gout-relevant readouts now cited.
-  - **Theaflavins:** Tier 2 supplement candidate (see [theaflavins.md](./theaflavins.md)). Direct MSU peritonitis Animal Model + multi-transporter URAT1/GLUT9/OAT modulation distinct from EGCG.
-  - **α-Pinene:** confirmed no direct MSU/gout animal-model data exists; Tier 4 ranking stands.
-  - **d-Limonene:** Venkatesan 2025 already cited (PMID 41515190); no further re-rank.
-  - **Omega-3 metabolites (RvD1, MaR1, etc.):** already cited in [`spm-resolution-pathway.md`](./spm-resolution-pathway.md); no new data.
-- **Residual gap:** **Curcumin variants** (tetrahydrocurcumin, BCM-95 formulation, curcumin analogs) returned 11 PubMed hits on the 2026-05-05 audit; none qualified as direct MSU/gout animal-model evidence beyond what's already in the curcumin coverage. A targeted full-text-grep audit specifically for curcumin **derivative** activity in MSU-gout would close this last sub-question. Likely low-yield.
-
-See [nlrp3-inhibitor-screen.md §Meta-Finding](./nlrp3-inhibitor-screen.md), [theaflavins.md](./theaflavins.md).
-- **Would THCV's 20× higher CB2 affinity (Ki 7.5 nM vs. BCP 155 nM) translate to better MSU gout efficacy if dose-bridged?** Untested. THCV has cannabis-derived regulatory friction so this is academic unless BCP underperforms in a planned MSU macrophage assay. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
-- **Is there an engineered microbial route to β-caryophyllene that scales past 10–50 mg/L?** Current titers are two orders of magnitude below the likely therapeutic dose (rat 100–400 mg/kg ≈ 1.1–4.5 g/day BSA-scaled). Titer improvement is required before "engineered koji produces BCP" enters the koji-track design. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
+- **Which exact materials have reproducible MSU-relevant activity?** Reverify species, preparation, exposure, assay, and primary source for sulforaphane, theaflavins, limonene, β-caryophyllene, curcumin derivatives, and other leads. Preserve direct animal observations without turning the mixed set into a tier or rank.
+- **Which candidates reproduce in a matched human macrophage assay?** Measure free exposure, priming, inflammasome assembly, mature IL-1β, GSDMD, and viability. Database coverage and production titer do not answer this biological question.
+- **When does an engineered source become useful?** Only after an exact material clears biological and exposure gates; then compare existing and engineered sourcing on identity, purity, stability, achievable exposure, and cost.
 
 ### Beta-caryophyllene
 
-- **Does oral BCP at 50-200 mg/day (supplement range) reproduce the 100-400 mg/kg rat MSU effect?** PK scaling suggests possible 20-50× dose gap. Resolvable with desk work before wet-lab. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
-- **Would THCV's 20× higher CB2 affinity (Ki 7.5 nM) translate to better MSU gout efficacy?** Untested; regulatory friction makes it academic unless BCP underperforms. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
-- **Engineered microbial route to β-caryophyllene past 10-50 mg/L titer?** Two orders of magnitude below therapeutic dose. Titer improvement would unlock the "koji produces BCP" pathway. See [cannabinoids-terpenes.md](./cannabinoids-terpenes.md).
+- **What free exposure reproduces the exact rat MSU result in a human-cell system?** Simple body-surface-area scaling and comparison with a supplement label cannot establish an effective human exposure. See [cannabinoids and terpenes](./cannabinoids-terpenes.md).
+- **Does CB2 dependence explain the MSU-model effect?** Use an exact BCP material, receptor blockade or knockout, exposure measurement, and matched inflammatory readouts before comparing another cannabinoid.
+- **Could an engineered route meet a validated material specification?** Production work opens only after biological exposure and identity requirements are known.
 
 ### Oridonin
 
-- **Does oridonin's cellular-vs-kinetic IC50 split (5.18 μM human THP-1 per ChEMBL) matter for gout-specific efficacy?** No gout-specific studies exist for oridonin. Covalent Cys279 binding may be mechanistically preserved across species. See [oridonin.md](./oridonin.md).
+- **How do oridonin's cellular and biochemical measurements transfer to an MSU system?** Reverify the exact primary assays, then compare exposure and NLRP3/NEK7 readouts in a gout-relevant human-cell model. The current corpus does not establish gout efficacy. See [oridonin.md](./oridonin.md).
 
 ### Do encoded folding-route features predict cassette interactions?
 
@@ -341,18 +331,19 @@ Several oral enzyme tracks depend on the gut-lumen sink producing a clinically m
 
 **Cross-references:** [cross-validation.md](./cross-validation.md), [gut-lumen-sink.md](./gut-lumen-sink.md), [uricase.md](./uricase.md), [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md).
 
-### Dietary-CP0 track risk — do dietary doses of rosmarinic acid, luteolin, Houttuynia, and Helicteres reach gut-luminal complement-suppressing concentrations?
+### Oral complement-candidate route split — intestinal activity versus joint/MSU activity
 
-The dietary-CP0 hypothesis requires an intact candidate to reach the relevant luminal compartment at sufficient free exposure and suppress complement without a countervailing effect. Existing rosmarinic-acid estimates are calculated rather than direct luminal measurements; plasma exposure does not substitute for the proposed luminal mechanism. Luteolin, *Houttuynia* polysaccharide, and *Helicteres* lignan exposure at the target compartment also remains unresolved.
+These are two different hypotheses. An orally delivered candidate could alter complement-related biology within the intestine, or absorbed parent compound/metabolites could reach a systemic or joint/MSU interface. Evidence for one compartment does not establish the other, and no causal gut-to-joint bridge has been demonstrated for these candidates.
 
 **Discriminating evidence:**
 
-- Measure segmental intestinal concentration and chemical identity after a controlled exposure in an appropriate animal model before any human translation.
-- Pair concentration with ex-vivo complement activity and tissue-safety readouts; neither measurement alone establishes the mechanism.
+- For the intestinal hypothesis, measure segmental concentration, chemical identity, local complement readouts, and tissue safety after a controlled exposure.
+- For the systemic/joint hypothesis, measure plasma and joint-relevant exposure plus MSU-associated complement activity under matched conditions.
+- To connect them, require a causal observation showing that a defined intestinal perturbation changes a downstream joint/MSU readout through the proposed route.
 - Keep the two Houttuynia assays separate: [§1.30](./validation-experiments.md#130-houttuynia-cordata-polysaccharide-fraction-comparison-in-msu-stimulated-thp-1-macrophages--prioritization-screen) tests direct macrophage directionality, while [COMP-040](./computational-experiments.md) independently tests serum complement. Neither establishes dietary exposure or product equivalence, and neither gates the other.
 - Do not design a combination until each component has its own exposure, activity, and safety evidence and the interaction null is prespecified.
 
-See [Houttuynia](./houttuynia-cordata.md), [combined CP0 systems model](./combined-cp0-systems-model-computational.md), [CFH mechanism dissociation](./cfh-mechanism-dissociation-cp0-candidates-computational.md), and [complement C5a in gout](./complement-c5a-gout.md).
+See [Houttuynia](./houttuynia-cordata.md), [combined CP0 systems model](./combined-cp0-systems-model-computational.md), [CFH-dependence hypotheses](./cfh-mechanism-dissociation-cp0-candidates.md), and [complement C5a in gout](./complement-c5a-gout.md).
 
 ### Matrix-specific assay gap for microbiome-derived metabolites
 
@@ -379,8 +370,8 @@ These methods support matrix-specific research directions in the source studies;
 ### Platform selection and thesis
 
 - **Is Open Enzyme's wiki-wide IC50 provenance practice rigorous enough?** Many IC50 values come from review papers, not primary ChEMBL-indexed assays. A written standard would prevent legacy-citation drift. See.
-- **Does MCC950 / CRID3 / CP-456773 absence from ChEMBL name search reflect a curation gap or a synonym issue?** Worth a direct structure-based query. See.
-- **Is there a "ChEMBL blind spot" for natural products?** ChEMBL's curation bias favors medicinal chemistry literature; natural products with strong functional but weak binding data (BCP, BHB, many terpenes) may be systematically underrepresented. See.
+- **Can a source-pinned structure and synonym query recover the exact MCC950 primary assay record?** The current compact ChEMBL receipt cannot answer this; the primary paper remains the evidence source.
+- **How should natural-product discovery combine databases and literature?** Use ChEMBL for bounded activity retrieval, then independently search primary multilingual literature by mechanism, material/species, traditional formula, and pathology framing. Non-retrieval in one source is not biological absence.
 
 ### Novel modalities (from modality-chokepoint-matrix.md)
 
@@ -390,7 +381,7 @@ The [Modality × Target Matrix](./modality-chokepoint-matrix.md) (2026-04-28) su
 - **Engineered Faecalibacterium prausnitzii for local butyrate at the gut crypt.** Butyrate-mediated PPARγ induction of wild-type ABCG2 is the supported route. Direct Q141K trafficking rescue is proposed but unvalidated; durable colonization, titer, and epithelial exposure are also open. (Mechanistic Extrapolation; source: modality-chokepoint-matrix.md)
 - **Myeloid-tropic LNP delivering NLRP3-silencing mRNA/siRNA to vessel-wall macrophages.** Myeloid LNP work in oncology supplies a delivery-class precedent; gout and vessel-wall translation remain untested. **Mechanistic Extrapolation**; source: modality-chokepoint-matrix.md.
 - **Pharmacological chaperone for ABCG2 Q141K folding rescue.** CFTR correctors provide a protein-trafficking precedent within the ATP-binding-cassette superfamily, not evidence of transfer to ABCG2. Basseville 2012 (PMID 22472121) supports the rescue-pathway question; direct surface-expression and urate-flux assays remain required. **In Vitro**; source: modality-chokepoint-matrix.md, abcg2-modulators.md.
-- **mRNA-IL-1RA pulse therapy for acute flare termination.** Transient expression matches flare window. Zero programs; mechanistically defensible; competes with canakinumab on cost. (Mechanistic Extrapolation; source: modality-chokepoint-matrix.md)
+- **mRNA-IL-1RA pulse therapy for acute flare termination.** Transient expression could match a flare window, but pulmonary delivery, exposure, receptor occupancy, efficacy, repeat-dose safety, and competitive cost remain untested. A current source-pinned landscape scan is required before making a program-absence claim. (Mechanistic Extrapolation; source: modality-chokepoint-matrix.md)
 - **Wearable sweat-based or microneedle continuous UA monitoring.** Changes intervention-titration kinetics. UCSD/Stanford research-stage. (Mechanistic Extrapolation; source: modality-chokepoint-matrix.md)
 
 ### GSDMD pore self-delivery — what survives a matched uptake test?
@@ -501,7 +492,7 @@ Questions about biomarker interpretation, stopping rules, microbiome impact, and
 ### Biomarker design
 
 - **Which biomarker panel distinguishes CP0, CP2, CP5b, and CP6a effects in a controlled study?** hs-CRP alone cannot attribute a result to a chokepoint. Prespecify mechanism-proximal readouts and controls for each tested node.
-- **What's the optimal EPA:DHA ratio for gout-specific SPM production (RvD1/MaR1 vs. RvE1)?** Does it differ from the cardiovascular-optimized ratio? See [spm-resolution-pathway.md](./spm-resolution-pathway.md).
+- **Which exact precursor-to-mediator conversion, if any, is reproducible in a gout-relevant compartment?** Measure EPA, DHA, and each named mediator under one controlled exposure before comparing precursor configurations. No optimal gout ratio is established. See [SPM resolution pathway](./spm-resolution-pathway.md).
 
 ### Red-flag thresholds
 

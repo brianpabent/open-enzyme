@@ -6,11 +6,19 @@ status: active
 
 # Notable Moments Log
 
-Append-only log of moments in the project that are worth external communication — blog post, LinkedIn post, conference talk, podcast soundbite, whatever. The bar isn't "every commit" or "every finding." The bar is **"something a non-OE-native reader would find genuinely interesting or surprising."** Often these are inflection-point moments where a long-held assumption breaks, or where a methodology produces a non-trivial result, or where AI-assisted research velocity does something a human-only workflow couldn't.
+> **Authority boundary:** This is a historical communications notebook, not a
+> scientific evidence source, current project-state surface, or synthesis input.
+> Entries preserve what seemed notable at the time and may contain conclusions
+> later corrected or retired. Verify every biological, quantitative, model,
+> pipeline, and causal claim against the current canonical wiki page and primary
+> source before reuse. Git—not this file—is the authoritative revision history.
+
+The notebook records moments that appeared potentially useful for external
+communication. It must not be used to propagate scientific claims.
 
 Each entry has: **date**, **headline** (one-line, scan-friendly), **what happened** (substantive but accessible — CTO not PhD framing per `CLAUDE.md`), **why it matters** (for the external-audience reader, not for the OE corpus), and **external-comms angle** (suggested framing for a post/talk).
 
-This log is **public** (operations/ folder is in the public repo) — same posture as the rest of the project. Radical transparency is a feature; readers seeing the working state is the point.
+This notebook is public. Its historical prose is non-authoritative.
 
 ---
 
@@ -108,18 +116,27 @@ For now, this is the day the principle got named. That's enough.
 
 ---
 
-## 2026-05-20 — "NLRP3 is empty in fungi" was query-framing-empty, not biology-empty. The AI substrate's multilingual + traditional-formula competence was being silently underused for two weeks before the audit caught it.
+## 2026-05-20 — Alternative query framing recovered additional fungal NLRP3 leads
 
 **What happened.** Two weeks ago a computational experiment (comp-014) systematically mapped 6,798 fungal compounds against 24 inflammation-axis targets to find candidates for the medicinal-mushroom-complement track. The verdict for NLRP3, ASC, and caspase-1 (the central inflammasome chokepoints that drive gout flares) came back: **empty in fungi.** Zero compounds at curated-activity tiers. That verdict propagated into [`medicinal-mushroom-compound-mapping-computational.md`](../wiki/medicinal-mushroom-compound-mapping-computational.md), routed downstream into the chassis-pending interventions framework, and sat there. The implicit logical conclusion: mushroom polysaccharide chemistry doesn't engage the central inflammasome pathway at gout-relevant potency, so the cultivation track can't directly close the NLRP3 chokepoint and the koji-engineering track is where NLRP3 coverage has to come from.
 
-**Yesterday's retrospective audit found that verdict was wrong.** The 2026-05-19 [lit-scan query-framing retrospective](../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md) walked back through every prior comp-NNN that touched non-Western compound classes and asked: *did the seed query actually search for what's in the literature, or did it search for what's in ChEMBL?* The pattern was visible after a couple of items: ChEMBL is Western-curated medicinal-chemistry data. Seeding compound lists from ChEMBL pure-compound activity columns and then mapping to PubMed catches Western-published natural-product chemistry. It misses entire subfields of non-Western traditional-medicine literature where the paper is anchored against a species name, a traditional-formula name, or a traditional-pathology term — not against a curated Western target column.
+**The retrospective showed a query-coverage failure, not a complete census.**
+The 2026-05-19 [lit-scan query-framing retrospective](../logs/lit-scan-query-framing-retrospective-audit-2026-05-19.md)
+found that species, formula, and traditional-pathology terms retrieved additional
+papers that target-name and ChEMBL-seeded searches had missed. The saved work
+does not quantify the literature-wide recall of either strategy.
 
-**The species-name + traditional-formula re-scans surfaced what the original framing had missed.** Three [parallel re-scans](../logs/) on 2026-05-19 hit the medicinal-mushroom corpus from species-anchored angles, the URAT1 chokepoint via classical Chinese gout formulas (Bai Hu Jia Gui Zhi Tang, Si Miao San, Wu Ling San), and the xanthine-oxidase chokepoint via classical Chinese herbal formulas (Huo Xiang Zheng Qi, Wu Mei Wan, etc.). The recovery rate was substantial:
+**The species-name + traditional-formula re-scans surfaced leads that the original framing had missed.** Three [parallel re-scans](../logs/) on 2026-05-19 hit the medicinal-mushroom corpus from species-anchored angles, the URAT1 chokepoint via classical Chinese gout formulas (Bai Hu Jia Gui Zhi Tang, Si Miao San, Wu Ling San), and the xanthine-oxidase chokepoint via classical Chinese herbal formulas (Huo Xiang Zheng Qi, Wu Mei Wan, etc.):
 
-- **NLRP3 axis in fungi: not empty.** ≥18 fungal sub-form × NLRP3-axis papers in PubMed under species-name + traditional-pathology framing, ≥5 at the gout indication itself (MSU + HUA rodent models). The strongest single-species fit was *Phellinus igniarius* (桑黄, sang huang), which covers four chokepoints simultaneously — XO + NLRP3 + URAT1 + bile-acid axis — across four independent papers. *Cordyceps militaris* in a 2023 head-to-head puts NLRP3 (not URAT1 alone) as the primary anti-MSU mechanism. *Antrodia camphorata* has an NLRP3-selective triterpenoid (Antcin-H). *Ganoderma lucidum* sub-fractions (spore-powder S-GLSP and pentapeptide GLP4) hit NLRP3 by routes distinct from the bulk triterpenoid / polysaccharide chemistry.
-- **The chokepoint isn't fungal-empty; it was query-framing-empty.** Same biology, different lens.
+- **Additional NLRP3-axis leads were retrieved.** Species- and
+  traditional-pathology queries surfaced fungal materials with MSU,
+  hyperuricemia, or adjacent NLRP3 evidence. They are candidate-specific leads,
+  not proof that fungal materials cover the chokepoint as a class.
+- **The old empty-class verdict is invalid.** The replacement conclusion is
+  bounded: the alternative queries found records the prior method missed; no
+  coverage census establishes what either search still missed.
 - **Falsifying counter-finding preserved:** lentinan (the polysaccharide most associated with shiitake) was explicitly tested against MSU and came back **negative on NLRP3**. Shiitake's anti-inflammatory contribution travels via the AIM2 inflammasome and cardiovascular eritadenine, not via NLRP3. Reframing the chokepoint as "not empty" didn't collapse into "all mushrooms work" — the discipline preserves the negative result.
-- **Bonus recovery on the ABCG2 chokepoint:** *Wolfiporia cocos* (茯苓, Fu Ling — a canonical ingredient of the Si Miao San gout formula) elevates intestinal ABCG2 mRNA + protein in hyperuricemic mice with effect magnitude **exceeding benzbromarone** (the gold-standard uricosuric drug used as positive control). This was missed by comp-014's Phase 3 because Poria triterpenes are outside ChEMBL's curated activity table.
+- **Bonus search lead on the ABCG2 chokepoint:** *Wolfiporia cocos* (茯苓, Fu Ling) surfaced in a formula/species-framed pass. The inherited comparator ranking and target-attribution did not survive COMP-013 review. Retain *Wolfiporia* only as an unranked source lead pending exact-material, primary-source, comparator, and transporter verification.
 - **COMP-013 correction ultimately invalidated the ranking method.** The pass recovered useful material and formula names, but its occupancy, exposure, rank, target-attribution, viability, and advancement conclusions did not survive review. Those names remain unranked search leads; COMP-049 is a Gate-1-approved, unrun fixed-set evidence-qualification replacement.
 
 **The discipline upgrade.** The 4-framing seed-query matrix is now codified at four operational layers:
@@ -326,7 +343,13 @@ FT   DISULFID        253..283  ┘
 
 The fix landed within ~30 minutes: corrected numbers in 5 places of comp-012 + 2 places of H05, anchored every reference to the UniProt feature annotations, added a "Correction note" to the comp-012 page documenting the error and how it was caught, and codified the missing discipline (a pre-commit grep-verify gate for every load-bearing quantitative claim in newly-authored wiki content) into the project's CLAUDE.md and the canonical methodology page.
 
-**The downstream good news from the correction:** 8 disulfides instead of 12 means the proposed three-cassette engineered strain has a total disulfide load of 25 (17 lactoferrin + 8 DAF) instead of 29. The "can the cell fold all this in its protein-folding factory" question is meaningfully easier than yesterday's pages reflected — glucoamylase has 2, lactoferrin 17, 8 sits comfortably between. The CP0-closure engineering thesis is in better shape than the wrong numbers had suggested.
+**Historical downstream interpretation, now superseded:** At the time, the
+DAF correction changed the recorded three-cassette total from 29 to 25 by
+combining 17 recorded lactoferrin disulfides with 8 DAF disulfides. Later
+primary-source review of Notari 2023 corrected lactoferrin from 17 to **16**,
+making the current arithmetic **16 + 8 = 24**. The 25-total statement is
+preserved here only as the historical scar; it is not a current engineering
+input. Neither total by itself measures host folding capacity.
 
 **Why it matters.** This is the citizen-science-with-AI dynamic in concrete form, with a happy ending and an instructive lesson.
 
@@ -420,26 +443,36 @@ Tone: grateful (Paperclip is genuinely useful — that's why we built workflow o
 
 ---
 
-## 2026-05-05 — Patent landscape on the koji-endgame architecture: clean FTO + a lapsed Novozymes patent that quietly validates the design
+## 2026-05-05 — Patent-search lead on the koji-endgame architecture — no novelty or FTO conclusion
 
-**What happened.** Asked an Opus subagent to do an exhaustive patent-landscape deep-dive on *Aspergillus oryzae* dual-heterologous-cassette expression — across Espacenet, Google Patents, USPTO, Lens.org, JPlatPat (Japan), CNIPA (China), DPMA (Germany). The motivation: H01 Killshot #1 (the academic-literature pass that ran earlier today) flagged ~30% probability of unpublished industrial IP from Novonesis (formerly Novozymes), DSM-Firmenich, or Genencor that could either validate the architecture, kill it, or block freedom-to-operate.
+**What happened.** An Opus subagent was asked to search multiple patent surfaces for *Aspergillus oryzae* dual-heterologous-cassette expression. The motivation was a question raised by an earlier academic-literature pass: unpublished industrial work from major enzyme-engineering companies might contain relevant architecture evidence or create freedom-to-operate constraints. That question had no defensible numerical probability, and the unauthenticated search was not exhaustive.
 
-**Result: CONFIRMS NOVELTY** — no patent in any database discloses two heterologous proteins co-expressed in *A. oryzae* solid-state rice koji at therapeutic-grade titers, in any language. The §1.9 architecture remains genuinely first-in-class on the heterologous × solid-state × dual-cassette × therapeutic-titer axis.
+**Correction:** The unauthenticated search was not an exhaustive patent
+database review and cannot establish novelty, first-in-class status,
+freedom-to-operate, public-domain status, or a numerical residual-IP risk.
+WO2017211803 is a relevant record because it discusses multi-heterologous
+expression in filamentous fungi including *A. oryzae*, while its examples and
+claims require jurisdiction-by-jurisdiction legal reading. A lapsed or ceased
+record does not by itself place every disclosed architecture in the public
+domain. The Ward, Novozymes, and Genencor records are search leads, not a clean
+FTO conclusion.
 
-**The interesting side finding:** **WO2017211803 (Novozymes 2017) directly claims dual-heterologous co-expression in filamentous fungi including *A. oryzae*. Status: ceased 2018-12-07 — architecture is now in public domain.** Examples in the patent are *A. niger* shake flask, not *A. oryzae* solid-state, but the fact that Novozymes filed it and let it lapse suggests they had internal proof-of-concept the architecture works in filamentous fungi but chose not to commercially pursue it. Industrial-IP residual risk dropped from ~30% (Killshot #1) to <10% (Killshot #1.5). Clean FTO profile for §1.9.
-
-Plus: all foundational patents are expired — Ward 1995 lactoferrin (US5571697), Novozymes EP0238023, Genencor US5364770. The architecture stack is fully open to build on.
-
-H01 status: survival count 1→2, survival score 0.3→0.45.
-
-**Why it matters.** Patent-landscape due-diligence is the most boring and most often-skipped step in academic-style biotech projects. Almost all academic papers presume "if it's not in PubMed, no one's done it" — which silently misses the entire industrial IP corpus. Today's check confirmed that the architecture isn't trapped under active IP, AND that a major industrial player (Novozymes) had the architecture working in shake flask before letting it lapse — useful confidence about feasibility.
+**Why it matters.** Patent literature can reveal technical precedents that do
+not appear in PubMed. This search identified records worth professional review;
+it did not establish that the architecture is unencumbered or that Novozymes
+had reduced the exact Open Enzyme configuration to practice.
 
 **Three places where outside expertise would tighten this further:**
-1. **Authenticated Espacenet / Lens.org / Derwent search** — institutional access (e.g., Emory library, IP counsel) would tighten the residual industrial-IP risk from <10% to <5%. The 13 patents this scope found are best-effort via the unauthenticated web; institutional databases catch the corner cases.
-2. **Direct trade-secret-side conversation with a Novozymes / Novonesis alumni or DSM-Firmenich alumni** — the residual <10% is unrecoverable from patent corpus alone (trade secrets aren't filed). One conversation with the right ex-engineer would close it.
+1. **Authenticated Espacenet / Lens.org / Derwent search** — institutional
+   access and patent counsel are required before any novelty or FTO conclusion.
+2. **Relevant public technical conversations** — an informed industry contact
+   may provide technical context, but cannot close trade-secret or FTO risk.
 3. **Read of the Senoo et al. 2024 (PMID 38242757) industrial *A. oryzae* AOK11 work** in detail — closest published precedent (3-4 enzymes co-expressed in solid-state, but self-cloning not heterologous). Brackets the H01 cell from another direction.
 
-**External-comms angle.** **LinkedIn post (~150-300 words):** "Patent due diligence is the boring step nobody does. Here's what we found." Show the WO2017211803 lapsed-Novozymes finding. Frame it as an "open-source biotech compounding effect" — a major industrial player's architecture work falls into the public domain, and an academic-style open-source project picks it up. End with H01 status + the soft ask for institutional patent-database access.
+**External-comms boundary:** Do not describe this as novelty confirmation,
+clean FTO, public-domain architecture, or industrial validation. A defensible
+post could say only that a best-effort search found a relevant record and that
+Open Enzyme is seeking qualified patent-database and legal review.
 
 **Reference:** [`wiki/hypotheses/H01-ward-dual-cassette.md`](../wiki/hypotheses/H01-ward-dual-cassette.md) — Killshot #1.5 Findings section has the 13-patent table + assumption-stack delta.
 

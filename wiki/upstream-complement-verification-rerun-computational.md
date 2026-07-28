@@ -1,34 +1,18 @@
 ---
-title: "Upstream Complement Modulator Sweep — Brief-Scrubbed Verification Re-Run (comp-020)"
+title: "Upstream Complement Literature Inventory — Legacy COMP-020 Provenance"
 date: 2026-05-08
 tags:
-  - computational
+  - literature-review
   - complement
   - cp0
   - chokepoint-0
-  - c1q
-  - masp-2
-  - factor-b
-  - factor-d
-  - factor-h
-  - rosmarinic-acid
-  - luteolin
-  - bupleurum
-  - helicteres
-  - fucoidan
-  - heparin
-  - flavonoid
-  - lignan
-  - polysaccharide
-  - natural-product
-  - tcm
-  - chembl-coverage-gap
   - multilingual
   - verification-rerun
+  - legacy-provenance
 related:
   - complement-c5a-gout.md
   - daf-cd55-scr14-truncated-computational.md
-  - cfh-mechanism-dissociation-cp0-candidates-computational.md
+  - cfh-mechanism-dissociation-cp0-candidates.md
   - gout-genetic-variants.md
   - medicinal-mushroom-compound-mapping-computational.md
   - tcm-gout-compound-triage-computational.md
@@ -46,10 +30,10 @@ sources:
   - "Sahu A, Rawal N, Pangburn MK. Inhibition of complement by covalent attachment of rosmarinic acid to activated C3b. Biochem Pharmacol 57(12):1439-46 (1999). PMID 10353266"
   - "Peake PW, Pussell BA, Martyn P, Timmermans V, Charlesworth JA. The inhibitory effect of rosmarinic acid on complement involves the C5 convertase. Int J Immunopharmacol 13(7):853-7 (1991). PMID 1761351"
   - "Englberger W, Hadding U, Etschenberg E, Graf E, Leyck S, Winkelmann J, Parnham MJ. Rosmarinic acid: a new inhibitor of complement C3-convertase with anti-inflammatory activity. Int J Immunopharmacol 10(7):729-37 (1988). PMID 3198307"
-status: published
+status: legacy_literature_provenance
 ---
 
-# Upstream Complement Modulator Sweep — Brief-Scrubbed Verification Re-Run (comp-020)
+# Upstream Complement Literature Inventory — Legacy COMP-020 Provenance
 
 MSU crystals activate complement and generate C5a, making upstream complement interference a plausible way to weaken flare priming. This literature re-run identifies assay-specific natural-product leads; it does not rank them, establish gout activity, or show that any reaches a useful compartment.
 
@@ -59,7 +43,7 @@ MSU crystals activate complement and generate C5a, making upstream complement in
 - *Helicteres angustifolia* benzofuran lignans inhibited complement in the Yin 2016 hemolytic and depletion-rescue experiments (**In Vitro, single-paper anchor**; PMID 27834928 / PMC6273495). Independent matched-material replication is required before priority or translation claims.
 - Luteolin and other flavonoids, *Bupleurum* polysaccharides, marine sulfated polysaccharides, and heparin-derived oligosaccharides have complement-assay evidence in the cited primary records (**In Vitro**). The materials, assay formats, units, and safety constraints differ, so cross-paper ordering is not justified.
 
-COMP-020 preserves those source observations but supplies no headline compound, tier, assay-format causality, comparative potency, dietary efficacy, or platform priority. The narrative COMP-020 artifact predates the current reproducible lifecycle and remains literature-mining provenance, not a quantitative model.
+The legacy scan preserves those source observations but supplies no threshold-qualified hit set, headline compound, tier, assay-format causality, comparative potency, dietary efficacy, ChEMBL coverage rate, exhaustive absence conclusion, or platform priority. Its artifact predates the current reproducible lifecycle and is quarantined as literature-mining provenance, not a completed COMP or quantitative model.
 
 ## Sourcing and delivery
 
@@ -73,4 +57,4 @@ Choose a candidate from its independently verified evidence home, qualify one ex
 
 A positive result advances only that material, assay, and compartment hypothesis. A negative result redirects that candidate without rejecting upstream complement as an exploitable gout weakness.
 
-Related: [complement C5a in gout](./complement-c5a-gout.md) · [assay-format conjecture](./upstream-complement-assay-format-mapping-computational.md) · [Houttuynia evidence](./houttuynia-cordata.md) · [experiment provenance](./etc/experiments/comp-020-upstream-complement-verification-rerun/)
+Related: [complement C5a in gout](./complement-c5a-gout.md) · [assay-format conjecture](./upstream-complement-assay-format-mapping-computational.md) · [Houttuynia evidence](./houttuynia-cordata.md) · [quarantined method provenance](./etc/experiments/comp-020-upstream-complement-verification-rerun/)

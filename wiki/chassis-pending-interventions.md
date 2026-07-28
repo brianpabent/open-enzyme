@@ -60,7 +60,7 @@ The linked mechanism dossier supplies the supporting evidence; each entry here s
 
 **Chokepoint(s) hit.** Demonstrated target: CP6 urate degradation. Conditional extensions, only if the selected organism produces butyrate at sufficient epithelial exposure, are CP2/NLRP3 dampening and wild-type ABCG2 induction through PPARγ. Direct butyrate rescue of Q141K trafficking is a separate unvalidated hypothesis. See [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md).
 
-**Evidence level.** Animal Model (CBT2.0 engineered EcN, −63% plasma UA in hyperuricemic mice — Li et al. 2025 Life Metabolism PMID 41070194); Human Retrospective Cohort (Stanford n=14K clindamycin vs Bactrim, HR 1.30 for incident gout — Liu et al. 2023 Cell PMID 37541197); Human Observational (FARMM antibiotic depletion n=30 fecal urate +40–50%); Mechanistic Extrapolation (quantitative SUA effect in typical gout patient with intact renal function).
+**Evidence level.** Animal Model (CBT2.0 engineered EcN lowered plasma urate in hyperuricemic mice — Li et al. 2025, PMID 41070194); Human Retrospective Cohort and Human Observational evidence supports an association between microbiome perturbation and urate handling, not a quantitative treatment effect in gout. Exact cohort results and provenance remain on [`purine-degrading-bacteria.md`](./purine-degrading-bacteria.md). Translating any of these records to serum-urate change in a typical patient is a **Mechanistic Extrapolation**.
 
 **Delivery / implementation constraint.** DOPDH requires SelD selenophosphate synthase, and the pathway is obligate anaerobic. The eight-enzyme cluster therefore requires a compatible organism and manufacturing environment.
 
@@ -68,8 +68,8 @@ The linked mechanism dossier supplies the supporting evidence; each entry here s
 1. **Engineered *E. coli* Nissle 1917 expressing the full PDB cluster** (CBT2.0 precedent in Li 2025) — facultative anaerobe, EcN safety / probiotic record, already used in PULSE uricase work, native SelD present
 2. **Defined-strain anaerobic probiotic** (*Clostridium sporogenes*, *Lacrimispora saccharolytica*, *Enterocloster bolteae*) — naturally express the cluster but oxygen-sensitive manufacturing is a barrier
 3. **FMT from PDB-rich donors** — case reports exist for gout FMT; regulatory pathway exists for some indications
-4. **Prebiotic enrichment** — inulin/FOS/resistant starch enriches PDB-positive Lachnospiraceae and Ruminococcaceae; ~10% SUA reduction in animal/small-human trials; doesn't require an engineered organism
-5. **Dietary cofactor adequacy (selenium)** — selenium-dependent DOPDH runs ~27× faster than the sulfur variant; selenium deficiency could phenocopy PDB depletion without changing bacterial abundance; trivially cheap if relevant
+4. **Prebiotic enrichment** — a non-engineered route to test whether enriching PDB-associated taxa changes pathway flux; efficacy and attribution remain unresolved
+5. **Selenium-defined pathway testing** — DOPDH cofactor dependence makes selenium status an experimental variable, not yet a supported intervention
 
 **Cheapest first move.** In a controlled culture or gnotobiotic system, measure pathway activity across selenium-defined media and identify terminal carbon products by isotope tracing. Test the separate *Alistipes indistinctus* / hippuric-acid → ABCG2 hypothesis as its own controlled perturbation; dietary exposure or an n=1 observation cannot establish that mechanism.
 
@@ -109,7 +109,7 @@ The linked mechanism dossier supplies the supporting evidence; each entry here s
 
 **Cheapest first move.** LBP track Phase 2 lit scans (engineering toolkit + commercial landscape + FDA LBP regulatory path) — queued in [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md). $0 cost, ~1–2 weeks via subagent.
 
-**Cross-reference.** [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) is the canonical scope page.
+**Cross-reference.** [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) owns the detailed scope.
 
 ---
 
@@ -127,15 +127,15 @@ The linked mechanism dossier supplies the supporting evidence; each entry here s
 
 **Cheapest first move.** Mechanism + delivery feasibility lit scan: "mRNA-IL-1RA pulse" + "pulmonary LNP for acute inflammatory indications" — $0, subagent task. Result: either confirms novel territory + bounds the chassis question, or surfaces an existing program OE didn't know about.
 
-**Computational gate — [comp-033](./computational-experiments.md) RED single-dose + [comp-036](./computational-experiments.md) YELLOW repeat-dose (2026-05-16):** comp-033 found single-dose plasma Cmax 0.025 µg/mL = 2% of anakinra benchmark (1.5 µg/mL). comp-036 followed up with multi-dose accumulation + receptor-occupancy framing (IL-1Ra Kd vs IL-1R1: 0.1–10 nM log-uniform per Arend 1990 JCI + Schreuder 1997 Nature crystal — **nM regime, not pM as initially speculated**). 80%-occupancy plasma threshold: **73 ng/mL median [9–553 p05-p95]**. Per-regimen verdict: **QD RED** (24h troughs drop below threshold; mean occupancy 0.66 but median 0% of 72h flare window above 80%); **BID × 4–28 doses YELLOW** (median 50–56% of flare window above 80% occupancy; best regimen but doesn't clear 95% high-confidence bar); **Loading 2× + QD × 14 YELLOW** (median 32% above 80%; first-day boost decays). No regimen clears the GREEN bar at current input uncertainty. Top sensitivities: Kd_nM (ρ −0.69) + translation-efficiency mass ratio (ρ +0.58) + dose (ρ +0.24). **Two wet-lab measurements would tip the verdict**: (1) integrated translation-efficiency mass ratio in human alveolar epithelium (ferret/NHP inhaled-LNP + BAL protein quant); (2) modern SPR Kd measurement IL-1Ra vs IL-1R1 ectodomain. Full analyses: [`inhaled-mrna-il1ra-pulse-computational.md`](./inhaled-mrna-il1ra-pulse-computational.md) (comp-033) + [`repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md`](./repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md) (comp-036).
+**Computational gate — [comp-033](./computational-experiments.md) RED single-dose + [comp-036](./computational-experiments.md) YELLOW repeat-dose (2026-05-16):** the single-dose model's central Cmax was 0.025 µg/mL versus a 1.5 µg/mL anakinra benchmark, a ratio of 1.67%. The repeat-dose model evaluated a different endpoint: mean receptor occupancy and the fraction of a 72-hour window above an 80% threshold. Its QD central mean occupancy of 0.66 can coexist with zero time above the stricter 80% threshold; these are not interchangeable statistics. No tested regimen cleared the model's GREEN criterion. The result remains dominated by assumed IL-1Ra/IL-1R1 affinity, pulmonary translation efficiency, and dose. Measure integrated protein production after inhaled mRNA-LNP and a modern matched-condition binding affinity before using the model for regimen or economic claims. Full analyses: [`inhaled-mrna-il1ra-pulse-computational.md`](./inhaled-mrna-il1ra-pulse-computational.md) (comp-033) and [`repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md`](./repeat-dose-inhaled-mrna-il1ra-pkpd-computational.md) (comp-036).
 
 **Research comparison.** The relevant test is not an assumed clinical substitution for prednisone or anakinra. It is whether the measured exposure and receptor occupancy produce a reproducible flare-model effect with acceptable repeat-dose pulmonary safety. The two wet-lab measurements above gate any clinical or economic comparison.
 
 **IL-1Ra versus an anti-IL-1β monoclonal as an mRNA payload:** the alternative cassette would encode an anti-IL-1β antibody. IL-1Ra has four candidate design advantages:
 
 1. **Mechanism breadth.** IL-1Ra blocks both IL-1α AND IL-1β at the single IL-1R1 receptor — broader pathway coverage. Anti-IL-1β monoclonals only neutralize IL-1β. For gout the difference is small (IL-1β is the dominant ligand), but for COPD / ARDS / IPF the cross-indications, IL-1α also drives sterile inflammation, so the broader-mechanism payload is a feature, not a quirk.
-2. **Protein size + structure.** IL-1Ra is **~17 kDa, no disulfide bonds, no glycosylation required for activity** — easier mRNA expression and lung-tissue translation. Antibodies are **~150 kDa with mandatory glycosylation + paired heavy/light chain assembly** — substantially harder for transient pulmonary mRNA expression. Translation-efficiency mass ratio (comp-033's dominant sensitivity driver, ρ = +0.78) favors small non-glycosylated payloads by ~10×.
-3. **Immunogenicity.** Human IL-1Ra is endogenous (body makes its own — see [`nlrp3-inflammasome.md`](./nlrp3-inflammasome.md) §"Chokepoint 5"); recombinant IL-1Ra is therefore essentially zero-immunogenicity. Humanized antibodies retain low but non-zero immunogenicity (anti-drug antibody response over chronic dosing).
+2. **Protein size + structure.** IL-1Ra is a small, non-glycosylated single-chain payload; an antibody requires paired-chain assembly and appropriate Fc glycosylation. That makes IL-1Ra a reasonable initial engineering candidate, but comp-033's translation-efficiency sensitivity does not itself prove a payload-size advantage or a 10× expression gain.
+3. **Immunogenicity.** Human IL-1Ra is endogenous, but an encoded or formulated product can still generate innate, delivery-system, impurity, or anti-drug responses. Immunogenicity must be measured rather than inferred to be zero.
 4. **Cleanness of mechanism.** IL-1Ra is purely competitive antagonism — no agonism, no ADCC, no CDC, no off-target effector function. Antibodies have Fc-mediated effector functions (ADCC / CDC / opsonization) that can produce off-target activity in some contexts.
 
 These properties nominate IL-1Ra as the initial payload for direct comparison. They do not establish pulmonary expression, exposure, efficacy, or safety; an anti-IL-1β payload remains a comparator rather than a clinically inferior option.
@@ -168,7 +168,7 @@ These properties nominate IL-1Ra as the initial payload for direct comparison. T
 
 **Intervention.** Test UOX with co-formulated catalase or a UOX–catalase fusion in a controlled intra-articular model. Local crystal access, peroxide control, tissue safety, persistence, immunogenicity, sterility, and formulation behavior all remain empirical gates.
 
-**Chokepoint(s) hit.** CP6 (uricase mechanism), local tophi dissolution. Sister to the existing IV pegloticase / SEL-212 system at a different delivery target (one specific joint with crystal deposition rather than systemic). See [`delivery-route-matrix.md` §"Open exploration questions" #1](./delivery-route-matrix.md).
+**Chokepoint(s) hit.** Local urate or crystal burden, if an exact configuration can demonstrate active enzyme, substrate access, peroxide control, residence, tissue safety, and immune safety. Systemic uricase precedents do not qualify this route. See the [delivery route × product class matrix](./delivery-route-matrix.md).
 
 **Evidence level.** Animal Model (Pickering emulsion uricase + catalase IA — *J Nanobiotechnology* 2025 cited in [`gout-kill-chain-delivery-routes.md`](./gout-kill-chain-delivery-routes.md)); In Vitro precedent for the uricase-catalase fusion class (Schiavon, Veronese). No clinical program.
 
@@ -212,11 +212,11 @@ Vorinostat remains relevant for a different reason: Basseville et al. reported Q
 
 ### 8. Duckweed (Lemnaceae) — edible biomanufacturing chassis
 
-**Intervention.** Duckweed (*Lemna* / *Spirodela* / *Wolffia*) as an edible, photosynthetic biomanufacturing chassis where the organism is simultaneously the factory and oral delivery vehicle. Relevant properties include photosynthetic feedstock, tractable human-type N-glycosylation (Cox 2006 *Lemna* mAb, up to 50× ADCC vs CHO), and oral-vaccine delivery in animals. *Spirodela polyrhiza* also produces luteolin (XO inhibitor, IC₅₀ 4.79 µM), but no whole-duckweed urate study establishes a hypouricemic effect.
+**Intervention.** Duckweed (*Lemna* / *Spirodela* / *Wolffia*) as an edible, photosynthetic biomanufacturing chassis where the organism may serve as both factory and oral-delivery material. The evidence home documents glycoengineered antibodies, secreted recombinant proteins, oral vaccines in animals, and isolated duckweed flavonoids; none establishes a whole-duckweed urate-lowering effect.
 
-**Chokepoint(s) hit.** Depends on payload. Strongest *proven* fit is the oral/mucosal delivery axis (factory = delivery vehicle, demonstrated in vivo: 100% protection chicken IBV edible vaccine, *Plant Biotechnol J* 2025; 63.3% RPS fish *LamB*, *Front Immunol* 2020). Option value at CP6 (a duckweed-expressed uricase — never attempted; urate oxidase is natively peroxisomal in plants, so plausible) and any future systemic/injectable enzyme needing human glycans.
+**Chokepoint(s) hit.** Payload-dependent. Animal vaccine studies support the oral/mucosal delivery premise for their exact antigens and protocols. A duckweed-expressed uricase remains an untested CP6 concept; antibody-like payloads may instead exploit the chassis's glycoengineering option.
 
-**Evidence level.** Animal Model (oral vaccines in chickens/fish/mice); In Vitro (recombinant titers — hGH 609 mg/L secreted; glyco-engineering); Commercial (food/feed lane only — Plantible *Lemna* protein 2025, EU novel-food approval; **zero** marketed duckweed *biologic*). Duckweed→urate = Mechanistic Extrapolation via isolated flavonoids.
+**Evidence level.** Animal Model (oral vaccines in chickens, fish, and mice); In Vitro / protein characterization (recombinant secretion and glycoengineering). Duckweed-to-urate translation remains a **Mechanistic Extrapolation**. Exact quantitative records and commercial-status claims belong on [`duckweed-aquatic-chassis.md`](./duckweed-aquatic-chassis.md) and require dated refresh before use.
 
 **Delivery / implementation constraint.** For gut-luminal uricase, duckweed has not shown a biological or delivery advantage that compensates for stable-line development time. Its potential advantages concern other protein formats and must be tested against those use cases rather than used to rank the gout target.
 

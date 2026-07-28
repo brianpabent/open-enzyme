@@ -1,10 +1,12 @@
 # comp-020 query strategy
 
-## Independence statement
+## Historical independence defect
 
-This is a brief-scrubbed verification re-run. Per the mission spec:
+The original brief was described as scrubbed, but `target-nodes.json` retained
+named comparators and prior exclusions. The resulting scan is not an
+independent verification. The following is retained only as historical query
+design:
 
-- **No prior comp-018 (or comp-019) findings were consulted.** The compound list emerges from the lit-scan, anchored to target nodes only.
 - Compound-class breadth applied: fungal, plant (phenolic / flavonoid / terpenoid / polysaccharide / lignan / alkaloid), bacterial, marine, dietary, FDA-approved, TCM, Kampo, Ayurvedic — all with equal initial weight.
 - Multilingual default: PubMed + CNKI + WanFang + J-STAGE + KISS / RISS where queries support it.
 - Paperclip MCP `map` operator NOT used per memory feedback (hallucinates organisms + numbers).

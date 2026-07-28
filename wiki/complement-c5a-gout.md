@@ -1,5 +1,5 @@
 ---
-title: "Complement C5a as the Dominant NLRP3 Priming Signal in Gout (CP0)"
+title: "Complement C5a as an NLRP3 Priming Route in Gout (CP0)"
 date: 2026-04-24
 tags:
   - complement
@@ -44,14 +44,24 @@ sources:
   - "Avacopan (Tavneos) FDA approval label, 2021 (ANCA-associated vasculitis)"
   - "Zaninelli TH, Fattori V, Verri WA Jr. Expert Opin Ther Targets 2023;27(8):751-766 (PMID: 37651647)"
   - "Schauer C, Janko C, Munoz LE, et al. Nat Med 2014;20(5):511-7 (PMID: 24784231)"
+  - "Takeda J, Miyata T, Kawagoe K, et al. Cell 1993;73(4):703-11 (PMID: 8500164)"
+  - "Laine M, Jarva H, Seitsonen S, et al. J Immunol 2007;178(6):3831-6 (PMID: 17339482)"
+  - "Schaumberg DA, Christen WG, Kozlowski P, et al. Arch Ophthalmol 2006;124(11):1530-5 (PMID: 16723442)"
+  - "Sahu A, Rawal N, Pangburn MK. Biochem Pharmacol 1999;57(12):1439-46 (PMID: 10353266)"
+  - "Zhang T, Chen DF. J Ethnopharmacol 2008;117(2):351-361 (PMID: 18400428; PMC7126446)"
+  - "Lu Y, Liu X, Liang X, et al. Acta Pharm Sin B 2018;8(2):218-227 (PMID: 29719782; PMC5925397)"
+  - "Yin X, Huang A, Zhang S, et al. Molecules 2016;21(11):1506 (PMID: 27834928; PMC6273495)"
 status: published
 ---
 
-# Complement C5a as the Dominant NLRP3 Priming Signal in Gout
+# Complement C5a as a Gout NLRP3 Priming Route
 
-**Chokepoint 0** in the [NLRP3 exploit map](./nlrp3-exploit-map.md). This deep dive documents the evidence that gout priming is complement-dominant rather than LPS-dominant, maps the therapeutic landscape at this under-exploited step, and tracks the portfolio's CP0 evidence and validation gates.
+**Chokepoint 0** in the [NLRP3 exploit map](./nlrp3-exploit-map.md). MSU-associated complement activation and C5aR1 signaling provide a demonstrated route into inflammasome priming in human-cell and animal systems. Whether this route dominates other priming inputs across human gout flares is unresolved.
 
-> **Current CP0 status:** The recorded database and fungal-compound searches did not retrieve a wet-lab-validated direct natural-product C5aR1 antagonist. This is a bounded search result, not a closed class. Upstream complement candidates exist at C3 convertase and pathway-entry nodes, while a direct functional screen remains the shortest route to discover or reject specific C5aR1 leads.
+> **Current CP0 status:** The retained legacy searches are not a reproducible
+> census and support no direct-natural-product C5aR1 retrieval or absence claim.
+> Upstream complement candidates exist at C3 convertase and pathway-entry nodes.
+> A direct functional screen is the shortest route to test exact C5aR1 leads.
 >
 > **Engineered-regulator status:** [comp-012](./daf-cd55-scr14-truncated-computational.md) supplies a sequence-filter/pLDDT proxy for truncated DAF SCR1-4 (aa 35–285), not a protease-risk result. Expression, eight-disulfide folding, processing stability, retained regulatory activity, and access to the relevant complement compartment require wet-lab validation under [§1.25](./validation-experiments.md).
 >
@@ -109,7 +119,7 @@ All three converge on **C3 convertases** that cleave C3 → C3a (anaphylatoxin, 
 
 ### Downstream effectors
 
-- **C3a, C5a — anaphylatoxins.** Small (~8-11 kDa) proteolytic fragments of C3 and C5. Bind the GPCRs C3aR, C5aR1, and (for C5a) C5aR2. C5a is ~10-100× more potent than C3a as a neutrophil chemoattractant and activator; subnanomolar EC50 for chemotaxis on neutrophils.
+- **C3a, C5a — anaphylatoxins.** Small proteolytic fragments of C3 and C5. They bind C3aR, C5aR1, and, for C5a, C5aR2. C5a is a strong neutrophil chemoattractant and activator; exact potency depends on receptor, cell system, species, and assay.
 - **C5b-9 — Membrane Attack Complex (MAC).** C5b nucleates assembly of C6, C7, C8, and multiple C9 molecules into a transmembrane pore. On pathogens and (erroneously) host cells, MAC causes osmotic lysis. At sublytic concentrations (insufficient pore density for lysis), MAC on leukocytes and stromal cells drives calcium influx, NF-κB activation, inflammasome priming, and cytokine release. Sublytic MAC is increasingly recognized as an inflammatory driver in its own right.
 
 ### Regulators — why healthy tissue does not lyse itself
@@ -126,11 +136,11 @@ Complement activation would destroy host cells were it not tightly regulated at 
 | **CD59 (protectin)** | Host cell surface | Blocks C9 polymerization → prevents MAC pore formation |
 | **C4BP** | Fluid phase | Regulates classical C4b2a convertase |
 
-Genetic loss of CD55 + CD59 on erythrocytes causes paroxysmal nocturnal hemoglobinuria (PNH) — the disease eculizumab was developed for. Factor H deficiency causes atypical hemolytic uremic syndrome (aHUS) and is strongly associated with age-related macular degeneration (AMD). These "complement is already out of control" diseases are the proving grounds for complement-targeted drugs; gout is a **"local over-activation, normal regulation"** problem, which has different drug requirements.
+PNH usually begins with an acquired somatic *PIGA* mutation in a hematopoietic stem-cell clone. Loss of GPI-anchor biosynthesis then removes multiple GPI-anchored proteins from descendant blood cells, including CD55 and CD59; their absence makes erythrocytes vulnerable to complement-mediated hemolysis (PMID 8500164; **Human molecular evidence**). Factor H deficiency causes atypical hemolytic uremic syndrome (aHUS) and is strongly associated with age-related macular degeneration (AMD). These systemic complement-dysregulation diseases supplied clinical precedents for complement-targeted drugs. Gout instead presents a candidate local-overactivation problem, so their treatment results do not select a gout target, product, or exposure.
 
 ### Kinetics and half-lives — relevant for measurement and drug design
 
-- **C5a** is generated within minutes of a trigger surface being exposed. In serum, the C-terminal arginine is rapidly clipped by **carboxypeptidase N** to form **C5a-desArg**, which has ~10× reduced C5aR1 potency but retains partial agonism and a longer half-life. For assay purposes, commercial ELISAs typically detect both forms; "C5a" in clinical biomarker literature often means C5a + C5a-desArg. In tissue (lower CPN activity), full-length C5a persists longer. This distinction matters for serum biomarker interpretation: serum C5a underestimates tissue C5a activity.
+- **C5a** is generated rapidly after complement activation. In serum, carboxypeptidase N removes the C-terminal arginine to form **C5a-desArg**, which has different receptor potency and persistence. Assays may conflate the forms, so a biomarker record must specify analyte and matrix before it is compared with tissue signaling.
 - **C3a** is also clipped by CPN to C3a-desArg (ASP, acylation-stimulating protein), which loses anaphylatoxin activity but retains metabolic signaling via C5L2/C5aR2. This is one reason C5aR2 biology is confusing — it binds both C5a and C3a-desArg.
 - **C5b-9 (MAC)** is slower to assemble (~minutes) but persists on membranes for hours once inserted. Soluble sC5b-9 (shed from membranes) is a stable plasma biomarker of MAC activation.
 
@@ -156,7 +166,7 @@ This was the first demonstration that a sterile crystalline danger signal could 
 
 According to PubMed, the 2022 Wessig et al. paper ([*Sci Rep* 2022;12(1):4483](https://doi.org/10.1038/s41598-022-08311-z), PMID 35296708) dissected the molecular recognition events. Key findings:
 
-- **Every healthy human (including unborn children) has natural IgM that binds MSU crystals.** This is innate "natural antibody" — not an immune response to crystals, but constitutive polyreactive IgM from B1 cells.
+- **Wessig et al. reported natural IgM binding to MSU crystals in the human samples they tested.** This is compatible with constitutive polyreactive “natural antibody,” but the experiment does not justify a universal claim about every healthy person or fetus.
 - **CRP (C-reactive protein) binds MSU crystals** and fixes active C1 complex more efficiently than IgM does.
 - **In serum depleted of both IgM and CRP, MSU complement activation is negligible.** IgM and CRP are **both** required to efficiently drive classical-pathway C1 activation on MSU surfaces.
 - **CRP is more efficient than IgM at generating C5a** (the most pro-inflammatory anaphylatoxin), suggesting non-redundant functions — CRP binding may orient C1 to favor downstream C5 convertase assembly.
@@ -172,36 +182,36 @@ MSU crystal surfaces also permit direct alternative-pathway engagement independe
 
 ### 2.4 Doherty 1988 — in vivo evidence from patient synovial fluid
 
-According to PubMed, Doherty et al. ([*Ann Rheum Dis* 1988;47(3):190-7](https://doi.org/10.1136/ard.47.3.190), PMID 2833185) measured C3 degradation products (C3dg/d, indicative of local C3 activation) in 288 synovial fluid samples across RA, OA, chronic pyrophosphate arthropathy, and **acute pseudogout**. Key finding for this page: **every acute pseudogout sample had strikingly elevated synovial fluid C3dg/d** (mean 61 units/mL, range 16-126), with local activation confirmed by plasma-to-synovial-fluid discordance. The acute pseudogout signal was similar in magnitude to active RA. Chronic pyrophosphate arthropathy (non-flaring) had much lower C3dg/d. Although the cohort was CPPD (pseudogout), not MSU (classical gout), the immunologic principle — crystal deposition drives active local C3 consumption in the joint — extends to MSU (which Russell 1982 had already established in vitro). Acute gout synovial fluid analyses across later decades consistently show elevated C3a, C5a, and sC5b-9.
+According to PubMed, Doherty et al. ([*Ann Rheum Dis* 1988;47(3):190-7](https://doi.org/10.1136/ard.47.3.190), PMID 2833185) measured C3 degradation products (C3dg/d, indicative of local C3 activation) in 288 synovial fluid samples across RA, OA, chronic pyrophosphate arthropathy, and **acute pseudogout**. Key finding for this page: **every acute pseudogout sample had strikingly elevated synovial fluid C3dg/d** (mean 61 units/mL, range 16-126), with local activation confirmed by plasma-to-synovial-fluid discordance. The acute pseudogout signal was similar in magnitude to active RA. Chronic pyrophosphate arthropathy (non-flaring) had much lower C3dg/d. This is **Human Observational evidence in CPPD**, not MSU gout. Russell 1982 separately supplies **In Vitro MSU evidence**; transferring the joint-level CPPD observation to gout is a **Mechanistic Extrapolation**. The present sources do not establish a matched human-gout synovial C3a/C5a/sC5b-9 dataset.
 
-(Evidence level: In Vitro / Clinical — human synovial fluid biomarker study.)
+(Evidence level: **Human Observational** — CPPD synovial-fluid biomarker study.)
 
 ### 2.5 C5a generation timeline in murine MSU peritonitis
 
-According to PubMed, Cumpelik et al. ([*Ann Rheum Dis* 2016;75(6):1236-45](https://doi.org/10.1136/annrheumdis-2015-207338), PMID 26245757) used a murine MSU peritonitis model (C57BL/6 vs. C5aR⁻/⁻) to track the kinetics:
+According to PubMed, Cumpelik et al. ([*Ann Rheum Dis* 2016;75(6):1236-45](https://doi.org/10.1136/annrheumdis-2015-207338), PMID 26245757) used a murine MSU peritonitis model with wild-type and mice reported by the paper as C5aR⁻/⁻ to track the kinetics:
 
 - MSU injection → **C5a detectable in peritoneal lavage within 30-60 minutes**
 - C5a precedes and is required for NLRP3-dependent IL-1β release
-- C5aR⁻/⁻ mice have markedly reduced IL-1β and neutrophil influx
+- Genetic loss of the receptor reported as C5aR markedly reduced IL-1β and neutrophil influx in that model
 - Neutrophil-derived phosphatidylserine-positive microvesicles (PMN-Ecto) accumulate over hours and *terminate* C5a-mediated priming — an endogenous resolution brake via MerTK engagement
 
-The timeline (minutes) matches the clinical tempo of a gout flare better than LPS/TLR4 priming (which requires hours of NF-κB transcription).
+The rapid complement response is compatible with early flare biology. That timing does not exclude pre-existing or concurrent transcriptional priming through TLR4, TNFSF14, or other inputs.
 
-### 2.6 Relative contribution — which pathway dominates?
+### 2.6 Relative contribution of initiation and amplification
 
-Per Wessig 2022 and Russell 1982, the classical pathway (IgM/CRP → C1 → C4b2a) is the dominant initiator; the alternative pathway amplifies rather than initiates. However, in individuals with high baseline CRP (metabolic syndrome, obesity, CKD — the gout-comorbid phenotype), classical-pathway initiation is more vigorous. In individuals with factor-H variants (rare), alternative-pathway amplification could be exaggerated. No published gout-specific polymorphism data resolve this; it is a biomarker-stratification research opportunity.
+In the Wessig 2022 MSU-surface system, natural antibodies and CRP supported classical-pathway initiation, while the alternative pathway could amplify deposited C3b. How these contributions vary across human joints, flare stages, and patient phenotypes is not established. Factor-H variation and baseline inflammatory state are testable modifiers, not demonstrated gout stratifiers.
 
 ---
 
 ## 3. C5a, C3a, and MAC — Functional Roles in Gout
 
-The anaphylatoxins and MAC are not interchangeable. C5a does most of the work in gout; C3a is a supporting actor; MAC is a bystander amplifier.
+The anaphylatoxins and MAC are not interchangeable. C5a has the clearest direct priming evidence in the cited MSU systems; the relative human-gout contributions of C3a and MAC remain incompletely measured.
 
-### 3.1 C5a — the dominant priming signal
+### 3.1 C5a — a demonstrated priming signal
 
 According to PubMed, An et al. ([*Eur J Immunol* 2014;44(12):3669-79](https://doi.org/10.1002/eji.201444560), PMID 25229885) — **the direct mechanistic study of C5a + MSU in human monocytes**. This paper complements Khameneh 2017 (murine) and should be cited alongside it as the human-cell counterpart. Key findings in human whole blood and primary monocytes:
 
-- MSU-induced pro-inflammatory cytokines/chemokines in human whole blood are **predominantly regulated by C5a via C5aR1**
+- In the study's defined **In Vitro** human whole-blood system, C5aR1 perturbation indicated a large C5a contribution to the measured MSU-induced cytokine/chemokine response; this does not establish dominance across human gout flares
 - C5a alone induces pro-IL-1β and IL-1β in human primary monocytes
 - C5a + MSU is **synergistic for IL-1β**, not merely additive
 - C5a priming is caspase-1-dependent, K⁺-efflux-dependent, Ca²⁺-mobilization-dependent, and cathepsin B-dependent
@@ -219,21 +229,21 @@ According to PubMed, Khameneh et al. ([*Front Pharmacol* 2017;8:10](https://doi.
 1. MSU crystals directly activate complement on their surface (Russell 1982, Wessig 2022)
 2. C5a is generated within minutes, before any NF-κB transcriptional program can ramp up (Cumpelik 2016)
 3. C5a binds C5aR1 on tissue-resident macrophages and infiltrating neutrophils (An 2014, Khameneh 2017)
-4. C5aR1 signaling drives NADPH-oxidase-dependent ROS burst → post-translational NLRP3 activation (Khameneh 2017)
+4. C5aR1 signaling was associated with increased cellular ROS and greater NLRP3 output in the tested macrophage system; Khameneh 2017 did not identify the ROS-generating enzyme
 5. Primed NLRP3 now responds to the crystal itself (K⁺ efflux, lysosomal rupture, mtROS — CP2) to assemble the inflammasome and release IL-1β (An 2014; the full cascade)
 
-The critical reframe: **CP0 priming is non-transcriptional and fast**. LPS priming (CP1a) requires ~3-6 h of NF-κB-driven NLRP3 and pro-IL-1β transcription. C5a priming happens in minutes via ROS. Gout is fast; LPS would be too slow to explain flare kinetics.
+The mechanistic implication is narrower: **C5a can provide a rapid, non-transcriptional priming route in the tested systems.** This explains a route by which complement can contribute early in a flare; it does not show that LPS/TLR4 or other priming inputs are absent or clinically subordinate.
 
 ### 3.2 C3a — the supporting actor
 
-C3a binds C3aR (also a GPCR, Gi-coupled, on mast cells, basophils, macrophages, and some neurons). In the Khameneh 2017 experiments, **C3a did not potentiate IL-1β release from MSU-exposed cells** — only C5a did. This is consistent with the general rule that C5a is the dominant anaphylatoxin in myeloid activation; C3a's roles are more prominent in:
+C3a binds C3aR (also a GPCR, Gi-coupled, on mast cells, basophils, macrophages, and some neurons). In the Khameneh 2017 experiments, **C3a did not potentiate IL-1β release from MSU-exposed cells** — only C5a did. That result distinguishes C5a from C3a in the tested system; it does not establish their relative contributions in every human flare. C3a has reported roles in:
 
 - **Mast cell degranulation** — C3a is a more potent mast cell activator than C5a in some assays; mast cells are present in synovium and contribute to early flare histamine/tryptase release
 - **Basophil activation** — systemic
 - **Regulatory T cell biology** — C3a/C3aR signaling influences Treg function in non-gout contexts
 - **Metabolic signaling via C3a-desArg / ASP** on C5L2
 
-For gout specifically, C3a is a probable but weak amplifier; C3aR-specific antagonism has not been clinically developed.
+For gout specifically, C3a is a possible additional signal whose magnitude relative to C5a has not been established in matched human-flare samples.
 
 ### 3.3 C5b-9 (Membrane Attack Complex) — sublytic amplifier
 
@@ -245,22 +255,11 @@ Sublytic MAC deposition on leukocytes and synoviocytes drives:
 - Cytokine release (IL-1β, IL-6, IL-8)
 - On synoviocytes: **MMP release** (tissue destruction in chronic gout / tophaceous joints)
 
-The MAC contribution in gout has been under-studied. Acute gouty synovial fluid has measurable sC5b-9 (shed MAC), but quantitative comparison to C5a as the dominant effector has not been done rigorously in human gout. Mechanistic extrapolation: blocking C5 (eculizumab, ravulizumab, zilucoplan) simultaneously eliminates C5a and MAC, whereas blocking C5aR1 (avacopan) only eliminates the receptor-mediated C5a arm and leaves MAC intact. The two strategies may have meaningfully different gout outcomes.
+The MAC contribution in gout has been under-studied. A matched comparison of C5a and sC5b-9 in human flare samples is needed. **Mechanistic Extrapolation:** C5 blockade removes both C5a and MAC generation, whereas C5aR1 antagonism isolates one receptor arm; paired perturbations could separate those effects in a gout-relevant assay.
 
-### 3.4 Quantitative comparison during a flare
+### 3.4 Missing human comparison
 
-Hard quantitative data for *human* gout synovial fluid across C3a / C5a / MAC are sparse. Typical ranges reported across studies:
-
-| Effector | Synovial fluid (acute gout) | Plasma (acute gout) | Method | Clinical availability |
-|----------|------------------------------|---------------------|--------|------------------------|
-| C5a (+ desArg) | 5-50 ng/mL | 5-30 ng/mL | ELISA (cold/icy sample critical) | Send-out labs (ARUP, Mayo) |
-| C3a (+ desArg) | 100-1000 ng/mL | 50-500 ng/mL | ELISA | Send-out labs |
-| sC5b-9 (MAC) | 0.5-5 μg/mL | 0.1-1 μg/mL | ELISA | Send-out labs |
-| C3 (total) | Low (consumed) | Normal-low | Turbidimetry | Standard |
-| C4 (total) | Low (consumed) | Normal-low | Turbidimetry | Standard |
-| CH50 | Low (consumption) | Low-normal | Functional | Standard |
-
-Ranges are approximate; cite specific studies for exact values. **C5a is 10-100× less abundant by mass than C3a but vastly more potent per molecule**, consistent with its dominant functional role.
+The page does not have a source-verified, matched human-gout dataset that compares C3a, C5a, and sC5b-9 across the same synovial-fluid and plasma samples. Cross-study concentration ranges are not interchangeable because pre-analytics, matrices, timing, and assays differ. The discriminating observation is a paired flare study with cold-chain-controlled split-product measurements and matched clinical timing.
 
 ---
 
@@ -276,32 +275,36 @@ Ranges are approximate; cite specific studies for exact values. **C5a is 10-100�
 
 **Downstream of C5aR1 engagement (the full signaling tree):**
 
-- **NADPH oxidase assembly (NOX2)** → **ROS burst** — this is the *defining* priming signal for NLRP3 in Khameneh 2017
+- **Cellular ROS increase** — Khameneh 2017 measured a C5a-associated H2DCFDA signal and greater NLRP3 output; it did not attribute that signal to NOX2 or another ROS-generating enzyme
 - **Calcium mobilization** via PLCβ — feeds into Ca²⁺-dependent NLRP3 activation
 - **ERK1/2 MAPK** — amplifies inflammatory transcription
 - **PI3K/AKT** — survival and chemotactic signaling
-- **Actin remodeling** → chemotaxis (subnanomolar C5a concentration gradient is sufficient to direct neutrophil migration)
+- **Actin remodeling** → chemotaxis along a C5a concentration gradient
 - **Degranulation** (neutrophils release MPO, elastase, lactoferrin)
 - **Upregulation of adhesion molecules** (Mac-1/CD11b on neutrophils; P-selectin/ICAM-1 on endothelium)
 
-**β-arrestin recruitment** follows agonism and drives receptor internalization and desensitization. Avacopan is biased toward blocking G-protein signaling with less effect on β-arrestin recruitment, which may contribute to its safety profile (less complete receptor shutdown preserves some normal functions).
+**β-arrestin recruitment** follows agonism and contributes to receptor
+internalization and desensitization. Ligand-specific signaling bias is
+assay-dependent and should not be converted into a safety explanation without
+a matched pharmacology and clinical source.
 
 **Structural biology.** According to PubMed, Liu et al. ([*Nat Struct Mol Biol* 2018;25(6):472-481](https://doi.org/10.1038/s41594-018-0067-z), PMID 29867214) solved crystal structures of human C5aR1 in ternary complex with **PMX-53** (orthosteric peptide antagonist) and with **avacopan** or **NDT-9513727** (non-peptide allosteric antagonists). Key findings:
 
 - PMX-53 binds the **orthosteric pocket** where C5a's C-terminus normally docks — direct competition
-- **Avacopan binds an allosteric site** distinct from the orthosteric pocket, stabilizing an inactive conformation
-- The allosteric site is on the intracellular side of the receptor, near helix 8
-- Structure-based drug design for orally bioavailable C5aR1 antagonists is now tractable — avacopan is the proof of concept
+- **Avacopan and NDT-9513727 bind allosterically** in different poses from
+  orthosteric PMX-53.
+- The structures establish orthosteric and allosteric C5aR1 druggability; exact
+  contact maps must remain ligand-specific.
 
 Known PDB structures: 5O9H, 6C1Q, 6C1R, 7Y64-7Y67, 8GO8, 8GOO, 8HK5, 8I0N, 8I0Z, 8IA2, 8JZP, 8JZZ.
 
-**Gout-relevant polymorphisms.** No published C5AR1 polymorphisms are directly associated with gout susceptibility in current GWAS. Large gout GWAS (351-loci meta-analysis, UK Biobank 2025) are dominated by urate-transporter signals (ABCG2, SLC2A9, SLC22A12); complement-receptor variants would likely be smaller effects and possibly modify flare severity rather than hyperuricemia itself. This is an open research question (§6).
+**Gout-relevant polymorphisms.** The source set reviewed for this page did not provide a source-pinned gout association for C5AR1, C5AR2, or C3AR1. That bounded result is not a universal GWAS absence and does not predict effect size or phenotype. A reproducible search must define the GWAS catalog, ancestry, phenotype, variant/gene window, query, and retrieval date before a genetics experiment is prioritized.
 
 ### 4.2 C5aR2 (C5L2) — the enigmatic second receptor
 
 **Gene:** C5AR2 (HGNC:4527, chromosome 19q13.32 — adjacent to C5AR1). **Protein:** 337 aa, 7-transmembrane topology but with two substitutions (DRY → DLC motif) that prevent canonical G-protein coupling. **ChEMBL target:** [CHEMBL3713] (within the CHEMBL4523605 heterodimer record).
 
-**Binds:** C5a (same affinity as C5aR1), C5a-desArg (higher affinity than C5aR1 has for desArg — C5L2 may preferentially respond to the decay product), and C3a-desArg / ASP.
+**Ligands reported in the receptor literature include C5a, C5a-desArg, and C3a-desArg / ASP.** Relative affinity and signaling direction vary with assay and context; this page does not use an affinity ordering as a gout premise.
 
 **Signaling:** Non-G-protein-coupled; engages β-arrestin and scaffolds. Literature is split on whether C5aR2 is:
 
@@ -309,7 +312,7 @@ Known PDB structures: 5O9H, 6C1Q, 6C1R, 7Y64-7Y67, 8GO8, 8GOO, 8HK5, 8I0N, 8I0Z,
 2. A **pro-inflammatory signaling receptor** in its own right, driving distinct cytokine programs
 3. A **modulator** of C5aR1 signaling via heterodimerization (both receptors physically associate on the plasma membrane)
 
-In gout specifically, C5aR2's role has not been dissected. C5aR2⁻/⁻ mice have been studied in sepsis and kidney injury with mixed results. **For CP0 therapeutic design, this is a known unknown.** Avacopan is C5aR1-selective, not C5aR2; if C5aR2 is pro-inflammatory in gout, avacopan could miss a portion of the signal. If C5aR2 is a decoy, avacopan is better off leaving it alone. Zilucoplan and eculizumab (upstream C5 inhibitors) block both arms by preventing C5a generation.
+In gout specifically, C5aR2's role has not been dissected. **For CP0 experimental design, this is an open branch.** A C5aR1-selective perturbation leaves C5aR2 unperturbed, whereas ligand- or C5-level perturbation changes both receptor arms. A matched comparison can therefore test whether a residual C5a-dependent signal remains after C5aR1 blockade without presuming the direction of C5aR2 signaling.
 
 ### 4.3 C3aR — the C3a receptor
 
@@ -317,17 +320,17 @@ In gout specifically, C5aR2's role has not been dissected. C5aR2⁻/⁻ mice hav
 
 **Gout relevance:** Weaker than C5aR1 per the Khameneh 2017 data (no IL-1β potentiation by C3a). Possibly relevant via mast-cell histamine/tryptase release in early flare vascular permeability.
 
-**Clinical targeting:** No approved C3aR antagonist. Preclinical compounds (SB 290157) have off-target issues.
+**Clinical targeting:** SB 290157 and other C3aR tools are research comparators whose exact selectivity and off-target behavior must be taken from the primary assay. Regulatory or development status is outside this mechanism claim and requires a dated primary-record refresh.
 
 ### 4.4 Structural implications for drug design
 
-Avacopan's allosteric site on C5aR1 (Liu 2018) suggests:
+Liu 2018 demonstrates two separable C5aR1 intervention geometries:
+orthosteric peptide antagonism and ligand-specific non-peptide allosteric
+antagonism. That structural result supports designing matched receptor assays;
+it does not by itself establish selectivity, resistance risk, oral exposure, or
+clinical safety for a new molecule.
 
-- **Off-target profile.** Avacopan is structurally unlike C5a; it does not mimic the endogenous ligand. This is favorable for selectivity but limits cross-reactivity with related anaphylatoxin receptors.
-- **Resistance concerns.** Allosteric-site mutations could in principle cause resistance; none have been reported clinically.
-- **Drug design space.** The allosteric site is druggable with non-peptide small molecules — unlike orthosteric sites on peptide-binding GPCRs, which are notoriously hard for small molecules. This is why oral C5aR1 antagonists became feasible in the 2010s when they had been stuck in peptide-only space for two decades.
-
-**Natural-product implication:** Because C5aR1's orthosteric site is peptide-binding and its allosteric site is a pocket discovered by synthetic medicinal chemistry, natural-product chemical space has not been efficiently searched against this target. Most natural product screens against "complement" test for pathway inhibition (e.g., CH50 assays) rather than receptor-specific antagonism, so latent C5aR1 antagonist activity in known natural products could be under-recognized. This is one of the sharpest research opportunities on this page (§10).
+**Natural-product implication:** The bounded legacy searches retained on this project contain pathway-level natural-product assays but no validated direct natural-product C5aR1 antagonist. They were not an exhaustive or source-pinned census and cannot establish how thoroughly the broader field has searched this target. A direct functional screen therefore remains an open discovery experiment (§9.4), not a response to a proven field-wide absence.
 
 ---
 
@@ -337,7 +340,7 @@ C5a does not act on one cell type — it orchestrates the early-flare cellular s
 
 ### 5.1 Neutrophil chemotaxis — the first wave
 
-C5a is the most potent single neutrophil chemoattractant known, driving directed migration at subnanomolar concentrations. In a gout flare:
+C5a is a strong neutrophil chemoattractant; its concentration-response and relative potency depend on the assay and biological context. In a gout flare:
 
 1. MSU crystals in the joint activate complement (minutes)
 2. C5a diffuses into local microvasculature (diffusion-limited, ~minutes)
@@ -347,89 +350,65 @@ C5a is the most potent single neutrophil chemoattractant known, driving directed
 6. Once in the tissue, neutrophils encounter crystal directly — phagocytose, activate their own NLRP3 (crystal engulfment → lysosomal rupture → K⁺ efflux → CP2)
 7. Activated neutrophils release more C5a (via serine proteases acting on C5) and IL-8 — amplification loop
 
-This is why gout flares have a **neutrophil-dominant infiltrate** within hours and why blocking C5aR1 (avacopan) or C5 itself (zilucoplan, eculizumab) could theoretically abort the flare at its earliest effector step.
+This route can contribute to the rapid neutrophil-rich infiltrate in gout. C5aR1- and C5-level perturbations are therefore useful mechanistic tests; no cited evidence shows that either aborts a human gout flare.
 
 ### 5.2 Macrophage priming — the CP0 mechanism
 
-Per An 2014 and Khameneh 2017, resident joint macrophages are already in place when crystals deposit. C5a acts on them via C5aR1 → PI3K → NOX2 activation → ROS burst → post-translational NLRP3 priming (protein-level changes: phosphorylation, oligomerization-competence, de-ubiquitination), making NLRP3 responsive to the activation signal from crystal-triggered K⁺ efflux. **Without CP0 priming, MSU crystal engagement of NLRP3 is subthreshold in resting macrophages in vitro; priming is required.**
+An 2014 and Khameneh 2017 show that C5a can act through C5aR1 and ROS to increase MSU-associated inflammasome output in their human-cell and murine systems. Resting macrophages require an adequate priming state for a robust response, but those studies do not establish that complement supplies that priming in every context or that C5a is necessary across human flares.
 
-### 5.3 Fibroblast-like synoviocytes (FLS)
+### 5.3 Non-myeloid compartments remain open
 
-FLS express C5aR1. In rheumatoid arthritis (where FLS biology is best-characterized) and OA, C5a exposure induces IL-6, IL-8, MMP-1, MMP-3, and VEGF. The parallel in gout is mechanistically expected but not specifically characterized in published MSU + FLS assays. FLS are likely contributors to the IL-6 and VEGF signals that TNFSF14 paper ([Ea 2024, PMID 38373842](https://doi.org/10.1136/ard-2023-225330); see [tnfsf14-gout-target.md](./tnfsf14-gout-target.md)) identified as top gout-flare biomarkers. Avacopan would be expected to reduce this synoviocyte-derived cytokine arm.
+The current gout-specific source set does not establish how much C5aR1 signaling in synoviocytes, endothelium, mast cells, platelets, or osteoclast-lineage cells contributes to flare initiation or chronic joint damage. Preserve these as separate questions rather than importing detailed mechanisms from rheumatoid arthritis, vascular inflammation, or other contexts.
 
-### 5.4 Endothelial activation
-
-C5aR1 is weakly expressed on resting endothelium but is induced by inflammatory cytokines. More important: C5a acts on endothelium **indirectly** via mast-cell-derived histamine and platelet-derived mediators, and **directly** at higher concentrations. Effects:
-
-- Upregulation of **P-selectin** (from Weibel-Palade body stores — rapid, minutes)
-- Upregulation of **ICAM-1** (transcriptional, hours)
-- Increased vascular permeability — tissue edema
-- Platelet activation (C5aR1 on platelets in some contexts)
-
-These effects together create the neutrophil-recruitment phenotype characteristic of the early flare.
-
-### 5.5 Mast cells and basophils
-
-C5a activates mast cells via C5aR1 → histamine, tryptase, leukotriene release → immediate-type tissue responses. Mast cells are present in synovium at low density but may contribute to the earliest vascular-permeability phase of the flare. C3a is a more potent mast-cell trigger than C5a in some studies.
-
-### 5.6 Osteoclasts — long-term damage
-
-Osteoclast precursors express C5aR1. Chronic complement activation in tophaceous gout may contribute to bone erosion. This is mechanistically plausible but under-studied; no gout-specific osteoclast / C5a data have been published. Implication: chronic avacopan (or similar) might have a bone-sparing side benefit in tophaceous disease.
+The cheapest useful gate is a compartment-matched perturbation: expose the relevant human cell system to MSU-conditioned complement or defined C5a, compare C5aR1-, ligand-, and C5-level controls, and measure target-proximal signaling before downstream cytokines, permeability, adhesion, or resorption. A positive result would establish only the tested cell system and exposure.
 
 ---
 
 ## 6. Genetics and Clinical Heterogeneity
 
-This section is deliberately thin — the literature is thin. That is itself a finding.
+This section records only source-pinned observations and explicitly labeled
+experiment ideas; it is not a census of complement genetics in gout.
 
 ### 6.1 C5 polymorphisms
 
-No published GWAS signal connects *C5* variants to gout risk or flare severity. *C5* variants (notably rs17611) are associated with rheumatoid arthritis severity and some autoimmune phenotypes. Given the complement-centric mechanism of gout, this is a surprising gap — possibly explained by (1) gout GWAS being dominated by urate transporter signals with much larger effect sizes, (2) sample sizes insufficient for complement-pathway sub-signals, and (3) flare-severity endpoints being less well-powered than hyperuricemia endpoints.
+This page has no source-pinned, dated genetics scan that can support a *C5*–gout absence claim. Before genotype-stratified work is proposed, search records must identify the catalog and primary studies, ancestry, phenotype, query, coverage window, and retrieval date. Variant effects reported in rheumatoid arthritis or another autoimmune phenotype would not by themselves establish gout risk, flare severity, or response direction.
 
 ### 6.2 C5AR1 / C5AR2 / C3AR1 polymorphisms
 
-No published gout-association data for C5AR1, C5AR2, or C3AR1 variants. For C5AR1 specifically, variants are characterized in ANCA vasculitis cohorts (ADVOCATE biomarker substudies) and inflammatory bowel disease, but the work has not extended to gout. Open question: does a C5AR1 variant patient respond differently to avacopan in ANCA vasculitis? If yes, the same logic would transfer to a future gout trial.
+This page has no source-pinned, dated genetics scan for C5AR1, C5AR2, or
+C3AR1. It therefore makes no gout-association or absence claim for those genes.
+Variant effects reported in other diseases do not establish a gout-risk or
+response direction.
 
 ### 6.3 Factor H (CFH) variants
 
-**CFH Y402H (rs1061170, p.Tyr402His)** is the canonical common variant dysregulating alternative-pathway complement amplification. The risk C-allele has frequency ~36–39% in Europeans, **~35–37% in Africans (parity with European, not lower as some reviews state)**, ~30% in South Asians, ~5–6% in East Asians, and ~18–32% in Latino/Admixed populations (gnomAD v4 / ALFA / 1000 Genomes 2026 access; corrects the earlier "~30–50% European, ~7% East Asian" framing which conflated AMD-case ascertainment with population frequencies). The variant reduces CFH's ability to bind C-reactive protein and host glycosaminoglycans, weakening inactivation of surface-deposited C3b — predicted to amplify alternative-pathway C5a generation on MSU crystals, producing more vigorous flares.
+**CFH Y402H (rs1061170, p.Tyr402His)** is an AMD-risk variant
+(PMID 16723442; **Human Observational**) with source-specific effects on CFH–CRP
+binding (PMID 17339482; **In Vitro + Human-derived protein**). Those records do
+not establish gout risk, flare severity, MSU response, or a
+candidate-treatment interaction. Population frequency and ancestry effects
+require a source-pinned extract before cohort design.
 
-**No published gout-association data** connect CFH variants to gout risk, severity, or flare frequency. This is the canonical complement-genetics gap, consistent with §6.1 — published gout GWAS (Tin 2019, Major 2018, Kawamura 2019 UK Biobank n=150,542) do not detect complement-pathway sub-signals at genome-wide significance, plausibly because (1) urate-transporter signals dominate gout GWAS effect-size distributions, (2) flare-severity endpoints are less well-powered than hyperuricemia endpoints, and (3) the complement-priming axis acts conditionally on MSU crystallization rather than as an unconditional gout-risk modifier.
+> **Research conjecture — candidate activity under impaired CFH**{ .research-conjecture-label }
+>
+> **Grounded premises:** CFH regulates alternative-pathway amplification; Y402H changes CFH interactions in non-gout systems (**Human Observational + In Vitro**; source: [CFH evidence boundary](./gout-genetic-variants.md)). Rosmarinic acid, luteolin, exact *Houttuynia* fractions, and exact *Helicteres* lignans have candidate-specific complement-assay evidence at other measured nodes (**In Vitro**; source: [candidate synthesis](./cfh-mechanism-dissociation-cp0-candidates.md)).
+>
+> **Novel leap:** One or more exact candidates may retain activity when CFH function is absent or impaired. No direct evidence tests this in MSU-activated, CFH-controlled serum, and no Y402H response direction is established.
+>
+> **Why it matters:** A retained effect would identify a route that does not collapse when Factor-H regulation is weakened.
+>
+> **Discriminating observation:** Compare each exact material in CFH-replete, CFH-depleted, and CFH-restored serum activated by MSU, with proximal C3, C5a, recovery, and assay-interference controls.
 
-**Supportive intermediate-phenotype evidence:**
+The [CFH-dependence hypotheses page](./cfh-mechanism-dissociation-cp0-candidates.md) preserves the candidate-level reasoning:
 
-- **Hecker 2023** (Front Immunol, PMID 37940657, n=153 healthy + 84 dry AMD + 143 neovascular AMD): CFH 402HH homozygotes had elevated baseline CRP (38% of healthy 402HH in the 3–10 mg/L range vs 10% in 402YH carriers, p=0.037) and depressed CD4+ T-cell proportions with aging. CRP elevation is upstream of classical complement priming on MSU crystals (per §5).
-- **Volcik 2008 ARIC** (PMID 18292760, n=15,792): CFH 402H × hypertension interaction → HRR 1.47 (95% CI 1.05–2.05) for ischemic stroke in white 402HH; HRR 1.19–1.28 for CHD in hypertensive 402H carriers. Effect absent in African Americans, suggesting population-specific effect-direction differences. Consistent with the priming-gradient framework.
+- Sahu 1999 reports rosmarinic-acid attachment to activated C3b and a 34 μM half-maximal concentration for inhibiting covalent C3b attachment to cells. **[In Vitro; PubMed-abstract verified, full primary text unresolved]**
+- Zhang 2008 reports luteolin activity in both CP and AP hemolysis formats. **[In Vitro; full-text verified]** Similar whole-pathway values do not localize its target or exclude CFH involvement.
+- Lu 2018 maps exact CHCP activity mainly to C3 and C4, with partial C5 involvement. **[In Vitro; full-text verified]** Related *Houttuynia* fractions and animal records do not make the fractions interchangeable.
+- Yin 2016 maps two exact *Helicteres* compounds to several complement nodes. **[In Vitro; full-text verified, single-paper anchor]** Independent matched-material replication is required.
 
-**The dietary-CP0 stratification prediction (untested):** candidate-specific mechanisms documented in current evidence homes may act upstream of the CFH-regulation step. Whether CFH genotype changes response direction or magnitude remains an untested stratification hypothesis; the formerly cited Q141K × butyrate analogy is itself unconfirmed and is not supporting evidence.
+These records make retained activity plausible for one or more candidates. **[Mechanistic Extrapolation]** They do not establish net CFH independence in MSU-activated serum, a carrier-specific benefit, or a genotype-response direction.
 
-**⚠️ Counter-evidence from the CFH × diet × AMD analog:** three independent published analyses point the opposite direction.
-
-- **Klein 2008 / Awh 2013 / Vavvas 2018** (PMID 18423869 / 23972322 / 29311295; AREDS n=989/802 with bootstrap validation n=412): CFH high-risk + no ARMS2 risk genotype group (GTG2) had **paradoxically increased** progression to neovascular AMD on AREDS formulation (zinc 80 mg + antioxidants) vs placebo (HR 2.9, p=0.018). CFH low-risk + ARMS2 high-risk (GTG3) benefited (HR 0.50, p=0.008).
-- **Merle 2015 NAT2** (PLoS ONE PMID 26132079, n=250): CFH × DHA-supplementation interaction p=0.01. DHA was protective only in CFH 402YY (non-risk homozygous; CNV 38.2% placebo vs 16.7% DHA, p=0.008); CFH 402CC homozygotes had numerically MORE CNV on DHA (23.1% placebo vs 39.5% DHA).
-- **Chew 2014 AREDS Report #38** (PMID 24974817, n=1,237): null result — no significant CFH × treatment interaction. The literature is heterogeneous.
-
-The mechanism interpretation that may rescue the OE prediction: AREDS-zinc and DHA work *through* complement regulation that requires functional CFH (Vavvas 2018 attributes the GTG2 paradox to zinc-induced complement inactivation requiring CFH-CRP bridging, which CFH 402H performs poorly). Rosmarinic acid / luteolin / Houttuynia work by *direct* convertase inhibition or polysaccharide-mediated CP/LBP blockade — neither requires functional CFH. The dissociation is mechanistically plausible but empirically untested.
-
-**Comp-039 classifies the candidates individually.** [comp-039](./cfh-mechanism-dissociation-cp0-candidates-computational.md) ran two-model independent cross-check (Claude Opus 4.7 = Model A, DeepSeek `deepseek/deepseek-chat-v3` = Model B) over the four top upstream-CP0 candidates. **All four classified CFH-independent** with mechanism-site justification:
-
-- **Rosmarinic acid (High confidence):** Sahu 1999 (PMID 10353266) localizes covalent attachment to the **nascent C3b α'-chain thioester (Cys988)**, structurally distant from CFH's CCP6-8 CRP/GAG-binding surface. IC50 = 34 μM. Mechanism quenches nascent C3b *before* surface deposition; CFH regulates already-deposited C3b — downstream of where rosmarinic acid acts.
-- **Luteolin (Medium confidence):** Zhang 2008 (PMID 18400428 / PMC7126446) matched CP and AP hemolytic IC50 (0.19 vs 0.17 mM) is **inconsistent with a CFH-competitive mechanism** — CFH is AP-specific; competition would predict AP-selectivity. No current COMP-013-derived XO potency or URAT1 attribution is eligible as a parallel mechanism.
-- **Houttuynia cordata polysaccharide (HCP/HCPM/CHCP) (High confidence):** Lu 2018 (PMID 29719782 / PMC5925397) depletion-rescue maps targets to **C3 + C4 cleavage** (C3-depleted serum rescue 9.29 ± 1.69%, C4-depleted 12.34 ± 1.39%, C5-depleted 44.54 ± 3.92%). **CFH is AP-specific and does NOT regulate C4** — C4 binding is mechanistically incompatible with CFH-dependence. TLR4-MD2 binding mode (Yu 2026 PMC12937656) is entirely upstream of complement. Three orthogonal lines converge.
-- **Helicteres benzofuran lignans (Medium, replication-bounded):** Yin 2016 (PMID 27834928 / PMC6273495) depletion-rescue identifies compound 5 targets as C1q + C2 + C3 + C9 (CH50 9 μM / AP50 21 μM). CP > AP potency is inconsistent with CFH-competitive mechanism. This remains a single-paper anchor; independent matched-assay replication is the next gate.
-
-**Two-model agreement on classification (all four candidates CFH-independent), preserved disagreement on prediction strength** (Model A predicts negative direction — carriers benefit MORE because Y402H baseline severity amplifies absolute effect size; Model B predicts null — mechanism independence implies genotype indifference). Both reject the AMD-paradox direction (carriers worse). UKB cross-tab specification pre-specifies both with separate falsification thresholds; a positive (carriers worse) result refutes both and forces retiring the upstream-CP0-bypass hypothesis. Total OpenRouter spend for comp-039: $0.0022 (Model B counter-reads only; Claude subagent was Model A natively).
-
-**Biobank feasibility:** the cross-tabulation (UK Biobank CFH rs1061170 × dietary polyphenol intake × incident gout M10.x) is technically straightforward — rs1061170 is on the standard Axiom array; gout outcomes + Oxford WebQ dietary recall + Phenol-Explorer-derived polyphenol intake are all standard fields with published precedent (Yokose 2024 Rheumatology for gout × diet UKB methodology; Bondonno 2025 Nature Food for flavonoid-diversity × outcome UKB methodology). OE does not currently hold a UK Biobank application; the practical paths are (a) collaboration with existing gout-GWAS groups (Merriman/Otago, Major-Wrigley/Auckland, Choi/MGH) who already have UKB access and gout-extraction pipelines, ~3-month timeline, $0 OE cost; (b) AoU Researcher Workbench credentialing for a parallel direction-check in a smaller cohort with better African-American representation, ~2-4 weeks; (c) primary UKB application, ~6-12 months + £3-9K. Full mining report: [`logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md`](../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md).
-
-**Comp-039 per-candidate cross-tab specification.** The candidate-stratified UKB ask (specific, falsifiable, mechanism-grounded) replaces a generic "any-polyphenol × CFH" query:
-
-- **Lead query (highest-power tractable cross-tab):** rs1061170 × Phenol-Explorer-derived rosmarinic-acid intake quartiles × incident gout M10.x in UKB participants without prior gout at baseline (target n ≈ 450K). Pre-specify **both** negative-direction (Model A) and null-direction (Model B) tests with separate falsification thresholds. AMD-paradox direction (HR > 1.5 in carriers × high-intake vs non-carriers × high-intake, p<0.05) refutes the upstream-CP0-bypass hypothesis and forces retiring rosmarinic acid from the CP0 stack.
-- **Secondary:** rs1061170 × Apiaceae-family intake × incident gout (luteolin exposure proxy), with a 24-hour urate measure retained only as an exploratory phenotype rather than a mechanism-specific dissociation readout.
-- **Tertiary:** rs1061170 × dietary CFH-bypass diversity score × incident gout (composite over rosemary / lemon balm / perilla / celery / parsley intake, generalizing Bondonno 2025 Nature Food methodology).
-- **Operational deferrals:** HCP/Houttuynia cross-tab not UKB-actionable (rare in UK dietary corpus) → defer to East Asian cohorts (KoGES, China Kadoorie Biobank, Singapore Chinese Health Study); [comp-041 queued](./computational-experiments.md) to scan East Asian cohort feasibility. *Helicteres* is not actionable in a dietary biobank and remains gated by independent matched-assay replication of its single-paper biochemical anchor.
-- **Wet-lab definitive test:** [comp-040 queued](./computational-experiments.md), blocked on OE wet-lab access — CFH-depleted-serum MSU-crystal complement-activation assay for rosmarinic acid, luteolin, and HCP. Retained suppression in CFH-depleted serum confirms CFH-independence; loss of suppression refutes.
-- **Confound considerations for collaborators:** (a) CFH 402H × hypertension interaction (Volcik 2008 ARIC) and CFH 402HH × elevated CRP (Hecker 2023) require adjustment for BMI, baseline CRP, eGFR, hypertension; (b) Mediterranean-diet-pattern correlation with rosmarinic-acid-rich foods needs adjustment; (c) effect-direction differences across ancestries (Volcik 2008) suggest ancestry-stratified rather than pooled analysis.
+The discriminating experiment is candidate-by-candidate testing in CFH-replete, CFH-depleted, and CFH-restored serum activated by MSU crystals, with proximal C3 and C5a readouts plus assay-interference controls. A population genotype-by-diet analysis would test the recorded dietary proxy in that cohort; it cannot establish or retire an exact biochemical mechanism because identity, dose, absorption, and operative-compartment exposure are not matched.
 
 ### 6.4 Gout phenotype heterogeneity — does complement differ by subtype?
 
@@ -443,159 +422,59 @@ Clinical phenotypes of gout that might have distinct complement profiles:
 | Post-menopausal women vs. men | Sex hormones affect complement (estrogen slightly suppresses); women have later and different gout | Sex-stratified complement biomarker study |
 | Pegloticase responders vs. non-responders (ADA-driven failure) | Non-responders develop immune complexes → additional complement activation → worse flares | C3a / sC5b-9 around infusions |
 
-None of these have been rigorously studied in published gout cohorts. All are testable with existing biobanked sera and flare-phase sampling — concrete experiment opportunities.
+These rows are **Research Conjectures**, not a literature census. Each would
+require a source-pinned cohort review before protocol design; the table is a
+set of possible stratification variables for paired flare sampling.
 
 ---
 
-## 7. Therapeutic Landscape at CP0 (Deepened)
+## 7. Pharmacological comparators for the complement hypothesis
 
-This is the actionable section: what exists, how it works, cost and access, and what would plausibly repurpose for gout.
+The evidence assembled in this section does not establish gout efficacy for a complement-directed product. These agents are useful as exact pharmacologic comparators because they perturb different parts of the cascade and can separate C5aR1, C5a, terminal-C5, and alternative-pathway-amplification hypotheses.
 
-### 7.1 Avacopan (Tavneos, Amgen formerly ChemoCentryx) — the obvious gout repurposing candidate
+| Comparator | Perturbation | Human evidence outside gout | What it could discriminate in a gout-relevant experiment | Principal boundary |
+|---|---|---|---|---|
+| **Avacopan** | C5aR1 allosteric antagonism | **Clinical Trial:** ADVOCATE in ANCA-associated vasculitis (Jayne 2021, PMID 33596356) | Receptor-mediated C5a signaling while leaving C5aR2 and MAC intact | Gout efficacy is not established by the current source set; refresh registries before making an absence claim |
+| **Vilobelimab** | C5a neutralization | **Clinical Trial:** PANAMO in severe COVID-19 (Vlaar 2022, PMID 36087611) | C5a signaling through both receptors while preserving C5b/MAC | Different disease and IV modality |
+| **Zilucoplan, eculizumab, ravulizumab** | C5 blockade | **Clinical Trial / regulatory evidence** in non-gout complement-mediated diseases | Combined removal of C5a and MAC | Infection risk, route, and no gout efficacy evidence |
+| **Iptacopan** | Factor B inhibition | **Clinical Trial / regulatory evidence** in non-gout complement-mediated diseases | Contribution of alternative-pathway amplification while classical/lectin initiation remains | Does not isolate the initiating route; no gout efficacy evidence |
+| **PMX-53 / PMX-205** | Research C5aR1 antagonists | **In Vitro / Animal Model** | Positive-control perturbations for receptor-level assays | Not clinical gout interventions |
 
-**Repurposing surface:** Avacopan is one candidate from chokepoint-to-approved-drug mapping — FDA-approved drugs that hit a gout chokepoint but were never clinically tested for gout. The other two are zileuton (CP6a 5-LOX, FDA-approved for asthma) and disulfiram (CP6b GSDMD, FDA-approved for alcohol use disorder). See [open-enzyme-vision.md §2.2](./etc/open-enzyme-vision.md) for the full repurposing surface framing. (source: etc/open-enzyme-vision.md)
-
-**Mechanism:** Oral small-molecule C5aR1 **allosteric antagonist** (Liu 2018 structure confirms allosteric binding). Selective for C5aR1 over C5aR2. ChEMBL [CHEMBL3989871](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989871). ATC L04AJ05.
-
-**Chemistry:** MW 581.7, cLogP 8.05 (very lipophilic), aromatic 3, 2 Ro5 violations (the MW is the issue; cLogP is the other). SMILES: `Cc1ccc(NC(=O)[C@H]2CCCN(C(=O)c3c(C)cccc3F)[C@H]2c2ccc(NC3CCCC3)cc2)cc1C(F)(F)F`. Lipophilicity drives the oral bioavailability despite the MW being over 500.
-
-**Clinical:** According to PubMed, the ADVOCATE trial (Jayne et al. [*NEJM* 2021;384(7):599-609](https://doi.org/10.1056/NEJMoa2023386), PMID 33596356) — Phase 3 RCT in ANCA-associated vasculitis, N=331 randomized, avacopan 30 mg BID oral vs. tapered prednisone, both arms + cyclophosphamide or rituximab background. Primary endpoints:
-
-- Remission at week 26: avacopan 72.3% vs. prednisone 70.1% (non-inferior; p<0.001)
-- Sustained remission at week 52: avacopan 65.7% vs. prednisone 54.9% (**superior**; p=0.007)
-- Serious adverse events (excluding vasculitis worsening): 37.3% vs. 39.0% (similar)
-
-**FDA approval October 2021** for ANCA-associated vasculitis (granulomatosis with polyangiitis, microscopic polyangiitis) as adjunctive therapy. EMA approval 2022.
-
-**PK:** Oral bioavailability ~25-45%; Tmax 2 h; t1/2 ~1.7 days (steady state by day 7); highly protein-bound (>99%); metabolism is **CYP3A4-dominant**, so labeling constrains co-use with strong inhibitors and inducers. Food increases exposure. No renal dose adjustment; hepatic impairment requires caution (liver enzyme elevations occur in ~13% of treated patients — boxed warning for hepatotoxicity monitoring).
-
-**Drug-drug interactions of note for gout patients:** allopurinol, febuxostat, colchicine have no direct CYP3A4 interaction with avacopan, so co-administration should be PK-safe. Colchicine's metabolism involves CYP3A4 and P-gp but avacopan is not a strong CYP3A4 inhibitor.
-
-**Cost:** Wholesale acquisition cost in the US ~$150,000-200,000/year (2023-2024 estimates for ANCA). Not affordable at population scale; a gout repurposing would be a niche use (refractory-flare, pegloticase-bridge, crystal-dissolution-window) rather than first-line.
-
-**Gout data:** **None published**. No registered gout trial. A reasonable rheumatologist would consider off-label use in a severe refractory-flare-prone gout patient (e.g., pegloticase failures with ongoing tophi). Prescribing is specialist-only in practice.
-
-### 7.2 Vilobelimab (Gohibic, InflaRx) — anti-C5a mAb, IV
-
-**Mechanism:** IgG4κ humanized monoclonal antibody that **binds C5a directly**, neutralizing C5a-driven C5aR1 and C5aR2 signaling. Does **not** block C5 cleavage — so MAC (C5b-9) is preserved, and terminal bactericidal complement function is intact. This is a meaningful differentiation from eculizumab (which blocks C5 cleavage entirely and eliminates both C5a and MAC).
-
-**ChEMBL:** [CHEMBL2109636](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109636) (antibody, max phase 3 for most indications, FDA EUA for severe COVID-19 in 2023).
-
-**Clinical:** According to PubMed, PANAMO Phase 3 (Vlaar et al. [*Lancet Respir Med* 2022;10(12):1137-1146](https://doi.org/10.1016/S2213-2600(22)00297-1), PMID 36087611) — randomized double-blind in 368 invasively-ventilated COVID-19 patients. 28-day all-cause mortality: vilobelimab 32% vs. placebo 42% (HR 0.73, p=0.094 stratified; HR 0.67, p=0.027 unstratified). **FDA EUA April 2023** for severe COVID-19 in invasively ventilated patients. PANAMO Phase 2 (PMID 33015643) and PK study (Lim et al. [*Intensive Care Med Exp* 2023;11(1):37](https://doi.org/10.1186/s40635-023-00520-8), PMID 37332066) — C5a levels dropped ~87% by day 8; no treatment-emergent ADAs in 93 patients sampled.
-
-**Studied or labeled exposure:** 800 mg IV on days 1, 2, 4, 8, 15, 22 (six doses total). t1/2 ~2-3 days between doses; steady state not fully modeled. Not a chronic-use drug in its current form.
-
-**Gout relevance:** C5a-specific neutralization would test a cleaner hypothesis than avacopan (C5aR1 antagonism misses C5aR2; vilobelimab catches both receptor signals but preserves MAC). IV dosing limits practical gout use. Conceptually interesting as a mechanistic probe.
-
-### 7.3 Zilucoplan (Zilbrysq, UCB) — macrocyclic peptide C5 inhibitor, SC
-
-**Mechanism:** Synthetic 15-amino-acid macrocyclic peptide that binds C5 at a novel site and blocks its cleavage by the C5 convertase → no C5a, no C5b, no MAC. ChEMBL [CHEMBL4298207](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298207) (parent) / [CHEMBL5315048](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5315048) (sodium salt, approved). ATC L04AJ06.
-
-**Clinical:** According to PubMed, RAISE Phase 3 (Howard et al. [*Lancet Neurol* 2023;22(5):395-406](https://doi.org/10.1016/S1474-4422(23)00080-7), PMID 37059508) — N=174, zilucoplan 0.3 mg/kg SC daily vs. placebo, 12 weeks. MG-ADL change -4.39 (zilucoplan) vs. -2.30 (placebo), difference -2.09 (p=0.0004). **FDA approval October 2023** for generalized myasthenia gravis (AChR-autoantibody-positive). Durable efficacy through 24 weeks (de la Borderie 2024, PMID 39314260).
-
-**PK:** SC self-administered daily; binds C5 with high affinity; t1/2 ~9 days at steady state (long residence on C5).
-
-**Safety:** Boxed warning — meningococcal infection. Vaccination with MenACWY and MenB required ≥2 weeks prior to starting; antibiotic prophylaxis if urgent initiation. Injection-site reactions 16%.
-
-**Cost:** Wholesale ~$600,000/year (MG pricing).
-
-**Gout relevance:** Daily SC is less patient-friendly than oral avacopan. The meningococcal risk, while manageable, is a hard barrier for chronic use in a non-life-threatening condition like gout. Unlikely gout repurposing unless a specific acute / bridge-dosing use case emerges.
-
-### 7.4 Eculizumab (Soliris, Alexion/AstraZeneca) — anti-C5 mAb, IV
-
-**Mechanism:** Humanized IgG2/4κ anti-C5 monoclonal antibody. Binds C5 at a site that prevents C5 convertase cleavage → no C5a, no MAC. ChEMBL [CHEMBL1201828](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201828). ATC L04AJ01.
-
-**Approvals:** FDA 2007 for PNH (paroxysmal nocturnal hemoglobinuria); 2011 for aHUS (atypical hemolytic uremic syndrome); 2017 for generalized MG; 2019 for NMOSD (neuromyelitis optica spectrum disorder).
-
-**Studied or labeled exposure:** 900 mg IV weekly × 4, then 1200 mg IV every 2 weeks. t1/2 ~11 days.
-
-**Safety:** Boxed warning — meningococcal infection (risk ~1000× general population). Vaccination required. Other encapsulated-organism infections. Sepsis screening protocols.
-
-**Cost:** ~$500,000-750,000/year. Biosimilars (Bekemv, Epysqli) now available at discounted prices.
-
-**Gout relevance:** The original systemic C5 inhibitor. IV infusion + cost + meningococcal risk make it impractical for gout beyond compassionate use in pegloticase-induced immune-complex vasculitis.
-
-### 7.5 Ravulizumab (Ultomiris, Alexion/AstraZeneca) — long-acting eculizumab
-
-**Mechanism:** Engineered version of eculizumab with Fc mutations (YTE-like) giving ~4× longer half-life via FcRn recycling. Same epitope on C5. ChEMBL [CHEMBL3989986](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989986). ATC L04AJ02.
-
-**Studied or labeled exposure:** IV every 8 weeks (vs. every 2 weeks for eculizumab).
-
-**Approvals:** PNH (2018), aHUS (2019), gMG (2022), NMOSD (2024).
-
-**Gout relevance:** Same as eculizumab — IV + meningococcal risk make it impractical for non-life-threatening use.
-
-### 7.6 Iptacopan (Fabhalta, Novartis) — oral Factor B inhibitor, alternative pathway
-
-**Mechanism:** Oral small-molecule inhibitor of **Factor B**, blocking alternative-pathway amplification. Leaves classical/lectin pathways intact. ChEMBL [CHEMBL4594448](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594448). ATC L04AJ08.
-
-**Chemistry:** MW 422, cLogP 4.93, Ro5 compliant (0 violations, QED 0.56). More drug-like than avacopan.
-
-**Studied or labeled exposure:** 200 mg oral BID.
-
-**Approvals:** FDA December 2023 for PNH; 2024 for IgA nephropathy; 2024/2025 for C3 glomerulopathy (per ATC labeling).
-
-**Gout relevance:** The alternative pathway amplifies MSU-triggered C5a generation but is not the sole pathway (classical-pathway IgM/CRP is the initiator per Wessig 2022). Iptacopan would reduce but not eliminate CP0 activation. Interesting as a mechanistic tool to quantify alternative-pathway contribution. Meningococcal warning applies.
-
-### 7.7 Research compounds (not clinically approved)
-
-| Compound | Mechanism | Status | Notes |
-|----------|-----------|--------|-------|
-| **PMX-53** | Cyclic hexapeptide C5aR1 orthosteric antagonist | Preclinical | Most widely-used research tool; IC50 ~20 nM on human PMN C5aR1. Not orally stable. |
-| **PMX-205** | PMX-53 derivative with improved oral bioavailability | Preclinical | Rat-tested; no human data |
-| **JPE-1375** | Peptide C5aR1 antagonist | Preclinical | |
-| **NDT-9513727** | Small-molecule C5aR1 allosteric antagonist | Discontinued | Co-crystallized with C5aR1 (Liu 2018); structure-guide for avacopan follow-ons |
-| **W-54011** | Small-molecule C5aR1 antagonist | Preclinical | |
-| **CCX-168 (pre-avacopan)** | ChemoCentryx's avacopan precursor | Became avacopan | |
-
-### 7.8 Comparative summary
-
-| Drug | Target | Route | t1/2 | Gout plausibility | Block MAC? |
-|------|--------|-------|------|---------------------|---------|
-| Avacopan | C5aR1 | Oral 30mg BID | 1.7 d | **High** — oral, mechanism-aligned, precedent in ANCA | No (leaves MAC) |
-| Vilobelimab | C5a | IV | 2-3 d | Medium — IV limits chronic use, but mechanistic probe | No (leaves MAC) |
-| Zilucoplan | C5 | SC daily | 9 d (steady) | Low — SC daily + meningococcal | Yes |
-| Eculizumab | C5 | IV q2w | 11 d | Low — IV + cost + meningococcal | Yes |
-| Ravulizumab | C5 | IV q8w | 50+ d | Low — IV + cost + meningococcal | Yes |
-| Iptacopan | Factor B | Oral BID | 25 h | Medium — oral, but only blocks alternative pathway | Partial |
-| PMX-53 | C5aR1 | Research | Short | N/A — preclinical only | No |
-
-**Avacopan is the clear gout repurposing lead** based on route (oral), selectivity (C5aR1-only leaves MAC intact and preserves antibacterial terminal complement), and precedent (FDA-approved).
+The useful comparison is mechanistic, not a cross-drug winner table. A matched MSU-activated human-serum or whole-blood experiment should measure C5a, sC5b-9, and IL-1β under receptor-, ligand-, C5-, and Factor-B-level perturbation. That would show which complement arm is carrying the signal in the tested system without turning evidence from other diseases into a treatment recommendation.
 
 ---
 
 ## 8. Combination Biology — C5a vs. LPS vs. TNFSF14 Priming
 
-A central unresolved question: is gout priming purely C5a-dominant, or does LPS (from gut translocation / SIBO / metabolic endotoxemia) and TNFSF14 (amplifier — see [tnfsf14-gout-target.md](./tnfsf14-gout-target.md)) contribute additively?
+A central unresolved question is how much C5a contributes relative to LPS/TLR4, TNFSF14, and other priming inputs in human flares.
 
 ### 8.1 Why the question matters
 
-If CP0 (C5a) is sufficient → avacopan alone would substantially abort flares.
-If CP0 + CP1a (LPS/TNFSF14) are additive → partial efficacy at best; combination CP0+CP1a blockade needed.
-If priming signals are fully redundant → blocking CP0 yields minimal clinical benefit (LPS picks up the slack).
+Three experimental models remain live: C5a carries most of the measured priming signal under a defined condition; C5a and transcriptional inputs contribute nonredundantly; or the inputs compensate for one another. Current evidence does not select among these models in human flares.
 
 ### 8.2 What the literature shows
 
-- **An 2014** (PMID 25229885) — **C5a + MSU is synergistic in human monocytes**, with C5a priming dominant over background LPS in whole blood
-- **Khameneh 2017** (PMID 28167912) — C5aR⁻/⁻ mice have markedly reduced IL-1β in MSU peritonitis, suggesting C5a is not redundant with other priming signals; LPS-primed macrophages still need C5a for maximal MSU-induced IL-1β
-- **Cumpelik 2016** (PMID 26245757) — Neutrophil-derived PMN-Ecto suppresses specifically the C5a arm; their resolution effect depends on C5aR engagement, implying C5a is the relevant physiologic priming signal
+- **An 2014** (PMID 25229885) — C5a potentiated MSU-associated IL-1β in human whole blood and primary monocytes in the tested systems
+- **Khameneh 2017** (PMID 28167912) — separate C5ar1⁻/⁻ and C5aR-antagonist arms reduced MSU-associated inflammatory readouts in the tested peritonitis model: genetic loss reduced IL-1β and neutrophil recruitment, while antagonist pretreatment reduced neutrophil and monocyte recruitment. This supports C5aR involvement without establishing a human-gout effect size.
+- **Cumpelik 2016** (PMID 26245757) — Neutrophil-derived PMN-Ecto suppressed C5a-mediated priming in the tested system, establishing an endogenous brake on that route
 
-Taken together: C5a is necessary and largely sufficient for full flare priming in experimental systems. LPS priming is more of a *laboratory* artifact (used because it is convenient in vitro) than a gout-physiologic signal.
+Together, these studies establish C5a as a consequential route in their human-cell and animal systems. They do not show that C5a is necessary, sufficient, or dominant across human gout flares, and they do not demote LPS/TLR4 models to artifacts.
 
-### 8.3 Real-world caveats
+> **Research conjecture — priming-route dependence may vary across gout-flare contexts**{ .research-conjecture-label }
+>
+> **Grounded premises:** C5a can prime MSU-associated inflammasome output through C5aR1 and ROS in human-cell and murine systems **[In Vitro + Animal Model]** ([An 2014](https://doi.org/10.1002/eji.201444560); [Khameneh 2017](https://doi.org/10.3389/fphar.2017.00010)). TLR4/LPS and TNFSF14 can provide transcriptional priming in other gout-relevant systems **[In Vitro + Human Observational]** ([TNFSF14 evidence](./tnfsf14-gout-target.md)).
+>
+> **Novel leap:** The relative contribution of these routes may differ by patient state or flare phase. No direct evidence supports that comparative human-flare claim.
+>
+> **Why it matters:** Route dependence would change which perturbation is most informative in a defined experimental context without declaring a universal target winner.
+>
+> **Discriminating observation:** In matched human whole-blood, synovial-fluid, or primary-cell systems, cross receptor-, ligand-, and transcriptional-priming perturbations and measure C5a, ROS, pro-IL-1β, mature IL-1β, and viability over time.
 
-- **Metabolic syndrome + SIBO patients** likely have elevated systemic LPS via gut permeability → LBP/sCD14 elevation → systemic low-grade inflammation. In these patients, LPS priming could additively contribute to NLRP3 priming alongside C5a. Mechanistic extrapolation: avacopan alone might be less effective in this patient subgroup; combination with gut-barrier repair (butyrate, berberine-driven microbiome shift, glutamine) may be needed.
-- **TNFSF14 amplifier loop** (Ea 2024) likely adds to NF-κB-driven priming in the subset of patients with high TNFSF14 at flare onset. TNFSF14 operates *via* NF-κB, so it is distinct from the C5a → ROS axis and could be additive.
+### 8.3 Cross-system translation
 
-### 8.4 Species differences
+Cross-system records differ in species, cell system, stimulus, endpoint, and protocol, so numerical differences do not isolate species effects. Translation work must control receptor pharmacology, complement source, trigger surface, and antagonist cross-reactivity rather than transfer a rodent effect size directly.
 
-Dapansutrile's 3-order-of-magnitude IC50 gap between mouse and human cells (see [nlrp3-exploit-map.md](./nlrp3-exploit-map.md) species-gap caveat) is a warning against direct translation of rodent C5a mechanisms. Specific C5a-gout species differences to note:
-
-- Murine C5aR1 is ~70% identical to human; some antagonists are species-selective
-- Murine complement activates more efficiently on some surfaces than human
-- PMX-53 has mouse cross-reactivity; avacopan is less active on murine C5aR1 (human-selective)
-
-Implication: the Khameneh 2017 murine validation of C5aR antagonism is mechanistically supportive but not a clinical prediction. An avacopan gout trial is necessary.
+The Khameneh 2017 result is mechanistically supportive but not a clinical prediction. A matched human gout-relevant study is required before clinical inference; avacopan is one possible receptor-level comparator.
 
 ---
 
@@ -603,19 +482,24 @@ Implication: the Khameneh 2017 murine validation of C5aR antagonism is mechanist
 
 ### 9.1 Direct coverage
 
-The current natural-product candidate set has no validated direct C5a/C5aR1/C3aR intervention. The recorded searches did not retrieve a wet-lab-validated C5aR1 antagonist from that set. Synthetic small molecules, constrained peptides, antibodies, and engineered complement regulators provide better-supported comparators, while an unbiased human-C5aR1 functional screen keeps the natural-product discovery route open.
+The current named natural-product candidates have pathway-level evidence but no
+source-verified direct C5aR1 result on this page. This is a claim about the
+attached evidence, not about all published or unpublished chemistry. Synthetic
+small molecules, constrained peptides, antibodies, and engineered complement
+regulators provide assay comparators, while an unbiased human-C5aR1 functional
+screen keeps natural-product discovery open.
 
 ### 9.2 Indirect urate-lowering effect
 
-A successful uricase intervention could reduce future complement activation by reducing the MSU crystal surface, but it does not directly inhibit CP0. Partial urate lowering may leave residual crystals, and existing deposits dissolve over a much slower timescale than complement activation during a flare.
+A successful uricase intervention could reduce the MSU substrate for future complement activation, but it does not directly inhibit CP0 during an active flare. The relative timing of urate lowering, crystal burden, and complement signaling requires its own clinical evidence.
 
 ### 9.3 Portfolio implication
 
-Direct CP0 blockade, upstream crystal removal, and downstream inflammatory suppression are separate intervention classes. Avacopan is a repurposing candidate with human C5aR1 pharmacology; DAF, C1-INH, dietary convertase modulators, uricase tracks, and downstream suppressors each retain their own evidence and delivery gates. None is treated as mandatory for the others to proceed.
+Direct CP0 blockade, upstream crystal removal, and downstream inflammatory suppression are separate intervention classes. Avacopan provides human C5aR1 pharmacology outside gout; DAF, C1-INH, dietary convertase modulators, uricase tracks, and downstream suppressors each retain their own evidence and delivery gates. None is treated as mandatory for the others to proceed.
 
-### 9.6 Research opportunity — screen natural products against C5aR1
+### 9.4 Research opportunity — screen natural products against C5aR1
 
-Because C5aR1 has not been well-characterized in natural-product chemical space (§4.4), an unbiased screen of known natural products against human C5aR1 (using β-arrestin recruitment or calcium-flux functional readout, or radioligand displacement from neutrophil C5aR1) could surface latent antagonists. Candidates worth screening first based on reported complement-pathway activity:
+Because the bounded legacy records do not answer whether exact natural products directly antagonize human C5aR1 (§4.4), a functional screen using β-arrestin recruitment, calcium flux, or receptor-binding displacement could test the open class. Candidate selection may use pathway-level evidence only as a sampling strategy, not as target attribution:
 
 - **Quercetin, luteolin, apigenin** (flavonoids with broad anti-inflammatory activity; some reported complement inhibition in CH50 assays but no C5aR1-specific data)
 - **EGCG** (polyphenol; modulates NF-κB, already in stack; any C5aR1 affinity unknown)
@@ -625,99 +509,39 @@ Because C5aR1 has not been well-characterized in natural-product chemical space 
 - **Berberine** (isoquinoline alkaloid; known microbiome modulator; C5aR1 unknown)
 Advance any reproducible hit only after concentration-response replication, orthogonal receptor attribution, counterscreens for cytotoxicity and assay interference, and an exposure assessment for the exact compound. A null plate would close only the tested compounds and assay conditions.
 
-### 9.7 Combined CP0 hypothesis — dietary rosmarinic acid + engineered DAF SCR1-4
+### 9.5 Compartment-aware combination conjectures
 
-Two CP0 threads motivate a combined hypothesis:
+> **Research conjecture — layered complement blockade**{ .research-conjecture-label }
+>
+> **Grounded premises:** Rosmarinic acid has assay-specific C3b-directed evidence (**In Vitro; PMID 10353266; full primary text unresolved**). DAF SCR1-4 and C1-INH act at different complement-control steps, but their proposed engineered configurations have not cleared identity, folding, stability, activity, or access gates (**Mechanistic Extrapolation**; source: [DAF hypothesis](./hypotheses/H05-daf-scr14-cp0-thesis.md) and [C1-INH evidence](./c1-inh-protease-stability-ecn-computational.md)).
+>
+> **Novel leap:** Two exact, independently active materials at different cascade steps might produce a larger or more robust effect than either alone. No direct evidence tests rosmarinic acid + DAF, C1-INH + DAF, or C1-INH + rosmarinic acid.
+>
+> **Why it matters:** A true layered effect could exploit incomplete blockade or pathway redundancy without making any single track the project.
+>
+> **Discriminating observation:** First qualify each exact arm alone. Then run vehicle, arm A, arm B, and combination in the same MSU-activated complement system with prespecified additivity/interaction criteria, recovery, and assay-interference controls.
 
-- **Dietary upstream-complement thread.** [COMP-020](./upstream-complement-verification-rerun-computational.md) preserves **rosmarinic acid** as an assay-specific upstream-complement lead via covalent C3b modification — Englberger 1988 (PMID 3198307), with wide assay-format heterogeneity. COMP-018 is retired and supplies no rank or dietary inference.
-
-  ***Houttuynia cordata* polysaccharides.** Crude CHCP inhibited classical and alternative complement in vitro; depleted-serum experiments implicated C3 and C4, with a partial C5 effect, and oral CHCP changed complement-associated outcomes in rat injury models (Lu 2018; **In Vitro + Animal Model**). HCPM is a defined 19.1 kDa material with anti-complement activity, and Li 2025 found that both HCPM and crude HCP reduced intestinal complement- and NLRP3-related readouts in infection-model mice (**Animal Model**). Exact materials, sourcing, likely intestinal delivery, structure-dependent inflammatory direction, and the two independent gout hypotheses are maintained on the [Houttuynia evidence page](./houttuynia-cordata.md). The 2026-07-14 bounded scan found no isolated *H. cordata* polysaccharide study in an MSU, urate, hyperuricemia, or gout model. [Validation §1.30](./validation-experiments.md) tests direct macrophage directionality; [COMP-040](./computational-experiments.md) independently tests the serum-complement route. Neither gates the other.
-- **Engineered surface-decay thread.** [comp-012](./daf-cd55-scr14-truncated-computational.md) motivates testing **DAF SCR1-4 (aa 35–285)** in *A. oryzae* koji but does not establish protease survival. The eight UniProt-annotated disulfides define mapping readouts in [§1.25](./validation-experiments.md); they do not supply a folding-demand score or feasibility prior. [H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) formalizes the hypothesis.
-
-The proposed connection is that two materials with different biochemical mechanisms might suppress MSU-associated complement activation more than either material alone if both are active in the same relevant compartment. Direct evidence for that exact pairing, delivery geometry, and effect composition is absent. The full conjecture and its grounded premises are maintained on the [COMP-029 page](./combined-cp0-systems-model-computational.md).
-
-COMP-029's arithmetic is invalid and retained only in Git history. It does not establish gut-luminal efficacy, systemic efficacy, DAF access to an MSU surface, pharmacologic saturation, complementarity, or a biological decision gate.
-
-The discriminating experiment is a matched complement-competent-serum assay with vehicle, rosmarinic acid alone, active DAF SCR1-4 alone, and the combination. Measure MSU-associated C5a and C5b-9 while also measuring DAF recovery, retained function, and surface association. Run the combination when an active DAF preparation exists; do not infer readiness from an accessibility coefficient.
-
-**CFH Y402H stratification hypothesis.** COMP-039 classifies the candidate mechanisms relative to Factor H; COMP-029 supplies no genotype or independence evidence. The untested leap is that rs1061170 may modify an intervention response even when the intervention acts at another complement step. That remains a prespecified biobank and matched-assay question, not a precision-medicine conclusion, and it does not change the §1.25 wet-lab gate.
-
-**Cross-references:** [`upstream-complement-modulator-sweep-computational.md`](./upstream-complement-modulator-sweep-computational.md) (retired COMP-018 routing page), [`upstream-complement-verification-rerun-computational.md`](./upstream-complement-verification-rerun-computational.md) (COMP-020 current evidence; assay-spread caveat), [`daf-cd55-scr14-truncated-computational.md`](./daf-cd55-scr14-truncated-computational.md) (comp-012 stalk-truncation proxy; empirical stability unresolved), [`chaperone-orthogonal-stacking.md`](./chaperone-orthogonal-stacking.md#matched-experiment) (configuration-specific interaction conjecture and matched-test design), [`medicinal-mushroom-extract-sops.md`](./medicinal-mushroom-extract-sops.md) (Tier 2 readout for rosmarinic-acid potency in dietary sources), [H05 — DAF SCR1-4 CP0 thesis](./hypotheses/H05-daf-scr14-cp0-thesis.md), [`cfh-mechanism-dissociation-cp0-candidates-computational.md`](./cfh-mechanism-dissociation-cp0-candidates-computational.md) (CFH Y402H stratification analysis), and [`gout-genetic-variants.md`](./gout-genetic-variants.md) Category 5.
-
-### 9.8 Two-chassis, two-node CP0 hypothesis — C1-INH + DAF SCR1-4
-
-A second combined-CP0 strategy, distinct from §9.7's dietary + engineered composition: **two engineered soluble complement regulators delivered across two independent chassis, each hitting a different cascade node.**
-
-- **C1-INH (SERPING1, UniProt P05155) via an engineered-LBP candidate.** The [retired COMP-024 model](./complestatin-bgc-lbp-feasibility-computational.md) supplies no C1-INH priority or EcN-viability evidence. C1-INH inactivates C1r/C1s and MASP-2 at the classical/lectin pathway **entry point**, preventing C4b2a convertase formation upstream.
-- **DAF SCR1-4 (aa 35–285, UniProt P08174) via engineered koji.** [comp-012](./daf-cd55-scr14-truncated-computational.md) supplies a construct prior only; [H05](./hypotheses/H05-daf-scr14-cp0-thesis.md) formalizes the thesis, and [§1.25](./validation-experiments.md) is the wet-lab gate. DAF accelerates decay of **already-assembled** C4b2a and C3bBb convertases at the MSU crystal surface.
-
-**Architecture-level hypothesis:** C1-INH at classical/lectin entry could **prevent convertase formation**, while DAF at convertase decay could **disassemble convertases that form anyway**. The mechanisms are nonredundant, but neither payload–chassis configuration nor the combined architecture is established.
-
-**Relationship to §9.7.** §9.7 and §9.8 are distinct mechanism hypotheses, not ranked deployment plans. A future composition would require each exact arm to clear its own folding, stability, activity, access, and safety gates before combination is considered.
-
-**Computational boundary — [comp-037](./c1-inh-protease-stability-ecn-computational.md).** The inherited LOW/RED/MODERATE protease labels are invalid because the model used pLDDT confidence as accessibility; its GREEN glycosylation label is not a functional result. The useful hypothesis is that an aa 123–500 candidate must fold and retain inhibition while productive C1r/C1s/MASP-2 engagement outcompetes unproductive proteolysis at or near the RCL. That requires exact-configuration expression, folding, stability, kinetic, and functional measurements. COMP-037 does not substantiate an EcN route or a two-chassis architecture. (Mechanistic Extrapolation)
-
-**What this section does NOT claim:**
-
-1. C1-INH on EcN-LBP has not been validated for expression, folding, luminal stability, or complement-regulatory activity. COMP-024's comparator and priority result is invalid.
-2. The C1-INH + DAF composition has NOT been wet-lab tested as a combined intervention. The mechanism-level coverage claim is a **testable hypothesis**, not an asserted synergy.
-3. No clinical effect-size prediction. Even if both arms validate individually, downstream clinical CP0 coverage is gated by the same H08-class clinical-translation questions.
-
-**Cross-references:** [`complestatin-bgc-lbp-feasibility-computational.md`](./complestatin-bgc-lbp-feasibility-computational.md) (comp-024 invalidation and surviving conjecture), [`engineered-lbp-chassis.md`](./engineered-lbp-chassis.md) (LBP chassis peer track), [`daf-cd55-scr14-truncated-computational.md`](./daf-cd55-scr14-truncated-computational.md) (comp-012 construct hypothesis), [H05 — DAF SCR1-4 CP0 thesis](./hypotheses/H05-daf-scr14-cp0-thesis.md), [`validation-experiments.md` §1.25](./validation-experiments.md) (DAF SCR1-4 wet-lab gate).
-
-### 9.9 Gated composition — C1-INH + dietary rosmarinic acid
-
-A third combined-CP0 strategy sits between §9.7 (dietary + engineered surface-decay) and §9.8 (engineered + engineered entry + surface-decay): **engineered C1-INH on EcN-LBP + dietary rosmarinic acid (no DAF SCR1-4).** Mechanism layering at two distinct cascade nodes:
-
-- **C1-INH (engineered EcN-LBP hypothesis)** targets **classical and lectin pathway entry** through C1r/C1s/MASP-2 inhibition. COMP-037 does not establish serpin-body protease risk; exact-configuration folding and stability precede the RCL kinetic-competition assay.
-- **Rosmarinic acid (dietary, no engineering)** has reported C3b/C3-convertase activity in COMP-020's current evidence set. The wet-lab question remains gated by assay-format heterogeneity and by whether intact compound or active metabolites reach the relevant compartment.
-
-**Cascade-architecture logic:** C1-INH prevents convertase formation at the classical/lectin entry point. Whatever C3b deposits anyway (via alternative-pathway tick-over or incomplete C1-INH coverage) gets blocked by dietary rosmarinic acid at the convertase-assembly step. **Two independent failure modes, two independent cascade nodes, one dietary + one engineered.** This composition has been hiding in plain sight because §9.7 paired rosmarinic acid with DAF (downstream surface-decay) and §9.8 paired C1-INH with DAF (downstream surface-decay); neither swapped DAF out for the dietary thread directly.
-
-> **⚠ Gut-compartment co-localization caveat (see [`open-questions.md` §"Riskiest assumption #3"](./open-questions.md) ).** The composition requires both arms to be active at a relevant shared site, but segmental exposure has not been measured for the exact materials. COMP-029 modeled no valid co-localization or tissue-exposure result. The discriminating measurement is segment-resolved intact compound, metabolites, and payload activity under the proposed delivery conditions.
-
-**Why the composition remains gated:**
-
-Both component arms have unresolved wet-lab gates. A coherent cascade story cannot establish either arm's exact configuration, exposure, function, or safety. **Research gate:** no combined COMP until each exact arm has independently cleared the gates needed for the proposed composition.
-
-**Reactivation conditions:**
-
-- IF an exact C1-INH construct × route × support configuration clears identity, fold, stability, target inhibition, protease challenge, compartment access, and safety gates → that exact C1-INH arm may enter composition planning. RCL kinetic competition is one component, not a viability verdict.
-- IF an exact rosmarinic-acid material or active-metabolite profile clears segment-resolved exposure, matched complement activity, and safety gates in the proposed compartment → that exact dietary arm may enter composition planning.
-- IF BOTH exact arms clear their independent gates → design a matched combined experiment with prespecified additivity or interaction criteria; do not infer synergy from the cascade diagram.
-
-**What this section does NOT claim:**
-- No asserted synergy between C1-INH and rosmarinic acid arms.
-- No clinical effect-size prediction — both arms' individual effect sizes remain wet-lab-unanchored.
-- This is mechanism-level cascade-architecture coverage, NOT a wet-lab-validated composition.
-
-**CP0 intervention surface:** C1-INH and rosmarinic acid represent blockade-class hypotheses upstream of complement output. Glucocorticoid and cannabinoid mechanisms represent downstream suppression hypotheses, while SPMs represent active resolution. These classes clarify the research gap without converting any untested composition into a protocol.
-
-**Cross-references:** §9.7 (rosmarinic acid + DAF SCR1-4); §9.8 (C1-INH + DAF SCR1-4); [`cannabinoids-terpenes.md`](./cannabinoids-terpenes.md) (downstream suppression hypotheses); [`c1-inh-protease-stability-ecn-computational.md`](./c1-inh-protease-stability-ecn-computational.md) (comp-037 C1-INH gate); [`upstream-complement-verification-rerun-computational.md`](./upstream-complement-verification-rerun-computational.md) (COMP-020 current evidence); [`combined-cp0-systems-model-computational.md`](./combined-cp0-systems-model-computational.md) (retired COMP-029 arithmetic and preserved matched-assay conjecture).
+The experiment above tests biochemical compatibility in the chosen system. It does not establish delivery. Intestinal complement modulation and systemic/joint MSU modulation are separate compartment hypotheses; a gut-local result cannot support joint efficacy without a measured causal bridge. The current evidence homes are the [legacy rosmarinic-acid inventory](./upstream-complement-verification-rerun-computational.md), [H05 for DAF](./hypotheses/H05-daf-scr14-cp0-thesis.md), and the [C1-INH configuration page](./c1-inh-protease-stability-ecn-computational.md).
 
 ---
 
 ## 10. Natural-Product Modulators — What the Literature Actually Shows
 
-### 10.1 ChEMBL survey of C5aR1 (CHEMBL2373)
+### 10.1 Bounded C5aR1 database search
 
-ChEMBL contains thousands of bioactivity records on human C5aR1 (CHEMBL2373) — the unfiltered activity API returned ~4,873 total records as of 2026-04-28 ([direct query](https://www.ebi.ac.uk/chembl/api/data/activity.json?target_chembl_id=CHEMBL2373&limit=1)), recorded under the [§1.21 bounded computational scan](./validation-experiments.md#121-natural-product-c5ar1-antagonist-screening--historical-computational-pass). The exact count is filter-dependent: distinct-compound counts, pChEMBL cutoffs, and target-relationship filters yield different totals. In that recorded query, the pChEMBL ≥ 6 tail was dominated by synthetic peptides and avacopan-class allosteric small molecules, and no entry in the inspected tail was flagged `natural_product=1`. NPASS, LOTUS, Open Targets, and the recorded literature queries also returned no qualifying direct natural-product hit. Those non-retrievals define the searched coverage; they do not establish biological absence outside it.
+The legacy ChEMBL notes retain neither an exact query nor an immutable database
+snapshot. They support no current retrieval, non-retrieval, coverage-rate, or
+class-absence claim. Run and preserve a fresh query receipt if database
+curation is needed; use a direct functional screen to answer the biological
+question.
 
-### 10.2 Flavonoids and complement — the weak, broad literature
+### 10.2 Flavonoids and broad complement assays
 
-A broad literature (PubMed, ~73 articles on "complement inhibitor natural product flavonoid") reports weak complement-pathway inhibition (CH50 or AP50 suppression at 50-500 μM) for many polyphenols. Representative findings:
-
-- **Quercetin** — reported CH50 inhibition IC50 ~100-200 μM (In Vitro, cell-free). Not C5aR1-specific; likely hitting multiple complement components (C1q, C3 convertase) non-selectively.
-- **EGCG** — CH50 inhibition in the same range; mechanism ambiguous
-- **Resveratrol** — weak
-- **Baicalein, baicalin** (Chinese skullcap) — some C3 convertase inhibition reported
-- **Curcumin** — CH50 inhibition; mechanism unclear
-
-These records use broad complement-pathway assays rather than direct C5aR1 function. Their materials, assay formats, and concentration regimes are not interchangeable with receptor-antagonist potency or dietary exposure. They remain source-qualified upstream-complement leads, not evidence of direct CP0 coverage.
+Quercetin, EGCG, resveratrol, baicalein/baicalin, curcumin, luteolin, and related polyphenols appear in broad complement-pathway literature. These records use different materials and CH50/AP50 or other pathway-level assays rather than direct C5aR1 function. Reverify each exact observation before reuse; do not combine them into a potency range, class effect, dietary exposure claim, or receptor-target conclusion.
 
 ### 10.3 Omega-3 / SPM — indirect effects
 
-EPA and DHA generate specialized pro-resolving mediators (RvE1, RvD1/D2, MaR1, PD1). These act via ALX/FPR2 and other receptors (see [spm-resolution-pathway.md](./spm-resolution-pathway.md)) — not directly at C5aR1. SPMs tilt the inflammatory phase toward resolution and partially suppress C5a-driven neutrophil chemotaxis by competing at the chemotactic level, but this is indirect and downstream. **Not a CP0 therapy; a CP5b/CP6a resolver.**
+Exact RvD1 and MaR1 changed MSU inflammation in mouse systems through distinct reported routes, while RvD2 has adjacent macrophage and zymosan evidence (see [SPM resolution](./spm-resolution-pathway.md)). EPA and DHA are precursors, not delivered equivalents of those mediators. The reviewed SPM records do not establish direct C5aR1 antagonism, C5a neutralization, or a CP0 effect; any complement–resolution connection remains a separate interaction experiment.
 
 ### 10.4 Vitamin D
 
@@ -729,63 +553,30 @@ Traditional formulations and source materials may contain upstream-complement or
 
 ### 10.6 Honest summary
 
-**The present natural-product evidence does not establish direct C5aR1 antagonism.** Avacopan and PMX-53 provide pharmacological comparators, not a reason to close other chemical space. The next useful move is the direct functional screen in §9.6, followed by exact-material, selectivity, exposure, and delivery gates for any hit.
+**The present natural-product evidence does not establish direct C5aR1 antagonism.** Avacopan and PMX-53 provide pharmacological comparators, not a reason to close other chemical space. The next useful move is the direct functional screen in §9.4, followed by exact-material, selectivity, exposure, and delivery gates for any hit.
 
 ---
 
-## 11. Clinical Biomarkers — Measuring CP0 in a Real Patient
+## 11. Biomarker experiment
 
-### 11.1 Baseline complement panel (standard availability)
+A prospective flare study should collect matched baseline and flare-phase samples and measure total complement components alongside activation products such as C5a, sC5b-9, and pathway-specific fragments. Pre-analytics must be prespecified because complement can continue activating after collection and create artifactual split products.
 
-- **C3 and C4 (total protein, turbidimetry)** — normal adult range C3 ~80-170 mg/dL, C4 ~15-45 mg/dL. **Both can be low in active consumption** (acute flare). Chronic elevation suggests acute-phase response without consumption; chronic low suggests persistent activation or congenital deficiency.
-- **CH50 (total hemolytic complement, functional)** — measures the ability of patient serum to lyse sensitized sheep erythrocytes via the classical pathway. Normal 30-75 CAE units. Low = consumption or deficiency. Does not distinguish which component.
-- **AH50 (alternative pathway hemolytic)** — analogous for alternative pathway.
+Wessig 2022 makes CRP a plausible experimental modifier of MSU-surface complement activation. Whether baseline hsCRP stratifies complement output or flare severity in gout is unknown. The decision-relevant result is a within-cohort relationship among CRP, complement activation products, flare timing, and clinical phenotype—not a single reference-range comparison.
 
-These are standard hospital lab tests, inexpensive, same-day.
-
-### 11.2 Split products and downstream (send-out / specialty)
-
-- **Soluble C5a (+ desArg)** — ELISA, e.g., Hycult or Quidel kits. Commercial availability at ARUP, Mayo Medical Labs, Quest (specific panels). Critical pre-analytic variable: **sample must be collected on ice in EDTA, spun cold within 30 minutes, plasma aliquoted and frozen at -80°C**. Warm transit generates spurious C5a in vitro from continued convertase activity. This is the single biggest reason specialty C5a assays misreport values.
-- **Soluble C3a** — similar kits, similar pre-analytic care.
-- **sC5b-9 (shed MAC)** — more stable than C5a (no receptor to bind, no carboxypeptidase to clip); easier to handle clinically. Elevated in chronic complement activation.
-- **Bb (alternative pathway activation fragment)** — cleavage product of Factor B; specifically reports alternative-pathway activation.
-- **C4d, C3d/C3dg** — activation split products of C4 and C3; used in transplant-rejection and lupus-nephritis workup; reports classical-pathway activation.
-
-### 11.3 CRP as a CP0 stratifier
-
-Given Wessig 2022 (CRP is the dominant classical-pathway initiator on MSU surfaces), **baseline high-sensitivity CRP (hsCRP) is a plausible stratifier for "complement-primed" gout**. Elevated hsCRP (>3 mg/L) in hyperuricemia likely predicts more vigorous C5a generation per flare. This is a testable hypothesis that could use existing gout-cohort biobanks.
-
-### 11.4 Biomarker research design
-
-A prospective flare study could include the following CP0-relevant biomarkers (with proper pre-analytics):
-
-- **C3, C4, hsCRP** (baseline and T0 / T+24 h of flare)
-- **Plasma sC5b-9** (relatively easy handling, stable)
-- **Plasma C5a** (only if proper cold-chain is logistically achievable; otherwise the number is unreliable)
-- **24-h urine with uric acid** and a matched-timing hsCRP to see whether hyperuricemia-associated complement activation correlates with crystal-related flare physiology
-
-These measures are research readouts and are not clinically actionable without comparative data.
+These are research readouts, not clinical decision rules.
 
 ---
 
 ## 12. Open Research Questions
 
-Numbered so they can be lifted directly into [open-questions.md](./open-questions.md):
-
-1. **Avacopan in gout — any clinical signal?** Case reports of ANCA-vasculitis-plus-gout patients on avacopan; ad-hoc use in refractory gout. No registered trial as of April 2026. An investigator-initiated study (N=20-40, cross-over of flare frequency on/off avacopan) would be the shortest path to proof of concept.
-2. **Microbial C5aR1 antagonist peptide** — is there a biosynthetic route in a GRAS organism (S. cerevisiae, A. oryzae, P. pastoris) to produce a PMX-53-like cyclic peptide with C5aR1 antagonist activity? Non-ribosomal peptide synthesis machinery in Aspergillus is extensive; cyclic hexapeptides are within range.
-3. **Natural-product screen against C5aR1** — systematic screen of the Open Enzyme supplement stack + dietary polyphenols against human C5aR1 using β-arrestin or calcium-flux functional readout. One 384-well plate, ~1 day assay time. Expected yield: most negative; any sub-μM hit is significant.
-4. **Is CP0 priming sufficient, or additive with LPS / TNFSF14?** Experimental: human whole-blood MSU stimulation ± LPS ± C5aR1 antagonist ± TNFSF14 blockade; measure IL-1β, IL-6, neutrophil recruitment. Resolves the combination biology question §8.
-5. **Factor H variants and gout severity** — UK Biobank / All of Us cross-tabulation of CFH rs1061170 × dietary polyphenol intake × incident gout M10.x. Status (2026-05-19): empirically untested; biobank feasibility documented in [`logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md`](../logs/cfh-y402h-dietary-cp0-biobank-mining-2026-05-19.md); closest analog (CFH × diet × AMD) points the opposite direction, mechanistic dissociation hypothesis (CP0 candidates bypass CFH-dependent regulation) is plausible but unverified. Operational path: collaboration with existing UKB gout-genetics groups, not solo OE application.
-6. **C5a vs. sC5b-9 in human gout synovial fluid** — quantitative ratio of anaphylatoxin to MAC during an acute flare; identifies which effector dominates and informs C5aR1 (avacopan) vs. C5 (zilucoplan/eculizumab) target selection.
-7. **CRP-stratified gout flare intensity** — prospective cohort of gout patients with baseline hsCRP and flare-phase C5a measurements; tests whether high-CRP patients have more vigorous complement priming per Wessig 2022.
-8. **Pegloticase immune-complex vasculitis and complement** — a known pegloticase failure mode is ADA-driven immune complex vasculitis. Is complement activation the mediator? If yes, avacopan bridging could rescue pegloticase efficacy.
-9. **Uricase + avacopan combination in refractory gout** — phase 2 concept: pegloticase / SEL-212 / PRX-115 + avacopan during crystal-dissolution window. Does avacopan reduce flare frequency during the danger window?
-10. **C5aR2 in gout — decoy or effector?** Genetic (C5aR2⁻/⁻) and pharmacologic (selective C5aR2 ligands) dissection in human MSU-stimulated monocytes. Clarifies whether C5aR1-only drugs (avacopan) miss a significant signal.
-11. **Osteoclast C5aR1 and tophaceous bone erosion** — does chronic complement activation drive bone damage in tophaceous disease? If yes, avacopan might be disease-modifying beyond flare prevention.
-12. **Microbial engineering angle** — express a recombinant Factor H fragment or sCR1 (soluble complement receptor 1) in engineered koji for luminal complement regulation? Soluble CR1 is a complement regulator already in clinical trials (systemic form, TP10) — a gut-luminal version might modulate mucosal complement activation triggered by luminal crystals in severe hyperuricemia. Speculative; worth evaluating for feasibility.
-
-    **Comp-006 boundary:** The DAF/CD55 soluble ectodomain model reports lower AlphaFold confidence across the Ser/Thr-rich stalk (aa 286–353) than across SCR1–4 (aa 35–285). Its HIGH score is invalid because it mapped pLDDT confidence to solvent accessibility and did not model cleavage or survival. Removing the stalk remains a construct-design hypothesis to test directly; neither comp-006 nor comp-012 establishes protease stability. See [`wiki/daf-cd55-protease-stability-computational.md`](./daf-cd55-protease-stability-computational.md). (Mechanistic Extrapolation)
+1. **How much does C5a contribute relative to other priming inputs in human flares?** Use matched human whole-blood and synovial-fluid systems with MSU ± C5aR1 blockade ± TLR4/TNFSF14 perturbation; measure C5a, sC5b-9, IL-1β, and cell recruitment.
+2. **Which complement level carries the gout-relevant signal?** Compare receptor-, C5a-, terminal-C5-, and Factor-B-level perturbations in the same MSU system. Pharmacological agents in §7 are comparators, not treatment recommendations.
+3. **Can a natural product directly antagonize C5aR1?** Screen exact materials in a receptor-functional assay, then confirm selectivity, recovery, and exposure before any gout interpretation.
+4. **Does CFH function change an exact candidate's activity?** Run the matched CFH-replete/depleted/restored experiment in §6.3. A genotype/exposure cohort result cannot substitute for the biochemical test.
+5. **Do C5a and MAC track differently in human gout?** Collect paired, cold-chain-controlled plasma and synovial-fluid samples across flare timing.
+6. **Does CRP modify MSU-associated complement output?** Test CRP as an experimental variable before treating it as a patient stratifier.
+7. **Are intestinal and joint complement hypotheses causally connected?** Measure gut-local complement effects and systemic/joint effects separately. A gut-luminal signal advances only the intestinal hypothesis unless a gut-to-joint causal bridge is demonstrated.
+8. **Can engineered complement regulators reach and function in the intended compartment?** Qualify each exact payload–chassis–route configuration for identity, folding, stability, activity, recovery, and access before testing combinations.
 
 ---
 
@@ -799,11 +590,11 @@ Numbered so they can be lifted directly into [open-questions.md](./open-question
 
 3. An LL, Mehta P, Xu L, Turman S, Reimer T, Naiman B, Connor J, Sanjuan M, Kolbeck R, Fung M. "Complement C5a potentiates uric acid crystal-induced IL-1β production." *Eur J Immunol* 2014;44(12):3669-79. [DOI: 10.1002/eji.201444560](https://doi.org/10.1002/eji.201444560). PMID: 25229885. **Human whole-blood and monocyte study; C5a + MSU is synergistic for IL-1β via C5aR1, K⁺ efflux, Ca²⁺, cathepsin B.**
 
-4. Cumpelik A, Ankli B, Zecher D, Schifferli JA. "Neutrophil microvesicles resolve gout by inhibiting C5a-mediated priming of the inflammasome." *Ann Rheum Dis* 2016;75(6):1236-45. [DOI: 10.1136/annrheumdis-2015-207338](https://doi.org/10.1136/annrheumdis-2015-207338). PMID: 26245757. **C5a as dominant priming signal; PMN-Ecto / MerTK as endogenous resolution brake.**
+4. Cumpelik A, Ankli B, Zecher D, Schifferli JA. "Neutrophil microvesicles resolve gout by inhibiting C5a-mediated priming of the inflammasome." *Ann Rheum Dis* 2016;75(6):1236-45. [DOI: 10.1136/annrheumdis-2015-207338](https://doi.org/10.1136/annrheumdis-2015-207338). PMID: 26245757. **C5a-mediated priming in the tested system; PMN-Ecto / MerTK as an endogenous resolution brake.**
 
 5. Khameneh HJ, Ho AWS, Laudisi F, Derks H, Kandasamy M, Sivasankar B, Teng GG, Mortellaro A. "C5a Regulates IL-1β Production and Leukocyte Recruitment in a Murine Model of Monosodium Urate Crystal-Induced Peritonitis." *Front Pharmacol* 2017;8:10. [DOI: 10.3389/fphar.2017.00010](https://doi.org/10.3389/fphar.2017.00010). PMID: 28167912. **Murine validation; C5a via ROS, not transcription; C5aR antagonism ameliorates peritonitis.**
 
-6. Wessig AK, Hoffmeister L, Klingberg A, Alberts A, Pich A, Brand K, Witte T, Neumann K. "Natural antibodies and CRP drive anaphylatoxin production by urate crystals." *Sci Rep* 2022;12(1):4483. [DOI: 10.1038/s41598-022-08311-z](https://doi.org/10.1038/s41598-022-08311-z). PMID: 35296708. **IgM and CRP are both required for efficient classical-pathway MSU activation; CRP is the dominant C5a generator.**
+6. Wessig AK, Hoffmeister L, Klingberg A, Alberts A, Pich A, Brand K, Witte T, Neumann K. "Natural antibodies and CRP drive anaphylatoxin production by urate crystals." *Sci Rep* 2022;12(1):4483. [DOI: 10.1038/s41598-022-08311-z](https://doi.org/10.1038/s41598-022-08311-z). PMID: 35296708. **IgM and CRP both supported efficient classical-pathway MSU activation in the tested serum experiments; CRP generated more C5a than IgM under those assay conditions.**
 
 ### Receptor structure and function
 
@@ -817,7 +608,7 @@ Numbered so they can be lifted directly into [open-questions.md](./open-question
 
 10. Vlaar APJ, de Bruin S, Busch M, et al. "Anti-C5a antibody IFX-1 (vilobelimab) treatment versus best supportive care for patients with severe COVID-19 (PANAMO): an exploratory, open-label, phase 2 randomised controlled trial." *Lancet Rheumatol* 2020;2(12):e764-e773. [DOI: 10.1016/S2665-9913(20)30341-6](https://doi.org/10.1016/S2665-9913(20)30341-6). PMID: 33015643.
 
-11. Lim EHT, Vlaar APJ, de Bruin S, et al. "Pharmacokinetic analysis of vilobelimab, anaphylatoxin C5a and antidrug antibodies in PANAMO: a phase 3 study in critically ill, invasively mechanically ventilated COVID-19 patients." *Intensive Care Med Exp* 2023;11(1):37. [DOI: 10.1186/s40635-023-00520-8](https://doi.org/10.1186/s40635-023-00520-8). PMID: 37332066. **C5a dropped 87% by day 8; no ADAs; PK characterization.**
+11. Lim EHT, Vlaar APJ, de Bruin S, et al. "Pharmacokinetic analysis of vilobelimab, anaphylatoxin C5a and antidrug antibodies in PANAMO: a phase 3 study in critically ill, invasively mechanically ventilated COVID-19 patients." *Intensive Care Med Exp* 2023;11(1):37. [DOI: 10.1186/s40635-023-00520-8](https://doi.org/10.1186/s40635-023-00520-8). PMID: 37332066. **Clinical pharmacokinetic and biomarker record in severe COVID-19; not gout.**
 
 12. Howard JF Jr, Bresch S, Genge A, et al. "Safety and efficacy of zilucoplan in patients with generalised myasthenia gravis (RAISE): a randomised, double-blind, placebo-controlled, phase 3 study." *Lancet Neurol* 2023;22(5):395-406. [DOI: 10.1016/S1474-4422(23)00080-7](https://doi.org/10.1016/S1474-4422(23)00080-7). PMID: 37059508. **RAISE Phase 3; FDA 2023 approval.**
 
@@ -833,19 +624,33 @@ Numbered so they can be lifted directly into [open-questions.md](./open-question
 
 16. (Wessig 2022 — see entry 6; central to the classical-pathway initiation story.)
 
+### CFH and candidate-specific premises
+
+17. Schaumberg DA, Christen WG, Kozlowski P, Miller DT, Ridker PM, Zee RYL. "A prospective assessment of the Y402H variant in complement factor H, genetic variants in C-reactive protein, and risk of age-related macular degeneration." *Arch Ophthalmol* 2006;124(11):1530-1535. PMID: 16723442. **Human observational AMD evidence; not gout.**
+
+18. Laine M, Jarva H, Seitsonen S, et al. "Y402H polymorphism of complement factor H affects binding affinity to C-reactive protein." *J Immunol* 2007;178(6):3831-3836. [DOI: 10.4049/jimmunol.178.6.3831](https://doi.org/10.4049/jimmunol.178.6.3831). PMID: 17339482. **Variant-specific CFH–CRP binding evidence; not an MSU response experiment.**
+
+19. Sahu A, Rawal N, Pangburn MK. "Inhibition of complement by covalent attachment of rosmarinic acid to activated C3b." *Biochem Pharmacol* 1999;57(12):1439-1446. PMID: 10353266. **In Vitro C3b-directed premise; full primary text remains unresolved in this corpus.**
+
+Additional exact-material records used only for the candidate-specific premises in §6.3:
+
+- Zhang T, Chen DF. *J Ethnopharmacol* 2008;117(2):351-361. PMID: 18400428; PMC7126446. **In Vitro whole-pathway premise for exact luteolin material.**
+- Lu Y, Liu X, Liang X, et al. *Acta Pharm Sin B* 2018;8(2):218-227. PMID: 29719782; PMC5925397. **In Vitro depletion/rescue mapping for exact CHCP material.**
+- Yin X, Huang A, Zhang S, et al. *Molecules* 2016;21(11):1506. PMID: 27834928; PMC6273495. **In Vitro node-mapping premise; single-paper anchor.**
+
 ### Regulatory labels (non-PubMed primary sources)
 
-17. Avacopan (Tavneos) FDA label. Amgen / ChemoCentryx. Approval October 2021 for ANCA-associated vasculitis. [FDA label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/214487s000lbl.pdf).
+20. Avacopan (Tavneos) FDA label. Amgen / ChemoCentryx. Approval October 2021 for ANCA-associated vasculitis. [FDA label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/214487s000lbl.pdf).
 
-18. Vilobelimab (Gohibic) FDA EUA. InflaRx. EUA April 2023 for severe COVID-19. [FDA EUA letter](https://www.fda.gov/media/166788/download).
+21. Vilobelimab (Gohibic) FDA EUA. InflaRx. EUA April 2023 for severe COVID-19. [FDA EUA letter](https://www.fda.gov/media/166788/download).
 
-19. Zilucoplan (Zilbrysq) FDA label. UCB. Approval October 2023 for generalized myasthenia gravis.
+22. Zilucoplan (Zilbrysq) FDA label. UCB. Approval October 2023 for generalized myasthenia gravis.
 
-20. Eculizumab (Soliris) FDA label. Alexion / AstraZeneca. First approved March 2007 for PNH. [FDA label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/125166s431lbl.pdf).
+23. Eculizumab (Soliris) FDA label. Alexion / AstraZeneca. First approved March 2007 for PNH. [FDA label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/125166s431lbl.pdf).
 
-21. Ravulizumab (Ultomiris) FDA label. Alexion / AstraZeneca. First approved December 2018 for PNH.
+24. Ravulizumab (Ultomiris) FDA label. Alexion / AstraZeneca. First approved December 2018 for PNH.
 
-22. Iptacopan (Fabhalta) FDA label. Novartis. First approved December 2023 for PNH; IgA nephropathy and C3 glomerulopathy approvals 2024. [FDA label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/218276s000lbl.pdf).
+25. Iptacopan (Fabhalta) FDA label. Novartis. First approved December 2023 for PNH; IgA nephropathy and C3 glomerulopathy approvals 2024. [FDA label](https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/218276s000lbl.pdf).
 
 ### ChEMBL cross-references
 

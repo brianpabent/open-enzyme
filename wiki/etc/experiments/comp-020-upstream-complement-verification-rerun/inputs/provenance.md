@@ -1,14 +1,20 @@
 # comp-020 provenance + methodology notes
 
-## Independence statement (load-bearing)
+## Independence defect (load-bearing)
 
-This re-run was conducted explicitly without consulting comp-018 / comp-019 outputs. The agent received only the target-node list and compound-class scope; no compound names, no prior findings, no predecessor's recommendations.
+The agent did not directly inspect comp-018 / comp-019 output files, but the
+brief embedded prior exclusions, named comparators, and an empty-class
+conclusion in `target-nodes.json`. The run was therefore not independent and
+cannot be used as a context-isolated confirmation.
 
-The intent — per the brief and per CLAUDE.md §Multi-model synthesis as guard against epistemic homogenization — is to produce an independent second-opinion data point that can be compared against the predecessor to surface (a) narrative-cohesion bias in the predecessor's headline, (b) missed top-tier candidates in either scan, (c) divergent assay-format judgments.
+The intended second-opinion comparison was not achieved. The retained value is
+limited to query and source provenance that must be reverified before reuse.
 
 ## Pre-commit verification gate compliance (CLAUDE.md Rule 4)
 
-Each load-bearing IC50 / CH50 / AP50 / Ki number in [`outputs/per-node-findings.md`](../outputs/per-node-findings.md) was grep-verified against primary-paper full text in the Paperclip MCP corpus before being written to the page:
+The historical run recorded the following verification attempts. This table is
+not exhaustive, and the quarantine does not treat any listed or unlisted value
+as currently verified. Reuse requires a fresh primary-source check:
 
 | Number | Paper | Verification anchor |
 |---|---|---|
@@ -22,34 +28,37 @@ Each load-bearing IC50 / CH50 / AP50 / Ki number in [`outputs/per-node-findings.
 | Marine fucoidan ANW IC50 0.98 μg/mL | PMC4728500 | grep result line 39 |
 | Marine SJW-3 IC50 3.11 μg/mL | PMC4728500 | grep result line 23 |
 | Ligusticum LCP-I-I ICH50 26.3 ± 2.2 μg/mL | PMC6155779 | grep result line 18 |
-| Rosmarinic acid C3b 34 μM, CP 180 μM, AP 160 μM, C5conv 1500 μM | PMID 10353266 (Sahu 1999), 1761351 (Peake 1991), 3198307 (Englberger 1988) | WebSearch result snippet (Sahu 1999 Biochem Pharmacol) — primary-paper full text NOT in Paperclip corpus; numbers carry **[PRIMARY-PAPER-CONFIRMATION-PENDING]** flag |
+| Rosmarinic-acid complement records | PMID 10353266 (Sahu 1999), 1761351 (Peake 1991), 3198307 (Englberger 1988) | Search-result snippets only; quantitative values withheld and non-citable pending primary-full-text verification |
 
-The rosmarinic acid numbers are the only load-bearing values in this re-run that did not pass through Paperclip-corpus grep verification because the 1988/1991/1999 papers predate PMC's full-text coverage. They are flagged in the wiki page as `[CITATION-CONFIRMED-VIA-WEBSEARCH-SNIPPET, primary-paper full-text fetch deferred to Phase 2]`.
+The rosmarinic-acid values were extracted from search-result text rather than
+primary full text. Other values absent from this table have no retained
+verification receipt. The artifact-wide quarantine is the controlling status.
 
 ## Anti-pattern guard (DAF SCR1-4 disulfide-count incident)
 
-Every numerical claim above is sourced from a specific paper line, not synthesized from inference. The DAF SCR1-4 hallucination pattern (3 disulfides per SCR domain × 4 = 12, off-by-50% from UniProt P08174 ground truth of 8) was the trigger for CLAUDE.md Rule 4. comp-020 explicitly conforms.
+The historical run attempted line-level verification for some values, but it
+did not retain a complete verification receipt and the rosmarinic-acid values
+came from search-result text. The artifact therefore does not satisfy the
+current pre-commit gate. The DAF SCR1-4 disulfide incident motivated the gate;
+it does not retroactively validate this run.
 
 ## Multilingual scope — partial execution disclosure
 
 The CLAUDE.md §Global-multilingual research by default rule requires non-English sources to be scanned alongside PubMed. In this re-run:
 
-- **Substantively executed:** English-language scans, including English-journal publications by China-based groups (Daofeng Chen / Fudan; Quanbin Zhang / OUC). Most of the substantive TCM-derived natural-product complement-modulator work IS published in English-language journals by these groups, partially mitigating Western-research bias risk.
-- **Partially executed:** WebSearch queries against Chinese-keyword anti-complement topics returned no primary-paper IC50 numbers in the time budget; CNKI / WanFang / J-STAGE direct full-text fetches were NOT executed.
+- **Executed:** English-language scans, including English-journal publications by China-based groups.
+- **Incomplete:** Chinese-keyword web searches were attempted, but CNKI, WanFang, J-STAGE, KISS/RISS, eLIBRARY.RU, and other relevant regional primary-source searches were not completed. English publication by a regional research group does not mitigate or measure this coverage gap.
 - **Phase 2 follow-up explicitly flagged:** dedicated CNKI/WanFang Chinese-keyword query (补体抑制剂, 经典途径, 旁路途径, 凝集素途径) + J-STAGE Kampo query (補体 + 漢方医学) + KISS Korean query.
 
 This partial-execution disclosure is per CLAUDE.md §Pre-commit verification gate — flag what was NOT done, don't paper over it.
 
-## ChEMBL coverage gap — methodology
+## ChEMBL spot-check — quarantined
 
-For each top-tier compound surfaced, a ChEMBL ID was looked up via PubChem cross-reference. The following compounds returned no ChEMBL anti-complement assay records despite documented primary-literature IC50:
-
-- Rosmarinic acid (CHEMBL165102 exists; anticomplement assays NOT curated despite 30+ year primary-literature record)
-- Helicteres lignans (machicendonal, dihydrodehydrodiconiferyl alcohol) — not in ChEMBL at all
-- Bupleurum polysaccharides — polysaccharide structural class systematically absent from ChEMBL
-- Marine fucoidans — same structural exclusion
-
-The methodology is the same as comp-013 / comp-014 ChEMBL gap analysis: structurally, ChEMBL anti-complement curation is biased toward synthetic clinical-stage compounds (iptacopan, danicopan, compstatin/pegcetacoplan) and away from natural-product / polysaccharide classes.
+The historical run recorded several compound identifiers and informal
+non-retrievals, but retained neither a reproducible query census nor an
+immutable ChEMBL snapshot. It supports no coverage rate, systematic absence,
+structural-bias conclusion, or cross-target comparison. Any identifier may only
+seed a fresh dated query.
 
 ## What this re-run does NOT do
 

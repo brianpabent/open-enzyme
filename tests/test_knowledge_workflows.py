@@ -189,14 +189,15 @@ Long review-history material.
         self.assertEqual([".gitignore", "run.py"], [path.name for path in design])
         self.assertEqual(["summary.json"], [path.name for path in outputs])
 
-    def test_legacy_post_review_is_an_explicit_valid_lifecycle(self):
+    def test_quarantine_supersedes_historical_authoring_binding(self):
         comp = (
             ROOT
             / "wiki/etc/experiments/comp-020-upstream-complement-verification-rerun"
         )
         result = comp_review.verify_authoring_gates(comp)
-        self.assertEqual("legacy_post_run_review", result["status"])
+        self.assertEqual("quarantined", result["status"])
         self.assertTrue(result["valid"])
+        self.assertIn("historical authoring receipts", result["details"][0])
 
     def test_push_manifest_is_limited_to_git_tracked_artifacts(self):
         source = (ROOT / "scripts/comp-review-manifest.py").read_text()
