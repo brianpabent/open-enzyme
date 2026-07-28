@@ -360,8 +360,8 @@
     },
     "comp-042": {
       "comp_dir": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx",
-      "artifact_manifest_sha256": "85236300a802ebd6cc6f473ba7107f086170fff51743f3a4d832c372eb867af5",
-      "source_commit": "1b57f9c213d67eda156ac41119428b0a09555ea9",
+      "artifact_manifest_sha256": "4a593d03c6c859cbcd860f8c8e5af6265c8a55f59206933c003e2ec5a6283e7d",
+      "source_commit": "8c434f9d44d27a9d20915697f78bce0e90337930",
       "review_receipt": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx/reviews/push-review.md",
       "comp_verdict": "clean_with_limitations",
       "propagation_eligibility": "eligible_with_warning",
@@ -373,8 +373,8 @@
         "wiki/open-questions.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-27T12:00:59Z",
-      "cost_usd": 1.638787
+      "timestamp": "2026-07-28T12:05:44Z",
+      "cost_usd": 0.0
     },
     "comp-044": {
       "comp_dir": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime",

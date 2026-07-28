@@ -67,7 +67,7 @@ Open Enzyme remains Phase 0 — Research & Design. Wet-lab protocols are Propose
 | [§1.29](#129-cordycepin--pentostatin--substrate-matrix) | Cordycepin × pentostatin exact-configuration medium effects | In Vitro | TBD | TBD | Proposed — pilot design required | [medicinal-mushroom-complement-track](./medicinal-mushroom-complement-track.md), [medicinal-mushroom-extract-sops](./medicinal-mushroom-extract-sops.md) |
 | [§1.30](#130-houttuynia-cordata-polysaccharide-fraction-comparison-in-msu-stimulated-thp-1-macrophages--prioritization-screen) | *Houttuynia cordata* polysaccharide fraction comparison in MSU-stimulated THP-1 macrophages | In Vitro | TBD | TBD | Proposed — material and assay pilots required | [Houttuynia](./houttuynia-cordata.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md) |
 | [§1.31](#131-butyrate-culture-supernatant-hplc-uv-method-transfer-against-gc-ms) | Butyrate culture-supernatant HPLC-UV method transfer against GC-MS | In Vitro | TBD | TBD | Proposed — partner design required | [tier-2-butyrate-assay-audit-computational](./tier-2-butyrate-assay-audit-computational.md), [quantification-ladder](./quantification-ladder.md) |
-| [§1.32](#132-gsdmd-pore-self-delivery--matched-uptake-and-selectivity-probe) | GSDMD-pore matched uptake and selectivity probe | In Vitro | ~$2,000–5,000 | 4–6 | Proposed (wet-lab gated) | [gsdmd-pore-delivery-paradox](./gsdmd-pore-delivery-paradox.md), [kpv-gsdmd-pore-influx-computational](./kpv-gsdmd-pore-influx-computational.md) |
+| [§1.32](#132-gsdmd-pore-self-delivery--matched-uptake-and-selectivity-probe) | GSDMD-pore matched uptake and selectivity probe | In Vitro | TBD pending partner quote and pilot design | TBD | Proposed (wet-lab gated) | [gsdmd-pore-delivery-paradox](./gsdmd-pore-delivery-paradox.md), [kpv-gsdmd-pore-influx-computational](./kpv-gsdmd-pore-influx-computational.md) |
 | [§1.44](#144-thymulin--msu--nlrp3-in-aged-macrophages-thy-1--age-stratified-priming-to-flare-test) | Thymulin (+Zn²⁺) × MSU × NLRP3 in **aged** macrophages (THY-1) — tests whether NF-κB priming block translates to reduced crystal-driven IL-1β; age-stratified | In Vitro | Tier 1: $5–10K; full T1+T2+T3 cascade $85–130K | Tier 1: 6–8; full cascade ~11 months | Proposed | [thymulin](./thymulin.md), [nlrp3-inflammasome](./nlrp3-inflammasome.md), [nlrp3-exploit-map](./nlrp3-exploit-map.md), [peptide-gout-addendum](./peptide-gout-addendum.md) |
 | [§1.45](#145-fecal-butyrate-electrochemicalann-reproducibility-and-transfer-gate) | Fecal butyrate electrochemical/ANN reproducibility and transfer | In Vitro method | TBD | TBD | Proposed — author package and partner design required | [tier-2-butyrate-assay-audit-computational](./tier-2-butyrate-assay-audit-computational.md), [quantification-ladder](./quantification-ladder.md), [open-questions](./open-questions.md) |
 | [§1.46](#146-pth1r-agonist--abcg2-surface-trafficking-and-urate-flux) | PTH1R agonist → ABCG2 surface-trafficking and urate-flux test | In Vitro | TBD | TBD | Proposed — staged mechanism transfer | [abcg2-modulators](./abcg2-modulators.md), [open-questions](./open-questions.md) |
@@ -1275,7 +1275,7 @@ If Stage 1 reproduces the cordycepin direction and reveals a decision-relevant r
 
 ### 1.32 GSDMD-Pore Self-Delivery — Matched Uptake and Selectivity Probe
 
-**Status**: Proposed (wet-lab gated) | **Cost**: ~$2,000–5,000 | **Weeks**: 4–6 | **Phase**: 1
+**Status**: Proposed (wet-lab gated) | **Cost**: TBD pending partner quote and pilot design | **Weeks**: TBD | **Phase**: 1
 
 **Affected wiki**: [`gsdmd-pore-delivery-paradox.md`](./gsdmd-pore-delivery-paradox.md); [`kpv-gsdmd-pore-influx-computational.md`](./kpv-gsdmd-pore-influx-computational.md) (comp-042); [`kpv-peptide.md`](./kpv-peptide.md); [`disulfiram.md`](./disulfiram.md).
 
@@ -1943,7 +1943,8 @@ Independent native-enzyme path
 
 Other validation paths
 1.7: NLRP3 pathway validation ──→ 2.4: MSU arthritis model
-2.3: EPI koji model ──→ 3.3
+2.3: exact digestive-enzyme configuration in an EPI model
+3.3: wild-type fungal-enzyme timing study (independent human-method branch)
 
 Human translation only after mechanism, exposure, safety, and relevant animal gates pass
 ```

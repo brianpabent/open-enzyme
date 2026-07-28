@@ -216,7 +216,7 @@ Organized by compound, with links to supporting evidence and experiments.
 ### Quercetin
 
 - **Does quercetin's 300 nM primary 5-LOX IC50 (PMID 2066989) translate to cellular neutrophil-chemotaxis block in a gout-relevant assay?** A zileuton head-to-head could resolve this if the question becomes decision-relevant.
-- **Is quercetin + Boswellia (AKBA) redundant at 5-LOX, or complementary at IKKβ + 5-LOX?** Depends on AKBA's 5-LOX IC50 and whether the two compounds bind at the same site. ChEMBL query pending. See.
+- **Is quercetin + Boswellia (AKBA) redundant at 5-LOX, or complementary at IKKβ + 5-LOX?** Depends on AKBA's 5-LOX IC50 and whether the two compounds bind at the same site. ChEMBL query pending.
 
 ### BHB / Ketones
 
@@ -369,7 +369,7 @@ These methods support matrix-specific research directions in the source studies;
 
 ### Platform selection and thesis
 
-- **Is Open Enzyme's wiki-wide IC50 provenance practice rigorous enough?** Many IC50 values come from review papers, not primary ChEMBL-indexed assays. A written standard would prevent legacy-citation drift. See.
+- **Is Open Enzyme's wiki-wide IC50 provenance practice rigorous enough?** Many IC50 values come from review papers, not primary ChEMBL-indexed assays. A written standard would prevent legacy-citation drift.
 - **Can a source-pinned structure and synonym query recover the exact MCC950 primary assay record?** The current compact ChEMBL receipt cannot answer this; the primary paper remains the evidence source.
 - **How should natural-product discovery combine databases and literature?** Use ChEMBL for bounded activity retrieval, then independently search primary multilingual literature by mechanism, material/species, traditional formula, and pathology framing. Non-retrieval in one source is not biological absence.
 
@@ -386,9 +386,7 @@ The [Modality × Target Matrix](./modality-chokepoint-matrix.md) (2026-04-28) su
 
 ### GSDMD pore self-delivery — what survives a matched uptake test?
 
-The [GSDMD pore self-delivery paradox](./gsdmd-pore-delivery-paradox.md) remains an open physical-delivery hypothesis. comp-042 ([`kpv-gsdmd-pore-influx-computational.md`](./kpv-gsdmd-pore-influx-computational.md)) is **YELLOW-A2-unresolved**: its A1 engineering states are intra-articular GREEN, subcutaneous YELLOW, and oral RED against an extracellular cell-assay effective-concentration proxy only. Its A2 pore-only heuristic contains favorable cases—absent and low PepT1 are at or above 3× in 9/9 tested concentration × Km cases for every route, while intra-articular reaches that threshold in 2/9 moderate and 1/9 high cases—but does not include concurrent PepT1 uptake in the pore-forming cell and is not total-cell selectivity.
-
-Two empirical questions remain separate. First, do resting and MSU-activated synovial-joint macrophages have functional PepT1 (SLC15A1), and what is matched KPV accumulation with the pore on/off and PepT1 on/off? KPV transport through PepT1 is established in the epithelial and Jurkat-cell systems studied by Dalmasso et al. (**In Vitro**, [PMID 18061177](https://pubmed.ncbi.nlm.nih.gov/18061177/)); synovial-macrophage function is unmeasured. PepT1 absence or low activity would improve the modeled pore-to-healthy baseline but would not resolve KPV timing, because KPV acts upstream and GSDMD pores form downstream. Second, can an empirically prequalified transporter-orphan, membrane-impermeant tracer clear a prespecified pore-on versus pore-off uptake margin? [§1.32](./validation-experiments.md#132-gsdmd-pore-self-delivery--matched-uptake-and-selectivity-probe) tests the broader platform without making a KPV efficacy claim.
+The [GSDMD pore self-delivery paradox](./gsdmd-pore-delivery-paradox.md) remains an open physical-delivery hypothesis. [comp-042](./kpv-gsdmd-pore-influx-computational.md) finds passive KPV entry physically plausible within its declared model but does not qualify KPV or any route because synovial-macrophage PepT1 function and matched accumulation remain unmeasured. [§1.32](./validation-experiments.md#132-gsdmd-pore-self-delivery--matched-uptake-and-selectivity-probe) tests a prequalified transporter-orphan tracer in matched pore-on/off cells and uses KPV only as a PepT1-confounded uptake comparator.
 
 ### Engineered LBP chassis (independent gout-exploit track)
 
@@ -476,7 +474,7 @@ Can independently qualified UOX-only and lactoferrin-only configurations retain 
 ### Microbiota and safety at scale
 
 - **Does repeated exposure to an exact enzyme or NLRP3-intervention configuration select for specific commensals or cause dysbiosis?** Test composition, function, barrier effects, and persistence under a controlled preclinical protocol. See [cross-validation.md](./cross-validation.md).
-- **Do any commensals express uricase natively?** If yes, does engineered uricase suppress or enhance them? See.
+- **Do any commensals express uricase natively?** If yes, does engineered uricase suppress or enhance them?
 - **Which microbiome and barrier readouts should gate a living engineered-organism study?** Define configuration-specific preclinical stopping rules for community disruption, pathogen expansion, inflammation, barrier injury, persistence, shedding, and horizontal transfer before human translation.
 
 ### Combination therapy
