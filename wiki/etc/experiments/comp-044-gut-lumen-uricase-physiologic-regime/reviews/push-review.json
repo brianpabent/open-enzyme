@@ -2,25 +2,46 @@
   "schema_version": 1,
   "comp": "comp-044",
   "comp_dir": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime",
-  "source_commit": "8ddcf2c354b5478c6e31a74081f68399e2c8f1f2",
-  "artifact_manifest_sha256": "0d0148e43ade23213e148e0b97687eb5bb9b857a1f94cd1ec5d299dccca3c253",
-  "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-27T12:16:17Z",
-  "comp_verdict": "action_required",
+  "source_commit": "c2c41003be937ed88f02f6d24ad32acb8b7d8f3c",
+  "artifact_manifest_sha256": "b5c71487a4b95b7aa253f0265943d412103e4edeaf130e425ea28ba0c2768838",
+  "manifest_file_sha256": "ddcef1fbe0c4583364940869be04b46feae3b390c79cc35a3dcf48a653f48fb5",
+  "reviewer_model": "openai/gpt-5.6-sol",
+  "reviewer_identity": "/root/comp044_exact_reviewer_20260728",
+  "timestamp": "2026-07-28T22:11:58Z",
+  "comp_verdict": "clean_with_limitations",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
-  "action_required": true,
+  "action_required": false,
   "authoring_gates": {
     "status": "modern",
     "valid": true,
     "details": [
-      "pre-run design matches post-run design; current COMP artifact matches the post-run snapshot; later wiki evolution is push-reviewed"
+      "pre-run design matches post-run design",
+      "current COMP artifact matches the post-run snapshot",
+      "documented command reproduced both generated outputs byte-identically in two independent executions"
     ]
+  },
+  "execution_reproduction": {
+    "command": "python3 analyze.py",
+    "runs": 2,
+    "output_worktree_diff": false,
+    "outputs": {
+      "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/outputs/results.json": {
+        "before_sha256": "1d1b55f922f88d456df32cb2a174aee236c0ff294ffbfea93e9ef461bf66af4e",
+        "after_run_1_sha256": "1d1b55f922f88d456df32cb2a174aee236c0ff294ffbfea93e9ef461bf66af4e",
+        "after_run_2_sha256": "1d1b55f922f88d456df32cb2a174aee236c0ff294ffbfea93e9ef461bf66af4e"
+      },
+      "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/outputs/summary.md": {
+        "before_sha256": "921226d21e7cfeee10ce4ee4c57a76f9666e7386202d77620ac51a497e00bdd4",
+        "after_run_1_sha256": "921226d21e7cfeee10ce4ee4c57a76f9666e7386202d77620ac51a497e00bdd4",
+        "after_run_2_sha256": "921226d21e7cfeee10ce4ee4c57a76f9666e7386202d77620ac51a497e00bdd4"
+      }
+    }
   },
   "coverage": [
     {
       "shard_id": "shard-001",
-      "coverage_sha256": "40d1b1e43cb678ff569f86e1e4a24c2565c57e9bf06e0817a4b1e730f1901eca",
+      "coverage_sha256": "0126ed857f6ec89e4593d28602c87fe42b14351a01a08c082d8ff6abcc2f4313",
       "segments": [
         {
           "path": "wiki/etc/experiments/comp-044-gut-lumen-uricase-physiologic-regime/README.md",
@@ -82,16 +103,8 @@
           "path": "wiki/computational-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 74655,
-          "file_sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88",
-          "binary": false
-        },
-        {
-          "path": "wiki/delivery-route-matrix.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 26302,
-          "file_sha256": "ce78ac9cd0d3030bc555dfca9d095cf3032c2f964ed7e92d0431271f731ebb79",
+          "end": 72183,
+          "file_sha256": "b126f07a99832898b0478f8fb5a3c4ed5d8b676313f2fb2e383fcf807e5c3d48",
           "binary": false
         },
         {
@@ -111,43 +124,13 @@
           "binary": false
         },
         {
-          "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 2031,
-          "file_sha256": "5857fa02b00f6e9ab8f5e0cf2c41b6f003a519c313e3875a22174e4cc2225481",
-          "binary": false
-        },
-        {
-          "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/provenance.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 1093,
-          "file_sha256": "3bb98871ea5616454f64ede06f149ebedb1cfaa268639e0153f4a453e2d15b73",
-          "binary": false
-        },
-        {
-          "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 925,
-          "file_sha256": "415ccf2ce84f77f97e0604f177576bd519a23371f6b30cb197498e7ba9e6d436",
-          "binary": false
-        },
-        {
           "path": "wiki/gout-action-guide.md",
           "role": "referencing_wiki_surface",
           "start": 0,
           "end": 9931,
           "file_sha256": "c80754fcd99885a58de752d54cfda2f93eae077d86e5f246d26c57614aae1241",
           "binary": false
-        }
-      ]
-    },
-    {
-      "shard_id": "shard-002",
-      "coverage_sha256": "ab3d3154ba8c64f7330b3b5e72990d716b9a2f045bdf5f8195ff988ebbc420c0",
-      "segments": [
+        },
         {
           "path": "wiki/gout-multihop-research-program.md",
           "role": "referencing_wiki_surface",
@@ -171,68 +154,70 @@
           "end": 6854,
           "file_sha256": "9f6efb4ea1659ba4e31a39ce4969fba94a9c9ca94fd87c8e89e0d08edb49b413",
           "binary": false
-        },
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-002",
+      "coverage_sha256": "39d92677d79231882fb5e0eea9508a9c5e952c04378b42bcae404601e8526fb6",
+      "segments": [
         {
           "path": "wiki/open-questions.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 74447,
-          "file_sha256": "9ffef573b763d3471a545cb2700eee1b09910f8d906b5795344abf6e9beed09a",
+          "end": 70126,
+          "file_sha256": "707da9f27d1edb7fd3cbb00a3b8633c9e1a0e5f75faf4475a6f01040ea1c7236",
           "binary": false
         }
       ]
     },
     {
       "shard_id": "shard-003",
-      "coverage_sha256": "b96da127bfd1b33a64e19f406ca972ade8dd030fd0dc76795d60f46fe401dbc5",
+      "coverage_sha256": "e4fa4424d89c54e23526ca4b989fc95e7b8a3f0fcbfcaeaa106fdeb67b31d7d1",
       "segments": [
         {
           "path": "wiki/validation-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 0,
           "end": 180000,
-          "file_sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6",
+          "file_sha256": "51c31f6aff36d34a7573c3d46553768a7717f7fef8360a6e8420fcd6d8bf243e",
           "binary": false
         }
       ]
     },
     {
       "shard_id": "shard-004",
-      "coverage_sha256": "72acd7cf15738e5e3a68104ba96d37efd9fdd0cdbbcf7a0a29583b51dc543afa",
+      "coverage_sha256": "89ed9f6e8e6df3b1653a28173e4bdb527ea0d197d0ebe64b8b28e79525fb712e",
       "segments": [
         {
           "path": "wiki/validation-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 180000,
-          "end": 239988,
-          "file_sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6",
+          "end": 223031,
+          "file_sha256": "51c31f6aff36d34a7573c3d46553768a7717f7fef8360a6e8420fcd6d8bf243e",
           "binary": false
         }
       ]
     }
   ],
   "unsupported_binary_entries": [],
-  "projected_cost_usd": 1.607722,
-  "actual_cost_usd": 1.224744,
-  "input_tokens": 231252,
-  "output_tokens": 12958,
-  "tool_calls": 7,
-  "review_sha256": "c2ce2502aac8126ada12dbea5511ef216151895441da76ba058d84f2fea3c603",
+  "usage_accounting": "not exposed in the context-isolated delegated reviewer environment",
+  "review_sha256": "5558ed97021f49517d66680b20828ac2112ef379957a49709e86e717ba49aef7",
   "lane_adjudication": {
-    "date": "2026-07-27T12:16:17Z",
+    "date": "2026-07-28T22:11:58Z",
     "method": "exact push review",
     "new_artifact_review_performed": true,
-    "queue_action_remains_open": true,
-    "propagation_allowed_scope": "corrective local propagation of COMP-044 as a bounded invalidation of COMP-019\u2019s unconditional flat-dose robustness claim only",
-    "synthesis_allowed_scope": "use only as a negative/bounding regime audit; no replacement efficacy, dose, topology, chassis, safety, serum-urate, or genotype model",
+    "queue_action_remains_open": false,
+    "propagation_allowed_scope": "use COMP-044 only as a bounded internal-consistency audit showing that COMP-019's unconditional flat-dose classification is not robust to the tested substrate-occupancy and finite-window diagnostics",
+    "synthesis_allowed_scope": "use only the same negative boundary; preserve the biological gut-sink, possible UOX operating regimes, and UOX/PDB complementarity as unresolved",
     "forbidden_inferences": [
-      "true physiological regime identified",
-      "oral UOX dose sufficiency",
-      "serum urate or \u0394SUA prediction",
-      "genotype ordering or responder prediction",
-      "chassis/topology winner",
-      "production sufficiency or economics",
-      "peroxide/redox safety",
+      "true physiological UOX regime identified",
+      "oral UOX dose or production sufficiency",
+      "serum-urate or efficacy prediction",
+      "genotype ordering",
+      "topology or chassis selection",
+      "UOX/PDB additivity",
+      "peroxide, redox, or general safety",
       "animal or human escalation readiness",
       "clinical advice"
     ]
