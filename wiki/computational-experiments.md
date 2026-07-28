@@ -22,6 +22,20 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 ## Analyses
 
+### comp-050 — Luminal UOX Conditional Capacity + Measurement Identifiability (2026-07-28)
+
+**Question:** Which UOX capacity statements are conditionally valid, and which measurement combinations can structurally identify local UOX removal, close the local urate ledger, or attribute removal to systemic-origin urate?
+
+**Verdict:** **`METHOD_MAP_DERIVED`; biological regime `NOT_EVALUATED`.** The exact rational model derives an inflow-normalized conditional capacity identity and demonstrates that the same luminal-urate concentration trajectory can conceal different UOX-removal fluxes. It does not estimate a human regime, dose, production target, serum effect, topology, chassis, efficacy, assay performance, or safety.
+
+**Measurement result:** Initial/terminal urate plus a fully qualified product-equivalent observation conditionally identifies local UOX removal but does not close the ledger. Calibrated reaction-site capacity is a separate observation. Both source influxes, boundary fates, and qualified source-resolved product fate make every term in the declared ledger structurally reconstructible, including the unattributed residual; practical closure additionally requires that residual to pass a prespecified tolerance. When product prerequisites fail, local UOX removal and ledger closure become non-identifiable.
+
+**Informs:** [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) · [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md)
+
+**Detail:** [interpretive](./luminal-uox-break-even-identifiability-computational.md) · [experiment folder](./etc/experiments/comp-050-luminal-uox-break-even-identifiability/)
+
+---
+
 ### comp-049 — Fixed Mixed-Source TCM Evidence Qualification — GATE 1 ONLY / NOT RUN
 
 **Question:** Can four named primary animal studies and one secondary systematic review be qualified into exact-material, polarity-preserving evidence records without reproducing the invalid COMP-013 ranking model?

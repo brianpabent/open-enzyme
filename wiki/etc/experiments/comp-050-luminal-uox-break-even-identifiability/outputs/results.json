@@ -1,0 +1,1259 @@
+{
+  "schema_version": 2,
+  "experiment": "comp-050",
+  "contract_sha256": "01072ab3ec9960657ee001f36a7ee1573f69135ede6d28023e96e88d392d6602",
+  "verdict": "METHOD_MAP_DERIVED",
+  "method_statuses": {
+    "conditional_capacity_algebra": "DERIVED",
+    "concentration_only_nonidentifiability": "DEMONSTRATED",
+    "measurement_structural_audit": "COMPLETED",
+    "product_prerequisite_failure_sensitivity": "PASSED",
+    "biological_regime": "NOT_EVALUATED"
+  },
+  "definitions": {
+    "ledger_basis": "amounts integrated over one declared window",
+    "response_surface_denominator": "mean_total_local_urate_influx",
+    "local_gross_removal_fraction": "R_UOX / (I_systemic + I_other)",
+    "systemic_attributed_fraction": "R_UOX,systemic / I_systemic; requires source-resolved fate",
+    "global_minimality_claim": false
+  },
+  "equations": {
+    "integrated_local_mass_balance": "U_T - U_0 = I_systemic + I_other - R_UOX - R_reabsorption - R_outflow - R_unattributed",
+    "conditional_occupancy": "occupancy = (C/Km) / (1 + C/Km)",
+    "active_capacity_time_area": "A_time = integral(Vmax_active(t) dt) / (Vmax_initial * T)",
+    "integrated_conditional_capacity": "R_capacity = Vmax_initial * T * occupancy * A_time",
+    "conditional_capacity_boundary": "Vmax_initial/J_total_mean = q / (occupancy * A_time)",
+    "qualified_product_observations": {
+      "total_uox_removal": "R_UOX = (delta_product_inventory + recovered_product_outflow + recovered_product_sampling + quantified_product_degradation_or_scavenging - non_UOX_product_formation) / (validated_stoichiometric_yield * validated_matrix_recovery)",
+      "systemic_origin_uox_removal": "R_UOX,systemic = the same corrected product-fate equation applied to source-resolved tracer or equivalent systemic-origin product observations"
+    }
+  },
+  "product_observation_contract": {
+    "status": "ideal_assumption_only_not_empirically_evaluated",
+    "required_prerequisites": [
+      "analyte_identity_and_uox_product_specificity",
+      "validated_stoichiometric_conversion",
+      "initial_background_and_non_uox_formation_quantified",
+      "time_resolved_matrix_recovery",
+      "product_inventory_outflow_sampling_degradation_and_scavenging_fate",
+      "no_uox_or_inactive_uox_no_urate_and_matrix_controls",
+      "prespecified_recovery_mass_balance_and_interference_acceptance",
+      "source_resolved_product_fate_for_systemic_attribution"
+    ],
+    "empirically_evaluated": false
+  },
+  "checks": {
+    "required_capacity_decreases_as_substrate_to_km_increases": true,
+    "required_capacity_decreases_as_active_time_area_increases": true,
+    "required_capacity_increases_as_gross_removal_target_increases": true,
+    "constant_volume_declared": true,
+    "all_concentration_derivatives_equal_zero": true,
+    "uox_attributed_fluxes_are_not_identical": true,
+    "terminal_urate_alone_does_not_identify_local_uox_removal": true,
+    "qualified_product_conditionally_identifies_local_uox_removal": true,
+    "qualified_product_does_not_close_local_ledger": true,
+    "calibrated_capacity_combination_identifies_active_capacity": true,
+    "source_and_boundary_combination_closes_declared_ledger": true,
+    "source_resolved_product_fate_identifies_systemic_origin_uox_removal": true,
+    "product_failure_blocks_local_uox_attribution_in_every_combination": true,
+    "product_failure_blocks_systemic_origin_uox_attribution": true,
+    "product_failure_prevents_declared_ledger_closure": true,
+    "integrated_capacity_equals_influx_boundary_present": true
+  },
+  "response_surface": {
+    "row_count": 120,
+    "minimum_required_capacity_multiple_exact": "101/400",
+    "minimum_required_capacity_multiple_decimal": "0.2525",
+    "maximum_required_capacity_multiple_exact": "1010",
+    "maximum_required_capacity_multiple_decimal": "1010",
+    "scope": "conditional dimensionless capacity map; not a solved dynamic mass balance or biological target"
+  },
+  "same_concentration_counterexample": {
+    "scenario_count": 3,
+    "minimum_uox_attributed_flux_exact": "1/10",
+    "minimum_uox_attributed_flux_decimal": "0.1",
+    "maximum_uox_attributed_flux_exact": "9/10",
+    "maximum_uox_attributed_flux_decimal": "0.9",
+    "interpretation": "under the declared constant-volume rate law, the same concentration trajectory does not identify UOX removal flux"
+  },
+  "measurement_structural_audit": {
+    "unknowns": [
+      "initial_urate_inventory",
+      "terminal_urate_inventory",
+      "systemic_urate_influx",
+      "other_urate_influx",
+      "uox_urate_removal",
+      "reabsorption_loss",
+      "outflow_loss",
+      "unattributed_residual_loss",
+      "systemic_origin_uox_removal",
+      "integrated_active_capacity"
+    ],
+    "governing_equations": [
+      {
+        "name": "integrated_local_urate_mass_balance",
+        "coefficients": {
+          "initial_urate_inventory": "-1",
+          "terminal_urate_inventory": "1",
+          "systemic_urate_influx": "-1",
+          "other_urate_influx": "-1",
+          "uox_urate_removal": "1",
+          "reabsorption_loss": "1",
+          "outflow_loss": "1",
+          "unattributed_residual_loss": "1"
+        }
+      }
+    ],
+    "ideal_product_observation": [
+      {
+        "order": 1,
+        "measurement_combination": "terminal_urate_amount_only",
+        "product_observation_mode": "ideal_product_observation",
+        "direct_observations": [
+          "terminal_urate_inventory"
+        ],
+        "conditional_observations_included": [],
+        "equations": [
+          "governing:integrated_local_urate_mass_balance",
+          "direct_observation:terminal_urate_inventory"
+        ],
+        "coefficient_matrix": [
+          [
+            "-1",
+            "1",
+            "-1",
+            "-1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "unknown_order": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "systemic_urate_influx",
+          "other_urate_influx",
+          "uox_urate_removal",
+          "reabsorption_loss",
+          "outflow_loss",
+          "unattributed_residual_loss",
+          "systemic_origin_uox_removal",
+          "integrated_active_capacity"
+        ],
+        "matrix_rank": 2,
+        "targets": [
+          {
+            "target": "local_uox_removal",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              3
+            ]
+          },
+          {
+            "target": "inventory_change",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              3
+            ]
+          },
+          {
+            "target": "total_local_influx",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              3
+            ]
+          },
+          {
+            "target": "systemic_origin_uox_removal",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              3
+            ]
+          },
+          {
+            "target": "integrated_active_capacity",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              3
+            ]
+          },
+          {
+            "target": "local_ledger_closed",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              3,
+              2,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "order": 2,
+        "measurement_combination": "inventory_plus_qualified_product_equivalent",
+        "product_observation_mode": "ideal_product_observation",
+        "direct_observations": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory"
+        ],
+        "conditional_observations_included": [
+          "uox_urate_removal"
+        ],
+        "equations": [
+          "governing:integrated_local_urate_mass_balance",
+          "direct_observation:initial_urate_inventory",
+          "direct_observation:terminal_urate_inventory",
+          "conditional_product_observation:uox_urate_removal"
+        ],
+        "coefficient_matrix": [
+          [
+            "-1",
+            "1",
+            "-1",
+            "-1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "unknown_order": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "systemic_urate_influx",
+          "other_urate_influx",
+          "uox_urate_removal",
+          "reabsorption_loss",
+          "outflow_loss",
+          "unattributed_residual_loss",
+          "systemic_origin_uox_removal",
+          "integrated_active_capacity"
+        ],
+        "matrix_rank": 4,
+        "targets": [
+          {
+            "target": "local_uox_removal",
+            "status": "STRUCTURALLY_IDENTIFIABLE_UNDER_IDEAL_OBSERVATION",
+            "augmented_ranks": [
+              4
+            ]
+          },
+          {
+            "target": "inventory_change",
+            "status": "STRUCTURALLY_IDENTIFIABLE_UNDER_IDEAL_OBSERVATION",
+            "augmented_ranks": [
+              4
+            ]
+          },
+          {
+            "target": "total_local_influx",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              5
+            ]
+          },
+          {
+            "target": "systemic_origin_uox_removal",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              5
+            ]
+          },
+          {
+            "target": "integrated_active_capacity",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              5
+            ]
+          },
+          {
+            "target": "local_ledger_closed",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              4,
+              4,
+              5,
+              5,
+              4,
+              5,
+              5,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "order": 3,
+        "measurement_combination": "add_calibrated_reaction_site_capacity",
+        "product_observation_mode": "ideal_product_observation",
+        "direct_observations": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "integrated_active_capacity"
+        ],
+        "conditional_observations_included": [
+          "uox_urate_removal"
+        ],
+        "equations": [
+          "governing:integrated_local_urate_mass_balance",
+          "direct_observation:initial_urate_inventory",
+          "direct_observation:terminal_urate_inventory",
+          "direct_observation:integrated_active_capacity",
+          "conditional_product_observation:uox_urate_removal"
+        ],
+        "coefficient_matrix": [
+          [
+            "-1",
+            "1",
+            "-1",
+            "-1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "unknown_order": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "systemic_urate_influx",
+          "other_urate_influx",
+          "uox_urate_removal",
+          "reabsorption_loss",
+          "outflow_loss",
+          "unattributed_residual_loss",
+          "systemic_origin_uox_removal",
+          "integrated_active_capacity"
+        ],
+        "matrix_rank": 5,
+        "targets": [
+          {
+            "target": "local_uox_removal",
+            "status": "STRUCTURALLY_IDENTIFIABLE_UNDER_IDEAL_OBSERVATION",
+            "augmented_ranks": [
+              5
+            ]
+          },
+          {
+            "target": "inventory_change",
+            "status": "STRUCTURALLY_IDENTIFIABLE_UNDER_IDEAL_OBSERVATION",
+            "augmented_ranks": [
+              5
+            ]
+          },
+          {
+            "target": "total_local_influx",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              6
+            ]
+          },
+          {
+            "target": "systemic_origin_uox_removal",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              6
+            ]
+          },
+          {
+            "target": "integrated_active_capacity",
+            "status": "STRUCTURALLY_IDENTIFIABLE_UNDER_IDEAL_OBSERVATION",
+            "augmented_ranks": [
+              5
+            ]
+          },
+          {
+            "target": "local_ledger_closed",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              5,
+              5,
+              6,
+              6,
+              5,
+              6,
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "order": 4,
+        "measurement_combination": "add_source_and_boundary_fate",
+        "product_observation_mode": "ideal_product_observation",
+        "direct_observations": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "systemic_urate_influx",
+          "other_urate_influx",
+          "reabsorption_loss",
+          "outflow_loss",
+          "integrated_active_capacity"
+        ],
+        "conditional_observations_included": [
+          "uox_urate_removal",
+          "systemic_origin_uox_removal"
+        ],
+        "equations": [
+          "governing:integrated_local_urate_mass_balance",
+          "direct_observation:initial_urate_inventory",
+          "direct_observation:terminal_urate_inventory",
+          "direct_observation:systemic_urate_influx",
+          "direct_observation:other_urate_influx",
+          "direct_observation:reabsorption_loss",
+          "direct_observation:outflow_loss",
+          "direct_observation:integrated_active_capacity",
+          "conditional_product_observation:uox_urate_removal",
+          "conditional_product_observation:systemic_origin_uox_removal"
+        ],
+        "coefficient_matrix": [
+          [
+            "-1",
+            "1",
+            "-1",
+            "-1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        ],
+        "unknown_order": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "systemic_urate_influx",
+          "other_urate_influx",
+          "uox_urate_removal",
+          "reabsorption_loss",
+          "outflow_loss",
+          "unattributed_residual_loss",
+          "systemic_origin_uox_removal",
+          "integrated_active_capacity"
+        ],
+        "matrix_rank": 10,
+        "targets": [
+          {
+            "target": "local_uox_removal",
+            "status": "STRUCTURALLY_IDENTIFIABLE_UNDER_IDEAL_OBSERVATION",
+            "augmented_ranks": [
+              10
+            ]
+          },
+          {
+            "target": "inventory_change",
+            "status": "STRUCTURALLY_IDENTIFIABLE_UNDER_IDEAL_OBSERVATION",
+            "augmented_ranks": [
+              10
+            ]
+          },
+          {
+            "target": "total_local_influx",
+            "status": "STRUCTURALLY_IDENTIFIABLE_UNDER_IDEAL_OBSERVATION",
+            "augmented_ranks": [
+              10
+            ]
+          },
+          {
+            "target": "systemic_origin_uox_removal",
+            "status": "STRUCTURALLY_IDENTIFIABLE_UNDER_IDEAL_OBSERVATION",
+            "augmented_ranks": [
+              10
+            ]
+          },
+          {
+            "target": "integrated_active_capacity",
+            "status": "STRUCTURALLY_IDENTIFIABLE_UNDER_IDEAL_OBSERVATION",
+            "augmented_ranks": [
+              10
+            ]
+          },
+          {
+            "target": "local_ledger_closed",
+            "status": "STRUCTURALLY_IDENTIFIABLE_UNDER_IDEAL_OBSERVATION",
+            "augmented_ranks": [
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10
+            ]
+          }
+        ]
+      }
+    ],
+    "product_prerequisites_failed": [
+      {
+        "order": 1,
+        "measurement_combination": "terminal_urate_amount_only",
+        "product_observation_mode": "product_prerequisites_failed",
+        "direct_observations": [
+          "terminal_urate_inventory"
+        ],
+        "conditional_observations_included": [],
+        "equations": [
+          "governing:integrated_local_urate_mass_balance",
+          "direct_observation:terminal_urate_inventory"
+        ],
+        "coefficient_matrix": [
+          [
+            "-1",
+            "1",
+            "-1",
+            "-1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "unknown_order": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "systemic_urate_influx",
+          "other_urate_influx",
+          "uox_urate_removal",
+          "reabsorption_loss",
+          "outflow_loss",
+          "unattributed_residual_loss",
+          "systemic_origin_uox_removal",
+          "integrated_active_capacity"
+        ],
+        "matrix_rank": 2,
+        "targets": [
+          {
+            "target": "local_uox_removal",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              3
+            ]
+          },
+          {
+            "target": "inventory_change",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              3
+            ]
+          },
+          {
+            "target": "total_local_influx",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              3
+            ]
+          },
+          {
+            "target": "systemic_origin_uox_removal",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              3
+            ]
+          },
+          {
+            "target": "integrated_active_capacity",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              3
+            ]
+          },
+          {
+            "target": "local_ledger_closed",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              3,
+              2,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "order": 2,
+        "measurement_combination": "inventory_plus_qualified_product_equivalent",
+        "product_observation_mode": "product_prerequisites_failed",
+        "direct_observations": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory"
+        ],
+        "conditional_observations_included": [],
+        "equations": [
+          "governing:integrated_local_urate_mass_balance",
+          "direct_observation:initial_urate_inventory",
+          "direct_observation:terminal_urate_inventory"
+        ],
+        "coefficient_matrix": [
+          [
+            "-1",
+            "1",
+            "-1",
+            "-1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "unknown_order": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "systemic_urate_influx",
+          "other_urate_influx",
+          "uox_urate_removal",
+          "reabsorption_loss",
+          "outflow_loss",
+          "unattributed_residual_loss",
+          "systemic_origin_uox_removal",
+          "integrated_active_capacity"
+        ],
+        "matrix_rank": 3,
+        "targets": [
+          {
+            "target": "local_uox_removal",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              4
+            ]
+          },
+          {
+            "target": "inventory_change",
+            "status": "STRUCTURALLY_IDENTIFIABLE_WITHOUT_PRODUCT_OBSERVATION",
+            "augmented_ranks": [
+              3
+            ]
+          },
+          {
+            "target": "total_local_influx",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              4
+            ]
+          },
+          {
+            "target": "systemic_origin_uox_removal",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              4
+            ]
+          },
+          {
+            "target": "integrated_active_capacity",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              4
+            ]
+          },
+          {
+            "target": "local_ledger_closed",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "order": 3,
+        "measurement_combination": "add_calibrated_reaction_site_capacity",
+        "product_observation_mode": "product_prerequisites_failed",
+        "direct_observations": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "integrated_active_capacity"
+        ],
+        "conditional_observations_included": [],
+        "equations": [
+          "governing:integrated_local_urate_mass_balance",
+          "direct_observation:initial_urate_inventory",
+          "direct_observation:terminal_urate_inventory",
+          "direct_observation:integrated_active_capacity"
+        ],
+        "coefficient_matrix": [
+          [
+            "-1",
+            "1",
+            "-1",
+            "-1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "unknown_order": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "systemic_urate_influx",
+          "other_urate_influx",
+          "uox_urate_removal",
+          "reabsorption_loss",
+          "outflow_loss",
+          "unattributed_residual_loss",
+          "systemic_origin_uox_removal",
+          "integrated_active_capacity"
+        ],
+        "matrix_rank": 4,
+        "targets": [
+          {
+            "target": "local_uox_removal",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              5
+            ]
+          },
+          {
+            "target": "inventory_change",
+            "status": "STRUCTURALLY_IDENTIFIABLE_WITHOUT_PRODUCT_OBSERVATION",
+            "augmented_ranks": [
+              4
+            ]
+          },
+          {
+            "target": "total_local_influx",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              5
+            ]
+          },
+          {
+            "target": "systemic_origin_uox_removal",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              5
+            ]
+          },
+          {
+            "target": "integrated_active_capacity",
+            "status": "STRUCTURALLY_IDENTIFIABLE_WITHOUT_PRODUCT_OBSERVATION",
+            "augmented_ranks": [
+              4
+            ]
+          },
+          {
+            "target": "local_ledger_closed",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "order": 4,
+        "measurement_combination": "add_source_and_boundary_fate",
+        "product_observation_mode": "product_prerequisites_failed",
+        "direct_observations": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "systemic_urate_influx",
+          "other_urate_influx",
+          "reabsorption_loss",
+          "outflow_loss",
+          "integrated_active_capacity"
+        ],
+        "conditional_observations_included": [],
+        "equations": [
+          "governing:integrated_local_urate_mass_balance",
+          "direct_observation:initial_urate_inventory",
+          "direct_observation:terminal_urate_inventory",
+          "direct_observation:systemic_urate_influx",
+          "direct_observation:other_urate_influx",
+          "direct_observation:reabsorption_loss",
+          "direct_observation:outflow_loss",
+          "direct_observation:integrated_active_capacity"
+        ],
+        "coefficient_matrix": [
+          [
+            "-1",
+            "1",
+            "-1",
+            "-1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "unknown_order": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "systemic_urate_influx",
+          "other_urate_influx",
+          "uox_urate_removal",
+          "reabsorption_loss",
+          "outflow_loss",
+          "unattributed_residual_loss",
+          "systemic_origin_uox_removal",
+          "integrated_active_capacity"
+        ],
+        "matrix_rank": 8,
+        "targets": [
+          {
+            "target": "local_uox_removal",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              9
+            ]
+          },
+          {
+            "target": "inventory_change",
+            "status": "STRUCTURALLY_IDENTIFIABLE_WITHOUT_PRODUCT_OBSERVATION",
+            "augmented_ranks": [
+              8
+            ]
+          },
+          {
+            "target": "total_local_influx",
+            "status": "STRUCTURALLY_IDENTIFIABLE_WITHOUT_PRODUCT_OBSERVATION",
+            "augmented_ranks": [
+              8
+            ]
+          },
+          {
+            "target": "systemic_origin_uox_removal",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              9
+            ]
+          },
+          {
+            "target": "integrated_active_capacity",
+            "status": "STRUCTURALLY_IDENTIFIABLE_WITHOUT_PRODUCT_OBSERVATION",
+            "augmented_ranks": [
+              8
+            ]
+          },
+          {
+            "target": "local_ledger_closed",
+            "status": "NOT_IDENTIFIABLE",
+            "augmented_ranks": [
+              8,
+              8,
+              8,
+              8,
+              9,
+              8,
+              8,
+              9
+            ]
+          }
+        ]
+      }
+    ],
+    "scope": "exact structural identifiability under ideal noiseless observation equations; not practical identifiability or assay validation"
+  },
+  "interpretation": "The conditional capacity identity, concentration-only negative counterexample, and exact structural-identifiability audit passed their preregistered method checks. Positive identifiability is conditional on the named ideal observations; the biological regime and assay performance were not evaluated.",
+  "limitations": [
+    "The response surface holds C/Km fixed and does not solve a dynamic concentration trajectory.",
+    "No human supply, reabsorption, outflow, oxygen, residence, active-UOX, dose, or serum-urate parameter is estimated.",
+    "The qualified product and source-resolved observations are ideal assumptions, not validated assays.",
+    "Structural identifiability under noiseless equations does not establish practical identifiability, precision, recovery, or a usable biological regime.",
+    "The cumulative measurement combinations are not claimed to be globally minimal.",
+    "A practical local ledger requires a prespecified acceptance bound for unattributed residual loss.",
+    "Peroxide generation, scavenging, tissue exposure, and safety remain assigned to validation section 1.36.",
+    "A measured dynamic compartmental model remains blocked until exact-configuration and boundary-fate data exist."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "question_type": "conditional_capacity_boundary_and_exact_structural_identifiability",
+  "external_search_required_for_this_run": false,
+  "reason": "The run derives a dimensionless conditional identity, constructed counterexamples, and exact rational row-space tests; it does not retrieve or estimate biological parameters.",
+  "repository_context_checked": [
+    "comp-044 physiological-regime audit",
+    "comp-045 topology-oxygen-peroxide design",
+    "comp-046 staged purine-sink accounting",
+    "validation sections 1.33, 1.34, 1.36, and 1.37",
+    "H08 gut-lumen sink hypothesis"
+  ],
+  "future_data_requirement": "Any mapping to an exact configuration or human operating regime requires primary-source-verified or directly measured initial and terminal urate amount, local source influxes, calibrated reaction-site Vmax, Km, oxygen, residence, reabsorption, outflow, qualified product fate, and source-attribution inputs."
+}

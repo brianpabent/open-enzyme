@@ -319,6 +319,7 @@ Several oral enzyme tracks depend on the gut-lumen sink producing a clinically m
 - **ALLN-346 Study 201** ([NCT04987242](https://clinicaltrials.gov/study/NCT04987242)) completed with an actual registry enrollment of 16, but its Phase 2a abstract reports only the first 11 adults with hyperuricemia and normal renal function through stage 2 CKD. It reports a statistically significant mean serum-urate reduction versus placebo during seven days of treatment ([Terkeltaub et al. 2022](https://doi.org/10.1136/annrheumdis-2022-eular.1662)). **Study 202** ([NCT04987294](https://clinicaltrials.gov/study/NCT04987294)) enrolled 19 adults with hyperuricemia, gout, and stage 2 or 3 CKD, then terminated for company financing; ClinicalTrials.gov has no posted results. **Clinical Trial; conference-abstract and registry evidence.**
 - The comp-019 search found no ABCG2 Q141K-stratified uricase clinical outcome in its searched sources as of 2026-05-08. This bounded result does not establish that the broader or later literature is empty.
 - COMP-019's quantitative outputs are not decision-usable because its implementation omitted load-bearing physiological variables. COMP-044 is a regime audit, not a replacement efficacy model.
+- COMP-050 shows that urate concentration alone cannot identify UOX removal. Qualified product fate can conditionally identify local removal, but a dynamic ledger also requires calibrated reaction-site capacity, initial and terminal urate amount, source influxes, reabsorption, outflow, an unattributed-loss bound, and source-resolved product fate. This is a structural method result, not assay validation or a biological regime.
 
 **If no tested configuration produces reproducible luminal urate disposal at the physiological substrate prior without redox injury**, the oral UOX mechanism track is killed before a human serum-effect threshold is assigned.
 
@@ -327,9 +328,10 @@ Several oral enzyme tracks depend on the gut-lumen sink producing a clinically m
 - Search for later oral or gut-targeted UOX readouts and any genotype-stratified results.
 - Determine whether ALLN-346 cohort-level genotype data can be accessed from public records or the sponsor.
 - Complete §§1.33 and 1.36 with precommitted failure criteria before animal-dose design.
+- Collect the [comp-050 measurement set](./luminal-uox-break-even-identifiability-computational.md) before rebuilding a dynamic local or serum-effect model.
 - If preclinical evidence supports translation, use an appropriately manufactured product and an ethics/regulatory-reviewed human study with serum urate, FEUA, safety, exposure, and attribution controls. No engineered-UOX n=1 self-experiment follows from the current evidence.
 
-**Cross-references:** [cross-validation.md](./cross-validation.md), [gut-lumen-sink.md](./gut-lumen-sink.md), [uricase.md](./uricase.md), [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md).
+**Cross-references:** [cross-validation.md](./cross-validation.md), [gut-lumen-sink.md](./gut-lumen-sink.md), [uricase.md](./uricase.md), [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md), [comp-050](./luminal-uox-break-even-identifiability-computational.md).
 
 ### Oral complement-candidate route split — intestinal activity versus joint/MSU activity
 

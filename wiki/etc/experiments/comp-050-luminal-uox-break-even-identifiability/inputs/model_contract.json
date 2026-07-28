@@ -1,0 +1,206 @@
+{
+  "schema_version": 2,
+  "python_minimum": "3.11",
+  "window_and_volume_convention": {
+    "window_duration_symbol": "T",
+    "ledger_basis": "amounts integrated over one declared window",
+    "concentration_conversion": "initial and terminal concentrations must be converted to amount with measured volume and sampling/dilution correction",
+    "counterexample_volume": "constant and dimensionless"
+  },
+  "response_surface": {
+    "denominator": "mean_total_local_urate_influx",
+    "substrate_to_km_ratios": [
+      "0.01",
+      "0.03",
+      "0.1",
+      "0.3",
+      "1",
+      "3",
+      "10",
+      "100"
+    ],
+    "active_capacity_time_area_fractions": [
+      "0.1",
+      "0.25",
+      "0.5",
+      "0.75",
+      "1"
+    ],
+    "gross_removal_target_fractions": [
+      "0.25",
+      "0.5",
+      "1"
+    ]
+  },
+  "same_concentration_counterexamples": {
+    "constant_volume": true,
+    "concentration": "1",
+    "km": "1",
+    "mean_total_local_influx_rate": "1",
+    "scenarios": [
+      {
+        "name": "low_uox_high_non_uox_loss",
+        "active_uox_vmax": "0.2",
+        "non_uox_first_order_loss_rate": "0.9"
+      },
+      {
+        "name": "balanced_uox_and_non_uox_loss",
+        "active_uox_vmax": "1",
+        "non_uox_first_order_loss_rate": "0.5"
+      },
+      {
+        "name": "high_uox_low_non_uox_loss",
+        "active_uox_vmax": "1.8",
+        "non_uox_first_order_loss_rate": "0.1"
+      }
+    ]
+  },
+  "product_observation_contract": {
+    "conditional_observations": [
+      "uox_urate_removal",
+      "systemic_origin_uox_removal"
+    ],
+    "status_in_this_comp": "ideal_assumption_only_not_empirically_evaluated",
+    "equations": {
+      "total_uox_removal": "R_UOX = (delta_product_inventory + recovered_product_outflow + recovered_product_sampling + quantified_product_degradation_or_scavenging - non_UOX_product_formation) / (validated_stoichiometric_yield * validated_matrix_recovery)",
+      "systemic_origin_uox_removal": "R_UOX,systemic = the same corrected product-fate equation applied to source-resolved tracer or equivalent systemic-origin product observations"
+    },
+    "required_prerequisites": [
+      "analyte_identity_and_uox_product_specificity",
+      "validated_stoichiometric_conversion",
+      "initial_background_and_non_uox_formation_quantified",
+      "time_resolved_matrix_recovery",
+      "product_inventory_outflow_sampling_degradation_and_scavenging_fate",
+      "no_uox_or_inactive_uox_no_urate_and_matrix_controls",
+      "prespecified_recovery_mass_balance_and_interference_acceptance",
+      "source_resolved_product_fate_for_systemic_attribution"
+    ],
+    "failure_sensitivity": "remove_conditional_observation"
+  },
+  "identifiability_model": {
+    "unknowns": [
+      "initial_urate_inventory",
+      "terminal_urate_inventory",
+      "systemic_urate_influx",
+      "other_urate_influx",
+      "uox_urate_removal",
+      "reabsorption_loss",
+      "outflow_loss",
+      "unattributed_residual_loss",
+      "systemic_origin_uox_removal",
+      "integrated_active_capacity"
+    ],
+    "governing_equations": [
+      {
+        "name": "integrated_local_urate_mass_balance",
+        "coefficients": {
+          "initial_urate_inventory": "-1",
+          "terminal_urate_inventory": "1",
+          "systemic_urate_influx": "-1",
+          "other_urate_influx": "-1",
+          "uox_urate_removal": "1",
+          "reabsorption_loss": "1",
+          "outflow_loss": "1",
+          "unattributed_residual_loss": "1"
+        }
+      }
+    ],
+    "measurement_combinations": [
+      {
+        "order": 1,
+        "name": "terminal_urate_amount_only",
+        "direct_observations": [
+          "terminal_urate_inventory"
+        ],
+        "conditional_observations": []
+      },
+      {
+        "order": 2,
+        "name": "inventory_plus_qualified_product_equivalent",
+        "direct_observations": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory"
+        ],
+        "conditional_observations": [
+          "uox_urate_removal"
+        ]
+      },
+      {
+        "order": 3,
+        "name": "add_calibrated_reaction_site_capacity",
+        "direct_observations": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "integrated_active_capacity"
+        ],
+        "conditional_observations": [
+          "uox_urate_removal"
+        ]
+      },
+      {
+        "order": 4,
+        "name": "add_source_and_boundary_fate",
+        "direct_observations": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "systemic_urate_influx",
+          "other_urate_influx",
+          "reabsorption_loss",
+          "outflow_loss",
+          "integrated_active_capacity"
+        ],
+        "conditional_observations": [
+          "uox_urate_removal",
+          "systemic_origin_uox_removal"
+        ]
+      }
+    ],
+    "targets": [
+      {
+        "name": "local_uox_removal",
+        "coefficients": {
+          "uox_urate_removal": "1"
+        }
+      },
+      {
+        "name": "inventory_change",
+        "coefficients": {
+          "initial_urate_inventory": "-1",
+          "terminal_urate_inventory": "1"
+        }
+      },
+      {
+        "name": "total_local_influx",
+        "coefficients": {
+          "systemic_urate_influx": "1",
+          "other_urate_influx": "1"
+        }
+      },
+      {
+        "name": "systemic_origin_uox_removal",
+        "coefficients": {
+          "systemic_origin_uox_removal": "1"
+        }
+      },
+      {
+        "name": "integrated_active_capacity",
+        "coefficients": {
+          "integrated_active_capacity": "1"
+        }
+      },
+      {
+        "name": "local_ledger_closed",
+        "requires_identifiable_variables": [
+          "initial_urate_inventory",
+          "terminal_urate_inventory",
+          "systemic_urate_influx",
+          "other_urate_influx",
+          "uox_urate_removal",
+          "reabsorption_loss",
+          "outflow_loss",
+          "unattributed_residual_loss"
+        ]
+      }
+    ]
+  }
+}

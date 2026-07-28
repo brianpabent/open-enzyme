@@ -41,6 +41,8 @@ An engineered *S. boulardii* system demonstrated UOX expression and urate-degrad
 
 Luminal UOX may act without crossing epithelium, but it must receive substrate and oxygen in the same compartment where active enzyme persists. [COMP-044](./gut-lumen-uricase-physiologic-regime-computational.md) found that the old unconditional flat-dose classification was not robust to its tested substrate-occupancy and finite-window diagnostics; it did not identify the true physiological regime, reverse the old conclusion, or supply an efficacy model.
 
+[COMP-050](./luminal-uox-break-even-identifiability-computational.md) adds a pre-data measurement boundary: urate concentration alone cannot identify UOX removal, and protein abundance or oxygen alone cannot supply calibrated reaction-site capacity. Qualified product fate is required for local UOX attribution. Source influx, reabsorption, outflow, and source-resolved product fate make the declared ledger structurally reconstructible; the unattributed residual is calculated algebraically, and practical closure requires it to pass a prespecified tolerance. The result is a deterministic method map, not assay validation or biological evidence.
+
 The [gut-lumen sink](./gut-lumen-sink.md) page owns the mechanism and evidence. After an exact configuration is built and characterized in the relevant construct-supply work (§§1.1, 1.2, and 1.5) or supplied externally, [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) owns the matched reaction-site test. Topology nomination is limited to a controlled within-host comparison; cross-host results remain configuration-specific, and §1.36 precedes animal escalation.
 
 ## Systemic and local delivery boundary

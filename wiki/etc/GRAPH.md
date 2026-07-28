@@ -33,6 +33,7 @@ The system map routes questions to distinct tests. Evidence for one route does n
 flowchart TD
     H08["H08: luminal UOX sink remains an open hypothesis"]
     C44["comp-044: legacy unconditional flat-dose classification was not robust to the tested diagnostics"]
+    C50["comp-050: conditional capacity and measurement-identifiability map; biological regime not evaluated"]
     V["Candidate UOX sequences remain unranked"]
     CH["Candidate yeast, koji, bacterial, and cell-free configurations remain unranked"]
     B["Verified matched constructs: identity, active UOX, localization, process retention, and controls"]
@@ -42,7 +43,8 @@ flowchart TD
     REDIRECT["Stop or redesign only the failed configuration"]
 
     H08 --> C44
-    C44 -->|"audit motivates empirical closure"| G133
+    C44 --> C50
+    C50 -->|"method map defines empirical closure"| G133
     V --> B
     CH --> B
     B --> G133
@@ -55,6 +57,7 @@ flowchart TD
 ### What the edges mean
 
 - **comp-044 → §1.33:** COMP-019's unconditional flat-dose classification is not robust to COMP-044's tested substrate-occupancy and finite-window diagnostics. That result is a **Deterministic Computational Audit**, not mechanistic biological validation. Routing the unresolved substrate, oxygen, localization, and peroxide constraints into §1.33 is **Mechanistic Extrapolation**. The audit supplies no replacement ΔSUA, dose, genotype order, physiological regime, efficacy model, topology/chassis selection, production-sufficiency target, or safety conclusion.
+- **comp-050 → §1.33 and later ledger work:** concentration alone cannot identify local UOX removal. Qualified product fate and calibrated reaction-site capacity characterize local configuration performance. Source influxes, reabsorption, outflow, and source-resolved product fate make the declared ledger structurally reconstructible; the unattributed residual is then calculated algebraically and practical closure requires it to pass a prespecified tolerance. This is a deterministic structural-identifiability result, not assay validation or biological evidence.
 - **Construct build → §1.33:** protein mass, transcript, promoter strength, or activity at a high-substrate benchmark is insufficient. The decision variable is reproducible active UOX at the intended reaction site under the matched physiological test.
 - **§1.33 → §1.36:** only an exact configuration with product formation at the human-baseline prior, without a prespecified extracellular-H2O2 or viability penalty relative to matched controls, advances to the dedicated epithelial-safety test. A topology conclusion is transferable only within a controlled host comparison.
 - **§1.36 → later work:** lower H2O2 alone does not pass if barrier injury persists after urate removal. A pass supports designing the next study; it does not establish a human dose or serum-urate effect.
@@ -74,5 +77,6 @@ flowchart TD
 - [Koji UOX construct screen](../koji-construct-design.md)
 - [comp-044 physiological-regime audit](../gut-lumen-uricase-physiologic-regime-computational.md)
 - [comp-045 topology × oxygen × peroxide design](../uricase-topology-oxygen-peroxide-design-computational.md)
+- [comp-050 conditional capacity and measurement identifiability](../luminal-uox-break-even-identifiability-computational.md)
 - [Validation experiments §§1.33 and 1.36](../validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial)
 - [Open Enzyme dashboard](../../index.md)

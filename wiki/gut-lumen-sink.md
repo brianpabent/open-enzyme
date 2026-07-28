@@ -1,8 +1,8 @@
 ---
 title: "Gut-Lumen UOX Sink"
 aliases: [gut lumen, intestinal urate sink, ABCG2 secretion]
-related: [uricase.md, blood-barrier-exploits.md, abcg2-modulators.md, validation-experiments.md]
-sources: [gout-clinical-pipeline.md, gut-lumen-uricase-physiologic-regime-computational.md]
+related: [uricase.md, blood-barrier-exploits.md, abcg2-modulators.md, validation-experiments.md, luminal-uox-break-even-identifiability-computational.md]
+sources: [gout-clinical-pipeline.md, gut-lumen-uricase-physiologic-regime-computational.md, luminal-uox-break-even-identifiability-computational.md]
 ---
 
 # Gut-Lumen UOX Sink
@@ -10,6 +10,8 @@ sources: [gout-clinical-pipeline.md, gut-lumen-uricase-physiologic-regime-comput
 The hypothesis places active UOX in the intestinal lumen, where it can degrade urate delivered through intestinal transport without requiring the enzyme itself to enter blood. Orally administered ALLN-346 reduced plasma urate in urate-oxidase-deficient mice under the reported study conditions ([Pierzynowska et al. 2020](https://doi.org/10.3389/fmed.2020.569215)). Human evidence is limited to short Phase 1 exposure in healthy volunteers and a Phase 2a conference abstract reporting the first 11 participants in Study 201; Study 202 was terminated for company financing and has no posted results. No validated calculation currently supplies a human dose, serum-urate effect, genotype ordering, topology winner, or production-sufficiency claim. **Animal Model + limited Clinical Trial evidence.**
 
 [COMP-044](./gut-lumen-uricase-physiologic-regime-computational.md) shows that the earlier flat-dose calculation was not robust after adding substrate occupancy and a finite active window. It is an internal-consistency audit, not a replacement efficacy model. [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md) and [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) own the current falsification path.
+
+[COMP-050](./luminal-uox-break-even-identifiability-computational.md) shows why urate concentration alone cannot identify UOX removal. It conditionally maps qualified product fate to local removal and separates calibrated reaction-site capacity from the source and boundary-fate observations needed to reconstruct the declared ledger; practical closure also requires the algebraic residual to pass a prespecified tolerance. Its biological regime is not evaluated.
 
 ## Transport and sink hypothesis
 
@@ -50,8 +52,11 @@ The decision variable is active UOX at the reaction site over time, not protein 
 
 Measure together:
 
-- local urate concentration and replenishment;
-- UOX topology, active IU, access, release, and persistence;
+- initial and terminal urate amount with measured volume and sampling correction;
+- systemic and other urate influx, reabsorption, and outflow;
+- algebraic reconstruction of unattributed residual loss against a prespecified acceptance tolerance;
+- qualified total and source-resolved UOX product fate;
+- UOX topology, calibrated reaction-site active capacity, access, release, and persistence;
 - oxygen availability and coupling;
 - H₂O₂ generation and reaction-site scavenger capacity;
 - organism or formulation survival through production, storage, and transit;

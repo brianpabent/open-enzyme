@@ -47,7 +47,7 @@ The reusable authoring form is [track-template.md](./etc/track-template.md).
 
 | Track | Threat model | Shared dependency or local risk |
 |---|---|---|
-| Gut-lumen urate sink | [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md), [gut-lumen sink](./gut-lumen-sink.md) | Shared by oral luminal urate-degradation approaches; topology and operating regime remain decisive |
+| Gut-lumen urate sink | [H08](./hypotheses/H08-gut-lumen-sink-platform-thesis.md), [gut-lumen sink](./gut-lumen-sink.md), [comp-050 measurement map](./luminal-uox-break-even-identifiability-computational.md) | Shared by oral luminal urate-degradation approaches; topology, qualified product attribution, source/boundary-fate closure, and operating regime remain decisive |
 | Engineered koji | [Koji track](./koji-track.md) | Payload–chassis fit, secretion/activity, format, safety, and production are track-local |
 | Community fermentation | [H09](./hypotheses/H09-community-fermentation-reliability.md) | A production/distribution option for the koji track; not mission-load-bearing |
 | Engineered live biotherapeutics | [H02](./hypotheses/H02-engineered-lbp-thesis.md), [LBP chassis](./engineered-lbp-chassis.md) | Host engineering, colonization, containment, and regulatory path are track-local |

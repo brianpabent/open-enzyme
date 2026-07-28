@@ -32,14 +32,14 @@ For a patient-facing overview, see [gout.care](https://gout.care). For mechanism
 
 The central uncertainty is whether excess production, renal under-excretion, impaired intestinal export, or combinations of these mechanisms dominate in a given phenotype. Standard dietary and clinical care provide the comparator; Open Enzyme research should not substitute an unvalidated stack for that baseline.
 
-The engineered gut-lumen UOX hypothesis currently has no validated model that predicts serum-urate effect, genotype ordering, or adequate dose. [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) found that comp-019's unconditional flat-dose classification was not robust to the tested substrate-occupancy and finite-window diagnostics; it did not identify the true physiological regime or reverse the old conclusion. Comp-019's numerical outputs therefore cannot guide decisions. Q141K remains a prospective stratification variable, but it does not justify a response prediction or a fixed dose.
+The engineered gut-lumen UOX hypothesis currently has no validated model that predicts serum-urate effect, genotype ordering, or adequate dose. [comp-044](./gut-lumen-uricase-physiologic-regime-computational.md) found that comp-019's unconditional flat-dose classification was not robust to the tested substrate-occupancy and finite-window diagnostics; it did not identify the true physiological regime or reverse the old conclusion. [Comp-050](./luminal-uox-break-even-identifiability-computational.md) further shows that urate concentration alone cannot identify UOX removal and maps the qualified product, calibrated capacity, source, and boundary-fate observations needed to reconstruct the local ledger; practical closure additionally requires the algebraic unattributed residual to pass a prespecified tolerance. Comp-019's numerical outputs therefore cannot guide decisions. Q141K remains a prospective stratification variable, but it does not justify a response prediction or a fixed dose.
 
 Research gates:
 
 1. Establish the phenotype with reproducible urate, flare, medication, diet, and renal-function context rather than assuming a single cause.
 2. Separate urate-formation and urate-disposal hypotheses from acute inflammatory control.
 3. Use compound entries in the [evidence catalog](./supplements-stack.md) as candidate dossiers, not as a combined regimen.
-4. For engineered UOX, build and characterize exact configurations in the relevant construct-supply work (§§1.1, 1.2, and 1.5) or obtain an exact external configuration before §1.33. Nominate topology only within a controlled host comparison, treat cross-host results as configuration-specific, and pass §1.36 safety before animal escalation.
+4. For engineered UOX, build and characterize exact configurations in the relevant construct-supply work (§§1.1, 1.2, and 1.5) or obtain an exact external configuration before §1.33. Require qualified product fate and calibrated reaction-site capacity rather than urate concentration or protein abundance alone. Nominate topology only within a controlled host comparison, treat cross-host results as configuration-specific, and pass §1.36 safety before animal escalation.
 
 ## Androgen-elevated context
 
