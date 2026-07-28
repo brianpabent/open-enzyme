@@ -17,6 +17,19 @@ INPUT = ROOT / "inputs" / "model_contract.json"
 OUTPUTS = ROOT / "outputs"
 getcontext().prec = 40
 
+EXPECTED_PRODUCT_PREREQUISITES = frozenset(
+    {
+        "analyte_identity_and_uox_product_specificity",
+        "validated_stoichiometric_conversion",
+        "initial_background_and_non_uox_formation_quantified",
+        "time_resolved_matrix_recovery",
+        "product_inventory_outflow_sampling_degradation_and_scavenging_fate",
+        "no_uox_or_inactive_uox_no_urate_and_matrix_controls",
+        "prespecified_recovery_mass_balance_and_interference_acceptance",
+        "source_resolved_product_fate_for_systemic_attribution",
+    }
+)
+
 
 def q(value: str | int) -> Fraction:
     return Fraction(str(value))
@@ -175,8 +188,14 @@ def load_contract() -> tuple[dict, str]:
         product.get("required_prerequisites"),
         "product observation prerequisites",
     )
-    if len(prerequisites) < 7:
-        raise ValueError("product observation prerequisites are incomplete")
+    prerequisite_names = set(prerequisites)
+    if prerequisite_names != EXPECTED_PRODUCT_PREREQUISITES:
+        missing = sorted(EXPECTED_PRODUCT_PREREQUISITES - prerequisite_names)
+        unexpected = sorted(prerequisite_names - EXPECTED_PRODUCT_PREREQUISITES)
+        raise ValueError(
+            "product observation prerequisites must match the exact required set; "
+            f"missing={missing}; unexpected={unexpected}"
+        )
 
     combinations = model.get("measurement_combinations")
     if not isinstance(combinations, list) or not combinations:

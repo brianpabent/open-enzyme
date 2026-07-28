@@ -12,8 +12,8 @@
     {
       "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/analyze.py",
       "kind": "design",
-      "bytes": 35795,
-      "sha256": "aba2d90624ffa9c14a6267aaacd32cecba0b52a38aa5c1cd52fc39426deac2eb"
+      "bytes": 36675,
+      "sha256": "e7b4bcba7544bafb594139c11fe449745ea7682d22ef617c375036d5a3f45d51"
     },
     {
       "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/model_contract.json",
@@ -38,14 +38,14 @@
     {
       "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/break-even-surface.csv",
       "kind": "prior_output",
-      "bytes": 10663,
-      "sha256": "70f4dee0d39eb4e29355eb595bd77c4139cac2283a8b4dcd75e8fca37d15622c"
+      "bytes": 10542,
+      "sha256": "9a6dd92ac07fb26e094c19f42ac782ecb7109f67840ea070efc0b05bd37b63ff"
     },
     {
       "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/measurement-identifiability.csv",
       "kind": "prior_output",
-      "bytes": 6261,
-      "sha256": "a487edca3ce72a2570545096e0af6524294921f7a08df43b0c62a656b4894845"
+      "bytes": 6212,
+      "sha256": "712efdea7f5cc5c68ecf7597764c1184ee715a0c64f8e47adf500fd8fa26c2bf"
     },
     {
       "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/results.json",
@@ -56,8 +56,8 @@
     {
       "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/same-concentration-counterexamples.csv",
       "kind": "prior_output",
-      "bytes": 489,
-      "sha256": "d3d2ce78d719039cd7dce311b6a66a04b15b7e63aff5be43bcde316687961af6"
+      "bytes": 485,
+      "sha256": "8bbe8328515ccce51b2793a9dc836a7409a17a1e0b1a18520ffb03ca541530ef"
     },
     {
       "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/summary.md",
@@ -66,5 +66,5 @@
       "sha256": "4b130e45f5f0b862c905834e25fb0bd7bfa1a14f1b5409ae3e04c1adbe343fd5"
     }
   ],
-  "manifest_sha256": "05f0e0776644113abe8c70fc174b50d5b4253d43ae197cad5b76ca5dcc0a52d5"
+  "manifest_sha256": "b4170647352adbc8b289a4d858485021ff8344cf8709c1b9098797abc3356808"
 }

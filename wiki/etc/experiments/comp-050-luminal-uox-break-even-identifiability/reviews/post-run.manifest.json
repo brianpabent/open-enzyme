@@ -12,8 +12,8 @@
     {
       "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/analyze.py",
       "kind": "design",
-      "bytes": 35795,
-      "sha256": "aba2d90624ffa9c14a6267aaacd32cecba0b52a38aa5c1cd52fc39426deac2eb"
+      "bytes": 36675,
+      "sha256": "e7b4bcba7544bafb594139c11fe449745ea7682d22ef617c375036d5a3f45d51"
     },
     {
       "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/model_contract.json",
@@ -137,5 +137,5 @@
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "a5c470383a28aa8f5134949440657eafc1957b4cee1130b9a37425e7c652bb80"
+  "manifest_sha256": "1d44192f5181aa8c701b02248676a8d39d20a5db7994a2b714026aa080eaf08d"
 }
