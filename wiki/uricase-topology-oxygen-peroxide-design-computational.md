@@ -10,7 +10,7 @@ related:
 sources:
   - "Gao et al. 2025 — PMID 41038159; PMCID PMC12629798"
   - "Zhao et al. 2022 — PMID 35491895; PMCID PMC9067508"
-  - "Li et al. 2023 — PMCID PMC10242094"
+  - "Gencer et al. 2023 — PMID 37288353; PMCID PMC10242094"
   - "Miyazaki et al. 2025 — PMID 40033341; PMCID PMC11877951"
 ---
 
@@ -30,16 +30,16 @@ COMP-045 contains no biological measurements. It does not advance, eliminate, or
 
 Gao/PULSE provides **In Vitro** activity precedents at 250 µM urate for three exact EcN configurations: intracellular smUOX+YgfU, LamB-smUOX, and InaK-N-smUOX. The paper also compared each topology with the same joint KatG+VHb module under its low-oxygen method. It did not test KatG-only or VHb-only UOX configurations.
 
-Zhao provides a **related In Vitro** intracellular PucL-mutant/PucM+YgfU+KatG+VHb precedent, not the exact PULSE smUOX construct. Li provides a related intracellular PucLM+YgfU precedent without KatG or VHb. Neither related configuration is relabeled as exact PULSE evidence.
+Zhao provides a **related In Vitro** intracellular PucL-mutant/PucM+YgfU+KatG+VHb precedent, not the exact PULSE smUOX construct. Gencer provides a related intracellular PucLM+YgfU precedent without KatG or VHb. Neither related configuration is relabeled as exact PULSE evidence.
 
 For LamB and InaK-N UOX, the joint construct is direct whole-configuration evidence, but intracellular KatG is not located at the extracellular UOX reaction site. The reported comparison therefore does not establish extracellular peroxide closure. InaK-N fusion and whole-cell activity were reported, but a dedicated surface-accessibility localization assay was not.
 
-No cited primary source establishes secreted active UOX in *A. oryzae*. Both koji rows are proposed configurations. Native intracellular catalase is host background, not a separate engineered arm and not evidence that peroxide is controlled where secreted UOX reacts.
+No primary source in the bounded COMP-045 search establishes secreted active UOX in *A. oryzae*. Both koji rows are proposed configuration classes. Host-catalase localization and activity remain unresolved for the eventual strain and culture condition; no host-catalase state establishes peroxide control at a secreted-UOX reaction site.
 
 ## Substrate regimes
 
 - **0 µM:** matched no-urate control.
-- **0.59 µM:** rounded direct measurement from terminal-ileal fluid in a 34-patient balloon-enteroscopy cohort; not a jejunal or healthy-population baseline and not tested in the cited UOX configurations.
+- **0.59 µM:** rounded direct human observational measurement from terminal-ileal fluid in a 34-patient clinically indicated balloon-enteroscopy cohort; not a Clinical Trial, not a jejunal or healthy-population baseline, and not tested in the cited UOX configurations.
 - **50 µM:** sensitivity scenario only.
 - **250 µM:** lowest reported PULSE topology-assay concentration.
 
@@ -47,16 +47,16 @@ PULSE used filled, sealed tubes without a reported dissolved-oxygen target. Zhao
 
 ## Candidate design
 
-Schema 2 defines:
+Schema 3 defines:
 
-- 18 unique physical configurations and 20 block assignments;
-- 14 preregistered same-block contrasts;
+- 18 candidate configuration classes and 20 block assignments;
+- 16 preregistered same-block contrasts, including both directions of the catalase × VHb simple comparisons for LamB and InaK-N;
 - active UOX plus an otherwise support-module-matched inactive-UOX control at every concentration;
-- three biological runs × two measured oxygen contexts × two blocks;
+- three provisional biological-run slots × two planned oxygen contexts × two blocks; actual dissolved-oxygen targets must later be predeclared and measured;
 - 12 full 96-well plates with deterministic SHA-256 allocation;
-- urate, pathway product, H₂O₂, dissolved oxygen, viability, and localization readouts.
+- chemical, dissolved-oxygen, viability, and UOX/KatG/VHb/reaction-site-catalase qualification readouts.
 
-Two LamB comparator configurations repeat across blocks so the KatG/VHb and proposed reaction-site-catalase contrasts each retain a within-block comparator. The mixed three-topology PULSE-KV composition is a proposed cross-plate anchor, not a published in-vitro positive control.
+Two LamB comparator configurations repeat across blocks so the KatG/VHb and proposed reaction-site-catalase contrasts each retain a within-block comparator. The three-run value fills a deterministic plate template; it is not a power or precision claim. The mixed three-topology PULSE-KV composition is a proposed cross-plate anchor, not a published in-vitro positive control.
 
 > **Research conjecture — What drives the joint-module benefit outside the cell?**{ .research-conjecture-label }
 >
@@ -70,7 +70,7 @@ Two LamB comparator configurations repeat across blocks so the KatG/VHb and prop
 
 ## Wet-lab readiness
 
-`BLOCKED_PENDING_EXACT_CONTROL_AND_SAMPLING_QUALIFICATION`
+`BLOCKED_PENDING_EXACT_CONTROL_SAMPLING_AND_ANALYSIS_QUALIFICATION`
 
 Before execution, bind and review:
 
@@ -79,7 +79,9 @@ Before execution, bind and review:
 - chassis and mixed-anchor stocks plus cell normalization;
 - dissolved-oxygen targets;
 - sampling times, volume, aliquoting, and destructive-assay compatibility;
-- sensitivity and quantification limits at 0.59 µM.
+- sensitivity and quantification limits at 0.59 µM;
+- exact UOX, KatG, VHb, reaction-site-catalase, topology, and oxygen qualification results;
+- a preregistered estimand, effect metric, biological threshold, power or precision rationale and run count, model, multiplicity treatment, exclusion/missing-data/assay-failure rules, and sensitivity rules.
 
 The template must be regenerated under a new exact lifecycle if the qualified subset, contrasts, concentrations, blocks, or controls change.
 

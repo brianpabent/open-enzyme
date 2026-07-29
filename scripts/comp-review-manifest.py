@@ -36,6 +36,17 @@ def repo_path(raw: str) -> Path:
     return path
 
 
+def stored_repo_path(raw: str) -> Path:
+    """Resolve a repository-relative path read from Git or a manifest."""
+    path = Path(raw)
+    if not path.is_absolute():
+        path = ROOT / path
+    path = path.resolve()
+    if path != ROOT and ROOT not in path.parents:
+        raise SystemExit(f"Path escapes repository: {raw}")
+    return path
+
+
 def relative(path: Path) -> str:
     return path.relative_to(ROOT).as_posix()
 
@@ -283,7 +294,7 @@ def referencing_wiki_files(identifier: str, comp_dir: Path) -> list[Path]:
     )
     paths: list[Path] = []
     for raw in result.stdout.splitlines():
-        path = repo_path(raw)
+        path = stored_repo_path(raw)
         rel = path.relative_to(ROOT)
         if (
             path.is_file()
@@ -308,7 +319,7 @@ def post_run_proposed_files(comp_dir: Path) -> list[Path]:
     for item in document.get("files", []):
         if item.get("kind") != "proposed_update":
             continue
-        path = repo_path(str(item.get("path", "")))
+        path = stored_repo_path(str(item.get("path", "")))
         if (
             path.is_file()
             and "reviews" not in path.relative_to(ROOT).parts
@@ -432,7 +443,7 @@ def check(args: argparse.Namespace) -> None:
     phase = document.get("phase")
     if phase not in {"pre", "post", "push"}:
         errors.append(f"invalid phase: {phase!r}")
-    comp_dir = repo_path(str(document.get("comp_dir", "")))
+    comp_dir = stored_repo_path(str(document.get("comp_dir", "")))
     current_design, current_outputs = comp_files(comp_dir, tracked_only=phase == "push")
 
     recorded_files = list(document.get("files", []))
@@ -456,7 +467,7 @@ def check(args: argparse.Namespace) -> None:
     ]
     current_proposed_entries: list[dict[str, object]] = []
     for item in recorded_proposed:
-        path = repo_path(str(item.get("path", "")))
+        path = stored_repo_path(str(item.get("path", "")))
         if path.is_file():
             current_proposed_entries.append(entry(path, "proposed_update"))
     errors.extend(compare_entries(recorded_design, current_design_entries, "design file"))

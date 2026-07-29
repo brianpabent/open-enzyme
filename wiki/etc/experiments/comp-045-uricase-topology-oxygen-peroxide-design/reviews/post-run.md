@@ -1,145 +1,136 @@
 ACTION_REQUIRED: no
-REVIEWED_SNAPSHOT: d1d96c28c6480e9bbd9b0daa2586ba1c0625284a0390aea88029a08f4ae5840e
+REVIEWED_SNAPSHOT: 08d535b1e2047a6b85f1dc4ed9e85061313190d1fc49c8374ea363a0508f1bc2
 
 # Independent comp review — comp-045
 
 ## Reviewed snapshot
 
-Context-isolated Gate 2 review of the complete canonical post-run manifest. The manifest check returned `d1d96c28c6480e9bbd9b0daa2586ba1c0625284a0390aea88029a08f4ae5840e`.
+Reviewer `comp045_gate2_r3_20260729`; context-isolated Gate 2 review of the complete canonical post-run manifest.
 
-All 20 manifest entries were inspected completely. The 640 KB results artifact was traversed programmatically through all 10,908 scalar leaves and independently audited for configuration, assignment, contrast, control, allocation, and plate-map consistency.
+The canonical digest recomputed exactly. All 14 manifest entries matched their recorded SHA-256 and byte size. The five Gate-1 design entries are exactly equal to the Gate-2 design entries. The repository remained unchanged.
 
 ## Bottom-line verdict
 
-Clean with declared limitations. COMP-045 is a deterministic, blocked experimental-design artifact—not a biological evaluation.
+Clean with declared limitations.
 
-The artifact, generated summary, and proposed corpus surfaces consistently preserve:
+COMP-045 is an internally valid, deterministic candidate-layout artifact. It contains no biological measurements, no inferential analysis, and no topology or chassis winner. Its only biological verdict is `NOT_EVALUATED`; wet-lab readiness and the statistical decision contract remain explicitly blocked.
 
-- `CANDIDATE_LAYOUT_GENERATED`
-- biological verdict `NOT_EVALUATED`
-- wet-lab readiness `BLOCKED_PENDING_EXACT_CONTROL_AND_SAMPLING_QUALIFICATION`
-- no topology or chassis winner
-- no isolated KatG- or VHb-effect attribution
-- exact Gao/PULSE precedents separated from related Li/Zhao configurations
-- the terminal-ileal clinical-cohort boundary for 0.59 µM
+The two requested narrative corrections are closed:
 
-The five earlier queue corrections are closed in the reviewed snapshot.
+- *A. oryzae* host-catalase localization and activity remain unresolved. No host-catalase state establishes peroxide closure at a secreted-UOX reaction site. The separate engineered co-secreted-catalase row remains only a proposed configuration.
+- `microoxic_screen` and `oxic_screen` are planned layout slots. Their actual dissolved-oxygen targets must later be predeclared and measured; no inspected surface says COMP-045 measured them.
 
 ## Implementation and constraint closure
 
-The five Gate 1 design-file hashes exactly equal their Gate 2 counterparts. The implementation was inspected but not executed.
+The computation fits its stated question: it validates evidence categories, configuration identities, contrasts, controls, and deterministic plate allocation. It does not substitute nominal configuration capacity for reaction rate or claim to model biological performance.
 
 Independent reconstruction confirmed:
 
-- 18 unique physical configurations
-- 20 block assignments across two balanced blocks
-- 14 preregistered same-block contrasts
-- three biological runs × two oxygen contexts × two blocks = 12 plates
-- 96 used and zero empty wells per plate; 1,152 wells total
-- 40 active-UOX samples, 40 matched inactive-UOX controls, and 16 shared anchors per plate
-- 24 wells at each of 0, 0.59, 50, and 250 µM per plate
-- every declared contrast retains its comparator in the same block
-- stable SHA-256 allocation order reproduces every recorded well assignment
+- 18 candidate configuration classes and 20 block assignments;
+- two balanced ten-assignment blocks, with only the two declared LamB comparators repeated;
+- 16 faithful same-block contrasts;
+- for both LamB and InaK-N, catalase effects at VHb absent/present and VHb effects at catalase absent/present remain separately representable; no interaction estimand is implied;
+- three provisional run slots × two planned oxygen contexts × two blocks = 12 plates;
+- 96 wells per plate and 1,152 traversed allocations: 480 active-UOX, 480 matched inactive-UOX, and 192 shared-anchor wells;
+- exact reconstruction of every well identity, metadata field, and SHA-256 allocation order.
 
-The code cannot emit biological efficacy, topology ranking, oxygen sufficiency, peroxide closure, dose, or chassis superiority. Its physical and assay uncertainties remain explicit wet-lab blockers.
+The configuration table and all 36 configuration-by-oxygen evidence rows were independently reconstructed without mismatch. All oxygen rows retain `not_exactly_matched_wet_lab_do_target_must_be_predeclared`.
+
+Reaction closure is appropriately absent. Urate, pathway product, peroxide, dissolved oxygen, viability, expression/activity/localization, finite exposure, exact sampling, assay compatibility, and reaction-site qualification remain future measurements or blockers. The three run slots are explicitly plate occupancy, not power or precision.
+
+After exact Gate-1 binding was verified, `analyze.py` was executed twice with outputs redirected to temporary directories. Both runs produced:
+
+- `results.json`: `ef665222ae461cab05c4feeecf6fdd343b30e67a5fe36f3e2a9d2bafde5d56e5`
+- `summary.md`: `b5fa823b6ca121d2552bc9d5afb1dcc67982b43474b4763560f916ded9df5848`
+
+These hashes were identical across runs and matched the post manifest. The bound repository files remained unchanged.
 
 ## Summary-fidelity audit
 
-`outputs/summary.md` faithfully represents `outputs/results.json`.
+README, generated outputs, interpretive page, dashboard, computational index, H08, and validation §1.33 agree on:
 
-The generated and reader-facing surfaces agree that six configurations reproduce exact Gao baseline or joint KatG+VHb signatures; ten are proposed configurations derived from published topology; and two koji configurations have no cited direct UOX precedent.
+- `CANDIDATE_LAYOUT_GENERATED`;
+- biological verdict `NOT_EVALUATED`;
+- 18 classes, 20 assignments, 16 contrasts, and 12 plates;
+- three provisional—not powered—run slots;
+- two planned oxygen contexts requiring later predeclared and measured DO targets;
+- unresolved statistical analysis, exact controls, sampling, and qualification;
+- no isolated KatG- or VHb-effect attribution;
+- no extracellular peroxide closure from intracellular KatG;
+- no direct *A. oryzae* UOX precedent;
+- no topology, chassis, efficacy, safety, dose, or biological winner.
 
-KatG-only and VHb-only rows—including intracellular rows—are consistently classified as proposed isolation tests from joint-module precedent. Direct evidence remains attached only to exact whole configurations and source regimes.
+H08 correctly distinguishes the acute-mouse non-KV mixture from the short diet-induced-rat KV mixture. The provenance additionally keeps the 30-day rat non-KV regimen distinct.
 
-The earlier “indirect empirical support” vocabulary is absent from the corrected artifact and affected reader-facing pages.
+The manifest-path fix in `comp-review-manifest.py` correctly resolves stored repository-relative paths against the repository root rather than the caller’s working directory. Its targeted regression test passed from a COMP directory, and the post snapshot still matched afterward.
 
 ## Reader-facing ownership audit
 
-Ownership is coherent:
+The focused COMP page owns the design result, evidence boundaries, unresolved exposure constraints, falsification boundary, and mechanism-level conjecture. The computational index and root dashboard provide compact discovery entries. H08 owns the platform hypothesis, and validation §1.33 owns the future empirical protocol and decision rule.
 
-- The COMP-045 interpretive page owns the design result, evidence boundary, and conjecture.
-- `computational-experiments.md` provides the compact design-only index entry.
-- Validation §1.33 owns the empirical decision rule and restricts topology nomination to controlled within-host comparisons.
-- H08 and program/delivery pages route the design into the larger gut-lumen-sink program without promoting a winner.
-- Yeast and blood-barrier pages preserve configuration- and compartment-specific limits.
-- The index advertises only a blocked candidate layout.
-- The cross-vendor paper uses COMP-019/044 as its quantitative case and does not convert COMP-045 into biological evidence.
+No cross-track ranking was inserted into the focused page. No editorial-history narrative, personalized treatment instruction, or unsupported wet-lab-readiness claim appears.
 
 ## Conjecture preservation audit
 
-The COMP-045 interpretive page contains a valid Research Conjecture with all required elements:
+The Research Conjecture on the interpretive page remains correctly structured and useful. It preserves the untested possibility that the reported joint-module difference reflects VHb support, intracellular ROS handling, or both, rather than extracellular peroxide closure.
 
-- grounded, evidence-tagged premises;
-- an explicit novel leap with direct evidence stated as absent;
-- decision relevance;
-- a discriminating observation.
-
-It preserves the useful possibility that the joint-module difference reflects VHb support, intracellular ROS handling, or both, while forbidding extracellular peroxide-closure or isolated-component attribution.
+Its premises are evidence-tagged, direct evidence separating the alternatives is explicitly absent, and the discriminating observation is defined. COMP-045 kills no biological claim because it evaluates no biological outcomes. A later result would remain bounded to its exact construct × concentration × oxygen × control regime.
 
 ## Generated-output and proposed-update inventory
 
 | Path | Manifest kind | Inspected completely? | Finding |
 |---|---|---:|---|
-| `.../README.md` | design | Yes | Scope, counts, blockers, and non-winner boundary are faithful. |
-| `.../analyze.py` | design | Yes | Fail-closed categorical contracts and deterministic layout; not executed. |
-| `.../inputs/design_factors.json` | design | Yes | Exact 18-configuration/20-assignment design and corrected evidence vocabulary. |
-| `.../inputs/provenance.md` | design | Yes | Exact/related source separation and isolated-module limits are explicit. |
-| `.../inputs/query-strategy.json` | design | Yes | Search scope and negative-evidence boundaries are documented. |
-| `.../outputs/results.json` | generated_output | Yes, programmatically | Complete structural and allocation audit passed. |
-| `.../outputs/summary.md` | generated_output | Yes | Faithful to results and declares blocked, unevaluated status. |
-| `index.md` | proposed_update | Yes | Design-only blocked layout; no ranking. |
-| `papers/cross-vendor-heterogeneity-guard/draft.md` | proposed_update | Yes | COMP-045 implications remain bounded. |
-| `wiki/blood-barrier.md` | proposed_update | Yes | Compartment and delivery limits preserved. |
-| `wiki/computational-experiments.md` | proposed_update | Yes | Correct disposition, counts, attribution, and blockers. |
-| `wiki/delivery-route-matrix.md` | proposed_update | Yes | Routes to empirical gate without selecting a route or chassis. |
-| `wiki/engineered-yeast-uricase-proposal.md` | proposed_update | Yes | Yeast claims remain configuration-specific and prospective. |
-| `wiki/gout-kill-chain-delivery-routes.md` | proposed_update | Yes | Construct supply precedes §1.33; no cross-host winner. |
-| `wiki/gout-multihop-research-program.md` | proposed_update | Yes | Joint-module precedent does not become human-optimal architecture. |
-| `wiki/gut-lumen-uricase-physiologic-regime-computational.md` | proposed_update | Yes | 0.59 µM boundary and COMP-044 limits preserved. |
-| `wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md` | proposed_update | Yes | COMP-045 remains a blocked design gate with no biological result. |
-| `wiki/saccharomyces-cerevisiae.md` | proposed_update | Yes | Chassis-specific evidence and empirical-gate boundary preserved. |
-| `wiki/uricase-topology-oxygen-peroxide-design-computational.md` | proposed_update | Yes | Canonical interpretation and conjecture are faithful. |
-| `wiki/validation-experiments.md` | proposed_update | Yes | §1.33 correctly owns the exact-configuration empirical decision rule. |
+| `wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/README.md` | design | Yes | Faithful design-only scope, provisional occupancy, blockers, and forbidden inferences. |
+| `wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/analyze.py` | design | Yes | Fail-closed validation, internal Gate-1 enforcement, deterministic generation, no biological scoring. |
+| `wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/design_factors.json` | design | Yes | Exact schema-3 inventory, 16 contrasts, unresolved host catalase, planned oxygen slots, blocked analysis. |
+| `wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/provenance.md` | design | Yes | Primary-source identities, locators, modalities, and regime distinctions are faithful. |
+| `wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/query-strategy.json` | design | Yes | Negative finding remains bounded to the declared retrievals. |
+| `wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/outputs/results.json` | generated output | Yes | All 9,960 scalar leaves and 1,152 allocations traversed; exact reconstruction passed. |
+| `wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/outputs/summary.md` | generated output | Yes | Faithful compact rendering of results, blockers, and limitations. |
+| `index.md` | proposed update | Yes | Schema-3 design-only entry; no powered count or ranking claim. |
+| `scripts/comp-review-manifest.py` | proposed update | Yes | Stored-path resolution repair is scoped and correct. |
+| `tests/test_knowledge_workflows.py` | proposed update | Yes | Regression covers checking a repository-relative manifest from a COMP working directory; test passed. |
+| `wiki/computational-experiments.md` | proposed update | Yes | Correct 16 contrasts, provisional slots, planned oxygen contexts, and analysis blockers. |
+| `wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md` | proposed update | Yes | Acute-mouse non-KV and short-rat KV regimes remain distinct; no component effect inferred. |
+| `wiki/uricase-topology-oxygen-peroxide-design-computational.md` | proposed update | Yes | Correct evidence owner, host-catalase boundary, oxygen wording, blocked analysis, and conjecture. |
+| `wiki/validation-experiments.md` | proposed update | Yes | Three slots treated only as occupancy; future batch count and analysis require preregistration. |
 
 ## Load-bearing verification table
 
 | Claim or parameter | Artifact location | Implementation use | Provenance status | Verdict |
 |---|---|---|---|---|
-| Canonical Gate 2 digest | Post-run manifest | Exact-snapshot binding | Manifest checker | Pass |
-| Gate 1 design frozen | Pre/post manifests | Lifecycle validity | All five design SHA-256 values equal | Pass |
-| 18 configurations / 20 assignments | Inputs, results, summary | Candidate design | Independently reconstructed | Pass |
-| 14 same-block contrasts | Input mapping, code, results | Supported comparisons | Every test/comparator pair verified | Pass |
-| 12 plates / 96 wells each | Code and plate maps | Physical layout | All 1,152 assignments audited | Pass |
-| 0.59 µM | Provenance, inputs, outputs, wiki | Physiological-prior arm | Median terminal-ileal fluid measurement from a 34-patient balloon-enteroscopy cohort; not healthy-population baseline or UOX result | Pass |
-| Gao/PULSE exact configurations | Provenance and grading | Exact precedent classification | Baseline and joint KatG+VHb whole configurations only | Pass |
-| Li/Zhao configurations | Provenance and grading | Related precedent only | Never relabeled exact PULSE evidence | Pass |
-| KatG-only/VHb-only arms | Grading, results, summary | Isolation tests | Joint-module precedent; isolated effects unresolved | Pass |
-| Koji-secreted UOX | Inputs and outputs | Proposed rows | No cited direct UOX precedent | Pass |
-| Disposition and readiness | Results, summary, corpus | Prevent result inflation | Design generated; biological evaluation absent; wet-lab blocked | Pass |
-| Research Conjecture | Interpretive page | Preserve testable implication | Complete required structure and explicit evidence gap | Pass |
+| Canonical post digest | Post manifest | Exact Gate-2 binding | Independently recomputed | Pass |
+| Gate-1/Gate-2 design equality | Both manifests | Prevent post-run design drift | All five entries identical | Pass |
+| Deterministic outputs | Code and outputs | Reproduction contract | Two temporary executions matched each other and manifest | Pass |
+| 18 classes / 20 assignments / 16 contrasts | Inputs and results | Layout inventory | Independently reconstructed | Pass |
+| 12 × 96-well plates | Results | Physical allocation | All 1,152 wells reconstructed | Pass |
+| Three run slots | Inputs, outputs, wiki | Plate occupancy only | Explicitly provisional; analysis blocked | Pass |
+| Two oxygen contexts | Inputs, evidence matrix, wiki | Planned wet-lab slots | Actual targets remain unchosen and unmeasured | Pass |
+| Gao exact PULSE configurations | Provenance and exact table | Whole-configuration precedent | Primary full text supports three 250 µM topology assays and joint KatG+VHb comparisons | Pass |
+| Zhao restricted-DO related precedent | Provenance and related table | Related joint-module evidence | Primary full text reports joint PucL/PucM-YgfU-KatG-VHb at ~15% normal DO | Pass |
+| Gencer related precedent | Provenance and related table | Related PucLM+YgfU evidence | Primary full text supports 250 µM M9/FaSSIF-V2 work; not exact PULSE | Pass |
+| 0.59 µM terminal-ileal prior | Provenance and concentration arm | Human-compartment design regime | 99.5 pg/µL in 34 clinically indicated patients; supplement confirms terminal ileum | Pass |
+| Urate conversion | Provenance | Convert median and IQR | PubChem CID 1175 gives 168.11 g/mol; arithmetic reproduced | Pass |
+| *A. oryzae* host catalase | Inputs, results, summary, wiki | Peroxide-status boundary | Location/activity unresolved; no host reaction-site closure | Pass |
+| H08 animal-regime distinction | H08 and provenance | Preserve source modality | Acute mouse non-KV, short rat KV, and long rat non-KV remain distinct | Pass |
 
 ## Affected wiki pages
 
-The manifest correctly includes the active evidence home and direct reader-facing dependents: `index.md`, the computational index, delivery matrix, yeast proposal and concept page, kill-chain and multihop program pages, COMP-044 interpretation, H08, blood-barrier page, validation catalog, COMP-045 interpretive page, and the cross-vendor draft.
-
-No active stale isolated-module attribution or topology/chassis winner was found in the bounded corpus audit.
+- `wiki/uricase-topology-oxygen-peroxide-design-computational.md` — already consistent — owns the current design interpretation and conjecture.
+- `wiki/computational-experiments.md` — already consistent — compact schema-3 design-only index.
+- `wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md` — already consistent — exact animal regimes and provisional-run boundary preserved.
+- `wiki/validation-experiments.md` — already consistent — owns the future empirical and statistical protocol.
+- `wiki/aspergillus-oryzae.md` — already consistent — host catalase remains a hypothesis requiring location/activity measurement.
+- `wiki/gout-multihop-research-program.md`, `operations/notable-moments.md`, and the COMP-044 README — already consistent — route to empirical comparison without a winner.
 
 ## New connections or implications
 
-The retained implication is appropriately conjectural: joint KatG+VHb precedent motivates component-isolation and reaction-site-catalase experiments but does not identify which component produced the reported difference or establish extracellular peroxide closure.
-
-No additional synthesis claim is justified by this design-only artifact.
+Reaction-site peroxide control and host-cell ROS support remain distinct experimental questions. Intracellular KatG may affect cellular fitness while still failing to close peroxide handling at an extracellular or displayed UOX reaction site. That implication is correctly retained as a Research Conjecture and not promoted to fact.
 
 ## Required actions
 
-None for the artifact or proposed corpus updates.
-
-The existing `synthesis/queue/comp-review-045.md` records earlier defects that are now closed. It is ready for lifecycle deletion when this Gate 2 receipt is installed; that deletion is queue closure, not scientific remediation.
+1. None.
 
 ## Review limits
 
-- Static review only; `analyze.py` was not executed.
-- Primary papers were not independently re-opened because this review was restricted to exact-snapshot artifact-summary-corpus fidelity. Provenance and source modality were audited within the artifact.
-- The large results JSON was inspected programmatically rather than rendered linearly.
-- Gate 1’s current-manifest checker reports the expected prior-output change because Gate 1’s prior-output baseline was deliberately replaced after execution; the five frozen design hashes and `PRE_RUN_GATE: GO` receipt remain exact.
-- No files were edited.
+The bounded negative search for exact *A. oryzae* and matched-catalase precedents was not rerun as a systematic review; its language remains explicitly limited to the recorded retrievals. Primary Gao, Zhao, Gencer, Miyazaki, Miyazaki supplementary, and PubChem records were independently inspected. No repository files were edited.

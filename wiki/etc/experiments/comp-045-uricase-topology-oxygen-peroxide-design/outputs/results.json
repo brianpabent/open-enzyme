@@ -32,7 +32,7 @@
           "modules": [],
           "planned_topology": "pulse_intracellular_ygfu",
           "relationship_limit": "PucLM plus YgfU is related to, but not the exact PULSE smUOX construct.",
-          "source_id": "li_2023_puclm_ygfu_related_intracellular",
+          "source_id": "gencer_2023_puclm_ygfu_related_intracellular",
           "source_relationship": "related_intracellular_configuration"
         }
       ],
@@ -402,7 +402,7 @@
       "exact_precedent": null,
       "localization_evidence": "proposed_novel_configuration",
       "modules": [],
-      "peroxide_reaction_site_status": "native_intracellular_background_not_a_tested_secreted_uox_closure",
+      "peroxide_reaction_site_status": "host_catalase_location_and_activity_unresolved_no_reaction_site_closure",
       "regulatory_sensor_uses_ygfu": false,
       "related_precedents": [],
       "topology": "koji_secreted_candidate",
@@ -732,7 +732,7 @@
       "configuration_precedent": "no_direct_uox_precedent",
       "oxygen_context": "microoxic_screen",
       "oxygen_status": "oxygen_sufficiency_not_established",
-      "peroxide_reaction_site_status": "native_intracellular_background_not_a_tested_secreted_uox_closure",
+      "peroxide_reaction_site_status": "host_catalase_location_and_activity_unresolved_no_reaction_site_closure",
       "source_regime_match": "not_exactly_matched_wet_lab_do_target_must_be_predeclared"
     },
     {
@@ -741,7 +741,7 @@
       "configuration_precedent": "no_direct_uox_precedent",
       "oxygen_context": "oxic_screen",
       "oxygen_status": "oxygen_sufficiency_not_established",
-      "peroxide_reaction_site_status": "native_intracellular_background_not_a_tested_secreted_uox_closure",
+      "peroxide_reaction_site_status": "host_catalase_location_and_activity_unresolved_no_reaction_site_closure",
       "source_regime_match": "not_exactly_matched_wet_lab_do_target_must_be_predeclared"
     },
     {
@@ -771,14 +771,15 @@
     "Proposed secreted and surface catalase modules require expression, localization, activity, and safety qualification.",
     "The candidate layout does not model expression burden, proteolysis, mucus residence, colonization, oxygen kinetics, or epithelial injury.",
     "Only the preregistered same-block contrasts are supported by the layout; other cross-block comparisons remain confounded with plate block.",
-    "The inactive-UOX identities, sampling times, and assay multiplexing plan are intentionally unresolved and block wet-lab execution."
+    "The inactive-UOX identities, sampling times, and assay multiplexing plan are intentionally unresolved and block wet-lab execution.",
+    "The three biological-run slots are a provisional plate-layout assumption; no estimand, effect metric, decision threshold, variance or effect-size assumption, power or precision target, model, multiplicity control, exclusion rule, missing-data rule, assay-failure rule, or sensitivity rule has been preregistered."
   ],
   "n_biological_runs": 3,
   "n_block_assignments": 20,
   "n_configuration_blocks": 2,
   "n_configurations": 18,
   "n_oxygen_contexts": 2,
-  "n_planned_within_block_contrasts": 14,
+  "n_planned_within_block_contrasts": 16,
   "n_plates": 12,
   "n_urate_concentrations_including_zero": 4,
   "planned_contrasts": [
@@ -831,6 +832,12 @@
       "test": "lamb_compartment_catalase_vhb"
     },
     {
+      "comparator": "lamb_compartment_catalase_only",
+      "id": "lamb_vhb_within_reaction_site_catalase",
+      "required_block": "block_b",
+      "test": "lamb_compartment_catalase_vhb"
+    },
+    {
       "comparator": "inakn_no_support",
       "id": "inakn_katg_isolation",
       "required_block": "block_b",
@@ -857,6 +864,12 @@
     {
       "comparator": "inakn_vhb_only",
       "id": "inakn_reaction_site_catalase_with_vhb",
+      "required_block": "block_b",
+      "test": "inakn_compartment_catalase_vhb"
+    },
+    {
+      "comparator": "inakn_compartment_catalase_only",
+      "id": "inakn_vhb_within_reaction_site_catalase",
       "required_block": "block_b",
       "test": "inakn_compartment_catalase_vhb"
     },
@@ -13487,27 +13500,49 @@
     "hydrogen_peroxide",
     "dissolved_oxygen",
     "viability",
-    "uox_localization"
+    "uox_expression",
+    "uox_activity",
+    "uox_localization",
+    "katg_expression",
+    "katg_activity",
+    "vhb_expression",
+    "vhb_oxygen_function",
+    "reaction_site_catalase_activity",
+    "reaction_site_catalase_localization"
   ],
   "sampling_contract": {
     "assay_compatibility_status": "unresolved_same_well_aliquot_or_separate_plate_plan_required_before_wet_lab_execution",
-    "culture_unit": "one culture well per configuration, UOX state, concentration, biological run, oxygen context, and block assignment",
+    "culture_unit": "one culture well per configuration, UOX state, concentration, provisional biological-run slot, oxygen context, and block assignment",
     "timepoint_status": "unresolved_predeclared_sampling_times_required_before_wet_lab_execution"
   },
-  "schema_migration": "Schema 2 replaces the historical duplicated graded-condition array and biological verdict with unique exact-configuration evidence rows, planned within-block contrasts, a candidate layout, and an explicit NOT_EVALUATED biological verdict.",
-  "schema_version": 2,
+  "schema_migration": "Schema 3 replaces schema 2 by adding reciprocal VHb-within-reaction-site-catalase contrasts, an explicit blocked statistical decision contract, expanded construct and assay qualification gates and readouts, and corrected unresolved A. oryzae catalase state semantics; the biological verdict remains NOT_EVALUATED.",
+  "schema_version": 3,
+  "statistical_decision_contract": {
+    "estimand_effect_metric_and_biological_threshold": "unresolved_before_wet_lab_execution",
+    "exclusion_missing_data_and_assay_failure_rules": "unresolved_before_wet_lab_execution",
+    "model_and_multiplicity": "unresolved_before_wet_lab_execution",
+    "sensitivity_rules": "unresolved_before_wet_lab_execution",
+    "status": "BLOCKED_PENDING_PREREGISTERED_WET_LAB_ANALYSIS_PLAN",
+    "variance_effect_size_power_precision_target_and_run_count": "unresolved_biological_runs_is_provisional_plate_layout_assumption_only"
+  },
   "used_wells_per_plate": 96,
   "wet_lab_readiness": {
     "blockers": [
-      "exact active and inactive UOX construct identities and matched expression/localization criteria",
-      "active-UOX retained-activity qualification for every exact configuration",
-      "exact KatG and VHb support-module constructs and their expression and retained-function qualification",
-      "exact reaction-site-catalase construction, retained activity, localization, and co-secretion or co-display compatibility",
+      "exact active and inactive UOX construct identities and matched expression, retained-activity, and localization qualification criteria",
+      "exact UOX topology construction and compartment-specific localization and accessibility qualification",
+      "exact KatG construct, expression, and retained-activity qualification",
+      "exact VHb construct, expression, and oxygen-function qualification",
+      "exact reaction-site-catalase construction, expression, retained activity, localization, and co-secretion or co-display compatibility",
       "exact chassis and PULSE-mixture stock identities and cell normalization",
-      "dissolved-oxygen targets",
+      "exact dissolved-oxygen targets, measurement method, and oxygen-context qualification",
       "sampling times, well volume, aliquoting, and destructive-assay compatibility",
-      "assay sensitivity and quantification limits at the 0.59 uM terminal-ileum prior"
+      "assay sensitivity and quantification limits at the 0.59 uM terminal-ileum prior",
+      "estimand, effect metric, and biological decision threshold",
+      "variance and effect-size assumptions, power or precision target, and justified biological-run count",
+      "analysis model and multiplicity control",
+      "exclusion, missing-data, and assay-failure rules",
+      "sensitivity-analysis rules"
     ],
-    "status": "BLOCKED_PENDING_EXACT_CONTROL_AND_SAMPLING_QUALIFICATION"
+    "status": "BLOCKED_PENDING_EXACT_CONTROL_SAMPLING_AND_ANALYSIS_QUALIFICATION"
   }
 }

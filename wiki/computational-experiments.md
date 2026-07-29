@@ -70,7 +70,7 @@ Tracking index for computational analyses in the Open Enzyme platform. Distinct 
 
 **Disposition:** **`CANDIDATE_LAYOUT_GENERATED`; biological verdict `NOT_EVALUATED`; wet-lab readiness blocked.** Gao/PULSE supplies exact whole-configuration precedents for three EcN topologies with and without the joint KatG+VHb module. It does not isolate KatG or VHb effects, establish extracellular peroxide closure, or supply direct *A. oryzae* UOX evidence.
 
-**Key output:** 18 unique configurations, 20 block assignments, 14 preregistered same-block contrasts, and 12 complete 96-well plate maps across three runs and two measured oxygen contexts. Every active-UOX well has a support-module-matched inactive-UOX control at the same concentration. Exact constructs, retained activities, oxygen targets, sampling, and assay sensitivity remain qualification blockers. No topology is ranked or biologically evaluated.
+**Key output:** 18 candidate configuration classes, 20 block assignments, 16 preregistered same-block contrasts, and 12 complete 96-well plate maps across three provisional run slots and two planned oxygen contexts whose actual dissolved-oxygen targets must later be predeclared and measured. Every active-UOX well has a support-module-matched inactive-UOX control at the same concentration. Exact constructs, retained activities, oxygen targets, sampling, assay sensitivity, statistical model, decision thresholds, and powered or precision-based run count remain qualification blockers. No topology is ranked or biologically evaluated.
 
 **Informs:** [validation §1.33](./validation-experiments.md#133-physiological-uox-topology--oxygen--peroxide-factorial) · [gut-lumen sink](./gut-lumen-sink.md) · [engineered koji protocol](./engineered-koji-protocol.md)
 

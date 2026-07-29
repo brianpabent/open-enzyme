@@ -10,14 +10,14 @@ This computation can decide only whether the declared evidence vocabulary and ca
 
 ## Model
 
-The input enumerates 18 physical configurations rather than crossing ambiguous global factors:
+The input enumerates 18 candidate configuration classes rather than crossing ambiguous global factors. Exact constructs, inactive variants, and support-module implementations remain unresolved:
 
 - four PULSE intracellular UOX+YgfU configurations: no support, VHb only, KatG only, and joint KatG+VHb;
 - six LamB-secreted configurations: the same four support states plus proposed co-secreted catalase with and without VHb;
 - six InaK-N-display configurations: the same four support states plus proposed surface-matched catalase with and without VHb;
-- two proposed *A. oryzae* secreted-UOX configurations: native intracellular catalase background only and proposed co-secreted catalase.
+- two proposed *A. oryzae* secreted-UOX configurations: no engineered support and proposed co-secreted catalase. Host catalase localization and activity under the eventual culture condition are unresolved.
 
-The three exact PULSE topologies have published baseline and joint KatG+VHb construct precedents. The Gao/PULSE records are stored separately from the related Li and Zhao intracellular configurations; related sources do not make a PULSE construct exact. KatG-only and VHb-only configurations are isolation tests from the joint precedent. The cited sources do not establish either isolated component effect. The *A. oryzae* configurations have no cited direct UOX precedent.
+The three exact PULSE topologies have published baseline and joint KatG+VHb construct precedents. The Gao/PULSE records are stored separately from the related Gencer and Zhao intracellular configurations; related sources do not make a PULSE construct exact. KatG-only and VHb-only configurations are isolation tests from the joint precedent. The cited sources do not establish either isolated component effect. The *A. oryzae* configurations have no cited direct UOX precedent.
 
 Evidence is separated into four axes:
 
@@ -30,21 +30,21 @@ An exact construct precedent does not imply that a new urate concentration or di
 
 ## Candidate layout
 
-The 18 unique configurations are preregistered as 20 assignments in two equal blocks. `lamb_no_support` and `lamb_vhb_only` repeat as within-block comparators for the reaction-site-catalase contrasts. Each plate contains:
+The 18 candidate configuration classes are preregistered as 20 assignments in two equal blocks. `lamb_no_support` and `lamb_vhb_only` repeat as within-block comparators for the reaction-site-catalase contrasts. Each plate contains:
 
 - ten configuration assignments;
 - active UOX and an otherwise matched inactive-UOX control for every configuration;
 - 0, 0.59, 50, and 250 µM urate for every active/control pair;
 - unengineered EcN, unengineered *A. oryzae*, medium blank, and a proposed PULSE-KV mixed-cell cross-plate anchor at all four concentrations.
 
-This uses all 96 wells. Samples are allocated over the full plate with a stable SHA-256 key derived from the declared layout seed, run, oxygen context, block, and sample identity. Three biological runs × two oxygen contexts × two blocks require 12 plates. Every declared KatG, VHb, joint-module, and reaction-site-catalase contrast has its comparator in the same block.
+This uses all 96 wells. Samples are allocated over the full plate with a stable SHA-256 key derived from the declared layout seed, run, oxygen context, block, and sample identity. Three **provisional biological-run slots** × two oxygen contexts × two blocks require 12 plates. The value three is a plate-layout assumption, not a power or precision claim. Sixteen same-block contrasts include catalase effects with and without VHb and VHb effects with and without reaction-site catalase for LamB and InaK-N.
 
 The PULSE-KV mixture is a proposed cross-plate anchor based on a published mixture composition. It is not labeled a published in-vitro positive control.
 
 ## Concentration and oxygen contract
 
 - **0 µM:** matched no-urate control.
-- **0.59 µM:** rounded terminal-ileal human-fluid prior from a clinical balloon-enteroscopy cohort; not tested in the cited UOX configurations and not a healthy-population baseline.
+- **0.59 µM:** rounded terminal-ileal human-fluid prior from a clinically indicated observational balloon-enteroscopy cohort; not a Clinical Trial, not tested in the cited UOX configurations, and not a healthy-population baseline.
 - **50 µM:** sensitivity scenario only.
 - **250 µM:** lowest reported PULSE topology-assay concentration.
 
@@ -61,9 +61,12 @@ Required readouts:
 - hydrogen peroxide;
 - dissolved oxygen;
 - viability;
-- UOX localization.
+- UOX expression, retained activity, and localization;
+- KatG expression and retained activity;
+- VHb expression and oxygen-support function;
+- reaction-site-catalase activity and localization.
 
-Expression/activity and localization must be qualified before using the complete plate set. Exact strain stocks, cell normalization, dissolved-oxygen targets, sampling times, well volumes, aliquoting, and compatibility of destructive readouts must also be fixed. Proposed compartment-matched catalase configurations additionally require retained catalase activity and localization at the claimed reaction compartment.
+Expression/activity and localization must be qualified before using the complete plate set. Exact strain stocks, cell normalization, dissolved-oxygen targets, sampling times, well volumes, aliquoting, and compatibility of destructive readouts must also be fixed. Proposed compartment-matched catalase configurations additionally require retained catalase activity and localization at the claimed reaction compartment. Before randomization, preregister the estimand and effect metric, biological threshold, variance and effect-size assumptions, power or precision target and resulting run count, statistical model, multiplicity treatment, exclusion/missing-data/assay-failure rules, and sensitivity rules.
 
 ## Decision and failure rules
 
@@ -72,7 +75,7 @@ Successful execution may emit only:
 - `CANDIDATE_LAYOUT_GENERATED` for the design disposition; and
 - `NOT_EVALUATED` for the biological verdict.
 
-It must also emit `BLOCKED_PENDING_EXACT_CONTROL_AND_SAMPLING_QUALIFICATION` for wet-lab readiness. The program must stop without outputs if IDs or states are duplicated, an enum is unknown, a module is incompatible with its topology, block repetition is undeclared, a planned contrast lacks a same-block comparator, an exact or related precedent is mislabeled, a matched zero-urate control is absent, a load-bearing control/readout/category contract is unknown, or a plate exceeds 96 wells.
+It must also emit `BLOCKED_PENDING_EXACT_CONTROL_SAMPLING_AND_ANALYSIS_QUALIFICATION` for wet-lab readiness. The program must stop without outputs if IDs or states are duplicated, an enum is unknown, a module is incompatible with its topology, block repetition is undeclared, a planned contrast lacks a same-block comparator, an exact or related precedent is mislabeled, a matched zero-urate control is absent, a load-bearing control/readout/category/analysis contract is unknown, or a plate exceeds 96 wells.
 
 No outcome of this computation can establish:
 
@@ -86,14 +89,14 @@ No outcome of this computation can establish:
 
 ## Sensitivity plan
 
-There is no numerical efficacy sensitivity analysis because no biological response model is used. The two oxygen contexts and the 0.59/50/250 µM nonzero concentrations are wet-lab design regimes. They must remain separately labeled; grid occupancy is not evidence or probability.
+There is no numerical efficacy sensitivity analysis because no biological response model is used. The two oxygen contexts and the 0.59/50/250 µM nonzero concentrations are wet-lab design regimes. They must remain separately labeled; grid occupancy is not evidence or probability. Result-bearing sensitivity rules remain a wet-lab analysis blocker, not something this layout can supply.
 
 ## Planned outputs
 
 - `outputs/results.json` — validated configuration table, one unique configuration × oxygen evidence row, and 12 complete plate maps;
 - `outputs/summary.md` — compact design disposition, evidence boundary, layout, wet-lab gates, and limitations.
 
-Output schema 2 replaces the historical duplicated evidence rows and hardcoded biological verdict. It records exact and related precedents separately, enumerates same-block contrasts, and preserves `NOT_EVALUATED`.
+Output schema 3 replaces schema 2. It preserves the corrected exact-versus-related precedent split and `NOT_EVALUATED`, adds both directions of the catalase × VHb simple comparisons, removes the unsupported native-catalase localization state, and carries the blocked statistical decision contract.
 
 The canonical interpretation home is `wiki/uricase-topology-oxygen-peroxide-design-computational.md`. Planned direct dependents are:
 
@@ -124,17 +127,24 @@ Current-reference audit with no planned decision delta:
 
 ## Assumptions and invalidation boundary
 
-- The code treats Gao/PULSE exact construct signatures as provenance metadata, not as efficacy grades. Li and Zhao are retained only as related intracellular precedents.
+- The code treats Gao/PULSE exact construct signatures as provenance metadata, not as efficacy grades. Gencer and Zhao are retained only as related intracellular precedents.
 - Blocking is a nuisance-control device; it does not make cross-block comparisons equivalent to within-block contrasts.
-- Native *A. oryzae* intracellular catalase is background context, not a separate engineered arm and not evidence of secreted-UOX peroxide closure.
+- Native *A. oryzae* catalase localization and activity are unresolved for the eventual strain and culture condition; no host-catalase state establishes secreted-UOX reaction-site closure.
 - The published C6 periplasmic EcN UOX architecture is outside this four-topology design and supports no current row.
-- The generated layout is a blocked template, not a wet-lab-ready protocol, until the exact control and sampling identities listed above are fixed and reviewed.
+- The generated layout is a blocked template, not a wet-lab-ready protocol, until the exact control, sampling, qualification, and statistical identities listed above are fixed and reviewed.
 
 A later biological result can kill only the tested construct × concentration × oxygen × control regime. Failure of one topology or chassis does not kill gut-lumen UOX or the Open Enzyme mission.
 
 ## Reproduce after Gate 1
 
 Python standard library only.
+
+`analyze.py` verifies that every manifest-bound design file still matches the
+exact `PRE_RUN_GATE: GO` snapshot before it writes outputs. The explicit
+manifest command below additionally checks the prior-output baseline
+immediately before the first execution. After that execution, the baseline is
+historical by design, while each direct `analyze.py` invocation continues to
+enforce the reviewed design and receipt binding.
 
 ```bash
 cd wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design

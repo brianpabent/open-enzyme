@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -108,6 +109,45 @@ Long review-history material.
             design, outputs = manifest.comp_files(comp)
         self.assertEqual(["run.py"], [path.name for path in design])
         self.assertEqual(["summary.json"], [path.name for path in outputs])
+
+    def test_pre_manifest_check_works_from_comp_directory(self):
+        with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
+            comp = Path(tmp) / "comp-999-test"
+            (comp / "outputs").mkdir(parents=True)
+            (comp / "reviews").mkdir()
+            (comp / "analyze.py").write_text("print('ok')\n")
+            (comp / "outputs" / "summary.json").write_text("{}\n")
+            tool = ROOT / "scripts" / "comp-review-manifest.py"
+            subprocess.run(
+                [
+                    sys.executable,
+                    str(tool),
+                    "create",
+                    "--phase",
+                    "pre",
+                    "--comp-dir",
+                    ".",
+                    "--output",
+                    "reviews/pre-run.manifest.json",
+                ],
+                cwd=comp,
+                text=True,
+                capture_output=True,
+                check=True,
+            )
+            checked = subprocess.run(
+                [
+                    sys.executable,
+                    str(tool),
+                    "check",
+                    "--manifest",
+                    "reviews/pre-run.manifest.json",
+                ],
+                cwd=comp,
+                text=True,
+                capture_output=True,
+            )
+        self.assertEqual(0, checked.returncode, checked.stderr)
 
     def test_authoring_manifest_binds_transitive_shared_decision_code(self):
         with tempfile.TemporaryDirectory(dir=ROOT) as tmp:

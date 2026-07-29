@@ -1,7 +1,7 @@
 {
-  "schema_version": 2,
-  "output_schema_version": 2,
-  "output_migration": "Schema 2 replaces the historical duplicated graded-condition array and biological verdict with unique exact-configuration evidence rows, planned within-block contrasts, a candidate layout, and an explicit NOT_EVALUATED biological verdict.",
+  "schema_version": 3,
+  "output_schema_version": 3,
+  "output_migration": "Schema 3 replaces schema 2 by adding reciprocal VHb-within-reaction-site-catalase contrasts, an explicit blocked statistical decision contract, expanded construct and assay qualification gates and readouts, and corrected unresolved A. oryzae catalase state semantics; the biological verdict remains NOT_EVALUATED.",
   "purpose": "Generate an auditable candidate wet-lab layout that separates exact PULSE construct precedent from related intracellular precedent and from untested KatG-only, VHb-only, and reaction-site catalase configurations. The computation does not evaluate biological performance.",
   "topologies": [
     {
@@ -125,7 +125,7 @@
     {
       "planned_topology": "pulse_intracellular_ygfu",
       "modules": [],
-      "source_id": "li_2023_puclm_ygfu_related_intracellular",
+      "source_id": "gencer_2023_puclm_ygfu_related_intracellular",
       "source_relationship": "related_intracellular_configuration",
       "evidence_tier": "In Vitro",
       "comparison_type": "related_activity_configuration",
@@ -319,6 +319,12 @@
       "required_block": "block_b"
     },
     {
+      "id": "lamb_vhb_within_reaction_site_catalase",
+      "test": "lamb_compartment_catalase_vhb",
+      "comparator": "lamb_compartment_catalase_only",
+      "required_block": "block_b"
+    },
+    {
       "id": "inakn_katg_isolation",
       "test": "inakn_katg_only",
       "comparator": "inakn_no_support",
@@ -346,6 +352,12 @@
       "id": "inakn_reaction_site_catalase_with_vhb",
       "test": "inakn_compartment_catalase_vhb",
       "comparator": "inakn_vhb_only",
+      "required_block": "block_b"
+    },
+    {
+      "id": "inakn_vhb_within_reaction_site_catalase",
+      "test": "inakn_compartment_catalase_vhb",
+      "comparator": "inakn_compartment_catalase_only",
       "required_block": "block_b"
     },
     {
@@ -384,6 +396,14 @@
     }
   ],
   "biological_runs": 3,
+  "statistical_decision_contract": {
+    "status": "BLOCKED_PENDING_PREREGISTERED_WET_LAB_ANALYSIS_PLAN",
+    "estimand_effect_metric_and_biological_threshold": "unresolved_before_wet_lab_execution",
+    "variance_effect_size_power_precision_target_and_run_count": "unresolved_biological_runs_is_provisional_plate_layout_assumption_only",
+    "model_and_multiplicity": "unresolved_before_wet_lab_execution",
+    "exclusion_missing_data_and_assay_failure_rules": "unresolved_before_wet_lab_execution",
+    "sensitivity_rules": "unresolved_before_wet_lab_execution"
+  },
   "layout_seed": "comp-045-layout-v2-45013",
   "shared_anchors_per_plate": [
     {
@@ -415,21 +435,27 @@
     "source_benchmark_boundary": "250 uM is a PULSE topology assay concentration; the mixed-cell anchor is not a published in-vitro positive control"
   },
   "sampling_contract": {
-    "culture_unit": "one culture well per configuration, UOX state, concentration, biological run, oxygen context, and block assignment",
+    "culture_unit": "one culture well per configuration, UOX state, concentration, provisional biological-run slot, oxygen context, and block assignment",
     "timepoint_status": "unresolved_predeclared_sampling_times_required_before_wet_lab_execution",
     "assay_compatibility_status": "unresolved_same_well_aliquot_or_separate_plate_plan_required_before_wet_lab_execution"
   },
   "wet_lab_readiness": {
-    "status": "BLOCKED_PENDING_EXACT_CONTROL_AND_SAMPLING_QUALIFICATION",
+    "status": "BLOCKED_PENDING_EXACT_CONTROL_SAMPLING_AND_ANALYSIS_QUALIFICATION",
     "blockers": [
-      "exact active and inactive UOX construct identities and matched expression/localization criteria",
-      "active-UOX retained-activity qualification for every exact configuration",
-      "exact KatG and VHb support-module constructs and their expression and retained-function qualification",
-      "exact reaction-site-catalase construction, retained activity, localization, and co-secretion or co-display compatibility",
+      "exact active and inactive UOX construct identities and matched expression, retained-activity, and localization qualification criteria",
+      "exact UOX topology construction and compartment-specific localization and accessibility qualification",
+      "exact KatG construct, expression, and retained-activity qualification",
+      "exact VHb construct, expression, and oxygen-function qualification",
+      "exact reaction-site-catalase construction, expression, retained activity, localization, and co-secretion or co-display compatibility",
       "exact chassis and PULSE-mixture stock identities and cell normalization",
-      "dissolved-oxygen targets",
+      "exact dissolved-oxygen targets, measurement method, and oxygen-context qualification",
       "sampling times, well volume, aliquoting, and destructive-assay compatibility",
-      "assay sensitivity and quantification limits at the 0.59 uM terminal-ileum prior"
+      "assay sensitivity and quantification limits at the 0.59 uM terminal-ileum prior",
+      "estimand, effect metric, and biological decision threshold",
+      "variance and effect-size assumptions, power or precision target, and justified biological-run count",
+      "analysis model and multiplicity control",
+      "exclusion, missing-data, and assay-failure rules",
+      "sensitivity-analysis rules"
     ]
   },
   "primary_readouts": [
@@ -438,7 +464,15 @@
     "hydrogen_peroxide",
     "dissolved_oxygen",
     "viability",
-    "uox_localization"
+    "uox_expression",
+    "uox_activity",
+    "uox_localization",
+    "katg_expression",
+    "katg_activity",
+    "vhb_expression",
+    "vhb_oxygen_function",
+    "reaction_site_catalase_activity",
+    "reaction_site_catalase_localization"
   ],
   "state_vocabulary": {
     "topology_activity_evidence": [
@@ -493,7 +527,7 @@
       "intracellular_alignment_by_design_empirical_closure_unresolved",
       "intracellular_katg_not_at_extracellular_uox_reaction_site",
       "proposed_reaction_site_aligned_configuration",
-      "native_intracellular_background_not_a_tested_secreted_uox_closure"
+      "host_catalase_location_and_activity_unresolved_no_reaction_site_closure"
     ],
     "oxygen_status": [
       "oxygen_sufficiency_not_established",
