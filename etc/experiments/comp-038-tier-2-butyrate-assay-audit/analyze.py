@@ -2,15 +2,11 @@
 """
 comp-038 — Tier 2 butyrate assay audit.
 
-Lightweight OE-native agentic literature-synthesis runner.
-
-Default live workflow for Codex sessions:
-- fetch source snapshots locally;
-- write a Codex synthesis packet;
-- let the current Codex model perform the expensive synthesis in-session.
-
-Optional OpenRouter workflow remains available for external model roles when
-explicitly requested.
+The default command performs a read-only required-file check of the current
+artifact. Exact content integrity is enforced separately by the hash-bound
+COMP lifecycle. Historical discovery modes remain available for forensic
+reproduction, but they require an explicit flag before replacing any current
+result-bearing output.
 """
 
 import argparse
@@ -38,6 +34,13 @@ INPUTS = SCRIPT_DIR / "inputs"
 OUTPUTS = SCRIPT_DIR / "outputs"
 QUERY_STRATEGY = INPUTS / "query-strategy.json"
 MODEL_CONFIG = INPUTS / "model-config.json"
+CURRENT_OUTPUT_NAMES = (
+    "pubmed-snapshot.json",
+    "codex-synthesis-packet.md",
+    "primary-source-verification-2026-07-24.json",
+    "results.json",
+    "summary.md",
+)
 
 
 SYSTEM = """You are working on Open Enzyme, a Phase 0 research-and-design library.
@@ -50,6 +53,12 @@ data before recommending a GREEN verdict."""
 
 def sha256_file(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def current_output_paths(output_dir=None):
+    if output_dir is None:
+        output_dir = OUTPUTS
+    return [Path(output_dir) / name for name in CURRENT_OUTPUT_NAMES]
 
 
 def compact_query_plan(query_strategy):
@@ -379,42 +388,69 @@ def write_codex_packet(query_strategy, model_config, run_record, pubmed_snapshot
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument(
+    mutation_mode = parser.add_mutually_exclusive_group()
+    mutation_mode.add_argument(
         "--prepare-codex",
         action="store_true",
-        help="Fetch local source snapshots and write a Codex synthesis packet without model API spend.",
+        help=(
+            "Regenerate the historical discovery snapshot and Codex packet "
+            "without model API spend; also requires "
+            "--regenerate-current-outputs."
+        ),
     )
-    parser.add_argument(
+    mutation_mode.add_argument(
         "--run-openrouter",
         action="store_true",
-        help="Call OpenRouter models and spend API budget. Use only when external model roles are intentional.",
+        help=(
+            "Regenerate the historical discovery outputs through OpenRouter; "
+            "also requires --regenerate-current-outputs."
+        ),
+    )
+    parser.add_argument(
+        "--regenerate-current-outputs",
+        action="store_true",
+        help=(
+            "Explicitly authorize replacement of the current discovery "
+            "snapshot, results, and summary. This does not bypass COMP review."
+        ),
     )
     args = parser.parse_args()
+
+    mutation_requested = args.prepare_codex or args.run_openrouter
+    if mutation_requested and not args.regenerate_current_outputs:
+        parser.error(
+            "--prepare-codex and --run-openrouter can replace current "
+            "result-bearing outputs; rerun with "
+            "--regenerate-current-outputs only inside a reviewed lifecycle"
+        )
+    if args.regenerate_current_outputs and not mutation_requested:
+        parser.error(
+            "--regenerate-current-outputs requires either --prepare-codex "
+            "or --run-openrouter"
+        )
+
+    if not mutation_requested:
+        expected = current_output_paths()
+        missing = [path for path in expected if not path.is_file()]
+        if missing:
+            print("Required-file check failed. Missing or not a regular file:")
+            for path in missing:
+                print(f"- outputs/{path.name}")
+            print(
+                "Restore or recreate missing current artifacts through the "
+                "reviewed COMP lifecycle."
+            )
+            sys.exit(1)
+        print("Required-file check passed. Existing outputs preserved.")
+        return
 
     OUTPUTS.mkdir(exist_ok=True)
     load_root_dotenv(SCRIPT_DIR)
 
     query_strategy = read_json(QUERY_STRATEGY)
     model_config = read_json(MODEL_CONFIG)
-    mode = "openrouter" if args.run_openrouter else ("codex-packet" if args.prepare_codex else "dry-run")
+    mode = "openrouter" if args.run_openrouter else "codex-packet"
     run_record = build_run_record(mode, query_strategy, model_config)
-
-    if not args.prepare_codex and not args.run_openrouter:
-        expected = [
-            OUTPUTS / "pubmed-snapshot.json",
-            OUTPUTS / "codex-synthesis-packet.md",
-            OUTPUTS / "results.json",
-            OUTPUTS / "summary.md",
-        ]
-        missing = [path.relative_to(SCRIPT_DIR) for path in expected if not path.exists()]
-        if missing:
-            print("Dry-run artifact check failed. Missing:")
-            for path in missing:
-                print(f"- {path}")
-            print("Use --prepare-codex to fetch source snapshots without model API spend.")
-            sys.exit(1)
-        print("Dry-run artifact check passed. Existing outputs preserved.")
-        return
 
     pubmed_snapshot = fetch_pubmed_snapshot(
         query_strategy,

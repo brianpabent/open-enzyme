@@ -6,7 +6,7 @@
       "type": "exact_topology",
       "queries": [
         "Gao PULSE smUOX YgfU LamB InaK-N pGN247 pGN282 pGN298",
-        "PucLM YgfU urate EcN Li FaSSIF-V2"
+        "PucLM YgfU urate EcN Gencer FaSSIF-V2"
       ],
       "rationale": "Recover exact baseline intracellular, secreted, and display construct precedents."
     },
@@ -42,5 +42,40 @@
       ],
       "rationale": "Separate periplasmic precedent from the four planned topologies."
     }
-  ]
+  ],
+  "bounded_negative_check": {
+    "executed_on": "2026-07-29",
+    "endpoints": {
+      "europe_pmc": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+      "pubmed": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
+    },
+    "bounds": "Title, abstract, and indexed-record screening for exact engineered-microbial active UOX in A. oryzae and for secreted or surface-matched microbial UOX-catalase configurations. Nanomaterial, mammalian-organelle, review, and non-microbial co-encapsulation records were not treated as exact microbial precedents. This bounded check is not a systematic review or an absence claim beyond the screened retrievals.",
+    "queries": [
+      {
+        "query": "\"Aspergillus oryzae\" AND (uricase OR \"urate oxidase\")",
+        "europe_pmc_hits": 25,
+        "pubmed_title_abstract_hits": 0,
+        "exact_precedent_identified": false
+      },
+      {
+        "query": "\"Aspergillus oryzae\" AND (uricase OR \"urate oxidase\") AND (secreted OR secretion OR extracellular)",
+        "europe_pmc_hits": 15,
+        "pubmed_title_abstract_hits": 0,
+        "exact_precedent_identified": false
+      },
+      {
+        "query": "uricase AND catalase AND (colocalization OR \"co-localization\" OR cosecretion OR \"co-secretion\")",
+        "europe_pmc_hits": 38,
+        "pubmed_title_abstract_hits": 1,
+        "exact_precedent_identified": false
+      },
+      {
+        "query": "(\"surface displayed\" OR \"surface display\") AND uricase AND catalase",
+        "europe_pmc_hits": 6,
+        "pubmed_title_abstract_hits": 0,
+        "exact_precedent_identified": false
+      }
+    ],
+    "screening_result": "No exact engineered-microbial active-UOX precedent matching the proposed A. oryzae secretion or compartment-matched catalase classes was identified in these retrievals."
+  }
 }

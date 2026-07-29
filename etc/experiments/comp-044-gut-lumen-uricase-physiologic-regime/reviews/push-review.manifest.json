@@ -48,14 +48,8 @@
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 75330,
-      "sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88"
-    },
-    {
-      "path": "wiki/delivery-route-matrix.md",
-      "kind": "proposed_update",
-      "bytes": 26650,
-      "sha256": "ce78ac9cd0d3030bc555dfca9d095cf3032c2f964ed7e92d0431271f731ebb79"
+      "bytes": 72767,
+      "sha256": "b126f07a99832898b0478f8fb5a3c4ed5d8b676313f2fb2e383fcf807e5c3d48"
     },
     {
       "path": "wiki/dual-chassis-ecn-pdb-uricase-computational.md",
@@ -68,24 +62,6 @@
       "kind": "proposed_update",
       "bytes": 4578,
       "sha256": "e42f494ce8e76faf1a85ae017ee0a67301b6609312a651feea95bee70be4b7d0"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/README.md",
-      "kind": "proposed_update",
-      "bytes": 2036,
-      "sha256": "5857fa02b00f6e9ab8f5e0cf2c41b6f003a519c313e3875a22174e4cc2225481"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/inputs/provenance.md",
-      "kind": "proposed_update",
-      "bytes": 1098,
-      "sha256": "3bb98871ea5616454f64ede06f149ebedb1cfaa268639e0153f4a453e2d15b73"
-    },
-    {
-      "path": "wiki/etc/experiments/comp-031-dual-chassis-ecn-pdb-uricase-additive-sua/outputs/summary.md",
-      "kind": "proposed_update",
-      "bytes": 930,
-      "sha256": "415ccf2ce84f77f97e0604f177576bd519a23371f6b30cb197498e7ba9e6d436"
     },
     {
       "path": "wiki/gout-action-guide.md",
@@ -114,16 +90,16 @@
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 74825,
-      "sha256": "9ffef573b763d3471a545cb2700eee1b09910f8d906b5795344abf6e9beed09a"
+      "bytes": 70385,
+      "sha256": "707da9f27d1edb7fd3cbb00a3b8633c9e1a0e5f75faf4475a6f01040ea1c7236"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 242023,
-      "sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6"
+      "bytes": 224667,
+      "sha256": "51c31f6aff36d34a7573c3d46553768a7717f7fef8360a6e8420fcd6d8bf243e"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "0d0148e43ade23213e148e0b97687eb5bb9b857a1f94cd1ec5d299dccca3c253"
+  "manifest_sha256": "b5c71487a4b95b7aa253f0265943d412103e4edeaf130e425ea28ba0c2768838"
 }

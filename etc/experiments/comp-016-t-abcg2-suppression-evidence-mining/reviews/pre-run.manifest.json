@@ -1,0 +1,52 @@
+{
+  "schema_version": 2,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/README.md",
+      "kind": "design",
+      "bytes": 6183,
+      "sha256": "72e830cb1227631b5c0a81f3812b1f39a6633960f4c6d0b098c2de2d6231aa43"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/analyze.py",
+      "kind": "design",
+      "bytes": 13004,
+      "sha256": "d3eb69d99b67bb2e713e17ef79420d1696a0686da0189809009bc26f6190861a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/maintenance-repair-plan-2026-07-29.md",
+      "kind": "design",
+      "bytes": 2347,
+      "sha256": "bed594125bd32551e0254d86c1b99a9ed19f0bced9c0c01736cb6cc74a1efa46"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 6493,
+      "sha256": "e7c34f8207264db17ddc30a4e4e9fda4ab26cc6874298367c5334c4c30a4f82e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/studies.json",
+      "kind": "design",
+      "bytes": 12456,
+      "sha256": "a7d20796acc6e33d00bc7ab22bbe6564bd813f3d9b7ad51cb94155f2336d2b48"
+    }
+  ],
+  "prior_output_baseline": [
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/results.json",
+      "kind": "prior_output",
+      "bytes": 5842,
+      "sha256": "da217253ab722308ae7d42d6c7b6f9a77a7a76ec0ca02d10e1ac90cc0d820828"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/summary.md",
+      "kind": "prior_output",
+      "bytes": 15441,
+      "sha256": "3eaeffa0cd451910726bd71a4f56fa329404498c528ae28182a0180c9ac2d7d5"
+    }
+  ],
+  "manifest_sha256": "260b5a07aa2f65b147b896e6cb8519c1a1c1caebff1999fafa25b315cb52fa3d"
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 2,
+  "phase": "pre",
+  "comp_dir": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/README.md",
+      "kind": "design",
+      "bytes": 11564,
+      "sha256": "eb26618f3b1b616ffb7710f3f62d5cfa7de0d6f9cc8108230c7699c782314e0f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/analyze.py",
+      "kind": "design",
+      "bytes": 36675,
+      "sha256": "e7b4bcba7544bafb594139c11fe449745ea7682d22ef617c375036d5a3f45d51"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/model_contract.json",
+      "kind": "design",
+      "bytes": 6034,
+      "sha256": "01072ab3ec9960657ee001f36a7ee1573f69135ede6d28023e96e88d392d6602"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 3036,
+      "sha256": "1e9739527f7f7f52ff908953ca4121e355ed9c3b2d9cdeb956696f073fece9a4"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/query-strategy.json",
+      "kind": "design",
+      "bytes": 961,
+      "sha256": "96b6ee59def4282a6a1dd70cef4cc77f5c7183428158f6b20cd9026f4e4d2cbe"
+    }
+  ],
+  "prior_output_baseline": [
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/break-even-surface.csv",
+      "kind": "prior_output",
+      "bytes": 10542,
+      "sha256": "9a6dd92ac07fb26e094c19f42ac782ecb7109f67840ea070efc0b05bd37b63ff"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/measurement-identifiability.csv",
+      "kind": "prior_output",
+      "bytes": 6212,
+      "sha256": "712efdea7f5cc5c68ecf7597764c1184ee715a0c64f8e47adf500fd8fa26c2bf"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/results.json",
+      "kind": "prior_output",
+      "bytes": 33619,
+      "sha256": "e23671522b4d4294c5bd09bdd7f76b0aaca4c5070e7f3b792583acf3a39ac6e2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/same-concentration-counterexamples.csv",
+      "kind": "prior_output",
+      "bytes": 485,
+      "sha256": "8bbe8328515ccce51b2793a9dc836a7409a17a1e0b1a18520ffb03ca541530ef"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/summary.md",
+      "kind": "prior_output",
+      "bytes": 2637,
+      "sha256": "4b130e45f5f0b862c905834e25fb0bd7bfa1a14f1b5409ae3e04c1adbe343fd5"
+    }
+  ],
+  "manifest_sha256": "b6c92c4f9aec463fe5d79dea18bc3142e7d2c9c335e1a2bcb49c8116fa0701ca"
+}

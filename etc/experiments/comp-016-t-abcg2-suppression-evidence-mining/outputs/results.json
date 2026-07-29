@@ -1,155 +1,218 @@
 {
-  "fetch_date": "2026-05-07",
-  "claim_under_test": "Androgens (testosterone, DHT) directly suppress INTESTINAL ABCG2 expression at magnitudes consistent with a structural ceiling on the gut-lumen-sink platform efficacy in male/androgen-dominant patients.",
-  "aggregation": {
-    "n_studies_total": 17,
-    "by_direction": {
-      "SUPPORTS": [
-        "S01_Hoque2020",
-        "S08_Yahyaoui2008",
-        "S09_Halperin_Kuhns_2020_review",
-        "S14_Hak_Choi_2008_NHANES",
-        "S15_KNIGHT_ENIGI_transgender_meta",
-        "S16_Norwich_adolescent_boys"
-      ],
-      "SUPPORTS_STRONG": [
-        "S02_Sakamoto2018"
-      ],
-      "SUPPORTS_ASYMMETRIC": [
-        "S03_Yu2021"
-      ],
-      "CONTRADICTS": [
-        "S04_Klyushova2023",
-        "S10_Mossbrugger2008_intestinal_rat_full_scan"
-      ],
-      "MIXED": [
-        "S05_Tanaka2005",
-        "S13_Takiue2011",
-        "S17_Hoque_FASEB_male_only_phenotype_intestinal"
-      ],
-      "INDIRECT": [
-        "S06_Naud2008"
-      ],
-      "SUPPORTS_MECHANISTIC": [
-        "S07_Jeong2015"
-      ],
-      "NEUTRAL": [
-        "S11_Drozdzik2014_human_intestine"
-      ],
-      "TANGENTIAL": [
-        "S12_Hosoyamada2010"
-      ]
+  "analysis": {
+    "bounded_interpretation": "No record in the fixed 17-record inventory demonstrates androgen-driven intestinal ABCG2 suppression. This does not establish a universal literature absence, the opposite mechanism, a healthy-human null, or a male-specific export ceiling.",
+    "citable_records": 16,
+    "counts_by_test_class": {
+      "adjacent": 15,
+      "in_vitro": 1,
+      "unresolved": 1
     },
-    "by_tissue": {
-      "BOTH_INTESTINE_AND_KIDNEY": [
-        "S01_Hoque2020",
-        "S05_Tanaka2005",
-        "S06_Naud2008"
-      ],
-      "ENDPOINT_ONLY": [
-        "S02_Sakamoto2018",
-        "S08_Yahyaoui2008",
-        "S14_Hak_Choi_2008_NHANES",
-        "S15_KNIGHT_ENIGI_transgender_meta",
-        "S16_Norwich_adolescent_boys"
-      ],
-      "INTESTINE": [
-        "S03_Yu2021",
-        "S04_Klyushova2023",
-        "S10_Mossbrugger2008_intestinal_rat_full_scan",
-        "S11_Drozdzik2014_human_intestine"
-      ],
-      "CANCER_LINE": [
-        "S07_Jeong2015"
-      ],
-      "OTHER_OR_REVIEW": [
-        "S09_Halperin_Kuhns_2020_review",
-        "S17_Hoque_FASEB_male_only_phenotype_intestinal"
-      ],
-      "KIDNEY_ONLY": [
-        "S12_Hosoyamada2010",
-        "S13_Takiue2011"
-      ]
+    "counts_by_verification_tier": {
+      "legacy_search_summary": 12,
+      "official_publisher_abstract": 1,
+      "primary_database_abstract": 1,
+      "primary_full_text": 2,
+      "unresolved_legacy_placeholder": 1
     },
-    "by_evidence_tier": {
-      "Animal Model": [
-        "S01_Hoque2020",
-        "S05_Tanaka2005",
-        "S06_Naud2008",
-        "S10_Mossbrugger2008_intestinal_rat_full_scan",
-        "S12_Hosoyamada2010",
-        "S13_Takiue2011"
-      ],
-      "Clinical Trial (observational, not RCT)": [
-        "S02_Sakamoto2018"
-      ],
-      "Animal Model + In Vitro": [
-        "S03_Yu2021"
-      ],
-      "In Vitro (cell line)": [
-        "S04_Klyushova2023"
-      ],
-      "In Vitro (cancer cell line)": [
-        "S07_Jeong2015"
-      ],
-      "Clinical Trial (observational, prospective)": [
-        "S08_Yahyaoui2008"
-      ],
-      "Review": [
-        "S09_Halperin_Kuhns_2020_review"
-      ],
-      "Observational Human (proteomics)": [
-        "S11_Drozdzik2014_human_intestine"
-      ],
-      "Clinical (observational cohort)": [
-        "S14_Hak_Choi_2008_NHANES"
-      ],
-      "Clinical Trial (prospective observational)": [
-        "S15_KNIGHT_ENIGI_transgender_meta"
-      ],
-      "Clinical (observational longitudinal)": [
-        "S16_Norwich_adolescent_boys"
-      ],
-      "Animal Model (abstract-stage)": [
-        "S17_Hoque_FASEB_male_only_phenotype_intestinal"
-      ]
-    },
-    "load_bearing_intestinal_studies": [
-      "S01_Hoque2020",
-      "S03_Yu2021",
-      "S04_Klyushova2023"
+    "direct_in_vitro_test_ids": [
+      "S04_Slepnev2023"
     ],
-    "load_bearing_for_renal_or_systemic_only": [
-      "S02_Sakamoto2018",
-      "S05_Tanaka2005",
-      "S06_Naud2008",
-      "S07_Jeong2015",
-      "S08_Yahyaoui2008",
-      "S09_Halperin_Kuhns_2020_review",
-      "S10_Mossbrugger2008_intestinal_rat_full_scan",
-      "S11_Drozdzik2014_human_intestine",
-      "S12_Hosoyamada2010",
-      "S13_Takiue2011",
-      "S14_Hak_Choi_2008_NHANES",
-      "S15_KNIGHT_ENIGI_transgender_meta",
-      "S16_Norwich_adolescent_boys",
-      "S17_Hoque_FASEB_male_only_phenotype_intestinal"
+    "direct_in_vivo_test_ids": [],
+    "direct_suppression_ids": [],
+    "direct_test_outcomes": {
+      "S04_Slepnev2023": "increase"
+    },
+    "inventory_size": 17,
+    "result_code": "NOT_DEMONSTRATED_IN_FIXED_INVENTORY",
+    "scope_conclusion": "The result rejects only use of direct androgen suppression of intestinal ABCG2 as an established premise from this scan. It preserves the broader mechanistic question and routes it to a direct apical-protein and urate-flux measurement.",
+    "unresolved_records": [
+      "S15_UnresolvedHormoneCohort"
     ]
   },
-  "verdict": {
-    "verdict": "WEAK_UNCONFIRMED",
-    "direct_supports_T_suppresses_intestinal_ABCG2": [],
-    "direct_contradicts_T_suppresses_intestinal_ABCG2": [
-      "S04_Klyushova2023"
-    ],
-    "direct_intestinal_sex_dimorphism_studies": [
-      "S01_Hoque2020",
-      "S03_Yu2021",
-      "S04_Klyushova2023"
-    ],
-    "n_direct_supports_T_suppresses_intestinal_ABCG2": 0,
-    "n_direct_contradicts_T_suppresses_intestinal_ABCG2": 1,
-    "rationale": "Zero primary studies demonstrate androgen-driven suppression of intestinal ABCG2 directly (no castration\u2192intestinal-ABCG2-up, no T\u2192intestinal-ABCG2-down). Klyushova 2023 (Caco-2) shows the OPPOSITE direction in vitro. MacLean 2008 shows NO sex difference in healthy rat intestinal ABCG2 across all segments. The intestinal compartment IS sex-dimorphic in a urate-relevant manner (Hoque 2020 Q140K mouse, Yu 2021 estradiol-positive female mechanism), but the directional driver is ESTRADIOL POSITIVE on the female side, not ANDROGEN NEGATIVE on the male side. The platform-thesis 'structural ceiling from androgen-driven ABCG2 suppression' framing is not directly supported. The softer 'males lack the estradiol-driven intestinal ABCG2 upregulation females have' framing IS supported. These have different platform-design implications."
-  },
-  "summary_judgment": "WEAK / UNCONFIRMED \u2014 the SPECIFIC claim that androgens directly suppress intestinal ABCG2 is not supported by primary literature. The BROADER claim that intestinal ABCG2 is sex-dimorphic in a urate-relevant way IS supported. The mechanism appears to be ESTRADIOL POSITIVE in females rather than ANDROGEN NEGATIVE in males. The structural-ceiling argument needs to be SOFTENED but is not entirely wrong \u2014 it should be reframed as 'males lack the estradiol-driven intestinal ABCG2 induction that females have, so the gut-lumen-sink asymptote is lower in males than females' rather than 'androgens actively suppress intestinal ABCG2.'"
+  "corrected_source_findings": [
+    {
+      "boundary": "Genotype-stressed mouse evidence; androgen exposure was not manipulated and the result is not a healthy-human baseline.",
+      "citation": "Hoque KM, Halperin Kuhns VL, et al. (2020), Nature Communications, DOI 10.1038/s41467-020-16525-w, PMID 32488095",
+      "evidence_level": "Animal Model",
+      "id": "S01_Hoque2020",
+      "retained_finding": "Q140K+/+ mice had 78% lower jejunal ABCG2 by Western blot than WT, compared with a 44% renal reduction.",
+      "verification_tier": "primary_full_text"
+    },
+    {
+      "boundary": "Pharmacological Caco-2 estradiol result; not an androgen test or a physiological intestinal effect size.",
+      "citation": "Liu L, Zhao T, Shan L, Cao L, Zhu X, Xue Y (2021), Nutrition & Metabolism, DOI 10.1186/s12986-021-00583-y, PMID 34144706",
+      "evidence_level": "In Vitro",
+      "id": "S03_Liu2021",
+      "retained_finding": "Nominal 100 µM estradiol benzoate increased Caco-2 ABCG2 mRNA at 48 hours without a dose-dependent response; 50 µM LY294002 partially blocked the response.",
+      "verification_tier": "primary_full_text"
+    },
+    {
+      "boundary": "Official-abstract-tier Caco-2 result; it does not establish physiological exposure or exclude androgen-receptor involvement.",
+      "citation": "Slepnev AA, Abalenikhina YV, Popova NM, Shchulkin AV, Yakusheva EN (2023), Biochemistry (Moscow) Supplement Series A, DOI 10.1134/S1990747823050100",
+      "evidence_level": "In Vitro",
+      "id": "S04_Slepnev2023",
+      "retained_finding": "Nominal 1, 10, and 100 µM testosterone increased Caco-2 ABCG2 after 24 hours; PXR/FXR inhibitor conditions reduced the increase, which remained above control.",
+      "verification_tier": "official_publisher_abstract"
+    },
+    {
+      "boundary": "Healthy-rat qualitative null; no androgen manipulation and no healthy-human effect-size estimate.",
+      "citation": "MacLean C, Moenning U, Reichel A, Fricker G (2008), Drug Metabolism and Disposition, DOI 10.1124/dmd.108.020859, PMID 18378562",
+      "evidence_level": "Animal Model",
+      "id": "S10_MacLean2008",
+      "retained_finding": "The rat intestinal transporter-expression scan reported no sex-specific difference.",
+      "verification_tier": "primary_database_abstract"
+    }
+  ],
+  "decision_rule": "Direct suppression is demonstrated only by a record classified as an in_vivo or in_vitro direct test with target_outcome=decrease. Absence of such a row yields NOT_DEMONSTRATED_IN_FIXED_INVENTORY, not a universal literature-absence conclusion.",
+  "forbidden_inferences": [
+    "No direct androgen-suppression study exists outside this fixed inventory.",
+    "Testosterone physiologically increases intestinal ABCG2 in humans.",
+    "Healthy-human intestinal ABCG2 has no sex difference.",
+    "Estradiol establishes a female intestinal ABCG2 baseline advantage.",
+    "Male or androgen-dominant physiology imposes a quantified gut-lumen export ceiling.",
+    "The broader androgen–urate prior is unsupported.",
+    "The inventory establishes a clomiphene mechanism or treatment implication."
+  ],
+  "inventory_date": "2026-05-07",
+  "question": "Within the fixed 17-record inventory, did any record directly demonstrate that androgen exposure or androgen-state manipulation decreases intestinal ABCG2?",
+  "record_classifications": [
+    {
+      "boundary": "Genotype-stressed mouse evidence; androgen exposure was not manipulated and the result is not a healthy-human baseline.",
+      "citable": true,
+      "citation": "Hoque KM, Halperin Kuhns VL, et al. (2020), Nature Communications, DOI 10.1038/s41467-020-16525-w, PMID 32488095",
+      "id": "S01_Hoque2020",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    },
+    {
+      "boundary": "Androgen-deprivation and serum-urate context; intestinal ABCG2 was not measured in the inventory extraction.",
+      "citable": true,
+      "citation": "Sakamoto K et al. (2018), PLOS ONE, DOI 10.1371/journal.pone.0209049, PMID 30557349",
+      "id": "S02_Sakamoto2018",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    },
+    {
+      "boundary": "Pharmacological Caco-2 estradiol result; not an androgen test or a physiological intestinal effect size.",
+      "citable": true,
+      "citation": "Liu L, Zhao T, Shan L, Cao L, Zhu X, Xue Y (2021), Nutrition & Metabolism, DOI 10.1186/s12986-021-00583-y, PMID 34144706",
+      "id": "S03_Liu2021",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    },
+    {
+      "boundary": "Official-abstract-tier Caco-2 result; it does not establish physiological exposure or exclude androgen-receptor involvement.",
+      "citable": true,
+      "citation": "Slepnev AA, Abalenikhina YV, Popova NM, Shchulkin AV, Yakusheva EN (2023), Biochemistry (Moscow) Supplement Series A, DOI 10.1134/S1990747823050100",
+      "id": "S04_Slepnev2023",
+      "target_outcome": "increase",
+      "test_class": "in_vitro"
+    },
+    {
+      "boundary": "The old extraction did not isolate an intestinal ABCG2 outcome under androgen manipulation.",
+      "citable": true,
+      "citation": "Tanaka Y, Slitt AL, Leazer TM, Maher JM, Klaassen CD (2005), Biochemical and Biophysical Research Communications, DOI 10.1016/j.bbrc.2004.10.182, PMID 15567169",
+      "id": "S05_Tanaka2005",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    },
+    {
+      "boundary": "Sex-stratified nephrectomy disease model; no direct androgen × intestinal ABCG2 test was retained.",
+      "citable": true,
+      "citation": "Naud J et al. (2008), Drug Metabolism and Disposition, DOI 10.1124/dmd.107.017996, PMID 17855625",
+      "id": "S06_Naud2008",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    },
+    {
+      "boundary": "Androgen-withdrawal mechanism in prostate cancer cells, not intestinal epithelium.",
+      "citable": true,
+      "citation": "Jeong H et al. (2015), Biochimica et Biophysica Acta, DOI 10.1016/j.bbagrm.2015.01.006, PMID 25615818",
+      "id": "S07_Jeong2015",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    },
+    {
+      "boundary": "Hormone-therapy urate/FEUA context; intestinal ABCG2 was not measured.",
+      "citable": true,
+      "citation": "Yahyaoui R, T'Sjoen G, et al. (2008), Journal of Clinical Endocrinology & Metabolism, DOI 10.1210/jc.2007-2467, PMID 18349066",
+      "id": "S08_Yahyaoui2008",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    },
+    {
+      "boundary": "Review-level framing; not a direct experiment.",
+      "citable": true,
+      "citation": "Halperin Kuhns VL, Woodward OM (2020), International Journal of Molecular Sciences, DOI 10.3390/ijms21124269, PMID 32560040",
+      "id": "S09_HalperinKuhns2020_review",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    },
+    {
+      "boundary": "Healthy-rat qualitative null; no androgen manipulation and no healthy-human effect-size estimate.",
+      "citable": true,
+      "citation": "MacLean C, Moenning U, Reichel A, Fricker G (2008), Drug Metabolism and Disposition, DOI 10.1124/dmd.108.020859, PMID 18378562",
+      "id": "S10_MacLean2008",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    },
+    {
+      "boundary": "Human intestinal abundance study without androgen manipulation in the retained extraction; not a direct target test.",
+      "citable": true,
+      "citation": "Drozdzik M et al. (2014), Molecular Pharmaceutics, DOI 10.1021/mp500330y, PMID 25158075",
+      "id": "S11_Drozdzik2014",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    },
+    {
+      "boundary": "Mouse renal urate-transporter experiment; intestinal ABCG2 was not measured.",
+      "citable": true,
+      "citation": "Hosoyamada M, Takiue Y, et al. (2010), Nucleosides, Nucleotides & Nucleic Acids, DOI 10.1080/15257770.2010.494651, PMID 20589576",
+      "id": "S12_Hosoyamada2010",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    },
+    {
+      "boundary": "Mouse kidney and female-hormone context; not an androgen × intestinal ABCG2 test.",
+      "citable": true,
+      "citation": "Takiue Y et al. (2011), Nucleosides, Nucleotides & Nucleic Acids, DOI 10.1080/15257770.2011.551172, PMID 21360409",
+      "id": "S13_Takiue2011",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    },
+    {
+      "boundary": "Menopause/hormone-use serum-urate context; intestinal ABCG2 was not measured.",
+      "citable": true,
+      "citation": "Hak AE, Choi HK (2008), Arthritis Research & Therapy, DOI 10.1186/ar2519, PMID 18822120",
+      "id": "S14_HakChoi2008",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    },
+    {
+      "boundary": "The original row lacked a stable author, title, DOI, or PMID identity and contributes no evidence.",
+      "citable": false,
+      "citation": "Unresolved legacy row labelled KNIGHT/ENIGI prospective cohorts",
+      "id": "S15_UnresolvedHormoneCohort",
+      "target_outcome": "not_tested",
+      "test_class": "unresolved"
+    },
+    {
+      "boundary": "Longitudinal serum-urate association; no intervention and no intestinal ABCG2 measurement.",
+      "citable": true,
+      "citation": "Establishment of sex difference in circulating uric acid is associated with higher testosterone and lower SHBG in adolescent boys (2021), Scientific Reports, DOI 10.1038/s41598-021-96959-4, PMCID PMC8405811",
+      "id": "S16_AdolescentUrate2021",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    },
+    {
+      "boundary": "Renal-transporter conference abstract; not an intestinal androgen experiment.",
+      "citable": true,
+      "citation": "Halperin Kuhns VL et al. (2020), FASEB Journal abstract, DOI 10.1096/fasebj.2020.34.s1.06423",
+      "id": "S17_HalperinKuhns2020_abstract",
+      "target_outcome": "not_tested",
+      "test_class": "adjacent"
+    }
+  ],
+  "repair_date": "2026-07-29",
+  "schema_version": 2
 }

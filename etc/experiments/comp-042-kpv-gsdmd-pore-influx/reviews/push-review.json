@@ -2,14 +2,14 @@
   "schema_version": 1,
   "comp": "comp-042",
   "comp_dir": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx",
-  "source_commit": "1b57f9c213d67eda156ac41119428b0a09555ea9",
-  "artifact_manifest_sha256": "85236300a802ebd6cc6f473ba7107f086170fff51743f3a4d832c372eb867af5",
-  "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-27T12:00:59Z",
+  "source_commit": "8c434f9d44d27a9d20915697f78bce0e90337930",
+  "artifact_manifest_sha256": "4a593d03c6c859cbcd860f8c8e5af6265c8a55f59206933c003e2ec5a6283e7d",
+  "reviewer_model": "openai/gpt-5",
+  "timestamp": "2026-07-28T12:02:15Z",
   "comp_verdict": "clean_with_limitations",
   "propagation_eligibility": "eligible_with_warning",
   "synthesis_eligibility": "eligible_with_warning",
-  "action_required": true,
+  "action_required": false,
   "authoring_gates": {
     "status": "modern",
     "valid": true,
@@ -146,22 +146,22 @@
     },
     {
       "shard_id": "shard-002",
-      "coverage_sha256": "b5849400d7b1cc746a88c46fb820f29516053a272795e8fbd093efa827037e8d",
+      "coverage_sha256": "3881a05e7b4cbfb41243762fbf915e1eb1b987f00454b78178ae5534419ac51e",
       "segments": [
         {
           "path": "wiki/chassis-pending-interventions.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 31315,
-          "file_sha256": "a215fd9a57d5cf1332d966bd840cc8394ec85b906011fac900898a0790fd8910",
+          "end": 30430,
+          "file_sha256": "c7284d240153bc9ee262f16b105a1804e2082f84a4eeb8a2770b6906fd987741",
           "binary": false
         },
         {
           "path": "wiki/computational-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 74655,
-          "file_sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88",
+          "end": 72183,
+          "file_sha256": "b126f07a99832898b0478f8fb5a3c4ed5d8b676313f2fb2e383fcf807e5c3d48",
           "binary": false
         },
         {
@@ -176,70 +176,74 @@
     },
     {
       "shard_id": "shard-003",
-      "coverage_sha256": "91fa6f314c90d6b0fe41c1339f6cf9ffc4800e20baf709a403250ad94f2e6e29",
+      "coverage_sha256": "39d92677d79231882fb5e0eea9508a9c5e952c04378b42bcae404601e8526fb6",
       "segments": [
         {
           "path": "wiki/open-questions.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 74447,
-          "file_sha256": "9ffef573b763d3471a545cb2700eee1b09910f8d906b5795344abf6e9beed09a",
+          "end": 70126,
+          "file_sha256": "707da9f27d1edb7fd3cbb00a3b8633c9e1a0e5f75faf4475a6f01040ea1c7236",
           "binary": false
         }
       ]
     },
     {
       "shard_id": "shard-004",
-      "coverage_sha256": "b96da127bfd1b33a64e19f406ca972ade8dd030fd0dc76795d60f46fe401dbc5",
+      "coverage_sha256": "e4fa4424d89c54e23526ca4b989fc95e7b8a3f0fcbfcaeaa106fdeb67b31d7d1",
       "segments": [
         {
           "path": "wiki/validation-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 0,
           "end": 180000,
-          "file_sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6",
+          "file_sha256": "51c31f6aff36d34a7573c3d46553768a7717f7fef8360a6e8420fcd6d8bf243e",
           "binary": false
         }
       ]
     },
     {
       "shard_id": "shard-005",
-      "coverage_sha256": "72acd7cf15738e5e3a68104ba96d37efd9fdd0cdbbcf7a0a29583b51dc543afa",
+      "coverage_sha256": "89ed9f6e8e6df3b1653a28173e4bdb527ea0d197d0ebe64b8b28e79525fb712e",
       "segments": [
         {
           "path": "wiki/validation-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 180000,
-          "end": 239988,
-          "file_sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6",
+          "end": 223031,
+          "file_sha256": "51c31f6aff36d34a7573c3d46553768a7717f7fef8360a6e8420fcd6d8bf243e",
           "binary": false
         }
       ]
     }
   ],
   "unsupported_binary_entries": [],
-  "projected_cost_usd": 1.881277,
-  "actual_cost_usd": 1.638787,
-  "input_tokens": 458687,
-  "output_tokens": 14428,
-  "tool_calls": 17,
-  "review_sha256": "eae55a62ffc15e4edd1fdff6b6650d4713110741f35955082fd81f97086d8768",
+  "projected_cost_usd": 0.0,
+  "actual_cost_usd": 0.0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "tool_calls": 0,
+  "usage_note": "Interactive exact review; daemon API cost and token counters were not used.",
+  "review_sha256": "d41d07d60a3c53ffc8532f25c5405ad2e6070f77d7921422edec401c382af253",
   "lane_adjudication": {
-    "date": "2026-07-27T12:00:59Z",
+    "date": "2026-07-28T12:02:15Z",
     "method": "exact push review",
     "new_artifact_review_performed": true,
-    "queue_action_remains_open": true,
-    "propagation_allowed_scope": "narrow comp-042 correction/summary only: A1 proxy route states, A2 unresolved, no route qualification",
-    "synthesis_allowed_scope": "bounded hypothesis synthesis only; may inform validation \u00a71.32 tracer/KPV-comparator gate",
+    "queue_action_remains_open": false,
+    "propagation_allowed_scope": "passive GSDMD-pore influx within the declared model; exposure-proxy A1 engineering states; A2 unresolved; matched uptake-test routing",
+    "synthesis_allowed_scope": "bounded physical-delivery and validation-design synthesis using A1 as an exposure proxy and A2 as an unresolved heuristic; no route qualification",
     "forbidden_inferences": [
-      "KPV clinical efficacy",
+      "KPV efficacy",
       "intracellular target engagement",
-      "route qualification",
-      "physiological selectivity",
       "observed synovial KPV exposure",
+      "route qualification",
+      "physiological or total-cell selectivity",
       "safety",
+      "therapeutic-timing sufficiency",
       "GSDMD pore-delivery platform validation or refutation",
-      "universal complete equilibration",
+      "design-space fractions as probabilities",
+      "universal equilibration",
+      "chassis choice",
       "clinical advice"
     ]
   }

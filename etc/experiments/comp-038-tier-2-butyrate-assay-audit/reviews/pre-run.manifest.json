@@ -1,19 +1,25 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "phase": "pre",
   "comp_dir": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit",
   "files": [
     {
       "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/README.md",
       "kind": "design",
-      "bytes": 4184,
-      "sha256": "98cdbd5d30eea2a36cc987494dd4f3422ec6c6d9208510642109532d88e3e200"
+      "bytes": 6001,
+      "sha256": "6c3c7247e6d1f6d1dc44801b3c740b834a3da724c69d03beb00a34c127afc0b0"
     },
     {
       "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/analyze.py",
       "kind": "design",
-      "bytes": 18612,
-      "sha256": "cf9f06a66d7cc83fe8519d6f72f64a6616165519566914a933cb5565e36f77d7"
+      "bytes": 19851,
+      "sha256": "62dc8f4d7d2de7b1bb003f9d066feda8d0106f77286ad48cbd792256b09672be"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/maintenance-repair-plan-2026-07-28.md",
+      "kind": "design",
+      "bytes": 4311,
+      "sha256": "ba6f82d954b3453fc76087c7d79140caa47eefa758055edee77ddae61ba13246"
     },
     {
       "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/model-config.json",
@@ -38,6 +44,18 @@
       "kind": "design",
       "bytes": 6434,
       "sha256": "8abcc1b32acd8bcf2aae06105d9474d389e8c68771892a9e980925005ee87ec2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/test_maintenance.py",
+      "kind": "design",
+      "bytes": 5989,
+      "sha256": "0d87e91eda530064a3c8e1510a219603413fa55b70f3788286e3f05dc5200781"
+    },
+    {
+      "path": "wiki/etc/experiments/lib/agentic_lit_synthesis.py",
+      "kind": "shared_dependency",
+      "bytes": 38586,
+      "sha256": "c2b155434d2dfa3f0ba19745d30f0ff83b1233a72ed48de9ba6c7f12e928e599"
     }
   ],
   "prior_output_baseline": [
@@ -78,5 +96,5 @@
       "sha256": "fbb170dcce73f443486436c1a1f9b5bd1e33c98fb812b65c06f8d2a81d5fecdb"
     }
   ],
-  "manifest_sha256": "9acd8643748d3774f6738ebdc3e49edbf2cb6df1f2d6b52fdc35a7f5fe5abefb"
+  "manifest_sha256": "4c8e8aa62d3d6801a5469d0fac4b345b1be95b4426af314be4d89ab3c5d2fd01"
 }

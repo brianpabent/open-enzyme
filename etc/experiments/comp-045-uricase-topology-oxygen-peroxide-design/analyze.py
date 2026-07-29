@@ -10,8 +10,11 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
+REPO_ROOT = ROOT.parents[3]
 INPUT_PATH = ROOT / "inputs" / "design_factors.json"
 OUTPUT_DIR = ROOT / "outputs"
+PRE_RUN_MANIFEST = ROOT / "reviews" / "pre-run.manifest.json"
+PRE_RUN_REVIEW = ROOT / "reviews" / "pre-run.md"
 ALLOWED_MODULES = {
     "katg",
     "vhb",
@@ -33,6 +36,7 @@ REQUIRED_ROOT_KEYS = {
     "oxygen_contexts",
     "urate_concentrations",
     "biological_runs",
+    "statistical_decision_contract",
     "layout_seed",
     "shared_anchors_per_plate",
     "control_policy",
@@ -45,6 +49,72 @@ REQUIRED_ROOT_KEYS = {
 
 def fail(message: str) -> None:
     raise ValueError(message)
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def require_pre_run_gate() -> None:
+    """Fail unless the executing design matches an exact GO-reviewed manifest."""
+    errors: list[str] = []
+    try:
+        document = json.loads(PRE_RUN_MANIFEST.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise SystemExit(f"PRE_RUN_GATE_BLOCKED: unreadable manifest: {exc}") from exc
+
+    expected_digest = document.pop("manifest_sha256", None)
+    canonical = json.dumps(
+        document,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+    ).encode("utf-8")
+    actual_digest = hashlib.sha256(canonical).hexdigest()
+    if expected_digest != actual_digest:
+        errors.append("pre-run manifest payload digest mismatch")
+    if document.get("phase") != "pre":
+        errors.append("pre-run manifest phase is not 'pre'")
+    expected_comp_dir = ROOT.relative_to(REPO_ROOT).as_posix()
+    if document.get("comp_dir") != expected_comp_dir:
+        errors.append("pre-run manifest is bound to another COMP directory")
+
+    for item in document.get("files", []):
+        if item.get("kind") not in {"design", "shared_dependency"}:
+            continue
+        raw_path = str(item.get("path", ""))
+        path = (REPO_ROOT / raw_path).resolve()
+        if path != REPO_ROOT and REPO_ROOT not in path.parents:
+            errors.append(f"manifest path escapes repository: {raw_path}")
+            continue
+        if not path.is_file():
+            errors.append(f"reviewed design file is missing: {raw_path}")
+            continue
+        if path.stat().st_size != item.get("bytes"):
+            errors.append(f"reviewed design file size changed: {raw_path}")
+        elif sha256_file(path) != item.get("sha256"):
+            errors.append(f"reviewed design file changed: {raw_path}")
+
+    try:
+        review_lines = [
+            line.strip()
+            for line in PRE_RUN_REVIEW.read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+    except OSError as exc:
+        raise SystemExit(f"PRE_RUN_GATE_BLOCKED: unreadable review: {exc}") from exc
+    if not review_lines or review_lines[0] != "PRE_RUN_GATE: GO":
+        errors.append("pre-run review does not grant PRE_RUN_GATE: GO")
+    snapshot_line = f"REVIEWED_SNAPSHOT: {expected_digest}"
+    if len(review_lines) < 2 or review_lines[1] != snapshot_line:
+        errors.append("pre-run review is not bound to the current manifest")
+
+    if errors:
+        raise SystemExit("PRE_RUN_GATE_BLOCKED: " + "; ".join(errors))
 
 
 def require_unique(values: list[str], label: str) -> None:
@@ -63,14 +133,27 @@ def module_signature(modules: list[str]) -> tuple[str, ...]:
 
 
 def validate_and_index(parameters: dict) -> dict:
-    missing = REQUIRED_ROOT_KEYS - set(parameters)
-    if missing:
-        fail(f"missing root keys: {sorted(missing)}")
+    observed_root_keys = set(parameters)
+    if observed_root_keys != REQUIRED_ROOT_KEYS:
+        missing = REQUIRED_ROOT_KEYS - observed_root_keys
+        extra = observed_root_keys - REQUIRED_ROOT_KEYS
+        fail(
+            "root keys do not exactly match the preregistered contract: "
+            f"missing={sorted(missing)}, extra={sorted(extra)}"
+        )
 
-    if parameters["schema_version"] != 2 or parameters["output_schema_version"] != 2:
-        fail("input and output schema versions must both be 2")
-    if not isinstance(parameters["output_migration"], str) or not parameters["output_migration"]:
-        fail("output_migration must describe the replaced historical schema")
+    if parameters["schema_version"] != 3 or parameters["output_schema_version"] != 3:
+        fail("input and output schema versions must both be 3")
+    expected_output_migration = (
+        "Schema 3 replaces schema 2 by adding reciprocal "
+        "VHb-within-reaction-site-catalase contrasts, an explicit blocked "
+        "statistical decision contract, expanded construct and assay "
+        "qualification gates and readouts, and corrected unresolved "
+        "A. oryzae catalase state semantics; the biological verdict remains "
+        "NOT_EVALUATED."
+    )
+    if parameters["output_migration"] != expected_output_migration:
+        fail("output_migration does not exactly describe the schema-2 replacement")
 
     vocabulary = parameters["state_vocabulary"]
     expected_vocabulary_values = {
@@ -124,7 +207,7 @@ def validate_and_index(parameters: dict) -> dict:
             "intracellular_alignment_by_design_empirical_closure_unresolved",
             "intracellular_katg_not_at_extracellular_uox_reaction_site",
             "proposed_reaction_site_aligned_configuration",
-            "native_intracellular_background_not_a_tested_secreted_uox_closure",
+            "host_catalase_location_and_activity_unresolved_no_reaction_site_closure",
         },
         "oxygen_status": {
             "oxygen_sufficiency_not_established",
@@ -221,7 +304,7 @@ def validate_and_index(parameters: dict) -> dict:
         signature = module_signature(configuration["modules"])
         combined_signature = (topology_id, signature)
         if combined_signature in configuration_signatures:
-            fail(f"duplicate physical configuration: {combined_signature}")
+            fail(f"duplicate candidate configuration class: {combined_signature}")
         configuration_signatures.add(combined_signature)
 
         location = topology_by_id[topology_id]["uox_location"]
@@ -291,7 +374,7 @@ def validate_and_index(parameters: dict) -> dict:
     related_source_ids = []
     related_by_signature: dict[tuple[str, tuple[str, ...]], list[dict]] = {}
     expected_related_sources = {
-        ("pulse_intracellular_ygfu", ()): "li_2023_puclm_ygfu_related_intracellular",
+        ("pulse_intracellular_ygfu", ()): "gencer_2023_puclm_ygfu_related_intracellular",
         ("pulse_intracellular_ygfu", ("katg", "vhb")): "zhao_2022_related_intracellular_joint_katg_vhb",
     }
     for precedent in related_precedents:
@@ -390,6 +473,11 @@ def validate_and_index(parameters: dict) -> dict:
             "lamb_vhb_only",
             "block_b",
         ),
+        "lamb_vhb_within_reaction_site_catalase": (
+            "lamb_compartment_catalase_vhb",
+            "lamb_compartment_catalase_only",
+            "block_b",
+        ),
         "inakn_katg_isolation": (
             "inakn_katg_only",
             "inakn_no_support",
@@ -413,6 +501,11 @@ def validate_and_index(parameters: dict) -> dict:
         "inakn_reaction_site_catalase_with_vhb": (
             "inakn_compartment_catalase_vhb",
             "inakn_vhb_only",
+            "block_b",
+        ),
+        "inakn_vhb_within_reaction_site_catalase": (
+            "inakn_compartment_catalase_vhb",
+            "inakn_compartment_catalase_only",
             "block_b",
         ),
         "koji_reaction_site_catalase": (
@@ -471,8 +564,18 @@ def validate_and_index(parameters: dict) -> dict:
     if any(row["role"] not in vocabulary["urate_role"] for row in concentrations):
         fail("unknown urate concentration role")
 
-    if not isinstance(parameters["biological_runs"], int) or parameters["biological_runs"] < 1:
-        fail("biological_runs must be a positive integer")
+    if type(parameters["biological_runs"]) is not int or parameters["biological_runs"] != 3:
+        fail("biological_runs must remain exactly three provisional plate-layout slots")
+    expected_statistical_decision_contract = {
+        "status": "BLOCKED_PENDING_PREREGISTERED_WET_LAB_ANALYSIS_PLAN",
+        "estimand_effect_metric_and_biological_threshold": "unresolved_before_wet_lab_execution",
+        "variance_effect_size_power_precision_target_and_run_count": "unresolved_biological_runs_is_provisional_plate_layout_assumption_only",
+        "model_and_multiplicity": "unresolved_before_wet_lab_execution",
+        "exclusion_missing_data_and_assay_failure_rules": "unresolved_before_wet_lab_execution",
+        "sensitivity_rules": "unresolved_before_wet_lab_execution",
+    }
+    if parameters["statistical_decision_contract"] != expected_statistical_decision_contract:
+        fail("statistical_decision_contract does not exactly match the blocked preregistered contract")
     if not isinstance(parameters["layout_seed"], str) or not parameters["layout_seed"]:
         fail("layout_seed must be a nonempty string")
 
@@ -522,7 +625,7 @@ def validate_and_index(parameters: dict) -> dict:
         fail("control_policy does not exactly match the preregistered contract")
 
     expected_sampling_contract = {
-        "culture_unit": "one culture well per configuration, UOX state, concentration, biological run, oxygen context, and block assignment",
+        "culture_unit": "one culture well per configuration, UOX state, concentration, provisional biological-run slot, oxygen context, and block assignment",
         "timepoint_status": "unresolved_predeclared_sampling_times_required_before_wet_lab_execution",
         "assay_compatibility_status": "unresolved_same_well_aliquot_or_separate_plate_plan_required_before_wet_lab_execution",
     }
@@ -530,32 +633,48 @@ def validate_and_index(parameters: dict) -> dict:
         fail("sampling_contract does not exactly match the preregistered contract")
 
     readiness = parameters["wet_lab_readiness"]
-    if readiness["status"] != "BLOCKED_PENDING_EXACT_CONTROL_AND_SAMPLING_QUALIFICATION":
-        fail("wet-lab readiness must remain blocked at this design stage")
-    expected_readiness_blockers = {
-        "exact active and inactive UOX construct identities and matched expression/localization criteria",
-        "active-UOX retained-activity qualification for every exact configuration",
-        "exact KatG and VHb support-module constructs and their expression and retained-function qualification",
-        "exact reaction-site-catalase construction, retained activity, localization, and co-secretion or co-display compatibility",
+    expected_readiness_blockers = [
+        "exact active and inactive UOX construct identities and matched expression, retained-activity, and localization qualification criteria",
+        "exact UOX topology construction and compartment-specific localization and accessibility qualification",
+        "exact KatG construct, expression, and retained-activity qualification",
+        "exact VHb construct, expression, and oxygen-function qualification",
+        "exact reaction-site-catalase construction, expression, retained activity, localization, and co-secretion or co-display compatibility",
         "exact chassis and PULSE-mixture stock identities and cell normalization",
-        "dissolved-oxygen targets",
+        "exact dissolved-oxygen targets, measurement method, and oxygen-context qualification",
         "sampling times, well volume, aliquoting, and destructive-assay compatibility",
         "assay sensitivity and quantification limits at the 0.59 uM terminal-ileum prior",
+        "estimand, effect metric, and biological decision threshold",
+        "variance and effect-size assumptions, power or precision target, and justified biological-run count",
+        "analysis model and multiplicity control",
+        "exclusion, missing-data, and assay-failure rules",
+        "sensitivity-analysis rules",
+    ]
+    expected_readiness = {
+        "status": "BLOCKED_PENDING_EXACT_CONTROL_SAMPLING_AND_ANALYSIS_QUALIFICATION",
+        "blockers": expected_readiness_blockers,
     }
-    if set(readiness["blockers"]) != expected_readiness_blockers:
-        fail("wet-lab blockers do not match the complete preregistered set")
+    if readiness != expected_readiness:
+        fail("wet_lab_readiness does not exactly match the complete blocked contract")
     require_unique(readiness["blockers"], "wet-lab readiness blockers")
 
-    expected_readouts = {
+    expected_readouts = [
         "urate",
         "allantoin_or_pathway_product",
         "hydrogen_peroxide",
         "dissolved_oxygen",
         "viability",
+        "uox_expression",
+        "uox_activity",
         "uox_localization",
-    }
-    if set(parameters["primary_readouts"]) != expected_readouts:
-        fail("primary readouts do not match the preregistered set")
+        "katg_expression",
+        "katg_activity",
+        "vhb_expression",
+        "vhb_oxygen_function",
+        "reaction_site_catalase_activity",
+        "reaction_site_catalase_localization",
+    ]
+    if parameters["primary_readouts"] != expected_readouts:
+        fail("primary readouts do not exactly match the preregistered set")
     require_unique(parameters["primary_readouts"], "primary readouts")
 
     return {
@@ -598,7 +717,7 @@ def grade_configuration(configuration: dict, indexes: dict) -> dict:
     if "secreted_compartment_catalase" in modules or "surface_compartment_catalase" in modules:
         peroxide_status = "proposed_reaction_site_aligned_configuration"
     elif topology["chassis"] == "A_oryzae":
-        peroxide_status = "native_intracellular_background_not_a_tested_secreted_uox_closure"
+        peroxide_status = "host_catalase_location_and_activity_unresolved_no_reaction_site_closure"
     elif location == "cytoplasm" and "katg" in modules:
         peroxide_status = "intracellular_alignment_by_design_empirical_closure_unresolved"
     elif location != "cytoplasm" and "katg" in modules:
@@ -757,7 +876,9 @@ def render_summary(results: dict, parameters: dict) -> str:
         "",
         "This computation validates an evidence vocabulary and generates a randomized candidate plate layout. It contains no biological measurements and therefore does not advance, eliminate, or rank a topology.",
         "",
-        f"**Wet-lab readiness: {results['wet_lab_readiness']['status']}.** The layout is a blocked template until the listed control, stock, oxygen, and sampling identities are fixed and reviewed.",
+        f"**Wet-lab readiness: {results['wet_lab_readiness']['status']}.** The layout is a blocked template until the listed control, stock, oxygen, sampling, and analysis qualifications are fixed and reviewed.",
+        "",
+        f"**Statistical decision status: {results['statistical_decision_contract']['status']}.** The three biological-run slots are a provisional plate-layout assumption, not a power or precision claim.",
         "",
         "## Evidence boundary",
         "",
@@ -769,9 +890,9 @@ def render_summary(results: dict, parameters: dict) -> str:
         "",
         "## Candidate layout",
         "",
-        f"- {results['n_configurations']} unique physical configurations and {results['n_block_assignments']} block assignments in {results['n_configuration_blocks']} balanced blocks",
+        f"- {results['n_configurations']} candidate configuration classes and {results['n_block_assignments']} block assignments in {results['n_configuration_blocks']} balanced blocks",
         f"- {results['n_planned_within_block_contrasts']} preregistered contrasts, each with its comparator on the same plate block",
-        f"- {results['n_biological_runs']} biological runs × {results['n_oxygen_contexts']} oxygen contexts × {results['n_configuration_blocks']} blocks = {results['n_plates']} plates",
+        f"- {results['n_biological_runs']} provisional biological-run slots × {results['n_oxygen_contexts']} oxygen contexts × {results['n_configuration_blocks']} blocks = {results['n_plates']} plates",
         f"- {results['used_wells_per_plate']} used and {results['empty_wells_per_plate']} empty wells per 96-well plate",
         "- Every active-UOX configuration has a planned support-module-matched inactive-UOX control at every urate concentration, including zero; the exact inactive mutation and equivalence criteria remain a wet-lab blocker.",
         "- All samples are allocated across the full plate by a stable SHA-256 key.",
@@ -786,7 +907,8 @@ def render_summary(results: dict, parameters: dict) -> str:
         "## Wet-lab gates",
         "",
         "- Predeclare and measure the actual dissolved-oxygen target for each oxygen context; PULSE sealed-tube and Zhao ~15%-normal-DO conditions are not interchangeable.",
-        "- Bind exact active/inactive constructs, expression/localization equivalence criteria, strain stocks, cell normalization, sampling times, and assay compatibility before wet-lab execution.",
+        "- Bind exact active/inactive constructs; UOX, KatG, VHb, and reaction-site-catalase expression, activity, localization or oxygen-function qualifications as applicable; strain stocks; cell normalization; sampling times; and assay compatibility before wet-lab execution.",
+        "- Preregister the estimand, effect metric, biological threshold, variance and effect-size assumptions, power or precision target and justified run count, model and multiplicity control, exclusion and failure handling, and sensitivity rules before wet-lab execution.",
         "- Interpret 250 µM as a published PULSE assay concentration, 0.59 µM as a terminal-ileal human-fluid prior not tested in the published UOX configurations, and 50 µM as sensitivity only.",
         "- The mixed PULSE-KV composition is a proposed cross-plate anchor, not a published in-vitro positive control.",
         "",
@@ -808,6 +930,7 @@ def render_summary(results: dict, parameters: dict) -> str:
 
 
 def main() -> None:
+    require_pre_run_gate()
     parameters = json.loads(INPUT_PATH.read_text(encoding="utf-8"))
     indexes = validate_and_index(parameters)
 
@@ -890,6 +1013,7 @@ def main() -> None:
         "design_disposition": "CANDIDATE_LAYOUT_GENERATED",
         "biological_verdict": "NOT_EVALUATED",
         "wet_lab_readiness": parameters["wet_lab_readiness"],
+        "statistical_decision_contract": parameters["statistical_decision_contract"],
         "n_configurations": len(parameters["configurations"]),
         "n_block_assignments": sum(
             len(block["configuration_ids"])
@@ -920,6 +1044,7 @@ def main() -> None:
             "The candidate layout does not model expression burden, proteolysis, mucus residence, colonization, oxygen kinetics, or epithelial injury.",
             "Only the preregistered same-block contrasts are supported by the layout; other cross-block comparisons remain confounded with plate block.",
             "The inactive-UOX identities, sampling times, and assay multiplexing plan are intentionally unresolved and block wet-lab execution.",
+            "The three biological-run slots are a provisional plate-layout assumption; no estimand, effect metric, decision threshold, variance or effect-size assumption, power or precision target, model, multiplicity control, exclusion rule, missing-data rule, assay-failure rule, or sensitivity rule has been preregistered.",
         ],
     }
 

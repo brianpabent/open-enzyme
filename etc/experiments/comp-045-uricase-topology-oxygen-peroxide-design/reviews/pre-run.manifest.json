@@ -1,52 +1,52 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "phase": "pre",
   "comp_dir": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design",
   "files": [
     {
       "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/README.md",
       "kind": "design",
-      "bytes": 10358,
-      "sha256": "71bee9a79acd5ef23e3e0331901fab856461aba2844bd99de28e039aa452e43a"
+      "bytes": 11894,
+      "sha256": "7ec41e00213e6f0d9e1ac41c756ae7fe025993c5a18e72136a18e2856e0d7c60"
     },
     {
       "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/analyze.py",
       "kind": "design",
-      "bytes": 45164,
-      "sha256": "16a334b0281c5c35403c0fed745a7afde0dffaf5c4c1ae421cd2128854268a8e"
+      "bytes": 51768,
+      "sha256": "4ed8a57b643f819d65b8f9955352cb19a1bb7a43a80387d484975c1edbfd5f53"
     },
     {
       "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/design_factors.json",
       "kind": "design",
-      "bytes": 17774,
-      "sha256": "f095b963f5e3b3fd9a2c83cc7ae8eb8b9276a9abce6e06b8ef481231dee1d5dd"
+      "bytes": 19581,
+      "sha256": "5473654b26561ffebf465bee36d92abf2e35eff4640723f5ea8b3365a01594d2"
     },
     {
       "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/provenance.md",
       "kind": "design",
-      "bytes": 3949,
-      "sha256": "b2752671a300a78a65778a49ae2b4a81c7dfbe567b1d45337ed0943e53d72387"
+      "bytes": 7892,
+      "sha256": "eebd5e6160a12c82c0c424246c901d155c47124173e69eb08c57cce11e26d115"
     },
     {
       "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/query-strategy.json",
       "kind": "design",
-      "bytes": 1603,
-      "sha256": "f69366bcdec75d4c22897c417367cc591ba5fd968b0bce665104bfc4f8668113"
+      "bytes": 3444,
+      "sha256": "359776571a940984e2f962462143866f3b4f0f58482d7727b2f219295cf82756"
     }
   ],
   "prior_output_baseline": [
     {
       "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/outputs/results.json",
       "kind": "prior_output",
-      "bytes": 153916,
-      "sha256": "276e5ed39f567d389f01d7ba72765c04297c8cab5cf8e8ad0d993016d91f3c68"
+      "bytes": 639901,
+      "sha256": "55116669d6bde271ef80e649c686c71e0b84852a45d5bb8efd4ca5052869c60b"
     },
     {
       "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/outputs/summary.md",
       "kind": "prior_output",
-      "bytes": 2442,
-      "sha256": "2659d55962d91663a52addbeaf318e7a1fdd72eb101fab48be19217a29c67a52"
+      "bytes": 4430,
+      "sha256": "094d4cf6819f7ac7fc4e253a3ebdc299a3f14b329e45c68e7ef3e170283003ed"
     }
   ],
-  "manifest_sha256": "43563a3d9660282e9ebd82a954130abcfc880b043ee84f25c9c5bd5f8e308006"
+  "manifest_sha256": "c608b1b5a852497ab8ec74db48b352eb1ce2468ac32d6523f3526b9ee9da4ecb"
 }

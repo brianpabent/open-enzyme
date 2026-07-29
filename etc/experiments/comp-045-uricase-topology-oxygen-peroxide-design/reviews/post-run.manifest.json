@@ -1,129 +1,93 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "phase": "post",
   "comp_dir": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design",
   "files": [
     {
       "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/README.md",
       "kind": "design",
-      "bytes": 10358,
-      "sha256": "71bee9a79acd5ef23e3e0331901fab856461aba2844bd99de28e039aa452e43a"
+      "bytes": 11894,
+      "sha256": "7ec41e00213e6f0d9e1ac41c756ae7fe025993c5a18e72136a18e2856e0d7c60"
     },
     {
       "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/analyze.py",
       "kind": "design",
-      "bytes": 45164,
-      "sha256": "16a334b0281c5c35403c0fed745a7afde0dffaf5c4c1ae421cd2128854268a8e"
+      "bytes": 51768,
+      "sha256": "4ed8a57b643f819d65b8f9955352cb19a1bb7a43a80387d484975c1edbfd5f53"
     },
     {
       "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/design_factors.json",
       "kind": "design",
-      "bytes": 17774,
-      "sha256": "f095b963f5e3b3fd9a2c83cc7ae8eb8b9276a9abce6e06b8ef481231dee1d5dd"
+      "bytes": 19581,
+      "sha256": "5473654b26561ffebf465bee36d92abf2e35eff4640723f5ea8b3365a01594d2"
     },
     {
       "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/provenance.md",
       "kind": "design",
-      "bytes": 3949,
-      "sha256": "b2752671a300a78a65778a49ae2b4a81c7dfbe567b1d45337ed0943e53d72387"
+      "bytes": 7892,
+      "sha256": "eebd5e6160a12c82c0c424246c901d155c47124173e69eb08c57cce11e26d115"
     },
     {
       "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/inputs/query-strategy.json",
       "kind": "design",
-      "bytes": 1603,
-      "sha256": "f69366bcdec75d4c22897c417367cc591ba5fd968b0bce665104bfc4f8668113"
+      "bytes": 3444,
+      "sha256": "359776571a940984e2f962462143866f3b4f0f58482d7727b2f219295cf82756"
     },
     {
       "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/outputs/results.json",
       "kind": "generated_output",
-      "bytes": 639897,
-      "sha256": "f2c4ecde849699a90e5fc307c0e9bb3ffa67213a64af79485656266ab68b91de"
+      "bytes": 642036,
+      "sha256": "ef665222ae461cab05c4feeecf6fdd343b30e67a5fe36f3e2a9d2bafde5d56e5"
     },
     {
       "path": "wiki/etc/experiments/comp-045-uricase-topology-oxygen-peroxide-design/outputs/summary.md",
       "kind": "generated_output",
-      "bytes": 4430,
-      "sha256": "094d4cf6819f7ac7fc4e253a3ebdc299a3f14b329e45c68e7ef3e170283003ed"
+      "bytes": 5964,
+      "sha256": "b5fa823b6ca121d2552bc9d5afb1dcc67982b43474b4763560f916ded9df5848"
     },
     {
       "path": "index.md",
       "kind": "proposed_update",
-      "bytes": 35086,
-      "sha256": "31c266a750f5f3f80767c9fef621842c3fa80374043a2f9b21c8dba4b611c6c6"
+      "bytes": 36005,
+      "sha256": "0939a42e9cb2c4517fc11ca7b3a0cc03e65eec991c5b7a5f10860ccfb6155b6f"
     },
     {
-      "path": "papers/cross-vendor-heterogeneity-guard/draft.md",
+      "path": "scripts/comp-review-manifest.py",
       "kind": "proposed_update",
-      "bytes": 174711,
-      "sha256": "70b9810684178fab339215d54b881f8318ec0dfee7f6eb7d61f310616e24b3d7"
+      "bytes": 28655,
+      "sha256": "43054e27658ea8dd264279f4ed9da95ef76b9ab07a1754843101bb2c42dbde94"
     },
     {
-      "path": "wiki/blood-barrier.md",
+      "path": "tests/test_knowledge_workflows.py",
       "kind": "proposed_update",
-      "bytes": 3994,
-      "sha256": "33ce2cba27234196d1b050103dc51bb6b27564b9e6fe171e7c6826da6879fd0b"
+      "bytes": 47905,
+      "sha256": "ea9b0254bdf69a5f246fb6e9d3defcfa4c623beaecc46660fdaf9ccce18029da"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 75782,
-      "sha256": "12a6254470e588fe4072aa69a2395af35972f9943416c8fcdbbfcae92b335d9e"
-    },
-    {
-      "path": "wiki/delivery-route-matrix.md",
-      "kind": "proposed_update",
-      "bytes": 26650,
-      "sha256": "ce78ac9cd0d3030bc555dfca9d095cf3032c2f964ed7e92d0431271f731ebb79"
-    },
-    {
-      "path": "wiki/engineered-yeast-uricase-proposal.md",
-      "kind": "proposed_update",
-      "bytes": 7801,
-      "sha256": "9e182de2acdae0a93e41c0e19e9dc7140ba9baeef60fbb0b5c25d22e64babae6"
-    },
-    {
-      "path": "wiki/gout-kill-chain-delivery-routes.md",
-      "kind": "proposed_update",
-      "bytes": 49910,
-      "sha256": "f22993aa54454d13243706dce664b34c676c98ebc100db0b7a10f97524293fe9"
-    },
-    {
-      "path": "wiki/gout-multihop-research-program.md",
-      "kind": "proposed_update",
-      "bytes": 6935,
-      "sha256": "b394b56f9d8126c495182bd17933722edefd50d81b38ef84400a77e97ffe11e9"
-    },
-    {
-      "path": "wiki/gut-lumen-uricase-physiologic-regime-computational.md",
-      "kind": "proposed_update",
-      "bytes": 5776,
-      "sha256": "dc12a90283cace9b7a5e82675c930785e98ea3ce7303fd2ad8271ae922eb2551"
+      "bytes": 74648,
+      "sha256": "899bfd4d81c8d223555ffe370c8f6c1e16bd83effe5bf2cc8913e755b2bd9110"
     },
     {
       "path": "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
       "kind": "proposed_update",
-      "bytes": 6897,
-      "sha256": "9f6efb4ea1659ba4e31a39ce4969fba94a9c9ca94fd87c8e89e0d08edb49b413"
-    },
-    {
-      "path": "wiki/saccharomyces-cerevisiae.md",
-      "kind": "proposed_update",
-      "bytes": 6219,
-      "sha256": "89d38de56538553a8763734aeba65974c0c7255e0f6b1211362a01122ed35dfe"
+      "bytes": 8255,
+      "sha256": "2fdd5b34c29a67a9133602d93306c88a7e0e68fb6124f1d88fe3f070e04a080c"
     },
     {
       "path": "wiki/uricase-topology-oxygen-peroxide-design-computational.md",
       "kind": "proposed_update",
-      "bytes": 6554,
-      "sha256": "11505ad9dd2f95657fcbaa514e1e365114082cbbe91b961bec1d807360067caa"
+      "bytes": 7306,
+      "sha256": "fd5ad684427d1889ab5e85cd90ed9eeaa8cf3b20c71412b74d44231b3b27c470"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 235673,
-      "sha256": "65e4194a24dc45d507a22e3ceff014ceb1d169c6bc67402d3a15f6bbff5686cd"
+      "bytes": 226198,
+      "sha256": "f8a02ba2bab89632c66a6aa80bd2472b3334ff40dadece48f6d4a257d76f838c"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "d1d96c28c6480e9bbd9b0daa2586ba1c0625284a0390aea88029a08f4ae5840e"
+  "manifest_sha256": "08d535b1e2047a6b85f1dc4ed9e85061313190d1fc49c8374ea363a0508f1bc2"
 }

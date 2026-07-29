@@ -96,14 +96,14 @@
     {
       "path": "wiki/chassis-pending-interventions.md",
       "kind": "proposed_update",
-      "bytes": 31494,
-      "sha256": "a215fd9a57d5cf1332d966bd840cc8394ec85b906011fac900898a0790fd8910"
+      "bytes": 30562,
+      "sha256": "c7284d240153bc9ee262f16b105a1804e2082f84a4eeb8a2770b6906fd987741"
     },
     {
       "path": "wiki/computational-experiments.md",
       "kind": "proposed_update",
-      "bytes": 75330,
-      "sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88"
+      "bytes": 72767,
+      "sha256": "b126f07a99832898b0478f8fb5a3c4ed5d8b676313f2fb2e383fcf807e5c3d48"
     },
     {
       "path": "wiki/kpv-gsdmd-pore-influx-computational.md",
@@ -114,16 +114,16 @@
     {
       "path": "wiki/open-questions.md",
       "kind": "proposed_update",
-      "bytes": 74825,
-      "sha256": "9ffef573b763d3471a545cb2700eee1b09910f8d906b5795344abf6e9beed09a"
+      "bytes": 70385,
+      "sha256": "707da9f27d1edb7fd3cbb00a3b8633c9e1a0e5f75faf4475a6f01040ea1c7236"
     },
     {
       "path": "wiki/validation-experiments.md",
       "kind": "proposed_update",
-      "bytes": 242023,
-      "sha256": "db6f8b0c29b676c20b5ff004b8d463d59a2a9538c55364b6528e3119b588a5a6"
+      "bytes": 224667,
+      "sha256": "51c31f6aff36d34a7573c3d46553768a7717f7fef8360a6e8420fcd6d8bf243e"
     }
   ],
   "prior_output_baseline": [],
-  "manifest_sha256": "85236300a802ebd6cc6f473ba7107f086170fff51743f3a4d832c372eb867af5"
+  "manifest_sha256": "4a593d03c6c859cbcd860f8c8e5af6265c8a55f59206933c003e2ec5a6283e7d"
 }

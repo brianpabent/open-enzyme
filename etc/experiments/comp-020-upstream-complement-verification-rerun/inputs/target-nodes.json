@@ -1,6 +1,6 @@
 {
-  "_provenance": "comp-020 brief-scrubbed verification re-run; target list constructed independently from CLAUDE.md mission specification; no prior comp-018/019 outputs consulted.",
-  "_design_note": "Independent verification re-run. The author was given target nodes and compound-class scope; no prior compound names. All findings emerge from the lit-scan.",
+  "_provenance": "Legacy comp-020 brief. Direct comp-018/019 output files were not consulted, but the brief injected prior exclusions and named examples; this was not an independent verification run.",
+  "_design_note": "Historical target and class list. The legacy_brief_contamination_not_exclusions field below records brief contamination and is not an evidence source or valid exclusion rule.",
   "initiation": {
     "C1q": {
       "uniprot": ["P02745", "P02746", "P02747"],
@@ -27,7 +27,7 @@
     "C5_convertase": {
       "components": ["C4b2a3b", "C3bBbC3b"],
       "role": "Cleaves C5 -> C5a + C5b",
-      "gout_relevance": "Generates C5a (dominant NLRP3 priming signal in gout)"
+      "gout_relevance": "Generates C5a. An et al. reported C5a-dependent potentiation of MSU-associated IL-1beta in human whole blood and primary monocytes (PMID 25229885); related murine systems are summarized in the active complement evidence page. Clinical dominance is unresolved."
     }
   },
   "soluble_factors": {
@@ -63,9 +63,9 @@
     "kampo_japanese_herbal",
     "ayurvedic_compounds"
   ],
-  "ruled_out_do_not_redo": [
-    "Direct natural-product C5aR1 antagonist class (comp-014 + validation-experiments §1.21 - empty)",
-    "Avacopan (synthetic C5aR1 antagonist; FDA-approved; not fermentable; in corpus already)",
-    "DAF/CD55 SCR1-4 protein engineering thread (comp-012, H05)"
+  "legacy_brief_contamination_not_exclusions": [
+    "LEGACY BRIEF CONTAMINATION — prior empty-class conclusion supplied from comp-014; invalid and not re-executed",
+    "LEGACY BRIEF CONTAMINATION — avacopan supplied as a named comparator",
+    "LEGACY BRIEF CONTAMINATION — DAF/CD55 SCR1-4 prior thread supplied from comp-012/H05"
   ]
 }

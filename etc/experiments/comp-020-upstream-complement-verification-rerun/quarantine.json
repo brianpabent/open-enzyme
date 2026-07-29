@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "comp": "comp-020",
+  "status": "quarantined",
+  "runnable": false,
+  "owner": "brian",
+  "entered_on": "2026-07-27",
+  "expires_on": "2026-10-27",
+  "decision_status": "repair_in_progress",
+  "reason": "Legacy manual literature scan was represented as a computational experiment; its heterogeneous assays, units, source tiers, and non-executable decision function cannot support the stated quantitative verdict.",
+  "blocked_scope": [
+    "All quantitative threshold, hit-set, potency-rank, and cross-assay conclusions",
+    "ChEMBL coverage-rate, systematic-absence, and exhaustive empty-class claims",
+    "Any dietary-efficacy, gout-compartment, CFH-independence, or genotype-response inference"
+  ],
+  "current_evidence_home": "wiki/upstream-complement-verification-rerun-computational.md",
+  "artifact_manifest": [
+    {
+      "path": "README.md",
+      "bytes": 6040,
+      "sha256": "d7e02e780348ca2574d669f434b0fec9b339987be19af942e970c40834cc5ad4"
+    },
+    {
+      "path": "inputs/provenance.md",
+      "bytes": 4297,
+      "sha256": "2bb834cc9e026c5db99ddea5c9af445203eeab19e6d9a7bd1499e6c5fe89262d"
+    },
+    {
+      "path": "inputs/query-strategy.md",
+      "bytes": 2937,
+      "sha256": "908f8e65b70baf19bd932c35f8bd6ed1967e180482089b5139b7df6daa3bc254"
+    },
+    {
+      "path": "inputs/target-nodes.json",
+      "bytes": 3625,
+      "sha256": "53574f36567bee6af8da143bd1243c65d5db6e3943e7fb4e5ce68e68ff570166"
+    },
+    {
+      "path": "outputs/per-node-findings.md",
+      "bytes": 19103,
+      "sha256": "18a2cd5e7c4d944dc1ed423cb8ff49cc5eb63cf0ad4e831debd086b7742005b3"
+    },
+    {
+      "path": "outputs/search-log.md",
+      "bytes": 6975,
+      "sha256": "571d3dc82bc73b6e48bc6c70c366aa4f8236ae416d97146f6c22c7bf680a9f0b"
+    }
+  ],
+  "artifact_dependencies": [],
+  "artifact_manifest_sha256": "5e546662cf457c5ab99aad4d01d300c03f1dbb10a42d8d294dc8aae6432b140f"
+}
