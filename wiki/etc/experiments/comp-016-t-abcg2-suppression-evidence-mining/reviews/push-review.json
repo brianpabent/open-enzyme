@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "comp": "comp-016",
+  "comp_dir": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining",
+  "source_commit": "14833b44e90fe92f7aa6738a3f85edde188dabe9",
+  "artifact_manifest_sha256": "c7a3227c87ed0d954f6d7e73c4a83a297eca0faa99e817caadad80b6a806f4fb",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-29T16:16:49Z",
+  "comp_verdict": "action_required",
+  "propagation_eligibility": "eligible_with_warning",
+  "synthesis_eligibility": "blocked",
+  "action_required": true,
+  "authoring_gates": {
+    "status": "modern",
+    "valid": true,
+    "details": [
+      "pre-run design matches post-run design; current COMP artifact matches the post-run snapshot; later wiki evolution is push-reviewed"
+    ]
+  },
+  "coverage": [
+    {
+      "shard_id": "shard-001",
+      "coverage_sha256": "a4de44bf4a817905f13fb41a7278a7e901c37b5cc6067edebac83810cff37dcb",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/README.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 6153,
+          "file_sha256": "72e830cb1227631b5c0a81f3812b1f39a6633960f4c6d0b098c2de2d6231aa43",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/analyze.py",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 12994,
+          "file_sha256": "d3eb69d99b67bb2e713e17ef79420d1696a0686da0189809009bc26f6190861a",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/maintenance-repair-plan-2026-07-29.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 2345,
+          "file_sha256": "bed594125bd32551e0254d86c1b99a9ed19f0bced9c0c01736cb6cc74a1efa46",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/provenance.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 6486,
+          "file_sha256": "e7c34f8207264db17ddc30a4e4e9fda4ab26cc6874298367c5334c4c30a4f82e",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/studies.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 12449,
+          "file_sha256": "a7d20796acc6e33d00bc7ab22bbe6564bd813f3d9b7ad51cb94155f2336d2b48",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/results.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 11323,
+          "file_sha256": "e9e209a11864be6405f1e5b2f45c3b68cdcf3b2852dbbbe3fd09a56df8eec0b2",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/summary.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 9010,
+          "file_sha256": "8dab7afa21d92ae08aa8bb0d5f7cac5c9415b2316c86c38af6834349dc0573bb",
+          "binary": false
+        },
+        {
+          "path": "wiki/abcg2-modulators.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 44005,
+          "file_sha256": "f8c6091d984e1f6ecbdb6b702944d7f009673c5557aa8d18db97515f65a52fba",
+          "binary": false
+        },
+        {
+          "path": "wiki/androgen-urate-axis.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 35394,
+          "file_sha256": "80fab51bcfdeab5426e6d4ee5cc214442807e17ea628eb23371091edf945c447",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-002",
+      "coverage_sha256": "2826b2d900fb15b0a144b030b06d45ba94c97ee86a4e72f2c496ae010d61c695",
+      "segments": [
+        {
+          "path": "wiki/computational-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 74059,
+          "file_sha256": "899bfd4d81c8d223555ffe370c8f6c1e16bd83effe5bf2cc8913e755b2bd9110",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/manual-literature-mining.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 29077,
+          "file_sha256": "672ad06b28392e0a8c6cb7396c33afb4565f632579ee58fddbb37cb7fd6a8e2f",
+          "binary": false
+        },
+        {
+          "path": "wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 6184,
+          "file_sha256": "b0957ef01dec205be81d2d0c75cff1617dfb322c8d4ab4cb65353c85f4e101a7",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-003",
+      "coverage_sha256": "c9a936513b678df470af8b5ff95bdc4c3464ffe716902a940efe0678a8e189d3",
+      "segments": [
+        {
+          "path": "wiki/open-questions.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 70784,
+          "file_sha256": "65b214c3a0c79ab7ed2d220415cab17346351f057aa418eef126e945c209045b",
+          "binary": false
+        },
+        {
+          "path": "wiki/t-abcg2-suppression-evidence-mining-computational.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 3154,
+          "file_sha256": "60d56dab0ead5565ce9b682df47b68ab79a575bfa31c4b9c398d4c0533e22a4d",
+          "binary": false
+        }
+      ]
+    }
+  ],
+  "unsupported_binary_entries": [],
+  "projected_cost_usd": 1.21771,
+  "actual_cost_usd": 0.836531,
+  "input_tokens": 121369,
+  "output_tokens": 9653,
+  "tool_calls": 8,
+  "review_sha256": "bfb3242f4eb36de2353884f83b244103a4b2302446f07f59b6998943552573b4",
+  "lane_adjudication": {
+    "date": "2026-07-29T16:16:49Z",
+    "method": "exact push review",
+    "new_artifact_review_performed": true,
+    "queue_action_remains_open": true,
+    "propagation_allowed_scope": "corrective-only propagation of the fixed-inventory COMP-016 boundary and corrected source anchors",
+    "synthesis_allowed_scope": "none",
+    "forbidden_inferences": [
+      "literature-wide absence of androgen-suppression studies",
+      "healthy-human intestinal ABCG2 sex null",
+      "physiological human testosterone increase of intestinal ABCG2",
+      "male-specific quantified gut export ceiling",
+      "clomiphene mechanism or treatment implication",
+      "mechanistic ChIP-seq/ARE absence beyond the fixed inventory",
+      "use of legacy-summary rows as mechanistic evidence"
+    ]
+  }
+}

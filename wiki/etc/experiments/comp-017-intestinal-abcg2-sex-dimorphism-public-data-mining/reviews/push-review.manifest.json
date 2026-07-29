@@ -1,0 +1,123 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/README.md",
+      "kind": "design",
+      "bytes": 6525,
+      "sha256": "ba81b0dcc6dc2e9b1514ca29273e7590683cf50f9e41478dd50822d1603c4d16"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/analyze.py",
+      "kind": "design",
+      "bytes": 12174,
+      "sha256": "e199e5cae9eea80127cf5036aa14317668c575e42222d33e9467cd7a80839c20"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/full_text_extract.json",
+      "kind": "design",
+      "bytes": 10921,
+      "sha256": "3b23f900897709dde69741fb3ee7e97f816069a5b98e3f431f1e78b0981389c3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/gtex_data.json",
+      "kind": "design",
+      "bytes": 680,
+      "sha256": "32b850ec6b3b6debb44f438c6d407b5efaab694edb0a534b147650101d103461"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/hpa_data.json",
+      "kind": "design",
+      "bytes": 445,
+      "sha256": "7322c1e666c94695336644c1311ad714b303e3e6bce1118c78bb1702e85767ad"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 4992,
+      "sha256": "25103445173b6a9d9c4d362a42328feaee0256f069dc7254de3aee8742787834"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 11259,
+      "sha256": "eaa163a640537ed754704ddba3fec7ddd7423e96d8d1718bd2d680ee7df48f14"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 10819,
+      "sha256": "0992c566adff9373b3336be591760f32db7a4d3a4de61db36b808222114ab572"
+    },
+    {
+      "path": "mkdocs.yml",
+      "kind": "proposed_update",
+      "bytes": 11241,
+      "sha256": "28f08bf90fa921781d796128ab8bfc4069cca7c5c985203097cf9f8be6004f16"
+    },
+    {
+      "path": "wiki/abcg2-modulators.md",
+      "kind": "proposed_update",
+      "bytes": 44187,
+      "sha256": "f8c6091d984e1f6ecbdb6b702944d7f009673c5557aa8d18db97515f65a52fba"
+    },
+    {
+      "path": "wiki/androgen-urate-axis.md",
+      "kind": "proposed_update",
+      "bytes": 35670,
+      "sha256": "80fab51bcfdeab5426e6d4ee5cc214442807e17ea628eb23371091edf945c447"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 74648,
+      "sha256": "899bfd4d81c8d223555ffe370c8f6c1e16bd83effe5bf2cc8913e755b2bd9110"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/README.md",
+      "kind": "proposed_update",
+      "bytes": 6860,
+      "sha256": "5f07411280d665bd280b25da74b4a9035ef0770a94832ae3594d5ffe83851ae3"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/README.md",
+      "kind": "proposed_update",
+      "bytes": 6183,
+      "sha256": "72e830cb1227631b5c0a81f3812b1f39a6633960f4c6d0b098c2de2d6231aa43"
+    },
+    {
+      "path": "wiki/etc/manual-literature-mining.md",
+      "kind": "proposed_update",
+      "bytes": 29247,
+      "sha256": "672ad06b28392e0a8c6cb7396c33afb4565f632579ee58fddbb37cb7fd6a8e2f"
+    },
+    {
+      "path": "wiki/gout-genetic-variants.md",
+      "kind": "proposed_update",
+      "bytes": 41691,
+      "sha256": "23c0193f718842b66ed418ffcfb124a40bd62952636c5fcfdbd7d1be2afd6baf"
+    },
+    {
+      "path": "wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md",
+      "kind": "proposed_update",
+      "bytes": 6195,
+      "sha256": "b0957ef01dec205be81d2d0c75cff1617dfb322c8d4ab4cb65353c85f4e101a7"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 71043,
+      "sha256": "65b214c3a0c79ab7ed2d220415cab17346351f057aa418eef126e945c209045b"
+    },
+    {
+      "path": "wiki/t-abcg2-suppression-evidence-mining-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3166,
+      "sha256": "60d56dab0ead5565ce9b682df47b68ab79a575bfa31c4b9c398d4c0533e22a4d"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "685e18c26647c493b86be90f1b7da96860fc74935e8e26eb78d8dfff240a6689"
+}

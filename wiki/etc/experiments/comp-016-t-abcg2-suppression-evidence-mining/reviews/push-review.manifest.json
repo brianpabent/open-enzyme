@@ -1,0 +1,93 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/README.md",
+      "kind": "design",
+      "bytes": 6183,
+      "sha256": "72e830cb1227631b5c0a81f3812b1f39a6633960f4c6d0b098c2de2d6231aa43"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/analyze.py",
+      "kind": "design",
+      "bytes": 13004,
+      "sha256": "d3eb69d99b67bb2e713e17ef79420d1696a0686da0189809009bc26f6190861a"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/maintenance-repair-plan-2026-07-29.md",
+      "kind": "design",
+      "bytes": 2347,
+      "sha256": "bed594125bd32551e0254d86c1b99a9ed19f0bced9c0c01736cb6cc74a1efa46"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 6493,
+      "sha256": "e7c34f8207264db17ddc30a4e4e9fda4ab26cc6874298367c5334c4c30a4f82e"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/studies.json",
+      "kind": "design",
+      "bytes": 12456,
+      "sha256": "a7d20796acc6e33d00bc7ab22bbe6564bd813f3d9b7ad51cb94155f2336d2b48"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 11330,
+      "sha256": "e9e209a11864be6405f1e5b2f45c3b68cdcf3b2852dbbbe3fd09a56df8eec0b2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 9033,
+      "sha256": "8dab7afa21d92ae08aa8bb0d5f7cac5c9415b2316c86c38af6834349dc0573bb"
+    },
+    {
+      "path": "wiki/abcg2-modulators.md",
+      "kind": "proposed_update",
+      "bytes": 44187,
+      "sha256": "f8c6091d984e1f6ecbdb6b702944d7f009673c5557aa8d18db97515f65a52fba"
+    },
+    {
+      "path": "wiki/androgen-urate-axis.md",
+      "kind": "proposed_update",
+      "bytes": 35670,
+      "sha256": "80fab51bcfdeab5426e6d4ee5cc214442807e17ea628eb23371091edf945c447"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 74648,
+      "sha256": "899bfd4d81c8d223555ffe370c8f6c1e16bd83effe5bf2cc8913e755b2bd9110"
+    },
+    {
+      "path": "wiki/etc/manual-literature-mining.md",
+      "kind": "proposed_update",
+      "bytes": 29247,
+      "sha256": "672ad06b28392e0a8c6cb7396c33afb4565f632579ee58fddbb37cb7fd6a8e2f"
+    },
+    {
+      "path": "wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md",
+      "kind": "proposed_update",
+      "bytes": 6195,
+      "sha256": "b0957ef01dec205be81d2d0c75cff1617dfb322c8d4ab4cb65353c85f4e101a7"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 71043,
+      "sha256": "65b214c3a0c79ab7ed2d220415cab17346351f057aa418eef126e945c209045b"
+    },
+    {
+      "path": "wiki/t-abcg2-suppression-evidence-mining-computational.md",
+      "kind": "proposed_update",
+      "bytes": 3166,
+      "sha256": "60d56dab0ead5565ce9b682df47b68ab79a575bfa31c4b9c398d4c0533e22a4d"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "c7a3227c87ed0d954f6d7e73c4a83a297eca0faa99e817caadad80b6a806f4fb"
+}

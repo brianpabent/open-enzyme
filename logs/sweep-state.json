@@ -170,55 +170,47 @@
     },
     "comp-016": {
       "comp_dir": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining",
-      "artifact_manifest_sha256": null,
+      "artifact_manifest_sha256": "c7a3227c87ed0d954f6d7e73c4a83a297eca0faa99e817caadad80b6a806f4fb",
       "source_commit": "14833b44e90fe92f7aa6738a3f85edde188dabe9",
-      "review_receipt": null,
-      "comp_verdict": "review_pending_exact_push",
-      "propagation_eligibility": "blocked",
+      "review_receipt": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/reviews/push-review.md",
+      "comp_verdict": "action_required",
+      "propagation_eligibility": "eligible_with_warning",
       "synthesis_eligibility": "blocked",
       "derived_paths": [
         "wiki/abcg2-modulators.md",
-        "wiki/androgen-natural-modulation.md",
         "wiki/androgen-urate-axis.md",
         "wiki/computational-experiments.md",
-        "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/README.md",
-        "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/provenance.md",
-        "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/summary.md",
-        "wiki/etc/experiments/comp-019-gut-lumen-uricase-abcg2-genotype-stratification/README.md",
         "wiki/etc/manual-literature-mining.md",
-        "wiki/hypotheses/H07-clomid-intestinal-er-antagonism.md",
         "wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md",
         "wiki/open-questions.md",
-        "wiki/prps-purine-biosynthesis-chokepoint.md",
         "wiki/t-abcg2-suppression-evidence-mining-computational.md"
       ],
-      "timestamp": "2026-07-29T16:14:06Z",
-      "cost_usd": null,
-      "pending_reason": "changed completed artifact awaits exact push review"
+      "timestamp": "2026-07-29T16:16:49Z",
+      "cost_usd": 0.836531
     },
     "comp-017": {
       "comp_dir": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining",
-      "artifact_manifest_sha256": null,
+      "artifact_manifest_sha256": "685e18c26647c493b86be90f1b7da96860fc74935e8e26eb78d8dfff240a6689",
       "source_commit": "14833b44e90fe92f7aa6738a3f85edde188dabe9",
-      "review_receipt": null,
-      "comp_verdict": "review_pending_exact_push",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "review_receipt": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/reviews/push-review.md",
+      "comp_verdict": "action_required",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "mkdocs.yml",
         "wiki/abcg2-modulators.md",
         "wiki/androgen-urate-axis.md",
         "wiki/computational-experiments.md",
         "wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/README.md",
+        "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/README.md",
         "wiki/etc/manual-literature-mining.md",
         "wiki/gout-genetic-variants.md",
         "wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md",
         "wiki/open-questions.md",
         "wiki/t-abcg2-suppression-evidence-mining-computational.md"
       ],
-      "timestamp": "2026-07-29T16:14:06Z",
-      "cost_usd": null,
-      "pending_reason": "changed completed artifact awaits exact push review"
+      "timestamp": "2026-07-29T16:20:17Z",
+      "cost_usd": 1.268974
     },
     "comp-027": {
       "comp_dir": "wiki/etc/experiments/comp-027-disulfiram-dose-modeling",
@@ -347,20 +339,19 @@
     },
     "comp-038": {
       "comp_dir": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit",
-      "artifact_manifest_sha256": null,
+      "artifact_manifest_sha256": "e3455db27a3cd381eb6dd7bc6d6ed15be77b30fa958780981994160822c6f753",
       "source_commit": "14833b44e90fe92f7aa6738a3f85edde188dabe9",
-      "review_receipt": null,
-      "comp_verdict": "review_pending_exact_push",
-      "propagation_eligibility": "blocked",
-      "synthesis_eligibility": "blocked",
+      "review_receipt": "wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/reviews/push-review.md",
+      "comp_verdict": "clean_with_limitations",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
       "derived_paths": [
         "wiki/computational-experiments.md",
         "wiki/tier-2-butyrate-assay-audit-computational.md",
         "wiki/validation-experiments.md"
       ],
-      "timestamp": "2026-07-29T16:14:07Z",
-      "cost_usd": null,
-      "pending_reason": "changed completed artifact awaits exact push review"
+      "timestamp": "2026-07-29T16:24:05Z",
+      "cost_usd": 1.595946
     },
     "comp-042": {
       "comp_dir": "wiki/etc/experiments/comp-042-kpv-gsdmd-pore-influx",
