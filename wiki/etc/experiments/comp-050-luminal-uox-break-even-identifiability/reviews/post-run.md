@@ -1,110 +1,106 @@
 ACTION_REQUIRED: no
-REVIEWED_SNAPSHOT: 1d44192f5181aa8c701b02248676a8d39d20a5db7994a2b714026aa080eaf08d
+REVIEWED_SNAPSHOT: bef2dca5044a7e5a49a6f8d8ac08c3d919e291aa5b0877973e30b09a8207ff10
 
 # Independent comp review — comp-050
 
 ## Reviewed snapshot
 
-Reviewer: `/root/comp050_gate2_r4_20260728`, a fresh context-isolated authoring-time Gate-2 reviewer. The canonical payload digest computed from `post-run.manifest.json` is `1d44192f5181aa8c701b02248676a8d39d20a5db7994a2b714026aa080eaf08d`, matching its recorded digest and the supplied snapshot. All 22 entries matched their recorded paths, byte counts, and SHA-256 values and were inspected completely. Independent artifact, output, proposed-surface, and mechanism-search findings were recorded before earlier authoring reviews, the push receipt, or its queue action were read.
+Reviewer: `/root/comp050_gate2_r5_20260728`, a fresh context-isolated authoring-time Gate-2 reviewer. I reviewed the post-run manifest payload digest `bef2dca5044a7e5a49a6f8d8ac08c3d919e291aa5b0877973e30b09a8207ff10`. All 22 manifest entries matched their declared byte lengths and file SHA-256 values and were inspected completely. I recorded the independent artifact, output, proposed-surface, and mechanism-search findings before opening the earlier authoring receipts or push-review receipt. The manifest matched the files inspected.
 
 ## Bottom-line verdict
 
-**Clean with limitations.** The exact artifact is deterministic, internally valid, and correctly bounded to a conditional-capacity identity and structural-identifiability map. The hardened executable guard now requires the exact eight declared product-prerequisite names, including source-resolved product fate for systemic attribution. A disposable seven-item contract failed before any output mutation, while the committed eight-item contract ran twice and reproduced the unchanged five output hashes. This closes the exact push-review action without changing the model, outputs, scientific interpretation, or propagation. No material correction remains.
+**Clean with limitations.** The exact artifact correctly derives a conditional dimensionless capacity identity, supplies a valid same-concentration counterexample, and performs the declared exact structural-identifiability audit. It does not substitute those formal results for a human operating regime, practical identifiability, assay validation, efficacy, dose, production, topology, chassis, or safety evidence.
+
+The two documentation/interface actions from the fully covered push review are closed. The focused page now defines `A_time = ∫Vmax_active(t)dt / (Vmax_initial × T)` locally as a dimensionless retained active-capacity time area and explicitly says it is not an enzyme-abundance or oxygen proxy. The README now declares `STRUCTURALLY_IDENTIFIABLE_WITHOUT_PRODUCT_OBSERVATION` for targets that remain identifiable in the failed-product branch and explicitly says that this status does not rescue local or systemic-origin UOX attribution. No new ambiguity or required action remains.
 
 ## Implementation and constraint closure
 
-The capacity identity follows exactly from `R_capacity = Vmax_initial × T × occupancy × A_time`, `J_total_mean = (I_systemic + I_other)/T`, and `R_capacity = q × J_total_mean × T`, giving `Vmax_initial/J_total_mean = q/(occupancy × A_time)`. The response-surface denominator is mean **total local** urate influx. It remains separate from the systemic-source attribution denominator in `R_UOX,systemic/I_systemic`.
+The capacity identity follows from `R_capacity = Vmax_initial × T × occupancy × A_time`, fixed `occupancy = (C/Km)/(1 + C/Km)`, and `R_capacity = q × J_total_mean × T`, yielding `Vmax_initial/J_total_mean = q/(occupancy × A_time)`. The denominator is mean **total local** influx, `(I_systemic + I_other)/T`, not systemic-origin influx. Systemic attribution remains the separate target `R_UOX,systemic/I_systemic` and requires source-resolved product fate.
 
-An independent exact-rational implementation reproduced all 120 surface rows, their fractions, and the declared-grid extrema `101/400` and `1010`. Those are grid-only extrema, not biological or global extrema. The three constant-volume counterexamples independently evaluate to `dC/dt = 0` with UOX-attributed fluxes `1/10`, `1/2`, and `9/10`; starting at the shared equilibrium therefore gives the same concentration trajectory with different UOX removal within the declared rate law.
+The contract-to-code trace is complete. Every surface value enters exact `Fraction` arithmetic. An independent exact-rational reconstruction reproduced all 120 surface rows, the exact fractions, monotonic directions, and grid extrema `101/400` and `1010`. Those extrema are declared-grid boundaries only. The three constructed counterexamples independently balance to `dC/dt = 0` with UOX fluxes `1/10`, `1/2`, and `9/10`; starting at the shared equilibrium therefore gives the same concentration trajectory with different UOX removal under the declared constant-volume rate law.
 
-Independent row reduction reproduced every coefficient matrix, all 48 target rows, every augmented-rank vector, ideal-product ranks `2/4/5/10`, and failed-product ranks `2/3/4/8`. In the final ideal combination, the mass-balance row plus observed inventories, source influxes, reabsorption, outflow, calibrated capacity, and qualified total/source-resolved product observations make `R_unattributed` algebraically reconstructible; it is not directly observed. Practical closure remains conditional on the reconstructed residual passing a prespecified mass-balance tolerance. Removing product observations after prerequisite failure leaves local UOX removal confounded with the residual and systemic-origin UOX removal unconstrained, correctly blocking local attribution, systemic attribution, and grouped ledger closure.
+The ten unknowns, governing mass-balance signs, four cumulative measurement combinations, six targets, direct observations, conditional observations, coefficient matrices, base ranks, augmented ranks, and grouped-ledger rule agree across contract, code, CSV, and JSON. A separate elimination implementation reproduced all 48 per-target rows and statuses. The exact eight-name prerequisite guard uses uniqueness plus set equality: the committed contract and a reordered equivalent passed, while missing, extra, and duplicate-name mutation tests failed before output generation.
 
-The guard first requires unique non-empty strings, then compares their set with the exact eight expected names. In a disposable copy, removing only `source_resolved_product_fate_for_systemic_attribution` produced exit code 1 with that name reported as missing; hashes, nanosecond mtimes, and sizes for all five pre-existing outputs remained unchanged. The committed eight-item contract ran twice with `METHOD_MAP_DERIVED`; both runs matched each other and the committed baselines:
+The failed-product branch removes both product-derived observation rows. Inventory change, measured active capacity, and—at the final combination—total local influx can remain structurally identifiable and are accurately labeled `STRUCTURALLY_IDENTIFIABLE_WITHOUT_PRODUCT_OBSERVATION`. Local UOX removal remains confounded with the unattributed residual in every combination, systemic-origin UOX removal remains unconstrained, and grouped ledger closure fails. The new vocabulary therefore cannot be read as salvaging UOX attribution.
 
-- `break-even-surface.csv` — `9a6dd92ac07fb26e094c19f42ac782ecb7109f67840ea070efc0b05bd37b63ff`
-- `measurement-identifiability.csv` — `712efdea7f5cc5c68ecf7597764c1184ee715a0c64f8e47adf500fd8fa26c2bf`
-- `results.json` — `e23671522b4d4294c5bd09bdd7f76b0aaca4c5070e7f3b792583acf3a39ac6e2`
-- `same-concentration-counterexamples.csv` — `8bbe8328515ccce51b2793a9dc836a7409a17a1e0b1a18520ffb03ca541530ef`
-- `summary.md` — `4b130e45f5f0b862c905834e25fb0bd7bfa1a14f1b5409ae3e04c1adbe343fd5`
+In the complete ideal combination, qualified total UOX removal plus the other direct ledger observations makes `R_unattributed` algebraically reconstructible. This is not practical closure: README, results, summary, focused page, and dependents consistently require a future prespecified residual mass-balance tolerance. No numeric tolerance is invented by this formal COMP.
 
-The product-equivalent branch remains conditional on analyte identity and specificity, validated stoichiometry, background and non-UOX formation, time-resolved recovery, complete product fate, matched controls, interference criteria, and source-resolved product fate. These are ideal assumptions, not assay validation. Dynamic substrate depletion, changing occupancy, oxygen/pH/access/matrix effects, transport, residence, practical precision, residual-tolerance acceptance, peroxide safety, systemic compensation, and a human operating regime remain outside the model. `biological_regime` remains `NOT_EVALUATED`.
+Reaction-site substrate, oxygen, localization, access, matrix effects, time-varying occupancy, finite replenishment, residence, recovery precision, oxidative coproduct and H2O2 fate, scavenging, epithelial exposure, and systemic compensation are not silently represented by `Vmax_initial`, `A_time`, or the identifiability matrices. They are explicitly excluded or assigned to later exact-configuration and safety work. The qualified product-equivalent equation covers identity, stoichiometry, background/non-UOX formation, recovery, inventory/outflow/sampling/degradation/scavenging fate, controls, acceptance criteria, and source-resolved product fate as ideal prerequisites; it does not claim that an assay has passed them.
+
+The documented root command ran twice under the authorized review. Both runs returned `METHOD_MAP_DERIVED`; all five output SHA-256 hashes were unchanged before run 1, after run 1, and after run 2.
 
 ## Summary-fidelity audit
 
-README, contract, code, all five outputs, and all twelve proposed updates agree on the conditional identity, denominator separation, concentration counterexample, exact rank results, product-prerequisite failure branch, algebraic residual reconstruction, and limitations.
+README, all five generated outputs, the focused page, registry, dashboard, H08, validation §1.33, gut-lumen mechanism page, uricase page, open questions, action guide, multihop program, cross-validation, and graph agree on the narrow result. They distinguish total-local removal from systemic-origin capture; retain `biological_regime: NOT_EVALUATED`; keep H08 open; require qualified product fate and calibrated reaction-site capacity for local configuration characterization; require source/boundary fates and residual tolerance for later ledger closure; and preserve peroxide/safety gates.
 
-Residual wording remains closed across `wiki/computational-experiments.md`, `wiki/etc/GRAPH.md`, `wiki/gout-action-guide.md`, `wiki/gut-lumen-sink.md`, `wiki/luminal-uox-break-even-identifiability-computational.md`, `wiki/uricase.md`, and `wiki/validation-experiments.md`: each distinguishes algebraic reconstruction from direct measurement and requires a prespecified tolerance for practical closure. H08 and `wiki/open-questions.md` retain the unresolved residual-bound and data requirements.
-
-Mechanism searches beyond explicit COMP references found no stale active claim. No artifact or reader-facing surface maps the grid to a biological regime, assay validity, human dose, serum-urate effect, topology or chassis winner, production sufficiency, peroxide or clinical safety, a globally minimal measurement set, oral-UOX efficacy, or H08 closure.
+No surface upgrades the formal grid into a biological distribution, treats grid extrema as planning values, claims global measurement minimality, infers serum effect, selects a dose or production target, ranks a topology/chassis, validates a product assay, or turns structural into practical identifiability. Repository searches found no parser or consumer that restricts the failed-product branch to the prior two-value vocabulary.
 
 ## Reader-facing ownership audit
 
-The focused interpretive page owns the formal result, intestinal-disposal relevance, exposure constraints, limitations, and next discriminating measurements. Registry, graph, action-guide, multihop, hypothesis, and validation surfaces carry compact local routing deltas. Cross-track rankings remain outside the focused page. I found no narrative foil, editorial or sweep history, page-placement narration, personalized treatment instruction, or duplicated long-form exposition.
+The focused computational page owns the full result, units, measurement table, product-qualification boundary, limitations, falsification direction, and reproducible links. Mechanism and hypothesis pages carry compact local consequences. The dashboard and computational registry remain routing surfaces rather than duplicating the result. Validation §1.33 uses COMP-050 only to harden the local measurement contract and explicitly defers complete ledger and systemic attribution.
+
+No cross-track ranking, narrative foil, editorial or phase-history residue, personalized treatment instruction, production recommendation, or duplicated long exposition was introduced.
 
 ## Conjecture preservation audit
 
-COMP-050 invalidates concentration-only attribution within the declared model and identifies which ideal observations make its formal targets structurally identifiable. It does not invalidate UOX catalysis, the gut-lumen sink, any topology, chassis, delivery route, production path, safety hypothesis, or a later systemic consequence. H08 remains open and measurement-blocked. No grounded adjacent conjecture was erased, and no conjecture was upgraded to a factual biological claim.
+COMP-050 invalidates only inference from concentration alone and the named unqualified observation routes within its declared formal model. It does not kill H08, oral luminal UOX generally, any exact sequence/host/topology, ABCG2 stratification as a prospective question, UOX/PDB staging, other UOX delivery routes, or the possibility that a future qualified assay can resolve source fate. Those ideas remain bounded by exact-configuration activity, product qualification, source/boundary-fate, practical precision, residual-tolerance, redox, and translation gates. No grounded adjacent conjecture was erased or upgraded to fact.
 
 ## Generated-output and proposed-update inventory
 
 | Path | Manifest kind | Inspected completely? | Finding |
 |---|---|---:|---|
-| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/README.md` | design | Yes | Formal question, residual rule, outputs, and exclusions agree. |
-| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/analyze.py` | design | Yes | Exact algebra/ranks pass; exact eight-name guard closes push action. |
-| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/model_contract.json` | design | Yes | Ten-variable ledger, observations, targets, and eight prerequisites match code. |
-| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/provenance.md` | design | Yes | Constructed scenarios are not represented as biological evidence. |
-| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/query-strategy.json` | design | Yes | Correctly records a formal run requiring no external search. |
-| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/break-even-surface.csv` | generated_output | Yes | 120 exact rows; hashes unchanged; extrema are grid-only. |
-| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/measurement-identifiability.csv` | generated_output | Yes | 48 rows; every base and augmented rank independently reproduced. |
-| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/results.json` | generated_output | Yes | Definitions, matrices, checks, statuses, and limits agree. |
-| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/same-concentration-counterexamples.csv` | generated_output | Yes | Three exact zero-derivative cases with distinct UOX fluxes. |
-| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/summary.md` | generated_output | Yes | Faithful method result with `NOT_EVALUATED` biology. |
-| `index.md` | proposed_update | Yes | Compact discovery pointer; no quantitative or biological upgrade. |
-| `wiki/computational-experiments.md` | proposed_update | Yes | Reconstructible residual and practical tolerance remain distinct. |
-| `wiki/cross-validation.md` | proposed_update | Yes | Appropriate unranked threat-model routing. |
-| `wiki/etc/GRAPH.md` | proposed_update | Yes | Algebraic residual reconstruction and tolerance are explicit. |
-| `wiki/gout-action-guide.md` | proposed_update | Yes | Non-clinical measurement boundary; no dose or response prediction. |
-| `wiki/gout-multihop-research-program.md` | proposed_update | Yes | Routes measurements without biological or ledger overclaim. |
-| `wiki/gut-lumen-sink.md` | proposed_update | Yes | Measured terms, reconstructed residual, and tolerance are separated. |
-| `wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md` | proposed_update | Yes | H08 remains open and the dynamic model remains data-blocked. |
-| `wiki/luminal-uox-break-even-identifiability-computational.md` | proposed_update | Yes | Complete faithful result with grid-only extrema and exclusions. |
-| `wiki/open-questions.md` | proposed_update | Yes | Residual-bound and later-model requirements remain unresolved. |
-| `wiki/uricase.md` | proposed_update | Yes | Method map is not assay, biological, production, or safety evidence. |
-| `wiki/validation-experiments.md` | proposed_update | Yes | §1.33 characterizes local performance; it does not close systemic attribution. |
+| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/README.md` | design | Yes | Complete formal contract; both interface actions closed. |
+| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/analyze.py` | design | Yes | Exact arithmetic, rank logic, guard, failure branch, and output mapping pass. |
+| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/model_contract.json` | design | Yes | Grid, ledger, observations, targets, and exact eight-name prerequisite set are coherent. |
+| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/provenance.md` | design | Yes | Correctly limits inputs to formal scenarios and repository decision context. |
+| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/query-strategy.json` | design | Yes | External search is appropriately unnecessary for the result-bearing formal derivation. |
+| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/break-even-surface.csv` | generated_output | Yes | All 120 exact rows independently reproduced. |
+| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/measurement-identifiability.csv` | generated_output | Yes | All 48 ranks, augmented ranks, and statuses independently reproduced. |
+| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/results.json` | generated_output | Yes | Complete matrices, checks, definitions, statuses, and limitations match code and CSVs. |
+| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/same-concentration-counterexamples.csv` | generated_output | Yes | All three exact steady-state balances independently reproduced. |
+| `wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/summary.md` | generated_output | Yes | Faithful and appropriately bounded. |
+| `index.md` | proposed_update | Yes | Compact discoverability entry; no overclaim. |
+| `wiki/computational-experiments.md` | proposed_update | Yes | Registry matches the formal result and residual boundary. |
+| `wiki/cross-validation.md` | proposed_update | Yes | Treats qualified attribution and operating regime as live risks. |
+| `wiki/etc/GRAPH.md` | proposed_update | Yes | Dependency edge preserves empirical closure and safety sequencing. |
+| `wiki/gout-action-guide.md` | proposed_update | Yes | Research-only routing; no dose, treatment, or efficacy claim. |
+| `wiki/gout-multihop-research-program.md` | proposed_update | Yes | Uses COMP-050 as a measurement boundary, not biological evidence. |
+| `wiki/gut-lumen-sink.md` | proposed_update | Yes | Mechanism evidence, delivery limits, and falsification gates remain local and bounded. |
+| `wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md` | proposed_update | Yes | H08 remains open and the dynamic model remains blocked on data. |
+| `wiki/luminal-uox-break-even-identifiability-computational.md` | proposed_update | Yes | Full result owner; `A_time` is now locally and unambiguously defined. |
+| `wiki/open-questions.md` | proposed_update | Yes | Requires the measurement set before dynamic or serum-effect modeling. |
+| `wiki/uricase.md` | proposed_update | Yes | Correctly separates product attribution, capacity, ledger, and safety. |
+| `wiki/validation-experiments.md` | proposed_update | Yes | §1.33 characterizes local configuration performance only; later ledger closure remains separate. |
 
 ## Load-bearing verification table
 
 | Claim or parameter | Artifact location | Implementation use | Provenance status | Verdict |
 |---|---|---|---|---|
-| Exact eight-name prerequisite guard | `EXPECTED_PRODUCT_PREREQUISITES`; `load_contract()` | Rejects incomplete, substituted, duplicated, or extra contracts | Executable schema hardening; seven-item negative control failed before writes | Pass |
-| `Vmax_initial/J_total_mean = q/(occupancy × A_time)` | README; code; surface CSV | Generates conditional surface | Exact symbolic algebra; no biological estimate | Pass |
-| Total-local versus systemic-origin denominators | README; contract; results | Separates local capacity from source attribution | Explicit amount/flux definitions | Pass |
-| 120 rows; extrema `101/400`, `1010` | Contract; CSV; results; focused page | Summarizes declared grid | Exact constructed grid only; no global or biological claim | Pass |
-| Counterexample fluxes `1/10`, `1/2`, `9/10` | Contract; code; CSV | Demonstrates concentration-only non-identifiability | Exact constructed examples | Pass |
-| Ideal ranks `2/4/5/10`; failed ranks `2/3/4/8` | Code; CSV; results | Determines target status | Independently reproduced exact rational ranks | Pass |
-| `R_unattributed` reconstruction | Balance; final ideal matrix; surfaces | Completes structural target | Algebraic implication; practical tolerance remains required | Pass |
-| Qualified product observations | Product contract; ideal/failed branches | Conditions attribution | Ideal assumption only; not empirically validated | Pass |
-| Biological regime | Results; summary; proposed surfaces | Prevents method-to-biology promotion | Always `NOT_EVALUATED` | Pass |
+| Integrated amount-ledger signs | README; contract; code; results | Governing coefficient row | Formal, directly inspectable | Pass |
+| `J_total_mean = (I_systemic + I_other)/T` | README; results | Capacity denominator | Formal definition, not a biological estimate | Pass |
+| `A_time = ∫Vmax_active(t)dt/(Vmax_initial×T)` | README; code; results; focused page | Dimensionless retained active-capacity time area | Formal definition; locally documented and explicitly not an abundance/O2 proxy | Pass |
+| Conditional capacity boundary | Code; surface CSV; results; summary | Generates 120-row grid | Exact identity under fixed occupancy | Pass |
+| Surface extrema `101/400` and `1010` | CSV; results; focused page | Declared-grid summary | Independently reproduced; not physiological/global | Pass |
+| Same-concentration fluxes `1/10`, `1/2`, `9/10` | Contract; code; CSV; focused page | Non-identifiability counterexample | Exact constructed values | Pass |
+| Ten-variable ranks and grouped ledger rule | Contract; code; CSV; JSON | Structural-identifiability verdicts | Independently reproduced exact linear algebra | Pass |
+| Exact eight-name prerequisite set | Contract; `EXPECTED_PRODUCT_PREREQUISITES`; loader | Guards conditional observation vocabulary | Base/reorder accepted; missing/extra/duplicate rejected | Pass |
+| Failed-product status vocabulary | Code; CSV; JSON; README | Distinguishes surviving non-product targets | Documented without rescuing either UOX-attribution target | Pass |
+| Residual tolerance boundary | README; summary; focused/dependent pages | Separates algebraic reconstruction from practical closure | Future prespecified criterion; no value invented | Pass |
+| Biological regime | Results; summary; all reader surfaces | Prevents formal-to-biological upgrade | Always `NOT_EVALUATED` | Pass |
 
 ## Affected wiki pages
 
-- `index.md` — already consistent — discoverability only.
-- `wiki/computational-experiments.md` — already consistent — structural and practical closure remain distinct.
-- `wiki/cross-validation.md` — already consistent — no rank or biological verdict.
-- `wiki/etc/GRAPH.md` — already consistent — residual is algebraically calculated.
-- `wiki/gout-action-guide.md` — already consistent — no clinical, dose, or unqualified closure inference.
-- `wiki/gout-multihop-research-program.md` — already consistent — routes the correct measurement classes.
-- `wiki/gut-lumen-sink.md` — already consistent — measured terms, reconstructed residual, and tolerance are separated.
-- `wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md` — already consistent — open and blocked on data.
-- `wiki/luminal-uox-break-even-identifiability-computational.md` — already consistent — full result and boundaries are faithful.
-- `wiki/open-questions.md` — already consistent — residual bound and later model remain open.
-- `wiki/uricase.md` — already consistent — no assay, biology, production, or safety upgrade.
-- `wiki/validation-experiments.md` — already consistent — §1.33 is local characterization, not systemic or practical closure.
-- Mechanism-matched non-manifest pages — already consistent — no stale concentration-only attribution, direct-residual-measurement, or closure claim found.
+- `wiki/luminal-uox-break-even-identifiability-computational.md` — already consistent — defines `A_time` locally and owns the full bounded result.
+- `wiki/computational-experiments.md`, `index.md` — already consistent — compact registry/dashboard routing only.
+- `wiki/validation-experiments.md` — already consistent — §1.33 keeps local characterization separate from later ledger/systemic closure.
+- `wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md` — already consistent — hypothesis remains open and data-blocked.
+- `wiki/gut-lumen-sink.md`, `wiki/uricase.md` — already consistent — mechanism, product qualification, exposure, and safety boundaries are intact.
+- `wiki/open-questions.md`, `wiki/gout-action-guide.md`, `wiki/gout-multihop-research-program.md`, `wiki/cross-validation.md`, `wiki/etc/GRAPH.md` — already consistent — no stale concentration-only, dose, efficacy, or topology inference.
+- Mechanism-search dependents including `wiki/gout-pathophysiology.md`, `wiki/supplements-stack.md`, `wiki/genotype-informed-supplement-workflow.md`, `wiki/modality-chokepoint-matrix.md`, and `wiki/etc/ai-bio-tools-playbook.md` — already consistent — none requires a COMP-050 correction.
 
 ## New connections or implications
 
-None beyond the represented boundary. Product-qualification failure destroys attribution under this observation model but does not falsify UOX catalysis or the luminal-sink mechanism.
+No new action-worthy connection was found. The cross-corpus implication already captured is methodological: future luminal-UOX models must treat qualified product fate, calibrated reaction-site capacity, source/boundary fates, and residual tolerance as measured inputs rather than infer them from concentration, abundance, or oxygen alone. This does not imply that the measurements will be feasible or precise in a biological system.
 
 ## Required actions
 
@@ -112,4 +108,4 @@ None beyond the represented boundary. Product-qualification failure destroys att
 
 ## Review limits
 
-No manifest entry was missing, unreadable, truncated, or uninspected. I executed the hardened analysis twice in a disposable copy as explicitly authorized, ran the seven-prerequisite negative control without output mutation, and independently reproduced the exact algebra and ranks. I did not validate a wet-lab assay, practical precision, biological operating regime, peroxide safety, systemic effect, or clinical efficacy. No load-bearing biological parameter is introduced, so no new primary biological-source verification is claimed. Earlier reviews and the push receipt were read only after independent artifact, output, surface, and mechanism-search findings were recorded; their sole required guard action is satisfied by the exact-name check and disposable tests.
+All 22 manifest entries were available, text-inspectable, hash-matched, and inspected; there were no binary artifacts. The analysis was executed twice under explicit authorization, and independent exact-rational checks covered the complete surface, counterexamples, and rank/status table. This review did not re-verify inherited biological literature claims because COMP-050 introduces no result-bearing biological parameter; the terminal-ileal, animal, clinical, and safety evidence remains owned by its cited primary-source pages and future experiments. Assay performance, practical identifiability, biological operating conditions, residual acceptance, peroxide safety, and systemic effect remain outside this formal result.

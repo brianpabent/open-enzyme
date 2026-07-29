@@ -177,6 +177,54 @@ Long review-history material.
         self.assertEqual([], binary)
         self.assertEqual(["shared_dependency"], roles)
 
+    def test_push_review_shards_inspect_every_manifest_proposed_update(self):
+        with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
+            base = Path(tmp)
+            comp = base / "comp-999-test"
+            comp.mkdir()
+            proposed = base / "indirect-propagation-surface.md"
+            proposed.write_text("Indirect link to the reviewed result.\n")
+            manifest_path = base / "push-manifest.json"
+            manifest_path.write_text(json.dumps({
+                "files": [
+                    {
+                        "path": proposed.relative_to(ROOT).as_posix(),
+                        "kind": "proposed_update",
+                    }
+                ]
+            }))
+            shards, binary = comp_review.build_shards(
+                comp.relative_to(ROOT).as_posix(),
+                "comp-999",
+                manifest_path,
+            )
+        roles = [
+            segment["role"]
+            for shard in shards
+            for segment in shard["segments"]
+        ]
+        self.assertEqual([], binary)
+        self.assertEqual(["referencing_wiki_surface"], roles)
+
+    def test_push_manifest_retains_authoring_time_propagation_surfaces(self):
+        with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
+            base = Path(tmp)
+            comp = base / "comp-999-test"
+            reviews = comp / "reviews"
+            reviews.mkdir(parents=True)
+            proposed = base / "indirect-propagation-surface.md"
+            proposed.write_text("Indirect link to the reviewed result.\n")
+            (reviews / "post-run.manifest.json").write_text(json.dumps({
+                "files": [
+                    {
+                        "path": proposed.relative_to(ROOT).as_posix(),
+                        "kind": "proposed_update",
+                    }
+                ]
+            }))
+            paths = manifest.post_run_proposed_files(comp)
+        self.assertEqual([proposed], paths)
+
     def test_authoring_manifest_excludes_gitignored_local_cache(self):
         with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
             comp = Path(tmp) / "comp-999-test"

@@ -28,6 +28,8 @@ Vmax_initial / J_total_mean = q / (occupancy × A_time)
 
 `J_total_mean` is mean total local urate influx from systemic and other sources. `q = 1` is the conditional point at which integrated UOX capacity equals total local influx. It is not a closed dynamic mass balance, a dose, a production target, or a serum-urate prediction. Actual removal also depends on changing substrate, initial and terminal inventory, reabsorption, outflow, unattributed loss, oxygen, and retained activity.
 
+`A_time = ∫Vmax_active(t)dt / (Vmax_initial × T)`. It is the dimensionless active-capacity time-area retained across the declared window `T`, not an enzyme-abundance or oxygen proxy.
+
 The exact response surface spans the declared dimensionless scenarios; its extrema are 101/400 and 1,010 for required initial capacity relative to mean total local influx. Those are grid boundaries, not physiological estimates or planning values.
 
 ## Why urate concentration is insufficient

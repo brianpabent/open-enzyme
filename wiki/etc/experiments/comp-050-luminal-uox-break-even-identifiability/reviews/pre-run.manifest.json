@@ -6,8 +6,8 @@
     {
       "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/README.md",
       "kind": "design",
-      "bytes": 11315,
-      "sha256": "efdd815dc8ba0486018571c9ec02e64a87390452b1943734b443865863da8479"
+      "bytes": 11564,
+      "sha256": "eb26618f3b1b616ffb7710f3f62d5cfa7de0d6f9cc8108230c7699c782314e0f"
     },
     {
       "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/analyze.py",
@@ -66,5 +66,5 @@
       "sha256": "4b130e45f5f0b862c905834e25fb0bd7bfa1a14f1b5409ae3e04c1adbe343fd5"
     }
   ],
-  "manifest_sha256": "b4170647352adbc8b289a4d858485021ff8344cf8709c1b9098797abc3356808"
+  "manifest_sha256": "b6c92c4f9aec463fe5d79dea18bc3142e7d2c9c335e1a2bcb49c8116fa0701ca"
 }

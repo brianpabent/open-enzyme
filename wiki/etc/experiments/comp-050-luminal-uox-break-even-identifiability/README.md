@@ -147,6 +147,7 @@ The output reports separate statuses:
 - `concentration_only_nonidentifiability`: demonstrated or method failure;
 - `measurement_structural_audit`: completed or method failure;
 - per measurement combination and target: `STRUCTURALLY_IDENTIFIABLE_UNDER_IDEAL_OBSERVATION` or `NOT_IDENTIFIABLE`;
+- in the product-prerequisite-failure branch, a target that remains identifiable without any product-derived observation: `STRUCTURALLY_IDENTIFIABLE_WITHOUT_PRODUCT_OBSERVATION`; this status does not rescue local or systemic-origin UOX attribution;
 - product-prerequisite failure sensitivity: must make local UOX removal `NOT_IDENTIFIABLE`; and
 - `biological_regime`: always `NOT_EVALUATED`.
 

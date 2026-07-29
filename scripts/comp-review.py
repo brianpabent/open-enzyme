@@ -84,20 +84,6 @@ def tracked_files(comp_rel: str) -> list[Path]:
     return [safe_path(line) for line in result.stdout.splitlines() if line and "/reviews/" not in f"/{line}/"]
 
 
-def comp_references(comp_id: str, comp_rel: str) -> list[Path]:
-    result = run(
-        ["git", "grep", "-l", "-F", comp_id, "--", "wiki/*.md", "wiki/hypotheses/*.md"],
-        check=False,
-    )
-    refs = []
-    for raw in result.stdout.splitlines():
-        if raw and not raw.startswith(comp_rel + "/"):
-            path = safe_path(raw)
-            if path.is_file():
-                refs.append(path)
-    return sorted(set(refs))
-
-
 def create_push_manifest(comp_rel: str, manifest_path: Path) -> str:
     command = [
         sys.executable, "scripts/comp-review-manifest.py", "create",
@@ -252,7 +238,7 @@ def _segments(path: Path, role: str) -> list[dict[str, object]]:
 
 def build_shards(
     comp_rel: str,
-    comp_id: str,
+    _comp_id: str,
     manifest_path: Path,
 ) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
     segments: list[dict[str, object]] = []
@@ -260,13 +246,17 @@ def build_shards(
         segments.extend(_segments(path, "comp_artifact"))
     manifest = json.loads(manifest_path.read_text())
     for item in manifest.get("files", []):
-        if item.get("kind") != "shared_dependency":
-            continue
-        segments.extend(
-            _segments(safe_path(str(item["path"])), "shared_dependency")
-        )
-    for path in comp_references(comp_id, comp_rel):
-        segments.extend(_segments(path, "referencing_wiki_surface"))
+        if item.get("kind") == "shared_dependency":
+            segments.extend(
+                _segments(safe_path(str(item["path"])), "shared_dependency")
+            )
+        elif item.get("kind") == "proposed_update":
+            segments.extend(
+                _segments(
+                    safe_path(str(item["path"])),
+                    "referencing_wiki_surface",
+                )
+            )
 
     binary = [segment for segment in segments if segment["binary"]]
     text_segments = [segment for segment in segments if not segment["binary"]]

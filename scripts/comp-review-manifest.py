@@ -3,8 +3,9 @@
 
 ``pre`` and ``post`` are the mandatory authoring-time gates. ``push`` binds
 the independent daemon review to the exact committed artifact plus every
-current wiki surface that explicitly references it. Review files are excluded
-from all three manifests so replacing a receipt cannot invalidate itself.
+authoring-time propagation surface and current wiki surface that explicitly
+references it. Review files are excluded from all three manifests so replacing
+a receipt cannot invalidate itself.
 """
 
 from __future__ import annotations
@@ -294,6 +295,30 @@ def referencing_wiki_files(identifier: str, comp_dir: Path) -> list[Path]:
     return sorted(set(paths))
 
 
+def post_run_proposed_files(comp_dir: Path) -> list[Path]:
+    """Return current files named as authoring-time propagation surfaces."""
+    manifest_path = comp_dir / "reviews" / "post-run.manifest.json"
+    if not manifest_path.is_file():
+        return []
+    try:
+        document = json.loads(manifest_path.read_text())
+    except json.JSONDecodeError:
+        return []
+    paths: list[Path] = []
+    for item in document.get("files", []):
+        if item.get("kind") != "proposed_update":
+            continue
+        path = repo_path(str(item.get("path", "")))
+        if (
+            path.is_file()
+            and "reviews" not in path.relative_to(ROOT).parts
+            and path != comp_dir
+            and comp_dir not in path.parents
+        ):
+            paths.append(path)
+    return sorted(set(paths))
+
+
 def manifest_digest(payload: dict[str, object]) -> str:
     canonical = json.dumps(
         payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False
@@ -316,6 +341,7 @@ def create(args: argparse.Namespace) -> None:
     dependencies = shared_dependencies(comp_dir, tracked_only=tracked_only)
     proposed = [repo_path(raw) for raw in args.proposed_file]
     if args.phase == "push":
+        proposed.extend(post_run_proposed_files(comp_dir))
         proposed.extend(referencing_wiki_files(comp_id(comp_dir), comp_dir))
         proposed = sorted(set(proposed))
     if args.phase == "pre" and proposed:
