@@ -32,10 +32,11 @@ sources:
 Can this static-receptor docking configuration rank an FDA-approved molecule for
 Q141K ABCG2 trafficking rescue after known ABCG2 relationships are excluded?
 
-The run docked 135 molecules; 134 produced complete scores. It compared a
-modeled region around residue 141 with a Walker-A box, then applied a separate
-ABCG2 exclusion layer. The scores are computational triage signals, not binding,
-folding, trafficking, or urate-transport measurements.
+The run attempted 135 molecules; 134 produced complete docking-score rows, and
+cyclosporine A did not. It compared a modeled region around residue 141 with a
+Walker-A box, then applied a separate ABCG2 exclusion layer. The scores are
+computational triage signals, not binding, folding, trafficking, or
+urate-transport measurements.
 
 ## Verdict: inconclusive — no defensible docking-backed ranking
 
@@ -74,11 +75,14 @@ does not establish a selective fold-site interaction.
 
 ### The base ordering is unstable
 
-The recorded sensitivity run perturbed box position, box size, Vina seed, and
-ligand protonation. Across the non-base perturbations, **2–7 of the eight
-tracked candidate positions changed**. That makes the base-run ordering
+The recorded sensitivity run re-docked only the Q141K fold-site box. Its
+limited panel used x +2 Å, x -2 Å, y +2 Å, one +3 Å xyz diagonal, two box
+sizes, two alternate Vina seeds, and a neutral-ligand condition. It did not
+test y -2 Å, either z direction, the Walker-A box, or the complete executable
+margin rule. Across its non-base perturbations, **2–7 of the eight tracked
+candidate positions changed**. That makes the base-run fold ordering
 descriptive for this setup, not a robust shortlist. It does not prove that a
-pocket is absent.
+pocket is absent or establish robustness of the complete classification.
 
 ### There is no ABCG2 chaperone positive control
 

@@ -33,11 +33,11 @@ def fmt(value):
     return f"{value:.2f}" if isinstance(value, (int, float)) else "n/a"
 
 
-def yes_no_unknown(value):
+def activity_record_status(value):
     if value is True:
-        return "yes"
+        return "record present"
     if value is False:
-        return "no"
+        return "no bounded record"
     return "unqueried"
 
 
@@ -57,6 +57,25 @@ def main():
     results = result_doc["results"]
     drugbank_flagged = drugbank_doc.get("flagged", {})
     artifact_date = str(meta.get("generated", "undated")).split()[0]
+    attempted = meta.get("n_molecules")
+    complete_names = [
+        name
+        for name, row in results.items()
+        if all(
+            isinstance(row.get(field), (int, float))
+            for field in (
+                "fold_q141k_affinity",
+                "fold_wt_affinity",
+                "transport_affinity",
+            )
+        )
+    ]
+    complete_name_set = set(complete_names)
+    incomplete_names = sorted(set(results) - complete_name_set)
+    if attempted != len(results):
+        raise RuntimeError(
+            "attempted-molecule metadata does not match the result-row count"
+        )
 
     # Axis 2 is a conservative exclusion layer, not a positive chaperone score.
     for name, row in results.items():
@@ -123,7 +142,7 @@ def main():
     valid = [
         (name, row)
         for name, row in results.items()
-        if isinstance(row.get("fold_q141k_affinity"), (int, float))
+        if name in complete_name_set
     ]
     fold_rank = {
         name: index + 1
@@ -146,7 +165,9 @@ def main():
     control_lines = [
         "# comp-047 — Control and exclusion read-out",
         "",
-        f"Frozen docking run date: {artifact_date}. N={n_valid} molecules with valid docking.",
+        f"Frozen docking run date: {artifact_date}. Attempted {attempted}; "
+        f"{n_valid} complete docking-score rows; incomplete: "
+        f"{', '.join(incomplete_names) if incomplete_names else 'none'}.",
         "",
         "Affinities are Vina scores in kcal/mol (more negative = stronger). "
         "Margin = transport − fold@Q141K (>0 favors the modeled fold-site box). "
@@ -186,7 +207,7 @@ def main():
             f"| {fmt(row.get('transport_affinity'))} "
             f"| {fmt(row.get('fold_vs_transport_margin'))} "
             f"| {fold_rank.get(name, '?')}/{n_valid} "
-            f"| {yes_no_unknown(row.get('chembl_abcg2_empirical'))} "
+            f"| {activity_record_status(row.get('chembl_abcg2_empirical'))} "
             f"| {'yes' if row.get('drugbank_abcg2_interacting') else 'no'} "
             f"| {row.get('wetlab_candidate')} |"
         )
@@ -206,7 +227,7 @@ def main():
     for name, row in sorted(axis2_impact):
         control_lines.append(
             f"| {name} | {row.get('chaperone_tier')} "
-            f"| {yes_no_unknown(row.get('chembl_abcg2_empirical'))} "
+            f"| {activity_record_status(row.get('chembl_abcg2_empirical'))} "
             f"| {'yes' if row.get('substrate_disqualified') else 'no'} "
             f"| {'yes' if row.get('drugbank_abcg2_interacting') else 'no'} "
             f"| {row.get('wetlab_candidate')} |"
@@ -258,7 +279,9 @@ def main():
         "UniProt/DrugBank relationship exclusion.",
         "",
         f"**Vina:** seed {meta['seed']}, exhaustiveness {meta['exhaustiveness']}, "
-        f"cpu {meta['cpu']}; N={n_valid} docked.",
+        f"cpu {meta['cpu']}; {attempted} attempted and {n_valid} complete "
+        f"docking-score rows; incomplete: "
+        f"{', '.join(incomplete_names) if incomplete_names else 'none'}.",
         "",
         f"## VERDICT: {verdict}",
         "",
@@ -280,7 +303,7 @@ def main():
             f"| {fmt(row.get('transport_affinity'))} "
             f"| {fmt(row.get('fold_vs_transport_margin'))} "
             f"| {fmt(row.get('q141k_vs_wt_selectivity'))} "
-            f"| {yes_no_unknown(row.get('chembl_abcg2_empirical'))} "
+            f"| {activity_record_status(row.get('chembl_abcg2_empirical'))} "
             f"| {'yes' if row.get('drugbank_abcg2_interacting') else 'no'} "
             f"| {row.get('wetlab_candidate')} |"
         )
@@ -337,10 +360,15 @@ def main():
     if changed_counts:
         summary += [
             "",
-            f"**Sensitivity diagnostic:** among the recorded non-base perturbations, "
+            f"**Sensitivity diagnostic:** the recorded panel re-docked only the "
+            f"Q141K fold-site box using x +2 Å, x -2 Å, y +2 Å, a +3 Å xyz "
+            f"diagonal, two box sizes, two alternate seeds, and a neutral-ligand "
+            f"condition. It did not test y -2 Å, either z direction, the Walker-A "
+            f"box, or the complete margin rule. Within that limited panel, "
             f"{min(changed_counts)}–{max(changed_counts)} of the eight tracked "
             "candidate positions changed. The base-run fold ranking is therefore "
-            "not treated as robust.",
+            "not treated as robust; this diagnostic does not establish robustness "
+            "of the executable classification.",
         ]
 
     summary += [

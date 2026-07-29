@@ -40,7 +40,7 @@ SHARD_OUTPUT_MAX_TOKENS = 8_000
 FINAL_OUTPUT_MAX_TOKENS = 16_000
 TEXT_SUFFIXES = {
     ".md", ".py", ".json", ".csv", ".tsv", ".txt", ".yaml", ".yml",
-    ".fasta", ".fa", ".toml", ".sh", ".r", ".xml", ".html", ".jsonl",
+    ".fasta", ".fa", ".toml", ".sh", ".r", ".xml", ".html", ".jsonl", ".log",
     ".pdb", ".pdbqt", ".gitignore", ".gitkeep",
 }
 COMP_RE = re.compile(r"^(comp-\d{3})(?:-|$)")

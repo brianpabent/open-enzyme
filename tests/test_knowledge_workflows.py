@@ -246,6 +246,20 @@ Long review-history material.
         self.assertEqual([], binary)
         self.assertEqual(["referencing_wiki_surface"], roles)
 
+    def test_push_review_treats_utf8_log_as_inspectable_text(self):
+        with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
+            run_log = Path(tmp) / "run.log"
+            run_log.write_text(
+                "[18:46:16] [65/135] cyclosporine_a fold_q141k=None\n"
+            )
+            segments = comp_review._segments(run_log, "comp_artifact")
+        self.assertEqual(1, len(segments))
+        self.assertFalse(segments[0]["binary"])
+        self.assertEqual(
+            "[18:46:16] [65/135] cyclosporine_a fold_q141k=None\n",
+            segments[0]["content"],
+        )
+
     def test_push_manifest_retains_authoring_time_propagation_surfaces(self):
         with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
             base = Path(tmp)

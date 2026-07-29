@@ -31,8 +31,10 @@ rescue hypothesis.
 
 - `outputs/results.json` — 135 attempted molecules; 134 with complete docking
   scores from the original Vina run.
-- `outputs/sensitivity.json` — the original 10-condition perturbation run for
-  eight top base-run scores plus comparator/control molecules.
+- `outputs/sensitivity.json` — the original 10-condition, fold-site-only
+  perturbation run for eight top base-run scores plus comparator/control
+  molecules. Its recorded center shifts are x +2 Å, x -2 Å, y +2 Å, and one
+  +3 Å xyz diagonal; it does not contain y -2 Å or either z-axis shift.
 - `outputs/chembl_axis2.json` — bounded ChEMBL ABCG2 inhibition checks plus the
   independently sourced rosuvastatin substrate exclusion.
 - `outputs/drugbank_substrate_axis.json` — UniProt-exposed DrugBank ABCG2
@@ -88,6 +90,7 @@ repair.py                 targeted re-dock utility; not used in this correction
 verify_receptors.py       exact-hash, count, residue-141, and box verification
 build_results.py          deterministic Axis-2 merge and report generation
 work/                     frozen receptor and resolved-SMILES intermediates
+logs/run.log              inspectable text record of the historical docking run
 outputs/
   results.json
   sensitivity.json
@@ -124,6 +127,19 @@ re-dock must supply `OE_VINA_BIN` and `OE_OBABEL_BIN` or place `vina` and
 new pre-run lifecycle gate. Refreshing `work/ligands/smiles_resolved.json`,
 re-preparing receptors, changing parameters, or regenerating any docking score
 also starts that new lifecycle.
+
+Before a future re-dock or extension executes, its reviewed design must also:
+
+1. preserve an immutable raw docking result separately from postprocessed
+   annotations and reports;
+2. hash-bind every prepared ligand, its source SMILES record, both receptors,
+   and every grid definition;
+3. capture the return code, stdout, and stderr for every Vina invocation and
+   fail closed rather than accepting a missing or stale resumed result;
+4. snapshot every live-query response with its exact request and retrieval
+   metadata; and
+5. predeclare the sensitivity panel and which decision-rule components it can
+   and cannot test.
 
 ## Receptor verification boundary
 
@@ -167,8 +183,10 @@ belongs in a later synthesis decision.
 2. The receptor is an apo monomer. The Walker-A box is not the physiological
    composite ATP site or the transmembrane substrate cavity.
 3. The fold-site region is a modeled local box, not an experimentally validated
-   pocket. Recorded rank instability prevents treating the base ordering as
-   robust.
+   pocket. The recorded limited perturbation panel tests Q141K fold-site score
+   and relative rank only; its rank instability prevents treating the base
+   ordering as robust but does not test robustness of the complete executable
+   margin rule.
 4. Vina scores and close score margins are not binding-affinity measurements.
 5. Intracellular free exposure at the folding compartment is not modeled.
 6. UniProt/DrugBank cross-references establish a curated ABCG2 relationship;

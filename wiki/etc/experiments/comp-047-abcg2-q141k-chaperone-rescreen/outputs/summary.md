@@ -4,7 +4,7 @@
 
 **Method:** static-receptor AutoDock Vina at a modeled residue-141 region and Walker-A comparison box, followed by ChEMBL inhibition and UniProt/DrugBank relationship exclusion.
 
-**Vina:** seed 20260714, exhaustiveness 8, cpu 4; N=134 docked.
+**Vina:** seed 20260714, exhaustiveness 8, cpu 4; 135 attempted and 134 complete docking-score rows; incomplete: cyclosporine_a.
 
 ## VERDICT: INCONCLUSIVE — NO DEFENSIBLE DOCKING-BACKED RANKING
 
@@ -14,7 +14,7 @@ Executable rule output after both Axis-2 checks: **0 yes**, **1 uncertain**. An 
 
 | rank | molecule | class | fold@Q141K | Walker A | margin | Q141K−WT proxy | ChEMBL activity | DrugBank relationship | tier |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | vorinostat | HDAC inhibitor | -6.19 | -5.64 | 0.55 | 0.23 | no | no | uncertain |
+| 1 | vorinostat | HDAC inhibitor | -6.19 | -5.64 | 0.55 | 0.23 | no bounded record | no | uncertain |
 
 ## Base-run fold-site scores (descriptive, not a robust ranking)
 
@@ -40,7 +40,7 @@ The table records the strongest scores in the original box. It is not a fallback
 
 **Walker-A comparison diagnostic:** scores span -8.77..-3.51 (median -6.09); modeled fold-site scores span -7.82..-1.85 (median -4.86). The substantial overlap makes the margin rule non-discriminating in this configuration; it does not establish a selective fold-site interaction.
 
-**Sensitivity diagnostic:** among the recorded non-base perturbations, 2–7 of the eight tracked candidate positions changed. The base-run fold ranking is therefore not treated as robust.
+**Sensitivity diagnostic:** the recorded panel re-docked only the Q141K fold-site box using x +2 Å, x -2 Å, y +2 Å, a +3 Å xyz diagonal, two box sizes, two alternate seeds, and a neutral-ligand condition. It did not test y -2 Å, either z direction, the Walker-A box, or the complete margin rule. Within that limited panel, 2–7 of the eight tracked candidate positions changed. The base-run fold ranking is therefore not treated as robust; this diagnostic does not establish robustness of the executable classification.
 
 ## Interpretation boundary
 

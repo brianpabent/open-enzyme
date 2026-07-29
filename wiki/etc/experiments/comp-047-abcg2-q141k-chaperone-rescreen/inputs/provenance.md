@@ -49,7 +49,10 @@
 - `outputs/results.json`: original Vina result, seed 20260714, exhaustiveness 8,
   CPU 4; 135 attempted molecules and 134 complete score rows.
 - `outputs/sensitivity.json`: recorded fold-site perturbations for box centers,
-  box sizes, Vina seeds, and ligand protonation.
+  box sizes, Vina seeds, and ligand protonation. The exact center panel is
+  x +2 Å, x -2 Å, y +2 Å, and one +3 Å xyz diagonal. It omits y -2 Å and both
+  z directions, and it does not perturb the Walker-A box or recompute the
+  complete fold-versus-transport margin rule.
 - This correction consumes both as frozen result-bearing artifacts. It does not
   re-dock.
 
@@ -103,4 +106,7 @@
 
 This is provenance for the historical run, not a claim that an exact current
 environment exists. Any new docking run must pin a rebuilt environment and pass
-a new lifecycle gate.
+a new lifecycle gate. Its reviewed design must preserve raw docking output
+separately from postprocessing, hash-bind prepared ligands and source SMILES,
+capture every Vina return code/stdout/stderr, and snapshot live-query requests
+and responses before interpretation.

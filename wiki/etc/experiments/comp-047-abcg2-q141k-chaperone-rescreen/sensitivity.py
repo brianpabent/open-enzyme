@@ -2,16 +2,18 @@
 """
 comp-047 sensitivity analysis (mandatory — comp-032 had none).
 
-For the top fold-site candidates + controls, re-dock the fold_site@Q141K under
-perturbations and report rank/affinity stability:
-  - grid-box CENTER shifts (+/-2 A along each axis, one +3 A diagonal)
+For the top fold-site candidates + controls, re-dock only the
+fold_site@Q141K box under a recorded limited perturbation panel and report
+fold-site score/rank stability:
+  - grid-box CENTER shifts (x +2 A, x -2 A, y +2 A, and one +3 A xyz diagonal)
   - grid-box SIZE (18, 26 A vs base 22)
   - Vina SEED (two alternate seeds)
   - ligand PROTONATION (neutral as-drawn SMILES vs base pH 7.4)
 
-A candidate whose fold-site affinity and relative rank survive these
-perturbations is a robust finding; one that only ranks under one grid choice
-is not (design requirement).
+This panel does not perturb y -2 A, either z direction, the Walker-A box, or
+the complete fold-versus-transport margin rule. Stability here would apply
+only to fold-site score and relative rank within this panel; it would not
+establish a robust executable chaperone classification.
 
 Usage: sensitivity.py            # uses outputs/results.json, top 8 + controls
 """
