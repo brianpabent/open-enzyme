@@ -459,6 +459,31 @@
       ],
       "timestamp": "2026-07-27T12:31:52Z",
       "cost_usd": 1.549151
+    },
+    "comp-050": {
+      "comp_dir": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability",
+      "artifact_manifest_sha256": "44f3245b2b142c0131410aa75210c3ae21c6aa61ddd621555d23a38abf94670d",
+      "source_commit": "7505dc5e5d03c29d71e9e8acc4f75ec7038b5a5a",
+      "review_receipt": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/reviews/push-review.md",
+      "comp_verdict": "clean_with_limitations",
+      "propagation_eligibility": "eligible_with_warning",
+      "synthesis_eligibility": "eligible_with_warning",
+      "derived_paths": [
+        "index.md",
+        "wiki/computational-experiments.md",
+        "wiki/cross-validation.md",
+        "wiki/etc/GRAPH.md",
+        "wiki/gout-action-guide.md",
+        "wiki/gout-multihop-research-program.md",
+        "wiki/gut-lumen-sink.md",
+        "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
+        "wiki/luminal-uox-break-even-identifiability-computational.md",
+        "wiki/open-questions.md",
+        "wiki/uricase.md",
+        "wiki/validation-experiments.md"
+      ],
+      "timestamp": "2026-07-29T00:10:57Z",
+      "cost_usd": 0.971242
     }
   },
   "unresolved_failures": [

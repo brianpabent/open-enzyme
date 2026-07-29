@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "comp": "comp-050",
+  "comp_dir": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability",
+  "source_commit": "7505dc5e5d03c29d71e9e8acc4f75ec7038b5a5a",
+  "artifact_manifest_sha256": "44f3245b2b142c0131410aa75210c3ae21c6aa61ddd621555d23a38abf94670d",
+  "reviewer_model": "openai/gpt-5.5",
+  "timestamp": "2026-07-29T00:09:42Z",
+  "comp_verdict": "clean_with_limitations",
+  "propagation_eligibility": "eligible_with_warning",
+  "synthesis_eligibility": "eligible_with_warning",
+  "action_required": false,
+  "authoring_gates": {
+    "status": "modern",
+    "valid": true,
+    "details": [
+      "pre-run design matches post-run design; current COMP artifact matches the post-run snapshot; later wiki evolution is push-reviewed"
+    ]
+  },
+  "coverage": [
+    {
+      "shard_id": "shard-001",
+      "coverage_sha256": "4857d1a11253591e7da8b604c768d6dd027f8c640a20f0dffb7f6f9c0190d5b9",
+      "segments": [
+        {
+          "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/README.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 11549,
+          "file_sha256": "eb26618f3b1b616ffb7710f3f62d5cfa7de0d6f9cc8108230c7699c782314e0f",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/analyze.py",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 36672,
+          "file_sha256": "e7b4bcba7544bafb594139c11fe449745ea7682d22ef617c375036d5a3f45d51",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/model_contract.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 6034,
+          "file_sha256": "01072ab3ec9960657ee001f36a7ee1573f69135ede6d28023e96e88d392d6602",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/provenance.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 3029,
+          "file_sha256": "1e9739527f7f7f52ff908953ca4121e355ed9c3b2d9cdeb956696f073fece9a4",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/query-strategy.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 961,
+          "file_sha256": "96b6ee59def4282a6a1dd70cef4cc77f5c7183428158f6b20cd9026f4e4d2cbe",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/break-even-surface.csv",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 10542,
+          "file_sha256": "9a6dd92ac07fb26e094c19f42ac782ecb7109f67840ea070efc0b05bd37b63ff",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/measurement-identifiability.csv",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 6212,
+          "file_sha256": "712efdea7f5cc5c68ecf7597764c1184ee715a0c64f8e47adf500fd8fa26c2bf",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/results.json",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 33619,
+          "file_sha256": "e23671522b4d4294c5bd09bdd7f76b0aaca4c5070e7f3b792583acf3a39ac6e2",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/same-concentration-counterexamples.csv",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 485,
+          "file_sha256": "8bbe8328515ccce51b2793a9dc836a7409a17a1e0b1a18520ffb03ca541530ef",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/summary.md",
+          "role": "comp_artifact",
+          "start": 0,
+          "end": 2634,
+          "file_sha256": "4b130e45f5f0b862c905834e25fb0bd7bfa1a14f1b5409ae3e04c1adbe343fd5",
+          "binary": false
+        },
+        {
+          "path": "index.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 35570,
+          "file_sha256": "0d2170e3b86b56517d877964eb005a59a5270a06671d4fd68508ea8fb92c4618",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-002",
+      "coverage_sha256": "3b3dcadbe4ab0bf808029f7b37946b1e7a2c9df12b1678115f561ef4b4e312ba",
+      "segments": [
+        {
+          "path": "wiki/computational-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 73878,
+          "file_sha256": "0b5a1bcedd5c283c71f019bdf24dc233e794331d2414da93dff422e5fce86e5e",
+          "binary": false
+        },
+        {
+          "path": "wiki/cross-validation.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 7256,
+          "file_sha256": "f4de0746cd2c27c6f50efa01f796aaff9ebeb30b8b2eaf1f419b6cca01eb9cb3",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/GRAPH.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 5372,
+          "file_sha256": "238e520d8957176add23e32610e5237977f07f91035f0bf780cf9d81f40dac5d",
+          "binary": false
+        },
+        {
+          "path": "wiki/gout-action-guide.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 10445,
+          "file_sha256": "4581863e3fea8ea4ce1033483f6a865f37edd91a0fa22892e3f8cddadce057af",
+          "binary": false
+        },
+        {
+          "path": "wiki/gout-multihop-research-program.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 7301,
+          "file_sha256": "e24661d0e2ea2d231234456abdb9e819767edc4ddfe7edd5f852c4478cc44fb8",
+          "binary": false
+        },
+        {
+          "path": "wiki/gut-lumen-sink.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 8799,
+          "file_sha256": "191a885190b62e467422c4e437ec33a6fba0971cd4635bb6d3a0ce1d96dcacc8",
+          "binary": false
+        },
+        {
+          "path": "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 7908,
+          "file_sha256": "a3b4f6d8265e74aa09ecb58d47397f4638ed895ea926dea408aa16d3f4d33c47",
+          "binary": false
+        },
+        {
+          "path": "wiki/luminal-uox-break-even-identifiability-computational.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 6363,
+          "file_sha256": "f0211d711f39f42896d424b5962853a4a5ff741c148d954fc4c5c05c979dbfc6",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-003",
+      "coverage_sha256": "e8d77f917e68d9c932c963fc55f604654254713e4cdb7739a586e94d4fd3432d",
+      "segments": [
+        {
+          "path": "wiki/open-questions.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 70784,
+          "file_sha256": "65b214c3a0c79ab7ed2d220415cab17346351f057aa418eef126e945c209045b",
+          "binary": false
+        },
+        {
+          "path": "wiki/uricase.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 10081,
+          "file_sha256": "4303c66f9aac168c374528d55fea60d17f17d8d7b093acfb118d6c9ccc9a0fb8",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-004",
+      "coverage_sha256": "d681d0bcddfa421ae77a9dcf31373b72a828373adf6ec8c0e12d8023eb470d66",
+      "segments": [
+        {
+          "path": "wiki/validation-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 180000,
+          "file_sha256": "3288cfe0df582778cea07e593ce6646b06038c71a7e892a8a51384bd1ed8e9eb",
+          "binary": false
+        }
+      ]
+    },
+    {
+      "shard_id": "shard-005",
+      "coverage_sha256": "d28826333c9c2efe4945947f2ff17104e437abe5d0259be412d57b6f768a80e3",
+      "segments": [
+        {
+          "path": "wiki/validation-experiments.md",
+          "role": "referencing_wiki_surface",
+          "start": 180000,
+          "end": 224085,
+          "file_sha256": "3288cfe0df582778cea07e593ce6646b06038c71a7e892a8a51384bd1ed8e9eb",
+          "binary": false
+        }
+      ]
+    }
+  ],
+  "unsupported_binary_entries": [],
+  "projected_cost_usd": 1.857913,
+  "actual_cost_usd": 0.971242,
+  "input_tokens": 305726,
+  "output_tokens": 13446,
+  "tool_calls": 18,
+  "review_sha256": "8811e1a46210ed9e405e13a566acbcfaf0b849df9347769147001a4fc97a66eb",
+  "lane_adjudication": {
+    "date": "2026-07-29T00:09:42Z",
+    "method": "exact push review",
+    "new_artifact_review_performed": true,
+    "queue_action_remains_open": false,
+    "propagation_allowed_scope": "propagate only the bounded method-map result: concentration alone is insufficient; qualified product fate and calibrated capacity are required; source/boundary fate is required for declared ledger/systemic attribution",
+    "synthesis_allowed_scope": "use as a structural-identifiability and measurement-contract constraint for luminal UOX only, with biological regime not evaluated",
+    "forbidden_inferences": [
+      "human dose",
+      "serum-urate effect",
+      "production sufficiency",
+      "topology/chassis ranking",
+      "assay validation",
+      "practical identifiability",
+      "safety/peroxide clearance",
+      "clinical advice",
+      "H08 closure"
+    ]
+  }
+}

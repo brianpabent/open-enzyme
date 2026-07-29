@@ -1,0 +1,141 @@
+{
+  "schema_version": 2,
+  "phase": "push",
+  "comp_dir": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability",
+  "files": [
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/README.md",
+      "kind": "design",
+      "bytes": 11564,
+      "sha256": "eb26618f3b1b616ffb7710f3f62d5cfa7de0d6f9cc8108230c7699c782314e0f"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/analyze.py",
+      "kind": "design",
+      "bytes": 36675,
+      "sha256": "e7b4bcba7544bafb594139c11fe449745ea7682d22ef617c375036d5a3f45d51"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/model_contract.json",
+      "kind": "design",
+      "bytes": 6034,
+      "sha256": "01072ab3ec9960657ee001f36a7ee1573f69135ede6d28023e96e88d392d6602"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/provenance.md",
+      "kind": "design",
+      "bytes": 3036,
+      "sha256": "1e9739527f7f7f52ff908953ca4121e355ed9c3b2d9cdeb956696f073fece9a4"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/inputs/query-strategy.json",
+      "kind": "design",
+      "bytes": 961,
+      "sha256": "96b6ee59def4282a6a1dd70cef4cc77f5c7183428158f6b20cd9026f4e4d2cbe"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/break-even-surface.csv",
+      "kind": "generated_output",
+      "bytes": 10542,
+      "sha256": "9a6dd92ac07fb26e094c19f42ac782ecb7109f67840ea070efc0b05bd37b63ff"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/measurement-identifiability.csv",
+      "kind": "generated_output",
+      "bytes": 6212,
+      "sha256": "712efdea7f5cc5c68ecf7597764c1184ee715a0c64f8e47adf500fd8fa26c2bf"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/results.json",
+      "kind": "generated_output",
+      "bytes": 33619,
+      "sha256": "e23671522b4d4294c5bd09bdd7f76b0aaca4c5070e7f3b792583acf3a39ac6e2"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/same-concentration-counterexamples.csv",
+      "kind": "generated_output",
+      "bytes": 485,
+      "sha256": "8bbe8328515ccce51b2793a9dc836a7409a17a1e0b1a18520ffb03ca541530ef"
+    },
+    {
+      "path": "wiki/etc/experiments/comp-050-luminal-uox-break-even-identifiability/outputs/summary.md",
+      "kind": "generated_output",
+      "bytes": 2637,
+      "sha256": "4b130e45f5f0b862c905834e25fb0bd7bfa1a14f1b5409ae3e04c1adbe343fd5"
+    },
+    {
+      "path": "index.md",
+      "kind": "proposed_update",
+      "bytes": 35985,
+      "sha256": "0d2170e3b86b56517d877964eb005a59a5270a06671d4fd68508ea8fb92c4618"
+    },
+    {
+      "path": "wiki/computational-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 74467,
+      "sha256": "0b5a1bcedd5c283c71f019bdf24dc233e794331d2414da93dff422e5fce86e5e"
+    },
+    {
+      "path": "wiki/cross-validation.md",
+      "kind": "proposed_update",
+      "bytes": 7279,
+      "sha256": "f4de0746cd2c27c6f50efa01f796aaff9ebeb30b8b2eaf1f419b6cca01eb9cb3"
+    },
+    {
+      "path": "wiki/etc/GRAPH.md",
+      "kind": "proposed_update",
+      "bytes": 5404,
+      "sha256": "238e520d8957176add23e32610e5237977f07f91035f0bf780cf9d81f40dac5d"
+    },
+    {
+      "path": "wiki/gout-action-guide.md",
+      "kind": "proposed_update",
+      "bytes": 10465,
+      "sha256": "4581863e3fea8ea4ce1033483f6a865f37edd91a0fa22892e3f8cddadce057af"
+    },
+    {
+      "path": "wiki/gout-multihop-research-program.md",
+      "kind": "proposed_update",
+      "bytes": 7375,
+      "sha256": "e24661d0e2ea2d231234456abdb9e819767edc4ddfe7edd5f852c4478cc44fb8"
+    },
+    {
+      "path": "wiki/gut-lumen-sink.md",
+      "kind": "proposed_update",
+      "bytes": 8815,
+      "sha256": "191a885190b62e467422c4e437ec33a6fba0971cd4635bb6d3a0ce1d96dcacc8"
+    },
+    {
+      "path": "wiki/hypotheses/H08-gut-lumen-sink-platform-thesis.md",
+      "kind": "proposed_update",
+      "bytes": 7953,
+      "sha256": "a3b4f6d8265e74aa09ecb58d47397f4638ed895ea926dea408aa16d3f4d33c47"
+    },
+    {
+      "path": "wiki/luminal-uox-break-even-identifiability-computational.md",
+      "kind": "proposed_update",
+      "bytes": 6384,
+      "sha256": "f0211d711f39f42896d424b5962853a4a5ff741c148d954fc4c5c05c979dbfc6"
+    },
+    {
+      "path": "wiki/open-questions.md",
+      "kind": "proposed_update",
+      "bytes": 71043,
+      "sha256": "65b214c3a0c79ab7ed2d220415cab17346351f057aa418eef126e945c209045b"
+    },
+    {
+      "path": "wiki/uricase.md",
+      "kind": "proposed_update",
+      "bytes": 10101,
+      "sha256": "4303c66f9aac168c374528d55fea60d17f17d8d7b093acfb118d6c9ccc9a0fb8"
+    },
+    {
+      "path": "wiki/validation-experiments.md",
+      "kind": "proposed_update",
+      "bytes": 225722,
+      "sha256": "3288cfe0df582778cea07e593ce6646b06038c71a7e892a8a51384bd1ed8e9eb"
+    }
+  ],
+  "prior_output_baseline": [],
+  "manifest_sha256": "44f3245b2b142c0131410aa75210c3ae21c6aa61ddd621555d23a38abf94670d"
+}
