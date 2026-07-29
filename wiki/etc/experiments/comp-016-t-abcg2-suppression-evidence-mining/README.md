@@ -1,98 +1,138 @@
-# comp-016 — T × Intestinal ABCG2 Suppression Evidence Mining
+# COMP-016 — bounded androgen × intestinal ABCG2 evidence inventory
 
-**Question:** Does primary literature support the load-bearing platform-thesis claim that androgens (testosterone, DHT) directly suppress intestinal ABCG2 expression, lowering the gut-lumen-sink dose-response asymptote in male/androgen-dominant gout patients (a "structural ceiling on platform efficacy in the primary demographic")?
+## Biological question
 
-**Verdict (top-line):** **WEAK / UNCONFIRMED.** Of 17 curated studies (PubMed scan 2026-05-07), zero primary studies demonstrate androgen-driven intestinal ABCG2 suppression directly (no castration → intestinal ABCG2 up; no testosterone → intestinal ABCG2 down in vivo). The 3 studies that ARE load-bearing for the intestinal-specific claim split: 1 supports the broader sex-dimorphism (Hoque 2020 — Q140K mouse genetic loss-of-function model), 1 supports the female-positive arm (Yu 2021 — estradiol upregulates intestinal ABCG2 via PI3K/Akt), 1 directly contradicts (Klyushova 2023 — testosterone INDUCES ABCG2 in Caco-2 in vitro). The intestinal compartment IS sex-dimorphic in a urate-relevant way; the directional driver appears to be ESTRADIOL POSITIVE in females, not ANDROGEN NEGATIVE in males. The platform-thesis "structural ceiling from androgen-driven ABCG2 suppression" framing should be softened to "modest dose-response shift driven by absent estradiol-positive signaling in male physiology."
+Within the fixed 17-record inventory collected on 2026-05-07, did any record
+directly demonstrate that androgen exposure or androgen-state manipulation
+decreases intestinal ABCG2?
 
-**Reproducible artifact:** [`experiments/comp-016-t-abcg2-suppression-evidence-mining/`](.) — script, inputs, outputs all here.
+This is a bounded inventory test, not a current or systematic literature
+review. It cannot establish that no such study exists outside the committed
+search set.
 
-**Interpretive wiki page:** [`wiki/t-abcg2-suppression-evidence-mining-computational.md`](../../../t-abcg2-suppression-evidence-mining-computational.md)
+## Decision
 
-**Informs:**
-- [`wiki/androgen-urate-axis.md`](../../../androgen-urate-axis.md) §"Mechanism — hormones steer the transporters" + §"Why this matters for the platform" — softens the load-bearing claim flagged for verification 2026-05-07
-- [`wiki/abcg2-modulators.md`](../../../abcg2-modulators.md) §1 (Androgens entry) — softens the AR-mediated repression framing
-- [`wiki/gut-lumen-sink.md`](../../../gut-lumen-sink.md) — softens the male-asymptote framing
-- [`wiki/koji-endgame-strain.md`](../../../koji-endgame-strain.md) §1 if it cites the structural-ceiling argument
-- [`wiki/cross-validation.md`](../../../cross-validation.md) Claim 1 if it depends on the androgen-ABCG2 link
+The computation decides whether the old direct-suppression mechanism may remain
+as a demonstrated premise in Open Enzyme. It does not decide:
 
----
+- the broader androgen–urate relationship;
+- healthy-human intestinal ABCG2 sex stratification;
+- a male-specific ceiling on gut-lumen urate export;
+- physiological effects from nominal cell-culture exposures; or
+- clomiphene mechanism, dosing, or treatment.
 
-## How to reproduce
+[COMP-017](../comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/)
+owns the corrected Hoque, Liu, Slepnev, and MacLean source record and the
+unresolved healthy-human question.
+
+## Model and decision rules
+
+`analyze.py` validates and renders `inputs/studies.json`; it performs no
+retrieval or statistical inference.
+
+A record is a **direct in-vivo test** only when it both manipulates androgen
+exposure/state and measures intestinal ABCG2 in vivo. A record is a **direct
+in-vitro test** only when it manipulates androgen exposure and measures ABCG2
+in an intestinal cell model. In either class, the target outcome must be
+explicitly linked to the same tested manipulation and model context, the record
+must be citable, and the outcome must be verified against primary full text,
+an official publisher abstract, or a primary database abstract. A legacy
+search summary or unresolved placeholder cannot produce a demonstrated result.
+Direct suppression is demonstrated within a tested context only when the
+recorded target outcome is `decrease`.
+
+Animal genotype/sex comparisons, healthy-baseline sex comparisons, renal or
+systemic urate endpoints, non-intestinal cancer-cell mechanisms, and reviews
+remain adjacent evidence. They may motivate a new experiment, but they do not
+satisfy the direct-test rule.
+
+The output status is:
+
+- `DIRECT_SUPPRESSION_DEMONSTRATED_IN_FIXED_INVENTORY` if one or more direct
+  target tests record a decrease; or
+- `NOT_DEMONSTRATED_IN_FIXED_INVENTORY` otherwise.
+
+The second status is bounded to these inputs. It is not a universal absence
+claim and does not prove the opposite mechanism.
+
+## Fixed inputs and source boundary
+
+- `inputs/studies.json` retains all 17 original inventory rows, with corrected
+  attribution and explicit source-verification tiers.
+- Four load-bearing source records were corrected from the primary or official
+  abstract record: Hoque 2020, Liu 2021, Slepnev 2023, and MacLean 2008.
+- Records supported only by the old search-summary extraction carry no
+  quantitative or mechanistic finding in this repaired artifact.
+- The vague legacy `S15` row is retained as an unresolved inventory trace but
+  excluded from citable evidence because the original row lacked a stable
+  author and article identity.
+- `inputs/provenance.md` preserves exact queries, access failures, correction
+  sources, and the scope not searched.
+
+## Planned outputs
+
+- `outputs/results.json` — validated counts, record classifications, corrected
+  source findings, bounded result, and forbidden inferences.
+- `outputs/summary.md` — compact human-readable inventory and evidence boundary.
+
+## Reproduction
+
+From the repository root:
 
 ```bash
-cd experiments/comp-016-t-abcg2-suppression-evidence-mining
-python3 analyze.py
+python3 wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/analyze.py
 ```
 
-stdlib only (json, pathlib, collections). No external packages.
+The script uses only the Python standard library. A valid maintenance run must
+produce byte-identical outputs on two consecutive executions. The reviewed
+runtime is CPython 3.14.5. The renderer uses UTF-8 and explicit LF newlines,
+uses no randomness, and calls no external service.
 
-Outputs land in `outputs/`:
-- `results.json` — machine-readable aggregated verdict + per-study direction classification
-- `summary.md` — human-readable evidence breakdown + propagation-action recommendations
+From the repository root, the exact two-run check is:
 
----
-
-## File index
-
+```bash
+python3 wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/analyze.py
+shasum -a 256 \
+  wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/results.json \
+  wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/summary.md \
+  > /tmp/comp-016-run-1.sha256
+python3 wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/analyze.py
+shasum -a 256 \
+  wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/results.json \
+  wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/summary.md \
+  > /tmp/comp-016-run-2.sha256
+diff -u /tmp/comp-016-run-1.sha256 /tmp/comp-016-run-2.sha256
 ```
-comp-016-t-abcg2-suppression-evidence-mining/
-  analyze.py                     ← analysis script (run this)
-  inputs/
-    studies.json                 ← 17-study curated literature scan with per-study direction-of-effect
-    provenance.md                ← search queries, tools, access caveats
-  outputs/                       ← generated by analyze.py
-    results.json
-    summary.md
-  README.md                      ← this file
-```
 
----
+## Falsification and revision boundary
 
-## Top-line per-question summary (the six SKILL-prompt sub-questions)
+The fixed-inventory result changes if a source-backed correction shows that an
+included record directly measured androgen manipulation, intestinal ABCG2, and
+a decrease in the same tested context. A new literature search, new record, or
+new direct-human dataset is a new result-bearing lifecycle, not an edit to this
+run.
 
-| # | Sub-question | Answer |
-|---|---|---|
-| 1 | Animal-model T × intestinal ABCG2 (castration / DHT replacement) | **No direct primary studies found.** Closest: Tanaka 2005 (BBRC PMID 15567169) — gonadectomy data shows estradiol-suppressive on female ABCG2 in rat kidney + mouse liver; testosterone effect on intestinal ABCG2 specifically not reported. Hosoyamada 2010 (PMID 20589576) — testosterone × renal URAT1, ABCG2 NOT in panel. |
-| 2 | Sex-stratified human intestinal ABCG2 expression | **No detected sex difference in baseline.** Drozdzik 2014 (PMID 25158075) human intestinal proteomics; sex stratification underpowered. MacLean 2008 (PMID 18378562) full rat intestinal scan — explicitly NULL for sex difference. |
-| 3 | Renal vs intestinal — does androgen regulation differ between compartments? | **YES — opposite directionality has been documented for estradiol** (Takiue 2011: estradiol ↓ renal ABCG2; Yu 2021: estradiol ↑ intestinal ABCG2 — PI3K/Akt pathway). For testosterone the intestinal arm is open. |
-| 4 | Magnitude of sex difference in ABCG2-mediated urate excretion | **Significant at the disease-state level (Q141K-conditional)** but small at healthy-baseline. Hoque 2020 (PMID 32488095) — Q140K homozygote mice show 88% intestinal ABCG2 protein loss in males, no hyperuricemia in females. Healthy-baseline magnitude is not reliably demonstrated above ~null in MacLean 2008. |
-| 5 | Castration / ADT outcomes | **−0.66 mg/dL serum urate at 6 months ADT** (Sakamoto 2018, PMID 30557349). Mechanism not isolated to intestine. FtM cross-sex T administration *raises* urate (Yahyaoui 2008 PMID 18349066, KNIGHT/ENIGI 2024-2025), with FEUA *fall* (renal mechanism inferred). Intestinal ABCG2 not separately measured in any cohort. |
-| 6 | Receptor mechanism | **No direct AR-ARE on the ABCG2 promoter has been identified.** Closest molecular mechanism: Jeong 2015 (PMID 25615818) — androgen withdrawal in LNCaP → ↑CREB phosphorylation + ↑CRTC2 nuclear translocation → ↑BCRP via the −329 CRE element. Indirect / cancer-line context. Klyushova 2023 Caco-2 in vitro — testosterone induces ABCG2 via PXR/FXR (xenobiotic-sensor mechanism, not classical AR). Estradiol on intestinal ABCG2 — PI3K/Akt non-genomic (Yu 2021). |
+The narrow result may reject the old direct-suppression premise. It cannot
+reject the broader androgen–urate prior or the research value of measuring
+intestinal ABCG2 response directly.
 
----
+## Downstream authoring set
 
-## The single most important paper
+No external reader-facing text change is proposed by this run: the correction
+cascade already brought the current pages inside the repaired boundary. Gate 2
+must nevertheless bind and inspect these exact current interpretation
+surfaces:
 
-**Hoque KM, Halperin Kuhns VL, et al. (Woodward OM, senior). "The ABCG2 Q141K hyperuricemia and gout associated variant illuminates the physiology of human urate excretion." *Nature Communications* 11:2767 (2020). PMID 32488095, PMC7265540.**
+- `wiki/t-abcg2-suppression-evidence-mining-computational.md` — historical
+  bounded-scan result;
+- `wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md` —
+  current corrected source-evidence home;
+- `wiki/computational-experiments.md` — COMP registry;
+- `wiki/abcg2-modulators.md` — mechanism boundary;
+- `wiki/androgen-urate-axis.md` — broader androgen–urate prior;
+- `wiki/open-questions.md` — unresolved measurement question; and
+- `wiki/etc/manual-literature-mining.md` — method example and source-tier
+  boundary.
 
-Why: only primary study that *directly* demonstrates the intestinal compartment as sex-dimorphic in a urate-relevant way at meaningful magnitude (88% intestinal ABCG2 protein loss in male Q140K homozygotes vs. no hyperuricemia phenotype in females with the same genotype). Intestinal-vs-renal disparity (88% vs 44% protein loss) is the foundational empirical anchor that ABCG2 is *more* sex-dimorphic in the intestinal compartment than in the renal compartment. The mechanism interpretation is *genetic loss-of-function vulnerability under male physiology* — NOT direct androgen suppression of wild-type ABCG2.
-
----
-
-## Verdict-and-propagation tables
-
-The verdict drives propagation actions on multiple downstream pages — see `outputs/summary.md` §"Verdict and propagation actions" + the interpretive wiki page for the full table.
-
-Per CLAUDE.md the orchestrator handles the actual commits; this experiment folder is the artifact + propagation recommendation.
-
----
-
-## Verification gate disclosure
-
-Per `wiki/manual-literature-mining.md` §Pre-commit verification gate:
-
-**Sources WebSearch-summary-verified, NOT full-text grep-verified:**
-- All 17 studies are anchored to abstract-level + WebSearch-summary text. The Hoque 2020 88% intestinal protein loss number, the Sakamoto 2018 −0.66 mg/dL number, and the Yu 2021 PI3K/Akt mechanism are all from search-result abstract summaries — they should be grep-verified against the published papers in a follow-up Paperclip MCP run before they are quoted as load-bearing in any wiki page that depends on those magnitudes.
-- Confidence tier: "verified-against-summary" not "verified-against-primary." The interpretive wiki page calls this out explicitly.
-
-**Why the WEAK_UNCONFIRMED verdict is robust to this caveat:** the verdict turns on the *qualitative direction* of evidence, not the precise magnitudes. The qualitative finding — "no primary study directly demonstrates androgen-driven intestinal ABCG2 suppression in vivo" — is robust to magnitude-level uncertainty. A future Paperclip run would refine the magnitudes but is unlikely to flip the qualitative direction.
-
----
-
-## Disagreement protocol
-
-If you reproduce the outputs and disagree with the methods or numbers, file a GitHub issue referencing this folder (`comp-016-t-abcg2-suppression-evidence-mining`). Primary candidates for revision:
-- Magnitude figures from search-summary abstracts (Hoque 2020 88%; Sakamoto 2018 −0.66; etc.) once full-text verification is done
-- Per-study direction classification (the `direction_for_thesis` field; some studies could reasonably be classified differently)
-- Verdict reframing if a primary-source full-text reveals an explicit T → intestinal ABCG2 measurement that this scan missed
-- Multilingual search — if a CNKI / J-STAGE / KISS query surfaces a Chinese / Japanese / Korean primary study that this scan didn't find, the verdict could shift toward PARTIAL or CONFIRMED.
+[Testosterone × intestinal ABCG2 suppression — bounded evidence
+scan](../../../t-abcg2-suppression-evidence-mining-computational.md)

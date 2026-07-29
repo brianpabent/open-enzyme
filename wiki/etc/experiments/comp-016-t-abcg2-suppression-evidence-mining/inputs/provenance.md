@@ -1,9 +1,18 @@
-# comp-016 Provenance
+# COMP-016 provenance
 
-Literature mining run: 2026-05-07.
-Method: WebSearch (Google + Bing-style result aggregation through the Claude WebSearch tool) + WebFetch attempts to PMC/journal pages (mostly 403-blocked; abstracts pulled via WebSearch result summaries).
+## Original inventory collection
 
-## Search queries used (chronological)
+- Date: 2026-05-07.
+- Method recorded by the original run: Google/Bing-style web search through an
+  agent search tool, with direct publisher and PubMed fetch attempts.
+- Access limitation: many direct fetches returned HTTP 403 or host-allowlist
+  failures. Most original rows were therefore extracted from search summaries
+  or abstracts rather than primary full text.
+- Consequence: the old narrative and quantitative fields are not retained as
+  evidence in the repaired input unless a later source verification named
+  below supports them.
+
+### Exact original queries
 
 1. `testosterone DHT intestinal ABCG2 expression castration orchiectomy rodent gut tissue mRNA protein`
 2. `sex difference intestinal ABCG2 expression human male female biopsy duodenum jejunum`
@@ -29,39 +38,79 @@ Method: WebSearch (Google + Bing-style result aggregation through the Claude Web
 22. `"Yahyaoui" 2008 testosterone female-to-male transgender uric acid fractional excretion mechanism URAT1 ABCG2`
 23. `"Closing the Gaps" ABCG2 intestinal expression P-glycoprotein BCRP rat male female full scan`
 
-## Tools and access notes
+## Source-correction record
 
-- **WebSearch:** all queries above ran 2026-05-07. Returned abstract-level summaries from PubMed, PMC, journal landing pages, and aggregator sites.
-- **WebFetch:** repeatedly 403-blocked from PMC, PubMed, ScienceDirect, Springer, Frontiers, PLOS, MDPI, journals.physiology.org, doi.org redirects. Curl from sandbox blocked by host-allowlist.
-- **Effect on rigor:** all primary-literature claims are abstract-level + WebSearch-summary-level, NOT full-text grep-verified per CLAUDE.md Rule 4 / `wiki/manual-literature-mining.md`. Numerical claims (e.g., "−0.66 mg/dL urate at 6 months ADT" from Sakamoto 2018; "88% intestinal ABCG2 protein loss in male Q140K homozygotes" from Hoque 2020) are taken from search-summary abstracts of the published paper, not from grep-verification of the paper's text. Treat all numbers as "summary-tier verified" not "primary-source verified." This is acknowledged in the limitations section of the wiki page.
+The following corrections were independently source-checked during COMP-017 on
+2026-07-27. COMP-016 carries only the bounded findings needed to classify the
+old inventory.
 
-## What's NOT in this scan (deliberate gaps)
+### Hoque et al. 2020
 
-- **CNKI / J-STAGE / KISS multilingual searches** — per CLAUDE.md global-multilingual default, Chinese/Japanese/Korean databases should have been queried for testosterone × intestinal ABCG2 literature. Not done in this 60-90 minute time-budget run; flagged as a Phase 2 follow-up. Likelihood-of-finding-something-new is uncertain — the field is dominated by the Western pharma-DMPK and rheumatology literature for ABCG2 specifically. Some Chinese-language gout/TCM literature touches on ABCG2 indirectly (per comp-014, Ganoderma 2,4-DAE in Fitoterapia 2022 reduces SUA via XO + URAT1; ABCG2 not directly probed in those).
-- **Direct paper full-text reads** — blocked by WebFetch 403. A future run with Paperclip MCP (per `wiki/manual-literature-mining.md`) could pull full-text content.lines for grep-verification of the specific magnitudes cited (especially the Hoque 2020 88% intestinal protein loss number and the Sakamoto 2018 mg/dL figures).
+- DOI `10.1038/s41467-020-16525-w`; PMID `32488095`; PMCID `PMC7265540`.
+- Verified against the Nature article HTML, Europe PMC XML, version-of-record
+  PDF, supplementary PDF, and publisher source-data workbook.
+- The like-for-like Western-blot result is 78% lower jejunal ABCG2 in
+  Q140K+/+ versus WT mice (WT n=8; Q140K+/+ n=6; p=0.0046), compared with a
+  44% renal reduction.
+- Neither 53% nor 88% is supported by the article representations or source
+  workbook. Those old COMP-016 numbers are excluded.
 
-## Translation cross-check
+### Liu et al. 2021
 
-Not triggered. All sources surfaced were English-language.
+- DOI `10.1186/s12986-021-00583-y`; PMID `34144706`; PMCID `PMC8212495`.
+- Authors: Lei Liu, Tianyi Zhao, Lizhen Shan, Ling Cao, Xiaoxia Zhu, Yu Xue.
+- Verified against Europe PMC primary full-text XML.
+- In Caco-2 cells, nominal 100 µM estradiol benzoate increased ABCG2 mRNA at
+  48 hours without a dose-dependent response; 50 µM LY294002 partially
+  blocked that response (p<0.05).
+- This is an in-vitro pharmacological condition, not a physiological
+  intestinal effect size and not an androgen test.
 
-## Provenance summary
+### Slepnev et al. 2023
 
-| Study | Source | Confidence in extraction |
-|---|---|---|
-| S01 Hoque 2020 (NatComms) | PMC summary via WebSearch result text | MEDIUM — magnitude figures (88%, 53%, 44%) from search-result abstract summary; not grep-verified against paper text |
-| S02 Sakamoto 2018 (PLOS One) | WebSearch result text | MEDIUM — magnitude (−0.66 mg/dL) from abstract |
-| S03 Yu 2021 (Nutr Metab) | WebSearch result text | MEDIUM — direction confirmed; specific fold-change not extracted |
-| S04 Klyushova 2023 (Biochem Moscow) | WebSearch result text | MEDIUM — direction confirmed |
-| S05 Tanaka 2005 (BBRC) | WebSearch result text | MEDIUM |
-| S06 Naud 2008 (DMD) | WebSearch result text | MEDIUM |
-| S07 Jeong 2015 (BBA) | WebSearch result text | MEDIUM |
-| S08 Yahyaoui 2008 (JCEM) | WebSearch result text | MEDIUM — direction confirmed; FEUA specifics extracted |
-| S09 Halperin Kuhns 2020 review (IJMS) | WebSearch result text | MEDIUM |
-| S10 MacLean 2008 (JPET) | WebSearch result text | MEDIUM — null finding directionally clear |
-| S11 Drozdzik 2014 (Mol Pharm) | WebSearch result text | MEDIUM |
-| S12 Hosoyamada 2010 | WebSearch result text + cross-ref to wiki/androgen-urate-axis.md | HIGH (already in wiki) |
-| S13 Takiue 2011 | WebSearch result text + cross-ref to wiki/androgen-urate-axis.md | HIGH (already in wiki) |
-| S14 Hak Choi 2008 NHANES | WebSearch result text + cross-ref to wiki/androgen-urate-axis.md | HIGH (already in wiki) |
-| S15 KNIGHT/ENIGI cohorts | WebSearch result text | LOW — recent, abstract only |
-| S16 Adolescent boys 2021 | WebSearch result text | MEDIUM |
-| S17 Halperin Kuhns FASEB abstract | WebSearch result text | MEDIUM (abstract-stage publication) |
+- English DOI `10.1134/S1990747823050100`; Russian-original DOI
+  `10.31857/S0233475523050109`.
+- Authors: A. A. Slepnev, Yu. V. Abalenikhina, N. M. Popova,
+  A. V. Shchulkin, E. N. Yakusheva. The old Klyushova attribution is wrong.
+- Verified against the official publisher-supplied English abstract.
+- Nominal 1, 10, and 100 µM testosterone, estradiol, or progesterone increased
+  Caco-2 ABCG2 after 24 hours. PXR/FXR inhibitor conditions reduced the
+  testosterone-associated increase, which remained above control.
+- The abstract does not establish free-tissue exposure, a physiological
+  testosterone effect, or exclusion of androgen-receptor involvement.
+
+### MacLean et al. 2008
+
+- DOI `10.1124/dmd.108.020859`; PMID `18378562`.
+- Authors: C. MacLean, U. Moenning, A. Reichel, G. Fricker.
+- Verified against the primary PubMed abstract.
+- The rat qRT-PCR/Western intestinal scan reported no sex-specific transporter
+  expression difference. This is an Animal Model qualitative null, not a
+  healthy-human estimate.
+
+## Repaired extraction policy
+
+- `primary_full_text`: claim checked against the primary full text.
+- `official_publisher_abstract`: claim checked against the publisher-supplied
+  abstract and metadata; no unstated full-text detail is used.
+- `primary_database_abstract`: claim checked against a primary bibliographic
+  database abstract.
+- `legacy_search_summary`: citation remains in the fixed inventory, but the
+  repaired artifact emits no quantitative or mechanistic finding from it.
+- `unresolved_legacy_placeholder`: original row lacked a stable citable
+  identity and cannot contribute evidence.
+
+## Scope not searched
+
+The original run did not execute the project’s current multilingual protocol
+across CNKI/WanFang, J-STAGE/CiNii/J-GLOBAL, KISS/RISS, eLIBRARY.RU, TIB/GND,
+or SciELO. The fixed-inventory result therefore cannot be read as an exhaustive
+literature absence. A multilingual refresh would require a new reviewed scan
+and, if made executable, a new COMP lifecycle.
+
+## Translation status
+
+No non-English source text was translated in the original run. Slepnev 2023 is
+retained only at the official publisher-supplied English-abstract tier. Any
+future use of Russian full text requires the project’s independent
+two-translation protocol.
