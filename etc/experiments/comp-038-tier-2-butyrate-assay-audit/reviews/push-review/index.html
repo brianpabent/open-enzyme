@@ -5516,142 +5516,83 @@
 
 <h1 id="independent-comp-review-comp-038">Independent comp review — comp-038<a class="headerlink" href="#independent-comp-review-comp-038" title="Permanent link">&para;</a></h1>
 <h2 id="reviewed-snapshot">Reviewed snapshot<a class="headerlink" href="#reviewed-snapshot" title="Permanent link">&para;</a></h2>
-<p>Independent daemon reviewer; push manifest SHA-256 supplied as <code>c2b1ecc27d8820fbb81c1f2f23d0a810746b5ee29e706481dfd504239ecb3b76</code> for source commit <code>1b57f9c213d67eda156ac41119428b0a09555ea9</code>. Shard auditors reported complete inspection of the text artifacts in scope; targeted repository reopening confirmed the active interpretive page, computational index excerpt, result JSON, and README content. I could not reopen a committed <code>push-review.manifest.json</code> file by path, so manifest binding relies on the daemon-provided hash and shard coverage receipt.</p>
+<p>Independent daemon reviewer; bound to push-review manifest SHA-256 <code>e3455db27a3cd381eb6dd7bc6d6ed15be77b30fa958780981994160822c6f753</code> at source commit <code>14833b44e90fe92f7aa6738a3f85edde188dabe9</code>. Authoring gates are reported modern and valid. Shard audits covered the COMP artifact outputs, code, inputs, maintenance tests, interpretive page, computational index, and validation-experiment surfaces; targeted repository reads of <code>results.json</code>, <code>summary.md</code>, README, interpretive page, computational index, and validation sections matched the reported boundaries. No binary deterministic blocks were reported.</p>
 <h2 id="bottom-line-verdict">Bottom-line verdict<a class="headerlink" href="#bottom-line-verdict" title="Permanent link">&para;</a></h2>
-<p>Action required, but the bounded scientific result is usable with warnings. COMP-038 correctly supports a YELLOW assay-method conclusion: no ready Tier 1/Tier 2 Open Enzyme butyrate assay; HPLC-UV is a Tier 3 culture-supernatant transfer candidate; Gu electrochemical/ANN is a stool-specific Tier 2 candidate not yet adopted. Required corrections are provenance/link hygiene and reproducibility guardrails, not reversal of the core verdict.</p>
+<p>Clean with limitations; action required for documentation polish, not for invalidating the bounded scientific result. The artifact supports a YELLOW result: no ready-to-adopt OE Tier &frac12; butyrate assay; De Baere HPLC-UV is a Tier 3 culture-supernatant transfer candidate; Gu electrochemical/ANN is a stool-specific Tier 2 candidate requiring complete-stack reproduction and external transfer. The result cannot support method adoption, clinical/gout claims, or exhaustive assay-landscape absence.</p>
 <h2 id="implementation-and-constraint-closure">Implementation and constraint closure<a class="headerlink" href="#implementation-and-constraint-closure" title="Permanent link">&para;</a></h2>
-<p>The computation is a literature/method audit, not a biochemical or clinical model. It can answer “what candidate butyrate measurement methods surfaced and what validation is required,” but it cannot establish target exposure, ABCG2 engagement, gout efficacy, safety, or assay adoption.</p>
-<p>Implementation traced:
-- <code>analyze.py</code> generated/inspected the 2026-05-20 abstract-level PubMed packet: 27 queries, 74 title/abstract records, no OpenRouter calls for the frozen run.
-- The July 2026 current result is not reproduced by legacy <code>analyze.py</code>; it is a targeted two-source primary-source verification artifact.
-- <code>--prepare-codex</code> can overwrite <code>pubmed-snapshot.json</code>, <code>results.json</code>, and <code>summary.md</code> despite README language saying legacy code must not overwrite corrected current outputs. This is a reproducibility/maintenance defect.
-- Dry-run expected outputs omit <code>outputs/primary-source-verification-2026-07-24.json</code>, even though that file controls the repaired claims.
-- The committed codex packet is abstract-level and does not itself contain the complete original multi-trajectory synthesis/verifier output. It is discovery evidence only.</p>
-<p>Constraint closure:
-- De Baere: abstract-only verification supports bacterial culture supernatant, UV 210 nm after acidification and ether back-extraction, matrix-matched 0.5–50 mM calibration, and analyte-spanning LOD/LOQ ranges. It does not support full-text implementation, “underivatized,” or butyrate-specific LOD/LOQ endpoints.
-- Gu: full-text verification supports a specific VBS-100/G3 gold-electrode/pretreatment/voltammetry-feature/ANN stack for human stool. The n=30 within-study fecal test cohort is not independent external replication. Reported high fit must stay coupled to the statistically nonzero butyrate bias and full-stack transfer requirement.
-- Breath H₂/CH₄ and breath/EBC signals are fermentation/exposure proxies at best, not butyrate-specific quantification.
-- ELISA/colorimetric conclusions are bounded by noisy query hits and representative protocol mismatch; they are not exhaustive negative evidence across all vendors.
-- Matrix, transport, compartment, residence time, coproduct, and safety questions are outside this assay audit and are correctly deferred to validation gates.</p>
+<p>The implemented object is a literature/verification audit, not a biochemical model. Default <code>analyze.py</code> now functions primarily as a required-file check; shard findings show it checks file existence/regular-file status, not output hashes or semantic integrity. That is acceptable only because README delegates integrity to the manifest/lifecycle check. Regeneration modes are risky: <code>--prepare-codex</code> and OpenRouter paths can rewrite discovery outputs but do not recreate the controlling <code>primary-source-verification-2026-07-24.json</code>; legacy <code>write_summary()</code> can generate a discovery-style summary without current retraction boundaries. README and repair plan partly close this by requiring reviewed lifecycle snapshots and discarding mixed output sets, but regeneration is not itself a deterministic reproduction of the current interpretation.</p>
+<p>Constraint closure is good for an assay audit. The artifact distinguishes matrix, operating range, and method class: De Baere’s 0.5–50 mM calibration and analyte-spanning LOQ 0.5–1.0 mM are culture-supernatant-scale and unsuitable for serum-level µM butyrate without another validated method. De Baere requires diethyl-ether back extraction, pH&lt;2 acidification, 210 nm nonselective UV detection, chromatographic separation, and matrix-matched calibration; it is not a simple low-prep/colorimetric/home assay. Gu requires the exact VBS-100/G3 electrode, pretreatment, first-scan/triplicate, feature extraction, and ANN stack; the butyrate pretreatment time and nonpublic data/code/weights materially limit transfer. Breath H₂/CH₄ remains a fermentation/transit proxy, not butyrate-specific quantification. ELISA/colorimetric conclusions are bounded non-identifications from the May search, not universal absence claims.</p>
 <h2 id="summary-fidelity-audit">Summary-fidelity audit<a class="headerlink" href="#summary-fidelity-audit" title="Permanent link">&para;</a></h2>
-<p>README, <code>outputs/results.json</code>, <code>outputs/summary.md</code>, the interpretive page, <code>wiki/computational-experiments.md</code>, and <code>wiki/validation-experiments.md</code> are materially aligned on the YELLOW boundary and matrix-specific next gates.</p>
-<p>Fidelity issues requiring or meriting correction:
-- The interpretive page and validation §1.45 label “PMID 42041444” but link to a PMC URL. Since the source line also cites PMCID/DOI, the science is probably intact, but identifier-link mismatch impairs provenance verification and should be corrected.
-- <code>wiki/computational-experiments.md</code> reports Gu MAE/RMSE/R² but omits the bias caveat present in the detailed page/results. For a short index this is not fatal, but any downstream quantitative summary should include “within-study n=30; small statistically nonzero bias; no independent external transfer.”
-- The computational index’s “generic free-fatty-acid colorimetric kits are a false-friend class” should remain tied to the representative-protocol/vendor-dependent boundary and not become a universal exclusion of all future colorimetric chemistry.
-- Historical July 14/15 “both full-text verified” claims are retracted in the current outputs; no inspected active page appeared to rely on them.</p>
+<p>README, <code>outputs/results.json</code>, <code>outputs/summary.md</code>, <code>wiki/tier-2-butyrate-assay-audit-computational.md</code>, and <code>wiki/computational-experiments.md</code> materially agree on the YELLOW verdict, source-scope correction, matrix separation, and no-adoption boundary. The interpretive page and computational index correctly include the Gu bias and De Baere abstract-only caveats. <code>outputs/summary.md</code> is mostly faithful but omits the statistically nonzero Gu butyrate bias that <code>results.json</code> and the wiki pages include; because bias is a decision-relevant transfer limitation, the compact output summary should add it.</p>
+<p><code>wiki/validation-experiments.md</code> §1.31 and §1.45 are largely consistent with COMP-038: culture-supernatant HPLC-UV transfer and stool electrochemical/ANN reproduction are separated, with GC-MS comparison and external transfer requirements. One planning inconsistency remains outside the core COMP result: §1.14 dashboard says 4–6 weeks while the detailed section says timeline is TBD after pilot; reconcile before scheduling or rollups.</p>
 <h2 id="reader-facing-ownership-audit">Reader-facing ownership audit<a class="headerlink" href="#reader-facing-ownership-audit" title="Permanent link">&para;</a></h2>
-<p>The focused COMP-038 interpretive page owns the evidence tier, sources, matrices, delivery/exposure non-claims, and falsification gates. Portfolio-style comparisons are not duplicated there beyond necessary method tiering. Validation §1.31 and §1.45 appropriately own the culture-supernatant and stool follow-up protocols. No personalized treatment instructions were found in the inspected COMP-038 surfaces.</p>
-<p>Remaining ownership risks:
-- Link/provenance mismatch on the Gu citation should be fixed on the focused page and validation page.
-- Legacy experiment maintenance instructions should not imply <code>analyze.py</code> can reproduce the current repaired artifact.</p>
+<p>The focused interpretive page owns its evidence, sourcing, matrix limitations, and falsification gates without portfolio-ranking overreach. The computational index gives a concise portfolio-facing summary and links out appropriately. Validation pages own experimental next gates rather than duplicating the full literature narrative. I found no personalized treatment instruction, clinical upgrade, narrative foil, or duplicated long exposition that changes the reader contract.</p>
 <h2 id="conjecture-preservation-audit">Conjecture preservation audit<a class="headerlink" href="#conjecture-preservation-audit" title="Permanent link">&para;</a></h2>
-<p>Unsupported factual assertions were mostly corrected rather than deleted:
-- De Baere as “underivatized” and “full-text verified” is retracted.
-- Gu as a promising stool Tier 2 candidate survives, bounded to exact hardware/chemistry/model reproduction plus external transfer.
-- HPLC-UV as a culture-supernatant Tier 3 transfer candidate survives, bounded to exact OE matrix spike/recovery and paired GC-MS.
-- Butyrate as a biological hypothesis for ABCG2/Q141K or gout is not killed by this COMP; COMP-038 only says the measurement path is not yet qualified.</p>
-<p>Adjacent conjectures that survive: matrix-qualified butyrate production QC by HPLC-UV/GC-MS; stool monitoring by reproduced Gu stack; future vendor-kit/colorimetric review if a named primary method-comparison source is found.</p>
+<p>Unsupported prior claims were corrected rather than over-deleted: “both full-text verified,” “July 14 full-text pass,” and De Baere “underivatized” shorthand are retracted. The useful adjacent conjectures survive with gates: culture-supernatant production QC can be qualified by matrix-matched HPLC-UV/GC-MS transfer; fecal monitoring may become a Tier 2 research method only if the Gu stack reproduces and transfers. Negative findings kill only the reviewed adoption claims for current OE use, breath as butyrate-specific quantification, and generic kit/colorimetry assumptions in the bounded search—not all future low-cost butyrate chemistry.</p>
 <h2 id="generated-output-and-proposed-update-inventory">Generated-output and proposed-update inventory<a class="headerlink" href="#generated-output-and-proposed-update-inventory" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Path</th>
 <th>Manifest kind</th>
-<th style="text-align: right;">Inspected completely?</th>
+<th>Inspected completely?</th>
 <th>Finding</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/README.md</code></td>
-<td>artifact text</td>
-<td style="text-align: right;">Yes</td>
-<td>Correct current boundary; maintenance text needs guard alignment.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/analyze.py</code></td>
-<td>code</td>
-<td style="text-align: right;">Yes</td>
-<td>Legacy discovery code; can overwrite repaired outputs; dry-run omits verification artifact.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/model-config.json</code></td>
-<td>input</td>
-<td style="text-align: right;">Yes</td>
-<td>Config labels are not execution proof.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/query-strategy.json</code></td>
-<td>input</td>
-<td style="text-align: right;">Yes</td>
-<td>Bounded PubMed strategy; not global/multilingual exhaustive search.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/provenance.md</code></td>
-<td>input/provenance</td>
-<td style="text-align: right;">Yes</td>
-<td>Correctly limits original scan and future search needs; referenced receipt not in inspected set.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/inputs/primary-source-verification-plan-2026-07-24.md</code></td>
-<td>input/plan</td>
-<td style="text-align: right;">Yes</td>
-<td>Acceptance criteria mostly reflected in outputs; lifecycle receipt not independently supplied.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/.gitkeep</code></td>
-<td>generated/scaffold</td>
-<td style="text-align: right;">Yes</td>
-<td>Harmless stale scaffold, not evidence.</td>
+<td><code>wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/pubmed-snapshot.json</code></td>
+<td>generated_output</td>
+<td>Yes</td>
+<td>Abstract/metadata snapshot; supports bounded discovery only, not GREEN readiness or exhaustive absence.</td>
 </tr>
 <tr>
 <td><code>wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/codex-synthesis-packet.md</code></td>
-<td>generated output</td>
-<td style="text-align: right;">Yes</td>
-<td>Abstract-level discovery packet only; not adoption-grade evidence.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/pubmed-snapshot.json</code></td>
-<td>generated output</td>
-<td style="text-align: right;">Yes</td>
-<td>27-query/74-record abstract snapshot; noisy query hits; bounded search.</td>
+<td>generated_output</td>
+<td>Yes</td>
+<td>Correctly states full-text/protocol/vendor comparison needed; contains false-positive query hits requiring article-level filtering.</td>
 </tr>
 <tr>
 <td><code>wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/primary-source-verification-2026-07-24.json</code></td>
-<td>generated output</td>
-<td style="text-align: right;">Yes</td>
-<td>Controls repaired claims; two-source targeted verification.</td>
+<td>generated_output</td>
+<td>Yes</td>
+<td>Load-bearing correction; De Baere abstract-only, Gu full-text; no ready OE assay.</td>
 </tr>
 <tr>
 <td><code>wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/results.json</code></td>
-<td>generated output</td>
-<td style="text-align: right;">Yes</td>
-<td>Faithful YELLOW structured result with limits.</td>
+<td>generated_output</td>
+<td>Yes</td>
+<td>Structured YELLOW verdict is faithful and bounded.</td>
 </tr>
 <tr>
 <td><code>wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/outputs/summary.md</code></td>
-<td>generated output</td>
-<td style="text-align: right;">Yes</td>
-<td>Faithful compact summary; blocks clinical/OE inference.</td>
+<td>generated_output</td>
+<td>Yes</td>
+<td>Mostly faithful; should add Gu statistically nonzero bias.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-038-tier-2-butyrate-assay-audit/README.md</code></td>
+<td>proposed_update</td>
+<td>Yes</td>
+<td>Current boundary and lifecycle cautions are accurate; regeneration caveat is important.</td>
 </tr>
 <tr>
 <td><code>wiki/tier-2-butyrate-assay-audit-computational.md</code></td>
-<td>proposed/active wiki update</td>
-<td style="text-align: right;">Yes</td>
-<td>Scientifically aligned; Gu PMID link target mismatch.</td>
+<td>proposed_update</td>
+<td>Yes</td>
+<td>Faithful reader-facing interpretation with source/matrix boundaries.</td>
 </tr>
 <tr>
 <td><code>wiki/computational-experiments.md</code></td>
-<td>proposed/active wiki update</td>
-<td style="text-align: right;">Yes</td>
-<td>Aligned concise index; keep Gu bias and non-exhaustive limits in downstream uses.</td>
+<td>proposed_update</td>
+<td>Yes</td>
+<td>Comp-038 index entry is consistent and appropriately concise.</td>
 </tr>
 <tr>
 <td><code>wiki/validation-experiments.md</code></td>
-<td>proposed/active wiki update</td>
-<td style="text-align: right;">Yes</td>
-<td>§1.31/§1.45 aligned; Gu identifier/link mismatch also present.</td>
+<td>proposed_update</td>
+<td>Yes</td>
+<td>§1.31/§1.45 consistent; §1.14 timeline/dashboard inconsistency needs correction.</td>
 </tr>
 </tbody>
 </table>
@@ -5669,110 +5610,95 @@
 <tbody>
 <tr>
 <td>27 queries / 74 PubMed records</td>
-<td><code>pubmed-snapshot.json</code>, <code>results.json</code>, computational index</td>
-<td>Discovery-scan scope</td>
-<td>Direct committed snapshot; abstract metadata only</td>
-<td>Verified as bounded discovery, not exhaustive search</td>
+<td><code>results.json</code>, <code>pubmed-snapshot.json</code>, computational index</td>
+<td>Describes May discovery scan</td>
+<td>Committed snapshot, abstract-level only</td>
+<td>Supported as run metadata; not exhaustive search proof.</td>
 </tr>
 <tr>
-<td>No ready Tier 1/Tier 2 OE assay</td>
-<td><code>results.json</code>, <code>summary.md</code>, wiki pages</td>
-<td>Core verdict</td>
+<td>No ready OE Tier &frac12; butyrate assay</td>
+<td><code>results.json</code>, README, interpretive page</td>
+<td>Overall verdict</td>
 <td>Derived from bounded scan plus two-source repair</td>
-<td>Supported with limitations</td>
+<td>Supported as bounded YELLOW, not universal absence.</td>
 </tr>
 <tr>
-<td>De Baere HPLC-UV culture-supernatant candidate</td>
-<td>Verification JSON, results, interpretive page</td>
-<td>Tier 3 transfer candidate</td>
-<td>Primary abstract only</td>
-<td>Supported only at abstract-level</td>
+<td>De Baere HPLC-UV matrix and range</td>
+<td><code>primary-source-verification</code>, <code>pubmed-snapshot</code>, interpretive page</td>
+<td>Culture transfer candidate</td>
+<td>Primary abstract only; full text not verified</td>
+<td>Supported only at abstract scope.</td>
 </tr>
 <tr>
-<td>De Baere 0.5–50 mM calibration</td>
+<td>De Baere LOD/LOQ 0.13–0.33 / 0.5–1.0 mM</td>
 <td>Same</td>
-<td>Dynamic range/method description</td>
-<td>Abstract-supported</td>
-<td>Supported for source method, not OE matrix</td>
+<td>Sensitivity boundary</td>
+<td>Analyte-spanning in accessible text</td>
+<td>Do not assign as butyrate-specific.</td>
 </tr>
 <tr>
-<td>De Baere LOD/LOQ 0.13–0.33/0.5–1.0 mM</td>
-<td>Same</td>
-<td>Sensitivity context</td>
-<td>Analyte-spanning abstract range</td>
-<td>Do not assign endpoints to butyrate</td>
+<td>De Baere “underivatized” retraction</td>
+<td><code>results.json</code>, verification JSON</td>
+<td>Prevents shorthand overclaim</td>
+<td>Accessible source lacks explicit support</td>
+<td>Correctly retracted.</td>
 </tr>
 <tr>
-<td>De Baere “underivatized”</td>
-<td>Retracted in results/summary</td>
-<td>None valid</td>
-<td>Not supported by accessible text</td>
-<td>Forbidden inference</td>
+<td>Gu exact electrochemical/ANN stack</td>
+<td>verification JSON, interpretive page, validation §1.45</td>
+<td>Stool Tier 2 candidate gate</td>
+<td>Full text via PMC, but no public code/data/weights</td>
+<td>Supported; transfer unresolved.</td>
 </tr>
 <tr>
-<td>Gu electrochemical/ANN stool stack</td>
-<td>Verification JSON, results, validation §1.45</td>
-<td>Tier 2 candidate gate</td>
-<td>Full-text verified per artifact</td>
-<td>Supported only for exact stack/source study</td>
+<td>Gu fecal test cohort n=30, MAE/RMSE/R² 0.029/0.034/0.998 mM</td>
+<td><code>results.json</code>, interpretive page, validation §1.45</td>
+<td>Quantitative candidate support</td>
+<td>Source-study full-text extraction</td>
+<td>Supported as within-study validation only.</td>
 </tr>
 <tr>
-<td>Gu n=30 fecal MAE/RMSE/R² 0.029/0.034/0.998</td>
-<td>Results/wiki</td>
-<td>Performance summary</td>
-<td>Full-text-derived; not public dataset</td>
-<td>Supported with bias and transfer caveat</td>
-</tr>
-<tr>
-<td>Gu bias −0.015 mM; LoA −0.065 to 0.035 mM</td>
-<td>Results/interpretive page</td>
-<td>Method-comparison limitation</td>
-<td>Full-text-derived</td>
-<td>Must accompany quantitative accuracy claims</td>
-</tr>
-<tr>
-<td>ELISA RED-provisional</td>
-<td>Results/interpretive page</td>
-<td>Deprioritization</td>
-<td>Bounded noisy search, no qualifying comparison found</td>
-<td>Supported only as non-exhaustive provisional status</td>
+<td>Gu bias −0.015 mM, LOA −0.065 to 0.035 mM, statistically nonzero</td>
+<td><code>results.json</code>, interpretive page, validation §1.45</td>
+<td>Transfer/adoption limitation</td>
+<td>Source-study full-text extraction</td>
+<td>Supported; add to output summary.</td>
 </tr>
 <tr>
 <td>Breath H₂/CH₄ not butyrate-specific</td>
-<td>Snapshot/results/wiki</td>
-<td>Method exclusion</td>
-<td>Abstract-level proxy literature</td>
-<td>Supported for butyrate-specific quantification boundary</td>
+<td>snapshot/packet, results</td>
+<td>RED for quantification</td>
+<td>Abstract-level proxy/confounding literature</td>
+<td>Supported.</td>
 </tr>
 <tr>
-<td>OE/gout/clinical efficacy false</td>
-<td>Results/summary/wiki</td>
-<td>Safety and inference boundary</td>
-<td>Assay-method evidence only</td>
-<td>Correctly blocked</td>
+<td>ELISA/colorimetric RED-provisional</td>
+<td>results, summary</td>
+<td>Prevents kit adoption</td>
+<td>Bounded May search with false positives</td>
+<td>Supported only as non-qualifying surfaced records.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="affected-wiki-pages">Affected wiki pages<a class="headerlink" href="#affected-wiki-pages" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>wiki/tier-2-butyrate-assay-audit-computational.md</code> — change required — correct/verify PMID 42041444 link target; retain matrix-specific and bias limits.</li>
-<li><code>wiki/computational-experiments.md</code> — already mostly consistent / minor caution — concise COMP-038 summary is aligned, but downstream quantitative reuse should preserve Gu bias and non-external-replication caveat.</li>
-<li><code>wiki/validation-experiments.md</code> — change required — §1.45 repeats the Gu PMID-to-PMC link mismatch; otherwise §1.31/§1.45 are consistent.</li>
-<li><code>wiki/quantification-ladder.md</code> — already consistent by reference only; no inspected conflict.</li>
-<li><code>wiki/open-questions.md</code> — not directly inspected in this review; interpretive page links a matrix-specific assay gap, so verify on next touched update that it does not imply a ready stool/culture transfer.</li>
+<li><code>wiki/tier-2-butyrate-assay-audit-computational.md</code> — already consistent — owns the YELLOW result, matrices, source scope, and gates.</li>
+<li><code>wiki/computational-experiments.md</code> — already consistent — comp-038 entry preserves caveats and avoids efficacy/adoption claims.</li>
+<li><code>wiki/validation-experiments.md</code> — change required — §1.31/§1.45 are consistent, but §1.14 dashboard timeline conflicts with detailed TBD timeline.</li>
+<li><code>wiki/quantification-ladder.md</code> — already consistent by reported cross-reference — HPLC-UV/GC-MS tier boundary is used correctly; no direct contradiction surfaced.</li>
+<li><code>wiki/open-questions.md</code> — not directly reopened in this review; referenced matrix-specific assay gap should remain bounded to method qualification, not efficacy.</li>
+<li><code>wiki/genotype-informed-supplement-workflow.md</code> — affected by assay availability only; no claim inspected here should treat stool butyrate measurement as exposure, ABCG2, or Q141K proof.</li>
 </ul>
 <h2 id="new-connections-or-implications">New connections or implications<a class="headerlink" href="#new-connections-or-implications" title="Permanent link">&para;</a></h2>
-<p>The result sharpens a cross-track rule: butyrate biology hypotheses must not advance on production claims unless the exact matrix measurement is qualified. Culture-supernatant production QC, stool monitoring, and cellular/intestinal exposure are separate observability problems.</p>
-<p>Research Conjecture boundary: Gu-style electrochemical/ANN could become a lower-burden stool monitoring tool for future exposure studies if the exact hardware–chemistry–model stack reproduces and externally transfers. The unsupported leap is that source-study stool performance will generalize to OE operators, cohorts, or intervention conditions.</p>
+<p>COMP-038’s most useful cross-corpus implication is assay-routing, not biology: future butyrate/ABCG2 or microbiome-product hypotheses need separate production, stool/exposure, target-compartment, and mechanism assays. A culture-supernatant production pass cannot stand in for intestinal-wall exposure, and a fecal electrochemical/ANN pass cannot qualify culture production QC. Research Conjecture boundary: a validated fecal Tier 2 butyrate workflow could reduce monitoring burden for stool-specific research, but only after complete-stack transfer and only as an exposure-matrix measure, not as a gout mechanism or clinical endpoint.</p>
 <h2 id="required-actions">Required actions<a class="headerlink" href="#required-actions" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Correct the Gu citation link target on <code>wiki/tier-2-butyrate-assay-audit-computational.md</code> and <code>wiki/validation-experiments.md</code>; verification criterion: PMID link resolves to PubMed for PMID 42041444 or the label explicitly says PMCID/PMC when linking to PMC.</li>
-<li>Add a maintenance guard or documented workflow separation for legacy <code>analyze.py</code>; verification criterion: running discovery/packet preparation cannot silently overwrite <code>results.json</code>, <code>summary.md</code>, or the 2026-07-24 verification-controlled state without an explicit current-output regeneration mode.</li>
-<li>Update the dry-run/lifecycle expected-output check to include <code>outputs/primary-source-verification-2026-07-24.json</code>; verification criterion: artifact integrity fails if the controlling verification JSON is absent.</li>
-<li>In any future propagation of Gu performance numbers, include “within-study n=30, exact stack, statistically nonzero bias, no independent external transfer”; verification criterion: no index/priority table uses R² alone as adoption evidence.</li>
+<li>Update <code>outputs/summary.md</code> to include the Gu butyrate statistically nonzero negative bias, matching <code>results.json</code> and the interpretive page.</li>
+<li>Reconcile <code>wiki/validation-experiments.md</code> §1.14 dashboard “4–6 weeks” with the detailed TBD-after-pilot timeline before using it in scheduling/cost rollups.</li>
+<li>Preserve the regeneration warning in README/maintenance docs: any future regenerated outputs must include a newly reviewed <code>primary-source-verification-2026-07-24.json</code> equivalent and must not interpret mixed discovery/current output sets.</li>
 </ol>
 <h2 id="review-limits">Review limits<a class="headerlink" href="#review-limits" title="Permanent link">&para;</a></h2>
-<p>I did not execute experiment code. Primary papers were not independently retrieved; source verification is assessed from the committed verification artifact and shard audit. Repository fixed-string search tooling failed because the backend <code>rg</code> executable was unavailable, so affected-surface discovery relied on shard coverage plus targeted <code>read_file</code> reopening. The daemon-supplied manifest hash was used because <code>push-review.manifest.json</code> was not readable by path in this environment.</p>
+<p>I did not execute code or independently reproduce PubMed/API retrievals. Primary-source verification is assessed from committed extraction artifacts and shard audits; I did not re-read paywalled De Baere full text. Repository fixed-string search tool failed because <code>rg</code> was unavailable, so affected-surface discovery relied on shard coverage plus targeted file reads rather than a fresh full-corpus grep. No clinical evidence or medical advice is inferred.</p>
 
 
 

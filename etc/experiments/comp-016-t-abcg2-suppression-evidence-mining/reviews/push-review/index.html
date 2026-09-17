@@ -23,7 +23,7 @@
     
     
       
-        <title>Push review - Open Enzyme</title>
+        <title>Independent comp review — comp-016 - Open Enzyme</title>
       
     
     
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#independent-comp-review-comp-016" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -107,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Push review
+              Independent comp review — comp-016
             
           </span>
         </div>
@@ -5509,10 +5514,240 @@
   
 
 
-  <h1>Push review</h1>
-
-<p>Independent review completed 2026-07-14 by openai/gpt-5.5 against commit <code>8ee4d257b275ae42e4af64a49f1c766870726f4f</code>. Historical review: <code>2026-07-14-comp-016-8ee4d25.md</code> in Git commit <code>731e59b4b67ab993760bfbc5c086746f696032f4</code>.</p>
-<p>This receipt binds that completed review and its subsequent remediation to the exact current manifest. It is a migration binding, not a claim that a new review ran today.</p>
+<h1 id="independent-comp-review-comp-016">Independent comp review — comp-016<a class="headerlink" href="#independent-comp-review-comp-016" title="Permanent link">&para;</a></h1>
+<h2 id="reviewed-snapshot">Reviewed snapshot<a class="headerlink" href="#reviewed-snapshot" title="Permanent link">&para;</a></h2>
+<p>Independent daemon review for COMP-016; reviewed snapshot bound to <code>push-review.manifest.json</code> SHA-256 <code>c7a3227c87ed0d954f6d7e73c4a83a297eca0faa99e817caadad80b6a806f4fb</code> at source commit <code>14833b44e90fe92f7aa6738a3f85edde188dabe9</code>. Shard coverage reported complete inspection of the listed text files and no deterministic binary blocks. Targeted repository cross-check reopened key files. Snapshot was treated as matched to inspected files.</p>
+<h2 id="bottom-line-verdict">Bottom-line verdict<a class="headerlink" href="#bottom-line-verdict" title="Permanent link">&para;</a></h2>
+<p>Action required. The repaired COMP-016 artifact supports a narrow fixed-inventory result: no record in the 17-record inventory directly demonstrates androgen-driven suppression of intestinal ABCG2; this is not a universal literature absence, not a healthy-human sex-stratification result, and not a quantitative physiology result. The core artifact is bounded and mostly internally coherent, but downstream wiki text overstates mechanistic absence/legacy evidence and imports adjacent quantitative claims without adequate provenance separation. Synthesis should be blocked until those surfaces are corrected.</p>
+<h2 id="implementation-and-constraint-closure">Implementation and constraint closure<a class="headerlink" href="#implementation-and-constraint-closure" title="Permanent link">&para;</a></h2>
+<p><code>analyze.py</code> loads <code>inputs/studies.json</code>, validates schema version 2, exactly 17 records, allowed <code>test_class</code>, <code>target_outcome</code>, <code>verification_tier</code>, strict Boolean fields, direct-test requirements, citable constraints, and unresolved-placeholder constraints. It computes direct in-vivo/in-vitro records, direct suppressions, <code>result_code</code>, counts, corrected findings, record classifications, <code>results.json</code>, and <code>summary.md</code>. The decision rule is explicit: only direct <code>in_vivo</code> or <code>in_vitro</code> records with <code>target_outcome=decrease</code> demonstrate direct suppression.</p>
+<p>Important limitation: this is a repaired fixed-inventory classifier, not a literature retrieval workflow. It can kill only the premise “direct androgen suppression of intestinal ABCG2 is established by this scan.” It cannot close the broader literature, healthy-human baseline magnitude, physiological exposure response, AR involvement, ChIP-seq/ARE status, clomiphene mechanism, or functional urate flux.</p>
+<p>Implementation closure concern: <code>results.json</code> <code>record_classifications</code> omit <code>verification_tier</code>, although the summary table includes verification and the README planned source-verification tiers. This does not change the computed verdict because <code>corrected_source_findings</code> and summary retain tiers, but it weakens machine-readable auditability.</p>
+<p>Constraint closure: COMP-016 is not a reaction-capacity or mass-balance experiment. It does not measure urate transport, epithelial localization, apical ABCG2 protein, residence time, Km/transport operating regime, free hormone/tissue concentrations, coproducts, or safety. Its biology is evidence-classification only. The only direct target record is Slepnev 2023, official-English-abstract tier, Caco-2 nominal 1/10/100 µM sex steroid exposure, reporting increase rather than decrease; it does not establish physiological exposure or exclude androgen receptor involvement.</p>
+<h2 id="summary-fidelity-audit">Summary-fidelity audit<a class="headerlink" href="#summary-fidelity-audit" title="Permanent link">&para;</a></h2>
+<p>Artifact summary and <code>results.json</code> agree on the narrow result: <code>NOT_DEMONSTRATED_IN_FIXED_INVENTORY</code>, 17 records, 16 citable, 0 direct in-vivo tests, 1 direct in-vitro test, and 0 direct decreases. Corrected anchors are Hoque 78% jejunal vs 44% renal Western reduction in Q140K+/+ mice, Liu 100 µM estradiol-benzoate Caco-2 mRNA increase without dose-dependence, Slepnev nominal hormone Caco-2 ABCG2 increase, and MacLean healthy-rat qualitative null.</p>
+<p>Downstream mismatches requiring action:
+- <code>wiki/abcg2-modulators.md</code> says “No published ChIP-seq study in that scan located a classical androgen-response element.” The COMP-016 inventory contains no citable ChIP-seq record; this is stronger than the repaired artifact supports. It should be rewritten as “the fixed inventory did not supply a citable direct promoter/ARE record,” or removed.
+- <code>wiki/abcg2-modulators.md</code> calls Jeong 2015 the “closest mechanistic anchor” for an indirect CREB/CRTC2 axis. In COMP-016 it is a legacy-search-summary adjacent row, not a source-verified mechanistic finding. This must not be presented as a COMP-016-supported mechanistic anchor unless independently sourced outside COMP-016.
+- <code>wiki/abcg2-modulators.md</code> includes an 84.2% modeled jejunal urate-flux reduction in the Hoque paragraph. That value is supported on the COMP-017 human/animal evidence page, not by COMP-016’s retained corrected source anchors, which preserve only the 78% jejunal and 44% renal Western comparison. If retained, provenance must point to the separate COMP-017/source-workbook verification and maintain genotype-stressed mouse boundaries.</p>
+<p>Other reviewed pages generally preserve the repaired boundary: <code>wiki/computational-experiments.md</code>, <code>wiki/t-abcg2-suppression-evidence-mining-computational.md</code>, <code>wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md</code>, and <code>wiki/open-questions.md</code> state the fixed-inventory and unresolved-human limitations.</p>
+<h2 id="reader-facing-ownership-audit">Reader-facing ownership audit<a class="headerlink" href="#reader-facing-ownership-audit" title="Permanent link">&para;</a></h2>
+<p>The COMP page owns its evidence-inventory result and forbidden inferences. <code>abcg2-modulators.md</code> is a focused mechanism page and may summarize hormone context only if it owns evidence levels, provenance, tissue/exposure boundaries, and falsification gates. It currently drifts into unsupported mechanistic narrative around ChIP-seq and Jeong, and mixes COMP-016/COMP-017 quantitative anchors without adequate ownership separation.</p>
+<p>Portfolio/index pages reviewed mostly keep COMP-016 as historical/bounded rather than using it as a ranking or treatment surface. No personalized treatment instructions were found in the inspected COMP-016 surfaces. The proposed use of validation §1.14/direct apical-protein and urate-flux measurement is appropriate as the falsification gate.</p>
+<h2 id="conjecture-preservation-audit">Conjecture preservation audit<a class="headerlink" href="#conjecture-preservation-audit" title="Permanent link">&para;</a></h2>
+<p>The unsupported factual claim that COMP-016 establishes absence of a ChIP-seq/ARE record should be corrected, not used as a mechanistic conclusion. Jeong 2015 may survive as a compact research lead only if independently sourced and explicitly labeled non-intestinal/prostate-cancer, legacy or primary-source status clarified, and not presented as a COMP-016 mechanistic anchor.</p>
+<p>The negative COMP-016 result kills only the claim that this fixed inventory demonstrates direct androgen-driven intestinal ABCG2 suppression. It does not kill adjacent androgen–urate cohort relevance, renal hormone mechanisms, healthy-human intestinal sex-stratification questions, clomiphene-urate coupling hypotheses, or direct enterocyte hormone/TNFα factorial experiments. Those survive as bounded conjectures requiring direct apical ABCG2 protein and urate-flux measurement.</p>
+<h2 id="generated-output-and-proposed-update-inventory">Generated-output and proposed-update inventory<a class="headerlink" href="#generated-output-and-proposed-update-inventory" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Manifest kind</th>
+<th>Inspected completely?</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/README.md</code></td>
+<td>experiment documentation</td>
+<td>yes</td>
+<td>Bounded fixed-inventory framing reported by shard; no blocker.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/analyze.py</code></td>
+<td>experiment code</td>
+<td>yes</td>
+<td>Validates schema and renders outputs; no retrieval; result limited to fixed inventory.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/maintenance-repair-plan-2026-07-29.md</code></td>
+<td>input/provenance support</td>
+<td>yes</td>
+<td>Repair context inspected by shard; no independent blocker reported.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/provenance.md</code></td>
+<td>input/provenance support</td>
+<td>yes</td>
+<td>Source-tier corrections inspected by shard; primary-source verification not independently repeated here.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/inputs/studies.json</code></td>
+<td>input data</td>
+<td>yes</td>
+<td>17-record fixed inventory; source classifications are load-bearing.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/results.json</code></td>
+<td>generated_output</td>
+<td>yes</td>
+<td>Correct bounded result; <code>record_classifications</code> omit <code>verification_tier</code>.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/outputs/summary.md</code></td>
+<td>generated_output</td>
+<td>yes</td>
+<td>Faithful bounded summary and forbidden inferences.</td>
+</tr>
+<tr>
+<td><code>wiki/abcg2-modulators.md</code></td>
+<td>proposed_update / affected wiki</td>
+<td>yes</td>
+<td>Change required: ChIP-seq/ARE, Jeong mechanistic-anchor, and Hoque flux provenance issues.</td>
+</tr>
+<tr>
+<td><code>wiki/androgen-urate-axis.md</code></td>
+<td>proposed_update / affected wiki</td>
+<td>yes</td>
+<td>Inspected by shard; no material COMP-016 drift reported.</td>
+</tr>
+<tr>
+<td><code>wiki/computational-experiments.md</code></td>
+<td>proposed_update / index surface</td>
+<td>yes</td>
+<td>Consistent; preserves COMP-016 and COMP-017 boundaries.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/manual-literature-mining.md</code></td>
+<td>method/governance surface</td>
+<td>yes</td>
+<td>Consistent; reinforces primary-source verification and Tier 0 limitations.</td>
+</tr>
+<tr>
+<td><code>wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md</code></td>
+<td>affected wiki</td>
+<td>yes</td>
+<td>Consistent; keeps healthy-human sex stratification unresolved and Hoque provenance separate.</td>
+</tr>
+<tr>
+<td><code>wiki/open-questions.md</code></td>
+<td>affected wiki</td>
+<td>yes</td>
+<td>Consistent; uses COMP-016 only as bounded evidence scan.</td>
+</tr>
+<tr>
+<td><code>wiki/t-abcg2-suppression-evidence-mining-computational.md</code></td>
+<td>interpretive COMP page</td>
+<td>yes</td>
+<td>Consistent; correct fixed-inventory and forbidden-inference framing.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="load-bearing-verification-table">Load-bearing verification table<a class="headerlink" href="#load-bearing-verification-table" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Claim or parameter</th>
+<th>Artifact location</th>
+<th>Implementation use</th>
+<th>Provenance status</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fixed inventory size = 17</td>
+<td><code>studies.json</code>, <code>analyze.py</code>, outputs</td>
+<td>Enforced by validator; counts output</td>
+<td>Directly inspectable in artifact</td>
+<td>Supported.</td>
+</tr>
+<tr>
+<td>Direct suppression requires direct in-vivo/in-vitro test with <code>target_outcome=decrease</code></td>
+<td><code>analyze.py</code>, <code>decision_rule</code></td>
+<td>Determines <code>result_code</code></td>
+<td>Directly inspectable code</td>
+<td>Supported as a classification rule.</td>
+</tr>
+<tr>
+<td>No direct in-vivo tests; one direct in-vitro test S04; zero decreases</td>
+<td><code>results.json</code>, <code>summary.md</code></td>
+<td>Main result</td>
+<td>Derived from inspected fixed records; no retrieval</td>
+<td>Supported within fixed inventory.</td>
+</tr>
+<tr>
+<td>S04 Slepnev: nominal 1/10/100 µM sex steroids increased Caco-2 ABCG2</td>
+<td><code>studies.json</code>, outputs</td>
+<td>Only direct target record; outcome <code>increase</code></td>
+<td>Official publisher abstract tier, not primary full text</td>
+<td>Usable only with official-abstract and exposure-boundary caveat.</td>
+</tr>
+<tr>
+<td>Hoque: 78% jejunal vs 44% renal Western reduction in Q140K+/+ mice</td>
+<td>corrected source anchors</td>
+<td>Adjacent corrected quantitative anchor</td>
+<td>Marked primary full text; primary re-verification not performed by this reviewer</td>
+<td>Supported as artifact-retained primary-tier anchor; animal genotype-stressed only.</td>
+</tr>
+<tr>
+<td>Hoque: 84.2% modeled jejunal urate flux reduction</td>
+<td><code>abcg2-modulators.md</code>; COMP-017 page</td>
+<td>Not generated by COMP-016</td>
+<td>Supported, if at all, by COMP-017/source-workbook boundary, not COMP-016</td>
+<td>Requires provenance separation on <code>abcg2-modulators.md</code>.</td>
+</tr>
+<tr>
+<td>Liu: 100 µM estradiol benzoate increased Caco-2 ABCG2 mRNA without dose-dependence</td>
+<td>corrected source anchors</td>
+<td>Adjacent corrected anchor</td>
+<td>Marked primary full text; primary re-verification not performed here</td>
+<td>Supported only as pharmacological in-vitro estradiol result.</td>
+</tr>
+<tr>
+<td>MacLean: healthy-rat intestinal transporter scan reported no sex-specific difference</td>
+<td>corrected source anchors</td>
+<td>Adjacent null context</td>
+<td>Primary database abstract tier</td>
+<td>Not a healthy-human effect-size estimate.</td>
+</tr>
+<tr>
+<td>ChIP-seq/ARE absence</td>
+<td><code>abcg2-modulators.md</code></td>
+<td>Downstream mechanistic summary</td>
+<td>No citable ChIP-seq record in COMP-016 artifact</td>
+<td>Unsupported as written.</td>
+</tr>
+<tr>
+<td>Jeong 2015 indirect CREB/CRTC2 “closest mechanistic anchor”</td>
+<td><code>abcg2-modulators.md</code>; record S07</td>
+<td>Downstream mechanism narrative</td>
+<td>Legacy-search-summary adjacent row in COMP-016</td>
+<td>Unsupported as COMP-016 mechanistic finding.</td>
+</tr>
+<tr>
+<td>Machine-readable verification tiers in all classifications</td>
+<td>README expectation, <code>summary.md</code>, <code>results.json</code></td>
+<td>Auditability</td>
+<td>Summary has tiers; <code>record_classifications</code> lacks them</td>
+<td>Action recommended for <code>results.json</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="affected-wiki-pages">Affected wiki pages<a class="headerlink" href="#affected-wiki-pages" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>wiki/abcg2-modulators.md</code> — change required — overstates COMP-016 ChIP-seq/ARE absence, uses a legacy-summary Jeong row as mechanistic anchor, and imports Hoque 84.2% flux without explicit COMP-017/source provenance separation.</li>
+<li><code>wiki/androgen-urate-axis.md</code> — already consistent — shard inspection found no material drift from COMP-016 boundaries.</li>
+<li><code>wiki/computational-experiments.md</code> — already consistent — states COMP-016 as historical/bounded; rejects unsupported 53%/88% Hoque values; preserves unresolved healthy-human question and COMP-017 limitations.</li>
+<li><code>wiki/t-abcg2-suppression-evidence-mining-computational.md</code> — already consistent — accurately states fixed-inventory negative result and forbidden inferences.</li>
+<li><code>wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md</code> — already consistent — keeps healthy-human intestinal ABCG2 sex difference unresolved and anchors Hoque quantitative details separately.</li>
+<li><code>wiki/open-questions.md</code> — already consistent — uses COMP-016 only as a bounded scan in genotype/substrate-supply context.</li>
+<li><code>wiki/etc/manual-literature-mining.md</code> — already consistent — its primary-source verification rules support the required correction.</li>
+</ul>
+<h2 id="new-connections-or-implications">New connections or implications<a class="headerlink" href="#new-connections-or-implications" title="Permanent link">&para;</a></h2>
+<p>A useful cross-page implication is that COMP-016 and COMP-017 together force a two-step resolver for androgen/sex ABCG2 claims: first extract direct healthy-human intestinal sex-stratified RNA/protein/apical localization/flux data, then separately test hormone exposure in enterocyte models under physiologic free-exposure conditions. Animal Q140K genotype-stress and Caco-2 pharmacological hormone responses cannot substitute for either step.</p>
+<p>Research Conjecture boundary: if Jeong 2015 remains scientifically interesting, it should be reframed as a non-intestinal prostate-cancer androgen-withdrawal signaling precedent that might motivate, but does not support, enterocyte AR/CREB/CRTC2 testing. The discriminating observation is direct intestinal epithelial hormone manipulation with AR perturbation, apical ABCG2, and ABCG2-attributed urate flux.</p>
+<h2 id="required-actions">Required actions<a class="headerlink" href="#required-actions" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In <code>wiki/abcg2-modulators.md</code>, revise the ChIP-seq/ARE sentence to avoid claiming published-study absence or promoter-location nonfinding unless a citable ChIP-seq/promoter source is added and verified. Verification criterion: wording is limited to “not established by COMP-016 fixed inventory” or independently sourced.</li>
+<li>In <code>wiki/abcg2-modulators.md</code>, remove or relabel Jeong 2015 as a COMP-016 legacy-adjacent, non-intestinal lead rather than “closest mechanistic anchor,” unless primary-source verification is added outside COMP-016. Verification criterion: no legacy-summary row carries mechanistic authority.</li>
+<li>In <code>wiki/abcg2-modulators.md</code>, attach the 84.2% modeled jejunal urate-flux number to the correct COMP-017/source-workbook provenance or remove it from the COMP-016-context paragraph. Verification criterion: readers can distinguish COMP-016 Western-only corrected anchor from COMP-017 flux/source verification.</li>
+<li>Update <code>outputs/results.json</code> generation or schema so <code>record_classifications</code> include <code>verification_tier</code>, matching the summary’s auditability. Verification criterion: rerendered <code>results.json</code> exposes verification tier for each classification row.</li>
+<li>Do not enable synthesis from COMP-016 until the above summary-fidelity corrections are reviewed.</li>
+</ol>
+<h2 id="review-limits">Review limits<a class="headerlink" href="#review-limits" title="Permanent link">&para;</a></h2>
+<p>Arbitrary experiment code was not executed in daemon mode. Primary articles were not independently re-read; source tiers and corrected anchors were evaluated by artifact inspection and shard reports. Repository fixed-string search failed because the underlying <code>rg</code> executable was unavailable; targeted <code>read_file</code> cross-checks were used instead. No binary artifacts or deterministic blocks were present.</p>
 
 
 

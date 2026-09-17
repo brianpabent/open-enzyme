@@ -5650,19 +5650,19 @@ interpretation. The two failure classes therefore preserve different amounts
 of diagnostic evidence without sharing an ambiguous output contract.</p>
 <h2 id="reproduction-after-gate-1">Reproduction after Gate 1<a class="headerlink" href="#reproduction-after-gate-1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>wiki/etc/experiments/comp-048-human-proximal-tubule-delivery-handle-screen
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python3.11<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import sys; assert sys.version.split()[0] == &quot;3.11.9&quot;&#39;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python3.11<span class="w"> </span>-c<span class="w"> </span><span class="s1">'import sys; assert sys.version.split()[0] == "3.11.9"'</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>python3.11<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>.venv/bin/pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.lock.txt
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>.venv/bin/python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import sys; assert sys.version.split()[0] == &quot;3.11.9&quot;&#39;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>.venv/bin/python<span class="w"> </span>-c<span class="w"> </span><span class="s1">'import sys; assert sys.version.split()[0] == "3.11.9"'</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>python3<span class="w"> </span>../../../../scripts/comp-review-manifest.py<span class="w"> </span>check<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>--manifest<span class="w"> </span>reviews/pre-run.manifest.json<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span>--review<span class="w"> </span>reviews/pre-run.md<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span>--required-line<span class="w"> </span><span class="s1">&#39;PRE_RUN_GATE: GO&#39;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span>--required-line<span class="w"> </span><span class="s1">'PRE_RUN_GATE: GO'</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>.venv/bin/python<span class="w"> </span>fetch_inputs.py
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>python3<span class="w"> </span>../../../../scripts/comp-review-manifest.py<span class="w"> </span>check<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span>--manifest<span class="w"> </span>reviews/pre-run.manifest.json<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span>--review<span class="w"> </span>reviews/pre-run.md<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span>--required-line<span class="w"> </span><span class="s1">&#39;PRE_RUN_GATE: GO&#39;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span>--required-line<span class="w"> </span><span class="s1">'PRE_RUN_GATE: GO'</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>.venv/bin/python<span class="w"> </span>analyze.py
 </code></pre></div>
 <p>Fetched inputs and temporary output staging live only under

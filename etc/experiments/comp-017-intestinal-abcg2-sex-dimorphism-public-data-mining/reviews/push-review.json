@@ -2,13 +2,13 @@
   "schema_version": 1,
   "comp": "comp-017",
   "comp_dir": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining",
-  "source_commit": "0ef99dcc9102323608fc4e5384e09617e95e17e8",
-  "artifact_manifest_sha256": "d48d5ef4581bf789a91d28a3397ee04ba7a0fd5421f3202203f01dbcd10ec209",
+  "source_commit": "14833b44e90fe92f7aa6738a3f85edde188dabe9",
+  "artifact_manifest_sha256": "685e18c26647c493b86be90f1b7da96860fc74935e8e26eb78d8dfff240a6689",
   "reviewer_model": "openai/gpt-5.5",
-  "timestamp": "2026-07-27T11:48:48Z",
-  "comp_verdict": "quantitative_verdict_invalid",
+  "timestamp": "2026-07-29T16:20:17Z",
+  "comp_verdict": "action_required",
   "propagation_eligibility": "eligible_with_warning",
-  "synthesis_eligibility": "blocked",
+  "synthesis_eligibility": "eligible_with_warning",
   "action_required": true,
   "authoring_gates": {
     "status": "modern",
@@ -20,100 +20,108 @@
   "coverage": [
     {
       "shard_id": "shard-001",
-      "coverage_sha256": "5e59933a7b90fce6b0ed697ded5cdc5e3c7bd8aa0f00f8a0255cfbf9ac7bc6bd",
+      "coverage_sha256": "6b1c8912c450ecf82fa4663c444c013f93e2f7fbb221ef2a5c99285a6fb6a32b",
       "segments": [
         {
           "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/README.md",
           "role": "comp_artifact",
           "start": 0,
-          "end": 4054,
-          "file_sha256": "d16cfd52ef4c85897a9bab45625df37ddfa9986f261bdcd7100856f0dfae2769",
+          "end": 6505,
+          "file_sha256": "ba81b0dcc6dc2e9b1514ca29273e7590683cf50f9e41478dd50822d1603c4d16",
           "binary": false
         },
         {
           "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/analyze.py",
           "role": "comp_artifact",
           "start": 0,
-          "end": 19845,
-          "file_sha256": "8b4600d91459d893e8e49c85b5da57c9e6541018c7ef48555441c155318f5dd0",
+          "end": 12159,
+          "file_sha256": "e199e5cae9eea80127cf5036aa14317668c575e42222d33e9467cd7a80839c20",
           "binary": false
         },
         {
           "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/full_text_extract.json",
           "role": "comp_artifact",
           "start": 0,
-          "end": 21182,
-          "file_sha256": "82a43d71e5447843fe8c8813e5bde47aaa73810a6e8795411548b5f934a8f683",
+          "end": 10913,
+          "file_sha256": "3b23f900897709dde69741fb3ee7e97f816069a5b98e3f431f1e78b0981389c3",
           "binary": false
         },
         {
           "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/gtex_data.json",
           "role": "comp_artifact",
           "start": 0,
-          "end": 4715,
-          "file_sha256": "be09b1c80ad6d8409c24189e269a824b31b94d117f73fa007aa9523c9fb704b5",
+          "end": 680,
+          "file_sha256": "32b850ec6b3b6debb44f438c6d407b5efaab694edb0a534b147650101d103461",
           "binary": false
         },
         {
           "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/hpa_data.json",
           "role": "comp_artifact",
           "start": 0,
-          "end": 3188,
-          "file_sha256": "952e70365e4fd419a7d4af968ccef23489037d9f231e49b1b36b99df9fda7658",
+          "end": 445,
+          "file_sha256": "7322c1e666c94695336644c1311ad714b303e3e6bce1118c78bb1702e85767ad",
           "binary": false
         },
         {
           "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/provenance.md",
           "role": "comp_artifact",
           "start": 0,
-          "end": 12606,
-          "file_sha256": "12347a28d04d798d8d5f2aa06685003e3c42ecc014e8681c5e5b975a261c0ced",
+          "end": 4985,
+          "file_sha256": "25103445173b6a9d9c4d362a42328feaee0256f069dc7254de3aee8742787834",
           "binary": false
         },
         {
           "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/results.json",
           "role": "comp_artifact",
           "start": 0,
-          "end": 24663,
-          "file_sha256": "aa2d58715e70ce24c09fc2a1429df5de274ec4c0094cbe04cbde42a53e371e5d",
+          "end": 11251,
+          "file_sha256": "eaa163a640537ed754704ddba3fec7ddd7423e96d8d1718bd2d680ee7df48f14",
           "binary": false
         },
         {
           "path": "wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/summary.md",
           "role": "comp_artifact",
           "start": 0,
-          "end": 23828,
-          "file_sha256": "0e910dbcf514591b4212296fef4b95dc1998fdceb627fb4463316182333b5b2b",
+          "end": 10787,
+          "file_sha256": "0992c566adff9373b3336be591760f32db7a4d3a4de61db36b808222114ab572",
+          "binary": false
+        },
+        {
+          "path": "mkdocs.yml",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 11194,
+          "file_sha256": "28f08bf90fa921781d796128ab8bfc4069cca7c5c985203097cf9f8be6004f16",
           "binary": false
         },
         {
           "path": "wiki/abcg2-modulators.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 43822,
-          "file_sha256": "87943c5cfd967c82adabf6b58a6190e346d5f0e0be4a1549149d93c8e3dd8c5a",
+          "end": 44005,
+          "file_sha256": "f8c6091d984e1f6ecbdb6b702944d7f009673c5557aa8d18db97515f65a52fba",
+          "binary": false
+        },
+        {
+          "path": "wiki/androgen-urate-axis.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 35394,
+          "file_sha256": "80fab51bcfdeab5426e6d4ee5cc214442807e17ea628eb23371091edf945c447",
           "binary": false
         }
       ]
     },
     {
       "shard_id": "shard-002",
-      "coverage_sha256": "336aed8a07034803a3148d513f7ed46d15c7eb2b84787c06d84d492ca8805729",
+      "coverage_sha256": "08f994e4b502e8719b41d1b96eb972def5e98bd926ffbcd75704c95a485261ca",
       "segments": [
-        {
-          "path": "wiki/androgen-urate-axis.md",
-          "role": "referencing_wiki_surface",
-          "start": 0,
-          "end": 36688,
-          "file_sha256": "1dc9d71f7fc5d350417f216cecff60c76fea61e0812faa591c35c32ada350b26",
-          "binary": false
-        },
         {
           "path": "wiki/computational-experiments.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 74655,
-          "file_sha256": "bd415be1c0536221df8f86587073d7c48f01e68e4e92ab2bddbecf20bfa06b88",
+          "end": 74059,
+          "file_sha256": "899bfd4d81c8d223555ffe370c8f6c1e16bd83effe5bf2cc8913e755b2bd9110",
           "binary": false
         },
         {
@@ -125,59 +133,84 @@
           "binary": false
         },
         {
+          "path": "wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/README.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 6153,
+          "file_sha256": "72e830cb1227631b5c0a81f3812b1f39a6633960f4c6d0b098c2de2d6231aa43",
+          "binary": false
+        },
+        {
+          "path": "wiki/etc/manual-literature-mining.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 29077,
+          "file_sha256": "672ad06b28392e0a8c6cb7396c33afb4565f632579ee58fddbb37cb7fd6a8e2f",
+          "binary": false
+        },
+        {
           "path": "wiki/gout-genetic-variants.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 41883,
-          "file_sha256": "8ee33b5d8d3518aa30dff1d4a7b05491ea5f7f6069ef0abb84f298335f8e20be",
+          "end": 41397,
+          "file_sha256": "23c0193f718842b66ed418ffcfb124a40bd62952636c5fcfdbd7d1be2afd6baf",
           "binary": false
         },
         {
           "path": "wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 3187,
-          "file_sha256": "29f15a5e5cd21b6015ce54532bf7eab8166e4ba918fd2a51a376d9954c59db6a",
+          "end": 6184,
+          "file_sha256": "b0957ef01dec205be81d2d0c75cff1617dfb322c8d4ab4cb65353c85f4e101a7",
           "binary": false
         }
       ]
     },
     {
       "shard_id": "shard-003",
-      "coverage_sha256": "91fa6f314c90d6b0fe41c1339f6cf9ffc4800e20baf709a403250ad94f2e6e29",
+      "coverage_sha256": "c9a936513b678df470af8b5ff95bdc4c3464ffe716902a940efe0678a8e189d3",
       "segments": [
         {
           "path": "wiki/open-questions.md",
           "role": "referencing_wiki_surface",
           "start": 0,
-          "end": 74447,
-          "file_sha256": "9ffef573b763d3471a545cb2700eee1b09910f8d906b5795344abf6e9beed09a",
+          "end": 70784,
+          "file_sha256": "65b214c3a0c79ab7ed2d220415cab17346351f057aa418eef126e945c209045b",
+          "binary": false
+        },
+        {
+          "path": "wiki/t-abcg2-suppression-evidence-mining-computational.md",
+          "role": "referencing_wiki_surface",
+          "start": 0,
+          "end": 3154,
+          "file_sha256": "60d56dab0ead5565ce9b682df47b68ab79a575bfa31c4b9c398d4c0533e22a4d",
           "binary": false
         }
       ]
     }
   ],
   "unsupported_binary_entries": [],
-  "projected_cost_usd": 1.307936,
-  "actual_cost_usd": 1.135081,
-  "input_tokens": 211115,
-  "output_tokens": 10407,
-  "tool_calls": 12,
-  "review_sha256": "8c3db9cd38f13e6acb261f69c391a38c746f31fc272a7ec4346a29008ebab23d",
+  "projected_cost_usd": 1.29589,
+  "actual_cost_usd": 1.268974,
+  "input_tokens": 304454,
+  "output_tokens": 11832,
+  "tool_calls": 15,
+  "review_sha256": "17a9ef3819cc65fb505a0b19214f267cb4eb21c3f27deb669c74d1bed023a3a6",
   "lane_adjudication": {
-    "date": "2026-07-27T11:48:48Z",
+    "date": "2026-07-29T16:20:17Z",
     "method": "exact push review",
     "new_artifact_review_performed": true,
     "queue_action_remains_open": true,
-    "propagation_allowed_scope": "corrective-only propagation of provenance limits, no direct GTEx/HPA quantitative result, Hoque 78% vs 88% clarification, supraphysiological hormone-exposure caveats, and rejection of direct AR-mediated intestinal ABCG2 suppression",
-    "synthesis_allowed_scope": "none",
+    "propagation_allowed_scope": "bounded COMP-017 correction/status propagation and ownership cleanup only; no derived intervention claims",
+    "synthesis_allowed_scope": "unresolved healthy-human intestinal ABCG2 baseline plus source-specific evidence-tier corrections only",
     "forbidden_inferences": [
       "quantified healthy-human intestinal ABCG2 sex-null",
-      "resolved GTEx/HPA population effect size",
-      "physiological estradiol/testosterone regulation magnitude from 100 \u00b5M or 1\u2013100 \u00b5M cell assays",
-      "clomiphene urate mechanism or intervention recommendation",
-      "pan-male non-responder rule",
-      "Q141K genotype-response ordering for gut-lumen uricase"
+      "physiological hormone-regulation magnitude from nominal Caco-2 exposure",
+      "direct androgen-receptor exclusion",
+      "clomiphene mechanism or guidance",
+      "pan-male responder rule",
+      "Q141K-conditioned luminal-uricase response ordering",
+      "clinical or intervention advice"
     ]
   }
 }

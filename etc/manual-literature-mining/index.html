@@ -5750,8 +5750,8 @@
 <h3 id="3-grep-verify-all-numbers-before-they-enter-the-wiki">3. Grep-verify all numbers before they enter the wiki<a class="headerlink" href="#3-grep-verify-all-numbers-before-they-enter-the-wiki" title="Permanent link">&para;</a></h3>
 <p>For any quantitative claim sourced from Paperclip — IC50, Km, dose, sample size, percent change, p-value, cohort n — <code>grep</code> for the specific number in the source paper's <code>content.lines</code> file BEFORE writing the number into the wiki. The verification step takes ~30 seconds and catches the <code>map</code>-class hallucination directly.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Example: verify a claimed IC50</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;IC50&quot;</span><span class="w"> </span>/papers/&lt;id&gt;/content.lines
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>grep<span class="w"> </span><span class="s2">&quot;&lt;exact-number&gt;\\|&lt;exact-number with units&gt;&quot;</span><span class="w"> </span>/papers/&lt;id&gt;/content.lines
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"IC50"</span><span class="w"> </span>/papers/&lt;id&gt;/content.lines
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>grep<span class="w"> </span><span class="s2">"&lt;exact-number&gt;\\|&lt;exact-number with units&gt;"</span><span class="w"> </span>/papers/&lt;id&gt;/content.lines
 </code></pre></div>
 <p>If the number doesn't appear in the source, it didn't come from the source. Do not propagate.</p>
 <h3 id="4-never-propagate-mapreduce-summaries">4. Never propagate <code>map</code>/<code>reduce</code> summaries<a class="headerlink" href="#4-never-propagate-mapreduce-summaries" title="Permanent link">&para;</a></h3>
@@ -5764,7 +5764,7 @@
 - References block at end of page:
   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--------
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>REFERENCES
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>[1] Authors. &quot;Title.&quot; *Journal* vol, pages (year). doi:XX
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>[1] Authors. "Title." *Journal* vol, pages (year). doi:XX
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    https://citations.gxl.ai/papers/&lt;doc_id&gt;#L&lt;n&gt;
 </code></pre></div>
 - Never expose Paperclip's internal <code>doc_id</code> in prose (only in the URL).</p>
@@ -5921,10 +5921,10 @@
 <li><strong>Sentence-level comparison.</strong> Compare the two translations at sentence granularity (or paragraph if sentences are too short to differ meaningfully).</li>
 <li><strong>Where models AGREE → confident translation.</strong> Use that text directly.</li>
 <li><strong>Where models DISAGREE → inline annotation.</strong> Use a clear, scannable convention:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>The compound shows {Model A: &quot;significant&quot; | Model B: &quot;notable&quot;} reduction in IL-1β secretion at 10 μM.
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>The compound shows {Model A: "significant" | Model B: "notable"} reduction in IL-1β secretion at 10 μM.
 </code></pre></div>
    Or for substantive disagreements (different mechanism implications, evidence tier, magnitude):
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{Model A: &quot;decreased serum urate by 1.2 mg/dL&quot;} {Model B: &quot;decreased serum uric acid by approximately 71 μmol/L&quot;}
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{Model A: "decreased serum urate by 1.2 mg/dL"} {Model B: "decreased serum uric acid by approximately 71 μmol/L"}
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>[TRANSLATION NOTE: Models agree on direction and rough magnitude (1.2 mg/dL ≈ 71 μmol/L), differ on unit choice in the source. Verify against original-language paper if precision matters for downstream calculation.]
 </code></pre></div></li>
 <li><strong>For load-bearing claims, escalate.</strong> If a translation disagreement affects an evidence-tier judgment, a dose calculation, a mechanism mapping, or a chokepoint assignment — flag it explicitly with <code>[TRANSLATION-DISAGREEMENT]</code> so future readers know the underlying source has interpretive ambiguity. Do not resolve the disagreement silently by picking one translation.</li>

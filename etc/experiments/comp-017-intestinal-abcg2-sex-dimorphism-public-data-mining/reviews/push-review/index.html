@@ -5516,34 +5516,29 @@
 
 <h1 id="independent-comp-review-comp-017">Independent comp review — comp-017<a class="headerlink" href="#independent-comp-review-comp-017" title="Permanent link">&para;</a></h1>
 <h2 id="reviewed-snapshot">Reviewed snapshot<a class="headerlink" href="#reviewed-snapshot" title="Permanent link">&para;</a></h2>
-<p>Independent daemon consolidation reviewer; reviewed snapshot bound to <code>push-review.manifest.json</code> SHA-256 <code>d48d5ef4581bf789a91d28a3397ee04ba7a0fd5421f3202203f01dbcd10ec209</code> at source commit <code>0ef99dcc9102323608fc4e5384e09617e95e17e8</code>. Authoring gates are reported modern/valid. Shard coverage plus targeted re-reads matched the inspected text files. No deterministic binary blocks were reported.</p>
+<p>Independent daemon consolidated review for <code>SOURCE_COMMIT</code> 14833b44e90fe92f7aa6738a3f85edde188dabe9, bound to <code>push-review.manifest.json</code> SHA-256 <code>685e18c26647c493b86be90f1b7da96860fc74935e8e26eb78d8dfff240a6689</code>. The supplied authoring gates are modern/valid, no deterministic binary blocks were reported, and targeted readbacks matched the shard-inspected text surfaces.</p>
 <h2 id="bottom-line-verdict">Bottom-line verdict<a class="headerlink" href="#bottom-line-verdict" title="Permanent link">&para;</a></h2>
-<p><strong>Quantitative verdict invalid.</strong> comp-017 is useful as a qualitative literature-reframing artifact, especially against the old direct androgen/AR-suppression model, but it does <strong>not</strong> resolve its stated Part A question: healthy-human GTEx/HPA sex-stratified intestinal ABCG2 distributions were not directly mined, and no ≥1.5× human intestinal population threshold was tested. The artifact’s generated outputs still overstate “full-text” provenance and contain a schema bug that drops the Hoque abstract-vs-fulltext correction from generated summaries.</p>
+<p>Action required. The core scientific result is bounded and usable: COMP-017 did <strong>not</strong> extract direct sex-stratified healthy-human intestinal GTEx/HPA values and therefore did <strong>not</strong> test the prespecified 1.5× baseline threshold. The correction of Hoque/Liu/Slepnev/MacLean evidence contexts is mostly faithful. Required actions are documentation/contract issues: dependent-page ownership drift, inconsistent provenance-tier reporting, missing machine-output propagation of a forbidden inference, and non-executable provenance/gate dependencies.</p>
 <h2 id="implementation-and-constraint-closure">Implementation and constraint closure<a class="headerlink" href="#implementation-and-constraint-closure" title="Permanent link">&para;</a></h2>
-<p>Traced <code>inputs/gtex_data.json</code>, <code>hpa_data.json</code>, and <code>full_text_extract.json</code> through <code>analyze.py</code> into <code>outputs/results.json</code> and <code>outputs/summary.md</code>.</p>
-<p>Key closure failures:
-- <strong>Part A substitution:</strong> direct GTEx/HPA healthy-human sex-stratified intestinal expression/protein values are null or “not directly extracted.” The implementation substitutes secondary literature/snippet consensus plus animal and hepatic-adjacent evidence for direct human intestinal dataset mining.
-- <strong>Aggregation bug:</strong> <code>aggregate_part_b()</code> reads <code>p["full_text_extract"]["abstract_vs_fulltext_difference"]</code>; P01 Hoque stores that field top-level. Generated outputs therefore show P01 <code>abstract_vs_fulltext_difference: null</code>, omitting the load-bearing 78% Western-jejunum vs 88% combined-measurement clarification.
-- <strong>Evidence counting is not quantitative:</strong> <code>null_baseline_hits</code> is a string-match count over secondary facts, not a weighted, independent, tissue-specific evidence model.
-- <strong>Schema drift:</strong> code docstring lists verdict options, but emitted verdict code is a longer non-enumerated string. Downstream consumers should not treat it as one of the declared codes.
-- <strong>Reproduction caveat:</strong> script is stdlib-only and plausibly deterministic if run from the committed directory with <code>outputs/</code> present, but it does not create <code>outputs/</code>. I did not execute code.</p>
-<p>Constraint closure:
-- <strong>Concentration/exposure:</strong> Yu 2021 Caco-2 estradiol benzoate effect is at 100 µM; Klyushova sex-hormone assays are 1–100 µM. These are pharmacological/supraphysiological cell exposures, not proof of physiological serum-hormone regulation of intestinal ABCG2.
-- <strong>Compartment/species:</strong> MacLean/Tubic are rat intestinal baseline data; Hoque is Q140K mouse disease-state genetic stress; Prasad hepatic human protein is adjacent-tissue evidence, not intestinal validation.
-- <strong>Mechanism polarity:</strong> Klyushova argues against direct AR-mediated suppression in Caco-2 under tested supraphysiological conditions; it does not directly test clomiphene, human urate flux, or physiologic testosterone variation.
-- <strong>Mass balance/transport/function:</strong> no finite human intestinal urate flux model, residence time, genotype response, or uricase response prediction is implemented.</p>
+<p><code>analyze.py</code> is a deterministic renderer/validator of committed JSON inputs. It validates GTEx/HPA “NOT EXTRACTED” status, paper IDs, evidence-level enums, required findings, and boundary schema, then writes <code>results.json</code> and <code>summary.md</code>. It does not retrieve literature, compute expression distributions, or test the 1.5× threshold. The 1.5× value is therefore a declared untested decision rule, not an evaluated statistic.</p>
+<p>Implementation gaps:
+- <code>inputs/provenance.md</code> is load-bearing for verification scope but is not read or validated by <code>analyze.py</code>.
+- <code>cross_paper_synthesis.forbidden_inferences</code> includes “pan-male responder rule,” but <code>results.json</code>/<code>summary.md</code> do not carry that list as a machine-readable/human-visible output field.
+- The README reproduction contract requires a passing current Gate 1 receipt, but the executable does not reference or validate that receipt.</p>
+<p>Constraint closure is appropriate for an evidence audit, not a biochemical model. No reaction stoichiometry is modeled. The artifact correctly separates RNA, total protein, apical localization, and functional urate flux; it does not convert transcript or Caco-2 protein changes into urate transport. Nominal 1–100 µM sex-hormone Caco-2 exposures and 100 µM estradiol-benzoate conditions are treated as in-vitro/pharmacological, not physiological intestinal exposure. Q140K mouse disease-state flux and Western-blot measurements are not substituted for healthy-human baseline. No intervention, clomiphene guidance, uricase response, or safety conclusion is supported.</p>
 <h2 id="summary-fidelity-audit">Summary-fidelity audit<a class="headerlink" href="#summary-fidelity-audit" title="Permanent link">&para;</a></h2>
-<p>Generated <code>summary.md</code> mostly mirrors <code>results.json</code>, so it inherits the P01 omission, “full-text-tier” overstatement, and Part A substitution.</p>
-<p>Current wiki surfaces are materially improved compared with the raw artifact: the interpretive stub explicitly warns that comp-017 does <strong>not quantitatively resolve</strong> GTEx/HPA human intestinal sex stratification, and the computational index labels the verdict provisional with direct GTEx/HPA blocked. However, the index still headlines “NULL OR NEAR-NULL at healthy baseline,” which is acceptable only as a provisional qualitative synthesis, not as a resolved database-mining result.</p>
-<p><code>androgen-urate-axis.md</code> largely preserves the correct boundary: direct androgen suppression of intestinal ABCG2 is unsupported; clomiphene urate effect is unknown; measurement gates remain. <code>abcg2-modulators.md</code> is broadly reconciled but has wording that could be misread as baseline intestinal sex dimorphism unless Q140K/disease-state context is kept explicit. No page may reuse comp-017 as quantitative human GTEx/HPA proof.</p>
+<p>The experiment README, <code>outputs/results.json</code>, <code>outputs/summary.md</code>, <code>wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md</code>, <code>wiki/computational-experiments.md</code>, and <code>wiki/t-abcg2-suppression-evidence-mining-computational.md</code> are materially aligned on the main verdict: healthy-human intestinal ABCG2 sex stratification remains unresolved; the 1.5× threshold was not tested.</p>
+<p>Fidelity issues:
+- Hoque provenance is stronger/different in <code>inputs/provenance.md</code> than in rendered outputs. Provenance says Nature HTML/XML/PDF/supplement/source workbook were checked; outputs state Europe PMC XML tier. This is conservative but inconsistent for the 53%/88% exclusion claim.
+- <code>full_text_extract.json</code> contains explicit forbidden inferences not fully emitted by outputs, especially “pan-male responder rule.”
+- <code>wiki/abcg2-modulators.md</code> and <code>wiki/androgen-urate-axis.md</code> contain extended COMP-017-derived narrative despite the README’s dependent-update boundary saying dependents should receive only correction/status plus link.
+- <code>mkdocs.yml</code> was inspected; no decision-relevant nav mismatch was reported.
+- Related COMP-015/016/019/044 and Q141K pages are broadly consistent in not reusing retired genotype-response or 53%/88% claims.</p>
 <h2 id="reader-facing-ownership-audit">Reader-facing ownership audit<a class="headerlink" href="#reader-facing-ownership-audit" title="Permanent link">&para;</a></h2>
-<p>The comp-specific interpretive page is now mostly a discoverability stub and appropriately owns the caveat. Cross-track ranking and intervention selection are not placed on the comp page. The index’s compact summary is acceptable only with its provisional qualifier retained.</p>
-<p>No comp-017-derived personalized treatment instruction is supported. Affected pages should avoid narrative foils such as “male ceiling” or “pan-androgen-dominant non-responder” unless explicitly marked as retracted/unsupported. Portfolio or genotype-response claims belong on comparison/validation surfaces, not on comp-017.</p>
+<p>The focused COMP-017 evidence page properly owns the detailed source correction, boundaries, next discriminating work, and conjecture. Dependent pages should not duplicate the audit narrative or use COMP-017 as a foil for broader portfolio/intervention argument. <code>abcg2-modulators.md</code> and <code>androgen-urate-axis.md</code> currently over-own COMP-017 detail relative to the stated contract; they should be compact status/correction/link surfaces. No personalized treatment instruction was identified in the inspected COMP-017 propagation, but clomiphene/intervention implications must remain explicitly out of scope.</p>
 <h2 id="conjecture-preservation-audit">Conjecture preservation audit<a class="headerlink" href="#conjecture-preservation-audit" title="Permanent link">&para;</a></h2>
-<p>Unsupported factual assertions should be corrected, not deleted wholesale:
-- Killed: “direct androgen/AR suppression of intestinal ABCG2” as a supported mechanism; “healthy-human GTEx/HPA quantitative null resolved”; “clomiphene causes high UA through intestinal ABCG2” as established.
-- Preserved as bounded conjecture: Q141K/Q140K male vulnerability may be a disease-state genetic-stress interaction; physiological estrogen/PI3K/Akt intestinal ABCG2 activity could exist but magnitude is unmeasured; hormone state may be a stratification variable requiring direct urate-flux and hormone measurements.
-- Adjacent gut-lumen uricase/genotype response ideas survive only as prospective stratification hypotheses, not as response ordering or dose rules.</p>
+<p>Unsupported factual assertions were mostly corrected rather than deleted. The negative COMP-017 result kills only the claim that this run established a healthy-human intestinal sex difference/null or tested the 1.5× threshold. It also blocks direct AR-repression, physiological hormone-magnitude, clomiphene, pan-male, and Q141K-luminal-uricase responder inferences from these sources.</p>
+<p>The adjacent conjecture that intestinal ABCG2 response may be genotype × hormone state × inflammatory-context dependent survives as a clearly labeled Research Conjecture with animal/in-vitro premises and a discriminating donor-derived intestinal-model observation. This preservation is appropriate.</p>
 <h2 id="generated-output-and-proposed-update-inventory">Generated-output and proposed-update inventory<a class="headerlink" href="#generated-output-and-proposed-update-inventory" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -5556,94 +5551,118 @@
 </thead>
 <tbody>
 <tr>
+<td><code>wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/README.md</code></td>
+<td>experiment artifact</td>
+<td style="text-align: right;">yes</td>
+<td>Correct bounded design; dependent-update and Gate 1 reproduction contracts need closure.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/analyze.py</code></td>
+<td>code</td>
+<td style="text-align: right;">yes</td>
+<td>Deterministic renderer; does not validate provenance.md or forbidden-inference propagation.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/full_text_extract.json</code></td>
+<td>input</td>
+<td style="text-align: right;">yes</td>
+<td>Contains source records and forbidden inferences; pan-male boundary not fully emitted.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/gtex_data.json</code></td>
+<td>input</td>
+<td style="text-align: right;">yes</td>
+<td>Correctly records no direct sex-stratified GTEx extraction.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/hpa_data.json</code></td>
+<td>input</td>
+<td style="text-align: right;">yes</td>
+<td>Correctly records no direct sex-stratified HPA protein extraction.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/provenance.md</code></td>
+<td>input/provenance</td>
+<td style="text-align: right;">yes</td>
+<td>More expansive Hoque verification than outputs report; not executable-validated.</td>
+</tr>
+<tr>
 <td><code>wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/results.json</code></td>
 <td>generated_output</td>
 <td style="text-align: right;">yes</td>
-<td>Quantitative Part A verdict unsupported; P01 correction dropped; provenance overstated.</td>
+<td>Core verdict supported; missing explicit forbidden-inference field/list.</td>
 </tr>
 <tr>
 <td><code>wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/outputs/summary.md</code></td>
 <td>generated_output</td>
 <td style="text-align: right;">yes</td>
-<td>Faithful to flawed JSON; inherits P01 omission and “full-text” overclaim.</td>
+<td>Human-readable result faithful; same forbidden-inference/provenance limitations.</td>
 </tr>
 <tr>
-<td><code>wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/README.md</code></td>
-<td>experiment artifact</td>
+<td><code>mkdocs.yml</code></td>
+<td>proposed_update/navigation</td>
 <td style="text-align: right;">yes</td>
-<td>States provisional direct-GTEx limitation but still titles method as full-text re-read.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/analyze.py</code></td>
-<td>experiment artifact</td>
-<td style="text-align: right;">yes</td>
-<td>Deterministic aggregator; schema bug; output dir assumption.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/full_text_extract.json</code></td>
-<td>experiment input</td>
-<td style="text-align: right;">yes</td>
-<td>Snippet-tier, not Paperclip/full-text grep; several mechanistic inferences too strong.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/gtex_data.json</code></td>
-<td>experiment input</td>
-<td style="text-align: right;">yes</td>
-<td>Direct GTEx values absent.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/hpa_data.json</code></td>
-<td>experiment input</td>
-<td style="text-align: right;">yes</td>
-<td>Direct sex-stratified intestinal HPA protein absent.</td>
-</tr>
-<tr>
-<td><code>wiki/etc/experiments/comp-017-intestinal-abcg2-sex-dimorphism-public-data-mining/inputs/provenance.md</code></td>
-<td>experiment input</td>
-<td style="text-align: right;">yes</td>
-<td>Citation trail only; many primary values unverified.</td>
+<td>No material issue reported.</td>
 </tr>
 <tr>
 <td><code>wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md</code></td>
-<td>proposed/affected update</td>
+<td>proposed_update/evidence home</td>
 <td style="text-align: right;">yes</td>
-<td>Correctly caveats non-quantitative status.</td>
+<td>Strongly consistent; owns detailed evidence and conjecture appropriately.</td>
 </tr>
 <tr>
 <td><code>wiki/computational-experiments.md</code></td>
-<td>proposed/affected update</td>
+<td>proposed_update/index</td>
 <td style="text-align: right;">yes</td>
-<td>Mostly consistent; headline needs provisional interpretation only.</td>
+<td>COMP-017 registry entry faithful and bounded.</td>
 </tr>
 <tr>
-<td><code>wiki/androgen-urate-axis.md</code></td>
-<td>proposed/affected update</td>
+<td><code>wiki/t-abcg2-suppression-evidence-mining-computational.md</code></td>
+<td>proposed_update/historical evidence page</td>
 <td style="text-align: right;">yes</td>
-<td>Consistent with no AR-suppression and clomiphene unknown.</td>
+<td>Correctly demotes COMP-016 to bounded historical scan.</td>
 </tr>
 <tr>
 <td><code>wiki/abcg2-modulators.md</code></td>
-<td>proposed/affected update</td>
+<td>proposed_update/dependent page</td>
 <td style="text-align: right;">yes</td>
-<td>Mostly reconciled; baseline-vs-Q140K wording needs care.</td>
+<td>Scientifically bounded, but too much duplicated COMP-017 exposition for dependent surface.</td>
 </tr>
 <tr>
-<td><code>wiki/gout-genetic-variants.md</code></td>
-<td>affected update</td>
+<td><code>wiki/androgen-urate-axis.md</code></td>
+<td>proposed_update/dependent page</td>
 <td style="text-align: right;">yes</td>
-<td>Correctly keeps Q141K prospective, not response-ordering.</td>
+<td>Scientifically bounded, but too much duplicated COMP-017 exposition for dependent surface.</td>
 </tr>
 <tr>
 <td><code>wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/README.md</code></td>
-<td>affected update</td>
+<td>affected artifact</td>
 <td style="text-align: right;">yes</td>
-<td>Correctly depends on comp-017 correction lifecycle.</td>
+<td>Consistent with COMP-017 correction cascade; no reuse of COMP-015 invalid verdicts found here.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/README.md</code></td>
+<td>affected artifact</td>
+<td style="text-align: right;">yes</td>
+<td>Correctly delegates current ABCG2 corrections to COMP-017.</td>
+</tr>
+<tr>
+<td><code>wiki/etc/manual-literature-mining.md</code></td>
+<td>affected methods page</td>
+<td style="text-align: right;">yes</td>
+<td>Supports need for line/provenance anchoring; no direct conflict.</td>
+</tr>
+<tr>
+<td><code>wiki/gout-genetic-variants.md</code></td>
+<td>affected mechanism page</td>
+<td style="text-align: right;">yes</td>
+<td>Maintains Q141K as prospective stratification only; no COMP-017 overreach reported.</td>
 </tr>
 <tr>
 <td><code>wiki/open-questions.md</code></td>
-<td>affected update</td>
+<td>affected portfolio page</td>
 <td style="text-align: right;">yes</td>
-<td>No comp-017-specific contradiction; contains unrelated portfolio caveats.</td>
+<td>Consistent with unresolved Q141K/UOX and ABCG2 responder boundaries.</td>
 </tr>
 </tbody>
 </table>
@@ -5660,100 +5679,103 @@
 </thead>
 <tbody>
 <tr>
-<td>Direct healthy-human GTEx intestinal sex-stratified ABCG2 TPM</td>
-<td><code>inputs/gtex_data.json</code></td>
-<td><code>gtex_direct_data = null</code></td>
-<td>Not extracted; sandbox blocked</td>
-<td>Cannot support quantitative Part A verdict</td>
+<td>No direct healthy-human GTEx intestinal sex-stratified values extracted</td>
+<td><code>gtex_data.json</code>, outputs</td>
+<td>Validated as <code>NOT EXTRACTED</code>; emitted</td>
+<td>Committed operational record only; no portal reproduction</td>
+<td>Supports unresolved verdict.</td>
 </tr>
 <tr>
-<td>Direct HPA sex-stratified intestinal ABCG2 protein</td>
-<td><code>inputs/hpa_data.json</code></td>
-<td>reported as not directly extracted</td>
-<td>Not available at artifact tier</td>
-<td>Cannot support protein sex-null</td>
+<td>No direct HPA intestinal sex-stratified protein values extracted</td>
+<td><code>hpa_data.json</code>, outputs</td>
+<td>Validated as <code>NOT EXTRACTED</code>; emitted</td>
+<td>Committed record only</td>
+<td>Supports unresolved verdict.</td>
 </tr>
 <tr>
-<td>Healthy baseline null/near-null</td>
-<td><code>results.json</code> overall verdict</td>
-<td>emitted as headline</td>
-<td>Indirect snippets; rat data; secondary literature; hepatic-adjacent human</td>
-<td>Qualitative/provisional only</td>
+<td>1.5× population threshold</td>
+<td>README, <code>analyze.py</code>, outputs</td>
+<td>Rendered, not tested</td>
+<td>Prespecified in artifact; no data evaluation</td>
+<td>Must be described as untested.</td>
 </tr>
 <tr>
-<td>Hoque Q140K jejunum Western decrease 78% vs kidney 44%</td>
-<td><code>full_text_extract.json</code> P01</td>
-<td>should appear in summary; bug omits abstract-vs-fulltext note</td>
-<td>Snippet quoting source; not independently primary-verified here</td>
-<td>Usable as snippet-tier correction, not full-text-verified</td>
+<td>Hoque 78% jejunal vs 44% renal Western-blot reduction</td>
+<td><code>full_text_extract.json</code>, outputs, wiki pages</td>
+<td>Rendered from input</td>
+<td>Citation plus artifact provenance; primary not independently reverified in this review</td>
+<td>Usable as artifact-verified correction, with provenance-tier clarification needed.</td>
 </tr>
 <tr>
-<td>Hoque 88% intestinal decrease</td>
-<td>P01 combined measurement</td>
-<td>included in key findings</td>
-<td>Snippet-tier</td>
-<td>Must not be used as like-for-like Western-vs-renal contrast</td>
+<td>Historical 53%/88% Hoque intestinal sentence unsupported</td>
+<td>provenance/input/output/wiki</td>
+<td>Rendered from input</td>
+<td>Provenance says multiple primary/publisher materials checked; output tier inconsistent</td>
+<td>Correction usable; reconcile verification wording.</td>
 </tr>
 <tr>
-<td>Yu EB 100 µM Caco-2 ABCG2 induction</td>
-<td>P02</td>
-<td>supports pharmacological E2 mechanism caveat</td>
-<td>Snippet-tier</td>
-<td>Supports supraphysiological in-vitro mechanism only</td>
+<td>Liu 100 µM estradiol benzoate at 48h, no dose-dependent response</td>
+<td>input/output/wiki</td>
+<td>Rendered from input</td>
+<td>Europe PMC XML tier stated; primary not reverified here</td>
+<td>Usable only as in-vitro pharmacological context.</td>
 </tr>
 <tr>
-<td>Klyushova 1–100 µM T/E2/P induction via PXR/FXR</td>
-<td>P03</td>
-<td>supports anti-AR-suppression rationale</td>
-<td>Snippet-tier; fold changes absent</td>
-<td>Rejects tested AR-suppression framing; no physiologic magnitude</td>
+<td>Slepnev 1/10/100 µM hormone Caco-2 increase; PXR/FXR conditions</td>
+<td>input/output/wiki</td>
+<td>Rendered from input</td>
+<td>Official English abstract tier; no full numerical extraction</td>
+<td>Usable only as abstract-tier in-vitro boundary.</td>
 </tr>
 <tr>
-<td>MacLean healthy-rat intestinal ABCG2 no sex difference</td>
-<td>P04 / GTEx secondary</td>
-<td>counted as null-baseline hit</td>
-<td>Snippet/citing context; p-values absent</td>
-<td>Qualitative animal baseline evidence</td>
+<td>MacLean healthy-rat no sex-specific difference</td>
+<td>input/output/wiki</td>
+<td>Rendered from input</td>
+<td>PubMed abstract tier; no effect size</td>
+<td>Animal qualitative null only, not human null.</td>
 </tr>
 <tr>
-<td>Tubic “replication” of ABCG2 null</td>
-<td><code>gtex_data.json</code>, P04 notes</td>
-<td>strengthens null narrative</td>
-<td>Inferred from non-reporting/context</td>
-<td>Weaker than direct replication unless directly verified</td>
+<td>“Pan-male responder rule” forbidden inference</td>
+<td><code>full_text_extract.json</code></td>
+<td>Stored but not emitted as output list</td>
+<td>Input-owned</td>
+<td>Needs output propagation.</td>
 </tr>
 <tr>
-<td>Hosoyamada renal URAT1 mRNA not protein under baseline</td>
-<td>outputs/wiki</td>
-<td>used for renal mechanism correction</td>
-<td>Related literature, outside 4 anchors</td>
-<td>Useful only with explicit bounded role</td>
+<td>Gate 1 receipt prerequisite</td>
+<td>README</td>
+<td>Not used by executable</td>
+<td>External authoring-gate supplied in daemon brief</td>
+<td>Link or document reproducibility dependency.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="affected-wiki-pages">Affected wiki pages<a class="headerlink" href="#affected-wiki-pages" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md</code> — already consistent — explicitly says no quantitative GTEx/HPA resolution.</li>
-<li><code>wiki/computational-experiments.md</code> — change required — preserve provisional label wherever headline “NULL OR NEAR-NULL” appears; do not let it read as resolved GTEx/HPA mining.</li>
-<li><code>wiki/androgen-urate-axis.md</code> — already consistent — rejects direct androgen suppression and keeps clomiphene unknown.</li>
-<li><code>wiki/abcg2-modulators.md</code> — change required — tighten any “intestinal ABCG2 is sex-dimorphic” wording to Q140K/disease-state context unless discussing baseline null separately.</li>
-<li><code>wiki/gout-genetic-variants.md</code> — already consistent — Q141K remains prospective stratification, not predictor/order.</li>
-<li><code>wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/README.md</code> — already consistent — treats comp-017 as cleanup dependency, not validation.</li>
-<li><code>wiki/open-questions.md</code> — already consistent for comp-017; unrelated inconsistencies noted by shard auditors should not be imported into comp-017 synthesis.</li>
+<li><code>wiki/intestinal-abcg2-sex-dimorphism-public-data-mining-computational.md</code> — already consistent — correct evidence home and bounded conjecture.</li>
+<li><code>wiki/computational-experiments.md</code> — already consistent — registry states direct-human baseline unresolved and separates evidence contexts.</li>
+<li><code>wiki/t-abcg2-suppression-evidence-mining-computational.md</code> — already consistent — COMP-016 remains historical bounded scan.</li>
+<li><code>wiki/abcg2-modulators.md</code> — change required — reduce duplicated COMP-017 narrative to correction/status plus link.</li>
+<li><code>wiki/androgen-urate-axis.md</code> — change required — reduce duplicated COMP-017 narrative to local boundary plus link.</li>
+<li><code>wiki/gout-genetic-variants.md</code> — already consistent — does not convert Q141K into UOX response or serum-urate ordering.</li>
+<li><code>wiki/open-questions.md</code> — already consistent — maintains unresolved UOX/genotype and safety gates.</li>
+<li><code>wiki/etc/manual-literature-mining.md</code> — already consistent — reinforces provenance/anchoring requirements.</li>
+<li><code>wiki/etc/experiments/comp-016-t-abcg2-suppression-evidence-mining/README.md</code> — already consistent — delegates corrected attribution/magnitude to COMP-017.</li>
+<li><code>wiki/etc/experiments/comp-015-t-axis-adjuvant-urate-mapping/README.md</code> — already consistent — flags correction cascade and invalidates old T-axis adjudications.</li>
 </ul>
 <h2 id="new-connections-or-implications">New connections or implications<a class="headerlink" href="#new-connections-or-implications" title="Permanent link">&para;</a></h2>
-<p>A useful design implication survives: future hormone/transporter experiments should not test only expression. They need physiological hormone concentration ladders, ABCG2 protein/localization, and basolateral-to-apical urate flux with genotype stratification. The strongest comp-017-supported negative is not “intestinal ABCG2 cannot matter,” but “sex or androgen state alone is insufficient to infer a healthy-baseline intestinal ABCG2 ceiling.”</p>
+<p>COMP-017 strengthens a cross-corpus separation: ABCG2 supply-side hypotheses must distinguish baseline healthy-human expression, disease/genotype-state transporter abundance, apical localization, and functional urate flux. This supports keeping butyrate/PPARγ/Q141K rescue, gut-lumen UOX responder stratification, and hormone-axis pages in conjecture or validation-gate status until matched functional urate-flux evidence exists.</p>
+<p>Research Conjecture boundary: genotype × hormone state × inflammatory context may matter more than binary sex for intestinal ABCG2 capacity, but COMP-017 supplies only mixed animal/in-vitro premises and no direct human effect estimate.</p>
 <h2 id="required-actions">Required actions<a class="headerlink" href="#required-actions" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Fix <code>analyze.py</code> or input schema so P01 top-level <code>abstract_vs_fulltext_difference</code> is emitted into <code>results.json</code> and <code>summary.md</code>; verify Hoque 78% vs 88% wording appears in generated output.</li>
-<li>Replace “full-text re-read/full-text-tier verification” language in generated outputs and README with “WebSearch snippet-tier extraction” unless line-anchored primary full text is actually inspected.</li>
-<li>Downgrade the generated overall verdict wording: state that direct GTEx/HPA human intestinal sex-stratified data were not extracted and the healthy-baseline null is a qualitative provisional synthesis.</li>
-<li>Standardize Klyushova testosterone multiplier language across comp outputs and <code>abcg2-modulators.md</code>, specifying basis: total vs free testosterone and 1 µM minimum active concentration.</li>
-<li>Tighten affected wiki wording so Hoque/Q140K disease-state sex dimorphism is not read as healthy-baseline human intestinal sex dimorphism.</li>
-<li>Do not synthesize comp-017 into intervention selection, clomiphene guidance, Q141K uricase response ordering, or pan-male responder/non-responder rules.</li>
+<li>In <code>wiki/abcg2-modulators.md</code> and <code>wiki/androgen-urate-axis.md</code>, replace extended COMP-017-derived exposition with compact local correction/status plus link to the COMP-017 evidence home. Verification: dependent pages no longer duplicate source-by-source audit narrative or portfolio implications.</li>
+<li>Reconcile Hoque provenance wording across <code>inputs/provenance.md</code>, <code>inputs/full_text_extract.json</code>, <code>outputs/results.json</code>, and <code>outputs/summary.md</code>. Verification: outputs either report the full checked-source set or explicitly say why a lower/conservative verification tier is emitted.</li>
+<li>Add a machine-readable and human-visible forbidden-inferences section to generated outputs, including “pan-male responder rule.” Verification: rerendered <code>results.json</code>/<code>summary.md</code> carry the full input forbidden-inference list or an explicitly validated subset.</li>
+<li>Close the provenance-validation gap: either make <code>analyze.py</code> validate required provenance/forbidden-inference fields or document that provenance is manually reviewed and outside deterministic reproduction. Verification: code or README states the contract unambiguously.</li>
+<li>Clarify the Gate 1 reproduction dependency by linking or naming the hash-bound Gate 1 receipt, or remove it from the executable reproduction contract. Verification: a reader can tell what must exist before rerunning.</li>
 </ol>
 <h2 id="review-limits">Review limits<a class="headerlink" href="#review-limits" title="Permanent link">&para;</a></h2>
-<p>I did not execute the experiment. Primary papers were not independently re-fetched or line-verified; provenance assessment is limited to committed text and shard audits. Repository fixed-string search tool failed because <code>rg</code> was unavailable, so affected-surface discovery rests on supplied shard coverage plus targeted <code>read_file</code> cross-checks. No binary artifacts were present.</p>
+<p>Arbitrary experiment code was not executed in daemon mode. Primary sources were not independently re-opened beyond committed text/provenance; source verification is assessed as artifact-provenance status, not reviewer-confirmed primary-source truth. Repository-wide grep was unavailable in the tool environment, so affected-surface assessment relied on the supplied hash-bound shard coverage plus targeted readbacks of decision-relevant files. No medical or clinical inference is made.</p>
 
 
 

@@ -5591,7 +5591,7 @@
 <p>The run is deterministic, uses Python's standard library only, has no randomness or external calls, reads and writes UTF-8 explicitly, and writes only those two files. Supported runtime: CPython 3.11 or newer.</p>
 <h2 id="reproduce-after-gate-1-approval">Reproduce after Gate 1 approval<a class="headerlink" href="#reproduce-after-gate-1-approval" title="Permanent link">&para;</a></h2>
 <p>From the repository root:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>wiki/etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;test_validation.py&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>wiki/etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification<span class="w"> </span>-p<span class="w"> </span><span class="s1">'test_validation.py'</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python3<span class="w"> </span>wiki/etc/experiments/comp-049-tcm-urate-axis-primary-evidence-qualification/analyze.py
 </code></pre></div>
 <p>Run the validation fixtures, then run the analysis twice and compare output hashes before creating the post-run manifest.</p>

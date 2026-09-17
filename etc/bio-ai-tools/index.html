@@ -6587,7 +6587,7 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>5. Provide before/after codon usage comparison
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Output format:
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>- Native sequence (1st 50 bp shown, then &quot;...&quot;)
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>- Native sequence (1st 50 bp shown, then "...")
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>- Optimized sequence (1st 50 bp shown)
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>- Codon usage table comparison (native vs. S. cerevisiae optimal)
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>- Identified problem regions and fixes
@@ -6605,7 +6605,7 @@
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Cassette components needed:
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>1. Promoter recommendation (strength ranking vs. alternatives)
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>2. 5&#39; UTR / RBS equivalent for yeast
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>2. 5' UTR / RBS equivalent for yeast
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>3. Signal peptide options if secretion desired
 <a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>4. Terminator selection
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>5. Selectable marker (mention both lab and food-production versions)
@@ -6642,21 +6642,21 @@
 <p><strong>Expected output:</strong> Comparative analysis with citations. Informs gene selection for Phase 1 validation.</p>
 <hr />
 <h4 id="prompt-4-transformation-strategy-optimization">Prompt 4: Transformation Strategy Optimization<a class="headerlink" href="#prompt-4-transformation-strategy-optimization" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>I&#39;m transforming S. cerevisiae with a new uricase expression construct.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>I'm transforming S. cerevisiae with a new uricase expression construct.
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Goal: High transformation efficiency (&gt;100 transformants per μg DNA) with stable integrants.
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Current plan: Use chromosomal integration at a neutral locus, not episomal plasmid.
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Questions:
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>1. Which loci in S. cerevisiae genome are &quot;neutral&quot; for high transgene expression?
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>1. Which loci in S. cerevisiae genome are "neutral" for high transgene expression?
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>   (Literature shows some loci give 100x higher expression than others)
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>2. What transformation method is best for chromosomal integration?
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>   - Lithium acetate (simple, ~90% efficiency with competent cells)
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>   - Electroporation (faster, more DNA control)
 <a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>   - Agrobacterium tumefaciens (for A. oryzae, also works for some yeasts)
 <a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>3. Selectable markers: recommend lab (G418, hygromycin) vs. food-safe (auxotrophic complementation, prototrophic)?
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>4. How many integrants should I screen, and what&#39;s the expected range of expression?
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>4. How many integrants should I screen, and what's the expected range of expression?
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>5. Any known problems with multi-copy integration at my target locus?
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>Output:
@@ -6668,7 +6668,7 @@
 <p><strong>Expected output:</strong> Strategic guidance that saves weeks of trial-and-error.</p>
 <hr />
 <h4 id="prompt-5-enzyme-activity-prediction-and-assay-design">Prompt 5: Enzyme Activity Prediction and Assay Design<a class="headerlink" href="#prompt-5-enzyme-activity-prediction-and-assay-design" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>I&#39;ve successfully expressed A. flavus uricase in S. cerevisiae. Now I need to assay activity.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>I've successfully expressed A. flavus uricase in S. cerevisiae. Now I need to assay activity.
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Enzyme: Urate oxidase (uricase)
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>- Native MW: ~135 kDa (homotetrameric)
@@ -6678,7 +6678,7 @@
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>- Product: Allantoin (also produces CO2 and H2O2)
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>Questions:
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>1. What&#39;s the best assay method for high-throughput screening?
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>1. What's the best assay method for high-throughput screening?
 <a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>   - Spectrophotometric (measure uric acid decrease at 293 nm)
 <a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>   - HPLC (separate uric acid, allantoin, intermediates)
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>   - Other?
@@ -6689,7 +6689,7 @@
 <a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>   - Time course (how long until plateau?)
 <a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>   - Controls (positive: purified uricase; negative: non-transformed yeast)
 <a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>4. Calculation: specific activity formula (μmol substrate consumed / min / mg protein)
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>5. What&#39;s the minimum activity level needed for therapeutic relevance?
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>5. What's the minimum activity level needed for therapeutic relevance?
 <a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
 <a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>Output:
 <a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>- Recommended assay protocol (step-by-step)
@@ -6714,7 +6714,7 @@
 <a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>   - Heat drying (risk: denatures uricase)
 <a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>   - Lyophilization (better; enzyme stability testing needed)
 <a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>   - Spray drying (industrial scale)
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>8. Shelf life: What&#39;s expected stability at room temperature vs. refrigerated?
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>8. Shelf life: What's expected stability at room temperature vs. refrigerated?
 <a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
 <a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>Output:
 <a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>- Optimized fermentation protocol
@@ -6814,7 +6814,7 @@
 <a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>- Growth rate: 0.42 h⁻¹ (wild-type ~0.45 h⁻¹; 7% reduction = tolerable)
 <a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>- Doubling time: 98 min (vs. 92 min wild-type)
 <a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>- Metabolic burden: 10% protein production is sustainable
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>- Recommendation: pTEF1 is appropriate; don&#39;t go to higher-expressing promoters
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>- Recommendation: pTEF1 is appropriate; don't go to higher-expressing promoters
 <a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>- Risk flags: None; proceed to build construct
 </code></pre></div>
 <hr />
@@ -6873,7 +6873,7 @@
 <hr />
 <h4 id="use-case-3-strain-safety-assessment">Use Case 3: Strain Safety Assessment<a class="headerlink" href="#use-case-3-strain-safety-assessment" title="Permanent link">&para;</a></h4>
 <p><strong>Prompt to Claude:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>I&#39;m proposing to engineer S. cerevisiae with:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>I'm proposing to engineer S. cerevisiae with:
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>- A. flavus uricase gene (same as in rasburicase drug)
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>- Chromosomal integration (one copy)
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>- No antibiotic resistance markers (urea auxotrophy for selection)
@@ -6886,7 +6886,7 @@
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>3. Genetic construct safety: No oncogenic sequences, no hidden regulatory elements
 <a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>4. Manufacturing safety: Fermentation contamination risks, shelf stability
 <a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>5. Consumer use safety: Oral delivery, gut microbiota interactions, allergenic potential
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>6. Regulatory pathway: What would FDA require for &quot;food product&quot; vs. &quot;drug&quot;?
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>6. Regulatory pathway: What would FDA require for "food product" vs. "drug"?
 <a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
 <a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>Output: Safety assessment document (white paper format) with:
 <a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>- Risk summary
