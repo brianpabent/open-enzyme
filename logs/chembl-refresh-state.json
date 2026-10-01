@@ -1,39 +1,345 @@
 {
   "schema_version": 1,
-  "refreshed_at": "2026-07-01T12:59:22Z",
+  "refreshed_at": "2026-10-01T12:15:59Z",
   "trigger": {
     "event": "schedule",
-    "note": null
+    "note": "ci=github-actions-chembl-quarterly"
   },
   "chembl": {
-    "version": "v37",
+    "version": null,
     "base_url": "https://www.ebi.ac.uk/chembl/api/data/"
   },
   "queries": [
     {
-      "compound": "17 baseline compounds and 10 newly tracked compounds",
-      "resolved_chembl_id": null,
-      "requests": [],
-      "result_count": 27,
+      "compound": "Oridonin",
+      "resolved_chembl_id": "CHEMBL1164920",
+      "requests": [
+        "molecule/?pref_name__iexact=oridonin&format=json",
+        "activity/?molecule_chembl_id=CHEMBL1164920&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 408,
+      "status": "ok"
+    },
+    {
+      "compound": "Dapansutrile",
+      "resolved_chembl_id": "CHEMBL3989943",
+      "requests": [
+        "molecule/?pref_name__iexact=dapansutrile&format=json",
+        "activity/?molecule_chembl_id=CHEMBL3989943&format=json&limit=10&order_by=-pchembl_value",
+        "mechanism/?molecule_chembl_id=CHEMBL3989943&format=json"
+      ],
+      "result_count": 9,
+      "status": "ok"
+    },
+    {
+      "compound": "Sulforaphane",
+      "resolved_chembl_id": "CHEMBL48802",
+      "requests": [
+        "molecule/?pref_name__iexact=sulforaphane&format=json",
+        "activity/?molecule_chembl_id=CHEMBL48802&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 457,
+      "status": "ok"
+    },
+    {
+      "compound": "Quercetin",
+      "resolved_chembl_id": "CHEMBL50",
+      "requests": [
+        "molecule/?pref_name__iexact=quercetin&format=json",
+        "activity/?molecule_chembl_id=CHEMBL50&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 2978,
+      "status": "ok"
+    },
+    {
+      "compound": "EGCG",
+      "resolved_chembl_id": "CHEMBL297453",
+      "requests": [
+        "molecule/?pref_name__iexact=epigallocatechin+gallate&format=json",
+        "molecule/?molecule_synonyms__synonym__iexact=EGCG&format=json",
+        "activity/?molecule_chembl_id=CHEMBL297453&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 268,
       "status": "ok",
-      "migration_note": "The legacy narrative receipt named the compounds and API family but did not retain exact request parameters. See wiki/etc/chembl-cross-check.md at the 2026-07-01 commit for the resolved IDs and results."
+      "note": "ChEMBL pref_name typo: stored as EPIGALOCATECHIN GALLATE (single-L); exact-match queries fail silently"
+    },
+    {
+      "compound": "Curcumin",
+      "resolved_chembl_id": "CHEMBL140",
+      "requests": [
+        "molecule/?pref_name__iexact=curcumin&format=json",
+        "activity/?molecule_chembl_id=CHEMBL140&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 1055,
+      "status": "ok"
+    },
+    {
+      "compound": "Beta-caryophyllene",
+      "resolved_chembl_id": "CHEMBL445740",
+      "requests": [
+        "molecule/?pref_name__iexact=beta-caryophyllene&format=json",
+        "activity/?molecule_chembl_id=CHEMBL445740&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 8,
+      "status": "ok"
+    },
+    {
+      "compound": "Tranilast",
+      "resolved_chembl_id": "CHEMBL415324",
+      "requests": [
+        "molecule/?pref_name__iexact=tranilast&format=json",
+        "activity/?molecule_chembl_id=CHEMBL415324&format=json&limit=10&order_by=-pchembl_value",
+        "mechanism/?molecule_chembl_id=CHEMBL415324&format=json"
+      ],
+      "result_count": 78,
+      "status": "ok"
+    },
+    {
+      "compound": "Disulfiram",
+      "resolved_chembl_id": "CHEMBL964",
+      "requests": [
+        "molecule/?pref_name__iexact=disulfiram&format=json",
+        "activity/?molecule_chembl_id=CHEMBL964&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 282,
+      "status": "ok"
+    },
+    {
+      "compound": "D-Limonene",
+      "resolved_chembl_id": "CHEMBL449062",
+      "requests": [
+        "molecule/?pref_name__iexact=limonene&format=json",
+        "activity/?molecule_chembl_id=CHEMBL449062&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 1,
+      "status": "ok"
+    },
+    {
+      "compound": "N-Acetylcysteine",
+      "resolved_chembl_id": "CHEMBL600",
+      "requests": [
+        "molecule/?pref_name__iexact=acetylcysteine&format=json",
+        "activity/?molecule_chembl_id=CHEMBL600&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 465,
+      "status": "ok",
+      "note": "Indexed as Acetylcysteine; N-Acetylcysteine lookup returns empty"
+    },
+    {
+      "compound": "Carnosine",
+      "resolved_chembl_id": "CHEMBL242948",
+      "requests": [
+        "molecule/?pref_name__iexact=carnosine&format=json",
+        "activity/?molecule_chembl_id=CHEMBL242948&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 146,
+      "status": "ok"
+    },
+    {
+      "compound": "BHB",
+      "resolved_chembl_id": "CHEMBL1162496",
+      "requests": [
+        "molecule/?pref_name__iexact=3-hydroxybutyric+acid&format=json",
+        "activity/?molecule_chembl_id=CHEMBL1162496&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 24,
+      "status": "ok",
+      "note": "Indexed as (+/-)-3-hydroxybutyric acid; 0 pChEMBL records"
+    },
+    {
+      "compound": "Zileuton",
+      "resolved_chembl_id": "CHEMBL93",
+      "requests": [
+        "molecule/?pref_name__iexact=zileuton&format=json",
+        "activity/?molecule_chembl_id=CHEMBL93&format=json&limit=10&order_by=-pchembl_value",
+        "mechanism/?molecule_chembl_id=CHEMBL93&format=json"
+      ],
+      "result_count": 1220,
+      "status": "ok"
+    },
+    {
+      "compound": "Salidroside",
+      "resolved_chembl_id": "CHEMBL465208",
+      "requests": [
+        "molecule/?pref_name__iexact=salidroside&format=json",
+        "activity/?molecule_chembl_id=CHEMBL465208&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 211,
+      "status": "ok"
+    },
+    {
+      "compound": "Colchicine",
+      "resolved_chembl_id": "CHEMBL107",
+      "requests": [
+        "molecule/?pref_name__iexact=colchicine&format=json",
+        "activity/?molecule_chembl_id=CHEMBL107&format=json&limit=10&order_by=-pchembl_value",
+        "mechanism/?molecule_chembl_id=CHEMBL107&format=json"
+      ],
+      "result_count": 1436,
+      "status": "ok"
+    },
+    {
+      "compound": "Theaflavin (TF1)",
+      "resolved_chembl_id": "CHEMBL346119",
+      "requests": [
+        "molecule/?pref_name__iexact=theaflavin&format=json",
+        "activity/?molecule_chembl_id=CHEMBL346119&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 5,
+      "status": "ok"
+    },
+    {
+      "compound": "Theaflavin-3,3'-digallate (TF3)",
+      "resolved_chembl_id": "CHEMBL434864",
+      "requests": [
+        "molecule/?pref_name__iexact=theaflavin+digallate&format=json",
+        "activity/?molecule_chembl_id=CHEMBL434864&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 4,
+      "status": "ok"
+    },
+    {
+      "compound": "Resolvin D1",
+      "resolved_chembl_id": null,
+      "requests": [
+        "molecule/?pref_name__iexact=resolvin+D1&format=json",
+        "molecule/?molecule_synonyms__synonym__iexact=RvD1&format=json",
+        "molecule/?pref_name__icontains=resolvin+D&format=json"
+      ],
+      "result_count": 0,
+      "status": "not-indexed"
+    },
+    {
+      "compound": "Maresin 1",
+      "resolved_chembl_id": null,
+      "requests": [
+        "molecule/?pref_name__iexact=maresin+1&format=json",
+        "molecule/?molecule_synonyms__synonym__iexact=MaR1&format=json",
+        "molecule/?pref_name__icontains=maresin&format=json"
+      ],
+      "result_count": 0,
+      "status": "not-indexed"
+    },
+    {
+      "compound": "Cholecalciferol",
+      "resolved_chembl_id": "CHEMBL1042",
+      "requests": [
+        "molecule/?pref_name__iexact=cholecalciferol&format=json",
+        "activity/?molecule_chembl_id=CHEMBL1042&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 83,
+      "status": "ok"
+    },
+    {
+      "compound": "Ursolic acid",
+      "resolved_chembl_id": "CHEMBL169",
+      "requests": [
+        "molecule/?pref_name__iexact=ursolic+acid&format=json",
+        "activity/?molecule_chembl_id=CHEMBL169&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 301,
+      "status": "ok"
+    },
+    {
+      "compound": "Genistein",
+      "resolved_chembl_id": "CHEMBL44",
+      "requests": [
+        "molecule/?pref_name__iexact=genistein&format=json",
+        "activity/?molecule_chembl_id=CHEMBL44&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 353,
+      "status": "ok"
+    },
+    {
+      "compound": "Spermidine",
+      "resolved_chembl_id": "CHEMBL19612",
+      "requests": [
+        "molecule/?pref_name__iexact=spermidine&format=json",
+        "activity/?molecule_chembl_id=CHEMBL19612&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 33,
+      "status": "ok"
+    },
+    {
+      "compound": "Cordycepin",
+      "resolved_chembl_id": "CHEMBL305686",
+      "requests": [
+        "molecule/?pref_name__iexact=cordycepin&format=json",
+        "activity/?molecule_chembl_id=CHEMBL305686&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 38,
+      "status": "ok"
+    },
+    {
+      "compound": "BPC-157",
+      "resolved_chembl_id": "CHEMBL4297358",
+      "requests": [
+        "molecule/?pref_name__iexact=BPC-157&format=json",
+        "activity/?molecule_chembl_id=CHEMBL4297358&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 0,
+      "status": "ok",
+      "note": "Registered in ChEMBL but 0 bioactivity records"
+    },
+    {
+      "compound": "Apelin-13",
+      "resolved_chembl_id": null,
+      "requests": [
+        "molecule/?pref_name__iexact=apelin-13&format=json",
+        "molecule/?pref_name__icontains=apelin&format=json"
+      ],
+      "result_count": 0,
+      "status": "not-indexed",
+      "note": "Stub CHEMBL4650373 exists with molecule_type=Unknown and 0 activities"
+    },
+    {
+      "compound": "Thymulin",
+      "resolved_chembl_id": null,
+      "requests": [
+        "molecule/?pref_name__iexact=thymulin&format=json",
+        "molecule/?pref_name__iexact=FTS&format=json",
+        "molecule/?pref_name__icontains=thymulin&format=json"
+      ],
+      "result_count": 0,
+      "status": "not-indexed",
+      "note": "NONATHYMULIN analogue (CHEMBL2106455, Protein type) exists with 0 activities; thymulin itself absent"
+    },
+    {
+      "compound": "KPV",
+      "resolved_chembl_id": null,
+      "requests": [
+        "molecule/?pref_name__iexact=KPV&format=json",
+        "molecule/?pref_name__icontains=Lys-Pro-Val&format=json"
+      ],
+      "result_count": 0,
+      "status": "not-indexed"
+    },
+    {
+      "compound": "Eurycomanone",
+      "resolved_chembl_id": "CHEMBL1171981",
+      "requests": [
+        "molecule/?pref_name__iexact=eurycomanone&format=json",
+        "activity/?molecule_chembl_id=CHEMBL1171981&format=json&limit=10&order_by=-pchembl_value"
+      ],
+      "result_count": 3,
+      "status": "ok"
     }
   ],
   "counts": {
-    "baseline_queried": 17,
-    "new_compounds_queried": 10,
+    "baseline_queried": 27,
+    "new_compounds_queried": 3,
     "meaningful_discrepancies": 2
   },
   "failures": [
     {
       "source": "MCP",
-      "request": "ChEMBL compound search and bioactivity tools",
-      "error": "Unavailable; the run used the ChEMBL REST API fallback."
+      "request": "mcp__plugin_chembl_ChEMBL__compound_search",
+      "error": "Tool not available in this run (ToolSearch returned no match). All queries executed via ChEMBL REST API fallback."
     }
   ],
   "queue_files": [
-    "synthesis/queue/2026-07-01-chembl-discrepancy-1-ursolic-acid-ror-gamma.md",
-    "synthesis/queue/2026-07-01-chembl-discrepancy-2-curcumin-dyrk2.md"
+    "synthesis/queue/2026-10-01-chembl-discrepancy-1-salidroside-mao-b.md",
+    "synthesis/queue/2026-10-01-chembl-discrepancy-2-theaflavin-digallate-oatp1b.md"
   ],
-  "verification_status": "partial"
+  "verification_status": "complete"
 }
