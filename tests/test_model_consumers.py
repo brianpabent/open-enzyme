@@ -143,6 +143,13 @@ class ConsumerTests(unittest.TestCase):
                 comp.review("offline-placeholder", "qwen/qwen3-coder", "test", tools=True, max_tokens=100)
             transport.assert_not_called()
 
+    def test_explicit_empty_radar_override_cannot_silently_select_default(self):
+        with patch.object(radar, "openrouter_key") as key:
+            with self.assertRaisesRegex(radar.RadarError, "Unknown or unverified model"):
+                radar.review_settings({"role": "evidence_radar_review"}, "")
+            key.assert_not_called()
+        self.assertEqual("openai/gpt-5.5", radar.review_settings({"role": "evidence_radar_review"})["model"])
+
     def test_unknown_cli_models_and_invalid_budgets_fail_before_credentials_or_writes(self):
         cases = [
             (comp, ["--comp-dir", "missing", "--model", "unknown/model"], "resolve_comp"),

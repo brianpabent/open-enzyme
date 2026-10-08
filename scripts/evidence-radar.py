@@ -1023,7 +1023,7 @@ def review_settings(review_config: dict[str, Any], model_override: str | None = 
     try:
         settings = model_settings.role(review_config.get("role", "evidence_radar_review"))
         settings.update(review_config)
-        settings["model"] = model_override or settings["model"]
+        settings["model"] = settings["model"] if model_override is None else model_override
         model_settings.model(settings["model"], transport="openrouter_chat")
         rates = model_settings.token_rates(settings["model"])
         # Old saved configs are accepted only when their prices still match the
