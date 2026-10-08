@@ -56,6 +56,7 @@ The two cursors are intentionally independent. A push may be fully published and
 - quarterly openFDA/FAERS searches scan the newly released receipt-date quarter for `GOUT`, `HYPERURICAEMIA`, `BLOOD URIC ACID INCREASED`, `GOUTY ARTHRITIS`, and `GOUTY TOPHUS`;
 - report-level parsing keeps each FAERS drug's suspect/concomitant/interacting classification attached to that drug, rather than treating every drug and reaction in a report as a pair;
 - deterministic collection happens before model review; zero-candidate runs cost zero model tokens;
+- review preflight and the API request share a candidate-count output allowance: an 8,000-token floor, 256 tokens per candidate plus 4,096 shared overhead tokens, and a 32,000-token ceiling; the projected allowance must fit the existing per-feed dollar cap before any model call, and packets above the ceiling defer without clipping;
 - capped FAERS review batches retain an exact-window backlog and do not advance the quarter cursor until every eligible subject has a disposition;
 - monitor decisions persist by subject with their rationale so later windows can accumulate or weaken the lead;
 - a hash-bound, context-isolated review may dismiss, monitor, or emit one active action brief; raw packets and review output expire from CI after seven days.

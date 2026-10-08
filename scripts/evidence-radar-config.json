@@ -124,6 +124,9 @@
     "max_cost_usd": 0.75,
     "estimated_input_usd_per_million_tokens": 5.0,
     "estimated_output_usd_per_million_tokens": 20.0,
-    "maximum_output_tokens": 8000
+    "minimum_output_tokens": 8000,
+    "output_tokens_per_candidate": 256,
+    "output_token_overhead": 4096,
+    "maximum_output_tokens": 32000
   }
 }

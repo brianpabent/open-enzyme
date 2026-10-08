@@ -59,6 +59,9 @@ jobs:
       - name: Check evidence-radar current state
         run: python3 scripts/evidence-radar.py check
 
+      - name: Check evidence-radar review contracts
+        run: python3 -m unittest tests.test_evidence_radar
+
       - name: Check retired COMP invalidation ledgers
         run: python3 scripts/check-comp-invalidation.py --all
 
