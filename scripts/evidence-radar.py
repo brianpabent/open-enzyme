@@ -27,6 +27,11 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import build_opener, HTTPCookieProcessor, Request
 
+try:
+    import model_settings
+except ModuleNotFoundError:
+    from scripts import model_settings
+
 
 ROOT = Path(__file__).resolve().parents[1]
 os.chdir(ROOT)
@@ -1014,19 +1019,41 @@ def collect_faers(
     return packet, next_state
 
 
+def review_settings(review_config: dict[str, Any], model_override: str | None = None) -> dict[str, Any]:
+    try:
+        settings = model_settings.role(review_config.get("role", "evidence_radar_review"))
+        settings.update(review_config)
+        settings["model"] = model_override or settings["model"]
+        model_settings.model(settings["model"], transport="openrouter_chat")
+        rates = model_settings.token_rates(settings["model"])
+        # Old saved configs are accepted only when their prices still match the
+        # exact selected model. A model override never inherits the old rates.
+        if model_override is None:
+            for field, price in (("estimated_input_usd_per_million_tokens", rates["input"]), ("estimated_output_usd_per_million_tokens", rates["output"])):
+                if field in review_config and review_config[field] != price:
+                    raise model_settings.ModelSettingsError(f"Legacy {field} disagrees with selected model registry")
+        settings.pop("estimated_input_usd_per_million_tokens", None)
+        settings.pop("estimated_output_usd_per_million_tokens", None)
+        return settings
+    except model_settings.ModelSettingsError as exc:
+        raise RadarError(str(exc)) from exc
+
+
 def review_output_tokens(packet: dict[str, Any], review_config: dict[str, Any]) -> int:
+    review_config = review_settings(review_config)
     candidate_count = len(packet.get("candidates") or [])
     if not candidate_count:
         return 0
     try:
-        maximum = int(review_config.get("maximum_output_tokens", 32000))
-        minimum = int(review_config.get("minimum_output_tokens", 8000))
-        per_candidate = int(review_config.get("output_tokens_per_candidate", 256))
-        overhead = int(review_config.get("output_token_overhead", 4096))
+        maximum = int(review_config["maximum_output_tokens"])
+        minimum = int(review_config["minimum_output_tokens"])
+        per_candidate = int(review_config["output_tokens_per_candidate"])
+        overhead = int(review_config["output_token_overhead"])
     except (TypeError, ValueError, OverflowError) as exc:
         raise RadarError("Invalid review output-token budget") from exc
     if not 0 < minimum <= maximum or per_candidate <= 0 or overhead < 0:
         raise RadarError("Invalid review output-token budget")
+    maximum = min(maximum, model_settings.model(review_config["model"])["maximum_output_tokens"])
     # Reserve space for every structured decision plus shared response/reasoning
     # overhead. Never clip the per-candidate allowance for an oversized packet.
     required = max(minimum, overhead + candidate_count * per_candidate)
@@ -1036,19 +1063,18 @@ def review_output_tokens(packet: dict[str, Any], review_config: dict[str, Any]) 
 
 
 def review_token_rates(review_config: dict[str, Any]) -> tuple[float, float]:
-    return (
-        float(review_config.get("estimated_input_usd_per_million_tokens") or 5.0),
-        float(review_config.get("estimated_output_usd_per_million_tokens") or 30.0),
-    )
+    config = review_settings(review_config)
+    rates = model_settings.token_rates(config["model"])
+    return rates["input"], rates["output"]
 
 
 def estimated_review_cost(packet: dict[str, Any], prompt: str, review_config: dict[str, Any]) -> float:
+    review_config = review_settings(review_config)
     output_tokens = review_output_tokens(packet, review_config)
     if not output_tokens:
         return 0.0
     input_tokens = (len(prompt) + len(json.dumps(packet, ensure_ascii=False))) / 4
-    input_rate, output_rate = review_token_rates(review_config)
-    return input_tokens / 1_000_000 * input_rate + output_tokens / 1_000_000 * output_rate
+    return model_settings.estimate_cost(review_config["model"], input_tokens, output_tokens)
 
 
 def review_schema() -> dict[str, Any]:
@@ -1101,10 +1127,9 @@ def openrouter_review(
     model: str,
     maximum_output_tokens: int,
 ) -> tuple[dict[str, Any], dict[str, float]]:
-    key = openrouter_key()
     body = {
         "model": model,
-        "temperature": 0.1,
+        "temperature": model_settings.role("evidence_radar_review")["temperature"],
         "max_tokens": maximum_output_tokens,
         "messages": [{
             "role": "user",
@@ -1115,6 +1140,11 @@ def openrouter_review(
             "json_schema": {"name": "evidence_radar_review", "strict": True, "schema": review_schema()},
         },
     }
+    try:
+        body = model_settings.chat_body(body)
+    except model_settings.ModelSettingsError as exc:
+        raise RadarError(str(exc)) from exc
+    key = openrouter_key()
     request = Request(
         "https://openrouter.ai/api/v1/chat/completions",
         data=json.dumps(body).encode(),
@@ -1153,10 +1183,15 @@ def openrouter_review(
     except json.JSONDecodeError as exc:
         raise RadarError(f"Reviewer did not return valid JSON: {exc}") from exc
     usage_raw = response.get("usage") or {}
+    try:
+        cost, estimated = model_settings.usage_cost(model, usage_raw)
+    except model_settings.ModelSettingsError as exc:
+        raise RadarError(str(exc)) from exc
     usage = {
         "input_tokens": float(usage_raw.get("prompt_tokens") or 0),
         "output_tokens": float(usage_raw.get("completion_tokens") or 0),
-        "cost_usd": float(usage_raw.get("cost") or 0),
+        "cost_usd": cost,
+        "cost_is_estimated": estimated,
     }
     return review, usage
 
@@ -1207,9 +1242,13 @@ def run_review(
     max_cost_override: float | None,
 ) -> dict[str, Any]:
     verify_hash(packet, "packet_sha256")
-    review_config = config["review"]
-    model = model_override or str(review_config["model"])
+    review_config = review_settings(config["review"], model_override)
+    model = str(review_config["model"])
     maximum_cost = max_cost_override if max_cost_override is not None else float(review_config["max_cost_usd"])
+    try:
+        model_settings.nonnegative(maximum_cost, "max_cost_usd")
+    except model_settings.ModelSettingsError as exc:
+        raise RadarError(str(exc)) from exc
     if not packet.get("candidates"):
         review = {
             "schema_version": 1,
@@ -1228,17 +1267,17 @@ def run_review(
             model=model,
             maximum_output_tokens=review_output_tokens(packet, review_config),
         )
-        if usage["cost_usd"] <= 0:
-            input_rate, output_rate = review_token_rates(review_config)
-            usage["cost_usd"] = (
-                usage["input_tokens"] / 1_000_000 * input_rate
-                + usage["output_tokens"] / 1_000_000 * output_rate
-            )
+        if "cost_is_estimated" not in usage and usage["cost_usd"] <= 0:
+            # Compatibility with earlier normalized usage receipts where zero
+            # denoted a missing provider cost, rather than a billed zero.
+            usage["cost_usd"] = model_settings.estimate_cost(model, usage["input_tokens"], usage["output_tokens"])
+            usage["cost_is_estimated"] = True
         if usage["cost_usd"] > maximum_cost:
             raise RadarError(f"Actual review cost ${usage['cost_usd']:.4f} exceeds cap ${maximum_cost:.4f}")
     validate_review(packet, review)
     review["reviewed_at"] = utc_now()
     review["reviewer_model"] = model
+    review["model_settings_sha256"] = model_settings.registry_sha256()
     review["usage"] = usage
     with_hash(review, "review_sha256")
     return review
@@ -1621,16 +1660,22 @@ def main() -> None:
         packet = load_json(resolve_path(args.packet))
         if args.prepare_only:
             verify_hash(packet, "packet_sha256")
-            review_config = config["review"]
+            review_config = review_settings(config["review"], args.model)
             prompt = DEFAULT_REVIEW_PROMPT.read_text()
             projected = estimated_review_cost(packet, prompt, review_config)
             cap = args.max_cost_usd if args.max_cost_usd is not None else float(review_config["max_cost_usd"])
+            try:
+                model_settings.nonnegative(cap, "max_cost_usd")
+            except model_settings.ModelSettingsError as exc:
+                raise RadarError(str(exc)) from exc
             result = {
                 "candidate_count": packet.get("candidate_count", 0),
                 "packet_sha256": packet["packet_sha256"],
                 "maximum_output_tokens": review_output_tokens(packet, review_config),
                 "projected_cost_usd": round(projected, 6),
                 "max_cost_usd": cap,
+                "model": review_config["model"],
+                "model_settings_sha256": model_settings.registry_sha256(),
                 "within_cap": projected <= cap,
             }
             print(json.dumps(result, sort_keys=True))

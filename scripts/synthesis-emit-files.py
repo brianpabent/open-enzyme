@@ -17,11 +17,13 @@ import sys
 from pathlib import Path
 
 from synthesis_normalize import NormalizationError, verify_manifest
+import model_settings
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 os.chdir(REPO_ROOT)
 
 SEPARATOR = "<<<NEXT>>>"
+ROLE = model_settings.role("synthesis_emission")
 
 VERDICT_RE = re.compile(r"Pass 3 review\s*[—-]\s*([A-Za-z][A-Za-z\- ,]+?)(?:\.|`|$)")
 OVERLAP_RE = re.compile(r"\[OVERLAP:\s*([A-Z]+(?:-[A-Z0-9]+)*)\]|\[DUPLICATE-OF-(\d+)\]")
@@ -185,8 +187,8 @@ def main():
                         help="Last sweep commit SHA")
     parser.add_argument("--trigger-files", default="",
                         help="Comma-separated trigger files")
-    parser.add_argument("--synthesizer", default="google/gemini-2.5-pro")
-    parser.add_argument("--reviewer", default="openai/gpt-5.5")
+    parser.add_argument("--synthesizer", default=ROLE["synthesizer_label"])
+    parser.add_argument("--reviewer", default=ROLE["reviewer_label"])
     parser.add_argument("--queue-dir", default="synthesis/queue",
                         help="Directory for per-item queue files")
     parser.add_argument("--sweep-date", default=None,

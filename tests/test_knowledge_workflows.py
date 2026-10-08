@@ -512,10 +512,12 @@ class WorkflowTriggerTests(unittest.TestCase):
         self.assertIn("uses: ./.github/workflows/wiki-propagate.yml", propagate)
 
     def test_propagation_cost_limit_is_a_runaway_guardrail(self):
+        from scripts import model_settings
         workflow = (ROOT / ".github/workflows/wiki-propagate.yml").read_text()
         self.assertIn("Emergency runaway cap", workflow)
-        self.assertIn("default: '5.00'", workflow)
-        self.assertIn("inputs.max_cost_usd || '5.00'", workflow)
+        self.assertIn("scripts/model_settings.py env bounded_propagation", workflow)
+        self.assertIn('MAX_COST_USD=$BUDGET_OVERRIDE', workflow)
+        self.assertEqual("5.0", model_settings.workflow_environment("bounded_propagation")["MAX_COST_USD"])
 
     def test_comp_review_fails_closed_before_model_calls(self):
         workflow = (ROOT / ".github/workflows/comp-review.yml").read_text()

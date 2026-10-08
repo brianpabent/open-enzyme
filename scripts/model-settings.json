@@ -43,7 +43,8 @@
       ],
       "provider_tags": [
         "azure",
-        "openai"
+        "openai",
+        "openai/flex"
       ],
       "provider_rate_limits": {
         "prompt": 5.0,
@@ -85,7 +86,7 @@
         "top_p"
       ],
       "provider_tags": [
-        "streamlake"
+        "streamlake/fp8"
       ],
       "provider_rate_limits": {
         "prompt": 0.287274,
@@ -126,7 +127,9 @@
       ],
       "provider_tags": [
         "google-ai-studio",
-        "google-vertex"
+        "google-ai-studio/flex",
+        "google-vertex/eu",
+        "google-vertex/global"
       ],
       "provider_rate_limits": {
         "prompt": 0.3,
@@ -171,7 +174,7 @@
         "top_p"
       ],
       "provider_tags": [
-        "relace"
+        "relace/fp4"
       ],
       "provider_rate_limits": {
         "prompt": 0.0075,
@@ -219,7 +222,9 @@
       ],
       "provider_tags": [
         "google-ai-studio",
-        "google-vertex"
+        "google-ai-studio/flex",
+        "google-vertex/global",
+        "google-vertex/us"
       ],
       "provider_rate_limits": {
         "prompt": 1.25,
@@ -260,7 +265,7 @@
       ],
       "provider_tags": [
         "azure",
-        "openai"
+        "openai/default"
       ],
       "provider_rate_limits": {
         "prompt": 1.25,
@@ -301,7 +306,8 @@
       ],
       "provider_tags": [
         "azure",
-        "openai"
+        "openai",
+        "openai/flex"
       ],
       "provider_rate_limits": {
         "prompt": 0.25,
@@ -349,7 +355,8 @@
         "top_p"
       ],
       "provider_tags": [
-        "xai"
+        "xai",
+        "xai/zdr"
       ],
       "provider_rate_limits": {
         "prompt": 1.25,
@@ -389,7 +396,7 @@
         "top_p"
       ],
       "provider_tags": [
-        "deepinfra"
+        "deepinfra/fp8"
       ],
       "provider_rate_limits": {
         "prompt": 0.1,
@@ -428,7 +435,7 @@
         "top_p"
       ],
       "provider_tags": [
-        "novita"
+        "novita/fp8"
       ],
       "provider_rate_limits": {
         "prompt": 0.27,
@@ -472,7 +479,7 @@
         "top_p"
       ],
       "provider_tags": [
-        "deepinfra"
+        "deepinfra/turbo"
       ],
       "provider_rate_limits": {
         "prompt": 0.3,
@@ -517,11 +524,11 @@
         "verbosity"
       ],
       "provider_tags": [
-        "amazon-bedrock",
+        "amazon-bedrock/global",
         "anthropic",
-        "azure",
+        "azure/global",
         "claude-on-aws",
-        "google-vertex"
+        "google-vertex/global"
       ],
       "provider_rate_limits": {
         "prompt": 3.0,
@@ -563,11 +570,11 @@
         "verbosity"
       ],
       "provider_tags": [
-        "amazon-bedrock",
+        "amazon-bedrock/global",
         "anthropic",
-        "azure",
+        "azure/global",
         "claude-on-aws",
-        "google-vertex"
+        "google-vertex/global"
       ],
       "provider_rate_limits": {
         "prompt": 5.0,
@@ -610,10 +617,10 @@
         "top_p"
       ],
       "provider_tags": [
-        "amazon-bedrock",
+        "amazon-bedrock/global",
         "anthropic",
-        "azure",
-        "google-vertex"
+        "azure/global",
+        "google-vertex/global"
       ],
       "provider_rate_limits": {
         "prompt": 1.0,
@@ -657,9 +664,9 @@
       "provider_tags": [
         "amazon-bedrock",
         "anthropic",
-        "azure",
+        "azure/global",
         "claude-on-aws",
-        "google-vertex"
+        "google-vertex/global"
       ],
       "provider_rate_limits": {
         "prompt": 2.0,
@@ -702,7 +709,8 @@
       "maximum_output_tokens": 32000,
       "workflow_env": {
         "MAX_COST_USD": "max_cost_usd"
-      }
+      },
+      "transport": "openrouter_chat"
     },
     "bounded_propagation": {
       "model": "deepseek/deepseek-v4-pro",
@@ -715,7 +723,8 @@
         "PROPAGATION_MODEL": "model",
         "MAX_COST_USD": "max_cost_usd",
         "MAX_ITERATIONS": "workflow_max_iterations"
-      }
+      },
+      "transport": "openrouter_chat"
     },
     "distributed_synthesis": {
       "models": {
@@ -733,7 +742,8 @@
       "temperature": 0.15,
       "workflow_env": {
         "MAX_COST_USD": "max_cost_usd"
-      }
+      },
+      "transport": "openrouter_chat"
     },
     "comp_review": {
       "model": "openai/gpt-5.5",
@@ -752,7 +762,8 @@
         "COMP_REVIEW_MODEL": "model",
         "PER_COMP_CAP": "max_cost_usd",
         "AGGREGATE_CAP": "aggregate_max_cost_usd"
-      }
+      },
+      "transport": "openrouter_chat"
     },
     "quarterly_chembl_refresh": {
       "model": "claude-sonnet-4-6",
@@ -760,21 +771,24 @@
       "output_tokens": null,
       "workflow_env": {
         "ANTHROPIC_MODEL": "model"
-      }
+      },
+      "transport": "anthropic_cli"
     },
     "manual_fresh_synthesis": {
       "model": "deepseek/deepseek-v4-pro",
       "max_cost_usd": null,
       "output_tokens": 6000,
       "temperature": 0.7,
-      "context_margin_tokens": 20000
+      "context_margin_tokens": 20000,
+      "transport": "openrouter_chat"
     },
     "manual_propagation_eval": {
       "model": null,
       "max_cost_usd": null,
       "output_tokens": 4000,
       "temperature": 0.3,
-      "max_iterations": 30
+      "max_iterations": 30,
+      "transport": "openrouter_chat"
     },
     "synthesis_emission": {
       "synthesizer_label": "google/gemini-2.5-pro",

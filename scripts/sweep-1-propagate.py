@@ -3,9 +3,7 @@
 sweep-1-propagate.py — Pass 1 propagation driver via OpenRouter.
 
 Replaces `claude --dangerously-skip-permissions -p ...` for Pass 1. Routes
-through OpenRouter (default: anthropic/claude-sonnet-4-6) so we are not
-bound by the Anthropic-direct 30K ITPM org limit, which kills Pass 1 on
-medium-sized propagation jobs.
+through OpenRouter with the versioned bounded_propagation role.
 
 The agentic loop is the same shape as scripts/eval-propagation.py: model
 gets read_file / edit_file / write_file / list_files / grep / done over
@@ -41,7 +39,13 @@ import time
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(REPO_ROOT)
 
-DEFAULT_MODEL = "deepseek/deepseek-v4-pro"
+try:
+    import model_settings
+except ModuleNotFoundError:
+    from scripts import model_settings
+
+ROLE = model_settings.role("bounded_propagation")
+DEFAULT_MODEL = ROLE["model"]
 DEFAULT_PROMPT = "scripts/sweep-prompt-1-propagate.md"
 
 # Paths the model is forbidden to write to. Mirrors sweep-prompt-1-propagate.md
@@ -58,29 +62,6 @@ READ_ONLY_GLOBS = [
     ".obsidian/**",
     ".git/**",
 ]
-
-# OpenRouter pricing per Mtok (input, output) — for cost reporting.
-PRICING_USD_PER_MTOK = {
-    "anthropic/claude-sonnet-4-6":  (3.00, 15.00),
-    "anthropic/claude-haiku-4-5":   (0.80, 4.00),
-    "anthropic/claude-opus-4-7":    (15.00, 75.00),
-    "deepseek/deepseek-v4-pro":     (0.435, 0.87),
-}
-
-# Anthropic prompt-cache read pricing per Mtok. Cache reads bill at 10% of base
-# input. Cache writes bill at 1.25× base; we don't bother tracking write cost
-# separately since OpenRouter's OAI-compat usage shim doesn't expose the
-# write/non-cached split (only the read portion via prompt_tokens_details).
-# Result: the printed cost slightly UNDER-reports vs. the OpenRouter dashboard
-# (treats writes at 1× instead of 1.25×). The dashboard will show a higher
-# bill than the script prints; reconcile against the dashboard when the gap
-# matters. The savings *direction* is still correct, but the magnitude here
-# is optimistic, not conservative.
-CACHE_READ_USD_PER_MTOK = {
-    "anthropic/claude-sonnet-4-6":  0.30,
-    "anthropic/claude-haiku-4-5":   0.08,
-    "anthropic/claude-opus-4-7":    1.50,
-}
 
 TOOLS = [
     {"type": "function", "function": {
@@ -289,14 +270,15 @@ def _inject_cache_breakpoints(messages, model):
     return out
 
 
-def call_openrouter(api_key, model, messages, max_tokens=4000, max_retries=4):
+def call_openrouter(api_key, model, messages, max_tokens=ROLE["output_tokens"], max_retries=4):
     body = {
         "model": model,
         "messages": _inject_cache_breakpoints(messages, model),
         "tools": TOOLS,
         "max_tokens": max_tokens,
-        "temperature": 0.3,
+        "temperature": ROLE["temperature"],
     }
+    body = model_settings.chat_body(body)
     with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as tf:
         json.dump(body, tf)
         body_path = tf.name
@@ -357,7 +339,10 @@ def call_openrouter(api_key, model, messages, max_tokens=4000, max_retries=4):
         os.unlink(body_path)
 
 
-def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=12, max_cost_usd=5.00):
+def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=ROLE["max_iterations"], max_cost_usd=ROLE["max_cost_usd"]):
+    model_settings.model(model, transport="openrouter_chat")
+    model_settings.nonnegative(max_cost_usd, "max_cost_usd", positive=True)
+    model_settings.positive_int(max_iterations, "max_iterations")
     messages = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt},
@@ -383,15 +368,9 @@ def run_agentic_loop(api_key, model, system_prompt, user_prompt, max_iterations=
         total_in += in_tok
         total_out += out_tok
         total_cached += cached_tok
-        provider_cost = usage.get("cost")
-        if provider_cost is not None:
-            total_cost += float(provider_cost)
-        else:
-            in_per, out_per = PRICING_USD_PER_MTOK.get(model, (None, None))
-            if in_per is None:
-                raise SystemExit("Provider omitted usage.cost and no conservative route estimate is configured")
-            total_cost += (in_tok * in_per + out_tok * out_per) / 1_000_000
-            cost_is_estimated = True
+        cost, estimated = model_settings.usage_cost(model, usage, prompt_cache=model_settings.model(model)["prompt_cache_control"])
+        total_cost += cost
+        cost_is_estimated = cost_is_estimated or estimated
         if total_cost > max_cost_usd:
             raise SystemExit(
                 f"Propagation cost ${total_cost:.4f} exceeded hard cap ${max_cost_usd:.4f}; "
@@ -549,12 +528,15 @@ def main():
     parser.add_argument("--model", default=DEFAULT_MODEL,
                         help=f"OpenRouter model slug (default: {DEFAULT_MODEL})")
     parser.add_argument("--prompt-file", default=DEFAULT_PROMPT)
-    parser.add_argument("--max-iterations", type=int, default=12)
-    parser.add_argument("--max-cost-usd", type=float, default=5.00)
+    parser.add_argument("--max-iterations", type=int, default=ROLE["max_iterations"])
+    parser.add_argument("--max-cost-usd", type=float, default=ROLE["max_cost_usd"])
     parser.add_argument("--dry-run", action="store_true",
                         help="Run the agentic loop and report changes, but skip git commit")
     args = parser.parse_args()
 
+    model_settings.model(args.model, transport="openrouter_chat")
+    model_settings.nonnegative(args.max_cost_usd, "max_cost_usd", positive=True)
+    model_settings.positive_int(args.max_iterations, "max_iterations")
     api_key = read_api_key()
 
     # Normalize trigger files (accept both newline and comma separated)
@@ -603,22 +585,8 @@ def main():
         max_cost_usd=args.max_cost_usd,
     )
 
-    in_per, out_per = PRICING_USD_PER_MTOK.get(args.model, (None, None))
-    cache_read_per = CACHE_READ_USD_PER_MTOK.get(args.model)
     cached = loop["cached_input_tokens"]
-    non_cached = max(0, loop["input_tokens"] - cached)
-    if in_per is not None:
-        if cache_read_per is not None and cached > 0:
-            cost = (
-                non_cached * in_per
-                + cached * cache_read_per
-                + loop["output_tokens"] * out_per
-            ) / 1_000_000
-        else:
-            cost = (loop["input_tokens"] * in_per + loop["output_tokens"] * out_per) / 1_000_000
-        cost_str = f"${loop['cost_usd']:.4f}" + (" estimated" if loop["cost_is_estimated"] else "")
-    else:
-        cost_str = "(unknown)"
+    cost_str = f"${loop['cost_usd']:.4f}" + (" estimated" if loop["cost_is_estimated"] else "")
 
     print(
         f"\nLoop finished: iters={loop['iterations']} completed={loop['completed']} "

@@ -49,6 +49,8 @@ def validate_registry(data: dict[str, Any]) -> None:
     if not isinstance(models, dict) or not models or not isinstance(roles, dict) or not roles:
         raise ModelSettingsError("Model registry requires models and roles")
     for name, spec in models.items():
+        if not isinstance(name, str) or not name or not isinstance(spec, dict):
+            raise ModelSettingsError("Model entries must be named objects")
         if spec.get("transport") not in {"openrouter_chat", "anthropic_cli"}:
             raise ModelSettingsError(f"Unsupported transport for {name}")
         if not spec.get("sources") or not spec.get("verified_on"):
@@ -70,7 +72,7 @@ def validate_registry(data: dict[str, Any]) -> None:
             last_threshold = threshold
             for field in ("input", "output"):
                 nonnegative(tier.get(field), f"{name}.tier.{field}", positive=True)
-        if not isinstance(spec.get("supported_parameters"), list):
+        if not isinstance(spec.get("supported_parameters"), list) or not all(isinstance(parameter, str) for parameter in spec["supported_parameters"]):
             raise ModelSettingsError(f"Missing supported parameters for {name}")
         if spec["transport"] == "openrouter_chat":
             if not spec.get("provider_tags") or not spec.get("provider_rate_limits"):
@@ -81,12 +83,16 @@ def validate_registry(data: dict[str, Any]) -> None:
                 if value != prices[price_field]:
                     raise ModelSettingsError(f"Detached provider and planning prices for {name}")
     for name, config in roles.items():
+        if not isinstance(config, dict):
+            raise ModelSettingsError(f"Role {name} must be an object")
         selected = list((config.get("models") or {}).values())
         if config.get("model") is not None:
             selected.append(config["model"])
         for model in selected:
             if model not in models:
                 raise ModelSettingsError(f"Unknown model {model!r} selected by role {name}")
+            if models[model]["transport"] != config.get("transport"):
+                raise ModelSettingsError(f"Role {name} selects an incompatible model transport")
         for field in ("max_cost_usd", "aggregate_max_cost_usd"):
             if config.get(field) is not None:
                 nonnegative(config[field], f"{name}.{field}", positive=True)
@@ -96,11 +102,19 @@ def validate_registry(data: dict[str, Any]) -> None:
         for value in (outputs.values() if isinstance(outputs, dict) else [outputs]):
             if value is not None:
                 positive_int(value, f"{name}.output_tokens")
+                if any(value > models[model]["maximum_output_tokens"] for model in selected):
+                    raise ModelSettingsError(f"Role {name} exceeds a selected model's output limit")
         for field in ("minimum_output_tokens", "maximum_output_tokens", "output_tokens_per_candidate", "max_iterations", "workflow_max_iterations"):
             if field in config:
                 positive_int(config[field], f"{name}.{field}")
         if "output_token_overhead" in config:
             nonnegative(config["output_token_overhead"], f"{name}.output_token_overhead")
+            if not isinstance(config["output_token_overhead"], int):
+                raise ModelSettingsError(f"{name}.output_token_overhead must be an integer")
+        if "maximum_output_tokens" in config and any(config["maximum_output_tokens"] > models[model]["maximum_output_tokens"] for model in selected):
+            raise ModelSettingsError(f"Role {name} exceeds a selected model's output limit")
+        if config.get("minimum_output_tokens", 0) > config.get("maximum_output_tokens", math.inf):
+            raise ModelSettingsError(f"Role {name} has reversed output limits")
         if "temperature" in config:
             value = nonnegative(config["temperature"], f"{name}.temperature")
             if value > 2:
@@ -176,6 +190,7 @@ def usage_cost(name: str, usage: dict[str, Any], *, prompt_cache: bool = False) 
 def validate_context(name: str, input_tokens: float, output_tokens: int, *, margin: int = 0) -> None:
     spec = model(name, transport="openrouter_chat")
     nonnegative(input_tokens, "input_tokens")
+    nonnegative(margin, "context margin")
     output = positive_int(output_tokens, "max_tokens")
     if output > spec["maximum_output_tokens"]:
         raise ModelSettingsError(f"{name} output {output} exceeds verified limit {spec['maximum_output_tokens']}")
@@ -214,6 +229,11 @@ def chat_body(body: dict[str, Any], *, margin: int = 0) -> dict[str, Any]:
         "allow_fallbacks": False,
         "max_price": spec["provider_rate_limits"],
     }
+    estimate = len(json.dumps(result, ensure_ascii=False)) / 4
+    # Long-context pricing is a property of this exact model, not an override
+    # of its budget or selection. Use the same tier in routing and planning.
+    rates = token_rates(name, estimate)
+    result["provider"]["max_price"] = {"prompt": rates["input"], "completion": rates["output"]}
     estimate = len(json.dumps(result, ensure_ascii=False)) / 4
     validate_context(name, estimate, result.get("max_tokens"), margin=margin)
     return result

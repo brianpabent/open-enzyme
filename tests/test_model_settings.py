@@ -81,12 +81,27 @@ class RegistryTests(unittest.TestCase):
             lambda d: d["roles"]["comp_review"].update(aggregate_max_cost_usd=1),
             lambda d: d["models"]["openai/gpt-5.5"]["provider_rate_limits"].update(completion=20),
             lambda d: d["models"]["openai/gpt-5.5"].update(maximum_output_tokens=-1),
+            lambda d: d["roles"]["comp_review"].update(model="claude-sonnet-4-6"),
+            lambda d: d["roles"]["comp_review"]["output_tokens"].update(final=128001),
+            lambda d: d["roles"]["evidence_radar_review"].update(minimum_output_tokens=40000),
+            lambda d: d["roles"]["evidence_radar_review"].update(output_token_overhead=1.5),
         ]
         for mutate in mutations:
             data = copy.deepcopy(registry)
             mutate(data)
             with self.assertRaises(settings.ModelSettingsError):
                 settings.validate_registry(data)
+
+    def test_routing_uses_long_context_rates_without_changing_budget(self):
+        body = settings.chat_body({"model": "openai/gpt-5.5", "messages": [{"role": "user", "content": "x" * 1_100_000}], "max_tokens": 100})
+        self.assertEqual({"prompt": 10, "completion": 45}, body["provider"]["max_price"])
+        self.assertEqual(0.75, settings.role("evidence_radar_review")["max_cost_usd"])
+        self.assertIn("openai/flex", body["provider"]["only"])
+        with self.assertRaises(settings.ModelSettingsError):
+            settings.validate_context("meta-llama/llama-4-scout", 500000, 100)
+        for margin in (-1, math.nan):
+            with self.assertRaises(settings.ModelSettingsError):
+                settings.validate_context("openai/gpt-5.5", 10, 100, margin=margin)
 
     def test_workflow_defaults_and_explicit_budget_overrides_are_consistent(self):
         for name in ("bounded_propagation", "evidence_radar_review", "distributed_synthesis", "comp_review", "quarterly_chembl_refresh"):

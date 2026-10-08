@@ -44,20 +44,12 @@ import tempfile
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(REPO_ROOT)
 
-# OpenRouter pricing per Mtok (input, output). Update when adding models.
-PRICING_USD_PER_MTOK = {
-    "deepseek/deepseek-v4-pro":     (0.435, 0.87),
-    "deepseek/deepseek-v4-flash":   (0.14, 0.28),
-    "anthropic/claude-sonnet-4-6":  (3.00, 15.00),
-    "anthropic/claude-haiku-4-5":   (0.80, 4.00),
-    "anthropic/claude-opus-4-7":    (15.00, 75.00),
-    "google/gemini-2.5-pro":        (1.25, 5.00),
-    "google/gemini-2.5-flash":      (0.30, 2.50),
-    "openai/gpt-5":                 (2.50, 10.00),
-    "openai/gpt-5-mini":            (0.50, 2.00),
-    "meta-llama/llama-4-maverick":  (0.27, 0.85),
-    "qwen/qwen3-coder":             (0.30, 1.20),
-}
+try:
+    import model_settings
+except ModuleNotFoundError:
+    from scripts import model_settings
+
+ROLE = model_settings.role("manual_propagation_eval")
 
 TOOLS = [
     {
@@ -284,14 +276,15 @@ def read_api_key():
     sys.exit("OPENROUTER_API_KEY not set in env or .env")
 
 
-def call_openrouter(api_key, model, messages, max_tokens=4000, max_retries=4):
+def call_openrouter(api_key, model, messages, max_tokens=ROLE["output_tokens"], max_retries=4):
     body = {
         "model": model,
         "messages": messages,
         "tools": TOOLS,
         "max_tokens": max_tokens,
-        "temperature": 0.3,
+        "temperature": ROLE["temperature"],
     }
+    body = model_settings.chat_body(body)
     with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as tf:
         json.dump(body, tf)
         body_path = tf.name
@@ -328,12 +321,16 @@ def call_openrouter(api_key, model, messages, max_tokens=4000, max_retries=4):
         os.unlink(body_path)
 
 
-def run_agentic_loop(wt, api_key, model, system_prompt, user_prompt, max_iterations=30):
+def run_agentic_loop(wt, api_key, model, system_prompt, user_prompt, max_iterations=ROLE["max_iterations"]):
+    model_settings.model(model, transport="openrouter_chat")
+    model_settings.positive_int(max_iterations, "max_iterations")
     messages = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt},
     ]
     total_in = total_out = 0
+    total_cost = 0.0
+    cost_is_estimated = False
     iteration = 0
     done_summary = None
     last_text = None
@@ -355,6 +352,9 @@ def run_agentic_loop(wt, api_key, model, system_prompt, user_prompt, max_iterati
         out_tok = usage.get("completion_tokens", 0)
         total_in += in_tok
         total_out += out_tok
+        cost, estimated = model_settings.usage_cost(model, usage)
+        total_cost += cost
+        cost_is_estimated = cost_is_estimated or estimated
         # Persist assistant turn (incl. any tool_calls)
         assistant_turn = {"role": "assistant", "content": msg.get("content")}
         if msg.get("tool_calls"):
@@ -414,6 +414,8 @@ def run_agentic_loop(wt, api_key, model, system_prompt, user_prompt, max_iterati
         "iterations": iteration,
         "input_tokens": total_in,
         "output_tokens": total_out,
+        "cost_usd": total_cost,
+        "cost_is_estimated": cost_is_estimated,
         "done_summary": done_summary,
         "completed": done_summary is not None,
         "last_text": last_text,
@@ -475,13 +477,15 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--scenario", required=True)
     parser.add_argument("--model", required=True)
-    parser.add_argument("--max-iterations", type=int, default=30)
+    parser.add_argument("--max-iterations", type=int, default=ROLE["max_iterations"])
     parser.add_argument("--output-dir", default="logs/eval-propagation")
     parser.add_argument("--prompt-file", default="scripts/sweep-prompt-1-propagate.md")
     parser.add_argument("--keep-worktree", action="store_true",
                         help="Skip worktree cleanup (for debugging)")
     args = parser.parse_args()
 
+    model_settings.model(args.model, transport="openrouter_chat")
+    model_settings.positive_int(args.max_iterations, "max_iterations")
     api_key = read_api_key()
     scenario = parse_scenario(args.scenario)
 
@@ -527,13 +531,8 @@ def main():
         else:
             remove_worktree(wt)
 
-    in_per, out_per = PRICING_USD_PER_MTOK.get(args.model, (None, None))
-    if in_per is not None:
-        cost = (loop["input_tokens"] * in_per + loop["output_tokens"] * out_per) / 1_000_000
-        cost_str = f"{cost:.4f}"
-    else:
-        cost = None
-        cost_str = "unknown"
+    cost = loop["cost_usd"]
+    cost_str = f"{cost:.4f}"
 
     date = datetime.date.today().isoformat()
     scen_name = scenario.get("name") or os.path.basename(args.scenario).replace(".md", "")
@@ -553,6 +552,8 @@ def main():
         f"input_tokens: {loop['input_tokens']}\n"
         f"output_tokens: {loop['output_tokens']}\n"
         f"cost_usd: {cost_str}\n"
+        f"cost_is_estimated: {str(loop['cost_is_estimated']).lower()}\n"
+        f"model_settings_sha256: {model_settings.registry_sha256()}\n"
         f"recall: {metrics['recall']}\n"
         f"precision: {metrics['precision']}\n"
         f"files_changed: {len(metrics['files_changed'])}\n"

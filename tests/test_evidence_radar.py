@@ -290,7 +290,9 @@ class ReviewAndQueueContractTests(unittest.TestCase):
         return radar.with_hash(packet, "packet_sha256")
 
     def config(self) -> dict:
-        return radar.load_json(radar.DEFAULT_CONFIG)
+        config = radar.load_json(radar.DEFAULT_CONFIG)
+        config["review"] = radar.review_settings(config["review"])
+        return config
 
     def review(self, packet: dict) -> dict:
         return {
@@ -356,8 +358,7 @@ class ReviewAndQueueContractTests(unittest.TestCase):
         input_tokens = (len(radar.DEFAULT_REVIEW_PROMPT.read_text()) + len(json.dumps(packet, ensure_ascii=False))) / 4
         # This cap admitted the old request but cannot fund the scaled allowance.
         old_projection = (
-            input_tokens / 1_000_000 * config["review"]["estimated_input_usd_per_million_tokens"]
-            + 8000 / 1_000_000 * config["review"]["estimated_output_usd_per_million_tokens"]
+            radar.model_settings.estimate_cost(config["review"]["model"], input_tokens, 8000)
         )
         cap = old_projection + 0.001
         with self.assertRaisesRegex(radar.RadarError, "Projected review cost"):

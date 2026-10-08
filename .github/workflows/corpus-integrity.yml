@@ -62,6 +62,11 @@ jobs:
       - name: Check evidence-radar review contracts
         run: python3 -m unittest tests.test_evidence_radar
 
+      - name: Check versioned model settings and offline consumers
+        run: |
+          python3 scripts/model_settings.py check
+          python3 -m unittest tests.test_model_settings tests.test_model_consumers
+
       - name: Check retired COMP invalidation ledgers
         run: python3 scripts/check-comp-invalidation.py --all
 
