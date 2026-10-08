@@ -56,11 +56,14 @@ The two cursors are intentionally independent. A push may be fully published and
 - quarterly openFDA/FAERS searches scan the newly released receipt-date quarter for `GOUT`, `HYPERURICAEMIA`, `BLOOD URIC ACID INCREASED`, `GOUTY ARTHRITIS`, and `GOUTY TOPHUS`;
 - report-level parsing keeps each FAERS drug's suspect/concomitant/interacting classification attached to that drug, rather than treating every drug and reaction in a report as a pair;
 - deterministic collection happens before model review; zero-candidate runs cost zero model tokens;
+- review preflight and the API request share a candidate-count output allowance: an 8,000-token floor, 256 tokens per candidate plus 4,096 shared overhead tokens, and a 32,000-token ceiling; the projected allowance must fit the existing per-feed dollar cap before any model call, and packets above the ceiling defer without clipping;
 - capped FAERS review batches retain an exact-window backlog and do not advance the quarter cursor until every eligible subject has a disposition;
 - monitor decisions persist by subject with their rationale so later windows can accumulate or weaken the lead;
 - a hash-bound, context-isolated review may dismiss, monitor, or emit one active action brief; raw packets and review output expire from CI after seven days.
 
 Clinical-trial registrations are protocol/status evidence, not efficacy results. FAERS co-reports are unvalidated pharmacovigilance leads, not causality, incidence, or risk. A source fault remains visible in current state; the affected source is not called current. Neither feed triggers full synthesis. Reviewed radar actions enter `synthesis/queue/` only as verification tasks, and supported scientific claims still require their primary evidence and canonical wiki owner.
+
+Review planning uses the uncached standard GPT-5.5 rates verified on October 8, 2026: $5/M input and $30/M output ([OpenRouter](https://openrouter.ai/openai/gpt-5.5)). The dollar cap gates projected calls and completed reported usage. Input projection uses characters/4 and excludes schema/message overhead; transport retries after uncertain failures can bill again without cumulative failed-attempt accounting. Strict total-spend enforcement requires complete input costing and per-attempt reservations/receipts, including uncertain retries. Recheck prices and resolve that recovery-spend scope before authorizing a paid recovery. An over-cap original packet remains unreviewed pending a separate recovery decision.
 
 ## Push-time propagation
 

@@ -26,7 +26,7 @@ on:
         default: false
         type: boolean
       max_cost_usd:
-        description: 'Hard review cap per feed; zero-candidate runs spend nothing'
+        description: 'Review planning cap per feed; failed-attempt spend is not tracked'
         required: false
         default: '0.75'
         type: string

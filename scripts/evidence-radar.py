@@ -1014,11 +1014,40 @@ def collect_faers(
     return packet, next_state
 
 
+def review_output_tokens(packet: dict[str, Any], review_config: dict[str, Any]) -> int:
+    candidate_count = len(packet.get("candidates") or [])
+    if not candidate_count:
+        return 0
+    try:
+        maximum = int(review_config.get("maximum_output_tokens", 32000))
+        minimum = int(review_config.get("minimum_output_tokens", 8000))
+        per_candidate = int(review_config.get("output_tokens_per_candidate", 256))
+        overhead = int(review_config.get("output_token_overhead", 4096))
+    except (TypeError, ValueError, OverflowError) as exc:
+        raise RadarError("Invalid review output-token budget") from exc
+    if not 0 < minimum <= maximum or per_candidate <= 0 or overhead < 0:
+        raise RadarError("Invalid review output-token budget")
+    # Reserve space for every structured decision plus shared response/reasoning
+    # overhead. Never clip the per-candidate allowance for an oversized packet.
+    required = max(minimum, overhead + candidate_count * per_candidate)
+    if required > maximum:
+        raise RadarError(f"Required review output {required} tokens exceeds ceiling {maximum}")
+    return required
+
+
+def review_token_rates(review_config: dict[str, Any]) -> tuple[float, float]:
+    return (
+        float(review_config.get("estimated_input_usd_per_million_tokens") or 5.0),
+        float(review_config.get("estimated_output_usd_per_million_tokens") or 30.0),
+    )
+
+
 def estimated_review_cost(packet: dict[str, Any], prompt: str, review_config: dict[str, Any]) -> float:
+    output_tokens = review_output_tokens(packet, review_config)
+    if not output_tokens:
+        return 0.0
     input_tokens = (len(prompt) + len(json.dumps(packet, ensure_ascii=False))) / 4
-    input_rate = float(review_config.get("estimated_input_usd_per_million_tokens") or 5.0)
-    output_rate = float(review_config.get("estimated_output_usd_per_million_tokens") or 20.0)
-    output_tokens = int(review_config.get("maximum_output_tokens") or 8000)
+    input_rate, output_rate = review_token_rates(review_config)
     return input_tokens / 1_000_000 * input_rate + output_tokens / 1_000_000 * output_rate
 
 
@@ -1197,12 +1226,13 @@ def run_review(
             packet,
             prompt,
             model=model,
-            maximum_output_tokens=int(review_config.get("maximum_output_tokens") or 8000),
+            maximum_output_tokens=review_output_tokens(packet, review_config),
         )
         if usage["cost_usd"] <= 0:
+            input_rate, output_rate = review_token_rates(review_config)
             usage["cost_usd"] = (
-                usage["input_tokens"] / 1_000_000 * float(review_config.get("estimated_input_usd_per_million_tokens") or 5.0)
-                + usage["output_tokens"] / 1_000_000 * float(review_config.get("estimated_output_usd_per_million_tokens") or 20.0)
+                usage["input_tokens"] / 1_000_000 * input_rate
+                + usage["output_tokens"] / 1_000_000 * output_rate
             )
         if usage["cost_usd"] > maximum_cost:
             raise RadarError(f"Actual review cost ${usage['cost_usd']:.4f} exceeds cap ${maximum_cost:.4f}")
@@ -1593,11 +1623,12 @@ def main() -> None:
             verify_hash(packet, "packet_sha256")
             review_config = config["review"]
             prompt = DEFAULT_REVIEW_PROMPT.read_text()
-            projected = 0.0 if not packet.get("candidates") else estimated_review_cost(packet, prompt, review_config)
+            projected = estimated_review_cost(packet, prompt, review_config)
             cap = args.max_cost_usd if args.max_cost_usd is not None else float(review_config["max_cost_usd"])
             result = {
                 "candidate_count": packet.get("candidate_count", 0),
                 "packet_sha256": packet["packet_sha256"],
+                "maximum_output_tokens": review_output_tokens(packet, review_config),
                 "projected_cost_usd": round(projected, 6),
                 "max_cost_usd": cap,
                 "within_cap": projected <= cap,
