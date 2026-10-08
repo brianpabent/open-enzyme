@@ -63,6 +63,8 @@ The two cursors are intentionally independent. A push may be fully published and
 
 Clinical-trial registrations are protocol/status evidence, not efficacy results. FAERS co-reports are unvalidated pharmacovigilance leads, not causality, incidence, or risk. A source fault remains visible in current state; the affected source is not called current. Neither feed triggers full synthesis. Reviewed radar actions enter `synthesis/queue/` only as verification tasks, and supported scientific claims still require their primary evidence and canonical wiki owner.
 
+Review planning uses the uncached standard GPT-5.5 rates verified on October 8, 2026: $5/M input and $30/M output ([OpenRouter](https://openrouter.ai/openai/gpt-5.5)). The dollar cap gates projected calls and completed reported usage. Input projection uses characters/4 and excludes schema/message overhead; transport retries after uncertain failures can bill again without cumulative failed-attempt accounting. Strict total-spend enforcement requires complete input costing and per-attempt reservations/receipts, including uncertain retries. Recheck prices and resolve that recovery-spend scope before authorizing a paid recovery. An over-cap original packet remains unreviewed pending a separate recovery decision.
+
 ## Push-time propagation
 
 `knowledge-update.yml` calls `comp-review.yml`, then `wiki-propagate.yml`.

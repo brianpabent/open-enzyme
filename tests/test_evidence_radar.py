@@ -326,16 +326,17 @@ class ReviewAndQueueContractTests(unittest.TestCase):
     def test_76_candidate_preflight_and_request_share_the_scaled_output_budget(self):
         packet = self.packet(76)
         original_hash = packet["packet_sha256"]
-        prepared = self.prepare(packet)
+        # Exercise transport with an explicit mock-only budget; production stays $0.75.
+        prepared = self.prepare(packet, cap=1.25)
         self.assertEqual(23552, prepared["maximum_output_tokens"])
         self.assertTrue(prepared["within_cap"])
         response = {
             "choices": [{"finish_reason": "stop", "message": {"content": json.dumps(self.review(packet))}}],
-            "usage": {"prompt_tokens": 1000, "completion_tokens": 9000, "cost": 0.185},
+            "usage": {"prompt_tokens": 1000, "completion_tokens": 9000, "cost": 0.275},
         }
         with patch.object(radar, "openrouter_key", return_value="test-key"), patch.object(radar, "build_opener") as opener:
             opener.return_value.open.return_value.__enter__.return_value.read.return_value = json.dumps(response).encode()
-            review = radar.run_review(packet, self.config(), model_override=None, max_cost_override=None)
+            review = radar.run_review(packet, self.config(), model_override=None, max_cost_override=1.25)
         request = opener.return_value.open.call_args.args[0]
         self.assertEqual(prepared["maximum_output_tokens"], json.loads(request.data)["max_tokens"])
         self.assertEqual(1, opener.return_value.open.call_count)
@@ -366,6 +367,58 @@ class ReviewAndQueueContractTests(unittest.TestCase):
                 radar.run_review(packet, config, model_override=None, max_cost_override=cap)
             call.assert_not_called()
 
+    def test_verified_prices_and_default_cap_defer_the_76_candidate_packet(self):
+        config = self.config()
+        self.assertEqual("openai/gpt-5.5", config["review"]["model"])
+        self.assertEqual(0.75, config["review"]["max_cost_usd"])
+        self.assertEqual((5.0, 30.0), radar.review_token_rates(config["review"]))
+        self.assertEqual((5.0, 30.0), radar.review_token_rates({}))
+        packet = self.packet(76)
+        with self.assertRaisesRegex(radar.RadarError, "Projected review cost"):
+            self.prepare(packet)
+        with patch.object(radar, "openrouter_review") as call:
+            with self.assertRaisesRegex(radar.RadarError, "Projected review cost"):
+                radar.run_review(packet, config, model_override=None, max_cost_override=None)
+            call.assert_not_called()
+
+    def test_usage_fallback_uses_the_same_verified_output_price(self):
+        packet = self.packet()
+        usage = {"input_tokens": 1000, "output_tokens": 8000, "cost_usd": 0.0}
+        with patch.object(radar, "openrouter_review", return_value=(self.review(packet), usage)):
+            review = radar.run_review(packet, self.config(), model_override=None, max_cost_override=None)
+        self.assertAlmostEqual(0.245, review["usage"]["cost_usd"])
+
+    def test_corrected_fallback_price_rejects_usage_the_old_price_admitted(self):
+        packet = self.packet(30)
+        review = self.review(packet)
+        # $0.70 at the stale output price; $0.80 at the verified standard price.
+        usage = {"input_tokens": 100000, "output_tokens": 10000, "cost_usd": 0.0}
+        with patch.object(radar, "openrouter_review", return_value=(review, usage)):
+            with self.assertRaisesRegex(radar.RadarError, "Actual review cost"):
+                radar.run_review(packet, self.config(), model_override=None, max_cost_override=None)
+        self.assertNotIn("review_sha256", review)
+
+    def test_output_floor_and_allowed_ceiling_boundaries(self):
+        config = self.config()["review"]
+        for count, expected in ((15, 8000), (16, 8192), (109, 32000)):
+            with self.subTest(candidates=count):
+                self.assertEqual(expected, radar.review_output_tokens(self.packet(count), config))
+
+    def test_invalid_output_budget_configuration_stops_before_a_model_call(self):
+        for field, value in (
+            ("minimum_output_tokens", 0), ("minimum_output_tokens", 32001),
+            ("maximum_output_tokens", 0), ("maximum_output_tokens", None),
+            ("output_tokens_per_candidate", 0), ("output_token_overhead", -1),
+            ("output_token_overhead", "invalid"), ("maximum_output_tokens", float("inf")),
+        ):
+            with self.subTest(field=field, value=value):
+                config = self.config()
+                config["review"][field] = value
+                with patch.object(radar, "openrouter_review") as call:
+                    with self.assertRaisesRegex(radar.RadarError, "Invalid review output-token budget"):
+                        radar.run_review(self.packet(), config, model_override=None, max_cost_override=None)
+                    call.assert_not_called()
+
     def test_small_and_empty_packets_keep_the_floor_and_zero_cost(self):
         small = self.prepare(self.packet())
         self.assertEqual(8000, small["maximum_output_tokens"])
@@ -381,7 +434,7 @@ class ReviewAndQueueContractTests(unittest.TestCase):
         radar.verify_hash(review, "review_sha256")
 
     def test_output_ceiling_defers_instead_of_clipping_a_large_packet(self):
-        packet = self.packet(130)
+        packet = self.packet(110)
         with self.assertRaisesRegex(radar.RadarError, "Required review output.*exceeds ceiling"):
             self.prepare(packet)
         with patch.object(radar, "openrouter_review") as call:
@@ -394,13 +447,14 @@ class ReviewAndQueueContractTests(unittest.TestCase):
         response = {
             # Even parseable JSON is rejected when the provider reports truncation.
             "choices": [{"finish_reason": "length", "message": {"content": json.dumps(self.review(packet))}}],
-            "usage": {"prompt_tokens": 1000, "completion_tokens": 23552, "cost": 0.5},
+            "usage": {"prompt_tokens": 1000, "completion_tokens": 23552, "cost": 0.71156},
         }
         with tempfile.TemporaryDirectory() as tmp:
             packet_path = Path(tmp) / "packet.json"
             output_path = Path(tmp) / "review.json"
             radar.write_json(packet_path, packet)
-            argv = ["evidence-radar.py", "review", "--packet", str(packet_path), "--output", str(output_path)]
+            argv = ["evidence-radar.py", "review", "--packet", str(packet_path), "--output", str(output_path),
+                    "--max-cost-usd", "1.25"]
             with (
                 patch.object(sys, "argv", argv),
                 patch.object(radar, "openrouter_key", return_value="test-key"),
@@ -413,7 +467,7 @@ class ReviewAndQueueContractTests(unittest.TestCase):
             self.assertFalse(output_path.exists())
 
     def test_scaled_output_does_not_relax_review_binding_or_coverage(self):
-        packet = self.packet(76)
+        packet = self.packet(30)
         for invalid in ("hash", "coverage", "duplicate"):
             with self.subTest(invalid=invalid):
                 review = self.review(packet)
@@ -423,13 +477,14 @@ class ReviewAndQueueContractTests(unittest.TestCase):
                     review["decisions"].pop()
                 else:
                     review["decisions"].append(review["decisions"][0])
-                with patch.object(radar, "openrouter_review", return_value=(review, {"cost_usd": 0.01})):
+                with patch.object(radar, "openrouter_review", return_value=(review, {"cost_usd": 0.01})) as call:
                     with self.assertRaises(radar.RadarError):
                         radar.run_review(packet, self.config(), model_override=None, max_cost_override=None)
+                    call.assert_called_once()
                 self.assertNotIn("review_sha256", review)
 
     def test_actual_usage_still_cannot_exceed_the_configured_cap(self):
-        packet = self.packet(76)
+        packet = self.packet(30)
         review = self.review(packet)
         with patch.object(radar, "openrouter_review", return_value=(review, {"cost_usd": 0.751})):
             with self.assertRaisesRegex(radar.RadarError, "Actual review cost"):
