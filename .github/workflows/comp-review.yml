@@ -25,14 +25,12 @@ on:
         required: true
         type: string
       max_cost_per_comp_usd:
-        description: 'Explicit per-COMP hard cap'
+        description: 'Per-COMP planning cap; blank uses the versioned role budget'
         required: false
-        default: '2.50'
         type: string
       max_cost_per_push_usd:
-        description: 'Explicit aggregate hard cap'
+        description: 'Aggregate planning cap; blank uses the versioned role budget'
         required: false
-        default: '5.00'
         type: string
 
 permissions:
@@ -49,10 +47,6 @@ jobs:
     outputs:
       reviewed_count: ${{ steps.result.outputs.reviewed_count }}
       has_blocked: ${{ steps.result.outputs.has_blocked }}
-    env:
-      COMP_REVIEW_MODEL: openai/gpt-5.5
-      PER_COMP_CAP: ${{ inputs.max_cost_per_comp_usd || '2.50' }}
-      AGGREGATE_CAP: ${{ inputs.max_cost_per_push_usd || '5.00' }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -62,6 +56,16 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+
+      - name: Load verified COMP review settings
+        env:
+          COMP_BUDGET_OVERRIDE: ${{ inputs.max_cost_per_comp_usd }}
+          AGGREGATE_BUDGET_OVERRIDE: ${{ inputs.max_cost_per_push_usd }}
+        run: |
+          set -euo pipefail
+          python3 scripts/model_settings.py env comp_review \
+            --override "PER_COMP_CAP=$COMP_BUDGET_OVERRIDE" \
+            --override "AGGREGATE_CAP=$AGGREGATE_BUDGET_OVERRIDE" >> "$GITHUB_ENV"
 
       - name: Select exact artifact changes
         id: select

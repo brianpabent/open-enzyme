@@ -14,9 +14,8 @@ on:
         required: false
         type: string
       max_cost_usd:
-        description: 'Emergency runaway cap; normal bounded batches should finish well below it'
+        description: 'Emergency runaway cap; blank uses the versioned role budget'
         required: false
-        default: '5.00'
         type: string
 
 permissions:
@@ -30,9 +29,6 @@ jobs:
   propagate:
     runs-on: ubuntu-latest
     timeout-minutes: 45
-    env:
-      MAX_COST_USD: ${{ inputs.max_cost_usd || '5.00' }}
-      PROPAGATION_MODEL: deepseek/deepseek-v4-pro
     steps:
       - uses: actions/checkout@v5
         with:
@@ -43,6 +39,14 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+
+      - name: Load verified propagation settings
+        env:
+          BUDGET_OVERRIDE: ${{ inputs.max_cost_usd }}
+        run: |
+          set -euo pipefail
+          python3 scripts/model_settings.py env bounded_propagation \
+            --override "MAX_COST_USD=$BUDGET_OVERRIDE" >> "$GITHUB_ENV"
 
       - name: Select eligible bounded trigger set
         id: select
@@ -99,7 +103,7 @@ jobs:
             --diff-base "${{ steps.select.outputs.cursor }}" \
             --trigger-files "${{ steps.select.outputs.paths }}" \
             --model "$PROPAGATION_MODEL" \
-            --max-iterations 40 --max-cost-usd "$MAX_COST_USD"
+            --max-iterations "$MAX_ITERATIONS" --max-cost-usd "$MAX_COST_USD"
 
       - name: Verify propagated reader contract
         run: |

@@ -50,6 +50,9 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Load verified ChEMBL model settings
+        run: python3 scripts/model_settings.py env quarterly_chembl_refresh >> "$GITHUB_ENV"
+
       - name: Set up Node
         uses: actions/setup-node@v5
         with:
@@ -61,12 +64,6 @@ jobs:
       - name: Run ChEMBL refresh
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # Model: Sonnet 4.6 is the current default (matches wiki-sweep.yml).
-          # Opus 4.7 would give better diff-reasoning rigor but the org's API
-          # tier rate-limits Opus at 30K input TPM, which multi-compound
-          # refreshes would routinely exceed. Switch to `claude-opus-4-7[1m]`
-          # once a tier upgrade is in place.
-          ANTHROPIC_MODEL: claude-sonnet-4-6
           REFRESH_NOTE: ${{ inputs.note }}
           TRIGGER_EVENT: ${{ github.event_name }}
         run: |
@@ -97,7 +94,7 @@ jobs:
 
           # --dangerously-skip-permissions lets the CLI use Edit/Write/Bash
           # without interactive approval. Required for CI.
-          claude --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")"
+          claude --model "$ANTHROPIC_MODEL" --dangerously-skip-permissions -p "$(cat "$PROMPT_FILE")"
 
       - name: Push refresh output
         run: |

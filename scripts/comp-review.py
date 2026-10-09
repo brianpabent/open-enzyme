@@ -27,17 +27,21 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 os.chdir(ROOT)
 
-DEFAULT_MODEL = "openai/gpt-5.5"
+try:
+    import model_settings
+except ModuleNotFoundError:
+    from scripts import model_settings
+
+ROLE = model_settings.role("comp_review")
+DEFAULT_MODEL = ROLE["model"]
 DEFAULT_PROMPT = Path("scripts/comp-review-prompt.md")
-DEFAULT_MAX_COST_USD = 2.50
-DEFAULT_ESTIMATED_INPUT_USD_PER_M = 5.0
-DEFAULT_ESTIMATED_OUTPUT_USD_PER_M = 20.0
+DEFAULT_MAX_COST_USD = ROLE["max_cost_usd"]
 SHARD_CHARS = 180_000
 MAX_TOOL_RESULT_CHARS = 80_000
 MAX_TOTAL_TOOL_RESULT_CHARS = 240_000
 MAX_TOOL_ITERATIONS = 8
-SHARD_OUTPUT_MAX_TOKENS = 8_000
-FINAL_OUTPUT_MAX_TOKENS = 16_000
+SHARD_OUTPUT_MAX_TOKENS = ROLE["output_tokens"]["shard"]
+FINAL_OUTPUT_MAX_TOKENS = ROLE["output_tokens"]["final"]
 TEXT_SUFFIXES = {
     ".md", ".py", ".json", ".csv", ".tsv", ".txt", ".yaml", ".yml",
     ".fasta", ".fa", ".toml", ".sh", ".r", ".xml", ".html", ".jsonl", ".log",
@@ -282,8 +286,8 @@ def build_shards(
     return shards, binary
 
 
-def estimate_cost(chars: int, output_tokens: int = 4_000, *, input_rate: float, output_rate: float) -> float:
-    return (chars / 4 / 1_000_000 * input_rate) + (output_tokens / 1_000_000 * output_rate)
+def estimate_cost(chars: int, output_tokens: int, *, model: str = DEFAULT_MODEL) -> float:
+    return model_settings.estimate_cost(model, chars / 4, output_tokens)
 
 
 TOOLS = [
@@ -394,7 +398,7 @@ def review(
     *,
     tools: bool = True,
     max_tokens: int = FINAL_OUTPUT_MAX_TOKENS,
-    reasoning_effort: str = "medium",
+    reasoning_effort: str = ROLE["reasoning"]["final"],
     max_cost_usd: float | None = None,
     stage: str = "review",
 ) -> tuple[str, dict[str, float]]:
@@ -405,19 +409,21 @@ def review(
         body: dict[str, object] = {
             "model": model,
             "messages": messages,
-            "temperature": 0.1,
+            "temperature": ROLE["temperature"],
             "max_tokens": max_tokens,
             "reasoning": {"effort": reasoning_effort, "exclude": True},
         }
         if tools and iteration < MAX_TOOL_ITERATIONS:
             body["tools"] = TOOLS
+        body = model_settings.chat_body(body)
         response = call_openrouter(key, body)
         choice = response["choices"][0]
         message = choice.get("message") or {}
         usage = response.get("usage") or {}
         totals["input_tokens"] += float(usage.get("prompt_tokens") or 0)
         totals["output_tokens"] += float(usage.get("completion_tokens") or 0)
-        totals["cost_usd"] += float(usage.get("cost") or 0)
+        call_cost, _estimated = model_settings.usage_cost(model, usage)
+        totals["cost_usd"] += call_cost
         if max_cost_usd is not None and totals["cost_usd"] > max_cost_usd:
             raise SystemExit(
                 f"{stage} exceeded its remaining ${max_cost_usd:.4f} cost budget; "
@@ -556,6 +562,7 @@ def write_receipts(
         "coverage": coverage,
         "unsupported_binary_entries": [{k: v for k, v in item.items() if k != "content"} for item in binary],
         "projected_cost_usd": round(projected_cost, 6),
+        "model_settings_sha256": model_settings.registry_sha256(),
         "actual_cost_usd": round(usage["cost_usd"], 6),
         "input_tokens": int(usage["input_tokens"]),
         "output_tokens": int(usage["output_tokens"]),
@@ -611,9 +618,15 @@ def main() -> None:
     parser.add_argument("--prompt-file", default=str(DEFAULT_PROMPT))
     parser.add_argument("--prepare-only", action="store_true")
     parser.add_argument("--max-cost-usd", type=float, default=DEFAULT_MAX_COST_USD)
-    parser.add_argument("--estimated-input-usd-per-million", type=float, default=DEFAULT_ESTIMATED_INPUT_USD_PER_M)
-    parser.add_argument("--estimated-output-usd-per-million", type=float, default=DEFAULT_ESTIMATED_OUTPUT_USD_PER_M)
+    parser.add_argument("--estimated-input-usd-per-million", type=float, help="Compatibility check only: must equal the selected model registry rate")
+    parser.add_argument("--estimated-output-usd-per-million", type=float, help="Compatibility check only: must equal the selected model registry rate")
     args = parser.parse_args()
+    model_settings.chat_body({"model": args.model, "messages": [{"role": "user", "content": "preflight"}], "max_tokens": FINAL_OUTPUT_MAX_TOKENS, "reasoning": {"effort": ROLE["reasoning"]["final"]}, "tools": TOOLS})
+    model_settings.nonnegative(args.max_cost_usd, "max_cost_usd", positive=True)
+    rates = model_settings.token_rates(args.model)
+    for supplied, field in ((args.estimated_input_usd_per_million, "input"), (args.estimated_output_usd_per_million, "output")):
+        if supplied is not None and supplied != rates[field]:
+            raise SystemExit("Independent price override disagrees with selected model registry")
 
     comp_dir, comp_rel, comp_id = resolve_comp(args.comp_dir)
     commit_sha = run(["git", "rev-parse", args.commit_sha]).stdout.strip()
@@ -634,11 +647,11 @@ def main() -> None:
             len(shards) * SHARD_OUTPUT_MAX_TOKENS
             + FINAL_OUTPUT_MAX_TOKENS
         ),
-        input_rate=args.estimated_input_usd_per_million,
-        output_rate=args.estimated_output_usd_per_million,
+        model=args.model,
     )
     metadata = {
         "comp": comp_id, "manifest_sha256": manifest_sha,
+        "model": args.model, "model_settings_sha256": model_settings.registry_sha256(),
         "shards": len(shards), "segments": sum(len(s["segments"]) for s in shards),
         "binary_entries": len(binary), "projected_cost_usd": round(projected, 6),
         "max_cost_usd": args.max_cost_usd, "authoring_gates": authoring_gates,
@@ -668,7 +681,7 @@ def main() -> None:
             shard_prompt(comp_id, shard),
             tools=False,
             max_tokens=SHARD_OUTPUT_MAX_TOKENS,
-            reasoning_effort="low",
+            reasoning_effort=ROLE["reasoning"]["shard"],
             max_cost_usd=max(0.0, args.max_cost_usd - totals["cost_usd"]),
             stage=f"{comp_id} {shard['id']}",
         )
@@ -700,7 +713,7 @@ def main() -> None:
         final_prompt,
         tools=True,
         max_tokens=FINAL_OUTPUT_MAX_TOKENS,
-        reasoning_effort="medium",
+        reasoning_effort=ROLE["reasoning"]["final"],
         max_cost_usd=max(0.0, args.max_cost_usd - totals["cost_usd"]),
         stage=f"{comp_id} final consolidation",
     )

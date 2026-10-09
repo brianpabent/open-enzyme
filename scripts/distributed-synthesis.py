@@ -83,11 +83,12 @@ EPISTEMIC_STATUSES = {
 
 MAX_PAIR_CANDIDATES = 3
 
-MODEL_RATES = {
-    "google/gemini-2.5-flash": (0.30, 2.50),
-    "deepseek/deepseek-v4-pro": (0.435, 0.87),
-    "openai/gpt-5.5": (2.50, 15.00),
-}
+try:
+    import model_settings
+except ModuleNotFoundError:
+    from scripts import model_settings
+
+ROLE = model_settings.role("distributed_synthesis")
 
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
 COMP_RE = re.compile(r"\bcomp-(\d{3})\b", re.I)
@@ -137,13 +138,16 @@ class CostLedger:
     cap: float
     calls: list[dict[str, Any]] = field(default_factory=list)
 
+    def __post_init__(self) -> None:
+        model_settings.nonnegative(self.cap, "max_cost_usd", positive=True)
+
     @property
     def actual(self) -> float:
         return sum(float(call["cost_usd"]) for call in self.calls)
 
     def project(self, model: str, input_chars: int, max_output_tokens: int) -> float:
-        in_rate, out_rate = MODEL_RATES.get(model, (10.0, 30.0))
-        return input_chars / 4 / 1_000_000 * in_rate + max_output_tokens / 1_000_000 * out_rate
+        model_settings.validate_context(model, input_chars / 4, max_output_tokens)
+        return model_settings.estimate_cost(model, input_chars / 4, max_output_tokens)
 
     def authorize(self, model: str, input_chars: int, max_output_tokens: int) -> float:
         projection = self.project(model, input_chars, max_output_tokens)
@@ -155,17 +159,9 @@ class CostLedger:
         return projection
 
     def record(self, *, stage: str, model: str, usage: dict[str, Any], projection: float, latency: float) -> None:
-        provider_cost = usage.get("cost")
-        estimated = provider_cost is None
+        cost, estimated = model_settings.usage_cost(model, usage)
         if estimated:
-            in_rate, out_rate = MODEL_RATES.get(model, (10.0, 30.0))
-            cost = (
-                int(usage.get("prompt_tokens") or 0) * in_rate
-                + int(usage.get("completion_tokens") or 0) * out_rate
-            ) / 1_000_000
             cost = max(cost, projection)
-        else:
-            cost = float(provider_cost)
         self.calls.append({
             "stage": stage,
             "model": model,
@@ -186,14 +182,15 @@ class OpenRouter:
         self.ledger = ledger
 
     def json_call(self, *, stage: str, model: str, prompt: str, max_tokens: int) -> Any:
-        projection = self.ledger.authorize(model, len(prompt), max_tokens)
         body = {
             "model": model,
             "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.15,
+            "temperature": ROLE["temperature"],
             "max_tokens": max_tokens,
             "response_format": {"type": "json_object"},
         }
+        body = model_settings.chat_body(body)
+        projection = self.ledger.authorize(model, len(json.dumps(body, ensure_ascii=False)), max_tokens)
         with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as handle:
             json.dump(body, handle)
             body_path = handle.name
@@ -664,6 +661,9 @@ def validate_trigger_comp_eligibility(trigger_paths: list[str], state: dict[str,
 
 
 def run_pipeline(args: argparse.Namespace) -> dict[str, Any]:
+    model_settings.nonnegative(args.max_cost_usd, "max_cost_usd", positive=True)
+    for model_name, output in ((args.extractor_a_model, args.extraction_max_tokens), (args.extractor_b_model, args.extraction_max_tokens), (args.bridge_model, args.bridge_max_tokens), (args.reviewer_model, args.review_max_tokens)):
+        model_settings.chat_body({"model": model_name, "messages": [{"role": "user", "content": "preflight"}], "max_tokens": output, "response_format": {"type": "json_object"}})
     work = Path(args.work_dir).resolve()
     work.mkdir(parents=True, exist_ok=True)
     state = json.loads((ROOT / "logs" / "sweep-state.json").read_text())
@@ -807,6 +807,7 @@ def run_pipeline(args: argparse.Namespace) -> dict[str, Any]:
     reviews_path.write_text(reviews)
     receipt = {
         "schema_version": 1,
+        "model_settings_sha256": model_settings.registry_sha256(),
         "status": "complete",
         "coverage_commit": corpus["coverage_commit"],
         "corpus_sha256": corpus["corpus_sha256"],
@@ -843,14 +844,14 @@ def parser() -> argparse.ArgumentParser:
     result.add_argument("--work-dir", required=True)
     result.add_argument("--diff-base", required=True)
     result.add_argument("--trigger-path", action="append", default=[])
-    result.add_argument("--max-cost-usd", type=float, default=5.0)
-    result.add_argument("--extractor-a-model", default="google/gemini-2.5-flash")
-    result.add_argument("--extractor-b-model", default="deepseek/deepseek-v4-pro")
-    result.add_argument("--bridge-model", default="deepseek/deepseek-v4-pro")
-    result.add_argument("--reviewer-model", default="openai/gpt-5.5")
-    result.add_argument("--extraction-max-tokens", type=int, default=6_000)
-    result.add_argument("--bridge-max-tokens", type=int, default=2_500)
-    result.add_argument("--review-max-tokens", type=int, default=2_500)
+    result.add_argument("--max-cost-usd", type=float, default=ROLE["max_cost_usd"])
+    result.add_argument("--extractor-a-model", default=ROLE["models"]["extractor_a"])
+    result.add_argument("--extractor-b-model", default=ROLE["models"]["extractor_b"])
+    result.add_argument("--bridge-model", default=ROLE["models"]["bridge"])
+    result.add_argument("--reviewer-model", default=ROLE["models"]["reviewer"])
+    result.add_argument("--extraction-max-tokens", type=int, default=ROLE["output_tokens"]["extraction"])
+    result.add_argument("--bridge-max-tokens", type=int, default=ROLE["output_tokens"]["bridge"])
+    result.add_argument("--review-max-tokens", type=int, default=ROLE["output_tokens"]["review"])
     result.add_argument("--max-domain-chars", type=int, default=500_000)
     return result
 

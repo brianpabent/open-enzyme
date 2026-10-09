@@ -26,9 +26,8 @@ on:
         default: false
         type: boolean
       max_cost_usd:
-        description: 'Review planning cap per feed; failed-attempt spend is not tracked'
+        description: 'Review planning cap per feed; blank uses the versioned role budget, failed-attempt spend is not tracked'
         required: false
-        default: '0.75'
         type: string
 
 permissions:
@@ -47,7 +46,6 @@ jobs:
       OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
       MANUAL_FEED: ${{ inputs.feed }}
       BASELINE_ONLY: ${{ inputs.baseline_only }}
-      MAX_COST_USD: ${{ inputs.max_cost_usd || '0.75' }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -58,6 +56,14 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+
+      - name: Load verified radar settings
+        env:
+          BUDGET_OVERRIDE: ${{ inputs.max_cost_usd }}
+        run: |
+          set -euo pipefail
+          python3 scripts/model_settings.py env evidence_radar_review \
+            --override "MAX_COST_USD=$BUDGET_OVERRIDE" >> "$GITHUB_ENV"
 
       - name: Select feeds for this cadence
         id: select

@@ -5,7 +5,7 @@ fresh-synthesis.py — manual full-corpus synthesis with the model of your choic
 Local CLI tool (NOT the daemon path — see .github/workflows/wiki-sweep.yml
 for the CI sweep). The daemon is a 3-pass pipeline (Pass 1 Propagate →
 Pass 2 Synthesize → Pass 3 Review). This script is the manual sibling:
-point it at any OpenRouter-served model and ask "what does THIS model find
+point it at a verified OpenRouter model and ask "what does THIS model find
 across our corpus?"
 
 Two main use cases:
@@ -14,7 +14,7 @@ Two main use cases:
    next Gemini, next GPT, next DeepSeek), run it across the corpus and
    compare its synthesis against what the daemon's Pass 2 has been
    surfacing. The architecture is intentionally model-agnostic — only the
-   OpenRouter slug changes.
+   OpenRouter slug changes after its settings are verified in the registry.
 
 2. **Second-opinion synthesis.** When you want fresh eyes on the corpus
    between daemon sweeps — a different vendor, a different prompt, a
@@ -29,7 +29,7 @@ and the current corpus are the durable record. Reports token usage and cost.
 
 Run from the repo root:
     python3 scripts/fresh-synthesis.py
-    python3 scripts/fresh-synthesis.py --model anthropic/claude-opus-4-7
+    python3 scripts/fresh-synthesis.py --model anthropic/claude-opus-4.7
     python3 scripts/fresh-synthesis.py --model google/gemini-2.5-pro
     python3 scripts/fresh-synthesis.py --model openai/gpt-5.5
 
@@ -47,65 +47,38 @@ import argparse
 import subprocess
 import tempfile
 
+try:
+    import model_settings
+except ModuleNotFoundError:
+    from scripts import model_settings
+
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(REPO_ROOT)
 
-# Default model. Override with --model.
-DEFAULT_MODEL = "deepseek/deepseek-v4-pro"
-
-# OpenRouter pricing per Mtok (input, output) — used for cost reporting.
-# Update when new model slugs are added or pricing changes. If a model
-# isn't in this map, cost reporting falls back to "unknown".
-PRICING_USD_PER_MTOK = {
-    "deepseek/deepseek-v4-pro":   (0.435, 0.87),
-    "deepseek/deepseek-v4-flash": (0.14, 0.28),
-    "anthropic/claude-3.5-sonnet": (3.00, 15.00),
-    "anthropic/claude-3-opus":    (15.00, 75.00),
-    "google/gemini-2.5-pro":      (1.25, 5.00),
-    "openai/gpt-5":               (2.50, 10.00),
-    "x-ai/grok-4.20":             (1.25, 2.50),
-    "meta-llama/llama-4-scout":   (0.08, 0.30),
-}
-
-# Context-window caps (total request budget) per model, for the pre-call
-# overflow guard. Large-context models (Scout 10M, Grok 2M) make the old hard
-# 900K guard obsolete — gate against the actual route cap instead.
-CONTEXT_CAP_TOKENS = {
-    "deepseek/deepseek-v4-pro":   1_000_000,
-    "google/gemini-2.5-pro":      1_048_576,   # live OpenRouter route (not 2M)
-    "x-ai/grok-4.20":             2_000_000,
-    "meta-llama/llama-4-scout":  10_000_000,
-}
+ROLE = model_settings.role("manual_fresh_synthesis")
+DEFAULT_MODEL = ROLE["model"]
 
 # --- Argparse -------------------------------------------------------------------
 parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
 parser.add_argument("--model", default=DEFAULT_MODEL,
                     help=f"OpenRouter model slug (default: {DEFAULT_MODEL})")
-parser.add_argument("--max-tokens", type=int, default=6000,
-                    help="Output token budget (default 6K)")
+parser.add_argument("--max-tokens", type=int, default=ROLE["output_tokens"],
+                    help="Output token budget (default from the versioned role)")
+parser.add_argument("--prepare-only", action="store_true",
+                    help="Validate settings and report projected cost without reading credentials or calling a model")
 args = parser.parse_args()
-
-# --- Read API key from env first, fall back to .env (no logging the value) -----
-API_KEY = os.environ.get("OPENROUTER_API_KEY")
-if not API_KEY:
-    env_path = os.path.join(REPO_ROOT, ".env")
-    if os.path.exists(env_path):
-        with open(env_path) as f:
-            for line in f:
-                if line.startswith("OPENROUTER_API_KEY="):
-                    API_KEY = line.split("=", 1)[1].strip()
-                    break
-if not API_KEY:
-    sys.exit("OPENROUTER_API_KEY not in env or .env")
+try:
+    model_settings.validate_context(args.model, 0, args.max_tokens)
+except model_settings.ModelSettingsError as exc:
+    sys.exit(str(exc))
 
 # --- Build the corpus ----------------------------------------------------------
 # All wiki/*.md only. Post-2026-05-08 migration `synthesis/` is sibling to
 # wiki/, not under it; excluded from this corpus by scope. Concatenate with
 # === filename === separators.
 #
-# OpenRouter caps deepseek/deepseek-v4-pro at 512K tokens (platform policy,
-# even though the model itself supports 1M). Excluding three low-synthesis-
-# value files to fit:
+# Retain the existing corpus exclusions; route-specific context limits are
+# checked against the selected model's versioned registry entry below.
 #   - GRAPH.md: Mermaid diagram, hard for non-vision models to use
 #   - references.md: bibliography only
 #   - ai-bio-tools-playbook.md: tooling reference, not biology mechanism
@@ -196,28 +169,46 @@ Discipline:
 
 prompt_chars = len(prompt)
 prompt_token_estimate = prompt_chars // 4
-print(f"Corpus: {len(wiki_files)} files, {corpus_chars:,} chars, ~{corpus_token_estimate:,} tokens (estimate)")
-print(f"Total prompt: {prompt_chars:,} chars, ~{prompt_token_estimate:,} tokens (estimate)")
-
-# Model-aware overflow guard: gate against the chosen model's actual context cap
-# (request = prompt + reserved output), with a 20K safety margin.
-_cap = CONTEXT_CAP_TOKENS.get(args.model, 1_000_000)
-if prompt_token_estimate + args.max_tokens > _cap - 20_000:
-    sys.exit(
-        f"Prompt estimate {prompt_token_estimate:,} + {args.max_tokens:,} output "
-        f"exceeds {args.model} cap {_cap:,} (20K margin). Trim corpus or pick a larger-context model."
-    )
-
-# --- Call OpenRouter via curl (avoids Python's macOS SSL cert quirk) -----------
-print(f"\nCalling {args.model} via OpenRouter ...")
-
 request_body = {
     "model": args.model,
     "messages": [{"role": "user", "content": prompt}],
-    # Smaller output budget = more headroom for input under OpenRouter's 512K cap.
     "max_tokens": args.max_tokens,
-    "temperature": 0.7,
+    "temperature": ROLE["temperature"],
 }
+try:
+    request_body = model_settings.chat_body(request_body, margin=ROLE["context_margin_tokens"])
+except model_settings.ModelSettingsError as exc:
+    sys.exit(str(exc))
+request_input_estimate = len(json.dumps(request_body, ensure_ascii=False)) / 4
+if args.prepare_only:
+    print(json.dumps({
+        "model": args.model,
+        "model_settings_sha256": model_settings.registry_sha256(),
+        "corpus_files": len(wiki_files),
+        "input_token_estimate": request_input_estimate,
+        "max_output_tokens": args.max_tokens,
+        "projected_cost_usd": model_settings.estimate_cost(args.model, request_input_estimate, args.max_tokens),
+        "max_cost_usd": ROLE["max_cost_usd"],
+    }, sort_keys=True))
+    sys.exit(0)
+
+# --- Read API key only after settings/context preflight ---------------------
+API_KEY = os.environ.get("OPENROUTER_API_KEY")
+if not API_KEY:
+    env_path = os.path.join(REPO_ROOT, ".env")
+    if os.path.exists(env_path):
+        with open(env_path) as f:
+            for line in f:
+                if line.startswith("OPENROUTER_API_KEY="):
+                    API_KEY = line.split("=", 1)[1].strip()
+                    break
+if not API_KEY:
+    sys.exit("OPENROUTER_API_KEY not in env or .env")
+
+print(f"Corpus: {len(wiki_files)} files, {corpus_chars:,} chars, ~{corpus_token_estimate:,} tokens (estimate)")
+print(f"Total prompt: {prompt_chars:,} chars, ~{prompt_token_estimate:,} tokens (estimate)")
+# --- Call OpenRouter via curl (avoids Python's macOS SSL cert quirk) -----------
+print(f"\nCalling {args.model} via OpenRouter ...")
 
 # Write the request body to a temp file — too large for command-line argument
 with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as tf:
@@ -266,19 +257,12 @@ usage = body.get("usage", {})
 prompt_tokens = usage.get("prompt_tokens", 0)
 completion_tokens = usage.get("completion_tokens", 0)
 
-# Look up pricing for the chosen model. Falls back to V4-Pro pricing if
-# unknown — adjust PRICING_USD_PER_MTOK at top of file when adding models.
-in_per_mtok, out_per_mtok = PRICING_USD_PER_MTOK.get(
-    args.model, PRICING_USD_PER_MTOK[DEFAULT_MODEL]
-)
-input_cost = prompt_tokens * in_per_mtok / 1_000_000
-output_cost = completion_tokens * out_per_mtok / 1_000_000
-total_cost = input_cost + output_cost
+total_cost, cost_is_estimated = model_settings.usage_cost(args.model, usage)
 
 print(f"\nResponse received.")
 print(f"  Input tokens:  {prompt_tokens:,} (estimated {prompt_token_estimate:,})")
 print(f"  Output tokens: {completion_tokens:,}")
-print(f"  Cost:          ${total_cost:.4f}  (in: ${input_cost:.4f}, out: ${output_cost:.4f})")
+print(f"  Cost:          ${total_cost:.4f}" + (" (estimated)" if cost_is_estimated else " (provider receipt)"))
 
 # --- Save output ---------------------------------------------------------------
 date_str = datetime.date.today().isoformat()
@@ -296,6 +280,8 @@ substrate_commit: {substrate_commit}
 input_tokens: {prompt_tokens}
 output_tokens: {completion_tokens}
 cost_usd: {total_cost:.4f}
+cost_is_estimated: {str(cost_is_estimated).lower()}
+model_settings_sha256: {model_settings.registry_sha256()}
 ---
 
 # Fresh synthesis — {args.model} — {date_str}

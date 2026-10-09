@@ -251,6 +251,7 @@ Detailed technical analyses for the uricase, yeast, and koji engineering tracks.
 
 - **`wiki/`** — Living research documents written in markdown with standard links (`[text](./path.md)`).
 - **`logs/`** — Compact automation state.
+- **[Model and role settings](scripts/model-settings.md)** — Verified model IDs, prices, capabilities, role budgets and offline checks for automation and manual CLI callers.
 - **`reference/`** — Read-only published papers, external reports, vendor data, and generated source material.
 - **Evidence levels** on every claim: `Clinical Trial`, `Animal Model`, `In Vitro`, or `Mechanistic Extrapolation`.
 - **Research Conjecture** is not an evidence level. It marks a grounded but untested connection, separates sourced premises from the novel leap, and names the observation that could advance or kill it.

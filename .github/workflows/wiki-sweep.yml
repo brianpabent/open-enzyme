@@ -8,9 +8,8 @@ on:
         required: false
         type: string
       max_cost_usd:
-        description: 'Hard cap. Default production cap is $5; any increase is explicit in run history.'
+        description: 'Planning cap; blank uses the versioned role budget, overrides are explicit in run history'
         required: false
-        default: '5.00'
         type: string
 
 permissions:
@@ -36,6 +35,14 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+
+      - name: Load verified synthesis settings
+        env:
+          BUDGET_OVERRIDE: ${{ inputs.max_cost_usd }}
+        run: |
+          set -euo pipefail
+          python3 scripts/model_settings.py env distributed_synthesis \
+            --override "MAX_COST_USD=$BUDGET_OVERRIDE" >> "$GITHUB_ENV"
 
       - name: Verify propagation and computational evidence are current
         id: preflight
@@ -84,7 +91,7 @@ jobs:
           python3 scripts/distributed-synthesis.py \
             --work-dir "$WORK_DIR" \
             --diff-base "${{ steps.preflight.outputs.diff_base }}" \
-            --max-cost-usd "${{ inputs.max_cost_usd }}" \
+            --max-cost-usd "$MAX_COST_USD" \
             "${trigger_args[@]}"
 
       - name: Normalize and deterministically emit reviewed active items
@@ -94,6 +101,7 @@ jobs:
             --synthesis-log "$WORK_DIR/distributed-synthesis.md" \
             --output "$WORK_DIR/normalized-synthesis.json"
           trigger_csv=$(paste -sd, /tmp/synthesis-triggers.txt)
+          reviewer=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["models"]["reviewer"])' "$WORK_DIR/coverage-receipt.json")
           python3 scripts/synthesis-emit-files.py \
             --synthesis-log "$WORK_DIR/distributed-synthesis.md" \
             --normalized-manifest "$WORK_DIR/normalized-synthesis.json" \
@@ -102,7 +110,7 @@ jobs:
             --diff-base "${{ steps.preflight.outputs.diff_base }}" \
             --trigger-files "$trigger_csv" \
             --synthesizer "distributed-dual-read" \
-            --reviewer "openai/gpt-5.5"
+            --reviewer "$reviewer"
 
       - name: Commit queue and advance only exact synthesis coverage
         run: |
